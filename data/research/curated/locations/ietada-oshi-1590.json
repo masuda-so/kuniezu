@@ -1,0 +1,22 @@
+{
+  "id": "location:ietada-oshi-1590",
+  "person": "person:matsudaira-ietada",
+  "place": "place:oshi",
+  "relation": "residence-transfer",
+  "time": {
+    "kind": "year-window",
+    "year": 1590,
+    "calendar": "CE-year",
+    "precision": "year"
+  },
+  "source": "kajiroResidence",
+  "sourceUrl": "https://www.echiba.org/wp-content/uploads/2022/12/kiyo_028_p1.pdf",
+  "locator": "本文14頁（PDF32頁）上代陣屋・家忠の来歴",
+  "uncertainty": "移封年のみ。入城日や日々の滞在を確定しない。",
+  "recordType": "sourced-location-observation",
+  "status": "verified-in-specified-scope",
+  "recordedAt": "2026-11-01",
+  "gameBindings": [
+    "TK.PERSON_RESIDENCE_EVIDENCE"
+  ]
+}

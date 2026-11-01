@@ -1,0 +1,21 @@
+{
+  "id": "shirakawa-1590-improvement",
+  "entity": "road:白河街道",
+  "predicate": "road-improvement",
+  "value": "1590年、秀吉が政宗に白河から会津への幅3間の道路作成を命じた",
+  "validYears": [
+    1590,
+    1590
+  ],
+  "datePrecision": "year",
+  "source": "seishidoSukagawa",
+  "locator": "道路作成命令の説明",
+  "gameBindings": [
+    "TK.ROAD_EVIDENCE:白河街道"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "sourceUrl": "https://www.city.sukagawa.fukushima.jp/bunka_sports/bunka_geijyutsu/1013435/bunkazai/1-1/1008731.html",
+  "checked": "2026-11-01",
+  "uncertainty": null
+}

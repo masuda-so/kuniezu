@@ -1,0 +1,313 @@
+{
+  "scope": "登録された死亡・後継イベント17件の生成処理と居所。年単位の居所と精密入城日は別。全家督継承史の網羅ではない。",
+  "rows": [
+    {
+      "name": "今川義元",
+      "successor": "今川氏真",
+      "date": [
+        1560,
+        6,
+        12
+      ],
+      "predecessorLocation": "sunpu",
+      "capital": "sunpu",
+      "successorExisted": true,
+      "successorLocation": "sunpu",
+      "wasLeader": true,
+      "afterLocation": "sunpu",
+      "afterUnit": null,
+      "source": null,
+      "locationAssessment": "既存人物の居所を継続（個別史実は別途照合）"
+    },
+    {
+      "name": "長宗我部国親",
+      "successor": "長宗我部元親",
+      "date": [
+        1560,
+        7,
+        8
+      ],
+      "predecessorLocation": "oko",
+      "capital": "oko",
+      "successorExisted": true,
+      "successorLocation": "oko",
+      "wasLeader": true,
+      "afterLocation": "oko",
+      "afterUnit": null,
+      "source": null,
+      "locationAssessment": "既存人物の居所を継続（個別史実は別途照合）"
+    },
+    {
+      "name": "尼子晴久",
+      "successor": "尼子義久",
+      "date": [
+        1561,
+        1,
+        9
+      ],
+      "predecessorLocation": "gassan",
+      "capital": "gassan",
+      "successorExisted": true,
+      "successorLocation": "gassan",
+      "wasLeader": true,
+      "afterLocation": "gassan",
+      "afterUnit": null,
+      "source": null,
+      "locationAssessment": "既存人物の居所を継続（個別史実は別途照合）"
+    },
+    {
+      "name": "斎藤義龍",
+      "successor": "斎藤龍興",
+      "date": [
+        1561,
+        6,
+        20
+      ],
+      "appear": "斎藤龍興|38|40|40|35|1548",
+      "predecessorLocation": "gifu",
+      "capital": "gifu",
+      "successorExisted": false,
+      "wasLeader": true,
+      "afterLocation": "gifu",
+      "afterUnit": null,
+      "source": null,
+      "locationAssessment": "新規生成時の居所（個別史実は別途照合）"
+    },
+    {
+      "name": "長野業正",
+      "successor": "長野業盛",
+      "date": [
+        1561,
+        8,
+        1
+      ],
+      "appear": "長野業盛|62|72|55|50|1544",
+      "predecessorLocation": "minowa",
+      "capital": "minowa",
+      "successorExisted": false,
+      "wasLeader": true,
+      "afterLocation": "minowa",
+      "afterUnit": null,
+      "source": null,
+      "locationAssessment": "新規生成時の居所（個別史実は別途照合）"
+    },
+    {
+      "name": "三好長慶",
+      "successor": "三好義継",
+      "date": [
+        1564,
+        8,
+        10
+      ],
+      "appear": "三好義継|45|50|45|45|1549",
+      "predecessorLocation": "akutagawa",
+      "capital": "akutagawa",
+      "successorExisted": false,
+      "wasLeader": true,
+      "afterLocation": "akutagawa",
+      "afterUnit": null,
+      "source": null,
+      "locationAssessment": "新規生成時の居所（個別史実は別途照合）"
+    },
+    {
+      "name": "明宗",
+      "successor": "宣祖",
+      "date": [
+        1567,
+        8,
+        3
+      ],
+      "appear": "宣祖|45|35|62|58|1552@hanseong",
+      "predecessorLocation": "hanseong",
+      "capital": "hanseong",
+      "successorExisted": false,
+      "wasLeader": true,
+      "afterLocation": "hanseong",
+      "afterUnit": null,
+      "source": null,
+      "locationAssessment": "新規生成時の居所（個別史実は別途照合）"
+    },
+    {
+      "name": "毛利元就",
+      "successor": "毛利輝元",
+      "date": [
+        1571,
+        7,
+        6
+      ],
+      "appear": "毛利輝元|62|60|64|70|1553@koriyama",
+      "predecessorLocation": "gassan",
+      "capital": "koriyama",
+      "successorExisted": false,
+      "wasLeader": true,
+      "afterLocation": "koriyama",
+      "afterUnit": null,
+      "source": "terumotoResidence",
+      "locationAssessment": "居所指定に個別出典あり"
+    },
+    {
+      "name": "島津貴久",
+      "successor": "島津義久",
+      "date": [
+        1571,
+        7,
+        20
+      ],
+      "predecessorLocation": "uchi",
+      "capital": "uchi",
+      "successorExisted": true,
+      "successorLocation": "uchi",
+      "wasLeader": true,
+      "afterLocation": "uchi",
+      "afterUnit": null,
+      "source": null,
+      "locationAssessment": "既存人物の居所を継続（個別史実は別途照合）"
+    },
+    {
+      "name": "北条氏康",
+      "successor": "北条氏政",
+      "date": [
+        1571,
+        10,
+        21
+      ],
+      "predecessorLocation": "odawara",
+      "capital": "odawara",
+      "successorExisted": true,
+      "successorLocation": "odawara",
+      "wasLeader": true,
+      "afterLocation": "odawara",
+      "afterUnit": null,
+      "source": null,
+      "locationAssessment": "既存人物の居所を継続（個別史実は別途照合）"
+    },
+    {
+      "name": "武田信玄",
+      "successor": "武田勝頼",
+      "date": [
+        1573,
+        5,
+        13
+      ],
+      "appear": "武田勝頼|80|86|60|58|1546@tsutsuji",
+      "predecessorLocation": "sunpu",
+      "capital": "tsutsuji",
+      "successorExisted": false,
+      "wasLeader": true,
+      "afterLocation": "tsutsuji",
+      "afterUnit": null,
+      "source": "katsuyoriResidence",
+      "locationAssessment": "居所指定に個別出典あり"
+    },
+    {
+      "name": "上杉謙信",
+      "successor": "上杉景勝",
+      "date": [
+        1578,
+        4,
+        19
+      ],
+      "appear": "上杉景勝|78|78|68|68|1556",
+      "predecessorLocation": "kasugayama",
+      "capital": "kasugayama",
+      "successorExisted": false,
+      "wasLeader": true,
+      "afterLocation": "kasugayama",
+      "afterUnit": null,
+      "source": null,
+      "locationAssessment": "新規生成時の居所（個別史実は別途照合）"
+    },
+    {
+      "name": "宇喜多直家",
+      "successor": "宇喜多秀家",
+      "date": [
+        1582,
+        2,
+        1
+      ],
+      "appear": "宇喜多秀家|62|65|58|62|1572",
+      "predecessorLocation": "tenjin",
+      "capital": "tenjin",
+      "successorExisted": false,
+      "wasLeader": true,
+      "afterLocation": "tenjin",
+      "afterUnit": null,
+      "source": null,
+      "locationAssessment": "新規生成時の居所（個別史実は別途照合）"
+    },
+    {
+      "name": "織田信長",
+      "successor": "織田信雄",
+      "date": [
+        1582,
+        6,
+        21
+      ],
+      "appear": "織田信雄|45|45|42|50|1558@kiyosu",
+      "predecessorLocation": "kannonji",
+      "capital": "kannonji",
+      "successorExisted": true,
+      "successorLocation": "kiriyama",
+      "wasLeader": true,
+      "afterLocation": "kiyosu",
+      "afterUnit": null,
+      "source": null,
+      "locationAssessment": "既存人物の居所を継続（個別史実は別途照合）"
+    },
+    {
+      "name": "龍造寺隆信",
+      "successor": "龍造寺政家",
+      "date": [
+        1584,
+        5,
+        4
+      ],
+      "appear": "龍造寺政家|42|45|42|45|1556",
+      "predecessorLocation": "saga",
+      "capital": "saga",
+      "successorExisted": false,
+      "wasLeader": true,
+      "afterLocation": "saga",
+      "afterUnit": null,
+      "source": null,
+      "locationAssessment": "新規生成時の居所（個別史実は別途照合）"
+    },
+    {
+      "name": "丹羽長秀",
+      "successor": "丹羽長重",
+      "date": [
+        1585,
+        5,
+        15
+      ],
+      "appear": "丹羽長重|65|70|60|60|1571",
+      "predecessorLocation": "nochiseyama",
+      "capital": "nochiseyama",
+      "successorExisted": true,
+      "successorLocation": "ichijodani",
+      "wasLeader": true,
+      "afterLocation": "nochiseyama",
+      "afterUnit": null,
+      "source": "https://www.library-archives.pref.fukui.lg.jp/fukui/07/nenpyo/rekishi/chrn25.html",
+      "locationAssessment": "既存人物の居所を継続（個別史実は別途照合）"
+    },
+    {
+      "name": "木下秀吉",
+      "successor": "豊臣秀頼",
+      "date": [
+        1598,
+        9,
+        18
+      ],
+      "predecessorLocation": "ishiyama",
+      "capital": "ishiyama",
+      "successorExisted": true,
+      "successorLocation": "ishiyama",
+      "wasLeader": true,
+      "afterLocation": "ishiyama",
+      "afterUnit": null,
+      "source": null,
+      "locationAssessment": "既存人物の居所を継続（個別史実は別途照合）"
+    }
+  ]
+}

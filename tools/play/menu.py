@@ -1,0 +1,5 @@
+exec(open('/home/claude/play/lib.py').read())
+start()
+pg.locator('#me button').filter(has_text='メニュー').click();pg.wait_for_timeout(600);shot('menu')
+pg.locator('#modal button').filter(has_text='タイトルへ戻る').click();pg.wait_for_timeout(800)
+print('title?',pg.evaluate("document.querySelector('#app').dataset.mode"))

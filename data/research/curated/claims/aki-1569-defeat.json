@@ -1,0 +1,21 @@
+{
+  "id": "aki-1569-defeat",
+  "entity": "place:安芸城",
+  "predicate": "military-event",
+  "value": "1569年、安芸国虎が長宗我部元親の攻撃を受けて敗れる。",
+  "source": "akiCastleCity",
+  "sourceUrl": "https://www.city.aki.kochi.jp/life/dtl.php?hdnKey=44",
+  "locator": "城跡解説",
+  "gameBindings": [
+    "TK.CASTLE_EVIDENCE:安芸城"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-02",
+  "uncertainty": "年単位の説明を逐日の入城・落城日へ置き換えない。",
+  "validYears": [
+    1569,
+    1569
+  ],
+  "datePrecision": "year"
+}

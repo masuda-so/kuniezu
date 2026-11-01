@@ -1,0 +1,1386 @@
+{
+  "generated": "2026-11-02T05:18:29.476Z",
+  "battles": [
+    {
+      "title": "桶狭間の戦い",
+      "participants": 10,
+      "groups": 7,
+      "located": 7,
+      "unlocated": 0,
+      "sources": [
+        "okehazama",
+        "okeMain",
+        "kutsukake",
+        "atlasRelief",
+        "codhSites",
+        "deployment-record-00",
+        "okeMovement",
+        "okeToyoake"
+      ]
+    },
+    {
+      "title": "第四次川中島の戦い",
+      "participants": 10,
+      "groups": 4,
+      "located": 3,
+      "unlocated": 1,
+      "sources": [
+        "kawanakajimaCity",
+        "atlasRelief",
+        "codhSites",
+        "deployment-record-01"
+      ]
+    },
+    {
+      "title": "長篠の戦い",
+      "participants": 14,
+      "groups": 7,
+      "located": 7,
+      "unlocated": 0,
+      "sources": [
+        "nagashinoMuseum",
+        "atlasRelief",
+        "codhSites",
+        "nagashinoDeployment",
+        "deployment-record-02",
+        "nagashinoShift",
+        "nagashinoOpening",
+        "nagashinoHQ",
+        "nagashinoArchives"
+      ]
+    },
+    {
+      "title": "関ヶ原の戦い",
+      "participants": 45,
+      "groups": 16,
+      "located": 16,
+      "unlocated": 0,
+      "sources": [
+        "sekigaharaMap",
+        "sekigaharaStudy",
+        "sekigaharaGuide",
+        "todaAlias",
+        "atlasReference",
+        "atlasRelief",
+        "deploymentWiki",
+        "gifuDeployment",
+        "deployment-record-03",
+        "ieyasuJinba"
+      ]
+    },
+    {
+      "title": "姉川の戦い",
+      "participants": 8,
+      "groups": 4,
+      "located": 4,
+      "unlocated": 0,
+      "sources": [
+        "anegawaMuseum",
+        "atlasRelief",
+        "deployment-record-04"
+      ]
+    },
+    {
+      "title": "三方ヶ原の戦い",
+      "participants": 10,
+      "groups": 2,
+      "located": 2,
+      "unlocated": 0,
+      "sources": [
+        "mikatagaharaArchive",
+        "atlasRelief",
+        "deployment-record-05"
+      ]
+    },
+    {
+      "title": "本能寺の変",
+      "participants": 7,
+      "groups": 3,
+      "located": 2,
+      "unlocated": 1,
+      "sources": [
+        "honnojiOldSite",
+        "atlasRelief",
+        "codhSites",
+        "deployment-record-06"
+      ]
+    },
+    {
+      "title": "山崎の戦い",
+      "participants": 10,
+      "groups": 2,
+      "located": 2,
+      "unlocated": 0,
+      "sources": [
+        "yamazaki",
+        "himeji",
+        "atlasRelief",
+        "codhSites",
+        "deployment-record-07"
+      ]
+    },
+    {
+      "title": "賤ヶ岳の戦い",
+      "participants": 8,
+      "groups": 6,
+      "located": 6,
+      "unlocated": 0,
+      "sources": [
+        "atlasRelief",
+        "shizugatakeDeployment",
+        "deployment-record-08"
+      ]
+    },
+    {
+      "title": "小牧・長久手の戦い",
+      "participants": 9,
+      "groups": 6,
+      "located": 6,
+      "unlocated": 0,
+      "sources": [
+        "atlasRelief",
+        "codhSites",
+        "nagakuteDeployment",
+        "deployment-record-09"
+      ]
+    },
+    {
+      "title": "耳川の戦い",
+      "participants": 8,
+      "groups": 3,
+      "located": 2,
+      "unlocated": 1,
+      "sources": [
+        "atlasRelief",
+        "codhSites",
+        "deployment-record-10"
+      ]
+    },
+    {
+      "title": "沖田畷の戦い",
+      "participants": 6,
+      "groups": 3,
+      "located": 3,
+      "unlocated": 0,
+      "sources": [
+        "atlasRelief",
+        "okitanawateDeployment",
+        "deployment-record-11"
+      ]
+    },
+    {
+      "title": "第一次上田合戦",
+      "participants": 5,
+      "groups": 3,
+      "located": 3,
+      "unlocated": 0,
+      "sources": [
+        "atlasRelief",
+        "codhSites",
+        "ueda",
+        "deployment-record-12"
+      ]
+    },
+    {
+      "title": "摺上原の戦い",
+      "participants": 7,
+      "groups": 2,
+      "located": 2,
+      "unlocated": 0,
+      "sources": [
+        "atlasRelief",
+        "codhSites",
+        "deployment-record-13"
+      ]
+    },
+    {
+      "title": "小田原征伐",
+      "participants": 7,
+      "groups": 4,
+      "located": 3,
+      "unlocated": 1,
+      "sources": [
+        "atlasRelief",
+        "odawara1590",
+        "deployment-record-14"
+      ]
+    },
+    {
+      "title": "大坂夏の陣",
+      "participants": 10,
+      "groups": 6,
+      "located": 6,
+      "unlocated": 0,
+      "sources": [
+        "atlasRelief",
+        "codhSites",
+        "osakaMuseum",
+        "osakaMap",
+        "deployment-record-15"
+      ]
+    },
+    {
+      "title": "大坂冬の陣",
+      "participants": 17,
+      "groups": 8,
+      "located": 7,
+      "unlocated": 1,
+      "sources": [
+        "osakaMuseum",
+        "osakaStructure",
+        "osakaArchive",
+        "osakaMap",
+        "osakaHonors",
+        "osakaReference",
+        "atlasRelief",
+        "codhSites",
+        "deployment-record-16"
+      ]
+    },
+    {
+      "title": "伏見城の戦い",
+      "participants": 11,
+      "groups": 2,
+      "located": 1,
+      "unlocated": 1,
+      "sources": [
+        "fushimiConstruction",
+        "fushimiExcavation",
+        "fushimiEstate",
+        "fushimiCity",
+        "fushimiNaito",
+        "fushimiIetada",
+        "fushimiDiary",
+        "fushimiLetter",
+        "fushimiUdono",
+        "fushimiSano",
+        "atlasRelief",
+        "deployment-record-17"
+      ]
+    },
+    {
+      "title": "大津城の戦い",
+      "participants": 3,
+      "groups": 2,
+      "located": 1,
+      "unlocated": 1,
+      "sources": [
+        "otsu",
+        "campaignRoster",
+        "otsuTime",
+        "atlasRelief",
+        "codhSites",
+        "deployment-record-18"
+      ]
+    },
+    {
+      "title": "第二次上田合戦",
+      "participants": 6,
+      "groups": 2,
+      "located": 1,
+      "unlocated": 1,
+      "sources": [
+        "ueda",
+        "campaignRoster",
+        "uedaShape",
+        "atlasRelief",
+        "codhSites",
+        "deployment-record-19"
+      ]
+    },
+    {
+      "title": "田辺城の戦い",
+      "participants": 5,
+      "groups": 2,
+      "located": 1,
+      "unlocated": 1,
+      "sources": [
+        "tanabe",
+        "tanabeShape",
+        "campaignRoster",
+        "tanabeDates",
+        "atlasRelief"
+      ]
+    },
+    {
+      "title": "長谷堂城の戦い",
+      "participants": 2,
+      "groups": 2,
+      "located": 1,
+      "unlocated": 1,
+      "sources": [
+        "hasedo",
+        "hasedoTime",
+        "hasedoMuseum",
+        "hasedoTerrain",
+        "atlasRelief",
+        "codhSites",
+        "deployment-record-21"
+      ]
+    },
+    {
+      "title": "高遠城の戦い",
+      "participants": 2,
+      "groups": 2,
+      "located": 1,
+      "unlocated": 1,
+      "sources": [
+        "takato",
+        "atlasRelief",
+        "codhSites"
+      ]
+    },
+    {
+      "title": "長尾景虎の関東出兵",
+      "participants": 2,
+      "groups": 2,
+      "located": 2,
+      "unlocated": 0,
+      "sources": [
+        "extraNumata",
+        "atlasRelief",
+        "deployment-record-79"
+      ]
+    },
+    {
+      "title": "小田原城の戦い",
+      "participants": 2,
+      "groups": 2,
+      "located": 1,
+      "unlocated": 1,
+      "sources": [
+        "odawara1561",
+        "atlasRelief",
+        "deployment-record-23"
+      ]
+    },
+    {
+      "title": "牛久保城攻め",
+      "participants": 2,
+      "groups": 2,
+      "located": 1,
+      "unlocated": 1,
+      "sources": [
+        "eventUshikubo",
+        "atlasRelief"
+      ]
+    },
+    {
+      "title": "森部の戦い",
+      "participants": 3,
+      "groups": 2,
+      "located": 2,
+      "unlocated": 0,
+      "sources": [
+        "moribeSite",
+        "atlasRelief",
+        "deployment-record-24"
+      ]
+    },
+    {
+      "title": "第二次国府台合戦",
+      "participants": 2,
+      "groups": 2,
+      "located": 1,
+      "unlocated": 1,
+      "sources": [
+        "konodaiSite",
+        "atlasRelief",
+        "deployment-record-25"
+      ]
+    },
+    {
+      "title": "三河平定",
+      "participants": 3,
+      "groups": 2,
+      "located": 2,
+      "unlocated": 0,
+      "sources": [
+        "eventYoshida",
+        "atlasRelief"
+      ]
+    },
+    {
+      "title": "永禄の変",
+      "participants": 6,
+      "groups": 2,
+      "located": 1,
+      "unlocated": 1,
+      "sources": [
+        "eirokuStudy",
+        "atlasRelief",
+        "deployment-record-26"
+      ]
+    },
+    {
+      "title": "箕輪城落城",
+      "participants": 2,
+      "groups": 2,
+      "located": 1,
+      "unlocated": 1,
+      "sources": [
+        "minowaSite",
+        "atlasRelief",
+        "codhSites",
+        "deployment-record-27"
+      ]
+    },
+    {
+      "title": "月山富田城開城",
+      "participants": 2,
+      "groups": 2,
+      "located": 1,
+      "unlocated": 1,
+      "sources": [
+        "gassanSite",
+        "atlasRelief",
+        "codhSites",
+        "deployment-record-28"
+      ]
+    },
+    {
+      "title": "休松の戦い",
+      "participants": 2,
+      "groups": 2,
+      "located": 1,
+      "unlocated": 1,
+      "sources": [
+        "atlasRelief",
+        "yasumimatsuDeployment",
+        "deployment-record-29"
+      ]
+    },
+    {
+      "title": "稲葉山城の戦い",
+      "participants": 2,
+      "groups": 2,
+      "located": 1,
+      "unlocated": 1,
+      "sources": [
+        "atlasRelief",
+        "codhSites",
+        "deployment-record-30"
+      ]
+    },
+    {
+      "title": "信長上洛",
+      "participants": 4,
+      "groups": 3,
+      "located": 2,
+      "unlocated": 1,
+      "sources": [
+        "extraKannonji",
+        "atlasRelief",
+        "deployment-record-80"
+      ]
+    },
+    {
+      "title": "掛川城開城",
+      "participants": 3,
+      "groups": 2,
+      "located": 1,
+      "unlocated": 1,
+      "sources": [
+        "eventKakegawa",
+        "atlasRelief",
+        "codhSites"
+      ]
+    },
+    {
+      "title": "大河内城の戦い",
+      "participants": 3,
+      "groups": 2,
+      "located": 1,
+      "unlocated": 1,
+      "sources": [
+        "okawachi",
+        "okawachiSite",
+        "tamaruSuccession",
+        "atlasRelief",
+        "codhSites",
+        "deployment-record-31"
+      ]
+    },
+    {
+      "title": "三増峠の戦い",
+      "participants": 3,
+      "groups": 2,
+      "located": 2,
+      "unlocated": 0,
+      "sources": [
+        "mimaseSite",
+        "atlasRelief",
+        "deployment-record-32"
+      ]
+    },
+    {
+      "title": "手這坂の戦い",
+      "participants": 2,
+      "groups": 2,
+      "located": 2,
+      "unlocated": 0,
+      "sources": [
+        "eventTebai",
+        "atlasRelief"
+      ]
+    },
+    {
+      "title": "金ヶ崎の退き口",
+      "participants": 4,
+      "groups": 3,
+      "located": 1,
+      "unlocated": 2,
+      "sources": [
+        "extraKanegasaki",
+        "atlasRelief",
+        "deployment-record-81"
+      ]
+    },
+    {
+      "title": "石山合戦はじまる",
+      "participants": 2,
+      "groups": 2,
+      "located": 2,
+      "unlocated": 0,
+      "sources": [
+        "eventIshiyama",
+        "atlasRelief"
+      ]
+    },
+    {
+      "title": "木崎原の戦い",
+      "participants": 2,
+      "groups": 2,
+      "located": 2,
+      "unlocated": 0,
+      "sources": [
+        "kizakiSite",
+        "atlasRelief",
+        "deployment-record-33"
+      ]
+    },
+    {
+      "title": "朝倉氏滅亡",
+      "participants": 2,
+      "groups": 2,
+      "located": 1,
+      "unlocated": 1,
+      "sources": [
+        "extraAsakura",
+        "atlasRelief",
+        "deployment-record-82"
+      ]
+    },
+    {
+      "title": "小谷城落城",
+      "participants": 2,
+      "groups": 2,
+      "located": 1,
+      "unlocated": 1,
+      "sources": [
+        "odaniSite",
+        "atlasRelief",
+        "codhSites",
+        "deployment-record-34"
+      ]
+    },
+    {
+      "title": "長島一向一揆の平定",
+      "participants": 2,
+      "groups": 2,
+      "located": 1,
+      "unlocated": 1,
+      "sources": [
+        "atlasRelief",
+        "deployment-record-35"
+      ]
+    },
+    {
+      "title": "備中兵乱",
+      "participants": 2,
+      "groups": 2,
+      "located": 2,
+      "unlocated": 0,
+      "sources": [
+        "extraBichu",
+        "atlasRelief",
+        "deployment-record-83"
+      ]
+    },
+    {
+      "title": "四万十川の戦い",
+      "participants": 2,
+      "groups": 2,
+      "located": 2,
+      "unlocated": 0,
+      "sources": [
+        "atlasRelief",
+        "shimantoDeployment",
+        "deployment-record-36"
+      ]
+    },
+    {
+      "title": "天王寺の戦い",
+      "participants": 2,
+      "groups": 2,
+      "located": 1,
+      "unlocated": 1,
+      "sources": [
+        "atlasRelief",
+        "deployment-record-37"
+      ]
+    },
+    {
+      "title": "第一次木津川口の戦い",
+      "participants": 2,
+      "groups": 2,
+      "located": 2,
+      "unlocated": 0,
+      "sources": [
+        "eventKizugawa",
+        "atlasRelief"
+      ]
+    },
+    {
+      "title": "七尾城の戦い",
+      "participants": 2,
+      "groups": 2,
+      "located": 1,
+      "unlocated": 1,
+      "sources": [
+        "nanaoSite",
+        "atlasRelief",
+        "codhSites",
+        "deployment-record-38"
+      ]
+    },
+    {
+      "title": "手取川の戦い",
+      "participants": 2,
+      "groups": 2,
+      "located": 2,
+      "unlocated": 0,
+      "sources": [
+        "atlasRelief",
+        "deployment-record-39"
+      ]
+    },
+    {
+      "title": "信貴山城の戦い",
+      "participants": 2,
+      "groups": 2,
+      "located": 1,
+      "unlocated": 1,
+      "sources": [
+        "shigisan",
+        "atlasRelief",
+        "codhSites",
+        "deployment-record-40"
+      ]
+    },
+    {
+      "title": "中国攻め",
+      "participants": 2,
+      "groups": 2,
+      "located": 1,
+      "unlocated": 1,
+      "sources": [
+        "eventHarima",
+        "atlasRelief"
+      ]
+    },
+    {
+      "title": "御館の乱",
+      "participants": 2,
+      "groups": 2,
+      "located": 2,
+      "unlocated": 0,
+      "sources": [
+        "extraOtate",
+        "atlasRelief",
+        "deployment-record-84"
+      ]
+    },
+    {
+      "title": "上月城の戦い",
+      "participants": 4,
+      "groups": 2,
+      "located": 1,
+      "unlocated": 1,
+      "sources": [
+        "atlasRelief",
+        "codhSites",
+        "deployment-record-41"
+      ]
+    },
+    {
+      "title": "第二次木津川口の戦い",
+      "participants": 2,
+      "groups": 2,
+      "located": 2,
+      "unlocated": 0,
+      "sources": [
+        "eventKizugawa",
+        "atlasRelief"
+      ]
+    },
+    {
+      "title": "丹波・丹後平定",
+      "participants": 4,
+      "groups": 2,
+      "located": 2,
+      "unlocated": 0,
+      "sources": [
+        "eventTanba",
+        "atlasRelief"
+      ]
+    },
+    {
+      "title": "有岡城の戦い",
+      "participants": 2,
+      "groups": 2,
+      "located": 1,
+      "unlocated": 1,
+      "sources": [
+        "ariokaSite",
+        "atlasRelief",
+        "codhSites",
+        "deployment-record-42"
+      ]
+    },
+    {
+      "title": "三木の干殺し",
+      "participants": 5,
+      "groups": 2,
+      "located": 1,
+      "unlocated": 1,
+      "sources": [
+        "extraMiki",
+        "atlasRelief",
+        "deployment-record-85"
+      ]
+    },
+    {
+      "title": "高天神城の戦い",
+      "participants": 2,
+      "groups": 2,
+      "located": 1,
+      "unlocated": 1,
+      "sources": [
+        "takatenjinSite",
+        "atlasRelief",
+        "codhSites",
+        "deployment-record-43"
+      ]
+    },
+    {
+      "title": "天正伊賀の乱",
+      "participants": 2,
+      "groups": 2,
+      "located": 1,
+      "unlocated": 1,
+      "sources": [
+        "extraIga",
+        "atlasRelief",
+        "deployment-record-86"
+      ]
+    },
+    {
+      "title": "鳥取の渇え殺し",
+      "participants": 2,
+      "groups": 2,
+      "located": 2,
+      "unlocated": 0,
+      "sources": [
+        "extraTottori",
+        "atlasRelief",
+        "deployment-record-87",
+        "tottoriChronology"
+      ]
+    },
+    {
+      "title": "甲州征伐",
+      "participants": 2,
+      "groups": 2,
+      "located": 2,
+      "unlocated": 0,
+      "sources": [
+        "atlasRelief",
+        "takato",
+        "deployment-record-44"
+      ]
+    },
+    {
+      "title": "備中高松城の水攻め",
+      "participants": 2,
+      "groups": 2,
+      "located": 1,
+      "unlocated": 1,
+      "sources": [
+        "takamatsuSite",
+        "atlasRelief",
+        "codhSites",
+        "deployment-record-45"
+      ]
+    },
+    {
+      "title": "神流川の戦い",
+      "participants": 2,
+      "groups": 2,
+      "located": 2,
+      "unlocated": 0,
+      "sources": [
+        "atlasRelief",
+        "deployment-record-46"
+      ]
+    },
+    {
+      "title": "若神子の対陣",
+      "participants": 2,
+      "groups": 2,
+      "located": 2,
+      "unlocated": 0,
+      "sources": [
+        "extraWakamiko",
+        "atlasRelief",
+        "deployment-record-88"
+      ]
+    },
+    {
+      "title": "中富川の戦い",
+      "participants": 2,
+      "groups": 2,
+      "located": 2,
+      "unlocated": 0,
+      "sources": [
+        "atlasRelief",
+        "deployment-record-47"
+      ]
+    },
+    {
+      "title": "黒駒合戦",
+      "participants": 2,
+      "groups": 2,
+      "located": 2,
+      "unlocated": 0,
+      "sources": [
+        "atlasRelief",
+        "deployment-record-48"
+      ]
+    },
+    {
+      "title": "岐阜城の開城",
+      "participants": 2,
+      "groups": 2,
+      "located": 1,
+      "unlocated": 1,
+      "sources": [
+        "eventGifu",
+        "atlasRelief",
+        "codhSites"
+      ]
+    },
+    {
+      "title": "松ヶ島城の戦い",
+      "participants": 2,
+      "groups": 2,
+      "located": 1,
+      "unlocated": 1,
+      "sources": [
+        "eventMatsugashima",
+        "atlasRelief",
+        "codhSites"
+      ]
+    },
+    {
+      "title": "紀州征伐",
+      "participants": 3,
+      "groups": 3,
+      "located": 3,
+      "unlocated": 0,
+      "sources": [
+        "atlasRelief",
+        "deployment-record-49"
+      ]
+    },
+    {
+      "title": "宇喜多勢の讃岐攻め",
+      "participants": 2,
+      "groups": 2,
+      "located": 1,
+      "unlocated": 1,
+      "sources": [
+        "atlasRelief",
+        "deployment-record-50"
+      ]
+    },
+    {
+      "title": "小早川隆景の伊予攻め",
+      "participants": 2,
+      "groups": 2,
+      "located": 1,
+      "unlocated": 1,
+      "sources": [
+        "atlasRelief",
+        "deployment-record-51"
+      ]
+    },
+    {
+      "title": "四国攻め",
+      "participants": 2,
+      "groups": 2,
+      "located": 2,
+      "unlocated": 0,
+      "sources": [
+        "atlasRelief",
+        "deployment-record-52"
+      ]
+    },
+    {
+      "title": "富山の役",
+      "participants": 2,
+      "groups": 2,
+      "located": 1,
+      "unlocated": 1,
+      "sources": [
+        "eventToyama",
+        "atlasRelief"
+      ]
+    },
+    {
+      "title": "人取橋の戦い",
+      "participants": 2,
+      "groups": 2,
+      "located": 2,
+      "unlocated": 0,
+      "sources": [
+        "hitotoribashiSite",
+        "atlasRelief",
+        "codhSites",
+        "deployment-record-53"
+      ]
+    },
+    {
+      "title": "岩屋城の戦い",
+      "participants": 2,
+      "groups": 2,
+      "located": 1,
+      "unlocated": 1,
+      "sources": [
+        "iwaya",
+        "iwayaVariant",
+        "atlasRelief",
+        "codhSites",
+        "deployment-record-54"
+      ]
+    },
+    {
+      "title": "戸次川の戦い",
+      "participants": 5,
+      "groups": 2,
+      "located": 2,
+      "unlocated": 0,
+      "sources": [
+        "eventHetsugi",
+        "atlasRelief"
+      ]
+    },
+    {
+      "title": "九州平定",
+      "participants": 3,
+      "groups": 2,
+      "located": 2,
+      "unlocated": 0,
+      "sources": [
+        "atlasRelief",
+        "deployment-record-55"
+      ]
+    },
+    {
+      "title": "根白坂の戦い",
+      "participants": 2,
+      "groups": 2,
+      "located": 1,
+      "unlocated": 1,
+      "sources": [
+        "atlasRelief",
+        "deployment-record-56"
+      ]
+    },
+    {
+      "title": "新発田城落城",
+      "participants": 2,
+      "groups": 2,
+      "located": 1,
+      "unlocated": 1,
+      "sources": [
+        "atlasRelief",
+        "codhSites",
+        "deployment-record-57",
+        "shibataChronology"
+      ]
+    },
+    {
+      "title": "韮山城の戦い",
+      "participants": 2,
+      "groups": 2,
+      "located": 1,
+      "unlocated": 1,
+      "sources": [
+        "atlasRelief",
+        "codhSites",
+        "deployment-record-58",
+        "nirayamaChronology"
+      ]
+    },
+    {
+      "title": "北国勢の上野攻め",
+      "participants": 3,
+      "groups": 2,
+      "located": 2,
+      "unlocated": 0,
+      "sources": [
+        "atlasRelief",
+        "deployment-record-59"
+      ]
+    },
+    {
+      "title": "鉢形城の開城",
+      "participants": 3,
+      "groups": 2,
+      "located": 1,
+      "unlocated": 1,
+      "sources": [
+        "atlasRelief",
+        "codhSites",
+        "deployment-record-60",
+        "hachigataChronology"
+      ]
+    },
+    {
+      "title": "小田原開城",
+      "participants": 4,
+      "groups": 2,
+      "located": 1,
+      "unlocated": 1,
+      "sources": [
+        "odawara1590",
+        "atlasRelief"
+      ]
+    },
+    {
+      "title": "文禄の役",
+      "participants": 3,
+      "groups": 2,
+      "located": 1,
+      "unlocated": 1,
+      "sources": [
+        "krBusan",
+        "krDongnae",
+        "atlasRelief",
+        "deployment-record-61"
+      ]
+    },
+    {
+      "title": "尚州の戦い",
+      "participants": 2,
+      "groups": 2,
+      "located": 2,
+      "unlocated": 0,
+      "sources": [
+        "krSangjuBattle",
+        "krSangjuVariant",
+        "atlasRelief",
+        "deployment-record-62"
+      ]
+    },
+    {
+      "title": "忠州の戦い",
+      "participants": 2,
+      "groups": 2,
+      "located": 2,
+      "unlocated": 0,
+      "sources": [
+        "atlasRelief",
+        "krChungju",
+        "deployment-record-63"
+      ]
+    },
+    {
+      "title": "玉浦海戦",
+      "participants": 2,
+      "groups": 2,
+      "located": 2,
+      "unlocated": 0,
+      "sources": [
+        "eventOkpo",
+        "atlasRelief"
+      ]
+    },
+    {
+      "title": "閑山島海戦",
+      "participants": 4,
+      "groups": 2,
+      "located": 2,
+      "unlocated": 0,
+      "sources": [
+        "extraHansan",
+        "atlasRelief",
+        "deployment-record-89"
+      ]
+    },
+    {
+      "title": "第一次晋州城の戦い",
+      "participants": 3,
+      "groups": 2,
+      "located": 1,
+      "unlocated": 1,
+      "sources": [
+        "atlasRelief",
+        "deployment-record-64"
+      ]
+    },
+    {
+      "title": "平壌の戦い",
+      "participants": 3,
+      "groups": 2,
+      "located": 1,
+      "unlocated": 1,
+      "sources": [
+        "atlasRelief",
+        "deployment-record-65"
+      ]
+    },
+    {
+      "title": "碧蹄館の戦い",
+      "participants": 5,
+      "groups": 2,
+      "located": 2,
+      "unlocated": 0,
+      "sources": [
+        "atlasRelief",
+        "krByeokje",
+        "deployment-record-66"
+      ]
+    },
+    {
+      "title": "幸州山城の戦い",
+      "participants": 7,
+      "groups": 2,
+      "located": 1,
+      "unlocated": 1,
+      "sources": [
+        "krHaengju",
+        "krHaengjuBattle",
+        "atlasRelief",
+        "deployment-record-67"
+      ]
+    },
+    {
+      "title": "第二次晋州城の戦い",
+      "participants": 4,
+      "groups": 2,
+      "located": 1,
+      "unlocated": 1,
+      "sources": [
+        "atlasRelief",
+        "deployment-record-68"
+      ]
+    },
+    {
+      "title": "慶長の役・漆川梁海戦",
+      "participants": 7,
+      "groups": 2,
+      "located": 1,
+      "unlocated": 1,
+      "sources": [
+        "atlasRelief",
+        "krChilcheon",
+        "deployment-record-69"
+      ]
+    },
+    {
+      "title": "南原城の戦い",
+      "participants": 14,
+      "groups": 2,
+      "located": 1,
+      "unlocated": 1,
+      "sources": [
+        "atlasRelief",
+        "krNamwon",
+        "deployment-record-70"
+      ]
+    },
+    {
+      "title": "鳴梁海戦",
+      "participants": 2,
+      "groups": 2,
+      "located": 2,
+      "unlocated": 0,
+      "sources": [
+        "extraMyeongnyang",
+        "atlasRelief",
+        "deployment-record-90"
+      ]
+    },
+    {
+      "title": "蔚山城の戦い",
+      "participants": 4,
+      "groups": 2,
+      "located": 1,
+      "unlocated": 1,
+      "sources": [
+        "krUlsan",
+        "krUlsanBattle",
+        "atlasRelief",
+        "deployment-record-71"
+      ]
+    },
+    {
+      "title": "露梁海戦",
+      "participants": 7,
+      "groups": 3,
+      "located": 2,
+      "unlocated": 1,
+      "sources": [
+        "extraNoryang",
+        "atlasRelief",
+        "deployment-record-91"
+      ]
+    },
+    {
+      "title": "会津征伐",
+      "participants": 2,
+      "groups": 2,
+      "located": 1,
+      "unlocated": 1,
+      "sources": [
+        "eventAizu",
+        "atlasRelief",
+        "aizuTurn"
+      ]
+    },
+    {
+      "title": "浅井畷の戦い",
+      "participants": 2,
+      "groups": 2,
+      "located": 2,
+      "unlocated": 0,
+      "sources": [
+        "atlasRelief",
+        "deployment-record-72"
+      ]
+    },
+    {
+      "title": "岐阜城の戦い",
+      "participants": 3,
+      "groups": 2,
+      "located": 1,
+      "unlocated": 1,
+      "sources": [
+        "eventGifu",
+        "atlasRelief",
+        "codhSites"
+      ]
+    },
+    {
+      "title": "安濃津城の戦い",
+      "participants": 2,
+      "groups": 2,
+      "located": 1,
+      "unlocated": 1,
+      "sources": [
+        "atlasRelief",
+        "codhSites",
+        "anotsuDeployment",
+        "deployment-record-73"
+      ]
+    },
+    {
+      "title": "石垣原の戦い",
+      "participants": 5,
+      "groups": 3,
+      "located": 2,
+      "unlocated": 1,
+      "sources": [
+        "atlasRelief",
+        "ishigakibaruDeployment",
+        "deployment-record-74"
+      ]
+    },
+    {
+      "title": "佐和山城落城",
+      "participants": 3,
+      "groups": 2,
+      "located": 1,
+      "unlocated": 1,
+      "sources": [
+        "atlasRelief",
+        "codhSites",
+        "sawayamaDeployment",
+        "deployment-record-75"
+      ]
+    },
+    {
+      "title": "木津川口の戦い",
+      "participants": 2,
+      "groups": 2,
+      "located": 2,
+      "unlocated": 0,
+      "sources": [
+        "osakaMuseum",
+        "atlasRelief"
+      ]
+    },
+    {
+      "title": "今福・鴫野の戦い",
+      "participants": 6,
+      "groups": 3,
+      "located": 3,
+      "unlocated": 0,
+      "sources": [
+        "atlasRelief",
+        "osakaMuseum",
+        "deployment-record-76"
+      ]
+    },
+    {
+      "title": "真田丸の戦い",
+      "participants": 4,
+      "groups": 2,
+      "located": 1,
+      "unlocated": 1,
+      "sources": [
+        "osakaMuseum",
+        "atlasRelief",
+        "codhSites"
+      ]
+    },
+    {
+      "title": "道明寺の戦い",
+      "participants": 5,
+      "groups": 3,
+      "located": 3,
+      "unlocated": 0,
+      "sources": [
+        "atlasRelief",
+        "codhSites",
+        "osakaMuseum",
+        "deployment-record-77"
+      ]
+    },
+    {
+      "title": "八尾・若江の戦い",
+      "participants": 4,
+      "groups": 4,
+      "located": 4,
+      "unlocated": 0,
+      "sources": [
+        "atlasRelief",
+        "osakaMuseum",
+        "deployment-record-78"
+      ]
+    }
+  ],
+  "note": "表示網羅性の検査。全隊の位置を史料で確定したとの意味ではない。"
+}

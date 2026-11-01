@@ -1,0 +1,1 @@
+print(pg.evaluate("""(()=>{G.newGame('s1560','__none');const S=G.S();const e=G.evT({d:[1569,1,1]});while(S.t<e){G.day();S.evQ=[];}const g=S.gens.find(x=>x.n==='六角義治');const h=S.gens.find(x=>x.n==='山中幸盛');return JSON.stringify([g&&[g.clan,g.ronin,g.loc,g.dead],h&&[h.clan,h.ronin,h.loc,h.unit],TK.HIST.filter(e=>e.k==='leave').map(e=>e.d.join('-'))]);})()"""))

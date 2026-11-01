@@ -1,0 +1,22 @@
+{
+  "id": "hyuga-1586-military-corridor",
+  "entity": "road:日向道",
+  "predicate": "military-corridor",
+  "value": "1586年に始まる島津氏の豊後侵攻では、宇目地区を通る日向道が行軍路となり、沿道で戦闘が行われた。",
+  "validYears": [
+    1586,
+    1586
+  ],
+  "datePrecision": "year",
+  "source": "hyugaSaiki2024",
+  "sourceUrl": "https://www.city.saiki.oita.jp/kiji0039059/3_9059_up_0ak8ykc4.pdf",
+  "locator": "印刷78頁、第2段落",
+  "gameBindings": [
+    "TK.ROADS:日向街道",
+    "data/inputs/hyuga-road-review/selected-route-segment.json"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-02",
+  "uncertainty": "回廊の歴史的利用を確認した命題。現状の沿岸比較線が当時の全線と一致する主張ではない。"
+}

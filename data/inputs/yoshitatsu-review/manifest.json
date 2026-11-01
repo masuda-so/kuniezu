@@ -1,0 +1,28 @@
+{
+  "checked": "2026-11-02",
+  "name": "斎藤義龍",
+  "original": "game/portraits/斎藤義龍.jpg",
+  "sha256": "4a14419275e7e26db5d4c94e9b1591d71f535ce604fc51e0cd404ef7200b685f",
+  "size": [
+    1113,
+    2282
+  ],
+  "crop": [
+    325,
+    1000,
+    410,
+    410
+  ],
+  "assetSource": "https://upload.wikimedia.org/wikipedia/commons/4/46/Sait%C5%8D_Yoshitatsu.jpg",
+  "descriptionSource": "https://commons.wikimedia.org/wiki/File:Saitō_Yoshitatsu.jpg",
+  "identitySource": "https://www.pref.gifu.lg.jp/page/354743.html",
+  "identity": "常在寺所有、岐阜市歴史博物館寄託の斎藤義竜像。生前の写実写真とみなさず、追福のための肖像という県の説明を保持。",
+  "diagnosis": "旧スプライトは顔の上下左右に引き延ばし領域があり不自然な縞が表示される。正方の実画素範囲を原画から直接切り出す。",
+  "processing": "原画像は未加工保持。表示時canvasの正方cropのみ。生成・顔の補作なし。",
+  "before": {
+    "backup": "/var/folders/p6/_cz1nnqd7ksfd45n2t859zvw0000gn/T/kuniezu-yoshitatsu-j73x1n5z",
+    "file": "game/portrait-layout.js",
+    "sha256": "df9f51ecb5724d9306423e28f6a882d9ee0d9096aaf56204d4bfe5df26c53be9"
+  },
+  "verification": "data/verification/yoshitatsu-portrait/result.json"
+}

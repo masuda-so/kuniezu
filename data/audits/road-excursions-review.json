@@ -1,0 +1,2815 @@
+{
+  "scope": "全85描画街道を点検。近現代参考線の完全往復と個別確認した10閉路だけを整理。史実上の全支線の有無を確定しない。",
+  "summary": {
+    "roads": 85,
+    "correctedRoads": 61,
+    "excursions": 203,
+    "removedKm": 180.34428454114817
+  },
+  "rows": [
+    {
+      "name": "東海道",
+      "modernReference": true,
+      "removedVertices": 74,
+      "excursions": [
+        {
+          "first": 270,
+          "last": 280,
+          "lengthKm": 0.4615974008826811,
+          "returnRatio": 1,
+          "reviewed": false,
+          "junction": [
+            137.220907,
+            34.913458
+          ]
+        },
+        {
+          "first": 449,
+          "last": 455,
+          "lengthKm": 0.18389738176767878,
+          "returnRatio": 1,
+          "reviewed": false,
+          "junction": [
+            137.389728,
+            34.769394
+          ]
+        },
+        {
+          "first": 753,
+          "last": 761,
+          "lengthKm": 0.4328976338792927,
+          "returnRatio": 1,
+          "reviewed": false,
+          "junction": [
+            137.92515,
+            34.751445
+          ]
+        },
+        {
+          "first": 827,
+          "last": 833,
+          "lengthKm": 0.2812822345341601,
+          "returnRatio": 1,
+          "reviewed": false,
+          "junction": [
+            138.060036,
+            34.790931
+          ]
+        },
+        {
+          "first": 966,
+          "last": 968,
+          "lengthKm": 0.1045491618205574,
+          "returnRatio": 1,
+          "reviewed": false,
+          "junction": [
+            138.17503,
+            34.834522
+          ]
+        },
+        {
+          "first": 1014,
+          "last": 1018,
+          "lengthKm": 0.2977625114707507,
+          "returnRatio": 1,
+          "reviewed": false,
+          "junction": [
+            138.289219,
+            34.909094
+          ]
+        },
+        {
+          "first": 1289,
+          "last": 1293,
+          "lengthKm": 0.29448380811345487,
+          "returnRatio": 1,
+          "reviewed": false,
+          "junction": [
+            138.519781,
+            35.050906
+          ]
+        },
+        {
+          "first": 1367,
+          "last": 1371,
+          "lengthKm": 0.23646909951202133,
+          "returnRatio": 1,
+          "reviewed": false,
+          "junction": [
+            138.563417,
+            35.105468
+          ]
+        },
+        {
+          "first": 1577,
+          "last": 1581,
+          "lengthKm": 0.12857769464869762,
+          "returnRatio": 1,
+          "reviewed": false,
+          "junction": [
+            138.960646,
+            35.138505
+          ]
+        },
+        {
+          "first": 2021,
+          "last": 2031,
+          "lengthKm": 0.4309994084466098,
+          "returnRatio": 1,
+          "reviewed": false,
+          "junction": [
+            139.016575,
+            35.189742
+          ]
+        },
+        {
+          "first": 2312,
+          "last": 2316,
+          "lengthKm": 0.06412308599897187,
+          "returnRatio": 1,
+          "reviewed": false,
+          "junction": [
+            139.049332,
+            35.225591
+          ]
+        },
+        {
+          "first": 2397,
+          "last": 2407,
+          "lengthKm": 0.754129439922167,
+          "returnRatio": 1,
+          "reviewed": false,
+          "junction": [
+            139.09098,
+            35.229879
+          ]
+        },
+        {
+          "first": 2511,
+          "last": 2513,
+          "lengthKm": 0.05528047658754076,
+          "returnRatio": 1,
+          "reviewed": false,
+          "junction": [
+            139.129655,
+            35.234885
+          ]
+        }
+      ]
+    },
+    {
+      "name": "東山道",
+      "modernReference": true,
+      "removedVertices": 343,
+      "excursions": [
+        {
+          "first": 73,
+          "last": 83,
+          "lengthKm": 1.0323142303531156,
+          "returnRatio": 1,
+          "reviewed": false,
+          "junction": [
+            136.046531,
+            35.070001
+          ]
+        },
+        {
+          "first": 185,
+          "last": 189,
+          "lengthKm": 0.35098277426858715,
+          "returnRatio": 1,
+          "reviewed": false,
+          "junction": [
+            136.228323,
+            35.190078
+          ]
+        },
+        {
+          "first": 347,
+          "last": 349,
+          "lengthKm": 0.2304018040838116,
+          "returnRatio": 1,
+          "reviewed": false,
+          "junction": [
+            136.359479,
+            35.311001
+          ]
+        },
+        {
+          "first": 1298,
+          "last": 1300,
+          "lengthKm": 0.09265814677837625,
+          "returnRatio": 1,
+          "reviewed": false,
+          "junction": [
+            137.49965,
+            35.490425
+          ]
+        },
+        {
+          "first": 1590,
+          "last": 1598,
+          "lengthKm": 0.46299282316482504,
+          "returnRatio": 1,
+          "reviewed": false,
+          "junction": [
+            137.597623,
+            35.567638
+          ]
+        },
+        {
+          "first": 2342,
+          "last": 2629,
+          "lengthKm": 16.29013240097703,
+          "returnRatio": 0.5758789344690937,
+          "reviewed": true,
+          "junction": [
+            137.814665,
+            35.908807
+          ]
+        },
+        {
+          "first": 3268,
+          "last": 3270,
+          "lengthKm": 0.1116875700113269,
+          "returnRatio": 1,
+          "reviewed": false,
+          "junction": [
+            138.080563,
+            36.069707
+          ]
+        },
+        {
+          "first": 3989,
+          "last": 3995,
+          "lengthKm": 0.3476322098069886,
+          "returnRatio": 1,
+          "reviewed": false,
+          "junction": [
+            138.360473,
+            36.270811
+          ]
+        },
+        {
+          "first": 4197,
+          "last": 4201,
+          "lengthKm": 0.270908815343887,
+          "returnRatio": 1,
+          "reviewed": false,
+          "junction": [
+            138.60127,
+            36.349501
+          ]
+        },
+        {
+          "first": 4413,
+          "last": 4419,
+          "lengthKm": 0.7996467675616259,
+          "returnRatio": 1,
+          "reviewed": false,
+          "junction": [
+            138.697166,
+            36.362828
+          ]
+        },
+        {
+          "first": 4981,
+          "last": 4991,
+          "lengthKm": 0.7694951494104316,
+          "returnRatio": 1,
+          "reviewed": false,
+          "junction": [
+            138.99907,
+            36.323547
+          ]
+        },
+        {
+          "first": 5090,
+          "last": 5092,
+          "lengthKm": 0.07239002928349692,
+          "returnRatio": 1,
+          "reviewed": false,
+          "junction": [
+            139.329926,
+            36.300324
+          ]
+        }
+      ]
+    },
+    {
+      "name": "鎌倉街道",
+      "modernReference": true,
+      "removedVertices": 8,
+      "excursions": [
+        {
+          "first": 95,
+          "last": 97,
+          "lengthKm": 0.08221776914599133,
+          "returnRatio": 1,
+          "reviewed": false,
+          "junction": [
+            139.480522,
+            35.470028
+          ]
+        },
+        {
+          "first": 453,
+          "last": 455,
+          "lengthKm": 0.2594970689676188,
+          "returnRatio": 1,
+          "reviewed": false,
+          "junction": [
+            139.400908,
+            35.93095
+          ]
+        },
+        {
+          "first": 871,
+          "last": 875,
+          "lengthKm": 0.2037556984804496,
+          "returnRatio": 1,
+          "reviewed": false,
+          "junction": [
+            139.068977,
+            36.259708
+          ]
+        }
+      ]
+    },
+    {
+      "name": "甲州道",
+      "modernReference": true,
+      "removedVertices": 4,
+      "excursions": [
+        {
+          "first": 610,
+          "last": 612,
+          "lengthKm": 0.11076867898427167,
+          "returnRatio": 1,
+          "reviewed": false,
+          "junction": [
+            139.10939,
+            35.629962
+          ]
+        },
+        {
+          "first": 1630,
+          "last": 1632,
+          "lengthKm": 0.09294930082921837,
+          "returnRatio": 1,
+          "reviewed": false,
+          "junction": [
+            138.120624,
+            36.029756
+          ]
+        }
+      ]
+    },
+    {
+      "name": "北陸道",
+      "modernReference": true,
+      "removedVertices": 90,
+      "excursions": [
+        {
+          "first": 129,
+          "last": 131,
+          "lengthKm": 0.10062283175422948,
+          "returnRatio": 1,
+          "reviewed": false,
+          "junction": [
+            135.831778,
+            35.041085
+          ]
+        },
+        {
+          "first": 287,
+          "last": 319,
+          "lengthKm": 1.3906803949262851,
+          "returnRatio": 1,
+          "reviewed": false,
+          "junction": [
+            135.855509,
+            35.078986
+          ]
+        },
+        {
+          "first": 438,
+          "last": 448,
+          "lengthKm": 0.3556444653053177,
+          "returnRatio": 1,
+          "reviewed": false,
+          "junction": [
+            135.882284,
+            35.126486
+          ]
+        },
+        {
+          "first": 989,
+          "last": 995,
+          "lengthKm": 0.7501268336928888,
+          "returnRatio": 1,
+          "reviewed": false,
+          "junction": [
+            136.083116,
+            35.487775
+          ]
+        },
+        {
+          "first": 1290,
+          "last": 1294,
+          "lengthKm": 0.3316194480312902,
+          "returnRatio": 1,
+          "reviewed": false,
+          "junction": [
+            136.075672,
+            35.54571
+          ]
+        },
+        {
+          "first": 1481,
+          "last": 1491,
+          "lengthKm": 0.6188738866674157,
+          "returnRatio": 1,
+          "reviewed": false,
+          "junction": [
+            136.056592,
+            35.607252
+          ]
+        },
+        {
+          "first": 2812,
+          "last": 2814,
+          "lengthKm": 0.3689509192662399,
+          "returnRatio": 1,
+          "reviewed": false,
+          "junction": [
+            136.648801,
+            36.561359
+          ]
+        },
+        {
+          "first": 2952,
+          "last": 2954,
+          "lengthKm": 0.19357040331738062,
+          "returnRatio": 1,
+          "reviewed": false,
+          "junction": [
+            136.869913,
+            36.679126
+          ]
+        },
+        {
+          "first": 3044,
+          "last": 3046,
+          "lengthKm": 0.10265050235136641,
+          "returnRatio": 1,
+          "reviewed": false,
+          "junction": [
+            137.019982,
+            36.739536
+          ]
+        },
+        {
+          "first": 3158,
+          "last": 3160,
+          "lengthKm": 0.12266496773497693,
+          "returnRatio": 1,
+          "reviewed": false,
+          "junction": [
+            137.337257,
+            36.736988
+          ]
+        },
+        {
+          "first": 3199,
+          "last": 3201,
+          "lengthKm": 0.14054139887991823,
+          "returnRatio": 1,
+          "reviewed": false,
+          "junction": [
+            137.428736,
+            36.80565
+          ]
+        },
+        {
+          "first": 3311,
+          "last": 3325,
+          "lengthKm": 1.3417735159117683,
+          "returnRatio": 1,
+          "reviewed": false,
+          "junction": [
+            137.559461,
+            36.886915
+          ]
+        },
+        {
+          "first": 3506,
+          "last": 3508,
+          "lengthKm": 0.08012538298385152,
+          "returnRatio": 1,
+          "reviewed": false,
+          "junction": [
+            137.699045,
+            36.966655
+          ]
+        }
+      ]
+    },
+    {
+      "name": "北国街道（信濃）",
+      "modernReference": true,
+      "removedVertices": 8,
+      "excursions": [
+        {
+          "first": 55,
+          "last": 57,
+          "lengthKm": 0.1443672851433071,
+          "returnRatio": 1,
+          "reviewed": false,
+          "junction": [
+            138.240812,
+            37.100325
+          ]
+        },
+        {
+          "first": 1142,
+          "last": 1148,
+          "lengthKm": 0.2842012759635395,
+          "returnRatio": 1,
+          "reviewed": false,
+          "junction": [
+            138.5499,
+            36.338501
+          ]
+        }
+      ]
+    },
+    {
+      "name": "三国峠道",
+      "modernReference": true,
+      "removedVertices": 4,
+      "excursions": [
+        {
+          "first": 685,
+          "last": 687,
+          "lengthKm": 0.07232044916673885,
+          "returnRatio": 1,
+          "reviewed": false,
+          "junction": [
+            138.867492,
+            36.787496
+          ]
+        },
+        {
+          "first": 1723,
+          "last": 1725,
+          "lengthKm": 0.12451589904037519,
+          "returnRatio": 1,
+          "reviewed": false,
+          "junction": [
+            138.879252,
+            37.06967
+          ]
+        }
+      ]
+    },
+    {
+      "name": "奥州道",
+      "modernReference": true,
+      "removedVertices": 40,
+      "excursions": [
+        {
+          "first": 175,
+          "last": 177,
+          "lengthKm": 0.06451465917133703,
+          "returnRatio": 1,
+          "reviewed": false,
+          "junction": [
+            139.689682,
+            35.950147
+          ]
+        },
+        {
+          "first": 381,
+          "last": 383,
+          "lengthKm": 0.07831399202294165,
+          "returnRatio": 1,
+          "reviewed": false,
+          "junction": [
+            139.750439,
+            36.250073
+          ]
+        },
+        {
+          "first": 1064,
+          "last": 1070,
+          "lengthKm": 0.21974127384328312,
+          "returnRatio": 1,
+          "reviewed": false,
+          "junction": [
+            140.210699,
+            37.130436
+          ]
+        },
+        {
+          "first": 1464,
+          "last": 1468,
+          "lengthKm": 0.07442927118700027,
+          "returnRatio": 1,
+          "reviewed": false,
+          "junction": [
+            140.429907,
+            37.590225
+          ]
+        },
+        {
+          "first": 2065,
+          "last": 2069,
+          "lengthKm": 0.23047759490236785,
+          "returnRatio": 1,
+          "reviewed": false,
+          "junction": [
+            140.868838,
+            38.100202
+          ]
+        },
+        {
+          "first": 2463,
+          "last": 2465,
+          "lengthKm": 0.2671341522598141,
+          "returnRatio": 1,
+          "reviewed": false,
+          "junction": [
+            141.050957,
+            38.598938
+          ]
+        },
+        {
+          "first": 2847,
+          "last": 2849,
+          "lengthKm": 0.35299430099325946,
+          "returnRatio": 1,
+          "reviewed": false,
+          "junction": [
+            141.131753,
+            38.99087
+          ]
+        },
+        {
+          "first": 3212,
+          "last": 3218,
+          "lengthKm": 0.11700932813914733,
+          "returnRatio": 1,
+          "reviewed": false,
+          "junction": [
+            141.150579,
+            39.700038
+          ]
+        },
+        {
+          "first": 3477,
+          "last": 3483,
+          "lengthKm": 0.8363231654748233,
+          "returnRatio": 1,
+          "reviewed": false,
+          "junction": [
+            141.217963,
+            39.964346
+          ]
+        },
+        {
+          "first": 4499,
+          "last": 4505,
+          "lengthKm": 0.669120630189127,
+          "returnRatio": 1,
+          "reviewed": false,
+          "junction": [
+            141.135342,
+            40.846486
+          ]
+        }
+      ]
+    },
+    {
+      "name": "羽州道",
+      "modernReference": true,
+      "removedVertices": 20,
+      "excursions": [
+        {
+          "first": 918,
+          "last": 922,
+          "lengthKm": 0.284092447589245,
+          "returnRatio": 1,
+          "reviewed": false,
+          "junction": [
+            140.3989,
+            38.59911
+          ]
+        },
+        {
+          "first": 3738,
+          "last": 3746,
+          "lengthKm": 0.8144935816236512,
+          "returnRatio": 1,
+          "reviewed": false,
+          "junction": [
+            140.098944,
+            40.053982
+          ]
+        },
+        {
+          "first": 3824,
+          "last": 3830,
+          "lengthKm": 0.2240189039496272,
+          "returnRatio": 1,
+          "reviewed": false,
+          "junction": [
+            140.10059,
+            40.114031
+          ]
+        },
+        {
+          "first": 4769,
+          "last": 4771,
+          "lengthKm": 0.34726089586683884,
+          "returnRatio": 1,
+          "reviewed": false,
+          "junction": [
+            140.619267,
+            40.478544
+          ]
+        }
+      ]
+    },
+    {
+      "name": "山陽道",
+      "modernReference": true,
+      "removedVertices": 66,
+      "excursions": [
+        {
+          "first": 405,
+          "last": 409,
+          "lengthKm": 0.13864957887011542,
+          "returnRatio": 1,
+          "reviewed": false,
+          "junction": [
+            135.34939,
+            34.754698
+          ]
+        },
+        {
+          "first": 1340,
+          "last": 1348,
+          "lengthKm": 0.4771022556170692,
+          "returnRatio": 1,
+          "reviewed": false,
+          "junction": [
+            134.269032,
+            34.792847
+          ]
+        },
+        {
+          "first": 2275,
+          "last": 2281,
+          "lengthKm": 0.1495113495343503,
+          "returnRatio": 1,
+          "reviewed": false,
+          "junction": [
+            133.181644,
+            34.416508
+          ]
+        },
+        {
+          "first": 2434,
+          "last": 2436,
+          "lengthKm": 0.058429602350202,
+          "returnRatio": 1,
+          "reviewed": false,
+          "junction": [
+            133.054856,
+            34.399454
+          ]
+        },
+        {
+          "first": 2620,
+          "last": 2626,
+          "lengthKm": 0.40005594933620614,
+          "returnRatio": 1,
+          "reviewed": false,
+          "junction": [
+            132.903377,
+            34.415046
+          ]
+        },
+        {
+          "first": 3580,
+          "last": 3582,
+          "lengthKm": 0.2671630803396283,
+          "returnRatio": 1,
+          "reviewed": false,
+          "junction": [
+            132.178745,
+            34.1706
+          ]
+        },
+        {
+          "first": 3885,
+          "last": 3899,
+          "lengthKm": 0.6907144339297702,
+          "returnRatio": 1,
+          "reviewed": false,
+          "junction": [
+            132.060081,
+            34.107685
+          ]
+        },
+        {
+          "first": 4046,
+          "last": 4050,
+          "lengthKm": 0.14880141764524524,
+          "returnRatio": 1,
+          "reviewed": false,
+          "junction": [
+            131.950057,
+            34.050955
+          ]
+        },
+        {
+          "first": 4206,
+          "last": 4208,
+          "lengthKm": 0.14877800578528877,
+          "returnRatio": 1,
+          "reviewed": false,
+          "junction": [
+            131.829063,
+            34.064779
+          ]
+        },
+        {
+          "first": 5096,
+          "last": 5104,
+          "lengthKm": 0.5794441205368912,
+          "returnRatio": 1,
+          "reviewed": false,
+          "junction": [
+            131.027825,
+            34.070034
+          ]
+        },
+        {
+          "first": 5166,
+          "last": 5168,
+          "lengthKm": 0.0596637910859954,
+          "returnRatio": 1,
+          "reviewed": false,
+          "junction": [
+            130.98987,
+            34.057031
+          ]
+        },
+        {
+          "first": 5253,
+          "last": 5255,
+          "lengthKm": 0.09525588799670004,
+          "returnRatio": 1,
+          "reviewed": false,
+          "junction": [
+            130.971347,
+            34.02768
+          ]
+        },
+        {
+          "first": 5351,
+          "last": 5357,
+          "lengthKm": 0.29362778233326026,
+          "returnRatio": 1,
+          "reviewed": false,
+          "junction": [
+            130.965172,
+            34.020131
+          ]
+        }
+      ]
+    },
+    {
+      "name": "山陰道",
+      "modernReference": true,
+      "removedVertices": 42,
+      "excursions": [
+        {
+          "first": 1501,
+          "last": 1503,
+          "lengthKm": 0.1450408077243992,
+          "returnRatio": 1,
+          "reviewed": false,
+          "junction": [
+            134.649262,
+            35.420679
+          ]
+        },
+        {
+          "first": 2033,
+          "last": 2035,
+          "lengthKm": 0.06808930768056598,
+          "returnRatio": 1,
+          "reviewed": false,
+          "junction": [
+            134.485243,
+            35.501196
+          ]
+        },
+        {
+          "first": 3088,
+          "last": 3090,
+          "lengthKm": 0.10149837555286467,
+          "returnRatio": 1,
+          "reviewed": false,
+          "junction": [
+            133.820498,
+            35.430202
+          ]
+        },
+        {
+          "first": 3328,
+          "last": 3336,
+          "lengthKm": 3.096029654988911,
+          "returnRatio": 1,
+          "reviewed": false,
+          "junction": [
+            133.493723,
+            35.484263
+          ]
+        },
+        {
+          "first": 3638,
+          "last": 3640,
+          "lengthKm": 0.09498064655508642,
+          "returnRatio": 1,
+          "reviewed": false,
+          "junction": [
+            133.296623,
+            35.399629
+          ]
+        },
+        {
+          "first": 3745,
+          "last": 3749,
+          "lengthKm": 0.29046231554366386,
+          "returnRatio": 1,
+          "reviewed": false,
+          "junction": [
+            133.269623,
+            35.404882
+          ]
+        },
+        {
+          "first": 3979,
+          "last": 3985,
+          "lengthKm": 0.11507660310735446,
+          "returnRatio": 1,
+          "reviewed": false,
+          "junction": [
+            133.069397,
+            35.484786
+          ]
+        },
+        {
+          "first": 4029,
+          "last": 4031,
+          "lengthKm": 0.09737967653222768,
+          "returnRatio": 1,
+          "reviewed": false,
+          "junction": [
+            133.076909,
+            35.437432
+          ]
+        },
+        {
+          "first": 4137,
+          "last": 4141,
+          "lengthKm": 0.15479725631394103,
+          "returnRatio": 1,
+          "reviewed": false,
+          "junction": [
+            133.011664,
+            35.404637
+          ]
+        },
+        {
+          "first": 4209,
+          "last": 4211,
+          "lengthKm": 0.11101014405585374,
+          "returnRatio": 1,
+          "reviewed": false,
+          "junction": [
+            132.963027,
+            35.392628
+          ]
+        },
+        {
+          "first": 4542,
+          "last": 4548,
+          "lengthKm": 0.5288232809920146,
+          "returnRatio": 1,
+          "reviewed": false,
+          "junction": [
+            132.632083,
+            35.260939
+          ]
+        },
+        {
+          "first": 4893,
+          "last": 4895,
+          "lengthKm": 0.07270423233194379,
+          "returnRatio": 1,
+          "reviewed": false,
+          "junction": [
+            132.499399,
+            35.190102
+          ]
+        }
+      ]
+    },
+    {
+      "name": "若狭街道",
+      "modernReference": true,
+      "removedVertices": 333,
+      "excursions": [
+        {
+          "first": 319,
+          "last": 624,
+          "lengthKm": 14.968562563609403,
+          "returnRatio": 0.5862969072300362,
+          "reviewed": true,
+          "junction": [
+            135.90359,
+            35.184503
+          ]
+        },
+        {
+          "first": 1207,
+          "last": 1235,
+          "lengthKm": 1.906878817756649,
+          "returnRatio": 1,
+          "reviewed": false,
+          "junction": [
+            135.964086,
+            35.452897
+          ]
+        }
+      ]
+    },
+    {
+      "name": "伊勢路",
+      "modernReference": true,
+      "removedVertices": 22,
+      "excursions": [
+        {
+          "first": 470,
+          "last": 478,
+          "lengthKm": 0.3832914697118639,
+          "returnRatio": 1,
+          "reviewed": false,
+          "junction": [
+            136.391075,
+            34.859024
+          ]
+        },
+        {
+          "first": 530,
+          "last": 536,
+          "lengthKm": 0.40527697208059976,
+          "returnRatio": 1,
+          "reviewed": false,
+          "junction": [
+            136.449882,
+            34.848647
+          ]
+        },
+        {
+          "first": 628,
+          "last": 630,
+          "lengthKm": 0.07686711603321328,
+          "returnRatio": 1,
+          "reviewed": false,
+          "junction": [
+            136.490605,
+            34.735125
+          ]
+        },
+        {
+          "first": 748,
+          "last": 754,
+          "lengthKm": 0.2070887705930886,
+          "returnRatio": 1,
+          "reviewed": false,
+          "junction": [
+            136.521924,
+            34.579464
+          ]
+        }
+      ]
+    },
+    {
+      "name": "熊野街道",
+      "modernReference": true,
+      "removedVertices": 2,
+      "excursions": [
+        {
+          "first": 2102,
+          "last": 2104,
+          "lengthKm": 0.12537291936865813,
+          "returnRatio": 1,
+          "reviewed": false,
+          "junction": [
+            135.380747,
+            33.751896
+          ]
+        }
+      ]
+    },
+    {
+      "name": "南海道",
+      "modernReference": true,
+      "removedVertices": 46,
+      "excursions": [
+        {
+          "first": 398,
+          "last": 400,
+          "lengthKm": 0.2211478050035396,
+          "returnRatio": 1,
+          "reviewed": false,
+          "junction": [
+            134.362391,
+            34.218561
+          ]
+        },
+        {
+          "first": 801,
+          "last": 811,
+          "lengthKm": 1.0122872745647271,
+          "returnRatio": 1,
+          "reviewed": false,
+          "junction": [
+            133.813047,
+            34.272829
+          ]
+        },
+        {
+          "first": 1274,
+          "last": 1278,
+          "lengthKm": 0.09688122549096079,
+          "returnRatio": 1,
+          "reviewed": false,
+          "junction": [
+            133.570314,
+            33.980383
+          ]
+        },
+        {
+          "first": 1354,
+          "last": 1360,
+          "lengthKm": 0.23353859581038705,
+          "returnRatio": 1,
+          "reviewed": false,
+          "junction": [
+            133.525725,
+            33.941031
+          ]
+        },
+        {
+          "first": 1490,
+          "last": 1496,
+          "lengthKm": 0.30124877494586144,
+          "returnRatio": 1,
+          "reviewed": false,
+          "junction": [
+            133.476784,
+            33.940901
+          ]
+        },
+        {
+          "first": 1580,
+          "last": 1582,
+          "lengthKm": 0.06567155623821463,
+          "returnRatio": 1,
+          "reviewed": false,
+          "junction": [
+            133.446965,
+            33.946892
+          ]
+        },
+        {
+          "first": 1621,
+          "last": 1627,
+          "lengthKm": 0.1633478289131176,
+          "returnRatio": 1,
+          "reviewed": false,
+          "junction": [
+            133.419025,
+            33.949671
+          ]
+        },
+        {
+          "first": 1875,
+          "last": 1877,
+          "lengthKm": 0.06596315794411112,
+          "returnRatio": 1,
+          "reviewed": false,
+          "junction": [
+            133.063685,
+            33.921859
+          ]
+        },
+        {
+          "first": 1892,
+          "last": 1894,
+          "lengthKm": 0.12825474667732806,
+          "returnRatio": 1,
+          "reviewed": false,
+          "junction": [
+            133.051279,
+            33.927606
+          ]
+        },
+        {
+          "first": 1958,
+          "last": 1962,
+          "lengthKm": 0.540004222059224,
+          "returnRatio": 1,
+          "reviewed": false,
+          "junction": [
+            133.01828,
+            33.985322
+          ]
+        },
+        {
+          "first": 2358,
+          "last": 2360,
+          "lengthKm": 0.21580973234949852,
+          "returnRatio": 1,
+          "reviewed": false,
+          "junction": [
+            132.874765,
+            33.956312
+          ]
+        }
+      ]
+    },
+    {
+      "name": "土佐道",
+      "modernReference": true,
+      "removedVertices": 10,
+      "excursions": [
+        {
+          "first": 599,
+          "last": 607,
+          "lengthKm": 0.3465410028594107,
+          "returnRatio": 1,
+          "reviewed": false,
+          "junction": [
+            133.628184,
+            33.829239
+          ]
+        },
+        {
+          "first": 1885,
+          "last": 1887,
+          "lengthKm": 0.13097602053295532,
+          "returnRatio": 1,
+          "reviewed": false,
+          "junction": [
+            133.299883,
+            33.500862
+          ]
+        }
+      ]
+    },
+    {
+      "name": "西海道",
+      "modernReference": true,
+      "removedVertices": 48,
+      "excursions": [
+        {
+          "first": 112,
+          "last": 116,
+          "lengthKm": 0.18731868354320724,
+          "returnRatio": 1,
+          "reviewed": false,
+          "junction": [
+            130.768378,
+            33.862476
+          ]
+        },
+        {
+          "first": 117,
+          "last": 119,
+          "lengthKm": 0.10575009029731319,
+          "returnRatio": 1,
+          "reviewed": false,
+          "junction": [
+            130.767809,
+            33.862459
+          ]
+        },
+        {
+          "first": 276,
+          "last": 286,
+          "lengthKm": 0.595572340196675,
+          "returnRatio": 1,
+          "reviewed": false,
+          "junction": [
+            130.733119,
+            33.753792
+          ]
+        },
+        {
+          "first": 579,
+          "last": 583,
+          "lengthKm": 0.27466664301812216,
+          "returnRatio": 1,
+          "reviewed": false,
+          "junction": [
+            130.521014,
+            33.509808
+          ]
+        },
+        {
+          "first": 784,
+          "last": 786,
+          "lengthKm": 0.12475226963607611,
+          "returnRatio": 1,
+          "reviewed": false,
+          "junction": [
+            130.460479,
+            33.160526
+          ]
+        },
+        {
+          "first": 1223,
+          "last": 1227,
+          "lengthKm": 0.3107641285413365,
+          "returnRatio": 1,
+          "reviewed": false,
+          "junction": [
+            130.689813,
+            33.018882
+          ]
+        },
+        {
+          "first": 1410,
+          "last": 1412,
+          "lengthKm": 0.14830404731253566,
+          "returnRatio": 1,
+          "reviewed": false,
+          "junction": [
+            130.710828,
+            32.799989
+          ]
+        },
+        {
+          "first": 1603,
+          "last": 1609,
+          "lengthKm": 0.6841066402746492,
+          "returnRatio": 1,
+          "reviewed": false,
+          "junction": [
+            130.599892,
+            32.495874
+          ]
+        },
+        {
+          "first": 2285,
+          "last": 2289,
+          "lengthKm": 0.20862958275222354,
+          "returnRatio": 1,
+          "reviewed": false,
+          "junction": [
+            130.473687,
+            32.24919
+          ]
+        },
+        {
+          "first": 2473,
+          "last": 2477,
+          "lengthKm": 0.28864442341148333,
+          "returnRatio": 1,
+          "reviewed": false,
+          "junction": [
+            130.472278,
+            32.240828
+          ]
+        },
+        {
+          "first": 2570,
+          "last": 2572,
+          "lengthKm": 0.0925984554301067,
+          "returnRatio": 1,
+          "reviewed": false,
+          "junction": [
+            130.465637,
+            32.233253
+          ]
+        },
+        {
+          "first": 2838,
+          "last": 2840,
+          "lengthKm": 0.18808607896414742,
+          "returnRatio": 1,
+          "reviewed": false,
+          "junction": [
+            130.413336,
+            32.175791
+          ]
+        },
+        {
+          "first": 3663,
+          "last": 3665,
+          "lengthKm": 0.08193695298496095,
+          "returnRatio": 1,
+          "reviewed": false,
+          "junction": [
+            130.399734,
+            31.630309
+          ]
+        }
+      ]
+    },
+    {
+      "name": "豊後道",
+      "modernReference": true,
+      "removedVertices": 50,
+      "excursions": [
+        {
+          "first": 189,
+          "last": 191,
+          "lengthKm": 0.13532752214291577,
+          "returnRatio": 1,
+          "reviewed": false,
+          "junction": [
+            131.04943,
+            33.629492
+          ]
+        },
+        {
+          "first": 1256,
+          "last": 1266,
+          "lengthKm": 0.760962499754271,
+          "returnRatio": 1,
+          "reviewed": false,
+          "junction": [
+            131.608723,
+            33.22302
+          ]
+        },
+        {
+          "first": 1483,
+          "last": 1489,
+          "lengthKm": 0.40957622610318367,
+          "returnRatio": 1,
+          "reviewed": false,
+          "junction": [
+            131.781491,
+            33.118175
+          ]
+        },
+        {
+          "first": 2874,
+          "last": 2876,
+          "lengthKm": 0.1053767535966017,
+          "returnRatio": 1,
+          "reviewed": false,
+          "junction": [
+            131.659614,
+            32.579641
+          ]
+        },
+        {
+          "first": 3650,
+          "last": 3662,
+          "lengthKm": 0.7513826443454263,
+          "returnRatio": 1,
+          "reviewed": false,
+          "junction": [
+            131.418408,
+            32.027032
+          ]
+        },
+        {
+          "first": 4748,
+          "last": 4752,
+          "lengthKm": 0.13680836997400547,
+          "returnRatio": 1,
+          "reviewed": false,
+          "junction": [
+            130.628871,
+            31.749455
+          ]
+        },
+        {
+          "first": 4763,
+          "last": 4765,
+          "lengthKm": 0.27235350840487627,
+          "returnRatio": 1,
+          "reviewed": false,
+          "junction": [
+            130.625122,
+            31.747781
+          ]
+        },
+        {
+          "first": 5055,
+          "last": 5063,
+          "lengthKm": 0.592148366886704,
+          "returnRatio": 1,
+          "reviewed": false,
+          "junction": [
+            130.570396,
+            31.673802
+          ]
+        },
+        {
+          "first": 5140,
+          "last": 5144,
+          "lengthKm": 0.1668562786444454,
+          "returnRatio": 1,
+          "reviewed": false,
+          "junction": [
+            130.551438,
+            31.640612
+          ]
+        }
+      ]
+    },
+    {
+      "name": "長崎路",
+      "modernReference": true,
+      "removedVertices": 28,
+      "excursions": [
+        {
+          "first": 765,
+          "last": 767,
+          "lengthKm": 0.08679696071928333,
+          "returnRatio": 1,
+          "reviewed": false,
+          "junction": [
+            129.979285,
+            32.919684
+          ]
+        },
+        {
+          "first": 1023,
+          "last": 1025,
+          "lengthKm": 0.17553865042333427,
+          "returnRatio": 1,
+          "reviewed": false,
+          "junction": [
+            129.942726,
+            32.826748
+          ]
+        },
+        {
+          "first": 1100,
+          "last": 1106,
+          "lengthKm": 0.4189674056519266,
+          "returnRatio": 1,
+          "reviewed": false,
+          "junction": [
+            129.924793,
+            32.827687
+          ]
+        },
+        {
+          "first": 1214,
+          "last": 1218,
+          "lengthKm": 0.22100065194950957,
+          "returnRatio": 1,
+          "reviewed": false,
+          "junction": [
+            129.912182,
+            32.832865
+          ]
+        },
+        {
+          "first": 1270,
+          "last": 1274,
+          "lengthKm": 0.3904049132770524,
+          "returnRatio": 1,
+          "reviewed": false,
+          "junction": [
+            129.910902,
+            32.816123
+          ]
+        },
+        {
+          "first": 1373,
+          "last": 1383,
+          "lengthKm": 0.4630276466428995,
+          "returnRatio": 1,
+          "reviewed": false,
+          "junction": [
+            129.898653,
+            32.791381
+          ]
+        }
+      ]
+    },
+    {
+      "name": "北国街道（近江）",
+      "modernReference": true,
+      "removedVertices": 4,
+      "excursions": [
+        {
+          "first": 49,
+          "last": 53,
+          "lengthKm": 0.45189889578213993,
+          "returnRatio": 1,
+          "reviewed": false,
+          "junction": [
+            136.303174,
+            35.310181
+          ]
+        }
+      ]
+    },
+    {
+      "name": "北国脇往還",
+      "modernReference": true,
+      "removedVertices": 0,
+      "excursions": []
+    },
+    {
+      "name": "塩津街道",
+      "modernReference": false,
+      "removedVertices": 0,
+      "excursions": []
+    },
+    {
+      "name": "九里半街道",
+      "modernReference": true,
+      "removedVertices": 0,
+      "excursions": []
+    },
+    {
+      "name": "美濃路",
+      "modernReference": false,
+      "removedVertices": 0,
+      "excursions": []
+    },
+    {
+      "name": "岐阜街道",
+      "modernReference": true,
+      "removedVertices": 0,
+      "excursions": []
+    },
+    {
+      "name": "川越街道",
+      "modernReference": true,
+      "removedVertices": 2,
+      "excursions": [
+        {
+          "first": 142,
+          "last": 144,
+          "lengthKm": 0.24300413251771147,
+          "returnRatio": 1,
+          "reviewed": false,
+          "junction": [
+            139.600347,
+            35.801057
+          ]
+        }
+      ]
+    },
+    {
+      "name": "身延道（駿州往還）",
+      "modernReference": true,
+      "removedVertices": 22,
+      "excursions": [
+        {
+          "first": 580,
+          "last": 582,
+          "lengthKm": 0.13369622053338048,
+          "returnRatio": 1,
+          "reviewed": false,
+          "junction": [
+            138.440627,
+            35.370526
+          ]
+        },
+        {
+          "first": 666,
+          "last": 686,
+          "lengthKm": 2.5678414741131803,
+          "returnRatio": 1,
+          "reviewed": false,
+          "junction": [
+            138.462803,
+            35.283029
+          ]
+        }
+      ]
+    },
+    {
+      "name": "丹後街道",
+      "modernReference": true,
+      "removedVertices": 4,
+      "excursions": [
+        {
+          "first": 142,
+          "last": 144,
+          "lengthKm": 0.0937787872642275,
+          "returnRatio": 1,
+          "reviewed": false,
+          "junction": [
+            135.55115,
+            35.4699
+          ]
+        },
+        {
+          "first": 362,
+          "last": 364,
+          "lengthKm": 0.19651899315918797,
+          "returnRatio": 1,
+          "reviewed": false,
+          "junction": [
+            135.331175,
+            35.469828
+          ]
+        }
+      ]
+    },
+    {
+      "name": "東海道（鈴鹿越え）",
+      "modernReference": true,
+      "removedVertices": 12,
+      "excursions": [
+        {
+          "first": 60,
+          "last": 68,
+          "lengthKm": 0.8952623517100129,
+          "returnRatio": 1,
+          "reviewed": false,
+          "junction": [
+            136.452513,
+            34.848221
+          ]
+        },
+        {
+          "first": 139,
+          "last": 143,
+          "lengthKm": 0.16132879684258228,
+          "returnRatio": 1,
+          "reviewed": false,
+          "junction": [
+            136.53062,
+            34.899475
+          ]
+        }
+      ]
+    },
+    {
+      "name": "嶺南大路（中路）",
+      "modernReference": false,
+      "removedVertices": 0,
+      "excursions": []
+    },
+    {
+      "name": "嶺南左路（東路）",
+      "modernReference": true,
+      "removedVertices": 46,
+      "excursions": [
+        {
+          "first": 270,
+          "last": 284,
+          "lengthKm": 1.3082682383804638,
+          "returnRatio": 1,
+          "reviewed": false,
+          "junction": [
+            129.307323,
+            35.551509
+          ]
+        },
+        {
+          "first": 432,
+          "last": 434,
+          "lengthKm": 0.10649578314973951,
+          "returnRatio": 1,
+          "reviewed": false,
+          "junction": [
+            129.209918,
+            35.839525
+          ]
+        },
+        {
+          "first": 601,
+          "last": 615,
+          "lengthKm": 1.2988402688134215,
+          "returnRatio": 1,
+          "reviewed": false,
+          "junction": [
+            128.941358,
+            35.970522
+          ]
+        },
+        {
+          "first": 942,
+          "last": 944,
+          "lengthKm": 0.09412478775089994,
+          "returnRatio": 1,
+          "reviewed": false,
+          "junction": [
+            128.699496,
+            36.349786
+          ]
+        },
+        {
+          "first": 1807,
+          "last": 1821,
+          "lengthKm": 0.9556011807342202,
+          "returnRatio": 1,
+          "reviewed": false,
+          "junction": [
+            128.423411,
+            36.962132
+          ]
+        }
+      ]
+    },
+    {
+      "name": "嶺南右路（西路）",
+      "modernReference": true,
+      "removedVertices": 14,
+      "excursions": [
+        {
+          "first": 963,
+          "last": 967,
+          "lengthKm": 0.19762969414153986,
+          "returnRatio": 1,
+          "reviewed": false,
+          "junction": [
+            128.111422,
+            36.119837
+          ]
+        },
+        {
+          "first": 1084,
+          "last": 1090,
+          "lengthKm": 0.6749311546498689,
+          "returnRatio": 1,
+          "reviewed": false,
+          "junction": [
+            127.983071,
+            36.201824
+          ]
+        },
+        {
+          "first": 1259,
+          "last": 1263,
+          "lengthKm": 0.22249003059067718,
+          "returnRatio": 1,
+          "reviewed": false,
+          "junction": [
+            127.779541,
+            36.171935
+          ]
+        }
+      ]
+    },
+    {
+      "name": "晋州路",
+      "modernReference": true,
+      "removedVertices": 2,
+      "excursions": [
+        {
+          "first": 161,
+          "last": 163,
+          "lengthKm": 0.42094839283494423,
+          "returnRatio": 1,
+          "reviewed": false,
+          "junction": [
+            128.678565,
+            35.228512
+          ]
+        }
+      ]
+    },
+    {
+      "name": "湖南大路",
+      "modernReference": true,
+      "removedVertices": 10,
+      "excursions": [
+        {
+          "first": 166,
+          "last": 168,
+          "lengthKm": 0.2403156814470293,
+          "returnRatio": 1,
+          "reviewed": false,
+          "junction": [
+            127.008802,
+            37.269487
+          ]
+        },
+        {
+          "first": 643,
+          "last": 649,
+          "lengthKm": 0.2644852855652289,
+          "returnRatio": 1,
+          "reviewed": false,
+          "junction": [
+            127.1213,
+            36.459978
+          ]
+        },
+        {
+          "first": 1212,
+          "last": 1214,
+          "lengthKm": 0.07160042932872557,
+          "returnRatio": 1,
+          "reviewed": false,
+          "junction": [
+            127.280335,
+            35.609602
+          ]
+        }
+      ]
+    },
+    {
+      "name": "八良峙越え",
+      "modernReference": true,
+      "removedVertices": 6,
+      "excursions": [
+        {
+          "first": 115,
+          "last": 121,
+          "lengthKm": 1.5593835644278613,
+          "returnRatio": 1,
+          "reviewed": false,
+          "junction": [
+            127.532252,
+            35.435176
+          ]
+        }
+      ]
+    },
+    {
+      "name": "義州大路",
+      "modernReference": false,
+      "removedVertices": 0,
+      "excursions": []
+    },
+    {
+      "name": "海州路",
+      "modernReference": true,
+      "removedVertices": 8,
+      "excursions": [
+        {
+          "first": 265,
+          "last": 273,
+          "lengthKm": 0.7336341603706416,
+          "returnRatio": 1,
+          "reviewed": false,
+          "junction": [
+            126.162275,
+            37.910219
+          ]
+        }
+      ]
+    },
+    {
+      "name": "関北路",
+      "modernReference": false,
+      "removedVertices": 0,
+      "excursions": []
+    },
+    {
+      "name": "永川路",
+      "modernReference": true,
+      "removedVertices": 0,
+      "excursions": []
+    },
+    {
+      "name": "関東路",
+      "modernReference": false,
+      "removedVertices": 0,
+      "excursions": []
+    },
+    {
+      "name": "越後街道",
+      "modernReference": true,
+      "removedVertices": 8,
+      "excursions": [
+        {
+          "first": 1090,
+          "last": 1092,
+          "lengthKm": 0.08613873123326243,
+          "returnRatio": 1,
+          "reviewed": false,
+          "junction": [
+            139.470681,
+            37.702181
+          ]
+        },
+        {
+          "first": 1574,
+          "last": 1580,
+          "lengthKm": 0.16944745041269016,
+          "returnRatio": 1,
+          "reviewed": false,
+          "junction": [
+            139.620711,
+            37.597138
+          ]
+        }
+      ]
+    },
+    {
+      "name": "米沢街道",
+      "modernReference": true,
+      "removedVertices": 12,
+      "excursions": [
+        {
+          "first": 1310,
+          "last": 1322,
+          "lengthKm": 0.7639634295564974,
+          "returnRatio": 1,
+          "reviewed": false,
+          "junction": [
+            139.974442,
+            37.753913
+          ]
+        }
+      ]
+    },
+    {
+      "name": "二本松街道",
+      "modernReference": true,
+      "removedVertices": 6,
+      "excursions": [
+        {
+          "first": 327,
+          "last": 333,
+          "lengthKm": 0.17369537810841962,
+          "returnRatio": 1,
+          "reviewed": false,
+          "junction": [
+            140.264047,
+            37.582617
+          ]
+        }
+      ]
+    },
+    {
+      "name": "白河街道",
+      "modernReference": true,
+      "removedVertices": 605,
+      "excursions": [
+        {
+          "first": 165,
+          "last": 167,
+          "lengthKm": 0.15384392115825563,
+          "returnRatio": 1,
+          "reviewed": false,
+          "junction": [
+            140.123274,
+            37.222872
+          ]
+        },
+        {
+          "first": 645,
+          "last": 1246,
+          "lengthKm": 35.123356621783685,
+          "returnRatio": 0.5075067519655224,
+          "reviewed": true,
+          "junction": [
+            140.06797,
+            37.38636
+          ]
+        },
+        {
+          "first": 1566,
+          "last": 1568,
+          "lengthKm": 0.07409997018271497,
+          "returnRatio": 1,
+          "reviewed": false,
+          "junction": [
+            139.984208,
+            37.399298
+          ]
+        }
+      ]
+    },
+    {
+      "name": "浜街道",
+      "modernReference": true,
+      "removedVertices": 8,
+      "excursions": [
+        {
+          "first": 233,
+          "last": 237,
+          "lengthKm": 0.27139806365467223,
+          "returnRatio": 1,
+          "reviewed": false,
+          "junction": [
+            140.617044,
+            36.617757
+          ]
+        },
+        {
+          "first": 1242,
+          "last": 1244,
+          "lengthKm": 0.2360194564308813,
+          "returnRatio": 1,
+          "reviewed": false,
+          "junction": [
+            140.988693,
+            37.560228
+          ]
+        },
+        {
+          "first": 1532,
+          "last": 1534,
+          "lengthKm": 0.1432430631644479,
+          "returnRatio": 1,
+          "reviewed": false,
+          "junction": [
+            140.86917,
+            38.09991
+          ]
+        }
+      ]
+    },
+    {
+      "name": "御斎所街道",
+      "modernReference": true,
+      "removedVertices": 0,
+      "excursions": []
+    },
+    {
+      "name": "足利道",
+      "modernReference": true,
+      "removedVertices": 4,
+      "excursions": [
+        {
+          "first": 323,
+          "last": 327,
+          "lengthKm": 0.24016685874283894,
+          "returnRatio": 1,
+          "reviewed": false,
+          "junction": [
+            139.377883,
+            36.320496
+          ]
+        }
+      ]
+    },
+    {
+      "name": "水戸道",
+      "modernReference": true,
+      "removedVertices": 0,
+      "excursions": []
+    },
+    {
+      "name": "房総往還",
+      "modernReference": true,
+      "removedVertices": 16,
+      "excursions": [
+        {
+          "first": 123,
+          "last": 125,
+          "lengthKm": 0.18214178454367413,
+          "returnRatio": 1,
+          "reviewed": false,
+          "junction": [
+            140.00087,
+            35.699581
+          ]
+        },
+        {
+          "first": 267,
+          "last": 281,
+          "lengthKm": 0.601530116209517,
+          "returnRatio": 1,
+          "reviewed": false,
+          "junction": [
+            140.241816,
+            35.718545
+          ]
+        }
+      ]
+    },
+    {
+      "name": "岩付道",
+      "modernReference": true,
+      "removedVertices": 2,
+      "excursions": [
+        {
+          "first": 126,
+          "last": 128,
+          "lengthKm": 0.07121235243098312,
+          "returnRatio": 1,
+          "reviewed": false,
+          "junction": [
+            139.699823,
+            35.950295
+          ]
+        }
+      ]
+    },
+    {
+      "name": "秩父道",
+      "modernReference": true,
+      "removedVertices": 0,
+      "excursions": []
+    },
+    {
+      "name": "三州街道",
+      "modernReference": true,
+      "removedVertices": 469,
+      "excursions": [
+        {
+          "first": 213,
+          "last": 221,
+          "lengthKm": 0.3766036535615527,
+          "returnRatio": 1,
+          "reviewed": false,
+          "junction": [
+            137.996822,
+            35.948486
+          ]
+        },
+        {
+          "first": 323,
+          "last": 325,
+          "lengthKm": 0.05670240574963259,
+          "returnRatio": 1,
+          "reviewed": false,
+          "junction": [
+            138.060718,
+            35.830651
+          ]
+        },
+        {
+          "first": 1289,
+          "last": 1746,
+          "lengthKm": 22.512551902471643,
+          "returnRatio": 0.48520019530374,
+          "reviewed": true,
+          "junction": [
+            137.708965,
+            35.306391
+          ]
+        },
+        {
+          "first": 2951,
+          "last": 2953,
+          "lengthKm": 0.07724222505061107,
+          "returnRatio": 1,
+          "reviewed": false,
+          "junction": [
+            137.319715,
+            35.130292
+          ]
+        }
+      ]
+    },
+    {
+      "name": "秋葉街道",
+      "modernReference": true,
+      "removedVertices": 0,
+      "excursions": []
+    },
+    {
+      "name": "杖突越え",
+      "modernReference": true,
+      "removedVertices": 0,
+      "excursions": []
+    },
+    {
+      "name": "足柄道",
+      "modernReference": true,
+      "removedVertices": 0,
+      "excursions": []
+    },
+    {
+      "name": "越中街道（飛騨）",
+      "modernReference": true,
+      "removedVertices": 0,
+      "excursions": []
+    },
+    {
+      "name": "飛騨街道",
+      "modernReference": true,
+      "removedVertices": 2,
+      "excursions": [
+        {
+          "first": 657,
+          "last": 659,
+          "lengthKm": 0.05871404183392315,
+          "returnRatio": 1,
+          "reviewed": false,
+          "junction": [
+            137.250199,
+            35.80982
+          ]
+        }
+      ]
+    },
+    {
+      "name": "野麦街道",
+      "modernReference": true,
+      "removedVertices": 2,
+      "excursions": [
+        {
+          "first": 471,
+          "last": 473,
+          "lengthKm": 0.0734050263708923,
+          "returnRatio": 1,
+          "reviewed": false,
+          "junction": [
+            137.554978,
+            36.121583
+          ]
+        }
+      ]
+    },
+    {
+      "name": "白山道",
+      "modernReference": true,
+      "removedVertices": 34,
+      "excursions": [
+        {
+          "first": 422,
+          "last": 456,
+          "lengthKm": 2.172581579875555,
+          "returnRatio": 1,
+          "reviewed": false,
+          "junction": [
+            136.962812,
+            36.251788
+          ]
+        }
+      ]
+    },
+    {
+      "name": "能登街道",
+      "modernReference": true,
+      "removedVertices": 4,
+      "excursions": [
+        {
+          "first": 139,
+          "last": 143,
+          "lengthKm": 0.294893735396613,
+          "returnRatio": 1,
+          "reviewed": false,
+          "junction": [
+            136.749457,
+            36.781198
+          ]
+        }
+      ]
+    },
+    {
+      "name": "周山街道",
+      "modernReference": true,
+      "removedVertices": 2,
+      "excursions": [
+        {
+          "first": 1214,
+          "last": 1216,
+          "lengthKm": 0.1446874320728,
+          "returnRatio": 1,
+          "reviewed": false,
+          "junction": [
+            135.403448,
+            35.081164
+          ]
+        }
+      ]
+    },
+    {
+      "name": "伊勢本街道",
+      "modernReference": true,
+      "removedVertices": 4,
+      "excursions": [
+        {
+          "first": 200,
+          "last": 202,
+          "lengthKm": 0.07462080479231759,
+          "returnRatio": 1,
+          "reviewed": false,
+          "junction": [
+            135.950371,
+            34.609886
+          ]
+        },
+        {
+          "first": 422,
+          "last": 424,
+          "lengthKm": 0.06654741401546005,
+          "returnRatio": 1,
+          "reviewed": false,
+          "junction": [
+            136.1,
+            34.63037
+          ]
+        }
+      ]
+    },
+    {
+      "name": "暗越奈良街道",
+      "modernReference": true,
+      "removedVertices": 6,
+      "excursions": [
+        {
+          "first": 68,
+          "last": 72,
+          "lengthKm": 0.13198403982773854,
+          "returnRatio": 1,
+          "reviewed": false,
+          "junction": [
+            135.657003,
+            34.681101
+          ]
+        },
+        {
+          "first": 282,
+          "last": 284,
+          "lengthKm": 0.1306901929764166,
+          "returnRatio": 1,
+          "reviewed": false,
+          "junction": [
+            135.800171,
+            34.680588
+          ]
+        }
+      ]
+    },
+    {
+      "name": "伊賀越え",
+      "modernReference": true,
+      "removedVertices": 14,
+      "excursions": [
+        {
+          "first": 189,
+          "last": 203,
+          "lengthKm": 0.3986822593521069,
+          "returnRatio": 1,
+          "reviewed": false,
+          "junction": [
+            136.096535,
+            34.918024
+          ]
+        }
+      ]
+    },
+    {
+      "name": "但馬街道",
+      "modernReference": true,
+      "removedVertices": 0,
+      "excursions": []
+    },
+    {
+      "name": "因幡街道",
+      "modernReference": true,
+      "removedVertices": 6,
+      "excursions": [
+        {
+          "first": 1002,
+          "last": 1008,
+          "lengthKm": 0.4318471163512356,
+          "returnRatio": 1,
+          "reviewed": false,
+          "junction": [
+            134.292224,
+            35.205687
+          ]
+        }
+      ]
+    },
+    {
+      "name": "出雲街道",
+      "modernReference": true,
+      "removedVertices": 2,
+      "excursions": [
+        {
+          "first": 2288,
+          "last": 2290,
+          "lengthKm": 0.05808341298126152,
+          "returnRatio": 1,
+          "reviewed": false,
+          "junction": [
+            133.33027,
+            35.429858
+          ]
+        }
+      ]
+    },
+    {
+      "name": "松山往来",
+      "modernReference": true,
+      "removedVertices": 0,
+      "excursions": []
+    },
+    {
+      "name": "石見路",
+      "modernReference": true,
+      "removedVertices": 381,
+      "excursions": [
+        {
+          "first": 1095,
+          "last": 1476,
+          "lengthKm": 20.04551742753982,
+          "returnRatio": 0.4330382252300079,
+          "reviewed": true,
+          "junction": [
+            133.023579,
+            35.12505
+          ]
+        }
+      ]
+    },
+    {
+      "name": "銀山街道",
+      "modernReference": true,
+      "removedVertices": 0,
+      "excursions": []
+    },
+    {
+      "name": "土佐北街道",
+      "modernReference": true,
+      "removedVertices": 8,
+      "excursions": [
+        {
+          "first": 722,
+          "last": 730,
+          "lengthKm": 0.25801554799008386,
+          "returnRatio": 1,
+          "reviewed": false,
+          "junction": [
+            133.589466,
+            33.758221
+          ]
+        }
+      ]
+    },
+    {
+      "name": "土佐東街道",
+      "modernReference": true,
+      "removedVertices": 123,
+      "excursions": [
+        {
+          "first": 544,
+          "last": 587,
+          "lengthKm": 1.2569344938316362,
+          "returnRatio": 0.6767978707776557,
+          "reviewed": true,
+          "junction": [
+            134.55141,
+            33.80469
+          ]
+        },
+        {
+          "first": 2348,
+          "last": 2410,
+          "lengthKm": 1.6992653364559231,
+          "returnRatio": 0.6644652579314623,
+          "reviewed": true,
+          "junction": [
+            134.285063,
+            33.547629
+          ]
+        },
+        {
+          "first": 3208,
+          "last": 3226,
+          "lengthKm": 0.3608583462759043,
+          "returnRatio": 1,
+          "reviewed": false,
+          "junction": [
+            134.178081,
+            33.247476
+          ]
+        }
+      ]
+    },
+    {
+      "name": "豊後街道",
+      "modernReference": true,
+      "removedVertices": 6,
+      "excursions": [
+        {
+          "first": 555,
+          "last": 559,
+          "lengthKm": 0.22802133196096008,
+          "returnRatio": 1,
+          "reviewed": false,
+          "junction": [
+            131.39913,
+            32.970427
+          ]
+        },
+        {
+          "first": 1280,
+          "last": 1282,
+          "lengthKm": 0.120102468204351,
+          "returnRatio": 1,
+          "reviewed": false,
+          "junction": [
+            130.899931,
+            32.850535
+          ]
+        }
+      ]
+    },
+    {
+      "name": "日向街道",
+      "modernReference": true,
+      "removedVertices": 10,
+      "excursions": [
+        {
+          "first": 2565,
+          "last": 2575,
+          "lengthKm": 1.1143788507303896,
+          "returnRatio": 0.2493263496842842,
+          "reviewed": true,
+          "junction": [
+            131.424469,
+            32.043025
+          ]
+        }
+      ]
+    },
+    {
+      "name": "人吉街道",
+      "modernReference": true,
+      "removedVertices": 6,
+      "excursions": [
+        {
+          "first": 910,
+          "last": 916,
+          "lengthKm": 0.15239405940374695,
+          "returnRatio": 1,
+          "reviewed": false,
+          "junction": [
+            131.194775,
+            32.080398
+          ]
+        }
+      ]
+    },
+    {
+      "name": "唐津街道",
+      "modernReference": true,
+      "removedVertices": 4,
+      "excursions": [
+        {
+          "first": 624,
+          "last": 626,
+          "lengthKm": 0.09898243278578889,
+          "returnRatio": 1,
+          "reviewed": false,
+          "junction": [
+            129.970435,
+            33.429965
+          ]
+        },
+        {
+          "first": 864,
+          "last": 866,
+          "lengthKm": 0.08796700464006335,
+          "returnRatio": 1,
+          "reviewed": false,
+          "junction": [
+            129.880581,
+            33.300341
+          ]
+        }
+      ]
+    },
+    {
+      "name": "柳川往還",
+      "modernReference": true,
+      "removedVertices": 0,
+      "excursions": []
+    },
+    {
+      "name": "秋田街道",
+      "modernReference": true,
+      "removedVertices": 2,
+      "excursions": [
+        {
+          "first": 630,
+          "last": 632,
+          "lengthKm": 0.15076700717757774,
+          "returnRatio": 1,
+          "reviewed": false,
+          "junction": [
+            140.84905,
+            39.673186
+          ]
+        }
+      ]
+    },
+    {
+      "name": "六十里越街道",
+      "modernReference": false,
+      "removedVertices": 0,
+      "excursions": []
+    },
+    {
+      "name": "出羽浜街道",
+      "modernReference": true,
+      "removedVertices": 18,
+      "excursions": [
+        {
+          "first": 601,
+          "last": 619,
+          "lengthKm": 0.7400308080681839,
+          "returnRatio": 1,
+          "reviewed": false,
+          "junction": [
+            139.690496,
+            38.497989
+          ]
+        }
+      ]
+    },
+    {
+      "name": "鹿角街道",
+      "modernReference": true,
+      "removedVertices": 2,
+      "excursions": [
+        {
+          "first": 516,
+          "last": 518,
+          "lengthKm": 0.1594982358163861,
+          "returnRatio": 1,
+          "reviewed": false,
+          "junction": [
+            140.798948,
+            40.250853
+          ]
+        }
+      ]
+    },
+    {
+      "name": "京・大津道",
+      "modernReference": false,
+      "removedVertices": 0,
+      "excursions": []
+    },
+    {
+      "name": "伊那街道（豊川・新城）",
+      "modernReference": true,
+      "removedVertices": 18,
+      "excursions": [
+        {
+          "first": 685,
+          "last": 697,
+          "lengthKm": 0.20745245292791736,
+          "returnRatio": 1,
+          "reviewed": false,
+          "junction": [
+            137.473987,
+            34.885793
+          ]
+        },
+        {
+          "first": 901,
+          "last": 907,
+          "lengthKm": 0.19855632794425304,
+          "returnRatio": 1,
+          "reviewed": false,
+          "junction": [
+            137.514362,
+            34.91265
+          ]
+        }
+      ]
+    },
+    {
+      "name": "長篠への道",
+      "modernReference": true,
+      "removedVertices": 0,
+      "excursions": []
+    },
+    {
+      "name": "作手への道",
+      "modernReference": true,
+      "removedVertices": 14,
+      "excursions": [
+        {
+          "first": 1973,
+          "last": 1987,
+          "lengthKm": 0.45795616844857534,
+          "returnRatio": 1,
+          "reviewed": false,
+          "junction": [
+            137.421377,
+            34.97672
+          ]
+        }
+      ]
+    }
+  ]
+}

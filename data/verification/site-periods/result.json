@@ -1,0 +1,61 @@
+{
+  "fixtures": "長篠シナリオから対象の日付の表示を隔離検証。世界全体をこの日に進行したという意味ではない。",
+  "rows": [
+    {
+      "lunarDate": [
+        1575,
+        5,
+        8
+      ],
+      "title": "諏訪原城",
+      "owner": "takeda",
+      "active": true,
+      "name": "諏訪原城"
+    },
+    {
+      "lunarDate": [
+        1575,
+        8,
+        23
+      ],
+      "title": "諏訪原城",
+      "owner": "takeda",
+      "active": true,
+      "name": "諏訪原城"
+    },
+    {
+      "lunarDate": [
+        1575,
+        8,
+        24
+      ],
+      "title": "牧野城（諏訪原城）",
+      "owner": "tokugawa",
+      "active": true,
+      "name": "牧野城（諏訪原城）"
+    },
+    {
+      "lunarDate": [
+        1590,
+        8,
+        1
+      ],
+      "title": "牧野城（諏訪原城）",
+      "owner": "tokugawa",
+      "active": true,
+      "name": "牧野城（諏訪原城）"
+    },
+    {
+      "lunarDate": [
+        1591,
+        1,
+        1
+      ],
+      "title": "牧野城跡（諏訪原城）",
+      "owner": "tokugawa",
+      "active": false,
+      "name": "牧野城跡（諏訪原城）"
+    }
+  ],
+  "errors": []
+}

@@ -1,0 +1,5 @@
+exec(open('/home/claude/play/seki.py').read().split("for d,nm,xy")[0].replace("start('関ヶ原前夜');",""))
+start('関ヶ原前夜');pg.wait_for_timeout(1000)
+adv([1600,10,19])
+print(pg.evaluate("JSON.stringify(G.S().units.map(u=>[G.CN(u.clan),u.troops,u.until||'',u.mission,G.cname(u.path[u.path.length-1]),u.gens.map(g=>G.gen(g).n).join('/')]))"))
+print(pg.evaluate("JSON.stringify(['ishida','mori','ukita','tokugawa','hashiba'].map(k=>[k,G.clanTroops(k)]))"))

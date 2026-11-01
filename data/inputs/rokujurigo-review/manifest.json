@@ -1,0 +1,25 @@
+{
+  "url": "https://www.thr.mlit.go.jp/sakata/road/60history/img/011.jpg",
+  "page": "https://www.thr.mlit.go.jp/sakata/road/60history/011.html",
+  "sha256": "bf75df6fb92b9102dede47b0ebcd428560962a269f683d42b689d91b253132ff",
+  "checked": "2026-11-01",
+  "scope": "公式旧道調査図、1:200000。青が六十里越街道、緑・橙は後世の国道。江戸以降の変遷も区別する。精密トレース前の参照資料。",
+  "additionalSheet": {
+    "file": "sakata-inland-map.jpg",
+    "url": "https://www.thr.mlit.go.jp/sakata/road/60history/img/010.jpg",
+    "sha256": "0f15e31d4decb0be59d1c3137e36db6a06ef27ba92f9b83c7be5ef82f66855e7"
+  },
+  "traceReview": {
+    "date": "2026-11-02",
+    "runsShonai": 7,
+    "runsInland": 1,
+    "pixelPoints": 748,
+    "visualReview": "青線上を重ねて実見。交差による欠落は接続しない。",
+    "registration": "駅記号4点による候補RMS1.9595px。独立精度ではない。採用前に別地点と旧駅位置を検証。"
+  },
+  "routeSources": [
+    "https://www.city.tsuruoka.lg.jp/shisei/shiyakusyo/infomation/asahi/kanko/dewanokodoukaidouzyo.html",
+    "https://www.thr.mlit.go.jp/sakata/road/60history/004.html",
+    "https://www.thr.mlit.go.jp/sakata/road/60history/023.html"
+  ]
+}

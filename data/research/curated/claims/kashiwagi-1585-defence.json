@@ -1,0 +1,21 @@
+{
+  "id": "kashiwagi-1585-defence",
+  "entity": "site:柏木城",
+  "predicate": "military-role",
+  "value": "1585年の伊達政宗の会津侵攻時に蘆名軍が籠城した防衛拠点",
+  "validYears": [
+    1585,
+    1585
+  ],
+  "datePrecision": "year",
+  "source": "kashiwagiBunka",
+  "locator": "解説第1段落",
+  "gameBindings": [
+    "TK.CASTLE_EVIDENCE:柏木城"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "sourceUrl": "https://online.bunka.go.jp/heritages/detail/520604",
+  "checked": "2026-11-01",
+  "uncertainty": "築城年月日と城域境界はこの命題から確定しない。"
+}

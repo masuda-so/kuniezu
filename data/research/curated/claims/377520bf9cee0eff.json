@@ -1,0 +1,23 @@
+{
+  "id": "ieyasu-command-move",
+  "entity": "person:徳川家康",
+  "predicate": "headquarters-move",
+  "value": [
+    "桃配山",
+    "陣場野"
+  ],
+  "validYears": [
+    1600,
+    1600
+  ],
+  "source": "ieyasuJinba",
+  "locator": "午前11時ごろと伝わる移陣",
+  "gameBindings": [
+    "TK.BATTLE_MOVEMENTS:関ヶ原の戦い"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "sourceUrl": "https://www.sekigahara1600.com/spot/tokugawaieyasujinato.html",
+  "checked": "2026-11-01",
+  "uncertainty": null
+}

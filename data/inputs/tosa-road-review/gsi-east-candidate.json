@@ -1,0 +1,80 @@
+{
+  "status": "rejected-disconnected-or-distant",
+  "reason": "Waypoint outside connected geometry: [134.28, 33.55], 3641.6m",
+  "lines": 4581,
+  "excludedFeatures": 0,
+  "coverage": {
+    "components": 56,
+    "nodes": 20175,
+    "chosenComponentNodes": 15427,
+    "anchors": [
+      {
+        "anchor": [
+          134.28,
+          33.55
+        ],
+        "nearestAnyPoint": [
+          134.27996,
+          33.55
+        ],
+        "nearestAnyMetres": 3.7109806587818266,
+        "nearestConnectedPoint": [
+          134.264575,
+          33.51992
+        ],
+        "nearestConnectedMetres": 3641.579041634406
+      },
+      {
+        "anchor": [
+          134.26772388,
+          33.50482477
+        ],
+        "nearestAnyPoint": [
+          134.267771,
+          33.504869
+        ],
+        "nearestAnyMetres": 6.585814137887732,
+        "nearestConnectedPoint": [
+          134.267771,
+          33.504869
+        ],
+        "nearestConnectedMetres": 6.585814137887732
+      },
+      {
+        "anchor": [
+          134.2077486,
+          33.39572486
+        ],
+        "nearestAnyPoint": [
+          134.207764,
+          33.395749
+        ],
+        "nearestAnyMetres": 3.044656845323382,
+        "nearestConnectedPoint": [
+          134.207764,
+          33.395749
+        ],
+        "nearestConnectedMetres": 3.044656845323382
+      },
+      {
+        "anchor": [
+          134.177893,
+          33.248943
+        ],
+        "nearestAnyPoint": [
+          134.177427,
+          33.248399
+        ],
+        "nearestAnyMetres": 74.49412595955472,
+        "nearestConnectedPoint": [
+          134.177427,
+          33.248399
+        ],
+        "nearestConnectedMetres": 74.49412595955472
+      }
+    ],
+    "scope": "取得済み形状の被覆と連結性。現実の道路の不存在を示さない。"
+  },
+  "scope": "Modern GSI physical geometry, not a dated historic route. No artificial component bridging.",
+  "allowModernTunnels": true
+}

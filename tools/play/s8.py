@@ -1,0 +1,5 @@
+exec(open('/home/claude/play/lib.py').read())
+start()
+pg.mouse.click(920,492);pg.wait_for_timeout(800)
+pg.locator('#drawer .act').filter(has_text='攻める').click();pg.wait_for_timeout(800);shot('a1_attack')
+print(modal()[:2000])

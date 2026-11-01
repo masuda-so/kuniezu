@@ -1,0 +1,866 @@
+{
+  "date": "2026-11-01",
+  "scope": "登録82街道の形状全件。全線が16世紀の測量線と一致したという意味ではない。",
+  "rows": [
+    {
+      "name": "東海道",
+      "vertices": 1865,
+      "longestSegmentKm": 2.803,
+      "modernComparison": true,
+      "alignedSections": 0,
+      "sources": [
+        "hakoneMedieval",
+        "hakoneRoute",
+        "hakoneBunka"
+      ],
+      "precision": "通過地の順序に基づく参考線。山間の細線形は未確定",
+      "status": "近現代道の屈曲を参照（東海道の箱根区間は中世道を保持）"
+    },
+    {
+      "name": "東山道",
+      "vertices": 5426,
+      "longestSegmentKm": 3.534,
+      "modernComparison": true,
+      "alignedSections": 0,
+      "sources": [],
+      "precision": "道路参考資料の精度による",
+      "status": "近現代道の屈曲を参照（東海道の箱根区間は中世道を保持）"
+    },
+    {
+      "name": "鎌倉街道",
+      "vertices": 943,
+      "longestSegmentKm": 2.554,
+      "modernComparison": true,
+      "alignedSections": 0,
+      "sources": [],
+      "precision": "道路参考資料の精度による",
+      "status": "近現代道の屈曲を参照（東海道の箱根区間は中世道を保持）"
+    },
+    {
+      "name": "甲州道",
+      "vertices": 1677,
+      "longestSegmentKm": 3.269,
+      "modernComparison": true,
+      "alignedSections": 0,
+      "sources": [],
+      "precision": "道路参考資料の精度による",
+      "status": "近現代道の屈曲を参照（東海道の箱根区間は中世道を保持）"
+    },
+    {
+      "name": "北陸道",
+      "vertices": 5260,
+      "longestSegmentKm": 2.438,
+      "modernComparison": true,
+      "alignedSections": 0,
+      "sources": [],
+      "precision": "道路参考資料の精度による",
+      "status": "近現代道の屈曲を参照（東海道の箱根区間は中世道を保持）"
+    },
+    {
+      "name": "北国街道（信濃）",
+      "vertices": 1153,
+      "longestSegmentKm": 1.08,
+      "modernComparison": true,
+      "alignedSections": 0,
+      "sources": [],
+      "precision": "道路参考資料の精度による",
+      "status": "近現代道の屈曲を参照（東海道の箱根区間は中世道を保持）"
+    },
+    {
+      "name": "三国峠道",
+      "vertices": 2452,
+      "longestSegmentKm": 6.309,
+      "modernComparison": true,
+      "alignedSections": 0,
+      "sources": [],
+      "precision": "道路参考資料の精度による",
+      "status": "近現代道の屈曲を参照（東海道の箱根区間は中世道を保持）"
+    },
+    {
+      "name": "奥州道",
+      "vertices": 4881,
+      "longestSegmentKm": 3.041,
+      "modernComparison": true,
+      "alignedSections": 0,
+      "sources": [],
+      "precision": "道路参考資料の精度による",
+      "status": "近現代道の屈曲を参照（東海道の箱根区間は中世道を保持）"
+    },
+    {
+      "name": "羽州道",
+      "vertices": 5126,
+      "longestSegmentKm": 5.669,
+      "modernComparison": true,
+      "alignedSections": 0,
+      "sources": [],
+      "precision": "道路参考資料の精度による",
+      "status": "近現代道の屈曲を参照（東海道の箱根区間は中世道を保持）"
+    },
+    {
+      "name": "山陽道",
+      "vertices": 5419,
+      "longestSegmentKm": 3.215,
+      "modernComparison": true,
+      "alignedSections": 0,
+      "sources": [],
+      "precision": "道路参考資料の精度による",
+      "status": "近現代道の屈曲を参照（東海道の箱根区間は中世道を保持）"
+    },
+    {
+      "name": "山陰道",
+      "vertices": 7018,
+      "longestSegmentKm": 1.833,
+      "modernComparison": true,
+      "alignedSections": 0,
+      "sources": [],
+      "precision": "道路参考資料の精度による",
+      "status": "近現代道の屈曲を参照（東海道の箱根区間は中世道を保持）"
+    },
+    {
+      "name": "若狭街道",
+      "vertices": 1681,
+      "longestSegmentKm": 2.22,
+      "modernComparison": true,
+      "alignedSections": 0,
+      "sources": [],
+      "precision": "道路参考資料の精度による",
+      "status": "近現代道の屈曲を参照（東海道の箱根区間は中世道を保持）"
+    },
+    {
+      "name": "伊勢路",
+      "vertices": 873,
+      "longestSegmentKm": 1.952,
+      "modernComparison": true,
+      "alignedSections": 0,
+      "sources": [],
+      "precision": "道路参考資料の精度による",
+      "status": "近現代道の屈曲を参照（東海道の箱根区間は中世道を保持）"
+    },
+    {
+      "name": "熊野街道",
+      "vertices": 3511,
+      "longestSegmentKm": 3.149,
+      "modernComparison": true,
+      "alignedSections": 0,
+      "sources": [],
+      "precision": "道路参考資料の精度による",
+      "status": "近現代道の屈曲を参照（東海道の箱根区間は中世道を保持）"
+    },
+    {
+      "name": "南海道",
+      "vertices": 2796,
+      "longestSegmentKm": 1.609,
+      "modernComparison": true,
+      "alignedSections": 0,
+      "sources": [],
+      "precision": "道路参考資料の精度による",
+      "status": "近現代道の屈曲を参照（東海道の箱根区間は中世道を保持）"
+    },
+    {
+      "name": "土佐道",
+      "vertices": 3192,
+      "longestSegmentKm": 0.969,
+      "modernComparison": true,
+      "alignedSections": 0,
+      "sources": [],
+      "precision": "道路参考資料の精度による",
+      "status": "近現代道の屈曲を参照（東海道の箱根区間は中世道を保持）"
+    },
+    {
+      "name": "西海道",
+      "vertices": 3819,
+      "longestSegmentKm": 2.021,
+      "modernComparison": true,
+      "alignedSections": 0,
+      "sources": [],
+      "precision": "道路参考資料の精度による",
+      "status": "近現代道の屈曲を参照（東海道の箱根区間は中世道を保持）"
+    },
+    {
+      "name": "豊後道",
+      "vertices": 5221,
+      "longestSegmentKm": 1.751,
+      "modernComparison": true,
+      "alignedSections": 0,
+      "sources": [],
+      "precision": "道路参考資料の精度による",
+      "status": "近現代道の屈曲を参照（東海道の箱根区間は中世道を保持）"
+    },
+    {
+      "name": "長崎路",
+      "vertices": 1456,
+      "longestSegmentKm": 2.802,
+      "modernComparison": true,
+      "alignedSections": 0,
+      "sources": [],
+      "precision": "道路参考資料の精度による",
+      "status": "近現代道の屈曲を参照（東海道の箱根区間は中世道を保持）"
+    },
+    {
+      "name": "北国街道（近江）",
+      "vertices": 1643,
+      "longestSegmentKm": 1.898,
+      "modernComparison": true,
+      "alignedSections": 0,
+      "sources": [],
+      "precision": "道路参考資料の精度による",
+      "status": "近現代道の屈曲を参照（東海道の箱根区間は中世道を保持）"
+    },
+    {
+      "name": "北国脇往還",
+      "vertices": 296,
+      "longestSegmentKm": 1.07,
+      "modernComparison": true,
+      "alignedSections": 0,
+      "sources": [],
+      "precision": "道路参考資料の精度による",
+      "status": "近現代道の屈曲を参照（東海道の箱根区間は中世道を保持）"
+    },
+    {
+      "name": "塩津街道",
+      "vertices": 73,
+      "longestSegmentKm": 1.694,
+      "modernComparison": false,
+      "alignedSections": 0,
+      "sources": [
+        "fukasakaCourse"
+      ],
+      "precision": "道路参考資料の精度による",
+      "status": "長浜市旧道図を読図"
+    },
+    {
+      "name": "九里半街道",
+      "vertices": 181,
+      "longestSegmentKm": 0.374,
+      "modernComparison": true,
+      "alignedSections": 0,
+      "sources": [],
+      "precision": "道路参考資料の精度による",
+      "status": "近現代道の屈曲を参照（東海道の箱根区間は中世道を保持）"
+    },
+    {
+      "name": "美濃路",
+      "vertices": 40,
+      "longestSegmentKm": 2.234,
+      "modernComparison": false,
+      "alignedSections": 0,
+      "sources": [
+        "minojiStations",
+        "minojiRoute",
+        "anpachiRoad"
+      ],
+      "precision": "通過地を照合した概略線。測量復元ではない",
+      "status": "史料付き回廊を保持"
+    },
+    {
+      "name": "岐阜街道",
+      "vertices": 113,
+      "longestSegmentKm": 4.431,
+      "modernComparison": true,
+      "alignedSections": 0,
+      "sources": [],
+      "precision": "道路参考資料の精度による",
+      "status": "近現代道の屈曲を参照（東海道の箱根区間は中世道を保持）"
+    },
+    {
+      "name": "川越街道",
+      "vertices": 270,
+      "longestSegmentKm": 1.299,
+      "modernComparison": true,
+      "alignedSections": 0,
+      "sources": [],
+      "precision": "道路参考資料の精度による",
+      "status": "近現代道の屈曲を参照（東海道の箱根区間は中世道を保持）"
+    },
+    {
+      "name": "身延道（駿州往還）",
+      "vertices": 1140,
+      "longestSegmentKm": 3.127,
+      "modernComparison": true,
+      "alignedSections": 0,
+      "sources": [],
+      "precision": "道路参考資料の精度による",
+      "status": "近現代道の屈曲を参照（東海道の箱根区間は中世道を保持）"
+    },
+    {
+      "name": "丹後街道",
+      "vertices": 677,
+      "longestSegmentKm": 1.462,
+      "modernComparison": true,
+      "alignedSections": 0,
+      "sources": [],
+      "precision": "道路参考資料の精度による",
+      "status": "近現代道の屈曲を参照（東海道の箱根区間は中世道を保持）"
+    },
+    {
+      "name": "東海道（鈴鹿越え）",
+      "vertices": 302,
+      "longestSegmentKm": 1.424,
+      "modernComparison": true,
+      "alignedSections": 0,
+      "sources": [],
+      "precision": "道路参考資料の精度による",
+      "status": "近現代道の屈曲を参照（東海道の箱根区間は中世道を保持）"
+    },
+    {
+      "name": "嶺南大路（中路）",
+      "vertices": 2073,
+      "longestSegmentKm": 3.304,
+      "modernComparison": false,
+      "alignedSections": 61,
+      "sources": [
+        "krYeongnam",
+        "krSaejae",
+        "krTokkibiri"
+      ],
+      "precision": "経由地と峠を結んだ概略。区間内の道路中心線は未復元",
+      "status": "史料の経由地を保持し局所形状を参照"
+    },
+    {
+      "name": "嶺南左路（東路）",
+      "vertices": 2699,
+      "longestSegmentKm": 2.498,
+      "modernComparison": true,
+      "alignedSections": 0,
+      "sources": [
+        "krRoads"
+      ],
+      "precision": "接続を表す参考線",
+      "status": "近現代道の屈曲を参照（東海道の箱根区間は中世道を保持）"
+    },
+    {
+      "name": "嶺南右路（西路）",
+      "vertices": 2272,
+      "longestSegmentKm": 2.573,
+      "modernComparison": true,
+      "alignedSections": 0,
+      "sources": [
+        "krRoads"
+      ],
+      "precision": "接続を表す参考線",
+      "status": "近現代道の屈曲を参照（東海道の箱根区間は中世道を保持）"
+    },
+    {
+      "name": "晋州路",
+      "vertices": 555,
+      "longestSegmentKm": 3.419,
+      "modernComparison": true,
+      "alignedSections": 0,
+      "sources": [
+        "krRoads"
+      ],
+      "precision": "接続を表す参考線",
+      "status": "近現代道の屈曲を参照（東海道の箱根区間は中世道を保持）"
+    },
+    {
+      "name": "湖南大路",
+      "vertices": 1942,
+      "longestSegmentKm": 2.446,
+      "modernComparison": true,
+      "alignedSections": 0,
+      "sources": [
+        "krRoads"
+      ],
+      "precision": "接続を表す参考線",
+      "status": "近現代道の屈曲を参照（東海道の箱根区間は中世道を保持）"
+    },
+    {
+      "name": "八良峙越え",
+      "vertices": 597,
+      "longestSegmentKm": 1.456,
+      "modernComparison": true,
+      "alignedSections": 0,
+      "sources": [
+        "krRoads"
+      ],
+      "precision": "接続を表す参考線",
+      "status": "近現代道の屈曲を参照（東海道の箱根区間は中世道を保持）"
+    },
+    {
+      "name": "義州大路",
+      "vertices": 147,
+      "longestSegmentKm": 3.297,
+      "modernComparison": false,
+      "alignedSections": 0,
+      "sources": [
+        "krRoads",
+        "krUiju1488"
+      ],
+      "precision": "経由地と峠を結んだ概略。区間内の道路中心線は未復元",
+      "status": "史料付き回廊を保持"
+    },
+    {
+      "name": "海州路",
+      "vertices": 492,
+      "longestSegmentKm": 4.027,
+      "modernComparison": true,
+      "alignedSections": 0,
+      "sources": [
+        "krRoads"
+      ],
+      "precision": "接続を表す参考線",
+      "status": "近現代道の屈曲を参照（東海道の箱根区間は中世道を保持）"
+    },
+    {
+      "name": "関北路",
+      "vertices": 91,
+      "longestSegmentKm": 3.326,
+      "modernComparison": false,
+      "alignedSections": 0,
+      "sources": [
+        "krRoads"
+      ],
+      "precision": "接続を表す参考線",
+      "status": "史料付き回廊を保持"
+    },
+    {
+      "name": "永川路",
+      "vertices": 360,
+      "longestSegmentKm": 1.746,
+      "modernComparison": true,
+      "alignedSections": 0,
+      "sources": [
+        "krRoads"
+      ],
+      "precision": "接続を表す参考線",
+      "status": "近現代道の屈曲を参照（東海道の箱根区間は中世道を保持）"
+    },
+    {
+      "name": "関東路",
+      "vertices": 1321,
+      "longestSegmentKm": 3.124,
+      "modernComparison": false,
+      "alignedSections": 43,
+      "sources": [
+        "krGwandongPass",
+        "krGwandongRoute",
+        "krRoads"
+      ],
+      "precision": "経由地と峠を結んだ概略。区間内の道路中心線は未復元",
+      "status": "史料の経由地を保持し局所形状を参照"
+    },
+    {
+      "name": "越後街道",
+      "vertices": 1856,
+      "longestSegmentKm": 2.518,
+      "modernComparison": true,
+      "alignedSections": 0,
+      "sources": [],
+      "precision": "道路参考資料の精度による",
+      "status": "近現代道の屈曲を参照（東海道の箱根区間は中世道を保持）"
+    },
+    {
+      "name": "米沢街道",
+      "vertices": 1706,
+      "longestSegmentKm": 1.772,
+      "modernComparison": true,
+      "alignedSections": 0,
+      "sources": [],
+      "precision": "道路参考資料の精度による",
+      "status": "近現代道の屈曲を参照（東海道の箱根区間は中世道を保持）"
+    },
+    {
+      "name": "二本松街道",
+      "vertices": 914,
+      "longestSegmentKm": 1.565,
+      "modernComparison": true,
+      "alignedSections": 0,
+      "sources": [],
+      "precision": "道路参考資料の精度による",
+      "status": "近現代道の屈曲を参照（東海道の箱根区間は中世道を保持）"
+    },
+    {
+      "name": "白河街道",
+      "vertices": 1758,
+      "longestSegmentKm": 0.819,
+      "modernComparison": true,
+      "alignedSections": 0,
+      "sources": [],
+      "precision": "道路参考資料の精度による",
+      "status": "近現代道の屈曲を参照（東海道の箱根区間は中世道を保持）"
+    },
+    {
+      "name": "浜街道",
+      "vertices": 1604,
+      "longestSegmentKm": 2.808,
+      "modernComparison": true,
+      "alignedSections": 0,
+      "sources": [],
+      "precision": "道路参考資料の精度による",
+      "status": "近現代道の屈曲を参照（東海道の箱根区間は中世道を保持）"
+    },
+    {
+      "name": "御斎所街道",
+      "vertices": 789,
+      "longestSegmentKm": 1.049,
+      "modernComparison": true,
+      "alignedSections": 0,
+      "sources": [],
+      "precision": "道路参考資料の精度による",
+      "status": "近現代道の屈曲を参照（東海道の箱根区間は中世道を保持）"
+    },
+    {
+      "name": "足利道",
+      "vertices": 512,
+      "longestSegmentKm": 1.82,
+      "modernComparison": true,
+      "alignedSections": 0,
+      "sources": [],
+      "precision": "道路参考資料の精度による",
+      "status": "近現代道の屈曲を参照（東海道の箱根区間は中世道を保持）"
+    },
+    {
+      "name": "水戸道",
+      "vertices": 864,
+      "longestSegmentKm": 2.818,
+      "modernComparison": true,
+      "alignedSections": 0,
+      "sources": [],
+      "precision": "道路参考資料の精度による",
+      "status": "近現代道の屈曲を参照（東海道の箱根区間は中世道を保持）"
+    },
+    {
+      "name": "房総往還",
+      "vertices": 955,
+      "longestSegmentKm": 2.578,
+      "modernComparison": true,
+      "alignedSections": 0,
+      "sources": [],
+      "precision": "道路参考資料の精度による",
+      "status": "近現代道の屈曲を参照（東海道の箱根区間は中世道を保持）"
+    },
+    {
+      "name": "岩付道",
+      "vertices": 283,
+      "longestSegmentKm": 1.143,
+      "modernComparison": true,
+      "alignedSections": 0,
+      "sources": [],
+      "precision": "道路参考資料の精度による",
+      "status": "近現代道の屈曲を参照（東海道の箱根区間は中世道を保持）"
+    },
+    {
+      "name": "秩父道",
+      "vertices": 298,
+      "longestSegmentKm": 1.443,
+      "modernComparison": true,
+      "alignedSections": 0,
+      "sources": [],
+      "precision": "道路参考資料の精度による",
+      "status": "近現代道の屈曲を参照（東海道の箱根区間は中世道を保持）"
+    },
+    {
+      "name": "三州街道",
+      "vertices": 3149,
+      "longestSegmentKm": 1.609,
+      "modernComparison": true,
+      "alignedSections": 0,
+      "sources": [],
+      "precision": "道路参考資料の精度による",
+      "status": "近現代道の屈曲を参照（東海道の箱根区間は中世道を保持）"
+    },
+    {
+      "name": "秋葉街道",
+      "vertices": 1894,
+      "longestSegmentKm": 1.097,
+      "modernComparison": true,
+      "alignedSections": 0,
+      "sources": [],
+      "precision": "道路参考資料の精度による",
+      "status": "近現代道の屈曲を参照（東海道の箱根区間は中世道を保持）"
+    },
+    {
+      "name": "杖突越え",
+      "vertices": 1254,
+      "longestSegmentKm": 0.66,
+      "modernComparison": true,
+      "alignedSections": 0,
+      "sources": [],
+      "precision": "道路参考資料の精度による",
+      "status": "近現代道の屈曲を参照（東海道の箱根区間は中世道を保持）"
+    },
+    {
+      "name": "足柄道",
+      "vertices": 770,
+      "longestSegmentKm": 2.805,
+      "modernComparison": true,
+      "alignedSections": 0,
+      "sources": [],
+      "precision": "道路参考資料の精度による",
+      "status": "近現代道の屈曲を参照（東海道の箱根区間は中世道を保持）"
+    },
+    {
+      "name": "越中街道（飛騨）",
+      "vertices": 939,
+      "longestSegmentKm": 1.977,
+      "modernComparison": true,
+      "alignedSections": 0,
+      "sources": [],
+      "precision": "道路参考資料の精度による",
+      "status": "近現代道の屈曲を参照（東海道の箱根区間は中世道を保持）"
+    },
+    {
+      "name": "飛騨街道",
+      "vertices": 1623,
+      "longestSegmentKm": 1.085,
+      "modernComparison": true,
+      "alignedSections": 0,
+      "sources": [],
+      "precision": "道路参考資料の精度による",
+      "status": "近現代道の屈曲を参照（東海道の箱根区間は中世道を保持）"
+    },
+    {
+      "name": "野麦街道",
+      "vertices": 953,
+      "longestSegmentKm": 1.252,
+      "modernComparison": true,
+      "alignedSections": 0,
+      "sources": [],
+      "precision": "道路参考資料の精度による",
+      "status": "近現代道の屈曲を参照（東海道の箱根区間は中世道を保持）"
+    },
+    {
+      "name": "白山道",
+      "vertices": 1341,
+      "longestSegmentKm": 1.522,
+      "modernComparison": true,
+      "alignedSections": 0,
+      "sources": [],
+      "precision": "道路参考資料の精度による",
+      "status": "近現代道の屈曲を参照（東海道の箱根区間は中世道を保持）"
+    },
+    {
+      "name": "能登街道",
+      "vertices": 335,
+      "longestSegmentKm": 2.119,
+      "modernComparison": true,
+      "alignedSections": 0,
+      "sources": [],
+      "precision": "道路参考資料の精度による",
+      "status": "近現代道の屈曲を参照（東海道の箱根区間は中世道を保持）"
+    },
+    {
+      "name": "周山街道",
+      "vertices": 1372,
+      "longestSegmentKm": 1.39,
+      "modernComparison": true,
+      "alignedSections": 0,
+      "sources": [],
+      "precision": "道路参考資料の精度による",
+      "status": "近現代道の屈曲を参照（東海道の箱根区間は中世道を保持）"
+    },
+    {
+      "name": "伊勢本街道",
+      "vertices": 937,
+      "longestSegmentKm": 1.105,
+      "modernComparison": true,
+      "alignedSections": 0,
+      "sources": [],
+      "precision": "道路参考資料の精度による",
+      "status": "近現代道の屈曲を参照（東海道の箱根区間は中世道を保持）"
+    },
+    {
+      "name": "暗越奈良街道",
+      "vertices": 332,
+      "longestSegmentKm": 2.695,
+      "modernComparison": true,
+      "alignedSections": 0,
+      "sources": [],
+      "precision": "道路参考資料の精度による",
+      "status": "近現代道の屈曲を参照（東海道の箱根区間は中世道を保持）"
+    },
+    {
+      "name": "伊賀越え",
+      "vertices": 576,
+      "longestSegmentKm": 1.758,
+      "modernComparison": true,
+      "alignedSections": 0,
+      "sources": [],
+      "precision": "道路参考資料の精度による",
+      "status": "近現代道の屈曲を参照（東海道の箱根区間は中世道を保持）"
+    },
+    {
+      "name": "但馬街道",
+      "vertices": 908,
+      "longestSegmentKm": 1.352,
+      "modernComparison": true,
+      "alignedSections": 0,
+      "sources": [],
+      "precision": "道路参考資料の精度による",
+      "status": "近現代道の屈曲を参照（東海道の箱根区間は中世道を保持）"
+    },
+    {
+      "name": "因幡街道",
+      "vertices": 1419,
+      "longestSegmentKm": 1.456,
+      "modernComparison": true,
+      "alignedSections": 0,
+      "sources": [],
+      "precision": "道路参考資料の精度による",
+      "status": "近現代道の屈曲を参照（東海道の箱根区間は中世道を保持）"
+    },
+    {
+      "name": "出雲街道",
+      "vertices": 2431,
+      "longestSegmentKm": 1.212,
+      "modernComparison": true,
+      "alignedSections": 0,
+      "sources": [],
+      "precision": "道路参考資料の精度による",
+      "status": "近現代道の屈曲を参照（東海道の箱根区間は中世道を保持）"
+    },
+    {
+      "name": "松山往来",
+      "vertices": 844,
+      "longestSegmentKm": 0.558,
+      "modernComparison": true,
+      "alignedSections": 0,
+      "sources": [],
+      "precision": "道路参考資料の精度による",
+      "status": "近現代道の屈曲を参照（東海道の箱根区間は中世道を保持）"
+    },
+    {
+      "name": "石見路",
+      "vertices": 2016,
+      "longestSegmentKm": 0.958,
+      "modernComparison": true,
+      "alignedSections": 0,
+      "sources": [],
+      "precision": "道路参考資料の精度による",
+      "status": "近現代道の屈曲を参照（東海道の箱根区間は中世道を保持）"
+    },
+    {
+      "name": "銀山街道",
+      "vertices": 788,
+      "longestSegmentKm": 0.561,
+      "modernComparison": true,
+      "alignedSections": 0,
+      "sources": [],
+      "precision": "道路参考資料の精度による",
+      "status": "近現代道の屈曲を参照（東海道の箱根区間は中世道を保持）"
+    },
+    {
+      "name": "土佐北街道",
+      "vertices": 1651,
+      "longestSegmentKm": 0.412,
+      "modernComparison": true,
+      "alignedSections": 0,
+      "sources": [],
+      "precision": "道路参考資料の精度による",
+      "status": "近現代道の屈曲を参照（東海道の箱根区間は中世道を保持）"
+    },
+    {
+      "name": "土佐東街道",
+      "vertices": 4691,
+      "longestSegmentKm": 1.29,
+      "modernComparison": true,
+      "alignedSections": 0,
+      "sources": [],
+      "precision": "道路参考資料の精度による",
+      "status": "近現代道の屈曲を参照（東海道の箱根区間は中世道を保持）"
+    },
+    {
+      "name": "豊後街道",
+      "vertices": 1378,
+      "longestSegmentKm": 1.775,
+      "modernComparison": true,
+      "alignedSections": 0,
+      "sources": [],
+      "precision": "道路参考資料の精度による",
+      "status": "近現代道の屈曲を参照（東海道の箱根区間は中世道を保持）"
+    },
+    {
+      "name": "日向街道",
+      "vertices": 3223,
+      "longestSegmentKm": 1.751,
+      "modernComparison": true,
+      "alignedSections": 0,
+      "sources": [],
+      "precision": "道路参考資料の精度による",
+      "status": "近現代道の屈曲を参照（東海道の箱根区間は中世道を保持）"
+    },
+    {
+      "name": "人吉街道",
+      "vertices": 1279,
+      "longestSegmentKm": 0.902,
+      "modernComparison": true,
+      "alignedSections": 0,
+      "sources": [],
+      "precision": "道路参考資料の精度による",
+      "status": "近現代道の屈曲を参照（東海道の箱根区間は中世道を保持）"
+    },
+    {
+      "name": "唐津街道",
+      "vertices": 1378,
+      "longestSegmentKm": 1.233,
+      "modernComparison": true,
+      "alignedSections": 0,
+      "sources": [],
+      "precision": "道路参考資料の精度による",
+      "status": "近現代道の屈曲を参照（東海道の箱根区間は中世道を保持）"
+    },
+    {
+      "name": "柳川往還",
+      "vertices": 104,
+      "longestSegmentKm": 2.028,
+      "modernComparison": true,
+      "alignedSections": 0,
+      "sources": [],
+      "precision": "道路参考資料の精度による",
+      "status": "近現代道の屈曲を参照（東海道の箱根区間は中世道を保持）"
+    },
+    {
+      "name": "秋田街道",
+      "vertices": 836,
+      "longestSegmentKm": 1.205,
+      "modernComparison": true,
+      "alignedSections": 0,
+      "sources": [],
+      "precision": "道路参考資料の精度による",
+      "status": "近現代道の屈曲を参照（東海道の箱根区間は中世道を保持）"
+    },
+    {
+      "name": "六十里越街道",
+      "vertices": 24,
+      "longestSegmentKm": 3.166,
+      "modernComparison": false,
+      "alignedSections": 0,
+      "sources": [],
+      "precision": "道路参考資料の精度による",
+      "status": "史料付き回廊を保持"
+    },
+    {
+      "name": "出羽浜街道",
+      "vertices": 1126,
+      "longestSegmentKm": 2.867,
+      "modernComparison": true,
+      "alignedSections": 0,
+      "sources": [],
+      "precision": "道路参考資料の精度による",
+      "status": "近現代道の屈曲を参照（東海道の箱根区間は中世道を保持）"
+    },
+    {
+      "name": "鹿角街道",
+      "vertices": 1321,
+      "longestSegmentKm": 1.482,
+      "modernComparison": true,
+      "alignedSections": 0,
+      "sources": [],
+      "precision": "道路参考資料の精度による",
+      "status": "近現代道の屈曲を参照（東海道の箱根区間は中世道を保持）"
+    },
+    {
+      "name": "京・大津道",
+      "vertices": 26,
+      "longestSegmentKm": 2.917,
+      "modernComparison": false,
+      "alignedSections": 0,
+      "sources": [
+        "otsuRoad",
+        "osakaPass"
+      ],
+      "precision": "通過地を照合した概略線。測量復元ではない",
+      "status": "史料付き回廊を保持"
+    }
+  ]
+}

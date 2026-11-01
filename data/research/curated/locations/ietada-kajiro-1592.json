@@ -1,0 +1,27 @@
+{
+  "id": "location:ietada-kajiro-1592",
+  "person": "person:matsudaira-ietada",
+  "place": "place:kazusa-kajiro",
+  "relation": "residence-transfer",
+  "time": {
+    "kind": "dated-event",
+    "date": [
+      1592,
+      2,
+      19
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": false,
+    "precision": "day"
+  },
+  "source": "kajiroResidence",
+  "sourceUrl": "https://www.echiba.org/wp-content/uploads/2022/12/kiyo_028_p1.pdf",
+  "locator": "本文14頁（PDF32頁）上代陣屋・1592年2月19日",
+  "uncertainty": "旧暦。上代の屋敷位置には異説があり、桜井城の一点と断定しない。",
+  "recordType": "sourced-location-observation",
+  "status": "verified-in-specified-scope",
+  "recordedAt": "2026-11-01",
+  "gameBindings": [
+    "TK.PERSON_RESIDENCE_EVIDENCE"
+  ]
+}

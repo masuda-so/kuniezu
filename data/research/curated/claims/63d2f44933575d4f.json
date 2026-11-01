@@ -1,0 +1,25 @@
+{
+  "id": "imagawa-departure",
+  "entity": "campaign:桶狭間",
+  "predicate": "adopted-departure-date",
+  "value": [
+    1560,
+    5,
+    12
+  ],
+  "calendar": "Japanese-lunisolar",
+  "validYears": [
+    1560,
+    1560
+  ],
+  "source": "imagawaDeparture",
+  "locator": "今川義元の進軍ルート",
+  "gameBindings": [
+    "TK.SCEN.s1560.openingDate"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "sourceUrl": "https://aichinow.pref.aichi.jp/show/data/guidebook/301/0/",
+  "checked": "2026-11-01",
+  "uncertainty": null
+}

@@ -1,0 +1,21 @@
+{
+  "id": "seishido-1545-tradition",
+  "entity": "road:白河街道",
+  "predicate": "opening-tradition",
+  "value": "1545年に蘆名盛氏が勢至堂峠を開いたと伝わる",
+  "validYears": [
+    1545,
+    1545
+  ],
+  "datePrecision": "year",
+  "source": "seishidoSukagawa",
+  "locator": "本文第2段落",
+  "gameBindings": [
+    "TK.ROAD_EVIDENCE:白河街道"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "sourceUrl": "https://www.city.sukagawa.fukushima.jp/bunka_sports/bunka_geijyutsu/1013435/bunkazai/1-1/1008731.html",
+  "checked": "2026-11-01",
+  "uncertainty": "伝承の記載を確認した命題。1545年開削の史実確定ではない。"
+}

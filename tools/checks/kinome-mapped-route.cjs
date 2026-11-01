@@ -1,0 +1,21 @@
+const fs=require('node:fs'),assert=require('node:assert/strict'),{G,TK}=require('./history-focus.cjs').model();
+const input=JSON.parse(fs.readFileSync('data/inputs/hokurikudo-review/accepted-whole-reference.json'));
+const before=JSON.parse(fs.readFileSync('data/inputs/hokurikudo-review/before-modern-reference.json'));
+assert.deepEqual(Array.from(TK.MODERN_ROAD_REFERENCE['北陸道'],p=>Array.from(p)),input.points);
+assert.deepEqual(input.points[0],before.points[0]);assert.deepEqual(input.points.at(-1),before.points.at(-1));
+assert.ok(input.joinMetres.every(n=>n<25));
+G.newGame('s1560','oda');
+const section=input.sections.find(s=>s.kind==='published-map-corridor'),road=TK.roadDisplay(G.ROADS.find(r=>r.name==='北陸道'));
+assert.ok(road.evidence.sources.includes('kinomeBunkaMap'));
+assert.ok((road.referenceCleanup?.excursions||[]).every(c=>c.last<section.first||c.first>section.last),'published pass hairpins must remain intact');
+const keys=new Set(road.pts.map(p=>p.join(',')));
+for(const p of input.points.slice(section.first,section.last+1))assert.ok(keys.has(G.PJ(...p).join(',')));
+const [x,y]=G.PJ(...input.imaJoSharedPoint),nodes=G.DISPLAY_RNET;
+const local=new Set(nodes.map((n,i)=>Math.hypot(n.x-x,n.y-y)<1?i:-1).filter(i=>i>=0));
+const nearest=name=>[...local].filter(i=>nodes[i].roads.has(name)).sort((a,b)=>Math.hypot(nodes[a].x-x,nodes[a].y-y)-Math.hypot(nodes[b].x-x,nodes[b].y-y))[0];
+const a=nearest('北陸道'),b=nearest('北国街道（近江）');assert.ok(a!==undefined&&b!==undefined,'both historical route families retained at Imajo');
+const visited=new Set(),queue=[a];
+while(queue.length){const i=queue.pop();if(visited.has(i))continue;visited.add(i);for(const [j]of nodes[i].e)if(local.has(j)&&!visited.has(j))queue.push(j);}
+assert.ok(visited.has(b),'Tochinoki route connects locally to Kinome route instead of ending after cleanup');
+fs.writeFileSync('data/audits/kinome-mapped-route-review.json',JSON.stringify({scope:input.scope,joins:input.joinMetres,imaJoMapDistanceMetres:input.imaJoMapDistanceMetres,localNetworkNodes:local.size,connected:true},null,2));
+console.log('PASS: source-map hairpins retained, original endpoints unchanged, Kinome and Tochinoki connect locally at Imajo');

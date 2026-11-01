@@ -1,0 +1,20 @@
+{
+  "issues": [
+    "waypoint-snap-over-250m",
+    "route-over-3x-waypoint-distance",
+    "closed-excursion-over-2km"
+  ],
+  "maxSnapMetres": 1958.720803,
+  "waypointDistanceMetres": 56558.89993043101,
+  "routeDistanceMetres": 299672.7,
+  "largestClosedExcursion": {
+    "first": 2581,
+    "last": 8851,
+    "lengthMetres": 162906.61088774184,
+    "junction": [
+      136.070993,
+      35.632033
+    ]
+  },
+  "scope": "Modern routing checks only; flagged geometry is retained for review, not deleted as a historical road."
+}

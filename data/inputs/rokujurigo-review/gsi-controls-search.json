@@ -1,0 +1,749 @@
+[
+  {
+    "query": "山形駅",
+    "url": "https://msearch.gsi.go.jp/address-search/AddressSearch?q=%E5%B1%B1%E5%BD%A2%E9%A7%85",
+    "result": [
+      {
+        "geometry": {
+          "coordinates": [
+            141.761566,
+            43.03207
+          ],
+          "type": "Point"
+        },
+        "type": "Feature",
+        "properties": {
+          "addressCode": "",
+          "title": "北海道由仁町山形"
+        }
+      },
+      {
+        "geometry": {
+          "coordinates": [
+            140.339767,
+            38.255459
+          ],
+          "type": "Point"
+        },
+        "type": "Feature",
+        "properties": {
+          "addressCode": "",
+          "title": "山形県山形市"
+        }
+      },
+      {
+        "geometry": {
+          "coordinates": [
+            140.432175,
+            37.122646
+          ],
+          "type": "Point"
+        },
+        "type": "Feature",
+        "properties": {
+          "addressCode": "",
+          "title": "福島県石川町山形"
+        }
+      },
+      {
+        "geometry": {
+          "coordinates": [
+            140.461945,
+            36.945381
+          ],
+          "type": "Point"
+        },
+        "type": "Feature",
+        "properties": {
+          "addressCode": "",
+          "title": "福島県塙町山形"
+        }
+      },
+      {
+        "geometry": {
+          "coordinates": [
+            137.878891,
+            36.168056
+          ],
+          "type": "Point"
+        },
+        "type": "Feature",
+        "properties": {
+          "addressCode": "",
+          "title": "長野県山形"
+        }
+      },
+      {
+        "geometry": {
+          "coordinates": [
+            137.878891,
+            36.168056
+          ],
+          "type": "Point"
+        },
+        "type": "Feature",
+        "properties": {
+          "addressCode": "",
+          "title": "長野県東筑摩郡山形村"
+        }
+      },
+      {
+        "geometry": {
+          "coordinates": [
+            140.32927621,
+            38.24934102
+          ],
+          "type": "Point"
+        },
+        "type": "Feature",
+        "properties": {
+          "addressCode": "6201",
+          "title": "山形駅前郵便局",
+          "dataSource": "3"
+        }
+      },
+      {
+        "geometry": {
+          "coordinates": [
+            134.279279803611,
+            35.2561336069444
+          ],
+          "type": "Point"
+        },
+        "type": "Feature",
+        "properties": {
+          "addressCode": "31328",
+          "title": "恋山形駅",
+          "dataSource": "1"
+        }
+      },
+      {
+        "geometry": {
+          "coordinates": [
+            140.327437722222,
+            38.2482304444444
+          ],
+          "type": "Point"
+        },
+        "type": "Feature",
+        "properties": {
+          "addressCode": "6201",
+          "title": "山形駅",
+          "dataSource": "1"
+        }
+      },
+      {
+        "geometry": {
+          "coordinates": [
+            140.332815569167,
+            38.2654949711111
+          ],
+          "type": "Point"
+        },
+        "type": "Feature",
+        "properties": {
+          "addressCode": "6201",
+          "title": "北山形駅",
+          "dataSource": "1"
+        }
+      }
+    ]
+  },
+  {
+    "query": "天童駅",
+    "url": "https://msearch.gsi.go.jp/address-search/AddressSearch?q=%E5%A4%A9%E7%AB%A5%E9%A7%85",
+    "result": [
+      {
+        "geometry": {
+          "coordinates": [
+            140.37793,
+            38.36224
+          ],
+          "type": "Point"
+        },
+        "type": "Feature",
+        "properties": {
+          "addressCode": "",
+          "title": "山形県天童市"
+        }
+      },
+      {
+        "geometry": {
+          "coordinates": [
+            140.374908,
+            38.355797
+          ],
+          "type": "Point"
+        },
+        "type": "Feature",
+        "properties": {
+          "addressCode": "",
+          "title": "山形県天童市天童"
+        }
+      },
+      {
+        "geometry": {
+          "coordinates": [
+            140.36598549,
+            38.35931931
+          ],
+          "type": "Point"
+        },
+        "type": "Feature",
+        "properties": {
+          "addressCode": "6210",
+          "title": "天童駅西郵便局",
+          "dataSource": "3"
+        }
+      },
+      {
+        "geometry": {
+          "coordinates": [
+            140.367343881667,
+            38.3602080766667
+          ],
+          "type": "Point"
+        },
+        "type": "Feature",
+        "properties": {
+          "addressCode": "6210",
+          "title": "天童駅",
+          "dataSource": "1"
+        }
+      }
+    ]
+  },
+  {
+    "query": "寒河江駅",
+    "url": "https://msearch.gsi.go.jp/address-search/AddressSearch?q=%E5%AF%92%E6%B2%B3%E6%B1%9F%E9%A7%85",
+    "result": [
+      {
+        "geometry": {
+          "coordinates": [
+            140.276169,
+            38.380974
+          ],
+          "type": "Point"
+        },
+        "type": "Feature",
+        "properties": {
+          "addressCode": "",
+          "title": "山形県寒河江市"
+        }
+      },
+      {
+        "geometry": {
+          "coordinates": [
+            140.273972,
+            38.36237
+          ],
+          "type": "Point"
+        },
+        "type": "Feature",
+        "properties": {
+          "addressCode": "",
+          "title": "山形県寒河江市寒河江"
+        }
+      },
+      {
+        "geometry": {
+          "coordinates": [
+            140.267062805278,
+            38.3793185141667
+          ],
+          "type": "Point"
+        },
+        "type": "Feature",
+        "properties": {
+          "addressCode": "6206",
+          "title": "西寒河江駅",
+          "dataSource": "1"
+        }
+      },
+      {
+        "geometry": {
+          "coordinates": [
+            140.277802063056,
+            38.3559833383333
+          ],
+          "type": "Point"
+        },
+        "type": "Feature",
+        "properties": {
+          "addressCode": "6206",
+          "title": "南寒河江駅",
+          "dataSource": "1"
+        }
+      },
+      {
+        "geometry": {
+          "coordinates": [
+            140.2753447,
+            38.3719308761111
+          ],
+          "type": "Point"
+        },
+        "type": "Feature",
+        "properties": {
+          "addressCode": "6206",
+          "title": "寒河江駅",
+          "dataSource": "1"
+        }
+      }
+    ]
+  },
+  {
+    "query": "村山駅",
+    "url": "https://msearch.gsi.go.jp/address-search/AddressSearch?q=%E6%9D%91%E5%B1%B1%E9%A7%85",
+    "result": [
+      {
+        "geometry": {
+          "coordinates": [
+            140.572739,
+            41.949131
+          ],
+          "type": "Point"
+        },
+        "type": "Feature",
+        "properties": {
+          "addressCode": "",
+          "title": "北海道北斗市村山"
+        }
+      },
+      {
+        "geometry": {
+          "coordinates": [
+            140.380386,
+            38.483383
+          ],
+          "type": "Point"
+        },
+        "type": "Feature",
+        "properties": {
+          "addressCode": "",
+          "title": "山形県村山市"
+        }
+      },
+      {
+        "geometry": {
+          "coordinates": [
+            138.845154,
+            37.680855
+          ],
+          "type": "Point"
+        },
+        "type": "Feature",
+        "properties": {
+          "addressCode": "",
+          "title": "新潟県弥彦村村山"
+        }
+      },
+      {
+        "geometry": {
+          "coordinates": [
+            138.276154,
+            36.663383
+          ],
+          "type": "Point"
+        },
+        "type": "Feature",
+        "properties": {
+          "addressCode": "",
+          "title": "長野県須坂市村山"
+        }
+      },
+      {
+        "geometry": {
+          "coordinates": [
+            138.267227,
+            36.665924
+          ],
+          "type": "Point"
+        },
+        "type": "Feature",
+        "properties": {
+          "addressCode": "",
+          "title": "長野県長野市村山"
+        }
+      },
+      {
+        "geometry": {
+          "coordinates": [
+            136.711639,
+            35.483692
+          ],
+          "type": "Point"
+        },
+        "type": "Feature",
+        "properties": {
+          "addressCode": "",
+          "title": "岐阜県岐阜市村山"
+        }
+      },
+      {
+        "geometry": {
+          "coordinates": [
+            138.658096,
+            35.252888
+          ],
+          "type": "Point"
+        },
+        "type": "Feature",
+        "properties": {
+          "addressCode": "",
+          "title": "静岡県富士宮市村山"
+        }
+      },
+      {
+        "geometry": {
+          "coordinates": [
+            136.480179,
+            34.299568
+          ],
+          "type": "Point"
+        },
+        "type": "Feature",
+        "properties": {
+          "addressCode": "",
+          "title": "三重県南伊勢町村山"
+        }
+      },
+      {
+        "geometry": {
+          "coordinates": [
+            139.4663593,
+            35.75964636
+          ],
+          "type": "Point"
+        },
+        "type": "Feature",
+        "properties": {
+          "addressCode": "13213",
+          "title": "東村山警察署東村山駅前交番",
+          "dataSource": "3"
+        }
+      },
+      {
+        "geometry": {
+          "coordinates": [
+            138.280283789444,
+            36.6592790716667
+          ],
+          "type": "Point"
+        },
+        "type": "Feature",
+        "properties": {
+          "addressCode": "20207",
+          "title": "村山駅",
+          "dataSource": "1"
+        }
+      },
+      {
+        "geometry": {
+          "coordinates": [
+            139.465936,
+            35.7601688611111
+          ],
+          "type": "Point"
+        },
+        "type": "Feature",
+        "properties": {
+          "addressCode": "13213",
+          "title": "東村山駅",
+          "dataSource": "1"
+        }
+      },
+      {
+        "geometry": {
+          "coordinates": [
+            140.386448583333,
+            38.4772979444444
+          ],
+          "type": "Point"
+        },
+        "type": "Feature",
+        "properties": {
+          "addressCode": "6208",
+          "title": "村山駅",
+          "dataSource": "1"
+        }
+      }
+    ]
+  },
+  {
+    "query": "東根駅",
+    "url": "https://msearch.gsi.go.jp/address-search/AddressSearch?q=%E6%9D%B1%E6%A0%B9%E9%A7%85",
+    "result": [
+      {
+        "geometry": {
+          "coordinates": [
+            140.391129,
+            38.431381
+          ],
+          "type": "Point"
+        },
+        "type": "Feature",
+        "properties": {
+          "addressCode": "",
+          "title": "山形県東根市"
+        }
+      },
+      {
+        "geometry": {
+          "coordinates": [
+            140.382507,
+            38.456856
+          ],
+          "type": "Point"
+        },
+        "type": "Feature",
+        "properties": {
+          "addressCode": "",
+          "title": "山形県東根市大字東根"
+        }
+      },
+      {
+        "geometry": {
+          "coordinates": [
+            139.890656,
+            36.38076
+          ],
+          "type": "Point"
+        },
+        "type": "Feature",
+        "properties": {
+          "addressCode": "",
+          "title": "栃木県下野市東根"
+        }
+      },
+      {
+        "geometry": {
+          "coordinates": [
+            140.375517315833,
+            38.4285599425
+          ],
+          "type": "Point"
+        },
+        "type": "Feature",
+        "properties": {
+          "addressCode": "6211",
+          "title": "さくらんぼ東根駅",
+          "dataSource": "1"
+        }
+      },
+      {
+        "geometry": {
+          "coordinates": [
+            140.384349836667,
+            38.4511765097222
+          ],
+          "type": "Point"
+        },
+        "type": "Feature",
+        "properties": {
+          "addressCode": "6211",
+          "title": "東根駅",
+          "dataSource": "1"
+        }
+      }
+    ]
+  },
+  {
+    "query": "大石田駅",
+    "url": "https://msearch.gsi.go.jp/address-search/AddressSearch?q=%E5%A4%A7%E7%9F%B3%E7%94%B0%E9%A7%85",
+    "result": [
+      {
+        "geometry": {
+          "coordinates": [
+            140.372742,
+            38.593826
+          ],
+          "type": "Point"
+        },
+        "type": "Feature",
+        "properties": {
+          "addressCode": "",
+          "title": "山形県大石田"
+        }
+      },
+      {
+        "geometry": {
+          "coordinates": [
+            140.372742,
+            38.593826
+          ],
+          "type": "Point"
+        },
+        "type": "Feature",
+        "properties": {
+          "addressCode": "",
+          "title": "山形県北村山郡大石田町"
+        }
+      },
+      {
+        "geometry": {
+          "coordinates": [
+            140.363632,
+            38.59341
+          ],
+          "type": "Point"
+        },
+        "type": "Feature",
+        "properties": {
+          "addressCode": "",
+          "title": "山形県大石田町大字大石田"
+        }
+      },
+      {
+        "geometry": {
+          "coordinates": [
+            139.639008,
+            37.487202
+          ],
+          "type": "Point"
+        },
+        "type": "Feature",
+        "properties": {
+          "addressCode": "",
+          "title": "福島県三島町大石田"
+        }
+      },
+      {
+        "geometry": {
+          "coordinates": [
+            140.375392472222,
+            38.5957819722222
+          ],
+          "type": "Point"
+        },
+        "type": "Feature",
+        "properties": {
+          "addressCode": "6341",
+          "title": "大石田駅",
+          "dataSource": "1"
+        }
+      },
+      {
+        "geometry": {
+          "coordinates": [
+            140.371251253333,
+            38.6296161011111
+          ],
+          "type": "Point"
+        },
+        "type": "Feature",
+        "properties": {
+          "addressCode": "6341",
+          "title": "北大石田駅",
+          "dataSource": "1"
+        }
+      }
+    ]
+  },
+  {
+    "query": "鶴岡駅",
+    "url": "https://msearch.gsi.go.jp/address-search/AddressSearch?q=%E9%B6%B4%E5%B2%A1%E9%A7%85",
+    "result": [
+      {
+        "geometry": {
+          "coordinates": [
+            140.412903,
+            41.67178
+          ],
+          "type": "Point"
+        },
+        "type": "Feature",
+        "properties": {
+          "addressCode": "",
+          "title": "北海道木古内町鶴岡"
+        }
+      },
+      {
+        "geometry": {
+          "coordinates": [
+            140.408035,
+            40.848145
+          ],
+          "type": "Point"
+        },
+        "type": "Feature",
+        "properties": {
+          "addressCode": "",
+          "title": "青森県五所川原市大字鶴ケ岡"
+        }
+      },
+      {
+        "geometry": {
+          "coordinates": [
+            139.826675,
+            38.727219
+          ],
+          "type": "Point"
+        },
+        "type": "Feature",
+        "properties": {
+          "addressCode": "",
+          "title": "山形県鶴岡市"
+        }
+      },
+      {
+        "geometry": {
+          "coordinates": [
+            139.503693,
+            35.865055
+          ],
+          "type": "Point"
+        },
+        "type": "Feature",
+        "properties": {
+          "addressCode": "",
+          "title": "埼玉県ふじみ野市鶴ケ岡"
+        }
+      },
+      {
+        "geometry": {
+          "coordinates": [
+            139.88678,
+            35.249184
+          ],
+          "type": "Point"
+        },
+        "type": "Feature",
+        "properties": {
+          "addressCode": "",
+          "title": "千葉県富津市鶴岡"
+        }
+      },
+      {
+        "geometry": {
+          "coordinates": [
+            139.8360286,
+            38.73705863
+          ],
+          "type": "Point"
+        },
+        "type": "Feature",
+        "properties": {
+          "addressCode": "6203",
+          "title": "鶴岡駅前郵便局",
+          "dataSource": "3"
+        }
+      },
+      {
+        "geometry": {
+          "coordinates": [
+            139.836165305556,
+            38.7416268605556
+          ],
+          "type": "Point"
+        },
+        "type": "Feature",
+        "properties": {
+          "addressCode": "6203",
+          "title": "鶴岡駅",
+          "dataSource": "1"
+        }
+      }
+    ]
+  }
+]

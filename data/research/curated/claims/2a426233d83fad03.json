@@ -1,0 +1,26 @@
+{
+  "id": "aizu-departure",
+  "entity": "campaign:会津征伐",
+  "predicate": "departure",
+  "value": [
+    1600,
+    6,
+    16,
+    "大坂"
+  ],
+  "calendar": "Japanese-lunisolar",
+  "validYears": [
+    1600,
+    1600
+  ],
+  "source": "aizuDeparture",
+  "locator": "家康の大坂出陣",
+  "gameBindings": [
+    "TK.SCEN.s1600.start"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "sourceUrl": "https://www.city.ohtawara.tochigi.jp/docs/2020122100011/file_contents/all.pdf",
+  "checked": "2026-11-01",
+  "uncertainty": null
+}

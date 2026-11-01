@@ -1,0 +1,20 @@
+{
+  "generatedAt": "2026-11-02T04:47:35.187Z",
+  "scope": "登録スナップショットと要望の対象別作業。歴史上の全件の網羅を証明しない。",
+  "inputs": [
+    "data/audits/coverage-review.json",
+    "data/audits/battle-atlas-audit.json",
+    "docs/work/requests.json"
+  ],
+  "counts": {
+    "sites": 448,
+    "people": 378,
+    "roads": 85,
+    "links": 315,
+    "battles": 111,
+    "transfers": 138,
+    "waters": 26,
+    "requests": 19,
+    "total": 1520
+  }
+}

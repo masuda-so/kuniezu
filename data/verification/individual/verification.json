@@ -1,0 +1,18 @@
+{
+  "date": "2026-11-01",
+  "serverOperated": false,
+  "checks": {
+    "offline": "passed: 7 scenarios x 720 days; storage and historical constraints",
+    "movement-display": "passed: bend, 30 endpoints, Motoyasu route",
+    "terrain-transition": "passed: overview retained and obsolete requests cancelled",
+    "deployments-browser": "passed: 111 views and participant listings",
+    "zoom-regressions": "passed: Kanto/Kinki/Korea, 20 wheel events each; settled pixel equality",
+    "portrait-browser": "passed: 157 display names, 4 galleries",
+    "individual-browser": "passed: 3 separate armies at zoom 1/4; Sekigahara independent units; x1 four seconds/day"
+  },
+  "limitations": [
+    "Battle motion is presentation animation, not a reconstruction of every tactical move.",
+    "OSM detailed rivers/roads are modern reference lines, not authenticated period geometry.",
+    "Four additional portrait names include one alias of an existing person."
+  ]
+}

@@ -1,0 +1,673 @@
+{
+  "source": "OpenStreetMap contributors / Geofabrik / ODbL 1.0",
+  "date": "2026-11-01",
+  "scope": "全111表示範囲の現代比較河川。史実河道の照合とは別。",
+  "battles": [
+    {
+      "title": "桶狭間の戦い",
+      "lines": 125,
+      "points": 514,
+      "file": "00.json"
+    },
+    {
+      "title": "第四次川中島の戦い",
+      "lines": 48,
+      "points": 279,
+      "file": "01.json"
+    },
+    {
+      "title": "長篠の戦い",
+      "lines": 110,
+      "points": 761,
+      "file": "02.json"
+    },
+    {
+      "title": "関ヶ原の戦い",
+      "lines": 113,
+      "points": 1042,
+      "file": "03.json"
+    },
+    {
+      "title": "姉川の戦い",
+      "lines": 119,
+      "points": 537,
+      "file": "04.json"
+    },
+    {
+      "title": "三方ヶ原の戦い",
+      "lines": 172,
+      "points": 821,
+      "file": "05.json"
+    },
+    {
+      "title": "本能寺の変",
+      "lines": 33,
+      "points": 114,
+      "file": "06.json"
+    },
+    {
+      "title": "山崎の戦い",
+      "lines": 119,
+      "points": 552,
+      "file": "07.json"
+    },
+    {
+      "title": "賤ヶ岳の戦い",
+      "lines": 104,
+      "points": 792,
+      "file": "08.json"
+    },
+    {
+      "title": "小牧・長久手の戦い",
+      "lines": 637,
+      "points": 2945,
+      "file": "09.json"
+    },
+    {
+      "title": "耳川の戦い",
+      "lines": 57,
+      "points": 589,
+      "file": "10.json"
+    },
+    {
+      "title": "沖田畷の戦い",
+      "lines": 61,
+      "points": 545,
+      "file": "11.json"
+    },
+    {
+      "title": "第一次上田合戦",
+      "lines": 69,
+      "points": 511,
+      "file": "12.json"
+    },
+    {
+      "title": "摺上原の戦い",
+      "lines": 80,
+      "points": 862,
+      "file": "13.json"
+    },
+    {
+      "title": "小田原征伐",
+      "lines": 48,
+      "points": 516,
+      "file": "14.json"
+    },
+    {
+      "title": "大坂夏の陣",
+      "lines": 49,
+      "points": 241,
+      "file": "15.json"
+    },
+    {
+      "title": "大坂冬の陣",
+      "lines": 62,
+      "points": 333,
+      "file": "16.json"
+    },
+    {
+      "title": "伏見城の戦い",
+      "lines": 36,
+      "points": 148,
+      "file": "17.json"
+    },
+    {
+      "title": "大津城の戦い",
+      "lines": 83,
+      "points": 214,
+      "file": "18.json"
+    },
+    {
+      "title": "第二次上田合戦",
+      "lines": 53,
+      "points": 393,
+      "file": "19.json"
+    },
+    {
+      "title": "田辺城の戦い",
+      "lines": 59,
+      "points": 252,
+      "file": "20.json"
+    },
+    {
+      "title": "長谷堂城の戦い",
+      "lines": 20,
+      "points": 164,
+      "file": "21.json"
+    },
+    {
+      "title": "高遠城の戦い",
+      "lines": 29,
+      "points": 181,
+      "file": "22.json"
+    },
+    {
+      "title": "小田原城の戦い",
+      "lines": 28,
+      "points": 196,
+      "file": "23.json"
+    },
+    {
+      "title": "森部の戦い",
+      "lines": 37,
+      "points": 204,
+      "file": "24.json"
+    },
+    {
+      "title": "第二次国府台合戦",
+      "lines": 21,
+      "points": 105,
+      "file": "25.json"
+    },
+    {
+      "title": "永禄の変",
+      "lines": 16,
+      "points": 52,
+      "file": "26.json"
+    },
+    {
+      "title": "箕輪城落城",
+      "lines": 30,
+      "points": 428,
+      "file": "27.json"
+    },
+    {
+      "title": "月山富田城開城",
+      "lines": 37,
+      "points": 328,
+      "file": "28.json"
+    },
+    {
+      "title": "休松の戦い",
+      "lines": 47,
+      "points": 363,
+      "file": "29.json"
+    },
+    {
+      "title": "稲葉山城の戦い",
+      "lines": 44,
+      "points": 141,
+      "file": "30.json"
+    },
+    {
+      "title": "大河内城の戦い",
+      "lines": 34,
+      "points": 337,
+      "file": "31.json"
+    },
+    {
+      "title": "三増峠の戦い",
+      "lines": 70,
+      "points": 713,
+      "file": "32.json"
+    },
+    {
+      "title": "木崎原の戦い",
+      "lines": 65,
+      "points": 614,
+      "file": "33.json"
+    },
+    {
+      "title": "小谷城落城",
+      "lines": 73,
+      "points": 249,
+      "file": "34.json"
+    },
+    {
+      "title": "長島一向一揆の平定",
+      "lines": 266,
+      "points": 1343,
+      "file": "35.json"
+    },
+    {
+      "title": "四万十川の戦い",
+      "lines": 124,
+      "points": 1067,
+      "file": "36.json"
+    },
+    {
+      "title": "天王寺の戦い",
+      "lines": 18,
+      "points": 89,
+      "file": "37.json"
+    },
+    {
+      "title": "七尾城の戦い",
+      "lines": 29,
+      "points": 194,
+      "file": "38.json"
+    },
+    {
+      "title": "手取川の戦い",
+      "lines": 141,
+      "points": 587,
+      "file": "39.json"
+    },
+    {
+      "title": "信貴山城の戦い",
+      "lines": 24,
+      "points": 190,
+      "file": "40.json"
+    },
+    {
+      "title": "上月城の戦い",
+      "lines": 24,
+      "points": 270,
+      "file": "41.json"
+    },
+    {
+      "title": "有岡城の戦い",
+      "lines": 97,
+      "points": 353,
+      "file": "42.json"
+    },
+    {
+      "title": "高天神城の戦い",
+      "lines": 54,
+      "points": 266,
+      "file": "43.json"
+    },
+    {
+      "title": "甲州征伐",
+      "lines": 5244,
+      "points": 17258,
+      "file": "44.json"
+    },
+    {
+      "title": "備中高松城の水攻め",
+      "lines": 30,
+      "points": 194,
+      "file": "45.json"
+    },
+    {
+      "title": "神流川の戦い",
+      "lines": 60,
+      "points": 377,
+      "file": "46.json"
+    },
+    {
+      "title": "中富川の戦い",
+      "lines": 76,
+      "points": 430,
+      "file": "47.json"
+    },
+    {
+      "title": "黒駒合戦",
+      "lines": 90,
+      "points": 863,
+      "file": "48.json"
+    },
+    {
+      "title": "紀州征伐",
+      "lines": 539,
+      "points": 3624,
+      "file": "49.json"
+    },
+    {
+      "title": "宇喜多勢の讃岐攻め",
+      "lines": 696,
+      "points": 3818,
+      "file": "50.json"
+    },
+    {
+      "title": "小早川隆景の伊予攻め",
+      "lines": 1148,
+      "points": 5807,
+      "file": "51.json"
+    },
+    {
+      "title": "四国攻め",
+      "lines": 6439,
+      "points": 20260,
+      "file": "52.json"
+    },
+    {
+      "title": "人取橋の戦い",
+      "lines": 24,
+      "points": 232,
+      "file": "53.json"
+    },
+    {
+      "title": "岩屋城の戦い",
+      "lines": 34,
+      "points": 203,
+      "file": "54.json"
+    },
+    {
+      "title": "九州平定",
+      "lines": 6829,
+      "points": 21013,
+      "file": "55.json"
+    },
+    {
+      "title": "根白坂の戦い",
+      "lines": 47,
+      "points": 445,
+      "file": "56.json"
+    },
+    {
+      "title": "新発田城落城",
+      "lines": 15,
+      "points": 84,
+      "file": "57.json"
+    },
+    {
+      "title": "韮山城の戦い",
+      "lines": 40,
+      "points": 220,
+      "file": "58.json"
+    },
+    {
+      "title": "北国勢の上野攻め",
+      "lines": 1846,
+      "points": 8383,
+      "file": "59.json"
+    },
+    {
+      "title": "鉢形城の開城",
+      "lines": 60,
+      "points": 550,
+      "file": "60.json"
+    },
+    {
+      "title": "文禄の役",
+      "lines": 8,
+      "points": 47,
+      "file": "61.json"
+    },
+    {
+      "title": "尚州の戦い",
+      "lines": 5,
+      "points": 86,
+      "file": "62.json"
+    },
+    {
+      "title": "忠州の戦い",
+      "lines": 10,
+      "points": 107,
+      "file": "63.json"
+    },
+    {
+      "title": "第一次晋州城の戦い",
+      "lines": 6,
+      "points": 53,
+      "file": "64.json"
+    },
+    {
+      "title": "平壌の戦い",
+      "lines": 28,
+      "points": 180,
+      "file": "65.json"
+    },
+    {
+      "title": "碧蹄館の戦い",
+      "lines": 15,
+      "points": 351,
+      "file": "66.json"
+    },
+    {
+      "title": "幸州山城の戦い",
+      "lines": 5,
+      "points": 47,
+      "file": "67.json"
+    },
+    {
+      "title": "第二次晋州城の戦い",
+      "lines": 6,
+      "points": 53,
+      "file": "68.json"
+    },
+    {
+      "title": "慶長の役・漆川梁海戦",
+      "lines": 1,
+      "points": 3,
+      "file": "69.json"
+    },
+    {
+      "title": "南原城の戦い",
+      "lines": 9,
+      "points": 130,
+      "file": "70.json"
+    },
+    {
+      "title": "蔚山城の戦い",
+      "lines": 21,
+      "points": 118,
+      "file": "71.json"
+    },
+    {
+      "title": "浅井畷の戦い",
+      "lines": 22,
+      "points": 143,
+      "file": "72.json"
+    },
+    {
+      "title": "安濃津城の戦い",
+      "lines": 11,
+      "points": 103,
+      "file": "73.json"
+    },
+    {
+      "title": "石垣原の戦い",
+      "lines": 19,
+      "points": 290,
+      "file": "74.json"
+    },
+    {
+      "title": "佐和山城落城",
+      "lines": 56,
+      "points": 224,
+      "file": "75.json"
+    },
+    {
+      "title": "今福・鴫野の戦い",
+      "lines": 33,
+      "points": 180,
+      "file": "76.json"
+    },
+    {
+      "title": "道明寺の戦い",
+      "lines": 103,
+      "points": 520,
+      "file": "77.json"
+    },
+    {
+      "title": "八尾・若江の戦い",
+      "lines": 142,
+      "points": 555,
+      "file": "78.json"
+    },
+    {
+      "title": "長尾景虎の関東出兵",
+      "lines": 466,
+      "points": 2773,
+      "file": "79.json"
+    },
+    {
+      "title": "信長上洛",
+      "lines": 3044,
+      "points": 12141,
+      "file": "80.json"
+    },
+    {
+      "title": "金ヶ崎の退き口",
+      "lines": 85,
+      "points": 651,
+      "file": "81.json"
+    },
+    {
+      "title": "朝倉氏滅亡",
+      "lines": 1143,
+      "points": 5170,
+      "file": "82.json"
+    },
+    {
+      "title": "備中兵乱",
+      "lines": 101,
+      "points": 921,
+      "file": "83.json"
+    },
+    {
+      "title": "御館の乱",
+      "lines": 55,
+      "points": 515,
+      "file": "84.json"
+    },
+    {
+      "title": "三木の干殺し",
+      "lines": 34,
+      "points": 456,
+      "file": "85.json"
+    },
+    {
+      "title": "天正伊賀の乱",
+      "lines": 328,
+      "points": 2299,
+      "file": "86.json"
+    },
+    {
+      "title": "鳥取の渇え殺し",
+      "lines": 94,
+      "points": 646,
+      "file": "87.json"
+    },
+    {
+      "title": "若神子の対陣",
+      "lines": 100,
+      "points": 1140,
+      "file": "88.json"
+    },
+    {
+      "title": "閑山島海戦",
+      "lines": 1,
+      "points": 18,
+      "file": "89.json"
+    },
+    {
+      "title": "鳴梁海戦",
+      "lines": 3,
+      "points": 15,
+      "file": "90.json"
+    },
+    {
+      "title": "露梁海戦",
+      "lines": 24,
+      "points": 273,
+      "file": "91.json"
+    },
+    {
+      "title": "牛久保城攻め",
+      "lines": 32,
+      "points": 128,
+      "file": "92.json"
+    },
+    {
+      "title": "三河平定",
+      "lines": 681,
+      "points": 3342,
+      "file": "93.json"
+    },
+    {
+      "title": "掛川城開城",
+      "lines": 87,
+      "points": 484,
+      "file": "94.json"
+    },
+    {
+      "title": "手這坂の戦い",
+      "lines": 66,
+      "points": 474,
+      "file": "95.json"
+    },
+    {
+      "title": "石山合戦はじまる",
+      "lines": 145,
+      "points": 753,
+      "file": "96.json"
+    },
+    {
+      "title": "第一次木津川口の戦い",
+      "lines": 73,
+      "points": 419,
+      "file": "97.json"
+    },
+    {
+      "title": "中国攻め",
+      "lines": 1358,
+      "points": 6306,
+      "file": "98.json"
+    },
+    {
+      "title": "第二次木津川口の戦い",
+      "lines": 73,
+      "points": 419,
+      "file": "99.json"
+    },
+    {
+      "title": "丹波・丹後平定",
+      "lines": 5380,
+      "points": 19109,
+      "file": "100.json"
+    },
+    {
+      "title": "岐阜城の開城",
+      "lines": 75,
+      "points": 321,
+      "file": "101.json"
+    },
+    {
+      "title": "松ヶ島城の戦い",
+      "lines": 87,
+      "points": 451,
+      "file": "102.json"
+    },
+    {
+      "title": "富山の役",
+      "lines": 276,
+      "points": 1506,
+      "file": "103.json"
+    },
+    {
+      "title": "戸次川の戦い",
+      "lines": 48,
+      "points": 541,
+      "file": "104.json"
+    },
+    {
+      "title": "小田原開城",
+      "lines": 132,
+      "points": 990,
+      "file": "105.json"
+    },
+    {
+      "title": "玉浦海戦",
+      "lines": 9,
+      "points": 87,
+      "file": "106.json"
+    },
+    {
+      "title": "会津征伐",
+      "lines": 7185,
+      "points": 22736,
+      "file": "107.json"
+    },
+    {
+      "title": "岐阜城の戦い",
+      "lines": 144,
+      "points": 762,
+      "file": "108.json"
+    },
+    {
+      "title": "木津川口の戦い",
+      "lines": 17,
+      "points": 92,
+      "file": "109.json"
+    },
+    {
+      "title": "真田丸の戦い",
+      "lines": 3,
+      "points": 22,
+      "file": "110.json"
+    }
+  ]
+}

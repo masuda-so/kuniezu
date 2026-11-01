@@ -1,0 +1,93 @@
+{
+  "status": "verified-with-map-symbol-tolerance",
+  "matrixSourceCanvasToReference": [
+    [
+      0.5420219736047628,
+      -0.00021901496644378303,
+      500.05497198696617
+    ],
+    [
+      -0.0005111654391443242,
+      0.5641057382306952,
+      320.4521827595521
+    ]
+  ],
+  "sourceCanvasScale": 2,
+  "sourcePageHeight": 1190.4,
+  "referenceZoom": 13,
+  "referenceOriginTile": [
+    7191,
+    3220
+  ],
+  "riverCorrelation": 0.6037975830528052,
+  "initialReadPdfPoints": [
+    [
+      231,
+      380
+    ],
+    [
+      539,
+      822
+    ]
+  ],
+  "independentStationChecks": [
+    {
+      "name": "今庄駅",
+      "sourceNorthImagePixel": [
+        1091,
+        1048
+      ],
+      "sourcePixelUncertainty": 10,
+      "gsiPoint": [
+        136.198496940833,
+        35.7740893894444
+      ],
+      "registeredPoint": [
+        136.19827559197495,
+        35.773914270998866
+      ],
+      "residualMetres": 27.92288242734596,
+      "toleranceMetres": 100,
+      "usedForFit": false
+    },
+    {
+      "name": "湯尾駅",
+      "sourceNorthImagePixel": [
+        1018,
+        503
+      ],
+      "sourcePixelUncertainty": 10,
+      "gsiPoint": [
+        136.192769805556,
+        35.8047366666667
+      ],
+      "registeredPoint": [
+        136.1933977090855,
+        35.80475162104387
+      ],
+      "residualMetres": 56.712970190376694,
+      "toleranceMetres": 100,
+      "usedForFit": false
+    },
+    {
+      "name": "南今庄駅",
+      "sourceNorthImagePixel": [
+        889,
+        1339
+      ],
+      "sourcePixelUncertainty": 10,
+      "gsiPoint": [
+        136.184881736944,
+        35.7573523955556
+      ],
+      "registeredPoint": [
+        136.18472916000536,
+        35.75743156369382
+      ],
+      "residualMetres": 16.35987027032804,
+      "toleranceMetres": 100,
+      "usedForFit": false
+    }
+  ],
+  "scope": "地形記号の時代差でSIFT照合が不足したため候補を棄却し、水系の重なりで位置合わせ。独立した駅記号3点を100mの記号・代表点の読取幅で検査。精密測量値や戦国期の全線確定ではない。"
+}

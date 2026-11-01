@@ -1,0 +1,28 @@
+{
+  "scope": "位置合わせに使わなかった地点による照合。記号幅・代表点の差を含む。精密測量の認証ではない。",
+  "rows": [
+    {
+      "name": "大山祇神社鳥居",
+      "point": [
+        140.041378,
+        37.722228
+      ],
+      "pixel": [
+        1288,
+        835
+      ],
+      "symbolWidthPixels": 16,
+      "source": "https://dstr.mhr.bosai.go.jp/disaster/sekihi/07_fukushima/07-005.html",
+      "locator": "緯度・経度、2021年12月10日修正",
+      "checked": "2026-11-01",
+      "usedForFit": false,
+      "predictedPixel": [
+        1280.8989761852285,
+        839.8411079657843
+      ],
+      "residualPixels": 8.594234436779791,
+      "residualMetres": 48.562941366536826,
+      "withinSymbolWidth": true
+    }
+  ]
+}

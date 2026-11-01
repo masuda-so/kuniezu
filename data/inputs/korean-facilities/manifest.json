@@ -1,0 +1,28 @@
+{
+  "date": "2026-11-01",
+  "source": "https://nominatim.openstreetmap.org/",
+  "copyright": "© OpenStreetMap contributors",
+  "license": "https://opendatacommons.org/licenses/odbl/1-0/",
+  "records": [
+    {
+      "path": "bongseonsa-location.json",
+      "sha256": "a4e0dcd2461a54090910a02af5d3935d1c55dfb8eee14049cdb1bc56087db72b",
+      "query": "봉선사",
+      "selectedPoint": [
+        127.1835518,
+        37.7473504
+      ],
+      "basis": "OpenStreetMap Nominatimの寺院代表点。歴史的な寺域・個別建物の精密測量ではない。"
+    },
+    {
+      "path": "haeinsa-location.json",
+      "sha256": "f541b7771ba07d7146ff5d96db483e8e3baa6c3a6475689c7fa6c8af2f05a8bc",
+      "query": "해인사",
+      "selectedPoint": [
+        128.0980383,
+        35.8010416
+      ],
+      "basis": "OpenStreetMap Nominatimの寺院代表点。歴史的な寺域・個別建物の精密測量ではない。"
+    }
+  ]
+}

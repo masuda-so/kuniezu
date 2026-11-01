@@ -1,0 +1,37 @@
+{
+  "date": "2026-11-01",
+  "scope": "構成整理・分担・史料入力の保持。歴史全件の照合完了ではない。",
+  "movedFiles": 41,
+  "loadedScripts": 78,
+  "catalogEntries": 1572,
+  "curatedClaims": 21,
+  "existingClaimsUnchanged": true,
+  "checks": [
+    {
+      "command": "node tools/checks/organization.cjs",
+      "result": "pass"
+    },
+    {
+      "command": "node tools/checks/evidence-store.cjs",
+      "result": "pass"
+    },
+    {
+      "command": "node tools/checks/offline.cjs",
+      "result": "pass: 7 scenarios x720 days"
+    },
+    {
+      "command": "node tools/checks/coverage-review.cjs",
+      "result": "pass: 445 sites / 436 names / 82 roads / 315 links"
+    },
+    {
+      "command": "node tools/research/export-evidence.cjs",
+      "result": "pass: 21 claims retained"
+    },
+    {
+      "command": "node tools/checks/march-clock-browser.cjs",
+      "result": "pass: departure, pause/resume, battle map, narrow display, independent crest; no JS exceptions"
+    }
+  ],
+  "browserEvidenceDirectory": "data/verification/organization",
+  "backup": "/var/folders/p6/_cz1nnqd7ksfd45n2t859zvw0000gn/T/kuniezu-organization-ql8_4jf3"
+}

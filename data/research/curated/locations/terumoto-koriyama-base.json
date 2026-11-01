@@ -1,0 +1,23 @@
+{
+  "id": "location:terumoto-koriyama-base",
+  "person": "person:mori-terumoto",
+  "place": "place:aki-koriyama",
+  "relation": "principal-base",
+  "time": {
+    "kind": "year-interval",
+    "from": 1571,
+    "untilExclusive": 1591,
+    "calendar": "CE-year",
+    "precision": "year"
+  },
+  "source": "terumotoResidence",
+  "sourceUrl": "https://www.akitakata.jp/ja/hakubutsukan/assets/mouri/",
+  "locator": "郡山城跡・1591年の広島移転まで毛利氏の本拠",
+  "uncertainty": "本拠の参照範囲。1571年を輝元の家督相続年とせず、在城や連続滞在を保証しない。",
+  "recordType": "sourced-location-observation",
+  "status": "verified-in-specified-scope",
+  "recordedAt": "2026-11-01",
+  "gameBindings": [
+    "TK.PERSON_RESIDENCE_EVIDENCE"
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "id": "suwahara-renamed",
+  "entity": "site:諏訪原城",
+  "predicate": "renamed",
+  "value": "牧野城",
+  "validYears": [
+    1575,
+    1615
+  ],
+  "datePrecision": "year",
+  "source": "suwaharaLocal",
+  "gameBindings": [
+    "G.sitePresentation"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "sourceUrl": "https://www.city.shimada.shizuoka.jp/shimahaku/docs/kuni-01.html",
+  "locator": "城跡の解説",
+  "checked": "2026-11-01",
+  "uncertainty": "日付は確定しない"
+}

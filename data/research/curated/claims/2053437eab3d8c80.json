@@ -1,0 +1,22 @@
+{
+  "id": "katsuyori-tsutsuji-residence",
+  "entity": "person:武田勝頼",
+  "predicate": "residence-after-succession",
+  "value": "1573年の継承後に躑躅ヶ崎館へ入る",
+  "validYears": [
+    1573,
+    1573
+  ],
+  "datePrecision": "year",
+  "source": "katsuyoriResidence",
+  "locator": "元亀4年の継承と躑躅ヶ崎館入館",
+  "gameBindings": [
+    "TK.HIST:武田信玄の死.appear@tsutsuji",
+    "TK.PERSON_RESIDENCE_EVIDENCE"
+  ],
+  "sourceUrl": "https://kawanakajima.nagano.jp/character/takeda-katsuyori/",
+  "uncertainty": "正確な入館日を確定しない。ゲームでは後継者生成時の代表居所に適用。",
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-01"
+}

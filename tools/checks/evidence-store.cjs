@@ -1,0 +1,8 @@
+const fs=require('node:fs'),os=require('node:os'),path=require('node:path'),assert=require('node:assert/strict'),{loadEvidence}=require('../research/evidence-store.cjs');
+const root=path.resolve(__dirname,'../..'),dir=fs.mkdtempSync(path.join(os.tmpdir(),'kuniezu-evidence-')),claimDir=path.join(dir,'claims'),sourceDir=path.join(dir,'sources');fs.mkdirSync(claimDir);fs.mkdirSync(sourceDir);
+const r=JSON.parse(fs.readFileSync(path.join(root,'data/research/curated/claims',fs.readdirSync(path.join(root,'data/research/curated/claims'))[0]))),baseSources={[r.source]:{url:r.sourceUrl}},put=(name,row)=>fs.writeFileSync(path.join(claimDir,name),JSON.stringify(row));
+try{put('a.json',r);assert.equal(loadEvidence({claimDir,sourceDir,baseSources}).facts.length,1);put('b.json',{...r,id:'second-author'});assert.equal(loadEvidence({claimDir,sourceDir,baseSources}).facts.length,2);const before=fs.readFileSync(path.join(claimDir,'b.json'),'utf8');loadEvidence({claimDir,sourceDir,baseSources});assert.equal(fs.readFileSync(path.join(claimDir,'b.json'),'utf8'),before);
+ put('b.json',{...r,id:'duplicate'});put('a.json',{...r,id:'duplicate'});assert.throws(()=>loadEvidence({claimDir,sourceDir,baseSources}),/重複/);put('a.json',r);
+ for(const change of [{status:'unverified'},{source:'absent'},{validYears:[1600,1590]},{sourceUrl:'https://example.invalid'},{gameBindings:[]}]){put('b.json',{...r,id:'invalid',...change});assert.throws(()=>loadEvidence({claimDir,sourceDir,baseSources}));}
+ console.log('PASS: independent author inputs preserved; duplicates, unreviewed claims, missing sources, reversed years and wrong URLs rejected');
+}finally{fs.rmSync(dir,{recursive:true,force:true});}

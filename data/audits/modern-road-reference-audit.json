@@ -1,0 +1,497 @@
+{
+  "source": "https://routing.openstreetmap.de/routed-bike/",
+  "copyright": "© OpenStreetMap contributors",
+  "license": "https://opendatacommons.org/licenses/odbl/1-0/",
+  "accessed": "2026-11-01",
+  "audit": [
+    {
+      "name": "東海道",
+      "status": "modern-reference",
+      "vertices": 13557,
+      "maxSnapMeters": 740.4367126
+    },
+    {
+      "name": "東山道",
+      "status": "modern-reference",
+      "vertices": 23654,
+      "maxSnapMeters": 361.2580103
+    },
+    {
+      "name": "鎌倉街道",
+      "status": "modern-reference",
+      "vertices": 5335,
+      "maxSnapMeters": 108.5008241
+    },
+    {
+      "name": "甲州道",
+      "status": "modern-reference",
+      "vertices": 8363,
+      "maxSnapMeters": 466.7647915
+    },
+    {
+      "name": "北陸道",
+      "status": "modern-reference",
+      "vertices": 21548,
+      "maxSnapMeters": 2029.759147
+    },
+    {
+      "name": "北国街道（信濃）",
+      "status": "modern-reference",
+      "vertices": 4672,
+      "maxSnapMeters": 408.0729599
+    },
+    {
+      "name": "三国峠道",
+      "status": "modern-reference",
+      "vertices": 10243,
+      "maxSnapMeters": 1140.005977
+    },
+    {
+      "name": "奥州道",
+      "status": "modern-reference",
+      "vertices": 22146,
+      "maxSnapMeters": 180.1170916
+    },
+    {
+      "name": "羽州道",
+      "status": "modern-reference",
+      "vertices": 19321,
+      "maxSnapMeters": 313.6806981
+    },
+    {
+      "name": "山陽道",
+      "status": "modern-reference",
+      "vertices": 24219,
+      "maxSnapMeters": 240.3341688
+    },
+    {
+      "name": "山陰道",
+      "status": "modern-reference",
+      "vertices": 28333,
+      "maxSnapMeters": 482.0956904
+    },
+    {
+      "name": "若狭街道",
+      "status": "modern-reference",
+      "vertices": 6591,
+      "maxSnapMeters": 225.9903853
+    },
+    {
+      "name": "伊勢路",
+      "status": "modern-reference",
+      "vertices": 4258,
+      "maxSnapMeters": 63.5014683
+    },
+    {
+      "name": "熊野街道",
+      "status": "modern-reference",
+      "vertices": 13864,
+      "maxSnapMeters": 405.7611514
+    },
+    {
+      "name": "南海道",
+      "status": "modern-reference",
+      "vertices": 11916,
+      "maxSnapMeters": 637.2760831
+    },
+    {
+      "name": "土佐道",
+      "status": "modern-reference",
+      "vertices": 12076,
+      "maxSnapMeters": 231.4111922
+    },
+    {
+      "name": "西海道",
+      "status": "modern-reference",
+      "vertices": 22767,
+      "maxSnapMeters": 359.638993
+    },
+    {
+      "name": "豊後道",
+      "status": "modern-reference",
+      "vertices": 21095,
+      "maxSnapMeters": 251.3234542
+    },
+    {
+      "name": "長崎路",
+      "status": "modern-reference",
+      "vertices": 5732,
+      "maxSnapMeters": 319.058657
+    },
+    {
+      "name": "北国街道（近江）",
+      "status": "modern-reference",
+      "vertices": 5664,
+      "maxSnapMeters": 636.3925333
+    },
+    {
+      "name": "北国脇往還",
+      "status": "modern-reference",
+      "vertices": 1188,
+      "maxSnapMeters": 174.9375148
+    },
+    {
+      "name": "塩津街道",
+      "status": "keep-existing",
+      "reason": "excess detour"
+    },
+    {
+      "name": "九里半街道",
+      "status": "modern-reference",
+      "vertices": 652,
+      "maxSnapMeters": 151.6263149
+    },
+    {
+      "name": "美濃路",
+      "status": "modern-reference",
+      "vertices": 2026,
+      "maxSnapMeters": 109.3868742
+    },
+    {
+      "name": "岐阜街道",
+      "status": "modern-reference",
+      "vertices": 924,
+      "maxSnapMeters": 33.77789466
+    },
+    {
+      "name": "川越街道",
+      "status": "modern-reference",
+      "vertices": 1816,
+      "maxSnapMeters": 34.05705404
+    },
+    {
+      "name": "身延道（駿州往還）",
+      "status": "modern-reference",
+      "vertices": 4474,
+      "maxSnapMeters": 367.8341328
+    },
+    {
+      "name": "丹後街道",
+      "status": "modern-reference",
+      "vertices": 3169,
+      "maxSnapMeters": 722.9063412
+    },
+    {
+      "name": "東海道（鈴鹿越え）",
+      "status": "modern-reference",
+      "vertices": 1569,
+      "maxSnapMeters": 29.5627813
+    },
+    {
+      "name": "嶺南大路（中路）",
+      "status": "modern-reference",
+      "vertices": 18415,
+      "maxSnapMeters": 1334.138965
+    },
+    {
+      "name": "嶺南左路（東路）",
+      "status": "modern-reference",
+      "vertices": 9234,
+      "maxSnapMeters": 1107.264722
+    },
+    {
+      "name": "嶺南右路（西路）",
+      "status": "modern-reference",
+      "vertices": 9194,
+      "maxSnapMeters": 160.7303932
+    },
+    {
+      "name": "晋州路",
+      "status": "modern-reference",
+      "vertices": 2248,
+      "maxSnapMeters": 14.26573387
+    },
+    {
+      "name": "湖南大路",
+      "status": "modern-reference",
+      "vertices": 8204,
+      "maxSnapMeters": 43.58098382
+    },
+    {
+      "name": "八良峙越え",
+      "status": "modern-reference",
+      "vertices": 2171,
+      "maxSnapMeters": 83.47622458
+    },
+    {
+      "name": "義州大路",
+      "status": "keep-existing",
+      "reason": "excess detour"
+    },
+    {
+      "name": "海州路",
+      "status": "modern-reference",
+      "vertices": 2162,
+      "maxSnapMeters": 44.11633621
+    },
+    {
+      "name": "関北路",
+      "status": "keep-existing",
+      "reason": "excess detour"
+    },
+    {
+      "name": "永川路",
+      "status": "modern-reference",
+      "vertices": 1432,
+      "maxSnapMeters": 93.92649098
+    },
+    {
+      "name": "関東路",
+      "status": "modern-reference",
+      "vertices": 9841,
+      "maxSnapMeters": 930.7040728
+    },
+    {
+      "name": "越後街道",
+      "status": "modern-reference",
+      "vertices": 7035,
+      "maxSnapMeters": 257.3085242
+    },
+    {
+      "name": "米沢街道",
+      "status": "modern-reference",
+      "vertices": 5571,
+      "maxSnapMeters": 408.5525142
+    },
+    {
+      "name": "二本松街道",
+      "status": "modern-reference",
+      "vertices": 3505,
+      "maxSnapMeters": 533.9011994
+    },
+    {
+      "name": "白河街道",
+      "status": "modern-reference",
+      "vertices": 5997,
+      "maxSnapMeters": 491.4602462
+    },
+    {
+      "name": "浜街道",
+      "status": "modern-reference",
+      "vertices": 7411,
+      "maxSnapMeters": 298.0819455
+    },
+    {
+      "name": "御斎所街道",
+      "status": "modern-reference",
+      "vertices": 3048,
+      "maxSnapMeters": 186.7159326
+    },
+    {
+      "name": "足利道",
+      "status": "modern-reference",
+      "vertices": 2806,
+      "maxSnapMeters": 107.5895985
+    },
+    {
+      "name": "水戸道",
+      "status": "modern-reference",
+      "vertices": 4548,
+      "maxSnapMeters": 108.1279536
+    },
+    {
+      "name": "房総往還",
+      "status": "modern-reference",
+      "vertices": 4506,
+      "maxSnapMeters": 74.82392887
+    },
+    {
+      "name": "岩付道",
+      "status": "modern-reference",
+      "vertices": 1778,
+      "maxSnapMeters": 19.84499282
+    },
+    {
+      "name": "秩父道",
+      "status": "modern-reference",
+      "vertices": 1594,
+      "maxSnapMeters": 81.90731423
+    },
+    {
+      "name": "三州街道",
+      "status": "modern-reference",
+      "vertices": 11552,
+      "maxSnapMeters": 953.1607919
+    },
+    {
+      "name": "秋葉街道",
+      "status": "modern-reference",
+      "vertices": 7142,
+      "maxSnapMeters": 445.1960073
+    },
+    {
+      "name": "杖突越え",
+      "status": "modern-reference",
+      "vertices": 4274,
+      "maxSnapMeters": 296.5929642
+    },
+    {
+      "name": "足柄道",
+      "status": "modern-reference",
+      "vertices": 3406,
+      "maxSnapMeters": 185.1154131
+    },
+    {
+      "name": "越中街道（飛騨）",
+      "status": "modern-reference",
+      "vertices": 3434,
+      "maxSnapMeters": 1713.656523
+    },
+    {
+      "name": "飛騨街道",
+      "status": "modern-reference",
+      "vertices": 6021,
+      "maxSnapMeters": 184.8658324
+    },
+    {
+      "name": "野麦街道",
+      "status": "modern-reference",
+      "vertices": 3987,
+      "maxSnapMeters": 464.0896706
+    },
+    {
+      "name": "白山道",
+      "status": "modern-reference",
+      "vertices": 4648,
+      "maxSnapMeters": 622.8348496
+    },
+    {
+      "name": "能登街道",
+      "status": "modern-reference",
+      "vertices": 1494,
+      "maxSnapMeters": 45.84732435
+    },
+    {
+      "name": "周山街道",
+      "status": "modern-reference",
+      "vertices": 6150,
+      "maxSnapMeters": 696.8266705
+    },
+    {
+      "name": "伊勢本街道",
+      "status": "modern-reference",
+      "vertices": 3524,
+      "maxSnapMeters": 449.9045487
+    },
+    {
+      "name": "暗越奈良街道",
+      "status": "modern-reference",
+      "vertices": 1579,
+      "maxSnapMeters": 263.4764624
+    },
+    {
+      "name": "伊賀越え",
+      "status": "modern-reference",
+      "vertices": 2473,
+      "maxSnapMeters": 288.0704351
+    },
+    {
+      "name": "但馬街道",
+      "status": "modern-reference",
+      "vertices": 3215,
+      "maxSnapMeters": 233.7449513
+    },
+    {
+      "name": "因幡街道",
+      "status": "modern-reference",
+      "vertices": 5447,
+      "maxSnapMeters": 953.3995207
+    },
+    {
+      "name": "出雲街道",
+      "status": "modern-reference",
+      "vertices": 9772,
+      "maxSnapMeters": 430.7999837
+    },
+    {
+      "name": "松山往来",
+      "status": "modern-reference",
+      "vertices": 2965,
+      "maxSnapMeters": 226.5516001
+    },
+    {
+      "name": "石見路",
+      "status": "modern-reference",
+      "vertices": 6985,
+      "maxSnapMeters": 169.8851367
+    },
+    {
+      "name": "銀山街道",
+      "status": "modern-reference",
+      "vertices": 2790,
+      "maxSnapMeters": 144.991187
+    },
+    {
+      "name": "土佐北街道",
+      "status": "modern-reference",
+      "vertices": 5956,
+      "maxSnapMeters": 81.11083245
+    },
+    {
+      "name": "土佐東街道",
+      "status": "modern-reference",
+      "vertices": 16163,
+      "maxSnapMeters": 413.9917399
+    },
+    {
+      "name": "豊後街道",
+      "status": "modern-reference",
+      "vertices": 4941,
+      "maxSnapMeters": 246.2774684
+    },
+    {
+      "name": "日向街道",
+      "status": "modern-reference",
+      "vertices": 10611,
+      "maxSnapMeters": 891.1366583
+    },
+    {
+      "name": "人吉街道",
+      "status": "modern-reference",
+      "vertices": 4858,
+      "maxSnapMeters": 429.5338152
+    },
+    {
+      "name": "唐津街道",
+      "status": "modern-reference",
+      "vertices": 4730,
+      "maxSnapMeters": 85.26834598
+    },
+    {
+      "name": "柳川往還",
+      "status": "modern-reference",
+      "vertices": 535,
+      "maxSnapMeters": 18.84313202
+    },
+    {
+      "name": "秋田街道",
+      "status": "modern-reference",
+      "vertices": 3054,
+      "maxSnapMeters": 748.9634869
+    },
+    {
+      "name": "六十里越街道",
+      "status": "keep-existing",
+      "reason": "snap exceeds 5km"
+    },
+    {
+      "name": "出羽浜街道",
+      "status": "modern-reference",
+      "vertices": 3456,
+      "maxSnapMeters": 550.8920559
+    },
+    {
+      "name": "鹿角街道",
+      "status": "modern-reference",
+      "vertices": 5032,
+      "maxSnapMeters": 60.45952832
+    },
+    {
+      "name": "京・大津道",
+      "status": "modern-reference",
+      "vertices": 2041,
+      "maxSnapMeters": 140.2288251
+    }
+  ],
+  "simplifiedVertices": 141778
+}

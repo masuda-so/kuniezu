@@ -1,0 +1,936 @@
+{
+  "date": "2026-10-31",
+  "baseline": "/var/folders/p6/_cz1nnqd7ksfd45n2t859zvw0000gn/T/kuniezu-map-battles-0rj1hztb",
+  "changes": [
+    {
+      "path": "MAP_HISTORY_REVIEW.md",
+      "baselineSha256": null,
+      "sha256": "cb5c00a671dbc9143adda4d2d5db026000b2da7f74c924762891082beefd38e7",
+      "note": "new or outside baseline scope"
+    },
+    {
+      "path": "HISTORY_FOCUS_REVIEW.md",
+      "baselineSha256": "f55c60131bfb58bae4c5a71f1d0521299aee05f7531fdf44b4f9b1ae197717c9",
+      "sha256": "bbaa09b0bbf267bd07360fdb700697cd883ac1d8918d436e5c95f4f99081a5f4",
+      "note": "changed"
+    },
+    {
+      "path": "HANDOFF.md",
+      "baselineSha256": "c7adfe287cd0f4daecb1d39ac15cceec97bae68eb343aa609efa42ea62ed08c2",
+      "sha256": "5da8867ec10a1448ccd82fa7722c0f2e8b43ff2475bfd12fac35f482773a0532",
+      "note": "changed"
+    },
+    {
+      "path": "game/ui.js",
+      "baselineSha256": "81be636ca23b8dae85600121b4a285688f00b3e8521348eae2f3dc7842fb3d9a",
+      "sha256": "03a35b68422282e697d1fc62274eac302ff49f3e1e441831138938f8bd61da55",
+      "note": "changed"
+    },
+    {
+      "path": "game/korea-evidence.js",
+      "baselineSha256": null,
+      "sha256": "28fb1496e9f4c1a75afae3641417366bacb66c7f64ec59b88b4d64c2d6449864",
+      "note": "new or outside baseline scope"
+    },
+    {
+      "path": "game/index.html",
+      "baselineSha256": "a8cbf657de805f3bc519017467ae05acd6adfa98407d456f56d07933a1f13819",
+      "sha256": "44f47bafef32187a4d4d3d203c569695123fa2223204357b1c0afb4d06b5a4cc",
+      "note": "changed"
+    },
+    {
+      "path": "game/korea-coast.js",
+      "baselineSha256": null,
+      "sha256": "326377aa0fa68e3df15bfe2845d49b7a5259ac1d0c18ef5ab7c571c6509b532e",
+      "note": "new or outside baseline scope"
+    },
+    {
+      "path": "game/lake-baselines.js",
+      "baselineSha256": null,
+      "sha256": "9d8e558c13cac6b537d1bdf44f97dbbaf4759506bfc06c9460e84c23509cde50",
+      "note": "new or outside baseline scope"
+    },
+    {
+      "path": "game/bscene.js",
+      "baselineSha256": "20093a9b6e0ec9b84f75509c792f2864aee855fea005023012d9a09586469e12",
+      "sha256": "ff7b1a031a4a14ce61e141aeb7d3b5ec3b5ab037cb5b50b5a72f49621e9dbda7",
+      "note": "changed"
+    },
+    {
+      "path": "game/water-evidence.js",
+      "baselineSha256": null,
+      "sha256": "28b2473e92cc0661ad9c900c27c0f8dd6f64731f227523019ac93263a32eb3e3",
+      "note": "new or outside baseline scope"
+    },
+    {
+      "path": "game/campaign-evidence.js",
+      "baselineSha256": null,
+      "sha256": "7e66e7970b7406fb4596da8115f8b6eedc8f72fde52cee33b000324a785759c6",
+      "note": "new or outside baseline scope"
+    },
+    {
+      "path": "game/map-relations.js",
+      "baselineSha256": null,
+      "sha256": "554816ca9a253ffebd9da1db88d1f321d307d2cbfd7b915d2062191851f4f4a6",
+      "note": "new or outside baseline scope"
+    },
+    {
+      "path": "game/battle-rebuild.js",
+      "baselineSha256": null,
+      "sha256": "2f5e6dd22696dd64e86bd1a401b41bba03693bf7aea4e4482f39939ce5338c62",
+      "note": "new or outside baseline scope"
+    },
+    {
+      "path": "game/engine.js",
+      "baselineSha256": "55e71446c31608be47d760019ced43ad9190f218bbde3ea990ee95462ef71ffd",
+      "sha256": "0e5fd2070e45008ff1ee4f49903a012b4013d5b61991932e45754118aa8e31b1",
+      "note": "changed"
+    },
+    {
+      "path": "game/succession-evidence.js",
+      "baselineSha256": null,
+      "sha256": "c045862276ec3b7b43cb4bc004e487e5246d4804f2ad4e359e92a87f3af94e1c",
+      "note": "new or outside baseline scope"
+    },
+    {
+      "path": "game/terrain-tiles.js",
+      "baselineSha256": "07f1ba9ffb5e04056a16c12fc9122f3ceae4627f3bcc13945954ab99a7a8b98d",
+      "sha256": "1c42ce27f684b9644ed6c3a0a1f531fbf5d76cb2ef368dcbd0e853f7d45fa6f3",
+      "note": "changed"
+    },
+    {
+      "path": "game/march-model.js",
+      "baselineSha256": "fd262093f2faa3672e06cbeecd54dc6a9a9566603b999420543db10bc9c692a7",
+      "sha256": "7af190146775e9f49de2c12ab37b51bb3adc011abd7f563d19d6654cb0bd19e8",
+      "note": "changed"
+    },
+    {
+      "path": "game/licenses/GSHHG-README.txt",
+      "baselineSha256": null,
+      "sha256": "8c83b0d9e861c3cf9390ccfcc28d57dd484b192e1767524e094c988ee9f84ac7",
+      "note": "new or outside baseline scope"
+    },
+    {
+      "path": "game/licenses/GSHHG-LGPL-3.0.txt",
+      "baselineSha256": null,
+      "sha256": "e3a994d82e644b03a792a930f574002658412f62407f5fee083f2555c5f23118",
+      "note": "new or outside baseline scope"
+    },
+    {
+      "path": "game/licenses/DATA_SOURCES.md",
+      "baselineSha256": null,
+      "sha256": "77d3ebc97b94e6a4b213fb95e2449b9f07c21addaf06d13c38fea4fa75cf694f",
+      "note": "new or outside baseline scope"
+    },
+    {
+      "path": "game/terrain/overview/6-53-23.png",
+      "baselineSha256": null,
+      "sha256": "9e8ad7782931f391c62498672e4d08352aa730d8351e73a74e1355d9e50a80ce",
+      "note": "new or outside baseline scope"
+    },
+    {
+      "path": "game/terrain/overview/6-53-25.png",
+      "baselineSha256": null,
+      "sha256": "735519ddf88b64e18062c6dc90c4fbc875b7e9f42b757768d67042010b9faae9",
+      "note": "new or outside baseline scope"
+    },
+    {
+      "path": "game/terrain/overview/6-53-24.png",
+      "baselineSha256": null,
+      "sha256": "1e1c3b602b11368609b6f3563079e6b4831d4abdb25fb2ab31daa16a0885dcc9",
+      "note": "new or outside baseline scope"
+    },
+    {
+      "path": "game/terrain/overview/6-53-26.png",
+      "baselineSha256": null,
+      "sha256": "6be73894e7e0d1ac8fe2e5ae1f2d92b057e933fc2c624b77f308e52161d96cac",
+      "note": "new or outside baseline scope"
+    },
+    {
+      "path": "game/terrain/overview/6-53-27.png",
+      "baselineSha256": null,
+      "sha256": "77b59a0d5b64d0c717cc3318a97f0a1c826788686c29c4f56df6ef5d39bf82fa",
+      "note": "new or outside baseline scope"
+    },
+    {
+      "path": "game/terrain/overview/6-57-24.png",
+      "baselineSha256": null,
+      "sha256": "20699d31c65c545983f8962a70047bd7e4bd02e1f3c39c40e254ec183e69d415",
+      "note": "new or outside baseline scope"
+    },
+    {
+      "path": "game/terrain/overview/6-57-25.png",
+      "baselineSha256": null,
+      "sha256": "93a63fa21c48280373dad7f46410dc34421d8a2ebb45781a469c39e15efe73d8",
+      "note": "new or outside baseline scope"
+    },
+    {
+      "path": "game/terrain/overview/6-57-27.png",
+      "baselineSha256": null,
+      "sha256": "2aa2577c915a586bf4fa32403e14d37c9a439c8d1c977f5bf0ebcc50bcb0faec",
+      "note": "new or outside baseline scope"
+    },
+    {
+      "path": "game/terrain/overview/6-55-23.png",
+      "baselineSha256": null,
+      "sha256": "6685c56b709d8927b605a604aeffffb037473f4ca20523037b52f68d92e7482a",
+      "note": "new or outside baseline scope"
+    },
+    {
+      "path": "game/terrain/overview/6-57-26.png",
+      "baselineSha256": null,
+      "sha256": "2adbd32d265fdbe487b52c5c008798106668015ed0af6a019958f219e70ee9d5",
+      "note": "new or outside baseline scope"
+    },
+    {
+      "path": "game/terrain/overview/6-55-27.png",
+      "baselineSha256": null,
+      "sha256": "2de9cb9c275501ca44d76f4a59d0336cab563a9b78227c88a22434afe76ce00e",
+      "note": "new or outside baseline scope"
+    },
+    {
+      "path": "game/terrain/overview/6-55-26.png",
+      "baselineSha256": null,
+      "sha256": "cc9781155c3ea03c5d5b2a8732631fce4679cd1df66fa28cc01a53e2dc21e359",
+      "note": "new or outside baseline scope"
+    },
+    {
+      "path": "game/terrain/overview/6-57-23.png",
+      "baselineSha256": null,
+      "sha256": "6155d7016240899ee5e8dd8a314845cc9feeed0b60a61d3192350e63c6b71299",
+      "note": "new or outside baseline scope"
+    },
+    {
+      "path": "game/terrain/overview/6-55-24.png",
+      "baselineSha256": null,
+      "sha256": "3615b4ca36b46199629ce6394c3c79e05fb78ec9579abd04d3fc50b25c136d30",
+      "note": "new or outside baseline scope"
+    },
+    {
+      "path": "game/terrain/overview/6-55-25.png",
+      "baselineSha256": null,
+      "sha256": "f67bc8c577c30929b5d8da9f88ba6e567e7ac3149dbfd8be15955bfcf725bce7",
+      "note": "new or outside baseline scope"
+    },
+    {
+      "path": "game/terrain/overview/6-54-23.png",
+      "baselineSha256": null,
+      "sha256": "a2756235d93ab7daae367c3ad99067b1a686b8bafb52144cd9bc3351b8caed1c",
+      "note": "new or outside baseline scope"
+    },
+    {
+      "path": "game/terrain/overview/6-58-23.png",
+      "baselineSha256": null,
+      "sha256": "b7ff7f2acea2ca01cc484282ef24e46cc294e52fa4fb64a13f4c89a0536e49db",
+      "note": "new or outside baseline scope"
+    },
+    {
+      "path": "game/terrain/overview/6-56-26.png",
+      "baselineSha256": null,
+      "sha256": "c25b9b9137e46a38b5111e472c37e861dfd239461406db7734f69209e00695df",
+      "note": "new or outside baseline scope"
+    },
+    {
+      "path": "game/terrain/overview/6-56-27.png",
+      "baselineSha256": null,
+      "sha256": "2a149516c517f554e2bdb93cbea22a1beddc60391f98247b41dd4c168bab922f",
+      "note": "new or outside baseline scope"
+    },
+    {
+      "path": "game/terrain/overview/6-56-25.png",
+      "baselineSha256": null,
+      "sha256": "3c95672284dbb97bae8a46ced3d729c2d41273ab4e67d78c0d23808484267d85",
+      "note": "new or outside baseline scope"
+    },
+    {
+      "path": "game/terrain/overview/6-56-24.png",
+      "baselineSha256": null,
+      "sha256": "d2f1c3c2dff23366a5a9bcf3d413ef4082a53688fd9b6e0fca20366ef06da337",
+      "note": "new or outside baseline scope"
+    },
+    {
+      "path": "game/terrain/overview/6-54-25.png",
+      "baselineSha256": null,
+      "sha256": "e35a0d950f1105384e1ae88a2f070eb3f4c80e4ba4c090ff26d8a981564e639b",
+      "note": "new or outside baseline scope"
+    },
+    {
+      "path": "game/terrain/overview/6-58-25.png",
+      "baselineSha256": null,
+      "sha256": "a03561a7ce85440603103c0aa8b8cf6552b3e1e81734af9b859c160886e5b87b",
+      "note": "new or outside baseline scope"
+    },
+    {
+      "path": "game/terrain/overview/6-58-24.png",
+      "baselineSha256": null,
+      "sha256": "08235ae0ac3b47e6f49928587d77833d2e0365349c979a948ce9fda99590c823",
+      "note": "new or outside baseline scope"
+    },
+    {
+      "path": "game/terrain/overview/6-54-24.png",
+      "baselineSha256": null,
+      "sha256": "04ff2c9e11ff6c42a35729fae73d24c7af01a434083871be873717f98d429307",
+      "note": "new or outside baseline scope"
+    },
+    {
+      "path": "game/terrain/overview/6-54-26.png",
+      "baselineSha256": null,
+      "sha256": "9cef53f9413738f662504ffe3a4889b3370f3c3a2e483e41fcd31624e16c108b",
+      "note": "new or outside baseline scope"
+    },
+    {
+      "path": "game/terrain/overview/6-56-23.png",
+      "baselineSha256": null,
+      "sha256": "7296ee4075e6041be218feb8d6f8b9e0f6c8c911ffbd041dafb4b0533b9776ac",
+      "note": "new or outside baseline scope"
+    },
+    {
+      "path": "game/terrain/overview/6-58-26.png",
+      "baselineSha256": null,
+      "sha256": "c8be0b7e726b86cbbe27cb2feeeb05f48117d254ea3a6a2a71da667cf40c45d2",
+      "note": "new or outside baseline scope"
+    },
+    {
+      "path": "game/terrain/overview/6-58-27.png",
+      "baselineSha256": null,
+      "sha256": "d40e5e56679d08a5087bf825cc0d8139cf709629e2c984c548bf10fd16ae39d3",
+      "note": "new or outside baseline scope"
+    },
+    {
+      "path": "game/terrain/overview/6-54-27.png",
+      "baselineSha256": null,
+      "sha256": "738c834a22bba33263d1f8d2a96a559478ce1f7dfa3dfea68ba48a5dfc28bff4",
+      "note": "new or outside baseline scope"
+    },
+    {
+      "path": "game/.git/ORIG_HEAD",
+      "baselineSha256": null,
+      "sha256": "d74bab740d46909515e03b20e37ac2f281b8d9d43becaf26ad16295eccd6c489",
+      "note": "new or outside baseline scope"
+    },
+    {
+      "path": "game/.git/config",
+      "baselineSha256": null,
+      "sha256": "cfe7ba1238c9a78be7535d7c63bcaf5a4d5011d46b07c9b45d3bbf7d6c312dfe",
+      "note": "new or outside baseline scope"
+    },
+    {
+      "path": "game/.git/HEAD",
+      "baselineSha256": null,
+      "sha256": "f6f2b945f6c411b02ba3da9c7ace88dcf71b6af65ba2e0d89aa82900042b5a10",
+      "note": "new or outside baseline scope"
+    },
+    {
+      "path": "game/.git/description",
+      "baselineSha256": null,
+      "sha256": "85ab6c163d43a17ea9cf7788308bca1466f1b0a8d1cc92e26e9bf63da4062aee",
+      "note": "new or outside baseline scope"
+    },
+    {
+      "path": "game/.git/index",
+      "baselineSha256": null,
+      "sha256": "4c670fc1173ec869be4749959088983e309359a8a673d5209c895a036e0bac1b",
+      "note": "new or outside baseline scope"
+    },
+    {
+      "path": "game/.git/COMMIT_EDITMSG",
+      "baselineSha256": null,
+      "sha256": "09872e79de9e8897af1569c37fc1dc80d8fd45c314a00b8a599b733480c5a418",
+      "note": "new or outside baseline scope"
+    },
+    {
+      "path": "game/.git/objects/0d/5efbaca6ac100dea484f8c738e5c321326cedd",
+      "baselineSha256": null,
+      "sha256": "e0f1b70d36b91a20ede19c1aafc4259f81cf53c6a29107539092688f436ce1fd",
+      "note": "new or outside baseline scope"
+    },
+    {
+      "path": "game/.git/objects/59/aec482b95ec66d36eca62a8401ed95e616a930",
+      "baselineSha256": null,
+      "sha256": "e6b044a5ed1d6775b3b44f925305bde387b2ec935fd615cb9696d978de46a86a",
+      "note": "new or outside baseline scope"
+    },
+    {
+      "path": "game/.git/objects/92/36361ee9c8a6a6261423d434aa04ad48c7e11d",
+      "baselineSha256": null,
+      "sha256": "010d635a0e8a96b9c59c34ffe3372a1d40384148242509d43553669d5cd62f0d",
+      "note": "new or outside baseline scope"
+    },
+    {
+      "path": "game/.git/objects/6f/c44ace105ad0e1320cf1dca61004791075f0cc",
+      "baselineSha256": null,
+      "sha256": "e310394257da80639fd854f1919651696934c9720244401f34a571a6bfeb82f1",
+      "note": "new or outside baseline scope"
+    },
+    {
+      "path": "game/.git/objects/6f/ad607a73caa170d1bc31c531cfc9ecf4be396b",
+      "baselineSha256": null,
+      "sha256": "6abe708fe2ab7b41c76281d27a18f4f846922f00b83dd44f959a6b75a52eba0a",
+      "note": "new or outside baseline scope"
+    },
+    {
+      "path": "game/.git/objects/04/43ca417c4792e5002a2991df524ac1145fe766",
+      "baselineSha256": null,
+      "sha256": "b71586b7c0aa21b9857b4e1356e7f7fb1654175b232016728ffa6341aac18ab7",
+      "note": "new or outside baseline scope"
+    },
+    {
+      "path": "game/.git/objects/69/d5764eb051363866cc373d7b28f139156f9690",
+      "baselineSha256": null,
+      "sha256": "fae00ba5a3d24adcb1786024f90114b7282f07d294a3a07079e719a6ec2874b6",
+      "note": "new or outside baseline scope"
+    },
+    {
+      "path": "game/.git/objects/51/2d9c25b4b8db3acb8f4fee5b4060992320c06c",
+      "baselineSha256": null,
+      "sha256": "6e8ed5a58c9801a6e6bfc9eb48ed14713fc6dbcacebdac3de5a2c90c5c67ab63",
+      "note": "new or outside baseline scope"
+    },
+    {
+      "path": "game/.git/objects/58/f5120e53ca7400221192646d3c3d99af1d3f86",
+      "baselineSha256": null,
+      "sha256": "a501afc9461690dd9a89107d0b299853cf1b5f58b992d0b26846155ab4c20543",
+      "note": "new or outside baseline scope"
+    },
+    {
+      "path": "game/.git/objects/0b/83baf7d365431e56c68e33763a91a70c6ebb57",
+      "baselineSha256": null,
+      "sha256": "e716e4ca3c7813c6ca5f40b9a1642663934434e90c6f69ddf435f22516aaae14",
+      "note": "new or outside baseline scope"
+    },
+    {
+      "path": "game/.git/objects/5f/ef9c5de7c00d75fb0a14848b976b3469908476",
+      "baselineSha256": null,
+      "sha256": "1759bff8c6e15444aa4cc161cacd9271437ce688cc78fb5ccd18d50985203e3e",
+      "note": "new or outside baseline scope"
+    },
+    {
+      "path": "game/.git/objects/9d/17511b73e72d4d1b7041efbbbeb3a717dd40d3",
+      "baselineSha256": null,
+      "sha256": "47124140a63b753b8efba2cae284e9602b8d83ce2adf7e6e223fdccf6d5c1875",
+      "note": "new or outside baseline scope"
+    },
+    {
+      "path": "game/.git/objects/b5/4209db77f6a79925f804c89560de79c8641a28",
+      "baselineSha256": null,
+      "sha256": "856d79f88df8c148b5af1561f765431b74a3a30846377ab27040e9728859c919",
+      "note": "new or outside baseline scope"
+    },
+    {
+      "path": "game/.git/objects/a2/63608137407adf09aa5b297f2ba3ad34d6ca44",
+      "baselineSha256": null,
+      "sha256": "afa2542535eb6f53042cda6639950bf40b9b0d23f6089e951675c791f54bd4a0",
+      "note": "new or outside baseline scope"
+    },
+    {
+      "path": "game/.git/objects/a5/9768a39762087bd05bd146763b982c1e10071a",
+      "baselineSha256": null,
+      "sha256": "dc32046c84f3106a7a5729b73c6dda376501894c947aa3d509789b32cd8e7c39",
+      "note": "new or outside baseline scope"
+    },
+    {
+      "path": "game/.git/objects/d1/683f13fcfdf2580a22fb1aff4d775a91357963",
+      "baselineSha256": null,
+      "sha256": "364a62c24dc7fe87f053086ba66b91ecbf3a96a3a82e4d43c110ffcc86e75f3f",
+      "note": "new or outside baseline scope"
+    },
+    {
+      "path": "game/.git/objects/f3/03fffa2d5001e97e386955858264d958f79ef0",
+      "baselineSha256": null,
+      "sha256": "41ed4b2a162d3c1cc15b3e961804272c04ab56ef97a11c5e8c431a6464e36493",
+      "note": "new or outside baseline scope"
+    },
+    {
+      "path": "game/.git/objects/c7/fde47c4d8d6ed5903b9d21cc6cd732bc4b2104",
+      "baselineSha256": null,
+      "sha256": "87beadc3f762b7fd0347ea719c3acbe44e056898225dc10fc0849fa3f84cae4f",
+      "note": "new or outside baseline scope"
+    },
+    {
+      "path": "game/.git/objects/c0/9f39d2c4a330b7505f31d22fc752c9f99ac79b",
+      "baselineSha256": null,
+      "sha256": "ea5890df37b169031e79670fe50c9da9208c39e9cf6f4ddba698a913f7067f7e",
+      "note": "new or outside baseline scope"
+    },
+    {
+      "path": "game/.git/objects/ee/1c21e7717956108bfa0a96515588abeb5e3c76",
+      "baselineSha256": null,
+      "sha256": "fd5be0bf909a20205f43940e491e426bf0b33654cbee3b3b4157dc8186a92000",
+      "note": "new or outside baseline scope"
+    },
+    {
+      "path": "game/.git/objects/fc/946602ce9b8ce7ed4c2b205152557556ac73d1",
+      "baselineSha256": null,
+      "sha256": "2d0442b842f639b455f52ec4030d411d0a51c32c24d549ae7ec38da3b0ec4728",
+      "note": "new or outside baseline scope"
+    },
+    {
+      "path": "game/.git/objects/cf/cf83ec580a180467dda2de47d9c483efca3ce2",
+      "baselineSha256": null,
+      "sha256": "3b457ad16121b293905ac03ecc59fe864eea367d58634e415041c5c39ef450cd",
+      "note": "new or outside baseline scope"
+    },
+    {
+      "path": "game/.git/objects/c1/d5322a7d7d8f16adba0e750e81958cb5085cd1",
+      "baselineSha256": null,
+      "sha256": "8be938028ab91faa0e3777c0451a254ea1706ecdf1ead3894095fbc5e046e858",
+      "note": "new or outside baseline scope"
+    },
+    {
+      "path": "game/.git/objects/20/34b66de4d9a745190cc0aea77de9aa45b7df1d",
+      "baselineSha256": null,
+      "sha256": "5130d8422a1a958cb8f05b33fb7449d53815656db8f1887478c757c0a18df486",
+      "note": "new or outside baseline scope"
+    },
+    {
+      "path": "game/.git/objects/7c/4477fa0208dcf101d7bc5374085eab722e547b",
+      "baselineSha256": null,
+      "sha256": "0a096e5247dd74b5e44ad9f6e5169cecb183ef1b63624f76675805533d3ddae9",
+      "note": "new or outside baseline scope"
+    },
+    {
+      "path": "game/.git/objects/7c/14335ff77a5077e585c9801880a3349cb0fa17",
+      "baselineSha256": null,
+      "sha256": "73c1f7cca0ff66ceaae995f02a23eb69dfc0826cd2330f444b576d15aa2709be",
+      "note": "new or outside baseline scope"
+    },
+    {
+      "path": "game/.git/objects/42/6340aaee40bed142ce4e5fa2723fd7181c7207",
+      "baselineSha256": null,
+      "sha256": "f57f67d269658bf882fd04d6da4d12a4b761b551c7409ac8f6cf542c7c0ac45e",
+      "note": "new or outside baseline scope"
+    },
+    {
+      "path": "game/.git/objects/45/9570be4aa99d3878cf176f2ccabe688abbae15",
+      "baselineSha256": null,
+      "sha256": "0a5d02cd1316b0cf35d30157cde0a83c1fc6ca7fe3415280ccf626fda32eeda5",
+      "note": "new or outside baseline scope"
+    },
+    {
+      "path": "game/.git/objects/45/52df6b9c18b1620efaf8fe35d47e2caeabcfda",
+      "baselineSha256": null,
+      "sha256": "dab9b8d527181a19c56bae80b4f4b29765e117a25c44536cb826cbcbdbce0115",
+      "note": "new or outside baseline scope"
+    },
+    {
+      "path": "game/.git/objects/1f/d0b7f906c569a91da9c234899cfd56c1119b66",
+      "baselineSha256": null,
+      "sha256": "32c4baaf786b412a8fb69673eeeec47d2bf5f661cddd52fae6885cdec715aebe",
+      "note": "new or outside baseline scope"
+    },
+    {
+      "path": "game/.git/objects/28/a0659000e59dee3cf15a2d54699e35072c8f45",
+      "baselineSha256": null,
+      "sha256": "7152f37e34850ba5611abcf31f1b58aa5ef42722a175862644b2a716d727044c",
+      "note": "new or outside baseline scope"
+    },
+    {
+      "path": "game/.git/objects/8a/fad79ac1642cb9237c8eadbf9eaf43e1b60d1b",
+      "baselineSha256": null,
+      "sha256": "7511535d09515b79788d596e2a51b71a5a6b2f2fcec8a504f3ac9dc4f06da9da",
+      "note": "new or outside baseline scope"
+    },
+    {
+      "path": "game/.git/objects/8a/270d3f106ff861f816fec0c7eef7cccfe66ecb",
+      "baselineSha256": null,
+      "sha256": "1771f30647e01012471ea2bd8e07422547308780bb19a5d92e3727db928890c7",
+      "note": "new or outside baseline scope"
+    },
+    {
+      "path": "game/.git/objects/7e/65cee7557030df661285f79fb8b0f7579ee6d8",
+      "baselineSha256": null,
+      "sha256": "3889791a57a5819ce6f25f88a1bde99430c25737859bc1add440519aae4bf396",
+      "note": "new or outside baseline scope"
+    },
+    {
+      "path": "game/.git/objects/4c/8270f1a40da1eb6866bbb5fca06837da8ffbe5",
+      "baselineSha256": null,
+      "sha256": "595cdd74cff9b2ad188393003d4f33a8afa950cee8a9b10acf3f971c73605261",
+      "note": "new or outside baseline scope"
+    },
+    {
+      "path": "game/.git/objects/07/c45a5b889274deaadf140c6962f4ab73be2323",
+      "baselineSha256": null,
+      "sha256": "84c3711c0f8a080e76e822e3fb6eeb0c73a21529361389023aef0a3b65b7fca8",
+      "note": "new or outside baseline scope"
+    },
+    {
+      "path": "game/.git/objects/38/8b03eac8d06906d46fcce713b6f24e5b801360",
+      "baselineSha256": null,
+      "sha256": "2f2307672efc348259d3b646a39d25b892f19e22ae71082790c5c186f7541eda",
+      "note": "new or outside baseline scope"
+    },
+    {
+      "path": "game/.git/objects/5c/7956f5fb4ab66117e3184046ea9f76027395b7",
+      "baselineSha256": null,
+      "sha256": "39f4c22849e34146a58ed675803254fdfe55860691be387374b9000d55ae7ad1",
+      "note": "new or outside baseline scope"
+    },
+    {
+      "path": "game/.git/objects/09/23ff99f05ce77a745af24e134a2982addb892a",
+      "baselineSha256": null,
+      "sha256": "4bc29251191c741f700014a98881e3c762cdb67605c66146311fb388bbb873f8",
+      "note": "new or outside baseline scope"
+    },
+    {
+      "path": "game/.git/objects/3a/8e43221f9df9f228ccc7e8fc14bf831c59ed56",
+      "baselineSha256": null,
+      "sha256": "e72ca8b99bfbe0679210ca019df5f16560174f3ad1485b36277368ad5cdbfaa3",
+      "note": "new or outside baseline scope"
+    },
+    {
+      "path": "game/.git/objects/3a/4a495583c80dca2757dd32c8a41d99f2335d44",
+      "baselineSha256": null,
+      "sha256": "acbaa84d5da15b4cb2ece20caf6e8c0219520e90e5501322d0b351c8784e07d2",
+      "note": "new or outside baseline scope"
+    },
+    {
+      "path": "game/.git/objects/98/56cc19a6ab3a86b42fffa9f58bd291e9fb66be",
+      "baselineSha256": null,
+      "sha256": "1489b0af5c0cb44eb07ba7c8b113ece59adb46547b526e51618db174f81cc228",
+      "note": "new or outside baseline scope"
+    },
+    {
+      "path": "game/.git/objects/5b/8889f33fa63bcc22f5edffc158fe5f904be229",
+      "baselineSha256": null,
+      "sha256": "7e717c682b0ec28a15a6022a542bf530ee93d8e58181a418b4150403243ceb19",
+      "note": "new or outside baseline scope"
+    },
+    {
+      "path": "game/.git/objects/6d/c490067104d6085d991cdd3ce55cf0d01caa2d",
+      "baselineSha256": null,
+      "sha256": "587677a743d4af1fc946365c9054dd7290e5bd0db4fa632c5d5d6a1d81051143",
+      "note": "new or outside baseline scope"
+    },
+    {
+      "path": "game/.git/objects/39/b593c405876b72b6a085a942a00d1976a71215",
+      "baselineSha256": null,
+      "sha256": "f0cf31f2f7967aed166a3a97cf876a3e95db691a20469ec9bc9f191543a3c472",
+      "note": "new or outside baseline scope"
+    },
+    {
+      "path": "game/.git/objects/52/5d50134f9f2857fbe319066ef2b8d87f6b284b",
+      "baselineSha256": null,
+      "sha256": "c5676ba9c508830211ae6c6421a575c8061b0a4c4c37a947d968c66af62c364e",
+      "note": "new or outside baseline scope"
+    },
+    {
+      "path": "game/.git/objects/0a/d688ee0f95eac3578bad8334770d1cd00c1bc8",
+      "baselineSha256": null,
+      "sha256": "1cc7e0597c781c17d073401c057a3573865cdd635762c5f1d478db91fc4c9200",
+      "note": "new or outside baseline scope"
+    },
+    {
+      "path": "game/.git/objects/64/a1a8f6996dfa573920dcd55fc3aba0bc26217d",
+      "baselineSha256": null,
+      "sha256": "065505715f7f2cb58263b3f77626e6c752cab9cc037af49c2962626266bfdea6",
+      "note": "new or outside baseline scope"
+    },
+    {
+      "path": "game/.git/objects/b8/af3257b970ea8a7dc40f25dc5253ce93276bdf",
+      "baselineSha256": null,
+      "sha256": "a2cb380b5b6ae66087acd588dd209e3cfe64ac35dd850d28a78ec4178d696745",
+      "note": "new or outside baseline scope"
+    },
+    {
+      "path": "game/.git/objects/b6/fee968453fac546a58f78d56420b8a5bb39f0b",
+      "baselineSha256": null,
+      "sha256": "205c3ec60af2149f7604db8f430dc7cb3af0f74a56d3e2123e1d1e264ff5ed89",
+      "note": "new or outside baseline scope"
+    },
+    {
+      "path": "game/.git/objects/de/0f8463dbf07dfc1225e7c8a4c296a96967ae8e",
+      "baselineSha256": null,
+      "sha256": "b4e12b3c01faac3f78ca337cea4050333e0f7fe253efe49394cc4d75dcf2e7ed",
+      "note": "new or outside baseline scope"
+    },
+    {
+      "path": "game/.git/objects/b9/3560133b2ce6874ea1b22aee6d356715e18e14",
+      "baselineSha256": null,
+      "sha256": "9f78ed4bdd5b7e9495500b1330a3a2f77d1cb4925ee657b79c7e5904e2282f70",
+      "note": "new or outside baseline scope"
+    },
+    {
+      "path": "game/.git/objects/c3/06fc06d8121ecfbe4128297dec3eb2ba4e74f3",
+      "baselineSha256": null,
+      "sha256": "dc2871b99dea242bb755db9391c132d1dc0e13d8a5d30473697189ceb2f9fce2",
+      "note": "new or outside baseline scope"
+    },
+    {
+      "path": "game/.git/objects/c3/bc44df9d8d89e34dd212db64f17a267092f6b5",
+      "baselineSha256": null,
+      "sha256": "c50a68151fbe470ea02e2e09fe0d8c8df626350331c692009b6b0372190b8635",
+      "note": "new or outside baseline scope"
+    },
+    {
+      "path": "game/.git/objects/cc/b56452953c5f18c7e6863172a98de611ec3892",
+      "baselineSha256": null,
+      "sha256": "6df35cd4a0d29476b1a6a061cce52a284b01a7a8fc86aa0b31b5bcf7e3215d1c",
+      "note": "new or outside baseline scope"
+    },
+    {
+      "path": "game/.git/objects/ff/8618cf65618f958df7dcf0180ea55f34769da3",
+      "baselineSha256": null,
+      "sha256": "732dc13968f6f07e76033a7d0bf9dcbbd2e841828069377b60c4c0d03f4bd82d",
+      "note": "new or outside baseline scope"
+    },
+    {
+      "path": "game/.git/objects/c2/004d8de1e6872c051a846169ed791f30abc6ce",
+      "baselineSha256": null,
+      "sha256": "becd74f6d985aa6b5ec93415b4189ee37997cb25241b90d4a01ec5d15f2654cd",
+      "note": "new or outside baseline scope"
+    },
+    {
+      "path": "game/.git/objects/c2/936fef6164107a43cc72e5c6a0e346a36e631d",
+      "baselineSha256": null,
+      "sha256": "12629654a7f42a9096e0795faecfcbb759ac566c1ba3b3d60aa7aa23070be090",
+      "note": "new or outside baseline scope"
+    },
+    {
+      "path": "game/.git/objects/e9/51b93d345a6b0890b84ccea0f1a3bc413e88c1",
+      "baselineSha256": null,
+      "sha256": "80a97b7442b9666706c99e4c37728d943d4a88027fbb8d6722145945bdb21e37",
+      "note": "new or outside baseline scope"
+    },
+    {
+      "path": "game/.git/objects/2c/f4d8db3bb574814cf7de72a17fa80a565f89e8",
+      "baselineSha256": null,
+      "sha256": "c392a3ae1bf79f728eb617832ec29625ce837b1b34e0a550b9bcb28bdb5ecbc6",
+      "note": "new or outside baseline scope"
+    },
+    {
+      "path": "game/.git/objects/79/5271c19f6fc919f5cf9c0acc17a9bc3fdafb55",
+      "baselineSha256": null,
+      "sha256": "e9181b1a9edf10c5114ebf6c5a4c783eaabdb68dd98b757a854db49b66209965",
+      "note": "new or outside baseline scope"
+    },
+    {
+      "path": "game/.git/objects/41/8776e98027c69c30a1f4942fb033ad683693e2",
+      "baselineSha256": null,
+      "sha256": "c5fc79aea75b77ccfbc92d09ee0707446df3484d5d9ca41029e1ec77deb4bdd2",
+      "note": "new or outside baseline scope"
+    },
+    {
+      "path": "game/.git/objects/70/c5557a5c8618ce3a065591a86233b0c512d1dd",
+      "baselineSha256": null,
+      "sha256": "97c5054117e3d013ed0c86cc15ef6abc8556c802b707d00a61cb6078d8642d9b",
+      "note": "new or outside baseline scope"
+    },
+    {
+      "path": "game/.git/objects/15/0f73e55c6f92f055ac5228eb8749e6ab2ab1c5",
+      "baselineSha256": null,
+      "sha256": "9624327ce670018e1e9dd949f7ee3c6e46361aaeeb4f85c51aa8aa1659aa686d",
+      "note": "new or outside baseline scope"
+    },
+    {
+      "path": "game/.git/objects/15/688b54526fdefe28d77c93bb822d96b733fa05",
+      "baselineSha256": null,
+      "sha256": "2c2072daa54769bdb181eb34fe08ae8c87c61cba2bdf542b4f485b0b2ab01b03",
+      "note": "new or outside baseline scope"
+    },
+    {
+      "path": "game/.git/objects/85/cc9ead52afdf7a084a11192b4b8e73adff61f5",
+      "baselineSha256": null,
+      "sha256": "0069abb600f0534ff9b6fb0f68171ce07547da7d980ca316c708005a6683dde0",
+      "note": "new or outside baseline scope"
+    },
+    {
+      "path": "game/.git/objects/71/3dc305641ddfe31281dc587cec2d24ef393836",
+      "baselineSha256": null,
+      "sha256": "1af41ef30e3cd6fdcf1702860bae825ba64e243b07b6fd50dcd4ff3735d8b1dd",
+      "note": "new or outside baseline scope"
+    },
+    {
+      "path": "game/.git/objects/40/867b743084142bdc143801cb7569078abd1822",
+      "baselineSha256": null,
+      "sha256": "f5b28961415e7b244632ec88fab3f4b5b90056af7d394838a31a194b0f724594",
+      "note": "new or outside baseline scope"
+    },
+    {
+      "path": "game/.git/objects/47/2041a01ba480608810555a60b5f7bf17e3bdd0",
+      "baselineSha256": null,
+      "sha256": "8fac7967167b6f706537f711467804bf408d66c2cc26949261bff5878b95645e",
+      "note": "new or outside baseline scope"
+    },
+    {
+      "path": "game/.git/info/exclude",
+      "baselineSha256": null,
+      "sha256": "6671fe83b7a07c8932ee89164d1f2793b2318058eb8b98dc5c06ee0a5a3b0ec1",
+      "note": "new or outside baseline scope"
+    },
+    {
+      "path": "game/.git/logs/HEAD",
+      "baselineSha256": null,
+      "sha256": "5465bf8197322a255b3c5373a0145eb1fea5519a891768e5537325c3c55516f6",
+      "note": "new or outside baseline scope"
+    },
+    {
+      "path": "game/.git/logs/refs/heads/master",
+      "baselineSha256": null,
+      "sha256": "0584772aeca746267ab556fff9469515dc36c90b876aa5aa3181dacd374a141c",
+      "note": "new or outside baseline scope"
+    },
+    {
+      "path": "game/.git/hooks/commit-msg.sample",
+      "baselineSha256": null,
+      "sha256": "1f74d5e9292979b573ebd59741d46cb93ff391acdd083d340b94370753d92437",
+      "note": "new or outside baseline scope"
+    },
+    {
+      "path": "game/.git/hooks/pre-rebase.sample",
+      "baselineSha256": null,
+      "sha256": "4febce867790052338076f4e66cc47efb14879d18097d1d61c8261859eaaa7b3",
+      "note": "new or outside baseline scope"
+    },
+    {
+      "path": "game/.git/hooks/sendemail-validate.sample",
+      "baselineSha256": null,
+      "sha256": "44ebfc923dc5466bc009602f0ecf067b9c65459abfe8868ddc49b78e6ced7a92",
+      "note": "new or outside baseline scope"
+    },
+    {
+      "path": "game/.git/hooks/pre-commit.sample",
+      "baselineSha256": null,
+      "sha256": "f9af7d95eb1231ecf2eba9770fedfa8d4797a12b02d7240e98d568201251244a",
+      "note": "new or outside baseline scope"
+    },
+    {
+      "path": "game/.git/hooks/applypatch-msg.sample",
+      "baselineSha256": null,
+      "sha256": "0223497a0b8b033aa58a3a521b8629869386cf7ab0e2f101963d328aa62193f7",
+      "note": "new or outside baseline scope"
+    },
+    {
+      "path": "game/.git/hooks/fsmonitor-watchman.sample",
+      "baselineSha256": null,
+      "sha256": "e0549964e93897b519bd8e333c037e51fff0f88ba13e086a331592bf801fa1d0",
+      "note": "new or outside baseline scope"
+    },
+    {
+      "path": "game/.git/hooks/pre-receive.sample",
+      "baselineSha256": null,
+      "sha256": "a4c3d2b9c7bb3fd8d1441c31bd4ee71a595d66b44fcf49ddb310252320169989",
+      "note": "new or outside baseline scope"
+    },
+    {
+      "path": "game/.git/hooks/prepare-commit-msg.sample",
+      "baselineSha256": null,
+      "sha256": "e9ddcaa4189fddd25ed97fc8c789eca7b6ca16390b2392ae3276f0c8e1aa4619",
+      "note": "new or outside baseline scope"
+    },
+    {
+      "path": "game/.git/hooks/post-update.sample",
+      "baselineSha256": null,
+      "sha256": "81765af2daef323061dcbc5e61fc16481cb74b3bac9ad8a174b186523586f6c5",
+      "note": "new or outside baseline scope"
+    },
+    {
+      "path": "game/.git/hooks/pre-merge-commit.sample",
+      "baselineSha256": null,
+      "sha256": "d3825a70337940ebbd0a5c072984e13245920cdf8898bd225c8d27a6dfc9cb53",
+      "note": "new or outside baseline scope"
+    },
+    {
+      "path": "game/.git/hooks/pre-applypatch.sample",
+      "baselineSha256": null,
+      "sha256": "e15c5b469ea3e0a695bea6f2c82bcf8e62821074939ddd85b77e0007ff165475",
+      "note": "new or outside baseline scope"
+    },
+    {
+      "path": "game/.git/hooks/pre-push.sample",
+      "baselineSha256": null,
+      "sha256": "ecce9c7e04d3f5dd9d8ada81753dd1d549a9634b26770042b58dda00217d086a",
+      "note": "new or outside baseline scope"
+    },
+    {
+      "path": "game/.git/hooks/update.sample",
+      "baselineSha256": null,
+      "sha256": "8d5f2fa83e103cf08b57eaa67521df9194f45cbdbcb37da52ad586097a14d106",
+      "note": "new or outside baseline scope"
+    },
+    {
+      "path": "game/.git/hooks/push-to-checkout.sample",
+      "baselineSha256": null,
+      "sha256": "a53d0741798b287c6dd7afa64aee473f305e65d3f49463bb9d7408ec3b12bf5f",
+      "note": "new or outside baseline scope"
+    },
+    {
+      "path": "game/.git/refs/heads/master",
+      "baselineSha256": null,
+      "sha256": "258b06ddbdb43cc2654d59375c9fcf2ff9fadc5a15635929fe9c50a91f92bbc6",
+      "note": "new or outside baseline scope"
+    },
+    {
+      "path": "tools/checks/map-browser.cjs",
+      "baselineSha256": null,
+      "sha256": "36bcf1ce0627c1e51dcc4b16f1d78bf15b1355b8a51435e90a7fb8b9de2dd752",
+      "note": "new or outside baseline scope"
+    },
+    {
+      "path": "tools/checks/march-audit.cjs",
+      "baselineSha256": "ca9711e078d0a6278a717728c6b71591d891ad0ea9971ea92bdb716ca3a8a5ef",
+      "sha256": "536970ba5bc98eb67a864ce5ba0bcb56c5b018902170f1f57ad152743eff1670",
+      "note": "changed"
+    },
+    {
+      "path": "tools/checks/map-history.cjs",
+      "baselineSha256": null,
+      "sha256": "9616d2d373274233a85e3b3b8c43dabca557006a8fb2149a95c70356a252127f",
+      "note": "new or outside baseline scope"
+    },
+    {
+      "path": "tools/checks/terrain-cache.cjs",
+      "baselineSha256": null,
+      "sha256": "81f1da57e1152b8c1f54b87a217a3a1af292f060429ad48ad61bd8318096bef7",
+      "note": "new or outside baseline scope"
+    },
+    {
+      "path": "tools/checks/history-browser.cjs",
+      "baselineSha256": "e03424db4780d440c485c0029d10df0121cd9ce9970f0ac38b1c62012f828173",
+      "sha256": "727f4f6a6a12961b85ab5a8e92cdb021afdbcb4c49d90f9f6b73cf74b966ae8f",
+      "note": "changed"
+    },
+    {
+      "path": "tools/checks/map-regressions.cjs",
+      "baselineSha256": null,
+      "sha256": "41e6a02b80e06973b3cefda5970bacbdd7f927c688c21ea7e63d76094ac5a388",
+      "note": "new or outside baseline scope"
+    },
+    {
+      "path": "tools/geo/roadfix.py",
+      "baselineSha256": null,
+      "sha256": "bbb533a8916e68809a9379c66ff7ac520fdcde51c95873071797fce84d39c8e4",
+      "note": "new or outside baseline scope"
+    },
+    {
+      "path": "tools/geo/korea-coast.py",
+      "baselineSha256": null,
+      "sha256": "314b594f7b28985cd3a8cd903e7164eabd0296b57409d203106eef50927075b8",
+      "note": "new or outside baseline scope"
+    },
+    {
+      "path": "tools/geo/korea.py",
+      "baselineSha256": null,
+      "sha256": "d52bd8280f269e52fe10410798a09e73d0f4c62483c63603dc8cdde1093632cb",
+      "note": "new or outside baseline scope"
+    },
+    {
+      "path": "tools/geo/roadfix2.py",
+      "baselineSha256": null,
+      "sha256": "a12eb9e1033cddb6e11a24676e845da52311f23ee20b86977ab80c5726fadcab",
+      "note": "new or outside baseline scope"
+    },
+    {
+      "path": "tools/geo/lakes.py",
+      "baselineSha256": null,
+      "sha256": "d170f667fa5594acf1abaf93dfb1a21f1b6a4183dd5b2d73e4aa1965ddcaf333",
+      "note": "new or outside baseline scope"
+    },
+    {
+      "path": "tools/geo/apply.py",
+      "baselineSha256": null,
+      "sha256": "1e79d7ebad314d0d694848d2b176a2e9ce576636454709287feaaaa0836b1197",
+      "note": "new or outside baseline scope"
+    }
+  ]
+}

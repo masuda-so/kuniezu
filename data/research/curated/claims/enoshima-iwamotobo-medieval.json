@@ -1,0 +1,21 @@
+{
+  "id": "enoshima-iwamotobo-medieval",
+  "entity": "site:江島弁才天・岩本坊",
+  "predicate": "military-religious-role",
+  "value": "岩本坊に北条氏から江島弁才天への寄進・戦勝祈念に関する書状が送られた",
+  "validYears": [
+    1546,
+    1571
+  ],
+  "datePrecision": "source-document-range",
+  "source": "enoshimaMedieval",
+  "locator": "北条氏康書状・氏康室書状等の解説",
+  "gameBindings": [
+    "TK.YOSHO:江島弁才天・岩本坊"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "sourceUrl": "https://digital.city.fujisawa.kanagawa.jp/digital/exhibition/digital.php?id=18",
+  "checked": "2026-11-01",
+  "uncertainty": "1546年書状の年代は花押型による推定。施設の創建年や建物配置を確定する命題ではない。"
+}

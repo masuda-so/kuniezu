@@ -1,0 +1,23 @@
+{
+  "id": "lifetime-遠山景任",
+  "entity": "person:遠山景任",
+  "predicate": "death-year",
+  "value": 1572,
+  "validYears": [
+    1572,
+    1572
+  ],
+  "datePrecision": "year",
+  "source": "iwamuraLifetime",
+  "gameBindings": [
+    "TK.DEATH_Y",
+    "G.reconcileHistoricalPeople",
+    "aging"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "sourceUrl": "https://www.city.ena.lg.jp/material/files/group/33/H221205iwagensetu.pdf",
+  "locator": "岩村城の歴史",
+  "checked": "2026-11-01",
+  "uncertainty": "日付は確定しない"
+}

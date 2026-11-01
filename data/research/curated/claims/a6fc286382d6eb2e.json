@@ -1,0 +1,22 @@
+{
+  "id": "suwahara-abandonment-hypothesis",
+  "entity": "site:諏訪原城",
+  "predicate": "adopted-abandonment-hypothesis",
+  "value": 1590,
+  "validYears": [
+    1590,
+    1615
+  ],
+  "datePrecision": "year",
+  "source": "suwaharaChronology",
+  "locator": "牧野城とは：関東移封に伴い廃城になったと考えられるとの説明",
+  "gameBindings": [
+    "TK.YOSHO:諏訪原城",
+    "G.sitePresentation"
+  ],
+  "uncertainty": "同市の城跡紹介は廃城時期不明とする。1590年説を採用するが、日付は確定しない。ゲームの非稼働は1591年から。",
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "sourceUrl": "https://www.city.shimada.shizuoka.jp/shimahaku/docs/863749869.html",
+  "checked": "2026-11-01"
+}

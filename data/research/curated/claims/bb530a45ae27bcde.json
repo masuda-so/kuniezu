@@ -1,0 +1,20 @@
+{
+  "id": "katori-development",
+  "entity": "water:香取海",
+  "predicate": "land-development-period",
+  "value": "中世は沼沢地で、開拓の手が伸びるのは16世紀末頃",
+  "validYears": [
+    1560,
+    1615
+  ],
+  "source": "katoriDevelopment",
+  "locator": "水郷十六島の開拓",
+  "gameBindings": [
+    "TK.PERIOD_WATERS"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "sourceUrl": "https://www.maff.go.jp/kanto/nouson/sekkei/kokuei/ryoso/rekishi/02.html",
+  "checked": "2026-11-01",
+  "uncertainty": null
+}

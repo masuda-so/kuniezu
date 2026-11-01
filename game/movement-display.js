@@ -1,0 +1,47 @@
+"use strict";
+/* 描画用の道筋。日付・出発到着記録・戦闘計算は変更しない。 */
+(function(){
+ const cache=new Map();let state=null;const fresh=()=>{if(state!==G.S()){cache.clear();state=G.S();}};
+ const distances=new WeakMap();
+ function metrics(line){if(distances.has(line))return distances.get(line);const cum=[0];for(let i=1;i<line.length;i++)cum.push(cum.at(-1)+Math.hypot(line[i][0]-line[i-1][0],line[i][1]-line[i-1][1]));const r={cum,total:cum.at(-1)};distances.set(line,r);return r;}
+ G.visualPathLength=line=>metrics(line).total;
+ function atDistance(line,m,d){d=Math.max(0,Math.min(m.total,d));let lo=0,hi=Math.max(0,line.length-2);while(lo<hi){const mid=(lo+hi)>>1;if(m.cum[mid+1]<d)lo=mid+1;else hi=mid;}while(lo<line.length-2&&m.cum[lo+1]-m.cum[lo]<1e-9)lo++;while(lo>0&&m.cum[lo+1]-m.cum[lo]<1e-9)lo--;const a=line[lo],b=line[lo+1]||a,k=(d-m.cum[lo])/(m.cum[lo+1]-m.cum[lo]||1);return [a[0]+(b[0]-a[0])*k,a[1]+(b[1]-a[1])*k];}
+ function point(line,f,unwarped=false){f=!unwarped&&G.visualDistanceFraction?G.visualDistanceFraction(line,f):f;const m=metrics(line),d=Math.max(0,Math.min(1,f))*m.total,p=atDistance(line,m,d);if(m.total<1e-9)return [...p,null];const a=atDistance(line,m,d-.6),b=atDistance(line,m,d+.6);return [...p,Math.atan2(b[1]-a[1],b[0]-a[0])];}
+ // 描画と同じ距離配分で、その区間の折れ線だけを取り出す。
+ G.visualPathSlice=function(line,from,to){const m=metrics(line),fraction=f=>Math.max(0,Math.min(1,G.visualDistanceFraction?G.visualDistanceFraction(line,f):f)),a=fraction(from)*m.total,b=fraction(to)*m.total;if(b<a)return G.visualPathSlice(line,to,from).reverse();const out=[atDistance(line,m,a)];let lo=0,hi=m.cum.length;while(lo<hi){const mid=(lo+hi)>>1;if(m.cum[mid]<=a)lo=mid+1;else hi=mid;}for(let i=lo;i<line.length&&m.cum[i]<b;i++)out.push(line[i]);out.push(atDistance(line,m,b));return out;};
+ G.visualEdgeGeo=function(a,b){fresh();const original=G.edgeGeo(a,b),key=a+'>'+b+':'+original[0].join(',')+':'+original.at(-1).join(',');if(cache.has(key))return cache.get(key);const e=G.EDGES[G.ekey(a,b)];if(!e||e.sea)return original;const A=original[0],B=original.at(-1);let best=null;
+ for(const name of e.roads||[]){const raw=G.ROADS.find(r=>r.name===name);if(!raw)continue;const pts=TK.roadDisplay(raw).pts;let ai=0,bi=0,ad=Infinity,bd=Infinity;for(let i=0;i<pts.length;i++){const da=Math.hypot(pts[i][0]-A[0],pts[i][1]-A[1]),db=Math.hypot(pts[i][0]-B[0],pts[i][1]-B[1]);if(da<ad){ad=da;ai=i;}if(db<bd){bd=db;bi=i;}}
+ if(ai===bi||Math.max(ad,bd)>12)continue;const mid=ai<bi?pts.slice(ai,bi+1):pts.slice(bi,ai+1).reverse();const line=[A,...mid,B],length=line.slice(1).reduce((n,p,i)=>n+Math.hypot(p[0]-line[i][0],p[1]-line[i][1]),0);if(length>Math.hypot(B[0]-A[0],B[1]-A[1])*3)continue;const cost=ad+bd;if(!best||cost<best.cost)best={line,cost};}
+ let line=best?.line||original;if(!best){const candidate=G.visualBetween(A,B),length=candidate.slice(1).reduce((n,p,i)=>n+Math.hypot(p[0]-candidate[i][0],p[1]-candidate[i][1]),0);if(candidate.length>2)line=candidate;}cache.set(key,line);return line;};
+ G.visualEdgePoint=(a,b,f)=>point(G.visualEdgeGeo(a,b),f);
+ const segmentIndices=new WeakMap();
+ function roadSlice(pts,A,B){let bins=segmentIndices.get(pts);if(!bins){bins=new Map();for(let i=1;i<pts.length;i++){const a=pts[i-1],b=pts[i];for(let x=Math.floor(Math.min(a[0],b[0])/12);x<=Math.floor(Math.max(a[0],b[0])/12);x++)for(let y=Math.floor(Math.min(a[1],b[1])/12);y<=Math.floor(Math.max(a[1],b[1])/12);y++){const k=x+','+y;if(!bins.has(k))bins.set(k,[]);bins.get(k).push(i);}}segmentIndices.set(pts,bins);}const nearest=P=>{let best=null;const candidates=new Set(),gx=Math.floor(P[0]/12),gy=Math.floor(P[1]/12);for(let x=gx-1;x<=gx+1;x++)for(let y=gy-1;y<=gy+1;y++)for(const i of bins.get(x+','+y)||[])candidates.add(i);for(const i of candidates){const a=pts[i-1],b=pts[i],dx=b[0]-a[0],dy=b[1]-a[1],t=Math.max(0,Math.min(1,((P[0]-a[0])*dx+(P[1]-a[1])*dy)/(dx*dx+dy*dy||1))),p=[a[0]+dx*t,a[1]+dy*t],d=Math.hypot(P[0]-p[0],P[1]-p[1]);if(!best||d<best.d)best={i,t,p,d};}return best;},a=nearest(A),b=nearest(B);if(!a||!b||Math.max(a.d,b.d)>10)return null;const forwards=a.i<b.i||a.i===b.i&&a.t<=b.t,first=forwards?a:b,last=forwards?b:a,mid=[first.p,...pts.slice(first.i,last.i),last.p];if(!forwards)mid.reverse();return {line:[A,...mid,B],distance:a.d+b.d};}
+ G.visualBetween=function(A,B){fresh();const key=A.join(',')+'>'+B.join(',');if(cache.has(key))return cache.get(key);let candidate=null;const direct=Math.hypot(B[0]-A[0],B[1]-A[1]);if(direct<1e-6)return [A,B];for(const r of G.ROADS){const q=roadSlice(TK.roadDisplay(r).pts,A,B);if(!q)continue;const length=G.visualPathLength(q.line);if(length>direct*2.2+1)continue;const score=q.distance+length*.08;if(!candidate||score<candidate.score)candidate={...q,score};}if(candidate){cache.set(key,candidate.line);return candidate.line;}function route(nodes){const nearest=P=>nodes.reduce((v,n,i)=>{const d=Math.hypot(n.x-P[0],n.y-P[1]);return !v||d<v.d?{i,d}:v;},null),a=nearest(A),b=nearest(B);if(!a||!b)return [A,B];const dist=new Float64Array(nodes.length).fill(Infinity),prev=new Int32Array(nodes.length).fill(-1),done=new Set(),open=[[0,a.i]];dist[a.i]=0;
+ const push=v=>{open.push(v);let i=open.length-1;while(i){const p=(i-1)>>1;if(open[p][0]<=v[0])break;open[i]=open[p];i=p;}open[i]=v;},pop=()=>{const v=open[0],last=open.pop();if(open.length){let i=0;while(i*2+1<open.length){let j=i*2+1;if(j+1<open.length&&open[j+1][0]<open[j][0])j++;if(open[j][0]>=last[0])break;open[i]=open[j];i=j;}open[i]=last;}return v;};while(open.length){const [,u]=pop();if(done.has(u))continue;done.add(u);if(u===b.i)break;for(const [v,w] of nodes[u].e){const d=dist[u]+w;if(d<dist[v]){dist[v]=d;prev[v]=u;push([d+Math.hypot(nodes[v].x-nodes[b.i].x,nodes[v].y-nodes[b.i].y),v]);}}}
+ if(!Number.isFinite(dist[b.i]))return [A,B];const ps=[];for(let v=b.i;v!==-1;v=prev[v])ps.push([nodes[v].x,nodes[v].y]);ps.reverse();return [A,...ps,B];}
+ let line=route(G.DISPLAY_RNET||G.RNET||[]);
+ if(line.length<=2||G.visualPathLength(line)>direct*2.5+5){const coarse=route(G.RNET||[]),out=[A];for(let i=1;i<coarse.length;i++){let best=null;const a=coarse[i-1],b=coarse[i],d=Math.hypot(a[0]-b[0],a[1]-b[1]);for(const r of G.ROADS){const q=roadSlice(TK.roadDisplay(r).pts,a,b);if(!q||G.visualPathLength(q.line)>d*2.5+1)continue;const score=q.distance+G.visualPathLength(q.line)*.1;if(!best||score<best.score)best={...q,score};}out.push(...(best?best.line.slice(1):[b]));}line=out;}
+
+ cache.set(key,line);return line;};
+ const oldPoint=G.historyPoint,oldGeo=G.historyGeometry;
+ const recordLines=new WeakMap();
+ function recordLine(r){if(r.point)return null;if(recordLines.has(r))return recordLines.get(r);const pts=(r.track||r.stops.map(s=>s.slice(1))).map(p=>G.PJ(...p));const line=pts.slice(1).flatMap((p,i)=>G.visualBetween(pts[i],p).slice(i?1:0));recordLines.set(r,line);return line;}
+ G.historyGeometry=u=>u.record?recordLine(u.record):oldGeo(u);
+ G.historyPoint=function(u){if(!u.record){const line=oldGeo(u);return line?point(line,u.pos):oldPoint(u);}const r=u.record;if(r.point)return [...G.PJ(...r.point),null];const t=G.visualTime?G.visualTime():G.S().t;if(r.stops){let i=0;while(i<r.stops.length-2&&t>G.evT({d:r.stops[i+1][0]}))i++;const a=r.stops[i],b=r.stops[i+1],f=(t-G.evT({d:a[0]}))/Math.max(1,G.evT({d:b[0]})-G.evT({d:a[0]}));return point(G.visualBetween(G.PJ(...a.slice(1)),G.PJ(...b.slice(1))),f);}return point(recordLine(r),(t-G.evT({d:r.depart}))/Math.max(1,G.evT({d:r.end})-G.evT({d:r.depart})));};
+ G.offsetVisualPoint=function(line,p,offset,span=0){const {cum,total}=metrics(line);let best={distance:Infinity,at:0};for(let i=1;i<line.length;i++){const a=line[i-1],b=line[i],dx=b[0]-a[0],dy=b[1]-a[1],t=Math.max(0,Math.min(1,((p[0]-a[0])*dx+(p[1]-a[1])*dy)/(dx*dx+dy*dy||1))),x=a[0]+t*dx,y=a[1]+t*dy,d=Math.hypot(p[0]-x,p[1]-y);if(d<best.distance)best={distance:d,at:cum[i-1]+t*(cum[i]-cum[i-1])};}const shift=Math.max(0,span/2-best.at)-Math.max(0,span/2-(total-best.at));return point(line,(best.at+offset+shift)/Math.max(1e-9,total),true);};
+ // 遠景の駒は画面上の短い蛇行へ過敏に反応させない。位置・経路・時計は変更しない。
+ const headingIndices=new WeakMap();
+ G.visualCounterHeading=function(line,p,z){
+  if(!line||line.length<2||!p)return p?.[2];
+  let bins=headingIndices.get(line);
+  if(!bins){bins=new Map();for(let i=1;i<line.length;i++){const a=line[i-1],b=line[i];for(let x=Math.floor(Math.min(a[0],b[0])/12);x<=Math.floor(Math.max(a[0],b[0])/12);x++)for(let y=Math.floor(Math.min(a[1],b[1])/12);y<=Math.floor(Math.max(a[1],b[1])/12);y++){const key=x+','+y;if(!bins.has(key))bins.set(key,[]);bins.get(key).push(i);}}headingIndices.set(line,bins);}
+  const candidates=new Set(),gx=Math.floor(p[0]/12),gy=Math.floor(p[1]/12);
+  for(let x=gx-1;x<=gx+1;x++)for(let y=gy-1;y<=gy+1;y++)for(const i of bins.get(x+','+y)||[])candidates.add(i);
+  const m=metrics(line);let best=null;
+  for(const i of candidates){const a=line[i-1],b=line[i],dx=b[0]-a[0],dy=b[1]-a[1],t=Math.max(0,Math.min(1,((p[0]-a[0])*dx+(p[1]-a[1])*dy)/(dx*dx+dy*dy||1))),d=Math.hypot(p[0]-a[0]-t*dx,p[1]-a[1]-t*dy),alignment=Number.isFinite(p[2])?Math.cos(Math.atan2(dy,dx)-p[2]):0;if(!best||d<best.d-1e-7||Math.abs(d-best.d)<1e-7&&alignment>best.alignment)best={d,alignment,at:m.cum[i-1]+t*(m.cum[i]-m.cum[i-1])};}
+  if(!best||best.d>1)return p[2];
+  const span=Math.max(.6,Math.min(60,12/Math.max(.05,z))),a=atDistance(line,m,best.at-span),b=atDistance(line,m,best.at+span);
+  return Math.hypot(b[0]-a[0],b[1]-a[1])>1e-8?Math.atan2(b[1]-a[1],b[0]-a[0]):p[2];
+ };
+ G.visualPathPoint=point;
+})();

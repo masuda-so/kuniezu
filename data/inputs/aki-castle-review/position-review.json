@@ -1,0 +1,125 @@
+{
+  "checked": "2026-11-02",
+  "scope": "安芸城の位置訂正提案と周辺本山・岡豊の現行読込後座標の独立照合。ゲーム変更はrootが統合する。",
+  "baselineHashes": {
+    "game/data.js": "b4e17306ae5e839afc1bc4cb879bba26adac991206abd0273bb5cd53f8abc85e",
+    "game/history-date-review.js": "afa58667b41d32289e22b2636c5d941dc7f274958105b5864f170b4180e6f159"
+  },
+  "rows": [
+    {
+      "name": "安芸城",
+      "kind": "facility",
+      "rawPoint": [
+        133.54,
+        33.31
+      ],
+      "runtimeBefore": [
+        133.54,
+        33.31
+      ],
+      "proposedPoint": [
+        133.91259,
+        33.519865
+      ],
+      "needsCorrection": true,
+      "primarySource": "https://www.city.aki.kochi.jp/life/dtl.php?hdnKey=44",
+      "coordinateSource": "https://geoshape.ex.nii.ac.jp/nrct-poi/resource/40/400000033600.html",
+      "coordinateId": "400000033600",
+      "independentComparison": {
+        "source": "https://www.akikanko.or.jp/kanko/%E5%AE%89%E8%8A%B8%E5%9F%8E%E8%B7%A1.html",
+        "point": [
+          133.91219806149184,
+          33.51979651537498
+        ],
+        "basis": "観光協会の埋込Google地図の中心。城域境界や本丸測量点ではない。"
+      },
+      "basis": "日本歴史地名大系の城跡代表点。安芸市土居の遺跡所在地と対照。城域全体や各曲輪の座標ではない。",
+      "correctionDistanceKm": 41.718925887865396,
+      "independentDifferenceMetres": 37.123176642949076
+    },
+    {
+      "name": "本山城",
+      "kind": "main",
+      "id": "motoyama",
+      "rawPoint": [
+        133.58,
+        33.8
+      ],
+      "runtimeBefore": [
+        133.586708,
+        33.754089
+      ],
+      "proposedPoint": [
+        133.586708,
+        33.754089
+      ],
+      "needsCorrection": false,
+      "primarySource": "https://www.town.motoyama.kochi.jp/material/files/group/14/motoyamacyousiseki_bunnkazai.pdf",
+      "coordinateSource": "https://geoshape.ex.nii.ac.jp/nrct-poi/resource/40/400000073300.html",
+      "independentComparison": {
+        "source": "https://heritagemap.nabunken.go.jp/statistic/156626-%E6%9C%AC%E5%B1%B1%E5%9F%8E%E8%B7%A1.html",
+        "point": [
+          133.585638888889,
+          33.754416666667
+        ],
+        "basis": "奈良文化財研究所の世界測地系の遺跡代表座標。日本測地系の欄とは区別。"
+      },
+      "basis": "既にsite-coordinates.jsがCODH代表点へ補正済み。粗いdata.jsの点だけで現行位置の誤りを判定しない。",
+      "correctionDistanceKm": 0.0,
+      "independentDifferenceMetres": 105.34154835071772
+    },
+    {
+      "name": "岡豊城",
+      "kind": "main",
+      "id": "oko",
+      "rawPoint": [
+        133.66,
+        33.6
+      ],
+      "runtimeBefore": [
+        133.622552,
+        33.594974
+      ],
+      "proposedPoint": [
+        133.622552,
+        33.594974
+      ],
+      "needsCorrection": false,
+      "primarySource": "https://online.bunka.go.jp/heritages/detail/207413",
+      "coordinateSource": "https://geoshape.ex.nii.ac.jp/nrct-poi/resource/40/400000083700.html",
+      "independentComparison": {
+        "source": "https://online.bunka.go.jp/heritages/detail/207413",
+        "point": [
+          133.62237598,
+          33.5952898
+        ],
+        "basis": "文化遺産オンラインのHTML地図座標。点の一致は城域境界の測量精度を意味しない。"
+      },
+      "basis": "既にsite-coordinates.jsがCODH代表点へ補正済み。文化庁の代表点と照合。",
+      "correctionDistanceKm": 0.0,
+      "independentDifferenceMetres": 38.71544716595164
+    }
+  ],
+  "proposedAkiDescription": "土佐国・平山城。安芸平野中央の安芸氏の居城。1569年、長宗我部元親の攻撃で安芸氏が敗れた。1601年には山内家家老の五藤氏が城跡の土居に居を構えた。",
+  "chronology": [
+    {
+      "year": 1569,
+      "event": "長宗我部勢に敗れる",
+      "source": "https://www.city.aki.kochi.jp/life/dtl.php?hdnKey=44",
+      "precision": "year"
+    },
+    {
+      "year": 1601,
+      "event": "山内一豊の土佐入国、家老五藤氏が土居に住む",
+      "source": "https://www.city.aki.kochi.jp/rekimin/info/dtl.php?hdnKey=7968",
+      "precision": "year"
+    },
+    {
+      "year": 1615,
+      "event": "一国一城令。城郭の機能と土居屋敷の継続を区別する",
+      "source": "https://www.city.aki.kochi.jp/life/dtl.php?hdnKey=7965",
+      "precision": "year",
+      "caution": "資料本文の天和元年（1615）は元号と西暦が不整合。別の資料館年表の1615年と照合し、天和という元号は採用しない。日付未確定のため年初の廃止へ変換しない。"
+    }
+  ]
+}

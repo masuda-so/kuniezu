@@ -1,0 +1,22 @@
+{
+  "id": "terumoto-koriyama-residence",
+  "entity": "person:毛利輝元",
+  "predicate": "principal-residence",
+  "value": "1591年の広島移転まで毛利氏の本拠は郡山城",
+  "validYears": [
+    1571,
+    1590
+  ],
+  "datePrecision": "year",
+  "source": "terumotoResidence",
+  "locator": "郡山城跡・本拠の説明",
+  "gameBindings": [
+    "TK.HIST:毛利元就の死.appear@koriyama",
+    "TK.PERSON_RESIDENCE_EVIDENCE"
+  ],
+  "sourceUrl": "https://www.akitakata.jp/ja/hakubutsukan/assets/mouri/",
+  "uncertainty": "1571年を輝元の家督相続年とはしない。個々の日の在城を保証しない。",
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-01"
+}

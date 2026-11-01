@@ -1,0 +1,6 @@
+/* 閉路の往復重複を比較する診断。史実判定や形状変更には使わない。 */
+const fs=require('node:fs'),{G,TK}=require('./history-focus.cjs').model();G.newGame('s1560','oda');
+const inv=p=>[p[0]/(200*Math.cos(36*Math.PI/180))+129.2,41.75-p[1]/200];
+const km=(a,b)=>Math.hypot((b[0]-a[0])*Math.cos((a[1]+b[1])*Math.PI/360),b[1]-a[1])*111.32;
+const rows=[];for(const a of JSON.parse(fs.readFileSync('data/audits/road-return-review.json')).loops){const pts=TK.roadDisplay(G.ROADS.find(r=>r.name===a.name)).pts.slice(a.first,a.last+1).map(inv),edges=new Map();let lengthKm=0;for(let i=1;i<pts.length;i++){const A=pts[i-1].map(x=>x.toFixed(6)).join(','),B=pts[i].map(x=>x.toFixed(6)).join(','),key=[A,B].sort().join('>'),e=edges.get(key)||[0,0,km(pts[i-1],pts[i])];e[A<B?0:1]++;edges.set(key,e);lengthKm+=km(pts[i-1],pts[i]);}const reversedEdgeFraction=[...edges.values()].reduce((n,e)=>n+2*Math.min(e[0],e[1])*e[2],0)/lengthKm;rows.push({name:a.name,lengthKm,reversedEdgeFraction,junction:pts[0],extent:[Math.min(...pts.map(p=>p[0])),Math.min(...pts.map(p=>p[1])),Math.max(...pts.map(p=>p[0])),Math.max(...pts.map(p=>p[1]))]});}
+fs.writeFileSync('data/audits/road-loop-overlap-review.json',JSON.stringify({scope:'近現代比較線の閉路診断。逆向き辺の比率は史実の実在・不存在を証明しない。座標照合6桁。形状の変更なし。',rows},null,2));console.log('Reviewed loop overlap:',rows.length,'roads');

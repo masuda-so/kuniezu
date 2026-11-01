@@ -1,0 +1,25 @@
+{
+  "date": "2026-10-31",
+  "server": "http://localhost:8000/index.html",
+  "serverManagedBy": "user",
+  "browserProfile": "temporary isolated Chrome",
+  "checks": [
+    "offline.cjs",
+    "atlas-regressions.cjs",
+    "visual-data.cjs",
+    "terrain-transition.cjs",
+    "completion-browser.cjs",
+    "latest-browser.cjs",
+    "render-performance.cjs"
+  ],
+  "battleMaps": 79,
+  "battleMapsWithPositionedUnits": 13,
+  "screenshotWidths": [
+    320,
+    390,
+    820,
+    1400
+  ],
+  "runtimeExceptions": 0,
+  "historicalReconstructionComplete": false
+}

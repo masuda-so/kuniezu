@@ -1,0 +1,22 @@
+{
+  "id": "location:terumoto-hiroshima-1591",
+  "person": "person:mori-terumoto",
+  "place": "place:hiroshima",
+  "relation": "residence-transfer",
+  "time": {
+    "kind": "year-window",
+    "year": 1591,
+    "calendar": "CE-year",
+    "precision": "year"
+  },
+  "source": "terumotoResidence",
+  "sourceUrl": "https://www.akitakata.jp/ja/hakubutsukan/assets/mouri/",
+  "locator": "天正19年に輝元が広島へ移る",
+  "uncertainty": "年の精度。郡山の維持・廃城時期とは別。",
+  "recordType": "sourced-location-observation",
+  "status": "verified-in-specified-scope",
+  "recordedAt": "2026-11-01",
+  "gameBindings": [
+    "TK.PERSON_RESIDENCE_EVIDENCE"
+  ]
+}

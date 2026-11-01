@@ -1,0 +1,14 @@
+[
+  {
+    "entity": "医王寺・新城市長篠",
+    "referenceId": "230000453300",
+    "referencePoint": [
+      137.202499,
+      35.214295
+    ],
+    "decision": "住所と長篠城周辺の位置関係に不一致があるため、自動採用しない",
+    "preferredSource": "https://www.city.shinshiro.lg.jp/kanko/meisyo/takedakatsuyori.html",
+    "preferredConstraint": "長篠城の約600m北方",
+    "scope": "医王寺山本陣の概略位置を市の説明で確認。名寄せと座標は別に判定する。"
+  }
+]

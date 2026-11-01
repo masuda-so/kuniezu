@@ -1,0 +1,8 @@
+exec(open('/home/claude/play/lib.py').read())
+start('関ヶ原前夜')
+print('modal0:',modal()[:200])
+pg.mouse.click(1366,817);pg.wait_for_timeout(800)
+print('modal1:',modal()[:300])
+shot('dbg3')
+pg.locator('#modal button').filter(has_text='早送').click();pg.wait_for_timeout(3000)
+print('after:',txt('#eraTxt'),'|',modal()[:300],'|',txt('#toast'))

@@ -1,0 +1,301 @@
+{
+  "date": "2026-11-01",
+  "scenarios": [
+    {
+      "id": "s1560",
+      "title": "桶狭間への進軍",
+      "date": {
+        "y": 1560,
+        "m": 6,
+        "d": 5
+      },
+      "lunar": {
+        "y": 1560,
+        "m": 5,
+        "leap": 0,
+        "d": 12,
+        "gy": 1560,
+        "gm": 6,
+        "gd": 5
+      },
+      "units": [
+        {
+          "until": "桶狭間の戦い",
+          "state": "march",
+          "commanders": [
+            "今川義元"
+          ],
+          "path": [
+            "sunpu",
+            "kakegawa",
+            "hikuma",
+            "yoshida",
+            "okazaki",
+            "kiyosu"
+          ],
+          "scheduledArrival": 40
+        }
+      ]
+    },
+    {
+      "id": "s1585",
+      "title": "関白への道",
+      "date": {
+        "y": 1585,
+        "m": 5,
+        "d": 1
+      },
+      "lunar": {
+        "y": 1585,
+        "m": 4,
+        "leap": 0,
+        "d": 2,
+        "gy": 1585,
+        "gm": 5,
+        "gd": 1
+      },
+      "units": [
+        {
+          "until": "四国攻め",
+          "state": "march",
+          "commanders": [
+            "羽柴秀長"
+          ],
+          "path": [
+            "ishiyama",
+            "kishiwada",
+            "sumoto",
+            "shozui"
+          ],
+          "scheduledArrival": 95
+        }
+      ]
+    },
+    {
+      "id": "s1570",
+      "title": "信長包囲網",
+      "date": {
+        "y": 1570,
+        "m": 10,
+        "d": 12
+      },
+      "lunar": {
+        "y": 1570,
+        "m": 9,
+        "leap": 0,
+        "d": 13,
+        "gy": 1570,
+        "gm": 10,
+        "gd": 12
+      },
+      "units": []
+    },
+    {
+      "id": "s1575",
+      "title": "長篠城の攻防",
+      "date": {
+        "y": 1575,
+        "m": 6,
+        "d": 16
+      },
+      "lunar": {
+        "y": 1575,
+        "m": 5,
+        "leap": 0,
+        "d": 8,
+        "gy": 1575,
+        "gm": 6,
+        "gd": 16
+      },
+      "units": [
+        {
+          "until": "長篠の戦い",
+          "state": "march",
+          "commanders": [
+            "織田信長"
+          ],
+          "path": [
+            "ichijodani",
+            "gifu",
+            "kiyosu",
+            "okazaki",
+            "yoshida"
+          ],
+          "scheduledArrival": 5458
+        },
+        {
+          "until": "長篠の戦い",
+          "state": "march",
+          "commanders": [
+            "山県昌景"
+          ],
+          "path": [
+            "tsutsuji",
+            "sunpu",
+            "kakegawa",
+            "yoshida"
+          ],
+          "scheduledArrival": 5458
+        },
+        {
+          "until": "長篠の戦い",
+          "state": "camp",
+          "commanders": [
+            "武田勝頼"
+          ],
+          "path": [
+            "iida",
+            "okazaki",
+            "yoshida"
+          ],
+          "scheduledArrival": 5445
+        }
+      ]
+    },
+    {
+      "id": "s1592",
+      "title": "唐入り",
+      "date": {
+        "y": 1592,
+        "m": 4,
+        "d": 1
+      },
+      "lunar": {
+        "y": 1592,
+        "m": 2,
+        "leap": 0,
+        "d": 19,
+        "gy": 1592,
+        "gm": 4,
+        "gd": 1
+      },
+      "units": []
+    },
+    {
+      "id": "s1600",
+      "title": "関ヶ原への道",
+      "date": {
+        "y": 1600,
+        "m": 7,
+        "d": 26
+      },
+      "lunar": {
+        "y": 1600,
+        "m": 6,
+        "leap": 0,
+        "d": 16,
+        "gy": 1600,
+        "gm": 7,
+        "gd": 26
+      },
+      "units": [
+        {
+          "until": "伏見城の戦い",
+          "state": "march",
+          "commanders": [
+            "島津義弘"
+          ],
+          "path": [
+            "uchi",
+            "kouyama",
+            "obi",
+            "tonokori",
+            "agata",
+            "funai",
+            "yuzuki",
+            "kaneko",
+            "sogo",
+            "shozui",
+            "sumoto",
+            "kishiwada",
+            "ishiyama",
+            "akutagawa",
+            "kyo"
+          ],
+          "scheduledArrival": 5527
+        },
+        {
+          "until": "小山評定",
+          "state": "march",
+          "commanders": [
+            "徳川家康"
+          ],
+          "path": [
+            "karasawa",
+            "utsunomiya"
+          ],
+          "scheduledArrival": 5518
+        }
+      ]
+    },
+    {
+      "id": "s1582",
+      "title": "本能寺前夜",
+      "date": {
+        "y": 1582,
+        "m": 6,
+        "d": 20
+      },
+      "lunar": {
+        "y": 1582,
+        "m": 6,
+        "leap": 0,
+        "d": 1,
+        "gy": 1582,
+        "gm": 6,
+        "gd": 20
+      },
+      "units": [
+        {
+          "until": "#hold",
+          "state": "camp",
+          "commanders": [
+            "羽柴秀吉"
+          ],
+          "path": [
+            "tottori",
+            "utsubuki",
+            "takada",
+            "bmatsuyama"
+          ],
+          "scheduledArrival": 7959
+        },
+        {
+          "until": "本能寺の変",
+          "state": "march",
+          "commanders": [
+            "織田信長"
+          ],
+          "path": [
+            "kannonji",
+            "kyo"
+          ],
+          "scheduledArrival": 7970
+        },
+        {
+          "until": "本能寺の変",
+          "state": "march",
+          "commanders": [
+            "明智光秀"
+          ],
+          "path": [
+            "yakami",
+            "kyo"
+          ],
+          "scheduledArrival": 7970
+        },
+        {
+          "until": "本能寺の変",
+          "state": "march",
+          "commanders": [],
+          "path": [
+            "himeji",
+            "takada",
+            "bmatsuyama"
+          ],
+          "scheduledArrival": 7970
+        }
+      ]
+    }
+  ]
+}

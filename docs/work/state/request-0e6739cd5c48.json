@@ -1,0 +1,23 @@
+{
+  "taskId": "request-0e6739cd5c48",
+  "status": "complete",
+  "owner": "codex-root",
+  "completedAt": "2026-11-01T08:14:10.990Z",
+  "evidence": [
+    {
+      "path": "docs/reports/ORGANIZATION_REVIEW.md",
+      "sha256": "3d78946cecb9a3db255951ab93319873479cf9425c3e94a0a296bbdcfbca95be"
+    },
+    {
+      "path": "data/verification/organization/result.json",
+      "sha256": "ab5c244746bc652d520cf093133fc24ed82319e650186dc8305c09a2e6c30116"
+    }
+  ],
+  "checks": "現行仕様と履歴分離、41件の配置と参照、1572対象の担当競合と完了証拠、構文と史料出力と実画面を確認",
+  "acceptance": [
+    "現行仕様の入口と履歴を分離",
+    "報告書・入力・結果の配置と参照を整理",
+    "対象別作業・担当競合・完了証拠を管理",
+    "整理後の構文・史料出力・実画面を確認"
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "date": "2026-11-01",
+  "scope": "豆満江付近のタイル境界の品質差比較。戦国期地形の資料ではない。",
+  "source": "Mapzen / USGS / NOAA; Terrarium",
+  "tiles": [
+    {
+      "path": "11-1759-759.png",
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/11/1759/759.png",
+      "sha256": "5a3b5423252247ed11a9d083e70cdd7763848ab8deadf93d7ea9b1c3455fdc76"
+    },
+    {
+      "path": "11-1760-759.png",
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/11/1760/759.png",
+      "sha256": "266ca0e3d15d35268310d81260e194c4ee3f5ab648531d3d1f7529ec552dfbe3"
+    }
+  ]
+}

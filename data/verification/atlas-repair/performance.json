@@ -1,0 +1,282 @@
+{
+  "play": {
+    "metrics": [
+      {
+        "name": "LayoutDuration",
+        "delta": 0.037508000000000014
+      },
+      {
+        "name": "RecalcStyleDuration",
+        "delta": 0.006174000000000002
+      },
+      {
+        "name": "DevToolsCommandDuration",
+        "delta": 0.007664000000000004
+      },
+      {
+        "name": "ScriptDuration",
+        "delta": 0.22500600000000048
+      },
+      {
+        "name": "V8CompileDuration",
+        "delta": 0
+      },
+      {
+        "name": "TaskDuration",
+        "delta": 0.7346959999999996
+      },
+      {
+        "name": "TaskOtherDuration",
+        "delta": 0.4583440000000003
+      }
+    ],
+    "drawBefore": {
+      "base": 116,
+      "top": 118
+    },
+    "drawAfter": {
+      "base": 118,
+      "top": 237
+    },
+    "cpu": [
+      [
+        "(idle) :0",
+        3269.1810000000023
+      ],
+      [
+        "(program) :0",
+        527.8469999999996
+      ],
+      [
+        "renderTop ui.js:578",
+        35.013
+      ],
+      [
+        "fmt ui.js:4",
+        22.011000000000003
+      ],
+      [
+        "at ui.js:129",
+        16.279000000000003
+      ],
+      [
+        "clanCastles engine.js:268",
+        15.647999999999996
+      ],
+      [
+        "(garbage collector) :0",
+        14.306000000000003
+      ],
+      [
+        "drawTop ui.js:295",
+        14.033000000000001
+      ],
+      [
+        "fillText :0",
+        13.806
+      ],
+      [
+        "strokeText :0",
+        13.647
+      ],
+      [
+        "drawYosho ui.js:271",
+        13.053999999999998
+      ],
+      [
+        "measureText :0",
+        12.723999999999997
+      ],
+      [
+        "narrowTL ui.js:84",
+        12.589
+      ],
+      [
+        "loop ui.js:483",
+        11.322
+      ],
+      [
+        "roadLabelsTop ui.js:127",
+        8.837
+      ],
+      [
+        "castleIcon ui.js:245",
+        6.288
+      ],
+      [
+        "fill :0",
+        5.0600000000000005
+      ],
+      [
+        "mix ui.js:22",
+        3.765
+      ],
+      [
+        "tier ui.js:254",
+        3.0199999999999996
+      ],
+      [
+        "tlV ui.js:542",
+        2.527
+      ],
+      [
+        "w2s ui.js:89",
+        2.526
+      ],
+      [
+        "drawJokaku ui.js:278",
+        2.502
+      ],
+      [
+        "save :0",
+        2.4939999999999998
+      ],
+      [
+        "vc ui.js:85",
+        2.394
+      ],
+      [
+        "clip :0",
+        2.354
+      ]
+    ]
+  },
+  "pan": {
+    "metrics": [
+      {
+        "name": "LayoutDuration",
+        "delta": 0
+      },
+      {
+        "name": "RecalcStyleDuration",
+        "delta": 0.0005830000000000002
+      },
+      {
+        "name": "DevToolsCommandDuration",
+        "delta": 0.0036780000000000007
+      },
+      {
+        "name": "ScriptDuration",
+        "delta": 0.059648000000000145
+      },
+      {
+        "name": "V8CompileDuration",
+        "delta": 0
+      },
+      {
+        "name": "TaskDuration",
+        "delta": 1.2272399999999983
+      },
+      {
+        "name": "TaskOtherDuration",
+        "delta": 1.1633310000000003
+      }
+    ],
+    "drawBefore": {
+      "base": 118,
+      "top": 237
+    },
+    "drawAfter": {
+      "base": 142,
+      "top": 261
+    },
+    "cpu": [
+      [
+        "(program) :0",
+        1178.4789999999996
+      ],
+      [
+        "(idle) :0",
+        736.7689999999998
+      ],
+      [
+        "clip :0",
+        14.876000000000001
+      ],
+      [
+        "drawBase ui.js:181",
+        5.01
+      ],
+      [
+        "fillText :0",
+        3.75
+      ],
+      [
+        "drawTop ui.js:295",
+        3.4530000000000003
+      ],
+      [
+        "loop ui.js:483",
+        2.566
+      ],
+      [
+        "fmt ui.js:4",
+        2.5069999999999997
+      ],
+      [
+        "w2s ui.js:89",
+        2.494
+      ],
+      [
+        "vc ui.js:85",
+        1.555
+      ],
+      [
+        "narrowTL ui.js:84",
+        1.26
+      ],
+      [
+        "G.castleGens engine.js:278",
+        1.259
+      ],
+      [
+        "G.atWar engine.js:275",
+        1.257
+      ],
+      [
+        "roadLabelsTop ui.js:127",
+        1.257
+      ],
+      [
+        "G.allied engine.js:274",
+        1.257
+      ],
+      [
+        "setLineDash :0",
+        1.256
+      ],
+      [
+        "plate ui.js:260",
+        1.255
+      ],
+      [
+        "fillRect :0",
+        1.253
+      ],
+      [
+        "at ui.js:129",
+        1.25
+      ],
+      [
+        "roadPaths ui.js:118",
+        1.246
+      ],
+      [
+        "borderStyle ui.js:105",
+        1.243
+      ],
+      [
+        "drawRoads ui.js:142",
+        1.242
+      ],
+      [
+        "drawWaterEvidence ui.js:167",
+        1.24
+      ],
+      [
+        "fill :0",
+        1.026
+      ]
+    ]
+  }
+}

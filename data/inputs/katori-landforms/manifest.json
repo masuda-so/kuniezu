@@ -1,0 +1,53 @@
+{
+  "title": "国土地理院 地形分類 自然地形・香取付近9タイル",
+  "legend": "https://www.gsi.go.jp/bousaichiri/bousaichiri41017.html",
+  "retrieved": "2026-11-01",
+  "restriction": "現代の地形分類。戦国期の汀線・自然堤防の成立年代を確定しない。",
+  "tiles": [
+    {
+      "path": "14-14586-6438.geojson",
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/experimental_landformclassification1/14/14586/6438.geojson",
+      "sha256": "4726f054c19d3eb6551c8a0219dc2b47b146b5fc5a882fea2b1032a644bee6c6"
+    },
+    {
+      "path": "14-14586-6439.geojson",
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/experimental_landformclassification1/14/14586/6439.geojson",
+      "sha256": "67a43c9a47c45caeac0e1e47f7d51b364ee3f7b06adf75a7b84c1afd3b13ec97"
+    },
+    {
+      "path": "14-14586-6440.geojson",
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/experimental_landformclassification1/14/14586/6440.geojson",
+      "sha256": "8e662e6ffcc151bad5d7befb280969ee9147978413036205baf5b571a974ab83"
+    },
+    {
+      "path": "14-14587-6438.geojson",
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/experimental_landformclassification1/14/14587/6438.geojson",
+      "sha256": "16b079c2365890a86468aa230118a46e9d5bdf4543d004ff1be5631ddf370de4"
+    },
+    {
+      "path": "14-14587-6439.geojson",
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/experimental_landformclassification1/14/14587/6439.geojson",
+      "sha256": "24949e943e1d31ec8ec6456588ea832448f55289a326cf0055e88969a630ff78"
+    },
+    {
+      "path": "14-14587-6440.geojson",
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/experimental_landformclassification1/14/14587/6440.geojson",
+      "sha256": "241fb713a81972372b90687466a8c0ba53ba4d6cc9aa3fe8d9b882233a13e345"
+    },
+    {
+      "path": "14-14588-6438.geojson",
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/experimental_landformclassification1/14/14588/6438.geojson",
+      "sha256": "e0b2ce71ed7bdb01b3e0ffd567bc0ef828f8c65f191162693b27a2254dad2037"
+    },
+    {
+      "path": "14-14588-6439.geojson",
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/experimental_landformclassification1/14/14588/6439.geojson",
+      "sha256": "93306d6ed6c1022ace710fc06a44f4e1d8d1e96e962d9e54a504d688688d8b2d"
+    },
+    {
+      "path": "14-14588-6440.geojson",
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/experimental_landformclassification1/14/14588/6440.geojson",
+      "sha256": "29773b661a63feec8ef0d66c5c74ce605b1561f06b1fe428a87b7b6b4732ac56"
+    }
+  ]
+}

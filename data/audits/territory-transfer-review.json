@@ -1,0 +1,5970 @@
+{
+  "generated": "2026-11-01",
+  "scope": "登録済み全領土イベントと日別の実際の所有者変更。全史料との一致を証明する台帳ではない。",
+  "events": [
+    {
+      "date": [
+        1560,
+        6,
+        16
+      ],
+      "title": "松平元康、岡崎に入る",
+      "kind": "newclan",
+      "clan": "tokugawa",
+      "castles": [
+        "okazaki"
+      ],
+      "additional": null,
+      "source": "https://www.archives.go.jp/exhibition/digital/ieyasu/history.html",
+      "precision": null,
+      "review": "出典リンクあり。資料が当該全拠点の日付を裏付けるとは限らない"
+    },
+    {
+      "date": [
+        1560,
+        9,
+        10
+      ],
+      "title": "長尾景虎の関東出兵",
+      "kind": "take",
+      "clan": "nagao",
+      "castles": [
+        "numata"
+      ],
+      "additional": null,
+      "source": null,
+      "precision": null,
+      "review": "出典未登録。史実照合済みとは扱わない"
+    },
+    {
+      "date": [
+        1560,
+        9,
+        20
+      ],
+      "title": null,
+      "kind": "take",
+      "clan": "azai",
+      "castles": [
+        "sawayama"
+      ],
+      "additional": null,
+      "source": null,
+      "precision": null,
+      "review": "出典未登録。史実照合済みとは扱わない"
+    },
+    {
+      "date": [
+        1560,
+        11,
+        1
+      ],
+      "title": null,
+      "kind": "take",
+      "clan": "nagao",
+      "castles": [
+        "umayabashi"
+      ],
+      "additional": null,
+      "source": null,
+      "precision": null,
+      "review": "出典未登録。史実照合済みとは扱わない"
+    },
+    {
+      "date": [
+        1560,
+        11,
+        15
+      ],
+      "title": "松永久秀の大和侵攻",
+      "kind": "take",
+      "clan": "miyoshi",
+      "castles": [
+        "yamato"
+      ],
+      "additional": null,
+      "source": null,
+      "precision": null,
+      "review": "出典未登録。史実照合済みとは扱わない"
+    },
+    {
+      "date": [
+        1562,
+        7,
+        1
+      ],
+      "title": "石見銀山を得る",
+      "kind": "take",
+      "clan": "mori",
+      "castles": [
+        "yamabuki"
+      ],
+      "additional": null,
+      "source": null,
+      "precision": null,
+      "review": "出典未登録。史実照合済みとは扱わない"
+    },
+    {
+      "date": [
+        1564,
+        9,
+        1
+      ],
+      "title": "岩付城を得る",
+      "kind": "take",
+      "clan": "hojo",
+      "castles": [
+        "iwatsuki"
+      ],
+      "additional": null,
+      "source": null,
+      "precision": null,
+      "review": "出典未登録。史実照合済みとは扱わない"
+    },
+    {
+      "date": [
+        1565,
+        4,
+        10
+      ],
+      "title": "三河平定",
+      "kind": "take",
+      "clan": "tokugawa",
+      "castles": [
+        "yoshida"
+      ],
+      "additional": null,
+      "source": null,
+      "precision": null,
+      "review": "出典未登録。史実照合済みとは扱わない"
+    },
+    {
+      "date": [
+        1565,
+        6,
+        17
+      ],
+      "title": "永禄の変",
+      "kind": "death",
+      "castles": [],
+      "additional": {
+        "clan": "miyoshi",
+        "castles": [
+          "kyo"
+        ]
+      },
+      "source": null,
+      "precision": null,
+      "review": "出典未登録。史実照合済みとは扱わない"
+    },
+    {
+      "date": [
+        1566,
+        3,
+        1
+      ],
+      "title": "波多野氏の八上城奪回",
+      "kind": "newclan",
+      "clan": "hatano",
+      "castles": [
+        "yakami"
+      ],
+      "additional": null,
+      "source": null,
+      "precision": null,
+      "review": "出典未登録。史実照合済みとは扱わない"
+    },
+    {
+      "date": [
+        1566,
+        11,
+        10
+      ],
+      "title": "箕輪城落城",
+      "kind": "take",
+      "clan": "takeda",
+      "castles": [
+        "minowa"
+      ],
+      "additional": null,
+      "source": null,
+      "precision": null,
+      "review": "出典未登録。史実照合済みとは扱わない"
+    },
+    {
+      "date": [
+        1567,
+        1,
+        5
+      ],
+      "title": "月山富田城開城",
+      "kind": "take",
+      "clan": "mori",
+      "castles": [
+        "gassan",
+        "utsubuki",
+        "takada"
+      ],
+      "additional": null,
+      "source": null,
+      "precision": null,
+      "review": "出典未登録。史実照合済みとは扱わない"
+    },
+    {
+      "date": [
+        1567,
+        9,
+        17
+      ],
+      "title": "稲葉山城の戦い",
+      "kind": "take",
+      "clan": "oda",
+      "castles": [
+        "gifu",
+        "iwamura"
+      ],
+      "additional": null,
+      "source": null,
+      "precision": null,
+      "review": "出典未登録。史実照合済みとは扱わない"
+    },
+    {
+      "date": [
+        1568,
+        5,
+        1
+      ],
+      "title": null,
+      "kind": "take",
+      "clan": "chosokabe",
+      "castles": [
+        "motoyama"
+      ],
+      "additional": null,
+      "source": null,
+      "precision": null,
+      "review": "出典未登録。史実照合済みとは扱わない"
+    },
+    {
+      "date": [
+        1568,
+        10,
+        18
+      ],
+      "title": "信長上洛",
+      "kind": "take",
+      "clan": "oda",
+      "castles": [
+        "kannonji",
+        "akutagawa",
+        "kyo",
+        "yamato"
+      ],
+      "additional": null,
+      "source": null,
+      "precision": null,
+      "review": "出典未登録。史実照合済みとは扱わない"
+    },
+    {
+      "date": [
+        1568,
+        12,
+        20
+      ],
+      "title": null,
+      "kind": "take",
+      "clan": "tokugawa",
+      "castles": [
+        "hikuma"
+      ],
+      "additional": null,
+      "source": null,
+      "precision": null,
+      "review": "出典未登録。史実照合済みとは扱わない"
+    },
+    {
+      "date": [
+        1568,
+        12,
+        31
+      ],
+      "title": "駿河侵攻",
+      "kind": "take",
+      "clan": "takeda",
+      "castles": [
+        "sunpu"
+      ],
+      "additional": null,
+      "source": null,
+      "precision": null,
+      "review": "出典未登録。史実照合済みとは扱わない"
+    },
+    {
+      "date": [
+        1569,
+        6,
+        1
+      ],
+      "title": "掛川城開城",
+      "kind": "take",
+      "clan": "tokugawa",
+      "castles": [
+        "kakegawa"
+      ],
+      "additional": null,
+      "source": null,
+      "precision": null,
+      "review": "出典未登録。史実照合済みとは扱わない"
+    },
+    {
+      "date": [
+        1569,
+        12,
+        30
+      ],
+      "title": "手這坂の戦い",
+      "kind": "take",
+      "clan": "satake",
+      "castles": [
+        "odajo"
+      ],
+      "additional": null,
+      "source": null,
+      "precision": null,
+      "review": "出典未登録。史実照合済みとは扱わない"
+    },
+    {
+      "date": [
+        1570,
+        5,
+        1
+      ],
+      "title": null,
+      "kind": "take",
+      "clan": "oda",
+      "castles": [
+        "nochiseyama"
+      ],
+      "additional": null,
+      "source": null,
+      "precision": null,
+      "review": "出典未登録。史実照合済みとは扱わない"
+    },
+    {
+      "date": [
+        1571,
+        3,
+        1
+      ],
+      "title": null,
+      "kind": "take",
+      "clan": "oda",
+      "castles": [
+        "sawayama"
+      ],
+      "additional": null,
+      "source": null,
+      "precision": null,
+      "review": "出典未登録。史実照合済みとは扱わない"
+    },
+    {
+      "date": [
+        1571,
+        6,
+        1
+      ],
+      "title": "津軽為信の自立",
+      "kind": "newclan",
+      "clan": "tsugaru",
+      "castles": [
+        "ishikawa"
+      ],
+      "additional": null,
+      "source": null,
+      "precision": null,
+      "review": "出典未登録。史実照合済みとは扱わない"
+    },
+    {
+      "date": [
+        1572,
+        12,
+        18
+      ],
+      "title": "岩村城を得る",
+      "kind": "take",
+      "clan": "takeda",
+      "castles": [
+        "iwamura"
+      ],
+      "additional": null,
+      "source": null,
+      "precision": null,
+      "review": "出典未登録。史実照合済みとは扱わない"
+    },
+    {
+      "date": [
+        1573,
+        9,
+        16
+      ],
+      "title": "朝倉氏滅亡",
+      "kind": "take",
+      "clan": "oda",
+      "castles": [
+        "ichijodani",
+        "kanegasaki"
+      ],
+      "additional": null,
+      "source": null,
+      "precision": null,
+      "review": "出典未登録。史実照合済みとは扱わない"
+    },
+    {
+      "date": [
+        1573,
+        9,
+        26
+      ],
+      "title": "小谷城落城",
+      "kind": "take",
+      "clan": "oda",
+      "castles": [
+        "odani"
+      ],
+      "additional": null,
+      "source": null,
+      "precision": null,
+      "review": "出典未登録。史実照合済みとは扱わない"
+    },
+    {
+      "date": [
+        1574,
+        10,
+        1
+      ],
+      "title": "長島一向一揆の平定",
+      "kind": "take",
+      "clan": "oda",
+      "castles": [
+        "nagashima"
+      ],
+      "additional": null,
+      "source": null,
+      "precision": null,
+      "review": "出典未登録。史実照合済みとは扱わない"
+    },
+    {
+      "date": [
+        1575,
+        7,
+        15
+      ],
+      "title": "備中兵乱",
+      "kind": "take",
+      "clan": "mori",
+      "castles": [
+        "bmatsuyama"
+      ],
+      "additional": null,
+      "source": null,
+      "precision": null,
+      "review": "出典未登録。史実照合済みとは扱わない"
+    },
+    {
+      "date": [
+        1575,
+        10,
+        1
+      ],
+      "title": "四万十川の戦い",
+      "kind": "take",
+      "clan": "chosokabe",
+      "castles": [
+        "nakamura"
+      ],
+      "additional": null,
+      "source": null,
+      "precision": null,
+      "review": "出典未登録。史実照合済みとは扱わない"
+    },
+    {
+      "date": [
+        1575,
+        10,
+        20
+      ],
+      "title": "宇喜多直家の下剋上",
+      "kind": "newclan",
+      "clan": "ukita",
+      "castles": [
+        "tenjin"
+      ],
+      "additional": null,
+      "source": null,
+      "precision": null,
+      "review": "出典未登録。史実照合済みとは扱わない"
+    },
+    {
+      "date": [
+        1575,
+        12,
+        10
+      ],
+      "title": null,
+      "kind": "take",
+      "clan": "oda",
+      "castles": [
+        "iwamura"
+      ],
+      "additional": null,
+      "source": null,
+      "precision": null,
+      "review": "出典未登録。史実照合済みとは扱わない"
+    },
+    {
+      "date": [
+        1576,
+        6,
+        1
+      ],
+      "title": null,
+      "kind": "take",
+      "clan": "oda",
+      "castles": [
+        "kishiwada"
+      ],
+      "additional": null,
+      "source": null,
+      "precision": null,
+      "review": "出典未登録。史実照合済みとは扱わない"
+    },
+    {
+      "date": [
+        1576,
+        10,
+        1
+      ],
+      "title": null,
+      "kind": "take",
+      "clan": "nagao",
+      "castles": [
+        "toyama"
+      ],
+      "additional": null,
+      "source": null,
+      "precision": null,
+      "review": "出典未登録。史実照合済みとは扱わない"
+    },
+    {
+      "date": [
+        1576,
+        12,
+        15
+      ],
+      "title": "北畠一族殺害後の支配再編",
+      "kind": "absorb",
+      "clan": "oda",
+      "castles": [],
+      "additional": null,
+      "source": "https://www.bunka.pref.mie.lg.jp/rekishi/45560013067.htm",
+      "precision": "1576年。月日は今回の資料では未照合",
+      "review": "出典リンクあり。資料が当該全拠点の日付を裏付けるとは限らない"
+    },
+    {
+      "date": [
+        1577,
+        10,
+        1
+      ],
+      "title": "七尾城の戦い",
+      "kind": "take",
+      "clan": "nagao",
+      "castles": [
+        "nanao"
+      ],
+      "additional": null,
+      "source": null,
+      "precision": null,
+      "review": "出典未登録。史実照合済みとは扱わない"
+    },
+    {
+      "date": [
+        1577,
+        11,
+        25
+      ],
+      "title": "中国攻め",
+      "kind": "take",
+      "clan": "oda",
+      "castles": [
+        "himeji"
+      ],
+      "additional": null,
+      "source": null,
+      "precision": null,
+      "review": "出典未登録。史実照合済みとは扱わない"
+    },
+    {
+      "date": [
+        1578,
+        1,
+        1
+      ],
+      "title": "伊東崩れ",
+      "kind": "take",
+      "clan": "shimazu",
+      "castles": [
+        "tonokori",
+        "obi"
+      ],
+      "additional": null,
+      "source": null,
+      "precision": null,
+      "review": "出典未登録。史実照合済みとは扱わない"
+    },
+    {
+      "date": [
+        1578,
+        4,
+        10
+      ],
+      "title": null,
+      "kind": "take",
+      "clan": "otomo",
+      "castles": [
+        "agata"
+      ],
+      "additional": null,
+      "source": null,
+      "precision": null,
+      "review": "出典未登録。史実照合済みとは扱わない"
+    },
+    {
+      "date": [
+        1578,
+        12,
+        20
+      ],
+      "title": null,
+      "kind": "take",
+      "clan": "akizuki",
+      "castles": [
+        "kawara"
+      ],
+      "additional": null,
+      "source": null,
+      "precision": null,
+      "review": "出典未登録。史実照合済みとは扱わない"
+    },
+    {
+      "date": [
+        1579,
+        7,
+        1
+      ],
+      "title": "丹波・丹後平定",
+      "kind": "take",
+      "clan": "oda",
+      "castles": [
+        "yakami",
+        "tango"
+      ],
+      "additional": null,
+      "source": null,
+      "precision": null,
+      "review": "出典未登録。史実照合済みとは扱わない"
+    },
+    {
+      "date": [
+        1579,
+        9,
+        1
+      ],
+      "title": null,
+      "kind": "take",
+      "clan": "oda",
+      "castles": [
+        "utsubuki"
+      ],
+      "additional": null,
+      "source": null,
+      "precision": null,
+      "review": "出典未登録。史実照合済みとは扱わない"
+    },
+    {
+      "date": [
+        1580,
+        2,
+        2
+      ],
+      "title": "三木の干殺し",
+      "kind": "take",
+      "clan": "oda",
+      "castles": [
+        "miki"
+      ],
+      "additional": null,
+      "source": "https://www.city.miki.lg.jp/site/mikirekishishiryokan/26531.html",
+      "precision": "旧暦年月日を資料と照合",
+      "review": "出典リンクあり。資料が当該全拠点の日付を裏付けるとは限らない"
+    },
+    {
+      "date": [
+        1580,
+        6,
+        1
+      ],
+      "title": null,
+      "kind": "take",
+      "clan": "oda",
+      "castles": [
+        "konosumi"
+      ],
+      "additional": null,
+      "source": null,
+      "precision": null,
+      "review": "出典未登録。史実照合済みとは扱わない"
+    },
+    {
+      "date": [
+        1580,
+        9,
+        10
+      ],
+      "title": "石山本願寺の退去",
+      "kind": "take",
+      "clan": "oda",
+      "castles": [
+        "ishiyama"
+      ],
+      "additional": null,
+      "source": null,
+      "precision": null,
+      "review": "出典未登録。史実照合済みとは扱わない"
+    },
+    {
+      "date": [
+        1580,
+        12,
+        1
+      ],
+      "title": null,
+      "kind": "take",
+      "clan": "oda",
+      "castles": [
+        "oyama"
+      ],
+      "additional": null,
+      "source": null,
+      "precision": null,
+      "review": "出典未登録。史実照合済みとは扱わない"
+    },
+    {
+      "date": [
+        1581,
+        4,
+        1
+      ],
+      "title": null,
+      "kind": "take",
+      "clan": "oda",
+      "castles": [
+        "toyama",
+        "nanao"
+      ],
+      "additional": null,
+      "source": null,
+      "precision": null,
+      "review": "出典未登録。史実照合済みとは扱わない"
+    },
+    {
+      "date": [
+        1581,
+        6,
+        16
+      ],
+      "title": "新発田重家の乱",
+      "kind": "newclan",
+      "clan": "shibata",
+      "castles": [
+        "shibata"
+      ],
+      "additional": null,
+      "source": null,
+      "precision": null,
+      "review": "出典未登録。史実照合済みとは扱わない"
+    },
+    {
+      "date": [
+        1581,
+        7,
+        1
+      ],
+      "title": null,
+      "kind": "take",
+      "clan": "ryuzoji",
+      "castles": [
+        "yanagawa"
+      ],
+      "additional": null,
+      "source": null,
+      "precision": null,
+      "review": "出典未登録。史実照合済みとは扱わない"
+    },
+    {
+      "date": [
+        1581,
+        9,
+        20
+      ],
+      "title": null,
+      "kind": "absorb",
+      "clan": "shimazu",
+      "castles": [],
+      "additional": null,
+      "source": null,
+      "precision": null,
+      "review": "出典未登録。史実照合済みとは扱わない"
+    },
+    {
+      "date": [
+        1581,
+        10,
+        10
+      ],
+      "title": "天正伊賀の乱",
+      "kind": "take",
+      "clan": "oda",
+      "castles": [
+        "ueno"
+      ],
+      "additional": null,
+      "source": null,
+      "precision": null,
+      "review": "出典未登録。史実照合済みとは扱わない"
+    },
+    {
+      "date": [
+        1581,
+        11,
+        20
+      ],
+      "title": "淡路国人衆の降伏（時期未確定）",
+      "kind": "take",
+      "clan": "oda",
+      "castles": [
+        "sumoto"
+      ],
+      "additional": null,
+      "source": "https://www.city.sumoto.lg.jp/uploaded/attachment/8457.pdf",
+      "precision": "1581年のみ確認・月日は旧実装の仮置き",
+      "review": "出典リンクあり。資料が当該全拠点の日付を裏付けるとは限らない"
+    },
+    {
+      "date": [
+        1581,
+        11,
+        21
+      ],
+      "title": "鳥取の渇え殺し",
+      "kind": "take",
+      "clan": "oda",
+      "castles": [
+        "tottori"
+      ],
+      "additional": null,
+      "source": "https://www.pref.tottori.lg.jp/item/262000.htm",
+      "precision": "旧暦年月日を資料と照合",
+      "review": "出典リンクあり。資料が当該全拠点の日付を裏付けるとは限らない"
+    },
+    {
+      "date": [
+        1582,
+        3,
+        8
+      ],
+      "title": "飯田城の守将撤退",
+      "kind": "take",
+      "clan": "oda",
+      "castles": [
+        "iida"
+      ],
+      "additional": null,
+      "source": "https://www.city.iida.lg.jp/site/bunkazai/iidajou.html",
+      "precision": null,
+      "review": "出典リンクあり。資料が当該全拠点の日付を裏付けるとは限らない"
+    },
+    {
+      "date": [
+        1582,
+        3,
+        25
+      ],
+      "title": "高遠城の戦い",
+      "kind": "take",
+      "clan": "oda",
+      "castles": [
+        "takato"
+      ],
+      "additional": null,
+      "source": "https://www.inacity.jp/shisei/kakushuplanshiryo/rekishibunka/takatojo_keikaku.files/takatojyoseki_hozonkatuyoukeikaku_03.pdf",
+      "precision": null,
+      "review": "出典リンクあり。資料が当該全拠点の日付を裏付けるとは限らない"
+    },
+    {
+      "date": [
+        1582,
+        4,
+        4
+      ],
+      "title": "武田旧領の支配整理",
+      "kind": "take",
+      "clan": "oda",
+      "castles": [
+        "fukashi",
+        "kaizu",
+        "toishi",
+        "tsutsuji",
+        "minowa",
+        "numata"
+      ],
+      "additional": null,
+      "source": "https://www.city.iida.lg.jp/site/bunkazai/minamihonjou.html",
+      "precision": "月内の便宜上の配置日",
+      "review": "出典リンクあり。資料が当該全拠点の日付を裏付けるとは限らない"
+    },
+    {
+      "date": [
+        1582,
+        4,
+        5
+      ],
+      "title": null,
+      "kind": "take",
+      "clan": "tokugawa",
+      "castles": [
+        "sunpu"
+      ],
+      "additional": null,
+      "source": null,
+      "precision": null,
+      "review": "出典未登録。史実照合済みとは扱わない"
+    },
+    {
+      "date": [
+        1582,
+        4,
+        5
+      ],
+      "title": null,
+      "kind": "take",
+      "clan": "oda",
+      "castles": [
+        "umayabashi"
+      ],
+      "additional": null,
+      "source": null,
+      "precision": null,
+      "review": "出典未登録。史実照合済みとは扱わない"
+    },
+    {
+      "date": [
+        1582,
+        7,
+        2
+      ],
+      "title": "山崎の戦い",
+      "kind": "newclan",
+      "clan": "hashiba",
+      "castles": [
+        "himeji",
+        "miki",
+        "konosumi",
+        "tottori",
+        "sumoto"
+      ],
+      "additional": null,
+      "source": "https://www.city.nagaokakyo.lg.jp/0000001016.html",
+      "precision": null,
+      "review": "出典リンクあり。資料が当該全拠点の日付を裏付けるとは限らない"
+    },
+    {
+      "date": [
+        1582,
+        7,
+        16
+      ],
+      "title": "清洲会議",
+      "kind": "note",
+      "castles": [],
+      "additional": {
+        "clan": "hashiba",
+        "castles": [
+          "kyo",
+          "kishiwada"
+        ],
+        "admin": 1
+      },
+      "source": "https://www.pref.shiga.lg.jp/file/attachment/5456533.pdf",
+      "precision": null,
+      "review": "出典リンクあり。資料が当該全拠点の日付を裏付けるとは限らない"
+    },
+    {
+      "date": [
+        1582,
+        7,
+        17
+      ],
+      "title": "信雄と信孝の争い",
+      "kind": "newclan",
+      "clan": "nobutaka",
+      "castles": [
+        "gifu"
+      ],
+      "additional": null,
+      "source": "https://www.city.gifu.lg.jp/kankoubunka/kankou/1013051/1005097/1034742/1034737.html",
+      "precision": "清須会議後の領国分離を表示。相続・入城の実施月日は未確定",
+      "review": "出典リンクあり。資料が当該全拠点の日付を裏付けるとは限らない"
+    },
+    {
+      "date": [
+        1582,
+        7,
+        17
+      ],
+      "title": "信雄の尾張相続・尾張織田家の分離",
+      "kind": "newclan",
+      "clan": "nobukatsu",
+      "castles": [
+        "kiyosu",
+        "kiriyama",
+        "ueno"
+      ],
+      "additional": null,
+      "source": "https://www.museum.city.nagoya.jp/exhibition/owari_joyubi_news/tenkabitotokiyosu/index.html",
+      "precision": "清須会議後の領国分離を表示。相続・入城の実施月日は未確定",
+      "review": "出典リンクあり。資料が当該全拠点の日付を裏付けるとは限らない"
+    },
+    {
+      "date": [
+        1582,
+        7,
+        18
+      ],
+      "title": "柴田勝家と信孝",
+      "kind": "newclan",
+      "clan": "kshibata",
+      "castles": [
+        "ichijodani",
+        "oyama",
+        "odani"
+      ],
+      "additional": null,
+      "source": "https://www.library-archives.pref.fukui.lg.jp/fukui/07/kenshi/T3/T3-0a1a2-02-02-04-02.htm",
+      "precision": "清須会議後の領国分離を表示。相続・入城の実施月日は未確定",
+      "review": "出典リンクあり。資料が当該全拠点の日付を裏付けるとは限らない"
+    },
+    {
+      "date": [
+        1582,
+        7,
+        18
+      ],
+      "title": "丹羽長秀の若狭領・近江加増",
+      "kind": "newclan",
+      "clan": "niwa",
+      "castles": [
+        "nochiseyama"
+      ],
+      "additional": null,
+      "source": "https://www.library-archives.pref.fukui.lg.jp/fukui/07/kenshi/T3/T3-0a1a2-02-02-04-02.htm",
+      "precision": "清須会議後の領国分離を表示。相続・入城の実施月日は未確定",
+      "review": "出典リンクあり。資料が当該全拠点の日付を裏付けるとは限らない"
+    },
+    {
+      "date": [
+        1582,
+        7,
+        18
+      ],
+      "title": "池田恒興の摂津領",
+      "kind": "newclan",
+      "clan": "ikeda",
+      "castles": [
+        "ishiyama"
+      ],
+      "additional": null,
+      "source": "https://www.pref.shiga.lg.jp/file/attachment/5456533.pdf",
+      "precision": "清須会議後の領国分離を表示。相続・入城の実施月日は未確定",
+      "review": "出典リンクあり。資料が当該全拠点の日付を裏付けるとは限らない"
+    },
+    {
+      "date": [
+        1582,
+        7,
+        18
+      ],
+      "title": "丹波の領知と羽柴秀勝",
+      "kind": "note",
+      "clan": "hashiba",
+      "castles": [],
+      "additional": {
+        "clan": "hashiba",
+        "castles": [
+          "yakami"
+        ],
+        "admin": 1
+      },
+      "source": "https://www.pref.shiga.lg.jp/file/attachment/5456533.pdf",
+      "precision": "清須会議後の領国分離を表示。相続・入城の実施月日は未確定",
+      "review": "出典リンクあり。資料が当該全拠点の日付を裏付けるとは限らない"
+    },
+    {
+      "date": [
+        1582,
+        7,
+        20
+      ],
+      "title": null,
+      "kind": "take",
+      "clan": "hojo",
+      "castles": [
+        "umayabashi",
+        "minowa"
+      ],
+      "additional": null,
+      "source": null,
+      "precision": null,
+      "review": "出典未登録。史実照合済みとは扱わない"
+    },
+    {
+      "date": [
+        1582,
+        7,
+        25
+      ],
+      "title": "天正壬午の乱",
+      "kind": "take",
+      "clan": "tokugawa",
+      "castles": [
+        "tsutsuji"
+      ],
+      "additional": null,
+      "source": null,
+      "precision": null,
+      "review": "出典未登録。史実照合済みとは扱わない"
+    },
+    {
+      "date": [
+        1582,
+        7,
+        28
+      ],
+      "title": null,
+      "kind": "take",
+      "clan": "tokugawa",
+      "castles": [
+        "iida",
+        "takato"
+      ],
+      "additional": null,
+      "source": null,
+      "precision": null,
+      "review": "出典未登録。史実照合済みとは扱わない"
+    },
+    {
+      "date": [
+        1582,
+        8,
+        1
+      ],
+      "title": null,
+      "kind": "take",
+      "clan": "tokugawa",
+      "castles": [
+        "fukashi"
+      ],
+      "additional": null,
+      "source": null,
+      "precision": null,
+      "review": "出典未登録。史実照合済みとは扱わない"
+    },
+    {
+      "date": [
+        1582,
+        8,
+        2
+      ],
+      "title": null,
+      "kind": "take",
+      "clan": "nagao",
+      "castles": [
+        "kaizu"
+      ],
+      "additional": null,
+      "source": null,
+      "precision": null,
+      "review": "出典未登録。史実照合済みとは扱わない"
+    },
+    {
+      "date": [
+        1582,
+        8,
+        3
+      ],
+      "title": null,
+      "kind": "take",
+      "clan": "hojo",
+      "castles": [
+        "minowa"
+      ],
+      "additional": null,
+      "source": null,
+      "precision": null,
+      "review": "出典未登録。史実照合済みとは扱わない"
+    },
+    {
+      "date": [
+        1582,
+        8,
+        10
+      ],
+      "title": "真田昌幸の自立",
+      "kind": "newclan",
+      "clan": "sanada",
+      "castles": [
+        "toishi",
+        "numata"
+      ],
+      "additional": null,
+      "source": null,
+      "precision": null,
+      "review": "出典未登録。史実照合済みとは扱わない"
+    },
+    {
+      "date": [
+        1582,
+        9,
+        1
+      ],
+      "title": null,
+      "kind": "newclan",
+      "clan": "sassa",
+      "castles": [
+        "toyama"
+      ],
+      "additional": null,
+      "source": null,
+      "precision": null,
+      "review": "出典未登録。史実照合済みとは扱わない"
+    },
+    {
+      "date": [
+        1582,
+        9,
+        14
+      ],
+      "title": "中富川の戦い",
+      "kind": "take",
+      "clan": "chosokabe",
+      "castles": [
+        "shozui"
+      ],
+      "additional": null,
+      "source": null,
+      "precision": null,
+      "review": "出典未登録。史実照合済みとは扱わない"
+    },
+    {
+      "date": [
+        1583,
+        1,
+        5
+      ],
+      "title": null,
+      "kind": "take",
+      "clan": "hashiba",
+      "castles": [
+        "odani"
+      ],
+      "additional": null,
+      "source": null,
+      "precision": null,
+      "review": "出典未登録。史実照合済みとは扱わない"
+    },
+    {
+      "date": [
+        1583,
+        5,
+        28
+      ],
+      "title": "岐阜城の開城",
+      "kind": "take",
+      "clan": "nobukatsu",
+      "castles": [
+        "gifu"
+      ],
+      "additional": null,
+      "source": null,
+      "precision": null,
+      "review": "出典未登録。史実照合済みとは扱わない"
+    },
+    {
+      "date": [
+        1583,
+        5,
+        28
+      ],
+      "title": "岐阜の池田領への再配分",
+      "kind": "note",
+      "clan": "ikeda",
+      "castles": [],
+      "additional": {
+        "clan": "ikeda",
+        "castles": [
+          "gifu"
+        ],
+        "admin": 1
+      },
+      "source": "https://www.city.gifu.lg.jp/kankoubunka/kankou/1013051/1005097/1034742/1034737.html",
+      "precision": "1583年の信孝失脚後。表示日は開城に併置し、入城日確定とはしない。",
+      "review": "出典リンクあり。資料が当該全拠点の日付を裏付けるとは限らない"
+    },
+    {
+      "date": [
+        1583,
+        6,
+        14
+      ],
+      "title": "北庄城落城",
+      "kind": "take",
+      "clan": "hashiba",
+      "castles": [
+        "ichijodani"
+      ],
+      "additional": null,
+      "source": "https://www.library-archives.pref.fukui.lg.jp/fukui/07/nenpyo/rekishi/chrn25.html",
+      "precision": null,
+      "review": "出典リンクあり。資料が当該全拠点の日付を裏付けるとは限らない"
+    },
+    {
+      "date": [
+        1583,
+        6,
+        14
+      ],
+      "title": "賤ヶ岳後の丹羽領拡大",
+      "kind": "note",
+      "clan": "niwa",
+      "castles": [],
+      "additional": {
+        "clan": "niwa",
+        "castles": [
+          "ichijodani"
+        ],
+        "admin": 1
+      },
+      "source": "https://www.library-archives.pref.fukui.lg.jp/fukui/07/nenpyo/rekishi/chrn25.html",
+      "precision": "1583年の加増。月日は北庄落城に併置した表示上の基準。",
+      "review": "出典リンクあり。資料が当該全拠点の日付を裏付けるとは限らない"
+    },
+    {
+      "date": [
+        1583,
+        6,
+        15
+      ],
+      "title": "秀吉の天下取り",
+      "kind": "take",
+      "clan": "hashiba",
+      "castles": [
+        "ishiyama",
+        "sawayama",
+        "tango",
+        "yamato",
+        "kishiwada",
+        "akutagawa"
+      ],
+      "additional": null,
+      "source": "https://www.pref.shiga.lg.jp/file/attachment/5456533.pdf",
+      "precision": "戦後の支配整理を表示。各拠点の戦闘・明渡し日の確定値ではない。",
+      "review": "出典リンクあり。資料が当該全拠点の日付を裏付けるとは限らない"
+    },
+    {
+      "date": [
+        1584,
+        7,
+        1
+      ],
+      "title": "松ヶ島城の戦い",
+      "kind": "take",
+      "clan": "hashiba",
+      "castles": [
+        "kiriyama"
+      ],
+      "additional": null,
+      "source": null,
+      "precision": null,
+      "review": "出典未登録。史実照合済みとは扱わない"
+    },
+    {
+      "date": [
+        1584,
+        8,
+        1
+      ],
+      "title": null,
+      "kind": "take",
+      "clan": "chosokabe",
+      "castles": [
+        "sogo",
+        "kaneko",
+        "kurose"
+      ],
+      "additional": null,
+      "source": null,
+      "precision": null,
+      "review": "出典未登録。史実照合済みとは扱わない"
+    },
+    {
+      "date": [
+        1584,
+        10,
+        1
+      ],
+      "title": null,
+      "kind": "take",
+      "clan": "shimazu",
+      "castles": [
+        "kumamoto"
+      ],
+      "additional": null,
+      "source": null,
+      "precision": null,
+      "review": "出典未登録。史実照合済みとは扱わない"
+    },
+    {
+      "date": [
+        1584,
+        12,
+        1
+      ],
+      "title": null,
+      "kind": "take",
+      "clan": "hojo",
+      "castles": [
+        "kanayama",
+        "sakura"
+      ],
+      "additional": null,
+      "source": null,
+      "precision": null,
+      "review": "出典未登録。史実照合済みとは扱わない"
+    },
+    {
+      "date": [
+        1584,
+        12,
+        15
+      ],
+      "title": "信雄、秀吉と和睦",
+      "kind": "submit",
+      "clan": "hashiba",
+      "castles": [],
+      "additional": {
+        "clan": "hashiba",
+        "castles": [
+          "ueno"
+        ]
+      },
+      "source": null,
+      "precision": null,
+      "review": "出典未登録。史実照合済みとは扱わない"
+    },
+    {
+      "date": [
+        1585,
+        4,
+        20
+      ],
+      "title": "紀州征伐",
+      "kind": "take",
+      "clan": "hashiba",
+      "castles": [
+        "saika",
+        "shingu"
+      ],
+      "additional": null,
+      "source": null,
+      "precision": null,
+      "review": "出典未登録。史実照合済みとは扱わない"
+    },
+    {
+      "date": [
+        1585,
+        8,
+        6
+      ],
+      "title": "四国攻め",
+      "kind": "take",
+      "clan": "hashiba",
+      "castles": [
+        "shozui",
+        "sogo",
+        "kaneko",
+        "kurose",
+        "yuzuki"
+      ],
+      "additional": null,
+      "source": null,
+      "precision": null,
+      "review": "出典未登録。史実照合済みとは扱わない"
+    },
+    {
+      "date": [
+        1585,
+        9,
+        10
+      ],
+      "title": "富山の役",
+      "kind": "absorb",
+      "clan": "hashiba",
+      "castles": [],
+      "additional": null,
+      "source": null,
+      "precision": null,
+      "review": "出典未登録。史実照合済みとは扱わない"
+    },
+    {
+      "date": [
+        1585,
+        9,
+        15
+      ],
+      "title": null,
+      "kind": "take",
+      "clan": "hashiba",
+      "castles": [
+        "matsukura"
+      ],
+      "additional": null,
+      "source": null,
+      "precision": null,
+      "review": "出典未登録。史実照合済みとは扱わない"
+    },
+    {
+      "date": [
+        1585,
+        10,
+        1
+      ],
+      "title": "丹羽家の減封と越前再編",
+      "kind": "note",
+      "clan": "hashiba",
+      "castles": [],
+      "additional": {
+        "clan": "hashiba",
+        "castles": [
+          "ichijodani"
+        ],
+        "admin": 1
+      },
+      "source": "https://www.city.nihonmatsu.lg.jp/file/webook/151/pageindices/index5.html",
+      "precision": "1585年、実施月日は未確定。10月1日は年内表示用。",
+      "review": "出典リンクあり。資料が当該全拠点の日付を裏付けるとは限らない"
+    },
+    {
+      "date": [
+        1586,
+        2,
+        1
+      ],
+      "title": null,
+      "kind": "take",
+      "clan": "hojo",
+      "castles": [
+        "karasawa"
+      ],
+      "additional": null,
+      "source": null,
+      "precision": null,
+      "review": "出典未登録。史実照合済みとは扱わない"
+    },
+    {
+      "date": [
+        1586,
+        8,
+        20
+      ],
+      "title": null,
+      "kind": "take",
+      "clan": "date",
+      "castles": [
+        "nihonmatsu"
+      ],
+      "additional": null,
+      "source": null,
+      "precision": null,
+      "review": "出典未登録。史実照合済みとは扱わない"
+    },
+    {
+      "date": [
+        1587,
+        5,
+        1
+      ],
+      "title": "九州平定",
+      "kind": "take",
+      "clan": "hashiba",
+      "castles": [
+        "kawara",
+        "kosho",
+        "kumamoto",
+        "agata",
+        "tonokori",
+        "hitoyoshi",
+        "tachibana"
+      ],
+      "additional": null,
+      "source": null,
+      "precision": null,
+      "review": "出典未登録。史実照合済みとは扱わない"
+    },
+    {
+      "date": [
+        1587,
+        7,
+        10
+      ],
+      "title": null,
+      "kind": "take",
+      "clan": "hashiba",
+      "castles": [
+        "yanagawa"
+      ],
+      "additional": null,
+      "source": null,
+      "precision": null,
+      "review": "出典未登録。史実照合済みとは扱わない"
+    },
+    {
+      "date": [
+        1587,
+        7,
+        10
+      ],
+      "title": null,
+      "kind": "take",
+      "clan": "hashiba",
+      "castles": [
+        "obi"
+      ],
+      "additional": null,
+      "source": null,
+      "precision": null,
+      "review": "出典未登録。史実照合済みとは扱わない"
+    },
+    {
+      "date": [
+        1587,
+        11,
+        25
+      ],
+      "title": "新発田城落城",
+      "kind": "take",
+      "clan": "uesugi",
+      "castles": [
+        "shibata"
+      ],
+      "additional": null,
+      "source": "https://www.city.shibata.lg.jp/kanko/bunka/shiro/gaiyo/1005180.html",
+      "precision": "旧暦年月日を資料と照合",
+      "review": "出典リンクあり。資料が当該全拠点の日付を裏付けるとは限らない"
+    },
+    {
+      "date": [
+        1588,
+        8,
+        1
+      ],
+      "title": null,
+      "kind": "take",
+      "clan": "nanbu",
+      "castles": [
+        "kousuiji"
+      ],
+      "additional": null,
+      "source": null,
+      "precision": null,
+      "review": "出典未登録。史実照合済みとは扱わない"
+    },
+    {
+      "date": [
+        1589,
+        7,
+        17
+      ],
+      "title": "摺上原の戦い",
+      "kind": "take",
+      "clan": "date",
+      "castles": [
+        "kurokawa",
+        "sukagawa",
+        "shirakawa",
+        "kuwagawa"
+      ],
+      "additional": null,
+      "source": null,
+      "precision": null,
+      "review": "出典未登録。史実照合済みとは扱わない"
+    },
+    {
+      "date": [
+        1590,
+        7,
+        15
+      ],
+      "title": "鉢形城の開城",
+      "kind": "take",
+      "clan": "hashiba",
+      "castles": [
+        "hachigata"
+      ],
+      "additional": null,
+      "source": "https://www.town.yorii.saitama.jp/site/rekishikan/kouenannai.html",
+      "precision": "旧暦年月日を資料と照合",
+      "review": "出典リンクあり。資料が当該全拠点の日付を裏付けるとは限らない"
+    },
+    {
+      "date": [
+        1590,
+        7,
+        25
+      ],
+      "title": "韮山城の明渡し",
+      "kind": "take",
+      "clan": "hashiba",
+      "castles": [
+        "nirayama"
+      ],
+      "additional": null,
+      "source": "https://www.city.izunokuni.shizuoka.jp/bunka_bunkazai/manabi/bunkazai/documents/urabyousi_1.pdf",
+      "precision": null,
+      "review": "出典リンクあり。資料が当該全拠点の日付を裏付けるとは限らない"
+    },
+    {
+      "date": [
+        1590,
+        8,
+        4
+      ],
+      "title": "小田原開城",
+      "kind": "take",
+      "clan": "tokugawa",
+      "castles": [
+        "odawara"
+      ],
+      "additional": null,
+      "source": null,
+      "precision": null,
+      "review": "出典未登録。史実照合済みとは扱わない"
+    },
+    {
+      "date": [
+        1590,
+        8,
+        6
+      ],
+      "title": null,
+      "kind": "take",
+      "clan": "tokugawa",
+      "castles": [
+        "tamanawa",
+        "edo",
+        "kawagoe",
+        "iwatsuki",
+        "hachigata",
+        "minowa",
+        "kanayama",
+        "karasawa",
+        "sakura",
+        "nirayama",
+        "koga",
+        "umayabashi"
+      ],
+      "additional": null,
+      "source": null,
+      "precision": null,
+      "review": "出典未登録。史実照合済みとは扱わない"
+    },
+    {
+      "date": [
+        1590,
+        8,
+        9
+      ],
+      "title": "織田信雄の改易",
+      "kind": "takeall",
+      "clan": "hashiba",
+      "castles": [],
+      "additional": null,
+      "source": "https://www.museum.city.nagoya.jp/exhibition/owari_joyubi_news/tenkabitotokiyosu/index.html",
+      "precision": null,
+      "review": "出典リンクあり。資料が当該全拠点の日付を裏付けるとは限らない"
+    },
+    {
+      "date": [
+        1590,
+        8,
+        10
+      ],
+      "title": null,
+      "kind": "take",
+      "clan": "hashiba",
+      "castles": [
+        "sunpu",
+        "kakegawa",
+        "hikuma",
+        "yoshida",
+        "okazaki",
+        "tsutsuji",
+        "fukashi",
+        "takato",
+        "iida",
+        "kiyosu",
+        "nagashima",
+        "ueno"
+      ],
+      "additional": null,
+      "source": null,
+      "precision": null,
+      "review": "出典未登録。史実照合済みとは扱わない"
+    },
+    {
+      "date": [
+        1590,
+        9,
+        1
+      ],
+      "title": "奥州仕置",
+      "kind": "take",
+      "clan": "hashiba",
+      "castles": [
+        "kurokawa",
+        "sukagawa",
+        "shirakawa",
+        "myou",
+        "teraike"
+      ],
+      "additional": null,
+      "source": null,
+      "precision": null,
+      "review": "出典未登録。史実照合済みとは扱わない"
+    },
+    {
+      "date": [
+        1590,
+        9,
+        29
+      ],
+      "title": "池田氏の三河移封と岐阜再編",
+      "kind": "note",
+      "clan": "hashiba",
+      "castles": [],
+      "additional": {
+        "clan": "hashiba",
+        "castles": [
+          "gifu"
+        ],
+        "admin": 1
+      },
+      "source": "https://www.city.gifu.lg.jp/kankoubunka/kankou/1013051/1005097/1034742/1034737.html",
+      "precision": "1590年9月。1日は月内表示用。",
+      "review": "出典リンクあり。資料が当該全拠点の日付を裏付けるとは限らない"
+    },
+    {
+      "date": [
+        1590,
+        9,
+        29
+      ],
+      "title": "池田輝政の吉田入封",
+      "kind": "take",
+      "clan": "ikeda",
+      "castles": [
+        "yoshida"
+      ],
+      "additional": null,
+      "source": "https://www.city.gifu.lg.jp/kankoubunka/kankou/1013051/1005097/1034742/1034737.html",
+      "precision": "1590年9月、日未確定。",
+      "review": "出典リンクあり。資料が当該全拠点の日付を裏付けるとは限らない"
+    },
+    {
+      "date": [
+        1591,
+        10,
+        1
+      ],
+      "title": "岩出山への国替え",
+      "kind": "take",
+      "clan": "date",
+      "castles": [
+        "myou",
+        "teraike"
+      ],
+      "additional": {
+        "clan": "hashiba",
+        "castles": [
+          "nihonmatsu",
+          "kuwagawa"
+        ],
+        "admin": 1
+      },
+      "source": null,
+      "precision": null,
+      "review": "出典未登録。史実照合済みとは扱わない"
+    },
+    {
+      "date": [
+        1592,
+        5,
+        24
+      ],
+      "title": "文禄の役",
+      "kind": "take",
+      "clan": "hashiba",
+      "castles": [
+        "busan"
+      ],
+      "additional": null,
+      "source": null,
+      "precision": null,
+      "review": "出典未登録。史実照合済みとは扱わない"
+    },
+    {
+      "date": [
+        1592,
+        6,
+        1
+      ],
+      "title": null,
+      "kind": "take",
+      "clan": "hashiba",
+      "castles": [
+        "ulsan",
+        "daegu"
+      ],
+      "additional": null,
+      "source": null,
+      "precision": null,
+      "review": "出典未登録。史実照合済みとは扱わない"
+    },
+    {
+      "date": [
+        1592,
+        6,
+        6
+      ],
+      "title": "尚州の戦い",
+      "kind": "take",
+      "clan": "hashiba",
+      "castles": [
+        "sangju"
+      ],
+      "additional": null,
+      "source": null,
+      "precision": null,
+      "review": "出典未登録。史実照合済みとは扱わない"
+    },
+    {
+      "date": [
+        1592,
+        6,
+        7
+      ],
+      "title": "忠州の戦い",
+      "kind": "take",
+      "clan": "hashiba",
+      "castles": [
+        "chungju"
+      ],
+      "additional": null,
+      "source": null,
+      "precision": null,
+      "review": "出典未登録。史実照合済みとは扱わない"
+    },
+    {
+      "date": [
+        1592,
+        6,
+        12
+      ],
+      "title": "漢城陥落",
+      "kind": "take",
+      "clan": "hashiba",
+      "castles": [
+        "hanseong",
+        "wonju"
+      ],
+      "additional": null,
+      "source": null,
+      "precision": null,
+      "review": "出典未登録。史実照合済みとは扱わない"
+    },
+    {
+      "date": [
+        1592,
+        7,
+        23
+      ],
+      "title": "平壌入城",
+      "kind": "take",
+      "clan": "hashiba",
+      "castles": [
+        "gaeseong",
+        "haeju",
+        "pyongyang"
+      ],
+      "additional": null,
+      "source": null,
+      "precision": null,
+      "review": "出典未登録。史実照合済みとは扱わない"
+    },
+    {
+      "date": [
+        1592,
+        8,
+        30
+      ],
+      "title": "咸鏡道の制圧",
+      "kind": "take",
+      "clan": "hashiba",
+      "castles": [
+        "hamhung"
+      ],
+      "additional": null,
+      "source": null,
+      "precision": null,
+      "review": "出典未登録。史実照合済みとは扱わない"
+    },
+    {
+      "date": [
+        1592,
+        10,
+        25
+      ],
+      "title": "織田秀信、岐阜城主に",
+      "kind": "newclan",
+      "clan": "oda",
+      "castles": [
+        "gifu"
+      ],
+      "additional": null,
+      "source": "https://www.city.gifu.lg.jp/kankoubunka/kankou/1013051/1005097/1034742/1034737.html",
+      "precision": null,
+      "review": "出典リンクあり。資料が当該全拠点の日付を裏付けるとは限らない"
+    },
+    {
+      "date": [
+        1593,
+        2,
+        8
+      ],
+      "title": "平壌の戦い",
+      "kind": "take",
+      "clan": "joseon",
+      "castles": [
+        "pyongyang",
+        "haeju",
+        "gaeseong"
+      ],
+      "additional": null,
+      "source": null,
+      "precision": null,
+      "review": "出典未登録。史実照合済みとは扱わない"
+    },
+    {
+      "date": [
+        1593,
+        5,
+        18
+      ],
+      "title": "漢城からの撤退",
+      "kind": "take",
+      "clan": "joseon",
+      "castles": [
+        "hanseong",
+        "wonju",
+        "chungju",
+        "sangju",
+        "hamhung",
+        "daegu"
+      ],
+      "additional": null,
+      "source": null,
+      "precision": null,
+      "review": "出典未登録。史実照合済みとは扱わない"
+    },
+    {
+      "date": [
+        1593,
+        6,
+        1
+      ],
+      "title": "大友義統の改易",
+      "kind": "absorb",
+      "clan": "hashiba",
+      "castles": [],
+      "additional": null,
+      "source": null,
+      "precision": null,
+      "review": "出典未登録。史実照合済みとは扱わない"
+    },
+    {
+      "date": [
+        1593,
+        7,
+        27
+      ],
+      "title": "第二次晋州城の戦い",
+      "kind": "take",
+      "clan": "hashiba",
+      "castles": [
+        "jinju"
+      ],
+      "additional": null,
+      "source": null,
+      "precision": null,
+      "review": "出典未登録。史実照合済みとは扱わない"
+    },
+    {
+      "date": [
+        1593,
+        10,
+        1
+      ],
+      "title": null,
+      "kind": "take",
+      "clan": "joseon",
+      "castles": [
+        "jinju"
+      ],
+      "additional": null,
+      "source": null,
+      "precision": null,
+      "review": "出典未登録。史実照合済みとは扱わない"
+    },
+    {
+      "date": [
+        1597,
+        9,
+        26
+      ],
+      "title": "南原城の戦い",
+      "kind": "take",
+      "clan": "hashiba",
+      "castles": [
+        "namwon"
+      ],
+      "additional": null,
+      "source": null,
+      "precision": null,
+      "review": "出典未登録。史実照合済みとは扱わない"
+    },
+    {
+      "date": [
+        1597,
+        10,
+        1
+      ],
+      "title": null,
+      "kind": "take",
+      "clan": "hashiba",
+      "castles": [
+        "jeonju",
+        "gongju"
+      ],
+      "additional": null,
+      "source": null,
+      "precision": null,
+      "review": "出典未登録。史実照合済みとは扱わない"
+    },
+    {
+      "date": [
+        1597,
+        11,
+        20
+      ],
+      "title": null,
+      "kind": "take",
+      "clan": "joseon",
+      "castles": [
+        "jeonju",
+        "gongju",
+        "namwon"
+      ],
+      "additional": null,
+      "source": null,
+      "precision": null,
+      "review": "出典未登録。史実照合済みとは扱わない"
+    },
+    {
+      "date": [
+        1597,
+        12,
+        10
+      ],
+      "title": "倭城の築城",
+      "kind": "take",
+      "clan": "hashiba",
+      "castles": [
+        "suncheon",
+        "ulsan"
+      ],
+      "additional": null,
+      "source": null,
+      "precision": null,
+      "review": "出典未登録。史実照合済みとは扱わない"
+    },
+    {
+      "date": [
+        1598,
+        3,
+        20
+      ],
+      "title": "上杉景勝の会津移封",
+      "kind": "take",
+      "clan": "nagao",
+      "castles": [
+        "kurokawa",
+        "yonezawa",
+        "sukagawa",
+        "shirakawa"
+      ],
+      "additional": {
+        "clan": "hashiba",
+        "castles": [
+          "kasugayama",
+          "tochio",
+          "sakado",
+          "honjo",
+          "kaizu"
+        ],
+        "admin": 1
+      },
+      "source": null,
+      "precision": null,
+      "review": "出典未登録。史実照合済みとは扱わない"
+    },
+    {
+      "date": [
+        1598,
+        12,
+        24
+      ],
+      "title": "朝鮮からの撤兵",
+      "kind": "take",
+      "clan": "joseon",
+      "castles": [
+        "busan",
+        "ulsan",
+        "suncheon"
+      ],
+      "additional": null,
+      "source": null,
+      "precision": null,
+      "review": "出典未登録。史実照合済みとは扱わない"
+    },
+    {
+      "date": [
+        1599,
+        5,
+        10
+      ],
+      "title": "家康、伏見城に入る",
+      "kind": "take",
+      "clan": "tokugawa",
+      "castles": [
+        "kyo"
+      ],
+      "additional": null,
+      "source": null,
+      "precision": null,
+      "review": "出典未登録。史実照合済みとは扱わない"
+    },
+    {
+      "date": [
+        1600,
+        8,
+        20
+      ],
+      "title": "石田三成の挙兵",
+      "kind": "newclan",
+      "clan": "ishida",
+      "castles": [
+        "sawayama"
+      ],
+      "additional": null,
+      "source": null,
+      "precision": null,
+      "review": "出典未登録。史実照合済みとは扱わない"
+    },
+    {
+      "date": [
+        1600,
+        8,
+        30
+      ],
+      "title": "東海道の城を家康へ",
+      "kind": "take",
+      "clan": "tokugawa",
+      "castles": [
+        "kiyosu",
+        "yoshida",
+        "hikuma",
+        "kakegawa",
+        "okazaki",
+        "tango"
+      ],
+      "additional": null,
+      "source": null,
+      "precision": null,
+      "review": "出典未登録。史実照合済みとは扱わない"
+    },
+    {
+      "date": [
+        1600,
+        9,
+        8
+      ],
+      "title": "伏見城の戦い",
+      "kind": "take",
+      "clan": "ishida",
+      "castles": [
+        "kyo"
+      ],
+      "additional": null,
+      "source": null,
+      "precision": null,
+      "review": "出典未登録。史実照合済みとは扱わない"
+    },
+    {
+      "date": [
+        1600,
+        9,
+        30
+      ],
+      "title": "岐阜城の戦い",
+      "kind": "take",
+      "clan": "tokugawa",
+      "castles": [
+        "gifu"
+      ],
+      "additional": null,
+      "source": "https://www.pref.gifu.lg.jp/page/350364.html",
+      "precision": null,
+      "review": "出典リンクあり。資料が当該全拠点の日付を裏付けるとは限らない"
+    },
+    {
+      "date": [
+        1600,
+        10,
+        23
+      ],
+      "title": "佐和山城落城",
+      "kind": "take",
+      "clan": "tokugawa",
+      "castles": [
+        "sawayama",
+        "kyo"
+      ],
+      "additional": null,
+      "source": null,
+      "precision": null,
+      "review": "出典未登録。史実照合済みとは扱わない"
+    },
+    {
+      "date": [
+        1600,
+        11,
+        10
+      ],
+      "title": "宇喜多秀家の改易",
+      "kind": "absorb",
+      "clan": "tokugawa",
+      "castles": [],
+      "additional": null,
+      "source": null,
+      "precision": null,
+      "review": "出典未登録。史実照合済みとは扱わない"
+    },
+    {
+      "date": [
+        1600,
+        11,
+        12
+      ],
+      "title": "長宗我部の改易",
+      "kind": "absorb",
+      "clan": "tokugawa",
+      "castles": [],
+      "additional": null,
+      "source": null,
+      "precision": null,
+      "review": "出典未登録。史実照合済みとは扱わない"
+    },
+    {
+      "date": [
+        1600,
+        11,
+        15
+      ],
+      "title": "毛利の減封",
+      "kind": "take",
+      "clan": "tokugawa",
+      "castles": [
+        "koriyama",
+        "kannabe",
+        "bmatsuyama",
+        "gassan",
+        "yamabuki",
+        "tottori",
+        "utsubuki",
+        "takada"
+      ],
+      "additional": null,
+      "source": null,
+      "precision": null,
+      "review": "出典未登録。史実照合済みとは扱わない"
+    },
+    {
+      "date": [
+        1600,
+        11,
+        20
+      ],
+      "title": "関ヶ原の後",
+      "kind": "takeall",
+      "clan": "tokugawa",
+      "castles": [],
+      "additional": null,
+      "source": null,
+      "precision": null,
+      "review": "出典未登録。史実照合済みとは扱わない"
+    },
+    {
+      "date": [
+        1601,
+        9,
+        1
+      ],
+      "title": "上杉の米沢減封",
+      "kind": "take",
+      "clan": "tokugawa",
+      "castles": [
+        "kurokawa",
+        "sukagawa",
+        "shirakawa"
+      ],
+      "additional": null,
+      "source": null,
+      "precision": null,
+      "review": "出典未登録。史実照合済みとは扱わない"
+    },
+    {
+      "date": [
+        1615,
+        6,
+        4
+      ],
+      "title": "大坂夏の陣",
+      "kind": "take",
+      "clan": "tokugawa",
+      "castles": [
+        "ishiyama",
+        "kishiwada",
+        "akutagawa"
+      ],
+      "additional": null,
+      "source": null,
+      "precision": null,
+      "review": "出典未登録。史実照合済みとは扱わない"
+    }
+  ],
+  "transitions": [
+    {
+      "date": {
+        "y": 1560,
+        "m": 6,
+        "d": 16
+      },
+      "castle": "okazaki",
+      "from": "imagawa",
+      "to": "tokugawa"
+    },
+    {
+      "date": {
+        "y": 1560,
+        "m": 9,
+        "d": 10
+      },
+      "castle": "numata",
+      "from": "numata",
+      "to": "nagao"
+    },
+    {
+      "date": {
+        "y": 1560,
+        "m": 9,
+        "d": 20
+      },
+      "castle": "sawayama",
+      "from": "rokkaku",
+      "to": "azai"
+    },
+    {
+      "date": {
+        "y": 1560,
+        "m": 11,
+        "d": 1
+      },
+      "castle": "umayabashi",
+      "from": "nagano",
+      "to": "nagao"
+    },
+    {
+      "date": {
+        "y": 1560,
+        "m": 11,
+        "d": 15
+      },
+      "castle": "yamato",
+      "from": "tsutsui",
+      "to": "miyoshi"
+    },
+    {
+      "date": {
+        "y": 1562,
+        "m": 7,
+        "d": 1
+      },
+      "castle": "yamabuki",
+      "from": "amago",
+      "to": "mori"
+    },
+    {
+      "date": {
+        "y": 1564,
+        "m": 9,
+        "d": 1
+      },
+      "castle": "iwatsuki",
+      "from": "ota",
+      "to": "hojo"
+    },
+    {
+      "date": {
+        "y": 1565,
+        "m": 4,
+        "d": 10
+      },
+      "castle": "yoshida",
+      "from": "imagawa",
+      "to": "tokugawa"
+    },
+    {
+      "date": {
+        "y": 1565,
+        "m": 6,
+        "d": 20
+      },
+      "castle": "kyo",
+      "from": "ashikaga",
+      "to": "miyoshi"
+    },
+    {
+      "date": {
+        "y": 1566,
+        "m": 3,
+        "d": 1
+      },
+      "castle": "yakami",
+      "from": "miyoshi",
+      "to": "hatano"
+    },
+    {
+      "date": {
+        "y": 1566,
+        "m": 11,
+        "d": 10
+      },
+      "castle": "minowa",
+      "from": "nagano",
+      "to": "takeda"
+    },
+    {
+      "date": {
+        "y": 1567,
+        "m": 1,
+        "d": 5
+      },
+      "castle": "utsubuki",
+      "from": "amago",
+      "to": "mori"
+    },
+    {
+      "date": {
+        "y": 1567,
+        "m": 1,
+        "d": 5
+      },
+      "castle": "gassan",
+      "from": "amago",
+      "to": "mori"
+    },
+    {
+      "date": {
+        "y": 1567,
+        "m": 1,
+        "d": 5
+      },
+      "castle": "takada",
+      "from": "amago",
+      "to": "mori"
+    },
+    {
+      "date": {
+        "y": 1567,
+        "m": 9,
+        "d": 17
+      },
+      "castle": "gifu",
+      "from": "saito",
+      "to": "oda"
+    },
+    {
+      "date": {
+        "y": 1567,
+        "m": 9,
+        "d": 17
+      },
+      "castle": "iwamura",
+      "from": "toyama",
+      "to": "oda"
+    },
+    {
+      "date": {
+        "y": 1568,
+        "m": 5,
+        "d": 1
+      },
+      "castle": "motoyama",
+      "from": "motoyama",
+      "to": "chosokabe"
+    },
+    {
+      "date": {
+        "y": 1568,
+        "m": 10,
+        "d": 18
+      },
+      "castle": "kannonji",
+      "from": "rokkaku",
+      "to": "oda"
+    },
+    {
+      "date": {
+        "y": 1568,
+        "m": 10,
+        "d": 18
+      },
+      "castle": "kyo",
+      "from": "miyoshi",
+      "to": "oda"
+    },
+    {
+      "date": {
+        "y": 1568,
+        "m": 10,
+        "d": 18
+      },
+      "castle": "akutagawa",
+      "from": "miyoshi",
+      "to": "oda"
+    },
+    {
+      "date": {
+        "y": 1568,
+        "m": 10,
+        "d": 18
+      },
+      "castle": "yamato",
+      "from": "miyoshi",
+      "to": "oda"
+    },
+    {
+      "date": {
+        "y": 1568,
+        "m": 12,
+        "d": 20
+      },
+      "castle": "hikuma",
+      "from": "imagawa",
+      "to": "tokugawa"
+    },
+    {
+      "date": {
+        "y": 1569,
+        "m": 1,
+        "d": 1
+      },
+      "castle": "sunpu",
+      "from": "imagawa",
+      "to": "takeda"
+    },
+    {
+      "date": {
+        "y": 1569,
+        "m": 6,
+        "d": 1
+      },
+      "castle": "kakegawa",
+      "from": "imagawa",
+      "to": "tokugawa"
+    },
+    {
+      "date": {
+        "y": 1569,
+        "m": 12,
+        "d": 30
+      },
+      "castle": "odajo",
+      "from": "odah",
+      "to": "satake"
+    },
+    {
+      "date": {
+        "y": 1570,
+        "m": 5,
+        "d": 1
+      },
+      "castle": "nochiseyama",
+      "from": "wakasa",
+      "to": "oda"
+    },
+    {
+      "date": {
+        "y": 1571,
+        "m": 3,
+        "d": 1
+      },
+      "castle": "sawayama",
+      "from": "azai",
+      "to": "oda"
+    },
+    {
+      "date": {
+        "y": 1571,
+        "m": 6,
+        "d": 1
+      },
+      "castle": "ishikawa",
+      "from": "nanbu",
+      "to": "tsugaru"
+    },
+    {
+      "date": {
+        "y": 1572,
+        "m": 12,
+        "d": 18
+      },
+      "castle": "iwamura",
+      "from": "oda",
+      "to": "takeda"
+    },
+    {
+      "date": {
+        "y": 1573,
+        "m": 9,
+        "d": 16
+      },
+      "castle": "ichijodani",
+      "from": "asakura",
+      "to": "oda"
+    },
+    {
+      "date": {
+        "y": 1573,
+        "m": 9,
+        "d": 16
+      },
+      "castle": "kanegasaki",
+      "from": "asakura",
+      "to": "oda"
+    },
+    {
+      "date": {
+        "y": 1573,
+        "m": 9,
+        "d": 26
+      },
+      "castle": "odani",
+      "from": "azai",
+      "to": "oda"
+    },
+    {
+      "date": {
+        "y": 1574,
+        "m": 10,
+        "d": 1
+      },
+      "castle": "nagashima",
+      "from": "honganji",
+      "to": "oda"
+    },
+    {
+      "date": {
+        "y": 1575,
+        "m": 7,
+        "d": 15
+      },
+      "castle": "bmatsuyama",
+      "from": "mimura",
+      "to": "mori"
+    },
+    {
+      "date": {
+        "y": 1575,
+        "m": 10,
+        "d": 1
+      },
+      "castle": "nakamura",
+      "from": "ichijo",
+      "to": "chosokabe"
+    },
+    {
+      "date": {
+        "y": 1575,
+        "m": 10,
+        "d": 20
+      },
+      "castle": "tenjin",
+      "from": "uragami",
+      "to": "ukita"
+    },
+    {
+      "date": {
+        "y": 1575,
+        "m": 12,
+        "d": 10
+      },
+      "castle": "iwamura",
+      "from": "takeda",
+      "to": "oda"
+    },
+    {
+      "date": {
+        "y": 1576,
+        "m": 6,
+        "d": 1
+      },
+      "castle": "kishiwada",
+      "from": "miyoshi",
+      "to": "oda"
+    },
+    {
+      "date": {
+        "y": 1576,
+        "m": 10,
+        "d": 1
+      },
+      "castle": "toyama",
+      "from": "jinbo",
+      "to": "nagao"
+    },
+    {
+      "date": {
+        "y": 1576,
+        "m": 12,
+        "d": 15
+      },
+      "castle": "kiriyama",
+      "from": "kitabatake",
+      "to": "oda"
+    },
+    {
+      "date": {
+        "y": 1577,
+        "m": 10,
+        "d": 1
+      },
+      "castle": "nanao",
+      "from": "noto",
+      "to": "nagao"
+    },
+    {
+      "date": {
+        "y": 1577,
+        "m": 11,
+        "d": 25
+      },
+      "castle": "himeji",
+      "from": "akamatsu",
+      "to": "oda"
+    },
+    {
+      "date": {
+        "y": 1578,
+        "m": 1,
+        "d": 1
+      },
+      "castle": "tonokori",
+      "from": "ito",
+      "to": "shimazu"
+    },
+    {
+      "date": {
+        "y": 1578,
+        "m": 4,
+        "d": 10
+      },
+      "castle": "agata",
+      "from": "tsuchimochi",
+      "to": "otomo"
+    },
+    {
+      "date": {
+        "y": 1578,
+        "m": 12,
+        "d": 20
+      },
+      "castle": "kawara",
+      "from": "otomo",
+      "to": "akizuki"
+    },
+    {
+      "date": {
+        "y": 1579,
+        "m": 7,
+        "d": 1
+      },
+      "castle": "yakami",
+      "from": "hatano",
+      "to": "oda"
+    },
+    {
+      "date": {
+        "y": 1579,
+        "m": 7,
+        "d": 1
+      },
+      "castle": "tango",
+      "from": "isshiki",
+      "to": "oda"
+    },
+    {
+      "date": {
+        "y": 1579,
+        "m": 9,
+        "d": 1
+      },
+      "castle": "utsubuki",
+      "from": "mori",
+      "to": "oda"
+    },
+    {
+      "date": {
+        "y": 1580,
+        "m": 2,
+        "d": 2
+      },
+      "castle": "miki",
+      "from": "bessho",
+      "to": "oda"
+    },
+    {
+      "date": {
+        "y": 1580,
+        "m": 6,
+        "d": 1
+      },
+      "castle": "konosumi",
+      "from": "yamana",
+      "to": "oda"
+    },
+    {
+      "date": {
+        "y": 1580,
+        "m": 9,
+        "d": 10
+      },
+      "castle": "ishiyama",
+      "from": "honganji",
+      "to": "oda"
+    },
+    {
+      "date": {
+        "y": 1580,
+        "m": 12,
+        "d": 1
+      },
+      "castle": "oyama",
+      "from": "honganji",
+      "to": "oda"
+    },
+    {
+      "date": {
+        "y": 1581,
+        "m": 4,
+        "d": 1
+      },
+      "castle": "toyama",
+      "from": "nagao",
+      "to": "oda"
+    },
+    {
+      "date": {
+        "y": 1581,
+        "m": 4,
+        "d": 1
+      },
+      "castle": "nanao",
+      "from": "nagao",
+      "to": "oda"
+    },
+    {
+      "date": {
+        "y": 1581,
+        "m": 6,
+        "d": 16
+      },
+      "castle": "shibata",
+      "from": "nagao",
+      "to": "shibata"
+    },
+    {
+      "date": {
+        "y": 1581,
+        "m": 7,
+        "d": 1
+      },
+      "castle": "yanagawa",
+      "from": "otomo",
+      "to": "ryuzoji"
+    },
+    {
+      "date": {
+        "y": 1581,
+        "m": 9,
+        "d": 20
+      },
+      "castle": "hitoyoshi",
+      "from": "sagara",
+      "to": "shimazu"
+    },
+    {
+      "date": {
+        "y": 1581,
+        "m": 10,
+        "d": 10
+      },
+      "castle": "ueno",
+      "from": "iga",
+      "to": "oda"
+    },
+    {
+      "date": {
+        "y": 1581,
+        "m": 11,
+        "d": 20
+      },
+      "castle": "sumoto",
+      "from": "miyoshi",
+      "to": "oda"
+    },
+    {
+      "date": {
+        "y": 1581,
+        "m": 11,
+        "d": 21
+      },
+      "castle": "tottori",
+      "from": "yamana",
+      "to": "oda"
+    },
+    {
+      "date": {
+        "y": 1582,
+        "m": 3,
+        "d": 8
+      },
+      "castle": "iida",
+      "from": "takeda",
+      "to": "oda"
+    },
+    {
+      "date": {
+        "y": 1582,
+        "m": 3,
+        "d": 25
+      },
+      "castle": "takato",
+      "from": "takeda",
+      "to": "oda"
+    },
+    {
+      "date": {
+        "y": 1582,
+        "m": 4,
+        "d": 4
+      },
+      "castle": "minowa",
+      "from": "takeda",
+      "to": "oda"
+    },
+    {
+      "date": {
+        "y": 1582,
+        "m": 4,
+        "d": 4
+      },
+      "castle": "numata",
+      "from": "nagao",
+      "to": "oda"
+    },
+    {
+      "date": {
+        "y": 1582,
+        "m": 4,
+        "d": 4
+      },
+      "castle": "tsutsuji",
+      "from": "takeda",
+      "to": "oda"
+    },
+    {
+      "date": {
+        "y": 1582,
+        "m": 4,
+        "d": 4
+      },
+      "castle": "fukashi",
+      "from": "takeda",
+      "to": "oda"
+    },
+    {
+      "date": {
+        "y": 1582,
+        "m": 4,
+        "d": 4
+      },
+      "castle": "kaizu",
+      "from": "takeda",
+      "to": "oda"
+    },
+    {
+      "date": {
+        "y": 1582,
+        "m": 4,
+        "d": 4
+      },
+      "castle": "toishi",
+      "from": "takeda",
+      "to": "oda"
+    },
+    {
+      "date": {
+        "y": 1582,
+        "m": 4,
+        "d": 5
+      },
+      "castle": "umayabashi",
+      "from": "nagao",
+      "to": "oda"
+    },
+    {
+      "date": {
+        "y": 1582,
+        "m": 4,
+        "d": 5
+      },
+      "castle": "sunpu",
+      "from": "takeda",
+      "to": "tokugawa"
+    },
+    {
+      "date": {
+        "y": 1582,
+        "m": 7,
+        "d": 2
+      },
+      "castle": "himeji",
+      "from": "oda",
+      "to": "hashiba"
+    },
+    {
+      "date": {
+        "y": 1582,
+        "m": 7,
+        "d": 2
+      },
+      "castle": "miki",
+      "from": "oda",
+      "to": "hashiba"
+    },
+    {
+      "date": {
+        "y": 1582,
+        "m": 7,
+        "d": 2
+      },
+      "castle": "konosumi",
+      "from": "oda",
+      "to": "hashiba"
+    },
+    {
+      "date": {
+        "y": 1582,
+        "m": 7,
+        "d": 2
+      },
+      "castle": "sumoto",
+      "from": "oda",
+      "to": "hashiba"
+    },
+    {
+      "date": {
+        "y": 1582,
+        "m": 7,
+        "d": 2
+      },
+      "castle": "tottori",
+      "from": "oda",
+      "to": "hashiba"
+    },
+    {
+      "date": {
+        "y": 1582,
+        "m": 7,
+        "d": 16
+      },
+      "castle": "kyo",
+      "from": "oda",
+      "to": "hashiba"
+    },
+    {
+      "date": {
+        "y": 1582,
+        "m": 7,
+        "d": 16
+      },
+      "castle": "kishiwada",
+      "from": "oda",
+      "to": "hashiba"
+    },
+    {
+      "date": {
+        "y": 1582,
+        "m": 7,
+        "d": 17
+      },
+      "castle": "kiyosu",
+      "from": "oda",
+      "to": "nobukatsu"
+    },
+    {
+      "date": {
+        "y": 1582,
+        "m": 7,
+        "d": 17
+      },
+      "castle": "gifu",
+      "from": "oda",
+      "to": "nobutaka"
+    },
+    {
+      "date": {
+        "y": 1582,
+        "m": 7,
+        "d": 17
+      },
+      "castle": "ueno",
+      "from": "oda",
+      "to": "nobukatsu"
+    },
+    {
+      "date": {
+        "y": 1582,
+        "m": 7,
+        "d": 17
+      },
+      "castle": "kiriyama",
+      "from": "oda",
+      "to": "nobukatsu"
+    },
+    {
+      "date": {
+        "y": 1582,
+        "m": 7,
+        "d": 18
+      },
+      "castle": "oyama",
+      "from": "oda",
+      "to": "kshibata"
+    },
+    {
+      "date": {
+        "y": 1582,
+        "m": 7,
+        "d": 18
+      },
+      "castle": "ichijodani",
+      "from": "oda",
+      "to": "kshibata"
+    },
+    {
+      "date": {
+        "y": 1582,
+        "m": 7,
+        "d": 18
+      },
+      "castle": "nochiseyama",
+      "from": "oda",
+      "to": "niwa"
+    },
+    {
+      "date": {
+        "y": 1582,
+        "m": 7,
+        "d": 18
+      },
+      "castle": "odani",
+      "from": "oda",
+      "to": "kshibata"
+    },
+    {
+      "date": {
+        "y": 1582,
+        "m": 7,
+        "d": 18
+      },
+      "castle": "ishiyama",
+      "from": "oda",
+      "to": "ikeda"
+    },
+    {
+      "date": {
+        "y": 1582,
+        "m": 7,
+        "d": 18
+      },
+      "castle": "yakami",
+      "from": "oda",
+      "to": "hashiba"
+    },
+    {
+      "date": {
+        "y": 1582,
+        "m": 7,
+        "d": 20
+      },
+      "castle": "umayabashi",
+      "from": "oda",
+      "to": "hojo"
+    },
+    {
+      "date": {
+        "y": 1582,
+        "m": 7,
+        "d": 20
+      },
+      "castle": "minowa",
+      "from": "oda",
+      "to": "hojo"
+    },
+    {
+      "date": {
+        "y": 1582,
+        "m": 7,
+        "d": 25
+      },
+      "castle": "tsutsuji",
+      "from": "oda",
+      "to": "tokugawa"
+    },
+    {
+      "date": {
+        "y": 1582,
+        "m": 7,
+        "d": 28
+      },
+      "castle": "takato",
+      "from": "oda",
+      "to": "tokugawa"
+    },
+    {
+      "date": {
+        "y": 1582,
+        "m": 7,
+        "d": 28
+      },
+      "castle": "iida",
+      "from": "oda",
+      "to": "tokugawa"
+    },
+    {
+      "date": {
+        "y": 1582,
+        "m": 8,
+        "d": 1
+      },
+      "castle": "fukashi",
+      "from": "oda",
+      "to": "tokugawa"
+    },
+    {
+      "date": {
+        "y": 1582,
+        "m": 8,
+        "d": 2
+      },
+      "castle": "kaizu",
+      "from": "oda",
+      "to": "nagao"
+    },
+    {
+      "date": {
+        "y": 1582,
+        "m": 8,
+        "d": 10
+      },
+      "castle": "numata",
+      "from": "oda",
+      "to": "sanada"
+    },
+    {
+      "date": {
+        "y": 1582,
+        "m": 8,
+        "d": 10
+      },
+      "castle": "toishi",
+      "from": "oda",
+      "to": "sanada"
+    },
+    {
+      "date": {
+        "y": 1582,
+        "m": 9,
+        "d": 1
+      },
+      "castle": "toyama",
+      "from": "oda",
+      "to": "sassa"
+    },
+    {
+      "date": {
+        "y": 1582,
+        "m": 9,
+        "d": 14
+      },
+      "castle": "shozui",
+      "from": "miyoshi",
+      "to": "chosokabe"
+    },
+    {
+      "date": {
+        "y": 1583,
+        "m": 1,
+        "d": 5
+      },
+      "castle": "odani",
+      "from": "kshibata",
+      "to": "hashiba"
+    },
+    {
+      "date": {
+        "y": 1583,
+        "m": 5,
+        "d": 28
+      },
+      "castle": "gifu",
+      "from": "nobutaka",
+      "to": "ikeda"
+    },
+    {
+      "date": {
+        "y": 1583,
+        "m": 6,
+        "d": 14
+      },
+      "castle": "ichijodani",
+      "from": "kshibata",
+      "to": "niwa"
+    },
+    {
+      "date": {
+        "y": 1583,
+        "m": 6,
+        "d": 15
+      },
+      "castle": "sawayama",
+      "from": "oda",
+      "to": "hashiba"
+    },
+    {
+      "date": {
+        "y": 1583,
+        "m": 6,
+        "d": 15
+      },
+      "castle": "akutagawa",
+      "from": "oda",
+      "to": "hashiba"
+    },
+    {
+      "date": {
+        "y": 1583,
+        "m": 6,
+        "d": 15
+      },
+      "castle": "ishiyama",
+      "from": "ikeda",
+      "to": "hashiba"
+    },
+    {
+      "date": {
+        "y": 1583,
+        "m": 6,
+        "d": 15
+      },
+      "castle": "yamato",
+      "from": "oda",
+      "to": "hashiba"
+    },
+    {
+      "date": {
+        "y": 1583,
+        "m": 6,
+        "d": 15
+      },
+      "castle": "tango",
+      "from": "oda",
+      "to": "hashiba"
+    },
+    {
+      "date": {
+        "y": 1584,
+        "m": 7,
+        "d": 1
+      },
+      "castle": "kiriyama",
+      "from": "nobukatsu",
+      "to": "hashiba"
+    },
+    {
+      "date": {
+        "y": 1584,
+        "m": 8,
+        "d": 1
+      },
+      "castle": "sogo",
+      "from": "miyoshi",
+      "to": "chosokabe"
+    },
+    {
+      "date": {
+        "y": 1584,
+        "m": 8,
+        "d": 1
+      },
+      "castle": "kaneko",
+      "from": "kono",
+      "to": "chosokabe"
+    },
+    {
+      "date": {
+        "y": 1584,
+        "m": 8,
+        "d": 1
+      },
+      "castle": "kurose",
+      "from": "saionji",
+      "to": "chosokabe"
+    },
+    {
+      "date": {
+        "y": 1584,
+        "m": 10,
+        "d": 1
+      },
+      "castle": "kumamoto",
+      "from": "otomo",
+      "to": "shimazu"
+    },
+    {
+      "date": {
+        "y": 1584,
+        "m": 12,
+        "d": 1
+      },
+      "castle": "kanayama",
+      "from": "yura",
+      "to": "hojo"
+    },
+    {
+      "date": {
+        "y": 1584,
+        "m": 12,
+        "d": 1
+      },
+      "castle": "sakura",
+      "from": "chiba",
+      "to": "hojo"
+    },
+    {
+      "date": {
+        "y": 1584,
+        "m": 12,
+        "d": 20
+      },
+      "castle": "ueno",
+      "from": "nobukatsu",
+      "to": "hashiba"
+    },
+    {
+      "date": {
+        "y": 1585,
+        "m": 4,
+        "d": 20
+      },
+      "castle": "saika",
+      "from": "saika",
+      "to": "hashiba"
+    },
+    {
+      "date": {
+        "y": 1585,
+        "m": 4,
+        "d": 20
+      },
+      "castle": "shingu",
+      "from": "horiuchi",
+      "to": "hashiba"
+    },
+    {
+      "date": {
+        "y": 1585,
+        "m": 8,
+        "d": 6
+      },
+      "castle": "shozui",
+      "from": "chosokabe",
+      "to": "hashiba"
+    },
+    {
+      "date": {
+        "y": 1585,
+        "m": 8,
+        "d": 6
+      },
+      "castle": "sogo",
+      "from": "chosokabe",
+      "to": "hashiba"
+    },
+    {
+      "date": {
+        "y": 1585,
+        "m": 8,
+        "d": 6
+      },
+      "castle": "yuzuki",
+      "from": "kono",
+      "to": "hashiba"
+    },
+    {
+      "date": {
+        "y": 1585,
+        "m": 8,
+        "d": 6
+      },
+      "castle": "kaneko",
+      "from": "chosokabe",
+      "to": "hashiba"
+    },
+    {
+      "date": {
+        "y": 1585,
+        "m": 8,
+        "d": 6
+      },
+      "castle": "kurose",
+      "from": "chosokabe",
+      "to": "hashiba"
+    },
+    {
+      "date": {
+        "y": 1585,
+        "m": 9,
+        "d": 10
+      },
+      "castle": "toyama",
+      "from": "sassa",
+      "to": "hashiba"
+    },
+    {
+      "date": {
+        "y": 1585,
+        "m": 9,
+        "d": 15
+      },
+      "castle": "matsukura",
+      "from": "anegakoji",
+      "to": "hashiba"
+    },
+    {
+      "date": {
+        "y": 1585,
+        "m": 10,
+        "d": 1
+      },
+      "castle": "ichijodani",
+      "from": "niwa",
+      "to": "hashiba"
+    },
+    {
+      "date": {
+        "y": 1586,
+        "m": 2,
+        "d": 1
+      },
+      "castle": "karasawa",
+      "from": "sano",
+      "to": "hojo"
+    },
+    {
+      "date": {
+        "y": 1586,
+        "m": 8,
+        "d": 20
+      },
+      "castle": "nihonmatsu",
+      "from": "nihonmatsu",
+      "to": "date"
+    },
+    {
+      "date": {
+        "y": 1587,
+        "m": 5,
+        "d": 1
+      },
+      "castle": "kawara",
+      "from": "akizuki",
+      "to": "hashiba"
+    },
+    {
+      "date": {
+        "y": 1587,
+        "m": 5,
+        "d": 1
+      },
+      "castle": "kosho",
+      "from": "akizuki",
+      "to": "hashiba"
+    },
+    {
+      "date": {
+        "y": 1587,
+        "m": 5,
+        "d": 1
+      },
+      "castle": "tachibana",
+      "from": "otomo",
+      "to": "hashiba"
+    },
+    {
+      "date": {
+        "y": 1587,
+        "m": 5,
+        "d": 1
+      },
+      "castle": "kumamoto",
+      "from": "shimazu",
+      "to": "hashiba"
+    },
+    {
+      "date": {
+        "y": 1587,
+        "m": 5,
+        "d": 1
+      },
+      "castle": "hitoyoshi",
+      "from": "shimazu",
+      "to": "hashiba"
+    },
+    {
+      "date": {
+        "y": 1587,
+        "m": 5,
+        "d": 1
+      },
+      "castle": "agata",
+      "from": "otomo",
+      "to": "hashiba"
+    },
+    {
+      "date": {
+        "y": 1587,
+        "m": 5,
+        "d": 1
+      },
+      "castle": "tonokori",
+      "from": "shimazu",
+      "to": "hashiba"
+    },
+    {
+      "date": {
+        "y": 1587,
+        "m": 7,
+        "d": 10
+      },
+      "castle": "yanagawa",
+      "from": "ryuzoji",
+      "to": "hashiba"
+    },
+    {
+      "date": {
+        "y": 1587,
+        "m": 7,
+        "d": 10
+      },
+      "castle": "obi",
+      "from": "shimazu",
+      "to": "hashiba"
+    },
+    {
+      "date": {
+        "y": 1587,
+        "m": 11,
+        "d": 25
+      },
+      "castle": "shibata",
+      "from": "shibata",
+      "to": "nagao"
+    },
+    {
+      "date": {
+        "y": 1588,
+        "m": 8,
+        "d": 1
+      },
+      "castle": "kousuiji",
+      "from": "shiba",
+      "to": "nanbu"
+    },
+    {
+      "date": {
+        "y": 1589,
+        "m": 7,
+        "d": 17
+      },
+      "castle": "kuwagawa",
+      "from": "ashina",
+      "to": "date"
+    },
+    {
+      "date": {
+        "y": 1589,
+        "m": 7,
+        "d": 17
+      },
+      "castle": "kurokawa",
+      "from": "ashina",
+      "to": "date"
+    },
+    {
+      "date": {
+        "y": 1589,
+        "m": 7,
+        "d": 17
+      },
+      "castle": "sukagawa",
+      "from": "nikaido",
+      "to": "date"
+    },
+    {
+      "date": {
+        "y": 1589,
+        "m": 7,
+        "d": 17
+      },
+      "castle": "shirakawa",
+      "from": "shirakawa",
+      "to": "date"
+    },
+    {
+      "date": {
+        "y": 1590,
+        "m": 7,
+        "d": 15
+      },
+      "castle": "hachigata",
+      "from": "hojo",
+      "to": "hashiba"
+    },
+    {
+      "date": {
+        "y": 1590,
+        "m": 7,
+        "d": 25
+      },
+      "castle": "nirayama",
+      "from": "hojo",
+      "to": "hashiba"
+    },
+    {
+      "date": {
+        "y": 1590,
+        "m": 8,
+        "d": 4
+      },
+      "castle": "odawara",
+      "from": "hojo",
+      "to": "tokugawa"
+    },
+    {
+      "date": {
+        "y": 1590,
+        "m": 8,
+        "d": 6
+      },
+      "castle": "nirayama",
+      "from": "hashiba",
+      "to": "tokugawa"
+    },
+    {
+      "date": {
+        "y": 1590,
+        "m": 8,
+        "d": 6
+      },
+      "castle": "koga",
+      "from": "hojo",
+      "to": "tokugawa"
+    },
+    {
+      "date": {
+        "y": 1590,
+        "m": 8,
+        "d": 6
+      },
+      "castle": "umayabashi",
+      "from": "hojo",
+      "to": "tokugawa"
+    },
+    {
+      "date": {
+        "y": 1590,
+        "m": 8,
+        "d": 6
+      },
+      "castle": "tamanawa",
+      "from": "hojo",
+      "to": "tokugawa"
+    },
+    {
+      "date": {
+        "y": 1590,
+        "m": 8,
+        "d": 6
+      },
+      "castle": "edo",
+      "from": "hojo",
+      "to": "tokugawa"
+    },
+    {
+      "date": {
+        "y": 1590,
+        "m": 8,
+        "d": 6
+      },
+      "castle": "kawagoe",
+      "from": "hojo",
+      "to": "tokugawa"
+    },
+    {
+      "date": {
+        "y": 1590,
+        "m": 8,
+        "d": 6
+      },
+      "castle": "iwatsuki",
+      "from": "hojo",
+      "to": "tokugawa"
+    },
+    {
+      "date": {
+        "y": 1590,
+        "m": 8,
+        "d": 6
+      },
+      "castle": "hachigata",
+      "from": "hashiba",
+      "to": "tokugawa"
+    },
+    {
+      "date": {
+        "y": 1590,
+        "m": 8,
+        "d": 6
+      },
+      "castle": "minowa",
+      "from": "hojo",
+      "to": "tokugawa"
+    },
+    {
+      "date": {
+        "y": 1590,
+        "m": 8,
+        "d": 6
+      },
+      "castle": "kanayama",
+      "from": "hojo",
+      "to": "tokugawa"
+    },
+    {
+      "date": {
+        "y": 1590,
+        "m": 8,
+        "d": 6
+      },
+      "castle": "karasawa",
+      "from": "hojo",
+      "to": "tokugawa"
+    },
+    {
+      "date": {
+        "y": 1590,
+        "m": 8,
+        "d": 6
+      },
+      "castle": "sakura",
+      "from": "hojo",
+      "to": "tokugawa"
+    },
+    {
+      "date": {
+        "y": 1590,
+        "m": 8,
+        "d": 9
+      },
+      "castle": "kiyosu",
+      "from": "nobukatsu",
+      "to": "hashiba"
+    },
+    {
+      "date": {
+        "y": 1590,
+        "m": 8,
+        "d": 10
+      },
+      "castle": "tsutsuji",
+      "from": "tokugawa",
+      "to": "hashiba"
+    },
+    {
+      "date": {
+        "y": 1590,
+        "m": 8,
+        "d": 10
+      },
+      "castle": "fukashi",
+      "from": "tokugawa",
+      "to": "hashiba"
+    },
+    {
+      "date": {
+        "y": 1590,
+        "m": 8,
+        "d": 10
+      },
+      "castle": "takato",
+      "from": "tokugawa",
+      "to": "hashiba"
+    },
+    {
+      "date": {
+        "y": 1590,
+        "m": 8,
+        "d": 10
+      },
+      "castle": "iida",
+      "from": "tokugawa",
+      "to": "hashiba"
+    },
+    {
+      "date": {
+        "y": 1590,
+        "m": 8,
+        "d": 10
+      },
+      "castle": "sunpu",
+      "from": "tokugawa",
+      "to": "hashiba"
+    },
+    {
+      "date": {
+        "y": 1590,
+        "m": 8,
+        "d": 10
+      },
+      "castle": "kakegawa",
+      "from": "tokugawa",
+      "to": "hashiba"
+    },
+    {
+      "date": {
+        "y": 1590,
+        "m": 8,
+        "d": 10
+      },
+      "castle": "hikuma",
+      "from": "tokugawa",
+      "to": "hashiba"
+    },
+    {
+      "date": {
+        "y": 1590,
+        "m": 8,
+        "d": 10
+      },
+      "castle": "yoshida",
+      "from": "tokugawa",
+      "to": "hashiba"
+    },
+    {
+      "date": {
+        "y": 1590,
+        "m": 8,
+        "d": 10
+      },
+      "castle": "okazaki",
+      "from": "tokugawa",
+      "to": "hashiba"
+    },
+    {
+      "date": {
+        "y": 1590,
+        "m": 8,
+        "d": 10
+      },
+      "castle": "nagashima",
+      "from": "oda",
+      "to": "hashiba"
+    },
+    {
+      "date": {
+        "y": 1590,
+        "m": 9,
+        "d": 1
+      },
+      "castle": "kurokawa",
+      "from": "date",
+      "to": "hashiba"
+    },
+    {
+      "date": {
+        "y": 1590,
+        "m": 9,
+        "d": 1
+      },
+      "castle": "sukagawa",
+      "from": "date",
+      "to": "hashiba"
+    },
+    {
+      "date": {
+        "y": 1590,
+        "m": 9,
+        "d": 1
+      },
+      "castle": "shirakawa",
+      "from": "date",
+      "to": "hashiba"
+    },
+    {
+      "date": {
+        "y": 1590,
+        "m": 9,
+        "d": 1
+      },
+      "castle": "myou",
+      "from": "osaki",
+      "to": "hashiba"
+    },
+    {
+      "date": {
+        "y": 1590,
+        "m": 9,
+        "d": 1
+      },
+      "castle": "teraike",
+      "from": "kasai",
+      "to": "hashiba"
+    },
+    {
+      "date": {
+        "y": 1590,
+        "m": 9,
+        "d": 29
+      },
+      "castle": "gifu",
+      "from": "ikeda",
+      "to": "hashiba"
+    },
+    {
+      "date": {
+        "y": 1591,
+        "m": 10,
+        "d": 1
+      },
+      "castle": "kuwagawa",
+      "from": "date",
+      "to": "hashiba"
+    },
+    {
+      "date": {
+        "y": 1591,
+        "m": 10,
+        "d": 1
+      },
+      "castle": "nihonmatsu",
+      "from": "date",
+      "to": "hashiba"
+    },
+    {
+      "date": {
+        "y": 1591,
+        "m": 10,
+        "d": 1
+      },
+      "castle": "myou",
+      "from": "hashiba",
+      "to": "date"
+    },
+    {
+      "date": {
+        "y": 1591,
+        "m": 10,
+        "d": 1
+      },
+      "castle": "teraike",
+      "from": "hashiba",
+      "to": "date"
+    },
+    {
+      "date": {
+        "y": 1592,
+        "m": 5,
+        "d": 24
+      },
+      "castle": "busan",
+      "from": "joseon",
+      "to": "hashiba"
+    },
+    {
+      "date": {
+        "y": 1592,
+        "m": 6,
+        "d": 1
+      },
+      "castle": "ulsan",
+      "from": "joseon",
+      "to": "hashiba"
+    },
+    {
+      "date": {
+        "y": 1592,
+        "m": 6,
+        "d": 1
+      },
+      "castle": "daegu",
+      "from": "joseon",
+      "to": "hashiba"
+    },
+    {
+      "date": {
+        "y": 1592,
+        "m": 6,
+        "d": 6
+      },
+      "castle": "sangju",
+      "from": "joseon",
+      "to": "hashiba"
+    },
+    {
+      "date": {
+        "y": 1592,
+        "m": 6,
+        "d": 7
+      },
+      "castle": "chungju",
+      "from": "joseon",
+      "to": "hashiba"
+    },
+    {
+      "date": {
+        "y": 1592,
+        "m": 6,
+        "d": 12
+      },
+      "castle": "hanseong",
+      "from": "joseon",
+      "to": "hashiba"
+    },
+    {
+      "date": {
+        "y": 1592,
+        "m": 6,
+        "d": 12
+      },
+      "castle": "wonju",
+      "from": "joseon",
+      "to": "hashiba"
+    },
+    {
+      "date": {
+        "y": 1592,
+        "m": 7,
+        "d": 23
+      },
+      "castle": "gaeseong",
+      "from": "joseon",
+      "to": "hashiba"
+    },
+    {
+      "date": {
+        "y": 1592,
+        "m": 7,
+        "d": 23
+      },
+      "castle": "haeju",
+      "from": "joseon",
+      "to": "hashiba"
+    },
+    {
+      "date": {
+        "y": 1592,
+        "m": 7,
+        "d": 23
+      },
+      "castle": "pyongyang",
+      "from": "joseon",
+      "to": "hashiba"
+    },
+    {
+      "date": {
+        "y": 1592,
+        "m": 8,
+        "d": 30
+      },
+      "castle": "hamhung",
+      "from": "joseon",
+      "to": "hashiba"
+    },
+    {
+      "date": {
+        "y": 1592,
+        "m": 10,
+        "d": 25
+      },
+      "castle": "gifu",
+      "from": "hashiba",
+      "to": "oda"
+    },
+    {
+      "date": {
+        "y": 1593,
+        "m": 2,
+        "d": 8
+      },
+      "castle": "gaeseong",
+      "from": "hashiba",
+      "to": "joseon"
+    },
+    {
+      "date": {
+        "y": 1593,
+        "m": 2,
+        "d": 8
+      },
+      "castle": "haeju",
+      "from": "hashiba",
+      "to": "joseon"
+    },
+    {
+      "date": {
+        "y": 1593,
+        "m": 2,
+        "d": 8
+      },
+      "castle": "pyongyang",
+      "from": "hashiba",
+      "to": "joseon"
+    },
+    {
+      "date": {
+        "y": 1593,
+        "m": 5,
+        "d": 18
+      },
+      "castle": "daegu",
+      "from": "hashiba",
+      "to": "joseon"
+    },
+    {
+      "date": {
+        "y": 1593,
+        "m": 5,
+        "d": 18
+      },
+      "castle": "sangju",
+      "from": "hashiba",
+      "to": "joseon"
+    },
+    {
+      "date": {
+        "y": 1593,
+        "m": 5,
+        "d": 18
+      },
+      "castle": "chungju",
+      "from": "hashiba",
+      "to": "joseon"
+    },
+    {
+      "date": {
+        "y": 1593,
+        "m": 5,
+        "d": 18
+      },
+      "castle": "hanseong",
+      "from": "hashiba",
+      "to": "joseon"
+    },
+    {
+      "date": {
+        "y": 1593,
+        "m": 5,
+        "d": 18
+      },
+      "castle": "wonju",
+      "from": "hashiba",
+      "to": "joseon"
+    },
+    {
+      "date": {
+        "y": 1593,
+        "m": 5,
+        "d": 18
+      },
+      "castle": "hamhung",
+      "from": "hashiba",
+      "to": "joseon"
+    },
+    {
+      "date": {
+        "y": 1593,
+        "m": 6,
+        "d": 1
+      },
+      "castle": "funai",
+      "from": "otomo",
+      "to": "hashiba"
+    },
+    {
+      "date": {
+        "y": 1593,
+        "m": 7,
+        "d": 27
+      },
+      "castle": "jinju",
+      "from": "joseon",
+      "to": "hashiba"
+    },
+    {
+      "date": {
+        "y": 1593,
+        "m": 10,
+        "d": 1
+      },
+      "castle": "jinju",
+      "from": "hashiba",
+      "to": "joseon"
+    },
+    {
+      "date": {
+        "y": 1597,
+        "m": 9,
+        "d": 26
+      },
+      "castle": "namwon",
+      "from": "joseon",
+      "to": "hashiba"
+    },
+    {
+      "date": {
+        "y": 1597,
+        "m": 10,
+        "d": 1
+      },
+      "castle": "jeonju",
+      "from": "joseon",
+      "to": "hashiba"
+    },
+    {
+      "date": {
+        "y": 1597,
+        "m": 10,
+        "d": 1
+      },
+      "castle": "gongju",
+      "from": "joseon",
+      "to": "hashiba"
+    },
+    {
+      "date": {
+        "y": 1597,
+        "m": 11,
+        "d": 20
+      },
+      "castle": "jeonju",
+      "from": "hashiba",
+      "to": "joseon"
+    },
+    {
+      "date": {
+        "y": 1597,
+        "m": 11,
+        "d": 20
+      },
+      "castle": "namwon",
+      "from": "hashiba",
+      "to": "joseon"
+    },
+    {
+      "date": {
+        "y": 1597,
+        "m": 11,
+        "d": 20
+      },
+      "castle": "gongju",
+      "from": "hashiba",
+      "to": "joseon"
+    },
+    {
+      "date": {
+        "y": 1597,
+        "m": 12,
+        "d": 10
+      },
+      "castle": "suncheon",
+      "from": "joseon",
+      "to": "hashiba"
+    },
+    {
+      "date": {
+        "y": 1598,
+        "m": 3,
+        "d": 20
+      },
+      "castle": "yonezawa",
+      "from": "date",
+      "to": "nagao"
+    },
+    {
+      "date": {
+        "y": 1598,
+        "m": 3,
+        "d": 20
+      },
+      "castle": "kurokawa",
+      "from": "hashiba",
+      "to": "nagao"
+    },
+    {
+      "date": {
+        "y": 1598,
+        "m": 3,
+        "d": 20
+      },
+      "castle": "sukagawa",
+      "from": "hashiba",
+      "to": "nagao"
+    },
+    {
+      "date": {
+        "y": 1598,
+        "m": 3,
+        "d": 20
+      },
+      "castle": "shirakawa",
+      "from": "hashiba",
+      "to": "nagao"
+    },
+    {
+      "date": {
+        "y": 1598,
+        "m": 3,
+        "d": 20
+      },
+      "castle": "kasugayama",
+      "from": "nagao",
+      "to": "hashiba"
+    },
+    {
+      "date": {
+        "y": 1598,
+        "m": 3,
+        "d": 20
+      },
+      "castle": "tochio",
+      "from": "nagao",
+      "to": "hashiba"
+    },
+    {
+      "date": {
+        "y": 1598,
+        "m": 3,
+        "d": 20
+      },
+      "castle": "sakado",
+      "from": "nagao",
+      "to": "hashiba"
+    },
+    {
+      "date": {
+        "y": 1598,
+        "m": 3,
+        "d": 20
+      },
+      "castle": "honjo",
+      "from": "nagao",
+      "to": "hashiba"
+    },
+    {
+      "date": {
+        "y": 1598,
+        "m": 3,
+        "d": 20
+      },
+      "castle": "kaizu",
+      "from": "nagao",
+      "to": "hashiba"
+    },
+    {
+      "date": {
+        "y": 1598,
+        "m": 12,
+        "d": 24
+      },
+      "castle": "busan",
+      "from": "hashiba",
+      "to": "joseon"
+    },
+    {
+      "date": {
+        "y": 1598,
+        "m": 12,
+        "d": 24
+      },
+      "castle": "ulsan",
+      "from": "hashiba",
+      "to": "joseon"
+    },
+    {
+      "date": {
+        "y": 1598,
+        "m": 12,
+        "d": 24
+      },
+      "castle": "suncheon",
+      "from": "hashiba",
+      "to": "joseon"
+    },
+    {
+      "date": {
+        "y": 1599,
+        "m": 5,
+        "d": 10
+      },
+      "castle": "kyo",
+      "from": "hashiba",
+      "to": "tokugawa"
+    },
+    {
+      "date": {
+        "y": 1600,
+        "m": 8,
+        "d": 20
+      },
+      "castle": "sawayama",
+      "from": "hashiba",
+      "to": "ishida"
+    },
+    {
+      "date": {
+        "y": 1600,
+        "m": 8,
+        "d": 30
+      },
+      "castle": "kakegawa",
+      "from": "hashiba",
+      "to": "tokugawa"
+    },
+    {
+      "date": {
+        "y": 1600,
+        "m": 8,
+        "d": 30
+      },
+      "castle": "hikuma",
+      "from": "hashiba",
+      "to": "tokugawa"
+    },
+    {
+      "date": {
+        "y": 1600,
+        "m": 8,
+        "d": 30
+      },
+      "castle": "yoshida",
+      "from": "hashiba",
+      "to": "tokugawa"
+    },
+    {
+      "date": {
+        "y": 1600,
+        "m": 8,
+        "d": 30
+      },
+      "castle": "okazaki",
+      "from": "hashiba",
+      "to": "tokugawa"
+    },
+    {
+      "date": {
+        "y": 1600,
+        "m": 8,
+        "d": 30
+      },
+      "castle": "kiyosu",
+      "from": "hashiba",
+      "to": "tokugawa"
+    },
+    {
+      "date": {
+        "y": 1600,
+        "m": 8,
+        "d": 30
+      },
+      "castle": "tango",
+      "from": "hashiba",
+      "to": "tokugawa"
+    },
+    {
+      "date": {
+        "y": 1600,
+        "m": 9,
+        "d": 8
+      },
+      "castle": "kyo",
+      "from": "tokugawa",
+      "to": "ishida"
+    },
+    {
+      "date": {
+        "y": 1600,
+        "m": 9,
+        "d": 30
+      },
+      "castle": "gifu",
+      "from": "oda",
+      "to": "tokugawa"
+    },
+    {
+      "date": {
+        "y": 1600,
+        "m": 10,
+        "d": 23
+      },
+      "castle": "sawayama",
+      "from": "ishida",
+      "to": "tokugawa"
+    },
+    {
+      "date": {
+        "y": 1600,
+        "m": 10,
+        "d": 23
+      },
+      "castle": "kyo",
+      "from": "ishida",
+      "to": "tokugawa"
+    },
+    {
+      "date": {
+        "y": 1600,
+        "m": 11,
+        "d": 10
+      },
+      "castle": "tenjin",
+      "from": "ukita",
+      "to": "tokugawa"
+    },
+    {
+      "date": {
+        "y": 1600,
+        "m": 11,
+        "d": 12
+      },
+      "castle": "motoyama",
+      "from": "chosokabe",
+      "to": "tokugawa"
+    },
+    {
+      "date": {
+        "y": 1600,
+        "m": 11,
+        "d": 12
+      },
+      "castle": "oko",
+      "from": "chosokabe",
+      "to": "tokugawa"
+    },
+    {
+      "date": {
+        "y": 1600,
+        "m": 11,
+        "d": 12
+      },
+      "castle": "nakamura",
+      "from": "chosokabe",
+      "to": "tokugawa"
+    },
+    {
+      "date": {
+        "y": 1600,
+        "m": 11,
+        "d": 15
+      },
+      "castle": "tottori",
+      "from": "hashiba",
+      "to": "tokugawa"
+    },
+    {
+      "date": {
+        "y": 1600,
+        "m": 11,
+        "d": 15
+      },
+      "castle": "utsubuki",
+      "from": "oda",
+      "to": "tokugawa"
+    },
+    {
+      "date": {
+        "y": 1600,
+        "m": 11,
+        "d": 15
+      },
+      "castle": "gassan",
+      "from": "mori",
+      "to": "tokugawa"
+    },
+    {
+      "date": {
+        "y": 1600,
+        "m": 11,
+        "d": 15
+      },
+      "castle": "yamabuki",
+      "from": "mori",
+      "to": "tokugawa"
+    },
+    {
+      "date": {
+        "y": 1600,
+        "m": 11,
+        "d": 15
+      },
+      "castle": "takada",
+      "from": "mori",
+      "to": "tokugawa"
+    },
+    {
+      "date": {
+        "y": 1600,
+        "m": 11,
+        "d": 15
+      },
+      "castle": "bmatsuyama",
+      "from": "mori",
+      "to": "tokugawa"
+    },
+    {
+      "date": {
+        "y": 1600,
+        "m": 11,
+        "d": 15
+      },
+      "castle": "kannabe",
+      "from": "mori",
+      "to": "tokugawa"
+    },
+    {
+      "date": {
+        "y": 1600,
+        "m": 11,
+        "d": 15
+      },
+      "castle": "koriyama",
+      "from": "mori",
+      "to": "tokugawa"
+    },
+    {
+      "date": {
+        "y": 1600,
+        "m": 11,
+        "d": 20
+      },
+      "castle": "kuwagawa",
+      "from": "hashiba",
+      "to": "tokugawa"
+    },
+    {
+      "date": {
+        "y": 1600,
+        "m": 11,
+        "d": 20
+      },
+      "castle": "nihonmatsu",
+      "from": "hashiba",
+      "to": "tokugawa"
+    },
+    {
+      "date": {
+        "y": 1600,
+        "m": 11,
+        "d": 20
+      },
+      "castle": "kasugayama",
+      "from": "hashiba",
+      "to": "tokugawa"
+    },
+    {
+      "date": {
+        "y": 1600,
+        "m": 11,
+        "d": 20
+      },
+      "castle": "tochio",
+      "from": "hashiba",
+      "to": "tokugawa"
+    },
+    {
+      "date": {
+        "y": 1600,
+        "m": 11,
+        "d": 20
+      },
+      "castle": "sakado",
+      "from": "hashiba",
+      "to": "tokugawa"
+    },
+    {
+      "date": {
+        "y": 1600,
+        "m": 11,
+        "d": 20
+      },
+      "castle": "honjo",
+      "from": "hashiba",
+      "to": "tokugawa"
+    },
+    {
+      "date": {
+        "y": 1600,
+        "m": 11,
+        "d": 20
+      },
+      "castle": "tsutsuji",
+      "from": "hashiba",
+      "to": "tokugawa"
+    },
+    {
+      "date": {
+        "y": 1600,
+        "m": 11,
+        "d": 20
+      },
+      "castle": "fukashi",
+      "from": "hashiba",
+      "to": "tokugawa"
+    },
+    {
+      "date": {
+        "y": 1600,
+        "m": 11,
+        "d": 20
+      },
+      "castle": "kaizu",
+      "from": "hashiba",
+      "to": "tokugawa"
+    },
+    {
+      "date": {
+        "y": 1600,
+        "m": 11,
+        "d": 20
+      },
+      "castle": "takato",
+      "from": "hashiba",
+      "to": "tokugawa"
+    },
+    {
+      "date": {
+        "y": 1600,
+        "m": 11,
+        "d": 20
+      },
+      "castle": "iida",
+      "from": "hashiba",
+      "to": "tokugawa"
+    },
+    {
+      "date": {
+        "y": 1600,
+        "m": 11,
+        "d": 20
+      },
+      "castle": "sunpu",
+      "from": "hashiba",
+      "to": "tokugawa"
+    },
+    {
+      "date": {
+        "y": 1600,
+        "m": 11,
+        "d": 20
+      },
+      "castle": "matsukura",
+      "from": "hashiba",
+      "to": "tokugawa"
+    },
+    {
+      "date": {
+        "y": 1600,
+        "m": 11,
+        "d": 20
+      },
+      "castle": "toyama",
+      "from": "hashiba",
+      "to": "tokugawa"
+    },
+    {
+      "date": {
+        "y": 1600,
+        "m": 11,
+        "d": 20
+      },
+      "castle": "ichijodani",
+      "from": "hashiba",
+      "to": "tokugawa"
+    },
+    {
+      "date": {
+        "y": 1600,
+        "m": 11,
+        "d": 20
+      },
+      "castle": "odani",
+      "from": "hashiba",
+      "to": "tokugawa"
+    },
+    {
+      "date": {
+        "y": 1600,
+        "m": 11,
+        "d": 20
+      },
+      "castle": "yamato",
+      "from": "hashiba",
+      "to": "tokugawa"
+    },
+    {
+      "date": {
+        "y": 1600,
+        "m": 11,
+        "d": 20
+      },
+      "castle": "saika",
+      "from": "hashiba",
+      "to": "tokugawa"
+    },
+    {
+      "date": {
+        "y": 1600,
+        "m": 11,
+        "d": 20
+      },
+      "castle": "shingu",
+      "from": "hashiba",
+      "to": "tokugawa"
+    },
+    {
+      "date": {
+        "y": 1600,
+        "m": 11,
+        "d": 20
+      },
+      "castle": "ueno",
+      "from": "hashiba",
+      "to": "tokugawa"
+    },
+    {
+      "date": {
+        "y": 1600,
+        "m": 11,
+        "d": 20
+      },
+      "castle": "nagashima",
+      "from": "hashiba",
+      "to": "tokugawa"
+    },
+    {
+      "date": {
+        "y": 1600,
+        "m": 11,
+        "d": 20
+      },
+      "castle": "kiriyama",
+      "from": "hashiba",
+      "to": "tokugawa"
+    },
+    {
+      "date": {
+        "y": 1600,
+        "m": 11,
+        "d": 20
+      },
+      "castle": "himeji",
+      "from": "hashiba",
+      "to": "tokugawa"
+    },
+    {
+      "date": {
+        "y": 1600,
+        "m": 11,
+        "d": 20
+      },
+      "castle": "miki",
+      "from": "hashiba",
+      "to": "tokugawa"
+    },
+    {
+      "date": {
+        "y": 1600,
+        "m": 11,
+        "d": 20
+      },
+      "castle": "konosumi",
+      "from": "hashiba",
+      "to": "tokugawa"
+    },
+    {
+      "date": {
+        "y": 1600,
+        "m": 11,
+        "d": 20
+      },
+      "castle": "yakami",
+      "from": "hashiba",
+      "to": "tokugawa"
+    },
+    {
+      "date": {
+        "y": 1600,
+        "m": 11,
+        "d": 20
+      },
+      "castle": "sumoto",
+      "from": "hashiba",
+      "to": "tokugawa"
+    },
+    {
+      "date": {
+        "y": 1600,
+        "m": 11,
+        "d": 20
+      },
+      "castle": "shozui",
+      "from": "hashiba",
+      "to": "tokugawa"
+    },
+    {
+      "date": {
+        "y": 1600,
+        "m": 11,
+        "d": 20
+      },
+      "castle": "sogo",
+      "from": "hashiba",
+      "to": "tokugawa"
+    },
+    {
+      "date": {
+        "y": 1600,
+        "m": 11,
+        "d": 20
+      },
+      "castle": "yuzuki",
+      "from": "hashiba",
+      "to": "tokugawa"
+    },
+    {
+      "date": {
+        "y": 1600,
+        "m": 11,
+        "d": 20
+      },
+      "castle": "kaneko",
+      "from": "hashiba",
+      "to": "tokugawa"
+    },
+    {
+      "date": {
+        "y": 1600,
+        "m": 11,
+        "d": 20
+      },
+      "castle": "kurose",
+      "from": "hashiba",
+      "to": "tokugawa"
+    },
+    {
+      "date": {
+        "y": 1600,
+        "m": 11,
+        "d": 20
+      },
+      "castle": "funai",
+      "from": "hashiba",
+      "to": "tokugawa"
+    },
+    {
+      "date": {
+        "y": 1600,
+        "m": 11,
+        "d": 20
+      },
+      "castle": "kawara",
+      "from": "hashiba",
+      "to": "tokugawa"
+    },
+    {
+      "date": {
+        "y": 1600,
+        "m": 11,
+        "d": 20
+      },
+      "castle": "kosho",
+      "from": "hashiba",
+      "to": "tokugawa"
+    },
+    {
+      "date": {
+        "y": 1600,
+        "m": 11,
+        "d": 20
+      },
+      "castle": "tachibana",
+      "from": "hashiba",
+      "to": "tokugawa"
+    },
+    {
+      "date": {
+        "y": 1600,
+        "m": 11,
+        "d": 20
+      },
+      "castle": "yanagawa",
+      "from": "hashiba",
+      "to": "tokugawa"
+    },
+    {
+      "date": {
+        "y": 1600,
+        "m": 11,
+        "d": 20
+      },
+      "castle": "kumamoto",
+      "from": "hashiba",
+      "to": "tokugawa"
+    },
+    {
+      "date": {
+        "y": 1600,
+        "m": 11,
+        "d": 20
+      },
+      "castle": "hitoyoshi",
+      "from": "hashiba",
+      "to": "tokugawa"
+    },
+    {
+      "date": {
+        "y": 1600,
+        "m": 11,
+        "d": 20
+      },
+      "castle": "agata",
+      "from": "hashiba",
+      "to": "tokugawa"
+    },
+    {
+      "date": {
+        "y": 1600,
+        "m": 11,
+        "d": 20
+      },
+      "castle": "tonokori",
+      "from": "hashiba",
+      "to": "tokugawa"
+    },
+    {
+      "date": {
+        "y": 1600,
+        "m": 11,
+        "d": 20
+      },
+      "castle": "obi",
+      "from": "hashiba",
+      "to": "tokugawa"
+    },
+    {
+      "date": {
+        "y": 1601,
+        "m": 9,
+        "d": 1
+      },
+      "castle": "kurokawa",
+      "from": "nagao",
+      "to": "tokugawa"
+    },
+    {
+      "date": {
+        "y": 1601,
+        "m": 9,
+        "d": 1
+      },
+      "castle": "sukagawa",
+      "from": "nagao",
+      "to": "tokugawa"
+    },
+    {
+      "date": {
+        "y": 1601,
+        "m": 9,
+        "d": 1
+      },
+      "castle": "shirakawa",
+      "from": "nagao",
+      "to": "tokugawa"
+    },
+    {
+      "date": {
+        "y": 1615,
+        "m": 6,
+        "d": 4
+      },
+      "castle": "akutagawa",
+      "from": "hashiba",
+      "to": "tokugawa"
+    },
+    {
+      "date": {
+        "y": 1615,
+        "m": 6,
+        "d": 4
+      },
+      "castle": "ishiyama",
+      "from": "hashiba",
+      "to": "tokugawa"
+    },
+    {
+      "date": {
+        "y": 1615,
+        "m": 6,
+        "d": 4
+      },
+      "castle": "kishiwada",
+      "from": "hashiba",
+      "to": "tokugawa"
+    }
+  ],
+  "alliances": [
+    {
+      "a": "nagao",
+      "b": "satomi",
+      "name": "房越同盟",
+      "from": [
+        1560,
+        1,
+        1
+      ],
+      "to": [
+        1569,
+        6,
+        30
+      ],
+      "source": "pactBosoEchigo",
+      "kind": "cooperation",
+      "note": "1560年代の軍事連携。期間は概略で、条約の締結・解消日を確定した値ではない。"
+    },
+    {
+      "a": "asakura",
+      "b": "azai",
+      "name": "浅井・朝倉の軍事連携",
+      "from": [
+        1560,
+        1,
+        1
+      ],
+      "to": [
+        1573,
+        9,
+        1
+      ],
+      "source": "pactAzaiAsakura",
+      "kind": "cooperation",
+      "note": "成立時期と関係の性質には議論があるため、固有の条約名を創作しない。"
+    },
+    {
+      "a": "ashikaga",
+      "b": "miyoshi",
+      "name": "永禄期の幕府・三好和睦",
+      "from": [
+        1558,
+        1,
+        1
+      ],
+      "to": [
+        1565,
+        6,
+        17
+      ],
+      "source": "pactMiyoshi",
+      "kind": "peace",
+      "note": "和睦・幕府出仕と軍事同盟の区別。期間の月日は表示上の概略。"
+    },
+    {
+      "a": "takeda",
+      "b": "hojo",
+      "name": "甲相駿三国同盟",
+      "from": [
+        1554,
+        1,
+        1
+      ],
+      "to": [
+        1568,
+        12,
+        30
+      ],
+      "source": "pactTriple",
+      "kind": "alliance",
+      "note": ""
+    },
+    {
+      "a": "takeda",
+      "b": "imagawa",
+      "name": "甲相駿三国同盟",
+      "from": [
+        1554,
+        1,
+        1
+      ],
+      "to": [
+        1568,
+        12,
+        30
+      ],
+      "source": "pactTriple",
+      "kind": "alliance",
+      "note": ""
+    },
+    {
+      "a": "hojo",
+      "b": "imagawa",
+      "name": "甲相駿三国同盟",
+      "from": [
+        1554,
+        1,
+        1
+      ],
+      "to": [
+        1568,
+        12,
+        30
+      ],
+      "source": "pactTriple",
+      "kind": "alliance",
+      "note": ""
+    },
+    {
+      "a": "oda",
+      "b": "tokugawa",
+      "name": "清洲同盟",
+      "from": [
+        1562,
+        2,
+        15
+      ],
+      "to": [
+        1582,
+        6,
+        21
+      ],
+      "source": "pactKiyosu",
+      "kind": "alliance",
+      "note": "成立日・会談場所には諸説。"
+    },
+    {
+      "a": "oda",
+      "b": "takeda",
+      "name": "甲尾同盟",
+      "from": [
+        1565,
+        10,
+        1
+      ],
+      "to": [
+        1572,
+        10,
+        31
+      ],
+      "source": "pactEast",
+      "kind": "alliance",
+      "note": ""
+    },
+    {
+      "a": "hojo",
+      "b": "nagao",
+      "name": "越相同盟",
+      "from": [
+        1569,
+        1,
+        1
+      ],
+      "to": [
+        1571,
+        12,
+        30
+      ],
+      "source": "pactEast",
+      "kind": "alliance",
+      "note": ""
+    },
+    {
+      "a": "hojo",
+      "b": "takeda",
+      "name": "甲相同盟の再締結",
+      "from": [
+        1572,
+        1,
+        5
+      ],
+      "to": [
+        1578,
+        8,
+        31
+      ],
+      "source": "pactEast",
+      "kind": "alliance",
+      "note": "元亀2年末からの再締結を、既存の表示日で処理。"
+    },
+    {
+      "a": "hojo",
+      "b": "satomi",
+      "name": "房相一和",
+      "from": [
+        1577,
+        1,
+        1
+      ],
+      "to": [
+        1590,
+        8,
+        9
+      ],
+      "source": "pactBoso",
+      "kind": "peace",
+      "note": "1577年成立。表示上の1月1日は確定日ではない。"
+    },
+    {
+      "a": "takeda",
+      "b": "uesugi",
+      "name": "甲越同盟",
+      "from": [
+        1579,
+        1,
+        1
+      ],
+      "to": [
+        1582,
+        4,
+        3
+      ],
+      "source": "pactKaiEchigo",
+      "kind": "alliance",
+      "note": "景勝との婚姻・協力を含む成立過程。日付は年内表示用。"
+    },
+    {
+      "a": "tokugawa",
+      "b": "hojo",
+      "name": "相遠同盟",
+      "from": [
+        1580,
+        1,
+        1
+      ],
+      "to": [
+        1582,
+        6,
+        21
+      ],
+      "source": "pactTokugawaHojo",
+      "kind": "alliance",
+      "note": "対武田の連携。成立月日は別途幅がある。"
+    },
+    {
+      "a": "tokugawa",
+      "b": "hojo",
+      "name": "天正壬午の和睦",
+      "from": [
+        1582,
+        11,
+        14
+      ],
+      "to": [
+        1590,
+        8,
+        9
+      ],
+      "source": "pactTokugawaHojo",
+      "kind": "peace",
+      "note": ""
+    },
+    {
+      "a": "oda",
+      "b": "ukita",
+      "name": "宇喜多直家の織田方転属",
+      "from": [
+        1579,
+        10,
+        1
+      ],
+      "to": [
+        1582,
+        6,
+        21
+      ],
+      "source": "pactUkita",
+      "kind": "alignment",
+      "note": "単なる対等同盟ではなく、毛利方からの離反・帰属。"
+    },
+    {
+      "a": "nobutaka",
+      "b": "kshibata",
+      "name": "信孝・勝家の軍事連携",
+      "from": [
+        1582,
+        7,
+        19
+      ],
+      "to": [
+        1583,
+        6,
+        14
+      ],
+      "source": "kiyosuDistribution",
+      "kind": "cooperation",
+      "note": ""
+    },
+    {
+      "a": "nobukatsu",
+      "b": "hashiba",
+      "name": "信雄・秀吉の連携",
+      "from": [
+        1582,
+        12,
+        20
+      ],
+      "to": [
+        1584,
+        3,
+        12
+      ],
+      "source": "owariSuccession",
+      "kind": "cooperation",
+      "note": ""
+    },
+    {
+      "a": "nobukatsu",
+      "b": "tokugawa",
+      "name": "小牧・長久手の盟約",
+      "from": [
+        1584,
+        3,
+        13
+      ],
+      "to": [
+        1584,
+        12,
+        15
+      ],
+      "source": "owariSuccession",
+      "kind": "alliance",
+      "note": ""
+    },
+    {
+      "a": "sanada",
+      "b": "uesugi",
+      "name": "昌幸の上杉帰属",
+      "from": [
+        1585,
+        7,
+        1
+      ],
+      "to": [
+        1586,
+        12,
+        30
+      ],
+      "source": "pactSanada",
+      "kind": "submission",
+      "note": ""
+    },
+    {
+      "a": "kono",
+      "b": "mori",
+      "name": "芸予の軍事協力",
+      "from": [
+        1583,
+        1,
+        1
+      ],
+      "to": [
+        1585,
+        8,
+        31
+      ],
+      "source": "pactKono",
+      "kind": "cooperation",
+      "note": ""
+    },
+    {
+      "a": "ishida",
+      "b": "mori",
+      "name": "西軍の連署・軍事連携",
+      "from": [
+        1600,
+        8,
+        21
+      ],
+      "to": [
+        1600,
+        11,
+        10
+      ],
+      "source": "sekigaharaGuide",
+      "kind": "cooperation",
+      "note": ""
+    },
+    {
+      "a": "ishida",
+      "b": "ukita",
+      "name": "西軍の軍事連携",
+      "from": [
+        1600,
+        8,
+        21
+      ],
+      "to": [
+        1600,
+        11,
+        10
+      ],
+      "source": "sekigaharaGuide",
+      "kind": "cooperation",
+      "note": ""
+    },
+    {
+      "a": "ishida",
+      "b": "shimazu",
+      "name": "西軍への参加",
+      "from": [
+        1600,
+        8,
+        21
+      ],
+      "to": [
+        1600,
+        11,
+        10
+      ],
+      "source": "sekigaharaGuide",
+      "kind": "cooperation",
+      "note": ""
+    },
+    {
+      "a": "ishida",
+      "b": "chosokabe",
+      "name": "西軍への参加",
+      "from": [
+        1600,
+        8,
+        21
+      ],
+      "to": [
+        1600,
+        11,
+        10
+      ],
+      "source": "sekigaharaGuide",
+      "kind": "cooperation",
+      "note": ""
+    },
+    {
+      "a": "ishida",
+      "b": "oda",
+      "name": "秀信の西軍参加",
+      "from": [
+        1600,
+        8,
+        22
+      ],
+      "to": [
+        1600,
+        10,
+        16
+      ],
+      "source": "gifuSuccession",
+      "kind": "cooperation",
+      "note": ""
+    }
+  ],
+  "water": [
+    {
+      "name": "十三湖",
+      "vertices": 1345,
+      "basis": "W09-05の比較輪郭。時代別の水域・湿地は別層で加える。"
+    },
+    {
+      "name": "十和田湖",
+      "vertices": 4243,
+      "basis": "W09-05の比較輪郭。時代別の水域・湿地は別層で加える。"
+    },
+    {
+      "name": "小川原湖",
+      "vertices": 2890,
+      "basis": "W09-05の比較輪郭。時代別の水域・湿地は別層で加える。"
+    },
+    {
+      "name": "田沢湖",
+      "vertices": 1228,
+      "basis": "W09-05の比較輪郭。時代別の水域・湿地は別層で加える。"
+    },
+    {
+      "name": "猪苗代湖",
+      "vertices": 3467,
+      "basis": "W09-05の比較輪郭。時代別の水域・湿地は別層で加える。"
+    },
+    {
+      "name": "霞ヶ浦",
+      "vertices": 4741,
+      "basis": "W09-05の比較輪郭。時代別の水域・湿地は別層で加える。"
+    },
+    {
+      "name": "牛久沼",
+      "vertices": 1408,
+      "basis": "W09-05の比較輪郭。時代別の水域・湿地は別層で加える。"
+    },
+    {
+      "name": "北浦",
+      "vertices": 2380,
+      "basis": "W09-05の比較輪郭。時代別の水域・湿地は別層で加える。"
+    },
+    {
+      "name": "印旛沼",
+      "vertices": 1968,
+      "basis": "W09-05の比較輪郭。時代別の水域・湿地は別層で加える。"
+    },
+    {
+      "name": "手賀沼",
+      "vertices": 755,
+      "basis": "W09-05の比較輪郭。時代別の水域・湿地は別層で加える。"
+    },
+    {
+      "name": "河北潟",
+      "vertices": 322,
+      "basis": "W09-05の比較輪郭。時代別の水域・湿地は別層で加える。"
+    },
+    {
+      "name": "木場潟",
+      "vertices": 434,
+      "basis": "W09-05の比較輪郭。時代別の水域・湿地は別層で加える。"
+    },
+    {
+      "name": "柴山潟",
+      "vertices": 447,
+      "basis": "W09-05の比較輪郭。時代別の水域・湿地は別層で加える。"
+    },
+    {
+      "name": "諏訪湖",
+      "vertices": 596,
+      "basis": "W09-05の比較輪郭。時代別の水域・湿地は別層で加える。"
+    },
+    {
+      "name": "浜名湖",
+      "vertices": 4865,
+      "basis": "W09-05の比較輪郭。時代別の水域・湿地は別層で加える。"
+    },
+    {
+      "name": "琵琶湖",
+      "vertices": 11933,
+      "basis": "W09-05の比較輪郭。時代別の水域・湿地は別層で加える。"
+    },
+    {
+      "name": "余呉湖",
+      "vertices": 349,
+      "basis": "W09-05の比較輪郭。時代別の水域・湿地は別層で加える。"
+    },
+    {
+      "name": "中海",
+      "vertices": 5594,
+      "basis": "W09-05の比較輪郭。時代別の水域・湿地は別層で加える。"
+    },
+    {
+      "name": "宍道湖",
+      "vertices": 2284,
+      "basis": "W09-05の比較輪郭。時代別の水域・湿地は別層で加える。"
+    },
+    {
+      "retainedOld": 5,
+      "replacedOld": 8,
+      "reason": "同一湖の重複線を除去。八郎潟・巨椋池等の旧水域を現代の干拓後の形で縮めない。"
+    }
+  ]
+}

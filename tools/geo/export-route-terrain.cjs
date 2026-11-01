@@ -1,0 +1,1 @@
+const fs=require('node:fs'),{G}=require('../checks/history-focus.cjs').model();G.newGame('s1560','oda');fs.writeFileSync('/tmp/kuniezu-route-terrain-input.json',JSON.stringify(Object.entries(G.EDGES).filter(([,e])=>!e.sea).map(([id,e])=>({id,a:e.a,b:e.b,line:G.visualEdgeGeo(e.a,e.b).map(([x,y])=>[x/200/.809016994+129.2,41.75-y/200])}))));

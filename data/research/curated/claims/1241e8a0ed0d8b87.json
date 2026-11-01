@@ -1,0 +1,22 @@
+{
+  "id": "bongseonsa-rebuilt-1593",
+  "entity": "site:奉先寺",
+  "predicate": "rebuilt",
+  "value": 1593,
+  "validYears": [
+    1593,
+    1615
+  ],
+  "source": "krBongseonsa",
+  "locator": "歴史的変遷・1593年朗慧の重創",
+  "gameBindings": [
+    "TK.SITE_ACTIVITY:奉先寺",
+    "G.yActive"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-01",
+  "datePrecision": "year",
+  "uncertainty": "月日と寺域全体の構造は確定しない",
+  "sourceUrl": "https://encykorea.aks.ac.kr/Article/E0023921"
+}

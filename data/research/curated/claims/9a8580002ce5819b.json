@@ -1,0 +1,23 @@
+{
+  "id": "lifetime-北条氏房",
+  "entity": "person:北条氏房",
+  "predicate": "death-year",
+  "value": 1592,
+  "validYears": [
+    1592,
+    1592
+  ],
+  "datePrecision": "year",
+  "source": "ujifusaLifetime",
+  "gameBindings": [
+    "TK.DEATH_Y",
+    "G.reconcileHistoricalPeople",
+    "aging"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "sourceUrl": "https://id.ndl.go.jp/auth/ndlna/001219628",
+  "locator": "典拠標目",
+  "checked": "2026-11-01",
+  "uncertainty": "日付は確定しない"
+}

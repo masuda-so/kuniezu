@@ -1,0 +1,103 @@
+[
+  {
+    "query": "柳ヶ瀬関所跡",
+    "url": "https://nominatim.openstreetmap.org/search?q=%E6%9F%B3%E3%83%B6%E7%80%AC%E9%96%A2%E6%89%80%E8%B7%A1&format=jsonv2&limit=3",
+    "results": []
+  },
+  {
+    "query": "椿坂峠",
+    "url": "https://nominatim.openstreetmap.org/search?q=%E6%A4%BF%E5%9D%82%E5%B3%A0&format=jsonv2&limit=3",
+    "results": [
+      {
+        "place_id": 266976544,
+        "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+        "osm_type": "node",
+        "osm_id": 1685784617,
+        "lat": "35.6395647",
+        "lon": "136.1625345",
+        "category": "mountain_pass",
+        "type": "yes",
+        "place_rank": 20,
+        "importance": 0.11734328469919902,
+        "addresstype": "mountain_pass",
+        "name": "椿坂峠",
+        "display_name": "椿坂峠, 長浜市, 滋賀県, 日本",
+        "boundingbox": [
+          "35.6395147",
+          "35.6396147",
+          "136.1624845",
+          "136.1625845"
+        ]
+      }
+    ]
+  },
+  {
+    "query": "中河内 滋賀県",
+    "url": "https://nominatim.openstreetmap.org/search?q=%E4%B8%AD%E6%B2%B3%E5%86%85%20%E6%BB%8B%E8%B3%80%E7%9C%8C&format=jsonv2&limit=3",
+    "results": [
+      {
+        "place_id": 266406597,
+        "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+        "osm_type": "node",
+        "osm_id": 7801282735,
+        "lat": "35.6646272",
+        "lon": "136.1571801",
+        "category": "place",
+        "type": "quarter",
+        "place_rank": 20,
+        "importance": 0.13339018005645836,
+        "addresstype": "quarter",
+        "name": "余呉町中河内",
+        "display_name": "余呉町中河内, 長浜市, 滋賀県, 日本",
+        "boundingbox": [
+          "35.6546272",
+          "35.6746272",
+          "136.1471801",
+          "136.1671801"
+        ]
+      },
+      {
+        "place_id": 266217329,
+        "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+        "osm_type": "way",
+        "osm_id": 156314905,
+        "lat": "35.6176300",
+        "lon": "136.2242838",
+        "category": "highway",
+        "type": "secondary",
+        "place_rank": 26,
+        "importance": 0.05339018005645835,
+        "addresstype": "secondary",
+        "name": "中河内木之本線",
+        "display_name": "中河内木之本線, 余呉町田戸, 長浜市, 滋賀県, 日本",
+        "boundingbox": [
+          "35.6159495",
+          "35.6192885",
+          "136.2224402",
+          "136.2261218"
+        ]
+      },
+      {
+        "place_id": 266236035,
+        "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+        "osm_type": "way",
+        "osm_id": 156314866,
+        "lat": "35.6641634",
+        "lon": "136.1776602",
+        "category": "highway",
+        "type": "secondary",
+        "place_rank": 26,
+        "importance": 0.05339018005645835,
+        "addresstype": "secondary",
+        "name": "中河内木之本線",
+        "display_name": "中河内木之本線, 長浜市, 滋賀県, 日本",
+        "boundingbox": [
+          "35.6641560",
+          "35.6649978",
+          "136.1749720",
+          "136.1801832"
+        ]
+      }
+    ]
+  }
+]

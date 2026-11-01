@@ -1,0 +1,21 @@
+{
+  "id": "taki-abandon",
+  "entity": "site:滝の城",
+  "predicate": "abandoned",
+  "value": 1590,
+  "validYears": [
+    1590,
+    1615
+  ],
+  "datePrecision": "year",
+  "source": "takiCastle",
+  "locator": "1590年落城・以後廃城",
+  "gameBindings": [
+    "G.yActive:滝の城"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "sourceUrl": "https://www.city.tokorozawa.saitama.jp/iitokoro/enjoy/bunkakyoyo/bunkazai/kenshiteibunkazai/bunzai_20100126153048508.html",
+  "checked": "2026-11-01",
+  "uncertainty": "日付は確定しない"
+}

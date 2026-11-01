@@ -1,0 +1,25 @@
+{
+  "id": "ietada-kajiro",
+  "entity": "person:松平家忠",
+  "predicate": "residence-transfer",
+  "value": "忍から上代へ",
+  "lunarDate": [
+    1592,
+    2,
+    19
+  ],
+  "validYears": [
+    1592,
+    1592
+  ],
+  "source": "kajiroResidence",
+  "gameBindings": [
+    "TK.PERSON_RESIDENCE_EVIDENCE"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "sourceUrl": "https://www.echiba.org/wp-content/uploads/2022/12/kiyo_028_p1.pdf",
+  "locator": "本文14頁（PDF32頁） 上代陣屋（城）",
+  "checked": "2026-11-01",
+  "uncertainty": null
+}

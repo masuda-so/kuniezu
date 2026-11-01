@@ -1,0 +1,5 @@
+/* 先代の遠征先ではなく、資料に対応する新規後継者の居所を使う。 */
+const assert=require('node:assert/strict'),{G,TK}=require('./history-focus.cjs').model();G.newGame('s1560','oda');G.S().player='__none';G.auditVisualMoves=true;
+const cases=[['毛利元就','毛利輝元','koriyama','gassan'],['武田信玄','武田勝頼','tsutsuji','sunpu']];
+for(const [old,name,place,wrong] of cases){const ev=TK.HIST.find(e=>e.k==='death'&&e.n===old),end=G.evT(ev);while(G.S().t<end){G.day();for(const q of ['evQ','sceneQ','battleQ','propQ','prisonQ','observerQ'])G.S()[q]=[];}const g=G.genByName(name);assert.ok(g&&!g.dead);assert.equal(g.loc,place);assert.notEqual(g.loc,wrong);assert.equal(G.S().clans[g.clan].leader,g.id);assert.ok(ev.successorSource);assert.equal(ev.appear.split('@')[1],place);}
+const end=G.evT({d:TK.lunarDate(1575,5,8)});while(G.S().t<end){G.day();for(const q of ['evQ','sceneQ','battleQ','propQ','prisonQ','observerQ'])G.S()[q]=[];}const g=G.genByName('武田勝頼'),u=G.S().units.find(u=>u.gens.includes(g.id));assert.equal(u.origin,'tsutsuji');assert.equal(u.path[0],'tsutsuji');assert.ok(u.schedule.start<=u.schedule.end);console.log('PASS: two sourced heir placements and Katsuyori departure origin');

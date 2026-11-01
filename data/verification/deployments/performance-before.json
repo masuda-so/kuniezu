@@ -1,0 +1,320 @@
+{
+  "environment": {
+    "baseline": "/var/folders/p6/_cz1nnqd7ksfd45n2t859zvw0000gn/T/kuniezu-all-battles-9vbzwj2s",
+    "viewport": [
+      1400,
+      950
+    ],
+    "zoom": 5,
+    "terrainBeforeWait": {
+      "loaded": 47,
+      "failed": 1,
+      "pending": 236,
+      "running": 6,
+      "zoom": 11,
+      "cached": 284,
+      "revision": 47,
+      "provider": "GSI hillshademap (Japan) / Mapzen (other areas)",
+      "gsiLoaded": 11
+    },
+    "terrainReady": {
+      "loaded": 261,
+      "failed": 29,
+      "pending": 0,
+      "running": 0,
+      "zoom": 11,
+      "cached": 284,
+      "revision": 261,
+      "provider": "GSI hillshademap (Japan) / Mapzen (other areas)",
+      "gsiLoaded": 113
+    }
+  },
+  "play": {
+    "terrainAfter": {
+      "loaded": 261,
+      "failed": 29,
+      "pending": 0,
+      "running": 0,
+      "zoom": 11,
+      "cached": 284,
+      "revision": 261,
+      "provider": "GSI hillshademap (Japan) / Mapzen (other areas)",
+      "gsiLoaded": 113
+    },
+    "baseCache": null,
+    "metrics": [
+      {
+        "name": "LayoutDuration",
+        "delta": 0.033343999999999985
+      },
+      {
+        "name": "RecalcStyleDuration",
+        "delta": 0.005015
+      },
+      {
+        "name": "DevToolsCommandDuration",
+        "delta": 0.003047999999999995
+      },
+      {
+        "name": "ScriptDuration",
+        "delta": 0.242178
+      },
+      {
+        "name": "V8CompileDuration",
+        "delta": 0
+      },
+      {
+        "name": "TaskDuration",
+        "delta": 0.8815450000000009
+      },
+      {
+        "name": "TaskOtherDuration",
+        "delta": 0.5979599999999996
+      }
+    ],
+    "drawBefore": {
+      "base": 98,
+      "top": 99
+    },
+    "drawAfter": {
+      "base": 100,
+      "top": 218
+    },
+    "cpu": [
+      [
+        "(idle) :0",
+        3107.5979999999945
+      ],
+      [
+        "(program) :0",
+        698.8669999999986
+      ],
+      [
+        "clip :0",
+        43.648
+      ],
+      [
+        "fmt ui.js:4",
+        31.566999999999993
+      ],
+      [
+        "renderTop ui.js:602",
+        29.806
+      ],
+      [
+        "strokeText :0",
+        18.271
+      ],
+      [
+        "narrowTL ui.js:84",
+        14.857
+      ],
+      [
+        "fillText :0",
+        13.568
+      ],
+      [
+        "roadLabelsTop ui.js:127",
+        13.534
+      ],
+      [
+        "drawTop ui.js:295",
+        12.214
+      ],
+      [
+        "at ui.js:129",
+        12.039
+      ],
+      [
+        "clanCastles engine.js:268",
+        7.997999999999999
+      ],
+      [
+        "measureText :0",
+        7.534
+      ],
+      [
+        "loop ui.js:507",
+        7.5280000000000005
+      ],
+      [
+        "contains :0",
+        6.005
+      ],
+      [
+        "renderTL ui.js:567",
+        5.654999999999999
+      ],
+      [
+        "drawYosho ui.js:271",
+        5.163
+      ],
+      [
+        "save :0",
+        4.498
+      ],
+      [
+        "(garbage collector) :0",
+        3.195
+      ],
+      [
+        "arcTo :0",
+        3.033
+      ],
+      [
+        "castleIcon ui.js:245",
+        3.019
+      ],
+      [
+        "plate ui.js:260",
+        3.019
+      ],
+      [
+        "translate :0",
+        3.005
+      ],
+      [
+        "requestAnimationFrame :0",
+        2.996
+      ],
+      [
+        " engine.js:278",
+        2.923
+      ]
+    ]
+  },
+  "pan": {
+    "terrainAfter": {
+      "loaded": 261,
+      "failed": 29,
+      "pending": 0,
+      "running": 0,
+      "zoom": 11,
+      "cached": 284,
+      "revision": 261,
+      "provider": "GSI hillshademap (Japan) / Mapzen (other areas)",
+      "gsiLoaded": 113
+    },
+    "baseCache": null,
+    "metrics": [
+      {
+        "name": "LayoutDuration",
+        "delta": 0
+      },
+      {
+        "name": "RecalcStyleDuration",
+        "delta": 0.0005149999999999981
+      },
+      {
+        "name": "DevToolsCommandDuration",
+        "delta": 0.00370899999999999
+      },
+      {
+        "name": "ScriptDuration",
+        "delta": 0.07934700000000028
+      },
+      {
+        "name": "V8CompileDuration",
+        "delta": 0
+      },
+      {
+        "name": "TaskDuration",
+        "delta": 1.8044649999999987
+      },
+      {
+        "name": "TaskOtherDuration",
+        "delta": 1.7208939999999995
+      }
+    ],
+    "drawBefore": {
+      "base": 100,
+      "top": 218
+    },
+    "drawAfter": {
+      "base": 124,
+      "top": 242
+    },
+    "cpu": [
+      [
+        "(program) :0",
+        1748.867000000002
+      ],
+      [
+        "(idle) :0",
+        222.13599999999997
+      ],
+      [
+        "clip :0",
+        35.674
+      ],
+      [
+        "(garbage collector) :0",
+        9.360999999999999
+      ],
+      [
+        "measureText :0",
+        7.526
+      ],
+      [
+        "drawBorders ui.js:109",
+        4.529
+      ],
+      [
+        "drawTop ui.js:295",
+        3.4130000000000003
+      ],
+      [
+        "strokeText :0",
+        3.017
+      ],
+      [
+        "fill :0",
+        3.0149999999999997
+      ],
+      [
+        "drawBase ui.js:181",
+        3.013
+      ],
+      [
+        "fmt ui.js:4",
+        2.993
+      ],
+      [
+        "drawRoads ui.js:142",
+        2.556
+      ],
+      [
+        "loop ui.js:507",
+        1.517
+      ],
+      [
+        "createPattern :0",
+        1.511
+      ],
+      [
+        "plate ui.js:260",
+        1.509
+      ],
+      [
+        "roadLabelsTop ui.js:127",
+        1.505
+      ],
+      [
+        "narrowTL ui.js:84",
+        1.503
+      ],
+      [
+        "drawWaterEvidence ui.js:167",
+        1.503
+      ],
+      [
+        "at ui.js:129",
+        1.493
+      ],
+      [
+        "fitsP ui.js:277",
+        1.271
+      ]
+    ]
+  }
+}

@@ -1,0 +1,687 @@
+{
+  "scope": "全登録描画街道の向き・有限値・位置不変。史実検証や実機FPS測定ではない。",
+  "roads": 85,
+  "samples": 13685,
+  "result": [
+    {
+      "name": "東海道",
+      "points": 1865,
+      "rawVariation": 77.93635380312351,
+      "distantVariation": 5.704272861009372,
+      "nearVariation": 54.47139382833963,
+      "coldAndWarmMs": 39.05379199999993
+    },
+    {
+      "name": "東山道",
+      "points": 5426,
+      "rawVariation": 96.00530315660774,
+      "distantVariation": 15.000986754491091,
+      "nearVariation": 78.97472012818889,
+      "coldAndWarmMs": 70.34962499999983
+    },
+    {
+      "name": "鎌倉街道",
+      "points": 943,
+      "rawVariation": 51.783185494710764,
+      "distantVariation": 2.7570287656991153,
+      "nearVariation": 34.15748672005855,
+      "coldAndWarmMs": 39.21183300000007
+    },
+    {
+      "name": "甲州道",
+      "points": 1677,
+      "rawVariation": 77.23312584734762,
+      "distantVariation": 3.3250391642759065,
+      "nearVariation": 52.474814346862466,
+      "coldAndWarmMs": 53.42275000000018
+    },
+    {
+      "name": "北陸道",
+      "points": 5260,
+      "rawVariation": 117.46566246565058,
+      "distantVariation": 14.977772985201163,
+      "nearVariation": 106.33446090282882,
+      "coldAndWarmMs": 69.11341700000003
+    },
+    {
+      "name": "北国街道（信濃）",
+      "points": 1153,
+      "rawVariation": 81.58837590060364,
+      "distantVariation": 3.6697719460717737,
+      "nearVariation": 42.03392162690728,
+      "coldAndWarmMs": 48.096542
+    },
+    {
+      "name": "三国峠道",
+      "points": 2452,
+      "rawVariation": 80.94766631046568,
+      "distantVariation": 7.946317561005498,
+      "nearVariation": 67.50946361680296,
+      "coldAndWarmMs": 83.11099999999988
+    },
+    {
+      "name": "奥州道",
+      "points": 4881,
+      "rawVariation": 92.01563170723813,
+      "distantVariation": 9.844000774242689,
+      "nearVariation": 70.34820017565748,
+      "coldAndWarmMs": 44.12370800000008
+    },
+    {
+      "name": "羽州道",
+      "points": 5126,
+      "rawVariation": 111.95180310836896,
+      "distantVariation": 19.542285005806185,
+      "nearVariation": 104.47458489565074,
+      "coldAndWarmMs": 68.49495800000022
+    },
+    {
+      "name": "山陽道",
+      "points": 5419,
+      "rawVariation": 97.17266785812585,
+      "distantVariation": 12.975988601142367,
+      "nearVariation": 85.69965076773946,
+      "coldAndWarmMs": 63.77666700000009
+    },
+    {
+      "name": "山陰道",
+      "points": 7018,
+      "rawVariation": 124.63115783382219,
+      "distantVariation": 15.336935686010873,
+      "nearVariation": 111.74450623930596,
+      "coldAndWarmMs": 84.82037499999979
+    },
+    {
+      "name": "若狭街道",
+      "points": 1681,
+      "rawVariation": 96.27258126007538,
+      "distantVariation": 6.068898767849296,
+      "nearVariation": 72.60181226229257,
+      "coldAndWarmMs": 111.10004200000003
+    },
+    {
+      "name": "伊勢路",
+      "points": 873,
+      "rawVariation": 60.44323820589241,
+      "distantVariation": 2.5319166452952087,
+      "nearVariation": 30.23152790139522,
+      "coldAndWarmMs": 47.254875000000084
+    },
+    {
+      "name": "熊野街道",
+      "points": 3511,
+      "rawVariation": 113.79645325080149,
+      "distantVariation": 8.237123833826967,
+      "nearVariation": 87.39112456625304,
+      "coldAndWarmMs": 96.40916599999991
+    },
+    {
+      "name": "南海道",
+      "points": 2796,
+      "rawVariation": 105.58721289661462,
+      "distantVariation": 8.518610107892936,
+      "nearVariation": 82.23761107230447,
+      "coldAndWarmMs": 79.10075000000006
+    },
+    {
+      "name": "土佐道",
+      "points": 3192,
+      "rawVariation": 121.0155135032608,
+      "distantVariation": 7.391635653818565,
+      "nearVariation": 86.51483927700598,
+      "coldAndWarmMs": 112.46375000000035
+    },
+    {
+      "name": "西海道",
+      "points": 3819,
+      "rawVariation": 114.50878184902741,
+      "distantVariation": 10.597086566050724,
+      "nearVariation": 93.1022726158944,
+      "coldAndWarmMs": 76.45991600000025
+    },
+    {
+      "name": "豊後道",
+      "points": 5221,
+      "rawVariation": 108.88708845984974,
+      "distantVariation": 12.481117226707207,
+      "nearVariation": 89.45712934025383,
+      "coldAndWarmMs": 76.97849999999971
+    },
+    {
+      "name": "長崎路",
+      "points": 1456,
+      "rawVariation": 90.70254636636821,
+      "distantVariation": 4.8916229208251885,
+      "nearVariation": 61.867962008520955,
+      "coldAndWarmMs": 79.58904200000006
+    },
+    {
+      "name": "北国街道（近江）",
+      "points": 1643,
+      "rawVariation": 86.75092957887517,
+      "distantVariation": 9.835936715273823,
+      "nearVariation": 57.40644528927344,
+      "coldAndWarmMs": 131.3041659999999
+    },
+    {
+      "name": "北国脇往還",
+      "points": 296,
+      "rawVariation": 38.04336123217757,
+      "distantVariation": 1.2390384393296632,
+      "nearVariation": 21.260627340289147,
+      "coldAndWarmMs": 46.83845900000006
+    },
+    {
+      "name": "塩津街道",
+      "points": 73,
+      "rawVariation": 8.576154887237168,
+      "distantVariation": 0,
+      "nearVariation": 2.929851480999077,
+      "coldAndWarmMs": 17.008375000000342
+    },
+    {
+      "name": "九里半街道",
+      "points": 181,
+      "rawVariation": 29.016853140616522,
+      "distantVariation": 0,
+      "nearVariation": 11.97460196780646,
+      "coldAndWarmMs": 42.29920799999991
+    },
+    {
+      "name": "美濃路",
+      "points": 40,
+      "rawVariation": 15.045280642389926,
+      "distantVariation": 0.9456376432385167,
+      "nearVariation": 9.348408440346414,
+      "coldAndWarmMs": 4.922500000000127
+    },
+    {
+      "name": "岐阜街道",
+      "points": 113,
+      "rawVariation": 17.451714634103798,
+      "distantVariation": 0.4385994559592987,
+      "nearVariation": 8.534067524741632,
+      "coldAndWarmMs": 18.99395800000002
+    },
+    {
+      "name": "川越街道",
+      "points": 270,
+      "rawVariation": 31.993145455714888,
+      "distantVariation": 0.8472487836294915,
+      "nearVariation": 15.564184370653585,
+      "coldAndWarmMs": 37.099583000000166
+    },
+    {
+      "name": "身延道（駿州往還）",
+      "points": 1140,
+      "rawVariation": 69.15038487142867,
+      "distantVariation": 3.457781157560499,
+      "nearVariation": 45.50344844013174,
+      "coldAndWarmMs": 67.57095799999979
+    },
+    {
+      "name": "丹後街道",
+      "points": 677,
+      "rawVariation": 63.55470348306463,
+      "distantVariation": 2.884053220932536,
+      "nearVariation": 35.83577377647613,
+      "coldAndWarmMs": 57.73000000000002
+    },
+    {
+      "name": "東海道（鈴鹿越え）",
+      "points": 302,
+      "rawVariation": 43.186544657488845,
+      "distantVariation": 1.2868370899024564,
+      "nearVariation": 22.005401148153304,
+      "coldAndWarmMs": 37.94870899999978
+    },
+    {
+      "name": "嶺南大路（中路）",
+      "points": 2073,
+      "rawVariation": 94.72372919126279,
+      "distantVariation": 7.382662562195826,
+      "nearVariation": 57.594236123087164,
+      "coldAndWarmMs": 34.6731249999998
+    },
+    {
+      "name": "嶺南左路（東路）",
+      "points": 2699,
+      "rawVariation": 91.82511017467247,
+      "distantVariation": 8.267879135049782,
+      "nearVariation": 74.85302586028712,
+      "coldAndWarmMs": 61.669374999999945
+    },
+    {
+      "name": "嶺南右路（西路）",
+      "points": 2272,
+      "rawVariation": 90.73740358271824,
+      "distantVariation": 7.94218286391115,
+      "nearVariation": 75.61742786277999,
+      "coldAndWarmMs": 37.580417000000125
+    },
+    {
+      "name": "晋州路",
+      "points": 555,
+      "rawVariation": 55.997178690637725,
+      "distantVariation": 2.3207741994590223,
+      "nearVariation": 34.771224345451245,
+      "coldAndWarmMs": 35.690207999999984
+    },
+    {
+      "name": "湖南大路",
+      "points": 1942,
+      "rawVariation": 73.45195669876924,
+      "distantVariation": 4.5962425011313774,
+      "nearVariation": 57.057749939925245,
+      "coldAndWarmMs": 33.71904199999972
+    },
+    {
+      "name": "八良峙越え",
+      "points": 597,
+      "rawVariation": 58.83955748323395,
+      "distantVariation": 2.4086989796982032,
+      "nearVariation": 29.81581537742789,
+      "coldAndWarmMs": 37.312417000000096
+    },
+    {
+      "name": "義州大路",
+      "points": 147,
+      "rawVariation": 12.412005309580893,
+      "distantVariation": 6.851267375554745,
+      "nearVariation": 12.412005309578724,
+      "coldAndWarmMs": 2.796375000000353
+    },
+    {
+      "name": "海州路",
+      "points": 492,
+      "rawVariation": 62.84062906947898,
+      "distantVariation": 2.2092155482311706,
+      "nearVariation": 31.480115319066826,
+      "coldAndWarmMs": 32.095958999999766
+    },
+    {
+      "name": "関北路",
+      "points": 91,
+      "rawVariation": 3.18532505736166,
+      "distantVariation": 2.7438830520840076,
+      "nearVariation": 3.1853250573595613,
+      "coldAndWarmMs": 2.4806250000001455
+    },
+    {
+      "name": "永川路",
+      "points": 360,
+      "rawVariation": 32.659241653380015,
+      "distantVariation": 0.8693562232033059,
+      "nearVariation": 13.626160752031021,
+      "coldAndWarmMs": 48.44358300000022
+    },
+    {
+      "name": "関東路",
+      "points": 1321,
+      "rawVariation": 110.5922007198822,
+      "distantVariation": 6.6085379565209355,
+      "nearVariation": 70.2224786151489,
+      "coldAndWarmMs": 37.00224999999955
+    },
+    {
+      "name": "越後街道",
+      "points": 1856,
+      "rawVariation": 96.53426960301877,
+      "distantVariation": 9.797218555088298,
+      "nearVariation": 69.60581394680392,
+      "coldAndWarmMs": 96.80437500000016
+    },
+    {
+      "name": "米沢街道",
+      "points": 1706,
+      "rawVariation": 85.49404217716084,
+      "distantVariation": 9.96676480847983,
+      "nearVariation": 52.57790805306265,
+      "coldAndWarmMs": 128.128917
+    },
+    {
+      "name": "二本松街道",
+      "points": 914,
+      "rawVariation": 77.98683493664949,
+      "distantVariation": 4.370538951477154,
+      "nearVariation": 55.4137374012136,
+      "coldAndWarmMs": 97.0727910000005
+    },
+    {
+      "name": "白河街道",
+      "points": 1758,
+      "rawVariation": 104.842465494306,
+      "distantVariation": 18.1764389800966,
+      "nearVariation": 69.67459759920426,
+      "coldAndWarmMs": 176.73004200000014
+    },
+    {
+      "name": "浜街道",
+      "points": 1604,
+      "rawVariation": 72.58379424528435,
+      "distantVariation": 4.006999877791518,
+      "nearVariation": 58.858495946644865,
+      "coldAndWarmMs": 38.368209000000206
+    },
+    {
+      "name": "御斎所街道",
+      "points": 789,
+      "rawVariation": 64.72764997578487,
+      "distantVariation": 2.1563849256157686,
+      "nearVariation": 35.400245135393995,
+      "coldAndWarmMs": 70.0185420000007
+    },
+    {
+      "name": "足利道",
+      "points": 512,
+      "rawVariation": 51.116341380161266,
+      "distantVariation": 2.2668177588375054,
+      "nearVariation": 24.89808040981835,
+      "coldAndWarmMs": 37.171291000000565
+    },
+    {
+      "name": "水戸道",
+      "points": 864,
+      "rawVariation": 60.12042720777294,
+      "distantVariation": 2.982301427358956,
+      "nearVariation": 37.5110321034189,
+      "coldAndWarmMs": 36.25837500000034
+    },
+    {
+      "name": "房総往還",
+      "points": 955,
+      "rawVariation": 64.55405338099114,
+      "distantVariation": 3.7296692808971654,
+      "nearVariation": 43.37104435866143,
+      "coldAndWarmMs": 48.122041999999965
+    },
+    {
+      "name": "岩付道",
+      "points": 283,
+      "rawVariation": 37.86287680374365,
+      "distantVariation": 1.7753503096917527,
+      "nearVariation": 18.97248064115789,
+      "coldAndWarmMs": 29.29870800000026
+    },
+    {
+      "name": "秩父道",
+      "points": 298,
+      "rawVariation": 34.78062874247494,
+      "distantVariation": 0.7999181068159258,
+      "nearVariation": 15.559468871732552,
+      "coldAndWarmMs": 41.5443750000004
+    },
+    {
+      "name": "三州街道",
+      "points": 3149,
+      "rawVariation": 101.16687416141392,
+      "distantVariation": 10.641203767685399,
+      "nearVariation": 78.15191033593246,
+      "coldAndWarmMs": 235.1680839999999
+    },
+    {
+      "name": "秋葉街道",
+      "points": 1894,
+      "rawVariation": 108.84033671611887,
+      "distantVariation": 3.553703257308166,
+      "nearVariation": 62.345779360806965,
+      "coldAndWarmMs": 107.00112500000068
+    },
+    {
+      "name": "杖突越え",
+      "points": 1254,
+      "rawVariation": 79.88236697454644,
+      "distantVariation": 2.448905777474013,
+      "nearVariation": 41.04356055696294,
+      "coldAndWarmMs": 88.51116699999966
+    },
+    {
+      "name": "足柄道",
+      "points": 770,
+      "rawVariation": 62.95214928555069,
+      "distantVariation": 2.368786516328359,
+      "nearVariation": 33.90965884353584,
+      "coldAndWarmMs": 58.83745800000088
+    },
+    {
+      "name": "越中街道（飛騨）",
+      "points": 939,
+      "rawVariation": 77.42841917005231,
+      "distantVariation": 2.479187022907664,
+      "nearVariation": 39.06332944927566,
+      "coldAndWarmMs": 77.71395799999937
+    },
+    {
+      "name": "飛騨街道",
+      "points": 1623,
+      "rawVariation": 101.99696621991767,
+      "distantVariation": 4.645615423084717,
+      "nearVariation": 64.67792844822574,
+      "coldAndWarmMs": 78.45074999999997
+    },
+    {
+      "name": "野麦街道",
+      "points": 953,
+      "rawVariation": 73.72855488695892,
+      "distantVariation": 2.795338686664582,
+      "nearVariation": 35.91610198647151,
+      "coldAndWarmMs": 78.74775000000045
+    },
+    {
+      "name": "白山道",
+      "points": 1341,
+      "rawVariation": 87.46446060460978,
+      "distantVariation": 4.13324435154564,
+      "nearVariation": 49.257084302687204,
+      "coldAndWarmMs": 110.53854199999932
+    },
+    {
+      "name": "能登街道",
+      "points": 335,
+      "rawVariation": 34.31766379693517,
+      "distantVariation": 1.0815560447523807,
+      "nearVariation": 15.255345062632136,
+      "coldAndWarmMs": 26.318624999999884
+    },
+    {
+      "name": "周山街道",
+      "points": 1372,
+      "rawVariation": 96.76839224375757,
+      "distantVariation": 4.652048579698825,
+      "nearVariation": 60.144789933904576,
+      "coldAndWarmMs": 88.02370900000005
+    },
+    {
+      "name": "伊勢本街道",
+      "points": 937,
+      "rawVariation": 61.26167138405819,
+      "distantVariation": 2.163783837019407,
+      "nearVariation": 37.1767979642823,
+      "coldAndWarmMs": 65.37424999999985
+    },
+    {
+      "name": "暗越奈良街道",
+      "points": 332,
+      "rawVariation": 32.593616664962106,
+      "distantVariation": 1.084964661363843,
+      "nearVariation": 18.218319692049256,
+      "coldAndWarmMs": 54.97899999999936
+    },
+    {
+      "name": "伊賀越え",
+      "points": 576,
+      "rawVariation": 41.994323345024235,
+      "distantVariation": 2.012700286637323,
+      "nearVariation": 23.782323264178807,
+      "coldAndWarmMs": 59.55283299999974
+    },
+    {
+      "name": "但馬街道",
+      "points": 908,
+      "rawVariation": 70.31957153070901,
+      "distantVariation": 2.6126803244148076,
+      "nearVariation": 38.233021980303135,
+      "coldAndWarmMs": 60.70954100000017
+    },
+    {
+      "name": "因幡街道",
+      "points": 1419,
+      "rawVariation": 87.24888714694258,
+      "distantVariation": 3.4077655088289527,
+      "nearVariation": 53.32760348554476,
+      "coldAndWarmMs": 86.78083400000014
+    },
+    {
+      "name": "出雲街道",
+      "points": 2431,
+      "rawVariation": 90.25677815597521,
+      "distantVariation": 7.064550912903364,
+      "nearVariation": 64.53201321961525,
+      "coldAndWarmMs": 87.75279099999989
+    },
+    {
+      "name": "松山往来",
+      "points": 844,
+      "rawVariation": 59.371521124951165,
+      "distantVariation": 3.440474301806617,
+      "nearVariation": 33.42744159139141,
+      "coldAndWarmMs": 82.22279200000048
+    },
+    {
+      "name": "石見路",
+      "points": 2016,
+      "rawVariation": 96.24833154172725,
+      "distantVariation": 5.688932212705289,
+      "nearVariation": 60.36460934900783,
+      "coldAndWarmMs": 117.60541699999976
+    },
+    {
+      "name": "銀山街道",
+      "points": 788,
+      "rawVariation": 74.23437515484227,
+      "distantVariation": 2.252813102577641,
+      "nearVariation": 32.960849023585176,
+      "coldAndWarmMs": 74.97816700000021
+    },
+    {
+      "name": "土佐北街道",
+      "points": 1651,
+      "rawVariation": 95.55454292494198,
+      "distantVariation": 5.093944594620079,
+      "nearVariation": 53.0696816357796,
+      "coldAndWarmMs": 149.7782500000003
+    },
+    {
+      "name": "土佐東街道",
+      "points": 4691,
+      "rawVariation": 112.13151709604614,
+      "distantVariation": 18.645269121975023,
+      "nearVariation": 90.24265207128644,
+      "coldAndWarmMs": 201.32925000000068
+    },
+    {
+      "name": "豊後街道",
+      "points": 1378,
+      "rawVariation": 75.5675346381364,
+      "distantVariation": 3.3142817373580553,
+      "nearVariation": 43.44333649107145,
+      "coldAndWarmMs": 73.83662499999991
+    },
+    {
+      "name": "日向街道",
+      "points": 3223,
+      "rawVariation": 101.38363160079776,
+      "distantVariation": 7.868952581217914,
+      "nearVariation": 80.77402534118623,
+      "coldAndWarmMs": 91.34429099999943
+    },
+    {
+      "name": "人吉街道",
+      "points": 1279,
+      "rawVariation": 83.2113598035344,
+      "distantVariation": 2.7994747897893757,
+      "nearVariation": 46.92963208800689,
+      "coldAndWarmMs": 110.07545800000025
+    },
+    {
+      "name": "唐津街道",
+      "points": 1378,
+      "rawVariation": 78.97370253882174,
+      "distantVariation": 3.2150502062801256,
+      "nearVariation": 41.42372622137261,
+      "coldAndWarmMs": 81.01770800000031
+    },
+    {
+      "name": "柳川往還",
+      "points": 104,
+      "rawVariation": 20.813599416831902,
+      "distantVariation": 0.18254184578699606,
+      "nearVariation": 9.187551848935728,
+      "coldAndWarmMs": 23.128665999999612
+    },
+    {
+      "name": "秋田街道",
+      "points": 836,
+      "rawVariation": 69.81086354267806,
+      "distantVariation": 3.4369167220521453,
+      "nearVariation": 41.24060128043209,
+      "coldAndWarmMs": 77.07858300000044
+    },
+    {
+      "name": "六十里越街道",
+      "points": 24,
+      "rawVariation": 0.5615707001542637,
+      "distantVariation": 0.5615707001473713,
+      "nearVariation": 0.561570700151909,
+      "coldAndWarmMs": 2.303834000000279
+    },
+    {
+      "name": "出羽浜街道",
+      "points": 1126,
+      "rawVariation": 72.81948478952083,
+      "distantVariation": 3.8068023992876365,
+      "nearVariation": 38.577283636162306,
+      "coldAndWarmMs": 86.3110000000006
+    },
+    {
+      "name": "鹿角街道",
+      "points": 1321,
+      "rawVariation": 87.54475810021242,
+      "distantVariation": 4.853947271316237,
+      "nearVariation": 57.42245718282329,
+      "coldAndWarmMs": 62.738916000000245
+    },
+    {
+      "name": "京・大津道",
+      "points": 26,
+      "rawVariation": 9.367471329121464,
+      "distantVariation": 0.5950774112328303,
+      "nearVariation": 7.302293161237056,
+      "coldAndWarmMs": 5.079666999999972
+    },
+    {
+      "name": "伊那街道（豊川・新城）",
+      "points": 1064,
+      "rawVariation": 25.44020282652739,
+      "distantVariation": 0.4253868479822468,
+      "nearVariation": 10.27232508285369,
+      "coldAndWarmMs": 202.35466700000052
+    },
+    {
+      "name": "長篠への道",
+      "points": 102,
+      "rawVariation": 3.4998001644247925,
+      "distantVariation": 0,
+      "nearVariation": 1.5784488133763133,
+      "coldAndWarmMs": 22.545540999999503
+    },
+    {
+      "name": "作手への道",
+      "points": 2691,
+      "rawVariation": 65.35679007329142,
+      "distantVariation": 2.305566914712757,
+      "nearVariation": 28.985132684689695,
+      "coldAndWarmMs": 312.4802499999996
+    }
+  ]
+}

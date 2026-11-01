@@ -1,0 +1,24 @@
+{
+  "id": "fukasaka-corridor",
+  "entity": "road:塩津街道",
+  "predicate": "passes-through",
+  "value": [
+    "塩津",
+    "深坂峠",
+    "敦賀"
+  ],
+  "validYears": [
+    1560,
+    1615
+  ],
+  "source": "fukasakaCourse",
+  "locator": "コース図・古道の沿革",
+  "gameBindings": [
+    "TK.ROADS:塩津街道"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "sourceUrl": "https://www.city.nagahama.lg.jp/cmsfiles/contents/0000005/5439/hukasakamap.pdf",
+  "checked": "2026-11-01",
+  "uncertainty": null
+}

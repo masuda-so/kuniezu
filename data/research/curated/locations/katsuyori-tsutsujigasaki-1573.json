@@ -1,0 +1,22 @@
+{
+  "id": "location:katsuyori-tsutsujigasaki-1573",
+  "person": "person:takeda-katsuyori",
+  "place": "place:tsutsujigasaki",
+  "relation": "residence-transfer",
+  "time": {
+    "kind": "year-window",
+    "year": 1573,
+    "calendar": "CE-year",
+    "precision": "year"
+  },
+  "source": "katsuyoriResidence",
+  "sourceUrl": "https://kawanakajima.nagano.jp/character/takeda-katsuyori/",
+  "locator": "元亀4年継承後に躑躅ヶ崎館へ入る",
+  "uncertainty": "正確な入館日と日々の所在は不明。",
+  "recordType": "sourced-location-observation",
+  "status": "verified-in-specified-scope",
+  "recordedAt": "2026-11-01",
+  "gameBindings": [
+    "TK.PERSON_RESIDENCE_EVIDENCE"
+  ]
+}

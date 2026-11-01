@@ -1,0 +1,29 @@
+{
+  "scope": "安芸城の位置訂正提案と周辺本山・岡豊の現行読込後座標の独立照合。ゲーム変更はrootが統合する。",
+  "rows": [
+    {
+      "name": "安芸城",
+      "point": [
+        133.91259,
+        33.519865
+      ],
+      "independentDifferenceMetres": 37.16493322672842
+    },
+    {
+      "name": "本山城",
+      "point": [
+        133.586708,
+        33.754089
+      ],
+      "independentDifferenceMetres": 105.46003775843032
+    },
+    {
+      "name": "岡豊城",
+      "point": [
+        133.622552,
+        33.594974
+      ],
+      "independentDifferenceMetres": 38.7589947542537
+    }
+  ]
+}

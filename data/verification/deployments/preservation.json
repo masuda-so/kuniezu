@@ -1,0 +1,148 @@
+{
+  "backup": "/var/folders/p6/_cz1nnqd7ksfd45n2t859zvw0000gn/T/kuniezu-all-battles-9vbzwj2s",
+  "originalCount": 172,
+  "missingOriginals": [],
+  "backupHashMismatches": [],
+  "changed": [
+    {
+      "path": "game/ui.js",
+      "before": "f6af434c0aa87794e2cec7db127ab72c715d9b8664432b321058b4ba3191316b",
+      "after": "e6d8eb9f6abe98015c2519e6fcc1ae60e12fccf26f7b1ee21c19135d66198748"
+    },
+    {
+      "path": "game/index.html",
+      "before": "24a21f1efa99a29471b1c5c11c2572a42b5f64cd56ebf0c4b1ad3b6eaef33309",
+      "after": "e5107941208c69cd3d21220f3b5533ac53dd3c0468e676b652465641d69dcbca"
+    },
+    {
+      "path": "game/korea-coast.js",
+      "before": "326377aa0fa68e3df15bfe2845d49b7a5259ac1d0c18ef5ab7c571c6509b532e",
+      "after": "4a5e95c4aa362e2b50d6f46ac074931374c373d370237ad3b33a4990862b0f65"
+    },
+    {
+      "path": "game/battle-catalog.js",
+      "before": "e9790398202e8de07a8dd56e24c7da0c3f311df338c67eb29bc5ebb7d1d8df80",
+      "after": "ec655cd54c2e0d35c940a3dee35a8c06e8ae371fa8def682ccbd354e87948fd9"
+    },
+    {
+      "path": "game/battle-atlas-policy.js",
+      "before": "5f22c11ac85eb161aa36e8904e5739b82b0a7cc4229178852a2e44141454b9e9",
+      "after": "4e57575f6fad1ee9da9f811f6cf87f7400bf5d343b2b33098df5e38381556269"
+    },
+    {
+      "path": "game/road-evidence-update.js",
+      "before": "3b83539a989bd0e52738c92fe864ddbd5090d3946c6a34938344c868d83b6dc6",
+      "after": "03a389a21cfaf017bffe063efd51298bc7d2a26876f409a7fdc4d1473dc36123"
+    },
+    {
+      "path": "game/water-evidence.js",
+      "before": "c0826b9bc4556601d0bc921e65e7562daadb5b69824d5ab62926dbb75a49b4ea",
+      "after": "fdab52a8a83bfabb3cca34280af6cfb6959acf35c6bb53f4385c49f4f4927ff9"
+    },
+    {
+      "path": "game/battle-atlas-data.js",
+      "before": "c08faa2ce58b196f4dcab9bc9d15a1429a662b892eabb1f9ec2ba0ff78b0e8ab",
+      "after": "695a0a4d5f94068a95a0b11955727ba66dede45681f282bc6f43eaf188417eb1"
+    },
+    {
+      "path": "game/terrain-tiles.js",
+      "before": "afc1c2cafc0da83ea45864b0faa4ed8f47e2d4aa12066d6de71561651e3c5140",
+      "after": "9fe6f3853b2ae613e946a608a0fd1af124bf9f7d7b9f69c84a0f0e8824de04e0"
+    },
+    {
+      "path": "game/battle-atlas.js",
+      "before": "df00e54133630d759e5ba486f574966843d231601c03a8b2c8073d56347b17fd",
+      "after": "065e6c4e570f256adb6c5ec9a6d4a4d1f7da4380cee3005cbfcdf781f88b8518"
+    },
+    {
+      "path": "game/licenses/DATA_SOURCES.md",
+      "before": "4080895c0e8502c8380e7b2838a2621f70a941e8ef26eaa25e31427f2ea9b1d1",
+      "after": "e1dc593d3ef5f58b312b1e7e37a1f8db2012cec3ead320611ae493b9e52f1b85"
+    },
+    {
+      "path": "game/atlas/16.json",
+      "before": "782b66d73e3793cf161801757b5ca68cd496615c5d131c4cea5007db28f738f2",
+      "after": "d6f07f6f1f5dc557772c5b1d009a5dcf5d8f828462999e140efd367cc6dec9fa"
+    },
+    {
+      "path": "game/atlas/06.json",
+      "before": "d7c98ea58d46eca5bbc8b6d25b2f6000f0dd83267131d6859b98c222cfbcf381",
+      "after": "d728551dce05ece15021fb14bc60d05289bb6072b2aee72a077af49e35efedc1"
+    },
+    {
+      "path": "game/atlas/12.json",
+      "before": "899ef5c1f7cebb35015a7af5789a5f7b06c8c54bfe771836c8e22c1d29ce1797",
+      "after": "8990b6428ccdfec5de7b58617245655def545dfc55fa5df438b9f3a1f09be072"
+    },
+    {
+      "path": "game/atlas/08.json",
+      "before": "54e7397a02fd397395fa350911a0dfb1d8c425b9436b4f162728cf076421225f",
+      "after": "ea6b3fae033887e39f3144001239709575cbbfb44407c9c29544718928a0b5a5"
+    },
+    {
+      "path": "game/atlas/09.json",
+      "before": "94e8e57bac99a8d65e637deed316565b30d4f3ea15daebb3befbf0df3f0c45fc",
+      "after": "7fbfdf71bdf923bf8d6ce828d979d5290831c2ed2154e56cb653003085de3f03"
+    },
+    {
+      "path": "game/atlas/03.json",
+      "before": "a5382ee3a1955fbc4259ed1bb8898b5c1c2d8c7d3921dcb28344787fb156173c",
+      "after": "9ee605d8d9138595d34502ec8ac5fb321bba2c09635bac7b3b75c1bf61f91476"
+    },
+    {
+      "path": "tools/checks/terrain-transition.cjs",
+      "before": "e60f000c3d843c8abc1c3893873521727694ea515e2b80c5d33fa0eadf9b2eab",
+      "after": "bf7598b77b9b172d57c848ce4f74c016afb5efe0ae3d8b4728eb99b4ef5898e7"
+    },
+    {
+      "path": "tools/checks/atlas-regressions.cjs",
+      "before": "44efedca5f34593e02b1f1706ae32791f9a2212fb9da139342646f8635b47d71",
+      "after": "c7e6b6585fc0026ea9afe9da917bd2a45bbc39535c8782e7ad5d2a6935f4e96b"
+    },
+    {
+      "path": "tools/checks/terrain-cache.cjs",
+      "before": "81f1da57e1152b8c1f54b87a217a3a1af292f060429ad48ad61bd8318096bef7",
+      "after": "ee1d14e64d271442b7b056fe57616be710e464d4cdc0e932f589d4716f1dea2e"
+    },
+    {
+      "path": "tools/checks/README.md",
+      "before": "001dd07a8f17a8747977ad6ca839201339e51036154ca5f62453752b989da85a",
+      "after": "75d934690c6e50820c6262a799936e5077b30fe99f6e6bd45bdad547354e7bea"
+    },
+    {
+      "path": "tools/checks/render-performance.cjs",
+      "before": "fded6cb528be82bb066236124a90fe62d378dbac2fa69c26cefcab1add4ac999",
+      "after": "57a5095d71a4a164a90a2dc4ec1e6a919a00cfac71a79d6c131b5650ac681b44"
+    },
+    {
+      "path": "tools/checks/visual-data.cjs",
+      "before": "7e59f8d05ae016d3ec576c869c3b067cbfa733017481f3cebb9266a1acf63305",
+      "after": "478f73a17166043b9237a282e65e08764e60d83086575c6667613494904a42bb"
+    },
+    {
+      "path": "tools/checks/completion-browser.cjs",
+      "before": "1f45dd38fd690a22a12eb583ec6c2058f0d3696899a5ea0ae7fdbd8df6e4b773",
+      "after": "89aa1999ee13f186a82bd13c2ba47636d8ed2d61d9bb73f5d20200b214bae240"
+    },
+    {
+      "path": "tools/checks/offline.cjs",
+      "before": "8862b917eace0ca7a2884531840124c18189615a744248d91ea808cc49c6e5fe",
+      "after": "5795c7f8b20da141a78284c1a6f02358afd95be2fb6117cbf534950e91fdc665"
+    },
+    {
+      "path": "tools/geo/korea-coast.py",
+      "before": "314b594f7b28985cd3a8cd903e7164eabd0296b57409d203106eef50927075b8",
+      "after": "71446cf2078a685553cc7597cf243baa142f02e3b759a9106d40d799ded7eaae"
+    },
+    {
+      "path": "ATLAS_REPAIR.md",
+      "before": "f240e797d158f83f9e830dabb58c82b5d2b617cef48726b925fbd63c65721a8b",
+      "after": "7d87daf2a33a0f19160f5b832e008a5ef356cd0bbbd0d289d7d576a044207a59"
+    },
+    {
+      "path": "HANDOFF.md",
+      "before": "ea5a0e045f5af505a47d1ec4fa505cae9079fd55d0a98fa5d90b27ef47d18577",
+      "after": "cc7cca2351a11958396da7aac559184103093e5dd2a1e43f6c50ab4d715a2357"
+    }
+  ]
+}

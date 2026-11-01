@@ -1,0 +1,30 @@
+{
+  "id": "nagashino-siege-may8",
+  "entity": "battle:長篠の戦い",
+  "predicate": "documented-siege-phase",
+  "value": {
+    "date": [
+      1575,
+      5,
+      8
+    ],
+    "calendar": "Japanese-lunisolar",
+    "phase": "武田勝頼による長篠城への本格的な攻撃・包囲段階"
+  },
+  "validYears": [
+    1575,
+    1575
+  ],
+  "datePrecision": "lunar-day",
+  "source": "nagashinoOpening",
+  "locator": "第2ケース 長篠の籠城：天正3年5月8日と8～14日の攻撃",
+  "gameBindings": [
+    "G.visualEventTime:武田勝頼@長篠の戦い",
+    "G.scheduleHistorical:武田勝頼@長篠の戦い"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "sourceUrl": "https://www.city.shinshiro.lg.jp/mokuteki/shisetu/shiryokan/nagashinojyoshi/tenjikaisetsu.html",
+  "checked": "2026-11-01",
+  "uncertainty": "同市の観光記事は5月1日、商工会年譜は4月21日包囲・5月8日本格攻撃とする。初期包囲の日を一意確定せず、5月8日の包囲・攻撃段階を採用。途中の逐日経路は確定しない。"
+}

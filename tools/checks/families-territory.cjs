@@ -1,0 +1,18 @@
+/* 登録済み全領土イベントの出典状態と、実際の日別所有者の推移を追う。サーバーを操作しない。 */
+const fs=require('node:fs'),path=require('node:path'),assert=require('node:assert/strict');
+const {G,TK}=require('./history-focus.cjs').model();
+G.newGame('s1582','oda');const go=d=>{const end=G.evT({d});while(G.S().t<end){G.day();G.S().evQ=[];G.S().sceneQ=[];}};
+go([1582,7,2]);assert.ok(G.observerOptions().includes('hashiba'));assert.ok(G.chooseObserver('oda'));go([1582,7,17]);assert.ok(!G.observerOptions().includes('hashiba'),'past formation must not be offered again');
+let s=G.S();const before=JSON.parse(JSON.stringify(s));assert.ok(G.chooseObserver('nobukatsu'));assert.deepEqual(JSON.parse(JSON.stringify(s.castles)),before.castles);assert.deepEqual(JSON.parse(JSON.stringify(s.ally)),before.ally);assert.deepEqual(JSON.parse(JSON.stringify(s.div)),{});assert.equal(s.arcs?.length||0,0);
+go([1582,7,20]);s=G.S();for(const [id,k] of Object.entries({kiyosu:'nobukatsu',gifu:'nobutaka',kannonji:'oda',nochiseyama:'niwa',ishiyama:'ikeda',kyo:'hashiba',yakami:'hashiba',odani:'kshibata'}))assert.equal(s.castles[id].owner,k,id);
+assert.equal(s.clans.oda.cap,'kannonji');assert.equal(G.gen(s.clans.oda.leader).n,'織田秀信');assert.equal(G.gen(s.clans.nobukatsu.leader).n,'織田信雄');assert.equal(G.gen(s.clans.nobutaka.leader).n,'織田信孝');assert.equal(G.preList().length,0);
+s.player='__none';go([1583,6,1]);assert.equal(G.S().castles.gifu.owner,'ikeda');go([1585,7,1]);assert.equal(G.gen(G.S().clans.niwa.leader).n,'丹羽長重');go([1590,9,2]);assert.equal(G.S().clans.nobukatsu.alive,false);go([1592,11,1]);assert.equal(G.S().castles.gifu.owner,'oda');assert.equal(G.gen(G.S().clans.oda.leader).n,'織田秀信');assert.equal(G.S().clans.oda.cap,'gifu');
+console.log('PASS family allocation, root capital/leader, observer-only choice, Ikeda succession, Nobukatsu confiscation, Hidenobu revival');
+G.newGame('s1585','nobukatsu');assert.equal(G.S().castles.kiyosu.owner,'nobukatsu');assert.equal(G.S().castles.gifu.owner,'ikeda');assert.equal(G.S().castles.nochiseyama.owner,'niwa');assert.equal(G.gen(G.S().clans.niwa.leader).n,'丹羽長秀');
+const toka=TK.HIST.find(e=>e.k==='newclan'&&e.clan==='tokugawa');if(toka){G.newGame('s1560','imagawa');go(toka.d);assert.ok(G.S().observerQ?.some(q=>q.parent==='imagawa'&&q.clans.includes('tokugawa')));assert.ok(G.chooseObserver('tokugawa'));assert.deepEqual(JSON.parse(JSON.stringify(G.S().div)),{});}
+console.log('PASS 1585 base allocation and historical observer selection outside the Oda family');
+const entries=TK.HIST.filter(e=>['take','newclan','takeall','absorb'].includes(e.k)||e.take).map(e=>({date:e.d,title:e.title||null,kind:e.k,clan:e.clan,castles:e.castles||[],additional:e.take||null,source:e.source||null,precision:e.datePrecision||null,review:e.source?'出典リンクあり。資料が当該全拠点の日付を裏付けるとは限らない':'出典未登録。史実照合済みとは扱わない'}));
+G.newGame('s1560','oda');s=G.S();s.player='__none';const transitions=[];const end=G.evT({d:[1615,7,1]});let prev=Object.fromEntries(Object.entries(s.castles).map(([id,c])=>[id,c.owner]));
+while(s.t<end){G.day();s.evQ=[];s.sceneQ=[];s.observerQ=[];for(const [id,c]of Object.entries(s.castles)){assert.ok(s.clans[c.owner]?.alive,'inactive owner '+id+' at '+JSON.stringify(G.date()));if(c.owner!==prev[id]){transitions.push({date:G.date(),castle:id,from:prev[id],to:c.owner});prev[id]=c.owner;}}}
+const report={generated:'2026-11-01',scope:'登録済み全領土イベントと日別の実際の所有者変更。全史料との一致を証明する台帳ではない。',events:entries,transitions,alliances:TK.ALLIANCE_HISTORY,water:TK.WATER_SHAPE_AUDIT};
+fs.writeFileSync(path.join(__dirname,'../../data/audits/territory-transfer-review.json'),JSON.stringify(report,null,2)+'\n');console.log('PASS all 1560–1615 ownership states; audited events',entries.length,'transitions',transitions.length);

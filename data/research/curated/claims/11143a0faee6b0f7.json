@@ -1,0 +1,20 @@
+{
+  "id": "nobuyuki-side",
+  "entity": "person:真田信幸",
+  "predicate": "military-side",
+  "value": "徳川方（東軍）",
+  "validYears": [
+    1600,
+    1600
+  ],
+  "source": "sanadaSplit",
+  "locator": "第二次上田合戦",
+  "gameBindings": [
+    "G.armyIdentity"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "sourceUrl": "https://museum.umic.jp/jinbutu/data/053.html",
+  "checked": "2026-11-01",
+  "uncertainty": null
+}

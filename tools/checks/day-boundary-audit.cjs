@@ -1,0 +1,7 @@
+/* 速度上限ではなく、同じ瞬間の表示位置の不連続を測る。サーバー不要。 */
+const fs=require('node:fs'),{G,TK}=require('./history-focus.cjs').model();G.newGame('s1560','oda');G.S().player='__none';G.auditVisualMoves=true;const end=G.evT({d:process.env.END_DATE?process.env.END_DATE.split(',').map(Number):[1615,7,1]}),jumps=[];let samples=0;
+while(G.S().t<end){const s=G.S(),before=new Map();G._visualSampleTime=s.t+1;try{for(const g of s.gens){if(g.dead)continue;const p=G.personPoint(g);if(p)before.set(g.id,{point:p.slice(0,2),name:g.n,loc:g.loc,unit:g.unit});}}finally{delete G._visualSampleTime;}
+ G.day();for(const q of ['evQ','sceneQ','battleQ','propQ','prisonQ','observerQ'])s[q]=[];
+ for(const g of s.gens){const a=before.get(g.id);if(!a||g.dead)continue;const b=G.personPoint(g);if(!b)continue;samples++;const km=Math.hypot(b[0]-a.point[0],b[1]-a.point[1])*111.32/200;if(km>.1)jumps.push({name:g.n,date:G.date(),km:+km.toFixed(3),from:a.point,to:b.slice(0,2),oldLoc:a.loc,newLoc:g.loc,oldUnit:a.unit,newUnit:g.unit,travel:g.tr?{start:g.tr.t0,end:g.tr.t1,planned:g.tr.planned}:null});}
+}
+fs.writeFileSync(process.env.AUDIT_OUTPUT||'data/audits/day-boundary-review'+(process.env.END_DATE?'-'+process.env.END_DATE.replaceAll(',', '-'):'')+'.json',JSON.stringify({scope:'1560～1615年、日末の予測表示位置と翌日冒頭の位置。100m超の不連続。史実の速度や経路の証明ではない。',samples,jumps},null,2));console.log('samples',samples,'jumps',jumps.length);console.log(jumps.slice(0,20));

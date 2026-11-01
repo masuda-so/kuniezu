@@ -1,0 +1,12 @@
+{
+  "scope": "合成経路で効果判定と描画座標の整合を検査。施設の史実位置・役割の確定ではない。",
+  "fixtureFacility": "今庄（燧ヶ城）",
+  "activeEffect": {
+    "name": "今庄（燧ヶ城）",
+    "speed": 1.2,
+    "food": 0.7,
+    "level": 1
+  },
+  "remoteRoadIgnored": true,
+  "nearbyRoadLevel": 3
+}

@@ -1,0 +1,74 @@
+{
+  "date": "2026-11-01",
+  "scope": "全シナリオの登録没年との整合性。没年表の全件史料検証とは別。",
+  "scenarios": [
+    {
+      "scenario": "s1560",
+      "year": 1560,
+      "living": 194,
+      "expiredLiving": []
+    },
+    {
+      "scenario": "s1585",
+      "year": 1585,
+      "living": 171,
+      "expiredLiving": []
+    },
+    {
+      "scenario": "s1570",
+      "year": 1570,
+      "living": 234,
+      "expiredLiving": []
+    },
+    {
+      "scenario": "s1575",
+      "year": 1575,
+      "living": 227,
+      "expiredLiving": []
+    },
+    {
+      "scenario": "s1592",
+      "year": 1592,
+      "living": 138,
+      "expiredLiving": []
+    },
+    {
+      "scenario": "s1600",
+      "year": 1600,
+      "living": 120,
+      "expiredLiving": []
+    },
+    {
+      "scenario": "s1582",
+      "year": 1582,
+      "living": 222,
+      "expiredLiving": []
+    }
+  ],
+  "verified": {
+    "遠山景任": {
+      "deathYear": 1572,
+      "source": "iwamuraLifetime"
+    },
+    "朝倉景鏡": {
+      "deathYear": 1574,
+      "source": "kageakiraLifetime"
+    },
+    "北条氏直": {
+      "deathYear": 1591,
+      "source": "ujinaoLifetime"
+    },
+    "北条氏邦": {
+      "deathYear": 1597,
+      "source": "ujikuniLifetime"
+    },
+    "北条氏房": {
+      "deathYear": 1592,
+      "source": "ujifusaLifetime"
+    },
+    "秋月種実": {
+      "deathYear": 1596,
+      "source": "tanezaneLifetime"
+    }
+  }
+}

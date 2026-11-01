@@ -1,0 +1,211 @@
+{
+  "date": "2026-11-01",
+  "scope": "文書・調査入力・検査出力。配信中のgame内URLは非変更。",
+  "moves": [
+    {
+      "from": "DEPLOYMENT_REVIEW.md",
+      "to": "docs/reports/DEPLOYMENT_REVIEW.md",
+      "sha256Before": "36601b786494e55302ecab12f61553e14cbb518851e1b2be1cbf4e47d3b52511"
+    },
+    {
+      "from": "HISTORICAL_RECHECK.md",
+      "to": "docs/reports/HISTORICAL_RECHECK.md",
+      "sha256Before": "93dd986f39d9314ed97ed5b180cd823a14ff44dfcf1937e5f44659691c289ecc"
+    },
+    {
+      "from": "MARCH_CLOCK_REVIEW.md",
+      "to": "docs/reports/MARCH_CLOCK_REVIEW.md",
+      "sha256Before": "8496bf2098e845e044f95f777a00d888bbf8b5b4128680d20b9432796d43ee52"
+    },
+    {
+      "from": "MAP_HISTORY_REVIEW.md",
+      "to": "docs/reports/MAP_HISTORY_REVIEW.md",
+      "sha256Before": "a8356b64a6ceb3f73208f0394d7e941be1d1fe9083adb70dcc05672fe627f209"
+    },
+    {
+      "from": "HISTORICAL_REVIEW.md",
+      "to": "docs/reports/HISTORICAL_REVIEW.md",
+      "sha256Before": "4a473c3f192a42f698620ce8ecd5441011a0c5d4004f1ac77569ba03fc0586a1"
+    },
+    {
+      "from": "INFRASTRUCTURE_AND_CONTINUITY_REVIEW.md",
+      "to": "docs/reports/INFRASTRUCTURE_AND_CONTINUITY_REVIEW.md",
+      "sha256Before": "8c8b549044651799b56c8b6e80cdb1b5debaa4282cd951520b3b81fec1ea0f85"
+    },
+    {
+      "from": "READABILITY_REPAIR.md",
+      "to": "docs/reports/READABILITY_REPAIR.md",
+      "sha256Before": "f4046eb01a53003cfdf5bf9fadf8b0a196f2653993b4c76a414a14eeb09d257c"
+    },
+    {
+      "from": "ATLAS_REPAIR.md",
+      "to": "docs/reports/ATLAS_REPAIR.md",
+      "sha256Before": "7d87daf2a33a0f19160f5b832e008a5ef356cd0bbbd0d289d7d576a044207a59"
+    },
+    {
+      "from": "VISUAL_REPAIR.md",
+      "to": "docs/reports/VISUAL_REPAIR.md",
+      "sha256Before": "d68ccb24ce78f1aaf0e69dfbea909b3c6cebc6117c38acd6192c21a8d45e8207"
+    },
+    {
+      "from": "IMPROVEMENTS.md",
+      "to": "docs/reports/IMPROVEMENTS.md",
+      "sha256Before": "ad4d3b1508bebc9da51c545f1b13350ffa55dbf842235b1a6af4456b966e1ebb"
+    },
+    {
+      "from": "BORDERS_AND_SUCCESSION_REVIEW.md",
+      "to": "docs/reports/BORDERS_AND_SUCCESSION_REVIEW.md",
+      "sha256Before": "b191d5b2ba922a2e498fa529cfd794bb5eb7b730371ad6839b6f24f5da7536b1"
+    },
+    {
+      "from": "USABILITY_AND_GEOGRAPHY_REVIEW.md",
+      "to": "docs/reports/USABILITY_AND_GEOGRAPHY_REVIEW.md",
+      "sha256Before": "c70ea0b029763d7afa6fca10f98eb468b99bf7033b5ab943a4888d13994cf833"
+    },
+    {
+      "from": "HISTORY_FOCUS_REVIEW.md",
+      "to": "docs/reports/HISTORY_FOCUS_REVIEW.md",
+      "sha256Before": "bbaa09b0bbf267bd07360fdb700697cd883ac1d8918d436e5c95f4f99081a5f4"
+    },
+    {
+      "from": "BATTLE_REVIEW.md",
+      "to": "docs/reports/BATTLE_REVIEW.md",
+      "sha256Before": "751fcfd145855fc9ed18e4e62e02392c193a6b95dfaa69293273b1ff56418dd0"
+    },
+    {
+      "from": "INDIVIDUAL_REPAIR.md",
+      "to": "docs/reports/INDIVIDUAL_REPAIR.md",
+      "sha256Before": "b0ce070e3a914ccf270cf2b2e0d35c26018f490b98c5d305318530ba28ade46c"
+    },
+    {
+      "from": "data/battle-atlas-frames.json",
+      "to": "data/audits/battle-atlas-frames.json",
+      "sha256Before": "1b45fdbd3d0ac138a3f36d9831bcfbfc7b8fdb181ee463f9586a93f4a0a2556b"
+    },
+    {
+      "from": "data/battle-atlas-audit.json",
+      "to": "data/audits/battle-atlas-audit.json",
+      "sha256Before": "b2e868bdf6d1ecee14440dedd60295c037b8da1ebb2f15b782a2a9a3880ac00e"
+    },
+    {
+      "from": "data/road-reference-seeds.json",
+      "to": "data/inputs/road-reference-seeds.json",
+      "sha256Before": "97e449706135c99632fb3f8216137ad9b37b62bb1e470e9f3d901e7f374044a6"
+    },
+    {
+      "from": "data/person-lifetime-review.json",
+      "to": "data/audits/person-lifetime-review.json",
+      "sha256Before": "917abab73cde698921f5fea3968dd6d2156af1f9481fa07ba6c46ca5bb5dac69"
+    },
+    {
+      "from": "data/portrait-audit.json",
+      "to": "data/audits/portrait-audit.json",
+      "sha256Before": "2f9cbb7f0e0554647f3091e12b8e4e747ddfbb19d5677a8471e68c9a233f1d64"
+    },
+    {
+      "from": "data/history-audit.json",
+      "to": "data/audits/history-audit.json",
+      "sha256Before": "c7f53da85ecb4af126dc406a956f5b37c789790eecc6d5477ff227719315ca38"
+    },
+    {
+      "from": "data/visual-repair-changes.json",
+      "to": "data/audits/visual-repair-changes.json",
+      "sha256Before": "4aee94ceebfa2cc184c10b448d53a8fe79daa1c07b91690987c60b691e28910d"
+    },
+    {
+      "from": "data/route-terrain-review.json",
+      "to": "data/audits/route-terrain-review.json",
+      "sha256Before": "ea75117a7dbbac334d13a788a2bee80c915ee073e0089dc87d31bbc274cd2887"
+    },
+    {
+      "from": "data/march-audit.json",
+      "to": "data/audits/march-audit.json",
+      "sha256Before": "6af66c8facbcf15df414d88aa55f7bab9bdcbe40567693b85f8f7afb9d90f8d3"
+    },
+    {
+      "from": "data/deployment-audit.json",
+      "to": "data/audits/deployment-audit.json",
+      "sha256Before": "8d360ab2ab406e47939da13f72b5f674a8596646fe2b546ae3ff93ea8c2f1576"
+    },
+    {
+      "from": "data/battle-rivers-review.json",
+      "to": "data/audits/battle-rivers-review.json",
+      "sha256Before": "2c97e5b565553df9d9fdce55775a9212411ce3b056f71eb40c1743fb259688eb"
+    },
+    {
+      "from": "data/portrait-coverage.json",
+      "to": "data/audits/portrait-coverage.json",
+      "sha256Before": "67c751d77638c8b06ec24179180122c6a73d4a466e9ff620d965b9a41fc8291f"
+    },
+    {
+      "from": "data/history-focus-audit.json",
+      "to": "data/audits/history-focus-audit.json",
+      "sha256Before": "884d20a37577372702841de2bbb273f695434a9914c4539133e00f63274c0faa"
+    },
+    {
+      "from": "data/troops.json",
+      "to": "data/inputs/troops.json",
+      "sha256Before": "9bec7b002bac7302cd5113f423e7324cc3b380bd5600e3b1442c0abebdee9bf9"
+    },
+    {
+      "from": "data/site-coordinate-audit.json",
+      "to": "data/audits/site-coordinate-audit.json",
+      "sha256Before": "0732dbadac7652b933da82b3f096b9c8f8eb5a9568875bef57a124bff1c0dee3"
+    },
+    {
+      "from": "data/map-review-changes.json",
+      "to": "data/audits/map-review-changes.json",
+      "sha256Before": "55f04effdd47b7eb9782cb9c23016976120df5e74814d0c500ecb78e688fa42f"
+    },
+    {
+      "from": "data/modern-road-reference-audit.json",
+      "to": "data/audits/modern-road-reference-audit.json",
+      "sha256Before": "591def1aee8ebe30d3108c73416ae3579ccaef3e0139a03127eab1ff2a51b083"
+    },
+    {
+      "from": "data/scenario-openings-review.json",
+      "to": "data/audits/scenario-openings-review.json",
+      "sha256Before": "10f87833fbed8db9e19a2b02bab1363503dbb4032f24d1dddc33210664b31eac"
+    },
+    {
+      "from": "data/newcastles.json",
+      "to": "data/inputs/newcastles.json",
+      "sha256Before": "9183627123d78c073349edb9363ae22fa72b3b1f3c6306e99e431d26ec2c0c08"
+    },
+    {
+      "from": "data/warp-audit.json",
+      "to": "data/audits/warp-audit.json",
+      "sha256Before": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "from": "data/site-coordinate-input.json",
+      "to": "data/inputs/site-coordinate-input.json",
+      "sha256Before": "be943e59966e491e5cd1ee1d3b43e1ec03ae5011c01bb4cd0b03a1cc5117d61c"
+    },
+    {
+      "from": "data/road-shape-review.json",
+      "to": "data/audits/road-shape-review.json",
+      "sha256Before": "28151b09f05a90f848240854681ea49d0a4ad940cd860b8ae3097944dd09ba6e"
+    },
+    {
+      "from": "data/coverage-review.json",
+      "to": "data/audits/coverage-review.json",
+      "sha256Before": "945bc446c35b544dcaf73d79b3cbc8aad171822d7da80207437aebfed551082a"
+    },
+    {
+      "from": "data/battle-landmarks-input.json",
+      "to": "data/inputs/battle-landmarks-input.json",
+      "sha256Before": "48fd09d827825491a489b7c9603fd392d8fd07db273c65d6c91810d09cebe9d8"
+    },
+    {
+      "from": "data/fukasaka-route-review.json",
+      "to": "data/audits/fukasaka-route-review.json",
+      "sha256Before": "d871c70290be34264c3682da91cd5c838d12ecd59872e58467189f05d664d29a"
+    },
+    {
+      "from": "data/territory-transfer-review.json",
+      "to": "data/audits/territory-transfer-review.json",
+      "sha256Before": "27b6f1dfc6555707c4cebccdb5a0985c055f6ef6a2ac3dd0dd8d54409ca19a3c"
+    }
+  ]
+}

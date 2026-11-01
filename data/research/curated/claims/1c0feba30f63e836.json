@@ -1,0 +1,21 @@
+{
+  "id": "nagashino-phases",
+  "entity": "battle:長篠の戦い",
+  "predicate": "siege-and-field-battle",
+  "value": "5月の長篠城包囲と5月21日の本戦",
+  "calendar": "Japanese-lunisolar",
+  "validYears": [
+    1575,
+    1575
+  ],
+  "source": "nagashinoArchives",
+  "locator": "天正3年5月条",
+  "gameBindings": [
+    "scenario-openings.js"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "sourceUrl": "https://www.archives.go.jp/exhibition/digital/ieyasu/contents1_06/",
+  "checked": "2026-11-01",
+  "uncertainty": null
+}

@@ -1,0 +1,47 @@
+{
+  "date": "2026-11-01",
+  "status": "candidate-not-adopted",
+  "inputs": [
+    {
+      "file": "leaflet-page-2.png",
+      "sha256": "13b791fadc85aab22b1ef6b79629deeb8b18b5c3d2a0977b4a13bb82086b8c3f"
+    },
+    {
+      "file": "modern-lake.geojson",
+      "sha256": "c2dd9dc3bf7ccf93bd92e3c4fb3c644e5892ebab645e58b7fd5f903233a445e2"
+    },
+    {
+      "file": "museum-osm-node.json",
+      "sha256": "7a253226f05b28057dbf77e018fc6c421591b6d48b4916f127884da67b429dec"
+    }
+  ],
+  "sources": [
+    {
+      "url": "https://www.vill.kitashiobara.fukushima.jp/uploaded/attachment/661.pdf",
+      "locator": "2頁、2000px長辺で描画"
+    },
+    {
+      "url": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-W09-v2_3.html",
+      "locator": "国土数値情報W09-05、桧原湖、2005年形状。現代の比較基準"
+    },
+    {
+      "url": "https://api.openstreetmap.org/api/0.6/node/2926990039.json",
+      "locator": "桧原歴史館の現代代表点。図の文字位置と施設位置を同一視しない。"
+    },
+    {
+      "url": "https://dstr.mhr.bosai.go.jp/disaster/sekihi/07_fukushima/07-005.html",
+      "locator": "鳥居、緯度経度2021年12月10日修正"
+    }
+  ],
+  "method": "modern shore similarity registration then old-road colour trace",
+  "limits": [
+    "湖岸フィット残差は独立基準点の測定誤差ではない",
+    "湖面は1888年以降の形成。合わせた現代湖岸を戦国期へ追加しない",
+    "図の点線は原資料の概略表現。細かい画素追跡で精度が上がったことにはならない",
+    "館の文字ラベルや学校記号を建物の制御点として使用しない"
+  ],
+  "runtimeChanged": false,
+  "independentControlReview": "independent-control-review.json",
+  "independentControlScope": "鳥居1点は合わせに未使用。図中記号幅に収まる48.6m差。全線の測量精度ではない。",
+  "connectivityReview": "北部GSI候補は始点と同一連結成分の距離1059mで棄却。欠線を推測直線で補わない。"
+}

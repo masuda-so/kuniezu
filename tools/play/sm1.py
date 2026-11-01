@@ -1,0 +1,6 @@
+shot('m1_title')
+pg.get_by_text('はじめる').click(); pg.wait_for_timeout(700)
+pg.get_by_text('桶狭間前夜').click(); pg.wait_for_timeout(900);shot('m2_pick')
+pg.locator('text=で見守る').first.click(); pg.wait_for_timeout(2500);shot('m3_game')
+pg.get_by_role('button',name='×8').click();pg.wait_for_timeout(6000);shot('m4_run')
+m=pg.evaluate("(()=>{const m=document.querySelector('#modal');return m&&!m.hidden?m.innerText:''})()");print(m[:200])

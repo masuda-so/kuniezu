@@ -1,0 +1,5 @@
+exec(open('/home/claude/play/lib.py').read())
+start();pg.wait_for_timeout(1500)
+pg.evaluate("TKUI.cam(1850,-60,2.2)");pg.wait_for_timeout(700);shot('hk_rel')
+pg.evaluate("TKUI.mapStyle='flat';TKUI.cam(1850,-61,2.2)");pg.wait_for_timeout(900);shot('hk_flat')
+print(pg.evaluate("JSON.stringify(TKGEO.relief||Object.keys(TKGEO))"))

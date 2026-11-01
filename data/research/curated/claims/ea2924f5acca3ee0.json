@@ -1,0 +1,23 @@
+{
+  "id": "lifetime-秋月種実",
+  "entity": "person:秋月種実",
+  "predicate": "death-year",
+  "value": 1596,
+  "validYears": [
+    1596,
+    1596
+  ],
+  "datePrecision": "year",
+  "source": "tanezaneLifetime",
+  "gameBindings": [
+    "TK.DEATH_Y",
+    "G.reconcileHistoricalPeople",
+    "aging"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "sourceUrl": "https://www.city.asakura.lg.jp/site/furusato/1234.html",
+  "locator": "秋月を去って9年後",
+  "checked": "2026-11-01",
+  "uncertainty": "日付は確定しない"
+}

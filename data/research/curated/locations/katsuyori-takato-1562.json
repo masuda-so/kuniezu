@@ -1,0 +1,22 @@
+{
+  "id": "location:katsuyori-takato-1562",
+  "person": "person:takeda-katsuyori",
+  "place": "place:takato",
+  "relation": "held-castle-lordship",
+  "time": {
+    "kind": "year-window",
+    "year": 1562,
+    "calendar": "CE-year",
+    "precision": "year"
+  },
+  "source": "katsuyoriResidence",
+  "sourceUrl": "https://kawanakajima.nagano.jp/character/takeda-katsuyori/",
+  "locator": "永禄5年（1562）伊那高遠城主となる",
+  "uncertainty": "城主就任の年。毎日の現地滞在を示さない。",
+  "recordType": "sourced-location-observation",
+  "status": "verified-in-specified-scope",
+  "recordedAt": "2026-11-01",
+  "gameBindings": [
+    "TK.PERSON_RESIDENCE_EVIDENCE"
+  ]
+}

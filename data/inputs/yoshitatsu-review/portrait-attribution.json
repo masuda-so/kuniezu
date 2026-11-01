@@ -1,0 +1,17 @@
+{
+  "id": "yoshitatsu-portrait-attribution",
+  "entity": "person:斎藤義龍",
+  "predicate": "portrait-attribution",
+  "value": "常在寺所蔵の斎藤義竜像。追福肖像として伝わる。",
+  "source": "yoshitatsuGifuPortrait",
+  "sourceUrl": "https://www.pref.gifu.lg.jp/page/354743.html",
+  "locator": "肖像の所蔵・制作背景の説明",
+  "gameBindings": [
+    "TK.EXTRA_PORTRAITS:斎藤義龍"
+  ],
+  "recordType": "portrait-attribution-observation",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-02",
+  "uncertainty": "肖像の帰属説明であり、生前の容貌の忠実性を保証しない。",
+  "scope": "年代付き歴史イベントではない肖像帰属の観察。制作年を仮置きしない。"
+}

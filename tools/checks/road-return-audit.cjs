@@ -1,0 +1,6 @@
+/* 閉路候補の棚卸し。閉路だけで史実の支線とは判定しない。 */
+const fs=require('node:fs'),{G,TK}=require('./history-focus.cjs').model();G.newGame('s1560','oda');
+const km=(a,b)=>Math.hypot(a[0]-b[0],a[1]-b[1])*111.32/200,rows=[];
+for(const r of G.ROADS){const d=TK.roadDisplay(r),seen=new Map(),cum=[0];for(let i=1;i<d.pts.length;i++)cum.push(cum.at(-1)+km(d.pts[i],d.pts[i-1]));let largest=null;for(let i=0;i<d.pts.length;i++){const k=d.pts[i].join(','),j=seen.get(k);if(j!==undefined&&i-j>2){const length=cum[i]-cum[j];if(length>.5&&(!largest||length>largest.lengthKm))largest={first:j,last:i,lengthKm:length,junction:d.pts[i]};}seen.set(k,i);}if(largest)rows.push({name:r.name,modernReference:!!d.modernReference,...largest});}
+const iw=G.C.iwamura,near=G.ROADS.map(r=>{const d=TK.roadDisplay(r);return {name:r.name,nearestVertexKm:Math.min(...d.pts.map(p=>km(p,[iw.x,iw.y])))}}).sort((a,b)=>a.nearestVertexKm-b.nearestVertexKm).slice(0,4);
+fs.writeFileSync('data/audits/road-return-review.json',JSON.stringify({scope:'描画線が同じ座標へ戻る閉路候補。最寄頂点距離は厳密な線分距離ではない。史料照合前に閉路を自動削除しない。',roads:G.ROADS.length,iwamura:near,loops:rows.sort((a,b)=>b.lengthKm-a.lengthKm)},null,2));console.log(JSON.stringify({roads:G.ROADS.length,closedRouteCandidates:rows.length,iwamura:near,largest:rows.slice(0,4)}));

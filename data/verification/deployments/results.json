@@ -1,0 +1,102 @@
+{
+  "date": "2026-11-01",
+  "url": "http://localhost:8000/index.html",
+  "serverStartedOrStopped": false,
+  "browser": "dedicated temporary Chrome, headless, --disable-gpu",
+  "battles": 111,
+  "participantEntries": 480,
+  "groups": 283,
+  "locatedGroups": 220,
+  "unlocatedGroups": 63,
+  "pan": {
+    "viewport": [
+      1400,
+      950
+    ],
+    "center": [
+      140.35,
+      36.0
+    ],
+    "zoom": 5,
+    "steps": 24,
+    "beforeTaskSeconds": 1.8044649999999987,
+    "afterTaskSeconds": 0.3185000000000002,
+    "reductionPercent": 82.34933900075643,
+    "scope": "one run each after all terrain requests settled; same final geographic data, old ui.js and terrain-tiles.js supplied inside baseline browser only; not FPS or all devices"
+  },
+  "passed": [
+    "deployments.cjs",
+    "atlas-regressions.cjs",
+    "battle-review.cjs",
+    "offline.cjs",
+    "map-history.cjs",
+    "visual-data.cjs",
+    "army-zoom.cjs",
+    "terrain-transition.cjs",
+    "terrain-cache.cjs",
+    "march-audit.cjs",
+    "deployments-browser.cjs",
+    "completion-browser.cjs",
+    "army-zoom-browser.cjs",
+    "startup-browser.cjs",
+    "font-browser.cjs"
+  ],
+  "historicalAudit": {
+    "events": 619,
+    "people": 432,
+    "facilities": 306,
+    "battles": 111,
+    "knownIssues": [
+      "斯波詮直の生年異同（1546年／1560年）"
+    ],
+    "scope": "program checks do not certify historical completeness"
+  },
+  "browserErrors": {
+    "normalFlow": [],
+    "startupTest": "intentional script exception verified separately"
+  },
+  "dataNotes": [
+    "All 111 deployment views were verified again after the final Aizu bounds, startup loading, historic water and font cache changes.",
+    "Displayed coordinates include regional representative points; not all are precise headquarters.",
+    "Both Japanese and Korean terrain/coastlines are modern reference data.",
+    "The final terrain projection and complete-layer invalidation were checked with terrain-transition.cjs, terrain-cache.cjs and the final performance browser after the 111-view run."
+  ],
+  "historicWaters": [
+    "飯沼（湖岸未確定）",
+    "見沼（沼沢地・概略、1629年の溜井造成前）",
+    "椿海（湖岸未確定）"
+  ],
+  "terrainUpdates": {
+    "before": {
+      "loaded": 261,
+      "failed": 29,
+      "pending": 0,
+      "running": 0,
+      "zoom": 11,
+      "cached": 284,
+      "revision": 261,
+      "provider": "GSI hillshademap (Japan) / Mapzen (other areas)",
+      "gsiLoaded": 113
+    },
+    "after": {
+      "loaded": 353,
+      "failed": 49,
+      "pending": 0,
+      "running": 0,
+      "zoom": 11,
+      "cached": 396,
+      "revision": 4,
+      "provider": "GSI hillshademap (Japan) / Mapzen (other areas)",
+      "gsiLoaded": 147
+    },
+    "note": "Measurements start after all terrain requests settle. Failed request causes were not classified. Available detail and overview fallback remain visible."
+  },
+  "finalCodeHashes": {
+    "game/ui.js": "e6d8eb9f6abe98015c2519e6fcc1ae60e12fccf26f7b1ee21c19135d66198748",
+    "game/index.html": "e5107941208c69cd3d21220f3b5533ac53dd3c0468e676b652465641d69dcbca",
+    "game/terrain-tiles.js": "9fe6f3853b2ae613e946a608a0fd1af124bf9f7d7b9f69c84a0f0e8824de04e0",
+    "game/battle-atlas.js": "065e6c4e570f256adb6c5ec9a6d4a4d1f7da4380cee3005cbfcdf781f88b8518",
+    "game/battle-deployments.js": "aaf7686fa2ce41b49206d3c6b6d8504a94bc4d0e249bd56619e2e0bdbaefd68e",
+    "game/water-evidence.js": "fdab52a8a83bfabb3cca34280af6cfb6959acf35c6bb53f4385c49f4f4927ff9"
+  }
+}

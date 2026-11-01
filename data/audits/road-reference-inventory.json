@@ -1,0 +1,1600 @@
+{
+  "scope": "現在登録された近現代参考線の全入力点検。表示側で除去済みの往復も原入力には含む。フラグだけで史実の支線を削除しない。",
+  "roads": 81,
+  "issues": {
+    "waypoint-snap-over-250m": 41,
+    "closed-excursion-over-2km": 49
+  },
+  "rows": [
+    {
+      "name": "東海道",
+      "inputPoints": 2872,
+      "snapEvidenceAvailable": true,
+      "review": {
+        "issues": [
+          "waypoint-snap-over-250m",
+          "closed-excursion-over-2km"
+        ],
+        "maxSnapMetres": 740.4367126,
+        "waypointDistanceMetres": 288867.7490931404,
+        "routeDistanceMetres": 379556.074990919,
+        "largestClosedExcursion": {
+          "first": 2269,
+          "last": 2347,
+          "lengthMetres": 3119.6810286292457,
+          "junction": [
+            139.055322,
+            35.22949
+          ]
+        },
+        "scope": "Modern routing checks only; flagged geometry is retained for review, not deleted as a historical road."
+      }
+    },
+    {
+      "name": "東山道",
+      "inputPoints": 5426,
+      "snapEvidenceAvailable": true,
+      "review": {
+        "issues": [
+          "waypoint-snap-over-250m",
+          "closed-excursion-over-2km"
+        ],
+        "maxSnapMetres": 361.2580103,
+        "waypointDistanceMetres": 446242.695404289,
+        "routeDistanceMetres": 623979.9551186955,
+        "largestClosedExcursion": {
+          "first": 2342,
+          "last": 2629,
+          "lengthMetres": 16290.13240097632,
+          "junction": [
+            137.814665,
+            35.908807
+          ]
+        },
+        "scope": "Modern routing checks only; flagged geometry is retained for review, not deleted as a historical road."
+      }
+    },
+    {
+      "name": "鎌倉街道",
+      "inputPoints": 943,
+      "snapEvidenceAvailable": true,
+      "review": {
+        "issues": [],
+        "maxSnapMetres": 108.5008241,
+        "waypointDistanceMetres": 128684.76530611322,
+        "routeDistanceMetres": 152257.81383041368,
+        "largestClosedExcursion": null,
+        "scope": "Modern routing checks only; flagged geometry is retained for review, not deleted as a historical road."
+      }
+    },
+    {
+      "name": "甲州道",
+      "inputPoints": 1677,
+      "snapEvidenceAvailable": true,
+      "review": {
+        "issues": [
+          "waypoint-snap-over-250m",
+          "closed-excursion-over-2km"
+        ],
+        "maxSnapMetres": 466.7647915,
+        "waypointDistanceMetres": 172640.66651006942,
+        "routeDistanceMetres": 217228.81984901172,
+        "largestClosedExcursion": {
+          "first": 332,
+          "last": 461,
+          "lengthMetres": 5822.6476532069355,
+          "junction": [
+            139.202543,
+            35.624822
+          ]
+        },
+        "scope": "Modern routing checks only; flagged geometry is retained for review, not deleted as a historical road."
+      }
+    },
+    {
+      "name": "北陸道",
+      "inputPoints": 5260,
+      "snapEvidenceAvailable": true,
+      "review": {
+        "issues": [
+          "waypoint-snap-over-250m",
+          "closed-excursion-over-2km"
+        ],
+        "maxSnapMetres": 2029.759147,
+        "waypointDistanceMetres": 479054.2495475061,
+        "routeDistanceMetres": 687273.635969776,
+        "largestClosedExcursion": {
+          "first": 1724,
+          "last": 2250,
+          "lengthMetres": 20979.05152874862,
+          "junction": [
+            136.126245,
+            35.769846
+          ]
+        },
+        "scope": "Modern routing checks only; flagged geometry is retained for review, not deleted as a historical road."
+      }
+    },
+    {
+      "name": "北国街道（信濃）",
+      "inputPoints": 1153,
+      "snapEvidenceAvailable": true,
+      "review": {
+        "issues": [
+          "waypoint-snap-over-250m"
+        ],
+        "maxSnapMetres": 408.0729599,
+        "waypointDistanceMetres": 115496.91553870775,
+        "routeDistanceMetres": 152955.56101978876,
+        "largestClosedExcursion": null,
+        "scope": "Modern routing checks only; flagged geometry is retained for review, not deleted as a historical road."
+      }
+    },
+    {
+      "name": "三国峠道",
+      "inputPoints": 2452,
+      "snapEvidenceAvailable": true,
+      "review": {
+        "issues": [
+          "waypoint-snap-over-250m",
+          "closed-excursion-over-2km"
+        ],
+        "maxSnapMetres": 1140.005977,
+        "waypointDistanceMetres": 189306.05358591504,
+        "routeDistanceMetres": 276768.26737668796,
+        "largestClosedExcursion": {
+          "first": 514,
+          "last": 841,
+          "lengthMetres": 11691.184623028399,
+          "junction": [
+            138.889957,
+            36.752937
+          ]
+        },
+        "scope": "Modern routing checks only; flagged geometry is retained for review, not deleted as a historical road."
+      }
+    },
+    {
+      "name": "奥州道",
+      "inputPoints": 4881,
+      "snapEvidenceAvailable": true,
+      "review": {
+        "issues": [
+          "closed-excursion-over-2km"
+        ],
+        "maxSnapMetres": 180.1170916,
+        "waypointDistanceMetres": 651645.1787915141,
+        "routeDistanceMetres": 797371.8875541721,
+        "largestClosedExcursion": {
+          "first": 675,
+          "last": 740,
+          "lengthMetres": 3042.942857596383,
+          "junction": [
+            139.999409,
+            36.751433
+          ]
+        },
+        "scope": "Modern routing checks only; flagged geometry is retained for review, not deleted as a historical road."
+      }
+    },
+    {
+      "name": "羽州道",
+      "inputPoints": 5126,
+      "snapEvidenceAvailable": true,
+      "review": {
+        "issues": [
+          "waypoint-snap-over-250m",
+          "closed-excursion-over-2km"
+        ],
+        "maxSnapMetres": 313.6806981,
+        "waypointDistanceMetres": 404124.34285338625,
+        "routeDistanceMetres": 631945.1975112291,
+        "largestClosedExcursion": {
+          "first": 4687,
+          "last": 4846,
+          "lengthMetres": 12928.479322787141,
+          "junction": [
+            140.559313,
+            40.483289
+          ]
+        },
+        "scope": "Modern routing checks only; flagged geometry is retained for review, not deleted as a historical road."
+      }
+    },
+    {
+      "name": "山陽道",
+      "inputPoints": 5419,
+      "snapEvidenceAvailable": true,
+      "review": {
+        "issues": [
+          "closed-excursion-over-2km"
+        ],
+        "maxSnapMetres": 240.3341688,
+        "waypointDistanceMetres": 500228.6923507136,
+        "routeDistanceMetres": 661664.6170848993,
+        "largestClosedExcursion": {
+          "first": 5291,
+          "last": 5407,
+          "lengthMetres": 4644.025110498536,
+          "junction": [
+            130.958442,
+            34.016151
+          ]
+        },
+        "scope": "Modern routing checks only; flagged geometry is retained for review, not deleted as a historical road."
+      }
+    },
+    {
+      "name": "山陰道",
+      "inputPoints": 7018,
+      "snapEvidenceAvailable": true,
+      "review": {
+        "issues": [
+          "waypoint-snap-over-250m",
+          "closed-excursion-over-2km"
+        ],
+        "maxSnapMetres": 482.0956904,
+        "waypointDistanceMetres": 487547.7141628398,
+        "routeDistanceMetres": 726618.8045178822,
+        "largestClosedExcursion": {
+          "first": 2723,
+          "last": 2871,
+          "lengthMetres": 7595.296460969577,
+          "junction": [
+            133.986331,
+            35.511187
+          ]
+        },
+        "scope": "Modern routing checks only; flagged geometry is retained for review, not deleted as a historical road."
+      }
+    },
+    {
+      "name": "若狭街道",
+      "inputPoints": 1681,
+      "snapEvidenceAvailable": true,
+      "review": {
+        "issues": [
+          "closed-excursion-over-2km"
+        ],
+        "maxSnapMetres": 225.9903853,
+        "waypointDistanceMetres": 68649.12211522867,
+        "routeDistanceMetres": 160227.14172784248,
+        "largestClosedExcursion": {
+          "first": 319,
+          "last": 624,
+          "lengthMetres": 14968.562563609361,
+          "junction": [
+            135.90359,
+            35.184503
+          ]
+        },
+        "scope": "Modern routing checks only; flagged geometry is retained for review, not deleted as a historical road."
+      }
+    },
+    {
+      "name": "伊勢路",
+      "inputPoints": 873,
+      "snapEvidenceAvailable": true,
+      "review": {
+        "issues": [],
+        "maxSnapMetres": 63.5014683,
+        "waypointDistanceMetres": 100585.23165735997,
+        "routeDistanceMetres": 121834.53790247634,
+        "largestClosedExcursion": null,
+        "scope": "Modern routing checks only; flagged geometry is retained for review, not deleted as a historical road."
+      }
+    },
+    {
+      "name": "熊野街道",
+      "inputPoints": 3511,
+      "snapEvidenceAvailable": true,
+      "review": {
+        "issues": [
+          "waypoint-snap-over-250m"
+        ],
+        "maxSnapMetres": 405.7611514,
+        "waypointDistanceMetres": 224103.58290334238,
+        "routeDistanceMetres": 340972.61956123565,
+        "largestClosedExcursion": null,
+        "scope": "Modern routing checks only; flagged geometry is retained for review, not deleted as a historical road."
+      }
+    },
+    {
+      "name": "南海道",
+      "inputPoints": 2796,
+      "snapEvidenceAvailable": true,
+      "review": {
+        "issues": [
+          "waypoint-snap-over-250m",
+          "closed-excursion-over-2km"
+        ],
+        "maxSnapMetres": 637.2760831,
+        "waypointDistanceMetres": 219144.73280262013,
+        "routeDistanceMetres": 300820.8771209713,
+        "largestClosedExcursion": {
+          "first": 2304,
+          "last": 2398,
+          "lengthMetres": 3239.4151728583965,
+          "junction": [
+            132.873384,
+            33.965195
+          ]
+        },
+        "scope": "Modern routing checks only; flagged geometry is retained for review, not deleted as a historical road."
+      }
+    },
+    {
+      "name": "土佐道",
+      "inputPoints": 3192,
+      "snapEvidenceAvailable": true,
+      "review": {
+        "issues": [
+          "closed-excursion-over-2km"
+        ],
+        "maxSnapMetres": 231.4111922,
+        "waypointDistanceMetres": 138032.35702866822,
+        "routeDistanceMetres": 247901.6315115368,
+        "largestClosedExcursion": {
+          "first": 2453,
+          "last": 2606,
+          "lengthMetres": 8086.948989782977,
+          "junction": [
+            133.126816,
+            33.224044
+          ]
+        },
+        "scope": "Modern routing checks only; flagged geometry is retained for review, not deleted as a historical road."
+      }
+    },
+    {
+      "name": "西海道",
+      "inputPoints": 3819,
+      "snapEvidenceAvailable": true,
+      "review": {
+        "issues": [
+          "waypoint-snap-over-250m",
+          "closed-excursion-over-2km"
+        ],
+        "maxSnapMetres": 359.638993,
+        "waypointDistanceMetres": 338934.88082947716,
+        "routeDistanceMetres": 436296.42150921014,
+        "largestClosedExcursion": {
+          "first": 2332,
+          "last": 2536,
+          "lengthMetres": 8315.251170960197,
+          "junction": [
+            130.46566,
+            32.24063
+          ]
+        },
+        "scope": "Modern routing checks only; flagged geometry is retained for review, not deleted as a historical road."
+      }
+    },
+    {
+      "name": "豊後道",
+      "inputPoints": 5221,
+      "snapEvidenceAvailable": true,
+      "review": {
+        "issues": [
+          "waypoint-snap-over-250m",
+          "closed-excursion-over-2km"
+        ],
+        "maxSnapMetres": 251.3234542,
+        "waypointDistanceMetres": 370528.72975736816,
+        "routeDistanceMetres": 547821.4703458683,
+        "largestClosedExcursion": {
+          "first": 1842,
+          "last": 1908,
+          "lengthMetres": 9093.372536153533,
+          "junction": [
+            131.863653,
+            32.974069
+          ]
+        },
+        "scope": "Modern routing checks only; flagged geometry is retained for review, not deleted as a historical road."
+      }
+    },
+    {
+      "name": "長崎路",
+      "inputPoints": 1456,
+      "snapEvidenceAvailable": true,
+      "review": {
+        "issues": [
+          "waypoint-snap-over-250m",
+          "closed-excursion-over-2km"
+        ],
+        "maxSnapMetres": 319.058657,
+        "waypointDistanceMetres": 119048.5166012482,
+        "routeDistanceMetres": 171232.45602037772,
+        "largestClosedExcursion": {
+          "first": 1244,
+          "last": 1296,
+          "lengthMetres": 2364.6538688788714,
+          "junction": [
+            129.903444,
+            32.820836
+          ]
+        },
+        "scope": "Modern routing checks only; flagged geometry is retained for review, not deleted as a historical road."
+      }
+    },
+    {
+      "name": "北国街道（近江）",
+      "inputPoints": 1643,
+      "snapEvidenceAvailable": true,
+      "review": {
+        "issues": [
+          "waypoint-snap-over-250m",
+          "closed-excursion-over-2km"
+        ],
+        "maxSnapMetres": 636.3925333,
+        "waypointDistanceMetres": 57063.339909924645,
+        "routeDistanceMetres": 159481.77646809968,
+        "largestClosedExcursion": {
+          "first": 232,
+          "last": 998,
+          "lengthMetres": 49408.196560073484,
+          "junction": [
+            136.208089,
+            35.543392
+          ]
+        },
+        "scope": "Modern routing checks only; flagged geometry is retained for review, not deleted as a historical road."
+      }
+    },
+    {
+      "name": "北国脇往還",
+      "inputPoints": 296,
+      "snapEvidenceAvailable": true,
+      "review": {
+        "issues": [],
+        "maxSnapMetres": 174.9375148,
+        "waypointDistanceMetres": 28576.313086964827,
+        "routeDistanceMetres": 42555.30394744088,
+        "largestClosedExcursion": null,
+        "scope": "Modern routing checks only; flagged geometry is retained for review, not deleted as a historical road."
+      }
+    },
+    {
+      "name": "九里半街道",
+      "inputPoints": 181,
+      "snapEvidenceAvailable": true,
+      "review": {
+        "issues": [],
+        "maxSnapMetres": 151.6263149,
+        "waypointDistanceMetres": 6744.781826583327,
+        "routeDistanceMetres": 12974.866935382226,
+        "largestClosedExcursion": null,
+        "scope": "Modern routing checks only; flagged geometry is retained for review, not deleted as a historical road."
+      }
+    },
+    {
+      "name": "美濃路",
+      "inputPoints": 388,
+      "snapEvidenceAvailable": true,
+      "review": {
+        "issues": [],
+        "maxSnapMetres": 109.3868742,
+        "waypointDistanceMetres": 50532.88820645809,
+        "routeDistanceMetres": 68456.34857485833,
+        "largestClosedExcursion": null,
+        "scope": "Modern routing checks only; flagged geometry is retained for review, not deleted as a historical road."
+      }
+    },
+    {
+      "name": "岐阜街道",
+      "inputPoints": 113,
+      "snapEvidenceAvailable": true,
+      "review": {
+        "issues": [],
+        "maxSnapMetres": 33.77789466,
+        "waypointDistanceMetres": 25934.906523284968,
+        "routeDistanceMetres": 29889.516675046176,
+        "largestClosedExcursion": null,
+        "scope": "Modern routing checks only; flagged geometry is retained for review, not deleted as a historical road."
+      }
+    },
+    {
+      "name": "川越街道",
+      "inputPoints": 270,
+      "snapEvidenceAvailable": true,
+      "review": {
+        "issues": [],
+        "maxSnapMetres": 34.05705404,
+        "waypointDistanceMetres": 35127.24806863747,
+        "routeDistanceMetres": 41925.91573288936,
+        "largestClosedExcursion": null,
+        "scope": "Modern routing checks only; flagged geometry is retained for review, not deleted as a historical road."
+      }
+    },
+    {
+      "name": "身延道（駿州往還）",
+      "inputPoints": 1140,
+      "snapEvidenceAvailable": true,
+      "review": {
+        "issues": [
+          "waypoint-snap-over-250m",
+          "closed-excursion-over-2km"
+        ],
+        "maxSnapMetres": 367.8341328,
+        "waypointDistanceMetres": 88447.33264011842,
+        "routeDistanceMetres": 125505.09410768398,
+        "largestClosedExcursion": {
+          "first": 666,
+          "last": 686,
+          "lengthMetres": 2567.8414741130837,
+          "junction": [
+            138.462803,
+            35.283029
+          ]
+        },
+        "scope": "Modern routing checks only; flagged geometry is retained for review, not deleted as a historical road."
+      }
+    },
+    {
+      "name": "丹後街道",
+      "inputPoints": 677,
+      "snapEvidenceAvailable": true,
+      "review": {
+        "issues": [
+          "waypoint-snap-over-250m",
+          "closed-excursion-over-2km"
+        ],
+        "maxSnapMetres": 722.9063412,
+        "waypointDistanceMetres": 54636.0396231045,
+        "routeDistanceMetres": 86987.264562946,
+        "largestClosedExcursion": {
+          "first": 345,
+          "last": 386,
+          "lengthMetres": 6865.47718593364,
+          "junction": [
+            135.331347,
+            35.451807
+          ]
+        },
+        "scope": "Modern routing checks only; flagged geometry is retained for review, not deleted as a historical road."
+      }
+    },
+    {
+      "name": "東海道（鈴鹿越え）",
+      "inputPoints": 302,
+      "snapEvidenceAvailable": true,
+      "review": {
+        "issues": [],
+        "maxSnapMetres": 29.5627813,
+        "waypointDistanceMetres": 38687.151246530906,
+        "routeDistanceMetres": 49560.829239365696,
+        "largestClosedExcursion": null,
+        "scope": "Modern routing checks only; flagged geometry is retained for review, not deleted as a historical road."
+      }
+    },
+    {
+      "name": "嶺南大路（中路）",
+      "inputPoints": 5169,
+      "snapEvidenceAvailable": true,
+      "review": {
+        "issues": [
+          "waypoint-snap-over-250m",
+          "closed-excursion-over-2km"
+        ],
+        "maxSnapMetres": 1334.138965,
+        "waypointDistanceMetres": 365125.2551413929,
+        "routeDistanceMetres": 583309.9675102985,
+        "largestClosedExcursion": {
+          "first": 3223,
+          "last": 3353,
+          "lengthMetres": 10341.330887781107,
+          "junction": [
+            128.019261,
+            36.786024
+          ]
+        },
+        "scope": "Modern routing checks only; flagged geometry is retained for review, not deleted as a historical road."
+      }
+    },
+    {
+      "name": "嶺南左路（東路）",
+      "inputPoints": 2699,
+      "snapEvidenceAvailable": true,
+      "review": {
+        "issues": [
+          "waypoint-snap-over-250m",
+          "closed-excursion-over-2km"
+        ],
+        "maxSnapMetres": 1107.264722,
+        "waypointDistanceMetres": 274188.0358118589,
+        "routeDistanceMetres": 390997.08642472577,
+        "largestClosedExcursion": {
+          "first": 1765,
+          "last": 1858,
+          "lengthMetres": 8746.703805672063,
+          "junction": [
+            128.395142,
+            36.981884
+          ]
+        },
+        "scope": "Modern routing checks only; flagged geometry is retained for review, not deleted as a historical road."
+      }
+    },
+    {
+      "name": "嶺南右路（西路）",
+      "inputPoints": 2272,
+      "snapEvidenceAvailable": true,
+      "review": {
+        "issues": [
+          "closed-excursion-over-2km"
+        ],
+        "maxSnapMetres": 160.7303932,
+        "waypointDistanceMetres": 309843.60245355713,
+        "routeDistanceMetres": 398718.68936374935,
+        "largestClosedExcursion": {
+          "first": 1052,
+          "last": 1114,
+          "lengthMetres": 4214.400208009756,
+          "junction": [
+            127.995382,
+            36.211199
+          ]
+        },
+        "scope": "Modern routing checks only; flagged geometry is retained for review, not deleted as a historical road."
+      }
+    },
+    {
+      "name": "晋州路",
+      "inputPoints": 555,
+      "snapEvidenceAvailable": true,
+      "review": {
+        "issues": [],
+        "maxSnapMetres": 14.26573387,
+        "waypointDistanceMetres": 74432.9647870607,
+        "routeDistanceMetres": 96525.5672933009,
+        "largestClosedExcursion": null,
+        "scope": "Modern routing checks only; flagged geometry is retained for review, not deleted as a historical road."
+      }
+    },
+    {
+      "name": "湖南大路",
+      "inputPoints": 1942,
+      "snapEvidenceAvailable": true,
+      "review": {
+        "issues": [],
+        "maxSnapMetres": 43.58098382,
+        "waypointDistanceMetres": 299539.1498783684,
+        "routeDistanceMetres": 356264.4955178231,
+        "largestClosedExcursion": null,
+        "scope": "Modern routing checks only; flagged geometry is retained for review, not deleted as a historical road."
+      }
+    },
+    {
+      "name": "八良峙越え",
+      "inputPoints": 597,
+      "snapEvidenceAvailable": true,
+      "review": {
+        "issues": [],
+        "maxSnapMetres": 83.47622458,
+        "waypointDistanceMetres": 82324.64423482426,
+        "routeDistanceMetres": 99628.67070757996,
+        "largestClosedExcursion": null,
+        "scope": "Modern routing checks only; flagged geometry is retained for review, not deleted as a historical road."
+      }
+    },
+    {
+      "name": "海州路",
+      "inputPoints": 492,
+      "snapEvidenceAvailable": true,
+      "review": {
+        "issues": [],
+        "maxSnapMetres": 44.11633621,
+        "waypointDistanceMetres": 76118.19201944524,
+        "routeDistanceMetres": 97345.11476769594,
+        "largestClosedExcursion": null,
+        "scope": "Modern routing checks only; flagged geometry is retained for review, not deleted as a historical road."
+      }
+    },
+    {
+      "name": "永川路",
+      "inputPoints": 360,
+      "snapEvidenceAvailable": true,
+      "review": {
+        "issues": [],
+        "maxSnapMetres": 93.92649098,
+        "waypointDistanceMetres": 32642.421875659093,
+        "routeDistanceMetres": 42458.715216933175,
+        "largestClosedExcursion": null,
+        "scope": "Modern routing checks only; flagged geometry is retained for review, not deleted as a historical road."
+      }
+    },
+    {
+      "name": "関東路",
+      "inputPoints": 3245,
+      "snapEvidenceAvailable": true,
+      "review": {
+        "issues": [
+          "waypoint-snap-over-250m",
+          "closed-excursion-over-2km"
+        ],
+        "maxSnapMetres": 930.7040728,
+        "waypointDistanceMetres": 206018.76964755097,
+        "routeDistanceMetres": 336728.6498808658,
+        "largestClosedExcursion": {
+          "first": 2575,
+          "last": 2710,
+          "lengthMetres": 10028.963090304518,
+          "junction": [
+            128.709009,
+            37.683949
+          ]
+        },
+        "scope": "Modern routing checks only; flagged geometry is retained for review, not deleted as a historical road."
+      }
+    },
+    {
+      "name": "越後街道",
+      "inputPoints": 1856,
+      "snapEvidenceAvailable": true,
+      "review": {
+        "issues": [
+          "waypoint-snap-over-250m",
+          "closed-excursion-over-2km"
+        ],
+        "maxSnapMetres": 257.3085242,
+        "waypointDistanceMetres": 77722.45609608013,
+        "routeDistanceMetres": 189925.4877903519,
+        "largestClosedExcursion": {
+          "first": 916,
+          "last": 1228,
+          "lengthMetres": 20726.935717893313,
+          "junction": [
+            139.472293,
+            37.651709
+          ]
+        },
+        "scope": "Modern routing checks only; flagged geometry is retained for review, not deleted as a historical road."
+      }
+    },
+    {
+      "name": "米沢街道",
+      "inputPoints": 1706,
+      "snapEvidenceAvailable": true,
+      "review": {
+        "issues": [
+          "waypoint-snap-over-250m",
+          "closed-excursion-over-2km"
+        ],
+        "maxSnapMetres": 408.5525142,
+        "waypointDistanceMetres": 54196.04549672281,
+        "routeDistanceMetres": 146284.25649683183,
+        "largestClosedExcursion": {
+          "first": 987,
+          "last": 1559,
+          "lengthMetres": 31215.195379566125,
+          "junction": [
+            139.880667,
+            37.724013
+          ]
+        },
+        "scope": "Modern routing checks only; flagged geometry is retained for review, not deleted as a historical road."
+      }
+    },
+    {
+      "name": "二本松街道",
+      "inputPoints": 914,
+      "snapEvidenceAvailable": true,
+      "review": {
+        "issues": [
+          "waypoint-snap-over-250m",
+          "closed-excursion-over-2km"
+        ],
+        "maxSnapMetres": 533.9011994,
+        "waypointDistanceMetres": 46348.63472970313,
+        "routeDistanceMetres": 92770.13734198171,
+        "largestClosedExcursion": {
+          "first": 231,
+          "last": 424,
+          "lengthMetres": 13622.833869175793,
+          "junction": [
+            140.264256,
+            37.536379
+          ]
+        },
+        "scope": "Modern routing checks only; flagged geometry is retained for review, not deleted as a historical road."
+      }
+    },
+    {
+      "name": "白河街道",
+      "inputPoints": 1758,
+      "snapEvidenceAvailable": true,
+      "review": {
+        "issues": [
+          "waypoint-snap-over-250m",
+          "closed-excursion-over-2km"
+        ],
+        "maxSnapMetres": 491.4602462,
+        "waypointDistanceMetres": 48190.64545691065,
+        "routeDistanceMetres": 133235.05789933717,
+        "largestClosedExcursion": {
+          "first": 645,
+          "last": 1246,
+          "lengthMetres": 35123.35662178384,
+          "junction": [
+            140.06797,
+            37.38636
+          ]
+        },
+        "scope": "Modern routing checks only; flagged geometry is retained for review, not deleted as a historical road."
+      }
+    },
+    {
+      "name": "浜街道",
+      "inputPoints": 1604,
+      "snapEvidenceAvailable": true,
+      "review": {
+        "issues": [
+          "waypoint-snap-over-250m",
+          "closed-excursion-over-2km"
+        ],
+        "maxSnapMetres": 298.0819455,
+        "waypointDistanceMetres": 222195.0162218809,
+        "routeDistanceMetres": 271526.08539893175,
+        "largestClosedExcursion": {
+          "first": 204,
+          "last": 268,
+          "lengthMetres": 2609.811388640752,
+          "junction": [
+            140.626685,
+            36.619152
+          ]
+        },
+        "scope": "Modern routing checks only; flagged geometry is retained for review, not deleted as a historical road."
+      }
+    },
+    {
+      "name": "御斎所街道",
+      "inputPoints": 789,
+      "snapEvidenceAvailable": true,
+      "review": {
+        "issues": [
+          "closed-excursion-over-2km"
+        ],
+        "maxSnapMetres": 186.7159326,
+        "waypointDistanceMetres": 54689.56989891148,
+        "routeDistanceMetres": 80151.62577074977,
+        "largestClosedExcursion": {
+          "first": 708,
+          "last": 747,
+          "lengthMetres": 2037.5184747781313,
+          "junction": [
+            140.400485,
+            37.257066
+          ]
+        },
+        "scope": "Modern routing checks only; flagged geometry is retained for review, not deleted as a historical road."
+      }
+    },
+    {
+      "name": "足利道",
+      "inputPoints": 512,
+      "snapEvidenceAvailable": true,
+      "review": {
+        "issues": [],
+        "maxSnapMetres": 107.5895985,
+        "waypointDistanceMetres": 71854.58337478361,
+        "routeDistanceMetres": 88193.82622056996,
+        "largestClosedExcursion": null,
+        "scope": "Modern routing checks only; flagged geometry is retained for review, not deleted as a historical road."
+      }
+    },
+    {
+      "name": "水戸道",
+      "inputPoints": 864,
+      "snapEvidenceAvailable": true,
+      "review": {
+        "issues": [],
+        "maxSnapMetres": 108.1279536,
+        "waypointDistanceMetres": 120973.03015532503,
+        "routeDistanceMetres": 148065.39491895787,
+        "largestClosedExcursion": null,
+        "scope": "Modern routing checks only; flagged geometry is retained for review, not deleted as a historical road."
+      }
+    },
+    {
+      "name": "房総往還",
+      "inputPoints": 955,
+      "snapEvidenceAvailable": true,
+      "review": {
+        "issues": [
+          "closed-excursion-over-2km"
+        ],
+        "maxSnapMetres": 74.82392887,
+        "waypointDistanceMetres": 94869.10490245561,
+        "routeDistanceMetres": 126670.51059167969,
+        "largestClosedExcursion": {
+          "first": 548,
+          "last": 613,
+          "lengthMetres": 2530.101496534786,
+          "junction": [
+            140.20862,
+            35.500468
+          ]
+        },
+        "scope": "Modern routing checks only; flagged geometry is retained for review, not deleted as a historical road."
+      }
+    },
+    {
+      "name": "岩付道",
+      "inputPoints": 283,
+      "snapEvidenceAvailable": true,
+      "review": {
+        "issues": [],
+        "maxSnapMetres": 19.84499282,
+        "waypointDistanceMetres": 45727.85475854608,
+        "routeDistanceMetres": 54336.32056866126,
+        "largestClosedExcursion": null,
+        "scope": "Modern routing checks only; flagged geometry is retained for review, not deleted as a historical road."
+      }
+    },
+    {
+      "name": "秩父道",
+      "inputPoints": 298,
+      "snapEvidenceAvailable": true,
+      "review": {
+        "issues": [],
+        "maxSnapMetres": 81.90731423,
+        "waypointDistanceMetres": 33667.41813538924,
+        "routeDistanceMetres": 41964.79441358369,
+        "largestClosedExcursion": null,
+        "scope": "Modern routing checks only; flagged geometry is retained for review, not deleted as a historical road."
+      }
+    },
+    {
+      "name": "三州街道",
+      "inputPoints": 3149,
+      "snapEvidenceAvailable": true,
+      "review": {
+        "issues": [
+          "waypoint-snap-over-250m",
+          "closed-excursion-over-2km"
+        ],
+        "maxSnapMetres": 953.1607919,
+        "waypointDistanceMetres": 160846.61547226622,
+        "routeDistanceMetres": 279062.1638653013,
+        "largestClosedExcursion": {
+          "first": 1289,
+          "last": 1746,
+          "lengthMetres": 22512.55190247178,
+          "junction": [
+            137.708965,
+            35.306391
+          ]
+        },
+        "scope": "Modern routing checks only; flagged geometry is retained for review, not deleted as a historical road."
+      }
+    },
+    {
+      "name": "秋葉街道",
+      "inputPoints": 1894,
+      "snapEvidenceAvailable": true,
+      "review": {
+        "issues": [
+          "waypoint-snap-over-250m"
+        ],
+        "maxSnapMetres": 445.1960073,
+        "waypointDistanceMetres": 91539.44558984716,
+        "routeDistanceMetres": 145077.0867613424,
+        "largestClosedExcursion": null,
+        "scope": "Modern routing checks only; flagged geometry is retained for review, not deleted as a historical road."
+      }
+    },
+    {
+      "name": "杖突越え",
+      "inputPoints": 1254,
+      "snapEvidenceAvailable": true,
+      "review": {
+        "issues": [
+          "waypoint-snap-over-250m",
+          "closed-excursion-over-2km"
+        ],
+        "maxSnapMetres": 296.5929642,
+        "waypointDistanceMetres": 66883.09087856824,
+        "routeDistanceMetres": 104639.45346526381,
+        "largestClosedExcursion": {
+          "first": 330,
+          "last": 394,
+          "lengthMetres": 3682.259640197499,
+          "junction": [
+            138.140211,
+            35.959446
+          ]
+        },
+        "scope": "Modern routing checks only; flagged geometry is retained for review, not deleted as a historical road."
+      }
+    },
+    {
+      "name": "足柄道",
+      "inputPoints": 770,
+      "snapEvidenceAvailable": true,
+      "review": {
+        "issues": [],
+        "maxSnapMetres": 185.1154131,
+        "waypointDistanceMetres": 72303.85448986689,
+        "routeDistanceMetres": 99564.58959514755,
+        "largestClosedExcursion": null,
+        "scope": "Modern routing checks only; flagged geometry is retained for review, not deleted as a historical road."
+      }
+    },
+    {
+      "name": "越中街道（飛騨）",
+      "inputPoints": 939,
+      "snapEvidenceAvailable": true,
+      "review": {
+        "issues": [
+          "waypoint-snap-over-250m"
+        ],
+        "maxSnapMetres": 1713.656523,
+        "waypointDistanceMetres": 63913.595323489164,
+        "routeDistanceMetres": 94622.79149508232,
+        "largestClosedExcursion": null,
+        "scope": "Modern routing checks only; flagged geometry is retained for review, not deleted as a historical road."
+      }
+    },
+    {
+      "name": "飛騨街道",
+      "inputPoints": 1623,
+      "snapEvidenceAvailable": true,
+      "review": {
+        "issues": [
+          "closed-excursion-over-2km"
+        ],
+        "maxSnapMetres": 184.8658324,
+        "waypointDistanceMetres": 97291.39634945626,
+        "routeDistanceMetres": 158629.07943112293,
+        "largestClosedExcursion": {
+          "first": 1194,
+          "last": 1224,
+          "lengthMetres": 2235.2063895631145,
+          "junction": [
+            137.091478,
+            35.599904
+          ]
+        },
+        "scope": "Modern routing checks only; flagged geometry is retained for review, not deleted as a historical road."
+      }
+    },
+    {
+      "name": "野麦街道",
+      "inputPoints": 953,
+      "snapEvidenceAvailable": true,
+      "review": {
+        "issues": [
+          "waypoint-snap-over-250m"
+        ],
+        "maxSnapMetres": 464.0896706,
+        "waypointDistanceMetres": 67444.95113740047,
+        "routeDistanceMetres": 102329.17344752612,
+        "largestClosedExcursion": null,
+        "scope": "Modern routing checks only; flagged geometry is retained for review, not deleted as a historical road."
+      }
+    },
+    {
+      "name": "白山道",
+      "inputPoints": 1341,
+      "snapEvidenceAvailable": true,
+      "review": {
+        "issues": [
+          "waypoint-snap-over-250m",
+          "closed-excursion-over-2km"
+        ],
+        "maxSnapMetres": 622.8348496,
+        "waypointDistanceMetres": 73278.42786943054,
+        "routeDistanceMetres": 124636.96155795339,
+        "largestClosedExcursion": {
+          "first": 388,
+          "last": 486,
+          "lengthMetres": 4470.38493891016,
+          "junction": [
+            136.963365,
+            36.25777
+          ]
+        },
+        "scope": "Modern routing checks only; flagged geometry is retained for review, not deleted as a historical road."
+      }
+    },
+    {
+      "name": "能登街道",
+      "inputPoints": 335,
+      "snapEvidenceAvailable": true,
+      "review": {
+        "issues": [],
+        "maxSnapMetres": 45.84732435,
+        "waypointDistanceMetres": 59519.55347621613,
+        "routeDistanceMetres": 67756.82658582342,
+        "largestClosedExcursion": null,
+        "scope": "Modern routing checks only; flagged geometry is retained for review, not deleted as a historical road."
+      }
+    },
+    {
+      "name": "周山街道",
+      "inputPoints": 1372,
+      "snapEvidenceAvailable": true,
+      "review": {
+        "issues": [
+          "waypoint-snap-over-250m"
+        ],
+        "maxSnapMetres": 696.8266705,
+        "waypointDistanceMetres": 72882.21343744225,
+        "routeDistanceMetres": 130236.67816775649,
+        "largestClosedExcursion": null,
+        "scope": "Modern routing checks only; flagged geometry is retained for review, not deleted as a historical road."
+      }
+    },
+    {
+      "name": "伊勢本街道",
+      "inputPoints": 937,
+      "snapEvidenceAvailable": true,
+      "review": {
+        "issues": [
+          "waypoint-snap-over-250m",
+          "closed-excursion-over-2km"
+        ],
+        "maxSnapMetres": 449.9045487,
+        "waypointDistanceMetres": 70379.30675048314,
+        "routeDistanceMetres": 96630.45080395849,
+        "largestClosedExcursion": {
+          "first": 669,
+          "last": 747,
+          "lengthMetres": 3086.140722242977,
+          "junction": [
+            136.290951,
+            34.586111
+          ]
+        },
+        "scope": "Modern routing checks only; flagged geometry is retained for review, not deleted as a historical road."
+      }
+    },
+    {
+      "name": "暗越奈良街道",
+      "inputPoints": 332,
+      "snapEvidenceAvailable": true,
+      "review": {
+        "issues": [
+          "waypoint-snap-over-250m",
+          "closed-excursion-over-2km"
+        ],
+        "maxSnapMetres": 263.4764624,
+        "waypointDistanceMetres": 29488.278782324625,
+        "routeDistanceMetres": 38537.20461281038,
+        "largestClosedExcursion": {
+          "first": 269,
+          "last": 296,
+          "lengthMetres": 2523.8682883430956,
+          "junction": [
+            135.787582,
+            34.680959
+          ]
+        },
+        "scope": "Modern routing checks only; flagged geometry is retained for review, not deleted as a historical road."
+      }
+    },
+    {
+      "name": "伊賀越え",
+      "inputPoints": 576,
+      "snapEvidenceAvailable": true,
+      "review": {
+        "issues": [
+          "waypoint-snap-over-250m",
+          "closed-excursion-over-2km"
+        ],
+        "maxSnapMetres": 288.0704351,
+        "waypointDistanceMetres": 49687.90999462749,
+        "routeDistanceMetres": 68064.84048823013,
+        "largestClosedExcursion": {
+          "first": 167,
+          "last": 223,
+          "lengthMetres": 2222.1324714837756,
+          "junction": [
+            136.090856,
+            34.915837
+          ]
+        },
+        "scope": "Modern routing checks only; flagged geometry is retained for review, not deleted as a historical road."
+      }
+    },
+    {
+      "name": "但馬街道",
+      "inputPoints": 908,
+      "snapEvidenceAvailable": true,
+      "review": {
+        "issues": [
+          "closed-excursion-over-2km"
+        ],
+        "maxSnapMetres": 233.7449513,
+        "waypointDistanceMetres": 71278.66987662809,
+        "routeDistanceMetres": 105205.1275652255,
+        "largestClosedExcursion": {
+          "first": 140,
+          "last": 196,
+          "lengthMetres": 4382.932446795847,
+          "junction": [
+            134.76215,
+            35.048348
+          ]
+        },
+        "scope": "Modern routing checks only; flagged geometry is retained for review, not deleted as a historical road."
+      }
+    },
+    {
+      "name": "因幡街道",
+      "inputPoints": 1419,
+      "snapEvidenceAvailable": true,
+      "review": {
+        "issues": [
+          "waypoint-snap-over-250m",
+          "closed-excursion-over-2km"
+        ],
+        "maxSnapMetres": 953.3995207,
+        "waypointDistanceMetres": 91916.48497477197,
+        "routeDistanceMetres": 137256.96858373727,
+        "largestClosedExcursion": {
+          "first": 977,
+          "last": 1027,
+          "lengthMetres": 3373.8107503952633,
+          "junction": [
+            134.288373,
+            35.217278
+          ]
+        },
+        "scope": "Modern routing checks only; flagged geometry is retained for review, not deleted as a historical road."
+      }
+    },
+    {
+      "name": "出雲街道",
+      "inputPoints": 2431,
+      "snapEvidenceAvailable": true,
+      "review": {
+        "issues": [
+          "waypoint-snap-over-250m",
+          "closed-excursion-over-2km"
+        ],
+        "maxSnapMetres": 430.7999837,
+        "waypointDistanceMetres": 160398.0026266364,
+        "routeDistanceMetres": 244202.12461076744,
+        "largestClosedExcursion": {
+          "first": 1730,
+          "last": 2018,
+          "lengthMetres": 11704.493092529126,
+          "junction": [
+            133.524356,
+            35.265538
+          ]
+        },
+        "scope": "Modern routing checks only; flagged geometry is retained for review, not deleted as a historical road."
+      }
+    },
+    {
+      "name": "松山往来",
+      "inputPoints": 844,
+      "snapEvidenceAvailable": true,
+      "review": {
+        "issues": [
+          "closed-excursion-over-2km"
+        ],
+        "maxSnapMetres": 226.5516001,
+        "waypointDistanceMetres": 31830.126621267467,
+        "routeDistanceMetres": 69388.71181077426,
+        "largestClosedExcursion": {
+          "first": 414,
+          "last": 487,
+          "lengthMetres": 3215.436796342896,
+          "junction": [
+            133.64913,
+            34.953762
+          ]
+        },
+        "scope": "Modern routing checks only; flagged geometry is retained for review, not deleted as a historical road."
+      }
+    },
+    {
+      "name": "石見路",
+      "inputPoints": 2016,
+      "snapEvidenceAvailable": true,
+      "review": {
+        "issues": [
+          "closed-excursion-over-2km"
+        ],
+        "maxSnapMetres": 169.8851367,
+        "waypointDistanceMetres": 90120.3885245267,
+        "routeDistanceMetres": 164900.82654055476,
+        "largestClosedExcursion": {
+          "first": 1095,
+          "last": 1476,
+          "lengthMetres": 20045.517427539788,
+          "junction": [
+            133.023579,
+            35.12505
+          ]
+        },
+        "scope": "Modern routing checks only; flagged geometry is retained for review, not deleted as a historical road."
+      }
+    },
+    {
+      "name": "銀山街道",
+      "inputPoints": 788,
+      "snapEvidenceAvailable": true,
+      "review": {
+        "issues": [],
+        "maxSnapMetres": 144.991187,
+        "waypointDistanceMetres": 53084.14196947534,
+        "routeDistanceMetres": 79809.87901963037,
+        "largestClosedExcursion": null,
+        "scope": "Modern routing checks only; flagged geometry is retained for review, not deleted as a historical road."
+      }
+    },
+    {
+      "name": "土佐北街道",
+      "inputPoints": 1651,
+      "snapEvidenceAvailable": true,
+      "review": {
+        "issues": [],
+        "maxSnapMetres": 81.11083245,
+        "waypointDistanceMetres": 43342.419229824976,
+        "routeDistanceMetres": 108334.57599202379,
+        "largestClosedExcursion": null,
+        "scope": "Modern routing checks only; flagged geometry is retained for review, not deleted as a historical road."
+      }
+    },
+    {
+      "name": "土佐東街道",
+      "inputPoints": 4691,
+      "snapEvidenceAvailable": true,
+      "review": {
+        "issues": [
+          "waypoint-snap-over-250m",
+          "closed-excursion-over-2km"
+        ],
+        "maxSnapMetres": 413.9917399,
+        "waypointDistanceMetres": 163201.30067501627,
+        "routeDistanceMetres": 364777.84124049614,
+        "largestClosedExcursion": {
+          "first": 2072,
+          "last": 4368,
+          "lengthMetres": 137326.6147964427,
+          "junction": [
+            134.016934,
+            33.427598
+          ]
+        },
+        "scope": "Modern routing checks only; flagged geometry is retained for review, not deleted as a historical road."
+      }
+    },
+    {
+      "name": "豊後街道",
+      "inputPoints": 1378,
+      "snapEvidenceAvailable": true,
+      "review": {
+        "issues": [
+          "closed-excursion-over-2km"
+        ],
+        "maxSnapMetres": 246.2774684,
+        "waypointDistanceMetres": 103098.90154668462,
+        "routeDistanceMetres": 143209.08512851616,
+        "largestClosedExcursion": {
+          "first": 876,
+          "last": 976,
+          "lengthMetres": 10257.508460427387,
+          "junction": [
+            131.108686,
+            32.931149
+          ]
+        },
+        "scope": "Modern routing checks only; flagged geometry is retained for review, not deleted as a historical road."
+      }
+    },
+    {
+      "name": "日向街道",
+      "inputPoints": 3223,
+      "snapEvidenceAvailable": true,
+      "review": {
+        "issues": [
+          "waypoint-snap-over-250m",
+          "closed-excursion-over-2km"
+        ],
+        "maxSnapMetres": 891.1366583,
+        "waypointDistanceMetres": 186115.0832376303,
+        "routeDistanceMetres": 298754.2610623322,
+        "largestClosedExcursion": {
+          "first": 1102,
+          "last": 1636,
+          "lengthMetres": 24845.22734466997,
+          "junction": [
+            131.66066,
+            32.717455
+          ]
+        },
+        "scope": "Modern routing checks only; flagged geometry is retained for review, not deleted as a historical road."
+      }
+    },
+    {
+      "name": "人吉街道",
+      "inputPoints": 1279,
+      "snapEvidenceAvailable": true,
+      "review": {
+        "issues": [
+          "waypoint-snap-over-250m",
+          "closed-excursion-over-2km"
+        ],
+        "maxSnapMetres": 429.5338152,
+        "waypointDistanceMetres": 65160.9093859855,
+        "routeDistanceMetres": 108232.81049012531,
+        "largestClosedExcursion": {
+          "first": 862,
+          "last": 951,
+          "lengthMetres": 3779.8389436063007,
+          "junction": [
+            131.179041,
+            32.082348
+          ]
+        },
+        "scope": "Modern routing checks only; flagged geometry is retained for review, not deleted as a historical road."
+      }
+    },
+    {
+      "name": "唐津街道",
+      "inputPoints": 1378,
+      "snapEvidenceAvailable": true,
+      "review": {
+        "issues": [],
+        "maxSnapMetres": 85.26834598,
+        "waypointDistanceMetres": 92550.10373865529,
+        "routeDistanceMetres": 131421.09405944575,
+        "largestClosedExcursion": null,
+        "scope": "Modern routing checks only; flagged geometry is retained for review, not deleted as a historical road."
+      }
+    },
+    {
+      "name": "柳川往還",
+      "inputPoints": 104,
+      "snapEvidenceAvailable": true,
+      "review": {
+        "issues": [],
+        "maxSnapMetres": 18.84313202,
+        "waypointDistanceMetres": 14330.788407105452,
+        "routeDistanceMetres": 19344.0233009036,
+        "largestClosedExcursion": null,
+        "scope": "Modern routing checks only; flagged geometry is retained for review, not deleted as a historical road."
+      }
+    },
+    {
+      "name": "秋田街道",
+      "inputPoints": 836,
+      "snapEvidenceAvailable": true,
+      "review": {
+        "issues": [
+          "waypoint-snap-over-250m",
+          "closed-excursion-over-2km"
+        ],
+        "maxSnapMetres": 748.9634869,
+        "waypointDistanceMetres": 52201.80143071042,
+        "routeDistanceMetres": 90297.47405854364,
+        "largestClosedExcursion": {
+          "first": 579,
+          "last": 669,
+          "lengthMetres": 4850.841142171397,
+          "junction": [
+            140.86995,
+            39.665105
+          ]
+        },
+        "scope": "Modern routing checks only; flagged geometry is retained for review, not deleted as a historical road."
+      }
+    },
+    {
+      "name": "出羽浜街道",
+      "inputPoints": 1126,
+      "snapEvidenceAvailable": true,
+      "review": {
+        "issues": [
+          "waypoint-snap-over-250m",
+          "closed-excursion-over-2km"
+        ],
+        "maxSnapMetres": 550.8920559,
+        "waypointDistanceMetres": 64599.74983780543,
+        "routeDistanceMetres": 107733.54103295271,
+        "largestClosedExcursion": {
+          "first": 508,
+          "last": 692,
+          "lengthMetres": 11858.81515108065,
+          "junction": [
+            139.635146,
+            38.498308
+          ]
+        },
+        "scope": "Modern routing checks only; flagged geometry is retained for review, not deleted as a historical road."
+      }
+    },
+    {
+      "name": "鹿角街道",
+      "inputPoints": 1321,
+      "snapEvidenceAvailable": true,
+      "review": {
+        "issues": [
+          "closed-excursion-over-2km"
+        ],
+        "maxSnapMetres": 60.45952832,
+        "waypointDistanceMetres": 100519.87569596499,
+        "routeDistanceMetres": 162587.25525525506,
+        "largestClosedExcursion": {
+          "first": 345,
+          "last": 375,
+          "lengthMetres": 2868.1787078201305,
+          "junction": [
+            140.508255,
+            40.23057
+          ]
+        },
+        "scope": "Modern routing checks only; flagged geometry is retained for review, not deleted as a historical road."
+      }
+    },
+    {
+      "name": "京・大津道",
+      "inputPoints": 484,
+      "snapEvidenceAvailable": true,
+      "review": {
+        "issues": [
+          "closed-excursion-over-2km"
+        ],
+        "maxSnapMetres": 140.2288251,
+        "waypointDistanceMetres": 24228.514106568564,
+        "routeDistanceMetres": 40503.409916019846,
+        "largestClosedExcursion": {
+          "first": 146,
+          "last": 268,
+          "lengthMetres": 7712.65863327787,
+          "junction": [
+            135.832446,
+            34.992139
+          ]
+        },
+        "scope": "Modern routing checks only; flagged geometry is retained for review, not deleted as a historical road."
+      }
+    },
+    {
+      "name": "伊那街道（豊川・新城）",
+      "inputPoints": 1064,
+      "snapEvidenceAvailable": false,
+      "review": {
+        "issues": [],
+        "maxSnapMetres": 0,
+        "waypointDistanceMetres": 0,
+        "routeDistanceMetres": 28484.45771002386,
+        "largestClosedExcursion": null,
+        "scope": "Modern routing checks only; flagged geometry is retained for review, not deleted as a historical road."
+      }
+    },
+    {
+      "name": "長篠への道",
+      "inputPoints": 102,
+      "snapEvidenceAvailable": false,
+      "review": {
+        "issues": [],
+        "maxSnapMetres": 0,
+        "waypointDistanceMetres": 0,
+        "routeDistanceMetres": 2443.534405391652,
+        "largestClosedExcursion": null,
+        "scope": "Modern routing checks only; flagged geometry is retained for review, not deleted as a historical road."
+      }
+    },
+    {
+      "name": "作手への道",
+      "inputPoints": 2691,
+      "snapEvidenceAvailable": false,
+      "review": {
+        "issues": [],
+        "maxSnapMetres": 0,
+        "waypointDistanceMetres": 0,
+        "routeDistanceMetres": 60139.93490014271,
+        "largestClosedExcursion": null,
+        "scope": "Modern routing checks only; flagged geometry is retained for review, not deleted as a historical road."
+      }
+    }
+  ]
+}

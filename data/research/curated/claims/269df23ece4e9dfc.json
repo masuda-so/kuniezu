@@ -1,0 +1,23 @@
+{
+  "id": "lifetime-朝倉景鏡",
+  "entity": "person:朝倉景鏡",
+  "predicate": "death-year",
+  "value": 1574,
+  "validYears": [
+    1574,
+    1574
+  ],
+  "datePrecision": "year",
+  "source": "kageakiraLifetime",
+  "gameBindings": [
+    "TK.DEATH_Y",
+    "G.reconcileHistoricalPeople",
+    "aging"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "sourceUrl": "https://asakura-museum.pref.fukui.lg.jp/site/history",
+  "locator": "朝倉氏の滅亡",
+  "checked": "2026-11-01",
+  "uncertainty": "日付は確定しない"
+}

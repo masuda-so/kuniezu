@@ -1,0 +1,20 @@
+{
+  "id": "nagashino-headquarters",
+  "entity": "site:医王寺山",
+  "predicate": "relative-position",
+  "value": "長篠城の約600m北方",
+  "validYears": [
+    1575,
+    1575
+  ],
+  "source": "nagashinoHQ",
+  "locator": "所在地・説明",
+  "gameBindings": [
+    "G.battleArrivalPoint:武田勝頼"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "sourceUrl": "https://www.city.shinshiro.lg.jp/kanko/meisyo/takedakatsuyori.html",
+  "checked": "2026-11-01",
+  "uncertainty": null
+}

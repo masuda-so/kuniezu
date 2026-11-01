@@ -1,0 +1,50 @@
+{
+  "date": "2026-11-01",
+  "version": 4,
+  "curatedInputs": "curated/{claims,sources,people,places,locations}/*.json",
+  "scope": "日本・朝鮮・明の全施設・人物の網羅を証明するものではない。既存登録と確認済み史実命題を分離。",
+  "schema": {
+    "entity": "安定ID",
+    "predicate": "一命題",
+    "validYears": "史実の適用年代",
+    "source": "出典ID",
+    "locator": "該当箇所",
+    "gameBindings": "実装の参照先",
+    "activityPeriods": "実装上の稼働期間（開始年を含み終了年を含まない）。史実命題とは分離",
+    "status": "確定範囲"
+  },
+  "files": [
+    {
+      "file": "claims.jsonl",
+      "sha256": "668bbe38612203a94bcd5d752854256f22eb3db57917dd694bbb0bef2ed87be7"
+    },
+    {
+      "file": "implemented-events.jsonl",
+      "sha256": "3242dec2421b60d568717859e66db130d974f10931460d2bc68532bb4f0798b5"
+    },
+    {
+      "file": "implemented-sites.jsonl",
+      "sha256": "74d23e113f8159f09474a926e12cd2a566a00ab973cb82099cc17e65aa4a59e9"
+    },
+    {
+      "file": "japan-castle-candidates.jsonl",
+      "sha256": "1f4a5ac394be2bb3b37fffa1c04822c3cf5baba85712bb0dc7ed1c2c621b94a2"
+    },
+    {
+      "file": "location-observations.jsonl",
+      "sha256": "0a49ae6610a8fb466d2ec2f5f0d40f55695563e9827a2d10df63aa181fe497f1"
+    },
+    {
+      "file": "people.jsonl",
+      "sha256": "91ef2407c9bf1061be7976f6b0bb6de806e11fa286cd5f7cb9d90b630cd02198"
+    },
+    {
+      "file": "places.jsonl",
+      "sha256": "4252f61a5768c4823a31b61e6f931036977ff4e099bcb1e06058ac1903640f5f"
+    },
+    {
+      "file": "sources.jsonl",
+      "sha256": "798b0c711ea8f0c4c9a27845c8a19c2ed1c0c14255346653f3a77895798800c7"
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "id": "taki-role",
+  "entity": "site:滝の城",
+  "predicate": "military-role",
+  "value": "北条氏の連絡・兵站拠点",
+  "validYears": [
+    1560,
+    1589
+  ],
+  "source": "takiCastle",
+  "locator": "伝えの城・小田原征伐",
+  "gameBindings": [
+    "TK.YOSHO:滝の城"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "sourceUrl": "https://www.city.tokorozawa.saitama.jp/iitokoro/enjoy/bunkakyoyo/bunkazai/kenshiteibunkazai/bunzai_20100126153048508.html",
+  "checked": "2026-11-01",
+  "uncertainty": null
+}

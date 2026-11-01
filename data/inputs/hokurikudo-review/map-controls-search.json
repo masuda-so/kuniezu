@@ -1,0 +1,134 @@
+[
+  {
+    "query": "湯尾峠",
+    "url": "https://msearch.gsi.go.jp/address-search/AddressSearch?q=%E6%B9%AF%E5%B0%BE%E5%B3%A0",
+    "result": [
+      {
+        "geometry": {
+          "coordinates": [
+            136.175476,
+            35.794537
+          ],
+          "type": "Point"
+        },
+        "type": "Feature",
+        "properties": {
+          "addressCode": "",
+          "title": "福井県南越前町湯尾"
+        }
+      },
+      {
+        "geometry": {
+          "coordinates": [
+            136.197031997041,
+            35.7872796172135
+          ],
+          "type": "Point"
+        },
+        "type": "Feature",
+        "properties": {
+          "addressCode": "18404",
+          "title": "湯尾峠",
+          "dataSource": "4"
+        }
+      },
+      {
+        "geometry": {
+          "coordinates": [
+            136.187888733611,
+            35.7872490205556
+          ],
+          "type": "Point"
+        },
+        "type": "Feature",
+        "properties": {
+          "addressCode": "18404",
+          "title": "おくのほそ道の風景地湯尾峠",
+          "dataSource": "1"
+        }
+      }
+    ],
+    "selected": [
+      136.197031997041,
+      35.7872796172135
+    ]
+  },
+  {
+    "query": "湯尾駅",
+    "url": "https://msearch.gsi.go.jp/address-search/AddressSearch?q=%E6%B9%AF%E5%B0%BE%E9%A7%85",
+    "result": [
+      {
+        "geometry": {
+          "coordinates": [
+            136.175476,
+            35.794537
+          ],
+          "type": "Point"
+        },
+        "type": "Feature",
+        "properties": {
+          "addressCode": "",
+          "title": "福井県南越前町湯尾"
+        }
+      },
+      {
+        "geometry": {
+          "coordinates": [
+            136.192769805556,
+            35.8047366666667
+          ],
+          "type": "Point"
+        },
+        "type": "Feature",
+        "properties": {
+          "addressCode": "18404",
+          "title": "湯尾駅",
+          "dataSource": "1"
+        }
+      }
+    ],
+    "selected": [
+      136.192769805556,
+      35.8047366666667
+    ]
+  },
+  {
+    "query": "南今庄駅",
+    "url": "https://msearch.gsi.go.jp/address-search/AddressSearch?q=%E5%8D%97%E4%BB%8A%E5%BA%84%E9%A7%85",
+    "result": [
+      {
+        "geometry": {
+          "coordinates": [
+            136.189728,
+            35.760487
+          ],
+          "type": "Point"
+        },
+        "type": "Feature",
+        "properties": {
+          "addressCode": "",
+          "title": "福井県南越前町南今庄"
+        }
+      },
+      {
+        "geometry": {
+          "coordinates": [
+            136.184881736944,
+            35.7573523955556
+          ],
+          "type": "Point"
+        },
+        "type": "Feature",
+        "properties": {
+          "addressCode": "18404",
+          "title": "南今庄駅",
+          "dataSource": "1"
+        }
+      }
+    ],
+    "selected": [
+      136.184881736944,
+      35.7573523955556
+    ]
+  }
+]

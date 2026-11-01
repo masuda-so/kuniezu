@@ -1,0 +1,1 @@
+print(pg.evaluate("""JSON.stringify(TKGEO.land.map((p,i)=>{let xs=[],ys=[];for(const R of p)for(let j=0;j<R.length;j+=2){xs.push(R[j]);ys.push(R[j+1]);}return [i,p.length,Math.min(...xs)|0,Math.max(...xs)|0,Math.min(...ys)|0,Math.max(...ys)|0]}).filter(a=>a[2]<400&&a[4]<300))"""))

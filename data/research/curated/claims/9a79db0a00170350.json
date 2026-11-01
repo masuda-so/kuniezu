@@ -1,0 +1,23 @@
+{
+  "id": "lifetime-北条氏直",
+  "entity": "person:北条氏直",
+  "predicate": "death-year",
+  "value": 1591,
+  "validYears": [
+    1591,
+    1591
+  ],
+  "datePrecision": "year",
+  "source": "ujinaoLifetime",
+  "gameBindings": [
+    "TK.DEATH_Y",
+    "G.reconcileHistoricalPeople",
+    "aging"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "sourceUrl": "https://www.city.odawara.kanagawa.jp/global-image/units/573897/1-20230323161444_b641bfc64a3d59.pdf",
+  "locator": "歴史関連年表・1591年",
+  "checked": "2026-11-01",
+  "uncertainty": "日付は確定しない"
+}

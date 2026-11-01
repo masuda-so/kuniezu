@@ -1,0 +1,28 @@
+{
+  "id": "suwahara-capture-date",
+  "entity": "site:諏訪原城",
+  "predicate": "captured-and-renamed",
+  "value": "徳川方へ降り、牧野城に改称",
+  "lunarDate": [
+    1575,
+    8,
+    24
+  ],
+  "validYears": [
+    1575,
+    1575
+  ],
+  "datePrecision": "day",
+  "source": "suwaharaChronology",
+  "locator": "今川氏真の項：今川氏真詠草に基づく旧暦8月24日の説明",
+  "gameBindings": [
+    "G.yOwner",
+    "G.sitePresentation",
+    "G.siteName"
+  ],
+  "uncertainty": "自治体が採用する落城日。異説を全て否定する意味ではない。",
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "sourceUrl": "https://www.city.shimada.shizuoka.jp/shimahaku/docs/863749869.html",
+  "checked": "2026-11-01"
+}

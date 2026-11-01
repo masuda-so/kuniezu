@@ -1,0 +1,21 @@
+{
+  "id": "toyotomi-office-1",
+  "entity": "person:徳川家康",
+  "predicate": "central-office",
+  "value": "秀吉没後の豊臣政権の五大老",
+  "validYears": [
+    1598,
+    1600
+  ],
+  "datePrecision": "year-window",
+  "source": "toyotomiOffices",
+  "locator": "論文要約の構成員列挙（利家死去後は利長）",
+  "gameBindings": [
+    "TK.CENTRAL_OFFICES:徳川家康"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "sourceUrl": "https://ndlsearch.ndl.go.jp/books/R000000004-I026713046",
+  "checked": "2026-11-01",
+  "uncertainty": "構成員と役割を確認したもの。年区間は対象期で、任免日を年初・年末へ確定するものではない。"
+}

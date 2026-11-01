@@ -1,0 +1,346 @@
+{
+  "environment": {
+    "baseline": null,
+    "viewport": [
+      1400,
+      950
+    ],
+    "zoom": 5,
+    "terrainBeforeWait": {
+      "loaded": 47,
+      "failed": 3,
+      "pending": 342,
+      "running": 6,
+      "zoom": 11,
+      "cached": 396,
+      "revision": 31,
+      "provider": "GSI hillshademap (Japan) / Mapzen (other areas)",
+      "gsiLoaded": 13
+    },
+    "terrainReady": {
+      "loaded": 349,
+      "failed": 49,
+      "pending": 0,
+      "running": 0,
+      "zoom": 11,
+      "cached": 396,
+      "revision": 33,
+      "provider": "GSI hillshademap (Japan) / Mapzen (other areas)",
+      "gsiLoaded": 147
+    }
+  },
+  "play": {
+    "terrainAfter": {
+      "loaded": 349,
+      "failed": 49,
+      "pending": 0,
+      "running": 0,
+      "zoom": 11,
+      "cached": 396,
+      "revision": 33,
+      "provider": "GSI hillshademap (Japan) / Mapzen (other areas)",
+      "gsiLoaded": 147
+    },
+    "baseCache": {
+      "builds": 14,
+      "hits": 3
+    },
+    "metrics": [
+      {
+        "name": "LayoutDuration",
+        "delta": 0.05042899999999999
+      },
+      {
+        "name": "RecalcStyleDuration",
+        "delta": 0.011523999999999996
+      },
+      {
+        "name": "DevToolsCommandDuration",
+        "delta": 0.00879000000000002
+      },
+      {
+        "name": "ScriptDuration",
+        "delta": 0.21681599999999968
+      },
+      {
+        "name": "V8CompileDuration",
+        "delta": 0
+      },
+      {
+        "name": "TaskDuration",
+        "delta": 0.4646050000000006
+      },
+      {
+        "name": "TaskOtherDuration",
+        "delta": 0.17704599999999993
+      }
+    ],
+    "drawBefore": {
+      "base": 15,
+      "top": 16
+    },
+    "drawAfter": {
+      "base": 17,
+      "top": 138
+    },
+    "cpu": [
+      [
+        "(idle) :0",
+        3565.476000000005
+      ],
+      [
+        "(program) :0",
+        350.5119999999995
+      ],
+      [
+        "at ui.js:142",
+        31.880000000000003
+      ],
+      [
+        "R ui.js:662",
+        30.377000000000002
+      ],
+      [
+        "renderTop ui.js:616",
+        23.779
+      ],
+      [
+        "drawTop ui.js:331",
+        19.570000000000004
+      ],
+      [
+        "narrowTL ui.js:96",
+        13.722
+      ],
+      [
+        "fmt ui.js:4",
+        12.724999999999998
+      ],
+      [
+        "roadLabelsTop ui.js:140",
+        12.302
+      ],
+      [
+        "measureText :0",
+        11.340999999999998
+      ],
+      [
+        "loop ui.js:517",
+        10.655
+      ],
+      [
+        "(garbage collector) :0",
+        10.447
+      ],
+      [
+        "drawYosho ui.js:308",
+        10.088999999999999
+      ],
+      [
+        "clanCastles engine.js:268",
+        7.662
+      ],
+      [
+        "fillText :0",
+        7.628
+      ],
+      [
+        "strokeText :0",
+        7.587
+      ],
+      [
+        " ui.js:141",
+        6.508
+      ],
+      [
+        "setHTML ui.js:613",
+        6.282
+      ],
+      [
+        "contains :0",
+        5.082
+      ],
+      [
+        "drawImage :0",
+        4.393
+      ],
+      [
+        "save :0",
+        4.316
+      ],
+      [
+        "plate ui.js:297",
+        4.218999999999999
+      ],
+      [
+        "mix ui.js:25",
+        3.79
+      ],
+      [
+        "vc ui.js:97",
+        3.344
+      ],
+      [
+        "G.historyPoint scenario-openings.js:21",
+        2.5149999999999997
+      ]
+    ]
+  },
+  "pan": {
+    "terrainAfter": {
+      "loaded": 349,
+      "failed": 49,
+      "pending": 0,
+      "running": 0,
+      "zoom": 11,
+      "cached": 396,
+      "revision": 33,
+      "provider": "GSI hillshademap (Japan) / Mapzen (other areas)",
+      "gsiLoaded": 147
+    },
+    "baseCache": {
+      "builds": 15,
+      "hits": 27
+    },
+    "metrics": [
+      {
+        "name": "LayoutDuration",
+        "delta": 0.0020860000000000045
+      },
+      {
+        "name": "RecalcStyleDuration",
+        "delta": 0.0011080000000000048
+      },
+      {
+        "name": "DevToolsCommandDuration",
+        "delta": 0.00447599999999998
+      },
+      {
+        "name": "ScriptDuration",
+        "delta": 0.20886800000000072
+      },
+      {
+        "name": "V8CompileDuration",
+        "delta": 0
+      },
+      {
+        "name": "TaskDuration",
+        "delta": 0.4116029999999995
+      },
+      {
+        "name": "TaskOtherDuration",
+        "delta": 0.19506500000000004
+      }
+    ],
+    "drawBefore": {
+      "base": 17,
+      "top": 138
+    },
+    "drawAfter": {
+      "base": 42,
+      "top": 163
+    },
+    "cpu": [
+      [
+        "(idle) :0",
+        1722.326000000003
+      ],
+      [
+        "(program) :0",
+        310.1399999999998
+      ],
+      [
+        "drawImage :0",
+        157.68599999999992
+      ],
+      [
+        "at ui.js:142",
+        6.592
+      ],
+      [
+        "narrowTL ui.js:96",
+        5.055
+      ],
+      [
+        "drawTop ui.js:331",
+        5.022
+      ],
+      [
+        "fillText :0",
+        3.8520000000000003
+      ],
+      [
+        "fmt ui.js:4",
+        3.8470000000000004
+      ],
+      [
+        "stroke :0",
+        2.529
+      ],
+      [
+        "measureText :0",
+        2.5279999999999996
+      ],
+      [
+        "G.visualDistanceFraction logistics-review.js:13",
+        2.277
+      ],
+      [
+        "setHTML ui.js:613",
+        1.581
+      ],
+      [
+        "drawJapaneseRivers ui.js:49",
+        1.301
+      ],
+      [
+        "territorySignature ui.js:533",
+        1.287
+      ],
+      [
+        "gen engine.js:263",
+        1.286
+      ],
+      [
+        "fill :0",
+        1.284
+      ],
+      [
+        "clip :0",
+        1.284
+      ],
+      [
+        "addPath :0",
+        1.281
+      ],
+      [
+        "ok ui.js:144",
+        1.281
+      ],
+      [
+        "contains :0",
+        1.277
+      ],
+      [
+        "G.convoyLayout convoys.js:4",
+        1.267
+      ],
+      [
+        "loop ui.js:517",
+        1.266
+      ],
+      [
+        "strokeRect :0",
+        1.262
+      ],
+      [
+        "save :0",
+        1.257
+      ],
+      [
+        "strokeText :0",
+        1.256
+      ]
+    ]
+  }
+}

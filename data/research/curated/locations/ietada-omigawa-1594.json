@@ -1,0 +1,22 @@
+{
+  "id": "location:ietada-omigawa-1594",
+  "person": "person:matsudaira-ietada",
+  "place": "place:omigawa",
+  "relation": "residence-transfer",
+  "time": {
+    "kind": "year-window",
+    "year": 1594,
+    "calendar": "CE-year",
+    "precision": "year"
+  },
+  "source": "kajiroResidence",
+  "sourceUrl": "https://www.echiba.org/wp-content/uploads/2022/12/kiyo_028_p1.pdf",
+  "locator": "本文14頁（PDF32頁）1594年小見川移封",
+  "uncertainty": "年の精度。1590年関東移封と直結させない。",
+  "recordType": "sourced-location-observation",
+  "status": "verified-in-specified-scope",
+  "recordedAt": "2026-11-01",
+  "gameBindings": [
+    "TK.PERSON_RESIDENCE_EVIDENCE"
+  ]
+}

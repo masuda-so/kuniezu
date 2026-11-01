@@ -1,0 +1,155 @@
+{
+  "date": "2026-11-02",
+  "source": "game/modern-road-reference.js (OpenStreetMap / OSRM reference)",
+  "scope": "表示参考線の個別採否。歴史的な道路の実在記録ではない。",
+  "reviews": [
+    {
+      "road": "三州街道",
+      "junction": [
+        137.708965,
+        35.306391
+      ],
+      "lengthRange": [
+        22,
+        23
+      ],
+      "basis": "modern-routing-observation",
+      "reason": "同一交差点へ戻る約22kmの参考線を個別確認。史実の支線とは断定しない。"
+    },
+    {
+      "road": "東山道",
+      "junction": [
+        137.814665,
+        35.908807
+      ],
+      "lengthRange": [
+        16,
+        17
+      ],
+      "basis": "modern-routing-observation",
+      "reason": "ユーザー指摘を受け、同一交差点へ戻る約16kmの参考閉路を個別確認。史実の支線の不存在の証明ではない。"
+    },
+    {
+      "road": "白河街道",
+      "junction": [
+        140.06797,
+        37.38636
+      ],
+      "lengthRange": [
+        35,
+        36
+      ],
+      "basis": "modern-routing-observation",
+      "reason": "同一地点から南方へ戻り再び同地点に帰る参考閉路。公式の郡山区間範囲図の北行する経由順と比較し、主線に重ねた重複往復として不採用。旧道細部の復元とは区別。",
+      "sourceUrls": [
+        "https://www.city.koriyama.lg.jp/soshiki/43/7011.html",
+        "https://www.city.koriyama.lg.jp/uploaded/image/14908.png"
+      ]
+    },
+    {
+      "road": "若狭街道",
+      "junction": [
+        135.90359,
+        35.184503
+      ],
+      "lengthRange": [
+        14,
+        16
+      ],
+      "basis": "modern-routing-observation",
+      "reason": "同一交差点へ戻る約15kmの参考閉路を個別確認。熊川へ向かう主線に重複した往復を整理し、実在支線の不存在とは断定しない。",
+      "sourceUrls": [
+        "https://www.town.fukui-wakasa.lg.jp/soshiki/kankoumatizukurika/gyomuannai/1/3/3224.html"
+      ]
+    },
+    {
+      "road": "石見路",
+      "junction": [
+        133.023579,
+        35.12505
+      ],
+      "lengthRange": [
+        19,
+        21
+      ],
+      "basis": "modern-routing-observation",
+      "reason": "ユーザー指摘を受け、同一交差点へ戻る約20kmの参考閉路を個別整理。入力の往復が主線に重なる表示を除き、実在した歴史的支道の不存在とは断定しない。"
+    },
+    {
+      "road": "土佐東街道",
+      "junction": [
+        134.55141,
+        33.80469
+      ],
+      "lengthRange": [
+        1.2,
+        1.3
+      ],
+      "basis": "modern-routing-observation",
+      "reason": "比較経路が粗い市街経由点を訪れて同じ交差点へ戻る閉じた寄道を整理。沿岸の連続線と岬周回を保持する。実在した歴史的支道の不存在とは断定しない。",
+      "sourceUrls": [
+        "https://www.pref.kochi.lg.jp/doc/downloadyo/"
+      ],
+      "reviewInput": "data/inputs/tosa-road-review/accepted-whole-reference.json"
+    },
+    {
+      "road": "土佐東街道",
+      "junction": [
+        134.285063,
+        33.547629
+      ],
+      "lengthRange": [
+        1.65,
+        1.75
+      ],
+      "basis": "modern-routing-observation",
+      "reason": "比較経路が粗い市街経由点を訪れて同じ交差点へ戻る閉じた寄道を整理。沿岸の連続線と岬周回を保持する。実在した歴史的支道の不存在とは断定しない。",
+      "sourceUrls": [
+        "https://www.pref.kochi.lg.jp/doc/downloadyo/"
+      ],
+      "reviewInput": "data/inputs/tosa-road-review/accepted-whole-reference.json"
+    },
+    {
+      "road": "日向街道",
+      "junction": [
+        131.739546,
+        33.02167
+      ],
+      "lengthRange": [
+        10,
+        11
+      ],
+      "basis": "modern-routing-observation",
+      "reason": "近現代比較線が粗い経由点を訪れて同じ交差点へ戻る寄道を整理する。歴史的な日向道の内陸経由地は別途原図から再構成し、この整理を史実全線の復元とは扱わない。",
+      "reviewInput": "data/audits/road-remaining-excursions.json"
+    },
+    {
+      "road": "日向街道",
+      "junction": [
+        131.66066,
+        32.717455
+      ],
+      "lengthRange": [
+        24,
+        26
+      ],
+      "basis": "modern-routing-observation",
+      "reason": "近現代比較線が粗い経由点を訪れて同じ交差点へ戻る寄道を整理する。歴史的な日向道の内陸経由地は別途原図から再構成し、この整理を史実全線の復元とは扱わない。",
+      "reviewInput": "data/audits/road-remaining-excursions.json"
+    },
+    {
+      "road": "日向街道",
+      "junction": [
+        131.424469,
+        32.043025
+      ],
+      "lengthRange": [
+        1,
+        1.2
+      ],
+      "basis": "modern-routing-observation",
+      "reason": "近現代比較線が粗い経由点を訪れて同じ交差点へ戻る寄道を整理する。歴史的な日向道の内陸経由地は別途原図から再構成し、この整理を史実全線の復元とは扱わない。",
+      "reviewInput": "data/audits/road-remaining-excursions.json"
+    }
+  ]
+}

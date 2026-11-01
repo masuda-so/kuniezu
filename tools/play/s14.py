@@ -1,0 +1,13 @@
+exec(open('/home/claude/play/lib.py').read())
+shot('v_title')
+pg.get_by_text('はじめる').click(); pg.wait_for_timeout(700)
+for sc in ['関白への道','関ヶ原前夜','唐入り']:
+  pg.get_by_text(sc).click(); pg.wait_for_timeout(900)
+  print(sc, txt('.pbig, #pick')[:60].replace('\n',' '))
+  pg.get_by_text('戻る').first.click(); pg.wait_for_timeout(500)
+pg.get_by_text('桶狭間前夜').click(); pg.wait_for_timeout(900)
+pg.locator('text=で見守る').first.click(); pg.wait_for_timeout(1500)
+pg.mouse.click(1090,817);pg.wait_for_timeout(700); shot('v_ffmodal'); print(modal()[:700])
+pg.locator('#modal button').filter(has_text='早送').click();pg.wait_for_timeout(1500); shot('v_after')
+print('big visible:',pg.evaluate("!document.querySelector('#big').hidden && getComputedStyle(document.querySelector('#big')).opacity"))
+print(txt('#chron')[:300])

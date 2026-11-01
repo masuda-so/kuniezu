@@ -1,0 +1,140 @@
+[
+  {
+    "query": "柳ケ瀬 長浜市",
+    "url": "https://nominatim.openstreetmap.org/search?q=%E6%9F%B3%E3%82%B1%E7%80%AC%20%E9%95%B7%E6%B5%9C%E5%B8%82&format=jsonv2&limit=3",
+    "results": [
+      {
+        "place_id": 267056254,
+        "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+        "osm_type": "node",
+        "osm_id": 7473126799,
+        "lat": "35.5946810",
+        "lon": "136.1775357",
+        "category": "natural",
+        "type": "peak",
+        "place_rank": 18,
+        "importance": 0.16005684672312503,
+        "addresstype": "peak",
+        "name": "柳ヶ瀬山",
+        "display_name": "柳ヶ瀬山, 長浜市, 滋賀県, 日本",
+        "boundingbox": [
+          "35.5946310",
+          "35.5947310",
+          "136.1774857",
+          "136.1775857"
+        ]
+      },
+      {
+        "place_id": 266832196,
+        "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+        "osm_type": "node",
+        "osm_id": 3893941852,
+        "lat": "35.5846856",
+        "lon": "136.1904876",
+        "category": "place",
+        "type": "quarter",
+        "place_rank": 20,
+        "importance": 0.13339018005645836,
+        "addresstype": "quarter",
+        "name": "余呉町柳ケ瀬",
+        "display_name": "余呉町柳ケ瀬, 長浜市, 滋賀県, 日本",
+        "boundingbox": [
+          "35.5746856",
+          "35.5946856",
+          "136.1804876",
+          "136.2004876"
+        ]
+      },
+      {
+        "place_id": 266782087,
+        "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+        "osm_type": "way",
+        "osm_id": 194046107,
+        "lat": "35.6034489",
+        "lon": "136.1765825",
+        "category": "highway",
+        "type": "secondary",
+        "place_rank": 26,
+        "importance": 0.05339018005645835,
+        "addresstype": "secondary",
+        "name": "敦賀柳ヶ瀬線",
+        "display_name": "敦賀柳ヶ瀬線, 長浜市, 滋賀県, 日本",
+        "boundingbox": [
+          "35.6028730",
+          "35.6040130",
+          "136.1737270",
+          "136.1794356"
+        ]
+      }
+    ]
+  },
+  {
+    "query": "柳ヶ瀬 長浜市",
+    "url": "https://nominatim.openstreetmap.org/search?q=%E6%9F%B3%E3%83%B6%E7%80%AC%20%E9%95%B7%E6%B5%9C%E5%B8%82&format=jsonv2&limit=3",
+    "results": [
+      {
+        "place_id": 267056254,
+        "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+        "osm_type": "node",
+        "osm_id": 7473126799,
+        "lat": "35.5946810",
+        "lon": "136.1775357",
+        "category": "natural",
+        "type": "peak",
+        "place_rank": 18,
+        "importance": 0.16005684672312503,
+        "addresstype": "peak",
+        "name": "柳ヶ瀬山",
+        "display_name": "柳ヶ瀬山, 長浜市, 滋賀県, 日本",
+        "boundingbox": [
+          "35.5946310",
+          "35.5947310",
+          "136.1774857",
+          "136.1775857"
+        ]
+      },
+      {
+        "place_id": 266832196,
+        "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+        "osm_type": "node",
+        "osm_id": 3893941852,
+        "lat": "35.5846856",
+        "lon": "136.1904876",
+        "category": "place",
+        "type": "quarter",
+        "place_rank": 20,
+        "importance": 0.13339018005645836,
+        "addresstype": "quarter",
+        "name": "余呉町柳ケ瀬",
+        "display_name": "余呉町柳ケ瀬, 長浜市, 滋賀県, 日本",
+        "boundingbox": [
+          "35.5746856",
+          "35.5946856",
+          "136.1804876",
+          "136.2004876"
+        ]
+      },
+      {
+        "place_id": 266782087,
+        "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+        "osm_type": "way",
+        "osm_id": 194046107,
+        "lat": "35.6034489",
+        "lon": "136.1765825",
+        "category": "highway",
+        "type": "secondary",
+        "place_rank": 26,
+        "importance": 0.05339018005645835,
+        "addresstype": "secondary",
+        "name": "敦賀柳ヶ瀬線",
+        "display_name": "敦賀柳ヶ瀬線, 長浜市, 滋賀県, 日本",
+        "boundingbox": [
+          "35.6028730",
+          "35.6040130",
+          "136.1737270",
+          "136.1794356"
+        ]
+      }
+    ]
+  }
+]

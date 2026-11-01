@@ -1,0 +1,695 @@
+{
+  "scope": "描画線が同じ座標へ戻る閉路候補。最寄頂点距離は厳密な線分距離ではない。史料照合前に閉路を自動削除しない。",
+  "roads": 85,
+  "iwamura": [
+    {
+      "name": "東山道",
+      "nearestVertexKm": 10.64138761997118
+    },
+    {
+      "name": "三州街道",
+      "nearestVertexKm": 17.09820051072302
+    },
+    {
+      "name": "作手への道",
+      "nearestVertexKm": 26.930183250139063
+    },
+    {
+      "name": "秋葉街道",
+      "nearestVertexKm": 33.93016629881499
+    }
+  ],
+  "loops": [
+    {
+      "name": "土佐東街道",
+      "modernReference": true,
+      "first": 2072,
+      "last": 4368,
+      "lengthKm": 135.1940021332624,
+      "junction": [
+        779.3962933564992,
+        1664.4803999999995
+      ]
+    },
+    {
+      "name": "米沢街道",
+      "modernReference": true,
+      "first": 987,
+      "last": 1547,
+      "lengthKm": 30.790972381343437,
+      "junction": [
+        1728.1682228519371,
+        805.1974000000001
+      ]
+    },
+    {
+      "name": "日向街道",
+      "modernReference": true,
+      "first": 1102,
+      "last": 1636,
+      "lengthKm": 24.328691583910114,
+      "junction": [
+        398.1431514757346,
+        1806.5089999999998
+      ]
+    },
+    {
+      "name": "北陸道",
+      "modernReference": true,
+      "first": 1676,
+      "last": 2202,
+      "lengthKm": 20.952415004474943,
+      "junction": [
+        1120.6899824409052,
+        1196.0307999999998
+      ]
+    },
+    {
+      "name": "越後街道",
+      "modernReference": true,
+      "first": 916,
+      "last": 1228,
+      "lengthKm": 20.93040390929808,
+      "junction": [
+        1662.0919216397654,
+        819.6582000000006
+      ]
+    },
+    {
+      "name": "石見路",
+      "modernReference": true,
+      "first": 1095,
+      "last": 1476,
+      "lengthKm": 19.886986079534424,
+      "junction": [
+        618.6680780670373,
+        1324.9899999999998
+      ]
+    },
+    {
+      "name": "若狭街道",
+      "modernReference": true,
+      "first": 319,
+      "last": 624,
+      "lengthKm": 14.892267164756,
+      "junction": [
+        1084.663646664394,
+        1313.0994
+      ]
+    },
+    {
+      "name": "二本松街道",
+      "modernReference": true,
+      "first": 231,
+      "last": 424,
+      "lengthKm": 13.713540186760362,
+      "junction": [
+        1790.2342268229959,
+        842.7242000000007
+      ]
+    },
+    {
+      "name": "羽州道",
+      "modernReference": true,
+      "first": 4679,
+      "last": 4838,
+      "lengthKm": 13.494176399438516,
+      "junction": [
+        1837.975452284856,
+        253.34220000000016
+      ]
+    },
+    {
+      "name": "三国峠道",
+      "modernReference": true,
+      "first": 514,
+      "last": 841,
+      "lengthKm": 11.729870201847831,
+      "junction": [
+        1567.8679775525,
+        999.4125999999994
+      ]
+    },
+    {
+      "name": "出雲街道",
+      "modernReference": true,
+      "first": 1730,
+      "last": 2018,
+      "lengthKm": 11.656782172316554,
+      "junction": [
+        699.6954987454577,
+        1296.8924000000002
+      ]
+    },
+    {
+      "name": "出羽浜街道",
+      "modernReference": true,
+      "first": 508,
+      "last": 674,
+      "lengthKm": 11.41844400439794,
+      "junction": [
+        1688.4420905567517,
+        650.3383999999996
+      ]
+    },
+    {
+      "name": "豊後街道",
+      "modernReference": true,
+      "first": 876,
+      "last": 976,
+      "lengthKm": 10.15581105655238,
+      "junction": [
+        308.831882185111,
+        1763.7702000000004
+      ]
+    },
+    {
+      "name": "豊後道",
+      "modernReference": true,
+      "first": 1832,
+      "last": 1898,
+      "lengthKm": 8.91610908287683,
+      "junction": [
+        430.9881088235641,
+        1755.1862
+      ]
+    },
+    {
+      "name": "土佐道",
+      "modernReference": true,
+      "first": 2453,
+      "last": 2606,
+      "lengthKm": 7.972751933521863,
+      "junction": [
+        635.3721755566911,
+        1705.1912000000002
+      ]
+    },
+    {
+      "name": "嶺南左路（東路）",
+      "modernReference": true,
+      "first": 1737,
+      "last": 1816,
+      "lengthKm": 7.84883216320253,
+      "junction": [
+        -130.22876001172563,
+        953.6231999999998
+      ]
+    },
+    {
+      "name": "山陰道",
+      "modernReference": true,
+      "first": 2723,
+      "last": 2871,
+      "lengthKm": 7.578386974093462,
+      "junction": [
+        774.4446239407303,
+        1247.7626
+      ]
+    },
+    {
+      "name": "丹後街道",
+      "modernReference": true,
+      "first": 345,
+      "last": 386,
+      "lengthKm": 6.857363094229285,
+      "junction": [
+        992.072784281971,
+        1259.6385999999995
+      ]
+    },
+    {
+      "name": "東山道",
+      "modernReference": true,
+      "first": 4043,
+      "last": 4173,
+      "lengthKm": 6.536163481443225,
+      "junction": [
+        1531.9924425437412,
+        1076.0312
+      ]
+    },
+    {
+      "name": "甲州道",
+      "modernReference": true,
+      "first": 332,
+      "last": 461,
+      "lengthKm": 5.817585663975301,
+      "junction": [
+        1618.4454547932344,
+        1225.0355999999997
+      ]
+    },
+    {
+      "name": "西海道",
+      "modernReference": true,
+      "first": 1619,
+      "last": 1694,
+      "lengthKm": 5.213497697143993,
+      "junction": [
+        224.92840609168746,
+        1859.6397999999995
+      ]
+    },
+    {
+      "name": "秋田街道",
+      "modernReference": true,
+      "first": 579,
+      "last": 669,
+      "lengthKm": 5.0195855638282225,
+      "junction": [
+        1888.2375747011833,
+        416.9790000000006
+      ]
+    },
+    {
+      "name": "白河街道",
+      "modernReference": true,
+      "first": 893,
+      "last": 1018,
+      "lengthKm": 4.8477985701768205,
+      "junction": [
+        1746.2317924989466,
+        867.4983999999995
+      ]
+    },
+    {
+      "name": "山陽道",
+      "modernReference": true,
+      "first": 5269,
+      "last": 5383,
+      "lengthKm": 4.564005362141074,
+      "junction": [
+        284.52189232453463,
+        1546.7697999999998
+      ]
+    },
+    {
+      "name": "但馬街道",
+      "modernReference": true,
+      "first": 140,
+      "last": 196,
+      "lengthKm": 4.347002668837568,
+      "junction": [
+        899.9747750525232,
+        1340.3304000000005
+      ]
+    },
+    {
+      "name": "杖突越え",
+      "modernReference": true,
+      "first": 330,
+      "last": 394,
+      "lengthKm": 3.6814795606423907,
+      "junction": [
+        1446.5565264595696,
+        1158.1108
+      ]
+    },
+    {
+      "name": "人吉街道",
+      "modernReference": true,
+      "first": 862,
+      "last": 951,
+      "lengthKm": 3.659433552037825,
+      "junction": [
+        320.2155603129619,
+        1933.5303999999994
+      ]
+    },
+    {
+      "name": "嶺南右路（西路）",
+      "modernReference": true,
+      "first": 1052,
+      "last": 1108,
+      "lengthKm": 3.5436792147452536,
+      "junction": [
+        -194.9112867459892,
+        1107.7602
+      ]
+    },
+    {
+      "name": "因幡街道",
+      "modernReference": true,
+      "first": 977,
+      "last": 1027,
+      "lengthKm": 3.367333711758306,
+      "junction": [
+        823.3160461437299,
+        1306.5444
+      ]
+    },
+    {
+      "name": "南海道",
+      "modernReference": true,
+      "first": 2290,
+      "last": 2384,
+      "lengthKm": 3.2187825809168658,
+      "junction": [
+        594.3660165730042,
+        1556.9609999999998
+      ]
+    },
+    {
+      "name": "松山往来",
+      "modernReference": true,
+      "first": 414,
+      "last": 487,
+      "lengthKm": 3.190805796643346,
+      "junction": [
+        719.8843560366861,
+        1359.2476000000006
+      ]
+    },
+    {
+      "name": "伊勢本街道",
+      "modernReference": true,
+      "first": 669,
+      "last": 747,
+      "lengthKm": 3.063953628269047,
+      "junction": [
+        1147.3399730560086,
+        1432.7777999999994
+      ]
+    },
+    {
+      "name": "奥州道",
+      "modernReference": true,
+      "first": 675,
+      "last": 740,
+      "lengthKm": 3.0580968343500103,
+      "junction": [
+        1747.3810820411554,
+        999.7134000000003
+      ]
+    },
+    {
+      "name": "鹿角街道",
+      "modernReference": true,
+      "first": 345,
+      "last": 375,
+      "lengthKm": 2.916249980072358,
+      "junction": [
+        1829.714094345095,
+        303.88599999999997
+      ]
+    },
+    {
+      "name": "浜街道",
+      "modernReference": true,
+      "first": 204,
+      "last": 268,
+      "lengthKm": 2.622427903163846,
+      "junction": [
+        1848.8764708738627,
+        1026.1696000000002
+      ]
+    },
+    {
+      "name": "房総往還",
+      "modernReference": true,
+      "first": 534,
+      "last": 599,
+      "lengthKm": 2.5200299312604244,
+      "junction": [
+        1781.2321329231881,
+        1249.9064000000003
+      ]
+    },
+    {
+      "name": "暗越奈良街道",
+      "modernReference": true,
+      "first": 269,
+      "last": 296,
+      "lengthKm": 2.486646301039638,
+      "junction": [
+        1065.8931579677005,
+        1413.8081999999997
+      ]
+    },
+    {
+      "name": "長崎路",
+      "modernReference": true,
+      "first": 1244,
+      "last": 1296,
+      "lengthKm": 2.318317799432748,
+      "junction": [
+        113.81963011822116,
+        1785.8328000000001
+      ]
+    },
+    {
+      "name": "白山道",
+      "modernReference": true,
+      "first": 388,
+      "last": 452,
+      "lengthKm": 2.301434262684225,
+      "junction": [
+        1256.1388437071362,
+        1098.446
+      ]
+    },
+    {
+      "name": "飛騨街道",
+      "modernReference": true,
+      "first": 1194,
+      "last": 1224,
+      "lengthKm": 2.228954363641236,
+      "junction": [
+        1276.8679625472053,
+        1230.0191999999995
+      ]
+    },
+    {
+      "name": "伊賀越え",
+      "modernReference": true,
+      "first": 167,
+      "last": 223,
+      "lengthKm": 2.2087486838589356,
+      "junction": [
+        1114.9639219581168,
+        1366.8325999999993
+      ]
+    },
+    {
+      "name": "嶺南大路（中路）",
+      "modernReference": false,
+      "first": 1152,
+      "last": 1199,
+      "lengthKm": 2.1630339933875575,
+      "junction": [
+        -175.75635317357379,
+        1007.0741999999996
+      ]
+    },
+    {
+      "name": "御斎所街道",
+      "modernReference": true,
+      "first": 708,
+      "last": 747,
+      "lengthKm": 2.049091377401325,
+      "junction": [
+        1812.276542048339,
+        898.5867999999996
+      ]
+    },
+    {
+      "name": "関東路",
+      "modernReference": false,
+      "first": 1249,
+      "last": 1288,
+      "lengthKm": 1.9435529648671377,
+      "junction": [
+        -56.618083530937426,
+        801.9319999999993
+      ]
+    },
+    {
+      "name": "野麦街道",
+      "modernReference": true,
+      "first": 459,
+      "last": 482,
+      "lengthKm": 1.850700849526497,
+      "junction": [
+        1352.0461903562962,
+        1124.8638
+      ]
+    },
+    {
+      "name": "周山街道",
+      "modernReference": true,
+      "first": 1202,
+      "last": 1224,
+      "lengthKm": 1.762553652418731,
+      "junction": [
+        1005.0715839373934,
+        1333.551
+      ]
+    },
+    {
+      "name": "北国街道（信濃）",
+      "modernReference": true,
+      "first": 160,
+      "last": 179,
+      "lengthKm": 1.2074113486994307,
+      "junction": [
+        1456.8789360941978,
+        958.9085999999995
+      ]
+    },
+    {
+      "name": "伊勢路",
+      "modernReference": true,
+      "first": 526,
+      "last": 544,
+      "lengthKm": 1.151480543336426,
+      "junction": [
+        1173.7148978930245,
+        1380.3188000000005
+      ]
+    },
+    {
+      "name": "足柄道",
+      "modernReference": true,
+      "first": 424,
+      "last": 443,
+      "lengthKm": 1.0894547762508466,
+      "junction": [
+        1574.6718104751915,
+        1275.2138000000002
+      ]
+    },
+    {
+      "name": "越中街道（飛騨）",
+      "modernReference": true,
+      "first": 686,
+      "last": 715,
+      "lengthKm": 1.0767389864366237,
+      "junction": [
+        1302.1125288396831,
+        1098.9050000000007
+      ]
+    },
+    {
+      "name": "熊野街道",
+      "modernReference": true,
+      "first": 1653,
+      "last": 1688,
+      "lengthKm": 1.037345989279288,
+      "junction": [
+        984.5659155911676,
+        1567.4751999999999
+      ]
+    },
+    {
+      "name": "足利道",
+      "modernReference": true,
+      "first": 310,
+      "last": 341,
+      "lengthKm": 1.0206879568071727,
+      "junction": [
+        1646.590670617342,
+        1085.3098000000002
+      ]
+    },
+    {
+      "name": "銀山街道",
+      "modernReference": true,
+      "first": 610,
+      "last": 628,
+      "lengthKm": 0.9792322957155406,
+      "junction": [
+        534.5867800382484,
+        1350.6298000000002
+      ]
+    },
+    {
+      "name": "秩父道",
+      "modernReference": true,
+      "first": 122,
+      "last": 136,
+      "lengthKm": 0.9324940762814755,
+      "junction": [
+        1634.6487707633746,
+        1145.433
+      ]
+    },
+    {
+      "name": "柳川往還",
+      "modernReference": true,
+      "first": 51,
+      "last": 69,
+      "lengthKm": 0.9235744054023325,
+      "junction": [
+        185.63946658026185,
+        1707.5258000000006
+      ]
+    },
+    {
+      "name": "八良峙越え",
+      "modernReference": true,
+      "first": 237,
+      "last": 252,
+      "lengthKm": 0.9165123274213585,
+      "junction": [
+        -238.9952699830773,
+        1246.5723999999996
+      ]
+    },
+    {
+      "name": "東海道",
+      "modernReference": true,
+      "first": 266,
+      "last": 282,
+      "lengthKm": 0.8927866647917497,
+      "junction": [
+        1297.6708637371637,
+        1367.6714000000004
+      ]
+    },
+    {
+      "name": "東海道（鈴鹿越え）",
+      "modernReference": true,
+      "first": 54,
+      "last": 63,
+      "lengthKm": 0.7990690353938188,
+      "junction": [
+        1173.690789186593,
+        1379.8404000000005
+      ]
+    },
+    {
+      "name": "三州街道",
+      "modernReference": true,
+      "first": 2121,
+      "last": 2133,
+      "lengthKm": 0.7041816206754277,
+      "junction": [
+        1334.798757053217,
+        1310.6139999999996
+      ]
+    },
+    {
+      "name": "永川路",
+      "modernReference": true,
+      "first": 104,
+      "last": 123,
+      "lengthKm": 0.6590964680652398,
+      "junction": [
+        -67.5666723192129,
+        1163.5902
+      ]
+    },
+    {
+      "name": "身延道（駿州往還）",
+      "modernReference": true,
+      "first": 577,
+      "last": 587,
+      "lengthKm": 0.6543576624438714,
+      "junction": [
+        1495.6269668431842,
+        1275.9531999999992
+      ]
+    }
+  ]
+}

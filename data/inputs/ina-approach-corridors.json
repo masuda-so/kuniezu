@@ -1,0 +1,76 @@
+[
+  {
+    "id": "nagashino-katsuyori-1575",
+    "title": "長篠の戦い",
+    "commanders": [
+      "武田勝頼"
+    ],
+    "sourceIds": [
+      "inaCampaign2016",
+      "iidaOgasawara"
+    ],
+    "basis": "作戦地域に基づく概略経路。各将の全通過地点・日々の位置は未確定。",
+    "marchKmPerDay": 22,
+    "waypoints": [
+      {
+        "name": "高遠方面",
+        "point": [
+          138.062363,
+          35.83316
+        ]
+      },
+      {
+        "name": "下伊那・飯田方面",
+        "point": [
+          137.832513,
+          35.511835
+        ]
+      },
+      {
+        "name": "足助方面",
+        "point": [
+          137.3168,
+          35.1328
+        ]
+      },
+      {
+        "name": "作手方面",
+        "point": [
+          137.423,
+          34.978
+        ]
+      },
+      {
+        "name": "野田方面",
+        "point": [
+          137.468389,
+          34.882196
+        ]
+      },
+      {
+        "name": "二連木方面",
+        "point": [
+          137.411,
+          34.773
+        ]
+      },
+      {
+        "name": "吉田方面",
+        "point": [
+          137.396043,
+          34.769562
+        ]
+      }
+    ],
+    "routeNote": "伊那・足助・作手方面から東三河へ（地点間は参考経路）",
+    "recordType": "sourced-campaign-corridor",
+    "status": "corridor-with-estimated-segments",
+    "personIds": [
+      "person:takeda-katsuyori"
+    ],
+    "referenceLocationIds": [
+      "location:katsuyori-tsutsujigasaki-1573"
+    ],
+    "referenceUse": "居所の参照。1575年の出発日や逐日滞在の証明ではない。"
+  }
+]

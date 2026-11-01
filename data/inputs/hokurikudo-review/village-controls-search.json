@@ -1,0 +1,82 @@
+[
+  {
+    "query": "敦賀市葉原",
+    "url": "https://msearch.gsi.go.jp/address-search/AddressSearch?q=%E6%95%A6%E8%B3%80%E5%B8%82%E8%91%89%E5%8E%9F",
+    "result": [
+      {
+        "geometry": {
+          "coordinates": [
+            136.142365,
+            35.692871
+          ],
+          "type": "Point"
+        },
+        "type": "Feature",
+        "properties": {
+          "addressCode": "",
+          "title": "福井県敦賀市葉原"
+        }
+      }
+    ]
+  },
+  {
+    "query": "敦賀市新保",
+    "url": "https://msearch.gsi.go.jp/address-search/AddressSearch?q=%E6%95%A6%E8%B3%80%E5%B8%82%E6%96%B0%E4%BF%9D",
+    "result": [
+      {
+        "geometry": {
+          "coordinates": [
+            136.137253,
+            35.705708
+          ],
+          "type": "Point"
+        },
+        "type": "Feature",
+        "properties": {
+          "addressCode": "",
+          "title": "福井県敦賀市新保"
+        }
+      }
+    ]
+  },
+  {
+    "query": "南越前町二ツ屋",
+    "url": "https://msearch.gsi.go.jp/address-search/AddressSearch?q=%E5%8D%97%E8%B6%8A%E5%89%8D%E7%94%BA%E4%BA%8C%E3%83%84%E5%B1%8B",
+    "result": [
+      {
+        "geometry": {
+          "coordinates": [
+            136.151581,
+            35.739876
+          ],
+          "type": "Point"
+        },
+        "type": "Feature",
+        "properties": {
+          "addressCode": "",
+          "title": "福井県南越前町二ツ屋"
+        }
+      }
+    ]
+  },
+  {
+    "query": "南越前町今庄",
+    "url": "https://msearch.gsi.go.jp/address-search/AddressSearch?q=%E5%8D%97%E8%B6%8A%E5%89%8D%E7%94%BA%E4%BB%8A%E5%BA%84",
+    "result": [
+      {
+        "geometry": {
+          "coordinates": [
+            136.213043,
+            35.769863
+          ],
+          "type": "Point"
+        },
+        "type": "Feature",
+        "properties": {
+          "addressCode": "",
+          "title": "福井県南越前町今庄"
+        }
+      }
+    ]
+  }
+]

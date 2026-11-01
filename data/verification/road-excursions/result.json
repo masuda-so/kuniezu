@@ -1,0 +1,123 @@
+{
+  "rows": [
+    {
+      "name": "東山道",
+      "cleanup": {
+        "kind": "removed-reference-excursions",
+        "excursions": [
+          {
+            "first": 73,
+            "last": 83,
+            "lengthKm": 1.0323142303531156,
+            "returnRatio": 1,
+            "reviewed": false,
+            "junction": [
+              136.046531,
+              35.070001
+            ]
+          },
+          {
+            "first": 2342,
+            "last": 2629,
+            "lengthKm": 16.29013240097703,
+            "returnRatio": 0.5758789344690937,
+            "reviewed": true,
+            "junction": [
+              137.814665,
+              35.908807
+            ]
+          },
+          {
+            "first": 4413,
+            "last": 4419,
+            "lengthKm": 0.7996467675616259,
+            "returnRatio": 1,
+            "reviewed": false,
+            "junction": [
+              138.697166,
+              36.362828
+            ]
+          },
+          {
+            "first": 4981,
+            "last": 4991,
+            "lengthKm": 0.7694951494104316,
+            "returnRatio": 1,
+            "reviewed": false,
+            "junction": [
+              138.99907,
+              36.323547
+            ]
+          }
+        ],
+        "removedVertices": 313
+      },
+      "version": 7
+    },
+    {
+      "name": "三州街道",
+      "cleanup": {
+        "kind": "removed-reference-excursions",
+        "excursions": [
+          {
+            "first": 1289,
+            "last": 1746,
+            "lengthKm": 22.512551902471643,
+            "returnRatio": 0.48520019530374,
+            "reviewed": true,
+            "junction": [
+              137.708965,
+              35.306391
+            ]
+          }
+        ],
+        "removedVertices": 457
+      },
+      "version": 7
+    },
+    {
+      "name": "嶺南左路（東路）",
+      "cleanup": {
+        "kind": "removed-reference-excursions",
+        "excursions": [
+          {
+            "first": 270,
+            "last": 284,
+            "lengthKm": 1.3082682383804638,
+            "returnRatio": 1,
+            "reviewed": false,
+            "junction": [
+              129.307323,
+              35.551509
+            ]
+          },
+          {
+            "first": 601,
+            "last": 615,
+            "lengthKm": 1.2988402688134215,
+            "returnRatio": 1,
+            "reviewed": false,
+            "junction": [
+              128.941358,
+              35.970522
+            ]
+          },
+          {
+            "first": 1807,
+            "last": 1821,
+            "lengthKm": 0.9556011807342202,
+            "returnRatio": 1,
+            "reviewed": false,
+            "junction": [
+              128.423411,
+              36.962132
+            ]
+          }
+        ],
+        "removedVertices": 42
+      },
+      "version": 7
+    }
+  ],
+  "errors": []
+}

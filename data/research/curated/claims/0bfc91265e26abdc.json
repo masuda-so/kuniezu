@@ -1,0 +1,20 @@
+{
+  "id": "tono-detached",
+  "entity": "campaign:東濃の戦い",
+  "predicate": "command",
+  "value": "遠山友政・妻木氏らの別働隊が家康の書状を受けて動いた",
+  "validYears": [
+    1600,
+    1600
+  ],
+  "source": "tono1600",
+  "locator": "8月15日・20日・27日・9月8日の書状",
+  "gameBindings": [
+    "campaign-source-note"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "sourceUrl": "https://www.city.nakatsugawa.lg.jp/museum/t/archives/materials/1496.html",
+  "checked": "2026-11-01",
+  "uncertainty": null
+}

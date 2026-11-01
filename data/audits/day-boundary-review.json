@@ -1,0 +1,50 @@
+{
+  "scope": "1560～1615年、日末の予測表示位置と翌日冒頭の位置。100m超の不連続。史実の速度や経路の証明ではない。",
+  "samples": 3952720,
+  "jumps": [
+    {
+      "name": "三好長逸",
+      "date": {
+        "y": 1565,
+        "m": 6,
+        "d": 17
+      },
+      "km": 22.066,
+      "from": [
+        1035.5,
+        1376
+      ],
+      "to": [
+        1060.9448864233088,
+        1345.6000000000004
+      ],
+      "oldLoc": "akutagawa",
+      "newLoc": "akutagawa",
+      "oldUnit": null,
+      "newUnit": null,
+      "travel": null
+    },
+    {
+      "name": "三好義継",
+      "date": {
+        "y": 1565,
+        "m": 6,
+        "d": 17
+      },
+      "km": 22.066,
+      "from": [
+        1035.5,
+        1376
+      ],
+      "to": [
+        1060.9448864233088,
+        1345.6000000000004
+      ],
+      "oldLoc": "akutagawa",
+      "newLoc": "akutagawa",
+      "oldUnit": null,
+      "newUnit": null,
+      "travel": null
+    }
+  ]
+}

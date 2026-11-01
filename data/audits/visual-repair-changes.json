@@ -1,0 +1,94 @@
+{
+  "date": "2026-10-31",
+  "baseline": "/var/folders/p6/_cz1nnqd7ksfd45n2t859zvw0000gn/T/kuniezu-visual-repair-u51g7mtf",
+  "files": [
+    {
+      "path": "game/ui.js",
+      "before": "03a35b68422282e697d1fc62274eac302ff49f3e1e441831138938f8bd61da55",
+      "after": "bce0e2af636200e71707df2cc8e8a314ae79e93cebbe9e39a1dbf956c434a462"
+    },
+    {
+      "path": "game/index.html",
+      "before": "44f47bafef32187a4d4d3d203c569695123fa2223204357b1c0afb4d06b5a4cc",
+      "after": "10179e6b8fdf110d11c8327726f828dd80c26b5788cf11d653fca6e0c7647ff7"
+    },
+    {
+      "path": "game/bscene.js",
+      "before": "ff7b1a031a4a14ce61e141aeb7d3b5ec3b5ab037cb5b50b5a72f49621e9dbda7",
+      "after": "868c924816049f003a1fc642f827f9672539508b1007d886b724ad66155c15d0"
+    },
+    {
+      "path": "game/engine.js",
+      "before": "0e5fd2070e45008ff1ee4f49903a012b4013d5b61991932e45754118aa8e31b1",
+      "after": "7e7ebf2bf80cd2db7cf36b62138e8ca944d5023dc7f9dba5428051c70ac5d598"
+    },
+    {
+      "path": "game/battle-layout.js",
+      "before": "ec8f96b1f7419a8124e39f32b99636ffb84e9f8bf55fbe6720617148dba03906",
+      "after": "fbed007b3c698afdd95c2a2f9f58112febf471960c62c967ad4c662d8f5cfd19"
+    },
+    {
+      "path": "game/water-evidence.js",
+      "before": "28b2473e92cc0661ad9c900c27c0f8dd6f64731f227523019ac93263a32eb3e3",
+      "after": "c0826b9bc4556601d0bc921e65e7562daadb5b69824d5ab62926dbb75a49b4ea"
+    },
+    {
+      "path": "game/terrain-tiles.js",
+      "before": "1c42ce27f684b9644ed6c3a0a1f531fbf5d76cb2ef368dcbd0e853f7d45fa6f3",
+      "after": "8a1b38d47e8eef6b1c320663e81cfbcd653cb9e1ed22fc62f4cc3a2de062d208"
+    },
+    {
+      "path": "game/battle-fushimi.js",
+      "before": null,
+      "after": "cb588a4ec2e7c121edb17a1f0d0c1e752312132267059701112317b493ba91bf"
+    },
+    {
+      "path": "game/road-revision.js",
+      "before": null,
+      "after": "822ddfd10240010f64da0111125fdd84c7ba78974adddfd9cabefc5bdb63c2f5"
+    },
+    {
+      "path": "game/licenses/DATA_SOURCES.md",
+      "before": "77d3ebc97b94e6a4b213fb95e2449b9f07c21addaf06d13c38fea4fa75cf694f",
+      "after": "a0a7ec9bc86cf24b136518d1dcfcc85ddba9c863364a2c507e034979ae745b73"
+    },
+    {
+      "path": "tools/checks/visual-data.cjs",
+      "before": null,
+      "after": "7e59f8d05ae016d3ec576c869c3b067cbfa733017481f3cebb9266a1acf63305"
+    },
+    {
+      "path": "tools/checks/visual-repair.cjs",
+      "before": null,
+      "after": "0813c797c4937c942a43de6da171ab63be1fa20cd2bebf09573dec9ac03ef515"
+    },
+    {
+      "path": "tools/checks/terrain-transition.cjs",
+      "before": null,
+      "after": "6cac6b0670da921fd30ba3ec731c9ad6f406bccca7d1a79f960f7e5b157a6c7f"
+    },
+    {
+      "path": "tools/checks/history-browser.cjs",
+      "before": "727f4f6a6a12961b85ab5a8e92cdb021afdbcb4c49d90f9f6b73cf74b966ae8f",
+      "after": "71ee91ffc211c9d3e80c6a6ca194a697fd1f0f3f2ab72e1d6eb5bfe71de05307"
+    },
+    {
+      "path": "HANDOFF.md",
+      "before": "5da8867ec10a1448ccd82fa7722c0f2e8b43ff2475bfd12fac35f482773a0532",
+      "after": "e8268a5ba94485b314d9be7264fe08540b2cbec955c17f04b82c6ec21d4ec5fe"
+    },
+    {
+      "path": "MAP_HISTORY_REVIEW.md",
+      "before": "cb5c00a671dbc9143adda4d2d5db026000b2da7f74c924762891082beefd38e7",
+      "after": "a8356b64a6ceb3f73208f0394d7e941be1d1fe9083adb70dcc05672fe627f209"
+    },
+    {
+      "path": "VISUAL_REPAIR.md",
+      "before": null,
+      "after": "d68ccb24ce78f1aaf0e69dfbea909b3c6cebc6117c38acd6192c21a8d45e8207"
+    }
+  ],
+  "verification": "VISUAL_REPAIR.md",
+  "server": "user-managed http://localhost:8000",
+  "remaining": "All roads and 48 unresearched scenes remain incomplete; Fushimi is source-informed schematic."
+}

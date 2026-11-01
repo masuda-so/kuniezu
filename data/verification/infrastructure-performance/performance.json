@@ -1,0 +1,346 @@
+{
+  "environment": {
+    "baseline": null,
+    "viewport": [
+      1400,
+      950
+    ],
+    "zoom": 5,
+    "terrainBeforeWait": {
+      "loaded": 45,
+      "failed": 3,
+      "pending": 342,
+      "running": 6,
+      "zoom": 11,
+      "cached": 396,
+      "revision": 30,
+      "provider": "GSI hillshademap (Japan) / Mapzen (other areas)",
+      "gsiLoaded": 13
+    },
+    "terrainReady": {
+      "loaded": 347,
+      "failed": 49,
+      "pending": 0,
+      "running": 0,
+      "zoom": 11,
+      "cached": 396,
+      "revision": 32,
+      "provider": "GSI hillshademap (Japan) / Mapzen (other areas)",
+      "gsiLoaded": 147
+    }
+  },
+  "play": {
+    "terrainAfter": {
+      "loaded": 347,
+      "failed": 49,
+      "pending": 0,
+      "running": 0,
+      "zoom": 11,
+      "cached": 396,
+      "revision": 32,
+      "provider": "GSI hillshademap (Japan) / Mapzen (other areas)",
+      "gsiLoaded": 147
+    },
+    "baseCache": {
+      "builds": 14,
+      "hits": 3
+    },
+    "metrics": [
+      {
+        "name": "LayoutDuration",
+        "delta": 0.020831000000000002
+      },
+      {
+        "name": "RecalcStyleDuration",
+        "delta": 0.002350999999999999
+      },
+      {
+        "name": "DevToolsCommandDuration",
+        "delta": 0.004269999999999996
+      },
+      {
+        "name": "ScriptDuration",
+        "delta": 0.41160899999999945
+      },
+      {
+        "name": "V8CompileDuration",
+        "delta": 0
+      },
+      {
+        "name": "TaskDuration",
+        "delta": 0.6359139999999996
+      },
+      {
+        "name": "TaskOtherDuration",
+        "delta": 0.19685299999999994
+      }
+    ],
+    "drawBefore": {
+      "base": 16,
+      "top": 17
+    },
+    "drawAfter": {
+      "base": 17,
+      "top": 138
+    },
+    "cpu": [
+      [
+        "(idle) :0",
+        3367.82099999999
+      ],
+      [
+        "(program) :0",
+        384.02799999999985
+      ],
+      [
+        "at ui.js:142",
+        186.7169999999999
+      ],
+      [
+        "fmt ui.js:4",
+        26.339999999999996
+      ],
+      [
+        "narrowTL ui.js:96",
+        22.544
+      ],
+      [
+        "renderTop ui.js:623",
+        21.215
+      ],
+      [
+        "roadLabelsTop ui.js:140",
+        20.765
+      ],
+      [
+        "drawTop ui.js:336",
+        18.053
+      ],
+      [
+        "fillText :0",
+        17.537
+      ],
+      [
+        "measureText :0",
+        13.84
+      ],
+      [
+        "drawYosho ui.js:313",
+        12.775999999999998
+      ],
+      [
+        "strokeText :0",
+        11.391000000000002
+      ],
+      [
+        "clanCastles engine.js:268",
+        10.850999999999999
+      ],
+      [
+        "G.castleGens engine.js:278",
+        4.893
+      ],
+      [
+        "fill :0",
+        3.76
+      ],
+      [
+        "mix ui.js:25",
+        3.749
+      ],
+      [
+        "fitsP ui.js:319",
+        3.5789999999999997
+      ],
+      [
+        "loop ui.js:524",
+        3.013
+      ],
+      [
+        "renderTL ui.js:588",
+        2.524
+      ],
+      [
+        "castleIcon ui.js:287",
+        2.5220000000000002
+      ],
+      [
+        "fits ui.js:374",
+        2.516
+      ],
+      [
+        "save :0",
+        2.508
+      ],
+      [
+        "w2s ui.js:101",
+        2.508
+      ],
+      [
+        "fillRect :0",
+        2.5060000000000002
+      ],
+      [
+        "contains :0",
+        2.497
+      ]
+    ]
+  },
+  "pan": {
+    "terrainAfter": {
+      "loaded": 347,
+      "failed": 49,
+      "pending": 0,
+      "running": 0,
+      "zoom": 11,
+      "cached": 396,
+      "revision": 32,
+      "provider": "GSI hillshademap (Japan) / Mapzen (other areas)",
+      "gsiLoaded": 147
+    },
+    "baseCache": {
+      "builds": 14,
+      "hits": 27
+    },
+    "metrics": [
+      {
+        "name": "LayoutDuration",
+        "delta": 0
+      },
+      {
+        "name": "RecalcStyleDuration",
+        "delta": 0.0010629999999999997
+      },
+      {
+        "name": "DevToolsCommandDuration",
+        "delta": 0.007387000000000032
+      },
+      {
+        "name": "ScriptDuration",
+        "delta": 0.11412599999999973
+      },
+      {
+        "name": "V8CompileDuration",
+        "delta": 0
+      },
+      {
+        "name": "TaskDuration",
+        "delta": 0.4312100000000001
+      },
+      {
+        "name": "TaskOtherDuration",
+        "delta": 0.30863399999999996
+      }
+    ],
+    "drawBefore": {
+      "base": 17,
+      "top": 138
+    },
+    "drawAfter": {
+      "base": 41,
+      "top": 162
+    },
+    "cpu": [
+      [
+        "(idle) :0",
+        1525.6979999999955
+      ],
+      [
+        "(program) :0",
+        416.38299999999936
+      ],
+      [
+        "at ui.js:142",
+        53.257999999999996
+      ],
+      [
+        "narrowTL ui.js:96",
+        6.259
+      ],
+      [
+        "drawTop ui.js:336",
+        5.524
+      ],
+      [
+        "drawYosho ui.js:313",
+        5.257999999999999
+      ],
+      [
+        "fmt ui.js:4",
+        5.057
+      ],
+      [
+        "roadLabelsTop ui.js:140",
+        5.023
+      ],
+      [
+        "fillText :0",
+        3.761
+      ],
+      [
+        "strokeText :0",
+        3.6959999999999997
+      ],
+      [
+        "save :0",
+        2.567
+      ],
+      [
+        "clanCastles engine.js:268",
+        2.525
+      ],
+      [
+        "jText ui.js:307",
+        2.5140000000000002
+      ],
+      [
+        "G.castleGens engine.js:278",
+        2.5119999999999996
+      ],
+      [
+        "loop ui.js:524",
+        2.481
+      ],
+      [
+        "contains :0",
+        2.455
+      ],
+      [
+        "fill :0",
+        1.462
+      ],
+      [
+        " terrain-tiles.js:71",
+        1.28
+      ],
+      [
+        "plate ui.js:302",
+        1.28
+      ],
+      [
+        "translate :0",
+        1.27
+      ],
+      [
+        "(garbage collector) :0",
+        1.259
+      ],
+      [
+        "requestAnimationFrame :0",
+        1.259
+      ],
+      [
+        "drawImage :0",
+        1.259
+      ],
+      [
+        "measureText :0",
+        1.258
+      ],
+      [
+        "drawJokaku ui.js:320",
+        1.256
+      ]
+    ]
+  }
+}

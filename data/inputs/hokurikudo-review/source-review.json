@@ -1,0 +1,85 @@
+{
+  "accessed": "2026-11-02",
+  "scope": "本文・図の路線系統と年代別の検証。現代比較線の中心線を史実とする判定ではない。",
+  "records": [
+    {
+      "id": "fukui-medieval-traffic",
+      "title": "福井県史 通史編2 第五章第一節三 敦賀湾舟運と西街道",
+      "url": "https://www.library-archives.pref.fukui.lg.jp/fukui/07/kenshi/T2/T2-5-01-01-03-01.htm",
+      "period": "中世後期",
+      "supports": "敦賀から府中へ木ノ芽峠・今庄を経る陸路と、敦賀湾舟運・西街道を経る別系統が存在。",
+      "doesNotSupport": "現代道路中心線、全軍の実際の通過線。"
+    },
+    {
+      "id": "fukui-road-introduction",
+      "title": "福井県史 通史編1 通史編序説 産業・交通と都市 陸路",
+      "url": "https://www.library-archives.pref.fukui.lg.jp/fukui/07/kenshi/T1/0a1-01-03-02-01.htm",
+      "period": "古代〜近世の変遷",
+      "supports": "新保〜鹿蒜の木ノ芽道、勝家が重視した椿坂〜栃ノ木の東近江系、秀康入封後の整備を区別。",
+      "doesNotSupport": "栃ノ木道の存在開始日を勝家時代とすること。"
+    },
+    {
+      "id": "fukui-medieval-forts",
+      "title": "福井県史 通史編2 第五章第三節一 木ノ芽峠城砦群",
+      "url": "https://www.library-archives.pref.fukui.lg.jp/fukui/07/kenshi/T2/T2-5-01-03-01-10.htm",
+      "period": "戦国・天正年間",
+      "supports": "木ノ芽が戦国期の要衝。天正年間の勝家による栃ノ木越開発で主たる交通上の位置を失うが、木ノ芽の利用は後も続く。",
+      "doesNotSupport": "栃ノ木開発の正確な日、木ノ芽道の廃止。"
+    },
+    {
+      "id": "fukui-early-modern-map",
+      "title": "図説福井県史 近世15 街道と川舟(1)",
+      "url": "https://www.library-archives.pref.fukui.lg.jp/fukui/07/zusetsu/C15/C151.htm",
+      "period": "近世・図の越前部分は1685年越前国絵図をもとに作成",
+      "supports": "木ノ芽系は敦賀・葉原・新保・二ツ屋・今庄。栃ノ木系は近江柳ケ瀬・栃ノ木・板取・今庄。別線の合流であり片方へ往復する一筆の本線ではない。",
+      "doesNotSupport": "1685図形を1560年の精密中心線とみなすこと。"
+    },
+    {
+      "id": "fukui-ancient-traffic",
+      "title": "図説福井県史 古代13 北陸道と北の海つ道(1)",
+      "url": "https://www.library-archives.pref.fukui.lg.jp/fukui/07/zusetsu/A13/A131.htm",
+      "period": "古代・平安末期",
+      "supports": "栃ノ木越は能美越えとして平安末期にも確認でき、勝家以前の存在を排除できない。",
+      "doesNotSupport": "平安の駅制や駅馬数を戦国へそのまま適用すること。"
+    },
+    {
+      "id": "minamiechizen-yuo",
+      "title": "南越前町 名勝 おくのほそ道の風景地 湯尾峠",
+      "url": "https://www.town.minamiechizen.lg.jp/kurasi/103/128/p010373.html",
+      "period": "1578年と近世・近代",
+      "supports": "1578年に勝家が旧峠の西側へ整備したという記述は湯尾峠についてのもの。",
+      "doesNotSupport": "この年を栃ノ木峠の開発年月と読み替えること。"
+    },
+    {
+      "id": "excluded-town-news-date",
+      "title": "南越前町広報 平成28年 今庄宿豆知識",
+      "url": "https://www.town.minamiechizen.lg.jp/kouhou/h28/p002297_d/fil/imajyou.pdf",
+      "period": "年代採用保留",
+      "supports": "栃ノ木峠と勝家の整備の関連を述べる補助資料。",
+      "doesNotSupport": "本文の1568年以降安土参勤という記述は時系列の照合を要するため、正確な開発年として採用しない。"
+    }
+  ],
+  "topology": {
+    "kinome": [
+      "敦賀",
+      "葉原",
+      "新保",
+      "木ノ芽峠",
+      "二ツ屋",
+      "今庄"
+    ],
+    "tochinoki": [
+      "近江柳ケ瀬",
+      "椿坂峠",
+      "栃ノ木峠",
+      "板取",
+      "今庄"
+    ],
+    "sharedNorth": [
+      "今庄",
+      "湯尾峠",
+      "府中"
+    ],
+    "implementationDecision": "木ノ芽経路と栃ノ木経路を別系統に保持。同じ道路の閉じた往復へ混ぜない。木ノ芽を栃ノ木の台頭時に消去しない。"
+  }
+}

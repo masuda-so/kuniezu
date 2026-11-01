@@ -1,0 +1,92 @@
+{
+  "scope": "長い直線接続を現代道路比較で改善。史実経路の確定ではない。",
+  "source": "https://routing.openstreetmap.de/routed-bike/",
+  "copyright": "© OpenStreetMap contributors",
+  "license": "https://opendatacommons.org/licenses/odbl/1-0/",
+  "accessed": "2026-11-01",
+  "routes": [
+    {
+      "name": "伊那街道（豊川・新城）",
+      "status": "modern-reference",
+      "vertices": 1064,
+      "maxSnapMeters": 61.97101285
+    },
+    {
+      "name": "長篠への道",
+      "status": "modern-reference",
+      "vertices": 102,
+      "maxSnapMeters": 61.97101285
+    },
+    {
+      "name": "作手への道",
+      "status": "modern-reference",
+      "vertices": 2691,
+      "maxSnapMeters": 62.98347214
+    }
+  ],
+  "anchors": [
+    [
+      "伊那街道（豊川・新城）",
+      [
+        [
+          137.3595,
+          34.7967
+        ],
+        [
+          137.3955,
+          34.8252
+        ],
+        [
+          137.4203,
+          34.8526
+        ],
+        [
+          137.474,
+          34.885
+        ],
+        [
+          137.495,
+          34.9015
+        ],
+        [
+          137.5148,
+          34.9135
+        ],
+        [
+          137.542,
+          34.935
+        ]
+      ]
+    ],
+    [
+      "長篠への道",
+      [
+        [
+          137.542,
+          34.935
+        ],
+        [
+          137.5598,
+          34.928
+        ]
+      ]
+    ],
+    [
+      "作手への道",
+      [
+        [
+          137.3168,
+          35.1328
+        ],
+        [
+          137.423,
+          34.978
+        ],
+        [
+          137.468389,
+          34.882196
+        ]
+      ]
+    ]
+  ]
+}

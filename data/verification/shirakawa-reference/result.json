@@ -1,0 +1,26 @@
+{
+  "rows": [
+    {
+      "name": "白河街道",
+      "cleanup": {
+        "kind": "removed-reference-excursions",
+        "excursions": [
+          {
+            "first": 645,
+            "last": 1246,
+            "lengthKm": 35.123356621783685,
+            "returnRatio": 0.5075067519655224,
+            "reviewed": true,
+            "junction": [
+              140.06797,
+              37.38636
+            ]
+          }
+        ],
+        "removedVertices": 601
+      },
+      "version": 9
+    }
+  ],
+  "errors": []
+}

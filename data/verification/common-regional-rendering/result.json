@@ -1,0 +1,2305 @@
+{
+  "result": [
+    {
+      "name": "japan",
+      "terrain": {
+        "timings": [
+          {
+            "provider": "dem",
+            "z": 10,
+            "x": 899,
+            "y": 407,
+            "loadMs": 228.20000000298023,
+            "processMs": 4
+          },
+          {
+            "provider": "dem",
+            "z": 10,
+            "x": 900,
+            "y": 407,
+            "loadMs": 236.70000000298023,
+            "processMs": 4.0999999940395355
+          },
+          {
+            "provider": "dem",
+            "z": 10,
+            "x": 901,
+            "y": 407,
+            "loadMs": 281.8999999985099,
+            "processMs": 6.699999995529652
+          },
+          {
+            "provider": "dem",
+            "z": 10,
+            "x": 902,
+            "y": 407,
+            "loadMs": 433.19999999552965,
+            "processMs": 9.5
+          },
+          {
+            "provider": "dem",
+            "z": 10,
+            "x": 904,
+            "y": 407,
+            "loadMs": 447,
+            "processMs": 6.799999997019768
+          },
+          {
+            "provider": "dem",
+            "z": 10,
+            "x": 905,
+            "y": 407,
+            "loadMs": 446.20000000298023,
+            "processMs": 5.5
+          },
+          {
+            "provider": "dem",
+            "z": 10,
+            "x": 897,
+            "y": 408,
+            "loadMs": 440.20000000298023,
+            "processMs": 4.700000002980232
+          },
+          {
+            "provider": "dem",
+            "z": 10,
+            "x": 898,
+            "y": 408,
+            "loadMs": 378.90000000596046,
+            "processMs": 5.299999997019768
+          },
+          {
+            "provider": "dem",
+            "z": 10,
+            "x": 903,
+            "y": 407,
+            "loadMs": 622.1000000014901,
+            "processMs": 7.899999998509884
+          },
+          {
+            "provider": "dem",
+            "z": 10,
+            "x": 899,
+            "y": 408,
+            "loadMs": 268.3999999985099,
+            "processMs": 7.5
+          },
+          {
+            "provider": "dem",
+            "z": 10,
+            "x": 900,
+            "y": 408,
+            "loadMs": 263.70000000298023,
+            "processMs": 6.5999999940395355
+          },
+          {
+            "provider": "dem",
+            "z": 10,
+            "x": 902,
+            "y": 408,
+            "loadMs": 269.09999999403954,
+            "processMs": 5.9000000059604645
+          },
+          {
+            "provider": "dem",
+            "z": 10,
+            "x": 903,
+            "y": 408,
+            "loadMs": 252.60000000149012,
+            "processMs": 5.899999998509884
+          },
+          {
+            "provider": "gsi",
+            "z": 10,
+            "x": 898,
+            "y": 401,
+            "loadMs": 59.399999998509884,
+            "processMs": 3.2999999970197678
+          },
+          {
+            "provider": "gsi",
+            "z": 10,
+            "x": 899,
+            "y": 401,
+            "loadMs": 60.70000000298023,
+            "processMs": 5.5
+          },
+          {
+            "provider": "gsi",
+            "z": 10,
+            "x": 900,
+            "y": 401,
+            "loadMs": 66.70000000298023,
+            "processMs": 5.100000001490116
+          },
+          {
+            "provider": "dem",
+            "z": 10,
+            "x": 904,
+            "y": 408,
+            "loadMs": 221.89999999850988,
+            "processMs": 4.700000002980232
+          },
+          {
+            "provider": "gsi",
+            "z": 10,
+            "x": 901,
+            "y": 401,
+            "loadMs": 67.20000000298023,
+            "processMs": 4.899999998509884
+          },
+          {
+            "provider": "gsi",
+            "z": 10,
+            "x": 902,
+            "y": 401,
+            "loadMs": 67,
+            "processMs": 4.700000002980232
+          },
+          {
+            "provider": "gsi",
+            "z": 10,
+            "x": 903,
+            "y": 401,
+            "loadMs": 63,
+            "processMs": 4.299999997019768
+          },
+          {
+            "provider": "gsi",
+            "z": 10,
+            "x": 904,
+            "y": 401,
+            "loadMs": 54.600000001490116,
+            "processMs": 4.0999999940395355
+          },
+          {
+            "provider": "gsi",
+            "z": 10,
+            "x": 905,
+            "y": 401,
+            "loadMs": 59.5,
+            "processMs": 4.5
+          },
+          {
+            "provider": "gsi",
+            "z": 10,
+            "x": 899,
+            "y": 402,
+            "loadMs": 53.600000001490116,
+            "processMs": 5
+          },
+          {
+            "provider": "gsi",
+            "z": 10,
+            "x": 898,
+            "y": 402,
+            "loadMs": 66.39999999850988,
+            "processMs": 2.600000001490116
+          },
+          {
+            "provider": "gsi",
+            "z": 10,
+            "x": 901,
+            "y": 402,
+            "loadMs": 36,
+            "processMs": 3.7999999970197678
+          },
+          {
+            "provider": "gsi",
+            "z": 10,
+            "x": 900,
+            "y": 402,
+            "loadMs": 43.79999999701977,
+            "processMs": 3.7000000029802322
+          },
+          {
+            "provider": "gsi",
+            "z": 10,
+            "x": 902,
+            "y": 402,
+            "loadMs": 32.70000000298023,
+            "processMs": 3.1999999955296516
+          },
+          {
+            "provider": "gsi",
+            "z": 10,
+            "x": 903,
+            "y": 402,
+            "loadMs": 41.79999999701977,
+            "processMs": 2.9000000059604645
+          },
+          {
+            "provider": "gsi",
+            "z": 10,
+            "x": 904,
+            "y": 402,
+            "loadMs": 47.100000001490116,
+            "processMs": 2.8000000044703484
+          },
+          {
+            "provider": "gsi",
+            "z": 10,
+            "x": 905,
+            "y": 402,
+            "loadMs": 46.099999994039536,
+            "processMs": 2.5
+          },
+          {
+            "provider": "gsi",
+            "z": 10,
+            "x": 897,
+            "y": 403,
+            "loadMs": 61.5,
+            "processMs": 1.8999999985098839
+          },
+          {
+            "provider": "gsi",
+            "z": 10,
+            "x": 900,
+            "y": 403,
+            "loadMs": 38,
+            "processMs": 3
+          },
+          {
+            "provider": "gsi",
+            "z": 10,
+            "x": 898,
+            "y": 403,
+            "loadMs": 67,
+            "processMs": 2.399999998509884
+          },
+          {
+            "provider": "gsi",
+            "z": 10,
+            "x": 899,
+            "y": 403,
+            "loadMs": 59.69999999552965,
+            "processMs": 5.899999998509884
+          },
+          {
+            "provider": "dem",
+            "z": 10,
+            "x": 905,
+            "y": 408,
+            "loadMs": 389.6000000014901,
+            "processMs": 2.7999999970197678
+          },
+          {
+            "provider": "gsi",
+            "z": 10,
+            "x": 901,
+            "y": 403,
+            "loadMs": 33.30000000447035,
+            "processMs": 2.6999999955296516
+          },
+          {
+            "provider": "gsi",
+            "z": 10,
+            "x": 902,
+            "y": 403,
+            "loadMs": 38.70000000298023,
+            "processMs": 2.6999999955296516
+          },
+          {
+            "provider": "gsi",
+            "z": 10,
+            "x": 903,
+            "y": 403,
+            "loadMs": 36.599999994039536,
+            "processMs": 2.8000000044703484
+          },
+          {
+            "provider": "gsi",
+            "z": 10,
+            "x": 904,
+            "y": 403,
+            "loadMs": 38.400000005960464,
+            "processMs": 2.6999999955296516
+          },
+          {
+            "provider": "gsi",
+            "z": 10,
+            "x": 905,
+            "y": 403,
+            "loadMs": 38.30000000447035,
+            "processMs": 2.6999999955296516
+          },
+          {
+            "provider": "gsi",
+            "z": 10,
+            "x": 897,
+            "y": 404,
+            "loadMs": 73.5,
+            "processMs": 2.8000000044703484
+          },
+          {
+            "provider": "gsi",
+            "z": 10,
+            "x": 901,
+            "y": 404,
+            "loadMs": 41.30000000447035,
+            "processMs": 2.7999999970197678
+          },
+          {
+            "provider": "gsi",
+            "z": 10,
+            "x": 900,
+            "y": 404,
+            "loadMs": 47.29999999701977,
+            "processMs": 2.600000001490116
+          },
+          {
+            "provider": "gsi",
+            "z": 10,
+            "x": 898,
+            "y": 404,
+            "loadMs": 71.80000000447035,
+            "processMs": 2.6999999955296516
+          },
+          {
+            "provider": "gsi",
+            "z": 10,
+            "x": 899,
+            "y": 404,
+            "loadMs": 67.89999999850988,
+            "processMs": 3
+          },
+          {
+            "provider": "gsi",
+            "z": 10,
+            "x": 902,
+            "y": 404,
+            "loadMs": 40.69999999552965,
+            "processMs": 2.7000000029802322
+          },
+          {
+            "provider": "gsi",
+            "z": 10,
+            "x": 903,
+            "y": 404,
+            "loadMs": 40.29999999701977,
+            "processMs": 2.8000000044703484
+          },
+          {
+            "provider": "gsi",
+            "z": 10,
+            "x": 904,
+            "y": 404,
+            "loadMs": 43,
+            "processMs": 3.7000000029802322
+          },
+          {
+            "provider": "gsi",
+            "z": 10,
+            "x": 905,
+            "y": 404,
+            "loadMs": 47.600000001490116,
+            "processMs": 3.2000000029802322
+          },
+          {
+            "provider": "dem",
+            "z": 10,
+            "x": 901,
+            "y": 408,
+            "loadMs": 804.9000000059605,
+            "processMs": 3
+          },
+          {
+            "provider": "gsi",
+            "z": 10,
+            "x": 897,
+            "y": 405,
+            "loadMs": 495,
+            "processMs": 2.7999999970197678
+          },
+          {
+            "provider": "gsi",
+            "z": 10,
+            "x": 900,
+            "y": 405,
+            "loadMs": 458.8999999985099,
+            "processMs": 2.399999998509884
+          },
+          {
+            "provider": "gsi",
+            "z": 10,
+            "x": 901,
+            "y": 405,
+            "loadMs": 454.29999999701977,
+            "processMs": 2.399999998509884
+          },
+          {
+            "provider": "gsi",
+            "z": 10,
+            "x": 898,
+            "y": 405,
+            "loadMs": 475.3999999985099,
+            "processMs": 2.5
+          },
+          {
+            "provider": "gsi",
+            "z": 10,
+            "x": 899,
+            "y": 405,
+            "loadMs": 472.8999999985099,
+            "processMs": 2.600000001490116
+          },
+          {
+            "provider": "gsi",
+            "z": 10,
+            "x": 902,
+            "y": 405,
+            "loadMs": 436.8999999985099,
+            "processMs": 2.6999999955296516
+          },
+          {
+            "provider": "gsi",
+            "z": 10,
+            "x": 903,
+            "y": 405,
+            "loadMs": 41.100000001490116,
+            "processMs": 2.600000001490116
+          },
+          {
+            "provider": "gsi",
+            "z": 10,
+            "x": 904,
+            "y": 405,
+            "loadMs": 44.5,
+            "processMs": 2.7000000029802322
+          },
+          {
+            "provider": "gsi",
+            "z": 10,
+            "x": 905,
+            "y": 405,
+            "loadMs": 46,
+            "processMs": 2.2999999970197678
+          },
+          {
+            "provider": "gsi",
+            "z": 10,
+            "x": 897,
+            "y": 406,
+            "loadMs": 64.10000000149012,
+            "processMs": 2.6999999955296516
+          },
+          {
+            "provider": "gsi",
+            "z": 10,
+            "x": 900,
+            "y": 406,
+            "loadMs": 31.100000001490116,
+            "processMs": 2
+          },
+          {
+            "provider": "gsi",
+            "z": 10,
+            "x": 901,
+            "y": 406,
+            "loadMs": 27,
+            "processMs": 1.8999999985098839
+          },
+          {
+            "provider": "gsi",
+            "z": 10,
+            "x": 902,
+            "y": 406,
+            "loadMs": 25.600000001490116,
+            "processMs": 2.2000000029802322
+          },
+          {
+            "provider": "gsi",
+            "z": 10,
+            "x": 898,
+            "y": 406,
+            "loadMs": 75,
+            "processMs": 2.399999998509884
+          },
+          {
+            "provider": "gsi",
+            "z": 10,
+            "x": 899,
+            "y": 406,
+            "loadMs": 82.80000000447035,
+            "processMs": 2.399999998509884
+          },
+          {
+            "provider": "gsi",
+            "z": 10,
+            "x": 903,
+            "y": 406,
+            "loadMs": 33.600000001490116,
+            "processMs": 2.2000000029802322
+          },
+          {
+            "provider": "gsi",
+            "z": 10,
+            "x": 904,
+            "y": 406,
+            "loadMs": 36.29999999701977,
+            "processMs": 2.399999998509884
+          },
+          {
+            "provider": "gsi",
+            "z": 10,
+            "x": 905,
+            "y": 406,
+            "loadMs": 39.899999998509884,
+            "processMs": 1.8000000044703484
+          },
+          {
+            "provider": "gsi",
+            "z": 10,
+            "x": 897,
+            "y": 407,
+            "loadMs": 61.399999998509884,
+            "processMs": 2.7000000029802322
+          },
+          {
+            "provider": "gsi",
+            "z": 10,
+            "x": 900,
+            "y": 407,
+            "loadMs": 35.099999994039536,
+            "processMs": 2.600000001490116
+          },
+          {
+            "provider": "gsi",
+            "z": 10,
+            "x": 901,
+            "y": 407,
+            "loadMs": 32.80000000447035,
+            "processMs": 1.6999999955296516
+          },
+          {
+            "provider": "gsi",
+            "z": 10,
+            "x": 898,
+            "y": 407,
+            "loadMs": 63.5,
+            "processMs": 2.7000000029802322
+          },
+          {
+            "provider": "gsi",
+            "z": 10,
+            "x": 899,
+            "y": 407,
+            "loadMs": 63,
+            "processMs": 2.7000000029802322
+          },
+          {
+            "provider": "gsi",
+            "z": 10,
+            "x": 902,
+            "y": 407,
+            "loadMs": 43.599999994039536,
+            "processMs": 1.4000000059604645
+          },
+          {
+            "provider": "gsi",
+            "z": 10,
+            "x": 905,
+            "y": 407,
+            "loadMs": 34.600000001490116,
+            "processMs": 1.5
+          },
+          {
+            "provider": "gsi",
+            "z": 10,
+            "x": 898,
+            "y": 408,
+            "loadMs": 39.5,
+            "processMs": 3.0999999940395355
+          },
+          {
+            "provider": "gsi",
+            "z": 10,
+            "x": 897,
+            "y": 408,
+            "loadMs": 64.5,
+            "processMs": 2.899999998509884
+          },
+          {
+            "provider": "gsi",
+            "z": 10,
+            "x": 899,
+            "y": 408,
+            "loadMs": 64.39999999850988,
+            "processMs": 2.899999998509884
+          },
+          {
+            "provider": "gsi",
+            "z": 10,
+            "x": 900,
+            "y": 408,
+            "loadMs": 79.20000000298023,
+            "processMs": 1.8999999985098839
+          },
+          {
+            "provider": "gsi",
+            "z": 10,
+            "x": 901,
+            "y": 408,
+            "loadMs": 107.10000000149012,
+            "processMs": 2
+          }
+        ],
+        "loaded": 175,
+        "failed": 11,
+        "pending": 0,
+        "running": 0,
+        "zoom": 10,
+        "cached": 186,
+        "revision": 28,
+        "provider": "GSI DEM / Mapzen DEM; shared hillshade",
+        "gsiLoaded": 77
+      },
+      "resources": [
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/dem_png/6/54/23.png",
+          "duration": 595.8999999985099
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/dem_png/6/55/23.png",
+          "duration": 658.2999999970198
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/dem_png/6/56/23.png",
+          "duration": 73.39999999850988
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/dem_png/6/57/23.png",
+          "duration": 70.39999999850988
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/dem_png/6/54/24.png",
+          "duration": 649.8999999985099
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/dem_png/6/55/24.png",
+          "duration": 65.79999999701977
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/dem_png/6/56/24.png",
+          "duration": 70.20000000298023
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/dem_png/6/57/24.png",
+          "duration": 69.79999999701977
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/dem_png/6/54/25.png",
+          "duration": 70.19999999552965
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/dem_png/6/55/25.png",
+          "duration": 75.5
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/dem_png/6/56/25.png",
+          "duration": 61.29999999701977
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/dem_png/6/57/25.png",
+          "duration": 64.89999999850988
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/dem_png/6/54/26.png",
+          "duration": 61.100000001490116
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/dem_png/6/55/26.png",
+          "duration": 67.39999999850988
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/dem_png/6/56/26.png",
+          "duration": 66.29999999701977
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/dem_png/6/57/26.png",
+          "duration": 63.899999998509884
+        },
+        {
+          "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/8/218/95.png",
+          "duration": 573.7999999970198
+        },
+        {
+          "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/8/219/95.png",
+          "duration": 572.5
+        },
+        {
+          "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/8/221/98.png",
+          "duration": 1024.8000000044703
+        },
+        {
+          "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/8/222/98.png",
+          "duration": 1074
+        },
+        {
+          "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/8/223/98.png",
+          "duration": 1018.9000000059605
+        },
+        {
+          "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/8/224/98.png",
+          "duration": 1022.3999999985099
+        },
+        {
+          "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/8/225/98.png",
+          "duration": 1012.3000000044703
+        },
+        {
+          "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/8/226/98.png",
+          "duration": 1011
+        },
+        {
+          "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/8/227/98.png",
+          "duration": 216.59999999403954
+        },
+        {
+          "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/8/224/101.png",
+          "duration": 218.5
+        },
+        {
+          "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/8/226/100.png",
+          "duration": 217.5
+        },
+        {
+          "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/8/224/100.png",
+          "duration": 223.60000000149012
+        },
+        {
+          "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/8/226/101.png",
+          "duration": 229
+        },
+        {
+          "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/8/225/100.png",
+          "duration": 233.90000000596046
+        },
+        {
+          "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/8/225/101.png",
+          "duration": 248.90000000596046
+        },
+        {
+          "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/8/224/102.png",
+          "duration": 216.20000000298023
+        },
+        {
+          "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/8/225/102.png",
+          "duration": 432.8999999985099
+        },
+        {
+          "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/8/226/102.png",
+          "duration": 391.20000000298023
+        },
+        {
+          "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/10/897/401.png",
+          "duration": 225.89999999850988
+        },
+        {
+          "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/10/898/401.png",
+          "duration": 217.70000000298023
+        },
+        {
+          "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/10/899/401.png",
+          "duration": 222.5
+        },
+        {
+          "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/10/900/401.png",
+          "duration": 222.79999999701977
+        },
+        {
+          "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/10/901/401.png",
+          "duration": 212.5
+        },
+        {
+          "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/10/902/401.png",
+          "duration": 217.80000000447035
+        },
+        {
+          "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/10/903/401.png",
+          "duration": 208.89999999850988
+        },
+        {
+          "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/10/904/401.png",
+          "duration": 226.29999999701977
+        },
+        {
+          "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/10/905/401.png",
+          "duration": 247.20000000298023
+        },
+        {
+          "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/10/897/402.png",
+          "duration": 218.79999999701977
+        },
+        {
+          "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/10/898/402.png",
+          "duration": 218.69999999552965
+        },
+        {
+          "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/10/899/402.png",
+          "duration": 244.30000000447035
+        },
+        {
+          "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/10/900/402.png",
+          "duration": 224.29999999701977
+        },
+        {
+          "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/10/901/402.png",
+          "duration": 220.20000000298023
+        },
+        {
+          "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/10/902/402.png",
+          "duration": 217.5
+        },
+        {
+          "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/10/903/402.png",
+          "duration": 223.69999999552965
+        },
+        {
+          "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/10/904/402.png",
+          "duration": 226.29999999701977
+        },
+        {
+          "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/10/905/402.png",
+          "duration": 223.10000000149012
+        },
+        {
+          "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/10/897/403.png",
+          "duration": 216.20000000298023
+        },
+        {
+          "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/10/898/403.png",
+          "duration": 229.69999999552965
+        },
+        {
+          "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/10/899/403.png",
+          "duration": 232
+        },
+        {
+          "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/10/900/403.png",
+          "duration": 221.10000000149012
+        },
+        {
+          "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/10/901/403.png",
+          "duration": 223.90000000596046
+        },
+        {
+          "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/10/902/403.png",
+          "duration": 226.29999999701977
+        },
+        {
+          "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/10/903/403.png",
+          "duration": 220.20000000298023
+        },
+        {
+          "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/10/904/403.png",
+          "duration": 218.79999999701977
+        },
+        {
+          "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/10/905/403.png",
+          "duration": 219.5
+        },
+        {
+          "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/10/897/404.png",
+          "duration": 232.90000000596046
+        },
+        {
+          "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/10/898/404.png",
+          "duration": 231.10000000149012
+        },
+        {
+          "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/10/899/404.png",
+          "duration": 223.80000000447035
+        },
+        {
+          "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/10/900/404.png",
+          "duration": 228.10000000149012
+        },
+        {
+          "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/10/901/404.png",
+          "duration": 225.60000000149012
+        },
+        {
+          "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/10/902/404.png",
+          "duration": 230.10000000149012
+        },
+        {
+          "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/10/903/404.png",
+          "duration": 221.29999999701977
+        },
+        {
+          "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/10/904/404.png",
+          "duration": 230.20000000298023
+        },
+        {
+          "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/10/905/404.png",
+          "duration": 229.30000000447035
+        },
+        {
+          "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/10/897/405.png",
+          "duration": 224.70000000298023
+        },
+        {
+          "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/10/898/405.png",
+          "duration": 225.29999999701977
+        },
+        {
+          "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/10/899/405.png",
+          "duration": 221.20000000298023
+        },
+        {
+          "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/10/900/405.png",
+          "duration": 221.39999999850988
+        },
+        {
+          "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/10/901/405.png",
+          "duration": 232.40000000596046
+        },
+        {
+          "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/10/902/405.png",
+          "duration": 224.10000000149012
+        },
+        {
+          "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/10/903/405.png",
+          "duration": 222.40000000596046
+        },
+        {
+          "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/10/904/405.png",
+          "duration": 225.30000000447035
+        },
+        {
+          "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/10/905/405.png",
+          "duration": 214.09999999403954
+        },
+        {
+          "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/10/897/406.png",
+          "duration": 217.29999999701977
+        },
+        {
+          "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/10/898/406.png",
+          "duration": 232.70000000298023
+        },
+        {
+          "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/10/899/406.png",
+          "duration": 227.79999999701977
+        },
+        {
+          "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/10/900/406.png",
+          "duration": 216.60000000149012
+        },
+        {
+          "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/10/901/406.png",
+          "duration": 225.89999999850988
+        },
+        {
+          "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/10/902/406.png",
+          "duration": 214.10000000149012
+        },
+        {
+          "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/10/903/406.png",
+          "duration": 220.10000000149012
+        },
+        {
+          "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/10/904/406.png",
+          "duration": 238.20000000298023
+        },
+        {
+          "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/10/905/406.png",
+          "duration": 218.89999999850988
+        },
+        {
+          "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/10/897/407.png",
+          "duration": 219.5
+        },
+        {
+          "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/10/898/407.png",
+          "duration": 216.20000000298023
+        },
+        {
+          "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/10/899/407.png",
+          "duration": 228
+        },
+        {
+          "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/10/900/407.png",
+          "duration": 236.5
+        },
+        {
+          "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/10/901/407.png",
+          "duration": 281.6000000014901
+        },
+        {
+          "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/10/902/407.png",
+          "duration": 432.90000000596046
+        },
+        {
+          "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/10/903/407.png",
+          "duration": 621.6000000014901
+        },
+        {
+          "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/10/904/407.png",
+          "duration": 446.69999999552965
+        },
+        {
+          "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/10/905/407.png",
+          "duration": 438.70000000298023
+        },
+        {
+          "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/10/897/408.png",
+          "duration": 427.1000000014901
+        },
+        {
+          "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/10/898/408.png",
+          "duration": 378.70000000298023
+        },
+        {
+          "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/10/899/408.png",
+          "duration": 267.5
+        },
+        {
+          "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/10/900/408.png",
+          "duration": 263.3999999985099
+        },
+        {
+          "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/10/902/408.png",
+          "duration": 268.8999999985099
+        },
+        {
+          "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/10/903/408.png",
+          "duration": 252.5
+        },
+        {
+          "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/10/904/408.png",
+          "duration": 221.39999999850988
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/dem_png/10/897/401.png",
+          "duration": 39.70000000298023
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/dem_png/10/898/401.png",
+          "duration": 58.900000005960464
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/dem_png/10/899/401.png",
+          "duration": 60.29999999701977
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/dem_png/10/900/401.png",
+          "duration": 66.5
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/dem_png/10/901/401.png",
+          "duration": 67
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/dem_png/10/902/401.png",
+          "duration": 66.70000000298023
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/dem_png/10/903/401.png",
+          "duration": 62.80000000447035
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/dem_png/10/904/401.png",
+          "duration": 54.30000000447035
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/dem_png/10/905/401.png",
+          "duration": 59.20000000298023
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/dem_png/10/897/402.png",
+          "duration": 44.79999999701977
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/dem_png/10/898/402.png",
+          "duration": 65
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/dem_png/10/899/402.png",
+          "duration": 53.399999998509884
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/dem_png/10/900/402.png",
+          "duration": 42.30000000447035
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/dem_png/10/901/402.png",
+          "duration": 35.79999999701977
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/dem_png/10/902/402.png",
+          "duration": 32.29999999701977
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/dem_png/10/903/402.png",
+          "duration": 41.399999998509884
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/dem_png/10/904/402.png",
+          "duration": 44.100000001490116
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/dem_png/10/905/402.png",
+          "duration": 40.599999994039536
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/dem_png/10/897/403.png",
+          "duration": 61.399999998509884
+        }
+      ]
+    },
+    {
+      "name": "korea",
+      "terrain": {
+        "timings": [
+          {
+            "provider": "gsi",
+            "z": 10,
+            "x": 900,
+            "y": 408,
+            "loadMs": 79.20000000298023,
+            "processMs": 1.8999999985098839
+          },
+          {
+            "provider": "gsi",
+            "z": 10,
+            "x": 901,
+            "y": 408,
+            "loadMs": 107.10000000149012,
+            "processMs": 2
+          },
+          {
+            "provider": "dem",
+            "z": 8,
+            "x": 218,
+            "y": 99,
+            "loadMs": 462.8999999985099,
+            "processMs": 2.600000001490116
+          },
+          {
+            "provider": "dem",
+            "z": 8,
+            "x": 217,
+            "y": 99,
+            "loadMs": 469.5,
+            "processMs": 3
+          },
+          {
+            "provider": "dem",
+            "z": 8,
+            "x": 218,
+            "y": 100,
+            "loadMs": 474.1000000014901,
+            "processMs": 2.399999998509884
+          },
+          {
+            "provider": "dem",
+            "z": 8,
+            "x": 219,
+            "y": 100,
+            "loadMs": 476.70000000298023,
+            "processMs": 2.2999999970197678
+          },
+          {
+            "provider": "dem",
+            "z": 8,
+            "x": 219,
+            "y": 99,
+            "loadMs": 479.20000000298023,
+            "processMs": 2.399999998509884
+          },
+          {
+            "provider": "dem",
+            "z": 8,
+            "x": 217,
+            "y": 100,
+            "loadMs": 482.1000000014901,
+            "processMs": 2.600000001490116
+          },
+          {
+            "provider": "dem",
+            "z": 10,
+            "x": 870,
+            "y": 396,
+            "loadMs": 300.6000000014901,
+            "processMs": 2.600000001490116
+          },
+          {
+            "provider": "dem",
+            "z": 10,
+            "x": 871,
+            "y": 396,
+            "loadMs": 299.29999999701977,
+            "processMs": 2.5
+          },
+          {
+            "provider": "dem",
+            "z": 10,
+            "x": 873,
+            "y": 396,
+            "loadMs": 296.69999999552965,
+            "processMs": 2.3000000044703484
+          },
+          {
+            "provider": "dem",
+            "z": 10,
+            "x": 872,
+            "y": 396,
+            "loadMs": 301.6000000014901,
+            "processMs": 2.399999998509884
+          },
+          {
+            "provider": "dem",
+            "z": 10,
+            "x": 874,
+            "y": 396,
+            "loadMs": 298.29999999701977,
+            "processMs": 2.399999998509884
+          },
+          {
+            "provider": "dem",
+            "z": 10,
+            "x": 869,
+            "y": 396,
+            "loadMs": 319.8999999985099,
+            "processMs": 2.600000001490116
+          },
+          {
+            "provider": "dem",
+            "z": 10,
+            "x": 875,
+            "y": 396,
+            "loadMs": 229.10000000149012,
+            "processMs": 5.699999995529652
+          },
+          {
+            "provider": "dem",
+            "z": 10,
+            "x": 877,
+            "y": 396,
+            "loadMs": 241.39999999850988,
+            "processMs": 4.899999998509884
+          },
+          {
+            "provider": "dem",
+            "z": 10,
+            "x": 876,
+            "y": 396,
+            "loadMs": 249,
+            "processMs": 4.4000000059604645
+          },
+          {
+            "provider": "dem",
+            "z": 10,
+            "x": 870,
+            "y": 397,
+            "loadMs": 246.5,
+            "processMs": 4.200000002980232
+          },
+          {
+            "provider": "dem",
+            "z": 10,
+            "x": 869,
+            "y": 397,
+            "loadMs": 253.10000000149012,
+            "processMs": 3.899999998509884
+          },
+          {
+            "provider": "dem",
+            "z": 10,
+            "x": 871,
+            "y": 397,
+            "loadMs": 252.20000000298023,
+            "processMs": 3.7999999970197678
+          },
+          {
+            "provider": "dem",
+            "z": 10,
+            "x": 872,
+            "y": 397,
+            "loadMs": 222.60000000149012,
+            "processMs": 8.199999995529652
+          },
+          {
+            "provider": "dem",
+            "z": 10,
+            "x": 873,
+            "y": 397,
+            "loadMs": 222.60000000149012,
+            "processMs": 5.899999998509884
+          },
+          {
+            "provider": "dem",
+            "z": 10,
+            "x": 874,
+            "y": 397,
+            "loadMs": 227.69999999552965,
+            "processMs": 4.800000004470348
+          },
+          {
+            "provider": "dem",
+            "z": 10,
+            "x": 877,
+            "y": 397,
+            "loadMs": 229.5,
+            "processMs": 4.700000002980232
+          },
+          {
+            "provider": "dem",
+            "z": 10,
+            "x": 876,
+            "y": 397,
+            "loadMs": 238.29999999701977,
+            "processMs": 4.399999998509884
+          },
+          {
+            "provider": "dem",
+            "z": 10,
+            "x": 875,
+            "y": 397,
+            "loadMs": 266.8999999985099,
+            "processMs": 4.600000001490116
+          },
+          {
+            "provider": "dem",
+            "z": 10,
+            "x": 869,
+            "y": 398,
+            "loadMs": 213.10000000149012,
+            "processMs": 4.100000001490116
+          },
+          {
+            "provider": "dem",
+            "z": 10,
+            "x": 870,
+            "y": 398,
+            "loadMs": 233,
+            "processMs": 3.100000001490116
+          },
+          {
+            "provider": "dem",
+            "z": 10,
+            "x": 871,
+            "y": 398,
+            "loadMs": 227.5,
+            "processMs": 2.7999999970197678
+          },
+          {
+            "provider": "dem",
+            "z": 10,
+            "x": 872,
+            "y": 398,
+            "loadMs": 227.79999999701977,
+            "processMs": 2.7000000029802322
+          },
+          {
+            "provider": "dem",
+            "z": 10,
+            "x": 873,
+            "y": 398,
+            "loadMs": 228.70000000298023,
+            "processMs": 2.6999999955296516
+          },
+          {
+            "provider": "dem",
+            "z": 10,
+            "x": 874,
+            "y": 398,
+            "loadMs": 216.69999999552965,
+            "processMs": 2.600000001490116
+          },
+          {
+            "provider": "dem",
+            "z": 10,
+            "x": 875,
+            "y": 398,
+            "loadMs": 227.10000000149012,
+            "processMs": 2.5999999940395355
+          },
+          {
+            "provider": "dem",
+            "z": 10,
+            "x": 876,
+            "y": 398,
+            "loadMs": 219.89999999850988,
+            "processMs": 2.600000001490116
+          },
+          {
+            "provider": "dem",
+            "z": 10,
+            "x": 877,
+            "y": 398,
+            "loadMs": 238,
+            "processMs": 2.7000000029802322
+          },
+          {
+            "provider": "dem",
+            "z": 10,
+            "x": 870,
+            "y": 399,
+            "loadMs": 230.70000000298023,
+            "processMs": 2.899999998509884
+          },
+          {
+            "provider": "dem",
+            "z": 10,
+            "x": 869,
+            "y": 399,
+            "loadMs": 239.39999999850988,
+            "processMs": 2.899999998509884
+          },
+          {
+            "provider": "dem",
+            "z": 10,
+            "x": 871,
+            "y": 399,
+            "loadMs": 224.20000000298023,
+            "processMs": 2.6999999955296516
+          },
+          {
+            "provider": "dem",
+            "z": 10,
+            "x": 872,
+            "y": 399,
+            "loadMs": 252.5,
+            "processMs": 6.799999997019768
+          },
+          {
+            "provider": "dem",
+            "z": 10,
+            "x": 873,
+            "y": 399,
+            "loadMs": 233.89999999850988,
+            "processMs": 5.5
+          },
+          {
+            "provider": "dem",
+            "z": 10,
+            "x": 874,
+            "y": 399,
+            "loadMs": 237.5,
+            "processMs": 5.5
+          },
+          {
+            "provider": "dem",
+            "z": 10,
+            "x": 876,
+            "y": 399,
+            "loadMs": 227.40000000596046,
+            "processMs": 5
+          },
+          {
+            "provider": "dem",
+            "z": 10,
+            "x": 875,
+            "y": 399,
+            "loadMs": 237.10000000149012,
+            "processMs": 4.299999997019768
+          },
+          {
+            "provider": "dem",
+            "z": 10,
+            "x": 877,
+            "y": 399,
+            "loadMs": 268.1000000014901,
+            "processMs": 3.2000000029802322
+          },
+          {
+            "provider": "dem",
+            "z": 10,
+            "x": 869,
+            "y": 400,
+            "loadMs": 233.70000000298023,
+            "processMs": 2.7999999970197678
+          },
+          {
+            "provider": "dem",
+            "z": 10,
+            "x": 870,
+            "y": 400,
+            "loadMs": 237,
+            "processMs": 2.7000000029802322
+          },
+          {
+            "provider": "dem",
+            "z": 10,
+            "x": 871,
+            "y": 400,
+            "loadMs": 215.09999999403954,
+            "processMs": 2.5
+          },
+          {
+            "provider": "dem",
+            "z": 10,
+            "x": 872,
+            "y": 400,
+            "loadMs": 237.29999999701977,
+            "processMs": 2.5999999940395355
+          },
+          {
+            "provider": "dem",
+            "z": 10,
+            "x": 873,
+            "y": 400,
+            "loadMs": 234.20000000298023,
+            "processMs": 2.4000000059604645
+          },
+          {
+            "provider": "dem",
+            "z": 10,
+            "x": 874,
+            "y": 400,
+            "loadMs": 218.8999999910593,
+            "processMs": 2.800000011920929
+          },
+          {
+            "provider": "dem",
+            "z": 10,
+            "x": 875,
+            "y": 400,
+            "loadMs": 219.20000000298023,
+            "processMs": 6.799999997019768
+          },
+          {
+            "provider": "dem",
+            "z": 10,
+            "x": 876,
+            "y": 400,
+            "loadMs": 220.70000000298023,
+            "processMs": 6.199999988079071
+          },
+          {
+            "provider": "dem",
+            "z": 10,
+            "x": 877,
+            "y": 400,
+            "loadMs": 236.8999999910593,
+            "processMs": 5.200000002980232
+          },
+          {
+            "provider": "dem",
+            "z": 10,
+            "x": 870,
+            "y": 401,
+            "loadMs": 219.19999998807907,
+            "processMs": 4.4000000059604645
+          },
+          {
+            "provider": "dem",
+            "z": 10,
+            "x": 869,
+            "y": 401,
+            "loadMs": 242.79999999701977,
+            "processMs": 3.800000011920929
+          },
+          {
+            "provider": "dem",
+            "z": 10,
+            "x": 871,
+            "y": 401,
+            "loadMs": 226.69999998807907,
+            "processMs": 3.300000011920929
+          },
+          {
+            "provider": "dem",
+            "z": 10,
+            "x": 872,
+            "y": 401,
+            "loadMs": 226.1000000089407,
+            "processMs": 5.199999988079071
+          },
+          {
+            "provider": "dem",
+            "z": 10,
+            "x": 873,
+            "y": 401,
+            "loadMs": 221.80000001192093,
+            "processMs": 4.699999988079071
+          },
+          {
+            "provider": "dem",
+            "z": 10,
+            "x": 874,
+            "y": 401,
+            "loadMs": 216.90000000596046,
+            "processMs": 7.799999997019768
+          },
+          {
+            "provider": "dem",
+            "z": 10,
+            "x": 875,
+            "y": 401,
+            "loadMs": 214.79999999701977,
+            "processMs": 3.7000000029802322
+          },
+          {
+            "provider": "dem",
+            "z": 10,
+            "x": 877,
+            "y": 401,
+            "loadMs": 228,
+            "processMs": 4.0999999940395355
+          },
+          {
+            "provider": "dem",
+            "z": 10,
+            "x": 876,
+            "y": 401,
+            "loadMs": 247.19999998807907,
+            "processMs": 3.7000000029802322
+          },
+          {
+            "provider": "dem",
+            "z": 10,
+            "x": 869,
+            "y": 402,
+            "loadMs": 239.09999999403954,
+            "processMs": 11.299999997019768
+          },
+          {
+            "provider": "dem",
+            "z": 10,
+            "x": 871,
+            "y": 402,
+            "loadMs": 230,
+            "processMs": 7.100000008940697
+          },
+          {
+            "provider": "dem",
+            "z": 10,
+            "x": 872,
+            "y": 402,
+            "loadMs": 240.29999999701977,
+            "processMs": 5
+          },
+          {
+            "provider": "dem",
+            "z": 10,
+            "x": 870,
+            "y": 402,
+            "loadMs": 267,
+            "processMs": 4.600000008940697
+          },
+          {
+            "provider": "dem",
+            "z": 10,
+            "x": 874,
+            "y": 402,
+            "loadMs": 238.3999999910593,
+            "processMs": 4
+          },
+          {
+            "provider": "dem",
+            "z": 10,
+            "x": 873,
+            "y": 402,
+            "loadMs": 256.29999999701977,
+            "processMs": 3.6000000089406967
+          },
+          {
+            "provider": "dem",
+            "z": 10,
+            "x": 875,
+            "y": 402,
+            "loadMs": 222.80000001192093,
+            "processMs": 6.799999997019768
+          },
+          {
+            "provider": "dem",
+            "z": 10,
+            "x": 876,
+            "y": 402,
+            "loadMs": 226.19999998807907,
+            "processMs": 5.600000008940697
+          },
+          {
+            "provider": "dem",
+            "z": 10,
+            "x": 877,
+            "y": 402,
+            "loadMs": 220.5,
+            "processMs": 5.100000008940697
+          },
+          {
+            "provider": "dem",
+            "z": 10,
+            "x": 869,
+            "y": 403,
+            "loadMs": 221.70000000298023,
+            "processMs": 4.799999997019768
+          },
+          {
+            "provider": "dem",
+            "z": 10,
+            "x": 871,
+            "y": 403,
+            "loadMs": 223.09999999403954,
+            "processMs": 6
+          },
+          {
+            "provider": "dem",
+            "z": 10,
+            "x": 870,
+            "y": 403,
+            "loadMs": 235.29999999701977,
+            "processMs": 5.100000008940697
+          },
+          {
+            "provider": "dem",
+            "z": 10,
+            "x": 874,
+            "y": 403,
+            "loadMs": 220,
+            "processMs": 8.099999994039536
+          },
+          {
+            "provider": "dem",
+            "z": 10,
+            "x": 875,
+            "y": 403,
+            "loadMs": 223,
+            "processMs": 6.5
+          },
+          {
+            "provider": "dem",
+            "z": 10,
+            "x": 873,
+            "y": 403,
+            "loadMs": 245.40000000596046,
+            "processMs": 5.0999999940395355
+          },
+          {
+            "provider": "dem",
+            "z": 10,
+            "x": 872,
+            "y": 403,
+            "loadMs": 277.20000000298023,
+            "processMs": 3
+          },
+          {
+            "provider": "dem",
+            "z": 10,
+            "x": 877,
+            "y": 403,
+            "loadMs": 220.8999999910593,
+            "processMs": 3.1000000089406967
+          },
+          {
+            "provider": "dem",
+            "z": 10,
+            "x": 876,
+            "y": 403,
+            "loadMs": 289.90000000596046,
+            "processMs": 5
+          }
+        ],
+        "loaded": 253,
+        "failed": 27,
+        "pending": 0,
+        "running": 0,
+        "zoom": 10,
+        "cached": 192,
+        "revision": 31,
+        "provider": "GSI DEM / Mapzen DEM; shared hillshade",
+        "gsiLoaded": 72
+      },
+      "resources": [
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/dem_png/6/54/23.png",
+          "duration": 595.8999999985099
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/dem_png/6/55/23.png",
+          "duration": 658.2999999970198
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/dem_png/6/56/23.png",
+          "duration": 73.39999999850988
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/dem_png/6/57/23.png",
+          "duration": 70.39999999850988
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/dem_png/6/54/24.png",
+          "duration": 649.8999999985099
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/dem_png/6/55/24.png",
+          "duration": 65.79999999701977
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/dem_png/6/56/24.png",
+          "duration": 70.20000000298023
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/dem_png/6/57/24.png",
+          "duration": 69.79999999701977
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/dem_png/6/54/25.png",
+          "duration": 70.19999999552965
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/dem_png/6/55/25.png",
+          "duration": 75.5
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/dem_png/6/56/25.png",
+          "duration": 61.29999999701977
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/dem_png/6/57/25.png",
+          "duration": 64.89999999850988
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/dem_png/6/54/26.png",
+          "duration": 61.100000001490116
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/dem_png/6/55/26.png",
+          "duration": 67.39999999850988
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/dem_png/6/56/26.png",
+          "duration": 66.29999999701977
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/dem_png/6/57/26.png",
+          "duration": 63.899999998509884
+        },
+        {
+          "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/8/218/95.png",
+          "duration": 573.7999999970198
+        },
+        {
+          "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/8/219/95.png",
+          "duration": 572.5
+        },
+        {
+          "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/8/221/98.png",
+          "duration": 1024.8000000044703
+        },
+        {
+          "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/8/222/98.png",
+          "duration": 1074
+        },
+        {
+          "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/8/223/98.png",
+          "duration": 1018.9000000059605
+        },
+        {
+          "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/8/224/98.png",
+          "duration": 1022.3999999985099
+        },
+        {
+          "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/8/225/98.png",
+          "duration": 1012.3000000044703
+        },
+        {
+          "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/8/226/98.png",
+          "duration": 1011
+        },
+        {
+          "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/8/227/98.png",
+          "duration": 216.59999999403954
+        },
+        {
+          "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/8/224/101.png",
+          "duration": 218.5
+        },
+        {
+          "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/8/226/100.png",
+          "duration": 217.5
+        },
+        {
+          "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/8/224/100.png",
+          "duration": 223.60000000149012
+        },
+        {
+          "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/8/226/101.png",
+          "duration": 229
+        },
+        {
+          "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/8/225/100.png",
+          "duration": 233.90000000596046
+        },
+        {
+          "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/8/225/101.png",
+          "duration": 248.90000000596046
+        },
+        {
+          "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/8/224/102.png",
+          "duration": 216.20000000298023
+        },
+        {
+          "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/8/225/102.png",
+          "duration": 432.8999999985099
+        },
+        {
+          "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/8/226/102.png",
+          "duration": 391.20000000298023
+        },
+        {
+          "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/10/897/401.png",
+          "duration": 225.89999999850988
+        },
+        {
+          "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/10/898/401.png",
+          "duration": 217.70000000298023
+        },
+        {
+          "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/10/899/401.png",
+          "duration": 222.5
+        },
+        {
+          "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/10/900/401.png",
+          "duration": 222.79999999701977
+        },
+        {
+          "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/10/901/401.png",
+          "duration": 212.5
+        },
+        {
+          "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/10/902/401.png",
+          "duration": 217.80000000447035
+        },
+        {
+          "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/10/903/401.png",
+          "duration": 208.89999999850988
+        },
+        {
+          "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/10/904/401.png",
+          "duration": 226.29999999701977
+        },
+        {
+          "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/10/905/401.png",
+          "duration": 247.20000000298023
+        },
+        {
+          "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/10/897/402.png",
+          "duration": 218.79999999701977
+        },
+        {
+          "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/10/898/402.png",
+          "duration": 218.69999999552965
+        },
+        {
+          "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/10/899/402.png",
+          "duration": 244.30000000447035
+        },
+        {
+          "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/10/900/402.png",
+          "duration": 224.29999999701977
+        },
+        {
+          "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/10/901/402.png",
+          "duration": 220.20000000298023
+        },
+        {
+          "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/10/902/402.png",
+          "duration": 217.5
+        },
+        {
+          "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/10/903/402.png",
+          "duration": 223.69999999552965
+        },
+        {
+          "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/10/904/402.png",
+          "duration": 226.29999999701977
+        },
+        {
+          "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/10/905/402.png",
+          "duration": 223.10000000149012
+        },
+        {
+          "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/10/897/403.png",
+          "duration": 216.20000000298023
+        },
+        {
+          "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/10/898/403.png",
+          "duration": 229.69999999552965
+        },
+        {
+          "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/10/899/403.png",
+          "duration": 232
+        },
+        {
+          "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/10/900/403.png",
+          "duration": 221.10000000149012
+        },
+        {
+          "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/10/901/403.png",
+          "duration": 223.90000000596046
+        },
+        {
+          "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/10/902/403.png",
+          "duration": 226.29999999701977
+        },
+        {
+          "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/10/903/403.png",
+          "duration": 220.20000000298023
+        },
+        {
+          "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/10/904/403.png",
+          "duration": 218.79999999701977
+        },
+        {
+          "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/10/905/403.png",
+          "duration": 219.5
+        },
+        {
+          "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/10/897/404.png",
+          "duration": 232.90000000596046
+        },
+        {
+          "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/10/898/404.png",
+          "duration": 231.10000000149012
+        },
+        {
+          "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/10/899/404.png",
+          "duration": 223.80000000447035
+        },
+        {
+          "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/10/900/404.png",
+          "duration": 228.10000000149012
+        },
+        {
+          "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/10/901/404.png",
+          "duration": 225.60000000149012
+        },
+        {
+          "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/10/902/404.png",
+          "duration": 230.10000000149012
+        },
+        {
+          "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/10/903/404.png",
+          "duration": 221.29999999701977
+        },
+        {
+          "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/10/904/404.png",
+          "duration": 230.20000000298023
+        },
+        {
+          "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/10/905/404.png",
+          "duration": 229.30000000447035
+        },
+        {
+          "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/10/897/405.png",
+          "duration": 224.70000000298023
+        },
+        {
+          "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/10/898/405.png",
+          "duration": 225.29999999701977
+        },
+        {
+          "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/10/899/405.png",
+          "duration": 221.20000000298023
+        },
+        {
+          "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/10/900/405.png",
+          "duration": 221.39999999850988
+        },
+        {
+          "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/10/901/405.png",
+          "duration": 232.40000000596046
+        },
+        {
+          "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/10/902/405.png",
+          "duration": 224.10000000149012
+        },
+        {
+          "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/10/903/405.png",
+          "duration": 222.40000000596046
+        },
+        {
+          "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/10/904/405.png",
+          "duration": 225.30000000447035
+        },
+        {
+          "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/10/905/405.png",
+          "duration": 214.09999999403954
+        },
+        {
+          "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/10/897/406.png",
+          "duration": 217.29999999701977
+        },
+        {
+          "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/10/898/406.png",
+          "duration": 232.70000000298023
+        },
+        {
+          "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/10/899/406.png",
+          "duration": 227.79999999701977
+        },
+        {
+          "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/10/900/406.png",
+          "duration": 216.60000000149012
+        },
+        {
+          "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/10/901/406.png",
+          "duration": 225.89999999850988
+        },
+        {
+          "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/10/902/406.png",
+          "duration": 214.10000000149012
+        },
+        {
+          "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/10/903/406.png",
+          "duration": 220.10000000149012
+        },
+        {
+          "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/10/904/406.png",
+          "duration": 238.20000000298023
+        },
+        {
+          "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/10/905/406.png",
+          "duration": 218.89999999850988
+        },
+        {
+          "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/10/897/407.png",
+          "duration": 219.5
+        },
+        {
+          "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/10/898/407.png",
+          "duration": 216.20000000298023
+        },
+        {
+          "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/10/899/407.png",
+          "duration": 228
+        },
+        {
+          "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/10/900/407.png",
+          "duration": 236.5
+        },
+        {
+          "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/10/901/407.png",
+          "duration": 281.6000000014901
+        },
+        {
+          "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/10/902/407.png",
+          "duration": 432.90000000596046
+        },
+        {
+          "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/10/903/407.png",
+          "duration": 621.6000000014901
+        },
+        {
+          "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/10/904/407.png",
+          "duration": 446.69999999552965
+        },
+        {
+          "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/10/905/407.png",
+          "duration": 438.70000000298023
+        },
+        {
+          "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/10/897/408.png",
+          "duration": 427.1000000014901
+        },
+        {
+          "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/10/898/408.png",
+          "duration": 378.70000000298023
+        },
+        {
+          "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/10/899/408.png",
+          "duration": 267.5
+        },
+        {
+          "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/10/900/408.png",
+          "duration": 263.3999999985099
+        },
+        {
+          "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/10/902/408.png",
+          "duration": 268.8999999985099
+        },
+        {
+          "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/10/903/408.png",
+          "duration": 252.5
+        },
+        {
+          "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/10/904/408.png",
+          "duration": 221.39999999850988
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/dem_png/10/897/401.png",
+          "duration": 39.70000000298023
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/dem_png/10/898/401.png",
+          "duration": 58.900000005960464
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/dem_png/10/899/401.png",
+          "duration": 60.29999999701977
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/dem_png/10/900/401.png",
+          "duration": 66.5
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/dem_png/10/901/401.png",
+          "duration": 67
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/dem_png/10/902/401.png",
+          "duration": 66.70000000298023
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/dem_png/10/903/401.png",
+          "duration": 62.80000000447035
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/dem_png/10/904/401.png",
+          "duration": 54.30000000447035
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/dem_png/10/905/401.png",
+          "duration": 59.20000000298023
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/dem_png/10/897/402.png",
+          "duration": 44.79999999701977
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/dem_png/10/898/402.png",
+          "duration": 65
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/dem_png/10/899/402.png",
+          "duration": 53.399999998509884
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/dem_png/10/900/402.png",
+          "duration": 42.30000000447035
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/dem_png/10/901/402.png",
+          "duration": 35.79999999701977
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/dem_png/10/902/402.png",
+          "duration": 32.29999999701977
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/dem_png/10/903/402.png",
+          "duration": 41.399999998509884
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/dem_png/10/904/402.png",
+          "duration": 44.100000001490116
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/dem_png/10/905/402.png",
+          "duration": 40.599999994039536
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/dem_png/10/897/403.png",
+          "duration": 61.399999998509884
+        }
+      ]
+    }
+  ],
+  "errors": []
+}

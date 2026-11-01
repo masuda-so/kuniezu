@@ -1,0 +1,47 @@
+{
+  "scope": "模式的な戦場内地点遷移の整合。点間の実際の経路と時刻を確定しない。",
+  "rows": [
+    {
+      "title": "関ヶ原の戦い",
+      "name": "徳川家康",
+      "source": "ieyasuJinba",
+      "points": 2,
+      "lengthKm": 2.3022835195790963
+    },
+    {
+      "title": "関ヶ原の戦い",
+      "name": "小早川秀秋",
+      "source": "sekigaharaGuide",
+      "points": 2,
+      "lengthKm": 1.6836038368564268
+    },
+    {
+      "title": "関ヶ原の戦い",
+      "name": "脇坂安治",
+      "source": "sekigaharaGuide",
+      "points": 2,
+      "lengthKm": 1.0227909473074
+    },
+    {
+      "title": "桶狭間の戦い",
+      "name": "織田信長",
+      "source": "okeMovement",
+      "points": 3,
+      "lengthKm": 3.0360963948464756
+    },
+    {
+      "title": "桶狭間の戦い",
+      "name": "松平元康",
+      "source": "okeToyoake",
+      "points": 2,
+      "lengthKm": 0.7220936916634629
+    },
+    {
+      "title": "長篠の戦い",
+      "name": "武田勝頼",
+      "source": "nagashinoShift",
+      "points": 2,
+      "lengthKm": 2.4238487219706677
+    }
+  ]
+}

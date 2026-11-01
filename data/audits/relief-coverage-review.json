@@ -1,0 +1,52 @@
+{
+  "scope": "豆満江同一視点の2回の観察。全地点のFPS改善や詳細到着時間短縮率ではない。",
+  "before": [
+    {
+      "seconds": 5,
+      "pending": 280,
+      "running": 6,
+      "failed": 3,
+      "detailedDemReady": 91
+    },
+    {
+      "seconds": 10,
+      "pending": 105,
+      "running": 6,
+      "failed": 74,
+      "detailedDemReady": 195
+    },
+    {
+      "seconds": 20,
+      "pending": 0,
+      "running": 0,
+      "failed": 185,
+      "detailedDemReady": 195
+    }
+  ],
+  "after": [
+    {
+      "seconds": 5,
+      "pending": 101,
+      "running": 6,
+      "failed": 1,
+      "detailedDemReady": 88
+    },
+    {
+      "seconds": 10,
+      "pending": 0,
+      "running": 0,
+      "failed": 1,
+      "detailedDemReady": 195
+    },
+    {
+      "seconds": 20,
+      "pending": 0,
+      "running": 0,
+      "failed": 1,
+      "detailedDemReady": 195
+    }
+  ],
+  "unneededRequestsBefore": 182,
+  "unneededRequestsAfter": 0,
+  "interpretation": "両観察とも10秒時点でDEM195枚が完了。不要取得は除去したが詳細到着の速度改善は証明しない。中間画像の矩形差は詳細完了後に解消。"
+}

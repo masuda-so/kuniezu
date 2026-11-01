@@ -1,0 +1,23 @@
+{
+  "id": "lifetime-北条氏邦",
+  "entity": "person:北条氏邦",
+  "predicate": "death-year",
+  "value": 1597,
+  "validYears": [
+    1597,
+    1597
+  ],
+  "datePrecision": "year",
+  "source": "ujikuniLifetime",
+  "gameBindings": [
+    "TK.DEATH_Y",
+    "G.reconcileHistoricalPeople",
+    "aging"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "sourceUrl": "https://www.lib.pref.saitama.jp/item/pdf/2998300235.pdf",
+  "locator": "氏邦のその後",
+  "checked": "2026-11-01",
+  "uncertainty": "日付は確定しない"
+}

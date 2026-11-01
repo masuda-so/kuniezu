@@ -1,0 +1,21 @@
+{
+  "id": "aizu-oyama",
+  "entity": "campaign:会津征伐",
+  "predicate": "stationed",
+  "value": "家康は会津討伐の途上、小山に在陣し、西上へ転じた",
+  "validYears": [
+    1600,
+    1600
+  ],
+  "source": "aizuTurn",
+  "locator": "旧暦7月24日・25日",
+  "gameBindings": [
+    "TK.BATTLES:会津征伐",
+    "sceneWanted"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "sourceUrl": "https://www.city.oyama.tochigi.jp/kankou-bunka/rekishi_bunka/bunkazai/page000011.html",
+  "checked": "2026-11-01",
+  "uncertainty": null
+}
