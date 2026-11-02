@@ -3,7 +3,7 @@ const assert=require('node:assert/strict');
 function createHistoryIndex({claims=[],locations=[],people=[],places=[]}){
  const records=new Map(),byEntity=new Map(),aliases=new Map(),labels=new Map();
  const alias=(name,id)=>{if(!aliases.has(name))aliases.set(name,new Set());aliases.get(name).add(id);};
- for(const p of [...people,...places]){labels.set(p.id,p.name);alias(p.id,p.id);alias(p.name,p.id);alias(p.id.split(':')[0]+':'+p.name,p.id);if(p.id.startsWith('person:'))for(const n of p.gameNames||[])alias('person:'+n,p.id);}
+ for(const p of [...people,...places]){labels.set(p.id,p.name);alias(p.id,p.id);alias(p.name,p.id);alias(p.id.split(':')[0]+':'+p.name,p.id);if(p.id.startsWith('person:'))for(const n of p.gameNames||[]){alias(n,p.id);alias('person:'+n,p.id);}}
  const canonical=id=>aliases.get(id)?.size===1?[...aliases.get(id)][0]:id;
  function add(id,row,entities,time,scope){
   assert(!records.has(id),'Duplicate history record '+id);
