@@ -3180,12 +3180,20 @@
       "geometry": "mixed-source",
       "sources": [
         "rokujurigoSakata",
-        "rokujurigoInlandMap"
+        "rokujurigoInlandMap",
+        "rokujurigoShonaiMap",
+        "rokujurigoApproachReference"
       ],
       "level": "unverified",
-      "status": "内陸の旧道調査図の青線を採用。庄内側と寒河江以南は概略線を含む。",
+      "status": "庄内・内陸の旧道調査図の青線を採用。両端は近現代比較、図間の接続は概略を含む。",
       "precision": "経由関係を示す概略線。旧道調査図と照合中。",
       "mappedSections": [
+        {
+          "from": "庄内側",
+          "to": "月山沢方面",
+          "source": "rokujurigoShonaiMap",
+          "vertices": 353
+        },
         {
           "from": "本道寺方面",
           "to": "寒河江",
@@ -6912,6 +6920,22 @@
       "locator": "武田氏による信濃平定から長篠の戦い",
       "accessed": "2026-11-01",
       "scope": "足助・作手・野田・二連木・吉田方面の武田軍の作戦。本文の天正3年に対応する西暦1572という誤記は採用せず、長篠の1575年を別資料と照合。"
+    },
+    "rokujurigoShonaiMap": {
+      "author": "国土交通省東北地方整備局 酒田河川国道事務所",
+      "title": "六十里越街道・現地調査一覧図（庄内）",
+      "url": "https://www.thr.mlit.go.jp/sakata/road/60history/011.html",
+      "locator": "青の旧道線353点、1:200000、羽黒山・品倉山・月山・三足一分山で登録",
+      "accessed": "2026-11-02",
+      "scope": "湯殿山の独立照合で約5px。図の隠れた区間と2枚の図外接続は概略。精密な戦国期の中心線ではない。"
+    },
+    "rokujurigoApproachReference": {
+      "author": "OpenStreetMap contributors / FOSSGIS OSRM",
+      "title": "六十里越街道両端の比較歩行道路",
+      "url": "https://www.openstreetmap.org/copyright",
+      "locator": "2026-11-02、鶴岡・松根側と寒河江・山形側",
+      "accessed": "2026-11-02",
+      "scope": "旧道図に接続する現代比較線。松根の地名点へ往復する2.869kmの寄り道を除去。図間の29.487km候補は過大迂回で不採用。"
     },
     "rokujurigoInlandMap": {
       "author": "国土交通省東北地方整備局 酒田河川国道事務所",

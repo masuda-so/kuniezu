@@ -1,0 +1,43 @@
+{
+  "accessed": "2026-11-02",
+  "sources": [
+    {
+      "author": "国土交通省東北地方整備局 酒田河川国道事務所",
+      "title": "現地調査一覧図・庄内",
+      "url": "https://www.thr.mlit.go.jp/sakata/road/60history/011.html",
+      "scale": "1:200000",
+      "geometry": "shonai-registration-accepted.json",
+      "scope": "青い旧道353点。緑・橙の国道112号と区別する。"
+    },
+    {
+      "author": "国土地理院",
+      "title": "地名検索・自然地名の山頂",
+      "url": "https://msearch.gsi.go.jp/address-search/AddressSearch",
+      "file": "shonai-peaks-search.json",
+      "selection": "dataSource4の自然地名。施設等の同名点を除外。地方の違う月山・羽黒山を除外。"
+    },
+    {
+      "author": "あさひむら観光協会",
+      "title": "六十里越街道コースマップ",
+      "url": "https://www.asahi-kankou.jp/pdf/60rigoegaido_map.pdf",
+      "file": "asahi-trail-map.pdf",
+      "sha256": "8aad5f341265d6b1f021ec3150b1249f5e6b27b316129914647da9f8acf77f64",
+      "pdfCreated": "2015-06-12",
+      "pdfModified": "2016-03-27",
+      "geometryUse": "未採用。町字代表点・神社と本宮・周辺施設の同名点を混ぜた候補の登録は採用しない。今後の局所照合資料。"
+    },
+    {
+      "author": "OpenStreetMap contributors / FOSSGIS OSRM",
+      "title": "両端の比較歩行道路",
+      "url": "https://routing.openstreetmap.de/routed-foot/",
+      "files": [
+        "connection-north.json",
+        "connection-seam.json",
+        "connection-south.json"
+      ],
+      "license": "ODbL 1.0",
+      "scope": "北側の完全往復2.869kmを除去、南側採用。図間29.487kmは過大迂回で不採用。"
+    }
+  ],
+  "remaining": "両図の外に当たる接続と青線が隠れた部分を精密旧道線と扱わない。"
+}
