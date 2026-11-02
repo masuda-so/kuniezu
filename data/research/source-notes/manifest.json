@@ -1,0 +1,176 @@
+{
+  "organized": "2026-11-02",
+  "sources": [
+    {
+      "id": "aizu-ieyasu-review/oyama",
+      "title": "徳川家康ゆかりの地 小山評定と小山御殿",
+      "note": "data/inputs/aizu-ieyasu-review/oyama.md",
+      "archive": "data/source-archives/html/aizu-ieyasu-review/oyama.html.gz",
+      "originalSha256": "9cf515d4983c8909c48f95549f4c75612ea712969aa34193cf9c2ae98219d76c",
+      "noteSha256": "5e447e6cf62013c69d3bd50c14f888943288cce35445ae937d6f9513481928f6",
+      "archiveSha256": "6cf02d69ccf6f63a62bc8d5113a5e1eda21704c6bebaf6640cef6c1b95dc422b"
+    },
+    {
+      "id": "aizu-ieyasu-review/tono",
+      "title": "資料紹介69 関ヶ原直前の東濃",
+      "note": "data/inputs/aizu-ieyasu-review/tono.md",
+      "archive": "data/source-archives/html/aizu-ieyasu-review/tono.html.gz",
+      "originalSha256": "98f731e29e49ff3d9111a426484b4f41a3fd93c22a2b8b96d848821f9022287d",
+      "noteSha256": "2b5e688da9cdf6e9fae8219925024826a1c1f118b9f30a217042624e77fcb272",
+      "archiveSha256": "e72d94a240e825356b52c7a7d63683c13c24789422ea6f701e7921cd69f55fbb"
+    },
+    {
+      "id": "aki-castle-review/oko-bunka",
+      "title": "岡豊城跡",
+      "note": "data/inputs/aki-castle-review/oko-bunka.md",
+      "archive": "data/source-archives/html/aki-castle-review/oko-bunka.html.gz",
+      "originalSha256": "da7be1834c20e3f76dc98de872e323e776efb5e9c1101e6de5c8c2ce99c48d46",
+      "noteSha256": "92492bc7a2628b45018a4fcc94b19fcf7093bc9311c29ad1f4e99e6e8696dcec",
+      "archiveSha256": "c9e6b1c0b3d0f18cfdffefeaac03c9865417f39a0ebe4d3fcd91c1a0e3fc0aa2"
+    },
+    {
+      "id": "historical-map-candidates/archives-secondary-use",
+      "title": "データの二次利用",
+      "note": "data/inputs/historical-map-candidates/archives-secondary-use.md",
+      "archive": "data/source-archives/html/historical-map-candidates/archives-secondary-use.html.gz",
+      "originalSha256": "ad98ef4acd3ed228d2832547bad76df9215c135c601e50fa151136a84ffcdd1e",
+      "noteSha256": "b63c26f6a1bd9923ec3ba2cb8b3e318f4d02d7a2a0df2e610a0a1849feb2222a",
+      "archiveSha256": "1a5744f55652c9ee92af0798feba0b8df98e15eb2a7854f3bc771a9812fa0b82"
+    },
+    {
+      "id": "historical-map-candidates/codh-geoshape",
+      "title": "歴史的行政区域データセットβ版",
+      "note": "data/inputs/historical-map-candidates/codh-geoshape.md",
+      "archive": "data/source-archives/html/historical-map-candidates/codh-geoshape.html.gz",
+      "originalSha256": "9ec380de4a8e0fb7bb545c467172e2fb60b0394043005a1a5d7e96e62db5ad27",
+      "noteSha256": "20c2e5b3bf8ceb204cde2152dbc26aadfdc745cf4b11d20e5515152842eef06a",
+      "archiveSha256": "8634d6241c6fefc4fc1fc9e2a4ec786fd0c9f6621972f756fe258f040e9a1c9f"
+    },
+    {
+      "id": "historical-map-candidates/naro-habs-faq",
+      "title": "歴史的農業環境閲覧システムFAQ",
+      "note": "data/inputs/historical-map-candidates/naro-habs-faq.md",
+      "archive": "data/source-archives/html/historical-map-candidates/naro-habs-faq.html.gz",
+      "originalSha256": "9d0ae5d5f0004bc84b5b5236b3fc60cac0b8dd993d2b09bdb3754cd69b3042e5",
+      "noteSha256": "8bb1c82cf7e75910dcf63108000b91027fb670a3c6ba3c47c8f13d6952f7d26c",
+      "archiveSha256": "88d5aa3092d39ab1c493866d55a73ecaa5a770cabe6d425b7768285581c6190c"
+    },
+    {
+      "id": "historical-map-candidates/okayama-reuse",
+      "title": "貴重資料の二次利用について",
+      "note": "data/inputs/historical-map-candidates/okayama-reuse.md",
+      "archive": "data/source-archives/html/historical-map-candidates/okayama-reuse.html.gz",
+      "originalSha256": "0122406a77a0b5fbab485a0267c75675626c98dfe935b5f3d03b2a7ff091680b",
+      "noteSha256": "61ab3fd01d73696919b75e0755a110c10bd842b253aeb0cb6e7ad5e0afb925a9",
+      "archiveSha256": "08b00a71bffcc910ff04cf2e2d8e03f1eb116875ecad996da4f140a89f0e8283"
+    },
+    {
+      "id": "hokurikudo-review/source-ancient-traffic",
+      "title": "図説福井県史 古代13 北陸道と北の海つ道（1）",
+      "note": "data/inputs/hokurikudo-review/source-ancient-traffic.md",
+      "archive": "data/source-archives/html/hokurikudo-review/source-ancient-traffic.html.gz",
+      "originalSha256": "fa8f2a709fe810ce893aa5f9fb5fc090d77f96ccc9bb3fdc24fd28ff4c2609e6",
+      "noteSha256": "d059af27b0eb4ae586aa13c6005ef4db380c70c748857044ebade97ceb99b652",
+      "archiveSha256": "f0e35a115aca8aef265e5f50774290b4a3fb93a0d2aa82c59a3b4bdef92c49b8"
+    },
+    {
+      "id": "hokurikudo-review/source-early-modern-map-page",
+      "title": "図説福井県史 近世15 街道と川舟（2）拡大図",
+      "note": "data/inputs/hokurikudo-review/source-early-modern-map-page.md",
+      "archive": "data/source-archives/html/hokurikudo-review/source-early-modern-map-page.html.gz",
+      "originalSha256": "6a19e3507a975a0cf89daa783d257896f59609fc8d13ea0405683788e06a3107",
+      "noteSha256": "bfdb7501dcb50447739f3516d043a98d0f1f401c915be9e9cf312ecf763c7255",
+      "archiveSha256": "36bd3d1e988f0c895980157d21ed02de0698b1cee3349db9cf45bb87e2eed3cb"
+    },
+    {
+      "id": "hokurikudo-review/source-early-modern-traffic",
+      "title": "図説福井県史 近世15 街道と川舟（1）",
+      "note": "data/inputs/hokurikudo-review/source-early-modern-traffic.md",
+      "archive": "data/source-archives/html/hokurikudo-review/source-early-modern-traffic.html.gz",
+      "originalSha256": "7e66c80d1d249c34271f46d68f80fcae4ebe24f43e1ca45b1a0d649f87b3c77f",
+      "noteSha256": "565227727145e0db719b463d76899308f82907dd3ec9ef8a652c96209ede95f4",
+      "archiveSha256": "bf920f6cd64aa8007a4adc0ae8902811a9af5a6f9bf6fec846201b42e952247d"
+    },
+    {
+      "id": "hokurikudo-review/source-genpei-routes",
+      "title": "福井県史 通史編1 原始・古代 源平北陸合戦",
+      "note": "data/inputs/hokurikudo-review/source-genpei-routes.md",
+      "archive": "data/source-archives/html/hokurikudo-review/source-genpei-routes.html.gz",
+      "originalSha256": "c2ba6d38f6bd5831d3f2377e989e70cf1afcf07560d7adb868cb98df8b5af630",
+      "noteSha256": "3dbfce2d88de9c94d7aa780edf4ca5b03f3b018f9c1181bd83874a91dc3c5aed",
+      "archiveSha256": "d820f321e0cebf696fc4dd38ef64b7d12883030f0a43cbb3f3e37699019d3edf"
+    },
+    {
+      "id": "hokurikudo-review/source-medieval-forts",
+      "title": "福井県史 通史編2 中世 交通と城塞",
+      "note": "data/inputs/hokurikudo-review/source-medieval-forts.md",
+      "archive": "data/source-archives/html/hokurikudo-review/source-medieval-forts.html.gz",
+      "originalSha256": "08baadd6a9a966678822434affc25e579755c1b7c074c019cd0c443a88d9ccb0",
+      "noteSha256": "a11e40654ebcc971e14798be211d05dc498abfc8740b41b78683154b13caafe1",
+      "archiveSha256": "cfa57beba665315055da94100131e402fdf5cbb5946089b47526db1b7a93108e"
+    },
+    {
+      "id": "hokurikudo-review/source-medieval-traffic",
+      "title": "福井県史 通史編2 中世 西街道と舟運",
+      "note": "data/inputs/hokurikudo-review/source-medieval-traffic.md",
+      "archive": "data/source-archives/html/hokurikudo-review/source-medieval-traffic.html.gz",
+      "originalSha256": "e1585bfe4c106a0c89183fde4c3bfcf55b13ab7cf64ebf29a8ba7c0bb1e08870",
+      "noteSha256": "6fb43395531785ba49acd0ae791c470160c641fe9412c3786388ddd803958031",
+      "archiveSha256": "344cedfb63013777b16b3586d0e9e8879cfed759290ead9e37bd262b52665323"
+    },
+    {
+      "id": "hokurikudo-review/source-road-introduction",
+      "title": "福井県史 通史編1 産業・交通と都市 陸路",
+      "note": "data/inputs/hokurikudo-review/source-road-introduction.md",
+      "archive": "data/source-archives/html/hokurikudo-review/source-road-introduction.html.gz",
+      "originalSha256": "ade9a11080cf21b4560dcaa96299e36a5944f3927e80be0c82a81d44488b6ba6",
+      "noteSha256": "675850a5d3cd5d61a6790253778622942d497347fcc4a1641a14e2e5e16dbfdf",
+      "archiveSha256": "2e7388f56dec9b1a27c6914c87f56cf9784e85ce3098ae597aa138e2974b3506"
+    },
+    {
+      "id": "kashiwagi-review/bunka-page",
+      "title": "柏木城跡",
+      "note": "data/inputs/kashiwagi-review/bunka-page.md",
+      "archive": "data/source-archives/html/kashiwagi-review/bunka-page.html.gz",
+      "originalSha256": "6e6d9c7c346b85170df06017e903592ffa8b084912e39d38e23c7bb5e55d89ff",
+      "noteSha256": "04262b04a17a78c76629cd379d39963d4dce2e37c1404ce5617eb14e51d3df7d",
+      "archiveSha256": "eae529ce95813a95f30c2a66dbe3affc027ef0e1715f9c405dcf91dbdd6afd80"
+    },
+    {
+      "id": "kojima-coast-review/bizen-keicho",
+      "title": "備前国図 池田家文庫T1-5",
+      "note": "data/inputs/kojima-coast-review/bizen-keicho.md",
+      "archive": "data/source-archives/html/kojima-coast-review/bizen-keicho.html.gz",
+      "originalSha256": "01acee5b4445394eb95d4614050a26506aded6facf3e58fa5f2910db995916da",
+      "noteSha256": "7b7f2d69695589d992ef7b1674b18b3ca5016321c629732f82b52d8594478085",
+      "archiveSha256": "17838566031142686eb0960a149107b96d386319774acc3ea1dc3bd8317b5280"
+    },
+    {
+      "id": "kojima-coast-review/bizen-keicho-adeac",
+      "title": "備前国図 T1-5 公開画像案内",
+      "note": "data/inputs/kojima-coast-review/bizen-keicho-adeac.md",
+      "archive": "data/source-archives/html/kojima-coast-review/bizen-keicho-adeac.html.gz",
+      "originalSha256": "b298f60161c02619ffb6f6d8e77bf73e76efbd386e009c3023d8d7cc4620e583",
+      "noteSha256": "d0aa0cf52b5309296f5bca696598f3a3a3cac3bc7317f1292fc680c00c06d7a4",
+      "archiveSha256": "d36c316ac98e698e8e8cbb3934df958989dab3c59ab5792f018532e35b294d49"
+    },
+    {
+      "id": "kojima-coast-review/bizen-keicho-viewer",
+      "title": "備前国図 画像ビューア取得記録",
+      "note": "data/inputs/kojima-coast-review/bizen-keicho-viewer.md",
+      "archive": "data/source-archives/html/kojima-coast-review/bizen-keicho-viewer.html.gz",
+      "originalSha256": "2c3466c63aee44d0b5198e8627123856b629b51fa36ecf5187beba61544e718a",
+      "noteSha256": "0dd64520a5d70e290afdad4672921e3e24a86bf8cbb0d5128e311ae52666bd89",
+      "archiveSha256": "542ccd9ac3cce7d090f37e879f2d0b017052b46995d71c390ea0e254d24c6e4a"
+    },
+    {
+      "id": "okitanawate-review/shimabara-cultural-source",
+      "title": "沖田畷合戦場跡 龍造寺隆信供養塔",
+      "note": "data/inputs/okitanawate-review/shimabara-cultural-source.md",
+      "archive": "data/source-archives/html/okitanawate-review/shimabara-cultural-source.html.gz",
+      "originalSha256": "0f56cc8d3351963de0fff9c983712743279578b4db049bdbe792be9f9691ec13",
+      "noteSha256": "273f8564b0ceba0ddf2c516d40133b0a9f0c5875a66c4fff3e6d6be19fcb4cb5",
+      "archiveSha256": "a0b1c7aa5ec604a40c1cd25ba284097c67cf43c84e51d7575cbb925ba8eb3494"
+    }
+  ]
+}

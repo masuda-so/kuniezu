@@ -1,0 +1,1614 @@
+{
+  "accessed": "2026-11-02",
+  "source": "国土地理院・地理院タイル / 農研機構・迅速測図",
+  "registry": "https://maps.gsi.go.jp/help/use.html",
+  "requestedBounds": [
+    140.36,
+    35.81,
+    140.66,
+    36.03
+  ],
+  "zoom": 13,
+  "tileOrigin": [
+    7289,
+    3216
+  ],
+  "tileEnd": [
+    7296,
+    3222
+  ],
+  "layers": [
+    "rapid1880",
+    "std"
+  ],
+  "layerMetadata": {
+    "rapid1880": {
+      "period": [
+        1880,
+        1886
+      ],
+      "kind": "georeferenced-historical-map",
+      "source": "農研機構農業環境研究部門",
+      "license": "CC BY 2.1 JP",
+      "registry": "https://habs.rad.naro.go.jp/habs_faq.html",
+      "sourceAddressing": "TMS, south-origin rows",
+      "positionLimit": "提供元FAQは大きな所で約100mの誤差。各図幅の測量年は個別照合。"
+    },
+    "std": {
+      "period": "current-at-access",
+      "kind": "standard-map"
+    }
+  },
+  "pixelProjection": "Web Mercator tile pixels, 256px per tile",
+  "scope": "各レイヤの撮影・測量年代と透明画素を保持。近現代の地図や写真をゲーム年代の精密復元と同一視しない。",
+  "tiles": [
+    {
+      "layer": "rapid1880",
+      "tile": [
+        13,
+        7289,
+        3216
+      ],
+      "sourceRow": 4975,
+      "url": "https://habs.rad.naro.go.jp/rapid16/13/7289/4975.png",
+      "file": "rapid1880-13-7289-3216.png",
+      "transparentPixelCount": 0,
+      "status": "saved",
+      "sha256": "3b35b2fc6942e59541b9e601fc5e07cdf4e886fd88803e056b3f78c231d6183d"
+    },
+    {
+      "layer": "rapid1880",
+      "tile": [
+        13,
+        7290,
+        3216
+      ],
+      "sourceRow": 4975,
+      "url": "https://habs.rad.naro.go.jp/rapid16/13/7290/4975.png",
+      "file": "rapid1880-13-7290-3216.png",
+      "transparentPixelCount": 35413,
+      "status": "saved",
+      "sha256": "12c4158b5d998daf803c086433af92349d0f8a1ec42543765a3d94f1318759dc"
+    },
+    {
+      "layer": "rapid1880",
+      "tile": [
+        13,
+        7291,
+        3216
+      ],
+      "sourceRow": 4975,
+      "url": "https://habs.rad.naro.go.jp/rapid16/13/7291/4975.png",
+      "file": "rapid1880-13-7291-3216.png",
+      "transparentPixelCount": 20832,
+      "status": "saved",
+      "sha256": "937b2a6d134e2464ab023db531203a1f887edfdc6279b871a86527636849f5b9"
+    },
+    {
+      "layer": "rapid1880",
+      "tile": [
+        13,
+        7292,
+        3216
+      ],
+      "sourceRow": 4975,
+      "url": "https://habs.rad.naro.go.jp/rapid16/13/7292/4975.png",
+      "file": "rapid1880-13-7292-3216.png",
+      "transparentPixelCount": 0,
+      "status": "saved",
+      "sha256": "071caa556e27101e63de8a7d54485ef5dcaff2fa1dda1a2b7e103cf109263834"
+    },
+    {
+      "layer": "rapid1880",
+      "tile": [
+        13,
+        7293,
+        3216
+      ],
+      "sourceRow": 4975,
+      "url": "https://habs.rad.naro.go.jp/rapid16/13/7293/4975.png",
+      "file": "rapid1880-13-7293-3216.png",
+      "transparentPixelCount": 0,
+      "status": "saved",
+      "sha256": "9a4944d5e2ee3880d2a580b483e01cfe620db0d36c19c9cafa9bd621e056b1c1"
+    },
+    {
+      "layer": "rapid1880",
+      "tile": [
+        13,
+        7294,
+        3216
+      ],
+      "sourceRow": 4975,
+      "url": "https://habs.rad.naro.go.jp/rapid16/13/7294/4975.png",
+      "file": "rapid1880-13-7294-3216.png",
+      "transparentPixelCount": 0,
+      "status": "saved",
+      "sha256": "857a8116ba2e37991d4fff5d413ce8bfc10776ae2ebf489eb55d8d69c92f34ad"
+    },
+    {
+      "layer": "rapid1880",
+      "tile": [
+        13,
+        7295,
+        3216
+      ],
+      "sourceRow": 4975,
+      "url": "https://habs.rad.naro.go.jp/rapid16/13/7295/4975.png",
+      "file": "rapid1880-13-7295-3216.png",
+      "transparentPixelCount": 0,
+      "status": "saved",
+      "sha256": "4d7ac5a07fbedbdb038f78e5879d50a38b3c6957da84b0819261362159e4db16"
+    },
+    {
+      "layer": "rapid1880",
+      "tile": [
+        13,
+        7296,
+        3216
+      ],
+      "sourceRow": 4975,
+      "url": "https://habs.rad.naro.go.jp/rapid16/13/7296/4975.png",
+      "file": "rapid1880-13-7296-3216.png",
+      "transparentPixelCount": 16655,
+      "status": "saved",
+      "sha256": "3197eef08a2b54ecf5403e9ab39bf52a331203fda48cb201356054d4c2c02f87"
+    },
+    {
+      "layer": "rapid1880",
+      "tile": [
+        13,
+        7289,
+        3217
+      ],
+      "sourceRow": 4974,
+      "url": "https://habs.rad.naro.go.jp/rapid16/13/7289/4974.png",
+      "file": "rapid1880-13-7289-3217.png",
+      "transparentPixelCount": 0,
+      "status": "saved",
+      "sha256": "c67d3709537590e076bc0913beb8b1de67bae25b5849d3e1645f4b184574bd1f"
+    },
+    {
+      "layer": "rapid1880",
+      "tile": [
+        13,
+        7290,
+        3217
+      ],
+      "sourceRow": 4974,
+      "url": "https://habs.rad.naro.go.jp/rapid16/13/7290/4974.png",
+      "file": "rapid1880-13-7290-3217.png",
+      "transparentPixelCount": 0,
+      "status": "saved",
+      "sha256": "04292ccc7ef78a7b0706914f60e4ca294c0b1663ca14769bcbae9d94415f5f5f"
+    },
+    {
+      "layer": "rapid1880",
+      "tile": [
+        13,
+        7291,
+        3217
+      ],
+      "sourceRow": 4974,
+      "url": "https://habs.rad.naro.go.jp/rapid16/13/7291/4974.png",
+      "file": "rapid1880-13-7291-3217.png",
+      "transparentPixelCount": 0,
+      "status": "saved",
+      "sha256": "7552ed54f325d30c158eefcf5dd7f2c5e1cac4efaf98bd0b696389f3015ffc0c"
+    },
+    {
+      "layer": "rapid1880",
+      "tile": [
+        13,
+        7292,
+        3217
+      ],
+      "sourceRow": 4974,
+      "url": "https://habs.rad.naro.go.jp/rapid16/13/7292/4974.png",
+      "file": "rapid1880-13-7292-3217.png",
+      "transparentPixelCount": 0,
+      "status": "saved",
+      "sha256": "bc02f8f731ba7d766f6c4048846623c62436bb13078616af1aa289937ff52666"
+    },
+    {
+      "layer": "rapid1880",
+      "tile": [
+        13,
+        7293,
+        3217
+      ],
+      "sourceRow": 4974,
+      "url": "https://habs.rad.naro.go.jp/rapid16/13/7293/4974.png",
+      "file": "rapid1880-13-7293-3217.png",
+      "transparentPixelCount": 0,
+      "status": "saved",
+      "sha256": "47293db7856ad6d684d0cb62e1d619beb1cf7e23ec80a3649406b2dc6583618b"
+    },
+    {
+      "layer": "rapid1880",
+      "tile": [
+        13,
+        7294,
+        3217
+      ],
+      "sourceRow": 4974,
+      "url": "https://habs.rad.naro.go.jp/rapid16/13/7294/4974.png",
+      "file": "rapid1880-13-7294-3217.png",
+      "transparentPixelCount": 0,
+      "status": "saved",
+      "sha256": "b050921a5f5eebe47ffcbea080f8df4f7b7d3a4d98964c62f5d45fc3fb6729ea"
+    },
+    {
+      "layer": "rapid1880",
+      "tile": [
+        13,
+        7295,
+        3217
+      ],
+      "sourceRow": 4974,
+      "url": "https://habs.rad.naro.go.jp/rapid16/13/7295/4974.png",
+      "file": "rapid1880-13-7295-3217.png",
+      "transparentPixelCount": 0,
+      "status": "saved",
+      "sha256": "0a00314ed9b75b35b42e3a9a29b3bf9d60877a28961b54a40633aa1be4d81982"
+    },
+    {
+      "layer": "rapid1880",
+      "tile": [
+        13,
+        7296,
+        3217
+      ],
+      "sourceRow": 4974,
+      "url": "https://habs.rad.naro.go.jp/rapid16/13/7296/4974.png",
+      "file": "rapid1880-13-7296-3217.png",
+      "transparentPixelCount": 0,
+      "status": "saved",
+      "sha256": "ed86e0d2cbe48d9e87c16e4681a8f1d502736a3b1a4cbad73b3d4edf4b175661"
+    },
+    {
+      "layer": "rapid1880",
+      "tile": [
+        13,
+        7289,
+        3218
+      ],
+      "sourceRow": 4973,
+      "url": "https://habs.rad.naro.go.jp/rapid16/13/7289/4973.png",
+      "file": "rapid1880-13-7289-3218.png",
+      "transparentPixelCount": 0,
+      "status": "saved",
+      "sha256": "e903b441e53e1ed7a6304f43ac32f91cf6fd1855d358d395d3f83a1c5510c44b"
+    },
+    {
+      "layer": "rapid1880",
+      "tile": [
+        13,
+        7290,
+        3218
+      ],
+      "sourceRow": 4973,
+      "url": "https://habs.rad.naro.go.jp/rapid16/13/7290/4973.png",
+      "file": "rapid1880-13-7290-3218.png",
+      "transparentPixelCount": 0,
+      "status": "saved",
+      "sha256": "5210be74804dbe05c7d07561e6b0c4358aafd7a280690bb7d7f2970c5d755c66"
+    },
+    {
+      "layer": "rapid1880",
+      "tile": [
+        13,
+        7291,
+        3218
+      ],
+      "sourceRow": 4973,
+      "url": "https://habs.rad.naro.go.jp/rapid16/13/7291/4973.png",
+      "file": "rapid1880-13-7291-3218.png",
+      "transparentPixelCount": 0,
+      "status": "saved",
+      "sha256": "004f723ae5023aa5d42e6d1c87ff73a23c0e16c72f5bbcf32fb59323c59309ef"
+    },
+    {
+      "layer": "rapid1880",
+      "tile": [
+        13,
+        7292,
+        3218
+      ],
+      "sourceRow": 4973,
+      "url": "https://habs.rad.naro.go.jp/rapid16/13/7292/4973.png",
+      "file": "rapid1880-13-7292-3218.png",
+      "transparentPixelCount": 0,
+      "status": "saved",
+      "sha256": "1a819159b4136daa9e36c04214399ed0d84743af4a5de8cc5caaa16ba1b55050"
+    },
+    {
+      "layer": "rapid1880",
+      "tile": [
+        13,
+        7293,
+        3218
+      ],
+      "sourceRow": 4973,
+      "url": "https://habs.rad.naro.go.jp/rapid16/13/7293/4973.png",
+      "file": "rapid1880-13-7293-3218.png",
+      "transparentPixelCount": 0,
+      "status": "saved",
+      "sha256": "64346121c105e9bacaacb2f8a9a36ca71726fb96587c78085cd90d10f456ff02"
+    },
+    {
+      "layer": "rapid1880",
+      "tile": [
+        13,
+        7294,
+        3218
+      ],
+      "sourceRow": 4973,
+      "url": "https://habs.rad.naro.go.jp/rapid16/13/7294/4973.png",
+      "file": "rapid1880-13-7294-3218.png",
+      "transparentPixelCount": 0,
+      "status": "saved",
+      "sha256": "a210ebbe5d58abf8afdb936f1710e567ffbb9a810aabc202e464a2ea3ea45ebc"
+    },
+    {
+      "layer": "rapid1880",
+      "tile": [
+        13,
+        7295,
+        3218
+      ],
+      "sourceRow": 4973,
+      "url": "https://habs.rad.naro.go.jp/rapid16/13/7295/4973.png",
+      "file": "rapid1880-13-7295-3218.png",
+      "transparentPixelCount": 0,
+      "status": "saved",
+      "sha256": "767e5178bbb76df0c36493498093b75b64dac3423ddf9e344b06d12112029021"
+    },
+    {
+      "layer": "rapid1880",
+      "tile": [
+        13,
+        7296,
+        3218
+      ],
+      "sourceRow": 4973,
+      "url": "https://habs.rad.naro.go.jp/rapid16/13/7296/4973.png",
+      "file": "rapid1880-13-7296-3218.png",
+      "transparentPixelCount": 0,
+      "status": "saved",
+      "sha256": "3bcf61e6714f53653c141454e2e909e0b3ba5c433c53bd0c0cdd6c9100af8b9d"
+    },
+    {
+      "layer": "rapid1880",
+      "tile": [
+        13,
+        7289,
+        3219
+      ],
+      "sourceRow": 4972,
+      "url": "https://habs.rad.naro.go.jp/rapid16/13/7289/4972.png",
+      "file": "rapid1880-13-7289-3219.png",
+      "transparentPixelCount": 0,
+      "status": "saved",
+      "sha256": "db5ed3349cdc12572dec816a7a869d448d3aa194620e6ac23bdf9eb9cb6a9360"
+    },
+    {
+      "layer": "rapid1880",
+      "tile": [
+        13,
+        7290,
+        3219
+      ],
+      "sourceRow": 4972,
+      "url": "https://habs.rad.naro.go.jp/rapid16/13/7290/4972.png",
+      "file": "rapid1880-13-7290-3219.png",
+      "transparentPixelCount": 0,
+      "status": "saved",
+      "sha256": "35f2c94fd39c41fe6a3cf88c6d40d388ca9042e218123b6071408008991aabb3"
+    },
+    {
+      "layer": "rapid1880",
+      "tile": [
+        13,
+        7291,
+        3219
+      ],
+      "sourceRow": 4972,
+      "url": "https://habs.rad.naro.go.jp/rapid16/13/7291/4972.png",
+      "file": "rapid1880-13-7291-3219.png",
+      "transparentPixelCount": 0,
+      "status": "saved",
+      "sha256": "9539ad1793712cf80ce21d597df8d76569656597b9fe23b2b368a78fbbe40c38"
+    },
+    {
+      "layer": "rapid1880",
+      "tile": [
+        13,
+        7292,
+        3219
+      ],
+      "sourceRow": 4972,
+      "url": "https://habs.rad.naro.go.jp/rapid16/13/7292/4972.png",
+      "file": "rapid1880-13-7292-3219.png",
+      "transparentPixelCount": 0,
+      "status": "saved",
+      "sha256": "2dbb9cdc49107681fdafad06332d9f695d4cf89d76c34bf4fca6b8b284b04ea2"
+    },
+    {
+      "layer": "rapid1880",
+      "tile": [
+        13,
+        7293,
+        3219
+      ],
+      "sourceRow": 4972,
+      "url": "https://habs.rad.naro.go.jp/rapid16/13/7293/4972.png",
+      "file": "rapid1880-13-7293-3219.png",
+      "transparentPixelCount": 0,
+      "status": "saved",
+      "sha256": "306181b578c4348a22a96c0497785db85bc22b27a63426b5ef4b3dd16a1d7b02"
+    },
+    {
+      "layer": "rapid1880",
+      "tile": [
+        13,
+        7294,
+        3219
+      ],
+      "sourceRow": 4972,
+      "url": "https://habs.rad.naro.go.jp/rapid16/13/7294/4972.png",
+      "file": "rapid1880-13-7294-3219.png",
+      "transparentPixelCount": 0,
+      "status": "saved",
+      "sha256": "d2edd72e5b1976ed26934c8fa4ca72e4806b8fa52d0fb0803700bfa59250e2bf"
+    },
+    {
+      "layer": "rapid1880",
+      "tile": [
+        13,
+        7295,
+        3219
+      ],
+      "sourceRow": 4972,
+      "url": "https://habs.rad.naro.go.jp/rapid16/13/7295/4972.png",
+      "file": "rapid1880-13-7295-3219.png",
+      "transparentPixelCount": 0,
+      "status": "saved",
+      "sha256": "18f91d3d3aa75cd559f49c3f1e64ad4bff53781945e5d8975750dee05a2c3ffe"
+    },
+    {
+      "layer": "rapid1880",
+      "tile": [
+        13,
+        7296,
+        3219
+      ],
+      "sourceRow": 4972,
+      "url": "https://habs.rad.naro.go.jp/rapid16/13/7296/4972.png",
+      "file": "rapid1880-13-7296-3219.png",
+      "transparentPixelCount": 0,
+      "status": "saved",
+      "sha256": "8134ff977c4cb58a3ae879c127fc126173e67cba063db40049a68e15fdf2c2d8"
+    },
+    {
+      "layer": "rapid1880",
+      "tile": [
+        13,
+        7289,
+        3220
+      ],
+      "sourceRow": 4971,
+      "url": "https://habs.rad.naro.go.jp/rapid16/13/7289/4971.png",
+      "file": "rapid1880-13-7289-3220.png",
+      "transparentPixelCount": 0,
+      "status": "saved",
+      "sha256": "af244b45c565843df55be3cfc429ae9ca240fc6578151ced594b21a83bc7d62e"
+    },
+    {
+      "layer": "rapid1880",
+      "tile": [
+        13,
+        7290,
+        3220
+      ],
+      "sourceRow": 4971,
+      "url": "https://habs.rad.naro.go.jp/rapid16/13/7290/4971.png",
+      "file": "rapid1880-13-7290-3220.png",
+      "transparentPixelCount": 0,
+      "status": "saved",
+      "sha256": "b5618388ee0653ec388131ece7f65b6e8103e41c2014f83e67aa7c8699dc2d9a"
+    },
+    {
+      "layer": "rapid1880",
+      "tile": [
+        13,
+        7291,
+        3220
+      ],
+      "sourceRow": 4971,
+      "url": "https://habs.rad.naro.go.jp/rapid16/13/7291/4971.png",
+      "file": "rapid1880-13-7291-3220.png",
+      "transparentPixelCount": 0,
+      "status": "saved",
+      "sha256": "6df52b544d52d97f45c4b5a2b7bbe25d1a8db0cd05d1637e31af63c031af492f"
+    },
+    {
+      "layer": "rapid1880",
+      "tile": [
+        13,
+        7292,
+        3220
+      ],
+      "sourceRow": 4971,
+      "url": "https://habs.rad.naro.go.jp/rapid16/13/7292/4971.png",
+      "file": "rapid1880-13-7292-3220.png",
+      "transparentPixelCount": 0,
+      "status": "saved",
+      "sha256": "dfe399eeb3ea5431d98e7cc8387d3379d78e1c0fedf94acd139ee9160a9a00ab"
+    },
+    {
+      "layer": "rapid1880",
+      "tile": [
+        13,
+        7293,
+        3220
+      ],
+      "sourceRow": 4971,
+      "url": "https://habs.rad.naro.go.jp/rapid16/13/7293/4971.png",
+      "file": "rapid1880-13-7293-3220.png",
+      "transparentPixelCount": 0,
+      "status": "saved",
+      "sha256": "8ad582df04514cb6e492e602d7c57bc411bae16efb84405151275e2bb25d9fbd"
+    },
+    {
+      "layer": "rapid1880",
+      "tile": [
+        13,
+        7294,
+        3220
+      ],
+      "sourceRow": 4971,
+      "url": "https://habs.rad.naro.go.jp/rapid16/13/7294/4971.png",
+      "file": "rapid1880-13-7294-3220.png",
+      "transparentPixelCount": 0,
+      "status": "saved",
+      "sha256": "cb39cbe375108164cc02ad2926a7ba0861a7302c1eec75ebebf81e348371d74b"
+    },
+    {
+      "layer": "rapid1880",
+      "tile": [
+        13,
+        7295,
+        3220
+      ],
+      "sourceRow": 4971,
+      "url": "https://habs.rad.naro.go.jp/rapid16/13/7295/4971.png",
+      "file": "rapid1880-13-7295-3220.png",
+      "transparentPixelCount": 0,
+      "status": "saved",
+      "sha256": "18956174b089b29f54f9a2d12ef41113389f875e07bdf7168593a54b25d057b5"
+    },
+    {
+      "layer": "rapid1880",
+      "tile": [
+        13,
+        7296,
+        3220
+      ],
+      "sourceRow": 4971,
+      "url": "https://habs.rad.naro.go.jp/rapid16/13/7296/4971.png",
+      "file": "rapid1880-13-7296-3220.png",
+      "transparentPixelCount": 0,
+      "status": "saved",
+      "sha256": "68e34222ae3fb7f8e559ce1d94f23e990318a133ea9788c25e188b3f615e597f"
+    },
+    {
+      "layer": "rapid1880",
+      "tile": [
+        13,
+        7289,
+        3221
+      ],
+      "sourceRow": 4970,
+      "url": "https://habs.rad.naro.go.jp/rapid16/13/7289/4970.png",
+      "file": "rapid1880-13-7289-3221.png",
+      "transparentPixelCount": 0,
+      "status": "saved",
+      "sha256": "aef9fb8bf22e1675786651ed6250e8d5929e94bcadd6b557ac1bfce397d5621f"
+    },
+    {
+      "layer": "rapid1880",
+      "tile": [
+        13,
+        7290,
+        3221
+      ],
+      "sourceRow": 4970,
+      "url": "https://habs.rad.naro.go.jp/rapid16/13/7290/4970.png",
+      "file": "rapid1880-13-7290-3221.png",
+      "transparentPixelCount": 0,
+      "status": "saved",
+      "sha256": "34f696a1a43fbfdfe27d420b398a75c6d049ba8c0d841a95f3d89f811d0003ce"
+    },
+    {
+      "layer": "rapid1880",
+      "tile": [
+        13,
+        7291,
+        3221
+      ],
+      "sourceRow": 4970,
+      "url": "https://habs.rad.naro.go.jp/rapid16/13/7291/4970.png",
+      "file": "rapid1880-13-7291-3221.png",
+      "transparentPixelCount": 0,
+      "status": "saved",
+      "sha256": "8536292cbdb8733d73d80c983424c8f0ca0c5298d9bf9cd900cdb6969c5eebcd"
+    },
+    {
+      "layer": "rapid1880",
+      "tile": [
+        13,
+        7292,
+        3221
+      ],
+      "sourceRow": 4970,
+      "url": "https://habs.rad.naro.go.jp/rapid16/13/7292/4970.png",
+      "file": "rapid1880-13-7292-3221.png",
+      "transparentPixelCount": 0,
+      "status": "saved",
+      "sha256": "fd8fcd25bc628ca49834c062587ad3105bb772d3756eb8a7c92aa24d62759687"
+    },
+    {
+      "layer": "rapid1880",
+      "tile": [
+        13,
+        7293,
+        3221
+      ],
+      "sourceRow": 4970,
+      "url": "https://habs.rad.naro.go.jp/rapid16/13/7293/4970.png",
+      "file": "rapid1880-13-7293-3221.png",
+      "transparentPixelCount": 0,
+      "status": "saved",
+      "sha256": "e1a03820cc5bd09b5f0cea9455cd2a21dc198ff2fbdb2b0b64612983eff365b7"
+    },
+    {
+      "layer": "rapid1880",
+      "tile": [
+        13,
+        7294,
+        3221
+      ],
+      "sourceRow": 4970,
+      "url": "https://habs.rad.naro.go.jp/rapid16/13/7294/4970.png",
+      "file": "rapid1880-13-7294-3221.png",
+      "transparentPixelCount": 0,
+      "status": "saved",
+      "sha256": "d54b63bfebbb0ac7e811d4a1abcf76d680e8113cba7c2db837e2908b5b37516c"
+    },
+    {
+      "layer": "rapid1880",
+      "tile": [
+        13,
+        7295,
+        3221
+      ],
+      "sourceRow": 4970,
+      "url": "https://habs.rad.naro.go.jp/rapid16/13/7295/4970.png",
+      "file": "rapid1880-13-7295-3221.png",
+      "transparentPixelCount": 0,
+      "status": "saved",
+      "sha256": "9a65c8c63f8c78ef3a2ace2f12ccb387cbca043075df6489d87906e8391cf6ce"
+    },
+    {
+      "layer": "rapid1880",
+      "tile": [
+        13,
+        7296,
+        3221
+      ],
+      "sourceRow": 4970,
+      "url": "https://habs.rad.naro.go.jp/rapid16/13/7296/4970.png",
+      "file": "rapid1880-13-7296-3221.png",
+      "transparentPixelCount": 0,
+      "status": "saved",
+      "sha256": "a27a833351ebef5a8137c35f3037ad0d3afbb6750f4f00ef9008d15d541da840"
+    },
+    {
+      "layer": "rapid1880",
+      "tile": [
+        13,
+        7289,
+        3222
+      ],
+      "sourceRow": 4969,
+      "url": "https://habs.rad.naro.go.jp/rapid16/13/7289/4969.png",
+      "file": "rapid1880-13-7289-3222.png",
+      "transparentPixelCount": 0,
+      "status": "saved",
+      "sha256": "07a8931475a4a508085aa1a4b8cc56519d3a46ed97b0147ed0cf8fd596c1e114"
+    },
+    {
+      "layer": "rapid1880",
+      "tile": [
+        13,
+        7290,
+        3222
+      ],
+      "sourceRow": 4969,
+      "url": "https://habs.rad.naro.go.jp/rapid16/13/7290/4969.png",
+      "file": "rapid1880-13-7290-3222.png",
+      "transparentPixelCount": 0,
+      "status": "saved",
+      "sha256": "bfaf3ffe46d7cc4aab2c825ec14d7598595514ed2449493ec1f43bc1c1d7e9f7"
+    },
+    {
+      "layer": "rapid1880",
+      "tile": [
+        13,
+        7291,
+        3222
+      ],
+      "sourceRow": 4969,
+      "url": "https://habs.rad.naro.go.jp/rapid16/13/7291/4969.png",
+      "file": "rapid1880-13-7291-3222.png",
+      "transparentPixelCount": 0,
+      "status": "saved",
+      "sha256": "8bdd4cd5d452b93e0d2fb6469295dfa3044d25d8841c64edf54c61ec554a0169"
+    },
+    {
+      "layer": "rapid1880",
+      "tile": [
+        13,
+        7292,
+        3222
+      ],
+      "sourceRow": 4969,
+      "url": "https://habs.rad.naro.go.jp/rapid16/13/7292/4969.png",
+      "file": "rapid1880-13-7292-3222.png",
+      "transparentPixelCount": 0,
+      "status": "saved",
+      "sha256": "b5a3ddcb388acb469ec744f5548cda3dc48b1103c65428e14b1ffb554e0de743"
+    },
+    {
+      "layer": "rapid1880",
+      "tile": [
+        13,
+        7293,
+        3222
+      ],
+      "sourceRow": 4969,
+      "url": "https://habs.rad.naro.go.jp/rapid16/13/7293/4969.png",
+      "file": "rapid1880-13-7293-3222.png",
+      "transparentPixelCount": 0,
+      "status": "saved",
+      "sha256": "c3c6d4498283460448e2fc2e1a35036781d538bc3779be448853fd661df9dec2"
+    },
+    {
+      "layer": "rapid1880",
+      "tile": [
+        13,
+        7294,
+        3222
+      ],
+      "sourceRow": 4969,
+      "url": "https://habs.rad.naro.go.jp/rapid16/13/7294/4969.png",
+      "file": "rapid1880-13-7294-3222.png",
+      "transparentPixelCount": 0,
+      "status": "saved",
+      "sha256": "72fc4aa35962d08d304de329f56bb8e003e499db9395b393470e2f5ba01173b2"
+    },
+    {
+      "layer": "rapid1880",
+      "tile": [
+        13,
+        7295,
+        3222
+      ],
+      "sourceRow": 4969,
+      "url": "https://habs.rad.naro.go.jp/rapid16/13/7295/4969.png",
+      "file": "rapid1880-13-7295-3222.png",
+      "transparentPixelCount": 0,
+      "status": "saved",
+      "sha256": "c8c26a78dfa51373b8986ec86f278a8b71581569b0e67c9f4000ac9b651144b0"
+    },
+    {
+      "layer": "rapid1880",
+      "tile": [
+        13,
+        7296,
+        3222
+      ],
+      "sourceRow": 4969,
+      "url": "https://habs.rad.naro.go.jp/rapid16/13/7296/4969.png",
+      "file": "rapid1880-13-7296-3222.png",
+      "transparentPixelCount": 0,
+      "status": "saved",
+      "sha256": "e854d49b29723a93fc84d531067f0967b8b1201255c3fdcfc5b5fc96d4123c97"
+    },
+    {
+      "layer": "std",
+      "tile": [
+        13,
+        7289,
+        3216
+      ],
+      "sourceRow": 3216,
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/std/13/7289/3216.png",
+      "file": "std-13-7289-3216.png",
+      "transparentPixelCount": 0,
+      "status": "saved",
+      "sha256": "566eb113728a17ef63b2526a381c6ec1e834e0997a298db57ebfd1e4ce835ce8"
+    },
+    {
+      "layer": "std",
+      "tile": [
+        13,
+        7290,
+        3216
+      ],
+      "sourceRow": 3216,
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/std/13/7290/3216.png",
+      "file": "std-13-7290-3216.png",
+      "transparentPixelCount": 0,
+      "status": "saved",
+      "sha256": "200d3ba63e6231d19f8801d8ba3000a76cf9bc9a570583777e4ffa63be9b8db6"
+    },
+    {
+      "layer": "std",
+      "tile": [
+        13,
+        7291,
+        3216
+      ],
+      "sourceRow": 3216,
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/std/13/7291/3216.png",
+      "file": "std-13-7291-3216.png",
+      "transparentPixelCount": 0,
+      "status": "saved",
+      "sha256": "70882b91b4722df126a9b0d0596ebb63679ab5cfa884e12839e742bc3d789021"
+    },
+    {
+      "layer": "std",
+      "tile": [
+        13,
+        7292,
+        3216
+      ],
+      "sourceRow": 3216,
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/std/13/7292/3216.png",
+      "file": "std-13-7292-3216.png",
+      "transparentPixelCount": 0,
+      "status": "saved",
+      "sha256": "5ea9e8bf9f30ac42e4a47460fe1eeb03dae93f348add0826594ce1258131e061"
+    },
+    {
+      "layer": "std",
+      "tile": [
+        13,
+        7293,
+        3216
+      ],
+      "sourceRow": 3216,
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/std/13/7293/3216.png",
+      "file": "std-13-7293-3216.png",
+      "transparentPixelCount": 0,
+      "status": "saved",
+      "sha256": "aaafbaa056efd1488f2e917f91f8d2df10271aae7b168ce09872d5f6b3502800"
+    },
+    {
+      "layer": "std",
+      "tile": [
+        13,
+        7294,
+        3216
+      ],
+      "sourceRow": 3216,
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/std/13/7294/3216.png",
+      "file": "std-13-7294-3216.png",
+      "transparentPixelCount": 0,
+      "status": "saved",
+      "sha256": "f67d8a435728bc63aedd38628c42f3e50cf31b386f5a83ba61f53f8199f07f92"
+    },
+    {
+      "layer": "std",
+      "tile": [
+        13,
+        7295,
+        3216
+      ],
+      "sourceRow": 3216,
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/std/13/7295/3216.png",
+      "file": "std-13-7295-3216.png",
+      "transparentPixelCount": 0,
+      "status": "saved",
+      "sha256": "e33c85f9726e93604884202073c44035bf37cea07b4ee0a45bdf7227a4b1b8e3"
+    },
+    {
+      "layer": "std",
+      "tile": [
+        13,
+        7296,
+        3216
+      ],
+      "sourceRow": 3216,
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/std/13/7296/3216.png",
+      "file": "std-13-7296-3216.png",
+      "transparentPixelCount": 0,
+      "status": "saved",
+      "sha256": "81ffe0c570e739448ee164d9617531307fe28c86195c9b0b451a839c2a11a081"
+    },
+    {
+      "layer": "std",
+      "tile": [
+        13,
+        7289,
+        3217
+      ],
+      "sourceRow": 3217,
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/std/13/7289/3217.png",
+      "file": "std-13-7289-3217.png",
+      "transparentPixelCount": 0,
+      "status": "saved",
+      "sha256": "162f3bd09a11ada005b27c5c46cfb4c4f4f52813459c88ef80be95bf49ac8eda"
+    },
+    {
+      "layer": "std",
+      "tile": [
+        13,
+        7290,
+        3217
+      ],
+      "sourceRow": 3217,
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/std/13/7290/3217.png",
+      "file": "std-13-7290-3217.png",
+      "transparentPixelCount": 0,
+      "status": "saved",
+      "sha256": "f4b2f847ce11508783e83a5479c8ea30c6f11ebe17af2f387597e12faeef2d86"
+    },
+    {
+      "layer": "std",
+      "tile": [
+        13,
+        7291,
+        3217
+      ],
+      "sourceRow": 3217,
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/std/13/7291/3217.png",
+      "file": "std-13-7291-3217.png",
+      "transparentPixelCount": 0,
+      "status": "saved",
+      "sha256": "22c6922455a6c3ae8eb656fc96bb9fe29a5a718af8ed4e771f2970fa674b1d6f"
+    },
+    {
+      "layer": "std",
+      "tile": [
+        13,
+        7292,
+        3217
+      ],
+      "sourceRow": 3217,
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/std/13/7292/3217.png",
+      "file": "std-13-7292-3217.png",
+      "transparentPixelCount": 0,
+      "status": "saved",
+      "sha256": "68365e7cbe25e3e8548ccb5fb079b1cf621a1d0142e97af839edf2099b4e8d4a"
+    },
+    {
+      "layer": "std",
+      "tile": [
+        13,
+        7293,
+        3217
+      ],
+      "sourceRow": 3217,
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/std/13/7293/3217.png",
+      "file": "std-13-7293-3217.png",
+      "transparentPixelCount": 0,
+      "status": "saved",
+      "sha256": "e651d91b5b779be2e6ced92b64ebc8f39bb899b9da85ad0bfc83c5aefe4c0fe8"
+    },
+    {
+      "layer": "std",
+      "tile": [
+        13,
+        7294,
+        3217
+      ],
+      "sourceRow": 3217,
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/std/13/7294/3217.png",
+      "file": "std-13-7294-3217.png",
+      "transparentPixelCount": 0,
+      "status": "saved",
+      "sha256": "cf2412e64dd8be3c14b13e5548863cd41ac8454484c28a08b060eacec70bbda1"
+    },
+    {
+      "layer": "std",
+      "tile": [
+        13,
+        7295,
+        3217
+      ],
+      "sourceRow": 3217,
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/std/13/7295/3217.png",
+      "file": "std-13-7295-3217.png",
+      "transparentPixelCount": 0,
+      "status": "saved",
+      "sha256": "b37a24c5834470b71865492fa8ea2b1f7ef2fe0137f7b3a2f621a4bf83a06f47"
+    },
+    {
+      "layer": "std",
+      "tile": [
+        13,
+        7296,
+        3217
+      ],
+      "sourceRow": 3217,
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/std/13/7296/3217.png",
+      "file": "std-13-7296-3217.png",
+      "transparentPixelCount": 0,
+      "status": "saved",
+      "sha256": "1ba5b84cb9a0f83d74f137a55061f30f5fb648e5049f851e0f267c4d7cda16b2"
+    },
+    {
+      "layer": "std",
+      "tile": [
+        13,
+        7289,
+        3218
+      ],
+      "sourceRow": 3218,
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/std/13/7289/3218.png",
+      "file": "std-13-7289-3218.png",
+      "transparentPixelCount": 0,
+      "status": "saved",
+      "sha256": "cc5e00e8d02eb4fbee5b10327b4a746df776b7068f55c79e9815d2d910b1819f"
+    },
+    {
+      "layer": "std",
+      "tile": [
+        13,
+        7290,
+        3218
+      ],
+      "sourceRow": 3218,
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/std/13/7290/3218.png",
+      "file": "std-13-7290-3218.png",
+      "transparentPixelCount": 0,
+      "status": "saved",
+      "sha256": "801fa3d2a42755f197660acfb17194b5f4ce7df8191a316c62928510df550463"
+    },
+    {
+      "layer": "std",
+      "tile": [
+        13,
+        7291,
+        3218
+      ],
+      "sourceRow": 3218,
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/std/13/7291/3218.png",
+      "file": "std-13-7291-3218.png",
+      "transparentPixelCount": 0,
+      "status": "saved",
+      "sha256": "50618aa122f8fd2a069a53fdde1ffe351b9b246b417ae2e36dd43545173a0dac"
+    },
+    {
+      "layer": "std",
+      "tile": [
+        13,
+        7292,
+        3218
+      ],
+      "sourceRow": 3218,
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/std/13/7292/3218.png",
+      "file": "std-13-7292-3218.png",
+      "transparentPixelCount": 0,
+      "status": "saved",
+      "sha256": "c092bfd8e08940bf0524e79bda9d55ce971a8dc2e2428576120b7a07cefd655c"
+    },
+    {
+      "layer": "std",
+      "tile": [
+        13,
+        7293,
+        3218
+      ],
+      "sourceRow": 3218,
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/std/13/7293/3218.png",
+      "file": "std-13-7293-3218.png",
+      "transparentPixelCount": 0,
+      "status": "saved",
+      "sha256": "3760a202517fb87297d6155829d70f06bb35feaf5177f7a8a92a7b8b24376dd9"
+    },
+    {
+      "layer": "std",
+      "tile": [
+        13,
+        7294,
+        3218
+      ],
+      "sourceRow": 3218,
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/std/13/7294/3218.png",
+      "file": "std-13-7294-3218.png",
+      "transparentPixelCount": 0,
+      "status": "saved",
+      "sha256": "8bd31d3a3e9631e6ad9c178e32e02052f52fff246be298564d581294fd0a9e0b"
+    },
+    {
+      "layer": "std",
+      "tile": [
+        13,
+        7295,
+        3218
+      ],
+      "sourceRow": 3218,
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/std/13/7295/3218.png",
+      "file": "std-13-7295-3218.png",
+      "transparentPixelCount": 0,
+      "status": "saved",
+      "sha256": "bd80c54ae2c1dcdb4830c79275a9d225ad635c76e7ace9ae3e87cd61d593e82b"
+    },
+    {
+      "layer": "std",
+      "tile": [
+        13,
+        7296,
+        3218
+      ],
+      "sourceRow": 3218,
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/std/13/7296/3218.png",
+      "file": "std-13-7296-3218.png",
+      "transparentPixelCount": 0,
+      "status": "saved",
+      "sha256": "5903a373b884d13dfe9b4d6b8982cbcfad8136ef3b9d7a03afeaa3295df3ddc3"
+    },
+    {
+      "layer": "std",
+      "tile": [
+        13,
+        7289,
+        3219
+      ],
+      "sourceRow": 3219,
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/std/13/7289/3219.png",
+      "file": "std-13-7289-3219.png",
+      "transparentPixelCount": 0,
+      "status": "saved",
+      "sha256": "c8ff9066d3c240b90e6dd16fbafab2ee89423614796022da56b7d983a656ca2e"
+    },
+    {
+      "layer": "std",
+      "tile": [
+        13,
+        7290,
+        3219
+      ],
+      "sourceRow": 3219,
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/std/13/7290/3219.png",
+      "file": "std-13-7290-3219.png",
+      "transparentPixelCount": 0,
+      "status": "saved",
+      "sha256": "1a3d018a41ef5f0e1c1eac3635e4be7abad8dfbfcf11a8852ffbfa169af292da"
+    },
+    {
+      "layer": "std",
+      "tile": [
+        13,
+        7291,
+        3219
+      ],
+      "sourceRow": 3219,
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/std/13/7291/3219.png",
+      "file": "std-13-7291-3219.png",
+      "transparentPixelCount": 0,
+      "status": "saved",
+      "sha256": "97006ba35610cd8a805acd546e551a9a9106405d0fb70df947d1e105457a39e2"
+    },
+    {
+      "layer": "std",
+      "tile": [
+        13,
+        7292,
+        3219
+      ],
+      "sourceRow": 3219,
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/std/13/7292/3219.png",
+      "file": "std-13-7292-3219.png",
+      "transparentPixelCount": 0,
+      "status": "saved",
+      "sha256": "8d25f9e8d669cc1b52586ffcdcebd0e19767379818b8069c88b5d83412e84b2d"
+    },
+    {
+      "layer": "std",
+      "tile": [
+        13,
+        7293,
+        3219
+      ],
+      "sourceRow": 3219,
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/std/13/7293/3219.png",
+      "file": "std-13-7293-3219.png",
+      "transparentPixelCount": 0,
+      "status": "saved",
+      "sha256": "84af491d7d4a04e52fd3d56fb0dcc35f7f29231ebfbd9e8330234bff4f088350"
+    },
+    {
+      "layer": "std",
+      "tile": [
+        13,
+        7294,
+        3219
+      ],
+      "sourceRow": 3219,
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/std/13/7294/3219.png",
+      "file": "std-13-7294-3219.png",
+      "transparentPixelCount": 0,
+      "status": "saved",
+      "sha256": "c880ea0e44cafa01fba4987ac8b9f7ae038620c0f4a56c92a59bea779801a61d"
+    },
+    {
+      "layer": "std",
+      "tile": [
+        13,
+        7295,
+        3219
+      ],
+      "sourceRow": 3219,
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/std/13/7295/3219.png",
+      "file": "std-13-7295-3219.png",
+      "transparentPixelCount": 0,
+      "status": "saved",
+      "sha256": "74dda7704fa65b7a4dca8d20b3e27c4cbd491a82d75c59104d5ece4a85d43a94"
+    },
+    {
+      "layer": "std",
+      "tile": [
+        13,
+        7296,
+        3219
+      ],
+      "sourceRow": 3219,
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/std/13/7296/3219.png",
+      "file": "std-13-7296-3219.png",
+      "transparentPixelCount": 0,
+      "status": "saved",
+      "sha256": "ade606ec46a63713b85dfb0b58664f60a54c940c3a7e0880cd29ea5207c8492a"
+    },
+    {
+      "layer": "std",
+      "tile": [
+        13,
+        7289,
+        3220
+      ],
+      "sourceRow": 3220,
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/std/13/7289/3220.png",
+      "file": "std-13-7289-3220.png",
+      "transparentPixelCount": 0,
+      "status": "saved",
+      "sha256": "f4498a9af78f72f4cdf4a0cc2efb6ad134cb6198432198dfc299c62a8c0e6d1f"
+    },
+    {
+      "layer": "std",
+      "tile": [
+        13,
+        7290,
+        3220
+      ],
+      "sourceRow": 3220,
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/std/13/7290/3220.png",
+      "file": "std-13-7290-3220.png",
+      "transparentPixelCount": 0,
+      "status": "saved",
+      "sha256": "7c5b34ac983b71b1064002fe617409e0a0e57a822a9aec84f3b9d9e7e93d56af"
+    },
+    {
+      "layer": "std",
+      "tile": [
+        13,
+        7291,
+        3220
+      ],
+      "sourceRow": 3220,
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/std/13/7291/3220.png",
+      "file": "std-13-7291-3220.png",
+      "transparentPixelCount": 0,
+      "status": "saved",
+      "sha256": "8cb2bd1415eea7a43834183607b8f06a3d028f793667d7739639b83902b5a291"
+    },
+    {
+      "layer": "std",
+      "tile": [
+        13,
+        7292,
+        3220
+      ],
+      "sourceRow": 3220,
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/std/13/7292/3220.png",
+      "file": "std-13-7292-3220.png",
+      "transparentPixelCount": 0,
+      "status": "saved",
+      "sha256": "7ef69a6a4b09d8b41ef9629da6603d7300ad7a3177c1270becfc2359fb6c1729"
+    },
+    {
+      "layer": "std",
+      "tile": [
+        13,
+        7293,
+        3220
+      ],
+      "sourceRow": 3220,
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/std/13/7293/3220.png",
+      "file": "std-13-7293-3220.png",
+      "transparentPixelCount": 0,
+      "status": "saved",
+      "sha256": "a2eee843119e3600f857759f59eafb58179be2e803d2b27910644e62792c7671"
+    },
+    {
+      "layer": "std",
+      "tile": [
+        13,
+        7294,
+        3220
+      ],
+      "sourceRow": 3220,
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/std/13/7294/3220.png",
+      "file": "std-13-7294-3220.png",
+      "transparentPixelCount": 0,
+      "status": "saved",
+      "sha256": "9df04d521d6da3e8f901b877dd85ba16ca71540e51d468c1c9e7eea2f166e4d1"
+    },
+    {
+      "layer": "std",
+      "tile": [
+        13,
+        7295,
+        3220
+      ],
+      "sourceRow": 3220,
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/std/13/7295/3220.png",
+      "file": "std-13-7295-3220.png",
+      "transparentPixelCount": 0,
+      "status": "saved",
+      "sha256": "b0f00c94d25b9d46ff3a9c1595e9e7ed58e50858e12634c9c0196f79a9a6a429"
+    },
+    {
+      "layer": "std",
+      "tile": [
+        13,
+        7296,
+        3220
+      ],
+      "sourceRow": 3220,
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/std/13/7296/3220.png",
+      "file": "std-13-7296-3220.png",
+      "transparentPixelCount": 0,
+      "status": "saved",
+      "sha256": "e03181d8e17190311229d7c1e71f91a0806355abf8ab59127961d01cc679e430"
+    },
+    {
+      "layer": "std",
+      "tile": [
+        13,
+        7289,
+        3221
+      ],
+      "sourceRow": 3221,
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/std/13/7289/3221.png",
+      "file": "std-13-7289-3221.png",
+      "transparentPixelCount": 0,
+      "status": "saved",
+      "sha256": "3c2bcdee592a8868eef6e6bbb0b56387e59aaca2b50c8dd524f075a47119120d"
+    },
+    {
+      "layer": "std",
+      "tile": [
+        13,
+        7290,
+        3221
+      ],
+      "sourceRow": 3221,
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/std/13/7290/3221.png",
+      "file": "std-13-7290-3221.png",
+      "transparentPixelCount": 0,
+      "status": "saved",
+      "sha256": "bdba75fecefd4374def7955994650a50e941f4b5adc851aee4fa711924e2d6e0"
+    },
+    {
+      "layer": "std",
+      "tile": [
+        13,
+        7291,
+        3221
+      ],
+      "sourceRow": 3221,
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/std/13/7291/3221.png",
+      "file": "std-13-7291-3221.png",
+      "transparentPixelCount": 0,
+      "status": "saved",
+      "sha256": "6a9f003c92cb5c770467943195547e00882d3d3ce09122c7a297c44b7547d656"
+    },
+    {
+      "layer": "std",
+      "tile": [
+        13,
+        7292,
+        3221
+      ],
+      "sourceRow": 3221,
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/std/13/7292/3221.png",
+      "file": "std-13-7292-3221.png",
+      "transparentPixelCount": 0,
+      "status": "saved",
+      "sha256": "b9f7a52b6bab2640063047944add0929f6a75aee0b9a052807ab25eefc844ee6"
+    },
+    {
+      "layer": "std",
+      "tile": [
+        13,
+        7293,
+        3221
+      ],
+      "sourceRow": 3221,
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/std/13/7293/3221.png",
+      "file": "std-13-7293-3221.png",
+      "transparentPixelCount": 0,
+      "status": "saved",
+      "sha256": "7088359487253b6674a5d8140ce0da7c4d841b16c03cd163add6f7b2f2e203ab"
+    },
+    {
+      "layer": "std",
+      "tile": [
+        13,
+        7294,
+        3221
+      ],
+      "sourceRow": 3221,
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/std/13/7294/3221.png",
+      "file": "std-13-7294-3221.png",
+      "transparentPixelCount": 0,
+      "status": "saved",
+      "sha256": "963362e7603eb5c1bf0a022aaade33151383d7c4d6360b1a6f38d0d0bcc8aa42"
+    },
+    {
+      "layer": "std",
+      "tile": [
+        13,
+        7295,
+        3221
+      ],
+      "sourceRow": 3221,
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/std/13/7295/3221.png",
+      "file": "std-13-7295-3221.png",
+      "transparentPixelCount": 0,
+      "status": "saved",
+      "sha256": "ebe64ada9f1a52468bd00ad7cd93cf427d0931929b63d9b7c06b964dee3739d9"
+    },
+    {
+      "layer": "std",
+      "tile": [
+        13,
+        7296,
+        3221
+      ],
+      "sourceRow": 3221,
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/std/13/7296/3221.png",
+      "file": "std-13-7296-3221.png",
+      "transparentPixelCount": 0,
+      "status": "saved",
+      "sha256": "e170818918bd253c667f0d3c19ec38775edb764501ef244986f29bcfba2854ca"
+    },
+    {
+      "layer": "std",
+      "tile": [
+        13,
+        7289,
+        3222
+      ],
+      "sourceRow": 3222,
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/std/13/7289/3222.png",
+      "file": "std-13-7289-3222.png",
+      "transparentPixelCount": 0,
+      "status": "saved",
+      "sha256": "d0e2abfc9be8e45ecadd9c11e3b4bcd1dde56d19896236c7230e0ce62b7df9ec"
+    },
+    {
+      "layer": "std",
+      "tile": [
+        13,
+        7290,
+        3222
+      ],
+      "sourceRow": 3222,
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/std/13/7290/3222.png",
+      "file": "std-13-7290-3222.png",
+      "transparentPixelCount": 0,
+      "status": "saved",
+      "sha256": "fb10a617ce594534c3d7ca44f4be1658f813f1b383b609bfabcf213767cf3ba8"
+    },
+    {
+      "layer": "std",
+      "tile": [
+        13,
+        7291,
+        3222
+      ],
+      "sourceRow": 3222,
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/std/13/7291/3222.png",
+      "file": "std-13-7291-3222.png",
+      "transparentPixelCount": 0,
+      "status": "saved",
+      "sha256": "97432a3a9824bebe166899d49ce29b58ebdbd5f801f14ca61f8990c45c8182ab"
+    },
+    {
+      "layer": "std",
+      "tile": [
+        13,
+        7292,
+        3222
+      ],
+      "sourceRow": 3222,
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/std/13/7292/3222.png",
+      "file": "std-13-7292-3222.png",
+      "transparentPixelCount": 0,
+      "status": "saved",
+      "sha256": "94223360a6d774d9098f5aeeb590b7b64e97bb93b13565ec09f035dca281aa8f"
+    },
+    {
+      "layer": "std",
+      "tile": [
+        13,
+        7293,
+        3222
+      ],
+      "sourceRow": 3222,
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/std/13/7293/3222.png",
+      "file": "std-13-7293-3222.png",
+      "transparentPixelCount": 0,
+      "status": "saved",
+      "sha256": "f6f5966b354ac99e5df02f0a4c567699b45d3f880ef743dbd59d87ac95b044f0"
+    },
+    {
+      "layer": "std",
+      "tile": [
+        13,
+        7294,
+        3222
+      ],
+      "sourceRow": 3222,
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/std/13/7294/3222.png",
+      "file": "std-13-7294-3222.png",
+      "transparentPixelCount": 0,
+      "status": "saved",
+      "sha256": "fab53448d74846fe8cdd6442dcbb037c4dc0860b15dcba20ec3031e77570cc91"
+    },
+    {
+      "layer": "std",
+      "tile": [
+        13,
+        7295,
+        3222
+      ],
+      "sourceRow": 3222,
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/std/13/7295/3222.png",
+      "file": "std-13-7295-3222.png",
+      "transparentPixelCount": 0,
+      "status": "saved",
+      "sha256": "d3fdac1b70bf3b53857873e2a633315f0380b182e740675cca6dc2092d5df032"
+    },
+    {
+      "layer": "std",
+      "tile": [
+        13,
+        7296,
+        3222
+      ],
+      "sourceRow": 3222,
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/std/13/7296/3222.png",
+      "file": "std-13-7296-3222.png",
+      "transparentPixelCount": 0,
+      "status": "saved",
+      "sha256": "1c3ac17dfb4801505a3c84d68b5656966f0589351c581f918ff2fa936d60d867"
+    }
+  ]
+}

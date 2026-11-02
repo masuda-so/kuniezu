@@ -1,0 +1,26 @@
+{
+  "checked": "2026-11-02",
+  "sampleKml": "sample-tile.kml",
+  "sampleKmlUrl": "https://habs.rad.naro.go.jp/rapid16/13/7293/4973.kml",
+  "sourceBounds": {
+    "north": 35.9602229692967,
+    "south": 35.92464453144096,
+    "east": 140.537109375,
+    "west": 140.49316406249997
+  },
+  "projectedBounds": {
+    "north": 35.96022296929668,
+    "south": 35.92464453144098,
+    "west": 140.4931640625,
+    "east": 140.537109375
+  },
+  "maxCoordinateDifferenceDegrees": 2.842170943040401e-14,
+  "verifiedTileHashes": 112,
+  "downloadFailures": 0,
+  "transparentPixelsByLayer": {
+    "rapid1880": 72900,
+    "std": 0
+  },
+  "runtimeOutlineChanged": false,
+  "limits": "座標変換と入力完全性の検査。明治の水際が戦国期と同じであることの検証ではない。透明部分は原画像の未収録部分として保持。"
+}
