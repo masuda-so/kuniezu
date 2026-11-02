@@ -138,3 +138,8 @@ a,.evidence-person a,.atlas-person-link{color:#f0a283!important}
 .pp.on{background:#efe3c4;color:#1d1712;border-color:#efe3c4;box-shadow:0 0 0 2px #1d1712,0 0 0 3px #efe3c4}
 .pp{box-shadow:0 0 0 2px #1d1712,0 0 0 3px #9a2b1f}
 #legend{color:#efe3c4}
+
+/* 合戦図：範囲の広い合戦の地区切り替え */
+.atlas-views{display:flex;flex-wrap:wrap;gap:6px;align-items:center;padding:6px 8px;background:rgba(29,23,18,.92);border-bottom:1px solid #6b5a3e}
+.atlas-views::before{content:'表示する地区';color:#cdbb92;font-size:12px;margin-right:4px}
+.atlas-views .mini[aria-pressed="true"]{background:#a8742c;color:#fff7e2;border-color:#d9b866}

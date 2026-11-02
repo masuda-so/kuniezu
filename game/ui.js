@@ -422,11 +422,20 @@ function drawTopLayers(still){
  const v=vc(),area=U.mode==='game'?{left:v[0]-v[2]/2+8,top:v[1]-v[3]/2+8,width:Math.max(120,v[2]-16),height:Math.max(120,v[3]-16)}:{left:0,top:0,width:VW,height:VH};
  const outside={left:[],right:[],top:[],bottom:[],more:[]},laid=[];
  for(const p of candidates){if(p.x<0||p.x>VW||p.y<0||p.y>VH){outside[p.x<0?'left':p.x>VW?'right':p.y<0?'top':'bottom'].push(p);continue;}laid.push({...p,anchorX:p.x,anchorY:p.y});}
+ // 画面上で重なる駒：同じ指揮（家）の軍は一つの駒にまとめて兵数を合算し、拡大して離れれば自然に分かれる。
+ // 指揮の違う軍が重なる時は、少しずつ押し離して双方を見せ、元の位置へ細い線を引く。
+ {const sorted=laid.map((p,i)=>({p,i,u:p.displayUnit||p.u||mapUnits.find(u=>u.id===p.id)})).sort((a,b)=>(b.u?.troops||0)-(a.u?.troops||0)),gone=new Set(),R=26;
+  for(const a of sorted){if(gone.has(a.i)||!a.u)continue;const cmd=G.armyIdentity(a.u).command;const mates=sorted.filter(b=>b!==a&&!gone.has(b.i)&&b.u&&G.armyIdentity(b.u).command===cmd&&Math.hypot(b.p.x-a.p.x,b.p.y-a.p.y)<R);if(!mates.length)continue;
+   for(const b of mates)gone.add(b.i);const all=[a,...mates],troops=all.reduce((n,q)=>n+(q.u.troops||0),0);
+   laid[a.i]={...a.p,members:all.flatMap(q=>q.p.members||[{id:q.p.id,x:q.p.x,y:q.p.y}]),stacked:all.length,displayUnit:{...a.u,troops,_stackSize:all.length,_convoySize:Math.max(a.u._convoySize||1,all.length)}};}
+  for(let i=laid.length-1;i>=0;i--)if(gone.has(i))laid.splice(i,1);
+  for(let it=0;it<4;it++)for(let i=0;i<laid.length;i++)for(let j=i+1;j<laid.length;j++){const A=laid[i],B=laid[j],dx=B.x-A.x,dy=B.y-A.y,d=Math.hypot(dx,dy),min=30;if(d>=min)continue;const ux=d>.01?dx/d:1,uy=d>.01?dy/d:0,push=(min-d)/2;
+   for(const [P,sg] of [[A,-1],[B,1]]){const nx=P.x+ux*push*sg,ny=P.y+uy*push*sg;if(Math.hypot(nx-P.anchorX,ny-P.anchorY)<=22){P.x=nx;P.y=ny;}}}}
  const layout={visible:laid,outside};U.armyGroups=laid;
 
  U._UP=new Map(laid.flatMap(p=>p.members.map(m=>[m.id,[m.x,m.y]])));U.outsideArmies=layout.outside;
  renderArmyEdges(layout.outside,area,mapUnits);
- for(const p of laid){const u=p.displayUnit||p.u||mapUnits.find(u=>u.id===p.id),overlap=u._convoySize>1||laid.some(q=>q!==p&&Math.hypot(q.x-p.x,q.y-p.y)<18);drawCounter(c,p.x,p.y,u,G.armyIdentity(u).command===S.player,lvl,overlap);}
+ for(const p of laid){const u=p.displayUnit||p.u||mapUnits.find(u=>u.id===p.id),overlap=u._convoySize>1||laid.some(q=>q!==p&&Math.hypot(q.x-p.x,q.y-p.y)<18);if(Math.hypot(p.x-p.anchorX,p.y-p.anchorY)>3){c.save();c.strokeStyle='rgba(42,29,16,.55)';c.lineWidth=1;c.beginPath();c.moveTo(p.anchorX,p.anchorY);c.lineTo(p.x,p.y);c.stroke();c.beginPath();c.arc(p.anchorX,p.anchorY,2,0,7);c.fillStyle='#2a1d10';c.fill();c.restore();}drawCounter(c,p.x,p.y,u,G.armyIdentity(u).command===S.player,lvl,overlap);if(p.stacked>1){const k=lvl===0?.85:lvl===1?1:1.2,tx=p.x-18*k,ty=p.y-16*k,txt=p.stacked+'隊';c.save();c.font=`700 ${Math.round(10*k)}px "Zen Kaku Gothic New",sans-serif`;const w=c.measureText(txt).width+8;c.fillStyle='rgba(29,23,18,.92)';c.beginPath();c.roundRect?c.roundRect(tx-w/2,ty-8*k,w,16*k,8*k):c.rect(tx-w/2,ty-8*k,w,16*k);c.fill();c.strokeStyle='#d9b866';c.lineWidth=1;c.stroke();c.fillStyle='#efe3c4';c.textAlign='center';c.textBaseline='middle';c.fillText(txt,tx,ty+.5);c.restore();}}
  animated=animated||laid.some(p=>(p.displayUnit||p.u||mapUnits.find(u=>u.id===p.id))?.state==='battle');
  c.restore();
  return animated;
@@ -1049,7 +1058,7 @@ function battleTerrain(I){if(!LAND3)LAND3=P2(GEO.land,3);const LAND=LAND3;const 
  return {bg:cv,feats};}
 /* ===== モーダル ===== */
 const modal=$('#modal');
-function openModal(name,data,keepTrail=false){if(!keepTrail)U.modalTrail=[];if(TK.HISTORY_ONLY&&['event','attack','envoy','chat','jiritsu','prison','prop','relief','battle'].includes(name))return;stopScene();U.modal=name;document.body.dataset.modal=name;U.mdata=data||{};if(U.mode==='game'&&S){uiT=performance.now();renderTop();renderSide();}renderModal();modal.hidden=false;}
+function openModal(name,data,keepTrail=false){U.wakeLoop?.();if(!keepTrail)U.modalTrail=[];if(TK.HISTORY_ONLY&&['event','attack','envoy','chat','jiritsu','prison','prop','relief','battle'].includes(name))return;stopScene();U.modal=name;document.body.dataset.modal=name;U.mdata=data||{};if(U.mode==='game'&&S){uiT=performance.now();renderTop();renderSide();}renderModal();modal.hidden=false;}
 function closeModal(){U.modalTrail=[];if(U.modal==='import-confirm')U.pendingImport=null;stopScene();if(U.chatCtl){U.chatCtl.abort();U.chatCtl=null;}U.modal=null;delete document.body.dataset.modal;modal.hidden=true;modal.innerHTML='';renderAll();}
 function renderModal(){const f=MODALS[U.modal];if(!f)return;modal.innerHTML=`<div class="mbox ${U.modal}" role="dialog" aria-modal="true">${U.modalTrail?.length?'<button class="mini modal-back" data-act="modal-back">戻る</button>':''}${f(U.mdata)}</div>`;const log=$('#chatLog');if(log)log.scrollTop=log.scrollHeight;const ci=$('#chatIn');if(ci&&!U.mdata.busy)ci.focus();if(U.modal==='attack')updAtk();if(U.modal==='scene'&&!SCN){const B=TK.BATTLES[U.mdata.title];const md=U.mdata;if(B)mountScene(B,()=>{const active=SCN;sceneCloseTimer=setTimeout(()=>{if(SCN===active&&SCN.ended&&U.modal==='scene'&&U.mdata===md)closeModal();},1400);});}else if(U.modal==='battle'&&U.mdata.res&&!SCN){const d=U.mdata;mountScene(d.sc,()=>{d.done=true;d.reveal&&d.reveal();autoBack(d,3800);});}}
 // 合戦図が終わったら、少し余韻をおいて地図へ戻る（その間に操作したら戻らない）
