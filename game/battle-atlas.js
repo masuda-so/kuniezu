@@ -40,12 +40,15 @@ window.TKBattleAtlas=(function(){
    c.save();c.beginPath();c.rect(0,0,W,H);c.clip();
    const land=new Path2D();for(const poly of TKGEO.land)for(const ring of poly){for(let i=0;i<ring.length;i+=2){const p=wp(ring[i],ring[i+1]);i?land.lineTo(...p):land.moveTo(...p);}land.closePath();}
    const mask=new Path2D();mask.rect(-2,-2,W+4,H+4);mask.addPath(land);c.fillStyle='#bbdbe1';c.fill(mask,'evenodd');
+   // 河川は陸域の内側だけに描く。比較河川の線が粗い海岸線の外（海上）へはみ出して見えないようにする。
+   c.save();c.clip(land);
    if(data?.comparisonRivers){for(const r of data.comparisonRivers){const pts=r.points.map(p=>pj(...p));if(!TK.waterLineVisible(pts,(x,y)=>[x,y]))continue;riverPath(c,pts);c.strokeStyle=r.kind==='stream'?'#6fa4b6':'#4b94b2';c.lineWidth=r.kind==='stream'?.85:1.3;c.stroke();}}
    else{
    for(const r of TKGEO.rivers){if(TK.KOREAN_RIVERS_DETAIL?.length&&r.every((v,i)=>i%2?TKGEO.LAT0-v/TKGEO.K>34.8:v/TKGEO.K/TKGEO.CX+TKGEO.LON0>124&&v/TKGEO.K/TKGEO.CX+TKGEO.LON0<131))continue;const pts=Array.from({length:r.length/2},(_,i)=>wp(r[i*2],r[i*2+1]));if(!TK.waterLineVisible(pts,(x,y)=>[x,y]))continue;riverPath(c,pts);c.strokeStyle='#4b94b2';c.lineWidth=1.3;c.stroke();}
    for(const river of (TK.REGIONAL_RIVERS||[]).filter(r=>!TK.KOREAN_RIVERS_DETAIL?.length||!['漢江','南漢江','洛東江'].includes(r.name)))for(const line of river.lines){const pts=line.map(p=>pj(...p));if(!TK.waterLineVisible(pts,(x,y)=>[x,y]))continue;riverPath(c,pts);c.strokeStyle='#4b94b2';c.lineWidth=1.3;c.stroke();}
    for(const river of TK.KOREAN_RIVERS_DETAIL||[]){if(river.bounds&&(river.bounds[0]>meta.bounds[2]||river.bounds[2]<meta.bounds[0]||river.bounds[1]>meta.bounds[1]||river.bounds[3]<meta.bounds[3]))continue;const pts=river.points.map(p=>pj(...p));if(!TK.waterLineVisible(pts,(x,y)=>[x,y]))continue;riverPath(c,pts);c.strokeStyle='#4b94b2';c.lineWidth=1.3;c.stroke();}
    }
+   c.restore();
    for(const poly of TKGEO.lakes){c.beginPath();for(const ring of poly){const pts=ring.map?ring:[];for(let i=0;i<pts.length;i+=2){const p=wp(pts[i],pts[i+1]);i?c.lineTo(...p):c.moveTo(...p);}c.closePath();}c.fillStyle='#a7d1df';c.fill('evenodd');}
    for(const w of TK.periodWaters?.((sc.eventDate||[1560])[0])||[]){c.beginPath();for(const ring of w.rings){ring.forEach((v,i)=>{const p=pj(...v);i?c.lineTo(...p):c.moveTo(...p);});c.closePath();}c.fillStyle='rgba(105,160,173,.62)';c.fill('evenodd');c.setLineDash([2,3]);c.strokeStyle='#66999d';c.lineWidth=.7;c.stroke();c.setLineDash([]);}
    for(const h of TK.HISTORIC_WATERS||[]){flatPath(c,h.poly[0],true);c.fillStyle=h.kind==='marsh'?'rgba(112,151,138,.28)':'rgba(118,166,186,.4)';c.fill();c.setLineDash([1,3]);c.strokeStyle='#668a83';c.lineWidth=1;c.stroke();c.setLineDash([]);const p=pj(...h.at);if(inside(...p))text(c,h.label,...p,10,'#315766');}
