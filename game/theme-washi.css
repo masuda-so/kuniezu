@@ -1,0 +1,63 @@
+/* 和風化 案1「和紙と墨」：生成りの和紙の札、墨の文字、藍の海、朱の印。
+   index.html の基本の配色（漆と金）を変数とよく使う部品で上書きする。地図・合戦図の絵は変えない。 */
+:root{
+  --lac:rgba(246,239,219,.97);--lac2:#efe6cd;--lac3:#e6dbbd;--rule:#8a6b3a;--rule2:#cdb88f;
+  --gold:#9a2b1f;--gold2:#5c1a12;--paper:#2a1d10;--muted:#5d4c33;--dim:#7d6c50;
+  --red:#b8321f;--green:#3f7a4f;--sea:#1b2f4d;
+  --washi-grain:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 .5 0 0 0 0 .4 0 0 0 0 .25 0 0 0 .08 0'/></filter><rect width='220' height='220' filter='url(%23n)'/></svg>");
+  --f-fude:"Yuji Syuku","Shippori Mincho B1","Hiragino Mincho ProN",serif;
+  color-scheme:light;
+}
+body{color:var(--paper)}
+/* 札：和紙の地、金茶の細い二重線 */
+.frame,#pick,.mbox,#tip{background-color:#f6efdb;background-image:var(--washi-grain);color:var(--paper);border:1px solid #9a7d4e;
+  box-shadow:inset 0 0 0 3px #f6efdb,inset 0 0 0 4px rgba(138,107,58,.55),0 8px 24px rgba(20,12,4,.35)}
+#pick{border-left:1px solid #9a7d4e}
+/* 見出しは筆書き */
+#eraTxt .e1,#big h2,.cname,.th,.tbox h1,.pcur h2,.mbox header h2,#chron h3{font-family:var(--f-fude)!important;font-weight:400!important;color:#2a1d10!important}
+#eraTxt .e1{font-size:29px;letter-spacing:.04em}
+#eraTxt .e2{color:#3a2a18}
+.ci b{color:#3a2210}.ci p{color:#3f3221}.ci time,.nx time{color:#7d6c50}
+#chron h3{letter-spacing:.4em;border-bottom:1px solid #b9a27a;padding-bottom:4px}
+/* 朱印のボタン */
+.pp{background:#9a2b1f;color:#fff6e4;border:2px solid #6e1c13;box-shadow:0 0 0 2px #f6efdb,0 0 0 3px #9a2b1f}
+.pp.on{background:#2a1d10;color:#f6efdb;border-color:#2a1d10;box-shadow:0 0 0 2px #f6efdb,0 0 0 3px #2a1d10}
+.mult button{background:#fbf6e8;border-color:#cdb88f;color:#5d4c33}
+.mult button.cur{border-color:#9a2b1f;color:#9a2b1f}
+.mult button[aria-pressed="true"]{background:#9a2b1f;color:#fff6e4;border-color:#6e1c13}
+.btn,.tbtn,.mini,.act,.pc,.scard,.ic,.pol,.src,.est{background:#fbf6e8!important;border:1px solid #9a7d4e!important;color:#2a1d10!important;border-radius:2px}
+.btn.pri,.btn.pri.big{background:#9a2b1f!important;color:#fff6e4!important;border-color:#6e1c13!important;box-shadow:inset 0 0 0 2px rgba(255,246,228,.35)}
+.btn.ghost{background:transparent!important}
+.pc.on,.scard:hover,.act:hover,.act.on,.pol.on,.mini.on,.bspd .on{border-color:#9a2b1f!important;background:#fdeee5!important;color:#5c1a12!important}
+.eyebrow,#big small{color:#9a2b1f}
+.hint,small{color:#5d4c33}
+.hstate{border-color:#3f7a4f;color:#3f7a4f}
+.office-badge{background:#9a2b1f;color:#fff6e4}
+.alert{background:rgba(184,50,31,.08);border-color:rgba(184,50,31,.45);color:#7a1f17}
+a{color:#7a1f17}
+:focus-visible{outline-color:#9a2b1f}
+/* 年表の帯（下の時代バー）と凡例 */
+#tline,#legend{color:#2a1d10}
+/* 合戦図の札 */
+.bnar{background:#efe6cf;border-left:3px solid #9a2b1f;color:#2a1d10}
+.battle-dock,.battle-stage .battle-dock{background:transparent;color:#2a1d10}
+.atlas-stage .battle-key{background:#efe6cf}
+.evidence-person a,.atlas-person-link{color:#7a1f17}
+/* 題名画面の大書き */
+.tbox h1{font-size:60px;letter-spacing:.1em;text-shadow:0 0 18px rgba(246,239,219,.8)}
+/* 題名・配置図選び：暗い地図の上に和紙の札を置く */
+#title .tbox{background-color:#f6efdb;background-image:var(--washi-grain);border:1px solid #9a7d4e;box-shadow:inset 0 0 0 4px #f6efdb,inset 0 0 0 5px rgba(138,107,58,.55),0 12px 36px rgba(0,0,0,.55);padding:30px 34px 34px;color:#2a1d10}
+#title .tbox.wide{background:transparent;border:0;box-shadow:none;padding:0}
+#title .tbox.wide .th{display:inline-block;background-color:#f6efdb;background-image:var(--washi-grain);border:1px solid #9a7d4e;padding:4px 28px;margin-bottom:12px}
+#title .tbox h1{text-shadow:none}
+.tsub{color:#9a2b1f;text-shadow:none}
+#title .tbox p,#title .tbox .tlead{color:#3f3221}
+.scard .sy{color:#9a2b1f}.scard .sn b{color:#2a1d10;font-family:var(--f-fude);font-weight:400}.sl{color:#4a3b27}
+.battle-anchor{color:#5d4c33;opacity:1}
+.menu-link{background:#fbf6e8;border-color:#9a7d4e;color:#2a1d10}.menu-link:hover{background:#fdeee5;border-color:#9a2b1f}
+.menu-link b{color:#5c1a12}
+/* 題名の札は文字が収まる幅に、戻るボタンは和紙の札に */
+#title .tbox:not(.wide){width:min(720px,100%)}
+#title .tbox h1{font-size:clamp(34px,6.2vw,60px);white-space:nowrap}
+#title .tbox.wide .tbtns .btn{min-width:120px}
+#compactSpeed{background:#fbf6e8;color:#2a1d10;border:1px solid #9a7d4e}

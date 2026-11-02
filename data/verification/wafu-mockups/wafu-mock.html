@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="ja"><head><meta charset="utf-8"><title>和風化の試作</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Yuji+Syuku&family=Kaisei+Tokumin:wght@500;700;800&family=Shippori+Mincho+B1:wght@600;700;800&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap">
+<style>
+:root{--ink:#2a1d10;--washi:#f4ecd6;--washi2:#e9dfc3;--shu:#b8321f;--shu2:#8d2318;--ai:#1b2f4d;--kincha:#8a6b3a;--kin:#d9b866;--kin2:#f0d78f;--urushi:#15100b;--urushi2:#241a10}
+body{margin:0;background:#0f1722;color:#f3e8cc;font-family:"Zen Kaku Gothic New",sans-serif;padding:14px}
+h1{font:800 18px "Shippori Mincho B1",serif;margin:0 0 6px}
+h2{font:800 15px "Shippori Mincho B1",serif;margin:14px 0 4px;color:#f0d78f}
+p.note{margin:0 0 6px;font-size:12px;color:#c9bb9a;line-height:1.6}
+.shot{position:relative;width:1400px;height:1000px;overflow:hidden;background-size:1400px 1000px;background-repeat:no-repeat;border:1px solid #6b5530;margin-bottom:8px;font-family:"Kaisei Tokumin","Shippori Mincho B1",serif}
+.fude{font-family:"Yuji Syuku","Shippori Mincho B1",serif;font-weight:400}
+.washi{background-color:var(--washi);background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 .5 0 0 0 0 .4 0 0 0 0 .25 0 0 0 .09 0'/></filter><rect width='220' height='220' filter='url(%23n)'/></svg>");color:var(--ink);border:1px solid #9a7d4e;box-shadow:inset 0 0 0 3px var(--washi),inset 0 0 0 4px rgba(138,107,58,.6),0 8px 22px rgba(10,6,2,.4)}
+.urushi{background-color:rgba(21,16,11,.94);background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 .9 0 0 0 0 .75 0 0 0 0 .4 0 0 0 .07 0'/></filter><rect width='200' height='200' filter='url(%23n)'/></svg>");color:#f3e8cc;border:1px solid #c7a24a;box-shadow:inset 0 0 0 3px rgba(21,16,11,.95),inset 0 0 0 6px #b08a3c,inset 0 0 0 7px rgba(240,215,143,.5),0 10px 30px rgba(0,0,0,.5)}
+/* 共通の配置 */
+.era{position:absolute;left:16px;top:14px;width:300px;padding:12px 16px;display:flex;align-items:center;gap:14px}
+.era .y{font-size:34px;line-height:1;letter-spacing:.05em}.era .d{font-size:15px;margin-top:4px}.era .w{font-size:11px;opacity:.75;margin-top:2px}
+.shuin{width:52px;height:52px;border-radius:50%;background:var(--shu);color:#fff6e4;display:flex;align-items:center;justify-content:center;font-size:24px;box-shadow:inset 0 0 0 2px rgba(255,246,228,.55),0 0 0 2px var(--washi),0 0 0 3px var(--shu2);margin-left:auto}
+.speeds{position:absolute;left:16px;top:106px;display:flex;gap:4px}.speeds span{padding:3px 8px;font-size:12px;border:1px solid var(--kincha);background:var(--washi);color:var(--ink)}
+.urushi-theme .speeds span{background:var(--urushi2);color:#f3e8cc;border-color:#b08a3c}
+.chron{position:absolute;left:16px;top:146px;width:300px;height:720px;padding:16px 18px}
+.chron h3{margin:0 0 10px;font-size:16px;letter-spacing:.3em;border-bottom:1px solid var(--kincha);padding-bottom:6px}
+.chron .it{display:flex;gap:10px;margin:0 0 12px}.chron .it .f{width:34px;height:34px;border-radius:50%;background:#c8b48c;flex:none;border:2px solid var(--kincha)}
+.chron .it small{display:block;font-size:11px;opacity:.75}.chron .it b{display:block;font-size:14px}.chron .it p{margin:2px 0 0;font-size:12px;line-height:1.55}
+.me{position:absolute;right:16px;top:14px;padding:10px 14px;display:flex;align-items:center;gap:12px}
+.me .f{width:40px;height:40px;border-radius:50%;background:#c8b48c;border:2px solid var(--shu)}
+.me .k{width:30px;height:30px;border-radius:50%;background:#f8f1dc;border:1px solid var(--kincha);display:flex;align-items:center;justify-content:center;font-size:13px;color:var(--ink)}
+.me b{font-size:18px}.me small{display:block;font-size:11px}
+.me .tools{display:flex;gap:6px;margin-left:10px}.me .tools span{padding:5px 10px;font-size:13px;border:1px solid var(--kincha);background:var(--washi);color:var(--ink)}
+.urushi-theme .me .tools span{background:var(--urushi2);color:#f3e8cc;border-color:#b08a3c}
+.emaki{position:absolute;left:330px;right:30px;bottom:26px;height:62px;padding:0 44px;display:flex;align-items:center}
+.emaki:before,.emaki:after{content:"";position:absolute;top:-8px;bottom:-8px;width:26px;border-radius:6px;background:linear-gradient(90deg,#3b2a16,#8a6b3a 45%,#3b2a16);box-shadow:0 2px 6px rgba(0,0,0,.5)}
+.emaki:before{left:-10px}.emaki:after{right:-10px}
+.emaki .line{position:relative;flex:1;height:2px;background:var(--kincha)}.emaki .line i{position:absolute;top:-5px;width:12px;height:12px;border-radius:50%;background:var(--shu);border:2px solid var(--washi)}
+.emaki .yr{position:absolute;top:36px;font-size:11px;color:var(--ink)}
+.urushi-theme .emaki .yr{color:#f3e8cc}.urushi-theme .emaki .line i{border-color:#f0d78f}
+.legend{position:absolute;right:30px;bottom:104px;padding:6px 12px;font-size:12px}
+.zoom{position:absolute;right:30px;top:600px;width:40px;height:220px;display:flex;flex-direction:column;align-items:center;justify-content:space-between;padding:8px 0;font-size:22px}
+/* 題名 */
+.title .tate{position:absolute;right:120px;top:40px;height:600px;width:120px;padding:24px 0;writing-mode:vertical-rl;font-size:62px;letter-spacing:.14em;text-align:center}
+.title .sub{position:absolute;right:260px;top:70px;writing-mode:vertical-rl;font-size:18px;letter-spacing:.3em}
+.title .btns{position:absolute;left:120px;bottom:120px;display:flex;gap:16px}
+.title .btns span{padding:16px 30px;font-size:22px;letter-spacing:.2em}
+.title .btns .pri{background:var(--shu);color:#fff6e4;border:1px solid var(--shu2);box-shadow:inset 0 0 0 2px rgba(255,246,228,.4)}
+.title .kamon-row{position:absolute;left:120px;bottom:60px;display:flex;gap:10px}.title .kamon-row i{width:28px;height:28px;border-radius:50%;background:#f8f1dc;border:1px solid var(--kincha);display:inline-block;opacity:.85}
+/* 合戦図 */
+.battle .frame{position:absolute;left:150px;top:30px;width:1100px;height:940px;padding:14px}
+.battle .daisen{position:absolute;right:40px;top:60px;writing-mode:vertical-rl;padding:16px 10px;font-size:28px;letter-spacing:.1em;background:var(--washi);color:var(--ink);border:1px solid var(--kincha);box-shadow:2px 2px 0 var(--kincha)}
+.battle .cv{position:absolute;left:30px;top:40px;width:1040px;height:760px;background:url(current-battle.png) -160px -150px/1400px 1000px no-repeat;border:1px solid var(--kincha)}
+.battle .dock{position:absolute;left:30px;right:30px;bottom:30px;height:96px;padding:10px 16px;font-size:14px}
+.battle .dock .seek{height:4px;background:var(--kincha);margin:10px 0;position:relative}.battle .dock .seek i{position:absolute;left:45%;top:-6px;width:16px;height:16px;border-radius:50%;background:var(--shu);border:2px solid var(--washi)}
+</style></head><body>
+<h1>和風化の試作：案1「和紙と墨」と案2「漆と金箔」（題名・地図・合戦図）</h1>
+<p class="note">地図と合戦図の絵は現在の画面をそのまま下敷きにし、周りの札・年表・操作だけを作り直した試作です。文字は筆書き系（Yuji Syuku）と楷書系（Kaisei Tokumin）。</p>
+
+<h2>案1　和紙と墨：生成りの和紙に墨の文字、朱印のボタン、絵巻の年表</h2>
+<div class="shot title washi-theme" style="background-image:url(current-title.png)">
+ <div class="washi tate fude">天下分け目の国絵図</div>
+ <div class="sub fude" style="color:#f3e8cc;text-shadow:0 0 8px #000">見ているだけで史実が動く</div>
+ <div class="btns"><span class="pri fude">はじめる</span><span class="washi fude">続きから</span><span class="washi fude">遊び方</span></div>
+ <div class="kamon-row"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+</div>
+<div class="shot washi-theme" style="background-image:url(current-map.png)">
+ <div class="era washi"><div><div class="y fude">慶長五年</div><div class="d">六月十六日</div><div class="w">西暦1600年7月26日</div></div><div class="shuin fude">進</div></div>
+ <div class="speeds"><span>×1</span><span>×2</span><span>×4</span><span>×8</span><span>×16</span><span>×32</span><span>×64</span><span>×128</span></div>
+ <div class="chron washi"><h3>年　表</h3>
+  <div class="it"><div class="f"></div><div><small>慶長五年六月十六日（1600年7月26日）</small><b>会津征伐</b><p>上洛を拒む上杉景勝を討つため、徳川家康が諸大名を率いて大坂を発ち、会津へ向かった。</p></div></div>
+  <div class="it"><div class="f"></div><div><small>慶長四年閏三月十六日（1599年5月10日）</small><b>家康、伏見城に入る</b><p>前田利家が没し、石田三成が佐和山へ退くと、徳川家康は伏見城に入って政を執った。</p></div></div>
+  <div class="it"><div class="f"></div><div><small>慶長四年閏三月三日（1599年4月27日）</small><b>前田利家の死</b><p>五大老の前田利家が没した。</p></div></div>
+ </div>
+ <div class="me washi"><div class="f"></div><div class="k">葵</div><div><b class="fude">徳川家</b><small>五大老 ・ 城 14 ・ 兵 12.9万</small></div><div class="tools"><span>軍勢</span><span>境界</span><span>諸家</span><span>操作</span></div></div>
+ <div class="legend washi">隣接する家の境界　－－ 同盟・和睦　…… 主従　－－ 交戦　…… 敵対</div>
+ <div class="zoom washi"><span>＋</span><span style="font-size:12px">全域</span><span>－</span></div>
+ <div class="emaki washi"><div class="line"><i style="left:62%"></i><span class="yr" style="left:0">1565</span><span class="yr" style="left:30%">1580</span><span class="yr" style="left:60%">1600</span><span class="yr" style="left:95%">1615</span></div></div>
+</div>
+<div class="shot battle washi-theme" style="background-image:url(current-map.png);filter:none">
+ <div class="frame washi"><div class="cv"></div><div class="daisen fude">関ヶ原の戦い</div>
+  <div class="dock washi"><b>小早川・四将の東軍加担（時刻に異説）</b><div class="seek"><i></i></div><span>❚❚　×1　×2　×4　最初から　　経過の順序を再生</span></div></div>
+</div>
+
+<h2>案2　漆と金箔：黒漆の札に金箔の縁、金泥の筆文字、朱印のボタン</h2>
+<div class="shot title urushi-theme" style="background-image:url(current-title.png)">
+ <div class="urushi tate fude" style="color:#f0d78f">天下分け目の国絵図</div>
+ <div class="sub fude" style="color:#f0d78f;text-shadow:0 0 8px #000">見ているだけで史実が動く</div>
+ <div class="btns"><span class="pri fude">はじめる</span><span class="urushi fude" style="color:#f0d78f">続きから</span><span class="urushi fude" style="color:#f0d78f">遊び方</span></div>
+</div>
+<div class="shot urushi-theme" style="background-image:url(current-map.png)">
+ <div class="era urushi"><div><div class="y fude" style="color:#f0d78f">慶長五年</div><div class="d">六月十六日</div><div class="w">西暦1600年7月26日</div></div><div class="shuin fude" style="box-shadow:inset 0 0 0 2px rgba(255,246,228,.5),0 0 0 2px #15100b,0 0 0 3px #f0d78f">進</div></div>
+ <div class="speeds"><span>×1</span><span>×2</span><span>×4</span><span>×8</span><span>×16</span><span>×32</span><span>×64</span><span>×128</span></div>
+ <div class="chron urushi"><h3 style="color:#f0d78f;border-color:#b08a3c">年　表</h3>
+  <div class="it"><div class="f"></div><div><small>慶長五年六月十六日（1600年7月26日）</small><b style="color:#f0d78f">会津征伐</b><p>上洛を拒む上杉景勝を討つため、徳川家康が諸大名を率いて大坂を発ち、会津へ向かった。</p></div></div>
+  <div class="it"><div class="f"></div><div><small>慶長四年閏三月十六日（1599年5月10日）</small><b style="color:#f0d78f">家康、伏見城に入る</b><p>前田利家が没し、石田三成が佐和山へ退くと、徳川家康は伏見城に入って政を執った。</p></div></div>
+ </div>
+ <div class="me urushi"><div class="f"></div><div class="k">葵</div><div><b class="fude" style="color:#f0d78f">徳川家</b><small>五大老 ・ 城 14 ・ 兵 12.9万</small></div><div class="tools"><span>軍勢</span><span>境界</span><span>諸家</span><span>操作</span></div></div>
+ <div class="legend urushi">隣接する家の境界　－－ 同盟・和睦　…… 主従　－－ 交戦　…… 敵対</div>
+ <div class="zoom urushi"><span>＋</span><span style="font-size:12px">全域</span><span>－</span></div>
+ <div class="emaki urushi"><div class="line" style="background:#b08a3c"><i style="left:62%"></i><span class="yr" style="left:0">1565</span><span class="yr" style="left:30%">1580</span><span class="yr" style="left:60%">1600</span><span class="yr" style="left:95%">1615</span></div></div>
+</div>
+<div class="shot battle urushi-theme" style="background-image:url(current-map.png)">
+ <div class="frame urushi"><div class="cv"></div><div class="daisen fude">関ヶ原の戦い</div>
+  <div class="dock urushi"><b style="color:#f0d78f">小早川・四将の東軍加担（時刻に異説）</b><div class="seek" style="background:#b08a3c"><i style="border-color:#f0d78f"></i></div><span>❚❚　×1　×2　×4　最初から　　経過の順序を再生</span></div></div>
+</div>
+<script>const only=new URLSearchParams(location.search).get("only");if(only!==null){document.querySelectorAll(".shot").forEach((e,i)=>{if(i!==+only)e.remove();});document.querySelectorAll("h1,h2,p.note").forEach(e=>e.remove());}</script></body></html>
