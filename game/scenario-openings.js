@@ -46,7 +46,7 @@
   }
   for(const row of TK.BATTLE_AUDIT||[])row.sourceIds=TK.BATTLES[row.title]?.sources||row.sourceIds;
  };
- const geometryVersion=16,set=G.setS;
+ const geometryVersion=17,set=G.setS;
  G.setS=function(s){const result=set(s);if(!s||s.movementGeometryVersion===geometryVersion)return result;
   G._inSimulation=true;
   try{
@@ -69,3 +69,5 @@
  };
  const init=G.newGame;G.newGame=function(id,player){const s=init(id,player),date=TK.SCEN[id]?.openingDate;if(date){const end=G.evT({d:date}),owner=s.player;s.player='__none';while(s.t<end)G.day();s.player=owner;for(const q of ['sceneQ','evQ','battleQ','observerQ'])s[q]=[];G._inSimulation=true;try{G.trackContinuousMoves();}finally{G._inSimulation=false;}}s.movementGeometryVersion=geometryVersion;return s;};
 })();
+
+G.installIeyasu1600Itinerary?.();

@@ -31,3 +31,55 @@ const back=TK.HIST.find(e=>e.title==='松平元康、岡崎に入る');back.d=dt
 // この軍勢は時点記録で表示するので、自動の最短路出陣を重ねない。
 for(const title of records.map(r=>r.title)){const ev=TK.HIST.find(e=>e.title===title&&e.k!=='premarch');if(ev)ev.documentedMarch=true;}
 })();
+
+/* 家康1600年：確定日付の所在を結び、区間内の道筋・時刻配分は参考経路とする。 */
+(function(){
+ const sources=TK.RESEARCH_SOURCES,dt=(m,d)=>TK.lunarDate(1600,m,d);
+ sources.ieyasu1600Chronology={author:'大田原市',title:'慶長5年、那須の緊張',url:'https://www.city.ohtawara.tochigi.jp/docs/2020122100011/file_contents/all.pdf',locator:'2021年1月号4頁：6月16日大坂発、7月2日江戸入城、7月24日小山着',accessed:'2026-11-02',scope:'出発・到着の記録。全経由地の毎日の位置ではない。'};
+ sources.ieyasu1600Return={author:'栃木県立博物館',title:'徳川家康が下野にやってきた！',url:'https://www.muse.pref.tochigi.lg.jp/exhibition/thema/ieyasu/ieyasu.html',locator:'資料8・伊達政宗宛家康書状写『三光録』：8月5日の江戸帰城報告',accessed:'2026-11-02',scope:'江戸帰城の確認。帰路の全通過点・船路は確定しない。'};
+ sources.ieyasu1600West={author:'戦国時代勢力図と各大名の動向',title:'1600年 関ヶ原の戦いまでの流れ（後半）',url:'https://sengokumap.net/history/1600-2/',locator:'7月30日宇都宮、9月1日江戸発～11日清須。慶長年中卜斎記などを引用する編年',accessed:'2026-11-02',scope:'編年の二次整理。地点間の経路と日内の進捗は推定。引用原史料の全画像照合とは区別。'};
+ sources.ieyasu1600EdoDeparture={author:'白峰旬／別府大学',title:'フィクションとしての小山評定―家康神話創出の一事例',year:'2012',url:'https://repo.beppu-u.ac.jp/modules/xoonips/download.php/gk01404.pdf?file_id=6757',locator:'注19：7月21日付松井康之・有吉立行宛細川忠興書状を根拠とする家康の江戸出陣日',accessed:'2026-11-02',scope:'江戸出陣日の照合。小山の軍議の実在・内容は別に議論される。'};
+ const points={osaka:[135.526,34.687],fushimi:[135.781,34.938],edo:[139.752,35.685],oyama:[139.800,36.315],utsunomiya:[139.883,36.555],odawara:[139.153,35.250],sunpu:[138.383,34.976],kakegawa:[138.014,34.775],hamamatsu:[137.725,34.711],okazaki:[137.159,34.956],kiyosu:[136.839,35.217],akasaka:[136.577,35.389],sekigahara:[136.490,35.361]};
+ // 無日付の経由点は日付付き所在とは別配列に保持する。
+ const rows=[
+  {date:dt(6,16),place:'大坂',point:points.osaka,via:[points.fushimi,points.kiyosu,points.okazaki,points.hamamatsu,points.kakegawa,points.sunpu,points.odawara]},
+  {date:dt(7,2),place:'江戸',point:points.edo},
+  {date:dt(7,21),place:'江戸出陣',point:points.edo},
+  {date:dt(7,24),place:'小山',point:points.oyama},
+  {date:dt(7,25),place:'小山',point:points.oyama},
+  {date:dt(7,30),place:'宇都宮方面',point:points.utsunomiya},
+  {date:dt(8,5),place:'江戸',point:points.edo},
+  {date:dt(9,1),place:'江戸出陣',point:points.edo,via:[points.odawara,points.sunpu,points.kakegawa,points.hamamatsu,points.okazaki]},
+  {date:dt(9,11),place:'清須',point:points.kiyosu},
+  {date:dt(9,14),place:'赤坂',point:points.akasaka},
+  {date:dt(9,15),place:'関ヶ原',point:points.sekigahara}
+ ];
+ const lunarStops=[[6,16],[7,2],[7,21],[7,24],[7,25],[7,30],[8,5],[9,1],[9,11],[9,14],[9,15]],stopSources=['ieyasu1600Chronology','ieyasu1600Chronology','ieyasu1600EdoDeparture','aizuTurn','aizuTurn','ieyasu1600West','ieyasu1600Return','tono1600','ieyasu1600West','ieyasu1600West','ieyasuJinba'];
+ rows.forEach((r,i)=>{r.lunar=[1600,...lunarStops[i]];r.sourceIds=[stopSources[i]];r.precision='place-representative';r.intervalGeometry='estimated-road-reference';});
+ TK.IEYASU_1600_ITINERARY={rows,sources:[...new Set(stopSources)],scope:'所在地の代表点と日程。無日付経由点・区間内速度・帰路は参考経路。'};
+ const event=TK.HIST.find(e=>e.title==='会津征伐');if(event){event.d=dt(6,16);event.at='ishiyama';delete event.site;event.documentedMarch=true;event.source=sources.ieyasu1600Chronology.url;}
+ TK.HIST.sort((a,b)=>(a.d[0]-b.d[0])*400+(a.d[1]-b.d[1])*32+a.d[2]-b.d[2]);
+ const oyama=TK.HIST.find(e=>e.title==='小山評定');if(oyama){oyama.d=dt(7,25);delete oyama.site;oyama.marchStart=dt(6,16);oyama.routeVia=['ishiyama','kyo','kiyosu','okazaki','hikuma','kakegawa','sunpu','odawara','edo','utsunomiya'];}
+ const seki=TK.HIST.find(e=>e.title==='関ヶ原の戦い'&&e.k!=='premarch');if(seki)seki.routeVia=['edo','odawara','sunpu','kakegawa','hikuma','okazaki','kiyosu','gifu'];
+ TK.HIST.sort((a,b)=>(a.d[0]-b.d[0])*400+(a.d[1]-b.d[1])*32+a.d[2]-b.d[2]);
+ const isUnit=u=>u?.hist&&!u.histRet&&['小山評定','関ヶ原の戦い'].includes(u.until||u.historyTitle)&&(u.commanders||u.gens?.map(id=>G.gen(id)?.n)||[]).includes('徳川家康');
+ const time=r=>G.evT({d:r.date}),inPeriod=()=>G.visualTime()>=time(rows[0])&&G.visualTime()<=time(rows.at(-1));
+ const lines=new Map();let state;
+ function leg(){const t=G.visualTime();let i=0;while(i<rows.length-2&&t>time(rows[i+1]))i++;return {a:rows[i],b:rows[i+1],i,t};}
+ function geometry(i){if(state!==G.S()){state=G.S();lines.clear();}if(lines.has(i))return lines.get(i);const a=rows[i],b=rows[i+1],ps=[a.point,...(a.via||[]),b.point].map(p=>G.PJ(...p)),line=[];for(let j=1;j<ps.length;j++){const part=G.visualBetween(ps[j-1],ps[j]);line.push(...part.slice(line.length?1:0));}lines.set(i,line);return line;}
+ G.installIeyasu1600Itinerary=function(){
+ const scheduled=G.scheduleHistorical;
+ G.scheduleHistorical=function(u){if(isUnit(u)&&inPeriod()){const key=u.until||u.historyTitle;if(u.ieyasu1600RouteKey!==key){const ev=TK.HIST.find(e=>e.title===key&&e.k!=='premarch'),via=ev?.routeVia||[],path=[];for(let i=1;i<via.length;i++){const part=G.findPath(via[i-1],via[i],u.clan,'any');if(!part)return scheduled(u);path.push(...part.slice(path.length?1:0));}if(path.length>1){u.path=path;u.origin=path[0];u.seg=0;u.pos=0;u.depart=key==='小山評定'?dt(6,16):dt(9,1);u.arrive=key==='小山評定'?dt(7,24):dt(9,15);u.schedule=null;u.visualTravel=null;u.ieyasu1600RouteKey=key;u.routeSourceIds=TK.IEYASU_1600_ITINERARY.sources;}}}return scheduled(u);};
+ const setState=G.setS;G.setS=function(s){const previous=s?.movementGeometryVersion,ret=setState(s);if(s&&previous!=null&&previous<17){const legacyDate=e=>e.title==='会津征伐'?[1600,7,25]:e.title==='小山評定'?[1600,8,29]:e.d;const legacy=TK.HIST.slice().sort((a,b)=>{const x=legacyDate(a),y=legacyDate(b);return(x[0]-y[0])*400+(x[1]-y[1])*32+x[2]-y[2];});const pm={};for(const [key,v]of Object.entries(s.pm||{})){const e=legacy[+key],i=TK.HIST.indexOf(e);if(i>=0)pm[i]=v;}s.pm=pm;const next=TK.HIST.findIndex(e=>G.evT(e)>s.t);s.hi=next<0?TK.HIST.length:next;s.sites=(s.sites||[]).filter(p=>!(p.y===1600&&(['小山','下野','白河口'].includes(p.n)||p.n==='大坂'&&p.at==='ishiyama'&&p.t===time(rows[0]))));}return ret;};
+ const history=G.hist;G.hist=function(){history();const s=G.S();s.sites=(s.sites||[]).filter(p=>!(p.y===1600&&['小山','下野','白河口'].includes(p.n)));let seen=false,removed=0;s.chron=s.chron.filter(c=>{if(c.title!=='小山評定'||!c.ok)return true;if(seen){removed++;return false;}seen=true;return true;});if(removed)s.hOk=Math.max(0,(s.hOk||0)-removed);};
+ const armies=G.documentedArmies,native=G.visibleNativeArmies;
+ const record={id:'ieyasu1600',title:'徳川家康の東下と西上',source:TK.IEYASU_1600_ITINERARY.sources,note:TK.IEYASU_1600_ITINERARY.scope};
+ G.documentedArmies=function(){const out=armies();if(!inPeriod())return out;const {a,b,t}=leg();out.push({id:'documented:ieyasu1600',clan:'tokugawa',gens:[],commanders:['徳川家康'],troops:0,morale:85,train:70,path:['ishiyama','edo'],origin:'ishiyama',seg:0,pos:0,state:t>=time(rows.at(-1))||a.point[0]===b.point[0]&&a.point[1]===b.point[1]?'camp':'march',mission:'show',hist:true,until:t<=time(rows[4])?'小山評定':'関ヶ原の戦い',record,routeSourceIds:record.source,routeNote:record.note});return out;};
+ G.visibleNativeArmies=function(){const out=native();if(!inPeriod())return out;return out.flatMap(u=>{if(!isUnit(u))return [u];const gens=u.gens.filter(id=>G.gen(id)?.n!=='徳川家康');return gens.length?[{...u,gens}]:[];});};
+ const point=G.historyPoint,geo=G.historyGeometry,phase=G.marchPhase,destination=G.marchDestination;
+ G.historyPoint=u=>{if(!isUnit(u)||!inPeriod())return point(u);const {a,b,i,t}=leg(),f=Math.max(0,Math.min(1,(t-time(a))/Math.max(1,time(b)-time(a))));return G.visualPathPoint(geometry(i),f,true);};
+ G.historyGeometry=u=>isUnit(u)&&inPeriod()?geometry(leg().i):geo(u);
+ G.marchPhase=u=>{if(!isUnit(u)||!inPeriod())return phase(u);if(G.visualTime()>=time(rows.at(-1)))return {key:'camp',name:'関ヶ原着陣'};const {a,b}=leg();return a.point[0]===b.point[0]&&a.point[1]===b.point[1]?{key:'camp',name:a.place+'在陣'}:{key:'march',name:'行軍中'};};
+ G.marchDestination=u=>isUnit(u)&&inPeriod()?leg().b.place:destination(u);
+ };
+})();

@@ -1,0 +1,333 @@
+{
+  "scope": "修正前の現行実行結果。史実経路ではなく不具合再現。",
+  "events": [
+    {
+      "d": [
+        1600,
+        7,
+        25
+      ],
+      "k": "note",
+      "big": 1,
+      "at": "utsunomiya",
+      "site": "下野",
+      "title": "会津征伐",
+      "text": "上洛を拒む上杉景勝を討つため、徳川家康が諸大名を率いて大坂を発ち、会津へ向かった。伏見城には鳥居元忠・松平家忠・内藤家長らを残した。",
+      "who": "徳川家康"
+    },
+    {
+      "d": [
+        1600,
+        8,
+        29
+      ],
+      "k": "note",
+      "big": 1,
+      "at": "utsunomiya",
+      "site": "小山",
+      "title": "小山評定",
+      "with": [
+        "石田三成の挙兵"
+      ],
+      "text": "会津へ向かう途中、下野小山で三成の挙兵を知った家康は、従ってきた諸将とともに西へ引き返すことを決めた。",
+      "who": "徳川家康"
+    }
+  ],
+  "rows": [
+    {
+      "date": {
+        "y": 1600,
+        "m": 7,
+        "d": 26
+      },
+      "units": [
+        {
+          "until": "小山評定",
+          "path": [
+            "karasawa",
+            "utsunomiya"
+          ],
+          "schedule": {
+            "key": "小山評定",
+            "start": 5484,
+            "end": 5518,
+            "pathKey": "karasawa>utsunomiya",
+            "weights": [
+              3.143085306085952
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "date": {
+        "y": 1600,
+        "m": 8,
+        "d": 6
+      },
+      "units": [
+        {
+          "until": "小山評定",
+          "path": [
+            "karasawa",
+            "utsunomiya"
+          ],
+          "schedule": {
+            "key": "小山評定",
+            "start": 5484,
+            "end": 5518,
+            "pathKey": "karasawa>utsunomiya",
+            "weights": [
+              3.143085306085952
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "date": {
+        "y": 1600,
+        "m": 8,
+        "d": 16
+      },
+      "units": [
+        {
+          "until": "小山評定",
+          "path": [
+            "karasawa",
+            "utsunomiya"
+          ],
+          "schedule": {
+            "key": "小山評定",
+            "start": 5484,
+            "end": 5518,
+            "pathKey": "karasawa>utsunomiya",
+            "weights": [
+              3.143085306085952
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "date": {
+        "y": 1600,
+        "m": 8,
+        "d": 26
+      },
+      "units": [
+        {
+          "until": "小山評定",
+          "path": [
+            "karasawa",
+            "utsunomiya"
+          ],
+          "schedule": {
+            "key": "小山評定",
+            "start": 5484,
+            "end": 5518,
+            "pathKey": "karasawa>utsunomiya",
+            "weights": [
+              3.143085306085952
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "date": {
+        "y": 1600,
+        "m": 9,
+        "d": 6
+      },
+      "units": [
+        {
+          "until": "関ヶ原の戦い",
+          "path": [
+            "karasawa",
+            "utsunomiya",
+            "kanayama",
+            "umayabashi",
+            "minowa",
+            "takato",
+            "iida",
+            "iwamura",
+            "gifu"
+          ],
+          "schedule": {
+            "key": "関ヶ原の戦い",
+            "start": 5518,
+            "end": 5570,
+            "pathKey": "karasawa>utsunomiya>kanayama>umayabashi>minowa>takato>iida>iwamura>gifu",
+            "weights": [
+              3.057057555772749,
+              4.485070530063489,
+              2.532187144175699,
+              3.6484309847164154,
+              12.508448970392184,
+              3.682968424416085,
+              4.631169779424664,
+              6.004774961037827
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "date": {
+        "y": 1600,
+        "m": 9,
+        "d": 16
+      },
+      "units": [
+        {
+          "until": "関ヶ原の戦い",
+          "path": [
+            "karasawa",
+            "utsunomiya",
+            "kanayama",
+            "umayabashi",
+            "minowa",
+            "takato",
+            "iida",
+            "iwamura",
+            "gifu"
+          ],
+          "schedule": {
+            "key": "関ヶ原の戦い",
+            "start": 5518,
+            "end": 5570,
+            "pathKey": "karasawa>utsunomiya>kanayama>umayabashi>minowa>takato>iida>iwamura>gifu",
+            "weights": [
+              3.057057555772749,
+              4.485070530063489,
+              2.532187144175699,
+              3.6484309847164154,
+              12.508448970392184,
+              3.682968424416085,
+              4.631169779424664,
+              6.004774961037827
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "date": {
+        "y": 1600,
+        "m": 9,
+        "d": 26
+      },
+      "units": [
+        {
+          "until": "関ヶ原の戦い",
+          "path": [
+            "karasawa",
+            "utsunomiya",
+            "kanayama",
+            "umayabashi",
+            "minowa",
+            "takato",
+            "iida",
+            "iwamura",
+            "gifu"
+          ],
+          "schedule": {
+            "key": "関ヶ原の戦い",
+            "start": 5518,
+            "end": 5570,
+            "pathKey": "karasawa>utsunomiya>kanayama>umayabashi>minowa>takato>iida>iwamura>gifu",
+            "weights": [
+              3.057057555772749,
+              4.485070530063489,
+              2.532187144175699,
+              3.6484309847164154,
+              12.508448970392184,
+              3.682968424416085,
+              4.631169779424664,
+              6.004774961037827
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "date": {
+        "y": 1600,
+        "m": 10,
+        "d": 6
+      },
+      "units": [
+        {
+          "until": "関ヶ原の戦い",
+          "path": [
+            "karasawa",
+            "utsunomiya",
+            "kanayama",
+            "umayabashi",
+            "minowa",
+            "takato",
+            "iida",
+            "iwamura",
+            "gifu"
+          ],
+          "schedule": {
+            "key": "関ヶ原の戦い",
+            "start": 5518,
+            "end": 5570,
+            "pathKey": "karasawa>utsunomiya>kanayama>umayabashi>minowa>takato>iida>iwamura>gifu",
+            "weights": [
+              3.057057555772749,
+              4.485070530063489,
+              2.532187144175699,
+              3.6484309847164154,
+              12.508448970392184,
+              3.682968424416085,
+              4.631169779424664,
+              6.004774961037827
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "date": {
+        "y": 1600,
+        "m": 10,
+        "d": 16
+      },
+      "units": [
+        {
+          "until": "関ヶ原の戦い",
+          "path": [
+            "karasawa",
+            "utsunomiya",
+            "kanayama",
+            "umayabashi",
+            "minowa",
+            "takato",
+            "iida",
+            "iwamura",
+            "gifu"
+          ],
+          "schedule": {
+            "key": "関ヶ原の戦い",
+            "start": 5518,
+            "end": 5570,
+            "pathKey": "karasawa>utsunomiya>kanayama>umayabashi>minowa>takato>iida>iwamura>gifu",
+            "weights": [
+              3.057057555772749,
+              4.485070530063489,
+              2.532187144175699,
+              3.6484309847164154,
+              12.508448970392184,
+              3.682968424416085,
+              4.631169779424664,
+              6.004774961037827
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

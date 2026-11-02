@@ -2456,7 +2456,7 @@
       "eventDate": [
         1600,
         7,
-        25
+        26
       ],
       "units": 2,
       "sourceIds": [
@@ -2603,10 +2603,11 @@
         12,
         20
       ],
-      "units": 2,
+      "units": 4,
       "sourceIds": [
-        "osakaMuseum",
-        "atlasRelief"
+        "eventKizugawa1614",
+        "atlasRelief",
+        "kizujouMuseum"
       ],
       "issues": [
         "出典が裏付ける範囲は各資料欄に明示",
@@ -2617,7 +2618,7 @@
       "positionedUnits": 0,
       "positionedGroups": 2,
       "unlocatedGroups": 0,
-      "displayedParticipants": 2
+      "displayedParticipants": 4
     },
     {
       "title": "今福・鴫野の戦い",
@@ -5209,7 +5210,7 @@
     {
       "title": "木津川口の戦い",
       "a": {
-        "lead": "蜂須賀至鎮",
+        "lead": "蜂須賀至鎮・浅野長晟・池田忠雄",
         "tr": 0
       },
       "b": {
@@ -5218,7 +5219,8 @@
       },
       "status": "兵数表未登録だった年表上の合戦。個別兵数は未確定",
       "source": [
-        "osakaMuseum"
+        "eventKizugawa1614",
+        "kizujouMuseum"
       ]
     },
     {
@@ -5792,6 +5794,39 @@
       "locator": "永禄の変をめぐる記述",
       "accessed": "2026-10-31",
       "scope": "事件を記す史料の批判。攻撃側の通過街道・一万という兵数の実数は未確定。"
+    },
+    "ieyasu1600Chronology": {
+      "author": "大田原市",
+      "title": "慶長5年、那須の緊張",
+      "url": "https://www.city.ohtawara.tochigi.jp/docs/2020122100011/file_contents/all.pdf",
+      "locator": "2021年1月号4頁：6月16日大坂発、7月2日江戸入城、7月24日小山着",
+      "accessed": "2026-11-02",
+      "scope": "出発・到着の記録。全経由地の毎日の位置ではない。"
+    },
+    "ieyasu1600Return": {
+      "author": "栃木県立博物館",
+      "title": "徳川家康が下野にやってきた！",
+      "url": "https://www.muse.pref.tochigi.lg.jp/exhibition/thema/ieyasu/ieyasu.html",
+      "locator": "資料8・伊達政宗宛家康書状写『三光録』：8月5日の江戸帰城報告",
+      "accessed": "2026-11-02",
+      "scope": "江戸帰城の確認。帰路の全通過点・船路は確定しない。"
+    },
+    "ieyasu1600West": {
+      "author": "戦国時代勢力図と各大名の動向",
+      "title": "1600年 関ヶ原の戦いまでの流れ（後半）",
+      "url": "https://sengokumap.net/history/1600-2/",
+      "locator": "7月30日宇都宮、9月1日江戸発～11日清須。慶長年中卜斎記などを引用する編年",
+      "accessed": "2026-11-02",
+      "scope": "編年の二次整理。地点間の経路と日内の進捗は推定。引用原史料の全画像照合とは区別。"
+    },
+    "ieyasu1600EdoDeparture": {
+      "author": "白峰旬／別府大学",
+      "title": "フィクションとしての小山評定―家康神話創出の一事例",
+      "year": "2012",
+      "url": "https://repo.beppu-u.ac.jp/modules/xoonips/download.php/gk01404.pdf?file_id=6757",
+      "locator": "注19：7月21日付松井康之・有吉立行宛細川忠興書状を根拠とする家康の江戸出陣日",
+      "accessed": "2026-11-02",
+      "scope": "江戸出陣日の照合。小山の軍議の実在・内容は別に議論される。"
     },
     "lakeBaseline": {
       "author": "国土交通省",
@@ -6453,6 +6488,22 @@
       "title": "九鬼嘉隆",
       "url": "https://www.city.toba.mie.jp/material/files/group/70/yoshitakagaiyou.pdf",
       "locator": "1576・1578年の木津川口、鉄甲船に関する多聞院日記の説明",
+      "scope": "地域と経過の確認。部隊の個別持場・総兵数・連続的な移動は未確定。",
+      "accessed": "2026-11-01"
+    },
+    "eventKizugawa1614": {
+      "author": "黒田日出男／徳川美術館",
+      "title": "徳川美術館蔵「豊国祭礼図屏風」の注文主",
+      "url": "https://www.tokugawa-art-museum.jp/wp-content/uploads/2025/02/46_1-%E8%AB%96%E6%96%87%EF%BC%8F%E9%BB%92%E7%94%B0%E6%97%A5%E5%87%BA%E7%94%B7.pdf",
+      "locator": "PDF4頁・二節。11月19日の蜂須賀至鎮・浅野長晟・池田忠雄、29日博労淵。個別の精密な持場は示さない",
+      "scope": "地域と経過の確認。部隊の個別持場・総兵数・連続的な移動は未確定。",
+      "accessed": "2026-11-01"
+    },
+    "kizujouMuseum": {
+      "author": "大阪歴史博物館",
+      "title": "共同研究成果報告書17・第2章第1節",
+      "url": "https://www.osakamushis.jp/education/publication/kyodokenkyu/pdf/kyodo-17/kyodo-17_3.pdf",
+      "locator": "32〜34頁・木津城。1614年の徳川付城、集落と浜堤、所在地・規模・構造の不明確さ。1576年の木津城と1614年の河口砦を同一地点と確定しない",
       "scope": "地域と経過の確認。部隊の個別持場・総兵数・連続的な移動は未確定。",
       "accessed": "2026-11-01"
     },
