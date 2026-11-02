@@ -2,7 +2,7 @@
 /* 合戦図の動きの演出（旧 bscene.js の粉・煙・雨霧・足跡・組み合いを、地勢図の布陣へ移したもの）。
    動かすのは登録済みの段階移動・交戦の組・鉄砲隊・討死/退却・天候だけで、無根拠の経路や陣地を作らない。 */
 window.TKBattleEffects=(function(){
- const TAU=Math.PI*2,clamp=(v,a,b)=>v<a?a:v>b?b:v;
+ const TAU=Math.PI*2,clamp=(v,a,b)=>v<a?a:v>b?b:v,FONT='"Shippori Mincho B1","Hiragino Mincho ProN","Yu Mincho",serif';
  function srnd(seed){let s=seed>>>0||1;return ()=>{s^=s<<13;s>>>=0;s^=s>>17;s^=s<<5;s>>>=0;return s/4294967296;};}
  // 区間の前後4で立ち上がる山形。旧図の雨・霧と同じ。
  const bell=(iv,t)=>{if(!iv||t<iv[0]-4||t>iv[1]+4)return 0;return clamp(Math.min(t-iv[0]+4,iv[1]+4-t)/6,0,1);};
@@ -32,10 +32,9 @@ window.TKBattleEffects=(function(){
   function weather(c,W,H,sc,t,now){const rn=bell(sc.rain,t);if(rn>0){c.fillStyle=`rgba(60,70,85,${.16*rn})`;c.fillRect(0,0,W,H);c.strokeStyle=`rgba(210,220,235,${.5*rn})`;c.lineWidth=1;const off=(now/3)%40,rr=srnd(5);c.beginPath();for(let i=0;i<W*H/2600*rn;i++){const x=rr()*W,y=(rr()*H+off*(1+rr()))%H;c.moveTo(x,y);c.lineTo(x-4,y+13);}c.stroke();}
    const fg=bell(sc.fog,t);if(fg>0){c.fillStyle=`rgba(240,240,236,${.62*fg})`;c.fillRect(0,0,W,H);}return rn>0||fg>0;}
   const weatherActive=(sc,t)=>bell(sc.rain,t)>0||bell(sc.fog,t)>0;
-  // 旗は再生中だけ先端をわずかに揺らす。紋は回さない。
-  function flag(c,x,y,k,col,crest,now,wave){const wv=wave?Math.sin(now/260+x)*1.2*k:0;c.save();c.strokeStyle='#574732';c.lineWidth=.8;c.beginPath();c.moveTo(x,y+2*k);c.lineTo(x,y-26*k);c.stroke();
-   c.beginPath();c.moveTo(x,y-25*k);c.lineTo(x+15*k,y-25*k+wv);c.lineTo(x+15*k,y-10*k+wv*.6);c.lineTo(x,y-10*k);c.closePath();c.fillStyle=crest?'#fff8e7':col;c.fill();c.strokeStyle=col;c.lineWidth=1;c.stroke();
-   if(crest){c.save();c.clip();c.drawImage(crest,x+2*k,y-23*k+wv*.5,11*k,11*k);c.restore();}c.restore();}
+  // 幟（地図の凸駒と同じ案）：縦長の旗の上に家紋、下に陣営色の帯。再生中だけ先端をわずかに揺らし、紋は回さない。
+  function flag(c,x,y,k,col,crest,now,wave,mark){const wv=wave?Math.sin(now/260+x)*1.2*k:0,top=y-33*k,fw=12*k,fh=27*k;c.save();c.strokeStyle='#2a1d10';c.lineWidth=1.1;c.beginPath();c.moveTo(x,y+14*k);c.lineTo(x,top-3*k);c.moveTo(x-2*k,top-3*k);c.lineTo(x+2*k,top-3*k);c.stroke();
+   c.beginPath();c.moveTo(x+k,top);c.lineTo(x+k+fw,top+wv);c.lineTo(x+k+fw,top+fh+wv*.6);c.lineTo(x+k,top+fh);c.closePath();c.fillStyle='#fbf4e2';c.fill();c.save();c.clip();c.fillStyle=col;c.fillRect(x+k,top+fh-6.5*k,fw,8*k);if(crest)c.drawImage(crest,x+1.5*k,top+1.5*k+wv*.3,11*k,11*k);else if(mark){c.fillStyle=col;c.font=`800 ${Math.round(8.5*k)}px ${FONT}`;c.textAlign='center';c.textBaseline='middle';c.fillText(mark,x+k+fw/2,top+7*k);}c.restore();c.strokeStyle='#2a1d10';c.lineWidth=.9;c.stroke();c.restore();}
   function cross(c,x,y,k=1){c.strokeStyle='#b0221a';c.lineWidth=2.4;c.beginPath();c.moveTo(x-9*k,y-9*k);c.lineTo(x+9*k,y+9*k);c.moveTo(x+9*k,y-9*k);c.lineTo(x-9*k,y+9*k);c.stroke();}
   return {spawn,step,draw,heading,clash,ring,trail,weather,weatherActive,flag,cross,bell,rnd:R,get count(){return parts.length;},clear(){parts.length=0;angles.clear();}};
  }

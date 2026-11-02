@@ -99,18 +99,18 @@ window.TKBattleAtlas=(function(){
     if(!aim){let best=Infinity;for(const [j,q] of located.entries()){const v=unitById.get(q.members[0]),op=sideOf(v);if(op===side||isDead(v))continue;const a=pins[j],d=Math.hypot(a[0]-x,a[1]-y);if(d>1&&d<best){best=d;aim=[a[0]-x,a[1]-y];}}}
     const target=aim?Math.atan2(aim[1],aim[0])+Math.PI/2:undefined,ang=fx.heading(g.id,target,dt,!playing||lastSnap);
     if(moving&&playing&&fx.rnd()<dt*10)fx.spawn(x,y,'dust');
-    ctx.save();ctx.translate(x,y);if(Number.isFinite(ang))ctx.rotate(ang);TKCounter.path(ctx,small?22:28,small?15:19);ctx.fillStyle=col;ctx.fill();ctx.strokeStyle=sel?'#e5ad3f':'#fff8e7';ctx.lineWidth=sel?2.5:active.has(u.id)?2.2:1.3;ctx.lineJoin='round';ctx.stroke();ctx.restore();
+    ctx.save();ctx.translate(x,y);if(Number.isFinite(ang))ctx.rotate(ang);const cw=small?22:28,ch=small?15:19;TKCounter.path(ctx,cw,ch);ctx.fillStyle=col;ctx.fill();ctx.save();TKCounter.path(ctx,cw,ch);ctx.clip();const tint=ctx.createLinearGradient(0,-ch*.55,0,ch*.55);tint.addColorStop(0,'rgba(255,255,240,.22)');tint.addColorStop(1,'rgba(40,20,0,.12)');ctx.fillStyle=tint;ctx.fillRect(-cw,-ch,cw*2,ch*2);ctx.restore();TKCounter.path(ctx,cw,ch);ctx.strokeStyle=sel?'#e5ad3f':'#2a1d10';ctx.lineWidth=sel?2.6:active.has(u.id)?2.4:1.8;ctx.lineJoin='round';ctx.stroke();TKCounter.path(ctx,cw*.84,ch*.76);ctx.lineWidth=.9;ctx.strokeStyle='rgba(255,248,225,.75)';ctx.stroke();ctx.restore();
     // 鉄砲：記録の射撃区間（fire）か、鉄砲隊が交戦中の間、相手へ向けて発砲の閃光と煙を出す。射線は引かない。
     const firing=!dead&&!routed&&(u.fire?t>=u.fire[0]&&t<=u.fire[1]:u.arm==='teppo'&&active.has(u.id));
     if(firing){let tp=u.fireTarget?livePin(u.fireTarget):null;if(!tp){let best=Infinity;for(const [j,q] of located.entries()){const v=unitById.get(q.members[0]);if(sideOf(v)===side||isDead(v))continue;const d=Math.hypot(pins[j][0]-x,pins[j][1]-y);if(d>1&&d<best){best=d;tp=pins[j];}}}
      if(tp){const dir=Math.atan2(tp[1]-y,tp[0]-x),fxp=[x+Math.cos(dir)*16*kb,y+Math.sin(dir)*16*kb];if(playing&&fx.rnd()<dt*16){fx.spawn(fxp[0]+(fx.rnd()-.5)*12,fxp[1]+(fx.rnd()-.5)*12,'flash',dir);fx.spawn(fxp[0],fxp[1],'smoke',dir);}}}
-    const crestKey=G.armyCrestKey({clan:u.clan,gens:[],commanders:[u.g||u.n],until:sc.title}),crest=G.kamonImage(crestKey,11);fx.flag(ctx,x+10,y,1,col,crest,now,playing&&!dead);
+    const crestKey=G.armyCrestKey({clan:u.clan,gens:[],commanders:[u.g||u.n],until:sc.title}),crest=G.kamonImage(crestKey,11),family=crestKey&&TK.CLANS[crestKey]?G.CN(crestKey):u.clan&&TK.CLANS[u.clan]?G.CN(u.clan):'';fx.flag(ctx,x+10,y,1,col,crest,now,playing&&!dead,family?family.replace(/家$/,'').slice(0,1):'');
     if(dead)fx.cross(ctx,x,y);
     const status=dead?'討死':routed?'退却':'';
     if(near.length===1||sel){const face=opt.face?.(u.g,12,col);if(face)ctx.drawImage(face,x-26,y-30,24,24);const label=(u.g||u.n)+(status?'・'+status:'');ctx.font=`600 12px ${FONT}`;const w=ctx.measureText(label).width+8,b={x:x+18,y:y-10,w,h:18};if(sel||!named.some(a=>b.x<a.x+a.w&&b.x+b.w>a.x&&b.y<a.y+a.h&&b.y+b.h>a.y)){text(ctx,label,b.x,b.y+9,12,status?'#7a2218':'#302719','left');named.push(b);}}
     if(near.length>1&&!badged.has(g.id)){near.forEach(q=>badged.add(q.id));const leader=unitById.get(near[0].members[0]);if(leader){const face=opt.face?.(leader.g,13,col);if(face)ctx.drawImage(face,x-30,y-33,26,26);text(ctx,leader.g||leader.n,x+18,y-17,11,'#302719','left');}}
 
-    boxes.push({x:x-20,y:y-30,w:40,h:67,id:g.id});ctx.restore();
+    boxes.push({x:x-20,y:y-36,w:40,h:73,id:g.id});ctx.restore();
    }
    lastSnap=!playing;
    cv.dataset.mapGroups=String(groups.length);cv.dataset.mapParticipants=String(groups.reduce((n,g)=>n+g.members.length,0));cv.dataset.locatedGroups=String(located.length);

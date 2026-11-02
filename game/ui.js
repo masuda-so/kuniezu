@@ -441,24 +441,29 @@ const troopScale=t=>Math.max(.9,Math.min(1.15,1+.06*Math.log2(Math.max(1000,t)/4
 function drawCounter(c,x,y,u,mine,lvl,compact=false){const t2=G.armOf(u),identity=G.armyIdentity(u);const k=(lvl===0?.85:lvl===1?1:1.2)*troopScale(u.troops);
  const world=u._displayPoint||unitPos(u),line=G.historyGeometry?.(u)||(u.state==='march'&&u.path?.length>1?G.visualEdgeGeo(u.path[u.seg],u.path[Math.min(u.seg+1,u.path.length-1)]):null);const heading=G.visualCounterHeading?.(line,world,cam.z)??u._displayAngle??world[2];if(Number.isFinite(heading))ANG.set(u.id,heading);const ang=(heading??ANG.get(u.id)??-Math.PI/2)+Math.PI/2;const bw=30*k,bh=20*k,hw=10*k,hh=10*k;
  if(u.state==='battle'){const p=.5+.5*Math.sin(tNow/90+u.id);c.beginPath();c.arc(x,y,22*k+p*5,0,7);c.fillStyle=`rgba(255,110,50,${.18+p*.22})`;c.fill();}
+ // 陣立図ふうの駒：家の色の地に、紙へ塗った絵具の濃淡（立体の影ではない）、墨の輪郭、内側の生成り線。
  c.save();c.translate(x,y);c.rotate(ang);
  const shape=()=>TKCounter.path(c,bw,bh);
- c.save();shape();c.fillStyle=identity.color;c.fill();c.restore();
- shape();c.lineJoin='round';c.lineWidth=mine?2.2:1.4;c.strokeStyle=mine?'#f2d27c':'rgba(255,250,235,.95)';c.stroke();
- // 凸駒は平面の色と輪郭で示す。立体風の下帯・影を付けない。
+ shape();c.fillStyle=identity.color;c.fill();
+ c.save();shape();c.clip();const tint=c.createLinearGradient(0,-bh*.55,0,bh*.55);tint.addColorStop(0,'rgba(255,255,240,.22)');tint.addColorStop(1,'rgba(40,20,0,.12)');c.fillStyle=tint;c.fillRect(-bw,-bh,bw*2,bh*2);c.restore();
+ shape();c.lineJoin='round';c.lineWidth=mine?2.6:2;c.strokeStyle=mine?'#d9b866':'#2a1d10';c.stroke();
+ TKCounter.path(c,bw*.84,bh*.76);c.lineWidth=.9;c.strokeStyle='rgba(255,248,225,.75)';c.stroke();
  c.restore();
- // 家紋は旗へ、兵種は駒の中へ。向きの変化でも紋と文字を回さない。
- const crest=G.kamonImage(G.armyCrestKey(u),11*k),flagX=x+bw/2+3*k,flagY=y-12*k;
- c.save();c.strokeStyle='#65513b';c.lineWidth=1;c.beginPath();c.moveTo(flagX,y+14*k);c.lineTo(flagX,flagY-2*k);c.stroke();c.fillStyle=crest?'#fff8e7':identity.color;c.fillRect(flagX,flagY,15*k,15*k);c.strokeStyle=identity.color;c.strokeRect(flagX,flagY,15*k,15*k);if(crest)c.drawImage(crest,flagX+2*k,flagY+2*k,11*k,11*k);c.restore();
- c.font=`800 ${Math.round((compact?9:10.5)*k)}px ${compact?'"Zen Kaku Gothic New",sans-serif':'"Shippori Mincho B1",serif'}`;c.textAlign='center';c.textBaseline='middle';const rgb=identity.color.slice(1).match(/.{2}/g)?.map(v=>parseInt(v,16));c.fillStyle=rgb&&rgb.length===3&&rgb[0]*.299+rgb[1]*.587+rgb[2]*.114>160?'#30220f':'#fff7e2';c.fillText(compact?(u.troops?(u.hist?'約':'')+man(u.troops):'—'):G.ARMS[t2].k,x,y+bh*.12);
+ // 幟：縦長の旗の上に家紋、下に陣営色の帯。紋のない家は家名の一字。向きが変わっても紋と文字は回さない。
+ const crest=G.kamonImage(G.armyCrestKey(u),12*k),poleX=x+bw/2+4*k,top=y-30*k,fw=13*k,fh=30*k;
+ c.save();c.strokeStyle='#2a1d10';c.lineWidth=1.2;c.beginPath();c.moveTo(poleX,y+15*k);c.lineTo(poleX,top-3*k);c.moveTo(poleX-2*k,top-3*k);c.lineTo(poleX+2*k,top-3*k);c.stroke();
+ c.fillStyle='#fbf4e2';c.fillRect(poleX+k,top,fw,fh);c.fillStyle=identity.color;c.fillRect(poleX+k,top+fh-7*k,fw,7*k);c.strokeStyle='#2a1d10';c.lineWidth=1;c.strokeRect(poleX+k,top,fw,fh);
+ if(crest)c.drawImage(crest,poleX+1.5*k,top+1.5*k,12*k,12*k);else{c.fillStyle=deep(u.clan);c.font=`800 ${Math.round(9*k)}px "Shippori Mincho B1",serif`;c.textAlign='center';c.textBaseline='middle';c.fillText(({joseon:'朝',ming:'明'})[u.clan]||G.CN(u.clan).replace(/家$/,'').slice(0,1),poleX+k+fw/2,top+7*k);}
+ c.restore();
+ c.font=`800 ${Math.round((compact?9:11)*k)}px ${compact?'"Zen Kaku Gothic New",sans-serif':'"Shippori Mincho B1",serif'}`;c.textAlign='center';c.textBaseline='middle';const rgb=identity.color.slice(1).match(/.{2}/g)?.map(v=>parseInt(v,16));c.fillStyle=rgb&&rgb.length===3&&rgb[0]*.299+rgb[1]*.587+rgb[2]*.114>160?'#2a1d10':'#fff7e2';c.fillText(compact?(u.troops?(u.hist?'約':'')+man(u.troops):'—'):G.ARMS[t2].k,x,y+bh*.12);
  const g=G.gen(u.gens[0])||(u.commanders?.length?{n:u.commanders[0],clan:u.clan}:null),im=g&&hasFace(g.n)&&(lvl>=1||G.isLeader(g))?portrait(g.n,Math.round(10*k),true,G.CC(u.clan)):null;
  if(compact){if(im)c.drawImage(im,x-bw/2-im.css*.75,y-bh/2-im.css*.75,im.css,im.css);c.textAlign='left';return;}
- // 兵数の札
- const txt=u.troops?(u.hist?'約':'')+man(u.troops):'兵数未詳';c.font=`800 ${Math.round(10.5*k)}px "Shippori Mincho B1",serif`;c.textAlign='center';const tw=c.measureText(txt).width+8;const ty=y+Math.hypot(bw/2,bh/2+hh/2)+5*k;
- rr(c,x-tw/2,ty-1,tw,13*k,2);c.fillStyle='rgba(20,14,8,.85)';c.fill();c.strokeStyle=mine?'#f2d27c':deep(u.clan);c.lineWidth=1;c.stroke();c.fillStyle='#fff7e2';c.textBaseline='top';c.fillText(txt,x,ty+.5);
+ // 兵数の短冊：生成りの札に墨の文字、左端に家の色。
+ const txt=u.troops?(u.hist?'約':'')+man(u.troops):'兵数未詳';c.font=`700 ${Math.round(10.5*k)}px "Shippori Mincho B1",serif`;c.textAlign='center';const tw=c.measureText(txt).width+10;const ty=y+Math.hypot(bw/2,bh/2+hh/2)+4*k;
+ c.fillStyle='#fbf4e2';c.fillRect(x-tw/2,ty,tw,13*k);c.strokeStyle=mine?'#d9b866':'#2a1d10';c.lineWidth=mine?1.4:.9;c.strokeRect(x-tw/2,ty,tw,13*k);c.fillStyle=identity.color;c.fillRect(x-tw/2,ty,2.5*k,13*k);c.fillStyle='#2a1d10';c.textBaseline='top';c.fillText(txt,x+1,ty+1);
  // 大将
  if(im)c.drawImage(im,x-bw/2-im.css*.75,y-bh/2-im.css*.75,im.css,im.css);
- if(lvl>=1&&g){c.font='700 10.5px "Shippori Mincho B1",serif';c.textBaseline='bottom';c.lineWidth=3;c.strokeStyle='rgba(255,250,236,.92)';const ny=y-bh/2-hh-3;c.strokeText(g.n,x,ny);c.fillStyle='#2a1d10';c.fillText(g.n,x,ny);}
+ if(lvl>=1&&g){c.font='700 11px "Shippori Mincho B1",serif';c.textBaseline='bottom';c.lineWidth=3.4;c.strokeStyle='rgba(251,244,226,.95)';const ny=y-bh/2-hh-3;c.strokeText(g.n,x,ny);c.fillStyle='#2a1d10';c.fillText(g.n,x,ny);}
  if(u.state==='siege'||u.state==='battle'){c.strokeStyle='#c4281c';c.lineWidth=2;const sx=x+bw/2+5,sy=y-bh/2;c.beginPath();c.moveTo(sx-4,sy-4);c.lineTo(sx+4,sy+4);c.moveTo(sx+4,sy-4);c.lineTo(sx-4,sy+4);c.stroke();}
  c.textAlign='left';
 }
