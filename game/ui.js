@@ -440,7 +440,7 @@ function drawTop(){LANDV=landFor(cam.z);
   c.font='800 12px "Shippori Mincho B1",serif';c.textBaseline='middle';const t=st.n+'の戦い';const label=/戦い|変|城|攻め|平定|乱|殺し|開城|落城|征伐|一揆/.test(st.n)?st.n:t;c.lineWidth=3.4;c.strokeStyle='rgba(255,248,230,.95)';c.strokeText(label,x+11,y+1);c.fillStyle='#7a1c12';c.fillText(label,x+11,y+1);c.font='600 10px "Zen Kaku Gothic New",sans-serif';c.lineWidth=3;c.strokeText(st.y+'年',x+11,y+14);c.fillStyle='#5a3a26';c.fillText(st.y+'年',x+11,y+14);c.globalAlpha=1;}
  // 各隊を実位置の凸で描き、重なりは選択用の案内を添える。
  let mapUnits=[...(G.visibleNativeArmies?.()||S.units),...(G.documentedArmies?.()||[])];if(U.deploymentPreview?.t===S.t){const deployment=G.deploymentArmies(U.deploymentPreview.title),names=new Set(deployment.flatMap(u=>u.commanders));mapUnits=mapUnits.filter(u=>!(u.commanders||u.gens.map(id=>G.gen(id)?.n)).some(n=>names.has(n))).concat(deployment);}
- U.mapUnits=mapUnits;const candidates=G.convoyLayout(mapUnits.filter(u=>G.marchPhase?.(u).key!=='waiting'),z,w2s,uXY);
+ U.mapUnits=mapUnits;renderDeployNote();const candidates=G.convoyLayout(mapUnits.filter(u=>G.marchPhase?.(u).key!=='waiting'),z,w2s,uXY);
  const v=vc(),area=U.mode==='game'?{left:v[0]-v[2]/2+8,top:v[1]-v[3]/2+8,width:Math.max(120,v[2]-16),height:Math.max(120,v[3]-16)}:{left:0,top:0,width:VW,height:VH};
  const outside={left:[],right:[],top:[],bottom:[],more:[]},laid=[];
  for(const p of candidates){if(p.x<0||p.x>VW||p.y<0||p.y>VH){outside[p.x<0?'left':p.x>VW?'right':p.y<0?'top':'bottom'].push(p);continue;}laid.push({...p,anchorX:p.x,anchorY:p.y});}
@@ -452,6 +452,12 @@ function drawTop(){LANDV=landFor(cam.z);
 
  c.restore();
 }
+// 布陣プレビュー：位置の記録がない側は地図の点にせず、合戦地に添えた札へ陣営ごとに名前を並べる。
+function renderDeployNote(){const el=$('#deployNote');if(!el)return;const P=U.deploymentPreview;const rows=P&&P.t===S?.t&&G.deploymentUnlocated?G.deploymentUnlocated(P.title):[];
+ if(!rows.length){if(!el.hidden){el.hidden=true;el._k='';}return;}
+ const site=rows[0].site?w2s(...G.PJ(...rows[0].site)):[VW/2,VH/2];const k=P.title+'|'+rows.map(r=>r.side+r.names.join()).join('/');
+ if(el._k!==k){el._k=k;el.innerHTML=`<b>${esc(P.title)}</b><small>持場の記録がない参加者</small>`+rows.map(r=>`<div class="dn-row" style="--army:${r.side==='a'?'#c83339':'#216d9f'}"><i></i><span>${esc(r.name)}</span><em>${esc(r.names.filter(n=>n!==r.name).slice(0,4).join('・'))}${r.names.length>4?' ほか'+(r.names.length-4)+'名':''}</em></div>`).join('');}
+ el.hidden=false;el.style.left=Math.round(Math.max(8,Math.min(VW-el.offsetWidth-8,site[0]+28)))+'px';el.style.top=Math.round(Math.max(8,Math.min(VH-el.offsetHeight-90,site[1]-el.offsetHeight/2)))+'px';}
 // 画面外の隊は実位置を変えず、方向・隊数だけを端に示す。
 function renderArmyEdges(groups,a,units){const el=$('#armyEdges');if(!el)return;
  const positions={left:[a.left,a.top+a.height/2,'translateY(-50%)','◀'],right:[a.left+a.width,a.top+a.height/2,'translate(-100%,-50%)','▶'],top:[a.left+a.width/2,a.top,'translateX(-50%)','▲'],bottom:[a.left+a.width/2,a.top+a.height,'translate(-50%,-100%)','▼'],more:[a.left+a.width,a.top+a.height,'translate(-100%,-100%)','一覧']};

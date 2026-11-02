@@ -101,3 +101,10 @@ a{color:#7a1f17}
 .btn,.tbtn,.mini,.act,.pc,.scard,.ic,.pol,.src,.est,.menu-link,.mult button,#compactSpeed,.tlsrc{background:#e2d5b4!important}
 .bnar,.atlas-stage .battle-key{background:#cfc099}
 #title{background:radial-gradient(ellipse 110% 42% at 50% 48%,rgba(8,6,4,.88),rgba(8,6,4,.62) 70%,rgba(8,6,4,.8))}
+/* 布陣プレビューの不詳札 */
+#deployNote{position:absolute;z-index:6;max-width:300px;padding:8px 12px;font-size:12px;pointer-events:none;color:#2a1d10}
+#deployNote b{display:block;font-family:var(--f-fude);font-weight:400;font-size:16px}
+#deployNote small{display:block;color:#5d4c33;margin-bottom:4px}
+#deployNote .dn-row{display:flex;gap:6px;align-items:baseline;margin-top:3px}
+#deployNote .dn-row i{width:10px;height:10px;background:var(--army);flex:none;border:1px solid #2a1d10}
+#deployNote .dn-row span{font-weight:700;white-space:nowrap}#deployNote .dn-row em{font-style:normal;color:#3f3221}
