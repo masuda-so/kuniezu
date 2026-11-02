@@ -1,0 +1,19 @@
+{
+  "scope": "現代の車道（OpenStreetMap、OSRM）を経由地の区間ごとに照会した比較線。戦国期の道筋そのものではない。軍事境界線などで道がつながらない区間は経由地の直線のまま。",
+  "roads": {
+    "義州大路": {
+      "points": 1240,
+      "km": 529.1,
+      "waypointKm": 411.7,
+      "maxWaypointMetres": 4743,
+      "straightLegs": 6
+    },
+    "関北路": {
+      "points": 1422,
+      "km": 388.4,
+      "waypointKm": 289.6,
+      "maxWaypointMetres": 753,
+      "straightLegs": 1
+    }
+  }
+}

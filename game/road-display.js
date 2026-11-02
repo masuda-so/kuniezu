@@ -17,6 +17,9 @@
  TK.RESEARCH_SOURCES.wakasaKumagawa={author:'若狭町',title:'熊川宿',url:'https://www.town.fukui-wakasa.lg.jp/soshiki/kankoumatizukurika/gyomuannai/1/3/3224.html',locator:'1589年の宿場町化',accessed:'2026-11-02',scope:'熊川の位置と宿場の成立年代。'};
  TK.RESEARCH_SOURCES.wakasaComparison={author:'OpenStreetMap contributors / OSRM',title:'若狭街道の比較車道（国道367号・303号・27号）',url:'https://www.openstreetmap.org/copyright',locator:'2026-11-02取得、京都・朽木市場・熊川・小浜を経由点に照会',accessed:'2026-11-02',scope:'近現代の比較道路。花折峠はトンネルの位置を通る。'};
  TK.ROAD_EVIDENCE['若狭街道']={level:'unverified',geometry:'modern-reference',sources:['wakasaMlit','wakasaKumagawa','wakasaComparison'],status:'京都から大原・途中・花折峠・朽木市場・保坂・熊川・上中を経て小浜へ至る。経由地の順序は史料に合わせ、線は国道367号・303号・27号の比較線。'};
+ TK.RESEARCH_SOURCES.koreaRoadComparison={author:'OpenStreetMap contributors / OSRM',title:'義州大路・関北路の比較車道',url:'https://www.openstreetmap.org/copyright',locator:'2026-11-02取得、経由地の区間ごとに照会。軍事境界線などでつながらない区間は経由地の直線',accessed:'2026-11-02',scope:'近現代の比較道路。表示だけに使い、行軍計算は経由地の線を保持する。'};
+ TK.ROAD_EVIDENCE['義州大路']={...TK.ROAD_EVIDENCE['義州大路'],sources:[...(TK.ROAD_EVIDENCE['義州大路']?.sources||[]),'koreaRoadComparison'],drawReference:true,alignment:'1488年の通過地を含む経由地をすべて通り、区間内は近現代の車道の屈曲を参照'};
+ TK.ROAD_EVIDENCE['関北路']={...TK.ROAD_EVIDENCE['関北路'],sources:[...(TK.ROAD_EVIDENCE['関北路']?.sources||[]),'koreaRoadComparison']};
  TK.ROAD_EVIDENCE['北陸道']={level:'unverified',geometry:'mixed-source',sources:['kinomeFukuiTraffic','kinomeBunkaMap','kinomeComparison'],mappedSections:[{from:'木ノ芽峠',to:'湯尾峠',source:'kinomeBunkaMap'}],status:'敦賀から木ノ芽峠・今庄を経る系統。近江から栃ノ木峠を越える道とは今庄で合流する。公式図の区間と周辺の近現代道路比較を組み合わせた線。'};
  const cache=new WeakMap();
  /* reference-excursion-reviews:start */
@@ -29,7 +32,7 @@
    const approved=reviewed.some(r=>r.junction[0]===points[a][0]&&r.junction[1]===points[a][1]&&length>=r.lengthRange[0]&&length<=r.lengthRange[1]);if(returnRatio<.999&&!approved)continue;cuts.push({first:a,last:b,lengthKm:length,returnRatio,reviewed:approved,junction:points[a]});covered=b;}
   const out=[];let i=0;for(const cut of cuts){out.push(...points.slice(i,cut.first+1));i=cut.last+1;}out.push(...points.slice(i));return {points:out,excursions:cuts,removedVertices:points.length-out.length};
  };
- TK.roadDisplay=function(r){let v=cache.get(r);if(v)return v;const e=TK.ROAD_EVIDENCE[r.name]||{},pts=TK.MODERN_ROAD_REFERENCE[r.name],use=pts&&(!e.sources?.length||e.level==='unverified'||r.name==='東海道');
+ TK.roadDisplay=function(r){let v=cache.get(r);if(v)return v;const e=TK.ROAD_EVIDENCE[r.name]||{},pts=TK.MODERN_ROAD_REFERENCE[r.name],use=pts&&(!e.sources?.length||e.level==='unverified'||e.drawReference||r.name==='東海道');
  const repaired=use?TK.cleanReferenceExcursions(pts,reviewedExcursions[r.name]||[]):null,reference=repaired?.points||pts,cleanup=repaired?.removedVertices?{kind:'removed-reference-excursions',excursions:repaired.excursions,removedVertices:repaired.removedVertices}:null;
  let detailed=use?reference.map(p=>G.PJ(...p)):null;if(use&&r.name==='東海道'){const nearest=(line,P)=>line.reduce((v,p,i)=>Math.hypot(p[0]-P[0],p[1]-P[1])<v.d?{i,d:Math.hypot(p[0]-P[0],p[1]-P[1])}:v,{i:0,d:Infinity}).i,A=G.PJ(138.91,35.12),B=G.PJ(139.155,35.25),a=nearest(detailed,A),b=nearest(detailed,B),ra=nearest(r.pts,A),rb=nearest(r.pts,B);if(a<b&&ra<rb)detailed=[...detailed.slice(0,a),...r.pts.slice(ra,rb+1),...detailed.slice(b+1)];}
  v=use?{...r,pts:detailed,modernReference:true,referenceCleanup:cleanup,evidence:{...e,label:r.name}}:r;if(!use&&pts&&e.level==='corridor'&&!['東海道','塩津街道'].includes(r.name)){const modern=pts.map(p=>G.PJ(...p)),nearest=P=>modern.reduce((v,p,i)=>{const d=Math.hypot(p[0]-P[0],p[1]-P[1]);return d<v.d?{i,d}:v;},{i:0,d:Infinity}),out=[r.pts[0]];let aligned=0;
