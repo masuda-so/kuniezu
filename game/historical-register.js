@@ -35,6 +35,9 @@
  const init=G.newGame;G.newGame=function(...args){const s=init(...args);G.reconcileHistoricalPeople(s);return s;};
  const set=G.setS;G.setS=function(s){const r=set(s);G.reconcileHistoricalPeople(G.S());return r;};
  TK.PERSON_RESIDENCE_EVIDENCE={'武田勝頼':{source:'katsuyoriResidence',stages:[{year:1562,place:'高遠城'},{year:1573,place:'躑躅ヶ崎館'}]},'毛利輝元':{source:'terumotoResidence',stages:[{year:1571,place:'郡山城（当時の毛利氏本拠）'},{year:1591,place:'広島城'}]},'松平家忠':{source:'kajiroResidence',stages:[{year:1590,place:'忍城'},{year:1592,lunarDate:[1592,2,19],place:'上代（所在地には異説）'},{year:1594,place:'小見川城'},{year:1600,place:'伏見城守備・討死'}]}};
+ TK.RESEARCH_SOURCES.shimazuIinoResidence={"author":"鹿児島県観光サイト「かごしまの旅」","title":"島津義弘公の戦い（第一部）","url":"https://www.kagoshima-kankou.com/feature/shimadu2019/introduction2","locator":"永禄7年（1564年）・元亀3年（1572年）の項、飯野城跡の説明","scope":"1564年の飯野入城と木崎原合戦時の飯野からの出陣。兵数・経路・時刻は記述の精度と異説を別途検討する。","accessed":"2026-11-02"};
+ const yoshihiroResidence={source:'shimazuIinoResidence',stages:[{year:1564,place:'飯野城'}]};
+ TK.PERSON_RESIDENCE_EVIDENCE['島津忠平']=TK.PERSON_RESIDENCE_EVIDENCE['島津義弘']=yoshihiroResidence;
  TK.RESEARCH_SOURCES.suwaharaChronology={author:'島田市博物館',title:'牧野城とは・牧野城に在城した徳川の武将たち',url:'https://www.city.shimada.shizuoka.jp/shimahaku/docs/863749869.html',year:'2025',locator:'牧野城とは、今川氏真の項（今川氏真詠草の旧暦8月24日）',scope:'1575年8月24日の攻略と改称、武田から徳川への移行。1590年廃城は推定説。紹介ページの廃城時期不明という説明も保持。',accessed:'2026-11-01'};
  const suwaharaTaken=()=>G.S().t>=G.evT({d:TK.lunarDate(1575,8,24)});
  const y=TK.YOSHO.find(y=>y[0]==='諏訪原城');if(y){y[4]='1573年、武田勝頼が馬場信春に命じて築いた山城。1575年の旧暦8月24日に徳川方へ降り、牧野城となった。今川氏真・松井忠次・牧野康成らが守備に関わり、松平家忠も交代の城番を務めた。';y[6]=1591;TK.CASTLE_EVIDENCE[y[0]]={role:'武田・徳川の国境防御拠点',description:y[4],source:TK.RESEARCH_SOURCES.suwaharaChronology.url,checked:'2026-11-01',abandonment:'year-hypothesis',abandonmentYear:1590,datePrecision:'year',dateNote:'1590年廃城説を採用し、年精度のため翌年から非稼働とする。廃城日を確定したものではない。'};}

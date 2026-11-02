@@ -1,0 +1,78 @@
+{
+  "result": {
+    "date": {
+      "y": 1572,
+      "m": 5,
+      "leap": 0,
+      "d": 3,
+      "gy": 1572,
+      "gm": 6,
+      "gd": 13
+    },
+    "version": 22,
+    "names": [
+      "島津忠平"
+    ],
+    "phase": {
+      "key": "march",
+      "name": "行軍中"
+    },
+    "point": [
+      265.3576762036568,
+      1942.9997987142106
+    ],
+    "target": [
+      265.3575741549852,
+      1943.0000000000007
+    ],
+    "distance": 0.00022567653996237777,
+    "arrival": 4363,
+    "visualEnd": 4363
+  },
+  "battle": {
+    "date": {
+      "y": 1572,
+      "m": 5,
+      "leap": 0,
+      "d": 4,
+      "gy": 1572,
+      "gm": 6,
+      "gd": 14
+    },
+    "groups": [
+      {
+        "id": "group-0",
+        "label": "伊東祐安",
+        "members": [
+          "a-0"
+        ],
+        "side": "a",
+        "point": [
+          130.84,
+          32.035
+        ],
+        "precision": "交戦地域の代表点・対陣方向未詳",
+        "dock": false,
+        "source": "kizakiSite"
+      },
+      {
+        "id": "group-1",
+        "label": "島津義弘",
+        "members": [
+          "b-0"
+        ],
+        "side": "b",
+        "point": [
+          130.84,
+          32.035
+        ],
+        "precision": "交戦地域の代表点・対陣方向未詳",
+        "dock": false,
+        "source": "kizakiSite"
+      }
+    ]
+  },
+  "sourceOverrides": [],
+  "scope": "Shared server without overrides",
+  "errors": []
+}

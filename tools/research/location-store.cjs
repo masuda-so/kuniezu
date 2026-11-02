@@ -15,6 +15,7 @@ function validateLocations({people,places,locations,sources}){
  const relations=new Set(['held-castle-lordship','principal-base','residence-transfer','attested-presence']);
  for(const r of locations){if(r.estimated===true||r.runId)throw Error('推定・プレイ履歴を史実参照へ混ぜない');validateTime(r.time);if(!persons.has(r.person)||!sites.has(r.place))throw Error('人物・場所IDが未登録');
   if(!relations.has(r.relation)||r.recordType!=='sourced-location-observation'||r.status!=='verified-in-specified-scope')throw Error('関係・審査状態が不正');
+  if(r.corroboratingSources!==undefined&&(!Array.isArray(r.corroboratingSources)||r.corroboratingSources.some(id=>typeof id!=='string'||!sources[id])))throw Error('補助出典IDが不正');
   if(!sources[r.source]||r.sourceUrl!==sources[r.source].url||!r.locator||!r.uncertainty||!/^\d{4}-\d{2}-\d{2}$/.test(r.recordedAt||'')||!r.gameBindings?.length)throw Error('出典・範囲・記録日・実装対応が不足');
  }
  return {people,places,locations};

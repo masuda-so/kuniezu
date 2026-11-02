@@ -1,0 +1,22 @@
+{
+  "person": "person:shimazu-yoshihiro",
+  "source": "shimazuIinoResidence",
+  "sourceUrl": "https://www.kagoshima-kankou.com/feature/shimadu2019/introduction2",
+  "recordType": "sourced-location-observation",
+  "status": "verified-in-specified-scope",
+  "recordedAt": "2026-11-02",
+  "gameBindings": [
+    "TK.PERSON_RESIDENCE_EVIDENCE"
+  ],
+  "id": "location:yoshihiro-iino-1564",
+  "place": "place:iino",
+  "relation": "residence-transfer",
+  "time": {
+    "kind": "year-window",
+    "year": 1564,
+    "calendar": "CE-year",
+    "precision": "year"
+  },
+  "locator": "永禄7年（1564年）に真幸院の領主に任じられ飯野城を居城としたとの説明",
+  "uncertainty": "年精度の入城記録。年初からの滞在、毎日の居所、長期不在の有無は示さない。"
+}
