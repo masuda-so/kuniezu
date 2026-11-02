@@ -219,3 +219,10 @@ hokkokukaido-geometry、road-display、movement-save、road-excursions検査を�
 ## 2026-11-02 木ノ芽峠越を採用
 
 北陸道を文化庁選定図1893点13.510kmと南GSI比較12.410km・北foot比較15.638kmへ統合し、旧20.855km閉往復を置換。独立駅点16.4/27.9/56.7m差、接続差1.412/1.925/3.561/0m。今庄で北国街道（近江）と同じ局所道路網へ接続し別系統を保持。保存版16、全7×720日、移行、全採用点保持、原端点保持、専用Chrome3画面・例外0、構成検査通過。詳細 KINOME_ROUTE_INTEGRATION_REVIEW。現行61線203区間180.344km整理、残59線224閉路候補。史料命題48。標高の初期読込遅延は継続点検。全体ゴールactive、サーバー操作なし。
+
+
+## 2026-11-02 Reasonでの合戦検証分担
+
+Claudeが合戦演出・家紋・駒、Codexが街道/地形と全件検証を担当。全111合戦の地図読込・登録部隊数一致・例外0。指定3戦のfxParts最大85/58/136、鉄砲煙生成54/84/228、例外0、画像実見済み。BATTLE_EFFECTS_COLLABORATION_REVIEW参照。関ヶ原の名前/幟重なりはClaudeへ修正依頼。沖田畷の有馬隊が海上に見える件は海岸/代表点/移動を次に照合する。
+
+terrain-first-paint-browserを追加し専用Chromeで計測。SHA 3c27d733…の同一版で木ノ芽の中間919ms/目標z11 4450ms/取得終了5512ms、朝鮮1525/4616/4616ms。単発順次観察で恒常性能差ではない。結果data/verification/terrain-first-paint/result.json。terrain-tiles.jsはClaudeが縮小時の高解像度キャッシュ代用を担当中のためCodexは編集しない。サーバー操作なし、全体ゴールactive。
