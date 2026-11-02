@@ -84,6 +84,9 @@ window.TKBattleAtlas=(function(){
   function groupDraw(dt,now,playing){const located=groups.filter(g=>g.point&&t>=visibleFrom(unitById.get(g.members[0])||{})),pins=located.map(pinFor),named=[],badged=new Set();
    groupOf.clear();located.forEach((g,i)=>groupOf.set(g.members[0],{g,pin:pins[i]}));
    const kb=clamp(W/760,.62,1.1),small=W<560;
+   // 同じ代表点に重なる隊は、陣営順に小さな輪へ振り分けて個別に見せる。実位置（pins）は変えず、輪の中心に点を打つ。
+   const disp=pins.map(p=>[p[0],p[1]]),stacked=new Set();{const byKey=new Map();located.forEach((g,i)=>{const key=Math.round(pins[i][0]/3)+','+Math.round(pins[i][1]/3);if(!byKey.has(key))byKey.set(key,[]);byKey.get(key).push(i);});
+    for(const idx of byKey.values()){if(idx.length<2)continue;idx.sort((a,b)=>sideOf(unitById.get(located[a].members[0])).localeCompare(sideOf(unitById.get(located[b].members[0])))||a-b);const r=small?7:9;idx.forEach((i,j)=>{const th=Math.PI*2*j/idx.length-Math.PI/2;disp[i]=[pins[i][0]+Math.cos(th)*r,pins[i][1]+Math.sin(th)*r];stacked.add(i);});}}
    // 交戦の組（beats の第3要素）。最新の組は薄く残し、始まりから16で弱める。
    const beat=(sc.beats||[]).filter(b=>b[0]<=t&&b[2]?.length).at(-1),active=new Set(beat?beat[2]:[]),clashK=beat?Math.max(.35,1-(t-beat[0])/16):0;
    const livePin=id=>{const r=groupOf.get(id);if(!r)return null;const u=unitById.get(id);return u&&!isDead(u)?r.pin:null;};
@@ -92,11 +95,12 @@ window.TKBattleAtlas=(function(){
     else for(const p of [a,b]){fx.ring(ctx,p[0],p[1],now,clashK,small?18:22);if(playing&&fx.rnd()<dt*8*clashK)fx.spawn(p[0],p[1],'dust');}}
    // 段階移動の足跡は駒より下に描く。
    for(const [index,g]of located.entries()){const u=unitById.get(g.members[0]);const move=u&&moveByName.get(u.g||u.n);if(move&&t>move.from)fx.trail(ctx,traversed(move,pins[index]),COL[sideOf(u)]||COL.unknown,kb);}
-   for(const [index,g]of located.entries()){const u=unitById.get(g.members[0]);if(!u)continue;const [x,y]=pins[index],near=located.filter((q,j)=>Math.hypot(pins[j][0]-x,pins[j][1]-y)<20),sel=selected===g.id||selected===g.parentId||g.members.includes(selected),side=sideOf(u),dead=isDead(u),routed=isRouted(u),col=dead?'#8a8174':u.turn&&t>=u.turn[0]?'#b47712':COL[side]||COL.unknown;
+   for(const [index,g]of located.entries()){const u=unitById.get(g.members[0]);if(!u)continue;const [x,y]=disp[index],[px0,py0]=pins[index],mySide=sideOf(u),near=located.filter((q,j)=>sideOf(unitById.get(q.members[0]))===mySide&&Math.hypot(pins[j][0]-px0,pins[j][1]-py0)<20),sel=selected===g.id||selected===g.parentId||g.members.includes(selected),side=sideOf(u),dead=isDead(u),routed=isRouted(u),col=dead?'#8a8174':u.turn&&t>=u.turn[0]?'#b47712':COL[side]||COL.unknown;
+    if(stacked.has(index)){ctx.save();ctx.fillStyle='#2a1d10';ctx.beginPath();ctx.arc(px0,py0,1.6,0,Math.PI*2);ctx.fill();ctx.restore();}
     ctx.save();const from=visibleFrom(u);let alpha=from?clamp((t-from)/2,0,1):1;if(dead)alpha*=clamp(1-(t-u.die)/10,.32,1);else if(routed)alpha*=clamp(1-(t-u.rout)/14,.45,1);ctx.globalAlpha=alpha;
     const move=moveByName.get(u.g||u.n),moving=move&&t>move.from&&t<move.to;let aim=null;
     if(move&&t>move.from){const f=G.battlePhasePoint(sc,u.g||u.n,Math.min(move.to,t+.05),g.point),p=G.battlePhasePoint(sc,u.g||u.n,Math.max(move.from,Math.min(move.to,t)-.05),g.point),A=pj(...p),B=pj(...f);if(Math.hypot(B[0]-A[0],B[1]-A[1])>1e-6)aim=[B[0]-A[0],B[1]-A[1]];}
-    if(!aim){let best=Infinity;for(const [j,q] of located.entries()){const v=unitById.get(q.members[0]),op=sideOf(v);if(op===side||isDead(v))continue;const a=pins[j],d=Math.hypot(a[0]-x,a[1]-y);if(d>1&&d<best){best=d;aim=[a[0]-x,a[1]-y];}}}
+    if(!aim){let best=Infinity;for(const [j,q] of located.entries()){const v=unitById.get(q.members[0]),op=sideOf(v);if(op===side||isDead(v))continue;const a=pins[j],d=Math.hypot(a[0]-px0,a[1]-py0);if(d>1&&d<best){best=d;aim=[a[0]-px0,a[1]-py0];}}}
     const target=aim?Math.atan2(aim[1],aim[0])+Math.PI/2:undefined,ang=fx.heading(g.id,target,dt,!playing||lastSnap);
     if(moving&&playing&&fx.rnd()<dt*10)fx.spawn(x,y,'dust');
     ctx.save();ctx.translate(x,y);if(Number.isFinite(ang))ctx.rotate(ang);const cw=small?22:28,ch=small?15:19;TKCounter.path(ctx,cw,ch);ctx.fillStyle=col;ctx.fill();ctx.save();TKCounter.path(ctx,cw,ch);ctx.clip();const tint=ctx.createLinearGradient(0,-ch*.55,0,ch*.55);tint.addColorStop(0,'rgba(255,255,240,.20)');tint.addColorStop(.5,'rgba(255,255,240,0)');tint.addColorStop(1,'rgba(30,15,0,.14)');ctx.fillStyle=tint;ctx.fillRect(-cw,-ch,cw*2,ch*2);ctx.restore();TKCounter.path(ctx,cw,ch);ctx.strokeStyle=sel?'#e5ad3f':'#2a1d10';ctx.lineWidth=sel?2.6:active.has(u.id)?2.4:1.7;ctx.lineJoin='round';ctx.stroke();ctx.restore();TKCounter.path(ctx,cw,ch);ctx.strokeStyle=sel?'#e5ad3f':'#2a1d10';ctx.lineWidth=sel?2.6:active.has(u.id)?2.4:1.8;ctx.lineJoin='round';ctx.stroke();TKCounter.path(ctx,cw*.84,ch*.76);ctx.lineWidth=.9;ctx.strokeStyle='rgba(255,248,225,.75)';ctx.stroke();ctx.restore();
@@ -112,7 +116,7 @@ window.TKBattleAtlas=(function(){
      // 名札：右・下・左・上の順に、既存の札と駒に重ならない位置へ置く。駒の位置は動かさない。
      const label=(leader.g||leader.n)+(near.length>1?' ほか'+(near.length-1)+'隊':'')+(status?'・'+status:'');ctx.font=`600 12px ${FONT}`;const w=ctx.measureText(label).width+10,h=18;
      const cands=[{x:x+(small?30:36),y:y-16},{x:x-w/2,y:y+(small?22:26)},{x:x-w-(small?32:38),y:y-16},{x:x-w/2,y:y-(small?58:66)}];
-     const clash=b=>named.some(a=>b.x<a.x+a.w&&b.x+b.w>a.x&&b.y<a.y+a.h&&b.y+b.h>a.y)||pins.some((q,j)=>j!==index&&b.x<q[0]+22&&b.x+b.w>q[0]-34&&b.y<q[1]+14&&b.y+b.h>q[1]-38);
+     const clash=b=>named.some(a=>b.x<a.x+a.w&&b.x+b.w>a.x&&b.y<a.y+a.h&&b.y+b.h>a.y)||disp.some((q,j)=>j!==index&&b.x<q[0]+22&&b.x+b.w>q[0]-34&&b.y<q[1]+14&&b.y+b.h>q[1]-38);
      const b=cands.map(p=>({x:clamp(p.x,2,W-w-2),y:clamp(p.y,2,H-h-2),w,h})).find(b=>!clash(b))||(sel?{x:clamp(cands[0].x,2,W-w-2),y:clamp(cands[0].y,2,H-h-2),w,h}:null);
      if(b){ctx.fillStyle='rgba(253,247,230,.94)';ctx.fillRect(b.x,b.y,w,h);ctx.strokeStyle='#2a1d10';ctx.lineWidth=.8;ctx.strokeRect(b.x+.5,b.y+.5,w-1,h-1);ctx.fillStyle=col;ctx.fillRect(b.x,b.y,3,h);ctx.font=`600 12px ${FONT}`;ctx.textAlign='left';ctx.textBaseline='middle';ctx.fillStyle=status?'#7a2218':'#302719';ctx.fillText(label,b.x+7,b.y+h/2+.5);named.push(b);}}
     boxes.push({x:x-36,y:y-40,w:72,h:76,id:g.id});ctx.restore();
