@@ -112,9 +112,10 @@ window.TKBattleAtlas=(function(){
     if(dead)fx.cross(ctx,x,y);
     const status=dead?'討死':routed?'退却':'';
     const leader=near.length>1?unitById.get(near[0].members[0]):u,isLead=leader===u;
-    if(isLead){const face=opt.face?.(leader.g,12,col);if(face)ctx.drawImage(face,x-(small?30:34),y-12,24,24);
+    // 代表の札は陣営ごとに一つ。参加者欄で選んだ隊は代表でなくても本人の名前と顔を出す。
+    if(isLead||sel){const shown=isLead?leader:u;const face=opt.face?.(shown.g,12,col);if(face)ctx.drawImage(face,x-(small?30:34),y-12,24,24);
      // 名札：右・下・左・上の順に、既存の札と駒に重ならない位置へ置く。駒の位置は動かさない。
-     const label=(leader.g||leader.n)+(near.length>1?' ほか'+(near.length-1)+'隊':'')+(status?'・'+status:'');ctx.font=`600 12px ${FONT}`;const w=ctx.measureText(label).width+10,h=18;
+     const label=(shown.g||shown.n)+(isLead&&near.length>1?' ほか'+(near.length-1)+'隊':'')+(status?'・'+status:'');ctx.font=`600 12px ${FONT}`;const w=ctx.measureText(label).width+10,h=18;
      const cands=[{x:x+(small?30:36),y:y-16},{x:x-w/2,y:y+(small?22:26)},{x:x-w-(small?32:38),y:y-16},{x:x-w/2,y:y-(small?58:66)}];
      const clash=b=>named.some(a=>b.x<a.x+a.w&&b.x+b.w>a.x&&b.y<a.y+a.h&&b.y+b.h>a.y)||disp.some((q,j)=>j!==index&&b.x<q[0]+22&&b.x+b.w>q[0]-34&&b.y<q[1]+14&&b.y+b.h>q[1]-38);
      const b=cands.map(p=>({x:clamp(p.x,2,W-w-2),y:clamp(p.y,2,H-h-2),w,h})).find(b=>!clash(b))||(sel?{x:clamp(cands[0].x,2,W-w-2),y:clamp(cands[0].y,2,H-h-2),w,h}:null);
@@ -149,7 +150,7 @@ window.TKBattleAtlas=(function(){
 
   cv.addEventListener('click',onClick);const ro=new ResizeObserver(size);size();ro.observe(cv.parentElement);
   load(meta).then(d=>{if(dead)return;data=d;backdrop();frameDraw();if(pendingPlay){pendingPlay=false;controller.play();}}).catch(()=>{if(dead)return;error='地形を読み込めません。ページを再読み込みしてください。';backdrop();frameDraw();});
-  return {...controller,play(){if(!data&&!sc.atlasPlan){pendingPlay=true;return;}controller.play();wake();},pause(){pendingPlay=false;controller.pause();},seek(v){controller.seek(v);fx.clear();lastSnap=true;frameDraw();},get playing(){return pendingPlay||controller.playing;},get t(){return controller.t;},get ended(){return controller.ended;},get speed(){return controller.speed;},select(id){if(t<(sc.mapVisibleFrom?.[id]||0))controller.seek(sc.mapVisibleFrom[id]);selected=id;selectionPanel([id]);frameDraw();},unitStates(){return groups.filter(g=>g.point).map(g=>{const u=unitById.get(g.members[0]),move=moveByName.get(u.g||u.n),side=u.turn&&t>=u.turn[0]?(u.turn[1]||'a'):u.side,status=t<(sc.mapVisibleFrom?.[u.id]||0)?'本戦の布陣':t<(u.from||0)?'着陣前':u.die!=null&&t>=u.die?'討死':u.rout!=null&&t>u.rout?'退却':move&&t>move.from&&t<move.to?'移動中':G.battleActiveUnits(sc,t).includes(u.id)?'交戦':t>=100?'戦闘終了':'布陣';return {id:u.id,side,status,point:G.battlePhasePoint(sc,u.g||u.n,t,g.point)};});},destroy(){dead=true;if(fxRaf)cancelAnimationFrame(fxRaf);fxRaf=0;controller.destroy();ro.disconnect();cv.removeEventListener('click',onClick);}};
+  return {...controller,play(){if(!data&&!sc.atlasPlan){pendingPlay=true;return;}controller.play();wake();},pause(){pendingPlay=false;controller.pause();},seek(v){controller.seek(v);fx.clear();lastSnap=true;frameDraw();},get playing(){return pendingPlay||controller.playing;},get t(){return controller.t;},get ended(){return controller.ended;},get speed(){return controller.speed;},select(id){const from=visibleFrom(unitById.get(id)||{id});if(t<from)controller.seek(from);selected=id;selectionPanel([id]);frameDraw();},unitStates(){return groups.filter(g=>g.point).map(g=>{const u=unitById.get(g.members[0]),move=moveByName.get(u.g||u.n),side=u.turn&&t>=u.turn[0]?(u.turn[1]||'a'):u.side,status=t<(sc.mapVisibleFrom?.[u.id]||0)?'本戦の布陣':t<(u.from||0)?'着陣前':u.die!=null&&t>=u.die?'討死':u.rout!=null&&t>u.rout?'退却':move&&t>move.from&&t<move.to?'移動中':G.battleActiveUnits(sc,t).includes(u.id)?'交戦':t>=100?'戦闘終了':'布陣';return {id:u.id,side,status,point:G.battlePhasePoint(sc,u.g||u.n,t,g.point)};});},destroy(){dead=true;if(fxRaf)cancelAnimationFrame(fxRaf);fxRaf=0;controller.destroy();ro.disconnect();cv.removeEventListener('click',onClick);}};
  }
  return {make,preload(title){const m=TK.BATTLE_ATLAS[title];return m?load(m):Promise.resolve(null);}};
 })();
