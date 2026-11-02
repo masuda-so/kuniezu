@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://earth.google.com/kml/2.2">
+<Document>
+	<name>歴史的農業環境閲覧システム</name>
+	<open>1</open>
+	<NetworkLink>
+		<name>歴 史 的 農 業 環 境 閲 覧 シ ス テ ム</name>
+		<description><![CDATA[<br /><h3><font color="#330000">迅速測図</font></h3>
+<p><font color="#666666">迅速測図とは、明治初期から中期にかけて行われた簡便な測量法とその成果の地図のことです。
+関東地方では明治13(1880)年から明治19（1886）年にかけて平野部から房総半島を対象に作成されました。</font></p>
+
+<h3><font color="#330000">精度</font></h3>
+<p><font color="#666666">位置精度は、誤差の大きな所で50ｍ程度の誤差がある場合があります。</font></p>
+
+<h3><font color="#330000">グーグルアース用KMLファイル</font></h3>
+<p><font color="#666666">KML用のファイルの作成に当たっては、<a href="http://www.klokan.cz/projects/gdal2tiles/" target="_blank">GDAL2Tiles</a>を利用しました。　また、Google Earth用表示ファイルは、<a href="http://www.mapconcierge.jp/" target="_blank">マップ・コンシェルジュ</a>の<a href="http://www.mapconcierge.jp/o/htm/profile.html" target="_blank">古橋大地氏</a>よりご提供頂きました。</font></p>
+
+<h3><font color="#330000">データ利用</font></h3>
+<p><font color="#666666">本システムのデータを利用の条件は、<a href="https://habs.rad.naro.go.jp/habs_faq.html" target="_blank">歴史的農業環境閲覧システムFAQ</a>をご覧ください。</font></p>]]></description>
+		<Region>
+		<LatLonAltBox><north>36.5</north><south>34.9</south><east>141.0</east><west>138.9</west></LatLonAltBox>
+		<Lod><minLodPixels>128</minLodPixels>
+		<maxLodPixels>-1</maxLodPixels></Lod>
+		</Region>
+		<Link>
+			<href>https://habs.rad.naro.go.jp/rapid16/doc8_16.kml</href>
+		</Link>
+	</NetworkLink>
+	<ScreenOverlay>
+		<name>タイトル</name>
+		<color>d8ffffff</color>
+		<Icon>
+			<href>https://habs.rad.naro.go.jp/rapid16/habs_logo.jpg</href>
+		</Icon>
+		<overlayXY x="-0.03" y="1.1" xunits="fraction" yunits="fraction"/>
+		<screenXY x="0" y="1" xunits="fraction" yunits="fraction"/>
+		<rotationXY x="0.5" y="0.5" xunits="fraction" yunits="fraction"/>
+		<size x="-1" y="-1" xunits="pixels" yunits="pixels"/>
+	</ScreenOverlay>
+	<ScreenOverlay>
+		<name>凡例</name>
+			<name>迅速測図凡例</name>
+			<color>d8ffffff</color>
+			<Icon>
+				<href>https://habs.rad.naro.go.jp/rapid16/sokuzu_legend.jpg</href>
+			</Icon>
+			<overlayXY x="1" y="1" xunits="fraction" yunits="fraction"/>
+			<screenXY x="0.99" y="0.7" xunits="fraction" yunits="fraction"/>
+			<rotationXY x="0" y="0" xunits="fraction" yunits="fraction"/>
+			<size x="-1" y="-1" xunits="fraction" yunits="fraction"/>
+	</ScreenOverlay>
+</Document>
+</kml>
