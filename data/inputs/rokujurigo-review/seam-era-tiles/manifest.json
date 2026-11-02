@@ -1,0 +1,1049 @@
+{
+  "accessed": "2026-11-02",
+  "source": "国土地理院・地理院タイル",
+  "registry": "https://maps.gsi.go.jp/help/use.html",
+  "requestedBounds": [
+    140.018,
+    38.425,
+    140.083,
+    38.466
+  ],
+  "zoom": 15,
+  "tileOrigin": [
+    29128,
+    12585
+  ],
+  "tileEnd": [
+    29134,
+    12590
+  ],
+  "layers": [
+    "gazo1",
+    "std"
+  ],
+  "pixelProjection": "Web Mercator tile pixels, 256px per tile",
+  "scope": "各レイヤの撮影時期を保持。近現代写真をゲーム年代の精密復元と同一視しない。",
+  "tiles": [
+    {
+      "layer": "gazo1",
+      "tile": [
+        15,
+        29128,
+        12585
+      ],
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/gazo1/15/29128/12585.jpg",
+      "file": "gazo1-15-29128-12585.jpg",
+      "status": "saved",
+      "sha256": "d6ba830d8d6373eefca2996dde519d9201968499b2c7ef6ec0c24be0537388c2"
+    },
+    {
+      "layer": "gazo1",
+      "tile": [
+        15,
+        29129,
+        12585
+      ],
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/gazo1/15/29129/12585.jpg",
+      "file": "gazo1-15-29129-12585.jpg",
+      "status": "saved",
+      "sha256": "99d73658702c006c211cd6af0c266fb579952a01b59a8e5d43c768f94f5cc5cb"
+    },
+    {
+      "layer": "gazo1",
+      "tile": [
+        15,
+        29130,
+        12585
+      ],
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/gazo1/15/29130/12585.jpg",
+      "file": "gazo1-15-29130-12585.jpg",
+      "status": "saved",
+      "sha256": "87ec75bb377cab1016b8e44a6db8239b0d74a4a527b0203ca6a8b103476905a3"
+    },
+    {
+      "layer": "gazo1",
+      "tile": [
+        15,
+        29131,
+        12585
+      ],
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/gazo1/15/29131/12585.jpg",
+      "file": "gazo1-15-29131-12585.jpg",
+      "status": "saved",
+      "sha256": "a69bead516f46530689f8f236497e06f7cc0df50cda2b058ca7d37b969715ed9"
+    },
+    {
+      "layer": "gazo1",
+      "tile": [
+        15,
+        29132,
+        12585
+      ],
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/gazo1/15/29132/12585.jpg",
+      "file": "gazo1-15-29132-12585.jpg",
+      "status": "saved",
+      "sha256": "008f29f63832b7995d914a0c739a6cf362f116b68dff0fc11f2d735934eddcc3"
+    },
+    {
+      "layer": "gazo1",
+      "tile": [
+        15,
+        29133,
+        12585
+      ],
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/gazo1/15/29133/12585.jpg",
+      "file": "gazo1-15-29133-12585.jpg",
+      "status": "saved",
+      "sha256": "09bf051f1568ce12ca9bdc337b8c189eae798d6d08ea7d270040ea737b08cdfd"
+    },
+    {
+      "layer": "gazo1",
+      "tile": [
+        15,
+        29134,
+        12585
+      ],
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/gazo1/15/29134/12585.jpg",
+      "file": "gazo1-15-29134-12585.jpg",
+      "status": "saved",
+      "sha256": "14e663b2a328e111a90c29d58300a742c84c08790c85b1591396a85189f30b41"
+    },
+    {
+      "layer": "gazo1",
+      "tile": [
+        15,
+        29128,
+        12586
+      ],
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/gazo1/15/29128/12586.jpg",
+      "file": "gazo1-15-29128-12586.jpg",
+      "status": "saved",
+      "sha256": "ab1afb4cc9ecd28245942e3ea68c36ff3bfc559ad4f7aab9181ebe708eada099"
+    },
+    {
+      "layer": "gazo1",
+      "tile": [
+        15,
+        29129,
+        12586
+      ],
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/gazo1/15/29129/12586.jpg",
+      "file": "gazo1-15-29129-12586.jpg",
+      "status": "saved",
+      "sha256": "0ded3a0e0cb209d2e9de12485adcd716b0650a1115422658ed1e854dcc2d0864"
+    },
+    {
+      "layer": "gazo1",
+      "tile": [
+        15,
+        29130,
+        12586
+      ],
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/gazo1/15/29130/12586.jpg",
+      "file": "gazo1-15-29130-12586.jpg",
+      "status": "saved",
+      "sha256": "b1cde9a401c0fa6b036dd01d6cfc9934481729af989a1641cc1b50516b1eef6a"
+    },
+    {
+      "layer": "gazo1",
+      "tile": [
+        15,
+        29131,
+        12586
+      ],
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/gazo1/15/29131/12586.jpg",
+      "file": "gazo1-15-29131-12586.jpg",
+      "status": "saved",
+      "sha256": "e01244fddafef89e9dae4ede0416aaae95402f4a68197a1972066860fa79a6d7"
+    },
+    {
+      "layer": "gazo1",
+      "tile": [
+        15,
+        29132,
+        12586
+      ],
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/gazo1/15/29132/12586.jpg",
+      "file": "gazo1-15-29132-12586.jpg",
+      "status": "saved",
+      "sha256": "935034e6afd6fd800a26d786e07904341ce65473a3b3353d67778d73ba5f7fb4"
+    },
+    {
+      "layer": "gazo1",
+      "tile": [
+        15,
+        29133,
+        12586
+      ],
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/gazo1/15/29133/12586.jpg",
+      "file": "gazo1-15-29133-12586.jpg",
+      "status": "saved",
+      "sha256": "abeaeaf45191811a03edcce2050d044389682fed9f5ee67760646bec75150ea4"
+    },
+    {
+      "layer": "gazo1",
+      "tile": [
+        15,
+        29134,
+        12586
+      ],
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/gazo1/15/29134/12586.jpg",
+      "file": "gazo1-15-29134-12586.jpg",
+      "status": "saved",
+      "sha256": "6e23219eca13a00dbd9a05ec63745f73dfde0b5fb7320210c15741d1809a3790"
+    },
+    {
+      "layer": "gazo1",
+      "tile": [
+        15,
+        29128,
+        12587
+      ],
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/gazo1/15/29128/12587.jpg",
+      "file": "gazo1-15-29128-12587.jpg",
+      "status": "saved",
+      "sha256": "6cea58a05aa2276271a922b5c364cb821f1d403aa44a33327e4765f4640c9602"
+    },
+    {
+      "layer": "gazo1",
+      "tile": [
+        15,
+        29129,
+        12587
+      ],
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/gazo1/15/29129/12587.jpg",
+      "file": "gazo1-15-29129-12587.jpg",
+      "status": "saved",
+      "sha256": "9a8b9d87ad5875945d5d995fab7e0e879c96cdc6685f3645d47c142780fbc8b2"
+    },
+    {
+      "layer": "gazo1",
+      "tile": [
+        15,
+        29130,
+        12587
+      ],
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/gazo1/15/29130/12587.jpg",
+      "file": "gazo1-15-29130-12587.jpg",
+      "status": "saved",
+      "sha256": "e51c8073a8c01bba94158abd0fcc3687b5b979d5e32d12eda882a9689e714404"
+    },
+    {
+      "layer": "gazo1",
+      "tile": [
+        15,
+        29131,
+        12587
+      ],
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/gazo1/15/29131/12587.jpg",
+      "file": "gazo1-15-29131-12587.jpg",
+      "status": "saved",
+      "sha256": "8db5b6a3cbf8a02e05cd06d1c85d42f3404a4af60d1305f2011b9a54d8553f80"
+    },
+    {
+      "layer": "gazo1",
+      "tile": [
+        15,
+        29132,
+        12587
+      ],
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/gazo1/15/29132/12587.jpg",
+      "file": "gazo1-15-29132-12587.jpg",
+      "status": "saved",
+      "sha256": "5aec4a43f6e499e7394bcf67d233e4353fcdf06343483f08043b4857ec051461"
+    },
+    {
+      "layer": "gazo1",
+      "tile": [
+        15,
+        29133,
+        12587
+      ],
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/gazo1/15/29133/12587.jpg",
+      "file": "gazo1-15-29133-12587.jpg",
+      "status": "saved",
+      "sha256": "396263c16f904757b69a54740bf9b4db980467bee87629042ed091d3afd6b498"
+    },
+    {
+      "layer": "gazo1",
+      "tile": [
+        15,
+        29134,
+        12587
+      ],
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/gazo1/15/29134/12587.jpg",
+      "file": "gazo1-15-29134-12587.jpg",
+      "status": "saved",
+      "sha256": "a3bfeb5c486d02f4fd65c60831a4a0d2ccb9e50a189587b11f3744b1f4913cc0"
+    },
+    {
+      "layer": "gazo1",
+      "tile": [
+        15,
+        29128,
+        12588
+      ],
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/gazo1/15/29128/12588.jpg",
+      "file": "gazo1-15-29128-12588.jpg",
+      "status": "saved",
+      "sha256": "aeb6b4ab91dfa3ca7967f0e93dd379f9b3c4781b327e992c1e66573e76c9282d"
+    },
+    {
+      "layer": "gazo1",
+      "tile": [
+        15,
+        29129,
+        12588
+      ],
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/gazo1/15/29129/12588.jpg",
+      "file": "gazo1-15-29129-12588.jpg",
+      "status": "saved",
+      "sha256": "ba16bca11dc11616339d9780962810af946ae755b16eb6b48ea90177321500d3"
+    },
+    {
+      "layer": "gazo1",
+      "tile": [
+        15,
+        29130,
+        12588
+      ],
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/gazo1/15/29130/12588.jpg",
+      "file": "gazo1-15-29130-12588.jpg",
+      "status": "saved",
+      "sha256": "4426069f849d96fefe8bcc8ca620f20158151ef93319dba3802a3af169a042bd"
+    },
+    {
+      "layer": "gazo1",
+      "tile": [
+        15,
+        29131,
+        12588
+      ],
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/gazo1/15/29131/12588.jpg",
+      "file": "gazo1-15-29131-12588.jpg",
+      "status": "saved",
+      "sha256": "2719af232b30e6e28e562a99f6b25ca02c19bd1aa3650cc88f7f3639b666cd9c"
+    },
+    {
+      "layer": "gazo1",
+      "tile": [
+        15,
+        29132,
+        12588
+      ],
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/gazo1/15/29132/12588.jpg",
+      "file": "gazo1-15-29132-12588.jpg",
+      "status": "saved",
+      "sha256": "6d5a6d984d6e19cbd1af9371b257836d7dcbb95b56118260f7f25acbf1da327d"
+    },
+    {
+      "layer": "gazo1",
+      "tile": [
+        15,
+        29133,
+        12588
+      ],
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/gazo1/15/29133/12588.jpg",
+      "file": "gazo1-15-29133-12588.jpg",
+      "status": "saved",
+      "sha256": "a6e11cebcd3bb3026bdf0ae63dc50e5f8a9dd657be05749ec88c2c864de54e46"
+    },
+    {
+      "layer": "gazo1",
+      "tile": [
+        15,
+        29134,
+        12588
+      ],
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/gazo1/15/29134/12588.jpg",
+      "file": "gazo1-15-29134-12588.jpg",
+      "status": "saved",
+      "sha256": "007fdd8b9f9eea256d49684159d50a2e1dd12c60d596d91f77aca70852ed20b1"
+    },
+    {
+      "layer": "gazo1",
+      "tile": [
+        15,
+        29128,
+        12589
+      ],
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/gazo1/15/29128/12589.jpg",
+      "file": "gazo1-15-29128-12589.jpg",
+      "status": "saved",
+      "sha256": "a8907ebaf7ea811410081a4aeaf16475504bf13ce7c8b5b275a619029b5b28df"
+    },
+    {
+      "layer": "gazo1",
+      "tile": [
+        15,
+        29129,
+        12589
+      ],
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/gazo1/15/29129/12589.jpg",
+      "file": "gazo1-15-29129-12589.jpg",
+      "status": "saved",
+      "sha256": "0057aa738f1abbc609d2b02574fbb3fef030c02c61b4e352406804dc0978192d"
+    },
+    {
+      "layer": "gazo1",
+      "tile": [
+        15,
+        29130,
+        12589
+      ],
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/gazo1/15/29130/12589.jpg",
+      "file": "gazo1-15-29130-12589.jpg",
+      "status": "saved",
+      "sha256": "bee09f394cd5853e5babb8e7fc5e9dd8c1da00529590008e1dac60b3adf10339"
+    },
+    {
+      "layer": "gazo1",
+      "tile": [
+        15,
+        29131,
+        12589
+      ],
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/gazo1/15/29131/12589.jpg",
+      "file": "gazo1-15-29131-12589.jpg",
+      "status": "saved",
+      "sha256": "dd8ccdf1d475673cbc356fc19c43881ec9eba818f6a70cae68fbd88572ea5ce2"
+    },
+    {
+      "layer": "gazo1",
+      "tile": [
+        15,
+        29132,
+        12589
+      ],
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/gazo1/15/29132/12589.jpg",
+      "file": "gazo1-15-29132-12589.jpg",
+      "status": "saved",
+      "sha256": "b1e11989c97f204e03a1a6ba24adbe6412d385c72d5d71833e795539a8a0510f"
+    },
+    {
+      "layer": "gazo1",
+      "tile": [
+        15,
+        29133,
+        12589
+      ],
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/gazo1/15/29133/12589.jpg",
+      "file": "gazo1-15-29133-12589.jpg",
+      "status": "saved",
+      "sha256": "4feee63dafbb7d9a1d9043577fab4c844602e7fd89d8f3b6b94506703e875c15"
+    },
+    {
+      "layer": "gazo1",
+      "tile": [
+        15,
+        29134,
+        12589
+      ],
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/gazo1/15/29134/12589.jpg",
+      "file": "gazo1-15-29134-12589.jpg",
+      "status": "saved",
+      "sha256": "951695a09638e5532208b3d0bf0583cfdcc9ad0db93f0ede9bf9aacc600b7b59"
+    },
+    {
+      "layer": "gazo1",
+      "tile": [
+        15,
+        29128,
+        12590
+      ],
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/gazo1/15/29128/12590.jpg",
+      "file": "gazo1-15-29128-12590.jpg",
+      "status": "saved",
+      "sha256": "5f1b538536abc79d9d228a83b5130c9e8ce49fce231fb18b35f5ae5a96e1d8ee"
+    },
+    {
+      "layer": "gazo1",
+      "tile": [
+        15,
+        29129,
+        12590
+      ],
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/gazo1/15/29129/12590.jpg",
+      "file": "gazo1-15-29129-12590.jpg",
+      "status": "saved",
+      "sha256": "24997f73262037334200554044e5ece1712a0c01ef27a5a730b38ce90b630f1c"
+    },
+    {
+      "layer": "gazo1",
+      "tile": [
+        15,
+        29130,
+        12590
+      ],
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/gazo1/15/29130/12590.jpg",
+      "file": "gazo1-15-29130-12590.jpg",
+      "status": "saved",
+      "sha256": "b179985a336be85a2066013839ca1c9bb49770e0f06177c218568b0d75ef5904"
+    },
+    {
+      "layer": "gazo1",
+      "tile": [
+        15,
+        29131,
+        12590
+      ],
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/gazo1/15/29131/12590.jpg",
+      "file": "gazo1-15-29131-12590.jpg",
+      "status": "saved",
+      "sha256": "93f85cf40cf12b739a8074c1d795dd8d7a9e66a3b50af9d27fa1c5877a49dd93"
+    },
+    {
+      "layer": "gazo1",
+      "tile": [
+        15,
+        29132,
+        12590
+      ],
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/gazo1/15/29132/12590.jpg",
+      "file": "gazo1-15-29132-12590.jpg",
+      "status": "saved",
+      "sha256": "33ceffd28d28ccc22f8c79029bbb5db4bb6eae41f86e49d0a4a3eef9927d672f"
+    },
+    {
+      "layer": "gazo1",
+      "tile": [
+        15,
+        29133,
+        12590
+      ],
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/gazo1/15/29133/12590.jpg",
+      "file": "gazo1-15-29133-12590.jpg",
+      "status": "saved",
+      "sha256": "f1fe423283da0e45c81e738fa4240b2718abb659ab5303c0bede6bd9f3315321"
+    },
+    {
+      "layer": "gazo1",
+      "tile": [
+        15,
+        29134,
+        12590
+      ],
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/gazo1/15/29134/12590.jpg",
+      "file": "gazo1-15-29134-12590.jpg",
+      "status": "saved",
+      "sha256": "8923cb240128cbdf3c132e6481ac9ac88731781c457de1e2eadc408722439376"
+    },
+    {
+      "layer": "std",
+      "tile": [
+        15,
+        29128,
+        12585
+      ],
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/std/15/29128/12585.png",
+      "file": "std-15-29128-12585.png",
+      "status": "saved",
+      "sha256": "2653177bf7eb670e6e7d26faf31295858c332e9a53da1a2ae86e79717f07c9ba"
+    },
+    {
+      "layer": "std",
+      "tile": [
+        15,
+        29129,
+        12585
+      ],
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/std/15/29129/12585.png",
+      "file": "std-15-29129-12585.png",
+      "status": "saved",
+      "sha256": "2a918cb2fb1391f49791e4c70811f1cfe4ea0de82baf15412f7d4129754aceb5"
+    },
+    {
+      "layer": "std",
+      "tile": [
+        15,
+        29130,
+        12585
+      ],
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/std/15/29130/12585.png",
+      "file": "std-15-29130-12585.png",
+      "status": "saved",
+      "sha256": "85f2a2fdfd49f434a1dd048534b3f8941f575f74fcb98a7b8765a1b6812766a8"
+    },
+    {
+      "layer": "std",
+      "tile": [
+        15,
+        29131,
+        12585
+      ],
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/std/15/29131/12585.png",
+      "file": "std-15-29131-12585.png",
+      "status": "saved",
+      "sha256": "7c93e70df63599e9ce4906c8896cc5926d7dd2b4bc3e1ffdee25ca72834659b1"
+    },
+    {
+      "layer": "std",
+      "tile": [
+        15,
+        29132,
+        12585
+      ],
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/std/15/29132/12585.png",
+      "file": "std-15-29132-12585.png",
+      "status": "saved",
+      "sha256": "ab415a6baaccc94dcb1dc042e51d5a453e860144c3853960bcb923d7ffaa0f34"
+    },
+    {
+      "layer": "std",
+      "tile": [
+        15,
+        29133,
+        12585
+      ],
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/std/15/29133/12585.png",
+      "file": "std-15-29133-12585.png",
+      "status": "saved",
+      "sha256": "5b8fc13b76a85cf119a9a3cdad4c4bfdbafe3edec0f1dbf00ee6a549b7b6300f"
+    },
+    {
+      "layer": "std",
+      "tile": [
+        15,
+        29134,
+        12585
+      ],
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/std/15/29134/12585.png",
+      "file": "std-15-29134-12585.png",
+      "status": "saved",
+      "sha256": "ee0fee8e761439fcd8e4de2806e9bfdd963b14a12674c6281359899afeaa7d3b"
+    },
+    {
+      "layer": "std",
+      "tile": [
+        15,
+        29128,
+        12586
+      ],
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/std/15/29128/12586.png",
+      "file": "std-15-29128-12586.png",
+      "status": "saved",
+      "sha256": "53555c02f5f77457c15d56ecc5ff97fdfbcbd62bc2a662ce1b07f2cf15f13fee"
+    },
+    {
+      "layer": "std",
+      "tile": [
+        15,
+        29129,
+        12586
+      ],
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/std/15/29129/12586.png",
+      "file": "std-15-29129-12586.png",
+      "status": "saved",
+      "sha256": "c67edce5c11ea97d967883be8c8f1fe34313c0c89cb1a5649bd95210d0d2b84c"
+    },
+    {
+      "layer": "std",
+      "tile": [
+        15,
+        29130,
+        12586
+      ],
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/std/15/29130/12586.png",
+      "file": "std-15-29130-12586.png",
+      "status": "saved",
+      "sha256": "fd0eb996051226c29e20cb26e8a128187bce0a9ff9036e933a6a6d0f50189c15"
+    },
+    {
+      "layer": "std",
+      "tile": [
+        15,
+        29131,
+        12586
+      ],
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/std/15/29131/12586.png",
+      "file": "std-15-29131-12586.png",
+      "status": "saved",
+      "sha256": "b1bf9c4f6306e15285ea7902a365e5abb6a82510ce881602425f3ecd0087adc8"
+    },
+    {
+      "layer": "std",
+      "tile": [
+        15,
+        29132,
+        12586
+      ],
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/std/15/29132/12586.png",
+      "file": "std-15-29132-12586.png",
+      "status": "saved",
+      "sha256": "a97c733d6311ea00d92b0fd875e145855409d4beaad47d8faf2d999cebc25161"
+    },
+    {
+      "layer": "std",
+      "tile": [
+        15,
+        29133,
+        12586
+      ],
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/std/15/29133/12586.png",
+      "file": "std-15-29133-12586.png",
+      "status": "saved",
+      "sha256": "6ae6f17566b5fc39041ce11cae4f64d3330ea08b913841bf0875ee330c35f8a3"
+    },
+    {
+      "layer": "std",
+      "tile": [
+        15,
+        29134,
+        12586
+      ],
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/std/15/29134/12586.png",
+      "file": "std-15-29134-12586.png",
+      "status": "saved",
+      "sha256": "c49e77f6c4a72a9bc6fc1b03e310dcf508665b05d0bb24d9619da69f487aaef1"
+    },
+    {
+      "layer": "std",
+      "tile": [
+        15,
+        29128,
+        12587
+      ],
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/std/15/29128/12587.png",
+      "file": "std-15-29128-12587.png",
+      "status": "saved",
+      "sha256": "7d89f332f0cc3d9fcf1053aabce347227af63ccdaca83d40fbdd3f9cd382899d"
+    },
+    {
+      "layer": "std",
+      "tile": [
+        15,
+        29129,
+        12587
+      ],
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/std/15/29129/12587.png",
+      "file": "std-15-29129-12587.png",
+      "status": "saved",
+      "sha256": "c304c580e9e3fcde15148daf67d75db15dd94bb4e45024b45949d25c2fc52903"
+    },
+    {
+      "layer": "std",
+      "tile": [
+        15,
+        29130,
+        12587
+      ],
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/std/15/29130/12587.png",
+      "file": "std-15-29130-12587.png",
+      "status": "saved",
+      "sha256": "e0853f7611e9b31214e8b8a71527faca97d242f26cb61dc25cc4f3c4a9bae5ef"
+    },
+    {
+      "layer": "std",
+      "tile": [
+        15,
+        29131,
+        12587
+      ],
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/std/15/29131/12587.png",
+      "file": "std-15-29131-12587.png",
+      "status": "saved",
+      "sha256": "2ecbefa11441374d304d5367bcb6f5469f01ecdf100970f89fa2517fec07467c"
+    },
+    {
+      "layer": "std",
+      "tile": [
+        15,
+        29132,
+        12587
+      ],
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/std/15/29132/12587.png",
+      "file": "std-15-29132-12587.png",
+      "status": "saved",
+      "sha256": "829355c8c90f98310867e539bb9790212584d490f6ccd237363edfa3743372b6"
+    },
+    {
+      "layer": "std",
+      "tile": [
+        15,
+        29133,
+        12587
+      ],
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/std/15/29133/12587.png",
+      "file": "std-15-29133-12587.png",
+      "status": "saved",
+      "sha256": "ff434eba4835c6fc9e18e455f19dbc97376426854abbc5781a68ef3dd3beccd7"
+    },
+    {
+      "layer": "std",
+      "tile": [
+        15,
+        29134,
+        12587
+      ],
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/std/15/29134/12587.png",
+      "file": "std-15-29134-12587.png",
+      "status": "saved",
+      "sha256": "d55542d6c045f8122e9007a16b338bbbf345802518b053aa0109f0b2333e5827"
+    },
+    {
+      "layer": "std",
+      "tile": [
+        15,
+        29128,
+        12588
+      ],
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/std/15/29128/12588.png",
+      "file": "std-15-29128-12588.png",
+      "status": "saved",
+      "sha256": "ab60d515b11df10d34333a119ea23cf07b9640d70df0ec56ee5d10c261d69c46"
+    },
+    {
+      "layer": "std",
+      "tile": [
+        15,
+        29129,
+        12588
+      ],
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/std/15/29129/12588.png",
+      "file": "std-15-29129-12588.png",
+      "status": "saved",
+      "sha256": "997a4bf4aac34ea105de1c257e9263c62c78041f00f5c49557d299f169623663"
+    },
+    {
+      "layer": "std",
+      "tile": [
+        15,
+        29130,
+        12588
+      ],
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/std/15/29130/12588.png",
+      "file": "std-15-29130-12588.png",
+      "status": "saved",
+      "sha256": "dc45430b4431e62ff9853061c1a388556eef036492c510974dbb4628f256f323"
+    },
+    {
+      "layer": "std",
+      "tile": [
+        15,
+        29131,
+        12588
+      ],
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/std/15/29131/12588.png",
+      "file": "std-15-29131-12588.png",
+      "status": "saved",
+      "sha256": "3f3e8ea734002c56f52adaa42efd2b61d8f98ffa4d60cdcd6a2e6e3f508dccd0"
+    },
+    {
+      "layer": "std",
+      "tile": [
+        15,
+        29132,
+        12588
+      ],
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/std/15/29132/12588.png",
+      "file": "std-15-29132-12588.png",
+      "status": "saved",
+      "sha256": "184d522ca730d408c7f22bdfb9936a8e9bab2764125d5cfd88a0812c9cf2fd05"
+    },
+    {
+      "layer": "std",
+      "tile": [
+        15,
+        29133,
+        12588
+      ],
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/std/15/29133/12588.png",
+      "file": "std-15-29133-12588.png",
+      "status": "saved",
+      "sha256": "d42fae46613e9dede8b16b49240560d2c66c8e83094c6addbd64bc356fd2d8e1"
+    },
+    {
+      "layer": "std",
+      "tile": [
+        15,
+        29134,
+        12588
+      ],
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/std/15/29134/12588.png",
+      "file": "std-15-29134-12588.png",
+      "status": "saved",
+      "sha256": "9f77e12605a05758e2ce4cfbe6fd030a3483e2c8de7f7902c6b6fd59a4d04993"
+    },
+    {
+      "layer": "std",
+      "tile": [
+        15,
+        29128,
+        12589
+      ],
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/std/15/29128/12589.png",
+      "file": "std-15-29128-12589.png",
+      "status": "saved",
+      "sha256": "4841fc57ccecc604f5ba3f201befdfe20d0668f5e2f04f2fa85555a0f7978ef3"
+    },
+    {
+      "layer": "std",
+      "tile": [
+        15,
+        29129,
+        12589
+      ],
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/std/15/29129/12589.png",
+      "file": "std-15-29129-12589.png",
+      "status": "saved",
+      "sha256": "5ea089a1abca7335a61d97c40ebf9116ac263cc5b2caae5428c9cf29e5876f7c"
+    },
+    {
+      "layer": "std",
+      "tile": [
+        15,
+        29130,
+        12589
+      ],
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/std/15/29130/12589.png",
+      "file": "std-15-29130-12589.png",
+      "status": "saved",
+      "sha256": "020951246515f14d82ccb77d5c031db335c281825a0c491d3068eedc671f8877"
+    },
+    {
+      "layer": "std",
+      "tile": [
+        15,
+        29131,
+        12589
+      ],
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/std/15/29131/12589.png",
+      "file": "std-15-29131-12589.png",
+      "status": "saved",
+      "sha256": "213174c75a2504ba4816dd857b731b6e79284553b0345d65e6652c722c9a5bd7"
+    },
+    {
+      "layer": "std",
+      "tile": [
+        15,
+        29132,
+        12589
+      ],
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/std/15/29132/12589.png",
+      "file": "std-15-29132-12589.png",
+      "status": "saved",
+      "sha256": "e17d0d2596f4300a488e9c0194f50f0dbf1bd0d26042f4e98dad240297a1a683"
+    },
+    {
+      "layer": "std",
+      "tile": [
+        15,
+        29133,
+        12589
+      ],
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/std/15/29133/12589.png",
+      "file": "std-15-29133-12589.png",
+      "status": "saved",
+      "sha256": "e7a710420ef1397b4d5094f47a68dc03a2d3d7f2fff27af8ad354e89413f1ff0"
+    },
+    {
+      "layer": "std",
+      "tile": [
+        15,
+        29134,
+        12589
+      ],
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/std/15/29134/12589.png",
+      "file": "std-15-29134-12589.png",
+      "status": "saved",
+      "sha256": "37fa7f5e08ec9eb839e7ee542d8e765affa4821d8c9c610e10812a984239fd33"
+    },
+    {
+      "layer": "std",
+      "tile": [
+        15,
+        29128,
+        12590
+      ],
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/std/15/29128/12590.png",
+      "file": "std-15-29128-12590.png",
+      "status": "saved",
+      "sha256": "21c586d6cd86d9cf7e5b1cb5b3e9a0978478e4683de12eb4e24414cd5fcabb18"
+    },
+    {
+      "layer": "std",
+      "tile": [
+        15,
+        29129,
+        12590
+      ],
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/std/15/29129/12590.png",
+      "file": "std-15-29129-12590.png",
+      "status": "saved",
+      "sha256": "511283db93ffe2322f07a6a153b9db8d73bfb5b8d7c67c1febd9b067b1c93aeb"
+    },
+    {
+      "layer": "std",
+      "tile": [
+        15,
+        29130,
+        12590
+      ],
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/std/15/29130/12590.png",
+      "file": "std-15-29130-12590.png",
+      "status": "saved",
+      "sha256": "92a0ce1345f7617c0d1a41fa7c31aabc0d1afc4e890bffa4899c5260150ae6ef"
+    },
+    {
+      "layer": "std",
+      "tile": [
+        15,
+        29131,
+        12590
+      ],
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/std/15/29131/12590.png",
+      "file": "std-15-29131-12590.png",
+      "status": "saved",
+      "sha256": "468fd99a02630d6d2baefb5192b31957f6e7b8013c14ebeaf05c9531ec478979"
+    },
+    {
+      "layer": "std",
+      "tile": [
+        15,
+        29132,
+        12590
+      ],
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/std/15/29132/12590.png",
+      "file": "std-15-29132-12590.png",
+      "status": "saved",
+      "sha256": "95dca69c42f55aa0238218f8de9e1797a00900779c4a25a1f77779f593dad8ee"
+    },
+    {
+      "layer": "std",
+      "tile": [
+        15,
+        29133,
+        12590
+      ],
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/std/15/29133/12590.png",
+      "file": "std-15-29133-12590.png",
+      "status": "saved",
+      "sha256": "76bd7fc63c9f391aedc7fe65e712fb461f63822241cc79759186e6605ae6ff23"
+    },
+    {
+      "layer": "std",
+      "tile": [
+        15,
+        29134,
+        12590
+      ],
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/std/15/29134/12590.png",
+      "file": "std-15-29134-12590.png",
+      "status": "saved",
+      "sha256": "981bf88bc586e0e748e4be16a418d183dad6c519c0656c51cc4f7f8cda4d0780"
+    }
+  ],
+  "layerMetadata": {
+    "gazo1": {
+      "period": [
+        1974,
+        1978
+      ],
+      "kind": "aerial-photograph-era"
+    },
+    "std": {
+      "period": "current-at-access",
+      "kind": "standard-map"
+    }
+  }
+}
