@@ -3177,13 +3177,22 @@
       "status": "経路・利用年代未照合"
     },
     "六十里越街道": {
-      "geometry": "polyline",
+      "geometry": "mixed-source",
       "sources": [
-        "rokujurigoSakata"
+        "rokujurigoSakata",
+        "rokujurigoInlandMap"
       ],
       "level": "unverified",
-      "status": "出羽三山への信仰の道であり、戦国期には軍事交通にも使われた。旧街道と後世の月山道路では道筋が異なる。",
-      "precision": "経由関係を示す概略線。旧道調査図と照合中。"
+      "status": "内陸の旧道調査図の青線を採用。庄内側と寒河江以南は概略線を含む。",
+      "precision": "経由関係を示す概略線。旧道調査図と照合中。",
+      "mappedSections": [
+        {
+          "from": "本道寺方面",
+          "to": "寒河江",
+          "source": "rokujurigoInlandMap",
+          "vertices": 395
+        }
+      ]
     },
     "出羽浜街道": {
       "status": "経路・利用年代未照合"
@@ -6903,6 +6912,14 @@
       "locator": "武田氏による信濃平定から長篠の戦い",
       "accessed": "2026-11-01",
       "scope": "足助・作手・野田・二連木・吉田方面の武田軍の作戦。本文の天正3年に対応する西暦1572という誤記は採用せず、長篠の1575年を別資料と照合。"
+    },
+    "rokujurigoInlandMap": {
+      "author": "国土交通省東北地方整備局 酒田河川国道事務所",
+      "title": "六十里越街道・現地調査一覧図（内陸）",
+      "url": "https://www.thr.mlit.go.jp/sakata/road/60history/010.html",
+      "locator": "青の旧道線、本道寺・白岩・寒河江方面、1:200000",
+      "accessed": "2026-11-02",
+      "scope": "青線395点を駅記号で位置合わせ。近現代の旧道調査図で、全期間の精密な線形を保証しない。庄内側と山形側の残区間は従来の概略線。"
     },
     "tosaCoastComparison": {
       "author": "国土地理院 / OpenStreetMap contributors",

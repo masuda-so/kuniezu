@@ -1,5 +1,8 @@
 "use strict";
 (function(){
+ TK.RESEARCH_SOURCES.rokujurigoInlandMap={author:'国土交通省東北地方整備局 酒田河川国道事務所',title:'六十里越街道・現地調査一覧図（内陸）',url:'https://www.thr.mlit.go.jp/sakata/road/60history/010.html',locator:'青の旧道線、本道寺・白岩・寒河江方面、1:200000',accessed:'2026-11-02',scope:'青線395点を駅記号で位置合わせ。近現代の旧道調査図で、全期間の精密な線形を保証しない。庄内側と山形側の残区間は従来の概略線。'};
+ TK.ROAD_EVIDENCE['六十里越街道']={...TK.ROAD_EVIDENCE['六十里越街道'],level:'unverified',geometry:'mixed-source',sources:['rokujurigoSakata','rokujurigoInlandMap'],mappedSections:[{from:'本道寺方面',to:'寒河江',source:'rokujurigoInlandMap',vertices:395}],status:'内陸の旧道調査図の青線を採用。庄内側と寒河江以南は概略線を含む。'};
+
  TK.RESEARCH_SOURCES.tosaCoastComparison={author:'国土地理院 / OpenStreetMap contributors',title:'室戸半島沿岸の道路比較',url:'https://github.com/gsi-cyberjapan/experimental_rdcl',locator:'野根・佐喜浜・室戸岬・吉良川・羽根・奈半利、2026-11-02取得',accessed:'2026-11-02',scope:'沿岸の現代道路中心線による比較。野根山街道の尾根道と区別し、戦国期の遍路道や寺参道の中心線と同一視しない。近代トンネルを含みうる。'};
  TK.ROAD_EVIDENCE['土佐東街道']={level:'unverified',geometry:'modern-reference',sources:['tosaCoastComparison'],status:'阿波・土佐の沿岸部を結ぶ道路の比較線。室戸岬を経由し、野根山街道の尾根道とは区別する。'};
  TK.RESEARCH_SOURCES.hyugaMikuniMap={author:'文化庁（地形図：国土地理院）',title:'歴史の道百選112 日向道―三国峠越・選定地図',url:'https://www.bunka.go.jp/seisaku/bunkazai/shokai/kinenbutsu/rekishinomichi/pdf/92088301_s112_01.pdf',locator:'2頁の赤線、電子地形図25000（2019年7月17日調製）',accessed:'2026-11-02',scope:'市場・内山・三国峠・上津小野・小野市の選定区間を地図の緯経度枠から読み取る。1560〜1615年の全線中心線を測量した図とは区別する。'};
