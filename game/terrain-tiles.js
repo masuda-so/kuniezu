@@ -61,6 +61,9 @@ window.TKTerrain=(function(){
     // 詳細がそろうまでは同じ倍率の親画像を保つ。タイルごとの斑な切替をしない。
     if((complete||level===6)&&tiles.length)selected.push(...tiles);
     if(needed.length)requested.push(needed);
+    // 縮小直後は目標段階が未取得で、粗い段階だけになり起伏が一瞬消える。取得済みのより細かい段階を代用として重ね、目標段階がそろったら外す。
+    if(level===z&&!complete){const finer=[];for(const t of cache.values()){if(t.provider!==provider||!t.ready||t.z<=z||t.z>z+4)continue;const tw=(t.x/2**t.z*360-180),te=((t.x+1)/2**t.z*360-180);if(te<w||tw>e||t.south>n||t.north<s)continue;finer.push(t);}
+     finer.sort((a,b)=>a.z-b.z);for(const t of finer)t.seen=frame;selected.push(...finer);}
    }
    for(const t of selected){t.drawnFrame=frame;const level=t.z,x0=(t.x/2**level*360-180-lon0)*K*CX,w=360/2**level*K*CX;
     const y0=(lat0-t.north)*K,y1=(lat0-t.south)*K;c.drawImage(t.im,x0,y0,w,y1-y0+.008);
