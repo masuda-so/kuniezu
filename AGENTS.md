@@ -1,32 +1,46 @@
-# リポジトリの作業指示
+# リポジトリガイドライン
 
-## 文書・PR・レビューの言語
+## プロジェクト構成とモジュールの配置
 
-- PRのタイトル・説明、レビュー、IssueやPRへのコメント、作業報告は日本語を基本とする。利用者が別の言語を指定した場合はその指定を優先する。
-- コード識別子、ファイル名、コマンド、API名、ログやエラーの引用は原文を保持し、説明を日本語で添える。
-- `README.md`は日本語、`README.en.md`は英語とし、冒頭に相互リンクを置く。仕様・手順・制約を更新するときは両方を同じ変更で同期する。
-- READMEの大見出しは「概要・主な機能と制約・導入と使い方・サポートと関連資料・開発と貢献」の順に揃え、英語版も対応する5項目にする。
-- READMEの概要、特徴、開始手順、問い合わせ先、貢献方法は実装と既存文書に基づいて記載する。未実装・未検証の機能を利用可能と説明しない。
-- 言語の統一を理由に既存のコミット履歴や他者のコメントを書き換えない。投稿・コミット・pushの許可は別途の作業指示に従う。
+1560〜1615 年の日本・朝鮮を舞台にした地図ゲーム。`game/` はビルド不要の素の HTML/JavaScript で、`game/index.html` の `game-scripts` が実際の依存順（データ定義 → 史実訂正 → 地理と移動 → 表示）。順序を変えると API の上書き関係が変わるので、ファイル名順に並べ替えない。
 
-## コミット
+- `game/`（84 の JS、`atlas/` 合戦地形、`terrain/` 標高・陰影、`portraits/` 肖像、`kamon/` 家紋、`licenses/` 素材の出典）。配信 URL は変えない。
+- `docs/`（`architecture/` 構成と依存順、`work/` 残要望と担当、`reports/` 報告書、`history/` 過去の原文）。作業前に `HANDOFF.md` を読む。
+- `data/`（`inputs/` 調査・生成の入力、`research/` 出典と史実命題 `claims.jsonl`、`audits/` 検査が生成する JSON、`verification/` 実画面の証拠）。
+- `tools/`（`checks/` 検査、`work/` 作業一覧と担当記録、`research/` 史料の出力、`geo/` と `faces/` 配信用データの生成元、`play/` 旧版の検証）。`archive/` は保留中の非史実実装で、起動では読まない。
 
-原則は「公式の仕様・ガイドに最大限従う」こと。独自の決まりは作らない。根拠は git の `git-commit` マニュアル（DISCUSSION）、`git-interpret-trailers`、GitHub Docs「Creating a commit with multiple authors」。
+## ビルド・テスト・開発コマンド
 
-- 作者は `masudaso <258961222+masuda-so@users.noreply.github.com>`（GitHub の noreply アドレス）、SSH署名あり（グローバル設定 `commit.gpgsign=true`）。
-- メッセージの形は git の公式ガイドどおり：1行目は要約で50文字以内を目安、空行、本文（何を・なぜ）、空行、トレーラー。本文は72桁前後で折り返す。文字コードは UTF-8。
-- 日時をそろえるのは初回コミットだけ（本人の指定）。初回コミットはその日の `00:00:00 +0900` を `GIT_AUTHOR_DATE` と `GIT_COMMITTER_DATE` の両方に指定する。2回目以降は実際の日時のままでよい。
-- AI が内容を書いた場合は、GitHub 公式の書式で関わったエージェントごとに1行ずつ付ける。`git commit --trailer` で付けると書式が崩れない。大文字小文字は公式どおり `Co-authored-by:`。
-  - `Co-authored-by: Codex <noreply@openai.com>`
-  - `Co-authored-by: Claude Fable 5.1 <noreply@anthropic.com>`（モデル名は作業したものに合わせる）
-  - 実際に関わったものだけを付ける。両方なら両方、どちらもなければ付けない。
-- 公開済みの履歴は書き換えない（`git-commit` マニュアルの注意どおり）。やむを得ず書き換えるときは本人が判断し、`--force-with-lease` を使う。
-- ライセンスは MIT（`LICENSE`、著作権表記は `So Masuda`）。新しいファイルもこれに従う。
+- ビルドは無い。`game/` を静的ファイルとして配信し `index.html` を開く。サーバーの起動・停止は利用者のみが行い、エージェントは起動済みの `http://localhost:8000/index.html` に専用の一時ブラウザで接続する。
+- `node tools/checks/offline.cjs` — 構文・保存・史実進行の基本検査（CI の必須チェック `Offline checks`）。`node tools/checks/organization.cjs`、`node tools/checks/infrastructure.cjs` も CI で実行する。
+- `GAME_TEST_OUTPUT=data/verification/<担当名-対象名> node tools/checks/march-clock-browser.cjs` — 実画面の検査（起動済みサーバーが必要）。分野別の検査は `tools/checks/README.md` の表から選ぶ。
+- `node tools/work/tasks.cjs claim <対象ID> --owner <担当名> --files <ファイル>` — 担当の記録。完了条件を全て満たす場合だけ `complete`、引き継ぎだけなら `release`。
 
-## このリポジトリ固有の取り決め
+## コーディングスタイルと命名規則
 
-- 1560〜1615年の日本・朝鮮を舞台にした地図ゲーム。`game/` はビルド不要の素のHTML/JavaScriptで、読込順は `game/index.html` に従う。
-- 作業の前に [HANDOFF.md](HANDOFF.md) を読む。文書の入口は [docs/README.md](docs/README.md)、残要望と分担は [docs/work/README.md](docs/work/README.md)。
-- サーバーの起動・停止は利用者のみが行う。実画面の検証は起動済みの `http://localhost:8000/index.html` に専用の一時ブラウザで接続する。
-- 変更に応じた検査を [tools/checks/README.md](tools/checks/README.md) の手順で実行する。サーバー不要の基本確認は `node tools/checks/offline.cjs`。
-- 史実観察を優先し、自由攻城・非史実ルートは保留のまま扱う。根拠のない動きや文章をプレイ画面へ出さない。
+- 素の JavaScript。各ファイルは読込順に同じグローバルを拡張する。`.editorconfig`（2 スペース、LF、UTF-8）に従い、触ったファイルの慣習に合わせる。実行時の依存を増やさない。
+- `data.js` / `hist.js` / `geo.js` / `jokaku.js` の修正は出典付きの訂正モジュールを確認し、同じ事項への二重適用を避ける。`engine.js` / `ui.js` / `index.html` は全分野の共通箇所なので同時編集を避け、担当を調整する。
+- 配信用データは生成元（`tools/geo/`、`tools/faces/`）を直して再生成する。生成物だけを直さない。`data/audits/` の JSON を手で変えない。
+
+## テストの指針
+
+- 変更した分野に応じた検査を `tools/checks/README.md` の表から選び、通ったら理由なく全件を繰り返さない。負荷測定と他のブラウザ検証は同時に実行しない。
+- 成果は `data/verification/<担当名-対象名>/` に保存し、別担当の結果を上書きしない。検査の合格は史料の未読箇所や歴史上の全件の網羅を証明しない。
+- `movementGeometryVersion` を変えたら旧保存の移行を確認する。日付・所属・地形を変えたら該当年代と保存互換を検査する。
+
+## コミットとプルリクエストの指針
+
+- コミットは git 公式ガイドの形: 1 行目は 50 文字以内を目安にした要約、空行、本文（何を・なぜ、72 桁前後で折り返す）、空行、トレーラー。作者は `masudaso <258961222+masuda-so@users.noreply.github.com>`、SSH 署名付き（ルールセットで署名必須）。
+- 初回コミットだけ author と committer の日時をその日の `00:00:00 +0900` に揃える。2 回目以降は実際の日時。
+- AI が内容を書いたコミットには、関わったエージェントごとに GitHub 公式書式のトレーラーを 1 行ずつ付ける: `Co-authored-by: Codex <noreply@openai.com>`、`Co-authored-by: Claude Fable 5.1 <noreply@anthropic.com>`（モデル名は作業したもの）。大文字小文字は公式どおり `Co-authored-by:`。
+- 公開済みの履歴は書き換えない。やむを得ない場合は本人が判断し `--force-with-lease` を使う。
+- main への変更は PR 経由（直接 push 不可）。PR の題名・説明・レビューコメントは日本語を基本とし、利用者が別の言語を指定した場合はそれを優先する。説明には変更内容と検証結果を書く。`Offline checks` が必須チェック。
+- `README.md`（日本語）と `README.en.md`（英語）は冒頭で相互リンクし、5 見出し（概要・主な機能と制約・導入と使い方・サポートと関連資料・開発と貢献）を揃え、仕様・手順・制約の変更は同じ PR で両方を更新する。未実装・未検証の内容を利用可能と書かない。
+
+## エージェント向けの指示
+
+- 史実観察を優先し、自由攻城・非史実ルート・プレイ中の AI 生成は保留のまま扱う。根拠のない動きや城郭、制作者向けの文章をプレイ画面に出さない。現代の比較地形、史料からの推定、確認済みの史実を別に扱う。
+- 同じ行軍だけを遠景で代表隊、近景で街道上に個別表示し、別の場所へ行ったと見える横ずらしをしない。史実の着陣日を推定負荷や整備で遅らせない。外交は国境のみで表す。
+- 変更と根拠は短い報告書 1 本に `docs/reports/` へまとめ、検査と実画面の証拠を添える。
+- 作業報告、Issue や PR へのコメントは日本語を基本とする。コード識別子、ファイル名、コマンド、ログやエラーの引用は原文のまま残し、説明を日本語で添える。
+- 言語の統一を理由に既存のコミット履歴や他者のコメントを書き換えない。投稿・コミット・push の許可は別途の作業指示に従う。
