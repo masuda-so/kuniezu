@@ -26,7 +26,7 @@ const cover=()=>ev('(()=>{const {corners}=TKUI.mapBounds();return corners[0][0]<
  const target=await call('Target.createTarget',{url:'about:blank'},null);session=(await call('Target.attachToTarget',{targetId:target.targetId,flatten:true},null)).sessionId;await call('Runtime.enable');await call('Page.enable');await view(1400,1000);await load();await start();await click('#modal [data-act=close]');await ev('TKUI.speed=0');
 const rows=[];
 for(const [name,lon,lat,z]of [['日向街道・北側',131.739546,33.02167,10],['日向街道・中央',131.66066,32.717455,10],['日向街道・南側',131.424469,32.043025,14]]){
- const r=await ev(`(()=>{TKUI.cam(...G.PJ(${lon},${lat}),${z});const road=TK.roadDisplay(G.ROADS.find(r=>r.name==='日向街道'));return {name:${JSON.stringify(name)},version:G.S().movementGeometryVersion,sources:road.evidence.sources};})()`);assert.equal(r.version,17);assert.ok(r.sources.includes('hyugaMikuniMap'));rows.push(r);await sleep(1800);await shot('hyuga-'+rows.length);
+ const r=await ev(`(()=>{TKUI.cam(...G.PJ(${lon},${lat}),${z});const road=TK.roadDisplay(G.ROADS.find(r=>r.name==='日向街道'));return {name:${JSON.stringify(name)},version:G.S().movementGeometryVersion,sources:road.evidence.sources};})()`);assert.equal(r.version,19);assert.ok(r.sources.includes('hyugaMikuniMap'));rows.push(r);await sleep(1800);await shot('hyuga-'+rows.length);
 }
 assert.deepEqual(errors,[]);fs.writeFileSync(path.join(OUT,'result.json'),JSON.stringify({rows,errors},null,2));console.log('PASS Hyuga comparison detours removed in loaded map; three views; no exceptions');
 

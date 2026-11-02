@@ -26,7 +26,7 @@ const cover=()=>ev('(()=>{const {corners}=TKUI.mapBounds();return corners[0][0]<
  const target=await call('Target.createTarget',{url:'about:blank'},null);session=(await call('Target.attachToTarget',{targetId:target.targetId,flatten:true},null)).sessionId;await call('Runtime.enable');await call('Page.enable');await view(1400,1000);await load();await start();await click('#modal [data-act=close]');await ev('TKUI.speed=0');
 const rows=[];
 for(const [name,lon,lat,z] of [['安芸城',133.91259,33.519865,12],['室戸半島',134.16,33.39,6],['短い折返し修正点',134.549844,33.80116,14]]){
- const r=await ev(`(()=>{TKUI.cam(...G.PJ(${lon},${lat}),${z});const site=G.YOSHO.find(y=>y.n==='安芸城');return {name:${JSON.stringify(name)},version:G.S().movementGeometryVersion,aki:{id:site.id,x:site.x,y:site.y}}})()`);assert.equal(r.version,17);assert.equal(r.aki.id,'yosho:安芸城:133.54:33.31');rows.push(r);await sleep(1800);await shot('tosa-'+rows.length);
+ const r=await ev(`(()=>{TKUI.cam(...G.PJ(${lon},${lat}),${z});const site=G.YOSHO.find(y=>y.n==='安芸城');return {name:${JSON.stringify(name)},version:G.S().movementGeometryVersion,aki:{id:site.id,x:site.x,y:site.y}}})()`);assert.equal(r.version,19);assert.equal(r.aki.id,'yosho:安芸城:133.54:33.31');rows.push(r);await sleep(1800);await shot('tosa-'+rows.length);
 }
 assert.deepEqual(errors,[]);fs.writeFileSync(path.join(OUT,'result.json'),JSON.stringify({rows,errors},null,2));console.log('PASS Aki and coastal road views render without exceptions; saved site identity retained');
 
