@@ -1,0 +1,576 @@
+[
+  {
+    "query": "熊川宿",
+    "url": "https://msearch.gsi.go.jp/address-search/AddressSearch?q=%E7%86%8A%E5%B7%9D%E5%AE%BF",
+    "result": [
+      {
+        "geometry": {
+          "coordinates": [
+            141.024719,
+            37.386379
+          ],
+          "type": "Point"
+        },
+        "type": "Feature",
+        "properties": {
+          "addressCode": "",
+          "title": "福島県大熊町熊川"
+        }
+      },
+      {
+        "geometry": {
+          "coordinates": [
+            139.343048,
+            35.723492
+          ],
+          "type": "Point"
+        },
+        "type": "Feature",
+        "properties": {
+          "addressCode": "",
+          "title": "東京都福生市熊川"
+        }
+      },
+      {
+        "geometry": {
+          "coordinates": [
+            135.899506,
+            35.444279
+          ],
+          "type": "Point"
+        },
+        "type": "Feature",
+        "properties": {
+          "addressCode": "",
+          "title": "福井県若狭町熊川"
+        }
+      },
+      {
+        "geometry": {
+          "coordinates": [
+            135.90589274,
+            35.44106497
+          ],
+          "type": "Point"
+        },
+        "type": "Feature",
+        "properties": {
+          "addressCode": "18501",
+          "title": "道の駅「若狭熊川宿」",
+          "dataSource": "3"
+        }
+      }
+    ]
+  },
+  {
+    "query": "花折峠",
+    "url": "https://msearch.gsi.go.jp/address-search/AddressSearch?q=%E8%8A%B1%E6%8A%98%E5%B3%A0",
+    "result": [
+      {
+        "geometry": {
+          "coordinates": [
+            134.283859,
+            35.386276
+          ],
+          "type": "Point"
+        },
+        "type": "Feature",
+        "properties": {
+          "addressCode": "",
+          "title": "鳥取県八頭町花"
+        }
+      },
+      {
+        "geometry": {
+          "coordinates": [
+            135.860161,
+            35.1872567660604
+          ],
+          "type": "Point"
+        },
+        "type": "Feature",
+        "properties": {
+          "addressCode": "25201",
+          "title": "花折峠",
+          "dataSource": "4"
+        }
+      },
+      {
+        "geometry": {
+          "coordinates": [
+            135.5119,
+            33.6174047721731
+          ],
+          "type": "Point"
+        },
+        "type": "Feature",
+        "properties": {
+          "addressCode": "30401",
+          "title": "花折峠",
+          "dataSource": "4"
+        }
+      }
+    ]
+  },
+  {
+    "query": "朽木市場",
+    "url": "https://msearch.gsi.go.jp/address-search/AddressSearch?q=%E6%9C%BD%E6%9C%A8%E5%B8%82%E5%A0%B4",
+    "result": [
+      {
+        "geometry": {
+          "coordinates": [
+            135.915802,
+            35.358536
+          ],
+          "type": "Point"
+        },
+        "type": "Feature",
+        "properties": {
+          "addressCode": "",
+          "title": "滋賀県高島市朽木市場"
+        }
+      },
+      {
+        "geometry": {
+          "coordinates": [
+            135.915808490777,
+            35.3585337916419
+          ],
+          "type": "Point"
+        },
+        "type": "Feature",
+        "properties": {
+          "addressCode": "25212",
+          "title": "朽木市場",
+          "dataSource": "5"
+        }
+      }
+    ]
+  },
+  {
+    "query": "大原バス停",
+    "url": "https://msearch.gsi.go.jp/address-search/AddressSearch?q=%E5%A4%A7%E5%8E%9F%E3%83%90%E3%82%B9%E5%81%9C",
+    "result": [
+      {
+        "geometry": {
+          "coordinates": [
+            140.84082,
+            42.678307
+          ],
+          "type": "Point"
+        },
+        "type": "Feature",
+        "properties": {
+          "addressCode": "",
+          "title": "北海道洞爺湖町大原"
+        }
+      },
+      {
+        "geometry": {
+          "coordinates": [
+            141.934799,
+            42.579758
+          ],
+          "type": "Point"
+        },
+        "type": "Feature",
+        "properties": {
+          "addressCode": "",
+          "title": "北海道むかわ町大原"
+        }
+      },
+      {
+        "geometry": {
+          "coordinates": [
+            140.454849,
+            40.578472
+          ],
+          "type": "Point"
+        },
+        "type": "Feature",
+        "properties": {
+          "addressCode": "",
+          "title": "青森県弘前市大原"
+        }
+      },
+      {
+        "geometry": {
+          "coordinates": [
+            141.440002,
+            38.448128
+          ],
+          "type": "Point"
+        },
+        "type": "Feature",
+        "properties": {
+          "addressCode": "",
+          "title": "宮城県女川町大原"
+        }
+      },
+      {
+        "geometry": {
+          "coordinates": [
+            139.46936,
+            37.13588
+          ],
+          "type": "Point"
+        },
+        "type": "Feature",
+        "properties": {
+          "addressCode": "",
+          "title": "福島県南会津町大原"
+        }
+      },
+      {
+        "geometry": {
+          "coordinates": [
+            139.653839,
+            35.891777
+          ],
+          "type": "Point"
+        },
+        "type": "Feature",
+        "properties": {
+          "addressCode": "",
+          "title": "埼玉県さいたま市浦和区大原"
+        }
+      },
+      {
+        "geometry": {
+          "coordinates": [
+            139.641739,
+            35.898712
+          ],
+          "type": "Point"
+        },
+        "type": "Feature",
+        "properties": {
+          "addressCode": "",
+          "title": "埼玉県さいたま市大宮区大原"
+        }
+      },
+      {
+        "geometry": {
+          "coordinates": [
+            139.515182,
+            35.877705
+          ],
+          "type": "Point"
+        },
+        "type": "Feature",
+        "properties": {
+          "addressCode": "",
+          "title": "埼玉県ふじみ野市大原"
+        }
+      },
+      {
+        "geometry": {
+          "coordinates": [
+            139.379913,
+            36.155731
+          ],
+          "type": "Point"
+        },
+        "type": "Feature",
+        "properties": {
+          "addressCode": "",
+          "title": "埼玉県熊谷市大原"
+        }
+      },
+      {
+        "geometry": {
+          "coordinates": [
+            139.836349,
+            35.806469
+          ],
+          "type": "Point"
+        },
+        "type": "Feature",
+        "properties": {
+          "addressCode": "",
+          "title": "埼玉県八潮市大原"
+        }
+      },
+      {
+        "geometry": {
+          "coordinates": [
+            140.39006,
+            35.238129
+          ],
+          "type": "Point"
+        },
+        "type": "Feature",
+        "properties": {
+          "addressCode": "",
+          "title": "千葉県いすみ市大原"
+        }
+      },
+      {
+        "geometry": {
+          "coordinates": [
+            139.663757,
+            35.668846
+          ],
+          "type": "Point"
+        },
+        "type": "Feature",
+        "properties": {
+          "addressCode": "",
+          "title": "東京都世田谷区大原"
+        }
+      },
+      {
+        "geometry": {
+          "coordinates": [
+            139.34137,
+            35.342522
+          ],
+          "type": "Point"
+        },
+        "type": "Feature",
+        "properties": {
+          "addressCode": "",
+          "title": "神奈川県平塚市大原"
+        }
+      },
+      {
+        "geometry": {
+          "coordinates": [
+            139.181992,
+            37.661045
+          ],
+          "type": "Point"
+        },
+        "type": "Feature",
+        "properties": {
+          "addressCode": "",
+          "title": "新潟県五泉市大原"
+        }
+      },
+      {
+        "geometry": {
+          "coordinates": [
+            137.897247,
+            37.036175
+          ],
+          "type": "Point"
+        },
+        "type": "Feature",
+        "properties": {
+          "addressCode": "",
+          "title": "新潟県糸魚川市大原"
+        }
+      },
+      {
+        "geometry": {
+          "coordinates": [
+            138.979401,
+            37.757729
+          ],
+          "type": "Point"
+        },
+        "type": "Feature",
+        "properties": {
+          "addressCode": "",
+          "title": "新潟県新潟市西蒲区大原"
+        }
+      },
+      {
+        "geometry": {
+          "coordinates": [
+            138.931702,
+            35.583351
+          ],
+          "type": "Point"
+        },
+        "type": "Feature",
+        "properties": {
+          "addressCode": "",
+          "title": "山梨県都留市大原"
+        }
+      },
+      {
+        "geometry": {
+          "coordinates": [
+            137.948914,
+            35.760033
+          ],
+          "type": "Point"
+        },
+        "type": "Feature",
+        "properties": {
+          "addressCode": "",
+          "title": "長野県宮田村大原"
+        }
+      },
+      {
+        "geometry": {
+          "coordinates": [
+            139.100677,
+            34.963409
+          ],
+          "type": "Point"
+        },
+        "type": "Feature",
+        "properties": {
+          "addressCode": "",
+          "title": "静岡県伊東市大原"
+        }
+      },
+      {
+        "geometry": {
+          "coordinates": [
+            138.284149,
+            35.016605
+          ],
+          "type": "Point"
+        },
+        "type": "Feature",
+        "properties": {
+          "addressCode": "",
+          "title": "静岡県静岡市葵区大原"
+        }
+      },
+      {
+        "geometry": {
+          "coordinates": [
+            137.863556,
+            34.693584
+          ],
+          "type": "Point"
+        },
+        "type": "Feature",
+        "properties": {
+          "addressCode": "",
+          "title": "静岡県磐田市大原"
+        }
+      },
+      {
+        "geometry": {
+          "coordinates": [
+            136.2771,
+            34.221558
+          ],
+          "type": "Point"
+        },
+        "type": "Feature",
+        "properties": {
+          "addressCode": "",
+          "title": "三重県紀北町大原"
+        }
+      },
+      {
+        "geometry": {
+          "coordinates": [
+            135.290497,
+            35.686043
+          ],
+          "type": "Point"
+        },
+        "type": "Feature",
+        "properties": {
+          "addressCode": "",
+          "title": "京都府伊根町大原"
+        }
+      },
+      {
+        "geometry": {
+          "coordinates": [
+            135.225983,
+            34.909515
+          ],
+          "type": "Point"
+        },
+        "type": "Feature",
+        "properties": {
+          "addressCode": "",
+          "title": "兵庫県三田市大原"
+        }
+      },
+      {
+        "geometry": {
+          "coordinates": [
+            135.14386,
+            34.74453
+          ],
+          "type": "Point"
+        },
+        "type": "Feature",
+        "properties": {
+          "addressCode": "",
+          "title": "兵庫県神戸市北区大原"
+        }
+      },
+      {
+        "geometry": {
+          "coordinates": [
+            133.455399,
+            35.382763
+          ],
+          "type": "Point"
+        },
+        "type": "Feature",
+        "properties": {
+          "addressCode": "",
+          "title": "鳥取県伯耆町大原"
+        }
+      },
+      {
+        "geometry": {
+          "coordinates": [
+            133.858414,
+            35.4203
+          ],
+          "type": "Point"
+        },
+        "type": "Feature",
+        "properties": {
+          "addressCode": "",
+          "title": "鳥取県倉吉市大原"
+        }
+      },
+      {
+        "geometry": {
+          "coordinates": [
+            133.564804,
+            35.196629
+          ],
+          "type": "Point"
+        },
+        "type": "Feature",
+        "properties": {
+          "addressCode": "",
+          "title": "岡山県新庄村大原"
+        }
+      },
+      {
+        "geometry": {
+          "coordinates": [
+            134.19606,
+            34.979813
+          ],
+          "type": "Point"
+        },
+        "type": "Feature",
+        "properties": {
+          "addressCode": "",
+          "title": "岡山県美作市大原"
+        }
+      },
+      {
+        "geometry": {
+          "coordinates": [
+            126.723236,
+            26.355099
+          ],
+          "type": "Point"
+        },
+        "type": "Feature",
+        "properties": {
+          "addressCode": "",
+          "title": "沖縄県久米島町大原"
+        }
+      }
+    ]
+  }
+]
