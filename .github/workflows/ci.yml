@@ -1,0 +1,29 @@
+name: Offline checks
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+permissions:
+  contents: read
+
+jobs:
+  checks:
+    name: Offline checks
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - name: Set up Node.js
+        uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: 24
+      - name: Syntax, storage and territory checks
+        run: node tools/checks/offline.cjs
+      - name: Folder and ownership checks
+        run: node tools/checks/organization.cjs
+      - name: Infrastructure checks
+        run: node tools/checks/infrastructure.cjs
