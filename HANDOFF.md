@@ -139,4 +139,6 @@
 
 凸駒：現行と3案（A 陣立図・墨線と幟、B 馬印・二色の駒、C 図式・紋を駒の中へ）の比較画像を `data/verification/counter-designs/` に保存し、ユーザーが案Aを選択。`ui.js` の drawCounter を案A（家の色の地に絵具の濃淡、墨の輪郭と内側の生成り線、縦長の幟に家紋か家名一字と陣営色の帯、生成りの短冊に兵数）へ変更。合戦図の駒と幟（battle-atlas / battle-atlas-effects）も同じ描き方にそろえた。立体の影は付けない。
 
-検査：offline・organization・deployments・atlas-regressions・battle-review 通過。deployments.cjs の新発田の帰属は上杉IDのnagao統一に合わせて 'nagao' へ訂正。実画面の確認は8000番サーバー起動後に行う（この追記時点では未確認）。git は game/ 内のリポジトリに作業前と作業後をコミット（署名鍵は使わず -c commit.gpgsign=false）。
+検査：offline・organization・deployments・atlas-regressions・battle-review 通過。deployments.cjs の新発田の帰属は上杉IDのnagao統一に合わせて 'nagao' へ訂正。実画面は起動済み8000番へ専用Chromeで接続し、家選び画面（1600・1560）、地図の凸駒（遠景・中景・近景、1585年の羽柴の黒地紋）、桶狭間の雨と進軍の足跡、長篠の鉄砲の閃光と煙、関ヶ原の移陣と寝返り・交戦、川中島の霧、大坂冬の陣の着陣後の出現と真田丸の射撃を確認、例外0。粉の数は再生中に増え停止後に消える。画像は `data/verification/battle-effects-crests/`。鉄砲は各隊の fire 区間（長篠は50〜86）でのみ出るため、それ以前の時点では煙が出ない。
+
+git：他リポジトリ（website・grace・卒業プロジェクト等）の規則に合わせ、リポジトリをプロジェクト直下の main に再構成した。初回コミットは 2026-11-02 00:00:00 +0900 の作業前の全体（9b567e2）、以後は実時刻。規則の正本は 卒業プロジェクト/AGENTS.md の「コミット」節（git 公式ガイドに最大限従う）。作者は masudaso、`~/.ssh/id_ed25519` による SSH 署名（事前に `ssh-add --apple-use-keychain ~/.ssh/id_ed25519`）、件名は英語の命令形で50文字以内を目安、本文は日本語で72桁前後に折り返し、関わったエージェントごとに `Co-authored-by: Codex <noreply@openai.com>` / `Co-authored-by: Claude Fable 5.1 <noreply@anthropic.com>` を付ける（実際に関わったものだけ）。初回コミットだけ日時をそろえ、以後は実時刻。公開後の履歴は書き換えない。旧 game/.git の履歴（2026-10-30 の8件と同日の無署名3件）は `archive/git-history/game-repo-2026-11-02.bundle` に保存。リモートは未作成。

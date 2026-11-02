@@ -116,7 +116,7 @@ window.TKBattleAtlas=(function(){
    cv.dataset.mapGroups=String(groups.length);cv.dataset.mapParticipants=String(groups.reduce((n,g)=>n+g.members.length,0));cv.dataset.locatedGroups=String(located.length);
   }
   function frameDraw(dt=0,now=performance.now()){if(dead)return;cv.style.visibility=data||sc.atlasPlan||error?'visible':'hidden';cv.parentElement.classList.toggle('atlas-loading',!data&&!sc.atlasPlan&&!error);if(!bg)return;ctx.setTransform(D,0,0,D,0,0);ctx.clearRect(0,0,W,H);ctx.drawImage(bg,0,0,W,H);boxes.length=0;const playing=controller?.playing&&dt>0;
-   if(groups.length){groupDraw(dt,now,playing);fx.step(dt);ctx.save();fx.draw(ctx);ctx.restore();fx.weather(ctx,W,H,sc,t,now);cv.dataset.mapReady=data||sc.atlasPlan?'true':'false';cv.dataset.mapUnits=String(groups.length);return;}
+   if(groups.length){groupDraw(dt,now,playing);fx.step(dt);ctx.save();fx.draw(ctx);ctx.restore();fx.weather(ctx,W,H,sc,t,now);cv.dataset.fxParts=String(fx.count);cv.dataset.mapReady=data||sc.atlasPlan?'true':'false';cv.dataset.mapUnits=String(groups.length);return;}
    const pins=units.map(u=>u.point?pj(...u.point):[u.x*W,u.y*H]);
    for(const [index,u] of units.entries()){const [x,y]=pins[index],col=COL[u.side]||COL.unknown,sel=selected===u.id,r=W>650?10:7;
     ctx.save();ctx.translate(x,y);ctx.rotate(u.angle||0);ctx.beginPath();ctx.moveTo(-r,-r*.25);ctx.lineTo(-r*.36,-r*.25);ctx.lineTo(-r*.36,-r);ctx.lineTo(r*.36,-r);ctx.lineTo(r*.36,-r*.25);ctx.lineTo(r,-r*.25);ctx.lineTo(r,r*.65);ctx.lineTo(-r,r*.65);ctx.closePath();ctx.fillStyle=col;ctx.fill();ctx.lineWidth=sel?3:1.4;ctx.strokeStyle=sel?'#e4ac28':'#fffdf0';ctx.stroke();ctx.restore();
