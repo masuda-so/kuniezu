@@ -11,7 +11,8 @@ window.TKUI=U;U.open=(n,d)=>openModal(n,d);
 let S=null;
 // 外部書体はゲーム開始を待たせない。到着後に地図の文字幅と狭幅の帯を更新する。
 let fontRevision=0;
-document.fonts?.addEventListener('loadingdone',()=>{fontRevision++;U.baseDirty=true;if(S&&U.mode==='game')renderAll();});
+// 書体の読込完了ごとに下層を作り直すと重い。読込が落ち着いてから一度だけ反映する。
+let fontTimer=0;document.fonts?.addEventListener('loadingdone',()=>{clearTimeout(fontTimer);fontTimer=setTimeout(()=>{fontRevision++;U.baseDirty=true;if(S&&U.mode==='game')renderAll();},400);});
 G.build();G.buildBattleCatalog();
 
 /* ===== 漢数字 ===== */
@@ -52,6 +53,7 @@ function landFor(z){const lv=Math.max(-3,Math.min(3,Math.floor(Math.log2(Math.ma
  const tol=.35/2**lv,min=tol*1.5,simp=arr=>arr.map(poly=>poly.map(ring=>{let x0=Infinity,y0=Infinity,x1=-Infinity,y1=-Infinity;for(let i=0;i<ring.length;i+=2){x0=Math.min(x0,ring[i]);x1=Math.max(x1,ring[i]);y0=Math.min(y0,ring[i+1]);y1=Math.max(y1,ring[i+1]);}return x1-x0<min&&y1-y0<min?null:simplifyRing(ring,tol);}).filter(Boolean)).filter(poly=>poly.length);
  p=P2(simp(GEO.japanLand||GEO.land),1);if(GEO.japanLand)p.addPath(P2(simp(GEO.land.slice(GEO.japanLand.length)),1));landLOD.set(lv,p);return p;}
 let LANDV=LAND;
+(window.requestIdleCallback||(f=>setTimeout(f,200)))(function warm(dl){for(const lv of [-3,-2,-1,0,1,2,3]){if(!landLOD.has(lv)||!roadLOD.has(lv)){landFor(2**lv);roadsFor(2**lv);if(dl?.timeRemaining&&dl.timeRemaining()<5){(window.requestIdleCallback||(f=>setTimeout(f,200)))(warm);return;}}}});
 const LAKES=P2(GEO.lakes,1),RIVERS=L2(GEO.rivers.filter(r=>!TK.KOREAN_RIVERS_DETAIL?.length||!r.every((v,i)=>i%2?GEO.LAT0-v/GEO.K>34.8:v/GEO.K/GEO.CX+GEO.LON0>124&&v/GEO.K/GEO.CX+GEO.LON0<131)),1),PBORD=L2(GEO.pborders,2);
 const EDGE=GEO.edges.map(([a,b,ls])=>({a,b,p:L2(ls,2)}));
 const REGIONAL_RIVERS=TK.regionalRiverRecords(TK.REGIONAL_RIVERS||[],TK.KOREAN_RIVERS_DETAIL||[],G.PJ);
@@ -229,7 +231,7 @@ function paintBase(c,pad=0){LANDV=landFor(cam.z);
  }else{
  const pat=c.createPattern(seaTile,'repeat');const ps=Math.max(.12,.19/z);pat.setTransform(new DOMMatrix([ps,0,0,ps,0,0])); // 地図に貼りつける（ズームしても模様が地図と一緒に動く）
  c.fillStyle=pat;c.fillRect(x0-50,y0-50,x1-x0+100,y1-y0+100);
- c.fillStyle='#f9f5e3';c.fill(LANDV);}
+ c.fillStyle='#ece2c6';c.fill(LANDV);}
  if(!flat&&window.TKTerrain)terrainBackdrop(c,[x0,y0,x1,y1],z);
  if(S){c.save();c.clip(LANDV);c.globalCompositeOperation='source-over';/* 根拠のない矩形で明の支配域を塗らない。遼東の地域・都司は出典付き地点として表示。 */
   for(const C of G.CL){const k=S.castles[C.id].owner;c.globalAlpha=flat?(k===S.player?.5:.35):(k===S.player?.44:.32);c.fillStyle=pastel(k);c.fill(TERR[C.id]);}
@@ -269,8 +271,8 @@ function drawBase(){
   const cc=vc(),ratio=cam.z/baseSurface.z;
   const x=cc[0]+(baseSurface.x-cam.x)*cam.z-(baseSurface.cc[0]+160)*ratio;
   const y=cc[1]+(baseSurface.y-cam.y)*cam.z-(baseSurface.cc[1]+160)*ratio;
-  if(x<=0&&y<=0&&x+baseSurface.cv.width/DPR*ratio>=VW&&y+baseSurface.cv.height/DPR*ratio>=VH){
-  bctx.setTransform(1,0,0,1,0,0);bctx.clearRect(0,0,base.width,base.height);
+  {
+  bctx.setTransform(1,0,0,1,0,0);bctx.fillStyle='#1c3157';bctx.fillRect(0,0,base.width,base.height);
   bctx.drawImage(baseSurface.cv,x*DPR,y*DPR,baseSurface.cv.width*ratio,baseSurface.cv.height*ratio);U.baseDirty=false;return;}
  }
  // 地形タイルが届くたびに下層全体を描き直すと、広い画面（題名・家選び）で1回数百msかかる。
@@ -494,8 +496,11 @@ const ptrs=new Map();let drag=null,moved=false,pinch=null;
 top_.addEventListener('pointerdown',e=>{top_.setPointerCapture(e.pointerId);ptrs.set(e.pointerId,{x:e.clientX,y:e.clientY});moved=false;
  if(ptrs.size===1)drag={x:e.clientX,y:e.clientY,cx:cam.x,cy:cam.y};
  if(ptrs.size===2){const [a,b]=[...ptrs.values()];pinch={d:Math.hypot(a.x-b.x,a.y-b.y),z:cam.z};moved=true;}});
+let hoverEv=null,hoverRaf=0,topRect=null;addEventListener('resize',()=>{topRect=null;});
+function hoverFrame(){hoverRaf=0;const e=hoverEv;if(!e||ptrs.size)return;const r=topRect||(topRect=top_.getBoundingClientRect());const army=hitArmy(e.clientX-r.left,e.clientY-r.top);if(army){top_.style.cursor='pointer';tipArmy(army,e);return;}const h=hit(e.clientX-r.left,e.clientY-r.top);if(h!==U.hover){U.hover=h;top_.style.cursor=h?'pointer':'grab';}const y=hitY(e.clientX-r.left,e.clientY-r.top);if(y){tipY(y,e);return;}tip(h,e);}
 top_.addEventListener('pointermove',e=>{
- if(!ptrs.has(e.pointerId)){const r=top_.getBoundingClientRect();const army=hitArmy(e.clientX-r.left,e.clientY-r.top);if(army){top_.style.cursor='pointer';tipArmy(army,e);return;}const h=hit(e.clientX-r.left,e.clientY-r.top);if(h!==U.hover){U.hover=h;top_.style.cursor=h?'pointer':'grab';}const y=hitY(e.clientX-r.left,e.clientY-r.top);if(y){tipY(y,e);return;}tip(h,e);return;}
+ if(!ptrs.has(e.pointerId)){hoverEv=e;if(!hoverRaf)hoverRaf=requestAnimationFrame(hoverFrame);return;}
+ if(false){const r=top_.getBoundingClientRect();const army=hitArmy(e.clientX-r.left,e.clientY-r.top);if(army){top_.style.cursor='pointer';tipArmy(army,e);return;}const h=hit(e.clientX-r.left,e.clientY-r.top);if(h!==U.hover){U.hover=h;top_.style.cursor=h?'pointer':'grab';}const y=hitY(e.clientX-r.left,e.clientY-r.top);if(y){tipY(y,e);return;}tip(h,e);return;}
  ptrs.set(e.pointerId,{x:e.clientX,y:e.clientY});
  if(pinch&&ptrs.size===2){beginZoom();const [a,b]=[...ptrs.values()];cam.z=pinch.z*Math.hypot(a.x-b.x,a.y-b.y)/pinch.d;clampCam();return;}
  if(drag){const dx=e.clientX-drag.x,dy=e.clientY-drag.y;if(Math.hypot(dx,dy)>5)moved=true;if(moved){anim=null;cam.x=drag.cx-dx/cam.z;cam.y=drag.cy-dy/cam.z;clampCam();tip(null);}}});
@@ -504,11 +509,11 @@ const endPtr=e=>{const tap=ptrs.size===1&&!moved;ptrs.delete(e.pointerId);if(ptr
 top_.addEventListener('pointerup',endPtr);top_.addEventListener('pointercancel',endPtr);
 top_.addEventListener('pointerleave',()=>{U.hover=null;tip(null);});
 let zoomFinish;
-function beginZoom(){U.zoomUntil=performance.now()+140;clearTimeout(zoomFinish);zoomFinish=setTimeout(()=>{U.zoomUntil=0;U.baseDirty=true;},150);}
+function beginZoom(){U.zoomUntil=performance.now()+260;clearTimeout(zoomFinish);zoomFinish=setTimeout(()=>{U.zoomUntil=0;U.baseDirty=true;},270);}
 top_.addEventListener('wheel',e=>{e.preventDefault();beginZoom();const r=top_.getBoundingClientRect(),mx=e.clientX-r.left,my=e.clientY-r.top;const [wx,wy]=s2w(mx,my);
  cam.z*=Math.exp(-e.deltaY*.0015);clampCam();const [nx,ny]=s2w(mx,my);cam.x+=wx-nx;cam.y+=wy-ny;clampCam();anim=null;},{passive:false});
 function hit(sx,sy){if(!S)return null;let best=null,bd=16*16;for(const C of G.CL){const [x,y]=w2s(C.x,C.y);const d=(x-sx)**2+(y-sy)**2;if(d<bd){bd=d;best=C.id;}}
- if(best)return best;const [wx,wy]=s2w(sx,sy);bctx.setTransform(1,0,0,1,0,0);if(!bctx.isPointInPath(LAND,wx,wy))return null;for(const C of G.CL)if(bctx.isPointInPath(TERR[C.id],wx,wy))return C.id;return null;}
+ if(best)return best;const [wx,wy]=s2w(sx,sy);bctx.setTransform(1,0,0,1,0,0);if(!bctx.isPointInPath(landFor(Math.max(cam.z,4)),wx,wy))return null;for(const C of G.CL)if(bctx.isPointInPath(TERR[C.id],wx,wy))return C.id;return null;}
 const tipEl=$('#tip');
 function hitArmy(x,y){return U.mode==='game'&&U.armyGroups?.filter(g=>Math.hypot(g.x-x,g.y-y)<24).sort((a,b)=>Math.hypot(a.x-x,a.y-y)-Math.hypot(b.x-x,b.y-y))[0];}
 function tipArmy(group,e){const ids=group.members.map(m=>m.id),units=(U.mapUnits||[]).filter(u=>ids.includes(u.id));tipEl.innerHTML=units.map(u=>{const n=u.commanders||u.gens.map(id=>G.gen(id)?.n).filter(Boolean),identity=G.armyIdentity(u),relation=G.relationKind(S.player,identity.command);return `<div class="tph">${n[0]?faceHTML(n[0],'sm',u.clan):''}${kamonHTML(G.armyCrestKey(u),24)}<div><b>${esc(n.join('・')||G.CNK(u.clan)+'軍')}</b><span>${esc(identity.name)} ・ ${esc(relation.name)}</span></div></div><p>${esc(G.marchPhase(u).name)}${u.troops?' ・ '+man(u.troops):''} ・ 士気${Math.round(u.morale||0)}</p><p>目的地：${esc(G.marchDestination(u))}</p>`;}).join('');tipEl.hidden=false;placeTip(e);}
@@ -1034,7 +1039,7 @@ MODALS.research=()=>`<header><h2>地図と行軍の資料</h2><button class="ic"
 
 const menuHeader=t=>`<header><div><small class="eyebrow">天下分け目の国絵図</small><h2>${t}</h2></div><button class="ic" data-act="close" aria-label="地図へ戻る">×</button></header>`;
 const menuLink=(m,t,d)=>`<button class="menu-link" data-act="open" data-m="${m}"><span><b>${t}</b><small>${d}</small></span><span aria-hidden="true">›</span></button>`;
-MODALS['image-credits']=()=>`${menuHeader('画像の出典')}<h3>家紋</h3>${Object.entries(TK.KAMON_FILES).map(([k,r])=>`<article class="infra-card"><header>${kamonHTML(k,32)}<b>${esc(G.CN(k))}</b></header><p>${esc(r.artist.replace(/<[^>]*>/g,''))}</p><a href="${esc(r.source)}" target="_blank" rel="noopener">原図</a> ・ <a href="${esc(r.licenseUrl||r.source)}" target="_blank" rel="noopener">${esc(r.license)}</a></article>`).join('')}<h3>肖像</h3>${Object.entries(TK.EXTRA_PORTRAITS).map(([n,r])=>`<p>${faceHTML(n,'sm')}<a href="${esc(r.source)}" target="_blank" rel="noopener">${esc(n)}の原画</a>${r.note?' ・ '+esc(r.note):''}</p>`).join('')}`;
+MODALS['image-credits']=()=>`${menuHeader('出典と利用条件')}<h3>地図・標高・道路</h3><p class="credit-list">${document.getElementById('credit')?.innerHTML||''}</p><h3>家紋</h3>${Object.entries(TK.KAMON_FILES).map(([k,r])=>`<article class="infra-card"><header>${kamonHTML(k,32)}<b>${esc(G.CN(k))}</b></header><p>${esc(r.artist.replace(/<[^>]*>/g,''))}</p><a href="${esc(r.source)}" target="_blank" rel="noopener">原図</a> ・ <a href="${esc(r.licenseUrl||r.source)}" target="_blank" rel="noopener">${esc(r.license)}</a></article>`).join('')}<h3>肖像</h3>${Object.entries(TK.EXTRA_PORTRAITS).map(([n,r])=>`<p>${faceHTML(n,'sm')}<a href="${esc(r.source)}" target="_blank" rel="noopener">${esc(n)}の原画</a>${r.note?' ・ '+esc(r.note):''}</p>`).join('')}`;
 MODALS.infrastructure=d=>{const kind=d.kind||'road',s=G.S(),ids=kind==='road'?Object.keys(G.EDGES).filter(id=>G.improvementOwner('road',id)===s.player):G.YOSHO.filter(y=>G.yOwner(y)===s.player&&G.yActive(y)&&y.kind!=='社').map(y=>y.id);return `${menuHeader('街道・施設の整備')}<p>金 <b>${fmt(s.clans[s.player]?.gold||0)}</b>　整備は領内に残り、行軍・補給・守りに役立ちます。</p><div class="infra-tabs"><button class="btn ${kind==='road'?'pri':''}" data-act="infra-tab" data-kind="road">街道</button><button class="btn ${kind==='site'?'pri':''}" data-act="infra-tab" data-kind="site">施設</button></div><div class="infra-list">${ids.map(id=>{const r=G.improvementOffer(kind,id),e=G.EDGES[id],y=kind==='site'&&G.YOSHO.find(y=>y.id===id),title=y?y.n:G.cname(e.a)+'―'+G.cname(e.b),text=G.infrastructureText(kind,id),progress=r.project?Math.min(100,Math.round((s.t-r.project.start)/(r.project.end-r.project.start)*100)):0;return `<article class="infra-card"><header><b>${esc(title)}</b><span class="infra-level">Lv.${r.level}${' ◆'.repeat(r.level-1)}</span></header><p>${esc(text)}</p>${r.project?`<progress max="100" value="${progress}" aria-label="整備の進捗"></progress><small>あと${Math.max(0,r.project.end-s.t)}日で Lv.${r.project.to}</small>`:r.level<4?`<button class="btn" data-act="infra-upgrade" data-kind="${kind}" data-id="${esc(id)}" ${r.ok?'':'disabled'}>Lv.${r.next}へ整備　金${r.cost}・${r.days}日</button>${!r.ok?'<small>'+esc(r.reason)+'</small>':''}`:'<small>整備は最高段階です</small>'}</article>`;}).join('')||'<p>この時点では、整備できる対象がありません。</p>'}</div><p class="hint">史実の出陣・着陣日は保ちます。整備は補給・疲労・区間ごとの行軍や守備に反映されます。</p>`;};
 ACT['infra-tab']=b=>openModal('infrastructure',{kind:b.dataset.kind});
 ACT['infra-upgrade']=b=>{const r=G.startImprovement(b.dataset.kind,b.dataset.id);toast(r.msg,r.ok?'good':'bad');if(r.ok){autosave();U.baseDirty=true;renderModal();}};
