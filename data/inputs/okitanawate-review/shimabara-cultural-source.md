@@ -18,6 +18,6 @@
 
 画面のメニュー・装飾・実行用スクリプトは省き、内容を要約して整理した。要約の作成だけで史実の検証済み命題を増やさない。個別の史実判定は出典の該当箇所と確認済み命題台帳へ戻って確認する。
 
-- [照合用の原HTML（gzip）](../../source-archives/html/okitanawate-review/shimabara-cultural-source.html.gz)
+- 原HTMLは第三者の埋め込みAPIキーを含むため保存しない。本文の抽出は [shimabara-cultural-source.txt](shimabara-cultural-source.txt)。
 - 原取得時の文字コード：utf-8
 - 展開後SHA-256：`0f56cc8d3351963de0fff9c983712743279578b4db049bdbe792be9f9691ec13`
