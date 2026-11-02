@@ -26,7 +26,7 @@ window.TKBattleEffects=(function(){
   function clash(c,x,y,now,k,kb=1){const p=.5+.5*Math.sin(now/90);c.beginPath();c.arc(x,y,(14+p*6)*kb+6,0,TAU);c.fillStyle=`rgba(255,120,50,${(.12+p*.12)*k})`;c.fill();}
   function ring(c,x,y,now,k,r=22){const p=.5+.5*Math.sin(now/90);c.beginPath();c.arc(x,y,r+p*5,0,TAU);c.fillStyle=`rgba(255,110,50,${(.18+p*.22)*k})`;c.fill();}
   // 通った跡：地色の縁取りに陣営色の破線。点列は段階移動の典拠点をそのまま結ぶ概略で、細かな通過路ではない。
-  function trail(c,pts,col,kb=1){if(pts.length<2)return;c.save();c.lineCap='round';c.lineJoin='round';const path=()=>{c.beginPath();pts.forEach((p,i)=>i?c.lineTo(p[0],p[1]):c.moveTo(p[0],p[1]));};path();c.strokeStyle='rgba(255,252,240,.55)';c.lineWidth=4.2*kb+2;c.stroke();path();c.strokeStyle=col;c.globalAlpha=.62;c.lineWidth=2.4*kb+1;c.setLineDash([7*kb,5*kb]);c.stroke();c.restore();}
+  function trail(c,pts,col,kb=1,est=false){if(pts.length<2)return;c.save();c.lineCap='round';c.lineJoin='round';const path=()=>{c.beginPath();pts.forEach((p,i)=>i?c.lineTo(p[0],p[1]):c.moveTo(p[0],p[1]));};path();c.strokeStyle='rgba(255,252,240,.5)';c.lineWidth=(est?3:4.2)*kb+2;c.stroke();path();c.strokeStyle=col;c.globalAlpha=est?.5:.62;c.lineWidth=(est?1.6:2.4)*kb+1;c.setLineDash(est?[1.5*kb,4.5*kb]:[7*kb,5*kb]);c.stroke();c.restore();}
   // 雨と霧。記録のある合戦（sc.rain / sc.fog）だけ。
   const r2=srnd(5);
   function weather(c,W,H,sc,t,now){const rn=bell(sc.rain,t);if(rn>0){c.fillStyle=`rgba(60,70,85,${.16*rn})`;c.fillRect(0,0,W,H);c.strokeStyle=`rgba(210,220,235,${.5*rn})`;c.lineWidth=1;const off=(now/3)%40,rr=srnd(5);c.beginPath();for(let i=0;i<W*H/2600*rn;i++){const x=rr()*W,y=(rr()*H+off*(1+rr()))%H;c.moveTo(x,y);c.lineTo(x-4,y+13);}c.stroke();}

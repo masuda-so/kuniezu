@@ -1,0 +1,670 @@
+{
+  "scope": "推定の動き（模式の経過と汎用の動き）。史料の記録ではなく、画面では点線・破線で区別する。城の平面図を使う伏見城は対象外。",
+  "summary": {
+    "battles": 110,
+    "withMotion": 89,
+    "withPlaced": 54
+  },
+  "rows": [
+    {
+      "title": "桶狭間の戦い",
+      "basis": "both-sides",
+      "estimated": 8,
+      "placed": 0
+    },
+    {
+      "title": "第四次川中島の戦い",
+      "basis": "both-sides",
+      "estimated": 9,
+      "placed": 0
+    },
+    {
+      "title": "長篠の戦い",
+      "basis": "both-sides",
+      "estimated": 13,
+      "placed": 0
+    },
+    {
+      "title": "関ヶ原の戦い",
+      "basis": "both-sides",
+      "estimated": 42,
+      "placed": 0
+    },
+    {
+      "title": "姉川の戦い",
+      "basis": "both-sides",
+      "estimated": 8,
+      "placed": 0
+    },
+    {
+      "title": "三方ヶ原の戦い",
+      "basis": "both-sides",
+      "estimated": 10,
+      "placed": 0
+    },
+    {
+      "title": "本能寺の変",
+      "basis": "one-side:b",
+      "estimated": 5,
+      "placed": 3
+    },
+    {
+      "title": "山崎の戦い",
+      "basis": "both-sides",
+      "estimated": 10,
+      "placed": 0
+    },
+    {
+      "title": "賤ヶ岳の戦い",
+      "basis": "both-sides",
+      "estimated": 8,
+      "placed": 0
+    },
+    {
+      "title": "小牧・長久手の戦い",
+      "basis": "both-sides",
+      "estimated": 9,
+      "placed": 0
+    },
+    {
+      "title": "耳川の戦い",
+      "basis": "one-side:a",
+      "estimated": 8,
+      "placed": 4
+    },
+    {
+      "title": "沖田畷の戦い",
+      "basis": "both-sides",
+      "estimated": 6,
+      "placed": 0
+    },
+    {
+      "title": "第一次上田合戦",
+      "basis": "both-sides",
+      "estimated": 5,
+      "placed": 0
+    },
+    {
+      "title": "摺上原の戦い",
+      "basis": "both-sides",
+      "estimated": 7,
+      "placed": 0
+    },
+    {
+      "title": "小田原征伐",
+      "basis": "both-sides",
+      "estimated": 4,
+      "placed": 0
+    },
+    {
+      "title": "大坂夏の陣",
+      "basis": "both-sides",
+      "estimated": 10,
+      "placed": 0
+    },
+    {
+      "title": "大坂冬の陣",
+      "basis": "both-sides",
+      "estimated": 14,
+      "placed": 0
+    },
+    {
+      "title": "大津城の戦い",
+      "basis": "one-side:b",
+      "estimated": 2,
+      "placed": 2
+    },
+    {
+      "title": "第二次上田合戦",
+      "basis": "one-side:b",
+      "estimated": 4,
+      "placed": 4
+    },
+    {
+      "title": "田辺城の戦い",
+      "basis": "one-side:b",
+      "estimated": 4,
+      "placed": 4
+    },
+    {
+      "title": "長谷堂城の戦い",
+      "basis": "one-side:b",
+      "estimated": 1,
+      "placed": 1
+    },
+    {
+      "title": "高遠城の戦い",
+      "basis": "one-side:b",
+      "estimated": 1,
+      "placed": 1
+    },
+    {
+      "title": "長尾景虎の関東出兵",
+      "basis": "none",
+      "estimated": 2,
+      "placed": 0
+    },
+    {
+      "title": "小田原城の戦い",
+      "basis": "none",
+      "estimated": 1,
+      "placed": 1
+    },
+    {
+      "title": "牛久保城攻め",
+      "basis": "none",
+      "estimated": 1,
+      "placed": 1
+    },
+    {
+      "title": "森部の戦い",
+      "basis": "one-side:a",
+      "estimated": 0,
+      "placed": 0
+    },
+    {
+      "title": "第二次国府台合戦",
+      "basis": "one-side:b",
+      "estimated": 1,
+      "placed": 1
+    },
+    {
+      "title": "三河平定",
+      "basis": "none",
+      "estimated": 0,
+      "placed": 0
+    },
+    {
+      "title": "永禄の変",
+      "basis": "one-side:b",
+      "estimated": 5,
+      "placed": 5
+    },
+    {
+      "title": "箕輪城落城",
+      "basis": "one-side:b",
+      "estimated": 1,
+      "placed": 1
+    },
+    {
+      "title": "月山富田城開城",
+      "basis": "one-side:b",
+      "estimated": 1,
+      "placed": 1
+    },
+    {
+      "title": "休松の戦い",
+      "basis": "one-side:b",
+      "estimated": 1,
+      "placed": 1
+    },
+    {
+      "title": "稲葉山城の戦い",
+      "basis": "none",
+      "estimated": 1,
+      "placed": 1
+    },
+    {
+      "title": "信長上洛",
+      "basis": "none",
+      "estimated": 3,
+      "placed": 0
+    },
+    {
+      "title": "掛川城開城",
+      "basis": "none",
+      "estimated": 1,
+      "placed": 1
+    },
+    {
+      "title": "大河内城の戦い",
+      "basis": "one-side:b",
+      "estimated": 1,
+      "placed": 1
+    },
+    {
+      "title": "三増峠の戦い",
+      "basis": "one-side:a",
+      "estimated": 0,
+      "placed": 0
+    },
+    {
+      "title": "手這坂の戦い",
+      "basis": "none",
+      "estimated": 0,
+      "placed": 0
+    },
+    {
+      "title": "金ヶ崎の退き口",
+      "basis": "none",
+      "estimated": 1,
+      "placed": 1
+    },
+    {
+      "title": "石山合戦はじまる",
+      "basis": "none",
+      "estimated": 0,
+      "placed": 0
+    },
+    {
+      "title": "木崎原の戦い",
+      "basis": "one-side:a",
+      "estimated": 0,
+      "placed": 0
+    },
+    {
+      "title": "朝倉氏滅亡",
+      "basis": "none",
+      "estimated": 1,
+      "placed": 1
+    },
+    {
+      "title": "小谷城落城",
+      "basis": "one-side:b",
+      "estimated": 1,
+      "placed": 1
+    },
+    {
+      "title": "長島一向一揆の平定",
+      "basis": "none",
+      "estimated": 1,
+      "placed": 1
+    },
+    {
+      "title": "備中兵乱",
+      "basis": "none",
+      "estimated": 2,
+      "placed": 0
+    },
+    {
+      "title": "四万十川の戦い",
+      "basis": "both-sides",
+      "estimated": 2,
+      "placed": 0
+    },
+    {
+      "title": "天王寺の戦い",
+      "basis": "one-side:b",
+      "estimated": 1,
+      "placed": 1
+    },
+    {
+      "title": "第一次木津川口の戦い",
+      "basis": "none",
+      "estimated": 0,
+      "placed": 0
+    },
+    {
+      "title": "七尾城の戦い",
+      "basis": "one-side:b",
+      "estimated": 1,
+      "placed": 1
+    },
+    {
+      "title": "手取川の戦い",
+      "basis": "one-side:a",
+      "estimated": 0,
+      "placed": 0
+    },
+    {
+      "title": "信貴山城の戦い",
+      "basis": "one-side:b",
+      "estimated": 1,
+      "placed": 1
+    },
+    {
+      "title": "中国攻め",
+      "basis": "none",
+      "estimated": 1,
+      "placed": 1
+    },
+    {
+      "title": "御館の乱",
+      "basis": "none",
+      "estimated": 2,
+      "placed": 0
+    },
+    {
+      "title": "上月城の戦い",
+      "basis": "one-side:b",
+      "estimated": 2,
+      "placed": 2
+    },
+    {
+      "title": "第二次木津川口の戦い",
+      "basis": "none",
+      "estimated": 0,
+      "placed": 0
+    },
+    {
+      "title": "丹波・丹後平定",
+      "basis": "none",
+      "estimated": 0,
+      "placed": 0
+    },
+    {
+      "title": "有岡城の戦い",
+      "basis": "one-side:b",
+      "estimated": 1,
+      "placed": 1
+    },
+    {
+      "title": "三木の干殺し",
+      "basis": "none",
+      "estimated": 2,
+      "placed": 2
+    },
+    {
+      "title": "高天神城の戦い",
+      "basis": "none",
+      "estimated": 1,
+      "placed": 1
+    },
+    {
+      "title": "天正伊賀の乱",
+      "basis": "none",
+      "estimated": 1,
+      "placed": 1
+    },
+    {
+      "title": "鳥取の渇え殺し",
+      "basis": "none",
+      "estimated": 2,
+      "placed": 0
+    },
+    {
+      "title": "甲州征伐",
+      "basis": "both-sides",
+      "estimated": 2,
+      "placed": 0
+    },
+    {
+      "title": "備中高松城の水攻め",
+      "basis": "both-sides",
+      "estimated": 2,
+      "placed": 0
+    },
+    {
+      "title": "神流川の戦い",
+      "basis": "one-side:a",
+      "estimated": 0,
+      "placed": 0
+    },
+    {
+      "title": "若神子の対陣",
+      "basis": "none",
+      "estimated": 2,
+      "placed": 0
+    },
+    {
+      "title": "中富川の戦い",
+      "basis": "one-side:a",
+      "estimated": 0,
+      "placed": 0
+    },
+    {
+      "title": "黒駒合戦",
+      "basis": "both-sides",
+      "estimated": 2,
+      "placed": 0
+    },
+    {
+      "title": "岐阜城の開城",
+      "basis": "none",
+      "estimated": 1,
+      "placed": 1
+    },
+    {
+      "title": "松ヶ島城の戦い",
+      "basis": "none",
+      "estimated": 1,
+      "placed": 1
+    },
+    {
+      "title": "紀州征伐",
+      "basis": "both-sides",
+      "estimated": 3,
+      "placed": 0
+    },
+    {
+      "title": "宇喜多勢の讃岐攻め",
+      "basis": "none",
+      "estimated": 1,
+      "placed": 1
+    },
+    {
+      "title": "小早川隆景の伊予攻め",
+      "basis": "none",
+      "estimated": 1,
+      "placed": 1
+    },
+    {
+      "title": "四国攻め",
+      "basis": "both-sides",
+      "estimated": 2,
+      "placed": 0
+    },
+    {
+      "title": "富山の役",
+      "basis": "none",
+      "estimated": 1,
+      "placed": 1
+    },
+    {
+      "title": "人取橋の戦い",
+      "basis": "one-side:a",
+      "estimated": 0,
+      "placed": 0
+    },
+    {
+      "title": "岩屋城の戦い",
+      "basis": "one-side:b",
+      "estimated": 1,
+      "placed": 1
+    },
+    {
+      "title": "戸次川の戦い",
+      "basis": "none",
+      "estimated": 0,
+      "placed": 0
+    },
+    {
+      "title": "九州平定",
+      "basis": "none",
+      "estimated": 3,
+      "placed": 0
+    },
+    {
+      "title": "根白坂の戦い",
+      "basis": "one-side:b",
+      "estimated": 1,
+      "placed": 1
+    },
+    {
+      "title": "新発田城落城",
+      "basis": "none",
+      "estimated": 1,
+      "placed": 1
+    },
+    {
+      "title": "韮山城の戦い",
+      "basis": "one-side:b",
+      "estimated": 1,
+      "placed": 1
+    },
+    {
+      "title": "北国勢の上野攻め",
+      "basis": "none",
+      "estimated": 3,
+      "placed": 0
+    },
+    {
+      "title": "鉢形城の開城",
+      "basis": "one-side:b",
+      "estimated": 2,
+      "placed": 2
+    },
+    {
+      "title": "小田原開城",
+      "basis": "none",
+      "estimated": 2,
+      "placed": 2
+    },
+    {
+      "title": "文禄の役",
+      "basis": "one-side:b",
+      "estimated": 2,
+      "placed": 2
+    },
+    {
+      "title": "尚州の戦い",
+      "basis": "one-side:a",
+      "estimated": 2,
+      "placed": 0
+    },
+    {
+      "title": "忠州の戦い",
+      "basis": "both-sides",
+      "estimated": 2,
+      "placed": 0
+    },
+    {
+      "title": "玉浦海戦",
+      "basis": "none",
+      "estimated": 0,
+      "placed": 0
+    },
+    {
+      "title": "閑山島海戦",
+      "basis": "none",
+      "estimated": 0,
+      "placed": 0
+    },
+    {
+      "title": "第一次晋州城の戦い",
+      "basis": "one-side:b",
+      "estimated": 2,
+      "placed": 2
+    },
+    {
+      "title": "平壌の戦い",
+      "basis": "one-side:b",
+      "estimated": 2,
+      "placed": 2
+    },
+    {
+      "title": "碧蹄館の戦い",
+      "basis": "both-sides",
+      "estimated": 5,
+      "placed": 0
+    },
+    {
+      "title": "幸州山城の戦い",
+      "basis": "one-side:b",
+      "estimated": 4,
+      "placed": 4
+    },
+    {
+      "title": "第二次晋州城の戦い",
+      "basis": "one-side:b",
+      "estimated": 2,
+      "placed": 2
+    },
+    {
+      "title": "慶長の役・漆川梁海戦",
+      "basis": "none",
+      "estimated": 3,
+      "placed": 3
+    },
+    {
+      "title": "南原城の戦い",
+      "basis": "one-side:b",
+      "estimated": 5,
+      "placed": 5
+    },
+    {
+      "title": "鳴梁海戦",
+      "basis": "none",
+      "estimated": 0,
+      "placed": 0
+    },
+    {
+      "title": "蔚山城の戦い",
+      "basis": "one-side:b",
+      "estimated": 3,
+      "placed": 2
+    },
+    {
+      "title": "露梁海戦",
+      "basis": "none",
+      "estimated": 0,
+      "placed": 0
+    },
+    {
+      "title": "会津征伐",
+      "basis": "none",
+      "estimated": 1,
+      "placed": 1
+    },
+    {
+      "title": "浅井畷の戦い",
+      "basis": "one-side:a",
+      "estimated": 0,
+      "placed": 0
+    },
+    {
+      "title": "岐阜城の戦い",
+      "basis": "none",
+      "estimated": 2,
+      "placed": 2
+    },
+    {
+      "title": "安濃津城の戦い",
+      "basis": "one-side:b",
+      "estimated": 1,
+      "placed": 1
+    },
+    {
+      "title": "石垣原の戦い",
+      "basis": "none",
+      "estimated": 0,
+      "placed": 0
+    },
+    {
+      "title": "佐和山城落城",
+      "basis": "none",
+      "estimated": 1,
+      "placed": 1
+    },
+    {
+      "title": "木津川口の戦い",
+      "basis": "none",
+      "estimated": 0,
+      "placed": 0
+    },
+    {
+      "title": "今福・鴫野の戦い",
+      "basis": "none",
+      "estimated": 6,
+      "placed": 0
+    },
+    {
+      "title": "真田丸の戦い",
+      "basis": "none",
+      "estimated": 3,
+      "placed": 3
+    },
+    {
+      "title": "道明寺の戦い",
+      "basis": "both-sides",
+      "estimated": 5,
+      "placed": 0
+    },
+    {
+      "title": "八尾・若江の戦い",
+      "basis": "both-sides",
+      "estimated": 4,
+      "placed": 0
+    }
+  ]
+}
