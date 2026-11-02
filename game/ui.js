@@ -41,7 +41,8 @@ const L2=(arr,it)=>{const p=new Path2D();for(let l of arr){if(it)l=chaikin(l,fal
 const TERR={};for(const id in GEO.terr)TERR[id]=P2(GEO.terr[id],2);
 if(GEO.japanLand)TKTerrain.setCoverage('gsi',GEO.japanLand);
 const JAPAN=GEO.japanLand?P2(GEO.japanLand,1):null;
-const LAND=P2(GEO.japanLand||GEO.land,1);if(GEO.japanLand)LAND.addPath(P2(GEO.land.slice(GEO.japanLand.length),1));
+// 間引かない陸地の輪郭は最大縮尺（8倍）でだけ使うので、起動時には作らず初めて要る時に作る。
+let LANDFULL=null;function fullLand(){if(!LANDFULL){LANDFULL=P2(GEO.japanLand||GEO.land,1);if(GEO.japanLand)LANDFULL.addPath(P2(GEO.land.slice(GEO.japanLand.length),1));}return LANDFULL;}
 // 陸地の輪郭は約15万点あり、描画のたびのクリップ・縁取りが重い。縮尺ごとに画面で0.35px未満の折れを間引いた輪郭を使う（当たり判定は元の LAND）。
 function simplifyRing(r,tol){const n=r.length/2;if(n<8)return r;const keep=new Uint8Array(n);keep[0]=keep[n-1]=1;const st=[[0,n-1]];const t2=tol*tol;
  while(st.length){const [a,b]=st.pop();const ax=r[a*2],ay=r[a*2+1],bx=r[b*2],by=r[b*2+1],dx=bx-ax,dy=by-ay,L=dx*dx+dy*dy||1e-12;let mi=-1,md=t2;
@@ -49,10 +50,10 @@ function simplifyRing(r,tol){const n=r.length/2;if(n<8)return r;const keep=new U
   if(mi>0){keep[mi]=1;st.push([a,mi],[mi,b]);}}
  const o=[];for(let i=0;i<n;i++)if(keep[i])o.push(r[i*2],r[i*2+1]);return o;}
 const landLOD=new Map();
-function landFor(z){const lv=Math.max(-3,Math.min(3,Math.floor(Math.log2(Math.max(.01,z)))));if(lv>=3)return LAND;let p=landLOD.get(lv);if(p)return p;
+function landFor(z){const lv=Math.max(-3,Math.min(3,Math.floor(Math.log2(Math.max(.01,z)))));if(lv>=3)return fullLand();let p=landLOD.get(lv);if(p)return p;
  const tol=.35/2**lv,min=tol*1.5,simp=arr=>arr.map(poly=>poly.map(ring=>{let x0=Infinity,y0=Infinity,x1=-Infinity,y1=-Infinity;for(let i=0;i<ring.length;i+=2){x0=Math.min(x0,ring[i]);x1=Math.max(x1,ring[i]);y0=Math.min(y0,ring[i+1]);y1=Math.max(y1,ring[i+1]);}return x1-x0<min&&y1-y0<min?null:simplifyRing(ring,tol);}).filter(Boolean)).filter(poly=>poly.length);
  p=P2(simp(GEO.japanLand||GEO.land),1);if(GEO.japanLand)p.addPath(P2(simp(GEO.land.slice(GEO.japanLand.length)),1));landLOD.set(lv,p);return p;}
-let LANDV=LAND;
+let LANDV=null;
 (window.requestIdleCallback||(f=>setTimeout(f,200)))(function warm(dl){for(const lv of [-3,-2,-1,0,1,2,3]){if(!landLOD.has(lv)||!roadLOD.has(lv)){landFor(2**lv);roadsFor(2**lv);if(dl?.timeRemaining&&dl.timeRemaining()<5){(window.requestIdleCallback||(f=>setTimeout(f,200)))(warm);return;}}}});
 const LAKES=P2(GEO.lakes,1),RIVERS=L2(GEO.rivers.filter(r=>!TK.KOREAN_RIVERS_DETAIL?.length||!r.every((v,i)=>i%2?GEO.LAT0-v/GEO.K>34.8:v/GEO.K/GEO.CX+GEO.LON0>124&&v/GEO.K/GEO.CX+GEO.LON0<131)),1),PBORD=L2(GEO.pborders,2);
 const EDGE=GEO.edges.map(([a,b,ls])=>({a,b,p:L2(ls,2)}));
@@ -614,8 +615,14 @@ function loop(now){
  const due=!U.modal&&U.speed>0&&now-lastTop>33,motion=still||due?motionSig():'';
  // 攻城の輪・煙・交戦の明滅だけが動いている間は約20回/秒で足りる。
  if(still||due&&(motion!==lastMotion||topAnimated&&now-lastTop>50)){topAnimated=drawTop(still);U.drawStats.top++;lastTop=now;lastMotion=motion;if(still){lastStill=now;topSig=ts;}}
- requestAnimationFrame(loop);
+ // 停止して何も変わらない状態が続いたら、毎フレームの呼び出しをやめて0.2秒ごとの確認に落とす。操作が来たらすぐ戻す。
+ if(dirty||still||anim||U.speed>0||hold>0||ptrs.size||S?.sceneQ?.length||U.deploymentPreview&&now<U.deploymentPreview.until)lastBusy=now;
+ if(now-lastBusy>1500){loopSleeping=true;loopTimer=setTimeout(wakeLoop,200);}else requestAnimationFrame(loop);
 }
+let lastBusy=0,loopSleeping=false,loopTimer=0;
+function wakeLoop(){if(!loopSleeping)return;loopSleeping=false;clearTimeout(loopTimer);requestAnimationFrame(loop);}
+U.wakeLoop=wakeLoop;
+for(const type of ['pointerdown','pointermove','wheel','keydown','resize','focus'])addEventListener(type,wakeLoop,{capture:true,passive:true});
 let uiT=0,terrSig='';
 function territorySignature(){return S?JSON.stringify(S.branches||{})+'|'+G.date().y+'|'+G.CL.map(c=>S.castles[c.id].owner).join(',')+'|'+G.alive().map(k=>S.clans[k].leader).join(',')+'|'+Object.keys(S.ally).filter(k=>S.ally[k]>0).join(',')+'|'+Object.keys(S.war||{}).filter(k=>S.t-S.war[k]<300).join(','):'';}
 function tick(){

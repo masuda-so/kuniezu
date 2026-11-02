@@ -46,6 +46,8 @@ const timer=setTimeout(()=>{console.error('timeout');chrome.kill();process.exitC
  await ev("document.querySelector('[data-act=new]').click()");await until("!!document.querySelector('[data-act=scen][data-id="+SCEN+"]')");await ev("document.querySelector('[data-act=scen][data-id="+SCEN+"]').click()");await until("!!document.querySelector('[data-act=start]')");await ev("document.querySelector('[data-act=start]').click()");await until("TKUI.modal==='intro'");
  await ev("document.querySelector('#modal [data-act=close]').click()");await until('!TKUI.modal');await ev(observe);await sleep(1500);
  const rows=[];
+ // 新しい地域へ寄った直後の地形タイル読込中（停止中）の負荷。
+ await ev("TKUI.speed=0");await ev("TKUI.cam(...G.PJ(130.6,32.4),2.2),1");rows.push({view:"九州へ移動",...await sample("地形読込",6000),tilesLoaded:await ev("TKTerrain.stats().loaded")});
  for(const [view,expr] of [['全国','1'],['近景',"TKUI.cam(...G.PJ(135.6,34.7),1.6),1"]]){await ev(expr);await sleep(1200);await until("TKTerrain.stats().pending+TKTerrain.stats().running===0",600).catch(()=>{});await sleep(500);
   await ev('TKUI.speed=0');rows.push({view,...await sample('停止',3000)});
   await ev('TKUI.speed=2');rows.push({view,...await sample('再生×2',5000)});
