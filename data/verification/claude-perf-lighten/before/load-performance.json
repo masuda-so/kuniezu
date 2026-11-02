@@ -1,0 +1,185 @@
+{
+  "url": "http://localhost:8000/index.html",
+  "view": [
+    1024,
+    768,
+    2
+  ],
+  "overrides": [],
+  "startup": {
+    "domContentLoadedSec": 0.23,
+    "loadSec": 37.33,
+    "titleReadySec": 3.75,
+    "requests": 1145,
+    "transferMB": 99.92,
+    "byKind": {
+      "s3.amazonaws.com png": "636件 72.6MB",
+      "local js": "85件 10.6MB",
+      "cyberjapandata.gsi.go.jp png": "298件 10.4MB",
+      "local jpg": "8件 2.7MB",
+      "fonts.gstatic.com woff2": "80件 1.4MB",
+      "local png": "16件 1.2MB",
+      "local webp": "1件 0.6MB",
+      "local svg": "16件 0.3MB"
+    },
+    "scripts": 85,
+    "heapMB": 72.4
+  },
+  "rows": [
+    {
+      "view": "全国",
+      "name": "停止",
+      "seconds": 3.28,
+      "topDrawsPerSec": 0,
+      "baseDrawsPerSec": 0,
+      "domMutationsPerSec": 0,
+      "framesPerSec": 55.8,
+      "days": 0,
+      "modal": null,
+      "mainThreadBusy": 0.093,
+      "scriptBusy": 0.002,
+      "layoutsPerSec": 0,
+      "styleRecalcsPerSec": 0,
+      "heapMB": 76.8,
+      "cpu": [
+        "requestAnimationFrame :0 3ms"
+      ]
+    },
+    {
+      "view": "全国",
+      "name": "再生×2",
+      "seconds": 5.13,
+      "topDrawsPerSec": 29.6,
+      "baseDrawsPerSec": 0.2,
+      "domMutationsPerSec": 11.9,
+      "framesPerSec": 58.5,
+      "days": 2,
+      "modal": null,
+      "mainThreadBusy": 0.259,
+      "scriptBusy": 0.085,
+      "layoutsPerSec": 0.8,
+      "styleRecalcsPerSec": 1.2,
+      "heapMB": 79.6,
+      "cpu": [
+        "narrowTL ui.js:114 46ms",
+        "drawTop ui.js:362 36ms",
+        "renderTop ui.js:664 36ms",
+        "at ui.js:160 28ms",
+        "fillText :0 28ms",
+        "strokeText :0 26ms",
+        "drawYosho ui.js:339 21ms",
+        "save :0 17ms",
+        "fill :0 17ms",
+        "measureText :0 15ms"
+      ]
+    },
+    {
+      "view": "全国",
+      "name": "再生×16",
+      "seconds": 5.19,
+      "topDrawsPerSec": 25.4,
+      "baseDrawsPerSec": 0.8,
+      "domMutationsPerSec": 95.4,
+      "framesPerSec": 46.4,
+      "days": 20,
+      "modal": null,
+      "mainThreadBusy": 0.479,
+      "scriptBusy": 0.275,
+      "layoutsPerSec": 6.6,
+      "styleRecalcsPerSec": 8.7,
+      "heapMB": 95.1,
+      "cpu": [
+        "drawImage :0 737ms",
+        "save :0 154ms",
+        "renderTop ui.js:664 75ms",
+        "fillText :0 35ms",
+        "drawYosho ui.js:339 32ms",
+        "drawTop ui.js:362 31ms",
+        "measureText :0 31ms",
+        "at ui.js:160 29ms",
+        "strokeText :0 26ms",
+        "narrowTL ui.js:114 17ms"
+      ]
+    },
+    {
+      "view": "近景",
+      "name": "停止",
+      "seconds": 3.1,
+      "topDrawsPerSec": 0,
+      "baseDrawsPerSec": 0,
+      "domMutationsPerSec": 0,
+      "framesPerSec": 59,
+      "days": 0,
+      "modal": null,
+      "mainThreadBusy": 0.043,
+      "scriptBusy": 0.002,
+      "layoutsPerSec": 0,
+      "styleRecalcsPerSec": 0,
+      "heapMB": 76.2,
+      "cpu": [
+        "loop ui.js:565 1ms",
+        "requestAnimationFrame :0 1ms"
+      ]
+    },
+    {
+      "view": "近景",
+      "name": "再生×2",
+      "seconds": 5.33,
+      "topDrawsPerSec": 29.2,
+      "baseDrawsPerSec": 0,
+      "domMutationsPerSec": 11.4,
+      "framesPerSec": 57.4,
+      "days": 2,
+      "modal": null,
+      "mainThreadBusy": 0.314,
+      "scriptBusy": 0.112,
+      "layoutsPerSec": 0.7,
+      "styleRecalcsPerSec": 1.1,
+      "heapMB": 88.8,
+      "cpu": [
+        "at ui.js:160 44ms",
+        "fmt ui.js:4 41ms",
+        "drawTop ui.js:362 41ms",
+        "fillText :0 40ms",
+        "strokeText :0 35ms",
+        "measureText :0 32ms",
+        "mix ui.js:26 25ms",
+        "narrowTL ui.js:114 23ms",
+        "renderTop ui.js:664 23ms",
+        "save :0 23ms"
+      ]
+    },
+    {
+      "view": "近景",
+      "name": "再生×16",
+      "seconds": 5.17,
+      "topDrawsPerSec": 29.6,
+      "baseDrawsPerSec": 0.2,
+      "domMutationsPerSec": 93,
+      "framesPerSec": 55.1,
+      "days": 21,
+      "modal": null,
+      "mainThreadBusy": 0.356,
+      "scriptBusy": 0.15,
+      "layoutsPerSec": 6.2,
+      "styleRecalcsPerSec": 8.3,
+      "heapMB": 81.5,
+      "cpu": [
+        "drawImage :0 199ms",
+        "save :0 51ms",
+        "fmt ui.js:4 44ms",
+        "measureText :0 42ms",
+        "strokeText :0 40ms",
+        "fillText :0 36ms",
+        "at ui.js:160 34ms",
+        "drawTop ui.js:362 30ms",
+        "roadLabelsTop ui.js:158 18ms",
+        "jText ui.js:333 18ms"
+      ]
+    }
+  ],
+  "afterPlay": {
+    "heapMB": 81.5,
+    "domNodes": 4646
+  }
+}
