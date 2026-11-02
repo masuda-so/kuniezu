@@ -412,54 +412,60 @@
     },
     {
       "order": 63,
-      "file": "game/battle-atlas.js",
+      "file": "game/battle-atlas-effects.js",
       "area": "battles",
       "generatedByCandidates": []
     },
     {
       "order": 64,
+      "file": "game/battle-atlas.js",
+      "area": "battles",
+      "generatedByCandidates": []
+    },
+    {
+      "order": 65,
       "file": "game/history-mode.js",
       "area": "history",
       "generatedByCandidates": []
     },
     {
-      "order": 65,
+      "order": 66,
       "file": "game/map-relations.js",
       "area": "history",
       "generatedByCandidates": []
     },
     {
-      "order": 66,
+      "order": 67,
       "file": "game/historical-families.js",
       "area": "history",
       "generatedByCandidates": []
     },
     {
-      "order": 67,
+      "order": 68,
       "file": "game/alliance-history.js",
       "area": "history",
       "generatedByCandidates": []
     },
     {
-      "order": 68,
+      "order": 69,
       "file": "game/player-copy.js",
       "area": "history",
       "generatedByCandidates": []
     },
     {
-      "order": 69,
+      "order": 70,
       "file": "game/terrain-tiles.js",
       "area": "geography",
       "generatedByCandidates": []
     },
     {
-      "order": 70,
+      "order": 71,
       "file": "game/storage.js",
       "area": "ui-assets",
       "generatedByCandidates": []
     },
     {
-      "order": 71,
+      "order": 72,
       "file": "game/portrait-layout.js",
       "area": "ui-assets",
       "generatedByCandidates": [
@@ -467,7 +473,7 @@
       ]
     },
     {
-      "order": 72,
+      "order": 73,
       "file": "game/kamon-data.js",
       "area": "ui-assets",
       "generatedByCandidates": [
@@ -475,19 +481,19 @@
       ]
     },
     {
-      "order": 73,
+      "order": 74,
       "file": "game/kamon.js",
       "area": "ui-assets",
       "generatedByCandidates": []
     },
     {
-      "order": 74,
+      "order": 75,
       "file": "game/convoys.js",
       "area": "movement",
       "generatedByCandidates": []
     },
     {
-      "order": 75,
+      "order": 76,
       "file": "game/battle-phases.js",
       "area": "battles",
       "generatedByCandidates": []
@@ -496,16 +502,16 @@
       "file": "game/history-state-migration.js",
       "area": "history",
       "generatedByCandidates": [],
-      "order": 76
+      "order": 77
     },
     {
-      "order": 77,
+      "order": 78,
       "file": "game/scenario-openings.js",
       "area": "history",
       "generatedByCandidates": []
     },
     {
-      "order": 78,
+      "order": 79,
       "file": "game/historical-register.js",
       "area": "history",
       "generatedByCandidates": []
@@ -514,16 +520,16 @@
       "file": "game/central-offices.js",
       "area": "history",
       "generatedByCandidates": [],
-      "order": 79
+      "order": 80
     },
     {
-      "order": 80,
+      "order": 81,
       "file": "game/ui.js",
       "area": "ui-assets",
       "generatedByCandidates": []
     },
     {
-      "order": 81,
+      "order": 82,
       "file": "game/kb.js",
       "area": "history",
       "generatedByCandidates": []

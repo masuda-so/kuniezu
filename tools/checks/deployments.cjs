@@ -24,7 +24,7 @@ const east=TK.ROADS.find(r=>r[0]==='関東路')[1];assert.ok(east.at(-1)[0]>128.
 G.newGame('s1585','hojo');G.S().player='__none';
 const clear=()=>{const s=G.S();s.evQ=[];s.sceneQ=[];s.battleQ=[];s.propQ=[];};
 const before=d=>{const t=G.evT({d});while(G.S().t<t-1){G.day();clear();}};
-before(TK.lunarDate(1587,10,25));assert.equal(G.S().castles.shibata.owner,'shibata');G.day();clear();assert.equal(G.S().castles.shibata.owner,'uesugi');
+before(TK.lunarDate(1587,10,25));assert.equal(G.S().castles.shibata.owner,'shibata');G.day();clear();assert.equal(G.S().castles.shibata.owner,'nagao');
 for(const [id,lunar] of [['hachigata',[1590,6,14]],['nirayama',[1590,6,24]]]){
  before(TK.lunarDate(...lunar));assert.equal(G.S().castles[id].owner,'hojo',id+' before surrender');G.day();clear();assert.equal(G.S().castles[id].owner,'hashiba',id+' on surrender');assert.equal(G.S().castles.odawara.owner,'hojo','Odawara still holds');
 }

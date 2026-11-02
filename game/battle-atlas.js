@@ -8,8 +8,8 @@ window.TKBattleAtlas=(function(){
  const clamp=(v,a,b)=>Math.max(a,Math.min(b,v));
  function make(cv,sc,opt){
   const title=opt.title,meta=TK.BATTLE_ATLAS[title],ctx=cv.getContext('2d');let W=0,H=0,D=1,bg=null,data=decoded.get(meta.file)||null,dead=false,selected=null,error='',lastKey='',frame;
-  let t=0,pendingPlay=false;const groups=(sc.atlasGroups||[]).flatMap(g=>g.members.map((id,i)=>({...g,id:g.id+'-'+i,label:sc.units.find(u=>u.id===id)?.g||g.label,members:[id],parentId:g.id,point:g.point}))),units=sc.atlasUnits||[],notes=sc.atlasNotes||[],aspect=sc.atlasPlan?1100/1050:.7;
-  const unitById=new Map(sc.units.map(u=>[u.id,u])),moveByName=new Map((TK.BATTLE_MOVEMENTS[sc.title]||[]).map(m=>[m.name,m]));
+  let t=0,pendingPlay=false,fxRaf=0,fxLast=0,lastSnap=true;const fx=TKBattleEffects.create({seed:(meta.file||'').length*131+sc.units.length});const groups=(sc.atlasGroups||[]).flatMap(g=>g.members.map((id,i)=>({...g,id:g.id+'-'+i,label:sc.units.find(u=>u.id===id)?.g||g.label,members:[id],parentId:g.id,point:g.point}))),units=sc.atlasUnits||[],notes=sc.atlasNotes||[],aspect=sc.atlasPlan?1100/1050:.7;
+  const unitById=new Map(sc.units.map(u=>[u.id,u])),groupOf=new Map(),moveByName=new Map((TK.BATTLE_MOVEMENTS[sc.title]||[]).map(m=>[m.name,m]));
   const pj=(lo,la)=>[(lo-meta.bounds[0])/(meta.bounds[2]-meta.bounds[0])*W,(meta.bounds[1]-la)/(meta.bounds[1]-meta.bounds[3])*H];
   const wp=(x,y)=>pj(TKGEO.LON0+x/TKGEO.K/TKGEO.CX,TKGEO.LAT0-y/TKGEO.K);
   const inside=(x,y)=>x>=0&&x<=W&&y>=0&&y<=H;
@@ -75,19 +75,48 @@ window.TKBattleAtlas=(function(){
    for(const id of ids){const g=groups.find(g=>g.id===id||g.members.includes(id));if(!g)continue;const u=unitById.get(g.members[0]);if(!u)continue;const button=document.createElement('button');button.type='button';button.className='atlas-unit-choice';button.dataset.unitId=u.id;const face=opt.face?.(u.g,14,COL[g.side]);if(face){const im=document.createElement('img');im.src=face.toDataURL();im.width=28;im.height=28;im.alt='';button.append(im);}const name=document.createElement('span');name.textContent=u.g||u.n;button.append(name);button.onclick=()=>{selected=g.id;frameDraw();};el.append(button);}
    const close=document.createElement('button');close.type='button';close.textContent='閉じる';close.className='mini';close.onclick=()=>{selected=null;el.hidden=true;frameDraw();};el.append(close);
   }
-  function groupDraw(){const located=groups.filter(g=>g.point&&t>=(sc.mapVisibleFrom?.[g.members[0]]||0)),pins=located.map(pinFor),named=[],badged=new Set(),active=new Set(G.battleActiveUnits(sc,t));
-   for(const [index,g]of located.entries()){const u=unitById.get(g.members[0]);if(!u)continue;const [x,y]=pins[index],near=located.filter((q,j)=>Math.hypot(pins[j][0]-x,pins[j][1]-y)<20),sel=selected===g.id||selected===g.parentId||g.members.includes(selected),col=u.turn&&t>=u.turn[0]?'#b47712':COL[g.side]||COL.unknown;
-    ctx.save();const visibleFrom=sc.mapVisibleFrom?.[u.id]||0;if(visibleFrom)ctx.globalAlpha=clamp((t-visibleFrom)/2,0,1);ctx.save();ctx.translate(x,y);const move=moveByName.get(u.g||u.n),side=u.turn&&t>=u.turn[0]?u.turn[1]:u.side;let aim=null;if(move&&t>move.from){const f=G.battlePhasePoint(sc,u.g||u.n,Math.min(move.to,t+.05),g.point),p=G.battlePhasePoint(sc,u.g||u.n,Math.max(move.from,Math.min(move.to,t)-.05),g.point),A=pj(...p),B=pj(...f);if(Math.hypot(B[0]-A[0],B[1]-A[1])>1e-6)aim=[B[0]-A[0],B[1]-A[1]];}if(!aim){let best=Infinity;for(const [j,q] of located.entries()){const v=unitById.get(q.members[0]),op=v.turn&&t>=v.turn[0]?v.turn[1]:v.side;if(op===side)continue;const a=pins[j],d=Math.hypot(a[0]-x,a[1]-y);if(d>1&&d<best){best=d;aim=[a[0]-x,a[1]-y];}}}if(aim)ctx.rotate(Math.atan2(aim[1],aim[0])+Math.PI/2);TKCounter.path(ctx,W<560?22:28,W<560?15:19);ctx.fillStyle=col;ctx.fill();ctx.strokeStyle=sel?'#e5ad3f':'#fff8e7';ctx.lineWidth=sel?2.5:active.has(u.id)?2.2:1.3;ctx.lineJoin='round';ctx.stroke();ctx.restore();
-    const crestKey=G.armyCrestKey({clan:u.clan,gens:[],commanders:[u.g||u.n],until:sc.title}),crest=G.kamonImage(crestKey);ctx.save();ctx.strokeStyle='#574732';ctx.lineWidth=.8;ctx.beginPath();ctx.moveTo(x+10,y-2);ctx.lineTo(x+10,y-26);ctx.stroke();ctx.fillStyle=crest?'#fff8e7':col;ctx.fillRect(x+10,y-25,15,15);ctx.strokeStyle=col;ctx.strokeRect(x+10,y-25,15,15);if(crest)ctx.drawImage(crest,x+12,y-23,11,11);ctx.restore();
-    if(near.length===1||sel){const face=opt.face?.(u.g,12,col);if(face)ctx.drawImage(face,x-26,y-30,24,24);const label=u.g||u.n;ctx.font=`600 12px ${FONT}`;const w=ctx.measureText(label).width+8,b={x:x+18,y:y-10,w,h:18};if(sel||!named.some(a=>b.x<a.x+a.w&&b.x+b.w>a.x&&b.y<a.y+a.h&&b.y+b.h>a.y)){text(ctx,label,b.x,b.y+9,12,'#302719','left');named.push(b);}}
+  // 部隊の見える条件：長篠の本戦配置（mapVisibleFrom）と、着陣が後の隊（u.from）。
+  const visibleFrom=u=>Math.max(sc.mapVisibleFrom?.[u.id]||0,u.from||0);
+  const sideOf=u=>u.turn&&t>=u.turn[0]?(u.turn[1]||'a'):u.side;
+  const isDead=u=>u.die!=null&&t>=u.die,isRouted=u=>u.rout!=null&&t>u.rout;
+  // 段階移動の通過点。典拠点を結んだ線のうち、現在位置までを返す。
+  function traversed(move,P){const line=G.battlePhaseGeometry(move).map(p=>wp(...p)),f=clamp((t-move.from)/(move.to-move.from),0,1);let total=0;const cum=[0];for(let i=1;i<line.length;i++){total+=Math.hypot(line[i][0]-line[i-1][0],line[i][1]-line[i-1][1]);cum.push(total);}const d=f*total,out=[line[0]];for(let i=1;i<line.length&&cum[i]<=d;i++)out.push(line[i]);out.push(P);return out;}
+  function groupDraw(dt,now,playing){const located=groups.filter(g=>g.point&&t>=visibleFrom(unitById.get(g.members[0])||{})),pins=located.map(pinFor),named=[],badged=new Set();
+   groupOf.clear();located.forEach((g,i)=>groupOf.set(g.members[0],{g,pin:pins[i]}));
+   const kb=clamp(W/760,.62,1.1),small=W<560;
+   // 交戦の組（beats の第3要素）。最新の組は薄く残し、始まりから16で弱める。
+   const beat=(sc.beats||[]).filter(b=>b[0]<=t&&b[2]?.length).at(-1),active=new Set(beat?beat[2]:[]),clashK=beat?Math.max(.35,1-(t-beat[0])/16):0;
+   const livePin=id=>{const r=groupOf.get(id);if(!r)return null;const u=unitById.get(id);return u&&!isDead(u)?r.pin:null;};
+   if(beat)for(let i=0;i+1<beat[2].length;i+=2){const a=livePin(beat[2][i]),b=livePin(beat[2][i+1]);if(!a||!b)continue;const d=Math.hypot(a[0]-b[0],a[1]-b[1]);
+    if(d<Math.max(150,W*.28)){const mx=(a[0]+b[0])/2,my=(a[1]+b[1])/2;fx.clash(ctx,mx,my,now,clashK,kb);if(playing&&fx.rnd()<dt*40*clashK)fx.spawn(mx+(fx.rnd()-.5)*16,my+(fx.rnd()-.5)*10,'spark');if(playing&&fx.rnd()<dt*14*clashK)fx.spawn(mx,my,'dust');}
+    else for(const p of [a,b]){fx.ring(ctx,p[0],p[1],now,clashK,small?18:22);if(playing&&fx.rnd()<dt*8*clashK)fx.spawn(p[0],p[1],'dust');}}
+   // 段階移動の足跡は駒より下に描く。
+   for(const [index,g]of located.entries()){const u=unitById.get(g.members[0]);const move=u&&moveByName.get(u.g||u.n);if(move&&t>move.from)fx.trail(ctx,traversed(move,pins[index]),COL[sideOf(u)]||COL.unknown,kb);}
+   for(const [index,g]of located.entries()){const u=unitById.get(g.members[0]);if(!u)continue;const [x,y]=pins[index],near=located.filter((q,j)=>Math.hypot(pins[j][0]-x,pins[j][1]-y)<20),sel=selected===g.id||selected===g.parentId||g.members.includes(selected),side=sideOf(u),dead=isDead(u),routed=isRouted(u),col=dead?'#8a8174':u.turn&&t>=u.turn[0]?'#b47712':COL[side]||COL.unknown;
+    ctx.save();const from=visibleFrom(u);let alpha=from?clamp((t-from)/2,0,1):1;if(dead)alpha*=clamp(1-(t-u.die)/10,.32,1);else if(routed)alpha*=clamp(1-(t-u.rout)/14,.45,1);ctx.globalAlpha=alpha;
+    const move=moveByName.get(u.g||u.n),moving=move&&t>move.from&&t<move.to;let aim=null;
+    if(move&&t>move.from){const f=G.battlePhasePoint(sc,u.g||u.n,Math.min(move.to,t+.05),g.point),p=G.battlePhasePoint(sc,u.g||u.n,Math.max(move.from,Math.min(move.to,t)-.05),g.point),A=pj(...p),B=pj(...f);if(Math.hypot(B[0]-A[0],B[1]-A[1])>1e-6)aim=[B[0]-A[0],B[1]-A[1]];}
+    if(!aim){let best=Infinity;for(const [j,q] of located.entries()){const v=unitById.get(q.members[0]),op=sideOf(v);if(op===side||isDead(v))continue;const a=pins[j],d=Math.hypot(a[0]-x,a[1]-y);if(d>1&&d<best){best=d;aim=[a[0]-x,a[1]-y];}}}
+    const target=aim?Math.atan2(aim[1],aim[0])+Math.PI/2:undefined,ang=fx.heading(g.id,target,dt,!playing||lastSnap);
+    if(moving&&playing&&fx.rnd()<dt*10)fx.spawn(x,y,'dust');
+    ctx.save();ctx.translate(x,y);if(Number.isFinite(ang))ctx.rotate(ang);TKCounter.path(ctx,small?22:28,small?15:19);ctx.fillStyle=col;ctx.fill();ctx.strokeStyle=sel?'#e5ad3f':'#fff8e7';ctx.lineWidth=sel?2.5:active.has(u.id)?2.2:1.3;ctx.lineJoin='round';ctx.stroke();ctx.restore();
+    // 鉄砲：記録の射撃区間（fire）か、鉄砲隊が交戦中の間、相手へ向けて発砲の閃光と煙を出す。射線は引かない。
+    const firing=!dead&&!routed&&(u.fire?t>=u.fire[0]&&t<=u.fire[1]:u.arm==='teppo'&&active.has(u.id));
+    if(firing){let tp=u.fireTarget?livePin(u.fireTarget):null;if(!tp){let best=Infinity;for(const [j,q] of located.entries()){const v=unitById.get(q.members[0]);if(sideOf(v)===side||isDead(v))continue;const d=Math.hypot(pins[j][0]-x,pins[j][1]-y);if(d>1&&d<best){best=d;tp=pins[j];}}}
+     if(tp){const dir=Math.atan2(tp[1]-y,tp[0]-x),fxp=[x+Math.cos(dir)*16*kb,y+Math.sin(dir)*16*kb];if(playing&&fx.rnd()<dt*16){fx.spawn(fxp[0]+(fx.rnd()-.5)*12,fxp[1]+(fx.rnd()-.5)*12,'flash',dir);fx.spawn(fxp[0],fxp[1],'smoke',dir);}}}
+    const crestKey=G.armyCrestKey({clan:u.clan,gens:[],commanders:[u.g||u.n],until:sc.title}),crest=G.kamonImage(crestKey,11);fx.flag(ctx,x+10,y,1,col,crest,now,playing&&!dead);
+    if(dead)fx.cross(ctx,x,y);
+    const status=dead?'討死':routed?'退却':'';
+    if(near.length===1||sel){const face=opt.face?.(u.g,12,col);if(face)ctx.drawImage(face,x-26,y-30,24,24);const label=(u.g||u.n)+(status?'・'+status:'');ctx.font=`600 12px ${FONT}`;const w=ctx.measureText(label).width+8,b={x:x+18,y:y-10,w,h:18};if(sel||!named.some(a=>b.x<a.x+a.w&&b.x+b.w>a.x&&b.y<a.y+a.h&&b.y+b.h>a.y)){text(ctx,label,b.x,b.y+9,12,status?'#7a2218':'#302719','left');named.push(b);}}
     if(near.length>1&&!badged.has(g.id)){near.forEach(q=>badged.add(q.id));const leader=unitById.get(near[0].members[0]);if(leader){const face=opt.face?.(leader.g,13,col);if(face)ctx.drawImage(face,x-30,y-33,26,26);text(ctx,leader.g||leader.n,x+18,y-17,11,'#302719','left');}}
 
     boxes.push({x:x-20,y:y-30,w:40,h:67,id:g.id});ctx.restore();
    }
+   lastSnap=!playing;
    cv.dataset.mapGroups=String(groups.length);cv.dataset.mapParticipants=String(groups.reduce((n,g)=>n+g.members.length,0));cv.dataset.locatedGroups=String(located.length);
   }
-  function frameDraw(){if(dead)return;cv.style.visibility=data||sc.atlasPlan||error?'visible':'hidden';cv.parentElement.classList.toggle('atlas-loading',!data&&!sc.atlasPlan&&!error);if(!bg)return;ctx.setTransform(D,0,0,D,0,0);ctx.clearRect(0,0,W,H);ctx.drawImage(bg,0,0,W,H);boxes.length=0;
-   if(groups.length){groupDraw();cv.dataset.mapReady=data||sc.atlasPlan?'true':'false';cv.dataset.mapUnits=String(groups.length);return;}
+  function frameDraw(dt=0,now=performance.now()){if(dead)return;cv.style.visibility=data||sc.atlasPlan||error?'visible':'hidden';cv.parentElement.classList.toggle('atlas-loading',!data&&!sc.atlasPlan&&!error);if(!bg)return;ctx.setTransform(D,0,0,D,0,0);ctx.clearRect(0,0,W,H);ctx.drawImage(bg,0,0,W,H);boxes.length=0;const playing=controller?.playing&&dt>0;
+   if(groups.length){groupDraw(dt,now,playing);fx.step(dt);ctx.save();fx.draw(ctx);ctx.restore();fx.weather(ctx,W,H,sc,t,now);cv.dataset.mapReady=data||sc.atlasPlan?'true':'false';cv.dataset.mapUnits=String(groups.length);return;}
    const pins=units.map(u=>u.point?pj(...u.point):[u.x*W,u.y*H]);
    for(const [index,u] of units.entries()){const [x,y]=pins[index],col=COL[u.side]||COL.unknown,sel=selected===u.id,r=W>650?10:7;
     ctx.save();ctx.translate(x,y);ctx.rotate(u.angle||0);ctx.beginPath();ctx.moveTo(-r,-r*.25);ctx.lineTo(-r*.36,-r*.25);ctx.lineTo(-r*.36,-r);ctx.lineTo(r*.36,-r);ctx.lineTo(r*.36,-r*.25);ctx.lineTo(r,-r*.25);ctx.lineTo(r,r*.65);ctx.lineTo(-r,r*.65);ctx.closePath();ctx.fillStyle=col;ctx.fill();ctx.lineWidth=sel?3:1.4;ctx.strokeStyle=sel?'#e4ac28':'#fffdf0';ctx.stroke();ctx.restore();
@@ -103,12 +132,15 @@ window.TKBattleAtlas=(function(){
    cv.dataset.mapReady=data||sc.atlasPlan?'true':'false';cv.dataset.mapUnits=String(units.length);
   }
   function size(){const r=cv.parentElement.getBoundingClientRect(),next=Math.max(240,Math.round(Math.min(r.width,sc.atlasPlan?Math.max(240,(innerHeight-300)/aspect):r.width))),d=Math.min(2,devicePixelRatio||1);if(next===W&&d===D&&bg)return;placements.clear();W=next;H=Math.round(W*aspect);D=d;cv.style.width=W+'px';cv.style.height=H+'px';cv.style.margin='0 auto';cv.width=W*D;cv.height=H*D;backdrop();frameDraw();}
-  const controller=TKBattlePresentation.record(cv,sc,{...opt,onProgress(v){t=v;opt.onProgress?.(v);const key=Math.floor(t*20)+'|'+selected+'|'+sc.units.filter(u=>u.turn&&t>=u.turn[0]).map(u=>u.id).join(',');if(key!==lastKey){lastKey=key;frameDraw();}}});
+  // 再生中・粉や雨が残る間・停止直後の静止描画を、一つの描画ループで行う。停止後は粉が消えると止まる。
+  function loop(now){if(dead){fxRaf=0;return;}const dt=fxLast?Math.min(.1,(now-fxLast)/1000):0;fxLast=now;const live=controller.playing||fx.count>0||fx.weatherActive(sc,t);frameDraw(live?dt:0,now);if(!live){fxRaf=0;fxLast=0;return;}fxRaf=requestAnimationFrame(loop);}
+  function wake(){if(!fxRaf){fxLast=0;fxRaf=requestAnimationFrame(loop);}}
+  let controller=null;controller=TKBattlePresentation.record(cv,sc,{...opt,onProgress(v){t=v;opt.onProgress?.(v);wake();if(!controller?.playing){const key=Math.floor(t*20)+'|'+selected+'|'+sc.units.filter(u=>u.turn&&t>=u.turn[0]).map(u=>u.id).join(',');if(key!==lastKey){lastKey=key;frameDraw();}}}});
   const onClick=e=>{const r=cv.getBoundingClientRect(),x=e.clientX-r.left,y=e.clientY-r.top,hit=boxes.filter(b=>x>=b.x&&x<=b.x+b.w&&y>=b.y&&y<=b.y+b.h);if(hit.length){selected=hit[0].id;const g=groups.find(g=>g.id===selected),p=pinFor(g),ids=groups.filter(q=>q.point&&Math.hypot(...pinFor(q).map((v,i)=>v-p[i]))<20).map(q=>q.id);selectionPanel(ids);frameDraw();}};
 
   cv.addEventListener('click',onClick);const ro=new ResizeObserver(size);size();ro.observe(cv.parentElement);
   load(meta).then(d=>{if(dead)return;data=d;backdrop();frameDraw();if(pendingPlay){pendingPlay=false;controller.play();}}).catch(()=>{if(dead)return;error='地形を読み込めません。ページを再読み込みしてください。';backdrop();frameDraw();});
-  return {...controller,play(){if(!data&&!sc.atlasPlan){pendingPlay=true;return;}controller.play();},pause(){pendingPlay=false;controller.pause();},get playing(){return pendingPlay||controller.playing;},get t(){return controller.t;},get ended(){return controller.ended;},get speed(){return controller.speed;},select(id){if(t<(sc.mapVisibleFrom?.[id]||0))controller.seek(sc.mapVisibleFrom[id]);selected=id;selectionPanel([id]);frameDraw();},unitStates(){return groups.filter(g=>g.point).map(g=>{const u=unitById.get(g.members[0]),move=moveByName.get(u.g||u.n),side=u.turn&&t>=u.turn[0]?(u.turn[1]||'a'):u.side,status=t<(sc.mapVisibleFrom?.[u.id]||0)?'本戦の布陣':move&&t>move.from&&t<move.to?'移動中':G.battleActiveUnits(sc,t).includes(u.id)?'交戦':t>=100?'戦闘終了':'布陣';return {id:u.id,side,status,point:G.battlePhasePoint(sc,u.g||u.n,t,g.point)};});},destroy(){dead=true;controller.destroy();ro.disconnect();cv.removeEventListener('click',onClick);}};
+  return {...controller,play(){if(!data&&!sc.atlasPlan){pendingPlay=true;return;}controller.play();wake();},pause(){pendingPlay=false;controller.pause();},seek(v){controller.seek(v);fx.clear();lastSnap=true;frameDraw();},get playing(){return pendingPlay||controller.playing;},get t(){return controller.t;},get ended(){return controller.ended;},get speed(){return controller.speed;},select(id){if(t<(sc.mapVisibleFrom?.[id]||0))controller.seek(sc.mapVisibleFrom[id]);selected=id;selectionPanel([id]);frameDraw();},unitStates(){return groups.filter(g=>g.point).map(g=>{const u=unitById.get(g.members[0]),move=moveByName.get(u.g||u.n),side=u.turn&&t>=u.turn[0]?(u.turn[1]||'a'):u.side,status=t<(sc.mapVisibleFrom?.[u.id]||0)?'本戦の布陣':t<(u.from||0)?'着陣前':u.die!=null&&t>=u.die?'討死':u.rout!=null&&t>u.rout?'退却':move&&t>move.from&&t<move.to?'移動中':G.battleActiveUnits(sc,t).includes(u.id)?'交戦':t>=100?'戦闘終了':'布陣';return {id:u.id,side,status,point:G.battlePhasePoint(sc,u.g||u.n,t,g.point)};});},destroy(){dead=true;if(fxRaf)cancelAnimationFrame(fxRaf);fxRaf=0;controller.destroy();ro.disconnect();cv.removeEventListener('click',onClick);}};
  }
  return {make,preload(title){const m=TK.BATTLE_ATLAS[title];return m?load(m):Promise.resolve(null);}};
 })();

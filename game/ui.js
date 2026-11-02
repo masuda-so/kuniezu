@@ -90,6 +90,8 @@ function faceHTML(name,size,k){const r=size==='sm'?15:size==='xl'?46:size==='lg'
  if(!c)return `<span class="noface ${size||''}" style="width:${s}px;height:${s}px;--c:${k?G.CC(k):'#777'}">${esc(({'明宗':'朝'})[name]||(name||'').slice(0,1))}</span>`;
  const key=name+'|'+TK.faceOf(name)+'|'+r+'|'+k;let u=urlCache.get(key);if(!u){u=c.toDataURL();urlCache.set(key,u);}return `<img class="face ${size||''}" src="${u}" alt="${esc(name)}" width="${s}" height="${s}">`;}
 
+// 家を選ぶ画面の印。登録紋があれば家紋、なければ家名の一字を家の色の丸に出す。
+function familyMarkHTML(k,size=22){const r=G.kamonRecord(k);if(r)return `<span class="crest fmark" style="width:${size}px;height:${size}px">${kamonHTML(k,size)}</span>`;const name=G.CN(k)||'';return `<span class="crest fmark letter" style="width:${size}px;height:${size}px;--c:${G.CC(k)}" aria-label="${esc(name)}の印">${esc(({joseon:'朝',ming:'明'})[k]||name.replace(/家$/,'').slice(0,1))}</span>`;}
 function kamonHTML(k,size=26){const r=G.kamonRecord(k);return r?`<img class="kamon" src="${esc(G.kamonDisplaySource(k))}" width="${size}" height="${size}" alt="${esc(G.CN(k))}の家紋">`:'';}
 /* ===== カメラ ===== */
 const base=$('#base'),top_=$('#top'),bctx=base.getContext('2d'),tctx=top_.getContext('2d');
@@ -446,7 +448,7 @@ function drawCounter(c,x,y,u,mine,lvl,compact=false){const t2=G.armOf(u),identit
  // 凸駒は平面の色と輪郭で示す。立体風の下帯・影を付けない。
  c.restore();
  // 家紋は旗へ、兵種は駒の中へ。向きの変化でも紋と文字を回さない。
- const crest=G.kamonImage(G.armyCrestKey(u)),flagX=x+bw/2+3*k,flagY=y-12*k;
+ const crest=G.kamonImage(G.armyCrestKey(u),11*k),flagX=x+bw/2+3*k,flagY=y-12*k;
  c.save();c.strokeStyle='#65513b';c.lineWidth=1;c.beginPath();c.moveTo(flagX,y+14*k);c.lineTo(flagX,flagY-2*k);c.stroke();c.fillStyle=crest?'#fff8e7':identity.color;c.fillRect(flagX,flagY,15*k,15*k);c.strokeStyle=identity.color;c.strokeRect(flagX,flagY,15*k,15*k);if(crest)c.drawImage(crest,flagX+2*k,flagY+2*k,11*k,11*k);c.restore();
  c.font=`800 ${Math.round((compact?9:10.5)*k)}px ${compact?'"Zen Kaku Gothic New",sans-serif':'"Shippori Mincho B1",serif'}`;c.textAlign='center';c.textBaseline='middle';const rgb=identity.color.slice(1).match(/.{2}/g)?.map(v=>parseInt(v,16));c.fillStyle=rgb&&rgb.length===3&&rgb[0]*.299+rgb[1]*.587+rgb[2]*.114>160?'#30220f':'#fff7e2';c.fillText(compact?(u.troops?(u.hist?'約':'')+man(u.troops):'—'):G.ARMS[t2].k,x,y+bh*.12);
  const g=G.gen(u.gens[0])||(u.commanders?.length?{n:u.commanders[0],clan:u.clan}:null),im=g&&hasFace(g.n)&&(lvl>=1||G.isLeader(g))?portrait(g.n,Math.round(10*k),true,G.CC(u.clan)):null;
@@ -1089,14 +1091,14 @@ function renderPick(){
  const sc=TK.SCEN[U.pickScen],all=Object.keys(S.clans).filter(j=>S.clans[j].alive),list=all.filter(j=>!U.pickRegion||U.pickRegion==='all'||pickRegion(j)===U.pickRegion).sort((a,b)=>G.power(b)-G.power(a));if(list.length&&!list.includes(U.pickClan))U.pickClan=list[0];
  const PRE=G.preList();const pre=PRE.find(x=>x.k===U.pickClan);if(!pre&&!(S.clans[U.pickClan]&&S.clans[U.pickClan].alive))U.pickClan=list[0];
  const k=U.pickClan;const L=pre?(G.genByName(pre.leader)||{n:pre.leader}):G.gen(S.clans[k].leader);
- const preCard=x=>{const LL=G.genByName(x.leader);return `<button class="pc${x.k===k?' on':''}" data-act="pick" data-clan="${x.k}">${faceHTML(x.leader,'sm',x.k)}<span>${G.CN(x.k)}<small>${esc(x.leader)}・${esc(G.CNK(x.parent))}に従う（${x.d[0]}年に自立）</small></span></button>`;};
+ const preCard=x=>{const LL=G.genByName(x.leader);return `<button class="pc${x.k===k?' on':''}" data-act="pick" data-clan="${x.k}">${familyMarkHTML(x.k)}${faceHTML(x.leader,'sm',x.k)}<span>${G.CN(x.k)}<small>${esc(x.leader)}・${esc(G.CNK(x.parent))}に従う（${x.d[0]}年に自立）</small></span></button>`;};
  const top=list;
  $('#pick').hidden=false;
  $('#pick').innerHTML=`<div class="phead"><small class="eyebrow">${sc.era}（${sc.year}）</small><h2>${esc(sc.title)}</h2></div>
- <div class="pcur">${L?faceHTML(L.n,'xl',k):''}<div><small class="eyebrow">${G.CNK(k)} 当主</small><h2>${esc(L?L.n:'')}</h2><small>${pre?`いまは${G.CNK(pre.parent)}の下で${pre.castles.length}城を預かる ・ ${pre.d[0]}年${pre.d[1]}月に自立${pre.title?'（'+esc(pre.title)+'）':''}`:`${G.clanCastles(k).length}城 ・ ${Math.round(G.clanKoku(k))}万石`}</small></div></div>
+ <div class="pcur">${L?faceHTML(L.n,'xl',k):''}<div><small class="eyebrow">${familyMarkHTML(k,30)}${G.CNK(k)} 当主</small><h2>${esc(L?L.n:'')}</h2><small>${pre?`いまは${G.CNK(pre.parent)}の下で${pre.castles.length}城を預かる ・ ${pre.d[0]}年${pre.d[1]}月に自立${pre.title?'（'+esc(pre.title)+'）':''}`:`${G.clanCastles(k).length}城 ・ ${Math.round(G.clanKoku(k))}万石`}</small></div></div>
  <button class="btn pri big wide" data-act="start">${G.CNK(k)}で見守る</button>
  <p class="hint">地図の城をタップしても大名家を選べます。</p>${PRE.length?`<h4 class="ph4">主家に従う家（のちに自立する家）</h4><p class="hint">城を持たない家臣として始まり、登録された史実の日に独立します。</p><div class="pgrid">${PRE.map(preCard).join('')}</div>`:''}
- <label class="pick-region">地域<select id="pickRegion"><option value="all">すべての地域</option>${Object.keys(PICK_REGIONS).map(r=>`<option value="${r}" ${U.pickRegion===r?'selected':''}>${r}</option>`).join('')}</select></label><div class="pgrid pick-all">${top.map(j=>{const LL=G.gen(S.clans[j].leader);return `<button class="pc${j===k?' on':''}" data-act="pick" data-clan="${j}">${LL?faceHTML(LL.n,'sm',j):''}<span>${G.CN(j)}<small>${esc(LL?LL.n:'')}</small></span></button>`;}).join('')}</div>
+ <label class="pick-region">地域<select id="pickRegion"><option value="all">すべての地域</option>${Object.keys(PICK_REGIONS).map(r=>`<option value="${r}" ${U.pickRegion===r?'selected':''}>${r}</option>`).join('')}</select></label><div class="pgrid pick-all">${top.map(j=>{const LL=G.gen(S.clans[j].leader);return `<button class="pc${j===k?' on':''}" data-act="pick" data-clan="${j}">${familyMarkHTML(j)}${LL?faceHTML(LL.n,'sm',j):''}<span>${G.CN(j)}<small>${esc(LL?LL.n:'')}</small></span></button>`;}).join('')}</div>
 
  <div class="tbtns"><button class="btn" data-act="back-scen">戻る</button></div>`;}
 function startGame(){G.newGame(U.pickScen,U.pickClan);S=G.S();S.hsig=G.histSig();S.chats={};U.sel=null;U.ended=false;enterGame();

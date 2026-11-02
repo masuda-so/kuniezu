@@ -141,6 +141,7 @@ img.face{display:block;flex:none;max-width:100%;height:auto;aspect-ratio:1;objec
 .note{margin:12px 0 0;padding:8px 12px;border-left:3px solid var(--gold);background:rgba(217,184,102,.08);font-size:13.5px}
 .green{color:var(--green)}
 .crest{display:inline-block;width:12px;height:12px;border-radius:50%;background:var(--c);border:1.5px solid rgba(255,246,220,.8);flex:none}
+.fmark{display:inline-flex;align-items:center;justify-content:center;background:#f5edcf;border:1px solid rgba(90,68,38,.35);overflow:hidden;vertical-align:middle}.fmark>.kamon{width:100%;height:100%;padding:1px;background:none}.fmark.letter{background:radial-gradient(circle at 35% 30%,color-mix(in srgb,var(--c) 60%,#fff 15%),color-mix(in srgb,var(--c) 75%,#000 25%));color:#fff7e2;font-family:var(--f-mincho);font-weight:800;font-size:12px;line-height:1}.pcur .eyebrow{display:flex;align-items:center;gap:6px}.pc>.fmark{flex:none}
 /* 方針 */
 .btn{padding:9px 18px;border-radius:3px;border:1px solid var(--rule);background:var(--lac2);font-family:var(--f-mincho);font-weight:800;letter-spacing:.06em}
 .btn:hover:not(:disabled){border-color:var(--gold);color:var(--gold2)}
@@ -495,6 +496,7 @@ body[data-modal] #news{visibility:hidden}body[data-modal=scene] #toast,body[data
 <script src="route-terrain-profiles.js"></script>
 <script src="infrastructure.js"></script>
 <script src="movement-continuity.js"></script>
+<script src="battle-atlas-effects.js"></script>
 <script src="battle-atlas.js"></script>
 <script src="history-mode.js"></script>
 <script src="map-relations.js"></script>
