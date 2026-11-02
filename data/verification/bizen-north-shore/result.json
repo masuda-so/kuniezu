@@ -1,0 +1,42 @@
+{
+  "passes": [
+    {
+      "applied": false,
+      "landVertices": 9226,
+      "point": [
+        860,
+        492.99999999999636
+      ],
+      "selected": null
+    },
+    {
+      "applied": true,
+      "landVertices": 9403,
+      "point": [
+        860,
+        492.99999999999636
+      ],
+      "sourceVertices": 179,
+      "selected": "tenjin"
+    }
+  ],
+  "fulfilled": [
+    {
+      "pass": "before",
+      "name": "index.html",
+      "sha256": "12683d880636bb0ee7b7dfb6b6b255ee731ade250182a880e9d53a5fe39cc148"
+    },
+    {
+      "pass": "after",
+      "name": "index.html",
+      "sha256": "f700e5a67d08cdb7d1a79c7b157f2c671bf75e3c41b81b9a9ace1c19d532a25c"
+    },
+    {
+      "pass": "after",
+      "name": "bizen-north-shore.js",
+      "sha256": "1fa024daca9ae27663e4c68120b92a0f68161a9feeaed63e078165123ed8fe57"
+    }
+  ],
+  "errors": [],
+  "scope": "Existing server; its boot HTML changes only by injecting/removing the new coast module in this dedicated browser. Other source files are served unchanged."
+}

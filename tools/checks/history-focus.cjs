@@ -1,8 +1,8 @@
 /* 現行の読み込み順で史実専用版を検証。サーバーの操作はしない。 */
 const fs=require('node:fs'),vm=require('node:vm'),path=require('node:path'),assert=require('node:assert/strict');
 const root=path.resolve(__dirname,'../..');
-function model(){const c=vm.createContext({console});c.window=c;const html=fs.readFileSync(path.join(root,'game/index.html'),'utf8');
- for(const file of [...html.matchAll(/<script src="([^"]+)"/g)].map(m=>m[1])){const src=fs.readFileSync(path.join(root,'game',file),'utf8');new vm.Script(src,{filename:file});if(!['ui.js','kb.js','bscene.js','terrain-tiles.js'].includes(file))vm.runInContext(src,c,{filename:file});}
+function model({skip=[]}={}){const c=vm.createContext({console});c.window=c;const html=fs.readFileSync(path.join(root,'game/index.html'),'utf8');
+ for(const file of [...html.matchAll(/<script src="([^"]+)"/g)].map(m=>m[1])){const src=fs.readFileSync(path.join(root,'game',file),'utf8');new vm.Script(src,{filename:file});if(!['ui.js','kb.js','bscene.js','terrain-tiles.js',...skip].includes(file))vm.runInContext(src,c,{filename:file});}
  c.G.build();c.G.buildBattleCatalog();return c;
 }
 module.exports={model};
