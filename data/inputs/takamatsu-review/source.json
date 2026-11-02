@@ -21,7 +21,7 @@
     }
   ],
   "mapScope": "現代地形上の城・陣の代表位置。水没域と築堤は推定として記載。",
-  "registrationStatus": "未登録。本文の距離と方角だけから精密座標を生成しない。",
+  "registrationStatus": "二点相似登録。registration.jsonに基準点・図記号・約200mの読取幅を保持。",
   "runtimeFinding": {
     "title": "備中高松城の水攻め",
     "eventDate": [

@@ -46,12 +46,13 @@
   }
   for(const row of TK.BATTLE_AUDIT||[])row.sourceIds=TK.BATTLES[row.title]?.sources||row.sourceIds;
  };
- const geometryVersion=17,set=G.setS;
+ const geometryVersion=18,set=G.setS;
  G.setS=function(s){const result=set(s);if(!s||s.movementGeometryVersion===geometryVersion)return result;
   G._inSimulation=true;
   try{
    for(const u of s.units){
     if(!u.hist||u.record||!u.path?.length)continue;
+    if(u.until==='#hold'&&!u.historyTitle){const names=u.commanders||u.gens.map(id=>G.gen(id)?.n),matches=TK.HIST.filter(e=>e.hold&&e.k!=='premarch'&&G.evT(e)===u.schedule?.end&&names.includes(e.marchWho||e.who));if(matches.length===1)u.historyTitle=matches[0].title;}
     const returning=u.histRet||u.state==='return',old=u.visualTravel,A=old?.line?.[0]||G.C[u.path[0]]&&[G.C[u.path[0]].x,G.C[u.path[0]].y],C=G.C[u.path.at(-1)];
     if(!returning)G.scheduleHistorical(u);
     if(!A||!C)continue;
