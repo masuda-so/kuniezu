@@ -8,6 +8,8 @@
   eventTebai:['つくば市','つくばの歴史','https://www.city.tsukuba.lg.jp/shisei/joho/profile/rekishi/index.html','1569年・手這坂の合戦と小田氏敗走。戦場の精密な範囲は未確定'],
   eventIshiyama:['東本願寺','東本願寺について','https://www.honganji.or.jp/about/','第11世顕如・石山合戦。宗派による叙述で、各隊の位置は示さない'],
   eventKizugawa:['鳥羽市','九鬼嘉隆','https://www.city.toba.mie.jp/material/files/group/70/yoshitakagaiyou.pdf','1576・1578年の木津川口、鉄甲船に関する多聞院日記の説明'],
+  eventKizugawa1614:['黒田日出男／徳川美術館','徳川美術館蔵「豊国祭礼図屏風」の注文主','https://www.tokugawa-art-museum.jp/wp-content/uploads/2025/02/46_1-%E8%AB%96%E6%96%87%EF%BC%8F%E9%BB%92%E7%94%B0%E6%97%A5%E5%87%BA%E7%94%B7.pdf','PDF4頁・二節。11月19日の蜂須賀至鎮・浅野長晟・池田忠雄、29日博労淵。個別の精密な持場は示さない'],
+  kizujouMuseum:['大阪歴史博物館','共同研究成果報告書17・第2章第1節','https://www.osakamushis.jp/education/publication/kyodokenkyu/pdf/kyodo-17/kyodo-17_3.pdf','32〜34頁・木津城。1614年の徳川付城、集落と浜堤、所在地・規模・構造の不明確さ。1576年の木津城と1614年の河口砦を同一地点と確定しない'],
   eventHarima:['姫路市','姫路城保存活用計画 第2章','https://www.city.himeji.lg.jp/kanko/cmsfiles/contents/0000030/30274/chapter2.pdf','近世・1577年播磨入りと1580年以降の姫路城整備'],
   eventTanba:['丹波篠山市','戦国乱世の道・波多野氏の山城','https://www.city.tambasasayama.lg.jp/material/files/group/75/sengokuransenomichi.pdf','八上城・周囲の付城。丹後の全城の開城日を裏付ける資料ではない'],
   eventGifu:['岐阜市','岐阜城跡保存活用計画 第2章','https://www.city.gifu.lg.jp/_res/projects/default_project/_page_/001/005/558/hozonkatuyou12.pdf','38頁・織田信孝、池田氏、1600年8月22〜23日'],
@@ -40,7 +42,9 @@
  add('玉浦海戦','naval',[128.71,34.885,12,'巨済島・玉浦湾'],['hashiba','joseon'],['朝鮮水軍','日本側船団'],[['李舜臣'],['玉浦の日本側船団']],'eventOkpo','1592年の玉浦湾での海戦。現代の造船所による埋立てを比較海岸として明示する。');
  add('会津征伐','campaign',[139.85,36.95,210,'下野から会津への方面'],['tokugawa','nagao'],['徳川方','上杉方'],[['徳川家康'],['上杉景勝']],'eventAizu','会津へ向かう出兵。家康本隊が会津で上杉本隊と戦った架空の決戦は表示しない。',[['徳川本隊・進軍途中','*a',null,'日ごとの位置は年表・戦役一覧に分離'],['会津方面の上杉方','*b',[139.93,37.49],'会津の代表点']]);
  add('岐阜城の戦い','siege',[136.782,35.434,12,'岐阜城・金華山'],['tokugawa','oda'],['東軍','西軍'],[['福島正則','池田輝政'],['織田秀信']],'eventGifu','1600年旧暦8月23日。前日の木曽川付近での戦闘と城内の最終抵抗を区別。',siege('岐阜城・秀信方'));
- add('木津川口の戦い','field',[135.48,34.645,9,'木津川口・大坂南西'],['tokugawa','hashiba'],['徳川方','豊臣方'],[['蜂須賀至鎮'],['木津川口砦の守備勢']],'osakaMuseum','冬の陣初期の砦攻略。1576・1578年の同名海戦とは別。現代河口を1614年の位置と断定しない。');
+ add('木津川口の戦い','field',[135.48,34.645,9,'木津川口・大坂南西'],['tokugawa','hashiba'],['徳川方','豊臣方'],[['蜂須賀至鎮','浅野長晟','池田忠雄'],['木津川口砦の守備勢']],'eventKizugawa1614','冬の陣初期、蜂須賀至鎮・浅野長晟・池田忠雄が木津川口の砦攻撃を命じられ、蜂須賀勢が先に攻略した。');
+ TK.EXTRA_BATTLES['木津川口の戦い'].sources=['eventKizugawa1614','kizujouMuseum'];
+ TK.BATTLE_TROOPS['木津川口の戦い'].sources=['eventKizugawa1614','kizujouMuseum'];
  add('真田丸の戦い','siege',[135.526,34.671,4,'真田丸・大坂城南方'],['tokugawa','hashiba','sanada'],['徳川方','豊臣方'],[['前田利常','井伊直孝','松平忠直'],['真田信繁']],'osakaMuseum','真田丸を中心とした局地戦。前田・井伊・松平勢の個別隊間隔は未詳。',siege('真田丸・真田勢'));
  TK.BATTLE_EVENT_EXCLUSIONS={'粟之巣の変':'拉致と死亡の事件として年表に表示。軍勢の対陣資料は未登録。','大坂冬の陣の和睦':'大坂冬の陣の終結経過へ統合。別の合戦として二重再生しない。'};
 })();

@@ -84,7 +84,7 @@
  define('今福・鴫野の戦い','field','今福と鴫野を別地点に表示。佐竹方・上杉方と豊臣方の守備・救援。',['osakaMuseum'],[g('今福・豊臣方','*b',135.552,34.705),g('今福・佐竹方','add-佐竹義宣',135.56,34.705,'攻撃方面の概略'),g('鴫野・上杉方','add-上杉景勝',135.552,34.692,'攻撃方面の概略')]);
  define('道明寺の戦い','field','小松山の後藤勢と大和路からの徳川方、後着の真田・毛利勢を分ける。',['osakaMuseum'],[g('小松山・後藤勢','a-0',135.637,34.576),g('国分・大和路から徳川方','*b',135.645,34.571,'進攻地域の概略'),g('道明寺方面・後着部隊','a-1 a-2',135.627,34.567,'後着時の概略地域')]);
  define('八尾・若江の戦い','field','八尾の藤堂対長宗我部と、若江の井伊対木村を分ける。',['osakaMuseum'],[g('八尾・長宗我部方','b-1',135.604,34.626),g('八尾・藤堂方','a-0',135.614,34.625,'対陣地域の概略'),g('若江・木村方','b-0',135.601,34.653),g('若江・井伊方','a-1',135.611,34.653,'対陣地域の概略')]);
- for(const [title,d] of Object.entries(TK.EXTRA_BATTLES||{}))define(title,d.kind,d.summary,[d.source],d.groups);
+ for(const [title,d] of Object.entries(TK.EXTRA_BATTLES||{}))define(title,d.kind,d.summary,d.sources||[d.source],d.groups);
  TK.DEPLOYMENT_PLANS=P;
  const additions={
   '稲葉山城の戦い':[['斎藤龍興','b']], '長島一向一揆の平定':[['長島一向一揆衆','b']],

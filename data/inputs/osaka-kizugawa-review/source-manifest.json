@@ -1,0 +1,40 @@
+{
+  "retrievedAt": "2026-11-02T06:32:23.019354+00:00",
+  "sources": [
+    {
+      "file": "castle-museum-map.pdf",
+      "url": "https://www.osakacastle.net/pdf/leaflet/yukari-osakanojin_202506.pdf",
+      "sha256": "cae52e7729ef12b2a02f1badac1600dec97aa1984bead30996f70e2520aeb4a5"
+    },
+    {
+      "file": "museum-castles-study.pdf",
+      "url": "https://www.osakamushis.jp/education/publication/kyodokenkyu/pdf/kyodo-17/kyodo-17_3.pdf",
+      "sha256": "88914f38867b84faef495fb568ff0bf9b8d424ab16f4dc64f556130499ff24c5"
+    },
+    {
+      "file": "tokugawa-museum-study.pdf",
+      "url": "https://www.tokugawa-art-museum.jp/wp-content/uploads/2025/02/46_1-%E8%AB%96%E6%96%87%EF%BC%8F%E9%BB%92%E7%94%B0%E6%97%A5%E5%87%BA%E7%94%B7.pdf",
+      "sha256": "03957b95e7f4da027dcd4e4e24b0914015e00cb8c008a57abdc06668eb7f17aa"
+    }
+  ],
+  "observations": [
+    {
+      "source": "tokugawa-museum-study.pdf",
+      "locator": "PDF4頁",
+      "supported": "11月19日の攻撃担当は蜂須賀至鎮・浅野長晟・池田忠雄。蜂須賀が先に攻略。",
+      "notSupported": "各隊の精密位置・連続移動経路。"
+    },
+    {
+      "source": "museum-castles-study.pdf",
+      "locator": "本文32〜34頁",
+      "supported": "木津集落・浜堤と徳川付城。所在地・規模・構造は不明確。",
+      "notSupported": "木津城と1614河口砦の同一点断定。"
+    },
+    {
+      "source": "castle-museum-map.pdf",
+      "locator": "全6頁を実見",
+      "supported": "冬夏の年代と掲載史跡。",
+      "notSupported": "木津川口の3将・当時の旧海岸の詳細。今回対象は掲載されず、この冊子単独では裏付け不足。"
+    }
+  ]
+}
