@@ -9,6 +9,20 @@
 - READMEの概要、特徴、開始手順、問い合わせ先、貢献方法は実装と既存文書に基づいて記載する。未実装・未検証の機能を利用可能と説明しない。
 - 言語の統一を理由に既存のコミット履歴や他者のコメントを書き換えない。投稿・コミット・pushの許可は別途の作業指示に従う。
 
+## コミット
+
+原則は「公式の仕様・ガイドに最大限従う」こと。独自の決まりは作らない。根拠は git の `git-commit` マニュアル（DISCUSSION）、`git-interpret-trailers`、GitHub Docs「Creating a commit with multiple authors」。
+
+- 作者は `masudaso <258961222+masuda-so@users.noreply.github.com>`（GitHub の noreply アドレス）、SSH署名あり（グローバル設定 `commit.gpgsign=true`）。
+- メッセージの形は git の公式ガイドどおり：1行目は要約で50文字以内を目安、空行、本文（何を・なぜ）、空行、トレーラー。本文は72桁前後で折り返す。文字コードは UTF-8。
+- 日時をそろえるのは初回コミットだけ（本人の指定）。初回コミットはその日の `00:00:00 +0900` を `GIT_AUTHOR_DATE` と `GIT_COMMITTER_DATE` の両方に指定する。2回目以降は実際の日時のままでよい。
+- AI が内容を書いた場合は、GitHub 公式の書式で関わったエージェントごとに1行ずつ付ける。`git commit --trailer` で付けると書式が崩れない。大文字小文字は公式どおり `Co-authored-by:`。
+  - `Co-authored-by: Codex <noreply@openai.com>`
+  - `Co-authored-by: Claude Fable 5.1 <noreply@anthropic.com>`（モデル名は作業したものに合わせる）
+  - 実際に関わったものだけを付ける。両方なら両方、どちらもなければ付けない。
+- 公開済みの履歴は書き換えない（`git-commit` マニュアルの注意どおり）。やむを得ず書き換えるときは本人が判断し、`--force-with-lease` を使う。
+- ライセンスは MIT（`LICENSE`、著作権表記は `So Masuda`）。新しいファイルもこれに従う。
+
 ## このリポジトリ固有の取り決め
 
 - 1560〜1615年の日本・朝鮮を舞台にした地図ゲーム。`game/` はビルド不要の素のHTML/JavaScriptで、読込順は `game/index.html` に従う。
