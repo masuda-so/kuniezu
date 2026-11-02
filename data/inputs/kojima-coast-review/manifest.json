@@ -42,5 +42,36 @@
       "result": "HTTP error・画像未保存"
     }
   ],
-  "implementation": "画像を未取得のため輪郭改変なし。公開資料本文だけから精密な海岸形を捏造しない。"
+  "implementation": "原図取得を解決。児島湾の局所対応・干拓年別比較を優先し、輪郭の更新と実画面比較を続ける。",
+  "resolvedOriginalImage": {
+    "institution": "岡山大学附属図書館・池田家文庫",
+    "provider": "岡山県デジタルアーカイブ/ADEAC",
+    "catalogue": "https://adeac.jp/okayama-pref-digioka/viewer/M2004092519241341842/M2004092519241341842/",
+    "viewer": "https://adeac.jp/viewitem/okayama-pref-digioka/viewer/viewer/M2004092519241341842/index.html",
+    "imageList": "https://adeac.jp/viewitem/okayama-pref-digioka/viewer/viewer/M2004092519241341842/xml/images.xml",
+    "url": "https://adeac.jp/viewitem/okayama-pref-digioka/viewer/viewer/M2004092519241341842/data/001.jpg",
+    "file": "bizen-keicho-map.jpg",
+    "dimensions": [
+      6371,
+      7469
+    ],
+    "sha256": "e5919794fadacbd443280d01cfaf4fd823c2418ee9b54d0d05288bf91c6049d9",
+    "dateRange": [
+      1596,
+      1615
+    ],
+    "scope": "絵画的な国絵図。海域・島・集落の対応資料とし、現在座標へ一様に重ねた線を実測海岸とみなさない。"
+  },
+  "supplementalFiles": [
+    {
+      "file": "bizen-keicho-exhibition.pdf",
+      "url": "https://www.lib.okayama-u.ac.jp/ikeda/pdf/h12.pdf",
+      "sha256": "bec85d216424ad9b485b90d03780f722052cd20ff86405f22c37b15570b18d49"
+    },
+    {
+      "file": "okayama-plain-exhibition.pdf",
+      "url": "https://www.lib.okayama-u.ac.jp/ikeda/pdf/h14.pdf",
+      "sha256": "32452626f92eaebdd8160fd8e80617878c7382d78a68ad6ece0e365c9e22cbd5"
+    }
+  ]
 }

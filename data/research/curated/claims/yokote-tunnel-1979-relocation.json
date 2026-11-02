@@ -1,0 +1,22 @@
+{
+  "id": "yokote-tunnel-1979-relocation",
+  "entity": "structure:横手トンネル",
+  "predicate": "construction-year",
+  "value": "国道112号の横手トンネルは、寒河江ダム建設に伴う付替道路として1979年に建設された。",
+  "validYears": [
+    1979,
+    1979
+  ],
+  "datePrecision": "year",
+  "source": "yokoteTunnelRelocation",
+  "sourceUrl": "https://www.thr.mlit.go.jp/yamagata/road/yokotetonneru/pdf/kanshitaisei.pdf",
+  "locator": "1頁・横手トンネルの概要説明",
+  "gameBindings": [
+    "data/inputs/rokujurigo-review/connection-seam.json",
+    "data/inputs/rokujurigo-review/seam-era-tiles/manifest.json"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-02",
+  "uncertainty": "ゲーム年代外の近代施設の建設年。現在の道路を戦国期の経路へ遡及しないための比較根拠。"
+}
