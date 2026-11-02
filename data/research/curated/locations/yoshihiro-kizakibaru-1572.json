@@ -1,0 +1,30 @@
+{
+  "person": "person:shimazu-yoshihiro",
+  "source": "shimazuIinoResidence",
+  "sourceUrl": "https://www.kagoshima-kankou.com/feature/shimadu2019/introduction2",
+  "recordType": "sourced-location-observation",
+  "status": "verified-in-specified-scope",
+  "recordedAt": "2026-11-02",
+  "gameBindings": [
+    "TK.PERSON_RESIDENCE_EVIDENCE"
+  ],
+  "id": "location:yoshihiro-kizakibaru-1572",
+  "place": "place:kizakibaru",
+  "relation": "attested-presence",
+  "time": {
+    "kind": "dated-event",
+    "date": [
+      1572,
+      5,
+      4
+    ],
+    "leapMonth": false,
+    "calendar": "Japanese-lunisolar",
+    "precision": "day"
+  },
+  "locator": "元亀3年（1572年）木崎原の戦いの項・義弘本隊の攻撃",
+  "uncertainty": "日精度の参戦記録。正確な持場・到着時刻・隊ごとの動線は確定しない。同日の飯野の記録と両立する。 日付はえびの市の木崎原古戦場の旧暦5月4日と照合し、鹿児島県観光サイトの出陣・参戦説明と組み合わせた。",
+  "corroboratingSources": [
+    "kizakiSite"
+  ]
+}
