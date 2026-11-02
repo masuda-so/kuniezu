@@ -78,6 +78,7 @@ window.TKBattleAtlas=(function(){
    for(const id of ids){const g=groups.find(g=>g.id===id||g.members.includes(id));if(!g)continue;const u=unitById.get(g.members[0]);if(!u)continue;const button=document.createElement('button');button.type='button';button.className='atlas-unit-choice';button.dataset.unitId=u.id;const face=opt.face?.(u.g,14,COL[g.side]);if(face){const im=document.createElement('img');im.src=face.toDataURL();im.width=28;im.height=28;im.alt='';button.append(im);}const name=document.createElement('span');name.textContent=u.g||u.n;button.append(name);button.onclick=()=>{selected=g.id;frameDraw();};el.append(button);}
    const close=document.createElement('button');close.type='button';close.textContent='閉じる';close.className='mini';close.onclick=()=>{selected=null;el.hidden=true;frameDraw();};el.append(close);
   }
+  const homeCache={};function opponentHome(side){if(side in homeCache)return homeCache[side];const st=G.S?.(),clan=sc.sides?.[side]?.clan,cap=st?.clans?.[clan]?.cap,C=cap&&G.C[cap];let p=null;if(C){const lo=TKGEO.LON0+C.x/TKGEO.K/TKGEO.CX,la=TKGEO.LAT0-C.y/TKGEO.K;p=pj(lo,la);}return homeCache[side]=p;}
   // 部隊の見える条件：長篠の本戦配置（mapVisibleFrom）と、着陣が後の隊（u.from）。
   const visibleFrom=u=>Math.max(sc.mapVisibleFrom?.[u.id]||0,u.from||0);
   const sideOf=u=>u.turn&&t>=u.turn[0]?(u.turn[1]||'a'):u.side;
@@ -104,6 +105,8 @@ window.TKBattleAtlas=(function(){
     const move=moveByName.get(u.g||u.n),moving=move&&t>move.from&&t<move.to;let aim=null;
     if(move&&t>move.from){const f=G.battlePhasePoint(sc,u.g||u.n,Math.min(move.to,t+.05),g.point),p=G.battlePhasePoint(sc,u.g||u.n,Math.max(move.from,Math.min(move.to,t)-.05),g.point),A=pj(...p),B=pj(...f);if(Math.hypot(B[0]-A[0],B[1]-A[1])>1e-6)aim=[B[0]-A[0],B[1]-A[1]];}
     if(!aim){let best=Infinity;for(const [j,q] of located.entries()){const v=unitById.get(q.members[0]),op=sideOf(v);if(op===side||isDead(v))continue;const a=pins[j],d=Math.hypot(a[0]-px0,a[1]-py0);if(d>1&&d<best){best=d;aim=[a[0]-px0,a[1]-py0];}}}
+    // 相手側の位置が記録にない（攻め口不詳の攻城など）場合、全隊が上を向いたまま始まるのを避け、相手の本拠の方角（来た方角）へ向ける。
+    if(!aim){const op=side==='a'?'b':'a',home=opponentHome(op);if(home){const d=[home[0]-px0,home[1]-py0];if(Math.hypot(...d)>1)aim=d;}}
     const target=aim?Math.atan2(aim[1],aim[0])+Math.PI/2:undefined,ang=fx.heading(g.id,target,dt,!playing||lastSnap);
     if(moving&&playing&&fx.rnd()<dt*10)fx.spawn(x,y,'dust');
     ctx.save();ctx.translate(x,y);if(Number.isFinite(ang))ctx.rotate(ang);const cw=small?22:28,ch=small?15:19;TKCounter.path(ctx,cw,ch);ctx.fillStyle=col;ctx.fill();ctx.save();TKCounter.path(ctx,cw,ch);ctx.clip();const tint=ctx.createLinearGradient(0,-ch*.55,0,ch*.55);tint.addColorStop(0,'rgba(255,255,240,.20)');tint.addColorStop(.5,'rgba(255,255,240,0)');tint.addColorStop(1,'rgba(30,15,0,.14)');ctx.fillStyle=tint;ctx.fillRect(-cw,-ch,cw*2,ch*2);ctx.restore();TKCounter.path(ctx,cw,ch);ctx.strokeStyle=sel?'#e5ad3f':'#2a1d10';ctx.lineWidth=sel?2.6:active.has(u.id)?2.4:1.7;ctx.lineJoin='round';ctx.stroke();ctx.restore();TKCounter.path(ctx,cw,ch);ctx.strokeStyle=sel?'#e5ad3f':'#2a1d10';ctx.lineWidth=sel?2.6:active.has(u.id)?2.4:1.8;ctx.lineJoin='round';ctx.stroke();TKCounter.path(ctx,cw*.84,ch*.76);ctx.lineWidth=.9;ctx.strokeStyle='rgba(255,248,225,.75)';ctx.stroke();ctx.restore();

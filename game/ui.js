@@ -237,7 +237,7 @@ function paintBase(c,pad=0){LANDV=landFor(cam.z);
   for(const C of G.CL){const k=S.castles[C.id].owner;c.globalAlpha=flat?(k===S.player?.5:.35):(k===S.player?.44:.32);c.fillStyle=pastel(k);c.fill(TERR[C.id]);}
   c.restore();}
  // 地図全体の明るさを抑える：陸に古い紙の焼けた色を薄く重ねる（地形の陰影・勢力の色は残る）。
- if(!flat){c.save();c.clip(LANDV);c.globalCompositeOperation='multiply';c.fillStyle='rgba(196,176,140,.38)';c.fillRect(x0-50,y0-50,x1-x0+100,y1-y0+100);c.restore();}
+ if(!flat){c.save();c.clip(LANDV);c.globalCompositeOperation='multiply';c.fillStyle='rgba(168,146,110,.55)';c.fillRect(x0-50,y0-50,x1-x0+100,y1-y0+100);c.restore();}
 
  if(S)drawBranchLands(c,z);
  if(flat){c.strokeStyle='rgba(95,135,175,.75)';c.lineWidth=1.1/z;c.lineJoin='round';drawMapRivers(c,z);
@@ -273,7 +273,8 @@ function drawBase(){
   const cc=vc(),ratio=cam.z/baseSurface.z;
   const x=cc[0]+(baseSurface.x-cam.x)*cam.z-(baseSurface.cc[0]+160)*ratio;
   const y=cc[1]+(baseSurface.y-cam.y)*cam.z-(baseSurface.cc[1]+160)*ratio;
-  {
+  const cw=baseSurface.cv.width/DPR*ratio,ch=baseSurface.cv.height/DPR*ratio,ov=Math.max(0,Math.min(VW,x+cw)-Math.max(0,x))*Math.max(0,Math.min(VH,y+ch)-Math.max(0,y))/(VW*VH);
+  if(ov>=.85||performance.now()-(U.zoomRebuildAt||0)<120){
   bctx.setTransform(1,0,0,1,0,0);bctx.fillStyle='#1c3157';bctx.fillRect(0,0,base.width,base.height);
   bctx.drawImage(baseSurface.cv,x*DPR,y*DPR,baseSurface.cv.width*ratio,baseSurface.cv.height*ratio);U.baseDirty=false;return;}
  }
@@ -281,6 +282,7 @@ function drawBase(){
  // 到着の反映は700msごとにまとめ、カメラの動画中は待つ。最後の反映は必ず行う。
  const liveRevision=U.mapStyle==='relief'?(window.TKTerrain?.getRevision?.()||0):0,nowMs=performance.now();
  if(liveRevision!==U.terrainRevShown){if(!anim&&nowMs-(U.terrainRevAt||0)>=700){U.terrainRevShown=liveRevision;U.terrainRevAt=nowMs;}else{clearTimeout(U.terrainRevTimer);U.terrainRevTimer=setTimeout(()=>{U.baseDirty=true;},anim?120:Math.max(60,700-(nowMs-(U.terrainRevAt||0))));}}
+ if(performance.now()<(U.zoomUntil||0))U.zoomRebuildAt=performance.now();
  const cc=vc(),revision=U.terrainRevShown||0;
  const key=[cam.z,DPR,VW,VH,...cc,U.mode,U.mapStyle,U.dipView,U.sel,S?.player,territorySignature(),JSON.stringify(S?.vassal||{}),JSON.stringify(S?.improvements?.roads||{}),revision,fontRevision,TK.waterPhase?.(S?G.date().y:1560)].join('|');
  const pad=160,dx=baseSurface?(cam.x-baseSurface.x)*cam.z:0,dy=baseSurface?(cam.y-baseSurface.y)*cam.z:0;
@@ -407,11 +409,13 @@ function drawTop(){LANDV=landFor(cam.z);
   let didPortrait=false;
   if(big&&!im&&(G.clanCastles(k).length>=2||k===S.player||U.mode==='pick')&&fits(x-40,y-34,80,18)){placed.push([x-40,y-34,80,18]);plate(c,lead.n,x,y-24,k,true);didPortrait=true;}
   if(big&&im){const r=Math.round((lvl===0?15:lvl===1?19:23)*(k===S.player?1.12:1));
-   const cand=[[0,-r-24],[-r-30,-r-10],[r+30,-r-10],[0,r+26],[-r-34,10],[r+34,10]];
+   const cand=[[0,-r-32],[-r-34,-r-14],[r+34,-r-14],[0,r+32],[-r-38,10],[r+38,10]];
    const ps0=U.pslot[C.id]||0;const ord=[ps0,...cand.map((_,i)=>i).filter(i=>i!==ps0)];
    for(const ci of ord){const [dx,dy]=cand[ci];const px=x+dx,py=y+dy;const w=Math.max(r*2+8,lead.n.length*12+14),h=r*2+26;if(!fits(px-w/2,py-r-4,w,h))continue;
     placed.push([px-w/2,py-r-4,w,h]);U.pslot[C.id]=ci;
-    const L=Math.hypot(dx,dy),cs=(3.6+Math.sqrt(C.koku)*.7)*Math.min(1.9,.65+z*.4)+3;c.strokeStyle='rgba(240,214,140,.85)';c.lineWidth=1.2;c.beginPath();c.moveTo(x+dx/L*cs,y-cs*.3+dy/L*cs);c.lineTo(px-dx/L*r,py-dy/L*r);c.stroke();
+    // 城と肖像を結ぶ線：城の中心から肖像の中心へ向かう同じ直線上で、城の記号の縁から肖像の輪の縁までを途切れなく結ぶ。
+    {const L=Math.hypot(dx,dy)||1,ux=dx/L,uy=dy/L,cs=(3.6+Math.sqrt(C.koku)*.7)*Math.min(1.9,.65+z*.4)*.55,sx=x+ux*cs,sy=y+uy*cs,ex=px-ux*(r+1.5),ey=py-uy*(r+1.5);
+     if((ex-sx)*ux+(ey-sy)*uy>2){c.save();c.lineCap='round';c.strokeStyle='rgba(42,29,16,.55)';c.lineWidth=3;c.beginPath();c.moveTo(sx,sy);c.lineTo(ex,ey);c.stroke();c.strokeStyle='rgba(240,214,140,.95)';c.lineWidth=1.3;c.stroke();c.beginPath();c.arc(sx,sy,1.8,0,7);c.fillStyle='rgba(240,214,140,.95)';c.fill();c.restore();}}
     c.drawImage(im,px-im.css/2,py-im.css/2,im.css,im.css);
     plate(c,lead.n,px,py+r+11,k,true);didPortrait=true;break;}}
   const showName=U.mode!=='title'&&(lvl>=1||U.sel===C.id||U.hover===C.id||(lvl===0&&cl&&cl.cap===C.id&&!didPortrait&&z>.55));
