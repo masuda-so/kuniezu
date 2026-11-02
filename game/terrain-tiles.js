@@ -41,8 +41,8 @@ window.TKTerrain=(function(){
  }
  function draw(c,view,scale,dpr,clip,japanClip){frame++;const {K,CX,LON0:lon0,LAT0:lat0}=TKGEO;
   const requested=[];
-  const z=Math.max(6,Math.min(14,Math.ceil(Math.log2(K*CX*scale*dpr*360/256))));if(z!==lastZoom){for(const t of [...active])if(t.z!==z&&t.z!==6&&!(t.z===8&&z>8&&t.provider==='dem')){t.request.onload=t.request.onerror=null;t.request.src='';active.delete(t);running--;cache.delete(t.provider+'/'+t.z+'/'+t.x+'/'+t.y);}}lastZoom=z;
-  for(let i=pending.length-1;i>=0;i--)if(pending[i].z!==z&&pending[i].z!==6&&!(pending[i].z===8&&z>8&&pending[i].provider==='dem')){const t=pending.splice(i,1)[0];cache.delete(t.provider+'/'+t.z+'/'+t.x+'/'+t.y);}
+  const z=Math.max(6,Math.min(14,Math.ceil(Math.log2(K*CX*scale*dpr*360/256))));if(z!==lastZoom){for(const t of [...active])if(t.z!==z&&t.z!==6&&!(t.z===8&&z>8&&t.provider==='dem')&&!(t.z===z-2&&z>=10)){t.request.onload=t.request.onerror=null;t.request.src='';active.delete(t);running--;cache.delete(t.provider+'/'+t.z+'/'+t.x+'/'+t.y);}}lastZoom=z;
+  for(let i=pending.length-1;i>=0;i--)if(pending[i].z!==z&&pending[i].z!==6&&!(pending[i].z===8&&z>8&&pending[i].provider==='dem')&&!(pending[i].z===z-2&&z>=10)){const t=pending.splice(i,1)[0];cache.delete(t.provider+'/'+t.z+'/'+t.x+'/'+t.y);}
   const west=Math.max(118,view[0]/K/CX+lon0),east=Math.min(147,view[2]/K/CX+lon0),north=Math.min(47,lat0-view[1]/K),south=Math.max(24,lat0-view[3]/K);if(west>=east||south>=north)return;
   c.save();if(clip)c.clip(clip);c.imageSmoothingEnabled=true;c.imageSmoothingQuality='high';
   const layer=(provider,bounds)=>{
@@ -53,7 +53,8 @@ window.TKTerrain=(function(){
     for(let y=Math.floor(latY(n,level));y<=Math.floor(latY(s,level));y++)for(let x=Math.floor(lonX(w,level));x<=Math.floor(lonX(e,level));x++){
      // 中間標高を先にそろえ、詳細一式の到着まで全体画像だけにしない。
      if(!mayCover(provider,level,x,y))continue;
-     const request=level===6||level===z||provider==='dem'&&level===8&&z>8;
+     // 目標段階の2つ手前も取る（枚数は約16分の1）。遠くから急に寄った直後、粗い段階6・8だけで起伏が平らに見える時間を縮める。
+     const request=level===6||level===z||provider==='dem'&&level===8&&z>8||z>=10&&level===z-2;
      const t=request?get(level,x,y,provider):cache.get(provider+'/'+level+'/'+x+'/'+y);
      if(t&&request)needed.push(t);
      if(t)t.seen=frame;if(!t||(!t.ready&&!t.error))complete=false;if(t?.ready)tiles.push(t);
