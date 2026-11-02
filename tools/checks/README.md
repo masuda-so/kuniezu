@@ -8,7 +8,7 @@
 |---|---|---|
 | 基本・保存・史実進行 | `offline.cjs` | `completion-browser.cjs` |
 | フォルダ・担当管理 | `organization.cjs` | `march-clock-browser.cjs` の起動・行軍・合戦確認 |
-| 史料入力・出力 | `evidence-store.cjs`、`tools/research/export-evidence.cjs` | 該当する史料・説明の表示 |
+| 史料入力・出力 | `evidence-store.cjs`、`history-index.cjs`、`tools/research/export-evidence.cjs` | 該当する史料・説明の表示 |
 | 人物・開始配置 | `historical-register.cjs`、`scenario-openings.cjs` | `march-clock-browser.cjs` |
 | 領土・分家・外交 | `families-territory.cjs`、`map-history.cjs` | `borders-family-browser.cjs` |
 | 行軍・保存・速度 | `movement-display.cjs`、`movement-clock.cjs`、`movement-save.cjs`、`logistics-review.cjs` | `march-clock-browser.cjs` |
