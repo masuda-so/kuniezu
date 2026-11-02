@@ -1,0 +1,146 @@
+{
+  "result": {
+    "id": "documented:kizakibaru-local",
+    "date": {
+      "y": 1572,
+      "m": 5,
+      "leap": 0,
+      "d": 4,
+      "gy": 1572,
+      "gm": 6,
+      "gd": 14
+    },
+    "version": 22,
+    "names": [
+      "島津忠平"
+    ],
+    "phase": {
+      "key": "camp",
+      "name": "着陣・滞陣"
+    },
+    "point": [
+      263.7597955538489,
+      1941.7897276858
+    ],
+    "target": [
+      263.7597955538489,
+      1941.7897276858
+    ],
+    "distance": 0,
+    "localRecord": "kizakibaru-local",
+    "routePoints": 154,
+    "samples": [
+      {
+        "fraction": 0,
+        "point": [
+          269.8218917333452,
+          1939.1748000000007
+        ],
+        "phase": "march"
+      },
+      {
+        "fraction": 0.05,
+        "point": [
+          270.1385086437677,
+          1940.7905958182616
+        ],
+        "phase": "march"
+      },
+      {
+        "fraction": 0.1,
+        "point": [
+          268.56253529151235,
+          1941.5187354498557
+        ],
+        "phase": "march"
+      },
+      {
+        "fraction": 0.2,
+        "point": [
+          265.09684613149204,
+          1941.8678051968202
+        ],
+        "phase": "march"
+      },
+      {
+        "fraction": 0.8,
+        "point": [
+          263.7597955538489,
+          1941.7897276858
+        ],
+        "phase": "camp"
+      }
+    ]
+  },
+  "battle": {
+    "date": {
+      "y": 1572,
+      "m": 5,
+      "leap": 0,
+      "d": 4,
+      "gy": 1572,
+      "gm": 6,
+      "gd": 14
+    },
+    "groups": [
+      {
+        "id": "group-0",
+        "label": "伊東祐安",
+        "members": [
+          "a-0"
+        ],
+        "side": "a",
+        "point": [
+          130.83012518518,
+          32.041051361571
+        ],
+        "precision": "交戦地域の代表点・対陣方向未詳",
+        "dock": false,
+        "source": "kizakiSite"
+      },
+      {
+        "id": "group-1",
+        "label": "島津義弘",
+        "members": [
+          "b-0"
+        ],
+        "side": "b",
+        "point": [
+          130.83012518518,
+          32.041051361571
+        ],
+        "precision": "交戦地域の代表点・対陣方向未詳",
+        "dock": false,
+        "source": "kizakiSite"
+      }
+    ]
+  },
+  "sourceOverrides": [
+    {
+      "name": "index.html",
+      "sha256": "1de6d1644c3deef0402441a2d00759e0ec1c04223d4f31e6d50357c84a48f654"
+    },
+    {
+      "name": "movement-display.js",
+      "sha256": "8d7819507b5c969d2e902ef3240dd86bcd2e91a5b0acd84d598cf7cf0f6748f7"
+    },
+    {
+      "name": "movement-continuity.js",
+      "sha256": "5d590a1ac80154a86c4c93d97180ae91e4317205b608461533580a8d981ac053"
+    },
+    {
+      "name": "scenario-openings.js",
+      "sha256": "afcf1907641331889fa391d53fb5cfdc69d24fe51abf8feabb4053aea3844863"
+    },
+    {
+      "name": "kizakibaru-march.js",
+      "sha256": "9fefa3574b1dac13531ac45cad8376d3442affe98dc76a3b1c4c82b647e8c0bc"
+    },
+    {
+      "name": "ui.js",
+      "sha256": "43187181635391a49e58e1bc35a3efd6a416846d576c0f6b50b9838c8d5d6745"
+    }
+  ],
+  "scope": "Shared server with worktree boot HTML, four movement files and UI, intercepted only in this dedicated browser",
+  "errors": []
+}

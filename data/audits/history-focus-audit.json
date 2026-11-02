@@ -1053,7 +1053,8 @@
       "sourceIds": [
         "kizakiSite",
         "atlasRelief",
-        "deployment-record-33"
+        "deployment-record-33",
+        "kizakibaruModernRoute"
       ],
       "issues": [
         "出典が裏付ける範囲は各資料欄に明示",
@@ -7362,6 +7363,14 @@
       "scope": "郡山が毛利氏の本拠だったこと。1571年を輝元の家督相続年とする資料ではない。",
       "accessed": "2026-11-01"
     },
+    "shimazuIinoResidence": {
+      "author": "鹿児島県観光サイト「かごしまの旅」",
+      "title": "島津義弘公の戦い（第一部）",
+      "url": "https://www.kagoshima-kankou.com/feature/shimadu2019/introduction2",
+      "locator": "永禄7年（1564年）・元亀3年（1572年）の項、飯野城跡の説明",
+      "scope": "1564年の飯野入城と木崎原合戦時の飯野からの出陣。兵数・経路・時刻は記述の精度と異説を別途検討する。",
+      "accessed": "2026-11-02"
+    },
     "suwaharaChronology": {
       "author": "島田市博物館",
       "title": "牧野城とは・牧野城に在城した徳川の武将たち",
@@ -7370,6 +7379,22 @@
       "locator": "牧野城とは、今川氏真の項（今川氏真詠草の旧暦8月24日）",
       "scope": "1575年8月24日の攻略と改称、武田から徳川への移行。1590年廃城は推定説。紹介ページの廃城時期不明という説明も保持。",
       "accessed": "2026-11-01"
+    },
+    "iinoMapPoint": {
+      "author": "人文学オープンデータ共同利用センター（CODH）",
+      "title": "日本歴史地名大系 施設・地点項目・宮崎県一覧",
+      "url": "https://geoshape.ex.nii.ac.jp/nrct-poi/resource/46/index.html",
+      "locator": "飯野城跡・460000138600",
+      "scope": "CC BY 4.0。東経130.867591・北緯32.054126の代表点。城域・城門・出陣路の実測値ではない。",
+      "accessed": "2026-11-02"
+    },
+    "kizakibaruModernRoute": {
+      "author": "OpenStreetMap contributors / OSRM",
+      "title": "飯野城―木崎原の現代歩行道路比較",
+      "url": "https://routing.openstreetmap.de/routed-foot/route/v1/driving/130.867591,32.054126;130.83012518518,32.041051361571?overview=full&geometries=geojson&steps=false&continue_straight=false",
+      "locator": "2026-11-02取得・152道路点、両端の代表点接続",
+      "scope": "ODbL 1.0。現代道路の参考線。1572年の通過線・渡河位置・出発到着時刻を確定しない。",
+      "accessed": "2026-11-02"
     },
     "toyotomiOffices": {
       "author": "白峰旬／別府大学史学研究会",
