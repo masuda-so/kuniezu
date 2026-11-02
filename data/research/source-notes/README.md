@@ -1,6 +1,6 @@
 # 資料ノート索引
 
-HTMLで取得した資料を、書誌・確認箇所・要約・適用範囲が読めるMarkdownへ整理した索引。史実の根拠となる命題は `curated/claims`、照合用の原取得物は `data/source-archives/html` に分ける。
+HTMLで取得した資料を、書誌・確認箇所・要約・適用範囲が読めるMarkdownへ整理した索引。史実の根拠となる命題は `curated/claims`、照合用の原取得物は `data/source-archives/html` に分ける。キー等を含む原HTMLは保存せず、抽出本文だけを保持する。
 
 | 分野 | 資料 | 区分 |
 | --- | --- | --- |

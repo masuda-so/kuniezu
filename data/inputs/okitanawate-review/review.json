@@ -85,15 +85,19 @@
     },
     {
       "name": "shimabara-cultural-source.md",
-      "sha256": "273f8564b0ceba0ddf2c516d40133b0a9f0c5875a66c4fff3e6d6be19fcb4cb5",
+      "sha256": "0e0f342f7916e18cc994a5b38f8c1532253c69117156e44e6bca7c682d8d825a",
       "originalFile": "shimabara-cultural-source.html",
       "originalSha256": "0f56cc8d3351963de0fff9c983712743279578b4db049bdbe792be9f9691ec13",
-      "rawArchive": "../../source-archives/html/okitanawate-review/shimabara-cultural-source.html.gz",
-      "rawArchiveSha256": "a0b1c7aa5ec604a40c1cd25ba284097c67cf43c84e51d7575cbb925ba8eb3494"
+      "rawArchive": null,
+      "rawArchiveWithheld": "原HTMLは島原市が埋め込んだ Google Maps の API キーを含むため保存しない（PR #8）"
+    },
+    {
+      "name": "shimabara-cultural-source.txt",
+      "sha256": "c535dcdef4cc91bf0438c019846f381885ef0e651b2e46815278ff41567cea3e"
     },
     {
       "name": "source-urls.json",
-      "sha256": "b24d60dcb846d0fc658b70bd7ebe7f7ef40e3fbb21c9233b8b21c32c50355ff0"
+      "sha256": "f0470f7654ba9cd4f338f8556a04af784d9d8d72a93860640cd3819659d53377"
     }
   ]
 }
