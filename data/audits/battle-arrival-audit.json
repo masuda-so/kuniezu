@@ -445,9 +445,7 @@
       "unmatchedSides": [
         "a"
       ],
-      "sidesOutsideFrame": [
-        "b"
-      ]
+      "sidesOutsideFrame": []
     },
     {
       "title": "朝倉氏滅亡",
@@ -4217,8 +4215,8 @@
               },
               "troops": 8000,
               "point": [
-                359.20354550247646,
-                1942.0000000000002
+                371.1769970192277,
+                1927.2000000000005
               ],
               "path": [
                 "obi",
@@ -4228,7 +4226,7 @@
                 "a"
               ],
               "matchBasis": "commander-name",
-              "insideReplayFrame": false
+              "insideReplayFrame": true
             }
           ],
           "sides": {
@@ -4241,7 +4239,8 @@
               "clanOnly": [],
               "inFrame": [
                 365,
-                366
+                366,
+                367
               ],
               "locatedGroups": 2,
               "unlocatedGroups": 0
@@ -8645,8 +8644,8 @@
               },
               "troops": 300,
               "point": [
-                347.95513501608843,
-                2024.2756
+                265.3575741549852,
+                1943.0000000000007
               ],
               "path": [
                 "uchi",
@@ -8657,7 +8656,7 @@
                 "b"
               ],
               "matchBasis": "commander-name",
-              "insideReplayFrame": false
+              "insideReplayFrame": true
             }
           ],
           "sides": {
@@ -8673,7 +8672,9 @@
                 310
               ],
               "clanOnly": [],
-              "inFrame": [],
+              "inFrame": [
+                310
+              ],
               "locatedGroups": 1,
               "unlocatedGroups": 0
             }
@@ -8681,9 +8682,7 @@
           "unmatchedSides": [
             "a"
           ],
-          "sidesOutsideFrame": [
-            "b"
-          ]
+          "sidesOutsideFrame": []
         }
       ]
     },
@@ -12536,8 +12535,8 @@
               },
               "troops": 48000,
               "point": [
-                359.2035455024766,
-                1942
+                241.41067112148755,
+                1831.1999999999996
               ],
               "path": [
                 "himeji",
@@ -12602,8 +12601,8 @@
               },
               "troops": 48000,
               "point": [
-                359.2035455024766,
-                1942
+                241.41067112148755,
+                1831.1999999999996
               ],
               "path": [
                 "hitoyoshi",

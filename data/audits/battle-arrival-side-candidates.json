@@ -3,7 +3,7 @@
   "visualTrackingEnabled": true,
   "bothSidesUnmatched": 7,
   "oneSideUnmatched": 85,
-  "someSideOutsideFrame": 16,
+  "someSideOutsideFrame": 15,
   "candidates": [
     {
       "title": "桶狭間の戦い",
@@ -415,9 +415,7 @@
       "unmatchedSides": [
         "a"
       ],
-      "sidesOutsideFrame": [
-        "b"
-      ]
+      "sidesOutsideFrame": []
     },
     {
       "title": "朝倉氏滅亡",

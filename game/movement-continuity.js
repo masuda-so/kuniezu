@@ -4,7 +4,7 @@
  G.visualTime=()=>G._visualSampleTime??(G.S().t+(G._inSimulation||window.TKUI?.mode&&TKUI.mode!=='game'?0:Math.max(0,Math.min(1,window.TKUI?.acc||0))));
  G.visualEventTime=e=>G.evT(e);
  const dateEnd=u=>u.schedule?.end??G.evT(TK.HIST.find(e=>e.title===u.until&&e.k!=='premarch')||{d:[G.date().y,G.date().m,G.date().d+10]});
- G.battleArrivalPoint=function(u){const sc=TK.BATTLES[u.until]||TK.BATTLES[u.historyTitle];if(!sc)return null;const names=u.commanders||u.gens.map(id=>G.gen(id)?.n);for(const name of names){const row=sc.units.find(v=>v.g===name||v.n===name),group=row&&(sc.atlasGroups||[]).find(g=>g.members.includes(row.id));if(group?.point)return G.PJ(...group.point);}return null;};
+ G.battleArrivalPoint=function(u){const sc=TK.BATTLES[u.until]||TK.BATTLES[u.historyTitle];if(!sc)return null;const names=new Set((u.commanders||u.gens?.map(id=>G.gen(id)?.n)||[]).filter(Boolean).map(canonical));for(const name of names){const row=sc.units.find(v=>[v.g,v.n].filter(Boolean).some(n=>canonical(n)===name)),group=row&&(sc.atlasGroups||[]).find(g=>g.members.includes(row.id));if(group?.point)return G.PJ(...group.point);}return null;};
  const canonical=n=>TK.PORTRAIT_ALIAS[n]||n,events=new Map();for(const e of TK.HIST){if(!e.who||e.admin||e.documentedMarch||e.k==='premarch')continue;const k=canonical(e.who);if(!events.has(k))events.set(k,[]);events.get(k).push(e);}for(const es of events.values())es.sort((a,b)=>(a.d[0]-b.d[0])*360+(a.d[1]-b.d[1])*30+a.d[2]-b.d[2]);
  // 軍勢記録へ切り替わる場合は、その既存記録の開始地点・時刻へ接続する。
  // 開始日が表示上の仮置きかどうかは原記録に残し、新しい史実日を生成しない。

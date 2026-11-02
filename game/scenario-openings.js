@@ -46,7 +46,7 @@
   }
   for(const row of TK.BATTLE_AUDIT||[])row.sourceIds=TK.BATTLES[row.title]?.sources||row.sourceIds;
  };
- const geometryVersion=21,set=G.setS;
+ const geometryVersion=22,set=G.setS;
  G.setS=function(s){const result=set(s);if(!s||s.movementGeometryVersion===geometryVersion)return result;
   G._inSimulation=true;
   try{
@@ -55,16 +55,17 @@
     if(u.until==='#hold'&&!u.historyTitle){const names=u.commanders||u.gens.map(id=>G.gen(id)?.n),matches=TK.HIST.filter(e=>e.hold&&e.k!=='premarch'&&G.evT(e)===u.schedule?.end&&names.includes(e.marchWho||e.who));if(matches.length===1)u.historyTitle=matches[0].title;}
     const returning=G.isHistoryReturning(u),old=u.visualTravel;
     const sampleTime=s.t+(Number.isFinite(s.visualFraction)?Math.max(0,Math.min(1,s.visualFraction)):0);
-    const relayPoint=!returning&&u.histRet&&old&&sampleTime<(u.schedule?.end??-Infinity)?G.visualPathPoint(old.line,(sampleTime-old.start)/Math.max(1,old.end-old.start)).slice(0,2):null;
-    const A=relayPoint||old?.line?.[0]||G.C[u.path[0]]&&[G.C[u.path[0]].x,G.C[u.path[0]].y],C=G.C[u.path.at(-1)];
     if(!returning)G.scheduleHistorical(u);
+    const end=returning?old?.end:u.schedule?.end??old?.end;
+    const currentPoint=old&&sampleTime>=old.start&&sampleTime<end?G.visualPathPoint(old.line,(sampleTime-old.start)/Math.max(1,old.end-old.start)).slice(0,2):null;
+    const A=currentPoint||old?.line?.[0]||G.C[u.path[0]]&&[G.C[u.path[0]].x,G.C[u.path[0]].y],C=G.C[u.path.at(-1)];
     if(!A||!C)continue;
     const B=returning?[C.x,C.y]:G.battleArrivalPoint(u)||[C.x,C.y];
     if(returning&&!old)u._visualRouteKey=null;
-    if(old||u.schedule&&!returning)u.visualTravel={line:G.historyTravelLine(u,A,B),start:relayPoint?sampleTime:old?.start??u.schedule.start,end:returning?old.end:u.schedule?.end??old.end};
+    if(old||u.schedule&&!returning)u.visualTravel={line:G.historyTravelLine(u,A,B),start:currentPoint?sampleTime:old?.start??u.schedule.start,end};
    }
    for(const g of s.gens){
-    if(g.tr){const a=g.tr.line?.[0]||G.C[g.tr.p?.[0]]&&[G.C[g.tr.p[0]].x,G.C[g.tr.p[0]].y],b=g.tr.line?.at(-1)||G.C[g.tr.p?.at(-1)]&&[G.C[g.tr.p.at(-1)].x,G.C[g.tr.p.at(-1)].y];if(a&&b)g.tr.line=G.visualBetween(a,b);else g.tr=null;}
+    if(g.tr){const sampleTime=s.t+(Number.isFinite(s.visualFraction)?Math.max(0,Math.min(1,s.visualFraction)):0),moving=g.tr.line&&sampleTime>=g.tr.t0&&sampleTime<g.tr.t1,a=moving?G.visualPathPoint(g.tr.line,(sampleTime-g.tr.t0)/Math.max(1,g.tr.t1-g.tr.t0)).slice(0,2):g.tr.line?.[0]||G.C[g.tr.p?.[0]]&&[G.C[g.tr.p[0]].x,G.C[g.tr.p[0]].y],b=g.tr.line?.at(-1)||G.C[g.tr.p?.at(-1)]&&[G.C[g.tr.p.at(-1)].x,G.C[g.tr.p.at(-1)].y];if(a&&b){g.tr.line=G.visualBetween(a,b);if(moving)g.tr.t0=sampleTime;}else g.tr=null;}
     const p=G.personPoint(g);if(p)g._visualPoint=p.slice(0,2);
    }
    s.movementGeometryVersion=geometryVersion;

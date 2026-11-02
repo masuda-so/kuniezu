@@ -1,0 +1,22 @@
+{
+  "id": "shimazu-tadahira-yoshihiro-identity",
+  "entity": "person:shimazu-yoshihiro",
+  "predicate": "same-person-alias",
+  "value": "島津忠平は、後の島津義弘と同一人物の呼称。",
+  "validYears": [
+    1560,
+    1615
+  ],
+  "datePrecision": "identity-only",
+  "source": "shimazuYoshihiroNames",
+  "sourceUrl": "https://www.kagoshima-kankou.com/feature/shimadu2019/introduction1-2",
+  "locator": "冒頭の忠平・義珍・義弘の呼称説明",
+  "gameBindings": [
+    "G.battleArrivalPoint",
+    "TK.PORTRAIT_ALIAS"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-02",
+  "uncertainty": "この範囲は人物同定を参照できるゲーム年代。全期間に忠平と名乗ったという意味ではなく、改名年はこの記録では確定しない。"
+}
