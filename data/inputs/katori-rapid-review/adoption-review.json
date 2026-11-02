@@ -1,0 +1,39 @@
+{
+  "checked": "2026-11-02",
+  "targetYears": [
+    1560,
+    1615
+  ],
+  "referenceMapYears": [
+    1880,
+    1886
+  ],
+  "status": "comparison-only",
+  "automaticHistoricAdoption": false,
+  "featureReviewRequired": [
+    "河道と分流の東遷前後",
+    "堤防の築造・改修時期",
+    "新田と干拓の成立時期",
+    "自然堤防と人工造成の区別",
+    "氾濫原・湿地と恒常水域の区別"
+  ],
+  "evidenceRequired": [
+    "原図の図幅・測量年・出典",
+    "地名や遺構の同定",
+    "地域の工事年代・成立年代",
+    "年代が合う形状の位置合わせと未使用点検証"
+  ],
+  "sources": [
+    {
+      "url": "https://www.maff.go.jp/kanto/nouson/sekkei/kokuei/ryoso/rekishi/03.html",
+      "locator": "利根川の瀬替え"
+    },
+    {
+      "url": "https://www.ktr.mlit.go.jp/tonege/tonege_index016.html",
+      "locator": "治水のはじまり",
+      "caution": "年号と西暦の不一致があり、年の断定に用いない。"
+    }
+  ],
+  "overlayInputSha256": "c864e044d1a9e89f98c508fb8b0d29a26a9d54c60bf1ca682337e751cdf96cfe",
+  "kmlSha256": "4b749721e5294912ce5805bf9e3efd9f20ee5f59b92308878a0172370888c9a4"
+}
