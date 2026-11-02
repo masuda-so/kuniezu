@@ -56,7 +56,7 @@ The basic check is the command below. See
 node tools/checks/offline.cjs
 ```
 
-## Support and related resources
+## Support and documentation
 
 - Current specification and agreements: [HANDOFF.md](HANDOFF.md)
 - Documentation entry point: [docs/README.md](docs/README.md)
