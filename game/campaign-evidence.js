@@ -62,7 +62,7 @@ for(const title of records.map(r=>r.title)){const ev=TK.HIST.find(e=>e.title===t
  const oyama=TK.HIST.find(e=>e.title==='小山評定');if(oyama){oyama.d=dt(7,25);delete oyama.site;oyama.marchStart=dt(6,16);oyama.routeVia=['ishiyama','kyo','kiyosu','okazaki','hikuma','kakegawa','sunpu','odawara','edo','utsunomiya'];}
  const seki=TK.HIST.find(e=>e.title==='関ヶ原の戦い'&&e.k!=='premarch');if(seki)seki.routeVia=['edo','odawara','sunpu','kakegawa','hikuma','okazaki','kiyosu','gifu'];
  TK.HIST.sort((a,b)=>(a.d[0]-b.d[0])*400+(a.d[1]-b.d[1])*32+a.d[2]-b.d[2]);
- const isUnit=u=>u?.hist&&!u.histRet&&['小山評定','関ヶ原の戦い'].includes(u.until||u.historyTitle)&&(u.commanders||u.gens?.map(id=>G.gen(id)?.n)||[]).includes('徳川家康');
+ const isUnit=u=>u?.hist&&!G.isHistoryReturning(u)&&['小山評定','関ヶ原の戦い'].includes(u.until||u.historyTitle)&&(u.commanders||u.gens?.map(id=>G.gen(id)?.n)||[]).includes('徳川家康');
  const time=r=>G.evT({d:r.date}),inPeriod=()=>G.visualTime()>=time(rows[0])&&G.visualTime()<=time(rows.at(-1));
  const lines=new Map();let state;
  function leg(){const t=G.visualTime();let i=0;while(i<rows.length-2&&t>time(rows[i+1]))i++;return {a:rows[i],b:rows[i+1],i,t};}

@@ -1,4 +1,5 @@
 {
+  "visualTrackingEnabled": true,
   "scope": "1560〜1615年末の実行照合。同名目的の軍に加え、登録参加将名の別戦役軍も抽出。陣営は名前一致/家のみ推定を区別。表示範囲外は不在・遅着の確定ではなく照合候補。地形枠自体の史実精度も別。",
   "registered": 111,
   "observed": 111,
@@ -48,73 +49,6 @@
       "sidesOutsideFrame": []
     },
     {
-      "title": "長篠の戦い",
-      "date": {
-        "y": 1575,
-        "m": 6,
-        "d": 29
-      },
-      "noncombat": false,
-      "unmatchedSides": [],
-      "sidesOutsideFrame": [
-        "a"
-      ]
-    },
-    {
-      "title": "関ヶ原の戦い",
-      "date": {
-        "y": 1600,
-        "m": 10,
-        "d": 21
-      },
-      "noncombat": false,
-      "unmatchedSides": [],
-      "sidesOutsideFrame": [
-        "b"
-      ]
-    },
-    {
-      "title": "姉川の戦い",
-      "date": {
-        "y": 1570,
-        "m": 7,
-        "d": 30
-      },
-      "noncombat": false,
-      "unmatchedSides": [],
-      "sidesOutsideFrame": [
-        "b"
-      ]
-    },
-    {
-      "title": "三方ヶ原の戦い",
-      "date": {
-        "y": 1573,
-        "m": 1,
-        "d": 25
-      },
-      "noncombat": false,
-      "unmatchedSides": [],
-      "sidesOutsideFrame": [
-        "a",
-        "b"
-      ]
-    },
-    {
-      "title": "山崎の戦い",
-      "date": {
-        "y": 1582,
-        "m": 7,
-        "d": 2
-      },
-      "noncombat": false,
-      "unmatchedSides": [],
-      "sidesOutsideFrame": [
-        "a",
-        "b"
-      ]
-    },
-    {
       "title": "賤ヶ岳の戦い",
       "date": {
         "y": 1583,
@@ -124,8 +58,7 @@
       "noncombat": false,
       "unmatchedSides": [],
       "sidesOutsideFrame": [
-        "a",
-        "b"
+        "a"
       ]
     },
     {
@@ -139,23 +72,7 @@
       "unmatchedSides": [
         "b"
       ],
-      "sidesOutsideFrame": [
-        "a"
-      ]
-    },
-    {
-      "title": "沖田畷の戦い",
-      "date": {
-        "y": 1584,
-        "m": 5,
-        "d": 4
-      },
-      "noncombat": false,
-      "unmatchedSides": [],
-      "sidesOutsideFrame": [
-        "a",
-        "b"
-      ]
+      "sidesOutsideFrame": []
     },
     {
       "title": "摺上原の戦い",
@@ -168,9 +85,7 @@
       "unmatchedSides": [
         "b"
       ],
-      "sidesOutsideFrame": [
-        "a"
-      ]
+      "sidesOutsideFrame": []
     },
     {
       "title": "小田原征伐",
@@ -345,9 +260,7 @@
       "unmatchedSides": [
         "b"
       ],
-      "sidesOutsideFrame": [
-        "a"
-      ]
+      "sidesOutsideFrame": []
     },
     {
       "title": "第二次国府台合戦",
@@ -427,9 +340,7 @@
       "unmatchedSides": [
         "a"
       ],
-      "sidesOutsideFrame": [
-        "b"
-      ]
+      "sidesOutsideFrame": []
     },
     {
       "title": "稲葉山城の戦い",
@@ -482,20 +393,6 @@
         "b"
       ],
       "sidesOutsideFrame": []
-    },
-    {
-      "title": "三増峠の戦い",
-      "date": {
-        "y": 1569,
-        "m": 11,
-        "d": 14
-      },
-      "noncombat": false,
-      "unmatchedSides": [],
-      "sidesOutsideFrame": [
-        "a",
-        "b"
-      ]
     },
     {
       "title": "手這坂の戦い",
@@ -656,20 +553,6 @@
         "b"
       ],
       "sidesOutsideFrame": []
-    },
-    {
-      "title": "手取川の戦い",
-      "date": {
-        "y": 1577,
-        "m": 11,
-        "d": 3
-      },
-      "noncombat": false,
-      "unmatchedSides": [],
-      "sidesOutsideFrame": [
-        "a",
-        "b"
-      ]
     },
     {
       "title": "信貴山城の戦い",
@@ -847,9 +730,7 @@
       "unmatchedSides": [
         "b"
       ],
-      "sidesOutsideFrame": [
-        "a"
-      ]
+      "sidesOutsideFrame": []
     },
     {
       "title": "神流川の戦い",
@@ -862,23 +743,7 @@
       "unmatchedSides": [
         "b"
       ],
-      "sidesOutsideFrame": [
-        "a"
-      ]
-    },
-    {
-      "title": "若神子の対陣",
-      "date": {
-        "y": 1582,
-        "m": 9,
-        "d": 10
-      },
-      "noncombat": false,
-      "unmatchedSides": [],
-      "sidesOutsideFrame": [
-        "a",
-        "b"
-      ]
+      "sidesOutsideFrame": []
     },
     {
       "title": "中富川の戦い",
@@ -904,9 +769,7 @@
       "unmatchedSides": [
         "a"
       ],
-      "sidesOutsideFrame": [
-        "b"
-      ]
+      "sidesOutsideFrame": []
     },
     {
       "title": "岐阜城の開城",
@@ -1013,9 +876,7 @@
       "unmatchedSides": [
         "a"
       ],
-      "sidesOutsideFrame": [
-        "b"
-      ]
+      "sidesOutsideFrame": []
     },
     {
       "title": "岩屋城の戦い",
@@ -1031,33 +892,6 @@
       "sidesOutsideFrame": []
     },
     {
-      "title": "戸次川の戦い",
-      "date": {
-        "y": 1587,
-        "m": 1,
-        "d": 20
-      },
-      "noncombat": false,
-      "unmatchedSides": [],
-      "sidesOutsideFrame": [
-        "a",
-        "b"
-      ]
-    },
-    {
-      "title": "九州平定",
-      "date": {
-        "y": 1587,
-        "m": 5,
-        "d": 1
-      },
-      "noncombat": true,
-      "unmatchedSides": [],
-      "sidesOutsideFrame": [
-        "b"
-      ]
-    },
-    {
       "title": "根白坂の戦い",
       "date": {
         "y": 1587,
@@ -1067,8 +901,7 @@
       "noncombat": false,
       "unmatchedSides": [],
       "sidesOutsideFrame": [
-        "a",
-        "b"
+        "a"
       ]
     },
     {
@@ -1187,9 +1020,7 @@
       "unmatchedSides": [
         "b"
       ],
-      "sidesOutsideFrame": [
-        "a"
-      ]
+      "sidesOutsideFrame": []
     },
     {
       "title": "閑山島海戦",
@@ -1202,9 +1033,7 @@
       "unmatchedSides": [
         "b"
       ],
-      "sidesOutsideFrame": [
-        "a"
-      ]
+      "sidesOutsideFrame": []
     },
     {
       "title": "第一次晋州城の戦い",
@@ -1233,20 +1062,6 @@
       "sidesOutsideFrame": []
     },
     {
-      "title": "碧蹄館の戦い",
-      "date": {
-        "y": 1593,
-        "m": 2,
-        "d": 27
-      },
-      "noncombat": false,
-      "unmatchedSides": [],
-      "sidesOutsideFrame": [
-        "a",
-        "b"
-      ]
-    },
-    {
       "title": "幸州山城の戦い",
       "date": {
         "y": 1593,
@@ -1257,9 +1072,7 @@
       "unmatchedSides": [
         "a"
       ],
-      "sidesOutsideFrame": [
-        "b"
-      ]
+      "sidesOutsideFrame": []
     },
     {
       "title": "第二次晋州城の戦い",
@@ -1313,9 +1126,7 @@
       "unmatchedSides": [
         "a"
       ],
-      "sidesOutsideFrame": [
-        "b"
-      ]
+      "sidesOutsideFrame": []
     },
     {
       "title": "蔚山城の戦い",
@@ -1341,9 +1152,7 @@
       "unmatchedSides": [
         "b"
       ],
-      "sidesOutsideFrame": [
-        "a"
-      ]
+      "sidesOutsideFrame": []
     },
     {
       "title": "会津征伐",
@@ -1371,9 +1180,7 @@
       "unmatchedSides": [
         "b"
       ],
-      "sidesOutsideFrame": [
-        "a"
-      ]
+      "sidesOutsideFrame": []
     },
     {
       "title": "岐阜城の戦い",
@@ -1470,9 +1277,7 @@
       "unmatchedSides": [
         "a"
       ],
-      "sidesOutsideFrame": [
-        "b"
-      ]
+      "sidesOutsideFrame": []
     },
     {
       "title": "八尾・若江の戦い",
@@ -1485,9 +1290,7 @@
       "unmatchedSides": [
         "b"
       ],
-      "sidesOutsideFrame": [
-        "a"
-      ]
+      "sidesOutsideFrame": []
     }
   ],
   "alerts": [],
@@ -1706,8 +1509,8 @@
               },
               "troops": 20000,
               "point": [
-                1455.610882857215,
-                1036.7278000000001
+                1453.8035388917829,
+                1034.6000000000004
               ],
               "path": [
                 "tsutsuji",
@@ -1736,8 +1539,8 @@
               },
               "troops": 6500,
               "point": [
-                1455.6108828572153,
-                1036.7278
+                1452.9945218974085,
+                1032.5999999999995
               ],
               "path": [
                 "kasugayama",
@@ -1764,8 +1567,8 @@
               },
               "troops": 6500,
               "point": [
-                1455.6108828572153,
-                1036.7278
+                1452.9945218974085,
+                1032.5999999999995
               ],
               "path": [
                 "kasugayama",
@@ -1792,8 +1595,8 @@
               },
               "troops": 6500,
               "point": [
-                1453.9699903201229,
-                1019.5180950840348
+                1452.9945218974085,
+                1032.5999999999995
               ],
               "path": [
                 "kaizu",
@@ -1803,7 +1606,7 @@
                 "b"
               ],
               "matchBasis": "commander-name",
-              "insideReplayFrame": false
+              "insideReplayFrame": true
             },
             {
               "id": 245,
@@ -1820,8 +1623,8 @@
               },
               "troops": 6500,
               "point": [
-                1453.9699903201229,
-                1019.5180950840348
+                1452.9945218974085,
+                1032.5999999999995
               ],
               "path": [
                 "kaizu",
@@ -1831,7 +1634,7 @@
                 "b"
               ],
               "matchBasis": "commander-name",
-              "insideReplayFrame": false
+              "insideReplayFrame": true
             }
           ],
           "sides": {
@@ -1941,8 +1744,8 @@
               },
               "troops": 30900,
               "point": [
-                1326.147614725566,
-                1396.0875999999998
+                1344.4244412522874,
+                1365.0000000000005
               ],
               "path": [
                 "ichijodani",
@@ -1955,7 +1758,7 @@
                 "a"
               ],
               "matchBasis": "commander-name",
-              "insideReplayFrame": false
+              "insideReplayFrame": true
             },
             {
               "id": 330,
@@ -1972,8 +1775,8 @@
               },
               "troops": 7500,
               "point": [
-                1326.147614725566,
-                1396.0875999999998
+                1348.307722825287,
+                1364
               ],
               "path": [
                 "tsutsuji",
@@ -1985,7 +1788,7 @@
                 "b"
               ],
               "matchBasis": "commander-name",
-              "insideReplayFrame": false
+              "insideReplayFrame": true
             },
             {
               "id": 331,
@@ -2002,8 +1805,8 @@
               },
               "troops": 8000,
               "point": [
-                1326.147614725566,
-                1396.0875999999998
+                1345.557065044413,
+                1365.6000000000006
               ],
               "path": [
                 "hikuma",
@@ -2013,7 +1816,7 @@
                 "a"
               ],
               "matchBasis": "commander-name",
-              "insideReplayFrame": false
+              "insideReplayFrame": true
             },
             {
               "id": 328,
@@ -2030,8 +1833,8 @@
               },
               "troops": 7500,
               "point": [
-                1347.8560182575036,
-                1413.4961350784947
+                1352.6440539151383,
+                1364.4000000000005
               ],
               "path": [
                 "yoshida",
@@ -2043,7 +1846,7 @@
                 "b"
               ],
               "matchBasis": "commander-name",
-              "insideReplayFrame": false
+              "insideReplayFrame": true
             },
             {
               "id": 329,
@@ -2060,8 +1863,8 @@
               },
               "troops": 30900,
               "point": [
-                1320.1891164645062,
-                1388.9922662836348
+                1344.4244412522874,
+                1365.0000000000005
               ],
               "path": [
                 "yoshida",
@@ -2073,7 +1876,7 @@
                 "a"
               ],
               "matchBasis": "commander-name",
-              "insideReplayFrame": false
+              "insideReplayFrame": true
             },
             {
               "id": 330,
@@ -2090,8 +1893,8 @@
               },
               "troops": 7500,
               "point": [
-                1351.3678821404237,
-                1412.5891046816537
+                1348.307722825287,
+                1364
               ],
               "path": [
                 "yoshida",
@@ -2103,7 +1906,7 @@
                 "b"
               ],
               "matchBasis": "commander-name",
-              "insideReplayFrame": false
+              "insideReplayFrame": true
             }
           ],
           "sides": {
@@ -2113,7 +1916,10 @@
                 331
               ],
               "clanOnly": [],
-              "inFrame": [],
+              "inFrame": [
+                329,
+                331
+              ],
               "locatedGroups": 5,
               "unlocatedGroups": 0
             },
@@ -2124,16 +1930,15 @@
               ],
               "clanOnly": [],
               "inFrame": [
-                328
+                328,
+                330
               ],
               "locatedGroups": 2,
               "unlocatedGroups": 0
             }
           },
           "unmatchedSides": [],
-          "sidesOutsideFrame": [
-            "a"
-          ]
+          "sidesOutsideFrame": []
         }
       ]
     },
@@ -2184,8 +1989,8 @@
               },
               "troops": 1500,
               "point": [
-                1226.7988715857355,
-                1263.2146000000007
+                1174.5616150793378,
+                1276.5860000000002
               ],
               "path": [
                 "akutagawa",
@@ -2198,7 +2003,7 @@
                 "b"
               ],
               "matchBasis": "commander-name",
-              "insideReplayFrame": false
+              "insideReplayFrame": true
             },
             {
               "id": 501,
@@ -2215,8 +2020,8 @@
               },
               "troops": 40000,
               "point": [
-                1226.7988715857355,
-                1263.2146000000007
+                1173.8852768720374,
+                1277.4299999999996
               ],
               "path": [
                 "yakami",
@@ -2229,7 +2034,7 @@
                 "b"
               ],
               "matchBasis": "commander-name",
-              "insideReplayFrame": false
+              "insideReplayFrame": true
             },
             {
               "id": 503,
@@ -2246,8 +2051,8 @@
               },
               "troops": 5400,
               "point": [
-                1226.7988715857355,
-                1263.2146000000007
+                1176.4207361324084,
+                1276.11
               ],
               "path": [
                 "kawara",
@@ -2267,7 +2072,7 @@
                 "a"
               ],
               "matchBasis": "commander-name",
-              "insideReplayFrame": false
+              "insideReplayFrame": true
             },
             {
               "id": 504,
@@ -2284,8 +2089,8 @@
               },
               "troops": 23000,
               "point": [
-                1226.7988715857355,
-                1263.2146000000007
+                1175.501692826801,
+                1277.8000000000006
               ],
               "path": [
                 "kiyosu",
@@ -2295,7 +2100,7 @@
                 "a"
               ],
               "matchBasis": "commander-name",
-              "insideReplayFrame": false
+              "insideReplayFrame": true
             },
             {
               "id": 505,
@@ -2312,8 +2117,8 @@
               },
               "troops": 30000,
               "point": [
-                907.1285369505508,
-                1394.326788705447
+                527.4790803324688,
+                1470.0000000000002
               ],
               "path": [
                 "kiriyama",
@@ -2347,8 +2152,8 @@
               },
               "troops": 500,
               "point": [
-                1226.7988715857355,
-                1263.2146000000007
+                1179.5467777986767,
+                1277.8000000000004
               ],
               "path": [
                 "sakura",
@@ -2366,7 +2171,7 @@
                 "a"
               ],
               "matchBasis": "commander-name",
-              "insideReplayFrame": false
+              "insideReplayFrame": true
             },
             {
               "id": 510,
@@ -2383,8 +2188,8 @@
               },
               "troops": 6000,
               "point": [
-                1226.7988715857355,
-                1263.2146000000007
+                1175.501692826801,
+                1277.8000000000006
               ],
               "path": [
                 "kiyosu",
@@ -2394,7 +2199,7 @@
                 "a"
               ],
               "matchBasis": "commander-name",
-              "insideReplayFrame": false
+              "insideReplayFrame": true
             },
             {
               "id": 511,
@@ -2411,8 +2216,8 @@
               },
               "troops": 4500,
               "point": [
-                1226.7988715857355,
-                1263.2146000000007
+                1186.8279307480493,
+                1276.9999999999995
               ],
               "path": [
                 "kiyosu",
@@ -2422,7 +2227,7 @@
                 "a"
               ],
               "matchBasis": "commander-name",
-              "insideReplayFrame": false
+              "insideReplayFrame": true
             },
             {
               "id": 515,
@@ -2439,8 +2244,8 @@
               },
               "troops": 18000,
               "point": [
-                1226.7988715857355,
-                1263.2146000000007
+                1176.472513220051,
+                1277.2000000000005
               ],
               "path": [
                 "ueno",
@@ -2451,7 +2256,7 @@
                 "a"
               ],
               "matchBasis": "commander-name",
-              "insideReplayFrame": false
+              "insideReplayFrame": true
             },
             {
               "id": 516,
@@ -2468,8 +2273,8 @@
               },
               "troops": 6000,
               "point": [
-                1226.7988715857355,
-                1263.2146000000007
+                1174.5114560256845,
+                1275.6439999999998
               ],
               "path": [
                 "sawayama",
@@ -2479,7 +2284,7 @@
                 "b"
               ],
               "matchBasis": "commander-name",
-              "insideReplayFrame": false
+              "insideReplayFrame": true
             },
             {
               "id": 517,
@@ -2496,8 +2301,8 @@
               },
               "troops": 20500,
               "point": [
-                1226.7988715857355,
-                1263.2146000000007
+                1174.5114560256845,
+                1275.6439999999998
               ],
               "path": [
                 "sawayama",
@@ -2507,7 +2312,7 @@
                 "b"
               ],
               "matchBasis": "commander-name",
-              "insideReplayFrame": false
+              "insideReplayFrame": true
             },
             {
               "id": 518,
@@ -2524,8 +2329,8 @@
               },
               "troops": 6000,
               "point": [
-                1226.7988715857355,
-                1263.2146000000007
+                1174.3642149327075,
+                1276.8140000000003
               ],
               "path": [
                 "sawayama",
@@ -2535,7 +2340,7 @@
                 "b"
               ],
               "matchBasis": "commander-name",
-              "insideReplayFrame": false
+              "insideReplayFrame": true
             },
             {
               "id": 519,
@@ -2552,8 +2357,8 @@
               },
               "troops": 4000,
               "point": [
-                1226.7988715857355,
-                1263.2146000000007
+                1173.1668697810342,
+                1277.9759999999997
               ],
               "path": [
                 "sawayama",
@@ -2563,7 +2368,7 @@
                 "b"
               ],
               "matchBasis": "commander-name",
-              "insideReplayFrame": false
+              "insideReplayFrame": true
             },
             {
               "id": 520,
@@ -2580,8 +2385,8 @@
               },
               "troops": 5000,
               "point": [
-                1226.7988715857355,
-                1263.2146000000007
+                1176.4207361324084,
+                1276.11
               ],
               "path": [
                 "kiyosu",
@@ -2591,7 +2396,7 @@
                 "a"
               ],
               "matchBasis": "commander-name",
-              "insideReplayFrame": false
+              "insideReplayFrame": true
             },
             {
               "id": 521,
@@ -2608,8 +2413,8 @@
               },
               "troops": 5000,
               "point": [
-                1226.7988715857355,
-                1263.2146000000007
+                1176.472513220051,
+                1278.6000000000001
               ],
               "path": [
                 "kiyosu",
@@ -2619,7 +2424,7 @@
                 "a"
               ],
               "matchBasis": "commander-name",
-              "insideReplayFrame": false
+              "insideReplayFrame": true
             },
             {
               "id": 522,
@@ -2636,8 +2441,8 @@
               },
               "troops": 3000,
               "point": [
-                1226.7988715857355,
-                1263.2146000000007
+                1176.472513220051,
+                1277.2000000000005
               ],
               "path": [
                 "kiyosu",
@@ -2647,7 +2452,7 @@
                 "a"
               ],
               "matchBasis": "commander-name",
-              "insideReplayFrame": false
+              "insideReplayFrame": true
             },
             {
               "id": 523,
@@ -2664,8 +2469,8 @@
               },
               "troops": 3000,
               "point": [
-                1226.7988715857355,
-                1263.2146000000007
+                1176.4207361324084,
+                1276.11
               ],
               "path": [
                 "kiyosu",
@@ -2675,7 +2480,7 @@
                 "a"
               ],
               "matchBasis": "commander-name",
-              "insideReplayFrame": false
+              "insideReplayFrame": true
             },
             {
               "id": 524,
@@ -2692,8 +2497,8 @@
               },
               "troops": 3000,
               "point": [
-                1226.7988715857355,
-                1263.2146000000007
+                1182.7828457761736,
+                1276.9999999999995
               ],
               "path": [
                 "kiyosu",
@@ -2703,7 +2508,7 @@
                 "a"
               ],
               "matchBasis": "commander-name",
-              "insideReplayFrame": false
+              "insideReplayFrame": true
             },
             {
               "id": "documented:ieyasu1600",
@@ -2745,8 +2550,8 @@
               },
               "troops": 1500,
               "point": [
-                1218.0446734126863,
-                1267.207403853976
+                1174.5616150793378,
+                1276.5860000000002
               ],
               "path": [
                 "gifu",
@@ -2770,7 +2575,7 @@
                 "b"
               ],
               "matchBasis": "commander-name",
-              "insideReplayFrame": false
+              "insideReplayFrame": true
             },
             {
               "id": 501,
@@ -2787,8 +2592,8 @@
               },
               "troops": 40000,
               "point": [
-                1219.4242307367697,
-                1266.5632124448691
+                1173.8852768720374,
+                1277.4299999999996
               ],
               "path": [
                 "gifu",
@@ -2802,7 +2607,7 @@
                 "b"
               ],
               "matchBasis": "commander-name",
-              "insideReplayFrame": false
+              "insideReplayFrame": true
             },
             {
               "id": 503,
@@ -2819,8 +2624,8 @@
               },
               "troops": 5400,
               "point": [
-                1166.3149150498712,
-                1280.8803440236186
+                1176.4207361324084,
+                1276.11
               ],
               "path": [
                 "gifu",
@@ -2840,7 +2645,7 @@
                 "a"
               ],
               "matchBasis": "commander-name",
-              "insideReplayFrame": false
+              "insideReplayFrame": true
             },
             {
               "id": 504,
@@ -2857,8 +2662,8 @@
               },
               "troops": 23000,
               "point": [
-                1236.3441394955657,
-                1307.3392
+                1175.501692826801,
+                1277.8000000000006
               ],
               "path": [
                 "kiyosu",
@@ -2869,7 +2674,7 @@
                 "a"
               ],
               "matchBasis": "commander-name",
-              "insideReplayFrame": false
+              "insideReplayFrame": true
             },
             {
               "id": 505,
@@ -2886,8 +2691,8 @@
               },
               "troops": 30000,
               "point": [
-                907.1285369505508,
-                1394.326788705447
+                527.4790803324688,
+                1470.0000000000002
               ],
               "path": [
                 "kiriyama",
@@ -2921,8 +2726,8 @@
               },
               "troops": 18000,
               "point": [
-                1170.6488921260134,
-                1280.2832735733791
+                1176.472513220051,
+                1277.2000000000005
               ],
               "path": [
                 "gifu",
@@ -2950,8 +2755,8 @@
               },
               "troops": 6000,
               "point": [
-                1143.8501973490725,
-                1294.072
+                1174.5114560256845,
+                1275.6439999999998
               ],
               "path": [
                 "sawayama",
@@ -2963,7 +2768,7 @@
                 "b"
               ],
               "matchBasis": "commander-name",
-              "insideReplayFrame": false
+              "insideReplayFrame": true
             },
             {
               "id": 517,
@@ -2978,8 +2783,8 @@
               },
               "troops": 20500,
               "point": [
-                1216.1753695440398,
-                1267.1123108432967
+                1174.5114560256845,
+                1275.6439999999998
               ],
               "path": [
                 "gifu",
@@ -2989,7 +2794,7 @@
                 "b"
               ],
               "matchBasis": "clan-only",
-              "insideReplayFrame": false
+              "insideReplayFrame": true
             },
             {
               "id": 518,
@@ -3006,8 +2811,8 @@
               },
               "troops": 6000,
               "point": [
-                1214.5180684693087,
-                1268.0832141008254
+                1174.3642149327075,
+                1276.8140000000003
               ],
               "path": [
                 "gifu",
@@ -3017,7 +2822,7 @@
                 "b"
               ],
               "matchBasis": "commander-name",
-              "insideReplayFrame": false
+              "insideReplayFrame": true
             },
             {
               "id": 519,
@@ -3032,8 +2837,8 @@
               },
               "troops": 4000,
               "point": [
-                1214.104335782364,
-                1267.8483966411939
+                1173.1668697810342,
+                1277.9759999999997
               ],
               "path": [
                 "gifu",
@@ -3043,7 +2848,7 @@
                 "b"
               ],
               "matchBasis": "clan-only",
-              "insideReplayFrame": false
+              "insideReplayFrame": true
             },
             {
               "id": "documented:ieyasu1600",
@@ -3089,8 +2894,18 @@
               ],
               "clanOnly": [],
               "inFrame": [
-                "documented:ieyasu1600",
-                515
+                503,
+                504,
+                508,
+                510,
+                511,
+                515,
+                520,
+                521,
+                522,
+                523,
+                524,
+                "documented:ieyasu1600"
               ],
               "locatedGroups": 7,
               "unlocatedGroups": 0
@@ -3109,15 +2924,20 @@
                 517,
                 519
               ],
-              "inFrame": [],
+              "inFrame": [
+                498,
+                501,
+                516,
+                517,
+                518,
+                519
+              ],
               "locatedGroups": 9,
               "unlocatedGroups": 0
             }
           },
           "unmatchedSides": [],
-          "sidesOutsideFrame": [
-            "b"
-          ]
+          "sidesOutsideFrame": []
         }
       ]
     },
@@ -3161,8 +2981,8 @@
               },
               "troops": 30000,
               "point": [
-                1144.3226632737856,
-                1260.1125999999995
+                1154.3054475741774,
+                1266.4
               ],
               "path": [
                 "kanegasaki",
@@ -3172,7 +2992,7 @@
                 "a"
               ],
               "matchBasis": "commander-name",
-              "insideReplayFrame": false
+              "insideReplayFrame": true
             },
             {
               "id": 297,
@@ -3189,8 +3009,8 @@
               },
               "troops": 5000,
               "point": [
-                1144.3226632737856,
-                1260.1125999999995
+                1151.8783965910502,
+                1266.2000000000007
               ],
               "path": [
                 "hikuma",
@@ -3204,7 +3024,7 @@
                 "a"
               ],
               "matchBasis": "commander-name",
-              "insideReplayFrame": false
+              "insideReplayFrame": true
             },
             {
               "id": 298,
@@ -3221,8 +3041,8 @@
               },
               "troops": 8000,
               "point": [
-                1144.3226632737856,
-                1260.1125999999995
+                1154.3054475741774,
+                1264.7999999999997
               ],
               "path": [
                 "sawayama",
@@ -3232,7 +3052,7 @@
                 "b"
               ],
               "matchBasis": "commander-name",
-              "insideReplayFrame": false
+              "insideReplayFrame": true
             },
             {
               "id": 296,
@@ -3249,8 +3069,8 @@
               },
               "troops": 30000,
               "point": [
-                1146.724855893695,
-                1269.7705730624953
+                1154.3054475741774,
+                1266.4
               ],
               "path": [
                 "odani",
@@ -3277,8 +3097,8 @@
               },
               "troops": 5000,
               "point": [
-                1157.3667325931176,
-                1269.1603301786738
+                1151.8783965910502,
+                1266.2000000000007
               ],
               "path": [
                 "odani",
@@ -3314,15 +3134,15 @@
                 298
               ],
               "clanOnly": [],
-              "inFrame": [],
+              "inFrame": [
+                298
+              ],
               "locatedGroups": 2,
               "unlocatedGroups": 0
             }
           },
           "unmatchedSides": [],
-          "sidesOutsideFrame": [
-            "b"
-          ]
+          "sidesOutsideFrame": []
         }
       ]
     },
@@ -3366,8 +3186,8 @@
               },
               "troops": 27000,
               "point": [
-                1379.3739754092862,
-                1407.5999999999995
+                1376.1379074317895,
+                1387.6000000000004
               ],
               "path": [
                 "sunpu",
@@ -3378,7 +3198,7 @@
                 "b"
               ],
               "matchBasis": "commander-name",
-              "insideReplayFrame": false
+              "insideReplayFrame": true
             },
             {
               "id": 313,
@@ -3395,8 +3215,8 @@
               },
               "troops": 11000,
               "point": [
-                1379.3739754092862,
-                1407.5999999999995
+                1377.594138021662,
+                1390.3999999999996
               ],
               "path": [
                 "kakegawa",
@@ -3406,7 +3226,7 @@
                 "a"
               ],
               "matchBasis": "commander-name",
-              "insideReplayFrame": false
+              "insideReplayFrame": true
             },
             {
               "id": 312,
@@ -3423,8 +3243,8 @@
               },
               "troops": 27000,
               "point": [
-                1395.1357547915416,
-                1405.044940128952
+                1376.1379074317895,
+                1387.6000000000004
               ],
               "path": [
                 "hikuma",
@@ -3435,7 +3255,7 @@
                 "b"
               ],
               "matchBasis": "commander-name",
-              "insideReplayFrame": false
+              "insideReplayFrame": true
             }
           ],
           "sides": {
@@ -3444,7 +3264,9 @@
                 313
               ],
               "clanOnly": [],
-              "inFrame": [],
+              "inFrame": [
+                313
+              ],
               "locatedGroups": 1,
               "unlocatedGroups": 0
             },
@@ -3453,16 +3275,15 @@
                 312
               ],
               "clanOnly": [],
-              "inFrame": [],
+              "inFrame": [
+                312
+              ],
               "locatedGroups": 1,
               "unlocatedGroups": 0
             }
           },
           "unmatchedSides": [],
-          "sidesOutsideFrame": [
-            "a",
-            "b"
-          ]
+          "sidesOutsideFrame": []
         }
       ]
     },
@@ -3507,8 +3328,8 @@
               },
               "troops": 7800,
               "point": [
-                1061.4,
-                1348
+                1060.1358694289345,
+                1348.6000000000004
               ],
               "path": [
                 "kannonji",
@@ -3563,8 +3384,8 @@
               },
               "troops": 5200,
               "point": [
-                979.8948132690431,
-                1337.6233999999997
+                1061.4,
+                1348
               ],
               "path": [
                 "yakami",
@@ -3575,7 +3396,7 @@
                 "a"
               ],
               "matchBasis": "commander-name",
-              "insideReplayFrame": false
+              "insideReplayFrame": true
             }
           ],
           "sides": {
@@ -3649,8 +3470,8 @@
               },
               "troops": 30000,
               "point": [
-                972.7932085472447,
-                1408.2958531748955
+                1048.4860247099348,
+                1371.3999999999999
               ],
               "path": [
                 "bmatsuyama",
@@ -3664,7 +3485,7 @@
                 "a"
               ],
               "matchBasis": "commander-name",
-              "insideReplayFrame": false
+              "insideReplayFrame": true
             },
             {
               "id": 391,
@@ -3681,8 +3502,8 @@
               },
               "troops": 5200,
               "point": [
-                1038.7778207774352,
-                1379.9999999999998
+                1051.236682490809,
+                1368.0000000000007
               ],
               "path": [
                 "yakami",
@@ -3693,7 +3514,7 @@
                 "b"
               ],
               "matchBasis": "commander-name",
-              "insideReplayFrame": false
+              "insideReplayFrame": true
             }
           ],
           "sides": {
@@ -3702,7 +3523,9 @@
                 389
               ],
               "clanOnly": [],
-              "inFrame": [],
+              "inFrame": [
+                389
+              ],
               "locatedGroups": 1,
               "unlocatedGroups": 0
             },
@@ -3711,16 +3534,15 @@
                 391
               ],
               "clanOnly": [],
-              "inFrame": [],
+              "inFrame": [
+                391
+              ],
               "locatedGroups": 1,
               "unlocatedGroups": 0
             }
           },
           "unmatchedSides": [],
-          "sidesOutsideFrame": [
-            "a",
-            "b"
-          ]
+          "sidesOutsideFrame": []
         }
       ]
     },
@@ -3764,8 +3586,8 @@
               },
               "troops": 11000,
               "point": [
-                1123.5336755735627,
-                1203.3299965467374
+                1125.067387322192,
+                1205.0222435519768
               ],
               "path": [
                 "himeji",
@@ -3796,8 +3618,8 @@
               },
               "troops": 30000,
               "point": [
-                1143.950030046179,
-                1273.9999999999995
+                1132.7855955238022,
+                1239.1999999999996
               ],
               "path": [
                 "ichijodani",
@@ -3808,7 +3630,7 @@
                 "b"
               ],
               "matchBasis": "commander-name",
-              "insideReplayFrame": false
+              "insideReplayFrame": true
             },
             {
               "id": 416,
@@ -3825,8 +3647,8 @@
               },
               "troops": 11000,
               "point": [
-                1123.5336755735627,
-                1203.3299965467374
+                1125.067387322192,
+                1205.0222435519768
               ],
               "path": [
                 "himeji",
@@ -3857,8 +3679,8 @@
               },
               "troops": 30000,
               "point": [
-                1139.2767937561348,
-                1252.6422543063481
+                1132.7855955238022,
+                1239.1999999999996
               ],
               "path": [
                 "odani",
@@ -3869,7 +3691,7 @@
                 "b"
               ],
               "matchBasis": "commander-name",
-              "insideReplayFrame": false
+              "insideReplayFrame": true
             }
           ],
           "sides": {
@@ -3887,15 +3709,16 @@
                 418
               ],
               "clanOnly": [],
-              "inFrame": [],
+              "inFrame": [
+                418
+              ],
               "locatedGroups": 3,
               "unlocatedGroups": 0
             }
           },
           "unmatchedSides": [],
           "sidesOutsideFrame": [
-            "a",
-            "b"
+            "a"
           ]
         }
       ]
@@ -3941,8 +3764,8 @@
               },
               "troops": 9300,
               "point": [
-                1236.3441394955657,
-                1307.3392
+                1270.4802879664178,
+                1314.6000000000004
               ],
               "path": [
                 "tsutsuji",
@@ -3973,8 +3796,8 @@
               },
               "troops": 8000,
               "point": [
-                1236.3441394955657,
-                1307.3392
+                1264.4935622080425,
+                1303.4000000000005
               ],
               "path": [
                 "himeji",
@@ -4005,8 +3828,8 @@
               },
               "troops": 60000,
               "point": [
-                1236.3441394955657,
-                1307.3392
+                1253.9763412811685,
+                1287.9999999999995
               ],
               "path": [
                 "ishiyama",
@@ -4036,8 +3859,8 @@
               },
               "troops": 6000,
               "point": [
-                1236.3441394955657,
-                1307.3392
+                1247.9896155227975,
+                1291.8000000000006
               ],
               "path": [
                 "kiriyama",
@@ -4065,8 +3888,8 @@
               },
               "troops": 3000,
               "point": [
-                1236.3441394955657,
-                1307.3392
+                1269.5094675731682,
+                1315.8000000000002
               ],
               "path": [
                 "sawayama",
@@ -4094,8 +3917,8 @@
               },
               "troops": 6000,
               "point": [
-                1236.3441394955657,
-                1307.3392
+                1269.5094675731682,
+                1315.8000000000002
               ],
               "path": [
                 "gifu",
@@ -4122,8 +3945,8 @@
               },
               "troops": 9300,
               "point": [
-                1247.362662677372,
-                1326.5617125083434
+                1270.4802879664178,
+                1314.6000000000004
               ],
               "path": [
                 "kiyosu",
@@ -4137,7 +3960,7 @@
                 "a"
               ],
               "matchBasis": "commander-name",
-              "insideReplayFrame": false
+              "insideReplayFrame": true
             },
             {
               "id": 426,
@@ -4154,8 +3977,8 @@
               },
               "troops": 8000,
               "point": [
-                1147.9587119049468,
-                1299.975651762514
+                1264.4935622080425,
+                1303.4000000000005
               ],
               "path": [
                 "kiyosu",
@@ -4170,7 +3993,7 @@
                 "b"
               ],
               "matchBasis": "commander-name",
-              "insideReplayFrame": false
+              "insideReplayFrame": true
             },
             {
               "id": 428,
@@ -4187,8 +4010,8 @@
               },
               "troops": 60000,
               "point": [
-                1161.7299058104243,
-                1285.1860819159806
+                1253.9763412811685,
+                1287.9999999999995
               ],
               "path": [
                 "kiyosu",
@@ -4203,7 +4026,7 @@
                 "b"
               ],
               "matchBasis": "commander-name",
-              "insideReplayFrame": false
+              "insideReplayFrame": true
             },
             {
               "id": 430,
@@ -4218,8 +4041,8 @@
               },
               "troops": 3000,
               "point": [
-                1148.0068826324582,
-                1293.6701788844603
+                1269.5094675731682,
+                1315.8000000000002
               ],
               "path": [
                 "kiyosu",
@@ -4230,7 +4053,7 @@
                 "b"
               ],
               "matchBasis": "clan-only",
-              "insideReplayFrame": false
+              "insideReplayFrame": true
             },
             {
               "id": 431,
@@ -4245,8 +4068,8 @@
               },
               "troops": 6000,
               "point": [
-                1230.880618736211,
-                1293.5773076733444
+                1269.5094675731682,
+                1315.8000000000002
               ],
               "path": [
                 "kiyosu",
@@ -4254,7 +4077,7 @@
               ],
               "matchingSides": [],
               "matchBasis": "unassigned",
-              "insideReplayFrame": false
+              "insideReplayFrame": true
             }
           ],
           "sides": {
@@ -4336,8 +4159,8 @@
               },
               "troops": 24000,
               "point": [
-                359.20354550247646,
-                1942.0000000000002
+                371.17699701922766,
+                1927.2000000000005
               ],
               "path": [
                 "uchi",
@@ -4348,7 +4171,7 @@
                 "a"
               ],
               "matchBasis": "commander-name",
-              "insideReplayFrame": false
+              "insideReplayFrame": true
             },
             {
               "id": 366,
@@ -4365,8 +4188,8 @@
               },
               "troops": 8000,
               "point": [
-                359.20354550247646,
-                1942.0000000000002
+                370.0443732271019,
+                1924.8000000000004
               ],
               "path": [
                 "uchi",
@@ -4377,7 +4200,7 @@
                 "a"
               ],
               "matchBasis": "commander-name",
-              "insideReplayFrame": false
+              "insideReplayFrame": true
             },
             {
               "id": 367,
@@ -4416,7 +4239,10 @@
                 367
               ],
               "clanOnly": [],
-              "inFrame": [],
+              "inFrame": [
+                365,
+                366
+              ],
               "locatedGroups": 2,
               "unlocatedGroups": 0
             },
@@ -4431,9 +4257,7 @@
           "unmatchedSides": [
             "b"
           ],
-          "sidesOutsideFrame": [
-            "a"
-          ]
+          "sidesOutsideFrame": []
         }
       ]
     },
@@ -4479,8 +4303,8 @@
               },
               "troops": 4600,
               "point": [
-                170.356326539523,
-                1818.0133999999996
+                170.3563265395228,
+                1818.0133999999994
               ],
               "path": [
                 "tonokori",
@@ -4510,8 +4334,8 @@
               },
               "troops": 3100,
               "point": [
-                170.356326539523,
-                1818.0133999999996
+                188.5009596893662,
+                1790.8
               ],
               "path": [
                 "tonokori",
@@ -4524,7 +4348,7 @@
                 "a"
               ],
               "matchBasis": "commander-name",
-              "insideReplayFrame": false
+              "insideReplayFrame": true
             },
             {
               "id": 424,
@@ -4541,8 +4365,8 @@
               },
               "troops": 57000,
               "point": [
-                170.356326539523,
-                1818.0133999999996
+                186.88292570061304,
+                1786.6
               ],
               "path": [
                 "saga",
@@ -4552,7 +4376,7 @@
                 "b"
               ],
               "matchBasis": "commander-name",
-              "insideReplayFrame": false
+              "insideReplayFrame": true
             },
             {
               "id": 422,
@@ -4569,8 +4393,8 @@
               },
               "troops": 4600,
               "point": [
-                165.9474655830334,
-                1832.2872051555896
+                170.3563265395228,
+                1818.0133999999994
               ],
               "path": [
                 "hinoe",
@@ -4600,8 +4424,8 @@
               },
               "troops": 3100,
               "point": [
-                165.8206090133661,
-                1832.6979066896156
+                188.5009596893662,
+                1790.8
               ],
               "path": [
                 "hinoe",
@@ -4614,7 +4438,7 @@
                 "a"
               ],
               "matchBasis": "commander-name",
-              "insideReplayFrame": false
+              "insideReplayFrame": true
             },
             {
               "id": 424,
@@ -4629,8 +4453,8 @@
               },
               "troops": 57000,
               "point": [
-                159.337190694514,
-                1808.046020931337
+                186.88292570061304,
+                1786.6
               ],
               "path": [
                 "hinoe",
@@ -4640,7 +4464,7 @@
                 "b"
               ],
               "matchBasis": "clan-only",
-              "insideReplayFrame": false
+              "insideReplayFrame": true
             }
           ],
           "sides": {
@@ -4651,7 +4475,9 @@
               "clanOnly": [
                 422
               ],
-              "inFrame": [],
+              "inFrame": [
+                423
+              ],
               "locatedGroups": 2,
               "unlocatedGroups": 0
             },
@@ -4662,16 +4488,15 @@
               "clanOnly": [
                 424
               ],
-              "inFrame": [],
+              "inFrame": [
+                424
+              ],
               "locatedGroups": 1,
               "unlocatedGroups": 0
             }
           },
           "unmatchedSides": [],
-          "sidesOutsideFrame": [
-            "a",
-            "b"
-          ]
+          "sidesOutsideFrame": []
         }
       ]
     },
@@ -4716,8 +4541,8 @@
               },
               "troops": 3500,
               "point": [
-                1462.7027258299083,
-                1070.0000000000002
+                1468.851254987155,
+                1071.2000000000003
               ],
               "path": [
                 "tsutsuji",
@@ -4745,8 +4570,8 @@
               },
               "troops": 3500,
               "point": [
-                1462.7027258299083,
-                1070.0000000000002
+                1468.851254987155,
+                1071.2000000000003
               ],
               "path": [
                 "okazaki",
@@ -4775,8 +4600,8 @@
               },
               "troops": 1200,
               "point": [
-                1462.7027258299083,
-                1070.0000000000002
+                1463.3499394254068,
+                1069.1999999999994
               ],
               "path": [
                 "numata",
@@ -4804,8 +4629,8 @@
               },
               "troops": 3500,
               "point": [
-                1467.301100826281,
-                1091.0849150093704
+                1468.851254987155,
+                1071.2000000000003
               ],
               "path": [
                 "toishi",
@@ -4816,7 +4641,7 @@
                 "b"
               ],
               "matchBasis": "commander-name",
-              "insideReplayFrame": false
+              "insideReplayFrame": true
             },
             {
               "id": 445,
@@ -4833,8 +4658,8 @@
               },
               "troops": 3500,
               "point": [
-                1466.9333165550802,
-                1094.745843042497
+                1468.851254987155,
+                1071.2000000000003
               ],
               "path": [
                 "toishi",
@@ -4846,7 +4671,7 @@
                 "b"
               ],
               "matchBasis": "commander-name",
-              "insideReplayFrame": false
+              "insideReplayFrame": true
             }
           ],
           "sides": {
@@ -4920,8 +4745,8 @@
               },
               "troops": 23000,
               "point": [
-                1736.2,
-                852
+                1759.6119627655107,
+                835.3999999999999
               ],
               "path": [
                 "yonezawa",
@@ -4931,7 +4756,7 @@
                 "a"
               ],
               "matchBasis": "commander-name",
-              "insideReplayFrame": false
+              "insideReplayFrame": true
             }
           ],
           "sides": {
@@ -4940,7 +4765,9 @@
                 461
               ],
               "clanOnly": [],
-              "inFrame": [],
+              "inFrame": [
+                461
+              ],
               "locatedGroups": 1,
               "unlocatedGroups": 0
             },
@@ -4955,9 +4782,7 @@
           "unmatchedSides": [
             "b"
           ],
-          "sidesOutsideFrame": [
-            "a"
-          ]
+          "sidesOutsideFrame": []
         }
       ]
     },
@@ -5001,8 +4826,8 @@
               },
               "troops": 18000,
               "point": [
-                1588.1062377520482,
-                1286.0533366730076
+                1605.8987338342724,
+                1303
               ],
               "path": [
                 "kasugayama",
@@ -5016,7 +4841,7 @@
                 "a"
               ],
               "matchBasis": "commander-name",
-              "insideReplayFrame": false
+              "insideReplayFrame": true
             },
             {
               "id": 463,
@@ -5060,6 +4885,10 @@
                 "end": 10770
               },
               "troops": 18000,
+              "point": [
+                1605.8987338342724,
+                1303
+              ],
               "path": [
                 "kasugayama",
                 "toyama",
@@ -5072,7 +4901,7 @@
                 "a"
               ],
               "matchBasis": "commander-name",
-              "insideReplayFrame": null
+              "insideReplayFrame": true
             },
             {
               "id": 463,
@@ -5111,6 +4940,7 @@
               ],
               "clanOnly": [],
               "inFrame": [
+                462,
                 463
               ],
               "locatedGroups": 2,
@@ -5173,8 +5003,8 @@
               },
               "troops": 3000,
               "point": [
-                1028.0659750230136,
-                1405.7661929393516
+                1022.6,
+                1414
               ],
               "path": [
                 "akutagawa",
@@ -5182,7 +5012,7 @@
               ],
               "matchingSides": [],
               "matchBasis": "unassigned",
-              "insideReplayFrame": false
+              "insideReplayFrame": true
             },
             {
               "id": 533,
@@ -5199,10 +5029,11 @@
               },
               "troops": 72000,
               "point": [
-                1033.5652561634563,
-                1410.4738135628447
+                1021.7884638955583,
+                1421.2000000000003
               ],
               "path": [
+                "sunpu",
                 "kakegawa",
                 "yoshida",
                 "okazaki",
@@ -5216,7 +5047,7 @@
                 "a"
               ],
               "matchBasis": "commander-name",
-              "insideReplayFrame": false
+              "insideReplayFrame": true
             },
             {
               "id": 534,
@@ -5233,10 +5064,11 @@
               },
               "troops": 38000,
               "point": [
-                1033.5652561634563,
-                1410.4738135628447
+                1025.1863352719354,
+                1418.8000000000002
               ],
               "path": [
+                "odawara",
                 "sunpu",
                 "kakegawa",
                 "yoshida",
@@ -5251,7 +5083,7 @@
                 "a"
               ],
               "matchBasis": "commander-name",
-              "insideReplayFrame": false
+              "insideReplayFrame": true
             },
             {
               "id": 535,
@@ -5268,8 +5100,8 @@
               },
               "troops": 3200,
               "point": [
-                1041.4227716863838,
-                1412.4843340219156
+                1025.1863352719354,
+                1418.8000000000002
               ],
               "path": [
                 "yamato",
@@ -5279,7 +5111,7 @@
                 "a"
               ],
               "matchBasis": "commander-name",
-              "insideReplayFrame": false
+              "insideReplayFrame": true
             },
             {
               "id": 536,
@@ -5296,10 +5128,11 @@
               },
               "troops": 12000,
               "point": [
-                1033.5652561634563,
-                1410.4738135628447
+                1025.1863352719351,
+                1418.8000000000002
               ],
               "path": [
+                "odawara",
                 "sunpu",
                 "kakegawa",
                 "yoshida",
@@ -5314,7 +5147,7 @@
                 "a"
               ],
               "matchBasis": "commander-name",
-              "insideReplayFrame": false
+              "insideReplayFrame": true
             },
             {
               "id": 542,
@@ -5331,8 +5164,8 @@
               },
               "troops": 1000,
               "point": [
-                1022.6,
-                1414
+                1021.7884638955583,
+                1421.2000000000003
               ],
               "path": [
                 "edo",
@@ -5397,8 +5230,8 @@
               },
               "troops": 3000,
               "point": [
-                1026.7858167726465,
-                1411.9508524377266
+                1022.6,
+                1414
               ],
               "path": [
                 "ishiyama",
@@ -5435,6 +5268,10 @@
                 543
               ],
               "inFrame": [
+                533,
+                534,
+                535,
+                536,
                 542,
                 543
               ],
@@ -5542,8 +5379,8 @@
               },
               "troops": 3000,
               "point": [
-                1022.6,
-                1414
+                1027.4515828561866,
+                1411.4000000000005
               ],
               "path": [
                 "yonezawa",
@@ -5580,8 +5417,8 @@
               },
               "troops": 3000,
               "point": [
-                1236.3441394955657,
-                1307.3392
+                1787.9638313443616,
+                1097.7195277088808
               ],
               "path": [
                 "ishiyama",
@@ -5622,8 +5459,8 @@
               },
               "troops": 72000,
               "point": [
-                1022.6,
-                1414
+                1020.8176435023083,
+                1419.7999999999993
               ],
               "path": [
                 "edo",
@@ -5660,8 +5497,8 @@
               },
               "troops": 38000,
               "point": [
-                1022.6,
-                1413.9999999999998
+                1024.539121676437,
+                1417.4000000000005
               ],
               "path": [
                 "edo",
@@ -5698,8 +5535,8 @@
               },
               "troops": 3200,
               "point": [
-                1022.6,
-                1414
+                1023.7301046820583,
+                1416.4
               ],
               "path": [
                 "edo",
@@ -5736,8 +5573,8 @@
               },
               "troops": 12000,
               "point": [
-                1022.6,
-                1414
+                1023.7301046820583,
+                1416.4
               ],
               "path": [
                 "edo",
@@ -5845,8 +5682,8 @@
               },
               "troops": 3000,
               "point": [
-                1022.6,
-                1414
+                1027.4515828561866,
+                1411.4000000000005
               ],
               "path": [
                 "yonezawa",
@@ -5883,8 +5720,8 @@
               },
               "troops": 3000,
               "point": [
-                1236.3441394955657,
-                1307.3392
+                1787.9638313443616,
+                1097.7195277088808
               ],
               "path": [
                 "ishiyama",
@@ -5925,8 +5762,8 @@
               },
               "troops": 72000,
               "point": [
-                1022.6,
-                1414
+                1020.8176435023083,
+                1419.7999999999993
               ],
               "path": [
                 "edo",
@@ -5963,8 +5800,8 @@
               },
               "troops": 38000,
               "point": [
-                1022.6,
-                1413.9999999999998
+                1024.539121676437,
+                1417.4000000000005
               ],
               "path": [
                 "edo",
@@ -6001,8 +5838,8 @@
               },
               "troops": 3200,
               "point": [
-                1022.6,
-                1414
+                1023.7301046820583,
+                1416.4
               ],
               "path": [
                 "edo",
@@ -6039,8 +5876,8 @@
               },
               "troops": 12000,
               "point": [
-                1022.6,
-                1414
+                1023.7301046820583,
+                1416.4
               ],
               "path": [
                 "edo",
@@ -6183,8 +6020,8 @@
               },
               "troops": 1500,
               "point": [
-                1066.2843985861812,
-                1362.0000000000002
+                1066.284398586181,
+                1362.000000000001
               ],
               "path": [
                 "uchi",
@@ -6253,8 +6090,8 @@
               },
               "troops": 1500,
               "point": [
-                1038.7778207774352,
-                1379.9999999999998
+                1066.284398586181,
+                1362.000000000001
               ],
               "path": [
                 "akutagawa",
@@ -6267,7 +6104,7 @@
                 "a"
               ],
               "matchBasis": "commander-name",
-              "insideReplayFrame": false
+              "insideReplayFrame": true
             },
             {
               "id": 501,
@@ -6284,8 +6121,8 @@
               },
               "troops": 40000,
               "point": [
-                979.8948132690431,
-                1337.6233999999997
+                1066.2843985861814,
+                1362.0000000000005
               ],
               "path": [
                 "yakami",
@@ -6298,7 +6135,7 @@
                 "a"
               ],
               "matchBasis": "commander-name",
-              "insideReplayFrame": false
+              "insideReplayFrame": true
             }
           ],
           "sides": {
@@ -6411,8 +6248,8 @@
               },
               "troops": 15000,
               "point": [
-                1113.9107381824383,
-                1329.5621540869472
+                1122.9155881924266,
+                1318.0000000000007
               ],
               "path": [
                 "kannonji",
@@ -6504,8 +6341,8 @@
               },
               "troops": 18000,
               "point": [
-                1462.7027258299088,
-                1069.9999999999989
+                1462.702725829908,
+                1070.0000000000002
               ],
               "path": [
                 "himeji",
@@ -6627,8 +6464,8 @@
               },
               "troops": 18000,
               "point": [
-                1467.469118824932,
-                1087.850759290378
+                1462.702725829908,
+                1070.0000000000002
               ],
               "path": [
                 "toishi",
@@ -6644,7 +6481,7 @@
                 "a"
               ],
               "matchBasis": "commander-name",
-              "insideReplayFrame": false
+              "insideReplayFrame": true
             },
             {
               "id": 509,
@@ -6661,8 +6498,8 @@
               },
               "troops": 22800,
               "point": [
-                1467.2055549235383,
-                1091.1786771744362
+                1462.7027258299083,
+                1070.0000000000002
               ],
               "path": [
                 "toishi",
@@ -6675,7 +6512,7 @@
                 "a"
               ],
               "matchBasis": "commander-name",
-              "insideReplayFrame": false
+              "insideReplayFrame": true
             },
             {
               "id": 512,
@@ -6692,8 +6529,8 @@
               },
               "troops": 15200,
               "point": [
-                1466.7604105545772,
-                1092.2892860681618
+                1462.7027258299083,
+                1070.0000000000002
               ],
               "path": [
                 "toishi",
@@ -6705,7 +6542,7 @@
                 "a"
               ],
               "matchBasis": "commander-name",
-              "insideReplayFrame": false
+              "insideReplayFrame": true
             }
           ],
           "sides": {
@@ -6894,8 +6731,8 @@
               },
               "troops": 4000,
               "point": [
-                1800.5110078991415,
-                698.8945999999999
+                1800.5110078991413,
+                698.8946
               ],
               "path": [
                 "kurokawa",
@@ -6925,8 +6762,8 @@
               },
               "troops": 4000,
               "point": [
-                1795.3782365498582,
-                714.1461275935906
+                1800.5110078991413,
+                698.8946
               ],
               "path": [
                 "yamagata",
@@ -7035,8 +6872,8 @@
               },
               "troops": 37000,
               "point": [
-                1396.769944232535,
-                1247.6330000000005
+                1433.9604554639511,
+                1183.3680000000002
               ],
               "path": [
                 "iida",
@@ -7047,7 +6884,7 @@
                 "a"
               ],
               "matchBasis": "commander-name",
-              "insideReplayFrame": false
+              "insideReplayFrame": true
             }
           ],
           "sides": {
@@ -7344,8 +7181,8 @@
               },
               "troops": 3000,
               "point": [
-                1313.15115945821,
-                1379.0860819582929
+                1326.147614725566,
+                1396.0875999999998
               ],
               "path": [
                 "yoshida",
@@ -7425,8 +7262,8 @@
               },
               "troops": 1500,
               "point": [
-                1226.7988715857355,
-                1263.2146000000007
+                1209.1567997927987,
+                1279.6000000000006
               ],
               "path": [
                 "kiyosu",
@@ -7436,7 +7273,7 @@
                 "a"
               ],
               "matchBasis": "commander-name",
-              "insideReplayFrame": false
+              "insideReplayFrame": true
             },
             {
               "id": 241,
@@ -7453,8 +7290,8 @@
               },
               "troops": 1500,
               "point": [
-                1223.3586178218452,
-                1275.7951062317752
+                1209.1567997927987,
+                1279.6000000000006
               ],
               "path": [
                 "gifu",
@@ -7464,7 +7301,7 @@
                 "a"
               ],
               "matchBasis": "commander-name",
-              "insideReplayFrame": false
+              "insideReplayFrame": true
             }
           ],
           "sides": {
@@ -7473,7 +7310,9 @@
                 241
               ],
               "clanOnly": [],
-              "inFrame": [],
+              "inFrame": [
+                241
+              ],
               "locatedGroups": 1,
               "unlocatedGroups": 0
             },
@@ -7488,9 +7327,7 @@
           "unmatchedSides": [
             "b"
           ],
-          "sidesOutsideFrame": [
-            "a"
-          ]
+          "sidesOutsideFrame": []
         }
       ]
     },
@@ -7564,8 +7401,8 @@
               },
               "troops": 20000,
               "point": [
-                1767.239945878233,
-                1205.7377809213876
+                1789.4017483357843,
+                1204.3502000000003
               ],
               "path": [
                 "sakura",
@@ -7971,8 +7808,8 @@
               },
               "troops": 20000,
               "point": [
-                246.80891791815037,
-                1653.2393999999997
+                241.41067112148733,
+                1661.1999999999994
               ],
               "path": [
                 "funai",
@@ -7983,7 +7820,7 @@
                 "b"
               ],
               "matchBasis": "commander-name",
-              "insideReplayFrame": false
+              "insideReplayFrame": true
             },
             {
               "id": 281,
@@ -8000,8 +7837,8 @@
               },
               "troops": 20000,
               "point": [
-                229.11284674314527,
-                1641.7799863704704
+                241.41067112148733,
+                1661.1999999999994
               ],
               "path": [
                 "kosho",
@@ -8012,7 +7849,7 @@
                 "b"
               ],
               "matchBasis": "commander-name",
-              "insideReplayFrame": false
+              "insideReplayFrame": true
             }
           ],
           "sides": {
@@ -8028,7 +7865,9 @@
                 281
               ],
               "clanOnly": [],
-              "inFrame": [],
+              "inFrame": [
+                281
+              ],
               "locatedGroups": 1,
               "unlocatedGroups": 0
             }
@@ -8036,9 +7875,7 @@
           "unmatchedSides": [
             "a"
           ],
-          "sidesOutsideFrame": [
-            "b"
-          ]
+          "sidesOutsideFrame": []
         }
       ]
     },
@@ -8163,8 +8000,8 @@
               },
               "troops": 55000,
               "point": [
-                1125.7842006510818,
-                1320.8721999999993
+                1126.1516561699282,
+                1322
               ],
               "path": [
                 "gifu",
@@ -8433,8 +8270,8 @@
               },
               "troops": 20000,
               "point": [
-                1609.9,
-                1296
+                1632.5962946486445,
+                1240.0000000000005
               ],
               "path": [
                 "sunpu",
@@ -8444,7 +8281,7 @@
                 "b"
               ],
               "matchBasis": "commander-name",
-              "insideReplayFrame": false
+              "insideReplayFrame": true
             },
             {
               "id": 291,
@@ -8461,8 +8298,8 @@
               },
               "troops": 20000,
               "point": [
-                1609.9,
-                1296
+                1632.5962946486445,
+                1240.0000000000005
               ],
               "path": [
                 "nirayama",
@@ -8472,7 +8309,7 @@
                 "a"
               ],
               "matchBasis": "commander-name",
-              "insideReplayFrame": false
+              "insideReplayFrame": true
             },
             {
               "id": 290,
@@ -8489,8 +8326,8 @@
               },
               "troops": 20000,
               "point": [
-                1597.9087869274322,
-                1303.5931381180646
+                1632.5962946486445,
+                1240.0000000000005
               ],
               "path": [
                 "odawara",
@@ -8500,7 +8337,7 @@
                 "b"
               ],
               "matchBasis": "commander-name",
-              "insideReplayFrame": false
+              "insideReplayFrame": true
             }
           ],
           "sides": {
@@ -8509,7 +8346,9 @@
                 291
               ],
               "clanOnly": [],
-              "inFrame": [],
+              "inFrame": [
+                291
+              ],
               "locatedGroups": 1,
               "unlocatedGroups": 0
             },
@@ -8518,16 +8357,15 @@
                 290
               ],
               "clanOnly": [],
-              "inFrame": [],
+              "inFrame": [
+                290
+              ],
               "locatedGroups": 1,
               "unlocatedGroups": 0
             }
           },
           "unmatchedSides": [],
-          "sidesOutsideFrame": [
-            "a",
-            "b"
-          ]
+          "sidesOutsideFrame": []
         }
       ]
     },
@@ -8889,8 +8727,8 @@
               },
               "troops": 30000,
               "point": [
-                1144,
-                1146
+                1147.833311619179,
+                1150.1999999999996
               ],
               "path": [
                 "kannonji",
@@ -9209,8 +9047,8 @@
               },
               "troops": 7300,
               "point": [
-                603.5,
-                1750
+                600.7760200228396,
+                1754.9999999999998
               ],
               "path": [
                 "oko",
@@ -9289,7 +9127,7 @@
               },
               "troops": 3000,
               "point": [
-                1022.6000000000001,
+                1022.6,
                 1414
               ],
               "path": [
@@ -9321,8 +9159,8 @@
               },
               "troops": 3000,
               "point": [
-                1022.6,
-                1414
+                1021.7884638955583,
+                1417.7999999999997
               ],
               "path": [
                 "kannonji",
@@ -9351,8 +9189,8 @@
               },
               "troops": 3000,
               "point": [
-                1027.7529546401581,
-                1406.1864108026577
+                1021.7884638955583,
+                1417.7999999999997
               ],
               "path": [
                 "ishiyama",
@@ -9364,7 +9202,7 @@
                 "b"
               ],
               "matchBasis": "commander-name",
-              "insideReplayFrame": false
+              "insideReplayFrame": true
             }
           ],
           "sides": {
@@ -9434,7 +9272,7 @@
               "troops": 7000,
               "point": [
                 1022.6,
-                1414
+                1413.9999999999998
               ],
               "path": [
                 "koriyama",
@@ -9464,8 +9302,8 @@
               },
               "troops": 7000,
               "point": [
-                1043.3033116965105,
-                1381.0021511367581
+                1022.6,
+                1413.9999999999998
               ],
               "path": [
                 "ishiyama",
@@ -9478,7 +9316,7 @@
               ],
               "matchingSides": [],
               "matchBasis": "unassigned",
-              "insideReplayFrame": false
+              "insideReplayFrame": true
             }
           ],
           "sides": {
@@ -9575,8 +9413,8 @@
               },
               "troops": 20000,
               "point": [
-                1296.1911716544537,
-                1011.3392000000005
+                1259.6732771521595,
+                948.1924000000006
               ],
               "path": [
                 "toyama",
@@ -9587,7 +9425,7 @@
                 "a"
               ],
               "matchBasis": "commander-name",
-              "insideReplayFrame": false
+              "insideReplayFrame": true
             }
           ],
           "sides": {
@@ -9656,8 +9494,8 @@
               },
               "troops": 20000,
               "point": [
-                1207.1,
-                1040
+                1179.7085811975523,
+                1056.3999999999992
               ],
               "path": [
                 "toyama",
@@ -9668,7 +9506,7 @@
                 "a"
               ],
               "matchBasis": "commander-name",
-              "insideReplayFrame": false
+              "insideReplayFrame": true
             },
             {
               "id": 348,
@@ -9685,8 +9523,8 @@
               },
               "troops": 40000,
               "point": [
-                1207.1,
-                1040
+                1179.7085811975523,
+                1056.3999999999992
               ],
               "path": [
                 "ichijodani",
@@ -9696,7 +9534,7 @@
                 "b"
               ],
               "matchBasis": "commander-name",
-              "insideReplayFrame": false
+              "insideReplayFrame": true
             },
             {
               "id": 347,
@@ -9713,8 +9551,8 @@
               },
               "troops": 20000,
               "point": [
-                1210.8780791889787,
-                1029.301788705162
+                1179.7085811975523,
+                1056.3999999999992
               ],
               "path": [
                 "oyama",
@@ -9725,7 +9563,7 @@
                 "a"
               ],
               "matchBasis": "commander-name",
-              "insideReplayFrame": false
+              "insideReplayFrame": true
             },
             {
               "id": 348,
@@ -9742,8 +9580,8 @@
               },
               "troops": 40000,
               "point": [
-                1185.7871222643446,
-                1042.608509433939
+                1179.7085811975523,
+                1056.3999999999992
               ],
               "path": [
                 "oyama",
@@ -9753,7 +9591,7 @@
                 "b"
               ],
               "matchBasis": "commander-name",
-              "insideReplayFrame": false
+              "insideReplayFrame": true
             }
           ],
           "sides": {
@@ -9762,7 +9600,9 @@
                 347
               ],
               "clanOnly": [],
-              "inFrame": [],
+              "inFrame": [
+                347
+              ],
               "locatedGroups": 1,
               "unlocatedGroups": 0
             },
@@ -9771,16 +9611,15 @@
                 348
               ],
               "clanOnly": [],
-              "inFrame": [],
+              "inFrame": [
+                348
+              ],
               "locatedGroups": 1,
               "unlocatedGroups": 0
             }
           },
           "unmatchedSides": [],
-          "sidesOutsideFrame": [
-            "a",
-            "b"
-          ]
+          "sidesOutsideFrame": []
         }
       ]
     },
@@ -9908,8 +9747,8 @@
               },
               "troops": 27000,
               "point": [
-                887.1754789879159,
-                1365.3379999999997
+                888.9478734191921,
+                1382.2000000000003
               ],
               "path": [
                 "odani",
@@ -9993,8 +9832,8 @@
               },
               "troops": 7000,
               "point": [
-                1457.1284369352632,
-                920.6689999999994
+                1457.2014102681553,
+                920.3999999999994
               ],
               "path": [
                 "sakado",
@@ -10105,7 +9944,7 @@
               },
               "troops": 3000,
               "point": [
-                887.175478987916,
+                887.1754789879159,
                 1365.3379999999997
               ],
               "path": [
@@ -10134,8 +9973,8 @@
               },
               "troops": 30000,
               "point": [
-                893.7217194138631,
-                1377.7128037287412
+                887.175478987916,
+                1365.3379999999997
               ],
               "path": [
                 "himeji",
@@ -10217,8 +10056,8 @@
               },
               "troops": 16000,
               "point": [
-                1022.6,
-                1414
+                1014.5073109461857,
+                1418.0000000000007
               ],
               "path": [
                 "kiyosu",
@@ -10248,8 +10087,8 @@
               },
               "troops": 16000,
               "point": [
-                1044.4917405525537,
-                1413.7698561625436
+                1014.5073109461857,
+                1418.0000000000007
               ],
               "path": [
                 "ishiyama",
@@ -10262,7 +10101,7 @@
                 "a"
               ],
               "matchBasis": "commander-name",
-              "insideReplayFrame": false
+              "insideReplayFrame": true
             }
           ],
           "sides": {
@@ -10729,8 +10568,8 @@
               },
               "troops": 35000,
               "point": [
-                813.8710963411974,
-                1248.0000000000005
+                820.5050356950713,
+                1246.8000000000004
               ],
               "path": [
                 "himeji",
@@ -10810,8 +10649,8 @@
               },
               "troops": 37000,
               "point": [
-                1516.1,
-                1214
+                1433.9017208301607,
+                1183.6
               ],
               "path": [
                 "iida",
@@ -10839,8 +10678,8 @@
               },
               "troops": 37000,
               "point": [
-                1504.5251031816765,
-                1212.3035063454124
+                1433.9017208301607,
+                1183.6
               ],
               "path": [
                 "tsutsuji",
@@ -10901,6 +10740,7 @@
         "takamatsuSite",
         "atlasRelief",
         "codhSites",
+        "takamatsuHeadquarters",
         "deployment-record-45"
       ],
       "observations": [
@@ -10928,8 +10768,8 @@
               },
               "troops": 30000,
               "point": [
-                715.2897867222295,
-                1387.5997999999995
+                748.837132624577,
+                1412.7544
               ],
               "path": [
                 "tottori",
@@ -10941,7 +10781,7 @@
                 "a"
               ],
               "matchBasis": "commander-name",
-              "insideReplayFrame": false
+              "insideReplayFrame": true
             },
             {
               "id": 389,
@@ -10958,8 +10798,8 @@
               },
               "troops": 30000,
               "point": [
-                715.2897867222295,
-                1387.5997999999995
+                748.837132624577,
+                1412.7544
               ],
               "path": [
                 "tottori",
@@ -10971,7 +10811,7 @@
                 "a"
               ],
               "matchBasis": "commander-name",
-              "insideReplayFrame": false
+              "insideReplayFrame": true
             }
           ],
           "sides": {
@@ -10980,9 +10820,11 @@
                 389
               ],
               "clanOnly": [],
-              "inFrame": [],
-              "locatedGroups": 0,
-              "unlocatedGroups": 1
+              "inFrame": [
+                389
+              ],
+              "locatedGroups": 1,
+              "unlocatedGroups": 0
             },
             "b": {
               "direct": [],
@@ -10995,9 +10837,7 @@
           "unmatchedSides": [
             "b"
           ],
-          "sidesOutsideFrame": [
-            "a"
-          ]
+          "sidesOutsideFrame": []
         }
       ]
     },
@@ -11040,8 +10880,8 @@
               },
               "troops": 50000,
               "point": [
-                1577.8957431977758,
-                1069.1609999999996
+                1603.633486250021,
+                1100.4000000000005
               ],
               "path": [
                 "odawara",
@@ -11054,7 +10894,7 @@
                 "a"
               ],
               "matchBasis": "commander-name",
-              "insideReplayFrame": false
+              "insideReplayFrame": true
             },
             {
               "id": 392,
@@ -11071,8 +10911,8 @@
               },
               "troops": 50000,
               "point": [
-                1577.8957431977758,
-                1069.1609999999996
+                1603.633486250021,
+                1100.4000000000005
               ],
               "path": [
                 "minowa",
@@ -11083,7 +10923,7 @@
                 "a"
               ],
               "matchBasis": "commander-name",
-              "insideReplayFrame": false
+              "insideReplayFrame": true
             }
           ],
           "sides": {
@@ -11092,7 +10932,9 @@
                 392
               ],
               "clanOnly": [],
-              "inFrame": [],
+              "inFrame": [
+                392
+              ],
               "locatedGroups": 1,
               "unlocatedGroups": 0
             },
@@ -11107,9 +10949,7 @@
           "unmatchedSides": [
             "b"
           ],
-          "sidesOutsideFrame": [
-            "a"
-          ]
+          "sidesOutsideFrame": []
         }
       ]
     },
@@ -11153,8 +10993,8 @@
               },
               "troops": 50000,
               "point": [
-                1516.1,
-                1214
+                1492.474551222906,
+                1190.9999999999995
               ],
               "path": [
                 "minowa",
@@ -11165,7 +11005,7 @@
                 "a"
               ],
               "matchBasis": "commander-name",
-              "insideReplayFrame": false
+              "insideReplayFrame": true
             },
             {
               "id": 399,
@@ -11182,8 +11022,8 @@
               },
               "troops": 5000,
               "point": [
-                1516.1,
-                1214
+                1492.6751874375102,
+                1202.9697999999996
               ],
               "path": [
                 "sunpu",
@@ -11193,7 +11033,7 @@
                 "b"
               ],
               "matchBasis": "commander-name",
-              "insideReplayFrame": false
+              "insideReplayFrame": true
             },
             {
               "id": 392,
@@ -11210,8 +11050,8 @@
               },
               "troops": 50000,
               "point": [
-                1520.7692683954008,
-                1222.0799854475126
+                1492.474551222906,
+                1190.9999999999995
               ],
               "path": [
                 "tsutsuji",
@@ -11221,7 +11061,7 @@
                 "a"
               ],
               "matchBasis": "commander-name",
-              "insideReplayFrame": false
+              "insideReplayFrame": true
             },
             {
               "id": 399,
@@ -11238,8 +11078,8 @@
               },
               "troops": 5000,
               "point": [
-                1485.8669858230464,
-                1354.1430000000005
+                1492.6751874375102,
+                1202.9697999999996
               ],
               "path": [
                 "sunpu",
@@ -11249,7 +11089,7 @@
                 "b"
               ],
               "matchBasis": "commander-name",
-              "insideReplayFrame": false
+              "insideReplayFrame": true
             }
           ],
           "sides": {
@@ -11258,7 +11098,9 @@
                 392
               ],
               "clanOnly": [],
-              "inFrame": [],
+              "inFrame": [
+                392
+              ],
               "locatedGroups": 1,
               "unlocatedGroups": 0
             },
@@ -11267,16 +11109,15 @@
                 399
               ],
               "clanOnly": [],
-              "inFrame": [],
+              "inFrame": [
+                399
+              ],
               "locatedGroups": 1,
               "unlocatedGroups": 0
             }
           },
           "unmatchedSides": [],
-          "sidesOutsideFrame": [
-            "a",
-            "b"
-          ]
+          "sidesOutsideFrame": []
         }
       ]
     },
@@ -11397,8 +11238,8 @@
               },
               "troops": 2000,
               "point": [
-                1516.1,
-                1214
+                1541.0155708854002,
+                1228.7999999999997
               ],
               "path": [
                 "okazaki",
@@ -11411,7 +11252,7 @@
                 "b"
               ],
               "matchBasis": "commander-name",
-              "insideReplayFrame": false
+              "insideReplayFrame": true
             }
           ],
           "sides": {
@@ -11427,7 +11268,9 @@
                 410
               ],
               "clanOnly": [],
-              "inFrame": [],
+              "inFrame": [
+                410
+              ],
               "locatedGroups": 1,
               "unlocatedGroups": 0
             }
@@ -11435,9 +11278,7 @@
           "unmatchedSides": [
             "a"
           ],
-          "sidesOutsideFrame": [
-            "b"
-          ]
+          "sidesOutsideFrame": []
         }
       ]
     },
@@ -11721,8 +11562,8 @@
               },
               "troops": 23000,
               "point": [
-                793.7345015478071,
-                1497.8458000000003
+                794.1310816784509,
+                1477.5999999999997
               ],
               "path": [
                 "tenjin",
@@ -11749,8 +11590,8 @@
               },
               "troops": 23000,
               "point": [
-                791.4326069374681,
-                1487.2524976835477
+                794.1310816784509,
+                1477.5999999999997
               ],
               "path": [
                 "sogo",
@@ -11829,8 +11670,8 @@
               },
               "troops": 30000,
               "point": [
-                580.3273064730165,
-                1580.2559999999999
+                660.9668844043333,
+                1559.9999999999995
               ],
               "path": [
                 "koriyama",
@@ -11857,8 +11698,8 @@
               },
               "troops": 30000,
               "point": [
-                579.2462889506934,
-                1565.8236545262862
+                660.9668844043333,
+                1559.9999999999995
               ],
               "path": [
                 "yuzuki",
@@ -12092,8 +11933,8 @@
               },
               "troops": 7000,
               "point": [
-                1816.7673953841122,
-                830.0219999999996
+                1810.256426613385,
+                850.4000000000005
               ],
               "path": [
                 "yonezawa",
@@ -12103,7 +11944,7 @@
                 "b"
               ],
               "matchBasis": "commander-name",
-              "insideReplayFrame": false
+              "insideReplayFrame": true
             },
             {
               "id": 447,
@@ -12120,8 +11961,8 @@
               },
               "troops": 3000,
               "point": [
-                1811.1201318692845,
-                854.5020734958293
+                1816.7673953841122,
+                830.0219999999996
               ],
               "path": [
                 "nihonmatsu",
@@ -12131,7 +11972,7 @@
               ],
               "matchingSides": [],
               "matchBasis": "unassigned",
-              "insideReplayFrame": true
+              "insideReplayFrame": false
             },
             {
               "id": 448,
@@ -12148,8 +11989,8 @@
               },
               "troops": 7000,
               "point": [
-                1813.51233387834,
-                833.2769629654181
+                1810.256426613385,
+                850.4000000000005
               ],
               "path": [
                 "nihonmatsu",
@@ -12159,7 +12000,7 @@
                 "b"
               ],
               "matchBasis": "commander-name",
-              "insideReplayFrame": false
+              "insideReplayFrame": true
             }
           ],
           "sides": {
@@ -12175,7 +12016,9 @@
                 448
               ],
               "clanOnly": [],
-              "inFrame": [],
+              "inFrame": [
+                448
+              ],
               "locatedGroups": 1,
               "unlocatedGroups": 0
             }
@@ -12183,9 +12026,7 @@
           "unmatchedSides": [
             "a"
           ],
-          "sidesOutsideFrame": [
-            "b"
-          ]
+          "sidesOutsideFrame": []
         }
       ]
     },
@@ -12308,8 +12149,8 @@
               },
               "troops": 18000,
               "point": [
-                389.9,
-                1706
+                393.99127626059976,
+                1720.0000000000002
               ],
               "path": [
                 "himeji",
@@ -12323,7 +12164,7 @@
                 "a"
               ],
               "matchBasis": "commander-name",
-              "insideReplayFrame": false
+              "insideReplayFrame": true
             },
             {
               "id": 450,
@@ -12340,8 +12181,8 @@
               },
               "troops": 3000,
               "point": [
-                389.9,
-                1706
+                393.99127626059976,
+                1720.0000000000002
               ],
               "path": [
                 "oko",
@@ -12354,7 +12195,7 @@
                 "a"
               ],
               "matchBasis": "commander-name",
-              "insideReplayFrame": false
+              "insideReplayFrame": true
             },
             {
               "id": 451,
@@ -12371,8 +12212,8 @@
               },
               "troops": 3000,
               "point": [
-                389.9,
-                1706
+                393.99127626059976,
+                1720.0000000000002
               ],
               "path": [
                 "nakamura",
@@ -12383,7 +12224,7 @@
                 "a"
               ],
               "matchBasis": "commander-name",
-              "insideReplayFrame": false
+              "insideReplayFrame": true
             },
             {
               "id": 453,
@@ -12429,8 +12270,8 @@
               },
               "troops": 5000,
               "point": [
-                389.9,
-                1706
+                393.9912762605998,
+                1720.0000000000002
               ],
               "path": [
                 "tonokori",
@@ -12441,7 +12282,7 @@
                 "b"
               ],
               "matchBasis": "commander-name",
-              "insideReplayFrame": false
+              "insideReplayFrame": true
             },
             {
               "id": 449,
@@ -12458,8 +12299,8 @@
               },
               "troops": 18000,
               "point": [
-                401.80556617756775,
-                1698.1384514586714
+                393.99127626059976,
+                1720.0000000000002
               ],
               "path": [
                 "funai",
@@ -12473,7 +12314,7 @@
                 "a"
               ],
               "matchBasis": "commander-name",
-              "insideReplayFrame": false
+              "insideReplayFrame": true
             },
             {
               "id": 450,
@@ -12488,8 +12329,8 @@
               },
               "troops": 3000,
               "point": [
-                403.7860763514175,
-                1696.8306701540198
+                393.99127626059976,
+                1720.0000000000002
               ],
               "path": [
                 "funai",
@@ -12499,7 +12340,7 @@
               ],
               "matchingSides": [],
               "matchBasis": "unassigned",
-              "insideReplayFrame": false
+              "insideReplayFrame": true
             },
             {
               "id": 451,
@@ -12516,8 +12357,8 @@
               },
               "troops": 3000,
               "point": [
-                404.888723043494,
-                1696.1025644625804
+                393.99127626059976,
+                1720.0000000000002
               ],
               "path": [
                 "funai",
@@ -12528,7 +12369,7 @@
                 "a"
               ],
               "matchBasis": "commander-name",
-              "insideReplayFrame": false
+              "insideReplayFrame": true
             },
             {
               "id": 453,
@@ -12545,8 +12386,8 @@
               },
               "troops": 4000,
               "point": [
-                381.6770572422624,
-                1728.4137689589518
+                389.9,
+                1706
               ],
               "path": [
                 "funai",
@@ -12575,8 +12416,8 @@
               },
               "troops": 5000,
               "point": [
-                381.72981161810196,
-                1728.0849885893488
+                393.9912762605998,
+                1720.0000000000002
               ],
               "path": [
                 "funai",
@@ -12588,7 +12429,7 @@
                 "b"
               ],
               "matchBasis": "commander-name",
-              "insideReplayFrame": false
+              "insideReplayFrame": true
             }
           ],
           "sides": {
@@ -12599,7 +12440,11 @@
                 451
               ],
               "clanOnly": [],
-              "inFrame": [],
+              "inFrame": [
+                449,
+                450,
+                451
+              ],
               "locatedGroups": 1,
               "unlocatedGroups": 0
             },
@@ -12610,16 +12455,15 @@
               "clanOnly": [
                 453
               ],
-              "inFrame": [],
+              "inFrame": [
+                454
+              ],
               "locatedGroups": 1,
               "unlocatedGroups": 0
             }
           },
           "unmatchedSides": [],
-          "sidesOutsideFrame": [
-            "a",
-            "b"
-          ]
+          "sidesOutsideFrame": []
         }
       ]
     },
@@ -12662,8 +12506,8 @@
               },
               "troops": 4000,
               "point": [
-                239.733965770896,
-                1626.2815273995188
+                225.23033123398932,
+                2003.3999999999999
               ],
               "path": [
                 "hitoyoshi",
@@ -12675,7 +12519,7 @@
                 "b"
               ],
               "matchBasis": "commander-name",
-              "insideReplayFrame": false
+              "insideReplayFrame": true
             },
             {
               "id": 455,
@@ -12692,8 +12536,8 @@
               },
               "troops": 48000,
               "point": [
-                359.20354550247674,
-                1942.0000000000005
+                359.2035455024766,
+                1942
               ],
               "path": [
                 "himeji",
@@ -12727,8 +12571,8 @@
               },
               "troops": 4000,
               "point": [
-                249.5904010698848,
-                1612.2786805517096
+                225.23033123398932,
+                2003.3999999999999
               ],
               "path": [
                 "kawara",
@@ -12741,7 +12585,7 @@
                 "b"
               ],
               "matchBasis": "commander-name",
-              "insideReplayFrame": false
+              "insideReplayFrame": true
             },
             {
               "id": 455,
@@ -12758,8 +12602,8 @@
               },
               "troops": 48000,
               "point": [
-                253.47651237899285,
-                1907.7665999999995
+                359.2035455024766,
+                1942
               ],
               "path": [
                 "hitoyoshi",
@@ -12789,15 +12633,15 @@
                 453
               ],
               "clanOnly": [],
-              "inFrame": [],
+              "inFrame": [
+                453
+              ],
               "locatedGroups": 1,
               "unlocatedGroups": 0
             }
           },
           "unmatchedSides": [],
-          "sidesOutsideFrame": [
-            "b"
-          ]
+          "sidesOutsideFrame": []
         }
       ]
     },
@@ -12840,8 +12684,8 @@
               },
               "troops": 4000,
               "point": [
-                419.88300636693856,
-                1727.185196688255
+                347.95513501608843,
+                2024.2756
               ],
               "path": [
                 "kawara",
@@ -12871,8 +12715,8 @@
               },
               "troops": 48000,
               "point": [
-                359.20354550247646,
-                1942.0000000000002
+                365.5138780586036,
+                1922.1999999999994
               ],
               "path": [
                 "hitoyoshi",
@@ -12882,7 +12726,7 @@
                 "b"
               ],
               "matchBasis": "commander-name",
-              "insideReplayFrame": false
+              "insideReplayFrame": true
             },
             {
               "id": 456,
@@ -12926,8 +12770,8 @@
               },
               "troops": 4000,
               "point": [
-                419.88300636693856,
-                1727.185196688255
+                347.95513501608843,
+                2024.2756
               ],
               "path": [
                 "kawara",
@@ -12957,8 +12801,8 @@
               },
               "troops": 35000,
               "point": [
-                351.4055316548886,
-                1969.6106486156743
+                359.20354550247646,
+                1942.0000000000002
               ],
               "path": [
                 "tonokori",
@@ -12984,15 +12828,16 @@
                 455
               ],
               "clanOnly": [],
-              "inFrame": [],
+              "inFrame": [
+                455
+              ],
               "locatedGroups": 1,
               "unlocatedGroups": 0
             }
           },
           "unmatchedSides": [],
           "sidesOutsideFrame": [
-            "a",
-            "b"
+            "a"
           ]
         }
       ]
@@ -13038,8 +12883,8 @@
               },
               "troops": 10000,
               "point": [
-                1638.4236440591305,
-                759.0438000000006
+                1638.4236440591308,
+                759.0438000000008
               ],
               "path": [
                 "kasugayama",
@@ -13153,8 +12998,8 @@
               },
               "troops": 50000,
               "point": [
-                1568.13804356978,
-                1328.1990470422033
+                1578.4856783900746,
+                1339.2703999999994
               ],
               "path": [
                 "nirayama",
@@ -13167,7 +13012,7 @@
                 "a"
               ],
               "matchBasis": "commander-name",
-              "insideReplayFrame": false
+              "insideReplayFrame": true
             }
           ],
           "sides": {
@@ -13236,8 +13081,8 @@
               },
               "troops": 4200,
               "point": [
-                1577.8957431977758,
-                1069.1609999999996
+                1554.4452529920238,
+                1086
               ],
               "path": [
                 "shibata",
@@ -13267,8 +13112,8 @@
               },
               "troops": 30500,
               "point": [
-                1577.8957431977758,
-                1069.1609999999996
+                1554.4452529920236,
+                1086
               ],
               "path": [
                 "matsukura",
@@ -13297,8 +13142,8 @@
               },
               "troops": 4200,
               "point": [
-                1586.2635393145788,
-                1052.1677157960262
+                1554.4452529920238,
+                1086
               ],
               "path": [
                 "minowa",
@@ -13328,8 +13173,8 @@
               },
               "troops": 30500,
               "point": [
-                1582.00094443775,
-                1084.6804992472782
+                1554.4452529920236,
+                1086
               ],
               "path": [
                 "minowa",
@@ -13461,6 +13306,10 @@
                 "end": 10770
               },
               "troops": 18000,
+              "point": [
+                1605.8987338342724,
+                1303
+              ],
               "path": [
                 "kasugayama",
                 "toyama",
@@ -13473,7 +13322,7 @@
                 "a"
               ],
               "matchBasis": "commander-name",
-              "insideReplayFrame": null
+              "insideReplayFrame": true
             },
             {
               "id": 463,
@@ -13517,6 +13366,10 @@
                 "end": 10770
               },
               "troops": 18000,
+              "point": [
+                1605.8987338342724,
+                1303
+              ],
               "path": [
                 "kasugayama",
                 "toyama",
@@ -13529,7 +13382,7 @@
                 "a"
               ],
               "matchBasis": "commander-name",
-              "insideReplayFrame": null
+              "insideReplayFrame": true
             }
           ],
           "sides": {
@@ -13540,6 +13393,7 @@
               ],
               "clanOnly": [],
               "inFrame": [
+                462,
                 463
               ],
               "locatedGroups": 0,
@@ -13601,8 +13455,8 @@
               },
               "troops": 18700,
               "point": [
-                -96.90912544477345,
-                1178.101534036084
+                -137.55606128130302,
+                1187.3014081037331
               ],
               "path": [
                 "kumamoto",
@@ -13663,8 +13517,8 @@
               },
               "troops": 18700,
               "point": [
-                -96.90912544477345,
-                1178.101534036084
+                -137.55606128130302,
+                1187.3014081037331
               ],
               "path": [
                 "kumamoto",
@@ -13754,8 +13608,8 @@
               },
               "troops": 18700,
               "point": [
-                -255.4116453315177,
-                934.4668815953275
+                -301.2832209400124,
+                927.796988242612
               ],
               "path": [
                 "kumamoto",
@@ -13818,8 +13672,8 @@
               },
               "troops": 18700,
               "point": [
-                -255.4116453315177,
-                934.4668815953275
+                -301.2832209400124,
+                927.796988242612
               ],
               "path": [
                 "kumamoto",
@@ -13908,8 +13762,8 @@
               },
               "troops": 18700,
               "point": [
-                -286.92605247014296,
-                931.1143747909738
+                -316.0296793471576,
+                904.4241334155369
               ],
               "path": [
                 "kumamoto",
@@ -13973,8 +13827,8 @@
               },
               "troops": 18700,
               "point": [
-                -286.92605247014296,
-                931.1143747909738
+                -316.0296793471576,
+                904.4241334155369
               ],
               "path": [
                 "kumamoto",
@@ -14062,8 +13916,8 @@
               },
               "troops": 6000,
               "point": [
-                -26.400000000000027,
-                1325.1
+                -79.28366544874174,
+                1373.0000000000005
               ],
               "path": [
                 "suncheon",
@@ -14074,7 +13928,7 @@
                 "a"
               ],
               "matchBasis": "commander-name",
-              "insideReplayFrame": false
+              "insideReplayFrame": true
             },
             {
               "id": 480,
@@ -14091,8 +13945,8 @@
               },
               "troops": 6000,
               "point": [
-                -181.2,
-                1312
+                -79.28366544874174,
+                1373.0000000000005
               ],
               "path": [
                 "jinju",
@@ -14102,7 +13956,7 @@
                 "a"
               ],
               "matchBasis": "commander-name",
-              "insideReplayFrame": false
+              "insideReplayFrame": true
             }
           ],
           "sides": {
@@ -14111,7 +13965,9 @@
                 480
               ],
               "clanOnly": [],
-              "inFrame": [],
+              "inFrame": [
+                480
+              ],
               "locatedGroups": 1,
               "unlocatedGroups": 0
             },
@@ -14126,9 +13982,7 @@
           "unmatchedSides": [
             "b"
           ],
-          "sidesOutsideFrame": [
-            "a"
-          ]
+          "sidesOutsideFrame": []
         }
       ]
     },
@@ -14172,8 +14026,8 @@
               },
               "troops": 6000,
               "point": [
-                -26.40000000000001,
-                1325.1
+                -121.0289423584906,
+                1394.1999999999994
               ],
               "path": [
                 "jinju",
@@ -14183,7 +14037,7 @@
                 "a"
               ],
               "matchBasis": "commander-name",
-              "insideReplayFrame": false
+              "insideReplayFrame": true
             },
             {
               "id": 480,
@@ -14200,8 +14054,8 @@
               },
               "troops": 6000,
               "point": [
-                -33.903255197824556,
-                1319.2768312646035
+                -121.0289423584906,
+                1394.1999999999994
               ],
               "path": [
                 "busan",
@@ -14212,7 +14066,7 @@
                 "a"
               ],
               "matchBasis": "commander-name",
-              "insideReplayFrame": false
+              "insideReplayFrame": true
             }
           ],
           "sides": {
@@ -14221,7 +14075,9 @@
                 480
               ],
               "clanOnly": [],
-              "inFrame": [],
+              "inFrame": [
+                480
+              ],
               "locatedGroups": 1,
               "unlocatedGroups": 0
             },
@@ -14236,9 +14092,7 @@
           "unmatchedSides": [
             "b"
           ],
-          "sidesOutsideFrame": [
-            "a"
-          ]
+          "sidesOutsideFrame": []
         }
       ]
     },
@@ -14281,8 +14135,8 @@
               },
               "troops": 3800,
               "point": [
-                -181.2,
-                1312
+                -182.0288237343632,
+                1312.2
               ],
               "path": [
                 "suncheon",
@@ -14440,8 +14294,8 @@
               },
               "troops": 20000,
               "point": [
-                -359.2000000000002,
-                836.0000000000002
+                -370.8533902214739,
+                814.1999999999996
               ],
               "path": [
                 "koriyama",
@@ -14461,7 +14315,7 @@
                 "b"
               ],
               "matchBasis": "commander-name",
-              "insideReplayFrame": false
+              "insideReplayFrame": true
             },
             {
               "id": 484,
@@ -14478,8 +14332,8 @@
               },
               "troops": 4000,
               "point": [
-                -359.2000000000001,
-                836.0000000000001
+                -370.85339022147366,
+                814.1999999999999
               ],
               "path": [
                 "funai",
@@ -14496,7 +14350,7 @@
                 "b"
               ],
               "matchBasis": "commander-name",
-              "insideReplayFrame": false
+              "insideReplayFrame": true
             },
             {
               "id": 487,
@@ -14513,8 +14367,8 @@
               },
               "troops": 20000,
               "point": [
-                -359.2000000000001,
-                835.9999999999999
+                -371.5006038169746,
+                809.3999999999994
               ],
               "path": [
                 "uiju",
@@ -14527,7 +14381,7 @@
                 "a"
               ],
               "matchBasis": "commander-name",
-              "insideReplayFrame": false
+              "insideReplayFrame": true
             },
             {
               "id": 483,
@@ -14544,8 +14398,8 @@
               },
               "troops": 20000,
               "point": [
-                -354.65304640917134,
-                843.4245889023935
+                -370.8533902214739,
+                814.1999999999996
               ],
               "path": [
                 "hanseong",
@@ -14565,7 +14419,7 @@
                 "b"
               ],
               "matchBasis": "commander-name",
-              "insideReplayFrame": false
+              "insideReplayFrame": true
             },
             {
               "id": 484,
@@ -14582,8 +14436,8 @@
               },
               "troops": 4000,
               "point": [
-                -353.9217655434235,
-                844.4262972310233
+                -370.85339022147366,
+                814.1999999999999
               ],
               "path": [
                 "hanseong",
@@ -14600,7 +14454,7 @@
                 "b"
               ],
               "matchBasis": "commander-name",
-              "insideReplayFrame": false
+              "insideReplayFrame": true
             },
             {
               "id": 487,
@@ -14617,8 +14471,8 @@
               },
               "troops": 20000,
               "point": [
-                -370.95411834717703,
-                817.785423027445
+                -371.5006038169746,
+                809.3999999999994
               ],
               "path": [
                 "hanseong",
@@ -14631,7 +14485,7 @@
                 "a"
               ],
               "matchBasis": "commander-name",
-              "insideReplayFrame": false
+              "insideReplayFrame": true
             }
           ],
           "sides": {
@@ -14640,7 +14494,9 @@
                 487
               ],
               "clanOnly": [],
-              "inFrame": [],
+              "inFrame": [
+                487
+              ],
               "locatedGroups": 1,
               "unlocatedGroups": 0
             },
@@ -14650,16 +14506,16 @@
                 484
               ],
               "clanOnly": [],
-              "inFrame": [],
+              "inFrame": [
+                483,
+                484
+              ],
               "locatedGroups": 1,
               "unlocatedGroups": 0
             }
           },
           "unmatchedSides": [],
-          "sidesOutsideFrame": [
-            "a",
-            "b"
-          ]
+          "sidesOutsideFrame": []
         }
       ]
     },
@@ -14704,8 +14560,8 @@
               },
               "troops": 2300,
               "point": [
-                -359.2,
-                836
+                -384.2830723280977,
+                830.5999999999997
               ],
               "path": [
                 "jeonju",
@@ -14716,7 +14572,7 @@
                 "b"
               ],
               "matchBasis": "commander-name",
-              "insideReplayFrame": false
+              "insideReplayFrame": true
             },
             {
               "id": 488,
@@ -14733,8 +14589,8 @@
               },
               "troops": 2300,
               "point": [
-                -358.89450133769355,
-                849.7045359617042
+                -384.2830723280977,
+                830.5999999999997
               ],
               "path": [
                 "hanseong",
@@ -14745,7 +14601,7 @@
                 "b"
               ],
               "matchBasis": "commander-name",
-              "insideReplayFrame": false
+              "insideReplayFrame": true
             }
           ],
           "sides": {
@@ -14761,7 +14617,9 @@
                 488
               ],
               "clanOnly": [],
-              "inFrame": [],
+              "inFrame": [
+                488
+              ],
               "locatedGroups": 1,
               "unlocatedGroups": 0
             }
@@ -14769,9 +14627,7 @@
           "unmatchedSides": [
             "a"
           ],
-          "sidesOutsideFrame": [
-            "b"
-          ]
+          "sidesOutsideFrame": []
         }
       ]
     },
@@ -14895,7 +14751,7 @@
               },
               "troops": 18000,
               "point": [
-                -26.39999999999999,
+                -26.399999999999977,
                 1325.1
               ],
               "path": [
@@ -15061,8 +14917,8 @@
               },
               "troops": 8000,
               "point": [
-                -276.7,
-                1360
+                -467.7736261475932,
+                1436
               ],
               "path": [
                 "jinju",
@@ -15072,7 +14928,7 @@
                 "b"
               ],
               "matchBasis": "commander-name",
-              "insideReplayFrame": false
+              "insideReplayFrame": true
             }
           ],
           "sides": {
@@ -15088,7 +14944,9 @@
                 493
               ],
               "clanOnly": [],
-              "inFrame": [],
+              "inFrame": [
+                493
+              ],
               "locatedGroups": 1,
               "unlocatedGroups": 0
             }
@@ -15096,9 +14954,7 @@
           "unmatchedSides": [
             "a"
           ],
-          "sidesOutsideFrame": [
-            "b"
-          ]
+          "sidesOutsideFrame": []
         }
       ]
     },
@@ -15143,8 +14999,8 @@
               },
               "troops": 10000,
               "point": [
-                17.8,
-                1240
+                21.84345884812671,
+                1239.4000000000005
               ],
               "path": [
                 "busan",
@@ -15171,8 +15027,8 @@
               },
               "troops": 10000,
               "point": [
-                17.8,
-                1240
+                21.84345884812671,
+                1239.4000000000005
               ],
               "path": [
                 "busan",
@@ -15252,8 +15108,8 @@
               },
               "troops": 26700,
               "point": [
-                -276.7,
-                1360
+                -215.8457340992342,
+                1362.2
               ],
               "path": [
                 "jeonju",
@@ -15264,7 +15120,7 @@
                 "a"
               ],
               "matchBasis": "commander-name",
-              "insideReplayFrame": false
+              "insideReplayFrame": true
             },
             {
               "id": 496,
@@ -15279,8 +15135,8 @@
               },
               "troops": 26700,
               "point": [
-                -274.5261792858827,
-                1336.09240783498
+                -215.8457340992342,
+                1362.2
               ],
               "path": [
                 "suncheon",
@@ -15289,7 +15145,7 @@
               ],
               "matchingSides": [],
               "matchBasis": "unassigned",
-              "insideReplayFrame": false
+              "insideReplayFrame": true
             }
           ],
           "sides": {
@@ -15298,7 +15154,9 @@
                 496
               ],
               "clanOnly": [],
-              "inFrame": [],
+              "inFrame": [
+                496
+              ],
               "locatedGroups": 1,
               "unlocatedGroups": 0
             },
@@ -15313,9 +15171,7 @@
           "unmatchedSides": [
             "b"
           ],
-          "sidesOutsideFrame": [
-            "a"
-          ]
+          "sidesOutsideFrame": []
         }
       ]
     },
@@ -15461,8 +15317,8 @@
               },
               "troops": 25000,
               "point": [
-                1135.8598601024278,
-                1137.9999999999995
+                1175.3398894279253,
+                1073.8
               ],
               "path": [
                 "odani",
@@ -15473,7 +15329,7 @@
                 "a"
               ],
               "matchBasis": "commander-name",
-              "insideReplayFrame": false
+              "insideReplayFrame": true
             }
           ],
           "sides": {
@@ -15482,7 +15338,9 @@
                 507
               ],
               "clanOnly": [],
-              "inFrame": [],
+              "inFrame": [
+                507
+              ],
               "locatedGroups": 1,
               "unlocatedGroups": 0
             },
@@ -15497,9 +15355,7 @@
           "unmatchedSides": [
             "b"
           ],
-          "sidesOutsideFrame": [
-            "a"
-          ]
+          "sidesOutsideFrame": []
         }
       ]
     },
@@ -15636,8 +15492,8 @@
               },
               "troops": 6000,
               "point": [
-                1236.3441394955657,
-                1307.3392
+                1226.7988715857355,
+                1263.2146000000007
               ],
               "path": [
                 "kiyosu",
@@ -15647,7 +15503,7 @@
                 "a"
               ],
               "matchBasis": "commander-name",
-              "insideReplayFrame": false
+              "insideReplayFrame": true
             },
             {
               "id": 511,
@@ -15664,8 +15520,8 @@
               },
               "troops": 4500,
               "point": [
-                1236.3441394955657,
-                1307.3392
+                1226.7988715857355,
+                1263.2146000000007
               ],
               "path": [
                 "kiyosu",
@@ -15675,7 +15531,7 @@
                 "a"
               ],
               "matchBasis": "commander-name",
-              "insideReplayFrame": false
+              "insideReplayFrame": true
             }
           ],
           "sides": {
@@ -15786,8 +15642,8 @@
               },
               "troops": 30000,
               "point": [
-                1165.8852443095752,
-                1423.6683867471959
+                1189.2549817311765,
+                1436
               ],
               "path": [
                 "kiriyama",
@@ -16106,8 +15962,8 @@
               },
               "troops": 3000,
               "point": [
-                1022.6,
-                1414
+                1027.4515828561866,
+                1411.4000000000005
               ],
               "path": [
                 "yonezawa",
@@ -16144,8 +16000,8 @@
               },
               "troops": 3000,
               "point": [
-                1022.6000000000001,
-                1414.0000000000002
+                1029.0696168449351,
+                1409.0000000000005
               ],
               "path": [
                 "ota",
@@ -16187,8 +16043,8 @@
               },
               "troops": 3000,
               "point": [
-                1022.6,
-                1414
+                1027.4515828561866,
+                1411.4000000000005
               ],
               "path": [
                 "yonezawa",
@@ -16225,8 +16081,8 @@
               },
               "troops": 3000,
               "point": [
-                1028.128468114174,
-                1405.2492235814352
+                1029.0696168449351,
+                1409.0000000000005
               ],
               "path": [
                 "ishiyama",
@@ -16250,7 +16106,7 @@
                 "a"
               ],
               "matchBasis": "commander-name",
-              "insideReplayFrame": false
+              "insideReplayFrame": true
             }
           ],
           "sides": {
@@ -16322,8 +16178,8 @@
               },
               "troops": 3200,
               "point": [
-                1022.6,
-                1414
+                1023.7301046820583,
+                1416.4
               ],
               "path": [
                 "edo",
@@ -16360,8 +16216,8 @@
               },
               "troops": 12000,
               "point": [
-                1022.6,
-                1414
+                1023.7301046820583,
+                1416.4
               ],
               "path": [
                 "edo",
@@ -16398,8 +16254,8 @@
               },
               "troops": 3000,
               "point": [
-                1022.6,
-                1414
+                1023.568301283187,
+                1415.8000000000002
               ],
               "path": [
                 "akutagawa",
@@ -16426,8 +16282,8 @@
               },
               "troops": 3200,
               "point": [
-                1022.6,
-                1414
+                1023.7301046820583,
+                1416.4
               ],
               "path": [
                 "edo",
@@ -16464,8 +16320,8 @@
               },
               "troops": 12000,
               "point": [
-                1022.6,
-                1414
+                1023.7301046820583,
+                1416.4
               ],
               "path": [
                 "edo",
@@ -16560,8 +16416,8 @@
               },
               "troops": 3000,
               "point": [
-                1026.848536590537,
-                1411.242170768344
+                1042.8229057493108,
+                1435.8000000000004
               ],
               "path": [
                 "oyama",
@@ -16576,7 +16432,7 @@
                 "b"
               ],
               "matchBasis": "commander-name",
-              "insideReplayFrame": false
+              "insideReplayFrame": true
             },
             {
               "id": 530,
@@ -16593,8 +16449,8 @@
               },
               "troops": 3000,
               "point": [
-                1038.7778207774352,
-                1379.9999999999998
+                1042.8229057493108,
+                1435.8000000000004
               ],
               "path": [
                 "akutagawa",
@@ -16604,7 +16460,7 @@
                 "b"
               ],
               "matchBasis": "commander-name",
-              "insideReplayFrame": false
+              "insideReplayFrame": true
             }
           ],
           "sides": {
@@ -16620,7 +16476,9 @@
                 530
               ],
               "clanOnly": [],
-              "inFrame": [],
+              "inFrame": [
+                530
+              ],
               "locatedGroups": 1,
               "unlocatedGroups": 0
             }
@@ -16628,9 +16486,7 @@
           "unmatchedSides": [
             "a"
           ],
-          "sidesOutsideFrame": [
-            "b"
-          ]
+          "sidesOutsideFrame": []
         }
       ]
     },
@@ -16674,10 +16530,11 @@
               },
               "troops": 3200,
               "point": [
-                1033.5652561634563,
-                1410.4738135628447
+                1037.3215901875578,
+                1419.4000000000003
               ],
               "path": [
+                "tamanawa",
                 "odawara",
                 "sunpu",
                 "kakegawa",
@@ -16693,7 +16550,7 @@
                 "a"
               ],
               "matchBasis": "commander-name",
-              "insideReplayFrame": false
+              "insideReplayFrame": true
             },
             {
               "id": 543,
@@ -16710,8 +16567,8 @@
               },
               "troops": 33000,
               "point": [
-                1022.6,
-                1414
+                1037.8070003841851,
+                1425
               ],
               "path": [
                 "gifu",
@@ -16724,7 +16581,7 @@
                 "a"
               ],
               "matchBasis": "commander-name",
-              "insideReplayFrame": false
+              "insideReplayFrame": true
             },
             {
               "id": 535,
@@ -16741,8 +16598,8 @@
               },
               "troops": 3200,
               "point": [
-                1064.666364597433,
-                1420.0000000000002
+                1037.3215901875578,
+                1419.4000000000003
               ],
               "path": [
                 "yamato",
@@ -16752,7 +16609,7 @@
                 "a"
               ],
               "matchBasis": "commander-name",
-              "insideReplayFrame": false
+              "insideReplayFrame": true
             },
             {
               "id": 543,
@@ -16769,8 +16626,8 @@
               },
               "troops": 33000,
               "point": [
-                1038.7778207774352,
-                1379.9999999999998
+                1037.8070003841851,
+                1425
               ],
               "path": [
                 "akutagawa",
@@ -16780,7 +16637,7 @@
                 "a"
               ],
               "matchBasis": "commander-name",
-              "insideReplayFrame": false
+              "insideReplayFrame": true
             }
           ],
           "sides": {
@@ -16790,7 +16647,10 @@
                 543
               ],
               "clanOnly": [],
-              "inFrame": [],
+              "inFrame": [
+                535,
+                543
+              ],
               "locatedGroups": 2,
               "unlocatedGroups": 0
             },
@@ -16805,9 +16665,7 @@
           "unmatchedSides": [
             "b"
           ],
-          "sidesOutsideFrame": [
-            "a"
-          ]
+          "sidesOutsideFrame": []
         }
       ]
     }

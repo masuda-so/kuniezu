@@ -1,6 +1,8 @@
 "use strict";
 /* 地形の負荷と史実の日程を分離。日程のある軍を雪や推定速度で遅刻させない。 */
 (function(){
+// histRetは兵数の二重返却防止にも使う。次の史実へ転進した軍を帰陣と誤認しない。
+G.isHistoryReturning=u=>u.state==='return'||u.mission==='return'||!!(u.histRet&&!(u.mission==='show'&&u.until));
 G.marchFactors=function(u,a,b){const e=G.EDGES[G.ekey(a,b)];if(!e)return null;const month=u._marchMonth??G.date().m;
  const snow=(!e.sea&&(month===12||month<=2)&&(G.C[a].snow||G.C[b].snow))?.45:1;
  const supply=u.food<=0?.55:1,fatigue=1-Math.min(.25,Math.max(0,(u.marchDays??u.days??0)-7)*.005);
@@ -21,7 +23,7 @@ G.scheduleHistorical=function(u){const s=G.S();if(!u.hist||u.mission!=='show'||!
  u.seg=progress>=1?weights.length-1:seg;u.pos=progress>=1?1:Math.min(1,dist/(weights[seg]||1));u.state=progress>=1||s.t<q.start?'camp':'march';
  return true;
 };
-G.marchPhase=u=>{const s=G.S(),q=u.schedule;if(q&&s.t<q.start)return {key:'waiting',name:'出陣前・待機'};if(u.histRet||u.state==='return')return {key:'return',name:'帰陣'};if(u.state==='siege')return {key:'siege',name:'攻囲'};if(u.state==='battle')return {key:'battle',name:'交戦'};if(q&&s.t>=q.end||u.state==='camp')return {key:'camp',name:'着陣・滞陣'};return {key:'march',name:'行軍中'};};
+G.marchPhase=u=>{const s=G.S(),q=u.schedule;if(q&&s.t<q.start)return {key:'waiting',name:'出陣前・待機'};if(G.isHistoryReturning(u))return {key:'return',name:'帰陣'};if(u.state==='siege')return {key:'siege',name:'攻囲'};if(u.state==='battle')return {key:'battle',name:'交戦'};if(q&&s.t>=q.end||u.state==='camp')return {key:'camp',name:'着陣・滞陣'};return {key:'march',name:'行軍中'};};
 const routeCache=new Map();
 const imagawaApproach=u=>G.gen(u.gens[0])?.n==='今川義元'&&u.historyTitle==='桶狭間の戦い'&&u.until;
 G.marchDestination=u=>imagawaApproach(u)?'沓掛城（合戦前日の宿営）':G.cname(u.path.at(-1));

@@ -1,0 +1,119 @@
+{
+  "scope": "検査条件と転進修正の比較。範囲外の候補は誤配置の確定ではない。",
+  "runs": [
+    {
+      "mode": "engine-only",
+      "observed": 111,
+      "bothSidesUnmatched": 7,
+      "oneSideUnmatched": 85,
+      "someSideOutsideFrame": 44,
+      "lateArrivalCount": 0,
+      "selected": {
+        "長篠の戦い": [
+          {
+            "unmatchedSides": [],
+            "sidesOutsideFrame": [
+              "a"
+            ]
+          }
+        ],
+        "関ヶ原の戦い": [
+          {
+            "unmatchedSides": [],
+            "sidesOutsideFrame": [
+              "b"
+            ]
+          }
+        ],
+        "三方ヶ原の戦い": [
+          {
+            "unmatchedSides": [],
+            "sidesOutsideFrame": [
+              "a",
+              "b"
+            ]
+          }
+        ],
+        "山崎の戦い": [
+          {
+            "unmatchedSides": [],
+            "sidesOutsideFrame": [
+              "a",
+              "b"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "mode": "visual-before-relay",
+      "observed": 111,
+      "bothSidesUnmatched": 7,
+      "oneSideUnmatched": 85,
+      "someSideOutsideFrame": 19,
+      "lateArrivalCount": 0,
+      "selected": {
+        "長篠の戦い": [
+          {
+            "unmatchedSides": [],
+            "sidesOutsideFrame": []
+          }
+        ],
+        "関ヶ原の戦い": [
+          {
+            "unmatchedSides": [],
+            "sidesOutsideFrame": []
+          }
+        ],
+        "三方ヶ原の戦い": [
+          {
+            "unmatchedSides": [],
+            "sidesOutsideFrame": []
+          }
+        ],
+        "山崎の戦い": [
+          {
+            "unmatchedSides": [],
+            "sidesOutsideFrame": [
+              "a"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "mode": "visual-with-relay-fix",
+      "observed": 111,
+      "bothSidesUnmatched": 7,
+      "oneSideUnmatched": 85,
+      "someSideOutsideFrame": 16,
+      "lateArrivalCount": 0,
+      "selected": {
+        "長篠の戦い": [
+          {
+            "unmatchedSides": [],
+            "sidesOutsideFrame": []
+          }
+        ],
+        "関ヶ原の戦い": [
+          {
+            "unmatchedSides": [],
+            "sidesOutsideFrame": []
+          }
+        ],
+        "三方ヶ原の戦い": [
+          {
+            "unmatchedSides": [],
+            "sidesOutsideFrame": []
+          }
+        ],
+        "山崎の戦い": [
+          {
+            "unmatchedSides": [],
+            "sidesOutsideFrame": []
+          }
+        ]
+      }
+    }
+  ]
+}
