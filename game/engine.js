@@ -849,7 +849,7 @@ function applyEv(ev){
   // 城を取る史実なら、前もって出陣していた軍勢がそのまま攻めかかる
   if(ev.k==='take'){for(const u of S.units)if(u.until===evKey&&(ev.castles||[]).includes(u.path[u.path.length-1])&&S.castles[u.path[u.path.length-1]].owner!==u.clan){u.until=null;u.mission='attack';u.stopAt=null;if(u.state==='camp')u.state='march';}}
   // 長く続く戦（籠城・攻囲）は、hold 日のあいだ陣を張ったまま
-  if(ev.hold){for(const u of S.units)if(u.until===evKey){u.until='#hold';u.releaseAt=S.t+ev.hold;}}
+  if(ev.hold){for(const u of S.units)if(u.until===evKey){u.historyTitle=evKey;u.until='#hold';u.releaseAt=S.t+ev.hold;}}
   else{relayUnits(evKey);for(const u of S.units.slice())if(u.until===evKey&&u.gens.length&&S.clans[u.clan]&&S.clans[u.clan].alive){u.until=null;u.histRet=1;u.stopAt=null;retreat(u);}dropUnits(u=>u.until===evKey);}}
  switch(ev.k){
   case 'take':{if(!okC(k)&&!(ev.force&&S.clans[k]&&S.clans[k].alive)){chron(ev,false);return;}const changed=(ev.castles||[]).some(id=>S.div[S.castles[id]?.owner]);const ok=histTake(ev,k,ev.castles)||(ev.castles||[]).every(id=>S.castles[id]&&(S.castles[id].owner===k||S.units.some(u=>u.hist&&u.clan===k&&u.path[u.path.length-1]===id)));applyExtras(ev,ok&&!changed);chron(ev,ok&&!changed);return;}

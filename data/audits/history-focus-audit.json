@@ -1581,6 +1581,7 @@
         "takamatsuSite",
         "atlasRelief",
         "codhSites",
+        "takamatsuHeadquarters",
         "deployment-record-45"
       ],
       "issues": [
@@ -1590,8 +1591,8 @@
       "displayPolicy": "atlas",
       "atlasBasis": "城郭・攻囲配置図",
       "positionedUnits": 0,
-      "positionedGroups": 1,
-      "unlocatedGroups": 1,
+      "positionedGroups": 2,
+      "unlocatedGroups": 0,
       "displayedParticipants": 2
     },
     {
@@ -6770,6 +6771,14 @@
       "locator": "旧暦8月13日の守門分担と16日の落城",
       "scope": "東門楊元・李新芳、西門毛承先、南門蔣表、北門李福男。門の正確な座標は図示しない。",
       "accessed": "2026-10-31"
+    },
+    "takamatsuHeadquarters": {
+      "author": "岡山県古代吉備文化財センター",
+      "title": "備中高松城跡・高松城水攻め陣営配置図",
+      "url": "https://www.pref.okayama.jp/site/kodai/628728.html",
+      "locator": "「秀吉の陣」段落、陣営配置図・石井山（羽柴秀吉②・黒田孝高）",
+      "scope": "龍王山から石井山への本陣移転。各兵の持場や移転日の精密な復元ではない。",
+      "accessed": "2026-11-02"
     },
     "nirayamaChronology": {
       "author": "伊豆の国市文化振興課",

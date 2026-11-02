@@ -261,3 +261,5 @@ battle-arrival-auditで1560〜1615年末の全111件を観測。直前だけで�
 Codex作業ツリー /Users/masudaso/.codex/worktrees/historical-audit/天下分け目の国絵図、codex/battle-arrival-audit（基盤fix/ieyasu-1600-itinerary）。担当分はCodexが署名コミットするようユーザー指示。共有フォルダのswitch/stash/resetをしない。ClaudeはUI/atlasの性能・河川クリップ・和紙墨テーマ、Codexは備中高松南岸/児島湾と六十里越の史料調査も引受済み。元のサーバーはユーザーが管理、実画面は共有側のファイルを参照する。全体ゴールactive。
 
 到着監査拡張追補：参加将名・別戦役名・陣営・図の範囲を前後両時点で突合。遅着予定0だけでは両陣営の配置完了ではない。戦闘分類で両側対応未観測6件/一方70件/範囲外42件（重複）を候補として記録。非戦闘会津は別名の家康行程を保持。BATTLE_ARRIVAL_AUDIT_REVIEWとbattle-arrival-side-candidatesを参照し、元データ/史料を個別確認する。
+
+2026-11-02 備中高松着陣追補：県の陣営配置図を二点相似登録し石井山本陣の約200m代表点へ接続。#holdで元の合戦名を失う不具合を直し、版18で旧包囲保存も修復。開始時/旧保存の本陣位置と山崎への30日連続移動（日次最大24.486km）、全7×720日、保存検査通過。TAKAMATSU_ARRIVAL_REVIEW参照。精密な全陣地・鳥取からの全日程・児島湾古汀線の確定とは区別する。全体ゴールactive。

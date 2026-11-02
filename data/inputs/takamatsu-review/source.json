@@ -1,0 +1,42 @@
+{
+  "accessed": "2026-11-02",
+  "author": "岡山県古代吉備文化財センター",
+  "title": "備中高松城跡・高松城水攻め陣営配置図",
+  "pageUrl": "https://www.pref.okayama.jp/site/kodai/628728.html",
+  "imageUrl": "https://www.pref.okayama.jp/uploaded/image/226219.jpg",
+  "imageFile": "prefecture-deployment.jpg",
+  "sha256": "ff1d79feefc314e69e4cecfe684a4359395bae3f19e1809665cbb02034df768c",
+  "claims": [
+    {
+      "text": "羽柴秀吉の本陣は龍王山から石井山へ移った。",
+      "locator": "本文・秀吉の陣の段落"
+    },
+    {
+      "text": "石井山は高松城の南東約800m、岡山市北区立田に位置する。",
+      "locator": "同段落"
+    },
+    {
+      "text": "同年5月には高松城を完全に包囲した。",
+      "locator": "同段落"
+    }
+  ],
+  "mapScope": "現代地形上の城・陣の代表位置。水没域と築堤は推定として記載。",
+  "registrationStatus": "二点相似登録。registration.jsonに基準点・図記号・約200mの読取幅を保持。",
+  "runtimeFinding": {
+    "title": "備中高松城の水攻め",
+    "eventDate": [
+      1582,
+      6,
+      10
+    ],
+    "army": "羽柴秀吉",
+    "path": [
+      "tottori",
+      "utsubuki",
+      "takada",
+      "bmatsuyama"
+    ],
+    "problem": "管理城の松山城を表示到着点に使用。予定日到着と戦場着陣を区別する。",
+    "evidence": "data/audits/battle-arrival-audit.json"
+  }
+}
