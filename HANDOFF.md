@@ -165,3 +165,11 @@ git：他リポジトリ（website・grace・卒業プロジェクト等）の�
 資料保持の最新追補：HTML19件は読書用Markdownへ、入口は data/research/source-notes/README.md。照合用原本はgzip18件、島原市の1件は埋込キーを含むため抽出本文だけ保持。render-source-notes.cjsはarchiveWithheldの原本を再生成せず、保存前に値を出さない走査を行う。史実記録は年×全対象の複製にせず、history-index.cjs/query-history.cjsで同じ記録を年月と対象IDから引く。確認済み50命題+7所在観測を索引化、年別複製0。非史実の実装は保留。香取の古湖岸は明治迅速測図と同縮尺比較を行い、長い直交辺7箇所の標高を検査。欠測やタイル境界ではなく平坦な現代標高に沿う辺を含むため、古い岸とは断定しない。katori-tsunomiya-reviewのMarkdownと検査JSONを参照。
 
 2026-11-02 保存版22追補：木崎原の忠平/義弘など改名前後の名を、到着点でも既存の名前対応で照合。旧保存は出陣・帰陣・待機・単独人物を通じ日内位置から残りの経路へ接続し、期限・日付・領土・兵数を保持。ALIASED_ARRIVAL_AND_SAVE_REVIEW参照。台帳は51命題+7所在観測の58記録、4人物。旧名でも同じIDから検索できる。全111通知、範囲外候補15（不在・遅着確定ではない）。全体ゴールactive。
+
+2026-11-02 Claude追補（街道・城域・合戦図・軽量化）：
+- 城域の共通算法：曳馬–掛川の直線境を、共通DEMの傾斜と天竜川・大井川（OSM）の越えにくさで引き直した（tools/geo/castle-regions.cjs → apply-castle-regions.cjs → game/castle-regions-data.js、読込時に置換）。湖岸の land を変えたら apply を再実行すること。朝鮮の八道境は現代admin1を「既存参考線」として扱い、16世紀の確認済み境界にしない。
+- 若狭街道：国道367/303/27沿いの比較線へ（160km→72km）、移動用経由地に保坂・熊川・上中（tools/geo/wakasa-road-reference.cjs、checks/wakasa-route.cjs）。
+- 義州大路・関北路：経由地の区間ごとのOSRM車道で比較線（軍事境界線の区間は直線のまま）。義州大路は corridor を保ち drawReference で表示のみ（tools/geo/korea-road-reference.cjs、checks/korea-roads.cjs）。
+- 秘密情報：第三者ページの保存HTMLに埋め込みAPIキーが混入した件を受け、checks/secret-scan.cjs をCIへ追加。過去履歴は本人判断で書き換えない。
+- 合戦図の発熱：経過ループ（battle-presentation.js）と演出ループ（battle-atlas.js）を再生中だけ回す。地図側の描画とデータの遅延読込は別セッション（kuniezu-perf、ブランチ perf-lighten）。
+- 合戦図の推定の動き（利用者の指示）：game/battle-motion.js。旧模式の u.path を実地図の敵味方の向きへ合わせ、位置未詳の側は推定配置。点線の軌跡・破線の駒・凡例で史料と区別し、TK.BATTLE_MOVEMENTS は上書きしない。AGENTS.md の「根拠のない動きを出さない」に対し、合戦図に限り「推定」と明示して描く例外を利用者が決めた。checks/battle-motion.cjs。
