@@ -1,0 +1,95 @@
+{
+  "retrievedAt": "2026-11-02T06:15:44.682797+00:00",
+  "oldPoint": [
+    130.373,
+    32.798
+  ],
+  "newPoint": [
+    130.36656,
+    32.78984
+  ],
+  "basis": "島原市報告書本文2頁の森岳本陣の記述と、地理院標準地図の丘の代表点。細かな本陣位置は不明。",
+  "coordinateReading": {
+    "z": 15,
+    "tile": [
+      28250,
+      13221
+    ],
+    "pixel": [
+      65,
+      185
+    ],
+    "toleranceMetres": 100
+  },
+  "rejectedGsiSearch": "島原城の検索では完全一致が得られず市代表点。森岳点の決定に使用しない。",
+  "files": [
+    {
+      "name": "gsi-15-28249-13219.png",
+      "sha256": "be3cf751d1d5d91cdc63b1ba42e82e6ffdf52881c94e34d6920aa2d8b4a4b48a"
+    },
+    {
+      "name": "gsi-15-28249-13220.png",
+      "sha256": "c75f45c84eafbedfc7c7e3a6f8451039c371e57be74ccdce4584763ec151839a"
+    },
+    {
+      "name": "gsi-15-28249-13221.png",
+      "sha256": "5fbe5891746c4aad406dd4271d2c06b478113fab78f4ac7b001caf4770631e04"
+    },
+    {
+      "name": "gsi-15-28250-13219.png",
+      "sha256": "720f3350c55e9c683a313d5e8c7c2b55d6193aeab34a57d6eab0f618396c4a2b"
+    },
+    {
+      "name": "gsi-15-28250-13220.png",
+      "sha256": "e2440b7ac8c8f753641c99abce17818a5e26e606b9a568ee81a550f51ca4f856"
+    },
+    {
+      "name": "gsi-15-28250-13221.png",
+      "sha256": "77aedc6ac02446068c196e520533ded7285bfa1710545bbebea92980f36dee6d"
+    },
+    {
+      "name": "gsi-15-28251-13219.png",
+      "sha256": "b4044ca7cfa4463f698f7effbc9c498194459587165d8c98b374854f4989fb91"
+    },
+    {
+      "name": "gsi-15-28251-13220.png",
+      "sha256": "b4044ca7cfa4463f698f7effbc9c498194459587165d8c98b374854f4989fb91"
+    },
+    {
+      "name": "gsi-15-28251-13221.png",
+      "sha256": "6486939fc9dfae1794f3034ffb242d235ecb24012cbb3672bb15d0e9051842ad"
+    },
+    {
+      "name": "gsi-map-bounds.json",
+      "sha256": "d5716abc1bca2587b4dd3ab4a00598d9eda86910650305a4b89b05c40b98af51"
+    },
+    {
+      "name": "gsi-shimabara-castle.json",
+      "sha256": "cd74858be65115b21bc1a5c50810da77fb3f09c53ab2ed46818dec79454e759e"
+    },
+    {
+      "name": "moritake-report.pdf",
+      "sha256": "e13bd12e4ab7887d4edbadc782321c048e7d6f69d7b2efbf5b7f25eb4e19ae6c"
+    },
+    {
+      "name": "moritake-report.txt",
+      "sha256": "cbc8d73fa6ab0854b5af4aa7358a24cc96c4537e147964304dd456223499a73d"
+    },
+    {
+      "name": "report-p2.png",
+      "sha256": "ad8757a9ae577b1e813d3faa20f58812ec24e59f176beb2566a7b0f89275d219"
+    },
+    {
+      "name": "report-p8.png",
+      "sha256": "f15228ca7c9daf09c1a7e6b3ffb993a6bdb3da64b6c3edcaa87c06e09eecc1da"
+    },
+    {
+      "name": "shimabara-cultural-source.html",
+      "sha256": "0f56cc8d3351963de0fff9c983712743279578b4db049bdbe792be9f9691ec13"
+    },
+    {
+      "name": "source-urls.json",
+      "sha256": "f60860f8e208c7783818aaaa5ac37882d42de4f060eff71fb5a6d7bfe0b8bb08"
+    }
+  ]
+}

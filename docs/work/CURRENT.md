@@ -226,3 +226,8 @@ hokkokukaido-geometry、road-display、movement-save、road-excursions検査を�
 Claudeが合戦演出・家紋・駒、Codexが街道/地形と全件検証を担当。全111合戦の地図読込・登録部隊数一致・例外0。指定3戦のfxParts最大85/58/136、鉄砲煙生成54/84/228、例外0、画像実見済み。BATTLE_EFFECTS_COLLABORATION_REVIEW参照。関ヶ原の名前/幟重なりはClaudeへ修正依頼。沖田畷の有馬隊が海上に見える件は海岸/代表点/移動を次に照合する。
 
 terrain-first-paint-browserを追加し専用Chromeで計測。SHA 3c27d733…の同一版で木ノ芽の中間919ms/目標z11 4450ms/取得終了5512ms、朝鮮1525/4616/4616ms。単発順次観察で恒常性能差ではない。結果data/verification/terrain-first-paint/result.json。terrain-tiles.jsはClaudeが縮小時の高解像度キャッシュ代用を担当中のためCodexは編集しない。サーバー操作なし、全体ゴールactive。
+
+
+## 2026-11-02 沖田畷・有馬本陣の位置訂正
+
+旧海岸点130.373,32.798は現代地理院地図でも海域。市報告書14集本文2頁の森岳本陣記述に基づき130.36656,32.78984の丘代表点へ訂正（本陣詳細位置不明、読取幅100m）。2出典・資料原本・SHAを保持。全111構造検査、位置検査、専用Chrome0/50/85%・例外0、中盤陸上表示実見。OKITANAWATE_POSITION_REVIEW参照。日本のjapanLandとlandは同じ海岸精度で、マスク変更だけで直る仮説は撤回。沿岸外16群を棚卸しし水軍/陸戦/時代差を今後個別確認。全体active、サーバー操作なし。

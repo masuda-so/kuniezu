@@ -144,3 +144,5 @@
 git：他リポジトリ（website・grace・卒業プロジェクト等）の規則に合わせ、リポジトリをプロジェクト直下の main に再構成した。初回コミットは 2026-11-02 00:00:00 +0900 の作業前の全体（9b567e2）、以後は実時刻。規則の正本は 卒業プロジェクト/AGENTS.md の「コミット」節（git 公式ガイドに最大限従う）。作者は masudaso、`~/.ssh/id_ed25519` による SSH 署名（事前に `ssh-add --apple-use-keychain ~/.ssh/id_ed25519`）、件名は英語の命令形で50文字以内を目安、本文は日本語で72桁前後に折り返し、関わったエージェントごとに `Co-authored-by: Codex <noreply@openai.com>` / `Co-authored-by: Claude Fable 5.1 <noreply@anthropic.com>` を付ける（実際に関わったものだけ）。初回コミットだけ日時をそろえ、以後は実時刻。公開後の履歴は書き換えない。旧 game/.git の履歴（2026-10-30 の8件と同日の無署名3件）は `archive/git-history/game-repo-2026-11-02.bundle` に保存。リモートは未作成。
 
 2026-11-02 木ノ芽峠追補：北陸道の20.855km閉往復を含む比較区間を、文化庁選定図13.510kmと南北の道路比較へ置換。独立駅記号3点16.4〜56.7m、図記号許容100m内。栃ノ木系統は別線として今庄接続を保持。全採用点保持・局所網接続・保存版16・全7×720日・専用Chrome3画面を確認。KINOME_ROUTE_INTEGRATION_REVIEW参照。残閉路候補59線224件、命題48。標高初期読込遅延の点検継続。ゴールactive。ReasonでClaudeとの担当調整を開始し、中核ファイルの無調整編集を避ける。
+
+2026-11-02 分担検証追補：ReasonでClaudeと調整し、全111合戦の読込/登録部隊数一致/例外0と指定3戦の鉄砲煙を専用Chromeで確認。BATTLE_EFFECTS_COLLABORATION_REVIEW参照。関ヶ原の名札衝突はClaude、沖田畷の海岸・代表点照合はCodex担当。地形初期読込計測も結果を保持。全体ゴールactive、サーバー操作なし。

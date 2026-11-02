@@ -300,6 +300,8 @@
       "sourceIds": [
         "atlasRelief",
         "okitanawateDeployment",
+        "moritakeExcavation",
+        "moritakeMapPoint",
         "deployment-record-11"
       ],
       "issues": [
@@ -6620,6 +6622,22 @@
       "url": "https://www.city.shimabara.lg.jp/rekishi/page2793.html",
       "locator": "天正12年3月24日の布陣と攻撃方向",
       "scope": "寺中城から南進、森岳・丸尾砦・海岸の有馬島津方。現在の島原城を当時の城として描かない。",
+      "accessed": "2026-10-31"
+    },
+    "moritakeExcavation": {
+      "author": "島原市教育委員会",
+      "title": "森岳城跡：島原市文化財調査報告書 第14集",
+      "url": "https://sitereports.nabunken.go.jp/files/attach/50/50637/46666_1_%E6%A3%AE%E5%B2%B3%E5%9F%8E%E8%B7%A1.pdf",
+      "locator": "本文2頁・第2節、8頁第4図",
+      "scope": "有馬方本陣を後の森岳城付近とするが位置不明と明記。森岳の代表点を表示し、近世城郭や精密な本陣座標を1584年へ遡らせない。",
+      "accessed": "2026-10-31"
+    },
+    "moritakeMapPoint": {
+      "author": "国土地理院",
+      "title": "地理院タイル・標準地図",
+      "url": "https://maps.gsi.go.jp/#15/32.78984/130.36656/",
+      "locator": "z15・28250/13221、森岳の丘の現代代表点",
+      "scope": "地図記号から約100mの読取幅で位置を対応。1584年の本陣そのものの測量値ではない。",
       "accessed": "2026-10-31"
     },
     "yasumimatsuDeployment": {
