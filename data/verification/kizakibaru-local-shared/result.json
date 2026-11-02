@@ -1,0 +1,139 @@
+{
+  "result": {
+    "id": "documented:kizakibaru-local",
+    "date": {
+      "y": 1572,
+      "m": 5,
+      "leap": 0,
+      "d": 4,
+      "gy": 1572,
+      "gm": 6,
+      "gd": 14
+    },
+    "version": 22,
+    "names": [
+      "島津忠平"
+    ],
+    "phase": {
+      "key": "camp",
+      "name": "着陣・滞陣"
+    },
+    "point": [
+      263.7597955538489,
+      1941.7897276858
+    ],
+    "target": [
+      263.7597955538489,
+      1941.7897276858
+    ],
+    "distance": 0,
+    "localRecord": "kizakibaru-local",
+    "routePoints": 154,
+    "samples": [
+      {
+        "fraction": 0,
+        "point": [
+          269.8218917333452,
+          1939.1748000000007
+        ],
+        "phase": "march"
+      },
+      {
+        "fraction": 0.05,
+        "point": [
+          270.1385086437677,
+          1940.7905958182616
+        ],
+        "phase": "march"
+      },
+      {
+        "fraction": 0.1,
+        "point": [
+          268.56253529151235,
+          1941.5187354498557
+        ],
+        "phase": "march"
+      },
+      {
+        "fraction": 0.2,
+        "point": [
+          265.09684613149204,
+          1941.8678051968202
+        ],
+        "phase": "march"
+      },
+      {
+        "fraction": 0.8,
+        "point": [
+          263.7597955538489,
+          1941.7897276858
+        ],
+        "phase": "camp"
+      }
+    ],
+    "saveRoundtrip": {
+      "before": {
+        "t": 4363,
+        "fraction": 0.1,
+        "point": [
+          268.56253529151235,
+          1941.5187354498557
+        ]
+      },
+      "after": {
+        "t": 4363,
+        "fraction": 0.1,
+        "point": [
+          268.56253529151235,
+          1941.5187354498557
+        ]
+      }
+    }
+  },
+  "battle": {
+    "date": {
+      "y": 1572,
+      "m": 5,
+      "leap": 0,
+      "d": 4,
+      "gy": 1572,
+      "gm": 6,
+      "gd": 14
+    },
+    "groups": [
+      {
+        "id": "group-0",
+        "label": "伊東祐安",
+        "members": [
+          "a-0"
+        ],
+        "side": "a",
+        "point": [
+          130.83012518518,
+          32.041051361571
+        ],
+        "precision": "交戦地域の代表点・対陣方向未詳",
+        "dock": false,
+        "source": "kizakiSite"
+      },
+      {
+        "id": "group-1",
+        "label": "島津義弘",
+        "members": [
+          "b-0"
+        ],
+        "side": "b",
+        "point": [
+          130.83012518518,
+          32.041051361571
+        ],
+        "precision": "交戦地域の代表点・対陣方向未詳",
+        "dock": false,
+        "source": "kizakiSite"
+      }
+    ]
+  },
+  "sourceOverrides": [],
+  "scope": "Shared server without overrides",
+  "errors": []
+}
