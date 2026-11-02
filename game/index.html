@@ -426,7 +426,7 @@ body[data-modal] #news{visibility:hidden}body[data-modal=scene] #toast,body[data
   <div id="news" aria-live="polite"></div>
   <div id="modal" hidden></div>
   <div id="title"></div>
-  <small id="credit">出典：<a href="https://maps.gsi.go.jp/development/ichiran.html" target="_blank" rel="noopener">国土地理院</a>（地球地図日本・低湿地資料・標高・道路中心線）を加工して作成 ・ 標高：<a href="https://registry.opendata.aws/terrain-tiles/" target="_blank" rel="noopener">Mapzen / USGS / NOAA</a>（現代） ・ 水際の比較：<a href="licenses/DATA_SOURCES.md" target="_blank" rel="noopener">国土交通省W09-05・GSHHG（加工・利用条件）</a> ・ 道路参考：<a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">© OpenStreetMap contributors（ODbL）</a> ・ 肖像：Wikimedia Commons</small>
+  <small id="credit">出典：<a href="https://maps.gsi.go.jp/development/ichiran.html" target="_blank" rel="noopener">国土地理院</a>（地球地図日本・低湿地資料・標高・道路中心線）を加工して作成 ・ 標高：<a href="https://registry.opendata.aws/terrain-tiles/" target="_blank" rel="noopener">Mapzen / USGS / NOAA</a>（現代） ・ 水際の比較：<a href="licenses/DATA_SOURCES.md" target="_blank" rel="noopener">国土交通省W09-05・GSHHG（加工・利用条件）</a> ・ 道路・河川参考：<a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">© OpenStreetMap contributors（ODbL）</a> ・ 肖像：Wikimedia Commons</small>
 </div>
 <div id="boot" role="status" aria-live="polite" style="position:fixed;inset:0;z-index:1000;display:grid;place-content:center;padding:24px;text-align:center;background:#1c3157;color:#f3e8cc">
   <p id="bootMessage">地図を準備しています…</p>
@@ -475,6 +475,9 @@ body[data-modal] #news{visibility:hidden}body[data-modal=scene] #toast,body[data
 <script src="katori-lowlands.js"></script>
 <script src="period-waters.js"></script>
 <script src="kanto-repair.js"></script>
+<script src="castle-regions-data.js"></script>
+<script src="castle-regions.js"></script>
+<script src="japan-rivers-osm.js"></script>
 <script src="site-coordinates.js"></script>
 <script src="katori-sites.js"></script>
 <script src="battle-rebuild.js"></script>

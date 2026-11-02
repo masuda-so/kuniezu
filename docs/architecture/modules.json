@@ -264,6 +264,28 @@
     },
     {
       "order": 40,
+      "file": "game/castle-regions-data.js",
+      "area": "geography",
+      "generatedByCandidates": [
+        "tools/geo/apply-castle-regions.cjs"
+      ]
+    },
+    {
+      "order": 41,
+      "file": "game/castle-regions.js",
+      "area": "geography",
+      "generatedByCandidates": []
+    },
+    {
+      "order": 42,
+      "file": "game/japan-rivers-osm.js",
+      "area": "geography",
+      "generatedByCandidates": [
+        "tools/geo/select-reference-rivers.py"
+      ]
+    },
+    {
+      "order": 43,
       "file": "game/site-coordinates.js",
       "area": "history",
       "generatedByCandidates": [
@@ -271,37 +293,37 @@
       ]
     },
     {
-      "order": 41,
+      "order": 44,
       "file": "game/katori-sites.js",
       "area": "history",
       "generatedByCandidates": []
     },
     {
-      "order": 42,
+      "order": 45,
       "file": "game/battle-rebuild.js",
       "area": "battles",
       "generatedByCandidates": []
     },
     {
-      "order": 43,
+      "order": 46,
       "file": "game/battle-fushimi.js",
       "area": "battles",
       "generatedByCandidates": []
     },
     {
-      "order": 44,
+      "order": 47,
       "file": "game/battle-evidence.js",
       "area": "battles",
       "generatedByCandidates": []
     },
     {
-      "order": 45,
+      "order": 48,
       "file": "game/battle-presentation.js",
       "area": "battles",
       "generatedByCandidates": []
     },
     {
-      "order": 46,
+      "order": 49,
       "file": "game/battle-atlas-data.js",
       "area": "battles",
       "generatedByCandidates": [
@@ -309,37 +331,37 @@
       ]
     },
     {
-      "order": 47,
+      "order": 50,
       "file": "game/battle-catalog-extra.js",
       "area": "battles",
       "generatedByCandidates": []
     },
     {
-      "order": 48,
+      "order": 51,
       "file": "game/battle-event-catalog.js",
       "area": "battles",
       "generatedByCandidates": []
     },
     {
-      "order": 49,
+      "order": 52,
       "file": "game/battle-atlas-policy.js",
       "area": "battles",
       "generatedByCandidates": []
     },
     {
-      "order": 50,
+      "order": 53,
       "file": "game/battle-deployments.js",
       "area": "battles",
       "generatedByCandidates": []
     },
     {
-      "order": 51,
+      "order": 54,
       "file": "game/history-date-review.js",
       "area": "history",
       "generatedByCandidates": []
     },
     {
-      "order": 52,
+      "order": 55,
       "file": "game/modern-road-reference.js",
       "area": "geography",
       "generatedByCandidates": [
@@ -347,13 +369,13 @@
       ]
     },
     {
-      "order": 53,
+      "order": 56,
       "file": "game/fukasaka-route.js",
       "area": "history",
       "generatedByCandidates": []
     },
     {
-      "order": 54,
+      "order": 57,
       "file": "game/road-maritime-review.js",
       "area": "geography",
       "generatedByCandidates": []
@@ -364,34 +386,34 @@
       "generatedByCandidates": [
         "tools/geo/ina-approach.py"
       ],
-      "order": 55
+      "order": 58
     },
     {
-      "order": 56,
+      "order": 59,
       "file": "game/road-display.js",
       "area": "geography",
       "generatedByCandidates": []
     },
     {
-      "order": 57,
+      "order": 60,
       "file": "game/display-road-network.js",
       "area": "geography",
       "generatedByCandidates": []
     },
     {
-      "order": 58,
+      "order": 61,
       "file": "game/movement-display.js",
       "area": "movement",
       "generatedByCandidates": []
     },
     {
-      "order": 59,
+      "order": 62,
       "file": "game/logistics-review.js",
       "area": "movement",
       "generatedByCandidates": []
     },
     {
-      "order": 60,
+      "order": 63,
       "file": "game/route-terrain-profiles.js",
       "area": "geography",
       "generatedByCandidates": [
@@ -399,73 +421,73 @@
       ]
     },
     {
-      "order": 61,
+      "order": 64,
       "file": "game/infrastructure.js",
       "area": "movement",
       "generatedByCandidates": []
     },
     {
-      "order": 62,
+      "order": 65,
       "file": "game/movement-continuity.js",
       "area": "movement",
       "generatedByCandidates": []
     },
     {
-      "order": 63,
+      "order": 66,
       "file": "game/battle-atlas-effects.js",
       "area": "battles",
       "generatedByCandidates": []
     },
     {
-      "order": 64,
+      "order": 67,
       "file": "game/battle-atlas.js",
       "area": "battles",
       "generatedByCandidates": []
     },
     {
-      "order": 65,
+      "order": 68,
       "file": "game/history-mode.js",
       "area": "history",
       "generatedByCandidates": []
     },
     {
-      "order": 66,
+      "order": 69,
       "file": "game/map-relations.js",
       "area": "history",
       "generatedByCandidates": []
     },
     {
-      "order": 67,
+      "order": 70,
       "file": "game/historical-families.js",
       "area": "history",
       "generatedByCandidates": []
     },
     {
-      "order": 68,
+      "order": 71,
       "file": "game/alliance-history.js",
       "area": "history",
       "generatedByCandidates": []
     },
     {
-      "order": 69,
+      "order": 72,
       "file": "game/player-copy.js",
       "area": "history",
       "generatedByCandidates": []
     },
     {
-      "order": 70,
+      "order": 73,
       "file": "game/terrain-tiles.js",
       "area": "geography",
       "generatedByCandidates": []
     },
     {
-      "order": 71,
+      "order": 74,
       "file": "game/storage.js",
       "area": "ui-assets",
       "generatedByCandidates": []
     },
     {
-      "order": 72,
+      "order": 75,
       "file": "game/portrait-layout.js",
       "area": "ui-assets",
       "generatedByCandidates": [
@@ -473,7 +495,7 @@
       ]
     },
     {
-      "order": 73,
+      "order": 76,
       "file": "game/kamon-data.js",
       "area": "ui-assets",
       "generatedByCandidates": [
@@ -481,19 +503,19 @@
       ]
     },
     {
-      "order": 74,
+      "order": 77,
       "file": "game/kamon.js",
       "area": "ui-assets",
       "generatedByCandidates": []
     },
     {
-      "order": 75,
+      "order": 78,
       "file": "game/convoys.js",
       "area": "movement",
       "generatedByCandidates": []
     },
     {
-      "order": 76,
+      "order": 79,
       "file": "game/battle-phases.js",
       "area": "battles",
       "generatedByCandidates": []
@@ -502,16 +524,16 @@
       "file": "game/history-state-migration.js",
       "area": "history",
       "generatedByCandidates": [],
-      "order": 77
+      "order": 80
     },
     {
-      "order": 78,
+      "order": 81,
       "file": "game/scenario-openings.js",
       "area": "history",
       "generatedByCandidates": []
     },
     {
-      "order": 79,
+      "order": 82,
       "file": "game/historical-register.js",
       "area": "history",
       "generatedByCandidates": []
@@ -520,16 +542,16 @@
       "file": "game/central-offices.js",
       "area": "history",
       "generatedByCandidates": [],
-      "order": 80
+      "order": 83
     },
     {
-      "order": 81,
+      "order": 84,
       "file": "game/ui.js",
       "area": "ui-assets",
       "generatedByCandidates": []
     },
     {
-      "order": 82,
+      "order": 85,
       "file": "game/kb.js",
       "area": "history",
       "generatedByCandidates": []

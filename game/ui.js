@@ -59,7 +59,7 @@ const EDGE=GEO.edges.map(([a,b,ls])=>({a,b,p:L2(ls,2)}));
 const REGIONAL_RIVERS=TK.regionalRiverRecords(TK.REGIONAL_RIVERS||[],TK.KOREAN_RIVERS_DETAIL||[],G.PJ);
 const regionalDetailRows=new Set(REGIONAL_RIVERS.flatMap(r=>r.detailRows));
 // 地域に関係なく、投影済み河川へ同じ可視判定・丸め・線幅を使う。
-const riverLines=[...GEO.rivers.filter(r=>!r.every((v,i)=>i%2?GEO.LAT0-v/GEO.K>34.8:v/GEO.K/GEO.CX+GEO.LON0>124&&v/GEO.K/GEO.CX+GEO.LON0<131)).map(r=>Array.from({length:r.length/2},(_,i)=>[r[i*2],r[i*2+1]])),...(TK.KOREAN_RIVERS_DETAIL||[]).filter(r=>!regionalDetailRows.has(r)).map(r=>r.points.map(p=>G.PJ(...p)))].map(TK.riverGeometry);
+const riverLines=[...(TK.JAPAN_RIVERS_OSM?.rivers||[]).map(r=>r.points.map(p=>G.PJ(...p))),...GEO.rivers.filter(r=>!r.every((v,i)=>i%2?GEO.LAT0-v/GEO.K>34.8:v/GEO.K/GEO.CX+GEO.LON0>124&&v/GEO.K/GEO.CX+GEO.LON0<131)).map(r=>Array.from({length:r.length/2},(_,i)=>[r[i*2],r[i*2+1]])),...(TK.KOREAN_RIVERS_DETAIL||[]).filter(r=>!regionalDetailRows.has(r)).map(r=>r.points.map(p=>G.PJ(...p)))].map(TK.riverGeometry);
 const riverPathCache=new WeakMap();
 function riverView(){const a=s2w(0,0),b=s2w(VW,VH);return [a[0],a[1],b[0],b[1]];}
 function riverPath(r,z){let cached=riverPathCache.get(r);if(!cached||cached.z!==z){const path=new Path2D();TK.riverPath(path,r.points,2/z);cached={z,path};riverPathCache.set(r,cached);}return cached.path;}

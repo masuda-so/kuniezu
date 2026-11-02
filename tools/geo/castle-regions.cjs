@@ -30,7 +30,11 @@ async function elev(lo,la){const fx=lonX(lo),fy=latY(la),tx=Math.floor(fx),ty=Ma
 (async()=>{
  const H=new Float32Array(N).fill(NaN);for(let k=0;k<N;k++){if(!inside[k])continue;const i=k%nx,j=(k/nx)|0;H[k]=await elev(...toLL(ox+(i+.5)*C,oy+(j+.5)*C));}
  // 3) 主要河川の格子（共通河川線）。川をまたぐ一歩に大きな越えにくさを足す
- const river=new Uint8Array(N);for(const r of TKGEO.rivers)for(let i=2;i<r.length;i+=2){const ax=r[i-2],ay=r[i-1],bx=r[i],by=r[i+1],steps=Math.ceil(Math.hypot(bx-ax,by-ay)/(C/2));for(let s=0;s<=steps;s++){const x=ax+(bx-ax)*s/steps,y=ay+(by-ay)*s/steps,ci=Math.floor((x-ox)/C),cj=Math.floor((y-oy)/C);if(ci>=0&&cj>=0&&ci<nx&&cj<ny)river[cj*nx+ci]=1;}}
+ // 共通河川線：TKGEO.rivers に加え、出典付きの追加河川入力（RIVER_INPUTS、[lon,lat] の点列）を同じ形に投影して使う。
+ const extraRivers=(process.env.RIVER_INPUTS||'data/inputs/japan-rivers-review/tenryu-oi-modern.json').split(',').filter(f=>fs.existsSync(path.join(root,f))).flatMap(f=>{const d=JSON.parse(fs.readFileSync(path.join(root,f),'utf8'));return (d.rivers||[]).map(r=>r.points.flatMap(([lo,la])=>[(lo-LON0)*K*CX,(LAT0-la)*K]));});
+ const river=new Uint8Array(N);for(const r of [...TKGEO.rivers,...extraRivers])for(let i=2;i<r.length;i+=2){const ax=r[i-2],ay=r[i-1],bx=r[i],by=r[i+1],steps=Math.ceil(Math.hypot(bx-ax,by-ay)/(C/2));for(let s=0;s<=steps;s++){const x=ax+(bx-ax)*s/steps,y=ay+(by-ay)*s/steps,ci=Math.floor((x-ox)/C),cj=Math.floor((y-oy)/C);if(ci>=0&&cj>=0&&ci<nx&&cj<ny)river[cj*nx+ci]=1;}}
+ // 斜めの一歩で川の格子の隙間をすり抜けないよう、川を1格子ふくらませる
+ {const r2=river.slice();for(let k=0;k<N;k++){if(!r2[k])continue;const i=k%nx,j=(k/nx)|0;for(const [di,dj] of [[1,0],[-1,0],[0,1],[0,-1]]){const ii=i+di,jj=j+dj;if(ii>=0&&jj>=0&&ii<nx&&jj<ny)river[jj*nx+ii]=1;}}}
  // 4) 多始点の最短経路（越えにくさ = 距離 × (1 + 25×傾斜)、川へ入る一歩に +6km 相当）
  const cost=[new Float64Array(N).fill(Infinity),new Float64Array(N).fill(Infinity)];
  const seed=id=>{const c=G.C[id];return Math.floor((c.y-oy)/C)*nx+Math.floor((c.x-ox)/C);};
@@ -47,7 +51,9 @@ async function elev(lo,la){const fx=lonX(lo),fy=latY(la),tx=Math.floor(fx),ty=Ma
  const near=(p)=>Math.floor((p[1]-oy)/C)*nx+Math.floor((p[0]-ox)/C);const s0=near(start),s1=near(end);
  const W=new Float64Array(N).fill(Infinity),prev=new Int32Array(N).fill(-1),heap=[[0,s0]];W[s0]=0;
  const pop2=()=>{let m=0;for(let i=1;i<heap.length;i++)if(heap[i][0]<heap[m][0])m=i;return heap.splice(m,1)[0];};
- const band=k=>{const v=f[k];return Number.isFinite(v)?Math.abs(v):1e3;};
+ // 境の上の格子 = 隣に相手の城の側の格子があるもの（符号が変わる所）。川で越えにくさが跳ぶ所でも、ちょうど川沿いが境になる。
+ const edgeCell=new Uint8Array(N);for(let k=0;k<N;k++){if(!Number.isFinite(f[k]))continue;const i=k%nx,j=(k/nx)|0;for(const [di,dj] of [[1,0],[-1,0],[0,1],[0,-1]]){const q=(j+dj)*nx+i+di;if(i+di<0||j+dj<0||i+di>=nx||j+dj>=ny)continue;if(Number.isFinite(f[q])&&Math.sign(f[q])!==Math.sign(f[k])){edgeCell[k]=1;break;}}}
+ const band=k=>edgeCell[k]?0:Number.isFinite(f[k])?2+Math.min(50,Math.abs(f[k])):1e3;
  while(heap.length){const [d,k]=pop2();if(k===s1)break;if(d>W[k])continue;const i=k%nx,j=(k/nx)|0;
   for(const [di,dj] of [[1,0],[-1,0],[0,1],[0,-1],[1,1],[1,-1],[-1,1],[-1,-1]]){const ii=i+di,jj=j+dj;if(ii<0||jj<0||ii>=nx||jj>=ny)continue;const q=jj*nx+ii;if(!inside[q]&&q!==s1)continue;const nd=d+Math.hypot(di,dj)*(1+4*band(q));if(nd<W[q]){W[q]=nd;prev[q]=k;heap.push([nd,q]);}}}
  if(prev[s1]<0)throw Error('no path between edge endpoints');const cells=[];for(let k=s1;k!==-1;k=prev[k])cells.push(k);cells.reverse();
@@ -59,7 +65,7 @@ async function elev(lo,la){const fx=lonX(lo),fy=latY(la),tx=Math.floor(fx),ty=Ma
  const len=line.slice(1).reduce((n,p,i)=>n+Math.hypot(p[0]-line[i][0],p[1]-line[i][1])*km,0),oldLen=old.slice(1).reduce((n,p,i)=>n+Math.hypot(p[0]-old[i][0],p[1]-old[i][1])*km,0);
  const riverShare=line.filter(p=>{const k=near(p);return river[k];}).length/line.length;
  const provs=[...new Set([...tiles.values()].filter(Boolean).map(t=>t.prov))];
- const out={id:[A,B].sort().join('|'),a:A,b:B,line,oldLine:old,basis:'terrain-estimate',method:`cost-distance equal line (slope ×25, major-river crossing +${RIVER_KM}km), Chaikin×2, simplify 0.25`,sourceIds:provs.map(p=>p==='gsi'?'gsiDemPng':'mapzenTerrarium').concat(['commonRivers']),confidence:'low',note:'地形の越えにくさによる機械的な推定境。領有・郡境の史料ではない。',lengthKm:+len.toFixed(1),oldLengthKm:+oldLen.toFixed(1),riverShare:+riverShare.toFixed(2),demTiles:tiles.size};
+ const out={id:[A,B].sort().join('|'),a:A,b:B,line,oldLine:old,basis:'terrain-estimate',method:`cost-distance equal line (slope ×25, major-river crossing +${RIVER_KM}km), Chaikin×2, simplify 0.25`,sourceIds:provs.map(p=>p==='gsi'?'gsiDemPng':'mapzenTerrarium').concat(['commonRivers'],extraRivers.length?['osmJapanRivers']:[]),confidence:'low',note:'地形の越えにくさによる機械的な推定境。領有・郡境の史料ではない。',lengthKm:+len.toFixed(1),oldLengthKm:+oldLen.toFixed(1),riverShare:+riverShare.toFixed(2),demTiles:tiles.size};
  const dir=path.join(root,'data/inputs/castle-regions');fs.writeFileSync(path.join(dir,`${out.id.replace('|','-')}.json`),JSON.stringify(out,null,1)+'\n');
  console.log(JSON.stringify({id:out.id,points:line.length,lengthKm:out.lengthKm,oldLengthKm:out.oldLengthKm,riverShare:out.riverShare,demTiles:out.demTiles,sources:out.sourceIds}));
 })().catch(e=>{console.error(e);process.exitCode=1;});
