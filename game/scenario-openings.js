@@ -46,7 +46,7 @@
   }
   for(const row of TK.BATTLE_AUDIT||[])row.sourceIds=TK.BATTLES[row.title]?.sources||row.sourceIds;
  };
- const geometryVersion=19,set=G.setS;
+ const geometryVersion=20,set=G.setS;
  G.setS=function(s){const result=set(s);if(!s||s.movementGeometryVersion===geometryVersion)return result;
   G._inSimulation=true;
   try{

@@ -1,0 +1,72 @@
+[
+  {
+    "query": "羽前大山駅",
+    "url": "https://msearch.gsi.go.jp/address-search/AddressSearch?q=%E7%BE%BD%E5%89%8D%E5%A4%A7%E5%B1%B1%E9%A7%85",
+    "result": [
+      {
+        "geometry": {
+          "coordinates": [
+            139.298889,
+            35.758251
+          ],
+          "type": "Point"
+        },
+        "type": "Feature",
+        "properties": {
+          "addressCode": "",
+          "title": "東京都羽村市羽"
+        }
+      },
+      {
+        "geometry": {
+          "coordinates": [
+            139.767860866944,
+            38.7420505022222
+          ],
+          "type": "Point"
+        },
+        "type": "Feature",
+        "properties": {
+          "addressCode": "6203",
+          "title": "羽前大山駅",
+          "dataSource": "1"
+        }
+      }
+    ]
+  },
+  {
+    "query": "羽前水沢駅",
+    "url": "https://msearch.gsi.go.jp/address-search/AddressSearch?q=%E7%BE%BD%E5%89%8D%E6%B0%B4%E6%B2%A2%E9%A7%85",
+    "result": [
+      {
+        "geometry": {
+          "coordinates": [
+            139.298889,
+            35.758251
+          ],
+          "type": "Point"
+        },
+        "type": "Feature",
+        "properties": {
+          "addressCode": "",
+          "title": "東京都羽村市羽"
+        }
+      },
+      {
+        "geometry": {
+          "coordinates": [
+            139.732152962222,
+            38.7166260811111
+          ],
+          "type": "Point"
+        },
+        "type": "Feature",
+        "properties": {
+          "addressCode": "6203",
+          "title": "羽前水沢駅",
+          "dataSource": "1"
+        }
+      }
+    ]
+  }
+]

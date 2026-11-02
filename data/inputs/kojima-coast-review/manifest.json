@@ -1,0 +1,46 @@
+{
+  "accessed": "2026-11-02",
+  "sources": [
+    {
+      "author": "岡山シティミュージアム",
+      "title": "広がる大地－絵図でたどる児島湾のかんたく－Web図録その1",
+      "url": "https://www.city.okayama.jp/okayama-city-museum/0000079739.html",
+      "locator": "第1章1・備前国図T1-5",
+      "scope": "慶長年間1596〜1615年と推定。児島半島・天城が島、湾北岸は十日市から今保。測量投影へ無条件に転写しない。"
+    },
+    {
+      "author": "岡山大学図書館",
+      "title": "〔備前国図〕・池田家文庫T1-5",
+      "url": "https://ousar.lib.okayama-u.ac.jp/ikedake/ezu/ja/5",
+      "local": "bizen-keicho.html",
+      "sha256": "01acee5b4445394eb95d4614050a26506aded6facf3e58fa5f2910db995916da",
+      "dateRange": [
+        1596,
+        1615
+      ],
+      "dateBasis": "慶長年間のものと推定、作者未詳",
+      "dimensionsCm": [
+        329.0,
+        280.7
+      ]
+    },
+    {
+      "author": "農林水産省",
+      "title": "近代の児島湾干拓計画を策定したムルデル",
+      "url": "https://www.maff.go.jp/j/nousin/sekkei/museum/m_izin/okayama_02/index.html",
+      "locator": "地区概要",
+      "scope": "1582年当時の児島と本土間の浅海と島、宇喜多家・江戸初期以降の干拓を区別。"
+    }
+  ],
+  "fetchFailures": [
+    {
+      "url": "https://www.maff.go.jp/chushi/kj/okayamam/attach/pdf/pamph-16.pdf",
+      "result": "取得拒否・PDF未保存"
+    },
+    {
+      "url": "https://ousar.lib.okayama-u.ac.jp/files/ezu/file/0/5/T1-5.jpg",
+      "result": "HTTP error・画像未保存"
+    }
+  ],
+  "implementation": "画像を未取得のため輪郭改変なし。公開資料本文だけから精密な海岸形を捏造しない。"
+}
