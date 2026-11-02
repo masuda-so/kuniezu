@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="ja"><head><meta charset="utf-8"><title>凸駒の案</title>
+<style>
+body{margin:0;width:1360px;background:#1d2a3a;color:#f3e8cc;font-family:"Zen Kaku Gothic New","Hiragino Sans",sans-serif;padding:16px}
+h1{font:800 20px "Shippori Mincho B1","Hiragino Mincho ProN",serif;margin:0 0 8px}
+h2{font:800 16px "Shippori Mincho B1","Hiragino Mincho ProN",serif;margin:14px 0 4px;color:#f2dc9c}
+p{margin:2px 0 6px;font-size:12px;color:#d8ccae;line-height:1.6}
+canvas{display:block;border:1px solid #6b5530}
+.row{display:flex;gap:10px;align-items:flex-start}
+.cap{font-size:11px;color:#b8a785;margin-top:2px}
+</style></head><body>
+<h1>凸駒の見た目：現行と3案（遠景・中景・近景、同じ軍勢）</h1>
+<p>左から 遠景（縮尺小）・中景・近景。軍勢は 織田信長（自家・金縁）、徳川家康、武田信玄（行軍中・北東向き）、羽柴秀吉（黒地紋）、島津義弘、毛利輝元（紋なし）、石田三成（1600年西軍・交戦中）、同じ道の2隊（重なり表示）。</p>
+<div id="root"></div>
+<script src="counter-symbol.js"></script>
+<script>
+const FONT_M='"Shippori Mincho B1","Hiragino Mincho ProN","Yu Mincho",serif',FONT_G='"Zen Kaku Gothic New","Hiragino Sans",sans-serif';
+const CC={oda:'#e6b422',tokugawa:'#3e9c56',takeda:'#d23a2f',hashiba:'#ee7d2a',shimazu:'#b03466',mori:'#20969f',ishida:'#7650a2',sanada:'#c2332b'};
+const FIELD=new Set(['hashiba','shimazu']);
+const crests={};const names=['oda','tokugawa','takeda','hashiba','shimazu','sanada'];
+function hex2(h){const n=parseInt(String(h).slice(1),16);return [n>>16,n>>8&255,n&255];}
+function mix(h,w,t){const a=hex2(h),b=hex2(w);return `rgb(${a.map((v,i)=>Math.round(v+(b[i]-v)*t)).join(',')})`;}
+const deep=k=>mix(CC[k],'#1a1208',.35);
+const lum=h=>{const [r,g,b]=hex2(h);return r*.299+g*.587+b*.114;};
+function rr(c,x,y,w,h,r){c.beginPath();c.moveTo(x+r,y);c.arcTo(x+w,y,x+w,y+h,r);c.arcTo(x+w,y+h,x,y+h,r);c.arcTo(x,y+h,x,y,r);c.arcTo(x,y,x+w,y,r);c.closePath();}
+const man=n=>n>=10000?(Math.round(n/1000)/10)+'万':n.toLocaleString();
+// 紋の縮小段階（本体と同じ考え）
+function levels(im,key){const full=document.createElement('canvas');full.width=full.height=256;const d=full.getContext('2d');const s=Math.min(236/im.naturalWidth,236/im.naturalHeight);if(FIELD.has(key)){d.save();d.beginPath();d.arc(128,128,118,0,7);d.clip();}d.drawImage(im,(256-im.naturalWidth*s)/2,(256-im.naturalHeight*s)/2,im.naturalWidth*s,im.naturalHeight*s);if(FIELD.has(key))d.restore();const out=[];let src=full;for(const size of [128,64,32,16]){const c=document.createElement('canvas');c.width=c.height=size;const x=c.getContext('2d');x.imageSmoothingQuality='high';x.drawImage(src,0,0,size,size);out.push(c);src=c;}return {full,levels:out.reverse()};}
+const crest=(k,px)=>{const s=crests[k];if(!s)return null;const need=px*Math.min(2,devicePixelRatio||1);return s.levels.find(l=>l.width>=need)||s.full;};
+// 地図の下地（紙＋淡い起伏＋街道・川）
+function ground(c,W,H,seed){const g=c.createLinearGradient(0,0,W,H);g.addColorStop(0,'#e3dcb3');g.addColorStop(1,'#d6d2a4');c.fillStyle=g;c.fillRect(0,0,W,H);let s=seed;const r=()=>{s=(s*9301+49297)%233280;return s/233280;};
+ for(let i=0;i<60;i++){const x=r()*W,y=r()*H,R=20+r()*70;const gg=c.createRadialGradient(x,y,0,x,y,R);gg.addColorStop(0,r()<.5?'rgba(120,140,80,.22)':'rgba(240,230,180,.25)');gg.addColorStop(1,'rgba(0,0,0,0)');c.fillStyle=gg;c.fillRect(x-R,y-R,R*2,R*2);}
+ c.strokeStyle='rgba(120,90,55,.6)';c.lineWidth=3;c.beginPath();c.moveTo(0,H*.62);c.bezierCurveTo(W*.3,H*.5,W*.6,H*.75,W,H*.58);c.stroke();c.strokeStyle='rgba(226,206,160,.95)';c.lineWidth=1.8;c.stroke();
+ c.strokeStyle='#7fa3c2';c.lineWidth=4;c.beginPath();c.moveTo(W*.7,0);c.bezierCurveTo(W*.65,H*.3,W*.8,H*.6,W*.72,H);c.stroke();}
+// 肖像の代わり（本体では当主の顔）
+function face(c,x,y,r,col){c.save();c.beginPath();c.arc(x,y,r,0,7);c.fillStyle='#d8cdb0';c.fill();c.lineWidth=2.2;c.strokeStyle=col;c.stroke();c.fillStyle='#6b5a44';c.font=`700 ${Math.round(r*.9)}px ${FONT_M}`;c.textAlign='center';c.textBaseline='middle';c.fillText('顔',x,y+1);c.restore();}
+function haloText(c,t,x,y,font,fill,halo='rgba(255,250,236,.92)',w=3){c.font=font;c.lineJoin='round';c.lineWidth=w;c.strokeStyle=halo;c.strokeText(t,x,y);c.fillStyle=fill;c.fillText(t,x,y);}
+
+/* ===== 現行 ===== */
+function drawCurrent(c,x,y,u,k){const col=u.color,bw=30*k,bh=20*k,hh=10*k,ang=(u.heading??-Math.PI/2)+Math.PI/2;
+ if(u.battle){c.beginPath();c.arc(x,y,22*k+3,0,7);c.fillStyle='rgba(255,110,50,.3)';c.fill();}
+ c.save();c.translate(x,y);c.rotate(ang);TKCounter.path(c,bw,bh);c.fillStyle=col;c.fill();TKCounter.path(c,bw,bh);c.lineJoin='round';c.lineWidth=u.mine?2.2:1.4;c.strokeStyle=u.mine?'#f2d27c':'rgba(255,250,235,.95)';c.stroke();c.restore();
+ const cr=crest(u.key,11*k),flagX=x+bw/2+3*k,flagY=y-12*k;c.save();c.strokeStyle='#65513b';c.lineWidth=1;c.beginPath();c.moveTo(flagX,y+14*k);c.lineTo(flagX,flagY-2*k);c.stroke();c.fillStyle=cr?'#fff8e7':col;c.fillRect(flagX,flagY,15*k,15*k);c.strokeStyle=col;c.strokeRect(flagX,flagY,15*k,15*k);if(cr)c.drawImage(cr,flagX+2*k,flagY+2*k,11*k,11*k);c.restore();
+ c.font=`800 ${Math.round((u.compact?9:10.5)*k)}px ${u.compact?FONT_G:FONT_M}`;c.textAlign='center';c.textBaseline='middle';c.fillStyle=lum(col)>160?'#30220f':'#fff7e2';c.fillText(u.compact?man(u.troops):u.arm,x,y+bh*.12);
+ if(u.compact){face(c,x-bw/2-7*k,y-bh/2-7*k,8*k,col);return;}
+ const txt=(u.hist?'約':'')+man(u.troops);c.font=`800 ${Math.round(10.5*k)}px ${FONT_M}`;const tw=c.measureText(txt).width+8,ty=y+Math.hypot(bw/2,bh/2+hh/2)+5*k;rr(c,x-tw/2,ty-1,tw,13*k,2);c.fillStyle='rgba(20,14,8,.85)';c.fill();c.strokeStyle=u.mine?'#f2d27c':deep(u.key in CC?u.key:'mori');c.lineWidth=1;c.stroke();c.fillStyle='#fff7e2';c.textBaseline='top';c.fillText(txt,x,ty+.5);
+ face(c,x-bw/2-7*k,y-bh/2-7*k,8*k,col);
+ if(u.lvl>=1){c.textBaseline='bottom';haloText(c,u.name,x,y-bh/2-hh-3,`700 10.5px ${FONT_M}`,'#2a1d10');}
+}
+
+/* ===== 案A 陣立図（墨線と幟） ===== */
+function drawA(c,x,y,u,k){const col=u.color,bw=30*k,bh=20*k,hh=10*k,ang=(u.heading??-Math.PI/2)+Math.PI/2;
+ if(u.battle){c.beginPath();c.arc(x,y,22*k+3,0,7);c.fillStyle='rgba(255,110,50,.3)';c.fill();}
+ c.save();c.translate(x,y);c.rotate(ang);
+ TKCounter.path(c,bw,bh);c.fillStyle=col;c.fill();
+ // 地の明暗：上を少し明るく（紙に塗った絵具の感じ、立体の影は付けない）
+ c.save();TKCounter.path(c,bw,bh);c.clip();const g=c.createLinearGradient(0,-bh*.55,0,bh*.55);g.addColorStop(0,'rgba(255,255,240,.22)');g.addColorStop(1,'rgba(40,20,0,.12)');c.fillStyle=g;c.fillRect(-bw,-bh,bw*2,bh*2);c.restore();
+ // 墨線＋内側の生成り線
+ TKCounter.path(c,bw,bh);c.lineJoin='round';c.lineWidth=u.mine?2.6:2;c.strokeStyle=u.mine?'#d9b866':'#2a1d10';c.stroke();
+ TKCounter.path(c,bw*.84,bh*.76);c.lineWidth=.9;c.strokeStyle='rgba(255,248,225,.75)';c.stroke();c.restore();
+ // 幟：縦長の旗。紋を上に、下に陣営色の帯
+ const cr=crest(u.key,12*k),px=x+bw/2+4*k,top=y-30*k,fw=13*k,fh=30*k;c.save();c.strokeStyle='#2a1d10';c.lineWidth=1.2;c.beginPath();c.moveTo(px,y+15*k);c.lineTo(px,top-3*k);c.stroke();c.beginPath();c.moveTo(px-2*k,top-3*k);c.lineTo(px+2*k,top-3*k);c.stroke();
+ c.fillStyle='#fbf4e2';c.fillRect(px+1*k,top,fw,fh);c.fillStyle=col;c.fillRect(px+1*k,top+fh-7*k,fw,7*k);c.strokeStyle='#2a1d10';c.lineWidth=1;c.strokeRect(px+1*k,top,fw,fh);
+ if(cr)c.drawImage(cr,px+1.5*k,top+1.5*k,12*k,12*k);else{c.fillStyle=col;c.font=`800 ${Math.round(9*k)}px ${FONT_M}`;c.textAlign='center';c.textBaseline='middle';c.fillText(u.mark,px+1*k+fw/2,top+7*k);}
+ c.restore();
+ c.font=`800 ${Math.round((u.compact?9:11)*k)}px ${FONT_M}`;c.textAlign='center';c.textBaseline='middle';c.fillStyle=lum(col)>160?'#2a1d10':'#fff7e2';c.fillText(u.compact?man(u.troops):u.arm,x,y+bh*.12);
+ if(u.compact){face(c,x-bw/2-7*k,y-bh/2-7*k,8*k,col);return;}
+ // 短冊：生成りの札に墨の兵数
+ const txt=(u.hist?'約':'')+man(u.troops);c.font=`700 ${Math.round(10.5*k)}px ${FONT_M}`;const tw=c.measureText(txt).width+10,ty=y+Math.hypot(bw/2,bh/2+hh/2)+4*k;c.fillStyle='#fbf4e2';c.fillRect(x-tw/2,ty,tw,13*k);c.strokeStyle='#2a1d10';c.lineWidth=.9;c.strokeRect(x-tw/2,ty,tw,13*k);c.fillStyle=col;c.fillRect(x-tw/2,ty,2.5*k,13*k);c.fillStyle='#2a1d10';c.textBaseline='top';c.fillText(txt,x+1,ty+1);
+ face(c,x-bw/2-7*k,y-bh/2-7*k,8*k,col);
+ if(u.lvl>=1){c.textBaseline='bottom';haloText(c,u.name,x,y-bh/2-hh-3,`700 11px ${FONT_M}`,'#2a1d10','rgba(251,244,226,.95)',3.4);}
+}
+
+/* ===== 案B 馬印（二色の駒と丸い印） ===== */
+function drawB(c,x,y,u,k){const col=u.color,bw=31*k,bh=21*k,hh=10*k,ang=(u.heading??-Math.PI/2)+Math.PI/2;
+ if(u.battle){c.beginPath();c.arc(x,y,22*k+3,0,7);c.fillStyle='rgba(255,110,50,.3)';c.fill();}
+ c.save();c.translate(x,y);c.rotate(ang);
+ TKCounter.path(c,bw,bh);c.fillStyle=deep(u.key in CC?u.key:'mori');c.fill();
+ TKCounter.path(c,bw*.82,bh*.74);c.fillStyle=col;c.fill();
+ TKCounter.path(c,bw,bh);c.lineJoin='round';c.lineWidth=u.mine?2.4:1.3;c.strokeStyle=u.mine?'#f2d27c':'rgba(255,250,235,.95)';c.stroke();c.restore();
+ // 馬印：棹の上の丸い印（紋）。紋のない家は家名一字。
+ const cr=crest(u.key,13*k),px=x+bw/2+5*k,cy=y-19*k,R=8.5*k;c.save();c.strokeStyle='#3a2a18';c.lineWidth=1.2;c.beginPath();c.moveTo(px,y+14*k);c.lineTo(px,cy+R);c.stroke();
+ c.beginPath();c.arc(px,cy,R+1.2*k,0,7);c.fillStyle=col;c.fill();c.beginPath();c.arc(px,cy,R,0,7);c.fillStyle='#fbf4e2';c.fill();
+ if(cr){c.save();c.beginPath();c.arc(px,cy,R-.6*k,0,7);c.clip();c.drawImage(cr,px-6.5*k,cy-6.5*k,13*k,13*k);c.restore();}else{c.fillStyle=col;c.font=`800 ${Math.round(9.5*k)}px ${FONT_M}`;c.textAlign='center';c.textBaseline='middle';c.fillText(u.mark,px,cy+.5);}
+ c.restore();
+ c.font=`800 ${Math.round((u.compact?9:11)*k)}px ${FONT_M}`;c.textAlign='center';c.textBaseline='middle';c.fillStyle=lum(col)>160?'#2a1d10':'#fff7e2';c.fillText(u.compact?man(u.troops):u.arm,x,y+bh*.12);
+ if(u.compact){face(c,x-bw/2-7*k,y-bh/2-7*k,8*k,col);return;}
+ const txt=(u.hist?'約':'')+man(u.troops);c.font=`800 ${Math.round(10.5*k)}px ${FONT_M}`;const tw=c.measureText(txt).width+10,ty=y+Math.hypot(bw/2,bh/2+hh/2)+4*k;rr(c,x-tw/2,ty,tw,13*k,6*k);c.fillStyle='#fbf4e2';c.fill();c.strokeStyle=col;c.lineWidth=1.4;c.stroke();c.fillStyle='#2a1d10';c.textBaseline='top';c.fillText(txt,x,ty+1);
+ face(c,x-bw/2-7*k,y-bh/2-7*k,8*k,col);
+ if(u.lvl>=1){c.textBaseline='bottom';haloText(c,u.name,x,y-bh/2-hh-3,`700 11px ${FONT_M}`,'#2a1d10','rgba(251,244,226,.95)',3.4);}
+}
+
+/* ===== 案C 図式（紋を駒の中へ、名札を一枚に） ===== */
+function drawC(c,x,y,u,k){const col=u.color,bw=34*k,bh=22*k,hh=11*k,ang=(u.heading??-Math.PI/2)+Math.PI/2;
+ if(u.battle){c.beginPath();c.arc(x,y,24*k+3,0,7);c.fillStyle='rgba(255,110,50,.3)';c.fill();}
+ c.save();c.translate(x,y);c.rotate(ang);
+ TKCounter.path(c,bw,bh);c.fillStyle=col;c.fill();
+ TKCounter.path(c,bw,bh);c.lineJoin='round';c.lineWidth=2.6;c.strokeStyle='#2a1d10';c.stroke();TKCounter.path(c,bw,bh);c.lineWidth=1;c.strokeStyle=u.mine?'#f2d27c':'rgba(255,250,235,.9)';c.stroke();
+ // 頭の向き印
+ c.fillStyle='rgba(255,250,235,.9)';c.beginPath();c.moveTo(-3.5*k,-bh*.55+1);c.lineTo(3.5*k,-bh*.55+1);c.lineTo(0,-bh*.55-4*k);c.closePath();c.fill();
+ c.restore();
+ // 紋は駒の中の白丸へ（向きで回さない）、兵種は右側
+ const cr=crest(u.key,12*k),cx=x-7*k,cy=y+2*k,R=7.5*k;c.beginPath();c.arc(cx,cy,R,0,7);c.fillStyle='#fbf4e2';c.fill();c.lineWidth=.8;c.strokeStyle='#2a1d10';c.stroke();
+ if(cr){c.save();c.beginPath();c.arc(cx,cy,R-.5*k,0,7);c.clip();c.drawImage(cr,cx-6*k,cy-6*k,12*k,12*k);c.restore();}else{c.fillStyle=col;c.font=`800 ${Math.round(8.5*k)}px ${FONT_M}`;c.textAlign='center';c.textBaseline='middle';c.fillText(u.mark,cx,cy+.5);}
+ c.font=`800 ${Math.round((u.compact?9:12)*k)}px ${FONT_M}`;c.textAlign='center';c.textBaseline='middle';c.fillStyle=lum(col)>160?'#2a1d10':'#fff7e2';c.fillText(u.compact?man(u.troops):u.arm,x+7*k,y+2*k);
+ if(u.compact){face(c,x-bw/2-7*k,y-bh/2-7*k,8*k,col);return;}
+ // 名札一枚：名前と兵数
+ const line1=u.lvl>=1?u.name:'',txt=(u.hist?'約':'')+man(u.troops);c.font=`700 ${Math.round(10.5*k)}px ${FONT_M}`;const w1=line1?c.measureText(line1).width:0;c.font=`800 ${Math.round(10.5*k)}px ${FONT_M}`;const w2=c.measureText(txt).width;const tw=Math.max(w1,w2)+12,th=(line1?25:13)*k,ty=y+Math.hypot(bw/2,bh/2+hh/2)+3*k;
+ c.fillStyle='rgba(251,244,226,.96)';c.fillRect(x-tw/2,ty,tw,th);c.strokeStyle='#2a1d10';c.lineWidth=.9;c.strokeRect(x-tw/2,ty,tw,th);c.fillStyle=col;c.fillRect(x-tw/2,ty,3*k,th);
+ c.textBaseline='top';c.textAlign='center';if(line1){c.font=`700 ${Math.round(10.5*k)}px ${FONT_M}`;c.fillStyle='#2a1d10';c.fillText(line1,x+1.5*k,ty+1);}c.font=`800 ${Math.round(10.5*k)}px ${FONT_M}`;c.fillStyle='#2a1d10';c.fillText(txt,x+1.5*k,ty+(line1?13:1)*k);
+ face(c,x-bw/2-7*k,y-bh/2-7*k,8*k,col);
+}
+
+const UNITS=[
+ {name:'織田信長',key:'oda',color:CC.oda,arm:'槍',troops:12000,mine:true,mark:'織'},
+ {name:'徳川家康',key:'tokugawa',color:CC.tokugawa,arm:'槍',troops:8000,mark:'徳'},
+ {name:'武田信玄',key:'takeda',color:CC.takeda,arm:'騎',troops:20000,heading:-Math.PI/4,mark:'武'},
+ {name:'羽柴秀吉',key:'hashiba',color:CC.hashiba,arm:'槍',troops:30000,hist:true,mark:'羽'},
+ {name:'島津義弘',key:'shimazu',color:CC.shimazu,arm:'鉄',troops:1500,hist:true,mark:'島'},
+ {name:'毛利輝元',key:'mori',color:CC.mori,arm:'船',troops:9000,mark:'毛'},
+ {name:'石田三成',key:'ishida',color:CC.ishida,arm:'槍',troops:6000,battle:true,hist:true,mark:'石'},
+];
+const CONVOY=[{name:'真田昌幸',key:'sanada',color:CC.sanada,arm:'槍',troops:2000,compact:true,heading:Math.PI*.1,mark:'真'},{name:'真田信繁',key:'sanada',color:CC.sanada,arm:'槍',troops:1500,compact:true,heading:Math.PI*.1,mark:'真'}];
+const VARIANTS=[['現行（参考）','今の駒。平面の凸・白い縁・四角い旗に紋・黒い兵数札。',drawCurrent],['案A　陣立図（墨線と幟）','墨の輪郭と内側の生成り線で地形から浮かせ、紋は縦長の幟へ。兵数は生成りの短冊。絵図の陣立に近い見え方。',drawA],['案B　馬印（二色の駒と丸い印）','濃淡二色の駒で遠景でも見分けやすく、紋は棹の上の丸い馬印へ。紋のない家は家名一字。',drawB],['案C　図式（紋を駒の中へ）','太い墨線と向き印で最も読みやすく、紋は駒の中の白丸、名前と兵数を一枚の札に。旗を省いて密集時の重なりを減らす。',drawC]];
+const LEVELS=[['遠景 ×0.85',0,.85],['中景 ×1.0',1,1],['近景 ×1.2',2,1.2]];
+function render(){const root=document.getElementById('root');root.innerHTML='';
+ for(const [title,desc,fn] of VARIANTS){const h=document.createElement('h2');h.textContent=title;root.append(h);const p=document.createElement('p');p.textContent=desc;root.append(p);const row=document.createElement('div');row.className='row';root.append(row);
+  for(const [lab,lvl,k] of LEVELS){const W=lvl===0?330:lvl===1?420:520,H=lvl===0?215:lvl===1?255:300,D=2;const wrap=document.createElement('div');const cv=document.createElement('canvas');cv.width=W*D;cv.height=H*D;cv.style.width=W+'px';cv.style.height=H+'px';const c=cv.getContext('2d');c.scale(D,D);ground(c,W,H,lvl*7+3);
+   const gap=W/4.6;UNITS.forEach((u,i)=>{const row=i<4?0:1,col=i<4?i:i-4+.5;const x=gap*(col+.75),y=row?H*.64:H*.27;fn(c,x,y,{...u,lvl},k);});
+   // 重なり表示（同じ道の2隊）
+   fn(c,W*.82,H*.68,{...CONVOY[0],lvl},k);fn(c,W*.82+30*k,H*.68-10*k,{...CONVOY[1],lvl},k);
+   wrap.append(cv);const cap=document.createElement('div');cap.className='cap';cap.textContent=lab;wrap.append(cap);row.append(wrap);}
+ }}
+let pending=names.length;for(const k of names){const im=new Image();im.onload=()=>{crests[k]=levels(im,k);if(--pending===0)render();};im.onerror=()=>{if(--pending===0)render();};im.src='kamon/'+k+'.svg';}
+</script></body></html>
