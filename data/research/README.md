@@ -6,6 +6,8 @@
 
 人物・場所・年代の所在記録は `curated/people/`、`curated/places/`、`curated/locations/`。`query-locations.cjs` で検索する。[設計と検索例](../../docs/architecture/spatiotemporal-history.md)。本拠・城主と現地滞在、年精度と日精度、史実参照と将来の分岐履歴を分ける。
 
+年代横断と対象別の来歴は `node tools/research/query-history.cjs --year 1592 --entity 松平家忠` で同じ記録を参照する。年ごとの全対象の複製は作らない。対象には城・施設・街道・水域も含む。日付の精度・暦・有効期間は元記録へ残す。
+
 `query.cjs` は既定で `claims.jsonl` の確認済み命題だけを検索する。例：`node tools/research/query.cjs 真田 1600`。
 
 - `sources.jsonl` は書誌・URL・確認箇所・確認範囲。本文を丸ごと保持したアーカイブではない。
