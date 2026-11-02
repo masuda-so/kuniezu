@@ -1,8 +1,9 @@
 {
-  "scope": "候補の分類であり、軍の不存在・史実上の遅着を確定しない。陣営不対応と範囲外の件数には重複がある。",
-  "bothSidesUnmatched": 6,
-  "oneSideUnmatched": 70,
-  "someSideOutsideFrame": 42,
+  "scope": "画面用の連続移動を有効にした照合候補。範囲外・不対応は史実上の遅着や不在の証明ではない。",
+  "visualTrackingEnabled": true,
+  "bothSidesUnmatched": 7,
+  "oneSideUnmatched": 85,
+  "someSideOutsideFrame": 16,
   "candidates": [
     {
       "title": "桶狭間の戦い",
@@ -18,73 +19,6 @@
       "sidesOutsideFrame": []
     },
     {
-      "title": "長篠の戦い",
-      "date": {
-        "y": 1575,
-        "m": 6,
-        "d": 29
-      },
-      "noncombat": false,
-      "unmatchedSides": [],
-      "sidesOutsideFrame": [
-        "a"
-      ]
-    },
-    {
-      "title": "関ヶ原の戦い",
-      "date": {
-        "y": 1600,
-        "m": 10,
-        "d": 21
-      },
-      "noncombat": false,
-      "unmatchedSides": [],
-      "sidesOutsideFrame": [
-        "b"
-      ]
-    },
-    {
-      "title": "姉川の戦い",
-      "date": {
-        "y": 1570,
-        "m": 7,
-        "d": 30
-      },
-      "noncombat": false,
-      "unmatchedSides": [],
-      "sidesOutsideFrame": [
-        "b"
-      ]
-    },
-    {
-      "title": "三方ヶ原の戦い",
-      "date": {
-        "y": 1573,
-        "m": 1,
-        "d": 25
-      },
-      "noncombat": false,
-      "unmatchedSides": [],
-      "sidesOutsideFrame": [
-        "a",
-        "b"
-      ]
-    },
-    {
-      "title": "山崎の戦い",
-      "date": {
-        "y": 1582,
-        "m": 7,
-        "d": 2
-      },
-      "noncombat": false,
-      "unmatchedSides": [],
-      "sidesOutsideFrame": [
-        "a",
-        "b"
-      ]
-    },
-    {
       "title": "賤ヶ岳の戦い",
       "date": {
         "y": 1583,
@@ -94,8 +28,7 @@
       "noncombat": false,
       "unmatchedSides": [],
       "sidesOutsideFrame": [
-        "a",
-        "b"
+        "a"
       ]
     },
     {
@@ -109,23 +42,7 @@
       "unmatchedSides": [
         "b"
       ],
-      "sidesOutsideFrame": [
-        "a"
-      ]
-    },
-    {
-      "title": "沖田畷の戦い",
-      "date": {
-        "y": 1584,
-        "m": 5,
-        "d": 4
-      },
-      "noncombat": false,
-      "unmatchedSides": [],
-      "sidesOutsideFrame": [
-        "a",
-        "b"
-      ]
+      "sidesOutsideFrame": []
     },
     {
       "title": "摺上原の戦い",
@@ -138,9 +55,7 @@
       "unmatchedSides": [
         "b"
       ],
-      "sidesOutsideFrame": [
-        "a"
-      ]
+      "sidesOutsideFrame": []
     },
     {
       "title": "小田原征伐",
@@ -264,6 +179,19 @@
       "sidesOutsideFrame": []
     },
     {
+      "title": "長尾景虎の関東出兵",
+      "date": {
+        "y": 1560,
+        "m": 9,
+        "d": 10
+      },
+      "noncombat": true,
+      "unmatchedSides": [
+        "b"
+      ],
+      "sidesOutsideFrame": []
+    },
+    {
       "title": "小田原城の戦い",
       "date": {
         "y": 1561,
@@ -302,9 +230,7 @@
       "unmatchedSides": [
         "b"
       ],
-      "sidesOutsideFrame": [
-        "a"
-      ]
+      "sidesOutsideFrame": []
     },
     {
       "title": "第二次国府台合戦",
@@ -320,6 +246,19 @@
       "sidesOutsideFrame": [
         "a"
       ]
+    },
+    {
+      "title": "三河平定",
+      "date": {
+        "y": 1565,
+        "m": 4,
+        "d": 10
+      },
+      "noncombat": true,
+      "unmatchedSides": [
+        "b"
+      ],
+      "sidesOutsideFrame": []
     },
     {
       "title": "永禄の変",
@@ -371,9 +310,7 @@
       "unmatchedSides": [
         "a"
       ],
-      "sidesOutsideFrame": [
-        "b"
-      ]
+      "sidesOutsideFrame": []
     },
     {
       "title": "稲葉山城の戦い",
@@ -383,6 +320,19 @@
         "d": 17
       },
       "noncombat": false,
+      "unmatchedSides": [
+        "b"
+      ],
+      "sidesOutsideFrame": []
+    },
+    {
+      "title": "信長上洛",
+      "date": {
+        "y": 1568,
+        "m": 10,
+        "d": 18
+      },
+      "noncombat": true,
       "unmatchedSides": [
         "b"
       ],
@@ -415,20 +365,6 @@
       "sidesOutsideFrame": []
     },
     {
-      "title": "三増峠の戦い",
-      "date": {
-        "y": 1569,
-        "m": 11,
-        "d": 14
-      },
-      "noncombat": false,
-      "unmatchedSides": [],
-      "sidesOutsideFrame": [
-        "a",
-        "b"
-      ]
-    },
-    {
       "title": "手這坂の戦い",
       "date": {
         "y": 1569,
@@ -437,6 +373,33 @@
       },
       "noncombat": false,
       "unmatchedSides": [
+        "b"
+      ],
+      "sidesOutsideFrame": []
+    },
+    {
+      "title": "金ヶ崎の退き口",
+      "date": {
+        "y": 1570,
+        "m": 5,
+        "d": 28
+      },
+      "noncombat": true,
+      "unmatchedSides": [
+        "a"
+      ],
+      "sidesOutsideFrame": []
+    },
+    {
+      "title": "石山合戦はじまる",
+      "date": {
+        "y": 1570,
+        "m": 10,
+        "d": 12
+      },
+      "noncombat": true,
+      "unmatchedSides": [
+        "a",
         "b"
       ],
       "sidesOutsideFrame": []
@@ -455,6 +418,19 @@
       "sidesOutsideFrame": [
         "b"
       ]
+    },
+    {
+      "title": "朝倉氏滅亡",
+      "date": {
+        "y": 1573,
+        "m": 9,
+        "d": 16
+      },
+      "noncombat": true,
+      "unmatchedSides": [
+        "b"
+      ],
+      "sidesOutsideFrame": []
     },
     {
       "title": "小谷城落城",
@@ -549,20 +525,6 @@
       "sidesOutsideFrame": []
     },
     {
-      "title": "手取川の戦い",
-      "date": {
-        "y": 1577,
-        "m": 11,
-        "d": 3
-      },
-      "noncombat": false,
-      "unmatchedSides": [],
-      "sidesOutsideFrame": [
-        "a",
-        "b"
-      ]
-    },
-    {
       "title": "信貴山城の戦い",
       "date": {
         "y": 1577,
@@ -576,6 +538,19 @@
       "sidesOutsideFrame": [
         "a"
       ]
+    },
+    {
+      "title": "中国攻め",
+      "date": {
+        "y": 1577,
+        "m": 11,
+        "d": 25
+      },
+      "noncombat": true,
+      "unmatchedSides": [
+        "b"
+      ],
+      "sidesOutsideFrame": []
     },
     {
       "title": "御館の乱",
@@ -613,6 +588,19 @@
         "d": 5
       },
       "noncombat": false,
+      "unmatchedSides": [
+        "b"
+      ],
+      "sidesOutsideFrame": []
+    },
+    {
+      "title": "丹波・丹後平定",
+      "date": {
+        "y": 1579,
+        "m": 7,
+        "d": 1
+      },
+      "noncombat": true,
       "unmatchedSides": [
         "b"
       ],
@@ -663,6 +651,19 @@
       ]
     },
     {
+      "title": "天正伊賀の乱",
+      "date": {
+        "y": 1581,
+        "m": 10,
+        "d": 10
+      },
+      "noncombat": true,
+      "unmatchedSides": [
+        "b"
+      ],
+      "sidesOutsideFrame": []
+    },
+    {
       "title": "鳥取の渇え殺し",
       "date": {
         "y": 1581,
@@ -670,6 +671,19 @@
         "d": 21
       },
       "noncombat": false,
+      "unmatchedSides": [
+        "b"
+      ],
+      "sidesOutsideFrame": []
+    },
+    {
+      "title": "甲州征伐",
+      "date": {
+        "y": 1582,
+        "m": 4,
+        "d": 3
+      },
+      "noncombat": true,
       "unmatchedSides": [
         "b"
       ],
@@ -686,9 +700,7 @@
       "unmatchedSides": [
         "b"
       ],
-      "sidesOutsideFrame": [
-        "a"
-      ]
+      "sidesOutsideFrame": []
     },
     {
       "title": "神流川の戦い",
@@ -701,23 +713,7 @@
       "unmatchedSides": [
         "b"
       ],
-      "sidesOutsideFrame": [
-        "a"
-      ]
-    },
-    {
-      "title": "若神子の対陣",
-      "date": {
-        "y": 1582,
-        "m": 9,
-        "d": 10
-      },
-      "noncombat": false,
-      "unmatchedSides": [],
-      "sidesOutsideFrame": [
-        "a",
-        "b"
-      ]
+      "sidesOutsideFrame": []
     },
     {
       "title": "中富川の戦い",
@@ -743,9 +739,7 @@
       "unmatchedSides": [
         "a"
       ],
-      "sidesOutsideFrame": [
-        "b"
-      ]
+      "sidesOutsideFrame": []
     },
     {
       "title": "岐阜城の開城",
@@ -776,6 +770,58 @@
       ]
     },
     {
+      "title": "紀州征伐",
+      "date": {
+        "y": 1585,
+        "m": 4,
+        "d": 20
+      },
+      "noncombat": true,
+      "unmatchedSides": [
+        "b"
+      ],
+      "sidesOutsideFrame": []
+    },
+    {
+      "title": "宇喜多勢の讃岐攻め",
+      "date": {
+        "y": 1585,
+        "m": 7,
+        "d": 25
+      },
+      "noncombat": true,
+      "unmatchedSides": [
+        "b"
+      ],
+      "sidesOutsideFrame": []
+    },
+    {
+      "title": "小早川隆景の伊予攻め",
+      "date": {
+        "y": 1585,
+        "m": 8,
+        "d": 1
+      },
+      "noncombat": true,
+      "unmatchedSides": [
+        "b"
+      ],
+      "sidesOutsideFrame": []
+    },
+    {
+      "title": "四国攻め",
+      "date": {
+        "y": 1585,
+        "m": 8,
+        "d": 6
+      },
+      "noncombat": true,
+      "unmatchedSides": [
+        "b"
+      ],
+      "sidesOutsideFrame": []
+    },
+    {
       "title": "富山の役",
       "date": {
         "y": 1585,
@@ -800,9 +846,7 @@
       "unmatchedSides": [
         "a"
       ],
-      "sidesOutsideFrame": [
-        "b"
-      ]
+      "sidesOutsideFrame": []
     },
     {
       "title": "岩屋城の戦い",
@@ -818,20 +862,6 @@
       "sidesOutsideFrame": []
     },
     {
-      "title": "戸次川の戦い",
-      "date": {
-        "y": 1587,
-        "m": 1,
-        "d": 20
-      },
-      "noncombat": false,
-      "unmatchedSides": [],
-      "sidesOutsideFrame": [
-        "a",
-        "b"
-      ]
-    },
-    {
       "title": "根白坂の戦い",
       "date": {
         "y": 1587,
@@ -841,8 +871,7 @@
       "noncombat": false,
       "unmatchedSides": [],
       "sidesOutsideFrame": [
-        "a",
-        "b"
+        "a"
       ]
     },
     {
@@ -866,6 +895,19 @@
         "d": 25
       },
       "noncombat": false,
+      "unmatchedSides": [
+        "b"
+      ],
+      "sidesOutsideFrame": []
+    },
+    {
+      "title": "北国勢の上野攻め",
+      "date": {
+        "y": 1590,
+        "m": 5,
+        "d": 10
+      },
+      "noncombat": true,
       "unmatchedSides": [
         "b"
       ],
@@ -948,9 +990,7 @@
       "unmatchedSides": [
         "b"
       ],
-      "sidesOutsideFrame": [
-        "a"
-      ]
+      "sidesOutsideFrame": []
     },
     {
       "title": "閑山島海戦",
@@ -963,9 +1003,7 @@
       "unmatchedSides": [
         "b"
       ],
-      "sidesOutsideFrame": [
-        "a"
-      ]
+      "sidesOutsideFrame": []
     },
     {
       "title": "第一次晋州城の戦い",
@@ -994,20 +1032,6 @@
       "sidesOutsideFrame": []
     },
     {
-      "title": "碧蹄館の戦い",
-      "date": {
-        "y": 1593,
-        "m": 2,
-        "d": 27
-      },
-      "noncombat": false,
-      "unmatchedSides": [],
-      "sidesOutsideFrame": [
-        "a",
-        "b"
-      ]
-    },
-    {
       "title": "幸州山城の戦い",
       "date": {
         "y": 1593,
@@ -1018,9 +1042,7 @@
       "unmatchedSides": [
         "a"
       ],
-      "sidesOutsideFrame": [
-        "b"
-      ]
+      "sidesOutsideFrame": []
     },
     {
       "title": "第二次晋州城の戦い",
@@ -1074,9 +1096,7 @@
       "unmatchedSides": [
         "a"
       ],
-      "sidesOutsideFrame": [
-        "b"
-      ]
+      "sidesOutsideFrame": []
     },
     {
       "title": "蔚山城の戦い",
@@ -1102,6 +1122,19 @@
       "unmatchedSides": [
         "b"
       ],
+      "sidesOutsideFrame": []
+    },
+    {
+      "title": "会津征伐",
+      "date": {
+        "y": 1600,
+        "m": 7,
+        "d": 26
+      },
+      "noncombat": true,
+      "unmatchedSides": [
+        "b"
+      ],
       "sidesOutsideFrame": [
         "a"
       ]
@@ -1117,9 +1150,7 @@
       "unmatchedSides": [
         "b"
       ],
-      "sidesOutsideFrame": [
-        "a"
-      ]
+      "sidesOutsideFrame": []
     },
     {
       "title": "岐阜城の戦い",
@@ -1216,9 +1247,7 @@
       "unmatchedSides": [
         "a"
       ],
-      "sidesOutsideFrame": [
-        "b"
-      ]
+      "sidesOutsideFrame": []
     },
     {
       "title": "八尾・若江の戦い",
@@ -1231,9 +1260,7 @@
       "unmatchedSides": [
         "b"
       ],
-      "sidesOutsideFrame": [
-        "a"
-      ]
+      "sidesOutsideFrame": []
     }
   ]
 }

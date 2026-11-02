@@ -46,19 +46,22 @@
   }
   for(const row of TK.BATTLE_AUDIT||[])row.sourceIds=TK.BATTLES[row.title]?.sources||row.sourceIds;
  };
- const geometryVersion=20,set=G.setS;
+ const geometryVersion=21,set=G.setS;
  G.setS=function(s){const result=set(s);if(!s||s.movementGeometryVersion===geometryVersion)return result;
   G._inSimulation=true;
   try{
    for(const u of s.units){
     if(!u.hist||u.record||!u.path?.length)continue;
     if(u.until==='#hold'&&!u.historyTitle){const names=u.commanders||u.gens.map(id=>G.gen(id)?.n),matches=TK.HIST.filter(e=>e.hold&&e.k!=='premarch'&&G.evT(e)===u.schedule?.end&&names.includes(e.marchWho||e.who));if(matches.length===1)u.historyTitle=matches[0].title;}
-    const returning=u.histRet||u.state==='return',old=u.visualTravel,A=old?.line?.[0]||G.C[u.path[0]]&&[G.C[u.path[0]].x,G.C[u.path[0]].y],C=G.C[u.path.at(-1)];
+    const returning=G.isHistoryReturning(u),old=u.visualTravel;
+    const sampleTime=s.t+(Number.isFinite(s.visualFraction)?Math.max(0,Math.min(1,s.visualFraction)):0);
+    const relayPoint=!returning&&u.histRet&&old&&sampleTime<(u.schedule?.end??-Infinity)?G.visualPathPoint(old.line,(sampleTime-old.start)/Math.max(1,old.end-old.start)).slice(0,2):null;
+    const A=relayPoint||old?.line?.[0]||G.C[u.path[0]]&&[G.C[u.path[0]].x,G.C[u.path[0]].y],C=G.C[u.path.at(-1)];
     if(!returning)G.scheduleHistorical(u);
     if(!A||!C)continue;
     const B=returning?[C.x,C.y]:G.battleArrivalPoint(u)||[C.x,C.y];
     if(returning&&!old)u._visualRouteKey=null;
-    if(old||u.schedule&&!returning)u.visualTravel={line:G.historyTravelLine(u,A,B),start:old?.start??u.schedule.start,end:returning?old.end:u.schedule?.end??old.end};
+    if(old||u.schedule&&!returning)u.visualTravel={line:G.historyTravelLine(u,A,B),start:relayPoint?sampleTime:old?.start??u.schedule.start,end:returning?old.end:u.schedule?.end??old.end};
    }
    for(const g of s.gens){
     if(g.tr){const a=g.tr.line?.[0]||G.C[g.tr.p?.[0]]&&[G.C[g.tr.p[0]].x,G.C[g.tr.p[0]].y],b=g.tr.line?.at(-1)||G.C[g.tr.p?.at(-1)]&&[G.C[g.tr.p.at(-1)].x,G.C[g.tr.p.at(-1)].y];if(a&&b)g.tr.line=G.visualBetween(a,b);else g.tr=null;}

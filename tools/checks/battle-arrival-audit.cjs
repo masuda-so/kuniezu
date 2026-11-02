@@ -1,6 +1,6 @@
 /* 再生通知・参加名・陣営・位置を全期間で突合。史料照合の代用にはしない。 */
 const fs=require('node:fs'),{G,TK,TKGEO}=require('./history-focus.cjs').model();
-G.newGame('s1560','oda');G.S().player='__none';
+G.newGame('s1560','oda');G.S().player='__none';G.auditVisualMoves=true;G.trackContinuousMoves();
 const canonical=n=>TK.PORTRAIT_ALIAS[n]||n||'';
 const rows=new Map(Object.entries(TK.BATTLES).map(([title,b])=>[title,{title,kind:b.deploymentKind,category:b.presentationCategory||null,eventDate:b.eventDate,expected:b.eventDate?G.evT({d:b.eventDate}):null,sources:b.sources,observations:[]}]));
 const targetDays=new Set([...rows.values()].map(r=>r.expected).filter(Number.isFinite));
@@ -30,5 +30,6 @@ while(G.S().t<end){const next=G.S().t+1,before=targetDays.has(next)?snapshot(nex
 }
 const all=[...rows.values()],missing=all.filter(r=>!r.observations.length).map(r=>r.title),unmatched=all.filter(r=>r.observations.length&&!r.observations.some(o=>o.units.some(u=>u.title===r.title))).map(r=>({title:r.title,noncombat:r.category==='march'||r.kind==='campaign'}));
 const sideCandidates=all.flatMap(r=>r.observations.filter(o=>o.unmatchedSides.length||o.sidesOutsideFrame.length).map(o=>({title:r.title,date:o.date,noncombat:r.category==='march'||r.kind==='campaign',unmatchedSides:o.unmatchedSides,sidesOutsideFrame:o.sidesOutsideFrame})));
-const result={scope:'1560〜1615年末の実行照合。同名目的の軍に加え、登録参加将名の別戦役軍も抽出。陣営は名前一致/家のみ推定を区別。表示範囲外は不在・遅着の確定ではなく照合候補。地形枠自体の史実精度も別。',registered:all.length,observed:all.length-missing.length,missing,withoutMatchingTitle:unmatched,sideCandidates,alerts,battles:all};
-fs.writeFileSync('data/audits/battle-arrival-audit.json',JSON.stringify(result,null,2)+'\n');console.log(JSON.stringify({registered:all.length,observed:all.length-missing.length,missing,withoutMatchingTitle:unmatched,sideCandidateCount:sideCandidates.length,lateArrivalCount:alerts.length},null,2));
+const result={visualTrackingEnabled:G.auditVisualMoves===true,scope:'1560〜1615年末の実行照合。同名目的の軍に加え、登録参加将名の別戦役軍も抽出。陣営は名前一致/家のみ推定を区別。表示範囲外は不在・遅着の確定ではなく照合候補。地形枠自体の史実精度も別。',registered:all.length,observed:all.length-missing.length,missing,withoutMatchingTitle:unmatched,sideCandidates,alerts,battles:all};
+fs.writeFileSync('data/audits/battle-arrival-audit.json',JSON.stringify(result,null,2)+'\n');
+fs.writeFileSync('data/audits/battle-arrival-side-candidates.json',JSON.stringify({scope:'画面用の連続移動を有効にした照合候補。範囲外・不対応は史実上の遅着や不在の証明ではない。',visualTrackingEnabled:true,bothSidesUnmatched:sideCandidates.filter(r=>r.unmatchedSides.length===2).length,oneSideUnmatched:sideCandidates.filter(r=>r.unmatchedSides.length===1).length,someSideOutsideFrame:sideCandidates.filter(r=>r.sidesOutsideFrame.length).length,candidates:sideCandidates},null,2)+'\n');console.log(JSON.stringify({registered:all.length,observed:all.length-missing.length,missing,withoutMatchingTitle:unmatched,sideCandidateCount:sideCandidates.length,lateArrivalCount:alerts.length},null,2));
