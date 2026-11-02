@@ -27,3 +27,5 @@ jobs:
         run: node tools/checks/organization.cjs
       - name: Infrastructure checks
         run: node tools/checks/infrastructure.cjs
+      - name: Secret scan
+        run: node tools/checks/secret-scan.cjs
