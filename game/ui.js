@@ -236,6 +236,8 @@ function paintBase(c,pad=0){LANDV=landFor(cam.z);
  if(S){c.save();c.clip(LANDV);c.globalCompositeOperation='source-over';/* 根拠のない矩形で明の支配域を塗らない。遼東の地域・都司は出典付き地点として表示。 */
   for(const C of G.CL){const k=S.castles[C.id].owner;c.globalAlpha=flat?(k===S.player?.5:.35):(k===S.player?.44:.32);c.fillStyle=pastel(k);c.fill(TERR[C.id]);}
   c.restore();}
+ // 地図全体の明るさを抑える：陸に古い紙の焼けた色を薄く重ねる（地形の陰影・勢力の色は残る）。
+ if(!flat){c.save();c.clip(LANDV);c.globalCompositeOperation='multiply';c.fillStyle='rgba(196,176,140,.38)';c.fillRect(x0-50,y0-50,x1-x0+100,y1-y0+100);c.restore();}
 
  if(S)drawBranchLands(c,z);
  if(flat){c.strokeStyle='rgba(95,135,175,.75)';c.lineWidth=1.1/z;c.lineJoin='round';drawMapRivers(c,z);
