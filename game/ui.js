@@ -161,6 +161,14 @@ function borderEdges(){const v=[...s2w(-240,-240),...s2w(VW+240,VH+240)],items=w
 function strokeCoast(c){const v=[...s2w(-240,-240),...s2w(VW+240,VH+240)],items=window.TKEdges?.inView?.(v,cam.z,DPR);if(!items){c.stroke(COAST.get(LANDV)||LANDV);return;}for(const it of items)if(it.kind==='coast')c.stroke(it.p);}
 // 国・道の境界線は、郡画像の国が変わる所から起こした線（kind:'kuni'）で引く。届くまでは従来の線（PBORD）。
 function strokeKuni(c){const v=[...s2w(-240,-240),...s2w(VW+240,VH+240)],items=window.TKEdges?.inView?.(v,cam.z,DPR);if(!items){c.stroke(PBORD);return;}for(const it of items)if(it.kind==='kuni')c.stroke(it.p);}
+// 城の集まりの外周（領域画像から起こした共有辺のうち、片側だけが集まりに入る辺。海岸も含む）。届くまでは従来の線。
+function regionDefs(){return window.TKRaster?.defs?.()||[];}
+function strokeRegionOutline(c,ids){const set=new Set(ids),v=[...s2w(-240,-240),...s2w(VW+240,VH+240)],items=window.TKEdges?.inView?.(v,cam.z,DPR);
+ if(!items){for(const id of set)if(TERR[id])c.stroke(TERR[id]);return;}const defs=regionDefs(),cid=i=>{const k=defs[i]?.key;return k?.startsWith('castle:')?k.slice(7):null;};
+ for(const it of items){if(it.kind!=='region'&&it.kind!=='coast'&&it.kind!=='lake')continue;const a=set.has(cid(it.a)),b=set.has(cid(it.b));if(a!==b)c.stroke(it.p);}}
+// 城の領域の塗り（領域画像）。届くまでは従来の線。
+function fillRegions(c,ids,rgba){if(!window.TKRaster?.ready()){for(const id of ids)if(TERR[id])c.fill(TERR[id]);return;}const set=new Set(ids),v=[...s2w(-240,-240),...s2w(VW+240,VH+240)];
+ TKRaster.paint(c,v,cam.z,DPR,d=>d.key.startsWith('castle:')&&set.has(d.key.slice(7))?rgba:null,'sel|'+[...set].sort().join(','));}
 function strokeLakes(c){const v=[...s2w(-240,-240),...s2w(VW+240,VH+240)],items=window.TKEdges?.inView?.(v,cam.z,DPR);if(!items){c.stroke(LAKES);return;}for(const it of items)if(it.kind==='lake')c.stroke(it.p);}
 function drawBorders(c,z,k0){if(!S)return;const EDGE=borderEdges()||EDGES_V;
  for(const e of EDGE){const oa=S.castles[e.a].owner,ob=S.castles[e.b].owner;if(oa!==ob||z<.8)continue;c.strokeStyle='rgba(60,45,30,.22)';c.lineWidth=.7/z;c.setLineDash([]);c.stroke(e.p);}
@@ -503,9 +511,9 @@ function drawTopLayers(still){
 }
 function drawUnder(z,cc){UNDER.on=!!(U.sel||U.picking||(U.mode==='pick'&&U.pickClan));if(!UNDER.on)return;fitLayer(UNDER);const c=UNDER.c;beginLayer(c,z,cc,true);
  c.save();if(U.sel||U.picking||(U.mode==='pick'&&U.pickClan))c.clip(LANDV);
- if(U.sel){c.fillStyle='rgba(255,240,190,.16)';c.fill(TERR[U.sel]);c.shadowColor='rgba(240,200,100,.9)';c.shadowBlur=10*DPR;c.strokeStyle='#f2d27c';c.lineWidth=2.6/z;c.stroke(TERR[U.sel]);c.shadowBlur=0;}
- if(U.picking){c.setLineDash([6/z,4/z]);c.strokeStyle='#ff6a4d';c.lineWidth=2.4/z;for(const n of G.ADJ[U.picking]){const o=S.castles[n].owner;if(o!==S.player&&!G.allied(S.player,o))c.stroke(TERR[n]);}c.setLineDash([]);}
- if(U.mode==='pick'&&U.pickClan){c.strokeStyle='#f2d27c';c.lineWidth=2.4/z;const pr=G.preList().find(x=>x.k===U.pickClan);for(const C of G.CL)if(S.castles[C.id].owner===U.pickClan||(pr&&pr.castles.includes(C.id)))c.stroke(TERR[C.id]);}
+ if(U.sel){fillRegions(c,[U.sel],[255,240,190,41]);c.shadowColor='rgba(240,200,100,.9)';c.shadowBlur=10*DPR;c.strokeStyle='#f2d27c';c.lineWidth=2.6/z;strokeRegionOutline(c,[U.sel]);c.shadowBlur=0;}
+ if(U.picking){c.setLineDash([6/z,4/z]);c.strokeStyle='#ff6a4d';c.lineWidth=2.4/z;for(const n of G.ADJ[U.picking]){const o=S.castles[n].owner;if(o!==S.player&&!G.allied(S.player,o))strokeRegionOutline(c,[n]);}c.setLineDash([]);}
+ if(U.mode==='pick'&&U.pickClan){c.strokeStyle='#f2d27c';c.lineWidth=2.4/z;const pr=G.preList().find(x=>x.k===U.pickClan);strokeRegionOutline(c,G.CL.filter(C=>S.castles[C.id].owner===U.pickClan||(pr&&pr.castles.includes(C.id))).map(C=>C.id));}
  c.restore();
  c.restore();c.restore();}
 function drawStill(z,cc,lvl){fitLayer(STILL);const c=STILL.c;beginLayer(c,z,cc,true);
