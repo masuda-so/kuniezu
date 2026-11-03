@@ -74,3 +74,13 @@
  TK.SITE_POSITION_EVIDENCE[name]={kind:'facility',name,point,ref:'400000033600',source:'codhSites',url:'https://geoshape.ex.nii.ac.jp/nrct-poi/resource/40/400000033600.html',basis:'歴史地名代表点。安芸市・観光協会の城跡説明と地図を独立照合。'};
  TK.CASTLE_EVIDENCE[name]={role:'安芸氏の本拠、後の五藤氏土居',description:y[4],source:TK.RESEARCH_SOURCES.akiCastleCity.url,checked:'2026-11-02'};
 })();
+
+/* 朱印状の発給を、開城・入城・知行の移管から分けて記録する。 */
+{
+ const lunarDate=[1587,7,3];
+ TK.HIST.push({
+  d:TK.lunarDate(...lunarDate),lunarDate,k:'note',title:'秋月種長への朱印状',who:'秋月種長',
+  source:'https://www.town.takanabe.lg.jp/choseijoho/takanabemachi/1026.html',
+  text:'豊臣秀吉が秋月種長に日向財部の城を宛行う朱印状を出した。知行目録は羽柴秀長から受け取るよう命じた。'
+ });
+}
