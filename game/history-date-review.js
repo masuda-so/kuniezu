@@ -96,3 +96,13 @@
   text:'蒲生氏郷と前田利長の軍が、秋月氏の支城・岩石城を攻め落とした。'
  });
 }
+
+/* 行橋市史の叙述による降伏受理。古処山城の明渡し日は別に扱う。 */
+{
+ const lunarDate=[1587,4,2];
+ TK.HIST.push({
+  d:TK.lunarDate(...lunarDate),lunarDate,k:'note',title:'秋月氏の降伏',who:'秋月種実・種長',
+  source:'https://adeac.jp/yukuhashi-city/texthtml/d100010/mp000000-000010/ht2041102020',
+  text:'『行橋市史』によると、岩石城の落城翌日、豊臣秀吉は筑前の大隈城で秋月種実・種長父子の降伏を受け入れた。'
+ });
+}
