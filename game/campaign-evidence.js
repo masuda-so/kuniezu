@@ -5,6 +5,22 @@ const src=TK.RESEARCH_SOURCES;
 src.ieyasuReturn={author:'国立公文書館',title:'桶狭間の戦い／徳川家康関係年表',year:'2018',url:'https://www.archives.go.jp/exhibition/digital/ieyasu/contents1_03/',locator:'大高城から大樹寺、岡崎城への帰還',accessed:'2026-10-31',scope:'大高への兵糧搬入、大樹寺への退却、岡崎入城。中間の通過道と時刻は未確定。'};
 src.ieyasuDates={author:'国立公文書館',title:'徳川家康 関係年表',year:'2018',url:'https://www.archives.go.jp/exhibition/digital/ieyasu/history.html',locator:'永禄3年5月19日・23日',accessed:'2026-10-31',scope:'桶狭間と岡崎入城の区別。入城は清洲同盟の成立を意味しない。'};
 src.eirokuStudy={author:'国際日本文化研究センター',title:'ルイス・フロイス『日本史』を読みなおす④',year:'2023',url:'https://kutsukake.nichibun.ac.jp/obunsiryo/essay/20230118/',locator:'永禄の変をめぐる記述',accessed:'2026-10-31',scope:'事件を記す史料の批判。攻撃側の通過街道・一万という兵数の実数は未確定。'};
+src.hasedoApproach={
+ author:'大江町教育委員会',title:'左沢楯山城跡 保存管理計画',url:'https://www.town.oe.yamagata.jp/files/original/20210607094914197c0350026.pdf',
+ locator:'第Ⅰ部・表2-1、慶長5年',scope:'米沢の直江勢が畑谷城から長谷堂城へ進んだ順序。'
+};
+src.hasedoArato={
+ author:'山形おきたま観光協議会',title:'畑谷城跡',url:'https://sengoku.oki-tama.jp/?l=105705&p=log',
+ locator:'荒砥からの進撃・畑谷城の段落',scope:'荒砥から畑谷へ進攻した主力軍。'
+};
+// 荒砥は現代町字の中心、畑谷は幕末村の代表点。地点間は既存道路網で補う。
+(TK.CAMPAIGN_CORRIDORS ||= []).push({
+ id:'hasedo-naoe-1600',title:'長谷堂城の戦い',commanders:['直江兼続'],marchKmPerDay:22,
+ sourceIds:['hasedoApproach','hasedoArato'],
+ status:'corridor-with-estimated-segments',basis:'史料の経由地を代表点で結ぶ。個々の通過時刻と旧道の中心線は未確定。',
+ waypoints:[{name:'米沢城',point:[140.11,37.91]},{name:'荒砥方面',point:[140.090625,38.183326]},{name:'畑谷方面',point:[140.1857,38.25406]}],
+ routeNote:'米沢・荒砥・畑谷を経て菅沢山へ。地点間は参考経路。'
+});
 const dt=(y,m,d)=>TK.lunarDate(y,m,d),end=title=>TK.HIST.find(e=>e.title===title&&e.k!=='premarch').d;
 const records=[
  {id:'motoyasu',title:'松平元康、岡崎に入る',clan:'imagawa',names:['松平元康'],troops:0,from:'okazaki',to:'okazaki',start:dt(1560,5,18),end:dt(1560,5,23),depart:dt(1560,5,19),track:[[136.94,35.07],[137.1626,34.982],[137.1589,34.9563]],source:['ieyasuReturn','ieyasuDates'],note:'大高→大樹寺→岡崎の順序を表示。大高の在陣開始日は合戦前日の表示用仮置き。大樹寺の入寺日・間道と兵数は未確定。移動線は地点を結ぶ概略。',destination:'岡崎城（大高城・大樹寺を経る）'},
