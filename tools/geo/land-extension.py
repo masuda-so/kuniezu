@@ -12,13 +12,16 @@ OE=129.2+2300/(200*math.cos(math.radians(36)))  # 既存の日本側の陸地の
 #  日本側の旧陸地＝東経143.41度まで、北海道は北緯42.95度まで、南は北緯30.8度まで
 STRIPS=[(W,121.5,S,N),            # 西：遼東の西・渤海側
  (121.5,131.3,43.0,N),            # 北（朝鮮の北）：満州
- (131.3,139.5,42.95,N),           # 北（日本海側）：沿海州
+ (131.3,139.3,42.95,N),           # 北（日本海側）：沿海州
  (131.3,139.3,40.0,42.95),        # 沿海州の南岸（奥尻島を避ける）
- (139.5,OE,42.95,N),              # 北海道の北
  (OE,E,S,N),                      # 東：北海道の東・千島
  (121.5,128.0,30.0,33.0),         # 南西：朝鮮の比較海岸の南（中国の沿岸）
  (121.5,128.0,S,30.0),            # 南西のさらに南：先島・沖縄・台湾北端
  (128.0,OE,S,30.8)]               # 南：種子島・屋久島・奄美・沖縄・大東
+# 島ごと置き換える範囲（経度0,経度1,緯度0,緯度1）。旧来の陸地（geo.js）が切り口でこの島を横切っていたため、継ぎ目に段差が出た
+# （北海道の北緯42.95度・東経143.41度、種子島の北緯30.8度）。範囲に丸ごと入る旧来の多角形を外し、GSHHG の島を切らずに入れる。
+ISLANDS=[(139.0,OE,41.35,N,'北海道'),(130.2,131.2,30.0,30.95,'種子島・屋久島')]
+inside=lambda ring,b:min(q[0] for q in ring)>=b[0] and max(q[0] for q in ring)<=b[1] and min(q[1] for q in ring)>=b[2] and max(q[1] for q in ring)<=b[3]
 b=open(sys.argv[1],'rb').read();off=100
 def clip(p,axis,edge,above):
  res=[]
@@ -49,8 +52,21 @@ while off<len(b):
    np_,npt=struct.unpack_from('<2i',b,off+36);parts=list(struct.unpack_from('<'+str(np_)+'i',b,off+44))+[npt];start=off+44+np_*4
    for i in range(np_):
     ring=[list(struct.unpack_from('<2d',b,start+j*16)) for j in range(parts[i],parts[i+1])]
+    isl=next((I for I in ISLANDS if min(q[1] for q in ring)>=I[2] and min(q[0] for q in ring)>=I[0] and max(q[1] for q in ring)<=I[3] and min(q[0] for q in ring)<=I[1]),None)
+    if isl:
+     # 島の範囲の東端（北海道は東経143.41度）より東は東の帯が受け持つ。島の範囲では東端で切るだけにする。
+     p=clip(ring,0,isl[1],False) if max(q[0] for q in ring)>isl[1] else ring
+     STRIPS_HERE=[]
+     if len(p)>2:
+      dense=[]
+      for q,r2 in zip(p,p[1:]+p[:1]):
+       dense.append(q);n=int(math.hypot(r2[0]-q[0],r2[1]-q[1])/0.02)
+       for k in range(1,n):dense.append([q[0]+(r2[0]-q[0])*k/n,q[1]+(r2[1]-q[1])*k/n])
+      out.append([[v for q in dense for v in proj(*q)]]);verts+=len(dense)
+     if max(q[0] for q in ring)<=isl[1]:continue
     for (a0,a1,b0,b1) in STRIPS:
      if a0>=a1 or b0>=b1:continue
+     if isl and a0<isl[1]:continue
      p=ring
      for axis,edge,above in [(0,a0,True),(0,a1,False),(1,b0,True),(1,b1,False)]:
       if p:p=clip(p,axis,edge,above)
@@ -77,10 +93,10 @@ while off<len(b):
        flat=[v for q in p for v in proj(*q)];out.append([flat]);verts+=len(p)
  off=end
 # データの切り口（本来の海岸ではない直線）。ui.js は海岸の縁取りでこの線上の辺を引かない。
-lons=sorted({e for st in STRIPS for e in st[:2]}|{121.5,131.3,OE});lats=sorted({e for st in STRIPS for e in st[2:]}|{43.0,42.95,33.0,30.8})
+lons=sorted({e for st in STRIPS for e in st[:2]}|{121.5,131.3,OE});lats=sorted({e for st in STRIPS for e in st[2:]}|{43.0,33.0})
 cuts={'x':[round((l-129.2)*cx,2) for l in lons],'y':[round((41.75-l)*200,2) for l in lats]}
 root=pathlib.Path(__file__).resolve().parents[2]
 js=root/'game/land-extension.js'
 js.write_text('"use strict";\n/* GSHHG 2.3.7 full L1 (Wessel / Smith / NOAA, LGPL 3.0)。tools/geo/land-extension.py が生成。既存の陸地と朝鮮の比較海岸の外側（東経119.5〜146度、北緯30〜45.6度まで）。water-evidence.js の後に読み込む。歴史上の海岸の復元ではない。 */\n'
- +'(function(){const ext='+json.dumps(out,separators=(',',':'))+';const jl=TKGEO.japanLand,isJp=p=>Math.min(...p[0].filter((_,i)=>i%2===0))>=(128-129.2)*'+str(round(cx,6))+';if(jl){/* ui.js は japanLand が land の先頭部分と同じ並びである前提で描く。日本側は日本の部分の直後へ差し込む。 */const jp=ext.filter(isJp);TKGEO.land.splice(jl.length,0,...jp);jl.push(...jp);TKGEO.land.push(...ext.filter(p=>!isJp(p)));}else TKGEO.land.push(...ext);TKGEO.landExtension={source:"GSHHG 2.3.7 full L1",bounds:['+','.join(map(str,[W,E,N,S]))+'],polygons:ext.length};TKGEO.landCuts='+json.dumps(cuts)+';})();\n')
+ +'(function(){const ext='+json.dumps(out,separators=(',',':'))+',boxes='+json.dumps([[round((I[0]-129.2)*cx,2),round((I[1]-129.2)*cx,2),round((41.75-I[3])*200,2),round((41.75-I[2])*200,2)] for I in ISLANDS])+',inBox=p=>{const r=p[0];let x0=1e9,x1=-1e9,y0=1e9,y1=-1e9;for(let i=0;i<r.length;i+=2){x0=Math.min(x0,r[i]);x1=Math.max(x1,r[i]);y0=Math.min(y0,r[i+1]);y1=Math.max(y1,r[i+1]);}return boxes.some(b=>x0>=b[0]-.5&&x1<=b[1]+.5&&y0>=b[2]-.5&&y1<=b[3]+.5);};for(const arr of [TKGEO.land,TKGEO.japanLand].filter(Boolean))for(let i=arr.length-1;i>=0;i--)if(inBox(arr[i]))arr.splice(i,1);const jl=TKGEO.japanLand,isJp=p=>Math.min(...p[0].filter((_,i)=>i%2===0))>=(128-129.2)*'+str(round(cx,6))+';if(jl){/* ui.js は japanLand が land の先頭部分と同じ並びである前提で描く。日本側は日本の部分の直後へ差し込む。 */const jp=ext.filter(isJp);TKGEO.land.splice(jl.length,0,...jp);jl.push(...jp);TKGEO.land.push(...ext.filter(p=>!isJp(p)));}else TKGEO.land.push(...ext);TKGEO.landExtension={source:"GSHHG 2.3.7 full L1",bounds:['+','.join(map(str,[W,E,N,S]))+'],polygons:ext.length};TKGEO.landCuts='+json.dumps(cuts)+';})();\n')
 print(len(out),'polygons',verts,'vertices',js.stat().st_size,'bytes')
