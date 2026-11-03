@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 1,
+  "source": "https://www.city.itami.lg.jp/material/images/group/39/sougamae.jpg",
+  "sha256": "15e03fbbda83220c84d58f9eeda036f1dca886727240b8e6f04183ea60142206",
+  "method": "local equirectangular similarity; lon*cos(34.78 degrees); pixel y inverted",
+  "controls": [
+    {
+      "name": "有岡城主郭",
+      "pixel": [
+        280,
+        230
+      ],
+      "lonlat": [
+        135.420992,
+        34.781112
+      ],
+      "source": "CODH 日本歴史地名大系 290000116400"
+    },
+    {
+      "name": "岸の砦・猪名野神社",
+      "pixel": [
+        84,
+        51
+      ],
+      "lonlat": [
+        135.4151939,
+        34.7851887
+      ],
+      "source": "伊丹市 猪名野神社3棟 地図情報"
+    }
+  ],
+  "points": {
+    "上臈塚": {
+      "pixel": [
+        160,
+        305
+      ],
+      "lonlat": [
+        135.417613,
+        34.779251
+      ]
+    },
+    "鵯塚": {
+      "pixel": [
+        290,
+        541
+      ],
+      "lonlat": [
+        135.421566,
+        34.773778
+      ]
+    }
+  },
+  "estimatedReadingWidthM": 100,
+  "independentResidualM": null,
+  "scope": "二点位置合わせによる地域代表位置。100mは図記号と基準点の範囲を含めた読取幅の目安で、第三点検証による誤差保証ではない。縄張線・隊間隔・進撃路の測量には使わない。"
+}
