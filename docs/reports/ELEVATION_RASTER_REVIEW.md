@@ -63,3 +63,22 @@
 地図画面でも新規1560年シナリオから近畿と朝鮮を表示し、カメラ倍率0.6→5→0.6を実行した。両地域で詳細タイルの読込中から完了への切替を観測し、縮小後の最初の描画で粗いタイルが読込済みだった。6画面を取得し、朝鮮詳細画面では河川、街道、陰影の重なりを目視確認した。JavaScript例外0。統合側のローカルHTMLを使用し、地図のカメラAPIで操作した。マウスホイール入力とフレーム時間は測定対象に含めていない。
 
 統合コミット `beecd46` の配布用WebPを再検査するには、Pillow（WebP対応）のある環境で `python3 tools/checks/relief-webp.py <統合側のgame/map> <生成ディレクトリ>` を実行する。3縮尺のタイル一覧、元PNGとWebPのハッシュ、寸法、透明度の全画素を照合する。統合版の310・32・9枚で通過した。
+
+### 生成と配布の担当境界
+
+標高・陰影の生成器と独立検査は Codex 側、配布用WebPへの変換器と描画の接続は統合側にある。統合側の `838d5ee` に変換器 `tools/map/encode-relief-webp.cjs` が入った。再生成時は同じ格子マニフェストを3縮尺で共有し、検証済み入力の `SHA256SUMS` と取得日を引き継ぐ。
+
+以下は生成器と検査がそろった作業ツリーでの手順。先に `map_dir` を統合側の `game/map`、`dem_input` を取得済みGeoTIFFのディレクトリに設定する。PythonにはPillowとNumPyが必要。
+
+```sh
+shade_root="$(mktemp -d)"
+for factor in 1 4 8; do
+  python3 tools/map/build-copernicus-height.py "$map_dir/manifest.json" \
+    "$dem_input" "$shade_root/height-$factor" --acquired 2026-11-03 --factor "$factor" &&
+  python3 tools/map/build-hillshade-raster.py "$map_dir/manifest.json" \
+    "$shade_root/height-$factor" "$shade_root/shade-$factor" || break
+done
+python3 tools/checks/elevation-coverage.py "$map_dir" "$shade_root"
+```
+
+カバレッジ検査を通過した出力を、変換器を含む専用の作業ツリーで `SHADE_ROOT="$shade_root" node tools/map/encode-relief-webp.cjs` に渡す。変換器は自分の作業ツリーの `game/map` に書き込む。初版の変換器は既存画像のディレクトリを先に消すため、配信中の作業ツリーで実行しない。変換先の `game/map` を引数にして `python3 tools/checks/relief-webp.py <変換先のgame/map> "$shade_root"` を通し、全縮尺の格子・出典情報と全タイルの一致を確認してから配布する。
