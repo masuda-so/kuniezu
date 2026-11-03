@@ -166,12 +166,12 @@ function clampCam(){const c=vc(),CW=CONT.x1-CONT.x0,CH=CONT.y1-CONT.y0;
  // 範囲の外（正本の画像の外）は見せない。非対称のパネル配置でも背景を画面全体へ収め、各端は画面原点からの距離で制限する。
  cam.x=Math.max(CONT.x0+c[0]/cam.z,Math.min(CONT.x1-(VW-c[0])/cam.z,cam.x));
  cam.y=Math.max(CONT.y0+c[1]/cam.z,Math.min(CONT.y1-(VH-c[1])/cam.z,cam.y));U.baseDirty=true;syncZoomControl();}
-const CONT={x0:-1014.1,x1:2688.7,y0:-755.3,y1:3459.7};
+const CONT={x0:-1045,x1:3163.7675,y0:-761.604,y1:3459.7398};
 // 地図の表示範囲は正本の画像（game/map_data/provinces.png）が覆う範囲に合わせる。読み込むまでは上の値（画像を作った時の基準）。
 // 遼陽など西端・北端に近い所も、最大倍率で年表の外に出せる。
 function syncContToSource(){const b=window.TKRaster?.bounds?.();if(!b||CONT.x0===b.x0&&CONT.y0===b.y0&&CONT.x1===b.x1&&CONT.y1===b.y1)return;Object.assign(CONT,b);if(VW>0&&VH>0)clampCam();}
-// 表示範囲の基準（docs/architecture/raster-map.md）：西＝与那国島（国土地理院の最西端、東経122°55′57″）、北＝宗谷岬（北緯45°31′35″）、
-// 東＝納沙布岬（東経145°49′01″）、南＝与那国島の緯度（北緯24°27′05″）。左下の角を国土地理院の最西端（与那国島）にそろえ、琉球諸島を入れる。朝鮮・明が絡むため西は国土地理院の端を使う。
+// 表示範囲の基準（docs/architecture/raster-map.md、2026-11-04 改定）：右上の角＝国土地理院の日本の最北端（択捉島カモイワッカ岬、北緯45°33′26″・東経148°45′08″）、
+// 南＝与那国島の緯度、西＝正本の画像の西端（与那国島の西）。表示の範囲と正本の画像の範囲は同じ（syncContToSource で合わせる）。
 function syncZoomControl(){const nav=$('#mapZoom');if(nav)nav.hidden=U.mode==='title';const el=$('#mapZoomRange');if(!el)return;const min=Math.max(VW/(CONT.x1-CONT.x0),VH/(CONT.y1-CONT.y0));el.value=Math.round(Math.log(cam.z/min)/Math.log(MAXZ/min)*100);el.setAttribute('aria-valuetext',Math.round(cam.z/min*100)+'%');}
 function setMapZoom(z){anim=null;beginZoom();cam.z=z;clampCam();tip(null);}
 // 全域は表示範囲 CONT の中心を画面の中心に合わせる（パネルの偏りを見込む。最小の倍率で範囲が画面全体を覆う。端へ寄せられるのは拡大した時）。

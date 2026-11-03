@@ -1,0 +1,229 @@
+{
+  "gridSha256": "52b50c7bbce70a22500f08c362f899d21e0ceaabc797405a4ac875aa24bcb616",
+  "elevationManifestSha256": "25518ce583f81de5f5edcacce54d6d2830dcf1740281a4c913339ef3a9fbd55a",
+  "source": "https://dataspace.copernicus.eu/explore-data/data-collections/copernicus-contributing-missions/collections-description/COP-DEM",
+  "factor": 4,
+  "format": "RGBA8",
+  "noDataAlpha": 0,
+  "shading": "northwest light, one-pixel neighbour halo",
+  "tiles": [
+    {
+      "file": "0-0.png",
+      "col": 0,
+      "row": 0,
+      "sha256": "1185600be1f97a5b2a556c1d274f632f8c7b48308fcf5bf8d357847603de5b7a",
+      "pixelSha256": "e40b17a998432f39c9e92ffebda99c463e4fec7a39e4a8bc2fc5c95c0db69796"
+    },
+    {
+      "file": "1-0.png",
+      "col": 1,
+      "row": 0,
+      "sha256": "c0bec73bff2e4683f27e7fc8048a9da4ea3310e7b29a02a85bf545eac2d0054a",
+      "pixelSha256": "cea9e7eb703b7c661feba642679a4e04cebc59c5c167da5851375be6ccbad197"
+    },
+    {
+      "file": "2-0.png",
+      "col": 2,
+      "row": 0,
+      "sha256": "f66f4ed63d59ff8e937fc9a957d6796c3e18c85aef232eb5a4e996edf21998c6",
+      "pixelSha256": "0215c6b7f4028eccaf3e3e3af22d4bf3f12911b5811cd3d7aec31f318a094c9f"
+    },
+    {
+      "file": "3-0.png",
+      "col": 3,
+      "row": 0,
+      "sha256": "f961e30019a0abc92bce79e0e71bd8bf39a96725c6f760badb3f3d94e88fc964",
+      "pixelSha256": "9fc0123ee73300af5f24ac6b414bfeb9514512507d7d4b11e1a91f8225fc2629"
+    },
+    {
+      "file": "4-0.png",
+      "col": 4,
+      "row": 0,
+      "sha256": "394af7f6b17d49bb818d2d39b8dd0ac47f75ee60956438aeeaf3091dac241775",
+      "pixelSha256": "865dc5a7dcf3fa9bed2b765a4cf81420f0a7f003bd173f4feb3c5cc52f299f77"
+    },
+    {
+      "file": "5-0.png",
+      "col": 5,
+      "row": 0,
+      "sha256": "0392e540c6a946924e8788b3e7142c1e855a94b8336014cc4ae4c39baad44b4e",
+      "pixelSha256": "de0ec9396e9934a17a31053c5407e6a6018bb66277a9be0be64d40712bb17bde"
+    },
+    {
+      "file": "0-1.png",
+      "col": 0,
+      "row": 1,
+      "sha256": "5b74eeea40ba4d7f65924d1eb7f382eb59331a316af03c31b11db2f6babb3a09",
+      "pixelSha256": "a069b3cd215e6b57820ab2133931a9bb6375601284e63374b41ec0719d2f7512"
+    },
+    {
+      "file": "1-1.png",
+      "col": 1,
+      "row": 1,
+      "sha256": "b6457abfa5b7da1d3afc42eb7291cf6eeb65f93f7c0bfc34c314330b45348220",
+      "pixelSha256": "14ff2ae6028008b42ab82ab42d9a56aee6ca1ce888f2a9232a83098136d994e5"
+    },
+    {
+      "file": "3-1.png",
+      "col": 3,
+      "row": 1,
+      "sha256": "c68c579716fa00d84ac7261dd327175d2a42369bfe8d852187c9681d6a9224a7",
+      "pixelSha256": "3a452f8664bee129b0d0350de3e810a18cbceb93bb2329225db09f9b9dbad2a8"
+    },
+    {
+      "file": "4-1.png",
+      "col": 4,
+      "row": 1,
+      "sha256": "70be992e329c806b242e94dfff6d6f71081b61171536654f5311321c9f7ba7bf",
+      "pixelSha256": "af7309c34b5ed18edc304c209cf54081d0971b1e0c80138f3c68ddd1e86e76c8"
+    },
+    {
+      "file": "0-2.png",
+      "col": 0,
+      "row": 2,
+      "sha256": "bb2e5c1cee29356f2027c296f95477d00c93a7632c60f2a6f3209922086fecd8",
+      "pixelSha256": "678406c0d1e316a57efa584015752e6c6083aab55fd2dc0bd3eadbba4b645f42"
+    },
+    {
+      "file": "1-2.png",
+      "col": 1,
+      "row": 2,
+      "sha256": "0160624e544ad617fce908ae3f2f0dd459006262f5e98f17f524d537affc1bb1",
+      "pixelSha256": "115bdf9d3fe8d55302f8d84cdf3eb3004991d954dbdc7173a4f6f3395b37be20"
+    },
+    {
+      "file": "2-2.png",
+      "col": 2,
+      "row": 2,
+      "sha256": "554eb71b90e1c0b1d8831327300e3ae22c6cf166c43120caa2e0329b5130f1f6",
+      "pixelSha256": "a2a6c34a82ee0e6cebde918374b1b0ac1197665f2beb703d0a1214722db1b607"
+    },
+    {
+      "file": "3-2.png",
+      "col": 3,
+      "row": 2,
+      "sha256": "50d762999dec98aefb1994187587f71584aebd2576d8d6e040b8d96c18c0a5e3",
+      "pixelSha256": "064a6331ca29d8a44094eee8b89d13daa3eb7f07cf512e0dd85a9c3b0bb741db"
+    },
+    {
+      "file": "4-2.png",
+      "col": 4,
+      "row": 2,
+      "sha256": "a90a2e73e828192827decd6beaa542bf36fb5da4b4a6cef1b25af3cf5330ed83",
+      "pixelSha256": "7c0c26ea041229ddcccf6d86522a78af7715ccb256856b560c65a680292d09ba"
+    },
+    {
+      "file": "0-3.png",
+      "col": 0,
+      "row": 3,
+      "sha256": "e38be758dfe4df73efeb6d5a4ffe4019ec5dfb95752aa37ec4adc52efc60e4c6",
+      "pixelSha256": "d6dfa28be9327e73096b3b7b14a9d73746b1bc685fef8549a4580c31add17879"
+    },
+    {
+      "file": "1-3.png",
+      "col": 1,
+      "row": 3,
+      "sha256": "c290d36edf1094c7ba7f08895590391dd5bd17cebe4538025b3efe2ac82ce030",
+      "pixelSha256": "baf3c228c779b0fa8bb04899cb6f420b97ad3e5c4ae0ae7405260745e5cf6680"
+    },
+    {
+      "file": "2-3.png",
+      "col": 2,
+      "row": 3,
+      "sha256": "df54d6cac99c2070f15f9a5af2081624640d82390ca408904f7c92108cad5c26",
+      "pixelSha256": "8765f856b25d31c14a2945779e867bdff3fa0309bff0bd5ad0133f3e603020bf"
+    },
+    {
+      "file": "3-3.png",
+      "col": 3,
+      "row": 3,
+      "sha256": "fac79ed30eb94e08f66ae5d6132d637c46e172b1ed5d14d5b7903fc18e59a663",
+      "pixelSha256": "aaf810b315970b0bd0edbc674b47bac3abff2c15db949b35fd345e50e615a0b3"
+    },
+    {
+      "file": "4-3.png",
+      "col": 4,
+      "row": 3,
+      "sha256": "83bcd955b86a002d8196c4dfaa6664a25d0a091d3faa4013f82db8c90daeb62f",
+      "pixelSha256": "5baeb5719f91d9e2afde85c289ba064facd2edb0789fb343a0fd273b3b0d2c95"
+    },
+    {
+      "file": "0-4.png",
+      "col": 0,
+      "row": 4,
+      "sha256": "9b3640fa941684dbe79f0d18980d86c735e5676fbac63bfba135b8c8aa467ece",
+      "pixelSha256": "e98572c4f76e4aef0a39a3282abbe8ab7d8e46dad0b368463bf149b82ad2807f"
+    },
+    {
+      "file": "1-4.png",
+      "col": 1,
+      "row": 4,
+      "sha256": "c06be89c7d3f7e173d848ad4a220693f88bc5608269dc35a1ab9ddac88617990",
+      "pixelSha256": "3a668748ab4e6f31a72b1eda6b1248b7855ab8890ce933a72dbdd8eb349c7912"
+    },
+    {
+      "file": "2-4.png",
+      "col": 2,
+      "row": 4,
+      "sha256": "1fad9984dc2b98712ce78b38c5f9dc2af73c3ba6bf0deeafaedef7964c6faed4",
+      "pixelSha256": "7a734c8b762ab2e5b4ef139fa17bf30e467ea4197a0a23bfb45aa3d5ee02652b"
+    },
+    {
+      "file": "3-4.png",
+      "col": 3,
+      "row": 4,
+      "sha256": "00056e296dd48222e0426da10b6dcb372ca232f348a90d4a9ae7779fa5895934",
+      "pixelSha256": "d8782d422b42990da9c84f6157ef9d0e2dc9355a991e0cb8fc15f218b241d26f"
+    },
+    {
+      "file": "4-4.png",
+      "col": 4,
+      "row": 4,
+      "sha256": "72a1ab52440b6a3b43d56b8dab43e81153056e70251086fe278b4e1729cfc178",
+      "pixelSha256": "cdeeff24bc90f224934fa56256785d5148556a69cde679dcfa1e70282f6d959a"
+    },
+    {
+      "file": "0-5.png",
+      "col": 0,
+      "row": 5,
+      "sha256": "27519bb04ba47fa5f48d3cb78a45f19c62f5dbaf5ffa5a8921259b47810b701e",
+      "pixelSha256": "b663714a68b6d1b30faa2c7a6be164da3ad05cf1db67171767a3dd03a08d745a"
+    },
+    {
+      "file": "1-5.png",
+      "col": 1,
+      "row": 5,
+      "sha256": "140f962cb4b695670af9ec8132c08047041db280637693e408919d6c766f6475",
+      "pixelSha256": "3ab5d8167547a6df4642889c34598ccddf8d968988e7e784bc6013e255e65fef"
+    },
+    {
+      "file": "2-5.png",
+      "col": 2,
+      "row": 5,
+      "sha256": "831ccbc1f8658c83ac82a16159ab57f83a86206611636ec500e43d0a7a926d95",
+      "pixelSha256": "a9c20d7a105b3aff7a32de4bf4c6b2034e7b9c03d3327a84545f7cf3d16dff79"
+    },
+    {
+      "file": "3-5.png",
+      "col": 3,
+      "row": 5,
+      "sha256": "86eaafb690807a5b24bf2c0d9cc5cb005b34c3d46d59423e90ad2b89bdf37180",
+      "pixelSha256": "2b44eeaaab8ee872bf4d363d20a9a3783fbaabb32b68306dcae50220f6d8dd13"
+    },
+    {
+      "file": "4-5.png",
+      "col": 4,
+      "row": 5,
+      "sha256": "2095819a54e3c9f20a021bfb54f875ff51132d8aa7f71f4a263f62341b477dd8",
+      "pixelSha256": "5bccee38ce88054211eb6adafd23b77fd901e343a68b29bca1a18623c3e4f730"
+    }
+  ],
+  "product": "COP-DEM-GLO-90-F",
+  "acquired": "2026-11-04",
+  "license": "https://dataspace.copernicus.eu/sites/default/files/media/files/2025-06/copernicus_contributing_mission_data_access_v2_cop_dem_licenses.pdf",
+  "notice": "produced using Copernicus WorldDEM™-90 © DLR e.V. 2010-2014 and © Airbus Defence and Space GmbH 2014-2018 provided under COPERNICUS by the European Union and ESA; all rights reserved",
+  "disclaimer": "The organisations in charge of the Copernicus programme by law or by delegation do not incur any liability for any use of the Copernicus WorldDEM™-90",
+  "sourceHeightmapSha256": "3bb8db76cec10966510373e582cac2ad7a3a92e2d7aca636f27b9599cfaf7ca2",
+  "sourceHeightmapMetadataSha256": "8cf27b5522bcf42d77b85f90e7a3f078ac6e5691a63b9c0e30a299b8de670491",
+  "projectionSha256": "3576c5ceb1fc809ac06f538f14dd8be842f343fc18e374edcbdbc8bb4d9e8cee"
+}

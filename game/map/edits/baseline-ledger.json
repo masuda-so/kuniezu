@@ -1,7 +1,7 @@
 {
   "baselineCommit": "liaodong-1560-source-v1",
   "source": "game/map_data（provinces.png・definition.csv・default.map・projection.json）",
-  "sourceSha256": "9e27144aa9c953299567fd3719d3ad413ea1f496ad03a097e1e25b2c6eb1a03d",
+  "sourceSha256": "00715e4aece451dcc8a92c32b11dd2da06fa7411abd17eb359979faa210e0ab0",
   "note": "1560年正本。児島湾補正を保持し、遼東の軍政域参考図を未割当/旧明だけへ適用。1573〜1605寛甸と1584年以後宇喜多堤は年代差分。軍政域参考線を精密国境・実効支配・軍の所属には転用しない。",
   "applied": [
     {
@@ -214,5 +214,9 @@
         "castle:sogo": -3
       }
     }
-  ]
+  ],
+  "previousSourceSha256": [
+    "9e27144aa9c953299567fd3719d3ad413ea1f496ad03a097e1e25b2c6eb1a03d"
+  ],
+  "regrid2026_11_04": "範囲の作り直し（tools/map/regrid-extent-2026-11-04.cjs）：北の陸の無い帯を792行削り、東に2,644列を足して右上の角を択捉島にした。千島と北端の帯の陸は Copernicus DEM から足した未割当の陸。既存の画素の区画は変えていない。年代別の差分の型紙の窓は行を792ずらした。"
 }

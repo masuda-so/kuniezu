@@ -1,5 +1,5 @@
 {
-  "gridSha256": "b2a9421197ded4b08b522c40a9fd2472bacac517166dc3d30a3fab64e6bd303f",
+  "gridSha256": "52b50c7bbce70a22500f08c362f899d21e0ceaabc797405a4ac875aa24bcb616",
   "factor": 1,
   "projection": {
     "K": 200,
@@ -8,23 +8,23 @@
     "LAT0": 41.75,
     "origin": [
       -1045,
-      -903.8965145526411
+      -761.604024434064
     ],
     "stepUnits": 0.17966223499820339,
     "stepMetres": 100
   },
-  "width": 20782,
-  "height": 24288,
+  "width": 23426,
+  "height": 23496,
   "encoding": {
     "noData": 0,
     "offsetMetres": -500,
     "codesPerMetre": 4,
     "decode": "offsetMetres + (code - 1) / codesPerMetre"
   },
-  "projectionSha256": "04bd30868c1f5a9420b308d318d606a95d1158c23a8e6f18b3f7ecfe6b01466a",
+  "projectionSha256": "3576c5ceb1fc809ac06f538f14dd8be842f343fc18e374edcbdbc8bb4d9e8cee",
   "source": "https://dataspace.copernicus.eu/explore-data/data-collections/copernicus-contributing-missions/collections-description/COP-DEM",
   "product": "COP-DEM-GLO-90-F",
-  "acquired": "2026-11-03",
+  "acquired": "2026-11-04",
   "license": "https://dataspace.copernicus.eu/sites/default/files/media/files/2025-06/copernicus_contributing_mission_data_access_v2_cop_dem_licenses.pdf",
   "notice": "produced using Copernicus WorldDEM™-90 © DLR e.V. 2010-2014 and © Airbus Defence and Space GmbH 2014-2018 provided under COPERNICUS by the European Union and ESA; all rights reserved",
   "disclaimer": "The organisations in charge of the Copernicus programme by law or by delegation do not incur any liability for any use of the Copernicus WorldDEM™-90",
@@ -267,15 +267,20 @@
     "Copernicus_DSM_COG_30_N45_00_E137_00_DEM.tif": "ed9653bd55ed95e2b0c14721bc77713c22a3b5ea9cfb68d37cd1594bf3ec2a43",
     "Copernicus_DSM_COG_30_N45_00_E140_00_DEM.tif": "2a8386e33962b68417dd8bb2a6a8469e40e826922599d5099f0669356b6965c9",
     "Copernicus_DSM_COG_30_N45_00_E141_00_DEM.tif": "855f83d04125c20c45594593a7db1724164ccb7f5af3513eeae7f7d831b773e2",
-    "Copernicus_DSM_COG_30_N45_00_E142_00_DEM.tif": "5dee8a91334a24d47b2f1a0fcde82428525a3e4b88986d110167d6475149fc55"
+    "Copernicus_DSM_COG_30_N45_00_E142_00_DEM.tif": "5dee8a91334a24d47b2f1a0fcde82428525a3e4b88986d110167d6475149fc55",
+    "Copernicus_DSM_COG_30_N43_00_E146_00_DEM.tif": "f53ef6f6fd1764d7ae6106aa7951502994c16d2a16069bada771972d131a654b",
+    "Copernicus_DSM_COG_30_N44_00_E146_00_DEM.tif": "67f2570f01a0794c286ae0879198acd42834cc2b517ac3ecf58003605540a3b4",
+    "Copernicus_DSM_COG_30_N44_00_E147_00_DEM.tif": "3bfb8120d808baccdb8953936ff95990e5d7f74b7ca0257ec7a9a7dc7e31493d",
+    "Copernicus_DSM_COG_30_N45_00_E147_00_DEM.tif": "9d626c4ea17fafb6a82cd2e154899813d83d5eacf53b1fc1ce08aa6bca8fd383",
+    "Copernicus_DSM_COG_30_N45_00_E148_00_DEM.tif": "d231fa13350a1ac902e17d2cabbd8d541d211087809f1f614f089acb592c6c33"
   },
-  "inputChecksumsSha256": "61d3bcc4172ac459de1b8ea34308824a4d12b8f834a0ae2f4b4ae12e31359806",
+  "inputChecksumsSha256": "3f360284286cba977f59624f451d444e4a5049d62ea47ec2dada16ab35e9803a",
   "resampling": "nearest point in containing one-degree input footprint",
   "kind": "elevation-master",
   "schemaVersion": 1,
   "file": "heightmap.png",
-  "sha256": "14d112e468c2e75b7d16c11376f19111c183a62cd9f7d3144cc1396fcd71befe",
-  "bytes": 149955254,
+  "sha256": "3bb8db76cec10966510373e582cac2ad7a3a92e2d7aca636f27b9599cfaf7ca2",
+  "bytes": 144456289,
   "png": {
     "colorType": 0,
     "bitDepth": 16,
@@ -290,15 +295,15 @@
     "bandRows": 128,
     "sourceCacheTiles": 24
   },
-  "validPixels": 225529885,
-  "noDataPixels": 279223331,
+  "validPixels": 221978209,
+  "noDataPixels": 328439087,
   "minCode": 693,
   "maxCode": 16945,
   "scanlineFilterCounts": {
-    "0": 300,
+    "0": 0,
     "1": 179,
     "2": 4237,
     "3": 1,
-    "4": 19571
+    "4": 19079
   }
 }
