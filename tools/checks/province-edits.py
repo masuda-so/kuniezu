@@ -1,4 +1,5 @@
 """Exercise edit compilation against a tiny raster, including negative cases."""
+from datetime import date
 import importlib.util
 import json
 import tempfile
@@ -34,6 +35,8 @@ with tempfile.TemporaryDirectory() as folder:
     compiler.EDITS = edits
     write(base / "manifest.json", {
         "width": 2, "height": 2, "tile": 1, "tiles": [],
+        "levels": [{"factor": f, "dir": f"provinces-{f}", "width": 1, "height": 1, "tiles": []}
+                   for f in (4, 8)],
         "projection": {"origin": [0, 0], "stepUnits": 1, "K": 1, "CX": 1, "LON0": 0, "LAT0": 0},
     })
     definition = base / "definition.csv"
@@ -57,6 +60,27 @@ with tempfile.TemporaryDirectory() as folder:
     with Image.open(root / "good/provinces/0-0@15600101-16160101.png") as tile:
         assert tile.getpixel((0, 0)) == (1, 2, 3)
     assert compiler.build(base, root / "expired", 1616) == {}
+
+    # The last coarse cell samples the clamped fine-grid centre at (1, 1).
+    write(root / "corner.geojson", {"features": [{"geometry": {
+        "type": "Polygon", "coordinates": [[[1, -1], [2, -1], [2, -2], [1, -2], [1, -1]]],
+    }}]})
+    transition = {**edit, "validFrom": [1600, 9, 15], "validUntil": [1600, 9, 17],
+                  "payload": {**edit["payload"], "file": "../corner.geojson"}}
+    write(primary, transition)
+    assert compiler.build(base, root / "pre-transition", date(1600, 9, 14)) == {}
+    active = root / "transition"
+    assert compiler.build(base, active, date(1600, 9, 15)) == {"one": 1}
+    generated = compiler.read_json(active / "manifest.json")
+    assert [entry["factor"] for entry in generated["tiles"]] == [1, 4, 8]
+    assert generated["versions"][0]["period"] == [[1600, 9, 15], [1600, 9, 17]]
+    for tile in generated["tiles"]:
+        assert tile["period"] == generated["versions"][0]["period"]
+        assert compiler.digest(active / tile["file"]) == tile["sha256"]
+        with Image.open(active / tile["file"]) as png:
+            assert png.getpixel((0, 0)) == (1, 2, 3)
+    assert compiler.build(base, root / "post-transition", date(1600, 9, 17)) == {}
+    write(primary, edit)
 
     write(secondary, {**edit, "id": "two"})
     rejected(base, root / "overlap", "Overlapping edits")
