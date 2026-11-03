@@ -1,0 +1,16 @@
+{
+  "id": "sagara-kuma-confirmation",
+  "entity": "person:相良頼房",
+  "predicate": "territory-confirmation",
+  "value": {"date": [1587, 5, 30], "calendar": "和暦", "issuer": "豊臣秀吉", "territory": "球磨郡"},
+  "validYears": [1587, 1587],
+  "datePrecision": "day",
+  "source": "sagaraKumaConfirmation",
+  "sourceUrl": "https://dcollections.lib.keio.ac.jp/en/sagara/003-077",
+  "locator": "相良家文書 寅77、年月日・差出・宛先",
+  "gameBindings": ["timeline:相良氏の球磨郡安堵", "node:hitoyoshi"],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-03",
+  "uncertainty": "朱印状の日付。個々の郡境や人吉城の軍事占拠、島津への服属日はこの史料の確認範囲外。"
+}
