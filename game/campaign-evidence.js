@@ -25,10 +25,15 @@ const dt=(y,m,d)=>TK.lunarDate(y,m,d),end=title=>TK.HIST.find(e=>e.title===title
 src.makishimaMapPoint={author:'CODH',title:'日本歴史地名大系 施設・地点項目データセット（doi:10.20676/00000456）',url:'https://geoshape.ex.nii.ac.jp/nrct-poi/resource/26/260000075700.html',locator:'槇島城跡 260000075700',scope:'真木島での陣地そのものではなく槇島城跡の代表点。CC BY 4.0。'};
 const records=[
  {id:'shigisan-nobutada',title:'信貴山城の戦い',clan:'oda',names:['織田信忠'],troops:0,
-  from:'kannonji',to:'yamato',start:dt(1577,10,1),end:dt(1577,10,10),roadStops:true,
-  stops:[[dt(1577,10,1),136.139,35.155],[dt(1577,10,2),135.797342,34.897606],[dt(1577,10,3),135.67871,34.616335]],
+  from:'kannonji',to:'yamato',start:dt(1577,10,1),end:dt(1577,10,17),roadStops:true,
+  siege:[dt(1577,10,3),dt(1577,10,11)],returnDestination:'岐阜城（二条妙覚寺・安土経由）',
+  stops:[
+   [dt(1577,10,1),136.139,35.155],[dt(1577,10,2),135.797342,34.897606],
+   [dt(1577,10,3),135.67871,34.616335],[dt(1577,10,11),135.67871,34.616335],
+   [dt(1577,10,12),135.757,35.011],[dt(1577,10,15),136.139,35.155],[dt(1577,10,17),136.74,35.45]
+  ],
   source:['shigisanChronicle','makishimaMapPoint','shigisan'],
-  note:'安土から出発し、真木島を経て信貴山を包囲。地点間は参考経路。山岡美作の宿泊地点と城外の陣地は特定していない。',
+  note:'安土から真木島を経て信貴山を包囲。落城後は京都・安土を経て岐阜へ帰陣。地点間と11日の移動開始は参考表示。',
   originName:'安土',destination:'信貴山城方面'},
 
  {id:'motoyasu',title:'松平元康、岡崎に入る',clan:'imagawa',names:['松平元康'],troops:0,from:'okazaki',to:'okazaki',start:dt(1560,5,18),end:dt(1560,5,23),depart:dt(1560,5,19),track:[[136.94,35.07],[137.1626,34.982],[137.1589,34.9563]],source:['ieyasuReturn','ieyasuDates'],note:'大高→大樹寺→岡崎の順序を表示。大高の在陣開始日は合戦前日の表示用仮置き。大樹寺の入寺日・間道と兵数は未確定。移動線は地点を結ぶ概略。',destination:'岡崎城（大高城・大樹寺を経る）'},
@@ -49,11 +54,16 @@ function position(r,t){const proj=p=>G.PJ(...p);if(r.point)return [...proj(r.poi
  const points=r.track.map(proj),p=Math.max(0,Math.min(1,(t-G.evT({d:r.depart}))/Math.max(1,G.evT({d:r.end})-G.evT({d:r.depart}))));
  const ls=points.slice(1).map((v,i)=>Math.hypot(v[0]-points[i][0],v[1]-points[i][1]));let d=p*ls.reduce((a,b)=>a+b,0),i=0;while(i<ls.length-1&&d>ls[i])d-=ls[i++];const a=points[i],b=points[i+1],f=d/(ls[i]||1);return [a[0]+(b[0]-a[0])*f,a[1]+(b[1]-a[1])*f,Math.atan2(b[1]-a[1],b[0]-a[0])];
 }
-G.documentedArmies=function(){const s=G.S();return records.filter(r=>s.t>=G.evT({d:r.start})&&s.t<=G.evT({d:r.end})).map(r=>({id:'documented:'+r.id,clan:r.id==='motoyasu'&&s.clans.tokugawa?.alive?'tokugawa':r.clan,gens:[],commanders:r.names,troops:r.troops,troops0:r.troops,morale:85,train:70,food:1,path:[r.from,r.to],seg:0,pos:0,state:r.point||(r.depart&&s.t<G.evT({d:r.depart}))?'camp':r.stops&&s.t>=G.evT({d:r.stops.at(-1)[0]})?'camp':'march',mission:'show',hist:true,origin:r.from,until:r.title,routeNote:r.note,record:r}));};
+function recordState(r,t){
+ if(r.siege&&t>=G.evT({d:r.siege[0]})&&t<G.evT({d:r.siege[1]}))return 'camp';
+ if(r.siege&&t>=G.evT({d:r.siege[1]})&&t<G.evT({d:r.end}))return 'return';
+ return r.point||r.depart&&t<G.evT({d:r.depart})||r.stops&&t>=G.evT({d:r.stops.at(-1)[0]})?'camp':'march';
+}
+G.documentedArmies=function(){const s=G.S();return records.filter(r=>s.t>=G.evT({d:r.start})&&s.t<=G.evT({d:r.end})).map(r=>({id:'documented:'+r.id,clan:r.id==='motoyasu'&&s.clans.tokugawa?.alive?'tokugawa':r.clan,gens:[],commanders:r.names,troops:r.troops,troops0:r.troops,morale:85,train:70,food:1,path:[r.from,r.to],seg:0,pos:0,state:recordState(r,s.t),mission:'show',hist:true,origin:r.from,until:r.title,routeNote:r.note,record:r}));};
 const hp=G.historyPoint,geom=G.historyGeometry,dest=G.marchDestination;
 G.historyPoint=u=>u.record?position(u.record,u.record.roadStops?G.visualTime():G.S().t):hp(u);
 G.historyGeometry=u=>u.record?u.record.roadStops?u.record.stops.slice(1).flatMap((_,i)=>roadLeg(u.record,i).slice(i?1:0)):u.record.point?null:(u.record.track||u.record.stops.map(x=>x.slice(1))).map(p=>G.PJ(...p)):geom(u);
-G.marchDestination=u=>u.record?u.record.destination:dest(u);
+G.marchDestination=u=>u.record?(u.record.siege&&G.S().t>=G.evT({d:u.record.siege[1]})?u.record.returnDestination:u.record.destination):dest(u);
 G.documentedPerson=n=>n==='松平元康'&&G.documentedArmies().some(u=>u.record.id==='motoyasu');
 G.visibleNativeArmies=()=>G.S().units.filter(u=>!u.gens.length||!u.gens.every(id=>G.documentedPerson(G.gen(id)?.n)));
 const castleGens=G.castleGens;G.castleGens=id=>castleGens(id).filter(g=>!G.documentedPerson(g.n));
