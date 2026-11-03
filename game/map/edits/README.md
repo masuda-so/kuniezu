@@ -61,3 +61,13 @@ python3 tools/map/build-province-edits.py /path/to/baseline/game/map /tmp/provin
 [早島の生成結果](compiled/15600101-16160101/manifest.json)は、100mの9画素だけが変わった例。400m・800mの画素中心は丘陵に当たらないため、この2段の差し替えはない。縮尺により省かれる小地形と、年代差分が存在しない状態は別。粗い段だけで小島の当たり判定を確定しない。
 
 このマニフェストは差分の受け渡し用。共有版に載せる際は `factor` ごとに既存マニフェストの `tiles` または `levels[].tiles` へ追加し、`file` は対象ディレクトリからのファイル名へ正規化する。基準版のタイル行は残す。
+
+### 早島の適用前後を比較
+
+```sh
+python3 tools/map/audit-raster-adjacency.py /path/to/baseline/game/map
+python3 tools/map/audit-raster-adjacency.py /path/to/baseline/game/map \
+  --overlay game/map/edits/compiled/15600101-16160101
+```
+
+基準版と適用後の `fourNeighbourPairHash` および `eightNeighbourPairHash` はいずれも `72e0703ecb4b1655ccbb86b3fb3b707f62c2de85ecb5d0c944e5052fa797d2e0`。100mで1タイルを置換し、`sea` は9画素減、`castle:bmatsuyama` は9画素増。組数だけでなく隣接するIDの組が一致する。比較には同一基準版のID表を使う。監査は100mの合成結果を対象とし、ブラウザによるタイル選択や描画は別途確認する。

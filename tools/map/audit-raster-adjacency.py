@@ -1,6 +1,7 @@
 """Audit region adjacency from lossless raster tiles, including tile seams."""
 import argparse
 import csv
+import hashlib
 import json
 from pathlib import Path
 
@@ -8,7 +9,7 @@ import numpy as np
 from PIL import Image
 
 
-def audit(root):
+def audit(root, overlay=None):
     manifest = json.loads((root / "manifest.json").read_text(encoding="utf-8"))
     with (root / "definition.csv").open(encoding="utf-8", newline="") as stream:
         rows = list(csv.DictReader(stream, delimiter=";"))
@@ -20,13 +21,34 @@ def audit(root):
         codes[(r << 16) | (g << 8) | b] = identifier
     tiles = {(t["col"], t["row"]): t for t in manifest["tiles"]}
     size, width, height = (manifest[k] for k in ("tile", "width", "height"))
+    overrides = {}
+    if overlay:
+        edits = json.loads((overlay / "manifest.json").read_text(encoding="utf-8"))
+        for tile in edits["tiles"]:
+            if tile["factor"] != 1:
+                continue
+            key = tile["col"], tile["row"]
+            if key in overrides or not (0 <= key[0] * size < width and 0 <= key[1] * size < height):
+                raise ValueError(f"Invalid override location: {key}")
+            overrides[key] = tile
     stride = max(ids) + 1
     land = np.zeros(stride, dtype=bool)
     for identifier, row in ids.items():
         land[identifier] = row["key"].startswith(("castle:", "neutral:"))
     cardinal, diagonal = set(), set()
     pixel_counts = np.zeros(stride, dtype=np.int64)
+    delta = np.zeros_like(pixel_counts)
     previous = None
+
+    def read_pixels(path, expected):
+        with Image.open(path) as image:
+            rgb = np.asarray(image.convert("RGB"), dtype=np.int32)
+        if rgb.shape[:2] != expected:
+            raise ValueError(f"Unexpected dimensions for {path}")
+        pixels = codes[(rgb[:, :, 0] << 16) | (rgb[:, :, 1] << 8) | rgb[:, :, 2]]
+        if (pixels < 0).any():
+            raise ValueError(f"Undefined color in {path}")
+        return pixels
 
     def add_pairs(left, right, target):
         different = (left != right) & land[left] & land[right]
@@ -37,16 +59,20 @@ def audit(root):
         band = np.full((min(size, height - row * size), width), sea, dtype=np.int32)
         for col in range((width + size - 1) // size):
             tile = tiles.get((col, row))
-            if not tile:
+            override = overrides.get((col, row))
+            if not tile and not override:
                 continue
-            with Image.open(root / "provinces" / tile["file"]) as image:
-                rgb = np.asarray(image.convert("RGB"), dtype=np.int32)
             expected = (band.shape[0], min(size, width - col * size))
-            if rgb.shape[:2] != expected:
-                raise ValueError(f"Unexpected dimensions for {tile['file']}")
-            pixels = codes[(rgb[:, :, 0] << 16) | (rgb[:, :, 1] << 8) | rgb[:, :, 2]]
-            if (pixels < 0).any():
-                raise ValueError(f"Undefined color in {tile['file']}")
+            pixels = (read_pixels(root / "provinces" / tile["file"], expected)
+                      if tile else np.full(expected, sea, dtype=np.int32))
+            if override:
+                path = overlay / override["file"]
+                if hashlib.sha256(path.read_bytes()).hexdigest() != override["sha256"]:
+                    raise ValueError(f"Checksum differs for {path}")
+                changed = read_pixels(path, expected)
+                delta += np.bincount(changed.ravel(), minlength=stride)
+                delta -= np.bincount(pixels.ravel(), minlength=stride)
+                pixels = changed
             band[:, col * size:col * size + pixels.shape[1]] = pixels
         pixel_counts += np.bincount(band.ravel(), minlength=stride)
         add_pairs(band[:, :-1], band[:, 1:], cardinal)
@@ -60,13 +86,17 @@ def audit(root):
         previous = band[-1].copy()
 
     for identifier, row in ids.items():
-        if pixel_counts[identifier] != int(row["pixels"]):
+        if pixel_counts[identifier] != int(row["pixels"]) + delta[identifier]:
             raise ValueError(f"Pixel count differs for {row['key']}")
     return {
         "width": width,
         "height": height,
         "fourNeighbourPairs": len(cardinal),
         "eightNeighbourPairs": len(cardinal | diagonal),
+        "overriddenTiles": len(overrides),
+        "pixelDeltas": {row["key"]: int(delta[i]) for i, row in ids.items() if delta[i]},
+        "fourNeighbourPairHash": hashlib.sha256(json.dumps(sorted(cardinal)).encode()).hexdigest(),
+        "eightNeighbourPairHash": hashlib.sha256(json.dumps(sorted(cardinal | diagonal)).encode()).hexdigest(),
         "diagonalOnly": [[ids[a]["key"], ids[b]["key"]]
                          for a, b in (divmod(pair, stride) for pair in sorted(diagonal - cardinal))],
     }
@@ -75,5 +105,6 @@ def audit(root):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("map", type=Path)
+    parser.add_argument("--overlay", type=Path, help="compiled directory for a single date")
     args = parser.parse_args()
-    print(json.dumps(audit(args.map), ensure_ascii=False, indent=2))
+    print(json.dumps(audit(args.map, args.overlay), ensure_ascii=False, indent=2))
