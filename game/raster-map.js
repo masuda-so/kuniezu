@@ -12,10 +12,10 @@ window.TKRaster=(function(){
   ready=true;for(const t of level(8).tiles)load(8,t);revision++;onChange?.();
  }).catch(()=>{});
  function level(f){return f===1?{factor:1,dir:'provinces',tiles:man.tiles}:man.levels.find(l=>l.factor===f);}
- function load(f,t){const k=key(f,t);if(tiles.has(k))return tiles.get(k);const rec={state:'loading',t,f,ids:null,canvas:null,sig:''};tiles.set(k,rec);
+ function load(f,t){const k=key(f,t);const had=tiles.get(k);if(had&&!(had.state==='error'&&performance.now()>had.retry))return had;const rec={state:'loading',t,f,ids:null,canvas:null,sig:'',tries:(had?.tries||0)+1};tiles.set(k,rec);
   fetch('map/'+level(f).dir+'/'+t.file).then(r=>r.blob()).then(b=>createImageBitmap(b)).then(bm=>{const cv=document.createElement('canvas');cv.width=bm.width;cv.height=bm.height;const c=cv.getContext('2d',{willReadFrequently:true});c.drawImage(bm,0,0);const px=c.getImageData(0,0,bm.width,bm.height).data,ids=new Uint16Array(bm.width*bm.height);
    for(let i=0;i<ids.length;i++)ids[i]=byColor.get(px[i*4]<<16|px[i*4+1]<<8|px[i*4+2])||0;rec.ids=ids;rec.state='ready';revision++;onChange?.();})
-   .catch(()=>{rec.state='error';});
+   .catch(e=>{rec.state='error';rec.err=String(e);rec.retry=performance.now()+1000*rec.tries;if(rec.tries<5)setTimeout(()=>{revision++;onChange?.();},1000*rec.tries);});
   order.push(k);while(order.length>48){const old=order.shift();if(!old.startsWith('8:'))tiles.delete(old);}return rec;}
  // 表示の細かさ：画面1物理画素あたりの地図単位に対し、画素が1.5倍より粗くならない最も粗い段を選ぶ。
  function pickFactor(z,dpr){const unit=1/(z*dpr);for(const f of [8,4])if(man.projection.stepUnits*f<=unit*1.5)return f;return 1;}
@@ -36,4 +36,29 @@ window.TKRaster=(function(){
  // 地図平面の点の領域（当たり判定・検査用）。読み込み済みの最も細かい段で引く。
  function idAt(x,y){if(!ready)return null;for(const f of [1,4,8]){const s=man.projection.stepUnits*f,cx=Math.floor((x-man.projection.origin[0])/s),cy=Math.floor((y-man.projection.origin[1])/s),t=level(f).tiles.find(t=>t.col===Math.floor(cx/man.tile)&&t.row===Math.floor(cy/man.tile)),rec=t&&tiles.get(key(f,t));if(rec?.state==='ready')return defs[rec.ids[(cy-t.row*man.tile)*t.width+(cx-t.col*man.tile)]]||null;}return null;}
  return {paint,idAt,ready:()=>ready,revision:()=>revision,defs:()=>defs,onChange(fn){onChange=fn;}};
+})();
+
+/* 地形の陰影（Copernicus DEM GLO-90 から開発時に作った画像。game/map/relief.json）。
+   実行時に外部の標高タイルを取り寄せて計算することはしない。表示の細かさで 100m・400m・800m の段を選び、
+   細かい段が届くまでは 800m の段を下に敷く（陰影は陸で不透明なので二重にならない）。 */
+window.TKRelief=(function(){
+ let man=null,ready=false,revision=0,onChange=null;const tiles=new Map(),order=[];
+ if(typeof fetch==='function'&&typeof document!=='undefined')Promise.all([fetch('map/relief.json').then(r=>r.json()),fetch('map/manifest.json').then(r=>r.json())]).then(([r,grid])=>{
+  man={...r,origin:grid.projection.origin,step:grid.projection.stepUnits,tile:grid.tile};ready=true;for(const t of level(8).tiles)load(8,t);revision++;onChange?.();}).catch(()=>{});
+ const level=f=>man.levels.find(l=>l.factor===f);
+ // 読み込みに失敗したタイルは1秒後に読み直す（同時に多く読むと一時的に失敗することがある）。
+ function load(f,t){const k=f+':'+t.file;const had=tiles.get(k);if(had&&!(had.state==='error'&&performance.now()>had.retry))return had;const rec={state:'loading',im:null,tries:(had?.tries||0)+1};tiles.set(k,rec);
+  fetch('map/'+level(f).dir+'/'+t.file).then(r=>{if(!r.ok)throw Error('HTTP '+r.status);return r.blob();}).then(b=>createImageBitmap(b)).then(im=>{rec.im=im;rec.state='ready';revision++;onChange?.();}).catch(e=>{rec.state='error';rec.err=String(e);rec.retry=performance.now()+1000*rec.tries;if(rec.tries<5)setTimeout(()=>{revision++;onChange?.();},1000*rec.tries);});
+  order.push(k);while(order.length>64){const old=order.shift();if(!old.startsWith('8:')){tiles.get(old)?.im?.close?.();tiles.delete(old);}}return rec;}
+ function pick(z,dpr){const unit=1/(z*dpr);for(const f of [8,4])if(man.step*f<=unit*1.5)return f;return 1;}
+ function paint(c,view,z,dpr){if(!ready)return false;const f=pick(z,dpr);let complete=true;
+  const vis=ff=>{const s=man.step*ff,span=man.tile*s;return level(ff).tiles.filter(t=>{const x=man.origin[0]+t.col*span,y=man.origin[1]+t.row*span;return x<view[2]&&x+t.width*s>view[0]&&y<view[3]&&y+t.height*s>view[1];});};
+  const draw=(ff,t,rec)=>{const s=man.step*ff;c.drawImage(rec.im,man.origin[0]+t.col*man.tile*s,man.origin[1]+t.row*man.tile*s,t.width*s,t.height*s);};
+  c.save();c.imageSmoothingEnabled=true;c.imageSmoothingQuality='high';
+  // 代わりの段は 800m を敷き、その上に 400m（細かい段が 100m の時は先に読み始める）を重ねる。
+  const fine=vis(f).map(t=>[t,load(f,t)]);if(fine.some(([,r])=>r.state!=='ready')&&f!==8){complete=false;
+   for(const t of vis(8)){const r=tiles.get('8:'+t.file);if(r?.state==='ready')draw(8,t,r);}
+   if(f===1)for(const t of vis(4)){const r=load(4,t);if(r.state==='ready')draw(4,t,r);}}
+  for(const [t,r] of fine)if(r.state==='ready')draw(f,t,r);c.restore();return complete;}
+ return {paint,ready:()=>ready,revision:()=>revision,notice:()=>man&&{notice:man.notice,disclaimer:man.disclaimer,license:man.license},onChange(fn){onChange=fn;},states:()=>Object.fromEntries([...tiles].map(([k,r])=>[k,r.state+(r.err?' '+r.err:'')]))};
 })();

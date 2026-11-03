@@ -240,7 +240,7 @@ function terrainBackdrop(c,view,z){
 const rgbCache=new Map(),rgbCtx=document.createElement('canvas').getContext('2d');
 function cssRGB(css){if(rgbCache.has(css))return rgbCache.get(css);rgbCtx.fillStyle='#000';rgbCtx.fillStyle=css;const v=rgbCtx.fillStyle,m=v.startsWith('#')?[1,3,5].map(i=>parseInt(v.slice(i,i+2),16)):v.match(/\d+(\.\d+)?/g).slice(0,3).map(Number);rgbCache.set(css,m);return m;}
 function rasterColor(flat){return d=>{if(!d||!d.key.startsWith('castle:'))return null;const st=S?.castles[d.key.slice(7)];if(!st)return null;const k=st.owner,a=flat?(k===S.player?.5:.35):(k===S.player?.44:.32);return [...cssRGB(pastel(k)),Math.round(a*255)];};}
-window.TKRaster?.onChange(()=>{U.baseDirty=true;U.wakeLoop?.();});
+window.TKRaster?.onChange(()=>{U.baseDirty=true;U.wakeLoop?.();});window.TKRelief?.onChange(()=>{U.baseDirty=true;U.wakeLoop?.();});
 function paintBase(c,pad=0){LANDV=landFor(cam.z);
  const cc=vc();c.setTransform(1,0,0,1,0,0);c.clearRect(0,0,c.canvas.width,c.canvas.height);
  c.fillStyle='#e2dac6';c.fillRect(0,0,c.canvas.width,c.canvas.height);
@@ -255,7 +255,8 @@ function paintBase(c,pad=0){LANDV=landFor(cam.z);
  const pat=c.createPattern(seaTile,'repeat');const ps=Math.max(.12,.19/z);pat.setTransform(new DOMMatrix([ps,0,0,ps,0,0])); // 地図に貼りつける（ズームしても模様が地図と一緒に動く）
  c.fillStyle=pat;c.fillRect(x0-50,y0-50,x1-x0+100,y1-y0+100);
  c.fillStyle='#ece2c6';c.fill(LANDV);}
- if(!flat&&window.TKTerrain)terrainBackdrop(c,[x0,y0,x1,y1],z);
+ // 地形の陰影は開発時に作った画像（Copernicus DEM、game/map/relief.json）を貼る。外部の標高タイルは実行時に取り寄せない。
+ if(!flat&&window.TKRelief?.ready()){c.save();c.clip(LANDV);TKRelief.paint(c,[x0,y0,x1,y1],z,DPR);c.restore();}
  if(S){c.save();c.clip(LANDV);c.globalCompositeOperation='source-over';/* 根拠のない矩形で明の支配域を塗らない。遼東の地域・都司は出典付き地点として表示。 */
   // 領主の色はラスター地図（game/map の領域画像）で塗る。画像が届くまでは従来の線の領域で塗る。
   const rasterSig=territorySignature()+'|'+flat+'|'+S.player;
@@ -310,7 +311,7 @@ function drawBase(){
  if(liveRevision!==U.terrainRevShown){if(!anim&&nowMs-(U.terrainRevAt||0)>=700){U.terrainRevShown=liveRevision;U.terrainRevAt=nowMs;}else{clearTimeout(U.terrainRevTimer);U.terrainRevTimer=setTimeout(()=>{U.baseDirty=true;},anim?120:Math.max(60,700-(nowMs-(U.terrainRevAt||0))));}}
  if(performance.now()<(U.zoomUntil||0))U.zoomRebuildAt=performance.now();
  const cc=vc(),revision=U.terrainRevShown||0;
- const key=[cam.z,DPR,VW,VH,...cc,U.mode,U.mapStyle,U.dipView,U.sel,S?.player,territorySignature(),JSON.stringify(S?.vassal||{}),JSON.stringify(S?.improvements?.roads||{}),revision,fontRevision,TK.waterPhase?.(S?G.date().y:1560),window.TKRaster?.revision()||0].join('|');
+ const key=[cam.z,DPR,VW,VH,...cc,U.mode,U.mapStyle,U.dipView,U.sel,S?.player,territorySignature(),JSON.stringify(S?.vassal||{}),JSON.stringify(S?.improvements?.roads||{}),revision,fontRevision,TK.waterPhase?.(S?G.date().y:1560),window.TKRaster?.revision()||0,window.TKRelief?.revision()||0].join('|');
  const pad=160,dx=baseSurface?(cam.x-baseSurface.x)*cam.z:0,dy=baseSurface?(cam.y-baseSurface.y)*cam.z:0;
  const valid=baseSurface&&baseSurface.state===S&&baseSurface.key===key&&Math.abs(dx)<=pad&&Math.abs(dy)<=pad;
  if(!valid){
