@@ -59,7 +59,9 @@ window.TKRaster=(function(){
  function pickAt(x,y){if(!ready)return null;for(const f of [1,4,8]){const s=man.projection.stepUnits*f,cx=Math.floor((x-man.projection.origin[0])/s),cy=Math.floor((y-man.projection.origin[1])/s),t=level(f).tiles.find(t=>t.col===Math.floor(cx/man.tile)&&t.row===Math.floor(cy/man.tile));
   if(!t){if(f===1&&cx>=0&&cy>=0&&cx<man.width&&cy<man.height)return {...defs[seaId],factor:1};continue;}const rec=f===1?load(f,t):tiles.get(key(f,t));if(rec?.state==='ready'){const d=defs[rec.ids[(cy-t.row*man.tile)*t.width+(cx-t.col*man.tile)]];return d?{...d,factor:f}:null;}}return null;}
  function idAt(x,y){return pickAt(x,y);}
- return {bump(){verMemo=null;revision++;onChange?.();},paint,idAt,pickAt,ready:()=>ready,revision:()=>revision,defs:()=>defs,onChange(fn){onChange=fn;}};
+ // 正本の画像（provinces.png）が覆う地図平面の範囲。地図の表示範囲はこれに合わせる。
+ const bounds=()=>man&&{x0:man.projection.origin[0],y0:man.projection.origin[1],x1:man.projection.origin[0]+man.width*man.projection.stepUnits,y1:man.projection.origin[1]+man.height*man.projection.stepUnits};
+ return {bump(){verMemo=null;revision++;onChange?.();},paint,idAt,pickAt,bounds,ready:()=>ready,revision:()=>revision,defs:()=>defs,onChange(fn){onChange=fn;}};
 })();
 
 /* 地形の陰影（Copernicus DEM GLO-90 から開発時に作った画像。game/map/relief.json）。

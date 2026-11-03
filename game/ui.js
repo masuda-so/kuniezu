@@ -163,12 +163,13 @@ const s2w=(x,y)=>{const c=vc();return [(x-c[0])/cam.z+cam.x,(y-c[1])/cam.z+cam.y
 function clampCam(){const c=vc(),CW=CONT.x1-CONT.x0,CH=CONT.y1-CONT.y0;
  // 背景はパネルの下まで画面を覆う。縦長では横方向をドラッグして見る。
  cam.z=Math.max(VW/CW,VH/CH,Math.min(MAXZ,cam.z));
- // 地図の端は、年表・家の欄・再生バーに隠れない見える範囲の端まで寄せられる（遼陽や与那国など端の城・都市を選べるように）。
- // 表示範囲 CONT の外は海の模様で埋めるので、パネルの下に範囲の外が来ても地図が切れて見えない（paintBase）。
- const hx=c[2]/2/cam.z,hy=c[3]/2/cam.z;
- cam.x=Math.max(CONT.x0+hx,Math.min(CONT.x1-hx,cam.x));
- cam.y=Math.max(CONT.y0+hy,Math.min(CONT.y1-hy,cam.y));U.baseDirty=true;syncZoomControl();}
+ // 範囲の外（正本の画像の外）は見せない。非対称のパネル配置でも背景を画面全体へ収め、各端は画面原点からの距離で制限する。
+ cam.x=Math.max(CONT.x0+c[0]/cam.z,Math.min(CONT.x1-(VW-c[0])/cam.z,cam.x));
+ cam.y=Math.max(CONT.y0+c[1]/cam.z,Math.min(CONT.y1-(VH-c[1])/cam.z,cam.y));U.baseDirty=true;syncZoomControl();}
 const CONT={x0:-1014.1,x1:2688.7,y0:-755.3,y1:3459.7};
+// 地図の表示範囲は正本の画像（game/map_data/provinces.png）が覆う範囲に合わせる。読み込むまでは上の値（画像を作った時の基準）。
+// 遼陽など西端・北端に近い所も、最大倍率で年表の外に出せる。
+function syncContToSource(){const b=window.TKRaster?.bounds?.();if(!b||CONT.x0===b.x0&&CONT.y0===b.y0&&CONT.x1===b.x1&&CONT.y1===b.y1)return;Object.assign(CONT,b);if(VW>0&&VH>0)clampCam();}
 // 表示範囲の基準（docs/architecture/raster-map.md）：西＝与那国島（国土地理院の最西端、東経122°55′57″）、北＝宗谷岬（北緯45°31′35″）、
 // 東＝納沙布岬（東経145°49′01″）、南＝与那国島の緯度（北緯24°27′05″）。左下の角を国土地理院の最西端（与那国島）にそろえ、琉球諸島を入れる。朝鮮・明が絡むため西は国土地理院の端を使う。
 function syncZoomControl(){const nav=$('#mapZoom');if(nav)nav.hidden=U.mode==='title';const el=$('#mapZoomRange');if(!el)return;const min=Math.max(VW/(CONT.x1-CONT.x0),VH/(CONT.y1-CONT.y0));el.value=Math.round(Math.log(cam.z/min)/Math.log(MAXZ/min)*100);el.setAttribute('aria-valuetext',Math.round(cam.z/min*100)+'%');}
@@ -286,7 +287,7 @@ function terrainBackdrop(c,view,z){
 const rgbCache=new Map(),rgbCtx=document.createElement('canvas').getContext('2d');
 function cssRGB(css){if(rgbCache.has(css))return rgbCache.get(css);rgbCtx.fillStyle='#000';rgbCtx.fillStyle=css;const v=rgbCtx.fillStyle,m=v.startsWith('#')?[1,3,5].map(i=>parseInt(v.slice(i,i+2),16)):v.match(/\d+(\.\d+)?/g).slice(0,3).map(Number);rgbCache.set(css,m);return m;}
 function rasterColor(flat){return d=>{if(!d)return null;const context=TK.CONTEXT_REGION_STYLES?.[d.key];if(context&&d.kind==='land')return [...cssRGB(context.color),Math.round(Math.min(1,(context.alpha??.28)+(flat?.06:0))*255)];if(!d.key.startsWith('castle:'))return null;const st=S?.castles[d.key.slice(7)];if(!st)return null;const k=st.owner,a=flat?(k===S.player?.5:.35):(k===S.player?.44:.32);return [...cssRGB(pastel(k)),Math.round(a*255)];};}
-window.TKRaster?.onChange(()=>{U.baseDirty=true;U.wakeLoop?.();});window.TKRelief?.onChange(()=>{U.baseDirty=true;U.wakeLoop?.();});window.TKEdges?.onChange(()=>{U.baseDirty=true;U.wakeLoop?.();});window.TKRivers?.onChange(()=>{U.baseDirty=true;U.wakeLoop?.();});
+window.TKRaster?.onChange(()=>{syncContToSource();U.baseDirty=true;U.wakeLoop?.();});window.TKRelief?.onChange(()=>{U.baseDirty=true;U.wakeLoop?.();});window.TKEdges?.onChange(()=>{U.baseDirty=true;U.wakeLoop?.();});window.TKRivers?.onChange(()=>{U.baseDirty=true;U.wakeLoop?.();});
 // 陸だけの描画層（paintBase が使う）。描く先と同じ大きさのキャンバスを使い回す。
 const LANDLAYERS=[];function landLayer(c,n=0){const w=c.canvas.width,h=c.canvas.height;if(!LANDLAYERS[n])LANDLAYERS[n]=document.createElement('canvas').getContext('2d');const L=LANDLAYERS[n];if(L.canvas.width!==w||L.canvas.height!==h){L.canvas.width=w;L.canvas.height=h;}L.setTransform(1,0,0,1,0,0);L.globalCompositeOperation='source-over';L.globalAlpha=1;L.shadowBlur=0;L.clearRect(0,0,w,h);return L;}
 // 正本の陸の型（paintBase が領域画像から作る、下地と同じ大きさの canvas）。川・道路・時代の水域などは、旧来の線の陸 LANDV ではなくこの型で切る。
@@ -300,11 +301,10 @@ function paintBase(c,pad=0){LANDV=landFor(cam.z);rasterLand=null;
  c.fillStyle='#e2dac6';c.fillRect(0,0,c.canvas.width,c.canvas.height);
  const z=cam.z,tx=cc[0]-cam.x*z+pad,ty=cc[1]-cam.y*z+pad;
  c.setTransform(DPR*z,0,0,DPR*z,DPR*tx,DPR*ty);
+ c.save();c.beginPath();c.rect(CONT.x0,CONT.y0,CONT.x1-CONT.x0,CONT.y1-CONT.y0);c.clip();
  const flat=U.mapStyle!=='relief';const [x0,y0]=s2w(-pad,-pad),[x1,y1]=s2w(VW+pad,VH+pad);
- // 海の模様は表示範囲の外まで敷く（パネルの下に範囲の外が来ても帯にならない）。陸は範囲の中だけ。
  const pat=c.createPattern(seaTile,'repeat');const ps=Math.max(.12,.19/z);pat.setTransform(new DOMMatrix([ps,0,0,ps,0,0])); // 地図に貼りつける（ズームしても模様が地図と一緒に動く）
  c.fillStyle=pat;c.fillRect(x0-50,y0-50,x1-x0+100,y1-y0+100);
- c.save();c.beginPath();c.rect(CONT.x0,CONT.y0,CONT.x1-CONT.x0,CONT.y1-CONT.y0);c.clip();
  const rasterSig=S?territorySignature()+'|'+flat+'|'+S.player:'none|'+flat;
  if(window.TKRaster?.ready()){
   // 陸と海・湖・領主の色・陰影はすべて領域画像から作る（docs/architecture/raster-map.md）。
