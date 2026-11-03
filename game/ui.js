@@ -438,7 +438,13 @@ function renderArmyEdges(groups,a,units){const el=$('#armyEdges');if(!el)return;
 const ANG=new Map();
 function relation(k){return G.relationKind(S.player,k);}
 const troopScale=t=>Math.max(.9,Math.min(1.15,1+.06*Math.log2(Math.max(1000,t)/4000)));
-function drawCounter(c,x,y,u,mine,lvl,compact=false){const t2=G.armOf(u),identity=G.armyIdentity(u);const k=(lvl===0?.85:lvl===1?1:1.2)*troopScale(u.troops),INK='#2a1d10';
+function drawCounter(c,x,y,u,mine,lvl,compact=false){
+ if(u.record?.point){
+  c.save();c.beginPath();c.arc(x,y,9,0,2*Math.PI);c.fillStyle='#f9f0d7';c.fill();c.strokeStyle='#7a1c12';c.lineWidth=2;c.stroke();
+  c.fillStyle='#7a1c12';c.font='700 10px sans-serif';c.textAlign='center';c.textBaseline='middle';c.fillText('記',x,y);
+  c.restore();return;
+ }
+ const t2=G.armOf(u),identity=G.armyIdentity(u);const k=(lvl===0?.85:lvl===1?1:1.2)*troopScale(u.troops),INK='#2a1d10';
  const world=u._displayPoint||unitPos(u),line=G.historyGeometry?.(u)||(u.state==='march'&&u.path?.length>1?G.visualEdgeGeo(u.path[u.seg],u.path[Math.min(u.seg+1,u.path.length-1)]):null);const heading=G.visualCounterHeading?.(line,world,cam.z)??u._displayAngle??world[2];if(Number.isFinite(heading))ANG.set(u.id,heading);const ang=(heading??ANG.get(u.id)??-Math.PI/2)+Math.PI/2;const bw=32*k,bh=21*k,hh=10*k;
  if(u.state==='battle'){const p=.5+.5*Math.sin(tNow/90+u.id);c.beginPath();c.arc(x,y,22*k+p*5,0,7);c.fillStyle=`rgba(255,110,50,${.18+p*.22})`;c.fill();}
  // 陣立図ふうの駒：家の色の地に上からの淡い光（立体の影ではない）と墨線一本。
@@ -496,7 +502,7 @@ function armyDepartureText(u){
  if(!Number.isFinite(start)||G.isHistoryReturning(u))return '';
  return `${u.depart?'出陣':'出陣（推定）'}：${G.dstr(start)}`;
 }
-function tipArmy(group,e){const ids=group.members.map(m=>m.id),units=(U.mapUnits||[]).filter(u=>ids.includes(u.id));tipEl.innerHTML=units.map(u=>{const n=u.commanders||u.gens.map(id=>G.gen(id)?.n).filter(Boolean),identity=G.armyIdentity(u),relation=G.relationKind(S.player,identity.command),departure=armyDepartureText(u);return `<div class="tph">${n[0]?faceHTML(n[0],'sm',u.clan):''}${kamonHTML(G.armyCrestKey(u),24)}<div><b>${esc(n.join('・')||G.CNK(u.clan)+'軍')}</b><span>${esc(identity.name)} ・ ${esc(relation.name)}</span></div></div><p>${esc(G.marchPhase(u).name)}${u.troops?' ・ '+man(u.troops):''} ・ 士気${Math.round(u.morale||0)}</p><p>目的地：${esc(G.marchDestination(u))}</p>${departure?`<p>${esc(departure)}</p>`: ''}`;}).join('');tipEl.hidden=false;placeTip(e);}
+function tipArmy(group,e){const ids=group.members.map(m=>m.id),units=(U.mapUnits||[]).filter(u=>ids.includes(u.id));tipEl.innerHTML=units.map(u=>{const n=u.commanders||u.gens.map(id=>G.gen(id)?.n).filter(Boolean);if(u.record?.point)return `<div class="tph"><div><b>${esc(u.record.title)}</b><span>所在の記録</span></div></div><p>${esc(n.join('・'))}</p>`;const identity=G.armyIdentity(u),relation=G.relationKind(S.player,identity.command),departure=armyDepartureText(u);return `<div class="tph">${n[0]?faceHTML(n[0],'sm',u.clan):''}${kamonHTML(G.armyCrestKey(u),24)}<div><b>${esc(n.join('・')||G.CNK(u.clan)+'軍')}</b><span>${esc(identity.name)} ・ ${esc(relation.name)}</span></div></div><p>${esc(G.marchPhase(u).name)}${u.troops?' ・ '+man(u.troops):''} ・ 士気${Math.round(u.morale||0)}</p><p>目的地：${esc(G.marchDestination(u))}</p>${departure?`<p>${esc(departure)}</p>`: ''}`;}).join('');tipEl.hidden=false;placeTip(e);}
 function hitY(sx,sy){if(!S||cam.z<.6)return null;let best=null,bd=10*10;for(const y of (G.YOSHO||[])){const [x,yy]=w2s(y.x,y.y);const d=(x-sx)**2+(yy-sy)**2;if(d<bd){bd=d;best=y;}}return best;}
 // 施設の詳しい様子
 function tipY(y,e){if(!y||(e&&e.pointerType==='touch')||U.mode==='title'){tipEl.hidden=true;return;}const v=G.sitePresentation(y),level=G.siteLevel(y);tipEl.innerHTML=`<div class="tph"><div><b>${esc(v.title)}</b><span>${esc(v.role)}${G.yActive(y)?' ・ Lv.'+level:''}</span></div></div><p>${esc(v.description)}</p>${v.state?'<p>'+esc(v.state)+'</p>':''}${G.yActive(y)?'<span class="tdl">'+esc(G.infrastructureText('site',y.id))+'</span>':''}`;tipEl.hidden=false;placeTip(e);}
