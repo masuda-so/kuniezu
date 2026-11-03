@@ -136,3 +136,5 @@
 GAME_URL="$(node -p "require('node:url').pathToFileURL(require('node:path').resolve('game/index.html')).href")" \
   node tools/checks/all-battles-browser.cjs
 ```
+
+同じコマンドに `--playback-end` を付けると、開いた直後が再生状態、進捗99%へ移すと停止状態、再開して100%に達すると合戦図が自動で閉じることを検査する。関ヶ原・伏見城・大坂冬の陣では、直接開く経路と「合戦と史料」の一覧から開く経路の両方で通過した。終端確認用のシークを使っており、全場面を最初から通し再生した結果ではない。
