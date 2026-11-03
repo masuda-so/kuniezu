@@ -82,3 +82,5 @@ python3 tools/checks/elevation-coverage.py "$map_dir" "$shade_root"
 ```
 
 カバレッジ検査を通過した出力を、変換器を含む専用の作業ツリーで `SHADE_ROOT="$shade_root" node tools/map/encode-relief-webp.cjs` に渡す。変換器は自分の作業ツリーの `game/map` に書き込む。初版の変換器は既存画像のディレクトリを先に消すため、配信中の作業ツリーで実行しない。変換先の `game/map` を引数にして `python3 tools/checks/relief-webp.py <変換先のgame/map> "$shade_root"` を通し、全縮尺の格子・出典情報と全タイルの一致を確認してから配布する。
+
+郡の割当だけを更新すると領域マニフェストのハッシュは変わる。生成時のマニフェストを `--source-grid` に渡すと、元のハッシュによる出典照合に加え、投影・原点・画素間隔・タイル寸法・各縮尺の格子寸法を現在の地図と照合する。郡データ反映中の地図で全351枚が通過し、原点を1画素分ずらした検査入力は拒否した。

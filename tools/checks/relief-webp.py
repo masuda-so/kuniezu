@@ -7,9 +7,24 @@ from pathlib import Path
 from PIL import Image
 
 
-def verify(map_dir, generated_dir):
+def grid_geometry(manifest):
+    projection = manifest["projection"]
+    return (
+        tuple(projection[key] for key in ("K", "CX", "LON0", "LAT0", "origin", "stepUnits")),
+        manifest["tile"],
+        manifest["width"],
+        manifest["height"],
+        sorted((level["factor"], level["width"], level["height"]) for level in manifest["levels"]),
+    )
+
+
+def verify(map_dir, generated_dir, source_grid=None):
     relief = json.loads((map_dir / "relief.json").read_text())
-    grid_hash = sha256((map_dir / "manifest.json").read_bytes()).hexdigest()
+    current_grid = (map_dir / "manifest.json").read_bytes()
+    original_grid = source_grid.read_bytes() if source_grid else current_grid
+    if grid_geometry(json.loads(current_grid)) != grid_geometry(json.loads(original_grid)):
+        raise ValueError("Distribution grid geometry differs from the source")
+    grid_hash = sha256(original_grid).hexdigest()
     if relief["gridSha256"] != grid_hash:
         raise ValueError("Distribution grid checksum mismatch")
     levels = relief["levels"]
@@ -50,5 +65,7 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("map", type=Path)
     parser.add_argument("generated", type=Path)
+    parser.add_argument("--source-grid", type=Path,
+                        help="Original grid manifest when province assignments have been updated")
     args = parser.parse_args()
-    verify(args.map, args.generated)
+    verify(args.map, args.generated, args.source_grid)
