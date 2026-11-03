@@ -190,3 +190,14 @@
  if(!campaign)throw Error('九州平定の都於郡城');
  campaign.castles=campaign.castles.filter(id=>id!=='tonokori');
 }
+
+/* 香春岳での降伏と、翌年の豊前・日向の国分けを分ける。 */
+{
+ const lunarDate=[1586,12,11];
+ TK.HIST.push({
+  d:TK.lunarDate(...lunarDate),lunarDate,k:'note',at:'kawara',clan:'hashiba',
+  title:'高橋元種の降伏',who:'高橋元種',
+  source:'https://www.town.kanda.lg.jp/page/1884.html',
+  text:'毛利軍が香春岳城に迫り、高橋元種が降伏した。秀吉による豊前・日向の国分けは翌年のことだった。'
+ });
+}
