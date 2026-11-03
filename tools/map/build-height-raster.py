@@ -13,7 +13,7 @@ OFFSET_METRES = -500
 CODES_PER_METRE = 4
 
 
-def build(grid_file, source_root, zoom, output, provider="gsi"):
+def build(grid_file, source_root, zoom, output, provider="gsi", factor=1):
     if provider == "gsi":
         offset, codes_per_metre = OFFSET_METRES, CODES_PER_METRE
         source = "https://maps.gsi.go.jp/development/demtile.html"
@@ -26,8 +26,12 @@ def build(grid_file, source_root, zoom, output, provider="gsi"):
     grid = json.loads(grid_file.read_text(encoding="utf-8"))
     p = grid["projection"]
     x0, y0 = p["origin"]
-    step, tile_size = p["stepUnits"], grid["tile"]
-    width, height = grid["width"], grid["height"]
+    level = grid if factor == 1 else next(
+        (row for row in grid.get("levels", []) if row["factor"] == factor), None)
+    if level is None:
+        raise ValueError(f"Grid does not define factor {factor}")
+    step, tile_size = p["stepUnits"] * factor, grid["tile"]
+    width, height = level["width"], level["height"]
     world = 2 ** zoom
     sources = {}
     targets = set()
@@ -99,6 +103,7 @@ def build(grid_file, source_root, zoom, output, provider="gsi"):
         "gridSha256": hashlib.sha256(grid_file.read_bytes()).hexdigest(),
         "source": source,
         "provider": provider,
+        "factor": factor,
         "sourceTiles": source_hashes,
         "encoding": {"noData": 0, "offsetMetres": offset, "codesPerMetre": codes_per_metre,
                      "decode": "offsetMetres + (code - 1) / codesPerMetre"},
@@ -116,5 +121,6 @@ if __name__ == "__main__":
     parser.add_argument("output", type=Path)
     parser.add_argument("--zoom", type=int, required=True)
     parser.add_argument("--provider", choices=["gsi", "terrarium"], default="gsi")
+    parser.add_argument("--factor", type=int, choices=[1, 4, 8], default=1)
     args = parser.parse_args()
-    print(build(args.grid_manifest, args.source_root, args.zoom, args.output, args.provider))
+    print(build(args.grid_manifest, args.source_root, args.zoom, args.output, args.provider, args.factor))

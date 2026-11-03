@@ -25,6 +25,11 @@ def build(grid_file, heights, output):
     grid_hash = sha256(grid_bytes).hexdigest()
     if manifest["gridSha256"] != grid_hash:
         raise ValueError("Elevation raster uses a different grid")
+    factor = manifest.get("factor", 1)
+    level = grid if factor == 1 else next(
+        (row for row in grid.get("levels", []) if row["factor"] == factor), None)
+    if level is None:
+        raise ValueError(f"Grid does not define factor {factor}")
     tile_size = grid["tile"]
     projection = grid["projection"]
     encoding = manifest["encoding"]
@@ -32,8 +37,8 @@ def build(grid_file, heights, output):
     for row in manifest["tiles"]:
         col, line = map(int, Path(row["file"]).stem.split("-"))
         key = col, line
-        if key in records or not (0 <= col * tile_size < grid["width"] and
-                                  0 <= line * tile_size < grid["height"]):
+        if key in records or not (0 <= col * tile_size < level["width"] and
+                                  0 <= line * tile_size < level["height"]):
             raise ValueError(f"Invalid elevation tile: {key}")
         records[key] = row
 
@@ -47,8 +52,8 @@ def build(grid_file, heights, output):
             raise ValueError(f"Checksum mismatch: {file}")
         with Image.open(file) as image:
             codes = np.asarray(image, dtype=np.float32)
-        shape = (min(tile_size, grid["height"] - line * tile_size),
-                 min(tile_size, grid["width"] - col * tile_size))
+        shape = (min(tile_size, level["height"] - line * tile_size),
+                 min(tile_size, level["width"] - col * tile_size))
         if codes.shape != shape:
             raise ValueError(f"Invalid dimensions: {file}")
         values = encoding["offsetMetres"] + (codes - 1) / encoding["codesPerMetre"]
@@ -56,7 +61,7 @@ def build(grid_file, heights, output):
 
     output.mkdir(parents=True, exist_ok=False)
     tiles = []
-    metres = projection["stepMetres"]
+    metres = projection["stepMetres"] * factor
     for col, line in sorted(records, key=lambda key: (key[1], key[0])):
         center = read(col, line)
         halo = np.pad(center, 1, constant_values=np.nan)
@@ -70,7 +75,7 @@ def build(grid_file, heights, output):
             if neighbour is not None:
                 halo[destination] = neighbour[edge]
         latitude = projection["LAT0"] - (projection["origin"][1] +
-            (line * tile_size + np.arange(center.shape[0]) + .5) * projection["stepUnits"]) / projection["K"]
+            (line * tile_size + np.arange(center.shape[0]) + .5) * projection["stepUnits"] * factor) / projection["K"]
         metres_x = metres * np.cos(np.deg2rad(latitude))[:, None] / projection["CX"]
         dx = gradient(halo[1:-1, :-2], center, halo[1:-1, 2:], metres_x)
         dy = gradient(halo[:-2, 1:-1], center, halo[2:, 1:-1], metres)
@@ -84,7 +89,7 @@ def build(grid_file, heights, output):
         tiles.append({"file": file.name, "col": col, "row": line,
                       "sha256": sha256(file.read_bytes()).hexdigest()})
     result = {"gridSha256": grid_hash, "elevationManifestSha256": sha256(manifest_bytes).hexdigest(),
-              "source": manifest["source"], "format": "RGBA8", "noDataAlpha": 0,
+              "source": manifest["source"], "factor": factor, "format": "RGBA8", "noDataAlpha": 0,
               "shading": "northwest light, one-pixel neighbour halo", "tiles": tiles}
     (output / "manifest.json").write_text(json.dumps(result, indent=2) + "\n", encoding="utf-8")
     return result
