@@ -1,0 +1,22 @@
+{
+  "id": "location:kuroda-umagatake-1587",
+  "person": "person:kuroda-yoshitaka",
+  "place": "place:umagatake",
+  "relation": "residence-transfer",
+  "time": {
+    "kind": "year-window",
+    "year": 1587,
+    "calendar": "CE-year",
+    "precision": "year"
+  },
+  "source": "yukuhashiUmagatake",
+  "sourceUrl": "https://www.city.yukuhashi.fukuoka.jp/site/bunkazai/1998.html",
+  "locator": "九州平定後の豊前拝領と馬ヶ岳城",
+  "uncertainty": "最初の拠点とした年。入城の月日や継続滞在を表さない。",
+  "recordType": "sourced-location-observation",
+  "status": "verified-in-specified-scope",
+  "recordedAt": "2026-11-03",
+  "gameBindings": [
+    "timeline:黒田孝高の豊前拝領"
+  ]
+}
