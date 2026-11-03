@@ -1,0 +1,31 @@
+{
+  "id": "tachibana-chikugo-grant",
+  "entity": "person:立花宗茂",
+  "predicate": "grant-order",
+  "value": {
+    "date": [
+      1587,
+      6,
+      25
+    ],
+    "calendar": "和暦",
+    "issuer": "豊臣秀吉",
+    "grant": "筑後の山門・三潴・下妻・三池四郡"
+  },
+  "validYears": [
+    1587,
+    1587
+  ],
+  "datePrecision": "day",
+  "source": "tachibanaChikugoGrant",
+  "sourceUrl": "https://artsandculture.google.com/story/KgWRWPxXFzYZIQ?hl=ja",
+  "locator": "第3章の天正15年6月25日付領知の解説",
+  "gameBindings": [
+    "timeline:立花宗茂の筑後拝領",
+    "node:yanagawa"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-03",
+  "uncertainty": "領知の日付。各城の明渡し・入城の日付、郡内の個別知行範囲は含まない。"
+}

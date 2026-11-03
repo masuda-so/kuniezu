@@ -143,3 +143,25 @@
   text:'豊臣秀吉が相良頼房に朱印状を出し、球磨郡の所領を安堵した。'
  });
 }
+
+/* 筑前と柳川の国分けは六月二十五日付の領知に合わせる。 */
+{
+ const campaign=TK.HIST.find(e=>e.title==='九州平定'&&e.k==='take'&&e.castles?.includes('tachibana'));
+ const yanagawa=TK.HIST.find(e=>e.k==='take'&&e.castles?.includes('yanagawa')&&e.who==='立花宗茂');
+ if(!campaign||!yanagawa)throw Error('筑前と柳川の国分け');
+ campaign.castles=campaign.castles.filter(id=>id!=='tachibana');
+ campaign.peace=campaign.peace.filter(id=>id!=='tachibana');
+ const lunarDate=[1587,6,25];
+ const d=TK.lunarDate(...lunarDate);
+ Object.assign(yanagawa,{
+  d,lunarDate,title:'立花宗茂の筑後拝領',
+  source:'https://artsandculture.google.com/story/KgWRWPxXFzYZIQ?hl=ja',
+  text:'豊臣秀吉が立花宗茂に筑後の山門・三潴・下妻・三池四郡を与えた。宗茂は柳川を本拠とした。'
+ });
+ TK.HIST.push({
+  d,lunarDate,k:'take',clan:'hashiba',castles:['tachibana'],admin:1,
+  title:'小早川隆景の筑前拝領',who:'小早川隆景',
+  source:'https://i-manabi.jp/system/regionals/regionals/ecode%3A2/64/view/8144',
+  text:'豊臣秀吉が小早川隆景に筑前などを与えた。筑前の立花山城は小早川方の管理に入った。'
+ });
+}
