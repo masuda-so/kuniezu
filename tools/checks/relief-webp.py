@@ -9,6 +9,9 @@ from PIL import Image
 
 def verify(map_dir, generated_dir):
     relief = json.loads((map_dir / "relief.json").read_text())
+    grid_hash = sha256((map_dir / "manifest.json").read_bytes()).hexdigest()
+    if relief["gridSha256"] != grid_hash:
+        raise ValueError("Distribution grid checksum mismatch")
     levels = relief["levels"]
     if sorted(level["factor"] for level in levels) != [1, 4, 8]:
         raise ValueError("Expected exactly one relief level per factor")
@@ -16,6 +19,13 @@ def verify(map_dir, generated_dir):
         factor = level["factor"]
         source_dir = generated_dir / f"shade-{factor}"
         source = json.loads((source_dir / "manifest.json").read_text())
+        if source["factor"] != factor or source["gridSha256"] != grid_hash:
+            raise ValueError(f"Source grid mismatch at factor {factor}")
+        for field in ("source", "product", "acquired", "license", "notice", "disclaimer", "shading"):
+            if source[field] != relief[field]:
+                raise ValueError(f"Source metadata mismatch at factor {factor}: {field}")
+        if factor == 1 and source["elevationManifestSha256"] != relief["elevationManifestSha256"]:
+            raise ValueError("Elevation manifest checksum mismatch")
         originals = {(tile["col"], tile["row"]): tile for tile in source["tiles"]}
         tiles = level["tiles"]
         if len(tiles) != len(originals) or {(t["col"], t["row"]) for t in tiles} != originals.keys():
