@@ -74,17 +74,19 @@ for(let y=Y0;y<Y1;y++)for(let x=X0;x<X1;x++)if(!inZone(x,y))cls[y*FW+x]=0;
 
 // ---- 基準版の領域画像（窓の中だけ読む）
 const man=JSON.parse(fs.readFileSync(path.join(mapDir,'manifest.json'),'utf8')),P=man.projection,[OX,OY]=P.origin,S=P.stepUnits,T=man.tile;
-const defs=fs.readFileSync(path.join(mapDir,'definition.csv'),'utf8').trim().split('\n').slice(1).map(l=>{const p=l.split(';');return {rgb:p.slice(1,4).map(Number),key:p[4],kind:p[6]};});
+const MD=require('../map/map-data.cjs'),defs=MD.readDefinition().rows.filter(Boolean);// 正本 game/map_data の区画（kind は default.map から）
 const byRGB=new Map(defs.map(d=>[d.rgb.join(','),d]));
 const toCR=(lon,lat)=>[Math.floor(((lon-P.LON0)*P.K*P.CX-OX)/S),Math.floor(((P.LAT0-lat)*P.K-OY)/S)];
 const toLL=(c,r)=>[(OX+(c+.5)*S)/P.K/P.CX+P.LON0,P.LAT0-(OY+(r+.5)*S)/P.K];
 const WIN=[133.55,134.25,34.40,34.75],[c0,r0]=toCR(WIN[0],WIN[3]),[c1,r1]=toCR(WIN[1],WIN[2]),w=c1-c0,h=r1-r0;
 const readGrid=(sub,rows)=>{const cache=new Map();return (c,r)=>{const tk=Math.floor(c/T)+','+Math.floor(r/T);if(!cache.has(tk)){const row=rows.get(tk);cache.set(tk,row?decodePNG(fs.readFileSync(path.join(mapDir,sub,row.file))):null);}return [cache.get(tk),(r%T)*(cache.get(tk)?.width||0)+(c%T)];};};
 const prov=readGrid('provinces',new Map(man.tiles.map(t=>[t.col+','+t.row,t])));
-const gunMan=JSON.parse(fs.readFileSync(path.join(mapDir,'gun.json'),'utf8')),gun=readGrid('gun',new Map(gunMan.tiles.map(t=>[t.col+','+t.row,t])));
+(async()=>{
+// 郡画像 data/map/gun.png（全域1枚）から窓の中だけ取り出す
+const gunWin=new Int32Array(w*h);await require('../map/png-big.cjs').readRGB(path.join(root,'data/map/gun.png'),(y,row)=>{if(y<r0||y>=r1)return;for(let c=0;c<w;c++)gunWin[(y-r0)*w+c]=row[(c0+c)*3+1]<<8|row[(c0+c)*3+2];});
 const cur=new Array(w*h),gunId=new Int32Array(w*h);
 for(let r=0;r<h;r++)for(let c=0;c<w;c++){const [t,o]=prov(c0+c,r0+r);const d=t?byRGB.get(t.data[o*4]+','+t.data[o*4+1]+','+t.data[o*4+2]):byRGB.get(defs.find(x=>x.key==='sea').rgb.join(','));if(!d)throw Error('定義にない色');cur[r*w+c]=d;
- const [g,go]=gun(c0+c,r0+r);gunId[r*w+c]=g?(g.data[go*4+1]<<8|g.data[go*4+2]):0;}
+ gunId[r*w+c]=gunWin[r*w+c];}
 const isLand=d=>d.kind==='land';
 // ほかの差分（水島など）が書く画素は、それを当てた後の値として扱い、触らない
 const otherEdits=fs.readdirSync(editsDir).filter(f=>f.endsWith('.json')&&f!=='baseline-ledger.json'&&!f.startsWith('kojima-bay-')).map(f=>JSON.parse(fs.readFileSync(path.join(editsDir,f),'utf8')));
@@ -174,4 +176,5 @@ const bad=[];for(const [p,c] of Object.entries(checks)){if(!c.fujitoPassage)bad.
  for(const k of ['kyogashima','fujitoji','ukisuiwa','shionasu','hayashimaShrine'])if(c[k]!=='land')bad.push(p+' '+k+' が陸でない');if(c.castlesOffLand.length)bad.push(p+' 城が海に '+c.castlesOffLand);}
 if(checks['1560-1583'].hayashimaJoinsMainland)bad.push('1584年より前に早島が本土と続く');
 console.log(JSON.stringify({edits:report.edits&&Object.fromEntries(Object.entries(report.edits).map(([k,v])=>[k,v.pixels])),cleanup:report.cleanup,checks},null,1));
-if(bad.length){console.error(bad.join('\n'));process.exit(1);}
+if(bad.length){console.error(bad.join('\n'));process.exitCode=1;}
+})().catch(e=>{console.error(e);process.exit(1);});

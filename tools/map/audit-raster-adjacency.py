@@ -1,6 +1,5 @@
 """Audit region adjacency from lossless raster tiles, including tile seams."""
 import argparse
-import csv
 import hashlib
 import json
 from pathlib import Path
@@ -8,11 +7,14 @@ from pathlib import Path
 import numpy as np
 from PIL import Image
 
+import sys
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from map_data import read_definition  # noqa: E402
+
 
 def audit(root, overlay=None):
     manifest = json.loads((root / "manifest.json").read_text(encoding="utf-8"))
-    with (root / "definition.csv").open(encoding="utf-8", newline="") as stream:
-        rows = list(csv.DictReader(stream, delimiter=";"))
+    rows = read_definition()  # 正本 game/map_data（id は1から、kind は default.map）
     ids = {int(row["id"]): row for row in rows}
     sea = next(int(row["id"]) for row in rows if row["kind"] == "sea")
     codes = np.full(1 << 24, -1, dtype=np.int32)

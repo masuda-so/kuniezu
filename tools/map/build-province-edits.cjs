@@ -1,21 +1,26 @@
 /* 年代別の領域差分（game/map/edits/*.json）を基準版の領域画像へ当て、変わるタイルだけを版ごとに書き出す。Pillow を使わない Node 版。
    期間の境目（各差分の validFrom・validUntil）で区切った半開区間ごとに一つの版を作り、game/map/edits/compiled/<開始>-<終了>/ に置く。
    差分の中身は二通り。
-   ・面（payload.file＋feature）：GeoJSON の多角形の内側に画素中心が入る所を fromKey から toKey へ置き換える（tools/map/build-province-edits.py と同じ規則）。
+   ・面（payload.file＋feature）：GeoJSON の多角形の内側に画素中心が入る所を fromKey から toKey へ置き換える（旧 Python 版と同じ規則）。
    ・型紙（payload.mask＋window）：100m 格子の窓 [列,行,幅,高さ] に合わせた PNG。画素の値 n（G が上位、B が下位）が 1 以上なら keys[n-1] を書く。
      from が 'land' なら元の画素が陸、'sea' なら海であることを確かめる。
    同じ版の中で書き込みが重なる差分、基準版に適用済みの ID、元の値の食い違いは止める。400m・800m は基準版と同じく画素中心の最近傍。
-   実行：node --max-old-space-size=6000 tools/map/build-province-edits.cjs
+   全部の版を作り終えてから一時置き場に書き、置き場ごと入れ替える（途中で止まっても配信中の版を壊さない）。
+   実行：node --max-old-space-size=6000 tools/map/build-province-edits.cjs   （検査からは build({mapDir, md, editsDir, compiledDir}) を呼ぶ）
    書き出しの後に node tools/map/build-edges.cjs で境界線を作り直す。 */
 const fs=require('node:fs'),path=require('node:path'),zlib=require('node:zlib'),crypto=require('node:crypto');
 const decodePNG=require('../geo/png-decode.cjs');
-const root=path.resolve(__dirname,'../..'),dir=path.join(root,'game/map'),edits=path.join(dir,'edits'),compiled=path.join(edits,'compiled');
 const sha=b=>crypto.createHash('sha256').update(b).digest('hex');
+const MD=require('./map-data.cjs');
+function build({mapDir=path.join(MD.root,'game/map'),md=MD,editsDir=path.join(mapDir,'edits'),compiledDir=path.join(editsDir,'compiled')}={}){
+const dir=mapDir,edits=editsDir,compiled=compiledDir;
 const ledger=JSON.parse(fs.readFileSync(path.join(edits,'baseline-ledger.json'),'utf8'));
-const manBuf=fs.readFileSync(path.join(dir,'manifest.json')),defBuf=fs.readFileSync(path.join(dir,'definition.csv'));
-if(sha(manBuf)!==ledger.manifestSha256||sha(defBuf)!==ledger.definitionSha256)throw Error('基準版の manifest.json か definition.csv が台帳と違う');
-const m=JSON.parse(manBuf),P=m.projection,[OX,OY]=P.origin,S=P.stepUnits,T=m.tile;
-const defs=defBuf.toString('utf8').trim().split('\n').slice(1).map(l=>{const p=l.split(';');return {rgb:p.slice(1,4).map(Number),key:p[4],kind:p[6]};});
+// 基準版は正本 game/map_data（provinces.png 全域1枚ほか）。読むのはそこから作った配信タイルなので、タイルが同じ正本から作られたことも確かめる。
+const baseProvincesSha256=md.sourceSha256();
+if(baseProvincesSha256!==ledger.sourceSha256)throw Error('正本 game/map_data が台帳と違う（土台を変えたら台帳と差分を見直す）');
+const m=JSON.parse(fs.readFileSync(path.join(dir,'manifest.json'),'utf8')),P=m.projection,[OX,OY]=P.origin,S=P.stepUnits,T=m.tile;
+if(m.source?.sha256!==baseProvincesSha256)throw Error('配信タイルが正本と合わない。先に node tools/map/build-map-tiles.cjs');
+const defs=md.readDefinition().rows.filter(Boolean);
 const byKey=new Map(defs.map(d=>[d.key,d])),byRGB=new Map(defs.map(d=>[d.rgb.join(','),d]));
 const rgbOf=k=>{const d=byKey.get(k);if(!d)throw Error('未定義の区画 '+k);return d.rgb;};
 // 差分の読み込みと検査
@@ -51,7 +56,6 @@ const crc=b=>{let c=-1;for(const x of b)c=crcT[(c^x)&255]^(c>>>8);return (c^-1)>
 const chunk=(t,d)=>{const l=Buffer.alloc(4);l.writeUInt32BE(d.length);const td=Buffer.concat([Buffer.from(t),d]),c=Buffer.alloc(4);c.writeUInt32BE(crc(td));return Buffer.concat([l,td,c]);};
 const png=(w,h,rgb)=>{const raw=Buffer.alloc((w*3+1)*h);for(let y=0;y<h;y++)rgb.copy(raw,y*(w*3+1)+1,y*w*3,(y+1)*w*3);const ih=Buffer.alloc(13);ih.writeUInt32BE(w,0);ih.writeUInt32BE(h,4);ih[8]=8;ih[9]=2;return Buffer.concat([Buffer.from([137,80,78,71,13,10,26,10]),chunk('IHDR',ih),chunk('IDAT',zlib.deflateSync(raw,{level:9})),chunk('IEND',Buffer.alloc(0))]);};
 const ymd=d=>String(d[0]).padStart(4,'0')+String(d[1]).padStart(2,'0')+String(d[2]).padStart(2,'0');
-const baseProvincesSha256=sha(Buffer.concat([manBuf,defBuf]));
 const made=[],report=[];
 for(let i=0;i+1<bounds.length;i++){const from=bounds[i],to=bounds[i+1];const act=list.filter(e=>dnum(e.validFrom)<=dnum(from)&&dnum(from)<dnum(e.validUntil));if(!act.length)continue;
  const id=ymd(from)+'-'+ymd(to),period=[from,to],changed=new Map(),writes=new Map(),counts={};
@@ -66,13 +70,17 @@ for(let i=0;i+1<bounds.length;i++){const from=bounds[i],to=bounds[i+1];const act
    const tk=Math.floor(x/T)+','+Math.floor(y/T);if(!rep.has(tk)){const row=orig.get(tk);rep.set(tk,row?readTile(L.dir,row):blank(Math.min(T,L.width-Math.floor(x/T)*T),Math.min(T,L.height-Math.floor(y/T)*T)));}
    const src=changed.get(Math.floor(c/T)+','+Math.floor(r/T)),so=((r%T)*src.w+(c%T))*3,t=rep.get(tk),o=((y%T)*t.w+(x%T))*3;t.rgb[o]=src.rgb[so];t.rgb[o+1]=src.rgb[so+1];t.rgb[o+2]=src.rgb[so+2];}
   levels.push({factor:f,dir:L.dir,tiles:rep});}
- const vdir=path.join(compiled,id);fs.rmSync(vdir,{recursive:true,force:true});const tiles=[];
- for(const L of levels){if(!L.tiles.size)continue;fs.mkdirSync(path.join(vdir,L.dir),{recursive:true});
-  for(const [tk,t] of [...L.tiles].sort()){const [col,row]=tk.split(',').map(Number),file=`${L.dir}/${col}-${row}@${id}.png`,buf=png(t.w,t.h,t.rgb);fs.writeFileSync(path.join(vdir,file),buf);tiles.push({file,factor:L.factor,col,row,period,width:t.w,height:t.h,sha256:sha(buf)});}}
+ const files=[];const tiles=[];
+ for(const L of levels){if(!L.tiles.size)continue;
+  for(const [tk,t] of [...L.tiles].sort()){const [col,row]=tk.split(',').map(Number),file=`${L.dir}/${col}-${row}@${id}.png`,buf=png(t.w,t.h,t.rgb);files.push([file,buf]);tiles.push({file,factor:L.factor,col,row,period,width:t.w,height:t.h,sha256:sha(buf)});}}
  const edIds=Object.keys(counts).sort();
- fs.writeFileSync(path.join(vdir,'manifest.json'),JSON.stringify({generated:'tools/map/build-province-edits.cjs',baseRevision:ledger.baselineCommit,baseProvincesSha256,date:`${from[0]}-${String(from[1]).padStart(2,'0')}-${String(from[2]).padStart(2,'0')}`,
-  versions:[{id,period,edits:edIds,sha256:sha(JSON.stringify(tiles))}],editPixels:counts,tiles},null,2)+'\n');
- made.push(id);report.push({id,edits:counts,tiles:tiles.length});}
-// 今回作らなかった古い版の置き場は消す
-for(const v of fs.existsSync(compiled)?fs.readdirSync(compiled):[])if(!made.includes(v)&&fs.existsSync(path.join(compiled,v,'manifest.json')))fs.rmSync(path.join(compiled,v),{recursive:true});
-console.log(JSON.stringify(report,null,1));
+ files.push(['manifest.json',JSON.stringify({generated:'tools/map/build-province-edits.cjs',baseRevision:ledger.baselineCommit,baseProvincesSha256,date:`${from[0]}-${String(from[1]).padStart(2,'0')}-${String(from[2]).padStart(2,'0')}`,
+  versions:[{id,period,edits:edIds,sha256:sha(JSON.stringify(tiles))}],editPixels:counts,tiles},null,2)+'\n']);
+ made.push({id,files});report.push({id,edits:counts,tiles:tiles.length});}
+// 全部の版がそろってから書く：一時置き場に書き、置き場ごと入れ替える（今回作らなかった古い版は残らない）
+const stage=compiled+'.staging',old=compiled+'.old';fs.rmSync(stage,{recursive:true,force:true});fs.rmSync(old,{recursive:true,force:true});fs.mkdirSync(stage,{recursive:true});
+for(const v of made)for(const [file,body] of v.files){const p=path.join(stage,v.id,file);fs.mkdirSync(path.dirname(p),{recursive:true});fs.writeFileSync(p,body);}
+if(fs.existsSync(compiled))fs.renameSync(compiled,old);fs.renameSync(stage,compiled);fs.rmSync(old,{recursive:true,force:true});
+return report;}
+module.exports={build};
+if(require.main===module)console.log(JSON.stringify(build(),null,1));

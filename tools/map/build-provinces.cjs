@@ -1,9 +1,11 @@
 /* 段階1：読み込み後の地図（TKGEO の陸・城の領域・中立地・湖）を、1画素1領域の領域画像（Paradox の provinces 画像と同じ考え方）へ変換する。
-   出力：game/map/provinces/<列>-<行>.png（1024画素四方、可逆PNG、海だけのタイルは出さない）、game/map/definition.csv、game/map/manifest.json。
+   出力：正本 game/map_data/（provinces.png 全域1枚・definition.csv・default.map・projection.json、tools/map/map-data.cjs の書式）と、集計 data/audits/raster-provinces-build.json。
+   正本を作り直すのは土台そのものを変える時だけ（一度作った後は provinces.png を正本として直す）。配信タイルは続けて node tools/map/build-map-tiles.cjs で作る。
+   この中の番号は 0＝海、1＝未割当の陸…（内部の番号）で、definition.csv には +1 して書く（CK3 の書式で 0 は予約）。
    1画素＝100m（緯度方向）。画素の中心が多角形の内側か（偶奇則）で塗る。漏れ・重なりの集計を manifest に記録する。
    実行：node tools/map/build-provinces.cjs */
-const fs=require('node:fs'),path=require('node:path'),zlib=require('node:zlib'),crypto=require('node:crypto');
-const root=path.resolve(__dirname,'../..'),out=path.join(root,'game/map');
+const fs=require('node:fs'),path=require('node:path');
+const root=path.resolve(__dirname,'../..'),out=path.join(root,'data/map'),MD=require('./map-data.cjs');// out：郡画像と割り当て表
 const MODEL=require(path.join(root,'tools/checks/history-focus.cjs')).model(),{TKGEO:T}=MODEL;MODEL.G.newGame('s1560','oda');
 const CONT={x0:-1014.1,x1:2688.7,y0:-755.3,y1:3459.7};          // game/ui.js の表示範囲と同じ
 const STEP=0.1/(111.32/T.K);                            // 100m を地図平面の単位へ（緯度方向）
@@ -14,8 +16,8 @@ if(ORIGIN[0]>CONT.x0||ORIGIN[1]>CONT.y0)throw Error('origin must cover CONT');
 const W=Math.ceil((CONT.x1-ORIGIN[0])/STEP),H=Math.ceil((CONT.y1-ORIGIN[1])/STEP);
 // 領域の一覧：0=海、1=未割当の陸、続いて城の領域・中立地・湖。番号は一度付けたら変えない（既存の definition.csv を読み、
 // 同じキーには同じ番号と色を使い、新しいキーだけ末尾に足す。消えたキーも行を残す）。湖のキーは配列の順ではなく重心の経緯度で付ける。
-const prevFile=path.join(out,'definition.csv'),prev=new Map();
-if(fs.existsSync(prevFile))for(const l of fs.readFileSync(prevFile,'utf8').trim().split('\n').slice(1)){const p=l.split(';');prev.set(p[4],{id:+p[0],rgb:[+p[1],+p[2],+p[3]],name:p[5],kind:p[6]});}
+const prev=new Map();
+if(fs.existsSync(MD.files.definition))for(const r of MD.readDefinition().rows)if(r)prev.set(r.key,{id:r.id-1,rgb:r.rgb,name:r.key,kind:r.kind});
 const lakeKey=poly=>{const r=poly[0];let sx=0,sy=0,n=r.length/2;for(let i=0;i<r.length;i+=2){sx+=r[i];sy+=r[i+1];}const lon=sx/n/T.K/T.CX+T.LON0,lat=T.LAT0-sy/n/T.K;return 'lake:'+lon.toFixed(2)+','+lat.toFixed(2);};
 // 旧形式（lake:<添字>）の行は、同じ添字の湖の重心キーへ名前だけ移す（番号と色は保つ）。
 T.lakes.forEach((poly,i)=>{const o=prev.get('lake:'+i);if(o&&!prev.has(lakeKey(poly))){prev.set(lakeKey(poly),o);prev.delete('lake:'+i);}});
@@ -43,14 +45,8 @@ function fill(rings,row0,row1,cb){const edges=[];for(const r of rings){const n=r
 const bbox=polys=>{let y0=Infinity,y1=-Infinity;for(const p of polys)for(const r of p)for(let i=1;i<r.length;i+=2){y0=Math.min(y0,r[i]);y1=Math.max(y1,r[i]);}return [y0,y1];};
 const rowOf=y=>Math.floor((y-ORIGIN[1])/STEP);
 const landB=T.land.map(p=>({p,b:bbox([p])})),items=defs.slice(2).filter(d=>d.polys&&d.polys.length).map(d=>({d,b:bbox(d.polys)}));
-// PNG（RGB、行ごとのフィルタ0、zlib）。
-const crcT=new Int32Array(256).map((_,n)=>{let c=n;for(let k=0;k<8;k++)c=c&1?0xedb88320^(c>>>1):c>>>1;return c;});
-const crc=b=>{let c=-1;for(const x of b)c=crcT[(c^x)&255]^(c>>>8);return (c^-1)>>>0;};
-const chunk=(t,d)=>{const l=Buffer.alloc(4);l.writeUInt32BE(d.length);const td=Buffer.concat([Buffer.from(t),d]),c=Buffer.alloc(4);c.writeUInt32BE(crc(td));return Buffer.concat([l,td,c]);};
-const png=(w,h,rgb)=>{const raw=Buffer.alloc((w*3+1)*h);for(let y=0;y<h;y++)rgb.copy(raw,y*(w*3+1)+1,y*w*3,(y+1)*w*3);const ih=Buffer.alloc(13);ih.writeUInt32BE(w,0);ih.writeUInt32BE(h,4);ih[8]=8;ih[9]=2;return Buffer.concat([Buffer.from([137,80,78,71,13,10,26,10]),chunk('IHDR',ih),chunk('IDAT',zlib.deflateSync(raw,{level:9})),chunk('IEND',Buffer.alloc(0))]);};
-fs.rmSync(path.join(out,'provinces'),{recursive:true,force:true});fs.mkdirSync(path.join(out,'provinces'),{recursive:true});
-const counts=new Float64Array(defs.length);let overlap=0,outsideLand=0;const tiles=[];
-const cols=Math.ceil(W/TILE),rowsT=Math.ceil(H/TILE),N=W*H;
+const counts=new Float64Array(defs.length);let overlap=0,outsideLand=0;
+const N=W*H;
 const land=new Uint8Array(N),id=new Uint16Array(N);
 // 1) 陸の形（海と陸はこれだけで決める）。2) 城の領域・中立地（重なりは後の領域が勝つ＝キー順で決定的）。3) 湖。
 for(const {p} of landB)fill(p,0,H,(r,c0,c1)=>land.fill(1,r*W+c0,r*W+c1+1));
@@ -60,20 +56,20 @@ for(let k=0;k<N;k++)if(!land[k]&&id[k]){if(defs[id[k]].kind==='land')outsideLand
 // 陸なのにどの領域にも入らない画素は、4近傍で陸を伝って最も近い領域に寄せる（SLIVER画素＝約2kmまで）。それより遠い陸は「未割当の陸」。
 const SLIVER=20;let frontier=[];for(let k=0;k<N;k++)if(id[k]>1){const x=k%W;if((x>0&&land[k-1]&&!id[k-1])||(x<W-1&&land[k+1]&&!id[k+1])||(k>=W&&land[k-W]&&!id[k-W])||(k<N-W&&land[k+W]&&!id[k+W]))frontier.push(k);}
 let filled=0;for(let step=0;step<SLIVER&&frontier.length;step++){const next=[];for(const k of frontier){const x=k%W,v=id[k];for(const n of [x>0?k-1:-1,x<W-1?k+1:-1,k-W,k+W]){if(n<0||n>=N||!land[n]||id[n])continue;id[n]=v;filled++;next.push(n);}}frontier=next;}
-// 郡による割り当て直し（日本）。game/map/gun の郡画像（CODH 旧郡、江戸末期）を最小の単位とし、郡ごとに城の領域へ振り分ける。
+// 郡による割り当て直し（日本）。data/map/gun.png（全域1枚）の郡画像（CODH 旧郡、江戸末期）を最小の単位とし、郡ごとに城の領域へ振り分ける。
 // 決まり（gun-assignment.csv の basis）：
 //  castle-point … 郡の中に城が一つ → 郡全体をその城へ。
 //  split        … 郡の中に城が複数 → 郡の中は従来の線の領域の割り当てを保つ（その城どうしで分ける。推定）。
 //  same-province … 郡の中に城がない → 同じ国の城の中で、従来の領域の票が多い城（票が無ければ最も近い城）へ（推定）。
 //  majority-other-province … その国に城が一つも無い（河内・志摩・安房など）→ 従来の領域で最も多い城へ（推定）。
 // 郡の無い陸（朝鮮・大陸）は従来どおり。日本の海岸で郡データと陸地の輪郭がずれた画素は、4近傍で2kmまで隣の郡に寄せる。
-const gunDir=path.join(out,'gun'),gunJson=path.join(out,'gun.json');let gunReport=null;
-if(fs.existsSync(gunJson)){const gj=JSON.parse(fs.readFileSync(gunJson,'utf8')),gun=new Uint16Array(N);
- const dec=f=>{const b=fs.readFileSync(f);let i=8,w=0,h=0;const parts=[];while(i<b.length){const len=b.readUInt32BE(i),t=b.toString('ascii',i+4,i+8),d=b.subarray(i+8,i+8+len);if(t==='IHDR'){w=d.readUInt32BE(0);h=d.readUInt32BE(4);}else if(t==='IDAT')parts.push(d);i+=12+len;}const raw=zlib.inflateSync(Buffer.concat(parts));return {w,h,raw};};
- for(const t of gj.tiles){const {w,h,raw}=dec(path.join(gunDir,t.file));for(let y=0;y<h;y++)for(let x=0;x<w;x++){const o=y*(w*3+1)+1+x*3,k=(t.row*TILE+y)*W+t.col*TILE+x;if(k<N)gun[k]=raw[o+1]<<8|raw[o+2];}}
+let gunReport=null;
+(async()=>{
+if(fs.existsSync(path.join(out,'gun.png'))){const gun=new Uint16Array(N);
+ await require('./png-big.cjs').readRGB(path.join(out,'gun.png'),(y,row)=>{const o=y*W;for(let x=0;x<W;x++)gun[o+x]=row[x*3+1]<<8|row[x*3+2];});
  // 海岸のずれ：郡の無い日本側の陸画素を、郡のある陸から4近傍で寄せる（2kmまで）。
  let fr=[];for(let k=0;k<N;k++)if(gun[k]&&land[k])fr.push(k);for(let step=0;step<20&&fr.length;step++){const nx=[];for(const k of fr){const x=k%W;for(const n of [x>0?k-1:-1,x<W-1?k+1:-1,k-W,k+W]){if(n<0||n>=N||!land[n]||gun[n])continue;gun[n]=gun[k];nx.push(n);}}fr=nx;}
- const nG=Math.max(...gj.tiles.length?[0]:[0])||0;const rows=fs.readFileSync(path.join(out,'gun.csv'),'utf8').trim().split('\n').slice(1).map(l=>{const p=l.split(';');return {n:+p[0],codh:p[1],name:p[2],kuni:p[4]};});
+ const rows=fs.readFileSync(path.join(out,'gun.csv'),'utf8').trim().split('\n').slice(1).map(l=>{const p=l.split(';');return {n:+p[0],codh:p[1],name:p[2],kuni:p[4]};});
  const isOwner=v=>v>1&&(defs[v].key.startsWith('castle:')||defs[v].key.startsWith('neutral:'));
  const votes=new Map();for(let k=0;k<N;k++){const g=gun[k];if(!g||!land[k])continue;const v=id[k];if(!isOwner(v))continue;let m=votes.get(g);if(!m){m=new Map();votes.set(g,m);}m.set(v,(m.get(v)||0)+1);}
  const byKey=new Map(defs.map(d=>[d.key,d.id])),castlesIn=new Map();
@@ -109,21 +105,13 @@ if(fs.existsSync(gunJson)){const gj=JSON.parse(fs.readFileSync(gunJson,'utf8')),
 let unassigned=0;for(let k=0;k<N;k++){if(land[k]&&!id[k]){id[k]=1;unassigned++;}counts[id[k]]++;}
 // 未割当の陸がどこにあるか（タイル単位の画素数）
 const unTiles={};for(let k=0;k<N;k++)if(id[k]===1){const t=Math.floor((k%W)/TILE)+'-'+Math.floor(Math.floor(k/W)/TILE);unTiles[t]=(unTiles[t]||0)+1;}
-for(let ty=0;ty<rowsT;ty++){const r0=ty*TILE,r1=Math.min(H,r0+TILE),bh=r1-r0;
- for(let tx=0;tx<cols;tx++){const c0=tx*TILE,c1=Math.min(W,c0+TILE),bw=c1-c0;let any=false;const rgb=Buffer.alloc(bw*bh*3);
-  for(let y=0;y<bh;y++)for(let x=0;x<bw;x++){const v=id[(r0+y)*W+c0+x];if(v)any=true;const c=defs[v].rgb,o=(y*bw+x)*3;rgb[o]=c[0];rgb[o+1]=c[1];rgb[o+2]=c[2];}
-  if(!any)continue;const file=`${tx}-${ty}.png`,buf=png(bw,bh,rgb);fs.writeFileSync(path.join(out,'provinces',file),buf);tiles.push({file,col:tx,row:ty,width:bw,height:bh,sha256:crypto.createHash('sha256').update(buf).digest('hex')});}}
-// 縮小版（全体表示用）：f画素ごとに中心の画素を採る（最近傍。領域の色を混ぜない）。400m はタイル、800m は1枚。
-const levels=[];for(const f of [4,8]){const w=Math.ceil(W/f),h=Math.ceil(H/f),dirL=path.join(out,'provinces-'+f);fs.rmSync(dirL,{recursive:true,force:true});fs.mkdirSync(dirL,{recursive:true});const lt=[];
- const cw=Math.ceil(w/TILE),ch=Math.ceil(h/TILE);for(let ty=0;ty<ch;ty++)for(let tx=0;tx<cw;tx++){const c0=tx*TILE,r0=ty*TILE,bw=Math.min(TILE,w-c0),bh=Math.min(TILE,h-r0);let any=false;const rgb=Buffer.alloc(bw*bh*3);
-  for(let y=0;y<bh;y++){const sy=Math.min(H-1,(r0+y)*f+(f>>1));for(let x=0;x<bw;x++){const sx=Math.min(W-1,(c0+x)*f+(f>>1)),v=id[sy*W+sx];if(v)any=true;const c=defs[v].rgb,o=(y*bw+x)*3;rgb[o]=c[0];rgb[o+1]=c[1];rgb[o+2]=c[2];}}
-  if(!any)continue;const file=`${tx}-${ty}.png`,buf=png(bw,bh,rgb);fs.writeFileSync(path.join(dirL,file),buf);lt.push({file,col:tx,row:ty,width:bw,height:bh,sha256:crypto.createHash('sha256').update(buf).digest('hex')});}
- levels.push({factor:f,dir:'provinces-'+f,width:w,height:h,tiles:lt});}
 const lost=defs.filter(d=>d.id>1&&!d.retired&&!counts[d.id]).map(d=>d.key);
-fs.writeFileSync(path.join(out,'definition.csv'),'id;r;g;b;key;name;kind;pixels\n'+defs.map(d=>[d.id,...d.rgb,d.key,d.name,d.kind,counts[d.id]].join(';')).join('\n')+'\n');
-const manifest={generated:'tools/map/build-provinces.cjs',basis:'読み込み後の TKGEO（陸・城の領域・中立地・湖）の段階1変換。年代別の補正は未分離。',
- projection:{K:T.K,CX:T.CX,LON0:T.LON0,LAT0:T.LAT0,origin:ORIGIN,tileShiftFromV1:SHIFT,stepUnits:STEP,stepMetres:100},width:W,height:H,tile:TILE,tiles,levels,
+await require('./png-big.cjs').writeRGB(MD.files.provinces,W,H,y=>{const row=Buffer.alloc(W*3),o=y*W;for(let x=0;x<W;x++){const c=defs[id[o+x]].rgb;row[x*3]=c[0];row[x*3+1]=c[1];row[x*3+2]=c[2];}return row;});
+MD.writeDefinition(defs.map(d=>({id:d.id+1,rgb:d.rgb,key:d.key,kind:d.kind})));
+fs.writeFileSync(MD.files.projection,JSON.stringify({note:'経緯度→格子。x=(経度-LON0)·K·CX、y=(LAT0-緯度)·K の地図平面で、画素(列,行)の左上が origin+(列,行)·stepUnits。1画素＝緯度方向100m。',K:T.K,CX:T.CX,LON0:T.LON0,LAT0:T.LAT0,origin:ORIGIN,tileShiftFromV1:SHIFT,stepUnits:STEP,stepMetres:100,width:W,height:H},null,1)+'\n');
+const report={generated:'tools/map/build-provinces.cjs',basis:'読み込み後の TKGEO（陸・城の領域・中立地・湖）と郡画像から正本 game/map_data を作った時の集計。',source:MD.sourceSha256(),
  rules:{seaFromLandMask:true,overlapTiebreak:'後に塗った領域（キーの昇順で後のもの）',sliverAssignPixels:SLIVER,neighbourhood:4,pixelCentre:true},
  gun:gunReport,checks:{provinces:defs.length,overlapPixels:overlap,landIdOutsideLandPixelsReturnedToSea:outsideLand,sliverPixelsAssigned:filled,unassignedLandPixels:unassigned,unassignedByTile:unTiles,lostProvinces:lost}};
-fs.writeFileSync(path.join(out,'manifest.json'),JSON.stringify(manifest,null,1));
-console.log('\n',JSON.stringify({W,H,tiles:tiles.length,bytes:tiles.reduce((n,t)=>n+fs.statSync(path.join(out,'provinces',t.file)).size,0),...manifest.checks}));
+fs.writeFileSync(path.join(root,'data/audits/raster-provinces-build.json'),JSON.stringify(report,null,1)+'\n');
+console.log('\n',JSON.stringify({W,H,...report.checks}),'\n配信タイルは node tools/map/build-map-tiles.cjs で作る');
+})().catch(e=>{console.error(e);process.exit(1);});

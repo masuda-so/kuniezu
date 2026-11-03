@@ -1,7 +1,8 @@
 {
   "baselineCommit": "3ab7e5f2175760f5e7d5d5e134424ced9d5e742b",
-  "manifestSha256": "492a3accca21a0d4b4963a058880cb725b1d1c4a3a454b3e8df02fca6bda1483",
-  "definitionSha256": "e2e1b6003bb31758e285e70e0795f209edf6e485b8d21cfa50b0efb3b59d48c5",
+  "source": "game/map_data（provinces.png・definition.csv・default.map・projection.json）",
+  "sourceSha256": "9b949f63027df04ce0f12ce36294dd1ac338e057693952b752eff9627680b42f",
+  "note": "基準版の画素は 3ab7e5f の領域タイルと同じ。2026-11-03 に全域1枚の正本へ移し、definition の id を CK3 の書式（+1、0は予約）にした。",
   "applied": [
     {
       "id": "castle-regions",

@@ -6,16 +6,16 @@ const fs=require('node:fs'),path=require('node:path'),zlib=require('node:zlib');
 const root=path.resolve(__dirname,'../..'),dir=path.join(root,'game/map');
 const {G,TKGEO:T}=require(path.join(root,'tools/checks/history-focus.cjs')).model();G.newGame('s1560','oda');
 const m=JSON.parse(fs.readFileSync(path.join(dir,'manifest.json'),'utf8'));
-const defs=fs.readFileSync(path.join(dir,'definition.csv'),'utf8').trim().split('\n').slice(1).map(l=>{const p=l.split(';');return {id:+p[0],rgb:p.slice(1,4).map(Number),key:p[4],kind:p[6]};});
-const byColor=new Map(defs.map(d=>[d.rgb[0]<<16|d.rgb[1]<<8|d.rgb[2],d.id]));
-const W=m.width,H=m.height,N=W*H,id=new Uint16Array(N);
+const defs=require(path.join(root,'tools/map/map-data.cjs')).readDefinition().rows;// 正本 game/map_data（id は1から、kind は default.map）
+const byColor=new Map(defs.filter(Boolean).map(d=>[d.rgb[0]<<16|d.rgb[1]<<8|d.rgb[2],d.id]));
+const W=m.width,H=m.height,N=W*H,id=new Uint16Array(N).fill(defs.find(d=>d&&d.key==='sea').id);
 function decode(buf){let i=8,w=0,h=0;const parts=[];while(i<buf.length){const len=buf.readUInt32BE(i),type=buf.toString('ascii',i+4,i+8),data=buf.subarray(i+8,i+8+len);if(type==='IHDR'){w=data.readUInt32BE(0);h=data.readUInt32BE(4);}else if(type==='IDAT')parts.push(data);i+=12+len;}const raw=zlib.inflateSync(Buffer.concat(parts)),out=Buffer.alloc(w*h*3);for(let y=0;y<h;y++)raw.copy(out,y*w*3,y*(w*3+1)+1,(y+1)*(w*3+1));return {w,h,rgb:out};}
 for(const t of m.tiles){const {w,h,rgb}=decode(fs.readFileSync(path.join(dir,'provinces',t.file)));for(let y=0;y<h;y++)for(let x=0;x<w;x++){const o=(y*w+x)*3;id[(t.row*m.tile+y)*W+t.col*m.tile+x]=byColor.get(rgb[o]<<16|rgb[o+1]<<8|rgb[o+2]);}}
 const S=m.projection.stepUnits,[X0,Y0]=m.projection.origin,cr=(x,y)=>[Math.floor((x-X0)/S),Math.floor((y-Y0)/S)];
 // 国境線を壁として描く（太さ1画素の線＋4近傍で漏れないよう斜めの段も埋める）
 const wall=new Uint8Array(N);
 for(const line of T.pborders){for(let i=2;i<line.length;i+=2){let [a,b]=cr(line[i-2],line[i-1]);const [c,d]=cr(line[i],line[i+1]);const n=Math.max(Math.abs(c-a),Math.abs(d-b),1);let pa=a,pb=b;for(let s=0;s<=n;s++){const x=Math.round(a+(c-a)*s/n),y=Math.round(b+(d-b)*s/n);if(x>=0&&y>=0&&x<W&&y<H){wall[y*W+x]=1;if(x!==pa&&y!==pb&&pa>=0&&pa<W)wall[y*W+pa]=1;}pa=x;pb=y;}}}
-const isLand=k=>id[k]>0&&defs[id[k]].kind!=='lake';
+const isLand=k=>defs[id[k]]?.kind==='land';
 // 陸の連結成分（壁で区切る）
 const comp=new Int32Array(N).fill(-1),stack=new Int32Array(N);const comps=[];
 for(let k=0;k<N;k++){if(comp[k]>=0||wall[k]||!isLand(k))continue;const c=comps.length;let sp=0,size=0;stack[sp++]=k;comp[k]=c;while(sp){const q=stack[--sp];size++;const x=q%W;for(const n of [x>0?q-1:-1,x<W-1?q+1:-1,q-W,q+W])if(n>=0&&n<N&&comp[n]<0&&!wall[n]&&isLand(n)){comp[n]=c;stack[sp++]=n;}}comps.push({size,prov:null});}

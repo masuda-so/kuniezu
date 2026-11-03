@@ -32,15 +32,11 @@
 
 ## 領域差分の生成
 
-Pillow を入れた Python で、基準版の `game/map` と新規の出力ディレクトリを指定する。
-
-```sh
-python3 tools/map/build-province-edits.py /path/to/baseline/game/map /tmp/province-edits-1600 --year 1600
-```
+`node --max-old-space-size=6000 tools/map/build-province-edits.cjs` で、全部の期間の版をまとめて作る（下の「Node 版の生成と型紙の差分」）。基準版は正本 `game/map_data/`（全域1枚の `provinces.png` ほか）で、台帳 `baseline-ledger.json` の `sourceSha256` と照合する。旧 Python 版は廃止した。
 
 領域差分は `payload.file` の GeoJSON、`payload.feature` の配列番号、変更前後の `fromKey`・`toKey` を指定する。基準版と元タイルのハッシュを検証し、100m画素の中心が面の内部にあるところだけ置換する。選択年に重複する書き込み、すでに基準版へ反映したID、変更前の値の不一致は生成エラー。出力は変更タイルと検査用マニフェストで、基準版には書き戻さない。描画側への接続と、標高・河川の差分生成は別工程。
 
-領域の隣接検査は、Pillow・NumPy を入れた Python で `python3 tools/map/audit-raster-adjacency.py /path/to/baseline/game/map` を実行する。100m基準版（0d92c0a）では全画素が定義色に一致し、城・中立領域の4近傍と8近傍はいずれも301組で、斜め接触だけの組は0。タイル角をまたいで斜めに接する合成入力では4近傍が0、8近傍が1になることを確認した。海峡の接続特例や道路グラフはこの画素検査の集計に含めない。
+領域の隣接検査は、Pillow・NumPy を入れた Python で `python3 tools/map/audit-raster-adjacency.py game/map` を実行する（区画の表は正本 `game/map_data` から読む）。100m基準版（0d92c0a）では全画素が定義色に一致し、城・中立領域の4近傍と8近傍はいずれも301組で、斜め接触だけの組は0。タイル角をまたいで斜めに接する合成入力では4近傍が0、8近傍が1になることを確認した。海峡の接続特例や道路グラフはこの画素検査の集計に含めない。
 
 ## 河川の比較レイヤー
 
@@ -86,8 +82,8 @@ python3 tools/map/audit-raster-adjacency.py /path/to/baseline/game/map \
 
 ## Node 版の生成と型紙の差分
 
-Pillow のない環境では `node --max-old-space-size=6000 tools/map/build-province-edits.cjs` で全期間の版をまとめて作る。差分の期間の境目ごとに半開区間の版を一つずつ `compiled/<開始>-<終了>/` に書き、使わなくなった版の置き場は消す。規則は Python 版と同じで、水島の3差分だけで作り直した結果は既存の版と画素が一致した。
+`node --max-old-space-size=6000 tools/map/build-province-edits.cjs` で全期間の版をまとめて作る。全部の版を作り終えてから一時置き場に書き、置き場ごと入れ替える。負例の検査は `node tools/checks/province-edits.cjs`。差分の期間の境目ごとに半開区間の版を一つずつ `compiled/<開始>-<終了>/` に書き、使わなくなった版の置き場は消す。規則は Python 版と同じで、水島の3差分だけで作り直した結果は既存の版と画素が一致した。
 
-`payload.mask` の差分は、100m格子の窓 `window`（列・行・幅・高さ）に合わせた PNG を型紙にする。画素の値 n（G が上位、B が下位）が1以上なら `keys[n-1]` を書き、`from` が `land` なら元が陸、`sea` なら元が海であることを確かめる。`maskSha256` で型紙の取り違えを止める。Python 版はこの形を読まない。
+`payload.mask` の差分は、100m格子の窓 `window`（列・行・幅・高さ）に合わせた PNG を型紙にする。画素の値 n（G が上位、B が下位）が1以上なら `keys[n-1]` を書き、`from` が `land` なら元が陸、`sea` なら元が海であることを確かめる。`maskSha256` で型紙の取り違えを止める。
 
 児島湾の3差分（`kojima-bay-*.json`）は `tools/geo/kojima-bay-1600.cjs` が作る。根拠は `docs/reports/BIZEN_NORTH_SHORE_REVIEW.md` の「児島湾全体」。

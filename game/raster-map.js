@@ -10,12 +10,14 @@ window.TKMapVersion=(function(){let list=[],lastT=null,lastS=null,cur=null;
    表示の細かさに合わせて 100m（provinces/）・400m（provinces-4/）・800m（provinces-8/）のどれかを選ぶ。
    日が進んでも、領主が変わった時だけ表を引き直す。読み込み中のタイルは一段粗いものを代わりに貼る。 */
 window.TKRaster=(function(){
- let man=null,defs=[],ready=false,revision=0,onChange=null;const byColor=new Map(),tiles=new Map(),order=[];
+ let man=null,defs=[],seaId=1,ready=false,revision=0,onChange=null;const byColor=new Map(),tiles=new Map(),order=[];
  const key=(f,t)=>f+':'+t.file;
  // 通信のない検査環境（node の vm）では読まない。描画は従来の線の領域へ戻る。
- if(typeof fetch==='function'&&typeof document!=='undefined')Promise.all([fetch('map/manifest.json',{cache:'no-cache'}).then(r=>r.json()),fetch('map/definition.csv',{cache:'no-cache'}).then(r=>r.text())]).then(([m,csv])=>{
-  man=m;defs=csv.trim().split('\n').slice(1).map(l=>{const p=l.split(';');return {id:+p[0],rgb:[+p[1],+p[2],+p[3]],key:p[4],name:p[5],kind:p[6]};});
-  for(const d of defs)byColor.set(d.rgb[0]<<16|d.rgb[1]<<8|d.rgb[2],d.id);
+ if(typeof fetch==='function'&&typeof document!=='undefined')Promise.all([fetch('map/manifest.json',{cache:'no-cache'}).then(r=>r.json()),fetch('map_data/definition.csv',{cache:'no-cache'}).then(r=>r.text()),fetch('map_data/default.map',{cache:'no-cache'}).then(r=>r.text())]).then(([m,csv,dm])=>{
+  // 正本 map_data（CK3 の書式）：definition.csv は `id;R;G;B;name;x;`（id 0 は予約）、海・湖は default.map の sea_zones・lakes。defs は id で引く。
+  const list=k=>new Set(((dm.match(new RegExp(k+'\\s*=\\s*LIST\\s*\\{([^}]*)\\}'))||[])[1]||'').trim().split(/\s+/).filter(Boolean).map(Number)),sea=list('sea_zones'),lake=list('lakes');
+  man=m;defs=[];for(const l of csv.split(/\r?\n/)){const p=l.split(';'),id=+p[0];if(!id)continue;defs[id]={id,rgb:[+p[1],+p[2],+p[3]],key:p[4],kind:sea.has(id)?'sea':lake.has(id)?'lake':'land'};}
+  for(const d of defs)if(d){byColor.set(d.rgb[0]<<16|d.rgb[1]<<8|d.rgb[2],d.id);if(d.key==='sea')seaId=d.id;}
   ready=true;for(const t of level(8).tiles)load(8,t);revision++;onChange?.();
  }).catch(()=>{});
  function baseLevel(f){return f===1?{factor:1,dir:'provinces',tiles:man.tiles}:man.levels.find(l=>l.factor===f);}
@@ -28,7 +30,7 @@ window.TKRaster=(function(){
   verKey=k;return verMemo={...base,tiles};}
  function load(f,t){const k=key(f,t);const had=tiles.get(k);if(had&&!(had.state==='error'&&performance.now()>had.retry))return had;const rec={state:'loading',t,f,ids:null,canvas:null,sig:'',tries:(had?.tries||0)+1};tiles.set(k,rec);
   fetch('map/'+(t.url||level(f).dir+'/'+t.file)+(t.sha256?'?v='+t.sha256.slice(0,10):'')).then(r=>r.blob()).then(b=>createImageBitmap(b)).then(bm=>{const cv=document.createElement('canvas');cv.width=bm.width;cv.height=bm.height;const c=cv.getContext('2d',{willReadFrequently:true});c.drawImage(bm,0,0);const px=c.getImageData(0,0,bm.width,bm.height).data,ids=new Uint16Array(bm.width*bm.height);
-   for(let i=0;i<ids.length;i++)ids[i]=byColor.get(px[i*4]<<16|px[i*4+1]<<8|px[i*4+2])||0;rec.ids=ids;rec.state='ready';revision++;onChange?.();})
+   for(let i=0;i<ids.length;i++)ids[i]=byColor.get(px[i*4]<<16|px[i*4+1]<<8|px[i*4+2])||seaId;rec.ids=ids;rec.state='ready';revision++;onChange?.();})
    .catch(e=>{rec.state='error';rec.err=String(e);rec.retry=performance.now()+1000*rec.tries;if(rec.tries<5)setTimeout(()=>{revision++;onChange?.();},1000*rec.tries);});
   order.push(k);while(order.length>48){const old=order.shift();if(!old.startsWith('8:'))tiles.delete(old);}return rec;}
  // 表示の細かさ：画面1物理画素あたりの地図単位に対し、画素が1.5倍より粗くならない最も粗い段を選ぶ。
@@ -52,7 +54,7 @@ window.TKRaster=(function(){
  // 地図平面の点の領域（当たり判定・検査用）。読み込み済みの最も細かい段で引き、100m の段が無ければ読み始める。
  // 返り値は definition の行に、引いた段（factor）を添えたもの。粗い段だけで「海」と決めつけないよう呼び出し側で factor を見る。
  function pickAt(x,y){if(!ready)return null;for(const f of [1,4,8]){const s=man.projection.stepUnits*f,cx=Math.floor((x-man.projection.origin[0])/s),cy=Math.floor((y-man.projection.origin[1])/s),t=level(f).tiles.find(t=>t.col===Math.floor(cx/man.tile)&&t.row===Math.floor(cy/man.tile));
-  if(!t){if(f===1&&cx>=0&&cy>=0&&cx<man.width&&cy<man.height)return {...defs[0],factor:1};continue;}const rec=f===1?load(f,t):tiles.get(key(f,t));if(rec?.state==='ready'){const d=defs[rec.ids[(cy-t.row*man.tile)*t.width+(cx-t.col*man.tile)]];return d?{...d,factor:f}:null;}}return null;}
+  if(!t){if(f===1&&cx>=0&&cy>=0&&cx<man.width&&cy<man.height)return {...defs[seaId],factor:1};continue;}const rec=f===1?load(f,t):tiles.get(key(f,t));if(rec?.state==='ready'){const d=defs[rec.ids[(cy-t.row*man.tile)*t.width+(cx-t.col*man.tile)]];return d?{...d,factor:f}:null;}}return null;}
  function idAt(x,y){return pickAt(x,y);}
  return {bump(){verMemo=null;revision++;onChange?.();},paint,idAt,pickAt,ready:()=>ready,revision:()=>revision,defs:()=>defs,onChange(fn){onChange=fn;}};
 })();

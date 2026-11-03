@@ -1,20 +1,20 @@
 """Inspect the local Fujito passage in a province raster, optionally with replacement tiles."""
 import argparse
 from collections import deque
-import csv
 from functools import lru_cache
-from hashlib import sha256
 import json
 from pathlib import Path
 
 from PIL import Image
 
+import sys
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "map"))
+from map_data import read_definition, source_sha256  # noqa: E402
+
 
 def inspect(base, overlay):
     manifest = json.loads((base / "manifest.json").read_text())
-    with (base / "definition.csv").open(encoding="utf-8", newline="") as stream:
-        kinds = {tuple(int(row[channel]) for channel in "rgb"): row["kind"]
-                 for row in csv.DictReader(stream, delimiter=";")}
+    kinds = {(row["r"], row["g"], row["b"]): row["kind"] for row in read_definition()}
     projection = manifest["projection"]
     origin_x, origin_y = projection["origin"]
     step, tile_size = projection["stepUnits"], manifest["tile"]
@@ -23,8 +23,7 @@ def inspect(base, overlay):
     replacements = {}
     if overlay:
         version = json.loads((overlay / "manifest.json").read_text())
-        baseline = sha256((base / "manifest.json").read_bytes()
-                          + (base / "definition.csv").read_bytes()).hexdigest()
+        baseline = source_sha256()
         if version.get("baseProvincesSha256") != baseline:
             raise ValueError("Replacement tiles target a different province baseline")
         replacements = {

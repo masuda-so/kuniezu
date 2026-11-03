@@ -1,6 +1,6 @@
 {
  "generated": "tools/map/build-edges.cjs",
- "baseProvincesSha256": "01c67252315fa0afbf75b87623bca927225860102faa8c20fa98b04759d2264e",
+ "baseProvincesSha256": "9b949f63027df04ce0f12ce36294dd1ac338e057693952b752eff9627680b42f",
  "staleVersions": [],
  "note": "年代別の領域タイルの差し替え。同じ段・同じ列行の基準タイルの上に重ねず置き換える。期間は半開区間。",
  "versions": [

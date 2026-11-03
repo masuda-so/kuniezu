@@ -19,27 +19,97 @@
    "出雲"
   ]
  ],
- "borderSamplesKm": 10976,
+ "borderSamplesKm": 11001,
  "regionsStraddlingBorders": [
+  {
+   "key": "castle:sangju",
+   "ownProvince": "慶尚",
+   "borderKm": 218.6
+  },
+  {
+   "key": "castle:haeju",
+   "ownProvince": "黄海",
+   "borderKm": 206.6
+  },
+  {
+   "key": "castle:chungju",
+   "ownProvince": "忠清",
+   "borderKm": 204.7
+  },
+  {
+   "key": "castle:hanseong",
+   "ownProvince": "京畿",
+   "borderKm": 141.3
+  },
+  {
+   "key": "castle:hamhung",
+   "ownProvince": "咸鏡",
+   "borderKm": 137.6
+  },
+  {
+   "key": "castle:matsukura",
+   "ownProvince": "飛騨",
+   "borderKm": 134.2
+  },
+  {
+   "key": "castle:wonju",
+   "ownProvince": "江原",
+   "borderKm": 131.2
+  },
+  {
+   "key": "castle:uiju",
+   "ownProvince": "平安",
+   "borderKm": 127.6
+  },
+  {
+   "key": "castle:pyongyang",
+   "ownProvince": "平安",
+   "borderKm": 122.5
+  },
   {
    "key": "castle:kannabe",
    "ownProvince": "備後",
-   "borderKm": 86.3
+   "borderKm": 117.3
   },
   {
-   "key": "castle:kakegawa",
-   "ownProvince": "遠江",
-   "borderKm": 82.1
+   "key": "castle:jeonju",
+   "ownProvince": "全羅",
+   "borderKm": 106
   },
   {
-   "key": "castle:yakami",
-   "ownProvince": "丹波",
-   "borderKm": 81.3
+   "key": "castle:kururi",
+   "ownProvince": "上総",
+   "borderKm": 104.4
   },
   {
-   "key": "castle:kiriyama",
-   "ownProvince": "伊勢",
-   "borderKm": 76.3
+   "key": "castle:jinju",
+   "ownProvince": "慶尚",
+   "borderKm": 99.2
+  },
+  {
+   "key": "castle:gaeseong",
+   "ownProvince": "京畿",
+   "borderKm": 97.9
+  },
+  {
+   "key": "castle:kawara",
+   "ownProvince": "豊前",
+   "borderKm": 82.6
+  },
+  {
+   "key": "castle:okazaki",
+   "ownProvince": "三河",
+   "borderKm": 82.5
+  },
+  {
+   "key": "castle:sannohe",
+   "ownProvince": "陸奥",
+   "borderKm": 80.9
+  },
+  {
+   "key": "castle:sunpu",
+   "ownProvince": "駿河",
+   "borderKm": 74.2
   },
   {
    "key": "castle:bmatsuyama",
@@ -47,24 +117,49 @@
    "borderKm": 67.5
   },
   {
-   "key": "castle:iwamura",
-   "ownProvince": "美濃",
-   "borderKm": 60.4
+   "key": "castle:kakegawa",
+   "ownProvince": "遠江",
+   "borderKm": 62.1
   },
   {
-   "key": "castle:kiyosu",
-   "ownProvince": "尾張",
-   "borderKm": 59.8
+   "key": "castle:ishiyama",
+   "ownProvince": "摂津",
+   "borderKm": 61.6
   },
   {
-   "key": "castle:matsukura",
-   "ownProvince": "飛騨",
-   "borderKm": 55.3
+   "key": "castle:kiriyama",
+   "ownProvince": "伊勢",
+   "borderKm": 57.3
   },
   {
-   "key": "castle:kururi",
-   "ownProvince": "上総",
-   "borderKm": 50.1
+   "key": "castle:koriyama",
+   "ownProvince": "安芸",
+   "borderKm": 54.1
+  },
+  {
+   "key": "castle:yakami",
+   "ownProvince": "丹波",
+   "borderKm": 53.3
+  },
+  {
+   "key": "castle:obi",
+   "ownProvince": "日向",
+   "borderKm": 52.9
+  },
+  {
+   "key": "castle:kosho",
+   "ownProvince": "筑前",
+   "borderKm": 49.3
+  },
+  {
+   "key": "castle:koga",
+   "ownProvince": "下総",
+   "borderKm": 49.1
+  },
+  {
+   "key": "castle:kouyama",
+   "ownProvince": "大隅",
+   "borderKm": 48.2
   },
   {
    "key": "castle:katsuyama",
@@ -77,19 +172,19 @@
    "borderKm": 47.8
   },
   {
-   "key": "castle:sakura",
-   "ownProvince": "下総",
-   "borderKm": 45.6
+   "key": "castle:gongju",
+   "ownProvince": "忠清",
+   "borderKm": 47.5
   },
   {
-   "key": "castle:okazaki",
-   "ownProvince": "三河",
-   "borderKm": 40.4
+   "key": "castle:konosumi",
+   "ownProvince": "但馬",
+   "borderKm": 47.2
   },
   {
-   "key": "castle:odajo",
-   "ownProvince": "常陸",
-   "borderKm": 38.1
+   "key": "castle:kiyosu",
+   "ownProvince": "尾張",
+   "borderKm": 38
   },
   {
    "key": "castle:akutagawa",
@@ -107,44 +202,24 @@
    "borderKm": 36.5
   },
   {
+   "key": "castle:daegu",
+   "ownProvince": "慶尚",
+   "borderKm": 35.7
+  },
+  {
    "key": "castle:kishiwada",
    "ownProvince": "和泉",
    "borderKm": 31.3
   },
   {
-   "key": "castle:kawara",
-   "ownProvince": "豊前",
-   "borderKm": 30.5
-  },
-  {
-   "key": "castle:sunpu",
-   "ownProvince": "駿河",
-   "borderKm": 28.6
-  },
-  {
-   "key": "castle:wonju",
-   "ownProvince": "江原",
-   "borderKm": 28.4
-  },
-  {
-   "key": "castle:kosho",
-   "ownProvince": "筑前",
-   "borderKm": 26.4
-  },
-  {
-   "key": "castle:ishiyama",
-   "ownProvince": "摂津",
-   "borderKm": 25.4
+   "key": "castle:edo",
+   "ownProvince": "武蔵",
+   "borderKm": 30.1
   },
   {
    "key": "castle:tango",
    "ownProvince": "丹後",
    "borderKm": 24.2
-  },
-  {
-   "key": "castle:konosumi",
-   "ownProvince": "但馬",
-   "borderKm": 23.8
   },
   {
    "key": "castle:iida",
@@ -157,9 +232,14 @@
    "borderKm": 23.2
   },
   {
-   "key": "castle:uchi",
-   "ownProvince": "薩摩",
-   "borderKm": 20.4
+   "key": "castle:shingu",
+   "ownProvince": "紀伊",
+   "borderKm": 21.6
+  },
+  {
+   "key": "castle:sakura",
+   "ownProvince": "下総",
+   "borderKm": 19.4
   },
   {
    "key": "castle:fukashi",
@@ -172,24 +252,14 @@
    "borderKm": 18.2
   },
   {
-   "key": "castle:yanagawa",
-   "ownProvince": "筑後",
-   "borderKm": 17.5
-  },
-  {
    "key": "castle:nanao",
    "ownProvince": "能登",
    "borderKm": 17.4
   },
   {
-   "key": "castle:edo",
-   "ownProvince": "武蔵",
-   "borderKm": 15.7
-  },
-  {
-   "key": "castle:obi",
-   "ownProvince": "日向",
-   "borderKm": 15.4
+   "key": "castle:suncheon",
+   "ownProvince": "全羅",
+   "borderKm": 16
   },
   {
    "key": "castle:kasugayama",
@@ -202,19 +272,14 @@
    "borderKm": 11.1
   },
   {
-   "key": "castle:miki",
-   "ownProvince": "播磨",
-   "borderKm": 8.5
+   "key": "castle:iwamura",
+   "ownProvince": "美濃",
+   "borderKm": 10.1
   },
   {
-   "key": "castle:tamanawa",
-   "ownProvince": "相模",
-   "borderKm": 6.3
-  },
-  {
-   "key": "castle:koriyama",
-   "ownProvince": "安芸",
-   "borderKm": 5.4
+   "key": "castle:odajo",
+   "ownProvince": "常陸",
+   "borderKm": 5.8
   },
   {
    "key": "castle:karasawa",
@@ -239,11 +304,6 @@
   {
    "key": "castle:funai",
    "ownProvince": "豊後",
-   "borderKm": 3.4
-  },
-  {
-   "key": "castle:koga",
-   "ownProvince": "下総",
    "borderKm": 3.3
   },
   {
@@ -255,16 +315,6 @@
    "key": "castle:kumamoto",
    "ownProvince": "肥後",
    "borderKm": 2.7
-  },
-  {
-   "key": "castle:shingu",
-   "ownProvince": "紀伊",
-   "borderKm": 2.6
-  },
-  {
-   "key": "castle:hiyama",
-   "ownProvince": "出羽",
-   "borderKm": 2.5
   },
   {
    "key": "castle:karasuyama",
@@ -287,6 +337,11 @@
    "borderKm": 2
   },
   {
+   "key": "castle:yanagawa",
+   "ownProvince": "筑後",
+   "borderKm": 2
+  },
+  {
    "key": "castle:ota",
    "ownProvince": "常陸",
    "borderKm": 1.9
@@ -294,11 +349,6 @@
   {
    "key": "castle:myou",
    "ownProvince": "陸奥",
-   "borderKm": 1.9
-  },
-  {
-   "key": "castle:himeji",
-   "ownProvince": "播磨",
    "borderKm": 1.9
   },
   {
@@ -317,13 +367,18 @@
    "borderKm": 1.7
   },
   {
+   "key": "castle:hiyama",
+   "ownProvince": "出羽",
+   "borderKm": 1.6
+  },
+  {
    "key": "castle:minowa",
    "ownProvince": "上野",
    "borderKm": 1.6
   },
   {
-   "key": "castle:kouyama",
-   "ownProvince": "大隅",
+   "key": "castle:himeji",
+   "ownProvince": "播磨",
    "borderKm": 1.5
   },
   {
@@ -349,11 +404,6 @@
   {
    "key": "castle:kuwagawa",
    "ownProvince": "陸奥",
-   "borderKm": 1.2
-  },
-  {
-   "key": "castle:sangju",
-   "ownProvince": "慶尚",
    "borderKm": 1.2
   },
   {
@@ -412,17 +462,12 @@
    "borderKm": 0.6
   },
   {
-   "key": "castle:chungju",
-   "ownProvince": "忠清",
+   "key": "castle:miki",
+   "ownProvince": "播磨",
    "borderKm": 0.6
   },
   {
    "key": "castle:teraike",
-   "ownProvince": "陸奥",
-   "borderKm": 0.5
-  },
-  {
-   "key": "castle:sannohe",
    "ownProvince": "陸奥",
    "borderKm": 0.5
   },
@@ -432,8 +477,8 @@
    "borderKm": 0.5
   },
   {
-   "key": "castle:tachibana",
-   "ownProvince": "筑前",
+   "key": "castle:tamanawa",
+   "ownProvince": "相模",
    "borderKm": 0.5
   },
   {
@@ -467,11 +512,6 @@
    "borderKm": 0.4
   },
   {
-   "key": "castle:uiju",
-   "ownProvince": "平安",
-   "borderKm": 0.4
-  },
-  {
    "key": "castle:iwaki",
    "ownProvince": "陸奥",
    "borderKm": 0.3
@@ -489,11 +529,6 @@
   {
    "key": "castle:tonokori",
    "ownProvince": "日向",
-   "borderKm": 0.3
-  },
-  {
-   "key": "castle:gongju",
-   "ownProvince": "忠清",
    "borderKm": 0.3
   },
   {
@@ -552,6 +587,11 @@
    "borderKm": 0.1
   },
   {
+   "key": "castle:tachibana",
+   "ownProvince": "筑前",
+   "borderKm": 0.1
+  },
+  {
    "key": "castle:agata",
    "ownProvince": "日向",
    "borderKm": 0.1
@@ -563,34 +603,21 @@
   }
  ],
  "scope": "城の領域（領域画像）と国・道（国境線で塗り分け）の対応。国境線は既存データで、史料の郡境ではない。",
- "namedComponents": 72,
- "components": 3229,
- "unnamedLandKm2": 100396,
- "regionsCrossingProvince": 20,
- "regionsTotal": 137,
+ "namedComponents": 75,
+ "components": 3245,
+ "unnamedLandKm2": 10848,
+ "regionsCrossingProvince": 27,
+ "regionsTotal": 140,
  "crossing": [
   {
    "key": "castle:hamhung",
    "ownProvince": "咸鏡",
-   "km2": 55333,
+   "km2": 57771,
    "ownShare": 0,
    "spillsInto": [
     {
      "prov": "平安",
-     "km2": 55333,
-     "share": 1
-    }
-   ]
-  },
-  {
-   "key": "castle:wonju",
-   "ownProvince": "江原",
-   "km2": 31070,
-   "ownShare": 0,
-   "spillsInto": [
-    {
-     "prov": "平安",
-     "km2": 31070,
+     "km2": 57771,
      "share": 1
     }
    ]
@@ -598,65 +625,116 @@
   {
    "key": "castle:haeju",
    "ownProvince": "黄海",
-   "km2": 16515,
+   "km2": 17050,
    "ownShare": 0,
    "spillsInto": [
     {
      "prov": "平安",
-     "km2": 16515,
-     "share": 1
+     "km2": 16671,
+     "share": 0.978
+    },
+    {
+     "prov": "忠清",
+     "km2": 379,
+     "share": 0.022
+    }
+   ]
+  },
+  {
+   "key": "castle:wonju",
+   "ownProvince": "江原",
+   "km2": 26807,
+   "ownShare": 0,
+   "spillsInto": [
+    {
+     "prov": "平安",
+     "km2": 26639,
+     "share": 0.994
     }
    ]
   },
   {
    "key": "castle:gaeseong",
    "ownProvince": "京畿",
-   "km2": 2770,
+   "km2": 3118,
    "ownShare": 0,
    "spillsInto": [
     {
      "prov": "忠清",
-     "km2": 2770,
-     "share": 1
+     "km2": 2524,
+     "share": 0.81
+    },
+    {
+     "prov": "平安",
+     "km2": 594,
+     "share": 0.19
     }
    ]
   },
   {
    "key": "castle:hanseong",
    "ownProvince": "京畿",
-   "km2": 9513,
+   "km2": 9503,
    "ownShare": 0,
    "spillsInto": [
     {
      "prov": "忠清",
-     "km2": 9513,
-     "share": 1
+     "km2": 9067,
+     "share": 0.954
+    },
+    {
+     "prov": "平安",
+     "km2": 436,
+     "share": 0.046
     }
    ]
   },
   {
    "key": "castle:koga",
    "ownProvince": "下総",
-   "km2": 301,
+   "km2": 596,
    "ownShare": 0,
    "spillsInto": [
     {
      "prov": "常陸",
-     "km2": 301,
-     "share": 0.999
+     "km2": 557,
+     "share": 0.934
+    },
+    {
+     "prov": "武蔵",
+     "km2": 39,
+     "share": 0.066
     }
    ]
   },
   {
    "key": "castle:sakura",
    "ownProvince": "下総",
-   "km2": 2637,
+   "km2": 2382,
    "ownShare": 0,
    "spillsInto": [
     {
      "prov": "常陸",
-     "km2": 2637,
+     "km2": 2381,
      "share": 1
+    }
+   ]
+  },
+  {
+   "key": "castle:kururi",
+   "ownProvince": "上総",
+   "km2": 2828,
+   "ownShare": 0,
+   "spillsInto": [
+    {
+     "prov": "常陸",
+     "km2": 2302,
+     "share": 0.814
+    },
+    {
+     "prov": "安房",
+     "km2": 526,
+     "share": 0.186
     }
    ]
   },
@@ -674,38 +752,74 @@
    ]
   },
   {
-   "key": "castle:kururi",
-   "ownProvince": "上総",
-   "km2": 2408,
-   "ownShare": 0,
+   "key": "castle:ishiyama",
+   "ownProvince": "摂津",
+   "km2": 1055,
+   "ownShare": 0.349,
    "spillsInto": [
     {
-     "prov": "常陸",
-     "km2": 1882,
-     "share": 0.782
+     "prov": "播磨",
+     "km2": 323,
+     "share": 0.307
     },
     {
-     "prov": "安房",
-     "km2": 526,
-     "share": 0.218
+     "prov": "丹波",
+     "km2": 205,
+     "share": 0.194
+    },
+    {
+     "prov": "河内",
+     "km2": 147,
+     "share": 0.139
     }
    ]
   },
   {
-   "key": "castle:ishiyama",
-   "ownProvince": "摂津",
-   "km2": 465,
-   "ownShare": 0.659,
+   "key": "castle:kosho",
+   "ownProvince": "筑前",
+   "km2": 660,
+   "ownShare": 0.568,
    "spillsInto": [
     {
-     "prov": "河内",
-     "km2": 147,
-     "share": 0.315
+     "prov": "筑後",
+     "km2": 236,
+     "share": 0.358
     },
     {
-     "prov": "和泉",
-     "km2": 12,
-     "share": 0.026
+     "prov": "豊前",
+     "km2": 49,
+     "share": 0.074
+    }
+   ]
+  },
+  {
+   "key": "castle:kawara",
+   "ownProvince": "豊前",
+   "km2": 2061,
+   "ownShare": 0.599,
+   "spillsInto": [
+    {
+     "prov": "豊後",
+     "km2": 426,
+     "share": 0.206
+    },
+    {
+     "prov": "筑前",
+     "km2": 401,
+     "share": 0.194
+    }
+   ]
+  },
+  {
+   "key": "castle:edo",
+   "ownProvince": "武蔵",
+   "km2": 975,
+   "ownShare": 0.684,
+   "spillsInto": [
+    {
+     "prov": "相模",
+     "km2": 308,
+     "share": 0.316
     }
    ]
   },
@@ -723,6 +837,50 @@
    ]
   },
   {
+   "key": "castle:obi",
+   "ownProvince": "日向",
+   "km2": 1986,
+   "ownShare": 0.762,
+   "spillsInto": [
+    {
+     "prov": "大隅",
+     "km2": 472,
+     "share": 0.238
+    }
+   ]
+  },
+  {
+   "key": "castle:matsukura",
+   "ownProvince": "飛騨",
+   "km2": 4178,
+   "ownShare": 0.782,
+   "spillsInto": [
+    {
+     "prov": "美濃",
+     "km2": 780,
+     "share": 0.187
+    },
+    {
+     "prov": "信濃",
+     "km2": 128,
+     "share": 0.031
+    }
+   ]
+  },
+  {
+   "key": "castle:kannabe",
+   "ownProvince": "備後",
+   "km2": 3530,
+   "ownShare": 0.793,
+   "spillsInto": [
+    {
+     "prov": "安芸",
+     "km2": 728,
+     "share": 0.206
+    }
+   ]
+  },
+  {
    "key": "castle:tenjin",
    "ownProvince": "備前",
    "km2": 1442,
@@ -736,33 +894,28 @@
    ]
   },
   {
-   "key": "castle:kiriyama",
-   "ownProvince": "伊勢",
-   "km2": 3328,
-   "ownShare": 0.821,
+   "key": "castle:konosumi",
+   "ownProvince": "但馬",
+   "km2": 2074,
+   "ownShare": 0.825,
    "spillsInto": [
     {
-     "prov": "志摩",
-     "km2": 467,
-     "share": 0.14
-    },
-    {
-     "prov": "紀伊",
-     "km2": 129,
-     "share": 0.039
+     "prov": "播磨",
+     "km2": 362,
+     "share": 0.174
     }
    ]
   },
   {
-   "key": "castle:kakegawa",
-   "ownProvince": "遠江",
-   "km2": 2386,
-   "ownShare": 0.835,
+   "key": "castle:kiriyama",
+   "ownProvince": "伊勢",
+   "km2": 2927,
+   "ownShare": 0.84,
    "spillsInto": [
     {
-     "prov": "駿河",
-     "km2": 393,
-     "share": 0.164
+     "prov": "志摩",
+     "km2": 467,
+     "share": 0.159
     }
    ]
   },
@@ -780,71 +933,84 @@
    ]
   },
   {
-   "key": "castle:kosho",
-   "ownProvince": "筑前",
-   "km2": 444,
-   "ownShare": 0.845,
+   "key": "castle:sannohe",
+   "ownProvince": "陸奥",
+   "km2": 7770,
+   "ownShare": 0.864,
    "spillsInto": [
     {
-     "prov": "筑後",
-     "km2": 69,
-     "share": 0.155
+     "prov": "出羽",
+     "km2": 1059,
+     "share": 0.136
     }
    ]
   },
   {
-   "key": "castle:iwamura",
-   "ownProvince": "美濃",
-   "km2": 3356,
-   "ownShare": 0.854,
+   "key": "castle:jeonju",
+   "ownProvince": "全羅",
+   "km2": 6060,
+   "ownShare": 0.865,
    "spillsInto": [
     {
-     "prov": "飛騨",
-     "km2": 406,
-     "share": 0.121
+     "prov": "忠清",
+     "km2": 818,
+     "share": 0.135
     }
    ]
   },
   {
-   "key": "castle:edo",
-   "ownProvince": "武蔵",
-   "km2": 749,
-   "ownShare": 0.859,
+   "key": "castle:kouyama",
+   "ownProvince": "大隅",
+   "km2": 2651,
+   "ownShare": 0.87,
    "spillsInto": [
     {
-     "prov": "相模",
-     "km2": 105,
-     "share": 0.141
+     "prov": "薩摩",
+     "km2": 344,
+     "share": 0.13
     }
    ]
   },
   {
-   "key": "castle:yakami",
-   "ownProvince": "丹波",
-   "km2": 3337,
-   "ownShare": 0.888,
+   "key": "castle:okazaki",
+   "ownProvince": "三河",
+   "km2": 2245,
+   "ownShare": 0.883,
    "spillsInto": [
     {
-     "prov": "山城",
-     "km2": 215,
-     "share": 0.064
+     "prov": "尾張",
+     "km2": 262,
+     "share": 0.117
+    }
+   ]
+  },
+  {
+   "key": "castle:sunpu",
+   "ownProvince": "駿河",
+   "km2": 2997,
+   "ownShare": 0.887,
+   "spillsInto": [
+    {
+     "prov": "遠江",
+     "km2": 200,
+     "share": 0.067
     },
     {
-     "prov": "播磨",
-     "km2": 95,
-     "share": 0.029
+     "prov": "伊豆",
+     "km2": 137,
+     "share": 0.046
     }
    ]
   },
   {
    "key": "castle:kiyosu",
    "ownProvince": "尾張",
-   "km2": 1674,
+   "km2": 1502,
    "ownShare": 0.891,
    "spillsInto": [
     {
      "prov": "三河",
-     "km2": 182,
+     "km2": 163,
      "share": 0.109
     }
    ]
@@ -961,18 +1127,13 @@
    "province": "常陸",
    "km2": 10422,
    "regions": 5,
-   "foreignShare": 0.463,
+   "foreignShare": 0.503,
    "unassignedShare": 0,
    "parts": [
     {
      "key": "castle:odajo",
      "ownProvince": "常陸",
-     "share": 0.301
-    },
-    {
-     "key": "castle:sakura",
-     "ownProvince": "下総",
-     "share": 0.253
+     "share": 0.261
     },
     {
      "key": "castle:ota",
@@ -980,14 +1141,19 @@
      "share": 0.236
     },
     {
+     "key": "castle:sakura",
+     "ownProvince": "下総",
+     "share": 0.229
+    },
+    {
      "key": "castle:kururi",
      "ownProvince": "上総",
-     "share": 0.181
+     "share": 0.221
     },
     {
      "key": "castle:koga",
      "ownProvince": "下総",
-     "share": 0.029
+     "share": 0.053
     },
     {
      "key": "castle:shirakawa",
@@ -999,39 +1165,141 @@
   {
    "province": "忠清",
    "km2": 28484,
-   "regions": 4,
-   "foreignShare": 0.431,
+   "regions": 5,
+   "foreignShare": 0.465,
    "unassignedShare": 0,
    "parts": [
     {
      "key": "castle:hanseong",
      "ownProvince": "京畿",
-     "share": 0.334
+     "share": 0.318
     },
     {
      "key": "castle:gongju",
      "ownProvince": "忠清",
-     "share": 0.297
+     "share": 0.287
     },
     {
      "key": "castle:chungju",
      "ownProvince": "忠清",
-     "share": 0.271
+     "share": 0.248
     },
     {
      "key": "castle:gaeseong",
      "ownProvince": "京畿",
-     "share": 0.097
+     "share": 0.089
     },
     {
-     "key": "castle:wonju",
-     "ownProvince": "江原",
+     "key": "castle:jeonju",
+     "ownProvince": "全羅",
+     "share": 0.029
+    },
+    {
+     "key": "castle:haeju",
+     "ownProvince": "黄海",
+     "share": 0.013
+    }
+   ]
+  },
+  {
+   "province": "大隅",
+   "km2": 2777,
+   "regions": 2,
+   "foreignShare": 0.17,
+   "unassignedShare": 0,
+   "parts": [
+    {
+     "key": "castle:kouyama",
+     "ownProvince": "大隅",
+     "share": 0.83
+    },
+    {
+     "key": "castle:obi",
+     "ownProvince": "日向",
+     "share": 0.17
+    },
+    {
+     "key": "castle:tonokori",
+     "ownProvince": "日向",
      "share": 0
     },
     {
-     "key": "unassigned",
-     "ownProvince": null,
+     "key": "castle:izumi",
+     "ownProvince": "薩摩",
      "share": 0
+    }
+   ]
+  },
+  {
+   "province": "尾張",
+   "km2": 1600,
+   "regions": 2,
+   "foreignShare": 0.164,
+   "unassignedShare": 0,
+   "parts": [
+    {
+     "key": "castle:kiyosu",
+     "ownProvince": "尾張",
+     "share": 0.836
+    },
+    {
+     "key": "castle:okazaki",
+     "ownProvince": "三河",
+     "share": 0.164
+    },
+    {
+     "key": "castle:iwamura",
+     "ownProvince": "美濃",
+     "share": 0
+    },
+    {
+     "key": "castle:gifu",
+     "ownProvince": "美濃",
+     "share": 0
+    },
+    {
+     "key": "castle:nagashima",
+     "ownProvince": "伊勢",
+     "share": 0
+    }
+   ]
+  },
+  {
+   "province": "播磨",
+   "km2": 4430,
+   "regions": 4,
+   "foreignShare": 0.164,
+   "unassignedShare": 0,
+   "parts": [
+    {
+     "key": "castle:himeji",
+     "ownProvince": "播磨",
+     "share": 0.636
+    },
+    {
+     "key": "castle:miki",
+     "ownProvince": "播磨",
+     "share": 0.201
+    },
+    {
+     "key": "castle:konosumi",
+     "ownProvince": "但馬",
+     "share": 0.082
+    },
+    {
+     "key": "castle:ishiyama",
+     "ownProvince": "摂津",
+     "share": 0.073
+    },
+    {
+     "key": "castle:takada",
+     "ownProvince": "美作",
+     "share": 0.008
+    },
+    {
+     "key": "castle:tenjin",
+     "ownProvince": "備前",
+     "share": 0.001
     }
    ]
   },
@@ -1075,41 +1343,148 @@
    ]
   },
   {
+   "province": "筑前",
+   "km2": 2472,
+   "regions": 3,
+   "foreignShare": 0.162,
+   "unassignedShare": 0,
+   "parts": [
+    {
+     "key": "castle:tachibana",
+     "ownProvince": "筑前",
+     "share": 0.686
+    },
+    {
+     "key": "castle:kawara",
+     "ownProvince": "豊前",
+     "share": 0.162
+    },
+    {
+     "key": "castle:kosho",
+     "ownProvince": "筑前",
+     "share": 0.152
+    },
+    {
+     "key": "castle:saga",
+     "ownProvince": "肥前",
+     "share": 0
+    },
+    {
+     "key": "castle:hirado",
+     "ownProvince": "肥前",
+     "share": 0
+    },
+    {
+     "key": "castle:yanagawa",
+     "ownProvince": "筑後",
+     "share": 0
+    }
+   ]
+  },
+  {
+   "province": "筑後",
+   "km2": 1473,
+   "regions": 2,
+   "foreignShare": 0.162,
+   "unassignedShare": 0,
+   "parts": [
+    {
+     "key": "castle:yanagawa",
+     "ownProvince": "筑後",
+     "share": 0.837
+    },
+    {
+     "key": "castle:kosho",
+     "ownProvince": "筑前",
+     "share": 0.16
+    },
+    {
+     "key": "castle:saga",
+     "ownProvince": "肥前",
+     "share": 0.002
+    },
+    {
+     "key": "castle:funai",
+     "ownProvince": "豊後",
+     "share": 0
+    },
+    {
+     "key": "castle:kumamoto",
+     "ownProvince": "肥後",
+     "share": 0
+    }
+   ]
+  },
+  {
    "province": "平安",
    "km2": 649436,
    "regions": 6,
-   "foreignShare": 0.158,
-   "unassignedShare": 0.771,
+   "foreignShare": 0.159,
+   "unassignedShare": 0.77,
    "parts": [
     {
      "key": "unassigned",
      "ownProvince": null,
-     "share": 0.763
+     "share": 0.762
     },
     {
      "key": "castle:hamhung",
      "ownProvince": "咸鏡",
-     "share": 0.085
-    },
-    {
-     "key": "castle:wonju",
-     "ownProvince": "江原",
-     "share": 0.048
+     "share": 0.089
     },
     {
      "key": "castle:uiju",
      "ownProvince": "平安",
-     "share": 0.047
+     "share": 0.048
+    },
+    {
+     "key": "castle:wonju",
+     "ownProvince": "江原",
+     "share": 0.041
     },
     {
      "key": "castle:haeju",
      "ownProvince": "黄海",
-     "share": 0.025
+     "share": 0.026
     },
     {
      "key": "castle:pyongyang",
      "ownProvince": "平安",
      "share": 0.024
+    }
+   ]
+  },
+  {
+   "province": "安芸",
+   "km2": 4681,
+   "regions": 2,
+   "foreignShare": 0.155,
+   "unassignedShare": 0,
+   "parts": [
+    {
+     "key": "castle:koriyama",
+     "ownProvince": "安芸",
+     "share": 0.844
+    },
+    {
+     "key": "castle:kannabe",
+     "ownProvince": "備後",
+     "share": 0.155
+    },
+    {
+     "key": "castle:gassan",
+     "ownProvince": "出雲",
+     "share": 0
+    },
+    {
+     "key": "castle:yamabuki",
+     "ownProvince": "石見",
+     "share": 0
+    },
+    {
+     "key": "castle:konomine",
+     "ownProvince": "周防",
+     "share": 0
     }
    ]
   },
@@ -1143,60 +1518,26 @@
    ]
   },
   {
-   "province": "飛騨",
-   "km2": 3320,
-   "regions": 2,
-   "foreignShare": 0.137,
+   "province": "相模",
+   "km2": 2230,
+   "regions": 3,
+   "foreignShare": 0.138,
    "unassignedShare": 0,
    "parts": [
     {
-     "key": "castle:matsukura",
-     "ownProvince": "飛騨",
-     "share": 0.862
+     "key": "castle:tamanawa",
+     "ownProvince": "相模",
+     "share": 0.568
     },
     {
-     "key": "castle:iwamura",
-     "ownProvince": "美濃",
-     "share": 0.122
+     "key": "castle:odawara",
+     "ownProvince": "相模",
+     "share": 0.293
     },
     {
-     "key": "castle:fukashi",
-     "ownProvince": "信濃",
-     "share": 0.015
-    },
-    {
-     "key": "castle:toyama",
-     "ownProvince": "越中",
-     "share": 0
-    },
-    {
-     "key": "castle:oyama",
-     "ownProvince": "加賀",
-     "share": 0
-    },
-    {
-     "key": "castle:ichijodani",
-     "ownProvince": "越前",
-     "share": 0
-    }
-   ]
-  },
-  {
-   "province": "駿河",
-   "km2": 2859,
-   "regions": 2,
-   "foreignShare": 0.137,
-   "unassignedShare": 0,
-   "parts": [
-    {
-     "key": "castle:sunpu",
-     "ownProvince": "駿河",
-     "share": 0.862
-    },
-    {
-     "key": "castle:kakegawa",
-     "ownProvince": "遠江",
-     "share": 0.137
+     "key": "castle:edo",
+     "ownProvince": "武蔵",
+     "share": 0.138
     },
     {
      "key": "castle:tsutsuji",
@@ -1204,18 +1545,86 @@
      "share": 0
     },
     {
+     "key": "castle:kawagoe",
+     "ownProvince": "武蔵",
+     "share": 0
+    },
+    {
+     "key": "castle:sunpu",
+     "ownProvince": "駿河",
+     "share": 0
+    }
+   ]
+  },
+  {
+   "province": "備後",
+   "km2": 3175,
+   "regions": 2,
+   "foreignShare": 0.118,
+   "unassignedShare": 0,
+   "parts": [
+    {
+     "key": "castle:kannabe",
+     "ownProvince": "備後",
+     "share": 0.882
+    },
+    {
+     "key": "castle:koriyama",
+     "ownProvince": "安芸",
+     "share": 0.118
+    },
+    {
+     "key": "castle:gassan",
+     "ownProvince": "出雲",
+     "share": 0
+    },
+    {
+     "key": "castle:utsubuki",
+     "ownProvince": "伯耆",
+     "share": 0
+    },
+    {
+     "key": "castle:bmatsuyama",
+     "ownProvince": "備中",
+     "share": 0
+    }
+   ]
+  },
+  {
+   "province": "美濃",
+   "km2": 7238,
+   "regions": 3,
+   "foreignShare": 0.115,
+   "unassignedShare": 0,
+   "parts": [
+    {
+     "key": "castle:gifu",
+     "ownProvince": "美濃",
+     "share": 0.576
+    },
+    {
+     "key": "castle:iwamura",
+     "ownProvince": "美濃",
+     "share": 0.309
+    },
+    {
+     "key": "castle:matsukura",
+     "ownProvince": "飛騨",
+     "share": 0.108
+    },
+    {
      "key": "castle:iida",
      "ownProvince": "信濃",
+     "share": 0.007
+    },
+    {
+     "key": "castle:ichijodani",
+     "ownProvince": "越前",
      "share": 0
     },
     {
-     "key": "castle:odawara",
-     "ownProvince": "相模",
-     "share": 0
-    },
-    {
-     "key": "castle:nirayama",
-     "ownProvince": "伊豆",
+     "key": "castle:kanegasaki",
+     "ownProvince": "越前",
      "share": 0
     }
    ]
@@ -1250,6 +1659,45 @@
     {
      "key": "castle:kannabe",
      "ownProvince": "備後",
+     "share": 0
+    }
+   ]
+  },
+  {
+   "province": "丹波",
+   "km2": 3078,
+   "regions": 3,
+   "foreignShare": 0.103,
+   "unassignedShare": 0,
+   "parts": [
+    {
+     "key": "castle:yakami",
+     "ownProvince": "丹波",
+     "share": 0.896
+    },
+    {
+     "key": "castle:ishiyama",
+     "ownProvince": "摂津",
+     "share": 0.066
+    },
+    {
+     "key": "castle:tango",
+     "ownProvince": "丹後",
+     "share": 0.037
+    },
+    {
+     "key": "castle:nochiseyama",
+     "ownProvince": "若狭",
+     "share": 0
+    },
+    {
+     "key": "castle:konosumi",
+     "ownProvince": "但馬",
+     "share": 0
+    },
+    {
+     "key": "castle:odani",
+     "ownProvince": "近江",
      "share": 0
     }
    ]
@@ -1338,38 +1786,57 @@
    "province": "平安",
    "km2": 649436,
    "regions": 6,
-   "foreignShare": 0.158,
-   "unassignedShare": 0.771,
+   "foreignShare": 0.159,
+   "unassignedShare": 0.77,
    "parts": [
     {
      "key": "unassigned",
      "ownProvince": null,
-     "share": 0.763
+     "share": 0.762
     },
     {
      "key": "castle:hamhung",
      "ownProvince": "咸鏡",
-     "share": 0.085
-    },
-    {
-     "key": "castle:wonju",
-     "ownProvince": "江原",
-     "share": 0.048
+     "share": 0.089
     },
     {
      "key": "castle:uiju",
      "ownProvince": "平安",
-     "share": 0.047
+     "share": 0.048
+    },
+    {
+     "key": "castle:wonju",
+     "ownProvince": "江原",
+     "share": 0.041
     },
     {
      "key": "castle:haeju",
      "ownProvince": "黄海",
-     "share": 0.025
+     "share": 0.026
     },
     {
      "key": "castle:pyongyang",
      "ownProvince": "平安",
      "share": 0.024
+    }
+   ]
+  },
+  {
+   "province": "蝦夷",
+   "km2": 86659,
+   "regions": 2,
+   "foreignShare": 0,
+   "unassignedShare": 0.944,
+   "parts": [
+    {
+     "key": "unassigned",
+     "ownProvince": null,
+     "share": 0.944
+    },
+    {
+     "key": "castle:matsumae",
+     "ownProvince": "蝦夷",
+     "share": 0.056
     }
    ]
   },
@@ -1415,14 +1882,14 @@
   {
    "province": "出羽",
    "km2": 21562,
-   "regions": 6,
-   "foreignShare": 0,
+   "regions": 7,
+   "foreignShare": 0.049,
    "unassignedShare": 0,
    "parts": [
     {
      "key": "castle:hiyama",
      "ownProvince": "出羽",
-     "share": 0.268
+     "share": 0.219
     },
     {
      "key": "castle:oura",
@@ -1507,39 +1974,39 @@
   {
    "province": "忠清",
    "km2": 28484,
-   "regions": 4,
-   "foreignShare": 0.431,
+   "regions": 5,
+   "foreignShare": 0.465,
    "unassignedShare": 0,
    "parts": [
     {
      "key": "castle:hanseong",
      "ownProvince": "京畿",
-     "share": 0.334
+     "share": 0.318
     },
     {
      "key": "castle:gongju",
      "ownProvince": "忠清",
-     "share": 0.297
+     "share": 0.287
     },
     {
      "key": "castle:chungju",
      "ownProvince": "忠清",
-     "share": 0.271
+     "share": 0.248
     },
     {
      "key": "castle:gaeseong",
      "ownProvince": "京畿",
-     "share": 0.097
+     "share": 0.089
     },
     {
-     "key": "castle:wonju",
-     "ownProvince": "江原",
-     "share": 0
+     "key": "castle:jeonju",
+     "ownProvince": "全羅",
+     "share": 0.029
     },
     {
-     "key": "unassigned",
-     "ownProvince": null,
-     "share": 0
+     "key": "castle:haeju",
+     "ownProvince": "黄海",
+     "share": 0.013
     }
    ]
   },
@@ -1605,38 +2072,38 @@
    "province": "慶尚",
    "km2": 29617,
    "regions": 5,
-   "foreignShare": 0,
+   "foreignShare": 0.009,
    "unassignedShare": 0,
    "parts": [
     {
-     "key": "castle:daegu",
-     "ownProvince": "慶尚",
-     "share": 0.34
-    },
-    {
      "key": "castle:sangju",
      "ownProvince": "慶尚",
-     "share": 0.303
+     "share": 0.316
+    },
+    {
+     "key": "castle:daegu",
+     "ownProvince": "慶尚",
+     "share": 0.304
     },
     {
      "key": "castle:jinju",
      "ownProvince": "慶尚",
-     "share": 0.232
+     "share": 0.231
     },
     {
      "key": "castle:busan",
      "ownProvince": "慶尚",
-     "share": 0.076
+     "share": 0.089
     },
     {
      "key": "castle:ulsan",
      "ownProvince": "慶尚",
-     "share": 0.048
+     "share": 0.052
     },
     {
      "key": "castle:chungju",
      "ownProvince": "忠清",
-     "share": 0
+     "share": 0.006
     }
    ]
   },
@@ -1683,7 +2150,7 @@
    "province": "信濃",
    "km2": 13543,
    "regions": 5,
-   "foreignShare": 0.012,
+   "foreignShare": 0.011,
    "unassignedShare": 0,
    "parts": [
     {
@@ -1714,7 +2181,7 @@
     {
      "key": "castle:matsukura",
      "ownProvince": "飛騨",
-     "share": 0.005
+     "share": 0.009
     }
    ]
   },
@@ -1761,18 +2228,13 @@
    "province": "常陸",
    "km2": 10422,
    "regions": 5,
-   "foreignShare": 0.463,
+   "foreignShare": 0.503,
    "unassignedShare": 0,
    "parts": [
     {
      "key": "castle:odajo",
      "ownProvince": "常陸",
-     "share": 0.301
-    },
-    {
-     "key": "castle:sakura",
-     "ownProvince": "下総",
-     "share": 0.253
+     "share": 0.261
     },
     {
      "key": "castle:ota",
@@ -1780,14 +2242,19 @@
      "share": 0.236
     },
     {
+     "key": "castle:sakura",
+     "ownProvince": "下総",
+     "share": 0.229
+    },
+    {
      "key": "castle:kururi",
      "ownProvince": "上総",
-     "share": 0.181
+     "share": 0.221
     },
     {
      "key": "castle:koga",
      "ownProvince": "下総",
-     "share": 0.029
+     "share": 0.053
     },
     {
      "key": "castle:shirakawa",
@@ -1833,19 +2300,14 @@
   {
    "province": "飛騨",
    "km2": 3320,
-   "regions": 2,
-   "foreignShare": 0.137,
+   "regions": 1,
+   "foreignShare": 0.015,
    "unassignedShare": 0,
    "parts": [
     {
      "key": "castle:matsukura",
      "ownProvince": "飛騨",
-     "share": 0.862
-    },
-    {
-     "key": "castle:iwamura",
-     "ownProvince": "美濃",
-     "share": 0.122
+     "share": 0.985
     },
     {
      "key": "castle:fukashi",
@@ -1865,6 +2327,11 @@
     {
      "key": "castle:ichijodani",
      "ownProvince": "越前",
+     "share": 0
+    },
+    {
+     "key": "castle:iida",
+     "ownProvince": "信濃",
      "share": 0
     }
    ]
@@ -1926,7 +2393,7 @@
    "province": "武蔵",
    "km2": 5623,
    "regions": 4,
-   "foreignShare": 0.004,
+   "foreignShare": 0.007,
    "unassignedShare": 0,
    "parts": [
     {
@@ -1942,17 +2409,17 @@
     {
      "key": "castle:iwatsuki",
      "ownProvince": "武蔵",
-     "share": 0.217
+     "share": 0.21
     },
     {
      "key": "castle:edo",
      "ownProvince": "武蔵",
-     "share": 0.114
+     "share": 0.118
     },
     {
-     "key": "castle:tamanawa",
-     "ownProvince": "相模",
-     "share": 0.004
+     "key": "castle:koga",
+     "ownProvince": "下総",
+     "share": 0.007
     },
     {
      "key": "castle:umayabashi",
@@ -1963,40 +2430,40 @@
   },
   {
    "province": "全羅",
-   "km2": 18351,
-   "regions": 3,
-   "foreignShare": 0,
-   "unassignedShare": 0.001,
+   "km2": 20142,
+   "regions": 4,
+   "foreignShare": 0.017,
+   "unassignedShare": 0,
    "parts": [
     {
      "key": "castle:suncheon",
      "ownProvince": "全羅",
-     "share": 0.556
+     "share": 0.517
     },
     {
      "key": "castle:jeonju",
      "ownProvince": "全羅",
-     "share": 0.306
+     "share": 0.26
     },
     {
      "key": "castle:namwon",
      "ownProvince": "全羅",
-     "share": 0.137
+     "share": 0.117
     },
     {
-     "key": "unassigned",
-     "ownProvince": null,
-     "share": 0.001
+     "key": "castle:jeju",
+     "ownProvince": "全羅",
+     "share": 0.089
+    },
+    {
+     "key": "castle:jinju",
+     "ownProvince": "慶尚",
+     "share": 0.015
     },
     {
      "key": "castle:gongju",
      "ownProvince": "忠清",
-     "share": 0
-    },
-    {
-     "key": "castle:chungju",
-     "ownProvince": "忠清",
-     "share": 0
+     "share": 0.001
     }
    ]
   },
@@ -2004,7 +2471,7 @@
    "province": "美濃",
    "km2": 7238,
    "regions": 3,
-   "foreignShare": 0.027,
+   "foreignShare": 0.115,
    "unassignedShare": 0,
    "parts": [
     {
@@ -2015,12 +2482,12 @@
     {
      "key": "castle:iwamura",
      "ownProvince": "美濃",
-     "share": 0.396
+     "share": 0.309
     },
     {
      "key": "castle:matsukura",
      "ownProvince": "飛騨",
-     "share": 0.02
+     "share": 0.108
     },
     {
      "key": "castle:iida",
@@ -2218,13 +2685,13 @@
    "province": "相模",
    "km2": 2230,
    "regions": 3,
-   "foreignShare": 0.047,
+   "foreignShare": 0.138,
    "unassignedShare": 0,
    "parts": [
     {
      "key": "castle:tamanawa",
      "ownProvince": "相模",
-     "share": 0.659
+     "share": 0.568
     },
     {
      "key": "castle:odawara",
@@ -2234,7 +2701,7 @@
     {
      "key": "castle:edo",
      "ownProvince": "武蔵",
-     "share": 0.047
+     "share": 0.138
     },
     {
      "key": "castle:tsutsuji",
@@ -2257,18 +2724,18 @@
    "province": "駿河",
    "km2": 2859,
    "regions": 2,
-   "foreignShare": 0.137,
+   "foreignShare": 0.07,
    "unassignedShare": 0,
    "parts": [
     {
      "key": "castle:sunpu",
      "ownProvince": "駿河",
-     "share": 0.862
+     "share": 0.93
     },
     {
      "key": "castle:kakegawa",
      "ownProvince": "遠江",
-     "share": 0.137
+     "share": 0.07
     },
     {
      "key": "castle:tsutsuji",
@@ -2368,14 +2835,19 @@
   {
    "province": "丹波",
    "km2": 3078,
-   "regions": 2,
-   "foreignShare": 0.037,
+   "regions": 3,
+   "foreignShare": 0.103,
    "unassignedShare": 0,
    "parts": [
     {
      "key": "castle:yakami",
      "ownProvince": "丹波",
-     "share": 0.963
+     "share": 0.896
+    },
+    {
+     "key": "castle:ishiyama",
+     "ownProvince": "摂津",
+     "share": 0.066
     },
     {
      "key": "castle:tango",
@@ -2393,11 +2865,6 @@
      "share": 0
     },
     {
-     "key": "castle:himeji",
-     "ownProvince": "播磨",
-     "share": 0
-    },
-    {
      "key": "castle:odani",
      "ownProvince": "近江",
      "share": 0
@@ -2408,18 +2875,18 @@
    "province": "尾張",
    "km2": 1600,
    "regions": 2,
-   "foreignShare": 0.068,
+   "foreignShare": 0.164,
    "unassignedShare": 0,
    "parts": [
     {
      "key": "castle:kiyosu",
      "ownProvince": "尾張",
-     "share": 0.932
+     "share": 0.836
     },
     {
      "key": "castle:okazaki",
      "ownProvince": "三河",
-     "share": 0.068
+     "share": 0.164
     },
     {
      "key": "castle:iwamura",
@@ -2441,29 +2908,29 @@
   {
    "province": "播磨",
    "km2": 4430,
-   "regions": 3,
-   "foreignShare": 0.043,
+   "regions": 4,
+   "foreignShare": 0.164,
    "unassignedShare": 0,
    "parts": [
     {
      "key": "castle:himeji",
      "ownProvince": "播磨",
-     "share": 0.706
+     "share": 0.636
     },
     {
      "key": "castle:miki",
      "ownProvince": "播磨",
-     "share": 0.252
-    },
-    {
-     "key": "castle:yakami",
-     "ownProvince": "丹波",
-     "share": 0.022
+     "share": 0.201
     },
     {
      "key": "castle:konosumi",
      "ownProvince": "但馬",
-     "share": 0.012
+     "share": 0.082
+    },
+    {
+     "key": "castle:ishiyama",
+     "ownProvince": "摂津",
+     "share": 0.073
     },
     {
      "key": "castle:takada",
@@ -2519,14 +2986,14 @@
   {
    "province": "遠江",
    "km2": 3174,
-   "regions": 2,
-   "foreignShare": 0,
+   "regions": 3,
+   "foreignShare": 0.063,
    "unassignedShare": 0,
    "parts": [
     {
      "key": "castle:kakegawa",
      "ownProvince": "遠江",
-     "share": 0.628
+     "share": 0.565
     },
     {
      "key": "castle:hikuma",
@@ -2534,13 +3001,13 @@
      "share": 0.372
     },
     {
-     "key": "castle:iida",
-     "ownProvince": "信濃",
-     "share": 0
-    },
-    {
      "key": "castle:sunpu",
      "ownProvince": "駿河",
+     "share": 0.063
+    },
+    {
+     "key": "castle:iida",
+     "ownProvince": "信濃",
      "share": 0
     },
     {
@@ -2598,13 +3065,13 @@
    "province": "三河",
    "km2": 3306,
    "regions": 3,
-   "foreignShare": 0.061,
+   "foreignShare": 0.055,
    "unassignedShare": 0,
    "parts": [
     {
      "key": "castle:okazaki",
      "ownProvince": "三河",
-     "share": 0.594
+     "share": 0.6
     },
     {
      "key": "castle:yoshida",
@@ -2614,7 +3081,7 @@
     {
      "key": "castle:kiyosu",
      "ownProvince": "尾張",
-     "share": 0.055
+     "share": 0.049
     },
     {
      "key": "castle:iwamura",
@@ -2651,6 +3118,11 @@
      "share": 0
     },
     {
+     "key": "castle:kannabe",
+     "ownProvince": "備後",
+     "share": 0
+    },
+    {
      "key": "castle:koriyama",
      "ownProvince": "安芸",
      "share": 0
@@ -2670,19 +3142,24 @@
   {
    "province": "伊勢",
    "km2": 3766,
-   "regions": 2,
-   "foreignShare": 0,
+   "regions": 3,
+   "foreignShare": 0.072,
    "unassignedShare": 0,
    "parts": [
     {
      "key": "castle:kiriyama",
      "ownProvince": "伊勢",
-     "share": 0.725
+     "share": 0.653
     },
     {
      "key": "castle:nagashima",
      "ownProvince": "伊勢",
      "share": 0.274
+    },
+    {
+     "key": "castle:shingu",
+     "ownProvince": "紀伊",
+     "share": 0.072
     },
     {
      "key": "castle:gifu",
@@ -2697,11 +3174,6 @@
     {
      "key": "castle:kannonji",
      "ownProvince": "近江",
-     "share": 0
-    },
-    {
-     "key": "castle:ueno",
-     "ownProvince": "伊賀",
      "share": 0
     }
    ]
@@ -2781,19 +3253,19 @@
   {
    "province": "備後",
    "km2": 3175,
-   "regions": 1,
-   "foreignShare": 0.001,
+   "regions": 2,
+   "foreignShare": 0.118,
    "unassignedShare": 0,
    "parts": [
     {
      "key": "castle:kannabe",
      "ownProvince": "備後",
-     "share": 0.999
+     "share": 0.882
     },
     {
      "key": "castle:koriyama",
      "ownProvince": "安芸",
-     "share": 0.001
+     "share": 0.118
     },
     {
      "key": "castle:gassan",
@@ -2815,8 +3287,8 @@
   {
    "province": "摂津",
    "km2": 1007,
-   "regions": 3,
-   "foreignShare": 0.078,
+   "regions": 2,
+   "foreignShare": 0.016,
    "unassignedShare": 0,
    "parts": [
     {
@@ -2827,17 +3299,12 @@
     {
      "key": "castle:ishiyama",
      "ownProvince": "摂津",
-     "share": 0.304
+     "share": 0.366
     },
     {
      "key": "castle:yakami",
      "ownProvince": "丹波",
-     "share": 0.063
-    },
-    {
-     "key": "castle:miki",
-     "ownProvince": "播磨",
-     "share": 0.015
+     "share": 0.016
     },
     {
      "key": "castle:kyo",
@@ -2850,18 +3317,18 @@
    "province": "安芸",
    "km2": 4681,
    "regions": 2,
-   "foreignShare": 0.072,
+   "foreignShare": 0.155,
    "unassignedShare": 0,
    "parts": [
     {
      "key": "castle:koriyama",
      "ownProvince": "安芸",
-     "share": 0.928
+     "share": 0.844
     },
     {
      "key": "castle:kannabe",
      "ownProvince": "備後",
-     "share": 0.072
+     "share": 0.155
     },
     {
      "key": "castle:gassan",
@@ -3172,24 +3639,19 @@
   {
    "province": "紀伊",
    "km2": 5298,
-   "regions": 3,
-   "foreignShare": 0.024,
+   "regions": 2,
+   "foreignShare": 0,
    "unassignedShare": 0,
    "parts": [
     {
      "key": "castle:shingu",
      "ownProvince": "紀伊",
-     "share": 0.498
+     "share": 0.522
     },
     {
      "key": "castle:saika",
      "ownProvince": "紀伊",
      "share": 0.477
-    },
-    {
-     "key": "castle:kiriyama",
-     "ownProvince": "伊勢",
-     "share": 0.024
     },
     {
      "key": "castle:kishiwada",
@@ -3280,23 +3742,23 @@
    "province": "筑前",
    "km2": 2472,
    "regions": 3,
-   "foreignShare": 0.054,
+   "foreignShare": 0.162,
    "unassignedShare": 0,
    "parts": [
     {
      "key": "castle:tachibana",
      "ownProvince": "筑前",
-     "share": 0.794
+     "share": 0.686
+    },
+    {
+     "key": "castle:kawara",
+     "ownProvince": "豊前",
+     "share": 0.162
     },
     {
      "key": "castle:kosho",
      "ownProvince": "筑前",
      "share": 0.152
-    },
-    {
-     "key": "castle:kawara",
-     "ownProvince": "豊前",
-     "share": 0.054
     },
     {
      "key": "castle:saga",
@@ -3381,23 +3843,13 @@
      "share": 0.962
     },
     {
-     "key": "castle:yanagawa",
-     "ownProvince": "筑後",
-     "share": 0.038
-    },
-    {
-     "key": "castle:tachibana",
+     "key": "castle:kosho",
      "ownProvince": "筑前",
-     "share": 0
+     "share": 0.038
     },
     {
      "key": "castle:funai",
      "ownProvince": "豊後",
-     "share": 0
-    },
-    {
-     "key": "castle:kosho",
-     "ownProvince": "筑前",
      "share": 0
     }
    ]
@@ -3405,18 +3857,23 @@
   {
    "province": "豊後",
    "km2": 5629,
-   "regions": 1,
-   "foreignShare": 0,
+   "regions": 2,
+   "foreignShare": 0.076,
    "unassignedShare": 0,
    "parts": [
     {
      "key": "castle:funai",
      "ownProvince": "豊後",
-     "share": 0.999
+     "share": 0.924
     },
     {
      "key": "castle:kawara",
      "ownProvince": "豊前",
+     "share": 0.076
+    },
+    {
+     "key": "castle:kosho",
+     "ownProvince": "筑前",
      "share": 0
     },
     {
@@ -3479,18 +3936,18 @@
    "province": "筑後",
    "km2": 1473,
    "regions": 2,
-   "foreignShare": 0.049,
+   "foreignShare": 0.162,
    "unassignedShare": 0,
    "parts": [
     {
      "key": "castle:yanagawa",
      "ownProvince": "筑後",
-     "share": 0.95
+     "share": 0.837
     },
     {
      "key": "castle:kosho",
      "ownProvince": "筑前",
-     "share": 0.047
+     "share": 0.16
     },
     {
      "key": "castle:saga",
@@ -3590,28 +4047,28 @@
   {
    "province": "薩摩",
    "km2": 3475,
-   "regions": 2,
-   "foreignShare": 0,
+   "regions": 3,
+   "foreignShare": 0.099,
    "unassignedShare": 0,
    "parts": [
     {
      "key": "castle:uchi",
      "ownProvince": "薩摩",
-     "share": 0.522
+     "share": 0.46
     },
     {
      "key": "castle:izumi",
      "ownProvince": "薩摩",
-     "share": 0.477
-    },
-    {
-     "key": "castle:hitoyoshi",
-     "ownProvince": "肥後",
-     "share": 0
+     "share": 0.441
     },
     {
      "key": "castle:kouyama",
      "ownProvince": "大隅",
+     "share": 0.099
+    },
+    {
+     "key": "castle:hitoyoshi",
+     "ownProvince": "肥後",
      "share": 0
     }
    ]
@@ -3620,33 +4077,42 @@
    "province": "大隅",
    "km2": 2777,
    "regions": 2,
-   "foreignShare": 0.042,
+   "foreignShare": 0.17,
    "unassignedShare": 0,
    "parts": [
     {
      "key": "castle:kouyama",
      "ownProvince": "大隅",
-     "share": 0.959
-    },
-    {
-     "key": "castle:uchi",
-     "ownProvince": "薩摩",
-     "share": 0.032
+     "share": 0.83
     },
     {
      "key": "castle:obi",
      "ownProvince": "日向",
-     "share": 0.01
-    },
-    {
-     "key": "castle:izumi",
-     "ownProvince": "薩摩",
-     "share": 0
+     "share": 0.17
     },
     {
      "key": "castle:tonokori",
      "ownProvince": "日向",
      "share": 0
+    },
+    {
+     "key": "castle:izumi",
+     "ownProvince": "薩摩",
+     "share": 0
+    }
+   ]
+  },
+  {
+   "province": "琉球",
+   "km2": 1091,
+   "regions": 1,
+   "foreignShare": 0,
+   "unassignedShare": 0,
+   "parts": [
+    {
+     "key": "castle:shuri",
+     "ownProvince": "琉球",
+     "share": 1
     }
    ]
   }
