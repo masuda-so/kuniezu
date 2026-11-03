@@ -11,6 +11,23 @@ console.log('PASS family allocation, root capital/leader, observer-only choice, 
 G.newGame('s1585','nobukatsu');assert.equal(G.S().castles.kiyosu.owner,'nobukatsu');assert.equal(G.S().castles.gifu.owner,'ikeda');assert.equal(G.S().castles.nochiseyama.owner,'niwa');assert.equal(G.gen(G.S().clans.niwa.leader).n,'丹羽長秀');
 const toka=TK.HIST.find(e=>e.k==='newclan'&&e.clan==='tokugawa');if(toka){G.newGame('s1560','imagawa');go(toka.d);assert.ok(G.S().observerQ?.some(q=>q.parent==='imagawa'&&q.clans.includes('tokugawa')));assert.ok(G.chooseObserver('tokugawa'));assert.deepEqual(JSON.parse(JSON.stringify(G.S().div)),{});}
 console.log('PASS 1585 base allocation and historical observer selection outside the Oda family');
+// 720日間の基本検査では届かない、慶長末期の家督と移封を日付の前後で確認する。
+G.newGame('s1600','tokugawa');
+G.S().player='__none';
+const succession=TK.lunarDate(1612,3,18);
+const relocation=TK.lunarDate(1614,7,13);
+const arimaLeader=()=>G.gen(G.S().clans.arima.leader).n;
+const arimaHoldings=()=>['hinoe','agata'].map(id=>G.S().castles[id].owner);
+go(succession);
+assert.equal(arimaLeader(),'有馬直純');
+assert.equal(G.S().clans.arima.cap,'hinoe');
+while(G.S().t<G.evT({d:relocation})-1){G.day();G.S().evQ=[];G.S().sceneQ=[];}
+assert.deepEqual(arimaHoldings(),['arima','tokugawa']);
+go(relocation);
+assert.equal(arimaLeader(),'有馬直純');
+assert.equal(G.S().clans.arima.cap,'agata');
+assert.deepEqual(arimaHoldings(),['tokugawa','arima']);
+console.log('PASS Arima succession and Agata relocation on the recorded dates');
 const entries=TK.HIST.filter(e=>['take','newclan','takeall','absorb'].includes(e.k)||e.take).map(e=>({date:e.d,title:e.title||null,kind:e.k,clan:e.clan,castles:e.castles||[],additional:e.take||null,source:e.source||null,precision:e.datePrecision||null,review:e.source?'出典リンクあり。資料が当該全拠点の日付を裏付けるとは限らない':'出典未登録。史実照合済みとは扱わない'}));
 G.newGame('s1560','oda');s=G.S();s.player='__none';const transitions=[];const end=G.evT({d:[1615,7,1]});let prev=Object.fromEntries(Object.entries(s.castles).map(([id,c])=>[id,c.owner]));
 while(s.t<end){G.day();s.evQ=[];s.sceneQ=[];s.observerQ=[];for(const [id,c]of Object.entries(s.castles)){assert.ok(s.clans[c.owner]?.alive,'inactive owner '+id+' at '+JSON.stringify(G.date()));if(c.owner!==prev[id]){transitions.push({date:G.date(),castle:id,from:prev[id],to:c.owner});prev[id]=c.owner;}}}

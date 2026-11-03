@@ -46,14 +46,20 @@
   }
   for(const row of TK.BATTLE_AUDIT||[])row.sourceIds=TK.BATTLES[row.title]?.sources||row.sourceIds;
  };
- const geometryVersion=22,set=G.setS;
- G.setS=function(s){const result=set(s);if(!s||s.movementGeometryVersion===geometryVersion)return result;
+ const geometryVersion=22,placementVersion=2,set=G.setS;
+ const siegeVersions=new Map([['長谷堂城の戦い',1],['大津城の戦い',2]]);
+ G.setS=function(s){const result=set(s);if(!s)return result;
+  const migrateAll=s.movementGeometryVersion!==geometryVersion;
+  const oldPlacement=s.siegePlacementVersion??(s.hasedoApproachVersion?1:0);
+  if(!migrateAll&&oldPlacement>=placementVersion)return result;
   G._inSimulation=true;
   try{
    for(const u of s.units){
     if(!u.hist||u.record||!u.path?.length)continue;
     if(u.until==='#hold'&&!u.historyTitle){const names=u.commanders||u.gens.map(id=>G.gen(id)?.n),matches=TK.HIST.filter(e=>e.hold&&e.k!=='premarch'&&G.evT(e)===u.schedule?.end&&names.includes(e.marchWho||e.who));if(matches.length===1)u.historyTitle=matches[0].title;}
     const returning=G.isHistoryReturning(u),old=u.visualTravel;
+    const title=u.until==='#hold'?u.historyTitle:u.until;
+    if(!migrateAll&&(returning||!(siegeVersions.get(title)>oldPlacement)))continue;
     const sampleTime=s.t+(Number.isFinite(s.visualFraction)?Math.max(0,Math.min(1,s.visualFraction)):0);
     if(!returning)G.scheduleHistorical(u);
     const end=returning?old?.end:u.schedule?.end??old?.end;
@@ -64,15 +70,16 @@
     if(returning&&!old)u._visualRouteKey=null;
     if(old||u.schedule&&!returning)u.visualTravel={line:G.historyTravelLine(u,A,B),start:currentPoint?sampleTime:old?.start??u.schedule.start,end};
    }
-   for(const g of s.gens){
+   if(migrateAll)for(const g of s.gens){
     if(g.tr){const sampleTime=s.t+(Number.isFinite(s.visualFraction)?Math.max(0,Math.min(1,s.visualFraction)):0),moving=g.tr.line&&sampleTime>=g.tr.t0&&sampleTime<g.tr.t1,a=moving?G.visualPathPoint(g.tr.line,(sampleTime-g.tr.t0)/Math.max(1,g.tr.t1-g.tr.t0)).slice(0,2):g.tr.line?.[0]||G.C[g.tr.p?.[0]]&&[G.C[g.tr.p[0]].x,G.C[g.tr.p[0]].y],b=g.tr.line?.at(-1)||G.C[g.tr.p?.at(-1)]&&[G.C[g.tr.p.at(-1)].x,G.C[g.tr.p.at(-1)].y];if(a&&b){g.tr.line=G.visualBetween(a,b);if(moving)g.tr.t0=sampleTime;}else g.tr=null;}
     const p=G.personPoint(g);if(p)g._visualPoint=p.slice(0,2);
    }
    s.movementGeometryVersion=geometryVersion;
+   s.siegePlacementVersion=placementVersion;
   }finally{G._inSimulation=false;}
   return result;
  };
- const init=G.newGame;G.newGame=function(id,player){const s=init(id,player),date=TK.SCEN[id]?.openingDate;if(date){const end=G.evT({d:date}),owner=s.player;s.player='__none';while(s.t<end)G.day();s.player=owner;for(const q of ['sceneQ','evQ','battleQ','observerQ'])s[q]=[];G._inSimulation=true;try{G.trackContinuousMoves();}finally{G._inSimulation=false;}}s.movementGeometryVersion=geometryVersion;return s;};
+ const init=G.newGame;G.newGame=function(id,player){const s=init(id,player),date=TK.SCEN[id]?.openingDate;if(date){const end=G.evT({d:date}),owner=s.player;s.player='__none';while(s.t<end)G.day();s.player=owner;for(const q of ['sceneQ','evQ','battleQ','observerQ'])s[q]=[];G._inSimulation=true;try{G.trackContinuousMoves();}finally{G._inSimulation=false;}}s.movementGeometryVersion=geometryVersion;s.siegePlacementVersion=placementVersion;return s;};
 })();
 
 G.installIeyasu1600Itinerary?.();

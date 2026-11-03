@@ -912,9 +912,17 @@ function relayUnits(key){for(const u of S.units){if(u.until!==key||!u.gens.lengt
    if(!(e.k==='take'||e.k==='note'||e.k==='premarch'||e.k==='newclan'&&e.marchWho))continue;const w=e.who&&genByName(e.who);if(!w||w.id!==g.id)continue;
    if(S.cancel&&S.cancel[e.title])continue;if(arcBlocked(e))continue;
    const to=e.k==='take'?(e.castles||[])[0]:e.at;if(!to||!S.castles[to])continue;
-   if(!rerouteHist(u,to,t))continue;u.until=k2;S.pm[i]=1;break;}}}
-function rerouteHist(u,to,t){const k=u.clan;
-   const n0=u.path[Math.min(u.seg+1,u.path.length-1)];const tgo=S.castles[to].owner;let p=n0===to?[to]:(bfsVia(n0,to,v=>{const o=S.castles[v].owner;return o===k||o===tgo||G.allied(o,k);})||G.findPath(n0,to,k,'any'));if(!p)return false;
+   if(!rerouteHist(u,to,t,e.routeVia))continue;u.until=k2;S.pm[i]=1;break;}}}
+function rerouteHist(u,to,t,routeVia){const k=u.clan;
+   const n0=u.path[Math.min(u.seg+1,u.path.length-1)];
+   const stops=[n0,...(routeVia||[])];if(stops.at(-1)!==to)stops.push(to);
+   const p=[n0];
+   for(let i=1;i<stops.length;i++){
+    const from=stops[i-1],dest=stops[i];if(from===dest)continue;
+    const owner=S.castles[dest].owner;
+    const leg=bfsVia(from,dest,v=>{const o=S.castles[v].owner;return o===k||o===owner||G.allied(o,k);})||G.findPath(from,dest,k,'any');
+    if(!leg)return false;p.push(...leg.slice(1));
+   }
    let path;if(u.seg+1>=u.path.length){path=p;u.pos=0;}else if(p.length>1&&p[1]===u.path[u.seg]){path=p;u.pos=Math.max(0,1-u.pos);}else path=[u.path[u.seg]].concat(p);if(path.length<2)return false;
    let days=0;for(let j=0;j<path.length-1;j++){const E=G.EDGES[ekey(path[j],path[j+1])];days+=E?E.days:5;}
    u.path=path;u.seg=0;u.state='march';u.mission='show';u.enemy=null;u.stopAt=.8;u.spd=Math.min(1.6,Math.max(.6,days/Math.max(1,t-S.t)));return true;}

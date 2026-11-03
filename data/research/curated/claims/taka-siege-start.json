@@ -1,0 +1,29 @@
+{
+  "id": "taka-siege-start",
+  "entity": "person:羽柴秀長",
+  "predicate": "campaign-action",
+  "value": {
+    "date": [
+      1587,
+      4,
+      6
+    ],
+    "calendar": "和暦",
+    "action": "日向高城を包囲"
+  },
+  "validYears": [
+    1587,
+    1587
+  ],
+  "datePrecision": "day",
+  "source": "kijoSecondTakaBattle",
+  "sourceUrl": "https://www.town.kijo.lg.jp/sosikikarasagasu/kyouikuiinkai_kyouikuka/1_1/1/3299.html",
+  "locator": "天正15年4月6日",
+  "gameBindings": [
+    "timeline:日向高城の包囲"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-03",
+  "uncertainty": "高城の明渡しや都於郡城の領主交代の日付は含まない。"
+}
