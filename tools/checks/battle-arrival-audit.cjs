@@ -6,7 +6,10 @@ const rows=new Map(Object.entries(TK.BATTLES).map(([title,b])=>[title,{title,kin
 const targetDays=new Set([...rows.values()].map(r=>r.expected).filter(Number.isFinite));
 function snapshot(t,phase){const out=[];G._visualSampleTime=t;try{
  for(const u of [...(G.visibleNativeArmies?.()||G.S().units),...(G.documentedArmies?.()||[])]){
-  const p=G.historyPoint(u);out.push({id:u.id,samplePhase:phase,title:u.until||u.historyTitle||null,clan:u.clan,names:u.commanders||u.gens.map(id=>G.gen(id)?.n).filter(Boolean),state:u.state,schedule:u.schedule&&{start:u.schedule.start,end:u.schedule.end},record:u.record?.id,troops:u.troops,point:p?.slice(0,2),path:u.path});
+  const p=G.historyPoint(u);
+  // 包囲中は終了管理用の #hold に切り替わるが、照合対象は元の戦役。
+  const title=(u.until==='#hold'?u.historyTitle:u.until||u.historyTitle)||null;
+  out.push({id:u.id,samplePhase:phase,title,clan:u.clan,names:u.commanders||u.gens.map(id=>G.gen(id)?.n).filter(Boolean),state:u.state,schedule:u.schedule&&{start:u.schedule.start,end:u.schedule.end},record:u.record?.id,troops:u.troops,point:p?.slice(0,2),path:u.path});
  }
 }finally{delete G._visualSampleTime;}return out;}
 function inside(point,bounds){if(!point||!bounds)return null;const [lo,la]=[TKGEO.LON0+point[0]/TKGEO.K/TKGEO.CX,TKGEO.LAT0-point[1]/TKGEO.K];return lo>=bounds[0]&&lo<=bounds[2]&&la<=bounds[1]&&la>=bounds[3];}
