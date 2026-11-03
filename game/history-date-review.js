@@ -99,9 +99,14 @@
 
 /* 行橋市史の叙述による降伏受理。古処山城の明渡し日は別に扱う。 */
 {
- const lunarDate=[1587,4,2];
+ const lunarDate=[1587,4,2],d=TK.lunarDate(...lunarDate);
+ const campaign=TK.HIST.find(e=>e.title==='九州平定'&&e.k==='take'&&e.castles?.includes('kosho'));
+ if(!campaign)throw Error('九州平定の古処山城');
+ campaign.castles=campaign.castles.filter(id=>id!=='kosho');
+ // 地図上の管轄切替は降伏受理を基準とする。城の物理的な明渡し日ではない。
+ TK.HIST.push({d,k:'take',clan:campaign.clan,castles:['kosho'],admin:1,quiet:1});
  TK.HIST.push({
-  d:TK.lunarDate(...lunarDate),lunarDate,k:'note',title:'秋月氏の降伏',who:'秋月種実・種長',
+  d,lunarDate,k:'note',title:'秋月氏の降伏',who:'秋月種実・種長',
   source:'https://adeac.jp/yukuhashi-city/texthtml/d100010/mp000000-000010/ht2041102020',
   text:'『行橋市史』によると、岩石城の落城翌日、豊臣秀吉は筑前の大隈城で秋月種実・種長父子の降伏を受け入れた。'
  });
