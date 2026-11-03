@@ -88,3 +88,5 @@
 人吉城の領主を相良氏のまま維持し、天正15年5月30日の球磨郡安堵を独立した年表イベントにした。専用Chromeで1560年から日送りし、安堵の前日と当日を撮影した。両日とも人吉城は相良氏で、上位の勢力が島津方から豊臣方へ切り替わり、年表に安堵が掲載された。JavaScript例外0。朱印状を `sagara-kuma-confirmation` として人物・年代から参照できるようにした。[慶應義塾大学所蔵・相良家文書 寅77](https://dcollections.lib.keio.ac.jp/en/sagara/003-077)
 
 立花山城を九州平定の一括変更から外し、小早川隆景の筑前拝領を天正15年6月25日（共通暦1587年7月30日）に表示する。柳川も既存の拝領イベントを同日へ訂正した。1560年からの日送りで前日は立花山が大友方・柳川が龍造寺方、当日は両城が豊臣方の管理色に変わることを確認した。年表では隆景と宗茂への領知をそれぞれ表示する。城の明渡し・入城の月日は領知文書の日付と区別する。[愛媛県史の領知目録参照](https://i-manabi.jp/system/regionals/regionals/ecode%3A2/64/view/8144)・[立花家史料館の展示解説](https://artsandculture.google.com/story/KgWRWPxXFzYZIQ?hl=ja)
+
+立花山・柳川は専用ChromeのローカルHTMLでも日送りで検証した。旧領主から豊臣方への切替と、年表に拝領2件が並ぶことを確認。JavaScript例外0。史料台帳では `kobayakawa-chikuzen-grant` と `tachibana-chikugo-grant` を人物名・1587年で検索できる。
