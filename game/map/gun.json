@@ -1,13 +1,13 @@
 {
  "generated": "tools/map/build-gun.cjs",
- "source": "旧国・旧郡境界データセット（CODH）",
- "license": "CC BY-NC 4.0",
- "credit": "『旧国・旧郡境界データセット』（CODH作成） 「幕末明治地勢地図境界データ」（人間文化研究機構作成）を加工 doi:10.20676/00000454",
- "note": "江戸末期の郡境。戦国期の郡境とは違う所がある。画素の番号は gun.csv の n（G は上位バイト、B は下位バイト）。",
- "gridSha256": "77f88f9acc2bfd024ea3a4d59027ad7359587303de12631983365d05c9dadf6f",
+ "source": "日本：旧国・旧郡境界データセット（CODH）。朝鮮：国史編纂委員会 歴史地理情報「행정구역 GIS 데이터 (1910~1945년)」の1910年5月時点の府・郡",
+ "license": "日本 CC BY-NC 4.0／朝鮮 공공누리 제1유형（출처표시）",
+ "credit": "『旧国・旧郡境界データセット』（CODH作成） 「幕末明治地勢地図境界データ」（人間文化研究機構作成）を加工 doi:10.20676/00000454 ／ 국사편찬위원회 역사지리정보（https://hgis.history.go.kr）「행정구역 GIS 데이터 (1910~1945년)」를 가공",
+ "note": "日本は江戸末期の郡境、朝鮮は1910年（1914年の統合前）の府郡境。どちらも戦国期・1592年の境とは違う所がある。画素の番号は gun.csv の n（G は上位バイト、B は下位バイト）。",
+ "gridSha256": "88edd0ac9b003470935167202a59622b9a6edae6408b6a9c5d3d16073400d212",
  "inputSha256": "0c663aa3a99052792b47dad78f79dbe5b316c624ca9e020419fdedcaf0909589",
- "guns": 806,
- "overlapPixels": 0,
+ "guns": 1139,
+ "overlapPixels": 5,
  "tiles": [
   {
    "file": "16-0.png",
@@ -90,6 +90,14 @@
    "sha256": "2b6c9f44ce41af0f714894e447c15486e0e2c8613711c273bcb17fcf7978714a"
   },
   {
+   "file": "6-3.png",
+   "col": 6,
+   "row": 3,
+   "width": 1024,
+   "height": 1024,
+   "sha256": "e919946b9a514659fd04d20d2e4ae99bb8b7a7a4bd60b6925b8e1962767949f9"
+  },
+  {
    "file": "15-3.png",
    "col": 15,
    "row": 3,
@@ -138,6 +146,38 @@
    "sha256": "d4199b586ac306e046bd03a3bc1fbe94bd8c5bda8aa1ca4736925de05b817c78"
   },
   {
+   "file": "3-4.png",
+   "col": 3,
+   "row": 4,
+   "width": 1024,
+   "height": 1024,
+   "sha256": "439b11337f3f25daa9457c63adbdc4bb08c6756dac1c28bd3659268bb626a89e"
+  },
+  {
+   "file": "4-4.png",
+   "col": 4,
+   "row": 4,
+   "width": 1024,
+   "height": 1024,
+   "sha256": "e6fecd45e181d8076d7ae2a4b151cf47435d5244a0e6bf1e4b5a1beaa045483b"
+  },
+  {
+   "file": "5-4.png",
+   "col": 5,
+   "row": 4,
+   "width": 1024,
+   "height": 1024,
+   "sha256": "96cace4e7b5a2cb314e6e21d023542cfd48206501575618eac38d19f60d0c9c4"
+  },
+  {
+   "file": "6-4.png",
+   "col": 6,
+   "row": 4,
+   "width": 1024,
+   "height": 1024,
+   "sha256": "5c0506e7038ccc39d54b2b84cf71560ddff682060b892c502bb65f671bf5b299"
+  },
+  {
    "file": "14-4.png",
    "col": 14,
    "row": 4,
@@ -178,6 +218,46 @@
    "sha256": "279d93cb0b80ea41f04099100fbc10d0e1f4d9068962455e0e791f8b9bae9dfa"
   },
   {
+   "file": "2-5.png",
+   "col": 2,
+   "row": 5,
+   "width": 1024,
+   "height": 1024,
+   "sha256": "4a43bf4a90ee9dccbb863ffe557332010f5289e96d4626c709c2f871afd9f4a6"
+  },
+  {
+   "file": "3-5.png",
+   "col": 3,
+   "row": 5,
+   "width": 1024,
+   "height": 1024,
+   "sha256": "b042b041b67ff335fa799721fecbe0168120b3741b87c563b801aea66d1f0491"
+  },
+  {
+   "file": "4-5.png",
+   "col": 4,
+   "row": 5,
+   "width": 1024,
+   "height": 1024,
+   "sha256": "77f3e0475fe348574a53350780d70a736c613c8d0a29551c313368994658c923"
+  },
+  {
+   "file": "5-5.png",
+   "col": 5,
+   "row": 5,
+   "width": 1024,
+   "height": 1024,
+   "sha256": "a10d3cf65015b6644a3005427678a5b8c73552d8faa50ec222f8a3650fc4a429"
+  },
+  {
+   "file": "6-5.png",
+   "col": 6,
+   "row": 5,
+   "width": 1024,
+   "height": 1024,
+   "sha256": "447fe1d35e037262489c69d570904caa0075e29a388f69fdbeb84a76241719f2"
+  },
+  {
    "file": "15-5.png",
    "col": 15,
    "row": 5,
@@ -192,6 +272,46 @@
    "width": 1024,
    "height": 1024,
    "sha256": "af88f34a2d04fde8ed2097a469aad79049f6faffdb8f8738cff10cffe2ad193b"
+  },
+  {
+   "file": "1-6.png",
+   "col": 1,
+   "row": 6,
+   "width": 1024,
+   "height": 1024,
+   "sha256": "2ad2249b3c7dc8c4e65580daa2b22769ae59b1c5d38811deaaa96a5c6e523924"
+  },
+  {
+   "file": "2-6.png",
+   "col": 2,
+   "row": 6,
+   "width": 1024,
+   "height": 1024,
+   "sha256": "0ba0e4567f3d21c10991d3e5c4ccf91cdbeb6cb203f7c1b7654875414d7fba05"
+  },
+  {
+   "file": "3-6.png",
+   "col": 3,
+   "row": 6,
+   "width": 1024,
+   "height": 1024,
+   "sha256": "9e51b61c91183a755b107169816ad6974e81d9925dc11fb73272a87f9bb14912"
+  },
+  {
+   "file": "4-6.png",
+   "col": 4,
+   "row": 6,
+   "width": 1024,
+   "height": 1024,
+   "sha256": "261ef62599f1b1e5ac48a61b2d216a451a77f2abda90e49a6925ffc8b651e9e2"
+  },
+  {
+   "file": "5-6.png",
+   "col": 5,
+   "row": 6,
+   "width": 1024,
+   "height": 1024,
+   "sha256": "3d7d03a6cab15364888c2317374c7924ea82967ee0e6e4369b20a4530318aad9"
   },
   {
    "file": "14-6.png",
@@ -218,6 +338,38 @@
    "sha256": "a8805eb971ab264ae7d9ac98a10394f341827c933b1a9084b4c55b70023f19bc"
   },
   {
+   "file": "1-7.png",
+   "col": 1,
+   "row": 7,
+   "width": 1024,
+   "height": 1024,
+   "sha256": "bce7de1bf9ca982f137dc3350eb538adc0f3159e41e6624eae89e52ab53fa82e"
+  },
+  {
+   "file": "2-7.png",
+   "col": 2,
+   "row": 7,
+   "width": 1024,
+   "height": 1024,
+   "sha256": "4469f8d22f1d35dda31b833a8a3977382fdf5f5b71286591fa7df79bd9ae4deb"
+  },
+  {
+   "file": "3-7.png",
+   "col": 3,
+   "row": 7,
+   "width": 1024,
+   "height": 1024,
+   "sha256": "a75e6c8350cc0df90ca05974e81dcf752876c8be432a767f1fed7e218bd16adf"
+  },
+  {
+   "file": "4-7.png",
+   "col": 4,
+   "row": 7,
+   "width": 1024,
+   "height": 1024,
+   "sha256": "c3e71038536cca0d4dc7427bbed7735b06f88aa5a8b7064ed16efba035cf1a84"
+  },
+  {
    "file": "15-7.png",
    "col": 15,
    "row": 7,
@@ -240,6 +392,46 @@
    "width": 1024,
    "height": 1024,
    "sha256": "fabb7d7b1cffe1644d855b56e656ca8878923672ef7ff82364f05820fc710595"
+  },
+  {
+   "file": "1-8.png",
+   "col": 1,
+   "row": 8,
+   "width": 1024,
+   "height": 1024,
+   "sha256": "36babc51ae52eac83d3e879767bd74796e0022030f9899a67ebb189e907f66f0"
+  },
+  {
+   "file": "2-8.png",
+   "col": 2,
+   "row": 8,
+   "width": 1024,
+   "height": 1024,
+   "sha256": "970b65c1ecba59de59bac1d96f5b5210bd88f0e53b9f614112d4ea1823235c3c"
+  },
+  {
+   "file": "3-8.png",
+   "col": 3,
+   "row": 8,
+   "width": 1024,
+   "height": 1024,
+   "sha256": "17396e4554835e03adc2c45813c170997e81149bec2beaede5130c3dbee14a02"
+  },
+  {
+   "file": "4-8.png",
+   "col": 4,
+   "row": 8,
+   "width": 1024,
+   "height": 1024,
+   "sha256": "0b9b9c9cd43846475254cd4e367d7fd71b2f0b52bc6d3e4fa7b9484de0f07f30"
+  },
+  {
+   "file": "5-8.png",
+   "col": 5,
+   "row": 8,
+   "width": 1024,
+   "height": 1024,
+   "sha256": "b5750f0c317c805db7c7a56c7a800427d67a1bd262c821bf913a76fc1db667f7"
   },
   {
    "file": "13-8.png",
@@ -272,6 +464,62 @@
    "width": 1024,
    "height": 1024,
    "sha256": "136de96cd7be7bf27f6cfe70038fff3062e135093a072fee9e2d8be21bcab87c"
+  },
+  {
+   "file": "1-9.png",
+   "col": 1,
+   "row": 9,
+   "width": 1024,
+   "height": 1024,
+   "sha256": "b01142c742cffc35d30e245fcccecfcc87091e3fbafcdd5f3a44a0c69d734c79"
+  },
+  {
+   "file": "2-9.png",
+   "col": 2,
+   "row": 9,
+   "width": 1024,
+   "height": 1024,
+   "sha256": "5813a0c97d2d769795ab1f682288272f0b4d70838c651633b002dbe2551ce68c"
+  },
+  {
+   "file": "3-9.png",
+   "col": 3,
+   "row": 9,
+   "width": 1024,
+   "height": 1024,
+   "sha256": "62f551bdd071543a4ebd62951fd46b389840eca69ebdcf4215fbb954102b4cad"
+  },
+  {
+   "file": "4-9.png",
+   "col": 4,
+   "row": 9,
+   "width": 1024,
+   "height": 1024,
+   "sha256": "8534b1fa1bac36c9fce69447d2491937ad74c5dfa349338277ce934a806b109c"
+  },
+  {
+   "file": "5-9.png",
+   "col": 5,
+   "row": 9,
+   "width": 1024,
+   "height": 1024,
+   "sha256": "faf6cf80906333445cc2bc5d0aac5285f97e707d38dad093962c74c326f7d889"
+  },
+  {
+   "file": "7-9.png",
+   "col": 7,
+   "row": 9,
+   "width": 1024,
+   "height": 1024,
+   "sha256": "ba2829e266ddeb9247f5fea35b3541924e7bcf11689ec7b564e50a89f767061c"
+  },
+  {
+   "file": "8-9.png",
+   "col": 8,
+   "row": 9,
+   "width": 1024,
+   "height": 1024,
+   "sha256": "40244d6c415df4b061520023a5dbb36147aedea87c4e603c37673c9f31e45d33"
   },
   {
    "file": "12-9.png",
@@ -312,6 +560,38 @@
    "width": 1024,
    "height": 1024,
    "sha256": "b662b34c337cd229a5092701fe1707b67041a766681192023770d32f7f1c4c26"
+  },
+  {
+   "file": "2-10.png",
+   "col": 2,
+   "row": 10,
+   "width": 1024,
+   "height": 1024,
+   "sha256": "944f7aa8b4b4720b305c198d727e9e3f1c7b57e93a30ce5a6ed72345e46b7be1"
+  },
+  {
+   "file": "3-10.png",
+   "col": 3,
+   "row": 10,
+   "width": 1024,
+   "height": 1024,
+   "sha256": "0a9d717709606e6face6cac4fc568004e863e2620fd1441ef40819920cc6df90"
+  },
+  {
+   "file": "4-10.png",
+   "col": 4,
+   "row": 10,
+   "width": 1024,
+   "height": 1024,
+   "sha256": "3955398fa9b3a8f3f0dc7fd6834bfbc6ad814e207abc5b9bb8e266fd624a7276"
+  },
+  {
+   "file": "5-10.png",
+   "col": 5,
+   "row": 10,
+   "width": 1024,
+   "height": 1024,
+   "sha256": "e56f2c95eb9300a8730ffdaf2ad9d37870e8543dda0ef015e4e199e9de19157d"
   },
   {
    "file": "9-10.png",
@@ -368,6 +648,46 @@
    "width": 1024,
    "height": 1024,
    "sha256": "c8322a90e96767937efc3c36ddf3a4938705096307527d93bca093ef79cbcc39"
+  },
+  {
+   "file": "2-11.png",
+   "col": 2,
+   "row": 11,
+   "width": 1024,
+   "height": 1024,
+   "sha256": "ac07867888e109aebe8f5deb70e105a5823f833836d4cb2f71111105b3d00067"
+  },
+  {
+   "file": "3-11.png",
+   "col": 3,
+   "row": 11,
+   "width": 1024,
+   "height": 1024,
+   "sha256": "139a5998837431cc0ea9991df0302b57ac68f58c05168f7165e7f4c990c53081"
+  },
+  {
+   "file": "4-11.png",
+   "col": 4,
+   "row": 11,
+   "width": 1024,
+   "height": 1024,
+   "sha256": "c4399d2b67891a28235bfb3c5f03d2c7be14ee637b98861183b6e2ea43f98383"
+  },
+  {
+   "file": "5-11.png",
+   "col": 5,
+   "row": 11,
+   "width": 1024,
+   "height": 1024,
+   "sha256": "c4c824d0a887a3978abf6bf1a23df73093d8c670b6a69c6bd81095fc6b4239f0"
+  },
+  {
+   "file": "6-11.png",
+   "col": 6,
+   "row": 11,
+   "width": 1024,
+   "height": 1024,
+   "sha256": "50e2d1b6a740b1c719ec3b371c6cf3210ad0756c30881c2b8b839f83326b3928"
   },
   {
    "file": "8-11.png",
@@ -434,12 +754,36 @@
    "sha256": "1c84bb6e01959577bb189884bf1b375da2943c0d6ef9f034a584a284add83dbc"
   },
   {
+   "file": "2-12.png",
+   "col": 2,
+   "row": 12,
+   "width": 1024,
+   "height": 1024,
+   "sha256": "c5836a8f518ff63a8a78bf53046f6bc1dd5ee07978669ab3fc6ae91f40057ee2"
+  },
+  {
+   "file": "3-12.png",
+   "col": 3,
+   "row": 12,
+   "width": 1024,
+   "height": 1024,
+   "sha256": "d5ad003fdd7762d0b4417c98946edcc410cab360eada18257faa64e56ff55d5a"
+  },
+  {
+   "file": "4-12.png",
+   "col": 4,
+   "row": 12,
+   "width": 1024,
+   "height": 1024,
+   "sha256": "ed88220ca7350bde32123e1d1ad4e8aad9619beed9d92279de2eb624b457a976"
+  },
+  {
    "file": "5-12.png",
    "col": 5,
    "row": 12,
    "width": 1024,
    "height": 1024,
-   "sha256": "2e4b5ba3c439adbde69131b4f33348fdee438d38ef6c9c1dfbddba23fd5e40e2"
+   "sha256": "18f28445736b3ddde49250c36d9b6bce3f43a843d262d76ab90fb0b7d8b529ae"
   },
   {
    "file": "7-12.png",
@@ -514,6 +858,30 @@
    "sha256": "3f204aa736fe5365f1462cf8cd12de4b28421166b58c722d8976ffc2d750e837"
   },
   {
+   "file": "2-13.png",
+   "col": 2,
+   "row": 13,
+   "width": 1024,
+   "height": 1024,
+   "sha256": "28bcaa4ad1568f5dc7001314a1a8f5341f663628968b51910a6615906403bbc4"
+  },
+  {
+   "file": "3-13.png",
+   "col": 3,
+   "row": 13,
+   "width": 1024,
+   "height": 1024,
+   "sha256": "5d638e5229027a398b806ed82156604e3f9960cf3c325944c11b2d3188450bae"
+  },
+  {
+   "file": "4-13.png",
+   "col": 4,
+   "row": 13,
+   "width": 1024,
+   "height": 1024,
+   "sha256": "5b5dce3e65c207f0b5ef14da074381e1c33b9ef91293e8c6d62b6bdbbe9523a2"
+  },
+  {
    "file": "5-13.png",
    "col": 5,
    "row": 13,
@@ -576,6 +944,22 @@
    "width": 1024,
    "height": 1024,
    "sha256": "04da75b071c5435d940d05ef2bc008c0426e701078697061d30ff54419ce5c6e"
+  },
+  {
+   "file": "2-14.png",
+   "col": 2,
+   "row": 14,
+   "width": 1024,
+   "height": 1024,
+   "sha256": "472e58ca8171773aa74dbedd994433f6623dc6d4fbef62687fea6be8621e4cad"
+  },
+  {
+   "file": "3-14.png",
+   "col": 3,
+   "row": 14,
+   "width": 1024,
+   "height": 1024,
+   "sha256": "b43bcb6a4c8ff08da682c4d877e4ba88a25fb6d2802216507c18de9640faf90f"
   },
   {
    "file": "5-14.png",

@@ -69,3 +69,5 @@ Claude と Codex の独立調査（`docs/reports/MAP_ARCHITECTURE_INDEPENDENT_RE
 - 結果：城の位置と領域の食い違い0、国をまたぐ領域は城のない国を受け持つ6件のみ。郡境そのものは江戸末期のもので、戦国期は推定。
 - 朝鮮・大陸は郡データが無いので従来どおり（今後、府牧郡県の土台を探す）。
 - 土台が変わると年代別の差分は作り直しが要る。`build-edges.cjs` は差分の `baseProvincesSha256` が今の土台（manifest.json＋definition.csv）と一致する版だけを使う。
+- 朝鮮は国史編纂委員会「행정구역 GIS 데이터 (1910~1945년)」の1910年5月時点（1914年の統合前）の府・郡333を郡画像に加える（`tools/map/extract-hgis-1910.py`、標準ライブラリで GeoPackage を読む）。1896年の13道は八道へ戻して「国」として比べる。済州の三邑は城の登録まで excluded（`gun-overrides.json`）。
+- 残る課題：国・道の境界線（`TKGEO.pborders`）は旧来の線のまま。郡画像の国・道から共有辺を起こして置き換える。

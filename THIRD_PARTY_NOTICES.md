@@ -38,6 +38,14 @@ under their own terms, which are recorded below and in
   includes data derived from it must be distributed non-commercially (the maintainer has confirmed
   the game is non-commercial).
 
+- **국사편찬위원회 역사지리정보「행정구역 GIS 데이터 (1910~1945년)」** (공공누리 제1유형, 출처표시) — the
+  府・郡 polygons valid on 1910-05-10 (before the 1914 consolidation; 333 units) are rasterised into
+  `game/map/gun/` as the smallest unit of the map partition in Korea. Downloaded by the maintainer on
+  2026-11-03; the GeoPackage is not redistributed. Credit: 본 저작물은 국사편찬위원회에서 작성하여
+  공공누리 제1유형으로 개방한 '행정구역 GIS 데이터 (1910~1945년)'을 이용하였으며, 해당 저작물은
+  국사편찬위원회 역사지리정보(https://hgis.history.go.kr)에서 무료로 다운받으실 수 있습니다.
+  The 1910 boundaries are used as an estimate for 1592.
+
 ## Historical maps, elevation, roads and portraits
 
 The sources consulted for historical maps, elevation, road comparison shapes,

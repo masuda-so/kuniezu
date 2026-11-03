@@ -1,6 +1,6 @@
 {
  "generated": "tools/map/build-edges.cjs",
- "gridSha256": "88edd0ac9b003470935167202a59622b9a6edae6408b6a9c5d3d16073400d212",
+ "gridSha256": "40d317e28e41ed7a0910a22aca6e838c5eeaa9abeb554dd6973be219e3943ef4",
  "note": "領域画像の共有辺。a<b の領域ID、kind は coast/lake/region。座標は地図平面。塗りの画像と同じ版・段から作る。",
  "levels": [
   {
@@ -185,7 +185,7 @@
      "file": "6-3.json",
      "col": 6,
      "row": 3,
-     "sha256": "de62c98552250a6f8d8798c30c8f42844de6d092aa141b9965ff6bb301f1f142"
+     "sha256": "b0749405d9aa2ab604157a2ed74c881ac7a6d8a7856c4bf64849b8bad8301db3"
     },
     {
      "file": "7-3.json",
@@ -251,25 +251,25 @@
      "file": "3-4.json",
      "col": 3,
      "row": 4,
-     "sha256": "936b6166e3f33c07e90d00d1713eda977883c3e87e90461db0af8c2f133f34c0"
+     "sha256": "e4a291bb426d35c054a57744d4e3b9a4c9e7c79de4d788f889ad4cc7c9f3c7ca"
     },
     {
      "file": "4-4.json",
      "col": 4,
      "row": 4,
-     "sha256": "4201770ffef9831c8ede2e1ec08ac148bd0b24eccba9b536383e7f76a3167cb9"
+     "sha256": "27ec8271fad9725ddff5edb18f19ea96f1e44faa74bc76577e1263470f2d7dc0"
     },
     {
      "file": "5-4.json",
      "col": 5,
      "row": 4,
-     "sha256": "e5443917bd90cf023664547cdd2c79f1eace2461b7ba6a1ea1f65e23d325eb08"
+     "sha256": "023889f903342e749a49d012c52a18b36647a523308d0b4456340414f54044c0"
     },
     {
      "file": "6-4.json",
      "col": 6,
      "row": 4,
-     "sha256": "4fe23c7557c5219c96da5ebe724e46814daf687275de0178d57d529ea144b7d9"
+     "sha256": "8b449dfc2f5d1afbbfb0073d3db7485457625a5ec4839e01ab65a479b636875d"
     },
     {
      "file": "7-4.json",
@@ -317,19 +317,19 @@
      "file": "2-5.json",
      "col": 2,
      "row": 5,
-     "sha256": "e0967c926b11d6d90111baaeca28a3afb9f8ea2931d3eca7f54b66c6216a14d3"
+     "sha256": "714ae0fae5df2e0d857ea55637a34d3d7408f95491380959002749e8c32c0672"
     },
     {
      "file": "3-5.json",
      "col": 3,
      "row": 5,
-     "sha256": "f679efa7ae55f8e388615600f3e9bd1e78c8a54fd7f514a41294fc6eb243585f"
+     "sha256": "fa2f0b269cd1579dc4f88121b272b7b73ed59d6f1be007fc448c86b41d9ffdee"
     },
     {
      "file": "4-5.json",
      "col": 4,
      "row": 5,
-     "sha256": "25f8fb8b868b26d043e0af9b766715564c0ceec6f2404a345b7c86492ed98e4a"
+     "sha256": "ce01da20f3dc8d5ff208c49a7b3cf4326742eaaa697902e57a67f55099188b5c"
     },
     {
      "file": "5-5.json",
@@ -341,7 +341,7 @@
      "file": "6-5.json",
      "col": 6,
      "row": 5,
-     "sha256": "3e19bbf721de55a08e704f0010b5f6e73046df8f9753eb996022a72e8a35bf9c"
+     "sha256": "138b60a2bf56afe5489800395b4bf3ff9da3b08db7c6d8940a17e74c014cc18a"
     },
     {
      "file": "14-5.json",
@@ -371,31 +371,31 @@
      "file": "1-6.json",
      "col": 1,
      "row": 6,
-     "sha256": "a86e5d31631bc7af529608b7aa489debc3dad3c3a386633f9f6ffe27336a018f"
+     "sha256": "80504b7ed565d2b820fb9935e0590d04093ba42c5d0f7234095d90705b06cf3b"
     },
     {
      "file": "2-6.json",
      "col": 2,
      "row": 6,
-     "sha256": "c7bd9a48802baacaff47e3b872acd79bd392a2a6ea34fb2b779a729665ab1954"
+     "sha256": "292a25168f5958d659d9420851515bf110c6a04855223d38a4bd368f1890f006"
     },
     {
      "file": "3-6.json",
      "col": 3,
      "row": 6,
-     "sha256": "d953a9192a8d456e58da8e1f0abecb3060bf80c85838e59a4cf3a242a9206efc"
+     "sha256": "b47b5965bbaabe04d359e2db78d3db89c7649f089fd2ba8cc126398d05361a98"
     },
     {
      "file": "4-6.json",
      "col": 4,
      "row": 6,
-     "sha256": "d20853147eb146daa4b678b4540d990bca960f649190acb4f6d703fc1534a9a0"
+     "sha256": "3ab54a03ae9523bd21e33ccb455389ddc2c4fa92dbbfc30dbfc6fe5656757762"
     },
     {
      "file": "5-6.json",
      "col": 5,
      "row": 6,
-     "sha256": "baf92bfc1acd57bbd91fcfd727d0bebf953925ae92491c369be8a57044f8b6b5"
+     "sha256": "a5341936d988f5fc54c8b34946192abc9c8ca245bd982ed96a6da02b80249bf1"
     },
     {
      "file": "14-6.json",
@@ -425,25 +425,25 @@
      "file": "1-7.json",
      "col": 1,
      "row": 7,
-     "sha256": "c5ace6bc14193f2210936b2ec352b01f2afb46dadccf30dc008d8631a6db38f7"
+     "sha256": "c61fcbe93fae1303d928c74210722fc39ad25414dd1e19c8816776d9c433d9c2"
     },
     {
      "file": "2-7.json",
      "col": 2,
      "row": 7,
-     "sha256": "eea04f8ab2b8d016ace31dcd35c625f790d1f6be9b54b8fe00011099e6e0c79a"
+     "sha256": "0f5466152663f19e074b46d5a23a11ea962cc059c2dabda09e3bec826a384964"
     },
     {
      "file": "3-7.json",
      "col": 3,
      "row": 7,
-     "sha256": "ba9c7016816ea484a1b1db7ff1adcb3888a8f064d90aa7c703a4b0e9b8a9b1ba"
+     "sha256": "330e3d12d756ab65207d6fb03a87bde7c1d9d4c11eb2cc15f1534cd98cfffc5b"
     },
     {
      "file": "4-7.json",
      "col": 4,
      "row": 7,
-     "sha256": "62358b16530e9ae997f6361dfcedbbd6758ce9349961b5a6af362be285313703"
+     "sha256": "0579f3fd912bd3e9b8ba3b06afdb83c6297f230af701a869dd79ab94bfeb20eb"
     },
     {
      "file": "14-7.json",
@@ -473,31 +473,31 @@
      "file": "1-8.json",
      "col": 1,
      "row": 8,
-     "sha256": "4b1c5494a78425112a3e2a22ec4c679cc3bd05665db0e3856c8580b44302919f"
+     "sha256": "82be2cb2b45fada5506e02408246c5de52ab0f1c2d3ec7d662bea0ef67fce2b1"
     },
     {
      "file": "2-8.json",
      "col": 2,
      "row": 8,
-     "sha256": "b9d06c503fcf3f2276513f65044c1bf1733fa3868eb45e716e53be10f71ff66b"
+     "sha256": "309b315a52c3281dc021cb6701fdca54c374174e9421e6e27c3976bd21a12682"
     },
     {
      "file": "3-8.json",
      "col": 3,
      "row": 8,
-     "sha256": "ef62c1b34511080faa4256db7b32bac3a27c9f29e2bd24f5144dac58163cb21c"
+     "sha256": "f35b0889db958e21a18b2c3a03d163d0682d0ebc06e7e6ac50184a65ed1433fb"
     },
     {
      "file": "4-8.json",
      "col": 4,
      "row": 8,
-     "sha256": "f2493c2526c90fcf499e4ca9161fe99cc5d4adcf62ac4f2c185e61bb900f27f3"
+     "sha256": "33f5be56f6ecfe4452573d230415f2948a15bcbcff9a64ed953e4b8a6c43bbcf"
     },
     {
      "file": "5-8.json",
      "col": 5,
      "row": 8,
-     "sha256": "41bc3fef190df8f8c03fa4910fea4d7d32f7e14bb4b0c743cae95d2656f05c9b"
+     "sha256": "1f2c06ec2cbd69cb78d5696187c823822c9b56d597b868ee7bf29a6f00936fa1"
     },
     {
      "file": "13-8.json",
@@ -527,31 +527,31 @@
      "file": "1-9.json",
      "col": 1,
      "row": 9,
-     "sha256": "b078b549640b4dd516c89b5eb019a5743b723fdb63219131fcb524c07705de5f"
+     "sha256": "824a97a0172bb6da211b484f85c71c0aa5749f4adbe055429c86690b933e59f2"
     },
     {
      "file": "2-9.json",
      "col": 2,
      "row": 9,
-     "sha256": "e518a7886fe3d0c02e6b310a4c82c7b69078928c96f7d462caaca14cf8c4664c"
+     "sha256": "ab642b37dd538b679f6537b230109dd3b4ec1583015563c0240e0334939a4547"
     },
     {
      "file": "3-9.json",
      "col": 3,
      "row": 9,
-     "sha256": "bd18dd7ab510942bbb2a27445f76ddb9ccbbaa00463953a46d28bdf267368143"
+     "sha256": "b05fe7ba47887d7aa5154c11562b49e0f5942b8b3640147e8d486d0b5f680358"
     },
     {
      "file": "4-9.json",
      "col": 4,
      "row": 9,
-     "sha256": "6d67296d0d2864b909442548f7e8e6c7855cdf0c91b5c6beabee5df05b02b944"
+     "sha256": "9d32ccf6289cb0fa1ee75c65d906430f6e35b83519c36548eb0385661f82c082"
     },
     {
      "file": "5-9.json",
      "col": 5,
      "row": 9,
-     "sha256": "d794b5f6927b0d315b84101e06f2ef8f673e34135beeedadecda42a3283519f4"
+     "sha256": "d3bd7b0b74422cc0537168d4eafa30f8f752e61f1e6c2356d76bf8c50c25a594"
     },
     {
      "file": "12-9.json",
@@ -587,25 +587,25 @@
      "file": "2-10.json",
      "col": 2,
      "row": 10,
-     "sha256": "c67f7ee19c57368bcaad5cb23dfcb608dbd27aec24a3235a8b47d32d63569289"
+     "sha256": "eaba933982ef6b8f19e39b6dbee003ff7eaeba52a26368bba030eeafd76dad32"
     },
     {
      "file": "3-10.json",
      "col": 3,
      "row": 10,
-     "sha256": "6c689a9382f66826caafe89ad4ddaf52d57e685f2f5b1142294c4ca020ad39e4"
+     "sha256": "a2fd7268d922ae3727ad579bf4c4261e9dfa12135a92b64ef8c499ec0334170d"
     },
     {
      "file": "4-10.json",
      "col": 4,
      "row": 10,
-     "sha256": "055b78594f4e2ae1eaa96fef5434f5dc316ab3300434103f5efb9017054bf0ce"
+     "sha256": "62731f1207aeb20107547542e4dd7a0d730af766131504737f67c43df498c5b1"
     },
     {
      "file": "5-10.json",
      "col": 5,
      "row": 10,
-     "sha256": "765945b05f14a014e34ffc3ca6ac8c9abbd247c2507744bd5c83aa98c623611f"
+     "sha256": "1e92768f361326d8b0f7fcb5c59b3ad71bb6d6de5deb8079123eb43bfbbbf785"
     },
     {
      "file": "9-10.json",
@@ -653,25 +653,25 @@
      "file": "2-11.json",
      "col": 2,
      "row": 11,
-     "sha256": "03688b2ef89e03ee158650544e1e9338b1be8ea6a5e70e8d22d400e7ce7984f0"
+     "sha256": "9c8cb28cd2dfca975d005a9b338ff7862be4409dc8cd40339bdf5d52ebf2d6e4"
     },
     {
      "file": "3-11.json",
      "col": 3,
      "row": 11,
-     "sha256": "10da1130f09412944a9cfd71ea9aa4aea4488570184ea49aa49e7871e820e6eb"
+     "sha256": "9bd339434a4580a438a41c7fee2e6b852a3c20c42bef9409c0dbedd4a9f03e51"
     },
     {
      "file": "4-11.json",
      "col": 4,
      "row": 11,
-     "sha256": "7c5cdff6a0e7534a66030bfbdaaf5d12dcd37ea52a04f525884d3dce7902591e"
+     "sha256": "6656b25aca8e6a0a69b29e8c689cd6e8e0ba87d3a80e42bf7ad69e66db798ffd"
     },
     {
      "file": "5-11.json",
      "col": 5,
      "row": 11,
-     "sha256": "9eb15e348b34dba9065beb392d2fa670b0216a407f0bedb1d559cd867252cc32"
+     "sha256": "258d575f0bdb3011e3d87d744d7c61f34e12afcf8124293323aa9a98afb020f5"
     },
     {
      "file": "6-11.json",
@@ -731,25 +731,25 @@
      "file": "2-12.json",
      "col": 2,
      "row": 12,
-     "sha256": "5d6146c55adc8eea241df424cb557c3141a714af04a2cfc282ea6cbe4d886f6d"
+     "sha256": "a936ce14fe1dee0c02fd4a517fc3cb0f05a0f0e0225d94bf555007874121289a"
     },
     {
      "file": "3-12.json",
      "col": 3,
      "row": 12,
-     "sha256": "454db4d79118a07bfaaa9a3b8c9a518e9a986cc2b90a85306ddf33f41bb400e7"
+     "sha256": "c8d829c4c7929fa1fb31e7066c9a16d751d0682d2c4cd9787b32b7f80b24cc4f"
     },
     {
      "file": "4-12.json",
      "col": 4,
      "row": 12,
-     "sha256": "a23f6aa3144083683a290efa4a54643aaa234dfeb752db993e2012d117bb3d81"
+     "sha256": "92134c42603636402379038b6d2a96b7bdf5bd0a95dd14d1470eff3d2144f9b2"
     },
     {
      "file": "5-12.json",
      "col": 5,
      "row": 12,
-     "sha256": "9ee244554d9a4110a0f652f90345a615fc9affa98dd8474493b38526ca5a355d"
+     "sha256": "daaa09aa2874cd3c9e6694a5b562dff7113d4583135e6c7ccaf0cb9de0aa328d"
     },
     {
      "file": "7-12.json",
@@ -809,19 +809,19 @@
      "file": "2-13.json",
      "col": 2,
      "row": 13,
-     "sha256": "990b2c1f694d0237752bd89d9c40f5bb435c783b681a66ff7bdf9887c62325a3"
+     "sha256": "6f708863a7697d6b218b1e5a95c777bf3a56f51799a20c84d4fc5c1fe74aea5c"
     },
     {
      "file": "3-13.json",
      "col": 3,
      "row": 13,
-     "sha256": "05a54ccb31a141ca7a7367029cfe9966dcda5c59749261038a86ebcdbf9976d1"
+     "sha256": "d6c893e2d449bf49b08b04d572aefaa7a038ad24fea2eeb04cfc531e9752ceb4"
     },
     {
      "file": "4-13.json",
      "col": 4,
      "row": 13,
-     "sha256": "0a5c23d8a77cdcffa6487051b8f1ec9b801908d84d8591b3e08cfa1252018bc8"
+     "sha256": "c3d649c89f6c250676bcbd09b7e20d374b71bd0f85554c08f59c48d55d1b9de6"
     },
     {
      "file": "5-13.json",
@@ -887,7 +887,7 @@
      "file": "3-14.json",
      "col": 3,
      "row": 14,
-     "sha256": "a059d7f6e50fdd4b4bb41639420be891072098542fc0095c474ab86ad9b14587"
+     "sha256": "c97a30cf97ccd3a3748f98675960f9f44285c1026f900dad93db52434aa05b72"
     },
     {
      "file": "5-14.json",
@@ -1145,7 +1145,7 @@
      "file": "1-0.json",
      "col": 1,
      "row": 0,
-     "sha256": "abe4745d8d8e8c189c0f5366a19f79432181d5c809c54fc5391d7a91b228d91a"
+     "sha256": "29c2b2937bed256c2cc7f126e45b3ae449ef27e208e824d3ce7e6694a211650e"
     },
     {
      "file": "2-0.json",
@@ -1175,13 +1175,13 @@
      "file": "0-1.json",
      "col": 0,
      "row": 1,
-     "sha256": "e61fcf7b4a47b83d8ec62dced50c9c59748a104b88fcacd1456f7f1636b35e6c"
+     "sha256": "92c0cee09e8441d9b5fbc7c9005d5d01557418c1d5a17d5aa5b769b632307f87"
     },
     {
      "file": "1-1.json",
      "col": 1,
      "row": 1,
-     "sha256": "25e2f5ac8c8cdd16b031a2830a34cd3e4e13248ba1f939d75609d27fb2ff072a"
+     "sha256": "a4adf3bc8e7498166785127457fd5beee7243ca19de87fc8f93231560e2f37c2"
     },
     {
      "file": "3-1.json",
@@ -1199,13 +1199,13 @@
      "file": "0-2.json",
      "col": 0,
      "row": 2,
-     "sha256": "901c4086a93aee44ebe361e5de7cf42bc43e1c6befdf6439947fe227bd144e30"
+     "sha256": "af2961a6a2fad215e202714254c222ed7f058a6aca76ca53706a6a33e10876af"
     },
     {
      "file": "1-2.json",
      "col": 1,
      "row": 2,
-     "sha256": "3e6cefc0f6a8a1770c3cefa59fa654237e1ed576bd8da8bab0cf4beafae6539c"
+     "sha256": "0a3aac5fbd22ed9ef69f8f5b4f1b3d26292946a7056a5b771bbf5a57ec5b7171"
     },
     {
      "file": "2-2.json",
@@ -1229,13 +1229,13 @@
      "file": "0-3.json",
      "col": 0,
      "row": 3,
-     "sha256": "03945abcacf210151a7cd227fc1c4ccbb84a4c93a8abf3e680e41923203518b3"
+     "sha256": "d5da4813b7cac92d442153504e16c830226645a8451c4f66fef8ca3adccd99a1"
     },
     {
      "file": "1-3.json",
      "col": 1,
      "row": 3,
-     "sha256": "5b068148f129915482ab7249d00152c6cc10cc28abeb5f6a7e2d341325dcec9d"
+     "sha256": "cf81acd04788206de471e4fb40ba32f1e19105ba54c97cd8d0debc28f11ed0cc"
     },
     {
      "file": "2-3.json",
@@ -1301,7 +1301,7 @@
      "file": "0-0.json",
      "col": 0,
      "row": 0,
-     "sha256": "f611c5b898a7b90250c27644ef261ee9b99031f543cffb4a2b36d3209f914403"
+     "sha256": "8e7be97e53fc895e9336a27ced39fff6a3ad9721ee307cad067dc1e137d2b134"
     },
     {
      "file": "1-0.json",
@@ -1319,7 +1319,7 @@
      "file": "0-1.json",
      "col": 0,
      "row": 1,
-     "sha256": "64893479c124a75c6c16ab77742fdc4e6c3b1520356ce3bcf5668ba92684b14c"
+     "sha256": "15d897e5336dd100bf99c2685fdb352b44bcebcec62c213301c90ba0b398b573"
     },
     {
      "file": "1-1.json",

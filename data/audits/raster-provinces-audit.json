@@ -2,19 +2,8 @@
  "scope": "領域画像（段階1・100m）の総点検。城の位置・飛び地・線データとの面積差。",
  "castles": 137,
  "castleMismatch": [],
- "fragmentsOver50px": 296,
+ "fragmentsOver50px": 671,
  "fragments": [
-  {
-   "key": "castle:suncheon",
-   "pixels": 179139,
-   "km2": 1791.4,
-   "distanceKm": 177.2,
-   "at": [
-    126.554,
-    33.385
-   ],
-   "mainPixels": 1020260
-  },
   {
    "key": "castle:kouyama",
    "pixels": 47903,
@@ -60,6 +49,17 @@
    "mainPixels": 42434
   },
   {
+   "key": "castle:busan",
+   "pixels": 39283,
+   "km2": 392.8,
+   "distanceKm": 52,
+   "at": [
+    128.625,
+    34.865
+   ],
+   "mainPixels": 263360
+  },
+  {
    "key": "castle:ishiyama",
    "pixels": 38831,
    "km2": 388.3,
@@ -71,48 +71,37 @@
    "mainPixels": 67852
   },
   {
-   "key": "castle:busan",
-   "pixels": 34794,
-   "km2": 347.9,
-   "distanceKm": 51.2,
-   "at": [
-    128.639,
-    34.865
-   ],
-   "mainPixels": 221197
-  },
-  {
    "key": "castle:suncheon",
-   "pixels": 34130,
-   "km2": 341.3,
-   "distanceKm": 85.4,
+   "pixels": 34206,
+   "km2": 342.1,
+   "distanceKm": 86.1,
    "at": [
     126.244,
     34.456
    ],
-   "mainPixels": 1020260
+   "mainPixels": 1039456
   },
   {
    "key": "castle:gaeseong",
    "pixels": 30883,
    "km2": 308.8,
-   "distanceKm": 37.3,
+   "distanceKm": 46.4,
    "at": [
     126.445,
     37.708
    ],
-   "mainPixels": 261791
+   "mainPixels": 293994
   },
   {
    "key": "castle:jinju",
-   "pixels": 30408,
-   "km2": 304.1,
-   "distanceKm": 61.6,
+   "pixels": 30500,
+   "km2": 305,
+   "distanceKm": 63.9,
    "at": [
     127.929,
     34.809
    ],
-   "mainPixels": 687043
+   "mainPixels": 717817
   },
   {
    "key": "castle:tenjin",
@@ -138,14 +127,14 @@
   },
   {
    "key": "castle:gaeseong",
-   "pixels": 16162,
-   "km2": 161.6,
-   "distanceKm": 32.2,
+   "pixels": 19081,
+   "km2": 190.8,
+   "distanceKm": 40.5,
    "at": [
-    126.592,
-    37.703
+    126.596,
+    37.692
    ],
-   "mainPixels": 261791
+   "mainPixels": 293994
   },
   {
    "key": "castle:hirado",
@@ -181,17 +170,6 @@
    "mainPixels": 278188
   },
   {
-   "key": "castle:namwon",
-   "pixels": 12015,
-   "km2": 120.2,
-   "distanceKm": 64.7,
-   "at": [
-    126.679,
-    35.348
-   ],
-   "mainPixels": 240305
-  },
-  {
    "key": "castle:koriyama",
    "pixels": 9023,
    "km2": 90.2,
@@ -206,12 +184,12 @@
    "key": "castle:suncheon",
    "pixels": 8794,
    "km2": 87.9,
-   "distanceKm": 70.6,
+   "distanceKm": 71.4,
    "at": [
     126.698,
     34.348
    ],
-   "mainPixels": 1020260
+   "mainPixels": 1039456
   },
   {
    "key": "castle:izumi",
@@ -237,14 +215,14 @@
   },
   {
    "key": "castle:suncheon",
-   "pixels": 6474,
-   "km2": 64.7,
-   "distanceKm": 55.9,
+   "pixels": 6527,
+   "km2": 65.3,
+   "distanceKm": 56.5,
    "at": [
     127.17,
     34.46
    ],
-   "mainPixels": 1020260
+   "mainPixels": 1039456
   },
   {
    "key": "castle:yuzuki",
@@ -270,36 +248,36 @@
   },
   {
    "key": "castle:uiju",
-   "pixels": 5997,
-   "km2": 60,
-   "distanceKm": 140.2,
+   "pixels": 6083,
+   "km2": 60.8,
+   "distanceKm": 144.8,
    "at": [
-    124.886,
+    124.885,
     39.558
    ],
-   "mainPixels": 3021768
+   "mainPixels": 3117861
   },
   {
    "key": "castle:jinju",
    "pixels": 5695,
    "km2": 57,
-   "distanceKm": 53.5,
+   "distanceKm": 56.2,
    "at": [
     128.017,
     34.869
    ],
-   "mainPixels": 687043
+   "mainPixels": 717817
   },
   {
    "key": "castle:suncheon",
-   "pixels": 5634,
-   "km2": 56.3,
-   "distanceKm": 84.5,
+   "pixels": 5650,
+   "km2": 56.5,
+   "distanceKm": 84.9,
    "at": [
     126.047,
     34.888
    ],
-   "mainPixels": 1020260
+   "mainPixels": 1039456
   },
   {
    "key": "neutral:隠岐",
@@ -313,37 +291,37 @@
    "mainPixels": 24339
   },
   {
-   "key": "castle:gaeseong",
+   "key": "castle:haeju",
    "pixels": 5216,
    "km2": 52.2,
-   "distanceKm": 180.7,
+   "distanceKm": 124.8,
    "at": [
     124.677,
     37.953
    ],
-   "mainPixels": 261791
+   "mainPixels": 1708474
   },
   {
    "key": "castle:suncheon",
    "pixels": 5047,
    "km2": 50.5,
-   "distanceKm": 60.8,
+   "distanceKm": 61.2,
    "at": [
     126.313,
     34.867
    ],
-   "mainPixels": 1020260
+   "mainPixels": 1039456
   },
   {
    "key": "castle:gaeseong",
    "pixels": 4936,
    "km2": 49.4,
-   "distanceKm": 43.4,
+   "distanceKm": 53.5,
    "at": [
     126.266,
     37.787
    ],
-   "mainPixels": 261791
+   "mainPixels": 293994
   },
   {
    "key": "castle:nanao",
@@ -360,56 +338,45 @@
    "key": "castle:suncheon",
    "pixels": 4694,
    "km2": 46.9,
-   "distanceKm": 95.9,
+   "distanceKm": 96.3,
    "at": [
     125.941,
     34.761
    ],
-   "mainPixels": 1020260
+   "mainPixels": 1039456
   },
   {
-   "key": "castle:busan",
-   "pixels": 4583,
-   "km2": 45.8,
-   "distanceKm": 31.7,
+   "key": "castle:gaeseong",
+   "pixels": 4446,
+   "km2": 44.5,
+   "distanceKm": 54.8,
    "at": [
-    128.586,
-    35.109
+    126.326,
+    37.697
    ],
-   "mainPixels": 221197
+   "mainPixels": 293994
   },
   {
    "key": "castle:suncheon",
    "pixels": 4436,
    "km2": 44.4,
-   "distanceKm": 61.5,
+   "distanceKm": 62.3,
    "at": [
     126.805,
     34.405
    ],
-   "mainPixels": 1020260
-  },
-  {
-   "key": "castle:gaeseong",
-   "pixels": 4420,
-   "km2": 44.2,
-   "distanceKm": 45.2,
-   "at": [
-    126.326,
-    37.697
-   ],
-   "mainPixels": 261791
+   "mainPixels": 1039456
   },
   {
    "key": "castle:suncheon",
-   "pixels": 4365,
-   "km2": 43.6,
-   "distanceKm": 96,
+   "pixels": 4375,
+   "km2": 43.8,
+   "distanceKm": 96.6,
    "at": [
     125.96,
     34.692
    ],
-   "mainPixels": 1020260
+   "mainPixels": 1039456
   },
   {
    "key": "castle:hiyama",
@@ -437,23 +404,23 @@
    "key": "castle:suncheon",
    "pixels": 4175,
    "km2": 41.8,
-   "distanceKm": 79.7,
+   "distanceKm": 80.2,
    "at": [
     126.132,
     34.74
    ],
-   "mainPixels": 1020260
+   "mainPixels": 1039456
   },
   {
    "key": "castle:hanseong",
    "pixels": 4101,
    "km2": 41,
-   "distanceKm": 60,
+   "distanceKm": 62,
    "at": [
     126.525,
     37.498
    ],
-   "mainPixels": 953092
+   "mainPixels": 952185
   },
   {
    "key": "castle:yuzuki",
@@ -468,14 +435,14 @@
   },
   {
    "key": "castle:suncheon",
-   "pixels": 4073,
-   "km2": 40.7,
-   "distanceKm": 82.2,
+   "pixels": 4077,
+   "km2": 40.8,
+   "distanceKm": 82.4,
    "at": [
     126.089,
     35.091
    ],
-   "mainPixels": 1020260
+   "mainPixels": 1039456
   },
   {
    "key": "castle:koga",
@@ -489,26 +456,15 @@
    "mainPixels": 56954
   },
   {
-   "key": "castle:jinju",
-   "pixels": 3972,
-   "km2": 39.7,
-   "distanceKm": 65,
-   "at": [
-    128.506,
-    34.867
-   ],
-   "mainPixels": 687043
-  },
-  {
    "key": "castle:suncheon",
    "pixels": 3906,
    "km2": 39.1,
-   "distanceKm": 79.2,
+   "distanceKm": 79.6,
    "at": [
     126.111,
     34.843
    ],
-   "mainPixels": 1020260
+   "mainPixels": 1039456
   },
   {
    "key": "castle:kawagoe",
@@ -525,12 +481,12 @@
    "key": "castle:suncheon",
    "pixels": 3839,
    "km2": 38.4,
-   "distanceKm": 71,
+   "distanceKm": 71.2,
    "at": [
     126.211,
     35.072
    ],
-   "mainPixels": 1020260
+   "mainPixels": 1039456
   },
   {
    "key": "castle:koriyama",
@@ -547,45 +503,45 @@
    "key": "castle:hanseong",
    "pixels": 3774,
    "km2": 37.7,
-   "distanceKm": 60.3,
+   "distanceKm": 62.9,
    "at": [
     126.578,
     37.241
    ],
-   "mainPixels": 953092
+   "mainPixels": 952185
   },
   {
    "key": "castle:suncheon",
    "pixels": 3578,
    "km2": 35.8,
-   "distanceKm": 84.5,
+   "distanceKm": 85.2,
    "at": [
     126.887,
     34.183
    ],
-   "mainPixels": 1020260
+   "mainPixels": 1039456
   },
   {
    "key": "castle:suncheon",
    "pixels": 3545,
    "km2": 35.5,
-   "distanceKm": 95.7,
+   "distanceKm": 96.5,
    "at": [
     126.547,
     34.154
    ],
-   "mainPixels": 1020260
+   "mainPixels": 1039456
   },
   {
    "key": "castle:haeju",
-   "pixels": 3503,
-   "km2": 35,
-   "distanceKm": 99.6,
+   "pixels": 3515,
+   "km2": 35.1,
+   "distanceKm": 100.9,
    "at": [
     124.838,
     38.528
    ],
-   "mainPixels": 1654197
+   "mainPixels": 1708474
   },
   {
    "key": "castle:kannabe",
@@ -600,14 +556,25 @@
   },
   {
    "key": "castle:suncheon",
+   "pixels": 3371,
+   "km2": 33.7,
+   "distanceKm": 70.6,
+   "at": [
+    126.444,
+    35.403
+   ],
+   "mainPixels": 1039456
+  },
+  {
+   "key": "castle:suncheon",
    "pixels": 3361,
    "km2": 33.6,
-   "distanceKm": 68.7,
+   "distanceKm": 69.5,
    "at": [
     126.838,
     34.332
    ],
-   "mainPixels": 1020260
+   "mainPixels": 1039456
   },
   {
    "key": "castle:uchi",
@@ -635,34 +602,34 @@
    "key": "castle:suncheon",
    "pixels": 3177,
    "km2": 31.8,
-   "distanceKm": 91.3,
+   "distanceKm": 91.9,
    "at": [
     126.073,
     34.576
    ],
-   "mainPixels": 1020260
+   "mainPixels": 1039456
   },
   {
    "key": "castle:suncheon",
    "pixels": 3060,
    "km2": 30.6,
-   "distanceKm": 83.3,
+   "distanceKm": 83.4,
    "at": [
     127.751,
     34.522
    ],
-   "mainPixels": 1020260
+   "mainPixels": 1039456
   },
   {
    "key": "castle:suncheon",
    "pixels": 2997,
    "km2": 30,
-   "distanceKm": 71.9,
+   "distanceKm": 72.2,
    "at": [
     127.498,
     34.445
    ],
-   "mainPixels": 1020260
+   "mainPixels": 1039456
   },
   {
    "key": "castle:koriyama",
@@ -701,23 +668,56 @@
    "key": "castle:haeju",
    "pixels": 2834,
    "km2": 28.3,
-   "distanceKm": 95.2,
+   "distanceKm": 96.3,
    "at": [
     125.274,
     37.73
    ],
-   "mainPixels": 1654197
+   "mainPixels": 1708474
+  },
+  {
+   "key": "castle:suncheon",
+   "pixels": 2778,
+   "km2": 27.8,
+   "distanceKm": 63,
+   "at": [
+    126.906,
+    34.383
+   ],
+   "mainPixels": 1039456
   },
   {
    "key": "castle:suncheon",
    "pixels": 2769,
    "km2": 27.7,
-   "distanceKm": 89.2,
+   "distanceKm": 90,
    "at": [
     126.584,
     34.205
    ],
-   "mainPixels": 1020260
+   "mainPixels": 1039456
+  },
+  {
+   "key": "castle:suncheon",
+   "pixels": 2672,
+   "km2": 26.7,
+   "distanceKm": 76,
+   "at": [
+    126.144,
+    34.993
+   ],
+   "mainPixels": 1039456
+  },
+  {
+   "key": "castle:suncheon",
+   "pixels": 2649,
+   "km2": 26.5,
+   "distanceKm": 82,
+   "at": [
+    126.155,
+    34.643
+   ],
+   "mainPixels": 1039456
   },
   {
    "key": "castle:uchi",
@@ -734,78 +734,89 @@
    "key": "castle:suncheon",
    "pixels": 2604,
    "km2": 26,
-   "distanceKm": 144,
+   "distanceKm": 144.5,
    "at": [
     125.419,
     34.666
    ],
-   "mainPixels": 1020260
+   "mainPixels": 1039456
   },
   {
    "key": "castle:hanseong",
    "pixels": 2539,
    "km2": 25.4,
-   "distanceKm": 69.2,
+   "distanceKm": 71.7,
    "at": [
     126.464,
     37.258
    ],
-   "mainPixels": 953092
+   "mainPixels": 952185
   },
   {
    "key": "castle:suncheon",
    "pixels": 2529,
    "km2": 25.3,
-   "distanceKm": 91.7,
+   "distanceKm": 92.5,
    "at": [
     126.656,
     34.158
    ],
-   "mainPixels": 1020260
+   "mainPixels": 1039456
   },
   {
    "key": "castle:suncheon",
    "pixels": 2482,
    "km2": 24.8,
-   "distanceKm": 65.7,
+   "distanceKm": 66.4,
    "at": [
     127.044,
     34.35
    ],
-   "mainPixels": 1020260
+   "mainPixels": 1039456
+  },
+  {
+   "key": "castle:suncheon",
+   "pixels": 2386,
+   "km2": 23.9,
+   "distanceKm": 65,
+   "at": [
+    127.467,
+    34.51
+   ],
+   "mainPixels": 1039456
   },
   {
    "key": "castle:hanseong",
    "pixels": 2344,
    "km2": 23.4,
-   "distanceKm": 99.4,
+   "distanceKm": 101.9,
    "at": [
     126.121,
     37.236
    ],
-   "mainPixels": 953092
+   "mainPixels": 952185
   },
   {
    "key": "castle:suncheon",
    "pixels": 2278,
    "km2": 22.8,
-   "distanceKm": 93.4,
+   "distanceKm": 94,
    "at": [
     126.034,
     34.597
    ],
-   "mainPixels": 1020260
+   "mainPixels": 1039456
   },
   {
    "key": "castle:uiju",
    "pixels": 2204,
    "km2": 22,
-   "distanceKm": 155.5,
+   "distanceKm": 159.7,
    "at": [
     124.657,
     39.554
    ],
-   "mainPixels": 3021768
+   "mainPixels": 3117861
   },
   {
    "key": "castle:kannabe",
@@ -822,12 +833,12 @@
    "key": "castle:busan",
    "pixels": 2145,
    "km2": 21.4,
-   "distanceKm": 28.5,
+   "distanceKm": 29.7,
    "at": [
     128.828,
     35.035
    ],
-   "mainPixels": 221197
+   "mainPixels": 263360
   },
   {
    "key": "castle:yuzuki",
@@ -855,34 +866,23 @@
    "key": "castle:suncheon",
    "pixels": 1944,
    "km2": 19.4,
-   "distanceKm": 109.7,
+   "distanceKm": 110.5,
    "at": [
     126.057,
     34.297
    ],
-   "mainPixels": 1020260
+   "mainPixels": 1039456
   },
   {
    "key": "castle:suncheon",
    "pixels": 1888,
    "km2": 18.9,
-   "distanceKm": 78,
+   "distanceKm": 78.5,
    "at": [
     126.138,
     34.785
    ],
-   "mainPixels": 1020260
-  },
-  {
-   "key": "castle:koriyama",
-   "pixels": 1821,
-   "km2": 18.2,
-   "distanceKm": 40.7,
-   "at": [
-    132.725,
-    34.185
-   ],
-   "mainPixels": 434169
+   "mainPixels": 1039456
   }
  ],
  "areaDiff": [
@@ -891,6 +891,12 @@
    "vectorPixels": 254818,
    "rasterPixels": 304864,
    "ratio": 1.2
+  },
+  {
+   "key": "castle:busan",
+   "vectorPixels": 267618,
+   "rasterPixels": 309131,
+   "ratio": 1.16
   },
   {
    "key": "castle:hikuma",
