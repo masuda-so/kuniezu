@@ -521,27 +521,35 @@
       "area": "geography",
       "generatedByCandidates": [
         "tools/geo/bizen-north-shore.py"
-      ]
+      ],
+      "order": 80
+    },
+    {
+      "order": 81,
+      "file": "game/hayashima-upland.js",
+      "area": "geography",
+      "generatedByCandidates": []
     },
     {
       "file": "game/kizakibaru-march.js",
       "area": "history",
-      "generatedByCandidates": []
+      "generatedByCandidates": [],
+      "order": 82
     },
     {
       "file": "game/central-offices.js",
       "area": "history",
       "generatedByCandidates": [],
-      "order": 80
+      "order": 83
     },
     {
-      "order": 81,
+      "order": 84,
       "file": "game/ui.js",
       "area": "ui-assets",
       "generatedByCandidates": []
     },
     {
-      "order": 82,
+      "order": 85,
       "file": "game/kb.js",
       "area": "history",
       "generatedByCandidates": []
