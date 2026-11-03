@@ -69,7 +69,7 @@ Claude と Codex の独立調査（`docs/reports/MAP_ARCHITECTURE_INDEPENDENT_RE
 - 根拠：castle-point（郡に城が一つ）／split（郡に城が複数。郡の中は従来の線の割り当てを保つ）／same-province（城のない郡。同じ国の城の中で従来の票が多い城、票が無ければ最も近い城）／majority-other-province（国に城が一つも無い河内・志摩・安房）／unassigned（蝦夷・琉球など）／excluded（`game/map/gun-overrides.json` の例外。奄美は1609年まで琉球）。陸奥・出羽の明治の分割は戻して国を比べる。
 - 結果：城の位置と領域の食い違い0、国をまたぐ領域は城のない国を受け持つ6件のみ。郡境そのものは江戸末期のもので、戦国期は推定。
 - 朝鮮・大陸は郡データが無いので従来どおり（今後、府牧郡県の土台を探す）。
-- 土台が変わると年代別の差分は作り直しが要る。`build-edges.cjs` は差分の `baseProvincesSha256` が今の土台（manifest.json＋definition.csv）と一致する版だけを使う。
+- 土台が変わると年代別の差分は作り直しが要る。`build-edges.cjs` は差分の `baseProvincesSha256` が今の土台（正本4入力の sourceSha256）と一致する版だけを使う。
 - 朝鮮は国史編纂委員会「행정구역 GIS 데이터 (1910~1945년)」の1910年5月時点（1914年の統合前）の府・郡333を郡画像に加える（`tools/map/extract-hgis-1910.py`、標準ライブラリで GeoPackage を読む）。1896年の13道は八道へ戻して「国」として比べる。済州の三邑は城の登録まで excluded（`gun-overrides.json`）。
 - 残る課題：国・道の境界線（`TKGEO.pborders`）は旧来の線のまま。郡画像の国・道から共有辺を起こして置き換える。
 - 地図を広げた地域の家と拠点（`game/frontier-polities.js`・`game/frontier-history.js`）：蠣崎家（大館、松前の代表点）、琉球王国（首里城）、済州牧（朝鮮）。領域は郡画像から作り、蠣崎は渡島国の郡、琉球は琉球国の郡（奄美は1609年まで琉球だが今は除外）、済州は三邑（`gun-overrides.json` の assign）。蠣崎の領域が渡島国の全郡に及ぶのは推定で、和人地の範囲は今後史料で絞る。女真・明の拠点は出典不足のため保留。
@@ -78,7 +78,7 @@ Claude と Codex の独立調査（`docs/reports/MAP_ARCHITECTURE_INDEPENDENT_RE
 
 - 年代別の差分の生成を Node 版 `tools/map/build-province-edits.cjs` にした（Pillow 不要）。期間の境目ごとに版を分け、`game/map/edits/compiled/<開始>-<終了>/` に書く。面（GeoJSON）に加え、100m 格子の窓に合わせた型紙（PNG、値は keys の番号）を受ける。水島の3差分だけで作り直すと、既存の版と画素が一致した。
 - 児島湾・高梁川河口の1560〜1615年の海陸は `tools/geo/kojima-bay-1600.cjs` が作る。国土交通省の資料の「岡山平野の干拓進展図」（高田正規原図）を現代の海岸で位置合わせし、17世紀以降の干拓区画を海、区画の外の白地を標高で陸か水面に分ける。16世紀末（宇喜多期）の区画は宇喜多堤（1584）から陸。藤戸の瀬戸は Codex の100m比較経路。根拠と検査は `data/inputs/kojima-coast-review/kojima-bay-1600/report.json` と `docs/reports/BIZEN_NORTH_SHORE_REVIEW.md`。
-- 版は `15600101-15840101`（児島・天城・早島が島）と `15840101-16160101`（早島が宇喜多堤で本土と続く。児島・天城は島）。児島が陸続きになるのは1618年でゲームの期間外。
+- 1560年の形は全域1枚の正本そのもの。児島湾・水島の5補正を焼き込み済みで、タイトル画面も同じ正本を使う。年代差分は `15840101-16160101`（宇喜多期の366画素）の1版だけ。児島が陸続きになるとされる1618年はゲームの期間外。年別の精密な汀線を確定したものではない。
 
 ## 追記（全域1枚の正本と生成物の整理、2026-11-03）
 
@@ -91,3 +91,11 @@ Claude と Codex の独立調査（`docs/reports/MAP_ARCHITECTURE_INDEPENDENT_RE
 - 郡画像は実行時に読まないので `game/` から外し、`data/map/gun.png`（全域1枚）と `gun.csv`・`gun.json`・`gun-overrides.json`・`gun-assignment.csv` を `data/map/` に置いた。境界線の生成（国の線）と領域の割り当てはここを読む。
 - 年代別の差分の生成は Node 版だけにし、Python 版（`build-province-edits.py`）と、それを呼ぶ `tools/checks/province-edits.py` を廃止。負例（重なり・ID の重複・適用済み ID・元の値の食い違い・正本の取り違え・半開区間・粗い段の中心画素）は `tools/checks/province-edits.cjs` に移し、失敗した時に配信中の版を書き換えないことも確かめる。
 - 標高（heightmap.png）と川（rivers.png）はまだ置かない。標高は全域1枚の容量と、表示用の陰影とは別のデータとしての使い道を決めてから。川は資料の整備が先。
+
+## 児島湾の正本への焼き込み
+
+2026-11-03、旧基準の1560年版で有効だった5補正（児島湾の海域・陸域、水島の東・西・南）24,306画素を `game/map_data/provinces.png` 自体へ移した。適用定義は `game/map/edits/applied/` に保存し、`baseline-ledger.json` に入力と出力の4ファイルSHA・画素差分を記録する。定義表・投影・海湖分類は変更しない。
+
+通常の再生成は `build-map-tiles.cjs` → `build-province-edits.cjs` → `build-edges.cjs`。旧ベクトルからの `build-provinces.cjs` は既存正本がある場合に上書きを拒否する。`bake-kojima-baseline.cjs` と旧型紙生成器 `tools/geo/kojima-bay-1600.cjs` は特定の移行前SHAだけで動き、現在の正本では再適用を拒否する。
+
+受入根拠は `data/verification/kojima-source-baseline/`。正本画像の前後を同じ画素窓で切り出した画像、正本と全100mタイルの独立照合、1560/1600表示の全段タイル一致、正本から直接確認した藤戸の4近傍通水・水島・丘陵・史跡点、旧生成器の拒否後のSHA不変を保持する。ゲーム画面の操作確認とは別の画像データ検査。

@@ -1,12 +1,12 @@
 {
  "generated": "tools/map/build-map-tiles.cjs",
- "source": "9b949f63027df04ce0f12ce36294dd1ac338e057693952b752eff9627680b42f",
+ "source": "46ac04975ed4291bd7f1ead55f985818b5daf91f0f84430c8064e909b09bd7a4",
  "provinces": [
   {
    "id": 1,
    "key": "sea",
    "kind": "sea",
-   "pixels": 393474613
+   "pixels": 393477593
   },
   {
    "id": 2,
@@ -30,7 +30,7 @@
    "id": 5,
    "key": "castle:bmatsuyama",
    "kind": "land",
-   "pixels": 245915
+   "pixels": 250573
   },
   {
    "id": 6,
@@ -618,7 +618,7 @@
    "id": 103,
    "key": "castle:sogo",
    "kind": "land",
-   "pixels": 182358
+   "pixels": 182355
   },
   {
    "id": 104,
@@ -684,7 +684,7 @@
    "id": 114,
    "key": "castle:tenjin",
    "kind": "land",
-   "pixels": 161586
+   "pixels": 153951
   },
   {
    "id": 115,

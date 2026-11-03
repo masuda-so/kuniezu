@@ -1,3 +1,5 @@
+/* 移行時の記録用。旧基準に対する型紙を生成した道具で、正本へ焼き込み後の通常再生成には使わない。
+   現行の宇喜多期差分は保存済みの型紙と build-province-edits.cjs から生成する。 */
 /* 児島湾・高梁川河口の1560〜1615年の海陸を、国土交通省の資料にある「岡山平野の干拓進展図」（高田正規原図）から復元し、年代別の領域差分の型紙を作る。
    考え方
    ・図は現代の海岸線の上に、干拓地を時期別の網点で塗った区画として描く。区画の外の白地は干拓前からの陸（または水面）。
@@ -18,6 +20,7 @@ const fs=require('node:fs'),path=require('node:path'),zlib=require('node:zlib'),
 const decodePNG=require('./png-decode.cjs');
 const root=path.resolve(__dirname,'../..'),mapDir=path.join(root,'game/map'),editsDir=path.join(mapDir,'edits');
 const outDir=path.join(root,'data/inputs/kojima-coast-review/kojima-bay-1600'),review=path.join(root,'data/inputs/kojima-coast-review');
+if(require('../map/map-data.cjs').sourceSha256()!=='9b949f63027df04ce0f12ce36294dd1ac338e057693952b752eff9627680b42f')throw Error('移行記録用の型紙生成器です。児島湾補正の焼き込み後は実行しません。年代差分の再生成は tools/map/build-province-edits.cjs を使用してください。');
 const sha=b=>crypto.createHash('sha256').update(b).digest('hex');
 const FIG=path.join(root,'.cache/kojima-takada/p047-x4.png'),PDF=path.join(root,'.cache/kojima-takada/ref1-1.pdf');
 const FIG_SHA='939b9c720a877febd2365137a28fd258ca087358802726bfdef5ff612b77ea0b',PDF_SHA='d31c082725b9b42dea803a0ff6a892fe871586685d3b3a5f7ecef06a44a2cef2';

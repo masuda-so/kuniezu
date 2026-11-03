@@ -2,6 +2,22 @@
 
 領域画像の基準版へ時期別の変更を適用する開発用入力。ブラウザには生成済みタイルとマニフェストを配る。
 
+## 現行の正本と年代差分
+
+児島湾・水島の全期間に有効な5補正は、`game/map_data/provinces.png` 自体へ焼き込む。1560～1583年とタイトル画面はこの正本の形を使う。`applied/` は適用履歴で、生成器は再適用しない。1584年以後の宇喜多堤の366画素だけを `kojima-bay-ukita-land-from-1584.json` に保持する。1584年1月1日の切替は年精度の仮定で、築堤月日を断定しない。
+
+正本4入力の確認値と適用履歴は [baseline-ledger.json](baseline-ledger.json)。`baselineCommit` は既存スキーマ名だが、画像移行後は基準版IDを格納する。正本の一致は `sourceSha256` で検査する。
+
+通常の再生成は次の順。`build-provinces.cjs` は旧ベクトルからの初回移行専用で、正本が存在すれば上書きを拒否する。`bake-kojima-baseline.cjs` と `tools/geo/kojima-bay-1600.cjs` も旧基準限定の移行記録で、再適用しない。
+
+```sh
+node tools/map/build-map-tiles.cjs
+node tools/map/build-province-edits.cjs
+node tools/map/build-edges.cjs
+```
+
+以下の旧基準番号・旧生成結果は移行前の記録。
+
 ## 差分のメタデータ
 
 | 項目 | 内容 |

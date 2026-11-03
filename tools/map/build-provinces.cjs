@@ -3,9 +3,11 @@
    正本を作り直すのは土台そのものを変える時だけ（一度作った後は provinces.png を正本として直す）。配信タイルは続けて node tools/map/build-map-tiles.cjs で作る。
    この中の番号は 0＝海、1＝未割当の陸…（内部の番号）で、definition.csv には +1 して書く（CK3 の書式で 0 は予約）。
    1画素＝100m（緯度方向）。画素の中心が多角形の内側か（偶奇則）で塗る。漏れ・重なりの集計を manifest に記録する。
-   実行：node tools/map/build-provinces.cjs */
+   実行：正本がまだ存在しない移行用の置き場で node tools/map/build-provinces.cjs。既存正本への上書きは拒否。 */
 const fs=require('node:fs'),path=require('node:path');
 const root=path.resolve(__dirname,'../..'),out=path.join(root,'data/map'),MD=require('./map-data.cjs');// out：郡画像と割り当て表
+// 一度画像へ移した後の正本を、補正前のベクトルで上書きしない。新規移行の空の置き場だけで使う。
+if(fs.existsSync(MD.files.provinces))throw Error('既存の provinces.png は画像の正本です。旧ベクトルから上書きできません。配信物の再生成は node tools/map/build-map-tiles.cjs を使ってください。');
 const MODEL=require(path.join(root,'tools/checks/history-focus.cjs')).model(),{TKGEO:T}=MODEL;MODEL.G.newGame('s1560','oda');
 const CONT={x0:-1014.1,x1:2688.7,y0:-755.3,y1:3459.7};          // game/ui.js の表示範囲と同じ
 const STEP=0.1/(111.32/T.K);                            // 100m を地図平面の単位へ（緯度方向）

@@ -13,11 +13,12 @@
     1
   ],
   "payload": {
-    "file": "../../../data/inputs/kojima-coast-review/mizushima-residual-meiji-cores.geojson",
+    "file": "../../../../data/inputs/kojima-coast-review/mizushima-residual-meiji-cores.geojson",
     "feature": 1,
     "fromKey": "castle:tenjin",
     "toKey": "sea"
   },
   "basis": "国土交通省の倉敷地形分類図で旧水部と埋立地が重なり、明治期の土地利用図でも水面側にある範囲",
-  "review": "後世の埋立地を除く部分補正。既存の水面へつながる南側のみを採用し、北側は旧海岸との接続を別途調べる。"
+  "review": "後世の埋立地を除く部分補正。既存の水面へつながる南側のみを採用し、北側は旧海岸との接続を別途調べる。",
+  "appliedToSourceSha256": "46ac04975ed4291bd7f1ead55f985818b5daf91f0f84430c8064e909b09bd7a4"
 }

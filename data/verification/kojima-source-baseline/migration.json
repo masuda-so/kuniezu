@@ -1,0 +1,86 @@
+{
+  "tool": "tools/map/bake-kojima-baseline.cjs",
+  "sourceVersion": "15600101-15840101",
+  "sourceVersionManifestSha256": "482fac0db092b388f1023d15afc140ee1f490ce9ed8a506a00b5c3144a44001e",
+  "sourceFilesBefore": {
+    "provinces": "9f6f03ed2628dc7ffb406c69fbe4dfb9f00daa0d2c266474541a682e83ae2dbf",
+    "definition": "e10e24cb314157770715ede8a1290d2bca807692eec8d9f269283277dd122801",
+    "defaultMap": "36b071aab05850ce318f80767cf9307dd2bc23f144d89c04fbface39529b4d1b",
+    "projection": "04bd30868c1f5a9420b308d318d606a95d1158c23a8e6f18b3f7ecfe6b01466a"
+  },
+  "sourceFilesAfter": {
+    "provinces": "2b2fe511a86fb8bdfa6b8d671a2883304b21f1499da3a7544f94128922c7f1a1",
+    "definition": "e10e24cb314157770715ede8a1290d2bca807692eec8d9f269283277dd122801",
+    "defaultMap": "36b071aab05850ce318f80767cf9307dd2bc23f144d89c04fbface39529b4d1b",
+    "projection": "04bd30868c1f5a9420b308d318d606a95d1158c23a8e6f18b3f7ecfe6b01466a"
+  },
+  "sourceSha256Before": "9b949f63027df04ce0f12ce36294dd1ac338e057693952b752eff9627680b42f",
+  "sourceSha256After": "46ac04975ed4291bd7f1ead55f985818b5daf91f0f84430c8064e909b09bd7a4",
+  "changedPixels": 24306,
+  "deltas": {
+    "sea": 2980,
+    "castle:tenjin": -7635,
+    "castle:bmatsuyama": 4658,
+    "castle:sogo": -3
+  },
+  "edits": {
+    "kojima-bay-reclaimed-sea": 12643,
+    "kojima-bay-restored-land": 10663,
+    "mizushima-east-post-period-fill": 216,
+    "mizushima-post-period-fill": 644,
+    "mizushima-south-post-period-fill": 140
+  },
+  "sourceTiles": [
+    {
+      "file": "provinces/10-12@15600101-15840101.png",
+      "factor": 1,
+      "col": 10,
+      "row": 12,
+      "period": [
+        [
+          1560,
+          1,
+          1
+        ],
+        [
+          1584,
+          1,
+          1
+        ]
+      ],
+      "width": 1024,
+      "height": 1024,
+      "sha256": "29dc532cc327c861dfe9cdca2640def7b87aada81cdb06b4453fbf10f85d4149"
+    },
+    {
+      "file": "provinces/9-12@15600101-15840101.png",
+      "factor": 1,
+      "col": 9,
+      "row": 12,
+      "period": [
+        [
+          1560,
+          1,
+          1
+        ],
+        [
+          1584,
+          1,
+          1
+        ]
+      ],
+      "width": 1024,
+      "height": 1024,
+      "sha256": "80bb6ad3ab1078a26cf9516e9629e9d62a533b2f74264d869b6a13beebc306c5"
+    }
+  ],
+  "crop": {
+    "window": [
+      9734,
+      12823,
+      630,
+      390
+    ],
+    "basis": "正本PNGの画素を同じ窓で切り出し。land-sea はdefinition/default.mapの分類色、source-rgb は元RGBを変更せず保存。"
+  }
+}
