@@ -877,7 +877,13 @@ function mountScene(sc,onEnd){stopScene();const cv=$('#bCv');if(!cv&&sc.displayP
   onProgress:t=>{const seek=$('#bSeek');if(seek&&document.activeElement!==seek)seek.value=t;const clock=$('#bClock'),p=$('#bProgress');if(p)p.textContent=Math.round(t)+'%';if(clock){const marks=sc.calendar||[[0,'布陣'],[20,'交戦'],[80,'終盤'],[100,'終了']];clock.textContent=marks.filter(x=>x[0]<=t).at(-1)?.[1]||'';}if(SCN)for(const row of SCN.unitStates()){const b=document.querySelector('[data-act="b-person"][data-id="'+row.id+'"]');if(b){b.style.setProperty('--army',row.side==='a'?'#c83c39':'#247fc1');const el=b.querySelector('small');if(el)el.textContent=row.status;}}},onBeat:(b,all)=>{const el=$('#bNow');if(el)el.textContent=b?b.txt:'　';},onState:upd,onEnd:()=>{upd();onEnd&&onEnd();}});
  upd();SCN.play();}
 Object.assign(ACT,{
- 'b-person':b=>SCN&&SCN.select(b.dataset.id),
+ 'b-person':b=>{
+  if(!SCN)return;
+  SCN.select(b.dataset.id);
+  const stage=$('.battle-stage');
+  if(stage&&stage.getBoundingClientRect().bottom<b.getBoundingClientRect().top)
+   stage.scrollIntoView({block:'start'});
+ },
  'b-play':()=>{cancelSceneClose();SCN&&SCN.toggle();},
  'b-spd':b=>SCN&&SCN.setSpeed(+b.dataset.v),
  'b-re':()=>{cancelSceneClose();if(SCN){SCN.seek(0);SCN.play();}},
