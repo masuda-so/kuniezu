@@ -2,11 +2,16 @@
 先に fetch-japan-waterways.py。朝鮮は既存の同形式キャッシュを使用。
 戦国期の河道・川幅の復元ではない。OSM contributors / ODbL 1.0。
 """
-import json,pathlib,shapefile
+import argparse,json,pathlib,shapefile
 from shapely.geometry import LineString,box
 root=pathlib.Path(__file__).resolve().parents[2];meta=json.loads((root/'data/audits/battle-atlas-audit.json').read_text());ways={}
+parser=argparse.ArgumentParser(description=__doc__)
+parser.add_argument('--title',help='Update one existing atlas and its audit row')
+parser.add_argument('--folder',type=pathlib.Path,action='append',help='Folder containing the source shapefile; repeat for adjacent regions')
+args=parser.parse_args()
+if args.title and args.title not in meta:parser.error('unknown battle title')
 folders=list(pathlib.Path('/tmp/kuniezu-japan-waterways').glob('*'))+[pathlib.Path('/tmp/kuniezu-korea-waterways'),pathlib.Path('/tmp/kuniezu-north-waterways')]
-for folder in folders:
+for folder in args.folder or folders:
  if not (folder/'gis_osm_waterways_free_1.shx').exists():continue
  r=shapefile.Reader(str(folder/'gis_osm_waterways_free_1.shp'))
  for item in r.iterShapeRecords():
@@ -18,8 +23,10 @@ for folder in folders:
    if len(pts)<2:continue
    ways[str(d['osm_id'])+':'+str(i)]={'id':d['osm_id'],'name':d['name'],'kind':d['fclass'],'geometry':LineString(pts),'bounds':p.bbox}
  print('READ',folder.name,len(ways),flush=True)
+if not ways:parser.error('no usable waterway shapefiles found')
 report=[]
 for name,m in meta.items():
+ if args.title and name!=args.title:continue
  w,n,e,s=m['bounds'];view=box(w,s,e,n);rivers=[]
  for way in ways.values():
   a,b,c,d=way['bounds']
@@ -30,4 +37,11 @@ for name,m in meta.items():
    if part.geom_type!='LineString' or part.length<max(.0001,(e-w)*.002):continue
    part=part.simplify(max(.00007,(e-w)/1800),preserve_topology=True);rivers.append({'id':way['id'],'name':way['name'],'kind':way['kind'],'points':[[round(x,6),round(y,6)]for x,y in part.coords]})
  path=root/'game/atlas'/m['file'];d=json.loads(path.read_text());d['comparisonRivers']=rivers;d['riverSource']={'dataset':'OpenStreetMap contributors / Geofabrik','license':'ODbL 1.0','url':'https://www.openstreetmap.org/copyright','accessed':'2026-11-01','scope':'現代河川中心線。16世紀の河道・幅・堤防ではない。広域では川だけ、25km以下では名前付き細流も表示。'};path.write_text(json.dumps(d,ensure_ascii=False,separators=(',',':'))+'\n');report.append({'title':name,'lines':len(rivers),'points':sum(len(r['points'])for r in rivers),'file':m['file']})
-(root/'data/audits/battle-rivers-review.json').write_text(json.dumps({'source':'OpenStreetMap contributors / Geofabrik / ODbL 1.0','date':'2026-11-01','scope':'全111表示範囲の現代比較河川。史実河道の照合とは別。','battles':report},ensure_ascii=False,indent=2));print('DONE',len(report),'views',sum(r['lines']for r in report),'lines')
+audit=root/'data/audits/battle-rivers-review.json'
+if args.title:
+ previous=json.loads(audit.read_text())
+ previous['battles']=[report[0] if row['title']==args.title else row for row in previous['battles']]
+else:
+ previous={'source':'OpenStreetMap contributors / Geofabrik / ODbL 1.0','date':'2026-11-01','scope':'全111表示範囲の現代比較河川。史実河道の照合とは別。','battles':report}
+audit.write_text(json.dumps(previous,ensure_ascii=False,indent=2))
+print('DONE',len(report),'views',sum(r['lines']for r in report),'lines')
