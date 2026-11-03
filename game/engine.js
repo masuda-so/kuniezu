@@ -983,12 +983,20 @@ function doBuild(id,p,quiet){const C=G.C[id],c=S.castles[id],old=G.cname(id);
  if(S.plans[id]&&S.plans[id].n===p.n)delete S.plans[id];
  if(!quiet)G.onTerr&&G.onTerr();}
 G.buildNow=doBuild;
+// The fire effect is timed separately from damage and stays at the place that burned.
+const CASTLE_FIRE_DAYS=3;
+G.castleFires=()=>S?.castleFires||[];
+
 function jApply(ev,quiet){const id=ev.node;
  switch(ev.k){
   case 'build':{S.jdone=S.jdone||{};if(!S.castles[id]||S.jdone[ev._i]||(G.cname(id)===ev.n&&ev.lon!=null))return true;
    if(!quiet&&!jOwnerOk(ev,id))return false;S.jdone[ev._i]=1;doBuild(id,ev,quiet);if(!quiet)chron(Object.assign({at:id},ev),true);return true;}
   case 'burn':{if(!S.castles[id])return true;if(ev.cond&&G.cname(id)!==ev.cond)return true;if(!quiet&&!jOwnerOk(ev,id))return false;
    const c=S.castles[id],C=G.C[id];
+   if(!quiet){
+    S.castleFires??=[];
+    S.castleFires.push({x:C.x,y:C.y,start:S.t,until:S.t+CASTLE_FIRE_DAYS});
+   }
    if(ev.to){addRuin(id,G.cname(id));const o=S.cst[id]=S.cst[id]||{};o.n=ev.to.n;o.x=null;o.y=null;o.burnt=false;C.x=C.bx;C.y=C.by;S.ruins=S.ruins.filter(r=>r.n!==ev.to.n);}
    else{const o=S.cst[id]=S.cst[id]||{};o.n=G.cname(id);o.burnt=true;o.bm=0;}
    c.dur=Math.round(c.dur*.35);c.durMax=Math.max(300,Math.round(c.durMax*.7));c.shogyo=Math.round(c.shogyo*.7);
@@ -1001,6 +1009,7 @@ function jApply(ev,quiet){const id=ev.node;
    S.plans[id]=Object.assign({},ev,{until:ev.until?evT({d:ev.until}):null,from:G.CN(cs?cs[0]:S.castles[id].owner)});if(!quiet)chron(Object.assign({at:id},ev),true);return true;}
  }return true;}
 G.jokaku=function(){
+ if(S.castleFires?.length)S.castleFires=S.castleFires.filter(f=>S.t<f.until);
  while(S.ji<TK.JOKAKU.length&&evT(TK.JOKAKU[S.ji])<=S.t){const ev=TK.JOKAKU[S.ji++];try{if(!jApply(ev))S.jpend.push({i:S.ji-1,uid:ev._i,until:S.t+120});}catch(e){console.error('jokaku',ev,e);}}
  // 持ち主がまだ移っていない築城は少し待ち、それでも合わなければ「計画」として残す
  S.jpend=S.jpend.filter(p=>{const ev=p.uid==null?TK.JOKAKU[p.i]:TK.JOKAKU.find(e=>e._i===p.uid);if(!ev||jApply(ev))return false;if(S.t<p.until)return true;

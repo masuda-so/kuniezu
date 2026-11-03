@@ -330,8 +330,28 @@ function drawJokaku(c,z,lvl,placed){RUINLAB=[];
   const r=Math.max(0,Math.min(1,(S.t-w.start)/(w.end-w.start)));c.strokeStyle='#5a3a1a';c.lineWidth=1.4;for(let i=-1;i<=1;i++){c.beginPath();c.moveTo(x+i*5,y+6);c.lineTo(x+i*5,y-9);c.stroke();}c.beginPath();c.moveTo(x-8,y-4);c.lineTo(x+8,y-4);c.moveTo(x-8,y+1);c.lineTo(x+8,y+1);c.stroke();
   rr(c,x-14,y+9,28,4,2);c.fillStyle='rgba(30,20,10,.6)';c.fill();rr(c,x-14,y+9,28*r,4,2);c.fillStyle='#e0b85a';c.fill();
   jText(c,'普請中 '+p.n,x+12,y-6,'#6a3e10',11);}
- for(const C of G.CL){const o=S.cst&&S.cst[C.id];if(!o||!o.burnt)continue;const [x,y]=w2s(C.x,C.y);if(x<-40||y<-40||x>VW+40||y>VH+40)continue;
-  const t=tNow/400;for(let i=0;i<3;i++){const a=(t+i*.33)%1;c.globalAlpha=(1-a)*.5;c.fillStyle='#4a4038';c.beginPath();c.arc(x+3+Math.sin(a*6+i)*3,y-10-a*16,2.5+a*4,0,7);c.fill();}c.globalAlpha=1;}
+
+}
+function visibleCastleFires(){
+ return G.castleFires().map(f=>w2s(f.x,f.y)).filter(([x,y])=>x>=-40&&y>=-40&&x<=VW+40&&y<=VH+40);
+}
+function drawCastleFires(c){
+ c.save();
+ for(const [x,y] of visibleCastleFires()){
+  for(let i=0;i<3;i++){
+   const age=(tNow/650+i/3)%1;
+   c.globalAlpha=(1-age)*.55;c.fillStyle='#4a4038';c.beginPath();
+   c.arc(x+Math.sin(age*6+i)*4,y-13-age*19,2.5+age*4,0,Math.PI*2);c.fill();
+  }
+  c.globalAlpha=1;
+  for(let i=0;i<3;i++){
+   const fx=x+(i-1)*4, tip=y-10-Math.sin(tNow/115+i*2)*3;
+   c.fillStyle=i===1?'#ffc451':'#e25725';c.beginPath();
+   c.moveTo(fx-4,y-2);c.quadraticCurveTo(fx-5,tip+4,fx+1,tip);
+   c.quadraticCurveTo(fx+5,tip+5,fx+4,y-2);c.fill();
+  }
+ }
+ c.restore();
 }
 function drawTop(){
  const c=tctx;c.setTransform(DPR,0,0,DPR,0,0);c.clearRect(0,0,VW,VH);if(!S)return;
@@ -374,6 +394,7 @@ function drawTop(){
   const s=(3.6+Math.sqrt(C.koku)*.7)*Math.min(1.9,.65+z*.4)*Math.min(1,z/.4);
   if(sieged[C.id]){const p=.5+.5*Math.sin(tNow/170);c.beginPath();c.arc(x,y-s*.2,s*2+p*4,0,7);c.strokeStyle=`rgba(220,60,40,${.45+p*.4})`;c.lineWidth=2.2;c.stroke();}
   castleIcon(c,x,y,s,deep(k),k===S.player,cap,TK.KOREA_NODES?.[C.id]);}
+ drawCastleFires(c);
  const counts={};for(const C of G.CL){const k=S.castles[C.id].owner;counts[k]=(counts[k]||0)+1;}
  const priority=C=>{const k=S.castles[C.id].owner;return (C.id===U.sel?1e6:0)+(k===S.player?1e5:0)+(S.clans[k]?.cap===C.id?counts[k]*1000:0)+C.koku;};
  const order=G.CL.map(C=>({C,p:priority(C)})).sort((a,b)=>b.p-a.p).map(o=>o.C);
@@ -548,7 +569,7 @@ function loop(now){
  const sig=cam.x.toFixed(2)+cam.y.toFixed(2)+cam.z.toFixed(4)+VW+VH+(U.sel?1:0);if(sig!==camSig){camSig=sig;U.baseDirty=true;}
  const dirty=U.baseDirty;if(dirty){drawBase();U.drawStats.base++;}
  const ts=[camSig,S?.t,U.hover,U.mode,U.pickClan,U.dipView,U.sel,U.picking].join('|');
- if(dirty||ts!==topSig||(!U.modal&&U.speed>0&&now-lastTop>33)){drawTop();U.drawStats.top++;lastTop=now;topSig=ts;}
+ if(dirty||ts!==topSig||(!U.modal&&now-lastTop>33&&(U.speed>0||visibleCastleFires().length>0))){drawTop();U.drawStats.top++;lastTop=now;topSig=ts;}
  requestAnimationFrame(loop);
 }
 let uiT=0,terrSig='';
