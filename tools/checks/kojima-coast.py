@@ -1,6 +1,7 @@
 """Inspect the local Fujito passage in a province raster, optionally with replacement tiles."""
 import argparse
 from collections import deque
+import csv
 from functools import lru_cache
 from hashlib import sha256
 import json
@@ -11,6 +12,9 @@ from PIL import Image
 
 def inspect(base, overlay):
     manifest = json.loads((base / "manifest.json").read_text())
+    with (base / "definition.csv").open(encoding="utf-8", newline="") as stream:
+        kinds = {tuple(int(row[channel]) for channel in "rgb"): row["kind"]
+                 for row in csv.DictReader(stream, delimiter=";")}
     projection = manifest["projection"]
     origin_x, origin_y = projection["origin"]
     step, tile_size = projection["stepUnits"], manifest["tile"]
@@ -43,9 +47,14 @@ def inspect(base, overlay):
             raise FileNotFoundError(file)
         return None
 
-    def sea(x, y):
+    def kind(x, y):
         image = tile(x // tile_size, y // tile_size)
-        return image is None or image.getpixel((x % tile_size, y % tile_size)) == (8, 24, 48)
+        if image is None:
+            return "sea"
+        return kinds[image.getpixel((x % tile_size, y % tile_size))]
+
+    def sea(x, y):
+        return kind(x, y) == "sea"
 
     # Limit the flood fill to the northern corridor so the open sea south of Kojima
     # cannot make an unbroken land bridge look like a passage.
@@ -83,7 +92,7 @@ def inspect(base, overlay):
 
     def local_land(x, y):
         return (land_left <= x <= land_right and land_top <= y <= land_bottom
-                and not sea(x, y))
+                and kind(x, y) == "land")
 
     return {
         "westEndpointIsSea": sea(*west),
@@ -92,9 +101,10 @@ def inspect(base, overlay):
         "mainlandControlIsLand": local_land(*mainland),
         "kojimaControlIsLand": local_land(*kojima),
         "kojimaConnectedToMainland": local_land(*kojima) and reachable(kojima, mainland, local_land),
-        "kyogashimaIsLand": not sea(*cell(133.8108903, 34.5610021)),
-        "fujitoTempleIsLand": not sea(*cell(133.8095872, 34.5601554)),
-        "shionasuSiteIsLand": not sea(*cell(133.771388, 34.476388)),
+        "kyogashimaIsLand": kind(*cell(133.8108903, 34.5610021)) == "land",
+        "fujitoTempleIsLand": kind(*cell(133.8095872, 34.5601554)) == "land",
+        "shionasuSiteIsLand": kind(*cell(133.771388, 34.476388)) == "land",
+        "ukisuiwaSiteKind": kind(*cell(133.8052177, 34.5598924)),
         "mizushimaControlIsSea": sea(*cell(133.718, 34.517)),
     }
 
