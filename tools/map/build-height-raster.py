@@ -1,4 +1,4 @@
-"""Resample local GSI DEM PNG tiles to the shared province grid."""
+"""Resample local GSI or Terrarium elevation PNG tiles to the shared province grid."""
 import argparse
 import hashlib
 import json
@@ -13,7 +13,16 @@ OFFSET_METRES = -500
 CODES_PER_METRE = 4
 
 
-def build(grid_file, source_root, zoom, output):
+def build(grid_file, source_root, zoom, output, provider="gsi"):
+    if provider == "gsi":
+        offset, codes_per_metre = OFFSET_METRES, CODES_PER_METRE
+        source = "https://maps.gsi.go.jp/development/demtile.html"
+    elif provider == "terrarium":
+        # The source includes bathymetry. Retain valid negative values.
+        offset, codes_per_metre = -12000, 2
+        source = "https://registry.opendata.aws/terrain-tiles/"
+    else:
+        raise ValueError(f"Unsupported provider: {provider}")
     grid = json.loads(grid_file.read_text(encoding="utf-8"))
     p = grid["projection"]
     x0, y0 = p["origin"]
@@ -32,11 +41,16 @@ def build(grid_file, source_root, zoom, output):
         with Image.open(file) as image:
             if image.size != (256, 256):
                 raise ValueError(f"Unexpected source tile dimensions: {file}")
-            rgb = np.asarray(image.convert("RGB"), dtype=np.int32)
-        values = (rgb[:, :, 0] << 16) | (rgb[:, :, 1] << 8) | rgb[:, :, 2]
-        metres = np.where(values < (1 << 23), values, values - (1 << 24)) / 100
-        codes = np.rint((metres - OFFSET_METRES) * CODES_PER_METRE) + 1
-        valid = values != (1 << 23)
+            rgba = np.asarray(image.convert("RGBA"), dtype=np.int32)
+        r, g, b, alpha = np.moveaxis(rgba, -1, 0)
+        valid = alpha > 0
+        if provider == "gsi":
+            values = (r << 16) | (g << 8) | b
+            metres = np.where(values < (1 << 23), values, values - (1 << 24)) / 100
+            valid &= values != (1 << 23)
+        else:
+            metres = r * 256 + g + b / 256 - 32768
+        codes = np.rint((metres - offset) * codes_per_metre) + 1
         if (valid & ((codes < 1) | (codes > 65535))).any():
             raise ValueError(f"Elevation out of range: {file}")
         sources[col, row] = np.where(valid, codes, 0).astype(np.uint16)
@@ -83,9 +97,10 @@ def build(grid_file, source_root, zoom, output):
 
     manifest = {
         "gridSha256": hashlib.sha256(grid_file.read_bytes()).hexdigest(),
-        "source": "https://maps.gsi.go.jp/development/demtile.html",
+        "source": source,
+        "provider": provider,
         "sourceTiles": source_hashes,
-        "encoding": {"noData": 0, "offsetMetres": OFFSET_METRES, "codesPerMetre": CODES_PER_METRE,
+        "encoding": {"noData": 0, "offsetMetres": offset, "codesPerMetre": codes_per_metre,
                      "decode": "offsetMetres + (code - 1) / codesPerMetre"},
         "resampling": "source cell containing the destination pixel centre",
         "tiles": files,
@@ -97,8 +112,9 @@ def build(grid_file, source_root, zoom, output):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("grid_manifest", type=Path)
-    parser.add_argument("source_root", type=Path, help="Directory containing GSI z/x/y.png tiles")
+    parser.add_argument("source_root", type=Path, help="Directory containing source z/x/y.png tiles")
     parser.add_argument("output", type=Path)
     parser.add_argument("--zoom", type=int, required=True)
+    parser.add_argument("--provider", choices=["gsi", "terrarium"], default="gsi")
     args = parser.parse_args()
-    print(build(args.grid_manifest, args.source_root, args.zoom, args.output))
+    print(build(args.grid_manifest, args.source_root, args.zoom, args.output, args.provider))
