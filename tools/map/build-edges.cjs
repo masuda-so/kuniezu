@@ -58,6 +58,20 @@ for(const L of levels){const byPos=new Map(L.tiles.map(t=>[t.col+','+t.row,path.
   for(const k of touched){const [c,r]=k.split(',').map(Number);if(c<0||r<0)continue;const items=edgesOfTile(L,vget,c,r),file=`@${v.id}/${c}-${r}.json`,body=JSON.stringify(items);fs.writeFileSync(path.join(dir,'edges-'+L.factor,file),body);
    index.versions.push({id:v.id,period:v.m.versions.find(x=>x.id===v.id)?.period||v.m.tiles[0].period,factor:L.factor,col:c,row:r,file,sha256:sha(body)});}}
 }
+// 国・道の境界線：郡画像（game/map/gun*、日本は CODH の旧国、朝鮮は1910年の道を八道へ戻したもの）の国が変わる所に引く（kind:'kuni'）。
+// 陸奥・出羽の明治の分割は戻す。海との境は引かない（海岸は coast で引く）。郡画像は年代の版で変わらないので、版の辺のファイルにも同じ線を足す。
+const gj=JSON.parse(fs.readFileSync(path.join(dir,'gun.json'),'utf8')),gunRows=fs.readFileSync(path.join(dir,'gun.csv'),'utf8').trim().split('\n').slice(1).map(l=>l.split(';'));
+const normK=k=>['磐城','岩代','陸前','陸中','陸奥'].includes(k)?'陸奥':['羽前','羽後'].includes(k)?'出羽':k;const kuniNames=[...new Set(gunRows.map(r=>normK(r[4])))],kuniOf=new Uint16Array(gunRows.length+2);for(const r of gunRows)kuniOf[+r[0]]=kuniNames.indexOf(normK(r[4]))+1;
+const decodeGun=f=>{const buf=fs.readFileSync(f);let i=8,w=0,h=0;const parts=[];while(i<buf.length){const len=buf.readUInt32BE(i),type=buf.toString('ascii',i+4,i+8),d=buf.subarray(i+8,i+8+len);if(type==='IHDR'){w=d.readUInt32BE(0);h=d.readUInt32BE(4);}else if(type==='IDAT')parts.push(d);i+=12+len;}const raw=zlib.inflateSync(Buffer.concat(parts)),ids=new Uint16Array(w*h);for(let y=0;y<h;y++)for(let x=0;x<w;x++){const o=y*(w*3+1)+1+x*3;ids[y*w+x]=kuniOf[raw[o+1]<<8|raw[o+2]];}return {w,h,ids};};
+let kuniLines=0;
+for(const L of levels){const gl=L.factor===1?{dir:'gun',tiles:gj.tiles}:gj.levels.find(l=>l.factor===L.factor);const pos=new Map(gl.tiles.map(t=>[t.col+','+t.row,path.join(dir,gl.dir,t.file)]));const cache=new Map();
+ const get=(c,r)=>{const k=c+','+r;if(!cache.has(k)){const f=pos.get(k);cache.set(k,f?decodeGun(f):null);if(cache.size>8)cache.delete(cache.keys().next().value);}return cache.get(k);};
+ const lvl=index.levels.find(x=>x.factor===L.factor),edgeDir=path.join(dir,'edges-'+L.factor);
+ for(const t of gl.tiles){const items=edgesOfTile(L,get,t.col,t.row).filter(it=>it.a&&it.b).map(it=>({a:kuniNames[it.a-1],b:kuniNames[it.b-1],kind:'kuni',lines:it.lines}));if(!items.length)continue;kuniLines+=items.length;
+  const targets=[`${t.col}-${t.row}.json`,...index.versions.filter(v=>v.factor===L.factor&&v.col===t.col&&v.row===t.row).map(v=>v.file)];
+  for(const file of targets){const fp=path.join(edgeDir,file);const cur=fs.existsSync(fp)?JSON.parse(fs.readFileSync(fp,'utf8')):[];const body=JSON.stringify(cur.concat(items));fs.writeFileSync(fp,body);
+   const sh=sha(body);if(file.startsWith('@')){const v=index.versions.find(v=>v.factor===L.factor&&v.file===file);if(v)v.sha256=sh;}else{const e=lvl.tiles.find(x=>x.file===file);if(e)e.sha256=sh;else lvl.tiles.push({file,col:t.col,row:t.row,sha256:sh});}}}}
+console.log('kuni edge groups',kuniLines);
 // 実行時が読む版の一覧（塗り・当たり判定・境界線が同じ版を使うため一つにまとめる）
 const ver={generated:'tools/map/build-edges.cjs',baseProvincesSha256:baseSha,staleVersions,note:'年代別の領域タイルの差し替え。同じ段・同じ列行の基準タイルの上に重ねず置き換える。期間は半開区間。',versions:versions.map(v=>({id:v.id,period:v.m.versions.find(x=>x.id===v.id)?.period,edits:v.m.versions.find(x=>x.id===v.id)?.edits,tiles:v.m.tiles.map(t=>({factor:t.factor,col:t.col,row:t.row,file:'edits/compiled/'+v.id+'/'+t.file,sha256:t.sha256}))}))};
 fs.writeFileSync(path.join(dir,'versions.json'),JSON.stringify(ver,null,1));

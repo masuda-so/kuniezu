@@ -159,6 +159,8 @@ function borderStyle(oa,ob){const key=G.relationKind(oa,ob).key,em=U.dipView?1.3
 function borderEdges(){const v=[...s2w(-240,-240),...s2w(VW+240,VH+240)],items=window.TKEdges?.inView?.(v,cam.z,DPR);if(!items)return null;const defs=TKRaster.defs();
  return items.filter(it=>it.kind==='region').map(it=>{const a=defs[it.a]?.key,b=defs[it.b]?.key;return a?.startsWith('castle:')&&b?.startsWith('castle:')?{a:a.slice(7),b:b.slice(7),p:it.p}:null;}).filter(e=>e&&S.castles[e.a]&&S.castles[e.b]);}
 function strokeCoast(c){const v=[...s2w(-240,-240),...s2w(VW+240,VH+240)],items=window.TKEdges?.inView?.(v,cam.z,DPR);if(!items){c.stroke(COAST.get(LANDV)||LANDV);return;}for(const it of items)if(it.kind==='coast')c.stroke(it.p);}
+// 国・道の境界線は、郡画像の国が変わる所から起こした線（kind:'kuni'）で引く。届くまでは従来の線（PBORD）。
+function strokeKuni(c){const v=[...s2w(-240,-240),...s2w(VW+240,VH+240)],items=window.TKEdges?.inView?.(v,cam.z,DPR);if(!items){c.stroke(PBORD);return;}for(const it of items)if(it.kind==='kuni')c.stroke(it.p);}
 function strokeLakes(c){const v=[...s2w(-240,-240),...s2w(VW+240,VH+240)],items=window.TKEdges?.inView?.(v,cam.z,DPR);if(!items){c.stroke(LAKES);return;}for(const it of items)if(it.kind==='lake')c.stroke(it.p);}
 function drawBorders(c,z,k0){if(!S)return;const EDGE=borderEdges()||EDGES_V;
  for(const e of EDGE){const oa=S.castles[e.a].owner,ob=S.castles[e.b].owner;if(oa!==ob||z<.8)continue;c.strokeStyle='rgba(60,45,30,.22)';c.lineWidth=.7/z;c.setLineDash([]);c.stroke(e.p);}
@@ -285,13 +287,13 @@ function paintBase(c,pad=0){LANDV=landFor(cam.z);
 
  if(S)drawBranchLands(c,z);
  if(flat){c.strokeStyle='rgba(95,135,175,.75)';c.lineWidth=1.1/z;c.lineJoin='round';drawMapRivers(c,z);
-  if(z>.45){c.strokeStyle='rgba(110,110,110,.5)';c.lineWidth=.8/z;c.stroke(PBORD);}
+  if(z>.45){c.strokeStyle='rgba(110,110,110,.5)';c.lineWidth=.8/z;strokeKuni(c);}
   if(S&&z>.5)drawRoads(c,z,false);drawBorders(c,z);
   c.save();c.clip(LANDV);if(!window.TKRaster?.ready()){c.fillStyle='#aac4df';c.fill(LAKES);}c.strokeStyle='rgba(110,135,170,.55)';c.lineWidth=.7/z;strokeLakes(c);c.restore();
    c.strokeStyle='rgba(100,125,160,.7)';c.lineWidth=.8/z;strokeCoast(c);
  }else{
  c.strokeStyle='rgba(95,135,175,.75)';c.lineWidth=1.1/z;c.lineJoin='round';drawMapRivers(c,z);
- if(z>.55){c.save();c.setLineDash([3/z,3/z]);c.strokeStyle='rgba(70,55,35,.38)';c.lineWidth=.9/z;c.stroke(PBORD);c.restore();}
+ if(z>.55){c.save();c.setLineDash([3/z,3/z]);c.strokeStyle='rgba(70,55,35,.38)';c.lineWidth=.9/z;strokeKuni(c);c.restore();}
  if(S&&z>.5)drawRoads(c,z,false);
  drawRoadLevels(c,z);drawBorders(c,z);
  c.save();c.clip(LANDV);if(!window.TKRaster?.ready()){c.fillStyle='#93b4d2';c.fill(LAKES);}c.strokeStyle='rgba(50,70,100,.55)';c.lineWidth=.8/z;strokeLakes(c);c.restore();

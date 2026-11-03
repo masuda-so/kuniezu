@@ -34,8 +34,14 @@ const dir=path.join(out,'gun');fs.rmSync(dir,{recursive:true,force:true});fs.mkd
 for(let ty=0;ty*T<H;ty++)for(let tx=0;tx*T<W;tx++){const c0=tx*T,r0=ty*T,bw=Math.min(T,W-c0),bh=Math.min(T,H-r0);let any=false;const rgb=Buffer.alloc(bw*bh*3);
  for(let y=0;y<bh;y++)for(let x=0;x<bw;x++){const v=id[(r0+y)*W+c0+x];if(v)any=true;const o=(y*bw+x)*3;rgb[o]=0;rgb[o+1]=v>>8;rgb[o+2]=v&255;}
  if(!any)continue;const file=`${tx}-${ty}.png`,buf=png(bw,bh,rgb);fs.writeFileSync(path.join(dir,file),buf);tiles.push({file,col:tx,row:ty,width:bw,height:bh,sha256:crypto.createHash('sha256').update(buf).digest('hex')});}
+// 縮小版（400m・800m）：f画素ごとに中心の画素を採る（最近傍）。国・道の境界線を縮尺に合わせて起こすため。
+const levels=[];for(const f of [4,8]){const w=Math.ceil(W/f),h=Math.ceil(H/f),dl=path.join(out,'gun-'+f);fs.rmSync(dl,{recursive:true,force:true});fs.mkdirSync(dl,{recursive:true});const lt=[];
+ for(let ty=0;ty*T<h;ty++)for(let tx=0;tx*T<w;tx++){const c0=tx*T,r0=ty*T,bw=Math.min(T,w-c0),bh=Math.min(T,h-r0);let any=false;const rgb=Buffer.alloc(bw*bh*3);
+  for(let y=0;y<bh;y++){const sy=Math.min(H-1,(r0+y)*f+(f>>1));for(let x=0;x<bw;x++){const sx=Math.min(W-1,(c0+x)*f+(f>>1)),v=id[sy*W+sx];if(v)any=true;const o=(y*bw+x)*3;rgb[o+1]=v>>8;rgb[o+2]=v&255;}}
+  if(!any)continue;const file=`${tx}-${ty}.png`,buf=png(bw,bh,rgb);fs.writeFileSync(path.join(dl,file),buf);lt.push({file,col:tx,row:ty,width:bw,height:bh,sha256:crypto.createHash('sha256').update(buf).digest('hex')});}
+ levels.push({factor:f,dir:'gun-'+f,tiles:lt});}
 fs.writeFileSync(path.join(out,'gun.csv'),'n;codh_id;name;yomi;kuni;kuni_id;pref;pixels\n'+guns.map(g=>[g.n,g.id,g.name,g.yomi,g.kuni,g.kuni_id,g.pref,count[g.n]].join(';')).join('\n')+'\n');
 fs.writeFileSync(path.join(out,'gun.json'),JSON.stringify({generated:'tools/map/build-gun.cjs',source:'日本：旧国・旧郡境界データセット（CODH）。朝鮮：国史編纂委員会 歴史地理情報「행정구역 GIS 데이터 (1910~1945년)」の1910年5月時点の府・郡',license:'日本 CC BY-NC 4.0／朝鮮 공공누리 제1유형（출처표시）',credit:'『旧国・旧郡境界データセット』（CODH作成） 「幕末明治地勢地図境界データ」（人間文化研究機構作成）を加工 doi:10.20676/00000454 ／ 국사편찬위원회 역사지리정보（https://hgis.history.go.kr）「행정구역 GIS 데이터 (1910~1945년)」를 가공',
  note:'日本は江戸末期の郡境、朝鮮は1910年（1914年の統合前）の府郡境。どちらも戦国期・1592年の境とは違う所がある。画素の番号は gun.csv の n（G は上位バイト、B は下位バイト）。',gridSha256:crypto.createHash('sha256').update(fs.readFileSync(path.join(out,'manifest.json'))).digest('hex'),
- inputSha256:crypto.createHash('sha256').update(files.map(f=>fs.readFileSync(path.join(src,f))).reduce((a,b)=>Buffer.concat([a,b]),Buffer.alloc(0))).digest('hex'),guns:guns.length,overlapPixels:overlap,tiles},null,1));
+ inputSha256:crypto.createHash('sha256').update(files.map(f=>fs.readFileSync(path.join(src,f))).reduce((a,b)=>Buffer.concat([a,b]),Buffer.alloc(0))).digest('hex'),guns:guns.length,overlapPixels:overlap,tiles,levels},null,1));
 console.log(JSON.stringify({guns:guns.length,tiles:tiles.length,overlap,zeroGuns:guns.filter(g=>!count[g.n]).map(g=>g.name)}));

@@ -4,7 +4,7 @@
  "license": "日本 CC BY-NC 4.0／朝鮮 공공누리 제1유형（출처표시）",
  "credit": "『旧国・旧郡境界データセット』（CODH作成） 「幕末明治地勢地図境界データ」（人間文化研究機構作成）を加工 doi:10.20676/00000454 ／ 국사편찬위원회 역사지리정보（https://hgis.history.go.kr）「행정구역 GIS 데이터 (1910~1945년)」를 가공",
  "note": "日本は江戸末期の郡境、朝鮮は1910年（1914年の統合前）の府郡境。どちらも戦国期・1592年の境とは違う所がある。画素の番号は gun.csv の n（G は上位バイト、B は下位バイト）。",
- "gridSha256": "88edd0ac9b003470935167202a59622b9a6edae6408b6a9c5d3d16073400d212",
+ "gridSha256": "40d317e28e41ed7a0910a22aca6e838c5eeaa9abeb554dd6973be219e3943ef4",
  "inputSha256": "0c663aa3a99052792b47dad78f79dbe5b316c624ca9e020419fdedcaf0909589",
  "guns": 1139,
  "overlapPixels": 5,
@@ -1184,6 +1184,236 @@
    "width": 1024,
    "height": 736,
    "sha256": "08ca0350773483c768acb5efd3bcf7686cdbfa060f1a89523382ed4e5d7e288b"
+  }
+ ],
+ "levels": [
+  {
+   "factor": 4,
+   "dir": "gun-4",
+   "tiles": [
+    {
+     "file": "1-0.png",
+     "col": 1,
+     "row": 0,
+     "width": 1024,
+     "height": 1024,
+     "sha256": "85d9989b1fb4106331b0b5bd96d81ea42114b832637f0277185786c1b6770eab"
+    },
+    {
+     "file": "3-0.png",
+     "col": 3,
+     "row": 0,
+     "width": 1024,
+     "height": 1024,
+     "sha256": "2dfdaf8e67782030b3358e43c0679928a698d217dd27c7517b0919c44ac3c831"
+    },
+    {
+     "file": "4-0.png",
+     "col": 4,
+     "row": 0,
+     "width": 1024,
+     "height": 1024,
+     "sha256": "6512859415fdde50f2466075b219f04a1d3f6b06818dcfb7558e34c99f12377d"
+    },
+    {
+     "file": "5-0.png",
+     "col": 5,
+     "row": 0,
+     "width": 76,
+     "height": 1024,
+     "sha256": "0ac0e7ac8481230b8ed713efdd4ab77a35b887df49cf1d95e534e4b4870042a9"
+    },
+    {
+     "file": "0-1.png",
+     "col": 0,
+     "row": 1,
+     "width": 1024,
+     "height": 1024,
+     "sha256": "99f21da3e4349cfe99279d2ac4481b2fa04bb6c410c299a180e07f9043aed917"
+    },
+    {
+     "file": "1-1.png",
+     "col": 1,
+     "row": 1,
+     "width": 1024,
+     "height": 1024,
+     "sha256": "00d0778c9335f6e4886a10aecd7b3899a8ad1de9ffc04d84de1b0cf7c07c1413"
+    },
+    {
+     "file": "3-1.png",
+     "col": 3,
+     "row": 1,
+     "width": 1024,
+     "height": 1024,
+     "sha256": "f640aaf95839cd2b1159548723563e27730b398306771e51330e7720b1e0bc0e"
+    },
+    {
+     "file": "4-1.png",
+     "col": 4,
+     "row": 1,
+     "width": 1024,
+     "height": 1024,
+     "sha256": "de2aa0853779ac2a57d190567f6a993857aec89998328b466447ea65ec2f1500"
+    },
+    {
+     "file": "0-2.png",
+     "col": 0,
+     "row": 2,
+     "width": 1024,
+     "height": 1024,
+     "sha256": "68f8f486bd58d3ac63955d7b7272f0e3be746a85e1af5aed4e3a7ab0aa02c854"
+    },
+    {
+     "file": "1-2.png",
+     "col": 1,
+     "row": 2,
+     "width": 1024,
+     "height": 1024,
+     "sha256": "ca9b7700395deb8650f26932aad3f740250de65c75ac55f14b5887ece8a96330"
+    },
+    {
+     "file": "2-2.png",
+     "col": 2,
+     "row": 2,
+     "width": 1024,
+     "height": 1024,
+     "sha256": "c975f5e017d1c64bb9ee070616645fdd15af5c9ebef0ffc1354313cacdd6a8ca"
+    },
+    {
+     "file": "3-2.png",
+     "col": 3,
+     "row": 2,
+     "width": 1024,
+     "height": 1024,
+     "sha256": "6aeb3b6ab876443ba95dd8e99ae0a8711cb173debbfdb5bc26d9f37e1737a61f"
+    },
+    {
+     "file": "4-2.png",
+     "col": 4,
+     "row": 2,
+     "width": 1024,
+     "height": 1024,
+     "sha256": "a780f042e045150f464363abe793f602dbe4a2979c6cf91d76681dfaca3e0e7d"
+    },
+    {
+     "file": "0-3.png",
+     "col": 0,
+     "row": 3,
+     "width": 1024,
+     "height": 1024,
+     "sha256": "5859867d0b4697d3780592826a893c373b8ec7e25175ee6213d8a5db23dbcd7a"
+    },
+    {
+     "file": "1-3.png",
+     "col": 1,
+     "row": 3,
+     "width": 1024,
+     "height": 1024,
+     "sha256": "be589ec32e5bbd86305078f831595ebc793339913e4ded399f3a03ee6bea5e1f"
+    },
+    {
+     "file": "2-3.png",
+     "col": 2,
+     "row": 3,
+     "width": 1024,
+     "height": 1024,
+     "sha256": "de88689482436bef492a67d6f5c584fb8c9eda48b1480c9d181953004e35708a"
+    },
+    {
+     "file": "3-3.png",
+     "col": 3,
+     "row": 3,
+     "width": 1024,
+     "height": 1024,
+     "sha256": "ff57baebc0730aeb4fb575f46bb4a5580f949e0babfbce12d0f03fe767b360b7"
+    },
+    {
+     "file": "1-4.png",
+     "col": 1,
+     "row": 4,
+     "width": 1024,
+     "height": 1024,
+     "sha256": "a45bf5e1055d0d98660432b5bd2ca1f72f99b9a6d53cb96eaf5614603cdf7aaf"
+    },
+    {
+     "file": "0-5.png",
+     "col": 0,
+     "row": 5,
+     "width": 1024,
+     "height": 952,
+     "sha256": "f06e6bf9930b0d858992bd5000b29ee3fb330df604c4dac5568ba3b75f8c3f3c"
+    },
+    {
+     "file": "1-5.png",
+     "col": 1,
+     "row": 5,
+     "width": 1024,
+     "height": 952,
+     "sha256": "5df09cdce8b9bc4e54afa29119fa0258b951ad4639473d0e626a85d8dcee3eef"
+    }
+   ]
+  },
+  {
+   "factor": 8,
+   "dir": "gun-8",
+   "tiles": [
+    {
+     "file": "0-0.png",
+     "col": 0,
+     "row": 0,
+     "width": 1024,
+     "height": 1024,
+     "sha256": "fc22c517281355c3161716bb8dea68a83df48ab8c55f3bfbd3c25694d5e2620c"
+    },
+    {
+     "file": "1-0.png",
+     "col": 1,
+     "row": 0,
+     "width": 1024,
+     "height": 1024,
+     "sha256": "ac3610d043c9e9f2ae8be78e7cf0cb72563642ede096f6dc22ca0ef89620d320"
+    },
+    {
+     "file": "2-0.png",
+     "col": 2,
+     "row": 0,
+     "width": 550,
+     "height": 1024,
+     "sha256": "34b2af6fe6ede3074332a8a20fc65502aa7203d30d3e045bada976b05b604b33"
+    },
+    {
+     "file": "0-1.png",
+     "col": 0,
+     "row": 1,
+     "width": 1024,
+     "height": 1024,
+     "sha256": "bb63e47da2d91a6188056349d318031f596f9798f82921d990da382cc535e026"
+    },
+    {
+     "file": "1-1.png",
+     "col": 1,
+     "row": 1,
+     "width": 1024,
+     "height": 1024,
+     "sha256": "6b00a4e732c7173577e5bb151729896f69a380ce1d409b5f0695cb487d4699e8"
+    },
+    {
+     "file": "2-1.png",
+     "col": 2,
+     "row": 1,
+     "width": 550,
+     "height": 1024,
+     "sha256": "0db101571c7f457e133b9c0d7d1b0477280d3ed92b5b22a9d0edc54a07709721"
+    },
+    {
+     "file": "0-2.png",
+     "col": 0,
+     "row": 2,
+     "width": 1024,
+     "height": 988,
+     "sha256": "5a7de13b2251235d7eb00adb6e1c285383085746ac7841007bd36ff1e8574059"
+    }
+   ]
   }
  ]
 }
