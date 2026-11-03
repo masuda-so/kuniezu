@@ -219,10 +219,10 @@ function drawBranchLands(c,z){if(U.mode!=='game'||!G.branchCells)return;c.save()
   if(z>.75&&(owner!==base||U.sel===C.id)){c.globalAlpha=.65;c.strokeStyle=owner===S.player?'#e7bb49':'#5f4934';c.lineWidth=1/z;c.setLineDash([3/z,3/z]);c.stroke(p);}}
  }c.restore();}
 const modernWater=(TK.waterComparisonOverlay?TK.MODERN_LAKES||[]:[]).map(l=>({n:l.name,p:P2([l.rings.map(r=>r.flatMap(p=>G.PJ(...p)))],0),at:G.PJ(...l.rings[0][0])}));
-const historicWater=(TK.HISTORIC_WATERS||[]).map(l=>({...l,p:P2([l.poly],0),point:G.PJ(...l.at)}));
+const historicWater=(TK.HISTORIC_WATERS||[]).map(l=>({...l,p:l.poly?P2([l.poly],0):null,point:G.PJ(...l.at)}));
 const periodWater=(TK.PERIOD_WATERS||[]).map(w=>({...w,p:P2([w.rings.map(r=>r.flatMap(p=>G.PJ(...p)))],0),at:G.PJ(...w.rings[0][0])}));
 function drawPeriodWater(c,z){const year=S?G.date().y:1560;c.save();c.clip(LANDV);for(const w of periodWater){if(w.from&&year<w.from||w.until&&year>=w.until)continue;c.fillStyle='rgba(112,165,178,.62)';c.fill(w.p,'evenodd');c.strokeStyle='rgba(64,113,121,.65)';c.lineWidth=.7/z;c.setLineDash([2/z,3/z]);c.stroke(w.p);}c.restore();}
-function drawWaterEvidence(c,z){c.save();c.clip(LANDV);for(const l of historicWater){c.fillStyle=l.kind==='marsh'?'rgba(112,151,138,.28)':'rgba(118,166,186,.4)';c.fill(l.p,'evenodd');c.setLineDash([1/z,3/z]);c.strokeStyle='#668a83';c.lineWidth=.8/z;c.stroke(l.p);if(z>1){c.save();c.setLineDash([]);c.font=`${10/z}px sans-serif`;c.fillStyle='#315766';c.textAlign='center';c.fillText(l.label,l.point[0],l.point[1]);c.restore();}}for(const l of modernWater){c.fillStyle='rgba(118,166,186,.65)';c.fill(l.p,'evenodd');c.setLineDash([3/z,3/z]);c.strokeStyle='#426f80';c.lineWidth=.8/z;c.stroke(l.p);if(z>1){c.save();c.setLineDash([]);c.font=`${10/z}px sans-serif`;c.fillStyle='#315766';c.fillText(l.n+'（比較湖岸）',l.at[0]+3/z,l.at[1]-5/z);c.restore();}}c.restore();}
+function drawWaterEvidence(c,z){c.save();c.clip(LANDV);for(const l of historicWater){if(l.p){c.fillStyle=l.kind==='marsh'?'rgba(112,151,138,.28)':'rgba(118,166,186,.4)';c.fill(l.p,'evenodd');c.setLineDash([1/z,3/z]);c.strokeStyle='#668a83';c.lineWidth=.8/z;c.stroke(l.p);}if(z>1){c.save();c.setLineDash([]);c.font=`${10/z}px sans-serif`;c.fillStyle='#315766';c.textAlign='center';c.fillText(l.label,l.point[0],l.point[1]);c.restore();}}for(const l of modernWater){c.fillStyle='rgba(118,166,186,.65)';c.fill(l.p,'evenodd');c.setLineDash([3/z,3/z]);c.strokeStyle='#426f80';c.lineWidth=.8/z;c.stroke(l.p);if(z>1){c.save();c.setLineDash([]);c.font=`${10/z}px sans-serif`;c.fillStyle='#315766';c.fillText(l.n+'（比較湖岸）',l.at[0]+3/z,l.at[1]-5/z);c.restore();}}c.restore();}
 // 周囲を含めた地形だけを一度合成し、日付更新や小さなパンでは貼り直す。
 // 勢力・道路・湖岸は別に描くため、領主の変化を古い画像で隠さない。
 let terrainSurface=null;
@@ -592,7 +592,12 @@ function hit(sx,sy){if(!S)return null;let best=null,bd=16*16;for(const C of G.CL
  if(best)return best;const [wx,wy]=s2w(sx,sy);bctx.setTransform(1,0,0,1,0,0);if(!bctx.isPointInPath(landFor(Math.max(cam.z,4)),wx,wy))return null;for(const C of G.CL)if(bctx.isPointInPath(TERR[C.id],wx,wy))return C.id;return null;}
 const tipEl=$('#tip');
 function hitArmy(x,y){return U.mode==='game'&&U.armyGroups?.filter(g=>Math.hypot(g.x-x,g.y-y)<24).sort((a,b)=>Math.hypot(a.x-x,a.y-y)-Math.hypot(b.x-x,b.y-y))[0];}
-function tipArmy(group,e){const ids=group.members.map(m=>m.id),units=(U.mapUnits||[]).filter(u=>ids.includes(u.id));tipEl.innerHTML=units.map(u=>{const n=u.commanders||u.gens.map(id=>G.gen(id)?.n).filter(Boolean),identity=G.armyIdentity(u),relation=G.relationKind(S.player,identity.command);return `<div class="tph">${n[0]?faceHTML(n[0],'sm',u.clan):''}${kamonHTML(G.armyCrestKey(u),24)}<div><b>${esc(n.join('・')||G.CNK(u.clan)+'軍')}</b><span>${esc(identity.name)} ・ ${esc(relation.name)}</span></div></div><p>${esc(G.marchPhase(u).name)}${u.troops?' ・ '+man(u.troops):''} ・ 士気${Math.round(u.morale||0)}</p><p>目的地：${esc(G.marchDestination(u))}</p>`;}).join('');tipEl.hidden=false;placeTip(e);}
+function armyDepartureText(u){
+ const start=u.schedule?.start;
+ if(!Number.isFinite(start)||G.isHistoryReturning(u))return '';
+ return `${u.depart?'出陣':'出陣（推定）'}：${G.dstr(start)}`;
+}
+function tipArmy(group,e){const ids=group.members.map(m=>m.id),units=(U.mapUnits||[]).filter(u=>ids.includes(u.id));tipEl.innerHTML=units.map(u=>{const n=u.commanders||u.gens.map(id=>G.gen(id)?.n).filter(Boolean),identity=G.armyIdentity(u),relation=G.relationKind(S.player,identity.command),departure=armyDepartureText(u);return `<div class="tph">${n[0]?faceHTML(n[0],'sm',u.clan):''}${kamonHTML(G.armyCrestKey(u),24)}<div><b>${esc(n.join('・')||G.CNK(u.clan)+'軍')}</b><span>${esc(identity.name)} ・ ${esc(relation.name)}</span></div></div><p>${esc(G.marchPhase(u).name)}${u.troops?' ・ '+man(u.troops):''} ・ 士気${Math.round(u.morale||0)}</p><p>目的地：${esc(G.marchDestination(u))}</p>${departure?`<p>${esc(departure)}</p>`: ''}`;}).join('');tipEl.hidden=false;placeTip(e);}
 function hitY(sx,sy){if(!S||cam.z<.6)return null;let best=null,bd=10*10;for(const y of (G.YOSHO||[])){const [x,yy]=w2s(y.x,y.y);const d=(x-sx)**2+(yy-sy)**2;if(d<bd){bd=d;best=y;}}return best;}
 // 施設の詳しい様子
 function tipY(y,e){if(!y||(e&&e.pointerType==='touch')||U.mode==='title'){tipEl.hidden=true;return;}const v=G.sitePresentation(y),level=G.siteLevel(y);tipEl.innerHTML=`<div class="tph"><div><b>${esc(v.title)}</b><span>${esc(v.role)}${G.yActive(y)?' ・ Lv.'+level:''}</span></div></div><p>${esc(v.description)}</p>${v.state?'<p>'+esc(v.state)+'</p>':''}${G.yActive(y)?'<span class="tdl">'+esc(G.infrastructureText('site',y.id))+'</span>':''}`;tipEl.hidden=false;placeTip(e);}
@@ -993,7 +998,13 @@ function mountScene(sc,onEnd){stopScene();const cv=$('#bCv');if(!cv&&sc.displayP
   onProgress:t=>{const seek=$('#bSeek');if(seek&&document.activeElement!==seek)seek.value=t;const clock=$('#bClock'),p=$('#bProgress');if(p)p.textContent=Math.round(t)+'%';if(clock){const marks=sc.calendar||[[0,'布陣'],[20,'交戦'],[80,'終盤'],[100,'終了']];clock.textContent=marks.filter(x=>x[0]<=t).at(-1)?.[1]||'';}if(SCN)for(const row of SCN.unitStates()){const b=document.querySelector('[data-act="b-person"][data-id="'+row.id+'"]');if(b){b.style.setProperty('--army',row.side==='a'?'#c83c39':'#247fc1');const el=b.querySelector('small');if(el)el.textContent=row.status;}}},onBeat:(b,all)=>{const el=$('#bNow');if(el)el.textContent=b?b.txt:'　';},onState:upd,onEnd:()=>{upd();onEnd&&onEnd();}});
  upd();SCN.play();}
 Object.assign(ACT,{
- 'b-person':b=>SCN&&SCN.select(b.dataset.id),
+ 'b-person':b=>{
+  if(!SCN)return;
+  SCN.select(b.dataset.id);
+  const stage=$('.battle-stage');
+  if(stage&&stage.getBoundingClientRect().bottom<b.getBoundingClientRect().top)
+   stage.scrollIntoView({block:'start'});
+ },
  'b-play':()=>{cancelSceneClose();SCN&&SCN.toggle();},
  'b-spd':b=>SCN&&SCN.setSpeed(+b.dataset.v),
  'b-re':()=>{cancelSceneClose();if(SCN){SCN.seek(0);SCN.play();}},

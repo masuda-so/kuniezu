@@ -1,0 +1,19 @@
+{
+  "id": "tsurusaki-origin-tradition",
+  "entity": "place:hayashima-tsurusaki",
+  "predicate": "foundation-tradition",
+  "value": "正中年間に早島の氏神として八幡神を祀ったのが始まりとされる。",
+  "validYears": [
+    1324,
+    1326
+  ],
+  "datePrecision": "year-range",
+  "source": "tsurusakiJinjacho",
+  "locator": "由緒",
+  "gameBindings": ["game/hayashima-upland.js"],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "sourceUrl": "https://www.okayama-jinjacho.or.jp/search/16864/",
+  "checked": "2026-11-03",
+  "uncertainty": "由緒に記された創祀伝承。戦国期の社殿の座標や現在までの連続的な所在を確定しない。"
+}

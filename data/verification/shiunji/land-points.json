@@ -1,0 +1,21 @@
+{
+  "scope": "陸地の確認点。湖岸の測点ではない。年代の異なる点を一律に1560年へ適用しない。",
+  "points": [
+    {
+      "id": "shibata-honmaru",
+      "longitude": 139.3252777778,
+      "latitude": 37.9552777778,
+      "coordinateBasis": "世界測地系、本丸のおおよその中心",
+      "period": "近世城郭",
+      "source": "https://sitereports.nabunken.go.jp/files/attach/22/22403/16539_1_%E6%96%B0%E7%99%BA%E7%94%B0%E5%9F%8E%E8%B7%A1%E7%99%BA%E6%8E%98%E8%AA%BF%E6%9F%BB%E5%A0%B1%E5%91%8A%E6%9B%B8XI.pdf"
+    },
+    {
+      "id": "sumiyoshi-site-580",
+      "longitude": 139.339722,
+      "latitude": 38.000833,
+      "coordinateBasis": "全国文化財総覧、遺跡番号580の世界測地系登録点",
+      "period": "12世紀後半〜14世紀の集落",
+      "source": "https://sitereports.nabunken.go.jp/en/69863"
+    }
+  ]
+}

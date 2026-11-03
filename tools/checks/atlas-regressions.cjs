@@ -21,6 +21,16 @@ const old=JSON.parse(JSON.stringify(G.S()));delete old.settings.scenePolicyVersi
 G.S().settings.scenes='all';G.setS(G.S());assert.equal(G.S().settings.scenes,'all');
 const honno=TK.BATTLE_ATLAS['本能寺の変'].points;assert.equal(honno.length,1);assert.ok(honno[0].lon<135.76,'modern relocated temple must not be used');assert.equal(honno[0].source,'honnojiOldSite');
 assert.equal(TK.BATTLES['関ヶ原の戦い'].units.filter(u=>/戸田(勝成|重政)/.test(u.g||u.n)).length,1);
+const kizugawaTitle='木津川口の戦い';
+const kizugawa=TK.BATTLES[kizugawaTitle];
+const kizugawaEvent=TK.HIST.find(event=>event.title===kizugawaTitle);
+assert.deepEqual(Array.from(kizugawa.eventDate),Array.from(TK.lunarDate(1614,11,19)));
+assert.deepEqual(Array.from(kizugawaEvent.d),Array.from(kizugawa.eventDate));
+assert.equal(kizugawaEvent.who,'蜂須賀至鎮');
+assert.equal(kizugawaEvent.documentedMarch,true,'do not generate an unrecorded approach');
+assert.deepEqual(Array.from(kizugawa.units.filter(unit=>unit.side==='a'),unit=>unit.g).sort(),
+ ['蜂須賀至鎮','浅野長晟','池田忠雄'].sort());
+assert.ok(kizugawa.atlasGroups.every(group=>!group.point),'no invented deployment coordinates');
 const units=[0,1,2].map(i=>({id:8000+i,clan:'oda',gens:[],commanders:['織田信長'],troops:1000*(i+1),path:['gifu','kiyosu'],seg:0,state:'march',mission:'show',until:'test',pos:.5})),position=u=>[200+(u.id-8000)*2,200];
 const before=JSON.stringify(units),groups=G.convoyLayout(units,1,(x,y)=>[x,y],position);assert.equal(JSON.stringify(units),before);assert.equal(groups.length,1);assert.equal(groups[0].u.id,8002);assert.equal(groups[0].members.length,3);assert.equal(groups[0].displayUnit.troops,6000);
 const separate=G.convoyLayout(units,4,(x,y)=>[x*4,y*4],position);assert.equal(separate.length,3);assert.ok(separate.every(g=>g.members.length===1));

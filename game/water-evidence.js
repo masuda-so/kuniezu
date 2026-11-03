@@ -11,17 +11,25 @@
  TK.RESEARCH_SOURCES.kasumiTransition={author:'国土交通省関東地方整備局 霞ヶ浦河川事務所',title:'霞ヶ浦の歴史・治水対策',url:'https://www.ktr.mlit.go.jp/kasumi/kasumi00771.html',locator:'霞ヶ浦の歴史・利根川東遷事業',scope:'現在に近い姿は江戸時代中期。17世紀中頃の海との連絡悪化・淡水化と、戦国期の入江を区別する。8世紀の面積2〜3倍という説明を16世紀へ転用しない。',accessed:'2026-10-31'};
  // 関東低地全体を一つの湖にしていた旧ポリゴンを取り除く。
  const {K,CX,LON0,LAT0}=TKGEO;
+ // 旧塩津潟の概略輪郭は新発田城本丸まで覆う。水域名だけを残す。
+ TKGEO.lakes=TKGEO.lakes.filter(([ring])=>!(ring.length===26&&ring[0]===1645.8&&ring[1]===751.4));
+ // 新発田の領域にも旧塩津潟用の穴が別にある。南西側の別の潟の穴は保持する。
+ TKGEO.terr.shibata=TKGEO.terr.shibata.map(([outer,...holes])=>[
+  outer,...holes.filter(ring=>!(ring.length===30&&ring[0]===1635&&ring[1]===759.4))
+ ]);
  TKGEO.lakes=TKGEO.lakes.filter(poly=>{const p=poly[0],xs=p.filter((_,i)=>i%2===0).map(x=>x/K/CX+LON0),ys=p.filter((_,i)=>i%2).map(y=>LAT0-y/K);return !(Math.min(...xs)>139&&Math.max(...xs)<141&&Math.max(...ys)<36.5&&Math.max(...xs)-Math.min(...xs)>1);});
  // 実在の古水域と、未検証の輪郭を分離。見沼の1629年の溜井を先取りしない。
  const historic=[
   {id:'iinuma',name:'飯沼',at:[139.947,36.13],kind:'lake',label:'飯沼（湖岸未確定）',author:'坂東市立坂東郷土館ミューズ',title:'ミューズ企画展「飯沼新田物語」',url:'https://www.city.bando.lg.jp/page/page002762.html',scope:'享保年間の干拓以前の沼。現在の3市1町にまたがる。旧表示の7頂点の輪郭は史料から復元したものではない。'},
   {id:'minuma',name:'見沼',at:[139.70,35.90],kind:'marsh',label:'見沼（沼沢地・概略）',author:'さいたま市図書館',title:'中央図書館 見沼田んぼコーナー',url:'https://www.lib.city.saitama.jp/contents?5=&pid=133',scope:'江戸初期まで沼沢地。1629年に八丁堤で溜井化。対象時代の水面範囲は未確定で、溜井完成形として表示しない。'},
-  {id:'tsubaki',name:'椿海',at:[140.60,35.74],kind:'lake',label:'椿海（湖岸未確定）',author:'千葉県海匝農業事務所',title:'干潟干拓の歴史',url:'https://www.pref.chiba.lg.jp/ap-kaisou/kaisou/kibanseibi/higata.html',scope:'1670年の干拓と旭・匝瑳・東庄の旧湖。旧表示の6頂点の輪郭を確定湖岸とは扱わない。'}
+  {id:'tsubaki',name:'椿海',at:[140.60,35.74],kind:'lake',label:'椿海（湖岸未確定）',author:'千葉県海匝農業事務所',title:'干潟干拓の歴史',url:'https://www.pref.chiba.lg.jp/ap-kaisou/kaisou/kibanseibi/higata.html',scope:'1670年の干拓と旭・匝瑳・東庄の旧湖。旧表示の6頂点の輪郭を確定湖岸とは扱わない。'},
+  {id:'shiunji',name:'塩津潟',at:[139.35,38.02],kind:'lake',label:'塩津潟（湖岸未確定）',labelOnly:true,author:'新潟県教育委員会・新潟県埋蔵文化財調査事業団',title:'野中土手付遺跡・砂山中道下遺跡',url:'https://sitereports.nabunken.go.jp/files/attach/33/33132/24225_1_%E9%87%8E%E4%B8%AD%E5%9C%9F%E6%89%8B%E4%BB%98%E9%81%BA%E8%B7%A1%E7%A0%82%E5%B1%B1%E4%B8%AD%E9%81%93%E4%B8%8B%E9%81%BA%E8%B7%A1.pdf',scope:'8〜9頁。南岸の集落と自然堤防、干拓前の潟。ラベルは概略位置。'}
  ];
  TK.HISTORIC_WATERS=[];
  for(const h of historic){
   const poly=TKGEO.lakes.find(poly=>{const r=poly[0],xs=r.filter((_,i)=>i%2===0).map(x=>x/K/CX+LON0),ys=r.filter((_,i)=>i%2).map(y=>LAT0-y/K);return h.at[0]>Math.min(...xs)&&h.at[0]<Math.max(...xs)&&h.at[1]>Math.min(...ys)&&h.at[1]<Math.max(...ys);});
-  if(poly){const traced=h.id==='tsubaki'&&TK.TSUBAKI_LAKE;const shape=traced?traced.rings.map(r=>r.flatMap(([lo,la])=>[(lo-LON0)*K*CX,(LAT0-la)*K])):poly;TK.HISTORIC_WATERS.push({...h,poly:shape,label:traced?'椿海':h.label,shapeSource:traced?'tsubakiGsi':null});TKGEO.lakes=TKGEO.lakes.filter(p=>p!==poly);}
+  if(h.labelOnly)TK.HISTORIC_WATERS.push(h);
+  else if(poly){const traced=h.id==='tsubaki'&&TK.TSUBAKI_LAKE;const shape=traced?traced.rings.map(r=>r.flatMap(([lo,la])=>[(lo-LON0)*K*CX,(LAT0-la)*K])):poly;TK.HISTORIC_WATERS.push({...h,poly:shape,label:traced?'椿海':h.label,shapeSource:traced?'tsubakiGsi':null});TKGEO.lakes=TKGEO.lakes.filter(p=>p!==poly);}
   TK.RESEARCH_SOURCES['water-'+h.id]={author:h.author,title:h.title,url:h.url,locator:'干拓・造成以前の水域と年代',scope:h.scope,accessed:'2026-11-01'};
  }
  TK.WATER_NOTE='湖岸は戦国期の実測復元ではありません。霞ヶ浦周辺の破線は2005年湖岸の比較線です。';

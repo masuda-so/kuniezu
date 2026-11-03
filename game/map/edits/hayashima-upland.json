@@ -1,0 +1,26 @@
+{
+  "id": "hayashima-upland",
+  "layer": "provinces",
+  "baseRevision": "9586ebd2eca904d27a91bd3db6a2816dfd3c246c",
+  "validFrom": [
+    1560,
+    1,
+    1
+  ],
+  "validUntil": [
+    1616,
+    1,
+    1
+  ],
+  "payload": {
+    "file": "../../../data/inputs/kojima-coast-review/hayashima-upland-comparison.geojson",
+    "feature": 0,
+    "fromKey": "sea",
+    "toKey": "castle:bmatsuyama"
+  },
+  "sourceIds": [
+    "tsurusakiJinjacho"
+  ],
+  "basis": "地理院DEMの標高8m連結域と鶴崎神社の由緒",
+  "review": "丘陵の部分補正。期間はゲームの適用範囲で、当時の汀線や個別の領有を示さない。"
+}

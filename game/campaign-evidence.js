@@ -77,8 +77,9 @@ for(const title of records.map(r=>r.title)){const ev=TK.HIST.find(e=>e.title===t
  G.documentedArmies=function(){const out=armies();if(!inPeriod())return out;const {a,b,t}=leg();out.push({id:'documented:ieyasu1600',clan:'tokugawa',gens:[],commanders:['徳川家康'],troops:0,morale:85,train:70,path:['ishiyama','edo'],origin:'ishiyama',seg:0,pos:0,state:t>=time(rows.at(-1))||a.point[0]===b.point[0]&&a.point[1]===b.point[1]?'camp':'march',mission:'show',hist:true,until:t<=time(rows[4])?'小山評定':'関ヶ原の戦い',record,routeSourceIds:record.source,routeNote:record.note});return out;};
  G.visibleNativeArmies=function(){const out=native();if(!inPeriod())return out;return out.flatMap(u=>{if(!isUnit(u))return [u];const gens=u.gens.filter(id=>G.gen(id)?.n!=='徳川家康');return gens.length?[{...u,gens}]:[];});};
  const point=G.historyPoint,geo=G.historyGeometry,phase=G.marchPhase,destination=G.marchDestination;
- G.historyPoint=u=>{if(!isUnit(u)||!inPeriod())return point(u);const {a,b,i,t}=leg(),f=Math.max(0,Math.min(1,(t-time(a))/Math.max(1,time(b)-time(a))));return G.visualPathPoint(geometry(i),f,true);};
- G.historyGeometry=u=>isUnit(u)&&inPeriod()?geometry(leg().i):geo(u);
+ // 前のフレームで取得した行程記録も、時刻変更後は端点に固定して描く。
+ G.historyPoint=u=>{if(u.record!==record&&(!isUnit(u)||!inPeriod()))return point(u);const {a,b,i,t}=leg(),f=Math.max(0,Math.min(1,(t-time(a))/Math.max(1,time(b)-time(a))));return G.visualPathPoint(geometry(i),f,true);};
+ G.historyGeometry=u=>u.record===record||isUnit(u)&&inPeriod()?geometry(leg().i):geo(u);
  G.marchPhase=u=>{if(!isUnit(u)||!inPeriod())return phase(u);if(G.visualTime()>=time(rows.at(-1)))return {key:'camp',name:'関ヶ原着陣'};const {a,b}=leg();return a.point[0]===b.point[0]&&a.point[1]===b.point[1]?{key:'camp',name:a.place+'在陣'}:{key:'march',name:'行軍中'};};
  G.marchDestination=u=>isUnit(u)&&inPeriod()?leg().b.place:destination(u);
  };

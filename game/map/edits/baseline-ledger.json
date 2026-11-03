@@ -1,0 +1,59 @@
+{
+  "baselineCommit": "9586ebd2eca904d27a91bd3db6a2816dfd3c246c",
+  "manifestSha256": "77f88f9acc2bfd024ea3a4d59027ad7359587303de12631983365d05c9dadf6f",
+  "definitionSha256": "8a2178426fe360cc70098f0df9140ac533e4c0d2082fa236be32a15a5133c9e4",
+  "applied": [
+    {
+      "id": "castle-regions",
+      "layer": "provinces",
+      "input": [
+        "castle-regions-data.js",
+        "castle-regions.js"
+      ]
+    },
+    {
+      "id": "bizen-north-shore",
+      "layer": "provinces",
+      "input": [
+        "bizen-north-shore.js"
+      ]
+    }
+  ],
+  "pending": [
+    {
+      "id": "hayashima-upland",
+      "layer": "provinces",
+      "commit": "309c93c",
+      "reason": "専用作業ブランチにのみ実装"
+    },
+    {
+      "id": "japan-rivers-osm",
+      "layer": "rivers",
+      "reason": "領域画像の生成対象外。現代比較線として保持"
+    }
+  ],
+  "controlPixels": [
+    {
+      "point": [
+        133.9,
+        34.64
+      ],
+      "pixel": [
+        10049,
+        12945
+      ],
+      "key": "castle:tenjin"
+    },
+    {
+      "point": [
+        133.81842,
+        34.599915
+      ],
+      "pixel": [
+        9975,
+        12990
+      ],
+      "key": "sea"
+    }
+  ]
+}
