@@ -1,0 +1,101 @@
+{
+  "sourceFile": "shibata58.pdf",
+  "pdfPage": 10,
+  "printedPage": 2,
+  "figure": 1,
+  "sourcePublicationYear": 2019,
+  "sourcePeriod": "干拓以前の旧塩津潟、図単独で対象年の汀線を確定しない",
+  "operation": "Extract PDF filled vector (RGB .936 .937 .938); cubic sampling at <=3 display pixels; two-point similarity registration",
+  "controls": [
+    {
+      "id": "shibata-castle",
+      "name": "新発田城跡",
+      "pixel": [
+        803,
+        2840
+      ],
+      "lonlat": [
+        139.326015,
+        37.954781
+      ],
+      "source": "https://geoshape.ex.nii.ac.jp/nrct-poi/resource/15/150000493200.html"
+    },
+    {
+      "id": "egami",
+      "name": "江上館跡",
+      "pixel": [
+        2043,
+        721
+      ],
+      "lonlat": [
+        139.400047,
+        38.058177
+      ],
+      "source": "https://geoshape.ex.nii.ac.jp/nrct-poi/resource/15/150000481100.html"
+    }
+  ],
+  "independentChecks": [
+    {
+      "id": "sunayama",
+      "name": "砂山中道下遺跡",
+      "pixel": [
+        1446,
+        1749
+      ],
+      "lonlat": [
+        139.36166666666665,
+        38.00972222222222
+      ],
+      "source": "https://sitereports.nabunken.go.jp/ja/24225",
+      "registeredLonLat": [
+        139.36441172003535,
+        38.00801951311636
+      ],
+      "residualMetres": 306.45076760143553
+    },
+    {
+      "id": "sumiyoshi",
+      "name": "住吉遺跡",
+      "pixel": [
+        1052,
+        1925
+      ],
+      "lonlat": [
+        139.3397222222222,
+        38.0008333333333
+      ],
+      "source": "shibata58.pdf PDF308頁 抄録",
+      "registeredLonLat": [
+        139.34040780653675,
+        37.99920991270788
+      ],
+      "residualMetres": 190.4633548962337
+    },
+    {
+      "id": "aota",
+      "name": "青田遺跡",
+      "pixel": [
+        1339,
+        1446
+      ],
+      "lonlat": [
+        139.357222,
+        38.022777
+      ],
+      "source": "https://heritagemap.nabunken.go.jp/statistic/47131-%E9%9D%92%E7%94%B0%E9%81%BA%E8%B7%A1.html",
+      "registeredLonLat": [
+        139.35755369962982,
+        38.022587684399575
+      ],
+      "residualMetres": 35.92746792599147
+    }
+  ],
+  "pixelMetres": 5.382861296112377,
+  "rotationDegrees": 0.9028620514595543,
+  "scaleBarMetresPerPixel": 5.333333333333333,
+  "points": 1510,
+  "areaKm2": 17.50743501171875,
+  "adoption": "comparison-only",
+  "reason": "未使用地点差36〜307m。1645/1721/1733干拓前の範囲比較には使うが、1560〜1615の確定汀線として直接適用しない。",
+  "recommendedNext": "戦国期水域は中心低地の存在・中世自然堤防の除外を保ち、図の西南岸・東南岸を地質記録と局所登録する。"
+}

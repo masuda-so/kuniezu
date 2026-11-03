@@ -1,0 +1,74 @@
+{
+  "schemaVersion": 1,
+  "coordinateOrder": "longitude-latitude",
+  "observations": [
+    {
+      "id": "sunayama-medieval-land",
+      "lonlat": [
+        139.36166666666665,
+        38.00972222222222
+      ],
+      "type": "land-observation",
+      "period": [
+        1300,
+        1400
+      ],
+      "datePrecision": "century",
+      "source": "niigata164-excerpt.pdf",
+      "locator": "原本本文9頁・抄録",
+      "restriction": "中世集落が自然堤防上に立地。1560〜1615の日別の水陸変遷は未確定。"
+    },
+    {
+      "id": "sumiyoshi-settlement",
+      "lonlat": [
+        139.3397222222222,
+        38.0008333333333
+      ],
+      "type": "land-observation",
+      "period": [
+        1150,
+        1400
+      ],
+      "datePrecision": "archaeological-period",
+      "source": "shibata58-excerpt.pdf",
+      "locator": "原本本文1頁・抄録",
+      "restriction": "調査区の集落。遺跡全域・戦国時代全期間の陸地を推定生成しない。"
+    },
+    {
+      "id": "nonaka-medieval-water",
+      "lonlat": [
+        139.36416666666665,
+        37.99888888888889
+      ],
+      "type": "water-deposit-observation",
+      "period": [
+        1300,
+        1500
+      ],
+      "datePrecision": "centuries",
+      "source": "https://niigata-u.repo.nii.ac.jp/record/28031/files/20_81-104.pdf",
+      "locator": "88〜91頁 図5a",
+      "restriction": "Web本文照合、PDF直接取得503。湖成堆積とされる層。16世紀の特定年の水深・水際は未確定。"
+    },
+    {
+      "id": "takabatake-cut",
+      "period": [
+        1698,
+        1699
+      ],
+      "type": "later-engineering",
+      "source": "https://www.pref.niigata.lg.jp/sec/shibata_noson/1356833203513.html",
+      "restriction": "北の胎内川への開削。ゲーム時代へ遡及不可。"
+    },
+    {
+      "id": "chojabori-cut",
+      "period": [
+        1721,
+        1722
+      ],
+      "type": "later-engineering",
+      "source": "https://www.pref.niigata.lg.jp/sec/shibata_noson/1356833203513.html",
+      "restriction": "海側の砂丘を貫く排水路。ゲーム時代へ遡及不可。"
+    }
+  ]
+}
