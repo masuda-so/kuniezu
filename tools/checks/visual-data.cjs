@@ -16,4 +16,8 @@ for(const point of require('../../data/verification/shiunji/land-points.json').p
  const location=G.PJ(point.longitude,point.latitude);
  assert.ok(!TKGEO.lakes.some(poly=>poly.reduce((wet,ring)=>wet!==inside(location,ring),false)),point.id+' must not be inside a solid lake');
 }
+const shibata=TKGEO.terr.shibata[0];
+const inShibata=point=>shibata.reduce((included,ring)=>included!==inside(point,ring),false);
+assert.ok(inShibata([1638,755]),'old Shiunji cutout must not leave an unpainted land patch');
+assert.ok(!inShibata([1626,773]),'other lagoon cutout must remain');
 console.log('PASS: land anchors, revised road waypoints and Shiunji land points');

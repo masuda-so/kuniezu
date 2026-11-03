@@ -13,6 +13,10 @@
  const {K,CX,LON0,LAT0}=TKGEO;
  // 旧塩津潟の概略輪郭は新発田城本丸まで覆う。水域名だけを残す。
  TKGEO.lakes=TKGEO.lakes.filter(([ring])=>!(ring.length===26&&ring[0]===1645.8&&ring[1]===751.4));
+ // 新発田の領域にも旧塩津潟用の穴が別にある。南西側の別の潟の穴は保持する。
+ TKGEO.terr.shibata=TKGEO.terr.shibata.map(([outer,...holes])=>[
+  outer,...holes.filter(ring=>!(ring.length===30&&ring[0]===1635&&ring[1]===759.4))
+ ]);
  TKGEO.lakes=TKGEO.lakes.filter(poly=>{const p=poly[0],xs=p.filter((_,i)=>i%2===0).map(x=>x/K/CX+LON0),ys=p.filter((_,i)=>i%2).map(y=>LAT0-y/K);return !(Math.min(...xs)>139&&Math.max(...xs)<141&&Math.max(...ys)<36.5&&Math.max(...xs)-Math.min(...xs)>1);});
  // 実在の古水域と、未検証の輪郭を分離。見沼の1629年の溜井を先取りしない。
  const historic=[
