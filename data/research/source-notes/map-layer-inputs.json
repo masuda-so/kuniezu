@@ -1,0 +1,259 @@
+{
+  "schemaVersion": 1,
+  "reviewedAt": "2026-11-03",
+  "purpose": "全域heightmap.png/rivers.png正本の入力監査。生成案であり全域画像の生成完了ではない。",
+  "sharedTreeReadOnly": "/Users/masudaso/Desktop/天下分け目の国絵図",
+  "codeChanges": false,
+  "serverOperations": false,
+  "downloads": false,
+  "grid": {
+    "path": "/Users/masudaso/Desktop/天下分け目の国絵図/game/map_data/projection.json",
+    "sha256": "04bd30868c1f5a9420b308d318d606a95d1158c23a8e6f18b3f7ecfe6b01466a",
+    "width": 20782,
+    "height": 24288,
+    "pixels": 504753216,
+    "origin": [
+      -1045,
+      -903.8965145526411
+    ],
+    "stepUnits": 0.17966223499820339,
+    "stepMetres": 100,
+    "lonLatBounds": [
+      122.7415448175636,
+      24.451300754581386,
+      145.81733057789472,
+      46.26948257276321
+    ],
+    "currentManifest": "/Users/masudaso/Desktop/天下分け目の国絵図/game/map/manifest.json",
+    "currentManifestSha256": "b2a9421197ded4b08b522c40a9fd2472bacac517166dc3d30a3fab64e6bd303f",
+    "sameProjectionAndDimensionsAsCurrentManifest": true,
+    "rawU16Bytes": 1009506432
+  },
+  "heightInputs": {
+    "path": "/Users/masudaso/Desktop/天下分け目の国絵図/.cache/copernicus-dem-90m",
+    "fileCount": 239,
+    "fileBytes": 681184723,
+    "sha256Sums": "/Users/masudaso/Desktop/天下分け目の国絵図/.cache/copernicus-dem-90m/SHA256SUMS",
+    "sha256SumsDigest": "61d3bcc4172ac459de1b8ea34308824a4d12b8f834a0ae2f4b4ae12e31359806",
+    "allHashesMatch": true,
+    "allGeoTIFFTagsMatch": true,
+    "sourceMode": "float32",
+    "sourceShape": [
+      1200,
+      1200
+    ],
+    "sourceEPSG": 4326,
+    "sourceRasterType": "PixelIsPoint",
+    "sourceStepDegrees": 0.0008333333333333334,
+    "sourceFiniteSamples": 344160000,
+    "sourceNonfiniteSamples": 0,
+    "sourceMinMetres": -326.99853515625,
+    "sourceMaxMetres": 3754.667236328125,
+    "sourceSamplesOutsideExistingEncoding": 0,
+    "legacyTemporaryOutputPresent": false,
+    "newWholeHeightImageCanBeMadeWithoutDownload": true,
+    "metadata": {
+      "source": "https://dataspace.copernicus.eu/explore-data/data-collections/copernicus-contributing-missions/collections-description/COP-DEM",
+      "product": "COP-DEM-GLO-90-F",
+      "acquired": "2026-11-03",
+      "license": "https://dataspace.copernicus.eu/sites/default/files/media/files/2025-06/copernicus_contributing_mission_data_access_v2_cop_dem_licenses.pdf",
+      "notice": "produced using Copernicus WorldDEM™-90 © DLR e.V. 2010-2014 and © Airbus Defence and Space GmbH 2014-2018 provided under COPERNICUS by the European Union and ESA; all rights reserved",
+      "disclaimer": "The organisations in charge of the Copernicus programme by law or by delegation do not incur any liability for any use of the Copernicus WorldDEM™-90"
+    },
+    "currentLandFootprintCoverage": {
+      "scope": "全現行100m領域タイルを読み、入力1度フットプリントに含まれるか比較。出力PNG再生成の検査ではない。",
+      "landPixels": 111104186,
+      "landOutsideInputs": 28,
+      "assignedLandOutsideInputs": 0,
+      "missingTile": "15-17",
+      "missingInput": "Copernicus_DSM_COG_30_N29_00_E140_00_DEM.tif",
+      "location": "孀婦岩付近の未割当陸。海や0mで埋めずNoDataを保持。"
+    }
+  },
+  "heightGenerationPlan": {
+    "reuseGenerator": "tools/map/build-copernicus-height.py",
+    "existingInputContract": [
+      "grid manifest with projection/width/height/tile/levels",
+      "local GeoTIFF directory with SHA256SUMS",
+      "new output directory",
+      "--acquired YYYY-MM-DD",
+      "--factor 1|4|8"
+    ],
+    "existingOutput": "16-bit grayscale elevation tiles plus manifest.json",
+    "proposedOutput": "same grid single heightmap.png plus encoding/source metadata; derived hillshade tiles remain caches",
+    "encoding": {
+      "pngColorType": 0,
+      "pngBitDepth": 16,
+      "noData": 0,
+      "offsetMetres": -500,
+      "codesPerMetre": 4,
+      "encode": "round((metres + 500) * 4) + 1",
+      "decode": "-500 + (code - 1) / 4",
+      "quantizationMaxErrorMetres": 0.125,
+      "accuracyNote": "0.25m量子化は原DEMの実測精度を意味しない。Copernicus DSMを戦国期地形や裸地標高と同一視しない。"
+    },
+    "neededChanges": [
+      "既存生成器へ単一PNG出力を追加。新しい別生成器を増やさない。",
+      "projection.jsonを正本契約として受け取るか、既存manifestとの同一性を確認して入力する。現在は両格子が一致。",
+      "全面U16配列は約1.01GB。タイル/行帯を順に書く出力でピークメモリを抑える。",
+      "NoDataと0mを区別。入力がない海を海底標高として捏造しない。",
+      "元入力239ハッシュ・取得日・通知/免責・符号化・投影SHAを出力へ保持。",
+      "旧coverage検査はgame/map/definition.csvの旧ヘッダーに依存。現在のmap_data/definition.csvとdefault.map分類を読むよう修正が必要。"
+    ],
+    "forbidden": [
+      "relief WebP or hillshade PNG to elevation inversion",
+      "claiming CK3 editor compatibility without a load test"
+    ]
+  },
+  "riverInputs": {
+    "currentRenderedInputAudit": {
+      "method": "read-only diagnostic Bresenham; same current runtime input selection; overlapping groups are candidates, not errors",
+      "lineRecords": 643,
+      "uniqueGroups": 143,
+      "vertices": 21749,
+      "rasterPixels": 97183,
+      "outsideGridVertices": 96,
+      "crossGroupPixels": 125,
+      "crossGroupExamples": [
+        {
+          "pixel": "7679,15888",
+          "names": [
+            "geo:5",
+            "geo:6"
+          ]
+        },
+        {
+          "pixel": "9212,14558",
+          "names": [
+            "geo:20",
+            "geo:21"
+          ]
+        },
+        {
+          "pixel": "13339,12635",
+          "names": [
+            "geo:54",
+            "geo:55"
+          ]
+        },
+        {
+          "pixel": "13864,12390",
+          "names": [
+            "大井川",
+            "geo:58"
+          ]
+        },
+        {
+          "pixel": "13864,12386",
+          "names": [
+            "大井川",
+            "geo:58"
+          ]
+        },
+        {
+          "pixel": "13867,12386",
+          "names": [
+            "大井川",
+            "geo:58"
+          ]
+        },
+        {
+          "pixel": "13872,12387",
+          "names": [
+            "大井川",
+            "geo:58"
+          ]
+        },
+        {
+          "pixel": "13873,12387",
+          "names": [
+            "大井川",
+            "geo:58"
+          ]
+        }
+      ],
+      "sourceSHA256": {
+        "geo.js": "cfe6cbae3b1fd022b2109f2c4c0504ccb05b1f8be395be9ca8fecebfc4c3e202",
+        "regional-rivers.js": "1f5efcddc658229f9da9c41a48db13a45a2ed10fff8c64d5f35e7e80a4a9a235",
+        "korean-rivers-major.js": "d3b1819262b887d1436deb899d08da22c53b5eb86a64396e9ca0597fda5cc0ec",
+        "japan-rivers-osm.js": "b65370150932bc5210db0ac9ddb4f4a067c51e251a703ceed60427c8bf700ad5",
+        "hydrography-policy.js": "d57ea71c83cfc18e157e445d8ab7662141cef91cbe19cb7499b02e1c07a7d861"
+      }
+    },
+    "currentSourceFiles": [
+      "game/geo.js",
+      "game/regional-rivers.js",
+      "game/korean-rivers-major.js",
+      "game/japan-rivers-osm.js",
+      "game/hydrography-policy.js"
+    ],
+    "componentCounts": {
+      "geoRiverLinesBeforeFilter": 133,
+      "geoRiverPointsBeforeFilter": 4244,
+      "regionalRecordsBeforeGrouping": 7,
+      "regionalPointsBeforeReplacement": 1147,
+      "koreanSelectedSections": 344,
+      "koreanSelectedPoints": 14447,
+      "japanOsmSections": 172,
+      "japanOsmNames": [
+        "天竜川",
+        "大井川"
+      ]
+    },
+    "historyStatus": "現代河道の参照データ。これをラスタ化しても1560〜1615年の全河道を検証したことにはならない。",
+    "structuredJapanInput": "/Users/masudaso/Desktop/天下分け目の国絵図/data/inputs/japan-rivers-review/tenryu-oi-modern.json",
+    "availableTemporaryShapefile": "/private/tmp/kuniezu-japan-waterways/261031/kansai/gis_osm_waterways_free_1.shp",
+    "temporaryShapefileRole": "追加比較用。既存ゲームで採用済みの入力とは別。",
+    "sourceAttribution": {
+      "japanOsm": "OpenStreetMap contributors / Geofabrik Chubu 2026-10-31, ODbL 1.0",
+      "koreaOsm": "OpenStreetMap contributors / Geofabrik, ODbL 1.0; major selection from retained detail input",
+      "regional": "Natural Earth river centerlines; public domain",
+      "geo": "既存投影線。個別名称・出典IDを失っている線があり、移行時に入力ファイルSHAと旧線indexを保持する。"
+    }
+  },
+  "riverGenerationPlan": {
+    "reuseGenerator": "tools/map/build-river-raster.py",
+    "existingInputContract": [
+      "grid manifest",
+      "JSON with basis/source/license/attribution/rivers[]",
+      "each row: id/part/name/points"
+    ],
+    "existingOutput": "8-bit grayscale feature-ID tiles plus manifest.json; 0=no river, maximum255 named IDs",
+    "newWholeRiverImageCanBeMadeFromExistingLines": true,
+    "existingGeneratorWorksUnmodifiedForWholeInput": false,
+    "problems": [
+      "遼河96頂点が西端より外。現行生成器は1点でも範囲外なら停止。線分クリップが必要であり点だけ削除すると人工直線になる。",
+      "別河川/旧比較線の接触125画素を診断。現行生成器は別ID重なりで停止する。合流点と重複流路を区別する。",
+      "大井川の詳細OSMとgeo.js概略線の重複候補が存在する。現在の描画入力をそのまま焼く前に同川を重複除去する。",
+      "朝鮮行にはpartがなく、geo.js線にはname/id/partがない。安定した出典付きIDへ正規化する。",
+      "現行143群なら8bit以内だが、無名河川を同一名で統合しない。全詳細/将来地域追加には255制限への対応が必要。",
+      "現在の符号化はCK3の河川パレットではない。名称だけrivers.pngへ変更して公式互換としない。"
+    ],
+    "neededChanges": [
+      "既存生成器へ共通格子で単一PNGを出力する選択肢を追加。",
+      "河川中心線ID層を維持する場合、合流画素の複数所属を別表に保持するか共通水系IDとする契約を先に決める。",
+      "真の川幅が入力にないため1画素中心線を100m幅の川岸と解釈しない。",
+      "段差を防ぐ線分ラスタ化と境界クリップを全地域共通にし、タイル/全体生成が同画素になるか検査。",
+      "出典・現代比較区分・個別入力SHAをマニフェストへ保持。"
+    ]
+  },
+  "relatedExistingTools": [
+    {
+      "path": "tools/map/build-height-raster.py",
+      "role": "保有GSI/Terrarium z/x/y PNGを同格子U16タイルへ。全域入力はここにはない。"
+    },
+    {
+      "path": "tools/map/build-hillshade-raster.py",
+      "role": "U16標高から描画専用RGBA陰影。逆方向の入力ではない。"
+    },
+    {
+      "path": "tools/map/encode-relief-webp.cjs",
+      "tree": "shared",
+      "role": "陰影PNGの配布用WebP変換。標高正本の作成には使わない。"
+    },
+    {
+      "path": "tools/checks/elevation-coverage.py",
+      "role": "標高/陰影/領域のカバレッジ照合。旧definition.csv形式の更新が必要。"
+    }
+  ]
+}
