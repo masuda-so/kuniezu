@@ -3,7 +3,7 @@
    差分の中身は二通り。
    ・面（payload.file＋feature）：GeoJSON の多角形の内側に画素中心が入る所を fromKey から toKey へ置き換える（旧 Python 版と同じ規則）。
    ・型紙（payload.mask＋window）：100m 格子の窓 [列,行,幅,高さ] に合わせた PNG。画素の値 n（G が上位、B が下位）が 1 以上なら keys[n-1] を書く。
-     from が 'land' なら元の画素が陸、'sea' なら海であることを確かめる。
+     from が 'land' なら元の画素が陸、'sea' なら海、'key:区画キー' なら元の区画キーも一致することを確かめる。
    同じ版の中で書き込みが重なる差分、基準版に適用済みの ID、元の値の食い違いは止める。400m・800m は基準版と同じく画素中心の最近傍。
    全部の版を作り終えてから一時置き場に書き、置き場ごと入れ替える（途中で止まっても配信中の版を壊さない）。
    実行：node --max-old-space-size=6000 tools/map/build-province-edits.cjs   （検査からは build({mapDir, md, editsDir, compiledDir}) を呼ぶ）

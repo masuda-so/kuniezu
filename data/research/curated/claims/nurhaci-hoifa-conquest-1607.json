@@ -1,0 +1,22 @@
+{
+  "id": "nurhaci-hoifa-conquest-1607",
+  "entity": "person:ヌルハチ",
+  "predicate": "hoifa-conquest",
+  "value": "1607年にホイファを併合した。",
+  "validYears": [
+    1607,
+    1607
+  ],
+  "datePrecision": "year",
+  "source": "jurchenNikh",
+  "sourceUrl": "https://contents.history.go.kr/mobile/kc/view.do?code=kc_age_30&levelId=kc_n303310",
+  "locator": "2 여진을 통일하다",
+  "gameBindings": [
+    "game/liaodong-context.js",
+    "TK.contextRegionPresentation"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-03",
+  "uncertainty": "精密な当日の領域ポリゴンや統治完了日は含まない。"
+}

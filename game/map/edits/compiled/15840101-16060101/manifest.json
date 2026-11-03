@@ -1,0 +1,181 @@
+{
+  "generated": "tools/map/build-province-edits.cjs",
+  "baseRevision": "liaodong-1560-source-v1",
+  "baseProvincesSha256": "9e27144aa9c953299567fd3719d3ad413ea1f496ad03a097e1e25b2c6eb1a03d",
+  "date": "1584-01-01",
+  "versions": [
+    {
+      "id": "15840101-16060101",
+      "period": [
+        [
+          1584,
+          1,
+          1
+        ],
+        [
+          1606,
+          1,
+          1
+        ]
+      ],
+      "edits": [
+        "kojima-bay-ukita-land-from-1584",
+        "ming-kuandian-1573-1605-reference"
+      ],
+      "sha256": "038c428ac01c911cdea801e70345c6ca718287ea8e0efbd0783c60d5869b82d9"
+    }
+  ],
+  "editPixels": {
+    "kojima-bay-ukita-land-from-1584": 366,
+    "ming-kuandian-1573-1605-reference": 217799
+  },
+  "tiles": [
+    {
+      "file": "provinces/1-5@15840101-16060101.png",
+      "factor": 1,
+      "col": 1,
+      "row": 5,
+      "period": [
+        [
+          1584,
+          1,
+          1
+        ],
+        [
+          1606,
+          1,
+          1
+        ]
+      ],
+      "width": 1024,
+      "height": 1024,
+      "sha256": "29c82fa4c84c0e8eda86d599c3d4bca251351a6ee42c065db2d84f77578f419a"
+    },
+    {
+      "file": "provinces/1-6@15840101-16060101.png",
+      "factor": 1,
+      "col": 1,
+      "row": 6,
+      "period": [
+        [
+          1584,
+          1,
+          1
+        ],
+        [
+          1606,
+          1,
+          1
+        ]
+      ],
+      "width": 1024,
+      "height": 1024,
+      "sha256": "87f5493860f9c0d8e0002ecd5280967f259879fe205f82e3260c8cf0b4fb01e7"
+    },
+    {
+      "file": "provinces/9-12@15840101-16060101.png",
+      "factor": 1,
+      "col": 9,
+      "row": 12,
+      "period": [
+        [
+          1584,
+          1,
+          1
+        ],
+        [
+          1606,
+          1,
+          1
+        ]
+      ],
+      "width": 1024,
+      "height": 1024,
+      "sha256": "21e677f982ba064de2fc9d267a9ef15d6016f6caeb7987906590bd59d8db057e"
+    },
+    {
+      "file": "provinces-4/0-1@15840101-16060101.png",
+      "factor": 4,
+      "col": 0,
+      "row": 1,
+      "period": [
+        [
+          1584,
+          1,
+          1
+        ],
+        [
+          1606,
+          1,
+          1
+        ]
+      ],
+      "width": 1024,
+      "height": 1024,
+      "sha256": "a051f8168e1023e6859ae75f7b2586fd4e718f407ae3660fdcf301e4008b6969"
+    },
+    {
+      "file": "provinces-4/2-3@15840101-16060101.png",
+      "factor": 4,
+      "col": 2,
+      "row": 3,
+      "period": [
+        [
+          1584,
+          1,
+          1
+        ],
+        [
+          1606,
+          1,
+          1
+        ]
+      ],
+      "width": 1024,
+      "height": 1024,
+      "sha256": "fac71603b1b096fea7a0c37da4bf396211333119877789581e770cef122dbb98"
+    },
+    {
+      "file": "provinces-8/0-0@15840101-16060101.png",
+      "factor": 8,
+      "col": 0,
+      "row": 0,
+      "period": [
+        [
+          1584,
+          1,
+          1
+        ],
+        [
+          1606,
+          1,
+          1
+        ]
+      ],
+      "width": 1024,
+      "height": 1024,
+      "sha256": "24b412cd54bef497bf02fb74b90da1bb4b27f7cb8742dde736cd94e7a9b51dd7"
+    },
+    {
+      "file": "provinces-8/1-1@15840101-16060101.png",
+      "factor": 8,
+      "col": 1,
+      "row": 1,
+      "period": [
+        [
+          1584,
+          1,
+          1
+        ],
+        [
+          1606,
+          1,
+          1
+        ]
+      ],
+      "width": 1024,
+      "height": 1024,
+      "sha256": "4506bf42119c4d3535b414b96fb1ffcd9f4c6cbeccbba19cee637255eacb28e3"
+    }
+  ]
+}

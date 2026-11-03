@@ -1,0 +1,22 @@
+{
+  "id": "liaoyang-ming-military-seat",
+  "entity": "site:遼陽",
+  "predicate": "administrative-seat",
+  "value": "明の遼東都司は遼陽を拠点とした。",
+  "validYears": [
+    1560,
+    1615
+  ],
+  "datePrecision": "year",
+  "source": "liaodongMuseum",
+  "sourceUrl": "https://www.lnlymuseum.com/case/detail/id/8.html",
+  "locator": "第二単元 九辺之首／第三単元 興邦之地",
+  "gameBindings": [
+    "game/liaodong-context.js",
+    "TK.contextRegionPresentation"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-03",
+  "uncertainty": "城壁の位置・領域の精密境界や月日をこの命題で確定しない。"
+}

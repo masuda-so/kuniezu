@@ -1,0 +1,425 @@
+{
+  "schemaVersion": 1,
+  "source": {
+    "id": "lee-2014-fig1",
+    "url": "https://ming.cnhis.ncnu.edu.tw/wp-content/uploads/2014/11/ming23_04Lee_full.pdf",
+    "pdfPageOneBased": 11,
+    "pixelSize": [
+      2382,
+      1684
+    ],
+    "renderScale": 2,
+    "pdfSha256": "c3f99d3e082618da3232c95831ecfe8f94640b294e25bee9ae4fda6bb2c1b750",
+    "topologyComparison": {
+      "id": "quanliaozhi-1565-fig2",
+      "pdfPageOneBased": 12,
+      "date": 1565,
+      "notGeorectified": true,
+      "reason": "方位/縮尺が不均一な絵図。地形形状を直接移植せず衛所の内外関係だけ照合。"
+    }
+  },
+  "method": "2D thin-plate spline of source pixels using 9 historical place controls; original symbol baseline curvature retained; gaps interpolated explicitly",
+  "controlPoints": [
+    {
+      "id": "liaoyang",
+      "name": "遼陽（遼東都司）",
+      "sourcePixel": [
+        1273,
+        697
+      ],
+      "sourceLonLat": [
+        123.1782,
+        41.2645
+      ],
+      "sourceCrs": "GRS67 (DILA source label; geodetic datum not specified)",
+      "approxWgs84LonLat": [
+        123.1782,
+        41.2645
+      ],
+      "positionAllowanceKm": 1,
+      "period": "明",
+      "url": "https://authority.dila.edu.tw/place/search.php?code=PL000000007642"
+    },
+    {
+      "id": "shenyang",
+      "name": "瀋陽中衛",
+      "sourcePixel": [
+        1372,
+        529
+      ],
+      "sourceLonLat": [
+        123.4301,
+        41.7869
+      ],
+      "sourceCrs": "GRS67 (DILA source label; geodetic datum not specified)",
+      "approxWgs84LonLat": [
+        123.4301,
+        41.7869
+      ],
+      "positionAllowanceKm": 1,
+      "period": "明",
+      "url": "https://authority.dila.edu.tw/place/search.php?code=PL000000007083"
+    },
+    {
+      "id": "fushun",
+      "name": "撫順所",
+      "sourcePixel": [
+        1481,
+        509
+      ],
+      "sourceLonLat": [
+        123.9101,
+        41.8828
+      ],
+      "sourceCrs": "GRS67 (DILA source label; geodetic datum not specified)",
+      "approxWgs84LonLat": [
+        123.9101,
+        41.8828
+      ],
+      "positionAllowanceKm": 1,
+      "period": "明",
+      "url": "https://authority.dila.edu.tw/place/search.php?code=PL000000007281"
+    },
+    {
+      "id": "kaiyuan",
+      "name": "開原（三万衛）",
+      "sourcePixel": [
+        1485,
+        331
+      ],
+      "sourceLonLat": [
+        124.0899,
+        42.598
+      ],
+      "sourceCrs": "GRS67 (DILA source label; geodetic datum not specified)",
+      "approxWgs84LonLat": [
+        124.0899,
+        42.598
+      ],
+      "positionAllowanceKm": 1,
+      "period": "明",
+      "url": "https://authority.dila.edu.tw/place/search.php?code=PL000000007767"
+    },
+    {
+      "id": "tieling",
+      "name": "鉄嶺衛",
+      "sourcePixel": [
+        1442,
+        398
+      ],
+      "sourceLonLat": [
+        123.8582,
+        42.2941
+      ],
+      "sourceCrs": "GRS67 (DILA source label; geodetic datum not specified)",
+      "approxWgs84LonLat": [
+        123.8582,
+        42.2941
+      ],
+      "positionAllowanceKm": 1,
+      "period": "明",
+      "url": "https://authority.dila.edu.tw/place/search.php?code=PL000000007694"
+    },
+    {
+      "id": "haizhou",
+      "name": "海州衛",
+      "sourcePixel": [
+        1179,
+        805
+      ],
+      "sourceLonLat": [
+        122.7604,
+        40.8483
+      ],
+      "sourceCrs": "GRS67 (DILA source label; geodetic datum not specified)",
+      "approxWgs84LonLat": [
+        122.7604,
+        40.8483
+      ],
+      "positionAllowanceKm": 1,
+      "period": "明",
+      "url": "https://authority.dila.edu.tw/place/search.php?code=PL000000007276"
+    },
+    {
+      "id": "qinghe",
+      "name": "清河堡",
+      "sourcePixel": [
+        1519,
+        640
+      ],
+      "sourceLonLat": [
+        124.2309,
+        41.4582
+      ],
+      "sourceCrs": "GRS67 (DILA source label; geodetic datum not specified)",
+      "approxWgs84LonLat": [
+        124.2309,
+        41.4582
+      ],
+      "positionAllowanceKm": 1,
+      "period": "明",
+      "url": "https://authority.dila.edu.tw/place/search.php?code=PL000000007323"
+    },
+    {
+      "id": "fenghuang",
+      "name": "鳳凰城",
+      "sourcePixel": [
+        1514,
+        921
+      ],
+      "sourceLonLat": [
+        124.0762,
+        40.4543
+      ],
+      "sourceCrs": "GRS67 (DILA source label; geodetic datum not specified)",
+      "approxWgs84LonLat": [
+        124.0762,
+        40.4543
+      ],
+      "positionAllowanceKm": 1,
+      "period": "清の代表点。同名南方地点PL7400は不採用。",
+      "url": "https://authority.dila.edu.tw/place/search.php?code=PL000000007392",
+      "samePlaceSupport": {
+        "source": "dalian-library-baqi-1991",
+        "locator": "本文104頁（PDF106頁）鳳城満族自治県",
+        "url": "https://www.dl-library.net.cn/wenxian/wszl/8q.pdf",
+        "meaning": "明の鳳凰城堡と後世県治の地名連続を照合。城壁全体の同一性ではない。"
+      }
+    },
+    {
+      "id": "uiju",
+      "name": "義州",
+      "sourcePixel": [
+        1644,
+        987
+      ],
+      "sourceLonLat": [
+        124.5568,
+        40.2094
+      ],
+      "sourceCrs": "GRS67 (DILA source label; geodetic datum not specified)",
+      "approxWgs84LonLat": [
+        124.5568,
+        40.2094
+      ],
+      "positionAllowanceKm": 1,
+      "period": "朝鮮",
+      "url": "https://authority.dila.edu.tw/place/search.php?code=PL000000048565"
+    }
+  ],
+  "leaveOneOut": [
+    {
+      "id": "liaoyang",
+      "estimated": [
+        123.10907532029556,
+        41.218002178836215
+      ],
+      "reference": [
+        123.1782,
+        41.2645
+      ],
+      "errorKm": 7.764
+    },
+    {
+      "id": "shenyang",
+      "estimated": [
+        123.52393755912837,
+        41.81539234042706
+      ],
+      "reference": [
+        123.4301,
+        41.7869
+      ],
+      "errorKm": 8.408
+    },
+    {
+      "id": "fushun",
+      "estimated": [
+        124.0042168736721,
+        41.89314730928961
+      ],
+      "reference": [
+        123.9101,
+        41.8828
+      ],
+      "errorKm": 7.884
+    },
+    {
+      "id": "kaiyuan",
+      "estimated": [
+        124.1068030496066,
+        42.55262602415504
+      ],
+      "reference": [
+        124.0899,
+        42.598
+      ],
+      "errorKm": 5.238
+    },
+    {
+      "id": "tieling",
+      "estimated": [
+        123.80393577198679,
+        42.30758971007422
+      ],
+      "reference": [
+        123.8582,
+        42.2941
+      ],
+      "errorKm": 4.713
+    },
+    {
+      "id": "haizhou",
+      "estimated": [
+        122.7937157427304,
+        40.89026056148733
+      ],
+      "reference": [
+        122.7604,
+        40.8483
+      ],
+      "errorKm": 5.448
+    },
+    {
+      "id": "qinghe",
+      "estimated": [
+        124.05811677290792,
+        41.43817825145671
+      ],
+      "reference": [
+        124.2309,
+        41.4582
+      ],
+      "errorKm": 14.588
+    },
+    {
+      "id": "fenghuang",
+      "estimated": [
+        124.1113872081999,
+        40.451509428197
+      ],
+      "reference": [
+        124.0762,
+        40.4543
+      ],
+      "errorKm": 2.997
+    },
+    {
+      "id": "uiju",
+      "estimated": [
+        124.59092527217479,
+        40.22857359715882
+      ],
+      "reference": [
+        124.5568,
+        40.2094
+      ],
+      "errorKm": 3.601
+    }
+  ],
+  "leaveOneOutRmsKm": 7.507,
+  "leaveOneOutMaxKm": 14.588,
+  "warning": "対照点の内挿残差0は精度の証拠ではない。外挿域と同定曖昧箇所は20–25km幅の概略。近世図の方位・歪みと史実範囲変遷を含む。",
+  "jacobianSignChanges": false,
+  "minJacobian": -1.8785933944900346e-05,
+  "maxJacobian": -1.1328060626975829e-05,
+  "signedPolygonAreaDeg2": -5.227711546300725,
+  "gameFilesChanged": false,
+  "independentChecks": [
+    {
+      "id": "zhenbei",
+      "sourcePixel": [
+        1517,
+        276
+      ],
+      "sourceLonLat": [
+        124.34,
+        42.7477
+      ],
+      "url": "https://authority.dila.edu.tw/place/search.php?code=PL000000007743",
+      "predictedLonLat": [
+        124.25863663693923,
+        42.83147312687828
+      ],
+      "errorKm": 11.452,
+      "note": "変換の当てはめに不使用。原図上の関所・堡の小記号の同定幅を含む。"
+    },
+    {
+      "id": "yaguguan",
+      "sourcePixel": [
+        1619,
+        634
+      ],
+      "sourceLonLat": [
+        124.5653,
+        41.5396
+      ],
+      "url": "https://authority.dila.edu.tw/place/search.php?code=PL000000007309",
+      "predictedLonLat": [
+        124.65238263409061,
+        41.5000312115841
+      ],
+      "errorKm": 8.49,
+      "note": "変換の当てはめに不使用。原図上の関所・堡の小記号の同定幅を含む。"
+    },
+    {
+      "id": "kuandian",
+      "sourcePixel": [
+        1684,
+        841
+      ],
+      "sourceLonLat": [
+        124.7829,
+        40.7271
+      ],
+      "url": "https://authority.dila.edu.tw/place/search.php?code=PL000000007353",
+      "predictedLonLat": [
+        124.83501020811984,
+        40.758320242592575
+      ],
+      "errorKm": 5.603,
+      "note": "変換の当てはめに不使用。原図上の関所・堡の小記号の同定幅を含む。"
+    },
+    {
+      "id": "jiuliancheng",
+      "sourcePixel": [
+        1605,
+        1002
+      ],
+      "sourceLonLat": [
+        124.449,
+        40.1989
+      ],
+      "url": "https://authority.dila.edu.tw/place/search.php?code=PL000000007341",
+      "predictedLonLat": [
+        124.38664737787559,
+        40.1517935685923
+      ],
+      "errorKm": 7.458,
+      "note": "変換の当てはめに不使用。原図上の関所・堡の小記号の同定幅を含む。"
+    }
+  ],
+  "independentCheckRmsKm": 8.518,
+  "transform": {
+    "type": "thin-plate-spline",
+    "sourcePixelOrigin": [
+      1400,
+      650
+    ],
+    "sourcePixelScale": 400,
+    "radialKernel": "0.5 * r^2 * log(r^2), with U(0)=0",
+    "affineTerms": [
+      "1",
+      "normalizedX",
+      "normalizedY"
+    ],
+    "targets": "approximate geographic lon/lat; not a datum transformation",
+    "regularization": 0
+  },
+  "dateInterpretation": {
+    "topologySourceYear": 1565,
+    "gameBaselineYear": 1560,
+    "precision": "regional proxy",
+    "limitation": "1565年図との前後5年差を精密な1560年の測量成果へ読み替えない。継続する衛所と旧辺牆の地域概略として採る。1573年以降の寛甸外郭と1621年以降の防御配置を除外。"
+  }
+}

@@ -4,7 +4,7 @@
 
 ## 現行の正本と年代差分
 
-児島湾・水島の全期間に有効な5補正は、`game/map_data/provinces.png` 自体へ焼き込む。1560～1583年とタイトル画面はこの正本の形を使う。`applied/` は適用履歴で、生成器は再適用しない。1584年以後の宇喜多堤の366画素だけを `kojima-bay-ukita-land-from-1584.json` に保持する。1584年1月1日の切替は年精度の仮定で、築堤月日を断定しない。
+児島湾・水島の全期間に有効な5補正は、`game/map_data/provinces.png` 自体へ焼き込む。1560～1583年とタイトル画面はこの正本の形を使う。`applied/` は適用履歴で、生成器は再適用しない。1584年以後の宇喜多堤の366画素を `kojima-bay-ukita-land-from-1584.json` に保持する。遼東基幹域も正本へ入り、1573〜1605年の寛甸軍政域参考は別の年代差分とする。1603〜1605年の撤収過程を含む年精度の表示区切りで、一斉の領有変更を意味しない。1584年1月1日の切替は年精度の仮定で、築堤月日を断定しない。
 
 正本4入力の確認値と適用履歴は [baseline-ledger.json](baseline-ledger.json)。`baselineCommit` は既存スキーマ名だが、画像移行後は基準版IDを格納する。正本の一致は `sourceSha256` で検査する。
 
@@ -103,3 +103,9 @@ python3 tools/map/audit-raster-adjacency.py /path/to/baseline/game/map \
 `payload.mask` の差分は、100m格子の窓 `window`（列・行・幅・高さ）に合わせた PNG を型紙にする。画素の値 n（G が上位、B が下位）が1以上なら `keys[n-1]` を書き、`from` が `land` なら元が陸、`sea` なら元が海であることを確かめる。`maskSha256` で型紙の取り違えを止める。
 
 児島湾の3差分（`kojima-bay-*.json`）は `tools/geo/kojima-bay-1600.cjs` が作る。根拠は `docs/reports/BIZEN_NORTH_SHORE_REVIEW.md` の「児島湾全体」。
+
+## 遼東の軍政域参考
+
+`data/research/liaodong-reference/liaodong-1560.geojson` の基幹域を、未割当と旧 `neutral:明` だけへ適用した。海・湖・城領は保持し、基幹域外の旧明を未割当へ戻す。女真等の確定領土へ自動割当しない。正本の変更前後は `data/verification/liaodong-source-baseline/`。
+
+寛甸の差分 `ming-kuandian-1573-1605-reference.json` は [1573,1,1]〜[1606,1,1) の年精度の表示。`payload.from: "key:unassigned"` で未割当画素だけを対象にする。1573築堡開始、1603〜1605撤収を併記し、軍・外交・行軍の所属へ転用しない。宇喜多期との組合せで配信用の版は1573–1584／1584–1606／1606–1616の3版になる。正本は1560年の基幹域。

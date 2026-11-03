@@ -1,0 +1,48 @@
+{
+  "tool": "tools/map/bake-liaodong-baseline.cjs",
+  "source": "data/research/liaodong-reference/liaodong-1560.geojson",
+  "sourceGeojsonSha256": "9758e4001197f46f19d8ae441b7b37718ca0cacad7f37b7d5d4f72189ee9a494",
+  "sourceSha256Before": "46ac04975ed4291bd7f1ead55f985818b5daf91f0f84430c8064e909b09bd7a4",
+  "sourceSha256After": "9e27144aa9c953299567fd3719d3ad413ea1f496ad03a097e1e25b2c6eb1a03d",
+  "sourceFilesBefore": {
+    "provinces": "2b2fe511a86fb8bdfa6b8d671a2883304b21f1499da3a7544f94128922c7f1a1",
+    "definition": "e10e24cb314157770715ede8a1290d2bca807692eec8d9f269283277dd122801",
+    "defaultMap": "36b071aab05850ce318f80767cf9307dd2bc23f144d89c04fbface39529b4d1b",
+    "projection": "04bd30868c1f5a9420b308d318d606a95d1158c23a8e6f18b3f7ecfe6b01466a"
+  },
+  "sourceFilesAfter": {
+    "provinces": "b046fd2334f79080772ea8a65df1ae04ce890fd474bd326dea35a4e546b842c8",
+    "definition": "e10e24cb314157770715ede8a1290d2bca807692eec8d9f269283277dd122801",
+    "defaultMap": "36b071aab05850ce318f80767cf9307dd2bc23f144d89c04fbface39529b4d1b",
+    "projection": "04bd30868c1f5a9420b308d318d606a95d1158c23a8e6f18b3f7ecfe6b01466a"
+  },
+  "bounds": [
+    0,
+    3686,
+    2249,
+    8093
+  ],
+  "counts": {
+    "toMing": 3763736,
+    "toUnassigned": 164621,
+    "oldMingInsideCore": 325494,
+    "oldMingInPeriodOnly": 129008,
+    "oldMingOutsideBoth": 35613,
+    "periodPixels": 217799,
+    "protectedInsideCore": 987328,
+    "protectedInsidePeriod": 1651
+  },
+  "preview": {
+    "sampleStride": 8,
+    "width": 282,
+    "height": 551,
+    "colours": {
+      "ming": "#ae4d30",
+      "unassigned": "#d1ccbb",
+      "castleOrOtherLand": "#728e5b",
+      "sea": "#6da1bc"
+    }
+  },
+  "historicalAccuracy": "100m格子の分解能を歴史境界の精度と呼ばない。辺牆と領有・実効支配の完全一致は仮定しない。",
+  "periodPrecision": "1573は築堡開始年、1603〜1605は撤収過程。1月1日の一斉領有変更や1605年末までの均一統治を意味しない。"
+}

@@ -1,0 +1,2440 @@
+{
+  "ok": true,
+  "source": "/private/tmp/kuniezu-liaodong-raster/candidate/game/map_data/provinces.png",
+  "mapDir": "/private/tmp/kuniezu-liaodong-raster/candidate/game/map",
+  "definition": "/private/tmp/kuniezu-liaodong-raster/candidate/game/map_data/definition.csv",
+  "defaultMap": "/private/tmp/kuniezu-liaodong-raster/candidate/game/map_data/default.map",
+  "definitionFormat": "paradox-csv",
+  "width": 20782,
+  "height": 24288,
+  "tile": 1024,
+  "comparedPixels": 504753216,
+  "mismatches": 0,
+  "undefinedColours": 0,
+  "sourceSha256": "b046fd2334f79080772ea8a65df1ae04ce890fd474bd326dea35a4e546b842c8",
+  "sourceFileBytes": 2612949,
+  "sourceFilters": [
+    24288,
+    0,
+    0,
+    0,
+    0
+  ],
+  "manifestSourceSha256": "9e27144aa9c953299567fd3719d3ad413ea1f496ad03a097e1e25b2c6eb1a03d",
+  "manifestSourceSha256Matches": true,
+  "sourceCompositeFingerprint": {
+    "algorithm": "sha256(LF-joined file SHA256: provinces, definition, defaultMap, projection; no trailing LF)",
+    "actual": "9e27144aa9c953299567fd3719d3ad413ea1f496ad03a097e1e25b2c6eb1a03d",
+    "reason": null,
+    "componentPaths": {
+      "provinces": "/private/tmp/kuniezu-liaodong-raster/candidate/game/map_data/provinces.png",
+      "definition": "/private/tmp/kuniezu-liaodong-raster/candidate/game/map_data/definition.csv",
+      "defaultMap": "/private/tmp/kuniezu-liaodong-raster/candidate/game/map_data/default.map",
+      "projection": "/private/tmp/kuniezu-liaodong-raster/candidate/game/map_data/projection.json"
+    },
+    "componentHashes": {
+      "provinces": "b046fd2334f79080772ea8a65df1ae04ce890fd474bd326dea35a4e546b842c8",
+      "definition": "e10e24cb314157770715ede8a1290d2bca807692eec8d9f269283277dd122801",
+      "defaultMap": "36b071aab05850ce318f80767cf9307dd2bc23f144d89c04fbface39529b4d1b",
+      "projection": "04bd30868c1f5a9420b308d318d606a95d1158c23a8e6f18b3f7ecfe6b01466a"
+    }
+  },
+  "sourceAndMetadataStable": true,
+  "metadataSha256": {
+    "/private/tmp/kuniezu-liaodong-raster/candidate/game/map/manifest.json": "e3ece680e8538f49b5fdf7154183cfb8c8ecfca563c9db12887d28ded0e36793",
+    "/private/tmp/kuniezu-liaodong-raster/candidate/game/map_data/definition.csv": "e10e24cb314157770715ede8a1290d2bca807692eec8d9f269283277dd122801",
+    "/private/tmp/kuniezu-liaodong-raster/candidate/game/map_data/default.map": "36b071aab05850ce318f80767cf9307dd2bc23f144d89c04fbface39529b4d1b",
+    "/private/tmp/kuniezu-liaodong-raster/candidate/game/map_data/projection.json": "04bd30868c1f5a9420b308d318d606a95d1158c23a8e6f18b3f7ecfe6b01466a"
+  },
+  "manifestSha256": "e3ece680e8538f49b5fdf7154183cfb8c8ecfca563c9db12887d28ded0e36793",
+  "tileCount": 216,
+  "omittedSeaTiles": 288,
+  "omittedSeaRGB": [
+    8,
+    24,
+    48
+  ],
+  "checkedTilePixels": 223539200,
+  "peakTileBandBytes": 51259392,
+  "peakRssBytes": 244793344,
+  "elapsedSeconds": 1.701,
+  "tiles": [
+    {
+      "file": "0-0.png",
+      "sha256": "6036bffd69de0ae2a508921a34dccd53d991764df3a577c2a479d8e27a087c78",
+      "filters": [
+        1024,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "file": "1-0.png",
+      "sha256": "6036bffd69de0ae2a508921a34dccd53d991764df3a577c2a479d8e27a087c78",
+      "filters": [
+        1024,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "file": "2-0.png",
+      "sha256": "6036bffd69de0ae2a508921a34dccd53d991764df3a577c2a479d8e27a087c78",
+      "filters": [
+        1024,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "file": "3-0.png",
+      "sha256": "6036bffd69de0ae2a508921a34dccd53d991764df3a577c2a479d8e27a087c78",
+      "filters": [
+        1024,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "file": "4-0.png",
+      "sha256": "6036bffd69de0ae2a508921a34dccd53d991764df3a577c2a479d8e27a087c78",
+      "filters": [
+        1024,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "file": "5-0.png",
+      "sha256": "6036bffd69de0ae2a508921a34dccd53d991764df3a577c2a479d8e27a087c78",
+      "filters": [
+        1024,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "file": "6-0.png",
+      "sha256": "6036bffd69de0ae2a508921a34dccd53d991764df3a577c2a479d8e27a087c78",
+      "filters": [
+        1024,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "file": "7-0.png",
+      "sha256": "6036bffd69de0ae2a508921a34dccd53d991764df3a577c2a479d8e27a087c78",
+      "filters": [
+        1024,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "file": "8-0.png",
+      "sha256": "6036bffd69de0ae2a508921a34dccd53d991764df3a577c2a479d8e27a087c78",
+      "filters": [
+        1024,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "file": "9-0.png",
+      "sha256": "6036bffd69de0ae2a508921a34dccd53d991764df3a577c2a479d8e27a087c78",
+      "filters": [
+        1024,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "file": "10-0.png",
+      "sha256": "6036bffd69de0ae2a508921a34dccd53d991764df3a577c2a479d8e27a087c78",
+      "filters": [
+        1024,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "file": "11-0.png",
+      "sha256": "6036bffd69de0ae2a508921a34dccd53d991764df3a577c2a479d8e27a087c78",
+      "filters": [
+        1024,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "file": "12-0.png",
+      "sha256": "c3c2ed4f7186faec8d86321da7b09d228362242be1374f91a46128076d324d73",
+      "filters": [
+        1024,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "file": "16-0.png",
+      "sha256": "99ba34e3ccee195acea875f16f2a3b716df2c09eba3abce469850775b5fa9868",
+      "filters": [
+        1024,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "file": "17-0.png",
+      "sha256": "6ddaf946ff2b5faf0ad4492500f6087209fd6a13f36427ed7385d1f3e466471c",
+      "filters": [
+        1024,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "file": "0-1.png",
+      "sha256": "71c1a8009e7a41edda422cb99bc0927cc885182a49d004a8f353b140d5e7ce89",
+      "filters": [
+        1024,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "file": "1-1.png",
+      "sha256": "71c1a8009e7a41edda422cb99bc0927cc885182a49d004a8f353b140d5e7ce89",
+      "filters": [
+        1024,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "file": "2-1.png",
+      "sha256": "71c1a8009e7a41edda422cb99bc0927cc885182a49d004a8f353b140d5e7ce89",
+      "filters": [
+        1024,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "file": "3-1.png",
+      "sha256": "71c1a8009e7a41edda422cb99bc0927cc885182a49d004a8f353b140d5e7ce89",
+      "filters": [
+        1024,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "file": "4-1.png",
+      "sha256": "71c1a8009e7a41edda422cb99bc0927cc885182a49d004a8f353b140d5e7ce89",
+      "filters": [
+        1024,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "file": "5-1.png",
+      "sha256": "71c1a8009e7a41edda422cb99bc0927cc885182a49d004a8f353b140d5e7ce89",
+      "filters": [
+        1024,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "file": "6-1.png",
+      "sha256": "71c1a8009e7a41edda422cb99bc0927cc885182a49d004a8f353b140d5e7ce89",
+      "filters": [
+        1024,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "file": "7-1.png",
+      "sha256": "71c1a8009e7a41edda422cb99bc0927cc885182a49d004a8f353b140d5e7ce89",
+      "filters": [
+        1024,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "file": "8-1.png",
+      "sha256": "71c1a8009e7a41edda422cb99bc0927cc885182a49d004a8f353b140d5e7ce89",
+      "filters": [
+        1024,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "file": "9-1.png",
+      "sha256": "71c1a8009e7a41edda422cb99bc0927cc885182a49d004a8f353b140d5e7ce89",
+      "filters": [
+        1024,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "file": "10-1.png",
+      "sha256": "71c1a8009e7a41edda422cb99bc0927cc885182a49d004a8f353b140d5e7ce89",
+      "filters": [
+        1024,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "file": "11-1.png",
+      "sha256": "2c07b64310edec6bc10d61e35f921b38f0bfa7dda6016aa8d22a9965454968a6",
+      "filters": [
+        1024,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "file": "12-1.png",
+      "sha256": "2ed60664926df27d61bcb81d51519b87a20167aae09cad9da807e3c0f913dde3",
+      "filters": [
+        1024,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "file": "16-1.png",
+      "sha256": "dcd712ea0af79f0f740b198f6dee57f2b6a47d68428b029546132417f6643007",
+      "filters": [
+        1024,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "file": "17-1.png",
+      "sha256": "5c949d1f14723e2e6426f75fae41c785e0451f80c9814fd928a1704dd12069a2",
+      "filters": [
+        1024,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "file": "18-1.png",
+      "sha256": "3923b64cd13edc50caeb7097b9acba006c26d8073e3c5856e6b90e034e54862c",
+      "filters": [
+        1024,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "file": "0-2.png",
+      "sha256": "71c1a8009e7a41edda422cb99bc0927cc885182a49d004a8f353b140d5e7ce89",
+      "filters": [
+        1024,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "file": "1-2.png",
+      "sha256": "71c1a8009e7a41edda422cb99bc0927cc885182a49d004a8f353b140d5e7ce89",
+      "filters": [
+        1024,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "file": "2-2.png",
+      "sha256": "71c1a8009e7a41edda422cb99bc0927cc885182a49d004a8f353b140d5e7ce89",
+      "filters": [
+        1024,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "file": "3-2.png",
+      "sha256": "71c1a8009e7a41edda422cb99bc0927cc885182a49d004a8f353b140d5e7ce89",
+      "filters": [
+        1024,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "file": "4-2.png",
+      "sha256": "71c1a8009e7a41edda422cb99bc0927cc885182a49d004a8f353b140d5e7ce89",
+      "filters": [
+        1024,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "file": "5-2.png",
+      "sha256": "71c1a8009e7a41edda422cb99bc0927cc885182a49d004a8f353b140d5e7ce89",
+      "filters": [
+        1024,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "file": "6-2.png",
+      "sha256": "71c1a8009e7a41edda422cb99bc0927cc885182a49d004a8f353b140d5e7ce89",
+      "filters": [
+        1024,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "file": "7-2.png",
+      "sha256": "71c1a8009e7a41edda422cb99bc0927cc885182a49d004a8f353b140d5e7ce89",
+      "filters": [
+        1024,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "file": "8-2.png",
+      "sha256": "71c1a8009e7a41edda422cb99bc0927cc885182a49d004a8f353b140d5e7ce89",
+      "filters": [
+        1024,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "file": "9-2.png",
+      "sha256": "71c1a8009e7a41edda422cb99bc0927cc885182a49d004a8f353b140d5e7ce89",
+      "filters": [
+        1024,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "file": "10-2.png",
+      "sha256": "df542d193158c63df1c0be6928f0b4ced6f32baaabc138a5c6366d156738975c",
+      "filters": [
+        1024,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "file": "11-2.png",
+      "sha256": "9a081ab1dc44c27a7a05b920fab5e379caace8f45fceaaa473a436d970e0eed8",
+      "filters": [
+        1024,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "file": "16-2.png",
+      "sha256": "6f8a9d973010e1c03bd5cec62533b4d8a27b31301e91db5bf454ceb81c362fde",
+      "filters": [
+        1024,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "file": "17-2.png",
+      "sha256": "71c1a8009e7a41edda422cb99bc0927cc885182a49d004a8f353b140d5e7ce89",
+      "filters": [
+        1024,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "file": "18-2.png",
+      "sha256": "9cc2976fdcf6c53e18f9d6358bae3d9a69f2fc1514fc79cb1cb1c65d175148d4",
+      "filters": [
+        1024,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "file": "19-2.png",
+      "sha256": "24f5b6613cca92862cf9f8904791a2ae65165e867c4ec9855f01287dd5e2a3a8",
+      "filters": [
+        1024,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "file": "20-2.png",
+      "sha256": "29b6891b4b597b57255cae662b313b930bb11220f74d89b2c584977279daaf25",
+      "filters": [
+        1024,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "file": "0-3.png",
+      "sha256": "d95d2e571b18a4ab537c5260317ea7d763ab6d75fabdb1dee79ed1e37f0d0c23",
+      "filters": [
+        1024,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "file": "1-3.png",
+      "sha256": "c366e14657b81331c5393505c5d13900b31d06fad0b196043b25405f235bef32",
+      "filters": [
+        1024,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "file": "2-3.png",
+      "sha256": "71c1a8009e7a41edda422cb99bc0927cc885182a49d004a8f353b140d5e7ce89",
+      "filters": [
+        1024,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "file": "3-3.png",
+      "sha256": "71c1a8009e7a41edda422cb99bc0927cc885182a49d004a8f353b140d5e7ce89",
+      "filters": [
+        1024,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "file": "4-3.png",
+      "sha256": "71c1a8009e7a41edda422cb99bc0927cc885182a49d004a8f353b140d5e7ce89",
+      "filters": [
+        1024,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "file": "5-3.png",
+      "sha256": "71c1a8009e7a41edda422cb99bc0927cc885182a49d004a8f353b140d5e7ce89",
+      "filters": [
+        1024,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "file": "6-3.png",
+      "sha256": "51ce19716bc6c0a3ba09429f8ddf462e3f9930bef3d63d739c7742b50f0a9ec4",
+      "filters": [
+        1024,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "file": "7-3.png",
+      "sha256": "d50b5c38322ee247cef5e416624eca78119355485299b343bdea250831c5b5a8",
+      "filters": [
+        1024,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "file": "8-3.png",
+      "sha256": "c3ca3136efefdebb19348f606511adf4daa9d823117070ee373e9c3262989f6a",
+      "filters": [
+        1024,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "file": "9-3.png",
+      "sha256": "5830b003e2edbbfd6eb4584673bef52955264dbc7aaa1e9f1bc14d4ad5947be4",
+      "filters": [
+        1024,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "file": "10-3.png",
+      "sha256": "6392617d00bd00634f37521aac8ce059f12f02e6963ebbaaaf055ff7f240d582",
+      "filters": [
+        1024,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "file": "15-3.png",
+      "sha256": "f5ed31da4ee4f0137ddc910c1e016a4d02f69f88e9d08bee96de7e2f491dd12c",
+      "filters": [
+        1024,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "file": "16-3.png",
+      "sha256": "5be574edac804418fbd0def0939cde3935d60eccfc46da238be93d647a5b0354",
+      "filters": [
+        1024,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "file": "17-3.png",
+      "sha256": "71c1a8009e7a41edda422cb99bc0927cc885182a49d004a8f353b140d5e7ce89",
+      "filters": [
+        1024,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "file": "18-3.png",
+      "sha256": "6fad459347bc5ed7454c188eae32cb0522ddb57c88e11415adaa17ea7a510b0d",
+      "filters": [
+        1024,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "file": "19-3.png",
+      "sha256": "a35efbd988c13455a6999144ee3d8a4bd934b52ef104e061797ade06b6deecc0",
+      "filters": [
+        1024,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "file": "20-3.png",
+      "sha256": "18888638e94e58d6b3014abc80587e0215bbd33e650e5185101cba8d7c680d94",
+      "filters": [
+        1024,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "file": "0-4.png",
+      "sha256": "0c9e42cbfc27c364bf1800da651bc1ca6ab9e572df61f91d6ea4e057a3d9b8f5",
+      "filters": [
+        1024,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "file": "1-4.png",
+      "sha256": "a23c29c8ee0543269074046adbdcacf2383ddb1f82831cce27d491b40ed29cfd",
+      "filters": [
+        1024,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "file": "2-4.png",
+      "sha256": "71c1a8009e7a41edda422cb99bc0927cc885182a49d004a8f353b140d5e7ce89",
+      "filters": [
+        1024,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "file": "3-4.png",
+      "sha256": "55d36b356da96f807a92ae8b45826b78784a2fe8ea178af3c6cab768e4ed55c3",
+      "filters": [
+        1024,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "file": "4-4.png",
+      "sha256": "168b619b59ceece0430af59fae792a91ce22a3e1476f645fa4e58d10896dbfbd",
+      "filters": [
+        1024,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "file": "5-4.png",
+      "sha256": "49f2ba9422156f427973f0d01e7a367e711f062f9a3614fc4fad6a96023090fe",
+      "filters": [
+        1024,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "file": "6-4.png",
+      "sha256": "5f39bb2725968ff04652725da42708b93a3df718e8b2b2691d011ea3539393bc",
+      "filters": [
+        1024,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "file": "7-4.png",
+      "sha256": "5a3868587194fe8ab4fecb370827a31141c507da8f006ee5ca7f5c678dfacc52",
+      "filters": [
+        1024,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "file": "14-4.png",
+      "sha256": "42ff115a8167a1d5084b6f010e977f728a054edf2aad4a814086049738c174c4",
+      "filters": [
+        1024,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "file": "15-4.png",
+      "sha256": "4e6feec712cfb13ccb313fdbcb74a593672192b4eda7c213f02a2530ec37d07a",
+      "filters": [
+        1024,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "file": "16-4.png",
+      "sha256": "87d59c6c5784321c1f16f8793e9aa9ebdb887adb06867e68253b58e00c13d191",
+      "filters": [
+        1024,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "file": "17-4.png",
+      "sha256": "7c505f8e03ccadfc3160d456411640b04e01631f93828b7a9988dd22b65c1911",
+      "filters": [
+        1024,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "file": "18-4.png",
+      "sha256": "417ac9e1a81f20a6ee9406c555ea900995cc51ece3b0b6c3af9f4c0b92cca082",
+      "filters": [
+        1024,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "file": "0-5.png",
+      "sha256": "b3a4e70a867b3c25a4ee3da30100c0d94276a1708e5761a2204868b602ffa2c5",
+      "filters": [
+        1024,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "file": "1-5.png",
+      "sha256": "5f9a0e800886656559c2630498ea1540772741d6c7bd179bd728617533925ce1",
+      "filters": [
+        1024,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "file": "2-5.png",
+      "sha256": "78b1461dcc8157ccaccc7d1927a397365958d6b1d491710cf3f0434ff7654940",
+      "filters": [
+        1024,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "file": "3-5.png",
+      "sha256": "a8d4e312c26ac38f59aaaa111f6f162e80ee7c98c760a86f08d82ab20fb58d8c",
+      "filters": [
+        1024,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "file": "4-5.png",
+      "sha256": "bd2a97f096f6e0f9460b6a23a4ce7333f1c4c6c35c8562e51fea89b3491012f1",
+      "filters": [
+        1024,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "file": "5-5.png",
+      "sha256": "508b4d6359fc7be69e5f6bdc9fd8a15823bc04aa81fd45e4d66f61bc8429b48b",
+      "filters": [
+        1024,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "file": "6-5.png",
+      "sha256": "f129e075ae79aef1d69a5a2a201ced12ef4c1f9118e713dd9b5219669864ca20",
+      "filters": [
+        1024,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "file": "14-5.png",
+      "sha256": "16a6b9c93fd9946551f17efcd6cf999c876696727961e30ea25565c882fa29df",
+      "filters": [
+        1024,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "file": "15-5.png",
+      "sha256": "f55f64f6be795382aff4040443efa720e6e585ee6ce085e37aed6f14da7bfae0",
+      "filters": [
+        1024,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "file": "16-5.png",
+      "sha256": "044036981b7e2826b012a9f3746d595205470b32defd904c5a4d46ea6cb140a6",
+      "filters": [
+        1024,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "file": "0-6.png",
+      "sha256": "f02ef01a4e833fc117bdbfea3f3f731943434c198bddc3fb23bad0085f44c5f6",
+      "filters": [
+        1024,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "file": "1-6.png",
+      "sha256": "a16315adb97854fb3c78482f0b293cfbec890b7273c63c3ee2c41bf8c403db59",
+      "filters": [
+        1024,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "file": "2-6.png",
+      "sha256": "2cc3257df04351c978d50d0d1f902432aff8326a4847ff0bd9385c2b5bc42971",
+      "filters": [
+        1024,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "file": "3-6.png",
+      "sha256": "8762ba50dcc075423341b974dc5204c509446bb86d1ef98403ea3a0867bd253a",
+      "filters": [
+        1024,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "file": "4-6.png",
+      "sha256": "c9a89663cf077be862221daba6a4d1a343f47d454fec2a6cafc4c2263b4930e5",
+      "filters": [
+        1024,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "file": "5-6.png",
+      "sha256": "1d2000ad7f7a896ed791e49e3284592d7ef49db32d7b5c653a1bb7cf01dd67da",
+      "filters": [
+        1024,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "file": "14-6.png",
+      "sha256": "d5d579feedd0dd7d6597010a40a27b6c78b5b55fd406a4670d67135228fd0ee3",
+      "filters": [
+        1024,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "file": "15-6.png",
+      "sha256": "1d6dd75c625ccb361884ce26fd91ffd17061a39361ee799263279ab24d4cbd6f",
+      "filters": [
+        1024,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "file": "16-6.png",
+      "sha256": "707c4ba8e6f537a830c9ec858b64bcf197b182544d02f833dd2b7d8d0f7466ac",
+      "filters": [
+        1024,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "file": "0-7.png",
+      "sha256": "f50273e407febfd4231b507b6f87511ca04d17cdba809c3e7b24be4067e9f9d0",
+      "filters": [
+        1024,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "file": "1-7.png",
+      "sha256": "41a8f0a8a358cfd6376c61184ba168e9eb9bb200600d32f619fca963ec1681ca",
+      "filters": [
+        1024,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "file": "2-7.png",
+      "sha256": "8cb727ea5b832aeddfa6c7c4bbf573cf736ee549bcf66ff3187144ad3deecfba",
+      "filters": [
+        1024,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "file": "3-7.png",
+      "sha256": "3a08c8f05c90f6cdd969fe2b7ed3a1b0ab5893a102426efc99b8ab162f139ded",
+      "filters": [
+        1024,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "file": "4-7.png",
+      "sha256": "6ab998780512445ab42ea8af2a6dd6dc864a004110bb0db431f45f4ef6ec1581",
+      "filters": [
+        1024,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "file": "14-7.png",
+      "sha256": "76c00032c001bef46aa9f96e213b9b27eae17843f51a881dbe63c312f2db08f3",
+      "filters": [
+        1024,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "file": "15-7.png",
+      "sha256": "1bf533c3b6c27d7b21e98b07273c809897a49d0ab39b5ce4e05963d58644bb14",
+      "filters": [
+        1024,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "file": "16-7.png",
+      "sha256": "ab05e4b51f17dd8108ad9166fc74c2928ac28942df23d5a32fd0a2a94e9abe7d",
+      "filters": [
+        1024,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "file": "17-7.png",
+      "sha256": "096db4a6f16dc9dd7c1d5c05b4a823e73c52f11c9863a4b7d61ba5ff6e8eb2cf",
+      "filters": [
+        1024,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "file": "1-8.png",
+      "sha256": "29ac17dac22c956a047ca402e38dd22b87314f9b098ba38c3d33e63573ecb9e4",
+      "filters": [
+        1024,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "file": "2-8.png",
+      "sha256": "1450771d521404431d503690f2633c04a45b58265ac69d19e60396cb14ff9d2e",
+      "filters": [
+        1024,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "file": "3-8.png",
+      "sha256": "0806da5c4e30b438982bf14a302e5967eea2c4d9c5693f558d8fd4661caef86d",
+      "filters": [
+        1024,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "file": "4-8.png",
+      "sha256": "da0eb248528356134e585afaec510db2f60b7f3cf5e3ba98ce8b504ae41c204e",
+      "filters": [
+        1024,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "file": "5-8.png",
+      "sha256": "bddcf7f43e0ed07e6334568a2791e3f2e68cc1e3a2ba0561c3dff09c1578f6e1",
+      "filters": [
+        1024,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "file": "13-8.png",
+      "sha256": "ff2a226e2740ba5a53778bcc78fa3065984c24e80d4d04d34af3b9546ce5fb00",
+      "filters": [
+        1024,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "file": "14-8.png",
+      "sha256": "037daf317c0d1aadd270bd469b69a10fa42860e1fb85dc4581159bcf5db1e34d",
+      "filters": [
+        1024,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "file": "15-8.png",
+      "sha256": "cea114f12acadcc72fa697f86318375b9ba2ebe0a5e591fb2963a3d6a95cf31f",
+      "filters": [
+        1024,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "file": "16-8.png",
+      "sha256": "eee544c62d201b3954639ac896d8599d5d44b58bf965337f36c3bb5a717f2ae8",
+      "filters": [
+        1024,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "file": "1-9.png",
+      "sha256": "5f4659d7ff89b0adca794cd231dc34cfa898fc70b9dc6e7f9d8bca96f89838fb",
+      "filters": [
+        1024,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "file": "2-9.png",
+      "sha256": "f290f37e067be9caa30309d9db10857aff57139bf02de401958cc4b1c9aaa5d6",
+      "filters": [
+        1024,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "file": "3-9.png",
+      "sha256": "1b64fc5f13338a865e0e8f24da9ff7adf67ff524566d8a3bde420b63dcb2a0e7",
+      "filters": [
+        1024,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "file": "4-9.png",
+      "sha256": "c22b24998be9f5eda0b7f37a69aa54268ad6d1e963442a5df0fa801ea2fac295",
+      "filters": [
+        1024,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "file": "5-9.png",
+      "sha256": "ae2e3275baa73e6051ac5f2268d577348e25e40f4723d40f0b07f703428ef2f3",
+      "filters": [
+        1024,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "file": "12-9.png",
+      "sha256": "b7175184dec230ef1673c9d825bb13db379702e919933ad928dd5229f6bb436b",
+      "filters": [
+        1024,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "file": "13-9.png",
+      "sha256": "34536cc2f00795052a96842eb8403801e5d096397f29b589aeacff0917fc1df9",
+      "filters": [
+        1024,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "file": "14-9.png",
+      "sha256": "a7504e27635af43cdcf21a6203dee2dfccaa42bf41afae7cf36ceed714dde8c0",
+      "filters": [
+        1024,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "file": "15-9.png",
+      "sha256": "7d745a1f326ec3975bb31d8951ffb32f803a2ffb8da8002b8098cf96f0f5ab4f",
+      "filters": [
+        1024,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "file": "16-9.png",
+      "sha256": "2c6c444102f4165be6e3f2f915e5f93eacb1a6a6a9eba66a56a8f764dae04da2",
+      "filters": [
+        1024,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "file": "2-10.png",
+      "sha256": "d5e4f1ae072ca33f9c7a285758a05f589f5248c69a247a7063c02af8ed2602b4",
+      "filters": [
+        1024,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "file": "3-10.png",
+      "sha256": "27b16f47abbf07833bad9d707f950395eab107eb83717ced3ff406bee95622b2",
+      "filters": [
+        1024,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "file": "4-10.png",
+      "sha256": "18113797839a1d62c358f2e6b52f328a6009526388984ebfece877bbfd2622df",
+      "filters": [
+        1024,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "file": "5-10.png",
+      "sha256": "b3d5feb0cb739bc4c3d7d42097ba8a00fd3257fbfc10ff9a4d773afd808c01a2",
+      "filters": [
+        1024,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "file": "9-10.png",
+      "sha256": "070120ed237797291b1656622ebb28fe5f9514a49f798f36f7f3bbb64be39dd0",
+      "filters": [
+        1024,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "file": "11-10.png",
+      "sha256": "bdbf56a6bc5e58b5b5154fde0c7ef545c31aebec1a54bee3b5f38717f9c4a26a",
+      "filters": [
+        1024,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "file": "12-10.png",
+      "sha256": "8c70357d3df37d2debb46827a60cc2104464a1df4fba78dff7dde3ad33f1af7d",
+      "filters": [
+        1024,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "file": "13-10.png",
+      "sha256": "b7e8811464aa61f9e46a3c11bbb5e51ae0d2d8be48aa80c2799f51ee9526ba53",
+      "filters": [
+        1024,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "file": "14-10.png",
+      "sha256": "92efc47a50faaf41bfbb2c031a8e9af0ab7b69700375aafcceb7a6b742a87379",
+      "filters": [
+        1024,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "file": "15-10.png",
+      "sha256": "3d548863851e7bfd496b1e8fb48e81d0c09d17bd4dac3aadc2eee83627e8f249",
+      "filters": [
+        1024,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "file": "16-10.png",
+      "sha256": "9d0bd1e5d272420e12bcc308ff3b28667c75272a9372c345f1540f908aecef27",
+      "filters": [
+        1024,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "file": "2-11.png",
+      "sha256": "c769fbd7ccca2f8b498735b04ce61623116913cd17fe4068a0630b4981113776",
+      "filters": [
+        1024,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "file": "3-11.png",
+      "sha256": "1c59c2b87562787dda5b525e636dd519f3cbcb74527c03207c2ffa3bb0718e28",
+      "filters": [
+        1024,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "file": "4-11.png",
+      "sha256": "966ccbe5c277e410c9b4c4725959a5f35fa8da9bc341abf744ffb9ce858dbaba",
+      "filters": [
+        1024,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "file": "5-11.png",
+      "sha256": "9e635bbcea445efc9f0d56ac83ffe9929447c3663b70a317ef283e1f70a84d37",
+      "filters": [
+        1024,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "file": "6-11.png",
+      "sha256": "45bc59acf5cfe08093dfc24a76dadc8458f1b82fb73756cb83b90025cc85caf6",
+      "filters": [
+        1024,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "file": "8-11.png",
+      "sha256": "3572028d5dc6cc9d7eaaa052f401b42063f14870afa259e00d57a7bca4f7d1fd",
+      "filters": [
+        1024,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "file": "9-11.png",
+      "sha256": "3c957e39a90ee01b865597dd34c92143de3b96836c919d04ff53da53233a52db",
+      "filters": [
+        1024,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "file": "10-11.png",
+      "sha256": "f19e22c712d1f2bdf2288a63deea0df89b6d9fe1759b930f514c657cb041cd81",
+      "filters": [
+        1024,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "file": "11-11.png",
+      "sha256": "ca34f0842d6444bdbadf17e59501310ca5c940043194ef932d93e1daaca73b6e",
+      "filters": [
+        1024,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "file": "12-11.png",
+      "sha256": "9a0575ea8fa8bb0c8c3cae2d414343001966aee770c968a3fd89b5f33a39d91b",
+      "filters": [
+        1024,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "file": "13-11.png",
+      "sha256": "2eb72906f9e88de5a2899fc9999c8155c4d86fcb1208756724de1de80791373f",
+      "filters": [
+        1024,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "file": "14-11.png",
+      "sha256": "9c8fe5b52318fc59113a24532a7dcc7a527166f00a18c9e149f655b8779da43b",
+      "filters": [
+        1024,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "file": "15-11.png",
+      "sha256": "8799a563ba64c3a2759197a600ef0d1b4bf349089356b7d44d6e8982e014f07d",
+      "filters": [
+        1024,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "file": "2-12.png",
+      "sha256": "f902a95dd1b9a4c55be87b6dc1c56516d1b1f20043a6e308d82aa5331295a9ba",
+      "filters": [
+        1024,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "file": "3-12.png",
+      "sha256": "d1d9b259573b2bfeed7e3bafa6483e3e768e1a5d2c2ee73361942a08d4c0db96",
+      "filters": [
+        1024,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "file": "4-12.png",
+      "sha256": "01566a5903a2ea07cd29ce28114de9d1a9a407d682a28a64cf6324c4d9655dcb",
+      "filters": [
+        1024,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "file": "5-12.png",
+      "sha256": "f355c70c39506fe24deab56a49ffe64f5fc9788f88788c306546560a29335b83",
+      "filters": [
+        1024,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "file": "7-12.png",
+      "sha256": "af43db5029bc2a9ac50202ba9e106b62cc2af383f922671f52d4476bd8fe9983",
+      "filters": [
+        1024,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "file": "8-12.png",
+      "sha256": "abcb0a443f575b4b5b9fdae40b68c4b48271a48d640746128c7e7ba0e4ccf563",
+      "filters": [
+        1024,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "file": "9-12.png",
+      "sha256": "80bb6ad3ab1078a26cf9516e9629e9d62a533b2f74264d869b6a13beebc306c5",
+      "filters": [
+        1024,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "file": "10-12.png",
+      "sha256": "29dc532cc327c861dfe9cdca2640def7b87aada81cdb06b4453fbf10f85d4149",
+      "filters": [
+        1024,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "file": "11-12.png",
+      "sha256": "c1c1e8a59a2a32a354891350db8009f6522ed64874aa02163e8a75146de80ce5",
+      "filters": [
+        1024,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "file": "12-12.png",
+      "sha256": "f6220b15431146673ed0692923cb5a1495ff5a52d1651c13c88839cec2c40485",
+      "filters": [
+        1024,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "file": "13-12.png",
+      "sha256": "044785ea38fb6b0bef3e190c03b33cca3b1b84f074e94a21929394c802bfdbaf",
+      "filters": [
+        1024,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "file": "14-12.png",
+      "sha256": "0e446476f0686b6444d51dcb05f1c8fc3d96e5a2fcba72a8dbf3674d47cefc92",
+      "filters": [
+        1024,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "file": "15-12.png",
+      "sha256": "c9ca49e52ef978f1386f945fe1d86ef9f58cae85e4b4b01cde4ca86ecff74d3f",
+      "filters": [
+        1024,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "file": "2-13.png",
+      "sha256": "47b54d9e5cc67cea58f890028ff2bd7956c30a667e4007caa09aaee22da9d8d4",
+      "filters": [
+        1024,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "file": "3-13.png",
+      "sha256": "efa5d6a90c44083e7cadf191f038fd7c1a821aed27bd5937ae13f1fa644733be",
+      "filters": [
+        1024,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "file": "4-13.png",
+      "sha256": "1a289b372400ce1fedf5aab4e97a5b38e851afdc093b6589188840bba536d124",
+      "filters": [
+        1024,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "file": "5-13.png",
+      "sha256": "bec37c902a06437579f24271cce2ccab07b028309bcafc8ddf9bd41ff76db5d8",
+      "filters": [
+        1024,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "file": "6-13.png",
+      "sha256": "55a7bac5354ce36fd78612852f49c18849e5e9a4cc4bc22a31a55eb852763aa3",
+      "filters": [
+        1024,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "file": "7-13.png",
+      "sha256": "6a7f08ca3f4f063881fee3225d333f85ae7939da1281365e1afe363011a3e995",
+      "filters": [
+        1024,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "file": "8-13.png",
+      "sha256": "f45a9f78a6cd6f84ee32e4cae5afa51455aba93d2a4c1b1cff59851143e57881",
+      "filters": [
+        1024,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "file": "9-13.png",
+      "sha256": "05c9c239230a899a6341a89571153daf3b13c147d9b1d59e53db4eb6384612d5",
+      "filters": [
+        1024,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "file": "10-13.png",
+      "sha256": "462777ffde74d6489ee6fb9edb9376e28d8c216201fdea114e31157059d1e4a6",
+      "filters": [
+        1024,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "file": "11-13.png",
+      "sha256": "5fdc9c912145b4268d1a22c8b07167347027b802d6e773fd3319bb305bc210ca",
+      "filters": [
+        1024,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "file": "12-13.png",
+      "sha256": "e470541c4a711f8238db2bd4b00e6fac4784f21c6501c541b180f795adbc8c62",
+      "filters": [
+        1024,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "file": "14-13.png",
+      "sha256": "49f6c7513e99ec1dd9aa81b97da399ab812869cb1625ae744235cf4ea16e83a9",
+      "filters": [
+        1024,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "file": "2-14.png",
+      "sha256": "9767b4d17e11a820f279b77a0289ef478343ff543a65655c1f90ae478bf6be0f",
+      "filters": [
+        1024,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "file": "3-14.png",
+      "sha256": "e380f91370334bf27750aef9e9a8127b43847f7d91f52b246a744e48ea75ab12",
+      "filters": [
+        1024,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "file": "5-14.png",
+      "sha256": "c34ca3daa2e5f8b0ba29d80d7877b50fe5ecd0326766b66f8fbb406f3e804fb0",
+      "filters": [
+        1024,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "file": "6-14.png",
+      "sha256": "f4da482c3eb8a7d83d7e33badcb542681f4a09a5c7c4465f609859cd2975b19d",
+      "filters": [
+        1024,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "file": "7-14.png",
+      "sha256": "3810b4cc3c9ead2068a1c3cc5c422a39dec3c2430e626e353d7652cf848c17ea",
+      "filters": [
+        1024,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "file": "8-14.png",
+      "sha256": "03bd000370fab9c18f83af6c843a74caf5e491213222c7002c503ed129293f19",
+      "filters": [
+        1024,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "file": "9-14.png",
+      "sha256": "3ee6a84ed6d02737057e452a0c6a493abaf8016eade00ea96b0d1f4676497ba1",
+      "filters": [
+        1024,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "file": "10-14.png",
+      "sha256": "111ecdd8e8dab5e76245b92ac0aba036bf2ff7ecc4123803e80389f74d388feb",
+      "filters": [
+        1024,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "file": "14-14.png",
+      "sha256": "ca6c1a428a885dde3b715a3df5b343fa604e02728514445ec32c949145742aed",
+      "filters": [
+        1024,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "file": "15-14.png",
+      "sha256": "d52d2851faefc118e91a4c4f5c9fa556a6452f4218dafe8994fca0a519528d66",
+      "filters": [
+        1024,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "file": "6-15.png",
+      "sha256": "f8b573b4271866cd1abbfc2b79e0e6fed437c02d7d1db59c61b3b0b77c4700d0",
+      "filters": [
+        1024,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "file": "7-15.png",
+      "sha256": "0d2c430dee040930ad77bb22a11765e4e0409dc3608a7f20fb674e366865c777",
+      "filters": [
+        1024,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "file": "14-15.png",
+      "sha256": "296005da6097b1bd1974219b8dbf90744ec9b0b57f61f99dc1913e2970b8c3bf",
+      "filters": [
+        1024,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "file": "0-16.png",
+      "sha256": "788f33ed27b62ac829eb8fb9ce9f6f250495ad3df2fd89c136d6b196ffbaaa8e",
+      "filters": [
+        1024,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "file": "5-16.png",
+      "sha256": "c0ca89fbbb091a51868c62231444d95cfb3840cb0b0d78f173e1c303468a2be2",
+      "filters": [
+        1024,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "file": "6-16.png",
+      "sha256": "b8bff3081db68909bb4e73e76214106824ae010925c5b25f99376b2377c76c44",
+      "filters": [
+        1024,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "file": "7-16.png",
+      "sha256": "08db78a739404bbd69679d3df1bca3f5ca4ec21b696ef01006e4ade0cee1da54",
+      "filters": [
+        1024,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "file": "0-17.png",
+      "sha256": "89ecc52701b1fa1af3c44c44abd55d528b551c0dfa5879eb7c3e5bc739e90cef",
+      "filters": [
+        1024,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "file": "5-17.png",
+      "sha256": "17442ffa9f326883395fdd0f4059d9b650d21b2f018b14f9a940f8c09b1e3a82",
+      "filters": [
+        1024,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "file": "6-17.png",
+      "sha256": "d59a8c9a0611637325b6350019b6eca76cae4c397d0c23fb7f6519b4ad80b2d1",
+      "filters": [
+        1024,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "file": "7-17.png",
+      "sha256": "2d6092b44981d777c707e53ed2c65219354625b9d78226be97a881f676ce9624",
+      "filters": [
+        1024,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "file": "15-17.png",
+      "sha256": "8b53050623eafb5c112f850e641382f5ad6ef7631a1046dad144d22522f7fcc6",
+      "filters": [
+        1024,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "file": "5-18.png",
+      "sha256": "86d316c8b28977ce93c413c71ab9258bf0d4884fe52d3f920505d920c52719e3",
+      "filters": [
+        1024,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "file": "6-18.png",
+      "sha256": "5db32d671db8addce372811a437d5a524ab8e1d74bc6c3724a1ea448c7df965d",
+      "filters": [
+        1024,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "file": "5-19.png",
+      "sha256": "908678acf7c39e939d0a890ab75bcf78258acafe563816235de31f27ec041b6e",
+      "filters": [
+        1024,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "file": "6-19.png",
+      "sha256": "39de4d5bc9a62d4e3b246a0a15bcf96ac29338822cfbe5ce3d0c7fe6814f8414",
+      "filters": [
+        1024,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "file": "4-20.png",
+      "sha256": "72e867b0092a441c1ef5778ae2899be1794a20489dfbc8086b7630fbc00ccb7d",
+      "filters": [
+        1024,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "file": "5-20.png",
+      "sha256": "61f8ea01d6e222267736a4429595a3396f003adb2569ffa1a67a129cd68e172c",
+      "filters": [
+        1024,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "file": "15-20.png",
+      "sha256": "bc1b3070f93e130b6c7ca33485d4d8bd90b9acd10916c9a5c43b05d4554d87b3",
+      "filters": [
+        1024,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "file": "17-20.png",
+      "sha256": "b367c697d1fff6cc6ce5e218f1ad9c5c2624aeda7f95323b079d455b3c4473fc",
+      "filters": [
+        1024,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "file": "3-21.png",
+      "sha256": "4c51f136435e93b37d2e60f01c1c6370b2ca7079142c97c9e5b758fae8a72a2c",
+      "filters": [
+        1024,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "file": "4-21.png",
+      "sha256": "226fbc50c88c90257f652bcadde706e5a0604a59c5952979297114095e125315",
+      "filters": [
+        1024,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "file": "17-21.png",
+      "sha256": "9caba4d19c6a90ff910b33cdc05f1f89de31d9c0419b2f0d98900de43a77259c",
+      "filters": [
+        1024,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "file": "0-22.png",
+      "sha256": "6c53003f7b94d1ed5c0fa6c45a720b3efa733f899e025b86fca094c2654f4af1",
+      "filters": [
+        1024,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "file": "1-22.png",
+      "sha256": "338d35b4adb03d572fe3af03d0003af9df9e1df1e28b995dab8ec246036edd1c",
+      "filters": [
+        1024,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "file": "7-22.png",
+      "sha256": "2e4b4ade72b0be4172d4cf05271ee5043dab39229c347c29bccf248635cc0508",
+      "filters": [
+        1024,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "file": "16-22.png",
+      "sha256": "a58caadbca5e97e2c4fe718bc6bfd02ef5e1dabddaf9589a48a55d68dc3f8956",
+      "filters": [
+        1024,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "file": "0-23.png",
+      "sha256": "1bc4902a150d906d79fe0cbfc1e0391f7b0a626ab9f70089d7fad77d4964302f",
+      "filters": [
+        736,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "file": "1-23.png",
+      "sha256": "099c9523abfbeae2c88fa60b29d78904f079b270377b28cf0deaa8645154b7f0",
+      "filters": [
+        736,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "file": "2-23.png",
+      "sha256": "a49fce89aaedefe266838906b39be805da326c23adadc2906f86ab09fedb35d7",
+      "filters": [
+        736,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "file": "7-23.png",
+      "sha256": "91f432dc8d60d706bc03fdfba86c070cce4df1643f570f4c33c00ff697d072ce",
+      "filters": [
+        736,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "file": "16-23.png",
+      "sha256": "b75a792b18af437659a0bb0bfc46b69ee24f5c822a06c774f3d9bff617abc9d2",
+      "filters": [
+        736,
+        0,
+        0,
+        0,
+        0
+      ]
+    }
+  ],
+  "scope": "Every source RGB pixel equals the declared tile baseline. Listed tiles are decoded and checked against definition colours; omitted tiles are the explicit sea colour. No history or map projection accuracy is inferred."
+}

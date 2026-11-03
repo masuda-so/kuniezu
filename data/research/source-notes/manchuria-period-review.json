@@ -1,0 +1,763 @@
+{
+  "schemaVersion": 2,
+  "reviewedAt": "2026-11-03",
+  "scope": {
+    "years": [
+      1560,
+      1615
+    ],
+    "region": "現行全域格子内の遼東・女真諸部・現在の沿海州",
+    "gameBoundsLonLat": [
+      122.7415448175636,
+      24.451300754581386,
+      145.81733057789472,
+      46.26948257276321
+    ],
+    "purpose": "明の軍政域と女真諸部の年代別表示、資料から登録した遼東1560基幹域・寛甸期間差分の反映根拠",
+    "sharedTreeReadOnly": "/Users/masudaso/Desktop/天下分け目の国絵図",
+    "serverOperations": false,
+    "gameChangedByThisResearchTask": false
+  },
+  "conclusion": [
+    "遼陽を中心とする遼東都司の軍政域は明の直接統治として扱う。",
+    "女真諸衛には明の官号・朝貢・交易の関係があるが、首長自身の実効支配と区別する。満州全域を明の直轄領と同じ色・同じ所有者に統合しない。",
+    "ヌルハチの勢力拡大と対明朝貢は併存した。1583年を即時の対明独立・全女真統一として描かない。",
+    "後金建国は1616年、遼陽攻略は1621年で、ゲーム最終年1615までに前倒ししない。",
+    "現在のロシア沿海州を1560〜1615年のロシア領として描かない。当該域では女真諸集団などの活動地域を示す。現代国名は比較地理の説明に限定する。"
+  ],
+  "sources": [
+    {
+      "id": "liaoyang-museum-2017",
+      "author": "遼陽博物館",
+      "title": "第四展厅：元明清时期——行省、镇城与都城",
+      "published": "2017-07-26",
+      "type": "museum-exhibition",
+      "url": "https://www.lnlymuseum.com/case/detail/id/8.html",
+      "locator": "第二単元 九辺之首／第三単元 興邦之地",
+      "originalChecked": true,
+      "summary": "1375年に遼陽へ遼東都司を置き、25衛・2州を軍政の基層とする。明中期以降の遼東辺牆と、1621年の後金による遼陽攻略を説明。1583年の東寧衛指揮使司印も展示。",
+      "supports": [
+        "ming-direct-administration",
+        "liaoyang-1621"
+      ],
+      "doesNotSupport": "近代省境・実測国境ポリゴン・女真全域の同一行政統治"
+    },
+    {
+      "id": "roth-li-2002",
+      "author": "Gertraude Roth Li",
+      "title": "State Building before 1644",
+      "publication": "The Cambridge History of China, Volume 9, Part One: The Ch'ing Empire to 1800",
+      "editor": "Willard J. Peterson",
+      "publisher": "Cambridge University Press",
+      "year": 2002,
+      "type": "university-press-research",
+      "url": "https://assets.cambridge.org/0521243343/sample/0521243343WS.pdf",
+      "locator": "章本文 pp.11–14, 21–22, 25（配布PDF pp.10–14,21–22,25）",
+      "originalChecked": true,
+      "summary": "遼陽の25衛軍政と女真諸衛を区別。女真への官号は外交・交易承認の役割を持ち、明の常駐占領・人口課税と同一ではない。奴児干の前進拠点は1435年に放棄と記述。衛名は集団の移動・統廃合後も台帳に残り、固定境界ではない。ハダの王台死後1582年に海西の政治構成が変動。",
+      "supports": [
+        "direct-rule-vs-investiture",
+        "no-fixed-guard-territories",
+        "haixi-multiple-polities"
+      ],
+      "doesNotSupport": "全女真に均質な臣従・軍事同盟を設定すること、16世紀の精密な境界座標"
+    },
+    {
+      "id": "masui-2022",
+      "author": "増井寛也",
+      "title": "ヌルハチの対明関係とその展開過程について―主として朝貢活動から見た―",
+      "publication": "立命館文學",
+      "issue": 679,
+      "published": "2022-09",
+      "bibliographyURL": "https://ndlsearch.ndl.go.jp/books/R000000025-I010380006894949",
+      "doi": "10.34382/0002002769",
+      "url": "https://www.ritsumei.ac.jp/acd/cg/lt/rb/679/679PDF/masui.pdf",
+      "type": "university-primary-source-analysis",
+      "locator": "PDF pp.1–6の朝貢年表、pp.14–15の駆民棄地",
+      "originalChecked": true,
+      "summary": "『明実録』を中心に1588〜1615年の30次の朝貢を整理。1588年建州統合、1603年本拠移転、1607年ホイファ滅亡、1613年ウラ滅亡、1615年朝貢と翌年建国を区別。ハダは1599年攻略後、1601年の再興・再併合も記す。寛甸方面の強制退去を1603〜1605年の過程と1606年の報告に分ける。",
+      "supports": [
+        "nurhaci-tribute-until-1615",
+        "nurhaci-periods",
+        "hada-not-one-permanent-transfer",
+        "kuandian-phased-change"
+      ],
+      "primaryWitnesses": "明実録・満洲実録・東夷考略等を著者が突合。今回、所蔵原本の全頁独立翻刻までは行っていない。"
+    },
+    {
+      "id": "nikh-nurhaci",
+      "author": "韓国・国史編纂委員会（우리역사넷）",
+      "title": "누르하치 — 아이신 구룬(금국)의 설립자",
+      "url": "https://contents.history.go.kr/mobile/kc/view.do?code=kc_age_30&levelId=kc_n303310",
+      "type": "national-history-institution",
+      "locator": "2 여진을 통일하다／3 국가를 수립하다",
+      "originalChecked": true,
+      "summary": "建州・海西・野人女真の地域と複数集団を説明。1583年起兵、1588年建州統合、1599年ハダ・1607年ホイファ・1613年ウラ併合、1615年八旗、1616年建国。イェヘは建国時にも未併合。野人女真は牡丹江以東と現在の沿海州を含む包括呼称。",
+      "supports": [
+        "nurhaci-periods",
+        "eastern-jurchen-region",
+        "yehe-remains-separate"
+      ],
+      "limits": "地域分布の記述であり各年の境界ポリゴンではない。東方諸集団を一つの国家に統合しない。"
+    },
+    {
+      "id": "palace-museum-nurhaci",
+      "author": "故宮博物院",
+      "title": "努尔哈赤",
+      "url": "https://www.dpm.org.cn/court/lineage/226250.html",
+      "type": "museum",
+      "locator": "本文・大事年表の1583、1587、1603、1613、1616年条",
+      "originalChecked": true,
+      "summary": "1583年に明の官職を継承し起兵。1587年フェアラ築城、1603年ヘトゥアラ移転、1616年後金建国を記す。年表で1613年正月のウラ滅亡を確認。",
+      "supports": [
+        "nurhaci-investiture",
+        "capital-periods",
+        "later-jin-outside-game"
+      ],
+      "qualityFlags": [
+        "本文の八旗解説に『万历四十三年(1618年)』と西暦の矛盾がある。1615年は国史編纂委員会・増井論文で照合。",
+        "本文の龍虎将軍授与年と年表に差があるため、今回その官号取得年を実装根拠にしない。",
+        "建州統合の本文概説は『10年』。1588年の採用は増井論文と国史編纂委員会の一致を根拠とする。"
+      ]
+    },
+    {
+      "id": "prlib-poyarkov",
+      "author": "ロシア大統領図書館",
+      "title": "Василий Данилович Поярков (1597–1668)",
+      "url": "https://www.prlib.ru/node/2101587",
+      "type": "national-library",
+      "locator": "Биография、1643年出発〜1646年帰還",
+      "originalChecked": true,
+      "summary": "ポヤルコフ隊が1643年にヤクーツクを出発してアムール流域へ入り、河口を経て1646年に帰還した過程を記す。16世紀のロシア沿海州支配を支える年代ではない。",
+      "supports": [
+        "russian-arrival-after-game"
+      ],
+      "limits": "探索・徴税要求・恒久行政支配を同一視しない。"
+    },
+    {
+      "id": "prlib-peking-1860",
+      "author": "ロシア大統領図書館",
+      "title": "Заключён Пекинский договор 1860 г.",
+      "url": "https://www.prlib.ru/history/619718",
+      "type": "national-library-treaty-context",
+      "locator": "1860年11月14日（露暦11月2日）、条約による東境の説明",
+      "originalChecked": true,
+      "summary": "ウスリー川・ハンカ湖等から豆満江方面に至る境界と、その東側のロシア帰属を1860年条約の文脈で説明。現代露中国境を1560〜1615年の支配線へ転用できない。",
+      "supports": [
+        "modern-russian-border-not-sixteenth-century"
+      ]
+    },
+    {
+      "id": "lee-2014-fig1",
+      "author": "李華彥",
+      "title": "近三十年來明清鼎革之際軍事史研究回顧",
+      "publication": "明代研究",
+      "issue": 23,
+      "year": 2014,
+      "pages": "127–154",
+      "url": "https://ming.cnhis.ncnu.edu.tw/wp-content/uploads/2014/11/ming23_04Lee_full.pdf",
+      "type": "university-history-research",
+      "locator": "本文136頁・図1（PDF11頁）・図2（PDF12頁）",
+      "originalChecked": true,
+      "summary": "図1は劉謙『明遼東鎮長城及防禦考』（1989）の挿図を李が整理した防御図。旧辺牆の曲折と衛所位置を読み取る。図2は1565年全遼総図。図1には後年の寛甸外郭・1621年以後の防御配置を含み、全要素を1560年へ転写しない。",
+      "supports": [
+        "liaodong-boundary-registration",
+        "kuandian-outer-forts"
+      ],
+      "licenseHandling": "原図画像は台帳に再配布せず、書誌・SHA・手読取した位置事実と変換結果を保持。",
+      "pdfSha256": "c3f99d3e082618da3232c95831ecfe8f94640b294e25bee9ae4fda6bb2c1b750"
+    },
+    {
+      "id": "quanliaozhi-1565-fig2",
+      "author": "李輔等修・高鳳樓校勘・許麟英撰",
+      "title": "全遼志 巻一 嘉靖四十四年全遼總圖",
+      "originalYear": 1565,
+      "edition": "台北・新文豊、1989年版、巻1 p.1（李2014図2の書誌）",
+      "url": "https://ming.cnhis.ncnu.edu.tw/wp-content/uploads/2014/11/ming23_04Lee_full.pdf",
+      "type": "historical-map-reproduction-in-research",
+      "locator": "李2014 PDF12頁・図2",
+      "originalChecked": true,
+      "summary": "遼陽・開原・瀋陽・撫順等と辺牆の内外関係を比較。絵図の縮尺と方位は不均一で、地形を画素のまま移植しない。",
+      "supports": [
+        "liaodong-1560-regional-proxy"
+      ],
+      "limits": "1560年と5年差がある。正確な1560年の測量図とは扱わない。"
+    },
+    {
+      "id": "dila-place-authority",
+      "author": "法鼓文理学院 地名規範資料庫",
+      "title": "明代の衛所・堡等の地名記録",
+      "url": "https://authority.dila.edu.tw/place/",
+      "type": "academic-place-authority",
+      "locator": "個別の地名コード・URLは liaodong-reference/registration.json の対照点9件と独立比較4件",
+      "originalChecked": true,
+      "summary": "遼陽・瀋陽中衛・三万衛・鉄嶺衛・撫順所など、歴史地名の代表座標を原図記号に対応させる。鳳凰城は後代県治との地名連続も照合。",
+      "supports": [
+        "liaodong-control-points"
+      ],
+      "limits": "元データの座標表示はGRS67。測地原点の指定がなく厳密なWGS84変換は行わない。都市代表点と図記号の概略照合に用い、1kmの測地系・代表点留保を付す。城壁の精密座標とはしない。"
+    },
+    {
+      "id": "ma-ucla-2022",
+      "author": "Yirui Ma",
+      "title": "Encompassing Boundaries of the Ming and Early Qing Liaodong",
+      "year": 2022,
+      "publication": "University of California, Los Angeles, MA thesis",
+      "url": "https://escholarship.org/uc/item/3mn7w1wd",
+      "type": "university-research",
+      "locator": "本文pp.1,14–15,61–64",
+      "originalChecked": true,
+      "summary": "明の辺牆と清の柳条辺の範囲は一致しない。清は明の外側の地域を含む一方、鴨緑江・鳳凰方面の帯状地には異なる扱いがある。",
+      "supports": [
+        "exclude-qing-willow-palisade"
+      ],
+      "limits": "清の境界をゲーム期間へ適用しない。"
+    },
+    {
+      "id": "sinica-da-ming-atlas",
+      "author": "中央研究院デジタル文化中心",
+      "title": "大明輿地圖",
+      "url": "https://digitalatlas.asdc.sinica.edu.tw/map_detail.jsp?id=A103000001",
+      "type": "public-historical-map-catalog",
+      "locator": "地図解説・山東省二図の遼東分図",
+      "originalChecked": true,
+      "summary": "16世紀中頃の分省絵図に遼東分図を収録。地名から年代を推定する目録を確認。今回、画像全体の地理登録には採用しない。",
+      "supports": [
+        "contemporary-map-exists"
+      ],
+      "limits": "目録の嘉靖年号と西暦表記に差があり、精密な成立年の単独根拠にしない。"
+    },
+    {
+      "id": "chgis-v6",
+      "author": "Harvard University / Fudan University",
+      "title": "CHGIS Version 6",
+      "year": 2016,
+      "url": "https://chgis.fas.harvard.edu/data/chgis/v6/",
+      "type": "academic-gis-catalog-and-license",
+      "originalChecked": true,
+      "summary": "時系列地名と歴史行政データがある。利用条件は学術研究・非営利等の制約を含むため、ゲーム同梱用ポリゴンとして採用していない。",
+      "adoptedGeometry": false
+    },
+    {
+      "id": "ikcest-m0591",
+      "author": "IKCEST Disaster Risk Reduction Knowledge Service",
+      "title": "The Historical Map of the Liaodong Secretary of Shandong Province in the Ming Dynasty",
+      "published": "2021-06-02",
+      "url": "https://ikcest-drr.data.ac.cn/map/m0591",
+      "type": "public-geospatial-catalog",
+      "originalChecked": "catalog only",
+      "summary": "該当地図の目録を確認した。WMS画像は今回取得できず、図形と年代を目視確認できないため境界入力にしていない。",
+      "adoptedGeometry": false
+    },
+    {
+      "id": "dalian-library-baqi-1991",
+      "author": "瀛云萍著・于植元校／政協大連市委文史資料委員会編",
+      "title": "八旗源流",
+      "year": 1991,
+      "publication": "大連文史資料",
+      "url": "https://www.dl-library.net.cn/wenxian/wszl/8q.pdf",
+      "type": "public-library-local-history",
+      "locator": "本文104頁（PDF106頁）第十九節 鳳城満族自治県",
+      "originalChecked": true,
+      "summary": "明の鳳凰城堡を鳳城の県治に結び付け、明の定遼右衛移転と清の駐防を別に記す。同名南方地点ではなく都市代表点を採る根拠に限定する。",
+      "qualityFlags": [
+        "嘉靖終年・順治六年などの西暦換算に誤りがあるため、他の事件日付には転用しない。"
+      ],
+      "supports": [
+        "fenghuang-place-continuity"
+      ]
+    }
+  ],
+  "claims": [
+    {
+      "id": "ming-direct-administration",
+      "period": [
+        1560,
+        1615
+      ],
+      "status": "supported",
+      "claim": "遼陽を拠点とする遼東都司の衛所軍政域は明の直接統治として表示する。遼陽の後金への転換は1621年。",
+      "sources": [
+        "liaoyang-museum-2017",
+        "roth-li-2002"
+      ]
+    },
+    {
+      "id": "direct-rule-vs-investiture",
+      "period": [
+        1560,
+        1615
+      ],
+      "status": "supported",
+      "claim": "明の女真首長への武官任命・朝貢を、遼東都司の軍政域と同じ実効統治として塗らない。",
+      "sources": [
+        "roth-li-2002",
+        "masui-2022"
+      ]
+    },
+    {
+      "id": "nurhaci-tribute-until-1615",
+      "period": [
+        1588,
+        1615
+      ],
+      "status": "supported",
+      "claim": "女真統合と対明朝貢は併存。朝貢の一時停止をそのまま恒久独立・対明開戦へ変換しない。",
+      "sources": [
+        "masui-2022"
+      ]
+    },
+    {
+      "id": "later-jin-outside-game",
+      "period": [
+        1616,
+        1616
+      ],
+      "status": "outside-game-range",
+      "claim": "後金の建国・国号・天命年号は1616年から。1615年までのゲームで『後金』へ変更しない。",
+      "sources": [
+        "nikh-nurhaci",
+        "palace-museum-nurhaci"
+      ]
+    },
+    {
+      "id": "russian-arrival-after-game",
+      "period": [
+        1560,
+        1615
+      ],
+      "status": "supported-temporal-exclusion",
+      "claim": "現在の沿海州をこの期間のロシア領として描かない。アムール流域への露遠征は1643年以後で、近代の領土境界はさらに後代。",
+      "sources": [
+        "prlib-poyarkov",
+        "prlib-peking-1860"
+      ]
+    },
+    {
+      "id": "no-fixed-guard-territories",
+      "period": [
+        1560,
+        1615
+      ],
+      "status": "supported",
+      "claim": "羈縻衛名や後世の県境から不変の主権境界を自動生成しない。",
+      "sources": [
+        "roth-li-2002"
+      ]
+    },
+    {
+      "id": "liaodong-boundary-registration",
+      "period": [
+        1560,
+        1615
+      ],
+      "status": "source-derived-approximation",
+      "claim": "李2014図1の旧辺牆を読み取り、1565年図の内外関係と衛所座標で比較した概略を明の軍政域参考に採用する。100m解像度の精密境界とはしない。",
+      "sources": [
+        "lee-2014-fig1",
+        "quanliaozhi-1565-fig2",
+        "dila-place-authority"
+      ]
+    },
+    {
+      "id": "kuandian-period-reference",
+      "period": [
+        1573,
+        1605
+      ],
+      "status": "year-precision-approximation",
+      "claim": "寛甸方面の外郭は1573年以降の築堡と1603〜1605年の撤収を別期間として扱い、1560基幹域には入れない。",
+      "sources": [
+        "lee-2014-fig1",
+        "masui-2022"
+      ]
+    },
+    {
+      "id": "exclude-qing-willow-palisade",
+      "period": [
+        1560,
+        1615
+      ],
+      "status": "supported-exclusion",
+      "claim": "後世柳条辺・近代省境・現在の露中境界を明の軍政境界として使わない。",
+      "sources": [
+        "ma-ucla-2022",
+        "prlib-peking-1860"
+      ]
+    }
+  ],
+  "periods": [
+    {
+      "from": 1560,
+      "until": 1583,
+      "datePrecision": "year",
+      "labels": [
+        "明・遼東",
+        "建州女真諸部",
+        "海西女真諸部",
+        "牡丹江・沿海の女真諸集団"
+      ],
+      "rule": "建州と海西をヌルハチの一国としてまとめない。明直轄と朝貢関係を分離。",
+      "sources": [
+        "liaoyang-museum-2017",
+        "roth-li-2002",
+        "nikh-nurhaci"
+      ]
+    },
+    {
+      "from": 1583,
+      "until": 1588,
+      "datePrecision": "year",
+      "labels": [
+        "明・遼東",
+        "建州女真諸部",
+        "ヌルハチ"
+      ],
+      "rule": "ヌルハチの起兵・勢力形成を拠点注記として追加。1583年に全建州・全女真を同時獲得させない。",
+      "sources": [
+        "nikh-nurhaci",
+        "palace-museum-nurhaci"
+      ]
+    },
+    {
+      "from": 1588,
+      "until": 1599,
+      "datePrecision": "year",
+      "labels": [
+        "明・遼東",
+        "建州女真（ヌルハチ）",
+        "海西女真諸部"
+      ],
+      "rule": "建州統合後の名称にし、明への官号・朝貢関係を併記する。",
+      "sources": [
+        "masui-2022",
+        "nikh-nurhaci"
+      ]
+    },
+    {
+      "from": 1599,
+      "until": 1603,
+      "datePrecision": "year",
+      "labels": [
+        "明・遼東",
+        "建州女真（ヌルハチ）",
+        "イェヘ・ウラ・ホイファ"
+      ],
+      "rule": "ハダは1599攻略→1600国主処刑→1601再興と再併合を経る。1599の一回で不変領域化するイベントにしない。",
+      "sources": [
+        "masui-2022"
+      ]
+    },
+    {
+      "from": 1603,
+      "until": 1607,
+      "datePrecision": "year",
+      "labels": [
+        "明・遼東",
+        "建州女真（ヌルハチ）",
+        "ヘトゥアラ"
+      ],
+      "rule": "本拠をヘトゥアラへ。寛甸方面の退去は1603〜1605の経過と1606報告を区別し、単一年の広域割譲で埋めない。",
+      "sources": [
+        "masui-2022",
+        "palace-museum-nurhaci"
+      ]
+    },
+    {
+      "from": 1607,
+      "until": 1613,
+      "datePrecision": "year",
+      "labels": [
+        "明・遼東",
+        "建州女真（ヌルハチ）",
+        "イェヘ",
+        "ウラ"
+      ],
+      "rule": "ホイファ併合後。東方女真の一部征服を沿海州全域の一括獲得にしない。",
+      "sources": [
+        "masui-2022",
+        "nikh-nurhaci"
+      ]
+    },
+    {
+      "from": 1613,
+      "until": 1616,
+      "datePrecision": "year",
+      "labels": [
+        "明・遼東",
+        "建州女真（ヌルハチ）",
+        "イェヘ"
+      ],
+      "rule": "ウラ併合後もイェヘは別勢力。1615八旗整備を表示可能。後金国号はゲーム範囲外。",
+      "sources": [
+        "masui-2022",
+        "nikh-nurhaci"
+      ]
+    }
+  ],
+  "dateHandling": "表の境界年は年精度。月日未照合の出来事を1月1日の確定イベントとして生成せず、年ごとの文脈・説明に使用する。明暦・朝鮮暦の月日を西暦月日へ無変換で転記しない。",
+  "runtimeAudit": {
+    "readOnly": true,
+    "files": [
+      {
+        "path": "game/liaodong-context.js",
+        "observation": "既存の『明』ラベルを『明・遼東』へ移し、遼陽の1地点を追加するだけ。領域・年代・女真の表示は設定しない。"
+      },
+      {
+        "path": "game/map_data/definition.csv",
+        "observation": "id142=neutral:明のみ。女真・遼東の区別やロシアの領域IDはない。"
+      },
+      {
+        "path": "game/ui.js",
+        "symbol": "rasterColor",
+        "observation": "castle:以外をすべてnullとして返す。neutral:明も領主色を持たない。"
+      },
+      {
+        "path": "game/ui.js",
+        "symbol": "borderEdges / castleAt",
+        "observation": "城間境界と城領の選択のみ。非城領の政治表示・説明は独立に足す必要がある。"
+      },
+      {
+        "path": "game/geo.js",
+        "observation": "旧neutral.明の輪郭は概略で東経123.999862〜125.262505・北緯39.816〜40.62に限る。遼東都司の全域ではない。"
+      },
+      {
+        "path": "game/land-extension.js",
+        "observation": "GSHHGの陸地拡張であり所有者・年代別統治は追加していない。"
+      }
+    ],
+    "samples": [
+      {
+        "label": "遼陽の現表示点",
+        "at": [
+          123.17,
+          41.27
+        ],
+        "pixel": [
+          385,
+          5565
+        ],
+        "id": 2,
+        "key": "unassigned"
+      },
+      {
+        "label": "瀋陽周辺比較点",
+        "at": [
+          123.43,
+          41.8
+        ],
+        "pixel": [
+          620,
+          4975
+        ],
+        "id": 2,
+        "key": "unassigned"
+      },
+      {
+        "label": "開原周辺比較点",
+        "at": [
+          124.04,
+          42.55
+        ],
+        "pixel": [
+          1169,
+          4140
+        ],
+        "id": 2,
+        "key": "unassigned"
+      },
+      {
+        "label": "ヘトゥアラ周辺比較点",
+        "at": [
+          124.85,
+          41.72
+        ],
+        "pixel": [
+          1898,
+          5064
+        ],
+        "id": 2,
+        "key": "unassigned"
+      },
+      {
+        "label": "吉林周辺比較点",
+        "at": [
+          126.55,
+          43.85
+        ],
+        "pixel": [
+          3429,
+          2693
+        ],
+        "id": 2,
+        "key": "unassigned"
+      },
+      {
+        "label": "牡丹江周辺比較点",
+        "at": [
+          129.63,
+          44.55
+        ],
+        "pixel": [
+          6203,
+          1914
+        ],
+        "id": 2,
+        "key": "unassigned"
+      },
+      {
+        "label": "ウラジオストク周辺比較点",
+        "at": [
+          131.89,
+          43.12
+        ],
+        "pixel": [
+          8239,
+          3506
+        ],
+        "id": 2,
+        "key": "unassigned"
+      },
+      {
+        "label": "丹東北部比較点",
+        "at": [
+          124.3,
+          40.2
+        ],
+        "pixel": [
+          1403,
+          6756
+        ],
+        "id": 142,
+        "key": "neutral:明"
+      }
+    ],
+    "sampleMethod": "現行projection.jsonで指定経緯度を格子へ投影し、game/map/provincesの100mタイルのRGBをdefinition.csvと照合。遼陽以外は内部点検用の近傍点で、史跡の測量座標として登録しない。",
+    "finding": "明の直轄だった遼陽・瀋陽等も未割当陸であり、女真・沿海諸集団と視覚的に区別されていない。ロシア領を描いている証拠はなく、無名の未割当陸を現代国名で見てしまう構成が原因。",
+    "snapshot": "正本編集前の共有データ。下記観測は修正後の状態を表さない。"
+  },
+  "recommendations": [
+    {
+      "priority": 1,
+      "target": "game/map_data/provinces.png / 年代別派生",
+      "action": "liaodong-reference/liaodong-1560.geojson の基幹域と寛甸差分を正本の未割当陸・旧明にだけ反映し、海・湖・城領を保持する。基幹域外に残る旧明の粗い張り出しは除き、期間差分に該当する部分だけその期間に復元する。"
+    },
+    {
+      "priority": 1,
+      "target": "game/liaodong-context.js / game/ui.js",
+      "action": "明・遼東、建州女真、海西女真、東方の女真諸部を年代付き文脈表示へ接続。neutralは外交中立国ではなく参考地域IDとし、外交や軍の所有者へ転用しない。"
+    },
+    {
+      "priority": 1,
+      "target": "国境・地域説明",
+      "action": "明は参考色、軍政辺境は概略と自然文で説明する。女真への官号・朝貢を同色の直轄領にしない。後金1616・ロシアの近代領土は期間外として除外。"
+    }
+  ],
+  "boundaryDecision": {
+    "status": "source-registered-regional-approximation-ready-for-map-application",
+    "geometryPath": "data/research/liaodong-reference/liaodong-1560.geojson",
+    "registrationPath": "data/research/liaodong-reference/registration.json",
+    "tracePath": "data/research/liaodong-reference/source-trace-pixels.json",
+    "coreFeature": "ming-liaodong-1560-mask",
+    "periodFeature": "ming-kuandian-1573-1605-mask",
+    "datePolicy": "1565年絵図の位相比較から1560開始時の旧軍政域を近似する。1573開始・1606終了は年精度の表示用区切りで、1月1日の領有事件ではない。",
+    "geometryMeaning": "辺牆と衛所の内外関係による軍政域の概略。主権・徴税・住民構成が同じ線で完全に切り替わるとはしない。",
+    "coreUncertaintyKm": 20,
+    "periodUncertaintyKm": 25,
+    "controls": 9,
+    "withheldChecks": 4,
+    "withheldRmsKm": 8.518,
+    "leaveOneOutRmsKm": 7.507,
+    "leaveOneOutMaxKm": 14.588,
+    "adopt": [
+      "旧辺牆記号の曲折",
+      "史料の衛所と対照点",
+      "年差分の寛甸外郭"
+    ],
+    "exclude": [
+      "1560への寛甸外郭先取り",
+      "1621年以後の陣地配置",
+      "清の柳条辺",
+      "現代の省境・露中国境",
+      "CHGISライセンス制限下のポリゴン",
+      "未取得WMS画像"
+    ],
+    "maskSafety": [
+      "変更対象はunassignedとneutral:明のみ",
+      "海・湖・castle領域は変更しない",
+      "マスク閉鎖辺を歴史国境として描かない",
+      "軍の進路・外交・所有イベントを生成しない"
+    ],
+    "limits": "登録に未使用の4点RMSは地名記号と位置の比較誤差。境界の外部測量精度を証明しない。内挿点残差0を精度主張に使わない。"
+  },
+  "proposedReportAppend": {
+    "target": "docs/reports/USABILITY_AND_GEOGRAPHY_REVIEW.md",
+    "section": "明・遼東（2026-11-03追補案）",
+    "text": "遼東都司の直接統治と女真首長への官号・朝貢を分離し、1560〜1615年の文脈を再照合した。明の軍政域は李華彥2014図1と1565年全遼総図を比較し、旧辺牆の曲折を9地名点で登録した。未使用4点の位置比較RMSは8.518km、境界は20〜25km幅の地域概略とする。寛甸の外郭は1573〜1605年の表示差分に分離し、1603〜1605年の段階的撤収を説明する。現代省境・清の柳条辺・後金1616・ロシア近代領土は適用しない。正本編集は未割当陸と旧明に限定して海・湖・城領を保持する。根拠は data/research/source-notes/manchuria-period-review.json、登録・読取点・7図形は data/research/liaodong-reference/。地域モジュールは明の5軍政拠点と5地域の年代説明を持ち、外交状態を生成しない。",
+    "applied": false
+  },
+  "copyrightHandling": "本文を転記せず自分の言葉による要約と書誌・該当箇所だけ保持。第三者PDF・HTML原本をこのファイルへ同梱しない。",
+  "periodMask": {
+    "feature": "ming-kuandian-1573-1605-mask",
+    "fromInclusive": [
+      1573,
+      1,
+      1
+    ],
+    "untilExclusive": [
+      1606,
+      1,
+      1
+    ],
+    "calendar": "game-year abstraction",
+    "datePrecision": "year",
+    "construction": "1573年以降に築堡を開始。外郭全体の即日完成ではない。",
+    "withdrawalYears": [
+      1603,
+      1604,
+      1605
+    ],
+    "displayRequirement": "撤収期は段階的撤収の説明を付す。1605年末まで全域を均質に支配したという意味ではない。",
+    "noEventGeneration": true
+  },
+  "runtimeContract": {
+    "candidate": "/tmp/kuniezu-liaodong-source/liaodong-context.js",
+    "styles": "TK.CONTEXT_REGION_STYLES[neutral:明]",
+    "presentation": "TK.contextRegionPresentation(key,year) -> {title,role,description,state,source,reference}",
+    "places": [
+      "遼陽",
+      "瀋陽",
+      "開原",
+      "鉄嶺",
+      "撫順"
+    ],
+    "regionKeys": [
+      "neutral:明",
+      "context:jianzhou",
+      "context:haixi",
+      "context:eastern-jurchen",
+      "context:mongol"
+    ],
+    "labelsAreLayoutAnchors": true,
+    "diplomaticStatesCreated": false
+  },
+  "verification": {
+    "command": "node /tmp/kuniezu-liaodong-source/check.cjs",
+    "result": "pass",
+    "coverage": [
+      "7 featureの有限座標・閉環・自己交差",
+      "明の5衛所が基幹域内",
+      "義州・ヘトゥアラ・吉林・現在のウラジオストクが基幹域外",
+      "56年×5地域の文脈と範囲外年の非表示",
+      "1613イェヘ・1604撤収・ロシア進出時期",
+      "変換のヤコビアン符号が40×40点で不変"
+    ],
+    "notCovered": "共有ゲームへの適用後の色・境界・操作・実画面は親担当が別途検査する。"
+  },
+  "artifactHashes": {
+    "data/research/liaodong-reference/README.md": "69e975449ba9fd063a8e9759865d554ca381c69f4504931109e0033ae7a638cc",
+    "data/research/liaodong-reference/liaodong-1560.geojson": "9758e4001197f46f19d8ae441b7b37718ca0cacad7f37b7d5d4f72189ee9a494",
+    "data/research/liaodong-reference/registration.json": "3b55a3bbcca749df0892284ec1417185147aa7d70a46edb28e4acd93f5163790",
+    "data/research/liaodong-reference/source-trace-pixels.json": "179e5f3d401e6b5efbfda9f105ceff96f5334b16a9715c1360732e3f52ef808f"
+  }
+}

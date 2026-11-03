@@ -1,0 +1,1139 @@
+{
+  "ok": true,
+  "url": "http://localhost:8000/index.html",
+  "scope": "map date switching in an isolated profile; not a full historical simulation",
+  "sourceSha256": "46ac04975ed4291bd7f1ead55f985818b5daf91f0f84430c8064e909b09bd7a4",
+  "canonicalPngSha256": "2b2fe511a86fb8bdfa6b8d671a2883304b21f1499da3a7544f94128922c7f1a1",
+  "rows": [
+    {
+      "label": "title",
+      "mode": "title",
+      "date": {
+        "y": 1560,
+        "m": 6,
+        "d": 5
+      },
+      "version": null,
+      "fujitoPassageConnected": true,
+      "visitedSeaCells": 10667,
+      "points": [
+        {
+          "name": "経ヶ島",
+          "point": [
+            133.8108903,
+            34.5610021
+          ],
+          "pick": {
+            "id": 114,
+            "rgb": [
+              124,
+              185,
+              164
+            ],
+            "key": "castle:tenjin",
+            "kind": "land",
+            "factor": 1
+          }
+        },
+        {
+          "name": "藤戸寺",
+          "point": [
+            133.8095872,
+            34.5601554
+          ],
+          "pick": {
+            "id": 114,
+            "rgb": [
+              124,
+              185,
+              164
+            ],
+            "key": "castle:tenjin",
+            "kind": "land",
+            "factor": 1
+          }
+        },
+        {
+          "name": "浮洲岩跡",
+          "point": [
+            133.8052177,
+            34.5598924
+          ],
+          "pick": {
+            "id": 114,
+            "rgb": [
+              124,
+              185,
+              164
+            ],
+            "key": "castle:tenjin",
+            "kind": "land",
+            "factor": 1
+          }
+        },
+        {
+          "name": "塩生",
+          "point": [
+            133.771388,
+            34.476388
+          ],
+          "pick": {
+            "id": 114,
+            "rgb": [
+              124,
+              185,
+              164
+            ],
+            "key": "castle:tenjin",
+            "kind": "land",
+            "factor": 1
+          }
+        },
+        {
+          "name": "水島",
+          "point": [
+            133.718,
+            34.517
+          ],
+          "pick": {
+            "id": 1,
+            "rgb": [
+              8,
+              24,
+              48
+            ],
+            "key": "sea",
+            "kind": "sea",
+            "factor": 1
+          }
+        },
+        {
+          "name": "早島の丘",
+          "point": [
+            133.81842,
+            34.599915
+          ],
+          "pick": {
+            "id": 5,
+            "rgb": [
+              221,
+              232,
+              45
+            ],
+            "key": "castle:bmatsuyama",
+            "kind": "land",
+            "factor": 1
+          }
+        },
+        {
+          "name": "北岸",
+          "point": [
+            133.9,
+            34.64
+          ],
+          "pick": {
+            "id": 114,
+            "rgb": [
+              124,
+              185,
+              164
+            ],
+            "key": "castle:tenjin",
+            "kind": "land",
+            "factor": 1
+          }
+        },
+        {
+          "name": "宇喜多期",
+          "point": [
+            133.83584341367313,
+            34.59907294286741
+          ],
+          "pick": {
+            "id": 1,
+            "rgb": [
+              8,
+              24,
+              48
+            ],
+            "key": "sea",
+            "kind": "sea",
+            "factor": 1
+          }
+        }
+      ],
+      "relief": {
+        "8:0-0.webp": "ready",
+        "8:1-0.webp": "ready",
+        "8:2-0.webp": "ready",
+        "8:0-1.webp": "ready",
+        "8:1-1.webp": "ready",
+        "8:2-1.webp": "ready",
+        "8:0-2.webp": "ready",
+        "8:1-2.webp": "ready",
+        "8:2-2.webp": "ready",
+        "1:8-12.webp": "ready",
+        "1:9-12.webp": "ready",
+        "1:10-12.webp": "ready",
+        "1:8-13.webp": "ready",
+        "1:9-13.webp": "ready",
+        "1:10-13.webp": "ready",
+        "4:2-3.webp": "ready"
+      }
+    },
+    {
+      "label": "1560-1-1",
+      "mode": "game",
+      "date": {
+        "y": 1560,
+        "m": 1,
+        "d": 1
+      },
+      "version": null,
+      "fujitoPassageConnected": true,
+      "visitedSeaCells": 10667,
+      "points": [
+        {
+          "name": "経ヶ島",
+          "point": [
+            133.8108903,
+            34.5610021
+          ],
+          "pick": {
+            "id": 114,
+            "rgb": [
+              124,
+              185,
+              164
+            ],
+            "key": "castle:tenjin",
+            "kind": "land",
+            "factor": 1
+          }
+        },
+        {
+          "name": "藤戸寺",
+          "point": [
+            133.8095872,
+            34.5601554
+          ],
+          "pick": {
+            "id": 114,
+            "rgb": [
+              124,
+              185,
+              164
+            ],
+            "key": "castle:tenjin",
+            "kind": "land",
+            "factor": 1
+          }
+        },
+        {
+          "name": "浮洲岩跡",
+          "point": [
+            133.8052177,
+            34.5598924
+          ],
+          "pick": {
+            "id": 114,
+            "rgb": [
+              124,
+              185,
+              164
+            ],
+            "key": "castle:tenjin",
+            "kind": "land",
+            "factor": 1
+          }
+        },
+        {
+          "name": "塩生",
+          "point": [
+            133.771388,
+            34.476388
+          ],
+          "pick": {
+            "id": 114,
+            "rgb": [
+              124,
+              185,
+              164
+            ],
+            "key": "castle:tenjin",
+            "kind": "land",
+            "factor": 1
+          }
+        },
+        {
+          "name": "水島",
+          "point": [
+            133.718,
+            34.517
+          ],
+          "pick": {
+            "id": 1,
+            "rgb": [
+              8,
+              24,
+              48
+            ],
+            "key": "sea",
+            "kind": "sea",
+            "factor": 1
+          }
+        },
+        {
+          "name": "早島の丘",
+          "point": [
+            133.81842,
+            34.599915
+          ],
+          "pick": {
+            "id": 5,
+            "rgb": [
+              221,
+              232,
+              45
+            ],
+            "key": "castle:bmatsuyama",
+            "kind": "land",
+            "factor": 1
+          }
+        },
+        {
+          "name": "北岸",
+          "point": [
+            133.9,
+            34.64
+          ],
+          "pick": {
+            "id": 114,
+            "rgb": [
+              124,
+              185,
+              164
+            ],
+            "key": "castle:tenjin",
+            "kind": "land",
+            "factor": 1
+          }
+        },
+        {
+          "name": "宇喜多期",
+          "point": [
+            133.83584341367313,
+            34.59907294286741
+          ],
+          "pick": {
+            "id": 1,
+            "rgb": [
+              8,
+              24,
+              48
+            ],
+            "key": "sea",
+            "kind": "sea",
+            "factor": 1
+          }
+        }
+      ],
+      "relief": {
+        "8:0-0.webp": "ready",
+        "8:1-0.webp": "ready",
+        "8:2-0.webp": "ready",
+        "8:0-1.webp": "ready",
+        "8:1-1.webp": "ready",
+        "8:2-1.webp": "ready",
+        "8:0-2.webp": "ready",
+        "8:1-2.webp": "ready",
+        "8:2-2.webp": "ready",
+        "1:8-12.webp": "ready",
+        "1:9-12.webp": "ready",
+        "1:10-12.webp": "ready",
+        "1:8-13.webp": "ready",
+        "1:9-13.webp": "ready",
+        "1:10-13.webp": "ready",
+        "4:2-3.webp": "ready",
+        "4:2-2.webp": "ready",
+        "4:3-2.webp": "ready",
+        "4:3-3.webp": "ready"
+      }
+    },
+    {
+      "label": "1583-12-30",
+      "mode": "game",
+      "date": {
+        "y": 1583,
+        "m": 12,
+        "d": 30
+      },
+      "version": null,
+      "fujitoPassageConnected": true,
+      "visitedSeaCells": 10667,
+      "points": [
+        {
+          "name": "経ヶ島",
+          "point": [
+            133.8108903,
+            34.5610021
+          ],
+          "pick": {
+            "id": 114,
+            "rgb": [
+              124,
+              185,
+              164
+            ],
+            "key": "castle:tenjin",
+            "kind": "land",
+            "factor": 1
+          }
+        },
+        {
+          "name": "藤戸寺",
+          "point": [
+            133.8095872,
+            34.5601554
+          ],
+          "pick": {
+            "id": 114,
+            "rgb": [
+              124,
+              185,
+              164
+            ],
+            "key": "castle:tenjin",
+            "kind": "land",
+            "factor": 1
+          }
+        },
+        {
+          "name": "浮洲岩跡",
+          "point": [
+            133.8052177,
+            34.5598924
+          ],
+          "pick": {
+            "id": 114,
+            "rgb": [
+              124,
+              185,
+              164
+            ],
+            "key": "castle:tenjin",
+            "kind": "land",
+            "factor": 1
+          }
+        },
+        {
+          "name": "塩生",
+          "point": [
+            133.771388,
+            34.476388
+          ],
+          "pick": {
+            "id": 114,
+            "rgb": [
+              124,
+              185,
+              164
+            ],
+            "key": "castle:tenjin",
+            "kind": "land",
+            "factor": 1
+          }
+        },
+        {
+          "name": "水島",
+          "point": [
+            133.718,
+            34.517
+          ],
+          "pick": {
+            "id": 1,
+            "rgb": [
+              8,
+              24,
+              48
+            ],
+            "key": "sea",
+            "kind": "sea",
+            "factor": 1
+          }
+        },
+        {
+          "name": "早島の丘",
+          "point": [
+            133.81842,
+            34.599915
+          ],
+          "pick": {
+            "id": 5,
+            "rgb": [
+              221,
+              232,
+              45
+            ],
+            "key": "castle:bmatsuyama",
+            "kind": "land",
+            "factor": 1
+          }
+        },
+        {
+          "name": "北岸",
+          "point": [
+            133.9,
+            34.64
+          ],
+          "pick": {
+            "id": 114,
+            "rgb": [
+              124,
+              185,
+              164
+            ],
+            "key": "castle:tenjin",
+            "kind": "land",
+            "factor": 1
+          }
+        },
+        {
+          "name": "宇喜多期",
+          "point": [
+            133.83584341367313,
+            34.59907294286741
+          ],
+          "pick": {
+            "id": 1,
+            "rgb": [
+              8,
+              24,
+              48
+            ],
+            "key": "sea",
+            "kind": "sea",
+            "factor": 1
+          }
+        }
+      ],
+      "relief": {
+        "8:0-0.webp": "ready",
+        "8:1-0.webp": "ready",
+        "8:2-0.webp": "ready",
+        "8:0-1.webp": "ready",
+        "8:1-1.webp": "ready",
+        "8:2-1.webp": "ready",
+        "8:0-2.webp": "ready",
+        "8:1-2.webp": "ready",
+        "8:2-2.webp": "ready",
+        "1:8-12.webp": "ready",
+        "1:9-12.webp": "ready",
+        "1:10-12.webp": "ready",
+        "1:8-13.webp": "ready",
+        "1:9-13.webp": "ready",
+        "1:10-13.webp": "ready",
+        "4:2-3.webp": "ready",
+        "4:2-2.webp": "ready",
+        "4:3-2.webp": "ready",
+        "4:3-3.webp": "ready"
+      }
+    },
+    {
+      "label": "1584-1-1",
+      "mode": "game",
+      "date": {
+        "y": 1584,
+        "m": 1,
+        "d": 1
+      },
+      "version": "15840101-16160101",
+      "fujitoPassageConnected": true,
+      "visitedSeaCells": 10308,
+      "points": [
+        {
+          "name": "経ヶ島",
+          "point": [
+            133.8108903,
+            34.5610021
+          ],
+          "pick": {
+            "id": 114,
+            "rgb": [
+              124,
+              185,
+              164
+            ],
+            "key": "castle:tenjin",
+            "kind": "land",
+            "factor": 1
+          }
+        },
+        {
+          "name": "藤戸寺",
+          "point": [
+            133.8095872,
+            34.5601554
+          ],
+          "pick": {
+            "id": 114,
+            "rgb": [
+              124,
+              185,
+              164
+            ],
+            "key": "castle:tenjin",
+            "kind": "land",
+            "factor": 1
+          }
+        },
+        {
+          "name": "浮洲岩跡",
+          "point": [
+            133.8052177,
+            34.5598924
+          ],
+          "pick": {
+            "id": 114,
+            "rgb": [
+              124,
+              185,
+              164
+            ],
+            "key": "castle:tenjin",
+            "kind": "land",
+            "factor": 1
+          }
+        },
+        {
+          "name": "塩生",
+          "point": [
+            133.771388,
+            34.476388
+          ],
+          "pick": {
+            "id": 114,
+            "rgb": [
+              124,
+              185,
+              164
+            ],
+            "key": "castle:tenjin",
+            "kind": "land",
+            "factor": 1
+          }
+        },
+        {
+          "name": "水島",
+          "point": [
+            133.718,
+            34.517
+          ],
+          "pick": {
+            "id": 1,
+            "rgb": [
+              8,
+              24,
+              48
+            ],
+            "key": "sea",
+            "kind": "sea",
+            "factor": 1
+          }
+        },
+        {
+          "name": "早島の丘",
+          "point": [
+            133.81842,
+            34.599915
+          ],
+          "pick": {
+            "id": 5,
+            "rgb": [
+              221,
+              232,
+              45
+            ],
+            "key": "castle:bmatsuyama",
+            "kind": "land",
+            "factor": 1
+          }
+        },
+        {
+          "name": "北岸",
+          "point": [
+            133.9,
+            34.64
+          ],
+          "pick": {
+            "id": 114,
+            "rgb": [
+              124,
+              185,
+              164
+            ],
+            "key": "castle:tenjin",
+            "kind": "land",
+            "factor": 1
+          }
+        },
+        {
+          "name": "宇喜多期",
+          "point": [
+            133.83584341367313,
+            34.59907294286741
+          ],
+          "pick": {
+            "id": 5,
+            "rgb": [
+              221,
+              232,
+              45
+            ],
+            "key": "castle:bmatsuyama",
+            "kind": "land",
+            "factor": 1
+          }
+        }
+      ],
+      "relief": {
+        "8:0-0.webp": "ready",
+        "8:1-0.webp": "ready",
+        "8:2-0.webp": "ready",
+        "8:0-1.webp": "ready",
+        "8:1-1.webp": "ready",
+        "8:2-1.webp": "ready",
+        "8:0-2.webp": "ready",
+        "8:1-2.webp": "ready",
+        "8:2-2.webp": "ready",
+        "1:8-12.webp": "ready",
+        "1:9-12.webp": "ready",
+        "1:10-12.webp": "ready",
+        "1:8-13.webp": "ready",
+        "1:9-13.webp": "ready",
+        "1:10-13.webp": "ready",
+        "4:2-3.webp": "ready",
+        "4:2-2.webp": "ready",
+        "4:3-2.webp": "ready",
+        "4:3-3.webp": "ready"
+      }
+    },
+    {
+      "label": "1600-1-1",
+      "mode": "game",
+      "date": {
+        "y": 1600,
+        "m": 1,
+        "d": 1
+      },
+      "version": "15840101-16160101",
+      "fujitoPassageConnected": true,
+      "visitedSeaCells": 10308,
+      "points": [
+        {
+          "name": "経ヶ島",
+          "point": [
+            133.8108903,
+            34.5610021
+          ],
+          "pick": {
+            "id": 114,
+            "rgb": [
+              124,
+              185,
+              164
+            ],
+            "key": "castle:tenjin",
+            "kind": "land",
+            "factor": 1
+          }
+        },
+        {
+          "name": "藤戸寺",
+          "point": [
+            133.8095872,
+            34.5601554
+          ],
+          "pick": {
+            "id": 114,
+            "rgb": [
+              124,
+              185,
+              164
+            ],
+            "key": "castle:tenjin",
+            "kind": "land",
+            "factor": 1
+          }
+        },
+        {
+          "name": "浮洲岩跡",
+          "point": [
+            133.8052177,
+            34.5598924
+          ],
+          "pick": {
+            "id": 114,
+            "rgb": [
+              124,
+              185,
+              164
+            ],
+            "key": "castle:tenjin",
+            "kind": "land",
+            "factor": 1
+          }
+        },
+        {
+          "name": "塩生",
+          "point": [
+            133.771388,
+            34.476388
+          ],
+          "pick": {
+            "id": 114,
+            "rgb": [
+              124,
+              185,
+              164
+            ],
+            "key": "castle:tenjin",
+            "kind": "land",
+            "factor": 1
+          }
+        },
+        {
+          "name": "水島",
+          "point": [
+            133.718,
+            34.517
+          ],
+          "pick": {
+            "id": 1,
+            "rgb": [
+              8,
+              24,
+              48
+            ],
+            "key": "sea",
+            "kind": "sea",
+            "factor": 1
+          }
+        },
+        {
+          "name": "早島の丘",
+          "point": [
+            133.81842,
+            34.599915
+          ],
+          "pick": {
+            "id": 5,
+            "rgb": [
+              221,
+              232,
+              45
+            ],
+            "key": "castle:bmatsuyama",
+            "kind": "land",
+            "factor": 1
+          }
+        },
+        {
+          "name": "北岸",
+          "point": [
+            133.9,
+            34.64
+          ],
+          "pick": {
+            "id": 114,
+            "rgb": [
+              124,
+              185,
+              164
+            ],
+            "key": "castle:tenjin",
+            "kind": "land",
+            "factor": 1
+          }
+        },
+        {
+          "name": "宇喜多期",
+          "point": [
+            133.83584341367313,
+            34.59907294286741
+          ],
+          "pick": {
+            "id": 5,
+            "rgb": [
+              221,
+              232,
+              45
+            ],
+            "key": "castle:bmatsuyama",
+            "kind": "land",
+            "factor": 1
+          }
+        }
+      ],
+      "relief": {
+        "8:0-0.webp": "ready",
+        "8:1-0.webp": "ready",
+        "8:2-0.webp": "ready",
+        "8:0-1.webp": "ready",
+        "8:1-1.webp": "ready",
+        "8:2-1.webp": "ready",
+        "8:0-2.webp": "ready",
+        "8:1-2.webp": "ready",
+        "8:2-2.webp": "ready",
+        "1:8-12.webp": "ready",
+        "1:9-12.webp": "ready",
+        "1:10-12.webp": "ready",
+        "1:8-13.webp": "ready",
+        "1:9-13.webp": "ready",
+        "1:10-13.webp": "ready",
+        "4:2-3.webp": "ready",
+        "4:2-2.webp": "ready",
+        "4:3-2.webp": "ready",
+        "4:3-3.webp": "ready"
+      }
+    },
+    {
+      "label": "1600-to-1560",
+      "mode": "game",
+      "date": {
+        "y": 1560,
+        "m": 1,
+        "d": 1
+      },
+      "version": null,
+      "fujitoPassageConnected": true,
+      "visitedSeaCells": 10667,
+      "points": [
+        {
+          "name": "経ヶ島",
+          "point": [
+            133.8108903,
+            34.5610021
+          ],
+          "pick": {
+            "id": 114,
+            "rgb": [
+              124,
+              185,
+              164
+            ],
+            "key": "castle:tenjin",
+            "kind": "land",
+            "factor": 1
+          }
+        },
+        {
+          "name": "藤戸寺",
+          "point": [
+            133.8095872,
+            34.5601554
+          ],
+          "pick": {
+            "id": 114,
+            "rgb": [
+              124,
+              185,
+              164
+            ],
+            "key": "castle:tenjin",
+            "kind": "land",
+            "factor": 1
+          }
+        },
+        {
+          "name": "浮洲岩跡",
+          "point": [
+            133.8052177,
+            34.5598924
+          ],
+          "pick": {
+            "id": 114,
+            "rgb": [
+              124,
+              185,
+              164
+            ],
+            "key": "castle:tenjin",
+            "kind": "land",
+            "factor": 1
+          }
+        },
+        {
+          "name": "塩生",
+          "point": [
+            133.771388,
+            34.476388
+          ],
+          "pick": {
+            "id": 114,
+            "rgb": [
+              124,
+              185,
+              164
+            ],
+            "key": "castle:tenjin",
+            "kind": "land",
+            "factor": 1
+          }
+        },
+        {
+          "name": "水島",
+          "point": [
+            133.718,
+            34.517
+          ],
+          "pick": {
+            "id": 1,
+            "rgb": [
+              8,
+              24,
+              48
+            ],
+            "key": "sea",
+            "kind": "sea",
+            "factor": 1
+          }
+        },
+        {
+          "name": "早島の丘",
+          "point": [
+            133.81842,
+            34.599915
+          ],
+          "pick": {
+            "id": 5,
+            "rgb": [
+              221,
+              232,
+              45
+            ],
+            "key": "castle:bmatsuyama",
+            "kind": "land",
+            "factor": 1
+          }
+        },
+        {
+          "name": "北岸",
+          "point": [
+            133.9,
+            34.64
+          ],
+          "pick": {
+            "id": 114,
+            "rgb": [
+              124,
+              185,
+              164
+            ],
+            "key": "castle:tenjin",
+            "kind": "land",
+            "factor": 1
+          }
+        },
+        {
+          "name": "宇喜多期",
+          "point": [
+            133.83584341367313,
+            34.59907294286741
+          ],
+          "pick": {
+            "id": 1,
+            "rgb": [
+              8,
+              24,
+              48
+            ],
+            "key": "sea",
+            "kind": "sea",
+            "factor": 1
+          }
+        }
+      ],
+      "relief": {
+        "8:0-0.webp": "ready",
+        "8:1-0.webp": "ready",
+        "8:2-0.webp": "ready",
+        "8:0-1.webp": "ready",
+        "8:1-1.webp": "ready",
+        "8:2-1.webp": "ready",
+        "8:0-2.webp": "ready",
+        "8:1-2.webp": "ready",
+        "8:2-2.webp": "ready",
+        "1:8-12.webp": "ready",
+        "1:9-12.webp": "ready",
+        "1:10-12.webp": "ready",
+        "1:8-13.webp": "ready",
+        "1:9-13.webp": "ready",
+        "1:10-13.webp": "ready",
+        "4:2-3.webp": "ready",
+        "4:2-2.webp": "ready",
+        "4:3-2.webp": "ready",
+        "4:3-3.webp": "ready"
+      }
+    }
+  ],
+  "clicks": [
+    {
+      "label": "1560-1-1",
+      "name": "水島",
+      "selected": null,
+      "modal": null
+    },
+    {
+      "label": "1560-1-1",
+      "name": "早島の丘",
+      "selected": "bmatsuyama",
+      "modal": null
+    },
+    {
+      "label": "1560-1-1",
+      "name": "宇喜多期",
+      "selected": null,
+      "modal": null
+    },
+    {
+      "label": "1600-1-1",
+      "name": "水島",
+      "selected": null,
+      "modal": null
+    },
+    {
+      "label": "1600-1-1",
+      "name": "早島の丘",
+      "selected": "bmatsuyama",
+      "modal": null
+    },
+    {
+      "label": "1600-1-1",
+      "name": "宇喜多期",
+      "selected": "bmatsuyama",
+      "modal": null
+    },
+    {
+      "label": "1600-to-1560",
+      "name": "宇喜多期",
+      "selected": null,
+      "modal": null
+    }
+  ],
+  "errors": [],
+  "httpErrors": [
+    {
+      "url": "http://localhost:8000/favicon.ico",
+      "status": 404
+    }
+  ],
+  "gameHttpErrors": [],
+  "optionalBrowserRequests": [
+    {
+      "url": "http://localhost:8000/favicon.ico",
+      "status": 404
+    }
+  ],
+  "loadFailures": []
+}

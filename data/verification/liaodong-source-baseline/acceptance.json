@@ -1,0 +1,180 @@
+{
+  "ok": true,
+  "sourceSha256": "9e27144aa9c953299567fd3719d3ad413ea1f496ad03a097e1e25b2c6eb1a03d",
+  "comparedPixels": 504753216,
+  "counts": {
+    "changed": 3928357,
+    "toMing": 3763736,
+    "toUnassigned": 164621,
+    "outsideChanged": 0,
+    "protectedChanged": 0
+  },
+  "controls": [
+    {
+      "name": "遼陽（遼東都司）",
+      "point": [
+        123.1782,
+        41.2645
+      ],
+      "pixel": [
+        393,
+        5571
+      ],
+      "before": "unassigned",
+      "after": "neutral:明"
+    },
+    {
+      "name": "瀋陽中衛",
+      "point": [
+        123.4301,
+        41.7869
+      ],
+      "pixel": [
+        620,
+        4990
+      ],
+      "before": "unassigned",
+      "after": "neutral:明"
+    },
+    {
+      "name": "撫順所",
+      "point": [
+        123.9101,
+        41.8828
+      ],
+      "pixel": [
+        1052,
+        4883
+      ],
+      "before": "unassigned",
+      "after": "neutral:明"
+    },
+    {
+      "name": "開原（三万衛）",
+      "point": [
+        124.0899,
+        42.598
+      ],
+      "pixel": [
+        1214,
+        4087
+      ],
+      "before": "unassigned",
+      "after": "neutral:明"
+    },
+    {
+      "name": "鉄嶺衛",
+      "point": [
+        123.8582,
+        42.2941
+      ],
+      "pixel": [
+        1005,
+        4425
+      ],
+      "before": "unassigned",
+      "after": "neutral:明"
+    },
+    {
+      "name": "海州衛",
+      "point": [
+        122.7604,
+        40.8483
+      ],
+      "pixel": [
+        16,
+        6034
+      ],
+      "before": "unassigned",
+      "after": "neutral:明"
+    },
+    {
+      "name": "清河堡",
+      "point": [
+        124.2309,
+        41.4582
+      ],
+      "pixel": [
+        1341,
+        5355
+      ],
+      "before": "unassigned",
+      "after": "neutral:明"
+    },
+    {
+      "name": "鳳凰城",
+      "point": [
+        124.0762,
+        40.4543
+      ],
+      "pixel": [
+        1201,
+        6473
+      ],
+      "before": "neutral:明",
+      "after": "neutral:明"
+    },
+    {
+      "name": "義州",
+      "point": [
+        124.5568,
+        40.2094
+      ],
+      "pixel": [
+        1634,
+        6746
+      ],
+      "before": "castle:uiju",
+      "after": "castle:uiju"
+    }
+  ],
+  "periodReferencePixels": 217799,
+  "tides": [
+    {
+      "year": 1560,
+      "oldVersion": null,
+      "newVersion": null,
+      "kojimaTilesIdentical": 4
+    },
+    {
+      "year": 1573,
+      "oldVersion": null,
+      "newVersion": "15730101-15840101",
+      "kojimaTilesIdentical": 4
+    },
+    {
+      "year": 1583,
+      "oldVersion": null,
+      "newVersion": "15730101-15840101",
+      "kojimaTilesIdentical": 4
+    },
+    {
+      "year": 1584,
+      "oldVersion": "15840101-16160101",
+      "newVersion": "15840101-16060101",
+      "kojimaTilesIdentical": 4
+    },
+    {
+      "year": 1600,
+      "oldVersion": "15840101-16160101",
+      "newVersion": "15840101-16060101",
+      "kojimaTilesIdentical": 4
+    },
+    {
+      "year": 1606,
+      "oldVersion": "15840101-16160101",
+      "newVersion": "16060101-16160101",
+      "kojimaTilesIdentical": 4
+    },
+    {
+      "year": 1615,
+      "oldVersion": "15840101-16160101",
+      "newVersion": "16060101-16160101",
+      "kojimaTilesIdentical": 4
+    }
+  ],
+  "reapplyGuard": {
+    "status": 1,
+    "sourceUnchanged": true
+  }
+}
