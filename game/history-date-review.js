@@ -183,3 +183,10 @@
   text:'羽柴秀長軍が日向の高城を包囲した。山田有信は都於郡城の島津本軍に救援を求めた。'
  });
 }
+
+/* 都於郡城は九州平定後も佐土原の島津氏の所領。 */
+{
+ const campaign=TK.HIST.find(e=>e.title==='九州平定'&&e.k==='take'&&e.castles?.includes('tonokori'));
+ if(!campaign)throw Error('九州平定の都於郡城');
+ campaign.castles=campaign.castles.filter(id=>id!=='tonokori');
+}
