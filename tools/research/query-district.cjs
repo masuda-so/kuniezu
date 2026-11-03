@@ -21,17 +21,25 @@ function districts(mapDir) {
   assert.equal(byId.size, assignments.length, 'Duplicate assignment ID');
   assert.equal(new Set(geometry.map(row => row.codh_id)).size, geometry.length, 'Duplicate district ID');
   assert.equal(geometry.length, byId.size, 'District and assignment totals differ');
+  assert.equal(new Set(geometry.map(row => Number(row.n))).size, geometry.length, 'Duplicate district pixel ID');
   return geometry.map(row => {
     const assignment = byId.get(row.codh_id);
     assert(assignment, `Missing district assignment: ${row.codh_id}`);
     for (const field of ['n', 'name', 'kuni']) {
       assert.equal(row[field], assignment[field], `District mismatch: ${row.codh_id} ${field}`);
     }
+    const korea = row.codh_id.startsWith('KR');
+    const source = korea ? 'hgis-1910' : 'codh';
     return {
-      id: `district:codh:${row.codh_id}`,
+      id: `district:${source}:${row.codh_id}`,
       name: row.name,
       province: row.kuni,
-      geometry: {pixelId: Number(row.n), pixels: Number(row.pixels), period: '江戸末期'},
+      geometry: {
+        pixelId: Number(row.n),
+        pixels: Number(row.pixels),
+        source,
+        period: korea ? '1910年5月' : '江戸末期',
+      },
       gameAssignment: {
         method: assignment.basis,
         regions: assignment.region ? assignment.region.split('|') : [],
