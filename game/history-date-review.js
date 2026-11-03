@@ -253,3 +253,30 @@
   text:'丹後から豊前へ移った細川忠興が中津城に入った。'
  });
 }
+
+/* 県城の請取命令と、引渡しの落着を知らせる書状を区別する。 */
+{
+ const orders=[
+  [[1613,12,15],'幕府が県城の請取を命じる','https://dcollections.lib.keio.ac.jp/ja/sagara/003-113','幕府の年寄が、稲葉典通と相良頼房に日向の県城を受け取るよう命じた。'],
+  [[1614,7,13],'有馬直純の県入部','https://history.miyazaki.jp/nenpyo.html','有馬直純が肥前の日野江から日向の県へ移った。'],
+  [[1614,8,25],'県城引渡しの落着','https://dcollections.lib.keio.ac.jp/ja/sagara/003-116','本多正信が相良頼房に、県城の引渡しが落着したことを伝えた。']
+ ];
+ for(const [lunarDate,title,source,text] of orders){
+  TK.HIST.push({
+   d:TK.lunarDate(...lunarDate),lunarDate,k:'note',at:'agata',
+   title,source,text
+  });
+ }
+}
+
+/* 県入部に合わせて有馬家の管理域を移す。日野江の明渡し日は未詳。 */
+{
+ const arrival=TK.HIST.find(e=>e.title==='有馬直純の県入部');
+ Object.assign(arrival,{k:'take',clan:'arima',castles:['agata'],admin:1,who:'有馬直純'});
+ TK.HIST.push({
+  d:arrival.d,lunarDate:arrival.lunarDate,k:'take',clan:'tokugawa',castles:['hinoe'],admin:1,
+  title:'日野江の有馬旧領を幕府が管理',datePrecision:'年',
+  source:'https://www.city.shimabara.lg.jp/rekishi/page2678.html',
+  text:'有馬直純の転封後、幕府は日野江の旧領の統治を周辺の諸家に委ねた。'
+ });
+}
