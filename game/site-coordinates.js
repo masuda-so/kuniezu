@@ -15,20 +15,23 @@
  TK.YOSHO.push(['馬伏塚城','城',137.933518,34.710795,'遠江国。小笠原氏の城。1574年、徳川家康が高天神城に対抗するために改修し、大須賀康高を守将とした。入江に面した補給拠点。廃城の時期には諸説がある。',null,1582]);
  TK.SITE_COORDINATES.push({kind:'site',id:mamushizukaIndex,name:'馬伏塚城',point:[137.933518,34.710795],ref:'220000338000'});
  TK.CASTLE_EVIDENCE['馬伏塚城']={role:'高天神城攻めの補給拠点',source:'https://fukuroi-digital-archive.com/archive/3538/',checked:'2026-11-03'};
+ TK.YOSHO.push(['岡崎の城山','城',137.945563,34.704416,'遠江国・袋井の岡崎。馬伏塚城と横須賀城の間に位置し、高天神城攻めの補給を支えたとみられる。築城は1579年頃とされる。',1579,1582]);
+ TK.CASTLE_EVIDENCE['岡崎の城山']={role:'高天神城攻めの補給拠点',source:'https://www.city.fukuroi.shizuoka.jp/material/files/group/84/mamushizuka.pdf',checked:'2026-11-03'};
  const forts=TK.TAKATENJIN_FORTS=[
-  ['小笠山砦',138.0112848,34.7368629,'小笠山の山頂付近に置かれ、北側から城と周辺を見渡した。'],
+  ['小笠山砦',138.0112848,34.7368629,'小笠山の山頂付近に置かれ、1579年に高天神城攻めのため改修された。'],
   ['能ヶ坂砦',138.0467885,34.7140548,'高天神城の北東、小貫と土方の境に置かれた。'],
   ['火ヶ峰砦',138.0578468,34.7028421,'城の東北東にある砦。位置に二説があり、地図は東砦側の代表点。'],
   ['獅子ヶ鼻砦',138.0711477,34.6954949,'城の東、細長い丘陵の先端に置かれた。'],
   ['中村砦',138.0632234,34.6787393,'城の南東。入江に面し、物資の搬入・搬出を担った。'],
-  ['三井山砦',138.0350583,34.6754752,'城の南、小笠山から伸びる丘陵の先端に置かれた。']
+  ['三井山砦',138.0350583,34.6754752,'城の南、小笠山から伸びる丘陵の先端。1579年頃に整備されたとみられる。']
  ];
  const fortSource='https://takatenjinjyo.com/rokutoride/';
  TK.RESEARCH_SOURCES.takatenjinFortSites={author:'掛川市',title:'今、よみがえる高天神城・家康の六砦',url:fortSource,locator:'六砦の遺構と配置図',scope:'包囲に用いられた砦の名称・位置関係・遺構。'};
  TK.RESEARCH_SOURCES.takatenjinFortMap={author:'掛川市サイクリングマップ',title:'高天神城と六砦 小笠山一周',url:'https://www.bt-r.jp/kakegawa/map-ogasayama/',locator:'基本＋オプションの地図、六砦の地点1〜6',scope:'現地案内用の代表マーカー。城郭の範囲や遺構の測量座標ではない。'};
  for(const [name,lon,lat,detail] of forts){
-  // 六砦がそろう包囲段階を表示する。個々の築城年・廃止日は別途照合する。
-  TK.YOSHO.push([name,'城',lon,lat,'遠江国・徳川方の高天神六砦。'+detail,1580,1582]);
+  // 高天神城攻めの拠点として整備された年。初築や個別の廃止日は示さない。
+  const start=name==='小笠山砦'||name==='三井山砦'?1579:1580;
+  TK.YOSHO.push([name,'城',lon,lat,'遠江国・徳川方の高天神六砦。'+detail,start,1582]);
   TK.CASTLE_EVIDENCE[name]={role:'高天神城を囲む徳川方の砦',source:fortSource,checked:'2026-11-03'};
  }
  TK.SITE_STABLE_IDS=Object.fromEntries(TK.YOSHO.map(y=>[y[0],'yosho:'+y[0]+':'+y[2]+':'+y[3]]));

@@ -60,7 +60,7 @@
  define('高天神城の戦い','siege','徳川方は周囲の砦で補給を断ち、城内の岡部元信らは旧暦3月22日に討って出た。',['takatenjinSite','takatenjinFortCommand'],[
   g('高天神城・岡部元信ら','*b',138.035571,34.698262,'城跡の代表点'),
   g('小笠山砦・担当', 'add-石川康通',...takatenjinPoints.get('小笠山砦'),'包囲期の担当拠点'),
-  g('能ヶ坂砦・担当', 'add-本多備後守',...takatenjinPoints.get('能ヶ坂砦'),'包囲期の担当拠点'),
+  g('能ヶ坂砦・担当', 'add-本多勢',...takatenjinPoints.get('能ヶ坂砦'),'包囲期の担当拠点'),
   g('三井山砦・担当', 'add-酒井重忠',...takatenjinPoints.get('三井山砦'),'包囲期の担当拠点'),
   g('徳川方・包囲拠点の諸将','*a',null)]);
  define('信貴山城の戦い','siege','信忠軍は旧暦10月3日に城を包囲し、10日夜に諸手から攻め上った。',['shigisan','shigisanChronicle'],[
@@ -114,7 +114,7 @@
  for(const [title,d] of Object.entries(TK.EXTRA_BATTLES||{}))define(title,d.kind,d.summary,d.sources||[d.source],d.groups);
  TK.DEPLOYMENT_PLANS=P;
  const additions={
-  '高天神城の戦い':[['大須賀康高','a'],['酒井重忠','a'],['石川康通','a'],['本多備後守','a']],
+  '高天神城の戦い':[['大須賀康高','a'],['酒井重忠','a'],['石川康通','a'],['本多勢','a']],
   '信貴山城の戦い':[['佐久間信盛','a'],['羽柴秀吉','a'],['明智光秀','a'],['丹羽長秀','a']],
   '稲葉山城の戦い':[['斎藤龍興','b']], '長島一向一揆の平定':[['長島一向一揆衆','b']],
   '宇喜多勢の讃岐攻め':[['香川親和ら長宗我部方','b']], '小早川隆景の伊予攻め':[['金子元宅ら伊予勢','b']],
