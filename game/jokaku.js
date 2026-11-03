@@ -71,4 +71,11 @@ TK.JOKAKU.push({
  source:'https://www.city.nobeoka.miyazaki.jp/soshiki/6/1689.html',
  text:'慶長8年、高橋元種は五ヶ瀬川と大瀬川の間に縣城を築き、松尾城から居城を移した。'
 });
+/* 竹中重利入封の年に、府内の管理拠点を府内城へ切り替える。 */
+TK.JOKAKU.push({
+ d:[1601,1,1],k:'build',node:'funai',n:'府内城',lon:131.611590,lat:33.240535,prev:1,clan:null,
+ title:'竹中重利の府内入封',who:'竹中重利',datePrecision:'年',
+ source:'https://www.city.oita.oita.jp/o204/bunkasports/shitebunkazai/1352943146749.html',
+ text:'慶長6年、竹中重利が府内へ入封し、福原直高が築城に着手した府内城を増改築した。'
+});
 TK.JOKAKU.sort((a,b)=>(a.d[0]-b.d[0])*400+(a.d[1]-b.d[1])*32+(a.d[2]-b.d[2]));
