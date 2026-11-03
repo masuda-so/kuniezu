@@ -868,10 +868,11 @@ function applyEv(ev){
   case 'death':{
    const g=genByName(ev.n);if(!g){return;}
    const kk=g.clan;if(ev.clan&&S.div[ev.clan]){chron(ev,false);return;}
-   const wasL=kk&&S.clans[kk]&&S.clans[kk].leader===g.id;killGen(g);
-   if(wasL){let nx=ev.to?genByName(ev.to):null;if(!nx&&ev.appear)nx=mkGen(ev.appear,kk,g.loc);if(nx&&nx.clan!==kk&&nx.clan)nx=null;if(nx){setLeader(kk,nx);if(!nx.loc||S.castles[nx.loc].owner!==kk)nx.loc=S.clans[kk].cap;}else succession(kk,g);}
+   const wasL=kk&&S.clans[kk]&&S.clans[kk].leader===g.id;let successor=null;killGen(g);
+   if(wasL){let nx=ev.to?genByName(ev.to):null;if(!nx&&ev.appear)nx=mkGen(ev.appear,kk,g.loc);if(nx&&nx.clan!==kk&&nx.clan)nx=null;if(nx){setLeader(kk,nx);successor=nx;if(!nx.loc||S.castles[nx.loc].owner!==kk)nx.loc=S.clans[kk].cap;}else succession(kk,g);}
    else if(ev.appear&&kk)mkGen(ev.appear,kk,g.loc);
-   applyExtras(ev,true);chron(ev,true);if(kk===S.player)G.onSuccession&&G.onSuccession(kk,g,gen(S.clans[kk].leader));return;}
+   // 自動選定は succession 側で通知済み。家臣の死去は継承として通知しない。
+   applyExtras(ev,true);chron(ev,true);if(successor&&kk===S.player)G.onSuccession&&G.onSuccession(kk,g,successor);return;}
   case 'appear':{if(!S.clans[k]||!S.clans[k].alive){if(!S.clans[k]&&evT(ev)<evT({d:[1590,9,1]})){S.waitAp=S.waitAp||[];S.waitAp.push(Object.assign({},ev));}return;}const at=S.castles[ev.at]&&S.castles[ev.at].owner===k?ev.at:S.clans[k].cap;if(ev.heir&&S.div[k])return; // 歴史が分かれた家の当主は替えない
    if(ev.pull&&!ev.g.includes('|')){const g1=genByName(ev.g.split('@')[0]);if(!g1||g1.dead||G.isLeader(g1)||(g1.clan&&S.div[g1.clan]))return;}
    if(ev.pull){const nm0=ev.g.split('|')[0];const g0=genByName(nm0);if(g0&&!g0.dead&&g0.clan&&g0.clan!==k&&!G.isLeader(g0)&&!S.div[g0.clan]){g0.clan=k;g0.ronin=false;g0.unit=null;g0.loc=at;}}
