@@ -8,6 +8,22 @@
  TK.YOSHO.push(['馬ヶ岳城','城',130.946061,33.679026,'豊前国・山城。戦国末期は長野氏の拠点。九州平定後、黒田孝高が中津城へ移る前に本拠とし、1600年には桐山信行が守備した。',null,1601]);
  TK.SITE_COORDINATES.push({kind:"site",id:umagatakeIndex,name:"馬ヶ岳城",point:[130.946061,33.679026],ref:"410000434700"});
  TK.CASTLE_EVIDENCE['馬ヶ岳城']={role:'長野氏・黒田氏の拠点',source:'https://www.city.yukuhashi.fukuoka.jp/site/bunkazai/1998.html',checked:'2026-11-03'};
+ const forts=[
+  ['小笠山砦',138.0112848,34.7368629,'小笠山の山頂付近に置かれ、北側から城と周辺を見渡した。'],
+  ['能ヶ坂砦',138.0467885,34.7140548,'高天神城の北東、小貫と土方の境に置かれた。'],
+  ['火ヶ峰砦',138.0578468,34.7028421,'城の東北東にある砦。位置に二説があり、地図は東砦側の代表点。'],
+  ['獅子ヶ鼻砦',138.0711477,34.6954949,'城の東、細長い丘陵の先端に置かれた。'],
+  ['中村砦',138.0632234,34.6787393,'城の南東。入江に面し、物資の搬入・搬出を担った。'],
+  ['三井山砦',138.0350583,34.6754752,'城の南、小笠山から伸びる丘陵の先端に置かれた。']
+ ];
+ const fortSource='https://takatenjinjyo.com/rokutoride/';
+ TK.RESEARCH_SOURCES.takatenjinFortSites={author:'掛川市',title:'今、よみがえる高天神城・家康の六砦',url:fortSource,locator:'六砦の遺構と配置図',scope:'包囲に用いられた砦の名称・位置関係・遺構。'};
+ TK.RESEARCH_SOURCES.takatenjinFortMap={author:'掛川市サイクリングマップ',title:'高天神城と六砦 小笠山一周',url:'https://www.bt-r.jp/kakegawa/map-ogasayama/',locator:'基本＋オプションの地図、六砦の地点1〜6',scope:'現地案内用の代表マーカー。城郭の範囲や遺構の測量座標ではない。'};
+ for(const [name,lon,lat,detail] of forts){
+  // 六砦がそろう包囲段階を表示する。個々の築城年・廃止日は別途照合する。
+  TK.YOSHO.push([name,'城',lon,lat,'遠江国・徳川方の高天神六砦。'+detail,1580,1582]);
+  TK.CASTLE_EVIDENCE[name]={role:'高天神城を囲む徳川方の砦',source:fortSource,checked:'2026-11-03'};
+ }
  TK.SITE_STABLE_IDS=Object.fromEntries(TK.YOSHO.map(y=>[y[0],'yosho:'+y[0]+':'+y[2]+':'+y[3]]));
  TK.RESEARCH_SOURCES.codhSites={author:'人文学オープンデータ共同利用センター（CODH）',title:'日本歴史地名大系 施設・地点項目データセット',year:'2025年5月15日版',url:'https://geoshape.ex.nii.ac.jp/nrct-poi/',locator:'doi:10.20676/00000456・各項目ID',accessed:'2026-10-31',scope:'地域と名称を照合した代表座標。数十〜数百メートルの推定誤差がある。後世の遺構・移転先や城郭範囲を保証しない。'};
  TK.SITE_POSITION_EVIDENCE={};
