@@ -1,5 +1,5 @@
 {
-  "baseRevision": "0d92c0a",
+  "baseRevision": "9586ebd2eca904d27a91bd3db6a2816dfd3c246c",
   "date": "1600-09-15",
   "versions": [
     {
@@ -20,7 +20,7 @@
         "hayashima-upland",
         "shiunji-legacy-mask"
       ],
-      "sha256": "692393b588b271a160bac1816479971ad7dd4095ba07ed700155d3a0b013c049"
+      "sha256": "8d5c03cdad49831b4f978c5a5fbd9ebd65f53167a11496a75f4c7948cb2f99b3"
     }
   ],
   "editPixels": {
@@ -29,10 +29,10 @@
   },
   "tiles": [
     {
-      "file": "provinces/9-8@15600101-16160101.png",
+      "file": "provinces/9-12@15600101-16160101.png",
       "factor": 1,
       "col": 9,
-      "row": 8,
+      "row": 12,
       "period": [
         [
           1560,
@@ -50,10 +50,10 @@
       "sha256": "f54a5da8f10aeecd4b53e7c47066b3a1fd617cefef946a5205203f39d338814d"
     },
     {
-      "file": "provinces/14-4@15600101-16160101.png",
+      "file": "provinces/14-8@15600101-16160101.png",
       "factor": 1,
       "col": 14,
-      "row": 4,
+      "row": 8,
       "period": [
         [
           1560,
@@ -71,10 +71,10 @@
       "sha256": "d9a2058ba0482d33e9f5e1121179e50aacf6fd920ceaeebede7440dc5e07ac45"
     },
     {
-      "file": "provinces/14-5@15600101-16160101.png",
+      "file": "provinces/14-9@15600101-16160101.png",
       "factor": 1,
       "col": 14,
-      "row": 5,
+      "row": 9,
       "period": [
         [
           1560,
@@ -92,10 +92,10 @@
       "sha256": "c41cc5ea3cfc506c3d3e2d43ec9bc52804bc4a77cbb05a304a9e127fdcaee102"
     },
     {
-      "file": "provinces-4/3-1@15600101-16160101.png",
+      "file": "provinces-4/3-2@15600101-16160101.png",
       "factor": 4,
       "col": 3,
-      "row": 1,
+      "row": 2,
       "period": [
         [
           1560,
@@ -113,10 +113,10 @@
       "sha256": "73e2e2ad51c63c6122c4beaa4b2ea0d0099b5f7942a7826ac893662c25c71f62"
     },
     {
-      "file": "provinces-8/1-0@15600101-16160101.png",
+      "file": "provinces-8/1-1@15600101-16160101.png",
       "factor": 8,
       "col": 1,
-      "row": 0,
+      "row": 1,
       "period": [
         [
           1560,
@@ -131,7 +131,7 @@
       ],
       "width": 1024,
       "height": 1024,
-      "sha256": "4ee34a6b40a6abc5c1386a92bd050027a1de79231cde4fddccefedc834308269"
+      "sha256": "14d5b55c99ae7c9cf45270211c71a439917e6a2c0a690d365fb20ab3d6e78400"
     }
   ]
 }
