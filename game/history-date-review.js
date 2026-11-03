@@ -111,3 +111,18 @@
   text:'『行橋市史』によると、岩石城の落城翌日、豊臣秀吉は筑前の大隈城で秋月種実・種長父子の降伏を受け入れた。'
  });
 }
+
+/* 肥後拝領を九州平定の一括変更から分け、隈本の管理域を切り替える。 */
+{
+ const lunarDate=[1587,6,2],d=TK.lunarDate(...lunarDate);
+ const campaign=TK.HIST.find(e=>e.title==='九州平定'&&e.k==='take'&&e.castles?.includes('kumamoto'));
+ if(!campaign)throw Error('九州平定の隈本城');
+ campaign.castles=campaign.castles.filter(id=>id!=='kumamoto');
+ campaign.peace=campaign.peace.filter(id=>id!=='kumamoto');
+ TK.HIST.push({
+  d,lunarDate,k:'take',clan:campaign.clan,castles:['kumamoto'],admin:1,
+  title:'佐々成政の肥後拝領',who:'佐々成政',
+  source:'https://sitereports.nabunken.go.jp/files/attach/22/22101/16337_1_%E4%B8%8B%E5%9F%8E%E9%81%BA%E8%B7%A1.pdf',
+  text:'豊臣秀吉が佐々成政に肥後の統治を任せた。成政は隈本城を居城とした。'
+ });
+}
