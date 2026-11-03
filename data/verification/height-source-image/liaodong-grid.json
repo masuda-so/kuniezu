@@ -1,0 +1,33 @@
+{
+  "ok": true,
+  "gridSha256": "e3ece680e8538f49b5fdf7154183cfb8c8ecfca563c9db12887d28ded0e36793",
+  "heightmapSha256": "14d112e468c2e75b7d16c11376f19111c183a62cd9f7d3144cc1396fcd71befe",
+  "reliefSha256": "761f68757f26200007e3a9863ca5052e58262519bf65a9e6b874b867bb5ca652",
+  "reused": 351,
+  "converted": 0,
+  "browserLaunched": false,
+  "python": {
+    "numpy": "2.0.2",
+    "Pillow": "11.3.0",
+    "cffi": "2.0.0"
+  },
+  "command": [
+    "python3",
+    "tools/map/build-height-cache.py",
+    "--grid",
+    "game/map/manifest.json",
+    "--heightmap",
+    "game/map_data/heightmap.png",
+    "--projection",
+    "game/map_data/projection.json",
+    "--previous",
+    "prepared-verified-webp-candidate",
+    "--output",
+    "new-candidate",
+    "--chrome",
+    "/no-browser-required"
+  ],
+  "validation": "build-height-cache validates source SHA, grid geometry, all height/shade/WebP alpha, SHA and source validity before publishing",
+  "sourceGeoTIFFsRead": false,
+  "sharedWrites": false
+}

@@ -1,0 +1,243 @@
+{
+  "gridSha256": "e3ece680e8538f49b5fdf7154183cfb8c8ecfca563c9db12887d28ded0e36793",
+  "elevationManifestSha256": "42bafa4feaf72e77f3b3f51df18523e2c20946e02dafcce9e8c381869707b421",
+  "source": "https://dataspace.copernicus.eu/explore-data/data-collections/copernicus-contributing-missions/collections-description/COP-DEM",
+  "factor": 4,
+  "format": "RGBA8",
+  "noDataAlpha": 0,
+  "shading": "northwest light, one-pixel neighbour halo",
+  "tiles": [
+    {
+      "file": "0-0.png",
+      "col": 0,
+      "row": 0,
+      "sha256": "0269d840a8ea87da474b465c7ed6b6e07a46f38da01d849f0a4a877293945a77",
+      "pixelSha256": "11abc06eaf120dde56c83ef96c27c5c0ea8f0860c1c2fcdc7ec810e175295819"
+    },
+    {
+      "file": "1-0.png",
+      "col": 1,
+      "row": 0,
+      "sha256": "86fd8a61b68f409efa24a8e1ee7698ac9a6ca1fdcc38b49c3f65b605c45eefa5",
+      "pixelSha256": "ceca599cb41c26e8d3f08d66934b13bd91e2518d7681edc6eb093beaca2695f3"
+    },
+    {
+      "file": "2-0.png",
+      "col": 2,
+      "row": 0,
+      "sha256": "70edbca0137a888ffd34c5f86faf1bdfd0e379de7d6156135d6d6aca044bbb4f",
+      "pixelSha256": "d65ac5f4218d3a26e5e5792a86594620e2f5b1524ebb961a654d4ec2cbe3e1aa"
+    },
+    {
+      "file": "3-0.png",
+      "col": 3,
+      "row": 0,
+      "sha256": "e4e4dad13a750334d6ce9b756faf9d2da06f67f820d5c658c9ae610a1abb186b",
+      "pixelSha256": "450ce7573b9d53cd0ac5f20c711e1d0e2efffc0c4d52764998cdd9d057f8d823"
+    },
+    {
+      "file": "4-0.png",
+      "col": 4,
+      "row": 0,
+      "sha256": "6eb5c09757b0310cddc41b988f35ef4289bf8bdd4ecf861b4740bab1f66cc777",
+      "pixelSha256": "394273a371146186551d9fac0eed70b0c8259d6a5413dc0807559e8ca6ca3343"
+    },
+    {
+      "file": "5-0.png",
+      "col": 5,
+      "row": 0,
+      "sha256": "6bd0026afa89a474a4fc884a46984859bcc704ad9e25ab23bcbfc9bacef6c663",
+      "pixelSha256": "1ceea75dd81697511470ce6bc40202f9c66f16cf1f8c0697dab7ebe083c554fa"
+    },
+    {
+      "file": "0-1.png",
+      "col": 0,
+      "row": 1,
+      "sha256": "272ed614e7bfcd694430357f56320640a7055380edfb2ac2823d818d0163006a",
+      "pixelSha256": "a060d865e29bb581fa25584baeb66be655dd5a50f6d3f4727ebbf9ba447b0336"
+    },
+    {
+      "file": "1-1.png",
+      "col": 1,
+      "row": 1,
+      "sha256": "e97d0d57cc116bdee8ddd6d3cfb2d9ce219c9929f475d1a869ec1e9faf060ce4",
+      "pixelSha256": "4c57545ca8afa1c65358e1844891fae57f2039acc1092f5dbb21d77f142efb3d"
+    },
+    {
+      "file": "2-1.png",
+      "col": 2,
+      "row": 1,
+      "sha256": "0beacfb2ed3980d720c8ab6afddb044292e7a5d4f1196a9fcb54d7d27b4f4e2e",
+      "pixelSha256": "47a52fcdcad07684687889b1d2a10be16980066085d5e7c3aa81795356c08b4e"
+    },
+    {
+      "file": "3-1.png",
+      "col": 3,
+      "row": 1,
+      "sha256": "9ff90ad5edcebc42fc6e687f197d38261f0bd254aa33eab609e31c5cdfb94b79",
+      "pixelSha256": "933242c8a986d721d4280e0f29e2d830efe8c03a1784906bc752f02594b8e260"
+    },
+    {
+      "file": "4-1.png",
+      "col": 4,
+      "row": 1,
+      "sha256": "eef271a45a4c7d77726bed18b9e2ddcfa4b4213c7a6d09cf7ab95e78057af942",
+      "pixelSha256": "8a5dab31003daf10b99852bce36945f16245a3f077d3cade2775b871b80f17c5"
+    },
+    {
+      "file": "5-1.png",
+      "col": 5,
+      "row": 1,
+      "sha256": "d1da7e2e605b58347e058ebd6012d40826aaa5b93ee2bc780cf09d11f18fe420",
+      "pixelSha256": "77c46b832196fd06f4b4487bc2ee77827b93bf42b4321bdb94491d2db1511e42"
+    },
+    {
+      "file": "0-2.png",
+      "col": 0,
+      "row": 2,
+      "sha256": "4aedcf2b2723ae7c4288060847e983b71d8baf9cada9fb92b9275612202d1cc0",
+      "pixelSha256": "714d551b1c6d06c575c791e7c1380b27fdd5a6b1ad8ed538b763d49e0a22307a"
+    },
+    {
+      "file": "1-2.png",
+      "col": 1,
+      "row": 2,
+      "sha256": "f9ddf16f19655790910fe3a7e1d787326aedc409d5bdcd3cbda805bacd4d09f4",
+      "pixelSha256": "f0b9f70a0d1797f409d8a52b64d7709831b5bcedd02b914bd36f801009451280"
+    },
+    {
+      "file": "2-2.png",
+      "col": 2,
+      "row": 2,
+      "sha256": "e4a9add7301325dd6dae4e705ca7fc365e2b096d5c035e86a40df28a33202fb0",
+      "pixelSha256": "1c71e11427df25f9c74bb7a1343061d2d7d41132edda788d3b59d03e011dab7f"
+    },
+    {
+      "file": "3-2.png",
+      "col": 3,
+      "row": 2,
+      "sha256": "aca3496138411f0faa4872ce6eb06b1e6a70d40054d58dcb4073a3fd775cfbd3",
+      "pixelSha256": "cb218415346ca015077b949d67382b565c336e4edcedde36609c86e513ec09f9"
+    },
+    {
+      "file": "4-2.png",
+      "col": 4,
+      "row": 2,
+      "sha256": "12dd2f99675d079fbd3e300e4d5cf2e4404267a96c149dcea6ffad5f9d3443f8",
+      "pixelSha256": "810cdc65271d46f2ce8828f6ed0c0e1e1b1ebedfc14d3e3446e557913c4d7f7b"
+    },
+    {
+      "file": "0-3.png",
+      "col": 0,
+      "row": 3,
+      "sha256": "b9b41dd196da35ee89bd873a4fa4be78d26e943f1326929fd5a0c0531775a731",
+      "pixelSha256": "ca14c3ad42977b08c4284c6b3f588ffb05f42851c5e45f1750ca6fe50c683ba6"
+    },
+    {
+      "file": "1-3.png",
+      "col": 1,
+      "row": 3,
+      "sha256": "bf9e7a087aa56833e30100b765761ca280711c535cf8f87031d25d07b93623ce",
+      "pixelSha256": "ac12a118e76611eba8a5f06bdd38bcde836fb8f8b572f347b5f48319860b7f63"
+    },
+    {
+      "file": "2-3.png",
+      "col": 2,
+      "row": 3,
+      "sha256": "a70f24392ddf88ec4f0085556ed89440b9f7013148f841beb380fe14394aa016",
+      "pixelSha256": "28bd428d8b6c08f5e2644cdb372a248019e59e837215bf9ff8eaee9d3d46c942"
+    },
+    {
+      "file": "3-3.png",
+      "col": 3,
+      "row": 3,
+      "sha256": "b4be8d11e24a9568165eab21941fc69e825521762e11814f8249530e87e0ae23",
+      "pixelSha256": "6209c0da4babf6d7447a8b41bde845c19c77bf9b657675a9ec87eb367e99a77d"
+    },
+    {
+      "file": "4-3.png",
+      "col": 4,
+      "row": 3,
+      "sha256": "25979146d7dfb931ad4aa79ab2788bc297c86ce2cf7c18ef1135396d9b3bbc8e",
+      "pixelSha256": "38e843ee54de5a10da2ceaa18d205318a4830feae236da2f32d90ac329ce042b"
+    },
+    {
+      "file": "0-4.png",
+      "col": 0,
+      "row": 4,
+      "sha256": "941e486f92a60e93345e3fefcd463ecb3674db101ab08f8f54d8574e38e447ff",
+      "pixelSha256": "05b7888506ced6a80c781fc70b371adbc765cc62473f368ed6b697c1123d2dec"
+    },
+    {
+      "file": "1-4.png",
+      "col": 1,
+      "row": 4,
+      "sha256": "122980dd58696b36cb38e21570db6af9c0d76321b11842a978627d98d2ab319a",
+      "pixelSha256": "c19e7b06d614d05b8932063a93d4aac594a6866e910d7664458a4914edf36433"
+    },
+    {
+      "file": "2-4.png",
+      "col": 2,
+      "row": 4,
+      "sha256": "84e98d98441824413596f7e1c9c8adb74c063f834a5e5bd59e8afdf5cbd4755b",
+      "pixelSha256": "3aef0bd1d7be5a57331b2eae9eb15dee64823a00d1a374b6828d8db837ef1df4"
+    },
+    {
+      "file": "3-4.png",
+      "col": 3,
+      "row": 4,
+      "sha256": "3e9492b1e257dadbb1707ed333bd5eb2d47010b81f54507aae182567cb152d09",
+      "pixelSha256": "3e33a456b3146a13635d4df0a585ab076af7d5200a29dc9b6d455d66f3ee80a9"
+    },
+    {
+      "file": "4-4.png",
+      "col": 4,
+      "row": 4,
+      "sha256": "6edba94bc5e95b77a87e2dc9cd2734477a9966796741c92f99bdc6b18bcbaa40",
+      "pixelSha256": "47074e4144ed535e0c84d4dbabe467baa41d7787d61f013bdef0fbc4f5a63417"
+    },
+    {
+      "file": "0-5.png",
+      "col": 0,
+      "row": 5,
+      "sha256": "bb1dac4cee611b72f50dee732f506957f8687fe026971affd1548df318344edf",
+      "pixelSha256": "273e6a042c0f66e1dfbb28ccd877b3d11ae7e021e06989f87a7b5f8070d05e21"
+    },
+    {
+      "file": "1-5.png",
+      "col": 1,
+      "row": 5,
+      "sha256": "1649b598ecd566dc5c6f48eaa5bc1850e1dc670c989ecc0168c905b9a21dce95",
+      "pixelSha256": "29f06dd92ed77ecbea69f62383abb717cc84f0d69d32bcd54a2d147bc19692e9"
+    },
+    {
+      "file": "2-5.png",
+      "col": 2,
+      "row": 5,
+      "sha256": "33262e75c0992e0e4f9b1610493c093841dd337e78013acfd2f30e5823798ead",
+      "pixelSha256": "135c6b44174b9deab6e20acb0986e4ac90f4f0f4af009db00994a1c2e15aa83a"
+    },
+    {
+      "file": "3-5.png",
+      "col": 3,
+      "row": 5,
+      "sha256": "236eac9d6ce9d6e8c2171ea607a6675927a9a669a751a105dfab994b794e0765",
+      "pixelSha256": "4cd4b27f125f5c722c36835517e09ea7fce7e2862b25c3b34bef8679fa7012c9"
+    },
+    {
+      "file": "4-5.png",
+      "col": 4,
+      "row": 5,
+      "sha256": "f771fd48b9553b9a6ba26a2fc993f2d3339371015b9f004771d6d7e059ee2d91",
+      "pixelSha256": "c0ed9d9bdcb232050b824cae387db7c12db3bfda4589802f8ef8ef9975fbdcc0"
+    }
+  ],
+  "product": "COP-DEM-GLO-90-F",
+  "acquired": "2026-11-03",
+  "license": "https://dataspace.copernicus.eu/sites/default/files/media/files/2025-06/copernicus_contributing_mission_data_access_v2_cop_dem_licenses.pdf",
+  "notice": "produced using Copernicus WorldDEM™-90 © DLR e.V. 2010-2014 and © Airbus Defence and Space GmbH 2014-2018 provided under COPERNICUS by the European Union and ESA; all rights reserved",
+  "disclaimer": "The organisations in charge of the Copernicus programme by law or by delegation do not incur any liability for any use of the Copernicus WorldDEM™-90",
+  "sourceHeightmapSha256": "14d112e468c2e75b7d16c11376f19111c183a62cd9f7d3144cc1396fcd71befe",
+  "sourceHeightmapMetadataSha256": "e219fef1a8268621312ea9a2f947bb44360a0d4fc042ed624d6a8dc098959f05",
+  "projectionSha256": "04bd30868c1f5a9420b308d318d606a95d1158c23a8e6f18b3f7ecfe6b01466a"
+}

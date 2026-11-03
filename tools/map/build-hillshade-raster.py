@@ -91,6 +91,9 @@ def build(grid_file, heights, output):
     result = {"gridSha256": grid_hash, "elevationManifestSha256": sha256(manifest_bytes).hexdigest(),
               "source": manifest["source"], "factor": factor, "format": "RGBA8", "noDataAlpha": 0,
               "shading": "northwest light, one-pixel neighbour halo", "tiles": tiles}
+    for field in ("product", "acquired", "license", "notice", "disclaimer"):
+        if field in manifest:
+            result[field] = manifest[field]
     (output / "manifest.json").write_text(json.dumps(result, indent=2) + "\n", encoding="utf-8")
     return result
 

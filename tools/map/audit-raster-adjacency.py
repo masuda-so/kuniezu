@@ -1,20 +1,33 @@
 """Audit region adjacency from lossless raster tiles, including tile seams."""
 import argparse
+import csv
 import hashlib
 import json
 from pathlib import Path
+import subprocess
+import sys
 
 import numpy as np
 from PIL import Image
 
-import sys
-sys.path.insert(0, str(Path(__file__).resolve().parent))
-from map_data import read_definition  # noqa: E402
-
 
 def audit(root, overlay=None):
+    root = Path(root).resolve()
     manifest = json.loads((root / "manifest.json").read_text(encoding="utf-8"))
-    rows = read_definition()  # 正本 game/map_data（id は1から、kind は default.map）
+    canonical = manifest.get("source", {}).get("dir")
+    if canonical:
+        sys.path.insert(0, str(Path(__file__).resolve().parent))
+        from map_data import read_definition, source_sha256
+        source_dir = root.parent.parent / canonical
+        rows = read_definition(source_dir)
+        baseline_sha = source_sha256(source_dir)
+        if baseline_sha != manifest["source"]["sha256"]:
+            raise ValueError("Province tiles target a different canonical source")
+    else:
+        with (root / "definition.csv").open(encoding="utf-8", newline="") as stream:
+            rows = list(csv.DictReader(stream, delimiter=";"))
+        baseline_sha = hashlib.sha256((root / "manifest.json").read_bytes()
+                                     + (root / "definition.csv").read_bytes()).hexdigest()
     ids = {int(row["id"]): row for row in rows}
     sea = next(int(row["id"]) for row in rows if row["kind"] == "sea")
     codes = np.full(1 << 24, -1, dtype=np.int32)
@@ -26,6 +39,8 @@ def audit(root, overlay=None):
     overrides = {}
     if overlay:
         edits = json.loads((overlay / "manifest.json").read_text(encoding="utf-8"))
+        if edits.get("baseProvincesSha256") != baseline_sha:
+            raise ValueError("Replacement tiles target a different province baseline")
         for tile in edits["tiles"]:
             if tile["factor"] != 1:
                 continue
@@ -42,7 +57,9 @@ def audit(root, overlay=None):
     delta = np.zeros_like(pixel_counts)
     previous = None
 
-    def read_pixels(path, expected):
+    def read_pixels(path, expected, digest=None):
+        if digest and hashlib.sha256(path.read_bytes()).hexdigest() != digest:
+            raise ValueError(f"Checksum differs for {path}")
         with Image.open(path) as image:
             rgb = np.asarray(image.convert("RGB"), dtype=np.int32)
         if rgb.shape[:2] != expected:
@@ -65,7 +82,7 @@ def audit(root, overlay=None):
             if not tile and not override:
                 continue
             expected = (band.shape[0], min(size, width - col * size))
-            pixels = (read_pixels(root / "provinces" / tile["file"], expected)
+            pixels = (read_pixels(root / "provinces" / tile["file"], expected, tile.get("sha256"))
                       if tile else np.full(expected, sea, dtype=np.int32))
             if override:
                 path = overlay / override["file"]
@@ -87,10 +104,38 @@ def audit(root, overlay=None):
             add_pairs(previous[1:], band[0, :-1], diagonal)
         previous = band[-1].copy()
 
+    if canonical:
+        # 全域 PNG は展開すると約 1.5 GB。共有デコーダで行ごとに読み、
+        # 正本の画素数を配信タイルとは独立に集計する。
+        decoder = Path(__file__).resolve().parent / "png-big.cjs"
+        if not decoder.exists():
+            decoder = root.parent.parent / "tools/map/png-big.cjs"
+        script = """const {readRGB}=require(process.argv[1]);
+const counts=new Uint32Array(1<<24);
+readRGB(process.argv[2],(y,row)=>{for(let i=0;i<row.length;i+=3)counts[(row[i]<<16)|(row[i+1]<<8)|row[i+2]]++;})
+.then(dim=>{const pixels={};for(let i=0;i<counts.length;i++)if(counts[i])pixels[i]=counts[i];
+console.log(JSON.stringify({...dim,pixels}));}).catch(e=>{console.error(e.message);process.exit(1);});"""
+        result = subprocess.run(["node", "-e", script, str(decoder), str(source_dir / "provinces.png")],
+                                check=True, capture_output=True, text=True)
+        source = json.loads(result.stdout)
+        if (source["width"], source["height"]) != (width, height):
+            raise ValueError("Canonical image dimensions differ from province grid")
+        expected_counts = np.zeros(stride, dtype=np.int64)
+        for color, count in source["pixels"].items():
+            identifier = codes[int(color)]
+            if identifier < 0:
+                raise ValueError(f"Undefined color in canonical image: {color}")
+            expected_counts[identifier] += count
+    else:
+        expected_counts = np.zeros(stride, dtype=np.int64)
+        for identifier, row in ids.items():
+            expected_counts[identifier] = int(row["pixels"])
     for identifier, row in ids.items():
-        if pixel_counts[identifier] != int(row["pixels"]) + delta[identifier]:
+        if pixel_counts[identifier] != expected_counts[identifier] + delta[identifier]:
             raise ValueError(f"Pixel count differs for {row['key']}")
     return {
+        "sourceSha256": baseline_sha,
+        "pixelCountSource": "canonical-image" if canonical else "legacy-definition",
         "width": width,
         "height": height,
         "fourNeighbourPairs": len(cardinal),
