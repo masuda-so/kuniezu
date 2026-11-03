@@ -45,6 +45,17 @@
  add('木津川口の戦い','field',[135.48,34.645,9,'木津川口・大坂南西'],['tokugawa','hashiba'],['徳川方','豊臣方'],[['蜂須賀至鎮','浅野長晟','池田忠雄'],['木津川口砦の守備勢']],'eventKizugawa1614','冬の陣初期、蜂須賀至鎮・浅野長晟・池田忠雄が木津川口の砦攻撃を命じられ、蜂須賀勢が先に攻略した。');
  TK.EXTRA_BATTLES['木津川口の戦い'].sources=['eventKizugawa1614','kizujouMuseum'];
  TK.BATTLE_TROOPS['木津川口の戦い'].sources=['eventKizugawa1614','kizujouMuseum'];
+ const kizugawa=TK.HIST.find(e=>e.title==='木津川口の戦い');
+ if(kizugawa){
+  const lunarDate=[1614,11,19];
+  Object.assign(kizugawa,{
+   d:TK.lunarDate(...lunarDate),lunarDate,who:'蜂須賀至鎮',
+   source:TK.RESEARCH_SOURCES.eventKizugawa1614.url,
+   text:'蜂須賀至鎮・浅野長晟・池田忠雄が木津川口の砦の攻撃を命じられ、蜂須賀勢が先に攻略した。',
+   // 攻略日の記録だけで各隊の出発地点や進路は組み立てない。
+   documentedMarch:true
+  });
+ }
  add('真田丸の戦い','siege',[135.526,34.671,4,'真田丸・大坂城南方'],['tokugawa','hashiba','sanada'],['徳川方','豊臣方'],[['前田利常','井伊直孝','松平忠直'],['真田信繁']],'osakaMuseum','真田丸を中心とした局地戦。前田・井伊・松平勢の個別隊間隔は未詳。',siege('真田丸・真田勢'));
  TK.BATTLE_EVENT_EXCLUSIONS={'粟之巣の変':'拉致と死亡の事件として年表に表示。軍勢の対陣資料は未登録。','大坂冬の陣の和睦':'大坂冬の陣の終結経過へ統合。別の合戦として二重再生しない。'};
 })();
