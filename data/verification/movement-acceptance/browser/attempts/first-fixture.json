@@ -1,0 +1,75 @@
+{
+  "ok": false,
+  "error": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n\n0 !== 2\n",
+  "checks": [
+    {
+      "case": "separate marches same/different command, no displacement, all hover/tap",
+      "rows": [
+        {
+          "id": 99100,
+          "x": 860,
+          "y": 451,
+          "members": [
+            99100
+          ],
+          "troops": 6000,
+          "location": false
+        },
+        {
+          "id": 99101,
+          "x": 860,
+          "y": 451,
+          "members": [
+            99101
+          ],
+          "troops": 2000,
+          "location": false
+        },
+        {
+          "id": 99102,
+          "x": 860,
+          "y": 451,
+          "members": [
+            99102
+          ],
+          "troops": 2000,
+          "location": false
+        }
+      ],
+      "tip": {
+        "hidden": false,
+        "text": "徳川家康徳川家 ・ 自家行軍中 ・ 6,000 ・ 士気85目的地：岐阜城出陣（推定）：慶長五年六月十五日（1600年7月25日）本多忠勝徳川家 ・ 自家行軍中 ・ 2,000 ・ 士気85目的地：岐阜城出陣（推定）：慶長五年六月十五日（1600年7月25日）石田三成石田家 ・ 未成立・滅亡行軍中 ・ 2,000 ・ 士気85目的地：岐阜城出陣（推定）：慶長五年六月十五日（1600年7月25日）"
+      }
+    },
+    {
+      "case": "same march far",
+      "rows": [
+        {
+          "id": 99100,
+          "x": 860,
+          "y": 451,
+          "members": [
+            99100,
+            99101
+          ],
+          "troops": 8000,
+          "location": false
+        }
+      ]
+    }
+  ],
+  "substituted": {
+    "/historical-register.js": 1,
+    "/ui.js": 1
+  },
+  "errors": [],
+  "httpErrors": [
+    {
+      "url": "http://localhost:8000/favicon.ico",
+      "status": 404
+    }
+  ],
+  "loadFailures": [],
+  "browserPid": 89652,
+  "browserPidAlive": false
+}

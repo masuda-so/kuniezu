@@ -1,0 +1,37 @@
+{
+  "id": "location:kuroda-nagamasa-osaka-tenma-1600",
+  "person": "person:kuroda-nagamasa",
+  "place": "place:osaka-tenma",
+  "relation": "attested-presence",
+  "time": {
+    "kind": "dated-event",
+    "date": [
+      1600,
+      6,
+      6
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": false,
+    "precision": "day"
+  },
+  "source": "kurodaKafu1600Ndl1911",
+  "sourceUrl": "https://dl.ndl.go.jp/pid/1023982",
+  "locator": "巻9 pp.263–264（コマ127–128）。p.263下段末で長政は大坂天満、p.264上段で6月6日の婚儀。",
+  "summary": "長政の天満屋敷で婚儀を行う",
+  "uncertainty": "婚儀の記録。大坂城西ノ丸からの輿の移動を長政本人の移動と取り違えない。家譜の叙述を確認したもので終日在宅・屋敷の精密地点・前後の連続滞在は確定しない。",
+  "sourceType": "retrospective-house-chronicle",
+  "recordType": "sourced-location-observation",
+  "status": "verified-in-specified-scope",
+  "recordedAt": "2026-11-03",
+  "gameBindings": [
+    "history-index:person:kuroda-nagamasa",
+    "TK.PERSON_LOCATION_ITINERARIES:kuroda-nagamasa-1600",
+    "G.personLocationInfo"
+  ],
+  "runtimeMarchBinding": false,
+  "runtimeLocationBinding": {
+    "itinerary": "kuroda-nagamasa-1600",
+    "kind": "sourced-observations-with-estimated-road-intervals",
+    "troopStrengthAsserted": false
+  }
+}

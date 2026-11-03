@@ -1,0 +1,37 @@
+{
+  "id": "location:kuroda-nagamasa-fushimi-departure-1600",
+  "person": "person:kuroda-nagamasa",
+  "place": "place:fushimi",
+  "relation": "attested-presence",
+  "time": {
+    "kind": "dated-event",
+    "date": [
+      1600,
+      7,
+      5
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": false,
+    "precision": "day"
+  },
+  "source": "kurodaKafu1600Ndl1911",
+  "sourceUrl": "https://dl.ndl.go.jp/pid/1023982",
+  "locator": "巻9 p.268上段（コマ130右頁）。長政七月五日伏見を立給ふ。",
+  "summary": "長政が伏見を出立する",
+  "uncertainty": "家康6月16日大坂発・6月18日伏見発・7月2日江戸着とは別の長政個別記録。家譜の叙述として採用し、6月16日から7月5日まで連続して伏見にいたと補わない。軍の道筋・当日時刻・江戸到着日はこの一文では不明。",
+  "sourceType": "retrospective-house-chronicle",
+  "recordType": "sourced-location-observation",
+  "status": "verified-in-specified-scope",
+  "recordedAt": "2026-11-03",
+  "gameBindings": [
+    "history-index:person:kuroda-nagamasa",
+    "TK.PERSON_LOCATION_ITINERARIES:kuroda-nagamasa-1600",
+    "G.personLocationInfo"
+  ],
+  "runtimeMarchBinding": false,
+  "runtimeLocationBinding": {
+    "itinerary": "kuroda-nagamasa-1600",
+    "kind": "sourced-observations-with-estimated-road-intervals",
+    "troopStrengthAsserted": false
+  }
+}

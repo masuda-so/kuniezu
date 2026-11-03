@@ -1,0 +1,89 @@
+{
+  "id": "kuroda-1600-departure-review",
+  "reviewedAt": "2026-11-03",
+  "decision": "distinct-subject-and-departure-location; do not equate Ieyasu itinerary with Nagamasa itinerary",
+  "accepted": [
+    {
+      "date": [
+        1600,
+        6,
+        6
+      ],
+      "calendar": "Japanese-lunisolar",
+      "person": "person:kuroda-nagamasa",
+      "place": "place:osaka-tenma",
+      "locationRecord": "location:kuroda-nagamasa-osaka-tenma-1600"
+    },
+    {
+      "date": [
+        1600,
+        7,
+        5
+      ],
+      "calendar": "Japanese-lunisolar",
+      "person": "person:kuroda-nagamasa",
+      "place": "place:fushimi",
+      "locationRecord": "location:kuroda-nagamasa-fushimi-departure-1600"
+    },
+    {
+      "date": [
+        1600,
+        8,
+        14
+      ],
+      "calendar": "Japanese-lunisolar",
+      "person": "person:kuroda-nagamasa",
+      "place": "place:kiyosu-vicinity",
+      "locationRecord": "location:kuroda-nagamasa-kiyosu-arrival-1600"
+    }
+  ],
+  "excluded": [
+    {
+      "date": [
+        1600,
+        6,
+        16
+      ],
+      "claim": "長政が家康と同一日程で全区間を進む",
+      "reason": "家康の大坂出発と随行者名簿は、長政個別の各到着日を証明しない。"
+    },
+    {
+      "date": [
+        1600,
+        7,
+        2
+      ],
+      "claim": "長政江戸着",
+      "reason": "江戸着の主語は家康。"
+    },
+    {
+      "date": [
+        1600,
+        8,
+        4
+      ],
+      "claim": "長政小山帰着",
+      "reason": "原本校注に江戸説・小山説の差。今回精密な所在観測に採用しない。"
+    }
+  ],
+  "sourceAccess": [
+    {
+      "url": "https://dl.ndl.go.jp/pid/1023982",
+      "status": "primary-printed-edition-images-inspected",
+      "note": "原典である後世家譜の校本。出来事と同時代の記録という意味ではない。"
+    },
+    {
+      "url": "https://da.lib.kobe-u.ac.jp/da/sc/0100399196/",
+      "status": "repository-description-read",
+      "originalImageRead": false
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/1/19/NDL950970_%E9%BB%92%E7%94%B0%E5%A6%82%E6%B0%B4%E4%BC%9D_part3.pdf",
+      "status": "search-excerpt-only",
+      "originalPageRead": false,
+      "decision": "not-used-as-runtime-anchor"
+    }
+  ],
+  "noRuntimeMutations": true,
+  "prior16FilesUntouched": true
+}

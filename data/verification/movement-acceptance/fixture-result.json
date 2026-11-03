@@ -1,0 +1,208 @@
+{
+  "ok": true,
+  "scope": "real movement-display/convoys plus exact ui postpass; small in-memory fixtures",
+  "cases": [
+    {
+      "case": "same march far",
+      "visible": 1,
+      "totalTroops": 4000
+    },
+    {
+      "case": "same march near tight road bend",
+      "positions": [
+        [
+          626,
+          250
+        ],
+        [
+          626,
+          266
+        ]
+      ],
+      "newVisible": 2
+    },
+    {
+      "case": "different path",
+      "visible": 2,
+      "positions": [
+        [
+          460,
+          252
+        ],
+        [
+          460,
+          252
+        ]
+      ],
+      "hover": [
+        1,
+        2
+      ],
+      "tap": [
+        1,
+        2
+      ]
+    },
+    {
+      "case": "different departure",
+      "visible": 2,
+      "positions": [
+        [
+          460,
+          252
+        ],
+        [
+          460,
+          252
+        ]
+      ],
+      "hover": [
+        1,
+        2
+      ],
+      "tap": [
+        1,
+        2
+      ]
+    },
+    {
+      "case": "different campaign",
+      "visible": 2,
+      "positions": [
+        [
+          460,
+          252
+        ],
+        [
+          460,
+          252
+        ]
+      ],
+      "hover": [
+        1,
+        2
+      ],
+      "tap": [
+        1,
+        2
+      ]
+    },
+    {
+      "case": "different mission",
+      "visible": 2,
+      "positions": [
+        [
+          460,
+          252
+        ],
+        [
+          460,
+          252
+        ]
+      ],
+      "hover": [
+        1,
+        2
+      ],
+      "tap": [
+        1,
+        2
+      ]
+    },
+    {
+      "case": "different command",
+      "visible": 2,
+      "positions": [
+        [
+          460,
+          252
+        ],
+        [
+          460,
+          252
+        ]
+      ],
+      "hover": [
+        1,
+        2
+      ],
+      "tap": [
+        1,
+        2
+      ]
+    },
+    {
+      "case": "stationed armies",
+      "visible": 2,
+      "positions": [
+        [
+          460,
+          252
+        ],
+        [
+          460,
+          252
+        ]
+      ],
+      "hover": [
+        1,
+        2
+      ],
+      "tap": [
+        1,
+        2
+      ]
+    },
+    {
+      "case": "road endpoint",
+      "point": [
+        0,
+        0
+      ],
+      "positions": [
+        [
+          400,
+          250
+        ],
+        [
+          444,
+          250
+        ]
+      ]
+    },
+    {
+      "case": "road endpoint",
+      "point": [
+        0,
+        4
+      ],
+      "positions": [
+        [
+          444,
+          266
+        ],
+        [
+          400,
+          266
+        ]
+      ]
+    },
+    {
+      "case": "far convoy and other command share hover",
+      "visible": 2,
+      "hover": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "case": "outside and paused repeat",
+      "outsideLeft": [
+        2
+      ],
+      "stable": true
+    }
+  ],
+  "negativeControls": []
+}
