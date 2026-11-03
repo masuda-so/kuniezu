@@ -491,7 +491,13 @@ function hit(sx,sy){if(!S)return null;let best=null,bd=16*16;for(const C of G.CL
  if(best)return best;const [wx,wy]=s2w(sx,sy);bctx.setTransform(1,0,0,1,0,0);if(!bctx.isPointInPath(LAND,wx,wy))return null;for(const C of G.CL)if(bctx.isPointInPath(TERR[C.id],wx,wy))return C.id;return null;}
 const tipEl=$('#tip');
 function hitArmy(x,y){return U.mode==='game'&&U.armyGroups?.filter(g=>Math.hypot(g.x-x,g.y-y)<24).sort((a,b)=>Math.hypot(a.x-x,a.y-y)-Math.hypot(b.x-x,b.y-y))[0];}
-function tipArmy(group,e){const ids=group.members.map(m=>m.id),units=(U.mapUnits||[]).filter(u=>ids.includes(u.id));tipEl.innerHTML=units.map(u=>{const n=u.commanders||u.gens.map(id=>G.gen(id)?.n).filter(Boolean),identity=G.armyIdentity(u),relation=G.relationKind(S.player,identity.command);return `<div class="tph">${n[0]?faceHTML(n[0],'sm',u.clan):''}${kamonHTML(G.armyCrestKey(u),24)}<div><b>${esc(n.join('・')||G.CNK(u.clan)+'軍')}</b><span>${esc(identity.name)} ・ ${esc(relation.name)}</span></div></div><p>${esc(G.marchPhase(u).name)}${u.troops?' ・ '+man(u.troops):''} ・ 士気${Math.round(u.morale||0)}</p><p>目的地：${esc(G.marchDestination(u))}</p>`;}).join('');tipEl.hidden=false;placeTip(e);}
+function armyDepartureText(u){
+ const start=u.schedule?.start;
+ if(!Number.isFinite(start)||G.isHistoryReturning(u))return '';
+ const {y,m,d}=G.date(start);
+ return `${u.depart?'出陣':'出陣（推定）'}：${y}年${m}月${d}日`;
+}
+function tipArmy(group,e){const ids=group.members.map(m=>m.id),units=(U.mapUnits||[]).filter(u=>ids.includes(u.id));tipEl.innerHTML=units.map(u=>{const n=u.commanders||u.gens.map(id=>G.gen(id)?.n).filter(Boolean),identity=G.armyIdentity(u),relation=G.relationKind(S.player,identity.command),departure=armyDepartureText(u);return `<div class="tph">${n[0]?faceHTML(n[0],'sm',u.clan):''}${kamonHTML(G.armyCrestKey(u),24)}<div><b>${esc(n.join('・')||G.CNK(u.clan)+'軍')}</b><span>${esc(identity.name)} ・ ${esc(relation.name)}</span></div></div><p>${esc(G.marchPhase(u).name)}${u.troops?' ・ '+man(u.troops):''} ・ 士気${Math.round(u.morale||0)}</p><p>目的地：${esc(G.marchDestination(u))}</p>${departure?`<p>${esc(departure)}</p>`: ''}`;}).join('');tipEl.hidden=false;placeTip(e);}
 function hitY(sx,sy){if(!S||cam.z<.6)return null;let best=null,bd=10*10;for(const y of (G.YOSHO||[])){const [x,yy]=w2s(y.x,y.y);const d=(x-sx)**2+(yy-sy)**2;if(d<bd){bd=d;best=y;}}return best;}
 // 施設の詳しい様子
 function tipY(y,e){if(!y||(e&&e.pointerType==='touch')||U.mode==='title'){tipEl.hidden=true;return;}const v=G.sitePresentation(y),level=G.siteLevel(y);tipEl.innerHTML=`<div class="tph"><div><b>${esc(v.title)}</b><span>${esc(v.role)}${G.yActive(y)?' ・ Lv.'+level:''}</span></div></div><p>${esc(v.description)}</p>${v.state?'<p>'+esc(v.state)+'</p>':''}${G.yActive(y)?'<span class="tdl">'+esc(G.infrastructureText('site',y.id))+'</span>':''}`;tipEl.hidden=false;placeTip(e);}
