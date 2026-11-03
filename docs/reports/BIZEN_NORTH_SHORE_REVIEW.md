@@ -92,3 +92,5 @@ PythonはNumPy・Pillow・Shapelyを使用。入力の図上読取と原図ハ�
 3断面の93点と標高タイルURLは [fujito-dem-profiles.json](../../data/inputs/kojima-coast-review/fujito-dem-profiles.json)。丘陵間の低地の候補を確認した段階で、現在の標高から戦国期の水面や水路幅は逆算しない。
 
 比較した標高3断面の93点は、現在のゲームではすべて陸に含まれる。うち61点が現代標高5m未満で、丘陵だけでなく低地も連続した陸になっている。古図の狭窄部にある浮洲岩・経ヶ島は、[中国四国農政局の海面古図](https://www.maff.go.jp/chushi/kj/okayamam/attach/pdf/pamph-26.pdf)と[水土の礎の図1解説](https://suido-ishizue.jp/nihon/08/00.html)で照合する候補。現地側では、[倉敷市の二番池ハザードマップ](https://www.city.kurashiki.okayama.jp/_res/projects/default_project/_page_/001/005/705/r1nibannike.pdf)に浮洲岩跡と経ヶ島がともに掲載されている。岩の跡と島の目印を局所の照合に使い、図の浸水区域は戦国期の水路には転写しない。
+
+倉敷市「二番池ハザードマップ」のPDF第1頁から、PDFKitでラベルの範囲を抽出した。座標は頁左下を原点とするポイント単位。浮洲岩跡は左下(488.04, 838.55)、経ヶ島は(632.87, 876.47)、地図内の小さい藤戸寺ラベルは(577.32, 847.07)。藤戸寺の文字は地図内の別の表示にも使われている。これらは字の左下位置で、史跡の位置そのものではない。北が上の図で浮洲岩跡は藤戸寺の表示より西寄り、経ヶ島は北東寄りにある。岸線の位置合わせでは、ラベルではなく地図上の対象位置を現代側の独立資料で照合する。[倉敷市の二番池ハザードマップ](https://www.city.kurashiki.okayama.jp/_res/projects/default_project/_page_/001/005/705/r1nibannike.pdf)
