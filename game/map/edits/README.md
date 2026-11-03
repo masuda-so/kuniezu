@@ -41,3 +41,9 @@ python3 tools/map/build-province-edits.py /path/to/baseline/game/map /tmp/provin
 領域差分は `payload.file` の GeoJSON、`payload.feature` の配列番号、変更前後の `fromKey`・`toKey` を指定する。基準版と元タイルのハッシュを検証し、100m画素の中心が面の内部にあるところだけ置換する。選択年に重複する書き込み、すでに基準版へ反映したID、変更前の値の不一致は生成エラー。出力は変更タイルと検査用マニフェストで、基準版には書き戻さない。描画側への接続と、標高・河川の差分生成は別工程。
 
 領域の隣接検査は、Pillow・NumPy を入れた Python で `python3 tools/map/audit-raster-adjacency.py /path/to/baseline/game/map` を実行する。100m基準版（0d92c0a）では全画素が定義色に一致し、城・中立領域の4近傍と8近傍はいずれも301組で、斜め接触だけの組は0。タイル角をまたいで斜めに接する合成入力では4近傍が0、8近傍が1になることを確認した。海峡の接続特例や道路グラフはこの画素検査の集計に含めない。
+
+## 河川の比較レイヤー
+
+`python3 tools/map/build-river-raster.py /path/to/game/map/manifest.json /path/to/tenryu-oi-modern.json /tmp/river-tiles` は、領域と同じ投影・原点・解像度で、河川IDを8bit PNGへ格納する試験生成。0は河川なし。値1〜255は出力マニフェストの河川名・元の線分IDに対応する。川幅を1画素と推定したものではなく、河川中心線の符号化。異なる河川IDが同じ画素に入る場合は黙って上書きせず停止する。合流表現と、画像から表示線を生成する工程は別に設計する。
+
+天竜川・大井川の現代比較データで、共通の2タイルへ2,043画素と1,716画素をそれぞれ生成した。元データの出典・ODbL・現代比較レイヤー区分をマニフェストへ保持する。既存ゲームの河川表示への切り替えは未実施。
