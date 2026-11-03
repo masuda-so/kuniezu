@@ -1,0 +1,15 @@
+{
+  "id": "mizushima-post-period-fill",
+  "layer": "provinces",
+  "baseRevision": "eeb62750f60db5060042b12aa0c4402af6b6480f",
+  "validFrom": [1560, 1, 1],
+  "validUntil": [1616, 1, 1],
+  "payload": {
+    "file": "../../../data/inputs/kojima-coast-review/mizushima-west-meiji-core.geojson",
+    "feature": 0,
+    "fromKey": "castle:bmatsuyama",
+    "toKey": "sea"
+  },
+  "basis": "国土交通省の倉敷地形分類図で旧水部と埋立地が重なり、明治期の土地利用図でも水面側にある範囲",
+  "review": "後世の埋立地を除く部分補正。輪郭は水面側に余裕を取った採用範囲であり、戦国期の汀線や藤戸の通水幅を示さない。"
+}
