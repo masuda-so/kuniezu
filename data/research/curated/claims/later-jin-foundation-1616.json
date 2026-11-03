@@ -1,0 +1,22 @@
+{
+  "id": "later-jin-foundation-1616",
+  "entity": "polity:後金",
+  "predicate": "foundation-year",
+  "value": 1616,
+  "validYears": [
+    1616,
+    1616
+  ],
+  "datePrecision": "year",
+  "source": "jurchenNikh",
+  "sourceUrl": "https://contents.history.go.kr/mobile/kc/view.do?code=kc_age_30&levelId=kc_n303310",
+  "locator": "3 국가를 수립하다",
+  "gameBindings": [
+    "game/liaodong-context.js",
+    "TK.contextRegionPresentation"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-03",
+  "uncertainty": "ゲーム最終年1615の後。年月横断検索に残すが、期間内の成立イベントを生成しない。"
+}

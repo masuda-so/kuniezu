@@ -1,0 +1,116 @@
+{
+  "generated": "tools/map/build-province-edits.cjs",
+  "baseRevision": "liaodong-1560-source-v1",
+  "baseProvincesSha256": "9e27144aa9c953299567fd3719d3ad413ea1f496ad03a097e1e25b2c6eb1a03d",
+  "date": "1573-01-01",
+  "versions": [
+    {
+      "id": "15730101-15840101",
+      "period": [
+        [
+          1573,
+          1,
+          1
+        ],
+        [
+          1584,
+          1,
+          1
+        ]
+      ],
+      "edits": [
+        "ming-kuandian-1573-1605-reference"
+      ],
+      "sha256": "8c73dfa626d4f4ce75c41254b3969397ab489ca057c4f38f90ef719ef8836a9e"
+    }
+  ],
+  "editPixels": {
+    "ming-kuandian-1573-1605-reference": 217799
+  },
+  "tiles": [
+    {
+      "file": "provinces/1-5@15730101-15840101.png",
+      "factor": 1,
+      "col": 1,
+      "row": 5,
+      "period": [
+        [
+          1573,
+          1,
+          1
+        ],
+        [
+          1584,
+          1,
+          1
+        ]
+      ],
+      "width": 1024,
+      "height": 1024,
+      "sha256": "29c82fa4c84c0e8eda86d599c3d4bca251351a6ee42c065db2d84f77578f419a"
+    },
+    {
+      "file": "provinces/1-6@15730101-15840101.png",
+      "factor": 1,
+      "col": 1,
+      "row": 6,
+      "period": [
+        [
+          1573,
+          1,
+          1
+        ],
+        [
+          1584,
+          1,
+          1
+        ]
+      ],
+      "width": 1024,
+      "height": 1024,
+      "sha256": "87f5493860f9c0d8e0002ecd5280967f259879fe205f82e3260c8cf0b4fb01e7"
+    },
+    {
+      "file": "provinces-4/0-1@15730101-15840101.png",
+      "factor": 4,
+      "col": 0,
+      "row": 1,
+      "period": [
+        [
+          1573,
+          1,
+          1
+        ],
+        [
+          1584,
+          1,
+          1
+        ]
+      ],
+      "width": 1024,
+      "height": 1024,
+      "sha256": "a051f8168e1023e6859ae75f7b2586fd4e718f407ae3660fdcf301e4008b6969"
+    },
+    {
+      "file": "provinces-8/0-0@15730101-15840101.png",
+      "factor": 8,
+      "col": 0,
+      "row": 0,
+      "period": [
+        [
+          1573,
+          1,
+          1
+        ],
+        [
+          1584,
+          1,
+          1
+        ]
+      ],
+      "width": 1024,
+      "height": 1024,
+      "sha256": "24b412cd54bef497bf02fb74b90da1bb4b27f7cb8742dde736cd94e7a9b51dd7"
+    }
+  ]
+}

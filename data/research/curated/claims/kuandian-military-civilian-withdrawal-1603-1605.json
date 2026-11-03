@@ -1,0 +1,22 @@
+{
+  "id": "kuandian-military-civilian-withdrawal-1603-1605",
+  "entity": "site:寛甸",
+  "predicate": "military-civilian-withdrawal",
+  "value": "寛甸方面の軍民の強制退去は1603〜1605年に段階的に進んだ。",
+  "validYears": [
+    1603,
+    1605
+  ],
+  "datePrecision": "year",
+  "source": "jurchenMasui",
+  "sourceUrl": "https://www.ritsumei.ac.jp/acd/cg/lt/rb/679/679PDF/masui.pdf",
+  "locator": "PDF pp.14–15 駆民棄地の過程と1606年の報告",
+  "gameBindings": [
+    "game/liaodong-context.js",
+    "TK.contextRegionPresentation"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-03",
+  "uncertainty": "1606年の報告をその年一日の割譲と扱わない。退去区間の精密座標・全住民の同日移動を示さない。"
+}
