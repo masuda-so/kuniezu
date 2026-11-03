@@ -19,9 +19,11 @@ window.TKRaster=(function(){
   order.push(k);while(order.length>48){const old=order.shift();if(!old.startsWith('8:'))tiles.delete(old);}return rec;}
  // 表示の細かさ：画面1物理画素あたりの地図単位に対し、画素が1.5倍より粗くならない最も粗い段を選ぶ。
  function pickFactor(z,dpr){const unit=1/(z*dpr);for(const f of [8,4])if(man.projection.stepUnits*f<=unit*1.5)return f;return 1;}
- function canvasFor(rec,colorOf,sig){if(rec.canvas&&rec.sig===sig)return rec.canvas;const {width:w,height:h}=rec.t;const cv=rec.canvas||document.createElement('canvas');cv.width=w;cv.height=h;const c=cv.getContext('2d'),im=c.createImageData(w,h),d=im.data,cache=new Map();
-  for(let i=0;i<rec.ids.length;i++){const id=rec.ids[i];if(!id)continue;let col=cache.get(id);if(col===undefined){col=colorOf(defs[id])||null;cache.set(id,col);}if(!col)continue;const o=i*4;d[o]=col[0];d[o+1]=col[1];d[o+2]=col[2];d[o+3]=col[3];}
-  c.putImageData(im,0,0);rec.canvas=cv;rec.sig=sig;return cv;}
+ // 色分けの種類（sig）ごとに塗った画像を控える。陸・湖・領主など複数の塗りを交互に使っても作り直さない（1タイル最大6種）。
+ function canvasFor(rec,colorOf,sig){rec.canvases=rec.canvases||new Map();let cv=rec.canvases.get(sig);if(cv){rec.canvases.delete(sig);rec.canvases.set(sig,cv);return cv;}
+  const {width:w,height:h}=rec.t;cv=document.createElement('canvas');cv.width=w;cv.height=h;const c=cv.getContext('2d'),im=c.createImageData(w,h),d=im.data,cache=new Map();
+  for(let i=0;i<rec.ids.length;i++){const id=rec.ids[i];let col=cache.get(id);if(col===undefined){col=colorOf(defs[id])||null;cache.set(id,col);}if(!col)continue;const o=i*4;d[o]=col[0];d[o+1]=col[1];d[o+2]=col[2];d[o+3]=col[3];}
+  c.putImageData(im,0,0);rec.canvases.set(sig,cv);while(rec.canvases.size>6)rec.canvases.delete(rec.canvases.keys().next().value);return cv;}
  /* c は地図平面の座標で描く文脈（setTransform 済み）。view=[x0,y0,x1,y1]。colorOf(def)→[r,g,b,a]（a は0〜255）か null。 */
  function paint(c,view,z,dpr,colorOf,sig){if(!ready)return false;const f=pickFactor(z,dpr);let complete=true;
   const draw=(ff,t,rec)=>{const s=man.projection.stepUnits*ff,x=man.projection.origin[0]+t.col*man.tile*s,y=man.projection.origin[1]+t.row*man.tile*s;c.drawImage(canvasFor(rec,colorOf,sig+'|'+ff),x,y,t.width*s,t.height*s);};
