@@ -46,6 +46,7 @@ def build(base, out, year):
     changed = {}
     writes = set()
     counts = {}
+    seen = set(applied)
 
     for path in sorted(EDITS.glob("*.json")):
         if path.name == "baseline-ledger.json":
@@ -54,8 +55,11 @@ def build(base, out, year):
         edit_id = edit["id"]
         if edit["layer"] != "provinces" or edit["baseRevision"] != ledger["baselineCommit"]:
             raise ValueError(f"Unsupported layer or revision: {edit_id}")
-        if edit_id in applied or edit_id in counts:
+        if edit_id in seen:
             raise ValueError(f"Duplicate or already baked edit: {edit_id}")
+        seen.add(edit_id)
+        if edit["validFrom"] >= edit["validUntil"]:
+            raise ValueError(f"Invalid validity interval: {edit_id}")
         if not edit["validFrom"] <= year < edit["validUntil"]:
             continue
         payload = edit["payload"]
