@@ -1,6 +1,7 @@
 """Generate changed province tiles from a verified base and geographic edit inputs."""
 import argparse
 import csv
+from datetime import date
 import hashlib
 import json
 import math
@@ -28,7 +29,8 @@ def contains(ring, x, y):
     return inside
 
 
-def build(base, out, year):
+def build(base, out, day):
+    day = date(day, 1, 1) if isinstance(day, int) else day
     ledger = read_json(EDITS / "baseline-ledger.json")
     for name, key in [("manifest.json", "manifestSha256"), ("definition.csv", "definitionSha256")]:
         if digest(base / name) != ledger[key]:
@@ -47,6 +49,7 @@ def build(base, out, year):
     writes = set()
     counts = {}
     seen = set(applied)
+    boundaries = set()
 
     for path in sorted(EDITS.glob("*.json")):
         if path.name == "baseline-ledger.json":
@@ -58,9 +61,11 @@ def build(base, out, year):
         if edit_id in seen:
             raise ValueError(f"Duplicate or already baked edit: {edit_id}")
         seen.add(edit_id)
-        if edit["validFrom"] >= edit["validUntil"]:
+        start, end = (date(*edit[key]) for key in ("validFrom", "validUntil"))
+        boundaries.update((start, end))
+        if start >= end:
             raise ValueError(f"Invalid validity interval: {edit_id}")
-        if not edit["validFrom"] <= year < edit["validUntil"]:
+        if not start <= day < end:
             continue
         payload = edit["payload"]
         geometry = read_json(path.parent / payload["file"])["features"][payload["feature"]]["geometry"]
@@ -107,15 +112,58 @@ def build(base, out, year):
         if not counts[edit_id]:
             raise ValueError(f"Edit has no pixels at this scale: {edit_id}")
 
+    levels = [(1, "provinces", changed)]
+    for level in manifest.get("levels", []):
+        factor = level["factor"]
+        originals = {(t["col"], t["row"]): t for t in level["tiles"]}
+        replacements = {}
+        for c, r in sorted(writes):
+            x, y = c // factor, r // factor
+            # Match the base builder: sample the fine-grid pixel at each coarse centre.
+            if (c != min(manifest["width"] - 1, x * factor + factor // 2)
+                    or r != min(manifest["height"] - 1, y * factor + factor // 2)):
+                continue
+            key = x // size, y // size
+            if key not in replacements:
+                original = originals.get(key)
+                if original:
+                    file = base / level["dir"] / original["file"]
+                    if digest(file) != original["sha256"]:
+                        raise ValueError(f"Unexpected tile revision: {file}")
+                    with Image.open(file) as image:
+                        replacements[key] = image.convert("RGB")
+                else:
+                    replacements[key] = Image.new(
+                        "RGB", (min(size, level["width"] - key[0] * size),
+                                min(size, level["height"] - key[1] * size)), colors["sea"])
+            rgb = changed[c // size, r // size].getpixel((c % size, r % size))
+            replacements[key].putpixel((x % size, y % size), rgb)
+        levels.append((factor, level["dir"], replacements))
+
     out.mkdir(parents=True, exist_ok=False)
     outputs = []
-    for (col, row), image in sorted(changed.items()):
-        file = out / f"{col}-{row}.png"
-        image.save(file)
-        outputs.append({"file": file.name, "sha256": digest(file)})
+    versions = []
+    if counts:
+        start = max(v for v in boundaries if v <= day)
+        end = min(v for v in boundaries if v > day)
+        period = [[v.year, v.month, v.day] for v in (start, end)]
+        version = f"{start:%Y%m%d}-{end:%Y%m%d}"
+    for factor, directory, replacements in levels:
+        if replacements:
+            (out / directory).mkdir(exist_ok=True)
+        for (col, row), image in sorted(replacements.items()):
+            file = out / directory / f"{col}-{row}@{version}.png"
+            image.save(file)
+            outputs.append({"file": file.relative_to(out).as_posix(), "factor": factor,
+                            "col": col, "row": row, "period": period, "width": image.width,
+                            "height": image.height, "sha256": digest(file)})
+    if counts:
+        sha = hashlib.sha256(json.dumps(outputs, sort_keys=True).encode()).hexdigest()
+        versions.append({"id": version, "period": period, "edits": sorted(counts), "sha256": sha})
     (out / "manifest.json").write_text(json.dumps({
         "baseRevision": ledger["baselineCommit"],
-        "year": year,
+        "date": day.isoformat(),
+        "versions": versions,
         "editPixels": counts,
         "tiles": outputs,
     }, indent=2) + "\n", encoding="utf-8")
@@ -126,6 +174,8 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("base", type=Path)
     parser.add_argument("output", type=Path, help="New directory for replacement tiles")
-    parser.add_argument("--year", type=int, required=True)
+    dates = parser.add_mutually_exclusive_group(required=True)
+    dates.add_argument("--year", type=int)
+    dates.add_argument("--date", type=date.fromisoformat)
     args = parser.parse_args()
-    print(build(args.base, args.output, args.year))
+    print(build(args.base, args.output, args.date or args.year))

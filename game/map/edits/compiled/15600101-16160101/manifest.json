@@ -1,0 +1,51 @@
+{
+  "baseRevision": "0d92c0a",
+  "date": "1600-09-15",
+  "versions": [
+    {
+      "id": "15600101-16160101",
+      "period": [
+        [
+          1560,
+          1,
+          1
+        ],
+        [
+          1616,
+          1,
+          1
+        ]
+      ],
+      "edits": [
+        "hayashima-upland"
+      ],
+      "sha256": "0e07bc51cb38f349bd5107136b9193927ac78ee77138083ae219cabeeaff935b"
+    }
+  ],
+  "editPixels": {
+    "hayashima-upland": 9
+  },
+  "tiles": [
+    {
+      "file": "provinces/9-8@15600101-16160101.png",
+      "factor": 1,
+      "col": 9,
+      "row": 8,
+      "period": [
+        [
+          1560,
+          1,
+          1
+        ],
+        [
+          1616,
+          1,
+          1
+        ]
+      ],
+      "width": 1024,
+      "height": 1024,
+      "sha256": "f54a5da8f10aeecd4b53e7c47066b3a1fd617cefef946a5205203f39d338814d"
+    }
+  ]
+}

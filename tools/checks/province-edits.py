@@ -48,19 +48,19 @@ with tempfile.TemporaryDirectory() as folder:
     }}]})
     edit = {
         "id": "one", "baseRevision": "fixture", "layer": "provinces",
-        "validFrom": 1560, "validUntil": 1616,
+        "validFrom": [1560, 1, 1], "validUntil": [1616, 1, 1],
         "payload": {"file": "../one.geojson", "feature": 0, "fromKey": "sea", "toKey": "castle:a"},
     }
     primary, secondary = edits / "a.json", edits / "b.json"
     write(primary, edit)
     assert compiler.build(base, root / "good", 1600) == {"one": 1}
-    with Image.open(root / "good/0-0.png") as tile:
+    with Image.open(root / "good/provinces/0-0@15600101-16160101.png") as tile:
         assert tile.getpixel((0, 0)) == (1, 2, 3)
     assert compiler.build(base, root / "expired", 1616) == {}
 
     write(secondary, {**edit, "id": "two"})
     rejected(base, root / "overlap", "Overlapping edits")
-    write(secondary, {**edit, "validFrom": 1616, "validUntil": 1620})
+    write(secondary, {**edit, "validFrom": [1616, 1, 1], "validUntil": [1620, 1, 1]})
     rejected(base, root / "duplicate", "Duplicate or already baked edit")
     write(secondary, {**edit, "id": "baked"})
     rejected(base, root / "baked", "Duplicate or already baked edit")

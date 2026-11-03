@@ -2,8 +2,8 @@
   "id": "hayashima-upland",
   "layer": "provinces",
   "baseRevision": "0d92c0a",
-  "validFrom": 1560,
-  "validUntil": 1616,
+  "validFrom": [1560, 1, 1],
+  "validUntil": [1616, 1, 1],
   "payload": {
     "file": "../../../data/inputs/kojima-coast-review/hayashima-upland-comparison.geojson",
     "feature": 0,
