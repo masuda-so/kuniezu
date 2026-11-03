@@ -19,6 +19,7 @@
   ishigakibaruDeployment:['別府市','軍師官兵衛ゆかりの石垣原合戦','https://www.city.beppu.oita.jp/gakusyuu/bunkazai/kassen_index.html','9月13日・15日の経過','吉弘統幸、黒田・松井勢と大友義統の降伏。'],
   anotsuDeployment:['津市','津藩祖 藤堂高虎','https://www.info.city.tsu.mie.jp/kosodate_kyouiku/kyouikuiinkai/1004357/1004663/1004713/1004736.html','富田氏の入城と関ヶ原前の攻城','毛利秀元の攻城、富田信高の守備。藤堂期の津城を1600年へ遡らせない。'],
  };
+ sources.takatenjinFortCommand=['掛川市','高天神城の攻防に関する講演資料','https://www.city.kakegawa.shizuoka.jp/fs/6/2/4/3/5/5/_/_____________________________.pdf','六砦の配置と担当','大須賀康高らの包囲拠点。落城当日の各将の位置までは示さない。'];
  sources.shigisanChronicle=['太田牛一','信長公記','https://ja.wikisource.org/wiki/信長公記','巻十（九）信貴城被攻落之事','旧暦10月3日の着陣と10日夜の攻城。攻め口を割り当てられた武将を記すが、それぞれの方角は特定できない。'];
  sources.odawara1590=['小田原城総合管理事務所','小田原城の歴史年表','https://odawaracastle.com/history/nenpyo/index.html','1590年の小田原合戦','1561年の上杉攻城と1590年の総構・石垣山本陣を区別する。'];
  sources.sawayamaDeployment=['彦根市','佐和山城','https://www.city.hikone.lg.jp/kanko/rekishi/9/6/7608.html','城の沿革・遺構','山城の位置と沿革。個別の攻め口は図示しない。'];
@@ -52,8 +53,11 @@
  define('大坂冬の陣','siege','大坂城と南の真田丸、東の今福・鴫野、西の木津川方面を分ける。各段階を同時の配置としない。',['osakaMuseum','osakaStructure','osakaMap'],[g('大坂城内','hideyori ono kimura chosokabe',135.526,34.687),g('真田丸方面','sanada goto',135.526,34.673),g('茶臼山・徳川本陣','ieyasu',135.509,34.651),g('岡山・秀忠本陣','hidetada',135.532,34.663),g('真田丸正面','maeda ii matsudaira',135.527,34.668,'攻撃方面の概略'),g('今福・鴫野方面','uesugi satake',135.55,34.693),g('木津川方面','hachisuka',135.482,34.668),g('その他の包囲軍・持場未詳','date todo asano',null)]);
  // 攻城は城域と攻め手を分離。未確認の包囲部隊には地理座標を与えない。
  const sieges=[
- ['伏見城の戦い','木幡山伏見城','b','fushimiDiary'],['第二次上田合戦','上田城','b','ueda'],['田辺城の戦い','田辺城','b','tanabe'],['高遠城の戦い','高遠城','b','takato'],['小田原城の戦い','小田原城（1561年）','b','odawara1561'],['永禄の変','二条御所','b','eirokuStudy'],['箕輪城落城','箕輪城','b','minowaSite'],['月山富田城開城','月山富田城','b','gassanSite'],['稲葉山城の戦い','稲葉山城','b',null],['大河内城の戦い','大河内城','b','okawachiSite'],['小谷城落城','小谷城','b','odaniSite'],['長島一向一揆の平定','長島・願証寺などの一揆拠点','b',null],['七尾城の戦い','七尾城','b','nanaoSite'],['上月城の戦い','上月城','b',null],['有岡城の戦い','有岡城・総構','b','ariokaSite'],['高天神城の戦い','高天神城','b','takatenjinSite'],['備中高松城の水攻め','備中高松城','b','takamatsuSite'],['岩屋城の戦い','岩屋城','b','iwaya'],['新発田城落城','新発田城','b',null],['韮山城の戦い','韮山城','b',null],['鉢形城の開城','鉢形城','b',null],['第一次晋州城の戦い','晋州城','b',null],['平壌の戦い','平壌城','b',null],['幸州山城の戦い','幸州山城','b','krHaengjuBattle'],['第二次晋州城の戦い','晋州城','b',null],['蔚山城の戦い','島山・蔚山倭城','b','krUlsanBattle'],['安濃津城の戦い','安濃津城','b','anotsuDeployment'],['佐和山城落城','佐和山城','b','sawayamaDeployment']];
+ ['伏見城の戦い','木幡山伏見城','b','fushimiDiary'],['第二次上田合戦','上田城','b','ueda'],['田辺城の戦い','田辺城','b','tanabe'],['高遠城の戦い','高遠城','b','takato'],['小田原城の戦い','小田原城（1561年）','b','odawara1561'],['永禄の変','二条御所','b','eirokuStudy'],['箕輪城落城','箕輪城','b','minowaSite'],['月山富田城開城','月山富田城','b','gassanSite'],['稲葉山城の戦い','稲葉山城','b',null],['大河内城の戦い','大河内城','b','okawachiSite'],['小谷城落城','小谷城','b','odaniSite'],['長島一向一揆の平定','長島・願証寺などの一揆拠点','b',null],['七尾城の戦い','七尾城','b','nanaoSite'],['上月城の戦い','上月城','b',null],['有岡城の戦い','有岡城・総構','b','ariokaSite'],['備中高松城の水攻め','備中高松城','b','takamatsuSite'],['岩屋城の戦い','岩屋城','b','iwaya'],['新発田城落城','新発田城','b',null],['韮山城の戦い','韮山城','b',null],['鉢形城の開城','鉢形城','b',null],['第一次晋州城の戦い','晋州城','b',null],['平壌の戦い','平壌城','b',null],['幸州山城の戦い','幸州山城','b','krHaengjuBattle'],['第二次晋州城の戦い','晋州城','b',null],['蔚山城の戦い','島山・蔚山倭城','b','krUlsanBattle'],['安濃津城の戦い','安濃津城','b','anotsuDeployment'],['佐和山城落城','佐和山城','b','sawayamaDeployment']];
  for(const [title,site,side,src] of sieges)define(title,'siege',site+'の守備と攻城側を表示。攻め口未詳の部隊は図内の欄に置き、特定の方角へ布陣したと扱わない。',src?[src]:[],[['城内・'+site,'*'+side,'center','籠城先・個別持場不詳'],g('攻城側・攻め口未詳','*'+(side==='b'?'a':'b'),null)]);
+ define('高天神城の戦い','siege','徳川方は周囲の砦で補給を断ち、城内の岡部元信らは旧暦3月22日に討って出た。',['takatenjinSite','takatenjinFortCommand'],[
+  g('高天神城・岡部元信ら','*b',138.035571,34.698262,'城跡の代表点'),
+  g('徳川方・包囲拠点の諸将','*a',null)]);
  define('信貴山城の戦い','siege','信忠軍は旧暦10月3日に城を包囲し、10日夜に諸手から攻め上った。',['shigisan','shigisanChronicle'],[
   g('信貴山城・松永方','*b',135.67871,34.616335,'城跡の代表点'),
   g('織田方・包囲と夜攻め','*a',null)]);
@@ -105,6 +109,7 @@
  for(const [title,d] of Object.entries(TK.EXTRA_BATTLES||{}))define(title,d.kind,d.summary,d.sources||[d.source],d.groups);
  TK.DEPLOYMENT_PLANS=P;
  const additions={
+  '高天神城の戦い':[['大須賀康高','a'],['酒井重忠','a']],
   '信貴山城の戦い':[['佐久間信盛','a'],['羽柴秀吉','a'],['明智光秀','a'],['丹羽長秀','a']],
   '稲葉山城の戦い':[['斎藤龍興','b']], '長島一向一揆の平定':[['長島一向一揆衆','b']],
   '宇喜多勢の讃岐攻め':[['香川親和ら長宗我部方','b']], '小早川隆景の伊予攻め':[['金子元宅ら伊予勢','b']],
@@ -130,6 +135,10 @@
   const labels={'稲葉山城の戦い':['織田方','斎藤方'],'長島一向一揆の平定':['織田方','長島一向一揆'],'宇喜多勢の讃岐攻め':['宇喜多方','讃岐の長宗我部方'],'小早川隆景の伊予攻め':['毛利・小早川方','伊予諸勢力'],'九州平定':['豊臣方','島津方'],'新発田城落城':['上杉方','新発田方'],'北国勢の上野攻め':['豊臣方北国軍','北条方'],'石垣原の戦い':['大友方','黒田・松井方'],'佐和山城落城':['東軍','石田方'],'今福・鴫野の戦い':['徳川方','豊臣方']};
   if(labels[title])for(const [i,side] of ['a','b'].entries())sc.sides[side].n=labels[title][i];
   if(title==='南原城の戦い'){sc.sides.b.n='明・朝鮮連合守備軍';sc.sides.b.tr='明約3,000・朝鮮約1,000';sc.sides.b.clan='ming';for(const u of sc.units)if((u.g||'').includes('楊元')){u.tr=3000;u.role='明軍総兵・東門、3,000は明軍全体で個人の持場兵数ではない';}TK.BATTLE_TROOPS[title].b.lead='楊元・李福男ら明朝鮮連合軍';}
+  if(title==='高天神城の戦い'){
+   for(const u of sc.units.filter(u=>u.side==='a'))u.role=u.g==='徳川家康'?'包囲作戦を指揮':'包囲の砦を担当';
+   sc.calendar=[[0,'1580年・砦で包囲を強化'],[60,'兵糧が尽きる'],[100,'旧暦3月22日・岡部元信らが出撃、落城']];
+  }
   if(title==='信貴山城の戦い'){
    sc.date='天正5年10月3日〜10日';
    sc.calendar=[[0,'10月3日・織田信忠が着陣'],[60,'信貴山城を包囲'],[100,'10月10日夜・攻城と落城']];

@@ -301,3 +301,13 @@
   text:'織田信忠が信貴山城に迫って陣を置き、城下に火を放った。'
  });
 }
+
+{
+ const lunarDate=[1581,3,22];
+ const event=TK.HIST.find(e=>e.title==='高天神城の戦い'&&e.k!=='premarch');
+ Object.assign(event,{
+  d:TK.lunarDate(...lunarDate),lunarDate,documentedMarch:true,
+  source:'https://www.city.kakegawa.shizuoka.jp/gyosei/docs/8328.html',
+  text:'徳川方の砦に囲まれ兵糧が尽きた高天神城から、岡部元信らが討って出た。元信らは戦死し、城は落ちた。'
+ });
+}
