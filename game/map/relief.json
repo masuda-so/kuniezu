@@ -1,5 +1,6 @@
 {
- "generated": "Codex の生成器（35fc159、tools/map の標高・陰影生成）で 9586ebd の格子に作った陰影 PNG を、ブラウザの WebP 変換（品質0.82）で縮めたもの",
+ "generated": "tools/map/encode-relief-webp.cjs（陰影 PNG をブラウザの WebP 変換で縮めたもの）",
+ "quality": 0.82,
  "levels": [
   {
    "factor": 1,
