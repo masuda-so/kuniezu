@@ -11,6 +11,10 @@
  const yokosukaIndex=TK.YOSHO.findIndex(y=>y[0]==='横須賀城');
  TK.SITE_COORDINATES.push({kind:'site',id:yokosukaIndex,name:'横須賀城',point:[137.971296,34.685708],ref:'220000289500'});
  TK.CASTLE_EVIDENCE['横須賀城']={role:'高天神城攻めの補給拠点',source:'https://www.city.kakegawa.shizuoka.jp/gyosei/docs/7478.html',checked:'2026-11-03'};
+ const mamushizukaIndex=TK.YOSHO.length;
+ TK.YOSHO.push(['馬伏塚城','城',137.933518,34.710795,'遠江国。小笠原氏の城。1574年、徳川家康が高天神城に対抗するために改修し、大須賀康高を守将とした。入江に面した補給拠点。廃城の時期には諸説がある。',null,1582]);
+ TK.SITE_COORDINATES.push({kind:'site',id:mamushizukaIndex,name:'馬伏塚城',point:[137.933518,34.710795],ref:'220000338000'});
+ TK.CASTLE_EVIDENCE['馬伏塚城']={role:'高天神城攻めの補給拠点',source:'https://fukuroi-digital-archive.com/archive/3538/',checked:'2026-11-03'};
  const forts=TK.TAKATENJIN_FORTS=[
   ['小笠山砦',138.0112848,34.7368629,'小笠山の山頂付近に置かれ、北側から城と周辺を見渡した。'],
   ['能ヶ坂砦',138.0467885,34.7140548,'高天神城の北東、小貫と土方の境に置かれた。'],
