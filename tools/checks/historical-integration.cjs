@@ -8,7 +8,7 @@ for(const [lunar,id,owner] of [
  [[1587,5,30],'hitoyoshi','sagara'],[[1587,6,1],'kumamoto','shimazu'],
  [[1587,6,2],'kumamoto','hashiba'],[[1587,6,24],'tachibana','otomo'],
  [[1587,6,25],'tachibana','hashiba'],[[1587,6,25],'yanagawa','hashiba'],
- [[1587,6,25],'kawara','hashiba'],[[1587,7,3],'tonokori','shimazu']]){
+ [[1587,7,2],'kawara','akizuki'],[[1587,7,3],'kawara','hashiba'],[[1587,7,3],'tonokori','shimazu']]){
  advance(TK.lunarDate(...lunar));assert.equal(G.S().castles[id].owner,owner,id);
  rows.push({lunarDate:lunar,castle:id,owner});
 }

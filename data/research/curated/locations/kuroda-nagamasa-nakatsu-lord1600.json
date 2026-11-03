@@ -1,0 +1,23 @@
+{
+  "id": "location:kuroda-nagamasa-nakatsu-lord1600",
+  "person": "person:kuroda-nagamasa",
+  "place": "place:nakatsu",
+  "relation": "held-castle-lordship",
+  "time": {
+    "kind": "year-window",
+    "year": 1600,
+    "calendar": "CE-year",
+    "precision": "year"
+  },
+  "source": "kurodaNagamasaNakatsu1600",
+  "sourceUrl": "https://museum.city.fukuoka.jp/archives/leaflet/138/index.html",
+  "locator": "はじめに、福岡城築城以前",
+  "uncertainty": "関ヶ原当時の城主職。関ヶ原参戦中の中津在城は意味しない。",
+  "recordType": "sourced-location-observation",
+  "status": "verified-in-specified-scope",
+  "recordedAt": "2026-11-03",
+  "gameBindings": [
+    "TK.PERSON_RESIDENCE_EVIDENCE.黒田長政",
+    "site:中津城"
+  ]
+}

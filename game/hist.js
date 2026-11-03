@@ -513,7 +513,7 @@ TK.HIST.push(
  {d:[1588,3,1],k:'move',n:'高山右近',at:'oyama',text:'伴天連追放令で領地を捨てた高山右近は、前田利家に招かれて加賀に移った。',who:'高山右近'},
  // 朝鮮から戻った諸将は、それぞれの領国へ帰る
  {d:[1599,1,20],k:'move',n:'加藤清正',at:'kumamoto',quiet:1},{d:[1599,1,20],k:'move',n:'小西行長',at:'kumamoto',quiet:1},{d:[1599,1,20],k:'move',n:'藤堂高虎',at:'kurose',quiet:1},
- {d:[1599,1,20],k:'move',n:'黒田長政',at:'kawara',quiet:1},{d:[1599,1,20],k:'move',n:'立花宗茂',at:'yanagawa',quiet:1},{d:[1599,1,20],k:'move',n:'加藤嘉明',at:'yuzuki',quiet:1},
+ {d:[1599,1,20],k:'note',n:'黒田長政',quiet:1,correction:'kuroda-1599-unfounded-move'},{d:[1599,1,20],k:'move',n:'立花宗茂',at:'yanagawa',quiet:1},{d:[1599,1,20],k:'move',n:'加藤嘉明',at:'yuzuki',quiet:1},
  {d:[1599,1,20],k:'move',n:'伊東祐兵',at:'obi',quiet:1},{d:[1599,1,20],k:'move',n:'島津義弘',at:'uchi',quiet:1},{d:[1599,1,20],k:'move',n:'宇喜多秀家',at:'tenjin',quiet:1},
  {d:[1600,3,1],k:'move',n:'森忠政',at:'kaizu',text:'森忠政が美濃金山から信濃川中島へ移った。',who:'森忠政'});
 

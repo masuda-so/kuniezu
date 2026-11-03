@@ -1,0 +1,27 @@
+{
+  "completed": [
+    "node tools/checks/kuroda-residence.cjs (before final pure reference API addition)",
+    "node tools/checks/historical-integration.cjs (includes Mori 7/2,7/3)",
+    "node tools/checks/evidence-store.cjs",
+    "node tools/checks/location-store.cjs",
+    "node tools/checks/history-index.cjs",
+    "node --check game/historical-register.js",
+    "node --check game/hist.js",
+    "node --check game/kb.js",
+    "isolated final principal-base API behavior test; no full model load"
+  ],
+  "noNewSimulationAfterThermalRequest": true,
+  "processesRemaining": 0,
+  "runtimeAudit": "marches-before-fix.json",
+  "eventSlotAudit": "event-slot-comparison.json",
+  "uiPatch": "ui-display-castle-gens.patch",
+  "uiWholeFileCopyAllowed": false,
+  "rootIntegrationChecks": [
+    "final kuroda-residence.cjs pass",
+    "evidence-store.cjs pass",
+    "location-store.cjs pass",
+    "history-index.cjs pass",
+    "export: 80 atomic claims, 14 location observations",
+    "all 16 base/candidate hashes match d825698"
+  ]
+}

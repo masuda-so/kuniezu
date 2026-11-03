@@ -59,3 +59,27 @@
   {id:'suwahara-renamed',entity:'site:諏訪原城',predicate:'renamed',value:'牧野城',validYears:[1575,1615],datePrecision:'year',source:'suwaharaLocal',gameBindings:['G.sitePresentation']}
  ];
 })();
+
+/* 黒田氏の本拠・家督と、日々の現地滞在を区別する。施設を主城ノードへ読み替えない。 */
+(function(){
+ const source={author:'福岡市博物館',title:'没後400年 黒田長政',url:'https://museum.city.fukuoka.jp/exhibition/599/index02.html',locator:'黒田家の当主となる（22歳）・朝鮮に出兵・関ヶ原の戦い',scope:'1588年中津築城、1589年家督継承。日々の滞在地や1599年の帰着日を確定しない。',accessed:'2026-11-03'};
+ const succession={author:'行橋市',title:'行橋市史 黒田氏の入国',url:'https://adeac.jp/yukuhashi-city/texthtml/d100010/mp000000-000010/ht2040100020',locator:'242〜243頁、末段の天正17年5月家督継承',scope:'黒田領六郡と森吉成領二郡、1589年5月の家督継承。継承日と日々の滞在を確定しない。',accessed:'2026-11-03'};
+ const nakatsu={author:'中津市教育委員会',title:'中津城を知る',url:'https://www.city-nakatsu.jp/doc/2013100100011/file_contents/nakatsujo.pdf',locator:'PDF2頁 中津城の歴史・築城の歴史',scope:'1588年着工、1600年細川氏入城、1602年小倉移転と中津城の存続。',accessed:'2026-11-03'};
+ Object.assign(TK.RESEARCH_SOURCES,{kurodaNagamasaSuccession:source,kurodaYukuhashiSuccession:succession,nakatsuCastleHistory:nakatsu});
+ TK.PERSON_RESIDENCE_EVIDENCE['黒田長政']={source:'kurodaNagamasaSuccession',label:'本拠と家督',stages:[{year:1589,place:'中津城・黒田家の家督を継承'}],note:'父孝高から家督を継いだのは1589年。朝鮮出兵や関ヶ原では城を離れて従軍した。'};
+ const y=TK.YOSHO.find(y=>y[0]==='中津城');if(y)y[4]='豊前国・平城。黒田孝高が1588年に築城に着手し、1589年に長政が家督を継いだ。1600年には細川忠興が入城し、城の整備が引き継がれた。';
+ TK.CASTLE_EVIDENCE['中津城']={role:'黒田氏の本拠、のち細川氏の城郭',description:y?.[4]||'',source:nakatsu.url,checked:'2026-11-03',classification:{historicalRole:'principal-seat',managementNode:'kawara',managementNodeIsResidence:false},periods:[{fromYear:1588,toYear:1600,role:'黒田氏の本拠'},{fromYear:1600,toYear:1602,role:'黒田氏から細川氏へ移った城'},{fromYear:1602,toYear:1632,role:'小倉を本城とする細川氏の城郭'}]};
+ const present=G.sitePresentation;G.sitePresentation=function(y){const p=present(y);if(y.n!=='中津城'||!G.yActive(y))return p;const year=G.date().y;
+  p.role=year<1600?'黒田氏の本拠':year<1602?'黒田氏から細川氏へ移った城':'細川氏の城郭';
+  p.description=year<1589?'山国川河口の平城。1588年に黒田孝高が城の造営を始めた。':year<1600?'山国川河口に築かれた黒田氏の本拠。長政は1589年に父孝高から家督を継ぎ、中津城主として領国を治めた。':year<1602?'1600年、黒田氏の筑前移封に伴い細川忠興が入城した。忠興は1602年に本拠を小倉へ移した。':'1602年に細川忠興が本拠を小倉へ移した後も、中津城では増改築が続いた。一国一城令の後も城は存続した。';return p;
+ };
+ // 本拠参照は人物の点位置や戦闘用locを返さない。1600年は転封年の城主記録として扱う。
+ G.historicalPrincipalBase=function(g){const year=G.date().y;if(g?.n!=='黒田長政'||year<1589||year>1600)return null;const site=G.YOSHO.find(y=>y.n==='中津城');return site?{place:'中津城',siteId:site.id,managementNode:site.at,relation:year===1600?'held-castle-lordship':'principal-base',year,source:year===1600?'https://museum.city.fukuoka.jp/archives/leaflet/138/index.html':source.url,exactPresence:false,transitionYear:year===1600}:null;};
+ // 本拠が中津の期間、旧管理ノードの在城欄を実在の居所として表示しない。軍の選択用castleGensは維持する。
+ G.displayCastleGens=function(id){const rows=G.castleGens(id),year=G.date().y;if(!TK.HISTORY_ONLY||year<1589||year>1600||!['himeji','kawara'].includes(id))return rows;return rows.filter(g=>g.n!=='黒田長政');};
+ // 旧1599年イベントが積んだ待機命令のみ除去。現在位置・軍・帰路・索引は変更しない。
+ G.repairKurodaResidenceOrders=function(s){if(!s||!TK.HISTORY_ONLY||Object.values(s.div||{}).some(Boolean)||!s.pendMoves)return 0;const t=(1599-s.y0)*360+(1-s.m0)*30+19,before=s.pendMoves.length;
+  s.pendMoves=s.pendMoves.filter(m=>!(m.n==='黒田長政'&&m.at==='kawara'&&!m.cap&&!m.home&&m.after===t&&m.until===t+360));return before-s.pendMoves.length;
+ };
+ const set=G.setS;G.setS=function(s){const result=set(s);G.repairKurodaResidenceOrders(G.S());return result;};
+})();

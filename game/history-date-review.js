@@ -207,12 +207,12 @@
  const campaign=TK.HIST.find(e=>e.title==='九州平定'&&e.k==='take'&&e.castles?.includes('kawara'));
  if(!campaign)throw Error('九州平定の香春岳城');
  campaign.castles=campaign.castles.filter(id=>id!=='kawara');
- const lunarDate=[1587,6,25];
+ const lunarDate=[1587,7,3];
  TK.HIST.push({
   d:TK.lunarDate(...lunarDate),lunarDate,k:'take',clan:'hashiba',castles:['kawara'],admin:1,
-  title:'森吉成の豊前拝領',who:'森吉成（毛利勝信）',datePrecision:'月',
+  title:'森吉成の豊前拝領',who:'森吉成（毛利勝信）',datePrecision:'日',
   source:'https://adeac.jp/yukuhashi-city/texthtml/d100010/mp000000-000010/ht2040100020',
-  text:'九州平定後の国分けで、森吉成（毛利勝信）は豊前の企救・田川二郡を与えられ、小倉を本拠とした。拝領の月日には不明な点がある。'
+  text:'九州平定後の国分けで、森吉成（毛利勝信）は豊前の企救・田川二郡を与えられ、小倉を本拠とした。赤間関で豊前の大名配置が定められた。'
  });
 }
 

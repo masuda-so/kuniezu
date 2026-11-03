@@ -546,7 +546,7 @@ function drawStill(z,cc,lvl){fitLayer(STILL);const c=STILL.c;beginLayer(c,z,cc,t
  const priority=C=>{const k=S.castles[C.id].owner;return (C.id===U.sel?1e6:0)+(k===S.player?1e5:0)+(S.clans[k]?.cap===C.id?counts[k]*1000:0)+C.koku;};
  const order=G.CL.map(C=>({C,p:priority(C)})).sort((a,b)=>b.p-a.p).map(o=>o.C);
  for(const C of order){const st=S.castles[C.id],k=st.owner;const [x,y]=w2s(C.x,C.y);if(x<-80||y<-80||x>VW+80||y>VH+80)continue;
-  const gs=G.castleGens(C.id).filter(g=>!G.inTransit(g));const lead=gs.find(g=>G.isLeader(g));const cl=S.clans[k];
+  const gs=(G.displayCastleGens||G.castleGens)(C.id).filter(g=>!G.inTransit(g));const lead=gs.find(g=>G.isLeader(g));const cl=S.clans[k];
   const big=lead&&(z>=.25||k===S.player||U.sel===C.id)&&(G.clanCastles(k).length>=2||k===S.player||U.mode==='pick'||lvl>=1||U.sel===C.id);const im=big?portrait(lead.n,Math.round((lvl===0?15:lvl===1?19:23)*(k===S.player?1.12:1)),true,G.CC(k)):null;
   let didPortrait=false;
   if(big&&!im&&(G.clanCastles(k).length>=2||k===S.player||U.mode==='pick')&&fits(x-40,y-34,80,18)){placed.push([x-40,y-34,80,18]);plate(c,lead.n,x,y-24,k,true);didPortrait=true;}
@@ -672,7 +672,7 @@ function hitY(sx,sy){if(!S||cam.z<.6)return null;let best=null,bd=10*10;for(cons
 function tipY(y,e){if(!y||(e&&e.pointerType==='touch')||U.mode==='title'){tipEl.hidden=true;return;}const v=G.sitePresentation(y),level=G.siteLevel(y);tipEl.innerHTML=`<div class="tph"><div><b>${esc(v.title)}</b><span>${esc(v.role)}${G.yActive(y)?' ・ Lv.'+level:''}</span></div></div><p>${esc(v.description)}</p>${v.state?'<p>'+esc(v.state)+'</p>':''}${G.yActive(y)?'<span class="tdl">'+esc(G.infrastructureText('site',y.id))+'</span>':''}`;tipEl.hidden=false;placeTip(e);}
 function placeTip(e){let x=e.clientX+14,y=e.clientY+14;const w=tipEl.offsetWidth,h=tipEl.offsetHeight;if(x+w>VW-8)x=e.clientX-w-14;if(y+h>VH-8)y=VH-h-8;tipEl.style.left=Math.max(8,x)+'px';tipEl.style.top=Math.max(8,y)+'px';}
 
-function tip(id,e){if(!id||!S||(e&&e.pointerType==='touch')||U.mode==='title'||id===U.sel){tipEl.hidden=true;return;}const st=S.castles[id],k=st.owner;const gs=G.castleGens(id);
+function tip(id,e){if(!id||!S||(e&&e.pointerType==='touch')||U.mode==='title'||id===U.sel){tipEl.hidden=true;return;}const st=S.castles[id],k=st.owner;const gs=(G.displayCastleGens||G.castleGens)(id);
  // 城の詳しい様子：持ち主と当主、城主、兵・堅さ・石高・民忠、囲む軍勢、向かってくる軍勢
  const cl=S.clans[k];const L=cl&&G.gen(cl.leader);const lord=gs.slice().sort((a,b)=>(b.t+b.b)-(a.t+a.b))[0];const me=S.player;
  const rel=relation(k).name;
@@ -905,7 +905,7 @@ function renderSide(){
  document.body.classList.toggle('narrowSel',!!U.sel&&VW<1200&&VW>820);document.body.classList.toggle('mobsel',!!U.sel&&VW<=820);
  if(!U.sel){side.hidden=true;return;}side.hidden=false;
  const id=U.sel,C=G.C[id],c=S.castles[id],k=c.owner,cl=S.clans[k],me=S.player,mine=k===me,alive=S.clans[me]&&S.clans[me].alive;
- const gs=G.castleGens(id).sort((a,b)=>(G.isLeader(b)-G.isLeader(a))||(hasFace(b.n)-hasFace(a.n))||(b.t+b.b+b.c+b.s)-(a.t+a.b+a.c+a.s));
+ const gs=(G.displayCastleGens||G.castleGens)(id).sort((a,b)=>(G.isLeader(b)-G.isLeader(a))||(hasFace(b.n)-hasFace(a.n))||(b.t+b.b+b.c+b.s)-(a.t+a.b+a.c+a.s));
  const lord=gs[0];const bes=G.unitAt(id).filter(u=>u.clan!==k);
  let threat=0;for(const n of G.ADJ[id]){const o=S.castles[n].owner;if(o!==k&&!G.allied(k,o))threat+=S.castles[n].troops;}
  const rel=mine||!alive?'':`<span class="rtag" style="color:${relation(k).color}">${relation(k).name}</span>`;
@@ -996,7 +996,7 @@ function openAttack(to,from){const src=reachable(to);if(!src.length){toast('兵�
  const adj=src.filter(m=>G.ADJ[m].includes(to)&&S.castles[m].troops>=3000);U.atk={to,src:new Set(from?[from,...adj.filter(m=>m!==from)]:adj.length?adj:src.filter(m=>G.ADJ[m].includes(to))),all:src,tac:'chikara',pct:75};
  if(!U.atk.src.size)U.atk.src.add(src[0]);U.picking=null;openModal('attack');}
 function atkForce(){const a=U.atk;let tr=0,gs=[];for(const m of a.src){tr+=Math.floor(S.castles[m].troops*a.pct/100/100)*100;gs.push(...G.idleGens(m));}gs.sort((x,y)=>(y.t+y.b)-(x.t+x.b));return {tr,gs};}
-MODALS.attack=()=>{const a=U.atk,to=a.to,c=S.castles[to],o=c.owner;const L=G.castleGens(to).sort((x,y)=>G.isLeader(y)-G.isLeader(x)||y.t-x.t)[0];
+MODALS.attack=()=>{const a=U.atk,to=a.to,c=S.castles[to],o=c.owner;const L=(G.displayCastleGens||G.castleGens)(to).sort((x,y)=>G.isLeader(y)-G.isLeader(x)||y.t-x.t)[0];
  return `<header>${L?faceHTML(L.n,'lg',o):''}<div><small class="eyebrow">${G.CNK(o)} ・ ${esc(G.C[to].prov)}国</small><h2>${esc(G.cname(to))}を攻める</h2><small>守兵 ${fmt(c.troops)} ・ 城の堅さ ${fmt(c.dur)} ・ 民忠 ${Math.round(c.loyal)}</small></div><button class="ic" data-act="close" aria-label="閉じる">×</button></header>
  <div class="agrid"><div><h3>兵を出す城</h3><div class="srcs">${a.all.map(m=>`<label class="src"><input type="checkbox" data-src="${m}" ${a.src.has(m)?'checked':''}><span>${esc(G.cname(m))}<small>兵 ${fmt(S.castles[m].troops)} ・ ${esc(routeNote(m,to))}</small></span></label>`).join('')}</div>
  <h3>出す兵の割合</h3><div class="pcts">${[50,75,90].map(p=>`<button class="pol${a.pct===p?' on':''}" data-act="pct" data-v="${p}"><b>${p}%</b></button>`).join('')}</div>
