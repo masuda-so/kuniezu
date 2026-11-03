@@ -4,15 +4,7 @@
 
 経緯度と100m格子は領域画像の `projection.json` と共通。643本・143群の現代参考線を初期移行し、全504,753,216画素を独立アルゴリズムで検査した。戦国期の河道を確定したことを意味しない。原線と出典は `data/inputs/river-raster-source/` に移行時の照合記録として残す。
 
-通常の派生生成は旧JSや原線を読まない。新規の出力先を指定する。
-
-```sh
-python3 tools/map/build-river-raster.py \
-  --from-image game/map_data/rivers.png \
-  --manifest game/map_data/rivers.json \
-  --grid game/map_data/projection.json \
-  /tmp/kuniezu-river-cache
-```
+通常の派生生成は旧JSや原線を読まない。配信用の線は `node tools/map/build-river-lines.cjs`（`node tools/map/build-map.cjs` の一段）が正本の画像だけから作る。初期移行に使った `build-river-raster.py` と移行の受入検査 `tools/checks/river-raster.py` は削除した（Git の履歴に残る）。
 
 正本を編集した場合は、rivers.jsonのsha256を明示更新する。新色はencoding.codesに河川IDの組合せを定義してから使用する。未知色・異なる寸法・投影・破損PNGは拒否する。既存出力先を上書きしない。
 

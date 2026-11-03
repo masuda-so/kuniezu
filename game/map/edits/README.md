@@ -56,13 +56,13 @@ node tools/map/build-edges.cjs
 
 ## 河川の比較レイヤー
 
-`python3 tools/map/build-river-raster.py /path/to/game/map/manifest.json /path/to/tenryu-oi-modern.json /tmp/river-tiles` は、領域と同じ投影・原点・解像度で、河川IDを8bit PNGへ格納する試験生成。0は河川なし。値1〜255は出力マニフェストの河川名・元の線分IDに対応する。川幅を1画素と推定したものではなく、河川中心線の符号化。異なる河川IDが同じ画素に入る場合は黙って上書きせず停止する。合流表現と、画像から表示線を生成する工程は別に設計する。
+（削除済み）旧 `build-river-raster.py` による河川の試験生成。河川の正本は `game/map_data/rivers.png`、配信用の線は `tools/map/build-river-lines.cjs`。以下はその時の記録。
 
 天竜川・大井川の現代比較データで、共通の2タイルへ2,043画素と1,716画素をそれぞれ生成した。元データの出典・ODbL・現代比較レイヤー区分をマニフェストへ保持する。既存ゲームの河川表示への切り替えは未実施。
 
 ## 標高の生成
 
-`python3 tools/map/build-height-raster.py /path/to/game/map/manifest.json /path/to/gsi-dem-cache /tmp/height-tiles --zoom 14` は、取得済みの地理院標高PNG（`z/x/y.png`）を領域画像と同じ座標格子へ移す。出力は16bit PNG。0は欠測、1以上は `-500 + (値 - 1) / 4` m。各出力画素の中心に対応する原DEM画素を使用する。海陸分類は領域画像に任せ、標高画像の欠測を海とみなさない。
+（削除済み）旧 `build-height-raster.py` による地理院標高の試験変換。標高の正本は `game/map_data/heightmap.png`、陰影は `tools/map/build-height-cache.py`。以下はその時の記録。
 
 早島の6入力タイルから有効標高2,360画素の1タイルを生成した。鶴崎神社の確認点を含む100m画素の標高値は9.75mで、元の細かい格子で現所在地を直接採取した12.27mとは異なる。入力タイルのハッシュと符号化を出力マニフェストに記録した。広域生成、朝鮮側の標高入力の変換、陰影描画への接続は別工程。
 

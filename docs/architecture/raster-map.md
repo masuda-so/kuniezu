@@ -17,8 +17,8 @@ Claude と Codex の独立調査（`docs/reports/MAP_ARCHITECTURE_INDEPENDENT_RE
 | 領域の表 | `game/map_data/definition.csv`（CK3 の書式。見出しなし、1行目は予約の `0;0;0;0;x;x;`、以下 `id;R;G;B;name;x;`。name は区画キー）と `game/map_data/default.map`（海 `sea_zones`・湖 `lakes` の id） | CSV・CK3 の map 文法 |
 | 経緯度の変換 | `game/map_data/projection.json`（本作だけの拡張。CK3 の地図は経緯度を持たない） | JSON |
 | 隣接 | 領域画像から生成する。海峡など地続きでない隣接を書く `adjacencies.csv` はまだ作っていない（海路は `TK.SEA_LINKS`） | — |
-| 標高 | まだ正本を置いていない。陰影は Copernicus DEM から作った表示用の `game/map/relief-*`（標高そのものではない） | — |
-| 川 | まだ正本を置いていない（河川の画像データが未整備） | — |
+| 標高 | `game/map_data/heightmap.png`（全域1枚の16bit灰色、Git LFS）と `heightmap.json`（符号化・出典）。表示用の陰影 `game/map/relief-cache/`・`relief.json` はここから作る生成物（`docs/architecture/heightmap-cache.md`） | PNG（LFS） |
+| 川 | `game/map_data/rivers.png`（全域1枚、1画素幅の中心線。色はその画素が属する河川の組）と `rivers.json`。現代の参考の河道で、戦国期の河道を確定したものではない。描画用の線 `game/map/rivers-lines.json` はここから作る生成物（`docs/architecture/river-source-image.md`） | PNG（本作の符号化） |
 | 年代で変わる地形・補正 | `game/map/edits/`（適用期間・範囲・出典・基準版を持つ差分。画像または多角形） | PNG＋JSON、または GeoJSON |
 
 地域名を含むコード（現在の `castle-regions.js`・`bizen-north-shore.js`・`japan-rivers-osm.js` など）は廃止し、`game/map/edits/` のデータへ移す。同じ場所・同じ時期に複数の差分が当たる場合は生成を失敗させる。
@@ -90,12 +90,45 @@ Claude と Codex の独立調査（`docs/reports/MAP_ARCHITECTURE_INDEPENDENT_RE
 - 移行の確認：正本から作り直した 251 タイル（100m 216・400m 26・800m 9）は移行前とバイト単位で一致。`tools/map/build-provinces.cjs` を流し直すと正本4点と郡の割り当て表がバイト単位で一致。境界線 246 ファイルは id+1 を戻すと移行前と一致。年代別の2版のタイルも一致。Codex が生成器を使わない独立の検査で全 504,753,216 画素の一致を確かめた。
 - 郡画像は実行時に読まないので `game/` から外し、`data/map/gun.png`（全域1枚）と `gun.csv`・`gun.json`・`gun-overrides.json`・`gun-assignment.csv` を `data/map/` に置いた。境界線の生成（国の線）と領域の割り当てはここを読む。
 - 年代別の差分の生成は Node 版だけにし、Python 版（`build-province-edits.py`）と、それを呼ぶ `tools/checks/province-edits.py` を廃止。負例（重なり・ID の重複・適用済み ID・元の値の食い違い・正本の取り違え・半開区間・粗い段の中心画素）は `tools/checks/province-edits.cjs` に移し、失敗した時に配信中の版を書き換えないことも確かめる。
-- 標高（heightmap.png）と川（rivers.png）はまだ置かない。標高は全域1枚の容量と、表示用の陰影とは別のデータとしての使い道を決めてから。川は資料の整備が先。
+- （当時）標高と川の正本はまだ置いていなかった。その後の追記を参照。
 
 ## 児島湾の正本への焼き込み
 
 2026-11-03、旧基準の1560年版で有効だった5補正（児島湾の海域・陸域、水島の東・西・南）24,306画素を `game/map_data/provinces.png` 自体へ移した。適用定義は `game/map/edits/applied/` に保存し、`baseline-ledger.json` に入力と出力の4ファイルSHA・画素差分を記録する。定義表・投影・海湖分類は変更しない。
 
-通常の再生成は `build-map-tiles.cjs` → `build-province-edits.cjs` → `build-edges.cjs`。旧ベクトルからの `build-provinces.cjs` は既存正本がある場合に上書きを拒否する。`bake-kojima-baseline.cjs` と旧型紙生成器 `tools/geo/kojima-bay-1600.cjs` は特定の移行前SHAだけで動き、現在の正本では再適用を拒否する。
+通常の再生成は下の「地図の生成の入口」を参照（当時は `build-map-tiles.cjs` → `build-province-edits.cjs` → `build-edges.cjs`）。旧ベクトルからの `build-provinces.cjs` は既存正本がある場合に上書きを拒否する。`bake-kojima-baseline.cjs` と旧型紙生成器 `tools/geo/kojima-bay-1600.cjs` は特定の移行前SHAだけで動き、現在の正本では再適用を拒否する。
 
 受入根拠は `data/verification/kojima-source-baseline/`。正本画像の前後を同じ画素窓で切り出した画像、正本と全100mタイルの独立照合、1560/1600表示の全段タイル一致、正本から直接確認した藤戸の4近傍通水・水島・丘陵・史跡点、旧生成器の拒否後のSHA不変を保持する。ゲーム画面の操作確認とは別の画像データ検査。
+
+
+## 地図の生成の入口と描画（2026-11-03、G04）
+
+正本は `game/map_data/` の4点＋河川・標高（`provinces.png`・`definition.csv`・`default.map`・`projection.json`・`rivers.png`/`rivers.json`・`heightmap.png`/`heightmap.json`）。CK3 の `map_data` の名前に合わせるが、全形式の互換は主張しない（`projection.json` と河川の色の符号化、16bit の標高は本作の形）。`adjacencies.csv` は海峡などの特殊な隣接を書く場所としてまだ作っていない。画像から出る通常の隣接と混同しない。
+
+通常の再生成は一つのコマンドで、重い処理を直列に動かす。
+
+```sh
+node tools/map/build-map.cjs                       # 領域タイル → 年代別の版 → 境界線 → 河川の線 → 読み込みの確認値
+node tools/map/build-map.cjs --height --python /path/to/venv/bin/python3   # 陰影も作り直す（NumPy・Pillow が要る）
+node tools/map/build-map.cjs --check               # 書かずに、領域タイルと河川の線が正本どおりか確かめる
+```
+
+旧来の線（TKGEO）から正本を作る `tools/map/build-provinces.cjs` と、児島湾・遼東の焼き込み道具は移行用で、この入口からは呼ばない。正本があれば上書きを拒否する。
+
+描画：
+
+- 河川は `TKRivers`（`game/raster-map.js`）が `rivers-lines.json` を読み、日本・朝鮮とも同じ線・同じ描き方。名前と国境の破線は従来の主要河川の一覧（`TK.REGIONAL_RIVERS`）と名前が合うものだけ。旧来の河川データ（`japan-rivers-osm.js` など）は合戦図などほかの読み手のために残し、地図の通常描画では読み込み前の代わりにだけ使う。
+- 川・道路・時代の水域・湖の線は、旧来の線の陸 `LANDV` ではなく、`paintBase` が領域画像から作る正本の陸の型で切る（`onLand`・`offLand`）。
+- 表示範囲 `CONT` は正本の画像が覆う範囲（`TKRaster.bounds()`）に合わせ、画面全体を覆う厳密な制限で範囲の外を見せない。遼陽は最大倍率で年表の外に出せる。与那国など左下の隅は、パネルに隠れる場合がある（UI の折りたたみなどは別に検討）。
+- メモリ：領域タイルは復号直後に画像と下書きを手放し、色分けして塗った画像は全タイル合わせて96枚まで（直近の描画で使ったものは残す）。陰影の画像は描画中のものを閉じない。
+
+## 古い生成器の削除（2026-11-03、利用者の指示）
+
+正本は画像そのもの（`game/map_data/` と `data/map/gun.png`）で、直す時は画像を直す。旧来の線や外部データから正本を作った移行用の道具は削除し、生成は `tools/map/build-map.cjs` の一本にした。削除したもの（Git の履歴に残る）：
+
+- 正本を作った道具：`tools/map/build-provinces.cjs`（TKGEO の線→provinces.png）、`build-gun.cjs`・`extract-hgis-1910.py`（CODH・HGIS→gun.png）、`build-river-raster.py`（旧河川 JS→rivers.png）、`build-height-raster.py`（地理院標高の試験変換）
+- 焼き込みの道具：`bake-kojima-baseline.cjs`・`bake-liaodong-baseline.cjs`、`tools/geo/kojima-bay-1600.cjs`
+- 移行の受入検査：`tools/checks/kojima-source-baseline.cjs`・`liaodong-source-baseline.cjs`・`river-raster.py`（結果は `data/verification/` に残す）
+- 生成時の集計 `data/audits/raster-provinces-build.json`（郡の割り当て表 `data/map/gun-assignment.csv` は移行時の記録として残す）
+
+残した道具：`build-map.cjs`（入口）、`build-map-tiles.cjs`、`build-province-edits.cjs`、`build-edges.cjs`、`build-river-lines.cjs`、`build-height-cache.py` とそれが使う `build-copernicus-height.py`・`build-hillshade-raster.py`・`encode-relief-webp.cjs`、読み書きの `map-data.cjs`・`map_data.py`・`png-big.cjs`、点検の `audit-*`。年代別の差分の定義（`game/map/edits/applied/` など）は記録として残す。

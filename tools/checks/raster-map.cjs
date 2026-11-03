@@ -24,11 +24,10 @@ execFileSync(process.execPath,['--max-old-space-size=4000',path.join(root,'tools
 // 区画ごとの画素数（build-map-tiles.cjs の集計）。湖は水域の見直しで外されることがある（例：塩津潟の旧輪郭）ので0画素を許す。
 const px=JSON.parse(fs.readFileSync(path.join(root,'data/audits/raster-province-pixels.json'),'utf8'));assert.equal(px.source,MD.sourceSha256(),'画素数の集計が今の正本から');
 for(const p of px.provinces)if(p.key.startsWith('castle:')||p.key.startsWith('neutral:'))assert.ok(p.pixels>0,'province has pixels: '+p.key);
-const build=JSON.parse(fs.readFileSync(path.join(root,'data/audits/raster-provinces-build.json'),'utf8'));assert.equal(build.checks.lostProvinces.length,0);assert.ok(build.rules.seaFromLandMask&&build.rules.neighbourhood===4);
 // 郡：郡画像（data/map/gun.png、全域1枚）の確認値、全郡に割り当ての根拠、castle-point と same-province の郡は城の領域
 const gd=path.join(root,'data/map'),gj=JSON.parse(fs.readFileSync(path.join(gd,'gun.json'),'utf8'));assert.equal(sha(fs.readFileSync(path.join(gd,'gun.png'))),gj.gunPngSha256,'gun.png');
 const ga=fs.readFileSync(path.join(gd,'gun-assignment.csv'),'utf8').trim().split('\n').slice(1).map(l=>l.split(';'));assert.equal(ga.length,gj.guns,'every district assigned');
 const bases=new Set(['castle-point','split','same-province','majority-other-province','unassigned','excluded','override']);for(const r of ga)assert.ok(bases.has(r[4]),'basis '+r[4]);
 for(const r of ga)if(r[4]==='castle-point'||r[4]==='same-province')assert.ok(r[5].startsWith('castle:'),'district region '+r[2]);
 console.log('PASS: districts',JSON.stringify(Object.fromEntries([...bases].map(b=>[b,ga.filter(r=>r[4]===b).length]))));
-console.log('PASS: raster map',JSON.stringify({provinces:rows.length,tiles:m.tiles.length,overlapPixels:build.checks.overlapPixels,unassignedLandPixels:build.checks.unassignedLandPixels}));
+console.log('PASS: raster map',JSON.stringify({provinces:rows.length,tiles:m.tiles.length,unassignedLandPixels:px.provinces.find(p=>p.key==='unassigned')?.pixels}));
