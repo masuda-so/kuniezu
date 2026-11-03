@@ -126,3 +126,20 @@
   text:'豊臣秀吉が佐々成政に肥後の統治を任せた。成政は隈本城を居城とした。'
  });
 }
+
+/* 球磨の相良氏は島津への従属後も存続し、秀吉の朱印状で本領を安堵された。 */
+{
+ const capitulation=TK.HIST.find(e=>e.k==='absorb'&&e.clan==='shimazu'&&e.b==='sagara');
+ const campaign=TK.HIST.find(e=>e.title==='九州平定'&&e.k==='take'&&e.castles?.includes('hitoyoshi'));
+ if(!capitulation||!campaign)throw Error('相良氏の服属と球磨郡安堵');
+ capitulation.k='submit';
+ campaign.castles=campaign.castles.filter(id=>id!=='hitoyoshi');
+ campaign.peace=campaign.peace.filter(id=>id!=='hitoyoshi');
+ const lunarDate=[1587,5,30];
+ TK.HIST.push({
+  d:TK.lunarDate(...lunarDate),lunarDate,k:'submit',clan:'hashiba',b:'sagara',at:'hitoyoshi',
+  title:'相良氏の球磨郡安堵',who:'相良頼房',
+  source:'https://dcollections.lib.keio.ac.jp/en/sagara/003-077',
+  text:'豊臣秀吉が相良頼房に朱印状を出し、球磨郡の所領を安堵した。'
+ });
+}
