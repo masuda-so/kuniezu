@@ -1,0 +1,85 @@
+{
+  "reviewed": "2026-11-03",
+  "battle": "木津川口の戦い",
+  "lunarDate": [
+    1614,
+    11,
+    19
+  ],
+  "decision": "geographic coordinates not assigned; a separate attack-sequence schematic displays each of four participants",
+  "sources": [
+    {
+      "id": "eventKizugawa1614",
+      "author": "黒田日出男／徳川美術館",
+      "title": "徳川美術館蔵「豊国祭礼図屏風」の注文主",
+      "url": "https://www.tokugawa-art-museum.jp/wp-content/uploads/2025/02/46_1-%E8%AB%96%E6%96%87%EF%BC%8F%E9%BB%92%E7%94%B0%E6%97%A5%E5%87%BA%E7%94%B7.pdf",
+      "locator": "PDF4頁、蜂須賀勢の戦果の段落",
+      "class": "museum-published research using Kasaya Kazuhiko, not the original contemporary record",
+      "supported": [
+        "旧暦11月19日、蜂須賀至鎮・浅野長晟・池田忠雄の三者で攻める計画",
+        "蜂須賀至鎮勢が先に砦を攻略した"
+      ],
+      "unsupported": [
+        "各隊の正確な陣地",
+        "砦の座標・縄張",
+        "攻撃時刻・所要時間・移動距離",
+        "明石全登という守備将名・800人という兵数"
+      ]
+    },
+    {
+      "id": "kizujouMuseum",
+      "title": "共同研究成果報告書17・第2章第1節",
+      "url": "https://www.osakamushis.jp/education/publication/kyodokenkyu/pdf/kyodo-17/kyodo-17_3.pdf",
+      "locator": "32–34頁・木津城、図22",
+      "supported": [
+        "木津集落は河口部の浜堤上、東へ広がる入江に面したと考えられる",
+        "1614年の木津城は徳川方の付城、山内忠義・鍋島勝茂の普請",
+        "城位置に異説と不確かさがある"
+      ],
+      "excluded": "木津城の推定位置を11月19日の豊臣方河口砦の場所として採用しない"
+    },
+    {
+      "id": "bukkyoWinterMap1902",
+      "title": "大坂冬御陣図",
+      "repository": "佛教大学図書館",
+      "url": "https://bird.bukkyo-u.ac.jp/collections/osakafuyunogojinzu-01/",
+      "catalogUrl": "https://bird.bukkyo-u.ac.jp/collections/titles/osakafuyunogojinzu/",
+      "imageService": "https://dc.bukkyo-u.ac.jp/iiif/2/osakafuyunogojinzu-01-01.jp2",
+      "copyYear": 1902,
+      "inspected": "full map at1600px and southwest crop",
+      "excluded": "冬陣全体の後世写図で、旧暦11月19日当日の砦攻撃各隊の持場には転用しない。木津の黄色地域表示を砦位置にしない。画像そのものをゲームへ同梱しない。"
+    }
+  ],
+  "presentation": {
+    "unitIds": [
+      "extra-a-0",
+      "extra-a-1",
+      "extra-a-2",
+      "extra-b-0"
+    ],
+    "coordinateSystem": "normalized canvas layout, not WGS84",
+    "captions": [
+      "攻撃の順序を示す模式図・方位と距離は表しません"
+    ],
+    "geographicCoordinatesAdded": 0,
+    "troopNumbersAdded": 0,
+    "fortGeometryAdded": 0,
+    "stagePercentages": [
+      0,
+      40,
+      80,
+      100
+    ],
+    "stagePercentageMeaning": "presentation timing only; not historic time or duration",
+    "onlyAnimatedAttacker": "蜂須賀至鎮",
+    "defenderAfterCapture": "removed from the schematic, not asserted killed or specific retreat route"
+  },
+  "otherFindings": {
+    "kozuki": "0/50の四隊のうち毛利側二隊は既存の推定配置。高倉山・上月城の典拠配置と区別。",
+    "fit": "estimated placements only; source points and their previous interpolated samples unchanged"
+  },
+  "validation": {
+    "static": "schematic-check.json and motion-check.json",
+    "browser": "browser-final-wood/result.json: final four schematic frames; 0 runtime exceptions, autoplay and natural close; temporary Chrome processes0"
+  }
+}

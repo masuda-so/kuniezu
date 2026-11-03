@@ -25,3 +25,11 @@ console.log('PASS: Fushimi defenders, dated fall, death and scene together');
 G.newGame('s1600','tokugawa');s=G.S();const g=TK.HIST.find(e=>e.title==='岐阜城の戦い'&&e.k!=='premarch'),kd=G.kyu(G.evT(g));assert.equal(kd.m,8);assert.equal(kd.d,23);
 const winter=TK.HIST.find(e=>e.title==='大坂冬の陣'&&e.k!=='premarch');s.sceneQ=[];s.t=G.evT(winter);G.chron(winter,true);assert.equal(s.sceneQ.length,0,'no premature full winter replay');s.t=G.evT({d:TK.BATTLES[winter.title].eventDate});s.hi=TK.HIST.length;G.hist();assert.ok(s.sceneQ.some(q=>q.title===winter.title));
 console.log('PASS: lunar Gifu date and multi-day battle replay waits until end');
+
+// A documented sequence must not silently become geographic deployment data.
+const schematic=TK.BATTLES['木津川口の戦い'];assert.ok(schematic.atlasSchematic);assert.equal(schematic.atlasUnits.length,0);assert.ok(schematic.atlasGroups.every(g=>!g.point&&!g.dock));
+assert.deepEqual(Array.from(schematic.units).filter(u=>u.side==='a').map(u=>u.g).sort(),['浅野長晟','池田忠雄','蜂須賀至鎮'].sort());
+for(const unit of schematic.units){assert.equal(unit.tr,0);assert.ok(schematic.atlasSchematic.paths[unit.id]);}
+for(const [time,count] of [[0,4],[40,4],[79.999,4],[80,3],[100,3]])assert.equal(schematic.units.filter(u=>G.battleUnitVisible(schematic,u,time)).length,count);
+assert.equal(G.battleActiveUnits(schematic,40).filter(id=>schematic.units.find(u=>u.id===id)?.side==='a').length,1);
+console.log('PASS: documented attack sequence stays separate from geographic coordinates and unknown troop counts');

@@ -8,7 +8,7 @@
   eventTebai:['つくば市','つくばの歴史','https://www.city.tsukuba.lg.jp/shisei/joho/profile/rekishi/index.html','1569年・手這坂の合戦と小田氏敗走。戦場の精密な範囲は未確定'],
   eventIshiyama:['東本願寺','東本願寺について','https://www.honganji.or.jp/about/','第11世顕如・石山合戦。宗派による叙述で、各隊の位置は示さない'],
   eventKizugawa:['鳥羽市','九鬼嘉隆','https://www.city.toba.mie.jp/material/files/group/70/yoshitakagaiyou.pdf','1576・1578年の木津川口、鉄甲船に関する多聞院日記の説明'],
-  eventKizugawa1614:['黒田日出男／徳川美術館','徳川美術館蔵「豊国祭礼図屏風」の注文主','https://www.tokugawa-art-museum.jp/wp-content/uploads/2025/02/46_1-%E8%AB%96%E6%96%87%EF%BC%8F%E9%BB%92%E7%94%B0%E6%97%A5%E5%87%BA%E7%94%B7.pdf','PDF4頁・二節。11月19日の蜂須賀至鎮・浅野長晟・池田忠雄、29日博労淵。個別の精密な持場は示さない'],
+  eventKizugawa1614:['黒田日出男／徳川美術館','徳川美術館蔵「豊国祭礼図屏風」の注文主','https://www.tokugawa-art-museum.jp/wp-content/uploads/2025/02/46_1-%E8%AB%96%E6%96%87%EF%BC%8F%E9%BB%92%E7%94%B0%E6%97%A5%E5%87%BA%E7%94%B7.pdf','PDF4頁・蜂須賀勢の冬の陣での戦果を扱う段落。11月19日の蜂須賀至鎮・浅野長晟・池田忠雄、29日博労淵。個別の精密な持場は示さない'],
   kizujouMuseum:['大阪歴史博物館','共同研究成果報告書17・第2章第1節','https://www.osakamushis.jp/education/publication/kyodokenkyu/pdf/kyodo-17/kyodo-17_3.pdf','32〜34頁・木津城。1614年の徳川付城、集落と浜堤、所在地・規模・構造の不明確さ。1576年の木津城と1614年の河口砦を同一地点と確定しない'],
   eventHarima:['姫路市','姫路城保存活用計画 第2章','https://www.city.himeji.lg.jp/kanko/cmsfiles/contents/0000030/30274/chapter2.pdf','近世・1577年播磨入りと1580年以降の姫路城整備'],
   eventTanba:['丹波篠山市','戦国乱世の道・波多野氏の山城','https://www.city.tambasasayama.lg.jp/material/files/group/75/sengokuransenomichi.pdf','八上城・周囲の付城。丹後の全城の開城日を裏付ける資料ではない'],

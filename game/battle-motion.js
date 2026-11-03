@@ -5,6 +5,8 @@
    史料の動き（TK.BATTLE_MOVEMENTS）がある隊はそちらを優先し、ここでは扱わない。 */
 window.TKBattleMotion=(function(){
  const clamp=(v,a,b)=>Math.max(a,Math.min(b,v));
+ // 推定配置だけの画面余白。顔は左34px、幟は右37px/上41pxまで張り出す。
+ function fitPlacement(p,W,H){const small=W<560,left=small?28:40,right=small?28:40,top=small?28:46,bottom=54;return [clamp(p[0],left,Math.max(left,W-right)),clamp(p[1],top,Math.max(top,H-bottom))];}
  const ease=f=>f<.5?2*f*f:1-Math.pow(-2*f+2,2)/2;
  // 模式の経過を t で補間する（区間ごとに緩急を付ける）。
  function at(path,t){if(!path?.length)return null;if(t<=path[0][0])return [path[0][1],path[0][2]];for(let i=1;i<path.length;i++){const a=path[i-1],b=path[i];if(t<=b[0]){const f=ease((t-a[0])/Math.max(1e-6,b[0]-a[0]));return [a[1]+(b[1]-a[1])*f,a[2]+(b[2]-a[2])*f];}}const l=path.at(-1);return [l[1],l[2]];}
@@ -38,7 +40,7 @@ window.TKBattleMotion=(function(){
   const gen=generic(sc,base,W,H,home,sourced,{pos:()=>null,estimated:new Set(),placed:new Set(),basis:''},out.estimated);for(const id of gen.estimated)out.estimated.add(id);for(const id of gen.placed)out.placed.add(id);
   out.pos=(id,t)=>{if(gen.estimated.has(id))return gen.pos(id,t);const u=byId.get(id);if(!u||!out.estimated.has(id))return null;const p=at(u.path,t);
    if(base.has(id)){const b=base.get(id),d=rot([p[0]-u.path[0][1],p[1]-u.path[0][2]]),m=Math.hypot(...d),k=m>maxShift?maxShift/m:1;return fit([b[0]+d[0]*k,b[1]+d[1]*k]);}
-   const d=rot([p[0]-anchorS[0],p[1]-anchorS[1]]);return fit([anchorG[0]+d[0],anchorG[1]+d[1]]);};
+   const d=rot([p[0]-anchorS[0],p[1]-anchorS[1]]);return fitPlacement([anchorG[0]+d[0],anchorG[1]+d[1]],W,H);};
   return out;
  }
  /* 模式の経過がない隊の汎用の動き。位置の分かる隊は交戦の間に最寄りの敵へ3割ほど詰め、押し合い、退却・討死の時刻に従う。
@@ -62,12 +64,12 @@ window.TKBattleMotion=(function(){
   for(const id of plans.keys())out.estimated.add(id);
   const units=new Map(sc.units.map(u=>[u.id,u]));
   out.pos=(id,t)=>{const p=plans.get(id);if(!p)return null;const u=units.get(id),f=ease(clamp((t-p.ts)/Math.max(1,p.te-p.ts),0,1)),stop=Math.min(u.die??101,u.rout??101),wob=t>p.te&&t<stop?Math.sin(t*.9+p.seed)*S*.008:0;
-   if(p.ring){const r=p.r0+(p.r1-p.r0)*f-wob,back=u.rout!=null&&t>u.rout?ease(clamp((t-u.rout)/14,0,1))*S*.2:0;return fit([p.c[0]+Math.cos(p.ang)*(r+back),p.c[1]+Math.sin(p.ang)*(r+back)]);}
+   if(p.ring){const r=p.r0+(p.r1-p.r0)*f-wob,back=u.rout!=null&&t>u.rout?ease(clamp((t-u.rout)/14,0,1))*S*.2:0;return fitPlacement([p.c[0]+Math.cos(p.ang)*(r+back),p.c[1]+Math.sin(p.ang)*(r+back)],W,H);}
    let k=p.reach*f+wob;if(u.die!=null&&t>=u.die)k=p.reach*ease(clamp((u.die-p.ts)/Math.max(1,p.te-p.ts),0,1));
    let x=p.b[0]+p.dir[0]*k,y=p.b[1]+p.dir[1]*k;if(u.rout!=null&&t>u.rout&&!(u.die!=null&&t>=u.die)){const r=ease(clamp((t-u.rout)/14,0,1))*S*.16;x-=p.dir[0]*r;y-=p.dir[1]*r;}
    return fit([x,y]);};
   if(!out.basis)out.basis=plans.size?'generic':'none';
   return out;
  }
- return {plan,at};
+ return {plan,at,fitPlacement};
 })();

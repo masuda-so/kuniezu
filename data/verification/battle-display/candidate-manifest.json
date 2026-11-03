@@ -1,0 +1,51 @@
+{
+  "sourceRoot": "/Users/masudaso/Desktop/天下分け目の国絵図",
+  "baseHead": "32e06e4b8c4c4f16af9c67ede54467797e627249",
+  "verifiedCurrentHead": "1368a0f18a05d7d2cad213c326c8cdeb082528e9",
+  "files": [
+    {
+      "path": "game/battle-motion.js",
+      "candidate": "/tmp/kuniezu-battle-display-fixes/game/battle-motion.js",
+      "baseSha256": "fab363e0c85928ba0709eeff13eadba888c6d059958beef88bab05e0d930109d",
+      "candidateSha256": "ee1ba0635b94d699ff8fd8802dec0cd6a4ba9cac1f15e4f0114ed27f60bd9448"
+    },
+    {
+      "path": "game/battle-atlas.js",
+      "candidate": "/tmp/kuniezu-battle-display-fixes/game/battle-atlas.js",
+      "baseSha256": "de204bb11687da5a79554a1d752b105d0455f4b45e718fa89ea589f8c8dc6df2",
+      "candidateSha256": "bf3f5b897f4f72d4ff6c7e297a9b34946187c8d7cfc7eb1b8a0cb77bb0e8497f"
+    },
+    {
+      "path": "game/battle-deployments.js",
+      "candidate": "/tmp/kuniezu-battle-display-fixes/game/battle-deployments.js",
+      "baseSha256": "673f1257dcea89e1890d28cb9704cfef6ab34f972abf2589c7ba4cf8dc31e9c3",
+      "candidateSha256": "cac0581da9455aafc4e8c5b778ff2b769b825dba670501efbdc2bdecba0eb944"
+    },
+    {
+      "path": "game/battle-event-catalog.js",
+      "candidate": "/tmp/kuniezu-battle-display-fixes/game/battle-event-catalog.js",
+      "baseSha256": "9f771a6e5bd5ba528e70f92bc40091dd152cb69d1fc42ce547c7b7a53aecf978",
+      "candidateSha256": "25977088fe5859e673cc9d8874ad867905c51efe9a7f692ba2a9e30ec2c93a69"
+    }
+  ],
+  "patch": "/tmp/kuniezu-battle-display-fixes/fixes.patch",
+  "reports": [
+    "/tmp/kuniezu-battle-display-fixes/motion-check.json",
+    "/tmp/kuniezu-battle-display-fixes/schematic-check.json",
+    "/tmp/kuniezu-battle-display-fixes/research/kizugawa-sequence-review.json",
+    "/tmp/kuniezu-battle-display-fixes/browser/result.json",
+    "/tmp/kuniezu-battle-display-fixes/browser-process-cleanup.json",
+    "/tmp/kuniezu-battle-display-fixes/browser-final-wood/result.json",
+    "/tmp/kuniezu-battle-display-fixes/REVIEW.md"
+  ],
+  "browser": {
+    "sanuki": "6 wide/narrow frames passed; later pointer-coordinate click harness failed, raw preserved",
+    "iyoAndKizugawa": "browser/result.json: 16 wide/narrow frames passed, autoplay, natural close, exceptions0",
+    "finalSchematicOwnLabelAvoidance": "browser-final-wood/result.json: 4 wide/narrow frames passed, autoplay, natural close, exceptions0, final candidate SHA confirmed"
+  },
+  "serverOperations": false,
+  "sharedWrites": false,
+  "classification": "110 geographic maps plus one separately labelled attack-sequence schematic; this does not claim 111 precise historical deployments",
+  "remainingChromeProcesses": 0,
+  "readyForIntegration": true
+}
