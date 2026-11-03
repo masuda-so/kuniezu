@@ -72,3 +72,9 @@ Claude と Codex の独立調査（`docs/reports/MAP_ARCHITECTURE_INDEPENDENT_RE
 - 朝鮮は国史編纂委員会「행정구역 GIS 데이터 (1910~1945년)」の1910年5月時点（1914年の統合前）の府・郡333を郡画像に加える（`tools/map/extract-hgis-1910.py`、標準ライブラリで GeoPackage を読む）。1896年の13道は八道へ戻して「国」として比べる。済州の三邑は城の登録まで excluded（`gun-overrides.json`）。
 - 残る課題：国・道の境界線（`TKGEO.pborders`）は旧来の線のまま。郡画像の国・道から共有辺を起こして置き換える。
 - 地図を広げた地域の家と拠点（`game/frontier-polities.js`・`game/frontier-history.js`）：蠣崎家（大館、松前の代表点）、琉球王国（首里城）、済州牧（朝鮮）。領域は郡画像から作り、蠣崎は渡島国の郡、琉球は琉球国の郡（奄美は1609年まで琉球だが今は除外）、済州は三邑（`gun-overrides.json` の assign）。蠣崎の領域が渡島国の全郡に及ぶのは推定で、和人地の範囲は今後史料で絞る。女真・明の拠点は出典不足のため保留。
+
+## 追記（児島湾の年代別の版、2026-11-03）
+
+- 年代別の差分の生成を Node 版 `tools/map/build-province-edits.cjs` にした（Pillow 不要）。期間の境目ごとに版を分け、`game/map/edits/compiled/<開始>-<終了>/` に書く。面（GeoJSON）に加え、100m 格子の窓に合わせた型紙（PNG、値は keys の番号）を受ける。水島の3差分だけで作り直すと、既存の版と画素が一致した。
+- 児島湾・高梁川河口の1560〜1615年の海陸は `tools/geo/kojima-bay-1600.cjs` が作る。国土交通省の資料の「岡山平野の干拓進展図」（高田正規原図）を現代の海岸で位置合わせし、17世紀以降の干拓区画を海、区画の外の白地を標高で陸か水面に分ける。16世紀末（宇喜多期）の区画は宇喜多堤（1584）から陸。藤戸の瀬戸は Codex の100m比較経路。根拠と検査は `data/inputs/kojima-coast-review/kojima-bay-1600/report.json` と `docs/reports/BIZEN_NORTH_SHORE_REVIEW.md`。
+- 版は `15600101-15840101`（児島・天城・早島が島）と `15840101-16160101`（早島が宇喜多堤で本土と続く。児島・天城は島）。児島が陸続きになるのは1618年でゲームの期間外。

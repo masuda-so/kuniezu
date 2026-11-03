@@ -83,3 +83,11 @@ python3 tools/map/audit-raster-adjacency.py /path/to/baseline/game/map \
 同基準版の専用Chromeでは倍率8で早島と塩津潟の確認点をクリックし、100m判定と実際の選択がそれぞれ備中松山城・新発田城で一致した。JavaScript例外0。
 
 統合基準 `3ab7e5f` 向けに、稼働する版付き差分を水島東西の補正へ更新した。早島・塩津潟の旧差分ファイルはGit履歴で参照でき、現行基準には適用済み。水島東西はこの基準の領域画像から100mで644・216画素を海へ置換する。
+
+## Node 版の生成と型紙の差分
+
+Pillow のない環境では `node --max-old-space-size=6000 tools/map/build-province-edits.cjs` で全期間の版をまとめて作る。差分の期間の境目ごとに半開区間の版を一つずつ `compiled/<開始>-<終了>/` に書き、使わなくなった版の置き場は消す。規則は Python 版と同じで、水島の3差分だけで作り直した結果は既存の版と画素が一致した。
+
+`payload.mask` の差分は、100m格子の窓 `window`（列・行・幅・高さ）に合わせた PNG を型紙にする。画素の値 n（G が上位、B が下位）が1以上なら `keys[n-1]` を書き、`from` が `land` なら元が陸、`sea` なら元が海であることを確かめる。`maskSha256` で型紙の取り違えを止める。Python 版はこの形を読まない。
+
+児島湾の3差分（`kojima-bay-*.json`）は `tools/geo/kojima-bay-1600.cjs` が作る。根拠は `docs/reports/BIZEN_NORTH_SHORE_REVIEW.md` の「児島湾全体」。

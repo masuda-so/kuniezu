@@ -5,10 +5,62 @@
  "note": "年代別の領域タイルの差し替え。同じ段・同じ列行の基準タイルの上に重ねず置き換える。期間は半開区間。",
  "versions": [
   {
-   "id": "15600101-16160101",
+   "id": "15600101-15840101",
    "period": [
     [
      1560,
+     1,
+     1
+    ],
+    [
+     1584,
+     1,
+     1
+    ]
+   ],
+   "edits": [
+    "kojima-bay-reclaimed-sea",
+    "kojima-bay-restored-land",
+    "mizushima-east-post-period-fill",
+    "mizushima-post-period-fill",
+    "mizushima-south-post-period-fill"
+   ],
+   "tiles": [
+    {
+     "factor": 1,
+     "col": 10,
+     "row": 12,
+     "file": "edits/compiled/15600101-15840101/provinces/10-12@15600101-15840101.png",
+     "sha256": "29dc532cc327c861dfe9cdca2640def7b87aada81cdb06b4453fbf10f85d4149"
+    },
+    {
+     "factor": 1,
+     "col": 9,
+     "row": 12,
+     "file": "edits/compiled/15600101-15840101/provinces/9-12@15600101-15840101.png",
+     "sha256": "80bb6ad3ab1078a26cf9516e9629e9d62a533b2f74264d869b6a13beebc306c5"
+    },
+    {
+     "factor": 4,
+     "col": 2,
+     "row": 3,
+     "file": "edits/compiled/15600101-15840101/provinces-4/2-3@15600101-15840101.png",
+     "sha256": "ed277da10d75220635df01ae2d281594cb3f3b36169b039255d27effbdfa36ca"
+    },
+    {
+     "factor": 8,
+     "col": 1,
+     "row": 1,
+     "file": "edits/compiled/15600101-15840101/provinces-8/1-1@15600101-15840101.png",
+     "sha256": "f1cb13f59136605956a23f4801e5e416370abb78cceac432f42400b670290532"
+    }
+   ]
+  },
+  {
+   "id": "15840101-16160101",
+   "period": [
+    [
+     1584,
      1,
      1
     ],
@@ -19,6 +71,9 @@
     ]
    ],
    "edits": [
+    "kojima-bay-reclaimed-sea",
+    "kojima-bay-restored-land",
+    "kojima-bay-ukita-land-from-1584",
     "mizushima-east-post-period-fill",
     "mizushima-post-period-fill",
     "mizushima-south-post-period-fill"
@@ -26,24 +81,31 @@
    "tiles": [
     {
      "factor": 1,
+     "col": 10,
+     "row": 12,
+     "file": "edits/compiled/15840101-16160101/provinces/10-12@15840101-16160101.png",
+     "sha256": "29dc532cc327c861dfe9cdca2640def7b87aada81cdb06b4453fbf10f85d4149"
+    },
+    {
+     "factor": 1,
      "col": 9,
      "row": 12,
-     "file": "edits/compiled/15600101-16160101/provinces/9-12@15600101-16160101.png",
-     "sha256": "619443480b4793c2f01fdf2b0215de781b873bea9f2b761f71baf3aa5e62e65b"
+     "file": "edits/compiled/15840101-16160101/provinces/9-12@15840101-16160101.png",
+     "sha256": "21e677f982ba064de2fc9d267a9ef15d6016f6caeb7987906590bd59d8db057e"
     },
     {
      "factor": 4,
      "col": 2,
      "row": 3,
-     "file": "edits/compiled/15600101-16160101/provinces-4/2-3@15600101-16160101.png",
-     "sha256": "2c7703d7450908b2de791eeb1ffadadf9969a34cff7e9b5f344f6ec6787bafa8"
+     "file": "edits/compiled/15840101-16160101/provinces-4/2-3@15840101-16160101.png",
+     "sha256": "fac71603b1b096fea7a0c37da4bf396211333119877789581e770cef122dbb98"
     },
     {
      "factor": 8,
      "col": 1,
      "row": 1,
-     "file": "edits/compiled/15600101-16160101/provinces-8/1-1@15600101-16160101.png",
-     "sha256": "29903d488d3d1773b82e95470ec13817d5de0b377a3677bef1f6dd61f94b6a8b"
+     "file": "edits/compiled/15840101-16160101/provinces-8/1-1@15840101-16160101.png",
+     "sha256": "4506bf42119c4d3535b414b96fb1ffcd9f4c6cbeccbba19cee637255eacb28e3"
     }
    ]
   }

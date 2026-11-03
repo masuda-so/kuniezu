@@ -1,0 +1,126 @@
+{
+  "generated": "tools/map/build-province-edits.cjs",
+  "baseRevision": "3ab7e5f2175760f5e7d5d5e134424ced9d5e742b",
+  "baseProvincesSha256": "01c67252315fa0afbf75b87623bca927225860102faa8c20fa98b04759d2264e",
+  "date": "1584-01-01",
+  "versions": [
+    {
+      "id": "15840101-16160101",
+      "period": [
+        [
+          1584,
+          1,
+          1
+        ],
+        [
+          1616,
+          1,
+          1
+        ]
+      ],
+      "edits": [
+        "kojima-bay-reclaimed-sea",
+        "kojima-bay-restored-land",
+        "kojima-bay-ukita-land-from-1584",
+        "mizushima-east-post-period-fill",
+        "mizushima-post-period-fill",
+        "mizushima-south-post-period-fill"
+      ],
+      "sha256": "79743d58a047dbef478eebd73a31c9c20525b98082a25ffb94b07d419e7fad6d"
+    }
+  ],
+  "editPixels": {
+    "kojima-bay-reclaimed-sea": 12643,
+    "kojima-bay-restored-land": 10663,
+    "kojima-bay-ukita-land-from-1584": 366,
+    "mizushima-east-post-period-fill": 216,
+    "mizushima-post-period-fill": 644,
+    "mizushima-south-post-period-fill": 140
+  },
+  "tiles": [
+    {
+      "file": "provinces/10-12@15840101-16160101.png",
+      "factor": 1,
+      "col": 10,
+      "row": 12,
+      "period": [
+        [
+          1584,
+          1,
+          1
+        ],
+        [
+          1616,
+          1,
+          1
+        ]
+      ],
+      "width": 1024,
+      "height": 1024,
+      "sha256": "29dc532cc327c861dfe9cdca2640def7b87aada81cdb06b4453fbf10f85d4149"
+    },
+    {
+      "file": "provinces/9-12@15840101-16160101.png",
+      "factor": 1,
+      "col": 9,
+      "row": 12,
+      "period": [
+        [
+          1584,
+          1,
+          1
+        ],
+        [
+          1616,
+          1,
+          1
+        ]
+      ],
+      "width": 1024,
+      "height": 1024,
+      "sha256": "21e677f982ba064de2fc9d267a9ef15d6016f6caeb7987906590bd59d8db057e"
+    },
+    {
+      "file": "provinces-4/2-3@15840101-16160101.png",
+      "factor": 4,
+      "col": 2,
+      "row": 3,
+      "period": [
+        [
+          1584,
+          1,
+          1
+        ],
+        [
+          1616,
+          1,
+          1
+        ]
+      ],
+      "width": 1024,
+      "height": 1024,
+      "sha256": "fac71603b1b096fea7a0c37da4bf396211333119877789581e770cef122dbb98"
+    },
+    {
+      "file": "provinces-8/1-1@15840101-16160101.png",
+      "factor": 8,
+      "col": 1,
+      "row": 1,
+      "period": [
+        [
+          1584,
+          1,
+          1
+        ],
+        [
+          1616,
+          1,
+          1
+        ]
+      ],
+      "width": 1024,
+      "height": 1024,
+      "sha256": "4506bf42119c4d3535b414b96fb1ffcd9f4c6cbeccbba19cee637255eacb28e3"
+    }
+  ]
+}
