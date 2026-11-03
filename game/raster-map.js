@@ -63,18 +63,19 @@ window.TKRaster=(function(){
    実行時に外部の標高タイルを取り寄せて計算することはしない。表示の細かさで 100m・400m・800m の段を選び、
    細かい段が届くまでは 800m の段を下に敷く（陰影は陸で不透明なので二重にならない）。 */
 window.TKRelief=(function(){
- let man=null,ready=false,revision=0,onChange=null;const tiles=new Map(),order=[];
+ let man=null,ready=false,revision=0,onChange=null;const tiles=new Map(),order=[];let pinned=new Set();// pinned：描画中の一回で使うタイル。上限を超えても閉じない（閉じた画像を描くと例外になる）
  if(typeof fetch==='function'&&typeof document!=='undefined')Promise.all([fetch('map/relief.json',{cache:'no-cache'}).then(r=>r.json()),fetch('map/manifest.json',{cache:'no-cache'}).then(r=>r.json())]).then(([r,grid])=>{
   man={...r,origin:grid.projection.origin,step:grid.projection.stepUnits,tile:grid.tile};ready=true;for(const t of level(8).tiles)load(8,t);revision++;onChange?.();}).catch(()=>{});
  const level=f=>man.levels.find(l=>l.factor===f);
  // 読み込みに失敗したタイルは1秒後に読み直す（同時に多く読むと一時的に失敗することがある）。
  function load(f,t){const k=f+':'+t.file;const had=tiles.get(k);if(had&&!(had.state==='error'&&performance.now()>had.retry))return had;const rec={state:'loading',im:null,tries:(had?.tries||0)+1};tiles.set(k,rec);
   fetch('map/'+level(f).dir+'/'+t.file+(t.sha256?'?v='+t.sha256.slice(0,10):'')).then(r=>{if(!r.ok)throw Error('HTTP '+r.status);return r.blob();}).then(b=>createImageBitmap(b)).then(im=>{rec.im=im;rec.state='ready';revision++;onChange?.();}).catch(e=>{rec.state='error';rec.err=String(e);rec.retry=performance.now()+1000*rec.tries;if(rec.tries<5)setTimeout(()=>{revision++;onChange?.();},1000*rec.tries);});
-  order.push(k);while(order.length>64){const old=order.shift();if(!old.startsWith('8:')){tiles.get(old)?.im?.close?.();tiles.delete(old);}}return rec;}
+  order.push(k);for(let n=order.length;order.length>64&&n>0;n--){const old=order.shift();if(old.startsWith('8:')||pinned.has(old)){order.push(old);continue;}tiles.get(old)?.im?.close?.();tiles.delete(old);}return rec;}
  function pick(z,dpr){const unit=1/(z*dpr);for(const f of [8,4])if(man.step*f<=unit*1.5)return f;return 1;}
  function paint(c,view,z,dpr){if(!ready)return false;const f=pick(z,dpr);let complete=true;
   const vis=ff=>{const s=man.step*ff,span=man.tile*s;return level(ff).tiles.filter(t=>{const x=man.origin[0]+t.col*span,y=man.origin[1]+t.row*span;return x<view[2]&&x+t.width*s>view[0]&&y<view[3]&&y+t.height*s>view[1];});};
   const draw=(ff,t,rec)=>{const s=man.step*ff;c.drawImage(rec.im,man.origin[0]+t.col*man.tile*s,man.origin[1]+t.row*man.tile*s,t.width*s,t.height*s);};
+  pinned=new Set([...[f,4,8].flatMap(ff=>vis(ff).map(t=>ff+':'+t.file))]);
   c.save();c.imageSmoothingEnabled=true;c.imageSmoothingQuality='high';
   // 代わりの段は 800m を敷き、その上に 400m（細かい段が 100m の時は先に読み始める）を重ねる。
   const fine=vis(f).map(t=>[t,load(f,t)]);if(fine.some(([,r])=>r.state!=='ready')&&f!==8){complete=false;
@@ -104,4 +105,14 @@ window.TKEdges=(function(){
    const recs=vis.map(t=>load(f,t));if(recs.every(r=>r.state==='ready'))return recs.flatMap(r=>r.items);}
   return null;}
  return {bump(){verMemo=null;revision++;onChange?.();},ready:()=>ready,revision:()=>revision,inView,onChange(fn){onChange=fn;}};
+})();
+/* 河川（正本 map_data/rivers.png の1画素幅の中心線を tools/map/build-river-lines.cjs が辿った線 map/rivers-lines.json）。現代の参考の河道。
+   日本・朝鮮とも同じ線・同じ描き方。名前の表示と国境の破線は、従来の主要河川の一覧（TK.REGIONAL_RIVERS）と名前が合う河川だけ。 */
+window.TKRivers=(function(){let recs=null,revision=0,onChange=null;
+ if(typeof fetch==='function'&&typeof document!=='undefined')fetch('map/rivers-lines.json',{cache:'no-cache'}).then(r=>r.json()).then(d=>{
+  const canon=n=>TK.RIVER_NAME_EQUIVALENTS?.[n]||n,major=new Map();for(const r of TK.REGIONAL_RIVERS||[]){const k=canon(r.name),o=major.get(k)||{name:r.name,border:false};o.border=o.border||!!r.border;major.set(k,o);}
+  recs=d.features.map(f=>{const geometries=f.lines.map(l=>TK.riverGeometry(Array.from({length:l.length/2},(_,i)=>[l[i*2],l[i*2+1]]))),m=major.get(canon(f.name)),longest=geometries.reduce((a,b)=>!a||b.length>a.length?b:a,null);
+   return {id:f.id,name:m?m.name:null,border:!!m?.border,geometries,mid:m&&longest?longest.points[Math.floor(longest.points.length/2)]:null};});
+  revision++;onChange?.();}).catch(()=>{});
+ return {ready:()=>!!recs,records:()=>recs||[],revision:()=>revision,onChange(fn){onChange=fn;}};
 })();

@@ -75,8 +75,13 @@ const riverLines=[...(TK.JAPAN_RIVERS_OSM?.rivers||[]).map(r=>r.points.map(p=>G.
 const riverPathCache=new WeakMap();
 function riverView(){const a=s2w(0,0),b=s2w(VW,VH);return [a[0],a[1],b[0],b[1]];}
 function riverPath(r,z){let cached=riverPathCache.get(r);if(!cached||cached.z!==z){const path=new Path2D();TK.riverPath(path,r.points,2/z);cached={z,path};riverPathCache.set(r,cached);}return cached.path;}
-function drawMapRivers(c,z){const view=riverView();c.save();c.clip(LANDV);c.strokeStyle='rgba(95,135,175,.75)';c.lineWidth=1.1/z;c.lineCap='round';c.lineJoin='round';for(const r of riverLines)if(TK.riverVisible(r,view,z))c.stroke(riverPath(r,z));c.restore();}
-function drawRegionalRivers(c,z){const view=riverView();c.save();c.clip(LANDV);c.lineCap='round';c.lineJoin='round';for(const r of REGIONAL_RIVERS){let visible=false;for(const line of r.geometries){if(!TK.riverVisible(line,view,z))continue;visible=true;const path=riverPath(line,z);if(r.border){c.setLineDash([5/z,4/z]);c.strokeStyle='rgba(96,67,48,.6)';c.lineWidth=2.8/z;c.stroke(path);}c.setLineDash([]);c.strokeStyle='rgba(95,135,175,.75)';c.lineWidth=1.1/z;c.stroke(path);}if(visible&&z>.5&&r.mid){c.font=`${11/z}px sans-serif`;c.lineWidth=3/z;c.strokeStyle='rgba(251,246,226,.9)';c.strokeText(r.name,r.mid[0]+5/z,r.mid[1]-5/z);c.fillStyle='#315f7a';c.fillText(r.name,r.mid[0]+5/z,r.mid[1]-5/z);}}c.restore();}
+// 河川は正本 map_data/rivers.png から作った線（TKRivers）で、日本・朝鮮とも同じ描き方。読み込み前だけ従来の線。
+function drawMapRivers(c,z){const view=riverView();onLand(c,c=>{c.lineCap='round';c.lineJoin='round';
+ if(window.TKRivers?.ready()){for(const r of TKRivers.records())for(const line of r.geometries){if(!TK.riverVisible(line,view,z))continue;const path=riverPath(line,z);if(r.border){c.setLineDash([5/z,4/z]);c.strokeStyle='rgba(96,67,48,.6)';c.lineWidth=2.8/z;c.stroke(path);c.setLineDash([]);}c.strokeStyle='rgba(95,135,175,.75)';c.lineWidth=1.1/z;c.stroke(path);}return;}
+ c.strokeStyle='rgba(95,135,175,.75)';c.lineWidth=1.1/z;for(const r of riverLines)if(TK.riverVisible(r,view,z))c.stroke(riverPath(r,z));});}
+function drawRegionalRivers(c,z){const view=riverView();
+ if(window.TKRivers?.ready()){if(z<=.5)return;c.save();for(const r of TKRivers.records()){if(!r.mid||!r.geometries.some(g=>TK.riverVisible(g,view,z)))continue;c.font=`${11/z}px sans-serif`;c.lineWidth=3/z;c.strokeStyle='rgba(251,246,226,.9)';c.strokeText(r.name,r.mid[0]+5/z,r.mid[1]-5/z);c.fillStyle='#315f7a';c.fillText(r.name,r.mid[0]+5/z,r.mid[1]-5/z);}c.restore();return;}
+ c.save();c.clip(LANDV);c.lineCap='round';c.lineJoin='round';for(const r of REGIONAL_RIVERS){let visible=false;for(const line of r.geometries){if(!TK.riverVisible(line,view,z))continue;visible=true;const path=riverPath(line,z);if(r.border){c.setLineDash([5/z,4/z]);c.strokeStyle='rgba(96,67,48,.6)';c.lineWidth=2.8/z;c.stroke(path);}c.setLineDash([]);c.strokeStyle='rgba(95,135,175,.75)';c.lineWidth=1.1/z;c.stroke(path);}if(visible&&z>.5&&r.mid){c.font=`${11/z}px sans-serif`;c.lineWidth=3/z;c.strokeStyle='rgba(251,246,226,.9)';c.strokeText(r.name,r.mid[0]+5/z,r.mid[1]-5/z);c.fillStyle='#315f7a';c.fillText(r.name,r.mid[0]+5/z,r.mid[1]-5/z);}}c.restore();}
 // 青海波
 function seigaiha(){ // 青海波：同心の半円を半分ずつずらして重ねる（高解像度の1枚を繰り返す）
  const R=96,w=R*2,h=R,c=document.createElement('canvas');c.width=w;c.height=h;const x=c.getContext('2d');
@@ -209,12 +214,11 @@ function roadsFor(z){const lv=Math.max(-3,Math.min(4,Math.floor(Math.log2(Math.m
  roadLOD.set(lv,p);return p;}
 function drawRoads(c,z,labels){
  // 海や湖を渡る区間（七里の渡し・今切の渡しなど）は、陸の線と変えて細い点線で描く
- if(!SEAMASK||SEAMASK.land!==LANDV){SEAMASK=new Path2D();SEAMASK.rect(-3000,-3000,8000,8000);SEAMASK.addPath(LANDV);SEAMASK.land=LANDV;}
- const roads=roadsFor(z);c.save();c.lineJoin='round';c.lineCap='round';c.clip(SEAMASK,'evenodd');c.setLineDash([2/z,3/z]);c.strokeStyle='rgba(240,232,210,.75)';c.lineWidth=1.4/z;c.stroke(roads);c.restore();
- c.save();c.lineJoin='round';c.lineCap='round';c.clip(LANDV);c.setLineDash([]);c.strokeStyle='rgba(255,248,230,.75)';c.lineWidth=3.2/z;c.stroke(roads);c.strokeStyle='rgba(116,107,90,.85)';c.lineWidth=1.2/z;c.stroke(roads);c.restore();c.save();
+ const roads=roadsFor(z);offLand(c,c=>{c.lineJoin='round';c.lineCap='round';c.setLineDash([2/z,3/z]);c.strokeStyle='rgba(240,232,210,.75)';c.lineWidth=1.4/z;c.stroke(roads);});
+ onLand(c,c=>{c.lineJoin='round';c.lineCap='round';c.setLineDash([]);c.strokeStyle='rgba(255,248,230,.75)';c.lineWidth=3.2/z;c.stroke(roads);c.strokeStyle='rgba(116,107,90,.85)';c.lineWidth=1.2/z;c.stroke(roads);});c.save();
  if(labels)for(const r of roadPaths()){c.save();c.translate(r.mx,r.my);let a=r.ang;if(a>Math.PI/2)a-=Math.PI;if(a<-Math.PI/2)a+=Math.PI;c.rotate(a);c.font=`700 ${11/z}px "Shippori Mincho B1",serif`;c.textAlign='center';c.textBaseline='bottom';c.lineWidth=3/z;c.strokeStyle='rgba(255,248,230,.9)';c.strokeText(r.name,0,-2/z);c.fillStyle='#6a3e1c';c.fillText(r.name,0,-2/z);c.restore();}c.restore();}
 
-function drawRoadLevels(c,z){if(!S||z<.55)return;c.save();c.clip(LANDV);for(const [id,L]of Object.entries(S.improvements?.roads||{})){if(L<=1)continue;const e=G.EDGES[id];if(!e)continue;const pts=G.visualEdgeGeo(e.a,e.b);c.beginPath();pts.forEach((p,i)=>i?c.lineTo(...p):c.moveTo(...p));c.setLineDash([]);c.strokeStyle=L>=4?'#695338':L===3?'#87704b':'#a0875b';c.lineWidth=(1.2+.35*(L-1))/z;c.lineJoin='round';c.stroke();}c.restore();}
+function drawRoadLevels(c,z){if(!S||z<.55)return;onLand(c,c=>{for(const [id,L]of Object.entries(S.improvements?.roads||{})){if(L<=1)continue;const e=G.EDGES[id];if(!e)continue;const pts=G.visualEdgeGeo(e.a,e.b);c.beginPath();pts.forEach((p,i)=>i?c.lineTo(...p):c.moveTo(...p));c.setLineDash([]);c.strokeStyle=L>=4?'#695338':L===3?'#87704b':'#a0875b';c.lineWidth=(1.2+.35*(L-1))/z;c.lineJoin='round';c.stroke();}});}
 /* ===== 下地の描画 ===== */
 /* ===== 同盟の見える化 ===== */
 
@@ -227,16 +231,16 @@ function blocs(){const ks=G.alive(),par={};ks.forEach(k=>par[k]=k);const f=k=>pa
  const of={};let j=0;list.forEach((a,i)=>{const col=a.includes(S.player)?BLOC_MINE:BLOC_COL[(j++)%BLOC_COL.length];a.forEach(k=>of[k]={i,col});});return {list,of};}
 const branchPaths=new WeakMap();
 function branchPath(cell){let p=branchPaths.get(cell);if(!p){p=P2(cell.polygons,0);branchPaths.set(cell,p);}return p;}
-function drawBranchLands(c,z){if(U.mode!=='game'||!G.branchCells)return;c.save();c.clip(LANDV);
+function drawBranchLands(c,z){if(U.mode!=='game'||!G.branchCells)return;onLand(c,c=>{
  for(const C of G.CL){const base=S.castles[C.id].owner;for(const cell of G.branchCells(C.id)){if(cell.main||!cell.polygons.length)continue;const owner=G.yOwner(cell.site),p=branchPath(cell);
   if(owner!==base){c.globalAlpha=.7;c.fillStyle=pastel(owner);c.fill(p,'evenodd');}
   if(z>.75&&(owner!==base||U.sel===C.id)){c.globalAlpha=.65;c.strokeStyle=owner===S.player?'#e7bb49':'#5f4934';c.lineWidth=1/z;c.setLineDash([3/z,3/z]);c.stroke(p);}}
- }c.restore();}
+ }});}
 const modernWater=(TK.waterComparisonOverlay?TK.MODERN_LAKES||[]:[]).map(l=>({n:l.name,p:P2([l.rings.map(r=>r.flatMap(p=>G.PJ(...p)))],0),at:G.PJ(...l.rings[0][0])}));
 const historicWater=(TK.HISTORIC_WATERS||[]).map(l=>({...l,p:l.poly?P2([l.poly],0):null,point:G.PJ(...l.at)}));
 const periodWater=(TK.PERIOD_WATERS||[]).map(w=>({...w,p:P2([w.rings.map(r=>r.flatMap(p=>G.PJ(...p)))],0),at:G.PJ(...w.rings[0][0])}));
-function drawPeriodWater(c,z){const year=S?G.date().y:1560;c.save();c.clip(LANDV);for(const w of periodWater){if(w.from&&year<w.from||w.until&&year>=w.until)continue;c.fillStyle='rgba(112,165,178,.62)';c.fill(w.p,'evenodd');c.strokeStyle='rgba(64,113,121,.65)';c.lineWidth=.7/z;c.setLineDash([2/z,3/z]);c.stroke(w.p);}c.restore();}
-function drawWaterEvidence(c,z){c.save();c.clip(LANDV);for(const l of historicWater){if(l.p){c.fillStyle=l.kind==='marsh'?'rgba(112,151,138,.28)':'rgba(118,166,186,.4)';c.fill(l.p,'evenodd');c.setLineDash([1/z,3/z]);c.strokeStyle='#668a83';c.lineWidth=.8/z;c.stroke(l.p);}if(z>1){c.save();c.setLineDash([]);c.font=`${10/z}px sans-serif`;c.fillStyle='#315766';c.textAlign='center';c.fillText(l.label,l.point[0],l.point[1]);c.restore();}}for(const l of modernWater){c.fillStyle='rgba(118,166,186,.65)';c.fill(l.p,'evenodd');c.setLineDash([3/z,3/z]);c.strokeStyle='#426f80';c.lineWidth=.8/z;c.stroke(l.p);if(z>1){c.save();c.setLineDash([]);c.font=`${10/z}px sans-serif`;c.fillStyle='#315766';c.fillText(l.n+'（比較湖岸）',l.at[0]+3/z,l.at[1]-5/z);c.restore();}}c.restore();}
+function drawPeriodWater(c,z){const year=S?G.date().y:1560;onLand(c,c=>{for(const w of periodWater){if(w.from&&year<w.from||w.until&&year>=w.until)continue;c.fillStyle='rgba(112,165,178,.62)';c.fill(w.p,'evenodd');c.strokeStyle='rgba(64,113,121,.65)';c.lineWidth=.7/z;c.setLineDash([2/z,3/z]);c.stroke(w.p);}});}
+function drawWaterEvidence(c,z){onLand(c,c=>{for(const l of historicWater){if(l.p){c.fillStyle=l.kind==='marsh'?'rgba(112,151,138,.28)':'rgba(118,166,186,.4)';c.fill(l.p,'evenodd');c.setLineDash([1/z,3/z]);c.strokeStyle='#668a83';c.lineWidth=.8/z;c.stroke(l.p);}if(z>1){c.save();c.setLineDash([]);c.font=`${10/z}px sans-serif`;c.fillStyle='#315766';c.textAlign='center';c.fillText(l.label,l.point[0],l.point[1]);c.restore();}}for(const l of modernWater){c.fillStyle='rgba(118,166,186,.65)';c.fill(l.p,'evenodd');c.setLineDash([3/z,3/z]);c.strokeStyle='#426f80';c.lineWidth=.8/z;c.stroke(l.p);if(z>1){c.save();c.setLineDash([]);c.font=`${10/z}px sans-serif`;c.fillStyle='#315766';c.fillText(l.n+'（比較湖岸）',l.at[0]+3/z,l.at[1]-5/z);c.restore();}}});}
 // 周囲を含めた地形だけを一度合成し、日付更新や小さなパンでは貼り直す。
 // 勢力・道路・湖岸は別に描くため、領主の変化を古い画像で隠さない。
 let terrainSurface=null;
@@ -254,10 +258,16 @@ function terrainBackdrop(c,view,z){
 const rgbCache=new Map(),rgbCtx=document.createElement('canvas').getContext('2d');
 function cssRGB(css){if(rgbCache.has(css))return rgbCache.get(css);rgbCtx.fillStyle='#000';rgbCtx.fillStyle=css;const v=rgbCtx.fillStyle,m=v.startsWith('#')?[1,3,5].map(i=>parseInt(v.slice(i,i+2),16)):v.match(/\d+(\.\d+)?/g).slice(0,3).map(Number);rgbCache.set(css,m);return m;}
 function rasterColor(flat){return d=>{if(!d||!d.key.startsWith('castle:'))return null;const st=S?.castles[d.key.slice(7)];if(!st)return null;const k=st.owner,a=flat?(k===S.player?.5:.35):(k===S.player?.44:.32);return [...cssRGB(pastel(k)),Math.round(a*255)];};}
-window.TKRaster?.onChange(()=>{U.baseDirty=true;U.wakeLoop?.();});window.TKRelief?.onChange(()=>{U.baseDirty=true;U.wakeLoop?.();});window.TKEdges?.onChange(()=>{U.baseDirty=true;U.wakeLoop?.();});
+window.TKRaster?.onChange(()=>{U.baseDirty=true;U.wakeLoop?.();});window.TKRelief?.onChange(()=>{U.baseDirty=true;U.wakeLoop?.();});window.TKEdges?.onChange(()=>{U.baseDirty=true;U.wakeLoop?.();});window.TKRivers?.onChange(()=>{U.baseDirty=true;U.wakeLoop?.();});
 // 陸だけの描画層（paintBase が使う）。描く先と同じ大きさのキャンバスを使い回す。
 const LANDLAYERS=[];function landLayer(c,n=0){const w=c.canvas.width,h=c.canvas.height;if(!LANDLAYERS[n])LANDLAYERS[n]=document.createElement('canvas').getContext('2d');const L=LANDLAYERS[n];if(L.canvas.width!==w||L.canvas.height!==h){L.canvas.width=w;L.canvas.height=h;}L.setTransform(1,0,0,1,0,0);L.globalCompositeOperation='source-over';L.globalAlpha=1;L.shadowBlur=0;L.clearRect(0,0,w,h);return L;}
-function paintBase(c,pad=0){LANDV=landFor(cam.z);
+// 正本の陸の型（paintBase が領域画像から作る、下地と同じ大きさの canvas）。川・道路・時代の水域などは、旧来の線の陸 LANDV ではなくこの型で切る。
+// 型が無い時（領域画像の読み込み前、別の canvas に描く時）だけ LANDV で切る。
+let rasterLand=null;
+function maskedLayer(c,draw,op){const L=landLayer(c,2);L.setTransform(c.getTransform());L.lineCap=c.lineCap;L.lineJoin=c.lineJoin;draw(L);L.setTransform(1,0,0,1,0,0);L.globalCompositeOperation=op;L.drawImage(rasterLand.canvas,0,0);L.globalCompositeOperation='source-over';c.save();c.setTransform(1,0,0,1,0,0);c.globalAlpha=1;c.drawImage(L.canvas,0,0);c.restore();}
+function onLand(c,draw){if(rasterLand?.base!==c.canvas){c.save();c.clip(LANDV);draw(c);c.restore();return;}maskedLayer(c,draw,'destination-in');}
+function offLand(c,draw){if(rasterLand?.base!==c.canvas){if(!SEAMASK||SEAMASK.land!==LANDV){SEAMASK=new Path2D();SEAMASK.rect(-3000,-3000,8000,8000);SEAMASK.addPath(LANDV);SEAMASK.land=LANDV;}c.save();c.clip(SEAMASK,'evenodd');draw(c);c.restore();return;}maskedLayer(c,draw,'destination-out');}
+function paintBase(c,pad=0){LANDV=landFor(cam.z);rasterLand=null;
  const cc=vc();c.setTransform(1,0,0,1,0,0);c.clearRect(0,0,c.canvas.width,c.canvas.height);
  c.fillStyle='#e2dac6';c.fillRect(0,0,c.canvas.width,c.canvas.height);
  const z=cam.z,tx=cc[0]-cam.x*z+pad,ty=cc[1]-cam.y*z+pad;
@@ -272,6 +282,7 @@ function paintBase(c,pad=0){LANDV=landFor(cam.z);
   // 陸だけの層 L に下地の色を塗り、陰影と領主の色を「陸の上だけ」に重ね、最後に海の模様の上へ貼る。
   const L=landLayer(c);L.setTransform(c.getTransform());
   const landRGB=flat?[251,250,246,255]:[236,226,198,255],lakeRGB=flat?[170,196,223,255]:[167,209,223,255];
+  const M=landLayer(c,1);M.setTransform(c.getTransform());TKRaster.paint(M,[x0,y0,x1,y1],z,DPR,d=>d.kind==='sea'?null:landRGB,'land|'+flat);rasterLand={base:c.canvas,canvas:M.canvas};
   TKRaster.paint(L,[x0,y0,x1,y1],z,DPR,d=>d.kind==='sea'?null:d.kind==='lake'?lakeRGB:landRGB,'land|'+flat);
   L.globalCompositeOperation='source-atop';
   if(!flat&&window.TKRelief?.ready()){L.save();L.globalAlpha=1;TKRelief.paint(L,[x0,y0,x1,y1],z,DPR);L.restore();
@@ -280,7 +291,6 @@ function paintBase(c,pad=0){LANDV=landFor(cam.z);
   if(S)TKRaster.paint(L,[x0,y0,x1,y1],z,DPR,rasterColor(flat),rasterSig);
   if(!flat){L.globalCompositeOperation='multiply';L.fillStyle='rgba(168,146,110,.55)';L.fillRect(x0-50,y0-50,x1-x0+100,y1-y0+100);
    // 陸の形で切り抜き直す。destination-in は描くたびに描いた範囲の外を消すので、タイルごとではなく一枚の型で一度だけ行う。
-   const M=landLayer(c,1);M.setTransform(c.getTransform());TKRaster.paint(M,[x0,y0,x1,y1],z,DPR,d=>d.kind==='sea'?null:landRGB,'land|'+flat);
    L.save();L.setTransform(1,0,0,1,0,0);L.globalCompositeOperation='destination-in';L.drawImage(M.canvas,0,0);L.restore();}
   L.globalCompositeOperation='source-over';
   c.save();c.setTransform(1,0,0,1,0,0);if(flat){c.shadowColor='rgba(40,70,110,.38)';c.shadowBlur=10*DPR;}c.drawImage(L.canvas,0,0);c.restore();
@@ -296,14 +306,14 @@ function paintBase(c,pad=0){LANDV=landFor(cam.z);
  if(flat){c.strokeStyle='rgba(95,135,175,.75)';c.lineWidth=1.1/z;c.lineJoin='round';drawMapRivers(c,z);
   if(z>.45){c.strokeStyle='rgba(110,110,110,.5)';c.lineWidth=.8/z;strokeKuni(c);}
   if(S&&z>.5)drawRoads(c,z,false);drawBorders(c,z);
-  c.save();c.clip(LANDV);if(!window.TKRaster?.ready()){c.fillStyle='#aac4df';c.fill(LAKES);}c.strokeStyle='rgba(110,135,170,.55)';c.lineWidth=.7/z;strokeLakes(c);c.restore();
+  onLand(c,c=>{if(!window.TKRaster?.ready()){c.fillStyle='#aac4df';c.fill(LAKES);}c.strokeStyle='rgba(110,135,170,.55)';c.lineWidth=.7/z;strokeLakes(c);});
    c.strokeStyle='rgba(100,125,160,.7)';c.lineWidth=.8/z;strokeCoast(c);
  }else{
  c.strokeStyle='rgba(95,135,175,.75)';c.lineWidth=1.1/z;c.lineJoin='round';drawMapRivers(c,z);
  if(z>.55){c.save();c.setLineDash([3/z,3/z]);c.strokeStyle='rgba(70,55,35,.38)';c.lineWidth=.9/z;strokeKuni(c);c.restore();}
  if(S&&z>.5)drawRoads(c,z,false);
  drawRoadLevels(c,z);drawBorders(c,z);
- c.save();c.clip(LANDV);if(!window.TKRaster?.ready()){c.fillStyle='#93b4d2';c.fill(LAKES);}c.strokeStyle='rgba(50,70,100,.55)';c.lineWidth=.8/z;strokeLakes(c);c.restore();
+ onLand(c,c=>{if(!window.TKRaster?.ready()){c.fillStyle='#93b4d2';c.fill(LAKES);}c.strokeStyle='rgba(50,70,100,.55)';c.lineWidth=.8/z;strokeLakes(c);});
  c.strokeStyle='rgba(25,35,60,.6)';c.lineWidth=1.1/z;strokeCoast(c);
  }
 
@@ -337,7 +347,7 @@ function drawBase(){
  if(liveRevision!==U.terrainRevShown){if(!anim&&nowMs-(U.terrainRevAt||0)>=700){U.terrainRevShown=liveRevision;U.terrainRevAt=nowMs;}else{clearTimeout(U.terrainRevTimer);U.terrainRevTimer=setTimeout(()=>{U.baseDirty=true;},anim?120:Math.max(60,700-(nowMs-(U.terrainRevAt||0))));}}
  if(performance.now()<(U.zoomUntil||0))U.zoomRebuildAt=performance.now();
  const cc=vc(),revision=U.terrainRevShown||0;
- const key=[cam.z,DPR,VW,VH,...cc,U.mode,U.mapStyle,U.dipView,U.sel,S?.player,territorySignature(),JSON.stringify(S?.vassal||{}),JSON.stringify(S?.improvements?.roads||{}),revision,fontRevision,TK.waterPhase?.(S?G.date().y:1560),window.TKRaster?.revision()||0,window.TKRelief?.revision()||0,window.TKEdges?.revision()||0,window.TKMapVersion?.active()?.id||''].join('|');
+ const key=[cam.z,DPR,VW,VH,...cc,U.mode,U.mapStyle,U.dipView,U.sel,S?.player,territorySignature(),JSON.stringify(S?.vassal||{}),JSON.stringify(S?.improvements?.roads||{}),revision,fontRevision,TK.waterPhase?.(S?G.date().y:1560),window.TKRaster?.revision()||0,window.TKRelief?.revision()||0,window.TKEdges?.revision()||0,window.TKRivers?.revision()||0,window.TKMapVersion?.active()?.id||''].join('|');
  const pad=160,dx=baseSurface?(cam.x-baseSurface.x)*cam.z:0,dy=baseSurface?(cam.y-baseSurface.y)*cam.z:0;
  const valid=baseSurface&&baseSurface.state===S&&baseSurface.key===key&&Math.abs(dx)<=pad&&Math.abs(dy)<=pad;
  if(!valid){
