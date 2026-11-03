@@ -1,0 +1,3225 @@
+{
+  "sourceMasterSha256": "14d112e468c2e75b7d16c11376f19111c183a62cd9f7d3144cc1396fcd71befe",
+  "sourceMasterMetadataSha256": "e219fef1a8268621312ea9a2f947bb44360a0d4fc042ed624d6a8dc098959f05",
+  "gridSha256": "b8a6b1561f3ea75500cfad95daa053a12862b5101437c80f03867b9ec6a74a0a",
+  "gridSnapshot": "/tmp/kuniezu-map-layers/derived/candidate/source-grid.json",
+  "sharedGridUnchanged": true,
+  "previousReliefSha256": "78cfbcf6f28c13ce5eba2f1dcf812c4013c442cfeaf5bcb27516e7470d51b8e3",
+  "sharedReliefUnchanged": true,
+  "levels": [
+    {
+      "factor": 1,
+      "heightTiles": 310,
+      "shadeTiles": 310,
+      "masterPixelsCompared": 504753216,
+      "masterDifferingPixels": 0,
+      "heightValidityEqualsShadeAlpha": true,
+      "heightShadePixelsCompared": 320331776,
+      "distributedTilesChecked": 310,
+      "previousPngHashesIdentical": 81,
+      "previousPngHashesDifferent": 229,
+      "newTileKeys": [],
+      "removedTileKeys": [],
+      "distributedAlphaDifferingPixels": 0,
+      "newPngVersusDistributedWebpRgbMeanAbsoluteError": 1.2887926449304046,
+      "comparisons": [
+        {
+          "col": 0,
+          "row": 0,
+          "newSourceSha256": "3a69785848937bcfcf9a4750a2dd2eb3fecf535691ebc41a1940d781cd44fb02",
+          "previousSourceSha256": "183484107585adcb69a7774ddcea05ac25ae4ffddbb7bd7fcbde1cba49264e2f",
+          "sourcePngIdentical": false,
+          "distributedSha256": "ce3c4b870fe3ee6b0ed39f4438bc09aaa6d9aa7a9da6b34015befbea5b0a85b1",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 1,
+          "row": 0,
+          "newSourceSha256": "84688dfe23bfac0969ebff33477391a67e98e00b4b225a85ab0ef5639e009960",
+          "previousSourceSha256": "4fa2fb7e2bbd73d25d2106ca5a1b312b74829d55468e2aa5dfc9575107522d0e",
+          "sourcePngIdentical": false,
+          "distributedSha256": "ca99276751abf4631a8641f9436f1e8d3a4cc19a1e3b381e1117082f15523936",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 2,
+          "row": 0,
+          "newSourceSha256": "fbb18bc160de33ebdba8e3282153a0e8c987e22d8bee8d3b6dca57f50816d041",
+          "previousSourceSha256": "fbb18bc160de33ebdba8e3282153a0e8c987e22d8bee8d3b6dca57f50816d041",
+          "sourcePngIdentical": true,
+          "distributedSha256": "905e0a4c6cf6d9e67d64df24500256e7f47126b7205f3649ddd41228ceb1349e",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 3,
+          "row": 0,
+          "newSourceSha256": "6e7e325a4db2feb92df8a803bc550712e6fbe1960feacdc2245e427031f0efe9",
+          "previousSourceSha256": "6c231b7678d9ab52456b55a7894648ef7d481cf83511b202764ba5e2661aff4b",
+          "sourcePngIdentical": false,
+          "distributedSha256": "89ca0b73f0251f77fd5aca4d51ccc3567ce06ca0609e33ddb72ced61f6b4d3b2",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 4,
+          "row": 0,
+          "newSourceSha256": "11b19f0bda29af5eb80bb0bd3fedfdea179ff6e490488356d6e5b365e8108501",
+          "previousSourceSha256": "e698c204ac296ab9d643d43e09ffcaf8ad24b0faa549ead0bc0d42f3f1681584",
+          "sourcePngIdentical": false,
+          "distributedSha256": "c500666e3d4db45395c39d827413cc1f12c705f23323713bbff2aad9f6fa7618",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 5,
+          "row": 0,
+          "newSourceSha256": "23ffa61b031cbc39a0737088f9139964b0c90e3bcb3e9e6518f7cd365759402f",
+          "previousSourceSha256": "23ffa61b031cbc39a0737088f9139964b0c90e3bcb3e9e6518f7cd365759402f",
+          "sourcePngIdentical": true,
+          "distributedSha256": "64110ce5c4bf2fe86a42bd2dc053227569b700b6c183e29587f95fbbe17874c0",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 6,
+          "row": 0,
+          "newSourceSha256": "3e6907b49f64fb123b70d83aa34eb5ee60dc89ab7ca6d7356aef1946d5c54340",
+          "previousSourceSha256": "3e6907b49f64fb123b70d83aa34eb5ee60dc89ab7ca6d7356aef1946d5c54340",
+          "sourcePngIdentical": true,
+          "distributedSha256": "3959527116a0e7490a92519f52da0dc7d85cb028a34f43c5ad5347fb4367de41",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 7,
+          "row": 0,
+          "newSourceSha256": "93fc9690e7d69384b0755888f88d2493fcd9d4c7fd20d887a56dc3d25aad2035",
+          "previousSourceSha256": "fd2c0cae8ff72085d0033b739724dee8cb7a1a0c2efee7846f74f4c5f7c7cefa",
+          "sourcePngIdentical": false,
+          "distributedSha256": "09fed5350b5cb1ff0236541fad15b0751762746c049b8ddc1a175bc84c020d4a",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 8,
+          "row": 0,
+          "newSourceSha256": "5e7f58fc49fa9c5d5d0acd63ed37406fc5987f5f5b79e5a4a5831eda3203cbf0",
+          "previousSourceSha256": "162607bc77a8d9120bd219d56638423955ea537a0aa830d367c9f074a15bfa31",
+          "sourcePngIdentical": false,
+          "distributedSha256": "2a2a9b701844dd73e4143b014e97a7cb874ae2ab89a52c680df5234d6573bfe5",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 9,
+          "row": 0,
+          "newSourceSha256": "5bc8ec76622e5a475c90d2c8010c49bd400952a099748985a91c94b573714c27",
+          "previousSourceSha256": "5bc8ec76622e5a475c90d2c8010c49bd400952a099748985a91c94b573714c27",
+          "sourcePngIdentical": true,
+          "distributedSha256": "55dd0f4ab74c236e816ba0f29dc95a14c943c2f8b63ff35ccd896573b9e5f956",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 10,
+          "row": 0,
+          "newSourceSha256": "66b59849204398d50faf8e9a43dbc6dfd64f5c08a1f05e599325cc9046dd6238",
+          "previousSourceSha256": "66b59849204398d50faf8e9a43dbc6dfd64f5c08a1f05e599325cc9046dd6238",
+          "sourcePngIdentical": true,
+          "distributedSha256": "b0e2786b11cbbfe12880ece4b2e0b3f28b17b30ed24e36da0cba65fc03e94b41",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 11,
+          "row": 0,
+          "newSourceSha256": "b72a464c3dba9ed85a6d021b56f4dc09d83d1409c3a845998894767ed25b32ef",
+          "previousSourceSha256": "b72a464c3dba9ed85a6d021b56f4dc09d83d1409c3a845998894767ed25b32ef",
+          "sourcePngIdentical": true,
+          "distributedSha256": "58cfc94c2f5f2be81265b4503478e5010db0d026457ab8db95ea44a53641b38d",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 12,
+          "row": 0,
+          "newSourceSha256": "16195e08193821860218bccad74e936b3a99ae8df8129adf4493e84d3959325d",
+          "previousSourceSha256": "58bc05ff07f92ff1642f55deb7c0011745266431163667657da74a5e22176b6b",
+          "sourcePngIdentical": false,
+          "distributedSha256": "c447f61bbd73fb5ac2bff700a4b6b652a349360b9c053cd893f6fe863d974b18",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 13,
+          "row": 0,
+          "newSourceSha256": "1e83c93ca2bef0409705face09a835de9952cd1fb3b5b37d9e0e92768ee3394f",
+          "previousSourceSha256": "fd5d296b8db1cb4549cb57009fda3aac94eb16d0c4ff1e192a0942ada8137c2f",
+          "sourcePngIdentical": false,
+          "distributedSha256": "c304e80bb4e1238ca37545d39694c97e73c0b2e8fefc11734067d533d66e4fd0",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 15,
+          "row": 0,
+          "newSourceSha256": "dc4f9eb877f3905fb1377776bd1df9ef5ac6982bd0d2deaa81ca0fa3950d5543",
+          "previousSourceSha256": "df3e79e95614845759c167bdbb7b97b50eff8a815c19858edf559c7a858f980f",
+          "sourcePngIdentical": false,
+          "distributedSha256": "cd126903ee7db4bb5c4c22c998aa315ce650277568a89438c69edd9e0c0e37d8",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 16,
+          "row": 0,
+          "newSourceSha256": "14068baccf4d39a1649cd476c3952be96c2dad3ece36208c23e46ac6d1371824",
+          "previousSourceSha256": "8de931c2cdeb13bb17aa60452252e1861afc5b5a59ee1f4ec68e9a1cfba997a7",
+          "sourcePngIdentical": false,
+          "distributedSha256": "06e2d812188f0ba84a9cf7d7f5350f7d89d58e105d92862198656d6c772d5ad6",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 17,
+          "row": 0,
+          "newSourceSha256": "4d183cf1d66397ef8f93994bd2af929f5e580a5e5759d1b7121bc73fccda5ab2",
+          "previousSourceSha256": "71b7d10ac48e3450f973f3a94d75fca15b9504d4f980b536c2d3a00f4e3f8769",
+          "sourcePngIdentical": false,
+          "distributedSha256": "6a2d5c828a942855a972a0b2cbfbe24cfda57163ed83eb444847f568a508e3e8",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 0,
+          "row": 1,
+          "newSourceSha256": "e97e06dfc8f9c2b092f47690e8a11050f38816389930fca369e1b577551ff2e8",
+          "previousSourceSha256": "174b187e4bf53dee41ae7b06e93c7bddf77501a3e2f7a4273e4bd80cecd24eb7",
+          "sourcePngIdentical": false,
+          "distributedSha256": "1e5877a95912197179ffc6ab11b78e94dafe56ab20fb4b90fa555bc73198c015",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 1,
+          "row": 1,
+          "newSourceSha256": "c2ffaedc4ef341eef700bea9dd4c0feb8d8259db30fe2f90a9a120523e608b42",
+          "previousSourceSha256": "0dc66133000d91f6276fb0ab708d9a0cb1c56df8ed810489180c125de88c55da",
+          "sourcePngIdentical": false,
+          "distributedSha256": "48474d0a1d5536c744c68cc921ca7d6ba8fa9d87b583113e7fb5432d8c2f1299",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 2,
+          "row": 1,
+          "newSourceSha256": "7a8f9307dabc8c6183e7f76dca8d5a4f68944c15b50f28f59e205b2a0bd8f7ca",
+          "previousSourceSha256": "96f29fe136854c46cb94d519e4b4f86030bf3f6813029cbf587175a964a85d68",
+          "sourcePngIdentical": false,
+          "distributedSha256": "4dfd457e262a195cf0df4e46ac6d35254ae3d6b9d1e3b32dade5d0a84d2860f5",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 3,
+          "row": 1,
+          "newSourceSha256": "fb8c1c5d357490daae94baab0933d5aa2cff4e191d693f8bcd19ba59018630e7",
+          "previousSourceSha256": "8bd1f0ace769a7c7f8310db0fcc432d4cdb3ace74d2038d97efbe74599ddda1d",
+          "sourcePngIdentical": false,
+          "distributedSha256": "18515fed5342b660d434a731e3f5bbf041fb2f2d3137c9dec55c40772f3561c6",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 4,
+          "row": 1,
+          "newSourceSha256": "ddbce7416136c18403ef36a583dd3841909a4f238f89df6054d1923ad7dc5e67",
+          "previousSourceSha256": "c42cf185a36dc4e0ca6c2244cf5edc8be8a8a2eedb38ee0cb22eeeb233981492",
+          "sourcePngIdentical": false,
+          "distributedSha256": "d0ef2526037ed254e6485471b514dbb4ee4ad2a81caa828d029606ae3a23a4f3",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 5,
+          "row": 1,
+          "newSourceSha256": "c1bdc27aa2b3501c76ec6b32a1500a42d0161d790f9b7a6e8ec263d0525ef017",
+          "previousSourceSha256": "0a4124bac14eb39e77e6fc7609965442d43e6dd32a5127299dfa80dea668639e",
+          "sourcePngIdentical": false,
+          "distributedSha256": "8b8bc492902452650ef5350066b04675a6e6970286a8bc74f5ee6ad8478260d3",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 6,
+          "row": 1,
+          "newSourceSha256": "6a5c32e7408473ae150975923223f73b2ba2dd334773e554ffa864d351b43c88",
+          "previousSourceSha256": "6a5c32e7408473ae150975923223f73b2ba2dd334773e554ffa864d351b43c88",
+          "sourcePngIdentical": true,
+          "distributedSha256": "c61eeeb4717aae3dfa0b7eb72db5f67e5464b7821df80fa7fbea2905e113eb68",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 7,
+          "row": 1,
+          "newSourceSha256": "89d738b2af95b3126ccc4be4248d890cf8dce7303d18a16f4c4979eb592b5e1e",
+          "previousSourceSha256": "89d738b2af95b3126ccc4be4248d890cf8dce7303d18a16f4c4979eb592b5e1e",
+          "sourcePngIdentical": true,
+          "distributedSha256": "8eb74745e58d0868b7aacb8d6d197f70d470e79ea4a055924a95683a5fadf406",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 8,
+          "row": 1,
+          "newSourceSha256": "e489fbb7ebbefa8154fff10692254c5f56fc010a6f1578f6eddb3ca9cd2c261f",
+          "previousSourceSha256": "84fd645a8af51f77dd1e018fff170e0f984b502c348960455064a4c8cd3c5569",
+          "sourcePngIdentical": false,
+          "distributedSha256": "a3228c9055d43f9cff06208f574736f43506fc251059a50b850c0ccbf2bdf89c",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 9,
+          "row": 1,
+          "newSourceSha256": "b4ae27c6eb605e2001fd0b2ca0f281243fb9a1e0ca36334b8e9d984ab1207386",
+          "previousSourceSha256": "aca4986a12d4bcae432f454293df092a47a9302eca69c1cfc0612696f7df655e",
+          "sourcePngIdentical": false,
+          "distributedSha256": "894f93ecb4baacb948867e2f60327399840805a2012aa4ca46e396c4569042aa",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 10,
+          "row": 1,
+          "newSourceSha256": "67e62c10ffa4b66e19a077c04ed2d02284999372d320f6dae40d6804c2dda830",
+          "previousSourceSha256": "67e62c10ffa4b66e19a077c04ed2d02284999372d320f6dae40d6804c2dda830",
+          "sourcePngIdentical": true,
+          "distributedSha256": "c29b5451b5dc6a94d55b02b21f08df82d01fa9423eb05679c744a522c5e99ae4",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 11,
+          "row": 1,
+          "newSourceSha256": "62a1ec4e3b24b80f153e8d718bfbe809e5314bbbc957fab046407826c4087466",
+          "previousSourceSha256": "4e1ea642def9f8b47636e7da1b05f3fb1444c894296c9aa9eac4b05a3764b61d",
+          "sourcePngIdentical": false,
+          "distributedSha256": "e59a5a5007a2cc42426004fb6e749ccb8db534ab6ab57e3a09cc906a287ea0f3",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 12,
+          "row": 1,
+          "newSourceSha256": "c9e86f2047be5ae24f3014d4035f41fd3b9fe06ba16d46d08dc0eea20fbc7577",
+          "previousSourceSha256": "8e917434121ab06082c62a90c45b7adcd8f6c313e4922c9ff87b1957071784bb",
+          "sourcePngIdentical": false,
+          "distributedSha256": "93cc791a42535e4e0a9cb1e9df60e650d95b4a0ec387f165755951e8a5f742ce",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 13,
+          "row": 1,
+          "newSourceSha256": "72fa7c918efea39e3190ef54bbfa76f263ad85cd283180eee7079c50c1cff8c1",
+          "previousSourceSha256": "72fa7c918efea39e3190ef54bbfa76f263ad85cd283180eee7079c50c1cff8c1",
+          "sourcePngIdentical": true,
+          "distributedSha256": "8395b0864c1645094ebad2121a857d882e4349af30aa6c243ea24d0f37ff8995",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 15,
+          "row": 1,
+          "newSourceSha256": "a5bbc51a747e474ffc956733a16398911acdc3cbb660667550333cf504c38b16",
+          "previousSourceSha256": "47b2e90ab9710b1859364f3ae3a5243839f1b1bbb4b1ecb9a4fe590695e4391c",
+          "sourcePngIdentical": false,
+          "distributedSha256": "12a5750159996f96f43b1e148bc263664ff037b5ee796b5561817cfb76da4efd",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 16,
+          "row": 1,
+          "newSourceSha256": "7b94d0734c654ef4e8ef793eda01e5e3d467af8bec49b182fb5bc28afe5c66e9",
+          "previousSourceSha256": "bc51aa39cd724c8d474cdc11c0c670c9c6ed562f1a471ac3657d7feff4971eef",
+          "sourcePngIdentical": false,
+          "distributedSha256": "4a3736c42cf7f65fcf5da384bf143bfcd7ffbf276e49620c254d22bd297baad3",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 17,
+          "row": 1,
+          "newSourceSha256": "21e6ceedbed0b16cb156dd2fd26d70ff4a1c61dd76aad41853b1b01f470c3999",
+          "previousSourceSha256": "3554f006565852a09953c289a241dc24a60d3a73f707a05ca1c773f7988708ec",
+          "sourcePngIdentical": false,
+          "distributedSha256": "ecb72af669c0927c6c6e28eda3d48c6e58de3af7f9bd249b6749af1f3d3abc06",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 18,
+          "row": 1,
+          "newSourceSha256": "e62aa3040a19a5a121c10075840340f4f7c891f0aea4bbf5c2f6a71b320cb487",
+          "previousSourceSha256": "a9302a4ed5091144ccc60cbe296f824f501530e28487a00abd0ee6a96f8ba93b",
+          "sourcePngIdentical": false,
+          "distributedSha256": "a41a4457ba56fb85875e4e852e7c1229339787d7efd17aed8bb3907bd02dfb7e",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 19,
+          "row": 1,
+          "newSourceSha256": "91ca0496ac598e32b9ba899159c61e750b68961c09630a179ed2f5eb7de39003",
+          "previousSourceSha256": "91ca0496ac598e32b9ba899159c61e750b68961c09630a179ed2f5eb7de39003",
+          "sourcePngIdentical": true,
+          "distributedSha256": "55855adfe24981e0825c46fd5b5114826c3a0cee77a7e44d891371505e771f38",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 20,
+          "row": 1,
+          "newSourceSha256": "d329b84a7a30373725d0650fce667e3e6fb70315142e1a8dce6424a9435dc81a",
+          "previousSourceSha256": "d329b84a7a30373725d0650fce667e3e6fb70315142e1a8dce6424a9435dc81a",
+          "sourcePngIdentical": true,
+          "distributedSha256": "2822bfd711cf16e9b99b3a8b6162a5cb6a96a000e520898f087c0ffb170d482f",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 0,
+          "row": 2,
+          "newSourceSha256": "bdd693e433ebe02260c45f770e6c4ba7f9310c8519a9c8f34acff211ca56af4c",
+          "previousSourceSha256": "8ef71c508fa2758af33df4cde3c716b66a98e16ad2c1467f7712753945a4fe19",
+          "sourcePngIdentical": false,
+          "distributedSha256": "e3393bd907d099a16fd5b9ffb72f064fa13567bf3c7f91098e720c50e9460ff0",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 1,
+          "row": 2,
+          "newSourceSha256": "4d4bc08fcba05340990a5699f83a78263fb94557a10b94cd9ece6586577b2601",
+          "previousSourceSha256": "658a0406a7462acbdeb0256c3eec2bcb819366996b63211cab27d914f4e42513",
+          "sourcePngIdentical": false,
+          "distributedSha256": "93b0145158d476f48eebc1a18c6e7f85119112614361ff8b81d97a73391578c9",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 2,
+          "row": 2,
+          "newSourceSha256": "98e71e5372d2c157c1ec71ef9f08b73f53c33b67356596c06029a8b37345488d",
+          "previousSourceSha256": "98e71e5372d2c157c1ec71ef9f08b73f53c33b67356596c06029a8b37345488d",
+          "sourcePngIdentical": true,
+          "distributedSha256": "9d8dc2c31a37867eb114a743107b2ed9a7aa2731b06b8aba64692985db0926f0",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 3,
+          "row": 2,
+          "newSourceSha256": "d7a10ed9cb79245fa05884783ec2729a113986bfdf3e6218512dce3d7b061a55",
+          "previousSourceSha256": "cfeee99d6e31409a29cac77de513098c0fde1d044a47a18ff20ae19a16f3b148",
+          "sourcePngIdentical": false,
+          "distributedSha256": "ab8ab3cd9ef720d443c5042a8b7d661a176f45dc14345ab67b22af36be1979e6",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 4,
+          "row": 2,
+          "newSourceSha256": "cb56213c6b48b980abbd9ad17d39b98091eeffd3e3d7e347a07251c0b577edda",
+          "previousSourceSha256": "23d1dfc5eae3198eb0777f9762953e18e538dfeef0fb895b2a2243fc591feb46",
+          "sourcePngIdentical": false,
+          "distributedSha256": "5f2998ba7a12684fa8eb89051f042a466b863c088abe8409b70180c16a01392f",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 5,
+          "row": 2,
+          "newSourceSha256": "373956b803e90362d26b4eb208158083740c232ba0a4fe4753867b9476513a78",
+          "previousSourceSha256": "ac5d240e5f61c85773cdbe0e938bf661157f5807dc9b86b08ffe0e11b2de6963",
+          "sourcePngIdentical": false,
+          "distributedSha256": "c86d6250fddac699d81919e79d9fb8c459988f5de0c29662ef05a8789ef656ba",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 6,
+          "row": 2,
+          "newSourceSha256": "e52f3405ea37bd9c47c0d7caabedb8b582fc75844bb6f6e8ae5e05f51a6d1a95",
+          "previousSourceSha256": "e52f3405ea37bd9c47c0d7caabedb8b582fc75844bb6f6e8ae5e05f51a6d1a95",
+          "sourcePngIdentical": true,
+          "distributedSha256": "96e237ddd93983f5fa633b20a848b4b5f163c3333a9c9a16207250ed38442600",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 7,
+          "row": 2,
+          "newSourceSha256": "4bc4852255a47abd48f46106759f1f6521c6b91205f945e51ce752311ccd37ca",
+          "previousSourceSha256": "4bc4852255a47abd48f46106759f1f6521c6b91205f945e51ce752311ccd37ca",
+          "sourcePngIdentical": true,
+          "distributedSha256": "9b9befc7be80f54f056c51bfefa8e7cc784731f0809b518ac014b10c6f633ced",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 8,
+          "row": 2,
+          "newSourceSha256": "6f08b9a973af9b9ff4c442210d8b86ef730227b564c2d82cc5a76a3e1d3fbd35",
+          "previousSourceSha256": "6f08b9a973af9b9ff4c442210d8b86ef730227b564c2d82cc5a76a3e1d3fbd35",
+          "sourcePngIdentical": true,
+          "distributedSha256": "b015a75aec62a708a3d4472d8bcf12bd6ccba3a3ca8dbea8d721f64ccdf3245b",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 9,
+          "row": 2,
+          "newSourceSha256": "8344792404f728b0534a78876c5905b03c86cb6cf092503a92fe490ed08d25cb",
+          "previousSourceSha256": "8344792404f728b0534a78876c5905b03c86cb6cf092503a92fe490ed08d25cb",
+          "sourcePngIdentical": true,
+          "distributedSha256": "9ae941802038bdf6774bd15c283af1494d1398fa2019f57a010c6b9c5b7fa403",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 10,
+          "row": 2,
+          "newSourceSha256": "04f643d7ea9a27282b3ad75b1529e7bc67c447f02428b73d0856152ba3b9a80e",
+          "previousSourceSha256": "5d8191ca6b5a138845de16a6436007c58905b9731056957afffb085e834ac86d",
+          "sourcePngIdentical": false,
+          "distributedSha256": "9653a0ae1cb0520eabfc80920c947966b3ff8237cf2fe73ff520dbca76b474b4",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 11,
+          "row": 2,
+          "newSourceSha256": "f3b47ff857e39148a723afc6c7494328d9a490d80cbbc4bdbf0951c6815a104d",
+          "previousSourceSha256": "71d9ccf54405da2bd8d0aff879e62b8c6b556fff0425c2a7b99c5b0f6e47f349",
+          "sourcePngIdentical": false,
+          "distributedSha256": "887658f0a221474a7e7f802d78f129aaaa5173f63c690c8d9aca0e07401f3a60",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 12,
+          "row": 2,
+          "newSourceSha256": "c86a8ad2271e23743e60a99b033bf68d18838e3533adaee8acca11ed7c040438",
+          "previousSourceSha256": "c86a8ad2271e23743e60a99b033bf68d18838e3533adaee8acca11ed7c040438",
+          "sourcePngIdentical": true,
+          "distributedSha256": "a003b9bcc3572bd33650be307089d6c76794e55c1c6ec790cfbc94beb643abae",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 15,
+          "row": 2,
+          "newSourceSha256": "9b923f94f5340d30085934fa562003ea6e93f9267e2fcdf2630bc782a2d4f8a0",
+          "previousSourceSha256": "3558918a09471f861fce4fb956c1c124122925d89ff0bd92a3d9b4b29dd6c4c1",
+          "sourcePngIdentical": false,
+          "distributedSha256": "63c0faba2ed1f2b4956824c0f59a25362f00b62859983cfeca42dfe31562857c",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 16,
+          "row": 2,
+          "newSourceSha256": "a3b0b2a63f6e2472c6bfa773970bc539ca0d2d139ea988cdf211794a38a597d9",
+          "previousSourceSha256": "d139a58361b54ef52048bf0d89855d03a3d3b1f78dac250ce5931279c97f86e0",
+          "sourcePngIdentical": false,
+          "distributedSha256": "9b53aeda6f77c2622945a8af92385cf273c1eeff6ee3c318f6261464adb89747",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 17,
+          "row": 2,
+          "newSourceSha256": "c6e9713d846157e07cac1e874e2d3380ca2f4029d03261986557a35ee11b7cf7",
+          "previousSourceSha256": "26db2d87fe6c79f9cb7eaeed156179929129be2f2e364f7f6e5f2c95be616db2",
+          "sourcePngIdentical": false,
+          "distributedSha256": "2798b26db7a2adebe186a861a5551405a145ba98a19b038ee722e3508e79d66d",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 18,
+          "row": 2,
+          "newSourceSha256": "a2f22b51f32c89ab289de34592e783ed28078552130ef916a7f4907dc787fb3c",
+          "previousSourceSha256": "c97b50c64072569ecc2c0634f9f31109472b0a09904c082f49d54e6782eb27d2",
+          "sourcePngIdentical": false,
+          "distributedSha256": "7d65560051e428f9e23b39fb6ef2eb6c8f29903f9430bb6d9c238b0bbcd4b071",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 19,
+          "row": 2,
+          "newSourceSha256": "cb4750d0ca644e995e65847fca5ec8bd9d9a0c93c05ef908cde11346b512e622",
+          "previousSourceSha256": "b1dee7cf34aeca5400395c4a5411f5d7470154e1fe9085d893ba6dd022b3215d",
+          "sourcePngIdentical": false,
+          "distributedSha256": "b3e28aa3d41ff6e6e1da419542bf7cfecb854c63b577a70a9735b03d3bf47723",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 20,
+          "row": 2,
+          "newSourceSha256": "5a5f9947a4b0a394387d62b993ac1aa72d36ddac4d1ca521bc894395c6eadf20",
+          "previousSourceSha256": "bb4b2fde96f86dc6aa11fb562e91654d95c01bd2ecb07300d5ac29f3f87fcdc8",
+          "sourcePngIdentical": false,
+          "distributedSha256": "18c6104c19c755a85f4bf1a1a39c5b09bd357b9f809159ff772e268aa1c1eaf4",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 0,
+          "row": 3,
+          "newSourceSha256": "08221b2c9d15f1b2443aa96f4f75bd171558196d390e17499938f43e2831dd34",
+          "previousSourceSha256": "ffd7bce63800ef7d460f3ec8fc8784ffb0a23cc5eb7887acd39528400b23fc62",
+          "sourcePngIdentical": false,
+          "distributedSha256": "114ef65910cb369b0d3895aff122bf5cfd278af915bbb5a9af72d5826cb280e6",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 1,
+          "row": 3,
+          "newSourceSha256": "947e98948a61b8c6db38d38ee0a4f4da8bac84365d63f15dd801cf3c86c66484",
+          "previousSourceSha256": "3b9211ff8a615b2f163f53521d703dc4cd56459f3b7dc004a2fc2ca930cb2806",
+          "sourcePngIdentical": false,
+          "distributedSha256": "31694b9ad0a1c767bc4b8b5dad4c9a218f90027ed2cb0968f185cf44392cd0dc",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 2,
+          "row": 3,
+          "newSourceSha256": "ff246378d8cdf004ea9eaf0a7c8f1cd9052c00bdd90816edac0ba8c578bb4751",
+          "previousSourceSha256": "415d06e916cd24c52a5516008f2fa0285bde8c8071da0752fd6f5b1e10ca490f",
+          "sourcePngIdentical": false,
+          "distributedSha256": "a27f9becb25c30ccf56625ad26668f6003dfbeae30eb48b306bb805efbf2f910",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 3,
+          "row": 3,
+          "newSourceSha256": "4999b88db4e686f3d9a72ce333ac7e9dd1710e66033457ab99256490c1ab144d",
+          "previousSourceSha256": "4999b88db4e686f3d9a72ce333ac7e9dd1710e66033457ab99256490c1ab144d",
+          "sourcePngIdentical": true,
+          "distributedSha256": "8796db95b4458ca7b57149784af6457cd34443a629b6b9b74ab494b600c0b7b6",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 4,
+          "row": 3,
+          "newSourceSha256": "93fd3f4a61693397e7744873c678ea439d31e3bd218bf0c9c13acbc9859518f9",
+          "previousSourceSha256": "f67eef03d604bb1dafd7cb469b1b71adb79fdef67de24e4fbcc4454c1f261739",
+          "sourcePngIdentical": false,
+          "distributedSha256": "af88a1df6a3cecbc3351b18af2c5e1256d203859eaf332afbb957404f460c9f8",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 5,
+          "row": 3,
+          "newSourceSha256": "e736a9cce957174ac343da6003342a0a8f695bb0eeb16ea35c0ba87c92d800fc",
+          "previousSourceSha256": "3461b38ee09af6b72c14638279bbdafb62c58512bea7e201d32e6452a0a5c33a",
+          "sourcePngIdentical": false,
+          "distributedSha256": "e8f5e1c8d75bd839310ae125aa8f95b5528e2813a94268c890c902e52f86d882",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 6,
+          "row": 3,
+          "newSourceSha256": "847721c69048f4cec078af398027901ba577fa6127fa9075a7ad6151c3687dba",
+          "previousSourceSha256": "a1bb9bea38218e349d2a3f4adcc37cf8101c3d5abd3f8e537c863be844e9dc60",
+          "sourcePngIdentical": false,
+          "distributedSha256": "60149913da19ab585ff028d27cbead2de2433425662cf4d04ea9de1eff4e44f1",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 7,
+          "row": 3,
+          "newSourceSha256": "f8501439d546060e01cb7e069d787ee542a141df7c31206a98b2d3602390f0d2",
+          "previousSourceSha256": "a20c7259d26ade5df31f0d7978b4f0d9c77404de9f6e664e86676645dfdfc7b4",
+          "sourcePngIdentical": false,
+          "distributedSha256": "be37b869d60723dd1dfba413794cbf41b8923f688b074f2e6067ff169a4edd46",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 8,
+          "row": 3,
+          "newSourceSha256": "24a750448961dffb3c531439275172d8bd00a0bf93fcd6d953730b4828b9af23",
+          "previousSourceSha256": "5b4190f4e6ea54d2f4713e90108f6adb934ee132140f184714bb1e2cf8b3cd13",
+          "sourcePngIdentical": false,
+          "distributedSha256": "a8c198e8434e806ecd417e8e222e370b8472968fa77796026739da8423129d6b",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 9,
+          "row": 3,
+          "newSourceSha256": "576effed109a3cafff55543cb07e9084b0d69f12bc85d38b8af9ec958ced27ae",
+          "previousSourceSha256": "a07360b33c64ed6351fc2d1a04b0c93564cb9fab2f127428c74b801dd1c613f4",
+          "sourcePngIdentical": false,
+          "distributedSha256": "7d842b47df87286e939c1c7553191370a1375a67145acba49fd22cb1a224267e",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 10,
+          "row": 3,
+          "newSourceSha256": "78b4319e06951fd23193eb6fcdc9d905e6a43c31ae6355707885127975ef13d6",
+          "previousSourceSha256": "e07cfbc1ae059bfc0470a6bd40184fc6823db4ca2ae8d6a17b56fa492b3baf65",
+          "sourcePngIdentical": false,
+          "distributedSha256": "079676f464dced79de0882fb4bed149ff77021de5461e7d9f5b846e766be2be2",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 11,
+          "row": 3,
+          "newSourceSha256": "4674762af82de9f3adf4beb1978723939afe38ba7dbddaf9d7b7b68c7d217cf6",
+          "previousSourceSha256": "e5813288fd3d0953b229e6dd3163b3b4cf95fe75ff94d05ce9fb7c84bf8b9e46",
+          "sourcePngIdentical": false,
+          "distributedSha256": "a784571d2a6b18e78a43a8553990b4409224568546496031aa6b4007b32d2fa9",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 14,
+          "row": 3,
+          "newSourceSha256": "ee3640e9ae4173daba3ed9974b17cf299218fa3d0244a83e217bceab06d6e396",
+          "previousSourceSha256": "0241b93c230188567f95879370233f65540219cced6dacee6f2b1e473865248f",
+          "sourcePngIdentical": false,
+          "distributedSha256": "c752123186e53cb882495d5ce8d4cecdd1ffdc95be9ad83b883356e4fd1b7adb",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 15,
+          "row": 3,
+          "newSourceSha256": "d245ecd6bc02708c2d9fa3e19b1f6f1d08750bb1ec5d088da873198f22a7fffe",
+          "previousSourceSha256": "6401e0c871bd5ea175979f5e24cda86e55039cc66452f057ed236cf2d722d2a6",
+          "sourcePngIdentical": false,
+          "distributedSha256": "37c9f6e31fa798b6a861f58b6bce012db6920992fd6d77d78bb8f8099e1ef00f",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 16,
+          "row": 3,
+          "newSourceSha256": "102c41b961db36aca916e851221045a0abbcfbb0f70e09337d5777a98c0774a2",
+          "previousSourceSha256": "2d8d94ea0f5482c7a2f33cad07cf7686dc84ad7797ff048c3e99967dab93312e",
+          "sourcePngIdentical": false,
+          "distributedSha256": "567f71209a04252ac4a4bf89d73c8c14a958d60329ceb6443d0ffcb91ea76a8f",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 17,
+          "row": 3,
+          "newSourceSha256": "0892921b83b2c165c21cfe246bb8deed5ade8962bf08cc11ce7394e1207344b1",
+          "previousSourceSha256": "0892921b83b2c165c21cfe246bb8deed5ade8962bf08cc11ce7394e1207344b1",
+          "sourcePngIdentical": true,
+          "distributedSha256": "05775f6ae394f4d1273d75c10264d900d4da815244616e04440c186f7cf1286e",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 18,
+          "row": 3,
+          "newSourceSha256": "5c8bf1fce820dd0df2110088f3db2714015e5945b73043c9e9cc35dda90b8d75",
+          "previousSourceSha256": "6618405318e2e7fe11686218cc32815027d8f4a9671390be61db1163468a4c4b",
+          "sourcePngIdentical": false,
+          "distributedSha256": "53e0168c1c99d6683fd5b51b21a73c750db77dc5818cd9b08935b782628833f9",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 19,
+          "row": 3,
+          "newSourceSha256": "ac0c21754d46674ff120df74ebd5a5178a6354cb6a0abb3bc8f3ac591ca9c8d8",
+          "previousSourceSha256": "f62f6a088fe1a3a831351a38dda4ce0c984bc3647165aa4da5162145cccedb1d",
+          "sourcePngIdentical": false,
+          "distributedSha256": "c3b7b5ec9038e95d706c15f01c8b268c95454e7724db17a8dafc65eb46a86753",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 20,
+          "row": 3,
+          "newSourceSha256": "64ac246fce2eb6d504bf295ee5c5d421d9880affbccdd8cce2b2697a14827973",
+          "previousSourceSha256": "0f73816cfd7cfee7e983803cc92a007158e7228d97f538029ff032e8730bd8b4",
+          "sourcePngIdentical": false,
+          "distributedSha256": "b51250601e4568672396a3e21ea8247c1e3513199570a9fd11433505ee929973",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 0,
+          "row": 4,
+          "newSourceSha256": "8ae7a856234d549e44818fa15966882fd6d160bc68dd9a05231cc4f3736d66c9",
+          "previousSourceSha256": "a824f3ac480d3b4caf9e49610600490b917439682c18e1c59d5011a9196b3675",
+          "sourcePngIdentical": false,
+          "distributedSha256": "c0bce1dbc3f1b09f49694b26d95e484039c4d835f8435e56bdcbd98d5c3603fb",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 1,
+          "row": 4,
+          "newSourceSha256": "863093e73c7d166749e1c98e38b6b7591efc24961e772137ff2ca612a8eb4fe7",
+          "previousSourceSha256": "aadb2d625285769bce9193a6727fb1fee3b1ac7ca6bcad0b3fc3096bea5bdd03",
+          "sourcePngIdentical": false,
+          "distributedSha256": "6a36c6680524bd50b8d12b8943aa795207cdec178accf87a6ff578935204539a",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 2,
+          "row": 4,
+          "newSourceSha256": "eb9ad547b1485a22e2ed1e75669ed8aa105639694afdab1ca38ce27744b42dba",
+          "previousSourceSha256": "6979237981df369684d58edbe24f365d4124631c319b0fa2093fef464728ce1a",
+          "sourcePngIdentical": false,
+          "distributedSha256": "bdd4bc8fad229fd150e944de514aa76f9ce56f53a8a1248eb5ca5ce3b38cb5d6",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 3,
+          "row": 4,
+          "newSourceSha256": "6f85343ab9fb3c6fd625f6612591db99520cd71fa2d921ee756221dcb9bf2ae0",
+          "previousSourceSha256": "6f85343ab9fb3c6fd625f6612591db99520cd71fa2d921ee756221dcb9bf2ae0",
+          "sourcePngIdentical": true,
+          "distributedSha256": "e5caac20f859ea7884ed485c2dfe704b6235e9c4afe861e21eea8790a8ff470a",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 4,
+          "row": 4,
+          "newSourceSha256": "77c73254d1f7c5062bb992443d45b08d2a383f3cec739741506a0693edcb42ac",
+          "previousSourceSha256": "ac131e35d3d722fc634cfa7b881ffd24321ee201114fdb935e097e15e33aa16f",
+          "sourcePngIdentical": false,
+          "distributedSha256": "ec4841b6143a90a85a1677b52c08d209204f32350b74dfaa2877645d5131f291",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 5,
+          "row": 4,
+          "newSourceSha256": "2def3b5a1713b1f707932cc7369492afa11e589cdd44f3002e90236d9104dc53",
+          "previousSourceSha256": "2def3b5a1713b1f707932cc7369492afa11e589cdd44f3002e90236d9104dc53",
+          "sourcePngIdentical": true,
+          "distributedSha256": "5ea7625fea29cd3f0bdad58bc258bf430e8eb006e275ec8dd394c2713a210ad2",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 6,
+          "row": 4,
+          "newSourceSha256": "9f0b8fb4a3075a74aa1fe3a8356c040840fd0f88cdde021f4a88089b29f99bb1",
+          "previousSourceSha256": "2bbb37863c9d6d624497e02665f8e3e84bb49a2bf03e2249f11fc9eeae3ca3ba",
+          "sourcePngIdentical": false,
+          "distributedSha256": "2d204bb49d8ed1ba0fe8213ae8ceb2c0e52dc948b78eb2cc616fa865a3ec794d",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 7,
+          "row": 4,
+          "newSourceSha256": "33ef8d30f39e3a3c7c5bf345b8c79602a7ddbb4ca9b16a621a3ef359a5e7b9eb",
+          "previousSourceSha256": "2dcd44dacc476e860066b05e7c9bee3eeabd9bb05b88cb018b981c66324cdf14",
+          "sourcePngIdentical": false,
+          "distributedSha256": "52d7cf11b35f3b1922b2229c2e668c70e17c093de814498e7e6634ed2b572cfa",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 8,
+          "row": 4,
+          "newSourceSha256": "45de91ad8aaa896615f6f0c85eb710c070232a2ae834b7c2484d577a23802602",
+          "previousSourceSha256": "45de91ad8aaa896615f6f0c85eb710c070232a2ae834b7c2484d577a23802602",
+          "sourcePngIdentical": true,
+          "distributedSha256": "f38c374503109888f1740ab85e2bf436235b28e1ff4df33d7af079748577da5e",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 9,
+          "row": 4,
+          "newSourceSha256": "45de91ad8aaa896615f6f0c85eb710c070232a2ae834b7c2484d577a23802602",
+          "previousSourceSha256": "45de91ad8aaa896615f6f0c85eb710c070232a2ae834b7c2484d577a23802602",
+          "sourcePngIdentical": true,
+          "distributedSha256": "f38c374503109888f1740ab85e2bf436235b28e1ff4df33d7af079748577da5e",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 10,
+          "row": 4,
+          "newSourceSha256": "8872b10406720599812e7d20118c75347634c299f99fbfe68c9f48d3b98ded6f",
+          "previousSourceSha256": "c65d4f446c2c0741d3cc21d6e679981ebb4251fee70e5bcb2b9f582c5d2707bf",
+          "sourcePngIdentical": false,
+          "distributedSha256": "1f8097c900106b25bde2346536c2412b990974027c72e07c7b93bbf4e1d5fced",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 14,
+          "row": 4,
+          "newSourceSha256": "bbaa08be4be454ac2699bf8f1f88536a1eb14079031d902f7ca3ea4644ae32b0",
+          "previousSourceSha256": "85040adf8e2b8e74d51fb6d16965c1a246d431efc982ed3d64283088d379e464",
+          "sourcePngIdentical": false,
+          "distributedSha256": "1bf672e4f640dc19e2887d82f37326ee6c22a257a981340496ddcff10b221027",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 15,
+          "row": 4,
+          "newSourceSha256": "8bcd13bcd017f877dd59132127ce5459ef204d178d21ad3f2e4fdca822c9a40b",
+          "previousSourceSha256": "2f6ef08625c51f6d77a66a2a5f71494af6f7edab664faa79048527dc01ef240b",
+          "sourcePngIdentical": false,
+          "distributedSha256": "f1f034e323c0e5c0b3bd36045e68767ea60473ca2c6f5ec64233a7ed72694e54",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 16,
+          "row": 4,
+          "newSourceSha256": "4270c4aafb82c87614c613ac9a7572447294812a2ded56516f366198cca9b940",
+          "previousSourceSha256": "5925c7124473dfe73908fac332adf726b306af98f025fd012f6b412b4b62a0d4",
+          "sourcePngIdentical": false,
+          "distributedSha256": "3b1a4a86945e998255b537d0775f0d77a1fb1fef40a07549ce74d0d2aec0dca3",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 17,
+          "row": 4,
+          "newSourceSha256": "5d272864a03c7fbe060f06ece009a09be2ed9796ca308985ac5cc54002c45fb9",
+          "previousSourceSha256": "577f211ccf7032b02350297f53576737a62b20dc3ee85599d483a13a080f9097",
+          "sourcePngIdentical": false,
+          "distributedSha256": "cf53d091b5f97391da2f13c4d170925ed34858ea7f9357e1c04178141e05e012",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 18,
+          "row": 4,
+          "newSourceSha256": "70114f34de48ecbb2af4409353381c83df05b19416444d1ba14ba3d354885265",
+          "previousSourceSha256": "2268380ff9c98bc71d90cd8256147912af06e588d05f407f8dfa35d131e2e4d2",
+          "sourcePngIdentical": false,
+          "distributedSha256": "d179b8204059e821fdebd95dde66d1fa205c4f4e6bc1db7f2e96b15f6ec7d170",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 19,
+          "row": 4,
+          "newSourceSha256": "45de91ad8aaa896615f6f0c85eb710c070232a2ae834b7c2484d577a23802602",
+          "previousSourceSha256": "45de91ad8aaa896615f6f0c85eb710c070232a2ae834b7c2484d577a23802602",
+          "sourcePngIdentical": true,
+          "distributedSha256": "f38c374503109888f1740ab85e2bf436235b28e1ff4df33d7af079748577da5e",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 20,
+          "row": 4,
+          "newSourceSha256": "a1f479469bfa2e6ce65ca20ad5c7f1f5c0a97a06acb778973d414db4a67af814",
+          "previousSourceSha256": "a1f479469bfa2e6ce65ca20ad5c7f1f5c0a97a06acb778973d414db4a67af814",
+          "sourcePngIdentical": true,
+          "distributedSha256": "697621dd6512b7cfac45bb2ab456a5f677ca17092b8c6f189132bf5b5f1320cb",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 0,
+          "row": 5,
+          "newSourceSha256": "06dad31c9306d31936d0dda8d9e6db0921e6cf460ead51ed936c39b4d445dc51",
+          "previousSourceSha256": "2ffd56380854d1ac8e5c385164feecb6ee65ea727badc86519e54e62049b6e50",
+          "sourcePngIdentical": false,
+          "distributedSha256": "73b6566212daa968936f0e6d4d9ef0b4af7aa3f47cb2d5d58d3be3f5885fb59a",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 1,
+          "row": 5,
+          "newSourceSha256": "98f157a6b5df926c473ecfeb1df6f51f411bf2221d4850a71cef5b7dceeede07",
+          "previousSourceSha256": "98f157a6b5df926c473ecfeb1df6f51f411bf2221d4850a71cef5b7dceeede07",
+          "sourcePngIdentical": true,
+          "distributedSha256": "a8bcd80e59369aecabc3ba4ade65ea16e2a34ebc4a5f958c027d4f807b67a525",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 2,
+          "row": 5,
+          "newSourceSha256": "c6ce22133fd476ac1db3ccb810925c8cd74476e4b72c33ef92f1cb54df856ec8",
+          "previousSourceSha256": "c6ce22133fd476ac1db3ccb810925c8cd74476e4b72c33ef92f1cb54df856ec8",
+          "sourcePngIdentical": true,
+          "distributedSha256": "6828fbe31faa12127ba57a3c4a6a3661c1c5f941139e11e20b889517081a3dfb",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 3,
+          "row": 5,
+          "newSourceSha256": "670b595fa1e28f8fb798917ef6152cfad355f00f8ed5435bb51bd6b72716e5f8",
+          "previousSourceSha256": "397b4e5ca225130db93d465850b2cdbbca935b32fe9ef07d0af60edd27994219",
+          "sourcePngIdentical": false,
+          "distributedSha256": "d14a259ac25884744dfdf0295a701db60314c558ff5542424a8212de83579135",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 4,
+          "row": 5,
+          "newSourceSha256": "721669e0894aafd5acf0feab18e7c0402350600f09c0376aaf17203bb17c14d6",
+          "previousSourceSha256": "721669e0894aafd5acf0feab18e7c0402350600f09c0376aaf17203bb17c14d6",
+          "sourcePngIdentical": true,
+          "distributedSha256": "5ad0c44183001dc57ac1b4774aa957a830eefd4ae3be711bbd50a5c6bb7c48d0",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 5,
+          "row": 5,
+          "newSourceSha256": "bdc4b185085572ba6766c7bf794224bbc19e8de7ba9de9d436a0fe79e9228b3e",
+          "previousSourceSha256": "a37b6b9efddb1d6211e5e1ac56e14e7e2a40a28c5e939bf2cc50a8c81aca098e",
+          "sourcePngIdentical": false,
+          "distributedSha256": "3b16ac325ec6f6ff7806083f81539f9a08d3efe54615bdce4666cd13dea6547e",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 6,
+          "row": 5,
+          "newSourceSha256": "71b1fbb016497a9617f4dd36dfc901f6d3b143c2784110cd1949bcd3731c090e",
+          "previousSourceSha256": "6404c822ab832e233302a9cc39d82418a3a417f543643c11a59f659a62716c6e",
+          "sourcePngIdentical": false,
+          "distributedSha256": "15f66c8921edfd8e590177261d292bb261ff6d3d71bd794207309c55400a2571",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 7,
+          "row": 5,
+          "newSourceSha256": "c46627dc6fe142d2a847b3824080147b9e61e34ffa3498b497dd6a7ad21334d0",
+          "previousSourceSha256": "f53436fb215ea0d574de691868c6d4aeb35c8a66da34ae3f29b859647afe9cc3",
+          "sourcePngIdentical": false,
+          "distributedSha256": "98e3803c970fdbda844d1f4592c06720720b7c1621c5088e2b1e75dd0301bc9c",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 14,
+          "row": 5,
+          "newSourceSha256": "0fe778e30f3784fee1b442029c0d5d11233e2ca683dc454caa70a90a8e1edec3",
+          "previousSourceSha256": "27a83e7eb292c19f1d7f8336f9a9d8e7d929eada6467cd97c9849b01991f619b",
+          "sourcePngIdentical": false,
+          "distributedSha256": "2fec7442a906489db6755462b83b939a1a7e12821fa319765ea0f9c328b33ce9",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 15,
+          "row": 5,
+          "newSourceSha256": "9cc0fe90fe10e2a0977e65dae4074034ced6063fe72a5ba7166fa2cfa613cab5",
+          "previousSourceSha256": "89065eae7a8a6304895b455f78adffb6cf15fcb44e119b8f47de5a8491669de7",
+          "sourcePngIdentical": false,
+          "distributedSha256": "92f5705ea16edd65396df9c171ca6dea9977592b5c02e4feb493a010826fbf56",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 16,
+          "row": 5,
+          "newSourceSha256": "8fcb18ea0f9b3cd217687e046745e8e16e38ffd74850039b4b1e7c9ea74008c8",
+          "previousSourceSha256": "91fc3db6d57ea98e88a569b2f33110abf3e5a47a45807d24db2691f08a79b358",
+          "sourcePngIdentical": false,
+          "distributedSha256": "1eee747c0c6baefc5eda31f800e65e38de57261ad10b911d60199ab8f555e8a1",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 17,
+          "row": 5,
+          "newSourceSha256": "5cc0b828f53627db822b3edde122db38e9e6e9d6b668939901cc9f6ce3cd993f",
+          "previousSourceSha256": "ca10467fe3ef03f7068e018047f9834a03d10b3b2435efe3f262e9ddf0f83e8f",
+          "sourcePngIdentical": false,
+          "distributedSha256": "0cbf5eebefca3b001351bca76a960dd4e0db04ead05b91826fd99779d8a8d71e",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 18,
+          "row": 5,
+          "newSourceSha256": "1d23d42c7afe953fd2f650e83bb8b25f6808bd1f09f202312fdfdb9cf72d64e7",
+          "previousSourceSha256": "1ddf7814acf1002a482fca4606e89f7b94ff8fc2a997a508a568421e78494ac5",
+          "sourcePngIdentical": false,
+          "distributedSha256": "8aeb5477ff9226d8b189ed6dfcfd2c985f508633e3ff4c30cb597e1f3af959b8",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 0,
+          "row": 6,
+          "newSourceSha256": "7e525b75518c11371972a711b6cc5e122dd9f0df713623de0c65b673bd1dc2c8",
+          "previousSourceSha256": "7e525b75518c11371972a711b6cc5e122dd9f0df713623de0c65b673bd1dc2c8",
+          "sourcePngIdentical": true,
+          "distributedSha256": "bc9ea5e59eafa7b52a6565d5913f96039837852bf5b31f234b02dd37a31c8291",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 1,
+          "row": 6,
+          "newSourceSha256": "daac3ff9ecd6a16e36e67a1eb8e8de038106ba2cba37ec811329e3a12f34a2e9",
+          "previousSourceSha256": "0e0e8357406e8ffa4b389a46bc42129c346c471274a68c9a5c257b41d9322347",
+          "sourcePngIdentical": false,
+          "distributedSha256": "24e7faad83a85ecb94996a3aef00ec76487f0fdc4dda6c2e279735ec14b813ad",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 2,
+          "row": 6,
+          "newSourceSha256": "935aeced761ba85fe7f6bf58c489494b39be2c9c329b92e83033d76b2797bf95",
+          "previousSourceSha256": "3d811a7338368492bbb2a2a00eaab1956221dc242368d4637d4c02cb2bab46e7",
+          "sourcePngIdentical": false,
+          "distributedSha256": "a1e5a5e714ea1b1b28fedbe509c5d306a06cc3defccbaa192ec8507db81d0d50",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 3,
+          "row": 6,
+          "newSourceSha256": "36ea9bc3aaba5b0e9d13e29fa1d069d4810116b39d58756d390ee4fbe9132f42",
+          "previousSourceSha256": "36ea9bc3aaba5b0e9d13e29fa1d069d4810116b39d58756d390ee4fbe9132f42",
+          "sourcePngIdentical": true,
+          "distributedSha256": "25bc6e55697bc2813f0c8c2f221a1a22e878064a9ec022e3370ab83c4b3671ec",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 4,
+          "row": 6,
+          "newSourceSha256": "c9ae903157290db5834e8ed0ca16358578f0fe6b0cb4bad2301016b79d2cdd5e",
+          "previousSourceSha256": "70b7eb1a23cd6e6cb580f6bca86762ba094f4b0a0a9b7cda86a56a3f9305ad23",
+          "sourcePngIdentical": false,
+          "distributedSha256": "71a89cde9f1d1c18add715308342420ad63ae666180e19fa123804a5f6e2f7db",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 5,
+          "row": 6,
+          "newSourceSha256": "a7811934578823922aab1e63207491a401df877a6bf9e7c71bf36152d8f4e9d6",
+          "previousSourceSha256": "bea49c0f166253ac50c194c26357237da83427d41048067eb506e5c629114e5d",
+          "sourcePngIdentical": false,
+          "distributedSha256": "ba12f1ee2a96af05296bd0adf54c28016ac672b62ac5e669d7e9c587e770f116",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 6,
+          "row": 6,
+          "newSourceSha256": "73b6491da27dfc5ee31be1e2898951b85d79027fa3fe26aad630dbc15016de6a",
+          "previousSourceSha256": "b19c1ed83ec2442c670e0ef3bc26407d53a178f7936dddff346d2c9b5315b330",
+          "sourcePngIdentical": false,
+          "distributedSha256": "da0917a78076e4887cfbdcc0d95858ca10a264218c06f3818af10f611cdfe64b",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 14,
+          "row": 6,
+          "newSourceSha256": "263e820000631887ab202582d70f9f2f49ab36a34acd4f45e318c803d964ddb3",
+          "previousSourceSha256": "b8584f49b71ab4db8d267528e81923c0ad85e89d1ad695cbe96b3e66d64f2148",
+          "sourcePngIdentical": false,
+          "distributedSha256": "24d9b573037e293281073498df0bb84b9f29139c1481ab99b2ef3ef4fb73faab",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 15,
+          "row": 6,
+          "newSourceSha256": "361a086b5eaa3e9116b573511f6f2b5872a30b64f6940d8cd2a5c211a8e34170",
+          "previousSourceSha256": "600513ed550831eb529dc57113516fc073d7e0f8138d9ac0bf16d9d16162bd18",
+          "sourcePngIdentical": false,
+          "distributedSha256": "32a719533727a36e7d42b5db9f0b9f8ad9641b06426d9192f8f900ae02a83aea",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 16,
+          "row": 6,
+          "newSourceSha256": "aad05e2d5417e8b668ecba867928a5d0cecdc329108edffe51258220a78ef921",
+          "previousSourceSha256": "89ca4e79f4872992c4d2aae8696bbdf8bc8c2014b1f7812b7558b0cc3981ac40",
+          "sourcePngIdentical": false,
+          "distributedSha256": "f22b3258689084af950c1743be78ba691fa6952efde9e948ccbaa90b4d7f1215",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 17,
+          "row": 6,
+          "newSourceSha256": "a128753c6a8341c540297aa807c978986c2651498993ba3c72f2a6a041c0ccdc",
+          "previousSourceSha256": "73e2c6f2c2927bcdb90168eef5ff56696b4653ec74dd9acc4a66e5c016400bf3",
+          "sourcePngIdentical": false,
+          "distributedSha256": "5f4aa63d4caf84ad3a7f8d55625643676edaba2ab3544b1f24dd37b742c216e4",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 0,
+          "row": 7,
+          "newSourceSha256": "33679ca9bdb2ead3bf6fb62b14b0a162cc1d7d67b34131fb403588cba715d7e8",
+          "previousSourceSha256": "b1963583f94c63ace1b6be14c8b91bffa359d8f272244d387addef1fc59fcb98",
+          "sourcePngIdentical": false,
+          "distributedSha256": "97631bfbd4b623defb62ce047f56d80971405947d00113815907608cf2bb661a",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 1,
+          "row": 7,
+          "newSourceSha256": "cc395483d039458fbefaef60681163ddb483d2dfdbab8fb5a3cc42a31dc94fd4",
+          "previousSourceSha256": "9d9c85dcf6cb5cc7a6509b281f2b99dbb9b3131e835eabff8fd0ede5da599fdd",
+          "sourcePngIdentical": false,
+          "distributedSha256": "57983426e4d53b17305f6a1cdaa7f951ba627bfc5dc0f7c142d25b6e3cd8f12c",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 2,
+          "row": 7,
+          "newSourceSha256": "35384d682b57adb17fe6547092a430287c6afb49d36700eeb3db3828c46d60d8",
+          "previousSourceSha256": "04fdd6a416a8b5095d97347083e59bdc4d193baafaaba29ceb5e6693f2dc71a1",
+          "sourcePngIdentical": false,
+          "distributedSha256": "981266e91b6f2ef3c78b1bba2133757acd0a37d4889837ee8671fb11f724d82f",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 3,
+          "row": 7,
+          "newSourceSha256": "6f9b47f562269777671eb7d0e19f36bb1ec1d6a47790b7af6dd3dfcd6ba8a848",
+          "previousSourceSha256": "6f9b47f562269777671eb7d0e19f36bb1ec1d6a47790b7af6dd3dfcd6ba8a848",
+          "sourcePngIdentical": true,
+          "distributedSha256": "2ca677c379df0617578a851ad480cb7273a5d14a0f166458ef63322e7fb165f8",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 4,
+          "row": 7,
+          "newSourceSha256": "7a936b4902b3c36e317ebef7aa027b439142ce54c50cd856b306422c2c3f9d81",
+          "previousSourceSha256": "32c6c0406211b82fd7d1ee39af751b561652cbd63fa1334336888eb7ab986114",
+          "sourcePngIdentical": false,
+          "distributedSha256": "6201e242c8ab066733fb736d1743c364e41c50d83467612d69debaf0baa6cd8b",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 5,
+          "row": 7,
+          "newSourceSha256": "edbfc1de42831933a43073cbb4541a09c200bb501e20d7066f838fbcfb84c258",
+          "previousSourceSha256": "edbfc1de42831933a43073cbb4541a09c200bb501e20d7066f838fbcfb84c258",
+          "sourcePngIdentical": true,
+          "distributedSha256": "2c7630a05eb031085deb2fa3fac4e2f0a937d52351a2cfec64c7d5fdfb42caaf",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 13,
+          "row": 7,
+          "newSourceSha256": "9c48f55ce49395797509c157bb526c0fa59ec4aeb428d0c2eaf55a2cb953d17d",
+          "previousSourceSha256": "4f8b2f76649f432e1a83a1eba46ed4d04bbb3f862ae503ab34a516c47dff179d",
+          "sourcePngIdentical": false,
+          "distributedSha256": "45e6dc468866f8b71997e525feac6aced453e29038bd0e5664ff66345e4d4c30",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 14,
+          "row": 7,
+          "newSourceSha256": "61b185542e1409127e8a0c6eb8402545e0fd8b33c9933953d697bf2cc0c7cc92",
+          "previousSourceSha256": "87f26adc8133d2c5c11e74056b285809704d7f0d408ddd863523fab77dca7301",
+          "sourcePngIdentical": false,
+          "distributedSha256": "d2dea54a09059439a4faaaef90fba831b6e20c394f74d1f73326b1c4d78ad794",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 15,
+          "row": 7,
+          "newSourceSha256": "ee67b6aa7e796b60d4588e8a9bdb30bd60b414946bc871ab54a6474a04d951a5",
+          "previousSourceSha256": "a60ec53d825c876be430a38ccefd13f17cfefe97afe5bdfdebbab902319ff5a0",
+          "sourcePngIdentical": false,
+          "distributedSha256": "8603a081762125945c4c69e9d7d7a456b4c451f69d9a82623e2e4988e8131db9",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 16,
+          "row": 7,
+          "newSourceSha256": "fd190d2ae5e91a464a2630499c6e6a3a4c9bb69665458390954c2ef2cbd8c716",
+          "previousSourceSha256": "c97f23d95a0f530cae18295f92a3d12f07a022e7ae2662886b3aba19989fe4fd",
+          "sourcePngIdentical": false,
+          "distributedSha256": "c0e405af35cf2e57e53fb19b8933b6f5d3474858a505b305dc58c41e3f7b6dc0",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 17,
+          "row": 7,
+          "newSourceSha256": "53857196b30c29c95875895f59d10628432c052a884e029a87c7c2b2b5a49cfe",
+          "previousSourceSha256": "53857196b30c29c95875895f59d10628432c052a884e029a87c7c2b2b5a49cfe",
+          "sourcePngIdentical": true,
+          "distributedSha256": "ce7ccd497ccec7861662351c1232693d676f8015cf6ea806fe0e62b149815674",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 0,
+          "row": 8,
+          "newSourceSha256": "8c3372a054ec739d3c6befa36c9b99432f6eae66e44e151e87f2fc20c0b05bb4",
+          "previousSourceSha256": "097438231c4ed84663283dbb2750f2bdad48e52e43a64678870590d481912369",
+          "sourcePngIdentical": false,
+          "distributedSha256": "b11710597b07284333c068aae8ff0d46e18ab487f5a5cc346b1992b40b79c945",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 1,
+          "row": 8,
+          "newSourceSha256": "77ca29ab5b9f724ef7c5bd9351b5c774b4fc86b11b8a28413dea75a73c512593",
+          "previousSourceSha256": "6ee85cf1030746d68e5d6b031580085e80aa37b6cefa6d7780b2857352ed9764",
+          "sourcePngIdentical": false,
+          "distributedSha256": "6bc678aa96fe32f0aee4078e68e76bc7e471f4d85f4f7741e1c0fbea26593a28",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 2,
+          "row": 8,
+          "newSourceSha256": "d5c84425f26e408f023326ba444f65456c171b4dfe1cff917cd3efa71de77ee5",
+          "previousSourceSha256": "0d88218227d532b0319c31cea512c63f6f44db25f511357277ae81ddd5ccec85",
+          "sourcePngIdentical": false,
+          "distributedSha256": "ae0cccd5cad22483ee7e04bb8a04cd0b3a4f02b7af99be9e56756668e043a6d5",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 3,
+          "row": 8,
+          "newSourceSha256": "d13b6bed03417f57cc780ac5d268825acdcc23c1818f744022273186e17329e1",
+          "previousSourceSha256": "d13b6bed03417f57cc780ac5d268825acdcc23c1818f744022273186e17329e1",
+          "sourcePngIdentical": true,
+          "distributedSha256": "bb39b70c54a8bbbb483f7fb9bc4a36c1325fafb51d796d4eba943ecda91f3307",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 4,
+          "row": 8,
+          "newSourceSha256": "0930c850f05cd44d19619c28d320b8ee646a54ab0235bc71726b8618685db0bf",
+          "previousSourceSha256": "265233011853c97cd02861f58905749b9e8dae9bfc840cbe7ddfe286d0809282",
+          "sourcePngIdentical": false,
+          "distributedSha256": "2be7bd202fc6530fbf499ed7cd2716ac96d76c5bcbd36b4f71a6b7f0e93da786",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 5,
+          "row": 8,
+          "newSourceSha256": "a2db4dc7e1873a0e47524666c46d34cbae838928b3f4f6ee4741b394009569b4",
+          "previousSourceSha256": "a0dc9de8ed16320a60fe36262529de24228caead8608c7ba24456c198150db9a",
+          "sourcePngIdentical": false,
+          "distributedSha256": "7979205f7fe0c2e9ace555a4b0b8cb3ebbc0929ff83b7dd9d1813bf61ca395a1",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 6,
+          "row": 8,
+          "newSourceSha256": "810683b42895ff6a832e5cd940b839e3f6e26d7f532835e1275f6b0f63a2a35d",
+          "previousSourceSha256": "810683b42895ff6a832e5cd940b839e3f6e26d7f532835e1275f6b0f63a2a35d",
+          "sourcePngIdentical": true,
+          "distributedSha256": "7827c9f1b6e9e52582bb868d78d0d4ab3e2d40ebe8b47b47feb495eff39bb909",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 7,
+          "row": 8,
+          "newSourceSha256": "810683b42895ff6a832e5cd940b839e3f6e26d7f532835e1275f6b0f63a2a35d",
+          "previousSourceSha256": "810683b42895ff6a832e5cd940b839e3f6e26d7f532835e1275f6b0f63a2a35d",
+          "sourcePngIdentical": true,
+          "distributedSha256": "7827c9f1b6e9e52582bb868d78d0d4ab3e2d40ebe8b47b47feb495eff39bb909",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 8,
+          "row": 8,
+          "newSourceSha256": "814315861f6f14e82be60780f7107738dee11b8fc0c810e497ed2f03365f2f9c",
+          "previousSourceSha256": "814315861f6f14e82be60780f7107738dee11b8fc0c810e497ed2f03365f2f9c",
+          "sourcePngIdentical": true,
+          "distributedSha256": "340e12d8ded9af21c502c3d0a223e1900369c5e33280e33232814de91e4527dc",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 11,
+          "row": 8,
+          "newSourceSha256": "6073f2f0dcfc087de11691f312dee09f2ad7f7b571f0a7bafd5fe8522ab80bc4",
+          "previousSourceSha256": "d6b2b18d235ca912387e1941a9718a792b2e539bf6e44c13c62d96d10f7c3762",
+          "sourcePngIdentical": false,
+          "distributedSha256": "38cdb2adbc2e36c459b115a2aadd930ed464316796c2265fda3adbef49317a45",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 12,
+          "row": 8,
+          "newSourceSha256": "810683b42895ff6a832e5cd940b839e3f6e26d7f532835e1275f6b0f63a2a35d",
+          "previousSourceSha256": "810683b42895ff6a832e5cd940b839e3f6e26d7f532835e1275f6b0f63a2a35d",
+          "sourcePngIdentical": true,
+          "distributedSha256": "7827c9f1b6e9e52582bb868d78d0d4ab3e2d40ebe8b47b47feb495eff39bb909",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 13,
+          "row": 8,
+          "newSourceSha256": "a381d128e7bd5b5ebeddc06860ff17008322b2d405f0a5167316a4702a43c70d",
+          "previousSourceSha256": "c9aa93280a661fb7e184d8b4433e3037f761c069c6fdd277c26874df270f994e",
+          "sourcePngIdentical": false,
+          "distributedSha256": "7e829d1d62fec37c18e62d52ac27fc9305d110ee7ba718c507f8d055d8e0525c",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 14,
+          "row": 8,
+          "newSourceSha256": "165ee77d1d948594f63df5112d3d269cb90a0633346b80c94fe713273d0f97ed",
+          "previousSourceSha256": "f5964555ebc6ce88990f78fe7873cbddd0efa9d576070d516947d7d600f31651",
+          "sourcePngIdentical": false,
+          "distributedSha256": "64323e927ce8155f9c6e3a5e4bb54ec050647e0c0a318a2641840df04a5b8120",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 15,
+          "row": 8,
+          "newSourceSha256": "6f5599e61475b47aab8d7b474ad880fb7910976c07b8d7e539ecc3aca57ddb44",
+          "previousSourceSha256": "6f5599e61475b47aab8d7b474ad880fb7910976c07b8d7e539ecc3aca57ddb44",
+          "sourcePngIdentical": true,
+          "distributedSha256": "f88cf831eb26ab5e6673593a995ea6719241f1341200ece0f96e0524099042ac",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 16,
+          "row": 8,
+          "newSourceSha256": "d3420319607f093f81b913142b8567f10aa7389f4b2c08801b6318c36a8cd509",
+          "previousSourceSha256": "c449b6744932953e6f282798ce7519b29178ef247d414b81ad8b4b958052a37b",
+          "sourcePngIdentical": false,
+          "distributedSha256": "5cdf1477a923ea7c1244f2ad57564af5c217c530526b66408046a261daf4bd58",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 0,
+          "row": 9,
+          "newSourceSha256": "28de215e5e7407920bcd306c74c793123f87062c79e452ded76a2cf2fe8acda7",
+          "previousSourceSha256": "28de215e5e7407920bcd306c74c793123f87062c79e452ded76a2cf2fe8acda7",
+          "sourcePngIdentical": true,
+          "distributedSha256": "5f32076e00a7798a5bf2b052efc352d8d74118aab35629a5fe197b0a8badf345",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 1,
+          "row": 9,
+          "newSourceSha256": "930b1ac21ed7ae618c581c9022edce24fc3f89d4734d1c2dcdf32139e72a257f",
+          "previousSourceSha256": "8d386651ea700fdd6b66c300e594699ac198b3a7911d545642dea72555a6a10c",
+          "sourcePngIdentical": false,
+          "distributedSha256": "a2376574b3543f865015b37db9a628764879086181f16188eb409a13ad354877",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 2,
+          "row": 9,
+          "newSourceSha256": "d626c73faaff28383c29459012762fd77969dc413458374144027620e0fec161",
+          "previousSourceSha256": "98a187fcb8f1f593cee25e43c02dfea8b95eba63888343f4d1eb691bdf66cabe",
+          "sourcePngIdentical": false,
+          "distributedSha256": "06f1647c0b1eafd5bf7f5e31462450965adcf1612165bd82f73d1b06a28aa6d4",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 3,
+          "row": 9,
+          "newSourceSha256": "0c1696a77ac27bcea86de2c81bfd97bba14e6fc50fa1c9bf42635c23e88a02ed",
+          "previousSourceSha256": "a588619befe6d41a3e170861887ad140061e0c6750b3133268d53ffb4af993dc",
+          "sourcePngIdentical": false,
+          "distributedSha256": "4b75472cce3e718fd27a465e343a78147e7d976728107c03a0571cd71e6ba5f4",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 4,
+          "row": 9,
+          "newSourceSha256": "ffedace1127df06c04948a838391c4020d0d825f3379eaadd53297d0840e520f",
+          "previousSourceSha256": "ffedace1127df06c04948a838391c4020d0d825f3379eaadd53297d0840e520f",
+          "sourcePngIdentical": true,
+          "distributedSha256": "8ded80a1de1b67e6d64206e1eb67dab2e21a9fa2183e83b26d581dc383c96227",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 5,
+          "row": 9,
+          "newSourceSha256": "cecf6346975d80eea39693fa91a7457ea488eedd1625d45c8dbece8067b4a380",
+          "previousSourceSha256": "a461bb4c901410fea26f64aa604d730df5044434065698790b8a60de77935056",
+          "sourcePngIdentical": false,
+          "distributedSha256": "d7599d72048e1a7e7335712634dfe8ae938fa3bd22dbe4989b37fe5dcef930e1",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 6,
+          "row": 9,
+          "newSourceSha256": "c7a0c6c81b203201065d5842d79cf2366cf5b130e39b85f6c6a427583a6fde93",
+          "previousSourceSha256": "c7a0c6c81b203201065d5842d79cf2366cf5b130e39b85f6c6a427583a6fde93",
+          "sourcePngIdentical": true,
+          "distributedSha256": "d3ba1c5e2d266793f078126e87aeffe49d16e2a6dfa5c030d61cab473a92de61",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 7,
+          "row": 9,
+          "newSourceSha256": "bf9b818908c64b84c3aebc767c5989dafecd97d8d80f607ec7e7d29c935eaaa4",
+          "previousSourceSha256": "83a52c00f0c0365333819e26df3de6bbd80be5568c7b5cb8a2181244e1d1be11",
+          "sourcePngIdentical": false,
+          "distributedSha256": "b2ab2ecab5cbee302ff769214657827d6c4201e241105e04fd714731fe203230",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 8,
+          "row": 9,
+          "newSourceSha256": "4db49e0032b8ce82785750e02f95289a75aa86768fc644cdb9935f55f754ec23",
+          "previousSourceSha256": "7d26a7a0bcee496029048eb5ceca11b7318717d1790dcf3707c4a49dc39964e5",
+          "sourcePngIdentical": false,
+          "distributedSha256": "e70909097f16d11e72fecc6b97cc8c5c9880c2e45f87a8eaf1e3030f676595a3",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 11,
+          "row": 9,
+          "newSourceSha256": "e10678785bb783ebf08c89ea1e506e0db69e8416c8a1eef19d6bd8dea1510acf",
+          "previousSourceSha256": "1823a2a461a31da6ba3295da707cac928e5a1784bb6923eaf3bd582254e67d61",
+          "sourcePngIdentical": false,
+          "distributedSha256": "f6a02900b52630d072295742659ce9dbd856a43c78d1528fbc054c956423c1d5",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 12,
+          "row": 9,
+          "newSourceSha256": "694cfefb508f65cd6249e9cb4f92aa89cf20054c9841ea55822620b326a86b51",
+          "previousSourceSha256": "c0ecfd67d3be3ab440b15a3b0303c84f43578b595c41f2b17329bb589abc0149",
+          "sourcePngIdentical": false,
+          "distributedSha256": "6c12544df830132ce0c2dbb709f8926f7632a9a305c74fedd45f978e79d3ffee",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 13,
+          "row": 9,
+          "newSourceSha256": "bc461d33e24bd2a9c876ad535126047f03a65c35efadf98a0f0894358e54be14",
+          "previousSourceSha256": "0938459ab0a92b67eecdbc159466f6446540ff8b2713d12660444d3c335b6f86",
+          "sourcePngIdentical": false,
+          "distributedSha256": "e342f8fa596921c6160102a5718eea3ca01956a58d6240bf54ef4501e13a0780",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 14,
+          "row": 9,
+          "newSourceSha256": "cd615124e45a28b6c7d5a43cf5bfb877be857102a9301e246b52badc14f044ce",
+          "previousSourceSha256": "ebe6d46af0e3141e64a7d4256bf459c05fbeb9d09aa6b2574fb0c4c7f3d8cffa",
+          "sourcePngIdentical": false,
+          "distributedSha256": "1a18a47c6867685f75393100e00ddb7d8adac4ad0c834a42e381a2c21d1dfbbe",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 15,
+          "row": 9,
+          "newSourceSha256": "ba3570529feeabe5a52e352c863045c698f2a8cb8a0b2f107f2d01933ca3c0d6",
+          "previousSourceSha256": "56a98e6f51f12791b9d0c75859f256cd91fab33f14eb6f3b9a86cd606f4d7f28",
+          "sourcePngIdentical": false,
+          "distributedSha256": "43a81dc90cc70fba36720331cc9a8ddc630df018b5eada3c4a0a067d5e5011c3",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 16,
+          "row": 9,
+          "newSourceSha256": "ad5a6fa08061dbbfab9339cdf81ca73cde64cd035661be4fb0febea4e052b70b",
+          "previousSourceSha256": "2ab0ee858ef23674c214d70d19b178494d742696c3d35a594799ab184b605f9e",
+          "sourcePngIdentical": false,
+          "distributedSha256": "cd50b3118fe535469a70d88cb91bad5e002d306ff6ce89f961835df715cdc502",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 0,
+          "row": 10,
+          "newSourceSha256": "28de215e5e7407920bcd306c74c793123f87062c79e452ded76a2cf2fe8acda7",
+          "previousSourceSha256": "28de215e5e7407920bcd306c74c793123f87062c79e452ded76a2cf2fe8acda7",
+          "sourcePngIdentical": true,
+          "distributedSha256": "5f32076e00a7798a5bf2b052efc352d8d74118aab35629a5fe197b0a8badf345",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 1,
+          "row": 10,
+          "newSourceSha256": "4a4fc5a2f65a819d6ebe576c07f173e3cae5e74835d0ea5b0623c7b4e825c52b",
+          "previousSourceSha256": "936f0a5ef344db2e46fbc20e0b18557d73b2a60719ebf394a4a8e671628d4cd3",
+          "sourcePngIdentical": false,
+          "distributedSha256": "1da952703130b41901c7c0cca63e817c8b47c43d2c6ee56624a9e9e374c9b669",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 2,
+          "row": 10,
+          "newSourceSha256": "422ee433da6dddfb743a01d786972e56798f4516bda891578694db7762c82822",
+          "previousSourceSha256": "3b897dabfe833c46ca673352a4c9f8e5c233ac654a4452d8bedc18b395724085",
+          "sourcePngIdentical": false,
+          "distributedSha256": "7756e52aca5e1170aad1b43cd68cce59554ba0b9c3c167f0cc3b81906b275f22",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 3,
+          "row": 10,
+          "newSourceSha256": "c0fe71950cffa3c57ae757b08fca3d847202d1378bbe7834e08ff0ed8a376729",
+          "previousSourceSha256": "84b200d99ccbab437588fe904809d49866c9576152ddd4d30819d6068ed95f81",
+          "sourcePngIdentical": false,
+          "distributedSha256": "19996b527bc02472241843daa35980e73b9a8e219c085fbc7e6a7d8f42c7d02f",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 4,
+          "row": 10,
+          "newSourceSha256": "292cc6940910ff8f98bcf36aea86caa20ce09e1bb7dafb799752229e8ffa3429",
+          "previousSourceSha256": "292cc6940910ff8f98bcf36aea86caa20ce09e1bb7dafb799752229e8ffa3429",
+          "sourcePngIdentical": true,
+          "distributedSha256": "3dc06d634bfeaa915658cdf6213b2f1cb8ee51ebb0c3d771af98d7220e7d69e6",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 5,
+          "row": 10,
+          "newSourceSha256": "3837ed28594535c0c4c70dc12061fff5c57b3df0623918fd8f7e9b7ae4ccc96a",
+          "previousSourceSha256": "e563ecbbdbabcf11832cc856d1093dd1f9bd3fb48b1b6e75c195db95f3f355ad",
+          "sourcePngIdentical": false,
+          "distributedSha256": "f3a4fff8f199ac134dff225a5ed336d5f2aeca8c3a44e25e1a9726326434d2aa",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 6,
+          "row": 10,
+          "newSourceSha256": "154f6370a572c55e4b6ed5f71fcbcbc3bca7f99189d6de684d1fb904f35848b9",
+          "previousSourceSha256": "154f6370a572c55e4b6ed5f71fcbcbc3bca7f99189d6de684d1fb904f35848b9",
+          "sourcePngIdentical": true,
+          "distributedSha256": "2a1d42d7d7027bd2989547cbe13c884889c2f8095779f1316b93ef9e30be17dc",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 7,
+          "row": 10,
+          "newSourceSha256": "6c5e160589d116a85261b859106e2547741c2a44108354e7fe00c91fe8f5f288",
+          "previousSourceSha256": "6c5e160589d116a85261b859106e2547741c2a44108354e7fe00c91fe8f5f288",
+          "sourcePngIdentical": true,
+          "distributedSha256": "9ef3e5a31afbb56b0424982fcf11a8941d24b408a9124640a9ed96378dc3c942",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 8,
+          "row": 10,
+          "newSourceSha256": "69cf87a7b43fff685d34943bf22c7908f974a00c32d31efd05000a7dd3362858",
+          "previousSourceSha256": "ad502912a90077a69bef6dd72317495441071db31b3a63efc1bb3944c2899981",
+          "sourcePngIdentical": false,
+          "distributedSha256": "26ad6dc89bf88ccb95760cbb80fb2fef66e1a04a66ed5b19facda33c543ae6e6",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 9,
+          "row": 10,
+          "newSourceSha256": "43b096af7f7aafeccc681b7cfb56c7f5d5716017cce455defc2bcac91c49335e",
+          "previousSourceSha256": "8a64d79abb9f5ed08001f169a76e51778638a02657afca53b83f7fd5464cf114",
+          "sourcePngIdentical": false,
+          "distributedSha256": "4330b6d8828380dfdafa0c99d909978157755e8965208305e86a2a19f3891548",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 10,
+          "row": 10,
+          "newSourceSha256": "e1709cbb1a1f2406cce830d113a4ecddcb98d0b38c1883d8e0721df07d2cec2d",
+          "previousSourceSha256": "e1709cbb1a1f2406cce830d113a4ecddcb98d0b38c1883d8e0721df07d2cec2d",
+          "sourcePngIdentical": true,
+          "distributedSha256": "1e3b12b6fef09f42a0695370252afc6de22e3b6092a06657858e5a0781517539",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 11,
+          "row": 10,
+          "newSourceSha256": "86d8b4f63bd8202b6d2b99c0dc008fedd7d27364614162c6f8505c3cc28bbffc",
+          "previousSourceSha256": "346ca55a763ff402cff75b5fb38ecf2292f786ba9ead99c6dc1504a205216fd7",
+          "sourcePngIdentical": false,
+          "distributedSha256": "f5d084f700b923933055246d57649eb0199a83fbcdee85e3dd9f16514342d955",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 12,
+          "row": 10,
+          "newSourceSha256": "0a55bf5ddf2226ab24301df430bda7403b9293a9f1726366c659193446117a51",
+          "previousSourceSha256": "7e6c08333ca50e3ff6e27939c00e284267f7105f9b404d1750280dce06376778",
+          "sourcePngIdentical": false,
+          "distributedSha256": "b3501690b4660f95fd7a6416d8bec77853336d2f5fe76422d5b41b4564548aad",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 13,
+          "row": 10,
+          "newSourceSha256": "62bd85a8321799c3a9d4162880eac3d1173d11611cc19d31b46fa2640e3d2bef",
+          "previousSourceSha256": "c7df4d37e3079446586f24542f6161fd0808594e1a8ae83d0b949e97266af4ce",
+          "sourcePngIdentical": false,
+          "distributedSha256": "a2e6ea0f078a58000b9ef910f875c6a8646e67b2fccd1c05d788eb52e833a195",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 14,
+          "row": 10,
+          "newSourceSha256": "ddeb09cd6a4c0cf08c74cd61533d54041262bace4f2fc4b7ce945d2518008394",
+          "previousSourceSha256": "6396026d36b543ce6b5a09910ebc4ee7c7206111ac8d92a02eb5e9540f6f4ad3",
+          "sourcePngIdentical": false,
+          "distributedSha256": "9641515bd770e65a09ca43fb0be8f945eca34ee7307832c0f1a56212c72bcfc0",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 15,
+          "row": 10,
+          "newSourceSha256": "401bd249f067c7e89cef315b3cba486bb7f1b9c10901fa669da98f985cccc45e",
+          "previousSourceSha256": "20942bca6baa362aef18820da54872935836814948ec694a7ace1ee0ccf51a70",
+          "sourcePngIdentical": false,
+          "distributedSha256": "aa30e48e21fe581912a8ede1b668fd6cf37901a620c2e750d9c55017b2862bea",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 16,
+          "row": 10,
+          "newSourceSha256": "22589c5cb3b9962c155600958bd1fd15e87013e0c45b9bf9478157bd2324023c",
+          "previousSourceSha256": "cb50c0de7ef909c48d114041d61a77eca06c4c432fb506fb549b44d543d61126",
+          "sourcePngIdentical": false,
+          "distributedSha256": "8a28f5c777ec3069a4f96cc142187a6776ad0e2c64d5e9314c384fbccf968ac3",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 0,
+          "row": 11,
+          "newSourceSha256": "8f91f4081307f9073ab8b158ea6daee06543fe9d2beb8c2ae4c2653d19f53353",
+          "previousSourceSha256": "8f91f4081307f9073ab8b158ea6daee06543fe9d2beb8c2ae4c2653d19f53353",
+          "sourcePngIdentical": true,
+          "distributedSha256": "8d3225f1ec764eaa2b543e171a2e3c2fbdc4de3b186674706f576f83119441f7",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 1,
+          "row": 11,
+          "newSourceSha256": "863fd8f4e469c0415ba128aff3975ab1152fa432c54d58ec968a2ad32b59aa13",
+          "previousSourceSha256": "863fd8f4e469c0415ba128aff3975ab1152fa432c54d58ec968a2ad32b59aa13",
+          "sourcePngIdentical": true,
+          "distributedSha256": "504e1b49acfb9c3314b782764c76cb26e1f8935561e640509c6eba89bcf9ef19",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 2,
+          "row": 11,
+          "newSourceSha256": "765dd81b6fffc185a6d757bc7d9f27a0eb52a7e829af1e6ddefdf047612270c3",
+          "previousSourceSha256": "cd21fb4d875dc056007d40b054e2a90a23f0c1d7957cf63a5f70ae71f5248905",
+          "sourcePngIdentical": false,
+          "distributedSha256": "487b75f3ee2a669e6f3566419eb2c2bd3b78cc3f21e1d7f2e24319f8fb27ba33",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 3,
+          "row": 11,
+          "newSourceSha256": "594ab34c002a5cc43b658ea6aac0942ebfcf664b1ecedb3671bea068667b9578",
+          "previousSourceSha256": "ef4c2ab673664699a96aca65095547cf5b116a6ab51657b9e9dd01cda311ed6f",
+          "sourcePngIdentical": false,
+          "distributedSha256": "1eaed2ea36f555d71a79d9f4fbf1a68326871988e30e7f5f089899a27dad3664",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 4,
+          "row": 11,
+          "newSourceSha256": "6397a93d8839b7853d76ed4f5b3b257b5a55d7008ee5680b16e9a8c562917fc1",
+          "previousSourceSha256": "6397a93d8839b7853d76ed4f5b3b257b5a55d7008ee5680b16e9a8c562917fc1",
+          "sourcePngIdentical": true,
+          "distributedSha256": "323789223fdf46199be84e18944aa51b8659a90de1acc7d172a4cb9aa97c0918",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 5,
+          "row": 11,
+          "newSourceSha256": "4eaded06c8f038dd8c936a4c61e7b3df1b3093e5c71cce6451de76226e210e90",
+          "previousSourceSha256": "4e245d3f50a582e6ad417a2b80654de092014e04b9b35b2e5a3370e6afc4a1e4",
+          "sourcePngIdentical": false,
+          "distributedSha256": "1084b373086866a3863da0a4c91c3165ebad23339b737f6edae5c7b49cf6685e",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 6,
+          "row": 11,
+          "newSourceSha256": "13444fc4e5f8cb497f22ee3cb6bf0dd553479567a4d16f9981a1de0694b348ca",
+          "previousSourceSha256": "96404b6c46f68f5cc1ee3e0e3f218153bab5fe5935c7b8b79145984ca3934e79",
+          "sourcePngIdentical": false,
+          "distributedSha256": "9bec12e6b23278422efe605a2db79deeaa956f61d8bac56e85b6ca1102e4505b",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 8,
+          "row": 11,
+          "newSourceSha256": "b3aa064171e0b30be0f20c287ec4c7ba47949c054b84b2ce2826767fa1675906",
+          "previousSourceSha256": "63e85af091fc9a93cf651be03894b91c75292588aba278fcec0f28a43203c7b9",
+          "sourcePngIdentical": false,
+          "distributedSha256": "e88f39cfccdaeed80dc510360ad322fd9355e8e0d383a2f469082f8c519a719d",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 9,
+          "row": 11,
+          "newSourceSha256": "c1713809ef5f57862237740861dafdc2274702167e8936ed3d75317045b5292f",
+          "previousSourceSha256": "a4a4446f0a1db93939a421c3792e875459effb99483669e6422bc580f05bafdd",
+          "sourcePngIdentical": false,
+          "distributedSha256": "048a0ff380dcacf0af96bd895b13ad713513b62da6a9cbd546abdba74da43bc0",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 10,
+          "row": 11,
+          "newSourceSha256": "efc869921c880610a335677c373b5deb96b2fbe550eb9793037e584fe691e267",
+          "previousSourceSha256": "64d39204030fd279fcc9eaa9c824a37f187f830ac09f197512fa7a329afd660d",
+          "sourcePngIdentical": false,
+          "distributedSha256": "40218899671553391d351831ec42128d233ab4a1aa8704771ad8f79d39db4b7c",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 11,
+          "row": 11,
+          "newSourceSha256": "a1fd569df4411b6029f223941df1a4cfeb42ef1316d599184f806408a62f4d61",
+          "previousSourceSha256": "12a026b932a1a269c57d27d75ed115f583a854bc889750ac5701d633d14280fa",
+          "sourcePngIdentical": false,
+          "distributedSha256": "375d7482facf1c7ccec5cd583a536e1b8d78ec87917b22f5d704839a9fc24ef9",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 12,
+          "row": 11,
+          "newSourceSha256": "68c38cb50cc2b9bee4191a1a497a911211aa274e12daebcf7475d942954fe7bc",
+          "previousSourceSha256": "68c38cb50cc2b9bee4191a1a497a911211aa274e12daebcf7475d942954fe7bc",
+          "sourcePngIdentical": true,
+          "distributedSha256": "8fceae065b43ba057886eb544b93845fcb5ca263b640e7941d8c4e1a14bcefb0",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 13,
+          "row": 11,
+          "newSourceSha256": "aded6a3e6a59315866e980eab155705d139abbcd3171225a031e12047c1004a8",
+          "previousSourceSha256": "68ae12feb927ab662721cc1f2aa1c2d31c653547eaa0ddf164bdc95cb3f19bd6",
+          "sourcePngIdentical": false,
+          "distributedSha256": "0489b327c0232b21b123a54330537df45b8ec12edc0ba846a14f4c43d4cce2d1",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 14,
+          "row": 11,
+          "newSourceSha256": "10be0513de63409e56e076753d9160310747b5a0ea4b9536ac3cd5809b57160a",
+          "previousSourceSha256": "764257caff3770a3f54202d2515bc9171fa6c26737462a1db4b3440fa0fcfe1e",
+          "sourcePngIdentical": false,
+          "distributedSha256": "5af51cb54bda3473639cee556b1dab6b96bc136b461f14561320c5f881377038",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 15,
+          "row": 11,
+          "newSourceSha256": "534a038cb5b2b62a1138e507f01a776a4ede4cf60751b7d6b3b851cbf93dac96",
+          "previousSourceSha256": "eaa89fcd6aa662b9a1a388297cc6a0b158894e192b3df9a48c72367dd1cad322",
+          "sourcePngIdentical": false,
+          "distributedSha256": "0b6eade0c4d7f9cb3348ec76d29ca1d630ddcfb5d98968ec73bd705b4ad5c9e6",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 16,
+          "row": 11,
+          "newSourceSha256": "0c18044c47b1e758678ebc5d094427900c476980e6cb12aaca528f5d816173d7",
+          "previousSourceSha256": "0c18044c47b1e758678ebc5d094427900c476980e6cb12aaca528f5d816173d7",
+          "sourcePngIdentical": true,
+          "distributedSha256": "d3da626122d22c62fb4f978f4a4cf9cbe50de1be93222f55a6ba5a17a4777f3c",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 1,
+          "row": 12,
+          "newSourceSha256": "863fd8f4e469c0415ba128aff3975ab1152fa432c54d58ec968a2ad32b59aa13",
+          "previousSourceSha256": "863fd8f4e469c0415ba128aff3975ab1152fa432c54d58ec968a2ad32b59aa13",
+          "sourcePngIdentical": true,
+          "distributedSha256": "504e1b49acfb9c3314b782764c76cb26e1f8935561e640509c6eba89bcf9ef19",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 2,
+          "row": 12,
+          "newSourceSha256": "9c35ee0c6e56756b951d34bf9d31901b428f9a6de74eb0ba1b64497c29c26f9c",
+          "previousSourceSha256": "a4b7ccd909c942b0fe74ff411a13bf5d2ba2125641f2acd0c0ae4965d237196a",
+          "sourcePngIdentical": false,
+          "distributedSha256": "8416d1a526c89b9f4f7b2358f136a6145bdf20e07ef5285412b852024ccde9f9",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 3,
+          "row": 12,
+          "newSourceSha256": "ef68897d00bd5b2e0b1d5efdbe1ad7ae597644b8efb81b365b005a886a33bf74",
+          "previousSourceSha256": "b0d643d2cea8b9ad8bba73f601f4475e7454dc99387fade6f6afa4a7ae27b126",
+          "sourcePngIdentical": false,
+          "distributedSha256": "c41fd3a032189f630033cdc972663ad80e64ca40ba266688b2cf70853e0b3d47",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 4,
+          "row": 12,
+          "newSourceSha256": "c426fe5c4b711a8afb968b14444a4e4775481dc63aea1313466f247905c4dba2",
+          "previousSourceSha256": "cd09cc4876caec992897555aa76d90a0c2ecd519741e7e34ec95a96ea7fc331f",
+          "sourcePngIdentical": false,
+          "distributedSha256": "24d34fa7bfb3626395449e6cd403b80b20cfbeec5a1be5b36e2862dd53b65c30",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 5,
+          "row": 12,
+          "newSourceSha256": "55147a653e3cf50a72a06fb2b64c589594f2a259ffe8fab5c6e8506de929f36d",
+          "previousSourceSha256": "36b965f8aa6bd82fdad7a8dff10c0db03a47d55bee418aa9d52b0d5b393ab059",
+          "sourcePngIdentical": false,
+          "distributedSha256": "8bfe7ffdebf2a408e059a6f7e50a10bb6cb286879c516a3474f8f0c3d0b36f63",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 6,
+          "row": 12,
+          "newSourceSha256": "83a19b293d4031db3210d104f07e61e80b8bf3717d9b3517203e019db0cb4b45",
+          "previousSourceSha256": "bbfb7f520d1a51a583ce67ebb8baa2da74737a66fdf6e5295819f227c7f7e432",
+          "sourcePngIdentical": false,
+          "distributedSha256": "9a6488a7e3764049925f664020a7935862d8ff9901e01340e2547ae9d4283484",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 7,
+          "row": 12,
+          "newSourceSha256": "f48cc10f75a1cdc65cc6a9b5d505ff4da00d4e9dfb229a6c44eb3be7d54ac704",
+          "previousSourceSha256": "30244b181d2f2ba3b57320da49530df0e84dbedd33ec74e0054a975b9f827074",
+          "sourcePngIdentical": false,
+          "distributedSha256": "aef673aed04aacf93e21fb5d6dffe522d52410483185a721935c1b592cadacca",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 8,
+          "row": 12,
+          "newSourceSha256": "fe5d0296d889876dd57c63ef4e2aa859c9f8726d4d5a13e30bfe9b7b7ee37924",
+          "previousSourceSha256": "78a7496cbb5a6f544df1c288725f71892e04dd7f53d3cc21fef8e178a021ae56",
+          "sourcePngIdentical": false,
+          "distributedSha256": "bd14f582c08b83a61536c9891c1b251de2ffe40f70101fd9dbfa62df527c9881",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 9,
+          "row": 12,
+          "newSourceSha256": "952a4bc04cf9762d73e8e51d465b24c62d4114d96a6e4f30f283697feadd858e",
+          "previousSourceSha256": "10807f0f157df820fd27ef9665576911f401402f72783a0d95c0096fb53d29a9",
+          "sourcePngIdentical": false,
+          "distributedSha256": "5832203defad32aebb1ed72dff212de21f94b2288f62f446970f84e5cd5807eb",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 10,
+          "row": 12,
+          "newSourceSha256": "41e89baed9b3870f49a1bd0e4a98bacdf0d497740dfc820e25660bb00692baac",
+          "previousSourceSha256": "c9ef38e644027b39101ac034603e5317a8aaf7f53a787ffd27696a711e01d238",
+          "sourcePngIdentical": false,
+          "distributedSha256": "1bdc54f9381f743b197b38665d597d3d34e0f62c0599c637983cd15b468db6ec",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 11,
+          "row": 12,
+          "newSourceSha256": "7d861bbdb692a80371ecc24cbabed508c3d49062a9eb4f17b37ca6f3828aafa3",
+          "previousSourceSha256": "6335096f7c6927798bc2bb0707b9dcce611ed3968e32241991b0076079b015e4",
+          "sourcePngIdentical": false,
+          "distributedSha256": "65b065802fe0c5236754077dce9ea9d06358ee9145e53a739487086ca46e2ab8",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 12,
+          "row": 12,
+          "newSourceSha256": "d26dd08c68eec30804ba054ae443bb4d1552cc7cfa95d754324c813ce4035680",
+          "previousSourceSha256": "d009cfcadbe22aa9c1ce9e48c4593ddf15fabdc2249855062c0bc0e5c5e72fb1",
+          "sourcePngIdentical": false,
+          "distributedSha256": "c261df1ca273e688e9ab1810aa46f7c3ca619388a8fb7b44c51b316cd5542dbb",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 13,
+          "row": 12,
+          "newSourceSha256": "ec3c23f08bab65cb0d69262d1339c6ae7287a2b63cfb21e1de4a6e58402e6d4f",
+          "previousSourceSha256": "ddeb5f215204a0b29da9081a7158220414b922fcea4b2787bff5b0073dc638de",
+          "sourcePngIdentical": false,
+          "distributedSha256": "b40f7ec0edb9bad1f4505583c71112569e3a6c73812588a496a9524c2c897dde",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 14,
+          "row": 12,
+          "newSourceSha256": "b70abf53ee0eaed2fadba4b7dbb85533af5afd12b2ad1fd0aacf18708e6a18df",
+          "previousSourceSha256": "c3ea6c3350a23cea526daf02a3124b2b571ecd29b3063259144da85dd95b50bf",
+          "sourcePngIdentical": false,
+          "distributedSha256": "5995d55b9d2bdcd3aab0250f0b83c8a8d4f27b5a726dc8d75c538b97bf91e7ec",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 15,
+          "row": 12,
+          "newSourceSha256": "88303fc1c0acb95b9d2032555f2e7295910c4ba29128327fc5cfb4bd2f5e4619",
+          "previousSourceSha256": "4f5ca2d4d318260005fe49f8e2202cd74ede67d3457ed86e1a35046db05d7b07",
+          "sourcePngIdentical": false,
+          "distributedSha256": "723691218c0316decb4ac64b9b2ec38f62555b7816a0a3411748ce84ba031e43",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 16,
+          "row": 12,
+          "newSourceSha256": "8688595654bd8c9ef46a400f963e68349b08555c80bb1670188998041c674567",
+          "previousSourceSha256": "8688595654bd8c9ef46a400f963e68349b08555c80bb1670188998041c674567",
+          "sourcePngIdentical": true,
+          "distributedSha256": "8a1d4d785757e0ce409a4f82ca9dbcf30dee11502674e8c8262aced52418be23",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 1,
+          "row": 13,
+          "newSourceSha256": "d544941200b4733341915655ba442f8a3e55505b46cf39436492abec8164698d",
+          "previousSourceSha256": "d544941200b4733341915655ba442f8a3e55505b46cf39436492abec8164698d",
+          "sourcePngIdentical": true,
+          "distributedSha256": "b6b17227ed743701ae63c7eff29d6ae5555c3ffd441925f3aca8672afd90ede5",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 2,
+          "row": 13,
+          "newSourceSha256": "f59cb1f32c30b7842be05110ee28118e8a35544e7e39c4728a68a571465e9d39",
+          "previousSourceSha256": "30b5b2f1dba55d29bd7d33bee50c90f021a5552aca425ae2ab3c9f9f17002689",
+          "sourcePngIdentical": false,
+          "distributedSha256": "d0185393ca260e363053627afc816c7c2c5def790caaadea47e06bba8f0adb90",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 3,
+          "row": 13,
+          "newSourceSha256": "1d02a3de07360aa6f20d59f56895c7988307744c234215864dee2e892a8ff86d",
+          "previousSourceSha256": "3c7151bcc36c99f96976ff79c7f41f9bf025a0d3b67a2fdfac7581572ae0015a",
+          "sourcePngIdentical": false,
+          "distributedSha256": "a8aa6bd882cd8311f4a94fef5cb1664f2455414b9c132e7fea7c416d19dfccf8",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 4,
+          "row": 13,
+          "newSourceSha256": "9e1a3b02299a105c188e0686563f1af7227249eb817b86f3e1275b080f45215a",
+          "previousSourceSha256": "e661e8e357721d1c6fcca71b49075fb476a6425a0fd537aa071ba1d6fcb8b7a0",
+          "sourcePngIdentical": false,
+          "distributedSha256": "af8dfb1c786b18b5bbc2c1a56bf7b80f933f39ce0d357c522304b865bcd87628",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 5,
+          "row": 13,
+          "newSourceSha256": "54fd781d3848052320157b091e56f77f22c21f676a1b2005006677a4498d89be",
+          "previousSourceSha256": "611b0cc58e0226b0d4eb9eae8dba64b060c424a3e8a55ccf7d67f70b2f8ef30c",
+          "sourcePngIdentical": false,
+          "distributedSha256": "44361f7d3700a1e913a6a108a8cc9e8e6f79ced378b945b1c9ad39e95c9fe756",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 6,
+          "row": 13,
+          "newSourceSha256": "69150867570eb8f27d92e99d65b1c723541ca29e9dc8741efc0efdd8b06721cf",
+          "previousSourceSha256": "ef9ade5ea66e46ec5900628273ea82852285f84a51d51c5183216cf5b006ea86",
+          "sourcePngIdentical": false,
+          "distributedSha256": "11b8d85c88414da1d3336c6ddc3084c08bdb630e695226d8567592d51897e776",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 7,
+          "row": 13,
+          "newSourceSha256": "f157521c21d1cb232b6d33ee0d63de4e251e4d00845eab2db96cce122e6697f6",
+          "previousSourceSha256": "8ade4ccd122f5d023ba5b958c5c6cf21cc756a9fc7d833041c0cd1f8d8f4e339",
+          "sourcePngIdentical": false,
+          "distributedSha256": "a0de83951ee048e73e92743be3f27345dbbf6e1d03339c994982d0264796b4cf",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 8,
+          "row": 13,
+          "newSourceSha256": "b27c1666b72303b4b1c57d6bef89b1a7e1d6555bb0db7354763c2b6c197ccd1e",
+          "previousSourceSha256": "7af206652a97312d0881cc79ea6d735b2db8c1e63043a1fe422eed885456b4ba",
+          "sourcePngIdentical": false,
+          "distributedSha256": "59b9102982a57c35f216fb2e1d07f15945775b8fe6a5a6e47fe9c61c76995f8d",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 9,
+          "row": 13,
+          "newSourceSha256": "fd9a2b2be9109dc70b7af6f94da028d1adc1decdc241c10661dfed1a0d2c2b81",
+          "previousSourceSha256": "9652e94d5ac56d4208eb716eb2a6a0fd48c6ef8761698bce9263c1b6a1b72664",
+          "sourcePngIdentical": false,
+          "distributedSha256": "2f0897c46aa274a5ac351a793fc4b1c9eabb89bb5693dc043a9c069d42aa1332",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 10,
+          "row": 13,
+          "newSourceSha256": "492288aba0ba78139633fd60678ced9fa8faccd8ebaa39b2c84c815824c1c33f",
+          "previousSourceSha256": "58aaa76b1ed5c8d7461e0bd9f088f87abd8a868bca2eb233fc47cc345912d401",
+          "sourcePngIdentical": false,
+          "distributedSha256": "a448b1daf75d2e02c5afb0f71f30674315058d5a1d593d7315eb60983e0229ff",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 11,
+          "row": 13,
+          "newSourceSha256": "d208bb72c118980ee5dcaca13c896df6b6e2af452be4d44e8feee1ddf25b82bb",
+          "previousSourceSha256": "535867acd16f1c56815f6471c0a48343780507da0c99ff2d805b29bc521f70bb",
+          "sourcePngIdentical": false,
+          "distributedSha256": "de03e16959020227ec34cd219489dae45abd882a51990804e448e3fd068aca44",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 12,
+          "row": 13,
+          "newSourceSha256": "70f0bb867f08e0ed3e6e1d9fdef2c219b10b235a199786f1a05652520bc19bec",
+          "previousSourceSha256": "91d81bb9529cffbc5d6009147236bcf4ce0afb7d46d0ddffdeeda10c7b7fbbc7",
+          "sourcePngIdentical": false,
+          "distributedSha256": "d42b3f9dca93cf04747fc3c44d9bdeb5fccab6a9e669850fa0056ad98f132ef5",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 13,
+          "row": 13,
+          "newSourceSha256": "75706474696f9f9019599a39b81caa30ec166f6cbd07ac3ca21419b5b6720a7e",
+          "previousSourceSha256": "c39253070a4b8047c08916b2d04056d67b8c3e237ef13867fc13acded74c6285",
+          "sourcePngIdentical": false,
+          "distributedSha256": "513426b3fec3f6bbd79bc92ce0ede32ac135b73a143b4f351ca089a4de9e859f",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 14,
+          "row": 13,
+          "newSourceSha256": "51a625fb1613dcd824f15a2534098f5c1bc4c250d856d7707a0a08539bce92d6",
+          "previousSourceSha256": "2b6fd33b854ab039c3b1d7d8ad7d2baa675afe18e34ed0f92bbb53d03c2ac2af",
+          "sourcePngIdentical": false,
+          "distributedSha256": "fd0b7906d86d190a3df1e1e5353dc339fd393fd4bd530a6450e94d16e533358a",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 15,
+          "row": 13,
+          "newSourceSha256": "5a252a44b2fdf32433e8e4ec4607f4f693bd06548a4b5160ed9655fff6480675",
+          "previousSourceSha256": "5a252a44b2fdf32433e8e4ec4607f4f693bd06548a4b5160ed9655fff6480675",
+          "sourcePngIdentical": true,
+          "distributedSha256": "0117a51299e44cd81343892ff70df4feab004eea1b88fc8857fbab94278e1d88",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 2,
+          "row": 14,
+          "newSourceSha256": "4d6e5eb54618796b55f9fa28d592f80d41def3ba920c1ed8b82e6796177815bc",
+          "previousSourceSha256": "c89b1a7b2e17935e538cc9a66055d6a84a32cbdc78ffa758bb5238a95f943956",
+          "sourcePngIdentical": false,
+          "distributedSha256": "1e00bf9e9f650634d9c30d2add6aed332ffb8fe3e07557b8d92a301822de8813",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 3,
+          "row": 14,
+          "newSourceSha256": "da0bf01b5985f1ecfa6e6f3b79033ab25592722744bc846d03b51f4c19653976",
+          "previousSourceSha256": "d9c5ada05a6730355ad4396ab6a898a7f221bdb8eea058a32fbbff803ebe64ef",
+          "sourcePngIdentical": false,
+          "distributedSha256": "3bfb8473c11327fc431df5f4167aac8dede371d8b915e6978718530ada6c47a7",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 4,
+          "row": 14,
+          "newSourceSha256": "8f36610b2ba0de090e3610573e130360cc3c7241c0e7a59356e873c656951822",
+          "previousSourceSha256": "8f36610b2ba0de090e3610573e130360cc3c7241c0e7a59356e873c656951822",
+          "sourcePngIdentical": true,
+          "distributedSha256": "a1218864c40adcfef13218a5af7734af74deeb3ff24d85c6510d3d3fb52a022d",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 5,
+          "row": 14,
+          "newSourceSha256": "0cca6fc2558831cabf1b25934f8b531a810ad825f0d757c9c03dfd789821c050",
+          "previousSourceSha256": "ccd689394e56d250a4d340990203d99e6cd8e7ce27fb9854d96993e305b966cb",
+          "sourcePngIdentical": false,
+          "distributedSha256": "da1943d838a9705287bae3929bdf08ce6989fe179b2300ddd02e82e29b258afc",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 6,
+          "row": 14,
+          "newSourceSha256": "6686943e8e0bc96209e8775c5a023c209e095d660c60f6e29483e80973653b06",
+          "previousSourceSha256": "16be46844609bdf81fc7f3b16612e9f0c042a07a7c88215175b1e649eb47442c",
+          "sourcePngIdentical": false,
+          "distributedSha256": "90798abb7632955e7b21f211f956eeeb115f0793cc163990ff595cd64043fe66",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 7,
+          "row": 14,
+          "newSourceSha256": "07ec685c788675b10d0a1bebd5aed7b38c60a98fd99171438e1b11f43e620192",
+          "previousSourceSha256": "5c5fd7e4d86db387f35118a57491e98a4d9f768302293e66d200f527e8c4c1ba",
+          "sourcePngIdentical": false,
+          "distributedSha256": "c07c12db84f875d205fa5d64dfa282fdc8d40dcb16a452571ca9c30e9cc2da88",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 8,
+          "row": 14,
+          "newSourceSha256": "cf84cc73731130c6b6bf376a89404ba2d7c0aa458453ac6c9e8508d6d527f1c3",
+          "previousSourceSha256": "036506d5ad6565805093315e29f84aa6e1acfb55e6e40030e7ddd6665ea44afc",
+          "sourcePngIdentical": false,
+          "distributedSha256": "6bbdf5f101ca1a185990ec69a1fbaeff2b5fe1f28eba4d782d97559f059d68cc",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 9,
+          "row": 14,
+          "newSourceSha256": "7b55724ba613b75164ec47c8e43b3d012452e5788774abe2a1ebbb8517ee637d",
+          "previousSourceSha256": "e9ddc00a610165fbfc91b2890c9af75f5c467738d449b81e0be3be6563109c29",
+          "sourcePngIdentical": false,
+          "distributedSha256": "4cfdaf0f46d1dede2bbf1236d95a9dbed9af44302d3e65d409b58295704d3118",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 10,
+          "row": 14,
+          "newSourceSha256": "910dfb3e7a872728e691a48800886146055d29ca79f6865018bfdd04fdef6ba9",
+          "previousSourceSha256": "87800e4def9f5efbc589a753111b054cede063a901ce76cdf23e159d1ece6efb",
+          "sourcePngIdentical": false,
+          "distributedSha256": "82cf8821987bbf23d1532c22da60f1e6eb796d9a19c39305c034dd830e855611",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 11,
+          "row": 14,
+          "newSourceSha256": "377ffb6985f3018933f07da7c50fb75972475bf937b92031d7bcf46e44ea9ec9",
+          "previousSourceSha256": "377ffb6985f3018933f07da7c50fb75972475bf937b92031d7bcf46e44ea9ec9",
+          "sourcePngIdentical": true,
+          "distributedSha256": "f7084ff4bda7417d7bb33e106e1c9f25a916e512966cbde3491919d824bf0812",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 12,
+          "row": 14,
+          "newSourceSha256": "c78204b02bb39c92d06c461aaf9b9a571786e154da102335765b063070654468",
+          "previousSourceSha256": "c78204b02bb39c92d06c461aaf9b9a571786e154da102335765b063070654468",
+          "sourcePngIdentical": true,
+          "distributedSha256": "663587580c745ef18e6334ef29de1349b3bd10b2a7514c5dacc53f56b223e0d7",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 13,
+          "row": 14,
+          "newSourceSha256": "fb935d4b64cd99c18f59dab30b4d23599aee7e519facffe1962702f09d2c8228",
+          "previousSourceSha256": "54871c6a0ae391116e39f4f8fb361d4a49709932dae3f3068aa808c3a7e903e9",
+          "sourcePngIdentical": false,
+          "distributedSha256": "8ee5a1d1ccffbf4cee0cf1866e9d41e46071a77c740f1894491c1e83518c7adb",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 14,
+          "row": 14,
+          "newSourceSha256": "b81794b98bea93160170012292ee9d2057409c5e8e08802ad50cb65534ddc27c",
+          "previousSourceSha256": "0f4c2eec8d676740d86cf62877e090a0c932d540e1d476ffe08dcf1ab825a5e2",
+          "sourcePngIdentical": false,
+          "distributedSha256": "69ee641ad6e8cc332ba9d26e07d6bd352155b37833148b819e97074296fd1a9c",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 15,
+          "row": 14,
+          "newSourceSha256": "6b9db9f7ad1e549a534c26437d39f848368637fa683dc21d384aba4730f4414d",
+          "previousSourceSha256": "dfd6a6640cc7e6426ffc3d65f362c0990ac774c6cd4d5166956a258ddff391f3",
+          "sourcePngIdentical": false,
+          "distributedSha256": "4a4ac2e10a15a4282fc03b73d6c7f16e688629ab75cde5d64c726c20e1ea0c98",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 0,
+          "row": 15,
+          "newSourceSha256": "01cd7a1d2ce6eeb30216836cd01defbeaf48053c4aff3200dc192eb53a4dc23d",
+          "previousSourceSha256": "6e291502c86c4302a0a7811cb5dde4c3ea6126b77343e2f8b26acab5e9682191",
+          "sourcePngIdentical": false,
+          "distributedSha256": "e82a13588035dfd33f0233ec36accc218574a38b53724f194463d870a326e6da",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 4,
+          "row": 15,
+          "newSourceSha256": "5fa4adfbac4effd210bcf9a6850d68a3b370c8340baf6e18c238b3602ca7efce",
+          "previousSourceSha256": "db5ffd2c1b6dca376debefe48ebccdeb7f22d37555d65cb3661e1ffd25161f50",
+          "sourcePngIdentical": false,
+          "distributedSha256": "33ad13a48f67b4ccc0a19b4242179cb7b8c81f9b3ee34b213fc620ac12b910af",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 5,
+          "row": 15,
+          "newSourceSha256": "c7a0c6c81b203201065d5842d79cf2366cf5b130e39b85f6c6a427583a6fde93",
+          "previousSourceSha256": "c7a0c6c81b203201065d5842d79cf2366cf5b130e39b85f6c6a427583a6fde93",
+          "sourcePngIdentical": true,
+          "distributedSha256": "d3ba1c5e2d266793f078126e87aeffe49d16e2a6dfa5c030d61cab473a92de61",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 6,
+          "row": 15,
+          "newSourceSha256": "ad7f78c84a82f65b773223b2eaf4480a20058a62ca4bc9963d0159ef0eabcd87",
+          "previousSourceSha256": "add5a1326bfaf9d3a4e562a214d45a2feee0075037f95238bf351bc4feef4429",
+          "sourcePngIdentical": false,
+          "distributedSha256": "45b2a8050348e590ff9b74442c1d09839e1fb1bf30b5ef2be235b6d8145b40ac",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 7,
+          "row": 15,
+          "newSourceSha256": "f0c1cfa54f926d5c3dda4aa74f9f83204d2840200fcab6c1e588762ae4b988d4",
+          "previousSourceSha256": "4d585e778c407b204775fa3e74e0cbddb49a6c2eadc2949a4e07ea018cf48213",
+          "sourcePngIdentical": false,
+          "distributedSha256": "e94122f0344ec8a268752e928dd293d15d9295f84aaaeb9d288579c48f37d504",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 8,
+          "row": 15,
+          "newSourceSha256": "744f4d8c4f8c12ade6c96f1f6e8da7ed1c5ae86ade6391d2dc6784da4b6360e1",
+          "previousSourceSha256": "744f4d8c4f8c12ade6c96f1f6e8da7ed1c5ae86ade6391d2dc6784da4b6360e1",
+          "sourcePngIdentical": true,
+          "distributedSha256": "a6b9f4d72799742e9be4c3bf157188cefcef42304314be6557b9f33abc3e26bd",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 9,
+          "row": 15,
+          "newSourceSha256": "4b3dfa1e71f86f3ab9b5edf424c7e688ca777959bcd4e65d3cf5f718bed2db6e",
+          "previousSourceSha256": "2c03a5e21671884598f0893c708d3705746a4f2f4ac30f7c580d206c7c5c174d",
+          "sourcePngIdentical": false,
+          "distributedSha256": "a4eecb17ccd81ff5ca55d59b7eef19f0d05c6d79a7383f54a74c6c68d42f18db",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 14,
+          "row": 15,
+          "newSourceSha256": "8563c644264537b73f7d29c6b052a2399029311dec43866e53ee03cba54198cc",
+          "previousSourceSha256": "b9fb3407bda07968c0a1ab1bd4b3d85e34187dd97c35a614984f00dfba743f2d",
+          "sourcePngIdentical": false,
+          "distributedSha256": "6adb0969f3a1a40b54b416b16268e368ed285e2383805125b1e9ec4ff50104e7",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 15,
+          "row": 15,
+          "newSourceSha256": "544de394a796a769ac4b5b131596178e3589458c54ea1e31837dd89343bc33a7",
+          "previousSourceSha256": "c2e422e40d164b92cba81ca9f90b080842d2abc48c74e38dd9d14398ccfcd35c",
+          "sourcePngIdentical": false,
+          "distributedSha256": "14b8f13e02b565ffadeb56d0ff7f4c95ab98bd409b5847ba2118b9dacf64de1f",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 16,
+          "row": 15,
+          "newSourceSha256": "da18303fb62ab5523dd757ee5bc7000c3af6f778b157e6c9f6d578403f51d26f",
+          "previousSourceSha256": "da18303fb62ab5523dd757ee5bc7000c3af6f778b157e6c9f6d578403f51d26f",
+          "sourcePngIdentical": true,
+          "distributedSha256": "f994ec0ea844f7cd3c16778c67f313c5cf21b9729e2cf5f68ce6c017a9f2c0c3",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 0,
+          "row": 16,
+          "newSourceSha256": "dcf5f697f785006edeb1e8726b0abfa79086cbcde4517b50163f332d48e33c50",
+          "previousSourceSha256": "cf631449a4ae742f63f901ce497a80253e4f205b4c25e2a39b8605c219ad9784",
+          "sourcePngIdentical": false,
+          "distributedSha256": "e5dcc7055407b311445c515ea5f30916c0cea104ea4604e8c68c07632716b4f6",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 4,
+          "row": 16,
+          "newSourceSha256": "301a86c3006365dd577980d58db45df00f5818e16df4ffaff26b08b8cd1ecdf5",
+          "previousSourceSha256": "98b894c254ff8e13afbb693b996bae42941770248f20be4fda721d4f195a2ed8",
+          "sourcePngIdentical": false,
+          "distributedSha256": "82e700222aba8ee729fa33d7e2eb26797527e34d0108521ae3c705fdd596c1da",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 5,
+          "row": 16,
+          "newSourceSha256": "4bc2a7582e8c5980d247632e2787dd908f99c4e32eb68bc7b255b96f5de4b912",
+          "previousSourceSha256": "a4a3d82f0775c34cb690f66af039f89189529c490b484d76d78eb46f42051797",
+          "sourcePngIdentical": false,
+          "distributedSha256": "2c4e754a5a97c16bdb07189b0dc687373dcc527c62f4a5c443cd0a6b1868dafc",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 6,
+          "row": 16,
+          "newSourceSha256": "10df205991086b4df3448852b8ea2b6eb33b98d28bcd6d1e9103bd925a130bc7",
+          "previousSourceSha256": "44600fd198d1b42b97cc19884e5b0132da1b139caba4aaa63091d8bc54d8febe",
+          "sourcePngIdentical": false,
+          "distributedSha256": "9a5fb6f0b12b3afa9caab559435ac4723146c6665837dda9a6a4964fa8aafcfb",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 7,
+          "row": 16,
+          "newSourceSha256": "27e4aaa1832d6dfc7eec70ba629d22895f033d17b056597609f0abf3d52c542b",
+          "previousSourceSha256": "e512d70f2f4b0406d8f157d8f2b6b96fdbbd39853768a61d53a9ed8e3d080f6a",
+          "sourcePngIdentical": false,
+          "distributedSha256": "867591cece6daebd3db849313572de45b2a22446341d791efe29cc638d186caf",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 8,
+          "row": 16,
+          "newSourceSha256": "8ed8bda1eae752b15218177b8dec2c8273544a903edad7e28ddb13f50aaa4df7",
+          "previousSourceSha256": "2228debab19908965b7ecf1bd5a81f036ea399f736dd0f7ec94dfd43360023cf",
+          "sourcePngIdentical": false,
+          "distributedSha256": "e70909097f16d11e72fecc6b97cc8c5c9880c2e45f87a8eaf1e3030f676595a3",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 14,
+          "row": 16,
+          "newSourceSha256": "0a44c93a17eab7d4d5acd4dcbbc5b88c06eba9cff70e0acac361d583f55a2b83",
+          "previousSourceSha256": "6b06baaee8e8391b88be13f3baa75dfecdece28b206dc31e7af0a3fa2538750e",
+          "sourcePngIdentical": false,
+          "distributedSha256": "6c411e0b8d50845f01832cbb44ef8a5b5fe2657666f43217c2465daf84966001",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 15,
+          "row": 16,
+          "newSourceSha256": "31a7e424768293cc732959aa73661d2e87677a4458188edddd16123c0a0fe381",
+          "previousSourceSha256": "5546a2caccfb64669b94733c20fdca9006914b7dca88c083571e9cba18a26fd2",
+          "sourcePngIdentical": false,
+          "distributedSha256": "14a44a65aeb9d502ecf11f5a7d3f4388bf1340e556e3e5b48016df78fc942ad1",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 16,
+          "row": 16,
+          "newSourceSha256": "0c18044c47b1e758678ebc5d094427900c476980e6cb12aaca528f5d816173d7",
+          "previousSourceSha256": "0c18044c47b1e758678ebc5d094427900c476980e6cb12aaca528f5d816173d7",
+          "sourcePngIdentical": true,
+          "distributedSha256": "d3da626122d22c62fb4f978f4a4cf9cbe50de1be93222f55a6ba5a17a4777f3c",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 0,
+          "row": 17,
+          "newSourceSha256": "50b5a2d1773c6bfc99a5d97f9df276665f0868ee80a11d4fa671e66de079c167",
+          "previousSourceSha256": "14c91bb0ec20b0bdbc7c397c3960b16619521c670e35f42cb29e2a140080178f",
+          "sourcePngIdentical": false,
+          "distributedSha256": "ca40c3e50f637d276c049c717c38ff69e8728cf3087c7f4dd4258ebf23b3ccb1",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 5,
+          "row": 17,
+          "newSourceSha256": "8e9041a54fe213b48f96846c8fe68376f66593d64f1cf2b6339fa305a0933f40",
+          "previousSourceSha256": "8e9041a54fe213b48f96846c8fe68376f66593d64f1cf2b6339fa305a0933f40",
+          "sourcePngIdentical": true,
+          "distributedSha256": "720093de1a1cb846448206d3d82f204d70cb1f37ae89e0bfa43dcca3523391fb",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 6,
+          "row": 17,
+          "newSourceSha256": "b7576fc9ab42920b595f502f09d5e9dc69d7ce4a67e476187523574346f8b363",
+          "previousSourceSha256": "c5354b1500859724604c392f31bc9de4ed013909d703902238c8e422b25b562a",
+          "sourcePngIdentical": false,
+          "distributedSha256": "95d912695aea74519555c4d9e7739a34d4d007ab238ee72ab933d7965958a37e",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 7,
+          "row": 17,
+          "newSourceSha256": "84cf11e28da5b1643ffc340e348184eaed90b0ea8d60b8ed02a7314d51dc6bf4",
+          "previousSourceSha256": "275eae4f0a3b6ea1426559caaa90fb1cb00a052829c37ce256ef1199216bda67",
+          "sourcePngIdentical": false,
+          "distributedSha256": "dbc1afe7c6a27183bb8e8da785508d1c6f940fa4fcde51e22b457049be5a10d2",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 8,
+          "row": 17,
+          "newSourceSha256": "4a32e97010f3bb00f8c729bf354debeab3163937657a5e72c16ce194064d6256",
+          "previousSourceSha256": "184a49697a8dc0fa09a2b5dbfd30939d2ec1108a3120e026832738544973bb8d",
+          "sourcePngIdentical": false,
+          "distributedSha256": "b179fdc6169c633f0bc14423b4986b7eb73269ede937e051c9d5c75d8fc619d0",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 15,
+          "row": 17,
+          "newSourceSha256": "a58bbf88ff1543affe4d3a590acf9c20e8bfb2b0fa000055dace203872f8604f",
+          "previousSourceSha256": "511dd91a85b14adae609206b72cbdccfd28d658eb72736a164ea2d75f776502e",
+          "sourcePngIdentical": false,
+          "distributedSha256": "41a8e2febdb5467faee036dd40e5842009691aa80f6e30cfe7d3b3c982483b33",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 16,
+          "row": 17,
+          "newSourceSha256": "01918975e91ce9b58edf3048df3bd9227feec070dd895d3af518ae83be50996a",
+          "previousSourceSha256": "01918975e91ce9b58edf3048df3bd9227feec070dd895d3af518ae83be50996a",
+          "sourcePngIdentical": true,
+          "distributedSha256": "5e0a2e4d5fb94c3ada4877ae1ff73ca591f76e0c59937c4a508182f43b13aedb",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 0,
+          "row": 18,
+          "newSourceSha256": "28de215e5e7407920bcd306c74c793123f87062c79e452ded76a2cf2fe8acda7",
+          "previousSourceSha256": "28de215e5e7407920bcd306c74c793123f87062c79e452ded76a2cf2fe8acda7",
+          "sourcePngIdentical": true,
+          "distributedSha256": "5f32076e00a7798a5bf2b052efc352d8d74118aab35629a5fe197b0a8badf345",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 4,
+          "row": 18,
+          "newSourceSha256": "88edf37d09ef1cd2090baf1540fac6805a262ce2446c6d6878cce8edddb1160f",
+          "previousSourceSha256": "816114d08b2ca6ef29cfb3f0f48867a8209a3ce28bc17b9ebe34e697c72915fd",
+          "sourcePngIdentical": false,
+          "distributedSha256": "8abb519f63645090d496d6e07175d49b41641f8361ee0f93dcb3425443418735",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 5,
+          "row": 18,
+          "newSourceSha256": "66e0e83e23ee0b055fd2fbaa2a8c136f3661cf62da01d8d74bffd1c57b9e73f9",
+          "previousSourceSha256": "1765d6586a1019e92c03003be6986e3af78b661fecf6b1bdeaf9cada2dcdc4c9",
+          "sourcePngIdentical": false,
+          "distributedSha256": "4b0e6e228d9b98f236502db57813a691d331a85c74c343a0959c73fc99fbc627",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 6,
+          "row": 18,
+          "newSourceSha256": "0d6d0237532fd4df547393b89c9dd1161737e3573998255868f6d8e6e507bde8",
+          "previousSourceSha256": "0f97237dc3f063846168fcd0d627538598e8294b035142d3d3f3801a71f6c988",
+          "sourcePngIdentical": false,
+          "distributedSha256": "8513d3be110049151c5a2eca3e9b089c59e4a76e0e27e358465300d843a206ca",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 7,
+          "row": 18,
+          "newSourceSha256": "a99864b143823889917260a81d580bbaa67469d6e9b198e29ea8348f6855968f",
+          "previousSourceSha256": "a99864b143823889917260a81d580bbaa67469d6e9b198e29ea8348f6855968f",
+          "sourcePngIdentical": true,
+          "distributedSha256": "1ec0e40d4896e3b891d39d56ebdc4e9d51c3ea30abdaca1860a18c60e6056bef",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 0,
+          "row": 19,
+          "newSourceSha256": "ecd8be70ce0e2f1f1aabf4dcf20245331ec5ea8aa7253b0d6d1a0999538ec904",
+          "previousSourceSha256": "ecd8be70ce0e2f1f1aabf4dcf20245331ec5ea8aa7253b0d6d1a0999538ec904",
+          "sourcePngIdentical": true,
+          "distributedSha256": "27705bac3b2b351e9324dc67156ac9333b8e5e6e5d47fa29564af95eff313ae8",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 3,
+          "row": 19,
+          "newSourceSha256": "de68709103be4ff83e49d51b0e101e28613ad7cbcc3e402bb3cd37c3f828e4f2",
+          "previousSourceSha256": "0dabfa43187f1acccc16f6d32ffc542ab107972389d3e12e17b9bad67cbe9dc5",
+          "sourcePngIdentical": false,
+          "distributedSha256": "38d81115f5a0b9d9554b0c4726437f6811c1ebf384bf23e0de95c3577425c4f8",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 4,
+          "row": 19,
+          "newSourceSha256": "a374de4546c41c9a85afc9d4cb126db0d3767106442eb93a8acaa5cbde4258e2",
+          "previousSourceSha256": "50a4a56dfa9f3f8ff6272ca182791a0385510afa0f05bae32ea0beeab980aa4a",
+          "sourcePngIdentical": false,
+          "distributedSha256": "51193919a4edb35a24479461a4ae14693ca1dc96b513cdc247f450b05aa74737",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 5,
+          "row": 19,
+          "newSourceSha256": "391167b9c2fac59d30dd41ea450c2a7ecd00918ec242b00b833a73aaacc3077b",
+          "previousSourceSha256": "df624cf5286bb917c2e9317a0470d123094479dbc12e88655f3e296134bb96e3",
+          "sourcePngIdentical": false,
+          "distributedSha256": "2289e4f9736fcfef039eed4f548ac827492f021b9d123eceb4c24a7f80bfe362",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 6,
+          "row": 19,
+          "newSourceSha256": "b0f68d219ba303faa6402d34c1c4c2d991baa85e16c4c29ffd8bce9513fa2738",
+          "previousSourceSha256": "73a3f420c7c8a1527b6df3e35c6435d39b48792bf80309f4d5662d1ce3f02c2e",
+          "sourcePngIdentical": false,
+          "distributedSha256": "e02a71c2dff0a5edd030d825dcd1da578d662c0c73cd0254301a534c5900af9e",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 7,
+          "row": 19,
+          "newSourceSha256": "900c60df0289a9ad1e3d89a177bb7758f07bdb5bb07ce09130977b153203c4d5",
+          "previousSourceSha256": "fcd35f1f9f04a9fe1eb539c8340f33f9dade7f2d7682a86fc073a56529dd71c3",
+          "sourcePngIdentical": false,
+          "distributedSha256": "de345a262a01e9e9f8dbe4bd85ac61c8913c9fa19ca9c5795fd6c6a14880936f",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 15,
+          "row": 19,
+          "newSourceSha256": "875d72f450323e91a484c722343248874e0f2e033189b713fa6f52d9dc7cde0d",
+          "previousSourceSha256": "fe07550906a1fbfac478b1585e1f3d6e456a8ec8fbeff41f7279bad5c29d3233",
+          "sourcePngIdentical": false,
+          "distributedSha256": "f021675366da2fba224bad2ed887c9da77b876976eee1c7b93cf3495c6775248",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 16,
+          "row": 19,
+          "newSourceSha256": "e899887fcb8fbdbafe3806f0c401a62a6749a759db8b9f9086f5352f2858db64",
+          "previousSourceSha256": "e899887fcb8fbdbafe3806f0c401a62a6749a759db8b9f9086f5352f2858db64",
+          "sourcePngIdentical": true,
+          "distributedSha256": "8d45a9e3aa008f4c4d341d40ed03eb2b1130f876db2e855f6d8b72834d04823d",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 17,
+          "row": 19,
+          "newSourceSha256": "4c0627eb0d25d510d05c1709a04277bce07c030fda3e67511a13863a11f5685a",
+          "previousSourceSha256": "64bc05fb02be12288179fe439af33ffeb9b22fdb47712c07ff9f57f40b2463dd",
+          "sourcePngIdentical": false,
+          "distributedSha256": "e63a6fe4e57c718783f558771a70bd76a4e12e3031afe4c16a0c7bfff8f47aed",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 2,
+          "row": 20,
+          "newSourceSha256": "2279064eb747f87eb8eb7d05b9887398822426f98dc0b9348b1ca600072cccad",
+          "previousSourceSha256": "74654c2c6f3b3ae6cbdf916ec635ceee57511a10bad88b9cfc55c24ee72e13de",
+          "sourcePngIdentical": false,
+          "distributedSha256": "83bd40ed9cf88e795f9d76863accc11fd33eceeb292e4cfa78deb3e393649570",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 3,
+          "row": 20,
+          "newSourceSha256": "dde019deb6e38706537f524b8c70b245b5be7f28b60a0a23dd3cf4b7d0b6cbc6",
+          "previousSourceSha256": "dde019deb6e38706537f524b8c70b245b5be7f28b60a0a23dd3cf4b7d0b6cbc6",
+          "sourcePngIdentical": true,
+          "distributedSha256": "7acf2f0c44cd2db70d6c4bd8249e07743f090ec6adc97704cab7b828f3c82ab5",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 4,
+          "row": 20,
+          "newSourceSha256": "e4242f1b3aa2996d9075e0acc27f42772e3bb57683a6edc6b600d50172faf880",
+          "previousSourceSha256": "9348aec70a5b3ebae49ec40c61b928843f2630751982170323a9a5243f7a474d",
+          "sourcePngIdentical": false,
+          "distributedSha256": "c8049ac9c9bcbe52e313cf99b0fdcb8c72f77f531472a8a42fca8011188936fe",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 5,
+          "row": 20,
+          "newSourceSha256": "9bc2f3c29229d3c009307fa1ebae990ed63f2a1b8b2b22fe216b8f6a06a4ce8a",
+          "previousSourceSha256": "7c9776f1782719f620880f3d90bbac7d01b37eaf20615929e71001501a95364e",
+          "sourcePngIdentical": false,
+          "distributedSha256": "1d3d93d1efbaf3b458128d3ba0244f60636222dcfd858e83768a0f5a41065281",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 6,
+          "row": 20,
+          "newSourceSha256": "6c0b627e1a32da98854f9961a711ada5701ea16c57d0ff812e2f740c56a5b5e9",
+          "previousSourceSha256": "3455b06bac381e01604c2a8cbfc8f2343ecf3be66784be7838215b08508d24a3",
+          "sourcePngIdentical": false,
+          "distributedSha256": "8dd79566cfbcab5d750409fa6bafa4ed0aaa94df5ea97165e2c5b0758cc3995c",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 7,
+          "row": 20,
+          "newSourceSha256": "ea290c8d349038332b51bc2a5077ad7c08fc638325bb27c527b84a054355e60c",
+          "previousSourceSha256": "ea290c8d349038332b51bc2a5077ad7c08fc638325bb27c527b84a054355e60c",
+          "sourcePngIdentical": true,
+          "distributedSha256": "ab5820b5fa892cd3d2b9e2bb37333c27f169d410d402e4117ab32094c8ab3535",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 8,
+          "row": 20,
+          "newSourceSha256": "c7a0a4997ad85e764bd10c4b580450fc15246e3f8abb6f81932f8e0171f990c9",
+          "previousSourceSha256": "c7a0a4997ad85e764bd10c4b580450fc15246e3f8abb6f81932f8e0171f990c9",
+          "sourcePngIdentical": true,
+          "distributedSha256": "17600a51544fa2a8ed8d7910377c42943eabc1576783667bace5fd9bb2097969",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 15,
+          "row": 20,
+          "newSourceSha256": "a184cae4f993ebb6737c1e4874bdc03a5e3f0b7a3cccdf3f7688e49c516b2fc4",
+          "previousSourceSha256": "f38657c142be37f379d8d934773c70b4196e756ddf62cdf4b848acab533a0072",
+          "sourcePngIdentical": false,
+          "distributedSha256": "15f7b66061e81656aeb5333a1dc064b52876a6d911af69a8bc74c2249399910d",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 16,
+          "row": 20,
+          "newSourceSha256": "9a2caeadfd524dbcd7aa6f73a48628787db2f2092f05749260d6fb980b630177",
+          "previousSourceSha256": "9a2caeadfd524dbcd7aa6f73a48628787db2f2092f05749260d6fb980b630177",
+          "sourcePngIdentical": true,
+          "distributedSha256": "586f8e622bc9be43f1646be860fed1b5548a56d6a814d911012604c6b6696438",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 17,
+          "row": 20,
+          "newSourceSha256": "5795108f0cb854d3053c5481b3d30a4a3b96abe4333c0f7665f5d6edbbae2f16",
+          "previousSourceSha256": "1f78851c14a211cb99d470b790c99a03f09eecac8fd0640bf85d446fda512a80",
+          "sourcePngIdentical": false,
+          "distributedSha256": "906c832848a49a7b5b7f2c62da4a6b4deccf1eb717358633d834b1a2708cc4a5",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 2,
+          "row": 21,
+          "newSourceSha256": "611bafd42417a0cd1e1b0f87e8cf96c6357db12fa9923349450244017353d6ee",
+          "previousSourceSha256": "611bafd42417a0cd1e1b0f87e8cf96c6357db12fa9923349450244017353d6ee",
+          "sourcePngIdentical": true,
+          "distributedSha256": "85aadce87d7e44f987544b3fee0baa43d32224de179139859a19f987cc554c72",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 3,
+          "row": 21,
+          "newSourceSha256": "962610a96c8ae8e1f95b8ef58f61b1f90e4adc956820340fea2c6f3db206488a",
+          "previousSourceSha256": "1abd47e50e8193aacafbe77b8a43f7abe202840535ef8a493655c84c0dc60424",
+          "sourcePngIdentical": false,
+          "distributedSha256": "87d3ab0629a58e8deaafc76d2ef58aa1720ef11649a930b67722c5c2fb0dde44",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 4,
+          "row": 21,
+          "newSourceSha256": "f647266f7e2474aa85ad1b77e1bd0993e3150dd3d0aca2cb6fb3c628fbe3e9d9",
+          "previousSourceSha256": "bba36744b842381541db1c105aa3f57744a98f3fa9201849dc04b92040ea60bf",
+          "sourcePngIdentical": false,
+          "distributedSha256": "7a07248ba30fad75e4297b3af1e698a6ab213c7e33df39828d3df7b63d71bb5b",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 5,
+          "row": 21,
+          "newSourceSha256": "edbfc1de42831933a43073cbb4541a09c200bb501e20d7066f838fbcfb84c258",
+          "previousSourceSha256": "edbfc1de42831933a43073cbb4541a09c200bb501e20d7066f838fbcfb84c258",
+          "sourcePngIdentical": true,
+          "distributedSha256": "2c7630a05eb031085deb2fa3fac4e2f0a937d52351a2cfec64c7d5fdfb42caaf",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 7,
+          "row": 21,
+          "newSourceSha256": "96b353de9d572cc70f343c9cbe123e2da74da89c54b838569eb2690bab3c166a",
+          "previousSourceSha256": "38a923672fecd4a3c266b0a61ec4dbe4edb6d0f3ee0cd2f5fe65ccee70a38b4e",
+          "sourcePngIdentical": false,
+          "distributedSha256": "6700f481de77a275ee97f3fcc1aeb306448b56f192f028e383b4b3d3fc5ee5ea",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 8,
+          "row": 21,
+          "newSourceSha256": "8ed8bda1eae752b15218177b8dec2c8273544a903edad7e28ddb13f50aaa4df7",
+          "previousSourceSha256": "2228debab19908965b7ecf1bd5a81f036ea399f736dd0f7ec94dfd43360023cf",
+          "sourcePngIdentical": false,
+          "distributedSha256": "e70909097f16d11e72fecc6b97cc8c5c9880c2e45f87a8eaf1e3030f676595a3",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 16,
+          "row": 21,
+          "newSourceSha256": "74c3db8d8bc2e3fadb5a0239a6ab40415c275bd420070784c69aabfaf3f0ae83",
+          "previousSourceSha256": "74c3db8d8bc2e3fadb5a0239a6ab40415c275bd420070784c69aabfaf3f0ae83",
+          "sourcePngIdentical": true,
+          "distributedSha256": "d216ed60810aa0ee80149250915ded8f520ac648cbb74715d06d9dc6671a09c1",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 17,
+          "row": 21,
+          "newSourceSha256": "8be7b6fd63d89fb3a3dc11d2d7f696806b011c306a99aca86356b79dec719d11",
+          "previousSourceSha256": "4d6102dbad87c38e90871061d2cc2b7b875e6a2d0fe4f21fd8994e41326a08bc",
+          "sourcePngIdentical": false,
+          "distributedSha256": "24223886b898f42da5f47fd51ee193c274ab317c094cfa421e64a42220684e0c",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 0,
+          "row": 22,
+          "newSourceSha256": "10e766f3503c501c1d150b42c162bee85313d650cb20902a91784ffaa1199a06",
+          "previousSourceSha256": "a5cd449eb5dda4661c79a3c8cd5a2c2a028d402a7523cf3337095d5436f933a8",
+          "sourcePngIdentical": false,
+          "distributedSha256": "c9b62a2551e2b25210ba46f45a088744249e0240d5ac81b10dc3aab8654f225e",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 1,
+          "row": 22,
+          "newSourceSha256": "438e0b45420130cfeb607766be88ae8a49d759b3e662ecfbe7f85d9c7e90f6bf",
+          "previousSourceSha256": "429f5e40a56067607912d59828d0b225da952f19ce418e53b472139510294924",
+          "sourcePngIdentical": false,
+          "distributedSha256": "5e8ba51ea7f779db1383815f9982e5fce3917dddf8ce33c8231924c5bcacaa35",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 2,
+          "row": 22,
+          "newSourceSha256": "e440daea949d56c0535dcc04c768c69f55b6c56d6e7ba469cfb03833ad5c50a4",
+          "previousSourceSha256": "3460b7bdf8aecf7d465e86c7f8aaa121622091384d2641b668e2ca099254ef5e",
+          "sourcePngIdentical": false,
+          "distributedSha256": "dea70041a7df6e94a06ffbfd7042e9ab84ae66b42db061a5d6d54d828979a04e",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 3,
+          "row": 22,
+          "newSourceSha256": "0d155c3f9d6a993c98e5618f4e829a7086adae8f5a24477cd42a1bf641f0958c",
+          "previousSourceSha256": "0d155c3f9d6a993c98e5618f4e829a7086adae8f5a24477cd42a1bf641f0958c",
+          "sourcePngIdentical": true,
+          "distributedSha256": "9ae0e05ee6ea3b280cf3364f27b0e0d49eca62ddda73275a6097a060fd1ccee3",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 4,
+          "row": 22,
+          "newSourceSha256": "0d155c3f9d6a993c98e5618f4e829a7086adae8f5a24477cd42a1bf641f0958c",
+          "previousSourceSha256": "0d155c3f9d6a993c98e5618f4e829a7086adae8f5a24477cd42a1bf641f0958c",
+          "sourcePngIdentical": true,
+          "distributedSha256": "9ae0e05ee6ea3b280cf3364f27b0e0d49eca62ddda73275a6097a060fd1ccee3",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 5,
+          "row": 22,
+          "newSourceSha256": "f7c1a05ebcf69087df895150bdf5281901995d4af5e9cc29f4f0fdb699c2e43b",
+          "previousSourceSha256": "f7c1a05ebcf69087df895150bdf5281901995d4af5e9cc29f4f0fdb699c2e43b",
+          "sourcePngIdentical": true,
+          "distributedSha256": "001fa22a16d09d7f8c6003d2187be6bf1fb72bb8bfda22b1449ee40093be2ec0",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 7,
+          "row": 22,
+          "newSourceSha256": "67f53e7b1008fb2daae6ed63922a401de67206a36cbce153b516bd088f2bff78",
+          "previousSourceSha256": "0f2954fe49783ad2d096359799181d0e2666de259424d90d2ec7418df8029676",
+          "sourcePngIdentical": false,
+          "distributedSha256": "fc943996a607937d8623891d5df4da6359963a6d6566376e07fa2fa174658b2c",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 8,
+          "row": 22,
+          "newSourceSha256": "8ed8bda1eae752b15218177b8dec2c8273544a903edad7e28ddb13f50aaa4df7",
+          "previousSourceSha256": "2228debab19908965b7ecf1bd5a81f036ea399f736dd0f7ec94dfd43360023cf",
+          "sourcePngIdentical": false,
+          "distributedSha256": "e70909097f16d11e72fecc6b97cc8c5c9880c2e45f87a8eaf1e3030f676595a3",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 16,
+          "row": 22,
+          "newSourceSha256": "14856a584ce1081816b579328a70d49e02e7a124de6c86a19f7baa31e9370d99",
+          "previousSourceSha256": "aa9521f2ee772979704701348023bc8394001bb75b875612f58faf1e0adaa4b0",
+          "sourcePngIdentical": false,
+          "distributedSha256": "e582fb5932e1ee057c75b08f52cd39f2255072341e134cf801b7f22e66a0e748",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 17,
+          "row": 22,
+          "newSourceSha256": "87f2496d9e1892aa06fd41a844c304fc01841e5e35c6dec928fa7cd67ee22d0c",
+          "previousSourceSha256": "87f2496d9e1892aa06fd41a844c304fc01841e5e35c6dec928fa7cd67ee22d0c",
+          "sourcePngIdentical": true,
+          "distributedSha256": "b49eeb323adb53fb704ad768a76ab7cee3444c8b2a71f2e15a7f043dcf3a9bf1",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 0,
+          "row": 23,
+          "newSourceSha256": "6d50cf6aa9dc8d32f550f3bc9a5afc65eb89e4850215550a6e03c11871a1dfaa",
+          "previousSourceSha256": "82e9061320374e5ab98bee17c905dc4686d76685c50f4856496e4a5378ba08c2",
+          "sourcePngIdentical": false,
+          "distributedSha256": "f1149b820df474bf5cf9abf6972c6ee83fd9532073d5a9610d498400a33f3113",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 1,
+          "row": 23,
+          "newSourceSha256": "7a0a09d69b3b13fcb100db6fec373884a1e27bb2584e1cb98728b23ec18601f2",
+          "previousSourceSha256": "507c507dba9cf8d2ca6bfb8c0e1b7ca3e5e149a25cb2b5a7bc69d72e0e99793e",
+          "sourcePngIdentical": false,
+          "distributedSha256": "e12661f5beb5d651d985493c7a7b7c3e8e13513410046de2e51f1888d6289ef7",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 2,
+          "row": 23,
+          "newSourceSha256": "6d8659f4e265cd2260970ed5d5eda7c69c6d74345d68b72fac26ecde747bef2a",
+          "previousSourceSha256": "0b11941cb0519d69f483608df3e49995041b07ccee39447faf6988aa3ddbdd99",
+          "sourcePngIdentical": false,
+          "distributedSha256": "32c0f71f728c0ac2c8833cc576c74a316c86c2d028a3993e778b9b10cbbf6846",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 7,
+          "row": 23,
+          "newSourceSha256": "1216eb2cadbffaed864bb2d8d2afb020ed5c49e2a1b3bd09bb2be16873cc109f",
+          "previousSourceSha256": "9aa2ca03837325c81973fa0a7bf45108db806d0a3bd3b58951d595a5590a3bd2",
+          "sourcePngIdentical": false,
+          "distributedSha256": "950eb6b42677173f5cb7d5e93489e1e25328c7cd042b7b05e61c16c3e7f04bb0",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 8,
+          "row": 23,
+          "newSourceSha256": "8b74d122dd4d315551c219ee8ae2a3e6ee135afdf580af8ea2f2407a84c961ed",
+          "previousSourceSha256": "074f3b7fca6f4e472b612ce913d7ed7f39f429c360ae0d67d847b4bb6b881222",
+          "sourcePngIdentical": false,
+          "distributedSha256": "fa88b92fc9ea67be6db95481d4a88956585acb11f396fb310106337e828fab0f",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 16,
+          "row": 23,
+          "newSourceSha256": "02893eba62ce98f645ab6e0cc23af5c24b871a8d1aab6a2708a707e108e703a7",
+          "previousSourceSha256": "862ac9c68cc0e17e414919eea70419033d755651b1016693a72e9231a13955d9",
+          "sourcePngIdentical": false,
+          "distributedSha256": "50ee31c08459912a000eb6ba6228caa00c15d25cd89e449427b002e3bcfc08bc",
+          "alphaDifferingPixels": 0
+        }
+      ]
+    },
+    {
+      "factor": 4,
+      "heightTiles": 32,
+      "shadeTiles": 32,
+      "masterPixelsCompared": 31550112,
+      "masterDifferingPixels": 0,
+      "heightValidityEqualsShadeAlpha": true,
+      "heightShadePixelsCompared": 31244288,
+      "distributedTilesChecked": 32,
+      "previousPngHashesIdentical": 29,
+      "previousPngHashesDifferent": 3,
+      "newTileKeys": [],
+      "removedTileKeys": [],
+      "distributedAlphaDifferingPixels": 0,
+      "newPngVersusDistributedWebpRgbMeanAbsoluteError": 1.4196205353215636,
+      "comparisons": [
+        {
+          "col": 0,
+          "row": 0,
+          "newSourceSha256": "03fbccf27223954139f7e7f5ce2e14039516890d55e75447b4772d39623200a2",
+          "previousSourceSha256": "03fbccf27223954139f7e7f5ce2e14039516890d55e75447b4772d39623200a2",
+          "sourcePngIdentical": true,
+          "distributedSha256": "7fd6dc8beef5b05d5c8841a2c7860a6f2a4b41a7ccb0b264a65dc35045341000",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 1,
+          "row": 0,
+          "newSourceSha256": "037912a1444dc7df6a4621833918db0eb62b5931acf9e64593ed4f4258ec7d8b",
+          "previousSourceSha256": "037912a1444dc7df6a4621833918db0eb62b5931acf9e64593ed4f4258ec7d8b",
+          "sourcePngIdentical": true,
+          "distributedSha256": "177e136af18af474b12dd60542be4c4c0bd45d0c7a3025db34ac8ebad65018f1",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 2,
+          "row": 0,
+          "newSourceSha256": "7046c238cf30933cf916546b898581377a025278635468b7fbe2dc025a7828d8",
+          "previousSourceSha256": "7046c238cf30933cf916546b898581377a025278635468b7fbe2dc025a7828d8",
+          "sourcePngIdentical": true,
+          "distributedSha256": "faf59e1bc25ca53ebc9811c0600a16c499ba6bd5c94f9391b0c9e03db88d8c69",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 3,
+          "row": 0,
+          "newSourceSha256": "eed74cb3cc5d3fd35d5bdfeefb9b106a71473874db876fa8a1587724a76132fc",
+          "previousSourceSha256": "eed74cb3cc5d3fd35d5bdfeefb9b106a71473874db876fa8a1587724a76132fc",
+          "sourcePngIdentical": true,
+          "distributedSha256": "2ecd272c587b343cf8cd0a172eb98206f34f0f8ccb38e0d99ecffae5acbb1348",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 4,
+          "row": 0,
+          "newSourceSha256": "68a29703bc0b099c5ac700137280c72f67c0786612d8b9bcb7da61b768c97360",
+          "previousSourceSha256": "68a29703bc0b099c5ac700137280c72f67c0786612d8b9bcb7da61b768c97360",
+          "sourcePngIdentical": true,
+          "distributedSha256": "063c3c88db7f2ff70dbce53372c39c2f63e31e0fd531f711a2043142138a9c15",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 5,
+          "row": 0,
+          "newSourceSha256": "fdd9434929d53465c75fba2a491add2c36b6a7f57c8413e5893334bbfce97810",
+          "previousSourceSha256": "fdd9434929d53465c75fba2a491add2c36b6a7f57c8413e5893334bbfce97810",
+          "sourcePngIdentical": true,
+          "distributedSha256": "36a0bafea1a63dd9f14cc5e7c7cd77d1b78290fe4f5c401a453956c343139ea9",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 0,
+          "row": 1,
+          "newSourceSha256": "006ca49fefc16714b3fa628d7c9a2fd3a7515741ebd4ad07a9fa1b16f8bab180",
+          "previousSourceSha256": "006ca49fefc16714b3fa628d7c9a2fd3a7515741ebd4ad07a9fa1b16f8bab180",
+          "sourcePngIdentical": true,
+          "distributedSha256": "14f37d333122cd28f341f797bdc03b8c5a2a3ae8f2e66cf3cbc784a691742871",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 1,
+          "row": 1,
+          "newSourceSha256": "fb20f09d1931a37eb791aa4ec490a60a353d04f0f606706d3867a65f4b39a41c",
+          "previousSourceSha256": "fb20f09d1931a37eb791aa4ec490a60a353d04f0f606706d3867a65f4b39a41c",
+          "sourcePngIdentical": true,
+          "distributedSha256": "43cb8897e3020b8d9279f323ca8a79e8b9dd5341f1c5a738720bc2d95c7f441a",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 2,
+          "row": 1,
+          "newSourceSha256": "3a5dd2dd11f0b49c6bcdd508b0f480250d3b07b8dbacb656c22f78ef9c3c8e40",
+          "previousSourceSha256": "0beacfb2ed3980d720c8ab6afddb044292e7a5d4f1196a9fcb54d7d27b4f4e2e",
+          "sourcePngIdentical": false,
+          "distributedSha256": "5960ac8152aea28602fd24bc45f314dc2ada50fc1eb872940ca61be81b06bc4e",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 3,
+          "row": 1,
+          "newSourceSha256": "f58122545e6c90699f98480bb2ddd69384377697c19cf048ac98fe72f42a9adc",
+          "previousSourceSha256": "f58122545e6c90699f98480bb2ddd69384377697c19cf048ac98fe72f42a9adc",
+          "sourcePngIdentical": true,
+          "distributedSha256": "d4853df20f8fbff8c769c1630282315788710c1549b125fb4c3b874b1cc01047",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 4,
+          "row": 1,
+          "newSourceSha256": "084599f2cce66e6667800abbe0235ad7c5e4891a64fe2f347f168dbbd3f9a55b",
+          "previousSourceSha256": "084599f2cce66e6667800abbe0235ad7c5e4891a64fe2f347f168dbbd3f9a55b",
+          "sourcePngIdentical": true,
+          "distributedSha256": "0bbdf49950f8d6a7fdbaeb57e5c1291f3c08f1cb1db4a6297b78e7a3ffe53968",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 5,
+          "row": 1,
+          "newSourceSha256": "08edb939af594e4d7b93b6aac0280d0a9aaa76d0f6d61bbd4baf6f7cc7382374",
+          "previousSourceSha256": "d1da7e2e605b58347e058ebd6012d40826aaa5b93ee2bc780cf09d11f18fe420",
+          "sourcePngIdentical": false,
+          "distributedSha256": "31395ad53d29a0a53ebecfa9def677540f26ca9b2bd94cd3c2a467f4c6495cc8",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 0,
+          "row": 2,
+          "newSourceSha256": "1331929c5781cb277583d41a93361bd5e73b398f8559845c3ec7c1f7944cc118",
+          "previousSourceSha256": "1331929c5781cb277583d41a93361bd5e73b398f8559845c3ec7c1f7944cc118",
+          "sourcePngIdentical": true,
+          "distributedSha256": "357102599332312c5818b5abfa8167679ecd86cc5e47eca2a49f4167ea7acf37",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 1,
+          "row": 2,
+          "newSourceSha256": "3a7b3815dbfb6d20765e4f84e95a3dfc086fdf6aecc9deecdec612bafe3089fc",
+          "previousSourceSha256": "3a7b3815dbfb6d20765e4f84e95a3dfc086fdf6aecc9deecdec612bafe3089fc",
+          "sourcePngIdentical": true,
+          "distributedSha256": "d7ad4c2c79ce5932cb45bfcfdc2d3fc595737a5536663fa4dff0d4012bf0ca9b",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 2,
+          "row": 2,
+          "newSourceSha256": "026b097808ee0d62c21dfae680e7c48b0db2dfa66f48d2ae9acf4cf9d99cdc08",
+          "previousSourceSha256": "026b097808ee0d62c21dfae680e7c48b0db2dfa66f48d2ae9acf4cf9d99cdc08",
+          "sourcePngIdentical": true,
+          "distributedSha256": "e9896dfdbd40c43f7932c7c585200550b0c7ea072a82cc59c6a1d7533b5fef3c",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 3,
+          "row": 2,
+          "newSourceSha256": "cfff48a9d75b948d102bc2fe60e7df4ac71b87c55ecb8a4ab8793ccad2957ee1",
+          "previousSourceSha256": "cfff48a9d75b948d102bc2fe60e7df4ac71b87c55ecb8a4ab8793ccad2957ee1",
+          "sourcePngIdentical": true,
+          "distributedSha256": "052a55e23e6a1beb3916da42fe62662d78456f310148497bb64bc2dcee547ad2",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 4,
+          "row": 2,
+          "newSourceSha256": "8c336a29d60f77405b3bcabfe53c5158a73d0dbda4349f5cd2778e82625f9afd",
+          "previousSourceSha256": "8c336a29d60f77405b3bcabfe53c5158a73d0dbda4349f5cd2778e82625f9afd",
+          "sourcePngIdentical": true,
+          "distributedSha256": "d511f05bd1db3b8320584192a78900c410b65e4d72a2fd3883257de0c9b528fd",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 0,
+          "row": 3,
+          "newSourceSha256": "7d0c7cbacfe4d18fa4771d82115d7e523a0de3bd360c3f01bfb5ba401ad92f63",
+          "previousSourceSha256": "7d0c7cbacfe4d18fa4771d82115d7e523a0de3bd360c3f01bfb5ba401ad92f63",
+          "sourcePngIdentical": true,
+          "distributedSha256": "4e9db6ac7e311d95bd7c638ade9a09ee84eedf3bb9d29ed4562614edce01fc06",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 1,
+          "row": 3,
+          "newSourceSha256": "a2fda416760f50d04cbf994775063f04dddbeb812bb708e457cfa236d19d4606",
+          "previousSourceSha256": "a2fda416760f50d04cbf994775063f04dddbeb812bb708e457cfa236d19d4606",
+          "sourcePngIdentical": true,
+          "distributedSha256": "3c415640c213cc8129577588293a4060c62cf0367be7109139cd107569621d9e",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 2,
+          "row": 3,
+          "newSourceSha256": "7fd8fd18f00d3a69799a37e3d94258f7a8c19bd70b878f54424312d7ca1e1156",
+          "previousSourceSha256": "7fd8fd18f00d3a69799a37e3d94258f7a8c19bd70b878f54424312d7ca1e1156",
+          "sourcePngIdentical": true,
+          "distributedSha256": "199a5ff7c153dea4519c2baa2f346c8317640bcb9f584dc4510ce31d10ff1c34",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 3,
+          "row": 3,
+          "newSourceSha256": "128d41e5510bf1076218719c35b1aa079e533e67cacd5a077f98fb3c5d38d22e",
+          "previousSourceSha256": "128d41e5510bf1076218719c35b1aa079e533e67cacd5a077f98fb3c5d38d22e",
+          "sourcePngIdentical": true,
+          "distributedSha256": "03cf263ad537a5632a8f14a95dfc0a399bbf450758bb155fadbf184285adb3dc",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 4,
+          "row": 3,
+          "newSourceSha256": "25979146d7dfb931ad4aa79ab2788bc297c86ce2cf7c18ef1135396d9b3bbc8e",
+          "previousSourceSha256": "25979146d7dfb931ad4aa79ab2788bc297c86ce2cf7c18ef1135396d9b3bbc8e",
+          "sourcePngIdentical": true,
+          "distributedSha256": "67ca363e81324d929deba6ef5d0cff3af8284c1d8512effec26224c3cefcac7e",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 0,
+          "row": 4,
+          "newSourceSha256": "7a6459ade00b56fecbb893d063679ea529e922eb5de4e109d121b1754a8e79e2",
+          "previousSourceSha256": "7a6459ade00b56fecbb893d063679ea529e922eb5de4e109d121b1754a8e79e2",
+          "sourcePngIdentical": true,
+          "distributedSha256": "88779a9ea72ce97449921a772fdec745c75937d62ed7eceae2cf62029801ae92",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 1,
+          "row": 4,
+          "newSourceSha256": "265dc5f59c09f99222bb24ef0daf96453d8f607eece3e0879be89404399729c5",
+          "previousSourceSha256": "265dc5f59c09f99222bb24ef0daf96453d8f607eece3e0879be89404399729c5",
+          "sourcePngIdentical": true,
+          "distributedSha256": "4c88aaba6c2ff5bbc10f800362d9ed2347ece6abd7ebcafc03381aaba41c956a",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 2,
+          "row": 4,
+          "newSourceSha256": "84e98d98441824413596f7e1c9c8adb74c063f834a5e5bd59e8afdf5cbd4755b",
+          "previousSourceSha256": "84e98d98441824413596f7e1c9c8adb74c063f834a5e5bd59e8afdf5cbd4755b",
+          "sourcePngIdentical": true,
+          "distributedSha256": "314fa2920f37ba3933a341785c29542eaab2805f73801b176634ae6b1d432783",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 3,
+          "row": 4,
+          "newSourceSha256": "d7fdafc4f91c85f2ad0b805d29befefb142b9a71401d13d83735076188cfe958",
+          "previousSourceSha256": "d7fdafc4f91c85f2ad0b805d29befefb142b9a71401d13d83735076188cfe958",
+          "sourcePngIdentical": true,
+          "distributedSha256": "d8e2e975de178c12c2f00341273b34d6a024bf3e4dfc0b07da013ad405574970",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 4,
+          "row": 4,
+          "newSourceSha256": "6edba94bc5e95b77a87e2dc9cd2734477a9966796741c92f99bdc6b18bcbaa40",
+          "previousSourceSha256": "6edba94bc5e95b77a87e2dc9cd2734477a9966796741c92f99bdc6b18bcbaa40",
+          "sourcePngIdentical": true,
+          "distributedSha256": "1cb4a32021eb18809d2bde3185260d7ac02d746b586659c9f1d73bf9a0df4963",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 0,
+          "row": 5,
+          "newSourceSha256": "b0e1a81e03f9a06c00a595bb32dac27f24c26db210e99ea3dbb2421a71c157d2",
+          "previousSourceSha256": "b0e1a81e03f9a06c00a595bb32dac27f24c26db210e99ea3dbb2421a71c157d2",
+          "sourcePngIdentical": true,
+          "distributedSha256": "97573951120b6eb4c54e103d7e56bb08d36642a0a35daaa8200749e1a91ccb3c",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 1,
+          "row": 5,
+          "newSourceSha256": "301bf7f9f12375d468ba4d319ab1461f69178acd251d01628e29249541ee8ef0",
+          "previousSourceSha256": "301bf7f9f12375d468ba4d319ab1461f69178acd251d01628e29249541ee8ef0",
+          "sourcePngIdentical": true,
+          "distributedSha256": "83b368c95c4930a761904bb4100b0723019f3cd26eb66ae3ce704c01085250f7",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 2,
+          "row": 5,
+          "newSourceSha256": "33262e75c0992e0e4f9b1610493c093841dd337e78013acfd2f30e5823798ead",
+          "previousSourceSha256": "33262e75c0992e0e4f9b1610493c093841dd337e78013acfd2f30e5823798ead",
+          "sourcePngIdentical": true,
+          "distributedSha256": "2c3cbeec858859d623df030374dbf64c0426227276ce3dbe8fd01a97bb882fc5",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 3,
+          "row": 5,
+          "newSourceSha256": "6147b296dfeda5e3b2d3b066ed31d3efdccba21c173ef63ccd406829e1a36171",
+          "previousSourceSha256": "236eac9d6ce9d6e8c2171ea607a6675927a9a669a751a105dfab994b794e0765",
+          "sourcePngIdentical": false,
+          "distributedSha256": "c8e4d3a6c757a8e6e6d35fb3d2fcf4be14bea9c13188900d97fd1d6c077da1f5",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 4,
+          "row": 5,
+          "newSourceSha256": "0f074f305311f82b66be786567bed9620871a261537ee437c988d59a3d0297a0",
+          "previousSourceSha256": "0f074f305311f82b66be786567bed9620871a261537ee437c988d59a3d0297a0",
+          "sourcePngIdentical": true,
+          "distributedSha256": "92c43c08bfd18ceec01ddcb80b80db6903850bafd06ccf402839cb3106be687b",
+          "alphaDifferingPixels": 0
+        }
+      ]
+    },
+    {
+      "factor": 8,
+      "heightTiles": 9,
+      "shadeTiles": 9,
+      "masterPixelsCompared": 7887528,
+      "masterDifferingPixels": 0,
+      "heightValidityEqualsShadeAlpha": true,
+      "heightShadePixelsCompared": 7887528,
+      "distributedTilesChecked": 9,
+      "previousPngHashesIdentical": 9,
+      "previousPngHashesDifferent": 0,
+      "newTileKeys": [],
+      "removedTileKeys": [],
+      "distributedAlphaDifferingPixels": 0,
+      "newPngVersusDistributedWebpRgbMeanAbsoluteError": 1.4120478862021637,
+      "comparisons": [
+        {
+          "col": 0,
+          "row": 0,
+          "newSourceSha256": "61cf790b33668aa22f063c6bd0c26823f7b141c9d98d78e106b1e4d2612922f8",
+          "previousSourceSha256": "61cf790b33668aa22f063c6bd0c26823f7b141c9d98d78e106b1e4d2612922f8",
+          "sourcePngIdentical": true,
+          "distributedSha256": "22e778988fc77eb24cc66fcb32a897d50493439d98d72d69b032541af4e15b9e",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 1,
+          "row": 0,
+          "newSourceSha256": "a1b5ecc1dbb26d1d7f529f390c62da7b885f9ce0c2f1abfcfd72ab870335563e",
+          "previousSourceSha256": "a1b5ecc1dbb26d1d7f529f390c62da7b885f9ce0c2f1abfcfd72ab870335563e",
+          "sourcePngIdentical": true,
+          "distributedSha256": "696caea5c78b0742c8c464bb5c4208fb74efb1b6335af717caeb785a084e9615",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 2,
+          "row": 0,
+          "newSourceSha256": "43ae8c4a58a39fc5b3b41c642c6d68323ebe764d7c67d1ccc6c38a02650f9606",
+          "previousSourceSha256": "43ae8c4a58a39fc5b3b41c642c6d68323ebe764d7c67d1ccc6c38a02650f9606",
+          "sourcePngIdentical": true,
+          "distributedSha256": "a3544bb1e817270a7285cd22c7c0003fb44fffde8abb7dca8f7316a5f85c3612",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 0,
+          "row": 1,
+          "newSourceSha256": "40f8b8babce86e0a08228fa3d8d161a14141a29af148b701528912f148e3237e",
+          "previousSourceSha256": "40f8b8babce86e0a08228fa3d8d161a14141a29af148b701528912f148e3237e",
+          "sourcePngIdentical": true,
+          "distributedSha256": "83fd7753a9e208b960597761820c69cdfd264d4cd21046e37dea9cd05f8feb2e",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 1,
+          "row": 1,
+          "newSourceSha256": "f609a5ee277ad9e75635b489c348c59e8fcc234d9d0775027ceac21d3a48b8ab",
+          "previousSourceSha256": "f609a5ee277ad9e75635b489c348c59e8fcc234d9d0775027ceac21d3a48b8ab",
+          "sourcePngIdentical": true,
+          "distributedSha256": "c2d08b5802859a07e3e3c65dfac2a95573a95b7995e08962c7145281cee875eb",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 2,
+          "row": 1,
+          "newSourceSha256": "5d6d188f88671d130ae81d61b6def27a5c30d4837be96013dea6f7bc92371fe9",
+          "previousSourceSha256": "5d6d188f88671d130ae81d61b6def27a5c30d4837be96013dea6f7bc92371fe9",
+          "sourcePngIdentical": true,
+          "distributedSha256": "3094e04052ff7eb06eb10efb1f8a00c26c594733fb266caf9d4f52e97f773e48",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 0,
+          "row": 2,
+          "newSourceSha256": "59cb6ddf883e2a15f8814cdfbb1c1695a363ecb624a0edaeab43a1d98d979765",
+          "previousSourceSha256": "59cb6ddf883e2a15f8814cdfbb1c1695a363ecb624a0edaeab43a1d98d979765",
+          "sourcePngIdentical": true,
+          "distributedSha256": "f11fad910b936ed3cad88ebff365ab30749ad2d3806097366ea5b8c4d26093c0",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 1,
+          "row": 2,
+          "newSourceSha256": "27a340d9996cd7bc76519e909f8321027681017c99982011b62573d21d0f94c6",
+          "previousSourceSha256": "27a340d9996cd7bc76519e909f8321027681017c99982011b62573d21d0f94c6",
+          "sourcePngIdentical": true,
+          "distributedSha256": "ed8df37631619af8c58b70c5cc4e0914bd2830477cdf1ab656fc1deea4b30de1",
+          "alphaDifferingPixels": 0
+        },
+        {
+          "col": 2,
+          "row": 2,
+          "newSourceSha256": "760e9ba0938461b451e561458e1f295b98fc64bb8dcaf089142f24a83f0b7fb8",
+          "previousSourceSha256": "760e9ba0938461b451e561458e1f295b98fc64bb8dcaf089142f24a83f0b7fb8",
+          "sourcePngIdentical": true,
+          "distributedSha256": "ab7f06032840a55b192f1dd7c145585a86e1ad159ea57aa2ecdf27b0ce544286",
+          "alphaDifferingPixels": 0
+        }
+      ]
+    }
+  ],
+  "limits": "RGB差は既存の非可逆WebPとの比較。元PNG SHA一致が元陰影の完全再現判定。0ではないRGB差を標高差と解釈しない。"
+}
