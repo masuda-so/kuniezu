@@ -221,8 +221,30 @@
   sc.atlasBasis=plan.kind==='campaign'?'戦役・方面配置図':plan.kind==='naval'?'海戦・配置概略図':plan.kind==='siege'?'城郭・攻囲配置図':'布陣概略図';
   sc.reviewNote=plan.summary;sc.presentationNote='地形上の所在と、位置不詳の部隊欄を区別して表示。';
   sc.deploymentKind=plan.kind;
+  if(title==='木津川口の戦い'){
+   // 文献が記す攻撃の順序を図解。これらは画面座標で、陣地の経緯度ではない。
+   // 木津村の徳川付城や後世の冬陣図を、11月19日の豊臣方河口砦へ転用しない。
+   sc.atlasPlan=true;sc.atlasSchematic={
+    lead:'extra-a-0',capturedAt:80,
+    title:'木津川河口の砦を攻撃',caption:'攻撃の順序を示す模式図・方位と距離は表しません',
+    paths:{'extra-a-0':[[0,.22,.34],[22,.22,.34],[48,.61,.34],[80,.77,.34],[100,.77,.34]],
+     'extra-a-1':[[0,.22,.55]],'extra-a-2':[[0,.22,.76]],'extra-b-0':[[0,.77,.34]]}
+   };
+   sc.feats=[];sc.atlasBasis='攻撃順序の模式図';
+   sc.reviewNote='旧暦11月19日。蜂須賀・浅野・池田の三隊に砦攻撃が命じられ、蜂須賀勢が先に攻略した。';
+   sc.presentationNote='部隊は個別に表示し、攻撃の順序を示します。位置や進路を再現した図ではありません。';
+   sc.mapVisibleUntil={...(sc.mapVisibleUntil||{}),'extra-b-0':80};
+   sc.mapExitLabels={...(sc.mapExitLabels||{}),'extra-b-0':'砦攻略後'};
+   sc.beats=[[0,'三隊に木津川河口の砦の攻撃が命じられた',[]],
+    [40,'蜂須賀至鎮勢が先行して砦を攻める',['extra-a-0','extra-b-0']],
+    [80,'蜂須賀勢が砦を攻略した',[]],[100,'木津川口の攻略',[]]];
+   sc.calendar=[[0,'旧暦11月19日・砦攻撃の命令'],[40,'蜂須賀勢が先行'],[80,'砦を攻略'],[100,'木津川口の攻略']];
+   for(const u of sc.units){u.path=[];u.tr=0;u.role=u.side==='b'?'木津川河口の砦を守る豊臣方':u.g==='蜂須賀至鎮'?'先行して木津川河口の砦を攻略':'木津川河口の砦の攻撃を命じられた部隊';}
+   for(const g of sc.atlasGroups){delete g.point;g.dock=false;g.schematic=true;g.precision='文献に記された攻撃順序の模式表示・陣地の位置ではない';}
+   sc.atlasUnits=[];
+  }
   // 内側の旧監査は、初回と再構築時で追加出典の有無が異なる。最終的な表示の確認範囲で統一する。
   sc.audit=['出典が裏付ける範囲は各資料欄に明示','地形・城郭・全参加者の精密な復元は未完了'];
-  const row=TK.BATTLE_AUDIT?.find(r=>r.title===title);if(row)Object.assign(row,{atlasBasis:sc.atlasBasis,units:sc.units.length,positionedGroups:groups.filter(g=>g.point).length,unlocatedGroups:groups.filter(g=>g.dock).length,displayedParticipants:groups.reduce((n,g)=>n+g.members.length,0),sourceIds:sc.sources,issues:sc.audit});
+  const row=TK.BATTLE_AUDIT?.find(r=>r.title===title);if(row)Object.assign(row,{atlasBasis:sc.atlasBasis,units:sc.units.length,positionedGroups:groups.filter(g=>g.point).length,unlocatedGroups:groups.filter(g=>g.dock).length,displayedParticipants:groups.reduce((n,g)=>n+g.members.length,0),...(sc.atlasSchematic?{schematicParticipants:sc.units.length}:{}),sourceIds:sc.sources,issues:sc.audit});
  }};
 })();
