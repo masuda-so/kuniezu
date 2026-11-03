@@ -39,3 +39,5 @@ python3 tools/map/build-province-edits.py /path/to/baseline/game/map /tmp/provin
 ```
 
 領域差分は `payload.file` の GeoJSON、`payload.feature` の配列番号、変更前後の `fromKey`・`toKey` を指定する。基準版と元タイルのハッシュを検証し、100m画素の中心が面の内部にあるところだけ置換する。選択年に重複する書き込み、すでに基準版へ反映したID、変更前の値の不一致は生成エラー。出力は変更タイルと検査用マニフェストで、基準版には書き戻さない。描画側への接続と、標高・河川の差分生成は別工程。
+
+領域の隣接検査は、Pillow・NumPy を入れた Python で `python3 tools/map/audit-raster-adjacency.py /path/to/baseline/game/map` を実行する。100m基準版（0d92c0a）では全画素が定義色に一致し、城・中立領域の4近傍と8近傍はいずれも301組で、斜め接触だけの組は0。タイル角をまたいで斜めに接する合成入力では4近傍が0、8近傍が1になることを確認した。海峡の接続特例や道路グラフはこの画素検査の集計に含めない。
