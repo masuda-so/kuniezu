@@ -29,19 +29,22 @@ window.TKRaster=(function(){
   for(const r of sub.values())tiles.push({col:r.col,row:r.row,file:r.file,url:r.file,sha256:r.sha256,width:man.tile,height:man.tile});
   verKey=k;return verMemo={...base,tiles};}
  function load(f,t){const k=key(f,t);const had=tiles.get(k);if(had&&!(had.state==='error'&&performance.now()>had.retry))return had;const rec={state:'loading',t,f,ids:null,canvas:null,sig:'',tries:(had?.tries||0)+1};tiles.set(k,rec);
-  fetch('map/'+(t.url||level(f).dir+'/'+t.file)+(t.sha256?'?v='+t.sha256.slice(0,10):'')).then(r=>r.blob()).then(b=>createImageBitmap(b)).then(bm=>{const cv=document.createElement('canvas');cv.width=bm.width;cv.height=bm.height;const c=cv.getContext('2d',{willReadFrequently:true});c.drawImage(bm,0,0);const px=c.getImageData(0,0,bm.width,bm.height).data,ids=new Uint16Array(bm.width*bm.height);
+  fetch('map/'+(t.url||level(f).dir+'/'+t.file)+(t.sha256?'?v='+t.sha256.slice(0,10):'')).then(r=>r.blob()).then(b=>createImageBitmap(b)).then(bm=>{const cv=document.createElement('canvas');cv.width=bm.width;cv.height=bm.height;const c=cv.getContext('2d',{willReadFrequently:true});c.drawImage(bm,0,0);const px=c.getImageData(0,0,bm.width,bm.height).data,ids=new Uint16Array(bm.width*bm.height);bm.close?.();cv.width=cv.height=0;// 区画番号だけ残し、復号に使った画像と下書きはすぐ手放す
    for(let i=0;i<ids.length;i++)ids[i]=byColor.get(px[i*4]<<16|px[i*4+1]<<8|px[i*4+2])||seaId;rec.ids=ids;rec.state='ready';revision++;onChange?.();})
    .catch(e=>{rec.state='error';rec.err=String(e);rec.retry=performance.now()+1000*rec.tries;if(rec.tries<5)setTimeout(()=>{revision++;onChange?.();},1000*rec.tries);});
-  order.push(k);while(order.length>48){const old=order.shift();if(!old.startsWith('8:'))tiles.delete(old);}return rec;}
+  order.push(k);for(let n=order.length;order.length>48&&n>0;n--){const old=order.shift(),r=tiles.get(old);if(old.startsWith('8:')||r?.canvases&&[...r.canvases.values()].some(cv=>painted.find(e=>e.cv===cv&&e.used>=paintSeq-8))){order.push(old);continue;}if(r?.canvases)for(const cv of r.canvases.values()){cv.width=cv.height=0;const i=painted.findIndex(e=>e.cv===cv);if(i>=0)painted.splice(i,1);}tiles.delete(old);}return rec;}
  // 表示の細かさ：画面1物理画素あたりの地図単位に対し、画素が1.5倍より粗くならない最も粗い段を選ぶ。
  function pickFactor(z,dpr){const unit=1/(z*dpr);for(const f of [8,4])if(man.projection.stepUnits*f<=unit*1.5)return f;return 1;}
  // 色分けの種類（sig）ごとに塗った画像を控える。陸・湖・領主など複数の塗りを交互に使っても作り直さない（1タイル最大6種）。
- function canvasFor(rec,colorOf,sig){rec.canvases=rec.canvases||new Map();let cv=rec.canvases.get(sig);if(cv){rec.canvases.delete(sig);rec.canvases.set(sig,cv);return cv;}
+ // 塗った画像は全タイル合わせて CANVAS_BUDGET 枚まで（1枚 1024²×4 バイト）。直近の描画で使ったものは消さない（同じ画面で陸・湖・領主の型を交互に使うため）。
+ const CANVAS_BUDGET=96,painted=[];let paintSeq=0;
+ function trimCanvases(){for(let i=0;painted.length>CANVAS_BUDGET&&i<painted.length;){const e=painted[i];if(e.used>=paintSeq-8){i++;continue;}painted.splice(i,1);const cv=e.rec.canvases?.get(e.sig);if(cv===e.cv){e.rec.canvases.delete(e.sig);cv.width=cv.height=0;}}}
+ function canvasFor(rec,colorOf,sig){rec.canvases=rec.canvases||new Map();let cv=rec.canvases.get(sig);if(cv){rec.canvases.delete(sig);rec.canvases.set(sig,cv);const e=painted.find(x=>x.cv===cv);if(e)e.used=paintSeq;return cv;}
   const {width:w,height:h}=rec.t;cv=document.createElement('canvas');cv.width=w;cv.height=h;const c=cv.getContext('2d'),im=c.createImageData(w,h),d=im.data,cache=new Map();
   for(let i=0;i<rec.ids.length;i++){const id=rec.ids[i];let col=cache.get(id);if(col===undefined){col=colorOf(defs[id])||null;cache.set(id,col);}if(!col)continue;const o=i*4;d[o]=col[0];d[o+1]=col[1];d[o+2]=col[2];d[o+3]=col[3];}
-  c.putImageData(im,0,0);rec.canvases.set(sig,cv);while(rec.canvases.size>6)rec.canvases.delete(rec.canvases.keys().next().value);return cv;}
+  c.putImageData(im,0,0);rec.canvases.set(sig,cv);painted.push({rec,sig,cv,used:paintSeq});while(rec.canvases.size>6){const [k,old]=rec.canvases.entries().next().value;rec.canvases.delete(k);old.width=old.height=0;const i=painted.findIndex(x=>x.cv===old);if(i>=0)painted.splice(i,1);}trimCanvases();return cv;}
  /* c は地図平面の座標で描く文脈（setTransform 済み）。view=[x0,y0,x1,y1]。colorOf(def)→[r,g,b,a]（a は0〜255）か null。 */
- function paint(c,view,z,dpr,colorOf,sig){if(!ready)return false;const f=pickFactor(z,dpr);let complete=true;
+ function paint(c,view,z,dpr,colorOf,sig){if(!ready)return false;paintSeq++;const f=pickFactor(z,dpr);let complete=true;
   const draw=(ff,t,rec)=>{const s=man.projection.stepUnits*ff,x=man.projection.origin[0]+t.col*man.tile*s,y=man.projection.origin[1]+t.row*man.tile*s;c.drawImage(canvasFor(rec,colorOf,sig+'|'+ff),x,y,t.width*s,t.height*s);};
   const visible=ff=>{const s=man.projection.stepUnits*ff,span=man.tile*s;return level(ff).tiles.filter(t=>{const x=man.projection.origin[0]+t.col*span,y=man.projection.origin[1]+t.row*span;return x<view[2]&&x+t.width*s>view[0]&&y<view[3]&&y+t.height*s>view[1];});};
   c.save();c.imageSmoothingEnabled=false;
