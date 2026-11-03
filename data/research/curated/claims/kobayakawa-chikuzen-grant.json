@@ -1,0 +1,31 @@
+{
+  "id": "kobayakawa-chikuzen-grant",
+  "entity": "person:小早川隆景",
+  "predicate": "grant-order",
+  "value": {
+    "date": [
+      1587,
+      6,
+      25
+    ],
+    "calendar": "和暦",
+    "issuer": "豊臣秀吉",
+    "grant": "筑前"
+  },
+  "validYears": [
+    1587,
+    1587
+  ],
+  "datePrecision": "day",
+  "source": "kobayakawaChikuzenGrant",
+  "sourceUrl": "https://i-manabi.jp/system/regionals/regionals/ecode%3A2/64/view/8144",
+  "locator": "天正15年6月条・毛利家文書918（6月25日付豊臣秀吉朱印領知目録）",
+  "gameBindings": [
+    "timeline:小早川隆景の筑前拝領",
+    "node:tachibana"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-03",
+  "uncertainty": "領知の日付。各城の明渡し・入城の日付、郡内の個別知行範囲は含まない。"
+}

@@ -1,0 +1,635 @@
+{
+  "base": "f77817a98f64cb6f06762c396789f51f9f4bab01",
+  "incoming": "04ddd269d03228f956f2ef7852d4e109f128f9d3",
+  "snapshotDate": "2026-11-03",
+  "groups": [
+    {
+      "id": "01-kyushu-and-succession",
+      "priority": 1,
+      "items": [
+        "相良氏を併合で消さず球磨安堵を別イベント化",
+        "古処山の降伏受理と岩石落城を分離",
+        "肥後・筑前・筑後の授与日を一括平定から分離",
+        "佐土原側の都於郡を島津保持",
+        "有馬直純の継承・県入部と日野江管理切替"
+      ]
+    },
+    {
+      "id": "02-historical-seats",
+      "priority": 2,
+      "items": [
+        "松尾城から1603年県城への居城移転",
+        "1597荷揚城の施設開始、1601拠点切替、1605府内城への改称",
+        "黒田父子の1587香春岳誤移転を除去し中津築城を1588へ",
+        "横須賀城を1578築城開始へ訂正"
+      ]
+    },
+    {
+      "id": "03-march-and-save",
+      "priority": 3,
+      "items": [
+        "直江勢の米沢・荒砥・畑谷進路",
+        "長谷堂/大津の旧セーブ位置保持と包囲先修正",
+        "信忠の信貴山往復を街道経由・京都/安土/岐阜帰陣へ"
+      ]
+    },
+    {
+      "id": "04-curated-evidence",
+      "priority": 4,
+      "items": [
+        "九州領知・降伏・築城の命題と出典",
+        "県城請取/落着の原文書日付",
+        "黒田孝高と細川忠興の所在・人物・場所台帳",
+        "地理修正と合戦準備年の既存史料を統合元と区別"
+      ]
+    },
+    {
+      "id": "05-record-ui",
+      "priority": 5,
+      "status": "owner-rebase-patch",
+      "items": [
+        "一点所在の記録を軍勢として扱わないtooltip",
+        "軍勢一覧の所在件数と部隊数・出典表示の区別"
+      ]
+    }
+  ],
+  "alreadyEquivalent": [
+    {
+      "topic": "当主継承通知",
+      "incoming": "06d174f",
+      "shared": "46206b7"
+    },
+    {
+      "topic": "城の火災地点を保存し3日継続",
+      "incoming": "ae905e1",
+      "proof": "shared-based castle-fires.cjs passed; no engine/UI regression transplanted"
+    },
+    {
+      "topic": "site-coordinates latest branch",
+      "proof": "siege candidate file byte-identical to 04ddd26; do not duplicate"
+    }
+  ],
+  "tests": [
+    {
+      "name": "families-territory.cjs",
+      "status": "pass",
+      "scope": "1560–1615全所有者状態、143対象イベント・290所有者変化。有馬1612継承/1614移封も確認。全史料照合の意味ではない。"
+    },
+    {
+      "name": "location-store.cjs",
+      "status": "pass"
+    },
+    {
+      "name": "evidence-store.cjs",
+      "status": "pass"
+    },
+    {
+      "name": "history-index.cjs",
+      "status": "pass"
+    },
+    {
+      "name": "siege-placement-save.cjs",
+      "status": "pass",
+      "scope": "長谷堂/大津の保存位置と到着先"
+    },
+    {
+      "name": "historical-integration.cjs",
+      "status": "pass",
+      "scope": "九州前後日10件・相良生存・3城名切替・進路設定"
+    },
+    {
+      "name": "castle-fires.cjs",
+      "status": "pass",
+      "scope": "shared already equivalent"
+    }
+  ],
+  "newFinding": [
+    {
+      "topic": "1599黒田長政の香春岳帰国イベント",
+      "file": "game/hist.js",
+      "event": {
+        "d": [
+          1599,
+          1,
+          20
+        ],
+        "k": "move",
+        "n": "黒田長政",
+        "at": "kawara"
+      },
+      "status": "separate-research-needed",
+      "reason": "今回取り込む1587誤移転の除去後も残る。中津城は主城ノードではなく施設なので、代わりの城を推測して置換しない。"
+    },
+    {
+      "topic": "県1603/府内1601・1605と森吉成国分け",
+      "status": "year-or-month-display-convention",
+      "reason": "年・月精度の史料からゲーム処理上の日付を選んだもの。精密な明渡し日確定とは扱わない。"
+    }
+  ],
+  "files": [
+    {
+      "path": "data/research/curated/claims/agata-castle-construction.json",
+      "diffStatus": "A",
+      "status": "candidate-ready"
+    },
+    {
+      "path": "data/research/curated/claims/agata-handover-report.json",
+      "diffStatus": "A",
+      "status": "candidate-ready"
+    },
+    {
+      "path": "data/research/curated/claims/agata-receipt-order.json",
+      "diffStatus": "A",
+      "status": "candidate-ready"
+    },
+    {
+      "path": "data/research/curated/claims/akizuki-takarabe-transfer.json",
+      "diffStatus": "A",
+      "status": "candidate-ready"
+    },
+    {
+      "path": "data/research/curated/claims/akizuki-tanetaka-grant.json",
+      "diffStatus": "A",
+      "status": "candidate-ready"
+    },
+    {
+      "path": "data/research/curated/claims/ganjaku-fall.json",
+      "diffStatus": "A",
+      "status": "candidate-ready"
+    },
+    {
+      "path": "data/research/curated/claims/kobayakawa-chikuzen-grant.json",
+      "diffStatus": "A",
+      "status": "candidate-ready"
+    },
+    {
+      "path": "data/research/curated/claims/mamushizuka-1574-refortification.json",
+      "diffStatus": "A",
+      "status": "candidate-ready"
+    },
+    {
+      "path": "data/research/curated/claims/nejirozaka-night-attack.json",
+      "diffStatus": "A",
+      "status": "candidate-ready"
+    },
+    {
+      "path": "data/research/curated/claims/sagara-kuma-confirmation.json",
+      "diffStatus": "A",
+      "status": "candidate-ready"
+    },
+    {
+      "path": "data/research/curated/claims/sassa-higo-grant.json",
+      "diffStatus": "A",
+      "status": "candidate-ready"
+    },
+    {
+      "path": "data/research/curated/claims/shigisan-siege-start.json",
+      "diffStatus": "A",
+      "status": "candidate-ready"
+    },
+    {
+      "path": "data/research/curated/claims/tachibana-chikugo-grant.json",
+      "diffStatus": "A",
+      "status": "candidate-ready"
+    },
+    {
+      "path": "data/research/curated/claims/taka-siege-start.json",
+      "diffStatus": "A",
+      "status": "candidate-ready"
+    },
+    {
+      "path": "data/research/curated/claims/tonokori-sadowara-outer-castle.json",
+      "diffStatus": "A",
+      "status": "candidate-ready"
+    },
+    {
+      "path": "data/research/curated/claims/yokosuka-castle-construction.json",
+      "diffStatus": "A",
+      "status": "candidate-ready"
+    },
+    {
+      "path": "data/research/curated/locations/hosokawa-nakatsu-1600.json",
+      "diffStatus": "A",
+      "status": "candidate-ready"
+    },
+    {
+      "path": "data/research/curated/locations/kuroda-umagatake-1587.json",
+      "diffStatus": "A",
+      "status": "candidate-ready"
+    },
+    {
+      "path": "data/research/curated/people/hosokawa-tadaoki.json",
+      "diffStatus": "A",
+      "status": "candidate-ready"
+    },
+    {
+      "path": "data/research/curated/people/kuroda-yoshitaka.json",
+      "diffStatus": "A",
+      "status": "candidate-ready"
+    },
+    {
+      "path": "data/research/curated/places/nakatsu.json",
+      "diffStatus": "A",
+      "status": "candidate-ready"
+    },
+    {
+      "path": "data/research/curated/places/umagatake.json",
+      "diffStatus": "A",
+      "status": "candidate-ready"
+    },
+    {
+      "path": "data/research/curated/sources/agata-handover-report.json",
+      "diffStatus": "A",
+      "status": "candidate-ready"
+    },
+    {
+      "path": "data/research/curated/sources/agata-receipt-order.json",
+      "diffStatus": "A",
+      "status": "candidate-ready"
+    },
+    {
+      "path": "data/research/curated/sources/asakura-akizuki-history.json",
+      "diffStatus": "A",
+      "status": "candidate-ready"
+    },
+    {
+      "path": "data/research/curated/sources/kijo-second-taka-battle.json",
+      "diffStatus": "A",
+      "status": "candidate-ready"
+    },
+    {
+      "path": "data/research/curated/sources/kobayakawa-chikuzen-grant.json",
+      "diffStatus": "A",
+      "status": "candidate-ready"
+    },
+    {
+      "path": "data/research/curated/sources/kumamoto-sassa-grant.json",
+      "diffStatus": "A",
+      "status": "candidate-ready"
+    },
+    {
+      "path": "data/research/curated/sources/mamushizuka-exhibition.json",
+      "diffStatus": "A",
+      "status": "candidate-ready"
+    },
+    {
+      "path": "data/research/curated/sources/nobeoka-agata-history.json",
+      "diffStatus": "A",
+      "status": "candidate-ready"
+    },
+    {
+      "path": "data/research/curated/sources/sagara-kuma-confirmation.json",
+      "diffStatus": "A",
+      "status": "candidate-ready"
+    },
+    {
+      "path": "data/research/curated/sources/soeda-ganjaku-fall.json",
+      "diffStatus": "A",
+      "status": "candidate-ready"
+    },
+    {
+      "path": "data/research/curated/sources/tachibana-chikugo-grant.json",
+      "diffStatus": "A",
+      "status": "candidate-ready"
+    },
+    {
+      "path": "data/research/curated/sources/takanabe-hideyoshi-grant.json",
+      "diffStatus": "A",
+      "status": "candidate-ready"
+    },
+    {
+      "path": "data/research/curated/sources/tonokori-designation.json",
+      "diffStatus": "A",
+      "status": "candidate-ready"
+    },
+    {
+      "path": "data/research/curated/sources/yokosuka-castle-history.json",
+      "diffStatus": "A",
+      "status": "candidate-ready"
+    },
+    {
+      "path": "data/research/curated/sources/yukuhashi-hosokawa-nakatsu.json",
+      "diffStatus": "A",
+      "status": "candidate-ready"
+    },
+    {
+      "path": "data/research/curated/sources/yukuhashi-umagatake.json",
+      "diffStatus": "A",
+      "status": "candidate-ready"
+    },
+    {
+      "path": "game/battle-atlas-effects.js",
+      "diffStatus": "M",
+      "status": "preserve-shared-rendering-and-road-updates"
+    },
+    {
+      "path": "game/battle-motion.js",
+      "diffStatus": "D",
+      "status": "shared-only-preserve"
+    },
+    {
+      "path": "game/battle-presentation.js",
+      "diffStatus": "M",
+      "status": "preserve-shared-rendering-and-road-updates"
+    },
+    {
+      "path": "game/battle-timing.js",
+      "diffStatus": "M",
+      "status": "candidate-ready"
+    },
+    {
+      "path": "game/campaign-evidence.js",
+      "diffStatus": "M",
+      "status": "candidate-ready"
+    },
+    {
+      "path": "game/castle-regions-data.js",
+      "diffStatus": "D",
+      "status": "shared-only-preserve"
+    },
+    {
+      "path": "game/castle-regions.js",
+      "diffStatus": "D",
+      "status": "shared-only-preserve"
+    },
+    {
+      "path": "game/data.js",
+      "diffStatus": "M",
+      "status": "candidate-ready"
+    },
+    {
+      "path": "game/documented-marches-extra.js",
+      "diffStatus": "D",
+      "status": "shared-only-preserve"
+    },
+    {
+      "path": "game/engine.js",
+      "diffStatus": "M",
+      "status": "candidate-ready"
+    },
+    {
+      "path": "game/frontier-history.js",
+      "diffStatus": "D",
+      "status": "shared-only-preserve"
+    },
+    {
+      "path": "game/frontier-polities.js",
+      "diffStatus": "D",
+      "status": "shared-only-preserve"
+    },
+    {
+      "path": "game/hist.js",
+      "diffStatus": "M",
+      "status": "candidate-ready"
+    },
+    {
+      "path": "game/index.html",
+      "diffStatus": "M",
+      "status": "preserve-shared-rendering-and-road-updates"
+    },
+    {
+      "path": "game/japan-rivers-osm.js",
+      "diffStatus": "D",
+      "status": "shared-only-preserve"
+    },
+    {
+      "path": "game/jokaku.js",
+      "diffStatus": "M",
+      "status": "candidate-ready"
+    },
+    {
+      "path": "game/land-extension.js",
+      "diffStatus": "D",
+      "status": "shared-only-preserve"
+    },
+    {
+      "path": "game/licenses/DATA_SOURCES.md",
+      "diffStatus": "M",
+      "status": "preserve-shared-rendering-and-road-updates"
+    },
+    {
+      "path": "game/map_data/default.map",
+      "diffStatus": "D",
+      "status": "shared-only-preserve"
+    },
+    {
+      "path": "game/map_data/definition.csv",
+      "diffStatus": "D",
+      "status": "shared-only-preserve"
+    },
+    {
+      "path": "game/map_data/projection.json",
+      "diffStatus": "D",
+      "status": "shared-only-preserve"
+    },
+    {
+      "path": "game/map_data/provinces.png",
+      "diffStatus": "D",
+      "status": "shared-only-preserve"
+    },
+    {
+      "path": "game/modern-road-reference.js",
+      "diffStatus": "M",
+      "status": "preserve-shared-rendering-and-road-updates"
+    },
+    {
+      "path": "game/raster-map.js",
+      "diffStatus": "D",
+      "status": "shared-only-preserve"
+    },
+    {
+      "path": "game/road-display.js",
+      "diffStatus": "M",
+      "status": "preserve-shared-rendering-and-road-updates"
+    },
+    {
+      "path": "game/scenario-openings.js",
+      "diffStatus": "M",
+      "status": "candidate-ready"
+    },
+    {
+      "path": "game/terrain-tiles.js",
+      "diffStatus": "M",
+      "status": "preserve-shared-rendering-and-road-updates"
+    },
+    {
+      "path": "game/theme-washi.css",
+      "diffStatus": "D",
+      "status": "shared-only-preserve"
+    },
+    {
+      "path": "game/ui.js",
+      "diffStatus": "M",
+      "status": "two-function-patch-owner-rebase"
+    },
+    {
+      "path": "tools/checks/README.md",
+      "diffStatus": "M",
+      "status": "outside-runtime-candidate-review-separately"
+    },
+    {
+      "path": "tools/checks/aizu-legacy-calendar.cjs",
+      "diffStatus": "M",
+      "status": "outside-runtime-candidate-review-separately"
+    },
+    {
+      "path": "tools/checks/battle-arrival-audit.cjs",
+      "diffStatus": "M",
+      "status": "outside-runtime-candidate-review-separately"
+    },
+    {
+      "path": "tools/checks/battle-motion.cjs",
+      "diffStatus": "D",
+      "status": "shared-only-preserve"
+    },
+    {
+      "path": "tools/checks/bizen-north-shore-browser.cjs",
+      "diffStatus": "M",
+      "status": "outside-runtime-candidate-review-separately"
+    },
+    {
+      "path": "tools/checks/bizen-north-shore.cjs",
+      "diffStatus": "M",
+      "status": "outside-runtime-candidate-review-separately"
+    },
+    {
+      "path": "tools/checks/castle-fires.cjs",
+      "diffStatus": "A",
+      "status": "outside-runtime-candidate-review-separately"
+    },
+    {
+      "path": "tools/checks/elevation-coverage.py",
+      "diffStatus": "A",
+      "status": "outside-runtime-candidate-review-separately"
+    },
+    {
+      "path": "tools/checks/families-territory.cjs",
+      "diffStatus": "M",
+      "status": "candidate-ready"
+    },
+    {
+      "path": "tools/checks/history-focus.cjs",
+      "diffStatus": "M",
+      "status": "outside-runtime-candidate-review-separately"
+    },
+    {
+      "path": "tools/checks/igagoe.cjs",
+      "diffStatus": "D",
+      "status": "shared-only-preserve"
+    },
+    {
+      "path": "tools/checks/kojima-coast.py",
+      "diffStatus": "M",
+      "status": "outside-runtime-candidate-review-separately"
+    },
+    {
+      "path": "tools/checks/kojima-source-baseline.cjs",
+      "diffStatus": "D",
+      "status": "shared-only-preserve"
+    },
+    {
+      "path": "tools/checks/korea-roads.cjs",
+      "diffStatus": "D",
+      "status": "shared-only-preserve"
+    },
+    {
+      "path": "tools/checks/load-performance.cjs",
+      "diffStatus": "D",
+      "status": "shared-only-preserve"
+    },
+    {
+      "path": "tools/checks/location-store.cjs",
+      "diffStatus": "M",
+      "status": "candidate-ready"
+    },
+    {
+      "path": "tools/checks/march-clock-browser.cjs",
+      "diffStatus": "M",
+      "status": "outside-runtime-candidate-review-separately"
+    },
+    {
+      "path": "tools/checks/organization.cjs",
+      "diffStatus": "M",
+      "status": "outside-runtime-candidate-review-separately"
+    },
+    {
+      "path": "tools/checks/province-edits.py",
+      "diffStatus": "A",
+      "status": "outside-runtime-candidate-review-separately"
+    },
+    {
+      "path": "tools/checks/raster-map.cjs",
+      "diffStatus": "D",
+      "status": "shared-only-preserve"
+    },
+    {
+      "path": "tools/checks/relief-webp.py",
+      "diffStatus": "A",
+      "status": "outside-runtime-candidate-review-separately"
+    },
+    {
+      "path": "tools/checks/road-excursions.cjs",
+      "diffStatus": "M",
+      "status": "outside-runtime-candidate-review-separately"
+    },
+    {
+      "path": "tools/checks/road-spur-audit.cjs",
+      "diffStatus": "D",
+      "status": "shared-only-preserve"
+    },
+    {
+      "path": "tools/checks/secret-scan.cjs",
+      "diffStatus": "D",
+      "status": "shared-only-preserve"
+    },
+    {
+      "path": "tools/checks/siege-placement-save.cjs",
+      "diffStatus": "A",
+      "status": "candidate-ready"
+    },
+    {
+      "path": "tools/checks/wakasa-route.cjs",
+      "diffStatus": "D",
+      "status": "shared-only-preserve"
+    }
+  ],
+  "excludedSiegeFiles": [
+    "data/audits/battle-atlas-audit.json",
+    "data/audits/battle-atlas-frames.json",
+    "data/audits/battle-rivers-review.json",
+    "data/inputs/siege-placement-batch/README.md",
+    "data/inputs/siege-placement-batch/arioka-registration.json",
+    "data/inputs/siege-placement-batch/arioka-sougamae.jpg",
+    "data/inputs/siege-placement-batch/geometry-sources.json",
+    "data/inputs/siege-placement-batch/kozuki-site-coordinate.json",
+    "data/inputs/takatenjin-remaining-forts/README.md",
+    "data/inputs/takatenjin-remaining-forts/kakegawa-appendix.pdf",
+    "data/inputs/takatenjin-remaining-forts/kato-2024.pdf",
+    "data/inputs/takatenjin-remaining-forts/map-marker-extract.json",
+    "data/inputs/takatenjin-remaining-forts/review.json",
+    "data/inputs/takatenjin-remaining-forts/sources.json",
+    "data/research/curated/claims/takatenjin-six-forts-preparation-years.json",
+    "data/research/curated/sources/kakegawa-history-appendix.json",
+    "data/verification/siege-placement-batch/nakamura-active-1580.png",
+    "data/verification/siege-placement-batch/result.json",
+    "data/verification/siege-placement-batch/上月城の戦い-narrow.png",
+    "data/verification/siege-placement-batch/安濃津城の戦い-narrow.png",
+    "data/verification/siege-placement-batch/有岡城の戦い-100.png",
+    "docs/reports/SIEGE_PLACEMENT_BATCH_REVIEW.md",
+    "docs/reports/TAKATENJIN_REMAINING_FORTS_REVIEW.md",
+    "game/atlas/41.json",
+    "game/battle-atlas-data.js",
+    "game/battle-atlas.js",
+    "game/battle-deployments.js",
+    "game/battle-phases.js",
+    "game/history-date-review.js",
+    "game/site-coordinates.js",
+    "tools/checks/siege-phases-browser.cjs",
+    "tools/checks/siege-phases.cjs"
+  ],
+  "candidateFiles": 50,
+  "sharedWrites": false,
+  "serverOperations": false,
+  "gitMutations": false,
+  "browser": "未実行。共有採用後に親が検証する。"
+}

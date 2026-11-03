@@ -493,7 +493,6 @@ Object.assign(TK.DEATH_Y,{'長続連':1577,'山名豊数':1580,'蜂屋頼隆':15
 TK.HIST.push(
  {d:[1587,7,10],k:'take',clan:'hashiba',castles:['yanagawa'],admin:1,join:['立花宗茂'],text:'九州国分で、立花宗茂は筑後柳川に取り立てられ、豊臣の大名となった。',who:'立花宗茂'},
  {d:[1587,7,10],k:'take',clan:'hashiba',castles:['obi'],admin:1,join:['伊東祐兵'],text:'秀吉の九州攻めで道案内を務めた伊東祐兵が、旧領の日向飫肥に返り咲いた。',who:'伊東祐兵'},
- {d:[1587,7,12],k:'move',n:'黒田孝高',at:'kawara',quiet:1},{d:[1587,7,12],k:'move',n:'黒田長政',at:'kawara',text:'黒田孝高・長政父子が豊前に移り、中津に城を築いた。',who:'黒田孝高'},
  {d:[1588,6,1],k:'move',n:'加藤清正',at:'kumamoto',text:'佐々成政の切腹ののち、肥後は北半分が加藤清正、南半分が小西行長に分けられた。',who:'加藤清正'},{d:[1588,6,1],k:'move',n:'小西行長',at:'kumamoto',quiet:1},
  {d:[1585,9,1],k:'move',n:'筒井定次',at:'ueno',text:'筒井定次が大和から伊賀へ移された。',who:'筒井定次'},
  {d:[1590,9,10],k:'move',n:'池田輝政',at:'yoshida',quiet:1},{d:[1590,9,10],k:'move',n:'山内一豊',at:'kakegawa',quiet:1},{d:[1590,9,10],k:'move',n:'堀尾吉晴',at:'hikuma',quiet:1},

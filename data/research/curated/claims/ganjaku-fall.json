@@ -1,0 +1,16 @@
+{
+  "id": "ganjaku-fall",
+  "entity": "site:岩石城",
+  "predicate": "castle-fall",
+  "value": {"date": [1587, 4, 1], "calendar": "和暦", "attackers": ["蒲生氏郷", "前田利長"]},
+  "validYears": [1587, 1587],
+  "datePrecision": "day",
+  "source": "soedaGanjakuFall",
+  "sourceUrl": "https://www.town.soeda.fukuoka.jp/uploaded/attachment/1792.pdf",
+  "locator": "第2章、岩石城の攻防",
+  "gameBindings": ["timeline:岩石城の落城", "site:岩石城"],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-03",
+  "uncertainty": "岩石城の落城日。古処山城の明渡し日や秋月氏の知行移管日とは区別する。"
+}

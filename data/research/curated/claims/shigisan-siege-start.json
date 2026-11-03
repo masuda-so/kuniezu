@@ -1,0 +1,20 @@
+{
+  "id": "shigisan-siege-start",
+  "entity": "person:織田信忠",
+  "predicate": "campaign-action",
+  "value": {
+    "date": [1577, 10, 3],
+    "calendar": "和暦",
+    "action": "信貴山城に迫り着陣"
+  },
+  "validYears": [1577, 1577],
+  "datePrecision": "day",
+  "source": "shigisanChronicle",
+  "sourceUrl": "https://ja.wikisource.org/wiki/信長公記",
+  "locator": "巻十（九）信貴城被攻落之事、天正5年10月3日",
+  "gameBindings": ["timeline:織田信忠が信貴山城を包囲", "battle:信貴山城の戦い"],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-03",
+  "uncertainty": "着陣した日を示す。各武将の陣地や攻め口の位置は含まない。"
+}

@@ -64,4 +64,24 @@ TK.JOKAKU=[
  {d:[1589,12,3],k:'burn',node:'sukagawa',clan:null,title:'須賀川城炎上',text:'伊達政宗の攻撃の中、内通者が火を放ち、須賀川城は焼け落ちた。'}
 ];
 
+/* 年まで確認できる居城移転。ゲームでは1603年の年境で切り替える。 */
+TK.JOKAKU.push({
+ d:[1603,1,1],k:'build',node:'agata',n:'縣城',lon:131.662946,lat:32.580619,prev:1,clan:null,
+ title:'高橋元種の縣城築城',who:'高橋元種',datePrecision:'年',
+ source:'https://www.city.nobeoka.miyazaki.jp/soshiki/6/1689.html',
+ text:'慶長8年、高橋元種は五ヶ瀬川と大瀬川の間に縣城を築き、松尾城から居城を移した。'
+});
+/* 竹中重利入封の年に、府内の管理拠点を荷揚城へ切り替える。 */
+TK.JOKAKU.push({
+ d:[1601,1,1],k:'build',node:'funai',n:'荷揚城',lon:131.611590,lat:33.240535,prev:1,clan:null,
+ title:'竹中重利の府内入封',who:'竹中重利',datePrecision:'年',
+ source:'https://www.city.oita.oita.jp/o204/bunkasports/shitebunkazai/1352943146749.html',
+ text:'慶長6年、竹中重利が府内へ入封し、福原直高が築城に着手した荷揚城を増改築した。'
+});
+TK.JOKAKU.push({
+ d:[1605,1,1],k:'build',node:'funai',n:'府内城',clan:null,
+ title:'荷揚城を府内城に改称',who:'竹中重利',datePrecision:'年',
+ source:'https://sitereports.nabunken.go.jp/files/attach/71/71386/78257_1_%E5%BA%9C%E5%86%85%E5%9F%8E%E3%83%BB%E5%9F%8E%E4%B8%8B%E7%94%BA%E8%B7%A1.pdf#page=16',
+ text:'慶長10年、竹中重利は荷揚城の外堀を掘り、城名を府内城に改めた。'
+});
 TK.JOKAKU.sort((a,b)=>(a.d[0]-b.d[0])*400+(a.d[1]-b.d[1])*32+(a.d[2]-b.d[2]));

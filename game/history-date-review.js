@@ -75,6 +75,223 @@
  TK.CASTLE_EVIDENCE[name]={role:'安芸氏の本拠、後の五藤氏土居',description:y[4],source:TK.RESEARCH_SOURCES.akiCastleCity.url,checked:'2026-11-02'};
 })();
 
+/* 朱印状の発給を、開城・入城・知行の移管から分けて記録する。 */
+{
+ const lunarDate=[1587,7,3];
+ TK.HIST.push({
+  d:TK.lunarDate(...lunarDate),lunarDate,k:'note',title:'秋月種長への朱印状',who:'秋月種長',
+  source:'https://www.town.takanabe.lg.jp/choseijoho/takanabemachi/1026.html',
+  text:'豊臣秀吉が秋月種長に日向財部の城を宛行う朱印状を出した。知行目録は羽柴秀長から受け取るよう命じた。'
+ });
+}
+
+/* 岩石城は古処山城と別地点。支城の落城を九州全域の領主変更から分けて表示する。 */
+{
+ const lunarDate=[1587,4,1],site='岩石城';
+ TK.SITE_POS[site]=[130.871738,33.577313];
+ TK.HIST.push({
+  d:TK.lunarDate(...lunarDate),lunarDate,k:'note',at:'kawara',site,
+  title:'岩石城の落城',who:'蒲生氏郷・前田利長',
+  source:'https://www.town.soeda.fukuoka.jp/uploaded/attachment/1792.pdf',
+  text:'蒲生氏郷と前田利長の軍が、秋月氏の支城・岩石城を攻め落とした。'
+ });
+}
+
+/* 行橋市史の叙述による降伏受理。古処山城の明渡し日は別に扱う。 */
+{
+ const lunarDate=[1587,4,2],d=TK.lunarDate(...lunarDate);
+ const campaign=TK.HIST.find(e=>e.title==='九州平定'&&e.k==='take'&&e.castles?.includes('kosho'));
+ if(!campaign)throw Error('九州平定の古処山城');
+ campaign.castles=campaign.castles.filter(id=>id!=='kosho');
+ // 地図上の管轄切替は降伏受理を基準とする。城の物理的な明渡し日ではない。
+ TK.HIST.push({d,k:'take',clan:campaign.clan,castles:['kosho'],admin:1,quiet:1});
+ TK.HIST.push({
+  d,lunarDate,k:'note',title:'秋月氏の降伏',who:'秋月種実・種長',
+  source:'https://adeac.jp/yukuhashi-city/texthtml/d100010/mp000000-000010/ht2041102020',
+  text:'『行橋市史』によると、岩石城の落城翌日、豊臣秀吉は筑前の大隈城で秋月種実・種長父子の降伏を受け入れた。'
+ });
+}
+
+/* 肥後拝領を九州平定の一括変更から分け、隈本の管理域を切り替える。 */
+{
+ const lunarDate=[1587,6,2],d=TK.lunarDate(...lunarDate);
+ const campaign=TK.HIST.find(e=>e.title==='九州平定'&&e.k==='take'&&e.castles?.includes('kumamoto'));
+ if(!campaign)throw Error('九州平定の隈本城');
+ campaign.castles=campaign.castles.filter(id=>id!=='kumamoto');
+ campaign.peace=campaign.peace.filter(id=>id!=='kumamoto');
+ TK.HIST.push({
+  d,lunarDate,k:'take',clan:campaign.clan,castles:['kumamoto'],admin:1,
+  title:'佐々成政の肥後拝領',who:'佐々成政',
+  source:'https://sitereports.nabunken.go.jp/files/attach/22/22101/16337_1_%E4%B8%8B%E5%9F%8E%E9%81%BA%E8%B7%A1.pdf',
+  text:'豊臣秀吉が佐々成政に肥後の統治を任せた。成政は隈本城を居城とした。'
+ });
+}
+
+/* 球磨の相良氏は島津への従属後も存続し、秀吉の朱印状で本領を安堵された。 */
+{
+ const capitulation=TK.HIST.find(e=>e.k==='absorb'&&e.clan==='shimazu'&&e.b==='sagara');
+ const campaign=TK.HIST.find(e=>e.title==='九州平定'&&e.k==='take'&&e.castles?.includes('hitoyoshi'));
+ if(!capitulation||!campaign)throw Error('相良氏の服属と球磨郡安堵');
+ capitulation.k='submit';
+ campaign.castles=campaign.castles.filter(id=>id!=='hitoyoshi');
+ campaign.peace=campaign.peace.filter(id=>id!=='hitoyoshi');
+ const lunarDate=[1587,5,30];
+ TK.HIST.push({
+  d:TK.lunarDate(...lunarDate),lunarDate,k:'submit',clan:'hashiba',b:'sagara',at:'hitoyoshi',
+  title:'相良氏の球磨郡安堵',who:'相良頼房',
+  source:'https://dcollections.lib.keio.ac.jp/en/sagara/003-077',
+  text:'豊臣秀吉が相良頼房に朱印状を出し、球磨郡の所領を安堵した。'
+ });
+}
+
+/* 筑前と柳川の国分けは六月二十五日付の領知に合わせる。 */
+{
+ const campaign=TK.HIST.find(e=>e.title==='九州平定'&&e.k==='take'&&e.castles?.includes('tachibana'));
+ const yanagawa=TK.HIST.find(e=>e.k==='take'&&e.castles?.includes('yanagawa')&&e.who==='立花宗茂');
+ if(!campaign||!yanagawa)throw Error('筑前と柳川の国分け');
+ campaign.castles=campaign.castles.filter(id=>id!=='tachibana');
+ campaign.peace=campaign.peace.filter(id=>id!=='tachibana');
+ const lunarDate=[1587,6,25];
+ const d=TK.lunarDate(...lunarDate);
+ Object.assign(yanagawa,{
+  d,lunarDate,title:'立花宗茂の筑後拝領',
+  source:'https://artsandculture.google.com/story/KgWRWPxXFzYZIQ?hl=ja',
+  text:'豊臣秀吉が立花宗茂に筑後の山門・三潴・下妻・三池四郡を与えた。宗茂は柳川を本拠とした。'
+ });
+ TK.HIST.push({
+  d,lunarDate,k:'take',clan:'hashiba',castles:['tachibana'],admin:1,
+  title:'小早川隆景の筑前拝領',who:'小早川隆景',
+  source:'https://i-manabi.jp/system/regionals/regionals/ecode%3A2/64/view/8144',
+  text:'豊臣秀吉が小早川隆景に筑前などを与えた。筑前の立花山城は小早川方の管理に入った。'
+ });
+}
+
+/* 高城包囲と根白坂への夜襲は別の日の出来事。 */
+{
+ const battle=TK.HIST.find(e=>e.k==='note'&&e.title==='根白坂の戦い');
+ if(!battle)throw Error('根白坂の戦い');
+ const source='https://www.town.kijo.lg.jp/sosikikarasagasu/kyouikuiinkai_kyouikuka/1_1/1/3299.html';
+ const lunarDate=[1587,4,17];
+ Object.assign(battle,{
+  d:TK.lunarDate(...lunarDate),lunarDate,source,
+  text:'高城の救援に向かった島津軍が夜に根白坂を攻めた。宮部継潤ら豊臣方の守備を崩せず、翌朝に撤退した。'
+ });
+ const siegeDate=[1587,4,6];
+ TK.HIST.push({
+  d:TK.lunarDate(...siegeDate),lunarDate:siegeDate,k:'note',clan:'hashiba',
+  title:'日向高城の包囲',who:'羽柴秀長',source,
+  text:'羽柴秀長軍が日向の高城を包囲した。山田有信は都於郡城の島津本軍に救援を求めた。'
+ });
+}
+
+/* 都於郡城は九州平定後も佐土原の島津氏の所領。 */
+{
+ const campaign=TK.HIST.find(e=>e.title==='九州平定'&&e.k==='take'&&e.castles?.includes('tonokori'));
+ if(!campaign)throw Error('九州平定の都於郡城');
+ campaign.castles=campaign.castles.filter(id=>id!=='tonokori');
+}
+
+/* 香春岳での降伏と、翌年の豊前・日向の国分けを分ける。 */
+{
+ const lunarDate=[1586,12,11];
+ TK.HIST.push({
+  d:TK.lunarDate(...lunarDate),lunarDate,k:'note',at:'kawara',clan:'hashiba',
+  title:'高橋元種の降伏',who:'高橋元種',
+  source:'https://www.town.kanda.lg.jp/page/1884.html',
+  text:'毛利軍が香春岳城に迫り、高橋元種が降伏した。秀吉による豊前・日向の国分けは翌年のことだった。'
+ });
+}
+
+/* 田川は中津の黒田領と分け、戦後の国分けとして扱う。 */
+{
+ const campaign=TK.HIST.find(e=>e.title==='九州平定'&&e.k==='take'&&e.castles?.includes('kawara'));
+ if(!campaign)throw Error('九州平定の香春岳城');
+ campaign.castles=campaign.castles.filter(id=>id!=='kawara');
+ const lunarDate=[1587,6,25];
+ TK.HIST.push({
+  d:TK.lunarDate(...lunarDate),lunarDate,k:'take',clan:'hashiba',castles:['kawara'],admin:1,
+  title:'森吉成の豊前拝領',who:'森吉成（毛利勝信）',datePrecision:'月',
+  source:'https://adeac.jp/yukuhashi-city/texthtml/d100010/mp000000-000010/ht2040100020',
+  text:'九州平定後の国分けで、森吉成（毛利勝信）は豊前の企救・田川二郡を与えられ、小倉を本拠とした。拝領の月日には不明な点がある。'
+ });
+}
+
+/* 石垣原での交戦と大友義統の降伏は二日離れている。 */
+{
+ const lunarDate=[1600,9,15];
+ TK.HIST.push({
+  d:TK.lunarDate(...lunarDate),lunarDate,k:'note',
+  title:'石垣原の戦いの後、大友義統が降伏',who:'大友義統',
+  source:'https://www.city.beppu.oita.jp/doc/gakusyuu/bunkazai/booklet/no44.pdf',
+  text:'石垣原で敗れた大友義統が黒田方に降伏した。'
+ });
+}
+
+/* 知行充行状の日と、その翌年の中津城の着工日を分ける。 */
+{
+ const grantDate=[1587,7,3];
+ const constructionDate=[1588,1,11];
+ TK.HIST.push({
+  d:TK.lunarDate(...grantDate),lunarDate:grantDate,k:'note',
+  title:'黒田孝高の豊前拝領',who:'黒田孝高',
+  source:'https://museum.city.fukuoka.jp/archives/leaflet/566/index03.html',
+  text:'豊臣秀吉が黒田孝高に豊前六郡を与えた。孝高は入国後、まず馬ヶ岳城を本拠とした。'
+ },{
+  d:TK.lunarDate(...constructionDate),lunarDate:constructionDate,k:'note',
+  title:'黒田孝高の中津城着工',who:'黒田孝高',
+  source:'https://www.town.yoshitomi.lg.jp/gyosei/chosei/v995/y209/kyouiku_iinkai/z796/4/2/',
+  text:'黒田孝高が豊前の中津に城の造営を始めた。'
+ });
+}
+
+{
+ const lunarDate=[1600,12,26];
+ TK.HIST.push({
+  d:TK.lunarDate(...lunarDate),lunarDate,k:'note',
+  title:'細川忠興の中津入城',who:'細川忠興',
+  source:'https://adeac.jp/yukuhashi-city/texthtml/d100010/mp000000-000010/ht2042101020',
+  text:'丹後から豊前へ移った細川忠興が中津城に入った。'
+ });
+}
+
+/* 県城の請取命令と、引渡しの落着を知らせる書状を区別する。 */
+{
+ const orders=[
+  [[1613,12,15],'幕府が県城の請取を命じる','https://dcollections.lib.keio.ac.jp/ja/sagara/003-113','幕府の年寄が、稲葉典通と相良頼房に日向の県城を受け取るよう命じた。'],
+  [[1614,7,13],'有馬直純の県入部','https://history.miyazaki.jp/nenpyo.html','有馬直純が肥前の日野江から日向の県へ移った。'],
+  [[1614,8,25],'県城引渡しの落着','https://dcollections.lib.keio.ac.jp/ja/sagara/003-116','本多正信が相良頼房に、県城の引渡しが落着したことを伝えた。']
+ ];
+ for(const [lunarDate,title,source,text] of orders){
+  TK.HIST.push({
+   d:TK.lunarDate(...lunarDate),lunarDate,k:'note',at:'agata',
+   title,source,text
+  });
+ }
+}
+
+/* 県入部に合わせて有馬家の管理域を移す。日野江の明渡し日は未詳。 */
+{
+ const arrival=TK.HIST.find(e=>e.title==='有馬直純の県入部');
+ Object.assign(arrival,{k:'take',clan:'arima',castles:['agata'],admin:1,who:'有馬直純'});
+ TK.HIST.push({
+  d:arrival.d,lunarDate:arrival.lunarDate,k:'take',clan:'tokugawa',castles:['hinoe'],admin:1,
+  title:'日野江の有馬旧領を幕府が管理',datePrecision:'年',
+  source:'https://www.city.shimabara.lg.jp/rekishi/page2678.html',
+  text:'有馬直純の転封後、幕府は日野江の旧領の統治を周辺の諸家に委ねた。'
+ });
+}
+
+{
+ const lunarDate=[1612,3,18];
+ TK.HIST.push({
+  d:TK.lunarDate(...lunarDate),lunarDate,k:'appear',clan:'arima',at:'hinoe',
+  g:'有馬直純|55|55|55|55|1586',leader:true,heir:1,
+  title:'有馬直純が家督を継ぐ',who:'有馬直純',
+  source:'https://rekimoku.xsrv.jp/3-zyoukaku-13-sunpujo.html',
+  text:'岡本大八事件で有馬晴信が失脚し、幕府はその所領を子の直純に与えた。'
+ });
+}
+
 {
  const lunarDate=[1577,10,3];
  const source=TK.RESEARCH_SOURCES.shigisanChronicle.url;

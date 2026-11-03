@@ -11,6 +11,7 @@ for(const name of ['大津城の戦い','第二次上田合戦']){const ev=TK.HI
 const ueda=TK.HIST.find(e=>e.title==='第二次上田合戦');ueda.text='中山道を西上する徳川秀忠軍が、真田昌幸・信繁方の上田城と対峙する。';
 const otsu=TK.HIST.find(e=>e.title==='大津城の戦い');otsu.d=gregorianLunar(1600,9,4);otsu.text='京極高次が大津城で籠城する。毛利元康・立花宗茂らの軍勢が攻城に向かう。';
 const hasedo=TK.HIST.find(e=>e.title==='長谷堂城の戦い');if(hasedo)hasedo.d=gregorianLunar(1600,9,15);if(hasedo)hasedo.text='上杉方の直江兼続と最上方が出羽で戦う。長谷堂城の攻防と撤退は関ヶ原決戦とその敗報の後まで続くため、開始時点で撤退済みとは扱わない。';
+hasedo.routeVia=['yonezawa','yamagata'];
 // 一つの場面で始まりと結末を同日と表示しない。
 Object.assign(TK.BATTLES['大津城の戦い'],{date:'慶長5年9月4日～15日（1600年10月10日～21日）',eventDate:[1600,10,21],calendar:[[0,'9月4日・籠城開始'],[70,'城内の攻防'],[100,'9月15日・開城'] ]});
 Object.assign(TK.BATTLES['第二次上田合戦'],{date:'慶長5年9月・関ヶ原決戦前（1600年10月）',eventDate:[1600,10,21],replayBasis:'関ヶ原決戦日を区切りに振り返る表示です。上田の終戦日をこの日とするものではありません。',calendar:[[0,'9月上旬・上田方面'],[40,'上田で対峙'],[100,'秀忠軍は西へ・本戦には間に合わず']]});
