@@ -128,8 +128,10 @@ const s2w=(x,y)=>{const c=vc();return [(x-c[0])/cam.z+cam.x,(y-c[1])/cam.z+cam.y
 function clampCam(){const c=vc(),CW=CONT.x1-CONT.x0,CH=CONT.y1-CONT.y0;
  // 背景はパネルの下まで画面を覆う。縦長では横方向をドラッグして見る。
  cam.z=Math.max(VW/CW,VH/CH,Math.min(MAXZ,cam.z));
- cam.x=Math.max(CONT.x0+c[0]/cam.z,Math.min(CONT.x1-(VW-c[0])/cam.z,cam.x));
- cam.y=Math.max(CONT.y0+c[1]/cam.z,Math.min(CONT.y1-(VH-c[1])/cam.z,cam.y));U.baseDirty=true;syncZoomControl();}
+ // 地図の端を、年表・家の欄・再生バーに隠れない見える範囲の端まで動かせるようにする（端の武将・城を選べるように）。
+ const hx=c[2]/2/cam.z,hy=c[3]/2/cam.z;
+ cam.x=Math.max(CONT.x0+hx,Math.min(CONT.x1-hx,cam.x));
+ cam.y=Math.max(CONT.y0+hy,Math.min(CONT.y1-hy,cam.y));U.baseDirty=true;syncZoomControl();}
 const CONT={x0:-1045,x1:2285,y0:-168,y1:2195};
 function syncZoomControl(){const nav=$('#mapZoom');if(nav)nav.hidden=U.mode==='title';const el=$('#mapZoomRange');if(!el)return;const min=Math.max(VW/(CONT.x1-CONT.x0),VH/(CONT.y1-CONT.y0));el.value=Math.round(Math.log(cam.z/min)/Math.log(MAXZ/min)*100);el.setAttribute('aria-valuetext',Math.round(cam.z/min*100)+'%');}
 function setMapZoom(z){anim=null;beginZoom();cam.z=z;clampCam();tip(null);}
