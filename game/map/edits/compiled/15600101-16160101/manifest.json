@@ -19,14 +19,16 @@
       ],
       "edits": [
         "mizushima-east-post-period-fill",
-        "mizushima-post-period-fill"
+        "mizushima-post-period-fill",
+        "mizushima-south-post-period-fill"
       ],
-      "sha256": "06f9a8501afa3e79a04f50d4b18146fbe40ec74566d4855df301852f93b1f3b7"
+      "sha256": "7eb57f3f2816be932cdce423e8aa58126cfcf84b2c82e49b3e1c1fe5517ca789"
     }
   ],
   "editPixels": {
     "mizushima-east-post-period-fill": 216,
-    "mizushima-post-period-fill": 644
+    "mizushima-post-period-fill": 644,
+    "mizushima-south-post-period-fill": 140
   },
   "tiles": [
     {
@@ -48,7 +50,7 @@
       ],
       "width": 1024,
       "height": 1024,
-      "sha256": "da057d8977083eabce6b6c55e78194d0506b0e525c6929269aad732cb469645e"
+      "sha256": "619443480b4793c2f01fdf2b0215de781b873bea9f2b761f71baf3aa5e62e65b"
     },
     {
       "file": "provinces-4/2-3@15600101-16160101.png",
@@ -69,7 +71,7 @@
       ],
       "width": 1024,
       "height": 1024,
-      "sha256": "71371060e4eb11ad945fba483ee6a137346478bd537adcc7b5277f1a5e553331"
+      "sha256": "2c7703d7450908b2de791eeb1ffadadf9969a34cff7e9b5f344f6ec6787bafa8"
     },
     {
       "file": "provinces-8/1-1@15600101-16160101.png",
@@ -90,7 +92,7 @@
       ],
       "width": 1024,
       "height": 1024,
-      "sha256": "0a83233b5785e9767a059089a1f83b9e6a264849fa2eb53d8679d4bb927baffb"
+      "sha256": "29903d488d3d1773b82e95470ec13817d5de0b377a3677bef1f6dd61f94b6a8b"
     }
   ]
 }
