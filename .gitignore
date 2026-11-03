@@ -2,3 +2,5 @@
 __pycache__/
 *.pyc
 node_modules/
+# 取得した元データ（再配布しない入力。生成物だけを game/ に置く）
+.cache/
