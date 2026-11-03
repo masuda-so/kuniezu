@@ -25,3 +25,9 @@
 継ぎ目の再検査は `python3 tools/checks/hillshade-raster.py`。合成データだけを使い、横・縦の境界、端数タイル、境界付近の欠測を含む画像を1枚出力と4枚出力で全画素比較する。ソウル付近の比較値は入力・出力とも61.0m（Z6の画素値）。
 
 標高変換に `--factor 1|4|8` を指定できる。陰影生成は入力の倍率と格子寸法を検証し、その間隔で勾配を求める。既存の早島入力を使った試験では100mで2,360画素、400mで150画素、800mで35画素。
+
+## Copernicus GLO-90
+
+取得済みの239枚はファイル名の `COG_30` にかかわらず、緯度方向の標本間隔が3秒のGLO-90。変換器はGeoTIFFタグのWGS84・PixelIsPoint・1度のフットプリントと、取得時のSHA-256を照合する。各格子中心を含む1度区画で最近傍点を採取し、欠測を0にする。既存の陰影生成器へ接続でき、両マニフェストに製品・取得日・利用条件を、標高側に全入力ハッシュを保持する。
+
+`python3 tools/map/build-copernicus-height.py <共通格子manifest> <取得済みディレクトリ> <出力先> --acquired 2026-11-03 --factor 1`。倍率4・8も同様。配布には公式のGLO-90ライセンス第6条(b)の加工物通知と同(c)の免責文を使う。出力マニフェストに両方を含める。 [Copernicus公式ライセンス、GLO-90第6条](https://dataspace.copernicus.eu/sites/default/files/media/files/2025-06/copernicus_contributing_mission_data_access_v2_cop_dem_licenses.pdf)
