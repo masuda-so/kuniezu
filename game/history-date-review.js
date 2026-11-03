@@ -74,3 +74,55 @@
  TK.SITE_POSITION_EVIDENCE[name]={kind:'facility',name,point,ref:'400000033600',source:'codhSites',url:'https://geoshape.ex.nii.ac.jp/nrct-poi/resource/40/400000033600.html',basis:'歴史地名代表点。安芸市・観光協会の城跡説明と地図を独立照合。'};
  TK.CASTLE_EVIDENCE[name]={role:'安芸氏の本拠、後の五藤氏土居',description:y[4],source:TK.RESEARCH_SOURCES.akiCastleCity.url,checked:'2026-11-02'};
 })();
+
+{
+ const lunarDate=[1577,10,3];
+ const source=TK.RESEARCH_SOURCES.shigisanChronicle.url;
+ TK.HIST.push({
+  d:TK.lunarDate(...lunarDate),lunarDate,k:'note',at:'yamato',who:'織田信忠',
+  title:'織田信忠が信貴山城を包囲',source,
+  text:'織田信忠が信貴山城に迫って陣を置き、城下に火を放った。'
+ });
+}
+
+{
+ const lunarDate=[1581,3,22];
+ const event=TK.HIST.find(e=>e.title==='高天神城の戦い'&&e.k!=='premarch');
+ Object.assign(event,{
+  d:TK.lunarDate(...lunarDate),lunarDate,documentedMarch:true,
+  source:'https://www.city.kakegawa.shizuoka.jp/gyosei/docs/8328.html',
+  text:'徳川方の砦に囲まれ兵糧が尽きた高天神城から、岡部元信らが討って出た。元信らは戦死し、城は落ちた。'
+ });
+}
+
+/* 包囲・救援・開城の日を分け、合戦の管理拠点への自動出陣を抑止する。 */
+{
+ const sayo='https://www.town.sayo.lg.jp/cms-sypher/www/info/detail.jsp?id=11722';
+ const nobunaga='https://ja.wikisource.org/wiki/信長公記';
+ const mie='https://www.pref.mie.lg.jp/common/content/001067704.pdf';
+ const note=(lunarDate,title,at,source,text)=>TK.HIST.push({
+  d:TK.lunarDate(...lunarDate),lunarDate,k:'note',title,at,source,text
+ });
+ const resolve=(title,lunarDate,source,text)=>{
+  const event=TK.HIST.find(e=>e.title===title&&e.k!=='premarch');
+  Object.assign(event,{d:TK.lunarDate(...lunarDate),lunarDate,source,text,documentedMarch:true});
+  delete event.also;
+  return event;
+ };
+ note([1578,4,18],'毛利方が上月城を包囲','himeji',sayo,'吉川元春・小早川隆景の軍が上月城を取り囲んだ。');
+ note([1578,5,4],'上月城の救援軍が高倉山に着陣','himeji',sayo,'羽柴秀吉・荒木村重らは高倉山に陣を置いた。');
+ note([1578,6,26],'羽柴秀吉が高倉山から撤退','himeji',sayo,'織田信長の命を受けた秀吉が高倉山から兵を引いた。');
+ const kozuki=resolve('上月城の戦い',[1578,7,5],sayo,'救援を失った上月城が開城した。尼子勝久らは自害し、山中幸盛は備中へ送られた。');
+ kozuki.kill=['尼子勝久'];
+ const death=[1578,7,17];
+ TK.HIST.push({d:TK.lunarDate(...death),lunarDate:death,k:'death',n:'山中幸盛',at:'bmatsuyama',
+  title:'山中幸盛が阿井の渡しで討たれる',source:'https://www.city.takahashi.lg.jp/site/bichu-matsuyama/nenpyou.html',
+  datePrecision:'月日は通説による',text:'上月城から備中への護送中、山中幸盛は高梁川の阿井の渡しで討たれた。'});
+
+ note([1579,10,15],'滝川一益が有岡城の外郭を破る','akutagawa',nobunaga,'滝川一益が上臈塚砦から攻め入り、荒木方は本丸に退いた。');
+ resolve('有岡城の戦い',[1579,11,19],nobunaga,'荒木久左衛門らは有岡城を出て尼崎へ向かい、織田信澄が城内の警固に入った。');
+
+ note([1600,8,22],'鍋島勝茂が安濃津城を攻める','kiriyama',mie,'鍋島勝茂の軍が浜手から安濃津城を攻めた。');
+ note([1600,8,24],'毛利勢が安濃津城を攻める','kiriyama',mie,'毛利秀元ら西軍が安濃津城を攻めた。');
+ resolve('安濃津城の戦い',[1600,8,25],mie,'長束正家が和議を仲介し、富田信高の守る安濃津城は開城した。');
+}

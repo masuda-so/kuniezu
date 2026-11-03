@@ -1,0 +1,37 @@
+{
+  "id": "takatenjin-six-forts-preparation-years",
+  "entity": "site:高天神城",
+  "predicate": "encirclement-fort-preparation",
+  "value": {
+    "1579": [
+      "小笠山砦",
+      "中村砦",
+      "三井山砦"
+    ],
+    "1580": [
+      "能ヶ坂砦",
+      "火ヶ峰砦",
+      "獅子ヶ鼻砦"
+    ]
+  },
+  "validYears": [
+    1579,
+    1580
+  ],
+  "datePrecision": "year",
+  "source": "kakegawa-history-appendix",
+  "sourceUrl": "https://www.city.kakegawa.shizuoka.jp/fs/1/7/6/4/6/9/_/10appendix.pdf",
+  "locator": "資料編1（PDF3頁）、1579・1580年の行",
+  "gameBindings": [
+    "site:小笠山砦",
+    "site:中村砦",
+    "site:三井山砦",
+    "site:能ヶ坂砦",
+    "site:火ヶ峰砦",
+    "site:獅子ヶ鼻砦"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-03",
+  "uncertainty": "個別の整備月日・初築・廃城日は確定しない。"
+}
