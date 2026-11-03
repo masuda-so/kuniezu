@@ -6,10 +6,6 @@
   "missing": [],
   "withoutMatchingTitle": [
     {
-      "title": "大坂冬の陣",
-      "noncombat": false
-    },
-    {
       "title": "石山合戦はじまる",
       "noncombat": true
     },
@@ -897,10 +893,10 @@
         "d": 24
       },
       "noncombat": false,
-      "unmatchedSides": [],
-      "sidesOutsideFrame": [
+      "unmatchedSides": [
         "a"
-      ]
+      ],
+      "sidesOutsideFrame": []
     },
     {
       "title": "新発田城落城",
@@ -1242,7 +1238,7 @@
       "date": {
         "y": 1614,
         "m": 12,
-        "d": 20
+        "d": 19
       },
       "noncombat": false,
       "unmatchedSides": [
@@ -2136,7 +2132,7 @@
               "insideReplayFrame": false
             },
             {
-              "id": 507,
+              "id": 508,
               "samplePhase": "before-event",
               "title": "関ヶ原の戦い",
               "clan": "tokugawa",
@@ -2151,7 +2147,7 @@
               "troops": 500,
               "point": [
                 1179.5467777986767,
-                1277.8000000000004
+                1277.8000000000006
               ],
               "path": [
                 "sakura",
@@ -2172,7 +2168,7 @@
               "insideReplayFrame": true
             },
             {
-              "id": 509,
+              "id": 510,
               "samplePhase": "before-event",
               "title": "関ヶ原の戦い",
               "clan": "tokugawa",
@@ -2200,7 +2196,7 @@
               "insideReplayFrame": true
             },
             {
-              "id": 510,
+              "id": 511,
               "samplePhase": "before-event",
               "title": "関ヶ原の戦い",
               "clan": "tokugawa",
@@ -2879,9 +2875,9 @@
               "direct": [
                 502,
                 503,
-                507,
-                509,
+                508,
                 510,
+                511,
                 514,
                 519,
                 520,
@@ -2894,9 +2890,9 @@
               "inFrame": [
                 502,
                 503,
-                507,
-                509,
+                508,
                 510,
+                511,
                 514,
                 519,
                 520,
@@ -3584,8 +3580,8 @@
               },
               "troops": 11000,
               "point": [
-                1125.067387322192,
-                1205.0222435519768
+                1125.6891540027143,
+                1212.8597794828804
               ],
               "path": [
                 "himeji",
@@ -3645,8 +3641,8 @@
               },
               "troops": 11000,
               "point": [
-                1125.067387322192,
-                1205.0222435519768
+                1125.6891540027143,
+                1212.8597794828804
               ],
               "path": [
                 "himeji",
@@ -3762,8 +3758,8 @@
               },
               "troops": 9300,
               "point": [
-                1270.4802879664178,
-                1314.6000000000004
+                1270.480287966418,
+                1314.6000000000001
               ],
               "path": [
                 "tsutsuji",
@@ -3943,8 +3939,8 @@
               },
               "troops": 9300,
               "point": [
-                1270.4802879664178,
-                1314.6000000000004
+                1270.480287966418,
+                1314.6000000000001
               ],
               "path": [
                 "kiyosu",
@@ -4157,7 +4153,7 @@
               },
               "troops": 24000,
               "point": [
-                371.17699701922766,
+                371.1769970192277,
                 1927.2000000000005
               ],
               "path": [
@@ -4215,7 +4211,7 @@
               },
               "troops": 8000,
               "point": [
-                370.0443732271019,
+                370.04437322710197,
                 1924.8000000000004
               ],
               "path": [
@@ -4301,14 +4297,13 @@
                 "start": 8628,
                 "end": 8643
               },
-              "troops": 4600,
+              "troops": 4500,
               "point": [
-                170.3563265395228,
-                1818.0133999999994
+                170.356326539523,
+                1818.0133999999996
               ],
               "path": [
                 "tonokori",
-                "hitoyoshi",
                 "izumi",
                 "hondo",
                 "hinoe"
@@ -4334,12 +4329,11 @@
               },
               "troops": 3100,
               "point": [
-                188.5009596893662,
-                1790.8
+                188.50095968936606,
+                1790.8000000000002
               ],
               "path": [
                 "tonokori",
-                "hitoyoshi",
                 "izumi",
                 "hondo",
                 "hinoe"
@@ -4391,16 +4385,15 @@
                 "start": 8628,
                 "end": 8643
               },
-              "troops": 4600,
+              "troops": 4500,
               "point": [
-                170.3563265395228,
-                1818.0133999999994
+                170.356326539523,
+                1818.0133999999996
               ],
               "path": [
                 "hinoe",
                 "hondo",
                 "izumi",
-                "hitoyoshi",
                 "tonokori"
               ],
               "matchingSides": [
@@ -4424,14 +4417,13 @@
               },
               "troops": 3100,
               "point": [
-                188.5009596893662,
-                1790.8
+                188.50095968936606,
+                1790.8000000000002
               ],
               "path": [
                 "hinoe",
                 "hondo",
                 "izumi",
-                "hitoyoshi",
                 "tonokori"
               ],
               "matchingSides": [
@@ -4874,7 +4866,7 @@
             {
               "id": 461,
               "samplePhase": "after-event",
-              "title": "#hold",
+              "title": "小田原征伐",
               "clan": "hashiba",
               "names": [
                 "豊臣秀吉"
@@ -4906,7 +4898,7 @@
             {
               "id": 462,
               "samplePhase": "after-event",
-              "title": "#hold",
+              "title": "小田原征伐",
               "clan": "tokugawa",
               "names": [
                 "徳川家康"
@@ -4989,7 +4981,7 @@
           "triggerT": 19833,
           "units": [
             {
-              "id": 529,
+              "id": 530,
               "samplePhase": "before-event",
               "title": "大坂夏の陣",
               "clan": "date",
@@ -5015,7 +5007,7 @@
               "insideReplayFrame": true
             },
             {
-              "id": 532,
+              "id": 533,
               "samplePhase": "before-event",
               "title": "大坂夏の陣",
               "clan": "tokugawa",
@@ -5050,7 +5042,7 @@
               "insideReplayFrame": true
             },
             {
-              "id": 533,
+              "id": 534,
               "samplePhase": "before-event",
               "title": "大坂夏の陣",
               "clan": "tokugawa",
@@ -5086,7 +5078,7 @@
               "insideReplayFrame": true
             },
             {
-              "id": 534,
+              "id": 535,
               "samplePhase": "before-event",
               "title": "大坂夏の陣",
               "clan": "tokugawa",
@@ -5114,7 +5106,7 @@
               "insideReplayFrame": true
             },
             {
-              "id": 535,
+              "id": 536,
               "samplePhase": "before-event",
               "title": "大坂夏の陣",
               "clan": "tokugawa",
@@ -5128,7 +5120,7 @@
               },
               "troops": 12000,
               "point": [
-                1025.1863352719351,
+                1025.1863352719354,
                 1418.8000000000002
               ],
               "path": [
@@ -5150,7 +5142,7 @@
               "insideReplayFrame": true
             },
             {
-              "id": 541,
+              "id": 542,
               "samplePhase": "before-event",
               "title": "大坂夏の陣",
               "clan": "tokugawa",
@@ -5188,7 +5180,7 @@
               "insideReplayFrame": true
             },
             {
-              "id": 542,
+              "id": 543,
               "samplePhase": "before-event",
               "title": "大坂夏の陣",
               "clan": "tokugawa",
@@ -5216,7 +5208,7 @@
               "insideReplayFrame": true
             },
             {
-              "id": 529,
+              "id": 530,
               "samplePhase": "after-event",
               "title": "大坂夏の陣",
               "clan": "date",
@@ -5258,22 +5250,22 @@
           "sides": {
             "a": {
               "direct": [
-                532,
                 533,
                 534,
                 535,
-                541
+                536,
+                542
               ],
               "clanOnly": [
-                542
+                543
               ],
               "inFrame": [
-                532,
                 533,
                 534,
                 535,
-                541,
-                542
+                536,
+                542,
+                543
               ],
               "locatedGroups": 2,
               "unlocatedGroups": 0
@@ -5325,9 +5317,9 @@
           "triggerT": 19697,
           "units": [
             {
-              "id": 529,
+              "id": 530,
               "samplePhase": "before-event",
-              "title": "#hold",
+              "title": "大坂冬の陣",
               "clan": "date",
               "names": [
                 "伊達政宗"
@@ -5365,9 +5357,9 @@
               "insideReplayFrame": true
             },
             {
-              "id": 530,
+              "id": 531,
               "samplePhase": "before-event",
-              "title": "#hold",
+              "title": "大坂冬の陣",
               "clan": "nagao",
               "names": [
                 "上杉景勝"
@@ -5379,7 +5371,7 @@
               },
               "troops": 3000,
               "point": [
-                1027.4515828561866,
+                1027.4515828561869,
                 1411.4000000000005
               ],
               "path": [
@@ -5403,7 +5395,7 @@
               "insideReplayFrame": true
             },
             {
-              "id": 531,
+              "id": 532,
               "samplePhase": "before-event",
               "title": "今福・鴫野の戦い",
               "clan": "satake",
@@ -5417,8 +5409,8 @@
               },
               "troops": 3000,
               "point": [
-                1787.9638313443616,
-                1097.7195277088808
+                1757.1650148203857,
+                1133.5850681665959
               ],
               "path": [
                 "ishiyama",
@@ -5445,9 +5437,9 @@
               "insideReplayFrame": false
             },
             {
-              "id": 532,
+              "id": 533,
               "samplePhase": "before-event",
-              "title": "#hold",
+              "title": "大坂冬の陣",
               "clan": "tokugawa",
               "names": [
                 "徳川家康"
@@ -5483,9 +5475,9 @@
               "insideReplayFrame": true
             },
             {
-              "id": 533,
+              "id": 534,
               "samplePhase": "before-event",
-              "title": "#hold",
+              "title": "大坂冬の陣",
               "clan": "tokugawa",
               "names": [
                 "徳川秀忠"
@@ -5521,9 +5513,9 @@
               "insideReplayFrame": true
             },
             {
-              "id": 534,
+              "id": 535,
               "samplePhase": "before-event",
-              "title": "#hold",
+              "title": "大坂冬の陣",
               "clan": "tokugawa",
               "names": [
                 "井伊直孝"
@@ -5559,9 +5551,9 @@
               "insideReplayFrame": true
             },
             {
-              "id": 535,
+              "id": 536,
               "samplePhase": "before-event",
-              "title": "#hold",
+              "title": "大坂冬の陣",
               "clan": "tokugawa",
               "names": [
                 "前田利常"
@@ -5597,9 +5589,9 @@
               "insideReplayFrame": true
             },
             {
-              "id": 539,
+              "id": 540,
               "samplePhase": "before-event",
-              "title": "#hold",
+              "title": "大坂冬の陣",
               "clan": "tokugawa",
               "names": [
                 "藤堂高虎"
@@ -5628,9 +5620,9 @@
               "insideReplayFrame": true
             },
             {
-              "id": 529,
+              "id": 530,
               "samplePhase": "after-event",
-              "title": "#hold",
+              "title": "大坂冬の陣",
               "clan": "date",
               "names": [
                 "伊達政宗"
@@ -5668,9 +5660,9 @@
               "insideReplayFrame": true
             },
             {
-              "id": 530,
+              "id": 531,
               "samplePhase": "after-event",
-              "title": "#hold",
+              "title": "大坂冬の陣",
               "clan": "nagao",
               "names": [
                 "上杉景勝"
@@ -5682,7 +5674,7 @@
               },
               "troops": 3000,
               "point": [
-                1027.4515828561866,
+                1027.4515828561869,
                 1411.4000000000005
               ],
               "path": [
@@ -5706,7 +5698,7 @@
               "insideReplayFrame": true
             },
             {
-              "id": 531,
+              "id": 532,
               "samplePhase": "after-event",
               "title": "今福・鴫野の戦い",
               "clan": "satake",
@@ -5720,8 +5712,8 @@
               },
               "troops": 3000,
               "point": [
-                1787.9638313443616,
-                1097.7195277088808
+                1757.1650148203857,
+                1133.5850681665959
               ],
               "path": [
                 "ishiyama",
@@ -5748,9 +5740,9 @@
               "insideReplayFrame": false
             },
             {
-              "id": 532,
+              "id": 533,
               "samplePhase": "after-event",
-              "title": "#hold",
+              "title": "大坂冬の陣",
               "clan": "tokugawa",
               "names": [
                 "徳川家康"
@@ -5786,9 +5778,9 @@
               "insideReplayFrame": true
             },
             {
-              "id": 533,
+              "id": 534,
               "samplePhase": "after-event",
-              "title": "#hold",
+              "title": "大坂冬の陣",
               "clan": "tokugawa",
               "names": [
                 "徳川秀忠"
@@ -5824,9 +5816,9 @@
               "insideReplayFrame": true
             },
             {
-              "id": 534,
+              "id": 535,
               "samplePhase": "after-event",
-              "title": "#hold",
+              "title": "大坂冬の陣",
               "clan": "tokugawa",
               "names": [
                 "井伊直孝"
@@ -5862,9 +5854,9 @@
               "insideReplayFrame": true
             },
             {
-              "id": 535,
+              "id": 536,
               "samplePhase": "after-event",
-              "title": "#hold",
+              "title": "大坂冬の陣",
               "clan": "tokugawa",
               "names": [
                 "前田利常"
@@ -5900,9 +5892,9 @@
               "insideReplayFrame": true
             },
             {
-              "id": 539,
+              "id": 540,
               "samplePhase": "after-event",
-              "title": "#hold",
+              "title": "大坂冬の陣",
               "clan": "tokugawa",
               "names": [
                 "藤堂高虎"
@@ -5934,24 +5926,24 @@
           "sides": {
             "a": {
               "direct": [
-                529,
                 530,
                 531,
                 532,
                 533,
                 534,
                 535,
-                539
+                536,
+                540
               ],
               "clanOnly": [],
               "inFrame": [
-                529,
                 530,
-                532,
+                531,
                 533,
                 534,
                 535,
-                539
+                536,
+                540
               ],
               "locatedGroups": 5,
               "unlocatedGroups": 1
@@ -6015,19 +6007,19 @@
               ],
               "state": "march",
               "schedule": {
-                "start": 14472,
+                "start": 14469,
                 "end": 14527
               },
               "troops": 1500,
               "point": [
-                1066.284398586181,
-                1362.000000000001
+                1066.2843985861814,
+                1362.0000000000005
               ],
               "path": [
                 "uchi",
                 "izumi",
-                "hitoyoshi",
-                "kumamoto",
+                "tonokori",
+                "agata",
                 "funai",
                 "yuzuki",
                 "kaneko",
@@ -6090,8 +6082,8 @@
               },
               "troops": 1500,
               "point": [
-                1066.284398586181,
-                1362.000000000001
+                1066.2843985861814,
+                1362.0000000000005
               ],
               "path": [
                 "akutagawa",
@@ -6198,7 +6190,7 @@
             {
               "id": 501,
               "samplePhase": "before-event",
-              "title": "#hold",
+              "title": "大津城の戦い",
               "clan": "hashiba",
               "names": [
                 "立花宗茂"
@@ -6329,7 +6321,7 @@
             {
               "id": 505,
               "samplePhase": "before-event",
-              "title": "#hold",
+              "title": "第二次上田合戦",
               "clan": "hashiba",
               "names": [
                 "仙石秀久"
@@ -6341,7 +6333,7 @@
               },
               "troops": 18000,
               "point": [
-                1462.702725829908,
+                1462.7027258299083,
                 1070.0000000000002
               ],
               "path": [
@@ -6360,9 +6352,9 @@
               "insideReplayFrame": true
             },
             {
-              "id": 508,
+              "id": 509,
               "samplePhase": "before-event",
-              "title": "#hold",
+              "title": "第二次上田合戦",
               "clan": "tokugawa",
               "names": [
                 "徳川秀忠"
@@ -6391,9 +6383,9 @@
               "insideReplayFrame": true
             },
             {
-              "id": 511,
+              "id": 512,
               "samplePhase": "before-event",
-              "title": "#hold",
+              "title": "第二次上田合戦",
               "clan": "tokugawa",
               "names": [
                 "榊原康政"
@@ -6421,9 +6413,9 @@
               "insideReplayFrame": true
             },
             {
-              "id": 512,
+              "id": 513,
               "samplePhase": "before-event",
-              "title": "#hold",
+              "title": "第二次上田合戦",
               "clan": "sanada",
               "names": [
                 "真田信幸"
@@ -6464,7 +6456,7 @@
               },
               "troops": 18000,
               "point": [
-                1462.702725829908,
+                1462.7027258299083,
                 1070.0000000000002
               ],
               "path": [
@@ -6484,7 +6476,7 @@
               "insideReplayFrame": true
             },
             {
-              "id": 508,
+              "id": 509,
               "samplePhase": "after-event",
               "title": "第二次上田合戦",
               "clan": "tokugawa",
@@ -6515,7 +6507,7 @@
               "insideReplayFrame": true
             },
             {
-              "id": 511,
+              "id": 512,
               "samplePhase": "after-event",
               "title": "第二次上田合戦",
               "clan": "tokugawa",
@@ -6549,16 +6541,16 @@
             "a": {
               "direct": [
                 505,
-                508,
-                511,
-                512
+                509,
+                512,
+                513
               ],
               "clanOnly": [],
               "inFrame": [
                 505,
-                508,
-                511,
-                512
+                509,
+                512,
+                513
               ],
               "locatedGroups": 0,
               "unlocatedGroups": 1
@@ -6719,7 +6711,7 @@
             {
               "id": 499,
               "samplePhase": "before-event",
-              "title": "#hold",
+              "title": "長谷堂城の戦い",
               "clan": "nagao",
               "names": [
                 "直江兼続"
@@ -6731,8 +6723,8 @@
               },
               "troops": 4000,
               "point": [
-                1800.5110078991413,
-                698.8946
+                1800.5110078991415,
+                698.8945999999999
               ],
               "path": [
                 "kurokawa",
@@ -6762,8 +6754,8 @@
               },
               "troops": 4000,
               "point": [
-                1800.5110078991413,
-                698.8946
+                1800.5110078991415,
+                698.8945999999999
               ],
               "path": [
                 "yamagata",
@@ -7055,7 +7047,7 @@
             {
               "id": 201,
               "samplePhase": "after-event",
-              "title": "#hold",
+              "title": "小田原城の戦い",
               "clan": "nagao",
               "names": [
                 "長尾景虎"
@@ -9271,7 +9263,7 @@
               "troops": 7000,
               "point": [
                 1022.6,
-                1413.9999999999998
+                1414
               ],
               "path": [
                 "koriyama",
@@ -9302,7 +9294,7 @@
               "troops": 7000,
               "point": [
                 1022.6,
-                1413.9999999999998
+                1414
               ],
               "path": [
                 "ishiyama",
@@ -9746,7 +9738,7 @@
               },
               "troops": 27000,
               "point": [
-                888.9478734191921,
+                888.9478734191922,
                 1382.2000000000003
               ],
               "path": [
@@ -9912,7 +9904,7 @@
               },
               "troops": 30000,
               "point": [
-                887.175478987916,
+                887.1754789879159,
                 1365.3379999999997
               ],
               "path": [
@@ -9972,7 +9964,7 @@
               },
               "troops": 30000,
               "point": [
-                887.175478987916,
+                887.1754789879159,
                 1365.3379999999997
               ],
               "path": [
@@ -10785,7 +10777,7 @@
             {
               "id": 388,
               "samplePhase": "after-event",
-              "title": "#hold",
+              "title": "備中高松城の水攻め",
               "clan": "oda",
               "names": [
                 "羽柴秀吉"
@@ -12267,9 +12259,9 @@
                 "start": 9609,
                 "end": 9619
               },
-              "troops": 5000,
+              "troops": 4000,
               "point": [
-                393.9912762605998,
+                393.99127626059976,
                 1720.0000000000002
               ],
               "path": [
@@ -12391,7 +12383,6 @@
               "path": [
                 "funai",
                 "kumamoto",
-                "hitoyoshi",
                 "tonokori"
               ],
               "matchingSides": [
@@ -12413,15 +12404,14 @@
                 "start": 9609,
                 "end": 9619
               },
-              "troops": 5000,
+              "troops": 4000,
               "point": [
-                393.9912762605998,
+                393.99127626059976,
                 1720.0000000000002
               ],
               "path": [
                 "funai",
                 "kumamoto",
-                "hitoyoshi",
                 "tonokori"
               ],
               "matchingSides": [
@@ -12509,10 +12499,9 @@
                 2003.3999999999999
               ],
               "path": [
-                "hitoyoshi",
                 "kumamoto",
-                "yanagawa",
-                "kawara"
+                "tonokori",
+                "agata"
               ],
               "matchingSides": [
                 "b"
@@ -12535,8 +12524,8 @@
               },
               "troops": 48000,
               "point": [
-                241.41067112148755,
-                1831.1999999999996
+                241.41067112148733,
+                1831.1999999999998
               ],
               "path": [
                 "himeji",
@@ -12546,7 +12535,6 @@
                 "yuzuki",
                 "funai",
                 "kumamoto",
-                "hitoyoshi",
                 "tonokori"
               ],
               "matchingSides": [
@@ -12574,11 +12562,8 @@
                 2003.3999999999999
               ],
               "path": [
-                "kawara",
-                "funai",
                 "agata",
-                "tonokori",
-                "obi"
+                "tonokori"
               ],
               "matchingSides": [
                 "b"
@@ -12601,11 +12586,11 @@
               },
               "troops": 48000,
               "point": [
-                241.41067112148755,
-                1831.1999999999996
+                241.41067112148733,
+                1831.1999999999998
               ],
               "path": [
-                "hitoyoshi",
+                "kumamoto",
                 "tonokori"
               ],
               "matchingSides": [
@@ -12669,37 +12654,6 @@
           "triggerT": 9743,
           "units": [
             {
-              "id": 452,
-              "samplePhase": "before-event",
-              "title": "九州平定",
-              "clan": "shimazu",
-              "names": [
-                "島津義久"
-              ],
-              "state": "march",
-              "schedule": {
-                "start": 9630,
-                "end": 9720
-              },
-              "troops": 4000,
-              "point": [
-                347.95513501608843,
-                2024.2756
-              ],
-              "path": [
-                "kawara",
-                "funai",
-                "agata",
-                "tonokori",
-                "obi"
-              ],
-              "matchingSides": [
-                "a"
-              ],
-              "matchBasis": "commander-name",
-              "insideReplayFrame": false
-            },
-            {
               "id": 454,
               "samplePhase": "before-event",
               "title": "根白坂の戦い",
@@ -12718,7 +12672,7 @@
                 1922.1999999999994
               ],
               "path": [
-                "hitoyoshi",
+                "kumamoto",
                 "tonokori"
               ],
               "matchingSides": [
@@ -12737,7 +12691,7 @@
               ],
               "state": "march",
               "schedule": {
-                "start": 9735,
+                "start": 9738,
                 "end": 9743
               },
               "troops": 35000,
@@ -12746,8 +12700,7 @@
                 1942.0000000000002
               ],
               "path": [
-                "izumi",
-                "hitoyoshi",
+                "obi",
                 "tonokori"
               ],
               "matchingSides": [],
@@ -12755,68 +12708,43 @@
               "insideReplayFrame": false
             },
             {
-              "id": 452,
-              "samplePhase": "after-event",
-              "title": "九州平定",
-              "clan": "shimazu",
-              "names": [
-                "島津義久"
-              ],
-              "state": "march",
-              "schedule": {
-                "start": 9630,
-                "end": 9720
-              },
-              "troops": 4000,
-              "point": [
-                347.95513501608843,
-                2024.2756
-              ],
-              "path": [
-                "kawara",
-                "funai",
-                "agata",
-                "tonokori",
-                "obi"
-              ],
-              "matchingSides": [
-                "a"
-              ],
-              "matchBasis": "commander-name",
-              "insideReplayFrame": false
-            },
-            {
-              "id": 455,
+              "id": 454,
               "samplePhase": "after-event",
               "title": "根白坂の戦い",
-              "clan": "shimazu",
+              "clan": "hashiba",
               "names": [
-                "島津忠平"
+                "羽柴秀長"
               ],
               "state": "march",
               "schedule": {
-                "start": 9735,
+                "start": 9720,
                 "end": 9743
               },
-              "troops": 35000,
+              "troops": 48000,
               "point": [
-                359.20354550247646,
-                1942.0000000000002
+                365.5138780586036,
+                1922.1999999999994
               ],
               "path": [
                 "tonokori",
-                "izumi"
+                "agata",
+                "funai",
+                "yuzuki",
+                "kaneko",
+                "sogo",
+                "tenjin",
+                "himeji"
               ],
-              "matchingSides": [],
-              "matchBasis": "unassigned",
-              "insideReplayFrame": false
+              "matchingSides": [
+                "b"
+              ],
+              "matchBasis": "commander-name",
+              "insideReplayFrame": true
             }
           ],
           "sides": {
             "a": {
-              "direct": [
-                452
-              ],
+              "direct": [],
               "clanOnly": [],
               "inFrame": [],
               "locatedGroups": 0,
@@ -12834,10 +12762,10 @@
               "unlocatedGroups": 0
             }
           },
-          "unmatchedSides": [],
-          "sidesOutsideFrame": [
+          "unmatchedSides": [
             "a"
-          ]
+          ],
+          "sidesOutsideFrame": []
         }
       ]
     },
@@ -12882,8 +12810,8 @@
               },
               "troops": 10000,
               "point": [
-                1638.4236440591308,
-                759.0438000000008
+                1638.4236440591305,
+                759.0438000000006
               ],
               "path": [
                 "kasugayama",
@@ -12953,7 +12881,7 @@
             {
               "id": 465,
               "samplePhase": "before-event",
-              "title": "#hold",
+              "title": "韮山城の戦い",
               "clan": "nobukatsu",
               "names": [
                 "織田信雄"
@@ -13078,7 +13006,7 @@
                 "start": 10782,
                 "end": 10809
               },
-              "troops": 4200,
+              "troops": 4400,
               "point": [
                 1554.4452529920238,
                 1086
@@ -13109,9 +13037,9 @@
                 "start": 10785,
                 "end": 10809
               },
-              "troops": 30500,
+              "troops": 30300,
               "point": [
-                1554.4452529920236,
+                1554.4452529920238,
                 1086
               ],
               "path": [
@@ -13139,7 +13067,7 @@
                 "start": 10782,
                 "end": 10809
               },
-              "troops": 4200,
+              "troops": 4400,
               "point": [
                 1554.4452529920238,
                 1086
@@ -13170,9 +13098,9 @@
                 "start": 10785,
                 "end": 10809
               },
-              "troops": 30500,
+              "troops": 30300,
               "point": [
-                1554.4452529920236,
+                1554.4452529920238,
                 1086
               ],
               "path": [
@@ -13294,7 +13222,7 @@
             {
               "id": 461,
               "samplePhase": "before-event",
-              "title": "#hold",
+              "title": "小田原征伐",
               "clan": "hashiba",
               "names": [
                 "豊臣秀吉"
@@ -13326,7 +13254,7 @@
             {
               "id": 462,
               "samplePhase": "before-event",
-              "title": "#hold",
+              "title": "小田原征伐",
               "clan": "tokugawa",
               "names": [
                 "徳川家康"
@@ -13354,7 +13282,7 @@
             {
               "id": 461,
               "samplePhase": "after-event",
-              "title": "#hold",
+              "title": "小田原征伐",
               "clan": "hashiba",
               "names": [
                 "豊臣秀吉"
@@ -13454,8 +13382,8 @@
               },
               "troops": 18700,
               "point": [
-                -137.55606128130302,
-                1187.3014081037331
+                -141.75673293934113,
+                1180.6434237844635
               ],
               "path": [
                 "kumamoto",
@@ -13516,8 +13444,8 @@
               },
               "troops": 18700,
               "point": [
-                -137.55606128130302,
-                1187.3014081037331
+                -141.75673293934113,
+                1180.6434237844635
               ],
               "path": [
                 "kumamoto",
@@ -13607,8 +13535,8 @@
               },
               "troops": 18700,
               "point": [
-                -301.2832209400124,
-                927.796988242612
+                -287.8693156171427,
+                949.057771891088
               ],
               "path": [
                 "kumamoto",
@@ -13671,8 +13599,8 @@
               },
               "troops": 18700,
               "point": [
-                -301.2832209400124,
-                927.796988242612
+                -287.8693156171427,
+                949.057771891088
               ],
               "path": [
                 "kumamoto",
@@ -13761,8 +13689,8 @@
               },
               "troops": 18700,
               "point": [
-                -316.0296793471576,
-                904.4241334155369
+                -300.0453641736262,
+                929.75896756664
               ],
               "path": [
                 "kumamoto",
@@ -13826,8 +13754,8 @@
               },
               "troops": 18700,
               "point": [
-                -316.0296793471576,
-                904.4241334155369
+                -300.0453641736262,
+                929.75896756664
               ],
               "path": [
                 "kumamoto",
@@ -13915,7 +13843,7 @@
               },
               "troops": 6000,
               "point": [
-                -79.28366544874174,
+                -79.28366544874173,
                 1373.0000000000005
               ],
               "path": [
@@ -13944,7 +13872,7 @@
               },
               "troops": 6000,
               "point": [
-                -79.28366544874174,
+                -79.28366544874173,
                 1373.0000000000005
               ],
               "path": [
@@ -14146,6 +14074,30 @@
               ],
               "matchBasis": "commander-name",
               "insideReplayFrame": true
+            },
+            {
+              "id": 481,
+              "samplePhase": "after-event",
+              "title": "第一次晋州城の戦い",
+              "clan": "joseon",
+              "names": [],
+              "state": "camp",
+              "schedule": {
+                "start": 11703,
+                "end": 11709
+              },
+              "troops": 3800,
+              "point": [
+                -182.0288237343632,
+                1312.2
+              ],
+              "path": [
+                "suncheon",
+                "jinju"
+              ],
+              "matchingSides": [],
+              "matchBasis": "unassigned",
+              "insideReplayFrame": true
             }
           ],
           "sides": {
@@ -14331,8 +14283,8 @@
               },
               "troops": 4000,
               "point": [
-                -370.85339022147366,
-                814.1999999999999
+                -370.8533902214739,
+                814.1999999999996
               ],
               "path": [
                 "funai",
@@ -14435,8 +14387,8 @@
               },
               "troops": 4000,
               "point": [
-                -370.85339022147366,
-                814.1999999999999
+                -370.8533902214739,
+                814.1999999999996
               ],
               "path": [
                 "hanseong",
@@ -15014,7 +14966,7 @@
             {
               "id": 494,
               "samplePhase": "after-event",
-              "title": "#hold",
+              "title": "蔚山城の戦い",
               "clan": "hashiba",
               "names": [
                 "加藤清正"
@@ -15421,7 +15373,7 @@
               "insideReplayFrame": true
             },
             {
-              "id": 509,
+              "id": 510,
               "samplePhase": "before-event",
               "title": "岐阜城の戦い",
               "clan": "tokugawa",
@@ -15449,7 +15401,7 @@
               "insideReplayFrame": true
             },
             {
-              "id": 510,
+              "id": 511,
               "samplePhase": "before-event",
               "title": "岐阜城の戦い",
               "clan": "tokugawa",
@@ -15477,7 +15429,7 @@
               "insideReplayFrame": true
             },
             {
-              "id": 509,
+              "id": 510,
               "samplePhase": "after-event",
               "title": "関ヶ原の戦い",
               "clan": "tokugawa",
@@ -15505,7 +15457,7 @@
               "insideReplayFrame": true
             },
             {
-              "id": 510,
+              "id": 511,
               "samplePhase": "after-event",
               "title": "関ヶ原の戦い",
               "clan": "tokugawa",
@@ -15536,16 +15488,16 @@
           "sides": {
             "a": {
               "direct": [
-                509,
-                510
+                510,
+                511
               ],
               "clanOnly": [
                 503
               ],
               "inFrame": [
                 503,
-                509,
-                510
+                510,
+                511
               ],
               "locatedGroups": 0,
               "unlocatedGroups": 1
@@ -15715,7 +15667,7 @@
           "triggerT": 14568,
           "units": [
             {
-              "id": 513,
+              "id": 507,
               "samplePhase": "before-event",
               "title": "石垣原の戦い",
               "clan": "hashiba",
@@ -15724,7 +15676,7 @@
               ],
               "state": "march",
               "schedule": {
-                "start": 14559,
+                "start": 14538,
                 "end": 14568
               },
               "troops": 9000,
@@ -15733,7 +15685,11 @@
                 1706
               ],
               "path": [
-                "kawara",
+                "himeji",
+                "tenjin",
+                "sogo",
+                "kaneko",
+                "yuzuki",
                 "funai"
               ],
               "matchingSides": [
@@ -15753,7 +15709,7 @@
             },
             "b": {
               "direct": [
-                513
+                507
               ],
               "clanOnly": [],
               "inFrame": [],
@@ -15879,9 +15835,9 @@
       "eventDate": [
         1614,
         12,
-        20
+        19
       ],
-      "expected": 19669,
+      "expected": 19668,
       "sources": [
         "eventKizugawa1614",
         "atlasRelief",
@@ -15892,25 +15848,25 @@
           "date": {
             "y": 1614,
             "m": 12,
-            "d": 20
+            "d": 19
           },
-          "t": 19669,
-          "triggerT": 19669,
+          "t": 19668,
+          "triggerT": 19668,
           "units": [],
           "sides": {
             "a": {
               "direct": [],
               "clanOnly": [],
               "inFrame": [],
-              "locatedGroups": 1,
-              "unlocatedGroups": 0
+              "locatedGroups": 0,
+              "unlocatedGroups": 1
             },
             "b": {
               "direct": [],
               "clanOnly": [],
               "inFrame": [],
-              "locatedGroups": 1,
-              "unlocatedGroups": 0
+              "locatedGroups": 0,
+              "unlocatedGroups": 1
             }
           },
           "unmatchedSides": [
@@ -15947,9 +15903,9 @@
           "triggerT": 19675,
           "units": [
             {
-              "id": 530,
+              "id": 531,
               "samplePhase": "before-event",
-              "title": "#hold",
+              "title": "大坂冬の陣",
               "clan": "nagao",
               "names": [
                 "上杉景勝"
@@ -15961,7 +15917,7 @@
               },
               "troops": 3000,
               "point": [
-                1027.4515828561866,
+                1027.4515828561869,
                 1411.4000000000005
               ],
               "path": [
@@ -15985,7 +15941,7 @@
               "insideReplayFrame": true
             },
             {
-              "id": 531,
+              "id": 532,
               "samplePhase": "before-event",
               "title": "今福・鴫野の戦い",
               "clan": "satake",
@@ -15999,7 +15955,7 @@
               },
               "troops": 3000,
               "point": [
-                1029.0696168449351,
+                1029.0696168449354,
                 1409.0000000000005
               ],
               "path": [
@@ -16028,9 +15984,9 @@
               "insideReplayFrame": true
             },
             {
-              "id": 530,
+              "id": 531,
               "samplePhase": "after-event",
-              "title": "#hold",
+              "title": "大坂冬の陣",
               "clan": "nagao",
               "names": [
                 "上杉景勝"
@@ -16042,7 +15998,7 @@
               },
               "troops": 3000,
               "point": [
-                1027.4515828561866,
+                1027.4515828561869,
                 1411.4000000000005
               ],
               "path": [
@@ -16066,7 +16022,7 @@
               "insideReplayFrame": true
             },
             {
-              "id": 531,
+              "id": 532,
               "samplePhase": "after-event",
               "title": "今福・鴫野の戦い",
               "clan": "satake",
@@ -16080,7 +16036,7 @@
               },
               "troops": 3000,
               "point": [
-                1029.0696168449351,
+                1029.0696168449354,
                 1409.0000000000005
               ],
               "path": [
@@ -16111,13 +16067,13 @@
           "sides": {
             "a": {
               "direct": [
-                530,
-                531
+                531,
+                532
               ],
               "clanOnly": [],
               "inFrame": [
-                530,
-                531
+                531,
+                532
               ],
               "locatedGroups": 2,
               "unlocatedGroups": 0
@@ -16163,9 +16119,9 @@
           "triggerT": 19682,
           "units": [
             {
-              "id": 534,
+              "id": 535,
               "samplePhase": "before-event",
-              "title": "#hold",
+              "title": "大坂冬の陣",
               "clan": "tokugawa",
               "names": [
                 "井伊直孝"
@@ -16201,9 +16157,9 @@
               "insideReplayFrame": true
             },
             {
-              "id": 535,
+              "id": 536,
               "samplePhase": "before-event",
-              "title": "#hold",
+              "title": "大坂冬の陣",
               "clan": "tokugawa",
               "names": [
                 "前田利常"
@@ -16239,7 +16195,7 @@
               "insideReplayFrame": true
             },
             {
-              "id": 540,
+              "id": 541,
               "samplePhase": "before-event",
               "title": "真田丸の戦い",
               "clan": "hashiba",
@@ -16267,9 +16223,9 @@
               "insideReplayFrame": true
             },
             {
-              "id": 534,
+              "id": 535,
               "samplePhase": "after-event",
-              "title": "#hold",
+              "title": "大坂冬の陣",
               "clan": "tokugawa",
               "names": [
                 "井伊直孝"
@@ -16305,9 +16261,9 @@
               "insideReplayFrame": true
             },
             {
-              "id": 535,
+              "id": 536,
               "samplePhase": "after-event",
-              "title": "#hold",
+              "title": "大坂冬の陣",
               "clan": "tokugawa",
               "names": [
                 "前田利常"
@@ -16346,24 +16302,24 @@
           "sides": {
             "a": {
               "direct": [
-                534,
-                535
+                535,
+                536
               ],
               "clanOnly": [],
               "inFrame": [
-                534,
-                535
+                535,
+                536
               ],
               "locatedGroups": 0,
               "unlocatedGroups": 1
             },
             "b": {
               "direct": [
-                540
+                541
               ],
               "clanOnly": [],
               "inFrame": [
-                540
+                541
               ],
               "locatedGroups": 1,
               "unlocatedGroups": 0
@@ -16401,7 +16357,7 @@
           "triggerT": 19831,
           "units": [
             {
-              "id": 529,
+              "id": 530,
               "samplePhase": "before-event",
               "title": "道明寺の戦い",
               "clan": "date",
@@ -16434,7 +16390,7 @@
               "insideReplayFrame": true
             },
             {
-              "id": 529,
+              "id": 530,
               "samplePhase": "after-event",
               "title": "大坂夏の陣",
               "clan": "date",
@@ -16472,11 +16428,11 @@
             },
             "b": {
               "direct": [
-                529
+                530
               ],
               "clanOnly": [],
               "inFrame": [
-                529
+                530
               ],
               "locatedGroups": 1,
               "unlocatedGroups": 0
@@ -16515,7 +16471,7 @@
           "triggerT": 19831,
           "units": [
             {
-              "id": 534,
+              "id": 535,
               "samplePhase": "before-event",
               "title": "八尾・若江の戦い",
               "clan": "tokugawa",
@@ -16552,7 +16508,7 @@
               "insideReplayFrame": true
             },
             {
-              "id": 542,
+              "id": 543,
               "samplePhase": "before-event",
               "title": "八尾・若江の戦い",
               "clan": "tokugawa",
@@ -16583,7 +16539,7 @@
               "insideReplayFrame": true
             },
             {
-              "id": 534,
+              "id": 535,
               "samplePhase": "after-event",
               "title": "大坂夏の陣",
               "clan": "tokugawa",
@@ -16611,7 +16567,7 @@
               "insideReplayFrame": true
             },
             {
-              "id": 542,
+              "id": 543,
               "samplePhase": "after-event",
               "title": "大坂夏の陣",
               "clan": "tokugawa",
@@ -16642,13 +16598,13 @@
           "sides": {
             "a": {
               "direct": [
-                534,
-                542
+                535,
+                543
               ],
               "clanOnly": [],
               "inFrame": [
-                534,
-                542
+                535,
+                543
               ],
               "locatedGroups": 2,
               "unlocatedGroups": 0

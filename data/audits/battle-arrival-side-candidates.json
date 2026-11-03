@@ -2,8 +2,8 @@
   "scope": "画面用の連続移動を有効にした照合候補。範囲外・不対応は史実上の遅着や不在の証明ではない。",
   "visualTrackingEnabled": true,
   "bothSidesUnmatched": 7,
-  "oneSideUnmatched": 85,
-  "someSideOutsideFrame": 15,
+  "oneSideUnmatched": 86,
+  "someSideOutsideFrame": 14,
   "candidates": [
     {
       "title": "桶狭間の戦い",
@@ -867,10 +867,10 @@
         "d": 24
       },
       "noncombat": false,
-      "unmatchedSides": [],
-      "sidesOutsideFrame": [
+      "unmatchedSides": [
         "a"
-      ]
+      ],
+      "sidesOutsideFrame": []
     },
     {
       "title": "新発田城落城",
@@ -1212,7 +1212,7 @@
       "date": {
         "y": 1614,
         "m": 12,
-        "d": 20
+        "d": 19
       },
       "noncombat": false,
       "unmatchedSides": [
