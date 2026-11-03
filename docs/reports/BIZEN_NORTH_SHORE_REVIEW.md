@@ -90,3 +90,5 @@ PythonはNumPy・Pillow・Shapelyを使用。入力の図上読取と原図ハ�
 藤戸寺の現所在地（東経133.821365度）を通る南北断面を地理院標高PNGで比較した。北緯34.556〜34.562度の13点は標高4.20〜4.96mで、南の34.553度は62.30m、北の34.563度は11.48m。西の東経133.815度でも、南北の丘陵の間に標高4m台の区間がある。東の133.827度は採取範囲全体が標高3〜5m。藤戸村・天城村の現代地名代表点を結ぶ断面も全21点が4.00〜4.78mで、両岸の丘陵を指す目印には適さなかった。[藤戸寺と村名の現代代表点](https://geoshape.ex.nii.ac.jp/nrct-poi/resource/34/340000281300.html)・[地理院タイル](https://maps.gsi.go.jp/development/ichiran.html)
 
 3断面の93点と標高タイルURLは [fujito-dem-profiles.json](../../data/inputs/kojima-coast-review/fujito-dem-profiles.json)。丘陵間の低地の候補を確認した段階で、現在の標高から戦国期の水面や水路幅は逆算しない。
+
+比較した標高3断面の93点は、現在のゲームではすべて陸に含まれる。うち61点が現代標高5m未満で、丘陵だけでなく低地も連続した陸になっている。古図の狭窄部にある浮洲岩・経ヶ島は、[中国四国農政局の海面古図](https://www.maff.go.jp/chushi/kj/okayamam/attach/pdf/pamph-26.pdf)と[水土の礎の図1解説](https://suido-ishizue.jp/nihon/08/00.html)で照合する候補。現地側では、[倉敷市の二番池ハザードマップ](https://www.city.kurashiki.okayama.jp/_res/projects/default_project/_page_/001/005/705/r1nibannike.pdf)に浮洲岩跡と経ヶ島がともに掲載されている。岩の跡と島の目印を局所の照合に使い、図の浸水区域は戦国期の水路には転写しない。
