@@ -71,3 +71,5 @@ python3 tools/map/audit-raster-adjacency.py /path/to/baseline/game/map \
 ```
 
 基準版と適用後の `fourNeighbourPairHash` および `eightNeighbourPairHash` はいずれも `72e0703ecb4b1655ccbb86b3fb3b707f62c2de85ecb5d0c944e5052fa797d2e0`。100mで1タイルを置換し、`sea` は9画素減、`castle:bmatsuyama` は9画素増。組数だけでなく隣接するIDの組が一致する。比較には同一基準版のID表を使う。監査は100mの合成結果を対象とし、ブラウザによるタイル選択や描画は別途確認する。
+
+塩津潟の旧マスクは、修正後のベクトル版に合わせて基準版の `lake:0` の全5,500画素を既存の `castle:shibata` に置き換える。全画素が修正後の新発田領域に入ることを確認した。湖岸復元や新たな知行認定ではない。ほかの湖のIDは固定。早島との合成後も4近傍・8近傍の隣接組とハッシュは同一だった。

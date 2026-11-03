@@ -1,0 +1,16 @@
+{
+  "id": "shiunji-legacy-mask",
+  "layer": "provinces",
+  "baseRevision": "0d92c0a",
+  "validFrom": [1560, 1, 1],
+  "validUntil": [1616, 1, 1],
+  "payload": {
+    "file": "../../../data/verification/shiunji/legacy-lake-mask.geojson",
+    "feature": 0,
+    "fromKey": "lake:0",
+    "toKey": "castle:shibata"
+  },
+  "sourceIds": ["water-shiunji"],
+  "basis": "旧塩津潟マスクを無効化し、修正後のベクトル表示と合わせる",
+  "review": "対象全画素がベクトル版の新発田領域内。史実の湖岸や知行境界は未確定。"
+}
