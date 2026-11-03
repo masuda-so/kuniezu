@@ -201,3 +201,28 @@
   text:'毛利軍が香春岳城に迫り、高橋元種が降伏した。秀吉による豊前・日向の国分けは翌年のことだった。'
  });
 }
+
+/* 田川は中津の黒田領と分け、戦後の国分けとして扱う。 */
+{
+ const campaign=TK.HIST.find(e=>e.title==='九州平定'&&e.k==='take'&&e.castles?.includes('kawara'));
+ if(!campaign)throw Error('九州平定の香春岳城');
+ campaign.castles=campaign.castles.filter(id=>id!=='kawara');
+ const lunarDate=[1587,6,25];
+ TK.HIST.push({
+  d:TK.lunarDate(...lunarDate),lunarDate,k:'take',clan:'hashiba',castles:['kawara'],admin:1,
+  title:'森吉成の豊前拝領',who:'森吉成（毛利勝信）',datePrecision:'月',
+  source:'https://adeac.jp/yukuhashi-city/texthtml/d100010/mp000000-000010/ht2040100020',
+  text:'九州平定後の国分けで、森吉成（毛利勝信）は豊前の企救・田川二郡を与えられ、小倉を本拠とした。拝領の月日には不明な点がある。'
+ });
+}
+
+/* 石垣原での交戦と大友義統の降伏は二日離れている。 */
+{
+ const lunarDate=[1600,9,15];
+ TK.HIST.push({
+  d:TK.lunarDate(...lunarDate),lunarDate,k:'note',
+  title:'石垣原の戦いの後、大友義統が降伏',who:'大友義統',
+  source:'https://www.city.beppu.oita.jp/doc/gakusyuu/bunkazai/booklet/no44.pdf',
+  text:'石垣原で敗れた大友義統が黒田方に降伏した。'
+ });
+}
