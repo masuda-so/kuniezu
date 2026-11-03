@@ -1,0 +1,100 @@
+{
+  "checked": "2026-11-03",
+  "scope": "4砦の表示開始年・役割・担当・代表座標",
+  "coordinatePrecision": "現地案内マーカー。測量誤差は非公表。再取得一致は外部精度ではない。",
+  "records": [
+    {
+      "name": "中村砦",
+      "kind": "siege-fort",
+      "allegiance": "tokugawa",
+      "point": [138.0632234, 34.6787393],
+      "coordinateErrorMeters": null,
+      "currentStartYear": 1580,
+      "recommendedStartYear": 1579,
+      "datePrecision": "year",
+      "source": "kakegawa-history-appendix",
+      "locator": "資料編1（PDF3頁）、1579年",
+      "commander": "大須賀康高",
+      "commanderSource": "kato-takatenjin-2024",
+      "role": "入江を利用した物資の搬入搬出を担う徳川方の包囲拠点",
+      "decision": "change-start-year",
+      "recommendedDescription": "城の南東に置かれ、1579年に整備された。入江に面し、大須賀康高が担当して物資の搬入・搬出を支えた。"
+    },
+    {
+      "name": "獅子ヶ鼻砦",
+      "kind": "siege-fort",
+      "allegiance": "tokugawa",
+      "point": [138.0711477, 34.6954949],
+      "coordinateErrorMeters": null,
+      "currentStartYear": 1580,
+      "recommendedStartYear": 1580,
+      "datePrecision": "year",
+      "source": "kakegawa-history-appendix",
+      "locator": "資料編1（PDF3頁）、1580年",
+      "commander": "大須賀康高",
+      "commanderSource": "kato-takatenjin-2024",
+      "role": "東側の丘陵上で監視・遮断を担う包囲砦",
+      "decision": "retain-year-and-position",
+      "dateQualification": "菊川市は天正8年6月とする。町誌紹介には1579〜1580の幅があり、全史料一致とはしない。"
+    },
+    {
+      "name": "火ヶ峰砦",
+      "kind": "siege-fort",
+      "allegiance": "tokugawa",
+      "point": [138.0578468, 34.7028421],
+      "coordinateErrorMeters": null,
+      "currentStartYear": 1580,
+      "recommendedStartYear": 1580,
+      "datePrecision": "year",
+      "source": "kakegawa-history-appendix",
+      "locator": "資料編1（PDF3頁）、1580年",
+      "commander": "大須賀康高",
+      "commanderSource": "kato-takatenjin-2024",
+      "role": "東側の監視・遮断を担う包囲砦",
+      "decision": "retain-year-and-position",
+      "positionQualification": "位置に二説。現行は東砦の代表点。"
+    },
+    {
+      "name": "能ヶ坂砦",
+      "kind": "siege-fort",
+      "allegiance": "tokugawa",
+      "point": [138.0467885, 34.7140548],
+      "coordinateErrorMeters": null,
+      "currentStartYear": 1580,
+      "recommendedStartYear": 1580,
+      "datePrecision": "year",
+      "source": "kakegawa-history-appendix",
+      "locator": "資料編1（PDF3頁）、1580年",
+      "commander": "本多勢",
+      "commanderSource": "kato-takatenjin-2024",
+      "role": "北東側の街道を押さえる包囲砦",
+      "decision": "retain-year-and-position",
+      "commanderQualification": "講演資料の本多備後守と町誌紹介の本多豊後守に異同。個人へ同定しない。"
+    }
+  ],
+  "endDisplay": {
+    "untilExclusive": 1582,
+    "precision": "year-display-policy",
+    "note": "1581年の高天神城落城後に包囲拠点として役割を終える。1582を個別廃城日としない。"
+  },
+  "coordinateCrossCheck": {
+    "name": "獅子ヶ鼻砦",
+    "otherSource": "kikugawa-shishigahana",
+    "otherPoint": [138.071022, 34.696355],
+    "distanceMeters": 96.33,
+    "decision": "do-not-shift-without-feature-identification",
+    "reason": "どちらが入口・主郭・曲輪の代表点か未確定。別マーカーとの差のみで現行の誤りとはしない。"
+  },
+  "runtimeCheck": {
+    "method": "history-focus model s1575 tokugawa; G.day through 1580-10-01",
+    "allSixActive": true,
+    "allSixOwner": "tokugawa",
+    "territoryBase": "kakegawa",
+    "noServerStarted": true
+  },
+  "rejectedClaims": [
+    "中村砦の高天神奪還を1590年とする市広報記事の年代",
+    "能ヶ坂担当を官途異同だけから本多忠勝等の個人に同定",
+    "案内マーカーの一致を歴史的城域の測量精度として扱う"
+  ]
+}

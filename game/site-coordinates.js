@@ -22,17 +22,18 @@
   ['能ヶ坂砦',138.0467885,34.7140548,'高天神城の北東、小貫と土方の境に置かれた。'],
   ['火ヶ峰砦',138.0578468,34.7028421,'城の東北東にある砦。位置に二説があり、地図は東砦側の代表点。'],
   ['獅子ヶ鼻砦',138.0711477,34.6954949,'城の東、細長い丘陵の先端に置かれた。'],
-  ['中村砦',138.0632234,34.6787393,'城の南東。入江に面し、物資の搬入・搬出を担った。'],
+  ['中村砦',138.0632234,34.6787393,'城の南東に置かれ、1579年に整備された。入江に面し、大須賀康高が担当して物資の搬入・搬出を支えた。'],
   ['三井山砦',138.0350583,34.6754752,'城の南、小笠山から伸びる丘陵の先端。1579年頃に整備されたとみられる。']
  ];
  const fortSource='https://takatenjinjyo.com/rokutoride/';
  TK.RESEARCH_SOURCES.takatenjinFortSites={author:'掛川市',title:'今、よみがえる高天神城・家康の六砦',url:fortSource,locator:'六砦の遺構と配置図',scope:'包囲に用いられた砦の名称・位置関係・遺構。'};
  TK.RESEARCH_SOURCES.takatenjinFortMap={author:'掛川市サイクリングマップ',title:'高天神城と六砦 小笠山一周',url:'https://www.bt-r.jp/kakegawa/map-ogasayama/',locator:'基本＋オプションの地図、六砦の地点1〜6',scope:'現地案内用の代表マーカー。城郭の範囲や遺構の測量座標ではない。'};
+ TK.RESEARCH_SOURCES.takatenjinFortYears={author:'掛川市',title:'掛川市歴史的風致維持向上計画 資料編',url:'https://www.city.kakegawa.shizuoka.jp/fs/1/7/6/4/6/9/_/10appendix.pdf',locator:'資料編1（PDF3頁）、1579・1580年の行',accessed:'2026-11-03',scope:'小笠山・中村・三井山は1579年、能ヶ坂・火ヶ峰・獅子ヶ鼻は1580年の整備。月日や廃城日は示さない。'};
  for(const [name,lon,lat,detail] of forts){
   // 高天神城攻めの拠点として整備された年。初築や個別の廃止日は示さない。
-  const start=name==='小笠山砦'||name==='三井山砦'?1579:1580;
+  const start=['小笠山砦','中村砦','三井山砦'].includes(name)?1579:1580;
   TK.YOSHO.push([name,'城',lon,lat,'遠江国・徳川方の高天神六砦。'+detail,start,1582]);
-  TK.CASTLE_EVIDENCE[name]={role:'高天神城を囲む徳川方の砦',source:fortSource,checked:'2026-11-03'};
+  TK.CASTLE_EVIDENCE[name]={role:'高天神城を囲む徳川方の砦',source:fortSource,periodSource:TK.RESEARCH_SOURCES.takatenjinFortYears.url,checked:'2026-11-03'};
  }
  TK.SITE_STABLE_IDS=Object.fromEntries(TK.YOSHO.map(y=>[y[0],'yosho:'+y[0]+':'+y[2]+':'+y[3]]));
  TK.RESEARCH_SOURCES.codhSites={author:'人文学オープンデータ共同利用センター（CODH）',title:'日本歴史地名大系 施設・地点項目データセット',year:'2025年5月15日版',url:'https://geoshape.ex.nii.ac.jp/nrct-poi/',locator:'doi:10.20676/00000456・各項目ID',accessed:'2026-10-31',scope:'地域と名称を照合した代表座標。数十〜数百メートルの推定誤差がある。後世の遺構・移転先や城郭範囲を保証しない。'};

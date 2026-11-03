@@ -1,0 +1,61 @@
+{
+  "title": "上月城の戦い",
+  "frame": [
+    134.334,
+    34.976,
+    8
+  ],
+  "reason": "高倉山の救援軍を枠内に余白付きで表示する",
+  "terrain": {
+    "source": "Mapzen Terrarium",
+    "generator": "tools/geo/battle-atlas.py --title 上月城の戦い",
+    "cacheFiles": [
+      {
+        "name": "12-3576-1623.png",
+        "sha256": "1bf5d0c91bf04cfb92b4fdfbba733fd35f70589813219cc0e923c91df4c80a66"
+      },
+      {
+        "name": "12-3576-1622.png",
+        "sha256": "23f9a76600103405b2ba80299deb57f1d1433764db5569895f39dc328d0dc962"
+      },
+      {
+        "name": "12-3575-1623.png",
+        "sha256": "f28c3d563e0af9554065a1fd5f9c34262e31508d149e2c33946ed6fa13d662a6"
+      },
+      {
+        "name": "12-3575-1622.png",
+        "sha256": "268339b1534c03a6c8903f7ff77770a215cbcfe0e494fc256baf9105f8bae44b"
+      }
+    ]
+  },
+  "rivers": {
+    "source": "OpenStreetMap contributors / Geofabrik",
+    "snapshot": "261031",
+    "url": "https://download.geofabrik.de/asia/japan/kansai-261031-free.shp.zip",
+    "generator": "tools/geo/battle-rivers.py --title 上月城の戦い --folder /tmp/kuniezu-japan-waterways/261031/kansai",
+    "inputFiles": [
+      {
+        "name": "gis_osm_waterways_free_1.dbf",
+        "sha256": "6f3814259706d3f3eb5180434aad28bd0937ebe26d3e1b478310056982772239"
+      },
+      {
+        "name": "gis_osm_waterways_free_1.cpg",
+        "sha256": "146d6789ffe033a5297c1ad046e6a62ee35319b86b021444f05b6ea2aa8a1f4a"
+      },
+      {
+        "name": "gis_osm_waterways_free_1.shp",
+        "sha256": "a4bfa0a4b144c1013023c45e1755f4bf579fde863258cffd394f12a11e990f90"
+      },
+      {
+        "name": "gis_osm_waterways_free_1.shx",
+        "sha256": "0f74206352bb42a16fc26c8e3f628b170f48c5a7fc1141daf38b938ef4b9f3b6"
+      },
+      {
+        "name": "gis_osm_waterways_free_1.prj",
+        "sha256": "ffc9162903c37f0867d1e7f36c20036a165f7aa555dda24c1ae0ee4328d2977f"
+      }
+    ],
+    "license": "ODbL 1.0",
+    "scope": "現代の比較河川。戦国期の河道・川幅・堤防の復元ではない。"
+  }
+}
