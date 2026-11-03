@@ -717,13 +717,15 @@ function loop(now){
  const dirty=U.baseDirty;if(dirty){drawBase();U.drawStats.base++;}
  const ts=[camSig,S?.t,U.hover,U.mode,U.pickClan,U.dipView,U.sel,U.picking].join('|');
  // 静止層は日付・視点・選択が変わった時（再生中は念のため1秒ごとにも）だけ描き直し、再生中は動く層だけを約30回/秒で重ねる。
- const still=dirty||ts!==topSig||(U.speed>0&&now-lastStill>1000);
+ // 実際に日が進んでいる間（ゲーム中・ダイアログなし・終わっていない・速度あり）だけを「再生中」として扱う。タイトルに戻った後の速度は数えない。
+ const playing=U.mode==='game'&&S&&!S.over&&!U.modal&&U.speed>0;
+ const still=dirty||ts!==topSig||(playing&&now-lastStill>1000);
  // 低速では駒が半画素も動かないフレームが多いので、画面上の位置が変わらない間は描かない。
- const due=!U.modal&&U.speed>0&&now-lastTop>33,motion=still||due?motionSig():'';
+ const due=playing&&now-lastTop>33,motion=still||due?motionSig():'';
  // 攻城の輪・煙・交戦の明滅だけが動いている間は約20回/秒で足りる。
  if(still||due&&motion!==lastMotion||!U.modal&&topAnimated&&now-lastTop>50){topAnimated=drawTop(still);U.drawStats.top++;lastTop=now;lastMotion=motion;if(still){lastStill=now;topSig=ts;}}
  // 停止して何も変わらない状態が続いたら、毎フレームの呼び出しをやめて0.2秒ごとの確認に落とす。操作が来たらすぐ戻す。
- if(dirty||still||anim||U.speed>0||!U.modal&&topAnimated||hold>0||ptrs.size||S?.sceneQ?.length||U.deploymentPreview&&now<U.deploymentPreview.until)lastBusy=now;
+ if(dirty||still||anim||playing||!U.modal&&topAnimated||hold>0||ptrs.size||S?.sceneQ?.length||U.deploymentPreview&&now<U.deploymentPreview.until)lastBusy=now;
  // タブが隠れている間は0.2秒ごとの確認もやめ、表示に戻った時に起こす（隠れたタブで端末を温めない）。
  if(now-lastBusy>1500||document.hidden){loopSleeping=true;if(!document.hidden)loopTimer=setTimeout(wakeLoop,200);}else requestAnimationFrame(loop);
 }
@@ -1293,13 +1295,13 @@ function doLoad(n){const previous=S;try{const s=(localStorage.getItem(SAVE_KEY2+
 
 /* ===== タイトルと大名選び ===== */
 const title=$('#title');
-function showTitle(){$('#pick').hidden=true;anim=null;U.mode='title';U.sel=null;U.ended=false;$('#app').dataset.mode='title';side.hidden=true;
+function showTitle(){$('#pick').hidden=true;anim=null;U.speed=0;U.acc=0;U.mode='title';U.sel=null;U.ended=false;$('#app').dataset.mode='title';side.hidden=true;
  G.newGame('s1560','oda');S=G.S();S.player='__none';resize();fitTitle();U.baseDirty=true;
  const meta=readMeta('auto');title.hidden=false;
  title.innerHTML=`<div class="tbox"><div class="tt"><span class="tsub">見ているだけで史実が動く</span><h1>天下分け目の国絵図</h1><p><span class="ph">その年、誰が、どの城にいたのか。</span><br><span class="ph">街道と城、武将の動きをたどる。</span></p></div>
  <div class="tbtns"><button class="btn pri big" data-act="new">はじめる</button>${meta?`<button class="btn big" data-act="continue"><b>続きから</b><small>${esc(meta)}</small></button>`:''}<button class="btn big ghost" data-act="help-title">遊び方</button></div>
  <div class="help" id="titleHelp" hidden>${HELP}</div></div>`;}
-function showScen(){anim=null;U.mode='title';$('#app').dataset.mode='title';$('#pick').hidden=true;side.hidden=true;U.sel=null;resize();fitTitle();title.hidden=false;
+function showScen(){anim=null;U.speed=0;U.acc=0;U.mode='title';$('#app').dataset.mode='title';$('#pick').hidden=true;side.hidden=true;U.sel=null;resize();fitTitle();title.hidden=false;
  title.innerHTML=`<div class="tbox wide"><h2 class="th">配置図を選ぶ</h2><div class="scens">${Object.values(TK.SCEN).sort((a,b)=>a.year*12+a.month-b.year*12-b.month).map(sc=>`<button class="scard" data-act="scen" data-id="${sc.id}"><span class="sy">${sc.era}（${sc.year}）</span><span class="sn"><b>${sc.title}</b></span><span class="sl">${esc(sc.lead)}</span></button>`).join('')}</div>
  <div class="tbtns"><button class="btn" data-act="back-title">戻る</button></div></div>`;}
 function showPick(sid){U.pickScen=sid;U.pickRegion='all';U.mode='pick';$('#app').dataset.mode='pick';title.hidden=true;
