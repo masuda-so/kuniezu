@@ -146,9 +146,7 @@
       "unmatchedSides": [
         "b"
       ],
-      "sidesOutsideFrame": [
-        "a"
-      ]
+      "sidesOutsideFrame": []
     },
     {
       "title": "第二次上田合戦",
@@ -187,9 +185,7 @@
       "unmatchedSides": [
         "b"
       ],
-      "sidesOutsideFrame": [
-        "a"
-      ]
+      "sidesOutsideFrame": []
     },
     {
       "title": "高遠城の戦い",
@@ -6202,8 +6198,8 @@
               },
               "troops": 15000,
               "point": [
-                1122.9155881924266,
-                1318.0000000000007
+                1076.3162093164326,
+                1348.6000000000004
               ],
               "path": [
                 "yanagawa",
@@ -6223,7 +6219,7 @@
                 "a"
               ],
               "matchBasis": "commander-name",
-              "insideReplayFrame": false
+              "insideReplayFrame": true
             },
             {
               "id": 501,
@@ -6240,8 +6236,8 @@
               },
               "troops": 15000,
               "point": [
-                1122.9155881924266,
-                1318.0000000000007
+                1076.3162093164326,
+                1348.6000000000004
               ],
               "path": [
                 "kannonji",
@@ -6260,7 +6256,7 @@
                 "a"
               ],
               "matchBasis": "commander-name",
-              "insideReplayFrame": false
+              "insideReplayFrame": true
             }
           ],
           "sides": {
@@ -6269,9 +6265,11 @@
                 501
               ],
               "clanOnly": [],
-              "inFrame": [],
-              "locatedGroups": 0,
-              "unlocatedGroups": 1
+              "inFrame": [
+                501
+              ],
+              "locatedGroups": 1,
+              "unlocatedGroups": 0
             },
             "b": {
               "direct": [],
@@ -6284,9 +6282,7 @@
           "unmatchedSides": [
             "b"
           ],
-          "sidesOutsideFrame": [
-            "a"
-          ]
+          "sidesOutsideFrame": []
         }
       ]
     },
@@ -6723,21 +6719,20 @@
               },
               "troops": 4000,
               "point": [
-                1800.5110078991415,
-                698.8945999999999
+                1791.1636255461374,
+                705.5999999999997
               ],
               "path": [
-                "kurokawa",
                 "shirakawa",
-                "sukagawa",
-                "nihonmatsu",
+                "kurokawa",
+                "yonezawa",
                 "yamagata"
               ],
               "matchingSides": [
                 "a"
               ],
               "matchBasis": "commander-name",
-              "insideReplayFrame": false
+              "insideReplayFrame": true
             },
             {
               "id": 499,
@@ -6754,8 +6749,8 @@
               },
               "troops": 4000,
               "point": [
-                1800.5110078991415,
-                698.8945999999999
+                1791.1636255461374,
+                705.5999999999997
               ],
               "path": [
                 "yamagata",
@@ -6765,7 +6760,7 @@
                 "a"
               ],
               "matchBasis": "commander-name",
-              "insideReplayFrame": false
+              "insideReplayFrame": true
             }
           ],
           "sides": {
@@ -6774,9 +6769,11 @@
                 499
               ],
               "clanOnly": [],
-              "inFrame": [],
-              "locatedGroups": 0,
-              "unlocatedGroups": 1
+              "inFrame": [
+                499
+              ],
+              "locatedGroups": 1,
+              "unlocatedGroups": 0
             },
             "b": {
               "direct": [],
@@ -6789,9 +6786,7 @@
           "unmatchedSides": [
             "b"
           ],
-          "sidesOutsideFrame": [
-            "a"
-          ]
+          "sidesOutsideFrame": []
         }
       ]
     },
