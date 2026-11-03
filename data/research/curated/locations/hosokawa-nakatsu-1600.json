@@ -1,0 +1,27 @@
+{
+  "id": "location:hosokawa-nakatsu-1600",
+  "person": "person:hosokawa-tadaoki",
+  "place": "place:nakatsu",
+  "relation": "residence-transfer",
+  "time": {
+    "kind": "dated-event",
+    "date": [
+      1600,
+      12,
+      26
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": false,
+    "precision": "day"
+  },
+  "source": "yukuhashiHosokawaNakatsu",
+  "sourceUrl": "https://adeac.jp/yukuhashi-city/texthtml/d100010/mp000000-000010/ht2042101020",
+  "locator": "慶長5年12月26日",
+  "uncertainty": "入城の日。領知決定日や個別の城の受取日は別。",
+  "recordType": "sourced-location-observation",
+  "status": "verified-in-specified-scope",
+  "recordedAt": "2026-11-03",
+  "gameBindings": [
+    "timeline:細川忠興の中津入城"
+  ]
+}

@@ -243,3 +243,13 @@
   text:'黒田孝高が豊前の中津に城の造営を始めた。'
  });
 }
+
+{
+ const lunarDate=[1600,12,26];
+ TK.HIST.push({
+  d:TK.lunarDate(...lunarDate),lunarDate,k:'note',
+  title:'細川忠興の中津入城',who:'細川忠興',
+  source:'https://adeac.jp/yukuhashi-city/texthtml/d100010/mp000000-000010/ht2042101020',
+  text:'丹後から豊前へ移った細川忠興が中津城に入った。'
+ });
+}
