@@ -590,7 +590,10 @@ function beginZoom(){U.zoomUntil=performance.now()+260;clearTimeout(zoomFinish);
 top_.addEventListener('wheel',e=>{e.preventDefault();beginZoom();const r=top_.getBoundingClientRect(),mx=e.clientX-r.left,my=e.clientY-r.top;const [wx,wy]=s2w(mx,my);
  cam.z*=Math.exp(-e.deltaY*.0015);clampCam();const [nx,ny]=s2w(mx,my);cam.x+=wx-nx;cam.y+=wy-ny;clampCam();anim=null;},{passive:false});
 function hit(sx,sy){if(!S)return null;let best=null,bd=16*16;for(const C of G.CL){const [x,y]=w2s(C.x,C.y);const d=(x-sx)**2+(y-sy)**2;if(d<bd){bd=d;best=C.id;}}
- if(best)return best;const [wx,wy]=s2w(sx,sy);bctx.setTransform(1,0,0,1,0,0);if(!bctx.isPointInPath(landFor(Math.max(cam.z,4)),wx,wy))return null;for(const C of G.CL)if(bctx.isPointInPath(TERR[C.id],wx,wy))return C.id;return null;}
+ if(best)return best;const [wx,wy]=s2w(sx,sy);
+ // 領域は画像（game/map の領域画像）で引く。100m の段で引けた時はそれを正とし、粗い段しか無い時の「海」は確定せず線のデータで確かめる。
+ const d=window.TKRaster?.pickAt?.(wx,wy);if(d&&(d.factor===1||d.kind!=='sea')){if(!d.key.startsWith('castle:'))return null;const id=d.key.slice(7);return G.C[id]&&S.castles[id]?id:null;}
+ bctx.setTransform(1,0,0,1,0,0);if(!bctx.isPointInPath(landFor(Math.max(cam.z,4)),wx,wy))return null;for(const C of G.CL)if(bctx.isPointInPath(TERR[C.id],wx,wy))return C.id;return null;}
 const tipEl=$('#tip');
 function hitArmy(x,y){return U.mode==='game'&&U.armyGroups?.filter(g=>Math.hypot(g.x-x,g.y-y)<24).sort((a,b)=>Math.hypot(a.x-x,a.y-y)-Math.hypot(b.x-x,b.y-y))[0];}
 function armyDepartureText(u){

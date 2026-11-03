@@ -29,3 +29,5 @@ jobs:
         run: node tools/checks/infrastructure.cjs
       - name: Secret scan
         run: node tools/checks/secret-scan.cjs
+      - name: Asset version stamps
+        run: node tools/build/stamp-assets.cjs --check
