@@ -291,3 +291,13 @@
   text:'岡本大八事件で有馬晴信が失脚し、幕府はその所領を子の直純に与えた。'
  });
 }
+
+{
+ const lunarDate=[1577,10,3];
+ const source=TK.RESEARCH_SOURCES.shigisanChronicle.url;
+ TK.HIST.push({
+  d:TK.lunarDate(...lunarDate),lunarDate,k:'note',at:'yamato',who:'織田信忠',
+  title:'織田信忠が信貴山城を包囲',source,
+  text:'織田信忠が信貴山城に迫って陣を置き、城下に火を放った。'
+ });
+}
