@@ -72,6 +72,8 @@ with tempfile.TemporaryDirectory() as folder:
     active = root / "transition"
     assert compiler.build(base, active, date(1600, 9, 15)) == {"one": 1}
     generated = compiler.read_json(active / "manifest.json")
+    base_bytes = (base / "manifest.json").read_bytes() + (base / "definition.csv").read_bytes()
+    assert generated["baseProvincesSha256"] == compiler.hashlib.sha256(base_bytes).hexdigest()
     assert [entry["factor"] for entry in generated["tiles"]] == [1, 4, 8]
     assert generated["versions"][0]["period"] == [[1600, 9, 15], [1600, 9, 17]]
     for tile in generated["tiles"]:

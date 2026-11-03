@@ -162,6 +162,9 @@ def build(base, out, day):
         versions.append({"id": version, "period": period, "edits": sorted(counts), "sha256": sha})
     (out / "manifest.json").write_text(json.dumps({
         "baseRevision": ledger["baselineCommit"],
+        "baseProvincesSha256": hashlib.sha256(
+            (base / "manifest.json").read_bytes() + (base / "definition.csv").read_bytes()
+        ).hexdigest(),
         "date": day.isoformat(),
         "versions": versions,
         "editPixels": counts,

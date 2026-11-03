@@ -1,7 +1,7 @@
 {
-  "baselineCommit": "9586ebd2eca904d27a91bd3db6a2816dfd3c246c",
-  "manifestSha256": "77f88f9acc2bfd024ea3a4d59027ad7359587303de12631983365d05c9dadf6f",
-  "definitionSha256": "8a2178426fe360cc70098f0df9140ac533e4c0d2082fa236be32a15a5133c9e4",
+  "baselineCommit": "71f396b9f4f5ec20275301922d3a17a4ecb63ff0",
+  "manifestSha256": "88edd0ac9b003470935167202a59622b9a6edae6408b6a9c5d3d16073400d212",
+  "definitionSha256": "99dd6dd7b11f590c652b3bf067652a3b6fdb0510659fda5c1280f1459947b940",
   "applied": [
     {
       "id": "castle-regions",
@@ -17,15 +17,23 @@
       "input": [
         "bizen-north-shore.js"
       ]
-    }
-  ],
-  "pending": [
+    },
     {
       "id": "hayashima-upland",
       "layer": "provinces",
-      "commit": "309c93c",
-      "reason": "専用作業ブランチにのみ実装"
+      "input": [
+        "applied/hayashima-upland.json"
+      ]
     },
+    {
+      "id": "shiunji-legacy-mask",
+      "layer": "provinces",
+      "input": [
+        "applied/shiunji-legacy-mask.json"
+      ]
+    }
+  ],
+  "pending": [
     {
       "id": "japan-rivers-osm",
       "layer": "rivers",
@@ -53,7 +61,8 @@
         9975,
         12990
       ],
-      "key": "sea"
+      "key": "castle:bmatsuyama"
     }
-  ]
+  ],
+  "baseProvincesSha256": "365a761fff4bfce258de3e92e87c0343457a0ddeb961d2488be29de2743196f5"
 }
