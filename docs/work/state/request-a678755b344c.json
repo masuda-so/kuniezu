@@ -1,0 +1,39 @@
+{
+  "taskId": "request-a678755b344c",
+  "status": "complete",
+  "owner": "codex-root",
+  "completedAt": "2026-11-03T15:09:13.097Z",
+  "evidence": [
+    {
+      "path": "docs/reports/CONVOY_AND_LOCATION_ACCEPTANCE.md",
+      "sha256": "ce12f1c3dd6baddede6fbb7ac0982d947bf2292400f54f83331e8123410e8328"
+    },
+    {
+      "path": "data/verification/movement-acceptance/fixture-result.json",
+      "sha256": "471455711f16921bc69f5cdfe39a7ecd195f7d05e916ec1349a4bc54583a603e"
+    },
+    {
+      "path": "data/verification/movement-acceptance/browser/result.json",
+      "sha256": "2591588bf4dcaf9e0738ff7c2abeb90e86b5644b1b597b011a1fe2c7eee30a50"
+    },
+    {
+      "path": "data/verification/movement-acceptance/browser/convoy-near.png",
+      "sha256": "2fdea647a1c8c0bbffbaaefce15af10fa10daaa73f9b4f6fa7dbcd79a099ed7a"
+    },
+    {
+      "path": "data/verification/movement-acceptance/served/result.json",
+      "sha256": "bac17684f30c27425f6d94317e96b844cd788f3c5af225ec02a1e51fe4d231d3"
+    },
+    {
+      "path": "data/verification/movement-acceptance/served/kuroda-three-observations.png",
+      "sha256": "7f0b8cb526221a455f745a1d05a6fad4e41bd0336f8e68dab9900ed43d4c7fbf"
+    }
+  ],
+  "checks": "同一目的・経路・日程の遠景代表、近景道路上前後分離、別行軍の座標不変、全重なり隊のhover/クリック、実画面の画面外軍・兵数・家紋を確認。全歴史経路の考証はG03に保持。",
+  "acceptance": [
+    "同じ行軍だけ遠景で代表隊を表示",
+    "拡大時に街道上の前後で個別表示",
+    "別の位置へ行軍しているような横ずらしをしない",
+    "画面外の軍・兵数・家紋・カーソル詳細を実画面確認"
+  ]
+}

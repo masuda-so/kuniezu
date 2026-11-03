@@ -1,0 +1,136 @@
+{
+  "ok": true,
+  "url": "http://localhost:8000/index.html",
+  "scope": "direct HTTP without response replacement; saved state hot restore; three date-specific display observations only",
+  "servedHashes": {
+    "ui.js": "d3314a5e334cdc7a0e3f85058f02b6673bbceab42bb511a95beead2ebc78a705",
+    "historical-register.js": "4e457cc42a817669f4452ffb1b0e625bade433492fe2dcae0e5e1a6bc67891e7"
+  },
+  "stateSource": "/tmp/kuniezu-s1600-state-b303.json",
+  "stateSha256": "e5e913bbd75b63c712ef794114310b12aa9d9c75597afd466e5bd3107edb0298",
+  "savedStateAdjustment": "empty personLocationDisplay bridges for canonical observation display, not save migration verification",
+  "checks": [
+    {
+      "date": {
+        "y": 1600,
+        "m": 7,
+        "d": 16
+      },
+      "point": [
+        1022.5974808899371,
+        1409.9999999999995,
+        0.11300893965671077
+      ],
+      "info": {
+        "kind": "observation",
+        "label": "大坂天満",
+        "description": "旧暦6月6日 所在の記録"
+      },
+      "era": "慶長五年",
+      "lunar": "六月六日",
+      "western": "1600年7月16日",
+      "header": [
+        "慶長五年",
+        "六月六日",
+        "西暦1600年7月16日"
+      ],
+      "marker": {
+        "x": 860,
+        "y": 451,
+        "id": "documented:person-location:kuroda-nagamasa-1600"
+      },
+      "tip": {
+        "hidden": false,
+        "text": "黒田長政所在の記録大坂天満旧暦6月6日 所在の記録",
+        "personal": "黒田長政所在の記録 大坂天満 旧暦6月6日 所在の記録",
+        "face": true
+      }
+    },
+    {
+      "date": {
+        "y": 1600,
+        "m": 8,
+        "d": 13
+      },
+      "point": [
+        1064.8281679963086,
+        1362.3999999999996,
+        -2.331843706839266
+      ],
+      "info": {
+        "kind": "observation",
+        "label": "伏見",
+        "description": "旧暦7月5日 出発"
+      },
+      "era": "慶長五年",
+      "lunar": "七月五日",
+      "western": "1600年8月13日",
+      "header": [
+        "慶長五年",
+        "七月五日",
+        "西暦1600年8月13日"
+      ],
+      "marker": {
+        "x": 860,
+        "y": 451,
+        "id": "documented:person-location:kuroda-nagamasa-1600"
+      },
+      "tip": {
+        "hidden": false,
+        "text": "黒田長政所在の記録伏見旧暦7月5日 出発",
+        "personal": "黒田長政所在の記録 伏見 旧暦7月5日 出発",
+        "face": true
+      }
+    },
+    {
+      "date": {
+        "y": 1600,
+        "m": 9,
+        "d": 21
+      },
+      "point": [
+        1236.0161640060464,
+        1306.6000000000004,
+        null
+      ],
+      "info": {
+        "kind": "observation",
+        "label": "清洲近村",
+        "description": "旧暦8月14日 着陣"
+      },
+      "era": "慶長五年",
+      "lunar": "八月十四日",
+      "western": "1600年9月21日",
+      "header": [
+        "慶長五年",
+        "八月十四日",
+        "西暦1600年9月21日"
+      ],
+      "marker": {
+        "x": 860,
+        "y": 451,
+        "id": "documented:person-location:kuroda-nagamasa-1600"
+      },
+      "tip": {
+        "hidden": false,
+        "text": "黒田長政所在の記録清洲近村旧暦8月14日 着陣",
+        "personal": "黒田長政所在の記録 清洲近村 旧暦8月14日 着陣",
+        "face": true
+      }
+    }
+  ],
+  "counts": {
+    "days": 0,
+    "newGames": 0
+  },
+  "errors": [],
+  "httpErrors": [
+    {
+      "url": "http://localhost:8000/favicon.ico",
+      "status": 404
+    }
+  ],
+  "loadFailures": [],
+  "browserPid": 94400,
+  "browserPidAlive": false
+}
