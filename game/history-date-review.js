@@ -165,3 +165,21 @@
   text:'豊臣秀吉が小早川隆景に筑前などを与えた。筑前の立花山城は小早川方の管理に入った。'
  });
 }
+
+/* 高城包囲と根白坂への夜襲は別の日の出来事。 */
+{
+ const battle=TK.HIST.find(e=>e.k==='note'&&e.title==='根白坂の戦い');
+ if(!battle)throw Error('根白坂の戦い');
+ const source='https://www.town.kijo.lg.jp/sosikikarasagasu/kyouikuiinkai_kyouikuka/1_1/1/3299.html';
+ const lunarDate=[1587,4,17];
+ Object.assign(battle,{
+  d:TK.lunarDate(...lunarDate),lunarDate,source,
+  text:'高城の救援に向かった島津軍が夜に根白坂を攻めた。宮部継潤ら豊臣方の守備を崩せず、翌朝に撤退した。'
+ });
+ const siegeDate=[1587,4,6];
+ TK.HIST.push({
+  d:TK.lunarDate(...siegeDate),lunarDate:siegeDate,k:'note',clan:'hashiba',
+  title:'日向高城の包囲',who:'羽柴秀長',source,
+  text:'羽柴秀長軍が日向の高城を包囲した。山田有信は都於郡城の島津本軍に救援を求めた。'
+ });
+}

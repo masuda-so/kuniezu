@@ -90,3 +90,5 @@
 立花山城を九州平定の一括変更から外し、小早川隆景の筑前拝領を天正15年6月25日（共通暦1587年7月30日）に表示する。柳川も既存の拝領イベントを同日へ訂正した。1560年からの日送りで前日は立花山が大友方・柳川が龍造寺方、当日は両城が豊臣方の管理色に変わることを確認した。年表では隆景と宗茂への領知をそれぞれ表示する。城の明渡し・入城の月日は領知文書の日付と区別する。[愛媛県史の領知目録参照](https://i-manabi.jp/system/regionals/regionals/ecode%3A2/64/view/8144)・[立花家史料館の展示解説](https://artsandculture.google.com/story/KgWRWPxXFzYZIQ?hl=ja)
 
 立花山・柳川は専用ChromeのローカルHTMLでも日送りで検証した。旧領主から豊臣方への切替と、年表に拝領2件が並ぶことを確認。JavaScript例外0。史料台帳では `kobayakawa-chikuzen-grant` と `tachibana-chikugo-grant` を人物名・1587年で検索できる。
+
+日向高城の包囲（天正15年4月6日／ゲーム内5月13日）と根白坂夜襲（旧暦4月17日／ゲーム内5月24日）を別の出来事として、木城町の資料に基づき年表へ反映した。1560年から日送りする専用Chromeで、該当日に各見出しが表示されることを確認し、JavaScript例外は0。これらの日付を都於郡城の明渡し日には用いていない。[木城町・第二次高城合戦](https://www.town.kijo.lg.jp/sosikikarasagasu/kyouikuiinkai_kyouikuka/1_1/1/3299.html)
