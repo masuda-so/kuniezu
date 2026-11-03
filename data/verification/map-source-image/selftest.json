@@ -1,0 +1,28 @@
+{
+  "ok": true,
+  "selfTest": true,
+  "cases": 21,
+  "tests": [
+    "RGB filters 0..4, split IDAT, sea omission and partial edge tiles",
+    "defined colour mismatch",
+    "undefined source colour",
+    "wrong source dimensions",
+    "CRC mismatch",
+    "truncated PNG",
+    "trailing file bytes",
+    "extra decoded scanline",
+    "invalid scanline filter",
+    "truncated zlib stream with valid chunk CRC",
+    "unused IDAT bytes",
+    "RGBA rejected instead of silently discarding alpha",
+    "undefined tile colour",
+    "wrong tile dimensions",
+    "Paradox IDs differ while RGB stays identical",
+    "reserved ID 0 colour",
+    "compound source fingerprint uses declared originals despite legacy CSV override",
+    "changed fingerprint component",
+    "unknown fingerprint contract returns null with explanation",
+    "missing declared fingerprint component returns null with explanation",
+    "atomic replacement of source during row consumption"
+  ]
+}

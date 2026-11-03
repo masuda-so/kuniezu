@@ -1,0 +1,90 @@
+{
+  "schemaVersion": 1,
+  "reviewedAt": "2026-11-03",
+  "scope": "CK3 map file roles versus publicly verified format and browser standards",
+  "report": "docs/reports/MAP_PUBLIC_FORMAT_REVIEW.md",
+  "engineCompatibilityTested": false,
+  "sources": [
+    {
+      "id": "ck3-map-wiki",
+      "url": "https://ck3.paradoxwikis.com/Map_modding",
+      "authority": "publisher-hosted-wiki",
+      "result": "article-not-retrieved",
+      "retrieval": "web open HTTP 401; ordinary raw/API/skin variants returned HTTP 200 Client Challenge HTML, not source text",
+      "supports": []
+    },
+    {
+      "id": "eu4-map-wiki",
+      "url": "https://eu4.paradoxwikis.com/Map_modding",
+      "authority": "publisher-hosted-wiki",
+      "result": "article-not-retrieved",
+      "retrieval": "web open HTTP 401",
+      "supports": []
+    },
+    {
+      "id": "ck3-dev-diary-37",
+      "url": "https://forum.paradoxplaza.com/forum/developer-diary/ck3-dev-diary-37-making-mods.1410656/",
+      "authority": "developer-primary",
+      "published": "2020-08-11",
+      "result": "body-reviewed",
+      "supports": ["Jomini is an in-house strategy layer above Clausewitz"],
+      "doesNotEstablish": ["complete map file schemas", "engine source identity with a Web implementation"]
+    },
+    {
+      "id": "jomini-manuscript",
+      "url": "https://forum.paradoxplaza.com/forum/threads/grand-jomini-modding-information-manuscript.1170261/",
+      "authority": "developer-primary",
+      "result": "body-reviewed",
+      "supports": ["Jomini includes Map and Editor"]
+    },
+    {
+      "id": "ck3-dev-diary-177",
+      "url": "https://steamcommunity.com/games/1158310/announcements/detail/509588190910219027",
+      "retrievedBodyUrl": "https://store.steampowered.com/news/posts/?appids=1158310&enddate=1755777513&feed=steam_community_announcements",
+      "authority": "developer-primary",
+      "published": "2025-08-12",
+      "result": "body-reviewed-in-official-feed",
+      "supports": ["terrain production uses heightmaps and material masks separately"],
+      "doesNotEstablish": ["PNG bit depths", "CSV columns"]
+    },
+    {
+      "id": "w3c-png3",
+      "url": "https://www.w3.org/TR/2025/REC-png-3-20250624/",
+      "authority": "standards-primary",
+      "result": "body-reviewed",
+      "sections": ["6.1", "6.2", "11.2.1", "11.3.1.1"],
+      "supports": ["PNG RGB8 means 8 bits per channel", "PNG supports 16-bit greyscale", "tRNS can provide transparency without an alpha channel"]
+    },
+    {
+      "id": "whatwg-canvas",
+      "url": "https://html.spec.whatwg.org/multipage/canvas.html#drawing-images-to-the-canvas",
+      "authority": "standards-primary",
+      "result": "body-reviewed",
+      "supports": ["smoothing-disabled enlargement uses nearest-neighbor", "downscaling algorithm is not precisely specified"]
+    },
+    {
+      "id": "unofficial-wiki-copy",
+      "url": "https://github.com/jesec/ck3-modding-wiki/blob/master/wiki_pages/Map_modding.md",
+      "authority": "unofficial-secondary",
+      "result": "candidate-discovery-only",
+      "acceptedAsOfficialSpecification": false,
+      "reason": "original Wiki not retrieved; mixed version notes including 1.1 and 1.18/1.19 changes"
+    },
+    {
+      "id": "anbennar-default-map-example",
+      "url": "https://gitlab.com/anbennar/anbennar-ck3-dev/-/blob/master/map_data/default.map",
+      "authority": "third-party-mod-author",
+      "result": "example-reviewed",
+      "acceptedAsOfficialSpecification": false
+    }
+  ],
+  "fileClaims": [
+    {"path": "map_data/", "officialContractVerified": false},
+    {"path": "map_data/provinces.png", "officialContractVerified": false, "pngEncodingStandardVerified": true},
+    {"path": "map_data/definition.csv", "officialContractVerified": false},
+    {"path": "map_data/heightmap.png", "officialContractVerified": false, "pngEncodingStandardVerified": true},
+    {"path": "map_data/rivers.png", "officialContractVerified": false},
+    {"path": "map_data/adjacencies.csv", "officialContractVerified": false},
+    {"path": "map_data/default.map", "officialContractVerified": false}
+  ]
+}
