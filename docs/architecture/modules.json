@@ -570,12 +570,18 @@
     },
     {
       "order": 86,
-      "file": "game/ui.js",
+      "file": "game/raster-map.js",
       "area": "ui-assets",
       "generatedByCandidates": []
     },
     {
       "order": 87,
+      "file": "game/ui.js",
+      "area": "ui-assets",
+      "generatedByCandidates": []
+    },
+    {
+      "order": 88,
       "file": "game/kb.js",
       "area": "history",
       "generatedByCandidates": []

@@ -1018,6 +1018,176 @@
    "sha256": "e442f467c0055c0779b88a1d2718b679d44748bda632c5be26b23c8172a5b4e4"
   }
  ],
+ "levels": [
+  {
+   "factor": 4,
+   "dir": "provinces-4",
+   "width": 4634,
+   "height": 3289,
+   "tiles": [
+    {
+     "file": "0-0.png",
+     "col": 0,
+     "row": 0,
+     "width": 1024,
+     "height": 1024,
+     "sha256": "1e3d67d9b39b83c14a689243431e227298dae00d9d7ddcf3264f841e61dfe66c"
+    },
+    {
+     "file": "1-0.png",
+     "col": 1,
+     "row": 0,
+     "width": 1024,
+     "height": 1024,
+     "sha256": "9c31f35a0df6695a482d8131e4b4f7ce0290f892637797d7357aaaca5d1750fc"
+    },
+    {
+     "file": "3-0.png",
+     "col": 3,
+     "row": 0,
+     "width": 1024,
+     "height": 1024,
+     "sha256": "110bcd2a6ddbedb02ca553f095e3980b02de64b8a5174299344ef24ac3c7c13b"
+    },
+    {
+     "file": "4-0.png",
+     "col": 4,
+     "row": 0,
+     "width": 538,
+     "height": 1024,
+     "sha256": "f01887bc65eeebc1684262192285da45f240f94adc93b51356e683bd26191dc3"
+    },
+    {
+     "file": "0-1.png",
+     "col": 0,
+     "row": 1,
+     "width": 1024,
+     "height": 1024,
+     "sha256": "4f712e74f50743537b9ad603447c5620335ffa6ded7b9f20d11dc25b6b0969e4"
+    },
+    {
+     "file": "1-1.png",
+     "col": 1,
+     "row": 1,
+     "width": 1024,
+     "height": 1024,
+     "sha256": "882a91a4c83c4fd0a806c67364eaad4638f434b72ac0eb437e29a14c2bc7c84b"
+    },
+    {
+     "file": "2-1.png",
+     "col": 2,
+     "row": 1,
+     "width": 1024,
+     "height": 1024,
+     "sha256": "559619046fefef79c6532240e09c9e8e80ba76ca74c3d0fdef2526a9faf36ee8"
+    },
+    {
+     "file": "3-1.png",
+     "col": 3,
+     "row": 1,
+     "width": 1024,
+     "height": 1024,
+     "sha256": "fff14e7b5e06283112e9006cd0170249e5d37e2b05baf5cf90f78487b7f04b17"
+    },
+    {
+     "file": "4-1.png",
+     "col": 4,
+     "row": 1,
+     "width": 538,
+     "height": 1024,
+     "sha256": "4fc5a8a5a38175d36ab5adbbc58d48216b9ddeae46f911f16db4077620011b6a"
+    },
+    {
+     "file": "0-2.png",
+     "col": 0,
+     "row": 2,
+     "width": 1024,
+     "height": 1024,
+     "sha256": "45947fd268cd2eb59cdab767ed591755c7637817cf892ddeba7968749e4ff0d7"
+    },
+    {
+     "file": "1-2.png",
+     "col": 1,
+     "row": 2,
+     "width": 1024,
+     "height": 1024,
+     "sha256": "9f09fb4eb1b8cd20e6c2e633fa56910a8aada7e37f99c7da110e4df036897391"
+    },
+    {
+     "file": "2-2.png",
+     "col": 2,
+     "row": 2,
+     "width": 1024,
+     "height": 1024,
+     "sha256": "4ebfcad914353ed2f214fe08bf0bd955f1598fa9e79d6eab84788af0d632b259"
+    },
+    {
+     "file": "3-2.png",
+     "col": 3,
+     "row": 2,
+     "width": 1024,
+     "height": 1024,
+     "sha256": "a34f60d77ae7386d3be98c19df850997f7322a364cbae004486bd18f883c964a"
+    },
+    {
+     "file": "1-3.png",
+     "col": 1,
+     "row": 3,
+     "width": 1024,
+     "height": 217,
+     "sha256": "b7123e0a816c21c9668343806f4c6ce5e4c3c746b88e2cb286bfaba813da75aa"
+    }
+   ]
+  },
+  {
+   "factor": 8,
+   "dir": "provinces-8",
+   "width": 2317,
+   "height": 1645,
+   "tiles": [
+    {
+     "file": "0-0.png",
+     "col": 0,
+     "row": 0,
+     "width": 1024,
+     "height": 1024,
+     "sha256": "100ded4fe8543553f1a222ea4b4c6463e36ebc64f30d93ba8e5684a08c748eca"
+    },
+    {
+     "file": "1-0.png",
+     "col": 1,
+     "row": 0,
+     "width": 1024,
+     "height": 1024,
+     "sha256": "0235e9257a4f997455fd95eecc8e8054409e4c05e13d9fa7f2ff70e9a09d1fcc"
+    },
+    {
+     "file": "2-0.png",
+     "col": 2,
+     "row": 0,
+     "width": 269,
+     "height": 1024,
+     "sha256": "b2b9d25759676f524216bf45feeff22211dc0d8e17fa02ed8d2d319d7a601bb8"
+    },
+    {
+     "file": "0-1.png",
+     "col": 0,
+     "row": 1,
+     "width": 1024,
+     "height": 621,
+     "sha256": "1c4711de6226d8019d52c846cf970c3d63226e445911ea953ac78cd18b0838dc"
+    },
+    {
+     "file": "1-1.png",
+     "col": 1,
+     "row": 1,
+     "width": 1024,
+     "height": 621,
+     "sha256": "b34dcfce6379da82adf91c1901ade4df04c134d931d2afe340a5ff14bc754125"
+    }
+   ]
+  }
+ ],
  "rules": {
   "seaFromLandMask": true,
   "overlapTiebreak": "後に塗った領域（キーの昇順で後のもの）",

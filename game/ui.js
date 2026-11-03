@@ -1,4 +1,6 @@
 "use strict";
+// 拡大の上限：ラスター地図の1画素（100m）が画面の1画素より粗く見えない倍率（docs/architecture/raster-map.md）。
+const MAXZ=5.5;
 (function(){
 const $=s=>document.querySelector(s);
 const fmt=n=>Math.round(n).toLocaleString('ja-JP');
@@ -125,11 +127,11 @@ U.cam=(x,y,z)=>{U.sel=null;side.hidden=true;cam.x=x;cam.y=y;cam.z=z;clampCam();U
 const s2w=(x,y)=>{const c=vc();return [(x-c[0])/cam.z+cam.x,(y-c[1])/cam.z+cam.y];};
 function clampCam(){const c=vc(),CW=CONT.x1-CONT.x0,CH=CONT.y1-CONT.y0;
  // 背景はパネルの下まで画面を覆う。縦長では横方向をドラッグして見る。
- cam.z=Math.max(VW/CW,VH/CH,Math.min(8,cam.z));
+ cam.z=Math.max(VW/CW,VH/CH,Math.min(MAXZ,cam.z));
  cam.x=Math.max(CONT.x0+c[0]/cam.z,Math.min(CONT.x1-(VW-c[0])/cam.z,cam.x));
  cam.y=Math.max(CONT.y0+c[1]/cam.z,Math.min(CONT.y1-(VH-c[1])/cam.z,cam.y));U.baseDirty=true;syncZoomControl();}
 const CONT={x0:-1045,x1:2285,y0:-168,y1:2195};
-function syncZoomControl(){const nav=$('#mapZoom');if(nav)nav.hidden=U.mode==='title';const el=$('#mapZoomRange');if(!el)return;const min=Math.max(VW/(CONT.x1-CONT.x0),VH/(CONT.y1-CONT.y0));el.value=Math.round(Math.log(cam.z/min)/Math.log(8/min)*100);el.setAttribute('aria-valuetext',Math.round(cam.z/min*100)+'%');}
+function syncZoomControl(){const nav=$('#mapZoom');if(nav)nav.hidden=U.mode==='title';const el=$('#mapZoomRange');if(!el)return;const min=Math.max(VW/(CONT.x1-CONT.x0),VH/(CONT.y1-CONT.y0));el.value=Math.round(Math.log(cam.z/min)/Math.log(MAXZ/min)*100);el.setAttribute('aria-valuetext',Math.round(cam.z/min*100)+'%');}
 function setMapZoom(z){anim=null;beginZoom();cam.z=z;clampCam();tip(null);}
 function fitAll(){[cam.x,cam.y]=G.PJ(135,36);cam.z=0;clampCam();}
 function fitTitle(){[cam.x,cam.y]=G.PJ(136.6,35.5);cam.z=VW<=820?Math.max(.8,VH/1100):Math.max(.6,VW/2350,VH/1600);clampCam();}
@@ -221,6 +223,11 @@ function terrainBackdrop(c,view,z){
  }
  const t=terrainSurface;c.drawImage(t.cv,t.x,t.y,t.w,t.h);
 }
+// 領域（definition.csv の一行）→ 塗る色 [r,g,b,a]。城の領域だけ領主の色で塗り、海・湖・未割当・中立地は塗らない。
+const rgbCache=new Map(),rgbCtx=document.createElement('canvas').getContext('2d');
+function cssRGB(css){if(rgbCache.has(css))return rgbCache.get(css);rgbCtx.fillStyle='#000';rgbCtx.fillStyle=css;const v=rgbCtx.fillStyle,m=v.startsWith('#')?[1,3,5].map(i=>parseInt(v.slice(i,i+2),16)):v.match(/\d+(\.\d+)?/g).slice(0,3).map(Number);rgbCache.set(css,m);return m;}
+function rasterColor(flat){return d=>{if(!d||!d.key.startsWith('castle:'))return null;const st=S?.castles[d.key.slice(7)];if(!st)return null;const k=st.owner,a=flat?(k===S.player?.5:.35):(k===S.player?.44:.32);return [...cssRGB(pastel(k)),Math.round(a*255)];};}
+window.TKRaster?.onChange(()=>{U.baseDirty=true;U.wakeLoop?.();});
 function paintBase(c,pad=0){LANDV=landFor(cam.z);
  const cc=vc();c.setTransform(1,0,0,1,0,0);c.clearRect(0,0,c.canvas.width,c.canvas.height);
  c.fillStyle='#e2dac6';c.fillRect(0,0,c.canvas.width,c.canvas.height);
@@ -237,6 +244,9 @@ function paintBase(c,pad=0){LANDV=landFor(cam.z);
  c.fillStyle='#ece2c6';c.fill(LANDV);}
  if(!flat&&window.TKTerrain)terrainBackdrop(c,[x0,y0,x1,y1],z);
  if(S){c.save();c.clip(LANDV);c.globalCompositeOperation='source-over';/* 根拠のない矩形で明の支配域を塗らない。遼東の地域・都司は出典付き地点として表示。 */
+  // 領主の色はラスター地図（game/map の領域画像）で塗る。画像が届くまでは従来の線の領域で塗る。
+  const rasterSig=territorySignature()+'|'+flat+'|'+S.player;
+  if(!(window.TKRaster?.ready()&&TKRaster.paint(c,[x0,y0,x1,y1],z,DPR,rasterColor(flat),rasterSig)))
   for(const C of G.CL){const k=S.castles[C.id].owner;c.globalAlpha=flat?(k===S.player?.5:.35):(k===S.player?.44:.32);c.fillStyle=pastel(k);c.fill(TERR[C.id]);}
   c.restore();}
  // 地図全体の明るさを抑える：陸に古い紙の焼けた色を薄く重ねる（地形の陰影・勢力の色は残る）。
@@ -287,7 +297,7 @@ function drawBase(){
  if(liveRevision!==U.terrainRevShown){if(!anim&&nowMs-(U.terrainRevAt||0)>=700){U.terrainRevShown=liveRevision;U.terrainRevAt=nowMs;}else{clearTimeout(U.terrainRevTimer);U.terrainRevTimer=setTimeout(()=>{U.baseDirty=true;},anim?120:Math.max(60,700-(nowMs-(U.terrainRevAt||0))));}}
  if(performance.now()<(U.zoomUntil||0))U.zoomRebuildAt=performance.now();
  const cc=vc(),revision=U.terrainRevShown||0;
- const key=[cam.z,DPR,VW,VH,...cc,U.mode,U.mapStyle,U.dipView,U.sel,S?.player,territorySignature(),JSON.stringify(S?.vassal||{}),JSON.stringify(S?.improvements?.roads||{}),revision,fontRevision,TK.waterPhase?.(S?G.date().y:1560)].join('|');
+ const key=[cam.z,DPR,VW,VH,...cc,U.mode,U.mapStyle,U.dipView,U.sel,S?.player,territorySignature(),JSON.stringify(S?.vassal||{}),JSON.stringify(S?.improvements?.roads||{}),revision,fontRevision,TK.waterPhase?.(S?G.date().y:1560),window.TKRaster?.revision()||0].join('|');
  const pad=160,dx=baseSurface?(cam.x-baseSurface.x)*cam.z:0,dy=baseSurface?(cam.y-baseSurface.y)*cam.z:0;
  const valid=baseSurface&&baseSurface.state===S&&baseSurface.key===key&&Math.abs(dx)<=pad&&Math.abs(dy)<=pad;
  if(!valid){
@@ -961,7 +971,7 @@ function sceneHTML(sc,sideTxt){
 }
 
 ACT['zoom-in']=()=>setMapZoom(cam.z*1.35);ACT['zoom-out']=()=>setMapZoom(cam.z/1.35);ACT['zoom-fit']=()=>{anim=null;fitAll();};
-document.addEventListener('input',e=>{if(e.target.id==='mapZoomRange'){const min=Math.max(VW/(CONT.x1-CONT.x0),VH/(CONT.y1-CONT.y0));setMapZoom(min*Math.pow(8/min,+e.target.value/100));}});
+document.addEventListener('input',e=>{if(e.target.id==='mapZoomRange'){const min=Math.max(VW/(CONT.x1-CONT.x0),VH/(CONT.y1-CONT.y0));setMapZoom(min*Math.pow(MAXZ/min,+e.target.value/100));}});
 document.addEventListener('input',e=>{if(e.target.id==='bSeek'&&SCN){cancelSceneClose();const target=+e.target.value;SCN.pause();SCN.seek(target);const b=$('#bPlay');if(b)b.textContent='▶';}});
 function mountScene(sc,onEnd){stopScene();const cv=$('#bCv');if(!cv&&sc.displayPolicy!=='record')return;
  const upd=()=>{const seek=$('#bSeek');if(seek&&SCN)seek.value=SCN.t;const b=$('#bPlay');if(b&&SCN){b.textContent=SCN.playing?'❚❚':'▶';b.setAttribute('aria-label',SCN.playing?'一時停止':'再生');}document.querySelectorAll('[data-act="b-spd"]').forEach(x=>x.classList.toggle('on',SCN&&+x.dataset.v===SCN.speed));};

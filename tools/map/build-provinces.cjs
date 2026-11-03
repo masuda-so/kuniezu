@@ -52,10 +52,16 @@ for(let ty=0;ty<rowsT;ty++){const r0=ty*TILE,r1=Math.min(H,r0+TILE),bh=r1-r0;
  for(let tx=0;tx<cols;tx++){const c0=tx*TILE,c1=Math.min(W,c0+TILE),bw=c1-c0;let any=false;const rgb=Buffer.alloc(bw*bh*3);
   for(let y=0;y<bh;y++)for(let x=0;x<bw;x++){const v=id[(r0+y)*W+c0+x];if(v)any=true;const c=defs[v].rgb,o=(y*bw+x)*3;rgb[o]=c[0];rgb[o+1]=c[1];rgb[o+2]=c[2];}
   if(!any)continue;const file=`${tx}-${ty}.png`,buf=png(bw,bh,rgb);fs.writeFileSync(path.join(out,'provinces',file),buf);tiles.push({file,col:tx,row:ty,width:bw,height:bh,sha256:crypto.createHash('sha256').update(buf).digest('hex')});}}
+// 縮小版（全体表示用）：f画素ごとに中心の画素を採る（最近傍。領域の色を混ぜない）。400m はタイル、800m は1枚。
+const levels=[];for(const f of [4,8]){const w=Math.ceil(W/f),h=Math.ceil(H/f),dirL=path.join(out,'provinces-'+f);fs.rmSync(dirL,{recursive:true,force:true});fs.mkdirSync(dirL,{recursive:true});const lt=[];
+ const cw=Math.ceil(w/TILE),ch=Math.ceil(h/TILE);for(let ty=0;ty<ch;ty++)for(let tx=0;tx<cw;tx++){const c0=tx*TILE,r0=ty*TILE,bw=Math.min(TILE,w-c0),bh=Math.min(TILE,h-r0);let any=false;const rgb=Buffer.alloc(bw*bh*3);
+  for(let y=0;y<bh;y++){const sy=Math.min(H-1,(r0+y)*f+(f>>1));for(let x=0;x<bw;x++){const sx=Math.min(W-1,(c0+x)*f+(f>>1)),v=id[sy*W+sx];if(v)any=true;const c=defs[v].rgb,o=(y*bw+x)*3;rgb[o]=c[0];rgb[o+1]=c[1];rgb[o+2]=c[2];}}
+  if(!any)continue;const file=`${tx}-${ty}.png`,buf=png(bw,bh,rgb);fs.writeFileSync(path.join(dirL,file),buf);lt.push({file,col:tx,row:ty,width:bw,height:bh,sha256:crypto.createHash('sha256').update(buf).digest('hex')});}
+ levels.push({factor:f,dir:'provinces-'+f,width:w,height:h,tiles:lt});}
 const lost=defs.filter(d=>d.id>1&&!counts[d.id]).map(d=>d.key);
 fs.writeFileSync(path.join(out,'definition.csv'),'id;r;g;b;key;name;kind;pixels\n'+defs.map(d=>[d.id,...d.rgb,d.key,d.name,d.kind,counts[d.id]].join(';')).join('\n')+'\n');
 const manifest={generated:'tools/map/build-provinces.cjs',basis:'読み込み後の TKGEO（陸・城の領域・中立地・湖）の段階1変換。年代別の補正は未分離。',
- projection:{K:T.K,CX:T.CX,LON0:T.LON0,LAT0:T.LAT0,origin:[CONT.x0,CONT.y0],stepUnits:STEP,stepMetres:100},width:W,height:H,tile:TILE,tiles,
+ projection:{K:T.K,CX:T.CX,LON0:T.LON0,LAT0:T.LAT0,origin:[CONT.x0,CONT.y0],stepUnits:STEP,stepMetres:100},width:W,height:H,tile:TILE,tiles,levels,
  rules:{seaFromLandMask:true,overlapTiebreak:'後に塗った領域（キーの昇順で後のもの）',sliverAssignPixels:SLIVER,neighbourhood:4,pixelCentre:true},
  checks:{provinces:defs.length,overlapPixels:overlap,landIdOutsideLandPixelsReturnedToSea:outsideLand,sliverPixelsAssigned:filled,unassignedLandPixels:unassigned,unassignedByTile:unTiles,lostProvinces:lost}};
 fs.writeFileSync(path.join(out,'manifest.json'),JSON.stringify(manifest,null,1));
