@@ -1,0 +1,12 @@
+{
+  "ok": true,
+  "comparedPixels": 504753216,
+  "riverPixels": 95576,
+  "lineRecords": 643,
+  "vertices": 21749,
+  "crossGroupPixels": 125,
+  "tiles": 76,
+  "sha256": "9d14c3e859bb3762184f891efdfc75d675183397abf17a601bdc4fb5934097ea",
+  "peakRssBytes": 78741504,
+  "method": "Independent Cohen-Sutherland + integer DDA, exact RGB on every pixel, source ownership/overlap table and optional tile agreement"
+}

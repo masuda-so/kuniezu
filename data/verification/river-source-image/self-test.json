@@ -1,0 +1,29 @@
+{
+  "ok": true,
+  "selfTest": true,
+  "cases": 22,
+  "tests": [
+    "all octants and directional ties",
+    "outside endpoints crossing rectangle",
+    "outside segments do not bridge",
+    "right boundary excluded",
+    "confluences retain every feature",
+    "same-feature overlap retains every source line",
+    "repeated point",
+    "single image and tile seams agree",
+    "existing output cannot be overwritten",
+    "PNG corruption rejected",
+    "valid PNG with invented river pixel rejected",
+    "lost overlap membership rejected even with matching metadata hash",
+    "changed original input rejected",
+    "edited image requires explicit SHA update",
+    "RGB filters 0..4 and split IDAT from external editor",
+    "edited authority propagates without any former line input",
+    "undefined edited colour rejected",
+    "edited dimensions rejected",
+    "altered projection rejected",
+    "truncated edited PNG rejected despite updated SHA",
+    "missing authoritative image rejected",
+    "invalid input retains failure record and input snapshot"
+  ]
+}
