@@ -396,11 +396,29 @@ function drawJokaku(c,z,lvl,placed){RUINLAB=[];
   rr(c,x-14,y+9,28,4,2);c.fillStyle='rgba(30,20,10,.6)';c.fill();rr(c,x-14,y+9,28*r,4,2);c.fillStyle='#e0b85a';c.fill();
   jText(c,'普請中 '+p.n,x+12,y-6,'#6a3e10',11);}
 }
-// 焼けた城の煙は時間で揺れるので、動く層に描く。描いたら true（動きが続く）。
-function drawSmoke(c){let any=false;
- for(const C of G.CL){const o=S.cst&&S.cst[C.id];if(!o||!o.burnt)continue;const [x,y]=w2s(C.x,C.y);if(x<-40||y<-40||x>VW+40||y>VH+40)continue;any=true;
-  const t=tNow/400;for(let i=0;i<3;i++){const a=(t+i*.33)%1;c.globalAlpha=(1-a)*.5;c.fillStyle='#4a4038';c.beginPath();c.arc(x+3+Math.sin(a*6+i)*3,y-10-a*16,2.5+a*4,0,7);c.fill();}c.globalAlpha=1;}
- return any;}
+function visibleCastleFires(){
+ return G.castleFires().map(f=>w2s(f.x,f.y)).filter(([x,y])=>x>=-40&&y>=-40&&x<=VW+40&&y<=VH+40);
+}
+function drawCastleFires(c){
+ c.save();
+ const fires=visibleCastleFires();
+ for(const [x,y] of fires){
+  for(let i=0;i<3;i++){
+   const age=(tNow/650+i/3)%1;
+   c.globalAlpha=(1-age)*.55;c.fillStyle='#4a4038';c.beginPath();
+   c.arc(x+Math.sin(age*6+i)*4,y-13-age*19,2.5+age*4,0,Math.PI*2);c.fill();
+  }
+  c.globalAlpha=1;
+  for(let i=0;i<3;i++){
+   const fx=x+(i-1)*4, tip=y-10-Math.sin(tNow/115+i*2)*3;
+   c.fillStyle=i===1?'#ffc451':'#e25725';c.beginPath();
+   c.moveTo(fx-4,y-2);c.quadraticCurveTo(fx-5,tip+4,fx+1,tip);
+   c.quadraticCurveTo(fx+5,tip+5,fx+4,y-2);c.fill();
+  }
+ }
+ c.restore();
+ return fires.length>0;
+}
 // 上層は三つに分けて描く。選択した国の縁取り（下敷き）と、城・名札・肖像・街道名・合戦地などの静止層は、
 // 日付・視点・選択が変わった時だけ別のキャンバスへ描いて控える。行軍の道筋・駒・移動中の人物・煙・攻城の輪など
 // 時間で動くものだけを毎回描き、控えた層を従来と同じ重なり順で重ねる。
@@ -443,7 +461,7 @@ function drawTopLayers(still){
  for(const C of G.CL){if(!sieged[C.id])continue;const [x,y]=w2s(C.x,C.y);if(x<-40||y<-40||x>VW+40||y>VH+40)continue;animated=true;
   const s=(3.6+Math.sqrt(C.koku)*.7)*Math.min(1.9,.65+z*.4)*Math.min(1,z/.4);
   if(sieged[C.id]){const p=.5+.5*Math.sin(tNow/170);c.beginPath();c.arc(x,y-s*.2,s*2+p*4,0,7);c.strokeStyle=`rgba(220,60,40,${.45+p*.4})`;c.lineWidth=2.2;c.stroke();}}}
- if(drawSmoke(c))animated=true;
+ if(drawCastleFires(c))animated=true;
  blit(c,STILL);
  // 旅の途中の武将（城を移る時も道を通って行く）
  for(const g of S.gens){if(!G.inTransit(g)||G.documentedPerson?.(g.n))continue;const imp=G.isLeader(g)||lvl>=1;if(!imp)continue;const p=g.tr.p;if(!p||p.length<2)continue;
@@ -667,9 +685,9 @@ function loop(now){
  // 低速では駒が半画素も動かないフレームが多いので、画面上の位置が変わらない間は描かない。
  const due=!U.modal&&U.speed>0&&now-lastTop>33,motion=still||due?motionSig():'';
  // 攻城の輪・煙・交戦の明滅だけが動いている間は約20回/秒で足りる。
- if(still||due&&(motion!==lastMotion||topAnimated&&now-lastTop>50)){topAnimated=drawTop(still);U.drawStats.top++;lastTop=now;lastMotion=motion;if(still){lastStill=now;topSig=ts;}}
+ if(still||due&&motion!==lastMotion||!U.modal&&topAnimated&&now-lastTop>50){topAnimated=drawTop(still);U.drawStats.top++;lastTop=now;lastMotion=motion;if(still){lastStill=now;topSig=ts;}}
  // 停止して何も変わらない状態が続いたら、毎フレームの呼び出しをやめて0.2秒ごとの確認に落とす。操作が来たらすぐ戻す。
- if(dirty||still||anim||U.speed>0||hold>0||ptrs.size||S?.sceneQ?.length||U.deploymentPreview&&now<U.deploymentPreview.until)lastBusy=now;
+ if(dirty||still||anim||U.speed>0||!U.modal&&topAnimated||hold>0||ptrs.size||S?.sceneQ?.length||U.deploymentPreview&&now<U.deploymentPreview.until)lastBusy=now;
  if(now-lastBusy>1500){loopSleeping=true;loopTimer=setTimeout(wakeLoop,200);}else requestAnimationFrame(loop);
 }
 let lastBusy=0,loopSleeping=false,loopTimer=0;
