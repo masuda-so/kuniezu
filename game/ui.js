@@ -724,12 +724,14 @@ function loop(now){
  if(still||due&&motion!==lastMotion||!U.modal&&topAnimated&&now-lastTop>50){topAnimated=drawTop(still);U.drawStats.top++;lastTop=now;lastMotion=motion;if(still){lastStill=now;topSig=ts;}}
  // 停止して何も変わらない状態が続いたら、毎フレームの呼び出しをやめて0.2秒ごとの確認に落とす。操作が来たらすぐ戻す。
  if(dirty||still||anim||U.speed>0||!U.modal&&topAnimated||hold>0||ptrs.size||S?.sceneQ?.length||U.deploymentPreview&&now<U.deploymentPreview.until)lastBusy=now;
- if(now-lastBusy>1500){loopSleeping=true;loopTimer=setTimeout(wakeLoop,200);}else requestAnimationFrame(loop);
+ // タブが隠れている間は0.2秒ごとの確認もやめ、表示に戻った時に起こす（隠れたタブで端末を温めない）。
+ if(now-lastBusy>1500||document.hidden){loopSleeping=true;if(!document.hidden)loopTimer=setTimeout(wakeLoop,200);}else requestAnimationFrame(loop);
 }
 let lastBusy=0,loopSleeping=false,loopTimer=0;
 function wakeLoop(){if(!loopSleeping)return;loopSleeping=false;clearTimeout(loopTimer);requestAnimationFrame(loop);}
 U.wakeLoop=wakeLoop;
 for(const type of ['pointerdown','pointermove','wheel','keydown','resize','focus'])addEventListener(type,wakeLoop,{capture:true,passive:true});
+document.addEventListener('visibilitychange',()=>{if(!document.hidden)wakeLoop();});
 let uiT=0,terrSig='';
 function territorySignature(){return S?JSON.stringify(S.branches||{})+'|'+G.date().y+'|'+G.CL.map(c=>S.castles[c.id].owner).join(',')+'|'+G.alive().map(k=>S.clans[k].leader).join(',')+'|'+Object.keys(S.ally).filter(k=>S.ally[k]>0).join(',')+'|'+Object.keys(S.war||{}).filter(k=>S.t-S.war[k]<300).join(','):'';}
 function tick(){
