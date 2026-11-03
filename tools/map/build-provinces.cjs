@@ -4,7 +4,7 @@
    実行：node tools/map/build-provinces.cjs */
 const fs=require('node:fs'),path=require('node:path'),zlib=require('node:zlib'),crypto=require('node:crypto');
 const root=path.resolve(__dirname,'../..'),out=path.join(root,'game/map');
-const {TKGEO:T}=require(path.join(root,'tools/checks/history-focus.cjs')).model();
+const MODEL=require(path.join(root,'tools/checks/history-focus.cjs')).model(),{TKGEO:T}=MODEL;MODEL.G.newGame('s1560','oda');
 const CONT={x0:-1014.1,x1:2688.7,y0:-755.3,y1:3459.7};          // game/ui.js の表示範囲と同じ
 const STEP=0.1/(111.32/T.K);                            // 100m を地図平面の単位へ（緯度方向）
 const TILE=1024;
@@ -58,6 +58,51 @@ for(let k=0;k<N;k++)if(!land[k]&&id[k]){if(defs[id[k]].kind==='land')outsideLand
 // 陸なのにどの領域にも入らない画素は、4近傍で陸を伝って最も近い領域に寄せる（SLIVER画素＝約2kmまで）。それより遠い陸は「未割当の陸」。
 const SLIVER=20;let frontier=[];for(let k=0;k<N;k++)if(id[k]>1){const x=k%W;if((x>0&&land[k-1]&&!id[k-1])||(x<W-1&&land[k+1]&&!id[k+1])||(k>=W&&land[k-W]&&!id[k-W])||(k<N-W&&land[k+W]&&!id[k+W]))frontier.push(k);}
 let filled=0;for(let step=0;step<SLIVER&&frontier.length;step++){const next=[];for(const k of frontier){const x=k%W,v=id[k];for(const n of [x>0?k-1:-1,x<W-1?k+1:-1,k-W,k+W]){if(n<0||n>=N||!land[n]||id[n])continue;id[n]=v;filled++;next.push(n);}}frontier=next;}
+// 郡による割り当て直し（日本）。game/map/gun の郡画像（CODH 旧郡、江戸末期）を最小の単位とし、郡ごとに城の領域へ振り分ける。
+// 決まり（gun-assignment.csv の basis）：
+//  castle-point … 郡の中に城が一つ → 郡全体をその城へ。
+//  split        … 郡の中に城が複数 → 郡の中は従来の線の領域の割り当てを保つ（その城どうしで分ける。推定）。
+//  same-province … 郡の中に城がない → 同じ国の城の中で、従来の領域の票が多い城（票が無ければ最も近い城）へ（推定）。
+//  majority-other-province … その国に城が一つも無い（河内・志摩・安房など）→ 従来の領域で最も多い城へ（推定）。
+// 郡の無い陸（朝鮮・大陸）は従来どおり。日本の海岸で郡データと陸地の輪郭がずれた画素は、4近傍で2kmまで隣の郡に寄せる。
+const gunDir=path.join(out,'gun'),gunJson=path.join(out,'gun.json');let gunReport=null;
+if(fs.existsSync(gunJson)){const gj=JSON.parse(fs.readFileSync(gunJson,'utf8')),gun=new Uint16Array(N);
+ const dec=f=>{const b=fs.readFileSync(f);let i=8,w=0,h=0;const parts=[];while(i<b.length){const len=b.readUInt32BE(i),t=b.toString('ascii',i+4,i+8),d=b.subarray(i+8,i+8+len);if(t==='IHDR'){w=d.readUInt32BE(0);h=d.readUInt32BE(4);}else if(t==='IDAT')parts.push(d);i+=12+len;}const raw=zlib.inflateSync(Buffer.concat(parts));return {w,h,raw};};
+ for(const t of gj.tiles){const {w,h,raw}=dec(path.join(gunDir,t.file));for(let y=0;y<h;y++)for(let x=0;x<w;x++){const o=y*(w*3+1)+1+x*3,k=(t.row*TILE+y)*W+t.col*TILE+x;if(k<N)gun[k]=raw[o+1]<<8|raw[o+2];}}
+ // 海岸のずれ：郡の無い日本側の陸画素を、郡のある陸から4近傍で寄せる（2kmまで）。
+ let fr=[];for(let k=0;k<N;k++)if(gun[k]&&land[k])fr.push(k);for(let step=0;step<20&&fr.length;step++){const nx=[];for(const k of fr){const x=k%W;for(const n of [x>0?k-1:-1,x<W-1?k+1:-1,k-W,k+W]){if(n<0||n>=N||!land[n]||gun[n])continue;gun[n]=gun[k];nx.push(n);}}fr=nx;}
+ const nG=Math.max(...gj.tiles.length?[0]:[0])||0;const rows=fs.readFileSync(path.join(out,'gun.csv'),'utf8').trim().split('\n').slice(1).map(l=>{const p=l.split(';');return {n:+p[0],codh:p[1],name:p[2],kuni:p[4]};});
+ const isOwner=v=>v>1&&(defs[v].key.startsWith('castle:')||defs[v].key.startsWith('neutral:'));
+ const votes=new Map();for(let k=0;k<N;k++){const g=gun[k];if(!g||!land[k])continue;const v=id[k];if(!isOwner(v))continue;let m=votes.get(g);if(!m){m=new Map();votes.set(g,m);}m.set(v,(m.get(v)||0)+1);}
+ const byKey=new Map(defs.map(d=>[d.key,d.id])),castlesIn=new Map();
+ for(const C of MODEL.G.CL){const dId=byKey.get('castle:'+C.id);if(dId==null)continue;const c=Math.floor((C.x-ORIGIN[0])/STEP),r=Math.floor((C.y-ORIGIN[1])/STEP);if(c<0||r<0||c>=W||r>=H)continue;const g=gun[r*W+c];if(!g)continue;if(!castlesIn.has(g))castlesIn.set(g,new Set());castlesIn.get(g).add(dId);}
+ const normKuni=k=>['磐城','岩代','陸前','陸中','陸奥'].includes(k)?'陸奥':['羽前','羽後'].includes(k)?'出羽':k;
+ const gunKuni=new Map(rows.map(r=>[r.n,normKuni(r.kuni)])),kuniCastles=new Map(),castlePt=new Map();
+ for(const [g,cs] of castlesIn)for(const v of cs){const kn=gunKuni.get(g);if(!kuniCastles.has(kn))kuniCastles.set(kn,[]);kuniCastles.get(kn).push(v);}
+ for(const C of MODEL.G.CL){const dId=byKey.get('castle:'+C.id);if(dId!=null)castlePt.set(dId,[(C.x-ORIGIN[0])/STEP,(C.y-ORIGIN[1])/STEP]);}
+ const gunCentroid=new Map();{const sx=new Float64Array(rows.length+2),sy=new Float64Array(rows.length+2),sn=new Float64Array(rows.length+2);for(let k=0;k<N;k+=7){const g=gun[k];if(!g)continue;sx[g]+=k%W;sy[g]+=Math.floor(k/W);sn[g]++;}for(const r of rows)if(sn[r.n])gunCentroid.set(r.n,[sx[r.n]/sn[r.n],sy[r.n]/sn[r.n]]);}
+ const assign=new Map(),rowsOut=[];
+ const overrides=fs.existsSync(path.join(out,'gun-overrides.json'))?JSON.parse(fs.readFileSync(path.join(out,'gun-overrides.json'),'utf8')).guns:{};
+ for(const row of rows){const g=row.n,cs=castlesIn.get(g),m=votes.get(g)||new Map();let basis,target=null;
+  if(overrides[row.codh]?.basis==='excluded'){assign.set(g,{basis:'excluded',target:null,castles:[]});rowsOut.push([g,row.codh,row.name,row.kuni,'excluded','','']);continue;}
+  if(cs&&cs.size===1){basis='castle-point';target=[...cs][0];}
+  else if(cs&&cs.size>1){basis='split';}
+  else{// 城のない郡：同じ国（令制国。陸奥・出羽の明治の分割は戻す）の城の中から、従来の領域の票が多い城、票が無ければ最も近い城へ。
+   const kn=normKuni(row.kuni),same=kuniCastles.get(kn)||[];
+   if(same.length){basis='same-province';let best=-1;for(const v of same){const n=m.get(v)||0;if(n>best){best=n;target=v;}}
+    if(best<=0){const c=gunCentroid.get(g);let bd=Infinity;for(const v of same){const p=castlePt.get(v);const d=c&&p?Math.hypot(c[0]-p[0],c[1]-p[1]):Infinity;if(d<bd){bd=d;target=v;}}}}
+   else{basis=m.size?'majority-other-province':'unassigned';let best=-1;for(const [v,n] of m)if(n>best){best=n;target=v;}}}
+  const tot=[...m.values()].reduce((a,b)=>a+b,0),share=target&&tot?(m.get(target)||0)/tot:null;
+  assign.set(g,{basis,target,castles:cs?[...cs]:[]});rowsOut.push([g,row.codh,row.name,row.kuni,basis,target!=null?defs[target].key:(cs?[...cs].map(v=>defs[v].key).join('|'):''),share!=null?share.toFixed(3):'']);}
+ let changed=0;for(let k=0;k<N;k++){const g=gun[k];if(!g||!land[k])continue;const a=assign.get(g);if(!a)continue;let v=id[k];
+  if(a.basis==='split'){if(!a.castles.includes(v)){// 郡内で、その郡の城以外へ塗られていた画素は郡内の城の中で最寄りの票の多い城へ
+     let best=-1,bt=a.castles[0];const m=votes.get(g)||new Map();for(const c of a.castles)if((m.get(c)||0)>best){best=m.get(c)||0;bt=c;}v=bt;}}
+  else if(a.basis==='excluded'){v=0;}else if(a.target!=null)v=a.target;else continue;
+  if(defs[id[k]].kind==='lake')continue;if(v!==id[k]){id[k]=v;changed++;}}
+ fs.writeFileSync(path.join(out,'gun-assignment.csv'),'n;codh_id;name;kuni;basis;region;share\n'+rowsOut.map(r=>r.join(';')).join('\n')+'\n');
+ const cnt=b=>rowsOut.filter(r=>r[4]===b).length;gunReport={guns:rows.length,castlePoint:cnt('castle-point'),split:cnt('split'),sameProvince:cnt('same-province'),majorityOtherProvince:cnt('majority-other-province'),unassigned:cnt('unassigned'),pixelsChanged:changed};
+ console.log('gun',JSON.stringify(gunReport));}
+
 let unassigned=0;for(let k=0;k<N;k++){if(land[k]&&!id[k]){id[k]=1;unassigned++;}counts[id[k]]++;}
 // 未割当の陸がどこにあるか（タイル単位の画素数）
 const unTiles={};for(let k=0;k<N;k++)if(id[k]===1){const t=Math.floor((k%W)/TILE)+'-'+Math.floor(Math.floor(k/W)/TILE);unTiles[t]=(unTiles[t]||0)+1;}
@@ -76,6 +121,6 @@ fs.writeFileSync(path.join(out,'definition.csv'),'id;r;g;b;key;name;kind;pixels\
 const manifest={generated:'tools/map/build-provinces.cjs',basis:'読み込み後の TKGEO（陸・城の領域・中立地・湖）の段階1変換。年代別の補正は未分離。',
  projection:{K:T.K,CX:T.CX,LON0:T.LON0,LAT0:T.LAT0,origin:ORIGIN,tileShiftFromV1:SHIFT,stepUnits:STEP,stepMetres:100},width:W,height:H,tile:TILE,tiles,levels,
  rules:{seaFromLandMask:true,overlapTiebreak:'後に塗った領域（キーの昇順で後のもの）',sliverAssignPixels:SLIVER,neighbourhood:4,pixelCentre:true},
- checks:{provinces:defs.length,overlapPixels:overlap,landIdOutsideLandPixelsReturnedToSea:outsideLand,sliverPixelsAssigned:filled,unassignedLandPixels:unassigned,unassignedByTile:unTiles,lostProvinces:lost}};
+ gun:gunReport,checks:{provinces:defs.length,overlapPixels:overlap,landIdOutsideLandPixelsReturnedToSea:outsideLand,sliverPixelsAssigned:filled,unassignedLandPixels:unassigned,unassignedByTile:unTiles,lostProvinces:lost}};
 fs.writeFileSync(path.join(out,'manifest.json'),JSON.stringify(manifest,null,1));
 console.log('\n',JSON.stringify({W,H,tiles:tiles.length,bytes:tiles.reduce((n,t)=>n+fs.statSync(path.join(out,'provinces',t.file)).size,0),...manifest.checks}));

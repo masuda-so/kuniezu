@@ -1,36 +1,8 @@
 {
  "scope": "領域画像（段階1・100m）の総点検。城の位置・飛び地・線データとの面積差。",
  "castles": 137,
- "castleMismatch": [
-  {
-   "castle": "shibata",
-   "name": "新発田城",
-   "at": [
-    139.326,
-    37.955
-   ],
-   "pixelIs": "lake:0"
-  },
-  {
-   "castle": "minowa",
-   "name": "箕輪城",
-   "at": [
-    138.952,
-    36.404
-   ],
-   "pixelIs": "castle:umayabashi"
-  },
-  {
-   "castle": "kosho",
-   "name": "古処山城",
-   "at": [
-    130.726,
-    33.483
-   ],
-   "pixelIs": "castle:yanagawa"
-  }
- ],
- "fragmentsOver50px": 278,
+ "castleMismatch": [],
+ "fragmentsOver50px": 296,
  "fragments": [
   {
    "key": "castle:suncheon",
@@ -44,26 +16,59 @@
    "mainPixels": 1020260
   },
   {
-   "key": "castle:minowa",
-   "pixels": 106668,
-   "km2": 1066.7,
-   "distanceKm": 34.8,
+   "key": "castle:kouyama",
+   "pixels": 47903,
+   "km2": 479,
+   "distanceKm": 139.8,
    "at": [
-    138.771,
-    36.212
+    130.521,
+    30.339
    ],
-   "mainPixels": 107252
+   "mainPixels": 266313
   },
   {
-   "key": "castle:tanabu",
-   "pixels": 38289,
-   "km2": 382.9,
-   "distanceKm": 53.5,
+   "key": "castle:shibata",
+   "pixels": 42721,
+   "km2": 427.2,
+   "distanceKm": 46.3,
    "at": [
-    140.521,
-    41.135
+    138.912,
+    37.755
    ],
-   "mainPixels": 225740
+   "mainPixels": 211278
+  },
+  {
+   "key": "castle:kouyama",
+   "pixels": 41630,
+   "km2": 416.3,
+   "distanceKm": 112.2,
+   "at": [
+    130.972,
+    30.574
+   ],
+   "mainPixels": 266313
+  },
+  {
+   "key": "castle:sukagawa",
+   "pixels": 40089,
+   "km2": 400.9,
+   "distanceKm": 31.4,
+   "at": [
+    140.473,
+    37.196
+   ],
+   "mainPixels": 42434
+  },
+  {
+   "key": "castle:ishiyama",
+   "pixels": 38831,
+   "km2": 388.3,
+   "distanceKm": 32.5,
+   "at": [
+    135.55,
+    34.699
+   ],
+   "mainPixels": 67852
   },
   {
    "key": "castle:busan",
@@ -110,6 +115,17 @@
    "mainPixels": 687043
   },
   {
+   "key": "castle:tenjin",
+   "pixels": 27283,
+   "km2": 272.8,
+   "distanceKm": 33,
+   "at": [
+    133.865,
+    34.523
+   ],
+   "mainPixels": 132742
+  },
+  {
    "key": "castle:tsushima",
    "pixels": 24070,
    "km2": 240.7,
@@ -119,17 +135,6 @@
     34.214
    ],
    "mainPixels": 42890
-  },
-  {
-   "key": "castle:hirado",
-   "pixels": 19718,
-   "km2": 197.2,
-   "distanceKm": 35.9,
-   "at": [
-    129.707,
-    32.99
-   ],
-   "mainPixels": 149547
   },
   {
    "key": "castle:gaeseong",
@@ -146,12 +151,12 @@
    "key": "castle:hirado",
    "pixels": 15920,
    "km2": 159.2,
-   "distanceKm": 35.8,
+   "distanceKm": 37,
    "at": [
     129.463,
     33.284
    ],
-   "mainPixels": 149547
+   "mainPixels": 166038
   },
   {
    "key": "castle:sogo",
@@ -162,29 +167,18 @@
     134.269,
     34.499
    ],
-   "mainPixels": 161681
-  },
-  {
-   "key": "castle:tenjin",
-   "pixels": 14816,
-   "km2": 148.2,
-   "distanceKm": 29.8,
-   "at": [
-    133.92,
-    34.53
-   ],
-   "mainPixels": 140155
+   "mainPixels": 161663
   },
   {
    "key": "castle:konomine",
    "pixels": 12661,
    "km2": 126.6,
-   "distanceKm": 49.9,
+   "distanceKm": 47.4,
    "at": [
     132.277,
     33.914
    ],
-   "mainPixels": 304534
+   "mainPixels": 278188
   },
   {
    "key": "castle:namwon",
@@ -201,12 +195,12 @@
    "key": "castle:koriyama",
    "pixels": 9023,
    "km2": 90.2,
-   "distanceKm": 39.9,
+   "distanceKm": 34.4,
    "at": [
     132.448,
     34.219
    ],
-   "mainPixels": 470657
+   "mainPixels": 434169
   },
   {
    "key": "castle:suncheon",
@@ -223,23 +217,23 @@
    "key": "castle:izumi",
    "pixels": 8624,
    "km2": 86.2,
-   "distanceKm": 33.4,
+   "distanceKm": 32.5,
    "at": [
     130.149,
     32.164
    ],
-   "mainPixels": 165008
+   "mainPixels": 153835
   },
   {
    "key": "castle:koriyama",
    "pixels": 6786,
    "km2": 67.9,
-   "distanceKm": 48.7,
+   "distanceKm": 43.3,
    "at": [
     132.516,
     34.13
    ],
-   "mainPixels": 470657
+   "mainPixels": 434169
   },
   {
    "key": "castle:suncheon",
@@ -253,26 +247,26 @@
    "mainPixels": 1020260
   },
   {
-   "key": "castle:kaneko",
+   "key": "castle:yuzuki",
    "pixels": 6339,
    "km2": 63.4,
-   "distanceKm": 47.2,
+   "distanceKm": 54.6,
    "at": [
     133.006,
     34.242
    ],
-   "mainPixels": 113544
+   "mainPixels": 187005
   },
   {
    "key": "castle:izumi",
    "pixels": 6307,
    "km2": 63.1,
-   "distanceKm": 70.5,
+   "distanceKm": 68.8,
    "at": [
     129.719,
     31.689
    ],
-   "mainPixels": 165008
+   "mainPixels": 153835
   },
   {
    "key": "castle:uiju",
@@ -355,12 +349,12 @@
    "key": "castle:nanao",
    "pixels": 4730,
    "km2": 47.3,
-   "distanceKm": 9.2,
+   "distanceKm": 8.2,
    "at": [
     136.983,
     37.131
    ],
-   "mainPixels": 196500
+   "mainPixels": 201801
   },
   {
    "key": "castle:suncheon",
@@ -421,23 +415,23 @@
    "key": "castle:hiyama",
    "pixels": 4360,
    "km2": 43.6,
-   "distanceKm": 39.6,
+   "distanceKm": 29.3,
    "at": [
     139.994,
     40.046
    ],
-   "mainPixels": 527149
+   "mainPixels": 473291
   },
   {
    "key": "castle:izumi",
    "pixels": 4282,
    "km2": 42.8,
-   "distanceKm": 51.1,
+   "distanceKm": 49.4,
    "at": [
     129.876,
     31.845
    ],
-   "mainPixels": 165008
+   "mainPixels": 153835
   },
   {
    "key": "castle:suncheon",
@@ -462,15 +456,15 @@
    "mainPixels": 953092
   },
   {
-   "key": "castle:kaneko",
+   "key": "castle:yuzuki",
    "pixels": 4098,
    "km2": 41,
-   "distanceKm": 37,
+   "distanceKm": 46.3,
    "at": [
     133.052,
     34.155
    ],
-   "mainPixels": 113544
+   "mainPixels": 187005
   },
   {
    "key": "castle:suncheon",
@@ -482,6 +476,17 @@
     35.091
    ],
    "mainPixels": 1020260
+  },
+  {
+   "key": "castle:koga",
+   "pixels": 3981,
+   "km2": 39.8,
+   "distanceKm": 16.6,
+   "at": [
+    139.804,
+    35.996
+   ],
+   "mainPixels": 56954
   },
   {
    "key": "castle:jinju",
@@ -506,6 +511,17 @@
    "mainPixels": 1020260
   },
   {
+   "key": "castle:kawagoe",
+   "pixels": 3864,
+   "km2": 38.6,
+   "distanceKm": 31.7,
+   "at": [
+    139.455,
+    36.044
+   ],
+   "mainPixels": 181663
+  },
+  {
    "key": "castle:suncheon",
    "pixels": 3839,
    "km2": 38.4,
@@ -520,12 +536,12 @@
    "key": "castle:koriyama",
    "pixels": 3781,
    "km2": 37.8,
-   "distanceKm": 47.4,
+   "distanceKm": 44.5,
    "at": [
     132.891,
     34.238
    ],
-   "mainPixels": 470657
+   "mainPixels": 434169
   },
   {
    "key": "castle:hanseong",
@@ -575,12 +591,12 @@
    "key": "castle:kannabe",
    "pixels": 3434,
    "km2": 34.3,
-   "distanceKm": 44.4,
+   "distanceKm": 49.5,
    "at": [
     133.172,
     34.32
    ],
-   "mainPixels": 319449
+   "mainPixels": 355687
   },
   {
    "key": "castle:suncheon",
@@ -592,6 +608,17 @@
     34.332
    ],
    "mainPixels": 1020260
+  },
+  {
+   "key": "castle:uchi",
+   "pixels": 3263,
+   "km2": 32.6,
+   "distanceKm": 186.7,
+   "at": [
+    129.871,
+    29.847
+   ],
+   "mainPixels": 159663
   },
   {
    "key": "neutral:隠岐",
@@ -641,23 +668,23 @@
    "key": "castle:koriyama",
    "pixels": 2974,
    "km2": 29.7,
-   "distanceKm": 39.8,
+   "distanceKm": 34.7,
    "at": [
     132.306,
     34.271
    ],
-   "mainPixels": 470657
+   "mainPixels": 434169
   },
   {
-   "key": "castle:kannabe",
+   "key": "castle:koriyama",
    "pixels": 2972,
    "km2": 29.7,
-   "distanceKm": 47.9,
+   "distanceKm": 57.1,
    "at": [
     133.106,
     34.287
    ],
-   "mainPixels": 319449
+   "mainPixels": 434169
   },
   {
    "key": "castle:hondo",
@@ -691,6 +718,17 @@
     34.205
    ],
    "mainPixels": 1020260
+  },
+  {
+   "key": "castle:uchi",
+   "pixels": 2606,
+   "km2": 26.1,
+   "distanceKm": 213.2,
+   "at": [
+    129.715,
+    29.636
+   ],
+   "mainPixels": 159663
   },
   {
    "key": "castle:suncheon",
@@ -773,12 +811,12 @@
    "key": "castle:kannabe",
    "pixels": 2198,
    "km2": 22,
-   "distanceKm": 37.7,
+   "distanceKm": 43.1,
    "at": [
     133.202,
     34.384
    ],
-   "mainPixels": 319449
+   "mainPixels": 355687
   },
   {
    "key": "castle:busan",
@@ -795,23 +833,23 @@
    "key": "castle:yuzuki",
    "pixels": 2087,
    "km2": 20.9,
-   "distanceKm": 34,
+   "distanceKm": 33.8,
    "at": [
     132.617,
     33.975
    ],
-   "mainPixels": 202414
+   "mainPixels": 187005
   },
   {
-   "key": "castle:kaneko",
+   "key": "castle:yuzuki",
    "pixels": 2065,
    "km2": 20.7,
-   "distanceKm": 40.5,
+   "distanceKm": 53.8,
    "at": [
     133.093,
     34.215
    ],
-   "mainPixels": 113544
+   "mainPixels": 187005
   },
   {
    "key": "castle:suncheon",
@@ -839,92 +877,260 @@
    "key": "castle:koriyama",
    "pixels": 1821,
    "km2": 18.2,
-   "distanceKm": 45.1,
+   "distanceKm": 40.7,
    "at": [
     132.725,
     34.185
    ],
-   "mainPixels": 470657
-  },
-  {
-   "key": "castle:hanseong",
-   "pixels": 1701,
-   "km2": 17,
-   "distanceKm": 71.5,
-   "at": [
-    126.396,
-    37.449
-   ],
-   "mainPixels": 953092
-  },
-  {
-   "key": "castle:koriyama",
-   "pixels": 1696,
-   "km2": 17,
-   "distanceKm": 50.5,
-   "at": [
-    132.832,
-    34.171
-   ],
-   "mainPixels": 470657
-  },
-  {
-   "key": "castle:jinju",
-   "pixels": 1667,
-   "km2": 16.7,
-   "distanceKm": 60,
-   "at": [
-    128.233,
-    34.819
-   ],
-   "mainPixels": 687043
-  },
-  {
-   "key": "castle:izumi",
-   "pixels": 1650,
-   "km2": 16.5,
-   "distanceKm": 39.2,
-   "at": [
-    130.237,
-    32.28
-   ],
-   "mainPixels": 165008
-  },
-  {
-   "key": "castle:hirado",
-   "pixels": 1636,
-   "km2": 16.4,
-   "distanceKm": 11,
-   "at": [
-    129.824,
-    33.382
-   ],
-   "mainPixels": 149547
-  },
-  {
-   "key": "castle:hirado",
-   "pixels": 1632,
-   "km2": 16.3,
-   "distanceKm": 41.1,
-   "at": [
-    129.421,
-    33.385
-   ],
-   "mainPixels": 149547
+   "mainPixels": 434169
   }
  ],
  "areaDiff": [
   {
+   "key": "castle:agata",
+   "vectorPixels": 254818,
+   "rasterPixels": 304864,
+   "ratio": 1.2
+  },
+  {
+   "key": "castle:hikuma",
+   "vectorPixels": 99305,
+   "rasterPixels": 118485,
+   "ratio": 1.19
+  },
+  {
+   "key": "castle:iida",
+   "vectorPixels": 301226,
+   "rasterPixels": 361492,
+   "ratio": 1.2
+  },
+  {
+   "key": "castle:ishiyama",
+   "vectorPixels": 58220,
+   "rasterPixels": 106683,
+   "ratio": 1.83
+  },
+  {
+   "key": "castle:iwamura",
+   "vectorPixels": 291733,
+   "rasterPixels": 226227,
+   "ratio": 0.78
+  },
+  {
+   "key": "castle:iwatsuki",
+   "vectorPixels": 94975,
+   "rasterPixels": 118403,
+   "ratio": 1.25
+  },
+  {
+   "key": "castle:kaizu",
+   "vectorPixels": 308794,
+   "rasterPixels": 253192,
+   "ratio": 0.82
+  },
+  {
+   "key": "castle:kanayama",
+   "vectorPixels": 71927,
+   "rasterPixels": 57047,
+   "ratio": 0.79
+  },
+  {
+   "key": "castle:karasawa",
+   "vectorPixels": 156888,
+   "rasterPixels": 114755,
+   "ratio": 0.73
+  },
+  {
+   "key": "castle:kawagoe",
+   "vectorPixels": 157882,
+   "rasterPixels": 185530,
+   "ratio": 1.18
+  },
+  {
+   "key": "castle:kawara",
+   "vectorPixels": 129518,
+   "rasterPixels": 207452,
+   "ratio": 1.6
+  },
+  {
+   "key": "castle:koga",
+   "vectorPixels": 48053,
+   "rasterPixels": 60936,
+   "ratio": 1.27
+  },
+  {
+   "key": "castle:konosumi",
+   "vectorPixels": 172296,
+   "rasterPixels": 208989,
+   "ratio": 1.21
+  },
+  {
+   "key": "castle:kosho",
+   "vectorPixels": 43875,
+   "rasterPixels": 66857,
+   "ratio": 1.52
+  },
+  {
+   "key": "castle:kouyama",
+   "vectorPixels": 279082,
+   "rasterPixels": 356843,
+   "ratio": 1.28
+  },
+  {
+   "key": "castle:kurokawa",
+   "vectorPixels": 255425,
+   "rasterPixels": 206781,
+   "ratio": 0.81
+  },
+  {
+   "key": "castle:kuwagawa",
+   "vectorPixels": 257291,
+   "rasterPixels": 338223,
+   "ratio": 1.31
+  },
+  {
+   "key": "castle:kyo",
+   "vectorPixels": 136858,
+   "rasterPixels": 111881,
+   "ratio": 0.82
+  },
+  {
+   "key": "castle:matsukura",
+   "vectorPixels": 334310,
+   "rasterPixels": 420926,
+   "ratio": 1.26
+  },
+  {
+   "key": "castle:miki",
+   "vectorPixels": 130162,
+   "rasterPixels": 89175,
+   "ratio": 0.69
+  },
+  {
+   "key": "castle:minowa",
+   "vectorPixels": 213935,
+   "rasterPixels": 307271,
+   "ratio": 1.44
+  },
+  {
+   "key": "castle:nakamura",
+   "vectorPixels": 274366,
+   "rasterPixels": 331471,
+   "ratio": 1.21
+  },
+  {
+   "key": "castle:numata",
+   "vectorPixels": 229671,
+   "rasterPixels": 140036,
+   "ratio": 0.61
+  },
+  {
+   "key": "castle:obi",
+   "vectorPixels": 152017,
+   "rasterPixels": 199581,
+   "ratio": 1.31
+  },
+  {
+   "key": "castle:odajo",
+   "vectorPixels": 326441,
+   "rasterPixels": 272811,
+   "ratio": 0.84
+  },
+  {
    "key": "castle:odani",
    "vectorPixels": 160325,
-   "rasterPixels": 126660,
+   "rasterPixels": 105955,
+   "ratio": 0.66
+  },
+  {
+   "key": "castle:odawara",
+   "vectorPixels": 83170,
+   "rasterPixels": 65749,
    "ratio": 0.79
+  },
+  {
+   "key": "castle:okazaki",
+   "vectorPixels": 190517,
+   "rasterPixels": 226417,
+   "ratio": 1.19
+  },
+  {
+   "key": "castle:oko",
+   "vectorPixels": 264390,
+   "rasterPixels": 187277,
+   "ratio": 0.71
   },
   {
    "key": "castle:sawayama",
    "vectorPixels": 35192,
-   "rasterPixels": 24539,
-   "ratio": 0.7
+   "rasterPixels": 43495,
+   "ratio": 1.24
+  },
+  {
+   "key": "castle:shirakawa",
+   "vectorPixels": 130556,
+   "rasterPixels": 186192,
+   "ratio": 1.43
+  },
+  {
+   "key": "castle:sukagawa",
+   "vectorPixels": 155723,
+   "rasterPixels": 82525,
+   "ratio": 0.53
+  },
+  {
+   "key": "castle:tachibana",
+   "vectorPixels": 207246,
+   "rasterPixels": 171676,
+   "ratio": 0.83
+  },
+  {
+   "key": "castle:takato",
+   "vectorPixels": 286025,
+   "rasterPixels": 212399,
+   "ratio": 0.74
+  },
+  {
+   "key": "castle:tanabu",
+   "vectorPixels": 263935,
+   "rasterPixels": 152898,
+   "ratio": 0.58
+  },
+  {
+   "key": "castle:toishi",
+   "vectorPixels": 190409,
+   "rasterPixels": 252793,
+   "ratio": 1.33
+  },
+  {
+   "key": "castle:tonokori",
+   "vectorPixels": 334955,
+   "rasterPixels": 284158,
+   "ratio": 0.85
+  },
+  {
+   "key": "castle:utsunomiya",
+   "vectorPixels": 249986,
+   "rasterPixels": 317861,
+   "ratio": 1.27
+  },
+  {
+   "key": "castle:yamagata",
+   "vectorPixels": 338129,
+   "rasterPixels": 270971,
+   "ratio": 0.8
+  },
+  {
+   "key": "castle:yanagawa",
+   "vectorPixels": 148638,
+   "rasterPixels": 124473,
+   "ratio": 0.84
+  },
+  {
+   "key": "castle:yoshida",
+   "vectorPixels": 142486,
+   "rasterPixels": 114816,
+   "ratio": 0.81
   }
  ]
 }

@@ -30,10 +30,10 @@ under their own terms, which are recorded below and in
   [Copernicus DEM licences (PDF)](https://dataspace.copernicus.eu/sites/default/files/media/files/2025-06/copernicus_contributing_mission_data_access_v2_cop_dem_licenses.pdf).
   The images show modern elevation, not the 16th-century landscape.
 
-## Historical district boundaries (planned)
+## Historical district boundaries
 
-- **CODH 旧国・旧郡境界データセット** (CC BY-NC 4.0) — downloaded for the planned district-based
-  map partition. Credit: 『旧国・旧郡境界データセット』（CODH作成） 「幕末明治地勢地図境界データ」
+- **CODH 旧国・旧郡境界データセット** (CC BY-NC 4.0) — rasterised into `game/map/gun/` and used as
+  the smallest unit of the map partition in Japan (`game/map/gun-assignment.csv`). Credit: 『旧国・旧郡境界データセット』（CODH作成） 「幕末明治地勢地図境界データ」
   （人間文化研究機構作成）を加工 doi:10.20676/00000454. Because of the NC term, any build that
   includes data derived from it must be distributed non-commercially (the maintainer has confirmed
   the game is non-commercial).

@@ -23,7 +23,11 @@ const levels=[{factor:1,dir:'provinces',tiles:m.tiles,tol:.6},...m.levels.map(l=
 const index={generated:'tools/map/build-edges.cjs',gridSha256:crypto.createHash('sha256').update(fs.readFileSync(path.join(dir,'manifest.json'))).digest('hex'),
  note:'領域画像の共有辺。a<b の領域ID、kind は coast/lake/region。座標は地図平面。塗りの画像と同じ版・段から作る。',levels:[]};
 // 年代別の差分（game/map/edits/compiled/<版>/manifest.json）。差し替えるタイルとその左・上の隣（縁の辺がそのタイルに掛かる）の辺を、版ごとに作り直す。
-const compiledRoot=path.join(dir,'edits/compiled'),versions=fs.existsSync(compiledRoot)?fs.readdirSync(compiledRoot).filter(v=>fs.existsSync(path.join(compiledRoot,v,'manifest.json'))).map(v=>({id:v,m:JSON.parse(fs.readFileSync(path.join(compiledRoot,v,'manifest.json'),'utf8'))})):[];
+// 土台の領域画像が変わったら差分は作り直しが要る。差分の manifest の baseProvincesSha256（manifest.json と definition.csv を連結した確認値）が今の土台と一致する版だけ使う。
+const baseSha=crypto.createHash('sha256').update(Buffer.concat([fs.readFileSync(path.join(dir,'manifest.json')),fs.readFileSync(path.join(dir,'definition.csv'))])).digest('hex');
+const compiledRoot=path.join(dir,'edits/compiled'),allVersions=fs.existsSync(compiledRoot)?fs.readdirSync(compiledRoot).filter(v=>fs.existsSync(path.join(compiledRoot,v,'manifest.json'))).map(v=>({id:v,m:JSON.parse(fs.readFileSync(path.join(compiledRoot,v,'manifest.json'),'utf8'))})):[];
+const versions=allVersions.filter(v=>v.m.baseProvincesSha256===baseSha),staleVersions=allVersions.filter(v=>v.m.baseProvincesSha256!==baseSha).map(v=>v.id);
+if(staleVersions.length)console.log('stale versions skipped (rebuild against baseProvincesSha256='+baseSha+'):',staleVersions.join(','));
 function edgesOfTile(L,get,c,r){const step=m.projection.stepUnits*L.factor,[X0,Y0]=m.projection.origin,T=m.tile;const me=get(c,r);if(!me)return [];const {w,h,ids}=me,right=get(c+1,r),down=get(c,r+1);
   const at=(x,y)=>{if(x<w&&y<h)return ids[y*w+x];if(x>=w&&y<h)return right?right.ids[y*right.w+(x-w)]:0;if(y>=h&&x<w)return down?down.ids[(y-h)*down.w+x]:0;return 0;};
   const leftNone=!get(c-1,r),upNone=!get(c,r-1);const segs=new Map();
@@ -55,6 +59,6 @@ for(const L of levels){const byPos=new Map(L.tiles.map(t=>[t.col+','+t.row,path.
    index.versions.push({id:v.id,period:v.m.versions.find(x=>x.id===v.id)?.period||v.m.tiles[0].period,factor:L.factor,col:c,row:r,file,sha256:sha(body)});}}
 }
 // 実行時が読む版の一覧（塗り・当たり判定・境界線が同じ版を使うため一つにまとめる）
-const ver={generated:'tools/map/build-edges.cjs',note:'年代別の領域タイルの差し替え。同じ段・同じ列行の基準タイルの上に重ねず置き換える。期間は半開区間。',versions:versions.map(v=>({id:v.id,period:v.m.versions.find(x=>x.id===v.id)?.period,edits:v.m.versions.find(x=>x.id===v.id)?.edits,tiles:v.m.tiles.map(t=>({factor:t.factor,col:t.col,row:t.row,file:'edits/compiled/'+v.id+'/'+t.file,sha256:t.sha256}))}))};
+const ver={generated:'tools/map/build-edges.cjs',baseProvincesSha256:baseSha,staleVersions,note:'年代別の領域タイルの差し替え。同じ段・同じ列行の基準タイルの上に重ねず置き換える。期間は半開区間。',versions:versions.map(v=>({id:v.id,period:v.m.versions.find(x=>x.id===v.id)?.period,edits:v.m.versions.find(x=>x.id===v.id)?.edits,tiles:v.m.tiles.map(t=>({factor:t.factor,col:t.col,row:t.row,file:'edits/compiled/'+v.id+'/'+t.file,sha256:t.sha256}))}))};
 fs.writeFileSync(path.join(dir,'versions.json'),JSON.stringify(ver,null,1));
 fs.writeFileSync(path.join(dir,'edges.json'),JSON.stringify(index,null,1));

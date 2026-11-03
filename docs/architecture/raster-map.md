@@ -61,3 +61,11 @@ Claude と Codex の独立調査（`docs/reports/MAP_ARCHITECTURE_INDEPENDENT_RE
 - 拡大の上限は 5.5倍。
 - 地形の陰影は全域 Copernicus DEM GLO-90 から開発時に作る（利用者の決定。地理院の標高データの同梱は測量法の扱いが確定できないため使わない）。生成は Codex の道具、WebP に縮めて `game/map/relief-1|4|8/`、一覧は `game/map/relief.json`（通知文・免責文・入力の確認値）。実行時に外部の標高タイルは取り寄せない（合戦図の標高は従来どおり）。
 - 区分の最小単位は郡を初期の地片とし、城の領域は「日付付きで城の管轄に属する地片の和」で作る（Claude と Codex の合意。関係は行政・知行・軍事占拠・城管轄に分ける）。日本の郡は CODH 旧国・旧郡境界（CC BY-NC 4.0、利用者は非営利と確認）。
+
+## 追記（郡による区分、2026-11-03）
+
+- 日本の陸は CODH 旧国・旧郡境界（江戸末期、806郡）を 100m の郡画像 `game/map/gun/` にし（`tools/map/build-gun.cjs`）、`tools/map/build-provinces.cjs` が郡ごとに城の領域へ割り当てる。結果は `game/map/gun-assignment.csv`（郡・国・根拠・領域・票の割合）。
+- 根拠：castle-point（郡に城が一つ）／split（郡に城が複数。郡の中は従来の線の割り当てを保つ）／same-province（城のない郡。同じ国の城の中で従来の票が多い城、票が無ければ最も近い城）／majority-other-province（国に城が一つも無い河内・志摩・安房）／unassigned（蝦夷・琉球など）／excluded（`game/map/gun-overrides.json` の例外。奄美は1609年まで琉球）。陸奥・出羽の明治の分割は戻して国を比べる。
+- 結果：城の位置と領域の食い違い0、国をまたぐ領域は城のない国を受け持つ6件のみ。郡境そのものは江戸末期のもので、戦国期は推定。
+- 朝鮮・大陸は郡データが無いので従来どおり（今後、府牧郡県の土台を探す）。
+- 土台が変わると年代別の差分は作り直しが要る。`build-edges.cjs` は差分の `baseProvincesSha256` が今の土台（manifest.json＋definition.csv）と一致する版だけを使う。
