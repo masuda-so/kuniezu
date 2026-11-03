@@ -128,25 +128,39 @@ window.TKBattleAtlas=(function(){
     const target=aim?Math.atan2(aim[1],aim[0])+Math.PI/2:undefined,ang=fx.heading(g.id,target,dt,!playing||lastSnap);
     const estMoving=est&&!isDead(u)&&(()=>{const a=estAt(g,Math.max(0,t-.5)),b=estAt(g,Math.min(100,t+.5));return a&&b&&Math.hypot(b[0]-a[0],b[1]-a[1])>.8;})();
     if((moving||estMoving)&&playing&&fx.rnd()<dt*10)fx.spawn(x,y,'dust');
-    ctx.save();ctx.translate(x,y);if(Number.isFinite(ang))ctx.rotate(ang);const cw=small?22:28,ch=small?15:19;TKCounter.path(ctx,cw,ch);ctx.fillStyle=col;ctx.fill();ctx.save();TKCounter.path(ctx,cw,ch);ctx.clip();const tint=ctx.createLinearGradient(0,-ch*.55,0,ch*.55);tint.addColorStop(0,'rgba(255,255,240,.20)');tint.addColorStop(.5,'rgba(255,255,240,0)');tint.addColorStop(1,'rgba(30,15,0,.14)');ctx.fillStyle=tint;ctx.fillRect(-cw,-ch,cw*2,ch*2);ctx.restore();TKCounter.path(ctx,cw,ch);ctx.strokeStyle=sel?'#e5ad3f':'#2a1d10';ctx.lineWidth=sel?2.6:active.has(u.id)?2.4:1.7;ctx.lineJoin='round';ctx.stroke();ctx.restore();TKCounter.path(ctx,cw,ch);ctx.strokeStyle=sel?'#e5ad3f':'#2a1d10';ctx.lineWidth=sel?2.6:active.has(u.id)?2.4:1.8;ctx.lineJoin='round';if(g.estimated)ctx.setLineDash([3,2.5]);ctx.stroke();ctx.setLineDash([]);TKCounter.path(ctx,cw*.84,ch*.76);ctx.lineWidth=.9;ctx.strokeStyle='rgba(255,248,225,.75)';ctx.stroke();ctx.restore();
+    ctx.save();ctx.translate(x,y);if(Number.isFinite(ang))ctx.rotate(ang);const cw=small?18:28,ch=small?13:19;TKCounter.path(ctx,cw,ch);ctx.fillStyle=col;ctx.fill();ctx.save();TKCounter.path(ctx,cw,ch);ctx.clip();const tint=ctx.createLinearGradient(0,-ch*.55,0,ch*.55);tint.addColorStop(0,'rgba(255,255,240,.20)');tint.addColorStop(.5,'rgba(255,255,240,0)');tint.addColorStop(1,'rgba(30,15,0,.14)');ctx.fillStyle=tint;ctx.fillRect(-cw,-ch,cw*2,ch*2);ctx.restore();TKCounter.path(ctx,cw,ch);ctx.strokeStyle=sel?'#e5ad3f':'#2a1d10';ctx.lineWidth=sel?2.6:active.has(u.id)?2.4:1.7;ctx.lineJoin='round';ctx.stroke();ctx.restore();TKCounter.path(ctx,cw,ch);ctx.strokeStyle=sel?'#e5ad3f':'#2a1d10';ctx.lineWidth=sel?2.6:active.has(u.id)?2.4:1.8;ctx.lineJoin='round';ctx.stroke();TKCounter.path(ctx,cw*.84,ch*.76);ctx.lineWidth=.9;ctx.strokeStyle='rgba(255,248,225,.75)';ctx.stroke();ctx.restore();
     // 鉄砲：記録の射撃区間（fire）か、鉄砲隊が交戦中の間、相手へ向けて発砲の閃光と煙を出す。射線は引かない。
     const firing=!dead&&!routed&&(u.fire?t>=u.fire[0]&&t<=u.fire[1]:u.arm==='teppo'&&active.has(u.id));
     if(firing){let tp=u.fireTarget?livePin(u.fireTarget):null;if(!tp){let best=Infinity;for(const [j,q] of located.entries()){const v=unitById.get(q.members[0]);if(sideOf(v)===side||isDead(v))continue;const d=Math.hypot(pins[j][0]-x,pins[j][1]-y);if(d>1&&d<best){best=d;tp=pins[j];}}}
      if(tp){const dir=Math.atan2(tp[1]-y,tp[0]-x),fxp=[x+Math.cos(dir)*16*kb,y+Math.sin(dir)*16*kb];if(playing&&fx.rnd()<dt*16){fx.spawn(fxp[0]+(fx.rnd()-.5)*12,fxp[1]+(fx.rnd()-.5)*12,'flash',dir);fx.spawn(fxp[0],fxp[1],'smoke',dir);}}}
-    const crestKey=G.armyCrestKey({clan:u.clan,gens:[],commanders:[u.g||u.n],until:sc.title}),crest=G.kamonImage(crestKey,11),family=crestKey&&TK.CLANS[crestKey]?G.CN(crestKey):u.clan&&TK.CLANS[u.clan]?G.CN(u.clan):'';fx.flag(ctx,x+(small?16:19),y,small?.8:1,col,crest,now,playing&&!dead,family?family.replace(/家$/,'').slice(0,1):'');
+    const crestKey=G.armyCrestKey({clan:u.clan,gens:[],commanders:[u.g||u.n],until:sc.title}),crest=G.kamonImage(crestKey,11),family=crestKey&&TK.CLANS[crestKey]?G.CN(crestKey):u.clan&&TK.CLANS[u.clan]?G.CN(u.clan):'';fx.flag(ctx,x+(small?11:19),y,small?.55:1,col,crest,now,playing&&!dead,family?family.replace(/家$/,'').slice(0,1):'');
     if(dead)fx.cross(ctx,x,y);
     const status=dead?'討死':routed?'退却':'';
     {
-     // 名札：右・下・左・上の順に、既存の札と駒に重ならない位置へ置く。駒の位置は動かさない。
+     // 名札だけを動かす。密集時は引き出し線で対応する駒を示す。
      const label=(u.g||u.n)+(status?'・'+status:'');ctx.font=`600 12px ${FONT}`;const w=ctx.measureText(label).width+10,h=18;
-     const cands=[{x:x+(small?30:36),y:y-16},{x:x-w/2,y:y+(small?22:26)},{x:x-w-(small?32:38),y:y-16},{x:x-w/2,y:y-(small?58:66)}];
-     const clash=b=>named.some(a=>b.x<a.x+a.w&&b.x+b.w>a.x&&b.y<a.y+a.h&&b.y+b.h>a.y)||disp.some((q,j)=>j!==index&&b.x<q[0]+22&&b.x+b.w>q[0]-34&&b.y<q[1]+14&&b.y+b.h>q[1]-38);
-     const b=cands.map(p=>({x:clamp(p.x,2,W-w-2),y:clamp(p.y,2,H-h-2),w,h})).find(b=>!clash(b))||(sel?{x:clamp(cands[0].x,2,W-w-2),y:clamp(cands[0].y,2,H-h-2),w,h}:null);
-     if(b){const face=opt.face?.(u.g,12,col);if(face)ctx.drawImage(face,x-(small?30:34),y-12,24,24);
+     const right=x+(small?30:36),left=x-w-(small?32:38),below=y+(small?22:26),above=y-(small?58:66);
+     const cands=[
+      {x:right,y:y-16},{x:x-w/2,y:below},{x:left,y:y-16},{x:x-w/2,y:above},
+      {x:right,y:below},{x:left,y:below},{x:right,y:above},{x:left,y:above},
+      {x:x-w/2,y:below+h+5},{x:x-w/2,y:above-h-5}
+     ];
+     const clash=b=>named.some(a=>b.x<a.x+a.w&&b.x+b.w>a.x&&b.y<a.y+a.h&&b.y+b.h>a.y)||disp.some((q,j)=>j!==index&&b.x<q[0]+(small?17:22)&&b.x+b.w>q[0]-(small?23:34)&&b.y<q[1]+(small?10:14)&&b.y+b.h>q[1]-(small?23:38));
+     const box=p=>({x:clamp(p.x,2,W-w-2),y:clamp(p.y,2,H-h-2),w,h});
+     let b=cands.map(box).find(b=>!clash(b));
+     for(let radius=64;!b&&radius<=120;radius+=28){
+      const around=Array.from({length:12},(_,i)=>{
+       const angle=i*Math.PI/6;
+       return box({x:x+Math.cos(angle)*radius-w/2,y:y+Math.sin(angle)*radius-h/2});
+      });
+      b=around.find(b=>!clash(b));
+     }
+     if(!b&&sel)b=box(cands[0]);
+     if(b){const faceSize=small?16:24,face=opt.face?.(u.g,faceSize/2,col);if(face)ctx.drawImage(face,x-(small?23:34),y-faceSize/2,faceSize,faceSize);
       const tx=clamp(x,b.x,b.x+w),ty=clamp(y,b.y,b.y+h),d=Math.hypot(tx-x,ty-y);
       if(d>12){ctx.beginPath();ctx.moveTo(x+(tx-x)*12/d,y+(ty-y)*12/d);ctx.lineTo(tx,ty);ctx.strokeStyle=col;ctx.lineWidth=.85;ctx.stroke();}
       boxes.push({...b,id:g.id,label:true});ctx.fillStyle='rgba(253,247,230,.94)';ctx.fillRect(b.x,b.y,w,h);ctx.strokeStyle='#2a1d10';ctx.lineWidth=.8;ctx.strokeRect(b.x+.5,b.y+.5,w-1,h-1);ctx.fillStyle=col;ctx.fillRect(b.x,b.y,3,h);ctx.font=`600 12px ${FONT}`;ctx.textAlign='left';ctx.textBaseline='middle';ctx.fillStyle=status?'#7a2218':'#302719';ctx.fillText(label,b.x+7,b.y+h/2+.5);named.push(b);}}
-    boxes.push({x:x-36,y:y-40,w:72,h:76,id:g.id});ctx.restore();
+    boxes.push(small?{x:x-24,y:y-25,w:48,h:50,id:g.id}:{x:x-36,y:y-40,w:72,h:76,id:g.id});ctx.restore();
    }
    const estCount=located.filter(isEst).length;if(estCount){const msg=located.some(g=>g.estimated)?'点線の軌跡・破線の駒＝推定の動きと配置（史料の記録ではない）':'点線の軌跡＝推定の動き（史料の記録ではない）';ctx.save();ctx.font=`600 ${small?9.5:11}px ${FONT}`;const w=ctx.measureText(msg).width+14;ctx.fillStyle='rgba(253,247,230,.9)';ctx.fillRect(8,H-30,w,20);ctx.strokeStyle='rgba(42,29,16,.5)';ctx.lineWidth=.8;ctx.strokeRect(8.5,H-29.5,w-1,19);ctx.fillStyle='#4a3a26';ctx.textAlign='left';ctx.textBaseline='middle';ctx.fillText(msg,15,H-20);ctx.restore();}
    cv.dataset.estimatedGroups=String(estCount);cv.dataset.estimatedPlaced=String(located.filter(g=>g.estimated).length);cv.dataset.motionBasis=motionPlan().basis;
