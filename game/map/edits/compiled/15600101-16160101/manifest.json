@@ -1,6 +1,7 @@
 {
-  "baseRevision": "9586ebd2eca904d27a91bd3db6a2816dfd3c246c",
-  "date": "1600-09-15",
+  "baseRevision": "3ab7e5f2175760f5e7d5d5e134424ced9d5e742b",
+  "baseProvincesSha256": "01c67252315fa0afbf75b87623bca927225860102faa8c20fa98b04759d2264e",
+  "date": "1600-01-01",
   "versions": [
     {
       "id": "15600101-16160101",
@@ -17,15 +18,17 @@
         ]
       ],
       "edits": [
-        "hayashima-upland",
-        "shiunji-legacy-mask"
+        "mizushima-east-post-period-fill",
+        "mizushima-post-period-fill",
+        "mizushima-south-post-period-fill"
       ],
-      "sha256": "8d5c03cdad49831b4f978c5a5fbd9ebd65f53167a11496a75f4c7948cb2f99b3"
+      "sha256": "7eb57f3f2816be932cdce423e8aa58126cfcf84b2c82e49b3e1c1fe5517ca789"
     }
   ],
   "editPixels": {
-    "hayashima-upland": 9,
-    "shiunji-legacy-mask": 5500
+    "mizushima-east-post-period-fill": 216,
+    "mizushima-post-period-fill": 644,
+    "mizushima-south-post-period-fill": 140
   },
   "tiles": [
     {
@@ -47,55 +50,13 @@
       ],
       "width": 1024,
       "height": 1024,
-      "sha256": "f54a5da8f10aeecd4b53e7c47066b3a1fd617cefef946a5205203f39d338814d"
+      "sha256": "619443480b4793c2f01fdf2b0215de781b873bea9f2b761f71baf3aa5e62e65b"
     },
     {
-      "file": "provinces/14-8@15600101-16160101.png",
-      "factor": 1,
-      "col": 14,
-      "row": 8,
-      "period": [
-        [
-          1560,
-          1,
-          1
-        ],
-        [
-          1616,
-          1,
-          1
-        ]
-      ],
-      "width": 1024,
-      "height": 1024,
-      "sha256": "d9a2058ba0482d33e9f5e1121179e50aacf6fd920ceaeebede7440dc5e07ac45"
-    },
-    {
-      "file": "provinces/14-9@15600101-16160101.png",
-      "factor": 1,
-      "col": 14,
-      "row": 9,
-      "period": [
-        [
-          1560,
-          1,
-          1
-        ],
-        [
-          1616,
-          1,
-          1
-        ]
-      ],
-      "width": 1024,
-      "height": 1024,
-      "sha256": "c41cc5ea3cfc506c3d3e2d43ec9bc52804bc4a77cbb05a304a9e127fdcaee102"
-    },
-    {
-      "file": "provinces-4/3-2@15600101-16160101.png",
+      "file": "provinces-4/2-3@15600101-16160101.png",
       "factor": 4,
-      "col": 3,
-      "row": 2,
+      "col": 2,
+      "row": 3,
       "period": [
         [
           1560,
@@ -110,7 +71,7 @@
       ],
       "width": 1024,
       "height": 1024,
-      "sha256": "73e2e2ad51c63c6122c4beaa4b2ea0d0099b5f7942a7826ac893662c25c71f62"
+      "sha256": "2c7703d7450908b2de791eeb1ffadadf9969a34cff7e9b5f344f6ec6787bafa8"
     },
     {
       "file": "provinces-8/1-1@15600101-16160101.png",
@@ -131,7 +92,7 @@
       ],
       "width": 1024,
       "height": 1024,
-      "sha256": "14d5b55c99ae7c9cf45270211c71a439917e6a2c0a690d365fb20ab3d6e78400"
+      "sha256": "29903d488d3d1773b82e95470ec13817d5de0b377a3677bef1f6dd61f94b6a8b"
     }
   ]
 }
