@@ -137,10 +137,9 @@ const s2w=(x,y)=>{const c=vc();return [(x-c[0])/cam.z+cam.x,(y-c[1])/cam.z+cam.y
 function clampCam(){const c=vc(),CW=CONT.x1-CONT.x0,CH=CONT.y1-CONT.y0;
  // 背景はパネルの下まで画面を覆う。縦長では横方向をドラッグして見る。
  cam.z=Math.max(VW/CW,VH/CH,Math.min(MAXZ,cam.z));
- // 地図の端を、年表・家の欄・再生バーに隠れない見える範囲の端まで動かせるようにする（端の武将・城を選べるように）。
- const hx=c[2]/2/cam.z,hy=c[3]/2/cam.z;
- cam.x=Math.max(CONT.x0+hx,Math.min(CONT.x1-hx,cam.x));
- cam.y=Math.max(CONT.y0+hy,Math.min(CONT.y1-hy,cam.y));U.baseDirty=true;syncZoomControl();}
+ // 非対称のパネル配置でも背景を画面全体へ収める。各端は画面原点からの距離で制限する。
+ cam.x=Math.max(CONT.x0+c[0]/cam.z,Math.min(CONT.x1-(VW-c[0])/cam.z,cam.x));
+ cam.y=Math.max(CONT.y0+c[1]/cam.z,Math.min(CONT.y1-(VH-c[1])/cam.z,cam.y));U.baseDirty=true;syncZoomControl();}
 const CONT={x0:-1014.1,x1:2688.7,y0:-755.3,y1:3459.7};
 // 表示範囲の基準（docs/architecture/raster-map.md）：西＝与那国島（国土地理院の最西端、東経122°55′57″）、北＝宗谷岬（北緯45°31′35″）、
 // 東＝納沙布岬（東経145°49′01″）、南＝与那国島の緯度（北緯24°27′05″）。左下の角を国土地理院の最西端（与那国島）にそろえ、琉球諸島を入れる。朝鮮・明が絡むため西は国土地理院の端を使う。
@@ -850,7 +849,7 @@ function layoutHUD(){const era=$('#era'),me=$('#me'),ch=$('#chron'),nw=$('#news'
  const credit=R($('#credit'));$('#app').style.setProperty('--credit-reserve',Math.ceil(credit?.height||0)+8+'px');
  const re=R(era);if(!re)return;
  syncHUD();if(narrow){me.style.top='';if(ch)ch.style.top='';}else{me.style.top='';if(ch&&getComputedStyle(ch).top!=='auto')ch.style.top=Math.round(re.bottom+8)+'px';}
- const rm=R(me);let topBand=Math.max(re.bottom,rm?rm.bottom:0);const lg=$('#legend');if(lg){lg.style.top=narrow?Math.round(topBand+8)+'px':'';if(narrow&&U.dipView)topBand=Math.max(topBand,lg.getBoundingClientRect().bottom); }U.hudTop=topBand+8;U.baseDirty=true;
+ const rm=R(me);let topBand=Math.max(re.bottom,rm?rm.bottom:0);const lg=$('#legend');if(lg){lg.style.top=narrow?Math.round(topBand+8)+'px':'';if(narrow&&U.dipView)topBand=Math.max(topBand,lg.getBoundingClientRect().bottom); }const oldHudTop=U.hudTop;U.hudTop=topBand+8;if(oldHudTop!==U.hudTop&&VW>0&&VH>0)clampCam();U.baseDirty=true;
  if(nw){let L=re.right+12,Rt=rm&&!narrow?rm.left-12:innerWidth-12;
   if(!narrow&&Rt-L>=380){nw.style.top='14px';nw.style.left=L+'px';nw.style.width=(Rt-L)+'px';nw.style.transform='none';}
   else{nw.style.top=Math.round(topBand+8)+'px';nw.style.left='12px';nw.style.width=(innerWidth-24)+'px';nw.style.transform='none';}
