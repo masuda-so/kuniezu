@@ -25,7 +25,7 @@ const fragments=[];for(const [v,list] of comps){list.sort((a,b)=>b.size-a.size);
 fragments.sort((a,b)=>b.pixels-a.pixels);
 // 3) 面積の差
 const area=rings=>rings.reduce((n,r,i)=>{let s=0;for(let j=0;j<r.length;j+=2){const k=(j+2)%r.length;s+=r[j]*r[k+1]-r[k]*r[j+1];}return n+Math.abs(s)/2*(i?-1:1);},0);
-const areaDiff=[];for(const d of defs.filter(d=>d.key.startsWith('castle:'))){const polys=T.terr[d.key.slice(7)];const vec=polys.reduce((n,p)=>n+area(p),0)/(S*S);if(vec<1)continue;const ratio=d.pixels/vec;if(ratio<.85||ratio>1.15)areaDiff.push({key:d.key,vectorPixels:Math.round(vec),rasterPixels:d.pixels,ratio:+ratio.toFixed(2)});}
+const areaDiff=[];for(const d of defs.filter(d=>d.key.startsWith('castle:'))){const polys=T.terr[d.key.slice(7)];if(!polys)continue;const vec=polys.reduce((n,p)=>n+area(p),0)/(S*S);if(vec<1)continue;const ratio=d.pixels/vec;if(ratio<.85||ratio>1.15)areaDiff.push({key:d.key,vectorPixels:Math.round(vec),rasterPixels:d.pixels,ratio:+ratio.toFixed(2)});}
 const report={scope:'領域画像（段階1・100m）の総点検。城の位置・飛び地・線データとの面積差。',castles:G.CL.length,castleMismatch,fragmentsOver50px:fragments.length,fragments:fragments.slice(0,80),areaDiff};
 fs.writeFileSync(path.join(root,'data/audits/raster-provinces-audit.json'),JSON.stringify(report,null,1));
 console.log(JSON.stringify({castleMismatch:castleMismatch.length,fragments:fragments.length,areaDiff:areaDiff.length}));

@@ -289,7 +289,7 @@ function paintBase(c,pad=0){LANDV=landFor(cam.z);
   // 領域画像が届くまでの間だけ、従来の線のデータで塗る。
   if(flat){c.save();c.shadowColor='rgba(40,70,110,.38)';c.shadowBlur=10*DPR;c.fillStyle='#fbfaf6';c.fill(LANDV);c.restore();}
   else{c.fillStyle='#ece2c6';c.fill(LANDV);}
-  if(S){c.save();c.clip(LANDV);for(const C of G.CL){const k=S.castles[C.id].owner;c.globalAlpha=flat?(k===S.player?.5:.35):(k===S.player?.44:.32);c.fillStyle=pastel(k);c.fill(TERR[C.id]);}c.restore();}
+  if(S){c.save();c.clip(LANDV);for(const C of G.CL){const k=S.castles[C.id].owner;c.globalAlpha=flat?(k===S.player?.5:.35):(k===S.player?.44:.32);c.fillStyle=pastel(k);if(TERR[C.id])c.fill(TERR[C.id]);}c.restore();}
   if(!flat){c.save();c.clip(LANDV);c.globalCompositeOperation='multiply';c.fillStyle='rgba(168,146,110,.55)';c.fillRect(x0-50,y0-50,x1-x0+100,y1-y0+100);c.restore();}
  }
 
@@ -638,7 +638,7 @@ function hit(sx,sy){if(!S)return null;let best=null,bd=16*16;for(const C of G.CL
  if(best)return best;const [wx,wy]=s2w(sx,sy);
  // 領域は画像（game/map の領域画像）で引く。100m の段で引けた時はそれを正とし、粗い段しか無い時の「海」は確定せず線のデータで確かめる。
  const d=window.TKRaster?.pickAt?.(wx,wy);if(d&&(d.factor===1||d.kind!=='sea')){if(!d.key.startsWith('castle:'))return null;const id=d.key.slice(7);return G.C[id]&&S.castles[id]?id:null;}
- bctx.setTransform(1,0,0,1,0,0);if(!bctx.isPointInPath(landFor(Math.max(cam.z,4)),wx,wy))return null;for(const C of G.CL)if(bctx.isPointInPath(TERR[C.id],wx,wy))return C.id;return null;}
+ bctx.setTransform(1,0,0,1,0,0);if(!bctx.isPointInPath(landFor(Math.max(cam.z,4)),wx,wy))return null;for(const C of G.CL)if(TERR[C.id]&&bctx.isPointInPath(TERR[C.id],wx,wy))return C.id;return null;}
 const tipEl=$('#tip');
 function hitArmy(x,y){return U.mode==='game'&&U.armyGroups?.filter(g=>Math.hypot(g.x-x,g.y-y)<24).sort((a,b)=>Math.hypot(a.x-x,a.y-y)-Math.hypot(b.x-x,b.y-y))[0];}
 function armyDepartureText(u){

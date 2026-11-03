@@ -1,6 +1,6 @@
 {
  "generated": "tools/map/build-edges.cjs",
- "gridSha256": "27aa47d8e7115c591e6d641f603c58e6d4c171df59e0e18f152b2bf1b505072f",
+ "gridSha256": "492a3accca21a0d4b4963a058880cb725b1d1c4a3a454b3e8df02fca6bda1483",
  "note": "領域画像の共有辺。a<b の領域ID、kind は coast/lake/region。座標は地図平面。塗りの画像と同じ版・段から作る。",
  "levels": [
   {
@@ -287,13 +287,13 @@
      "file": "15-4.json",
      "col": 15,
      "row": 4,
-     "sha256": "7d8ea13fb3a278d1d0a8ec1a26d424736583e6d21f294ce076eb5ad461957183"
+     "sha256": "f27134982e6ae4462e3a0ce7af13afd6426284c634b4a216c7f5938e3a33d2cf"
     },
     {
      "file": "16-4.json",
      "col": 16,
      "row": 4,
-     "sha256": "33a0a72965e230131ad4f3e3f5e456d663d186b78c7d644ef7a3642d518cb0d0"
+     "sha256": "1b26fdef98c61113dd7ec53c38066a4be48e73f4e219fbf56cf19add9ae4902a"
     },
     {
      "file": "17-4.json",
@@ -353,7 +353,7 @@
      "file": "15-5.json",
      "col": 15,
      "row": 5,
-     "sha256": "dbcb9e43cf184e18e1c0f4bf8c57d3fc8ce773b56683e1cf10d5a11417d4aa43"
+     "sha256": "c07e93c51e276cf7141dd30190489f30654163e789f23dcc095a65fb7bdff073"
     },
     {
      "file": "16-5.json",
@@ -815,7 +815,7 @@
      "file": "3-13.json",
      "col": 3,
      "row": 13,
-     "sha256": "d6c893e2d449bf49b08b04d572aefaa7a038ad24fea2eeb04cfc531e9752ceb4"
+     "sha256": "6843076e9d1791f69c944a1b58f13c1110020771ceed10d0541ff72c91fee234"
     },
     {
      "file": "4-13.json",
@@ -881,13 +881,13 @@
      "file": "2-14.json",
      "col": 2,
      "row": 14,
-     "sha256": "5f713f5501dd37a3ed28a78f071691956540a3bbeb3094f41da407097f2a2b37"
+     "sha256": "f9a4ad39a80139e17bc164fbdf6fc5d79d87fa03931d8ef7869a224e9204405a"
     },
     {
      "file": "3-14.json",
      "col": 3,
      "row": 14,
-     "sha256": "c97a30cf97ccd3a3748f98675960f9f44285c1026f900dad93db52434aa05b72"
+     "sha256": "b033932fe94a7d62d6a5499d0392a70baf1d1ceee1e98ee421c21a5484dcdf3a"
     },
     {
      "file": "5-14.json",
@@ -1037,7 +1037,7 @@
      "file": "4-20.json",
      "col": 4,
      "row": 20,
-     "sha256": "426579c149fbbf3abc54d7975482b4e94e0156551b04320c9036bbf14b340aa2"
+     "sha256": "bb44773c3fe69b557823ec10bfe47b5cee096388685c0417c9ab8e0111203cc5"
     },
     {
      "file": "5-20.json",
@@ -1061,13 +1061,13 @@
      "file": "3-21.json",
      "col": 3,
      "row": 21,
-     "sha256": "c9f820db997cef1fadba484a4349c3dbbb1b365ef3567e5c10990842899da74a"
+     "sha256": "bdf3a95be65c9c88bb4488a3c0ab6f534c27e9cff43fc61f297db931b6dbc825"
     },
     {
      "file": "4-21.json",
      "col": 4,
      "row": 21,
-     "sha256": "aca7120029a54fb5f237eeb51676951c081d46a54203dc20c0eca99d3cf83a0e"
+     "sha256": "904eac79416d38bd2b17519779fe541add8e7037b6cec658c1d13dd90852b0ac"
     },
     {
      "file": "17-21.json",
@@ -1079,7 +1079,7 @@
      "file": "0-22.json",
      "col": 0,
      "row": 22,
-     "sha256": "3f6be622767cf5f246a6c933626b8c486ef7c568df9e7703b7eef075caba6820"
+     "sha256": "a6b367172d4bf664c15062a092cc41fc38ec319aa1120940cb7cfbf04ad86be3"
     },
     {
      "file": "1-22.json",
@@ -1103,19 +1103,19 @@
      "file": "0-23.json",
      "col": 0,
      "row": 23,
-     "sha256": "ce0bfecb513efacd39f37f0f7aaea3efb80d8992a6d6cafe9d4d951afade926f"
+     "sha256": "553c9dfe3fa3d31cde72506354ae84cea6429019abd872bde928ff12b20edda6"
     },
     {
      "file": "1-23.json",
      "col": 1,
      "row": 23,
-     "sha256": "7968e36333a9f8e9d68d3c2ef39860c47a0af62e3d8c3520b0503b6b66b518a9"
+     "sha256": "3fb2d6f9c1cfe8ea6459f5c12e896a93932e623e28c9370c9c808c9a144fb010"
     },
     {
      "file": "2-23.json",
      "col": 2,
      "row": 23,
-     "sha256": "1d483c53e23295f6637f2ec94496149376283d65987e4d5e1e7bef831167a928"
+     "sha256": "3b40dab59c0480f0b115bd32c41c4762f40c9444a38b39bf3e463a92298ff652"
     },
     {
      "file": "7-23.json",
@@ -1199,13 +1199,13 @@
      "file": "3-1.json",
      "col": 3,
      "row": 1,
-     "sha256": "dfc4caf4a0467792c15ec879f9ffe64e744dc4d2dc57fdbcb443b30292589150"
+     "sha256": "25411883fe12cb1c9e280ad8def6142e13e60ab1d52a8edc11e7d57db1b38bf0"
     },
     {
      "file": "4-1.json",
      "col": 4,
      "row": 1,
-     "sha256": "6537824f156b3aacb79e83839d8670ac4475fc3e46d405a2d638009b9a0251db"
+     "sha256": "c128f0e7b200bf35eeb3d67ea5f754b23ce7dd184c633a2ad94e4dda0b666836"
     },
     {
      "file": "0-2.json",
@@ -1241,7 +1241,7 @@
      "file": "0-3.json",
      "col": 0,
      "row": 3,
-     "sha256": "d5da4813b7cac92d442153504e16c830226645a8451c4f66fef8ca3adccd99a1"
+     "sha256": "e5c51b104092e26d494b37061696d23193bab8464c3d1ea3af15541cc9e222e5"
     },
     {
      "file": "1-3.json",
@@ -1283,13 +1283,13 @@
      "file": "0-5.json",
      "col": 0,
      "row": 5,
-     "sha256": "886016747559d6b1fa9acdcf103043ca7aecf4c871065b478941d5fda9e4d521"
+     "sha256": "0adbb2132da90d97872cfb06767b32cf9122efef82d5308f6d6ee23e20d86c2a"
     },
     {
      "file": "1-5.json",
      "col": 1,
      "row": 5,
-     "sha256": "c5aadc4760e82f58dc371b65b352e6f01ee60af9dd05f7465d9a4404b930033d"
+     "sha256": "6bc4910ffe9a4ae8f2d34c32e5b5a77b4db3f4740e799d6e7d4f75eb0049cdf4"
     },
     {
      "file": "3-5.json",
@@ -1319,19 +1319,19 @@
      "file": "1-0.json",
      "col": 1,
      "row": 0,
-     "sha256": "ec7e044b1d24495718b6a39ce94bf834ee57682b6bed7c8963b2400cdfee2cdf"
+     "sha256": "6f333d47858a07dd14847186763fd54d257b6bf350f9385ddbf3f8cdd0fe4aa5"
     },
     {
      "file": "2-0.json",
      "col": 2,
      "row": 0,
-     "sha256": "90dc138f71e19cfc46041917f91329b7d66992f8abec2e155037ea00db7347ba"
+     "sha256": "4fa740eb3cd4a7f0f970d80ed74186c937d6adbe3e3226560040b74c136e961b"
     },
     {
      "file": "0-1.json",
      "col": 0,
      "row": 1,
-     "sha256": "0d1447016d4a329597cbadfceb9b3679f7ec41b83d8a1f30fcddc8efb344705e"
+     "sha256": "91d963d7f295930827a2a9e6ad0ab1a2a696ebeb9cc68906831a2cac5dda0c75"
     },
     {
      "file": "1-1.json",
@@ -1349,7 +1349,7 @@
      "file": "0-2.json",
      "col": 0,
      "row": 2,
-     "sha256": "8805f38f2cb7dfc9d68d47d81c21046b29c4d0806b9d6372e799a1bb07c4d5df"
+     "sha256": "ff6f773eb1cd673da9ac0d57b2b0fc0704581c5964c18a1dac9eed5281115173"
     },
     {
      "file": "1-2.json",

@@ -13,7 +13,7 @@ assert.equal(m.checks.lostProvinces.length,0);assert.ok(m.rules.seaFromLandMask&
 // 郡：郡画像の確認値、全郡に割り当ての根拠、城が自分の郡の領域にあること（castle-point の郡は城の領域）。
 const gj=JSON.parse(fs.readFileSync(path.join(dir,'gun.json'),'utf8'));for(const t of gj.tiles)assert.equal(crypto.createHash('sha256').update(fs.readFileSync(path.join(dir,'gun',t.file))).digest('hex'),t.sha256,'gun '+t.file);
 const ga=fs.readFileSync(path.join(dir,'gun-assignment.csv'),'utf8').trim().split('\n').slice(1).map(l=>l.split(';'));assert.equal(ga.length,gj.guns,'every district assigned');
-const bases=new Set(['castle-point','split','same-province','majority-other-province','unassigned','excluded']);for(const r of ga)assert.ok(bases.has(r[4]),'basis '+r[4]);
+const bases=new Set(['castle-point','split','same-province','majority-other-province','unassigned','excluded','override']);for(const r of ga)assert.ok(bases.has(r[4]),'basis '+r[4]);
 for(const r of ga)if(r[4]==='castle-point'||r[4]==='same-province')assert.ok(r[5].startsWith('castle:'),'district region '+r[2]);
 console.log('PASS: districts',JSON.stringify(Object.fromEntries([...bases].map(b=>[b,ga.filter(r=>r[4]===b).length]))));
 console.log('PASS: raster map',JSON.stringify({provinces:rows.length,tiles:m.tiles.length,overlapPixels:m.checks.overlapPixels,unassignedLandPixels:m.checks.unassignedLandPixels}));

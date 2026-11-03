@@ -1,17 +1,28 @@
 {
  "scope": "領域画像（段階1・100m）の総点検。城の位置・飛び地・線データとの面積差。",
- "castles": 137,
+ "castles": 140,
  "castleMismatch": [],
- "fragmentsOver50px": 671,
+ "fragmentsOver50px": 695,
  "fragments": [
   {
    "key": "castle:kouyama",
-   "pixels": 47903,
-   "km2": 479,
+   "pixels": 47907,
+   "km2": 479.1,
    "distanceKm": 139.8,
    "at": [
     130.521,
     30.339
+   ],
+   "mainPixels": 266313
+  },
+  {
+   "key": "castle:kouyama",
+   "pixels": 42920,
+   "km2": 429.2,
+   "distanceKm": 111.4,
+   "at": [
+    130.974,
+    30.581
    ],
    "mainPixels": 266313
   },
@@ -25,17 +36,6 @@
     37.755
    ],
    "mainPixels": 211278
-  },
-  {
-   "key": "castle:kouyama",
-   "pixels": 41630,
-   "km2": 416.3,
-   "distanceKm": 112.2,
-   "at": [
-    130.972,
-    30.574
-   ],
-   "mainPixels": 266313
   },
   {
    "key": "castle:sukagawa",
@@ -157,6 +157,17 @@
     34.499
    ],
    "mainPixels": 161663
+  },
+  {
+   "key": "castle:shuri",
+   "pixels": 14572,
+   "km2": 145.7,
+   "distanceKm": 305.2,
+   "at": [
+    125.336,
+    24.77
+   ],
+   "mainPixels": 109057
   },
   {
    "key": "castle:konomine",
@@ -322,6 +333,17 @@
     37.787
    ],
    "mainPixels": 293994
+  },
+  {
+   "key": "castle:shuri",
+   "pixels": 4851,
+   "km2": 48.5,
+   "distanceKm": 397.8,
+   "at": [
+    124.284,
+    24.524
+   ],
+   "mainPixels": 109057
   },
   {
    "key": "castle:nanao",
@@ -509,6 +531,17 @@
     37.241
    ],
    "mainPixels": 952185
+  },
+  {
+   "key": "castle:shuri",
+   "pixels": 3636,
+   "km2": 36.4,
+   "distanceKm": 312.2,
+   "at": [
+    125.183,
+    24.825
+   ],
+   "mainPixels": 109057
   },
   {
    "key": "castle:suncheon",
@@ -830,6 +863,17 @@
    "mainPixels": 355687
   },
   {
+   "key": "castle:shuri",
+   "pixels": 2194,
+   "km2": 21.9,
+   "distanceKm": 29.3,
+   "at": [
+    127.79,
+    26.722
+   ],
+   "mainPixels": 109057
+  },
+  {
    "key": "castle:busan",
    "pixels": 2145,
    "km2": 21.4,
@@ -839,50 +883,6 @@
     35.035
    ],
    "mainPixels": 263360
-  },
-  {
-   "key": "castle:yuzuki",
-   "pixels": 2087,
-   "km2": 20.9,
-   "distanceKm": 33.8,
-   "at": [
-    132.617,
-    33.975
-   ],
-   "mainPixels": 187005
-  },
-  {
-   "key": "castle:yuzuki",
-   "pixels": 2065,
-   "km2": 20.7,
-   "distanceKm": 53.8,
-   "at": [
-    133.093,
-    34.215
-   ],
-   "mainPixels": 187005
-  },
-  {
-   "key": "castle:suncheon",
-   "pixels": 1944,
-   "km2": 19.4,
-   "distanceKm": 110.5,
-   "at": [
-    126.057,
-    34.297
-   ],
-   "mainPixels": 1039456
-  },
-  {
-   "key": "castle:suncheon",
-   "pixels": 1888,
-   "km2": 18.9,
-   "distanceKm": 78.5,
-   "at": [
-    126.138,
-    34.785
-   ],
-   "mainPixels": 1039456
   }
  ],
  "areaDiff": [
@@ -979,7 +979,7 @@
   {
    "key": "castle:kouyama",
    "vectorPixels": 279082,
-   "rasterPixels": 356843,
+   "rasterPixels": 358141,
    "ratio": 1.28
   },
   {

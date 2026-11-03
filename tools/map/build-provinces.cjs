@@ -21,6 +21,8 @@ const lakeKey=poly=>{const r=poly[0];let sx=0,sy=0,n=r.length/2;for(let i=0;i<r.
 T.lakes.forEach((poly,i)=>{const o=prev.get('lake:'+i);if(o&&!prev.has(lakeKey(poly))){prev.set(lakeKey(poly),o);prev.delete('lake:'+i);}});
 const wanted=[{key:'sea',name:'海',kind:'sea'},{key:'unassigned',name:'未割当の陸',kind:'land'}];
 for(const k of Object.keys(T.terr).sort())wanted.push({key:'castle:'+k,name:k,kind:'land',polys:T.terr[k]});
+// 線の領域を持たない城（地図を広げた地域の拠点など）は郡画像だけで領域を作る。
+for(const C of MODEL.G.CL)if(!T.terr[C.id])wanted.push({key:'castle:'+C.id,name:C.id,kind:'land',polys:[]});
 for(const k of Object.keys(T.neutral||{}).sort())wanted.push({key:'neutral:'+k,name:k,kind:'land',polys:T.neutral[k]});
 T.lakes.forEach(poly=>wanted.push({key:lakeKey(poly),name:'湖',kind:'lake',polys:[poly]}));
 let next=Math.max(1,...[...prev.values()].map(v=>v.id))+1;const defs=[];
@@ -40,7 +42,7 @@ function fill(rings,row0,row1,cb){const edges=[];for(const r of rings){const n=r
   for(let i=0;i+1<xs.length;i+=2){const c0=Math.max(0,Math.ceil((xs[i]-ORIGIN[0])/STEP-.5)),c1=Math.min(W-1,Math.floor((xs[i+1]-ORIGIN[0])/STEP-.5));if(c0<=c1)cb(r,c0,c1);}}}
 const bbox=polys=>{let y0=Infinity,y1=-Infinity;for(const p of polys)for(const r of p)for(let i=1;i<r.length;i+=2){y0=Math.min(y0,r[i]);y1=Math.max(y1,r[i]);}return [y0,y1];};
 const rowOf=y=>Math.floor((y-ORIGIN[1])/STEP);
-const landB=T.land.map(p=>({p,b:bbox([p])})),items=defs.slice(2).filter(d=>d.polys.length).map(d=>({d,b:bbox(d.polys)}));
+const landB=T.land.map(p=>({p,b:bbox([p])})),items=defs.slice(2).filter(d=>d.polys&&d.polys.length).map(d=>({d,b:bbox(d.polys)}));
 // PNG（RGB、行ごとのフィルタ0、zlib）。
 const crcT=new Int32Array(256).map((_,n)=>{let c=n;for(let k=0;k<8;k++)c=c&1?0xedb88320^(c>>>1):c>>>1;return c;});
 const crc=b=>{let c=-1;for(const x of b)c=crcT[(c^x)&255]^(c>>>8);return (c^-1)>>>0;};
@@ -84,6 +86,7 @@ if(fs.existsSync(gunJson)){const gj=JSON.parse(fs.readFileSync(gunJson,'utf8')),
  const assign=new Map(),rowsOut=[];
  const overrides=fs.existsSync(path.join(out,'gun-overrides.json'))?JSON.parse(fs.readFileSync(path.join(out,'gun-overrides.json'),'utf8')).guns:{};
  for(const row of rows){const g=row.n,cs=castlesIn.get(g),m=votes.get(g)||new Map();let basis,target=null;
+  if(overrides[row.codh]?.basis==='assign'){const t=byKey.get(overrides[row.codh].region);if(t==null)throw Error('override region missing '+overrides[row.codh].region);assign.set(g,{basis:'override',target:t,castles:[]});rowsOut.push([g,row.codh,row.name,row.kuni,'override',overrides[row.codh].region,'']);continue;}
   if(overrides[row.codh]?.basis==='excluded'){assign.set(g,{basis:'excluded',target:null,castles:[]});rowsOut.push([g,row.codh,row.name,row.kuni,'excluded','','']);continue;}
   if(cs&&cs.size===1){basis='castle-point';target=[...cs][0];}
   else if(cs&&cs.size>1){basis='split';}
