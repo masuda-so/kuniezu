@@ -226,3 +226,20 @@
   text:'石垣原で敗れた大友義統が黒田方に降伏した。'
  });
 }
+
+/* 知行充行状の日と、その翌年の中津城の着工日を分ける。 */
+{
+ const grantDate=[1587,7,3];
+ const constructionDate=[1588,1,11];
+ TK.HIST.push({
+  d:TK.lunarDate(...grantDate),lunarDate:grantDate,k:'note',
+  title:'黒田孝高の豊前拝領',who:'黒田孝高',
+  source:'https://museum.city.fukuoka.jp/archives/leaflet/566/index03.html',
+  text:'豊臣秀吉が黒田孝高に豊前六郡を与えた。孝高は入国後、まず馬ヶ岳城を本拠とした。'
+ },{
+  d:TK.lunarDate(...constructionDate),lunarDate:constructionDate,k:'note',
+  title:'黒田孝高の中津城着工',who:'黒田孝高',
+  source:'https://www.town.yoshitomi.lg.jp/gyosei/chosei/v995/y209/kyouiku_iinkai/z796/4/2/',
+  text:'黒田孝高が豊前の中津に城の造営を始めた。'
+ });
+}
