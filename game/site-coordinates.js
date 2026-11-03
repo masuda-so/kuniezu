@@ -8,7 +8,7 @@
  TK.YOSHO.push(['馬ヶ岳城','城',130.946061,33.679026,'豊前国・山城。戦国末期は長野氏の拠点。九州平定後、黒田孝高が中津城へ移る前に本拠とし、1600年には桐山信行が守備した。',null,1601]);
  TK.SITE_COORDINATES.push({kind:"site",id:umagatakeIndex,name:"馬ヶ岳城",point:[130.946061,33.679026],ref:"410000434700"});
  TK.CASTLE_EVIDENCE['馬ヶ岳城']={role:'長野氏・黒田氏の拠点',source:'https://www.city.yukuhashi.fukuoka.jp/site/bunkazai/1998.html',checked:'2026-11-03'};
- const forts=[
+ const forts=TK.TAKATENJIN_FORTS=[
   ['小笠山砦',138.0112848,34.7368629,'小笠山の山頂付近に置かれ、北側から城と周辺を見渡した。'],
   ['能ヶ坂砦',138.0467885,34.7140548,'高天神城の北東、小貫と土方の境に置かれた。'],
   ['火ヶ峰砦',138.0578468,34.7028421,'城の東北東にある砦。位置に二説があり、地図は東砦側の代表点。'],
