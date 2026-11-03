@@ -96,15 +96,35 @@ const paperTile=(()=>{const c=document.createElement('canvas');c.width=c.height=
 
 
 /* ===== 本人の肖像 ===== */
-const faceImg=new Image();let faceReady=false;faceImg.onload=()=>{faceReady=true;pcache.clear();urlCache.clear();if(U.mode!=='title')renderAll();};faceImg.src='faces.webp';
 const FT=128,FCOLS=10;
 const pcache=new Map(),urlCache=new Map();const PDPR=Math.min(2,devicePixelRatio||1);
 const hasFace=n=>TK.faceOf(n)>=0||!!(TK.EXTRA_PORTRAITS?.[n]||TK.EXTRA_PORTRAITS?.[TK.PORTRAIT_ALIAS[n]]);
-const extraFaceImages=new Map();
-for(const [name,extra] of Object.entries(TK.EXTRA_PORTRAITS||{}).filter(([n])=>TK.faceOf(n)<0)){const im=new Image();im.onload=()=>{pcache.clear();urlCache.clear();U.baseDirty=true;if(U.mode!=='title')renderAll();};im.src=extra.src;extraFaceImages.set(name,im);}
+// 必要になった肖像だけ、同じ原画像は一度、同時に2枚まで取得する。
+const extraFaceImages=new Map(),faceQueue=[];let faceActive=0,faceReady=false;
+const faceImg=new Image();faceImg.decoding='async';
+let portraitRefreshTimer=0,portraitAtlasDirty=false;const portraitChanged=new Set();
+function queuePortraitRefresh(names){if(names)for(const n of names)portraitChanged.add(n);else portraitAtlasDirty=true;
+ if(!portraitRefreshTimer&&!document.hidden)portraitRefreshTimer=setTimeout(refreshPortraits,120);}
+function refreshPortraits(){portraitRefreshTimer=0;if(document.hidden)return;
+ if(pressLock){portraitRefreshTimer=setTimeout(refreshPortraits,100);return;}
+ const atlas=portraitAtlasDirty,changed=new Set(portraitChanged);portraitAtlasDirty=false;portraitChanged.clear();
+ for(const cache of [pcache,urlCache])for(const key of cache.keys())if(atlas||changed.has(key.split('|')[0]))cache.delete(key);
+ // 画面全体や非表示の年表を作り直さず、表示中の顔だけ差し替える。
+ for(const el of document.querySelectorAll('[data-portrait]'))if(el.offsetParent!==null&&(atlas||changed.has(el.dataset.portrait)))el.outerHTML=faceHTML(el.dataset.portrait,el.dataset.portraitSize,el.dataset.portraitClan||undefined);
+ topSig='';U.wakeLoop?.();}
+function pumpPortraits(){if(document.hidden)return;while(faceActive<2&&faceQueue.length){const entry=faceQueue.shift();entry.state='loading';entry.attempts++;faceActive++;
+ const im=new Image();im.decoding='async';entry.image=im;
+ const settle=ok=>{im.onload=im.onerror=null;faceActive--;entry.state=ok?'ready':'failed';if(ok)queuePortraitRefresh(entry.names);
+  // 一時的な接続切断だけで肖像を欠けたままにしない。再試行は一度に限る。
+  else if(entry.attempts<2)setTimeout(()=>{entry.state='queued';faceQueue.push(entry);pumpPortraits();},500);
+  pumpPortraits();};
+ im.onload=()=>settle(im.naturalWidth>0);im.onerror=()=>settle(false);im.src=entry.src;}}
+function extraPortrait(name,extra){let entry=extraFaceImages.get(extra.src);if(!entry){entry={src:extra.src,names:new Set(),state:'queued',attempts:0,image:null};extraFaceImages.set(extra.src,entry);faceQueue.push(entry);}entry.names.add(name);pumpPortraits();return entry.state==='ready'?entry.image:null;}
+faceImg.onload=()=>{faceReady=true;queuePortraitRefresh();};faceImg.src='faces.webp';
+document.addEventListener('visibilitychange',()=>{if(!document.hidden){pumpPortraits();if(portraitAtlasDirty||portraitChanged.size)queuePortraitRefresh([]);}});
 function portrait(name,r,ring,col){
  const idx=TK.faceOf(name);let extra=TK.EXTRA_PORTRAITS?.[name]||TK.EXTRA_PORTRAITS?.[TK.PORTRAIT_ALIAS[name]];let source=faceImg,crop=[(idx%FCOLS)*FT,Math.floor(idx/FCOLS)*FT,FT,FT];
- if(extra){let im=extraFaceImages.get(name);if(!im){im=new Image();im.onload=()=>{pcache.clear();urlCache.clear();U.baseDirty=true;if(U.mode!=='title')renderAll();};im.src=extra.src;extraFaceImages.set(name,im);}if(!im.complete||!im.naturalWidth){if(idx<0)return null;extra=null;}else{source=im;crop=extra.crop;}}else if(idx<0||!faceReady)return null;
+ if(extra){const im=extraPortrait(name,extra);if(!im){if(idx<0||!faceReady)return null;extra=null;}else{source=im;crop=extra.crop;}}else if(idx<0||!faceReady)return null;
  const key=name+'|'+idx+'|'+r+'|'+ring+'|'+col;if(pcache.has(key))return pcache.get(key);
  const s=Math.ceil(r*2+6),c=document.createElement('canvas');c.width=s*PDPR;c.height=s*PDPR;c.css=s;const x=c.getContext('2d');x.scale(PDPR,PDPR);
  const cx=s/2,cy=s/2;
@@ -116,9 +136,10 @@ function portrait(name,r,ring,col){
  pcache.set(key,c);return c;
 }
 function faceHTML(name,size,k){const r=size==='sm'?15:size==='xl'?46:size==='lg'?30:20;const s=r*2+6;
- const c=portrait(name,r,size!=='sm',k?G.CC(k):null);
- if(!c)return `<span class="noface ${size||''}" style="width:${s}px;height:${s}px;--c:${k?G.CC(k):'#777'}">${esc(({'明宗':'朝'})[name]||(name||'').slice(0,1))}</span>`;
- const key=name+'|'+TK.faceOf(name)+'|'+r+'|'+k;let u=urlCache.get(key);if(!u){u=c.toDataURL();urlCache.set(key,u);}return `<img class="face ${size||''}" src="${u}" alt="${esc(name)}" width="${s}" height="${s}">`;}
+ const attrs=`data-portrait="${esc(name)}" data-portrait-size="${esc(size||'')}" data-portrait-clan="${esc(k||'')}"`,c=portrait(name,r,size!=='sm',k?G.CC(k):null);
+ if(!c)return `<span class="noface ${size||''}" ${attrs} style="width:${s}px;height:${s}px;--c:${k?G.CC(k):'#777'}">${esc(({'明宗':'朝'})[name]||(name||'').slice(0,1))}</span>`;
+ const key=name+'|'+TK.faceOf(name)+'|'+r+'|'+k;let u=urlCache.get(key);if(!u){u=c.toDataURL();urlCache.set(key,u);}return `<img class="face ${size||''}" ${attrs} src="${u}" alt="${esc(name)}" width="${s}" height="${s}">`;}
+
 
 // 家を選ぶ画面の印。登録紋があれば家紋、なければ家名の一字を家の色の丸に出す。
 function familyMarkHTML(k,size=22){const r=G.kamonRecord(k);if(r)return `<span class="crest fmark" style="width:${size}px;height:${size}px">${kamonHTML(k,size)}</span>`;const name=G.CN(k)||'';return `<span class="crest fmark letter" style="width:${size}px;height:${size}px;--c:${G.CC(k)}" aria-label="${esc(name)}の印">${esc(({joseon:'朝',ming:'明'})[k]||name.replace(/家$/,'').slice(0,1))}</span>`;}

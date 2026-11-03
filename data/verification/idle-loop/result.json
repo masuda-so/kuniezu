@@ -1,0 +1,276 @@
+{
+  "ok": true,
+  "error": "AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:\n+ actual - expected\n\n+ [\n+   {\n+     status: 404,\n+     url: 'http://localhost:8000/favicon.ico'\n+   }\n+ ]\n- []\n",
+  "rows": [
+    {
+      "label": "initial-title",
+      "ms": 4000,
+      "before": {
+        "stats": {
+          "base": 5,
+          "top": 5,
+          "still": 5
+        },
+        "loops": 17,
+        "speed": 0,
+        "mode": "title",
+        "time": 34,
+        "fraction": 0
+      },
+      "after": {
+        "stats": {
+          "base": 5,
+          "top": 5,
+          "still": 5
+        },
+        "loops": 37,
+        "speed": 0,
+        "mode": "title",
+        "time": 34,
+        "fraction": 0
+      },
+      "loops": 20,
+      "draws": {
+        "base": 0,
+        "top": 0,
+        "still": 0
+      },
+      "taskSeconds": 0.03601799999999944,
+      "scriptSeconds": 0.0029700000000003612
+    },
+    {
+      "label": "paused-game",
+      "ms": 3000,
+      "before": {
+        "stats": {
+          "base": 16,
+          "top": 16,
+          "still": 16
+        },
+        "loops": 143,
+        "speed": 0,
+        "mode": "game",
+        "time": 34,
+        "fraction": 0
+      },
+      "after": {
+        "stats": {
+          "base": 16,
+          "top": 16,
+          "still": 16
+        },
+        "loops": 158,
+        "speed": 0,
+        "mode": "game",
+        "time": 34,
+        "fraction": 0
+      },
+      "loops": 15,
+      "draws": {
+        "base": 0,
+        "top": 0,
+        "still": 0
+      },
+      "taskSeconds": 0.010515000000000718,
+      "scriptSeconds": 0.0012319999999998998
+    },
+    {
+      "label": "playing",
+      "ms": 1500,
+      "before": {
+        "stats": {
+          "base": 16,
+          "top": 17,
+          "still": 17
+        },
+        "loops": 159,
+        "speed": 1,
+        "mode": "game",
+        "time": 34,
+        "fraction": 0.0625
+      },
+      "after": {
+        "stats": {
+          "base": 16,
+          "top": 63,
+          "still": 18
+        },
+        "loops": 251,
+        "speed": 1,
+        "mode": "game",
+        "time": 34,
+        "fraction": 0.4499860000000005
+      },
+      "loops": 92,
+      "draws": {
+        "base": 0,
+        "top": 46,
+        "still": 1
+      },
+      "taskSeconds": 0.12514699999999923,
+      "scriptSeconds": 0.03617999999999988
+    },
+    {
+      "label": "returned-title",
+      "ms": 6000,
+      "before": {
+        "stats": {
+          "base": 18,
+          "top": 65,
+          "still": 20
+        },
+        "loops": 374,
+        "speed": 0,
+        "mode": "title",
+        "time": 34,
+        "fraction": 0
+      },
+      "after": {
+        "stats": {
+          "base": 18,
+          "top": 65,
+          "still": 20
+        },
+        "loops": 404,
+        "speed": 0,
+        "mode": "title",
+        "time": 34,
+        "fraction": 0
+      },
+      "loops": 30,
+      "draws": {
+        "base": 0,
+        "top": 0,
+        "still": 0
+      },
+      "taskSeconds": 0.01715900000000037,
+      "scriptSeconds": 0.0032490000000002794
+    },
+    {
+      "label": "simulated-hidden-title",
+      "ms": 3000,
+      "before": {
+        "stats": {
+          "base": 18,
+          "top": 65,
+          "still": 20
+        },
+        "loops": 405,
+        "speed": 0,
+        "mode": "title",
+        "time": 34,
+        "fraction": 0
+      },
+      "after": {
+        "stats": {
+          "base": 18,
+          "top": 65,
+          "still": 20
+        },
+        "loops": 405,
+        "speed": 0,
+        "mode": "title",
+        "time": 34,
+        "fraction": 0
+      },
+      "loops": 0,
+      "draws": {
+        "base": 0,
+        "top": 0,
+        "still": 0
+      },
+      "taskSeconds": 0.0035170000000004364,
+      "scriptSeconds": 0
+    },
+    {
+      "label": "visibility-resumed-title",
+      "ms": 1500,
+      "before": {
+        "stats": {
+          "base": 18,
+          "top": 65,
+          "still": 20
+        },
+        "loops": 406,
+        "speed": 0,
+        "mode": "title",
+        "time": 34,
+        "fraction": 0
+      },
+      "after": {
+        "stats": {
+          "base": 18,
+          "top": 65,
+          "still": 20
+        },
+        "loops": 413,
+        "speed": 0,
+        "mode": "title",
+        "time": 34,
+        "fraction": 0
+      },
+      "loops": 7,
+      "draws": {
+        "base": 0,
+        "top": 0,
+        "still": 0
+      },
+      "taskSeconds": 0.15056000000000047,
+      "scriptSeconds": 0.004986999999999853
+    }
+  ],
+  "errors": [],
+  "httpErrors": [
+    {
+      "url": "http://localhost:8000/favicon.ico",
+      "status": 404
+    }
+  ],
+  "loadFailures": [
+    {
+      "requestId": "69454.1019",
+      "timestamp": 8191.802841,
+      "type": "Image",
+      "errorText": "net::ERR_CONNECTION_RESET",
+      "canceled": false,
+      "url": "http://localhost:8000/portraits/quality-%E4%BD%90%E9%87%8E%E6%98%8C%E7%B6%B1.jpg"
+    },
+    {
+      "requestId": "69454.1020",
+      "timestamp": 8191.802907,
+      "type": "Image",
+      "errorText": "net::ERR_SOCKET_NOT_CONNECTED",
+      "canceled": false,
+      "url": "http://localhost:8000/portraits/quality-%E7%9B%B8%E8%89%AF%E7%BE%A9%E9%99%BD.jpg"
+    },
+    {
+      "requestId": "69454.1021",
+      "timestamp": 8191.802921,
+      "type": "Image",
+      "errorText": "net::ERR_SOCKET_NOT_CONNECTED",
+      "canceled": false,
+      "url": "http://localhost:8000/portraits/%E5%AE%97%E7%BE%A9%E8%AA%BF.jpg"
+    }
+  ],
+  "scope": "idle/resume drawing and main-thread measurements only",
+  "allNetworkChecksPassed": false,
+  "verification": "All six idle/resume samples and resume button assertion passed. Original run exited 1 on favicon.ico; three lazy portrait requests failed. Browser not rerun.",
+  "visibilityTest": "Synthetic visibilitychange with configurable document.hidden override; actual OS tab hiding not measured",
+  "portraitRecheck": [
+    {
+      "url": "http://localhost:8000/portraits/quality-%E4%BD%90%E9%87%8E%E6%98%8C%E7%B6%B1.jpg",
+      "status": 200,
+      "bytes": 14869
+    },
+    {
+      "url": "http://localhost:8000/portraits/quality-%E7%9B%B8%E8%89%AF%E7%BE%A9%E9%99%BD.jpg",
+      "status": 200,
+      "bytes": 26578
+    },
+    {
+      "url": "http://localhost:8000/portraits/%E5%AE%97%E7%BE%A9%E8%AA%BF.jpg",
+      "status": 200,
+      "bytes": 25552
+    }
+  ]
+}
