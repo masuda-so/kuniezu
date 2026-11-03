@@ -1,0 +1,6149 @@
+{
+  "ok": true,
+  "url": "http://localhost:8000/index.html",
+  "scope": "isolated map-date/hover/touch inspection; not a full historical simulation",
+  "sourceSha256": "9e27144aa9c953299567fd3719d3ad413ea1f496ad03a097e1e25b2c6eb1a03d",
+  "sourcePngSha256": "b046fd2334f79080772ea8a65df1ae04ce890fd474bd326dea35a4e546b842c8",
+  "checks": [
+    {
+      "label": "1400-1560",
+      "year": 1560,
+      "version": null,
+      "places": [
+        {
+          "name": "遼陽",
+          "pick": {
+            "id": 142,
+            "rgb": [
+              142,
+              6,
+              234
+            ],
+            "key": "neutral:明",
+            "kind": "land",
+            "factor": 1
+          }
+        },
+        {
+          "name": "瀋陽",
+          "pick": {
+            "id": 142,
+            "rgb": [
+              142,
+              6,
+              234
+            ],
+            "key": "neutral:明",
+            "kind": "land",
+            "factor": 1
+          }
+        },
+        {
+          "name": "開原",
+          "pick": {
+            "id": 142,
+            "rgb": [
+              142,
+              6,
+              234
+            ],
+            "key": "neutral:明",
+            "kind": "land",
+            "factor": 1
+          }
+        },
+        {
+          "name": "寛甸",
+          "pick": {
+            "id": 2,
+            "rgb": [
+              55,
+              123,
+              140
+            ],
+            "key": "unassigned",
+            "kind": "land",
+            "factor": 1
+          }
+        },
+        {
+          "name": "義州",
+          "pick": {
+            "id": 125,
+            "rgb": [
+              222,
+              243,
+              163
+            ],
+            "key": "castle:uiju",
+            "kind": "land",
+            "factor": 1
+          }
+        },
+        {
+          "name": "旧明除去",
+          "pick": {
+            "id": 2,
+            "rgb": [
+              55,
+              123,
+              140
+            ],
+            "key": "unassigned",
+            "kind": "land",
+            "factor": 1
+          }
+        }
+      ],
+      "coast": {
+        "mode": "game",
+        "date": {
+          "y": 1560,
+          "m": 1,
+          "d": 1
+        },
+        "version": null,
+        "fujitoPassageConnected": true,
+        "visitedSeaCells": 10667,
+        "points": [
+          {
+            "name": "経ヶ島",
+            "point": [
+              133.8108903,
+              34.5610021
+            ],
+            "pick": {
+              "id": 114,
+              "rgb": [
+                124,
+                185,
+                164
+              ],
+              "key": "castle:tenjin",
+              "kind": "land",
+              "factor": 1
+            }
+          },
+          {
+            "name": "藤戸寺",
+            "point": [
+              133.8095872,
+              34.5601554
+            ],
+            "pick": {
+              "id": 114,
+              "rgb": [
+                124,
+                185,
+                164
+              ],
+              "key": "castle:tenjin",
+              "kind": "land",
+              "factor": 1
+            }
+          },
+          {
+            "name": "浮洲岩跡",
+            "point": [
+              133.8052177,
+              34.5598924
+            ],
+            "pick": {
+              "id": 114,
+              "rgb": [
+                124,
+                185,
+                164
+              ],
+              "key": "castle:tenjin",
+              "kind": "land",
+              "factor": 1
+            }
+          },
+          {
+            "name": "塩生",
+            "point": [
+              133.771388,
+              34.476388
+            ],
+            "pick": {
+              "id": 114,
+              "rgb": [
+                124,
+                185,
+                164
+              ],
+              "key": "castle:tenjin",
+              "kind": "land",
+              "factor": 1
+            }
+          },
+          {
+            "name": "水島",
+            "point": [
+              133.718,
+              34.517
+            ],
+            "pick": {
+              "id": 1,
+              "rgb": [
+                8,
+                24,
+                48
+              ],
+              "key": "sea",
+              "kind": "sea",
+              "factor": 1
+            }
+          },
+          {
+            "name": "早島の丘",
+            "point": [
+              133.81842,
+              34.599915
+            ],
+            "pick": {
+              "id": 5,
+              "rgb": [
+                221,
+                232,
+                45
+              ],
+              "key": "castle:bmatsuyama",
+              "kind": "land",
+              "factor": 1
+            }
+          },
+          {
+            "name": "北岸",
+            "point": [
+              133.9,
+              34.64
+            ],
+            "pick": {
+              "id": 114,
+              "rgb": [
+                124,
+                185,
+                164
+              ],
+              "key": "castle:tenjin",
+              "kind": "land",
+              "factor": 1
+            }
+          },
+          {
+            "name": "宇喜多期",
+            "point": [
+              133.83584341367313,
+              34.59907294286741
+            ],
+            "pick": {
+              "id": 1,
+              "rgb": [
+                8,
+                24,
+                48
+              ],
+              "key": "sea",
+              "kind": "sea",
+              "factor": 1
+            }
+          }
+        ],
+        "relief": {
+          "8:0-0.webp": "ready",
+          "8:1-0.webp": "ready",
+          "8:2-0.webp": "ready",
+          "8:0-1.webp": "ready",
+          "8:1-1.webp": "ready",
+          "8:2-1.webp": "ready",
+          "8:0-2.webp": "ready",
+          "8:1-2.webp": "ready",
+          "8:2-2.webp": "ready",
+          "4:1-2.webp": "ready",
+          "4:2-2.webp": "ready",
+          "4:3-2.webp": "ready",
+          "4:1-3.webp": "ready",
+          "4:2-3.webp": "ready",
+          "4:3-3.webp": "ready"
+        }
+      }
+    },
+    {
+      "label": "1400-1572",
+      "year": 1572,
+      "version": null,
+      "places": [
+        {
+          "name": "遼陽",
+          "pick": {
+            "id": 142,
+            "rgb": [
+              142,
+              6,
+              234
+            ],
+            "key": "neutral:明",
+            "kind": "land",
+            "factor": 1
+          }
+        },
+        {
+          "name": "瀋陽",
+          "pick": {
+            "id": 142,
+            "rgb": [
+              142,
+              6,
+              234
+            ],
+            "key": "neutral:明",
+            "kind": "land",
+            "factor": 1
+          }
+        },
+        {
+          "name": "開原",
+          "pick": {
+            "id": 142,
+            "rgb": [
+              142,
+              6,
+              234
+            ],
+            "key": "neutral:明",
+            "kind": "land",
+            "factor": 1
+          }
+        },
+        {
+          "name": "寛甸",
+          "pick": {
+            "id": 2,
+            "rgb": [
+              55,
+              123,
+              140
+            ],
+            "key": "unassigned",
+            "kind": "land",
+            "factor": 1
+          }
+        },
+        {
+          "name": "義州",
+          "pick": {
+            "id": 125,
+            "rgb": [
+              222,
+              243,
+              163
+            ],
+            "key": "castle:uiju",
+            "kind": "land",
+            "factor": 1
+          }
+        },
+        {
+          "name": "旧明除去",
+          "pick": {
+            "id": 2,
+            "rgb": [
+              55,
+              123,
+              140
+            ],
+            "key": "unassigned",
+            "kind": "land",
+            "factor": 1
+          }
+        }
+      ],
+      "coast": {
+        "mode": "game",
+        "date": {
+          "y": 1572,
+          "m": 1,
+          "d": 1
+        },
+        "version": null,
+        "fujitoPassageConnected": true,
+        "visitedSeaCells": 10667,
+        "points": [
+          {
+            "name": "経ヶ島",
+            "point": [
+              133.8108903,
+              34.5610021
+            ],
+            "pick": {
+              "id": 114,
+              "rgb": [
+                124,
+                185,
+                164
+              ],
+              "key": "castle:tenjin",
+              "kind": "land",
+              "factor": 1
+            }
+          },
+          {
+            "name": "藤戸寺",
+            "point": [
+              133.8095872,
+              34.5601554
+            ],
+            "pick": {
+              "id": 114,
+              "rgb": [
+                124,
+                185,
+                164
+              ],
+              "key": "castle:tenjin",
+              "kind": "land",
+              "factor": 1
+            }
+          },
+          {
+            "name": "浮洲岩跡",
+            "point": [
+              133.8052177,
+              34.5598924
+            ],
+            "pick": {
+              "id": 114,
+              "rgb": [
+                124,
+                185,
+                164
+              ],
+              "key": "castle:tenjin",
+              "kind": "land",
+              "factor": 1
+            }
+          },
+          {
+            "name": "塩生",
+            "point": [
+              133.771388,
+              34.476388
+            ],
+            "pick": {
+              "id": 114,
+              "rgb": [
+                124,
+                185,
+                164
+              ],
+              "key": "castle:tenjin",
+              "kind": "land",
+              "factor": 1
+            }
+          },
+          {
+            "name": "水島",
+            "point": [
+              133.718,
+              34.517
+            ],
+            "pick": {
+              "id": 1,
+              "rgb": [
+                8,
+                24,
+                48
+              ],
+              "key": "sea",
+              "kind": "sea",
+              "factor": 1
+            }
+          },
+          {
+            "name": "早島の丘",
+            "point": [
+              133.81842,
+              34.599915
+            ],
+            "pick": {
+              "id": 5,
+              "rgb": [
+                221,
+                232,
+                45
+              ],
+              "key": "castle:bmatsuyama",
+              "kind": "land",
+              "factor": 1
+            }
+          },
+          {
+            "name": "北岸",
+            "point": [
+              133.9,
+              34.64
+            ],
+            "pick": {
+              "id": 114,
+              "rgb": [
+                124,
+                185,
+                164
+              ],
+              "key": "castle:tenjin",
+              "kind": "land",
+              "factor": 1
+            }
+          },
+          {
+            "name": "宇喜多期",
+            "point": [
+              133.83584341367313,
+              34.59907294286741
+            ],
+            "pick": {
+              "id": 1,
+              "rgb": [
+                8,
+                24,
+                48
+              ],
+              "key": "sea",
+              "kind": "sea",
+              "factor": 1
+            }
+          }
+        ],
+        "relief": {
+          "8:0-0.webp": "ready",
+          "8:1-0.webp": "ready",
+          "8:2-0.webp": "ready",
+          "8:0-1.webp": "ready",
+          "8:1-1.webp": "ready",
+          "8:2-1.webp": "ready",
+          "8:0-2.webp": "ready",
+          "8:1-2.webp": "ready",
+          "8:2-2.webp": "ready",
+          "4:1-2.webp": "ready",
+          "4:2-2.webp": "ready",
+          "4:3-2.webp": "ready",
+          "4:1-3.webp": "ready",
+          "4:2-3.webp": "ready",
+          "4:3-3.webp": "ready",
+          "1:0-4.webp": "ready",
+          "1:1-4.webp": "ready",
+          "1:0-5.webp": "ready",
+          "1:1-5.webp": "ready",
+          "1:0-6.webp": "ready",
+          "1:1-6.webp": "ready",
+          "4:0-1.webp": "ready",
+          "1:2-5.webp": "ready",
+          "1:2-6.webp": "ready",
+          "4:0-0.webp": "ready",
+          "4:1-0.webp": "ready",
+          "4:1-1.webp": "ready"
+        }
+      }
+    },
+    {
+      "label": "1400-1573",
+      "year": 1573,
+      "version": "15730101-15840101",
+      "places": [
+        {
+          "name": "遼陽",
+          "pick": {
+            "id": 142,
+            "rgb": [
+              142,
+              6,
+              234
+            ],
+            "key": "neutral:明",
+            "kind": "land",
+            "factor": 1
+          }
+        },
+        {
+          "name": "瀋陽",
+          "pick": {
+            "id": 142,
+            "rgb": [
+              142,
+              6,
+              234
+            ],
+            "key": "neutral:明",
+            "kind": "land",
+            "factor": 1
+          }
+        },
+        {
+          "name": "開原",
+          "pick": {
+            "id": 142,
+            "rgb": [
+              142,
+              6,
+              234
+            ],
+            "key": "neutral:明",
+            "kind": "land",
+            "factor": 1
+          }
+        },
+        {
+          "name": "寛甸",
+          "pick": {
+            "id": 142,
+            "rgb": [
+              142,
+              6,
+              234
+            ],
+            "key": "neutral:明",
+            "kind": "land",
+            "factor": 1
+          }
+        },
+        {
+          "name": "義州",
+          "pick": {
+            "id": 125,
+            "rgb": [
+              222,
+              243,
+              163
+            ],
+            "key": "castle:uiju",
+            "kind": "land",
+            "factor": 1
+          }
+        },
+        {
+          "name": "旧明除去",
+          "pick": {
+            "id": 2,
+            "rgb": [
+              55,
+              123,
+              140
+            ],
+            "key": "unassigned",
+            "kind": "land",
+            "factor": 1
+          }
+        }
+      ],
+      "coast": {
+        "mode": "game",
+        "date": {
+          "y": 1573,
+          "m": 1,
+          "d": 1
+        },
+        "version": "15730101-15840101",
+        "fujitoPassageConnected": true,
+        "visitedSeaCells": 10667,
+        "points": [
+          {
+            "name": "経ヶ島",
+            "point": [
+              133.8108903,
+              34.5610021
+            ],
+            "pick": {
+              "id": 114,
+              "rgb": [
+                124,
+                185,
+                164
+              ],
+              "key": "castle:tenjin",
+              "kind": "land",
+              "factor": 1
+            }
+          },
+          {
+            "name": "藤戸寺",
+            "point": [
+              133.8095872,
+              34.5601554
+            ],
+            "pick": {
+              "id": 114,
+              "rgb": [
+                124,
+                185,
+                164
+              ],
+              "key": "castle:tenjin",
+              "kind": "land",
+              "factor": 1
+            }
+          },
+          {
+            "name": "浮洲岩跡",
+            "point": [
+              133.8052177,
+              34.5598924
+            ],
+            "pick": {
+              "id": 114,
+              "rgb": [
+                124,
+                185,
+                164
+              ],
+              "key": "castle:tenjin",
+              "kind": "land",
+              "factor": 1
+            }
+          },
+          {
+            "name": "塩生",
+            "point": [
+              133.771388,
+              34.476388
+            ],
+            "pick": {
+              "id": 114,
+              "rgb": [
+                124,
+                185,
+                164
+              ],
+              "key": "castle:tenjin",
+              "kind": "land",
+              "factor": 1
+            }
+          },
+          {
+            "name": "水島",
+            "point": [
+              133.718,
+              34.517
+            ],
+            "pick": {
+              "id": 1,
+              "rgb": [
+                8,
+                24,
+                48
+              ],
+              "key": "sea",
+              "kind": "sea",
+              "factor": 1
+            }
+          },
+          {
+            "name": "早島の丘",
+            "point": [
+              133.81842,
+              34.599915
+            ],
+            "pick": {
+              "id": 5,
+              "rgb": [
+                221,
+                232,
+                45
+              ],
+              "key": "castle:bmatsuyama",
+              "kind": "land",
+              "factor": 1
+            }
+          },
+          {
+            "name": "北岸",
+            "point": [
+              133.9,
+              34.64
+            ],
+            "pick": {
+              "id": 114,
+              "rgb": [
+                124,
+                185,
+                164
+              ],
+              "key": "castle:tenjin",
+              "kind": "land",
+              "factor": 1
+            }
+          },
+          {
+            "name": "宇喜多期",
+            "point": [
+              133.83584341367313,
+              34.59907294286741
+            ],
+            "pick": {
+              "id": 1,
+              "rgb": [
+                8,
+                24,
+                48
+              ],
+              "key": "sea",
+              "kind": "sea",
+              "factor": 1
+            }
+          }
+        ],
+        "relief": {
+          "8:0-0.webp": "ready",
+          "8:1-0.webp": "ready",
+          "8:2-0.webp": "ready",
+          "8:0-1.webp": "ready",
+          "8:1-1.webp": "ready",
+          "8:2-1.webp": "ready",
+          "8:0-2.webp": "ready",
+          "8:1-2.webp": "ready",
+          "8:2-2.webp": "ready",
+          "4:1-2.webp": "ready",
+          "4:2-2.webp": "ready",
+          "4:3-2.webp": "ready",
+          "4:1-3.webp": "ready",
+          "4:2-3.webp": "ready",
+          "4:3-3.webp": "ready",
+          "1:0-4.webp": "ready",
+          "1:1-4.webp": "ready",
+          "1:0-5.webp": "ready",
+          "1:1-5.webp": "ready",
+          "1:0-6.webp": "ready",
+          "1:1-6.webp": "ready",
+          "4:0-1.webp": "ready",
+          "1:2-5.webp": "ready",
+          "1:2-6.webp": "ready",
+          "4:0-0.webp": "ready",
+          "4:1-0.webp": "ready",
+          "4:1-1.webp": "ready"
+        }
+      }
+    },
+    {
+      "label": "1400-1603",
+      "year": 1603,
+      "version": "15840101-16060101",
+      "places": [
+        {
+          "name": "遼陽",
+          "pick": {
+            "id": 142,
+            "rgb": [
+              142,
+              6,
+              234
+            ],
+            "key": "neutral:明",
+            "kind": "land",
+            "factor": 1
+          }
+        },
+        {
+          "name": "瀋陽",
+          "pick": {
+            "id": 142,
+            "rgb": [
+              142,
+              6,
+              234
+            ],
+            "key": "neutral:明",
+            "kind": "land",
+            "factor": 1
+          }
+        },
+        {
+          "name": "開原",
+          "pick": {
+            "id": 142,
+            "rgb": [
+              142,
+              6,
+              234
+            ],
+            "key": "neutral:明",
+            "kind": "land",
+            "factor": 1
+          }
+        },
+        {
+          "name": "寛甸",
+          "pick": {
+            "id": 142,
+            "rgb": [
+              142,
+              6,
+              234
+            ],
+            "key": "neutral:明",
+            "kind": "land",
+            "factor": 1
+          }
+        },
+        {
+          "name": "義州",
+          "pick": {
+            "id": 125,
+            "rgb": [
+              222,
+              243,
+              163
+            ],
+            "key": "castle:uiju",
+            "kind": "land",
+            "factor": 1
+          }
+        },
+        {
+          "name": "旧明除去",
+          "pick": {
+            "id": 2,
+            "rgb": [
+              55,
+              123,
+              140
+            ],
+            "key": "unassigned",
+            "kind": "land",
+            "factor": 1
+          }
+        }
+      ],
+      "coast": {
+        "mode": "game",
+        "date": {
+          "y": 1603,
+          "m": 1,
+          "d": 1
+        },
+        "version": "15840101-16060101",
+        "fujitoPassageConnected": true,
+        "visitedSeaCells": 10308,
+        "points": [
+          {
+            "name": "経ヶ島",
+            "point": [
+              133.8108903,
+              34.5610021
+            ],
+            "pick": {
+              "id": 114,
+              "rgb": [
+                124,
+                185,
+                164
+              ],
+              "key": "castle:tenjin",
+              "kind": "land",
+              "factor": 1
+            }
+          },
+          {
+            "name": "藤戸寺",
+            "point": [
+              133.8095872,
+              34.5601554
+            ],
+            "pick": {
+              "id": 114,
+              "rgb": [
+                124,
+                185,
+                164
+              ],
+              "key": "castle:tenjin",
+              "kind": "land",
+              "factor": 1
+            }
+          },
+          {
+            "name": "浮洲岩跡",
+            "point": [
+              133.8052177,
+              34.5598924
+            ],
+            "pick": {
+              "id": 114,
+              "rgb": [
+                124,
+                185,
+                164
+              ],
+              "key": "castle:tenjin",
+              "kind": "land",
+              "factor": 1
+            }
+          },
+          {
+            "name": "塩生",
+            "point": [
+              133.771388,
+              34.476388
+            ],
+            "pick": {
+              "id": 114,
+              "rgb": [
+                124,
+                185,
+                164
+              ],
+              "key": "castle:tenjin",
+              "kind": "land",
+              "factor": 1
+            }
+          },
+          {
+            "name": "水島",
+            "point": [
+              133.718,
+              34.517
+            ],
+            "pick": {
+              "id": 1,
+              "rgb": [
+                8,
+                24,
+                48
+              ],
+              "key": "sea",
+              "kind": "sea",
+              "factor": 1
+            }
+          },
+          {
+            "name": "早島の丘",
+            "point": [
+              133.81842,
+              34.599915
+            ],
+            "pick": {
+              "id": 5,
+              "rgb": [
+                221,
+                232,
+                45
+              ],
+              "key": "castle:bmatsuyama",
+              "kind": "land",
+              "factor": 1
+            }
+          },
+          {
+            "name": "北岸",
+            "point": [
+              133.9,
+              34.64
+            ],
+            "pick": {
+              "id": 114,
+              "rgb": [
+                124,
+                185,
+                164
+              ],
+              "key": "castle:tenjin",
+              "kind": "land",
+              "factor": 1
+            }
+          },
+          {
+            "name": "宇喜多期",
+            "point": [
+              133.83584341367313,
+              34.59907294286741
+            ],
+            "pick": {
+              "id": 5,
+              "rgb": [
+                221,
+                232,
+                45
+              ],
+              "key": "castle:bmatsuyama",
+              "kind": "land",
+              "factor": 1
+            }
+          }
+        ],
+        "relief": {
+          "8:0-0.webp": "ready",
+          "8:1-0.webp": "ready",
+          "8:2-0.webp": "ready",
+          "8:0-1.webp": "ready",
+          "8:1-1.webp": "ready",
+          "8:2-1.webp": "ready",
+          "8:0-2.webp": "ready",
+          "8:1-2.webp": "ready",
+          "8:2-2.webp": "ready",
+          "4:1-2.webp": "ready",
+          "4:2-2.webp": "ready",
+          "4:3-2.webp": "ready",
+          "4:1-3.webp": "ready",
+          "4:2-3.webp": "ready",
+          "4:3-3.webp": "ready",
+          "1:0-4.webp": "ready",
+          "1:1-4.webp": "ready",
+          "1:0-5.webp": "ready",
+          "1:1-5.webp": "ready",
+          "1:0-6.webp": "ready",
+          "1:1-6.webp": "ready",
+          "4:0-1.webp": "ready",
+          "1:2-5.webp": "ready",
+          "1:2-6.webp": "ready",
+          "4:0-0.webp": "ready",
+          "4:1-0.webp": "ready",
+          "4:1-1.webp": "ready"
+        }
+      }
+    },
+    {
+      "label": "1400-1605",
+      "year": 1605,
+      "version": "15840101-16060101",
+      "places": [
+        {
+          "name": "遼陽",
+          "pick": {
+            "id": 142,
+            "rgb": [
+              142,
+              6,
+              234
+            ],
+            "key": "neutral:明",
+            "kind": "land",
+            "factor": 1
+          }
+        },
+        {
+          "name": "瀋陽",
+          "pick": {
+            "id": 142,
+            "rgb": [
+              142,
+              6,
+              234
+            ],
+            "key": "neutral:明",
+            "kind": "land",
+            "factor": 1
+          }
+        },
+        {
+          "name": "開原",
+          "pick": {
+            "id": 142,
+            "rgb": [
+              142,
+              6,
+              234
+            ],
+            "key": "neutral:明",
+            "kind": "land",
+            "factor": 1
+          }
+        },
+        {
+          "name": "寛甸",
+          "pick": {
+            "id": 142,
+            "rgb": [
+              142,
+              6,
+              234
+            ],
+            "key": "neutral:明",
+            "kind": "land",
+            "factor": 1
+          }
+        },
+        {
+          "name": "義州",
+          "pick": {
+            "id": 125,
+            "rgb": [
+              222,
+              243,
+              163
+            ],
+            "key": "castle:uiju",
+            "kind": "land",
+            "factor": 1
+          }
+        },
+        {
+          "name": "旧明除去",
+          "pick": {
+            "id": 2,
+            "rgb": [
+              55,
+              123,
+              140
+            ],
+            "key": "unassigned",
+            "kind": "land",
+            "factor": 1
+          }
+        }
+      ],
+      "coast": {
+        "mode": "game",
+        "date": {
+          "y": 1605,
+          "m": 1,
+          "d": 1
+        },
+        "version": "15840101-16060101",
+        "fujitoPassageConnected": true,
+        "visitedSeaCells": 10308,
+        "points": [
+          {
+            "name": "経ヶ島",
+            "point": [
+              133.8108903,
+              34.5610021
+            ],
+            "pick": {
+              "id": 114,
+              "rgb": [
+                124,
+                185,
+                164
+              ],
+              "key": "castle:tenjin",
+              "kind": "land",
+              "factor": 1
+            }
+          },
+          {
+            "name": "藤戸寺",
+            "point": [
+              133.8095872,
+              34.5601554
+            ],
+            "pick": {
+              "id": 114,
+              "rgb": [
+                124,
+                185,
+                164
+              ],
+              "key": "castle:tenjin",
+              "kind": "land",
+              "factor": 1
+            }
+          },
+          {
+            "name": "浮洲岩跡",
+            "point": [
+              133.8052177,
+              34.5598924
+            ],
+            "pick": {
+              "id": 114,
+              "rgb": [
+                124,
+                185,
+                164
+              ],
+              "key": "castle:tenjin",
+              "kind": "land",
+              "factor": 1
+            }
+          },
+          {
+            "name": "塩生",
+            "point": [
+              133.771388,
+              34.476388
+            ],
+            "pick": {
+              "id": 114,
+              "rgb": [
+                124,
+                185,
+                164
+              ],
+              "key": "castle:tenjin",
+              "kind": "land",
+              "factor": 1
+            }
+          },
+          {
+            "name": "水島",
+            "point": [
+              133.718,
+              34.517
+            ],
+            "pick": {
+              "id": 1,
+              "rgb": [
+                8,
+                24,
+                48
+              ],
+              "key": "sea",
+              "kind": "sea",
+              "factor": 1
+            }
+          },
+          {
+            "name": "早島の丘",
+            "point": [
+              133.81842,
+              34.599915
+            ],
+            "pick": {
+              "id": 5,
+              "rgb": [
+                221,
+                232,
+                45
+              ],
+              "key": "castle:bmatsuyama",
+              "kind": "land",
+              "factor": 1
+            }
+          },
+          {
+            "name": "北岸",
+            "point": [
+              133.9,
+              34.64
+            ],
+            "pick": {
+              "id": 114,
+              "rgb": [
+                124,
+                185,
+                164
+              ],
+              "key": "castle:tenjin",
+              "kind": "land",
+              "factor": 1
+            }
+          },
+          {
+            "name": "宇喜多期",
+            "point": [
+              133.83584341367313,
+              34.59907294286741
+            ],
+            "pick": {
+              "id": 5,
+              "rgb": [
+                221,
+                232,
+                45
+              ],
+              "key": "castle:bmatsuyama",
+              "kind": "land",
+              "factor": 1
+            }
+          }
+        ],
+        "relief": {
+          "8:0-0.webp": "ready",
+          "8:1-0.webp": "ready",
+          "8:2-0.webp": "ready",
+          "8:0-1.webp": "ready",
+          "8:1-1.webp": "ready",
+          "8:2-1.webp": "ready",
+          "8:0-2.webp": "ready",
+          "8:1-2.webp": "ready",
+          "8:2-2.webp": "ready",
+          "4:1-2.webp": "ready",
+          "4:2-2.webp": "ready",
+          "4:3-2.webp": "ready",
+          "4:1-3.webp": "ready",
+          "4:2-3.webp": "ready",
+          "4:3-3.webp": "ready",
+          "1:0-4.webp": "ready",
+          "1:1-4.webp": "ready",
+          "1:0-5.webp": "ready",
+          "1:1-5.webp": "ready",
+          "1:0-6.webp": "ready",
+          "1:1-6.webp": "ready",
+          "4:0-1.webp": "ready",
+          "1:2-5.webp": "ready",
+          "1:2-6.webp": "ready",
+          "4:0-0.webp": "ready",
+          "4:1-0.webp": "ready",
+          "4:1-1.webp": "ready"
+        }
+      }
+    },
+    {
+      "label": "1400-1606",
+      "year": 1606,
+      "version": "16060101-16160101",
+      "places": [
+        {
+          "name": "遼陽",
+          "pick": {
+            "id": 142,
+            "rgb": [
+              142,
+              6,
+              234
+            ],
+            "key": "neutral:明",
+            "kind": "land",
+            "factor": 1
+          }
+        },
+        {
+          "name": "瀋陽",
+          "pick": {
+            "id": 142,
+            "rgb": [
+              142,
+              6,
+              234
+            ],
+            "key": "neutral:明",
+            "kind": "land",
+            "factor": 1
+          }
+        },
+        {
+          "name": "開原",
+          "pick": {
+            "id": 142,
+            "rgb": [
+              142,
+              6,
+              234
+            ],
+            "key": "neutral:明",
+            "kind": "land",
+            "factor": 1
+          }
+        },
+        {
+          "name": "寛甸",
+          "pick": {
+            "id": 2,
+            "rgb": [
+              55,
+              123,
+              140
+            ],
+            "key": "unassigned",
+            "kind": "land",
+            "factor": 1
+          }
+        },
+        {
+          "name": "義州",
+          "pick": {
+            "id": 125,
+            "rgb": [
+              222,
+              243,
+              163
+            ],
+            "key": "castle:uiju",
+            "kind": "land",
+            "factor": 1
+          }
+        },
+        {
+          "name": "旧明除去",
+          "pick": {
+            "id": 2,
+            "rgb": [
+              55,
+              123,
+              140
+            ],
+            "key": "unassigned",
+            "kind": "land",
+            "factor": 1
+          }
+        }
+      ],
+      "coast": {
+        "mode": "game",
+        "date": {
+          "y": 1606,
+          "m": 1,
+          "d": 1
+        },
+        "version": "16060101-16160101",
+        "fujitoPassageConnected": true,
+        "visitedSeaCells": 10308,
+        "points": [
+          {
+            "name": "経ヶ島",
+            "point": [
+              133.8108903,
+              34.5610021
+            ],
+            "pick": {
+              "id": 114,
+              "rgb": [
+                124,
+                185,
+                164
+              ],
+              "key": "castle:tenjin",
+              "kind": "land",
+              "factor": 1
+            }
+          },
+          {
+            "name": "藤戸寺",
+            "point": [
+              133.8095872,
+              34.5601554
+            ],
+            "pick": {
+              "id": 114,
+              "rgb": [
+                124,
+                185,
+                164
+              ],
+              "key": "castle:tenjin",
+              "kind": "land",
+              "factor": 1
+            }
+          },
+          {
+            "name": "浮洲岩跡",
+            "point": [
+              133.8052177,
+              34.5598924
+            ],
+            "pick": {
+              "id": 114,
+              "rgb": [
+                124,
+                185,
+                164
+              ],
+              "key": "castle:tenjin",
+              "kind": "land",
+              "factor": 1
+            }
+          },
+          {
+            "name": "塩生",
+            "point": [
+              133.771388,
+              34.476388
+            ],
+            "pick": {
+              "id": 114,
+              "rgb": [
+                124,
+                185,
+                164
+              ],
+              "key": "castle:tenjin",
+              "kind": "land",
+              "factor": 1
+            }
+          },
+          {
+            "name": "水島",
+            "point": [
+              133.718,
+              34.517
+            ],
+            "pick": {
+              "id": 1,
+              "rgb": [
+                8,
+                24,
+                48
+              ],
+              "key": "sea",
+              "kind": "sea",
+              "factor": 1
+            }
+          },
+          {
+            "name": "早島の丘",
+            "point": [
+              133.81842,
+              34.599915
+            ],
+            "pick": {
+              "id": 5,
+              "rgb": [
+                221,
+                232,
+                45
+              ],
+              "key": "castle:bmatsuyama",
+              "kind": "land",
+              "factor": 1
+            }
+          },
+          {
+            "name": "北岸",
+            "point": [
+              133.9,
+              34.64
+            ],
+            "pick": {
+              "id": 114,
+              "rgb": [
+                124,
+                185,
+                164
+              ],
+              "key": "castle:tenjin",
+              "kind": "land",
+              "factor": 1
+            }
+          },
+          {
+            "name": "宇喜多期",
+            "point": [
+              133.83584341367313,
+              34.59907294286741
+            ],
+            "pick": {
+              "id": 5,
+              "rgb": [
+                221,
+                232,
+                45
+              ],
+              "key": "castle:bmatsuyama",
+              "kind": "land",
+              "factor": 1
+            }
+          }
+        ],
+        "relief": {
+          "8:0-0.webp": "ready",
+          "8:1-0.webp": "ready",
+          "8:2-0.webp": "ready",
+          "8:0-1.webp": "ready",
+          "8:1-1.webp": "ready",
+          "8:2-1.webp": "ready",
+          "8:0-2.webp": "ready",
+          "8:1-2.webp": "ready",
+          "8:2-2.webp": "ready",
+          "4:1-2.webp": "ready",
+          "4:2-2.webp": "ready",
+          "4:3-2.webp": "ready",
+          "4:1-3.webp": "ready",
+          "4:2-3.webp": "ready",
+          "4:3-3.webp": "ready",
+          "1:0-4.webp": "ready",
+          "1:1-4.webp": "ready",
+          "1:0-5.webp": "ready",
+          "1:1-5.webp": "ready",
+          "1:0-6.webp": "ready",
+          "1:1-6.webp": "ready",
+          "4:0-1.webp": "ready",
+          "1:2-5.webp": "ready",
+          "1:2-6.webp": "ready",
+          "4:0-0.webp": "ready",
+          "4:1-0.webp": "ready",
+          "4:1-1.webp": "ready"
+        }
+      }
+    },
+    {
+      "label": "1400-1615",
+      "year": 1615,
+      "version": "16060101-16160101",
+      "places": [
+        {
+          "name": "遼陽",
+          "pick": {
+            "id": 142,
+            "rgb": [
+              142,
+              6,
+              234
+            ],
+            "key": "neutral:明",
+            "kind": "land",
+            "factor": 1
+          }
+        },
+        {
+          "name": "瀋陽",
+          "pick": {
+            "id": 142,
+            "rgb": [
+              142,
+              6,
+              234
+            ],
+            "key": "neutral:明",
+            "kind": "land",
+            "factor": 1
+          }
+        },
+        {
+          "name": "開原",
+          "pick": {
+            "id": 142,
+            "rgb": [
+              142,
+              6,
+              234
+            ],
+            "key": "neutral:明",
+            "kind": "land",
+            "factor": 1
+          }
+        },
+        {
+          "name": "寛甸",
+          "pick": {
+            "id": 2,
+            "rgb": [
+              55,
+              123,
+              140
+            ],
+            "key": "unassigned",
+            "kind": "land",
+            "factor": 1
+          }
+        },
+        {
+          "name": "義州",
+          "pick": {
+            "id": 125,
+            "rgb": [
+              222,
+              243,
+              163
+            ],
+            "key": "castle:uiju",
+            "kind": "land",
+            "factor": 1
+          }
+        },
+        {
+          "name": "旧明除去",
+          "pick": {
+            "id": 2,
+            "rgb": [
+              55,
+              123,
+              140
+            ],
+            "key": "unassigned",
+            "kind": "land",
+            "factor": 1
+          }
+        }
+      ],
+      "coast": {
+        "mode": "game",
+        "date": {
+          "y": 1615,
+          "m": 1,
+          "d": 1
+        },
+        "version": "16060101-16160101",
+        "fujitoPassageConnected": true,
+        "visitedSeaCells": 10308,
+        "points": [
+          {
+            "name": "経ヶ島",
+            "point": [
+              133.8108903,
+              34.5610021
+            ],
+            "pick": {
+              "id": 114,
+              "rgb": [
+                124,
+                185,
+                164
+              ],
+              "key": "castle:tenjin",
+              "kind": "land",
+              "factor": 1
+            }
+          },
+          {
+            "name": "藤戸寺",
+            "point": [
+              133.8095872,
+              34.5601554
+            ],
+            "pick": {
+              "id": 114,
+              "rgb": [
+                124,
+                185,
+                164
+              ],
+              "key": "castle:tenjin",
+              "kind": "land",
+              "factor": 1
+            }
+          },
+          {
+            "name": "浮洲岩跡",
+            "point": [
+              133.8052177,
+              34.5598924
+            ],
+            "pick": {
+              "id": 114,
+              "rgb": [
+                124,
+                185,
+                164
+              ],
+              "key": "castle:tenjin",
+              "kind": "land",
+              "factor": 1
+            }
+          },
+          {
+            "name": "塩生",
+            "point": [
+              133.771388,
+              34.476388
+            ],
+            "pick": {
+              "id": 114,
+              "rgb": [
+                124,
+                185,
+                164
+              ],
+              "key": "castle:tenjin",
+              "kind": "land",
+              "factor": 1
+            }
+          },
+          {
+            "name": "水島",
+            "point": [
+              133.718,
+              34.517
+            ],
+            "pick": {
+              "id": 1,
+              "rgb": [
+                8,
+                24,
+                48
+              ],
+              "key": "sea",
+              "kind": "sea",
+              "factor": 1
+            }
+          },
+          {
+            "name": "早島の丘",
+            "point": [
+              133.81842,
+              34.599915
+            ],
+            "pick": {
+              "id": 5,
+              "rgb": [
+                221,
+                232,
+                45
+              ],
+              "key": "castle:bmatsuyama",
+              "kind": "land",
+              "factor": 1
+            }
+          },
+          {
+            "name": "北岸",
+            "point": [
+              133.9,
+              34.64
+            ],
+            "pick": {
+              "id": 114,
+              "rgb": [
+                124,
+                185,
+                164
+              ],
+              "key": "castle:tenjin",
+              "kind": "land",
+              "factor": 1
+            }
+          },
+          {
+            "name": "宇喜多期",
+            "point": [
+              133.83584341367313,
+              34.59907294286741
+            ],
+            "pick": {
+              "id": 5,
+              "rgb": [
+                221,
+                232,
+                45
+              ],
+              "key": "castle:bmatsuyama",
+              "kind": "land",
+              "factor": 1
+            }
+          }
+        ],
+        "relief": {
+          "8:0-0.webp": "ready",
+          "8:1-0.webp": "ready",
+          "8:2-0.webp": "ready",
+          "8:0-1.webp": "ready",
+          "8:1-1.webp": "ready",
+          "8:2-1.webp": "ready",
+          "8:0-2.webp": "ready",
+          "8:1-2.webp": "ready",
+          "8:2-2.webp": "ready",
+          "4:1-2.webp": "ready",
+          "4:2-2.webp": "ready",
+          "4:3-2.webp": "ready",
+          "4:1-3.webp": "ready",
+          "4:2-3.webp": "ready",
+          "4:3-3.webp": "ready",
+          "1:0-4.webp": "ready",
+          "1:1-4.webp": "ready",
+          "1:0-5.webp": "ready",
+          "1:1-5.webp": "ready",
+          "1:0-6.webp": "ready",
+          "1:1-6.webp": "ready",
+          "4:0-1.webp": "ready",
+          "1:2-5.webp": "ready",
+          "1:2-6.webp": "ready",
+          "4:0-0.webp": "ready",
+          "4:1-0.webp": "ready",
+          "4:1-1.webp": "ready"
+        }
+      }
+    },
+    {
+      "label": "390-1560",
+      "year": 1560,
+      "version": null,
+      "places": [
+        {
+          "name": "遼陽",
+          "pick": {
+            "id": 142,
+            "rgb": [
+              142,
+              6,
+              234
+            ],
+            "key": "neutral:明",
+            "kind": "land",
+            "factor": 1
+          }
+        },
+        {
+          "name": "瀋陽",
+          "pick": {
+            "id": 142,
+            "rgb": [
+              142,
+              6,
+              234
+            ],
+            "key": "neutral:明",
+            "kind": "land",
+            "factor": 1
+          }
+        },
+        {
+          "name": "開原",
+          "pick": {
+            "id": 142,
+            "rgb": [
+              142,
+              6,
+              234
+            ],
+            "key": "neutral:明",
+            "kind": "land",
+            "factor": 1
+          }
+        },
+        {
+          "name": "寛甸",
+          "pick": {
+            "id": 2,
+            "rgb": [
+              55,
+              123,
+              140
+            ],
+            "key": "unassigned",
+            "kind": "land",
+            "factor": 1
+          }
+        },
+        {
+          "name": "義州",
+          "pick": {
+            "id": 125,
+            "rgb": [
+              222,
+              243,
+              163
+            ],
+            "key": "castle:uiju",
+            "kind": "land",
+            "factor": 1
+          }
+        },
+        {
+          "name": "旧明除去",
+          "pick": {
+            "id": 2,
+            "rgb": [
+              55,
+              123,
+              140
+            ],
+            "key": "unassigned",
+            "kind": "land",
+            "factor": 1
+          }
+        }
+      ],
+      "coast": {
+        "mode": "game",
+        "date": {
+          "y": 1560,
+          "m": 1,
+          "d": 1
+        },
+        "version": null,
+        "fujitoPassageConnected": true,
+        "visitedSeaCells": 10667,
+        "points": [
+          {
+            "name": "経ヶ島",
+            "point": [
+              133.8108903,
+              34.5610021
+            ],
+            "pick": {
+              "id": 114,
+              "rgb": [
+                124,
+                185,
+                164
+              ],
+              "key": "castle:tenjin",
+              "kind": "land",
+              "factor": 1
+            }
+          },
+          {
+            "name": "藤戸寺",
+            "point": [
+              133.8095872,
+              34.5601554
+            ],
+            "pick": {
+              "id": 114,
+              "rgb": [
+                124,
+                185,
+                164
+              ],
+              "key": "castle:tenjin",
+              "kind": "land",
+              "factor": 1
+            }
+          },
+          {
+            "name": "浮洲岩跡",
+            "point": [
+              133.8052177,
+              34.5598924
+            ],
+            "pick": {
+              "id": 114,
+              "rgb": [
+                124,
+                185,
+                164
+              ],
+              "key": "castle:tenjin",
+              "kind": "land",
+              "factor": 1
+            }
+          },
+          {
+            "name": "塩生",
+            "point": [
+              133.771388,
+              34.476388
+            ],
+            "pick": {
+              "id": 114,
+              "rgb": [
+                124,
+                185,
+                164
+              ],
+              "key": "castle:tenjin",
+              "kind": "land",
+              "factor": 1
+            }
+          },
+          {
+            "name": "水島",
+            "point": [
+              133.718,
+              34.517
+            ],
+            "pick": {
+              "id": 1,
+              "rgb": [
+                8,
+                24,
+                48
+              ],
+              "key": "sea",
+              "kind": "sea",
+              "factor": 1
+            }
+          },
+          {
+            "name": "早島の丘",
+            "point": [
+              133.81842,
+              34.599915
+            ],
+            "pick": {
+              "id": 5,
+              "rgb": [
+                221,
+                232,
+                45
+              ],
+              "key": "castle:bmatsuyama",
+              "kind": "land",
+              "factor": 1
+            }
+          },
+          {
+            "name": "北岸",
+            "point": [
+              133.9,
+              34.64
+            ],
+            "pick": {
+              "id": 114,
+              "rgb": [
+                124,
+                185,
+                164
+              ],
+              "key": "castle:tenjin",
+              "kind": "land",
+              "factor": 1
+            }
+          },
+          {
+            "name": "宇喜多期",
+            "point": [
+              133.83584341367313,
+              34.59907294286741
+            ],
+            "pick": {
+              "id": 1,
+              "rgb": [
+                8,
+                24,
+                48
+              ],
+              "key": "sea",
+              "kind": "sea",
+              "factor": 1
+            }
+          }
+        ],
+        "relief": {
+          "8:0-0.webp": "ready",
+          "8:1-0.webp": "ready",
+          "8:2-0.webp": "ready",
+          "8:0-1.webp": "ready",
+          "8:1-1.webp": "ready",
+          "8:2-1.webp": "ready",
+          "8:0-2.webp": "ready",
+          "8:1-2.webp": "ready",
+          "8:2-2.webp": "ready",
+          "4:1-2.webp": "ready",
+          "4:2-2.webp": "ready",
+          "4:3-2.webp": "ready",
+          "4:1-3.webp": "ready",
+          "4:2-3.webp": "ready",
+          "4:3-3.webp": "ready",
+          "1:0-4.webp": "ready",
+          "1:1-4.webp": "ready",
+          "1:0-5.webp": "ready",
+          "1:1-5.webp": "ready",
+          "1:0-6.webp": "ready",
+          "1:1-6.webp": "ready",
+          "4:0-1.webp": "ready",
+          "1:2-5.webp": "ready",
+          "1:2-6.webp": "ready",
+          "4:0-0.webp": "ready",
+          "4:1-0.webp": "ready",
+          "4:1-1.webp": "ready",
+          "1:0-3.webp": "ready",
+          "1:1-3.webp": "ready",
+          "1:0-7.webp": "ready",
+          "1:1-7.webp": "ready",
+          "1:2-7.webp": "ready",
+          "4:2-0.webp": "ready",
+          "1:0-1.webp": "ready",
+          "1:1-1.webp": "ready",
+          "1:0-2.webp": "ready",
+          "1:1-2.webp": "ready"
+        }
+      }
+    },
+    {
+      "label": "390-1572",
+      "year": 1572,
+      "version": null,
+      "places": [
+        {
+          "name": "遼陽",
+          "pick": {
+            "id": 142,
+            "rgb": [
+              142,
+              6,
+              234
+            ],
+            "key": "neutral:明",
+            "kind": "land",
+            "factor": 1
+          }
+        },
+        {
+          "name": "瀋陽",
+          "pick": {
+            "id": 142,
+            "rgb": [
+              142,
+              6,
+              234
+            ],
+            "key": "neutral:明",
+            "kind": "land",
+            "factor": 1
+          }
+        },
+        {
+          "name": "開原",
+          "pick": {
+            "id": 142,
+            "rgb": [
+              142,
+              6,
+              234
+            ],
+            "key": "neutral:明",
+            "kind": "land",
+            "factor": 1
+          }
+        },
+        {
+          "name": "寛甸",
+          "pick": {
+            "id": 2,
+            "rgb": [
+              55,
+              123,
+              140
+            ],
+            "key": "unassigned",
+            "kind": "land",
+            "factor": 1
+          }
+        },
+        {
+          "name": "義州",
+          "pick": {
+            "id": 125,
+            "rgb": [
+              222,
+              243,
+              163
+            ],
+            "key": "castle:uiju",
+            "kind": "land",
+            "factor": 1
+          }
+        },
+        {
+          "name": "旧明除去",
+          "pick": {
+            "id": 2,
+            "rgb": [
+              55,
+              123,
+              140
+            ],
+            "key": "unassigned",
+            "kind": "land",
+            "factor": 1
+          }
+        }
+      ],
+      "coast": {
+        "mode": "game",
+        "date": {
+          "y": 1572,
+          "m": 1,
+          "d": 1
+        },
+        "version": null,
+        "fujitoPassageConnected": true,
+        "visitedSeaCells": 10667,
+        "points": [
+          {
+            "name": "経ヶ島",
+            "point": [
+              133.8108903,
+              34.5610021
+            ],
+            "pick": {
+              "id": 114,
+              "rgb": [
+                124,
+                185,
+                164
+              ],
+              "key": "castle:tenjin",
+              "kind": "land",
+              "factor": 1
+            }
+          },
+          {
+            "name": "藤戸寺",
+            "point": [
+              133.8095872,
+              34.5601554
+            ],
+            "pick": {
+              "id": 114,
+              "rgb": [
+                124,
+                185,
+                164
+              ],
+              "key": "castle:tenjin",
+              "kind": "land",
+              "factor": 1
+            }
+          },
+          {
+            "name": "浮洲岩跡",
+            "point": [
+              133.8052177,
+              34.5598924
+            ],
+            "pick": {
+              "id": 114,
+              "rgb": [
+                124,
+                185,
+                164
+              ],
+              "key": "castle:tenjin",
+              "kind": "land",
+              "factor": 1
+            }
+          },
+          {
+            "name": "塩生",
+            "point": [
+              133.771388,
+              34.476388
+            ],
+            "pick": {
+              "id": 114,
+              "rgb": [
+                124,
+                185,
+                164
+              ],
+              "key": "castle:tenjin",
+              "kind": "land",
+              "factor": 1
+            }
+          },
+          {
+            "name": "水島",
+            "point": [
+              133.718,
+              34.517
+            ],
+            "pick": {
+              "id": 1,
+              "rgb": [
+                8,
+                24,
+                48
+              ],
+              "key": "sea",
+              "kind": "sea",
+              "factor": 1
+            }
+          },
+          {
+            "name": "早島の丘",
+            "point": [
+              133.81842,
+              34.599915
+            ],
+            "pick": {
+              "id": 5,
+              "rgb": [
+                221,
+                232,
+                45
+              ],
+              "key": "castle:bmatsuyama",
+              "kind": "land",
+              "factor": 1
+            }
+          },
+          {
+            "name": "北岸",
+            "point": [
+              133.9,
+              34.64
+            ],
+            "pick": {
+              "id": 114,
+              "rgb": [
+                124,
+                185,
+                164
+              ],
+              "key": "castle:tenjin",
+              "kind": "land",
+              "factor": 1
+            }
+          },
+          {
+            "name": "宇喜多期",
+            "point": [
+              133.83584341367313,
+              34.59907294286741
+            ],
+            "pick": {
+              "id": 1,
+              "rgb": [
+                8,
+                24,
+                48
+              ],
+              "key": "sea",
+              "kind": "sea",
+              "factor": 1
+            }
+          }
+        ],
+        "relief": {
+          "8:0-0.webp": "ready",
+          "8:1-0.webp": "ready",
+          "8:2-0.webp": "ready",
+          "8:0-1.webp": "ready",
+          "8:1-1.webp": "ready",
+          "8:2-1.webp": "ready",
+          "8:0-2.webp": "ready",
+          "8:1-2.webp": "ready",
+          "8:2-2.webp": "ready",
+          "4:1-2.webp": "ready",
+          "4:2-2.webp": "ready",
+          "4:3-2.webp": "ready",
+          "4:1-3.webp": "ready",
+          "4:2-3.webp": "ready",
+          "4:3-3.webp": "ready",
+          "1:0-4.webp": "ready",
+          "1:1-4.webp": "ready",
+          "1:0-5.webp": "ready",
+          "1:1-5.webp": "ready",
+          "1:0-6.webp": "ready",
+          "1:1-6.webp": "ready",
+          "4:0-1.webp": "ready",
+          "1:2-5.webp": "ready",
+          "1:2-6.webp": "ready",
+          "4:0-0.webp": "ready",
+          "4:1-0.webp": "ready",
+          "4:1-1.webp": "ready",
+          "1:0-3.webp": "ready",
+          "1:1-3.webp": "ready",
+          "1:0-7.webp": "ready",
+          "1:1-7.webp": "ready",
+          "1:2-7.webp": "ready",
+          "4:2-0.webp": "ready",
+          "1:0-1.webp": "ready",
+          "1:1-1.webp": "ready",
+          "1:0-2.webp": "ready",
+          "1:1-2.webp": "ready"
+        }
+      }
+    },
+    {
+      "label": "390-1573",
+      "year": 1573,
+      "version": "15730101-15840101",
+      "places": [
+        {
+          "name": "遼陽",
+          "pick": {
+            "id": 142,
+            "rgb": [
+              142,
+              6,
+              234
+            ],
+            "key": "neutral:明",
+            "kind": "land",
+            "factor": 1
+          }
+        },
+        {
+          "name": "瀋陽",
+          "pick": {
+            "id": 142,
+            "rgb": [
+              142,
+              6,
+              234
+            ],
+            "key": "neutral:明",
+            "kind": "land",
+            "factor": 1
+          }
+        },
+        {
+          "name": "開原",
+          "pick": {
+            "id": 142,
+            "rgb": [
+              142,
+              6,
+              234
+            ],
+            "key": "neutral:明",
+            "kind": "land",
+            "factor": 1
+          }
+        },
+        {
+          "name": "寛甸",
+          "pick": {
+            "id": 142,
+            "rgb": [
+              142,
+              6,
+              234
+            ],
+            "key": "neutral:明",
+            "kind": "land",
+            "factor": 1
+          }
+        },
+        {
+          "name": "義州",
+          "pick": {
+            "id": 125,
+            "rgb": [
+              222,
+              243,
+              163
+            ],
+            "key": "castle:uiju",
+            "kind": "land",
+            "factor": 1
+          }
+        },
+        {
+          "name": "旧明除去",
+          "pick": {
+            "id": 2,
+            "rgb": [
+              55,
+              123,
+              140
+            ],
+            "key": "unassigned",
+            "kind": "land",
+            "factor": 1
+          }
+        }
+      ],
+      "coast": {
+        "mode": "game",
+        "date": {
+          "y": 1573,
+          "m": 1,
+          "d": 1
+        },
+        "version": "15730101-15840101",
+        "fujitoPassageConnected": true,
+        "visitedSeaCells": 10667,
+        "points": [
+          {
+            "name": "経ヶ島",
+            "point": [
+              133.8108903,
+              34.5610021
+            ],
+            "pick": {
+              "id": 114,
+              "rgb": [
+                124,
+                185,
+                164
+              ],
+              "key": "castle:tenjin",
+              "kind": "land",
+              "factor": 1
+            }
+          },
+          {
+            "name": "藤戸寺",
+            "point": [
+              133.8095872,
+              34.5601554
+            ],
+            "pick": {
+              "id": 114,
+              "rgb": [
+                124,
+                185,
+                164
+              ],
+              "key": "castle:tenjin",
+              "kind": "land",
+              "factor": 1
+            }
+          },
+          {
+            "name": "浮洲岩跡",
+            "point": [
+              133.8052177,
+              34.5598924
+            ],
+            "pick": {
+              "id": 114,
+              "rgb": [
+                124,
+                185,
+                164
+              ],
+              "key": "castle:tenjin",
+              "kind": "land",
+              "factor": 1
+            }
+          },
+          {
+            "name": "塩生",
+            "point": [
+              133.771388,
+              34.476388
+            ],
+            "pick": {
+              "id": 114,
+              "rgb": [
+                124,
+                185,
+                164
+              ],
+              "key": "castle:tenjin",
+              "kind": "land",
+              "factor": 1
+            }
+          },
+          {
+            "name": "水島",
+            "point": [
+              133.718,
+              34.517
+            ],
+            "pick": {
+              "id": 1,
+              "rgb": [
+                8,
+                24,
+                48
+              ],
+              "key": "sea",
+              "kind": "sea",
+              "factor": 1
+            }
+          },
+          {
+            "name": "早島の丘",
+            "point": [
+              133.81842,
+              34.599915
+            ],
+            "pick": {
+              "id": 5,
+              "rgb": [
+                221,
+                232,
+                45
+              ],
+              "key": "castle:bmatsuyama",
+              "kind": "land",
+              "factor": 1
+            }
+          },
+          {
+            "name": "北岸",
+            "point": [
+              133.9,
+              34.64
+            ],
+            "pick": {
+              "id": 114,
+              "rgb": [
+                124,
+                185,
+                164
+              ],
+              "key": "castle:tenjin",
+              "kind": "land",
+              "factor": 1
+            }
+          },
+          {
+            "name": "宇喜多期",
+            "point": [
+              133.83584341367313,
+              34.59907294286741
+            ],
+            "pick": {
+              "id": 1,
+              "rgb": [
+                8,
+                24,
+                48
+              ],
+              "key": "sea",
+              "kind": "sea",
+              "factor": 1
+            }
+          }
+        ],
+        "relief": {
+          "8:0-0.webp": "ready",
+          "8:1-0.webp": "ready",
+          "8:2-0.webp": "ready",
+          "8:0-1.webp": "ready",
+          "8:1-1.webp": "ready",
+          "8:2-1.webp": "ready",
+          "8:0-2.webp": "ready",
+          "8:1-2.webp": "ready",
+          "8:2-2.webp": "ready",
+          "4:1-2.webp": "ready",
+          "4:2-2.webp": "ready",
+          "4:3-2.webp": "ready",
+          "4:1-3.webp": "ready",
+          "4:2-3.webp": "ready",
+          "4:3-3.webp": "ready",
+          "1:0-4.webp": "ready",
+          "1:1-4.webp": "ready",
+          "1:0-5.webp": "ready",
+          "1:1-5.webp": "ready",
+          "1:0-6.webp": "ready",
+          "1:1-6.webp": "ready",
+          "4:0-1.webp": "ready",
+          "1:2-5.webp": "ready",
+          "1:2-6.webp": "ready",
+          "4:0-0.webp": "ready",
+          "4:1-0.webp": "ready",
+          "4:1-1.webp": "ready",
+          "1:0-3.webp": "ready",
+          "1:1-3.webp": "ready",
+          "1:0-7.webp": "ready",
+          "1:1-7.webp": "ready",
+          "1:2-7.webp": "ready",
+          "4:2-0.webp": "ready",
+          "1:0-1.webp": "ready",
+          "1:1-1.webp": "ready",
+          "1:0-2.webp": "ready",
+          "1:1-2.webp": "ready"
+        }
+      }
+    },
+    {
+      "label": "390-1603",
+      "year": 1603,
+      "version": "15840101-16060101",
+      "places": [
+        {
+          "name": "遼陽",
+          "pick": {
+            "id": 142,
+            "rgb": [
+              142,
+              6,
+              234
+            ],
+            "key": "neutral:明",
+            "kind": "land",
+            "factor": 1
+          }
+        },
+        {
+          "name": "瀋陽",
+          "pick": {
+            "id": 142,
+            "rgb": [
+              142,
+              6,
+              234
+            ],
+            "key": "neutral:明",
+            "kind": "land",
+            "factor": 1
+          }
+        },
+        {
+          "name": "開原",
+          "pick": {
+            "id": 142,
+            "rgb": [
+              142,
+              6,
+              234
+            ],
+            "key": "neutral:明",
+            "kind": "land",
+            "factor": 1
+          }
+        },
+        {
+          "name": "寛甸",
+          "pick": {
+            "id": 142,
+            "rgb": [
+              142,
+              6,
+              234
+            ],
+            "key": "neutral:明",
+            "kind": "land",
+            "factor": 1
+          }
+        },
+        {
+          "name": "義州",
+          "pick": {
+            "id": 125,
+            "rgb": [
+              222,
+              243,
+              163
+            ],
+            "key": "castle:uiju",
+            "kind": "land",
+            "factor": 1
+          }
+        },
+        {
+          "name": "旧明除去",
+          "pick": {
+            "id": 2,
+            "rgb": [
+              55,
+              123,
+              140
+            ],
+            "key": "unassigned",
+            "kind": "land",
+            "factor": 1
+          }
+        }
+      ],
+      "coast": {
+        "mode": "game",
+        "date": {
+          "y": 1603,
+          "m": 1,
+          "d": 1
+        },
+        "version": "15840101-16060101",
+        "fujitoPassageConnected": true,
+        "visitedSeaCells": 10308,
+        "points": [
+          {
+            "name": "経ヶ島",
+            "point": [
+              133.8108903,
+              34.5610021
+            ],
+            "pick": {
+              "id": 114,
+              "rgb": [
+                124,
+                185,
+                164
+              ],
+              "key": "castle:tenjin",
+              "kind": "land",
+              "factor": 1
+            }
+          },
+          {
+            "name": "藤戸寺",
+            "point": [
+              133.8095872,
+              34.5601554
+            ],
+            "pick": {
+              "id": 114,
+              "rgb": [
+                124,
+                185,
+                164
+              ],
+              "key": "castle:tenjin",
+              "kind": "land",
+              "factor": 1
+            }
+          },
+          {
+            "name": "浮洲岩跡",
+            "point": [
+              133.8052177,
+              34.5598924
+            ],
+            "pick": {
+              "id": 114,
+              "rgb": [
+                124,
+                185,
+                164
+              ],
+              "key": "castle:tenjin",
+              "kind": "land",
+              "factor": 1
+            }
+          },
+          {
+            "name": "塩生",
+            "point": [
+              133.771388,
+              34.476388
+            ],
+            "pick": {
+              "id": 114,
+              "rgb": [
+                124,
+                185,
+                164
+              ],
+              "key": "castle:tenjin",
+              "kind": "land",
+              "factor": 1
+            }
+          },
+          {
+            "name": "水島",
+            "point": [
+              133.718,
+              34.517
+            ],
+            "pick": {
+              "id": 1,
+              "rgb": [
+                8,
+                24,
+                48
+              ],
+              "key": "sea",
+              "kind": "sea",
+              "factor": 1
+            }
+          },
+          {
+            "name": "早島の丘",
+            "point": [
+              133.81842,
+              34.599915
+            ],
+            "pick": {
+              "id": 5,
+              "rgb": [
+                221,
+                232,
+                45
+              ],
+              "key": "castle:bmatsuyama",
+              "kind": "land",
+              "factor": 1
+            }
+          },
+          {
+            "name": "北岸",
+            "point": [
+              133.9,
+              34.64
+            ],
+            "pick": {
+              "id": 114,
+              "rgb": [
+                124,
+                185,
+                164
+              ],
+              "key": "castle:tenjin",
+              "kind": "land",
+              "factor": 1
+            }
+          },
+          {
+            "name": "宇喜多期",
+            "point": [
+              133.83584341367313,
+              34.59907294286741
+            ],
+            "pick": {
+              "id": 5,
+              "rgb": [
+                221,
+                232,
+                45
+              ],
+              "key": "castle:bmatsuyama",
+              "kind": "land",
+              "factor": 1
+            }
+          }
+        ],
+        "relief": {
+          "8:0-0.webp": "ready",
+          "8:1-0.webp": "ready",
+          "8:2-0.webp": "ready",
+          "8:0-1.webp": "ready",
+          "8:1-1.webp": "ready",
+          "8:2-1.webp": "ready",
+          "8:0-2.webp": "ready",
+          "8:1-2.webp": "ready",
+          "8:2-2.webp": "ready",
+          "4:1-2.webp": "ready",
+          "4:2-2.webp": "ready",
+          "4:3-2.webp": "ready",
+          "4:1-3.webp": "ready",
+          "4:2-3.webp": "ready",
+          "4:3-3.webp": "ready",
+          "1:0-4.webp": "ready",
+          "1:1-4.webp": "ready",
+          "1:0-5.webp": "ready",
+          "1:1-5.webp": "ready",
+          "1:0-6.webp": "ready",
+          "1:1-6.webp": "ready",
+          "4:0-1.webp": "ready",
+          "1:2-5.webp": "ready",
+          "1:2-6.webp": "ready",
+          "4:0-0.webp": "ready",
+          "4:1-0.webp": "ready",
+          "4:1-1.webp": "ready",
+          "1:0-3.webp": "ready",
+          "1:1-3.webp": "ready",
+          "1:0-7.webp": "ready",
+          "1:1-7.webp": "ready",
+          "1:2-7.webp": "ready",
+          "4:2-0.webp": "ready",
+          "1:0-1.webp": "ready",
+          "1:1-1.webp": "ready",
+          "1:0-2.webp": "ready",
+          "1:1-2.webp": "ready"
+        }
+      }
+    },
+    {
+      "label": "390-1605",
+      "year": 1605,
+      "version": "15840101-16060101",
+      "places": [
+        {
+          "name": "遼陽",
+          "pick": {
+            "id": 142,
+            "rgb": [
+              142,
+              6,
+              234
+            ],
+            "key": "neutral:明",
+            "kind": "land",
+            "factor": 1
+          }
+        },
+        {
+          "name": "瀋陽",
+          "pick": {
+            "id": 142,
+            "rgb": [
+              142,
+              6,
+              234
+            ],
+            "key": "neutral:明",
+            "kind": "land",
+            "factor": 1
+          }
+        },
+        {
+          "name": "開原",
+          "pick": {
+            "id": 142,
+            "rgb": [
+              142,
+              6,
+              234
+            ],
+            "key": "neutral:明",
+            "kind": "land",
+            "factor": 1
+          }
+        },
+        {
+          "name": "寛甸",
+          "pick": {
+            "id": 142,
+            "rgb": [
+              142,
+              6,
+              234
+            ],
+            "key": "neutral:明",
+            "kind": "land",
+            "factor": 1
+          }
+        },
+        {
+          "name": "義州",
+          "pick": {
+            "id": 125,
+            "rgb": [
+              222,
+              243,
+              163
+            ],
+            "key": "castle:uiju",
+            "kind": "land",
+            "factor": 1
+          }
+        },
+        {
+          "name": "旧明除去",
+          "pick": {
+            "id": 2,
+            "rgb": [
+              55,
+              123,
+              140
+            ],
+            "key": "unassigned",
+            "kind": "land",
+            "factor": 1
+          }
+        }
+      ],
+      "coast": {
+        "mode": "game",
+        "date": {
+          "y": 1605,
+          "m": 1,
+          "d": 1
+        },
+        "version": "15840101-16060101",
+        "fujitoPassageConnected": true,
+        "visitedSeaCells": 10308,
+        "points": [
+          {
+            "name": "経ヶ島",
+            "point": [
+              133.8108903,
+              34.5610021
+            ],
+            "pick": {
+              "id": 114,
+              "rgb": [
+                124,
+                185,
+                164
+              ],
+              "key": "castle:tenjin",
+              "kind": "land",
+              "factor": 1
+            }
+          },
+          {
+            "name": "藤戸寺",
+            "point": [
+              133.8095872,
+              34.5601554
+            ],
+            "pick": {
+              "id": 114,
+              "rgb": [
+                124,
+                185,
+                164
+              ],
+              "key": "castle:tenjin",
+              "kind": "land",
+              "factor": 1
+            }
+          },
+          {
+            "name": "浮洲岩跡",
+            "point": [
+              133.8052177,
+              34.5598924
+            ],
+            "pick": {
+              "id": 114,
+              "rgb": [
+                124,
+                185,
+                164
+              ],
+              "key": "castle:tenjin",
+              "kind": "land",
+              "factor": 1
+            }
+          },
+          {
+            "name": "塩生",
+            "point": [
+              133.771388,
+              34.476388
+            ],
+            "pick": {
+              "id": 114,
+              "rgb": [
+                124,
+                185,
+                164
+              ],
+              "key": "castle:tenjin",
+              "kind": "land",
+              "factor": 1
+            }
+          },
+          {
+            "name": "水島",
+            "point": [
+              133.718,
+              34.517
+            ],
+            "pick": {
+              "id": 1,
+              "rgb": [
+                8,
+                24,
+                48
+              ],
+              "key": "sea",
+              "kind": "sea",
+              "factor": 1
+            }
+          },
+          {
+            "name": "早島の丘",
+            "point": [
+              133.81842,
+              34.599915
+            ],
+            "pick": {
+              "id": 5,
+              "rgb": [
+                221,
+                232,
+                45
+              ],
+              "key": "castle:bmatsuyama",
+              "kind": "land",
+              "factor": 1
+            }
+          },
+          {
+            "name": "北岸",
+            "point": [
+              133.9,
+              34.64
+            ],
+            "pick": {
+              "id": 114,
+              "rgb": [
+                124,
+                185,
+                164
+              ],
+              "key": "castle:tenjin",
+              "kind": "land",
+              "factor": 1
+            }
+          },
+          {
+            "name": "宇喜多期",
+            "point": [
+              133.83584341367313,
+              34.59907294286741
+            ],
+            "pick": {
+              "id": 5,
+              "rgb": [
+                221,
+                232,
+                45
+              ],
+              "key": "castle:bmatsuyama",
+              "kind": "land",
+              "factor": 1
+            }
+          }
+        ],
+        "relief": {
+          "8:0-0.webp": "ready",
+          "8:1-0.webp": "ready",
+          "8:2-0.webp": "ready",
+          "8:0-1.webp": "ready",
+          "8:1-1.webp": "ready",
+          "8:2-1.webp": "ready",
+          "8:0-2.webp": "ready",
+          "8:1-2.webp": "ready",
+          "8:2-2.webp": "ready",
+          "4:1-2.webp": "ready",
+          "4:2-2.webp": "ready",
+          "4:3-2.webp": "ready",
+          "4:1-3.webp": "ready",
+          "4:2-3.webp": "ready",
+          "4:3-3.webp": "ready",
+          "1:0-4.webp": "ready",
+          "1:1-4.webp": "ready",
+          "1:0-5.webp": "ready",
+          "1:1-5.webp": "ready",
+          "1:0-6.webp": "ready",
+          "1:1-6.webp": "ready",
+          "4:0-1.webp": "ready",
+          "1:2-5.webp": "ready",
+          "1:2-6.webp": "ready",
+          "4:0-0.webp": "ready",
+          "4:1-0.webp": "ready",
+          "4:1-1.webp": "ready",
+          "1:0-3.webp": "ready",
+          "1:1-3.webp": "ready",
+          "1:0-7.webp": "ready",
+          "1:1-7.webp": "ready",
+          "1:2-7.webp": "ready",
+          "4:2-0.webp": "ready",
+          "1:0-1.webp": "ready",
+          "1:1-1.webp": "ready",
+          "1:0-2.webp": "ready",
+          "1:1-2.webp": "ready"
+        }
+      }
+    },
+    {
+      "label": "390-1606",
+      "year": 1606,
+      "version": "16060101-16160101",
+      "places": [
+        {
+          "name": "遼陽",
+          "pick": {
+            "id": 142,
+            "rgb": [
+              142,
+              6,
+              234
+            ],
+            "key": "neutral:明",
+            "kind": "land",
+            "factor": 1
+          }
+        },
+        {
+          "name": "瀋陽",
+          "pick": {
+            "id": 142,
+            "rgb": [
+              142,
+              6,
+              234
+            ],
+            "key": "neutral:明",
+            "kind": "land",
+            "factor": 1
+          }
+        },
+        {
+          "name": "開原",
+          "pick": {
+            "id": 142,
+            "rgb": [
+              142,
+              6,
+              234
+            ],
+            "key": "neutral:明",
+            "kind": "land",
+            "factor": 1
+          }
+        },
+        {
+          "name": "寛甸",
+          "pick": {
+            "id": 2,
+            "rgb": [
+              55,
+              123,
+              140
+            ],
+            "key": "unassigned",
+            "kind": "land",
+            "factor": 1
+          }
+        },
+        {
+          "name": "義州",
+          "pick": {
+            "id": 125,
+            "rgb": [
+              222,
+              243,
+              163
+            ],
+            "key": "castle:uiju",
+            "kind": "land",
+            "factor": 1
+          }
+        },
+        {
+          "name": "旧明除去",
+          "pick": {
+            "id": 2,
+            "rgb": [
+              55,
+              123,
+              140
+            ],
+            "key": "unassigned",
+            "kind": "land",
+            "factor": 1
+          }
+        }
+      ],
+      "coast": {
+        "mode": "game",
+        "date": {
+          "y": 1606,
+          "m": 1,
+          "d": 1
+        },
+        "version": "16060101-16160101",
+        "fujitoPassageConnected": true,
+        "visitedSeaCells": 10308,
+        "points": [
+          {
+            "name": "経ヶ島",
+            "point": [
+              133.8108903,
+              34.5610021
+            ],
+            "pick": {
+              "id": 114,
+              "rgb": [
+                124,
+                185,
+                164
+              ],
+              "key": "castle:tenjin",
+              "kind": "land",
+              "factor": 1
+            }
+          },
+          {
+            "name": "藤戸寺",
+            "point": [
+              133.8095872,
+              34.5601554
+            ],
+            "pick": {
+              "id": 114,
+              "rgb": [
+                124,
+                185,
+                164
+              ],
+              "key": "castle:tenjin",
+              "kind": "land",
+              "factor": 1
+            }
+          },
+          {
+            "name": "浮洲岩跡",
+            "point": [
+              133.8052177,
+              34.5598924
+            ],
+            "pick": {
+              "id": 114,
+              "rgb": [
+                124,
+                185,
+                164
+              ],
+              "key": "castle:tenjin",
+              "kind": "land",
+              "factor": 1
+            }
+          },
+          {
+            "name": "塩生",
+            "point": [
+              133.771388,
+              34.476388
+            ],
+            "pick": {
+              "id": 114,
+              "rgb": [
+                124,
+                185,
+                164
+              ],
+              "key": "castle:tenjin",
+              "kind": "land",
+              "factor": 1
+            }
+          },
+          {
+            "name": "水島",
+            "point": [
+              133.718,
+              34.517
+            ],
+            "pick": {
+              "id": 1,
+              "rgb": [
+                8,
+                24,
+                48
+              ],
+              "key": "sea",
+              "kind": "sea",
+              "factor": 1
+            }
+          },
+          {
+            "name": "早島の丘",
+            "point": [
+              133.81842,
+              34.599915
+            ],
+            "pick": {
+              "id": 5,
+              "rgb": [
+                221,
+                232,
+                45
+              ],
+              "key": "castle:bmatsuyama",
+              "kind": "land",
+              "factor": 1
+            }
+          },
+          {
+            "name": "北岸",
+            "point": [
+              133.9,
+              34.64
+            ],
+            "pick": {
+              "id": 114,
+              "rgb": [
+                124,
+                185,
+                164
+              ],
+              "key": "castle:tenjin",
+              "kind": "land",
+              "factor": 1
+            }
+          },
+          {
+            "name": "宇喜多期",
+            "point": [
+              133.83584341367313,
+              34.59907294286741
+            ],
+            "pick": {
+              "id": 5,
+              "rgb": [
+                221,
+                232,
+                45
+              ],
+              "key": "castle:bmatsuyama",
+              "kind": "land",
+              "factor": 1
+            }
+          }
+        ],
+        "relief": {
+          "8:0-0.webp": "ready",
+          "8:1-0.webp": "ready",
+          "8:2-0.webp": "ready",
+          "8:0-1.webp": "ready",
+          "8:1-1.webp": "ready",
+          "8:2-1.webp": "ready",
+          "8:0-2.webp": "ready",
+          "8:1-2.webp": "ready",
+          "8:2-2.webp": "ready",
+          "4:1-2.webp": "ready",
+          "4:2-2.webp": "ready",
+          "4:3-2.webp": "ready",
+          "4:1-3.webp": "ready",
+          "4:2-3.webp": "ready",
+          "4:3-3.webp": "ready",
+          "1:0-4.webp": "ready",
+          "1:1-4.webp": "ready",
+          "1:0-5.webp": "ready",
+          "1:1-5.webp": "ready",
+          "1:0-6.webp": "ready",
+          "1:1-6.webp": "ready",
+          "4:0-1.webp": "ready",
+          "1:2-5.webp": "ready",
+          "1:2-6.webp": "ready",
+          "4:0-0.webp": "ready",
+          "4:1-0.webp": "ready",
+          "4:1-1.webp": "ready",
+          "1:0-3.webp": "ready",
+          "1:1-3.webp": "ready",
+          "1:0-7.webp": "ready",
+          "1:1-7.webp": "ready",
+          "1:2-7.webp": "ready",
+          "4:2-0.webp": "ready",
+          "1:0-1.webp": "ready",
+          "1:1-1.webp": "ready",
+          "1:0-2.webp": "ready",
+          "1:1-2.webp": "ready"
+        }
+      }
+    },
+    {
+      "label": "390-1615",
+      "year": 1615,
+      "version": "16060101-16160101",
+      "places": [
+        {
+          "name": "遼陽",
+          "pick": {
+            "id": 142,
+            "rgb": [
+              142,
+              6,
+              234
+            ],
+            "key": "neutral:明",
+            "kind": "land",
+            "factor": 1
+          }
+        },
+        {
+          "name": "瀋陽",
+          "pick": {
+            "id": 142,
+            "rgb": [
+              142,
+              6,
+              234
+            ],
+            "key": "neutral:明",
+            "kind": "land",
+            "factor": 1
+          }
+        },
+        {
+          "name": "開原",
+          "pick": {
+            "id": 142,
+            "rgb": [
+              142,
+              6,
+              234
+            ],
+            "key": "neutral:明",
+            "kind": "land",
+            "factor": 1
+          }
+        },
+        {
+          "name": "寛甸",
+          "pick": {
+            "id": 2,
+            "rgb": [
+              55,
+              123,
+              140
+            ],
+            "key": "unassigned",
+            "kind": "land",
+            "factor": 1
+          }
+        },
+        {
+          "name": "義州",
+          "pick": {
+            "id": 125,
+            "rgb": [
+              222,
+              243,
+              163
+            ],
+            "key": "castle:uiju",
+            "kind": "land",
+            "factor": 1
+          }
+        },
+        {
+          "name": "旧明除去",
+          "pick": {
+            "id": 2,
+            "rgb": [
+              55,
+              123,
+              140
+            ],
+            "key": "unassigned",
+            "kind": "land",
+            "factor": 1
+          }
+        }
+      ],
+      "coast": {
+        "mode": "game",
+        "date": {
+          "y": 1615,
+          "m": 1,
+          "d": 1
+        },
+        "version": "16060101-16160101",
+        "fujitoPassageConnected": true,
+        "visitedSeaCells": 10308,
+        "points": [
+          {
+            "name": "経ヶ島",
+            "point": [
+              133.8108903,
+              34.5610021
+            ],
+            "pick": {
+              "id": 114,
+              "rgb": [
+                124,
+                185,
+                164
+              ],
+              "key": "castle:tenjin",
+              "kind": "land",
+              "factor": 1
+            }
+          },
+          {
+            "name": "藤戸寺",
+            "point": [
+              133.8095872,
+              34.5601554
+            ],
+            "pick": {
+              "id": 114,
+              "rgb": [
+                124,
+                185,
+                164
+              ],
+              "key": "castle:tenjin",
+              "kind": "land",
+              "factor": 1
+            }
+          },
+          {
+            "name": "浮洲岩跡",
+            "point": [
+              133.8052177,
+              34.5598924
+            ],
+            "pick": {
+              "id": 114,
+              "rgb": [
+                124,
+                185,
+                164
+              ],
+              "key": "castle:tenjin",
+              "kind": "land",
+              "factor": 1
+            }
+          },
+          {
+            "name": "塩生",
+            "point": [
+              133.771388,
+              34.476388
+            ],
+            "pick": {
+              "id": 114,
+              "rgb": [
+                124,
+                185,
+                164
+              ],
+              "key": "castle:tenjin",
+              "kind": "land",
+              "factor": 1
+            }
+          },
+          {
+            "name": "水島",
+            "point": [
+              133.718,
+              34.517
+            ],
+            "pick": {
+              "id": 1,
+              "rgb": [
+                8,
+                24,
+                48
+              ],
+              "key": "sea",
+              "kind": "sea",
+              "factor": 1
+            }
+          },
+          {
+            "name": "早島の丘",
+            "point": [
+              133.81842,
+              34.599915
+            ],
+            "pick": {
+              "id": 5,
+              "rgb": [
+                221,
+                232,
+                45
+              ],
+              "key": "castle:bmatsuyama",
+              "kind": "land",
+              "factor": 1
+            }
+          },
+          {
+            "name": "北岸",
+            "point": [
+              133.9,
+              34.64
+            ],
+            "pick": {
+              "id": 114,
+              "rgb": [
+                124,
+                185,
+                164
+              ],
+              "key": "castle:tenjin",
+              "kind": "land",
+              "factor": 1
+            }
+          },
+          {
+            "name": "宇喜多期",
+            "point": [
+              133.83584341367313,
+              34.59907294286741
+            ],
+            "pick": {
+              "id": 5,
+              "rgb": [
+                221,
+                232,
+                45
+              ],
+              "key": "castle:bmatsuyama",
+              "kind": "land",
+              "factor": 1
+            }
+          }
+        ],
+        "relief": {
+          "8:0-0.webp": "ready",
+          "8:1-0.webp": "ready",
+          "8:2-0.webp": "ready",
+          "8:0-1.webp": "ready",
+          "8:1-1.webp": "ready",
+          "8:2-1.webp": "ready",
+          "8:0-2.webp": "ready",
+          "8:1-2.webp": "ready",
+          "8:2-2.webp": "ready",
+          "4:1-2.webp": "ready",
+          "4:2-2.webp": "ready",
+          "4:3-2.webp": "ready",
+          "4:1-3.webp": "ready",
+          "4:2-3.webp": "ready",
+          "4:3-3.webp": "ready",
+          "1:0-4.webp": "ready",
+          "1:1-4.webp": "ready",
+          "1:0-5.webp": "ready",
+          "1:1-5.webp": "ready",
+          "1:0-6.webp": "ready",
+          "1:1-6.webp": "ready",
+          "4:0-1.webp": "ready",
+          "1:2-5.webp": "ready",
+          "1:2-6.webp": "ready",
+          "4:0-0.webp": "ready",
+          "4:1-0.webp": "ready",
+          "4:1-1.webp": "ready",
+          "1:0-3.webp": "ready",
+          "1:1-3.webp": "ready",
+          "1:0-7.webp": "ready",
+          "1:1-7.webp": "ready",
+          "1:2-7.webp": "ready",
+          "4:2-0.webp": "ready",
+          "1:0-1.webp": "ready",
+          "1:1-1.webp": "ready",
+          "1:0-2.webp": "ready",
+          "1:1-2.webp": "ready"
+        }
+      }
+    },
+    {
+      "label": "1615-to-1560",
+      "year": 1560,
+      "version": null,
+      "places": [
+        {
+          "name": "遼陽",
+          "pick": {
+            "id": 142,
+            "rgb": [
+              142,
+              6,
+              234
+            ],
+            "key": "neutral:明",
+            "kind": "land",
+            "factor": 1
+          }
+        },
+        {
+          "name": "瀋陽",
+          "pick": {
+            "id": 142,
+            "rgb": [
+              142,
+              6,
+              234
+            ],
+            "key": "neutral:明",
+            "kind": "land",
+            "factor": 1
+          }
+        },
+        {
+          "name": "開原",
+          "pick": {
+            "id": 142,
+            "rgb": [
+              142,
+              6,
+              234
+            ],
+            "key": "neutral:明",
+            "kind": "land",
+            "factor": 1
+          }
+        },
+        {
+          "name": "寛甸",
+          "pick": {
+            "id": 2,
+            "rgb": [
+              55,
+              123,
+              140
+            ],
+            "key": "unassigned",
+            "kind": "land",
+            "factor": 1
+          }
+        },
+        {
+          "name": "義州",
+          "pick": {
+            "id": 125,
+            "rgb": [
+              222,
+              243,
+              163
+            ],
+            "key": "castle:uiju",
+            "kind": "land",
+            "factor": 1
+          }
+        },
+        {
+          "name": "旧明除去",
+          "pick": {
+            "id": 2,
+            "rgb": [
+              55,
+              123,
+              140
+            ],
+            "key": "unassigned",
+            "kind": "land",
+            "factor": 1
+          }
+        }
+      ],
+      "coast": {
+        "mode": "game",
+        "date": {
+          "y": 1560,
+          "m": 1,
+          "d": 1
+        },
+        "version": null,
+        "fujitoPassageConnected": true,
+        "visitedSeaCells": 10667,
+        "points": [
+          {
+            "name": "経ヶ島",
+            "point": [
+              133.8108903,
+              34.5610021
+            ],
+            "pick": {
+              "id": 114,
+              "rgb": [
+                124,
+                185,
+                164
+              ],
+              "key": "castle:tenjin",
+              "kind": "land",
+              "factor": 1
+            }
+          },
+          {
+            "name": "藤戸寺",
+            "point": [
+              133.8095872,
+              34.5601554
+            ],
+            "pick": {
+              "id": 114,
+              "rgb": [
+                124,
+                185,
+                164
+              ],
+              "key": "castle:tenjin",
+              "kind": "land",
+              "factor": 1
+            }
+          },
+          {
+            "name": "浮洲岩跡",
+            "point": [
+              133.8052177,
+              34.5598924
+            ],
+            "pick": {
+              "id": 114,
+              "rgb": [
+                124,
+                185,
+                164
+              ],
+              "key": "castle:tenjin",
+              "kind": "land",
+              "factor": 1
+            }
+          },
+          {
+            "name": "塩生",
+            "point": [
+              133.771388,
+              34.476388
+            ],
+            "pick": {
+              "id": 114,
+              "rgb": [
+                124,
+                185,
+                164
+              ],
+              "key": "castle:tenjin",
+              "kind": "land",
+              "factor": 1
+            }
+          },
+          {
+            "name": "水島",
+            "point": [
+              133.718,
+              34.517
+            ],
+            "pick": {
+              "id": 1,
+              "rgb": [
+                8,
+                24,
+                48
+              ],
+              "key": "sea",
+              "kind": "sea",
+              "factor": 1
+            }
+          },
+          {
+            "name": "早島の丘",
+            "point": [
+              133.81842,
+              34.599915
+            ],
+            "pick": {
+              "id": 5,
+              "rgb": [
+                221,
+                232,
+                45
+              ],
+              "key": "castle:bmatsuyama",
+              "kind": "land",
+              "factor": 1
+            }
+          },
+          {
+            "name": "北岸",
+            "point": [
+              133.9,
+              34.64
+            ],
+            "pick": {
+              "id": 114,
+              "rgb": [
+                124,
+                185,
+                164
+              ],
+              "key": "castle:tenjin",
+              "kind": "land",
+              "factor": 1
+            }
+          },
+          {
+            "name": "宇喜多期",
+            "point": [
+              133.83584341367313,
+              34.59907294286741
+            ],
+            "pick": {
+              "id": 1,
+              "rgb": [
+                8,
+                24,
+                48
+              ],
+              "key": "sea",
+              "kind": "sea",
+              "factor": 1
+            }
+          }
+        ],
+        "relief": {
+          "8:0-0.webp": "ready",
+          "8:1-0.webp": "ready",
+          "8:2-0.webp": "ready",
+          "8:0-1.webp": "ready",
+          "8:1-1.webp": "ready",
+          "8:2-1.webp": "ready",
+          "8:0-2.webp": "ready",
+          "8:1-2.webp": "ready",
+          "8:2-2.webp": "ready",
+          "4:1-2.webp": "ready",
+          "4:2-2.webp": "ready",
+          "4:3-2.webp": "ready",
+          "4:1-3.webp": "ready",
+          "4:2-3.webp": "ready",
+          "4:3-3.webp": "ready",
+          "1:0-4.webp": "ready",
+          "1:1-4.webp": "ready",
+          "1:0-5.webp": "ready",
+          "1:1-5.webp": "ready",
+          "1:0-6.webp": "ready",
+          "1:1-6.webp": "ready",
+          "4:0-1.webp": "ready",
+          "1:2-5.webp": "ready",
+          "1:2-6.webp": "ready",
+          "4:0-0.webp": "ready",
+          "4:1-0.webp": "ready",
+          "4:1-1.webp": "ready",
+          "1:0-3.webp": "ready",
+          "1:1-3.webp": "ready",
+          "1:0-7.webp": "ready",
+          "1:1-7.webp": "ready",
+          "1:2-7.webp": "ready",
+          "4:2-0.webp": "ready",
+          "1:0-1.webp": "ready",
+          "1:1-1.webp": "ready",
+          "1:0-2.webp": "ready",
+          "1:1-2.webp": "ready",
+          "1:2-4.webp": "ready"
+        }
+      }
+    }
+  ],
+  "hoverRows": [
+    {
+      "name": "1400-1560 遼陽",
+      "expected": "遼陽",
+      "p": {
+        "x": 388.5876096002489,
+        "y": 501,
+        "target": "top",
+        "z": 5.5
+      },
+      "hidden": false,
+      "text": "遼陽明・遼東都司遼陽に遼東都司を置く明の軍政域。瀋陽・開原などの衛所を通じて防衛と行政を行った。辺牆と衛所をもとにした軍政域の概略。",
+      "mode": null,
+      "sel": null,
+      "drawn": [
+        "遼",
+        "遼陽（明・遼東都司）",
+        "遼",
+        "遼陽（明・遼東都司）"
+      ],
+      "regionLabels": "明・遼東明・遼東"
+    },
+    {
+      "name": "1400-1560 寛甸",
+      "expected": null,
+      "p": {
+        "x": 860,
+        "y": 501,
+        "target": "top",
+        "z": 5.5
+      },
+      "hidden": true,
+      "text": "遼陽明・遼東都司遼陽に遼東都司を置く明の軍政域。瀋陽・開原などの衛所を通じて防衛と行政を行った。辺牆と衛所をもとにした軍政域の概略。",
+      "mode": null,
+      "sel": null,
+      "drawn": [],
+      "regionLabels": ""
+    },
+    {
+      "name": "1400-1560 建州女真",
+      "expected": "建州女真",
+      "p": {
+        "x": 860,
+        "y": 501,
+        "target": "top",
+        "z": 2
+      },
+      "hidden": false,
+      "text": "建州女真地域の勢力建州・海西・東方の女真には複数の集団があり、明から官号を受けて朝貢や交易を行う首長もいた。首長ごとに支配と明との関係が異なる。",
+      "mode": null,
+      "sel": null,
+      "drawn": [
+        "遼河",
+        "遼",
+        "遼陽（明・遼東都司）",
+        "瀋陽（明・瀋陽中衛）",
+        "開原（明・三万衛）",
+        "遼河",
+        "遼",
+        "遼陽（明・遼東都司）",
+        "瀋陽（明・瀋陽中衛）",
+        "開原（明・三万衛）"
+      ],
+      "regionLabels": "咸鏡明・遼東建州女真海西女真咸鏡明・遼東建州女真海西女真"
+    },
+    {
+      "name": "1400-1572 遼陽",
+      "expected": "遼陽",
+      "p": {
+        "x": 388.5876096002489,
+        "y": 501,
+        "target": "top",
+        "z": 5.5
+      },
+      "hidden": false,
+      "text": "遼陽明・遼東都司遼陽に遼東都司を置く明の軍政域。瀋陽・開原などの衛所を通じて防衛と行政を行った。辺牆と衛所をもとにした軍政域の概略。",
+      "mode": null,
+      "sel": null,
+      "drawn": [
+        "遼",
+        "遼陽（明・遼東都司）",
+        "遼",
+        "遼陽（明・遼東都司）"
+      ],
+      "regionLabels": "明・遼東明・遼東"
+    },
+    {
+      "name": "1400-1572 寛甸",
+      "expected": null,
+      "p": {
+        "x": 860,
+        "y": 501,
+        "target": "top",
+        "z": 5.5
+      },
+      "hidden": true,
+      "text": "遼陽明・遼東都司遼陽に遼東都司を置く明の軍政域。瀋陽・開原などの衛所を通じて防衛と行政を行った。辺牆と衛所をもとにした軍政域の概略。",
+      "mode": null,
+      "sel": null,
+      "drawn": [],
+      "regionLabels": ""
+    },
+    {
+      "name": "1400-1572 建州女真",
+      "expected": "建州女真",
+      "p": {
+        "x": 860,
+        "y": 501,
+        "target": "top",
+        "z": 2
+      },
+      "hidden": false,
+      "text": "建州女真地域の勢力建州・海西・東方の女真には複数の集団があり、明から官号を受けて朝貢や交易を行う首長もいた。首長ごとに支配と明との関係が異なる。",
+      "mode": null,
+      "sel": null,
+      "drawn": [
+        "遼河",
+        "遼",
+        "遼陽（明・遼東都司）",
+        "瀋陽（明・瀋陽中衛）",
+        "開原（明・三万衛）"
+      ],
+      "regionLabels": "咸鏡明・遼東建州女真海西女真"
+    },
+    {
+      "name": "1400-1573 遼陽",
+      "expected": "遼陽",
+      "p": {
+        "x": 388.5876096002489,
+        "y": 501,
+        "target": "top",
+        "z": 5.5
+      },
+      "hidden": false,
+      "text": "遼陽明・遼東都司遼陽に遼東都司を置く明の軍政域。瀋陽・開原などの衛所を通じて防衛と行政を行った。 寛甸方面では1573年以降に堡を整備し、防衛域を東へ広げた。辺牆と衛所をもとにした軍政域の概略。",
+      "mode": null,
+      "sel": null,
+      "drawn": [
+        "遼",
+        "遼陽（明・遼東都司）",
+        "遼",
+        "遼陽（明・遼東都司）"
+      ],
+      "regionLabels": "明・遼東明・遼東"
+    },
+    {
+      "name": "1400-1573 寛甸",
+      "expected": "明・遼東",
+      "p": {
+        "x": 860,
+        "y": 501,
+        "target": "top",
+        "z": 5.5
+      },
+      "hidden": false,
+      "text": "明・遼東明の軍政域遼陽に遼東都司を置く明の軍政域。瀋陽・開原などの衛所を通じて防衛と行政を行った。 寛甸方面では1573年以降に堡を整備し、防衛域を東へ広げた。辺牆と衛所をもとにした軍政域の概略。",
+      "mode": null,
+      "sel": null,
+      "drawn": [],
+      "regionLabels": ""
+    },
+    {
+      "name": "1400-1573 建州女真",
+      "expected": "建州女真",
+      "p": {
+        "x": 860,
+        "y": 501,
+        "target": "top",
+        "z": 2
+      },
+      "hidden": false,
+      "text": "建州女真地域の勢力建州・海西・東方の女真には複数の集団があり、明から官号を受けて朝貢や交易を行う首長もいた。首長ごとに支配と明との関係が異なる。",
+      "mode": null,
+      "sel": null,
+      "drawn": [
+        "遼河",
+        "遼",
+        "遼陽（明・遼東都司）",
+        "瀋陽（明・瀋陽中衛）",
+        "開原（明・三万衛）"
+      ],
+      "regionLabels": "咸鏡明・遼東建州女真海西女真"
+    },
+    {
+      "name": "1400-1603 遼陽",
+      "expected": "遼陽",
+      "p": {
+        "x": 388.5876096002489,
+        "y": 501,
+        "target": "top",
+        "z": 5.5
+      },
+      "hidden": false,
+      "text": "遼陽明・遼東都司遼陽に遼東都司を置く明の軍政域。瀋陽・開原などの衛所を通じて防衛と行政を行った。 寛甸方面で軍民の撤収が段階的に進む。辺牆と衛所をもとにした軍政域の概略。",
+      "mode": null,
+      "sel": null,
+      "drawn": [
+        "遼",
+        "遼陽（明・遼東都司）",
+        "遼",
+        "遼陽（明・遼東都司）"
+      ],
+      "regionLabels": "明・遼東明・遼東"
+    },
+    {
+      "name": "1400-1603 寛甸",
+      "expected": "明・遼東",
+      "p": {
+        "x": 860,
+        "y": 501,
+        "target": "top",
+        "z": 5.5
+      },
+      "hidden": false,
+      "text": "明・遼東明の軍政域遼陽に遼東都司を置く明の軍政域。瀋陽・開原などの衛所を通じて防衛と行政を行った。 寛甸方面で軍民の撤収が段階的に進む。辺牆と衛所をもとにした軍政域の概略。",
+      "mode": null,
+      "sel": null,
+      "drawn": [],
+      "regionLabels": ""
+    },
+    {
+      "name": "1400-1603 建州女真",
+      "expected": "建州女真",
+      "p": {
+        "x": 860,
+        "y": 501,
+        "target": "top",
+        "z": 2
+      },
+      "hidden": false,
+      "text": "建州女真地域の勢力1603年にヘトゥアラへ本拠を移す。寛甸方面では明軍・住民の撤収が1603〜1605年に進んだ。首長ごとに支配と明との関係が異なる。",
+      "mode": null,
+      "sel": null,
+      "drawn": [
+        "遼河",
+        "遼",
+        "遼陽（明・遼東都司）",
+        "瀋陽（明・瀋陽中衛）",
+        "開原（明・三万衛）"
+      ],
+      "regionLabels": "咸鏡明・遼東建州女真海西女真"
+    },
+    {
+      "name": "1400-1605 遼陽",
+      "expected": "遼陽",
+      "p": {
+        "x": 388.5876096002489,
+        "y": 501,
+        "target": "top",
+        "z": 5.5
+      },
+      "hidden": false,
+      "text": "遼陽明・遼東都司遼陽に遼東都司を置く明の軍政域。瀋陽・開原などの衛所を通じて防衛と行政を行った。 寛甸方面で軍民の撤収が段階的に進む。辺牆と衛所をもとにした軍政域の概略。",
+      "mode": null,
+      "sel": null,
+      "drawn": [
+        "遼",
+        "遼陽（明・遼東都司）",
+        "遼",
+        "遼陽（明・遼東都司）"
+      ],
+      "regionLabels": "明・遼東明・遼東"
+    },
+    {
+      "name": "1400-1605 寛甸",
+      "expected": "明・遼東",
+      "p": {
+        "x": 860,
+        "y": 501,
+        "target": "top",
+        "z": 5.5
+      },
+      "hidden": false,
+      "text": "明・遼東明の軍政域遼陽に遼東都司を置く明の軍政域。瀋陽・開原などの衛所を通じて防衛と行政を行った。 寛甸方面で軍民の撤収が段階的に進む。辺牆と衛所をもとにした軍政域の概略。",
+      "mode": null,
+      "sel": null,
+      "drawn": [],
+      "regionLabels": ""
+    },
+    {
+      "name": "1400-1605 建州女真",
+      "expected": "建州女真",
+      "p": {
+        "x": 860,
+        "y": 501,
+        "target": "top",
+        "z": 2
+      },
+      "hidden": false,
+      "text": "建州女真地域の勢力1603年にヘトゥアラへ本拠を移す。寛甸方面では明軍・住民の撤収が1603〜1605年に進んだ。首長ごとに支配と明との関係が異なる。",
+      "mode": null,
+      "sel": null,
+      "drawn": [
+        "遼河",
+        "遼",
+        "遼陽（明・遼東都司）",
+        "瀋陽（明・瀋陽中衛）",
+        "開原（明・三万衛）"
+      ],
+      "regionLabels": "咸鏡明・遼東建州女真海西女真"
+    },
+    {
+      "name": "1400-1605 close then hover",
+      "expected": "瀋陽",
+      "p": {
+        "x": 612.758128571596,
+        "y": 501,
+        "target": "top",
+        "z": 5.5
+      },
+      "hidden": false,
+      "text": "瀋陽明・瀋陽中衛遼陽に遼東都司を置く明の軍政域。瀋陽・開原などの衛所を通じて防衛と行政を行った。 寛甸方面で軍民の撤収が段階的に進む。辺牆と衛所をもとにした軍政域の概略。",
+      "mode": null,
+      "sel": null,
+      "drawn": [
+        "遼河",
+        "瀋陽（明・瀋陽中衛）"
+      ],
+      "regionLabels": ""
+    },
+    {
+      "name": "1400-1606 遼陽",
+      "expected": "遼陽",
+      "p": {
+        "x": 388.5876096002489,
+        "y": 501,
+        "target": "top",
+        "z": 5.5
+      },
+      "hidden": false,
+      "text": "遼陽明・遼東都司遼陽に遼東都司を置く明の軍政域。瀋陽・開原などの衛所を通じて防衛と行政を行った。 寛甸方面の撤収後も、遼陽・瀋陽・開原は明の軍政拠点であった。辺牆と衛所をもとにした軍政域の概略。",
+      "mode": null,
+      "sel": null,
+      "drawn": [
+        "遼",
+        "遼陽（明・遼東都司）"
+      ],
+      "regionLabels": "明・遼東"
+    },
+    {
+      "name": "1400-1606 寛甸",
+      "expected": null,
+      "p": {
+        "x": 860,
+        "y": 501,
+        "target": "top",
+        "z": 5.5
+      },
+      "hidden": true,
+      "text": "遼陽明・遼東都司遼陽に遼東都司を置く明の軍政域。瀋陽・開原などの衛所を通じて防衛と行政を行った。 寛甸方面の撤収後も、遼陽・瀋陽・開原は明の軍政拠点であった。辺牆と衛所をもとにした軍政域の概略。",
+      "mode": null,
+      "sel": null,
+      "drawn": [],
+      "regionLabels": ""
+    },
+    {
+      "name": "1400-1606 建州女真",
+      "expected": "建州女真",
+      "p": {
+        "x": 860,
+        "y": 501,
+        "target": "top",
+        "z": 2
+      },
+      "hidden": false,
+      "text": "建州女真地域の勢力1603年にヘトゥアラへ本拠を移す。寛甸方面では明軍・住民の撤収が1603〜1605年に進んだ。首長ごとに支配と明との関係が異なる。",
+      "mode": null,
+      "sel": null,
+      "drawn": [
+        "遼河",
+        "遼",
+        "遼陽（明・遼東都司）",
+        "瀋陽（明・瀋陽中衛）",
+        "開原（明・三万衛）"
+      ],
+      "regionLabels": "咸鏡明・遼東建州女真海西女真"
+    },
+    {
+      "name": "1400-1615 遼陽",
+      "expected": "遼陽",
+      "p": {
+        "x": 388.5876096002489,
+        "y": 501,
+        "target": "top",
+        "z": 5.5
+      },
+      "hidden": false,
+      "text": "遼陽明・遼東都司遼陽に遼東都司を置く明の軍政域。瀋陽・開原などの衛所を通じて防衛と行政を行った。 寛甸方面の撤収後も、遼陽・瀋陽・開原は明の軍政拠点であった。辺牆と衛所をもとにした軍政域の概略。",
+      "mode": null,
+      "sel": null,
+      "drawn": [
+        "遼",
+        "遼陽（明・遼東都司）"
+      ],
+      "regionLabels": "明・遼東"
+    },
+    {
+      "name": "1400-1615 寛甸",
+      "expected": null,
+      "p": {
+        "x": 860,
+        "y": 501,
+        "target": "top",
+        "z": 5.5
+      },
+      "hidden": true,
+      "text": "遼陽明・遼東都司遼陽に遼東都司を置く明の軍政域。瀋陽・開原などの衛所を通じて防衛と行政を行った。 寛甸方面の撤収後も、遼陽・瀋陽・開原は明の軍政拠点であった。辺牆と衛所をもとにした軍政域の概略。",
+      "mode": null,
+      "sel": null,
+      "drawn": [],
+      "regionLabels": ""
+    },
+    {
+      "name": "1400-1615 建州女真",
+      "expected": "建州女真",
+      "p": {
+        "x": 860,
+        "y": 501,
+        "target": "top",
+        "z": 2
+      },
+      "hidden": false,
+      "text": "建州女真地域の勢力八旗の編成が整えられ、明への朝貢も行われた。イェヘはこの年も別勢力として残る。首長ごとに支配と明との関係が異なる。",
+      "mode": null,
+      "sel": null,
+      "drawn": [
+        "遼河",
+        "遼",
+        "遼陽（明・遼東都司）",
+        "瀋陽（明・瀋陽中衛）",
+        "開原（明・三万衛）"
+      ],
+      "regionLabels": "咸鏡明・遼東建州女真海西女真"
+    },
+    {
+      "name": "1400 瀋陽",
+      "expected": "瀋陽",
+      "p": {
+        "x": 612.758128571596,
+        "y": 501,
+        "target": "top",
+        "z": 5.5
+      },
+      "hidden": false,
+      "text": "瀋陽明・瀋陽中衛遼陽に遼東都司を置く明の軍政域。瀋陽・開原などの衛所を通じて防衛と行政を行った。 寛甸方面の撤収後も、遼陽・瀋陽・開原は明の軍政拠点であった。辺牆と衛所をもとにした軍政域の概略。",
+      "mode": null,
+      "sel": null,
+      "drawn": [
+        "遼河",
+        "瀋陽（明・瀋陽中衛）"
+      ],
+      "regionLabels": ""
+    },
+    {
+      "name": "1400 開原",
+      "expected": "開原",
+      "p": {
+        "x": 860,
+        "y": 501,
+        "target": "top",
+        "z": 5.5
+      },
+      "hidden": false,
+      "text": "開原明・三万衛遼陽に遼東都司を置く明の軍政域。瀋陽・開原などの衛所を通じて防衛と行政を行った。 寛甸方面の撤収後も、遼陽・瀋陽・開原は明の軍政拠点であった。辺牆と衛所をもとにした軍政域の概略。",
+      "mode": null,
+      "sel": null,
+      "drawn": [
+        "遼河",
+        "開原（明・三万衛）"
+      ],
+      "regionLabels": ""
+    },
+    {
+      "name": "1400 義州",
+      "expected": "義州",
+      "p": {
+        "x": 860,
+        "y": 501,
+        "target": "top",
+        "z": 5.5
+      },
+      "hidden": false,
+      "text": "義州平安国 ・ 李氏朝鮮（関係未記録）\n  当主 明宗\n  兵2,548堅さ800石高8万石民忠64\n  \n  \n  ",
+      "mode": null,
+      "sel": null,
+      "drawn": [],
+      "regionLabels": ""
+    },
+    {
+      "name": "1400 海西女真",
+      "expected": "海西女真",
+      "p": {
+        "x": 860,
+        "y": 501,
+        "target": "top",
+        "z": 2
+      },
+      "hidden": false,
+      "text": "海西女真地域の勢力1613年にウラがヌルハチに併合された。イェヘはなお別勢力を保つ。首長ごとに支配と明との関係が異なる。",
+      "mode": null,
+      "sel": null,
+      "drawn": [
+        "遼河",
+        "開原（明・三万衛）",
+        "遼河",
+        "開原（明・三万衛）",
+        "遼河",
+        "開原（明・三万衛）"
+      ],
+      "regionLabels": "建州女真海西女真蒙古諸部建州女真海西女真蒙古諸部建州女真海西女真蒙古諸部"
+    },
+    {
+      "name": "1400 東方の女真諸部",
+      "expected": "東方の女真諸部",
+      "p": {
+        "x": 860,
+        "y": 501,
+        "target": "top",
+        "z": 2
+      },
+      "hidden": false,
+      "text": "東方の女真諸部地域の勢力牡丹江以東には多くの女真集団が暮らしていた。明との関係や首長の支配は地域ごとに異なる。ロシアの進出はこの時代より後である。首長ごとに支配と明との関係が異なる。",
+      "mode": null,
+      "sel": null,
+      "drawn": [],
+      "regionLabels": "女真諸部女真諸部"
+    },
+    {
+      "name": "1400 蒙古諸部",
+      "expected": "蒙古諸部",
+      "p": {
+        "x": 407.9878371253592,
+        "y": 501,
+        "target": "top",
+        "z": 5.5
+      },
+      "hidden": false,
+      "text": "蒙古諸部地域の勢力遼東の西北では蒙古の諸部が活動し、明との交易や軍事交渉が行われていた。首長ごとに支配と明との関係が異なる。",
+      "mode": null,
+      "sel": null,
+      "drawn": [],
+      "regionLabels": "蒙古諸部蒙古諸部蒙古諸部蒙古諸部"
+    },
+    {
+      "name": "390-1560 遼陽",
+      "expected": "遼陽",
+      "p": {
+        "x": 195,
+        "y": 375.4453125,
+        "target": "top",
+        "z": 5.5
+      },
+      "hidden": false,
+      "text": "遼陽明・遼東都司遼陽に遼東都司を置く明の軍政域。瀋陽・開原などの衛所を通じて防衛と行政を行った。辺牆と衛所をもとにした軍政域の概略。",
+      "mode": null,
+      "sel": null,
+      "drawn": [
+        "遼",
+        "遼陽（明・遼東都司）",
+        "遼",
+        "遼陽（明・遼東都司）"
+      ],
+      "regionLabels": "明・遼東明・遼東"
+    },
+    {
+      "name": "390-1560 寛甸",
+      "expected": null,
+      "p": {
+        "x": 195,
+        "y": 375.4453125,
+        "target": "top",
+        "z": 5.5
+      },
+      "hidden": true,
+      "text": "明・遼東明の軍政域遼陽に遼東都司を置く明の軍政域。瀋陽・開原などの衛所を通じて防衛と行政を行った。辺牆と衛所をもとにした軍政域の概略。",
+      "mode": null,
+      "sel": null,
+      "drawn": [],
+      "regionLabels": ""
+    },
+    {
+      "name": "390-1560 建州女真",
+      "expected": "建州女真",
+      "p": {
+        "x": 195,
+        "y": 375.4453125,
+        "target": "top",
+        "z": 2
+      },
+      "hidden": false,
+      "text": "建州女真地域の勢力建州・海西・東方の女真には複数の集団があり、明から官号を受けて朝貢や交易を行う首長もいた。首長ごとに支配と明との関係が異なる。",
+      "mode": null,
+      "sel": null,
+      "drawn": [],
+      "regionLabels": "建州女真建州女真"
+    },
+    {
+      "name": "390-1572 遼陽",
+      "expected": "遼陽",
+      "p": {
+        "x": 195,
+        "y": 375.4453125,
+        "target": "top",
+        "z": 5.5
+      },
+      "hidden": false,
+      "text": "遼陽明・遼東都司遼陽に遼東都司を置く明の軍政域。瀋陽・開原などの衛所を通じて防衛と行政を行った。辺牆と衛所をもとにした軍政域の概略。",
+      "mode": null,
+      "sel": null,
+      "drawn": [
+        "遼",
+        "遼陽（明・遼東都司）"
+      ],
+      "regionLabels": "明・遼東"
+    },
+    {
+      "name": "390-1572 寛甸",
+      "expected": null,
+      "p": {
+        "x": 195,
+        "y": 375.4453125,
+        "target": "top",
+        "z": 5.5
+      },
+      "hidden": true,
+      "text": "明・遼東明の軍政域遼陽に遼東都司を置く明の軍政域。瀋陽・開原などの衛所を通じて防衛と行政を行った。辺牆と衛所をもとにした軍政域の概略。",
+      "mode": null,
+      "sel": null,
+      "drawn": [],
+      "regionLabels": ""
+    },
+    {
+      "name": "390-1572 建州女真",
+      "expected": "建州女真",
+      "p": {
+        "x": 195,
+        "y": 375.4453125,
+        "target": "top",
+        "z": 2
+      },
+      "hidden": false,
+      "text": "建州女真地域の勢力建州・海西・東方の女真には複数の集団があり、明から官号を受けて朝貢や交易を行う首長もいた。首長ごとに支配と明との関係が異なる。",
+      "mode": null,
+      "sel": null,
+      "drawn": [],
+      "regionLabels": "建州女真"
+    },
+    {
+      "name": "390-1573 遼陽",
+      "expected": "遼陽",
+      "p": {
+        "x": 195,
+        "y": 375.4453125,
+        "target": "top",
+        "z": 5.5
+      },
+      "hidden": false,
+      "text": "遼陽明・遼東都司遼陽に遼東都司を置く明の軍政域。瀋陽・開原などの衛所を通じて防衛と行政を行った。 寛甸方面では1573年以降に堡を整備し、防衛域を東へ広げた。辺牆と衛所をもとにした軍政域の概略。",
+      "mode": null,
+      "sel": null,
+      "drawn": [
+        "遼",
+        "遼陽（明・遼東都司）"
+      ],
+      "regionLabels": "明・遼東"
+    },
+    {
+      "name": "390-1573 寛甸",
+      "expected": "明・遼東",
+      "p": {
+        "x": 195,
+        "y": 375.4453125,
+        "target": "top",
+        "z": 5.5
+      },
+      "hidden": false,
+      "text": "明・遼東明の軍政域遼陽に遼東都司を置く明の軍政域。瀋陽・開原などの衛所を通じて防衛と行政を行った。 寛甸方面では1573年以降に堡を整備し、防衛域を東へ広げた。辺牆と衛所をもとにした軍政域の概略。",
+      "mode": null,
+      "sel": null,
+      "drawn": [],
+      "regionLabels": ""
+    },
+    {
+      "name": "390-1573 建州女真",
+      "expected": "建州女真",
+      "p": {
+        "x": 195,
+        "y": 375.4453125,
+        "target": "top",
+        "z": 2
+      },
+      "hidden": false,
+      "text": "建州女真地域の勢力建州・海西・東方の女真には複数の集団があり、明から官号を受けて朝貢や交易を行う首長もいた。首長ごとに支配と明との関係が異なる。",
+      "mode": null,
+      "sel": null,
+      "drawn": [],
+      "regionLabels": "建州女真"
+    },
+    {
+      "name": "390-1603 遼陽",
+      "expected": "遼陽",
+      "p": {
+        "x": 195,
+        "y": 375.4453125,
+        "target": "top",
+        "z": 5.5
+      },
+      "hidden": false,
+      "text": "遼陽明・遼東都司遼陽に遼東都司を置く明の軍政域。瀋陽・開原などの衛所を通じて防衛と行政を行った。 寛甸方面で軍民の撤収が段階的に進む。辺牆と衛所をもとにした軍政域の概略。",
+      "mode": null,
+      "sel": null,
+      "drawn": [
+        "遼",
+        "遼陽（明・遼東都司）"
+      ],
+      "regionLabels": "明・遼東"
+    },
+    {
+      "name": "390-1603 寛甸",
+      "expected": "明・遼東",
+      "p": {
+        "x": 195,
+        "y": 375.4453125,
+        "target": "top",
+        "z": 5.5
+      },
+      "hidden": false,
+      "text": "明・遼東明の軍政域遼陽に遼東都司を置く明の軍政域。瀋陽・開原などの衛所を通じて防衛と行政を行った。 寛甸方面で軍民の撤収が段階的に進む。辺牆と衛所をもとにした軍政域の概略。",
+      "mode": null,
+      "sel": null,
+      "drawn": [],
+      "regionLabels": ""
+    },
+    {
+      "name": "390-1603 建州女真",
+      "expected": "建州女真",
+      "p": {
+        "x": 195,
+        "y": 375.4453125,
+        "target": "top",
+        "z": 2
+      },
+      "hidden": false,
+      "text": "建州女真地域の勢力1603年にヘトゥアラへ本拠を移す。寛甸方面では明軍・住民の撤収が1603〜1605年に進んだ。首長ごとに支配と明との関係が異なる。",
+      "mode": null,
+      "sel": null,
+      "drawn": [],
+      "regionLabels": "建州女真"
+    },
+    {
+      "name": "390-1605 遼陽",
+      "expected": "遼陽",
+      "p": {
+        "x": 195,
+        "y": 375.4453125,
+        "target": "top",
+        "z": 5.5
+      },
+      "hidden": false,
+      "text": "遼陽明・遼東都司遼陽に遼東都司を置く明の軍政域。瀋陽・開原などの衛所を通じて防衛と行政を行った。 寛甸方面で軍民の撤収が段階的に進む。辺牆と衛所をもとにした軍政域の概略。",
+      "mode": null,
+      "sel": null,
+      "drawn": [
+        "遼",
+        "遼陽（明・遼東都司）"
+      ],
+      "regionLabels": "明・遼東"
+    },
+    {
+      "name": "390-1605 寛甸",
+      "expected": "明・遼東",
+      "p": {
+        "x": 195,
+        "y": 375.4453125,
+        "target": "top",
+        "z": 5.5
+      },
+      "hidden": false,
+      "text": "明・遼東明の軍政域遼陽に遼東都司を置く明の軍政域。瀋陽・開原などの衛所を通じて防衛と行政を行った。 寛甸方面で軍民の撤収が段階的に進む。辺牆と衛所をもとにした軍政域の概略。",
+      "mode": null,
+      "sel": null,
+      "drawn": [],
+      "regionLabels": ""
+    },
+    {
+      "name": "390-1605 建州女真",
+      "expected": "建州女真",
+      "p": {
+        "x": 195,
+        "y": 375.4453125,
+        "target": "top",
+        "z": 2
+      },
+      "hidden": false,
+      "text": "建州女真地域の勢力1603年にヘトゥアラへ本拠を移す。寛甸方面では明軍・住民の撤収が1603〜1605年に進んだ。首長ごとに支配と明との関係が異なる。",
+      "mode": null,
+      "sel": null,
+      "drawn": [],
+      "regionLabels": "建州女真"
+    },
+    {
+      "name": "390-1605 close then hover",
+      "expected": "瀋陽",
+      "p": {
+        "x": 195,
+        "y": 375.4453125,
+        "target": "top",
+        "z": 5.5
+      },
+      "hidden": false,
+      "text": "瀋陽明・瀋陽中衛遼陽に遼東都司を置く明の軍政域。瀋陽・開原などの衛所を通じて防衛と行政を行った。 寛甸方面で軍民の撤収が段階的に進む。辺牆と衛所をもとにした軍政域の概略。",
+      "mode": null,
+      "sel": null,
+      "drawn": [
+        "遼河",
+        "瀋陽（明・瀋陽中衛）"
+      ],
+      "regionLabels": ""
+    },
+    {
+      "name": "390-1606 遼陽",
+      "expected": "遼陽",
+      "p": {
+        "x": 195,
+        "y": 375.4453125,
+        "target": "top",
+        "z": 5.5
+      },
+      "hidden": false,
+      "text": "遼陽明・遼東都司遼陽に遼東都司を置く明の軍政域。瀋陽・開原などの衛所を通じて防衛と行政を行った。 寛甸方面の撤収後も、遼陽・瀋陽・開原は明の軍政拠点であった。辺牆と衛所をもとにした軍政域の概略。",
+      "mode": null,
+      "sel": null,
+      "drawn": [
+        "遼",
+        "遼陽（明・遼東都司）"
+      ],
+      "regionLabels": "明・遼東"
+    },
+    {
+      "name": "390-1606 寛甸",
+      "expected": null,
+      "p": {
+        "x": 195,
+        "y": 375.4453125,
+        "target": "top",
+        "z": 5.5
+      },
+      "hidden": true,
+      "text": "明・遼東明の軍政域遼陽に遼東都司を置く明の軍政域。瀋陽・開原などの衛所を通じて防衛と行政を行った。 寛甸方面の撤収後も、遼陽・瀋陽・開原は明の軍政拠点であった。辺牆と衛所をもとにした軍政域の概略。",
+      "mode": null,
+      "sel": null,
+      "drawn": [],
+      "regionLabels": ""
+    },
+    {
+      "name": "390-1606 建州女真",
+      "expected": "建州女真",
+      "p": {
+        "x": 195,
+        "y": 375.4453125,
+        "target": "top",
+        "z": 2
+      },
+      "hidden": false,
+      "text": "建州女真地域の勢力1603年にヘトゥアラへ本拠を移す。寛甸方面では明軍・住民の撤収が1603〜1605年に進んだ。首長ごとに支配と明との関係が異なる。",
+      "mode": null,
+      "sel": null,
+      "drawn": [],
+      "regionLabels": "建州女真"
+    },
+    {
+      "name": "390-1615 遼陽",
+      "expected": "遼陽",
+      "p": {
+        "x": 195,
+        "y": 375.4453125,
+        "target": "top",
+        "z": 5.5
+      },
+      "hidden": false,
+      "text": "遼陽明・遼東都司遼陽に遼東都司を置く明の軍政域。瀋陽・開原などの衛所を通じて防衛と行政を行った。 寛甸方面の撤収後も、遼陽・瀋陽・開原は明の軍政拠点であった。辺牆と衛所をもとにした軍政域の概略。",
+      "mode": null,
+      "sel": null,
+      "drawn": [
+        "遼",
+        "遼陽（明・遼東都司）"
+      ],
+      "regionLabels": "明・遼東"
+    },
+    {
+      "name": "390-1615 寛甸",
+      "expected": null,
+      "p": {
+        "x": 195,
+        "y": 375.4453125,
+        "target": "top",
+        "z": 5.5
+      },
+      "hidden": true,
+      "text": "明・遼東明の軍政域遼陽に遼東都司を置く明の軍政域。瀋陽・開原などの衛所を通じて防衛と行政を行った。 寛甸方面の撤収後も、遼陽・瀋陽・開原は明の軍政拠点であった。辺牆と衛所をもとにした軍政域の概略。",
+      "mode": null,
+      "sel": null,
+      "drawn": [],
+      "regionLabels": ""
+    },
+    {
+      "name": "390-1615 建州女真",
+      "expected": "建州女真",
+      "p": {
+        "x": 195,
+        "y": 375.4453125,
+        "target": "top",
+        "z": 2
+      },
+      "hidden": false,
+      "text": "建州女真地域の勢力八旗の編成が整えられ、明への朝貢も行われた。イェヘはこの年も別勢力として残る。首長ごとに支配と明との関係が異なる。",
+      "mode": null,
+      "sel": null,
+      "drawn": [],
+      "regionLabels": "建州女真"
+    },
+    {
+      "name": "390 瀋陽",
+      "expected": "瀋陽",
+      "p": {
+        "x": 195,
+        "y": 375.4453125,
+        "target": "top",
+        "z": 5.5
+      },
+      "hidden": false,
+      "text": "瀋陽明・瀋陽中衛遼陽に遼東都司を置く明の軍政域。瀋陽・開原などの衛所を通じて防衛と行政を行った。 寛甸方面の撤収後も、遼陽・瀋陽・開原は明の軍政拠点であった。辺牆と衛所をもとにした軍政域の概略。",
+      "mode": null,
+      "sel": null,
+      "drawn": [
+        "遼河",
+        "瀋陽（明・瀋陽中衛）"
+      ],
+      "regionLabels": ""
+    },
+    {
+      "name": "390 開原",
+      "expected": "開原",
+      "p": {
+        "x": 195,
+        "y": 375.4453125,
+        "target": "top",
+        "z": 5.5
+      },
+      "hidden": false,
+      "text": "開原明・三万衛遼陽に遼東都司を置く明の軍政域。瀋陽・開原などの衛所を通じて防衛と行政を行った。 寛甸方面の撤収後も、遼陽・瀋陽・開原は明の軍政拠点であった。辺牆と衛所をもとにした軍政域の概略。",
+      "mode": null,
+      "sel": null,
+      "drawn": [
+        "遼河",
+        "開原（明・三万衛）"
+      ],
+      "regionLabels": ""
+    },
+    {
+      "name": "390 義州",
+      "expected": "義州",
+      "p": {
+        "x": 195,
+        "y": 375.4453125,
+        "target": "top",
+        "z": 5.5
+      },
+      "hidden": false,
+      "text": "義州平安国 ・ 李氏朝鮮（関係未記録）\n  当主 明宗\n  兵2,548堅さ800石高8万石民忠64\n  \n  \n  ",
+      "mode": null,
+      "sel": null,
+      "drawn": [],
+      "regionLabels": ""
+    },
+    {
+      "name": "390 海西女真",
+      "expected": "海西女真",
+      "p": {
+        "x": 195,
+        "y": 375.4453125,
+        "target": "top",
+        "z": 2
+      },
+      "hidden": false,
+      "text": "海西女真地域の勢力1613年にウラがヌルハチに併合された。イェヘはなお別勢力を保つ。首長ごとに支配と明との関係が異なる。",
+      "mode": null,
+      "sel": null,
+      "drawn": [],
+      "regionLabels": "建州女真海西女真"
+    },
+    {
+      "name": "390 東方の女真諸部",
+      "expected": "東方の女真諸部",
+      "p": {
+        "x": 195,
+        "y": 375.4453125,
+        "target": "top",
+        "z": 2
+      },
+      "hidden": false,
+      "text": "東方の女真諸部地域の勢力牡丹江以東には多くの女真集団が暮らしていた。明との関係や首長の支配は地域ごとに異なる。ロシアの進出はこの時代より後である。首長ごとに支配と明との関係が異なる。",
+      "mode": null,
+      "sel": null,
+      "drawn": [],
+      "regionLabels": "女真諸部女真諸部"
+    },
+    {
+      "name": "390 蒙古諸部",
+      "expected": "蒙古諸部",
+      "p": {
+        "x": 195,
+        "y": 375.4453125,
+        "target": "top",
+        "z": 5.5
+      },
+      "hidden": false,
+      "text": "蒙古諸部地域の勢力遼東の西北では蒙古の諸部が活動し、明との交易や軍事交渉が行われていた。首長ごとに支配と明との関係が異なる。",
+      "mode": null,
+      "sel": null,
+      "drawn": [],
+      "regionLabels": "蒙古諸部"
+    }
+  ],
+  "touchRows": [
+    {
+      "name": "遼陽",
+      "interaction": "mouse",
+      "before": null,
+      "modal": "context-region",
+      "selected": null,
+      "title": "遼陽",
+      "text": "明・遼東都司遼陽×遼陽に遼東都司を置く明の軍政域。瀋陽・開原などの衛所を通じて防衛と行政を行った。 寛甸方面で軍民の撤収が段階的に進む。辺牆と衛所をもとにした軍政域の概略。出典：法鼓文理学院 地名規範資料庫「遼陽」地図に戻る",
+      "source": "https://authority.dila.edu.tw/place/search.php?code=PL000000007642"
+    },
+    {
+      "name": "遼陽",
+      "interaction": "touch",
+      "before": null,
+      "modal": "context-region",
+      "selected": null,
+      "title": "遼陽",
+      "text": "明・遼東都司遼陽×遼陽に遼東都司を置く明の軍政域。瀋陽・開原などの衛所を通じて防衛と行政を行った。 寛甸方面で軍民の撤収が段階的に進む。辺牆と衛所をもとにした軍政域の概略。出典：法鼓文理学院 地名規範資料庫「遼陽」地図に戻る",
+      "source": "https://authority.dila.edu.tw/place/search.php?code=PL000000007642"
+    },
+    {
+      "name": "瀋陽",
+      "interaction": "touch",
+      "before": "uiju",
+      "modal": "context-region",
+      "selected": null,
+      "title": "瀋陽",
+      "text": "明・瀋陽中衛瀋陽×遼陽に遼東都司を置く明の軍政域。瀋陽・開原などの衛所を通じて防衛と行政を行った。 寛甸方面の撤収後も、遼陽・瀋陽・開原は明の軍政拠点であった。辺牆と衛所をもとにした軍政域の概略。出典：法鼓文理学院 地名規範資料庫「瀋陽」地図に戻る",
+      "source": "https://authority.dila.edu.tw/place/search.php?code=PL000000007083"
+    },
+    {
+      "name": "建州女真",
+      "interaction": "touch",
+      "before": null,
+      "modal": "context-region",
+      "selected": null,
+      "title": "建州女真",
+      "text": "地域の勢力建州女真×八旗の編成が整えられ、明への朝貢も行われた。イェヘはこの年も別勢力として残る。首長ごとに支配と明との関係が異なる。出典：増井寛也「ヌルハチの対明関係とその展開過程について―主として朝貢活動から見た―」地図に戻る",
+      "source": "https://www.ritsumei.ac.jp/acd/cg/lt/rb/679/679PDF/masui.pdf"
+    }
+  ],
+  "drawing": {
+    "palette": [
+      "253,250,243,255",
+      "237,234,227,255",
+      "244,241,234,255",
+      "240,237,230,255",
+      "235,232,225,255",
+      "242,239,232,255",
+      "236,226,198,255",
+      "184,167,119,61",
+      "133,158,115,82",
+      "174,174,198,82",
+      "151,179,141,82",
+      "120,157,110,82",
+      "94,179,186,82",
+      "228,136,179,82",
+      "165,179,151,82",
+      "192,140,140,82",
+      "159,142,129,82",
+      "108,169,161,82",
+      "177,117,103,82",
+      "200,133,182,82",
+      "187,172,117,82",
+      "156,142,209,82",
+      "128,166,178,82",
+      "148,171,192,82",
+      "255,240,190,41"
+    ],
+    "contextBorders": [
+      {
+        "color": "#826547",
+        "dash": [
+          4.000000059604645,
+          4.000000059604645
+        ],
+        "width": 1.0999999940395355
+      },
+      {
+        "color": "#826547",
+        "dash": [
+          4.000000059604645,
+          4.000000059604645
+        ],
+        "width": 1.0999999940395355
+      },
+      {
+        "color": "#826547",
+        "dash": [
+          4.000000059604645,
+          4.000000059604645
+        ],
+        "width": 1.0999999940395355
+      },
+      {
+        "color": "#826547",
+        "dash": [
+          4.000000059604645,
+          4.000000059604645
+        ],
+        "width": 1.0999999940395355
+      },
+      {
+        "color": "#826547",
+        "dash": [
+          4.000000059604645,
+          4.000000059604645
+        ],
+        "width": 1.0999999940395355
+      },
+      {
+        "color": "#826547",
+        "dash": [
+          4.000000059604645,
+          4.000000059604645
+        ],
+        "width": 1.0999999940395355
+      },
+      {
+        "color": "#826547",
+        "dash": [
+          4.000000059604645,
+          4.000000059604645
+        ],
+        "width": 1.0999999940395355
+      },
+      {
+        "color": "#826547",
+        "dash": [
+          4.000000059604645,
+          4.000000059604645
+        ],
+        "width": 1.0999999940395355
+      },
+      {
+        "color": "#826547",
+        "dash": [
+          4.0000001192092896,
+          4.0000001192092896
+        ],
+        "width": 1.1000000163912773
+      },
+      {
+        "color": "#826547",
+        "dash": [
+          4.0000001192092896,
+          4.0000001192092896
+        ],
+        "width": 1.1000000163912773
+      },
+      {
+        "color": "#826547",
+        "dash": [
+          4.0000001192092896,
+          4.0000001192092896
+        ],
+        "width": 1.1000000163912773
+      },
+      {
+        "color": "#826547",
+        "dash": [
+          4.0000001192092896,
+          4.0000001192092896
+        ],
+        "width": 1.1000000163912773
+      },
+      {
+        "color": "#826547",
+        "dash": [
+          4.0000001192092896,
+          4.0000001192092896
+        ],
+        "width": 1.1000000163912773
+      },
+      {
+        "color": "#826547",
+        "dash": [
+          4.0000001192092896,
+          4.0000001192092896
+        ],
+        "width": 1.1000000163912773
+      },
+      {
+        "color": "#826547",
+        "dash": [
+          4.0000001192092896,
+          4.0000001192092896
+        ],
+        "width": 1.1000000163912773
+      },
+      {
+        "color": "#826547",
+        "dash": [
+          4.0000001192092896,
+          4.0000001192092896
+        ],
+        "width": 1.1000000163912773
+      },
+      {
+        "color": "#826547",
+        "dash": [
+          4.0000001192092896,
+          4.0000001192092896
+        ],
+        "width": 1.1000000163912773
+      },
+      {
+        "color": "#826547",
+        "dash": [
+          4.0000001192092896,
+          4.0000001192092896
+        ],
+        "width": 1.1000000163912773
+      },
+      {
+        "color": "#826547",
+        "dash": [
+          4.0000001192092896,
+          4.0000001192092896
+        ],
+        "width": 1.1000000163912773
+      },
+      {
+        "color": "#826547",
+        "dash": [
+          4.0000001192092896,
+          4.0000001192092896
+        ],
+        "width": 1.1000000163912773
+      },
+      {
+        "color": "#826547",
+        "dash": [
+          4.0000001192092896,
+          4.0000001192092896
+        ],
+        "width": 1.1000000163912773
+      },
+      {
+        "color": "#826547",
+        "dash": [
+          4.0000001192092896,
+          4.0000001192092896
+        ],
+        "width": 1.1000000163912773
+      },
+      {
+        "color": "#826547",
+        "dash": [
+          4.0000001192092896,
+          4.0000001192092896
+        ],
+        "width": 1.1000000163912773
+      },
+      {
+        "color": "#826547",
+        "dash": [
+          4.0000001192092896,
+          4.0000001192092896
+        ],
+        "width": 1.1000000163912773
+      },
+      {
+        "color": "#826547",
+        "dash": [
+          4.0000001192092896,
+          4.0000001192092896
+        ],
+        "width": 1.1000000163912773
+      },
+      {
+        "color": "#826547",
+        "dash": [
+          4.0000001192092896,
+          4.0000001192092896
+        ],
+        "width": 1.1000000163912773
+      },
+      {
+        "color": "#826547",
+        "dash": [
+          4,
+          4
+        ],
+        "width": 1.100000023841858
+      },
+      {
+        "color": "#826547",
+        "dash": [
+          4,
+          4
+        ],
+        "width": 1.100000023841858
+      },
+      {
+        "color": "#826547",
+        "dash": [
+          4,
+          4
+        ],
+        "width": 1.100000023841858
+      },
+      {
+        "color": "#826547",
+        "dash": [
+          4,
+          4
+        ],
+        "width": 1.100000023841858
+      },
+      {
+        "color": "#826547",
+        "dash": [
+          4,
+          4
+        ],
+        "width": 1.100000023841858
+      },
+      {
+        "color": "#826547",
+        "dash": [
+          4,
+          4
+        ],
+        "width": 1.100000023841858
+      },
+      {
+        "color": "#826547",
+        "dash": [
+          4,
+          4
+        ],
+        "width": 1.100000023841858
+      },
+      {
+        "color": "#826547",
+        "dash": [
+          4,
+          4
+        ],
+        "width": 1.100000023841858
+      },
+      {
+        "color": "#826547",
+        "dash": [
+          4,
+          4
+        ],
+        "width": 1.100000023841858
+      },
+      {
+        "color": "#826547",
+        "dash": [
+          4,
+          4
+        ],
+        "width": 1.100000023841858
+      },
+      {
+        "color": "#826547",
+        "dash": [
+          4,
+          4
+        ],
+        "width": 1.100000023841858
+      },
+      {
+        "color": "#826547",
+        "dash": [
+          4,
+          4
+        ],
+        "width": 1.100000023841858
+      },
+      {
+        "color": "#826547",
+        "dash": [
+          4,
+          4
+        ],
+        "width": 1.100000023841858
+      },
+      {
+        "color": "#826547",
+        "dash": [
+          4,
+          4
+        ],
+        "width": 1.100000023841858
+      },
+      {
+        "color": "#826547",
+        "dash": [
+          4.0000001192092896,
+          4.0000001192092896
+        ],
+        "width": 1.1000000163912773
+      },
+      {
+        "color": "#826547",
+        "dash": [
+          4.0000001192092896,
+          4.0000001192092896
+        ],
+        "width": 1.1000000163912773
+      },
+      {
+        "color": "#826547",
+        "dash": [
+          4.0000001192092896,
+          4.0000001192092896
+        ],
+        "width": 1.1000000163912773
+      },
+      {
+        "color": "#826547",
+        "dash": [
+          4.0000001192092896,
+          4.0000001192092896
+        ],
+        "width": 1.1000000163912773
+      },
+      {
+        "color": "#826547",
+        "dash": [
+          4.0000001192092896,
+          4.0000001192092896
+        ],
+        "width": 1.1000000163912773
+      },
+      {
+        "color": "#826547",
+        "dash": [
+          4.0000001192092896,
+          4.0000001192092896
+        ],
+        "width": 1.1000000163912773
+      },
+      {
+        "color": "#826547",
+        "dash": [
+          4.0000001192092896,
+          4.0000001192092896
+        ],
+        "width": 1.1000000163912773
+      },
+      {
+        "color": "#826547",
+        "dash": [
+          4.0000001192092896,
+          4.0000001192092896
+        ],
+        "width": 1.1000000163912773
+      },
+      {
+        "color": "#826547",
+        "dash": [
+          4.0000001192092896,
+          4.0000001192092896
+        ],
+        "width": 1.1000000163912773
+      },
+      {
+        "color": "#826547",
+        "dash": [
+          4.0000001192092896,
+          4.0000001192092896
+        ],
+        "width": 1.1000000163912773
+      },
+      {
+        "color": "#826547",
+        "dash": [
+          4.0000001192092896,
+          4.0000001192092896
+        ],
+        "width": 1.1000000163912773
+      },
+      {
+        "color": "#826547",
+        "dash": [
+          4.0000001192092896,
+          4.0000001192092896
+        ],
+        "width": 1.1000000163912773
+      },
+      {
+        "color": "#826547",
+        "dash": [
+          4.0000001192092896,
+          4.0000001192092896
+        ],
+        "width": 1.1000000163912773
+      },
+      {
+        "color": "#826547",
+        "dash": [
+          4.0000001192092896,
+          4.0000001192092896
+        ],
+        "width": 1.1000000163912773
+      },
+      {
+        "color": "#826547",
+        "dash": [
+          4.0000001192092896,
+          4.0000001192092896
+        ],
+        "width": 1.1000000163912773
+      },
+      {
+        "color": "#826547",
+        "dash": [
+          4.0000001192092896,
+          4.0000001192092896
+        ],
+        "width": 1.1000000163912773
+      },
+      {
+        "color": "#826547",
+        "dash": [
+          4,
+          4
+        ],
+        "width": 1.100000023841858
+      },
+      {
+        "color": "#826547",
+        "dash": [
+          4,
+          4
+        ],
+        "width": 1.100000023841858
+      },
+      {
+        "color": "#826547",
+        "dash": [
+          4,
+          4
+        ],
+        "width": 1.100000023841858
+      },
+      {
+        "color": "#826547",
+        "dash": [
+          4,
+          4
+        ],
+        "width": 1.100000023841858
+      },
+      {
+        "color": "#826547",
+        "dash": [
+          4,
+          4
+        ],
+        "width": 1.100000023841858
+      },
+      {
+        "color": "#826547",
+        "dash": [
+          4,
+          4
+        ],
+        "width": 1.100000023841858
+      },
+      {
+        "color": "#826547",
+        "dash": [
+          4.0000001192092896,
+          4.0000001192092896
+        ],
+        "width": 1.1000000163912773
+      },
+      {
+        "color": "#826547",
+        "dash": [
+          4.0000001192092896,
+          4.0000001192092896
+        ],
+        "width": 1.1000000163912773
+      },
+      {
+        "color": "#826547",
+        "dash": [
+          4.0000001192092896,
+          4.0000001192092896
+        ],
+        "width": 1.1000000163912773
+      },
+      {
+        "color": "#826547",
+        "dash": [
+          4.0000001192092896,
+          4.0000001192092896
+        ],
+        "width": 1.1000000163912773
+      },
+      {
+        "color": "#826547",
+        "dash": [
+          4.0000001192092896,
+          4.0000001192092896
+        ],
+        "width": 1.1000000163912773
+      },
+      {
+        "color": "#826547",
+        "dash": [
+          4.0000001192092896,
+          4.0000001192092896
+        ],
+        "width": 1.1000000163912773
+      },
+      {
+        "color": "#826547",
+        "dash": [
+          4.0000001192092896,
+          4.0000001192092896
+        ],
+        "width": 1.1000000163912773
+      },
+      {
+        "color": "#826547",
+        "dash": [
+          4.0000001192092896,
+          4.0000001192092896
+        ],
+        "width": 1.1000000163912773
+      },
+      {
+        "color": "#826547",
+        "dash": [
+          4.0000001192092896,
+          4.0000001192092896
+        ],
+        "width": 1.1000000163912773
+      },
+      {
+        "color": "#826547",
+        "dash": [
+          4.0000001192092896,
+          4.0000001192092896
+        ],
+        "width": 1.1000000163912773
+      },
+      {
+        "color": "#826547",
+        "dash": [
+          4.0000001192092896,
+          4.0000001192092896
+        ],
+        "width": 1.1000000163912773
+      },
+      {
+        "color": "#826547",
+        "dash": [
+          4.0000001192092896,
+          4.0000001192092896
+        ],
+        "width": 1.1000000163912773
+      },
+      {
+        "color": "#826547",
+        "dash": [
+          4.0000001192092896,
+          4.0000001192092896
+        ],
+        "width": 1.1000000163912773
+      },
+      {
+        "color": "#826547",
+        "dash": [
+          4.0000001192092896,
+          4.0000001192092896
+        ],
+        "width": 1.1000000163912773
+      },
+      {
+        "color": "#826547",
+        "dash": [
+          4.0000001192092896,
+          4.0000001192092896
+        ],
+        "width": 1.1000000163912773
+      },
+      {
+        "color": "#826547",
+        "dash": [
+          4.0000001192092896,
+          4.0000001192092896
+        ],
+        "width": 1.1000000163912773
+      },
+      {
+        "color": "#826547",
+        "dash": [
+          4,
+          4
+        ],
+        "width": 1.100000023841858
+      },
+      {
+        "color": "#826547",
+        "dash": [
+          4,
+          4
+        ],
+        "width": 1.100000023841858
+      },
+      {
+        "color": "#826547",
+        "dash": [
+          4,
+          4
+        ],
+        "width": 1.100000023841858
+      },
+      {
+        "color": "#826547",
+        "dash": [
+          4,
+          4
+        ],
+        "width": 1.100000023841858
+      },
+      {
+        "color": "#826547",
+        "dash": [
+          4,
+          4
+        ],
+        "width": 1.100000023841858
+      },
+      {
+        "color": "#826547",
+        "dash": [
+          4,
+          4
+        ],
+        "width": 1.100000023841858
+      },
+      {
+        "color": "#826547",
+        "dash": [
+          4,
+          4
+        ],
+        "width": 1.100000023841858
+      },
+      {
+        "color": "#826547",
+        "dash": [
+          4,
+          4
+        ],
+        "width": 1.100000023841858
+      },
+      {
+        "color": "#826547",
+        "dash": [
+          4,
+          4
+        ],
+        "width": 1.100000023841858
+      },
+      {
+        "color": "#826547",
+        "dash": [
+          4,
+          4
+        ],
+        "width": 1.100000023841858
+      },
+      {
+        "color": "#826547",
+        "dash": [
+          4,
+          4
+        ],
+        "width": 1.100000023841858
+      },
+      {
+        "color": "#826547",
+        "dash": [
+          4,
+          4
+        ],
+        "width": 1.100000023841858
+      },
+      {
+        "color": "#826547",
+        "dash": [
+          4.0000001192092896,
+          4.0000001192092896
+        ],
+        "width": 1.1000000163912773
+      },
+      {
+        "color": "#826547",
+        "dash": [
+          4.0000001192092896,
+          4.0000001192092896
+        ],
+        "width": 1.1000000163912773
+      },
+      {
+        "color": "#826547",
+        "dash": [
+          4.0000001192092896,
+          4.0000001192092896
+        ],
+        "width": 1.1000000163912773
+      },
+      {
+        "color": "#826547",
+        "dash": [
+          4.0000001192092896,
+          4.0000001192092896
+        ],
+        "width": 1.1000000163912773
+      },
+      {
+        "color": "#826547",
+        "dash": [
+          4.0000001192092896,
+          4.0000001192092896
+        ],
+        "width": 1.1000000163912773
+      },
+      {
+        "color": "#826547",
+        "dash": [
+          4.0000001192092896,
+          4.0000001192092896
+        ],
+        "width": 1.1000000163912773
+      },
+      {
+        "color": "#826547",
+        "dash": [
+          4.0000001192092896,
+          4.0000001192092896
+        ],
+        "width": 1.1000000163912773
+      },
+      {
+        "color": "#826547",
+        "dash": [
+          4.0000001192092896,
+          4.0000001192092896
+        ],
+        "width": 1.1000000163912773
+      },
+      {
+        "color": "#826547",
+        "dash": [
+          4.0000001192092896,
+          4.0000001192092896
+        ],
+        "width": 1.1000000163912773
+      },
+      {
+        "color": "#826547",
+        "dash": [
+          4.0000001192092896,
+          4.0000001192092896
+        ],
+        "width": 1.1000000163912773
+      }
+    ]
+  },
+  "errors": [],
+  "consoleErrors": [],
+  "assetErrors": [],
+  "optionalFavicon": [
+    {
+      "url": "http://localhost:8000/favicon.ico",
+      "status": 404
+    }
+  ],
+  "loadFailures": [],
+  "observedServedHead": "fe05cc5826b0a9f911fda90b293d38984f7ef073",
+  "serverOperations": false,
+  "runtimeFileSha256": {
+    "game/ui.js": "c46e152c6ad2e0124825a7c25def02c03c6e9dfc1282ad00b55bb72ddb821bc0",
+    "game/raster-map.js": "17b2ed5835ca8fd37066e81db935f1b49deef34014ffba3736b0302c78af42f1",
+    "game/liaodong-context.js": "916b88d4873f4628d553330438ae11e66785144a7e69199dfda5f359a37f6803",
+    "game/map/manifest.json": "e3ece680e8538f49b5fdf7154183cfb8c8ecfca563c9db12887d28ded0e36793",
+    "game/map/relief.json": "761f68757f26200007e3a9863ca5052e58262519bf65a9e6b874b867bb5ca652"
+  }
+}
