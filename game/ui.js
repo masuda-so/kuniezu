@@ -36,7 +36,8 @@ const STRIPE={};const stripeTile=k=>STRIPE[k]||(STRIPE[k]=(()=>{const c=document
 const ensureLand=()=>{};
 // 角を落とす（チャイキン法）。今の市町村境を元にした境のギザギザを和らげる。開いた線は端を動かさない
 function chaikin(a,closed,it){for(let k=0;k<it;k++){const n=a.length/2;if(n<3)return a;const o=[];if(!closed){o.push(a[0],a[1]);}
-  const m=closed?n:n-1;for(let i=0;i<m;i++){const j=(i+1)%n;const x0=a[i*2],y0=a[i*2+1],x1=a[j*2],y1=a[j*2+1];o.push(x0*.75+x1*.25,y0*.75+y1*.25,x0*.25+x1*.75,y0*.25+y1*.75);}
+  // 削る量は辺の4分の1、ただし最大1.5単位（約800m）。長い直線の辺（データの切り口など）の大きな角を三角形に削らない。
+  const m=closed?n:n-1;for(let i=0;i<m;i++){const j=(i+1)%n;const x0=a[i*2],y0=a[i*2+1],x1=a[j*2],y1=a[j*2+1],len=Math.hypot(x1-x0,y1-y0),f=len>6?1.5/len:.25;o.push(x0+(x1-x0)*f,y0+(y1-y0)*f,x1+(x0-x1)*f,y1+(y0-y1)*f);}
   if(!closed){o.splice(2,2);o.splice(o.length-2,2);o.push(a[a.length-2],a[a.length-1]);}a=o;}return a;}
 const P2=(arr,it)=>{const p=new Path2D();for(const poly of arr)for(let ring of poly){if(it)ring=chaikin(ring,true,it);p.moveTo(ring[0],ring[1]);for(let i=2;i<ring.length;i+=2)p.lineTo(ring[i],ring[i+1]);p.closePath();}return p;};
 const L2=(arr,it)=>{const p=new Path2D();for(let l of arr){if(it)l=chaikin(l,false,it);p.moveTo(l[0],l[1]);for(let i=2;i<l.length;i+=2)p.lineTo(l[i],l[i+1]);}return p;};
@@ -44,7 +45,7 @@ const TERR={};for(const id in GEO.terr)TERR[id]=P2(GEO.terr[id],2);
 if(GEO.japanLand)TKTerrain.setCoverage('gsi',GEO.japanLand);
 const JAPAN=GEO.japanLand?P2(GEO.japanLand,1):null;
 // 間引かない陸地の輪郭は最大縮尺（8倍）でだけ使うので、起動時には作らず初めて要る時に作る。
-let LANDFULL=null;function fullLand(){if(!LANDFULL){LANDFULL=P2(GEO.japanLand||GEO.land,1);if(GEO.japanLand)LANDFULL.addPath(P2(GEO.land.slice(GEO.japanLand.length),1));}return LANDFULL;}
+let LANDFULL=null;function fullLand(){if(!LANDFULL){LANDFULL=P2(GEO.japanLand||GEO.land,1);if(GEO.japanLand)LANDFULL.addPath(P2(GEO.land.slice(GEO.japanLand.length),1));COAST.set(LANDFULL,coastPath(GEO.land));}return LANDFULL;}
 // 陸地の輪郭は約15万点あり、描画のたびのクリップ・縁取りが重い。縮尺ごとに画面で0.35px未満の折れを間引いた輪郭を使う（当たり判定は元の LAND）。
 function simplifyRing(r,tol){const n=r.length/2;if(n<8)return r;const keep=new Uint8Array(n);keep[0]=keep[n-1]=1;const st=[[0,n-1]];const t2=tol*tol;
  while(st.length){const [a,b]=st.pop();const ax=r[a*2],ay=r[a*2+1],bx=r[b*2],by=r[b*2+1],dx=bx-ax,dy=by-ay,L=dx*dx+dy*dy||1e-12;let mi=-1,md=t2;
@@ -54,7 +55,15 @@ function simplifyRing(r,tol){const n=r.length/2;if(n<8)return r;const keep=new U
 const landLOD=new Map();
 function landFor(z){const lv=Math.max(-3,Math.min(3,Math.floor(Math.log2(Math.max(.01,z)))));if(lv>=3)return fullLand();let p=landLOD.get(lv);if(p)return p;
  const tol=.35/2**lv,min=tol*1.5,simp=arr=>arr.map(poly=>poly.map(ring=>{let x0=Infinity,y0=Infinity,x1=-Infinity,y1=-Infinity;for(let i=0;i<ring.length;i+=2){x0=Math.min(x0,ring[i]);x1=Math.max(x1,ring[i]);y0=Math.min(y0,ring[i+1]);y1=Math.max(y1,ring[i+1]);}return x1-x0<min&&y1-y0<min?null:simplifyRing(ring,tol);}).filter(Boolean)).filter(poly=>poly.length);
- p=P2(simp(GEO.japanLand||GEO.land),1);if(GEO.japanLand)p.addPath(P2(simp(GEO.land.slice(GEO.japanLand.length)),1));landLOD.set(lv,p);return p;}
+ p=P2(simp(GEO.japanLand||GEO.land),1);if(GEO.japanLand)p.addPath(P2(simp(GEO.land.slice(GEO.japanLand.length)),1));
+ COAST.set(p,coastPath(simp(GEO.land)));landLOD.set(lv,p);return p;}
+// 海岸の縁取り：陸地の輪郭のうち、データの切り口（TKGEO.landCuts の直線上の辺）を引かない。切り口は本来の海岸ではない。
+const COAST=new WeakMap();
+function coastPath(arr){const cut=GEO.landCuts||{x:[],y:[]},onX=v=>cut.x.some(c=>Math.abs(v-c)<.02),onY=v=>cut.y.some(c=>Math.abs(v-c)<.02),p=new Path2D();
+ for(const poly of arr)for(let ring of poly){ring=chaikin(ring,true,1);const n=ring.length/2;let pen=false;
+  for(let i=0;i<n;i++){const a=i*2,b=((i+1)%n)*2,x0=ring[a],y0=ring[a+1],x1=ring[b],y1=ring[b+1];
+   const skip=(Math.abs(y0-y1)<1e-6&&onY(y0))||(Math.abs(x0-x1)<1e-6&&onX(x0));if(skip){pen=false;continue;}if(!pen){p.moveTo(x0,y0);pen=true;}p.lineTo(x1,y1);}}
+ return p;}
 let LANDV=null;
 (window.requestIdleCallback||(f=>setTimeout(f,200)))(function warm(dl){for(const lv of [-3,-2,-1,0,1,2,3]){if(!landLOD.has(lv)||!roadLOD.has(lv)){landFor(2**lv);roadsFor(2**lv);if(dl?.timeRemaining&&dl.timeRemaining()<5){(window.requestIdleCallback||(f=>setTimeout(f,200)))(warm);return;}}}});
 const LAKES=P2(GEO.lakes,1),RIVERS=L2(GEO.rivers.filter(r=>!TK.KOREAN_RIVERS_DETAIL?.length||!r.every((v,i)=>i%2?GEO.LAT0-v/GEO.K>34.8:v/GEO.K/GEO.CX+GEO.LON0>124&&v/GEO.K/GEO.CX+GEO.LON0<131)),1),PBORD=L2(GEO.pborders,2);
@@ -132,7 +141,9 @@ function clampCam(){const c=vc(),CW=CONT.x1-CONT.x0,CH=CONT.y1-CONT.y0;
  const hx=c[2]/2/cam.z,hy=c[3]/2/cam.z;
  cam.x=Math.max(CONT.x0+hx,Math.min(CONT.x1-hx,cam.x));
  cam.y=Math.max(CONT.y0+hy,Math.min(CONT.y1-hy,cam.y));U.baseDirty=true;syncZoomControl();}
-const CONT={x0:-1045,x1:2285,y0:-168,y1:2195};
+const CONT={x0:-1014.1,x1:2688.7,y0:-755.3,y1:3459.7};
+// 表示範囲の基準（docs/architecture/raster-map.md）：西＝与那国島（国土地理院の最西端、東経122°55′57″）、北＝宗谷岬（北緯45°31′35″）、
+// 東＝納沙布岬（東経145°49′01″）、南＝与那国島の緯度（北緯24°27′05″）。左下の角を国土地理院の最西端（与那国島）にそろえ、琉球諸島を入れる。朝鮮・明が絡むため西は国土地理院の端を使う。
 function syncZoomControl(){const nav=$('#mapZoom');if(nav)nav.hidden=U.mode==='title';const el=$('#mapZoomRange');if(!el)return;const min=Math.max(VW/(CONT.x1-CONT.x0),VH/(CONT.y1-CONT.y0));el.value=Math.round(Math.log(cam.z/min)/Math.log(MAXZ/min)*100);el.setAttribute('aria-valuetext',Math.round(cam.z/min*100)+'%');}
 function setMapZoom(z){anim=null;beginZoom();cam.z=z;clampCam();tip(null);}
 function fitAll(){[cam.x,cam.y]=G.PJ(135,36);cam.z=0;clampCam();}
@@ -259,14 +270,14 @@ function paintBase(c,pad=0){LANDV=landFor(cam.z);
   if(z>.45){c.strokeStyle='rgba(110,110,110,.5)';c.lineWidth=.8/z;c.stroke(PBORD);}
   if(S&&z>.5)drawRoads(c,z,false);drawBorders(c,z);
   c.save();c.clip(LANDV);c.fillStyle='#aac4df';c.fill(LAKES);c.strokeStyle='rgba(110,135,170,.55)';c.lineWidth=.7/z;c.stroke(LAKES);c.restore();
-   c.strokeStyle='rgba(100,125,160,.7)';c.lineWidth=.8/z;c.stroke(LANDV);
+   c.strokeStyle='rgba(100,125,160,.7)';c.lineWidth=.8/z;c.stroke(COAST.get(LANDV)||LANDV);
  }else{
  c.strokeStyle='rgba(95,135,175,.75)';c.lineWidth=1.1/z;c.lineJoin='round';drawMapRivers(c,z);
  if(z>.55){c.save();c.setLineDash([3/z,3/z]);c.strokeStyle='rgba(70,55,35,.38)';c.lineWidth=.9/z;c.stroke(PBORD);c.restore();}
  if(S&&z>.5)drawRoads(c,z,false);
  drawRoadLevels(c,z);drawBorders(c,z);
  c.save();c.clip(LANDV);c.fillStyle='#93b4d2';c.fill(LAKES);c.strokeStyle='rgba(50,70,100,.55)';c.lineWidth=.8/z;c.stroke(LAKES);c.restore();
- c.strokeStyle='rgba(25,35,60,.6)';c.lineWidth=1.1/z;c.stroke(LANDV);
+ c.strokeStyle='rgba(25,35,60,.6)';c.lineWidth=1.1/z;c.stroke(COAST.get(LANDV)||LANDV);
  }
 
  drawWaterEvidence(c,z);drawPeriodWater(c,z);
@@ -1059,9 +1070,9 @@ let LAND3=null;
 function battleTerrain(I){if(!LAND3)LAND3=P2(GEO.land,3);const LAND=LAND3;const pa=unitXY(I.a),pb=unitXY(I.b);const cx=(pa[0]+pb[0])/2,cy=(pa[1]+pb[1])/2,R=17,AR=.62;const x0=cx-R,y0=cy-R*AR,w=2*R,h=2*R*AR;
  const L=(x,y)=>[(x-x0)/w,(y-y0)/h],inside=(x,y)=>x>x0-4&&x<x0+w+4&&y>y0-4&&y<y0+h+4;
  const cv=document.createElement('canvas');cv.width=760;cv.height=Math.round(760*AR);const k=cv.width/w;const c=cv.getContext('2d');c.setTransform(k,0,0,k,-x0*k,-y0*k);
- {const pt=c.createPattern(TKB.seaTile,'repeat');pt.setTransform(new DOMMatrix([1/k,0,0,1/k,0,0]));c.fillStyle=pt;c.fillRect(x0,y0,w,h);}c.save();c.strokeStyle='rgba(222,206,160,.95)';c.lineWidth=9/k;c.lineJoin='round';c.stroke(LANDV);c.restore();c.fillStyle='#efe5cb';c.fill(LANDV);
+ {const pt=c.createPattern(TKB.seaTile,'repeat');pt.setTransform(new DOMMatrix([1/k,0,0,1/k,0,0]));c.fillStyle=pt;c.fillRect(x0,y0,w,h);}c.save();c.strokeStyle='rgba(222,206,160,.95)';c.lineWidth=9/k;c.lineJoin='round';c.stroke(COAST.get(LANDV)||LANDV);c.restore();c.fillStyle='#efe5cb';c.fill(LANDV);
  if(window.TKTerrain)TKTerrain.draw(c,[x0,y0,x0+w,y0+h],k,1,LAND);
- c.fillStyle='#94b6d2';c.fill(LAKES);c.strokeStyle='rgba(60,80,105,.6)';c.lineWidth=1/k;c.stroke(LAKES);c.strokeStyle='rgba(60,80,105,.75)';c.lineWidth=1.3/k;c.stroke(LANDV);
+ c.fillStyle='#94b6d2';c.fill(LAKES);c.strokeStyle='rgba(60,80,105,.6)';c.lineWidth=1/k;c.stroke(LAKES);c.strokeStyle='rgba(60,80,105,.75)';c.lineWidth=1.3/k;c.stroke(COAST.get(LANDV)||LANDV);
  const feats=[];
  for(const l of GEO.rivers){const pts=[];for(let i=0;i<l.length;i+=2){if(inside(l[i],l[i+1]))pts.push(L(l[i],l[i+1]));else if(pts.length>1){feats.push({k:'river',w:1.2,pts:pts.splice(0)});}else pts.length=0;}if(pts.length>1)feats.push({k:'river',w:1.2,pts});}
  for(const r of G.ROADS){let pts=[];for(const q of r.pts){if(inside(q[0],q[1]))pts.push(L(q[0],q[1]));else if(pts.length>1){feats.push({k:'road',pts,n:r.name});pts=[];}else pts=[];}if(pts.length>1)feats.push({k:'road',pts,n:r.name});}

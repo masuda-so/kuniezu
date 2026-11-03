@@ -73,7 +73,7 @@ window.TKTerrain=(function(){
   const requested=[];
   const z=Math.max(6,Math.min(14,Math.ceil(Math.log2(K*CX*scale*dpr*360/256))));if(z!==lastZoom){for(const t of [...active])if(t.z!==z&&t.z!==6&&!(t.z===8&&z>8&&t.provider==='dem')&&!(t.z===z-2&&z>=10)){cancel(t);active.delete(t);running--;cache.delete(t.provider+'/'+t.z+'/'+t.x+'/'+t.y);}}lastZoom=z;
   for(let i=pending.length-1;i>=0;i--)if(pending[i].z!==z&&pending[i].z!==6&&!(pending[i].z===8&&z>8&&pending[i].provider==='dem')&&!(pending[i].z===z-2&&z>=10)){const t=pending.splice(i,1)[0];cache.delete(t.provider+'/'+t.z+'/'+t.x+'/'+t.y);}
-  const west=Math.max(118,view[0]/K/CX+lon0),east=Math.min(147,view[2]/K/CX+lon0),north=Math.min(47,lat0-view[1]/K),south=Math.max(24,lat0-view[3]/K);if(west>=east||south>=north)return;
+  const west=Math.max(118,view[0]/K/CX+lon0),east=Math.min(147,view[2]/K/CX+lon0),north=Math.min(47,lat0-view[1]/K),south=Math.max(20,lat0-view[3]/K);if(west>=east||south>=north)return;
   c.save();if(clip)c.clip(clip);c.imageSmoothingEnabled=true;c.imageSmoothingQuality='high';
   const layer=(provider,bounds)=>{
    const [w,e,n,s]=bounds;if(w>=e||s>=n)return;
