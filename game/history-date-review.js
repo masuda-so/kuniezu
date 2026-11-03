@@ -84,3 +84,15 @@
   text:'豊臣秀吉が秋月種長に日向財部の城を宛行う朱印状を出した。知行目録は羽柴秀長から受け取るよう命じた。'
  });
 }
+
+/* 岩石城は古処山城と別地点。支城の落城を九州全域の領主変更から分けて表示する。 */
+{
+ const lunarDate=[1587,4,1],site='岩石城';
+ TK.SITE_POS[site]=[130.871738,33.577313];
+ TK.HIST.push({
+  d:TK.lunarDate(...lunarDate),lunarDate,k:'note',at:'kawara',site,
+  title:'岩石城の落城',who:'蒲生氏郷・前田利長',
+  source:'https://www.town.soeda.fukuoka.jp/uploaded/attachment/1792.pdf',
+  text:'蒲生氏郷と前田利長の軍が、秋月氏の支城・岩石城を攻め落とした。'
+ });
+}
