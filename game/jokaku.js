@@ -64,4 +64,11 @@ TK.JOKAKU=[
  {d:[1589,12,3],k:'burn',node:'sukagawa',clan:null,title:'須賀川城炎上',text:'伊達政宗の攻撃の中、内通者が火を放ち、須賀川城は焼け落ちた。'}
 ];
 
+/* 年まで確認できる居城移転。ゲームでは1603年の年境で切り替える。 */
+TK.JOKAKU.push({
+ d:[1603,1,1],k:'build',node:'agata',n:'縣城',lon:131.662946,lat:32.580619,prev:1,clan:null,
+ title:'高橋元種の縣城築城',who:'高橋元種',datePrecision:'年',
+ source:'https://www.city.nobeoka.miyazaki.jp/soshiki/6/1689.html',
+ text:'慶長8年、高橋元種は五ヶ瀬川と大瀬川の間に縣城を築き、松尾城から居城を移した。'
+});
 TK.JOKAKU.sort((a,b)=>(a.d[0]-b.d[0])*400+(a.d[1]-b.d[1])*32+(a.d[2]-b.d[2]));
