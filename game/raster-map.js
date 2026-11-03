@@ -1,4 +1,11 @@
 "use strict";
+/* 年代別の地図の版（game/map/versions.json）。ゲームの日付が期間 [from,to) に入る版を一つ選ぶ。塗り・当たり判定・境界線は同じ版を使う。 */
+window.TKMapVersion=(function(){let list=[],lastT=null,lastS=null,cur=null;
+ if(typeof fetch==='function'&&typeof document!=='undefined')fetch('map/versions.json',{cache:'no-cache'}).then(r=>r.ok?r.json():{versions:[]}).then(v=>{list=v.versions||[];lastT=null;lastS=null;window.TKRaster?.bump?.();window.TKEdges?.bump?.();}).catch(()=>{});
+ // 記憶は「遊んでいる場（G.S() の参照）」と日付の両方で引く。シナリオやセーブが替わって同じ t になっても古い版を使わない。
+ function active(){const S=window.G?.S?.();const t=S?S.t:null;if(t===lastT&&S===lastS)return cur;lastT=t;lastS=S;cur=null;if(t==null)return null;
+  for(const v of list){const a=G.evT({d:v.period[0]}),b=G.evT({d:v.period[1]});if(t>=a&&t<b){cur=v;break;}}return cur;}
+ return {active,list:()=>list};})();
 /* ラスター地図の実行時部品。game/map/ の領域画像（1画素1領域）を読み、「領域ID→色」の表で塗った画像を地図平面へ貼る。
    表示の細かさに合わせて 100m（provinces/）・400m（provinces-4/）・800m（provinces-8/）のどれかを選ぶ。
    日が進んでも、領主が変わった時だけ表を引き直す。読み込み中のタイルは一段粗いものを代わりに貼る。 */
@@ -11,9 +18,16 @@ window.TKRaster=(function(){
   for(const d of defs)byColor.set(d.rgb[0]<<16|d.rgb[1]<<8|d.rgb[2],d.id);
   ready=true;for(const t of level(8).tiles)load(8,t);revision++;onChange?.();
  }).catch(()=>{});
- function level(f){return f===1?{factor:1,dir:'provinces',tiles:man.tiles}:man.levels.find(l=>l.factor===f);}
+ function baseLevel(f){return f===1?{factor:1,dir:'provinces',tiles:man.tiles}:man.levels.find(l=>l.factor===f);}
+ // 版があれば同じ段・同じ列行のタイルを置き換える（重ねない）。版で新しく陸になったタイルも足す。
+ let verMemo=null,verKey='';
+ function level(f){const v=TKMapVersion.active(),k=(v?.id||'')+'|'+f;if(verKey===k&&verMemo)return verMemo;const base=baseLevel(f);
+  const sub=new Map((v?.tiles||[]).filter(t=>t.factor===f).map(t=>[t.col+','+t.row,t]));if(!sub.size){verKey=k;return verMemo=base;}
+  const tiles=base.tiles.map(t=>{const r=sub.get(t.col+','+t.row);if(!r)return t;sub.delete(t.col+','+t.row);return {...t,file:r.file,url:r.file,sha256:r.sha256};});
+  for(const r of sub.values())tiles.push({col:r.col,row:r.row,file:r.file,url:r.file,sha256:r.sha256,width:man.tile,height:man.tile});
+  verKey=k;return verMemo={...base,tiles};}
  function load(f,t){const k=key(f,t);const had=tiles.get(k);if(had&&!(had.state==='error'&&performance.now()>had.retry))return had;const rec={state:'loading',t,f,ids:null,canvas:null,sig:'',tries:(had?.tries||0)+1};tiles.set(k,rec);
-  fetch('map/'+level(f).dir+'/'+t.file+(t.sha256?'?v='+t.sha256.slice(0,10):'')).then(r=>r.blob()).then(b=>createImageBitmap(b)).then(bm=>{const cv=document.createElement('canvas');cv.width=bm.width;cv.height=bm.height;const c=cv.getContext('2d',{willReadFrequently:true});c.drawImage(bm,0,0);const px=c.getImageData(0,0,bm.width,bm.height).data,ids=new Uint16Array(bm.width*bm.height);
+  fetch('map/'+(t.url||level(f).dir+'/'+t.file)+(t.sha256?'?v='+t.sha256.slice(0,10):'')).then(r=>r.blob()).then(b=>createImageBitmap(b)).then(bm=>{const cv=document.createElement('canvas');cv.width=bm.width;cv.height=bm.height;const c=cv.getContext('2d',{willReadFrequently:true});c.drawImage(bm,0,0);const px=c.getImageData(0,0,bm.width,bm.height).data,ids=new Uint16Array(bm.width*bm.height);
    for(let i=0;i<ids.length;i++)ids[i]=byColor.get(px[i*4]<<16|px[i*4+1]<<8|px[i*4+2])||0;rec.ids=ids;rec.state='ready';revision++;onChange?.();})
    .catch(e=>{rec.state='error';rec.err=String(e);rec.retry=performance.now()+1000*rec.tries;if(rec.tries<5)setTimeout(()=>{revision++;onChange?.();},1000*rec.tries);});
   order.push(k);while(order.length>48){const old=order.shift();if(!old.startsWith('8:'))tiles.delete(old);}return rec;}
@@ -40,7 +54,7 @@ window.TKRaster=(function(){
  function pickAt(x,y){if(!ready)return null;for(const f of [1,4,8]){const s=man.projection.stepUnits*f,cx=Math.floor((x-man.projection.origin[0])/s),cy=Math.floor((y-man.projection.origin[1])/s),t=level(f).tiles.find(t=>t.col===Math.floor(cx/man.tile)&&t.row===Math.floor(cy/man.tile));
   if(!t){if(f===1&&cx>=0&&cy>=0&&cx<man.width&&cy<man.height)return {...defs[0],factor:1};continue;}const rec=f===1?load(f,t):tiles.get(key(f,t));if(rec?.state==='ready'){const d=defs[rec.ids[(cy-t.row*man.tile)*t.width+(cx-t.col*man.tile)]];return d?{...d,factor:f}:null;}}return null;}
  function idAt(x,y){return pickAt(x,y);}
- return {paint,idAt,pickAt,ready:()=>ready,revision:()=>revision,defs:()=>defs,onChange(fn){onChange=fn;}};
+ return {bump(){verMemo=null;revision++;onChange?.();},paint,idAt,pickAt,ready:()=>ready,revision:()=>revision,defs:()=>defs,onChange(fn){onChange=fn;}};
 })();
 
 /* 地形の陰影（Copernicus DEM GLO-90 から開発時に作った画像。game/map/relief.json）。
@@ -66,4 +80,26 @@ window.TKRelief=(function(){
    if(f===1)for(const t of vis(4)){const r=load(4,t);if(r.state==='ready')draw(4,t,r);}}
   for(const [t,r] of fine)if(r.state==='ready')draw(f,t,r);c.restore();return complete;}
  return {paint,ready:()=>ready,revision:()=>revision,notice:()=>man&&{notice:man.notice,disclaimer:man.disclaimer,license:man.license},onChange(fn){onChange=fn;},states:()=>Object.fromEntries([...tiles].map(([k,r])=>[k,r.state+(r.err?' '+r.err:'')]))};
+})();
+
+/* 境界線（game/map/edges.json）。領域画像から生成した共有辺で、塗りと同じ版・同じ段から取る（Codex との契約）。
+   段は TKRaster と同じ選び方。細かい段のタイルが届くまでは、届いている粗い段を使い、塗りの段と食い違う線は重ねない。 */
+window.TKEdges=(function(){
+ let man=null,grid=null,ready=false,revision=0,onChange=null;const tiles=new Map();
+ if(typeof fetch==='function'&&typeof document!=='undefined')Promise.all([fetch('map/edges.json',{cache:'no-cache'}).then(r=>r.json()),fetch('map/manifest.json',{cache:'no-cache'}).then(r=>r.json())]).then(([e,g])=>{man=e;grid=g;ready=true;revision++;onChange?.();}).catch(()=>{});
+ let verMemo=null,verKey='';
+ const level=f=>{const v=TKMapVersion.active(),k=(v?.id||'')+'|'+f;if(verKey===k&&verMemo)return verMemo;const base=man.levels.find(l=>l.factor===f);
+  const sub=new Map((man.versions||[]).filter(x=>v&&x.id===v.id&&x.factor===f).map(x=>[x.col+','+x.row,x]));if(!sub.size){verKey=k;return verMemo=base;}
+  const tiles=base.tiles.map(t=>{const r=sub.get(t.col+','+t.row);if(!r)return t;sub.delete(t.col+','+t.row);return {...t,file:r.file,sha256:r.sha256};});for(const r of sub.values())tiles.push({col:r.col,row:r.row,file:r.file,sha256:r.sha256});
+  verKey=k;return verMemo={...base,tiles};};
+ function load(f,t){const k=f+':'+t.file;let rec=tiles.get(k);if(rec&&!(rec.state==='error'&&performance.now()>rec.retry))return rec;rec={state:'loading',tries:(rec?.tries||0)+1};tiles.set(k,rec);
+  fetch('map/'+level(f).dir+'/'+t.file+'?v='+t.sha256.slice(0,10)).then(r=>{if(!r.ok)throw Error('HTTP '+r.status);return r.json();}).then(items=>{rec.items=items.map(it=>{const p=new Path2D();for(const l of it.lines){p.moveTo(l[0],l[1]);for(let i=2;i<l.length;i+=2)p.lineTo(l[i],l[i+1]);}return {a:it.a,b:it.b,kind:it.kind,p};});rec.state='ready';revision++;onChange?.();})
+   .catch(e=>{rec.state='error';rec.retry=performance.now()+1000*rec.tries;if(rec.tries<5)setTimeout(()=>{revision++;onChange?.();},1000*rec.tries);});return rec;}
+ function pick(z,dpr){const unit=1/(z*dpr),s=grid.projection.stepUnits;for(const f of [8,4])if(s*f<=unit*1.5)return f;return 1;}
+ // view の範囲の辺。塗りと同じ段 f のタイルがそろっていない時は、そろっている段（粗い方）だけを返す。
+ function inView(view,z,dpr){if(!ready)return null;const want=pick(z,dpr),s0=grid.projection.stepUnits,[X0,Y0]=grid.projection.origin,T=grid.tile;
+  for(const f of [want,...[4,8].filter(v=>v>want)]){const s=s0*f,span=T*s,vis=level(f).tiles.filter(t=>{const x=X0+t.col*span,y=Y0+t.row*span;return x<view[2]&&x+span>view[0]&&y<view[3]&&y+span>view[1];});
+   const recs=vis.map(t=>load(f,t));if(recs.every(r=>r.state==='ready'))return recs.flatMap(r=>r.items);}
+  return null;}
+ return {bump(){verMemo=null;revision++;onChange?.();},ready:()=>ready,revision:()=>revision,inView,onChange(fn){onChange=fn;}};
 })();

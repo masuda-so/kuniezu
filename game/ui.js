@@ -67,7 +67,7 @@ function coastPath(arr){const cut=GEO.landCuts||{x:[],y:[]},onX=v=>cut.x.some(c=
 let LANDV=null;
 (window.requestIdleCallback||(f=>setTimeout(f,200)))(function warm(dl){for(const lv of [-3,-2,-1,0,1,2,3]){if(!landLOD.has(lv)||!roadLOD.has(lv)){landFor(2**lv);roadsFor(2**lv);if(dl?.timeRemaining&&dl.timeRemaining()<5){(window.requestIdleCallback||(f=>setTimeout(f,200)))(warm);return;}}}});
 const LAKES=P2(GEO.lakes,1),RIVERS=L2(GEO.rivers.filter(r=>!TK.KOREAN_RIVERS_DETAIL?.length||!r.every((v,i)=>i%2?GEO.LAT0-v/GEO.K>34.8:v/GEO.K/GEO.CX+GEO.LON0>124&&v/GEO.K/GEO.CX+GEO.LON0<131)),1),PBORD=L2(GEO.pborders,2);
-const EDGE=GEO.edges.map(([a,b,ls])=>({a,b,p:L2(ls,2)}));
+const EDGES_V=GEO.edges.map(([a,b,ls])=>({a,b,p:L2(ls,2)}));
 const REGIONAL_RIVERS=TK.regionalRiverRecords(TK.REGIONAL_RIVERS||[],TK.KOREAN_RIVERS_DETAIL||[],G.PJ);
 const regionalDetailRows=new Set(REGIONAL_RIVERS.flatMap(r=>r.detailRows));
 // 地域に関係なく、投影済み河川へ同じ可視判定・丸め・線幅を使う。
@@ -155,7 +155,12 @@ let anim=null;function focus(id,z){const c=G.C[id];anim={x:c.x,y:c.y,z:z||Math.m
 function borderStyle(oa,ob){const key=G.relationKind(oa,ob).key,em=U.dipView?1.35:1;
  const styles={ally:{c:'#177a82',w:2.3,d:[7,3]},lord:{c:'#80619e',w:2,d:[8,3,2,3]},vassal:{c:'#80619e',w:2,d:[8,3,2,3]},war:{c:'#c52f49',w:2.8,d:[8,4]},hostile:{c:'#c56c25',w:2.1,d:[3,3]}};
  const st=styles[key]||{c:'rgba(65,49,32,.65)',w:1.2,d:null};return {...st,w:st.w*em,cs:styles[key]?'rgba(255,248,226,.7)':null};}
-function drawBorders(c,z,k0){if(!S)return;
+// 領主の境界線は、領域画像から生成した共有辺（TKEdges）で引く。届くまでは従来の線（EDGE）。
+function borderEdges(){const v=[...s2w(-240,-240),...s2w(VW+240,VH+240)],items=window.TKEdges?.inView?.(v,cam.z,DPR);if(!items)return null;const defs=TKRaster.defs();
+ return items.filter(it=>it.kind==='region').map(it=>{const a=defs[it.a]?.key,b=defs[it.b]?.key;return a?.startsWith('castle:')&&b?.startsWith('castle:')?{a:a.slice(7),b:b.slice(7),p:it.p}:null;}).filter(e=>e&&S.castles[e.a]&&S.castles[e.b]);}
+function strokeCoast(c){const v=[...s2w(-240,-240),...s2w(VW+240,VH+240)],items=window.TKEdges?.inView?.(v,cam.z,DPR);if(!items){c.stroke(COAST.get(LANDV)||LANDV);return;}for(const it of items)if(it.kind==='coast')c.stroke(it.p);}
+function strokeLakes(c){const v=[...s2w(-240,-240),...s2w(VW+240,VH+240)],items=window.TKEdges?.inView?.(v,cam.z,DPR);if(!items){c.stroke(LAKES);return;}for(const it of items)if(it.kind==='lake')c.stroke(it.p);}
+function drawBorders(c,z,k0){if(!S)return;const EDGE=borderEdges()||EDGES_V;
  for(const e of EDGE){const oa=S.castles[e.a].owner,ob=S.castles[e.b].owner;if(oa!==ob||z<.8)continue;c.strokeStyle='rgba(60,45,30,.22)';c.lineWidth=.7/z;c.setLineDash([]);c.stroke(e.p);}
  for(const e of EDGE){const oa=S.castles[e.a].owner,ob=S.castles[e.b].owner;if(oa===ob)continue;const st=borderStyle(oa,ob);const w=st.w*(k0||1)/z;
   if(st.cs){c.setLineDash([]);c.strokeStyle=st.cs;c.lineWidth=w+2.2/z;c.stroke(e.p);}
@@ -240,7 +245,7 @@ function terrainBackdrop(c,view,z){
 const rgbCache=new Map(),rgbCtx=document.createElement('canvas').getContext('2d');
 function cssRGB(css){if(rgbCache.has(css))return rgbCache.get(css);rgbCtx.fillStyle='#000';rgbCtx.fillStyle=css;const v=rgbCtx.fillStyle,m=v.startsWith('#')?[1,3,5].map(i=>parseInt(v.slice(i,i+2),16)):v.match(/\d+(\.\d+)?/g).slice(0,3).map(Number);rgbCache.set(css,m);return m;}
 function rasterColor(flat){return d=>{if(!d||!d.key.startsWith('castle:'))return null;const st=S?.castles[d.key.slice(7)];if(!st)return null;const k=st.owner,a=flat?(k===S.player?.5:.35):(k===S.player?.44:.32);return [...cssRGB(pastel(k)),Math.round(a*255)];};}
-window.TKRaster?.onChange(()=>{U.baseDirty=true;U.wakeLoop?.();});window.TKRelief?.onChange(()=>{U.baseDirty=true;U.wakeLoop?.();});
+window.TKRaster?.onChange(()=>{U.baseDirty=true;U.wakeLoop?.();});window.TKRelief?.onChange(()=>{U.baseDirty=true;U.wakeLoop?.();});window.TKEdges?.onChange(()=>{U.baseDirty=true;U.wakeLoop?.();});
 // 陸だけの描画層（paintBase が使う）。描く先と同じ大きさのキャンバスを使い回す。
 const LANDLAYERS=[];function landLayer(c,n=0){const w=c.canvas.width,h=c.canvas.height;if(!LANDLAYERS[n])LANDLAYERS[n]=document.createElement('canvas').getContext('2d');const L=LANDLAYERS[n];if(L.canvas.width!==w||L.canvas.height!==h){L.canvas.width=w;L.canvas.height=h;}L.setTransform(1,0,0,1,0,0);L.globalCompositeOperation='source-over';L.globalAlpha=1;L.shadowBlur=0;L.clearRect(0,0,w,h);return L;}
 function paintBase(c,pad=0){LANDV=landFor(cam.z);
@@ -282,15 +287,15 @@ function paintBase(c,pad=0){LANDV=landFor(cam.z);
  if(flat){c.strokeStyle='rgba(95,135,175,.75)';c.lineWidth=1.1/z;c.lineJoin='round';drawMapRivers(c,z);
   if(z>.45){c.strokeStyle='rgba(110,110,110,.5)';c.lineWidth=.8/z;c.stroke(PBORD);}
   if(S&&z>.5)drawRoads(c,z,false);drawBorders(c,z);
-  c.save();c.clip(LANDV);if(!window.TKRaster?.ready()){c.fillStyle='#aac4df';c.fill(LAKES);}c.strokeStyle='rgba(110,135,170,.55)';c.lineWidth=.7/z;c.stroke(LAKES);c.restore();
-   c.strokeStyle='rgba(100,125,160,.7)';c.lineWidth=.8/z;c.stroke(COAST.get(LANDV)||LANDV);
+  c.save();c.clip(LANDV);if(!window.TKRaster?.ready()){c.fillStyle='#aac4df';c.fill(LAKES);}c.strokeStyle='rgba(110,135,170,.55)';c.lineWidth=.7/z;strokeLakes(c);c.restore();
+   c.strokeStyle='rgba(100,125,160,.7)';c.lineWidth=.8/z;strokeCoast(c);
  }else{
  c.strokeStyle='rgba(95,135,175,.75)';c.lineWidth=1.1/z;c.lineJoin='round';drawMapRivers(c,z);
  if(z>.55){c.save();c.setLineDash([3/z,3/z]);c.strokeStyle='rgba(70,55,35,.38)';c.lineWidth=.9/z;c.stroke(PBORD);c.restore();}
  if(S&&z>.5)drawRoads(c,z,false);
  drawRoadLevels(c,z);drawBorders(c,z);
- c.save();c.clip(LANDV);if(!window.TKRaster?.ready()){c.fillStyle='#93b4d2';c.fill(LAKES);}c.strokeStyle='rgba(50,70,100,.55)';c.lineWidth=.8/z;c.stroke(LAKES);c.restore();
- c.strokeStyle='rgba(25,35,60,.6)';c.lineWidth=1.1/z;c.stroke(COAST.get(LANDV)||LANDV);
+ c.save();c.clip(LANDV);if(!window.TKRaster?.ready()){c.fillStyle='#93b4d2';c.fill(LAKES);}c.strokeStyle='rgba(50,70,100,.55)';c.lineWidth=.8/z;strokeLakes(c);c.restore();
+ c.strokeStyle='rgba(25,35,60,.6)';c.lineWidth=1.1/z;strokeCoast(c);
  }
 
  drawWaterEvidence(c,z);drawPeriodWater(c,z);
@@ -323,7 +328,7 @@ function drawBase(){
  if(liveRevision!==U.terrainRevShown){if(!anim&&nowMs-(U.terrainRevAt||0)>=700){U.terrainRevShown=liveRevision;U.terrainRevAt=nowMs;}else{clearTimeout(U.terrainRevTimer);U.terrainRevTimer=setTimeout(()=>{U.baseDirty=true;},anim?120:Math.max(60,700-(nowMs-(U.terrainRevAt||0))));}}
  if(performance.now()<(U.zoomUntil||0))U.zoomRebuildAt=performance.now();
  const cc=vc(),revision=U.terrainRevShown||0;
- const key=[cam.z,DPR,VW,VH,...cc,U.mode,U.mapStyle,U.dipView,U.sel,S?.player,territorySignature(),JSON.stringify(S?.vassal||{}),JSON.stringify(S?.improvements?.roads||{}),revision,fontRevision,TK.waterPhase?.(S?G.date().y:1560),window.TKRaster?.revision()||0,window.TKRelief?.revision()||0].join('|');
+ const key=[cam.z,DPR,VW,VH,...cc,U.mode,U.mapStyle,U.dipView,U.sel,S?.player,territorySignature(),JSON.stringify(S?.vassal||{}),JSON.stringify(S?.improvements?.roads||{}),revision,fontRevision,TK.waterPhase?.(S?G.date().y:1560),window.TKRaster?.revision()||0,window.TKRelief?.revision()||0,window.TKEdges?.revision()||0,window.TKMapVersion?.active()?.id||''].join('|');
  const pad=160,dx=baseSurface?(cam.x-baseSurface.x)*cam.z:0,dy=baseSurface?(cam.y-baseSurface.y)*cam.z:0;
  const valid=baseSurface&&baseSurface.state===S&&baseSurface.key===key&&Math.abs(dx)<=pad&&Math.abs(dy)<=pad;
  if(!valid){
@@ -1115,9 +1120,9 @@ let LAND3=null;
 function battleTerrain(I){if(!LAND3)LAND3=P2(GEO.land,3);const LAND=LAND3;const pa=unitXY(I.a),pb=unitXY(I.b);const cx=(pa[0]+pb[0])/2,cy=(pa[1]+pb[1])/2,R=17,AR=.62;const x0=cx-R,y0=cy-R*AR,w=2*R,h=2*R*AR;
  const L=(x,y)=>[(x-x0)/w,(y-y0)/h],inside=(x,y)=>x>x0-4&&x<x0+w+4&&y>y0-4&&y<y0+h+4;
  const cv=document.createElement('canvas');cv.width=760;cv.height=Math.round(760*AR);const k=cv.width/w;const c=cv.getContext('2d');c.setTransform(k,0,0,k,-x0*k,-y0*k);
- {const pt=c.createPattern(TKB.seaTile,'repeat');pt.setTransform(new DOMMatrix([1/k,0,0,1/k,0,0]));c.fillStyle=pt;c.fillRect(x0,y0,w,h);}c.save();c.strokeStyle='rgba(222,206,160,.95)';c.lineWidth=9/k;c.lineJoin='round';c.stroke(COAST.get(LANDV)||LANDV);c.restore();c.fillStyle='#efe5cb';c.fill(LANDV);
+ {const pt=c.createPattern(TKB.seaTile,'repeat');pt.setTransform(new DOMMatrix([1/k,0,0,1/k,0,0]));c.fillStyle=pt;c.fillRect(x0,y0,w,h);}c.save();c.strokeStyle='rgba(222,206,160,.95)';c.lineWidth=9/k;c.lineJoin='round';strokeCoast(c);c.restore();c.fillStyle='#efe5cb';c.fill(LANDV);
  if(window.TKTerrain)TKTerrain.draw(c,[x0,y0,x0+w,y0+h],k,1,LAND);
- c.fillStyle='#94b6d2';c.fill(LAKES);c.strokeStyle='rgba(60,80,105,.6)';c.lineWidth=1/k;c.stroke(LAKES);c.strokeStyle='rgba(60,80,105,.75)';c.lineWidth=1.3/k;c.stroke(COAST.get(LANDV)||LANDV);
+ c.fillStyle='#94b6d2';c.fill(LAKES);c.strokeStyle='rgba(60,80,105,.6)';c.lineWidth=1/k;c.stroke(LAKES);c.strokeStyle='rgba(60,80,105,.75)';c.lineWidth=1.3/k;strokeCoast(c);
  const feats=[];
  for(const l of GEO.rivers){const pts=[];for(let i=0;i<l.length;i+=2){if(inside(l[i],l[i+1]))pts.push(L(l[i],l[i+1]));else if(pts.length>1){feats.push({k:'river',w:1.2,pts:pts.splice(0)});}else pts.length=0;}if(pts.length>1)feats.push({k:'river',w:1.2,pts});}
  for(const r of G.ROADS){let pts=[];for(const q of r.pts){if(inside(q[0],q[1]))pts.push(L(q[0],q[1]));else if(pts.length>1){feats.push({k:'road',pts,n:r.name});pts=[];}else pts=[];}if(pts.length>1)feats.push({k:'road',pts,n:r.name});}
