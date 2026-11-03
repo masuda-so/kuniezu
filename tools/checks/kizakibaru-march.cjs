@@ -1,7 +1,15 @@
 const assert=require('node:assert/strict'),{G,TK}=require('./history-focus.cjs').model();
 G.newGame('s1570','shimazu');G.auditVisualMoves=true;
 const title='木崎原の戦い',end=G.evT({d:TK.lunarDate(1572,5,4)}),clear=()=>{for(const q of ['evQ','sceneQ','battleQ','propQ','prisonQ','observerQ'])G.S()[q]=[];};
-for(;G.S().t<end;G.day()){clear();assert.ok(!G.S().units.some(u=>u.until===title),'no invented Uchi-Koyama-Obi sortie');}
+for(;G.S().t<end;G.day()){
+ clear();assert.ok(!G.S().units.some(u=>u.until===title),'no invented Uchi-Koyama-Obi sortie');
+ if(G.S().t===end-1){
+  const commander=G.genByName('島津忠平');
+  G._visualSampleTime=end;
+  try{assert.deepEqual(Array.from(G.personPoint(commander).slice(0,2)),Array.from(G.PJ(130.867591,32.054126)));}
+  finally{delete G._visualSampleTime;}
+ }
+}
 clear();const u=G.documentedArmies().find(u=>u.record?.id==='kizakibaru-local');assert(u);assert.deepEqual(Array.from(u.commanders),['島津忠平']);
 const origin=G.PJ(130.867591,32.054126),field=G.PJ(130.83012518518,32.041051361571),line=G.historyGeometry(u);
 assert(line.length>=150);assert.deepEqual(Array.from(G.historyPoint(u).slice(0,2)),Array.from(origin));
