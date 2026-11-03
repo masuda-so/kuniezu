@@ -280,3 +280,14 @@
   text:'有馬直純の転封後、幕府は日野江の旧領の統治を周辺の諸家に委ねた。'
  });
 }
+
+{
+ const lunarDate=[1612,3,18];
+ TK.HIST.push({
+  d:TK.lunarDate(...lunarDate),lunarDate,k:'appear',clan:'arima',at:'hinoe',
+  g:'有馬直純|55|55|55|55|1586',leader:true,heir:1,
+  title:'有馬直純が家督を継ぐ',who:'有馬直純',
+  source:'https://rekimoku.xsrv.jp/3-zyoukaku-13-sunpujo.html',
+  text:'岡本大八事件で有馬晴信が失脚し、幕府はその所領を子の直純に与えた。'
+ });
+}
