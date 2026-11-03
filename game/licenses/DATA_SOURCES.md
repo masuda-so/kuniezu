@@ -23,14 +23,14 @@ W09-05は名称の接尾語を正規化して十和田湖も抽出。自然湖�
 
 - Wessel, P. / Smith, W. H. F. ほか、**GSHHG 2.3.7**（2017-06-15）、full resolution L1。 [配布元と解説](https://www.soest.hawaii.edu/wessel/gshhg/)。[NOAA公開ファイル](https://www.ncei.noaa.gov/data/oceans/archive/arc0234/0304143/1.1/data/0-data/GSHHS_shp/f/GSHHS_f_L1.shp)。2026-11-01取得。
 - 加工物：`korea-coast.js`。東経121.5〜131.3度・北緯33〜43度を切り出し、日本側の既存データと重ならない島を選別、座標を丸めてJSON化。2,336輪郭・128,835頂点（2026-11-01更新）。
-- 加工手順は `tools/geo/korea-coast.py`。元のSHPを第1引数として実行すると、`game/korea-coast.js` を再生成する。
+- 加工手順だった `tools/geo/korea-coast.py` は削除済み（Git の履歴に残る）。`game/korea-coast.js` は加工済みのデータとして保持する。
 - 原データおよびこの抽出データのライセンスは **GNU LGPL v3**。同じディレクトリの `GSHHG-LGPL-3.0.txt` に全文、`GSHHG-README.txt` に元の説明を同梱。抽出データとその加工手順を改変・再配布する際も、この表示とライセンスを保持する。
 - 現代の世界海岸資料から構成された比較線。港湾埋立・干拓・干潟の時代差、測地ずれは解消していない。
 
 ## 関東の湖沼比較線
 
 - 国土交通省、**国土数値情報 湖沼データ W09-05**（2005年度）。[データ解説・利用条件](https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-W09-2005.html)。2026-10-31取得。
-- 加工物：`lake-baselines.js`。霞ヶ浦・北浦・牛久沼・印旛沼・手賀沼のGMLを抽出し、座標をJSON化。再生成は `tools/geo/lakes.py`。
+- 加工物：`lake-baselines.js`。霞ヶ浦・北浦・牛久沼・印旛沼・手賀沼のGMLを抽出し、座標をJSON化。生成元だった `tools/geo/lakes.py` は削除済み（Git の履歴に残る）。
 - 国土交通省「国土数値情報（湖沼データ）」を加工して作成。国が戦国期の形を保証した地図ではない。
 - ゲームでは破線と「比較湖岸」で区別。常陸國絵図、1511年の浜名橋之図等の史料情報は「街道・地図・進軍の出典」に別記する。
 
@@ -56,7 +56,7 @@ https://geoshape.ex.nii.ac.jp/nrct-poi/
 ## 大陸・朝鮮の河川
 
 - Natural Earth, [Rivers + lake centerlines](https://www.naturalearthdata.com/downloads/10m-physical-vectors/10m-rivers-lake-centerlines/)。[利用条件](https://www.naturalearthdata.com/about/terms-of-use/)はPublic Domain。
-- 2026-10-31に公開リポジトリの `geojson/ne_10m_rivers_lake_centerlines.geojson` を取得。`tools/geo/regional-rivers.py` で鴨緑江・豆満江・遼河・漢江・南漢江・洛東江を7レコード抽出し、`regional-rivers.js` とした。同名の中国の漢水は地域条件で除外。
+- 2026-10-31に公開リポジトリの `geojson/ne_10m_rivers_lake_centerlines.geojson` を取得。旧 `tools/geo/regional-rivers.py`（削除済み）で鴨緑江・豆満江・遼河・漢江・南漢江・洛東江を7レコード抽出し、`regional-rivers.js` とした。同名の中国の漢水は地域条件で除外。
 - 一般化された現代河川の中心線。詳細な川幅・旧河道・当時の島の帰属は示さない。鴨緑江・豆満江に重ねた境域の線も、16世紀の確定した測地国境ではない。
 
 ## 椿海・飯沼・見沼の表示区分（2026-11-01）
@@ -114,3 +114,7 @@ https://geoshape.ex.nii.ac.jp/nrct-poi/
 
 - 国土交通省 河川局「高梁川水系の流域及び河川の概要（案）」参考資料1-1、図4-1-1「岡山平野の干拓進展図」（高田正規原図、出典『日本地誌 第17巻 岡山県・広島県・山口県』）。2026-11-03取得。
 - 図の干拓区画を読み取り、1560〜1615年の海陸を推定した領域差分の型紙だけを同梱する。図そのもの・PDF は同梱しない。年ごとの汀線や水路の幅を示すものではない。
+
+## 生成元の削除（2026-11-03）
+
+地図の正本を画像（`game/map_data/`）にしたため、線の地図データを作っていた生成器（`tools/geo` の `korea-coast.py`・`lakes.py`・`land-extension.py`・`regional-rivers.py`・`korean-rivers.py`・`select-major-rivers.py` など）は削除した。各データの出典・ライセンスの表示はこのファイルのとおり保持する。加工手順は Git の履歴で確かめられる。

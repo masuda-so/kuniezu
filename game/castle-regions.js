@@ -1,5 +1,5 @@
 "use strict";
-/* 城どうしの境の置き換え（日朝共通の算法）。tools/geo/apply-castle-regions.cjs の出力 TK.CASTLE_REGIONS を、
+/* 城どうしの境の置き換え（日朝共通の算法）。旧 tools/geo/apply-castle-regions.cjs（削除済み）の出力 TK.CASTLE_REGIONS を、
    読み込み時に TKGEO.terr と TKGEO.edges へ当てる。2城の領域の和（国・道の外枠）は変えない。
    境は地形の越えにくさ（共通DEMの傾斜・主要河川）による推定で、領有・郡境の史料ではない。根拠は TK.CASTLE_REGIONS の各項目に残す。 */
 (function(){

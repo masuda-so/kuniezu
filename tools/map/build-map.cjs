@@ -22,4 +22,4 @@ const steps=args.includes('--check')?[
  ['読み込みの確認値',...node('tools/build/stamp-assets.cjs')]];
 for(const [name,cmd,a] of steps){const t=Date.now();console.log(`— ${name}`);const r=spawnSync(cmd,a,{cwd:root,stdio:'inherit'});
  if(r.status!==0){console.error(`${name} で止まった（${r.error?.message||'終了コード '+r.status}）。後の段は動かしていない。`);process.exit(1);}console.log(`  ${((Date.now()-t)/1000).toFixed(1)} 秒`);}
-console.log(args.includes('--check')?'PASS: 配信物は正本どおり':'完了：配信物を正本から作り直した');
+console.log(args.includes('--check')?'PASS: 領域タイルと河川の線は正本どおり（年代別の版・境界線・陰影はこの照合に含まない）':'完了：配信物を正本から作り直した');

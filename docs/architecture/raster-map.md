@@ -132,3 +132,11 @@ node tools/map/build-map.cjs --check               # 書かずに、領域タイ
 - 生成時の集計 `data/audits/raster-provinces-build.json`（郡の割り当て表 `data/map/gun-assignment.csv` は移行時の記録として残す）
 
 残した道具：`build-map.cjs`（入口）、`build-map-tiles.cjs`、`build-province-edits.cjs`、`build-edges.cjs`、`build-river-lines.cjs`、`build-height-cache.py` とそれが使う `build-copernicus-height.py`・`build-hillshade-raster.py`・`encode-relief-webp.cjs`、読み書きの `map-data.cjs`・`map_data.py`・`png-big.cjs`、点検の `audit-*`。年代別の差分の定義（`game/map/edits/applied/` など）は記録として残す。
+
+### 線の地図データの生成器の削除（同日、利用者の指示）
+
+`tools/geo` のうち、旧来の線の地図（陸・海岸・湖・河川・城の領域の境・局所の海岸補正）を作っていた生成器17本を削除した：`apply.py`・`korea.py`（と入力の `korea_admin1.geojson`）・`korea-coast.py`・`land-extension.py`・`lakes.py`・`repair-kanto.py`・`roadfix.py`・`roadfix2.py`・`castle-regions.cjs`・`apply-castle-regions.cjs`・`bizen-north-shore.py`・`audit-raster-derived-boundaries.py`・`regional-rivers.py`・`korean-rivers.py`・`select-major-rivers.py`・`select-reference-rivers.py`。
+
+生成済みのデータ（`geo.js`・`land-extension.js`・`korea-coast.js`・`lake-baselines.js`・河川の JS など）は、合戦図・行軍・読み込み前の代わりの描画など、ほかの読み手のために残す。出典の表示は `game/licenses/DATA_SOURCES.md` に保持する。
+
+残した `tools/geo` の道具は、街道の参照線・史跡の座標・合戦図の地形と水路（`battle-atlas.py`・`battle-rivers.py` と、その入力を取る `fetch-japan-waterways.py`）・経路の断面・古絵図の照合・時代の水域（香取・椿）など、地図の正本とは別のデータを作るもの。
