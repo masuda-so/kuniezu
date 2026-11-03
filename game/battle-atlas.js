@@ -92,7 +92,7 @@ window.TKBattleAtlas=(function(){
     else for(const p of [a,b]){fx.ring(ctx,p[0],p[1],now,clashK,small?18:22);if(playing&&fx.rnd()<dt*8*clashK)fx.spawn(p[0],p[1],'dust');}}
    // 段階移動の足跡は駒より下に描く。
    for(const [index,g]of located.entries()){const u=unitById.get(g.members[0]);const move=u&&moveByName.get(u.g||u.n);if(move&&t>move.from)fx.trail(ctx,traversed(move,pins[index]),COL[sideOf(u)]||COL.unknown,kb);}
-   for(const [index,g]of located.entries()){const u=unitById.get(g.members[0]);if(!u)continue;const [x,y]=pins[index],near=located.filter((q,j)=>Math.hypot(pins[j][0]-x,pins[j][1]-y)<20),sel=selected===g.id||selected===g.parentId||g.members.includes(selected),side=sideOf(u),dead=isDead(u),routed=isRouted(u),col=dead?'#8a8174':u.turn&&t>=u.turn[0]?'#b47712':COL[side]||COL.unknown;
+   for(const [index,g]of located.entries()){const u=unitById.get(g.members[0]);if(!u)continue;const [x,y]=pins[index],sel=selected===g.id||selected===g.parentId||g.members.includes(selected),side=sideOf(u),dead=isDead(u),routed=isRouted(u),col=dead?'#8a8174':u.turn&&t>=u.turn[0]?'#b47712':COL[side]||COL.unknown;
     ctx.save();const from=visibleFrom(u);let alpha=from?clamp((t-from)/2,0,1):1;if(dead)alpha*=clamp(1-(t-u.die)/10,.32,1);else if(routed)alpha*=clamp(1-(t-u.rout)/14,.45,1);ctx.globalAlpha=alpha;
     const move=moveByName.get(u.g||u.n),moving=move&&t>move.from&&t<move.to;let aim=null;
     if(move&&t>move.from){const f=G.battlePhasePoint(sc,u.g||u.n,Math.min(move.to,t+.05),g.point),p=G.battlePhasePoint(sc,u.g||u.n,Math.max(move.from,Math.min(move.to,t)-.05),g.point),A=pj(...p),B=pj(...f);if(Math.hypot(B[0]-A[0],B[1]-A[1])>1e-6)aim=[B[0]-A[0],B[1]-A[1]];}
@@ -107,14 +107,13 @@ window.TKBattleAtlas=(function(){
     const crestKey=G.armyCrestKey({clan:u.clan,gens:[],commanders:[u.g||u.n],until:sc.title}),crest=G.kamonImage(crestKey,11),family=crestKey&&TK.CLANS[crestKey]?G.CN(crestKey):u.clan&&TK.CLANS[u.clan]?G.CN(u.clan):'';fx.flag(ctx,x+(small?16:19),y,small?.8:1,col,crest,now,playing&&!dead,family?family.replace(/家$/,'').slice(0,1):'');
     if(dead)fx.cross(ctx,x,y);
     const status=dead?'討死':routed?'退却':'';
-    const leader=near.length>1?unitById.get(near[0].members[0]):u,isLead=leader===u;
-    if(isLead){const face=opt.face?.(leader.g,12,col);if(face)ctx.drawImage(face,x-(small?30:34),y-12,24,24);
+    {
      // 名札：右・下・左・上の順に、既存の札と駒に重ならない位置へ置く。駒の位置は動かさない。
-     const label=(leader.g||leader.n)+(near.length>1?' ほか'+(near.length-1)+'隊':'')+(status?'・'+status:'');ctx.font=`600 12px ${FONT}`;const w=ctx.measureText(label).width+10,h=18;
+     const label=(u.g||u.n)+(status?'・'+status:'');ctx.font=`600 12px ${FONT}`;const w=ctx.measureText(label).width+10,h=18;
      const cands=[{x:x+(small?30:36),y:y-16},{x:x-w/2,y:y+(small?22:26)},{x:x-w-(small?32:38),y:y-16},{x:x-w/2,y:y-(small?58:66)}];
      const clash=b=>named.some(a=>b.x<a.x+a.w&&b.x+b.w>a.x&&b.y<a.y+a.h&&b.y+b.h>a.y)||pins.some((q,j)=>j!==index&&b.x<q[0]+22&&b.x+b.w>q[0]-34&&b.y<q[1]+14&&b.y+b.h>q[1]-38);
      const b=cands.map(p=>({x:clamp(p.x,2,W-w-2),y:clamp(p.y,2,H-h-2),w,h})).find(b=>!clash(b))||(sel?{x:clamp(cands[0].x,2,W-w-2),y:clamp(cands[0].y,2,H-h-2),w,h}:null);
-     if(b){ctx.fillStyle='rgba(253,247,230,.94)';ctx.fillRect(b.x,b.y,w,h);ctx.strokeStyle='#2a1d10';ctx.lineWidth=.8;ctx.strokeRect(b.x+.5,b.y+.5,w-1,h-1);ctx.fillStyle=col;ctx.fillRect(b.x,b.y,3,h);ctx.font=`600 12px ${FONT}`;ctx.textAlign='left';ctx.textBaseline='middle';ctx.fillStyle=status?'#7a2218':'#302719';ctx.fillText(label,b.x+7,b.y+h/2+.5);named.push(b);}}
+     if(b){const face=opt.face?.(u.g,12,col);if(face)ctx.drawImage(face,x-(small?30:34),y-12,24,24);ctx.fillStyle='rgba(253,247,230,.94)';ctx.fillRect(b.x,b.y,w,h);ctx.strokeStyle='#2a1d10';ctx.lineWidth=.8;ctx.strokeRect(b.x+.5,b.y+.5,w-1,h-1);ctx.fillStyle=col;ctx.fillRect(b.x,b.y,3,h);ctx.font=`600 12px ${FONT}`;ctx.textAlign='left';ctx.textBaseline='middle';ctx.fillStyle=status?'#7a2218':'#302719';ctx.fillText(label,b.x+7,b.y+h/2+.5);named.push(b);}}
     boxes.push({x:x-36,y:y-40,w:72,h:76,id:g.id});ctx.restore();
    }
    lastSnap=!playing;
