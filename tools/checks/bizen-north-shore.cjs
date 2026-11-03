@@ -5,6 +5,15 @@ const before=old.TKGEO.land[0][0],after=now.TKGEO.land[0][0];assert.equal(after.
 assert.equal(now.TKGEO.japanLand[0],now.TKGEO.land[0],'land and Japan clipping must use the same new coast');
 const insideRing=(r,x,y)=>{let b=false;for(let i=0,j=r.length-2;i<r.length;j=i,i+=2)if((r[i+1]>y)!==(r[j+1]>y)&&x<(r[j]-r[i])*(y-r[i+1])/(r[j+1]-r[i+1])+r[i])b=!b;return b;};
 const inside=(polys,x,y)=>polys.some(poly=>poly.reduce((v,r)=>v!==insideRing(r,x,y),false));
+// Land controls for future changes to the Kojima coast. These are site markers, not shoreline measurements.
+const landControls=[
+ {name:'塩生遺跡（全国遺跡報告総覧 154722）',lon:133.771388,lat:34.476388},
+ {name:'経ヶ島（倉敷観光WEB）',lon:133.8108903,lat:34.5610021},
+];
+for(const {name,lon,lat} of landControls){
+ const [x,y]=now.G.PJ(lon,lat);
+ assert(inside(now.TKGEO.land,x,y),name+' must remain on land');
+}
 let added=0;for(let lon=133.85;lon<133.95;lon+=.002)for(let lat=34.615;lat<34.662;lat+=.002){const [x,y]=now.G.PJ(lon,lat),a=inside(old.TKGEO.land,x,y),b=inside(now.TKGEO.land,x,y);assert(!a||b,'this patch must not erase existing land');if(!a&&b){added++;assert(inside(now.TKGEO.terr.tenjin,x,y),'new land must have an interactive management region');for(const [id,polys]of Object.entries(now.TKGEO.terr))if(id!=='tenjin')assert(!inside(polys,x,y),'new land must not create overlapping regions');}}
 const edge=before.slice(p.start-2,p.start+p.deleteCount+2),distance=(x,y)=>{let best=Infinity;for(let i=2;i<edge.length;i+=2){const ax=edge[i-2],ay=edge[i-1],dx=edge[i]-ax,dy=edge[i+1]-ay,t=Math.max(0,Math.min(1,((x-ax)*dx+(y-ay)*dy)/(dx*dx+dy*dy||1)));best=Math.min(best,Math.hypot(x-ax-t*dx,y-ay-t*dy));}return best;};let seamSamples=0;for(let lon=133.842;lon<133.952;lon+=.0005)for(let lat=34.635;lat<34.66;lat+=.0005){const [x,y]=now.G.PJ(lon,lat);if(distance(x,y)>.65||!inside(now.TKGEO.land,x,y)||inside(now.TKGEO.terr.bmatsuyama,x,y))continue;seamSamples++;assert(inside(now.TKGEO.terr.tenjin,x,y),'no unassigned seam between the old and added shore');}assert(seamSamples>20);
 assert(added>100);assert.deepEqual(JSON.parse(JSON.stringify(now.TK.CASTLES)),JSON.parse(JSON.stringify(old.TK.CASTLES)),'castle stats unchanged');assert.deepEqual(JSON.parse(JSON.stringify(now.TK.HIST)),JSON.parse(JSON.stringify(old.TK.HIST)),'historical dates and events unchanged');
