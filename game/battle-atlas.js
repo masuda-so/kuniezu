@@ -108,11 +108,25 @@ window.TKBattleAtlas=(function(){
     if(dead)fx.cross(ctx,x,y);
     const status=dead?'討死':routed?'退却':'';
     {
-     // 名札：右・下・左・上の順に、既存の札と駒に重ならない位置へ置く。駒の位置は動かさない。
+     // 名札だけを動かす。密集時は引き出し線で対応する駒を示す。
      const label=(u.g||u.n)+(status?'・'+status:'');ctx.font=`600 12px ${FONT}`;const w=ctx.measureText(label).width+10,h=18;
-     const cands=[{x:x+(small?30:36),y:y-16},{x:x-w/2,y:y+(small?22:26)},{x:x-w-(small?32:38),y:y-16},{x:x-w/2,y:y-(small?58:66)}];
+     const right=x+(small?30:36),left=x-w-(small?32:38),below=y+(small?22:26),above=y-(small?58:66);
+     const cands=[
+      {x:right,y:y-16},{x:x-w/2,y:below},{x:left,y:y-16},{x:x-w/2,y:above},
+      {x:right,y:below},{x:left,y:below},{x:right,y:above},{x:left,y:above},
+      {x:x-w/2,y:below+h+5},{x:x-w/2,y:above-h-5}
+     ];
      const clash=b=>named.some(a=>b.x<a.x+a.w&&b.x+b.w>a.x&&b.y<a.y+a.h&&b.y+b.h>a.y)||pins.some((q,j)=>j!==index&&b.x<q[0]+22&&b.x+b.w>q[0]-34&&b.y<q[1]+14&&b.y+b.h>q[1]-38);
-     const b=cands.map(p=>({x:clamp(p.x,2,W-w-2),y:clamp(p.y,2,H-h-2),w,h})).find(b=>!clash(b))||(sel?{x:clamp(cands[0].x,2,W-w-2),y:clamp(cands[0].y,2,H-h-2),w,h}:null);
+     const box=p=>({x:clamp(p.x,2,W-w-2),y:clamp(p.y,2,H-h-2),w,h});
+     let b=cands.map(box).find(b=>!clash(b));
+     for(let radius=64;!b&&radius<=120;radius+=28){
+      const around=Array.from({length:12},(_,i)=>{
+       const angle=i*Math.PI/6;
+       return box({x:x+Math.cos(angle)*radius-w/2,y:y+Math.sin(angle)*radius-h/2});
+      });
+      b=around.find(b=>!clash(b));
+     }
+     if(!b&&sel)b=box(cands[0]);
      if(b){const face=opt.face?.(u.g,12,col);if(face)ctx.drawImage(face,x-(small?30:34),y-12,24,24);
       const tx=clamp(x,b.x,b.x+w),ty=clamp(y,b.y,b.y+h),d=Math.hypot(tx-x,ty-y);
       if(d>12){ctx.beginPath();ctx.moveTo(x+(tx-x)*12/d,y+(ty-y)*12/d);ctx.lineTo(tx,ty);ctx.strokeStyle=col;ctx.lineWidth=.85;ctx.stroke();}
