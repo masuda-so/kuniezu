@@ -1,0 +1,28 @@
+{
+  "id": "location:ieyasu-oyama-arrival-1600",
+  "person": "person:tokugawa-ieyasu",
+  "place": "place:oyama",
+  "relation": "attested-presence",
+  "time": {
+    "kind": "dated-event",
+    "date": [
+      1600,
+      7,
+      24
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": false,
+    "precision": "day"
+  },
+  "source": "ieyasu1600Chronology",
+  "sourceUrl": "https://www.city.ohtawara.tochigi.jp/docs/2020122100011/file_contents/all.pdf",
+  "locator": "広報おおたわら2021年1月号4頁・慶長5年、那須の緊張",
+  "uncertainty": "小山に着陣の記録。日内の時刻、前後の滞在期間、経由街道の精密位置は確定しない。",
+  "recordType": "sourced-location-observation",
+  "status": "verified-in-specified-scope",
+  "recordedAt": "2026-11-04",
+  "gameBindings": [
+    "TK.IEYASU_1600_ITINERARY",
+    "history-index:person:tokugawa-ieyasu"
+  ]
+}
