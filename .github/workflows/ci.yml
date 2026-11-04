@@ -29,6 +29,13 @@ jobs:
         run: node tools/checks/infrastructure.cjs
       - name: Secret scan
         run: node tools/checks/secret-scan.cjs
+      - name: Historical records and authority identities
+        run: |
+          node tools/checks/evidence-store.cjs
+          node tools/checks/location-store.cjs
+          node tools/checks/history-index.cjs
+          python3 tools/checks/history-sqlite.py
+          python3 tools/checks/history-sqlite-inputs.py
       - name: Asset version stamps
         run: node tools/build/stamp-assets.cjs --check
       # 地図の配信物は追跡しない。正本 game/map_data から作れること、年代別の差分が当たることを確かめる（陰影は除く）。

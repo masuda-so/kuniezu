@@ -1,0 +1,145 @@
+{
+  "scope": "未登録人物2名の本人同定。期間外記録をゲーム内へ転用せず、生没や所在を自動採用しない。",
+  "checkedAt": "2026-11-04T04:04:40.003080+00:00",
+  "records": [
+    {
+      "entityId": "person:ヌルハチ",
+      "name": "ヌルハチ",
+      "japaneseLabel": "ヌルハチ",
+      "wikidataId": "Q311189",
+      "wikidataRevision": 2557703159,
+      "wikidataUrl": "https://www.wikidata.org/wiki/Q311189",
+      "wikidataRevisionUrl": "https://www.wikidata.org/w/index.php?oldid=2557703159",
+      "requestUrl": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q311189%7CQ982229&props=info%7Clabels%7Cdescriptions%7Caliases%7Cclaims&languages=ja&format=json&maxlag=5",
+      "retrievedAt": "2026-11-04T04:00:50.293Z",
+      "rawIdentitySnapshot": "data/research/source-notes/frontier-person-authority-candidates.json",
+      "instanceOf": [
+        "Q5"
+      ],
+      "existingClaimIds": [
+        "nurhaci-hoifa-conquest-1607",
+        "nurhaci-jianzhou-unification-1588",
+        "nurhaci-tribute-missions-1588-1615",
+        "nurhaci-ula-conquest-1613"
+      ],
+      "identityReason": "既存命題の建州女真首長ヌルハチを、増井論文・故宮博物院の努尔哈赤解説と照合。NDLの太祖は清朝を限定した標目で、別名「奴児哈赤」の読みが「ヌルハチ」と完全一致する。一般称号「太祖」や生年だけを同定根拠にしない。",
+      "discoveryRequest": {
+        "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&sites=jawiki&titles=%E3%83%8C%E3%83%AB%E3%83%8F%E3%83%81%7C%E3%83%B4%E3%82%A1%E3%82%B7%E3%83%BC%E3%83%AA%E3%83%BC%E3%83%BB%E3%83%9D%E3%83%A4%E3%83%AB%E3%82%B3%E3%83%95&props=info%7Clabels%7Cdescriptions%7Caliases%7Cclaims%7Csitelinks&languages=ja%7Cen%7Cru%7Czh&sitefilter=jawiki%7Cenwiki%7Cruwiki%7Czhwiki&format=json&maxlag=5",
+        "status": 200,
+        "retrievedAt": "2026-11-04T04:00:04.808Z",
+        "responseSha256": "f1bf4d3c3b6f3ded0f86fd7db0df74ae293da1b8b7a743041042b15bc4f5177b"
+      },
+      "multilingualLabels": {
+        "ja": "ヌルハチ",
+        "ru": "Айсиньгьоро Нурхаци",
+        "en": "Nurhaci",
+        "zh": "努尔哈赤"
+      },
+      "decision": "link-identity-only",
+      "notAdopted": [
+        "出生年月日",
+        "没年月日",
+        "領有範囲",
+        "現地所在",
+        "在職期間",
+        "出陣や移動"
+      ],
+      "ndlId": "00625008",
+      "ndlIdentity": {
+        "uri": "http://id.ndl.go.jp/auth/entity/00625008",
+        "type": {
+          "uri": "http://xmlns.com/foaf/0.1/Person"
+        },
+        "name": "太祖",
+        "dateOfBirth": "1559",
+        "dateOfDeath": "1626"
+      },
+      "ndlUrl": "https://id.ndl.go.jp/auth/ndlna/00625008",
+      "ndlRequestUrl": "https://id.ndl.go.jp/auth/ndlna/00625008.json",
+      "ndlRetrievedAt": "2026-11-04T04:00:54.222Z",
+      "ndlModified": "2025-12-16T09:13:47",
+      "ndlResponseSha256": "d1d0489bc61d98252750a5c523f052215149d1bb7397e84d279cc6222ebbdd79",
+      "ndlPrefLabel": {
+        "literalForm": "太祖, 1559-1626, 清",
+        "transcription": "タイソ, 1559-1626, シン",
+        "transcription-l": [
+          {
+            "@value": "タイソ, 1559-1626, シン",
+            "@language": "ja-Kana"
+          },
+          {
+            "@value": "Taiso, 1559-1626, Shin",
+            "@language": "ja-Latn"
+          }
+        ]
+      },
+      "ndlNameMatch": {
+        "snapshot": "data/research/source-notes/frontier-person-ndl-identity.json",
+        "collection": "altLabel",
+        "index": 0,
+        "field": "transcription",
+        "value": "ヌルハチ",
+        "rawPointer": "/data/altLabel/0/transcription",
+        "scope": "清朝の太祖という限定標目に属する別名の読み。一般称号はgameNamesへ追加しない。"
+      }
+    },
+    {
+      "entityId": "person:ヴァシーリー・ポヤルコフ",
+      "name": "ヴァシーリー・ポヤルコフ",
+      "japaneseLabel": "ヴァシーリー・ポヤルコフ",
+      "wikidataId": "Q982229",
+      "wikidataRevision": 2521711368,
+      "wikidataUrl": "https://www.wikidata.org/wiki/Q982229",
+      "wikidataRevisionUrl": "https://www.wikidata.org/w/index.php?oldid=2521711368",
+      "requestUrl": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q311189%7CQ982229&props=info%7Clabels%7Cdescriptions%7Caliases%7Cclaims&languages=ja&format=json&maxlag=5",
+      "retrievedAt": "2026-11-04T04:00:50.293Z",
+      "rawIdentitySnapshot": "data/research/source-notes/frontier-person-authority-candidates.json",
+      "instanceOf": [
+        "Q5"
+      ],
+      "existingClaimIds": [
+        "poyarkov-amur-expedition-1643-1646"
+      ],
+      "identityReason": "ロシア大統領図書館の Василий Данилович Поярков と原APIのロシア語氏名・人物区分・17世紀探検家の説明を照合。1643〜1646年のアムール遠征の人物で、同名船舶や姓だけが同じ人物とは別。ゲーム期間外の比較史料に現れる人物であり、ゲーム登場人物を追加するものではない。",
+      "discoveryRequest": {
+        "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&sites=jawiki&titles=%E3%83%8C%E3%83%AB%E3%83%8F%E3%83%81%7C%E3%83%B4%E3%82%A1%E3%82%B7%E3%83%BC%E3%83%AA%E3%83%BC%E3%83%BB%E3%83%9D%E3%83%A4%E3%83%AB%E3%82%B3%E3%83%95&props=info%7Clabels%7Cdescriptions%7Caliases%7Cclaims%7Csitelinks&languages=ja%7Cen%7Cru%7Czh&sitefilter=jawiki%7Cenwiki%7Cruwiki%7Czhwiki&format=json&maxlag=5",
+        "status": 200,
+        "retrievedAt": "2026-11-04T04:00:04.808Z",
+        "responseSha256": "f1bf4d3c3b6f3ded0f86fd7db0df74ae293da1b8b7a743041042b15bc4f5177b"
+      },
+      "multilingualLabels": {
+        "ja": "ヴァシーリー・ポヤルコフ",
+        "ru": "Поярков, Василий Данилович",
+        "en": "Vassili Poyarkov",
+        "zh": "瓦西里·達尼洛維奇·波亞爾科夫"
+      },
+      "decision": "link-identity-only",
+      "notAdopted": [
+        "出生年月日",
+        "没年月日",
+        "領有範囲",
+        "現地所在",
+        "在職期間",
+        "出陣や移動"
+      ],
+      "ndlDecision": "原APIにP349がなく、今回の検索で本人NDLを確認できないため未接続。不存在とは断定しない。",
+      "gamePeriodScope": {
+        "gameYears": [
+          1560,
+          1615
+        ],
+        "claimYears": [
+          1643,
+          1646
+        ],
+        "relationship": "post-period-comparison",
+        "mustNotCreate": [
+          "1560〜1615年の部隊",
+          "期間内の所在地",
+          "同期間のロシア領有"
+        ]
+      },
+      "birthDataDecision": "WikidataのP569は値を特定しないsnak。大統領図書館の生年表記も人物台帳へ採用しない。"
+    }
+  ]
+}

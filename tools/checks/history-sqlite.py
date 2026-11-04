@@ -21,6 +21,7 @@ with tempfile.TemporaryDirectory(prefix='kuniezu-sql-check-') as temp:
     places = [json.loads(s) for s in (research/'places.jsonl').read_text().splitlines()]
     queries += [{'entity': r['id']} for r in people+places]
     queries += [{'entity': name} for r in people for n in r.get('gameNames', []) for name in [n,'person:'+n]]
+    queries += [{'entity': name} for r in people+places for name in r.get('aliases', [])]
     queries += [{'entity': '県城', 'fromYear':1613,'toYear':1614}, {'entity':'都於郡城','fromYear':1610,'toYear':1610}, {'entity':'wikidata:Q171977'}, {'entity':'塩津街道'}, {'entity':'ヌルハチ'}]
     for coords in ([133.9,33.5,134,33.6],[0,0,1,1],[133.91259,33.519865,133.91259,33.519865],[133.91259001,33.51986501,133.91259002,33.51986502]):
         queries.append({'bbox':coords,'fromYear':1600,'toYear':1615})

@@ -23,6 +23,22 @@ for(const person of [...people,...places]){
 }
 console.log('PASS: registered person and place identity bases refer to existing claims for the same entity');
 
+function verifyNdlAlternativeName(person,row,raw,wikidata){
+ const match=row.ndlNameMatch,names=[person.name,...person.gameNames,...(person.aliases??[])];
+ assert.equal(raw.ndlId,row.ndlId,'NDL ID differs from retained response');
+ assert.equal(raw.data.uri,'http://id.ndl.go.jp/auth/ndlna/'+row.ndlId);
+ assert.deepEqual(raw.data.primaryTopic,row.ndlIdentity,'NDL primary person differs');
+ const entities=wikidata.records.filter(item=>item.id===row.wikidataId);
+ assert.equal(entities.length,1);assert.equal(entities[0].revision,row.wikidataRevision);
+ assert.ok(entities[0].identityClaims.P349.some(item=>item.mainsnak?.datavalue?.value===row.ndlId),'Wikidata does not link this NDL identity');
+ assert.equal(match.collection,'altLabel');
+ assert.ok(Number.isInteger(match.index)&&match.index>=0);
+ assert.ok(['literalForm','transcription'].includes(match.field));
+ assert.equal(match.rawPointer,`/data/altLabel/${match.index}/${match.field}`);
+ assert.equal(raw.data.altLabel?.[match.index]?.[match.field],match.value,'NDL alternate name differs from retained response');
+ assert.ok(names.includes(match.value),'NDL alternate name does not identify this person');
+}
+
 for(const person of people){
  const evidence=person.authorityEvidence;
  if(!evidence?.snapshot)continue;
@@ -33,8 +49,16 @@ for(const person of people){
  assert.equal(row.wikidataRevision,evidence.wikidataRevision);
  assert.ok([person.name,...person.gameNames].includes(row.japaneseLabel??row.label??row.name));
  if(person.authorityIds.some(id=>id.startsWith('ndlna:'))){
-  assert.ok([person.name,...person.gameNames].includes(row.ndlIdentity.name));
   assert.ok(person.authorityIds.includes('ndlna:'+row.ndlId));
+  if(![person.name,...person.gameNames].includes(row.ndlIdentity.name)){
+   assert.ok(row.ndlNameMatch?.snapshot&&row.rawIdentitySnapshot,'NDL alternate-name evidence missing');
+   const raw=JSON.parse(fs.readFileSync(path.join(root,row.ndlNameMatch.snapshot),'utf8'));
+   const wikidata=JSON.parse(fs.readFileSync(path.join(root,row.rawIdentitySnapshot),'utf8'));
+   verifyNdlAlternativeName(person,row,raw,wikidata);
+   const otherPerson={...raw,ndlId:'00269409',data:{...raw.data,uri:'http://id.ndl.go.jp/auth/ndlna/00269409',primaryTopic:{name:'蒲生氏郷'}}};
+   assert.throws(()=>verifyNdlAlternativeName(person,row,otherPerson,wikidata),/NDL ID differs/);
+   assert.throws(()=>verifyNdlAlternativeName(person,{...row,ndlNameMatch:{...row.ndlNameMatch,value:row.ndlIdentity.name}},raw,wikidata),/NDL alternate name/);
+  }
  }else{
   assert.ok(row.instanceOf.includes('Q5'));
   assert.deepEqual(row.existingClaimIds,person.identityBasis.claimIds);

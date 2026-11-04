@@ -1,0 +1,74 @@
+{
+  "checkedAt": "2026-11-04T04:04:40.003080+00:00",
+  "gameYears": [
+    1560,
+    1615
+  ],
+  "records": [
+    {
+      "entity": "person:ヌルハチ",
+      "claimIds": [
+        "nurhaci-hoifa-conquest-1607",
+        "nurhaci-jianzhou-unification-1588",
+        "nurhaci-tribute-missions-1588-1615",
+        "nurhaci-ula-conquest-1613"
+      ],
+      "sources": [
+        {
+          "id": "jurchenMasui",
+          "url": "https://www.ritsumei.ac.jp/acd/cg/lt/rb/679/679PDF/masui.pdf",
+          "locator": "PDF1頁・3頁の建州統合と朝貢、5〜6頁のホイファ・ウラ",
+          "checkedNow": true,
+          "summary": "本人名と建州統合・朝貢活動を照合する。後金建国は1616年で、期間内に国号や対明独立を先取りしない。"
+        },
+        {
+          "url": "https://www.dpm.org.cn/court/lineage/226250.html",
+          "locator": "冒頭の氏名・家系、1583年起兵と1616年建国の解説",
+          "checkedNow": true,
+          "summary": "努尔哈赤という本人名と建州女真首長としての経歴が一致。官号取得年や八旗年の表記差は今回の命題に転用しない。"
+        }
+      ],
+      "noClaimChanges": true
+    },
+    {
+      "entity": "person:ヴァシーリー・ポヤルコフ",
+      "claimIds": [
+        "poyarkov-amur-expedition-1643-1646"
+      ],
+      "sources": [
+        {
+          "id": "amurPoyarkov",
+          "url": "https://www.prlib.ru/node/2101587",
+          "locator": "Биография、1643年ヤクーツク出発から1646年帰還",
+          "checkedNow": true,
+          "summary": "ロシア語の姓名・父称とアムール遠征の人物を照合。出発・帰還年はゲーム期間後であり、探索・徴税要求を恒久的領有へ置換しない。"
+        }
+      ],
+      "validYearsPreserved": [
+        1643,
+        1646
+      ],
+      "purpose": "同時代ではない根拠を明示し、近代ロシア領境をゲーム期に遡及しないための比較史料。",
+      "noClaimChanges": true,
+      "notAGameCharacter": true
+    }
+  ],
+  "limitations": [
+    {
+      "url": "https://contents.history.go.kr/mobile/kc/view.do?code=kc_age_30&levelId=kc_n303310",
+      "finding": "今回web抽出では本文を取得できず見出し・ナビゲーションのみ。以前の照合ノートを現時点の本文再確認と表記しない。ヌルハチ本人同定と既存年表は今回取得できた増井論文・故宮博物院も利用。"
+    },
+    {
+      "url": "https://id.ndl.go.jp/auth/ndlna/00625008",
+      "finding": "HTMLはweb toolで取得できなかったが、公式 .json はHTTP200で取得し、改訂日時と応答SHAを保持。"
+    }
+  ],
+  "networkFailures": [
+    {
+      "step": "initial-sandbox-wikidata-request",
+      "reason": "ENOTFOUND",
+      "adopted": false,
+      "resolvedBy": "許可された読み取り専用ネットワーク要求で再取得、原API200を保存"
+    }
+  ]
+}
