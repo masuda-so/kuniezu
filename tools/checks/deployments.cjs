@@ -10,7 +10,7 @@ for(const [title,sc] of Object.entries(TK.BATTLES)){
  const ids=sc.atlasGroups.flatMap(g=>g.members),bounds=TK.BATTLE_ATLAS[title].bounds;
  assert.equal(ids.length,sc.units.length,title);assert.equal(new Set(ids).size,ids.length,title+' duplicate');
  for(const side of ['a','b'])assert.ok(sc.atlasGroups.some(g=>g.side===side),title+' missing '+side);
- for(const g of sc.atlasGroups){assert.ok(g.precision,title);assert.ok(!g.precision.includes('表示範囲外'),title+' deployment clipped');if(g.point){const [x,y]=g.point;assert.ok(x>=bounds[0]&&x<=bounds[2]&&y<=bounds[1]&&y>=bounds[3],title+' bounds');}else assert.ok(g.dock,title);}
+ for(const g of sc.atlasGroups){assert.ok(g.precision,title);assert.ok(!g.precision.includes('表示範囲外'),title+' deployment clipped');if(g.point){const [x,y]=g.point;assert.ok(x>=bounds[0]&&x<=bounds[2]&&y<=bounds[1]&&y>=bounds[3],title+' bounds');}else if(g.schematic&&sc.atlasSchematic)require('./battle-event-classification.cjs').checkSchematic(sc,g);else assert.ok(g.dock,title);}
  assert.ok(sc.sources.length);for(const id of sc.sources)assert.ok(TK.RESEARCH_SOURCES[id]||TK.BATTLE_SOURCES[id],title+' source '+id);
  report.push({title,participants:sc.units.length,groups:sc.atlasGroups.length,located:sc.atlasGroups.filter(g=>g.point).length,unlocated:sc.atlasGroups.filter(g=>g.dock).length,sources:sc.sources});
 }

@@ -29,7 +29,15 @@ for(const [title,battle,lunar,phase] of [
 
  return {ganjaku};
 }
-module.exports={checkEvents};
+function checkSchematic(sc,g){
+ assert.ok(g.schematic&&sc.atlasSchematic&&!g.point,'schematic display must be explicit');
+ assert.ok(g.members.length,'schematic group needs participants');
+ for(const id of g.members){
+  const route=sc.atlasSchematic.paths?.[id];assert.ok(Array.isArray(route)&&route.length,id+' missing schematic path');
+  for(let i=0;i<route.length;i++){const p=route[i];assert.ok(Array.isArray(p)&&p.length===3&&p.every(Number.isFinite),id+' invalid schematic point');assert.ok(p[0]>=0&&p[0]<=100&&p[1]>=0&&p[1]<=1&&p[2]>=0&&p[2]<=1,id+' schematic bounds');assert.ok(i?p[0]>route[i-1][0]:p[0]===0,id+' schematic time order');}
+ }
+}
+module.exports={checkEvents,checkSchematic};
 if(require.main===module){
  const {G,TK}=require('./history-focus.cjs').model(),{ganjaku}=checkEvents({G,TK});
  // 注記単体の副作用を実エンジンで点検する。年代全体の再生ではない。
@@ -40,5 +48,14 @@ if(require.main===module){
  assert.ok(!(state.sceneQ||[]).some(q=>(typeof q==='string'?q:q.title)===ganjaku.title));
  const site=state.sites.find(s=>s.n===ganjaku.site);assert.ok(site);
  assert.deepEqual([site.x,site.y2],Array.from(G.PJ(...TK.SITE_POS[ganjaku.site])));
- console.log('PASS: 4 sourced timeline notes retain dates/sites; no fabricated or duplicate scenes');
+ const schematic=TK.BATTLES['木津川口の戦い'];for(const g of schematic.atlasGroups)checkSchematic(schematic,g);
+ const group=schematic.atlasGroups[0],id=group.members[0];
+ for(const mutate of [
+  (sc,g)=>{g.schematic=false;},
+  sc=>{delete sc.atlasSchematic.paths[id];},
+  sc=>{sc.atlasSchematic.paths[id]=[[0,.2,.3],[10,1.1,.3]];},
+  sc=>{sc.atlasSchematic.paths[id]=[[0,.2,.3],[10,.3,.3],[5,.4,.3]];},
+  sc=>{sc.atlasSchematic.paths[id]=[[0,NaN,.3]];}
+ ]){const sc=JSON.parse(JSON.stringify(schematic)),g=JSON.parse(JSON.stringify(group));mutate(sc,g);assert.throws(()=>checkSchematic(sc,g));}
+ console.log('PASS: 4 sourced timeline notes and explicit schematic paths; invalid paths rejected');
 }
