@@ -31,3 +31,8 @@ assert.strictEqual(queryHistory(orderIndex,{entity:'node:agata'})[0],byCastle[0]
 assert.equal(orderIndex.records.size,1);
 assert.throws(()=>createHistoryIndex({claims:[{...order,linkedEntities:['invalid']}]}));
 console.log('PASS: time/entity views share records; inclusive/exclusive boundaries, aliases, intersections, unknown entities; no annual snapshots for 10,000-year span');
+
+const periodClaim={...reference,id:'uncertain-period',entity:'place:tonokori',validYears:[1603,1615],eventTime:{kind:'described-period',label:'江戸時代初頭',indexYears:[1603,1615],boundsAreHistoricalStartEnd:false}};
+const periodIndex=createHistoryIndex({claims:[periodClaim]});
+for(const year of [1603,1610,1615]){const result=queryHistory(periodIndex,{year});assert.equal(result.length,1);assert.equal(result[0].scope,'described-period-candidate');assert.equal(result[0].eventTime.boundsAreHistoricalStartEnd,false);}
+assert.equal(queryHistory(periodIndex,{year:1616}).length,0);
