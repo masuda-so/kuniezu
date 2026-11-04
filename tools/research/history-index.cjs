@@ -8,6 +8,7 @@ function createHistoryIndex({claims=[],locations=[],people=[],places=[]}){
   labels.set(p.id,p.name);
   alias(p.id,p.id);
   alias(p.name,p.id);
+  for(const name of p.aliases||[])alias(name,p.id);
   alias(p.id.split(':')[0]+':'+p.name,p.id);
   if(!p.id.startsWith('person:'))continue;
   for(const n of p.gameNames||[]){alias(n,p.id);alias('person:'+n,p.id);}
@@ -20,10 +21,12 @@ function createHistoryIndex({claims=[],locations=[],people=[],places=[]}){
  function add(id,row,entities,time,scope){
   assert(!records.has(id),'Duplicate history record '+id);
   const ids=[...new Set(entities.map(canonical))];
-  const value={id,entities:ids,time,scope,record:row};records.set(id,value);
+  const value={id,entities:ids,time,scope,record:row};
+  if(row.eventTime)value.eventTime=row.eventTime;
+  records.set(id,value);
   for(const entity of ids){if(!byEntity.has(entity))byEntity.set(entity,[]);byEntity.get(entity).push(id);alias(entity,entity);alias(entity.slice(entity.indexOf(':')+1),entity);}
  }
- for(const r of claims){assert(r.recordType==='verified-historical-claim'&&r.status==='verified-in-specified-scope'&&!r.runId,'Only reviewed reference claims');const [from,last]=r.validYears;assert(Number.isInteger(from)&&Number.isInteger(last)&&from<=last,'Invalid claim interval');add('claim:'+r.id,r,[r.entity],{fromYear:from,untilExclusive:last+1},'claim-applicability');}
+ for(const r of claims){assert(r.recordType==='verified-historical-claim'&&r.status==='verified-in-specified-scope'&&!r.runId,'Only reviewed reference claims');const [from,last]=r.validYears;assert(Number.isInteger(from)&&Number.isInteger(last)&&from<=last,'Invalid claim interval');assert(r.linkedEntities===undefined||Array.isArray(r.linkedEntities)&&r.linkedEntities.every(id=>typeof id==='string'&&/^(place|person):.+/.test(id)),'Invalid linked entities');add('claim:'+r.id,r,[r.entity,...(r.linkedEntities||[])],{fromYear:from,untilExclusive:last+1},'claim-applicability');}
  for(const r of locations){assert(r.recordType==='sourced-location-observation'&&r.status==='verified-in-specified-scope'&&!r.runId&&!r.estimated,'Only reviewed location observations');const t=r.time;assert(['year-interval','year-window','dated-event'].includes(t.kind),'Unsupported time kind');let from,until;if(t.kind==='year-interval'){from=t.from;until=t.untilExclusive;}else{from=t.year??t.date?.[0];until=from+1;}assert(Number.isInteger(from)&&Number.isInteger(until)&&from<until,'Invalid location time');add(r.id,r,[r.person,r.place],{fromYear:from,untilExclusive:until},t.kind==='year-interval'?'attested-interval':'recorded-change');}
  const timeline=[...records.values()].map(r=>({id:r.id,...r.time})).sort((a,b)=>a.fromYear-b.fromYear||a.id.localeCompare(b.id));
  let max=-Infinity;for(const r of timeline){max=Math.max(max,r.untilExclusive);r.prefixMaxUntilExclusive=max;}

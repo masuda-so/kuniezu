@@ -24,5 +24,21 @@
   "recordType": "verified-historical-claim",
   "status": "verified-in-specified-scope",
   "sourceUrl": "https://www.city.shimada.shizuoka.jp/shimahaku/docs/863749869.html",
-  "checked": "2026-11-01"
+  "checked": "2026-11-01",
+  "linkedEntities": [
+    "place:suwahara"
+  ],
+  "eventTime": {
+    "kind": "dated-event",
+    "date": [
+      1575,
+      8,
+      24
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": false,
+    "precision": "day"
+  },
+  "eventRelation": "military-control-transfer",
+  "eventScope": "島田市が採用する攻略日。個別城主の就任・現地所在・周辺知行の移管日を自動設定しない。"
 }

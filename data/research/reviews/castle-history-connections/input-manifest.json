@@ -1,0 +1,894 @@
+{
+  "generatedAt": "2026-11-04T03:00:55.942210+00:00",
+  "sharedHead": "daafd9e1a623b4436bce2aff70a6b40edc1a16f3",
+  "sharedRoot": "/Users/masudaso/Desktop/天下分け目の国絵図",
+  "readOnly": true,
+  "counts": {
+    "claimsInspected": 82,
+    "existingLocations": 22,
+    "sourceMetadata": 419,
+    "acceptedLinks": 16,
+    "qualifiedLinks": 1,
+    "regionalRecordsKeptSeparate": 5,
+    "deferredOrRejected": 8,
+    "proposedEntities": 31
+  },
+  "files": [
+    {
+      "path": "HANDOFF.md",
+      "sha256": "23558ea06053a693e65007f4bcd651798d41d006f7f9a74250327005e04cd5fb"
+    },
+    {
+      "path": "data/research/curated/claims/053335fa1d7300d2.json",
+      "sha256": "2e3b5c26db3a3ad08a72c443d48e114922a41677093b10effac27d600341f171"
+    },
+    {
+      "path": "data/research/curated/claims/0bfc91265e26abdc.json",
+      "sha256": "270afb32bf852c4cc0beaa6a7cf3d84046889636754657cfc522c512b42ad043"
+    },
+    {
+      "path": "data/research/curated/claims/11143a0faee6b0f7.json",
+      "sha256": "afff2b90fc5819bde34dca47f66a19ab413ecf45af8402dc375f136e71958499"
+    },
+    {
+      "path": "data/research/curated/claims/1241e8a0ed0d8b87.json",
+      "sha256": "93fb4cb09f85cca52f611045028cd4cc67d80635e16b9946c1b8ca380d8432e0"
+    },
+    {
+      "path": "data/research/curated/claims/1c0feba30f63e836.json",
+      "sha256": "033df63299d1a568e6c8e62696ea97a07aef26975d82e6a7c9d4b2bbf5efe6c5"
+    },
+    {
+      "path": "data/research/curated/claims/2053437eab3d8c80.json",
+      "sha256": "25fb48def04f02e3b7a4e2cbc43db2834461de901dec131c95ef554ef0e361e9"
+    },
+    {
+      "path": "data/research/curated/claims/269df23ece4e9dfc.json",
+      "sha256": "8fca3961191f594a2a412c8f97bba7d9dadfeef839fac8a57b4cd83b5471689d"
+    },
+    {
+      "path": "data/research/curated/claims/2a426233d83fad03.json",
+      "sha256": "8cbf82897c03ec105e3d0da355722493ecd656582f6fab413948dfbe4f590817"
+    },
+    {
+      "path": "data/research/curated/claims/377520bf9cee0eff.json",
+      "sha256": "08e0e01d17958d692ef651cf96f60dd8ba0f31c2d87cceb31d3f33c5f9f587bd"
+    },
+    {
+      "path": "data/research/curated/claims/4108e2d8f5cc93d2.json",
+      "sha256": "c02823161a7307ed260dc682e85f610778b58ffcaa7ecf392e5015461d8ae075"
+    },
+    {
+      "path": "data/research/curated/claims/4513caa717b0398a.json",
+      "sha256": "1b4ec32f797a38ed5dfac548157d2bbefe2974127d8ae3d5ac4b31858ad5774a"
+    },
+    {
+      "path": "data/research/curated/claims/5cd919b97af58ed1.json",
+      "sha256": "69ebad4867a28c092693338f106c276cd810d280c3d28edffd629dd011920b9e"
+    },
+    {
+      "path": "data/research/curated/claims/63d2f44933575d4f.json",
+      "sha256": "525415b3f4d0a50e97f323fcc077414a14429ce2c60a306533cbb07e7079afc2"
+    },
+    {
+      "path": "data/research/curated/claims/6f482d5fac50a48f.json",
+      "sha256": "2a0f5cc7c159bb6da0a22d701a94178669bbe76c1d46e20b573ea2409a1eedac"
+    },
+    {
+      "path": "data/research/curated/claims/8ee79676e59a9f2a.json",
+      "sha256": "388f8a34934af2332143031c0616bfdab84f9f11add1cce8731027f319e89181"
+    },
+    {
+      "path": "data/research/curated/claims/9a79db0a00170350.json",
+      "sha256": "bdd0ac410ab47e34809a67b51a02c0765cb9d2cc1147282d5c8a8e02fac35958"
+    },
+    {
+      "path": "data/research/curated/claims/9a8580002ce5819b.json",
+      "sha256": "89d469728a1d1ed74951d6af9204c2c5b17c0f1e534ad36e15b8f8e90227692c"
+    },
+    {
+      "path": "data/research/curated/claims/a2f54ed7e15dfc4c.json",
+      "sha256": "9b22741afc14bac818887169bb7f659146fadadccbe44361bd8aaec93dbffc13"
+    },
+    {
+      "path": "data/research/curated/claims/a6531af676bf437b.json",
+      "sha256": "5a16aaa5660f5e003d9e102f67623b5aa13f69c59f6d79a82fdcbd7eb518d154"
+    },
+    {
+      "path": "data/research/curated/claims/a6fc286382d6eb2e.json",
+      "sha256": "9a7ee8cee1e00d2dcf5f4cf88d9d04fd296f3bc6e34898bc5c518977c393ec4c"
+    },
+    {
+      "path": "data/research/curated/claims/agata-castle-construction.json",
+      "sha256": "0e195f8fc7f8e6f36baadca755a0ea8774514675d5538f6d0d682a74732d4249"
+    },
+    {
+      "path": "data/research/curated/claims/agata-handover-report.json",
+      "sha256": "15e1eaf83f02cbe7983d58987660bb89b187571e408c5fa69fd085290561301b"
+    },
+    {
+      "path": "data/research/curated/claims/agata-receipt-order.json",
+      "sha256": "e5c1690488cc92335cf7405cdb4c585a78143515dd79e45b690b32d402c5eb5a"
+    },
+    {
+      "path": "data/research/curated/claims/aki-1569-defeat.json",
+      "sha256": "87075bec3d64d5180e6bf004676cb19035358b6ae61891a5660a87ebc05ffb79"
+    },
+    {
+      "path": "data/research/curated/claims/aki-1601-goto.json",
+      "sha256": "28522e04763293a62a9be9dfb77477c0ebcb0f8b224635eb819a58b449c4e68a"
+    },
+    {
+      "path": "data/research/curated/claims/akizuki-takarabe-transfer.json",
+      "sha256": "0aa95e5bec8e8b8de609bead63848e43f7b29bf2ceded52b2333cb112db471e9"
+    },
+    {
+      "path": "data/research/curated/claims/akizuki-tanetaka-grant.json",
+      "sha256": "061c80c588d0eb08206cc9fc286de857b646f95a471da8d7ed36258df948f8f0"
+    },
+    {
+      "path": "data/research/curated/claims/ba58f84fdc2591e2.json",
+      "sha256": "55415cbc93a75828740d70e845ed06345d3d9125101181628f97437297cf65e0"
+    },
+    {
+      "path": "data/research/curated/claims/bb530a45ae27bcde.json",
+      "sha256": "4141a096982df0983a01a77a1451bd8e6012d728e6009f741d9f31f0ebbb7054"
+    },
+    {
+      "path": "data/research/curated/claims/bongeunsa-sudosan-relocation.json",
+      "sha256": "8766ebc5e5476bc8dc4cf886b125d9dc23daf3f6bbb7b14bb618df2dc9d7419d"
+    },
+    {
+      "path": "data/research/curated/claims/cd93ea667086ad64.json",
+      "sha256": "e7461c48809364f7419d1f105a16c669e4d31a6e8a1ac2a97d88fa1db9ecbd42"
+    },
+    {
+      "path": "data/research/curated/claims/d9a146dcf52971aa.json",
+      "sha256": "f85ba13a8c5caec13a6bc7073c35196f5b7c0bcd30b87ebc0e777cf32c2c198e"
+    },
+    {
+      "path": "data/research/curated/claims/e406ea781f4be324.json",
+      "sha256": "79c6d6d7392647734f962f60025aedcc6556714996988b013f6890b9d947d6ea"
+    },
+    {
+      "path": "data/research/curated/claims/ea2924f5acca3ee0.json",
+      "sha256": "c4f0934ccf5781b03ffaee6fa73ed9fab4d87551b5afe155948e7b032e05d528"
+    },
+    {
+      "path": "data/research/curated/claims/eastern-jurchen-regional-distribution.json",
+      "sha256": "fb56354e1e8527be898551a7596fe05a596f810b677789f9103df0c695419e01"
+    },
+    {
+      "path": "data/research/curated/claims/ef1c8975f35deb89.json",
+      "sha256": "146182cca3af5335fe6ced783951680b71901cee4a9456d15b6fcae3d32f0420"
+    },
+    {
+      "path": "data/research/curated/claims/enoshima-iwamotobo-medieval.json",
+      "sha256": "6719f9548a269736c5f86d2dbe477dca3ef561a6f2264cb558820dd1bbdb5e7f"
+    },
+    {
+      "path": "data/research/curated/claims/f63f27b12d9e815b.json",
+      "sha256": "8c12a59e746d98427457413f1bd2bd2403e0f38326e94502772fd871f2995f10"
+    },
+    {
+      "path": "data/research/curated/claims/f852bfcd504bacb7.json",
+      "sha256": "d759117a623929d9281f3304c8eb18c0d4b3ca155869e6ab9d45e4d0914d539c"
+    },
+    {
+      "path": "data/research/curated/claims/ganjaku-fall.json",
+      "sha256": "beb67cb5479bf58eda895ec862b19f5122690fe0fb4b7d08a169811b86fcfe56"
+    },
+    {
+      "path": "data/research/curated/claims/hyuga-1586-military-corridor.json",
+      "sha256": "f912cc48c1cc63392771aba53035f5c40b23ae67105509d50788b1c4dd0ecf34"
+    },
+    {
+      "path": "data/research/curated/claims/ikeda-terumasa-birth-ce-year.json",
+      "sha256": "17665797d10328f4e74573fc6b824aeb788fc86d4adfa3e4dd015ba6d39d3c9a"
+    },
+    {
+      "path": "data/research/curated/claims/jurchen-investiture-distinct-from-direct-rule.json",
+      "sha256": "9c7e3811f48b79ea3d78baa38bd334e0ee8d4963da7d1579e541f71dd4ea146e"
+    },
+    {
+      "path": "data/research/curated/claims/kashiwagi-1585-defence.json",
+      "sha256": "a87dfa608763af3386c45b6c49efd8cd20b83443370e1a3fa46181f33bed8007"
+    },
+    {
+      "path": "data/research/curated/claims/kobayakawa-chikuzen-grant.json",
+      "sha256": "1753ea29ceab695810c02835fe25743580087e62df00581ab553fd978367b5ad"
+    },
+    {
+      "path": "data/research/curated/claims/kuandian-military-civilian-withdrawal-1603-1605.json",
+      "sha256": "754b3bdefc839cac9d498781554aa07539b7ea699fdbbd8e4bdc15ea2a8c5598"
+    },
+    {
+      "path": "data/research/curated/claims/kuroda-nagamasa-succession.json",
+      "sha256": "b228d35d9667c4fa7c66a252f3744a2bdbc20a496fe86e64a46bf762c4aeeadb"
+    },
+    {
+      "path": "data/research/curated/claims/later-jin-foundation-1616.json",
+      "sha256": "297a6e285630578ecbb364cb154f9ebfbdf23d51ec662a7bf60f4dc302273eba"
+    },
+    {
+      "path": "data/research/curated/claims/liaoyang-ming-military-seat.json",
+      "sha256": "370580bcc3a7a3c71ddddd097a74d021559089e0b8d0f4162a5f081e80375a2a"
+    },
+    {
+      "path": "data/research/curated/claims/mamushizuka-1574-refortification.json",
+      "sha256": "7f43e82ddc94cf56e48fcf12fec1d165b7a7a344bbb5a2d0b00506110bf1c430"
+    },
+    {
+      "path": "data/research/curated/claims/nejirozaka-night-attack.json",
+      "sha256": "a3394cf7f7eca88f96530ef65427cc69aa4fb9399568a7f428299bae8bd3ee43"
+    },
+    {
+      "path": "data/research/curated/claims/nurhaci-hoifa-conquest-1607.json",
+      "sha256": "f1fc2cd50ef589cef798d04ce96acb57d396f3d179739024a0fe6371789fb549"
+    },
+    {
+      "path": "data/research/curated/claims/nurhaci-jianzhou-unification-1588.json",
+      "sha256": "37cddd6459a078b0f1a611f61ef7c5a5d2aa9c546a83521cf3f174346c816cb3"
+    },
+    {
+      "path": "data/research/curated/claims/nurhaci-tribute-missions-1588-1615.json",
+      "sha256": "4f27855058241e604e35f9387c72a377867865fdc8f03d120a8852aa8f69bcf6"
+    },
+    {
+      "path": "data/research/curated/claims/nurhaci-ula-conquest-1613.json",
+      "sha256": "fd063bd868913d0b0a4f663245d6d035be943e44c8a0b705cb796451f24639e5"
+    },
+    {
+      "path": "data/research/curated/claims/poyarkov-amur-expedition-1643-1646.json",
+      "sha256": "5b1c04b2a47e811d87a3aea1a7a96af73633f4e17f6a94625087bfa72db0b19c"
+    },
+    {
+      "path": "data/research/curated/claims/rokujurigo-1587-military-corridor.json",
+      "sha256": "bd22a6e269e5e7aaf6cfb5ca5563c491061bde206ab7667a35e8ac0282a66e18"
+    },
+    {
+      "path": "data/research/curated/claims/sagara-kuma-confirmation.json",
+      "sha256": "b936413255377a1257f82fc273533f1967ef0a88de1100a27b6a675a0da7aaf9"
+    },
+    {
+      "path": "data/research/curated/claims/sassa-higo-grant.json",
+      "sha256": "83d9912a75bdf40b20703e957c9b604659fb2c4cb13ed4e2b8331d6af4ccb06a"
+    },
+    {
+      "path": "data/research/curated/claims/seishido-1545-tradition.json",
+      "sha256": "b327a2bda3c87fe3b43250b9a563d87c39444897c097ac696aaf08c823cc055e"
+    },
+    {
+      "path": "data/research/curated/claims/shigisan-siege-start.json",
+      "sha256": "77f16cc802aaf90d9e1d890de593b69e8a646294b2a2acbfffa40bec65a6ccff"
+    },
+    {
+      "path": "data/research/curated/claims/shimazu-tadahira-yoshihiro-identity.json",
+      "sha256": "7c00129e3c4289b9dcbb1a4b703d2e317e1a0f71a3354a17626e004f702d7a39"
+    },
+    {
+      "path": "data/research/curated/claims/shirakawa-1590-improvement.json",
+      "sha256": "2066f839055bee2dfec18e520cb1502494acbd0d9b8ab3b66bdc4969f15b161c"
+    },
+    {
+      "path": "data/research/curated/claims/shirakawa-17c-route-change.json",
+      "sha256": "29867598c1e210d091e0f6a74977ee2d4cc24e8e7013df2d1364ccfbfa7b9d43"
+    },
+    {
+      "path": "data/research/curated/claims/tachibana-chikugo-grant.json",
+      "sha256": "2fb0296fc30383167ff86c6e978d8b2de57acd5bc3903fd0a3efbe6e1abd425d"
+    },
+    {
+      "path": "data/research/curated/claims/taka-siege-start.json",
+      "sha256": "67e56566f1d3d3ca2ac3cb8ed624cbc9ac9b3fd30b81193b0082559c842566ef"
+    },
+    {
+      "path": "data/research/curated/claims/takatenjin-six-forts-preparation-years.json",
+      "sha256": "ccd8f4a81f4a454ed5195a07de5a859a735ddaa9a1edffb8feb76670bc09bac7"
+    },
+    {
+      "path": "data/research/curated/claims/tonokori-sadowara-outer-castle.json",
+      "sha256": "a2340218c2cbe07f0ff411525ca2e9d78e526a5894feaf29cba0b8a2cfcc248f"
+    },
+    {
+      "path": "data/research/curated/claims/toyotomi-office-1.json",
+      "sha256": "3ec12864b3debe3a6cd685d4620232234fae8f55cba4a8c66e5f454b21129d65"
+    },
+    {
+      "path": "data/research/curated/claims/toyotomi-office-10.json",
+      "sha256": "876a576e9a21f917ce12d7657d80f0570a0c40dee2a86dd16780db5232c662ae"
+    },
+    {
+      "path": "data/research/curated/claims/toyotomi-office-11.json",
+      "sha256": "81c445e95a20f4e508b34d86499d592308648d8b8af3e75716885fa4d595767e"
+    },
+    {
+      "path": "data/research/curated/claims/toyotomi-office-2.json",
+      "sha256": "2dba2bb1c62460f3890529a3faa9697ec66fb16b7894e35d7fa2a22ad09cc5a9"
+    },
+    {
+      "path": "data/research/curated/claims/toyotomi-office-3.json",
+      "sha256": "6f46d789ad9388d815d9a0111a10e5b8853bb89a29f4a3b8783ba4b661631549"
+    },
+    {
+      "path": "data/research/curated/claims/toyotomi-office-4.json",
+      "sha256": "02c56c21237eb351128e5f12e67832eef05833f4a26119a0f091dd5c2f63dc8a"
+    },
+    {
+      "path": "data/research/curated/claims/toyotomi-office-5.json",
+      "sha256": "4fae5ac28b86cdeab0d1c83616360b0dcb39d02e71eb9cfc2d964d24899fc014"
+    },
+    {
+      "path": "data/research/curated/claims/toyotomi-office-6.json",
+      "sha256": "c11a90df523719a98f1c39003bbe09b46e43563f40c0e791768304f785f44c04"
+    },
+    {
+      "path": "data/research/curated/claims/toyotomi-office-7.json",
+      "sha256": "8575416ad3dd6d9e89a6849e7d6789343cbb691d1700fc1caedde44c6c76257a"
+    },
+    {
+      "path": "data/research/curated/claims/toyotomi-office-8.json",
+      "sha256": "6b973664358361530e1915662cc35649c390553a52e06c315b9a883bb0d0750e"
+    },
+    {
+      "path": "data/research/curated/claims/toyotomi-office-9.json",
+      "sha256": "9c19269c942fe957ed0a0425bc55f547681e7e0866465e90f2a2f2972963edab"
+    },
+    {
+      "path": "data/research/curated/claims/tsurusaki-origin-tradition.json",
+      "sha256": "ab5c7b14c7f1ad794de7d1521d7888a91687ff4eac34251ecd42defbe7f31b2a"
+    },
+    {
+      "path": "data/research/curated/claims/yokosuka-castle-construction.json",
+      "sha256": "116fb8a9fbdd9580958c63beec0154d77f680851b6038f848f427b8ead9301a4"
+    },
+    {
+      "path": "data/research/curated/claims/yokote-tunnel-1979-relocation.json",
+      "sha256": "a1dd987a24486d5f9486857a9fda938b52b0638b9dc839e1f3b37790c430f26f"
+    },
+    {
+      "path": "data/research/curated/locations/hosokawa-nakatsu-1600.json",
+      "sha256": "65dfa9284ec76d17fe097e9f168c6bd5e710b0de023879d3631f2dff27d3319d"
+    },
+    {
+      "path": "data/research/curated/locations/ietada-kajiro-1592.json",
+      "sha256": "e613eb35fdaefcd04611f97c1a2040a129f756e1e6c3017587f5ef672de28689"
+    },
+    {
+      "path": "data/research/curated/locations/ietada-omigawa-1594.json",
+      "sha256": "6842124667323344816647d5196c9822780b4d9da20e83ade02cda1c06ebf991"
+    },
+    {
+      "path": "data/research/curated/locations/ietada-oshi-1590.json",
+      "sha256": "0f3e409cea8485222a6fd5d6ffa3421459aba947726e6fff3d75e0d4bbe2b50f"
+    },
+    {
+      "path": "data/research/curated/locations/ieyasu-edo-arrival-1600.json",
+      "sha256": "6c5948203f8a397aceadbeda09b5aaefdfbf84067b5f326f41d56b80c0d9f5ac"
+    },
+    {
+      "path": "data/research/curated/locations/ieyasu-osaka-departure-1600.json",
+      "sha256": "68f32dc0bc3c36381e467623236b72174e32fc7f37305f94b222232fc8783494"
+    },
+    {
+      "path": "data/research/curated/locations/ieyasu-oyama-arrival-1600.json",
+      "sha256": "e5ec3f0fdc7c58d17087620c8dc9883c91139f1250142064558fe22226b6ef47"
+    },
+    {
+      "path": "data/research/curated/locations/katsuyori-takato-1562.json",
+      "sha256": "3593a8659c851bbc4f32fe332e4184fd2a0808d045f8b23f810aad8274ae3057"
+    },
+    {
+      "path": "data/research/curated/locations/katsuyori-tsutsujigasaki-1573.json",
+      "sha256": "0006efe05ae51cb8653f56fc6d1604a8eea765a52251f956bae69c7e9cc9e699"
+    },
+    {
+      "path": "data/research/curated/locations/kuroda-nagamasa-fushimi-departure-1600.json",
+      "sha256": "199fd772dd227529dc0e3ee10becdc3c28c1801699e97f884a11cfefb55bb91b"
+    },
+    {
+      "path": "data/research/curated/locations/kuroda-nagamasa-kiyosu-arrival-1600.json",
+      "sha256": "d060c5a7fef486626a37c0ae35e096fa3bafc93fbbf55601fc963a141f817379"
+    },
+    {
+      "path": "data/research/curated/locations/kuroda-nagamasa-nakatsu-base.json",
+      "sha256": "5fe96a8f79277aac325cc9ef8fc7f51e82862109bfe0b934135f542d847dc6fc"
+    },
+    {
+      "path": "data/research/curated/locations/kuroda-nagamasa-nakatsu-lord1600.json",
+      "sha256": "a0b833d5052fcffb9de639f2b25602bf04dea40bbf994707940b6f85161ff8e6"
+    },
+    {
+      "path": "data/research/curated/locations/kuroda-nagamasa-osaka-tenma-1600.json",
+      "sha256": "0a2058a05379bc3361467d825e657e039403d980b30bd92e1064a9459716e1f4"
+    },
+    {
+      "path": "data/research/curated/locations/kuroda-umagatake-1587.json",
+      "sha256": "0af5b4804a96eb73ef4fee99967b25cbe8ae265e5756fed9b9dacfc4bc1ee7b2"
+    },
+    {
+      "path": "data/research/curated/locations/mitsuhide-kameyama-departure-1582.json",
+      "sha256": "5644eb6fc99795a8ea45d55eb97b1963e213b911008a424b4fe2f218bd14b549"
+    },
+    {
+      "path": "data/research/curated/locations/nobunaga-kiyosu-departure-1560.json",
+      "sha256": "074a91ef21ef43fae1682fe67373597aabaaedae180c32d200e2d1dc49a9beb0"
+    },
+    {
+      "path": "data/research/curated/locations/terumoto-hiroshima-1591.json",
+      "sha256": "b0c145b6c2271d58eae5396f12c6ee4c483593e51cdba49caa2f6f0b240d02f9"
+    },
+    {
+      "path": "data/research/curated/locations/terumoto-koriyama-base.json",
+      "sha256": "f77f41ca351e05032e36078e58d3730040ee3565e3a89eb891b1bd5d8a4a9586"
+    },
+    {
+      "path": "data/research/curated/locations/yoshihiro-iino-1564.json",
+      "sha256": "4bb07490c07eb94fa7cde0ac3437df93086f700b1b85dde25694f482af1f618e"
+    },
+    {
+      "path": "data/research/curated/locations/yoshihiro-iino-kizakibaru-1572.json",
+      "sha256": "76a2c4c6f6b3c1c3dae23677219416336a77541aeb2208766b0d98c357d1ed11"
+    },
+    {
+      "path": "data/research/curated/locations/yoshihiro-kizakibaru-1572.json",
+      "sha256": "8116687158d3ef0daef6958bd058a5c8abc3a044b99e38c1183436ae708171d8"
+    },
+    {
+      "path": "data/research/curated/people/akechi-mitsuhide.json",
+      "sha256": "4fae7db4cbd47eba099c0aba344c532b5e81c1e8623d4fff3d300405bfc93adf"
+    },
+    {
+      "path": "data/research/curated/people/hosokawa-tadaoki.json",
+      "sha256": "6c42633e41d769a00fe49b8b93e4dfc4d343ff5cf37dd18b7f91445be5bf41fd"
+    },
+    {
+      "path": "data/research/curated/people/ikeda-terumasa.json",
+      "sha256": "db9f2c35f9ea76aef3622c2683287e028250abe6e83bb844e3c0c61d7df31993"
+    },
+    {
+      "path": "data/research/curated/people/kuroda-nagamasa.json",
+      "sha256": "f87abaf9bfd2fbb383fff3da3c31b2fdfc97f5b1b89c3745ad772751d3745a0e"
+    },
+    {
+      "path": "data/research/curated/people/kuroda-yoshitaka.json",
+      "sha256": "fcc14202f0ffaa98c37d9aeee6a94fceae39afa2aa54c8a181e47fcfbe349077"
+    },
+    {
+      "path": "data/research/curated/people/matsudaira-ietada.json",
+      "sha256": "11dd5915c92da2ba66ef69055d7d3b4a19f682528c740fddf32d79a06049e138"
+    },
+    {
+      "path": "data/research/curated/people/mori-terumoto.json",
+      "sha256": "b760c51636d67e336009d6087830cdebb4175750140ac6c6bb837419dd9be29d"
+    },
+    {
+      "path": "data/research/curated/people/oda-nobunaga.json",
+      "sha256": "21b828cb3b49ec1eccd41b29cee42c062df97dc21686f3138f37dc5ff07d9426"
+    },
+    {
+      "path": "data/research/curated/people/shimazu-yoshihiro.json",
+      "sha256": "66ec62bcc933b8549ccd16747ea7b11e7710e507bddb284ffafcddab25c51611"
+    },
+    {
+      "path": "data/research/curated/people/takeda-katsuyori.json",
+      "sha256": "c25f259a0603392671cb1b61e278a189978dedc445798791ea4c6065dadd8336"
+    },
+    {
+      "path": "data/research/curated/people/tokugawa-ieyasu.json",
+      "sha256": "1d4dba5591bc4cb8d3baff6e6f979fc4ec75afd057ccf0ee3ede0b6ebfec32e3"
+    },
+    {
+      "path": "data/research/curated/people/toyotomi-hideyoshi.json",
+      "sha256": "cc74d26c450b58e27d4234e1bdccb64da5ab708c450088a63ff2109b31e92d58"
+    },
+    {
+      "path": "data/research/curated/people/上杉景勝.json",
+      "sha256": "2c92b75bf1ecb847d4904b36044bf32c7b694ce1add9dbc17c2a369fde323afb"
+    },
+    {
+      "path": "data/research/curated/people/佐々成政.json",
+      "sha256": "b84c89cd229c144f4dcf40fce783b738e183a008511863b55386b5b2c7e082e2"
+    },
+    {
+      "path": "data/research/curated/people/前田利家.json",
+      "sha256": "c3eeba17c6e9612d2fd130a7bdbeecfa5634933fbc9d3720fa33adae62f47998"
+    },
+    {
+      "path": "data/research/curated/people/前田利長.json",
+      "sha256": "044112473f2ed270599635e45d4ca07874a890727c39bcb53b5fa6d5a7ddce83"
+    },
+    {
+      "path": "data/research/curated/people/前田玄以.json",
+      "sha256": "2a9d066494fa0723366978bbf825aca352429ca52666b16aeedecff909729b4a"
+    },
+    {
+      "path": "data/research/curated/people/北条氏房.json",
+      "sha256": "dbbd9cfdfb8c3d59c837793fa17d6174931b1680e518d698fab20ea7d235a5cf"
+    },
+    {
+      "path": "data/research/curated/people/北条氏直.json",
+      "sha256": "7ee18124246acacd7bc5fba009080ceeb797ba3a5e8199917c9084c356974ac5"
+    },
+    {
+      "path": "data/research/curated/people/北条氏邦.json",
+      "sha256": "7a62984f43064da9c8c0d96c78cacc45c7b6f698be67eca88a1ba04e62f48bc3"
+    },
+    {
+      "path": "data/research/curated/people/増田長盛.json",
+      "sha256": "2856babd0686678582ef0b3e545e6ae0982bc9d3b782622d3dee8692ea0cbafc"
+    },
+    {
+      "path": "data/research/curated/people/大須賀康高.json",
+      "sha256": "0c3820d2f1dcd4f6b83bbc8e956aa1a484114c1d4a7c95bd74bb35e5448d399f"
+    },
+    {
+      "path": "data/research/curated/people/宇喜多秀家.json",
+      "sha256": "cc65683a996021e515a7d6b5aab948fb1ee170903e5f84e860a2da813c11ff82"
+    },
+    {
+      "path": "data/research/curated/people/小早川隆景.json",
+      "sha256": "b69cb31a28834190ab62248ff29269398b051ba4e85c5821f2716edb04b8043f"
+    },
+    {
+      "path": "data/research/curated/people/島津義久.json",
+      "sha256": "734874ae7cf692f865cf0b7e8fba10b657d76b40063d56da3e0b46fc998423c0"
+    },
+    {
+      "path": "data/research/curated/people/朝倉景鏡.json",
+      "sha256": "0a15a1aecb9b7f6139633e8354c8147c3a470a9d42884a6b387b21bf6099a580"
+    },
+    {
+      "path": "data/research/curated/people/浅野長政.json",
+      "sha256": "fca95b54674b93c212b4b2767a201e644839e5a418858a714beec2f70139626d"
+    },
+    {
+      "path": "data/research/curated/people/相良頼房.json",
+      "sha256": "397531adccf52dc3a43b03de5a8e58df89190d227d2319ef79f2bab575dc7521"
+    },
+    {
+      "path": "data/research/curated/people/真田信幸.json",
+      "sha256": "3d2ea48d1335c1a235be4061fa657f23cd3754bdd6c8a5ae98d4002c10253528"
+    },
+    {
+      "path": "data/research/curated/people/石田三成.json",
+      "sha256": "34b1740d482e31247f12b3154cceb31be869391ca40bbce0597ca146f9a7eaa5"
+    },
+    {
+      "path": "data/research/curated/people/秋月種実.json",
+      "sha256": "9a3d6239a7c694e81bab259a6df19dadb31069fa41416cfeadfe6589eece3748"
+    },
+    {
+      "path": "data/research/curated/people/秋月種長.json",
+      "sha256": "8cc0bd6da871a50f9d88fef91abec943c0511deaefa9bbac97ef12a9d260d75f"
+    },
+    {
+      "path": "data/research/curated/people/立花宗茂.json",
+      "sha256": "2a10ae43bb9f7367a70ca1bd2dda3eb4c255aab5d069da8d52df1623c7b38635"
+    },
+    {
+      "path": "data/research/curated/people/織田信忠.json",
+      "sha256": "862814ee861f3b14bbaf6de8fcbbd92b4f14a1cb3b157f2b5d69f8b1259470f0"
+    },
+    {
+      "path": "data/research/curated/people/羽柴秀長.json",
+      "sha256": "afea1cb35292487189a1a6e70c6272cb0636b412af6b2c5f470ea53818388a3c"
+    },
+    {
+      "path": "data/research/curated/people/遠山景任.json",
+      "sha256": "0fb633b5ba9f7df290e47d4ddc33f6b7e3da31d7f31d49da8dc11a5c49c3844e"
+    },
+    {
+      "path": "data/research/curated/people/長束正家.json",
+      "sha256": "3b62b6254df090c3a9d8f2013fd90d742be4fbd05cda6e4dc8ae4a833ee24268"
+    },
+    {
+      "path": "data/research/curated/people/高橋元種.json",
+      "sha256": "f02db0b5b5db323c78e3a5ad0c4a6f07affe14176153cc391cd92c6815f23f21"
+    },
+    {
+      "path": "data/research/curated/places/aki-koriyama.json",
+      "sha256": "100f4351fd23b7b390fe79eab2187ce1dd929cfee0544efe20949e4bdb3d89be"
+    },
+    {
+      "path": "data/research/curated/places/edo.json",
+      "sha256": "4f8e8f526099b0ee5833902b2771919166db0d3d0da333bf57f95ccee6ed085e"
+    },
+    {
+      "path": "data/research/curated/places/fushimi.json",
+      "sha256": "56aacaaba6f5dd5876d46c56b72fa0faaf6061684ad244bcc52d58db8c07dbe9"
+    },
+    {
+      "path": "data/research/curated/places/hayashima-tsurusaki.json",
+      "sha256": "8371fdcced3d2810dd896e9bd02b86ff2e464b68992e9f4ca98798032c034bc5"
+    },
+    {
+      "path": "data/research/curated/places/hiroshima.json",
+      "sha256": "799157538e7efc6e4ca578729bae6ca9fb4f7d10d18b347bf750e3d8b62ed7ab"
+    },
+    {
+      "path": "data/research/curated/places/iino.json",
+      "sha256": "34ba7010b74efee25705dccd2cc957309b84ce37ce52cdafe4e39d9779c29e2a"
+    },
+    {
+      "path": "data/research/curated/places/kazusa-kajiro.json",
+      "sha256": "58380c383534f1b4fe869b156a8b8db62113807e8f1ca754b1d388812f3ffa1c"
+    },
+    {
+      "path": "data/research/curated/places/kiyosu-castle.json",
+      "sha256": "db7537fb03f87767c7c19e01e18e47fb7dfba3ab51483039a11e31755ee2a8c1"
+    },
+    {
+      "path": "data/research/curated/places/kiyosu-vicinity.json",
+      "sha256": "46bbb96899a706e04fd049f52e17f9e82e8dd957606e69c2c2b13a3bcc7f0dca"
+    },
+    {
+      "path": "data/research/curated/places/kizakibaru.json",
+      "sha256": "55c84d32c8bdfa9254416773aa86f2360abb159adca798bb2ada1fd98c467d64"
+    },
+    {
+      "path": "data/research/curated/places/nakatsu.json",
+      "sha256": "32fb9bfd7c214fb00a4ce2ad377832d9c3a9bcbcf30c5c70610f99cc9188c28b"
+    },
+    {
+      "path": "data/research/curated/places/omigawa.json",
+      "sha256": "f935f635d0e56362fdc3b6b78804a1baf2e065c7f6e93fc491bef85ba61220ad"
+    },
+    {
+      "path": "data/research/curated/places/osaka-castle.json",
+      "sha256": "e47427ea6ddf431e72d6d2764024b924a8f234e63953ec81013980689dd0c3db"
+    },
+    {
+      "path": "data/research/curated/places/osaka-tenma.json",
+      "sha256": "5d7585b913b1a30fe11b4237b9fba4c20edbaa2da2ff92439cd2d52da55053f8"
+    },
+    {
+      "path": "data/research/curated/places/oshi.json",
+      "sha256": "7955f611d15f7b2193fedd11e6ef7e60827c305dac195dc067f25e1367cf378b"
+    },
+    {
+      "path": "data/research/curated/places/oyama.json",
+      "sha256": "4178f08ff0c4c87799335fe285db77cce5555c3e794626b6a1bcd757bd4e901d"
+    },
+    {
+      "path": "data/research/curated/places/takato.json",
+      "sha256": "7483eaa92176478c0dfffd354a4dac6213e59d7dc87d144c3b92a5ba82663cd9"
+    },
+    {
+      "path": "data/research/curated/places/tanba-kameyama.json",
+      "sha256": "bbb490ae62935943d9611262a720b78d9a04cf3aa2012ba10b73125a16161fff"
+    },
+    {
+      "path": "data/research/curated/places/tsutsujigasaki.json",
+      "sha256": "ffb7cc31a3a33dc64bc750fcc4ec2382dc9ae4bed804893e97df31832acb9f63"
+    },
+    {
+      "path": "data/research/curated/places/umagatake.json",
+      "sha256": "9788c55923be8c3414311f2f2a6ac1acac89c09f77d37fab825c787da3b07e2a"
+    },
+    {
+      "path": "data/research/curated/places/奉恩寺（修道山）.json",
+      "sha256": "e32a3c05a190b26110cf8bec44f1dabdd8260c1c4d7b7db9e5eaf017c3fadd32"
+    },
+    {
+      "path": "data/research/curated/places/安芸城.json",
+      "sha256": "3c3c8e8df4c88730504ad3313865ef7e71cfee22506b2d68e4908f0184c323d4"
+    },
+    {
+      "path": "data/research/curated/sources/agata-handover-report.json",
+      "sha256": "64e6f92fc777d8bc38160cd12404f68441e80879d957161514cf1e584f6a99ff"
+    },
+    {
+      "path": "data/research/curated/sources/agata-receipt-order.json",
+      "sha256": "732e3354031dfd48b30f535523c62169040639ae43290bce4df7ff8ccbdd9462"
+    },
+    {
+      "path": "data/research/curated/sources/akiCastleCity.json",
+      "sha256": "064a94bd8087924f4722f07c79d349c0d64143b07991a4440ebaf29f5c725da3"
+    },
+    {
+      "path": "data/research/curated/sources/asakura-akizuki-history.json",
+      "sha256": "928efa553ffc1099daaa92e0b4ae8ac6215e409c0c1c8689b0097ad8a7c8ae86"
+    },
+    {
+      "path": "data/research/curated/sources/enoshimaMedieval.json",
+      "sha256": "3e751636f7da8eed6669c3d7dc8f2b6b6aff76ca14506fa075a32e3da92327fc"
+    },
+    {
+      "path": "data/research/curated/sources/gsiExperimentalRoads.json",
+      "sha256": "09527e8807f237d0be9ed7aaa43e9d5e8a993a70af36d1f25229c5489c2d4b81"
+    },
+    {
+      "path": "data/research/curated/sources/hokkokuNagahamaGuide.json",
+      "sha256": "e1761385d7cc1dd62bc249db263b8a8037ed0058c6239636da04432236257562"
+    },
+    {
+      "path": "data/research/curated/sources/hyugaSaiki2024.json",
+      "sha256": "f635f9090d89d87e1f955652a13019090ff4369ab171ab8b120637ae98f5edcf"
+    },
+    {
+      "path": "data/research/curated/sources/kakegawa-history-appendix.json",
+      "sha256": "b748495650215b68821b4de60e575fed969ac89e29a129375ae3f4b1aadaca92"
+    },
+    {
+      "path": "data/research/curated/sources/kashiwagiBunka.json",
+      "sha256": "faffceb495ab78547341cae1cc60b9b151d65870539cad2f58b58135a462a554"
+    },
+    {
+      "path": "data/research/curated/sources/kijo-second-taka-battle.json",
+      "sha256": "32d661d4dfdae9aa795fc73d8e8ce3e610078e4bb960882947e5e76240b4d327"
+    },
+    {
+      "path": "data/research/curated/sources/kobayakawa-chikuzen-grant.json",
+      "sha256": "0fefb174356787bbe3e2e41d567e48c603ea6adc73f8680400d96f45a5bef4e1"
+    },
+    {
+      "path": "data/research/curated/sources/kumamoto-sassa-grant.json",
+      "sha256": "bf30aa8dd1ecdd595de69adc7d77cfae48de035e726c86dffd89b5acc6cab496"
+    },
+    {
+      "path": "data/research/curated/sources/kuroda-kafu-1600-ndl1911.json",
+      "sha256": "28fb70db0abf92a1e45efdfa153852039aff25edcfb48351516d4f0af0b60f0f"
+    },
+    {
+      "path": "data/research/curated/sources/kuroda-nagamasa-nakatsu-1600.json",
+      "sha256": "e0ce079322a56d39fde17fe6b73b2d305df6883098e9f1b1933fda8c058dc566"
+    },
+    {
+      "path": "data/research/curated/sources/kuroda-nagamasa-succession.json",
+      "sha256": "681010b34045e3bcaea91027c2b62405dcdc95fae065f2632f94566c56ba020e"
+    },
+    {
+      "path": "data/research/curated/sources/kuroda-yoshitaka-letter16000813-kobe.json",
+      "sha256": "561d61472d0a960db3d60ff441390c1df906c5bda5f48c2a878752b5fa4f0ab1"
+    },
+    {
+      "path": "data/research/curated/sources/kuroda-yukuhashi-succession.json",
+      "sha256": "b20b62fd99d2d9fdb3dc3a4f65b5c5c21ff789c6345aff6d9e3b9b21b2b01cd0"
+    },
+    {
+      "path": "data/research/curated/sources/liaodongRothLi.json",
+      "sha256": "c6ad5467c89adb1dd3065896f09cca1844e0c511c9feb831fd8a060819d655a0"
+    },
+    {
+      "path": "data/research/curated/sources/mamushizuka-exhibition.json",
+      "sha256": "a20a9db6a803b0024b52401668bded9b3aeaaecdb2a9e67f5a5ebf64603d6a65"
+    },
+    {
+      "path": "data/research/curated/sources/mitsuhideKameokaDeparture.json",
+      "sha256": "d942da3a5798dfa03e11de2c7e4c476c7ee82034897cc6c2a554361bd39a52ef"
+    },
+    {
+      "path": "data/research/curated/sources/murotoHenroPrefMap.json",
+      "sha256": "d7cc5f030c7d1f86680fe32a47eb6d753e9d474feb9fba573267cf57f778a48c"
+    },
+    {
+      "path": "data/research/curated/sources/nakatsu-castle-history.json",
+      "sha256": "27dfed20fbd6ceead1e3205e5eae98e40ca3d002e729ee04d2c9c01d89ae32a1"
+    },
+    {
+      "path": "data/research/curated/sources/nobeoka-agata-history.json",
+      "sha256": "7f891692388db09e2d4129b9a0cd18f8dbb22f7e63f3b05b3de799985440cec3"
+    },
+    {
+      "path": "data/research/curated/sources/nobunagaKiyosuDepartureToyoake.json",
+      "sha256": "559d2f6825e70b6b3efe9bc23764c951e2bbb33824eedfc05b22d78619140fac"
+    },
+    {
+      "path": "data/research/curated/sources/noneyamaRinya.json",
+      "sha256": "fa9862e0d2896b58a62cdedaffad3eacd88bcbaa5b7ac021c60e0aea2581a239"
+    },
+    {
+      "path": "data/research/curated/sources/rokujurigoSengoku.json",
+      "sha256": "b52e5007240487b205356cd25c2f1c82a487a59fd842c327387d16a894eea475"
+    },
+    {
+      "path": "data/research/curated/sources/sagara-kuma-confirmation.json",
+      "sha256": "0c81afaa658fca34795f11753d298dda5eb1baddf8a783af7c0d1418fca5cde6"
+    },
+    {
+      "path": "data/research/curated/sources/seishidoSukagawa.json",
+      "sha256": "1345cbae97073a9b19698339a91a0275886b29f0074039069d4f26f3472f9e3b"
+    },
+    {
+      "path": "data/research/curated/sources/shimazuIinoResidence.json",
+      "sha256": "06b9465c181f8b6496851ce374a1c9fc9764e544d09981c0b505dad15bc3da9f"
+    },
+    {
+      "path": "data/research/curated/sources/shimazuYoshihiroNames.json",
+      "sha256": "1e63312935deac67dc0c2fa29e3a22668e7c41b4de50ae47810b659bf9f30a68"
+    },
+    {
+      "path": "data/research/curated/sources/shirakawaBunka.json",
+      "sha256": "23fbedc84f68e49a5bfd5626bd43e8311c1b66e3f6c6e49335d22e8926956f45"
+    },
+    {
+      "path": "data/research/curated/sources/soeda-ganjaku-fall.json",
+      "sha256": "02cbd579213cec7c865e821922ff65dff4f818ea6cba43ac90b6b52afe131ecd"
+    },
+    {
+      "path": "data/research/curated/sources/tachibana-chikugo-grant.json",
+      "sha256": "d3496e2bc7592851766ea80873f9637df430ec70c5929152225ed98e43ed7f59"
+    },
+    {
+      "path": "data/research/curated/sources/takanabe-hideyoshi-grant.json",
+      "sha256": "d1818582fa94c72a1e57eb4004cb0a14981f95516dda1cc16de4c3be49d576da"
+    },
+    {
+      "path": "data/research/curated/sources/tonokori-designation.json",
+      "sha256": "186b550be48b4ecdd8e541d0a6b72cf8786d35ab9518034a381327920fd9fc78"
+    },
+    {
+      "path": "data/research/curated/sources/toyotomiOffices.json",
+      "sha256": "96f278466eb3416e43df6677a81e0441472531c610f387425dff4c7f0d75c500"
+    },
+    {
+      "path": "data/research/curated/sources/tsurusakiJinjacho.json",
+      "sha256": "fd111ed9c858c87465e20bdb242a2b4454563ce91d4d0fac0b8a492cccf329d5"
+    },
+    {
+      "path": "data/research/curated/sources/yokosuka-castle-history.json",
+      "sha256": "3472c60539bd330e2ed0b0581bd3886e0e5b7aae28d4d906714d04d73599a82e"
+    },
+    {
+      "path": "data/research/curated/sources/yokoteTunnelRelocation.json",
+      "sha256": "b80993ffd22c48901163d5416e8f8f7c9faad5efd16f8cd3a767c2943c0c0fc8"
+    },
+    {
+      "path": "data/research/curated/sources/yoshitatsuGifuPortrait.json",
+      "sha256": "04df9962d6f472ae278a4be420d497142dc7ef1da2d3a421d7e794654cee0185"
+    },
+    {
+      "path": "data/research/curated/sources/yukuhashi-hosokawa-nakatsu.json",
+      "sha256": "cb5d31f7b82465a45fabe25cfab041a79f563e54ff550c2b73af4c961064851d"
+    },
+    {
+      "path": "data/research/curated/sources/yukuhashi-umagatake.json",
+      "sha256": "beb889c10d9c5e483e1272e563c475257885c5ffd8c034944b8b9525cf07dcb5"
+    },
+    {
+      "path": "data/research/sources.jsonl",
+      "sha256": "92d68c3b22028bcbff81c872481ed76950b957ee18c63936a9488eda4748d679"
+    },
+    {
+      "path": "docs/reports/AKI_CASTLE_POSITION_REVIEW.md",
+      "sha256": "f1971b464312bba02ff1ec259aa1716ec4c1fc86ad3adeb602e979ea1cb3938c"
+    },
+    {
+      "path": "docs/reports/BORDERS_AND_SUCCESSION_REVIEW.md",
+      "sha256": "28798168ccf2cfdf2da4bfe2cce544abdecee69fb4b436ac1c95e09bfe2795df"
+    },
+    {
+      "path": "docs/reports/HISTORY_FOCUS_REVIEW.md",
+      "sha256": "4faa622692893f0de05b647c7db50287e9a79098dc0a26c38e9289e56bfc88d1"
+    },
+    {
+      "path": "docs/reports/KASHIWAGI_POSITION_REVIEW.md",
+      "sha256": "ac33e27d635314c66dfe5d691465ab30379fc99b261dfc0c44f2071c93e4576a"
+    },
+    {
+      "path": "docs/reports/KOREAN_FACILITIES_REVIEW.md",
+      "sha256": "b2ce3b5ad8e1bebb9b1edadd44a0800d052364d44aac07535909ab7b430926b1"
+    },
+    {
+      "path": "docs/reports/KURODA_NAKATSU_RESIDENCE_REVIEW.md",
+      "sha256": "f3c8e3d55e8dd665d5ee862a609818561fff1763e4e500c372c89a2c277edd1b"
+    },
+    {
+      "path": "docs/reports/SUWAHARA_PERIOD_REVIEW.md",
+      "sha256": "df1a3091ef10dfc40d22aa13d4cb1e6158fb70ee1fdbdbb1849088735056fb35"
+    },
+    {
+      "path": "docs/reports/TAKATENJIN_REMAINING_FORTS_REVIEW.md",
+      "sha256": "8dde34de913c31adee6083d653e72d101aa0265bfd43dbe8bac2c3fa282e9230"
+    },
+    {
+      "path": "tools/research/history-index.cjs",
+      "sha256": "a9b041a611cbe6bc52f55289574ed6cb131e5933d5ce8b6481644f2c55dcc273"
+    },
+    {
+      "path": "tools/research/location-store.cjs",
+      "sha256": "4772aad60ca9fb7000fbbf3bd0ef28bb8635b872648a61af6cb06e6d9776bc56"
+    }
+  ]
+}

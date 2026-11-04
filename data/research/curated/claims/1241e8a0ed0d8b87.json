@@ -18,5 +18,16 @@
   "checked": "2026-11-01",
   "datePrecision": "year",
   "uncertainty": "月日と寺域全体の構造は確定しない",
-  "sourceUrl": "https://encykorea.aks.ac.kr/Article/E0023921"
+  "sourceUrl": "https://encykorea.aks.ac.kr/Article/E0023921",
+  "linkedEntities": [
+    "place:bongseonsa"
+  ],
+  "eventTime": {
+    "kind": "year-window",
+    "year": 1593,
+    "calendar": "CE-year",
+    "precision": "year"
+  },
+  "eventRelation": "facility-rebuilt",
+  "eventScope": "年精度。再建月日・全寺域の一斉竣工を確定しない。奉先寺を二施設へ分裂させない。"
 }

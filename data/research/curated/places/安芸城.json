@@ -21,6 +21,9 @@
     "locator": "安芸城跡400000033600の代表点",
     "checked": "2026-11-02",
     "scope": "歴史地名の所在地を示す代表点。安芸市・観光協会の地図と独立照合。城域の範囲や当時の建物・人物の精密位置は示さない。",
-    "review": "data/inputs/aki-castle-review/position-review.json"
+    "review": "data/inputs/aki-castle-review/position-review.json",
+    "coordinateOrder": "longitude-latitude",
+    "coordinateUnits": "decimal-degrees",
+    "sourceDatumReview": "個別の提供元ページで測地系名の明記をまだ確認できていない。出典座標と独立比較点を保持し、ゲーム平面座標へ置換しない。"
   }
 }

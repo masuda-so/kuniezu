@@ -22,3 +22,27 @@
 現代標高・道路形状から作った移動経路や概観断面は地理の補助資料。史実の通過街道、渡河地点、当日の天候の証明としない。整備Lv.と係数はゲーム上の設計で、史実の普請年を意味しない。史実の着陣・領主変更日を整備で変更しない。
 
 日本・朝鮮・明の当該期間の全人物・全城・全施設・全街道の網羅性は、現在の資料からは証明できない。実装全件の点検と、歴史上の全件の網羅を区別する。
+
+### 城・施設の出来事と対象参照
+
+確認済み命題の `linkedEntities` は人物・場所への追加参照、`eventTime` は原史料の精度を保った出来事の時点、`eventRelation` と `eventScope` はその意味と限界を示す。本文・出典は同じ命題に一度だけ保持する。共通索引は従来の `entity` と追加参照の両方から同じ記録を返す。場所の `aliases`（例：県城／縣城）も検索できる。
+
+`validYears` による検索は命題の適用年代であり、事件発生日だけの検索ではない。旧暦の命令日・報告日を実際の明渡し日へ変換しない。六砦のような複合記録は `dated-components` に各対象の整備年を保持する。「江戸時代初頭」の検索用範囲は `boundsAreHistoricalStartEnd: false` とし、開始・終了年の確定と区別する。採否と照合元は `reviews/castle-history-connections/` に保持する。
+
+### 複数エージェントでの編集・確認
+
+共有先は既存 Git リポジトリ `masuda-so/kuniezu`。入力の正本は `data/research/curated/{claims,sources,people,places,locations}/`、閲覧・検索用の出力は同ディレクトリ直下の JSONL。GitHub へ反映された版を各担当が取得して参照する。リポジトリの公開範囲を変更する必要はない。
+
+編集前に共有 HEAD と差分を確認し、担当する対象 ID・年代・ファイルを連絡する。命題・出典は独立 JSON を追加・編集し、他担当の入力や生成済み JSONL を手作業で置換しない。別担当の確認は、元の出典・該当箇所・原暦・精度・適用範囲を読み、採否理由を記録する。AI の同意だけで確認済みへ格上げしない。
+
+再生成と検査はリポジトリのルートで実行する。
+
+```sh
+node tools/research/export-evidence.cjs
+node tools/checks/evidence-store.cjs
+node tools/checks/location-store.cjs
+node tools/checks/history-index.cjs
+node tools/research/query-history.cjs --entity 県城
+```
+
+Wikidata の候補取得は `node tools/research/fetch-authorities.cjs --output /tmp/kuniezu-authorities.json`。登録済み人物の典拠 ID をまとめて取得する。既存出力を上書きせず、結果を自動採用しない。氏名・同名人物・出典を確認してから curated 入力へ反映する。

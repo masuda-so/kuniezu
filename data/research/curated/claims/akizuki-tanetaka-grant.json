@@ -3,20 +3,47 @@
   "entity": "person:秋月種長",
   "predicate": "grant-order",
   "value": {
-    "date": [1587, 7, 3],
+    "date": [
+      1587,
+      7,
+      3
+    ],
     "calendar": "和暦",
     "issuer": "豊臣秀吉",
     "grant": "日向財部の城（高鍋城）",
     "landScheduleFrom": "羽柴秀長"
   },
-  "validYears": [1587, 1587],
+  "validYears": [
+    1587,
+    1587
+  ],
   "datePrecision": "day",
   "source": "takanabeHideyoshiGrant",
   "sourceUrl": "https://www.town.takanabe.lg.jp/choseijoho/takanabemachi/1026.html",
   "locator": "秀吉朱印状",
-  "gameBindings": ["campaign:九州平定"],
+  "gameBindings": [
+    "campaign:九州平定"
+  ],
   "recordType": "verified-historical-claim",
   "status": "verified-in-specified-scope",
   "checked": "2026-11-03",
-  "uncertainty": "朱印状の発給日。現地への入城日、古処山城の明渡し日、知行目録の範囲を示さない。"
+  "uncertainty": "朱印状の発給日。現地への入城日、古処山城の明渡し日、知行目録の範囲を示さない。",
+  "linkedEntities": [
+    "place:takarabe-castle",
+    "person:秋月種長",
+    "person:toyotomi-hideyoshi"
+  ],
+  "eventTime": {
+    "kind": "dated-event",
+    "date": [
+      1587,
+      7,
+      3
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": false,
+    "precision": "day"
+  },
+  "eventRelation": "castle-grant-order",
+  "eventScope": "発給日。父・種実への移封説明と混ぜず、種長の入城日や古処山の明渡し日を作らない。"
 }

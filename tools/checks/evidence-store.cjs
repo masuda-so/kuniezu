@@ -18,7 +18,7 @@ for(const person of [...people,...places]){
  for(const id of basis.claimIds){
   const claim=claims.get(id);
   assert.ok(claim,person.id+' missing claim '+id);
-  assert.equal(claim.entity,person.id,person.id+' claim belongs to a different entity');
+  assert.ok([claim.entity,...(claim.linkedEntities||[])].includes(person.id),person.id+' claim belongs to a different entity');
  }
 }
 console.log('PASS: registered person and place identity bases refer to existing claims for the same entity');
