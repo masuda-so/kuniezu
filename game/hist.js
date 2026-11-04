@@ -287,7 +287,7 @@ TK.HIST=[
  {d:[1574,4,1],k:'appear',clan:'hashiba',clanAlt:'oda',at:'ishiyama',g:'伊東祐兵|58|62|56|60|1559'},
  {d:[1571,4,1],k:'appear',clan:'hashiba',clanAlt:'oda',at:'saika',g:'藤堂高虎|80|82|75|80|1556'},
  {d:[1571,4,1],k:'appear',clan:'hashiba',clanAlt:'oda',at:'kiriyama',g:'蒲生氏郷|86|84|78|86|1556'},
- {d:[1579,4,1],k:'appear',clan:'hashiba',clanAlt:'oda',at:'gifu',g:'池田輝政|76|75|65|75|1564'},
+ {d:[1579,4,1],k:'appear',clan:'hashiba',clanAlt:'oda',at:'gifu',g:'池田輝政|76|75|65|75|1565'},
  {d:[1585,3,1],k:'appear',clan:'hashiba',clanAlt:'oda',at:'iwamura',g:'森忠政|60|65|50|55|1570'},
  {d:[1561,4,1],k:'appear',clan:'hashiba',clanAlt:'oda',at:'nanao',g:'前田安勝|55|58|50|58|1530'},
  {d:[1577,4,1],k:'appear',clan:'hashiba',clanAlt:'oda',at:'oyama',g:'前田利長|65|65|60|68|1562'},

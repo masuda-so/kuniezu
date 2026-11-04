@@ -3,7 +3,19 @@ const assert=require('node:assert/strict');
 function createHistoryIndex({claims=[],locations=[],people=[],places=[]}){
  const records=new Map(),byEntity=new Map(),aliases=new Map(),labels=new Map();
  const alias=(name,id)=>{if(!aliases.has(name))aliases.set(name,new Set());aliases.get(name).add(id);};
- for(const p of [...people,...places]){labels.set(p.id,p.name);alias(p.id,p.id);alias(p.name,p.id);alias(p.id.split(':')[0]+':'+p.name,p.id);if(p.id.startsWith('person:'))for(const n of p.gameNames||[]){alias(n,p.id);alias('person:'+n,p.id);}}
+ const authorityOwners=new Map();
+ for(const p of [...people,...places]){
+  labels.set(p.id,p.name);
+  alias(p.id,p.id);
+  alias(p.name,p.id);
+  alias(p.id.split(':')[0]+':'+p.name,p.id);
+  if(!p.id.startsWith('person:'))continue;
+  for(const n of p.gameNames||[]){alias(n,p.id);alias('person:'+n,p.id);}
+  for(const id of p.authorityIds??[]){
+   assert(!authorityOwners.has(id),'Duplicate authority ID '+id);
+   authorityOwners.set(id,p.id);
+  }
+ }
  const canonical=id=>aliases.get(id)?.size===1?[...aliases.get(id)][0]:id;
  function add(id,row,entities,time,scope){
   assert(!records.has(id),'Duplicate history record '+id);
@@ -15,12 +27,15 @@ function createHistoryIndex({claims=[],locations=[],people=[],places=[]}){
  for(const r of locations){assert(r.recordType==='sourced-location-observation'&&r.status==='verified-in-specified-scope'&&!r.runId&&!r.estimated,'Only reviewed location observations');const t=r.time;assert(['year-interval','year-window','dated-event'].includes(t.kind),'Unsupported time kind');let from,until;if(t.kind==='year-interval'){from=t.from;until=t.untilExclusive;}else{from=t.year??t.date?.[0];until=from+1;}assert(Number.isInteger(from)&&Number.isInteger(until)&&from<until,'Invalid location time');add(r.id,r,[r.person,r.place],{fromYear:from,untilExclusive:until},t.kind==='year-interval'?'attested-interval':'recorded-change');}
  const timeline=[...records.values()].map(r=>({id:r.id,...r.time})).sort((a,b)=>a.fromYear-b.fromYear||a.id.localeCompare(b.id));
  let max=-Infinity;for(const r of timeline){max=Math.max(max,r.untilExclusive);r.prefixMaxUntilExclusive=max;}
- return {records,byEntity,aliases,labels,timeline};
+ return {records,byEntity,aliases,labels,timeline,authorityOwners};
 }
 function queryHistory(index,{year,entity}={}){
  if(year!==undefined&&!Number.isInteger(year))throw Error('検索年は整数で指定する');
  let entityIds;
- if(entity){entityIds=index.aliases.get(entity)||new Set(index.byEntity.has(entity)?[entity]:[]);}
+ if(entity){
+  const owner=index.authorityOwners.get(entity);
+  entityIds=owner?[owner]:index.aliases.get(entity)||new Set(index.byEntity.has(entity)?[entity]:[]);
+ }
  let allowed;if(entityIds)allowed=new Set([...entityIds].flatMap(id=>index.byEntity.get(id)||[]));
  let refs;
  if(year===undefined)refs=index.timeline;

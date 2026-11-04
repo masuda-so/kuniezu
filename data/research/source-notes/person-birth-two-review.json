@@ -1,0 +1,286 @@
+{
+  "schemaVersion": 1,
+  "checked": "2026-11-04",
+  "baseHead": "f23056f926bff3008b4e813ec431b2ac9e8d991f",
+  "scope": "旧生年監査の2人物。池田は西暦年1565への訂正候補、斯波は不詳表示の候補。出生月日はゲームへ登録しない。",
+  "sources": [
+    {
+      "id": "tottori-ikeda-chronology",
+      "author": "鳥取県文化財課",
+      "title": "鳥取池田家年譜",
+      "url": "https://www.pref.tottori.lg.jp/82462.htm",
+      "locator": "年譜の「永禄7年（1564年）」行（取得本文113行）",
+      "excerpt": "永禄7年（1564年）",
+      "finding": "池田輝政の清洲出生をこの年の行に記す。出生月日は記載しない。",
+      "accessed": "2026-11-03",
+      "verification": "本文を開いて確認。検索抜粋だけの採用ではない。"
+    },
+    {
+      "id": "gifu-castle-lords-terumasa",
+      "author": "岐阜市",
+      "title": "岐阜城の歴代城主",
+      "url": "https://www.city.gifu.lg.jp/kankoubunka/kankou/1013051/1005097/1034742/1034737.html",
+      "locator": "「10 池田輝政」の生没年（取得本文263〜268行）",
+      "excerpt": "生没年：永禄7年（1565年）",
+      "finding": "永禄7年の表記は鳥取県と一致するが、西暦併記は1565。月日はなく、1565を誤記と断定しない。",
+      "accessed": "2026-11-03",
+      "verification": "本文を開いて確認。検索抜粋だけの採用ではない。"
+    },
+    {
+      "id": "hyogo-museum-terumasa",
+      "author": "兵庫県立歴史博物館",
+      "title": "ひょうご伝説紀行－妖怪・自然の世界－用語解説",
+      "url": "https://rekihaku.pref.hyogo.lg.jp/digital_museum/legend3/term/",
+      "locator": "「池田輝政（いけだてるまさ）」冒頭（取得本文128〜132行）",
+      "excerpt": "1565―1613。",
+      "finding": "生没年を西暦1565〜1613と記す。出生月日は記載しない。",
+      "accessed": "2026-11-03",
+      "verification": "本文を開いて確認。検索抜粋だけの採用ではない。"
+    },
+    {
+      "id": "shiwa-kosui-castle",
+      "author": "紫波町 生涯学習課",
+      "title": "高水寺城跡",
+      "url": "https://www.town.shiwa.iwate.jp/soshiki/5_1/2_4_bunkazai_town/8693.html",
+      "locator": "「解説」第3段落（取得本文128行）",
+      "finding": "1588年の詮直の敗北・高水寺城陥落を記すが、出生年は記載しない。",
+      "accessed": "2026-11-03",
+      "verification": "本文を開いて確認。検索抜粋だけの採用ではない。"
+    },
+    {
+      "id": "shiwa-katayose-castle",
+      "author": "紫波町 生涯学習課 歴史文化係",
+      "title": "片寄城跡",
+      "url": "https://www.town.shiwa.iwate.jp/soshiki/5_1/2_4_bunkazai_town/174919641517741/",
+      "locator": "「※中野康実」の説明（取得本文131〜134行）",
+      "finding": "1586年の詮直と康実の不和・康実の出奔を記すが、詮直の出生年は記載しない。",
+      "accessed": "2026-11-03",
+      "verification": "本文を開いて確認。検索抜粋だけの採用ではない。"
+    },
+    {
+      "id": "shiwa-gosho-1963-2",
+      "author": "佐藤正雄／紫波町",
+      "title": "ふるさと物語14 斯波御所（その二）",
+      "url": "https://www.town.shiwa.iwate.jp/soshiki/4_1/2_6_2/934.html/",
+      "locator": "『広報しわ』96号、昭和38年7月5日掲載の本文3段落（取得本文115〜120行）",
+      "finding": "斯波氏の北進・南部氏との対立・1588年の落城と逃亡を記す。詮直の出生年は記載しない。",
+      "caution": "1963年記事の原文転載。町は現在では不適切な歴史認識がある場合を注記している。",
+      "accessed": "2026-11-03",
+      "verification": "本文を開いて確認。検索抜粋だけの採用ではない。"
+    },
+    {
+      "id": "kotobank-terumasa-dictionaries",
+      "author": "講談社／小学館（谷口澄夫）／山川出版社",
+      "title": "池田輝政（各辞典本文）",
+      "url": "https://kotobank.jp/word/池田輝政-30292",
+      "locator": "日本大百科全書の冒頭（取得本文35行）、デジタル版日本人名大辞典+Plus（65〜66行）、山川日本史小辞典（74行）",
+      "accessed": "2026-11-04",
+      "finding": "講談社は永禄7年12月29日と西暦1565*を併記。小学館は永禄7年11月晦日、山川は1564.12.29と記す。月日・暦表記が一致しない。",
+      "evidenceType": "published-secondary-reference",
+      "caution": "出生原史料の記載箇所を照合したものではない。ゲームの出生値変更根拠には採らない。"
+    },
+    {
+      "id": "naj-ieyasu-birth",
+      "author": "国立公文書館",
+      "title": "徳川家康―将軍家蔵書からみるその生涯― 家康の誕生",
+      "url": "https://www.archives.go.jp/exhibition/digital/ieyasu/contents1_01/",
+      "locator": "冒頭（取得本文46行）、朝野旧聞裒藁［請求番号258-0010］の解説・翻刻（57行）",
+      "accessed": "2026-11-04",
+      "finding": "天文11年（1542）12月26日の出生を記し、朝野旧聞裒藁の該当文を翻刻する。ゲームの1543入力と旧暦年1542を区別する比較材料。",
+      "evidenceType": "institutional-transcription",
+      "caution": "後世編纂の事績録。輝政の出生年を直接証明する資料ではない。"
+    }
+  ],
+  "reviews": [
+    {
+      "person": "池田輝政",
+      "currentInputs": [
+        {
+          "file": "game/data.js",
+          "locator": "s1585.gens.gifu",
+          "year": 1564
+        },
+        {
+          "file": "game/hist.js",
+          "locator": "1579/4/1 登場定義",
+          "year": 1564
+        },
+        {
+          "file": "game/historical-families.js",
+          "locator": "池田輝政の家督継承",
+          "year": 1565
+        }
+      ],
+      "classification": "western-year-supported-date-variants-preserved",
+      "decision": "ゲームの西暦年差による年齢用生年を1565へ統一する候補。data.jsとhist.jsの1564を1565に変更し、家督継承の1565は変えない。出生の具体的月日は採用しない。",
+      "sourceIds": [
+        "tottori-ikeda-chronology",
+        "gifu-castle-lords-terumasa",
+        "hyogo-museum-terumasa",
+        "kotobank-terumasa-dictionaries"
+      ],
+      "limits": [
+        "鳥取県の永禄7年（1564）は和暦年との対応として保持し、出生日の西暦年1564と同一視しない。",
+        "講談社の永禄7年12月29日と小学館の11月晦日のどちらが正しいかは今回裁定しない。後者は当月30日。",
+        "出生原史料の記載箇所を今回取得できていない。年精度の採用は機関解説と辞典の暦対応に基づく。",
+        "ゲームの年齢は年差であり厳密な満年齢ではない。旧保存は史実観察・分岐なし・同名または登録alias・bornが数値1564の場合だけ1565へ補正する。他値は保持。"
+      ],
+      "auditDisposition": "候補適用後は新規シナリオ・登場・家督継承の入力が西暦1565で一致する。原暦月日の異説は台帳へ保持し、出生月日付き一次史料による判定を将来の別課題とする。年精度の入力不一致と未確定の月日を混同しない。",
+      "adoptedYear": {
+        "year": 1565,
+        "calendar": "CE",
+        "precision": "year",
+        "basis": "兵庫県立歴史博物館の西暦1565を採る。補助照合として、辞典2説の原暦月日はどちらも西暦1565へ換算される。",
+        "exactBirthDateAdopted": false
+      }
+    },
+    {
+      "person": "斯波詮直",
+      "currentInputs": [
+        {
+          "file": "game/data.js",
+          "locator": "s1585.gens.kousuiji",
+          "year": 1546
+        },
+        {
+          "file": "game/hist.js",
+          "locator": "1561/4/1 登場定義",
+          "year": 1546
+        },
+        {
+          "file": "game/hist.js",
+          "locator": "1581/1/1 補充登場定義",
+          "year": 1560
+        }
+      ],
+      "classification": "unsubstantiated-legacy-game-values",
+      "decision": "数値はいずれも史実生年として採用しない。既存の年齢非表示を維持し、人物表示を「生年不詳」へ。従来の「諸説」「確認中」という誤解を招く表記を置換する候補。",
+      "sourceIds": [
+        "shiwa-kosui-castle",
+        "shiwa-katayose-castle",
+        "shiwa-gosho-1963-2"
+      ],
+      "limits": [
+        "確認した紫波町公開資料に出生年がないという限定的な結論。すべての史料で確定不能であると証明したものではない。",
+        "内部の1546/1560は既存保存・型との互換のため保持する。史料の異説ではない。",
+        "hist.jsの登場年や家督継承の正否は今回の出生年2件の範囲に含めない。"
+      ],
+      "auditDisposition": "機械的なraw値不一致は残る。未調査の出生年バグとして同じ検索を繰り返さず、照合済み・根拠不足と分類。出典付き系譜、同時代文書の出生記載、自治体研究の新規根拠が得られた時点で再開。"
+    }
+  ],
+  "candidateFiles": [
+    "game/data.js",
+    "game/hist.js",
+    "game/history-evidence.js",
+    "game/kb.js",
+    "game/historical-register.js"
+  ],
+  "notChanged": [
+    "game/historical-families.js",
+    "game/ui.js",
+    "docs/work/requests.json",
+    "HANDOFF.md"
+  ],
+  "validation": "check.cjsの構造・暦換算と、check-save.cjsの既存snapshot読込比較。newGame0回・進行0日、Chrome・サーバー操作なし。",
+  "calendarReview": {
+    "runtimeAge": "game/engine.js:284 G.age=g=>G.date().y-g.born",
+    "runtimeDate": "game/engine.js:104 G.dateは内部30日月の年。G.kyuは別途旧暦を返す。",
+    "comparison": [
+      {
+        "person": "松平元康／徳川家康",
+        "birthInputs": [
+          {
+            "file": "game/data.js:222",
+            "year": 1543
+          },
+          {
+            "file": "game/data.js:281",
+            "year": 1543
+          }
+        ],
+        "source": "naj-ieyasu-birth",
+        "sourceLunarDate": [
+          1542,
+          12,
+          26
+        ],
+        "result": "旧暦天文11(1542)に対しゲームの生年は1543。池田も原暦年表の1564そのものではなく西暦出生年1565を用いることと整合する。全人物に同じ規則が適用済みとの証明ではない。"
+      }
+    ],
+    "policyFiles": [
+      "docs/architecture/README.md:22",
+      "docs/architecture/spatiotemporal-history.md:23-27"
+    ],
+    "policyFinding": "原史料の暦・精度を保持し、ユリウス暦・グレゴリオ暦・旧暦を混在させない方針。生年の全面的な変換規約は確認できない。",
+    "notExecuted": [
+      "出生月日の採否決定",
+      "全人物の生年再調査",
+      "人物日程の変更"
+    ],
+    "conversion": {
+      "function": "TK.lunarDate (game/history-focus.js:28-31)",
+      "table": "game/koyomi.js / TK.KOYOMI",
+      "westernConvention": "1582年10月以前はユリウス暦、以降グレゴリオ暦",
+      "monthLength": {
+        "lunarYear": 1564,
+        "month": 11,
+        "days": 30
+      },
+      "results": [
+        {
+          "lunar": [
+            1564,
+            11,
+            30
+          ],
+          "western": [
+            1565,
+            1,
+            2
+          ],
+          "birthDateAdopted": false
+        },
+        {
+          "lunar": [
+            1564,
+            12,
+            29
+          ],
+          "western": [
+            1565,
+            1,
+            31
+          ],
+          "birthDateAdopted": false
+        }
+      ],
+      "inference": "異なる月日説のいずれでも西暦年は1565。同じ年になることを確認するための換算であり、具体的出生月日の採否を決めたものではない。"
+    }
+  },
+  "researchLeads": [
+    {
+      "title": "池田家履歴略記年表",
+      "holding": "岡山大学附属図書館 池田家A8-41／DIG-OKAU-63401",
+      "url": "https://kokusho.nijl.ac.jp/page/list-okau.html",
+      "recordId": "100430727",
+      "status": "機関目録で所蔵と標題を確認。本文に到達できず、出生年月日の証拠としては未採用。"
+    }
+  ],
+  "saveRepair": {
+    "binding": "G.reconcileHistoricalPeople",
+    "metadata": "TK.PERSON_BIRTH_EVIDENCE:池田輝政",
+    "source": "TK.RESEARCH_SOURCES:ikedaTerumasaBirth",
+    "guards": [
+      "TK.HISTORY_ONLY",
+      "divに真の値なし",
+      "arcs・altQが空",
+      "branchesが空",
+      "同名または既存TK.PORTRAIT_ALIASによる同一名",
+      "born === 1564（厳密比較）"
+    ],
+    "onlyMutation": "該当人物のborn=1565",
+    "noNewAlias": true,
+    "postMigrationSourceShown": "TK.kbの人物項目に生年の出典を表示",
+    "evidence": "data/verification/person-birth-two-review/save-result.json"
+  }
+}

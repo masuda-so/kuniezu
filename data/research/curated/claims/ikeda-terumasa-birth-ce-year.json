@@ -1,0 +1,27 @@
+{
+  "id": "ikeda-terumasa-birth-ce-year",
+  "entity": "person:ikeda-terumasa",
+  "predicate": "birth-year",
+  "value": {
+    "year": 1565,
+    "calendar": "CE"
+  },
+  "validYears": [
+    1565,
+    1565
+  ],
+  "datePrecision": "year",
+  "source": "ikedaTerumasaBirth",
+  "sourceUrl": "https://rekihaku.pref.hyogo.lg.jp/digital_museum/legend3/term/",
+  "locator": "池田輝政の項・冒頭「1565―1613」",
+  "gameBindings": [
+    "TK.PERSON_BIRTH_EVIDENCE:池田輝政",
+    "G.reconcileHistoricalPeople",
+    "game/data.js",
+    "game/hist.js"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-04",
+  "uncertainty": "機関解説が記す西暦生年。永禄7年を年号対応だけで1564西暦生年としない。辞典の旧暦11月晦日・12月29日の異なる月日はともに翌西暦年へ換算されるが、具体的出生日はここで採用しない。出生原史料の照合済みとはしない。"
+}

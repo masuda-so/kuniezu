@@ -2,6 +2,9 @@
 /* 年代・人物・施設の照合。資料が示す範囲とゲームの管理単位を区別する。 */
 (function(){
  const refs={
+  ikedaTerumasaBirth:['兵庫県立歴史博物館','ひょうご伝説紀行－妖怪・自然の世界－用語解説','https://rekihaku.pref.hyogo.lg.jp/digital_museum/legend3/term/','池田輝政の項・冒頭の1565〜1613','年齢計算用の西暦生年1565。具体的出生月日の採否は決めない。'],
+  ikedaTerumasaBirthDates:['講談社／小学館（谷口澄夫）','日本人名大辞典+Plus／日本大百科全書「池田輝政」','https://kotobank.jp/word/池田輝政-30292','講談社の永禄7年12月29日・1565*、小学館の永禄7年11月晦日','月日説は異なるが、どちらも西暦1565へ換算される。出生原史料を照合済みとはしない。'],
+  ikedaTerumasaBirthEra:['鳥取県文化財課','鳥取池田家年譜','https://www.pref.tottori.lg.jp/82462.htm','永禄7年（1564年）の池田輝政出生欄','和暦年と西暦年の対応表記として保持し、出生日の西暦年1564と同一視しない。'],
   tsubakiGsi:['建設省国土地理院','土地条件調査報告書（銚子・鹿島地区）','https://www1.gsi.go.jp/geowww/landcondition/report/d2031.pdf','本文47～48頁・図16～17（PDF54～55頁）','椿海の水際を古図から読図し村名位置と比較。干拓時の絵図を用いた概略復元で、1560年の測量岸ではない。'],
   iwamuraLifetime:['恵那市教育委員会','岩村城跡第3次発掘調査 現地説明会資料','https://www.city.ena.lg.jp/material/files/group/33/H221205iwagensetu.pdf','岩村城の歴史','遠山景任の1572年夏の病没。生年や没日の確定ではない。'],
   kageakiraLifetime:['福井県立一乗谷朝倉氏遺跡博物館','朝倉氏の歴史','https://asakura-museum.pref.fukui.lg.jp/site/history','朝倉氏の滅亡','朝倉景鏡が1574年4月に平泉寺で討ち取られたこと。'],
@@ -25,9 +28,12 @@
   '北条氏直':{deathYear:1591,source:'ujinaoLifetime'},'北条氏邦':{deathYear:1597,source:'ujikuniLifetime'},
   '北条氏房':{deathYear:1592,source:'ujifusaLifetime'},'秋月種実':{deathYear:1596,source:'tanezaneLifetime'}
  };
+ for(const id of ['ikedaTerumasaBirth','ikedaTerumasaBirthDates','ikedaTerumasaBirthEra'])TK.RESEARCH_SOURCES[id].accessed='2026-11-04';
+ TK.PERSON_BIRTH_EVIDENCE={...(TK.PERSON_BIRTH_EVIDENCE||{}),'池田輝政':{birthYear:1565,calendar:'CE',datePrecision:'year',correctionFrom:1564,source:'ikedaTerumasaBirth',supportingSources:['ikedaTerumasaBirthDates','ikedaTerumasaBirthEra'],note:'永禄7年末の出生は西暦1565。11月晦日・12月29日のどちらを採るかは決めず、生年のみを補正する。'}};
  // 家の滅亡で浪人になっても既知の没年は変わらない。過ぎた死去を再演して領地や年表を書き換えない。
  G.reconcileHistoricalPeople=function(s){if(!s||!TK.HISTORY_ONLY)return [];const year=G.date().y,removed=[];
-  for(const g of s.gens){const name=TK.PORTRAIT_ALIAS?.[g.n]||g.n,death=TK.DEATH_Y[name];if(g.dead||death==null||death>=year)continue;g.dead=true;g.tr=null;g.unit=null;removed.push(g.id);}
+  const repairBirth=!Object.values(s.div||{}).some(Boolean)&&!(s.arcs||[]).length&&!(s.altQ||[]).length&&!Object.keys(s.branches||{}).length;
+  for(const g of s.gens){const name=TK.PORTRAIT_ALIAS?.[g.n]||g.n,death=TK.DEATH_Y[name],birth=TK.PERSON_BIRTH_EVIDENCE[name];if(repairBirth&&birth?.calendar==='CE'&&g.born===birth.correctionFrom)g.born=birth.birthYear;if(g.dead||death==null||death>=year)continue;g.dead=true;g.tr=null;g.unit=null;removed.push(g.id);}
   if(!removed.length)return removed;const ids=new Set(removed);for(const u of s.units)u.gens=u.gens.filter(id=>!ids.has(id));
   for(const [k,c]of Object.entries(s.clans))if(ids.has(c.leader)){const alive=s.gens.filter(g=>g.clan===k&&!g.dead&&!g.ronin&&!g.prisoner);c.leader=(alive.find(g=>g.loc===c.cap)||alive[0])?.id??null;}
   return removed;
