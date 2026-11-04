@@ -95,3 +95,11 @@ node tools/research/query-locations.cjs ndlna:01150199 --place place:fushimi --l
 ```
 
 IDは完全一致、地名と人物名は部分一致。検索期間は両端の年を含む。記録が持つ旧暦年と西暦の年精度はそれぞれの暦の表記年で比較し、暦換算は行わない。旧暦の日付を照合する場合は、閏月の区別も含めて指定する。
+
+来歴全体の期間検索にも対応する。開始・終了の両年を含み、記録の適用区間と検索期間に重なりがあるものを返す。片側だけの指定も可能。
+
+```sh
+node tools/research/query-history.cjs --from-year 1590 --to-year 1600 --entity wikidata:Q171977
+```
+
+単年の `--year` と期間指定の同時使用は入力エラーにする。旧暦の年を西暦へ日付換算する検索ではないため、日単位の所在には `query-locations.cjs --lunar` を使う。

@@ -29,8 +29,11 @@ function createHistoryIndex({claims=[],locations=[],people=[],places=[]}){
  let max=-Infinity;for(const r of timeline){max=Math.max(max,r.untilExclusive);r.prefixMaxUntilExclusive=max;}
  return {records,byEntity,aliases,labels,timeline,authorityOwners};
 }
-function queryHistory(index,{year,entity}={}){
- if(year!==undefined&&!Number.isInteger(year))throw Error('検索年は整数で指定する');
+function queryHistory(index,{year,entity,fromYear,toYear}={}){
+ if([year,fromYear,toYear].some(value=>value!==undefined&&!Number.isInteger(value)))throw Error('検索年は整数で指定する');
+ if(year!==undefined&&(fromYear!==undefined||toYear!==undefined))throw Error('単年と期間は同時に指定できない');
+ const lower=year??fromYear??-Infinity,upper=year??toYear??Infinity;
+ if(lower>upper)throw Error('検索期間の開始年は終了年以前にする');
  let entityIds;
  if(entity){
   const owner=index.authorityOwners.get(entity);
@@ -38,11 +41,11 @@ function queryHistory(index,{year,entity}={}){
  }
  let allowed;if(entityIds)allowed=new Set([...entityIds].flatMap(id=>index.byEntity.get(id)||[]));
  let refs;
- if(year===undefined)refs=index.timeline;
+ if(lower===-Infinity&&upper===Infinity)refs=index.timeline;
  else{
-  // Find the final start <= year, then stop once every earlier interval has ended.
-  let lo=0,hi=index.timeline.length;while(lo<hi){const mid=(lo+hi)>>1;if(index.timeline[mid].fromYear<=year)lo=mid+1;else hi=mid;}
-  refs=[];for(let i=lo-1;i>=0&&index.timeline[i].prefixMaxUntilExclusive>year;i--){const r=index.timeline[i];if(year<r.untilExclusive)refs.push(r);}refs.reverse();
+  // Search intervals that overlap the inclusive query period.
+  let lo=0,hi=index.timeline.length;while(lo<hi){const mid=(lo+hi)>>1;if(index.timeline[mid].fromYear<=upper)lo=mid+1;else hi=mid;}
+  refs=[];for(let i=lo-1;i>=0&&index.timeline[i].prefixMaxUntilExclusive>lower;i--){const r=index.timeline[i];if(lower<r.untilExclusive)refs.push(r);}refs.reverse();
  }
  return refs.filter(r=>!allowed||allowed.has(r.id)).map(r=>index.records.get(r.id));
 }
