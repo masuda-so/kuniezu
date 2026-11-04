@@ -38,6 +38,7 @@ jobs:
           node tools/checks/history-index.cjs
           python3 tools/checks/history-sqlite.py
           python3 tools/checks/history-sqlite-inputs.py
+          python3 tools/checks/history-cube.py
       - name: Battle atlas source and framing
         run: |
           node tools/checks/atlas-regressions.cjs
