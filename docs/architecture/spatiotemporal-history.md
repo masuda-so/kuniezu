@@ -84,3 +84,14 @@ node tools/research/query-history.cjs --year 1592 --entity 松平家忠
 検査は `node tools/checks/history-index.cjs`。1万年の区間でも索引1件、終了年の包含・除外、対象名と安定IDの対応、縦横の共通記録参照、条件の交差、入力の不変、未登録対象、分岐履歴・推定の混入拒否を確認する。
 
 将来の非史実履歴も、史実の参照IDを残しつつ各runIdの変更を別記録にする。史実記録の複製や上書きは行わず、必要な場合だけ再生高速化用の再生成可能なチェックポイントを別に持つ。非史実ルートは再開していない。
+
+### 人物典拠と場所・期間検索
+
+作業ツリーでは、人物の内部IDに Wikidata と国立国会図書館の典拠IDを対応付ける。Wikidataの版と取得日時を人物レコードに残す。典拠IDは人物の同定に用い、所在地や生没年の採用は出典付きの個別記録で扱う。
+
+```sh
+node tools/research/query-locations.cjs wikidata:Q950496 --place 伏見 --from-year 1598 --to-year 1600
+node tools/research/query-locations.cjs ndlna:01150199 --place place:fushimi --lunar 1600-7-5
+```
+
+IDは完全一致、地名と人物名は部分一致。検索期間は両端の年を含む。記録が持つ旧暦年と西暦の年精度はそれぞれの暦の表記年で比較し、暦換算は行わない。旧暦の日付を照合する場合は、閏月の区別も含めて指定する。
