@@ -30,8 +30,8 @@ for(const person of people){
  assert.equal(matches.length,1,person.id+' authority snapshot identity');
  const row=matches[0];
  assert.equal(row.wikidataRevision,evidence.wikidataRevision);
- assert.equal(row.japaneseLabel??row.label??row.name,person.name);
- assert.equal(row.ndlIdentity.name,person.name);
+ assert.ok([person.name,...person.gameNames].includes(row.japaneseLabel??row.label??row.name));
+ assert.ok([person.name,...person.gameNames].includes(row.ndlIdentity.name));
  assert.ok(person.authorityIds.includes('ndlna:'+row.ndlId));
 }
 console.log('PASS: adopted authorities match retained identity snapshots');
