@@ -1,6 +1,6 @@
 {
  "generated": "tools/map/build-edges.cjs",
- "baseProvincesSha256": "00715e4aece451dcc8a92c32b11dd2da06fa7411abd17eb359979faa210e0ab0",
+ "baseProvincesSha256": "30948d6cf0b847f0eb9190fe9137bca8b04db6c480f8c34f81477467a9a4f84a",
  "staleVersions": [],
  "note": "年代別の領域タイルの差し替え。同じ段・同じ列行の基準タイルの上に重ねず置き換える。期間は半開区間。",
  "versions": [
@@ -27,21 +27,21 @@
      "col": 1,
      "row": 5,
      "file": "edits/compiled/15730101-15840101/provinces/1-5@15730101-15840101.png",
-     "sha256": "0cc275baf62d69b4d26ac8820024a486694d72b02191d7e9a741d58f4a836022"
+     "sha256": "ac615115b4a8716c210d5f73e2ac55ce9475f7f9cb83572861f12e16193e7d70"
     },
     {
      "factor": 4,
      "col": 0,
      "row": 1,
      "file": "edits/compiled/15730101-15840101/provinces-4/0-1@15730101-15840101.png",
-     "sha256": "c5aadbaea43e3300a9242a09ca60b22536af0990e472875e9966e1f9db007033"
+     "sha256": "6ff7fe307ee04c213f58521a7693e75d3fe558c8d2438cffcac44b0d844b4ca5"
     },
     {
      "factor": 8,
      "col": 0,
      "row": 0,
      "file": "edits/compiled/15730101-15840101/provinces-8/0-0@15730101-15840101.png",
-     "sha256": "28cc657911b042a29bad8161d6ddd3243a6f740d6a2f97a04a1d231ef444eb5e"
+     "sha256": "aaa3873b7c18d4fd67d48950456bd96ed4e2e15e56f9720d74d246238918076b"
     }
    ]
   },
@@ -69,7 +69,7 @@
      "col": 1,
      "row": 5,
      "file": "edits/compiled/15840101-16060101/provinces/1-5@15840101-16060101.png",
-     "sha256": "0cc275baf62d69b4d26ac8820024a486694d72b02191d7e9a741d58f4a836022"
+     "sha256": "ac615115b4a8716c210d5f73e2ac55ce9475f7f9cb83572861f12e16193e7d70"
     },
     {
      "factor": 1,
@@ -83,7 +83,7 @@
      "col": 0,
      "row": 1,
      "file": "edits/compiled/15840101-16060101/provinces-4/0-1@15840101-16060101.png",
-     "sha256": "c5aadbaea43e3300a9242a09ca60b22536af0990e472875e9966e1f9db007033"
+     "sha256": "6ff7fe307ee04c213f58521a7693e75d3fe558c8d2438cffcac44b0d844b4ca5"
     },
     {
      "factor": 4,
@@ -97,7 +97,7 @@
      "col": 0,
      "row": 0,
      "file": "edits/compiled/15840101-16060101/provinces-8/0-0@15840101-16060101.png",
-     "sha256": "28cc657911b042a29bad8161d6ddd3243a6f740d6a2f97a04a1d231ef444eb5e"
+     "sha256": "aaa3873b7c18d4fd67d48950456bd96ed4e2e15e56f9720d74d246238918076b"
     },
     {
      "factor": 8,

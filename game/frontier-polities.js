@@ -18,7 +18,7 @@
   ['jeju','済州牧','済州牧','全羅',126.53,33.51,4,40,600,0]
  );
  TK.CASTLE_NOTES=Object.assign(TK.CASTLE_NOTES||{},{
-  matsumae:{source:['ezoOdate','ezoFukuyama'],note:'蠣崎氏の本拠。1514年に大館（松前）へ移った。1606年に福山館が完成するまでは大館。位置は松前の町の代表点で、大館跡の正確な座標ではない。'},
+  matsumae:{source:['ezoOdate','ezoFukuyama','hakodateShishi'],note:'蠣崎氏の本拠。1514年に大館（松前）へ移った。1606年に福山館が完成するまでは大館。位置は松前の町の代表点で、大館跡の正確な座標ではない。領域は1550年の取り決めによる和人地（上ノ国天ノ川〜知内）で、それより北・東は蝦夷地。'},
   shuri:{source:['ryukyuShuri','ryukyu1609'],note:'琉球王国の王城。1609年の島津の侵攻の後も王国は残り、薩摩の支配下に入った。'},
   jeju:{source:['jejuMok'],note:'済州牧の官衙。済州・旌義・大静の三邑を本土の城とは別に扱う。'}
  });

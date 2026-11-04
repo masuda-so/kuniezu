@@ -1,7 +1,7 @@
 {
   "baselineCommit": "liaodong-1560-source-v1",
   "source": "game/map_data（provinces.png・definition.csv・default.map・projection.json）",
-  "sourceSha256": "00715e4aece451dcc8a92c32b11dd2da06fa7411abd17eb359979faa210e0ab0",
+  "sourceSha256": "30948d6cf0b847f0eb9190fe9137bca8b04db6c480f8c34f81477467a9a4f84a",
   "note": "1560年正本。児島湾補正を保持し、遼東の軍政域参考図を未割当/旧明だけへ適用。1573〜1605寛甸と1584年以後宇喜多堤は年代差分。軍政域参考線を精密国境・実効支配・軍の所属には転用しない。",
   "applied": [
     {
@@ -216,7 +216,9 @@
     }
   ],
   "previousSourceSha256": [
-    "9e27144aa9c953299567fd3719d3ad413ea1f496ad03a097e1e25b2c6eb1a03d"
+    "9e27144aa9c953299567fd3719d3ad413ea1f496ad03a097e1e25b2c6eb1a03d",
+    "00715e4aece451dcc8a92c32b11dd2da06fa7411abd17eb359979faa210e0ab0"
   ],
-  "regrid2026_11_04": "範囲の作り直し（tools/map/regrid-extent-2026-11-04.cjs）：北の陸の無い帯を792行削り、東に2,644列を足して右上の角を択捉島にした。千島と北端の帯の陸は Copernicus DEM から足した未割当の陸。既存の画素の区画は変えていない。年代別の差分の型紙の窓は行を792ずらした。"
+  "regrid2026_11_04": "範囲の作り直し（tools/map/regrid-extent-2026-11-04.cjs）：北の陸の無い帯を792行削り、東に2,644列を足して右上の角を択捉島にした。千島と北端の帯の陸は Copernicus DEM から足した未割当の陸。既存の画素の区画は変えていない。年代別の差分の型紙の窓は行を792ずらした。",
+  "assign2026_11_04": "勢力の割り当て（tools/map/assign-frontier-2026-11-04.cjs）：未割当の陸のうち満州・沿海州を建州女真・海西女真・東方の女真諸部・蒙古諸部、北海道・千島を蝦夷地（アイヌ）に分け、蠣崎家の区画を和人地（上ノ国天ノ川〜知内）に縮めた。definition.csv に id 171〜175 を追加。寛甸の差分は元が建州女真の画素に当てる。"
 }
