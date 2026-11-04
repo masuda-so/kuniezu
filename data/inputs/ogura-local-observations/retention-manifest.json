@@ -1,0 +1,137 @@
+{
+  "schema": "ogura-local-observation-retention-v1",
+  "sourceId": "kyoto-arc-2023-2",
+  "policy": "Reviewed numeric evidence and a handwritten reading note are shared. The PDF and exact readout images remain in a durable local archive outside Git. Archive keys identify bytes, not a user-specific filesystem path.",
+  "sourceUrl": "https://www.kyoto-arc.or.jp/news/chousahoukoku/2023-02.pdf",
+  "permissionReview": {
+    "checked": "2026-11-04",
+    "fullReportRedistributionPermissionConfirmed": false,
+    "reviewedUrl": "https://www.kyoto-arc.or.jp/news/chousahoukoku.html",
+    "conclusion": "Download/view availability is documented; explicit full-report redistribution permission was not found in inspected materials."
+  },
+  "repositoryNumericInputs": [
+    {
+      "path": "data/inputs/ogura-local-observations/tomori-observations.geojson",
+      "sha256": "ac4f2c3f639fd0de32a757d1821840ff4fb249eb2e0ffefddf8043ac6c739b93",
+      "bytes": 16467,
+      "role": "local-digitization",
+      "includedInGit": true
+    },
+    {
+      "path": "data/inputs/ogura-local-observations/registration.json",
+      "sha256": "6f9e42b66e208bd093bd8068f1b7c730167afff633976096c319e5826de063d0",
+      "bytes": 2536,
+      "role": "grid-registration",
+      "includedInGit": true
+    },
+    {
+      "path": "data/inputs/ogura-local-observations/gsi-coordinate-api.json",
+      "sha256": "41047fe3c2eb875699061a533b4f036568cc42c262af95d25bf22aadf5d08434",
+      "bytes": 2291,
+      "role": "official-api-requests-and-responses",
+      "includedInGit": true
+    },
+    {
+      "path": "data/inputs/ogura-local-observations/gsi-vi-0.json",
+      "sha256": "589f8b87cab98bd1bdd675dd9fd31172327b57424fedf88c8a027262014a3bc4",
+      "bytes": 126,
+      "role": "official-api-raw-response",
+      "includedInGit": true
+    },
+    {
+      "path": "data/inputs/ogura-local-observations/gsi-vi-1.json",
+      "sha256": "54200f1aa3b6b18a805c1e6ce1f890b075a269d037da123d1945e6fab5d60c24",
+      "bytes": 126,
+      "role": "official-api-raw-response",
+      "includedInGit": true
+    },
+    {
+      "path": "data/inputs/ogura-local-observations/gsi-vi-2.json",
+      "sha256": "d53e6a7583e5d4fc7073a00b0b9b31f94c664027ea1ceac58acbb7c6c9111f4e",
+      "bytes": 126,
+      "role": "official-api-raw-response",
+      "includedInGit": true
+    },
+    {
+      "path": "data/inputs/ogura-local-observations/gsi-vi-3.json",
+      "sha256": "10744a4098b7023e5fef7ecfeb62b78f80e6f175e36fd3ad6358f73d987f184e",
+      "bytes": 126,
+      "role": "official-api-raw-response",
+      "includedInGit": true
+    },
+    {
+      "path": "data/inputs/ogura-local-observations/local-shapes-validation.json",
+      "sha256": "12ef47d6b522158787d0abe8620301ffd727f1a0b5486c7f7573384505a090ec",
+      "bytes": 674,
+      "role": "frozen-comparison-results",
+      "includedInGit": true
+    },
+    {
+      "path": "data/inputs/ogura-local-observations/old-lake-comparison-snapshot.json",
+      "sha256": "71374ee0f7ff61b61861a3ada8998c96d61b63c8c7ca4ac4740c0391b9777e50",
+      "bytes": 127453,
+      "role": "frozen-game-map-comparison-not-current-coast",
+      "includedInGit": true
+    }
+  ],
+  "localArchiveEntries": [
+    {
+      "archiveKey": "sha256:5040b198c2caed5115857b6b41a94c845ce5dd7557f3c46f833186602a6a5ae2",
+      "sha256": "5040b198c2caed5115857b6b41a94c845ce5dd7557f3c46f833186602a6a5ae2",
+      "bytes": 12984183,
+      "mediaType": "application/pdf",
+      "role": "published-source",
+      "archiveRelativePath": "sha256/5040b198c2caed5115857b6b41a94c845ce5dd7557f3c46f833186602a6a5ae2.pdf",
+      "sourceId": "kyoto-arc-2023-2",
+      "sourceUrl": "https://www.kyoto-arc.or.jp/news/chousahoukoku/2023-02.pdf",
+      "storage": "durable-local-source-archive",
+      "includedInGit": false,
+      "redistributionPermission": "not-confirmed",
+      "publicationDate": "2024-02-29",
+      "accessed": "2026-11-04"
+    },
+    {
+      "archiveKey": "sha256:a37014fb0ece676c8859719010a85c3c2930831bfde6a8554e21d4d8e3de344b",
+      "sha256": "a37014fb0ece676c8859719010a85c3c2930831bfde6a8554e21d4d8e3de344b",
+      "bytes": 132859,
+      "mediaType": "image/png",
+      "role": "plate-5-grid-read-image",
+      "archiveRelativePath": "sha256/a37014fb0ece676c8859719010a85c3c2930831bfde6a8554e21d4d8e3de344b.png",
+      "sourceId": "kyoto-arc-2023-2",
+      "sourceUrl": "https://www.kyoto-arc.or.jp/news/chousahoukoku/2023-02.pdf",
+      "storage": "durable-local-source-archive",
+      "includedInGit": false,
+      "redistributionPermission": "not-confirmed",
+      "pdfPage": 51,
+      "derivedFromArchiveKey": "sha256:5040b198c2caed5115857b6b41a94c845ce5dd7557f3c46f833186602a6a5ae2",
+      "representation": "exact retained readout raster; generation settings not reconstructed",
+      "pixelSize": [
+        1012,
+        1432
+      ]
+    },
+    {
+      "archiveKey": "sha256:ac05329cc5dca17e593c83438c818b5809c4c98f0ad8395e19cb16153d481d61",
+      "sha256": "ac05329cc5dca17e593c83438c818b5809c4c98f0ad8395e19cb16153d481d61",
+      "bytes": 321871,
+      "mediaType": "image/png",
+      "role": "plate-10-posthole-read-image",
+      "archiveRelativePath": "sha256/ac05329cc5dca17e593c83438c818b5809c4c98f0ad8395e19cb16153d481d61.png",
+      "sourceId": "kyoto-arc-2023-2",
+      "sourceUrl": "https://www.kyoto-arc.or.jp/news/chousahoukoku/2023-02.pdf",
+      "storage": "durable-local-source-archive",
+      "includedInGit": false,
+      "redistributionPermission": "not-confirmed",
+      "pdfPage": 56,
+      "derivedFromArchiveKey": "sha256:5040b198c2caed5115857b6b41a94c845ce5dd7557f3c46f833186602a6a5ae2",
+      "representation": "exact retained readout raster; generation settings not reconstructed",
+      "pixelSize": [
+        1489,
+        2105
+      ]
+    }
+  ],
+  "historicalScope": "One archaeological-period observation. No historical start/end date, WGS84 datum conversion, continuous occupation, or shoreline mask is inferred.",
+  "approved100mRasterCellChanges": 0,
+  "oldLakeComparisonIsLatestLiveMap": false
+}

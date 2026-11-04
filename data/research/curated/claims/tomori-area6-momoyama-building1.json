@@ -1,0 +1,90 @@
+{
+  "id": "tomori-area6-momoyama-building1",
+  "entity": "place:tomori-area6",
+  "predicate": "archaeological-building-observation",
+  "value": {
+    "name": "建物1",
+    "periodLabel": "安土桃山時代",
+    "archaeologicalTime": {
+      "calendar": "archaeological-period",
+      "precision": "period",
+      "fromInclusive": null,
+      "untilExclusive": null
+    },
+    "observedFeatures": [
+      "柱穴34",
+      "柱穴38",
+      "柱穴52",
+      "柱穴57",
+      "柱穴47",
+      "柱穴55"
+    ],
+    "reportedObservedExtentMetres": {
+      "eastWest": 4.5,
+      "northSouth": 1.6
+    },
+    "extentLimit": "南側は攪乱で削平され、東側は調査区外へ続く。値は検出規模であって建物全体の大きさではない。",
+    "surveyContext": {
+      "siteNumber": "京都市22S586",
+      "area": "第6区",
+      "reportedSurveyAreaSquareMetres": 234,
+      "surveyedFrom": "2023-04-06",
+      "surveyedUntil": "2023-06-23"
+    },
+    "geometryReference": {
+      "path": "data/inputs/ogura-local-observations/tomori-observations.geojson",
+      "sha256": "ac4f2c3f639fd0de32a757d1821840ff4fb249eb2e0ffefddf8043ac6c739b93",
+      "featureIds": [
+        "tomori-building1-observed-support-envelope",
+        "tomori-building1-post-34",
+        "tomori-building1-post-38",
+        "tomori-building1-post-52",
+        "tomori-building1-post-57",
+        "tomori-building1-post-47",
+        "tomori-building1-post-55"
+      ]
+    },
+    "constraint": {
+      "kind": "local-archaeological-observation-versus-blanket-permanent-water",
+      "scope": "対象遺構の存在は、その場所を当該時期を通じた恒久的な開放湖面とみなす解釈を再点検する根拠。周辺全域・全期間の乾燥陸地や水位を決めない。",
+      "mapBindingRole": "read-only-contradiction-review-input",
+      "rasterEditApproved": false,
+      "wholeCellExpansionAllowed": false,
+      "approved100mRasterCellChanges": 0,
+      "continuousOccupationAsserted": false,
+      "constructionDateKnown": false,
+      "abandonmentDateKnown": false
+    }
+  },
+  "validYears": [
+    1560,
+    1615
+  ],
+  "datePrecision": "period",
+  "source": "kyoto-arc-2023-2",
+  "sourceUrl": "https://www.kyoto-arc.or.jp/news/chousahoukoku/2023-02.pdf",
+  "locator": "本文9頁（PDF19頁）「安土桃山時代の遺構・建物1」及び図版10（PDF56頁）、図版5（PDF51頁）",
+  "gameBindings": [
+    "game/map_data/provinces.png"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-04",
+  "uncertainty": "原報告の考古学的時期区分を採用。1560〜1615はゲーム期間から漏れなく資料候補を検索する便宜的な窓で、安土桃山時代の暦年定義でも建物の実存続期間でもない。1560年の存在、1615年までの存続、日々の居住を確定しない。",
+  "linkedEntities": [
+    "place:tomori-area6"
+  ],
+  "eventTime": {
+    "kind": "described-period",
+    "label": "安土桃山時代（考古学的時期区分）",
+    "indexYears": [
+      1560,
+      1615
+    ],
+    "precision": "period",
+    "calendar": "Japanese-era-description",
+    "boundsAreHistoricalStartEnd": false
+  },
+  "eventRelation": "archaeological-building-observation",
+  "eventScope": "史料の時期区分に関する観測1件。索引窓は全ゲーム期間を使う検索候補であり、建物・人の連続存在を主張しない。湖岸修正の完了記録にはしない。"
+}

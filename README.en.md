@@ -29,6 +29,7 @@ is [docs/README.md](docs/README.md); open requests and ownership are in
 - The historical database preserves original calendars and date precision, and rejects
   additional date fields that conflict with the time format. See the
   [database design and commands](docs/architecture/history-database.md) (Japanese).
+- The historical database includes the sourced Tomori excavation observation. Archaeological periods remain distinct from exact dates; source hashes, Markdown notes and numerical inputs are retained.
 - The historical database retains personal authority IDs and sourced aliases.
   Aliases can be searched; comparative records outside the game period are not
   reassigned to events within it.
