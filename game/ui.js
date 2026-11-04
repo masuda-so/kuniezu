@@ -9,6 +9,10 @@ const esc=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&g
 const GEO=window.TKGEO;
 const U={pslot:{},dipView:false,mode:'title',sel:null,modal:null,mdata:{},pickScen:null,pickClan:null,hover:null,speed:0,acc:0,baseDirty:true,chatCtl:null,picking:null};
 try{U.mapStyle=localStorage.getItem('tenka-mapstyle2')||'relief';}catch(e){U.mapStyle='relief';}
+/* 地図の向き（図北の角度）。北を上から反時計回りに何度回すか（北が左へ傾く）。既定の 11 度は明治「大日本全図」（1880 年頃）の本州の軸の向きに合わせた値
+   （docs/reports/MAP_ORIENTATION.md）。画布を CSS で回し、文字は読める向きに戻す。当たり判定は画面の座標を画布の座標へ逆に回して行う。 */
+U.MAP_ROTATIONS=[{deg:0,name:'北が上'},{deg:11,name:'大日本全図の向き（11度）'},{deg:20,name:'本州を立てる（20度）'}];
+try{const v=+localStorage.getItem('tenka-maprot');U.mapRotation=Number.isFinite(v)&&localStorage.getItem('tenka-maprot')!==null?v:11;}catch(e){U.mapRotation=11;}
 window.TKUI=U;U.open=(n,d)=>openModal(n,d);
 let S=null;
 // 外部書体はゲーム開始を待たせない。到着後に地図の文字幅と狭幅の帯を更新する。
@@ -148,15 +152,29 @@ function kamonHTML(k,size=26){const r=G.kamonRecord(k);return r?`<img class="kam
 /* ===== カメラ ===== */
 const base=$('#base'),top_=$('#top'),bctx=base.getContext('2d'),tctx=top_.getContext('2d');
 const cam={x:GEO.X0+GEO.W*.55,y:GEO.Y0+GEO.H*.52,z:.4};let DPR=1,VW=0,VH=0;
-function resize(){DPR=Math.min(2,devicePixelRatio||1);VW=base.clientWidth;VH=base.clientHeight;for(const c of [base,top_]){const w=Math.round(VW*DPR),h=Math.round(VH*DPR);if(c.width!==w)c.width=w;if(c.height!==h)c.height=h;}U.baseDirty=true;}
+let VPW=0,VPH=0;// 画面（#app）の大きさ。VW・VH は画布の大きさ（回転のぶん画面より大きい）
+const rotRad=()=>(U.mapRotation||0)*Math.PI/180;
+// 画面の座標 ⇄ 画布の座標。画布は画面の中心に置いて反時計回りに mapRotation 度回してあるので、画面の点は時計回りに回し戻す
+const v2c=(vx,vy)=>{const a=rotRad(),dx=vx-VPW/2,dy=vy-VPH/2,c=Math.cos(a),s=Math.sin(a);return [VW/2+c*dx-s*dy,VH/2+s*dx+c*dy];};
+const c2v=(cx,cy)=>{const a=rotRad(),dx=cx-VW/2,dy=cy-VH/2,c=Math.cos(a),s=Math.sin(a);return [VPW/2+c*dx+s*dy,VPH/2-s*dx+c*dy];};
+const evXY=e=>v2c(e.clientX,e.clientY);
+function resize(){DPR=Math.min(2,devicePixelRatio||1);const app=$('#app');VPW=app.clientWidth;VPH=app.clientHeight;const a=rotRad(),cs=Math.abs(Math.cos(a)),sn=Math.abs(Math.sin(a));
+ VW=Math.ceil(VPW*cs+VPH*sn);VH=Math.ceil(VPW*sn+VPH*cs);
+ for(const c of [base,top_]){const st=c.style;st.width=VW+'px';st.height=VH+'px';st.left=Math.round((VPW-VW)/2)+'px';st.top=Math.round((VPH-VH)/2)+'px';st.transformOrigin='50% 50%';st.transform=a?`rotate(${-U.mapRotation}deg)`:'';
+  const w=Math.round(VW*DPR),h=Math.round(VH*DPR);if(c.width!==w)c.width=w;if(c.height!==h)c.height=h;}
+ const nm=$('#northMark');if(nm)nm.style.transform=`rotate(${-U.mapRotation}deg)`;U.baseDirty=true;}
+U.setMapRotation=deg=>{U.mapRotation=+deg||0;try{localStorage.setItem('tenka-maprot',String(U.mapRotation));}catch(e){}resize();if(U.mode==='title')fitTitle();else clampCam();vcMemo=null;drawBase();};
+// 文字は画布の回転を打ち消して、画面で読める向きに描く（道の名など、わざと回して描く文字はそのまま）
+for(const c of [bctx,tctx])for(const k of ['fillText','strokeText']){const f=c[k].bind(c);c[k]=function(t,x,y,mw){const a=rotRad();const m=this.getTransform();if(!a||Math.abs(m.b)>1e-9||Math.abs(m.c)>1e-9)return f(t,x,y,mw);this.save();this.translate(x,y);this.rotate(a);const r=f(t,0,0,mw);this.restore();return r;};}
 addEventListener('resize',()=>{TL.sig='';});addEventListener('resize',()=>{resize();if(U.mode==='title')fitTitle();else clampCam();});
 let tlNode=null;function narrowTL(){tlNode=tlNode||document.getElementById('tline');return !tlNode||tlNode.hidden||document.body.classList.contains('narrowSel');}
 // 描画中は画面の中心が変わらないので、一度の描画で何千回も呼ぶ座標変換のために結果を控える。
 let vcMemo=null;function vc(){return vcMemo||vcCalc();}
-function vcCalc(){const mob=VW<=820;let l=0,r=0,t=0,b=0;
- if(U.mode==='game'){if(mob){t=U.hudTop||104;b=U.sel?VH*.46:196;}else{const nar=U.sel&&VW<1200;l=nar?0:320;r=U.sel?360:0;t=72;b=narrowTL()?0:70;}}
- else if(U.mode==='pick'){if(mob)b=VH*.52;else r=400;}
- return [l+(VW-l-r)/2,t+(VH-t-b)/2,VW-l-r,VH-t-b];}
+function vcCalc(){const W=VPW||VW,H=VPH||VH,mob=W<=820;let l=0,r=0,t=0,b=0;
+ if(U.mode==='game'){if(mob){t=U.hudTop||104;b=U.sel?H*.46:196;}else{const nar=U.sel&&W<1200;l=nar?0:320;r=U.sel?360:0;t=72;b=narrowTL()?0:70;}}
+ else if(U.mode==='pick'){if(mob)b=H*.52;else r=400;}
+ // 中心は画面（パネルを除いた所）で決め、画布の座標へ回し戻す。幅・高さは画面のまま
+ const [cx,cy]=v2c(l+(W-l-r)/2,t+(H-t-b)/2);return [cx,cy,W-l-r,H-t-b];}
 const w2s=(x,y)=>{const c=vc();return [(x-cam.x)*cam.z+c[0],(y-cam.y)*cam.z+c[1]];};
 U.pos=id=>w2s(G.C[id].x,G.C[id].y);
 U.cam=(x,y,z)=>{U.sel=null;side.hidden=true;cam.x=x;cam.y=y;cam.z=z;clampCam();U.baseDirty=true;};
@@ -654,19 +672,19 @@ top_.addEventListener('pointerdown',e=>{top_.setPointerCapture(e.pointerId);ptrs
  if(ptrs.size===1)drag={x:e.clientX,y:e.clientY,cx:cam.x,cy:cam.y};
  if(ptrs.size===2){const [a,b]=[...ptrs.values()];pinch={d:Math.hypot(a.x-b.x,a.y-b.y),z:cam.z};moved=true;}});
 let hoverEv=null,hoverRaf=0,topRect=null;addEventListener('resize',()=>{topRect=null;});
-function hoverFrame(){hoverRaf=0;const e=hoverEv;if(!e||ptrs.size)return;const r=topRect||(topRect=top_.getBoundingClientRect());const army=hitArmy(e.clientX-r.left,e.clientY-r.top);if(army){top_.style.cursor='pointer';tipArmy(army,e);return;}const h=hit(e.clientX-r.left,e.clientY-r.top);if(h!==U.hover){U.hover=h;top_.style.cursor=h?'pointer':'grab';}const y=hitY(e.clientX-r.left,e.clientY-r.top);if(y){tipY(y,e);return;}if(!h){top_.style.cursor='grab';const region=hitContext(e.clientX-r.left,e.clientY-r.top);if(region){top_.style.cursor='help';tipContext(region,e);return;}}tip(h,e);}
+function hoverFrame(){hoverRaf=0;const e=hoverEv;if(!e||ptrs.size)return;const [px,py]=evXY(e);const army=hitArmy(px,py);if(army){top_.style.cursor='pointer';tipArmy(army,e);return;}const h=hit(px,py);if(h!==U.hover){U.hover=h;top_.style.cursor=h?'pointer':'grab';}const y=hitY(px,py);if(y){tipY(y,e);return;}if(!h){top_.style.cursor='grab';const region=hitContext(px,py);if(region){top_.style.cursor='help';tipContext(region,e);return;}}tip(h,e);}
 top_.addEventListener('pointermove',e=>{
  if(!ptrs.has(e.pointerId)){hoverEv=e;if(!hoverRaf)hoverRaf=requestAnimationFrame(hoverFrame);return;}
  ptrs.set(e.pointerId,{x:e.clientX,y:e.clientY});
  if(pinch&&ptrs.size===2){beginZoom();const [a,b]=[...ptrs.values()];cam.z=pinch.z*Math.hypot(a.x-b.x,a.y-b.y)/pinch.d;clampCam();return;}
- if(drag){const dx=e.clientX-drag.x,dy=e.clientY-drag.y;if(Math.hypot(dx,dy)>5)moved=true;if(moved){anim=null;cam.x=drag.cx-dx/cam.z;cam.y=drag.cy-dy/cam.z;clampCam();tip(null);}}});
+ if(drag){const dx=e.clientX-drag.x,dy=e.clientY-drag.y;if(Math.hypot(dx,dy)>5)moved=true;if(moved){anim=null;const a=rotRad(),cx=Math.cos(a)*dx-Math.sin(a)*dy,cy=Math.sin(a)*dx+Math.cos(a)*dy;cam.x=drag.cx-cx/cam.z;cam.y=drag.cy-cy/cam.z;clampCam();tip(null);}}});
 const endPtr=e=>{const tap=ptrs.size===1&&!moved;ptrs.delete(e.pointerId);if(ptrs.size<2)pinch=null;if(!ptrs.size)drag=null;
- if(tap&&e.type==='pointerup'){const r=top_.getBoundingClientRect();onTap(e.clientX-r.left,e.clientY-r.top);}};
+ if(tap&&e.type==='pointerup'){onTap(...evXY(e));}};
 top_.addEventListener('pointerup',endPtr);top_.addEventListener('pointercancel',endPtr);
 top_.addEventListener('pointerleave',()=>{U.hover=null;tip(null);});
 let zoomFinish;
 function beginZoom(){U.zoomUntil=performance.now()+260;clearTimeout(zoomFinish);zoomFinish=setTimeout(()=>{U.zoomUntil=0;U.baseDirty=true;},270);}
-top_.addEventListener('wheel',e=>{e.preventDefault();beginZoom();const r=top_.getBoundingClientRect(),mx=e.clientX-r.left,my=e.clientY-r.top;const [wx,wy]=s2w(mx,my);
+top_.addEventListener('wheel',e=>{e.preventDefault();beginZoom();const [mx,my]=evXY(e);const [wx,wy]=s2w(mx,my);
  cam.z*=Math.exp(-e.deltaY*.0015);clampCam();const [nx,ny]=s2w(mx,my);cam.x+=wx-nx;cam.y+=wy-ny;clampCam();anim=null;},{passive:false});
 function hit(sx,sy){if(!S)return null;let best=null,bd=16*16;for(const C of G.CL){const [x,y]=w2s(C.x,C.y);const d=(x-sx)**2+(y-sy)**2;if(d<bd){bd=d;best=C.id;}}
  if(best)return best;const [wx,wy]=s2w(sx,sy);
@@ -694,7 +712,7 @@ function tipArmy(group,e){const ids=group.members.map(m=>m.id),units=(U.mapUnits
 function hitY(sx,sy){if(!S||cam.z<.6)return null;let best=null,bd=10*10;for(const y of (G.YOSHO||[])){const [x,yy]=w2s(y.x,y.y);const d=(x-sx)**2+(yy-sy)**2;if(d<bd){bd=d;best=y;}}return best;}
 // 施設の詳しい様子
 function tipY(y,e){if(!y||(e&&e.pointerType==='touch')||U.mode==='title'){tipEl.hidden=true;return;}const v=G.sitePresentation(y),level=G.siteLevel(y);tipEl.innerHTML=`<div class="tph"><div><b>${esc(v.title)}</b><span>${esc(v.role)}${G.yActive(y)?' ・ Lv.'+level:''}</span></div></div><p>${esc(v.description)}</p>${v.state?'<p>'+esc(v.state)+'</p>':''}${G.yActive(y)?'<span class="tdl">'+esc(G.infrastructureText('site',y.id))+'</span>':''}`;tipEl.hidden=false;placeTip(e);}
-function placeTip(e){let x=e.clientX+14,y=e.clientY+14;const w=tipEl.offsetWidth,h=tipEl.offsetHeight;if(x+w>VW-8)x=e.clientX-w-14;if(y+h>VH-8)y=VH-h-8;tipEl.style.left=Math.max(8,x)+'px';tipEl.style.top=Math.max(8,y)+'px';}
+function placeTip(e){let x=e.clientX+14,y=e.clientY+14;const w=tipEl.offsetWidth,h=tipEl.offsetHeight;if(x+w>VPW-8)x=e.clientX-w-14;if(y+h>VPH-8)y=VPH-h-8;tipEl.style.left=Math.max(8,x)+'px';tipEl.style.top=Math.max(8,y)+'px';}
 
 function tip(id,e){if(!id||!S||(e&&e.pointerType==='touch')||U.mode==='title'||id===U.sel){tipEl.hidden=true;return;}const st=S.castles[id],k=st.owner;const gs=(G.displayCastleGens||G.castleGens)(id);
  // 城の詳しい様子：持ち主と当主、城主、兵・堅さ・石高・民忠、囲む軍勢、向かってくる軍勢
@@ -708,7 +726,7 @@ function tip(id,e){if(!id||!S||(e&&e.pointerType==='touch')||U.mode==='title'||i
   ${gs.length>1?`<span>在城 ${gs.slice(0,4).map(g=>esc(g.n)).join('、')}${gs.length>4?' ほか'+(gs.length-4)+'人':''}</span>`:''}
   ${sieg.length?`<span class="tw">囲まれている：${sieg.map(u=>`${G.CN(u.clan)} ${man(u.troops)}${gn(u)?'（'+esc(gn(u))+'）':''}`).join('、')}</span>`:''}
   ${inc.length?`<span class="tw">向かってくる：${inc.map(u=>`${G.CN(u.clan)} ${man(u.troops)}`).join('、')}</span>`:''}`;
- tipEl.hidden=false;const r=top_.getBoundingClientRect();const tw=tipEl.offsetWidth||230,th=tipEl.offsetHeight||100;let x=e.clientX-r.left+14,y=e.clientY-r.top+14;const lim=side.hidden?VW:side.getBoundingClientRect().left-r.left;if(x+tw>lim-6)x=e.clientX-r.left-tw-14;tipEl.style.left=Math.max(6,x)+'px';tipEl.style.top=Math.max(6,Math.min(VH-th-6,y))+'px';}
+ tipEl.hidden=false;const tw=tipEl.offsetWidth||230,th=tipEl.offsetHeight||100;let x=e.clientX+14,y=e.clientY+14;const lim=side.hidden?VPW:side.getBoundingClientRect().left;if(x+tw>lim-6)x=e.clientX-tw-14;tipEl.style.left=Math.max(6,x)+'px';tipEl.style.top=Math.max(6,Math.min(VPH-th-6,y))+'px';}
 function onTap(sx,sy){const group=U.armyGroups?.filter(p=>Math.abs(p.x-sx)<48&&sy>p.y-40&&sy<p.y+48).sort((a,b)=>Math.hypot(a.x-sx,a.y-sy)-Math.hypot(b.x-sx,b.y-sy))[0];if(group&&U.mode==='game'){const near=U.armyGroups.filter(p=>Math.hypot(p.x-group.x,p.y-group.y)<18);openModal('army-list',{ids:[...new Set(near.flatMap(p=>p.members.map(m=>m.id)))],sameLocation:near.every(p=>Math.hypot(p.x-group.x,p.y-group.y)<1),nearby:true});return;}const id=hit(sx,sy);if(U.mode==='game'&&!U.modal){const y=hitY(sx,sy);if(y&&y.kind==='城'&&G.yActive(y)){openModal('branch',{id:y.id});return;}}
  if(!id){const region=hitContext(sx,sy);if(region){tapCastle(null);openModal('context-region',region);return;}}
  if(U.mode==='pick'){if(id){U.pickClan=S.castles[id].owner;renderPick();}return;}
@@ -1264,12 +1282,12 @@ ACT['infra-tab']=b=>openModal('infrastructure',{kind:b.dataset.kind});
 ACT['infra-upgrade']=b=>{const r=G.startImprovement(b.dataset.kind,b.dataset.id);toast(r.msg,r.ok?'good':'bad');if(r.ok){autosave();U.baseDirty=true;renderModal();}};
 MODALS.menu=()=>`${menuHeader('操作と保存')}<p class="save-status">${U.saveError?'自動保存に失敗しました。保存・読込からファイルに書き出せます。':'自動保存：'+esc(readMeta('auto')||'まだありません')}</p><nav class="menu-links" aria-label="ゲームの操作">${menuLink('army-list','軍勢一覧','出陣・行軍・在陣する各隊')}${menuLink('dip','諸家の関係','同盟・主従・交戦')}${menuLink('infrastructure','街道・施設の整備','道普請・補給・守備を充実')}${menuLink('menu-save','保存・読込','自動保存・手動の保存枠・ファイル')}${menuLink('menu-settings','表示設定','地形・勢力の色・合戦の表示')}${menuLink('menu-library','合戦と史料','合戦一覧・出典・考証の範囲')}${menuLink('menu-help','操作案内','地図・時間・軍勢の見方')}</nav><footer><button class="btn" data-act="to-title">タイトルへ</button><button class="btn pri" data-act="close">地図へ戻る</button></footer>`;
 MODALS['menu-save']=()=>{const slots=[1,2,3].map(n=>{const m=readMeta(n);return `<div class="slot"><span><b>保存枠 ${n}</b><small>${m?esc(m):'空き'}</small></span><button class="mini" data-act="save" data-v="${n}" aria-label="保存枠${n}に保存">保存</button><button class="mini" data-act="load" data-v="${n}" aria-label="保存枠${n}から読込" ${m?'':'disabled'}>読込</button></div>`;}).join('');return `${menuHeader('保存・読込')}<p class="hint">ゲーム内30日ごと・停止時・画面を離れる時に、このブラウザへ自動保存します。</p><div class="slot"><span><b>自動保存</b><small>${esc(readMeta('auto')||'まだありません')}${U.saveError?' ／ 直近の保存に失敗':''}</small></span><button class="mini" data-act="load" data-v="auto" ${readMeta('auto')?'':'disabled'}>読込</button></div>${slots}<h3>ファイルに残す</h3><p class="hint">別のブラウザや端末に移す場合は、ファイルへ書き出してください。</p><div class="mtop"><button class="btn" data-act="export">書き出す</button><button class="btn" data-act="import">取り込む</button></div>`;};
-MODALS['menu-settings']=()=>`${menuHeader('表示設定')}<div class="setting-row"><label for="mapStyleSetting">地図の描き方</label><select id="mapStyleSetting"><option value="relief" ${U.mapStyle==='relief'?'selected':''}>地形図</option><option value="flat" ${U.mapStyle!=='relief'?'selected':''}>白地図</option></select></div><div class="setting-row"><label for="relationSetting">外交境界の線</label><select id="relationSetting"><option value="clan" ${!U.dipView?'selected':''}>標準</option><option value="relation" ${U.dipView?'selected':''}>境界を強調</option></select></div><div class="setting-row"><label for="sceneSetting">合戦を自動で開く</label><select id="sceneSetting"><option value="mine" ${sceneMode()==='mine'?'selected':''}>自軍が参加する合戦</option><option value="all" ${sceneMode()==='all'?'selected':''}>すべて</option><option value="off" ${sceneMode()==='off'?'selected':''}>開かない</option></select></div><p class="hint">布陣を確かめられない合戦は、経過・参加者・史料を表示します。合戦一覧からいつでも開けます。</p>`;
+MODALS['menu-settings']=()=>`${menuHeader('表示設定')}<div class="setting-row"><label for="mapStyleSetting">地図の描き方</label><select id="mapStyleSetting"><option value="relief" ${U.mapStyle==='relief'?'selected':''}>地形図</option><option value="flat" ${U.mapStyle!=='relief'?'selected':''}>白地図</option></select></div><div class="setting-row"><label for="mapRotationSetting">地図の向き</label><select id="mapRotationSetting">${U.MAP_ROTATIONS.map(o=>`<option value="${o.deg}" ${U.mapRotation===o.deg?'selected':''}>${o.name}</option>`).join('')}</select></div><div class="setting-row"><label for="relationSetting">外交境界の線</label><select id="relationSetting"><option value="clan" ${!U.dipView?'selected':''}>標準</option><option value="relation" ${U.dipView?'selected':''}>境界を強調</option></select></div><div class="setting-row"><label for="sceneSetting">合戦を自動で開く</label><select id="sceneSetting"><option value="mine" ${sceneMode()==='mine'?'selected':''}>自軍が参加する合戦</option><option value="all" ${sceneMode()==='all'?'selected':''}>すべて</option><option value="off" ${sceneMode()==='off'?'selected':''}>開かない</option></select></div><p class="hint">布陣を確かめられない合戦は、経過・参加者・史料を表示します。合戦一覧からいつでも開けます。</p>`;
 MODALS['menu-library']=()=>`${menuHeader('合戦と史料')}<nav class="menu-links">${menuLink('battle-list','合戦一覧','布陣図・参加者・経過')}${menuLink('domain-records','領地再分配の記録','清須会議・宗家と各領国')}${menuLink('alliance-records','盟約と軍事協力','呼称・期間・主従の区別')}${menuLink('research','地図と行軍の出典','街道・湖岸・城の座標')}${menuLink('histv','史実データの確認状況','日付・支配・人物の照合範囲')}${menuLink('menu-about','この作品について','史料・画像・地図の権利表示')}</nav>`;
 MODALS['menu-help']=()=>`${menuHeader('操作案内')}${HELP}`;
 MODALS['menu-about']=()=>`${menuHeader('この作品について')}${ABOUT}`;
 ACT['modal-back']=()=>{const last=U.modalTrail?.pop();if(last)openModal(last.name,last.data,true);};
-document.addEventListener('change',e=>{if(e.target.id==='sceneSetting'){S.settings.scenes=e.target.value==='off'?false:e.target.value;autosave();}if(e.target.id==='mapStyleSetting'){U.mapStyle=e.target.value;try{localStorage.setItem('tenka-mapstyle2',U.mapStyle);}catch(_){}U.baseDirty=true;}if(e.target.id==='relationSetting'){U.dipView=e.target.value==='relation';U.baseDirty=true;renderLegend();renderTop();}});
+document.addEventListener('change',e=>{if(e.target.id==='sceneSetting'){S.settings.scenes=e.target.value==='off'?false:e.target.value;autosave();}if(e.target.id==='mapStyleSetting'){U.mapStyle=e.target.value;try{localStorage.setItem('tenka-mapstyle2',U.mapStyle);}catch(_){}U.baseDirty=true;}if(e.target.id==='mapRotationSetting')U.setMapRotation(e.target.value);if(e.target.id==='relationSetting'){U.dipView=e.target.value==='relation';U.baseDirty=true;renderLegend();renderTop();}});
 const ABOUT=`<h3>この作品について</h3><div class="help">
  <p><b>史実の扱い</b>　出来事の日付や城の持ち主は、通説をもとに置いています。年代や人物の比定には諸説あるものも含みます。現在は史実の観察専用です。未照合の出来事・配置は考証を継続しています。</p>
  <p><b>地図</b>　国土地理院の「地球地図日本」「標高タイル」「明治期の低湿地」を加工して作成しました。明治期の低湿地と手作業の補いで、後の埋め立てや干拓の前の海岸に近づけています。戦国期の正確な海岸線ではありません。国境は今の市町村境をもとに、令制国の範囲へまとめたものです。</p>

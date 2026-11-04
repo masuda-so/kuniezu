@@ -73,7 +73,8 @@ lines and relief served to the browser (generated files in `game/map/build/`) ar
 in the repository. The source is a simple grid proportional to longitude and latitude; the
 map on screen uses a Lambert conformal conic projection (central meridian 135°E, standard
 parallels 30°N and 42°N), and the first build step reprojects the source into it
-(`docs/architecture/map-projection.md`). Generate them once after cloning, and again after changing the
+(`docs/architecture/map-projection.md`). The screen is turned 11° counter-clockwise, after the
+Meiji-era "Dai Nippon Zenzu"; "Map orientation" in the display settings restores north-up. Generate them once after cloning, and again after changing the
 source or the dated edits (`game/map/edits/*.json`). This takes a few minutes.
 
 ```sh
