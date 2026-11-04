@@ -82,7 +82,12 @@
  // 本拠参照は人物の点位置や戦闘用locを返さない。1600年は転封年の城主記録として扱う。
  G.historicalPrincipalBase=function(g){const year=G.date().y;if(g?.n!=='黒田長政'||year<1589||year>1600)return null;const site=G.YOSHO.find(y=>y.n==='中津城');return site?{place:'中津城',siteId:site.id,managementNode:site.at,relation:year===1600?'held-castle-lordship':'principal-base',year,source:year===1600?'https://museum.city.fukuoka.jp/archives/leaflet/138/index.html':source.url,exactPresence:false,transitionYear:year===1600}:null;};
  // 本拠が中津の期間、旧管理ノードの在城欄を実在の居所として表示しない。軍の選択用castleGensは維持する。
- G.displayCastleGens=function(id){const rows=G.castleGens(id),year=G.date().y;if(!TK.HISTORY_ONLY||year<1589||year>1600||!['himeji','kawara'].includes(id))return rows;return rows.filter(g=>g.n!=='黒田長政');};
+ G.displayCastleGens=function(id){
+  const rows=G.castleGens(id).filter(g=>!G.documentedResidence?.(g)),s=G.S(),year=G.date().y;
+  // 所属の異なる預かり人物は表示だけに含め、出陣・守備の候補には加えない。
+  for(const evidence of Object.values(TK.DOCUMENTED_RESIDENCES||{})){if(evidence.at!==id)continue;const g=G.genByName(evidence.person),r=G.documentedResidence?.(g);if(r?.status==='custody'&&r.at===id&&!g.dead&&!g.ronin&&g.prisoner==null&&g.unit==null&&!rows.some(p=>p.id===g.id)&&!s.units.some(u=>u.gens.includes(g.id)))rows.push(g);}
+  if(!TK.HISTORY_ONLY||year<1589||year>1600||!['himeji','kawara'].includes(id))return rows;return rows.filter(g=>g.n!=='黒田長政');
+ };
  // 旧1599年イベントが積んだ待機命令のみ除去。現在位置・軍・帰路・索引は変更しない。
  G.repairKurodaResidenceOrders=function(s){if(!s||!TK.HISTORY_ONLY||Object.values(s.div||{}).some(Boolean)||!s.pendMoves)return 0;const t=(1599-s.y0)*360+(1-s.m0)*30+19,before=s.pendMoves.length;
   s.pendMoves=s.pendMoves.filter(m=>!(m.n==='黒田長政'&&m.at==='kawara'&&!m.cap&&!m.home&&m.after===t&&m.until===t+360));return before-s.pendMoves.length;

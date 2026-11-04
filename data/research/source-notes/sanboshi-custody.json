@@ -1,0 +1,101 @@
+{
+  "id": "sanboshi-gifu-custody-1582",
+  "accessed": "2026-11-04",
+  "source": {
+    "author": "松下浩／滋賀県文化スポーツ部文化財保護課",
+    "title": "本能寺の変以後の安土城と織田家",
+    "publication": "令和5年度特別史跡安土城跡発掘調査成果報告会資料",
+    "date": "2024-03-02",
+    "url": "https://www.pref.shiga.lg.jp/documents/2526/5456533_1.pdf",
+    "landingPage": "https://www.pref.shiga.lg.jp/sd00/2526.html",
+    "locator": "PDF通し20〜23頁、節6〜8（表紙=1）。",
+    "retained": {
+      "archiveKey": "sha256:2261b7e501f62928b9340bd49928740a1fc453970d42f0d4e571287b8def79a1",
+      "bytes": 7496277,
+      "sha256": "2261b7e501f62928b9340bd49928740a1fc453970d42f0d4e571287b8def79a1",
+      "pageCount": 25,
+      "archiveRelativePath": "sha256/2261b7e501f62928b9340bd49928740a1fc453970d42f0d4e571287b8def79a1.pdf",
+      "includedInGit": false,
+      "storage": "durable-local-source-archive"
+    },
+    "retrieval": "現行の滋賀県配布PDFを取得し、全25頁・SHAを保全。該当ページ画像を独立確認し、本候補担当も20・22・23頁を目視した。",
+    "legacyUrls": [
+      {
+        "url": "https://www.pref.shiga.lg.jp/file/attachment/5456533.pdf",
+        "currentResult": "404",
+        "priorUse": "Web索引による本文確認。旧バイナリ未保持のため現行PDFとの同一性は不明。"
+      }
+    ],
+    "verificationLevel": "公刊資料に掲載された説明と書状翻刻。16世紀書状の現物・影印を読解したものではない。"
+  },
+  "claims": [
+    {
+      "predicate": "succession-decision",
+      "person": "織田秀信（三法師）",
+      "lunarDate": [
+        1582,
+        6,
+        27
+      ],
+      "displayDate": [
+        1582,
+        7,
+        16
+      ],
+      "basis": "PDF20頁・節6の講演者による清須会議整理",
+      "notEvidenceOf": "岐阜到着・安土到着"
+    },
+    {
+      "predicate": "custody",
+      "person": "織田秀信（三法師）",
+      "place": "岐阜",
+      "custodian": "織田信孝",
+      "period": "清須会議後〜旧暦12月21日の引取書状以前",
+      "basis": "岐阜預かりはPDF20頁・節7の講師説明。旧暦8月11日秀吉書状（専光寺文書、大日本史料第十一編之二）・9月3日勝家書状（徳川記念財団所蔵、愛知県史史料編12織豊2・43号）の翻刻はPDF20〜21頁。",
+      "certainty": "期間を表す居所。各日各時刻の観測ではない。",
+      "octoberLimit": "10月にも安土未入城という記述はPDF21頁の講師説明。該当10月書状の翻刻・個別日は未掲載で、日別観測を追加しない。"
+    },
+    {
+      "predicate": "receipt-and-attendance",
+      "lunarDate": [
+        1582,
+        12,
+        21
+      ],
+      "displayDate": [
+        1583,
+        1,
+        14
+      ],
+      "basis": "PDF22頁末〜23頁上、池田恒興・丹羽長秀・羽柴秀吉連署状／滋賀県立安土城考古博物館蔵の翻刻。日付・遠山佐渡守父子の宛所を照合。直前に掲載された上原孝夫氏所蔵の217号連署状写とは別文書。",
+      "shortQuote": "若子様今日請取",
+      "notEvidenceOf": "同日の安土到着、移動経路、出発時刻"
+    }
+  ],
+  "implementation": {
+    "record": "TK.DOCUMENTED_RESIDENCES.sanboshi-gifu-custody-1582",
+    "saveField": "g.documentedResidence（記録ID）",
+    "query": "G.documentedResidence(g)",
+    "runtimeConsumer": [
+      "engine.js の行政再配分と inTransit",
+      "movement-continuity.js の personPoint / syncDocumentedResidence / trackContinuousMoves",
+      "historical-register.js の displayCastleGens（表示のみ）",
+      "historical-families.js の旧保存補完・所在記録付与",
+      "ui.js の城の肖像・詳細・tooltip。預かり人物を城主にしない。"
+    ],
+    "afterUntil": {
+      "status": "unknown",
+      "at": null,
+      "arrivalDate": null
+    },
+    "managementLocation": "g.loc は管理ノードとして保持できる。所在未確認時はpersonPoint=null、在城表示除外、古い補間の除去と新しい移動の生成抑止を行う。",
+    "uiBoundary": "預かり人物の所属と預かり先を表示する。記録が有効な預かり・期限後の所在未確認はcastleGensとidleGensの軍事候補から除き、通常人物の適格条件は維持する。後年の明示配置が記録IDを解除する。",
+    "legacyMigration": "7/16〜17の欠落人物補完と、識別できる旧生成への表示記録付与。人物・生年/能力・宗家当主/管理本拠・年代/シナリオを照合。分岐、実軍/移動、別ノード、別記録、明示待機移動は除外。管理locと既存の軍・年表・領地・日付は保持。"
+  },
+  "exclusions": [
+    "1583年の岐阜開城・池田入城日の訂正",
+    "10月28日以降の信雄の家督代行解釈の実装",
+    "全人物の所在検証完了",
+    "後世の到着日・道路の創作"
+  ]
+}

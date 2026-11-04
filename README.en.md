@@ -17,6 +17,7 @@ is [docs/README.md](docs/README.md); open requests and ownership are in
 - Shows former lakeshores, castles, facilities and people checked against sources,
   marches along historical roads, and battle deployments and movements, each with
   its source.
+- Sanboshi’s documented custody after the Kiyosu meeting is shown separately from the family capital. Unknown whereabouts are not filled with invented journeys; legacy saves use the same distinction.
 - Diplomacy is shown as borders only; marches are shown as pieces on roads.
   Battles appear automatically only when the player's forces take part. The five
   non-participating Sekigahara units receive no generic advance animation.

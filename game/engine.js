@@ -275,7 +275,8 @@ G.allied=(a,b)=>a===b||(S.ally[ekey(a,b)]||0)>0;
 G.atWar=(a,b)=>a!==b&&S.war&&S.war[ekey(a,b)]!==undefined&&S.t-S.war[ekey(a,b)]<300&&!G.allied(a,b);
 G.rel=(a,b)=>a===b?100:(S.rel[ekey(a,b)]??45);
 G.addRel=(a,b,v)=>{if(a===b)return;const k=ekey(a,b);S.rel[k]=clamp((S.rel[k]??45)+v,0,100);};
-G.castleGens=id=>S.gens.filter(g=>g.loc===id&&g.unit===null&&!g.dead&&!g.ronin&&g.prisoner===null&&g.clan===S.castles[id].owner);
+// 預かり・記録後の所在不明を、管理ノードの守備・出陣要員にしない。
+G.castleGens=id=>S.gens.filter(g=>g.loc===id&&g.unit===null&&!g.dead&&!g.ronin&&g.prisoner===null&&g.clan===S.castles[id].owner&&!G.documentedResidence?.(g));
 G.idleGens=id=>G.castleGens(id).filter(g=>!g.busy&&!(g.tr&&S.t<g.tr.t1));
 G.ronins=id=>S.gens.filter(g=>g.loc===id&&g.ronin&&!g.dead);
 G.prisoners=k=>S.gens.filter(g=>g.prisoner===k&&!g.dead);
@@ -592,7 +593,7 @@ function trackMoves(){if(G.trackContinuousMoves){G.trackContinuousMoves();return
    if(d>24){const p=G.findPath(g.ll,g.loc,g.clan,'any')||[g.ll,g.loc];let L=0;for(let i=0;i<p.length-1;i++){const a=G.C[p[i]],b=G.C[p[i+1]];const line=G.edgeGeo(p[i],p[i+1]);L+=line.slice(1).reduce((n,v,j)=>n+Math.hypot(v[0]-line[j][0],v[1]-line[j][1]),0);}g.tr={p,t0:S.t,t1:S.t+Math.max(2,Math.round(L/50))};}}
   else if(g.tr&&S.t>=g.tr.t1)g.tr=null;
   g.ll=g.loc;g.lu=g.unit!=null;}}
-G.inTransit=g=>!!(g&&g.tr&&S.t<g.tr.t1);
+G.inTransit=g=>!!(g&&g.tr&&S.t<g.tr.t1&&!G.documentedResidence?.(g));
 G.day=function(){
  if(S.over)return;
  fixGens();trackMoves();
@@ -765,9 +766,21 @@ function evT(ev){return (ev.d[0]-S.y0)*360+(ev.d[1]-S.m0)*30+(ev.d[2]-1);}
 G.evT=evT;
 G.diverge=function(k,why){if(!k||S.div[k]||!S.clans[k])return;S.div[k]=1;G.chron({alt:true,title:G.CNK(k)+'、史実の筋書きを離れる',text:({diplo:'外交',build:'築城',branch:'支城の攻略',battle:'合戦',neg:'寝返りの働きかけ'})[why]||'歴史への介入',d:G.date()},true);if(k===S.player){log('ここから先は、あなたの采配で歴史が変わっていく。','big',[k]);G.onDiverge&&G.onDiverge(why);}};
 const okC=k=>S.clans[k]&&S.clans[k].alive&&!S.div[k];
-function mkGen(str,k,at){let [n,rest]=str.split('@');const [nm,t,b,c,s2,born]=n.split('|');let g=genByName(nm);if(g){if(!g.ronin&&g.clan&&g.clan!==k)return g;g.clan=k;g.ronin=false;g.prisoner=null;g.loc=rest||at;return g;}
+function mkGen(str,k,at){let [n,rest]=str.split('@');const [nm,t,b,c,s2,born]=n.split('|');let g=genByName(nm);if(g){if(!g.ronin&&g.clan&&g.clan!==k)return g;g.clan=k;g.ronin=false;g.prisoner=null;g.loc=rest||at;delete g.documentedResidence;return g;}
  g={id:S.uid++,n:nm,t:+t,b:+b,c:+c,s:+s2,born:+born,clan:k,loc:rest||at,unit:null,busy:0,loyal:90,ronin:false,prisoner:null,dead:false};S.gens.push(g);return g;}
 G.mkGen=(str,k,at)=>mkGen(str,k,at);G.gen=G.gen||(id=>gen(id));
+// 領国の代表拠点と、他家に預けられた本人の居所を分離する。
+// 保存には記録IDだけを持ち、根拠・期間は現在の史料データと照合する。
+function residenceRecord(id,person,clan){
+ const r=TK.DOCUMENTED_RESIDENCES?.[id],date=d=>Array.isArray(d)&&d.length===3&&d.every(Number.isInteger)&&d[1]>=1&&d[1]<=12&&d[2]>=1&&d[2]<=31;
+ if(!S||!TK.HISTORY_ONLY||Object.values(S.div||{}).some(Boolean)||!r||r.kind!=='custody'||canonName(r.person)!==canonName(person)||r.clan!==clan||!S.castles[r.at]||!TK.RESEARCH_SOURCES?.[r.sourceId]?.url||!r.claim||r.datePrecision!=='bounded-period'||!date(r.from)||!date(r.until)||evT({d:r.from})>=evT({d:r.until}))return null;
+ return r;
+}
+G.documentedResidence=function(g){
+ if(!g||g.dead||!g.documentedResidence)return null;const r=residenceRecord(g.documentedResidence,g.n,g.clan);if(!r||S.t<evT({d:r.from}))return null;
+ const active=S.t<evT({d:r.until});return {id:g.documentedResidence,personId:r.personId,placeId:active?r.placeId:null,claimId:r.claimId,receiptClaimId:r.receiptClaimId,status:active?'custody':'unknown',at:active?r.at:null,lastKnownAt:r.at,displayName:r.displayName||g.n,custodian:r.custodian||null,sourceId:r.sourceId,claim:r.claim,datePrecision:r.datePrecision,from:r.from.slice(),until:r.until.slice(),arrivalDate:null};
+};
+function documentedCustody(g){const r=G.documentedResidence(g);return r?.status==='custody'&&r.at===g.loc;}
 function killGen(g){if(!g||g.dead)return;g.dead=true;for(const u of S.units)u.gens=u.gens.filter(x=>x!==g.id);for(const u of S.units.slice())if(!u.gens.length&&u.hist!==true)disband(u);}
 function setLeader(k,g){if(!g||!S.clans[k])return;S.clans[k].leader=g.id;g.clan=k;g.loyal=100;g.ronin=false;}
 function chron(ev,ok){if(!ev.title&&!ev.text)return;if(ev.quiet&&ok)return;
@@ -873,10 +886,10 @@ function applyEv(ev){
    else if(ev.appear&&kk)mkGen(ev.appear,kk,g.loc);
    // 自動選定は succession 側で通知済み。家臣の死去は継承として通知しない。
    applyExtras(ev,true);chron(ev,true);if(successor&&kk===S.player)G.onSuccession&&G.onSuccession(kk,g,successor);return;}
-  case 'appear':{if(!S.clans[k]||!S.clans[k].alive){if(!S.clans[k]&&evT(ev)<evT({d:[1590,9,1]})){S.waitAp=S.waitAp||[];S.waitAp.push(Object.assign({},ev));}return;}const at=S.castles[ev.at]&&S.castles[ev.at].owner===k?ev.at:S.clans[k].cap;if(ev.heir&&S.div[k])return; // 歴史が分かれた家の当主は替えない
+  case 'appear':{if(!S.clans[k]||!S.clans[k].alive){if(!S.clans[k]&&evT(ev)<evT({d:[1590,9,1]})){S.waitAp=S.waitAp||[];S.waitAp.push(Object.assign({},ev));}return;}const record=residenceRecord(ev.documentedResidence,ev.g.split('|')[0],k),custody=record&&S.t>=evT({d:record.from})&&S.t<evT({d:record.until})?record:null,at=custody?custody.at:S.castles[ev.at]&&S.castles[ev.at].owner===k?ev.at:S.clans[k].cap;if(ev.heir&&S.div[k])return; // 歴史が分かれた家の当主は替えない
    if(ev.pull&&!ev.g.includes('|')){const g1=genByName(ev.g.split('@')[0]);if(!g1||g1.dead||G.isLeader(g1)||(g1.clan&&S.div[g1.clan]))return;}
    if(ev.pull){const nm0=ev.g.split('|')[0];const g0=genByName(nm0);if(g0&&!g0.dead&&g0.clan&&g0.clan!==k&&!G.isLeader(g0)&&!S.div[g0.clan]){g0.clan=k;g0.ronin=false;g0.unit=null;g0.loc=at;}}
-   const g=mkGen(ev.g,k,at);if(ev.leader&&g.clan===k)setLeader(k,g);if(ev.capital&&S.castles[ev.capital]?.owner===k)S.clans[k].cap=ev.capital;chron(ev,true);return;}
+   const g=mkGen(ev.g,k,at);if(custody&&g.clan===k&&g.loc===custody.at)g.documentedResidence=ev.documentedResidence;if(ev.leader&&g.clan===k)setLeader(k,g);if(ev.capital&&S.castles[ev.capital]?.owner===k)S.clans[k].cap=ev.capital;chron(ev,true);return;}
   case 'leave':{for(const n of [].concat(ev.n)){const g=genByName(n);const ca=g&&g.clan&&S.clans[g.clan]&&S.clans[g.clan].alive;if(g&&!g.dead&&!(ca&&G.isLeader(g))&&!(g.clan&&S.div[g.clan])){if(g.unit!=null){const u=S.units.find(x=>x.id===g.unit);if(u)u.gens=u.gens.filter(x=>x!==g.id);g.unit=null;}g.clan=null;g.ronin=true;g.exile=S.t+(ev.years||8)*360;}}chron(ev,true);return;} // 主家を離れて牢人・流浪になる
   case 'rename':{const g=genByName(ev.n);if(g){g.n=ev.to;chron(ev,true);}return;}
   case 'cname':{if(S.clans[k]&&S.clans[k].alive)S.cnm[k]=ev.name;return;}
@@ -957,7 +970,7 @@ G.hist=function(){
  /* 帰還は明示された移動・帰陣で処理。月初に当主を本城へ瞬間移動させない。 */
  while(S.hi<TK.HIST.length&&evT(TK.HIST[S.hi])<=S.t){const ev=TK.HIST[S.hi++];try{applyEv(ev);}catch(e){console.error('hist',ev,e);}}
  // 同日の国替えでは、旧領の引渡しから新領受領まで家を滅亡させない。
- for(const [k,by]of Object.entries(S.pendingAdminExtinction||{})){const owned=clanCastles(k);if(!owned.length){if(S.clans[k]?.alive)destroy(k,by);}else{const cl=S.clans[k];if(!owned.includes(cl.cap))cl.cap=owned[0];for(const g of S.gens)if(g.clan===k&&!g.dead&&g.unit===null&&!owned.includes(g.loc)&&g.prisoner===null)g.loc=cl.cap;}}
+ for(const [k,by]of Object.entries(S.pendingAdminExtinction||{})){const owned=clanCastles(k);if(!owned.length){if(S.clans[k]?.alive)destroy(k,by);}else{const cl=S.clans[k];if(!owned.includes(cl.cap))cl.cap=owned[0];for(const g of S.gens)if(g.clan===k&&!g.dead&&g.unit===null&&!owned.includes(g.loc)&&g.prisoner===null&&!documentedCustody(g))g.loc=cl.cap;}}
  delete S.pendingAdminExtinction;
  if(S.pendMoves)S.pendMoves=S.pendMoves.filter(m=>{if(m.after&&S.t<m.after)return true;const g=genByName(m.n);if(!g)return false;if(m.after&&S.units.some(u=>u.gens.includes(g.id)))return true;if(m.home){m.at=S.clans[g.clan]&&S.clans[g.clan].cap;if(g.loc===m.at)return false;}if(S.castles[m.at]&&S.castles[m.at].owner===g.clan){if(g.unit===null)g.loc=m.at;if(m.cap)S.clans[g.clan].cap=m.at;return false;}return S.t<m.until;});
  if(S.pendAppear)S.pendAppear=S.pendAppear.filter(p=>{if(!S.clans[p.clan]||!S.clans[p.clan].alive)return false;if(S.castles[p.at]&&S.castles[p.at].owner===p.clan){mkGen(p.str,p.clan,p.at);return false;}return S.t<p.until;});

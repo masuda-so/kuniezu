@@ -1,0 +1,43 @@
+{
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-04",
+  "id": "oda-hidenobu-gifu-custody-described",
+  "entity": "person:oda-hidenobu",
+  "predicate": "described-custody",
+  "value": {
+    "personName": "三法師",
+    "custodianName": "織田信孝",
+    "placeName": "岐阜",
+    "description": "清須会議後、三法師が信孝のもと岐阜で預かられたという講師の説明。"
+  },
+  "validYears": [
+    1582,
+    1583
+  ],
+  "datePrecision": "period",
+  "source": "kiyosuDistribution",
+  "sourceUrl": "https://www.pref.shiga.lg.jp/documents/2526/5456533_1.pdf",
+  "locator": "PDF20頁・節7冒頭の講師説明。PDF20末〜21頁に8月11日秀吉書状・9月3日勝家書状の翻刻。表紙を1とした通し頁。",
+  "gameBindings": [
+    "TK.DOCUMENTED_RESIDENCES:sanboshi-gifu-custody-1582",
+    "node:gifu"
+  ],
+  "linkedEntities": [
+    "place:gifu"
+  ],
+  "eventTime": {
+    "kind": "described-period",
+    "label": "清須会議後、信孝のもと岐阜で預かられた時期",
+    "indexYears": [
+      1582,
+      1583
+    ],
+    "precision": "period",
+    "calendar": "Japanese-era-description",
+    "boundsAreHistoricalStartEnd": false
+  },
+  "eventRelation": "described-custody",
+  "eventScope": "公刊講演資料による期間の説明。1582〜1583はゲームの表示暦もまたぐ記録を探すための候補範囲で、1583年を含め各年・各日の連続所在や預かりの開始・終了日を確定しない。",
+  "uncertainty": "会議の日を岐阜到着日としない。8月11日・9月3日書状の翻刻は安土への移動・普請をめぐる内容で、岐阜の毎日の観測ではない。PDF21頁の10月未入城は講師説明で、該当10月書状の翻刻・個別日は未掲載。旧暦12月21日の引取は別の原子命題に保持する。"
+}
