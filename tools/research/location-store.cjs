@@ -16,7 +16,7 @@ function validateLocations({people,places,locations,sources}){
   const ids=p.authorityIds??[];
   if(!Array.isArray(ids))throw Error('人物の典拠IDは配列で指定: '+p.id);
   for(const id of ids){
-   if(typeof id!=='string'||!/^(?:wikidata:Q[1-9][0-9]*|ndlna:[0-9]{8})$/.test(id))throw Error('人物の典拠ID形式が不正: '+p.id);
+   if(typeof id!=='string'||!/^(?:wikidata:Q[1-9][0-9]*|ndlna:[0-9]{8,9})$/.test(id))throw Error('人物の典拠ID形式が不正: '+p.id);
    if(authorityOwners.has(id))throw Error('人物の典拠IDが重複: '+id);
    authorityOwners.add(id);
   }

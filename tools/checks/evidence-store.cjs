@@ -21,3 +21,17 @@ for(const person of people){
  }
 }
 console.log('PASS: registered person identity bases refer to existing claims for the same entity');
+
+for(const person of people){
+ const evidence=person.authorityEvidence;
+ if(!evidence?.snapshot)continue;
+ const snapshot=JSON.parse(fs.readFileSync(path.join(root,evidence.snapshot),'utf8'));
+ const matches=snapshot.records.filter(row=>person.authorityIds.includes('wikidata:'+row.wikidataId));
+ assert.equal(matches.length,1,person.id+' authority snapshot identity');
+ const row=matches[0];
+ assert.equal(row.wikidataRevision,evidence.wikidataRevision);
+ assert.equal(row.japaneseLabel??row.label??row.name,person.name);
+ assert.equal(row.ndlIdentity.name,person.name);
+ assert.ok(person.authorityIds.includes('ndlna:'+row.ndlId));
+}
+console.log('PASS: adopted authorities match retained identity snapshots');
