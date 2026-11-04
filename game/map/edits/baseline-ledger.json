@@ -1,7 +1,7 @@
 {
   "baselineCommit": "liaodong-1560-source-v1",
   "source": "game/map_data（provinces.png・definition.csv・default.map・projection.json）",
-  "sourceSha256": "cb4674e4cb9a80bbdba08b3827e1b70438bf7cb96bbbb3250c125af2492e19fc",
+  "sourceSha256": "a8ee2f85ce1a86ef59f0ff74d1ac2c18fcec3647011be3e2a4e2870abb0d314c",
   "note": "1560年正本。児島湾補正を保持し、遼東の軍政域参考図を未割当/旧明だけへ適用。1573〜1605寛甸と1584年以後宇喜多堤は年代差分。軍政域参考線を精密国境・実効支配・軍の所属には転用しない。",
   "applied": [
     {
@@ -91,6 +91,32 @@
       ],
       "sourceSha256": "9e27144aa9c953299567fd3719d3ad413ea1f496ad03a097e1e25b2c6eb1a03d",
       "pixels": 3928357
+    },
+    {
+      "id": "katori-uchinasaka-wide-water",
+      "layer": "provinces",
+      "input": [
+        "data/research/katori-review/uchinasaka/south-connection/wide-lake-perimeter.geojson",
+        "game/map_data/shoreline_masks.geojson"
+      ],
+      "basis": "中世湖沼の存在と1880年代比較岸を用いた推定水面。1560年の精密汀線ではない。",
+      "waterCells": 1719,
+      "changedCells": 1637,
+      "preservedExistingWater": 82,
+      "exactHistoricalShoreline": false
+    },
+    {
+      "id": "hachirogata-source-comparison-reconstruction",
+      "layer": "provinces",
+      "input": [
+        "data/research/hachirogata-reference/pixel-reconstruction.json"
+      ],
+      "changedPixels": 10226,
+      "waterAddedPixels": 6141,
+      "landRestoredPixels": 4085,
+      "basis": "干拓前の公的地形図と中世湖沼の存在に基づく推定湖面。16世紀の精密汀線とはしない。",
+      "exactHistoricalShoreline": false,
+      "deferredLandPixels": 199
     }
   ],
   "pending": [
@@ -126,10 +152,10 @@
   ],
   "provincesSha256": "b046fd2334f79080772ea8a65df1ae04ce890fd474bd326dea35a4e546b842c8",
   "sourceFiles": {
-    "provinces": "b046fd2334f79080772ea8a65df1ae04ce890fd474bd326dea35a4e546b842c8",
-    "definition": "e10e24cb314157770715ede8a1290d2bca807692eec8d9f269283277dd122801",
+    "provinces": "b97d7b4025b9f36507d3f469b45b3361a084ac2dde77167e47e7dd2eb6dd52c5",
+    "definition": "ebcdf8ed8ac9bc01371ec8d04bfbb37e6d7994eb9a882db0bda2fac49621619f",
     "defaultMap": "36b071aab05850ce318f80767cf9307dd2bc23f144d89c04fbface39529b4d1b",
-    "projection": "04bd30868c1f5a9420b308d318d606a95d1158c23a8e6f18b3f7ecfe6b01466a"
+    "projection": "3576c5ceb1fc809ac06f538f14dd8be842f343fc18e374edcbdbc8bb4d9e8cee"
   },
   "baselineDate": [
     1560,

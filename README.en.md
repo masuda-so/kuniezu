@@ -23,6 +23,10 @@ is [docs/README.md](docs/README.md); open requests and ownership are in
   non-historical implementations under `archive/` are not loaded at startup.
 - Modern comparison terrain, estimates derived from sources and confirmed
   historical facts are kept apart. Unsupported text is not shown in the game.
+- Hachirogata is shown as an inferred lake using pre-reclamation topographic maps.
+  The unsupported northern land hole and the excessive southwestern extent are
+  corrected. See the [evidence and checks](docs/reports/HACHIROGATA_WATER_REVIEW.md)
+  (Japanese).
 
 | Folder | Contents |
 |---|---|
