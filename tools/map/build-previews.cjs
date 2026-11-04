@@ -2,7 +2,7 @@
    正本の PNG は 23,426×23,496 画素で、VS Code（Chromium）が一度に展開できる上限を超えて開けない。郡の画像は番号を色の値に入れたもの、
    川の画像は黒地に1画素幅の線なので、そのままでは読めない。そこで層ごとに 1/4（約 5,900 画素角）の見やすい画像にし、1度ごとの経緯度の目盛りと数字を入れる。
    control.png  支配：城の支配域（definition.csv の色）。海は紺、湖は青。
-   admin.png    行政区分：郡ごとの色と国の境（濃い線）。郡の無い陸は薄い灰色。
+   admin.png    行政区分：郡ごとの色と国の境（濃い線。明治の分国は陸奥・出羽に戻す＝ゲームの国境と同じ）。郡の無い陸は薄い灰色。
    rivers.png   自然：川（4×4 画素の中に川が1画素でもあれば青）。
    height.png   自然：標高の段彩（noData は海の色）。
    実行：node --max-old-space-size=6000 tools/map/build-previews.cjs   （build-map.cjs の最後の段でも動く） */
@@ -36,7 +36,7 @@ const hue=n=>{const h=(n*0.618033988749895)%1,s=.45,v=.92,i=Math.floor(h*6),f=h*
  await save('control.png',ctrl);
  // 行政区分（郡と国）
  const rows=fs.readFileSync(path.join(MD.layers.admin,'gun.csv'),'utf8').trim().split('\n').slice(1).map(l=>l.split(';'));
- const kuniOf=new Map(),kuniIds=new Map();for(const r of rows){if(!kuniIds.has(r[4]))kuniIds.set(r[4],kuniIds.size+1);kuniOf.set(+r[0],kuniIds.get(r[4]));}
+ const kuniOf=new Map(),kuniIds=new Map();for(const r of rows){const k=MD.normalizeKuni(r[4]);if(!kuniIds.has(k))kuniIds.set(k,kuniIds.size+1);kuniOf.set(+r[0],kuniIds.get(k));}
  const adm=img(),kuni=new Uint16Array(PW*PH);
  await readRGB(path.join(MD.layers.admin,'gun.png'),(y,row)=>{if(y%F!==C)return;const pyy=(y-C)/F;for(let c=0;c<PW;c++){const x=Math.min(W-1,c*F+C),n=row[x*3+1]<<8|row[x*3+2],i=pyy*PW+c;
   if(kind[i]===0){put(adm,i,SEA);continue;}if(kind[i]===1){put(adm,i,LAKE);continue;}if(!n){put(adm,i,[222,219,210]);continue;}kuni[i]=kuniOf.get(n)||0;put(adm,i,hue(n));}});
