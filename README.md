@@ -75,4 +75,6 @@ GitHub Actionsの通常CIは、サーバー不要の検査（構文・保存・�
 
 リポジトリを変更する場合は、[HANDOFF.md](HANDOFF.md) の合意事項と [docs/work/README.md](docs/work/README.md) の完了条件を確認し、作業ごとに main からブランチを切り、一つの目的に絞った小さな PR で変更内容と検証結果を記載してください（GitHub flow。取り込みは squash）。作業時の共通方針は [AGENTS.md](AGENTS.md) を参照してください。
 
+合戦図の範囲入力は `data/inputs/battle-atlas-frames.json` です。生成器の `--titles` で対象だけを更新できます。[高天神の再生成と検証](docs/reports/TAKATENJIN_ATLAS_BOUNDS.md)を参照してください。
+
 ライセンスは [LICENSE](LICENSE)（MIT）です。同梱・派生する地図データ等は各出典の条件に従います。
