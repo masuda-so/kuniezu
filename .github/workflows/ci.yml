@@ -50,5 +50,9 @@ jobs:
         run: git diff --exit-code -- data/audits/raster-province-pixels.json
       - name: Dated map edit checks
         run: node --max-old-space-size=8000 tools/checks/province-edits.cjs
+      - name: Local province reconstruction safety
+        run: node tools/checks/province-runs.cjs
+      - name: Hachirogata water reconstruction
+        run: node tools/checks/hachirogata-water.cjs
       - name: Katori water and shoreline masks
         run: node tools/checks/katori-water.cjs

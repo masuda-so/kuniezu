@@ -1,0 +1,153 @@
+{
+  "reviewedAt": "2026-11-04T04:54:18.161978+00:00",
+  "sources": [
+    {
+      "id": "horino-1988-toriinagane",
+      "kind": "historical-engineering-research",
+      "author": "堀野一男",
+      "title": "寒風山からの湧水を利用した水利開発事業―八郎潟南西部・鳥居長根地区への引水・開墾と渡部斧松",
+      "publication": "第8回日本土木史研究発表会論文集",
+      "year": 1988,
+      "pages": "160–167",
+      "locators": [
+        "p.160 開墾前の低湿原",
+        "p.164 図3 導水路と鳥居長根",
+        "p.165 section3(5) 湖岸の埋立・1841年工事・潟端の地名"
+      ],
+      "supports": [
+        "開拓には既存原野への引水と湖岸造成の両方が含まれる",
+        "流し掘りで運ばれた土砂による造成地が潟端と呼ばれた"
+      ],
+      "doesNotSupport": [
+        "埋立の精密区画",
+        "1825年400haが全て元湖面だったという解釈"
+      ],
+      "file": "watanabe-weir-1988.pdf",
+      "url": "https://www.jstage.jst.go.jp/article/journalhs1981/8/0/8_0_160/_pdf/-char/ja",
+      "sha256": "2862b277d0b559ccbd6e56edbe8f27e07b34df190003d3e811f4316ec8415d8f",
+      "bytes": 1388991,
+      "retrievedAt": "2026-11-04T04:37:49.047019+00:00"
+    },
+    {
+      "id": "murai-1915-watanabe",
+      "kind": "historical-biography-original-scan",
+      "author": "村井良八",
+      "publisher": "那波宗七",
+      "title": "渡部斧松",
+      "year": 1915,
+      "url": "https://dl.ndl.go.jp/info:ndljp/pid/980789",
+      "doi": "10.11501/980789",
+      "manifestUrl": "https://www.dl.ndl.go.jp/api/iiif/980789/manifest.json",
+      "rightsMetadata": "PDM",
+      "locators": [
+        "p.5 (canvas16) 開墾前の原野・上下谷地",
+        "pp.8–9 (canvas20) 初期開拓",
+        "p.17–18 (canvas28–29) 天保期工事・流し掘り"
+      ],
+      "retrievals": [
+        {
+          "file": "ndl980789-canvas-16.jpg",
+          "url": "https://dl.ndl.go.jp/api/iiif/980789/R0000016/full/1800,/0/default.jpg",
+          "sha256": "e48c6a2e3406900157bc34dcb2c3f1afe564cb3aab47267e32deb24bde746f69",
+          "retrievedAt": "2026-11-04T04:47:01.751104+00:00"
+        },
+        {
+          "file": "ndl980789-canvas-28.jpg",
+          "url": "https://dl.ndl.go.jp/api/iiif/980789/R0000028/full/1800,/0/default.jpg",
+          "sha256": "2101b61d5b97a08ac694182a873431949d8d91c8722774fa62643135379a4b71",
+          "retrievedAt": "2026-11-04T04:47:02.924198+00:00"
+        },
+        {
+          "file": "ndl980789-canvas-20.jpg",
+          "url": "https://dl.ndl.go.jp/api/iiif/980789/R0000020/full/1800,/0/default.jpg",
+          "sha256": "20842dde0176baad36e0393e02b6bd2ea779911dc92f8e0750bfe4e6ab637074",
+          "retrievedAt": "2026-11-04T04:47:41.415230+00:00"
+        },
+        {
+          "file": "ndl980789-canvas-29.jpg",
+          "url": "https://dl.ndl.go.jp/api/iiif/980789/R0000029/full/1800,/0/default.jpg",
+          "sha256": "f751f33879e1edac2daa0a73d955fba1a99e8e2d806e8ce67a69aff2de9abdd0",
+          "retrievedAt": "2026-11-04T04:47:41.986528+00:00"
+        }
+      ],
+      "exclusions": [
+        "p.5の水害伝承を地理的事実へ昇格しない",
+        "小字や埋立の精密境界は提示されない"
+      ]
+    },
+    {
+      "id": "funakawa-mapwarper1199",
+      "kind": "historical-topographic-map-after-edo-works",
+      "title": "船川 1:50,000",
+      "surveyYear": 1912,
+      "railwaySupplementYear": 1925,
+      "publicationYear": 1927,
+      "url": "https://mapwarper.h-gis.jp/maps/1199",
+      "wms": {
+        "url": "https://mapwarper.h-gis.jp/maps/wms/1199?SERVICE=WMS&VERSION=1.1.1&REQUEST=GetMap&LAYERS=image&STYLES=&SRS=EPSG%3A4326&BBOX=139.9%2C39.9%2C139.975%2C39.97&WIDTH=1000&HEIGHT=1154&FORMAT=image%2Fpng&TRANSPARENT=TRUE",
+        "bbox": [
+          139.9,
+          39.9,
+          139.975,
+          39.97
+        ],
+        "size": [
+          1000,
+          1154
+        ],
+        "sha256": "ce2d0f0dbfbc8552694d79bca1f58bf35c7f2b5854434917229cab17b809121f",
+        "retrievedAt": "2026-11-04T04:40:12.818273+00:00"
+      },
+      "locators": [
+        "潟端の地名と沿岸低地",
+        "渡部・長根側の等高線",
+        "小深見と浜側の地形"
+      ],
+      "datum": {
+        "outputSrs": "EPSG:4326",
+        "coordinateOrder": [
+          "longitude",
+          "latitude"
+        ],
+        "originalDatumIndependentlyVerified": false,
+        "registrationInheritedFrom": "/tmp/kuniezu-hachiro-review/registration.json",
+        "displayUncertaintyMetres": 500,
+        "statisticalAccuracyClaim": false
+      },
+      "adoption": "当時の精密汀線でなく保留する区域の位置と地形の比較根拠"
+    },
+    {
+      "id": "oga-land-improvement-2025",
+      "kind": "official-modern-water-management-report",
+      "title": "男鹿市土地改良区の概要（2025.03）",
+      "publicationYear": 2025,
+      "locators": [
+        "p.13 渡部区320haの現代区画",
+        "p.16 鳥居長根と導水路"
+      ],
+      "adoption": "位置の補助確認のみ。現代320ha/上下谷地160haずつを1825年開拓地の境界へ転用しない",
+      "file": "oga-land-improvement-2025.pdf",
+      "url": "https://www.pref.akita.lg.jp/uploads/public/genre_0000087738_00/%E7%94%B7%E9%B9%BF%E5%B8%82%E5%9C%9F%E5%9C%B0%E6%94%B9%E8%89%AF%E5%8C%BA%E3%81%AE%E6%A6%82%E8%A6%81%EF%BC%88202503ver%EF%BC%89.pdf",
+      "sha256": "d97aefcf12207b4a8717edabc095c938e27d76d40750ac4fab919daa011f27b4",
+      "bytes": 16337008,
+      "retrievedAt": "2026-11-04T04:37:50.155422+00:00"
+    },
+    {
+      "id": "oga-hachiryu-sunagozaki",
+      "kind": "municipal-heritage-description",
+      "title": "八龍神社・張切紀念碑",
+      "url": "https://www.city.oga.akita.jp/soshik/bunkasportska/bunkazai/3/1460.html",
+      "locator": "所在地 小深見102 / 元々砂子崎にあった旨 / 1901年設置の説明",
+      "adoption": "砂子崎と小深見の地名関係の補助確認。現所在地を旧神社跡や精密埋立区画の点としない"
+    }
+  ],
+  "result": {
+    "priorToLand": 4284,
+    "deferredToLand": 199,
+    "remainingToLand": 4085,
+    "toLakePreserved": 6141,
+    "envelopeIsExactHistoricBoundary": false,
+    "deferralLakePixelsAreConfirmed16cWater": false
+  },
+  "rejectedLocationMethod": "GSI住所検索の潟端/渡部/砂子崎はいずれも同じ払戸代表点を返したため、正確な地域定位の根拠として採用しなかった。"
+}

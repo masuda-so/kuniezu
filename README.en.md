@@ -37,6 +37,10 @@ is [docs/README.md](docs/README.md); open requests and ownership are in
   Correction boundaries crossing open water are excluded from shoreline strokes.
   See the [evidence and checks](docs/reports/KATORI_WIDE_LAKE_PERIMETER.md) (Japanese).
 
+- Hachirogata uses an inferred pre-reclamation shoreline from historical comparison
+  maps, excluding possible later fill from land restoration. See the
+  [evidence and checks](docs/reports/HACHIROGATA_WATER_REVIEW.md) (Japanese).
+
 | Folder | Contents |
 |---|---|
 | `game/` | The game served to the browser and its bundled assets; load order follows `index.html` |
