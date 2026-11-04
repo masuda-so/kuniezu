@@ -1,0 +1,68 @@
+{
+  "ndlId": "00625008",
+  "url": "https://id.ndl.go.jp/auth/ndlna/00625008.json",
+  "retrievedAt": "2026-11-04T04:00:54.222Z",
+  "status": 200,
+  "responseSha256": "d1d0489bc61d98252750a5c523f052215149d1bb7397e84d279cc6222ebbdd79",
+  "data": {
+    "@context": "https://id.ndl.go.jp/auth/context.json",
+    "uri": "http://id.ndl.go.jp/auth/ndlna/00625008",
+    "primaryTopic": {
+      "uri": "http://id.ndl.go.jp/auth/entity/00625008",
+      "type": {
+        "uri": "http://xmlns.com/foaf/0.1/Person"
+      },
+      "name": "太祖",
+      "dateOfBirth": "1559",
+      "dateOfDeath": "1626"
+    },
+    "type": {
+      "uri": "http://www.w3.org/2004/02/skos/core#Concept"
+    },
+    "modified": "2025-12-16T09:13:47",
+    "created": "1998-01-30",
+    "prefLabel": {
+      "literalForm": "太祖, 1559-1626, 清",
+      "transcription": "タイソ, 1559-1626, シン",
+      "transcription-l": [
+        {
+          "@value": "タイソ, 1559-1626, シン",
+          "@language": "ja-Kana"
+        },
+        {
+          "@value": "Taiso, 1559-1626, Shin",
+          "@language": "ja-Latn"
+        }
+      ]
+    },
+    "label": "太祖, 1559-1626, 清",
+    "altLabel": [
+      {
+        "literalForm": "奴児哈赤",
+        "transcription": "ヌルハチ",
+        "transcription-l": [
+          {
+            "@value": "ヌルハチ",
+            "@language": "ja-Kana"
+          },
+          {
+            "@value": "Nuruhachi",
+            "@language": "ja-Latn"
+          }
+        ]
+      }
+    ],
+    "source": [
+      "奴児哈赤 / 若松寛 著",
+      "アジア歴史事典"
+    ],
+    "exactMatch": [
+      {
+        "uri": "http://viaf.org/viaf/sourceID/NDL%7C00625008#skos:Concept"
+      }
+    ],
+    "inScheme": {
+      "uri": "http://id.ndl.go.jp/auth#personalNames"
+    }
+  }
+}

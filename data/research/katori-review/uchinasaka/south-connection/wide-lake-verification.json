@@ -1,0 +1,116 @@
+{
+  "checked": "2026-11-04",
+  "referencePeriod": [
+    1880,
+    1886
+  ],
+  "targetYears": [
+    1560,
+    1615
+  ],
+  "wideCombinedCells": 1719,
+  "connectedCells": 1719,
+  "protectedConflictCells": 0,
+  "controlResults": {
+    "lake-core-west": true,
+    "lake-core-south": true,
+    "north-fringe": false,
+    "southeast-tongue": false,
+    "outer-connection": true
+  },
+  "existingKinds": {
+    "lake:140.55,36.05": 82,
+    "castle:odajo": 1604,
+    "castle:sakura": 33
+  },
+  "priorInteriorCellsRetained": 893,
+  "priorInteriorCellsOutsideRevisedShore": 0,
+  "newCellsBeyondPriorInterior": 826,
+  "northWaterOverlapCells": 82,
+  "cutCount": 5,
+  "cutRenderingPolicy": "All five water-mask-boundary features are excluded from coastline drawing. Do not draw the whole polygon boundary.",
+  "previousSouthernCutInside": true,
+  "exactSixteenthCenturyShoreline": false,
+  "mapEdited": false,
+  "browserUsed": false,
+  "rasterInputSha256": "ecac155c55b1ba5707f71c75d354abc99b3d3b2365a4df390d1f2ae23794eda1",
+  "projectionSha256": "3576c5ceb1fc809ac06f538f14dd8be842f343fc18e374edcbdbc8bb4d9e8cee",
+  "sourceManifestSha256": "d2dde020ab2417bb3a29215de5ae8a2cfe0b3a65d1168da771efb238c174e0e8",
+  "sourceTiles": [
+    {
+      "path": "data/inputs/katori-rapid-review/rapid1880-13-7294-3218.png",
+      "url": "https://habs.rad.naro.go.jp/rapid16/13/7294/4973.png",
+      "sha256": "a210ebbe5d58abf8afdb936f1710e567ffbb9a810aabc202e464a2ea3ea45ebc",
+      "transparentPixelCount": 0
+    },
+    {
+      "path": "data/inputs/katori-rapid-review/rapid1880-13-7295-3218.png",
+      "url": "https://habs.rad.naro.go.jp/rapid16/13/7295/4973.png",
+      "sha256": "767e5178bbb76df0c36493498093b75b64dac3423ddf9e344b06d12112029021",
+      "transparentPixelCount": 0
+    },
+    {
+      "path": "data/inputs/katori-rapid-review/rapid1880-13-7296-3218.png",
+      "url": "https://habs.rad.naro.go.jp/rapid16/13/7296/4973.png",
+      "sha256": "3bcf61e6714f53653c141454e2e909e0b3ba5c433c53bd0c0cdd6c9100af8b9d",
+      "transparentPixelCount": 0
+    },
+    {
+      "path": "data/inputs/katori-rapid-review/rapid1880-13-7294-3219.png",
+      "url": "https://habs.rad.naro.go.jp/rapid16/13/7294/4972.png",
+      "sha256": "d2edd72e5b1976ed26934c8fa4ca72e4806b8fa52d0fb0803700bfa59250e2bf",
+      "transparentPixelCount": 0
+    },
+    {
+      "path": "data/inputs/katori-rapid-review/rapid1880-13-7295-3219.png",
+      "url": "https://habs.rad.naro.go.jp/rapid16/13/7295/4972.png",
+      "sha256": "18f91d3d3aa75cd559f49c3f1e64ad4bff53781945e5d8975750dee05a2c3ffe",
+      "transparentPixelCount": 0
+    },
+    {
+      "path": "data/inputs/katori-rapid-review/rapid1880-13-7296-3219.png",
+      "url": "https://habs.rad.naro.go.jp/rapid16/13/7296/4972.png",
+      "sha256": "8134ff977c4cb58a3ae879c127fc126173e67cba063db40049a68e15fdf2c2d8",
+      "transparentPixelCount": 0
+    },
+    {
+      "path": "data/inputs/katori-rapid-review/rapid1880-13-7294-3220.png",
+      "url": "https://habs.rad.naro.go.jp/rapid16/13/7294/4971.png",
+      "sha256": "cb39cbe375108164cc02ad2926a7ba0861a7302c1eec75ebebf81e348371d74b",
+      "transparentPixelCount": 0
+    },
+    {
+      "path": "data/inputs/katori-rapid-review/rapid1880-13-7295-3220.png",
+      "url": "https://habs.rad.naro.go.jp/rapid16/13/7295/4971.png",
+      "sha256": "18956174b089b29f54f9a2d12ef41113389f875e07bdf7168593a54b25d057b5",
+      "transparentPixelCount": 0
+    },
+    {
+      "path": "data/inputs/katori-rapid-review/rapid1880-13-7296-3220.png",
+      "url": "https://habs.rad.naro.go.jp/rapid16/13/7296/4971.png",
+      "sha256": "68e34222ae3fb7f8e559ce1d94f23e990318a133ea9788c25e188b3f615e597f",
+      "transparentPixelCount": 0
+    },
+    {
+      "path": "data/inputs/katori-rapid-review/rapid1880-13-7294-3221.png",
+      "url": "https://habs.rad.naro.go.jp/rapid16/13/7294/4970.png",
+      "sha256": "d54b63bfebbb0ac7e811d4a1abcf76d680e8113cba7c2db837e2908b5b37516c",
+      "transparentPixelCount": 0
+    },
+    {
+      "path": "data/inputs/katori-rapid-review/rapid1880-13-7295-3221.png",
+      "url": "https://habs.rad.naro.go.jp/rapid16/13/7295/4970.png",
+      "sha256": "9a65c8c63f8c78ef3a2ace2f12ccb387cbca043075df6489d87906e8391cf6ce",
+      "transparentPixelCount": 0
+    },
+    {
+      "path": "data/inputs/katori-rapid-review/rapid1880-13-7296-3221.png",
+      "url": "https://habs.rad.naro.go.jp/rapid16/13/7296/4970.png",
+      "sha256": "a27a833351ebef5a8137c35f3037ad0d3afbb6750f4f00ef9008d15d541da840",
+      "transparentPixelCount": 0
+    }
+  ],
+  "sharedManifestSha256": "611dd9da9247fd219e16bb2024b018e56ce4ee9bba4d005f8c272c1941d26938",
+  "sharedHeadReported": "8e40d09",
+  "canonicalMapCommitReported": "68a3cf2"
+}

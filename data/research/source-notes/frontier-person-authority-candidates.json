@@ -1,0 +1,186 @@
+{
+  "status": "identity-candidates-not-adopted",
+  "people": 2,
+  "requestedIds": 2,
+  "requests": [
+    {
+      "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q311189%7CQ982229&props=info%7Clabels%7Cdescriptions%7Caliases%7Cclaims&languages=ja&format=json&maxlag=5",
+      "retrievedAt": "2026-11-04T04:00:50.293Z"
+    }
+  ],
+  "records": [
+    {
+      "id": "Q311189",
+      "revision": 2557703159,
+      "missing": false,
+      "label": "ヌルハチ",
+      "description": "後金の創始者、清の初代皇帝",
+      "aliases": [
+        "努爾哈赤",
+        "クンドゥレン・ハーン",
+        "弩爾哈赤",
+        "ゲンギェン・ハン",
+        "太祖",
+        "高皇帝",
+        "童奴児哈赤",
+        "佟奴児哈赤",
+        "老乙可赤",
+        "弩爾哈奇",
+        "武皇帝",
+        "承天広運聖徳神功肇紀立極仁孝睿武端毅欽安弘文定業高皇帝"
+      ],
+      "identityClaims": {
+        "P31": [
+          {
+            "mainsnak": {
+              "snaktype": "value",
+              "property": "P31",
+              "hash": "ad7d38a03cdd40cdc373de0dc4e7b7fcbccb31d9",
+              "datavalue": {
+                "value": {
+                  "entity-type": "item",
+                  "numeric-id": 5,
+                  "id": "Q5"
+                },
+                "type": "wikibase-entityid"
+              },
+              "datatype": "wikibase-item"
+            },
+            "type": "statement",
+            "id": "Q311189$C7E1AC8A-8CEC-4DDD-A797-236DD3E2ABD6",
+            "rank": "normal",
+            "references": [
+              {
+                "hash": "288ab581e7d2d02995a26dfa8b091d96e78457fc",
+                "snaks": {
+                  "P143": [
+                    {
+                      "snaktype": "value",
+                      "property": "P143",
+                      "hash": "6a164248fc96bfa583bbb495cb63ae6401ec203c",
+                      "datavalue": {
+                        "value": {
+                          "entity-type": "item",
+                          "numeric-id": 206855,
+                          "id": "Q206855"
+                        },
+                        "type": "wikibase-entityid"
+                      },
+                      "datatype": "wikibase-item"
+                    }
+                  ]
+                },
+                "snaks-order": [
+                  "P143"
+                ]
+              }
+            ]
+          }
+        ],
+        "P349": [
+          {
+            "mainsnak": {
+              "snaktype": "value",
+              "property": "P349",
+              "hash": "0d43f27701a0e8ebefa812f2a28dbbdab4b4c164",
+              "datavalue": {
+                "value": "00625008",
+                "type": "string"
+              },
+              "datatype": "external-id"
+            },
+            "type": "statement",
+            "id": "Q311189$69EC153B-724C-4AFC-A5B9-7F47699113E7",
+            "rank": "normal",
+            "references": [
+              {
+                "hash": "9a24f7c0208b05d6be97077d855671d1dfdbc0dd",
+                "snaks": {
+                  "P143": [
+                    {
+                      "snaktype": "value",
+                      "property": "P143",
+                      "hash": "d38375ffe6fe142663ff55cd783aa4df4301d83d",
+                      "datavalue": {
+                        "value": {
+                          "entity-type": "item",
+                          "numeric-id": 48183,
+                          "id": "Q48183"
+                        },
+                        "type": "wikibase-entityid"
+                      },
+                      "datatype": "wikibase-item"
+                    }
+                  ]
+                },
+                "snaks-order": [
+                  "P143"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "Q982229",
+      "revision": 2521711368,
+      "missing": false,
+      "label": "ヴァシーリー・ポヤルコフ",
+      "description": "ロシアの探検家",
+      "aliases": [
+        "ヴァシリー・ポヤルコフ"
+      ],
+      "identityClaims": {
+        "P31": [
+          {
+            "mainsnak": {
+              "snaktype": "value",
+              "property": "P31",
+              "hash": "ad7d38a03cdd40cdc373de0dc4e7b7fcbccb31d9",
+              "datavalue": {
+                "value": {
+                  "entity-type": "item",
+                  "numeric-id": 5,
+                  "id": "Q5"
+                },
+                "type": "wikibase-entityid"
+              },
+              "datatype": "wikibase-item"
+            },
+            "type": "statement",
+            "id": "Q982229$37F1E636-BC9F-42B5-BD3B-6CE9B286FDD8",
+            "rank": "normal",
+            "references": [
+              {
+                "hash": "288ab581e7d2d02995a26dfa8b091d96e78457fc",
+                "snaks": {
+                  "P143": [
+                    {
+                      "snaktype": "value",
+                      "property": "P143",
+                      "hash": "6a164248fc96bfa583bbb495cb63ae6401ec203c",
+                      "datavalue": {
+                        "value": {
+                          "entity-type": "item",
+                          "numeric-id": 206855,
+                          "id": "Q206855"
+                        },
+                        "type": "wikibase-entityid"
+                      },
+                      "datatype": "wikibase-item"
+                    }
+                  ]
+                },
+                "snaks-order": [
+                  "P143"
+                ]
+              }
+            ]
+          }
+        ],
+        "P349": []
+      }
+    }
+  ]
+}

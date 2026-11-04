@@ -1,0 +1,30 @@
+{
+  "id": "person:ヌルハチ",
+  "name": "ヌルハチ",
+  "gameNames": [
+    "ヌルハチ"
+  ],
+  "aliases": [
+    "努爾哈赤",
+    "奴児哈赤"
+  ],
+  "authorityIds": [
+    "wikidata:Q311189",
+    "ndlna:00625008"
+  ],
+  "identityBasis": {
+    "scope": "ゲーム期間内の既存命題の本人同定。1616年後金建国や後年の清朝皇帝称号を先取りしない。",
+    "claimIds": [
+      "nurhaci-hoifa-conquest-1607",
+      "nurhaci-jianzhou-unification-1588",
+      "nurhaci-tribute-missions-1588-1615",
+      "nurhaci-ula-conquest-1613"
+    ]
+  },
+  "authorityEvidence": {
+    "scope": "person-identity",
+    "wikidataRevision": 2557703159,
+    "snapshot": "data/research/source-notes/frontier-person-authority-adoption.json",
+    "basis": "既存命題の建州女真首長ヌルハチを、増井論文・故宮博物院の努尔哈赤解説と照合。NDLの太祖は清朝を限定した標目で、別名「奴児哈赤」の読みが「ヌルハチ」と完全一致する。一般称号「太祖」や生年だけを同定根拠にしない。"
+  }
+}
