@@ -440,9 +440,11 @@ function castleIcon(c,x,y,s,col,mine,cap,region){
  if(cap){c.fillStyle='#f2d27c';c.beginPath();c.moveTo(0,-s*1.62);c.lineTo(s*.12,-s*1.45);c.lineTo(-s*.12,-s*1.45);c.closePath();c.fill();}
  c.restore();
 }
-function plate(c,text,cx,cy,k,gold,small){c.font=`${small?'700 11px':'800 12px'} "Shippori Mincho B1",serif`;const w=c.measureText(text).width+(small?10:14),h=small?15:17;
+// 名札は背景・枠・文字をまとめて、札の中心を軸に画布の回転を打ち消す（文字だけ戻すと札からはみ出す）。回した文脈の中では文字の包みは何もしない
+function unrotate(c,x,y){const a=rotRad();if(a){c.translate(x,y);c.rotate(a);c.translate(-x,-y);}}
+function plate(c,text,cx,cy,k,gold,small){c.save();unrotate(c,cx,cy);c.font=`${small?'700 11px':'800 12px'} "Shippori Mincho B1",serif`;const w=c.measureText(text).width+(small?10:14),h=small?15:17;
  rr(c,cx-w/2,cy-h/2,w,h,2);c.fillStyle=gold?'rgba(20,14,8,.88)':deep(k);c.fill();c.strokeStyle=gold?'#d9b866':'rgba(255,246,220,.6)';c.lineWidth=1;c.stroke();
- c.textAlign='center';c.textBaseline='middle';c.fillStyle=gold?'#f3e3b4':'#fff7e2';c.fillText(text,cx,cy+.5);c.textAlign='left';return w;}
+ c.textAlign='center';c.textBaseline='middle';c.fillStyle=gold?'#f3e3b4':'#fff7e2';c.fillText(text,cx,cy+.5);c.textAlign='left';c.restore();return w;}
 function prio(C){const k=S.castles[C.id].owner;return (C.id===U.sel?1e6:0)+(k===S.player?1e5:0)+(S.clans[k]&&S.clans[k].cap===C.id?G.clanCastles(k).length*1000:0)+C.koku;}
 /* 城跡・砦・築城の計画と普請 */
 function jText(c,t,x,y,col,size){c.font=`700 ${size||11}px "Shippori Mincho B1",serif`;c.textBaseline='middle';c.lineWidth=3;c.strokeStyle='rgba(255,250,236,.9)';c.strokeText(t,x,y);c.fillStyle=col;c.fillText(t,x,y);}
@@ -638,7 +640,7 @@ const troopScale=t=>Math.max(.9,Math.min(1.15,1+.06*Math.log2(Math.max(1000,t)/4
 function drawCounter(c,x,y,u,mine,lvl,compact=false){
  if(u.record?.locationRecord){const name=u.commanders[0],r=lvl===0?10:13,im=portrait(name,r,true,G.CC(u.clan));c.save();
   if(im)c.drawImage(im,x-im.css/2,y-im.css/2,im.css,im.css);else{c.beginPath();c.arc(x,y,r,0,7);c.fillStyle=G.CC(u.clan);c.fill();c.strokeStyle='#2a1d10';c.lineWidth=1.4;c.stroke();}
-  if(lvl>=1){c.font='700 11px "Shippori Mincho B1",serif';c.textAlign='center';c.textBaseline='top';c.lineWidth=3;c.strokeStyle='rgba(255,250,236,.95)';c.strokeText(name,x,y+r+3);c.fillStyle='#2a1d10';c.fillText(name,x,y+r+3);}c.restore();return;
+  if(lvl>=1){c.save();unrotate(c,x,y);c.font='700 11px "Shippori Mincho B1",serif';c.textAlign='center';c.textBaseline='top';c.lineWidth=3;c.strokeStyle='rgba(255,250,236,.95)';c.strokeText(name,x,y+r+3);c.fillStyle='#2a1d10';c.fillText(name,x,y+r+3);c.restore();}c.restore();return;
  }const t2=G.armOf(u),identity=G.armyIdentity(u);const k=(lvl===0?.85:lvl===1?1:1.2)*troopScale(u.troops),INK='#2a1d10';
  const world=u._displayPoint||unitPos(u),line=G.historyGeometry?.(u)||(u.state==='march'&&u.path?.length>1?G.visualEdgeGeo(u.path[u.seg],u.path[Math.min(u.seg+1,u.path.length-1)]):null);const heading=G.visualCounterHeading?.(line,world,cam.z)??u._displayAngle??world[2];if(Number.isFinite(heading))ANG.set(u.id,heading);const ang=(heading??ANG.get(u.id)??-Math.PI/2)+Math.PI/2;const bw=32*k,bh=21*k,hh=10*k;
  if(u.state==='battle'){const p=.5+.5*Math.sin(tNow/90+u.id);c.beginPath();c.arc(x,y,22*k+p*5,0,7);c.fillStyle=`rgba(255,110,50,${.18+p*.22})`;c.fill();}
@@ -661,11 +663,11 @@ function drawCounter(c,x,y,u,mine,lvl,compact=false){
  const g=G.gen(u.gens[0])||(u.commanders?.length?{n:u.commanders[0],clan:u.clan}:null),im=g&&hasFace(g.n)&&(lvl>=1||G.isLeader(g))?portrait(g.n,Math.round(10*k),true,G.CC(u.clan)):null;
  if(im)c.drawImage(im,x-bw/2-im.css*.78,y-im.css/2-2*k,im.css,im.css);
  if(compact){c.textAlign='left';return;}
- // 名札一枚：上段に大将の名、下段に兵数。生成りの札に墨の枠、左端に家の色。
- const name=lvl>=1&&g?g.n:'',txt=u.troops?(u.hist?'約':'')+man(u.troops):'兵数未詳';c.font=`700 ${Math.round(11*k)}px "Shippori Mincho B1",serif`;const w1=name?c.measureText(name).width:0;c.font=`800 ${Math.round(10.5*k)}px "Shippori Mincho B1",serif`;const w2=c.measureText(txt).width;
+ // 名札一枚：上段に大将の名、下段に兵数。生成りの札に墨の枠、左端に家の色。札全体を隊の点を軸に画布の回転を打ち消して描く
+ c.save();unrotate(c,x,y);const name=lvl>=1&&g?g.n:'',txt=u.troops?(u.hist?'約':'')+man(u.troops):'兵数未詳';c.font=`700 ${Math.round(11*k)}px "Shippori Mincho B1",serif`;const w1=name?c.measureText(name).width:0;c.font=`800 ${Math.round(10.5*k)}px "Shippori Mincho B1",serif`;const w2=c.measureText(txt).width;
  const tw=Math.round(Math.max(w1,w2)+12*k),th=Math.round((name?26:14)*k),tx=Math.round(x-tw/2)+.5,ty=Math.round(y+Math.hypot(bw/2,bh/2+hh/2)+3*k)+.5;
  c.fillStyle='rgba(253,247,230,.96)';c.fillRect(tx,ty,tw,th);c.strokeStyle=mine?'#d9b866':INK;c.lineWidth=mine?1.4:1;c.strokeRect(tx,ty,tw,th);c.fillStyle=identity.color;c.fillRect(tx,ty,3*k,th);
- c.textAlign='center';c.textBaseline='middle';c.fillStyle=INK;if(name){c.font=`700 ${Math.round(11*k)}px "Shippori Mincho B1",serif`;c.fillText(name,x+1.5*k,ty+7*k);}c.font=`800 ${Math.round(10.5*k)}px "Shippori Mincho B1",serif`;c.fillText(txt,x+1.5*k,ty+(name?19.5:7)*k);
+ c.textAlign='center';c.textBaseline='middle';c.fillStyle=INK;if(name){c.font=`700 ${Math.round(11*k)}px "Shippori Mincho B1",serif`;c.fillText(name,x+1.5*k,ty+7*k);}c.font=`800 ${Math.round(10.5*k)}px "Shippori Mincho B1",serif`;c.fillText(txt,x+1.5*k,ty+(name?19.5:7)*k);c.restore();
  if(u.state==='siege'||u.state==='battle'){c.strokeStyle='#c4281c';c.lineWidth=2;const sx=x-bw/2-4*k,sy=y-bh/2-6*k;c.beginPath();c.moveTo(sx-4,sy-4);c.lineTo(sx+4,sy+4);c.moveTo(sx+4,sy-4);c.lineTo(sx-4,sy+4);c.stroke();}
  c.textAlign='left';
 }
