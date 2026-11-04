@@ -4,7 +4,7 @@
 
 ## 概要
 
-1560～1615年の日本・朝鮮を舞台にした地図ゲームです。ビルド不要の素のHTML/JavaScriptで動き、現在は史実観察を優先し、自由攻城・非史実ルートは保留しています。
+1560～1615年の日本・朝鮮を舞台にした地図ゲームです。素のHTML/JavaScriptで動き（地図の配信物だけは正本から生成します）、現在は史実観察を優先し、自由攻城・非史実ルートは保留しています。
 
 最初に [HANDOFF.md](HANDOFF.md) を読んでください。開発・調査の入口は [docs/README.md](docs/README.md)、残要望と分担は [docs/work/README.md](docs/work/README.md) です。
 
@@ -33,7 +33,19 @@
 
 ## 導入と使い方
 
-ビルドは不要です。`game/` を静的ファイルとして配信し、ブラウザで `index.html` を開きます。
+地図は正本 `game/map_data/`（Paradox 方式の `provinces.png` 全域1枚など）だけを Git で管理し、ブラウザへ配る分割タイル・境界線・河川の線・陰影（`game/map/` の生成物）はリポジトリに含めません。取得後と、正本や年代別の差分（`game/map/edits/*.json`）を変えた後に、一度生成してください（数分かかります）。
+
+```sh
+node tools/map/build-map.cjs
+```
+
+地形の陰影も作る場合は、Git LFS で `game/map_data/heightmap.png` を取得し、NumPy と Pillow の入った Python を指定します（陰影が無くてもゲームは動きます）。
+
+```sh
+node tools/map/build-map.cjs --height --python /path/to/python3
+```
+
+生成後は `game/` を静的ファイルとして配信し、ブラウザで `index.html` を開きます。
 
 サーバーの起動・停止は利用者が行います。検証は起動済み `http://localhost:8000/index.html` に接続します。検査結果の保存先は `GAME_TEST_OUTPUT` で指定できます。
 

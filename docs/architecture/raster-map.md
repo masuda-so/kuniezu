@@ -172,3 +172,12 @@ node tools/map/build-map.cjs --check               # 書かずに、領域タイ
 - 大東諸島・小笠原諸島・火山列島・鳥島・孀婦岩・西之島・尖閣諸島は新しい区画 `context:uninhabited`（無人島）。
 - 地図の西の縁にかかる嵊泗列島などは新しい区画 `context:ming-zhejiang`（明・浙江の沿海）。
 - 口永良部島・大隅の小島・朝鮮の沿岸の小島などは、最も近い割り当て済みの陸の区画（60km まで）。
+
+## 正本だけを Git で管理する（2026-11-04、利用者の指示「正本だけ管理する」）
+
+Paradox のゲームと同じく、地図の正本は `game/map_data/`（provinces.png 全域1枚・definition.csv・default.map・projection.json・rivers・heightmap）で、年代別の差分の入力は `game/map/edits/*.json`（と `applied/`・台帳・README）。これらだけを Git で追跡する。
+
+- 配信物（`game/map/` の provinces・provinces-4・provinces-8・edges-1/4/8・edges.json・manifest.json・versions.json・rivers-lines.json・relief.json・relief-cache・edits/compiled）は `.gitignore` に入れ、追跡から外した（約880ファイル）。正本を一度直すたびに数百ファイルの差分が出て、本当の変更が埋もれていたため。
+- 取得後と、正本や差分を変えた後に `node tools/map/build-map.cjs` で作る。陰影は `--height --python <NumPy・Pillow の Python>`（heightmap は Git LFS）。陰影が無くてもゲームは動く。
+- CI（`Offline checks`）は正本から地図を作り（陰影は除く）、raster-map と province-edits の検査を通す。正本と差分から配信物が作れることを毎回確かめる。
+- ブラウザが1枚の画像として開けない大きさ（100m の段は展開すると約2.2GB）なので、配る時の分割は残る。分割は表示のための生成物で、編集・検査・差分の対象は正本の1枚だけ。
