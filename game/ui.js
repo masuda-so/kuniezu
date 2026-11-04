@@ -9,6 +9,11 @@ const esc=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&g
 const GEO=window.TKGEO;
 const U={pslot:{},dipView:false,mode:'title',sel:null,modal:null,mdata:{},pickScen:null,pickClan:null,hover:null,speed:0,acc:0,baseDirty:true,chatCtl:null,picking:null};
 try{U.mapStyle=localStorage.getItem('tenka-mapstyle2')||'relief';}catch(e){U.mapStyle='relief';}
+/* 地図の向き（図北の角度）。北を上から反時計回りに何度回すか（北が左へ傾く）。既定の 16 度は明治「大日本全図」（1880 年頃）の海岸線に
+   本作の海岸線を最も重ねられる角度（最適値 16.5 度、docs/reports/MAP_ORIENTATION.md）。画布を CSS で回し、文字は読める向きに戻す。
+   当たり判定は画面の座標を画布の座標へ逆に回して行う。 */
+U.MAP_ROTATIONS=[{deg:0,name:'北が上'},{deg:16,name:'大日本全図の向き（16度）'},{deg:11,name:'本州の軸だけ合わせる（11度）'},{deg:25,name:'本州を立てる（25度）'}];
+try{const v=+localStorage.getItem('tenka-maprot');U.mapRotation=Number.isFinite(v)&&localStorage.getItem('tenka-maprot')!==null?v:16;}catch(e){U.mapRotation=16;}
 window.TKUI=U;U.open=(n,d)=>openModal(n,d);
 let S=null;
 // 外部書体はゲーム開始を待たせない。到着後に地図の文字幅と狭幅の帯を更新する。
@@ -147,15 +152,33 @@ function kamonHTML(k,size=26){const r=G.kamonRecord(k);return r?`<img class="kam
 /* ===== カメラ ===== */
 const base=$('#base'),top_=$('#top'),bctx=base.getContext('2d'),tctx=top_.getContext('2d');
 const cam={x:GEO.W*.55,y:GEO.H*.52,z:.4};let DPR=1,VW=0,VH=0;
-function resize(){DPR=Math.min(2,devicePixelRatio||1);VW=base.clientWidth;VH=base.clientHeight;for(const c of [base,top_]){const w=Math.round(VW*DPR),h=Math.round(VH*DPR);if(c.width!==w)c.width=w;if(c.height!==h)c.height=h;}U.baseDirty=true;}
+let VPW=0,VPH=0;// 画面（#app）の大きさ。VW・VH は画布の大きさ（回転のぶん画面より大きい）
+const rotRad=()=>(U.mapRotation||0)*Math.PI/180;
+// 画面の座標 ⇄ 画布の座標。画布は画面の中心に置いて反時計回りに mapRotation 度回してあるので、画面の点は時計回りに回し戻す
+const v2c=(vx,vy)=>{const a=rotRad(),dx=vx-VPW/2,dy=vy-VPH/2,c=Math.cos(a),s=Math.sin(a);return [VW/2+c*dx-s*dy,VH/2+s*dx+c*dy];};
+const c2v=(cx,cy)=>{const a=rotRad(),dx=cx-VW/2,dy=cy-VH/2,c=Math.cos(a),s=Math.sin(a);return [VPW/2+c*dx+s*dy,VPH/2-s*dx+c*dy];};
+const evXY=e=>v2c(e.clientX,e.clientY);
+function resize(){DPR=Math.min(2,devicePixelRatio||1);const app=$('#app');VPW=app.clientWidth;VPH=app.clientHeight;const a=rotRad(),cs=Math.abs(Math.cos(a)),sn=Math.abs(Math.sin(a));
+ VW=Math.ceil(VPW*cs+VPH*sn);VH=Math.ceil(VPW*sn+VPH*cs);
+ for(const c of [base,top_]){const st=c.style;st.width=VW+'px';st.height=VH+'px';st.left=Math.round((VPW-VW)/2)+'px';st.top=Math.round((VPH-VH)/2)+'px';st.transformOrigin='50% 50%';st.transform=a?`rotate(${-U.mapRotation}deg)`:'';
+  const w=Math.round(VW*DPR),h=Math.round(VH*DPR);if(c.width!==w)c.width=w;if(c.height!==h)c.height=h;}
+ const nm=$('#northMark');if(nm)nm.style.transform=`rotate(${-U.mapRotation}deg)`;U.baseDirty=true;}
+U.setMapRotation=deg=>{U.mapRotation=+deg||0;try{localStorage.setItem('tenka-maprot',String(U.mapRotation));}catch(e){}resize();if(U.mode==='title')fitTitle();else clampCam();vcMemo=null;drawBase();};
+// 文字は画布の回転を打ち消して、画面で読める向きに描く（道の名など、わざと回して描く文字はそのまま）。
+// 回した画布へ最終的に載る文脈（画布そのもの、層、下図の控え）を rotText で登録する。合戦図や書き出し用の画布は登録しない
+const ROTTEXT=new WeakSet();const rotText=c=>{ROTTEXT.add(c);return c;};rotText(bctx);rotText(tctx);
+for(const k of ['fillText','strokeText']){const f=CanvasRenderingContext2D.prototype[k];CanvasRenderingContext2D.prototype[k]=function(t,x,y,mw){const a=ROTTEXT.has(this)?rotRad():0;const m=a?this.getTransform():null;if(!a||Math.abs(m.b)>1e-9||Math.abs(m.c)>1e-9)return f.call(this,t,x,y,mw);this.save();this.translate(x,y);this.rotate(a);const r=f.call(this,t,0,0,mw);this.restore();return r;};}
 addEventListener('resize',()=>{TL.sig='';});addEventListener('resize',()=>{resize();if(U.mode==='title')fitTitle();else clampCam();});
 let tlNode=null;function narrowTL(){tlNode=tlNode||document.getElementById('tline');return !tlNode||tlNode.hidden||document.body.classList.contains('narrowSel');}
 // 描画中は画面の中心が変わらないので、一度の描画で何千回も呼ぶ座標変換のために結果を控える。
-let vcMemo=null;function vc(){return vcMemo||vcCalc();}
-function vcCalc(){const mob=VW<=820;let l=0,r=0,t=0,b=0;
- if(U.mode==='game'){if(mob){t=U.hudTop||104;b=U.sel?VH*.46:196;}else{const nar=U.sel&&VW<1200;l=nar?0:320;r=U.sel?360:0;t=72;b=narrowTL()?0:70;}}
- else if(U.mode==='pick'){if(mob)b=VH*.52;else r=400;}
- return [l+(VW-l-r)/2,t+(VH-t-b)/2,VW-l-r,VH-t-b];}
+let vcMemo=null,vcsMemo=null;function vc(){return vcMemo||vcCalc();}
+// パネルを除いた画面の領域（画面の座標、DOM の配置用）：[中心x,中心y,幅,高さ]
+function vcs(){if(!vcMemo||!vcsMemo)vcCalc();return vcsMemo;}// 描画の外では毎回計算し直す（画面の大きさや選択で変わる）
+function vcCalc(){const W=VPW||VW,H=VPH||VH,mob=W<=820;let l=0,r=0,t=0,b=0;
+ if(U.mode==='game'){if(mob){t=U.hudTop||104;b=U.sel?H*.46:196;}else{const nar=U.sel&&W<1200;l=nar?0:320;r=U.sel?360:0;t=72;b=narrowTL()?0:70;}}
+ else if(U.mode==='pick'){if(mob)b=H*.52;else r=400;}
+ // 中心は画面（パネルを除いた所）で決め、画布の座標へ回し戻す。幅・高さは画面のまま
+ vcsMemo=[l+(W-l-r)/2,t+(H-t-b)/2,W-l-r,H-t-b];const [cx,cy]=v2c(vcsMemo[0],vcsMemo[1]);return [cx,cy,W-l-r,H-t-b];}
 const w2s=(x,y)=>{const c=vc();return [(x-cam.x)*cam.z+c[0],(y-cam.y)*cam.z+c[1]];};
 U.pos=id=>w2s(G.C[id].x,G.C[id].y);
 U.cam=(x,y,z)=>{U.sel=null;side.hidden=true;cam.x=x;cam.y=y;cam.z=z;clampCam();U.baseDirty=true;};
@@ -176,7 +199,7 @@ function syncZoomControl(){const nav=$('#mapZoom');if(nav)nav.hidden=U.mode==='t
 function setMapZoom(z){anim=null;beginZoom();cam.z=z;clampCam();tip(null);}
 // 全域は表示範囲 CONT の中心を画面の中心に合わせる（パネルの偏りを見込む。最小の倍率で範囲が画面全体を覆う。端へ寄せられるのは拡大した時）。
 function fitAll(){cam.z=0;clampCam();const c=vc();cam.x=(CONT.x0+CONT.x1)/2+(c[0]-VW/2)/cam.z;cam.y=(CONT.y0+CONT.y1)/2+(c[1]-VH/2)/cam.z;clampCam();}
-function fitTitle(){[cam.x,cam.y]=G.PJ(136.6,35.5);cam.z=VW<=820?Math.max(.8,VH/1100):Math.max(.6,VW/2350,VH/1600);clampCam();}
+function fitTitle(){[cam.x,cam.y]=G.PJ(136.6,35.5);cam.z=VPW<=820?Math.max(.8,VPH/1100):Math.max(.6,VPW/2350,VPH/1600);clampCam();}
 U.fitAll=fitAll;U.mapBounds=()=>({bounds:{...CONT},camera:{...cam},viewport:vc(),corners:[w2s(CONT.x0,CONT.y0),w2s(CONT.x1,CONT.y1)]});
 let anim=null;function focus(id,z){const c=G.C[id];anim={x:c.x,y:c.y,z:z||Math.max(cam.z,1.3),t:0};}
 
@@ -383,7 +406,7 @@ function drawBase(){
   // 大画面での過剰なメモリ確保を避ける。縮小画像を拡大する方式にはしない。
   if((VW+pad*2)*(VH+pad*2)*DPR*DPR>12000000){baseSurface=null;paintBase(bctx);U.baseCacheStats.builds++;U.baseDirty=false;return;}
   const cv=document.createElement('canvas');cv.width=Math.ceil((VW+pad*2)*DPR);cv.height=Math.ceil((VH+pad*2)*DPR);
-  paintBase(cv.getContext('2d'),pad);baseSurface={cv,key,state:S,x:cam.x,y:cam.y,z:cam.z,cc:cc.slice()};U.baseCacheStats.builds++;
+  paintBase(rotText(cv.getContext('2d')),pad);baseSurface={cv,key,state:S,x:cam.x,y:cam.y,z:cam.z,cc:cc.slice()};U.baseCacheStats.builds++;
  }else U.baseCacheStats.hits++;
  const t=baseSurface,sx=(pad+(cam.x-t.x)*cam.z)*DPR,sy=(pad+(cam.y-t.y)*cam.z)*DPR;
  bctx.setTransform(1,0,0,1,0,0);bctx.clearRect(0,0,base.width,base.height);bctx.drawImage(t.cv,sx,sy,base.width,base.height,0,0,base.width,base.height);U.baseDirty=false;
@@ -475,7 +498,7 @@ function drawCastleFires(c){
 // 上層は三つに分けて描く。選択した国の縁取り（下敷き）と、城・名札・肖像・街道名・合戦地などの静止層は、
 // 日付・視点・選択が変わった時だけ別のキャンバスへ描いて控える。行軍の道筋・駒・移動中の人物・煙・攻城の輪など
 // 時間で動くものだけを毎回描き、控えた層を従来と同じ重なり順で重ねる。
-const layer=()=>{const cv=document.createElement('canvas');return {cv,c:cv.getContext('2d'),on:false};};
+const layer=()=>{const cv=document.createElement('canvas');return {cv,c:rotText(cv.getContext('2d')),on:false};};
 const UNDER=layer(),STILL=layer();
 function beginLayer(c,z,cc,world){c.setTransform(DPR,0,0,DPR,0,0);c.clearRect(0,0,VW,VH);
  c.save();const clip0=w2s(CONT.x0,CONT.y0),clip1=w2s(CONT.x1,CONT.y1);c.beginPath();c.rect(clip0[0],clip0[1],clip1[0]-clip0[0],clip1[1]-clip0[1]);c.clip();
@@ -527,9 +550,9 @@ function drawTopLayers(still){
  // 同じ行軍の遠近表示は convoyLayout に任せ、別行軍の位置は動かさない。
  let mapUnits=[...(G.visibleNativeArmies?.()||S.units),...(G.documentedArmies?.()||[])];if(U.deploymentPreview?.t===S.t){const deployment=G.deploymentArmies(U.deploymentPreview.title),names=new Set(deployment.flatMap(u=>u.commanders));mapUnits=mapUnits.filter(u=>!(u.commanders||u.gens.map(id=>G.gen(id)?.n)).some(n=>names.has(n))).concat(deployment);}
  U.mapUnits=mapUnits;renderDeployNote();const candidates=G.convoyLayout(mapUnits.filter(u=>G.marchPhase?.(u).key!=='waiting'),z,w2s,uXY);
- const v=vc(),area=U.mode==='game'?{left:v[0]-v[2]/2+8,top:v[1]-v[3]/2+8,width:Math.max(120,v[2]-16),height:Math.max(120,v[3]-16)}:{left:0,top:0,width:VW,height:VH};
+ const v=vcs(),area=U.mode==='game'?{left:v[0]-v[2]/2+8,top:v[1]-v[3]/2+8,width:Math.max(120,v[2]-16),height:Math.max(120,v[3]-16)}:{left:0,top:0,width:VPW,height:VPH};// 画面の座標（DOM の矢印用）
  const outside={left:[],right:[],top:[],bottom:[],more:[]},laid=[];
- for(const p of candidates){if(p.x<0||p.x>VW||p.y<0||p.y>VH){outside[p.x<0?'left':p.x>VW?'right':p.y<0?'top':'bottom'].push(p);continue;}laid.push(p);}
+ for(const p of candidates){const [sx,sy]=c2v(p.x,p.y);if(sx<0||sx>VPW||sy<0||sy>VPH){outside[sx<0?'left':sx>VPW?'right':sy<0?'top':'bottom'].push(p);continue;}laid.push(p);}// 画面の外かどうかは画面の座標で判定し、描く位置は画布の座標のまま
  const layout={visible:laid,outside};U.armyGroups=laid;
 
  U._UP=new Map(laid.flatMap(p=>p.members.map(m=>[m.id,[m.x,m.y]])));U.outsideArmies=layout.outside;
@@ -599,9 +622,9 @@ function drawStill(z,cc,lvl){fitLayer(STILL);const c=STILL.c;beginLayer(c,z,cc,t
 // 布陣プレビュー：位置の記録がない側は地図の点にせず、合戦地に添えた札へ陣営ごとに名前を並べる。
 function renderDeployNote(){const el=$('#deployNote');if(!el)return;const P=U.deploymentPreview;const rows=P&&P.t===S?.t&&G.deploymentUnlocated?G.deploymentUnlocated(P.title):[];
  if(!rows.length){if(!el.hidden){el.hidden=true;el._k='';}return;}
- const site=rows[0].site?w2s(...G.PJ(...rows[0].site)):[VW/2,VH/2];const k=P.title+'|'+rows.map(r=>r.side+r.names.join()).join('/');
+ const site=rows[0].site?c2v(...w2s(...G.PJ(...rows[0].site))):[VPW/2,VPH/2];const k=P.title+'|'+rows.map(r=>r.side+r.names.join()).join('/');// DOM なので画面の座標
  if(el._k!==k){el._k=k;el.innerHTML=`<b>${esc(P.title)}</b><small>持場の記録がない参加者</small>`+rows.map(r=>`<div class="dn-row" style="--army:${r.side==='a'?'#c83339':'#216d9f'}"><i></i><span>${esc(r.name)}</span><em>${esc(r.names.filter(n=>n!==r.name).slice(0,4).join('・'))}${r.names.length>4?' ほか'+(r.names.length-4)+'名':''}</em></div>`).join('');}
- el.hidden=false;el.style.left=Math.round(Math.max(8,Math.min(VW-el.offsetWidth-8,site[0]+28)))+'px';el.style.top=Math.round(Math.max(8,Math.min(VH-el.offsetHeight-90,site[1]-el.offsetHeight/2)))+'px';}
+ el.hidden=false;el.style.left=Math.round(Math.max(8,Math.min(VPW-el.offsetWidth-8,site[0]+28)))+'px';el.style.top=Math.round(Math.max(8,Math.min(VPH-el.offsetHeight-90,site[1]-el.offsetHeight/2)))+'px';}
 // 画面外の隊は実位置を変えず、方向・隊数だけを端に示す。
 function renderArmyEdges(groups,a,units){const el=$('#armyEdges');if(!el)return;
  const positions={left:[a.left,a.top+a.height/2,'translateY(-50%)','◀'],right:[a.left+a.width,a.top+a.height/2,'translate(-100%,-50%)','▶'],top:[a.left+a.width/2,a.top,'translateX(-50%)','▲'],bottom:[a.left+a.width/2,a.top+a.height,'translate(-50%,-100%)','▼'],more:[a.left+a.width,a.top+a.height,'translate(-100%,-100%)','一覧']};
@@ -653,19 +676,19 @@ top_.addEventListener('pointerdown',e=>{top_.setPointerCapture(e.pointerId);ptrs
  if(ptrs.size===1)drag={x:e.clientX,y:e.clientY,cx:cam.x,cy:cam.y};
  if(ptrs.size===2){const [a,b]=[...ptrs.values()];pinch={d:Math.hypot(a.x-b.x,a.y-b.y),z:cam.z};moved=true;}});
 let hoverEv=null,hoverRaf=0,topRect=null;addEventListener('resize',()=>{topRect=null;});
-function hoverFrame(){hoverRaf=0;const e=hoverEv;if(!e||ptrs.size)return;const r=topRect||(topRect=top_.getBoundingClientRect());const army=hitArmy(e.clientX-r.left,e.clientY-r.top);if(army){top_.style.cursor='pointer';tipArmy(army,e);return;}const h=hit(e.clientX-r.left,e.clientY-r.top);if(h!==U.hover){U.hover=h;top_.style.cursor=h?'pointer':'grab';}const y=hitY(e.clientX-r.left,e.clientY-r.top);if(y){tipY(y,e);return;}if(!h){top_.style.cursor='grab';const region=hitContext(e.clientX-r.left,e.clientY-r.top);if(region){top_.style.cursor='help';tipContext(region,e);return;}}tip(h,e);}
+function hoverFrame(){hoverRaf=0;const e=hoverEv;if(!e||ptrs.size)return;const [px,py]=evXY(e);const army=hitArmy(px,py);if(army){top_.style.cursor='pointer';tipArmy(army,e);return;}const h=hit(px,py);if(h!==U.hover){U.hover=h;top_.style.cursor=h?'pointer':'grab';}const y=hitY(px,py);if(y){tipY(y,e);return;}if(!h){top_.style.cursor='grab';const region=hitContext(px,py);if(region){top_.style.cursor='help';tipContext(region,e);return;}}tip(h,e);}
 top_.addEventListener('pointermove',e=>{
  if(!ptrs.has(e.pointerId)){hoverEv=e;if(!hoverRaf)hoverRaf=requestAnimationFrame(hoverFrame);return;}
  ptrs.set(e.pointerId,{x:e.clientX,y:e.clientY});
  if(pinch&&ptrs.size===2){beginZoom();const [a,b]=[...ptrs.values()];cam.z=pinch.z*Math.hypot(a.x-b.x,a.y-b.y)/pinch.d;clampCam();return;}
- if(drag){const dx=e.clientX-drag.x,dy=e.clientY-drag.y;if(Math.hypot(dx,dy)>5)moved=true;if(moved){anim=null;cam.x=drag.cx-dx/cam.z;cam.y=drag.cy-dy/cam.z;clampCam();tip(null);}}});
+ if(drag){const dx=e.clientX-drag.x,dy=e.clientY-drag.y;if(Math.hypot(dx,dy)>5)moved=true;if(moved){anim=null;const a=rotRad(),cx=Math.cos(a)*dx-Math.sin(a)*dy,cy=Math.sin(a)*dx+Math.cos(a)*dy;cam.x=drag.cx-cx/cam.z;cam.y=drag.cy-cy/cam.z;clampCam();tip(null);}}});
 const endPtr=e=>{const tap=ptrs.size===1&&!moved;ptrs.delete(e.pointerId);if(ptrs.size<2)pinch=null;if(!ptrs.size)drag=null;
- if(tap&&e.type==='pointerup'){const r=top_.getBoundingClientRect();onTap(e.clientX-r.left,e.clientY-r.top);}};
+ if(tap&&e.type==='pointerup'){onTap(...evXY(e));}};
 top_.addEventListener('pointerup',endPtr);top_.addEventListener('pointercancel',endPtr);
 top_.addEventListener('pointerleave',()=>{U.hover=null;tip(null);});
 let zoomFinish;
 function beginZoom(){U.zoomUntil=performance.now()+260;clearTimeout(zoomFinish);zoomFinish=setTimeout(()=>{U.zoomUntil=0;U.baseDirty=true;},270);}
-top_.addEventListener('wheel',e=>{e.preventDefault();beginZoom();const r=top_.getBoundingClientRect(),mx=e.clientX-r.left,my=e.clientY-r.top;const [wx,wy]=s2w(mx,my);
+top_.addEventListener('wheel',e=>{e.preventDefault();beginZoom();const [mx,my]=evXY(e);const [wx,wy]=s2w(mx,my);
  cam.z*=Math.exp(-e.deltaY*.0015);clampCam();const [nx,ny]=s2w(mx,my);cam.x+=wx-nx;cam.y+=wy-ny;clampCam();anim=null;},{passive:false});
 function hit(sx,sy){if(!S)return null;let best=null,bd=16*16;for(const C of G.CL){const [x,y]=w2s(C.x,C.y);const d=(x-sx)**2+(y-sy)**2;if(d<bd){bd=d;best=C.id;}}
  if(best)return best;const [wx,wy]=s2w(sx,sy);
@@ -693,7 +716,7 @@ function tipArmy(group,e){const ids=group.members.map(m=>m.id),units=(U.mapUnits
 function hitY(sx,sy){if(!S||cam.z<.6)return null;let best=null,bd=10*10;for(const y of (G.YOSHO||[])){const [x,yy]=w2s(y.x,y.y);const d=(x-sx)**2+(yy-sy)**2;if(d<bd){bd=d;best=y;}}return best;}
 // 施設の詳しい様子
 function tipY(y,e){if(!y||(e&&e.pointerType==='touch')||U.mode==='title'){tipEl.hidden=true;return;}const v=G.sitePresentation(y),level=G.siteLevel(y);tipEl.innerHTML=`<div class="tph"><div><b>${esc(v.title)}</b><span>${esc(v.role)}${G.yActive(y)?' ・ Lv.'+level:''}</span></div></div><p>${esc(v.description)}</p>${v.state?'<p>'+esc(v.state)+'</p>':''}${G.yActive(y)?'<span class="tdl">'+esc(G.infrastructureText('site',y.id))+'</span>':''}`;tipEl.hidden=false;placeTip(e);}
-function placeTip(e){let x=e.clientX+14,y=e.clientY+14;const w=tipEl.offsetWidth,h=tipEl.offsetHeight;if(x+w>VW-8)x=e.clientX-w-14;if(y+h>VH-8)y=VH-h-8;tipEl.style.left=Math.max(8,x)+'px';tipEl.style.top=Math.max(8,y)+'px';}
+function placeTip(e){let x=e.clientX+14,y=e.clientY+14;const w=tipEl.offsetWidth,h=tipEl.offsetHeight;if(x+w>VPW-8)x=e.clientX-w-14;if(y+h>VPH-8)y=VPH-h-8;tipEl.style.left=Math.max(8,x)+'px';tipEl.style.top=Math.max(8,y)+'px';}
 
 function tip(id,e){if(!id||!S||(e&&e.pointerType==='touch')||U.mode==='title'||id===U.sel){tipEl.hidden=true;return;}const st=S.castles[id],k=st.owner;const gs=(G.displayCastleGens||G.castleGens)(id);
  // 城の詳しい様子：持ち主と当主、城主、兵・堅さ・石高・民忠、囲む軍勢、向かってくる軍勢
@@ -707,7 +730,7 @@ function tip(id,e){if(!id||!S||(e&&e.pointerType==='touch')||U.mode==='title'||i
   ${gs.length>1?`<span>在城 ${gs.slice(0,4).map(g=>esc(g.n)).join('、')}${gs.length>4?' ほか'+(gs.length-4)+'人':''}</span>`:''}
   ${sieg.length?`<span class="tw">囲まれている：${sieg.map(u=>`${G.CN(u.clan)} ${man(u.troops)}${gn(u)?'（'+esc(gn(u))+'）':''}`).join('、')}</span>`:''}
   ${inc.length?`<span class="tw">向かってくる：${inc.map(u=>`${G.CN(u.clan)} ${man(u.troops)}`).join('、')}</span>`:''}`;
- tipEl.hidden=false;const r=top_.getBoundingClientRect();const tw=tipEl.offsetWidth||230,th=tipEl.offsetHeight||100;let x=e.clientX-r.left+14,y=e.clientY-r.top+14;const lim=side.hidden?VW:side.getBoundingClientRect().left-r.left;if(x+tw>lim-6)x=e.clientX-r.left-tw-14;tipEl.style.left=Math.max(6,x)+'px';tipEl.style.top=Math.max(6,Math.min(VH-th-6,y))+'px';}
+ tipEl.hidden=false;const tw=tipEl.offsetWidth||230,th=tipEl.offsetHeight||100;let x=e.clientX+14,y=e.clientY+14;const lim=side.hidden?VPW:side.getBoundingClientRect().left;if(x+tw>lim-6)x=e.clientX-tw-14;tipEl.style.left=Math.max(6,x)+'px';tipEl.style.top=Math.max(6,Math.min(VPH-th-6,y))+'px';}
 function onTap(sx,sy){const group=U.armyGroups?.filter(p=>Math.abs(p.x-sx)<48&&sy>p.y-40&&sy<p.y+48).sort((a,b)=>Math.hypot(a.x-sx,a.y-sy)-Math.hypot(b.x-sx,b.y-sy))[0];if(group&&U.mode==='game'){const near=U.armyGroups.filter(p=>Math.hypot(p.x-group.x,p.y-group.y)<18);openModal('army-list',{ids:[...new Set(near.flatMap(p=>p.members.map(m=>m.id)))],sameLocation:near.every(p=>Math.hypot(p.x-group.x,p.y-group.y)<1),nearby:true});return;}const id=hit(sx,sy);if(U.mode==='game'&&!U.modal){const y=hitY(sx,sy);if(y&&y.kind==='城'&&G.yActive(y)){openModal('branch',{id:y.id});return;}}
  if(!id){const region=hitContext(sx,sy);if(region){tapCastle(null);openModal('context-region',region);return;}}
  if(U.mode==='pick'){if(id){U.pickClan=S.castles[id].owner;renderPick();}return;}
@@ -717,7 +740,7 @@ function tapCastle(id){tipEl.hidden=true;
  if(U.mode!=='game'||U.modal)return;
  if(U.picking&&id){const o=S.castles[id].owner;if(G.ADJ[U.picking].includes(id)&&o!==S.player&&!G.allied(S.player,o)){doAttack(U.picking,id);return;}U.picking=null;}
  U.sel=id||null;renderSide();U.baseDirty=true;
- if(id){const c=vc();const [x,y]=w2s(G.C[id].x,G.C[id].y);const l=c[0]-c[2]/2,r=c[0]+c[2]/2,t=c[1]-c[3]/2,b=c[1]+c[3]/2;
+ if(id){const c=vcs();const [x,y]=c2v(...w2s(G.C[id].x,G.C[id].y));const l=c[0]-c[2]/2,r=c[0]+c[2]/2,t=c[1]-c[3]/2,b=c[1]+c[3]/2;// 画面の座標で判定
   if(x<l+30||x>r-30||y<t+30||y>b-30)anim={x:G.C[id].x,y:G.C[id].y,z:cam.z,t:0};}}
 
 
@@ -925,7 +948,7 @@ function jokakuInfo(id,mine){const p=S.plans&&S.plans[id],w=S.works&&S.works[id]
  return {line,btn};}
 function renderSide(){
  if(U.mode!=='game')return;
- document.body.classList.toggle('narrowSel',!!U.sel&&VW<1200&&VW>820);document.body.classList.toggle('mobsel',!!U.sel&&VW<=820);
+ document.body.classList.toggle('narrowSel',!!U.sel&&VPW<1200&&VPW>820);document.body.classList.toggle('mobsel',!!U.sel&&VPW<=820);
  if(!U.sel){side.hidden=true;return;}side.hidden=false;
  const id=U.sel,C=G.C[id],c=S.castles[id],k=c.owner,cl=S.clans[k],me=S.player,mine=k===me,alive=S.clans[me]&&S.clans[me].alive;
  const gs=(G.displayCastleGens||G.castleGens)(id).sort((a,b)=>(G.isLeader(b)-G.isLeader(a))||(hasFace(b.n)-hasFace(a.n))||(b.t+b.b+b.c+b.s)-(a.t+a.b+a.c+a.s));
@@ -1263,12 +1286,12 @@ ACT['infra-tab']=b=>openModal('infrastructure',{kind:b.dataset.kind});
 ACT['infra-upgrade']=b=>{const r=G.startImprovement(b.dataset.kind,b.dataset.id);toast(r.msg,r.ok?'good':'bad');if(r.ok){autosave();U.baseDirty=true;renderModal();}};
 MODALS.menu=()=>`${menuHeader('操作と保存')}<p class="save-status">${U.saveError?'自動保存に失敗しました。保存・読込からファイルに書き出せます。':'自動保存：'+esc(readMeta('auto')||'まだありません')}</p><nav class="menu-links" aria-label="ゲームの操作">${menuLink('army-list','軍勢一覧','出陣・行軍・在陣する各隊')}${menuLink('dip','諸家の関係','同盟・主従・交戦')}${menuLink('infrastructure','街道・施設の整備','道普請・補給・守備を充実')}${menuLink('menu-save','保存・読込','自動保存・手動の保存枠・ファイル')}${menuLink('menu-settings','表示設定','地形・勢力の色・合戦の表示')}${menuLink('menu-library','合戦と史料','合戦一覧・出典・考証の範囲')}${menuLink('menu-help','操作案内','地図・時間・軍勢の見方')}</nav><footer><button class="btn" data-act="to-title">タイトルへ</button><button class="btn pri" data-act="close">地図へ戻る</button></footer>`;
 MODALS['menu-save']=()=>{const slots=[1,2,3].map(n=>{const m=readMeta(n);return `<div class="slot"><span><b>保存枠 ${n}</b><small>${m?esc(m):'空き'}</small></span><button class="mini" data-act="save" data-v="${n}" aria-label="保存枠${n}に保存">保存</button><button class="mini" data-act="load" data-v="${n}" aria-label="保存枠${n}から読込" ${m?'':'disabled'}>読込</button></div>`;}).join('');return `${menuHeader('保存・読込')}<p class="hint">ゲーム内30日ごと・停止時・画面を離れる時に、このブラウザへ自動保存します。</p><div class="slot"><span><b>自動保存</b><small>${esc(readMeta('auto')||'まだありません')}${U.saveError?' ／ 直近の保存に失敗':''}</small></span><button class="mini" data-act="load" data-v="auto" ${readMeta('auto')?'':'disabled'}>読込</button></div>${slots}<h3>ファイルに残す</h3><p class="hint">別のブラウザや端末に移す場合は、ファイルへ書き出してください。</p><div class="mtop"><button class="btn" data-act="export">書き出す</button><button class="btn" data-act="import">取り込む</button></div>`;};
-MODALS['menu-settings']=()=>`${menuHeader('表示設定')}<div class="setting-row"><label for="mapStyleSetting">地図の描き方</label><select id="mapStyleSetting"><option value="relief" ${U.mapStyle==='relief'?'selected':''}>地形図</option><option value="flat" ${U.mapStyle!=='relief'?'selected':''}>白地図</option></select></div><div class="setting-row"><label for="relationSetting">外交境界の線</label><select id="relationSetting"><option value="clan" ${!U.dipView?'selected':''}>標準</option><option value="relation" ${U.dipView?'selected':''}>境界を強調</option></select></div><div class="setting-row"><label for="sceneSetting">合戦を自動で開く</label><select id="sceneSetting"><option value="mine" ${sceneMode()==='mine'?'selected':''}>自軍が参加する合戦</option><option value="all" ${sceneMode()==='all'?'selected':''}>すべて</option><option value="off" ${sceneMode()==='off'?'selected':''}>開かない</option></select></div><p class="hint">布陣を確かめられない合戦は、経過・参加者・史料を表示します。合戦一覧からいつでも開けます。</p>`;
+MODALS['menu-settings']=()=>`${menuHeader('表示設定')}<div class="setting-row"><label for="mapStyleSetting">地図の描き方</label><select id="mapStyleSetting"><option value="relief" ${U.mapStyle==='relief'?'selected':''}>地形図</option><option value="flat" ${U.mapStyle!=='relief'?'selected':''}>白地図</option></select></div><div class="setting-row"><label for="mapRotationSetting">地図の向き</label><select id="mapRotationSetting">${U.MAP_ROTATIONS.map(o=>`<option value="${o.deg}" ${U.mapRotation===o.deg?'selected':''}>${o.name}</option>`).join('')}</select></div><div class="setting-row"><label for="relationSetting">外交境界の線</label><select id="relationSetting"><option value="clan" ${!U.dipView?'selected':''}>標準</option><option value="relation" ${U.dipView?'selected':''}>境界を強調</option></select></div><div class="setting-row"><label for="sceneSetting">合戦を自動で開く</label><select id="sceneSetting"><option value="mine" ${sceneMode()==='mine'?'selected':''}>自軍が参加する合戦</option><option value="all" ${sceneMode()==='all'?'selected':''}>すべて</option><option value="off" ${sceneMode()==='off'?'selected':''}>開かない</option></select></div><p class="hint">布陣を確かめられない合戦は、経過・参加者・史料を表示します。合戦一覧からいつでも開けます。</p>`;
 MODALS['menu-library']=()=>`${menuHeader('合戦と史料')}<nav class="menu-links">${menuLink('battle-list','合戦一覧','布陣図・参加者・経過')}${menuLink('domain-records','領地再分配の記録','清須会議・宗家と各領国')}${menuLink('alliance-records','盟約と軍事協力','呼称・期間・主従の区別')}${menuLink('research','地図と行軍の出典','街道・湖岸・城の座標')}${menuLink('histv','史実データの確認状況','日付・支配・人物の照合範囲')}${menuLink('menu-about','この作品について','史料・画像・地図の権利表示')}</nav>`;
 MODALS['menu-help']=()=>`${menuHeader('操作案内')}${HELP}`;
 MODALS['menu-about']=()=>`${menuHeader('この作品について')}${ABOUT}`;
 ACT['modal-back']=()=>{const last=U.modalTrail?.pop();if(last)openModal(last.name,last.data,true);};
-document.addEventListener('change',e=>{if(e.target.id==='sceneSetting'){S.settings.scenes=e.target.value==='off'?false:e.target.value;autosave();}if(e.target.id==='mapStyleSetting'){U.mapStyle=e.target.value;try{localStorage.setItem('tenka-mapstyle2',U.mapStyle);}catch(_){}U.baseDirty=true;}if(e.target.id==='relationSetting'){U.dipView=e.target.value==='relation';U.baseDirty=true;renderLegend();renderTop();}});
+document.addEventListener('change',e=>{if(e.target.id==='sceneSetting'){S.settings.scenes=e.target.value==='off'?false:e.target.value;autosave();}if(e.target.id==='mapStyleSetting'){U.mapStyle=e.target.value;try{localStorage.setItem('tenka-mapstyle2',U.mapStyle);}catch(_){}U.baseDirty=true;}if(e.target.id==='mapRotationSetting')U.setMapRotation(e.target.value);if(e.target.id==='relationSetting'){U.dipView=e.target.value==='relation';U.baseDirty=true;renderLegend();renderTop();}});
 const ABOUT=`<h3>この作品について</h3><div class="help">
  <p><b>史実の扱い</b>　出来事の日付や城の持ち主は、通説をもとに置いています。年代や人物の比定には諸説あるものも含みます。現在は史実の観察専用です。未照合の出来事・配置は考証を継続しています。</p>
  <p><b>地図</b>　国土地理院の「地球地図日本」「標高タイル」「明治期の低湿地」を加工して作成しました。明治期の低湿地と手作業の補いで、後の埋め立てや干拓の前の海岸に近づけています。戦国期の正確な海岸線ではありません。国境は今の市町村境をもとに、令制国の範囲へまとめたものです。</p>
@@ -1351,7 +1374,7 @@ function renderPick(){
 
  <div class="tbtns"><button class="btn" data-act="back-scen">戻る</button></div>`;}
 function startGame(){G.newGame(U.pickScen,U.pickClan);S=G.S();S.hsig=G.histSig();S.chats={};U.sel=null;U.ended=false;enterGame();
- const R0=G.retainer();const cap=R0?((G.genByName(R0.leader)||{}).loc||R0.castles[0]):S.clans[S.player].cap;focus(cap,VW<=820?1.1:1.3);if(R0)setTimeout(()=>toast(`${R0.leader}は${G.CNK(R0.parent)}の家臣として始まります。登録された史実の日に独立します`),2600);setSpeed(0);openModal('intro',{step:0});}
+ const R0=G.retainer();const cap=R0?((G.genByName(R0.leader)||{}).loc||R0.castles[0]):S.clans[S.player].cap;focus(cap,VPW<=820?1.1:1.3);if(R0)setTimeout(()=>toast(`${R0.leader}は${G.CNK(R0.parent)}の家臣として始まります。登録された史実の日に独立します`),2600);setSpeed(0);openModal('intro',{step:0});}
 const INTRO=[['時を進める','左上の ▶ で進み、もう一度押すと止まります。×1では4秒で1日進みます。速度は ×128 まで切り替えられます。'],['城と軍勢を見る','城を押すと城主や在城者を確認できます。周辺の城や施設の説明はカーソルを合わせるか、タップして開きます。軍勢は凸駒で表示します。'],['史料と照合する','現在は史実の観察専用です。合戦図の出典には確認範囲と未確認部分を明記しています。メニューから保存・読み込みと資料の確認ができます。']];
 MODALS.intro=d=>{const i=Math.max(0,Math.min(2,d.step||0)),v=INTRO[i];return `<header><div><small>はじめの操作 ${i+1} / 3</small><h2>${v[0]}</h2></div></header><p>${v[1]}</p><footer><button class="btn" data-act="close">案内を閉じる</button>${i?'<button class="btn" data-act="intro-prev">戻る</button>':''}<button class="btn pri" data-act="intro-next">${i===2?'地図へ':'次へ'}</button></footer>`;};
 ACT['army-edge']=b=>{const ps=U.outsideArmies?.[b.dataset.side];if(!ps?.length)return;if(b.dataset.side==='more'){openModal('army-list');return;}const units=[...(G.visibleNativeArmies?.()||S.units),...(G.documentedArmies?.()||[])],u=units.find(u=>u.id===ps[0].id);if(u){const [x,y]=uXY(u);U.cam(x,y,Math.max(cam.z,1.2));}};

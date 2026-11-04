@@ -90,7 +90,7 @@ graticule, to `game/map/build/previews/` (`control.png` control, `admin.png`
 administrative divisions, `rivers.png` rivers, `height.png` elevation). Open
 these to check the map by eye.
 
-After generating, serve `game/` as static files and open `index.html` in a
+After generating, serve `game/` as static files and open `index.html` in a The map on screen is turned 16° counter-clockwise after the Meiji-era "Dai Nippon Zenzu"; "Map orientation" in the display settings restores north-up (`docs/reports/MAP_ORIENTATION.md`).
 browser.
 
 Starting and stopping the server is done by the user. Verification connects to an
