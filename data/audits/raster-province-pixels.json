@@ -1,6 +1,6 @@
 {
  "generated": "tools/map/build-map-tiles.cjs",
- "source": "30948d6cf0b847f0eb9190fe9137bca8b04db6c480f8c34f81477467a9a4f84a",
+ "source": "c6f51ceed847b1362fe0b9f2165987565d3afa2c7d687ac5c92d5f191317ec06",
  "provinces": [
   {
    "id": 1,
@@ -1008,7 +1008,7 @@
    "id": 168,
    "key": "castle:matsumae",
    "kind": "land",
-   "pixels": 113198
+   "pixels": 127361
   },
   {
    "id": 169,
@@ -1026,31 +1026,31 @@
    "id": 171,
    "key": "context:jianzhou",
    "kind": "land",
-   "pixels": 4886644
+   "pixels": 3451953
   },
   {
    "id": 172,
    "key": "context:haixi",
    "kind": "land",
-   "pixels": 13392355
+   "pixels": 14872069
   },
   {
    "id": 173,
    "key": "context:eastern-jurchen",
    "kind": "land",
-   "pixels": 20054472
+   "pixels": 21644062
   },
   {
    "id": 174,
    "key": "context:mongol",
    "kind": "land",
-   "pixels": 5500139
+   "pixels": 3865526
   },
   {
    "id": 175,
    "key": "context:ainu",
    "kind": "land",
-   "pixels": 9148655
+   "pixels": 9134492
   }
  ]
 }

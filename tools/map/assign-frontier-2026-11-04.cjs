@@ -8,6 +8,7 @@
    和人地は1550年の「夷狄の商舶往還の法度」で定まった上ノ国天ノ川〜知内の南西（函館市史 通説編第一巻）。蠣崎家（castle:matsumae）の区画の
    うちこれより北・東の画素は蝦夷地へ戻す（郡単位で渡島国の全郡を割り当てていたのは過大だった）。
    境の線は川と山の筋を経緯度の折れ線で引いた概略（20〜30km程度）で、各勢力の確定した領界ではない。
+   満州と和人地の境は後で tools/map/frontier-basins-2026-11-04.cjs が流域（分水嶺）で引き直した。
    実行：node --max-old-space-size=4000 tools/map/assign-frontier-2026-11-04.cjs   二度目は止まる（新しい区画が既にあれば）。 */
 const fs=require('node:fs'),path=require('node:path');
 const MD=require('./map-data.cjs'),{readRGB,writeRGB}=require('./png-big.cjs');

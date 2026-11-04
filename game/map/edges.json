@@ -1,6 +1,6 @@
 {
  "generated": "tools/map/build-edges.cjs",
- "gridSha256": "383d5e088d6a80f06132b51265917928cd84c5109b7b009c3a0fa5966ad1729f",
+ "gridSha256": "b34c2887e558f98abc4fcc05a78c743a74023068e84e0622f6c52d5137f271ea",
  "note": "領域画像の共有辺。a<b の領域ID、kind は coast/lake/region。座標は地図平面。塗りの画像と同じ版・段から作る。",
  "levels": [
   {
@@ -11,19 +11,19 @@
      "file": "0-0.json",
      "col": 0,
      "row": 0,
-     "sha256": "9998be6ea293958ca70c38a24a97845977531f8ed7c16879695bc84f40fcf8aa"
+     "sha256": "7a5b45dcdeaf81b5e844101a4002b8b2900f3465b210b022b3980b557f5bf590"
     },
     {
      "file": "1-0.json",
      "col": 1,
      "row": 0,
-     "sha256": "0fca66c55ce09a927f3250774e361228f2897b1a1dca005d87154a27288c13c7"
+     "sha256": "d36fd53dc337eeecb936fa98ee8eb85d6f86f9fa4e110cf911c58305e5d43d47"
     },
     {
      "file": "2-0.json",
      "col": 2,
      "row": 0,
-     "sha256": "615c8b4d3e55693d10d4dad7d0298b9fe1f1f31613ee9ad58e874ab1f8a5d9d5"
+     "sha256": "259f31a795c594775935b8233e669e0136fd756db7265eb2ea2aa3e26e02440d"
     },
     {
      "file": "3-0.json",
@@ -35,13 +35,13 @@
      "file": "4-0.json",
      "col": 4,
      "row": 0,
-     "sha256": "97617f8987852c7321b90174985b73b346568c84572a904ec2f40990c4e3d851"
+     "sha256": "08c46bb98e1a1d0311c578a9b9ac73cb5f23c67188c92c9ae2b31a20750096b4"
     },
     {
      "file": "5-0.json",
      "col": 5,
      "row": 0,
-     "sha256": "821cc0985c7611e2f5d92b2ab3e02b7037861c937661b931ddc8811edcab80bf"
+     "sha256": "543466cf8c484ea17f8dce0eac48b86cec72d654609bc2fee3c66785bae5c9d8"
     },
     {
      "file": "6-0.json",
@@ -113,19 +113,19 @@
      "file": "0-1.json",
      "col": 0,
      "row": 1,
-     "sha256": "6e7d63f05b08dd24a738b511b15f5fb18895bf61deb7c83354d01fb58e164d0b"
+     "sha256": "22fb3bde71fab9c5ef7d630400d6984efe6946b97c7a3a13b782d862ab6fa8a2"
     },
     {
      "file": "1-1.json",
      "col": 1,
      "row": 1,
-     "sha256": "170a2c884be258b28faa3c59f289ead88a7aa8722846518a42d328357644c34c"
+     "sha256": "9206fbe9edfc2cd8b80589ed8b90feeb4b507e41f79a33bc3c4df4d7995c1aa1"
     },
     {
-     "file": "5-1.json",
-     "col": 5,
+     "file": "4-1.json",
+     "col": 4,
      "row": 1,
-     "sha256": "f2a81b66c0539e6d9c49368c7034f90d4825150c21de622198034ec5f1fe60c7"
+     "sha256": "b756b53fb2ae04f57ac340725d74c0b18597b7a69dcc6542685ced50fd4b3224"
     },
     {
      "file": "10-1.json",
@@ -185,19 +185,25 @@
      "file": "1-2.json",
      "col": 1,
      "row": 2,
-     "sha256": "f57b5aea692190887ca64f1ab07392d3eccf363a185154eebc73c072bd58afb4"
+     "sha256": "abb74757af903b7368e0d4342f82944be955b9a380609b00edc5df892e507b1d"
+    },
+    {
+     "file": "2-2.json",
+     "col": 2,
+     "row": 2,
+     "sha256": "fb9022dfa4b3211912aa01347f698853d3b29de49a432b4825cd1dac6611eeef"
     },
     {
      "file": "4-2.json",
      "col": 4,
      "row": 2,
-     "sha256": "ca03e1f465558e52d862e7bb99b621b29460bef828dac01086561b5d0affd514"
+     "sha256": "6f61d8ccee9a3e5a2aa6edf3b08185869e3ca5fdf248515138534fa9855ca62f"
     },
     {
      "file": "5-2.json",
      "col": 5,
      "row": 2,
-     "sha256": "b5c2cab3455b877bb68c04ff4672f8001ba7c9e1a99685687717820c5fe8d0d6"
+     "sha256": "1ed618617b93e9e2c8ed2d0363bf2195a4247a91e63789fb2b8b20de1c516749"
     },
     {
      "file": "6-2.json",
@@ -281,31 +287,31 @@
      "file": "1-3.json",
      "col": 1,
      "row": 3,
-     "sha256": "fa235b3d37deba528deb2700f90b53754d2891f4e2fafc8af660feffe33fded8"
+     "sha256": "2cd6d2d15c1070a7a8f465436fa3f8b8b9e7929f8f8292150bb80a6b9cb289e7"
     },
     {
      "file": "2-3.json",
      "col": 2,
      "row": 3,
-     "sha256": "3af4bb820e68d7839ba8b6a60b1765872f2e96c2cbf5bf6c6ba92fcae9ffbc94"
+     "sha256": "745f9ffc17b319ae2e13612563f19917c5a917f0344665715cf23c7d0ccfd797"
     },
     {
      "file": "3-3.json",
      "col": 3,
      "row": 3,
-     "sha256": "9eb3ff4f6d2bb8a85c48a56bf0ae0f0dae396268e3417d987e9095808cf3958d"
+     "sha256": "80f370ea6d4554e1e7202092bcee2923bd4a5e4e1f9056024f62adae93141935"
     },
     {
      "file": "4-3.json",
      "col": 4,
      "row": 3,
-     "sha256": "1488445b5a12bd98faad0ad7e2de1b602311127f7071c104d910caf8e2609bbc"
+     "sha256": "479d6260c8187e1c21e3b63c4e3f67788bb1bb57d14d6d6069a9d843038102c5"
     },
     {
      "file": "5-3.json",
      "col": 5,
      "row": 3,
-     "sha256": "b60ec68f608eb3fef9aca8dbb9118e75336961c6ae031191b95ef8f2323cfb9f"
+     "sha256": "5b615a74b1edb2d6ccdcc2f16700181812f53453794a646da195f36e9f03308d"
     },
     {
      "file": "6-3.json",
@@ -371,13 +377,13 @@
      "file": "1-4.json",
      "col": 1,
      "row": 4,
-     "sha256": "a3b59e763fdeeef355fbd89c5d53e094b4029216c16c146c695d6c872a306466"
+     "sha256": "6c5fcb5737bde770697cddc163cba1620a3d2b5a0355b2ecdca635413b750ae6"
     },
     {
      "file": "2-4.json",
      "col": 2,
      "row": 4,
-     "sha256": "00711ae0cd512cb25897de62f0a2ae0eaad7d817ee9fbfb31148bfd938edb08b"
+     "sha256": "56d36746690b332556a44ce07a3d04290bb876cbfeb263b8d8f6c7f74bf348a1"
     },
     {
      "file": "3-4.json",
@@ -389,7 +395,7 @@
      "file": "4-4.json",
      "col": 4,
      "row": 4,
-     "sha256": "f95b60dabdde3a9b138d9310dbb15f3d7696447b686162fa094ba86150a8700f"
+     "sha256": "de733630fb46c1f28131e0ffd8fa8910ad9d46eeb544221e776213e33e1a15eb"
     },
     {
      "file": "6-4.json",
@@ -407,7 +413,7 @@
      "file": "15-4.json",
      "col": 15,
      "row": 4,
-     "sha256": "490ae24cdebcf40d1188c07830d7ce2efeb7f0cce6ab3ebf6eae2fc28e904879"
+     "sha256": "5fdb65f007186bad4de39c63d3efd23028c8061e08afacff8b756f9853b7337d"
     },
     {
      "file": "16-4.json",
@@ -449,7 +455,7 @@
      "file": "5-5.json",
      "col": 5,
      "row": 5,
-     "sha256": "1b5c16c14cdaff2bcaa88dd675d95ee262d52ffcc4908a2ee89230b7750833f7"
+     "sha256": "d2c8851fc126b7b754e749af27c40582e90a20e619f40acb2333c40dee9858ac"
     },
     {
      "file": "6-5.json",
@@ -497,7 +503,7 @@
      "file": "4-6.json",
      "col": 4,
      "row": 6,
-     "sha256": "bfe1efe3555696d105788f9bb2bcbd98f656f688531dcbf4614b5a1c20bb1538"
+     "sha256": "5dff6084f027601d83cd9b9a9975be27163127390742ef9170c2ca37443b6ab2"
     },
     {
      "file": "14-6.json",
@@ -1217,13 +1223,13 @@
      "file": "0-0.json",
      "col": 0,
      "row": 0,
-     "sha256": "2624de307bb823337b50d7104d5ca977e5659d5234d0e8f35d2850d2559a0a61"
+     "sha256": "f693eb719388919e9659e8f629ca517cf0a0e9cef722c79adcfd186cb9025ec9"
     },
     {
      "file": "1-0.json",
      "col": 1,
      "row": 0,
-     "sha256": "6cb1ba5537a685316f328e4aaf2de2ae25dbbd9fd25f7cdbacd142864264d15d"
+     "sha256": "203507ba719932a74ec661805b290c123022a3da5766c241ed10a9b23a4a3ebc"
     },
     {
      "file": "2-0.json",
@@ -1253,19 +1259,19 @@
      "file": "0-1.json",
      "col": 0,
      "row": 1,
-     "sha256": "3dacc4c0039316e25b4d679d50b86724117ac4bd3703b736f2a13370b91522ba"
+     "sha256": "27f7e4e65cb4236d6b4bb04357d6f070cf4683dc3f0cd6c2d284dfe76b9f2944"
     },
     {
      "file": "1-1.json",
      "col": 1,
      "row": 1,
-     "sha256": "b07e7a4df23ab95db4762ef4c04bd3a6cbf73c634de0680c78ce61fc79bbbbb6"
+     "sha256": "6dffc4bbd8e89f7a7dc2e74e26f3036a7f1c03f240755a8ea5f70e580bc08832"
     },
     {
      "file": "3-1.json",
      "col": 3,
      "row": 1,
-     "sha256": "65b6279e02e364ec0ac70b489a2dab9719a8a144b949c354773a5035059d970f"
+     "sha256": "577c382271a5f300eca24761ac47f2891a810c9c7cbcfafb680fe5cd2359acb5"
     },
     {
      "file": "4-1.json",
@@ -1379,13 +1385,13 @@
      "file": "0-0.json",
      "col": 0,
      "row": 0,
-     "sha256": "43bdcb6e7600376f716d276a86a428db545a2af5bf4f114c0ab247dfafc0bb7f"
+     "sha256": "b0e737291cbd32cbdc06f15530046f350dd1f322fc2ceb3687cd5750a7b3c3c2"
     },
     {
      "file": "1-0.json",
      "col": 1,
      "row": 0,
-     "sha256": "c5a7c53980c15aba86469840359d85dd93f7ce29156a0cf42ab0a45f88b313a3"
+     "sha256": "099e7d065155c9dbcd281a5595ce2f3e2292e986f58d8c0cc468b3c86586293b"
     },
     {
      "file": "2-0.json",
@@ -1491,7 +1497,7 @@
    "col": 1,
    "row": 4,
    "file": "@15730101-15840101/1-4.json",
-   "sha256": "a3b59e763fdeeef355fbd89c5d53e094b4029216c16c146c695d6c872a306466"
+   "sha256": "6c5fcb5737bde770697cddc163cba1620a3d2b5a0355b2ecdca635413b750ae6"
   },
   {
    "id": "15840101-16060101",
@@ -1551,7 +1557,7 @@
    "col": 1,
    "row": 4,
    "file": "@15840101-16060101/1-4.json",
-   "sha256": "a3b59e763fdeeef355fbd89c5d53e094b4029216c16c146c695d6c872a306466"
+   "sha256": "6c5fcb5737bde770697cddc163cba1620a3d2b5a0355b2ecdca635413b750ae6"
   },
   {
    "id": "15840101-16060101",
@@ -1691,7 +1697,7 @@
    "col": 0,
    "row": 1,
    "file": "@15730101-15840101/0-1.json",
-   "sha256": "5941d485b0de044e90b020ccd8af18ba870e5edb9eb480a991d9e566e0cabf40"
+   "sha256": "a62b91b745dcbedac8efa85c4a42e111e7551d5b49748e08923b44a5c2e209f6"
   },
   {
    "id": "15730101-15840101",
@@ -1711,7 +1717,7 @@
    "col": 0,
    "row": 0,
    "file": "@15730101-15840101/0-0.json",
-   "sha256": "2624de307bb823337b50d7104d5ca977e5659d5234d0e8f35d2850d2559a0a61"
+   "sha256": "f693eb719388919e9659e8f629ca517cf0a0e9cef722c79adcfd186cb9025ec9"
   },
   {
    "id": "15840101-16060101",
@@ -1731,7 +1737,7 @@
    "col": 0,
    "row": 1,
    "file": "@15840101-16060101/0-1.json",
-   "sha256": "5941d485b0de044e90b020ccd8af18ba870e5edb9eb480a991d9e566e0cabf40"
+   "sha256": "a62b91b745dcbedac8efa85c4a42e111e7551d5b49748e08923b44a5c2e209f6"
   },
   {
    "id": "15840101-16060101",
@@ -1751,7 +1757,7 @@
    "col": 0,
    "row": 0,
    "file": "@15840101-16060101/0-0.json",
-   "sha256": "2624de307bb823337b50d7104d5ca977e5659d5234d0e8f35d2850d2559a0a61"
+   "sha256": "f693eb719388919e9659e8f629ca517cf0a0e9cef722c79adcfd186cb9025ec9"
   },
   {
    "id": "15840101-16060101",
@@ -1891,7 +1897,7 @@
    "col": 0,
    "row": 0,
    "file": "@15730101-15840101/0-0.json",
-   "sha256": "d15948e00a20d608aedb656932826887dbaa3c362b863b04fcff99b3229be5ff"
+   "sha256": "4fdb89bf67dda71e5f407281ba4a789f6f652d7eb8bb65615da4f2bf4136e30a"
   },
   {
    "id": "15840101-16060101",
@@ -1911,7 +1917,7 @@
    "col": 0,
    "row": 0,
    "file": "@15840101-16060101/0-0.json",
-   "sha256": "d15948e00a20d608aedb656932826887dbaa3c362b863b04fcff99b3229be5ff"
+   "sha256": "4fdb89bf67dda71e5f407281ba4a789f6f652d7eb8bb65615da4f2bf4136e30a"
   },
   {
    "id": "15840101-16060101",
@@ -1971,7 +1977,7 @@
    "col": 1,
    "row": 0,
    "file": "@15840101-16060101/1-0.json",
-   "sha256": "c5a7c53980c15aba86469840359d85dd93f7ce29156a0cf42ab0a45f88b313a3"
+   "sha256": "099e7d065155c9dbcd281a5595ce2f3e2292e986f58d8c0cc468b3c86586293b"
   },
   {
    "id": "16060101-16160101",
@@ -2031,7 +2037,7 @@
    "col": 1,
    "row": 0,
    "file": "@16060101-16160101/1-0.json",
-   "sha256": "c5a7c53980c15aba86469840359d85dd93f7ce29156a0cf42ab0a45f88b313a3"
+   "sha256": "099e7d065155c9dbcd281a5595ce2f3e2292e986f58d8c0cc468b3c86586293b"
   }
  ]
 }

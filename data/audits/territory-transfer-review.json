@@ -1697,8 +1697,8 @@
     {
       "date": [
         1587,
-        7,
-        30
+        8,
+        6
       ],
       "title": "森吉成の豊前拝領",
       "kind": "take",
@@ -1708,7 +1708,7 @@
       ],
       "additional": null,
       "source": "https://adeac.jp/yukuhashi-city/texthtml/d100010/mp000000-000010/ht2040100020",
-      "precision": "月",
+      "precision": "日",
       "review": "出典リンクあり。資料が当該全拠点の日付を裏付けるとは限らない"
     },
     {
@@ -3869,16 +3869,6 @@
         "m": 7,
         "d": 30
       },
-      "castle": "kawara",
-      "from": "akizuki",
-      "to": "hashiba"
-    },
-    {
-      "date": {
-        "y": 1587,
-        "m": 7,
-        "d": 30
-      },
       "castle": "tachibana",
       "from": "otomo",
       "to": "hashiba"
@@ -3891,6 +3881,16 @@
       },
       "castle": "yanagawa",
       "from": "ryuzoji",
+      "to": "hashiba"
+    },
+    {
+      "date": {
+        "y": 1587,
+        "m": 8,
+        "d": 6
+      },
+      "castle": "kawara",
+      "from": "akizuki",
       "to": "hashiba"
     },
     {

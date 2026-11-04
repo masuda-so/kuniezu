@@ -1,6 +1,6 @@
 {
  "generated": "tools/map/build-edges.cjs",
- "baseProvincesSha256": "30948d6cf0b847f0eb9190fe9137bca8b04db6c480f8c34f81477467a9a4f84a",
+ "baseProvincesSha256": "c6f51ceed847b1362fe0b9f2165987565d3afa2c7d687ac5c92d5f191317ec06",
  "staleVersions": [],
  "note": "年代別の領域タイルの差し替え。同じ段・同じ列行の基準タイルの上に重ねず置き換える。期間は半開区間。",
  "versions": [
@@ -34,14 +34,14 @@
      "col": 0,
      "row": 1,
      "file": "edits/compiled/15730101-15840101/provinces-4/0-1@15730101-15840101.png",
-     "sha256": "6ff7fe307ee04c213f58521a7693e75d3fe558c8d2438cffcac44b0d844b4ca5"
+     "sha256": "9a6def7b9060dfcb3a9fe74eb58e3b08469c08ed57c4f28f23dcb7264a4af55e"
     },
     {
      "factor": 8,
      "col": 0,
      "row": 0,
      "file": "edits/compiled/15730101-15840101/provinces-8/0-0@15730101-15840101.png",
-     "sha256": "aaa3873b7c18d4fd67d48950456bd96ed4e2e15e56f9720d74d246238918076b"
+     "sha256": "5a5c8cef743df049e612cf32b0b7e5ca1167dba14b6b3e71559687efc6422a4d"
     }
    ]
   },
@@ -83,7 +83,7 @@
      "col": 0,
      "row": 1,
      "file": "edits/compiled/15840101-16060101/provinces-4/0-1@15840101-16060101.png",
-     "sha256": "6ff7fe307ee04c213f58521a7693e75d3fe558c8d2438cffcac44b0d844b4ca5"
+     "sha256": "9a6def7b9060dfcb3a9fe74eb58e3b08469c08ed57c4f28f23dcb7264a4af55e"
     },
     {
      "factor": 4,
@@ -97,7 +97,7 @@
      "col": 0,
      "row": 0,
      "file": "edits/compiled/15840101-16060101/provinces-8/0-0@15840101-16060101.png",
-     "sha256": "aaa3873b7c18d4fd67d48950456bd96ed4e2e15e56f9720d74d246238918076b"
+     "sha256": "5a5c8cef743df049e612cf32b0b7e5ca1167dba14b6b3e71559687efc6422a4d"
     },
     {
      "factor": 8,

@@ -26,10 +26,10 @@
  ];
  const regions={
  'neutral:明':{name:'明・遼東',detail:'遼陽に遼東都司を置く明の軍政域。瀋陽・開原などの衛所を通じて防衛と行政を行った。',source:'liaodongMuseum',boundaryNote:'辺牆と衛所をもとにした軍政域の概略。'},
- 'context:jianzhou':{name:'建州女真',source:'jurchenMasui',boundaryNote:'鴨緑江の北（韓国国史編纂委員会）。明の遼東の東、長白山の西、ホイファ川の南までを川と山の筋で引いた概略。'},
- 'context:haixi':{name:'海西女真',detail:'ハダ・イェヘ・ホイファ・ウラなど、複数の首長勢力が活動した地域。',source:'jurchenNikh',boundaryNote:'松花江の流域（韓国国史編纂委員会）。張広才嶺の西、蒙古の東を引いた概略。'},
- 'context:eastern-jurchen':{boundaryNote:'牡丹江一帯とその東の沿海地方（韓国国史編纂委員会）。長白山〜張広才嶺の東、豆満江の北岸を含む概略。',name:'東方の女真諸部',detail:'牡丹江以東には多くの女真集団が暮らしていた。明との関係や首長の支配は地域ごとに異なる。ロシアの進出はこの時代より後である。',source:'jurchenNikh'},
- 'context:mongol':{name:'蒙古諸部',detail:'遼東の西北では蒙古の諸部が活動し、明との交易や軍事交渉が行われていた。',source:'liaodongLee',boundaryNote:'遼東の辺牆の外の西北。遼河の上流と松花江の合流点の西を引いた概略。'},
+ 'context:jianzhou':{name:'建州女真',source:'jurchenMasui',boundaryNote:'鴨緑江の北（韓国国史編纂委員会）。渾河・太子河・鴨緑江の上流の流域で、境は分水嶺（標高データから求めた）。首長ごとの確定した領界ではない。'},
+ 'context:haixi':{name:'海西女真',detail:'ハダ・イェヘ・ホイファ・ウラなど、複数の首長勢力が活動した地域。',source:'jurchenNikh',boundaryNote:'松花江・東遼河・清河の流域（韓国国史編纂委員会）。境は分水嶺（標高データから求めた）で、首長ごとの確定した領界ではない。'},
+ 'context:eastern-jurchen':{boundaryNote:'牡丹江・ウスリー江の流域と日本海側の沿海地方、豆満江の北岸（韓国国史編纂委員会）。境は分水嶺（標高データから求めた）で、首長ごとの確定した領界ではない。',name:'東方の女真諸部',detail:'牡丹江以東には多くの女真集団が暮らしていた。明との関係や首長の支配は地域ごとに異なる。ロシアの進出はこの時代より後である。',source:'jurchenNikh'},
+ 'context:mongol':{name:'蒙古諸部',detail:'遼東の西北では蒙古の諸部が活動し、明との交易や軍事交渉が行われていた。',source:'liaodongLee',boundaryNote:'遼東の辺牆の外の西北。西遼河の流域と遼河の西岸、松嫩平原の西。境は分水嶺（標高データから求めた）で、遊牧の諸部の確定した領界ではない。'},
  'context:ainu':{name:'蝦夷地（アイヌ）',detail:'和人地（上ノ国天ノ川から知内まで）の外は、アイヌの人々が各地の首長のもとで暮らす蝦夷地だった。1550年の取り決めで和人地と蝦夷地が分けられた。千島もアイヌの地である。',source:'hakodateShishi',boundaryNote:'和人地との境は上ノ国（天河、蠣崎氏の勝山館を含む）と知内川の河口を結んだ概略。蝦夷地の中に一つの国家があったわけではない。'}
  };
  TK.contextRegionInfo=function(key,date){
