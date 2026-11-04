@@ -2,7 +2,14 @@
 const fs=require('node:fs'),path=require('node:path');
 function readRecords(dir){return fs.existsSync(dir)?fs.readdirSync(dir).filter(n=>n.endsWith('.json')).sort().map(n=>JSON.parse(fs.readFileSync(path.join(dir,n),'utf8'))):[];}
 function unique(rows,prefix){const ids=new Set();for(const r of rows){if(!r.id?.startsWith(prefix)||ids.has(r.id))throw Error('安定IDの欠落・重複: '+r.id);ids.add(r.id);}return ids;}
+// Reject conflicting temporal fields without forbidding descriptive metadata.
+const temporalFields=new Set(['kind','calendar','precision','year','date','leapMonth','from','untilExclusive','components','indexYears','boundsAreHistoricalStartEnd','entities','estimated']);
+function validateTemporalFields(t,allowed,fail){
+ if(!t||typeof t!=='object'||Array.isArray(t)||Object.keys(t).some(key=>temporalFields.has(key)&&!allowed.includes(key)))fail();
+}
 function validateTime(t){if(!t)throw Error('年代が必要');
+ const allowed={'year-window':['year'],'year-interval':['from','untilExclusive'],'dated-event':['date','leapMonth']};
+ validateTemporalFields(t,['kind','calendar','precision',...(allowed[t.kind]||[])],()=>{throw Error('年代形式と矛盾する時間欄');});
  if(t.kind==='year-window'){if(t.calendar!=='CE-year'||t.precision!=='year'||!Number.isInteger(t.year))throw Error('年精度の時点が不正');}
  else if(t.kind==='year-interval'){if(t.calendar!=='CE-year'||t.precision!=='year'||!Number.isInteger(t.from)||!Number.isInteger(t.untilExclusive)||t.from>=t.untilExclusive)throw Error('年代区間が不正');}
  else if(t.kind==='dated-event'){const d=t.date;if(t.calendar!=='Japanese-lunisolar'||t.precision!=='day'||typeof t.leapMonth!=='boolean'||!Array.isArray(d)||d.length!==3||!d.every(Number.isInteger)||d[1]<1||d[1]>12||d[2]<1||d[2]>30)throw Error('旧暦日付・閏月区分が不正');}
@@ -65,4 +72,4 @@ function queryLocations(data,{person='',place='',year,fromYear,toYear,lunarDate,
  }).map(r=>({...r,personName:people.get(r.person).name,placeName:places.get(r.place).name,interpretation:r.relation==='principal-base'?'本拠の情報。現地滞在を保証しない':r.relation==='held-castle-lordship'?'城主就任・役職の情報。現地滞在を保証しない':r.time.kind==='year-window'?'この年の記録。指定日の滞在は確定しない':'日付のある出来事。前後の連続滞在は確定しない'}));
  return {matchedPeople:person?selectedPeople.map(p=>({id:p.id,name:p.name})):[],matches,answerable:!!matches.length,exactPresenceConfirmed:!!lunarDate&&matches.some(r=>r.relation==='attested-presence'&&r.time.kind==='dated-event'),continuousPresenceAssumed:false};
 }
-module.exports={loadLocations,validateLocations,queryLocations};
+module.exports={loadLocations,validateLocations,queryLocations,validateTemporalFields};
