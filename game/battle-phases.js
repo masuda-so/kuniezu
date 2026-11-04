@@ -12,7 +12,7 @@
  // 戦場内の地点遷移を全国街道へ吸着しない。線形は典拠の地点を結ぶ模式表現。
  const lines=new WeakMap();
  G.battlePhaseGeometry=function(move){let line=lines.get(move.points);if(!line){line=move.points.map(p=>G.PJ(...p));lines.set(move.points,line);}return line;};
- G.battlePhasePoint=function(sc,name,t,fallback){const r=TK.BATTLE_MOVEMENTS[sc.title]?.find(r=>r.name===name);if(!r)return fallback;if(t<=r.from)return r.points[0];if(t>=r.to)return r.points.at(-1);const p=G.visualPathPoint(G.battlePhaseGeometry(r),(t-r.from)/(r.to-r.from),true);return [p[0]/TKGEO.K/TKGEO.CX+TKGEO.LON0,TKGEO.LAT0-p[1]/TKGEO.K];};
+ G.battlePhasePoint=function(sc,name,t,fallback){const r=TK.BATTLE_MOVEMENTS[sc.title]?.find(r=>r.name===name);if(!r)return fallback;if(t<=r.from)return r.points[0];if(t>=r.to)return r.points.at(-1);const p=G.visualPathPoint(G.battlePhaseGeometry(r),(t-r.from)/(r.to-r.from),true);return TKGEO.unproject(p[0],p[1]);};
 
  // 参陣と退去は同じ時間窓で判定する。名簿には期間外の人物も残す。
  G.battleUnitWindow=(sc,u)=>({from:Math.max(sc.mapVisibleFrom?.[u.id]||0,u.from||0),until:sc.mapVisibleUntil?.[u.id]??Infinity});

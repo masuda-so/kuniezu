@@ -8,7 +8,7 @@ const root=path.resolve(__dirname,'../..'),dir=path.join(root,'game/map/build');
 const m=JSON.parse(fs.readFileSync(path.join(dir,'manifest.json'),'utf8'));
 const MD=require('./map-data.cjs'),DEF=MD.readDefinition(),defs=DEF.rows,SEA=DEF.byKey.get('sea').id;// 正本 game/map の definition.csv・default.map（id は1から、海は SEA）
 const maskFile=path.join(root,'game/map/physical/shoreline_masks.geojson');
-const maskedShore=require('./shoreline-masks.cjs')(maskFile,m.projection);
+const maskedShore=require('./shoreline-masks.cjs')(maskFile,require('../../game/map-projection.js').plane);
 const byColor=new Map(defs.filter(Boolean).map(d=>[d.rgb[0]<<16|d.rgb[1]<<8|d.rgb[2],d.id]));
 function decode(file){const buf=fs.readFileSync(file);let i=8,w=0,h=0;const parts=[];while(i<buf.length){const len=buf.readUInt32BE(i),type=buf.toString('ascii',i+4,i+8),data=buf.subarray(i+8,i+8+len);if(type==='IHDR'){w=data.readUInt32BE(0);h=data.readUInt32BE(4);}else if(type==='IDAT')parts.push(data);i+=12+len;}
  // PNG の行ごとのフィルタ（0〜4）を戻す。RGB 8bit（1画素3バイト）だけを扱う。
@@ -68,7 +68,8 @@ const normK=MD.normalizeKuni;const kuniNames=[...new Set(gunRows.map(r=>normK(r[
 // 郡画像 game/map/admin/gun.png（全域1枚、G が上位・B が下位の郡番号）を国の番号の配列にし、段ごとのタイルは画素中心の最近傍で切り出す。
 const GW=m.width,GH=m.height,kuniPx=new Uint8Array(GW*GH);
 let kuniLines=0;
-(async()=>{await require('./png-big.cjs').readRGB(path.join(gunDir,'gun.png'),(y,row)=>{const o=y*GW;for(let x=0;x<GW;x++)kuniPx[o+x]=kuniOf[row[x*3+1]<<8|row[x*3+2]];});
+// 郡画像は円錐図法の格子へ写したもの（game/map/build/grid/gun.png、reproject-grid.cjs）
+(async()=>{await require('./png-big.cjs').readRGB(MD.grid.files.gun,(y,row)=>{const o=y*GW;for(let x=0;x<GW;x++)kuniPx[o+x]=kuniOf[row[x*3+1]<<8|row[x*3+2]];});
 const gunTile=(f,c,r)=>{const lw=Math.ceil(GW/f),lh=Math.ceil(GH/f),T=m.tile,c0=c*T,r0=r*T;if(c<0||r<0||c0>=lw||r0>=lh)return null;const w=Math.min(T,lw-c0),h=Math.min(T,lh-r0),ids=new Uint16Array(w*h);let any=false;
  for(let y=0;y<h;y++){const sy=f===1?r0+y:Math.min(GH-1,(r0+y)*f+(f>>1));for(let x=0;x<w;x++){const sx=f===1?c0+x:Math.min(GW-1,(c0+x)*f+(f>>1)),v=kuniPx[sy*GW+sx];if(v)any=true;ids[y*w+x]=v;}}return any?{w,h,ids}:null;};
 for(const L of levels){const cache=new Map(),get=(c,r)=>{const k=c+','+r;if(!cache.has(k)){cache.set(k,gunTile(L.factor,c,r));if(cache.size>8)cache.delete(cache.keys().next().value);}return cache.get(k);};

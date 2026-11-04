@@ -32,6 +32,12 @@ DISCLAIMER = ("The organisations in charge of the Copernicus programme by law or
 ENCODING = {"noData": 0, "offsetMetres": -500, "codesPerMetre": 4,
             "decode": "offsetMetres + (code - 1) / codesPerMetre"}
 PROJECTION_KEYS = ("K", "CX", "LON0", "LAT0", "origin", "stepUnits", "stepMetres")
+# 表示の平面（ランベルト正角円錐図法、game/map-projection.js）の格子。game/map/build/grid/grid.json と manifest.json の projection
+LCC_KEYS = ("type", "lon0", "lat0", "lat1", "lat2", "n", "unitsPerDegree", "origin", "stepUnits", "stepMetres")
+
+
+def projection_keys(projection):
+    return LCC_KEYS if projection.get("type") == "lcc" else PROJECTION_KEYS
 PNG_SIGNATURE = b"\x89PNG\r\n\x1a\n"
 
 
@@ -46,17 +52,19 @@ def digest(file):
 def load_grid(file, projection_file=None):
     grid = json.loads(file.read_text())
     projection = grid.get("projection", grid)
-    p = {key: projection[key] for key in PROJECTION_KEYS}
+    keys = projection_keys(projection)
+    p = {key: projection[key] for key in keys}
     width, height, tile = grid["width"], grid["height"], grid.get("tile", 1024)
     if (any(not isinstance(v, int) or isinstance(v, bool) or v <= 0 for v in (width, height, tile))
             or len(p["origin"]) != 2
-            or not all(math.isfinite(v) for key, value in p.items()
+            or not all(math.isfinite(v) for key, value in p.items() if key != "type"
                        for v in (value if key == "origin" else [value]))
-            or any(p[key] <= 0 for key in ("K", "CX", "stepUnits", "stepMetres"))):
+            or any(p[key] <= 0 for key in (("n", "unitsPerDegree") if keys is LCC_KEYS else ("K", "CX")) + ("stepUnits", "stepMetres"))):
         raise ValueError("Invalid grid dimensions or projection")
     if projection_file:
         reference = json.loads(projection_file.read_text())
-        if (any(reference.get(key) != p[key] for key in PROJECTION_KEYS)
+        reference = {**reference, **reference.get("projection", {})}  # grid.json は projection を入れ子に持つ
+        if (any(reference.get(key) != p[key] for key in keys)
                 or reference.get("width") != width or reference.get("height") != height):
             raise ValueError("Projection master differs from the grid manifest")
     return {**grid, "projection": p, "width": width, "height": height, "tile": tile}
@@ -139,6 +147,8 @@ class CopernicusInputs:
 
     def sample(self, grid, x, y, width, height, factor):
         p = grid["projection"]
+        if p.get("type") == "lcc":
+            raise ValueError("GeoTIFF conversion runs on the source grid (game/map/projection.json), not the display grid")
         step = p["stepUnits"] * factor
         lon = p["LON0"] + (p["origin"][0] + (np.arange(x, x + width) + .5) * step) / (p["K"] * p["CX"])
         lat = p["LAT0"] - (p["origin"][1] + (np.arange(y, y + height) + .5) * step) / p["K"]

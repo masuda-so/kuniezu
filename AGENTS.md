@@ -11,7 +11,7 @@
 
 ## ビルド・テスト・開発コマンド
 
-- 地図は `game/map/` に層ごとに置く。行政区分 `admin/`（郡）、支配 `control/`（城の支配域 `provinces.png` ほか）、自然 `physical/`（標高・川）、共有の `projection.json`、年代別の差分の入力 `edits/` が正本で、Git で管理する。配信物（`game/map/build/`）は追跡せず、`node tools/map/build-map.cjs`（陰影は `--height --python <NumPy・Pillow の Python>`）で生成する。生成物はコミットしない。ほかにビルドは無い。`game/` を静的ファイルとして配信し `index.html` を開く。サーバーの起動・停止は利用者のみが行い、エージェントは起動済みの `http://localhost:8000/index.html` に専用の一時ブラウザで接続する。
+- 地図は `game/map/` に層ごとに置く。行政区分 `admin/`（郡）、支配 `control/`（城の支配域 `provinces.png` ほか）、自然 `physical/`（標高・川）、共有の `projection.json`、年代別の差分の入力 `edits/` が正本で、Git で管理する。配信物（`game/map/build/`）は追跡せず、`node tools/map/build-map.cjs`（陰影は `--height --python <NumPy・Pillow の Python>`）で生成する。正本の格子は旧来の単純な平面のまま、生成の最初の段（`tools/map/reproject-grid.cjs`）で表示の平面（ランベルト正角円錐図法、`game/map-projection.js`）の格子 `build/grid/` へ写し、タイル・境界線・陰影はそこから作る。ゲーム側の座標は `TKGEO.project`／`unproject` を使い、投影の式を各モジュールに書かない（`docs/architecture/map-projection.md`）。生成物はコミットしない。ほかにビルドは無い。`game/` を静的ファイルとして配信し `index.html` を開く。サーバーの起動・停止は利用者のみが行い、エージェントは起動済みの `http://localhost:8000/index.html` に専用の一時ブラウザで接続する。
 - `node tools/checks/offline.cjs` — 構文・保存・史実進行の基本検査（CI の必須チェック `Offline checks`）。`node tools/checks/organization.cjs`、`node tools/checks/infrastructure.cjs` も CI で実行する。
 - `GAME_TEST_OUTPUT=data/verification/<担当名-対象名> node tools/checks/march-clock-browser.cjs` — 実画面の検査（起動済みサーバーが必要）。分野別の検査は `tools/checks/README.md` の表から選ぶ。
 - `node tools/work/tasks.cjs claim <対象ID> --owner <担当名> --files <ファイル>` — 担当の記録。完了条件を全て満たす場合だけ `complete`、引き継ぎだけなら `release`。

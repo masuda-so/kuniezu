@@ -1,7 +1,7 @@
 /* 街道の「ひげ」（行って戻る短い枝）の棚卸し。頂点で向きが160°以上反転し、その前後が同じ道筋を逆にたどる区間を拾う。
    検出は候補であり、史実の支線（城への取付路など）か描画の誤りかは史料で個別に判断する。自動で削除しない。 */
 const fs=require('node:fs'),path=require('node:path'),{G,TK,TKGEO}=require('./history-focus.cjs').model();
-const km=(a,b)=>Math.hypot(a[0]-b[0],a[1]-b[1])*111.32/TKGEO.K,ll=p=>[+(TKGEO.LON0+p[0]/TKGEO.K/TKGEO.CX).toFixed(5),+(TKGEO.LAT0-p[1]/TKGEO.K).toFixed(5)];
+const km=(a,b)=>Math.hypot(a[0]-b[0],a[1]-b[1])*111.32/TKGEO.K,ll=p=>TKGEO.unproject(p[0],p[1]).map(v=>+v.toFixed(5));
 const rows=[];
 for(const raw of G.ROADS){const p=TK.roadDisplay(raw).pts;
  for(let i=1;i<p.length-1;i++){const a=p[i-1],b=p[i],c=p[i+1],v1=[b[0]-a[0],b[1]-a[1]],v2=[c[0]-b[0],c[1]-b[1]],L1=Math.hypot(...v1),L2=Math.hypot(...v2);if(L1<1e-9||L2<1e-9)continue;

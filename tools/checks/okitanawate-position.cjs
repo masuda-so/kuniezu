@@ -1,7 +1,7 @@
 /* 森岳の代表点・市報告書・旧海上点を独立して照合する。 */
 const assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path');
 const {TK,TKGEO}=require('./history-focus.cjs').model();
-const world=([lon,lat])=>[(lon-TKGEO.LON0)*TKGEO.K*TKGEO.CX,(TKGEO.LAT0-lat)*TKGEO.K];
+const world=([lon,lat])=>TKGEO.project(lon,lat);
 function ringContains(r,p){let on=false;for(let i=0,j=r.length-2;i<r.length;j=i,i+=2)if((r[i+1]>p[1])!==(r[j+1]>p[1])&&p[0]<(r[j]-r[i])*(p[1]-r[i+1])/(r[j+1]-r[i+1])+r[i])on=!on;return on;}
 const onLand=point=>TKGEO.land.some(poly=>poly.reduce((on,r)=>on!==ringContains(r,world(point)),false));
 const sc=TK.BATTLES['沖田畷の戦い'],arima=sc.atlasGroups.find(g=>g.members.includes('arima'));

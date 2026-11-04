@@ -42,7 +42,7 @@
 
 ## 導入と使い方
 
-地図の正本は `game/map/` に層ごとに置き、Git で管理します。行政区分 `admin/`（郡）、支配 `control/`（城の支配域。Paradox 方式の `provinces.png` 全域1枚など）、自然 `physical/`（標高・川）、年代別の差分 `edits/` です。ブラウザへ配る分割タイル・境界線・河川の線・陰影（`game/map/build/` の生成物）はリポジトリに含めません。取得後と、正本や年代別の差分（`game/map/edits/*.json`）を変えた後に、一度生成してください（数分かかります）。
+地図の正本は `game/map/` に層ごとに置き、Git で管理します。行政区分 `admin/`（郡）、支配 `control/`（城の支配域。Paradox 方式の `provinces.png` 全域1枚など）、自然 `physical/`（標高・川）、年代別の差分 `edits/` です。ブラウザへ配る分割タイル・境界線・河川の線・陰影（`game/map/build/` の生成物）はリポジトリに含めません。正本は経緯度に比例する単純な格子ですが、画面の地図はランベルト正角円錐図法（中央経線 東経 135 度、標準緯線 北緯 30 度・42 度）で、生成の最初の段で正本を写します（`docs/architecture/map-projection.md`）。取得後と、正本や年代別の差分（`game/map/edits/*.json`）を変えた後に、一度生成してください（数分かかります）。
 
 ```sh
 node tools/map/build-map.cjs

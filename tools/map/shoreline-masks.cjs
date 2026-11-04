@@ -1,15 +1,15 @@
 /* 補正範囲を閉じる水上の辺を、物理的な岸線として描かないための生成時入力。 */
 const fs=require('node:fs');
-module.exports=function loadMasks(file,p){
+module.exports=function loadMasks(file,p){// p：平面の投影（game/map-projection.js の plane。project(経度,緯度)→[x,y]、unitsPerDegree）
  if(!fs.existsSync(file))return ()=>false;
  const data=JSON.parse(fs.readFileSync(file)),segments=[];
  if(data.type!=='FeatureCollection')throw Error('岸線マスクはFeatureCollection');
- const project=([lon,lat])=>[(lon-p.LON0)*p.K*p.CX,(p.LAT0-lat)*p.K];
+ const project=([lon,lat])=>p.project(lon,lat);
  for(const f of data.features){
   const meta=f.properties;
   if(meta.role!=='water-mask-boundary'||meta.drawCoastline!==false||!Number.isFinite(meta.bufferMetres)||meta.bufferMetres<0||f.geometry.type!=='LineString')throw Error('岸線マスクの形式が不正');
   if(f.geometry.coordinates.length<2||f.geometry.coordinates.some(q=>q.length!==2||!q.every(Number.isFinite)||Math.abs(q[0])>180||Math.abs(q[1])>90))throw Error('岸線マスクの経緯度が不正');
-  const line=f.geometry.coordinates.map(project),radius=meta.bufferMetres*p.K/111320;
+  const line=f.geometry.coordinates.map(project),radius=meta.bufferMetres*p.unitsPerDegree/111320;
   for(let i=1;i<line.length;i++)segments.push({a:line[i-1],b:line[i],radius});
  }
  const pointDistance=(p,a,b)=>{const dx=b[0]-a[0],dy=b[1]-a[1],length=dx*dx+dy*dy,t=length?Math.max(0,Math.min(1,((p[0]-a[0])*dx+(p[1]-a[1])*dy)/length)):0;return Math.hypot(p[0]-a[0]-t*dx,p[1]-a[1]-t*dy);};

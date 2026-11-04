@@ -23,8 +23,8 @@ for (const {id, x, y} of G.CL) {
   if (!water && matching.length === 1 && matching[0] === id) continue;
   issues.push({
     id,
-    longitude: TKGEO.LON0 + x / TKGEO.K / TKGEO.CX,
-    latitude: TKGEO.LAT0 - y / TKGEO.K,
+    longitude: TKGEO.unproject(x, y)[0],
+    latitude: TKGEO.unproject(x, y)[1],
     reason: water || (matching.length === 0 ? 'unassigned' :
       matching.length > 1 ? 'overlap' : 'other-castle'),
     regions: matching,

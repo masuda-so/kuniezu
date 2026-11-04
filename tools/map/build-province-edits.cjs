@@ -2,7 +2,9 @@
    期間の境目（各差分の validFrom・validUntil）で区切った半開区間ごとに一つの版を作り、game/map/build/edits/compiled/<開始>-<終了>/ に置く。
    差分の中身は二通り。
    ・面（payload.file＋feature）：GeoJSON の多角形の内側に画素中心が入る所を fromKey から toKey へ置き換える（旧 Python 版と同じ規則）。
-   ・型紙（payload.mask＋window）：100m 格子の窓 [列,行,幅,高さ] に合わせた PNG。画素の値 n（G が上位、B が下位）が 1 以上なら keys[n-1] を書く。
+   ・型紙（payload.mask＋window）：正本の 100m 格子の窓 [列,行,幅,高さ] に合わせた PNG。画素の値 n（G が上位、B が下位）が 1 以上なら keys[n-1] を書く。
+   差分の画素はどちらも正本の格子で決め、配信タイルの格子（円錐図法、game/map/build/grid/grid.json）へは、タイルの各画素が参照する正本の画素が
+   差分に含まれるかで写す（tools/map/grid-map.cjs。土台の写しと同じ規則なので穴や重なりが出ない）。
      from が 'land' なら元の画素が陸、'sea' なら海、'key:区画キー' なら元の区画キーも一致することを確かめる。
    同じ版の中で書き込みが重なる差分、基準版に適用済みの ID、元の値の食い違いは止める。400m・800m は基準版と同じく画素中心の最近傍。
    全部の版を作り終えてから一時置き場に書き、置き場ごと入れ替える（途中で止まっても配信中の版を壊さない）。
@@ -18,8 +20,13 @@ const ledger=JSON.parse(fs.readFileSync(path.join(edits,'baseline-ledger.json'),
 // 基準版は正本 game/map（provinces.png 全域1枚ほか）。読むのはそこから作った配信タイルなので、タイルが同じ正本から作られたことも確かめる。
 const baseProvincesSha256=md.sourceSha256();
 if(baseProvincesSha256!==ledger.sourceSha256)throw Error('正本 game/map が台帳と違う（土台を変えたら台帳と差分を見直す）');
-const m=JSON.parse(fs.readFileSync(path.join(dir,'manifest.json'),'utf8')),P=m.projection,[OX,OY]=P.origin,S=P.stepUnits,T=m.tile;
+const m=JSON.parse(fs.readFileSync(path.join(dir,'manifest.json'),'utf8')),T=m.tile;
 if(m.source?.sha256!==baseProvincesSha256)throw Error('配信タイルが正本と合わない。先に node tools/map/build-map-tiles.cjs');
+// 正本の格子（差分の画素はここで決める）と、配信タイルの格子。タイルが円錐図法（manifest の projection.type が lcc）なら
+// game/map/build/grid/grid.json を読んで写す。検査の固定具のように manifest が正本の格子そのものなら、そのまま（恒等）。
+const TKP=require('../../game/map-projection.js'),lcc=m.projection?.type==='lcc';
+const grid=lcc?md.grid.read():null,L=lcc?grid.source.legacy:m.projection,[OX,OY]=L.origin,S=L.stepUnits,mapRow=lcc?require('./grid-map.cjs')(grid):null;
+if(lcc&&m.grid?.sha256!==grid.files['provinces.png'].sha256)throw Error('配信タイルが円錐図法の格子と合わない。先に node tools/map/build-map-tiles.cjs');
 const defs=md.readDefinition().rows.filter(Boolean);
 const byKey=new Map(defs.map(d=>[d.key,d])),byRGB=new Map(defs.map(d=>[d.rgb.join(','),d]));
 const rgbOf=k=>{const d=byKey.get(k);if(!d)throw Error('未定義の区画 '+k);return d.rgb;};
@@ -45,11 +52,20 @@ function pixelsOf(e){const p=e.payload,out=[];
   if(p.maskSha256&&sha(fs.readFileSync(path.join(edits,p.mask)))!==p.maskSha256)throw Error('型紙のハッシュが違う: '+e.id);
   const rgbs=p.keys.map(rgbOf);for(let y=0;y<h;y++)for(let x=0;x<w;x++){const o=(y*w+x)*4,v=img.data[o+1]<<8|img.data[o+2];if(!v)continue;if(v>rgbs.length)throw Error('型紙の値が keys の外: '+e.id);out.push([c0+x,r0+y,rgbs[v-1],p.from]);}}
  else{const g=JSON.parse(fs.readFileSync(path.join(edits,p.file),'utf8')).features[p.feature].geometry;if(g.type!=='Polygon')throw Error('多角形ではない: '+e.id);
-  const rings=g.coordinates.map(r=>r.map(([lo,la])=>[(lo-P.LON0)*P.K*P.CX,(P.LAT0-la)*P.K]));
+  const rings=g.coordinates.map(r=>r.map(([lo,la])=>[(lo-L.LON0)*L.K*L.CX,(L.LAT0-la)*L.K]));// 正本の格子の平面（旧来の式。L は grid.json の source.legacy か固定具の manifest）
   const xs=rings[0].map(q=>q[0]),ys=rings[0].map(q=>q[1]);const c0=Math.floor((Math.min(...xs)-OX)/S),c1=Math.ceil((Math.max(...xs)-OX)/S),r0=Math.floor((Math.min(...ys)-OY)/S),r1=Math.ceil((Math.max(...ys)-OY)/S);
   const to=rgbOf(p.toKey);for(let r=r0;r<r1;r++)for(let c=c0;c<c1;c++)if(inside(rings,OX+(c+.5)*S,OY+(r+.5)*S))out.push([c,r,to,'key:'+p.fromKey]);}
  if(!out.length)throw Error('この縮尺で画素がない: '+e.id);return out;}
-const editPixels=new Map(list.map(e=>[e.id,pixelsOf(e)]));
+// 正本の格子の画素 [列,行,RGB,条件] を、配信タイルの格子の画素へ写す
+function toGrid(src){if(!lcc)return src;const set=new Map(src.map(p=>[p[0]+','+p[1],p]));let c0=Infinity,r0=Infinity,c1=-Infinity,r1=-Infinity;for(const [c,r] of src){if(c<c0)c0=c;if(r<r0)r0=r;if(c>c1)c1=c;if(r>r1)r1=r;}
+ // 正本の窓の四辺を円錐図法の平面へ写した外接長方形（画素の角）
+ let x0=Infinity,y0=Infinity,x1=-Infinity,y1=-Infinity;const probe=(c,r)=>{const [x,y]=TKP.fromLegacy(OX+c*S,OY+r*S);if(x<x0)x0=x;if(y<y0)y0=y;if(x>x1)x1=x;if(y>y1)y1=y;};
+ for(let c=c0;c<=c1+1;c++){probe(c,r0);probe(c,r1+1);}for(let r=r0;r<=r1+1;r++){probe(c0,r);probe(c1+1,r);}
+ const [GX,GY]=grid.projection.origin,GS=grid.projection.stepUnits,gc0=Math.max(0,Math.floor((x0-GX)/GS)-1),gc1=Math.min(grid.width-1,Math.ceil((x1-GX)/GS)+1),gr0=Math.max(0,Math.floor((y0-GY)/GS)-1),gr1=Math.min(grid.height-1,Math.ceil((y1-GY)/GS)+1);
+ const cols=new Int32Array(grid.width),rows=new Int32Array(grid.width),out=[];
+ for(let r=gr0;r<=gr1;r++){mapRow(r,cols,rows);for(let c=gc0;c<=gc1;c++){const p=set.get(cols[c]+','+rows[c]);if(p)out.push([c,r,p[2],p[3]]);}}
+ return out;}
+const editPixels=new Map(list.map(e=>{const px=toGrid(pixelsOf(e));if(!px.length)throw Error('配信タイルの格子で画素がない: '+e.id);return [e.id,px];}));
 // 書き出し
 const crcT=new Int32Array(256).map((_,n)=>{let c=n;for(let k=0;k<8;k++)c=c&1?0xedb88320^(c>>>1):c>>>1;return c;});
 const crc=b=>{let c=-1;for(const x of b)c=crcT[(c^x)&255]^(c>>>8);return (c^-1)>>>0;};

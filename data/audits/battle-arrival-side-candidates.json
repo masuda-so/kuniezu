@@ -1,9 +1,9 @@
 {
   "scope": "画面用の連続移動を有効にした照合候補。範囲外・不対応は史実上の遅着や不在の証明ではない。",
   "visualTrackingEnabled": true,
-  "bothSidesUnmatched": 7,
-  "oneSideUnmatched": 85,
-  "someSideOutsideFrame": 15,
+  "bothSidesUnmatched": 11,
+  "oneSideUnmatched": 82,
+  "someSideOutsideFrame": 7,
   "candidates": [
     {
       "title": "桶狭間の戦い",
@@ -120,9 +120,7 @@
       "unmatchedSides": [
         "b"
       ],
-      "sidesOutsideFrame": [
-        "a"
-      ]
+      "sidesOutsideFrame": []
     },
     {
       "title": "第二次上田合戦",
@@ -161,9 +159,7 @@
       "unmatchedSides": [
         "b"
       ],
-      "sidesOutsideFrame": [
-        "a"
-      ]
+      "sidesOutsideFrame": []
     },
     {
       "title": "高遠城の戦い",
@@ -533,9 +529,7 @@
       "unmatchedSides": [
         "b"
       ],
-      "sidesOutsideFrame": [
-        "a"
-      ]
+      "sidesOutsideFrame": []
     },
     {
       "title": "中国攻め",
@@ -568,15 +562,14 @@
       "date": {
         "y": 1578,
         "m": 8,
-        "d": 1
+        "d": 8
       },
       "noncombat": false,
       "unmatchedSides": [
+        "a",
         "b"
       ],
-      "sidesOutsideFrame": [
-        "a"
-      ]
+      "sidesOutsideFrame": []
     },
     {
       "title": "第二次木津川口の戦い",
@@ -608,16 +601,15 @@
       "title": "有岡城の戦い",
       "date": {
         "y": 1579,
-        "m": 11,
-        "d": 19
+        "m": 12,
+        "d": 7
       },
       "noncombat": false,
       "unmatchedSides": [
+        "a",
         "b"
       ],
-      "sidesOutsideFrame": [
-        "a"
-      ]
+      "sidesOutsideFrame": []
     },
     {
       "title": "三木の干殺し",
@@ -642,11 +634,10 @@
       },
       "noncombat": false,
       "unmatchedSides": [
+        "a",
         "b"
       ],
-      "sidesOutsideFrame": [
-        "a"
-      ]
+      "sidesOutsideFrame": []
     },
     {
       "title": "天正伊賀の乱",
@@ -867,10 +858,10 @@
         "d": 24
       },
       "noncombat": false,
-      "unmatchedSides": [],
-      "sidesOutsideFrame": [
+      "unmatchedSides": [
         "a"
-      ]
+      ],
+      "sidesOutsideFrame": []
     },
     {
       "title": "新発田城落城",
@@ -1168,15 +1159,14 @@
       "date": {
         "y": 1600,
         "m": 10,
-        "d": 1
+        "d": 2
       },
       "noncombat": false,
       "unmatchedSides": [
+        "a",
         "b"
       ],
-      "sidesOutsideFrame": [
-        "a"
-      ]
+      "sidesOutsideFrame": []
     },
     {
       "title": "石垣原の戦い",
@@ -1212,7 +1202,7 @@
       "date": {
         "y": 1614,
         "m": 12,
-        "d": 20
+        "d": 19
       },
       "noncombat": false,
       "unmatchedSides": [

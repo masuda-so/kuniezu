@@ -9,7 +9,7 @@ function snapshot(t,phase){const out=[];G._visualSampleTime=t;try{
   const p=G.historyPoint(u);out.push({id:u.id,samplePhase:phase,title:u.until||u.historyTitle||null,clan:u.clan,names:u.commanders||u.gens.map(id=>G.gen(id)?.n).filter(Boolean),state:u.state,schedule:u.schedule&&{start:u.schedule.start,end:u.schedule.end},record:u.record?.id,troops:u.troops,point:p?.slice(0,2),path:u.path});
  }
 }finally{delete G._visualSampleTime;}return out;}
-function inside(point,bounds){if(!point||!bounds)return null;const [lo,la]=[TKGEO.LON0+point[0]/TKGEO.K/TKGEO.CX,TKGEO.LAT0-point[1]/TKGEO.K];return lo>=bounds[0]&&lo<=bounds[2]&&la<=bounds[1]&&la>=bounds[3];}
+function inside(point,bounds){if(!point||!bounds)return null;const [lo,la]=TKGEO.unproject(point[0],point[1]);return lo>=bounds[0]&&lo<=bounds[2]&&la<=bounds[1]&&la>=bounds[3];}
 function classify(title,armies){const b=TK.BATTLES[title],bounds=TK.BATTLE_ATLAS[title]?.bounds,units=[],sides={a:{direct:[],clanOnly:[],inFrame:[],locatedGroups:0,unlocatedGroups:0},b:{direct:[],clanOnly:[],inFrame:[],locatedGroups:0,unlocatedGroups:0}};
  for(const g of b.atlasGroups||[])if(sides[g.side])sides[g.side][g.point?'locatedGroups':'unlocatedGroups']++;
  const names=new Set(b.units.map(v=>canonical(v.g||v.n)));

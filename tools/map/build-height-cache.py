@@ -104,7 +104,8 @@ def build(grid_file, master_input, projection_file, output, *, previous=None, qu
                 heights, shades = stage / f"height-{factor}", stage / f"shade-{factor}"
                 hm = height.build(grid, master, heights, None, factor, from_heightmap=True, projection_file=projection)
                 sm = shade.build(grid, heights, shades)
-                sm.update({"sourceHeightmapSha256": hm["sourceHeightmapSha256"],
+                sm.update({"projection": hm["projection"],  # 実行時に配信タイルの格子と同じ投影か確かめる
+                           "sourceHeightmapSha256": hm["sourceHeightmapSha256"],
                            "sourceHeightmapMetadataSha256": hm["sourceHeightmapManifestSha256"],
                            "projectionSha256": input_hashes[projection_file]})
                 for tile in sm["tiles"]:

@@ -59,19 +59,20 @@ function landFor(z){const lv=Math.max(-3,Math.min(3,Math.floor(Math.log2(Math.ma
  COAST.set(p,coastPath(simp(GEO.land)));landLOD.set(lv,p);return p;}
 // 海岸の縁取り：陸地の輪郭のうち、データの切り口（TKGEO.landCuts の直線上の辺）を引かない。切り口は本来の海岸ではない。
 const COAST=new WeakMap();
-function coastPath(arr){const cut=GEO.landCuts||{x:[],y:[]},onX=v=>cut.x.some(c=>Math.abs(v-c)<.02),onY=v=>cut.y.some(c=>Math.abs(v-c)<.02),p=new Path2D();
- for(const poly of arr)for(let ring of poly){ring=chaikin(ring,true,1);const n=ring.length/2;let pen=false;
+// 切り口は旧平面（正本の格子）の直線なので、判定は旧平面へ戻して行う（新平面では曲線になる）
+function coastPath(arr){const cut=GEO.landCuts||{x:[],y:[]},onX=v=>cut.x.some(c=>Math.abs(v-c)<.03),onY=v=>cut.y.some(c=>Math.abs(v-c)<.03),p=new Path2D();
+ for(const poly of arr)for(let ring of poly){ring=chaikin(ring,true,1);const n=ring.length/2;let pen=false;const lg=new Float64Array(ring.length);for(let i=0;i<ring.length;i+=2){const q=GEO.toLegacy(ring[i],ring[i+1]);lg[i]=q[0];lg[i+1]=q[1];}
   for(let i=0;i<n;i++){const a=i*2,b=((i+1)%n)*2,x0=ring[a],y0=ring[a+1],x1=ring[b],y1=ring[b+1];
-   const skip=(Math.abs(y0-y1)<1e-6&&onY(y0))||(Math.abs(x0-x1)<1e-6&&onX(x0));if(skip){pen=false;continue;}if(!pen){p.moveTo(x0,y0);pen=true;}p.lineTo(x1,y1);}}
+   const skip=(Math.abs(lg[a+1]-lg[b+1])<.01&&onY(lg[a+1]))||(Math.abs(lg[a]-lg[b])<.01&&onX(lg[a]));if(skip){pen=false;continue;}if(!pen){p.moveTo(x0,y0);pen=true;}p.lineTo(x1,y1);}}
  return p;}
 let LANDV=null;
 (window.requestIdleCallback||(f=>setTimeout(f,200)))(function warm(dl){for(const lv of [-3,-2,-1,0,1,2,3]){if(!landLOD.has(lv)||!roadLOD.has(lv)){landFor(2**lv);roadsFor(2**lv);if(dl?.timeRemaining&&dl.timeRemaining()<5){(window.requestIdleCallback||(f=>setTimeout(f,200)))(warm);return;}}}});
-const LAKES=P2(GEO.lakes,1),RIVERS=L2(GEO.rivers.filter(r=>!TK.KOREAN_RIVERS_DETAIL?.length||!r.every((v,i)=>i%2?GEO.LAT0-v/GEO.K>34.8:v/GEO.K/GEO.CX+GEO.LON0>124&&v/GEO.K/GEO.CX+GEO.LON0<131)),1),PBORD=L2(GEO.pborders,2);
+const LAKES=P2(GEO.lakes,1),RIVERS=L2(GEO.rivers.filter(r=>!TK.KOREAN_RIVERS_DETAIL?.length||!GEO.inKoreaBox(r)),1),PBORD=L2(GEO.pborders,2);
 const EDGES_V=GEO.edges.map(([a,b,ls])=>({a,b,p:L2(ls,2)}));
 const REGIONAL_RIVERS=TK.regionalRiverRecords(TK.REGIONAL_RIVERS||[],TK.KOREAN_RIVERS_DETAIL||[],G.PJ);
 const regionalDetailRows=new Set(REGIONAL_RIVERS.flatMap(r=>r.detailRows));
 // 地域に関係なく、投影済み河川へ同じ可視判定・丸め・線幅を使う。
-const riverLines=[...(TK.JAPAN_RIVERS_OSM?.rivers||[]).map(r=>r.points.map(p=>G.PJ(...p))),...GEO.rivers.filter(r=>!r.every((v,i)=>i%2?GEO.LAT0-v/GEO.K>34.8:v/GEO.K/GEO.CX+GEO.LON0>124&&v/GEO.K/GEO.CX+GEO.LON0<131)).map(r=>Array.from({length:r.length/2},(_,i)=>[r[i*2],r[i*2+1]])),...(TK.KOREAN_RIVERS_DETAIL||[]).filter(r=>!regionalDetailRows.has(r)).map(r=>r.points.map(p=>G.PJ(...p)))].map(TK.riverGeometry);
+const riverLines=[...(TK.JAPAN_RIVERS_OSM?.rivers||[]).map(r=>r.points.map(p=>G.PJ(...p))),...GEO.rivers.filter(r=>!GEO.inKoreaBox(r)).map(r=>Array.from({length:r.length/2},(_,i)=>[r[i*2],r[i*2+1]])),...(TK.KOREAN_RIVERS_DETAIL||[]).filter(r=>!regionalDetailRows.has(r)).map(r=>r.points.map(p=>G.PJ(...p)))].map(TK.riverGeometry);
 const riverPathCache=new WeakMap();
 function riverView(){const a=s2w(0,0),b=s2w(VW,VH);return [a[0],a[1],b[0],b[1]];}
 function riverPath(r,z){let cached=riverPathCache.get(r);if(!cached||cached.z!==z){const path=new Path2D();TK.riverPath(path,r.points,2/z);cached={z,path};riverPathCache.set(r,cached);}return cached.path;}
@@ -146,7 +147,7 @@ function familyMarkHTML(k,size=22){const r=G.kamonRecord(k);if(r)return `<span c
 function kamonHTML(k,size=26){const r=G.kamonRecord(k);return r?`<img class="kamon" src="${esc(G.kamonDisplaySource(k))}" width="${size}" height="${size}" alt="${esc(G.CN(k))}の家紋">`:'';}
 /* ===== カメラ ===== */
 const base=$('#base'),top_=$('#top'),bctx=base.getContext('2d'),tctx=top_.getContext('2d');
-const cam={x:GEO.W*.55,y:GEO.H*.52,z:.4};let DPR=1,VW=0,VH=0;
+const cam={x:GEO.X0+GEO.W*.55,y:GEO.Y0+GEO.H*.52,z:.4};let DPR=1,VW=0,VH=0;
 function resize(){DPR=Math.min(2,devicePixelRatio||1);VW=base.clientWidth;VH=base.clientHeight;for(const c of [base,top_]){const w=Math.round(VW*DPR),h=Math.round(VH*DPR);if(c.width!==w)c.width=w;if(c.height!==h)c.height=h;}U.baseDirty=true;}
 addEventListener('resize',()=>{TL.sig='';});addEventListener('resize',()=>{resize();if(U.mode==='title')fitTitle();else clampCam();});
 let tlNode=null;function narrowTL(){tlNode=tlNode||document.getElementById('tline');return !tlNode||tlNode.hidden||document.body.classList.contains('narrowSel');}
@@ -166,7 +167,7 @@ function clampCam(){const c=vc(),CW=CONT.x1-CONT.x0,CH=CONT.y1-CONT.y0;
  // 範囲の外（正本の画像の外）は見せない。非対称のパネル配置でも背景を画面全体へ収め、各端は画面原点からの距離で制限する。
  cam.x=Math.max(CONT.x0+c[0]/cam.z,Math.min(CONT.x1-(VW-c[0])/cam.z,cam.x));
  cam.y=Math.max(CONT.y0+c[1]/cam.z,Math.min(CONT.y1-(VH-c[1])/cam.z,cam.y));U.baseDirty=true;syncZoomControl();}
-const CONT={x0:-1045,x1:3163.7675,y0:-761.604,y1:3459.7398};
+const CONT={x0:GEO.X0,x1:GEO.X0+GEO.W,y0:GEO.Y0,y1:GEO.Y0+GEO.H};// 旧平面の範囲を新平面へ写した外接長方形（読み込み前の仮の値）
 // 地図の表示範囲は正本の画像（game/map/control/provinces.png）が覆う範囲に合わせる。読み込むまでは上の値（画像を作った時の基準）。
 // 遼陽など西端・北端に近い所も、最大倍率で年表の外に出せる。
 function syncContToSource(){const b=window.TKRaster?.bounds?.();if(!b||CONT.x0===b.x0&&CONT.y0===b.y0&&CONT.x1===b.x1&&CONT.y1===b.y1)return;Object.assign(CONT,b);if(VW>0&&VH>0)clampCam();}
@@ -295,7 +296,7 @@ const LANDLAYERS=[];function landLayer(c,n=0){const w=c.canvas.width,h=c.canvas.
 let rasterLand=null;
 function maskedLayer(c,draw,op){const L=landLayer(c,2);L.setTransform(c.getTransform());L.lineCap=c.lineCap;L.lineJoin=c.lineJoin;draw(L);L.setTransform(1,0,0,1,0,0);L.globalCompositeOperation=op;L.drawImage(rasterLand.canvas,0,0);L.globalCompositeOperation='source-over';c.save();c.setTransform(1,0,0,1,0,0);c.globalAlpha=1;c.drawImage(L.canvas,0,0);c.restore();}
 function onLand(c,draw){if(rasterLand?.base!==c.canvas){c.save();c.clip(LANDV);draw(c);c.restore();return;}maskedLayer(c,draw,'destination-in');}
-function offLand(c,draw){if(rasterLand?.base!==c.canvas){if(!SEAMASK||SEAMASK.land!==LANDV){SEAMASK=new Path2D();SEAMASK.rect(-3000,-3000,8000,8000);SEAMASK.addPath(LANDV);SEAMASK.land=LANDV;}c.save();c.clip(SEAMASK,'evenodd');draw(c);c.restore();return;}maskedLayer(c,draw,'destination-out');}
+function offLand(c,draw){if(rasterLand?.base!==c.canvas){if(!SEAMASK||SEAMASK.land!==LANDV){SEAMASK=new Path2D();SEAMASK.rect(-9000,-9000,18000,18000);SEAMASK.addPath(LANDV);SEAMASK.land=LANDV;}c.save();c.clip(SEAMASK,'evenodd');draw(c);c.restore();return;}maskedLayer(c,draw,'destination-out');}
 function paintBase(c,pad=0){LANDV=landFor(cam.z);rasterLand=null;
  const cc=vc();c.setTransform(1,0,0,1,0,0);c.clearRect(0,0,c.canvas.width,c.canvas.height);
  c.fillStyle='#e2dac6';c.fillRect(0,0,c.canvas.width,c.canvas.height);

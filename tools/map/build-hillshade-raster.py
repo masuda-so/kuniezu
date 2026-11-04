@@ -74,9 +74,13 @@ def build(grid_file, heights, output):
             neighbour = read(col + dc, line + dr)
             if neighbour is not None:
                 halo[destination] = neighbour[edge]
-        latitude = projection["LAT0"] - (projection["origin"][1] +
-            (line * tile_size + np.arange(center.shape[0]) + .5) * projection["stepUnits"] * factor) / projection["K"]
-        metres_x = metres * np.cos(np.deg2rad(latitude))[:, None] / projection["CX"]
+        if projection.get("type") == "lcc":
+            # 正角図法なので画素は縦横同じ長さ（縮尺係数は標準緯線の間で 1 から 1.5% 以内。陰影には効かない）
+            metres_x = metres
+        else:
+            latitude = projection["LAT0"] - (projection["origin"][1] +
+                (line * tile_size + np.arange(center.shape[0]) + .5) * projection["stepUnits"] * factor) / projection["K"]
+            metres_x = metres * np.cos(np.deg2rad(latitude))[:, None] / projection["CX"]
         dx = gradient(halo[1:-1, :-2], center, halo[1:-1, 2:], metres_x)
         dy = gradient(halo[:-2, 1:-1], center, halo[2:, 1:-1], metres)
         light = (dx * .5 + dy * .5 + .7071) / np.sqrt(dx * dx + dy * dy + 1)

@@ -9,7 +9,7 @@ G.build=function(){
  TK.CASTLES.forEach((a,idx)=>{const p=geo.cpos[a[0]];
   const o={id:a[0],n1:a[1],n2:a[2]||a[1],prov:a[3],x:p[0],y:p[1],bx:p[0],by:p[1],koku:a[6],shogyo:a[7],dur:a[8],snow:!!a[9],idx};G.C[o.id]=o;G.CL.push(o);});
  // 城の位置の補正（史実の場所が領域の中にあるときだけ）
- const PJ0=(lon,lat)=>[(lon-129.2)*200*Math.cos(36*Math.PI/180),(41.75-lat)*200];
+ const PJ0=(lon,lat)=>geo.project(lon,lat);// 地図平面（ランベルト正角円錐図法、plane-migrate.js が用意する）
  const inT=(id,x,y)=>{const T=geo.terr[id];if(!T)return false;let c=false;for(const poly of T)for(const r of poly){for(let i=0,j=r.length-2;i<r.length;j=i,i+=2){const xi=r[i],yi=r[i+1],xj=r[j],yj=r[j+1];if(((yi>y)!=(yj>y))&&(x<(xj-xi)*(y-yi)/(yj-yi)+xi))c=!c;}}return c;};
  for(const [id,lon,lat] of (TK.CASTLE_FIX||[])){const C=G.C[id];if(!C)continue;const [x,y]=PJ0(lon,lat);if(inT(id,x,y)){C.x=C.bx=x;C.y=C.by=y;}}
  G.YOSHO=(TK.YOSHO||[]).map(([n,kind,lon,lat,desc,y0,y1])=>{const [x,y]=PJ0(lon,lat);let at=null;for(const id in geo.terr)if(inT(id,x,y)){at=id;break;}if(!at){let bd=1e9;for(const C of G.CL){const d=Math.hypot(C.x-x,C.y-y);if(d<bd){bd=d;at=C.id;}}}return {id:TK.SITE_STABLE_IDS?.[n]||'yosho:'+n+':'+lon+':'+lat,n,kind,x,y,desc,at,y0,y1};});
@@ -23,7 +23,7 @@ G.build=function(){
  geo.edges.forEach(e=>addE(e[0],e[1],false));
  TK.SEA_LINKS.forEach(([a,b])=>addE(a,b,true));
  // 街道：史実の往還を経緯度で引き、その近くを通る城と城の道は速く進める
- const PJ=(lon,lat)=>[(lon-129.2)*200*Math.cos(36*Math.PI/180),(41.75-lat)*200];G.PJ=PJ;
+ const PJ=(lon,lat)=>geo.project(lon,lat);G.PJ=PJ;
  // 街道の折れ線を、角を落としたなめらかな曲線にする（端の点は動かさない）
  // 街道は、記した宿場・峠の点を必ず通る曲線（向心 Catmull-Rom）でつなぐ。角を削らないので、道がずれず、山道の曲がりも残る
  const spline=(P)=>{if(P.length<3)return P;const o=[P[0]];const ext=[[2*P[0][0]-P[1][0],2*P[0][1]-P[1][1]],...P,[2*P[P.length-1][0]-P[P.length-2][0],2*P[P.length-1][1]-P[P.length-2][1]]];

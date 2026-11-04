@@ -17,12 +17,17 @@ assert.equal(ihdr.readUInt32BE(16),proj.width);assert.equal(ihdr.readUInt32BE(20
 // 旧来の置き場は廃止
 for(const f of ['game/map_data','data/map']){const d=path.join(root,f);assert.ok(!fs.existsSync(d)||!fs.readdirSync(d).length,'旧来の置き場が残る: '+f);}
 for(const f of ['manifest.json','provinces','edges.json','versions.json','rivers-lines.json','relief.json'])assert.ok(!fs.existsSync(path.join(root,'game/map',f)),'生成物は game/map/build に置く: game/map/'+f);
-// 配信タイル：manifest の確認値どおりで余分がなく、正本から作り直したものと一致
+// 円錐図法の格子（正本を写したもの）：grid.json が今の正本・投影どおり
+const grid=MD.grid.read();assert.equal(grid.projection.type,'lcc','配信の格子はランベルト正角円錐図法');
+const TKP=require('../../game/map-projection.js');for(const k of ['lon0','lat0','lat1','lat2'])assert.equal(grid.projection[k],TKP.params[k],'grid.json の '+k+' が game/map-projection.js と同じ');
+execFileSync(process.execPath,['--max-old-space-size=4000',path.join(root,'tools/map/reproject-grid.cjs'),'--check'],{stdio:'inherit'});
+// 配信タイル：manifest の確認値どおりで余分がなく、円錐図法の格子から作り直したものと一致
 const m=JSON.parse(fs.readFileSync(path.join(dir,'manifest.json'),'utf8'));assert.equal(m.source?.sha256,MD.sourceSha256(),'配信タイルの元が今の正本');
+assert.equal(m.grid?.sha256,grid.files['provinces.png'].sha256,'配信タイルの元が今の円錐図法の格子');assert.deepEqual(m.projection,grid.projection,'manifest の投影は grid.json と同じ');
 for(const L of [{dir:'provinces',tiles:m.tiles},...m.levels]){for(const t of L.tiles)assert.equal(sha(fs.readFileSync(path.join(dir,L.dir,t.file))),t.sha256,L.dir+'/'+t.file);
  assert.equal(fs.readdirSync(path.join(dir,L.dir)).length,L.tiles.length,'余分なタイルがない: '+L.dir);}
 execFileSync(process.execPath,['--max-old-space-size=4000',path.join(root,'tools/map/build-map-tiles.cjs'),'--check'],{stdio:'inherit'});
-// 区画ごとの画素数（build-map-tiles.cjs の集計）。湖は水域の見直しで外されることがある（例：塩津潟の旧輪郭）ので0画素を許す。
+// 区画ごとの画素数（reproject-grid.cjs が正本を読みながら集計）。湖は水域の見直しで外されることがある（例：塩津潟の旧輪郭）ので0画素を許す。
 const px=JSON.parse(fs.readFileSync(path.join(root,'data/audits/raster-province-pixels.json'),'utf8'));assert.equal(px.source,MD.sourceSha256(),'画素数の集計が今の正本から');
 for(const p of px.provinces)if(p.key.startsWith('castle:')||p.key.startsWith('neutral:'))assert.ok(p.pixels>0,'province has pixels: '+p.key);
 // 郡：郡画像（game/map/admin/gun.png、全域1枚）と郡と城の対応（game/map/control/gun-assignment.csv）の確認値、全郡に割り当ての根拠、castle-point と same-province の郡は城の領域

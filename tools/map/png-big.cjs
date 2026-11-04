@@ -1,6 +1,7 @@
 /* 全域1枚の大きな PNG（provinces.png・gun.png など、20,782×24,288 画素）を、全体を一度に持たずに行ごとに読み書きする。依存なし。
    書き：writeRGB(ファイル, 幅, 高さ, y => 幅×3 バイトの Buffer) … フィルタ0、zlib を流しながら IDAT を 1MiB ずつ書く。
-   読み：readRGB(ファイル, (y, 行の RGB Buffer) => void) … 8bit の RGB/RGBA、非インターレース。フィルタ0〜4に対応。 */
+   読み：readRGB(ファイル, (y, 行の RGB Buffer) => void[, ctl]) … 8bit の RGB/RGBA、非インターレース。フィルタ0〜4に対応。
+   ctl を渡すと ctl.pause()・ctl.resume() で読みを止め・再開できる（行の消費が追いつかない時の逆圧）。readGray16 も同じ。 */
 const fs=require('node:fs'),zlib=require('node:zlib');
 const crcT=new Int32Array(256).map((_,n)=>{let c=n;for(let k=0;k<8;k++)c=c&1?0xedb88320^(c>>>1):c>>>1;return c;});
 const crc=(b,c=-1)=>{for(let i=0;i<b.length;i++)c=crcT[(c^b[i])&255]^(c>>>8);return c;};
@@ -18,9 +19,9 @@ async function writeRGB(file,W,H,rowAt,level=9){
   if(!def.write(Buffer.from(line)))await new Promise(r=>def.once('drain',r));}
  def.end();await done;flush();fs.writeSync(fd,chunk('IEND',Buffer.alloc(0)));fs.closeSync(fd);fs.renameSync(file+'.part',file);}
 
-async function readRGB(file,onRow){
+async function readRGB(file,onRow,ctl){
  const fd=fs.openSync(file,'r'),head=Buffer.alloc(8);fs.readSync(fd,head,0,8,0);if(head.readUInt32BE(0)!==0x89504e47)throw Error('PNG ではない: '+file);
- let pos=8,W=0,H=0,bpp=3;const inf=zlib.createInflate();let stride=0,buf=Buffer.alloc(0),y=0,prev=null;
+ let pos=8,W=0,H=0,bpp=3;const inf=zlib.createInflate();if(ctl){ctl.pause=()=>inf.pause();ctl.resume=()=>inf.resume();}let stride=0,buf=Buffer.alloc(0),y=0,prev=null;
  const rows=new Promise((ok,ng)=>{inf.on('data',d=>{buf=buf.length?Buffer.concat([buf,d]):d;
   while(buf.length>=stride+1&&y<H){const f=buf[0],cur=Buffer.from(buf.subarray(1,stride+1));buf=buf.subarray(stride+1);
    for(let x=0;x<stride;x++){const a=x>=bpp?cur[x-bpp]:0,b=prev?prev[x]:0,c=x>=bpp&&prev?prev[x-bpp]:0;let v=cur[x];
@@ -35,8 +36,8 @@ async function readRGB(file,onRow){
  inf.end();await rows;fs.closeSync(fd);if(y!==H)throw Error(`行が足りない ${y}/${H}`);return {width:W,height:H};}
 
 // 16bit 灰色（標高の正本 heightmap.png）を行ごとに読む。onRow(y, Uint16Array) … 非インターレース、フィルタ0〜4。
-async function readGray16(file,onRow){
- const fd=fs.openSync(file,'r');let pos=8,W=0,H=0,stride=0,buf=Buffer.alloc(0),y=0,prev=null;const bpp=2,inf=zlib.createInflate();
+async function readGray16(file,onRow,ctl){
+ const fd=fs.openSync(file,'r');let pos=8,W=0,H=0,stride=0,buf=Buffer.alloc(0),y=0,prev=null;const bpp=2,inf=zlib.createInflate();if(ctl){ctl.pause=()=>inf.pause();ctl.resume=()=>inf.resume();}
  const rows=new Promise((ok,ng)=>{inf.on('data',d=>{buf=buf.length?Buffer.concat([buf,d]):d;
   while(buf.length>=stride+1&&y<H){const f=buf[0],cur=Buffer.from(buf.subarray(1,stride+1));buf=buf.subarray(stride+1);
    for(let x=0;x<stride;x++){const a=x>=bpp?cur[x-bpp]:0,b=prev?prev[x]:0,c=x>=bpp&&prev?prev[x-bpp]:0;let v=cur[x];
@@ -49,4 +50,8 @@ async function readGray16(file,onRow){
   else if(type==='IDAT'){const d=Buffer.alloc(len);fs.readSync(fd,d,0,len,pos+8);if(!inf.write(d))await new Promise(r=>inf.once('drain',r));}
   else if(type==='IEND')break;pos+=12+len;}
  inf.end();await rows;fs.closeSync(fd);if(y!==H)throw Error(`行が足りない ${y}/${H}`);return {width:W,height:H};}
-module.exports={writeRGB,readRGB,readGray16};
+// 全域1枚の PNG から窓 [x0,y0)〜[x1,y1) の画素だけを取り出す（行ごとに読み、窓の外は捨てる）。返り値 {x0,y0,w,h,rgb}。検査が正本の局所を見る時に使う
+async function readRGBWindow(file,x0,y0,x1,y1){const w=x1-x0,h=y1-y0,rgb=Buffer.alloc(w*h*3);
+ const info=await readRGB(file,(y,row)=>{if(y<y0||y>=y1)return;row.copy(rgb,(y-y0)*w*3,x0*3,x1*3);});
+ if(x1>info.width||y1>info.height)throw Error('窓が画像の外');return {x0,y0,w,h,rgb,at(x,y){const o=((y-y0)*w+(x-x0))*3;return x<x0||x>=x1||y<y0||y>=y1?null:[rgb[o],rgb[o+1],rgb[o+2]];}};}
+module.exports={writeRGB,readRGB,readGray16,readRGBWindow};

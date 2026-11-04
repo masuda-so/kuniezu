@@ -4,7 +4,9 @@
 
 地点・街道の入力は経緯度を基準にし、ゲーム地図は独自の平面変換で描く。入力の配列順は `[経度, 緯度]`、単位は十進度。緯度経度の採用と、その地点・年代の史実照合済みという判定は別である。
 
-`game/engine.js` の `G.PJ(lon,lat)` と `TKGEO` の定数は現在以下に対応する。
+地図平面は 2026-11-04 からランベルト正角円錐図法（`game/map-projection.js`、`docs/architecture/map-projection.md`）。`game/engine.js` の `G.PJ(lon,lat)` と `TKGEO.project`／`TKGEO.unproject` がその式で、各モジュールに式を書かない。
+
+旧来の簡易平面（正本 `game/map/projection.json` の格子はこれのまま）は次のとおりで、`TKGEO.K`・`CX`・`LON0`・`LAT0` はこの定数。`geo.js` から `plane-migrate.js` の直前までのモジュールは、この定数で旧平面の座標を作り、`plane-migrate.js` が一度だけ新平面へ変換する。
 
 ```
 x = (lon - 129.2) * 200 * cos(36度)

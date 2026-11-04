@@ -595,18 +595,30 @@
     },
     {
       "order": 89,
-      "file": "game/raster-map.js",
+      "file": "game/map-projection.js",
       "area": "ui-assets",
       "generatedByCandidates": []
     },
     {
       "order": 90,
-      "file": "game/ui.js",
+      "file": "game/plane-migrate.js",
       "area": "ui-assets",
       "generatedByCandidates": []
     },
     {
       "order": 91,
+      "file": "game/raster-map.js",
+      "area": "ui-assets",
+      "generatedByCandidates": []
+    },
+    {
+      "order": 92,
+      "file": "game/ui.js",
+      "area": "ui-assets",
+      "generatedByCandidates": []
+    },
+    {
+      "order": 93,
       "file": "game/kb.js",
       "area": "history",
       "generatedByCandidates": []

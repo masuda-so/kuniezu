@@ -9,7 +9,9 @@ window.TKTerrain=(function(){
  function settled(){const next=signature();if(next!==readySignature){readySignature=next;revision++;if(window.TKUI&&!TKUI.modal)TKUI.baseDirty=true;}}
  const sourceCoverage=new Map();
  function setCoverage(provider,polygons){const boxes=polygons.map(poly=>{let x0=Infinity,y0=Infinity,x1=-Infinity,y1=-Infinity;const ring=poly[0];for(let i=0;i<ring.length;i+=2){x0=Math.min(x0,ring[i]);y0=Math.min(y0,ring[i+1]);x1=Math.max(x1,ring[i]);y1=Math.max(y1,ring[i+1]);}return [x0,y0,x1,y1];});sourceCoverage.set(provider,boxes);}
- function mayCover(provider,z,x,y){const boxes=sourceCoverage.get(provider);if(!boxes)return true;const {K,CX,LON0,LAT0}=TKGEO,x0=(x/2**z*360-180-LON0)*K*CX,x1=((x+1)/2**z*360-180-LON0)*K*CX,y0=(LAT0-yLat(y,z))*K,y1=(LAT0-yLat(y+1,z))*K;return boxes.some(b=>b[0]<=x1&&b[2]>=x0&&b[1]<=y1&&b[3]>=y0);}
+ // 円錐図法の平面では Web メルカトルのタイルは少し回った四角形になる。範囲の判定と貼り付けは四隅を写した外接長方形で近似する（外部タイルは補助の表示）
+ function tileBox(z,x,y){const pts=[[x/2**z*360-180,yLat(y,z)],[(x+1)/2**z*360-180,yLat(y,z)],[x/2**z*360-180,yLat(y+1,z)],[(x+1)/2**z*360-180,yLat(y+1,z)]].map(([lo,la])=>TKGEO.project(lo,la));return [Math.min(...pts.map(p=>p[0])),Math.min(...pts.map(p=>p[1])),Math.max(...pts.map(p=>p[0])),Math.max(...pts.map(p=>p[1]))];}
+ function mayCover(provider,z,x,y){const boxes=sourceCoverage.get(provider);if(!boxes)return true;const [x0,y0,x1,y1]=tileBox(z,x,y);return boxes.some(b=>b[0]<=x1&&b[2]>=x0&&b[1]<=y1&&b[3]>=y0);}
  const lonX=(v,z)=>(v+180)/360*2**z,latY=(v,z)=>(1-Math.asinh(Math.tan(v*Math.PI/180))/Math.PI)/2*2**z;
  const yLat=(v,z)=>Math.atan(Math.sinh(Math.PI*(1-2*v/2**z)))*180/Math.PI;
  // 画像の符号化だけを吸収し、陰影計算は全地域で共通にする。
@@ -69,11 +71,12 @@ window.TKTerrain=(function(){
   const out=c.createImageData(256,256);projectPixels(im.getContext('2d').getImageData(0,0,256,256).data,out.data,t);c.putImageData(out,0,0);
   t.north=yLat(t.y,t.z);t.south=yLat(t.y+1,t.z);return cv;
  }
- function draw(c,view,scale,dpr,clip,japanClip){frame++;const {K,CX,LON0:lon0,LAT0:lat0}=TKGEO;
+ function draw(c,view,scale,dpr,clip,japanClip){frame++;const {K,CX}=TKGEO;
   const requested=[];
   const z=Math.max(6,Math.min(14,Math.ceil(Math.log2(K*CX*scale*dpr*360/256))));if(z!==lastZoom){for(const t of [...active])if(t.z!==z&&t.z!==6&&!(t.z===8&&z>8&&t.provider==='dem')&&!(t.z===z-2&&z>=10)){cancel(t);active.delete(t);running--;cache.delete(t.provider+'/'+t.z+'/'+t.x+'/'+t.y);}}lastZoom=z;
   for(let i=pending.length-1;i>=0;i--)if(pending[i].z!==z&&pending[i].z!==6&&!(pending[i].z===8&&z>8&&pending[i].provider==='dem')&&!(pending[i].z===z-2&&z>=10)){const t=pending.splice(i,1)[0];cache.delete(t.provider+'/'+t.z+'/'+t.x+'/'+t.y);}
-  const west=Math.max(118,view[0]/K/CX+lon0),east=Math.min(147,view[2]/K/CX+lon0),north=Math.min(47,lat0-view[1]/K),south=Math.max(20,lat0-view[3]/K);if(west>=east||south>=north)return;
+  const corners=[[view[0],view[1]],[view[2],view[1]],[view[0],view[3]],[view[2],view[3]],[(view[0]+view[2])/2,view[1]],[(view[0]+view[2])/2,view[3]]].map(([x,y])=>TKGEO.unproject(x,y));
+  const west=Math.max(118,Math.min(...corners.map(p=>p[0]))),east=Math.min(147,Math.max(...corners.map(p=>p[0]))),north=Math.min(47,Math.max(...corners.map(p=>p[1]))),south=Math.max(20,Math.min(...corners.map(p=>p[1])));if(west>=east||south>=north)return;
   c.save();if(clip)c.clip(clip);c.imageSmoothingEnabled=true;c.imageSmoothingQuality='high';
   const layer=(provider,bounds)=>{
    const [w,e,n,s]=bounds;if(w>=e||s>=n)return;
@@ -96,7 +99,7 @@ window.TKTerrain=(function(){
     if(level===z&&!complete){const finer=[];for(const t of cache.values()){if(t.provider!==provider||!t.ready||t.z<=z||t.z>z+4)continue;const tw=(t.x/2**t.z*360-180),te=((t.x+1)/2**t.z*360-180);if(te<w||tw>e||t.south>n||t.north<s)continue;finer.push(t);}
      finer.sort((a,b)=>a.z-b.z);for(const t of finer)t.seen=frame;selected.push(...finer);}
    }
-   for(const t of selected){t.drawnFrame=frame;const level=t.z,x0=(t.x/2**level*360-180-lon0)*K*CX,w=360/2**level*K*CX;
+   for(const t of selected){t.drawnFrame=frame;const level=t.z,[x0,,bx1]=tileBox(level,t.x,t.y),w=bx1-x0;
     const y0=(lat0-t.north)*K,y1=(lat0-t.south)*K;c.drawImage(t.im,x0,y0,w,y1-y0+.008);
    }
   };

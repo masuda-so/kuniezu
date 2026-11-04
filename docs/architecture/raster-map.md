@@ -212,3 +212,7 @@ Paradox のゲームと同じく、地図の正本は `game/map_data/`（provinc
 | `height.png` | 自然 | 標高の段彩。標高の画像を Git LFS で取得していなければ作らない |
 
 大きな PNG の読み込み（`tools/map/png-big.cjs`）は、16bit 灰色の標高の画像も読めるようにした（`readGray16`）。CI は縮小版を作らない。
+
+## 追記（表示の平面を円錐図法に、2026-11-04、利用者の決定「円錐図法で進める」）
+
+正本の格子は変えず、生成の最初の段 `tools/map/reproject-grid.cjs` が正本（領域・郡・標高）をランベルト正角円錐図法の格子 `game/map/build/grid/` へ最近傍で写し、タイル・年代別の版・境界線・陰影はそこから作る。河川は正本の格子で線を辿って点だけ写す。`manifest.json` の `projection` は新しい格子（`type:'lcc'`）。実行時の `raster-map.js` は `origin`・`stepUnits` しか使わないので貼り方は変わらない。陰影は `relief.json` の `projection` が配信タイルと同じ時だけ使う。ゲームの平面と保存データの移行は `game/plane-migrate.js`。決定の中身と数値は `docs/architecture/map-projection.md`。

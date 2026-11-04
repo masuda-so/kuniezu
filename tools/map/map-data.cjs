@@ -36,4 +36,9 @@ const sourceSha256=()=>crypto.createHash('sha256').update(['provinces','definiti
 return {dir,layers,files,readDefinition,writeDefinition,readProjection,sourceSha256};}
 // 郡の一覧（admin/gun.csv）の国名は明治の分国を含む。1560〜1615年の国に戻す（陸奥・出羽の分割は1868年）。境界線と縮小版で同じ規則を使う。
 const normalizeKuni=k=>['磐城','岩代','陸前','陸中','陸奥'].includes(k)?'陸奥':['羽前','羽後'].includes(k)?'出羽':k;
-module.exports={root,sha,parseDefaultMap,normalizeKuni,at,...at(path.join(root,'game/map')),out:path.join(root,'game/map/build')};
+const out=path.join(root,'game/map/build'),main=at(path.join(root,'game/map'));
+// 表示とゲームの平面（ランベルト正角円錐図法）の格子。tools/map/reproject-grid.cjs が正本から作る生成物で、タイル・境界線・陰影はここから作る。
+const grid={dir:path.join(out,'grid'),files:{provinces:path.join(out,'grid/provinces.png'),gun:path.join(out,'grid/gun.png'),heightmap:path.join(out,'grid/heightmap.png'),json:path.join(out,'grid/grid.json')},
+ read(){if(!fs.existsSync(grid.files.json))throw Error('game/map/build/grid/grid.json が無い。先に node tools/map/reproject-grid.cjs');const g=JSON.parse(fs.readFileSync(grid.files.json,'utf8'));
+  if(g.source?.sourceSha256!==main.sourceSha256())throw Error('円錐図法の格子が今の正本から作られていない。node tools/map/reproject-grid.cjs で作り直す');return g;}};
+module.exports={root,sha,parseDefaultMap,normalizeKuni,at,...main,out,grid};

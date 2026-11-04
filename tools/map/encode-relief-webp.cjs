@@ -113,7 +113,7 @@ async function encode({source, output, previous, quality = 0.82, chrome}) {
   try {
     const out = {generated: 'tools/map/build-height-cache.py', quality, sourcePixelEncoding: PIXELS, levels: []};
     for (const key of ['gridSha256', 'elevationManifestSha256', 'sourceHeightmapSha256', 'sourceHeightmapMetadataSha256',
-      'projectionSha256', 'source', 'product', 'acquired', 'license', 'notice', 'disclaimer', 'shading']) out[key] = first[key];
+      'projectionSha256', 'projection', 'source', 'product', 'acquired', 'license', 'notice', 'disclaimer', 'shading']) if (first[key] !== undefined) out[key] = first[key];
     for (const {f, dir, m, mf, hmf} of inputs) {
       const oldLevel = old?.levels.find(l => l.factor === f);
       const oldTiles = new Map((oldLevel?.tiles || []).map(t => [t.col + ':' + t.row, t]));

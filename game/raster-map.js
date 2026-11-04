@@ -74,6 +74,8 @@ window.TKRaster=(function(){
 window.TKRelief=(function(){
  let man=null,ready=false,revision=0,onChange=null;const tiles=new Map(),order=[];let pinned=new Set();// pinned：描画中の一回で使うタイル。上限を超えても閉じない（閉じた画像を描くと例外になる）
  if(typeof fetch==='function'&&typeof document!=='undefined')Promise.all([fetch('map/build/relief.json',{cache:'no-cache'}).then(r=>r.json()),fetch('map/build/manifest.json',{cache:'no-cache'}).then(r=>r.json())]).then(([r,grid])=>{
+  // 陰影は配信タイルと同じ格子（同じ投影・原点・画素）から作ったものだけ使う。旧い格子の陰影を新しい平面へ貼ると場所がずれる
+  if(JSON.stringify(r.projection||null)!==JSON.stringify(grid.projection)){console.warn('陰影（relief.json）の格子が配信タイルと違うため使わない。node tools/map/build-map.cjs --height で作り直す');return;}
   man={...r,origin:grid.projection.origin,step:grid.projection.stepUnits,tile:grid.tile};ready=true;for(const t of level(8).tiles)load(8,t);revision++;onChange?.();}).catch(()=>{});
  const level=f=>man.levels.find(l=>l.factor===f);
  // 読み込みに失敗したタイルは1秒後に読み直す（同時に多く読むと一時的に失敗することがある）。
