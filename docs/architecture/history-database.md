@@ -33,9 +33,17 @@ node tools/research/export-evidence.cjs
 python3 tools/research/history_sqlite.py build --output /tmp/kuniezu-history.sqlite3
 python3 tools/research/history_sqlite.py query --db /tmp/kuniezu-history.sqlite3 --entity 県城 --from-year 1613 --to-year 1614
 python3 tools/research/history_sqlite.py query --db /tmp/kuniezu-history.sqlite3 --bbox 133.9 33.5 134 33.6 --from-year 1600 --to-year 1615
+python3 tools/research/history_sqlite.py cube --db /tmp/kuniezu-history.sqlite3 --from-year 1600 --to-year 1615 --calendar Japanese-lunisolar
+python3 tools/checks/history-cube.py
 python3 tools/checks/history-sqlite.py
 python3 tools/checks/history-sqlite-inputs.py
 ```
+
+`cube` は既存VIEWを読取専用で検索し、JSON配列を返す。年の上下限はそれぞれ省略でき、指定年を含む原暦年で絞る。`--calendar` は保存された暦名との完全一致で、省略時も異なる暦を同じ行に混ぜない。未知の暦名・該当なしは `[]`。入力はSQLパラメーターとして束縛し、逆転した年範囲は拒否する。
+
+列は `longitude_bin, latitude_bin, calendar, precision, year, kind, scope, record_count`。並び順は `calendar, year, longitude_bin, latitude_bin, precision, kind, scope` で一定。件数は出典記録数で、人口・兵数・滞在人数ではない。不明な年や推定存続期間を各年へ補完せず、年がNULLの記録は含まない。同じ記録が別の区画・年に関係する場合があるため、行の合計は全DBの一意な記録数とは限らない。元レコードと出典URLは `query` で参照する。
+
+`query` は記録全体の期間と関連対象を使う候補検索。複数年・複数地点の `dated-components` は、年と場所を絞っても当該構成要素の一致を保証しない。該当年と対象は `eventTime.components` / `event_date.entity_ids_json` で確認し、当年の現地所在へ変換しない。キューブは対応する構成要素の場所と原暦年を集計し、実座標不明の場所は含めない。
 
 SQL例（入力はパラメーターで束縛する）：
 

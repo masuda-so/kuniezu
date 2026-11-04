@@ -29,6 +29,10 @@ is [docs/README.md](docs/README.md); open requests and ownership are in
 - The historical database preserves original calendars and date precision, and rejects
   additional date fields that conflict with the time format. See the
   [database design and commands](docs/architecture/history-database.md) (Japanese).
+- Read the aggregate view with `python3 tools/research/history_sqlite.py cube --db <built-database>
+  --from-year 1600 --to-year 1615 --calendar Japanese-lunisolar`. This read-only
+  command counts source records by native calendar and precision without expanding
+  unknown years.
 - The historical database retains personal authority IDs and sourced aliases.
   Aliases can be searched; comparative records outside the game period are not
   reassigned to events within it.
