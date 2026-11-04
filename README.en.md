@@ -23,6 +23,10 @@ is [docs/README.md](docs/README.md); open requests and ownership are in
   non-historical implementations under `archive/` are not loaded at startup.
 - Modern comparison terrain, estimates derived from sources and confirmed
   historical facts are kept apart. Unsupported text is not shown in the game.
+- Uchinasakaura and Sotonasakaura in the Katori Sea are shown as inferred water
+  bodies, using medieval evidence of the lakes and later shoreline references.
+  Correction boundaries crossing open water are excluded from shoreline strokes.
+  See the [evidence and checks](docs/reports/KATORI_WIDE_LAKE_PERIMETER.md) (Japanese).
 
 | Folder | Contents |
 |---|---|
