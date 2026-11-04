@@ -1,0 +1,238 @@
+{
+  "order": "longitude,latitude",
+  "mapWarperWmsSrs": "EPSG:4326",
+  "gameProjectionFile": "game/map_data/projection.json",
+  "fourCornerTransformOnly": true,
+  "historicalDatumCaveat": "Map Warperの公開基準点をそのまま使用。原測地系・旧図経線・個別変換の独立検証は未実施。地上不動点による誤差検証ではない。",
+  "conservativeDisplayUncertaintyMetres": 500,
+  "uncertaintyNotStatistical": true,
+  "imageBounds": [
+    139.77911852108207,
+    39.77918433345311,
+    140.1710804291466,
+    40.18072942867409
+  ],
+  "imageSize": [
+    1059,
+    1341
+  ],
+  "sources": [
+    {
+      "mapID": 3672,
+      "controlPoints": [
+        {
+          "x": "1121.80901041667",
+          "y": "592.92401041666",
+          "lon": "138.999496597",
+          "lat": "40.669308141"
+        },
+        {
+          "x": "1138.08145833333",
+          "y": "4962.06994791667",
+          "lon": "138.999529814",
+          "lat": "40.002717714"
+        },
+        {
+          "x": "6103.64354166667",
+          "y": "564.950937499995",
+          "lon": "139.999434783",
+          "lat": "40.669336114"
+        },
+        {
+          "x": "6172.09614583334",
+          "y": "4930.1371875",
+          "lon": "139.999470156",
+          "lat": "40.002745486"
+        }
+      ],
+      "affineCornerDiagnostic": {
+        "method": "least-squares affine fit from published image pixels to published longitude/latitude",
+        "pointCount": 4,
+        "rmsMetres": 222.76176779819184,
+        "maximumMetres": 224.0130494127331,
+        "notExternalAccuracy": true,
+        "notWmsWarpMethodClaim": true
+      },
+      "gcpSourceUrl": "https://mapwarper.h-gis.jp/maps/3672/gcps.csv"
+    },
+    {
+      "mapID": 1207,
+      "controlPoints": [
+        {
+          "x": "6287.0",
+          "y": "545.0",
+          "lon": "140.2494376",
+          "lat": "40.1694004"
+        },
+        {
+          "x": "1245.0",
+          "y": "4931.0",
+          "lon": "139.9994699",
+          "lat": "40.00274559"
+        },
+        {
+          "x": "1245.0",
+          "y": "545.0",
+          "lon": "139.9994616",
+          "lat": "40.16939337"
+        },
+        {
+          "x": "6287.0",
+          "y": "4931.0",
+          "lon": "140.2494455",
+          "lat": "40.00275169"
+        }
+      ],
+      "affineCornerDiagnostic": {
+        "method": "least-squares affine fit from published image pixels to published longitude/latitude",
+        "pointCount": 4,
+        "rmsMetres": 0.027250556778949997,
+        "maximumMetres": 0.027250564513475583,
+        "notExternalAccuracy": true,
+        "notWmsWarpMethodClaim": true
+      },
+      "gcpSourceUrl": "https://mapwarper.h-gis.jp/maps/1207/gcps.csv"
+    },
+    {
+      "mapID": 1199,
+      "controlPoints": [
+        {
+          "x": "6350.0",
+          "y": "612.0",
+          "lon": "139.9994699",
+          "lat": "40.00274559"
+        },
+        {
+          "x": "1292.0",
+          "y": "612.0",
+          "lon": "139.7494619",
+          "lat": "40.00273975"
+        },
+        {
+          "x": "6350.0",
+          "y": "4990.0",
+          "lon": "139.9994729",
+          "lat": "39.83609738"
+        },
+        {
+          "x": "1292.0",
+          "y": "4990.0",
+          "lon": "139.7494702",
+          "lat": "39.83609281"
+        }
+      ],
+      "affineCornerDiagnostic": {
+        "method": "least-squares affine fit from published image pixels to published longitude/latitude",
+        "pointCount": 4,
+        "rmsMetres": 0.11838971180945175,
+        "maximumMetres": 0.11838972745947214,
+        "notExternalAccuracy": true,
+        "notWmsWarpMethodClaim": true
+      },
+      "gcpSourceUrl": "https://mapwarper.h-gis.jp/maps/1199/gcps.csv"
+    },
+    {
+      "mapID": 3492,
+      "controlPoints": [
+        {
+          "x": "923.3125",
+          "y": "4803.0",
+          "lon": "139.9994731959",
+          "lat": "39.836093872"
+        },
+        {
+          "x": "895.96875",
+          "y": "409.296875",
+          "lon": "139.9994701559",
+          "lat": "40.002745486"
+        },
+        {
+          "x": "5917.78125",
+          "y": "372.109375",
+          "lon": "140.2494457329",
+          "lat": "40.002751625"
+        },
+        {
+          "x": "5950.046875",
+          "y": "4761.984375",
+          "lon": "140.2494535559",
+          "lat": "39.836100156"
+        }
+      ],
+      "affineCornerDiagnostic": {
+        "method": "least-squares affine fit from published image pixels to published longitude/latitude",
+        "pointCount": 4,
+        "rmsMetres": 6.51652702711369,
+        "maximumMetres": 6.5225456698260915,
+        "notExternalAccuracy": true,
+        "notWmsWarpMethodClaim": true
+      },
+      "gcpSourceUrl": "https://mapwarper.h-gis.jp/maps/3492/gcps.csv"
+    }
+  ],
+  "mosaicRecipe": {
+    "size": [
+      1059,
+      1341
+    ],
+    "mode": "RGB",
+    "background": [
+      248,
+      245,
+      234
+    ],
+    "splitMeridianLatitude": [
+      139.99947,
+      40.002745
+    ],
+    "splitPixel": [
+      595,
+      594
+    ],
+    "sourceCropBoxes": [
+      {
+        "mapID": 3672,
+        "image": "images/historical-sheet-3672.png",
+        "box": [
+          0,
+          0,
+          595,
+          594
+        ]
+      },
+      {
+        "mapID": 1207,
+        "image": "images/historical-sheet-1207.png",
+        "box": [
+          595,
+          0,
+          1059,
+          594
+        ]
+      },
+      {
+        "mapID": 1199,
+        "image": "images/historical-sheet-1199.png",
+        "box": [
+          0,
+          594,
+          595,
+          1341
+        ]
+      },
+      {
+        "mapID": 3492,
+        "image": "images/historical-sheet-3492.png",
+        "box": [
+          595,
+          594,
+          1059,
+          1341
+        ]
+      }
+    ],
+    "method": "各配信画像をRGBへ変換しboxの矩形を同じ座標へ貼付。追加の回転/伸縮/補間なし。",
+    "reconstructedPngSha256": "a08a82399abaaf4d1fd8e4fef1a178e46527d2bd5e1335f9f0291b13a22646e7",
+    "reconstructedPixelSha256": "c9fc07443451cf368f7562b5bd19546bb45ad2c62c6be52508047370186699eb"
+  }
+}

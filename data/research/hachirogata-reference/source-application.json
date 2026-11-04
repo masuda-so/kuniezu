@@ -1,0 +1,21 @@
+{
+  "sourceSha256": "b09e9f6eec031a55b9a35447422e26c5545403482520d7a5160022637b6b07e9",
+  "outputSha256": "b4749d9fda3fd61eb238d0d6c9f79a48a8fa11ff968b8680d4671ad08a5c046d",
+  "inputSha256": "7adcf3bee47fb0c53217fc65dd7026d2d94430fcda819d2d1180b2b7bf1773d9",
+  "sourceBundleSha256": "93a002ec3d3af85bbbbf0fed95c17bfded790ee19e37c19aac84c850f6be2549",
+  "changedPixels": 10021,
+  "counts": [
+    {
+      "fromKey": "castle:hiyama",
+      "toKey": "lake:139.99,39.98",
+      "pixels": 6201
+    },
+    {
+      "fromKey": "lake:139.99,39.98",
+      "toKey": "castle:hiyama",
+      "pixels": 3820
+    }
+  ],
+  "sourceBundleSha256After": "a88cb31c9fbfd90cb1881a2901904331dd7aac9e0639159df2cbc93b1a7d62ad",
+  "appliedInIsolatedBranch": true
+}

@@ -1,0 +1,116 @@
+{
+  "pass": true,
+  "combinedRecipeAppliedFromOriginalLocalBaseMatchesFinal": true,
+  "noOverlappingRleOperations": true,
+  "operationCounts": {
+    "castle:hiyama→lake:139.99,39.98": 6201,
+    "lake:139.99,39.98→castle:hiyama": 3820
+  },
+  "changedFromHachi2": 325,
+  "baseChangedCells": 10021,
+  "unchangedDeferredCells": 199,
+  "seaChanges": 0,
+  "otherCastleOrLakeChanges": 0,
+  "originalDisconnected": true,
+  "candidate4NeighbourLakeToSeaConnected": true,
+  "island4NeighbourLandComponentCells": 18,
+  "lakePixels": 23423,
+  "controlPoints": [
+    {
+      "sourcePixel": [
+        610,
+        700
+      ],
+      "lonLat": [
+        139.96829166666666,
+        39.886250000000004
+      ],
+      "grid": [
+        15514,
+        6313
+      ],
+      "baseRgb": [
+        51,
+        107,
+        24
+      ],
+      "currentRgb": [
+        51,
+        107,
+        24
+      ],
+      "candidateRgb": [
+        51,
+        107,
+        24
+      ],
+      "name": "nakajima"
+    },
+    {
+      "sourcePixel": [
+        375,
+        480
+      ],
+      "lonLat": [
+        139.94968749999998,
+        39.9
+      ],
+      "grid": [
+        15497,
+        6298
+      ],
+      "baseRgb": [
+        218,
+        227,
+        47
+      ],
+      "currentRgb": [
+        51,
+        107,
+        24
+      ],
+      "candidateRgb": [
+        51,
+        107,
+        24
+      ],
+      "name": "old-map-fishpond-land"
+    },
+    {
+      "sourcePixel": [
+        300,
+        480
+      ],
+      "lonLat": [
+        139.94375,
+        39.9
+      ],
+      "grid": [
+        15492,
+        6298
+      ],
+      "baseRgb": [
+        218,
+        227,
+        47
+      ],
+      "currentRgb": [
+        51,
+        107,
+        24
+      ],
+      "candidateRgb": [
+        51,
+        107,
+        24
+      ],
+      "name": "northwest-shortcut-not-adopted"
+    }
+  ],
+  "seaLakeInterfaceEdges": 4,
+  "coastMaskNeeded": false,
+  "coastMaskReason": "現行build-edges.cjs kindOf は海・湖間を null として描画しない。追加マスクで実岸を隠さない。",
+  "globalImageDecoded": false,
+  "browserUsed": false,
+  "sharedFilesWritten": false
+}
