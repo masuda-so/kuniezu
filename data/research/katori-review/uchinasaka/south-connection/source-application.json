@@ -1,0 +1,17 @@
+{
+  "sourceSha256": "b6a233bddd8870f35b8cbf560a54e23ea967ed52daa0bf39bd9dea0cd205ecfe",
+  "outputSha256": "b09e9f6eec031a55b9a35447422e26c5545403482520d7a5160022637b6b07e9",
+  "shapeSha256": "f30bfbcfc000b10b4d2d696b2c6ba1ccd15bc8301981eda1cd156073b676fdc0",
+  "projectionSha256": "3576c5ceb1fc809ac06f538f14dd8be842f343fc18e374edcbdbc8bb4d9e8cee",
+  "waterCells": 1719,
+  "changedCells": 1637,
+  "preservedExistingWater": 82,
+  "counts": {
+    "lake:140.55,36.05": 82,
+    "castle:odajo": 1604,
+    "castle:sakura": 33
+  },
+  "exactHistoricalShoreline": false,
+  "sourceBundleSha256After": "93a002ec3d3af85bbbbf0fed95c17bfded790ee19e37c19aac84c850f6be2549",
+  "appliedInIsolatedBranch": true
+}

@@ -1,0 +1,142 @@
+{
+  "type": "FeatureCollection",
+  "source": "data/research/katori-review/uchinasaka/south-connection/wide-lake-perimeter.geojson",
+  "exactHistoricalShoreline": false,
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "north-existing-water",
+        "role": "water-mask-boundary",
+        "bufferMetres": 150,
+        "drawCoastline": false,
+        "targetYears": [
+          1560,
+          1615
+        ],
+        "basis": "補正範囲の水面横断辺。歴史上の岸・川幅ではない。"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            140.60577392578125,
+            35.96022296929668
+          ],
+          [
+            140.61349868774414,
+            35.96022296929668
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "east-channel-opening",
+        "role": "water-mask-boundary",
+        "bufferMetres": 150,
+        "drawCoastline": false,
+        "targetYears": [
+          1560,
+          1615
+        ],
+        "basis": "補正範囲の水面横断辺。歴史上の岸・川幅ではない。"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            140.64559936523438,
+            35.925478584371945
+          ],
+          [
+            140.64559936523438,
+            35.924088491266524
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "south-channel-opening",
+        "role": "water-mask-boundary",
+        "bufferMetres": 150,
+        "drawCoastline": false,
+        "targetYears": [
+          1560,
+          1615
+        ],
+        "basis": "補正範囲の水面横断辺。歴史上の岸・川幅ではない。"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            140.62070846557617,
+            35.88557320058834
+          ],
+          [
+            140.61761856079102,
+            35.8847387269676
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "west-old-channel-opening",
+        "role": "water-mask-boundary",
+        "bufferMetres": 150,
+        "drawCoastline": false,
+        "targetYears": [
+          1560,
+          1615
+        ],
+        "basis": "補正範囲の水面横断辺。歴史上の岸・川幅ではない。"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            140.58448791503906,
+            35.902677971949345
+          ],
+          [
+            140.58448791503906,
+            35.90698834747854
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "northwest-lake-opening",
+        "role": "water-mask-boundary",
+        "bufferMetres": 150,
+        "drawCoastline": false,
+        "targetYears": [
+          1560,
+          1615
+        ],
+        "basis": "補正範囲の水面横断辺。歴史上の岸・川幅ではない。"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            140.57830810546875,
+            35.945910133024256
+          ],
+          [
+            140.57830810546875,
+            35.94868952741285
+          ]
+        ]
+      }
+    }
+  ]
+}

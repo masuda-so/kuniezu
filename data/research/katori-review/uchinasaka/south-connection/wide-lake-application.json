@@ -1,0 +1,15 @@
+{
+  "supersedes": "Earlier standalone narrow extension was rejected. This candidate reads the wide lake perimeter and explicitly masks five correction boundaries.",
+  "applyFeature": "uchinasaka-combined-wide-water",
+  "paint": "water; preserve the protected-southeast-land area",
+  "coastline": "Draw comparison-shore-lines for the comparison preview, and generated raster boundaries only outside the five water-mask-boundary buffers for the game candidate.",
+  "maskBoundaryPolicy": "No bank, embankment, border glow, or shoreline stroke along water-mask-boundary. This is a correction extent, not a physical shore.",
+  "displayLimits": "Pixels beyond a correction mask can still be land in the old canonical map. These openings must remain tagged as correction extents; do not claim full water-system reconstruction or navigability continuity.",
+  "targetYears": [
+    1560,
+    1615
+  ],
+  "basis": "inferred water body constrained by medieval lake-existence evidence and later shoreline reference",
+  "exactHistoricCoastline": false,
+  "noArbitrarySeaConnection": true
+}
