@@ -171,11 +171,15 @@ async function verify(options){
  const sourceMeta=manifest.source,componentPaths={provinces:source};
  let fingerprintReason=null;
  if(!sourceMeta?.sha256)fingerprintReason='Manifest has no source fingerprint';
- else if(manifest.generated!=='tools/map/build-map-tiles.cjs'||['provinces','definition','defaultMap','projection'].some(k=>typeof sourceMeta[k]!=='string'||path.basename(sourceMeta[k])!==sourceMeta[k]))
+ // 各ファイルは source.dir からの相対パス（層に分けた配置では control/provinces.png・projection.json など。旧い配置ではファイル名だけ）。
+ // 上の階層へ出るパスと絶対パスは認めない。正本の置き場は、検査する画像のパスから declared の provinces を取り除いて求める。
+ else if(manifest.generated!=='tools/map/build-map-tiles.cjs'||['provinces','definition','defaultMap','projection'].some(k=>typeof sourceMeta[k]!=='string'||path.isAbsolute(sourceMeta[k])||sourceMeta[k].split('/').some(p=>p===''||p==='.'||p==='..')))
   fingerprintReason='Source fingerprint algorithm is not identified by the supported map-data contract';
  else{
+  const declared=sourceMeta.provinces.split('/'),parts=path.resolve(source).split(path.sep),tail=parts.slice(-declared.length);
+  const sourceRoot=tail.join('/')===sourceMeta.provinces?parts.slice(0,-declared.length).join(path.sep)||path.sep:path.dirname(source);
   for(const key of ['definition','defaultMap','projection']){
-   const file=path.resolve(path.dirname(source),sourceMeta[key]);componentPaths[key]=file;
+   const file=path.resolve(sourceRoot,...sourceMeta[key].split('/'));componentPaths[key]=file;
    try{await capture(file);}catch(error){if(error.code!=='ENOENT')throw error;fingerprintReason='Declared source component is unavailable: '+file;break;}
   }
  }
@@ -336,6 +340,17 @@ async function selfTest(){
   const unknownContract=await verify(options);assert.equal(unknownContract.manifestSourceSha256Matches,null);assert.ok(unknownContract.sourceCompositeFingerprint.reason);tested.push('unknown fingerprint contract returns null with explanation');
   await fsp.writeFile(manifestPath,JSON.stringify({...declared,source:{...declared.source,projection:'missing-projection.json'}}));
   const missingComponent=await verify(options);assert.equal(missingComponent.manifestSourceSha256Matches,null);assert.match(missingComponent.sourceCompositeFingerprint.reason,/unavailable/);tested.push('missing declared fingerprint component returns null with explanation');
+  // 層に分けた配置（game/map/control/provinces.png と共有の game/map/projection.json）でも、正本4点の複合確認値を照合する。
+  const layered=path.join(dir,'layered'),control=path.join(layered,'control');await fsp.mkdir(control,{recursive:true});
+  const layeredSource=path.join(control,'provinces.png'),layeredDef=path.join(control,'definition.csv'),layeredMap=path.join(control,'default.map');
+  await fsp.writeFile(layeredSource,valid);await fsp.copyFile(modern,layeredDef);await fsp.copyFile(defaultMap,layeredMap);await fsp.writeFile(path.join(layered,'projection.json'),projectionBytes);
+  const layeredDeclared={...declared,source:{dir:'game/map',provinces:'control/provinces.png',definition:'control/definition.csv',defaultMap:'control/default.map',projection:'projection.json',sha256:compound}};
+  await fsp.writeFile(manifestPath,JSON.stringify(layeredDeclared));
+  const layeredPass=await verify({...options,source:layeredSource,definition:layeredDef,defaultMap:layeredMap});
+  assert.equal(layeredPass.manifestSourceSha256Matches,true);assert.equal(layeredPass.sourceCompositeFingerprint.componentPaths.projection,path.join(layered,'projection.json'));tested.push('layered source folders resolve the shared projection');
+  await fsp.writeFile(manifestPath,JSON.stringify({...layeredDeclared,source:{...layeredDeclared.source,projection:'../projection.json'}}));
+  const escaping=await verify({...options,source:layeredSource,definition:layeredDef,defaultMap:layeredMap});assert.equal(escaping.manifestSourceSha256Matches,null);tested.push('component path escaping the source folder is not accepted');
+  await fsp.writeFile(manifestPath,JSON.stringify(declared));
   await assert.rejects(()=>decodePngRows(source,{onRow:async(row,y)=>{if(y===0){const replacement=source+'.replacement';await fsp.writeFile(replacement,valid);await fsp.rename(replacement,source);}}}),e=>e.code==='CHANGED');tested.push('atomic replacement of source during row consumption');
   return {ok:true,selfTest:true,cases:tested.length,tests:tested};
  }finally{await fsp.rm(dir,{recursive:true,force:true});}
