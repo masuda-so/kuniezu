@@ -173,16 +173,44 @@ def query(database, entity=None, first=None, last=None, bbox=None):
     finally:
         connection.close()
 
+def cube(database, first=None, last=None, calendar=None):
+    """Read the existing sparse cube; bounds select native-calendar years inclusively."""
+    if first is not None and last is not None and first > last:
+        raise ValueError('開始年は終了年以前にする')
+    conditions, values = [], []
+    if first is not None:
+        conditions.append('year >= ?'); values.append(first)
+    if last is not None:
+        conditions.append('year <= ?'); values.append(last)
+    if calendar is not None:
+        conditions.append('calendar = ?'); values.append(calendar)
+    connection = sqlite3.connect(database.resolve().as_uri() + '?mode=ro', uri=True)
+    connection.row_factory = sqlite3.Row
+    try:
+        rows = connection.execute(
+            'SELECT longitude_bin,latitude_bin,calendar,precision,year,kind,scope,record_count FROM space_time_cube'
+            + (' WHERE ' + ' AND '.join(conditions) if conditions else '')
+            + ' ORDER BY calendar,year,longitude_bin,latitude_bin,precision,kind,scope', values)
+        return [dict(row) for row in rows]
+    finally:
+        connection.close()
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     sub = parser.add_subparsers(dest='command', required=True)
     create = sub.add_parser('build'); create.add_argument('--research', type=Path, default=ROOT/'data/research'); create.add_argument('--output', type=Path, required=True)
     search = sub.add_parser('query'); search.add_argument('--db', type=Path, required=True); search.add_argument('--entity'); search.add_argument('--from-year', type=int); search.add_argument('--to-year', type=int); search.add_argument('--bbox', type=float, nargs=4)
+    aggregate = sub.add_parser('cube', help='Read the sparse native-calendar space-time cube')
+    aggregate.add_argument('--db', type=Path, required=True)
+    aggregate.add_argument('--from-year', type=int); aggregate.add_argument('--to-year', type=int)
+    aggregate.add_argument('--calendar', help='Exact stored calendar name; unknown names return an empty array')
     args = parser.parse_args()
     if args.command == 'build':
         print(text({'records': build(args.research, args.output), 'database': str(args.output)}))
-    else:
+    elif args.command == 'query':
         print(text(query(args.db, args.entity, args.from_year, args.to_year, args.bbox)))
+    else:
+        print(text(cube(args.db, args.from_year, args.to_year, args.calendar)))
 
 if __name__ == '__main__':
     main()
