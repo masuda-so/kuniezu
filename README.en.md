@@ -18,11 +18,17 @@ is [docs/README.md](docs/README.md); open requests and ownership are in
   marches along historical roads, and battle deployments and movements, each with
   its source.
 - Diplomacy is shown as borders only; marches are shown as pieces on roads.
-  Battles appear automatically only when the player's forces take part.
+  Battles appear automatically only when the player's forces take part. The five
+  non-participating Sekigahara units receive no generic advance animation.
 - Free sieges, non-historical routes and in-play AI generation are disabled. The
   non-historical implementations under `archive/` are not loaded at startup.
+- Battle-related timeline notes are classified separately from battle phases.
+  Castle falls without supported deployments remain timeline entries and historic sites.
 - Modern comparison terrain, estimates derived from sources and confirmed
   historical facts are kept apart. Unsupported text is not shown in the game.
+- The historical database preserves original calendars and date precision, and rejects
+  additional date fields that conflict with the time format. See the
+  [database design and commands](docs/architecture/history-database.md) (Japanese).
 - The historical database retains personal authority IDs and sourced aliases.
   Aliases can be searched; comparative records outside the game period are not
   reassigned to events within it.
