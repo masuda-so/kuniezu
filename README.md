@@ -56,7 +56,7 @@ node tools/map/build-map.cjs --height --python /path/to/python3
 
 正本の PNG は大きすぎて VS Code などでは開けないので、生成の最後に、層ごとの 1/4 の縮小版（経緯度の目盛り付き）を `game/map/build/previews/` に作ります（`control.png` 支配、`admin.png` 行政区分、`rivers.png` 川、`height.png` 標高）。目で確かめるときはこちらを開いてください。
 
-生成後は `game/` を静的ファイルとして配信し、ブラウザで `index.html` を開きます。
+生成後は `game/` を静的ファイルとして配信し、ブラウザで `index.html` を開きます。画面の地図は明治「大日本全図」に合わせて北を左へ 16 度傾けてあり、表示設定の「地図の向き」で北を上にもできます（`docs/reports/MAP_ORIENTATION.md`）。
 
 サーバーの起動・停止は利用者が行います。検証は起動済み `http://localhost:8000/index.html` に接続します。検査結果の保存先は `GAME_TEST_OUTPUT` で指定できます。
 
