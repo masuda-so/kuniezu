@@ -1,13 +1,13 @@
 /* 領域画像から、隣り合う領域どうしの共有辺（境界線）を起こす。Paradox 方式で「塗りの画像が正本、線は生成物」。
    各辺は左右の領域ID（小さい方 a・大きい方 b）と種別（coast＝海と陸、lake＝湖と陸、region＝陸どうし）を持つ。
    画素の角を結ぶ階段の線を、段ごとの許容誤差で間引く（100m：0.6画素、400m・800m：0.8画素）。
-   出力：game/map/edges-<段>/<列>-<行>.json（タイルごと。タイルの外へ出る線はタイルの縁で切る）と game/map/edges.json（一覧）。
+   出力：game/map/build/edges-<段>/<列>-<行>.json（タイルごと。タイルの外へ出る線はタイルの縁で切る）と game/map/build/edges.json（一覧）。
    実行：node --max-old-space-size=4096 tools/map/build-edges.cjs */
 const fs=require('node:fs'),path=require('node:path'),zlib=require('node:zlib'),crypto=require('node:crypto');
-const root=path.resolve(__dirname,'../..'),dir=path.join(root,'game/map');
+const root=path.resolve(__dirname,'../..'),dir=path.join(root,'game/map/build');
 const m=JSON.parse(fs.readFileSync(path.join(dir,'manifest.json'),'utf8'));
-const MD=require('./map-data.cjs'),DEF=MD.readDefinition(),defs=DEF.rows,SEA=DEF.byKey.get('sea').id;// 正本 game/map_data の definition.csv・default.map（id は1から、海は SEA）
-const maskFile=path.join(root,'game/map_data/shoreline_masks.geojson');
+const MD=require('./map-data.cjs'),DEF=MD.readDefinition(),defs=DEF.rows,SEA=DEF.byKey.get('sea').id;// 正本 game/map の definition.csv・default.map（id は1から、海は SEA）
+const maskFile=path.join(root,'game/map/physical/shoreline_masks.geojson');
 const maskedShore=require('./shoreline-masks.cjs')(maskFile,m.projection);
 const byColor=new Map(defs.filter(Boolean).map(d=>[d.rgb[0]<<16|d.rgb[1]<<8|d.rgb[2],d.id]));
 function decode(file){const buf=fs.readFileSync(file);let i=8,w=0,h=0;const parts=[];while(i<buf.length){const len=buf.readUInt32BE(i),type=buf.toString('ascii',i+4,i+8),data=buf.subarray(i+8,i+8+len);if(type==='IHDR'){w=data.readUInt32BE(0);h=data.readUInt32BE(4);}else if(type==='IDAT')parts.push(data);i+=12+len;}
@@ -24,8 +24,8 @@ function simplify(pts,tol){if(pts.length<=4)return pts;const n=pts.length/2,keep
 const levels=[{factor:1,dir:'provinces',tiles:m.tiles,tol:.6},...m.levels.map(l=>({factor:l.factor,dir:l.dir,tiles:l.tiles,tol:.8}))];
 const index={generated:'tools/map/build-edges.cjs',shorelineMasksSha256:fs.existsSync(maskFile)?crypto.createHash('sha256').update(fs.readFileSync(maskFile)).digest('hex'):null,gridSha256:crypto.createHash('sha256').update(fs.readFileSync(path.join(dir,'manifest.json'))).digest('hex'),
  note:'領域画像の共有辺。a<b の領域ID、kind は coast/lake/region。座標は地図平面。塗りの画像と同じ版・段から作る。',levels:[]};
-// 年代別の差分（game/map/edits/compiled/<版>/manifest.json）。差し替えるタイルとその左・上の隣（縁の辺がそのタイルに掛かる）の辺を、版ごとに作り直す。
-// 土台の領域画像が変わったら差分は作り直しが要る。差分の manifest の baseProvincesSha256（正本 game/map_data の確認値）が今の土台と一致する版だけ使う。
+// 年代別の差分（game/map/build/edits/compiled/<版>/manifest.json）。差し替えるタイルとその左・上の隣（縁の辺がそのタイルに掛かる）の辺を、版ごとに作り直す。
+// 土台の領域画像が変わったら差分は作り直しが要る。差分の manifest の baseProvincesSha256（正本 game/map の確認値）が今の土台と一致する版だけ使う。
 const baseSha=MD.sourceSha256();
 const compiledRoot=path.join(dir,'edits/compiled'),allVersions=fs.existsSync(compiledRoot)?fs.readdirSync(compiledRoot).filter(v=>fs.existsSync(path.join(compiledRoot,v,'manifest.json'))).map(v=>({id:v,m:JSON.parse(fs.readFileSync(path.join(compiledRoot,v,'manifest.json'),'utf8'))})):[];
 const versions=allVersions.filter(v=>v.m.baseProvincesSha256===baseSha),staleVersions=allVersions.filter(v=>v.m.baseProvincesSha256!==baseSha).map(v=>v.id);
@@ -61,11 +61,11 @@ for(const L of levels){const byPos=new Map(L.tiles.map(t=>[t.col+','+t.row,path.
   for(const k of touched){const [c,r]=k.split(',').map(Number);if(c<0||r<0)continue;const items=edgesOfTile(L,vget,c,r),file=`@${v.id}/${c}-${r}.json`,body=JSON.stringify(items);fs.writeFileSync(path.join(dir,'edges-'+L.factor,file),body);
    index.versions.push({id:v.id,period:v.m.versions.find(x=>x.id===v.id)?.period||v.m.tiles[0].period,factor:L.factor,col:c,row:r,file,sha256:sha(body)});}}
 }
-// 国・道の境界線：郡画像（data/map/gun.png 全域1枚、日本は CODH の旧国、朝鮮は1910年の道を八道へ戻したもの）の国が変わる所に引く（kind:'kuni'）。
+// 国・道の境界線：郡画像（game/map/admin/gun.png 全域1枚、日本は CODH の旧国、朝鮮は1910年の道を八道へ戻したもの）の国が変わる所に引く（kind:'kuni'）。
 // 陸奥・出羽の明治の分割は戻す。海との境は引かない（海岸は coast で引く）。郡画像は年代の版で変わらないので、版の辺のファイルにも同じ線を足す。
-const gunDir=path.join(MD.root,'data/map'),gunRows=fs.readFileSync(path.join(gunDir,'gun.csv'),'utf8').trim().split('\n').slice(1).map(l=>l.split(';'));
-const normK=k=>['磐城','岩代','陸前','陸中','陸奥'].includes(k)?'陸奥':['羽前','羽後'].includes(k)?'出羽':k;const kuniNames=[...new Set(gunRows.map(r=>normK(r[4])))],kuniOf=new Uint16Array(gunRows.length+2);for(const r of gunRows)kuniOf[+r[0]]=kuniNames.indexOf(normK(r[4]))+1;
-// 郡画像 data/map/gun.png（全域1枚、G が上位・B が下位の郡番号）を国の番号の配列にし、段ごとのタイルは画素中心の最近傍で切り出す。
+const gunDir=MD.layers.admin,gunRows=fs.readFileSync(path.join(gunDir,'gun.csv'),'utf8').trim().split('\n').slice(1).map(l=>l.split(';'));
+const normK=MD.normalizeKuni;const kuniNames=[...new Set(gunRows.map(r=>normK(r[4])))],kuniOf=new Uint16Array(gunRows.length+2);for(const r of gunRows)kuniOf[+r[0]]=kuniNames.indexOf(normK(r[4]))+1;
+// 郡画像 game/map/admin/gun.png（全域1枚、G が上位・B が下位の郡番号）を国の番号の配列にし、段ごとのタイルは画素中心の最近傍で切り出す。
 const GW=m.width,GH=m.height,kuniPx=new Uint8Array(GW*GH);
 let kuniLines=0;
 (async()=>{await require('./png-big.cjs').readRGB(path.join(gunDir,'gun.png'),(y,row)=>{const o=y*GW;for(let x=0;x<GW;x++)kuniPx[o+x]=kuniOf[row[x*3+1]<<8|row[x*3+2]];});

@@ -1,6 +1,6 @@
 {
   "baselineCommit": "liaodong-1560-source-v1",
-  "source": "game/map_data（provinces.png・definition.csv・default.map・projection.json）",
+  "source": "game/map（control/provinces.png・control/definition.csv・control/default.map・projection.json）",
   "sourceSha256": "a88cb31c9fbfd90cb1881a2901904331dd7aac9e0639159df2cbc93b1a7d62ad",
   "note": "1560年正本。児島湾補正を保持し、遼東の軍政域参考図を未割当/旧明だけへ適用。1573〜1605寛甸と1584年以後宇喜多堤は年代差分。軍政域参考線を精密国境・実効支配・軍の所属には転用しない。",
   "applied": [

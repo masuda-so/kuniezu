@@ -63,7 +63,7 @@ const snapshot=dir=>{const rows=[];const walk=(p,prefix='')=>{for(const name of 
   write(A,{...edit,payload:{...edit.payload,fromKey:'castle:a'}});rejected('元の値が違う');
   write(A,transition);write(B,{...edit,id:'late-invalid',validFrom:[1600,9,17],payload:{...edit.payload,fromKey:'castle:a'}});rejected('元の値が違う');
   fs.rmSync(B);write(A,edit);
-  for(const name of ['provinces','definition','defaultMap','projection']){const p=md.files[name],before=fs.readFileSync(p);fs.appendFileSync(p,' ');rejected('正本 game/map_data が台帳と違う');fs.writeFileSync(p,before);}
+  for(const name of ['provinces','definition','defaultMap','projection']){const p=md.files[name],before=fs.readFileSync(p);fs.appendFileSync(p,' ');rejected('正本 game/map が台帳と違う');fs.writeFileSync(p,before);}
   write(mf,{...manifest,source:{sha256:'another'}});rejected('配信タイルが正本と合わない');write(mf,manifest);
 
   // 正本と配信タイルの一致も実 PNG で検査する。

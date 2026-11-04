@@ -17,6 +17,7 @@ is [docs/README.md](docs/README.md); open requests and ownership are in
 - Shows former lakeshores, castles, facilities and people checked against sources,
   marches along historical roads, and battle deployments and movements, each with
   its source.
+- Battle markers retain their geographic positions when the viewport or district changes. Co-located units can be selected individually.
 - Diplomacy is shown as borders only; marches are shown as pieces on roads.
   Battles appear automatically only when the player's forces take part. The five
   non-participating Sekigahara units receive no generic advance animation.
@@ -30,6 +31,10 @@ is [docs/README.md](docs/README.md); open requests and ownership are in
   additional date fields that conflict with the time format. See the
   [database design and commands](docs/architecture/history-database.md) (Japanese).
 - The historical database includes the sourced Tomori excavation observation. Archaeological periods remain distinct from exact dates; source hashes, Markdown notes and numerical inputs are retained.
+- Read the aggregate view with `python3 tools/research/history_sqlite.py cube --db <built-database>
+  --from-year 1600 --to-year 1615 --calendar Japanese-lunisolar`. This read-only
+  command counts source records by native calendar and precision without expanding
+  unknown years.
 - The historical database retains personal authority IDs and sourced aliases.
   Aliases can be searched; comparative records outside the game period are not
   reassigned to events within it.
@@ -60,9 +65,11 @@ is [docs/README.md](docs/README.md); open requests and ownership are in
 
 ## Getting started and usage
 
-Only the map source in `game/map_data/` (a single full-map `provinces.png` and
-related files, in the Paradox style) is tracked in Git. The tiles, borders, river
-lines and relief served to the browser (generated files in `game/map/`) are not
+The map source lives in `game/map/`, one folder per layer, and is tracked in Git:
+administrative divisions in `admin/` (districts), control in `control/` (castle
+domains, including the single full-map `provinces.png` in the Paradox style),
+nature in `physical/` (elevation and rivers), and dated edits in `edits/`. The tiles, borders, river
+lines and relief served to the browser (generated files in `game/map/build/`) are not
 in the repository. Generate them once after cloning, and again after changing the
 source or the dated edits (`game/map/edits/*.json`). This takes a few minutes.
 
@@ -70,12 +77,18 @@ source or the dated edits (`game/map/edits/*.json`). This takes a few minutes.
 node tools/map/build-map.cjs
 ```
 
-To also build the terrain relief, fetch `game/map_data/heightmap.png` with Git LFS
+To also build the terrain relief, fetch `game/map/physical/heightmap.png` with Git LFS
 and pass a Python that has NumPy and Pillow (the game runs without relief).
 
 ```sh
 node tools/map/build-map.cjs --height --python /path/to/python3
 ```
+
+The source PNGs are too large to open in VS Code and similar viewers, so the
+build also writes quarter-scale previews of each layer, with a one-degree
+graticule, to `game/map/build/previews/` (`control.png` control, `admin.png`
+administrative divisions, `rivers.png` rivers, `height.png` elevation). Open
+these to check the map by eye.
 
 After generating, serve `game/` as static files and open `index.html` in a
 browser.
