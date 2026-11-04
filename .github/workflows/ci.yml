@@ -43,6 +43,9 @@ jobs:
         run: node tools/map/build-map.cjs
       - name: Raster map checks
         run: node --max-old-space-size=8000 tools/checks/raster-map.cjs
+      # 地図を作り直した後の画素数の集計が、コミット済みのものと一致すること（正本を変えた PR で集計の更新漏れを防ぐ）。
+      - name: Committed pixel audit matches the source
+        run: git diff --exit-code -- data/audits/raster-province-pixels.json
       - name: Dated map edit checks
         run: node --max-old-space-size=8000 tools/checks/province-edits.cjs
       - name: Katori water and shoreline masks
