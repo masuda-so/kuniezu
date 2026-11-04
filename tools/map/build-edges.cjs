@@ -7,6 +7,8 @@ const fs=require('node:fs'),path=require('node:path'),zlib=require('node:zlib'),
 const root=path.resolve(__dirname,'../..'),dir=path.join(root,'game/map');
 const m=JSON.parse(fs.readFileSync(path.join(dir,'manifest.json'),'utf8'));
 const MD=require('./map-data.cjs'),DEF=MD.readDefinition(),defs=DEF.rows,SEA=DEF.byKey.get('sea').id;// 正本 game/map_data の definition.csv・default.map（id は1から、海は SEA）
+const maskFile=path.join(root,'game/map_data/shoreline_masks.geojson');
+const maskedShore=require('./shoreline-masks.cjs')(maskFile,m.projection);
 const byColor=new Map(defs.filter(Boolean).map(d=>[d.rgb[0]<<16|d.rgb[1]<<8|d.rgb[2],d.id]));
 function decode(file){const buf=fs.readFileSync(file);let i=8,w=0,h=0;const parts=[];while(i<buf.length){const len=buf.readUInt32BE(i),type=buf.toString('ascii',i+4,i+8),data=buf.subarray(i+8,i+8+len);if(type==='IHDR'){w=data.readUInt32BE(0);h=data.readUInt32BE(4);}else if(type==='IDAT')parts.push(data);i+=12+len;}
  // PNG の行ごとのフィルタ（0〜4）を戻す。RGB 8bit（1画素3バイト）だけを扱う。
@@ -20,7 +22,7 @@ function simplify(pts,tol){if(pts.length<=4)return pts;const n=pts.length/2,keep
   for(let i=a+1;i<b;i++){const px=pts[i*2]-ax,py=pts[i*2+1]-ay,t=L?Math.max(0,Math.min(1,(px*dx+py*dy)/L)):0,d=Math.hypot(px-t*dx,py-t*dy);if(d>best){best=d;bi=i;}}
   if(best>tol){keep[bi]=1;st.push([a,bi],[bi,b]);}}const o=[];for(let i=0;i<n;i++)if(keep[i])o.push(pts[i*2],pts[i*2+1]);return o;}
 const levels=[{factor:1,dir:'provinces',tiles:m.tiles,tol:.6},...m.levels.map(l=>({factor:l.factor,dir:l.dir,tiles:l.tiles,tol:.8}))];
-const index={generated:'tools/map/build-edges.cjs',gridSha256:crypto.createHash('sha256').update(fs.readFileSync(path.join(dir,'manifest.json'))).digest('hex'),
+const index={generated:'tools/map/build-edges.cjs',shorelineMasksSha256:fs.existsSync(maskFile)?crypto.createHash('sha256').update(fs.readFileSync(maskFile)).digest('hex'):null,gridSha256:crypto.createHash('sha256').update(fs.readFileSync(path.join(dir,'manifest.json'))).digest('hex'),
  note:'領域画像の共有辺。a<b の領域ID、kind は coast/lake/region。座標は地図平面。塗りの画像と同じ版・段から作る。',levels:[]};
 // 年代別の差分（game/map/edits/compiled/<版>/manifest.json）。差し替えるタイルとその左・上の隣（縁の辺がそのタイルに掛かる）の辺を、版ごとに作り直す。
 // 土台の領域画像が変わったら差分は作り直しが要る。差分の manifest の baseProvincesSha256（正本 game/map_data の確認値）が今の土台と一致する版だけ使う。
@@ -32,7 +34,7 @@ function edgesOfTile(L,get,c,r,none=SEA){// none：タイルの外・地図の�
  const step=m.projection.stepUnits*L.factor,[X0,Y0]=m.projection.origin,T=m.tile;const me=get(c,r);if(!me)return [];const {w,h,ids}=me,right=get(c+1,r),down=get(c,r+1);
   const at=(x,y)=>{if(x<w&&y<h)return ids[y*w+x];if(x>=w&&y<h)return right?right.ids[y*right.w+(x-w)]:none;if(y>=h&&x<w)return down?down.ids[(y-h)*down.w+x]:none;return none;};
   const leftNone=!get(c-1,r),upNone=!get(c,r-1);const segs=new Map();
-  const add=(a,b,x0,y0,x1,y1)=>{if(a===b)return;const lo=Math.min(a,b),hi=Math.max(a,b),k=lo+':'+hi;let s=segs.get(k);if(!s){s=[];segs.set(k,s);}s.push(x0,y0,x1,y1);};
+  const add=(a,b,x0,y0,x1,y1)=>{if(a===b)return;if(none===SEA&&['coast','lake'].includes(kindOf(a,b))&&maskedShore(X0+(c*T+x0)*step,Y0+(r*T+y0)*step,X0+(c*T+x1)*step,Y0+(r*T+y1)*step,Math.max(0,(L.factor-1)*m.projection.stepUnits*Math.SQRT1_2)))return;const lo=Math.min(a,b),hi=Math.max(a,b),k=lo+':'+hi;let s=segs.get(k);if(!s){s=[];segs.set(k,s);}s.push(x0,y0,x1,y1);};
   for(let y=0;y<h;y++)for(let x=0;x<w;x++){const v=ids[y*w+x];add(v,at(x+1,y),x+1,y,x+1,y+1);add(v,at(x,y+1),x,y+1,x+1,y+1);if(x===0&&leftNone)add(v,none,0,y,0,y+1);if(y===0&&upNone)add(v,none,x,0,x+1,0);}
   const items=[];
   for(const [k,s] of segs){const [a,b]=k.split(':').map(Number);
