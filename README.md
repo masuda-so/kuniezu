@@ -67,8 +67,8 @@ node tools/checks/offline.cjs
 
 ## 開発と貢献
 
-GitHub Actionsの通常CIは、サーバー不要の検査（構文・保存・領土、フォルダと担当、基盤）を Node.js で実行します。実画面の検証は利用者の環境で行い、結果を `data/verification/` に記録します。
+GitHub Actionsの通常CIは、サーバー不要の検査（構文・保存・領土、フォルダと担当、基盤）を Node.js で実行します。実画面の検証は利用者の環境で行い、結果の要約を `data/verification/` に記録します（画像は PR に添付し、リポジトリには入れません）。
 
-リポジトリを変更する場合は、[HANDOFF.md](HANDOFF.md) の合意事項と [docs/work/README.md](docs/work/README.md) の完了条件を確認し、変更内容と検証結果をPRに記載してください。作業時の共通方針は [AGENTS.md](AGENTS.md) を参照してください。
+リポジトリを変更する場合は、[HANDOFF.md](HANDOFF.md) の合意事項と [docs/work/README.md](docs/work/README.md) の完了条件を確認し、作業ごとに main からブランチを切り、一つの目的に絞った小さな PR で変更内容と検証結果を記載してください（GitHub flow。取り込みは squash）。作業時の共通方針は [AGENTS.md](AGENTS.md) を参照してください。
 
 ライセンスは [LICENSE](LICENSE)（MIT）です。同梱・派生する地図データ等は各出典の条件に従います。

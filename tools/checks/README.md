@@ -4,7 +4,7 @@
 
 地図の配信物（`game/map/` の生成物）は Git で追跡しない。取得後と、地図の正本や差分を変えた後は、検査の前に `node tools/map/build-map.cjs` で作る（CI も同じ）。
 
-コマンドはプロジェクト直下で実行する。ブラウザ検査は `GAME_URL`、`GAME_TEST_OUTPUT`、`CHROME_PATH` を指定可能。毎回の成果は `data/verification/担当名-対象名/` に保存し、別担当の結果を上書きしない。
+コマンドはプロジェクト直下で実行する。ブラウザ検査は `GAME_URL`、`GAME_TEST_OUTPUT`、`CHROME_PATH` を指定可能。毎回の成果は `data/verification/担当名-対象名/` に保存し、別担当の結果を上書きしない。コミットするのは結果の要約（README.md）だけで、画像・動画は PR に添付する（`.gitignore` 済み）。
 
 | 分野 | サーバー不要の検査 | 実画面の検査 |
 |---|---|---|
