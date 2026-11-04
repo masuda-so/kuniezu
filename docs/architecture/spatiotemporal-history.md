@@ -88,4 +88,35 @@ node tools/research/query-history.cjs --year 1592 --entity 松平家忠
 
 ## 外部典拠との接続状況（2026-11-04）
 
-人物の `authorityIds` は接続用の欄だが、現時点の7人物では空である。Wikidataの取得・更新・同定を実装済みとは扱わない。現在の正本は個別資料を照合したcurated入力であり、取得情報を自動で確認済み命題へ格上げする機能はない。外部典拠を接続する際も、対象の同一性・元データの版・出典と、個々の史実命題の採用を別に記録する。
+人物の `authorityIds` は、38人の登録人物をWikidataへ対応付ける。うち25人は国立国会図書館典拠にも接続する。取得した版・名称・照合根拠は人物レコードと `source-notes/*authority*.json` に保持する。人物同定と、生没年・所在・領土の史実命題の採否は別に記録する。正本は個別資料を照合したcurated入力。
+
+### 人物典拠と場所・期間検索
+
+作業ツリーでは、人物の内部IDに Wikidata と国立国会図書館の典拠IDを対応付ける。Wikidataの版と取得日時を人物レコードに残す。典拠IDは人物の同定に用い、所在地や生没年の採用は出典付きの個別記録で扱う。
+
+```sh
+node tools/research/query-locations.cjs wikidata:Q950496 --place 伏見 --from-year 1598 --to-year 1600
+node tools/research/query-locations.cjs ndlna:01150199 --place place:fushimi --lunar 1600-7-5
+```
+
+IDは完全一致、地名と人物名は部分一致。検索期間は両端の年を含む。記録が持つ旧暦年と西暦の年精度はそれぞれの暦の表記年で比較し、暦換算は行わない。旧暦の日付を照合する場合は、閏月の区別も含めて指定する。
+
+来歴全体の期間検索にも対応する。開始・終了の両年を含み、記録の適用区間と検索期間に重なりがあるものを返す。片側だけの指定も可能。
+
+```sh
+node tools/research/query-history.cjs --from-year 1590 --to-year 1600 --entity wikidata:Q171977
+```
+
+単年の `--year` と期間指定の同時使用は入力エラーにする。旧暦の年を西暦へ日付換算する検索ではないため、日単位の所在には `query-locations.cjs --lunar` を使う。
+
+### 照合済みの場所代表点
+
+場所の座標を確認できた場合は `geometryStatus: site-representative` とGeoJSONのPointで保持し、出典URL・該当箇所・確認日・位置の意味を `geometryEvidence` に記録する。安芸城の登録点が最初の対象。未照合の場所は従来どおり `geometry: null` にする。代表点を人物の精密な所在、城域の境界、古湖岸の測量点へ転用しない。
+
+### 代表点と期間の交差検索
+
+```sh
+node tools/research/query-history.cjs --bbox 133.9,33.5,134,33.6 --from-year 1600 --to-year 1615
+```
+
+`--bbox` は西経度・南緯度・東経度・北緯度の順。範囲内の照合済み場所代表点に直接関連する記録と、年代条件を交差させる。座標未登録の場所を近隣へ推定配置しない。人物の本拠からその期間の在城を推定する結合も行わない。範囲の端は含む。日付変更線をまたぐ範囲は二つに分けて検索する。

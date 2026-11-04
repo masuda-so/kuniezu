@@ -21,7 +21,18 @@ function validateLocations({people,places,locations,sources}){
    authorityOwners.add(id);
   }
  }
- for(const p of places)if(!p.name||p.geometry!==null||p.geometryStatus!=='not-asserted')throw Error('未照合の座標を場所登録へ混ぜない');
+ for(const p of places){
+  if(!p.name)throw Error('場所の名称が必要');
+  if(p.geometryStatus==='not-asserted'){
+   if(p.geometry!==null)throw Error('未照合の座標を場所登録へ混ぜない');
+   continue;
+  }
+  const geometry=p.geometry,evidence=p.geometryEvidence;
+  if(p.geometryStatus!=='site-representative'||geometry?.type!=='Point'||!Array.isArray(geometry.coordinates)||geometry.coordinates.length!==2)throw Error('場所の代表点形式が不正');
+  const [lon,lat]=geometry.coordinates;
+  if(![lon,lat].every(Number.isFinite)||Math.abs(lon)>180||Math.abs(lat)>90)throw Error('場所の経緯度が不正');
+  if(!evidence?.sourceUrl?.startsWith('https://')||!evidence.locator||!evidence.scope||!/^\d{4}-\d{2}-\d{2}$/.test(evidence.checked||''))throw Error('代表点の照合根拠が不足');
+ }
  const relations=new Set(['held-castle-lordship','principal-base','residence-transfer','attested-presence']);
  for(const r of locations){if(r.estimated===true||r.runId)throw Error('推定・プレイ履歴を史実参照へ混ぜない');validateTime(r.time);if(!persons.has(r.person)||!sites.has(r.place))throw Error('人物・場所IDが未登録');
   if(!relations.has(r.relation)||r.recordType!=='sourced-location-observation'||r.status!=='verified-in-specified-scope')throw Error('関係・審査状態が不正');

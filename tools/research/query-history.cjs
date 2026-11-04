@@ -2,10 +2,11 @@
 const fs=require('node:fs'),path=require('node:path'),{createHistoryIndex,queryHistory,indexSummary}=require('./history-index.cjs');
 try{
  const {values}=require('node:util').parseArgs({options:{
-  year:{type:'string'},entity:{type:'string'},
+  year:{type:'string'},entity:{type:'string'},bbox:{type:'string'},
   'from-year':{type:'string'},'to-year':{type:'string'},
  }});
  const opts={entity:values.entity};
+ if(values.bbox!==undefined){if(values.bbox.split(',').some(s=>!s.trim()))throw Error('経緯度範囲の数値が不足');opts.bbox=values.bbox.split(',').map(Number);}
  for(const [flag,key] of [['year','year'],['from-year','fromYear'],['to-year','toYear']]){
   if(values[flag]===undefined)continue;
   if(!/^-?[0-9]+$/.test(values[flag]))throw Error('年は整数で指定する');

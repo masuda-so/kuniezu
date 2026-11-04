@@ -27,13 +27,24 @@ function createHistoryIndex({claims=[],locations=[],people=[],places=[]}){
  for(const r of locations){assert(r.recordType==='sourced-location-observation'&&r.status==='verified-in-specified-scope'&&!r.runId&&!r.estimated,'Only reviewed location observations');const t=r.time;assert(['year-interval','year-window','dated-event'].includes(t.kind),'Unsupported time kind');let from,until;if(t.kind==='year-interval'){from=t.from;until=t.untilExclusive;}else{from=t.year??t.date?.[0];until=from+1;}assert(Number.isInteger(from)&&Number.isInteger(until)&&from<until,'Invalid location time');add(r.id,r,[r.person,r.place],{fromYear:from,untilExclusive:until},t.kind==='year-interval'?'attested-interval':'recorded-change');}
  const timeline=[...records.values()].map(r=>({id:r.id,...r.time})).sort((a,b)=>a.fromYear-b.fromYear||a.id.localeCompare(b.id));
  let max=-Infinity;for(const r of timeline){max=Math.max(max,r.untilExclusive);r.prefixMaxUntilExclusive=max;}
- return {records,byEntity,aliases,labels,timeline,authorityOwners};
+ return {records,byEntity,aliases,labels,timeline,authorityOwners,placesById:new Map(places.map(p=>[p.id,p]))};
 }
-function queryHistory(index,{year,entity,fromYear,toYear}={}){
+function queryHistory(index,{year,entity,fromYear,toYear,bbox}={}){
  if([year,fromYear,toYear].some(value=>value!==undefined&&!Number.isInteger(value)))throw Error('検索年は整数で指定する');
  if(year!==undefined&&(fromYear!==undefined||toYear!==undefined))throw Error('単年と期間は同時に指定できない');
  const lower=year??fromYear??-Infinity,upper=year??toYear??Infinity;
  if(lower>upper)throw Error('検索期間の開始年は終了年以前にする');
+ let spatialPlaces;
+ if(bbox!==undefined){
+  if(!Array.isArray(bbox)||bbox.length!==4||!bbox.every(Number.isFinite))throw Error('範囲は西経度,南緯度,東経度,北緯度の4数値で指定する');
+  const [west,south,east,north]=bbox;
+  if(west < -180||east > 180||south < -90||north > 90||west>east||south>north)throw Error('経緯度範囲が不正（日付変更線をまたぐ範囲は分けて指定）');
+  spatialPlaces=new Set([...index.placesById.values()].filter(p=>{
+   if(p.geometryStatus!=='site-representative'||p.geometry?.type!=='Point')return false;
+   const [lon,lat]=p.geometry.coordinates;
+   return west<=lon&&lon<=east&&south<=lat&&lat<=north;
+  }).map(p=>p.id));
+ }
  let entityIds;
  if(entity){
   const owner=index.authorityOwners.get(entity);
@@ -47,7 +58,7 @@ function queryHistory(index,{year,entity,fromYear,toYear}={}){
   let lo=0,hi=index.timeline.length;while(lo<hi){const mid=(lo+hi)>>1;if(index.timeline[mid].fromYear<=upper)lo=mid+1;else hi=mid;}
   refs=[];for(let i=lo-1;i>=0&&index.timeline[i].prefixMaxUntilExclusive>lower;i--){const r=index.timeline[i];if(lower<r.untilExclusive)refs.push(r);}refs.reverse();
  }
- return refs.filter(r=>!allowed||allowed.has(r.id)).map(r=>index.records.get(r.id));
+ return refs.filter(r=>!allowed||allowed.has(r.id)).map(r=>index.records.get(r.id)).filter(r=>!spatialPlaces||r.entities.some(id=>spatialPlaces.has(id)));
 }
 function indexSummary(index){return {records:index.records.size,entities:index.byEntity.size,temporalReferences:index.timeline.length,entityReferences:[...index.byEntity.values()].reduce((n,r)=>n+r.length,0),yearSnapshots:0};}
 module.exports={createHistoryIndex,queryHistory,indexSummary};
