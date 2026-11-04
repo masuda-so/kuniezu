@@ -17,6 +17,7 @@ is [docs/README.md](docs/README.md); open requests and ownership are in
 - Shows former lakeshores, castles, facilities and people checked against sources,
   marches along historical roads, and battle deployments and movements, each with
   its source.
+- Battle markers retain their geographic positions when the viewport or district changes. Co-located units can be selected individually.
 - Diplomacy is shown as borders only; marches are shown as pieces on roads.
   Battles appear automatically only when the player's forces take part. The five
   non-participating Sekigahara units receive no generic advance animation.
