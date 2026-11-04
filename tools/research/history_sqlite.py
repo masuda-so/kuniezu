@@ -107,11 +107,11 @@ const temp=fs.mkdtempSync(path.join(os.tmpdir(),'kuniezu-sql-input-'));try{for(c
                             lon, lat = point
                             db.execute('INSERT INTO spacetime VALUES (?,?,?,?,?,?,?)', (ref, lon, lon, lat, lat, first, until))
             map_root = research.parent.parent / 'game'
-            definition = map_root / 'map_data/definition.csv'
+            definition = map_root / 'map/control/definition.csv'
             if definition.exists():
                 # Render IDs are a separate namespace, never historical ownership claims.
                 from re import findall
-                default = (map_root / 'map_data/default.map').read_text()
+                default = (map_root / 'map/control/default.map').read_text()
                 groups = {key: {int(n) for n in findall(r'\d+', body)} for key, body in findall(r'(sea_zones|lakes)\s*=\s*LIST\s*\{([^}]*)\}', default)}
                 for line in definition.read_text().splitlines():
                     fields = line.split(';')

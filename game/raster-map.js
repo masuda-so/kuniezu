@@ -1,7 +1,7 @@
 "use strict";
 /* 年代別の地図の版（game/map/versions.json）。ゲームの日付が期間 [from,to) に入る版を一つ選ぶ。塗り・当たり判定・境界線は同じ版を使う。 */
 window.TKMapVersion=(function(){let list=[],lastT=null,lastS=null,cur=null;
- if(typeof fetch==='function'&&typeof document!=='undefined')fetch('map/versions.json',{cache:'no-cache'}).then(r=>r.ok?r.json():{versions:[]}).then(v=>{list=v.versions||[];lastT=null;lastS=null;window.TKRaster?.bump?.();window.TKEdges?.bump?.();}).catch(()=>{});
+ if(typeof fetch==='function'&&typeof document!=='undefined')fetch('map/build/versions.json',{cache:'no-cache'}).then(r=>r.ok?r.json():{versions:[]}).then(v=>{list=v.versions||[];lastT=null;lastS=null;window.TKRaster?.bump?.();window.TKEdges?.bump?.();}).catch(()=>{});
  // 記憶は「遊んでいる場（G.S() の参照）」と日付の両方で引く。シナリオやセーブが替わって同じ t になっても古い版を使わない。
  function active(){const S=window.G?.S?.();const t=S?S.t:null;if(t===lastT&&S===lastS)return cur;lastT=t;lastS=S;cur=null;if(t==null)return null;
   for(const v of list){const a=G.evT({d:v.period[0]}),b=G.evT({d:v.period[1]});if(t>=a&&t<b){cur=v;break;}}return cur;}
@@ -17,8 +17,8 @@ window.TKRaster=(function(){
  let man=null,defs=[],seaId=1,ready=false,revision=0,onChange=null;const byColor=new Map(),tiles=new Map(),order=[];
  const key=(f,t)=>f+':'+t.file;
  // 通信のない検査環境（node の vm）では読まない。描画は従来の線の領域へ戻る。
- if(typeof fetch==='function'&&typeof document!=='undefined')Promise.all([fetch('map/manifest.json',{cache:'no-cache'}).then(r=>r.json()),fetch('map_data/definition.csv',{cache:'no-cache'}).then(r=>r.text()),fetch('map_data/default.map',{cache:'no-cache'}).then(r=>r.text())]).then(([m,csv,dm])=>{
-  // 正本 map_data（CK3 の書式）：definition.csv は `id;R;G;B;name;x;`（id 0 は予約）、海・湖は default.map の sea_zones・lakes。defs は id で引く。
+ if(typeof fetch==='function'&&typeof document!=='undefined')Promise.all([fetch('map/build/manifest.json',{cache:'no-cache'}).then(r=>r.json()),fetch('map/control/definition.csv',{cache:'no-cache'}).then(r=>r.text()),fetch('map/control/default.map',{cache:'no-cache'}).then(r=>r.text())]).then(([m,csv,dm])=>{
+  // 正本 game/map/control（CK3 の map_data の書式）：definition.csv は `id;R;G;B;name;x;`（id 0 は予約）、海・湖は default.map の sea_zones・lakes。defs は id で引く。
   const list=k=>new Set(((dm.match(new RegExp(k+'\\s*=\\s*LIST\\s*\\{([^}]*)\\}'))||[])[1]||'').trim().split(/\s+/).filter(Boolean).map(Number)),sea=list('sea_zones'),lake=list('lakes');
   man=m;defs=[];for(const l of csv.split(/\r?\n/)){const p=l.split(';'),id=+p[0];if(!id)continue;defs[id]={id,rgb:[+p[1],+p[2],+p[3]],key:p[4],kind:sea.has(id)?'sea':lake.has(id)?'lake':'land'};}
   for(const d of defs)if(d){byColor.set(d.rgb[0]<<16|d.rgb[1]<<8|d.rgb[2],d.id);if(d.key==='sea')seaId=d.id;}
@@ -33,7 +33,7 @@ window.TKRaster=(function(){
   for(const r of sub.values())tiles.push({col:r.col,row:r.row,file:r.file,url:r.file,sha256:r.sha256,width:man.tile,height:man.tile});
   verKey=k;return verMemo={...base,tiles};}
  function load(f,t){const k=key(f,t);const had=tiles.get(k);if(had&&!(had.state==='error'&&performance.now()>had.retry))return had;const rec={state:'loading',t,f,ids:null,canvas:null,sig:'',tries:(had?.tries||0)+1};tiles.set(k,rec);
-  fetch('map/'+(t.url||level(f).dir+'/'+t.file)+(t.sha256?'?v='+t.sha256.slice(0,10):'')).then(r=>r.blob()).then(b=>createImageBitmap(b)).then(bm=>{const cv=document.createElement('canvas');cv.width=bm.width;cv.height=bm.height;const c=cv.getContext('2d',{willReadFrequently:true});c.drawImage(bm,0,0);const px=c.getImageData(0,0,bm.width,bm.height).data,ids=new Uint16Array(bm.width*bm.height);bm.close?.();cv.width=cv.height=0;// 区画番号だけ残し、復号に使った画像と下書きはすぐ手放す
+  fetch('map/build/'+(t.url||level(f).dir+'/'+t.file)+(t.sha256?'?v='+t.sha256.slice(0,10):'')).then(r=>r.blob()).then(b=>createImageBitmap(b)).then(bm=>{const cv=document.createElement('canvas');cv.width=bm.width;cv.height=bm.height;const c=cv.getContext('2d',{willReadFrequently:true});c.drawImage(bm,0,0);const px=c.getImageData(0,0,bm.width,bm.height).data,ids=new Uint16Array(bm.width*bm.height);bm.close?.();cv.width=cv.height=0;// 区画番号だけ残し、復号に使った画像と下書きはすぐ手放す
    for(let i=0;i<ids.length;i++)ids[i]=byColor.get(px[i*4]<<16|px[i*4+1]<<8|px[i*4+2])||seaId;rec.ids=ids;rec.state='ready';revision++;onChange?.();})
    .catch(e=>{rec.state='error';rec.err=String(e);rec.retry=performance.now()+1000*rec.tries;if(rec.tries<5)setTimeout(()=>{revision++;onChange?.();},1000*rec.tries);});
   order.push(k);for(let n=order.length;order.length>48&&n>0;n--){const old=order.shift(),r=tiles.get(old);if(old.startsWith('8:')||r?.canvases&&[...r.canvases.values()].some(cv=>painted.find(e=>e.cv===cv&&e.used>=paintSeq-8))){order.push(old);continue;}if(r?.canvases)for(const cv of r.canvases.values()){cv.width=cv.height=0;const i=painted.findIndex(e=>e.cv===cv);if(i>=0)painted.splice(i,1);}tiles.delete(old);}return rec;}
@@ -73,12 +73,12 @@ window.TKRaster=(function(){
    細かい段が届くまでは 800m の段を下に敷く（陰影は陸で不透明なので二重にならない）。 */
 window.TKRelief=(function(){
  let man=null,ready=false,revision=0,onChange=null;const tiles=new Map(),order=[];let pinned=new Set();// pinned：描画中の一回で使うタイル。上限を超えても閉じない（閉じた画像を描くと例外になる）
- if(typeof fetch==='function'&&typeof document!=='undefined')Promise.all([fetch('map/relief.json',{cache:'no-cache'}).then(r=>r.json()),fetch('map/manifest.json',{cache:'no-cache'}).then(r=>r.json())]).then(([r,grid])=>{
+ if(typeof fetch==='function'&&typeof document!=='undefined')Promise.all([fetch('map/build/relief.json',{cache:'no-cache'}).then(r=>r.json()),fetch('map/build/manifest.json',{cache:'no-cache'}).then(r=>r.json())]).then(([r,grid])=>{
   man={...r,origin:grid.projection.origin,step:grid.projection.stepUnits,tile:grid.tile};ready=true;for(const t of level(8).tiles)load(8,t);revision++;onChange?.();}).catch(()=>{});
  const level=f=>man.levels.find(l=>l.factor===f);
  // 読み込みに失敗したタイルは1秒後に読み直す（同時に多く読むと一時的に失敗することがある）。
  function load(f,t){const k=f+':'+t.file;const had=tiles.get(k);if(had&&!(had.state==='error'&&performance.now()>had.retry))return had;const rec={state:'loading',im:null,tries:(had?.tries||0)+1};tiles.set(k,rec);
-  fetch('map/'+level(f).dir+'/'+t.file+(t.sha256?'?v='+t.sha256.slice(0,10):'')).then(r=>{if(!r.ok)throw Error('HTTP '+r.status);return r.blob();}).then(b=>createImageBitmap(b)).then(im=>{rec.im=im;rec.state='ready';revision++;onChange?.();}).catch(e=>{rec.state='error';rec.err=String(e);rec.retry=performance.now()+1000*rec.tries;if(rec.tries<5)setTimeout(()=>{revision++;onChange?.();},1000*rec.tries);});
+  fetch('map/build/'+level(f).dir+'/'+t.file+(t.sha256?'?v='+t.sha256.slice(0,10):'')).then(r=>{if(!r.ok)throw Error('HTTP '+r.status);return r.blob();}).then(b=>createImageBitmap(b)).then(im=>{rec.im=im;rec.state='ready';revision++;onChange?.();}).catch(e=>{rec.state='error';rec.err=String(e);rec.retry=performance.now()+1000*rec.tries;if(rec.tries<5)setTimeout(()=>{revision++;onChange?.();},1000*rec.tries);});
   order.push(k);for(let n=order.length;order.length>64&&n>0;n--){const old=order.shift();if(old.startsWith('8:')||pinned.has(old)){order.push(old);continue;}tiles.get(old)?.im?.close?.();tiles.delete(old);}return rec;}
  function pick(z,dpr){const unit=1/(z*dpr);for(const f of [8,4])if(man.step*f<=unit*1.5)return f;return 1;}
  function paint(c,view,z,dpr){if(!ready)return false;const f=pick(z,dpr);let complete=true;
@@ -98,14 +98,14 @@ window.TKRelief=(function(){
    段は TKRaster と同じ選び方。細かい段のタイルが届くまでは、届いている粗い段を使い、塗りの段と食い違う線は重ねない。 */
 window.TKEdges=(function(){
  let man=null,grid=null,ready=false,revision=0,onChange=null;const tiles=new Map();
- if(typeof fetch==='function'&&typeof document!=='undefined')Promise.all([fetch('map/edges.json',{cache:'no-cache'}).then(r=>r.json()),fetch('map/manifest.json',{cache:'no-cache'}).then(r=>r.json())]).then(([e,g])=>{man=e;grid=g;ready=true;revision++;onChange?.();}).catch(()=>{});
+ if(typeof fetch==='function'&&typeof document!=='undefined')Promise.all([fetch('map/build/edges.json',{cache:'no-cache'}).then(r=>r.json()),fetch('map/build/manifest.json',{cache:'no-cache'}).then(r=>r.json())]).then(([e,g])=>{man=e;grid=g;ready=true;revision++;onChange?.();}).catch(()=>{});
  let verMemo=null,verKey='';
  const level=f=>{const v=TKMapVersion.active(),k=(v?.id||'')+'|'+f;if(verKey===k&&verMemo)return verMemo;const base=man.levels.find(l=>l.factor===f);
   const sub=new Map((man.versions||[]).filter(x=>v&&x.id===v.id&&x.factor===f).map(x=>[x.col+','+x.row,x]));if(!sub.size){verKey=k;return verMemo=base;}
   const tiles=base.tiles.map(t=>{const r=sub.get(t.col+','+t.row);if(!r)return t;sub.delete(t.col+','+t.row);return {...t,file:r.file,sha256:r.sha256};});for(const r of sub.values())tiles.push({col:r.col,row:r.row,file:r.file,sha256:r.sha256});
   verKey=k;return verMemo={...base,tiles};};
  function load(f,t){const k=f+':'+t.file;let rec=tiles.get(k);if(rec&&!(rec.state==='error'&&performance.now()>rec.retry))return rec;rec={state:'loading',tries:(rec?.tries||0)+1};tiles.set(k,rec);
-  fetch('map/'+level(f).dir+'/'+t.file+'?v='+t.sha256.slice(0,10)).then(r=>{if(!r.ok)throw Error('HTTP '+r.status);return r.json();}).then(items=>{rec.items=items.map(it=>{const p=new Path2D();for(const l of it.lines){p.moveTo(l[0],l[1]);for(let i=2;i<l.length;i+=2)p.lineTo(l[i],l[i+1]);}return {a:it.a,b:it.b,kind:it.kind,p};});rec.state='ready';revision++;onChange?.();})
+  fetch('map/build/'+level(f).dir+'/'+t.file+'?v='+t.sha256.slice(0,10)).then(r=>{if(!r.ok)throw Error('HTTP '+r.status);return r.json();}).then(items=>{rec.items=items.map(it=>{const p=new Path2D();for(const l of it.lines){p.moveTo(l[0],l[1]);for(let i=2;i<l.length;i+=2)p.lineTo(l[i],l[i+1]);}return {a:it.a,b:it.b,kind:it.kind,p};});rec.state='ready';revision++;onChange?.();})
    .catch(e=>{rec.state='error';rec.retry=performance.now()+1000*rec.tries;if(rec.tries<5)setTimeout(()=>{revision++;onChange?.();},1000*rec.tries);});return rec;}
  function pick(z,dpr){const unit=1/(z*dpr),s=grid.projection.stepUnits;for(const f of [8,4])if(s*f<=unit*1.5)return f;return 1;}
  // view の範囲の辺。塗りと同じ段 f のタイルがそろっていない時は、そろっている段（粗い方）だけを返す。
@@ -115,10 +115,10 @@ window.TKEdges=(function(){
   return null;}
  return {bump(){verMemo=null;revision++;onChange?.();},ready:()=>ready,revision:()=>revision,inView,onChange(fn){onChange=fn;}};
 })();
-/* 河川（正本 map_data/rivers.png の1画素幅の中心線を tools/map/build-river-lines.cjs が辿った線 map/rivers-lines.json）。現代の参考の河道。
+/* 河川（正本 game/map/physical/rivers.png の1画素幅の中心線を tools/map/build-river-lines.cjs が辿った線 map/build/rivers-lines.json）。現代の参考の河道。
    日本・朝鮮とも同じ線・同じ描き方。名前の表示と国境の破線は、従来の主要河川の一覧（TK.REGIONAL_RIVERS）と名前が合う河川だけ。 */
 window.TKRivers=(function(){let recs=null,revision=0,onChange=null;
- if(typeof fetch==='function'&&typeof document!=='undefined')fetch('map/rivers-lines.json',{cache:'no-cache'}).then(r=>r.json()).then(d=>{
+ if(typeof fetch==='function'&&typeof document!=='undefined')fetch('map/build/rivers-lines.json',{cache:'no-cache'}).then(r=>r.json()).then(d=>{
   const canon=n=>TK.RIVER_NAME_EQUIVALENTS?.[n]||n,major=new Map();for(const r of TK.REGIONAL_RIVERS||[]){const k=canon(r.name),o=major.get(k)||{name:r.name,border:false};o.border=o.border||!!r.border;major.set(k,o);}
   recs=d.features.map(f=>{const geometries=f.lines.map(l=>TK.riverGeometry(Array.from({length:l.length/2},(_,i)=>[l[i*2],l[i*2+1]]))),m=major.get(canon(f.name)),longest=geometries.reduce((a,b)=>!a||b.length>a.length?b:a,null);
    return {id:f.id,name:m?m.name:null,border:!!m?.border,geometries,mid:m&&longest?longest.points[Math.floor(longest.points.length/2)]:null};});

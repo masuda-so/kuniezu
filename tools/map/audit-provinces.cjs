@@ -4,10 +4,10 @@
    3) 線のデータ（TKGEO.terr の多角形）の面積と、画像の画素数の差。
    実行：node --max-old-space-size=4096 tools/map/audit-provinces.cjs */
 const fs=require('node:fs'),path=require('node:path'),zlib=require('node:zlib');
-const root=path.resolve(__dirname,'../..'),dir=path.join(root,'game/map');
+const root=path.resolve(__dirname,'../..'),dir=path.join(root,'game/map/build');
 const {G,TKGEO:T}=require(path.join(root,'tools/checks/history-focus.cjs')).model();G.newGame('s1560','oda');
 const m=JSON.parse(fs.readFileSync(path.join(dir,'manifest.json'),'utf8'));
-const defs=require(path.join(root,'tools/map/map-data.cjs')).readDefinition().rows;// 正本 game/map_data（id は1から、kind は default.map）
+const defs=require(path.join(root,'tools/map/map-data.cjs')).readDefinition().rows;// 正本 game/map（id は1から、kind は default.map）
 const byColor=new Map(defs.filter(Boolean).map(d=>[d.rgb[0]<<16|d.rgb[1]<<8|d.rgb[2],d.id]));
 const W=m.width,H=m.height,N=W*H,id=new Uint16Array(N).fill(defs.find(d=>d&&d.key==='sea').id);
 function decode(buf){let i=8,w=0,h=0;const parts=[];while(i<buf.length){const len=buf.readUInt32BE(i),type=buf.toString('ascii',i+4,i+8),data=buf.subarray(i+8,i+8+len);if(type==='IHDR'){w=data.readUInt32BE(0);h=data.readUInt32BE(4);}else if(type==='IDAT')parts.push(data);i+=12+len;}

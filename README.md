@@ -39,13 +39,13 @@
 
 ## 導入と使い方
 
-地図は正本 `game/map_data/`（Paradox 方式の `provinces.png` 全域1枚など）だけを Git で管理し、ブラウザへ配る分割タイル・境界線・河川の線・陰影（`game/map/` の生成物）はリポジトリに含めません。取得後と、正本や年代別の差分（`game/map/edits/*.json`）を変えた後に、一度生成してください（数分かかります）。
+地図の正本は `game/map/` に層ごとに置き、Git で管理します。行政区分 `admin/`（郡）、支配 `control/`（城の支配域。Paradox 方式の `provinces.png` 全域1枚など）、自然 `physical/`（標高・川）、年代別の差分 `edits/` です。ブラウザへ配る分割タイル・境界線・河川の線・陰影（`game/map/build/` の生成物）はリポジトリに含めません。取得後と、正本や年代別の差分（`game/map/edits/*.json`）を変えた後に、一度生成してください（数分かかります）。
 
 ```sh
 node tools/map/build-map.cjs
 ```
 
-地形の陰影も作る場合は、Git LFS で `game/map_data/heightmap.png` を取得し、NumPy と Pillow の入った Python を指定します（陰影が無くてもゲームは動きます）。
+地形の陰影も作る場合は、Git LFS で `game/map/physical/heightmap.png` を取得し、NumPy と Pillow の入った Python を指定します（陰影が無くてもゲームは動きます）。
 
 ```sh
 node tools/map/build-map.cjs --height --python /path/to/python3

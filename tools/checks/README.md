@@ -2,7 +2,7 @@
 
 サーバーの起動・停止はユーザーのみ。ブラウザ検証は既存8000番へ専用の一時Chromeで接続し、普段のプロフィール・保存を使わない。負荷測定は他のブラウザ検証と同時実行しない。
 
-地図の配信物（`game/map/` の生成物）は Git で追跡しない。取得後と、地図の正本や差分を変えた後は、検査の前に `node tools/map/build-map.cjs` で作る（CI も同じ）。
+地図の配信物（`game/map/build/` の生成物）は Git で追跡しない。取得後と、地図の正本や差分を変えた後は、検査の前に `node tools/map/build-map.cjs` で作る（CI も同じ）。
 
 コマンドはプロジェクト直下で実行する。ブラウザ検査は `GAME_URL`、`GAME_TEST_OUTPUT`、`CHROME_PATH` を指定可能。毎回の成果は `data/verification/担当名-対象名/` に保存し、別担当の結果を上書きしない。コミットするのは結果の要約（README.md）だけで、画像・動画は PR に添付する（`.gitignore` 済み）。
 
@@ -17,7 +17,7 @@
 | 領土・分家・外交 | `families-territory.cjs`、`map-history.cjs` | `borders-family-browser.cjs` |
 | 行軍・保存・速度 | `movement-display.cjs`、`movement-clock.cjs`、`movement-save.cjs`、`logistics-review.cjs` | `march-clock-browser.cjs` |
 | 全期間の移動 | `march-audit.cjs`、`warp-audit.cjs` | 発見したケースを再現 |
-| 街道・河川・地図 | `road-display.cjs`、`battle-rivers.cjs`、`terrain-transition.cjs`、`terrain-cache.cjs`、`raster-map.cjs`（正本 `game/map_data` と配信タイルの一致）、`province-edits.cjs`（年代別の差分の負例） | `zoom-regressions.cjs` |
+| 街道・河川・地図 | `road-display.cjs`、`battle-rivers.cjs`、`terrain-transition.cjs`、`terrain-cache.cjs`、`raster-map.cjs`（正本 `game/map` と配信タイルの一致）、`province-edits.cjs`（年代別の差分の負例） | `zoom-regressions.cjs` |
 | 合戦 | `deployments.cjs`、`atlas-regressions.cjs`、`battle-review.cjs` | `all-battles-browser.cjs`、`battle-loading-browser.cjs` |
 | UI・肖像・性能 | `infrastructure.cjs` | `usability-browser.cjs`、`portrait-browser.cjs`、`render-performance.cjs`、`load-performance.cjs`（起動・再生中の負荷。`GAME_OVERRIDE_ROOT` で作業ツリーの変更分だけ差し替え） |
 | 棚卸し | `coverage-review.cjs`、`history-audit.cjs`、`road-shape-review.cjs` | 棚卸しだけで表示検査済みにしない |

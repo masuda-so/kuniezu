@@ -4,20 +4,8 @@ __pycache__/
 node_modules/
 # 取得した元データ（再配布しない入力。生成物だけを game/ に置く）
 .cache/
-# 地図の配信物（正本 game/map_data と差分の入力 game/map/edits/*.json から node tools/map/build-map.cjs で生成。コミットしない）
-/game/map/provinces/
-/game/map/provinces-4/
-/game/map/provinces-8/
-/game/map/edges-1/
-/game/map/edges-4/
-/game/map/edges-8/
-/game/map/edges.json
-/game/map/manifest.json
-/game/map/versions.json
-/game/map/rivers-lines.json
-/game/map/relief.json
-/game/map/relief-cache/
-/game/map/edits/compiled/
+# 地図の配信物（正本 game/map と差分の入力 game/map/edits/*.json から node tools/map/build-map.cjs で game/map/build に生成。コミットしない）
+/game/map/build/
 # 実画面の証拠の画像・動画（結果の要約 README.md だけをコミットし、画像は PR に添付する。既に追跡中のものは履歴として残る）
 /data/verification/**/*.png
 /data/verification/**/*.jpg
