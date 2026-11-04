@@ -1,0 +1,33 @@
+{
+  "id": "kyoto-arc-2023-2",
+  "author": "中谷俊哉",
+  "publisher": "公益財団法人京都市埋蔵文化財研究所",
+  "title": "富ノ森城跡（京都市埋蔵文化財研究所発掘調査報告2023-2）",
+  "publicationDate": "2024-02-29",
+  "url": "https://www.kyoto-arc.or.jp/news/chousahoukoku/2023-02.pdf",
+  "accessed": "2026-11-04",
+  "locator": "例言（PDF6頁）；本文9頁（PDF19頁）「安土桃山時代の遺構・建物1」；図版5（PDF51頁）；図版10（PDF56頁）；報告書抄録（PDF66頁）",
+  "scope": "2023年調査の第6区で検出した建物1と柱穴、座標格子。遺跡名から築城者・築城年・全城域を確定せず、調査枠を同時期の陸地範囲にしない。",
+  "sourceType": "primary-excavation-report",
+  "retainedInput": {
+    "archiveKey": "sha256:5040b198c2caed5115857b6b41a94c845ce5dd7557f3c46f833186602a6a5ae2",
+    "sha256": "5040b198c2caed5115857b6b41a94c845ce5dd7557f3c46f833186602a6a5ae2",
+    "bytes": 12984183,
+    "mediaType": "application/pdf",
+    "archiveRelativePath": "sha256/5040b198c2caed5115857b6b41a94c845ce5dd7557f3c46f833186602a6a5ae2.pdf",
+    "sourceUrl": "https://www.kyoto-arc.or.jp/news/chousahoukoku/2023-02.pdf",
+    "storage": "durable-local-source-archive",
+    "includedInGit": false,
+    "redistributionPermission": "not-confirmed",
+    "manifest": {
+      "path": "data/inputs/ogura-local-observations/retention-manifest.json",
+      "sha256": "92a836d62d8bd919f64e88d7a0fedbb1862f961fa210cfbe5df782c336d2e865"
+    }
+  },
+  "sourceIdMapping": {
+    "periodExtension": "kyoto-arc-2023-2",
+    "localGeometry": "kyoto-arc-2023-2"
+  },
+  "review": "data/research/source-notes/ogura-tomori-archaeology.json",
+  "readingNote": "data/research/source-notes/ogura-tomori-archaeology.md"
+}

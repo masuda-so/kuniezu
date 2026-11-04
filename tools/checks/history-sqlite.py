@@ -39,6 +39,16 @@ with tempfile.TemporaryDirectory(prefix='kuniezu-sql-check-') as temp:
         assert json.loads(order)['date'] == [1613,12,15]
         assert json.loads(order)['calendar'] == 'Japanese-lunisolar'
         assert db.execute("SELECT scope FROM record WHERE record_id='claim:tonokori-sadowara-outer-castle'").fetchone()[0] == 'described-period-candidate'
+        # Archaeological period labels must not become dated events or continuous presence.
+        tomori = db.execute("SELECT id,scope,payload_json FROM record WHERE record_id='claim:tomori-area6-momoyama-building1'").fetchone()
+        assert tomori[1] == 'described-period-candidate'
+        assert json.loads(tomori[2])['value']['constraint']['approved100mRasterCellChanges'] == 0
+        assert db.execute('SELECT year,month,day FROM event_date WHERE record_id=?', (tomori[0],)).fetchall() == [(None,None,None)]
+        assert not db.execute("SELECT 1 FROM history_without_period_candidates WHERE record_id='claim:tomori-area6-momoyama-building1'").fetchall()
+        point = db.execute("SELECT longitude,latitude,evidence_json FROM place WHERE entity_id='place:tomori-area6'").fetchone()
+        assert abs(point[0] - (135 + 43/60 + 55/3600)) < 1e-12 and abs(point[1] - (34 + 55/60 + 3/3600)) < 1e-12
+        assert json.loads(point[2])['sourceDatum'] is None
+        assert json.loads(point[2])['datumTransformationToWGS84Performed'] is False
         assert db.execute('SELECT count(*) FROM space_time_cube').fetchone()[0] >= 2
         assert db.execute('SELECT count(*) FROM map_region').fetchone()[0] > 100
         assert db.execute('SELECT count(*) FROM map_edit').fetchone()[0] >= 1

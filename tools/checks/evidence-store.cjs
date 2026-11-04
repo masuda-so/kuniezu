@@ -76,3 +76,17 @@ assert.throws(()=>validateEventTime({...forts,eventTime:{...forts.eventTime,comp
 const period=claims.get('tonokori-sadowara-outer-castle');
 assert.throws(()=>validateEventTime({...period,eventTime:{...period.eventTime,boundsAreHistoricalStartEnd:true}}));
 console.log('PASS: event dates preserve calendar, applicability bounds, component targets and uncertain-period semantics');
+
+// Public numeric inputs are reproducible; private source originals are checked locally.
+const retainedSources=fs.readFileSync(path.join(research,'sources.jsonl'),'utf8').trim().split('\n').map(JSON.parse);
+const sha=bytes=>require('node:crypto').createHash('sha256').update(bytes).digest('hex');
+const retainedBytes=ref=>{const file=path.resolve(root,ref.path);assert.ok(file.startsWith(root+path.sep),'retained input outside repository');const bytes=fs.readFileSync(file);assert.equal(sha(bytes),ref.sha256,ref.path);if(ref.bytes!=null)assert.equal(bytes.length,ref.bytes,ref.path);return bytes;};
+for(const source of retainedSources){
+ const ref=source.retainedInput?.manifest;if(!ref)continue;
+ const manifest=JSON.parse(retainedBytes(ref));assert.equal(manifest.sourceId,source.id);
+ for(const input of manifest.repositoryNumericInputs){assert.equal(input.includedInGit,true);assert.ok(!/\.(pdf|png|jpe?g|webp)$/i.test(input.path));retainedBytes(input);}
+ const archives=new Map(manifest.localArchiveEntries.map(item=>[item.archiveKey,item]));
+ assert.equal(archives.get(source.retainedInput.archiveKey)?.sha256,source.retainedInput.sha256);
+ for(const item of archives.values()){assert.equal(item.archiveKey,'sha256:'+item.sha256);assert.equal(item.includedInGit,false);assert.ok(!path.isAbsolute(item.archiveRelativePath)&&!item.archiveRelativePath.split(/[\\/]/).includes('..'));}
+}
+console.log('PASS: retained numeric inputs and source manifests match SHA; local originals remain separate');

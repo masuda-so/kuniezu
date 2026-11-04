@@ -1,0 +1,424 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "id": "tomori-survey-envelope",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              135.73190544536956,
+              34.91763464668614
+            ],
+            [
+              135.73196696435798,
+              34.917693160084305
+            ],
+            [
+              135.73195432132297,
+              34.9177054803048
+            ],
+            [
+              135.7319679135409,
+              34.91771954333981
+            ],
+            [
+              135.73198327891055,
+              34.91770863248378
+            ],
+            [
+              135.73198837735413,
+              34.91771341498702
+            ],
+            [
+              135.73215466085605,
+              34.917596757230854
+            ],
+            [
+              135.73207138964972,
+              34.91751742686772
+            ],
+            [
+              135.73190544536956,
+              34.91763464668614
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "sourceId": "kyoto-arc-2023-2",
+        "sourceUrl": "https://www.kyoto-arc.or.jp/news/chousahoukoku/2023-02.pdf",
+        "integrationTarget": "年代別の考古観測・水域との矛盾検査。100m地図の自動塗替え入力にはしない。",
+        "geometrySource": "実測図の座標格子と観測柱穴の読取",
+        "sourcePositionPrecisionMetres": null,
+        "sourcePositionPrecisionNote": "描線の読取は約0.1m以内。報告の絶対測量誤差・世界測地系の元期は非明示であり、0.1mの歴史位置精度を主張しない。",
+        "rasterEditApproved": false,
+        "wholeCellExpansionAllowed": false,
+        "bufferMetres": 0,
+        "name": "富ノ森城跡第6区・実測調査範囲",
+        "role": "survey-envelope-not-land-mask",
+        "sourceLocator": "図版5／PDF51頁",
+        "surveyedIn": 2023,
+        "measuredAreaSquareMetres": 235.39033142074396,
+        "reportedAreaSquareMetres": 234,
+        "note": "調査枠は陸地範囲ではない。江戸の溝、後世の攪乱、異なる年代の遺構を内部に含む。"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "tomori-building1-observed-support-envelope",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              135.73206160691205,
+              34.91760147895829
+            ],
+            [
+              135.7320619437497,
+              34.91759142883952
+            ],
+            [
+              135.7320809558502,
+              34.91758765474441
+            ],
+            [
+              135.7321106596003,
+              34.917600126007244
+            ],
+            [
+              135.73209651832815,
+              34.91760225709864
+            ],
+            [
+              135.73208083874374,
+              34.917602031049704
+            ],
+            [
+              135.73206160691205,
+              34.91760147895829
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "sourceId": "kyoto-arc-2023-2",
+        "sourceUrl": "https://www.kyoto-arc.or.jp/news/chousahoukoku/2023-02.pdf",
+        "integrationTarget": "年代別の考古観測・水域との矛盾検査。100m地図の自動塗替え入力にはしない。",
+        "geometrySource": "実測図の座標格子と観測柱穴の読取",
+        "sourcePositionPrecisionMetres": null,
+        "sourcePositionPrecisionNote": "描線の読取は約0.1m以内。報告の絶対測量誤差・世界測地系の元期は非明示であり、0.1mの歴史位置精度を主張しない。",
+        "rasterEditApproved": false,
+        "wholeCellExpansionAllowed": false,
+        "bufferMetres": 0,
+        "name": "建物1・確認柱穴中心の最小包絡",
+        "role": "archaeological-support-envelope-not-shoreline",
+        "time": {
+          "kind": "archaeological-period",
+          "label": "安土桃山時代",
+          "calendar": "archaeological",
+          "fromInclusive": null,
+          "untilExclusive": null,
+          "precision": "period",
+          "notDailyContinuousOccupation": true,
+          "limits": "発掘報告は個別建物の築造・廃絶年を特定しない。1560時点の建物や1615までの連続存続の根拠ではない。"
+        },
+        "sourceLocator": "本文9頁・図版10／PDF56頁（図版5の全体位置と照合）",
+        "areaSquareMetres": 4.718531691587956,
+        "derivation": "実際に確認された6柱穴中心の凸包。建物の失われた南側・調査区外の東側は補完しない。壁面位置の復元ではない。",
+        "note": "観測範囲を恒久的な開放湖面とする表示への局所反証。周辺の地表が常に乾燥していたことを示さない。"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "tomori-building1-post-34",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.7321106596003,
+          34.917600126007244
+        ]
+      },
+      "properties": {
+        "sourceId": "kyoto-arc-2023-2",
+        "sourceUrl": "https://www.kyoto-arc.or.jp/news/chousahoukoku/2023-02.pdf",
+        "integrationTarget": "年代別の考古観測・水域との矛盾検査。100m地図の自動塗替え入力にはしない。",
+        "geometrySource": "実測図の座標格子と観測柱穴の読取",
+        "sourcePositionPrecisionMetres": null,
+        "sourcePositionPrecisionNote": "描線の読取は約0.1m以内。報告の絶対測量誤差・世界測地系の元期は非明示であり、0.1mの歴史位置精度を主張しない。",
+        "rasterEditApproved": false,
+        "wholeCellExpansionAllowed": false,
+        "bufferMetres": 0,
+        "name": "建物1・柱穴34",
+        "role": "observed-posthole-centre",
+        "time": {
+          "kind": "archaeological-period",
+          "label": "安土桃山時代",
+          "calendar": "archaeological",
+          "fromInclusive": null,
+          "untilExclusive": null,
+          "precision": "period",
+          "notDailyContinuousOccupation": true,
+          "limits": "発掘報告は個別建物の築造・廃絶年を特定しない。1560時点の建物や1615までの連続存続の根拠ではない。"
+        },
+        "sourceLocator": "本文9頁・図版10／PDF56頁",
+        "sourcePixel": [
+          937,
+          329
+        ],
+        "sourcePlaneNorthEast": [
+          -120046.43251252381,
+          -24477.201298243137
+        ],
+        "sourcePostholeDiameterMetres": [
+          0.3,
+          0.5
+        ],
+        "note": "原図の柱穴中心読取。円形バッファや隣接100mセルへ自動拡大しない。"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "tomori-building1-post-38",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.73209651832815,
+          34.91760225709864
+        ]
+      },
+      "properties": {
+        "sourceId": "kyoto-arc-2023-2",
+        "sourceUrl": "https://www.kyoto-arc.or.jp/news/chousahoukoku/2023-02.pdf",
+        "integrationTarget": "年代別の考古観測・水域との矛盾検査。100m地図の自動塗替え入力にはしない。",
+        "geometrySource": "実測図の座標格子と観測柱穴の読取",
+        "sourcePositionPrecisionMetres": null,
+        "sourcePositionPrecisionNote": "描線の読取は約0.1m以内。報告の絶対測量誤差・世界測地系の元期は非明示であり、0.1mの歴史位置精度を主張しない。",
+        "rasterEditApproved": false,
+        "wholeCellExpansionAllowed": false,
+        "bufferMetres": 0,
+        "name": "建物1・柱穴38",
+        "role": "observed-posthole-centre",
+        "time": {
+          "kind": "archaeological-period",
+          "label": "安土桃山時代",
+          "calendar": "archaeological",
+          "fromInclusive": null,
+          "untilExclusive": null,
+          "precision": "period",
+          "notDailyContinuousOccupation": true,
+          "limits": "発掘報告は個別建物の築造・廃絶年を特定しない。1560時点の建物や1615までの連続存続の根拠ではない。"
+        },
+        "sourceLocator": "本文9頁・図版10／PDF56頁",
+        "sourcePixel": [
+          903,
+          512
+        ],
+        "sourcePlaneNorthEast": [
+          -120046.19261976998,
+          -24478.49248571227
+        ],
+        "sourcePostholeDiameterMetres": [
+          0.3,
+          0.5
+        ],
+        "note": "原図の柱穴中心読取。円形バッファや隣接100mセルへ自動拡大しない。"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "tomori-building1-post-52",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.73208083874374,
+          34.917602031049704
+        ]
+      },
+      "properties": {
+        "sourceId": "kyoto-arc-2023-2",
+        "sourceUrl": "https://www.kyoto-arc.or.jp/news/chousahoukoku/2023-02.pdf",
+        "integrationTarget": "年代別の考古観測・水域との矛盾検査。100m地図の自動塗替え入力にはしない。",
+        "geometrySource": "実測図の座標格子と観測柱穴の読取",
+        "sourcePositionPrecisionMetres": null,
+        "sourcePositionPrecisionNote": "描線の読取は約0.1m以内。報告の絶対測量誤差・世界測地系の元期は非明示であり、0.1mの歴史位置精度を主張しない。",
+        "rasterEditApproved": false,
+        "wholeCellExpansionAllowed": false,
+        "bufferMetres": 0,
+        "name": "建物1・柱穴52",
+        "role": "observed-posthole-centre",
+        "time": {
+          "kind": "archaeological-period",
+          "label": "安土桃山時代",
+          "calendar": "archaeological",
+          "fromInclusive": null,
+          "untilExclusive": null,
+          "precision": "period",
+          "notDailyContinuousOccupation": true,
+          "limits": "発掘報告は個別建物の築造・廃絶年を特定しない。1560時点の建物や1615までの連続存続の根拠ではない。"
+        },
+        "sourceLocator": "本文9頁・図版10／PDF56頁",
+        "sourcePixel": [
+          906,
+          715
+        ],
+        "sourcePlaneNorthEast": [
+          -120046.21378677768,
+          -24479.924786566007
+        ],
+        "sourcePostholeDiameterMetres": [
+          0.3,
+          0.5
+        ],
+        "note": "原図の柱穴中心読取。円形バッファや隣接100mセルへ自動拡大しない。"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "tomori-building1-post-57",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.73206160691205,
+          34.91760147895829
+        ]
+      },
+      "properties": {
+        "sourceId": "kyoto-arc-2023-2",
+        "sourceUrl": "https://www.kyoto-arc.or.jp/news/chousahoukoku/2023-02.pdf",
+        "integrationTarget": "年代別の考古観測・水域との矛盾検査。100m地図の自動塗替え入力にはしない。",
+        "geometrySource": "実測図の座標格子と観測柱穴の読取",
+        "sourcePositionPrecisionMetres": null,
+        "sourcePositionPrecisionNote": "描線の読取は約0.1m以内。報告の絶対測量誤差・世界測地系の元期は非明示であり、0.1mの歴史位置精度を主張しない。",
+        "rasterEditApproved": false,
+        "wholeCellExpansionAllowed": false,
+        "bufferMetres": 0,
+        "name": "建物1・柱穴57",
+        "role": "observed-posthole-centre",
+        "time": {
+          "kind": "archaeological-period",
+          "label": "安土桃山時代",
+          "calendar": "archaeological",
+          "fromInclusive": null,
+          "untilExclusive": null,
+          "precision": "period",
+          "notDailyContinuousOccupation": true,
+          "limits": "発掘報告は個別建物の築造・廃絶年を特定しない。1560時点の建物や1615までの連続存続の根拠ではない。"
+        },
+        "sourceLocator": "本文9頁・図版10／PDF56頁",
+        "sourcePixel": [
+          914,
+          964
+        ],
+        "sourcePlaneNorthEast": [
+          -120046.27023213152,
+          -24481.681648204332
+        ],
+        "sourcePostholeDiameterMetres": [
+          0.3,
+          0.5
+        ],
+        "note": "原図の柱穴中心読取。円形バッファや隣接100mセルへ自動拡大しない。"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "tomori-building1-post-47",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.7320809558502,
+          34.91758765474441
+        ]
+      },
+      "properties": {
+        "sourceId": "kyoto-arc-2023-2",
+        "sourceUrl": "https://www.kyoto-arc.or.jp/news/chousahoukoku/2023-02.pdf",
+        "integrationTarget": "年代別の考古観測・水域との矛盾検査。100m地図の自動塗替え入力にはしない。",
+        "geometrySource": "実測図の座標格子と観測柱穴の読取",
+        "sourcePositionPrecisionMetres": null,
+        "sourcePositionPrecisionNote": "描線の読取は約0.1m以内。報告の絶対測量誤差・世界測地系の元期は非明示であり、0.1mの歴史位置精度を主張しない。",
+        "rasterEditApproved": false,
+        "wholeCellExpansionAllowed": false,
+        "bufferMetres": 0,
+        "name": "建物1・柱穴47",
+        "role": "observed-posthole-centre",
+        "time": {
+          "kind": "archaeological-period",
+          "label": "安土桃山時代",
+          "calendar": "archaeological",
+          "fromInclusive": null,
+          "untilExclusive": null,
+          "precision": "period",
+          "notDailyContinuousOccupation": true,
+          "limits": "発掘報告は個別建物の築造・廃絶年を特定しない。1560時点の建物や1615までの連続存続の根拠ではない。"
+        },
+        "sourceLocator": "本文9頁・図版10／PDF56頁",
+        "sourcePixel": [
+          1132,
+          714
+        ],
+        "sourcePlaneNorthEast": [
+          -120047.8083680237,
+          -24479.917730896777
+        ],
+        "sourcePostholeDiameterMetres": [
+          0.3,
+          0.5
+        ],
+        "note": "原図の柱穴中心読取。円形バッファや隣接100mセルへ自動拡大しない。"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "tomori-building1-post-55",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.7320619437497,
+          34.91759142883952
+        ]
+      },
+      "properties": {
+        "sourceId": "kyoto-arc-2023-2",
+        "sourceUrl": "https://www.kyoto-arc.or.jp/news/chousahoukoku/2023-02.pdf",
+        "integrationTarget": "年代別の考古観測・水域との矛盾検査。100m地図の自動塗替え入力にはしない。",
+        "geometrySource": "実測図の座標格子と観測柱穴の読取",
+        "sourcePositionPrecisionMetres": null,
+        "sourcePositionPrecisionNote": "描線の読取は約0.1m以内。報告の絶対測量誤差・世界測地系の元期は非明示であり、0.1mの歴史位置精度を主張しない。",
+        "rasterEditApproved": false,
+        "wholeCellExpansionAllowed": false,
+        "bufferMetres": 0,
+        "name": "建物1・柱穴55",
+        "role": "observed-posthole-centre",
+        "time": {
+          "kind": "archaeological-period",
+          "label": "安土桃山時代",
+          "calendar": "archaeological",
+          "fromInclusive": null,
+          "untilExclusive": null,
+          "precision": "period",
+          "notDailyContinuousOccupation": true,
+          "limits": "発掘報告は個別建物の築造・廃絶年を特定しない。1560時点の建物や1615までの連続存続の根拠ではない。"
+        },
+        "sourceLocator": "本文9頁・図版10／PDF56頁",
+        "sourcePixel": [
+          1072,
+          960
+        ],
+        "sourcePlaneNorthEast": [
+          -120047.3850278699,
+          -24481.653425527413
+        ],
+        "sourcePostholeDiameterMetres": [
+          0.3,
+          0.5
+        ],
+        "note": "原図の柱穴中心読取。円形バッファや隣接100mセルへ自動拡大しない。"
+      }
+    }
+  ]
+}

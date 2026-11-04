@@ -1,0 +1,137 @@
+{
+  "sourceGrid": {
+    "eastTicks": [
+      {
+        "pixelX": 277.5,
+        "Y": -24492
+      },
+      {
+        "pixelX": 534.5,
+        "Y": -24484
+      },
+      {
+        "pixelX": 791.5,
+        "Y": -24476
+      }
+    ],
+    "northTicks": [
+      {
+        "pixelY": 412.5,
+        "X": -120036
+      },
+      {
+        "pixelY": 669.5,
+        "X": -120044
+      },
+      {
+        "pixelY": 926.5,
+        "X": -120052
+      }
+    ],
+    "pixelReadingTolerance": 2,
+    "approximateReadingToleranceMetres": 0.0622568093385214,
+    "surveyDatum": "世界測地系・平面直角VI系（報告の例言）。元期/測量絶対誤差は非明示。",
+    "sourcePage": "図版5／PDF51頁、本文9頁と併読",
+    "sourceArchiveKey": "sha256:a37014fb0ece676c8859719010a85c3c2930831bfde6a8554e21d4d8e3de344b"
+  },
+  "outerReadPixels": [
+    [
+      151,
+      623
+    ],
+    [
+      332,
+      415
+    ],
+    [
+      295,
+      371
+    ],
+    [
+      335,
+      321
+    ],
+    [
+      380,
+      360
+    ],
+    [
+      395,
+      343
+    ],
+    [
+      882,
+      760
+    ],
+    [
+      637,
+      1042
+    ]
+  ],
+  "buildingReadPixels": {
+    "34": [
+      937,
+      329
+    ],
+    "38": [
+      903,
+      512
+    ],
+    "52": [
+      906,
+      715
+    ],
+    "57": [
+      914,
+      964
+    ],
+    "47": [
+      1132,
+      714
+    ],
+    "55": [
+      1072,
+      960
+    ]
+  },
+  "buildingGrid": {
+    "northingAtPixelX875_7": -120046,
+    "northingPer283_46Pixels": -2,
+    "eastingAtPixelY442_2": -24478,
+    "eastingPer283_46Pixels": -2,
+    "northDirection": "left",
+    "imageArchiveKey": "sha256:ac05329cc5dca17e593c83438c818b5809c4c98f0ad8395e19cb16153d481d61"
+  },
+  "coordinateConversion": {
+    "method": "local affine through three official GSI VI->geographic API responses; unused fourth response checked",
+    "fitApiIndices": [
+      0,
+      1,
+      3
+    ],
+    "checkApiIndex": 2,
+    "maxDistanceFromOriginMetres": 30,
+    "checkDifferenceMetres": 0.001439590066433704,
+    "notForRegionalUse": true,
+    "coefficients": [
+      [
+        -2.499999141036824e-08,
+        9.015833331460499e-06
+      ],
+      [
+        1.094750000637153e-05,
+        2.45833315185943e-08
+      ],
+      [
+        135.73203617,
+        34.91762189
+      ]
+    ],
+    "originNorthEast": [
+      -120044.0,
+      -24484.0
+    ]
+  },
+  "independentHistoricalLocationControlCount": 0,
+  "note": "GSI換算検査は計算検査。発掘地点の現地独立測量や歴史位置の追加検証点には数えない。"
+}

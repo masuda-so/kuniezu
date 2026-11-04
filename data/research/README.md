@@ -2,6 +2,8 @@
 
 人が読む取得資料は [Markdownの資料ノート索引](source-notes/README.md) から参照する。書誌・原URL・確認箇所・要約・適用範囲をそろえ、HTMLの装飾やメニューを表示しない。原取得HTMLは [照合用アーカイブ](../source-archives/README.md) に圧縮し、要約と原本それぞれのハッシュを保持する。全文の要約化と史実確認は別工程であり、ノート化だけで確認済み命題を増やさない。
 
+公刊PDFの読書ノートは [富ノ森の発掘観測](source-notes/ogura-tomori-archaeology.md) を参照。原PDFと読図画像はGit外の恒久アーカイブ、数値入力と保持manifestは [局所観測資料](../inputs/ogura-local-observations/README.md) に分ける。原本の論理キー・SHA・原URLを保持し、閲覧可能な資料を全文再配布可能とは扱わない。
+
 確認済み命題の追記先は `curated/claims/`、新規出典は `curated/sources/`。別担当の入力を消さずに出力を再生成する。詳しくは [入力の扱い](curated/README.md)。
 
 人物・場所・年代の所在記録は `curated/people/`、`curated/places/`、`curated/locations/`。`query-locations.cjs` で検索する。[設計と検索例](../../docs/architecture/spatiotemporal-history.md)。本拠・城主と現地滞在、年精度と日精度、史実参照と将来の分岐履歴を分ける。

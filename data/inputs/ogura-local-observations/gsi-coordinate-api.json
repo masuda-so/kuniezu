@@ -1,0 +1,66 @@
+[
+  {
+    "url": "https://vldb.gsi.go.jp/sokuchi/surveycalc/surveycalc/xy2bl.pl?outputType=json&refFrame=2&zone=6&publicX=-120044&publicY=-24484",
+    "requestedX": -120044,
+    "requestedY": -24484,
+    "file": "gsi-vi-0.json",
+    "sha256": "589f8b87cab98bd1bdd675dd9fd31172327b57424fedf88c8a027262014a3bc4",
+    "retrievedAt": "2026-11-04T06:01:00.664605+00:00",
+    "response": {
+      "OutputData": {
+        "latitude": "34.91762189",
+        "longitude": "135.73203617",
+        "gridConv": "0.153383333333333",
+        "scaleFactor": "0.99990739"
+      }
+    }
+  },
+  {
+    "url": "https://vldb.gsi.go.jp/sokuchi/surveycalc/surveycalc/xy2bl.pl?outputType=json&refFrame=2&zone=6&publicX=-120036&publicY=-24492",
+    "requestedX": -120036,
+    "requestedY": -24492,
+    "file": "gsi-vi-1.json",
+    "sha256": "54200f1aa3b6b18a805c1e6ce1f890b075a269d037da123d1945e6fab5d60c24",
+    "retrievedAt": "2026-11-04T06:01:01.883245+00:00",
+    "response": {
+      "OutputData": {
+        "latitude": "34.91769382",
+        "longitude": "135.73194839",
+        "gridConv": "0.153433333333333",
+        "scaleFactor": "0.99990739"
+      }
+    }
+  },
+  {
+    "url": "https://vldb.gsi.go.jp/sokuchi/surveycalc/surveycalc/xy2bl.pl?outputType=json&refFrame=2&zone=6&publicX=-120052&publicY=-24476",
+    "requestedX": -120052,
+    "requestedY": -24476,
+    "file": "gsi-vi-2.json",
+    "sha256": "d53e6a7583e5d4fc7073a00b0b9b31f94c664027ea1ceac58acbb7c6c9111f4e",
+    "retrievedAt": "2026-11-04T06:01:03.102234+00:00",
+    "response": {
+      "OutputData": {
+        "latitude": "34.91754997",
+        "longitude": "135.73212396",
+        "gridConv": "0.153333333333333",
+        "scaleFactor": "0.99990738"
+      }
+    }
+  },
+  {
+    "url": "https://vldb.gsi.go.jp/sokuchi/surveycalc/surveycalc/xy2bl.pl?outputType=json&refFrame=2&zone=6&publicX=-120047&publicY=-24478",
+    "requestedX": -120047,
+    "requestedY": -24478,
+    "file": "gsi-vi-3.json",
+    "sha256": "10744a4098b7023e5fef7ecfeb62b78f80e6f175e36fd3ad6358f73d987f184e",
+    "retrievedAt": "2026-11-04T06:01:04.320354+00:00",
+    "response": {
+      "OutputData": {
+        "latitude": "34.91759499",
+        "longitude": "135.73210193",
+        "gridConv": "0.153344444444444",
+        "scaleFactor": "0.99990738"
+      }
+    }
+  }
+]
