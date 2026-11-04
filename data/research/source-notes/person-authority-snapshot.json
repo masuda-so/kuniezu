@@ -1,0 +1,163 @@
+{
+  "scope": "人物同定のための取得内容の抜粋。生没年などの史実命題の採用は別記録。",
+  "request": {
+    "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&sites=jawiki&titles=%E7%B4%B0%E5%B7%9D%E5%BF%A0%E8%88%88%7C%E9%BB%92%E7%94%B0%E9%95%B7%E6%94%BF%7C%E9%BB%92%E7%94%B0%E5%AD%9D%E9%AB%98%7C%E6%9D%BE%E5%B9%B3%E5%AE%B6%E5%BF%A0%7C%E6%AF%9B%E5%88%A9%E8%BC%9D%E5%85%83%7C%E5%B3%B6%E6%B4%A5%E7%BE%A9%E5%BC%98%7C%E6%AD%A6%E7%94%B0%E5%8B%9D%E9%A0%BC&props=info%7Clabels%7Cdescriptions%7Caliases%7Cclaims%7Csitelinks&languages=ja%7Cen&sitefilter=jawiki%7Cenwiki&format=json&maxlag=5",
+    "fetchedAt": "2026-11-03T15:20:32.054Z",
+    "status": 200
+  },
+  "originalWikidataResponseSha256": "22956eb9e2094e542af228b934767e2f482fc2c70522b12e935654747a19cd37",
+  "records": [
+    {
+      "wikidataId": "Q1147154",
+      "wikidataRevision": 2555338686,
+      "japaneseLabel": "細川忠興",
+      "japaneseDescription": "戦国時代から江戸時代前期の武将、大名",
+      "instanceOf": [
+        "Q5"
+      ],
+      "ndlId": "00269753",
+      "ndlIdentity": {
+        "uri": "http://id.ndl.go.jp/auth/entity/00269753",
+        "type": {
+          "uri": "http://xmlns.com/foaf/0.1/Person"
+        },
+        "name": "細川忠興",
+        "dateOfBirth": "1563",
+        "dateOfDeath": "1645",
+        "biographicalInformation": [
+          "武将"
+        ]
+      },
+      "ndlModified": "2026-01-21T08:34:54"
+    },
+    {
+      "wikidataId": "Q950496",
+      "wikidataRevision": 2555325240,
+      "japaneseLabel": "黒田長政",
+      "japaneseDescription": "安土桃山から江戸初期の武将、大名 (1568-1623)",
+      "instanceOf": [
+        "Q5"
+      ],
+      "ndlId": "01150199",
+      "ndlIdentity": {
+        "uri": "http://id.ndl.go.jp/auth/entity/01150199",
+        "type": {
+          "uri": "http://xmlns.com/foaf/0.1/Person"
+        },
+        "name": "黒田長政",
+        "dateOfBirth": "1568",
+        "dateOfDeath": "1623",
+        "biographicalInformation": [
+          "大名"
+        ]
+      },
+      "ndlModified": "2019-01-07T18:14:09"
+    },
+    {
+      "wikidataId": "Q907019",
+      "wikidataRevision": 2528553386,
+      "japaneseLabel": "黒田孝高",
+      "japaneseDescription": "日本の戦国時代の武将、大名",
+      "instanceOf": [
+        "Q5"
+      ],
+      "ndlId": "00623215",
+      "ndlIdentity": {
+        "uri": "http://id.ndl.go.jp/auth/entity/00623215",
+        "type": {
+          "uri": "http://xmlns.com/foaf/0.1/Person"
+        },
+        "name": "黒田孝高",
+        "dateOfBirth": "1546",
+        "dateOfDeath": "1604"
+      },
+      "ndlModified": "2026-01-21T08:34:45"
+    },
+    {
+      "wikidataId": "Q6788035",
+      "wikidataRevision": 2556824259,
+      "japaneseLabel": "松平家忠",
+      "japaneseDescription": "日本の戦国時代の武将、深溝松平家当主",
+      "instanceOf": [
+        "Q5"
+      ],
+      "ndlId": "00270747",
+      "ndlIdentity": {
+        "uri": "http://id.ndl.go.jp/auth/entity/00270747",
+        "type": {
+          "uri": "http://xmlns.com/foaf/0.1/Person"
+        },
+        "name": "松平家忠",
+        "dateOfBirth": "1555",
+        "dateOfDeath": "1600",
+        "biographicalInformation": [
+          "下総上代城主"
+        ]
+      },
+      "ndlModified": "2026-01-21T08:32:07"
+    },
+    {
+      "wikidataId": "Q1142657",
+      "wikidataRevision": 2541811080,
+      "japaneseLabel": "毛利輝元",
+      "japaneseDescription": "日本の武将",
+      "instanceOf": [
+        "Q5"
+      ],
+      "ndlId": "00626579",
+      "ndlIdentity": {
+        "uri": "http://id.ndl.go.jp/auth/entity/00626579",
+        "type": {
+          "uri": "http://xmlns.com/foaf/0.1/Person"
+        },
+        "name": "毛利輝元",
+        "dateOfBirth": "1553",
+        "dateOfDeath": "1625"
+      },
+      "ndlModified": "2026-01-21T08:34:48"
+    },
+    {
+      "wikidataId": "Q1156288",
+      "wikidataRevision": 2559870328,
+      "japaneseLabel": "島津義弘",
+      "japaneseDescription": "日本の武将",
+      "instanceOf": [
+        "Q5"
+      ],
+      "ndlId": "00625815",
+      "ndlIdentity": {
+        "uri": "http://id.ndl.go.jp/auth/entity/00625815",
+        "type": {
+          "uri": "http://xmlns.com/foaf/0.1/Person"
+        },
+        "name": "島津義弘",
+        "dateOfBirth": "1535",
+        "dateOfDeath": "1619",
+        "biographicalInformation": [
+          "武将"
+        ]
+      },
+      "ndlModified": "2026-01-21T08:34:37"
+    },
+    {
+      "wikidataId": "Q662482",
+      "wikidataRevision": 2559785732,
+      "japaneseLabel": "武田勝頼",
+      "japaneseDescription": "日本の戦国～安土桃山時代の武将、大名、第17代武田氏当主",
+      "instanceOf": [
+        "Q5"
+      ],
+      "ndlId": "00626283",
+      "ndlIdentity": {
+        "uri": "http://id.ndl.go.jp/auth/entity/00626283",
+        "type": {
+          "uri": "http://xmlns.com/foaf/0.1/Person"
+        },
+        "name": "武田勝頼",
+        "dateOfBirth": "1546",
+        "dateOfDeath": "1582"
+      },
+      "ndlModified": "2026-01-21T08:34:44"
+    }
+  ]
+}
