@@ -57,6 +57,43 @@
       "note": "岐阜20日→木造23日→26日出発→桂瀬山27日の記録。地点間の実街道は未復元、陣の座標は地名の概略位置。兵数5万は伝承値。"
     },
     {
+      "title": "木崎原の戦い",
+      "commanders": [
+        "島津忠平"
+      ],
+      "troops": 300,
+      "sourceIds": [
+        "shimazuIinoResidence",
+        "kizakiSite",
+        "iinoMapPoint",
+        "kizakibaruModernRoute"
+      ],
+      "position": [
+        269.8218917333452,
+        1939.1748000000007
+      ],
+      "hasTravelPath": true,
+      "note": "飯野城から木崎原へ。日内の進行と通過路は、記録された順序を現代道路で補間した参考表示。"
+    },
+    {
+      "title": "伊賀越え",
+      "commanders": [
+        "徳川家康",
+        "本多忠勝"
+      ],
+      "troops": 30,
+      "sourceIds": [
+        "igagoeArchives",
+        "igagoeMie"
+      ],
+      "position": [
+        1288.4404652415449,
+        1358.6
+      ],
+      "hasTravelPath": true,
+      "note": "堺で本能寺の変を知った家康が、供30人余りと伊賀を越えて三河へ帰った。日付が確かなのは6月2日（堺）と6月4日（岡崎着）だけ。途中の南山城・信楽付近・伊賀丸柱・鈴鹿の山越え・伊勢の渡海地は順序だけを示す代表点で、渡海地（白子・若松説と長太浦・四日市説）は確定できない。"
+    },
+    {
       "title": "岩屋城の戦い",
       "commanders": [
         "島津方攻城軍"
@@ -72,6 +109,28 @@
       ],
       "hasTravelPath": false,
       "note": "登録された落城日に筑前岩屋城付近で表示。4万／5万の異説があるため兵数を固定しない。事前行軍の道筋と日程は未照合。立花山城や美作岩屋城とは別の城。"
+    },
+    {
+      "title": "関ヶ原の戦い",
+      "commanders": [
+        "徳川家康"
+      ],
+      "troops": null,
+      "sourceIds": [
+        "ieyasu1600Chronology",
+        "ieyasu1600EdoDeparture",
+        "aizuTurn",
+        "ieyasu1600West",
+        "ieyasu1600Return",
+        "tono1600",
+        "ieyasuJinba"
+      ],
+      "position": [
+        1179.5467777986767,
+        1277.8000000000006
+      ],
+      "hasTravelPath": false,
+      "note": "所在地の代表点と日程。無日付経由点・区間内速度・帰路は参考経路。"
     },
     {
       "title": "田辺城の戦い",
@@ -129,8 +188,8 @@
       ],
       "firstSeen": {
         "y": 1560,
-        "m": 5,
-        "d": 1
+        "m": 6,
+        "d": 5
       },
       "scheduledArrival": {
         "y": 1560,
@@ -243,7 +302,7 @@
       },
       "lastProgress": {
         "segment": 0,
-        "position": 0.7999999999999999
+        "position": 0.8
       }
     },
     {
@@ -341,7 +400,7 @@
       },
       "lastProgress": {
         "segment": 0,
-        "position": 0.7999999999999999
+        "position": 0.8
       }
     },
     {
@@ -471,7 +530,7 @@
       },
       "lastProgress": {
         "segment": 6,
-        "position": 0.6688161868512142
+        "position": 0.6836793776126422
       }
     },
     {
@@ -643,7 +702,7 @@
       },
       "lastProgress": {
         "segment": 2,
-        "position": 0.8101493122546221
+        "position": 0.8083581985946284
       }
     },
     {
@@ -871,7 +930,7 @@
       },
       "lastProgress": {
         "segment": 2,
-        "position": 0.6900164733242228
+        "position": 0.6889747878387938
       }
     },
     {
@@ -977,12 +1036,8 @@
       "clan": "takeda",
       "path": [
         {
-          "id": "tsutsuji",
-          "name": "躑躅ヶ崎館"
-        },
-        {
-          "id": "hachigata",
-          "name": "鉢形城"
+          "id": "kaizu",
+          "name": "海津城"
         },
         {
           "id": "minowa",
@@ -1001,19 +1056,13 @@
       },
       "roads": [
         {
-          "from": "tsutsuji",
-          "to": "hachigata",
-          "sea": false,
-          "roads": [],
-          "status": "軍の道筋未照合"
-        },
-        {
-          "from": "hachigata",
+          "from": "kaizu",
           "to": "minowa",
           "sea": false,
           "roads": [
-            "三国峠道",
-            "鎌倉街道"
+            "北国街道（信濃）",
+            "東山道",
+            "三国峠道"
           ],
           "status": "街道データへの接続のみ確認・軍の通過史料は未照合"
         }
@@ -1025,8 +1074,8 @@
         "d": 9
       },
       "lastProgress": {
-        "segment": 1,
-        "position": 0.6606047493534095
+        "segment": 0,
+        "position": 0.9166666666666666
       }
     },
     {
@@ -1038,8 +1087,8 @@
       "clan": "mori",
       "path": [
         {
-          "id": "koriyama",
-          "name": "吉田郡山城"
+          "id": "yamabuki",
+          "name": "山吹城"
         },
         {
           "id": "gassan",
@@ -1058,12 +1107,13 @@
       },
       "roads": [
         {
-          "from": "koriyama",
+          "from": "yamabuki",
           "to": "gassan",
           "sea": false,
           "roads": [
             "銀山街道",
-            "石見路"
+            "山陰道",
+            "出雲街道"
           ],
           "status": "街道データへの接続のみ確認・軍の通過史料は未照合"
         }
@@ -1139,7 +1189,7 @@
       },
       "lastProgress": {
         "segment": 1,
-        "position": 0.6275087974537218
+        "position": 0.6315986674683709
       }
     },
     {
@@ -1254,7 +1304,7 @@
       },
       "lastProgress": {
         "segment": 1,
-        "position": 0.734025645780282
+        "position": 0.72919568158435
       }
     },
     {
@@ -1265,6 +1315,14 @@
       "troops": 7000,
       "clan": "takeda",
       "path": [
+        {
+          "id": "minowa",
+          "name": "箕輪城"
+        },
+        {
+          "id": "hachigata",
+          "name": "鉢形城"
+        },
         {
           "id": "tsutsuji",
           "name": "躑躅ヶ崎館"
@@ -1277,7 +1335,7 @@
       "firstSeen": {
         "y": 1568,
         "m": 12,
-        "d": 22
+        "d": 13
       },
       "scheduledArrival": {
         "y": 1569,
@@ -1285,6 +1343,23 @@
         "d": 1
       },
       "roads": [
+        {
+          "from": "minowa",
+          "to": "hachigata",
+          "sea": false,
+          "roads": [
+            "三国峠道",
+            "鎌倉街道"
+          ],
+          "status": "街道データへの接続のみ確認・軍の通過史料は未照合"
+        },
+        {
+          "from": "hachigata",
+          "to": "tsutsuji",
+          "sea": false,
+          "roads": [],
+          "status": "軍の道筋未照合"
+        },
         {
           "from": "tsutsuji",
           "to": "sunpu",
@@ -1303,8 +1378,8 @@
         "d": 30
       },
       "lastProgress": {
-        "segment": 0,
-        "position": 0.8888888888888887
+        "segment": 2,
+        "position": 0.8465640412818812
       }
     },
     {
@@ -1366,7 +1441,7 @@
       },
       "lastProgress": {
         "segment": 1,
-        "position": 0.7424591582710702
+        "position": 0.7400541741412406
       }
     },
     {
@@ -1378,8 +1453,8 @@
       "clan": "takeda",
       "path": [
         {
-          "id": "tsutsuji",
-          "name": "躑躅ヶ崎館"
+          "id": "sunpu",
+          "name": "今川館"
         },
         {
           "id": "odawara",
@@ -1398,12 +1473,11 @@
       },
       "roads": [
         {
-          "from": "tsutsuji",
+          "from": "sunpu",
           "to": "odawara",
           "sea": false,
           "roads": [
-            "甲州道",
-            "足柄道"
+            "東海道"
           ],
           "status": "街道データへの接続のみ確認・軍の通過史料は未照合"
         }
@@ -1525,8 +1599,12 @@
       "clan": "oda",
       "path": [
         {
-          "id": "gifu",
-          "name": "岐阜城"
+          "id": "kannonji",
+          "name": "観音寺城"
+        },
+        {
+          "id": "odani",
+          "name": "小谷城"
         },
         {
           "id": "kanegasaki",
@@ -1545,16 +1623,24 @@
       },
       "roads": [
         {
-          "from": "gifu",
+          "from": "kannonji",
+          "to": "odani",
+          "sea": false,
+          "roads": [
+            "東山道",
+            "北国街道（近江）",
+            "北国脇往還"
+          ],
+          "status": "街道データへの接続のみ確認・軍の通過史料は未照合"
+        },
+        {
+          "from": "odani",
           "to": "kanegasaki",
           "sea": false,
           "roads": [
-            "北陸道",
-            "塩津街道",
             "北国街道（近江）",
             "北国脇往還",
-            "東山道",
-            "岐阜街道"
+            "北陸道"
           ],
           "status": "街道データへの接続のみ確認・軍の通過史料は未照合"
         }
@@ -1566,8 +1652,8 @@
         "d": 27
       },
       "lastProgress": {
-        "segment": 0,
-        "position": 0.8333333333333334
+        "segment": 1,
+        "position": 0.6689951617448197
       }
     },
     {
@@ -1578,10 +1664,6 @@
       "troops": 30000,
       "clan": "oda",
       "path": [
-        {
-          "id": "gifu",
-          "name": "岐阜城"
-        },
         {
           "id": "kanegasaki",
           "name": "金ヶ崎城"
@@ -1603,27 +1685,12 @@
       },
       "roads": [
         {
-          "from": "gifu",
-          "to": "kanegasaki",
-          "sea": false,
-          "roads": [
-            "北陸道",
-            "塩津街道",
-            "北国街道（近江）",
-            "北国脇往還",
-            "東山道",
-            "岐阜街道"
-          ],
-          "status": "街道データへの接続のみ確認・軍の通過史料は未照合"
-        },
-        {
           "from": "kanegasaki",
           "to": "odani",
           "sea": false,
           "roads": [
             "北国街道（近江）",
             "北国脇往還",
-            "塩津街道",
             "北陸道"
           ],
           "status": "街道データへの接続のみ確認・軍の通過史料は未照合"
@@ -1636,8 +1703,8 @@
         "d": 29
       },
       "lastProgress": {
-        "segment": 1,
-        "position": 0.9408684084975979
+        "segment": 0,
+        "position": 0.9838709677419355
       }
     },
     {
@@ -1743,7 +1810,7 @@
       },
       "lastProgress": {
         "segment": 4,
-        "position": 0.7437318323629405
+        "position": 0.7418378057639043
       }
     },
     {
@@ -1794,64 +1861,6 @@
       "lastProgress": {
         "segment": 0,
         "position": 0.5
-      }
-    },
-    {
-      "title": "木崎原の戦い",
-      "commander": [
-        "島津忠平"
-      ],
-      "troops": 300,
-      "clan": "shimazu",
-      "path": [
-        {
-          "id": "uchi",
-          "name": "内城"
-        },
-        {
-          "id": "kouyama",
-          "name": "高山城"
-        },
-        {
-          "id": "obi",
-          "name": "飫肥城"
-        }
-      ],
-      "firstSeen": {
-        "y": 1572,
-        "m": 6,
-        "d": 7
-      },
-      "scheduledArrival": {
-        "y": 1572,
-        "m": 6,
-        "d": 14
-      },
-      "roads": [
-        {
-          "from": "uchi",
-          "to": "kouyama",
-          "sea": false,
-          "roads": [],
-          "status": "軍の道筋未照合"
-        },
-        {
-          "from": "kouyama",
-          "to": "obi",
-          "sea": false,
-          "roads": [],
-          "status": "軍の道筋未照合"
-        }
-      ],
-      "note": "兵数は従来の配分値・目安を含む。全軍の実数とは扱わない。",
-      "lastSeen": {
-        "y": 1572,
-        "m": 6,
-        "d": 13
-      },
-      "lastProgress": {
-        "segment": 1,
-        "position": 0.7126896856343798
       }
     },
     {
@@ -1908,10 +1917,6 @@
       "clan": "takeda",
       "path": [
         {
-          "id": "tsutsuji",
-          "name": "躑躅ヶ崎館"
-        },
-        {
           "id": "sunpu",
           "name": "今川館"
         },
@@ -1927,7 +1932,7 @@
       "firstSeen": {
         "y": 1573,
         "m": 1,
-        "d": 13
+        "d": 19
       },
       "scheduledArrival": {
         "y": 1573,
@@ -1935,16 +1940,6 @@
         "d": 25
       },
       "roads": [
-        {
-          "from": "tsutsuji",
-          "to": "sunpu",
-          "sea": false,
-          "roads": [
-            "東海道",
-            "身延道（駿州往還）"
-          ],
-          "status": "街道データへの接続のみ確認・軍の通過史料は未照合"
-        },
         {
           "from": "sunpu",
           "to": "kakegawa",
@@ -1971,8 +1966,8 @@
         "d": 24
       },
       "lastProgress": {
-        "segment": 2,
-        "position": 0.4461411111091332
+        "segment": 1,
+        "position": 0.5489826125102131
       }
     },
     {
@@ -2021,7 +2016,7 @@
       },
       "lastProgress": {
         "segment": 0,
-        "position": 0.6666666666666665
+        "position": 0.6666666666666666
       }
     },
     {
@@ -2032,6 +2027,14 @@
       "troops": 30000,
       "clan": "oda",
       "path": [
+        {
+          "id": "kannonji",
+          "name": "観音寺城"
+        },
+        {
+          "id": "sawayama",
+          "name": "佐和山城"
+        },
         {
           "id": "gifu",
           "name": "岐阜城"
@@ -2044,7 +2047,7 @@
       "firstSeen": {
         "y": 1573,
         "m": 9,
-        "d": 7
+        "d": 1
       },
       "scheduledArrival": {
         "y": 1573,
@@ -2052,6 +2055,27 @@
         "d": 16
       },
       "roads": [
+        {
+          "from": "kannonji",
+          "to": "sawayama",
+          "sea": false,
+          "roads": [
+            "北国街道（近江）",
+            "東山道"
+          ],
+          "status": "街道データへの接続のみ確認・軍の通過史料は未照合"
+        },
+        {
+          "from": "sawayama",
+          "to": "gifu",
+          "sea": false,
+          "roads": [
+            "北国街道（近江）",
+            "東山道",
+            "岐阜街道"
+          ],
+          "status": "街道データへの接続のみ確認・軍の通過史料は未照合"
+        },
         {
           "from": "gifu",
           "to": "ichijodani",
@@ -2073,8 +2097,8 @@
         "d": 15
       },
       "lastProgress": {
-        "segment": 0,
-        "position": 0.8888888888888887
+        "segment": 2,
+        "position": 0.8820483014211296
       }
     },
     {
@@ -2197,13 +2221,13 @@
       ],
       "firstSeen": {
         "y": 1575,
-        "m": 6,
-        "d": 16
+        "m": 5,
+        "d": 25
       },
       "scheduledArrival": {
         "y": 1575,
         "m": 6,
-        "d": 29
+        "d": 16
       },
       "roads": [
         {
@@ -2243,7 +2267,101 @@
       },
       "lastProgress": {
         "segment": 2,
-        "position": 0.7192165625072551
+        "position": 1
+      }
+    },
+    {
+      "title": "長篠の戦い",
+      "commander": [
+        "織田信長"
+      ],
+      "troops": 30900,
+      "clan": "oda",
+      "path": [
+        {
+          "id": "ichijodani",
+          "name": "一乗谷城"
+        },
+        {
+          "id": "gifu",
+          "name": "岐阜城"
+        },
+        {
+          "id": "kiyosu",
+          "name": "清洲城"
+        },
+        {
+          "id": "okazaki",
+          "name": "岡崎城"
+        },
+        {
+          "id": "yoshida",
+          "name": "吉田城"
+        }
+      ],
+      "firstSeen": {
+        "y": 1575,
+        "m": 6,
+        "d": 13
+      },
+      "scheduledArrival": {
+        "y": 1575,
+        "m": 6,
+        "d": 29
+      },
+      "roads": [
+        {
+          "from": "ichijodani",
+          "to": "gifu",
+          "sea": false,
+          "roads": [
+            "北陸道",
+            "北国街道（近江）",
+            "北国脇往還",
+            "東山道",
+            "岐阜街道"
+          ],
+          "status": "街道データへの接続のみ確認・軍の通過史料は未照合"
+        },
+        {
+          "from": "gifu",
+          "to": "kiyosu",
+          "sea": false,
+          "roads": [
+            "岐阜街道",
+            "美濃路"
+          ],
+          "status": "街道データへの接続のみ確認・軍の通過史料は未照合"
+        },
+        {
+          "from": "kiyosu",
+          "to": "okazaki",
+          "sea": false,
+          "roads": [
+            "美濃路",
+            "東海道"
+          ],
+          "status": "街道データへの接続のみ確認・軍の通過史料は未照合"
+        },
+        {
+          "from": "okazaki",
+          "to": "yoshida",
+          "sea": false,
+          "roads": [
+            "東海道"
+          ],
+          "status": "街道データへの接続のみ確認・軍の通過史料は未照合"
+        }
+      ],
+      "note": "兵数は従来の配分値・目安を含む。全軍の実数とは扱わない。",
+      "lastSeen": {
+        "y": 1575,
+        "m": 6,
+        "d": 28
+      },
+      "lastProgress": {
+        "segment": 3,
+        "position": 0.5328268130172238
       }
     },
     {
@@ -2319,84 +2437,7 @@
       },
       "lastProgress": {
         "segment": 2,
-        "position": 0.7192165625072551
-      }
-    },
-    {
-      "title": "長篠の戦い",
-      "commander": [
-        "織田信長"
-      ],
-      "troops": 30900,
-      "clan": "oda",
-      "path": [
-        {
-          "id": "gifu",
-          "name": "岐阜城"
-        },
-        {
-          "id": "kiyosu",
-          "name": "清洲城"
-        },
-        {
-          "id": "okazaki",
-          "name": "岡崎城"
-        },
-        {
-          "id": "yoshida",
-          "name": "吉田城"
-        }
-      ],
-      "firstSeen": {
-        "y": 1575,
-        "m": 6,
-        "d": 22
-      },
-      "scheduledArrival": {
-        "y": 1575,
-        "m": 6,
-        "d": 29
-      },
-      "roads": [
-        {
-          "from": "gifu",
-          "to": "kiyosu",
-          "sea": false,
-          "roads": [
-            "岐阜街道",
-            "美濃路"
-          ],
-          "status": "街道データへの接続のみ確認・軍の通過史料は未照合"
-        },
-        {
-          "from": "kiyosu",
-          "to": "okazaki",
-          "sea": false,
-          "roads": [
-            "美濃路",
-            "東海道"
-          ],
-          "status": "街道データへの接続のみ確認・軍の通過史料は未照合"
-        },
-        {
-          "from": "okazaki",
-          "to": "yoshida",
-          "sea": false,
-          "roads": [
-            "東海道"
-          ],
-          "status": "街道データへの接続のみ確認・軍の通過史料は未照合"
-        }
-      ],
-      "note": "兵数は従来の配分値・目安を含む。全軍の実数とは扱わない。",
-      "lastSeen": {
-        "y": 1575,
-        "m": 6,
-        "d": 28
-      },
-      "lastProgress": {
-        "segment": 2,
-        "position": 0.4937655033889446
+        "position": 0.7278078275812758
       }
     },
     {
@@ -2622,7 +2663,6 @@
           "roads": [
             "北国街道（近江）",
             "北国脇往還",
-            "塩津街道",
             "北陸道"
           ],
           "status": "街道データへの接続のみ確認・軍の通過史料は未照合"
@@ -2678,7 +2718,7 @@
       },
       "lastProgress": {
         "segment": 6,
-        "position": 0.5659791006726995
+        "position": 0.5435765259363651
       }
     },
     {
@@ -2757,7 +2797,7 @@
       },
       "lastProgress": {
         "segment": 2,
-        "position": 0.6613938815652727
+        "position": 0.6563557172561058
       }
     },
     {
@@ -2866,7 +2906,7 @@
       },
       "lastProgress": {
         "segment": 5,
-        "position": 0.754322506449597
+        "position": 0.7277377058937271
       }
     },
     {
@@ -2926,7 +2966,7 @@
       },
       "lastProgress": {
         "segment": 1,
-        "position": 0.723327168149692
+        "position": 0.7705435440110684
       }
     },
     {
@@ -2987,7 +3027,7 @@
       },
       "lastProgress": {
         "segment": 1,
-        "position": 0.9419802800756074
+        "position": 0.9384480112120878
       }
     },
     {
@@ -3036,7 +3076,7 @@
       },
       "lastProgress": {
         "segment": 0,
-        "position": 0.8
+        "position": 0.8000000000000002
       }
     },
     {
@@ -3130,7 +3170,7 @@
       },
       "lastProgress": {
         "segment": 3,
-        "position": 0.7346384783010683
+        "position": 0.7319495125760378
       }
     },
     {
@@ -3231,7 +3271,7 @@
       },
       "lastProgress": {
         "segment": 4,
-        "position": 0.7836372252698606
+        "position": 0.7857357160592503
       }
     },
     {
@@ -3413,7 +3453,7 @@
       },
       "lastProgress": {
         "segment": 3,
-        "position": 0.8743712360795056
+        "position": 0.863620990827371
       }
     },
     {
@@ -3500,7 +3540,7 @@
       },
       "lastProgress": {
         "segment": 3,
-        "position": 0.7956669276155881
+        "position": 0.7977129340694061
       }
     },
     {
@@ -3520,16 +3560,12 @@
           "name": "長島城"
         },
         {
-          "id": "kannonji",
-          "name": "安土城"
+          "id": "kiriyama",
+          "name": "田丸城"
         },
         {
-          "id": "kyo",
-          "name": "二条御所"
-        },
-        {
-          "id": "akutagawa",
-          "name": "高槻城"
+          "id": "yamato",
+          "name": "筒井城"
         },
         {
           "id": "ishiyama",
@@ -3556,39 +3592,30 @@
         },
         {
           "from": "nagashima",
-          "to": "kannonji",
-          "sea": false,
-          "roads": [],
-          "status": "軍の道筋未照合"
-        },
-        {
-          "from": "kannonji",
-          "to": "kyo",
+          "to": "kiriyama",
           "sea": false,
           "roads": [
-            "京・大津道",
-            "東山道"
+            "伊勢本街道",
+            "伊勢路",
+            "東海道（鈴鹿越え）"
           ],
           "status": "街道データへの接続のみ確認・軍の通過史料は未照合"
         },
         {
-          "from": "kyo",
-          "to": "akutagawa",
+          "from": "kiriyama",
+          "to": "yamato",
           "sea": false,
           "roads": [
-            "山陽道",
-            "熊野街道"
+            "伊勢本街道"
           ],
           "status": "街道データへの接続のみ確認・軍の通過史料は未照合"
         },
         {
-          "from": "akutagawa",
+          "from": "yamato",
           "to": "ishiyama",
           "sea": false,
           "roads": [
-            "暗越奈良街道",
-            "熊野街道",
-            "山陽道"
+            "暗越奈良街道"
           ],
           "status": "街道データへの接続のみ確認・軍の通過史料は未照合"
         }
@@ -3600,8 +3627,8 @@
         "d": 4
       },
       "lastProgress": {
-        "segment": 4,
-        "position": 0.5289821692950069
+        "segment": 3,
+        "position": 0.49954994720771
       }
     },
     {
@@ -3662,7 +3689,68 @@
       },
       "lastProgress": {
         "segment": 1,
-        "position": 0.902690629430438
+        "position": 0.8948829202530436
+      }
+    },
+    {
+      "title": "耳川の戦い",
+      "commander": [
+        "島津忠平"
+      ],
+      "troops": 8000,
+      "clan": "shimazu",
+      "path": [
+        {
+          "id": "uchi",
+          "name": "内城"
+        },
+        {
+          "id": "izumi",
+          "name": "出水亀ヶ城"
+        },
+        {
+          "id": "tonokori",
+          "name": "佐土原城"
+        }
+      ],
+      "firstSeen": {
+        "y": 1578,
+        "m": 11,
+        "d": 25
+      },
+      "scheduledArrival": {
+        "y": 1578,
+        "m": 12,
+        "d": 10
+      },
+      "roads": [
+        {
+          "from": "uchi",
+          "to": "izumi",
+          "sea": false,
+          "roads": [
+            "豊後道",
+            "西海道"
+          ],
+          "status": "街道データへの接続のみ確認・軍の通過史料は未照合"
+        },
+        {
+          "from": "izumi",
+          "to": "tonokori",
+          "sea": false,
+          "roads": [],
+          "status": "軍の道筋未照合"
+        }
+      ],
+      "note": "兵数は従来の配分値・目安を含む。全軍の実数とは扱わない。",
+      "lastSeen": {
+        "y": 1578,
+        "m": 12,
+        "d": 9
+      },
+      "lastProgress": {
+        "segment": 1,
+        "position": 0.8948714603247266
       }
     },
     {
@@ -3723,58 +3811,7 @@
       },
       "lastProgress": {
         "segment": 1,
-        "position": 0.9026906294304381
-      }
-    },
-    {
-      "title": "耳川の戦い",
-      "commander": [
-        "島津忠平"
-      ],
-      "troops": 8000,
-      "clan": "shimazu",
-      "path": [
-        {
-          "id": "obi",
-          "name": "飫肥城"
-        },
-        {
-          "id": "tonokori",
-          "name": "佐土原城"
-        }
-      ],
-      "firstSeen": {
-        "y": 1578,
-        "m": 12,
-        "d": 7
-      },
-      "scheduledArrival": {
-        "y": 1578,
-        "m": 12,
-        "d": 10
-      },
-      "roads": [
-        {
-          "from": "obi",
-          "to": "tonokori",
-          "sea": false,
-          "roads": [
-            "日向街道",
-            "豊後道",
-            "人吉街道"
-          ],
-          "status": "街道データへの接続のみ確認・軍の通過史料は未照合"
-        }
-      ],
-      "note": "兵数は従来の配分値・目安を含む。全軍の実数とは扱わない。",
-      "lastSeen": {
-        "y": 1578,
-        "m": 12,
-        "d": 9
-      },
-      "lastProgress": {
-        "segment": 0,
-        "position": 0.6666666666666666
+        "position": 0.8948714603247266
       }
     },
     {
@@ -3883,7 +3920,7 @@
       },
       "lastProgress": {
         "segment": 1,
-        "position": 0.539637564695105
+        "position": 0.5344610150910282
       }
     },
     {
@@ -3993,8 +4030,8 @@
       "clan": "tokugawa",
       "path": [
         {
-          "id": "hikuma",
-          "name": "浜松城"
+          "id": "yoshida",
+          "name": "吉田城"
         },
         {
           "id": "kakegawa",
@@ -4004,7 +4041,7 @@
       "firstSeen": {
         "y": 1581,
         "m": 4,
-        "d": 22
+        "d": 19
       },
       "scheduledArrival": {
         "y": 1581,
@@ -4013,7 +4050,7 @@
       },
       "roads": [
         {
-          "from": "hikuma",
+          "from": "yoshida",
           "to": "kakegawa",
           "sea": false,
           "roads": [
@@ -4030,7 +4067,7 @@
       },
       "lastProgress": {
         "segment": 0,
-        "position": 0.6666666666666665
+        "position": 0.8333333333333334
       }
     },
     {
@@ -4247,7 +4284,7 @@
       },
       "lastProgress": {
         "segment": 5,
-        "position": 0.7984459968017691
+        "position": 0.7297817119155121
       }
     },
     {
@@ -4307,7 +4344,7 @@
       },
       "lastProgress": {
         "segment": 1,
-        "position": 0.8671397251400982
+        "position": 0.86709533787417
       }
     },
     {
@@ -4318,10 +4355,6 @@
       "troops": 3000,
       "clan": "tokugawa",
       "path": [
-        {
-          "id": "hikuma",
-          "name": "浜松城"
-        },
         {
           "id": "kakegawa",
           "name": "掛川城"
@@ -4338,7 +4371,7 @@
       "firstSeen": {
         "y": 1582,
         "m": 3,
-        "d": 13
+        "d": 16
       },
       "scheduledArrival": {
         "y": 1582,
@@ -4346,15 +4379,6 @@
         "d": 25
       },
       "roads": [
-        {
-          "from": "hikuma",
-          "to": "kakegawa",
-          "sea": false,
-          "roads": [
-            "東海道"
-          ],
-          "status": "街道データへの接続のみ確認・軍の通過史料は未照合"
-        },
         {
           "from": "kakegawa",
           "to": "sunpu",
@@ -4382,8 +4406,8 @@
         "d": 24
       },
       "lastProgress": {
-        "segment": 2,
-        "position": 0.8608120602424848
+        "segment": 1,
+        "position": 0.8420068395687524
       }
     },
     {
@@ -4447,7 +4471,7 @@
       },
       "lastProgress": {
         "segment": 1,
-        "position": 0.8166845556220236
+        "position": 0.8041066931379566
       }
     },
     {
@@ -4520,7 +4544,7 @@
       },
       "lastProgress": {
         "segment": 2,
-        "position": 0.53695200849692
+        "position": 0.5738594216770342
       }
     },
     {
@@ -4620,7 +4644,7 @@
       },
       "lastProgress": {
         "segment": 0,
-        "position": 0.8000000000000002
+        "position": 0.8
       }
     },
     {
@@ -4684,7 +4708,7 @@
       },
       "lastProgress": {
         "segment": 1,
-        "position": 0.7143729258675886
+        "position": 0.7434485857944618
       }
     },
     {
@@ -4700,8 +4724,12 @@
           "name": "備中松山城"
         },
         {
-          "id": "tenjin",
-          "name": "岡山城"
+          "id": "utsubuki",
+          "name": "打吹城"
+        },
+        {
+          "id": "tottori",
+          "name": "鳥取城"
         },
         {
           "id": "himeji",
@@ -4729,17 +4757,31 @@
       "roads": [
         {
           "from": "bmatsuyama",
-          "to": "tenjin",
+          "to": "utsubuki",
           "sea": false,
-          "roads": [],
-          "status": "軍の道筋未照合"
+          "roads": [
+            "松山往来",
+            "出雲街道",
+            "山陰道"
+          ],
+          "status": "街道データへの接続のみ確認・軍の通過史料は未照合"
         },
         {
-          "from": "tenjin",
+          "from": "utsubuki",
+          "to": "tottori",
+          "sea": false,
+          "roads": [
+            "山陰道"
+          ],
+          "status": "街道データへの接続のみ確認・軍の通過史料は未照合"
+        },
+        {
+          "from": "tottori",
           "to": "himeji",
           "sea": false,
           "roads": [
-            "山陽道",
+            "山陰道",
+            "因幡街道",
             "但馬街道"
           ],
           "status": "街道データへの接続のみ確認・軍の通過史料は未照合"
@@ -4772,8 +4814,8 @@
         "d": 1
       },
       "lastProgress": {
-        "segment": 3,
-        "position": 0.5339146352593589
+        "segment": 4,
+        "position": 0.2851440484580084
       }
     },
     {
@@ -4865,7 +4907,7 @@
       },
       "lastProgress": {
         "segment": 3,
-        "position": 0.6268789055334433
+        "position": 0.6576635928665702
       }
     },
     {
@@ -4926,7 +4968,7 @@
       },
       "lastProgress": {
         "segment": 1,
-        "position": 0.9786219012832904
+        "position": 0.977149256918655
       }
     },
     {
@@ -4937,10 +4979,6 @@
       "troops": 5000,
       "clan": "tokugawa",
       "path": [
-        {
-          "id": "hikuma",
-          "name": "浜松城"
-        },
         {
           "id": "kakegawa",
           "name": "掛川城"
@@ -4957,7 +4995,7 @@
       "firstSeen": {
         "y": 1582,
         "m": 7,
-        "d": 13
+        "d": 16
       },
       "scheduledArrival": {
         "y": 1582,
@@ -4965,15 +5003,6 @@
         "d": 25
       },
       "roads": [
-        {
-          "from": "hikuma",
-          "to": "kakegawa",
-          "sea": false,
-          "roads": [
-            "東海道"
-          ],
-          "status": "街道データへの接続のみ確認・軍の通過史料は未照合"
-        },
         {
           "from": "kakegawa",
           "to": "sunpu",
@@ -5001,8 +5030,8 @@
         "d": 24
       },
       "lastProgress": {
-        "segment": 2,
-        "position": 0.8608120602424848
+        "segment": 1,
+        "position": 0.8370585023270257
       }
     },
     {
@@ -5052,7 +5081,7 @@
       },
       "lastProgress": {
         "segment": 0,
-        "position": 0.9777777777777776
+        "position": 0.9777777777777777
       }
     },
     {
@@ -5239,7 +5268,112 @@
       },
       "lastProgress": {
         "segment": 3,
-        "position": 0.8502468413553087
+        "position": 0.8418951979433231
+      }
+    },
+    {
+      "title": "北庄城落城",
+      "commander": [
+        "羽柴秀吉"
+      ],
+      "troops": 11000,
+      "clan": "hashiba",
+      "path": [
+        {
+          "id": "himeji",
+          "name": "姫路城"
+        },
+        {
+          "id": "yakami",
+          "name": "八上城"
+        },
+        {
+          "id": "kyo",
+          "name": "二条御所"
+        },
+        {
+          "id": "odani",
+          "name": "長浜城"
+        },
+        {
+          "id": "kanegasaki",
+          "name": "金ヶ崎城"
+        },
+        {
+          "id": "ichijodani",
+          "name": "北ノ庄城"
+        }
+      ],
+      "firstSeen": {
+        "y": 1583,
+        "m": 5,
+        "d": 22
+      },
+      "scheduledArrival": {
+        "y": 1583,
+        "m": 6,
+        "d": 14
+      },
+      "roads": [
+        {
+          "from": "himeji",
+          "to": "yakami",
+          "sea": false,
+          "roads": [],
+          "status": "軍の道筋未照合"
+        },
+        {
+          "from": "yakami",
+          "to": "kyo",
+          "sea": false,
+          "roads": [
+            "周山街道",
+            "山陰道"
+          ],
+          "status": "街道データへの接続のみ確認・軍の通過史料は未照合"
+        },
+        {
+          "from": "kyo",
+          "to": "odani",
+          "sea": false,
+          "roads": [
+            "京・大津道",
+            "東山道",
+            "北国街道（近江）",
+            "北国脇往還"
+          ],
+          "status": "街道データへの接続のみ確認・軍の通過史料は未照合"
+        },
+        {
+          "from": "odani",
+          "to": "kanegasaki",
+          "sea": false,
+          "roads": [
+            "北国街道（近江）",
+            "北国脇往還",
+            "北陸道"
+          ],
+          "status": "街道データへの接続のみ確認・軍の通過史料は未照合"
+        },
+        {
+          "from": "kanegasaki",
+          "to": "ichijodani",
+          "sea": false,
+          "roads": [
+            "北陸道"
+          ],
+          "status": "街道データへの接続のみ確認・軍の通過史料は未照合"
+        }
+      ],
+      "note": "兵数は従来の配分値・目安を含む。全軍の実数とは扱わない。",
+      "lastSeen": {
+        "y": 1583,
+        "m": 6,
+        "d": 13
+      },
+      "lastProgress": {
+        "segment": 4,
+        "position": 0.7390283752958001
       }
     },
     {
@@ -5248,7 +5382,7 @@
         "織田信雄"
       ],
       "troops": 15000,
-      "clan": "oda",
+      "clan": "nobukatsu",
       "path": [
         {
           "id": "kiyosu",
@@ -5295,108 +5429,6 @@
     {
       "title": "賤ヶ岳の戦い",
       "commander": [
-        "羽柴秀吉"
-      ],
-      "troops": 50000,
-      "clan": "hashiba",
-      "path": [
-        {
-          "id": "himeji",
-          "name": "姫路城"
-        },
-        {
-          "id": "konosumi",
-          "name": "此隅山城"
-        },
-        {
-          "id": "tango",
-          "name": "宮津城"
-        },
-        {
-          "id": "nochiseyama",
-          "name": "後瀬山城"
-        },
-        {
-          "id": "kanegasaki",
-          "name": "金ヶ崎城"
-        },
-        {
-          "id": "ichijodani",
-          "name": "北ノ庄城"
-        }
-      ],
-      "firstSeen": {
-        "y": 1583,
-        "m": 5,
-        "d": 25
-      },
-      "scheduledArrival": {
-        "y": 1583,
-        "m": 6,
-        "d": 11
-      },
-      "roads": [
-        {
-          "from": "himeji",
-          "to": "konosumi",
-          "sea": false,
-          "roads": [
-            "但馬街道"
-          ],
-          "status": "街道データへの接続のみ確認・軍の通過史料は未照合"
-        },
-        {
-          "from": "konosumi",
-          "to": "tango",
-          "sea": false,
-          "roads": [],
-          "status": "軍の道筋未照合"
-        },
-        {
-          "from": "tango",
-          "to": "nochiseyama",
-          "sea": false,
-          "roads": [
-            "丹後街道"
-          ],
-          "status": "街道データへの接続のみ確認・軍の通過史料は未照合"
-        },
-        {
-          "from": "nochiseyama",
-          "to": "kanegasaki",
-          "sea": false,
-          "roads": [
-            "丹後街道",
-            "若狭街道",
-            "九里半街道",
-            "北陸道"
-          ],
-          "status": "街道データへの接続のみ確認・軍の通過史料は未照合"
-        },
-        {
-          "from": "kanegasaki",
-          "to": "ichijodani",
-          "sea": false,
-          "roads": [
-            "北陸道"
-          ],
-          "status": "街道データへの接続のみ確認・軍の通過史料は未照合"
-        }
-      ],
-      "note": "兵数は従来の配分値・目安を含む。全軍の実数とは扱わない。",
-      "lastSeen": {
-        "y": 1583,
-        "m": 6,
-        "d": 10
-      },
-      "lastProgress": {
-        "segment": 4,
-        "position": 0.6812673545049708
-      }
-    },
-    {
-      "title": "賤ヶ岳の戦い",
-      "commander": [
         "柴田勝家"
       ],
       "troops": 30000,
@@ -5407,8 +5439,8 @@
           "name": "北ノ庄城"
         },
         {
-          "id": "gifu",
-          "name": "岐阜城"
+          "id": "kanegasaki",
+          "name": "金ヶ崎城"
         },
         {
           "id": "odani",
@@ -5417,8 +5449,8 @@
       ],
       "firstSeen": {
         "y": 1583,
-        "m": 5,
-        "d": 28
+        "m": 6,
+        "d": 4
       },
       "scheduledArrival": {
         "y": 1583,
@@ -5428,26 +5460,21 @@
       "roads": [
         {
           "from": "ichijodani",
-          "to": "gifu",
+          "to": "kanegasaki",
           "sea": false,
           "roads": [
-            "北陸道",
-            "北国街道（近江）",
-            "北国脇往還",
-            "東山道",
-            "岐阜街道"
+            "北陸道"
           ],
           "status": "街道データへの接続のみ確認・軍の通過史料は未照合"
         },
         {
-          "from": "gifu",
+          "from": "kanegasaki",
           "to": "odani",
           "sea": false,
           "roads": [
             "北国街道（近江）",
             "北国脇往還",
-            "東山道",
-            "岐阜街道"
+            "北陸道"
           ],
           "status": "街道データへの接続のみ確認・軍の通過史料は未照合"
         }
@@ -5460,7 +5487,7 @@
       },
       "lastProgress": {
         "segment": 1,
-        "position": 0.7211088475799778
+        "position": 0.6862199403697427
       }
     },
     {
@@ -5542,7 +5569,7 @@
       },
       "lastProgress": {
         "segment": 3,
-        "position": 0.5703653120585639
+        "position": 0.5503350650913982
       }
     },
     {
@@ -5624,7 +5651,7 @@
       },
       "lastProgress": {
         "segment": 3,
-        "position": 0.5703653120585639
+        "position": 0.5504789449397849
       }
     },
     {
@@ -5679,6 +5706,109 @@
     {
       "title": "小牧・長久手の戦い",
       "commander": [
+        "徳川家康"
+      ],
+      "troops": 9300,
+      "clan": "tokugawa",
+      "path": [
+        {
+          "id": "tsutsuji",
+          "name": "躑躅ヶ崎館"
+        },
+        {
+          "id": "sunpu",
+          "name": "今川館"
+        },
+        {
+          "id": "kakegawa",
+          "name": "掛川城"
+        },
+        {
+          "id": "yoshida",
+          "name": "吉田城"
+        },
+        {
+          "id": "okazaki",
+          "name": "岡崎城"
+        },
+        {
+          "id": "kiyosu",
+          "name": "清洲城"
+        }
+      ],
+      "firstSeen": {
+        "y": 1584,
+        "m": 5,
+        "d": 1
+      },
+      "scheduledArrival": {
+        "y": 1584,
+        "m": 5,
+        "d": 20
+      },
+      "roads": [
+        {
+          "from": "tsutsuji",
+          "to": "sunpu",
+          "sea": false,
+          "roads": [
+            "東海道",
+            "身延道（駿州往還）"
+          ],
+          "status": "街道データへの接続のみ確認・軍の通過史料は未照合"
+        },
+        {
+          "from": "sunpu",
+          "to": "kakegawa",
+          "sea": false,
+          "roads": [
+            "東海道"
+          ],
+          "status": "街道データへの接続のみ確認・軍の通過史料は未照合"
+        },
+        {
+          "from": "kakegawa",
+          "to": "yoshida",
+          "sea": false,
+          "roads": [
+            "東海道"
+          ],
+          "status": "街道データへの接続のみ確認・軍の通過史料は未照合"
+        },
+        {
+          "from": "yoshida",
+          "to": "okazaki",
+          "sea": false,
+          "roads": [
+            "東海道"
+          ],
+          "status": "街道データへの接続のみ確認・軍の通過史料は未照合"
+        },
+        {
+          "from": "okazaki",
+          "to": "kiyosu",
+          "sea": false,
+          "roads": [
+            "美濃路",
+            "東海道"
+          ],
+          "status": "街道データへの接続のみ確認・軍の通過史料は未照合"
+        }
+      ],
+      "note": "兵数は従来の配分値・目安を含む。全軍の実数とは扱わない。",
+      "lastSeen": {
+        "y": 1584,
+        "m": 5,
+        "d": 19
+      },
+      "lastProgress": {
+        "segment": 4,
+        "position": 0.6677124229406859
+      }
+    },
+    {
+      "title": "小牧・長久手の戦い",
+      "commander": [
         "羽柴秀次"
       ],
       "troops": 8000,
@@ -5697,8 +5827,8 @@
           "name": "妙顕寺城"
         },
         {
-          "id": "kannonji",
-          "name": "安土城"
+          "id": "ueno",
+          "name": "伊賀平楽寺"
         },
         {
           "id": "nagashima",
@@ -5739,20 +5869,25 @@
         },
         {
           "from": "kyo",
-          "to": "kannonji",
+          "to": "ueno",
           "sea": false,
           "roads": [
-            "京・大津道",
-            "東山道"
+            "伊賀越え",
+            "伊勢路",
+            "京・大津道"
           ],
           "status": "街道データへの接続のみ確認・軍の通過史料は未照合"
         },
         {
-          "from": "kannonji",
+          "from": "ueno",
           "to": "nagashima",
           "sea": false,
-          "roads": [],
-          "status": "軍の道筋未照合"
+          "roads": [
+            "東海道（鈴鹿越え）",
+            "伊勢路",
+            "伊賀越え"
+          ],
+          "status": "街道データへの接続のみ確認・軍の通過史料は未照合"
         },
         {
           "from": "nagashima",
@@ -5770,7 +5905,7 @@
       },
       "lastProgress": {
         "segment": 4,
-        "position": 0.6049314641604463
+        "position": 0.5943658382154416
       }
     },
     {
@@ -5859,32 +5994,24 @@
       },
       "lastProgress": {
         "segment": 3,
-        "position": 0.5875842029601765
+        "position": 0.5817868398670202
       }
     },
     {
       "title": "小牧・長久手の戦い",
       "commander": [
-        "池田恒興"
+        "織田信雄"
       ],
       "troops": 6000,
-      "clan": "hashiba",
+      "clan": "nobukatsu",
       "path": [
         {
-          "id": "ichijodani",
-          "name": "北ノ庄城"
+          "id": "kiriyama",
+          "name": "松ヶ島城"
         },
         {
-          "id": "kanegasaki",
-          "name": "敦賀城"
-        },
-        {
-          "id": "odani",
-          "name": "長浜城"
-        },
-        {
-          "id": "gifu",
-          "name": "岐阜城"
+          "id": "nagashima",
+          "name": "長島城"
         },
         {
           "id": "kiyosu",
@@ -5894,7 +6021,7 @@
       "firstSeen": {
         "y": 1584,
         "m": 5,
-        "d": 7
+        "d": 10
       },
       "scheduledArrival": {
         "y": 1584,
@@ -5903,47 +6030,22 @@
       },
       "roads": [
         {
-          "from": "ichijodani",
-          "to": "kanegasaki",
+          "from": "kiriyama",
+          "to": "nagashima",
           "sea": false,
           "roads": [
-            "北陸道"
+            "伊勢本街道",
+            "伊勢路",
+            "東海道（鈴鹿越え）"
           ],
           "status": "街道データへの接続のみ確認・軍の通過史料は未照合"
         },
         {
-          "from": "kanegasaki",
-          "to": "odani",
-          "sea": false,
-          "roads": [
-            "北国街道（近江）",
-            "北国脇往還",
-            "塩津街道",
-            "北陸道"
-          ],
-          "status": "街道データへの接続のみ確認・軍の通過史料は未照合"
-        },
-        {
-          "from": "odani",
-          "to": "gifu",
-          "sea": false,
-          "roads": [
-            "北国街道（近江）",
-            "北国脇往還",
-            "東山道",
-            "岐阜街道"
-          ],
-          "status": "街道データへの接続のみ確認・軍の通過史料は未照合"
-        },
-        {
-          "from": "gifu",
+          "from": "nagashima",
           "to": "kiyosu",
           "sea": false,
-          "roads": [
-            "岐阜街道",
-            "美濃路"
-          ],
-          "status": "街道データへの接続のみ確認・軍の通過史料は未照合"
+          "roads": [],
+          "status": "軍の道筋未照合"
         }
       ],
       "note": "兵数は従来の配分値・目安を含む。全軍の実数とは扱わない。",
@@ -5953,8 +6055,8 @@
         "d": 19
       },
       "lastProgress": {
-        "segment": 3,
-        "position": 0.6089643374832394
+        "segment": 1,
+        "position": 0.7061379283818323
       }
     },
     {
@@ -5966,111 +6068,12 @@
       "clan": "hashiba",
       "path": [
         {
-          "id": "ichijodani",
-          "name": "北ノ庄城"
+          "id": "sawayama",
+          "name": "佐和山城"
         },
         {
-          "id": "kanegasaki",
-          "name": "敦賀城"
-        },
-        {
-          "id": "odani",
-          "name": "長浜城"
-        },
-        {
-          "id": "gifu",
-          "name": "岐阜城"
-        },
-        {
-          "id": "kiyosu",
-          "name": "清洲城"
-        }
-      ],
-      "firstSeen": {
-        "y": 1584,
-        "m": 5,
-        "d": 7
-      },
-      "scheduledArrival": {
-        "y": 1584,
-        "m": 5,
-        "d": 20
-      },
-      "roads": [
-        {
-          "from": "ichijodani",
-          "to": "kanegasaki",
-          "sea": false,
-          "roads": [
-            "北陸道"
-          ],
-          "status": "街道データへの接続のみ確認・軍の通過史料は未照合"
-        },
-        {
-          "from": "kanegasaki",
-          "to": "odani",
-          "sea": false,
-          "roads": [
-            "北国街道（近江）",
-            "北国脇往還",
-            "塩津街道",
-            "北陸道"
-          ],
-          "status": "街道データへの接続のみ確認・軍の通過史料は未照合"
-        },
-        {
-          "from": "odani",
-          "to": "gifu",
-          "sea": false,
-          "roads": [
-            "北国街道（近江）",
-            "北国脇往還",
-            "東山道",
-            "岐阜街道"
-          ],
-          "status": "街道データへの接続のみ確認・軍の通過史料は未照合"
-        },
-        {
-          "from": "gifu",
-          "to": "kiyosu",
-          "sea": false,
-          "roads": [
-            "岐阜街道",
-            "美濃路"
-          ],
-          "status": "街道データへの接続のみ確認・軍の通過史料は未照合"
-        }
-      ],
-      "note": "兵数は従来の配分値・目安を含む。全軍の実数とは扱わない。",
-      "lastSeen": {
-        "y": 1584,
-        "m": 5,
-        "d": 19
-      },
-      "lastProgress": {
-        "segment": 3,
-        "position": 0.6089643374832394
-      }
-    },
-    {
-      "title": "小牧・長久手の戦い",
-      "commander": [
-        "徳川家康"
-      ],
-      "troops": 9300,
-      "clan": "tokugawa",
-      "path": [
-        {
-          "id": "hikuma",
-          "name": "浜松城"
-        },
-        {
-          "id": "yoshida",
-          "name": "吉田城"
-        },
-        {
-          "id": "okazaki",
-          "name": "岡崎城"
+          "id": "nagashima",
+          "name": "長島城"
         },
         {
           "id": "kiyosu",
@@ -6089,32 +6092,18 @@
       },
       "roads": [
         {
-          "from": "hikuma",
-          "to": "yoshida",
+          "from": "sawayama",
+          "to": "nagashima",
           "sea": false,
-          "roads": [
-            "東海道"
-          ],
-          "status": "街道データへの接続のみ確認・軍の通過史料は未照合"
+          "roads": [],
+          "status": "軍の道筋未照合"
         },
         {
-          "from": "yoshida",
-          "to": "okazaki",
-          "sea": false,
-          "roads": [
-            "東海道"
-          ],
-          "status": "街道データへの接続のみ確認・軍の通過史料は未照合"
-        },
-        {
-          "from": "okazaki",
+          "from": "nagashima",
           "to": "kiyosu",
           "sea": false,
-          "roads": [
-            "美濃路",
-            "東海道"
-          ],
-          "status": "街道データへの接続のみ確認・軍の通過史料は未照合"
+          "roads": [],
+          "status": "軍の道筋未照合"
         }
       ],
       "note": "兵数は従来の配分値・目安を含む。全軍の実数とは扱わない。",
@@ -6124,21 +6113,21 @@
         "d": 19
       },
       "lastProgress": {
-        "segment": 2,
-        "position": 0.6522625151420183
+        "segment": 1,
+        "position": 0.6239125712783352
       }
     },
     {
       "title": "小牧・長久手の戦い",
       "commander": [
-        "織田信雄"
+        "池田恒興"
       ],
       "troops": 6000,
-      "clan": "oda",
+      "clan": "ikeda",
       "path": [
         {
-          "id": "nagashima",
-          "name": "長島城"
+          "id": "gifu",
+          "name": "岐阜城"
         },
         {
           "id": "kiyosu",
@@ -6157,11 +6146,14 @@
       },
       "roads": [
         {
-          "from": "nagashima",
+          "from": "gifu",
           "to": "kiyosu",
           "sea": false,
-          "roads": [],
-          "status": "軍の道筋未照合"
+          "roads": [
+            "岐阜街道",
+            "美濃路"
+          ],
+          "status": "街道データへの接続のみ確認・軍の通過史料は未照合"
         }
       ],
       "note": "兵数は従来の配分値・目安を含む。全軍の実数とは扱わない。",
@@ -6184,24 +6176,8 @@
       "clan": "hashiba",
       "path": [
         {
-          "id": "ichijodani",
-          "name": "北ノ庄城"
-        },
-        {
-          "id": "kanegasaki",
-          "name": "敦賀城"
-        },
-        {
-          "id": "odani",
-          "name": "長浜城"
-        },
-        {
-          "id": "kannonji",
-          "name": "安土城"
-        },
-        {
-          "id": "ueno",
-          "name": "伊賀平楽寺"
+          "id": "yamato",
+          "name": "郡山城"
         },
         {
           "id": "kiriyama",
@@ -6211,7 +6187,7 @@
       "firstSeen": {
         "y": 1584,
         "m": 6,
-        "d": 16
+        "d": 25
       },
       "scheduledArrival": {
         "y": 1584,
@@ -6220,55 +6196,11 @@
       },
       "roads": [
         {
-          "from": "ichijodani",
-          "to": "kanegasaki",
-          "sea": false,
-          "roads": [
-            "北陸道"
-          ],
-          "status": "街道データへの接続のみ確認・軍の通過史料は未照合"
-        },
-        {
-          "from": "kanegasaki",
-          "to": "odani",
-          "sea": false,
-          "roads": [
-            "北国街道（近江）",
-            "北国脇往還",
-            "塩津街道",
-            "北陸道"
-          ],
-          "status": "街道データへの接続のみ確認・軍の通過史料は未照合"
-        },
-        {
-          "from": "odani",
-          "to": "kannonji",
-          "sea": false,
-          "roads": [
-            "東山道",
-            "北国街道（近江）",
-            "北国脇往還"
-          ],
-          "status": "街道データへの接続のみ確認・軍の通過史料は未照合"
-        },
-        {
-          "from": "kannonji",
-          "to": "ueno",
-          "sea": false,
-          "roads": [
-            "伊賀越え",
-            "伊勢路",
-            "東山道"
-          ],
-          "status": "街道データへの接続のみ確認・軍の通過史料は未照合"
-        },
-        {
-          "from": "ueno",
+          "from": "yamato",
           "to": "kiriyama",
           "sea": false,
           "roads": [
-            "伊勢本街道",
-            "伊賀越え"
+            "伊勢本街道"
           ],
           "status": "街道データへの接続のみ確認・軍の通過史料は未照合"
         }
@@ -6280,8 +6212,8 @@
         "d": 30
       },
       "lastProgress": {
-        "segment": 4,
-        "position": 0.6415837826144768
+        "segment": 0,
+        "position": 0.8333333333333335
       }
     },
     {
@@ -6339,7 +6271,7 @@
       },
       "lastProgress": {
         "segment": 1,
-        "position": 0.5911110177736605
+        "position": 0.6003452639713807
       }
     },
     {
@@ -6386,7 +6318,7 @@
       },
       "lastProgress": {
         "segment": 0,
-        "position": 0.8333333333333333
+        "position": 0.8333333333333334
       }
     },
     {
@@ -6433,7 +6365,7 @@
       },
       "lastProgress": {
         "segment": 0,
-        "position": 0.8888888888888888
+        "position": 0.888888888888889
       }
     },
     {
@@ -6545,7 +6477,7 @@
       },
       "lastProgress": {
         "segment": 1,
-        "position": 0.8903280515499549
+        "position": 0.8865057739964441
       }
     },
     {
@@ -6623,7 +6555,7 @@
       },
       "lastProgress": {
         "segment": 2,
-        "position": 0.8731640800956314
+        "position": 0.8552614558815524
       }
     },
     {
@@ -6687,7 +6619,7 @@
       },
       "lastProgress": {
         "segment": 1,
-        "position": 0.8965272309899935
+        "position": 0.8852202415461741
       }
     },
     {
@@ -6752,7 +6684,7 @@
       },
       "lastProgress": {
         "segment": 1,
-        "position": 0.8230979278099926
+        "position": 0.8222701310241369
       }
     },
     {
@@ -6897,95 +6829,7 @@
       },
       "lastProgress": {
         "segment": 4,
-        "position": 0.9090091752021238
-      }
-    },
-    {
-      "title": "戸次川の戦い",
-      "commander": [
-        "長宗我部元親"
-      ],
-      "troops": 3000,
-      "clan": "chosokabe",
-      "path": [
-        {
-          "id": "oko",
-          "name": "岡豊城"
-        },
-        {
-          "id": "motoyama",
-          "name": "本山城"
-        },
-        {
-          "id": "kaneko",
-          "name": "金子城"
-        },
-        {
-          "id": "yuzuki",
-          "name": "湯築城"
-        },
-        {
-          "id": "funai",
-          "name": "大友館"
-        }
-      ],
-      "firstSeen": {
-        "y": 1586,
-        "m": 12,
-        "d": 25
-      },
-      "scheduledArrival": {
-        "y": 1587,
-        "m": 1,
-        "d": 20
-      },
-      "roads": [
-        {
-          "from": "oko",
-          "to": "motoyama",
-          "sea": false,
-          "roads": [
-            "土佐北街道",
-            "土佐道"
-          ],
-          "status": "街道データへの接続のみ確認・軍の通過史料は未照合"
-        },
-        {
-          "from": "motoyama",
-          "to": "kaneko",
-          "sea": false,
-          "roads": [
-            "土佐道",
-            "南海道"
-          ],
-          "status": "街道データへの接続のみ確認・軍の通過史料は未照合"
-        },
-        {
-          "from": "kaneko",
-          "to": "yuzuki",
-          "sea": false,
-          "roads": [
-            "南海道"
-          ],
-          "status": "街道データへの接続のみ確認・軍の通過史料は未照合"
-        },
-        {
-          "from": "yuzuki",
-          "to": "funai",
-          "sea": true,
-          "roads": [],
-          "status": "軍の道筋未照合"
-        }
-      ],
-      "note": "兵数は従来の配分値・目安を含む。全軍の実数とは扱わない。",
-      "lastSeen": {
-        "y": 1587,
-        "m": 1,
-        "d": 19
-      },
-      "lastProgress": {
-        "segment": 3,
-        "position": 0.9118542013270797
+        "position": 0.9074501637994513
       }
     },
     {
@@ -7073,7 +6917,65 @@
       },
       "lastProgress": {
         "segment": 3,
-        "position": 0.9118542013270797
+        "position": 0.9187524978602938
+      }
+    },
+    {
+      "title": "戸次川の戦い",
+      "commander": [
+        "長宗我部元親"
+      ],
+      "troops": 3000,
+      "clan": "chosokabe",
+      "path": [
+        {
+          "id": "nakamura",
+          "name": "中村御所"
+        },
+        {
+          "id": "yuzuki",
+          "name": "湯築城"
+        },
+        {
+          "id": "funai",
+          "name": "大友館"
+        }
+      ],
+      "firstSeen": {
+        "y": 1587,
+        "m": 1,
+        "d": 1
+      },
+      "scheduledArrival": {
+        "y": 1587,
+        "m": 1,
+        "d": 20
+      },
+      "roads": [
+        {
+          "from": "nakamura",
+          "to": "yuzuki",
+          "sea": false,
+          "roads": [],
+          "status": "軍の道筋未照合"
+        },
+        {
+          "from": "yuzuki",
+          "to": "funai",
+          "sea": true,
+          "roads": [],
+          "status": "軍の道筋未照合"
+        }
+      ],
+      "note": "兵数は従来の配分値・目安を含む。全軍の実数とは扱わない。",
+      "lastSeen": {
+        "y": 1587,
+        "m": 1,
+        "d": 19
+      },
+      "lastProgress": {
+        "segment": 1,
+        "position": 0.8987882142589547
       }
     },
     {
@@ -7085,20 +6987,12 @@
       "clan": "shimazu",
       "path": [
         {
-          "id": "uchi",
-          "name": "内城"
+          "id": "tonokori",
+          "name": "佐土原城"
         },
         {
-          "id": "izumi",
-          "name": "出水亀ヶ城"
-        },
-        {
-          "id": "hitoyoshi",
-          "name": "人吉城"
-        },
-        {
-          "id": "kumamoto",
-          "name": "隈本城"
+          "id": "agata",
+          "name": "縣城"
         },
         {
           "id": "funai",
@@ -7106,9 +7000,9 @@
         }
       ],
       "firstSeen": {
-        "y": 1586,
-        "m": 12,
-        "d": 28
+        "y": 1587,
+        "m": 1,
+        "d": 10
       },
       "scheduledArrival": {
         "y": 1587,
@@ -7117,35 +7011,22 @@
       },
       "roads": [
         {
-          "from": "uchi",
-          "to": "izumi",
+          "from": "tonokori",
+          "to": "agata",
           "sea": false,
           "roads": [
-            "豊後道",
-            "西海道"
+            "人吉街道",
+            "豊後道"
           ],
           "status": "街道データへの接続のみ確認・軍の通過史料は未照合"
         },
         {
-          "from": "izumi",
-          "to": "hitoyoshi",
-          "sea": false,
-          "roads": [],
-          "status": "軍の道筋未照合"
-        },
-        {
-          "from": "hitoyoshi",
-          "to": "kumamoto",
-          "sea": false,
-          "roads": [],
-          "status": "軍の道筋未照合"
-        },
-        {
-          "from": "kumamoto",
+          "from": "agata",
           "to": "funai",
           "sea": false,
           "roads": [
-            "豊後街道"
+            "豊後道",
+            "日向街道"
           ],
           "status": "街道データへの接続のみ確認・軍の通過史料は未照合"
         }
@@ -7157,8 +7038,8 @@
         "d": 19
       },
       "lastProgress": {
-        "segment": 3,
-        "position": 0.8758184922481541
+        "segment": 1,
+        "position": 0.7949668434984537
       }
     },
     {
@@ -7222,7 +7103,7 @@
       },
       "lastProgress": {
         "segment": 1,
-        "position": 0.7939968402849364
+        "position": 0.7949706331876623
       }
     },
     {
@@ -7297,7 +7178,7 @@
       },
       "lastProgress": {
         "segment": 2,
-        "position": 0.9668831391918972
+        "position": 0.9648811527014822
       }
     },
     {
@@ -7432,7 +7313,7 @@
       },
       "lastProgress": {
         "segment": 7,
-        "position": 0.7856401686016966
+        "position": 0.7680804909360357
       }
     },
     {
@@ -7541,7 +7422,7 @@
       },
       "lastProgress": {
         "segment": 1,
-        "position": 0.7943804334007968
+        "position": 0.7632727766227559
       }
     },
     {
@@ -7599,7 +7480,7 @@
       },
       "lastProgress": {
         "segment": 1,
-        "position": 0.79689264220882
+        "position": 0.8322431710263539
       }
     },
     {
@@ -7664,44 +7545,40 @@
           "name": "大坂城"
         },
         {
-          "id": "akutagawa",
-          "name": "高槻城"
+          "id": "yamato",
+          "name": "郡山城"
         },
         {
-          "id": "kyo",
-          "name": "聚楽第"
+          "id": "ueno",
+          "name": "伊賀上野城"
         },
         {
-          "id": "kannonji",
-          "name": "八幡山城"
+          "id": "nagashima",
+          "name": "長島城"
         },
         {
-          "id": "odani",
-          "name": "長浜城"
+          "id": "kiyosu",
+          "name": "清洲城"
         },
         {
-          "id": "kanegasaki",
-          "name": "敦賀城"
+          "id": "okazaki",
+          "name": "岡崎城"
         },
         {
-          "id": "ichijodani",
-          "name": "北ノ庄城"
+          "id": "iida",
+          "name": "飯田城"
         },
         {
-          "id": "oyama",
-          "name": "尾山城"
+          "id": "takato",
+          "name": "高遠城"
         },
         {
-          "id": "toyama",
-          "name": "富山城"
+          "id": "toishi",
+          "name": "上田城"
         },
         {
-          "id": "kasugayama",
-          "name": "春日山城"
-        },
-        {
-          "id": "sakado",
-          "name": "坂戸城"
+          "id": "kaizu",
+          "name": "海津城"
         },
         {
           "id": "numata",
@@ -7711,7 +7588,7 @@
       "firstSeen": {
         "y": 1589,
         "m": 10,
-        "d": 10
+        "d": 4
       },
       "scheduledArrival": {
         "y": 1589,
@@ -7721,107 +7598,97 @@
       "roads": [
         {
           "from": "ishiyama",
-          "to": "akutagawa",
+          "to": "yamato",
           "sea": false,
           "roads": [
-            "暗越奈良街道",
-            "熊野街道",
-            "山陽道"
+            "暗越奈良街道"
           ],
           "status": "街道データへの接続のみ確認・軍の通過史料は未照合"
         },
         {
-          "from": "akutagawa",
-          "to": "kyo",
+          "from": "yamato",
+          "to": "ueno",
           "sea": false,
           "roads": [
-            "山陽道",
-            "熊野街道"
+            "伊賀越え",
+            "伊勢本街道"
           ],
           "status": "街道データへの接続のみ確認・軍の通過史料は未照合"
         },
         {
-          "from": "kyo",
-          "to": "kannonji",
+          "from": "ueno",
+          "to": "nagashima",
           "sea": false,
           "roads": [
-            "京・大津道",
-            "東山道"
+            "東海道（鈴鹿越え）",
+            "伊勢路",
+            "伊賀越え"
           ],
           "status": "街道データへの接続のみ確認・軍の通過史料は未照合"
         },
         {
-          "from": "kannonji",
-          "to": "odani",
-          "sea": false,
-          "roads": [
-            "東山道",
-            "北国街道（近江）",
-            "北国脇往還"
-          ],
-          "status": "街道データへの接続のみ確認・軍の通過史料は未照合"
-        },
-        {
-          "from": "odani",
-          "to": "kanegasaki",
-          "sea": false,
-          "roads": [
-            "北国街道（近江）",
-            "北国脇往還",
-            "塩津街道",
-            "北陸道"
-          ],
-          "status": "街道データへの接続のみ確認・軍の通過史料は未照合"
-        },
-        {
-          "from": "kanegasaki",
-          "to": "ichijodani",
-          "sea": false,
-          "roads": [
-            "北陸道"
-          ],
-          "status": "街道データへの接続のみ確認・軍の通過史料は未照合"
-        },
-        {
-          "from": "ichijodani",
-          "to": "oyama",
-          "sea": false,
-          "roads": [
-            "北陸道"
-          ],
-          "status": "街道データへの接続のみ確認・軍の通過史料は未照合"
-        },
-        {
-          "from": "oyama",
-          "to": "toyama",
-          "sea": false,
-          "roads": [
-            "能登街道",
-            "北陸道"
-          ],
-          "status": "街道データへの接続のみ確認・軍の通過史料は未照合"
-        },
-        {
-          "from": "toyama",
-          "to": "kasugayama",
-          "sea": false,
-          "roads": [
-            "北陸道"
-          ],
-          "status": "街道データへの接続のみ確認・軍の通過史料は未照合"
-        },
-        {
-          "from": "kasugayama",
-          "to": "sakado",
+          "from": "nagashima",
+          "to": "kiyosu",
           "sea": false,
           "roads": [],
           "status": "軍の道筋未照合"
         },
         {
-          "from": "sakado",
+          "from": "kiyosu",
+          "to": "okazaki",
+          "sea": false,
+          "roads": [
+            "美濃路",
+            "東海道"
+          ],
+          "status": "街道データへの接続のみ確認・軍の通過史料は未照合"
+        },
+        {
+          "from": "okazaki",
+          "to": "iida",
+          "sea": false,
+          "roads": [
+            "三州街道"
+          ],
+          "status": "街道データへの接続のみ確認・軍の通過史料は未照合"
+        },
+        {
+          "from": "iida",
+          "to": "takato",
+          "sea": false,
+          "roads": [
+            "三州街道"
+          ],
+          "status": "街道データへの接続のみ確認・軍の通過史料は未照合"
+        },
+        {
+          "from": "takato",
+          "to": "toishi",
+          "sea": false,
+          "roads": [
+            "三州街道",
+            "杖突越え",
+            "甲州道",
+            "東山道"
+          ],
+          "status": "街道データへの接続のみ確認・軍の通過史料は未照合"
+        },
+        {
+          "from": "toishi",
+          "to": "kaizu",
+          "sea": false,
+          "roads": [
+            "北国街道（信濃）"
+          ],
+          "status": "街道データへの接続のみ確認・軍の通過史料は未照合"
+        },
+        {
+          "from": "kaizu",
           "to": "numata",
           "sea": false,
           "roads": [
+            "北国街道（信濃）",
+            "東山道",
             "三国峠道"
           ],
           "status": "街道データへの接続のみ確認・軍の通過史料は未照合"
@@ -7834,8 +7701,8 @@
         "d": 19
       },
       "lastProgress": {
-        "segment": 10,
-        "position": 0.7906028424204143
+        "segment": 9,
+        "position": 0.8875263215386531
       }
     },
     {
@@ -7847,8 +7714,8 @@
       "clan": "hashiba",
       "path": [
         {
-          "id": "oyama",
-          "name": "尾山城"
+          "id": "kasugayama",
+          "name": "春日山城"
         },
         {
           "id": "toyama",
@@ -7883,11 +7750,10 @@
       },
       "roads": [
         {
-          "from": "oyama",
+          "from": "kasugayama",
           "to": "toyama",
           "sea": false,
           "roads": [
-            "能登街道",
             "北陸道"
           ],
           "status": "街道データへの接続のみ確認・軍の通過史料は未照合"
@@ -7938,7 +7804,7 @@
       },
       "lastProgress": {
         "segment": 4,
-        "position": 0.8910155785454673
+        "position": 0.8789915423892922
       }
     },
     {
@@ -7993,22 +7859,22 @@
     {
       "title": "北国勢の上野攻め",
       "commander": [
-        "前田利家"
+        "上杉景勝"
       ],
-      "troops": 31400,
-      "clan": "hashiba",
+      "troops": 4200,
+      "clan": "nagao",
       "path": [
         {
-          "id": "ichijodani",
-          "name": "北ノ庄城"
+          "id": "shibata",
+          "name": "新発田城"
         },
         {
-          "id": "oyama",
-          "name": "尾山城"
+          "id": "tochio",
+          "name": "栃尾城"
         },
         {
-          "id": "toyama",
-          "name": "富山城"
+          "id": "kasugayama",
+          "name": "春日山城"
         },
         {
           "id": "kaizu",
@@ -8022,7 +7888,7 @@
       "firstSeen": {
         "y": 1590,
         "m": 4,
-        "d": 10
+        "d": 13
       },
       "scheduledArrival": {
         "y": 1590,
@@ -8031,26 +7897,100 @@
       },
       "roads": [
         {
-          "from": "ichijodani",
-          "to": "oyama",
+          "from": "shibata",
+          "to": "tochio",
+          "sea": false,
+          "roads": [],
+          "status": "軍の道筋未照合"
+        },
+        {
+          "from": "tochio",
+          "to": "kasugayama",
+          "sea": false,
+          "roads": [],
+          "status": "軍の道筋未照合"
+        },
+        {
+          "from": "kasugayama",
+          "to": "kaizu",
           "sea": false,
           "roads": [
+            "北国街道（信濃）",
             "北陸道"
           ],
           "status": "街道データへの接続のみ確認・軍の通過史料は未照合"
         },
         {
-          "from": "oyama",
-          "to": "toyama",
+          "from": "kaizu",
+          "to": "minowa",
           "sea": false,
           "roads": [
-            "能登街道",
-            "北陸道"
+            "北国街道（信濃）",
+            "東山道",
+            "三国峠道"
+          ],
+          "status": "街道データへの接続のみ確認・軍の通過史料は未照合"
+        }
+      ],
+      "note": "兵数は従来の配分値・目安を含む。全軍の実数とは扱わない。",
+      "lastSeen": {
+        "y": 1590,
+        "m": 5,
+        "d": 9
+      },
+      "lastProgress": {
+        "segment": 3,
+        "position": 0.8662507464000002
+      }
+    },
+    {
+      "title": "北国勢の上野攻め",
+      "commander": [
+        "前田利家"
+      ],
+      "troops": 30500,
+      "clan": "hashiba",
+      "path": [
+        {
+          "id": "matsukura",
+          "name": "松倉城"
+        },
+        {
+          "id": "fukashi",
+          "name": "松本城"
+        },
+        {
+          "id": "kaizu",
+          "name": "海津城"
+        },
+        {
+          "id": "minowa",
+          "name": "箕輪城"
+        }
+      ],
+      "firstSeen": {
+        "y": 1590,
+        "m": 4,
+        "d": 16
+      },
+      "scheduledArrival": {
+        "y": 1590,
+        "m": 5,
+        "d": 10
+      },
+      "roads": [
+        {
+          "from": "matsukura",
+          "to": "fukashi",
+          "sea": false,
+          "roads": [
+            "越中街道（飛騨）",
+            "野麦街道"
           ],
           "status": "街道データへの接続のみ確認・軍の通過史料は未照合"
         },
         {
-          "from": "toyama",
+          "from": "fukashi",
           "to": "kaizu",
           "sea": false,
           "roads": [],
@@ -8075,8 +8015,8 @@
         "d": 9
       },
       "lastProgress": {
-        "segment": 3,
-        "position": 0.9007036912889577
+        "segment": 2,
+        "position": 0.9034869635648088
       }
     },
     {
@@ -8085,12 +8025,8 @@
         "織田信雄"
       ],
       "troops": 50000,
-      "clan": "oda",
+      "clan": "nobukatsu",
       "path": [
-        {
-          "id": "nagashima",
-          "name": "長島城"
-        },
         {
           "id": "kiyosu",
           "name": "清洲城"
@@ -8119,7 +8055,7 @@
       "firstSeen": {
         "y": 1590,
         "m": 4,
-        "d": 16
+        "d": 19
       },
       "scheduledArrival": {
         "y": 1590,
@@ -8127,13 +8063,6 @@
         "d": 3
       },
       "roads": [
-        {
-          "from": "nagashima",
-          "to": "kiyosu",
-          "sea": false,
-          "roads": [],
-          "status": "軍の道筋未照合"
-        },
         {
           "from": "kiyosu",
           "to": "okazaki",
@@ -8188,73 +8117,8 @@
         "d": 2
       },
       "lastProgress": {
-        "segment": 5,
-        "position": 0.7473625146496163
-      }
-    },
-    {
-      "title": "北国勢の上野攻め",
-      "commander": [
-        "上杉景勝"
-      ],
-      "troops": 3400,
-      "clan": "nagao",
-      "path": [
-        {
-          "id": "kasugayama",
-          "name": "春日山城"
-        },
-        {
-          "id": "kaizu",
-          "name": "海津城"
-        },
-        {
-          "id": "minowa",
-          "name": "箕輪城"
-        }
-      ],
-      "firstSeen": {
-        "y": 1590,
-        "m": 4,
-        "d": 25
-      },
-      "scheduledArrival": {
-        "y": 1590,
-        "m": 5,
-        "d": 10
-      },
-      "roads": [
-        {
-          "from": "kasugayama",
-          "to": "kaizu",
-          "sea": false,
-          "roads": [
-            "北国街道（信濃）",
-            "北陸道"
-          ],
-          "status": "街道データへの接続のみ確認・軍の通過史料は未照合"
-        },
-        {
-          "from": "kaizu",
-          "to": "minowa",
-          "sea": false,
-          "roads": [
-            "北国街道（信濃）",
-            "東山道",
-            "三国峠道"
-          ],
-          "status": "街道データへの接続のみ確認・軍の通過史料は未照合"
-        }
-      ],
-      "note": "兵数は従来の配分値・目安を含む。全軍の実数とは扱わない。",
-      "lastSeen": {
-        "y": 1590,
-        "m": 5,
-        "d": 9
-      },
-      "lastProgress": {
-        "segment": 1,
-        "position": 0.8975217594836301
+        "segment": 4,
+        "position": 0.7370048102969831
       }
     },
     {
@@ -8334,7 +8198,7 @@
       },
       "lastProgress": {
         "segment": 3,
-        "position": 0.8322504655486663
+        "position": 0.8056099917475295
       }
     },
     {
@@ -8473,69 +8337,11 @@
       },
       "lastProgress": {
         "segment": 7,
-        "position": 0.8809444004151521
+        "position": 0.8818125124995818
       }
     },
     {
-      "title": "文禄の役",
-      "commander": [],
-      "troops": 18000,
-      "clan": "hashiba",
-      "path": [
-        {
-          "id": "tachibana",
-          "name": "立花山城"
-        },
-        {
-          "id": "hirado",
-          "name": "勝尾嶽城"
-        },
-        {
-          "id": "busan",
-          "name": "釜山鎮"
-        }
-      ],
-      "firstSeen": {
-        "y": 1592,
-        "m": 5,
-        "d": 1
-      },
-      "scheduledArrival": {
-        "y": 1592,
-        "m": 5,
-        "d": 24
-      },
-      "roads": [
-        {
-          "from": "tachibana",
-          "to": "hirado",
-          "sea": false,
-          "roads": [
-            "唐津街道"
-          ],
-          "status": "街道データへの接続のみ確認・軍の通過史料は未照合"
-        },
-        {
-          "from": "hirado",
-          "to": "busan",
-          "sea": true,
-          "roads": [],
-          "status": "軍の道筋未照合"
-        }
-      ],
-      "note": "兵数は従来の配分値・目安を含む。全軍の実数とは扱わない。",
-      "lastSeen": {
-        "y": 1592,
-        "m": 5,
-        "d": 23
-      },
-      "lastProgress": {
-        "segment": 1,
-        "position": 0.9393565203710579
-      }
-    },
-    {
-      "title": "#544",
+      "title": "#564",
       "commander": [
         "加藤清正"
       ],
@@ -8569,8 +8375,8 @@
       ],
       "firstSeen": {
         "y": 1592,
-        "m": 5,
-        "d": 1
+        "m": 4,
+        "d": 28
       },
       "scheduledArrival": null,
       "roads": [
@@ -8627,7 +8433,7 @@
       },
       "lastProgress": {
         "segment": 3,
-        "position": 0.7505901721058482
+        "position": 0.4998294527306824
       }
     },
     {
@@ -8663,8 +8469,8 @@
       ],
       "firstSeen": {
         "y": 1592,
-        "m": 5,
-        "d": 1
+        "m": 4,
+        "d": 28
       },
       "scheduledArrival": {
         "y": 1592,
@@ -8725,7 +8531,65 @@
       },
       "lastProgress": {
         "segment": 4,
-        "position": 0.7536881334537795
+        "position": 0.7798968759755384
+      }
+    },
+    {
+      "title": "文禄の役",
+      "commander": [],
+      "troops": 18000,
+      "clan": "hashiba",
+      "path": [
+        {
+          "id": "tachibana",
+          "name": "立花山城"
+        },
+        {
+          "id": "hirado",
+          "name": "勝尾嶽城"
+        },
+        {
+          "id": "busan",
+          "name": "釜山鎮"
+        }
+      ],
+      "firstSeen": {
+        "y": 1592,
+        "m": 5,
+        "d": 1
+      },
+      "scheduledArrival": {
+        "y": 1592,
+        "m": 5,
+        "d": 24
+      },
+      "roads": [
+        {
+          "from": "tachibana",
+          "to": "hirado",
+          "sea": false,
+          "roads": [
+            "唐津街道"
+          ],
+          "status": "街道データへの接続のみ確認・軍の通過史料は未照合"
+        },
+        {
+          "from": "hirado",
+          "to": "busan",
+          "sea": true,
+          "roads": [],
+          "status": "軍の道筋未照合"
+        }
+      ],
+      "note": "兵数は従来の配分値・目安を含む。全軍の実数とは扱わない。",
+      "lastSeen": {
+        "y": 1592,
+        "m": 5,
+        "d": 23
+      },
+      "lastProgress": {
+        "segment": 1,
+        "position": 0.9338134769115898
       }
     },
     {
@@ -8758,7 +8622,7 @@
       "firstSeen": {
         "y": 1592,
         "m": 5,
-        "d": 4
+        "d": 1
       },
       "scheduledArrival": {
         "y": 1592,
@@ -8810,7 +8674,7 @@
       },
       "lastProgress": {
         "segment": 3,
-        "position": 0.766851831758498
+        "position": 0.8257962979566816
       }
     },
     {
@@ -8922,7 +8786,7 @@
       },
       "lastProgress": {
         "segment": 5,
-        "position": 0.972969383622112
+        "position": 0.9729127795780138
       }
     },
     {
@@ -8984,7 +8848,7 @@
       },
       "lastProgress": {
         "segment": 1,
-        "position": 0.9141014256246459
+        "position": 0.923246123072039
       }
     },
     {
@@ -9011,7 +8875,7 @@
       "firstSeen": {
         "y": 1592,
         "m": 6,
-        "d": 28
+        "d": 25
       },
       "scheduledArrival": {
         "y": 1592,
@@ -9045,7 +8909,7 @@
       },
       "lastProgress": {
         "segment": 1,
-        "position": 0.8209868204664239
+        "position": 0.8607321047498887
       }
     },
     {
@@ -9095,7 +8959,7 @@
       },
       "lastProgress": {
         "segment": 0,
-        "position": 0.9722222222222223
+        "position": 0.9722222222222222
       }
     },
     {
@@ -9318,7 +9182,7 @@
       },
       "lastProgress": {
         "segment": 10,
-        "position": 0.8806561122911077
+        "position": 0.8692632882120442
       }
     },
     {
@@ -9456,7 +9320,7 @@
       },
       "lastProgress": {
         "segment": 7,
-        "position": 0.8820557352813467
+        "position": 0.8746242540489285
       }
     },
     {
@@ -9589,7 +9453,7 @@
       },
       "lastProgress": {
         "segment": 3,
-        "position": 0.37729742295370444
+        "position": 0.41845275212356386
       }
     },
     {
@@ -9651,7 +9515,7 @@
       },
       "lastProgress": {
         "segment": 1,
-        "position": 0.8824731370703607
+        "position": 0.887793701893804
       }
     },
     {
@@ -9659,7 +9523,7 @@
       "commander": [
         "加藤清正"
       ],
-      "troops": 42100,
+      "troops": 41900,
       "clan": "hashiba",
       "path": [
         {
@@ -9808,7 +9672,7 @@
       },
       "lastProgress": {
         "segment": 5,
-        "position": 0.9388340829044822
+        "position": 0.9248042351293921
       }
     },
     {
@@ -9833,7 +9697,7 @@
       "firstSeen": {
         "y": 1597,
         "m": 9,
-        "d": 16
+        "d": 13
       },
       "scheduledArrival": {
         "y": 1597,
@@ -9869,7 +9733,7 @@
       },
       "lastProgress": {
         "segment": 1,
-        "position": 0.7724874908024572
+        "position": 0.8159612046894773
       }
     },
     {
@@ -9977,7 +9841,7 @@
       },
       "lastProgress": {
         "segment": 1,
-        "position": 0.8111990297164015
+        "position": 0.8138472731345382
       }
     },
     {
@@ -10027,7 +9891,7 @@
       },
       "lastProgress": {
         "segment": 0,
-        "position": 0.7500000000000001
+        "position": 0.75
       }
     },
     {
@@ -10089,7 +9953,7 @@
       },
       "lastProgress": {
         "segment": 1,
-        "position": 0.65263596258145
+        "position": 0.6779174304783143
       }
     },
     {
@@ -10289,17 +10153,69 @@
       },
       "lastProgress": {
         "segment": 12,
-        "position": 0.37003624961364173
+        "position": 0.3551867651349582
       }
     },
     {
-      "title": "会津征伐",
+      "title": "小山評定",
       "commander": [
         "徳川家康"
       ],
       "troops": 10000,
       "clan": "tokugawa",
       "path": [
+        {
+          "id": "ishiyama",
+          "name": "大坂城"
+        },
+        {
+          "id": "akutagawa",
+          "name": "高槻城"
+        },
+        {
+          "id": "kyo",
+          "name": "伏見城"
+        },
+        {
+          "id": "ueno",
+          "name": "伊賀上野城"
+        },
+        {
+          "id": "nagashima",
+          "name": "長島城"
+        },
+        {
+          "id": "kiyosu",
+          "name": "清洲城"
+        },
+        {
+          "id": "okazaki",
+          "name": "岡崎城"
+        },
+        {
+          "id": "yoshida",
+          "name": "吉田城"
+        },
+        {
+          "id": "hikuma",
+          "name": "浜松城"
+        },
+        {
+          "id": "kakegawa",
+          "name": "掛川城"
+        },
+        {
+          "id": "sunpu",
+          "name": "駿府城"
+        },
+        {
+          "id": "odawara",
+          "name": "小田原城"
+        },
+        {
+          "id": "tamanawa",
+          "name": "玉縄城"
+        },
         {
           "id": "edo",
           "name": "江戸城"
@@ -10320,14 +10236,139 @@
       "firstSeen": {
         "y": 1600,
         "m": 7,
-        "d": 16
+        "d": 28
       },
       "scheduledArrival": {
         "y": 1600,
-        "m": 7,
-        "d": 25
+        "m": 9,
+        "d": 1
       },
       "roads": [
+        {
+          "from": "ishiyama",
+          "to": "akutagawa",
+          "sea": false,
+          "roads": [
+            "暗越奈良街道",
+            "熊野街道",
+            "山陽道"
+          ],
+          "status": "街道データへの接続のみ確認・軍の通過史料は未照合"
+        },
+        {
+          "from": "akutagawa",
+          "to": "kyo",
+          "sea": false,
+          "roads": [
+            "山陽道",
+            "熊野街道"
+          ],
+          "status": "街道データへの接続のみ確認・軍の通過史料は未照合"
+        },
+        {
+          "from": "kyo",
+          "to": "ueno",
+          "sea": false,
+          "roads": [
+            "伊賀越え",
+            "伊勢路",
+            "京・大津道"
+          ],
+          "status": "街道データへの接続のみ確認・軍の通過史料は未照合"
+        },
+        {
+          "from": "ueno",
+          "to": "nagashima",
+          "sea": false,
+          "roads": [
+            "東海道（鈴鹿越え）",
+            "伊勢路",
+            "伊賀越え"
+          ],
+          "status": "街道データへの接続のみ確認・軍の通過史料は未照合"
+        },
+        {
+          "from": "nagashima",
+          "to": "kiyosu",
+          "sea": false,
+          "roads": [],
+          "status": "軍の道筋未照合"
+        },
+        {
+          "from": "kiyosu",
+          "to": "okazaki",
+          "sea": false,
+          "roads": [
+            "美濃路",
+            "東海道"
+          ],
+          "status": "街道データへの接続のみ確認・軍の通過史料は未照合"
+        },
+        {
+          "from": "okazaki",
+          "to": "yoshida",
+          "sea": false,
+          "roads": [
+            "東海道"
+          ],
+          "status": "街道データへの接続のみ確認・軍の通過史料は未照合"
+        },
+        {
+          "from": "yoshida",
+          "to": "hikuma",
+          "sea": false,
+          "roads": [
+            "東海道"
+          ],
+          "status": "街道データへの接続のみ確認・軍の通過史料は未照合"
+        },
+        {
+          "from": "hikuma",
+          "to": "kakegawa",
+          "sea": false,
+          "roads": [
+            "東海道"
+          ],
+          "status": "街道データへの接続のみ確認・軍の通過史料は未照合"
+        },
+        {
+          "from": "kakegawa",
+          "to": "sunpu",
+          "sea": false,
+          "roads": [
+            "東海道"
+          ],
+          "status": "街道データへの接続のみ確認・軍の通過史料は未照合"
+        },
+        {
+          "from": "sunpu",
+          "to": "odawara",
+          "sea": false,
+          "roads": [
+            "東海道"
+          ],
+          "status": "街道データへの接続のみ確認・軍の通過史料は未照合"
+        },
+        {
+          "from": "odawara",
+          "to": "tamanawa",
+          "sea": false,
+          "roads": [
+            "鎌倉街道",
+            "東海道"
+          ],
+          "status": "街道データへの接続のみ確認・軍の通過史料は未照合"
+        },
+        {
+          "from": "tamanawa",
+          "to": "edo",
+          "sea": false,
+          "roads": [
+            "甲州道",
+            "鎌倉街道"
+          ],
+          "status": "街道データへの接続のみ確認・軍の通過史料は未照合"
+        },
         {
           "from": "edo",
           "to": "iwatsuki",
@@ -10361,61 +10402,12 @@
       "note": "兵数は従来の配分値・目安を含む。全軍の実数とは扱わない。",
       "lastSeen": {
         "y": 1600,
-        "m": 7,
-        "d": 24
+        "m": 9,
+        "d": 1
       },
       "lastProgress": {
-        "segment": 2,
-        "position": 0.6571052590094592
-      }
-    },
-    {
-      "title": "小山評定",
-      "commander": [
-        "徳川家康"
-      ],
-      "troops": 10000,
-      "clan": "tokugawa",
-      "path": [
-        {
-          "id": "karasawa",
-          "name": "唐沢山城"
-        },
-        {
-          "id": "utsunomiya",
-          "name": "宇都宮城"
-        }
-      ],
-      "firstSeen": {
-        "y": 1600,
-        "m": 7,
-        "d": 25
-      },
-      "scheduledArrival": {
-        "y": 1600,
-        "m": 8,
-        "d": 29
-      },
-      "roads": [
-        {
-          "from": "karasawa",
-          "to": "utsunomiya",
-          "sea": false,
-          "roads": [
-            "東山道"
-          ],
-          "status": "街道データへの接続のみ確認・軍の通過史料は未照合"
-        }
-      ],
-      "note": "兵数は従来の配分値・目安を含む。全軍の実数とは扱わない。",
-      "lastSeen": {
-        "y": 1600,
-        "m": 8,
-        "d": 28
-      },
-      "lastProgress": {
-        "segment": 0,
-        "position": 0.9705882352941175
+        "segment": 15,
+        "position": 1
       }
     },
     {
@@ -10477,7 +10469,7 @@
       },
       "lastProgress": {
         "segment": 1,
-        "position": 0.7891526713416024
+        "position": 0.7785218603914672
       }
     },
     {
@@ -10566,7 +10558,7 @@
       },
       "lastProgress": {
         "segment": 3,
-        "position": 0.9666926621545419
+        "position": 0.9689247957941404
       }
     },
     {
@@ -10641,7 +10633,7 @@
       },
       "lastProgress": {
         "segment": 2,
-        "position": 0.8597773708995051
+        "position": 0.8393805618183698
       }
     },
     {
@@ -10655,10 +10647,6 @@
         {
           "id": "yanagawa",
           "name": "柳川城"
-        },
-        {
-          "id": "kumamoto",
-          "name": "隈本城"
         },
         {
           "id": "funai",
@@ -10702,7 +10690,7 @@
         },
         {
           "id": "kannonji",
-          "name": "八幡山城"
+          "name": "安土城"
         }
       ],
       "firstSeen": {
@@ -10718,19 +10706,11 @@
       "roads": [
         {
           "from": "yanagawa",
-          "to": "kumamoto",
-          "sea": false,
-          "roads": [
-            "西海道",
-            "柳川往還"
-          ],
-          "status": "街道データへの接続のみ確認・軍の通過史料は未照合"
-        },
-        {
-          "from": "kumamoto",
           "to": "funai",
           "sea": false,
           "roads": [
+            "柳川往還",
+            "西海道",
             "豊後街道"
           ],
           "status": "街道データへの接続のみ確認・軍の通過史料は未照合"
@@ -10832,8 +10812,8 @@
         "d": 9
       },
       "lastProgress": {
-        "segment": 11,
-        "position": 0.6552195880757803
+        "segment": 10,
+        "position": 0.6760394522800879
       }
     },
     {
@@ -11009,32 +10989,28 @@
       },
       "lastProgress": {
         "segment": 10,
-        "position": 0.7364792050261126
+        "position": 0.7327983150986566
       }
     },
     {
-      "title": "関ヶ原の戦い",
+      "title": "岐阜城の戦い",
       "commander": [
-        "徳川家康"
+        "井伊直政"
       ],
-      "troops": 10000,
+      "troops": 23000,
       "clan": "tokugawa",
       "path": [
         {
-          "id": "utsunomiya",
-          "name": "宇都宮城"
+          "id": "minowa",
+          "name": "箕輪城"
         },
         {
-          "id": "karasawa",
-          "name": "唐沢山城"
+          "id": "hachigata",
+          "name": "鉢形城"
         },
         {
-          "id": "iwatsuki",
-          "name": "岩付城"
-        },
-        {
-          "id": "edo",
-          "name": "江戸城"
+          "id": "kawagoe",
+          "name": "河越城"
         },
         {
           "id": "tamanawa",
@@ -11071,50 +11047,41 @@
       ],
       "firstSeen": {
         "y": 1600,
-        "m": 8,
-        "d": 29
+        "m": 9,
+        "d": 1
       },
       "scheduledArrival": {
         "y": 1600,
-        "m": 10,
-        "d": 21
+        "m": 9,
+        "d": 30
       },
       "roads": [
         {
-          "from": "utsunomiya",
-          "to": "karasawa",
+          "from": "minowa",
+          "to": "hachigata",
           "sea": false,
           "roads": [
-            "東山道"
+            "三国峠道",
+            "鎌倉街道"
           ],
           "status": "街道データへの接続のみ確認・軍の通過史料は未照合"
         },
         {
-          "from": "karasawa",
-          "to": "iwatsuki",
+          "from": "hachigata",
+          "to": "kawagoe",
           "sea": false,
           "roads": [
-            "足利道",
-            "奥州道",
-            "岩付道"
+            "鎌倉街道",
+            "秩父道"
           ],
           "status": "街道データへの接続のみ確認・軍の通過史料は未照合"
         },
         {
-          "from": "iwatsuki",
-          "to": "edo",
-          "sea": false,
-          "roads": [
-            "奥州道"
-          ],
-          "status": "街道データへの接続のみ確認・軍の通過史料は未照合"
-        },
-        {
-          "from": "edo",
+          "from": "kawagoe",
           "to": "tamanawa",
           "sea": false,
           "roads": [
-            "甲州道",
+            "秩父道",
             "鎌倉街道"
           ],
           "status": "街道データへの接続のみ確認・軍の通過史料は未照合"
@@ -11189,12 +11156,12 @@
       "note": "兵数は従来の配分値・目安を含む。全軍の実数とは扱わない。",
       "lastSeen": {
         "y": 1600,
-        "m": 10,
-        "d": 20
+        "m": 9,
+        "d": 29
       },
       "lastProgress": {
-        "segment": 10,
-        "position": 0.6975909507643592
+        "segment": 9,
+        "position": 0.47853359455244204
       }
     },
     {
@@ -11332,7 +11299,164 @@
       },
       "lastProgress": {
         "segment": 7,
-        "position": 0.7420754152307755
+        "position": 0.7638144761176515
+      }
+    },
+    {
+      "title": "関ヶ原の戦い",
+      "commander": [
+        "徳川家康"
+      ],
+      "troops": 10000,
+      "clan": "tokugawa",
+      "path": [
+        {
+          "id": "edo",
+          "name": "江戸城"
+        },
+        {
+          "id": "tamanawa",
+          "name": "玉縄城"
+        },
+        {
+          "id": "odawara",
+          "name": "小田原城"
+        },
+        {
+          "id": "sunpu",
+          "name": "駿府城"
+        },
+        {
+          "id": "kakegawa",
+          "name": "掛川城"
+        },
+        {
+          "id": "hikuma",
+          "name": "浜松城"
+        },
+        {
+          "id": "yoshida",
+          "name": "吉田城"
+        },
+        {
+          "id": "okazaki",
+          "name": "岡崎城"
+        },
+        {
+          "id": "kiyosu",
+          "name": "清洲城"
+        },
+        {
+          "id": "gifu",
+          "name": "岐阜城"
+        }
+      ],
+      "firstSeen": {
+        "y": 1600,
+        "m": 9,
+        "d": 2
+      },
+      "scheduledArrival": {
+        "y": 1600,
+        "m": 10,
+        "d": 21
+      },
+      "roads": [
+        {
+          "from": "edo",
+          "to": "tamanawa",
+          "sea": false,
+          "roads": [
+            "甲州道",
+            "鎌倉街道"
+          ],
+          "status": "街道データへの接続のみ確認・軍の通過史料は未照合"
+        },
+        {
+          "from": "tamanawa",
+          "to": "odawara",
+          "sea": false,
+          "roads": [
+            "鎌倉街道",
+            "東海道"
+          ],
+          "status": "街道データへの接続のみ確認・軍の通過史料は未照合"
+        },
+        {
+          "from": "odawara",
+          "to": "sunpu",
+          "sea": false,
+          "roads": [
+            "東海道"
+          ],
+          "status": "街道データへの接続のみ確認・軍の通過史料は未照合"
+        },
+        {
+          "from": "sunpu",
+          "to": "kakegawa",
+          "sea": false,
+          "roads": [
+            "東海道"
+          ],
+          "status": "街道データへの接続のみ確認・軍の通過史料は未照合"
+        },
+        {
+          "from": "kakegawa",
+          "to": "hikuma",
+          "sea": false,
+          "roads": [
+            "東海道"
+          ],
+          "status": "街道データへの接続のみ確認・軍の通過史料は未照合"
+        },
+        {
+          "from": "hikuma",
+          "to": "yoshida",
+          "sea": false,
+          "roads": [
+            "東海道"
+          ],
+          "status": "街道データへの接続のみ確認・軍の通過史料は未照合"
+        },
+        {
+          "from": "yoshida",
+          "to": "okazaki",
+          "sea": false,
+          "roads": [
+            "東海道"
+          ],
+          "status": "街道データへの接続のみ確認・軍の通過史料は未照合"
+        },
+        {
+          "from": "okazaki",
+          "to": "kiyosu",
+          "sea": false,
+          "roads": [
+            "美濃路",
+            "東海道"
+          ],
+          "status": "街道データへの接続のみ確認・軍の通過史料は未照合"
+        },
+        {
+          "from": "kiyosu",
+          "to": "gifu",
+          "sea": false,
+          "roads": [
+            "岐阜街道",
+            "美濃路"
+          ],
+          "status": "街道データへの接続のみ確認・軍の通過史料は未照合"
+        }
+      ],
+      "note": "兵数は従来の配分値・目安を含む。全軍の実数とは扱わない。",
+      "lastSeen": {
+        "y": 1600,
+        "m": 10,
+        "d": 20
+      },
+      "lastProgress": {
+        "segment": 8,
+        "position": 0.14776111292995417
       }
     },
     {
@@ -11352,28 +11476,20 @@
           "name": "八上城"
         },
         {
-          "id": "nochiseyama",
-          "name": "後瀬山城"
+          "id": "odani",
+          "name": "長浜城"
         },
         {
-          "id": "kanegasaki",
-          "name": "敦賀城"
+          "id": "gifu",
+          "name": "岐阜城"
         },
         {
-          "id": "ichijodani",
-          "name": "北ノ庄城"
+          "id": "matsukura",
+          "name": "松倉城"
         },
         {
-          "id": "oyama",
-          "name": "尾山城"
-        },
-        {
-          "id": "toyama",
-          "name": "富山城"
-        },
-        {
-          "id": "kaizu",
-          "name": "海津城"
+          "id": "fukashi",
+          "name": "松本城"
         },
         {
           "id": "toishi",
@@ -11400,68 +11516,56 @@
         },
         {
           "from": "yakami",
-          "to": "nochiseyama",
+          "to": "odani",
           "sea": false,
           "roads": [
-            "周山街道"
+            "周山街道",
+            "山陰道",
+            "京・大津道",
+            "東山道",
+            "北国街道（近江）",
+            "北国脇往還"
           ],
           "status": "街道データへの接続のみ確認・軍の通過史料は未照合"
         },
         {
-          "from": "nochiseyama",
-          "to": "kanegasaki",
+          "from": "odani",
+          "to": "gifu",
           "sea": false,
           "roads": [
-            "丹後街道",
-            "若狭街道",
-            "九里半街道",
-            "北陸道"
+            "北国街道（近江）",
+            "北国脇往還",
+            "東山道",
+            "岐阜街道"
           ],
           "status": "街道データへの接続のみ確認・軍の通過史料は未照合"
         },
         {
-          "from": "kanegasaki",
-          "to": "ichijodani",
+          "from": "gifu",
+          "to": "matsukura",
           "sea": false,
           "roads": [
-            "北陸道"
+            "越中街道（飛騨）",
+            "飛騨街道"
           ],
           "status": "街道データへの接続のみ確認・軍の通過史料は未照合"
         },
         {
-          "from": "ichijodani",
-          "to": "oyama",
+          "from": "matsukura",
+          "to": "fukashi",
           "sea": false,
           "roads": [
-            "北陸道"
+            "越中街道（飛騨）",
+            "野麦街道"
           ],
           "status": "街道データへの接続のみ確認・軍の通過史料は未照合"
         },
         {
-          "from": "oyama",
-          "to": "toyama",
-          "sea": false,
-          "roads": [
-            "能登街道",
-            "北陸道"
-          ],
-          "status": "街道データへの接続のみ確認・軍の通過史料は未照合"
-        },
-        {
-          "from": "toyama",
-          "to": "kaizu",
+          "from": "fukashi",
+          "to": "toishi",
           "sea": false,
           "roads": [],
           "status": "軍の道筋未照合"
-        },
-        {
-          "from": "kaizu",
-          "to": "toishi",
-          "sea": false,
-          "roads": [
-            "北国街道（信濃）"
-          ],
-          "status": "街道データへの接続のみ確認・軍の通過史料は未照合"
         }
       ],
       "note": "兵数は従来の配分値・目安を含む。全軍の実数とは扱わない。",
@@ -11471,8 +11575,8 @@
         "d": 11
       },
       "lastProgress": {
-        "segment": 7,
-        "position": 0.5847984489032174
+        "segment": 5,
+        "position": 0.7083600328785974
       }
     },
     {
@@ -11493,7 +11597,7 @@
         },
         {
           "id": "kannonji",
-          "name": "八幡山城"
+          "name": "安土城"
         },
         {
           "id": "sawayama",
@@ -11565,7 +11669,7 @@
       },
       "lastProgress": {
         "segment": 3,
-        "position": 0.9211654288731008
+        "position": 0.9230670500397317
       }
     },
     {
@@ -11586,7 +11690,7 @@
         },
         {
           "id": "kannonji",
-          "name": "八幡山城"
+          "name": "安土城"
         },
         {
           "id": "sawayama",
@@ -11658,7 +11762,7 @@
       },
       "lastProgress": {
         "segment": 3,
-        "position": 0.9067135418578304
+        "position": 0.9131372783826718
       }
     },
     {
@@ -11670,8 +11774,12 @@
       "clan": "hashiba",
       "path": [
         {
+          "id": "odani",
+          "name": "長浜城"
+        },
+        {
           "id": "kanegasaki",
-          "name": "敦賀城"
+          "name": "金ヶ崎城"
         },
         {
           "id": "ichijodani",
@@ -11681,7 +11789,7 @@
       "firstSeen": {
         "y": 1600,
         "m": 9,
-        "d": 13
+        "d": 10
       },
       "scheduledArrival": {
         "y": 1600,
@@ -11689,6 +11797,17 @@
         "d": 16
       },
       "roads": [
+        {
+          "from": "odani",
+          "to": "kanegasaki",
+          "sea": false,
+          "roads": [
+            "北国街道（近江）",
+            "北国脇往還",
+            "北陸道"
+          ],
+          "status": "街道データへの接続のみ確認・軍の通過史料は未照合"
+        },
         {
           "from": "kanegasaki",
           "to": "ichijodani",
@@ -11706,180 +11825,8 @@
         "d": 15
       },
       "lastProgress": {
-        "segment": 0,
-        "position": 0.6666666666666666
-      }
-    },
-    {
-      "title": "関ヶ原の戦い",
-      "commander": [
-        "井伊直政"
-      ],
-      "troops": 3600,
-      "clan": "tokugawa",
-      "path": [
-        {
-          "id": "minowa",
-          "name": "箕輪城"
-        },
-        {
-          "id": "hachigata",
-          "name": "鉢形城"
-        },
-        {
-          "id": "kawagoe",
-          "name": "河越城"
-        },
-        {
-          "id": "tamanawa",
-          "name": "玉縄城"
-        },
-        {
-          "id": "odawara",
-          "name": "小田原城"
-        },
-        {
-          "id": "sunpu",
-          "name": "駿府城"
-        },
-        {
-          "id": "kakegawa",
-          "name": "掛川城"
-        },
-        {
-          "id": "yoshida",
-          "name": "吉田城"
-        },
-        {
-          "id": "okazaki",
-          "name": "岡崎城"
-        },
-        {
-          "id": "kiyosu",
-          "name": "清洲城"
-        },
-        {
-          "id": "gifu",
-          "name": "岐阜城"
-        }
-      ],
-      "firstSeen": {
-        "y": 1600,
-        "m": 9,
-        "d": 19
-      },
-      "scheduledArrival": {
-        "y": 1600,
-        "m": 10,
-        "d": 21
-      },
-      "roads": [
-        {
-          "from": "minowa",
-          "to": "hachigata",
-          "sea": false,
-          "roads": [
-            "三国峠道",
-            "鎌倉街道"
-          ],
-          "status": "街道データへの接続のみ確認・軍の通過史料は未照合"
-        },
-        {
-          "from": "hachigata",
-          "to": "kawagoe",
-          "sea": false,
-          "roads": [
-            "鎌倉街道",
-            "秩父道"
-          ],
-          "status": "街道データへの接続のみ確認・軍の通過史料は未照合"
-        },
-        {
-          "from": "kawagoe",
-          "to": "tamanawa",
-          "sea": false,
-          "roads": [
-            "秩父道",
-            "鎌倉街道"
-          ],
-          "status": "街道データへの接続のみ確認・軍の通過史料は未照合"
-        },
-        {
-          "from": "tamanawa",
-          "to": "odawara",
-          "sea": false,
-          "roads": [
-            "鎌倉街道",
-            "東海道"
-          ],
-          "status": "街道データへの接続のみ確認・軍の通過史料は未照合"
-        },
-        {
-          "from": "odawara",
-          "to": "sunpu",
-          "sea": false,
-          "roads": [
-            "東海道"
-          ],
-          "status": "街道データへの接続のみ確認・軍の通過史料は未照合"
-        },
-        {
-          "from": "sunpu",
-          "to": "kakegawa",
-          "sea": false,
-          "roads": [
-            "東海道"
-          ],
-          "status": "街道データへの接続のみ確認・軍の通過史料は未照合"
-        },
-        {
-          "from": "kakegawa",
-          "to": "yoshida",
-          "sea": false,
-          "roads": [
-            "東海道"
-          ],
-          "status": "街道データへの接続のみ確認・軍の通過史料は未照合"
-        },
-        {
-          "from": "yoshida",
-          "to": "okazaki",
-          "sea": false,
-          "roads": [
-            "東海道"
-          ],
-          "status": "街道データへの接続のみ確認・軍の通過史料は未照合"
-        },
-        {
-          "from": "okazaki",
-          "to": "kiyosu",
-          "sea": false,
-          "roads": [
-            "美濃路",
-            "東海道"
-          ],
-          "status": "街道データへの接続のみ確認・軍の通過史料は未照合"
-        },
-        {
-          "from": "kiyosu",
-          "to": "gifu",
-          "sea": false,
-          "roads": [
-            "岐阜街道",
-            "美濃路"
-          ],
-          "status": "街道データへの接続のみ確認・軍の通過史料は未照合"
-        }
-      ],
-      "note": "兵数は従来の配分値・目安を含む。全軍の実数とは扱わない。",
-      "lastSeen": {
-        "y": 1600,
-        "m": 10,
-        "d": 20
-      },
-      "lastProgress": {
-        "segment": 9,
-        "position": 0.5360528132578618
+        "segment": 1,
+        "position": 0.694033558563348
       }
     },
     {
@@ -12037,7 +11984,7 @@
       },
       "lastProgress": {
         "segment": 8,
-        "position": 0.5391517360505655
+        "position": 0.5361101504058237
       }
     },
     {
@@ -12130,7 +12077,7 @@
       },
       "lastProgress": {
         "segment": 3,
-        "position": 0.8871585881622006
+        "position": 0.8548261237074725
       }
     },
     {
@@ -12309,7 +12256,57 @@
       },
       "lastProgress": {
         "segment": 2,
-        "position": 0.8885371818781507
+        "position": 0.8675610974377171
+      }
+    },
+    {
+      "title": "関ヶ原の戦い",
+      "commander": [
+        "井伊直政"
+      ],
+      "troops": 23000,
+      "clan": "tokugawa",
+      "path": [
+        {
+          "id": "kiyosu",
+          "name": "清洲城"
+        },
+        {
+          "id": "gifu",
+          "name": "岐阜城"
+        }
+      ],
+      "firstSeen": {
+        "y": 1600,
+        "m": 9,
+        "d": 30
+      },
+      "scheduledArrival": {
+        "y": 1600,
+        "m": 10,
+        "d": 21
+      },
+      "roads": [
+        {
+          "from": "kiyosu",
+          "to": "gifu",
+          "sea": false,
+          "roads": [
+            "岐阜街道",
+            "美濃路"
+          ],
+          "status": "街道データへの接続のみ確認・軍の通過史料は未照合"
+        }
+      ],
+      "note": "兵数は従来の配分値・目安を含む。全軍の実数とは扱わない。",
+      "lastSeen": {
+        "y": 1600,
+        "m": 10,
+        "d": 20
+      },
+      "lastProgress": {
+        "segment": 0,
+        "position": 0.9523809523809522
       }
     },
     {
@@ -12409,7 +12406,7 @@
       },
       "lastProgress": {
         "segment": 0,
-        "position": 0.9523809523809523
+        "position": 0.9523809523809522
       }
     },
     {
@@ -12473,129 +12470,7 @@
       },
       "lastProgress": {
         "segment": 1,
-        "position": 0.8871206156254474
-      }
-    },
-    {
-      "title": "関ヶ原の戦い",
-      "commander": [
-        "織田長益"
-      ],
-      "troops": 3000,
-      "clan": "oda",
-      "path": [
-        {
-          "id": "utsubuki",
-          "name": "打吹城"
-        },
-        {
-          "id": "tottori",
-          "name": "鳥取城"
-        },
-        {
-          "id": "konosumi",
-          "name": "此隅山城"
-        },
-        {
-          "id": "tango",
-          "name": "宮津城"
-        },
-        {
-          "id": "nochiseyama",
-          "name": "後瀬山城"
-        },
-        {
-          "id": "odani",
-          "name": "長浜城"
-        },
-        {
-          "id": "gifu",
-          "name": "岐阜城"
-        }
-      ],
-      "firstSeen": {
-        "y": 1600,
-        "m": 10,
-        "d": 1
-      },
-      "scheduledArrival": {
-        "y": 1600,
-        "m": 10,
-        "d": 21
-      },
-      "roads": [
-        {
-          "from": "utsubuki",
-          "to": "tottori",
-          "sea": false,
-          "roads": [
-            "山陰道"
-          ],
-          "status": "街道データへの接続のみ確認・軍の通過史料は未照合"
-        },
-        {
-          "from": "tottori",
-          "to": "konosumi",
-          "sea": false,
-          "roads": [
-            "山陰道",
-            "但馬街道"
-          ],
-          "status": "街道データへの接続のみ確認・軍の通過史料は未照合"
-        },
-        {
-          "from": "konosumi",
-          "to": "tango",
-          "sea": false,
-          "roads": [],
-          "status": "軍の道筋未照合"
-        },
-        {
-          "from": "tango",
-          "to": "nochiseyama",
-          "sea": false,
-          "roads": [
-            "丹後街道"
-          ],
-          "status": "街道データへの接続のみ確認・軍の通過史料は未照合"
-        },
-        {
-          "from": "nochiseyama",
-          "to": "odani",
-          "sea": false,
-          "roads": [
-            "北国街道（近江）",
-            "北国脇往還",
-            "塩津街道",
-            "北陸道",
-            "九里半街道",
-            "若狭街道",
-            "丹後街道"
-          ],
-          "status": "街道データへの接続のみ確認・軍の通過史料は未照合"
-        },
-        {
-          "from": "odani",
-          "to": "gifu",
-          "sea": false,
-          "roads": [
-            "北国街道（近江）",
-            "北国脇往還",
-            "東山道",
-            "岐阜街道"
-          ],
-          "status": "街道データへの接続のみ確認・軍の通過史料は未照合"
-        }
-      ],
-      "note": "兵数は従来の配分値・目安を含む。全軍の実数とは扱わない。",
-      "lastSeen": {
-        "y": 1600,
-        "m": 10,
-        "d": 20
-      },
-      "lastProgress": {
-        "segment": 5,
-        "position": 0.7016111942040463
+        "position": 0.8750463476815344
       }
     },
     {
@@ -12707,7 +12582,7 @@
       },
       "lastProgress": {
         "segment": 1,
-        "position": 0.7818361368166724
+        "position": 0.7528651134479175
       }
     },
     {
@@ -13167,7 +13042,7 @@
     {
       "title": "佐和山城落城",
       "commander": [],
-      "troops": 32000,
+      "troops": 35000,
       "clan": "tokugawa",
       "path": [
         {
@@ -13218,7 +13093,7 @@
       "commander": [
         "井伊直政"
       ],
-      "troops": 3600,
+      "troops": 23000,
       "clan": "tokugawa",
       "path": [
         {
@@ -13275,7 +13150,7 @@
       },
       "lastProgress": {
         "segment": 1,
-        "position": 0.15039576009990743
+        "position": 0.1685592005140948
       }
     },
     {
@@ -13287,16 +13162,16 @@
       "clan": "ishida",
       "path": [
         {
-          "id": "gifu",
-          "name": "岐阜城"
-        },
-        {
           "id": "sawayama",
           "name": "佐和山城"
         },
         {
-          "id": "kannonji",
-          "name": "八幡山城"
+          "id": "gifu",
+          "name": "岐阜城"
+        },
+        {
+          "id": "odani",
+          "name": "長浜城"
         },
         {
           "id": "kyo",
@@ -13315,8 +13190,8 @@
       },
       "roads": [
         {
-          "from": "gifu",
-          "to": "sawayama",
+          "from": "sawayama",
+          "to": "gifu",
           "sea": false,
           "roads": [
             "北国街道（近江）",
@@ -13326,22 +13201,26 @@
           "status": "街道データへの接続のみ確認・軍の通過史料は未照合"
         },
         {
-          "from": "sawayama",
-          "to": "kannonji",
+          "from": "gifu",
+          "to": "odani",
           "sea": false,
           "roads": [
             "北国街道（近江）",
-            "東山道"
+            "北国脇往還",
+            "東山道",
+            "岐阜街道"
           ],
           "status": "街道データへの接続のみ確認・軍の通過史料は未照合"
         },
         {
-          "from": "kannonji",
+          "from": "odani",
           "to": "kyo",
           "sea": false,
           "roads": [
             "京・大津道",
-            "東山道"
+            "東山道",
+            "北国街道（近江）",
+            "北国脇往還"
           ],
           "status": "街道データへの接続のみ確認・軍の通過史料は未照合"
         }
@@ -13354,7 +13233,7 @@
       },
       "lastProgress": {
         "segment": 0,
-        "position": 0.18971183294489882
+        "position": 0.2705445086437434
       }
     },
     {
@@ -13382,20 +13261,20 @@
           "name": "飯田城"
         },
         {
-          "id": "iwamura",
-          "name": "岩村城"
+          "id": "okazaki",
+          "name": "岡崎城"
         },
         {
-          "id": "gifu",
-          "name": "岐阜城"
+          "id": "kiyosu",
+          "name": "清洲城"
         },
         {
-          "id": "sawayama",
-          "name": "佐和山城"
+          "id": "nagashima",
+          "name": "長島城"
         },
         {
-          "id": "kannonji",
-          "name": "八幡山城"
+          "id": "ueno",
+          "name": "伊賀上野城"
         },
         {
           "id": "kyo",
@@ -13448,48 +13327,49 @@
         },
         {
           "from": "iida",
-          "to": "iwamura",
+          "to": "okazaki",
+          "sea": false,
+          "roads": [
+            "三州街道"
+          ],
+          "status": "街道データへの接続のみ確認・軍の通過史料は未照合"
+        },
+        {
+          "from": "okazaki",
+          "to": "kiyosu",
+          "sea": false,
+          "roads": [
+            "美濃路",
+            "東海道"
+          ],
+          "status": "街道データへの接続のみ確認・軍の通過史料は未照合"
+        },
+        {
+          "from": "kiyosu",
+          "to": "nagashima",
           "sea": false,
           "roads": [],
           "status": "軍の道筋未照合"
         },
         {
-          "from": "iwamura",
-          "to": "gifu",
+          "from": "nagashima",
+          "to": "ueno",
           "sea": false,
           "roads": [
-            "東山道"
+            "東海道（鈴鹿越え）",
+            "伊勢路",
+            "伊賀越え"
           ],
           "status": "街道データへの接続のみ確認・軍の通過史料は未照合"
         },
         {
-          "from": "gifu",
-          "to": "sawayama",
-          "sea": false,
-          "roads": [
-            "北国街道（近江）",
-            "東山道",
-            "岐阜街道"
-          ],
-          "status": "街道データへの接続のみ確認・軍の通過史料は未照合"
-        },
-        {
-          "from": "sawayama",
-          "to": "kannonji",
-          "sea": false,
-          "roads": [
-            "北国街道（近江）",
-            "東山道"
-          ],
-          "status": "街道データへの接続のみ確認・軍の通過史料は未照合"
-        },
-        {
-          "from": "kannonji",
+          "from": "ueno",
           "to": "kyo",
           "sea": false,
           "roads": [
-            "京・大津道",
-            "東山道"
+            "伊賀越え",
+            "伊勢路",
+            "京・大津道"
           ],
           "status": "街道データへの接続のみ確認・軍の通過史料は未照合"
         }
@@ -13501,8 +13381,8 @@
         "d": 26
       },
       "lastProgress": {
-        "segment": 0,
-        "position": 0.9894828414213769
+        "segment": 1,
+        "position": 0.13091672246475894
       }
     },
     {
@@ -13514,8 +13394,36 @@
       "clan": "tokugawa",
       "path": [
         {
-          "id": "iwatsuki",
-          "name": "岩付城"
+          "id": "gifu",
+          "name": "岐阜城"
+        },
+        {
+          "id": "kiyosu",
+          "name": "清洲城"
+        },
+        {
+          "id": "okazaki",
+          "name": "岡崎城"
+        },
+        {
+          "id": "yoshida",
+          "name": "吉田城"
+        },
+        {
+          "id": "kakegawa",
+          "name": "掛川城"
+        },
+        {
+          "id": "sunpu",
+          "name": "駿府城"
+        },
+        {
+          "id": "odawara",
+          "name": "小田原城"
+        },
+        {
+          "id": "tamanawa",
+          "name": "玉縄城"
         },
         {
           "id": "edo",
@@ -13524,8 +13432,8 @@
       ],
       "firstSeen": {
         "y": 1603,
-        "m": 3,
-        "d": 19
+        "m": 2,
+        "d": 28
       },
       "scheduledArrival": {
         "y": 1603,
@@ -13534,11 +13442,78 @@
       },
       "roads": [
         {
-          "from": "iwatsuki",
+          "from": "gifu",
+          "to": "kiyosu",
+          "sea": false,
+          "roads": [
+            "岐阜街道",
+            "美濃路"
+          ],
+          "status": "街道データへの接続のみ確認・軍の通過史料は未照合"
+        },
+        {
+          "from": "kiyosu",
+          "to": "okazaki",
+          "sea": false,
+          "roads": [
+            "美濃路",
+            "東海道"
+          ],
+          "status": "街道データへの接続のみ確認・軍の通過史料は未照合"
+        },
+        {
+          "from": "okazaki",
+          "to": "yoshida",
+          "sea": false,
+          "roads": [
+            "東海道"
+          ],
+          "status": "街道データへの接続のみ確認・軍の通過史料は未照合"
+        },
+        {
+          "from": "yoshida",
+          "to": "kakegawa",
+          "sea": false,
+          "roads": [
+            "東海道"
+          ],
+          "status": "街道データへの接続のみ確認・軍の通過史料は未照合"
+        },
+        {
+          "from": "kakegawa",
+          "to": "sunpu",
+          "sea": false,
+          "roads": [
+            "東海道"
+          ],
+          "status": "街道データへの接続のみ確認・軍の通過史料は未照合"
+        },
+        {
+          "from": "sunpu",
+          "to": "odawara",
+          "sea": false,
+          "roads": [
+            "東海道"
+          ],
+          "status": "街道データへの接続のみ確認・軍の通過史料は未照合"
+        },
+        {
+          "from": "odawara",
+          "to": "tamanawa",
+          "sea": false,
+          "roads": [
+            "鎌倉街道",
+            "東海道"
+          ],
+          "status": "街道データへの接続のみ確認・軍の通過史料は未照合"
+        },
+        {
+          "from": "tamanawa",
           "to": "edo",
           "sea": false,
           "roads": [
-            "奥州道"
+            "甲州道",
+            "鎌倉街道"
           ],
           "status": "街道データへの接続のみ確認・軍の通過史料は未照合"
         }
@@ -13550,8 +13525,8 @@
         "d": 23
       },
       "lastProgress": {
-        "segment": 0,
-        "position": 0.8
+        "segment": 7,
+        "position": 0.770895125917905
       }
     },
     {
@@ -13567,16 +13542,12 @@
           "name": "名生城"
         },
         {
-          "id": "yamagata",
-          "name": "山形城"
+          "id": "nihonmatsu",
+          "name": "二本松城"
         },
         {
-          "id": "yonezawa",
-          "name": "米沢城"
-        },
-        {
-          "id": "honjo",
-          "name": "本庄城"
+          "id": "kurokawa",
+          "name": "黒川城"
         },
         {
           "id": "shibata",
@@ -13604,7 +13575,7 @@
         },
         {
           "id": "kanegasaki",
-          "name": "敦賀城"
+          "name": "金ヶ崎城"
         },
         {
           "id": "odani",
@@ -13612,7 +13583,7 @@
         },
         {
           "id": "kannonji",
-          "name": "八幡山城"
+          "name": "安土城"
         },
         {
           "id": "kyo",
@@ -13630,7 +13601,7 @@
       "firstSeen": {
         "y": 1614,
         "m": 10,
-        "d": 22
+        "d": 19
       },
       "scheduledArrival": {
         "y": 1614,
@@ -13640,31 +13611,32 @@
       "roads": [
         {
           "from": "myou",
-          "to": "yamagata",
+          "to": "nihonmatsu",
           "sea": false,
-          "roads": [],
-          "status": "軍の道筋未照合"
+          "roads": [
+            "奥州道",
+            "浜街道"
+          ],
+          "status": "街道データへの接続のみ確認・軍の通過史料は未照合"
         },
         {
-          "from": "yamagata",
-          "to": "yonezawa",
+          "from": "nihonmatsu",
+          "to": "kurokawa",
           "sea": false,
-          "roads": [],
-          "status": "軍の道筋未照合"
+          "roads": [
+            "奥州道",
+            "二本松街道"
+          ],
+          "status": "街道データへの接続のみ確認・軍の通過史料は未照合"
         },
         {
-          "from": "yonezawa",
-          "to": "honjo",
-          "sea": false,
-          "roads": [],
-          "status": "軍の道筋未照合"
-        },
-        {
-          "from": "honjo",
+          "from": "kurokawa",
           "to": "shibata",
           "sea": false,
-          "roads": [],
-          "status": "軍の道筋未照合"
+          "roads": [
+            "越後街道"
+          ],
+          "status": "街道データへの接続のみ確認・軍の通過史料は未照合"
         },
         {
           "from": "shibata",
@@ -13724,7 +13696,6 @@
           "roads": [
             "北国街道（近江）",
             "北国脇往還",
-            "塩津街道",
             "北陸道"
           ],
           "status": "街道データへの接続のみ確認・軍の通過史料は未照合"
@@ -13779,8 +13750,8 @@
         "d": 19
       },
       "lastProgress": {
-        "segment": 14,
-        "position": 0.5319822438967916
+        "segment": 13,
+        "position": 0.5497750625296892
       }
     },
     {
@@ -13821,7 +13792,7 @@
         },
         {
           "id": "kanegasaki",
-          "name": "敦賀城"
+          "name": "金ヶ崎城"
         },
         {
           "id": "odani",
@@ -13829,7 +13800,7 @@
         },
         {
           "id": "kannonji",
-          "name": "八幡山城"
+          "name": "安土城"
         },
         {
           "id": "kyo",
@@ -13923,7 +13894,6 @@
           "roads": [
             "北国街道（近江）",
             "北国脇往還",
-            "塩津街道",
             "北陸道"
           ],
           "status": "街道データへの接続のみ確認・軍の通過史料は未照合"
@@ -13979,7 +13949,7 @@
       },
       "lastProgress": {
         "segment": 11,
-        "position": 0.5425147424747664
+        "position": 0.5521618395006326
       }
     },
     {
@@ -14044,7 +14014,7 @@
         },
         {
           "id": "kannonji",
-          "name": "八幡山城"
+          "name": "安土城"
         },
         {
           "id": "kyo",
@@ -14062,7 +14032,7 @@
       "firstSeen": {
         "y": 1614,
         "m": 11,
-        "d": 10
+        "d": 7
       },
       "scheduledArrival": {
         "y": 1614,
@@ -14226,7 +14196,7 @@
       },
       "lastProgress": {
         "segment": 15,
-        "position": 0.5229955442658136
+        "position": 0.5481913002076536
       }
     },
     {
@@ -14409,7 +14379,7 @@
       },
       "lastProgress": {
         "segment": 10,
-        "position": 0.5201595106798441
+        "position": 0.5096527387106535
       }
     },
     {
@@ -14592,7 +14562,7 @@
       },
       "lastProgress": {
         "segment": 10,
-        "position": 0.5201595106798449
+        "position": 0.5096757504837428
       }
     },
     {
@@ -14775,7 +14745,7 @@
       },
       "lastProgress": {
         "segment": 10,
-        "position": 0.5201595106798453
+        "position": 0.5097711639756002
       }
     },
     {
@@ -14787,32 +14757,48 @@
       "clan": "tokugawa",
       "path": [
         {
-          "id": "oyama",
-          "name": "尾山城"
+          "id": "edo",
+          "name": "江戸城"
         },
         {
-          "id": "ichijodani",
-          "name": "北ノ庄城"
+          "id": "tamanawa",
+          "name": "玉縄城"
         },
         {
-          "id": "kanegasaki",
-          "name": "敦賀城"
+          "id": "odawara",
+          "name": "小田原城"
         },
         {
-          "id": "odani",
-          "name": "長浜城"
+          "id": "sunpu",
+          "name": "駿府城"
         },
         {
-          "id": "kannonji",
-          "name": "八幡山城"
+          "id": "kakegawa",
+          "name": "掛川城"
         },
         {
-          "id": "kyo",
-          "name": "伏見城"
+          "id": "yoshida",
+          "name": "吉田城"
         },
         {
-          "id": "akutagawa",
-          "name": "高槻城"
+          "id": "okazaki",
+          "name": "岡崎城"
+        },
+        {
+          "id": "kiyosu",
+          "name": "清洲城"
+        },
+        {
+          "id": "nagashima",
+          "name": "長島城"
+        },
+        {
+          "id": "ueno",
+          "name": "伊賀上野城"
+        },
+        {
+          "id": "yamato",
+          "name": "郡山城"
         },
         {
           "id": "ishiyama",
@@ -14822,7 +14808,7 @@
       "firstSeen": {
         "y": 1614,
         "m": 11,
-        "d": 28
+        "d": 16
       },
       "scheduledArrival": {
         "y": 1614,
@@ -14831,74 +14817,105 @@
       },
       "roads": [
         {
-          "from": "oyama",
-          "to": "ichijodani",
+          "from": "edo",
+          "to": "tamanawa",
           "sea": false,
           "roads": [
-            "北陸道"
+            "甲州道",
+            "鎌倉街道"
           ],
           "status": "街道データへの接続のみ確認・軍の通過史料は未照合"
         },
         {
-          "from": "ichijodani",
-          "to": "kanegasaki",
+          "from": "tamanawa",
+          "to": "odawara",
           "sea": false,
           "roads": [
-            "北陸道"
+            "鎌倉街道",
+            "東海道"
           ],
           "status": "街道データへの接続のみ確認・軍の通過史料は未照合"
         },
         {
-          "from": "kanegasaki",
-          "to": "odani",
+          "from": "odawara",
+          "to": "sunpu",
           "sea": false,
           "roads": [
-            "北国街道（近江）",
-            "北国脇往還",
-            "塩津街道",
-            "北陸道"
+            "東海道"
           ],
           "status": "街道データへの接続のみ確認・軍の通過史料は未照合"
         },
         {
-          "from": "odani",
-          "to": "kannonji",
+          "from": "sunpu",
+          "to": "kakegawa",
           "sea": false,
           "roads": [
-            "東山道",
-            "北国街道（近江）",
-            "北国脇往還"
+            "東海道"
           ],
           "status": "街道データへの接続のみ確認・軍の通過史料は未照合"
         },
         {
-          "from": "kannonji",
-          "to": "kyo",
+          "from": "kakegawa",
+          "to": "yoshida",
           "sea": false,
           "roads": [
-            "京・大津道",
-            "東山道"
+            "東海道"
           ],
           "status": "街道データへの接続のみ確認・軍の通過史料は未照合"
         },
         {
-          "from": "kyo",
-          "to": "akutagawa",
+          "from": "yoshida",
+          "to": "okazaki",
           "sea": false,
           "roads": [
-            "山陽道",
-            "熊野街道"
+            "東海道"
           ],
           "status": "街道データへの接続のみ確認・軍の通過史料は未照合"
         },
         {
-          "from": "akutagawa",
+          "from": "okazaki",
+          "to": "kiyosu",
+          "sea": false,
+          "roads": [
+            "美濃路",
+            "東海道"
+          ],
+          "status": "街道データへの接続のみ確認・軍の通過史料は未照合"
+        },
+        {
+          "from": "kiyosu",
+          "to": "nagashima",
+          "sea": false,
+          "roads": [],
+          "status": "軍の道筋未照合"
+        },
+        {
+          "from": "nagashima",
+          "to": "ueno",
+          "sea": false,
+          "roads": [
+            "東海道（鈴鹿越え）",
+            "伊勢路",
+            "伊賀越え"
+          ],
+          "status": "街道データへの接続のみ確認・軍の通過史料は未照合"
+        },
+        {
+          "from": "ueno",
+          "to": "yamato",
+          "sea": false,
+          "roads": [
+            "伊賀越え",
+            "伊勢本街道"
+          ],
+          "status": "街道データへの接続のみ確認・軍の通過史料は未照合"
+        },
+        {
+          "from": "yamato",
           "to": "ishiyama",
           "sea": false,
           "roads": [
-            "暗越奈良街道",
-            "熊野街道",
-            "山陽道"
+            "暗越奈良街道"
           ],
           "status": "街道データへの接続のみ確認・軍の通過史料は未照合"
         }
@@ -14910,8 +14927,8 @@
         "d": 19
       },
       "lastProgress": {
-        "segment": 6,
-        "position": 0.5857073233693966
+        "segment": 10,
+        "position": 0.5097212851143226
       }
     },
     {
@@ -14927,12 +14944,8 @@
           "name": "岐阜城"
         },
         {
-          "id": "sawayama",
-          "name": "佐和山城"
-        },
-        {
-          "id": "kannonji",
-          "name": "八幡山城"
+          "id": "odani",
+          "name": "長浜城"
         },
         {
           "id": "kyo",
@@ -14960,32 +14973,25 @@
       "roads": [
         {
           "from": "gifu",
-          "to": "sawayama",
+          "to": "odani",
           "sea": false,
           "roads": [
             "北国街道（近江）",
+            "北国脇往還",
             "東山道",
             "岐阜街道"
           ],
           "status": "街道データへの接続のみ確認・軍の通過史料は未照合"
         },
         {
-          "from": "sawayama",
-          "to": "kannonji",
-          "sea": false,
-          "roads": [
-            "北国街道（近江）",
-            "東山道"
-          ],
-          "status": "街道データへの接続のみ確認・軍の通過史料は未照合"
-        },
-        {
-          "from": "kannonji",
+          "from": "odani",
           "to": "kyo",
           "sea": false,
           "roads": [
             "京・大津道",
-            "東山道"
+            "東山道",
+            "北国街道（近江）",
+            "北国脇往還"
           ],
           "status": "街道データへの接続のみ確認・軍の通過史料は未照合"
         },
@@ -15018,8 +15024,8 @@
         "d": 19
       },
       "lastProgress": {
-        "segment": 4,
-        "position": 0.5679044561889435
+        "segment": 3,
+        "position": 0.5261151105008817
       }
     },
     {
@@ -15082,10 +15088,6 @@
       "clan": "date",
       "path": [
         {
-          "id": "toyama",
-          "name": "富山城"
-        },
-        {
           "id": "oyama",
           "name": "尾山城"
         },
@@ -15095,7 +15097,7 @@
         },
         {
           "id": "kanegasaki",
-          "name": "敦賀城"
+          "name": "金ヶ崎城"
         },
         {
           "id": "odani",
@@ -15103,7 +15105,7 @@
         },
         {
           "id": "kannonji",
-          "name": "八幡山城"
+          "name": "安土城"
         },
         {
           "id": "kyo",
@@ -15130,16 +15132,6 @@
       },
       "roads": [
         {
-          "from": "toyama",
-          "to": "oyama",
-          "sea": false,
-          "roads": [
-            "能登街道",
-            "北陸道"
-          ],
-          "status": "街道データへの接続のみ確認・軍の通過史料は未照合"
-        },
-        {
           "from": "oyama",
           "to": "ichijodani",
           "sea": false,
@@ -15164,7 +15156,6 @@
           "roads": [
             "北国街道（近江）",
             "北国脇往還",
-            "塩津街道",
             "北陸道"
           ],
           "status": "街道データへの接続のみ確認・軍の通過史料は未照合"
@@ -15219,8 +15210,8 @@
         "d": 1
       },
       "lastProgress": {
-        "segment": 7,
-        "position": 0.8769351709206962
+        "segment": 6,
+        "position": 0.8910807618711782
       }
     },
     {
@@ -15232,14 +15223,6 @@
       "clan": "tokugawa",
       "path": [
         {
-          "id": "odawara",
-          "name": "小田原城"
-        },
-        {
-          "id": "sunpu",
-          "name": "駿府城"
-        },
-        {
           "id": "kakegawa",
           "name": "掛川城"
         },
@@ -15283,24 +15266,6 @@
         "d": 4
       },
       "roads": [
-        {
-          "from": "odawara",
-          "to": "sunpu",
-          "sea": false,
-          "roads": [
-            "東海道"
-          ],
-          "status": "街道データへの接続のみ確認・軍の通過史料は未照合"
-        },
-        {
-          "from": "sunpu",
-          "to": "kakegawa",
-          "sea": false,
-          "roads": [
-            "東海道"
-          ],
-          "status": "街道データへの接続のみ確認・軍の通過史料は未照合"
-        },
         {
           "from": "kakegawa",
           "to": "yoshida",
@@ -15363,494 +15328,6 @@
           "sea": false,
           "roads": [
             "暗越奈良街道"
-          ],
-          "status": "街道データへの接続のみ確認・軍の通過史料は未照合"
-        }
-      ],
-      "note": "兵数は従来の配分値・目安を含む。全軍の実数とは扱わない。",
-      "lastSeen": {
-        "y": 1615,
-        "m": 6,
-        "d": 3
-      },
-      "lastProgress": {
-        "segment": 8,
-        "position": 0.8547830016538916
-      }
-    },
-    {
-      "title": "大坂夏の陣",
-      "commander": [
-        "徳川秀忠"
-      ],
-      "troops": 38000,
-      "clan": "tokugawa",
-      "path": [
-        {
-          "id": "tamanawa",
-          "name": "玉縄城"
-        },
-        {
-          "id": "odawara",
-          "name": "小田原城"
-        },
-        {
-          "id": "sunpu",
-          "name": "駿府城"
-        },
-        {
-          "id": "kakegawa",
-          "name": "掛川城"
-        },
-        {
-          "id": "yoshida",
-          "name": "吉田城"
-        },
-        {
-          "id": "okazaki",
-          "name": "岡崎城"
-        },
-        {
-          "id": "kiyosu",
-          "name": "清洲城"
-        },
-        {
-          "id": "nagashima",
-          "name": "長島城"
-        },
-        {
-          "id": "ueno",
-          "name": "伊賀上野城"
-        },
-        {
-          "id": "yamato",
-          "name": "郡山城"
-        },
-        {
-          "id": "ishiyama",
-          "name": "大坂城"
-        }
-      ],
-      "firstSeen": {
-        "y": 1615,
-        "m": 3,
-        "d": 4
-      },
-      "scheduledArrival": {
-        "y": 1615,
-        "m": 6,
-        "d": 4
-      },
-      "roads": [
-        {
-          "from": "tamanawa",
-          "to": "odawara",
-          "sea": false,
-          "roads": [
-            "鎌倉街道",
-            "東海道"
-          ],
-          "status": "街道データへの接続のみ確認・軍の通過史料は未照合"
-        },
-        {
-          "from": "odawara",
-          "to": "sunpu",
-          "sea": false,
-          "roads": [
-            "東海道"
-          ],
-          "status": "街道データへの接続のみ確認・軍の通過史料は未照合"
-        },
-        {
-          "from": "sunpu",
-          "to": "kakegawa",
-          "sea": false,
-          "roads": [
-            "東海道"
-          ],
-          "status": "街道データへの接続のみ確認・軍の通過史料は未照合"
-        },
-        {
-          "from": "kakegawa",
-          "to": "yoshida",
-          "sea": false,
-          "roads": [
-            "東海道"
-          ],
-          "status": "街道データへの接続のみ確認・軍の通過史料は未照合"
-        },
-        {
-          "from": "yoshida",
-          "to": "okazaki",
-          "sea": false,
-          "roads": [
-            "東海道"
-          ],
-          "status": "街道データへの接続のみ確認・軍の通過史料は未照合"
-        },
-        {
-          "from": "okazaki",
-          "to": "kiyosu",
-          "sea": false,
-          "roads": [
-            "美濃路",
-            "東海道"
-          ],
-          "status": "街道データへの接続のみ確認・軍の通過史料は未照合"
-        },
-        {
-          "from": "kiyosu",
-          "to": "nagashima",
-          "sea": false,
-          "roads": [],
-          "status": "軍の道筋未照合"
-        },
-        {
-          "from": "nagashima",
-          "to": "ueno",
-          "sea": false,
-          "roads": [
-            "東海道（鈴鹿越え）",
-            "伊勢路",
-            "伊賀越え"
-          ],
-          "status": "街道データへの接続のみ確認・軍の通過史料は未照合"
-        },
-        {
-          "from": "ueno",
-          "to": "yamato",
-          "sea": false,
-          "roads": [
-            "伊賀越え",
-            "伊勢本街道"
-          ],
-          "status": "街道データへの接続のみ確認・軍の通過史料は未照合"
-        },
-        {
-          "from": "yamato",
-          "to": "ishiyama",
-          "sea": false,
-          "roads": [
-            "暗越奈良街道"
-          ],
-          "status": "街道データへの接続のみ確認・軍の通過史料は未照合"
-        }
-      ],
-      "note": "兵数は従来の配分値・目安を含む。全軍の実数とは扱わない。",
-      "lastSeen": {
-        "y": 1615,
-        "m": 6,
-        "d": 3
-      },
-      "lastProgress": {
-        "segment": 9,
-        "position": 0.8402259619907443
-      }
-    },
-    {
-      "title": "八尾・若江の戦い",
-      "commander": [
-        "井伊直孝"
-      ],
-      "troops": 3200,
-      "clan": "tokugawa",
-      "path": [
-        {
-          "id": "edo",
-          "name": "江戸城"
-        },
-        {
-          "id": "tamanawa",
-          "name": "玉縄城"
-        },
-        {
-          "id": "odawara",
-          "name": "小田原城"
-        },
-        {
-          "id": "sunpu",
-          "name": "駿府城"
-        },
-        {
-          "id": "kakegawa",
-          "name": "掛川城"
-        },
-        {
-          "id": "yoshida",
-          "name": "吉田城"
-        },
-        {
-          "id": "okazaki",
-          "name": "岡崎城"
-        },
-        {
-          "id": "kiyosu",
-          "name": "清洲城"
-        },
-        {
-          "id": "nagashima",
-          "name": "長島城"
-        },
-        {
-          "id": "ueno",
-          "name": "伊賀上野城"
-        },
-        {
-          "id": "yamato",
-          "name": "郡山城"
-        },
-        {
-          "id": "ishiyama",
-          "name": "大坂城"
-        }
-      ],
-      "firstSeen": {
-        "y": 1615,
-        "m": 3,
-        "d": 4
-      },
-      "scheduledArrival": {
-        "y": 1615,
-        "m": 6,
-        "d": 2
-      },
-      "roads": [
-        {
-          "from": "edo",
-          "to": "tamanawa",
-          "sea": false,
-          "roads": [
-            "甲州道",
-            "鎌倉街道"
-          ],
-          "status": "街道データへの接続のみ確認・軍の通過史料は未照合"
-        },
-        {
-          "from": "tamanawa",
-          "to": "odawara",
-          "sea": false,
-          "roads": [
-            "鎌倉街道",
-            "東海道"
-          ],
-          "status": "街道データへの接続のみ確認・軍の通過史料は未照合"
-        },
-        {
-          "from": "odawara",
-          "to": "sunpu",
-          "sea": false,
-          "roads": [
-            "東海道"
-          ],
-          "status": "街道データへの接続のみ確認・軍の通過史料は未照合"
-        },
-        {
-          "from": "sunpu",
-          "to": "kakegawa",
-          "sea": false,
-          "roads": [
-            "東海道"
-          ],
-          "status": "街道データへの接続のみ確認・軍の通過史料は未照合"
-        },
-        {
-          "from": "kakegawa",
-          "to": "yoshida",
-          "sea": false,
-          "roads": [
-            "東海道"
-          ],
-          "status": "街道データへの接続のみ確認・軍の通過史料は未照合"
-        },
-        {
-          "from": "yoshida",
-          "to": "okazaki",
-          "sea": false,
-          "roads": [
-            "東海道"
-          ],
-          "status": "街道データへの接続のみ確認・軍の通過史料は未照合"
-        },
-        {
-          "from": "okazaki",
-          "to": "kiyosu",
-          "sea": false,
-          "roads": [
-            "美濃路",
-            "東海道"
-          ],
-          "status": "街道データへの接続のみ確認・軍の通過史料は未照合"
-        },
-        {
-          "from": "kiyosu",
-          "to": "nagashima",
-          "sea": false,
-          "roads": [],
-          "status": "軍の道筋未照合"
-        },
-        {
-          "from": "nagashima",
-          "to": "ueno",
-          "sea": false,
-          "roads": [
-            "東海道（鈴鹿越え）",
-            "伊勢路",
-            "伊賀越え"
-          ],
-          "status": "街道データへの接続のみ確認・軍の通過史料は未照合"
-        },
-        {
-          "from": "ueno",
-          "to": "yamato",
-          "sea": false,
-          "roads": [
-            "伊賀越え",
-            "伊勢本街道"
-          ],
-          "status": "街道データへの接続のみ確認・軍の通過史料は未照合"
-        },
-        {
-          "from": "yamato",
-          "to": "ishiyama",
-          "sea": false,
-          "roads": [
-            "暗越奈良街道"
-          ],
-          "status": "街道データへの接続のみ確認・軍の通過史料は未照合"
-        }
-      ],
-      "note": "兵数は従来の配分値・目安を含む。全軍の実数とは扱わない。",
-      "lastSeen": {
-        "y": 1615,
-        "m": 6,
-        "d": 1
-      },
-      "lastProgress": {
-        "segment": 10,
-        "position": 0.8146070836717567
-      }
-    },
-    {
-      "title": "大坂夏の陣",
-      "commander": [
-        "前田利常"
-      ],
-      "troops": 12000,
-      "clan": "tokugawa",
-      "path": [
-        {
-          "id": "oyama",
-          "name": "尾山城"
-        },
-        {
-          "id": "ichijodani",
-          "name": "北ノ庄城"
-        },
-        {
-          "id": "kanegasaki",
-          "name": "敦賀城"
-        },
-        {
-          "id": "odani",
-          "name": "長浜城"
-        },
-        {
-          "id": "kannonji",
-          "name": "八幡山城"
-        },
-        {
-          "id": "kyo",
-          "name": "伏見城"
-        },
-        {
-          "id": "akutagawa",
-          "name": "高槻城"
-        },
-        {
-          "id": "ishiyama",
-          "name": "大坂城"
-        }
-      ],
-      "firstSeen": {
-        "y": 1615,
-        "m": 3,
-        "d": 4
-      },
-      "scheduledArrival": {
-        "y": 1615,
-        "m": 6,
-        "d": 4
-      },
-      "roads": [
-        {
-          "from": "oyama",
-          "to": "ichijodani",
-          "sea": false,
-          "roads": [
-            "北陸道"
-          ],
-          "status": "街道データへの接続のみ確認・軍の通過史料は未照合"
-        },
-        {
-          "from": "ichijodani",
-          "to": "kanegasaki",
-          "sea": false,
-          "roads": [
-            "北陸道"
-          ],
-          "status": "街道データへの接続のみ確認・軍の通過史料は未照合"
-        },
-        {
-          "from": "kanegasaki",
-          "to": "odani",
-          "sea": false,
-          "roads": [
-            "北国街道（近江）",
-            "北国脇往還",
-            "塩津街道",
-            "北陸道"
-          ],
-          "status": "街道データへの接続のみ確認・軍の通過史料は未照合"
-        },
-        {
-          "from": "odani",
-          "to": "kannonji",
-          "sea": false,
-          "roads": [
-            "東山道",
-            "北国街道（近江）",
-            "北国脇往還"
-          ],
-          "status": "街道データへの接続のみ確認・軍の通過史料は未照合"
-        },
-        {
-          "from": "kannonji",
-          "to": "kyo",
-          "sea": false,
-          "roads": [
-            "京・大津道",
-            "東山道"
-          ],
-          "status": "街道データへの接続のみ確認・軍の通過史料は未照合"
-        },
-        {
-          "from": "kyo",
-          "to": "akutagawa",
-          "sea": false,
-          "roads": [
-            "山陽道",
-            "熊野街道"
-          ],
-          "status": "街道データへの接続のみ確認・軍の通過史料は未照合"
-        },
-        {
-          "from": "akutagawa",
-          "to": "ishiyama",
-          "sea": false,
-          "roads": [
-            "暗越奈良街道",
-            "熊野街道",
-            "山陽道"
           ],
           "status": "街道データへの接続のみ確認・軍の通過史料は未照合"
         }
@@ -15863,7 +15340,446 @@
       },
       "lastProgress": {
         "segment": 6,
-        "position": 0.8987284568236292
+        "position": 0.8883707241315054
+      }
+    },
+    {
+      "title": "大坂夏の陣",
+      "commander": [
+        "徳川秀忠"
+      ],
+      "troops": 38000,
+      "clan": "tokugawa",
+      "path": [
+        {
+          "id": "sunpu",
+          "name": "駿府城"
+        },
+        {
+          "id": "kakegawa",
+          "name": "掛川城"
+        },
+        {
+          "id": "yoshida",
+          "name": "吉田城"
+        },
+        {
+          "id": "okazaki",
+          "name": "岡崎城"
+        },
+        {
+          "id": "kiyosu",
+          "name": "清洲城"
+        },
+        {
+          "id": "nagashima",
+          "name": "長島城"
+        },
+        {
+          "id": "ueno",
+          "name": "伊賀上野城"
+        },
+        {
+          "id": "yamato",
+          "name": "郡山城"
+        },
+        {
+          "id": "ishiyama",
+          "name": "大坂城"
+        }
+      ],
+      "firstSeen": {
+        "y": 1615,
+        "m": 3,
+        "d": 4
+      },
+      "scheduledArrival": {
+        "y": 1615,
+        "m": 6,
+        "d": 4
+      },
+      "roads": [
+        {
+          "from": "sunpu",
+          "to": "kakegawa",
+          "sea": false,
+          "roads": [
+            "東海道"
+          ],
+          "status": "街道データへの接続のみ確認・軍の通過史料は未照合"
+        },
+        {
+          "from": "kakegawa",
+          "to": "yoshida",
+          "sea": false,
+          "roads": [
+            "東海道"
+          ],
+          "status": "街道データへの接続のみ確認・軍の通過史料は未照合"
+        },
+        {
+          "from": "yoshida",
+          "to": "okazaki",
+          "sea": false,
+          "roads": [
+            "東海道"
+          ],
+          "status": "街道データへの接続のみ確認・軍の通過史料は未照合"
+        },
+        {
+          "from": "okazaki",
+          "to": "kiyosu",
+          "sea": false,
+          "roads": [
+            "美濃路",
+            "東海道"
+          ],
+          "status": "街道データへの接続のみ確認・軍の通過史料は未照合"
+        },
+        {
+          "from": "kiyosu",
+          "to": "nagashima",
+          "sea": false,
+          "roads": [],
+          "status": "軍の道筋未照合"
+        },
+        {
+          "from": "nagashima",
+          "to": "ueno",
+          "sea": false,
+          "roads": [
+            "東海道（鈴鹿越え）",
+            "伊勢路",
+            "伊賀越え"
+          ],
+          "status": "街道データへの接続のみ確認・軍の通過史料は未照合"
+        },
+        {
+          "from": "ueno",
+          "to": "yamato",
+          "sea": false,
+          "roads": [
+            "伊賀越え",
+            "伊勢本街道"
+          ],
+          "status": "街道データへの接続のみ確認・軍の通過史料は未照合"
+        },
+        {
+          "from": "yamato",
+          "to": "ishiyama",
+          "sea": false,
+          "roads": [
+            "暗越奈良街道"
+          ],
+          "status": "街道データへの接続のみ確認・軍の通過史料は未照合"
+        }
+      ],
+      "note": "兵数は従来の配分値・目安を含む。全軍の実数とは扱わない。",
+      "lastSeen": {
+        "y": 1615,
+        "m": 6,
+        "d": 3
+      },
+      "lastProgress": {
+        "segment": 7,
+        "position": 0.8747162724239976
+      }
+    },
+    {
+      "title": "八尾・若江の戦い",
+      "commander": [
+        "井伊直孝"
+      ],
+      "troops": 3200,
+      "clan": "tokugawa",
+      "path": [
+        {
+          "id": "odawara",
+          "name": "小田原城"
+        },
+        {
+          "id": "sunpu",
+          "name": "駿府城"
+        },
+        {
+          "id": "kakegawa",
+          "name": "掛川城"
+        },
+        {
+          "id": "yoshida",
+          "name": "吉田城"
+        },
+        {
+          "id": "okazaki",
+          "name": "岡崎城"
+        },
+        {
+          "id": "kiyosu",
+          "name": "清洲城"
+        },
+        {
+          "id": "nagashima",
+          "name": "長島城"
+        },
+        {
+          "id": "ueno",
+          "name": "伊賀上野城"
+        },
+        {
+          "id": "yamato",
+          "name": "郡山城"
+        },
+        {
+          "id": "ishiyama",
+          "name": "大坂城"
+        }
+      ],
+      "firstSeen": {
+        "y": 1615,
+        "m": 3,
+        "d": 4
+      },
+      "scheduledArrival": {
+        "y": 1615,
+        "m": 6,
+        "d": 2
+      },
+      "roads": [
+        {
+          "from": "odawara",
+          "to": "sunpu",
+          "sea": false,
+          "roads": [
+            "東海道"
+          ],
+          "status": "街道データへの接続のみ確認・軍の通過史料は未照合"
+        },
+        {
+          "from": "sunpu",
+          "to": "kakegawa",
+          "sea": false,
+          "roads": [
+            "東海道"
+          ],
+          "status": "街道データへの接続のみ確認・軍の通過史料は未照合"
+        },
+        {
+          "from": "kakegawa",
+          "to": "yoshida",
+          "sea": false,
+          "roads": [
+            "東海道"
+          ],
+          "status": "街道データへの接続のみ確認・軍の通過史料は未照合"
+        },
+        {
+          "from": "yoshida",
+          "to": "okazaki",
+          "sea": false,
+          "roads": [
+            "東海道"
+          ],
+          "status": "街道データへの接続のみ確認・軍の通過史料は未照合"
+        },
+        {
+          "from": "okazaki",
+          "to": "kiyosu",
+          "sea": false,
+          "roads": [
+            "美濃路",
+            "東海道"
+          ],
+          "status": "街道データへの接続のみ確認・軍の通過史料は未照合"
+        },
+        {
+          "from": "kiyosu",
+          "to": "nagashima",
+          "sea": false,
+          "roads": [],
+          "status": "軍の道筋未照合"
+        },
+        {
+          "from": "nagashima",
+          "to": "ueno",
+          "sea": false,
+          "roads": [
+            "東海道（鈴鹿越え）",
+            "伊勢路",
+            "伊賀越え"
+          ],
+          "status": "街道データへの接続のみ確認・軍の通過史料は未照合"
+        },
+        {
+          "from": "ueno",
+          "to": "yamato",
+          "sea": false,
+          "roads": [
+            "伊賀越え",
+            "伊勢本街道"
+          ],
+          "status": "街道データへの接続のみ確認・軍の通過史料は未照合"
+        },
+        {
+          "from": "yamato",
+          "to": "ishiyama",
+          "sea": false,
+          "roads": [
+            "暗越奈良街道"
+          ],
+          "status": "街道データへの接続のみ確認・軍の通過史料は未照合"
+        }
+      ],
+      "note": "兵数は従来の配分値・目安を含む。全軍の実数とは扱わない。",
+      "lastSeen": {
+        "y": 1615,
+        "m": 6,
+        "d": 1
+      },
+      "lastProgress": {
+        "segment": 8,
+        "position": 0.846148544420195
+      }
+    },
+    {
+      "title": "大坂夏の陣",
+      "commander": [
+        "前田利常"
+      ],
+      "troops": 12000,
+      "clan": "tokugawa",
+      "path": [
+        {
+          "id": "sunpu",
+          "name": "駿府城"
+        },
+        {
+          "id": "kakegawa",
+          "name": "掛川城"
+        },
+        {
+          "id": "yoshida",
+          "name": "吉田城"
+        },
+        {
+          "id": "okazaki",
+          "name": "岡崎城"
+        },
+        {
+          "id": "kiyosu",
+          "name": "清洲城"
+        },
+        {
+          "id": "nagashima",
+          "name": "長島城"
+        },
+        {
+          "id": "ueno",
+          "name": "伊賀上野城"
+        },
+        {
+          "id": "yamato",
+          "name": "郡山城"
+        },
+        {
+          "id": "ishiyama",
+          "name": "大坂城"
+        }
+      ],
+      "firstSeen": {
+        "y": 1615,
+        "m": 3,
+        "d": 4
+      },
+      "scheduledArrival": {
+        "y": 1615,
+        "m": 6,
+        "d": 4
+      },
+      "roads": [
+        {
+          "from": "sunpu",
+          "to": "kakegawa",
+          "sea": false,
+          "roads": [
+            "東海道"
+          ],
+          "status": "街道データへの接続のみ確認・軍の通過史料は未照合"
+        },
+        {
+          "from": "kakegawa",
+          "to": "yoshida",
+          "sea": false,
+          "roads": [
+            "東海道"
+          ],
+          "status": "街道データへの接続のみ確認・軍の通過史料は未照合"
+        },
+        {
+          "from": "yoshida",
+          "to": "okazaki",
+          "sea": false,
+          "roads": [
+            "東海道"
+          ],
+          "status": "街道データへの接続のみ確認・軍の通過史料は未照合"
+        },
+        {
+          "from": "okazaki",
+          "to": "kiyosu",
+          "sea": false,
+          "roads": [
+            "美濃路",
+            "東海道"
+          ],
+          "status": "街道データへの接続のみ確認・軍の通過史料は未照合"
+        },
+        {
+          "from": "kiyosu",
+          "to": "nagashima",
+          "sea": false,
+          "roads": [],
+          "status": "軍の道筋未照合"
+        },
+        {
+          "from": "nagashima",
+          "to": "ueno",
+          "sea": false,
+          "roads": [
+            "東海道（鈴鹿越え）",
+            "伊勢路",
+            "伊賀越え"
+          ],
+          "status": "街道データへの接続のみ確認・軍の通過史料は未照合"
+        },
+        {
+          "from": "ueno",
+          "to": "yamato",
+          "sea": false,
+          "roads": [
+            "伊賀越え",
+            "伊勢本街道"
+          ],
+          "status": "街道データへの接続のみ確認・軍の通過史料は未照合"
+        },
+        {
+          "from": "yamato",
+          "to": "ishiyama",
+          "sea": false,
+          "roads": [
+            "暗越奈良街道"
+          ],
+          "status": "街道データへの接続のみ確認・軍の通過史料は未照合"
+        }
+      ],
+      "note": "兵数は従来の配分値・目安を含む。全軍の実数とは扱わない。",
+      "lastSeen": {
+        "y": 1615,
+        "m": 6,
+        "d": 3
+      },
+      "lastProgress": {
+        "segment": 7,
+        "position": 0.8747180044780113
       }
     },
     {
@@ -16046,7 +15962,7 @@
       },
       "lastProgress": {
         "segment": 10,
-        "position": 0.5468173156420763
+        "position": 0.5370337452011337
       }
     },
     {
@@ -16062,12 +15978,8 @@
           "name": "岐阜城"
         },
         {
-          "id": "sawayama",
-          "name": "佐和山城"
-        },
-        {
-          "id": "kannonji",
-          "name": "八幡山城"
+          "id": "odani",
+          "name": "長浜城"
         },
         {
           "id": "kyo",
@@ -16095,32 +16007,25 @@
       "roads": [
         {
           "from": "gifu",
-          "to": "sawayama",
+          "to": "odani",
           "sea": false,
           "roads": [
             "北国街道（近江）",
+            "北国脇往還",
             "東山道",
             "岐阜街道"
           ],
           "status": "街道データへの接続のみ確認・軍の通過史料は未照合"
         },
         {
-          "from": "sawayama",
-          "to": "kannonji",
-          "sea": false,
-          "roads": [
-            "北国街道（近江）",
-            "東山道"
-          ],
-          "status": "街道データへの接続のみ確認・軍の通過史料は未照合"
-        },
-        {
-          "from": "kannonji",
+          "from": "odani",
           "to": "kyo",
           "sea": false,
           "roads": [
             "京・大津道",
-            "東山道"
+            "東山道",
+            "北国街道（近江）",
+            "北国脇往還"
           ],
           "status": "街道データへの接続のみ確認・軍の通過史料は未照合"
         },
@@ -16153,8 +16058,8 @@
         "d": 1
       },
       "lastProgress": {
-        "segment": 4,
-        "position": 0.5679044561889424
+        "segment": 3,
+        "position": 0.5259705283864371
       }
     },
     {
@@ -16331,8 +16236,8 @@
     {
       "title": "関ヶ原の戦い",
       "marchObserved": true,
-      "positionDisplay": false,
-      "status": "行軍表示あり・道筋と兵数は要史料照合"
+      "positionDisplay": true,
+      "status": "在陣または事件当日の位置表示。出発地・経路は未復元"
     },
     {
       "title": "姉川の戦い",
@@ -16559,8 +16464,8 @@
     {
       "title": "木崎原の戦い",
       "marchObserved": true,
-      "positionDisplay": false,
-      "status": "行軍表示あり・道筋と兵数は要史料照合"
+      "positionDisplay": true,
+      "status": "出発・到着地を結ぶ概略表示。通過道は未復元"
     },
     {
       "title": "朝倉氏滅亡",
@@ -16912,9 +16817,9 @@
     },
     {
       "title": "会津征伐",
-      "marchObserved": true,
+      "marchObserved": false,
       "positionDisplay": false,
-      "status": "行軍表示あり・道筋と兵数は要史料照合"
+      "status": "独立した行軍表示を検出せず。守備・別戦線・欠落を要確認"
     },
     {
       "title": "浅井畷の戦い",

@@ -1,0 +1,46 @@
+{
+  "status": "pass",
+  "candidateFiles": 50,
+  "tests": [
+    {
+      "name": "families-territory.cjs",
+      "status": "pass",
+      "scope": "1560–1615全所有者状態、143対象イベント・290所有者変化。有馬1612継承/1614移封も確認。全史料照合の意味ではない。"
+    },
+    {
+      "name": "location-store.cjs",
+      "status": "pass"
+    },
+    {
+      "name": "evidence-store.cjs",
+      "status": "pass"
+    },
+    {
+      "name": "history-index.cjs",
+      "status": "pass"
+    },
+    {
+      "name": "siege-placement-save.cjs",
+      "status": "pass",
+      "scope": "長谷堂/大津の保存位置と到着先"
+    },
+    {
+      "name": "historical-integration.cjs",
+      "status": "pass",
+      "scope": "九州前後日10件・相良生存・3城名切替・進路設定"
+    },
+    {
+      "name": "castle-fires.cjs",
+      "status": "pass",
+      "scope": "shared already equivalent"
+    }
+  ],
+  "sha256": {
+    "candidate-manifest.json": "1433bb5912df166c7b8d25cc25a8d1cbb587db19b35568966531e7c99c32afed",
+    "inventory.json": "a91903742aa57f92e14a80d879fe60981095ac5bd4a2aafca4984129d2cbdb62",
+    "source-recheck.json": "496d2722c8fa88e8dd39b856ccec7a8cac3cb2c86a99d12857138be013f4edd8",
+    "ui-records-only.patch": "401e0233162fb045045603319ae635e904b9d6d84ad4660780857ce2a4aae150",
+    "test-tree/data/audits/historical-integration.json": "78a9c12afd9bbba3a350b4b62f7927273d9934d67145e8b76d7ae9c9332896df",
+    "test-tree/data/audits/territory-transfer-review.json": "e9c085f5ad54b79eeae9c6f22d83f5f7cc245c56faa41ee9c16fbac2c681ce85"
+  }
+}

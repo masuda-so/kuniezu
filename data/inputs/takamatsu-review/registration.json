@@ -1,0 +1,49 @@
+{
+  "method": "二点相似変換・地名代表点と図記号の登録",
+  "origin": {
+    "name": "高松城跡",
+    "pixel": [
+      480,
+      417
+    ],
+    "point": [
+      133.822263,
+      34.692673
+    ],
+    "source": "https://geoshape.ex.nii.ac.jp/nrct-poi/resource/34/340000230800.html"
+  },
+  "control": {
+    "name": "吉備津神社",
+    "pixel": [
+      717,
+      581
+    ],
+    "point": [
+      133.85069444444443,
+      34.67075
+    ],
+    "source": "https://kojiki.kokugakuin.ac.jp/jinjya/kibitsujinja/"
+  },
+  "symbol": [
+    531,
+    468
+  ],
+  "point": [
+    133.8280679005997,
+    34.686227696382936
+  ],
+  "roundedPoint": [
+    133.828068,
+    34.686228
+  ],
+  "readoutAllowanceMeters": 200,
+  "independentObservation": {
+    "source": "https://cyberjapandata.gsi.go.jp/xyz/std/16/57130/26028.png",
+    "tilePixel": [
+      168,
+      68
+    ],
+    "result": "山地内。陣の測量点を独立確定したものではない。"
+  },
+  "limitations": "基準点2点だけなので残差0は精度の証明ではない。図記号と場所代表点の幅を含み、陣の外郭や隊の持場は復元しない。"
+}

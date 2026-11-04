@@ -1,0 +1,89 @@
+{
+  "result": {
+    "date": {
+      "y": 1582,
+      "m": 6,
+      "leap": 0,
+      "d": 12,
+      "gy": 1582,
+      "gm": 7,
+      "gd": 1
+    },
+    "version": 21,
+    "historyTitle": "山崎の戦い",
+    "phase": {
+      "key": "march",
+      "name": "行軍中"
+    },
+    "returning": false,
+    "bookkeepingFlag": 1,
+    "point": [
+      1048.4863855987728,
+      1371.4002444448247
+    ],
+    "target": [
+      1048.4860247099348,
+      1371.3999999999999
+    ],
+    "distance": 0.0004358830414247033,
+    "arrival": 7981,
+    "visualEnd": 7981
+  },
+  "battle": {
+    "date": {
+      "y": 1582,
+      "m": 6,
+      "leap": 0,
+      "d": 13,
+      "gy": 1582,
+      "gm": 7,
+      "gd": 2
+    },
+    "eventDate": [
+      1582,
+      7,
+      2
+    ],
+    "groups": [
+      {
+        "id": "group-0",
+        "label": "山崎側・羽柴軍",
+        "members": [
+          "hideyoshi",
+          "ukon",
+          "nakagawa",
+          "hidenaga",
+          "ikeda"
+        ],
+        "side": "a",
+        "point": [
+          135.68,
+          34.893
+        ],
+        "precision": "対陣地域の概略",
+        "dock": false,
+        "source": "yamazaki"
+      },
+      {
+        "id": "group-1",
+        "label": "勝竜寺側・明智軍",
+        "members": [
+          "saito",
+          "ise",
+          "matsuda",
+          "tsuda",
+          "mitsuhide"
+        ],
+        "side": "b",
+        "point": [
+          135.697,
+          34.91
+        ],
+        "precision": "対陣地域の概略",
+        "dock": false,
+        "source": "yamazaki"
+      }
+    ]
+  },
+  "errors": []
+}

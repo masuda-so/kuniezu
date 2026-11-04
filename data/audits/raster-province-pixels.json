@@ -1,0 +1,1068 @@
+{
+ "generated": "tools/map/build-map-tiles.cjs",
+ "source": "cb4674e4cb9a80bbdba08b3827e1b70438bf7cb96bbbb3250c125af2492e19fc",
+ "provinces": [
+  {
+   "id": 1,
+   "key": "sea",
+   "kind": "sea",
+   "pixels": 440742173
+  },
+  {
+   "id": 2,
+   "key": "unassigned",
+   "kind": "land",
+   "pixels": 0
+  },
+  {
+   "id": 3,
+   "key": "castle:agata",
+   "kind": "land",
+   "pixels": 304867
+  },
+  {
+   "id": 4,
+   "key": "castle:akutagawa",
+   "kind": "land",
+   "pixels": 75057
+  },
+  {
+   "id": 5,
+   "key": "castle:bmatsuyama",
+   "kind": "land",
+   "pixels": 250573
+  },
+  {
+   "id": 6,
+   "key": "castle:busan",
+   "kind": "land",
+   "pixels": 309353
+  },
+  {
+   "id": 7,
+   "key": "castle:chungju",
+   "kind": "land",
+   "pixels": 762731
+  },
+  {
+   "id": 8,
+   "key": "castle:daegu",
+   "kind": "land",
+   "pixels": 909039
+  },
+  {
+   "id": 9,
+   "key": "castle:edo",
+   "kind": "land",
+   "pixels": 98032
+  },
+  {
+   "id": 10,
+   "key": "castle:fukashi",
+   "kind": "land",
+   "pixels": 274256
+  },
+  {
+   "id": 11,
+   "key": "castle:funai",
+   "kind": "land",
+   "pixels": 522656
+  },
+  {
+   "id": 12,
+   "key": "castle:gaeseong",
+   "kind": "land",
+   "pixels": 357830
+  },
+  {
+   "id": 13,
+   "key": "castle:gassan",
+   "kind": "land",
+   "pixels": 260782
+  },
+  {
+   "id": 14,
+   "key": "castle:gifu",
+   "kind": "land",
+   "pixels": 425451
+  },
+  {
+   "id": 15,
+   "key": "castle:gongju",
+   "kind": "land",
+   "pixels": 828302
+  },
+  {
+   "id": 16,
+   "key": "castle:hachigata",
+   "kind": "land",
+   "pixels": 189700
+  },
+  {
+   "id": 17,
+   "key": "castle:haeju",
+   "kind": "land",
+   "pixels": 1728387
+  },
+  {
+   "id": 18,
+   "key": "castle:hamhung",
+   "kind": "land",
+   "pixels": 5781594
+  },
+  {
+   "id": 19,
+   "key": "castle:hanseong",
+   "kind": "land",
+   "pixels": 976678
+  },
+  {
+   "id": 20,
+   "key": "castle:hikuma",
+   "kind": "land",
+   "pixels": 118485
+  },
+  {
+   "id": 21,
+   "key": "castle:himeji",
+   "kind": "land",
+   "pixels": 284380
+  },
+  {
+   "id": 22,
+   "key": "castle:hinoe",
+   "kind": "land",
+   "pixels": 141198
+  },
+  {
+   "id": 23,
+   "key": "castle:hirado",
+   "kind": "land",
+   "pixels": 190016
+  },
+  {
+   "id": 24,
+   "key": "castle:hitoyoshi",
+   "kind": "land",
+   "pixels": 257578
+  },
+  {
+   "id": 25,
+   "key": "castle:hiyama",
+   "kind": "land",
+   "pixels": 477657
+  },
+  {
+   "id": 26,
+   "key": "castle:hondo",
+   "kind": "land",
+   "pixels": 82816
+  },
+  {
+   "id": 27,
+   "key": "castle:honjo",
+   "kind": "land",
+   "pixels": 152879
+  },
+  {
+   "id": 28,
+   "key": "castle:ichijodani",
+   "kind": "land",
+   "pixels": 263795
+  },
+  {
+   "id": 29,
+   "key": "castle:iida",
+   "kind": "land",
+   "pixels": 361492
+  },
+  {
+   "id": 30,
+   "key": "castle:ishikawa",
+   "kind": "land",
+   "pixels": 515009
+  },
+  {
+   "id": 31,
+   "key": "castle:ishiyama",
+   "kind": "land",
+   "pixels": 106683
+  },
+  {
+   "id": 32,
+   "key": "castle:iwaki",
+   "kind": "land",
+   "pixels": 168930
+  },
+  {
+   "id": 33,
+   "key": "castle:iwamura",
+   "kind": "land",
+   "pixels": 226227
+  },
+  {
+   "id": 34,
+   "key": "castle:iwatsuki",
+   "kind": "land",
+   "pixels": 118403
+  },
+  {
+   "id": 35,
+   "key": "castle:izumi",
+   "kind": "land",
+   "pixels": 176102
+  },
+  {
+   "id": 36,
+   "key": "castle:jeonju",
+   "kind": "land",
+   "pixels": 608348
+  },
+  {
+   "id": 37,
+   "key": "castle:jinju",
+   "kind": "land",
+   "pixels": 769032
+  },
+  {
+   "id": 38,
+   "key": "castle:kaizu",
+   "kind": "land",
+   "pixels": 253192
+  },
+  {
+   "id": 39,
+   "key": "castle:kakegawa",
+   "kind": "land",
+   "pixels": 200514
+  },
+  {
+   "id": 40,
+   "key": "castle:kakunodate",
+   "kind": "land",
+   "pixels": 263414
+  },
+  {
+   "id": 41,
+   "key": "castle:kanayama",
+   "kind": "land",
+   "pixels": 57047
+  },
+  {
+   "id": 42,
+   "key": "castle:kanegasaki",
+   "kind": "land",
+   "pixels": 64502
+  },
+  {
+   "id": 43,
+   "key": "castle:kaneko",
+   "kind": "land",
+   "pixels": 116685
+  },
+  {
+   "id": 44,
+   "key": "castle:kannabe",
+   "kind": "land",
+   "pixels": 363269
+  },
+  {
+   "id": 45,
+   "key": "castle:kannonji",
+   "kind": "land",
+   "pixels": 182532
+  },
+  {
+   "id": 46,
+   "key": "castle:karasawa",
+   "kind": "land",
+   "pixels": 114755
+  },
+  {
+   "id": 47,
+   "key": "castle:karasuyama",
+   "kind": "land",
+   "pixels": 215203
+  },
+  {
+   "id": 48,
+   "key": "castle:kasugayama",
+   "kind": "land",
+   "pixels": 246050
+  },
+  {
+   "id": 49,
+   "key": "castle:katsuyama",
+   "kind": "land",
+   "pixels": 299156
+  },
+  {
+   "id": 50,
+   "key": "castle:kawagoe",
+   "kind": "land",
+   "pixels": 185530
+  },
+  {
+   "id": 51,
+   "key": "castle:kawara",
+   "kind": "land",
+   "pixels": 207452
+  },
+  {
+   "id": 52,
+   "key": "castle:kiriyama",
+   "kind": "land",
+   "pixels": 295125
+  },
+  {
+   "id": 53,
+   "key": "castle:kishiwada",
+   "kind": "land",
+   "pixels": 79430
+  },
+  {
+   "id": 54,
+   "key": "castle:kiyosu",
+   "kind": "land",
+   "pixels": 151524
+  },
+  {
+   "id": 55,
+   "key": "castle:koga",
+   "kind": "land",
+   "pixels": 60936
+  },
+  {
+   "id": 56,
+   "key": "castle:konomine",
+   "kind": "land",
+   "pixels": 298641
+  },
+  {
+   "id": 57,
+   "key": "castle:konosumi",
+   "kind": "land",
+   "pixels": 208989
+  },
+  {
+   "id": 58,
+   "key": "castle:koriyama",
+   "kind": "land",
+   "pixels": 467867
+  },
+  {
+   "id": 59,
+   "key": "castle:kosho",
+   "kind": "land",
+   "pixels": 66857
+  },
+  {
+   "id": 60,
+   "key": "castle:kousuiji",
+   "kind": "land",
+   "pixels": 935107
+  },
+  {
+   "id": 61,
+   "key": "castle:kouyama",
+   "kind": "land",
+   "pixels": 361838
+  },
+  {
+   "id": 62,
+   "key": "castle:kumamoto",
+   "kind": "land",
+   "pixels": 371801
+  },
+  {
+   "id": 63,
+   "key": "castle:kurokawa",
+   "kind": "land",
+   "pixels": 206781
+  },
+  {
+   "id": 64,
+   "key": "castle:kurose",
+   "kind": "land",
+   "pixels": 231148
+  },
+  {
+   "id": 65,
+   "key": "castle:kururi",
+   "kind": "land",
+   "pixels": 284214
+  },
+  {
+   "id": 66,
+   "key": "castle:kuwagawa",
+   "kind": "land",
+   "pixels": 338223
+  },
+  {
+   "id": 67,
+   "key": "castle:kyo",
+   "kind": "land",
+   "pixels": 111881
+  },
+  {
+   "id": 68,
+   "key": "castle:matsukura",
+   "kind": "land",
+   "pixels": 420926
+  },
+  {
+   "id": 69,
+   "key": "castle:miki",
+   "kind": "land",
+   "pixels": 89175
+  },
+  {
+   "id": 70,
+   "key": "castle:minowa",
+   "kind": "land",
+   "pixels": 307271
+  },
+  {
+   "id": 71,
+   "key": "castle:motoyama",
+   "kind": "land",
+   "pixels": 171711
+  },
+  {
+   "id": 72,
+   "key": "castle:myou",
+   "kind": "land",
+   "pixels": 438179
+  },
+  {
+   "id": 73,
+   "key": "castle:nagashima",
+   "kind": "land",
+   "pixels": 104011
+  },
+  {
+   "id": 74,
+   "key": "castle:nakamura",
+   "kind": "land",
+   "pixels": 331473
+  },
+  {
+   "id": 75,
+   "key": "castle:namwon",
+   "kind": "land",
+   "pixels": 236449
+  },
+  {
+   "id": 76,
+   "key": "castle:nanao",
+   "kind": "land",
+   "pixels": 206534
+  },
+  {
+   "id": 77,
+   "key": "castle:nihonmatsu",
+   "kind": "land",
+   "pixels": 351209
+  },
+  {
+   "id": 78,
+   "key": "castle:nirayama",
+   "kind": "land",
+   "pixels": 171017
+  },
+  {
+   "id": 79,
+   "key": "castle:nochiseyama",
+   "kind": "land",
+   "pixels": 84539
+  },
+  {
+   "id": 80,
+   "key": "castle:numata",
+   "kind": "land",
+   "pixels": 140036
+  },
+  {
+   "id": 81,
+   "key": "castle:obi",
+   "kind": "land",
+   "pixels": 199582
+  },
+  {
+   "id": 82,
+   "key": "castle:odajo",
+   "kind": "land",
+   "pixels": 272811
+  },
+  {
+   "id": 83,
+   "key": "castle:odaka",
+   "kind": "land",
+   "pixels": 191859
+  },
+  {
+   "id": 84,
+   "key": "castle:odani",
+   "kind": "land",
+   "pixels": 105955
+  },
+  {
+   "id": 85,
+   "key": "castle:odawara",
+   "kind": "land",
+   "pixels": 65749
+  },
+  {
+   "id": 86,
+   "key": "castle:okazaki",
+   "kind": "land",
+   "pixels": 226417
+  },
+  {
+   "id": 87,
+   "key": "castle:oko",
+   "kind": "land",
+   "pixels": 187279
+  },
+  {
+   "id": 88,
+   "key": "castle:ota",
+   "kind": "land",
+   "pixels": 246797
+  },
+  {
+   "id": 89,
+   "key": "castle:oura",
+   "kind": "land",
+   "pixels": 437693
+  },
+  {
+   "id": 90,
+   "key": "castle:oyama",
+   "kind": "land",
+   "pixels": 216860
+  },
+  {
+   "id": 91,
+   "key": "castle:pyongyang",
+   "kind": "land",
+   "pixels": 1571891
+  },
+  {
+   "id": 92,
+   "key": "castle:saga",
+   "kind": "land",
+   "pixels": 143894
+  },
+  {
+   "id": 93,
+   "key": "castle:saika",
+   "kind": "land",
+   "pixels": 254300
+  },
+  {
+   "id": 94,
+   "key": "castle:sakado",
+   "kind": "land",
+   "pixels": 297594
+  },
+  {
+   "id": 95,
+   "key": "castle:sakura",
+   "kind": "land",
+   "pixels": 239089
+  },
+  {
+   "id": 96,
+   "key": "castle:sangju",
+   "kind": "land",
+   "pixels": 1000074
+  },
+  {
+   "id": 97,
+   "key": "castle:sannohe",
+   "kind": "land",
+   "pixels": 778397
+  },
+  {
+   "id": 98,
+   "key": "castle:sawayama",
+   "kind": "land",
+   "pixels": 43495
+  },
+  {
+   "id": 99,
+   "key": "castle:shibata",
+   "kind": "land",
+   "pixels": 254000
+  },
+  {
+   "id": 100,
+   "key": "castle:shingu",
+   "kind": "land",
+   "pixels": 306437
+  },
+  {
+   "id": 101,
+   "key": "castle:shirakawa",
+   "kind": "land",
+   "pixels": 186192
+  },
+  {
+   "id": 102,
+   "key": "castle:shozui",
+   "kind": "land",
+   "pixels": 404369
+  },
+  {
+   "id": 103,
+   "key": "castle:sogo",
+   "kind": "land",
+   "pixels": 182356
+  },
+  {
+   "id": 104,
+   "key": "castle:sukagawa",
+   "kind": "land",
+   "pixels": 82525
+  },
+  {
+   "id": 105,
+   "key": "castle:sumoto",
+   "kind": "land",
+   "pixels": 58403
+  },
+  {
+   "id": 106,
+   "key": "castle:suncheon",
+   "kind": "land",
+   "pixels": 1243642
+  },
+  {
+   "id": 107,
+   "key": "castle:sunpu",
+   "kind": "land",
+   "pixels": 302391
+  },
+  {
+   "id": 108,
+   "key": "castle:tachibana",
+   "kind": "land",
+   "pixels": 171676
+  },
+  {
+   "id": 109,
+   "key": "castle:takada",
+   "kind": "land",
+   "pixels": 271272
+  },
+  {
+   "id": 110,
+   "key": "castle:takato",
+   "kind": "land",
+   "pixels": 212399
+  },
+  {
+   "id": 111,
+   "key": "castle:tamanawa",
+   "kind": "land",
+   "pixels": 127204
+  },
+  {
+   "id": 112,
+   "key": "castle:tanabu",
+   "kind": "land",
+   "pixels": 152898
+  },
+  {
+   "id": 113,
+   "key": "castle:tango",
+   "kind": "land",
+   "pixels": 129505
+  },
+  {
+   "id": 114,
+   "key": "castle:tenjin",
+   "kind": "land",
+   "pixels": 153951
+  },
+  {
+   "id": 115,
+   "key": "castle:teraike",
+   "kind": "land",
+   "pixels": 537859
+  },
+  {
+   "id": 116,
+   "key": "castle:tochio",
+   "kind": "land",
+   "pixels": 272192
+  },
+  {
+   "id": 117,
+   "key": "castle:toishi",
+   "kind": "land",
+   "pixels": 252793
+  },
+  {
+   "id": 118,
+   "key": "castle:tonokori",
+   "kind": "land",
+   "pixels": 284160
+  },
+  {
+   "id": 119,
+   "key": "castle:tottori",
+   "kind": "land",
+   "pixels": 151138
+  },
+  {
+   "id": 120,
+   "key": "castle:toyama",
+   "kind": "land",
+   "pixels": 429754
+  },
+  {
+   "id": 121,
+   "key": "castle:tsushima",
+   "kind": "land",
+   "pixels": 67256
+  },
+  {
+   "id": 122,
+   "key": "castle:tsutsuji",
+   "kind": "land",
+   "pixels": 445834
+  },
+  {
+   "id": 123,
+   "key": "castle:uchi",
+   "kind": "land",
+   "pixels": 172871
+  },
+  {
+   "id": 124,
+   "key": "castle:ueno",
+   "kind": "land",
+   "pixels": 67892
+  },
+  {
+   "id": 125,
+   "key": "castle:uiju",
+   "kind": "land",
+   "pixels": 3133126
+  },
+  {
+   "id": 126,
+   "key": "castle:ulsan",
+   "kind": "land",
+   "pixels": 154164
+  },
+  {
+   "id": 127,
+   "key": "castle:umayabashi",
+   "kind": "land",
+   "pixels": 112030
+  },
+  {
+   "id": 128,
+   "key": "castle:utsubuki",
+   "kind": "land",
+   "pixels": 197104
+  },
+  {
+   "id": 129,
+   "key": "castle:utsunomiya",
+   "kind": "land",
+   "pixels": 317861
+  },
+  {
+   "id": 130,
+   "key": "castle:wonju",
+   "kind": "land",
+   "pixels": 2682945
+  },
+  {
+   "id": 131,
+   "key": "castle:yakami",
+   "kind": "land",
+   "pixels": 301171
+  },
+  {
+   "id": 132,
+   "key": "castle:yamabuki",
+   "kind": "land",
+   "pixels": 353986
+  },
+  {
+   "id": 133,
+   "key": "castle:yamagata",
+   "kind": "land",
+   "pixels": 270971
+  },
+  {
+   "id": 134,
+   "key": "castle:yamato",
+   "kind": "land",
+   "pixels": 364389
+  },
+  {
+   "id": 135,
+   "key": "castle:yanagawa",
+   "kind": "land",
+   "pixels": 124473
+  },
+  {
+   "id": 136,
+   "key": "castle:yokote",
+   "kind": "land",
+   "pixels": 352259
+  },
+  {
+   "id": 137,
+   "key": "castle:yonezawa",
+   "kind": "land",
+   "pixels": 256660
+  },
+  {
+   "id": 138,
+   "key": "castle:yoshida",
+   "kind": "land",
+   "pixels": 114816
+  },
+  {
+   "id": 139,
+   "key": "castle:yuzuki",
+   "kind": "land",
+   "pixels": 204292
+  },
+  {
+   "id": 140,
+   "key": "neutral:佐渡",
+   "kind": "land",
+   "pixels": 88205
+  },
+  {
+   "id": 141,
+   "key": "neutral:壱岐",
+   "kind": "land",
+   "pixels": 13025
+  },
+  {
+   "id": 142,
+   "key": "neutral:明",
+   "kind": "land",
+   "pixels": 4089230
+  },
+  {
+   "id": 143,
+   "key": "neutral:隠岐",
+   "kind": "land",
+   "pixels": 34442
+  },
+  {
+   "id": 144,
+   "key": "lake:139.32,37.98",
+   "kind": "lake",
+   "pixels": 0
+  },
+  {
+   "id": 145,
+   "key": "lake:139.25,37.89",
+   "kind": "lake",
+   "pixels": 3623
+  },
+  {
+   "id": 146,
+   "key": "lake:135.77,34.91",
+   "kind": "lake",
+   "pixels": 3323
+  },
+  {
+   "id": 147,
+   "key": "lake:135.60,34.70",
+   "kind": "lake",
+   "pixels": 4583
+  },
+  {
+   "id": 148,
+   "key": "lake:139.99,39.98",
+   "kind": "lake",
+   "pixels": 21042
+  },
+  {
+   "id": 149,
+   "key": "lake:140.37,41.03",
+   "kind": "lake",
+   "pixels": 1941
+  },
+  {
+   "id": 150,
+   "key": "lake:140.89,40.46",
+   "kind": "lake",
+   "pixels": 6506
+  },
+  {
+   "id": 151,
+   "key": "lake:141.32,40.77",
+   "kind": "lake",
+   "pixels": 6635
+  },
+  {
+   "id": 152,
+   "key": "lake:140.66,39.73",
+   "kind": "lake",
+   "pixels": 2712
+  },
+  {
+   "id": 153,
+   "key": "lake:140.08,37.48",
+   "kind": "lake",
+   "pixels": 10542
+  },
+  {
+   "id": 154,
+   "key": "lake:140.37,36.04",
+   "kind": "lake",
+   "pixels": 16800
+  },
+  {
+   "id": 155,
+   "key": "lake:140.12,35.96",
+   "kind": "lake",
+   "pixels": 302
+  },
+  {
+   "id": 156,
+   "key": "lake:140.55,36.05",
+   "kind": "lake",
+   "pixels": 3475
+  },
+  {
+   "id": 157,
+   "key": "lake:140.19,35.75",
+   "kind": "lake",
+   "pixels": 934
+  },
+  {
+   "id": 158,
+   "key": "lake:140.03,35.86",
+   "kind": "lake",
+   "pixels": 369
+  },
+  {
+   "id": 159,
+   "key": "lake:136.66,36.65",
+   "kind": "lake",
+   "pixels": 431
+  },
+  {
+   "id": 160,
+   "key": "lake:136.45,36.37",
+   "kind": "lake",
+   "pixels": 117
+  },
+  {
+   "id": 161,
+   "key": "lake:136.37,36.35",
+   "kind": "lake",
+   "pixels": 199
+  },
+  {
+   "id": 162,
+   "key": "lake:138.09,36.05",
+   "kind": "lake",
+   "pixels": 1295
+  },
+  {
+   "id": 163,
+   "key": "lake:137.59,34.75",
+   "kind": "lake",
+   "pixels": 6351
+  },
+  {
+   "id": 164,
+   "key": "lake:136.06,35.27",
+   "kind": "lake",
+   "pixels": 66540
+  },
+  {
+   "id": 165,
+   "key": "lake:136.19,35.52",
+   "kind": "lake",
+   "pixels": 176
+  },
+  {
+   "id": 166,
+   "key": "lake:133.20,35.48",
+   "kind": "lake",
+   "pixels": 8671
+  },
+  {
+   "id": 167,
+   "key": "lake:132.96,35.45",
+   "kind": "lake",
+   "pixels": 7850
+  },
+  {
+   "id": 168,
+   "key": "castle:matsumae",
+   "kind": "land",
+   "pixels": 127361
+  },
+  {
+   "id": 169,
+   "key": "castle:shuri",
+   "kind": "land",
+   "pixels": 275615
+  },
+  {
+   "id": 170,
+   "key": "castle:jeju",
+   "kind": "land",
+   "pixels": 180260
+  },
+  {
+   "id": 171,
+   "key": "context:jianzhou",
+   "kind": "land",
+   "pixels": 3451962
+  },
+  {
+   "id": 172,
+   "key": "context:haixi",
+   "kind": "land",
+   "pixels": 14872069
+  },
+  {
+   "id": 173,
+   "key": "context:eastern-jurchen",
+   "kind": "land",
+   "pixels": 21644062
+  },
+  {
+   "id": 174,
+   "key": "context:mongol",
+   "kind": "land",
+   "pixels": 3865526
+  },
+  {
+   "id": 175,
+   "key": "context:ainu",
+   "kind": "land",
+   "pixels": 9134492
+  },
+  {
+   "id": 176,
+   "key": "context:uninhabited",
+   "kind": "land",
+   "pixels": 14956
+  },
+  {
+   "id": 177,
+   "key": "context:ming-zhejiang",
+   "kind": "land",
+   "pixels": 2038
+  }
+ ]
+}

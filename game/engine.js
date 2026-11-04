@@ -849,7 +849,7 @@ function applyEv(ev){
   // 城を取る史実なら、前もって出陣していた軍勢がそのまま攻めかかる
   if(ev.k==='take'){for(const u of S.units)if(u.until===evKey&&(ev.castles||[]).includes(u.path[u.path.length-1])&&S.castles[u.path[u.path.length-1]].owner!==u.clan){u.until=null;u.mission='attack';u.stopAt=null;if(u.state==='camp')u.state='march';}}
   // 長く続く戦（籠城・攻囲）は、hold 日のあいだ陣を張ったまま
-  if(ev.hold){for(const u of S.units)if(u.until===evKey){u.until='#hold';u.releaseAt=S.t+ev.hold;}}
+  if(ev.hold){for(const u of S.units)if(u.until===evKey){u.historyTitle=evKey;u.until='#hold';u.releaseAt=S.t+ev.hold;}}
   else{relayUnits(evKey);for(const u of S.units.slice())if(u.until===evKey&&u.gens.length&&S.clans[u.clan]&&S.clans[u.clan].alive){u.until=null;u.histRet=1;u.stopAt=null;retreat(u);}dropUnits(u=>u.until===evKey);}}
  switch(ev.k){
   case 'take':{if(!okC(k)&&!(ev.force&&S.clans[k]&&S.clans[k].alive)){chron(ev,false);return;}const changed=(ev.castles||[]).some(id=>S.div[S.castles[id]?.owner]);const ok=histTake(ev,k,ev.castles)||(ev.castles||[]).every(id=>S.castles[id]&&(S.castles[id].owner===k||S.units.some(u=>u.hist&&u.clan===k&&u.path[u.path.length-1]===id)));applyExtras(ev,ok&&!changed);chron(ev,ok&&!changed);return;}
@@ -868,10 +868,11 @@ function applyEv(ev){
   case 'death':{
    const g=genByName(ev.n);if(!g){return;}
    const kk=g.clan;if(ev.clan&&S.div[ev.clan]){chron(ev,false);return;}
-   const wasL=kk&&S.clans[kk]&&S.clans[kk].leader===g.id;killGen(g);
-   if(wasL){let nx=ev.to?genByName(ev.to):null;if(!nx&&ev.appear)nx=mkGen(ev.appear,kk,g.loc);if(nx&&nx.clan!==kk&&nx.clan)nx=null;if(nx){setLeader(kk,nx);if(!nx.loc||S.castles[nx.loc].owner!==kk)nx.loc=S.clans[kk].cap;}else succession(kk,g);}
+   const wasL=kk&&S.clans[kk]&&S.clans[kk].leader===g.id;let successor=null;killGen(g);
+   if(wasL){let nx=ev.to?genByName(ev.to):null;if(!nx&&ev.appear)nx=mkGen(ev.appear,kk,g.loc);if(nx&&nx.clan!==kk&&nx.clan)nx=null;if(nx){setLeader(kk,nx);successor=nx;if(!nx.loc||S.castles[nx.loc].owner!==kk)nx.loc=S.clans[kk].cap;}else succession(kk,g);}
    else if(ev.appear&&kk)mkGen(ev.appear,kk,g.loc);
-   applyExtras(ev,true);chron(ev,true);if(kk===S.player)G.onSuccession&&G.onSuccession(kk,g,gen(S.clans[kk].leader));return;}
+   // 自動選定は succession 側で通知済み。家臣の死去は継承として通知しない。
+   applyExtras(ev,true);chron(ev,true);if(successor&&kk===S.player)G.onSuccession&&G.onSuccession(kk,g,successor);return;}
   case 'appear':{if(!S.clans[k]||!S.clans[k].alive){if(!S.clans[k]&&evT(ev)<evT({d:[1590,9,1]})){S.waitAp=S.waitAp||[];S.waitAp.push(Object.assign({},ev));}return;}const at=S.castles[ev.at]&&S.castles[ev.at].owner===k?ev.at:S.clans[k].cap;if(ev.heir&&S.div[k])return; // 歴史が分かれた家の当主は替えない
    if(ev.pull&&!ev.g.includes('|')){const g1=genByName(ev.g.split('@')[0]);if(!g1||g1.dead||G.isLeader(g1)||(g1.clan&&S.div[g1.clan]))return;}
    if(ev.pull){const nm0=ev.g.split('|')[0];const g0=genByName(nm0);if(g0&&!g0.dead&&g0.clan&&g0.clan!==k&&!G.isLeader(g0)&&!S.div[g0.clan]){g0.clan=k;g0.ronin=false;g0.unit=null;g0.loc=at;}}
@@ -911,9 +912,17 @@ function relayUnits(key){for(const u of S.units){if(u.until!==key||!u.gens.lengt
    if(!(e.k==='take'||e.k==='note'||e.k==='premarch'||e.k==='newclan'&&e.marchWho))continue;const w=e.who&&genByName(e.who);if(!w||w.id!==g.id)continue;
    if(S.cancel&&S.cancel[e.title])continue;if(arcBlocked(e))continue;
    const to=e.k==='take'?(e.castles||[])[0]:e.at;if(!to||!S.castles[to])continue;
-   if(!rerouteHist(u,to,t))continue;u.until=k2;S.pm[i]=1;break;}}}
-function rerouteHist(u,to,t){const k=u.clan;
-   const n0=u.path[Math.min(u.seg+1,u.path.length-1)];const tgo=S.castles[to].owner;let p=n0===to?[to]:(bfsVia(n0,to,v=>{const o=S.castles[v].owner;return o===k||o===tgo||G.allied(o,k);})||G.findPath(n0,to,k,'any'));if(!p)return false;
+   if(!rerouteHist(u,to,t,e.routeVia))continue;u.until=k2;S.pm[i]=1;break;}}}
+function rerouteHist(u,to,t,routeVia){const k=u.clan;
+   const n0=u.path[Math.min(u.seg+1,u.path.length-1)];
+   const stops=[n0,...(routeVia||[])];if(stops.at(-1)!==to)stops.push(to);
+   const p=[n0];
+   for(let i=1;i<stops.length;i++){
+    const from=stops[i-1],dest=stops[i];if(from===dest)continue;
+    const owner=S.castles[dest].owner;
+    const leg=bfsVia(from,dest,v=>{const o=S.castles[v].owner;return o===k||o===owner||G.allied(o,k);})||G.findPath(from,dest,k,'any');
+    if(!leg)return false;p.push(...leg.slice(1));
+   }
    let path;if(u.seg+1>=u.path.length){path=p;u.pos=0;}else if(p.length>1&&p[1]===u.path[u.seg]){path=p;u.pos=Math.max(0,1-u.pos);}else path=[u.path[u.seg]].concat(p);if(path.length<2)return false;
    let days=0;for(let j=0;j<path.length-1;j++){const E=G.EDGES[ekey(path[j],path[j+1])];days+=E?E.days:5;}
    u.path=path;u.seg=0;u.state='march';u.mission='show';u.enemy=null;u.stopAt=.8;u.spd=Math.min(1.6,Math.max(.6,days/Math.max(1,t-S.t)));return true;}
@@ -983,12 +992,20 @@ function doBuild(id,p,quiet){const C=G.C[id],c=S.castles[id],old=G.cname(id);
  if(S.plans[id]&&S.plans[id].n===p.n)delete S.plans[id];
  if(!quiet)G.onTerr&&G.onTerr();}
 G.buildNow=doBuild;
+// The fire effect is timed separately from damage and stays at the place that burned.
+const CASTLE_FIRE_DAYS=3;
+G.castleFires=()=>S?.castleFires||[];
+
 function jApply(ev,quiet){const id=ev.node;
  switch(ev.k){
   case 'build':{S.jdone=S.jdone||{};if(!S.castles[id]||S.jdone[ev._i]||(G.cname(id)===ev.n&&ev.lon!=null))return true;
    if(!quiet&&!jOwnerOk(ev,id))return false;S.jdone[ev._i]=1;doBuild(id,ev,quiet);if(!quiet)chron(Object.assign({at:id},ev),true);return true;}
   case 'burn':{if(!S.castles[id])return true;if(ev.cond&&G.cname(id)!==ev.cond)return true;if(!quiet&&!jOwnerOk(ev,id))return false;
    const c=S.castles[id],C=G.C[id];
+   if(!quiet){
+    S.castleFires??=[];
+    S.castleFires.push({x:C.x,y:C.y,start:S.t,until:S.t+CASTLE_FIRE_DAYS});
+   }
    if(ev.to){addRuin(id,G.cname(id));const o=S.cst[id]=S.cst[id]||{};o.n=ev.to.n;o.x=null;o.y=null;o.burnt=false;C.x=C.bx;C.y=C.by;S.ruins=S.ruins.filter(r=>r.n!==ev.to.n);}
    else{const o=S.cst[id]=S.cst[id]||{};o.n=G.cname(id);o.burnt=true;o.bm=0;}
    c.dur=Math.round(c.dur*.35);c.durMax=Math.max(300,Math.round(c.durMax*.7));c.shogyo=Math.round(c.shogyo*.7);
@@ -1001,6 +1018,7 @@ function jApply(ev,quiet){const id=ev.node;
    S.plans[id]=Object.assign({},ev,{until:ev.until?evT({d:ev.until}):null,from:G.CN(cs?cs[0]:S.castles[id].owner)});if(!quiet)chron(Object.assign({at:id},ev),true);return true;}
  }return true;}
 G.jokaku=function(){
+ if(S.castleFires?.length)S.castleFires=S.castleFires.filter(f=>S.t<f.until);
  while(S.ji<TK.JOKAKU.length&&evT(TK.JOKAKU[S.ji])<=S.t){const ev=TK.JOKAKU[S.ji++];try{if(!jApply(ev))S.jpend.push({i:S.ji-1,uid:ev._i,until:S.t+120});}catch(e){console.error('jokaku',ev,e);}}
  // 持ち主がまだ移っていない築城は少し待ち、それでも合わなければ「計画」として残す
  S.jpend=S.jpend.filter(p=>{const ev=p.uid==null?TK.JOKAKU[p.i]:TK.JOKAKU.find(e=>e._i===p.uid);if(!ev||jApply(ev))return false;if(S.t<p.until)return true;

@@ -1,0 +1,22 @@
+{
+  "id": "jurchen-investiture-distinct-from-direct-rule",
+  "entity": "region:女真諸部",
+  "predicate": "relationship-to-ming",
+  "value": "明による女真首長への武官任命や朝貢関係は、遼東の常駐衛所軍政・占領・課税と同一ではない。",
+  "validYears": [
+    1560,
+    1615
+  ],
+  "datePrecision": "year",
+  "source": "liaodongRothLi",
+  "sourceUrl": "https://assets.cambridge.org/0521243343/sample/0521243343WS.pdf",
+  "locator": "本文pp.11–14,21–22,25",
+  "gameBindings": [
+    "game/liaodong-context.js",
+    "TK.contextRegionPresentation"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-03",
+  "uncertainty": "首長・集団・時期ごとの関係の差を残す。すべての女真に一律の臣従を設定する命題ではない。"
+}

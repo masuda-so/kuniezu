@@ -1,0 +1,39 @@
+{
+  "id": "agata-castle-construction",
+  "entity": "person:高橋元種",
+  "predicate": "castle-construction",
+  "value": {
+    "year": 1603,
+    "castle": "縣城",
+    "previousSeat": "松尾城"
+  },
+  "validYears": [
+    1603,
+    1603
+  ],
+  "datePrecision": "year",
+  "source": "nobeokaAgataHistory",
+  "sourceUrl": "https://www.city.nobeoka.miyazaki.jp/soshiki/6/1689.html",
+  "locator": "慶長8年の県城築城",
+  "gameBindings": [
+    "node:agata",
+    "timeline:高橋元種の縣城築城"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-03",
+  "uncertainty": "月日は確認範囲外。ゲームは1603年の年初を切替に使う。",
+  "linkedEntities": [
+    "place:agata",
+    "place:matsuo-hyuga",
+    "person:高橋元種"
+  ],
+  "eventTime": {
+    "kind": "year-window",
+    "year": 1603,
+    "calendar": "CE-year",
+    "precision": "year"
+  },
+  "eventRelation": "castle-construction",
+  "eventScope": "1603年1月1日に築城・入城したと扱わない。築城記録だけで松尾城の廃止日も決めない。"
+}

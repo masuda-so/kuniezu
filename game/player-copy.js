@@ -8,12 +8,13 @@
  const active=G.yActive;G.yActive=y=>y.n==='滝の城'?G.date().y<1590||G.date().y===1590&&G.S().t<G.evT({d:TK.lunarDate(1590,7,5)}):active(y);
  TK.CASTLE_EVIDENCE['滝の城']={role:'北条氏の連絡・兵站拠点',description:y?.[4],source,checked:'2026-11-01'};
  G.sitePresentation=function(y){const text=(y.desc||'').replace(/(個別.*?未照合|検証中|未検証|ゲーム.*?仮定).*$/,'').trim(),on=G.yActive(y),kind=y.kind==='城'?'城郭':G.YOSHO_FX[y.kind]?.n||y.kind;
-  return {title:y.n+(on?'':'跡'),kind,description:text,state:on?'':y.y0&&G.date().y<y.y0?'築かれる前':y.n==='滝の城'?'1590年の落城後、城跡となっています。':'この年代には使われていません。',role:TK.CASTLE_EVIDENCE[y.n]?.role||kind};
+  const before=y.y0&&G.date().y<y.y0;
+  return {title:y.n+(!on&&!before&&!y.n.endsWith('跡')?'跡':''),kind,description:text,state:on?'':before?'成立する前':y.n==='滝の城'?'1590年の落城後、城跡となっています。':'この年代には使われていません。',role:TK.CASTLE_EVIDENCE[y.n]?.role||kind};
  };
  const src=TK.RESEARCH_SOURCES;
  src.aizuTurn={author:'小山市',title:'徳川家康ゆかりの地 小山評定と小山御殿',url:'https://www.city.oyama.tochigi.jp/kankou-bunka/rekishi_bunka/bunkazai/page000011.html',locator:'1600年旧暦7月24日小山在陣・翌日の軍議',accessed:'2026-11-01',scope:'会津への出兵と西上への転換。会津での家康対上杉の本戦はない。'};
  src.tono1600={author:'中津川市苗木遠山史料館',title:'資料紹介69 関ヶ原直前の東濃',url:'https://www.city.nakatsugawa.lg.jp/museum/t/archives/materials/1496.html',locator:'遠山友政・妻木氏らへの家康の書状、8月15日・20日・27日・9月8日',accessed:'2026-11-01',scope:'東美濃の別働隊。家康本隊の直接参加とは別。'};
- const build=G.buildBattleCatalog;G.buildBattleCatalog=function(){build();const sc=TK.BATTLES['会津征伐'];if(sc){sc.presentationCategory='march';sc.reviewNote='上杉景勝の討伐へ向かった徳川軍。家康は小山で西方の挙兵を知り、諸将とともに西へ向きを変える。';sc.place='会津への出兵と小山での転進';sc.sources=[...new Set([...(sc.sources||[]),'aizuTurn'])];sc.beats=[[0,'徳川軍が会津へ向けて進む。'],[50,'家康は小山に在陣し、西方の情勢を受けて諸将と協議する。'],[100,'諸将は西へ進み、東美濃では遠山・妻木らの別働隊も動き始める。']];}};
+ const build=G.buildBattleCatalog;G.buildBattleCatalog=function(){build();const sc=TK.BATTLES['会津征伐'];if(sc){sc.presentationCategory='march';sc.reviewNote='上杉景勝の討伐へ向かった徳川軍。家康は小山で西方の挙兵を知り、諸将とともに西へ向きを変える。';sc.place='会津への出兵と小山での転進';sc.sources=[...new Set([...(sc.sources||[]),'aizuTurn'])];sc.beats=[[0,'徳川軍が会津へ向けて進む。'],[50,'家康は小山に在陣し、西方の情勢を受けて諸将と協議する。'],[100,'会津への進軍を中止し、西方の軍勢への対応に転じる。']];}};
 })();
 
 /* 年表の史実記述と開発時の修正メモを分離する。 */

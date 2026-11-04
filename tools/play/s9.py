@@ -1,8 +1,0 @@
-exec(open('/home/claude/play/lib.py').read())
-start()
-pg.mouse.click(920,492);pg.wait_for_timeout(800)
-pg.locator('#drawer .act').filter(has_text='攻める').click();pg.wait_for_timeout(600)
-pg.locator('#modal button').filter(has_text='出陣する').click();pg.wait_for_timeout(1500);shot('a2_go')
-print(txt('#toast'))
-run(14,speed='×4',tag='atk',every=2)
-print(txt('#chron')[:1200]); print(txt('#me'))

@@ -1,0 +1,24 @@
+{
+  "id": "person:宇喜多秀家",
+  "name": "宇喜多秀家",
+  "gameNames": [
+    "宇喜多秀家"
+  ],
+  "authorityIds": [
+    "wikidata:Q1329792",
+    "ndlna:00839597"
+  ],
+  "identityBasis": {
+    "scope": "既存の確認済み命題の対象名を人物台帳へ登録",
+    "claimIds": [
+      "toyotomi-office-5"
+    ]
+  },
+  "authorityEvidence": {
+    "scope": "person-identity",
+    "wikidataRevision": 2553773295,
+    "wikidataRetrievedAt": "2026-11-04T02:41:38.962147+00:00",
+    "ndlUrl": "https://id.ndl.go.jp/auth/ndlna/00839597",
+    "snapshot": "data/research/source-notes/reviewed-people-authority-adoption.json"
+  }
+}

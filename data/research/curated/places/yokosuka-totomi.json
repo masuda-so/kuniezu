@@ -1,0 +1,44 @@
+{
+  "id": "place:yokosuka-totomi",
+  "name": "横須賀城",
+  "aliases": [],
+  "geometry": {
+    "type": "Point",
+    "coordinates": [
+      137.971296,
+      34.685708
+    ]
+  },
+  "geometryStatus": "site-representative",
+  "note": "遠江の横須賀城。築城着手と完工を分ける。",
+  "identityBasis": {
+    "scope": "確認済み命題の対象場所。日時と関係は元命題に保持し、座標の根拠はgeometryEvidenceに保持する。城域境界は主張しない。",
+    "claimIds": [
+      "yokosuka-castle-construction"
+    ]
+  },
+  "geometryEvidence": {
+    "source": "codh-yokosuka-site-point",
+    "sourceUrl": "https://geoshape.ex.nii.ac.jp/nrct-poi/resource/22/220000289500.html",
+    "locator": "基本情報：ジャパンナレッジID 220000289500、名称・住所・緯度経度の各行",
+    "checked": "2026-11-04",
+    "scope": "城跡の所在地を参照する代表点。城域の輪郭、当時の建物・人物・部隊の精密位置を表さない。",
+    "review": "data/research/source-notes/castle-coordinate-batch.json",
+    "coordinateOrder": "longitude-latitude",
+    "coordinateUnits": "decimal-degrees",
+    "sourceCoordinateOrder": "latitude-longitude",
+    "sourceCoordinateLiteral": "34.685708, 137.971296",
+    "sourceRecordId": "220000289500",
+    "sourceDatum": null,
+    "sourceDatumStatus": "not-stated-in-consulted-source",
+    "sourceDatumReview": "採用した個別座標ページではWGS84・JGD2000・JGD2011のいずれかを指定する記載を確認できない。緯度経度の数値を原資料どおり保持し、測地系変換は実施しない。小数桁数を位置精度とみなさない。",
+    "uncertainty": "資料掲載の代表点であり、地点ごとの測量精度は未提示。小数桁数から誤差範囲を設定しない。",
+    "identityCorroboration": {
+      "sourceUrl": "https://www.city.kakegawa.shizuoka.jp/gyosei/docs/7478.html",
+      "locator": "横須賀城跡：地理的景観、詳細情報／施設名称・所在位置",
+      "checked": "2026-11-04",
+      "scope": "遠江の横須賀城跡公園を指す。市の説明は初期主郭と近世中期までの拡張を区別しており、代表点から全期間の城域を生成しない。",
+      "establishes": "城跡の同定・所在地の対応。座標点の独立測量や城域内包含判定ではない。"
+    }
+  }
+}

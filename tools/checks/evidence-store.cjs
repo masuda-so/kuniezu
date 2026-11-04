@@ -6,3 +6,49 @@ try{put('a.json',r);assert.equal(loadEvidence({claimDir,sourceDir,baseSources}).
  for(const change of [{status:'unverified'},{source:'absent'},{validYears:[1600,1590]},{sourceUrl:'https://example.invalid'},{gameBindings:[]}]){put('b.json',{...r,id:'invalid',...change});assert.throws(()=>loadEvidence({claimDir,sourceDir,baseSources}));}
  console.log('PASS: independent author inputs preserved; duplicates, unreviewed claims, missing sources, reversed years and wrong URLs rejected');
 }finally{fs.rmSync(dir,{recursive:true,force:true});}
+
+const research=path.join(root,'data/research');
+const people=fs.readFileSync(path.join(research,'people.jsonl'),'utf8').trim().split('\n').map(JSON.parse);
+const claims=new Map(fs.readFileSync(path.join(research,'claims.jsonl'),'utf8').trim().split('\n').map(JSON.parse).map(r=>[r.id,r]));
+const places=fs.readFileSync(path.join(research,'places.jsonl'),'utf8').trim().split('\n').map(JSON.parse);
+for(const person of [...people,...places]){
+ const basis=person.identityBasis;
+ if(!basis)continue;
+ assert.ok(Array.isArray(basis.claimIds)&&basis.claimIds.length,person.id+' identity claims');
+ for(const id of basis.claimIds){
+  const claim=claims.get(id);
+  assert.ok(claim,person.id+' missing claim '+id);
+  assert.ok([claim.entity,...(claim.linkedEntities||[])].includes(person.id),person.id+' claim belongs to a different entity');
+ }
+}
+console.log('PASS: registered person and place identity bases refer to existing claims for the same entity');
+
+for(const person of people){
+ const evidence=person.authorityEvidence;
+ if(!evidence?.snapshot)continue;
+ const snapshot=JSON.parse(fs.readFileSync(path.join(root,evidence.snapshot),'utf8'));
+ const matches=snapshot.records.filter(row=>person.authorityIds.includes('wikidata:'+row.wikidataId));
+ assert.equal(matches.length,1,person.id+' authority snapshot identity');
+ const row=matches[0];
+ assert.equal(row.wikidataRevision,evidence.wikidataRevision);
+ assert.ok([person.name,...person.gameNames].includes(row.japaneseLabel??row.label??row.name));
+ if(person.authorityIds.some(id=>id.startsWith('ndlna:'))){
+  assert.ok([person.name,...person.gameNames].includes(row.ndlIdentity.name));
+  assert.ok(person.authorityIds.includes('ndlna:'+row.ndlId));
+ }else{
+  assert.ok(row.instanceOf.includes('Q5'));
+  assert.deepEqual(row.existingClaimIds,person.identityBasis.claimIds);
+ }
+}
+console.log('PASS: adopted authorities match retained identity snapshots');
+
+const {validateEventTime}=require('../research/evidence-store.cjs');
+const order=JSON.parse(fs.readFileSync(path.join(research,'curated/claims/agata-receipt-order.json')));
+validateEventTime(order);
+for(const eventTime of [{...order.eventTime,date:[1614,12,15]},{...order.eventTime,date:[1613,13,1]},{...order.eventTime,calendar:'CE-year'},{kind:'unsupported'}])assert.throws(()=>validateEventTime({...order,eventTime}));
+for(const r of claims.values())validateEventTime(r);
+const forts=claims.get('takatenjin-six-forts-preparation-years');
+assert.throws(()=>validateEventTime({...forts,eventTime:{...forts.eventTime,components:[{year:1579,entities:['place:not-linked']}]}}));
+const period=claims.get('tonokori-sadowara-outer-castle');
+assert.throws(()=>validateEventTime({...period,eventTime:{...period.eventTime,boundsAreHistoricalStartEnd:true}}));
+console.log('PASS: event dates preserve calendar, applicability bounds, component targets and uncertain-period semantics');

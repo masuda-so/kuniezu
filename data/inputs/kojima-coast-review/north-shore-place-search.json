@@ -1,0 +1,114 @@
+{
+  "checked": "2026-11-03",
+  "scope": "現代住所の代表点。慶長図の村の中心や汀線ではない。",
+  "queries": [
+    {
+      "query": "岡山市北区今保",
+      "url": "https://msearch.gsi.go.jp/address-search/AddressSearch?q=%E5%B2%A1%E5%B1%B1%E5%B8%82%E5%8C%97%E5%8C%BA%E4%BB%8A%E4%BF%9D",
+      "result": [
+        {
+          "geometry": {
+            "coordinates": [
+              133.873337,
+              34.637753
+            ],
+            "type": "Point"
+          },
+          "type": "Feature",
+          "properties": {
+            "addressCode": "",
+            "title": "岡山県岡山市北区今保"
+          }
+        }
+      ]
+    },
+    {
+      "query": "岡山市北区十日市",
+      "url": "https://msearch.gsi.go.jp/address-search/AddressSearch?q=%E5%B2%A1%E5%B1%B1%E5%B8%82%E5%8C%97%E5%8C%BA%E5%8D%81%E6%97%A5%E5%B8%82",
+      "result": [
+        {
+          "geometry": {
+            "coordinates": [
+              133.925217,
+              34.637039
+            ],
+            "type": "Point"
+          },
+          "type": "Feature",
+          "properties": {
+            "addressCode": "",
+            "title": "岡山県岡山市北区十日市西町"
+          }
+        },
+        {
+          "geometry": {
+            "coordinates": [
+              133.92897,
+              34.637386
+            ],
+            "type": "Point"
+          },
+          "type": "Feature",
+          "properties": {
+            "addressCode": "",
+            "title": "岡山県岡山市北区十日市中町"
+          }
+        },
+        {
+          "geometry": {
+            "coordinates": [
+              133.931717,
+              34.636021
+            ],
+            "type": "Point"
+          },
+          "type": "Feature",
+          "properties": {
+            "addressCode": "",
+            "title": "岡山県岡山市北区十日市東町"
+          }
+        }
+      ]
+    },
+    {
+      "query": "岡山市北区二日市",
+      "url": "https://msearch.gsi.go.jp/address-search/AddressSearch?q=%E5%B2%A1%E5%B1%B1%E5%B8%82%E5%8C%97%E5%8C%BA%E4%BA%8C%E6%97%A5%E5%B8%82",
+      "result": [
+        {
+          "geometry": {
+            "coordinates": [
+              133.929459,
+              34.64682
+            ],
+            "type": "Point"
+          },
+          "type": "Feature",
+          "properties": {
+            "addressCode": "",
+            "title": "岡山県岡山市北区二日市町"
+          }
+        }
+      ]
+    },
+    {
+      "query": "岡山市北区田中",
+      "url": "https://msearch.gsi.go.jp/address-search/AddressSearch?q=%E5%B2%A1%E5%B1%B1%E5%B8%82%E5%8C%97%E5%8C%BA%E7%94%B0%E4%B8%AD",
+      "result": [
+        {
+          "geometry": {
+            "coordinates": [
+              133.881363,
+              34.638927
+            ],
+            "type": "Point"
+          },
+          "type": "Feature",
+          "properties": {
+            "addressCode": "",
+            "title": "岡山県岡山市北区田中"
+          }
+        }
+      ]
+    }
+  ]
+}

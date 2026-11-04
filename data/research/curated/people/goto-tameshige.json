@@ -1,0 +1,22 @@
+{
+  "id": "person:goto-tameshige",
+  "name": "五藤為重",
+  "gameNames": [
+    "五藤為重"
+  ],
+  "authorityIds": [
+    "wikidata:Q11372654"
+  ],
+  "identityBasis": {
+    "scope": "既存の出典付き城施設命題の対象人物を登録。入居・攻撃への関与と城主・領有・通年所在を混同しない。",
+    "claimIds": [
+      "aki-1601-goto"
+    ]
+  },
+  "authorityEvidence": {
+    "scope": "person-identity",
+    "wikidataRevision": 2394079777,
+    "snapshot": "data/research/source-notes/castle-linked-person-authority-adoption.json",
+    "basis": "年表の五藤氏と博物館の五藤為重（山内一豊に仕え、兄為浄の跡を継ぎ、安芸城を預けられた人物）を照合。兄の五藤為浄とは別人。1601年の入居年は市年表、個人の同定は博物館解説による。"
+  }
+}

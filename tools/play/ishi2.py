@@ -1,5 +1,0 @@
-exec(open('/home/claude/play/lib.py').read())
-start('関ヶ原前夜')
-pg.evaluate("TKUI.cam(1180,1150,1.6)");pg.wait_for_timeout(800);shot('i_before')
-pg.evaluate("""(()=>{const S=G.S();const end=G.evT({d:[1600,8,25]});while(S.t<end){G.day();while(S.evQ&&S.evQ.length){const v=G.eventView();if(!v){S.evQ.shift();continue;}const h=v.opts.findIndex(o=>o.hist);G.chooseEvent(h>=0?h:0);}S.sceneQ=[];if(S.battleQ)S.battleQ.length=0;}})()""")
-pg.evaluate("TKUI.cam(1180,1150,1.6)");pg.wait_for_timeout(1200);shot('i_after')

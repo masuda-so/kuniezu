@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-02T06:15:51.244Z",
+  "generated": "2026-11-02T08:49:15.563Z",
   "battles": [
     {
       "title": "桶狭間の戦い",
@@ -816,12 +816,13 @@
       "title": "備中高松城の水攻め",
       "participants": 2,
       "groups": 2,
-      "located": 1,
-      "unlocated": 1,
+      "located": 2,
+      "unlocated": 0,
       "sources": [
         "takamatsuSite",
         "atlasRelief",
         "codhSites",
+        "takamatsuHeadquarters",
         "deployment-record-45"
       ]
     },
@@ -1325,13 +1326,14 @@
     },
     {
       "title": "木津川口の戦い",
-      "participants": 2,
+      "participants": 4,
       "groups": 2,
       "located": 2,
       "unlocated": 0,
       "sources": [
-        "osakaMuseum",
-        "atlasRelief"
+        "eventKizugawa1614",
+        "atlasRelief",
+        "kizujouMuseum"
       ]
     },
     {

@@ -1,0 +1,26 @@
+{
+  "id": "poyarkov-amur-expedition-1643-1646",
+  "entity": "person:ヴァシーリー・ポヤルコフ",
+  "predicate": "amur-expedition",
+  "value": {
+    "departureYear": 1643,
+    "returnYear": 1646,
+    "region": "アムール流域・河口"
+  },
+  "validYears": [
+    1643,
+    1646
+  ],
+  "datePrecision": "year",
+  "source": "amurPoyarkov",
+  "sourceUrl": "https://www.prlib.ru/node/2101587",
+  "locator": "Биография、1643年の出発から1646年の帰還",
+  "gameBindings": [
+    "game/liaodong-context.js",
+    "TK.contextRegionPresentation"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-03",
+  "uncertainty": "探索・徴税要求・恒久行政を区別する。この遠征を1560〜1615年のロシア領土の根拠に前倒ししない。"
+}

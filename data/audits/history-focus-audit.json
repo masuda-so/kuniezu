@@ -500,8 +500,8 @@
       "displayPolicy": "atlas",
       "atlasBasis": "城郭・攻囲配置図",
       "positionedUnits": 1,
-      "positionedGroups": 1,
-      "unlocatedGroups": 1,
+      "positionedGroups": 2,
+      "unlocatedGroups": 0,
       "displayedParticipants": 3
     },
     {
@@ -581,8 +581,8 @@
       "displayPolicy": "atlas",
       "atlasBasis": "城郭・攻囲配置図",
       "positionedUnits": 1,
-      "positionedGroups": 1,
-      "unlocatedGroups": 1,
+      "positionedGroups": 2,
+      "unlocatedGroups": 0,
       "displayedParticipants": 2
     },
     {
@@ -1053,7 +1053,8 @@
       "sourceIds": [
         "kizakiSite",
         "atlasRelief",
-        "deployment-record-33"
+        "deployment-record-33",
+        "kizakibaruModernRoute"
       ],
       "issues": [
         "出典が裏付ける範囲は各資料欄に明示",
@@ -1287,11 +1288,12 @@
         11,
         19
       ],
-      "units": 2,
+      "units": 6,
       "sourceIds": [
         "shigisan",
         "atlasRelief",
         "codhSites",
+        "shigisanChronicle",
         "deployment-record-40"
       ],
       "issues": [
@@ -1303,7 +1305,7 @@
       "positionedUnits": 0,
       "positionedGroups": 1,
       "unlocatedGroups": 1,
-      "displayedParticipants": 2
+      "displayedParticipants": 6
     },
     {
       "title": "中国攻め",
@@ -1357,12 +1359,14 @@
       "eventDate": [
         1578,
         8,
-        1
+        8
       ],
-      "units": 4,
+      "units": 6,
       "sourceIds": [
         "atlasRelief",
         "codhSites",
+        "kozukiChronology",
+        "kozukiSiteTable",
         "deployment-record-41"
       ],
       "issues": [
@@ -1372,9 +1376,9 @@
       "displayPolicy": "atlas",
       "atlasBasis": "城郭・攻囲配置図",
       "positionedUnits": 0,
-      "positionedGroups": 1,
+      "positionedGroups": 2,
       "unlocatedGroups": 1,
-      "displayedParticipants": 4
+      "displayedParticipants": 6
     },
     {
       "title": "第二次木津川口の戦い",
@@ -1426,14 +1430,17 @@
       "title": "有岡城の戦い",
       "eventDate": [
         1579,
-        11,
-        19
+        12,
+        7
       ],
-      "units": 2,
+      "units": 6,
       "sourceIds": [
         "ariokaSite",
         "atlasRelief",
         "codhSites",
+        "ariokaChronicle",
+        "ariokaDeparture",
+        "ariokaKishiPoint",
         "deployment-record-42"
       ],
       "issues": [
@@ -1443,9 +1450,9 @@
       "displayPolicy": "atlas",
       "atlasBasis": "城郭・攻囲配置図",
       "positionedUnits": 0,
-      "positionedGroups": 1,
-      "unlocatedGroups": 1,
-      "displayedParticipants": 2
+      "positionedGroups": 5,
+      "unlocatedGroups": 0,
+      "displayedParticipants": 6
     },
     {
       "title": "三木の干殺し",
@@ -1478,11 +1485,12 @@
         4,
         25
       ],
-      "units": 2,
+      "units": 6,
       "sourceIds": [
         "takatenjinSite",
         "atlasRelief",
         "codhSites",
+        "takatenjinFortCommand",
         "deployment-record-43"
       ],
       "issues": [
@@ -1492,9 +1500,9 @@
       "displayPolicy": "atlas",
       "atlasBasis": "城郭・攻囲配置図",
       "positionedUnits": 0,
-      "positionedGroups": 1,
-      "unlocatedGroups": 1,
-      "displayedParticipants": 2
+      "positionedGroups": 2,
+      "unlocatedGroups": 3,
+      "displayedParticipants": 6
     },
     {
       "title": "天正伊賀の乱",
@@ -1581,6 +1589,7 @@
         "takamatsuSite",
         "atlasRelief",
         "codhSites",
+        "takamatsuHeadquarters",
         "deployment-record-45"
       ],
       "issues": [
@@ -1590,8 +1599,8 @@
       "displayPolicy": "atlas",
       "atlasBasis": "城郭・攻囲配置図",
       "positionedUnits": 0,
-      "positionedGroups": 1,
-      "unlocatedGroups": 1,
+      "positionedGroups": 2,
+      "unlocatedGroups": 0,
       "displayedParticipants": 2
     },
     {
@@ -2456,7 +2465,7 @@
       "eventDate": [
         1600,
         7,
-        25
+        26
       ],
       "units": 2,
       "sourceIds": [
@@ -2527,12 +2536,14 @@
       "eventDate": [
         1600,
         10,
-        1
+        2
       ],
-      "units": 2,
+      "units": 7,
       "sourceIds": [
         "atlasRelief",
         "codhSites",
+        "anotsuChronology",
+        "anotsuDefenders",
         "anotsuDeployment",
         "deployment-record-73"
       ],
@@ -2543,9 +2554,9 @@
       "displayPolicy": "atlas",
       "atlasBasis": "城郭・攻囲配置図",
       "positionedUnits": 0,
-      "positionedGroups": 1,
+      "positionedGroups": 2,
       "unlocatedGroups": 1,
-      "displayedParticipants": 2
+      "displayedParticipants": 7
     },
     {
       "title": "石垣原の戦い",
@@ -2601,23 +2612,25 @@
       "eventDate": [
         1614,
         12,
-        20
+        19
       ],
-      "units": 2,
+      "units": 4,
       "sourceIds": [
-        "osakaMuseum",
-        "atlasRelief"
+        "eventKizugawa1614",
+        "atlasRelief",
+        "kizujouMuseum"
       ],
       "issues": [
         "出典が裏付ける範囲は各資料欄に明示",
         "地形・城郭・全参加者の精密な復元は未完了"
       ],
       "displayPolicy": "atlas",
-      "atlasBasis": "布陣概略図",
+      "atlasBasis": "攻撃順序の模式図",
       "positionedUnits": 0,
-      "positionedGroups": 2,
+      "positionedGroups": 0,
       "unlocatedGroups": 0,
-      "displayedParticipants": 2
+      "displayedParticipants": 4,
+      "schematicParticipants": 4
     },
     {
       "title": "今福・鴫野の戦い",
@@ -2775,7 +2788,14 @@
       "status": "経路・利用年代未照合"
     },
     "若狭街道": {
-      "status": "経路・利用年代未照合"
+      "level": "unverified",
+      "geometry": "modern-reference",
+      "sources": [
+        "wakasaMlit",
+        "wakasaKumagawa",
+        "wakasaComparison"
+      ],
+      "status": "京都から大原・途中・花折峠・朽木市場・保坂・熊川・上中を経て小浜へ至る。経由地の順序は史料に合わせ、線は国道367号・303号・27号の比較線。"
     },
     "伊勢路": {
       "status": "経路・利用年代未照合"
@@ -2934,7 +2954,8 @@
       "geometry": "polyline",
       "sources": [
         "krRoads",
-        "krUiju1488"
+        "krUiju1488",
+        "koreaRoadComparison"
       ],
       "status": "1488年の通過地を補い、順安・粛川・安州・博川・定州・宣川を経る概略線へ訂正。渡河地点と山間の細線形は未確定。",
       "waypoints": [
@@ -2955,7 +2976,9 @@
         "義州"
       ],
       "precision": "経由地と峠を結んだ概略。区間内の道路中心線は未復元",
-      "level": "corridor"
+      "level": "corridor",
+      "drawReference": true,
+      "alignment": "1488年の通過地を含む経由地をすべて通り、区間内は近現代の車道の屈曲を参照"
     },
     "海州路": {
       "geometry": "polyline",
@@ -2970,7 +2993,8 @@
     "関北路": {
       "geometry": "polyline",
       "sources": [
-        "krRoads"
+        "krRoads",
+        "koreaRoadComparison"
       ],
       "status": "道路体系は参照。個々の線形・戦国期の利用は未確定",
       "precision": "接続を表す参考線",
@@ -3175,13 +3199,30 @@
       "status": "経路・利用年代未照合"
     },
     "六十里越街道": {
-      "geometry": "polyline",
+      "geometry": "mixed-source",
       "sources": [
-        "rokujurigoSakata"
+        "rokujurigoSakata",
+        "rokujurigoInlandMap",
+        "rokujurigoShonaiMap",
+        "rokujurigoApproachReference"
       ],
       "level": "unverified",
-      "status": "出羽三山への信仰の道であり、戦国期には軍事交通にも使われた。旧街道と後世の月山道路では道筋が異なる。",
-      "precision": "経由関係を示す概略線。旧道調査図と照合中。"
+      "status": "庄内・内陸の旧道調査図の青線を採用。両端は近現代比較、図間の接続は概略を含む。",
+      "precision": "経由関係を示す概略線。旧道調査図と照合中。",
+      "mappedSections": [
+        {
+          "from": "庄内側",
+          "to": "月山沢方面",
+          "source": "rokujurigoShonaiMap",
+          "vertices": 353
+        },
+        {
+          "from": "本道寺方面",
+          "to": "寒河江",
+          "source": "rokujurigoInlandMap",
+          "vertices": 395
+        }
+      ]
     },
     "出羽浜街道": {
       "status": "経路・利用年代未照合"
@@ -3511,25 +3552,6 @@
         "kaneko",
         "kurose",
         "yuzuki"
-      ],
-      "type": "戦闘と開城が混在",
-      "status": "個々の占領日未照合"
-    },
-    {
-      "title": "九州平定",
-      "date": [
-        1587,
-        5,
-        1
-      ],
-      "castles": [
-        "kawara",
-        "kosho",
-        "kumamoto",
-        "agata",
-        "tonokori",
-        "hitoyoshi",
-        "tachibana"
       ],
       "type": "戦闘と開城が混在",
       "status": "個々の占領日未照合"
@@ -4235,14 +4257,14 @@
     {
       "title": "有岡城の戦い",
       "a": {
-        "lead": "織田信長",
-        "tr": 50000
+        "lead": "滝川一益・織田信澄",
+        "tr": 0
       },
       "b": {
-        "lead": "荒木村重",
-        "tr": 15000
+        "lead": "荒木久左衛門ら有岡城守備方",
+        "tr": 0
       },
-      "status": "伝承・文献上の概数。全員が同時に本戦へ参加した数ではない",
+      "status": "天正7年10～11月の各部隊の兵数は未確定",
       "source": "Wikipedia 有岡城の戦い"
     },
     {
@@ -5209,7 +5231,7 @@
     {
       "title": "木津川口の戦い",
       "a": {
-        "lead": "蜂須賀至鎮",
+        "lead": "蜂須賀至鎮・浅野長晟・池田忠雄",
         "tr": 0
       },
       "b": {
@@ -5218,7 +5240,8 @@
       },
       "status": "兵数表未登録だった年表上の合戦。個別兵数は未確定",
       "source": [
-        "osakaMuseum"
+        "eventKizugawa1614",
+        "kizujouMuseum"
       ]
     },
     {
@@ -5624,6 +5647,15 @@
       "locator": "全図",
       "scope": "現代の編集図（CC0）。河川・島・総構・陣地の位置関係を参照。一次史料や実測地形と同一視しない。"
     },
+    "krBongeunsa": {
+      "author": "韓国学中央研究院",
+      "title": "수도산 봉은사（修道山 奉恩寺）",
+      "url": "https://encykorea.aks.ac.kr/Article/E0023980",
+      "locator": "本文・沿革",
+      "scope": "1562年の修道山移転と壬辰倭乱での焼失。焼失の日付と戦後の活動再開時期は未確定。",
+      "accessed": "2026-11-04",
+      "year": "各項目の更新年による"
+    },
     "krBongseonsa": {
       "author": "김성연／韓国学中央研究院",
       "title": "운악산 봉선사（雲岳山奉先寺）",
@@ -5793,6 +5825,60 @@
       "accessed": "2026-10-31",
       "scope": "事件を記す史料の批判。攻撃側の通過街道・一万という兵数の実数は未確定。"
     },
+    "hasedoApproach": {
+      "author": "大江町教育委員会",
+      "title": "左沢楯山城跡 保存管理計画",
+      "url": "https://www.town.oe.yamagata.jp/files/original/20210607094914197c0350026.pdf",
+      "locator": "第Ⅰ部・表2-1、慶長5年",
+      "scope": "米沢の直江勢が畑谷城から長谷堂城へ進んだ順序。"
+    },
+    "hasedoArato": {
+      "author": "山形おきたま観光協議会",
+      "title": "畑谷城跡",
+      "url": "https://sengoku.oki-tama.jp/?l=105705&p=log",
+      "locator": "荒砥からの進撃・畑谷城の段落",
+      "scope": "荒砥から畑谷へ進攻した主力軍。"
+    },
+    "makishimaMapPoint": {
+      "author": "CODH",
+      "title": "日本歴史地名大系 施設・地点項目データセット（doi:10.20676/00000456）",
+      "url": "https://geoshape.ex.nii.ac.jp/nrct-poi/resource/26/260000075700.html",
+      "locator": "槇島城跡 260000075700",
+      "scope": "真木島での陣地そのものではなく槇島城跡の代表点。CC BY 4.0。"
+    },
+    "ieyasu1600Chronology": {
+      "author": "大田原市",
+      "title": "慶長5年、那須の緊張",
+      "url": "https://www.city.ohtawara.tochigi.jp/docs/2020122100011/file_contents/all.pdf",
+      "locator": "2021年1月号4頁：6月16日大坂発、7月2日江戸入城、7月24日小山着",
+      "accessed": "2026-11-02",
+      "scope": "出発・到着の記録。全経由地の毎日の位置ではない。"
+    },
+    "ieyasu1600Return": {
+      "author": "栃木県立博物館",
+      "title": "徳川家康が下野にやってきた！",
+      "url": "https://www.muse.pref.tochigi.lg.jp/exhibition/thema/ieyasu/ieyasu.html",
+      "locator": "資料8・伊達政宗宛家康書状写『三光録』：8月5日の江戸帰城報告",
+      "accessed": "2026-11-02",
+      "scope": "江戸帰城の確認。帰路の全通過点・船路は確定しない。"
+    },
+    "ieyasu1600West": {
+      "author": "戦国時代勢力図と各大名の動向",
+      "title": "1600年 関ヶ原の戦いまでの流れ（後半）",
+      "url": "https://sengokumap.net/history/1600-2/",
+      "locator": "7月30日宇都宮、9月1日江戸発～11日清須。慶長年中卜斎記などを引用する編年",
+      "accessed": "2026-11-02",
+      "scope": "編年の二次整理。地点間の経路と日内の進捗は推定。引用原史料の全画像照合とは区別。"
+    },
+    "ieyasu1600EdoDeparture": {
+      "author": "白峰旬／別府大学",
+      "title": "フィクションとしての小山評定―家康神話創出の一事例",
+      "year": "2012",
+      "url": "https://repo.beppu-u.ac.jp/modules/xoonips/download.php/gk01404.pdf?file_id=6757",
+      "locator": "注19：7月21日付松井康之・有吉立行宛細川忠興書状を根拠とする家康の江戸出陣日",
+      "accessed": "2026-11-02",
+      "scope": "江戸出陣日の照合。小山の軍議の実在・内容は別に議論される。"
+    },
     "lakeBaseline": {
       "author": "国土交通省",
       "title": "国土数値情報 湖沼データ W09-05",
@@ -5859,6 +5945,14 @@
       "url": "https://www.pref.chiba.lg.jp/ap-kaisou/kaisou/kibanseibi/higata.html",
       "locator": "干拓・造成以前の水域と年代",
       "scope": "1670年の干拓と旭・匝瑳・東庄の旧湖。旧表示の6頂点の輪郭を確定湖岸とは扱わない。",
+      "accessed": "2026-11-01"
+    },
+    "water-shiunji": {
+      "author": "新潟県教育委員会・新潟県埋蔵文化財調査事業団",
+      "title": "野中土手付遺跡・砂山中道下遺跡",
+      "url": "https://sitereports.nabunken.go.jp/files/attach/33/33132/24225_1_%E9%87%8E%E4%B8%AD%E5%9C%9F%E6%89%8B%E4%BB%98%E9%81%BA%E8%B7%A1%E7%A0%82%E5%B1%B1%E4%B8%AD%E9%81%93%E4%B8%8B%E9%81%BA%E8%B7%A1.pdf",
+      "locator": "干拓・造成以前の水域と年代",
+      "scope": "8〜9頁。南岸の集落と自然堤防、干拓前の潟。ラベルは概略位置。",
       "accessed": "2026-11-01"
     },
     "koreaCoast": {
@@ -6020,15 +6114,6 @@
       "accessed": "2026-11-01",
       "scope": "4郡6鎮の開拓と4郡廃止、北辺の行政支配の変化という背景。1712年の定界を1560～1615年の確定測地国境へ転用しない。"
     },
-    "liaodongMuseum": {
-      "author": "遼陽博物館",
-      "title": "第四展庁：元明清時期——行省、鎮城与都城",
-      "year": "2017-07-26",
-      "url": "https://www.lnlymuseum.com/case/detail/id/8.html",
-      "locator": "第二単元 九辺之首",
-      "scope": "1375年に遼陽へ遼東都指揮使司を設置。明代中期以後の遼東辺牆。測量座標・国境線の根拠ではない。",
-      "accessed": "2026-11-01"
-    },
     "guangningCity": {
       "author": "遼寧省文化和旅游庁 文物管理処",
       "title": "広寧古城",
@@ -6037,6 +6122,129 @@
       "locator": "1390年創建の衛城",
       "scope": "古城の存在。現表示範囲の西外にあり、画面内へ移動して描かない。",
       "accessed": "2026-11-01"
+    },
+    "liaodongMuseum": {
+      "author": "遼陽博物館",
+      "title": "第四展庁：元明清時期——行省、鎮城与都城",
+      "year": "2017-07-26",
+      "url": "https://www.lnlymuseum.com/case/detail/id/8.html",
+      "locator": "第二単元 九辺之首",
+      "scope": "遼陽の遼東都司と明の軍政。",
+      "accessed": "2026-11-03"
+    },
+    "liaodongLee": {
+      "author": "李華彥",
+      "title": "近三十年來明清鼎革之際軍事史研究回顧",
+      "year": "2014",
+      "url": "https://ming.cnhis.ncnu.edu.tw/wp-content/uploads/2014/11/ming23_04Lee_full.pdf",
+      "locator": "本文136頁・図1明遼東鎮防禦図・図2嘉靖四十四年全遼総図",
+      "scope": "辺牆・衛所の地理的関係。1565年図との比較、後年追加拠点を分離。",
+      "accessed": "2026-11-03"
+    },
+    "jurchenMasui": {
+      "author": "増井寛也",
+      "title": "ヌルハチの対明関係とその展開過程について―主として朝貢活動から見た―",
+      "year": "2022",
+      "url": "https://www.ritsumei.ac.jp/acd/cg/lt/rb/679/679PDF/masui.pdf",
+      "locator": "立命館文學679号、朝貢年表・寛甸退去",
+      "scope": "1588〜1615年の朝貢と建州勢力の拡大、1603〜1605年の寛甸退去。",
+      "accessed": "2026-11-03"
+    },
+    "jurchenNikh": {
+      "author": "韓国国史編纂委員会",
+      "title": "누르하치 — 아이신 구룬(금국)의 설립자",
+      "url": "https://contents.history.go.kr/mobile/kc/view.do?code=kc_age_30&levelId=kc_n303310",
+      "locator": "2 여진을 통일하다／3 국가를 수립하다",
+      "scope": "女真諸部・ヌルハチの統合過程。1616年建国はゲーム期間外。",
+      "accessed": "2026-11-03"
+    },
+    "amurPoyarkov": {
+      "author": "ロシア大統領図書館",
+      "title": "Поярков Василий Данилович",
+      "url": "https://www.prlib.ru/node/2101587",
+      "locator": "1643〜1646年のアムール探検",
+      "scope": "当ゲーム期より後のロシア進出。現在の沿海州国境を過去へ適用しない。",
+      "accessed": "2026-11-03"
+    },
+    "hakodateShishi": {
+      "author": "函館市",
+      "title": "函館市史 通説編 第一巻（講和と夷役）",
+      "url": "https://adeac.jp/hakodate-city/texthtml/d100010/mp000010-100010/Index.html",
+      "locator": "夷狄の商舶往還の法度（1550年）",
+      "scope": "上ノ国天ノ川から知内までを和人地とし、それより北・東を蝦夷地とした取り決め。地図の線は上ノ国（勝山館を含む）と知内川の河口を結んだ概略。",
+      "accessed": "2026-11-04"
+    },
+    "ainuFoundation": {
+      "author": "公益財団法人アイヌ民族文化財団",
+      "title": "アイヌ民族〜歴史と文化",
+      "url": "https://www.ff-ainu.or.jp/web/learn/culture/together/files/rekishitobunka_JP.pdf",
+      "locator": "和人地（松前地）と蝦夷地",
+      "scope": "和人地が渡島半島の南の一部に限られ、ほかはアイヌの人々が住む蝦夷地であったこと。",
+      "accessed": "2026-11-04"
+    },
+    "mlitAmamiHistory": {
+      "author": "国土交通省 観光庁",
+      "title": "奄美大島の歴史（多言語解説文データベース R2-00848）",
+      "url": "https://www.mlit.go.jp/tagengo-db/R2-00848.html",
+      "locator": "概要",
+      "scope": "1609年の島津氏の琉球侵攻の後、奄美群島が薩摩に割かれたこと。",
+      "accessed": "2026-11-04"
+    },
+    "mlitOgasawara": {
+      "author": "国土交通省 観光庁",
+      "title": "小笠原諸島の概要：自然、歴史（多言語解説文データベース R1-02254）",
+      "url": "https://www.mlit.go.jp/tagengo-db/R1-02254.html",
+      "locator": "歴史",
+      "scope": "1670年の漂着による発見、1830年の最初の定住。それ以前は無人。",
+      "accessed": "2026-11-04"
+    },
+    "jmicMingIslands": {
+      "author": "Journal of Marine and Island Cultures",
+      "title": "明実録に見る明初の海島の統治",
+      "url": "https://jmic.online/issues/v5n1/2/",
+      "locator": "Vol.5 No.1",
+      "scope": "明が沿海の島を倭寇の防御の対象として扱ったこと。",
+      "accessed": "2026-11-04"
+    },
+    "dila-PL000000007642": {
+      "author": "法鼓文理学院 地名規範資料庫",
+      "title": "遼陽",
+      "url": "https://authority.dila.edu.tw/place/search.php?code=PL000000007642",
+      "locator": "明代軍政拠点の代表点",
+      "scope": "都市の概略位置。元座標GRS67のため1kmの測地系・代表点留保。城壁敷地ではない。",
+      "accessed": "2026-11-03"
+    },
+    "dila-PL000000007083": {
+      "author": "法鼓文理学院 地名規範資料庫",
+      "title": "瀋陽",
+      "url": "https://authority.dila.edu.tw/place/search.php?code=PL000000007083",
+      "locator": "明代軍政拠点の代表点",
+      "scope": "都市の概略位置。元座標GRS67のため1kmの測地系・代表点留保。城壁敷地ではない。",
+      "accessed": "2026-11-03"
+    },
+    "dila-PL000000007767": {
+      "author": "法鼓文理学院 地名規範資料庫",
+      "title": "開原",
+      "url": "https://authority.dila.edu.tw/place/search.php?code=PL000000007767",
+      "locator": "明代軍政拠点の代表点",
+      "scope": "都市の概略位置。元座標GRS67のため1kmの測地系・代表点留保。城壁敷地ではない。",
+      "accessed": "2026-11-03"
+    },
+    "dila-PL000000007694": {
+      "author": "法鼓文理学院 地名規範資料庫",
+      "title": "鉄嶺",
+      "url": "https://authority.dila.edu.tw/place/search.php?code=PL000000007694",
+      "locator": "明代軍政拠点の代表点",
+      "scope": "都市の概略位置。元座標GRS67のため1kmの測地系・代表点留保。城壁敷地ではない。",
+      "accessed": "2026-11-03"
+    },
+    "dila-PL000000007281": {
+      "author": "法鼓文理学院 地名規範資料庫",
+      "title": "撫順",
+      "url": "https://authority.dila.edu.tw/place/search.php?code=PL000000007281",
+      "locator": "明代軍政拠点の代表点",
+      "scope": "都市の概略位置。元座標GRS67のため1kmの測地系・代表点留保。城壁敷地ではない。",
+      "accessed": "2026-11-03"
     },
     "katoriMedieval": {
       "author": "香取市 生涯学習課",
@@ -6069,6 +6277,28 @@
       "locator": "水郷十六島と16世紀末の開拓",
       "scope": "中世の沼沢地と開拓開始の年代。精密な湖岸座標は示されない。",
       "accessed": "2026-11-01"
+    },
+    "takatenjinFortSites": {
+      "author": "掛川市",
+      "title": "今、よみがえる高天神城・家康の六砦",
+      "url": "https://takatenjinjyo.com/rokutoride/",
+      "locator": "六砦の遺構と配置図",
+      "scope": "包囲に用いられた砦の名称・位置関係・遺構。"
+    },
+    "takatenjinFortMap": {
+      "author": "掛川市サイクリングマップ",
+      "title": "高天神城と六砦 小笠山一周",
+      "url": "https://www.bt-r.jp/kakegawa/map-ogasayama/",
+      "locator": "基本＋オプションの地図、六砦の地点1〜6",
+      "scope": "現地案内用の代表マーカー。城郭の範囲や遺構の測量座標ではない。"
+    },
+    "takatenjinFortYears": {
+      "author": "掛川市",
+      "title": "掛川市歴史的風致維持向上計画 資料編",
+      "url": "https://www.city.kakegawa.shizuoka.jp/fs/1/7/6/4/6/9/_/10appendix.pdf",
+      "locator": "資料編1（PDF3頁）、1579・1580年の行",
+      "accessed": "2026-11-03",
+      "scope": "小笠山・中村・三井山は1579年、能ヶ坂・火ヶ峰・獅子ヶ鼻は1580年の整備。月日や廃城日は示さない。"
     },
     "codhSites": {
       "author": "人文学オープンデータ共同利用センター（CODH）",
@@ -6456,6 +6686,22 @@
       "scope": "地域と経過の確認。部隊の個別持場・総兵数・連続的な移動は未確定。",
       "accessed": "2026-11-01"
     },
+    "eventKizugawa1614": {
+      "author": "黒田日出男／徳川美術館",
+      "title": "徳川美術館蔵「豊国祭礼図屏風」の注文主",
+      "url": "https://www.tokugawa-art-museum.jp/wp-content/uploads/2025/02/46_1-%E8%AB%96%E6%96%87%EF%BC%8F%E9%BB%92%E7%94%B0%E6%97%A5%E5%87%BA%E7%94%B7.pdf",
+      "locator": "PDF4頁・蜂須賀勢の冬の陣での戦果を扱う段落。11月19日の蜂須賀至鎮・浅野長晟・池田忠雄、29日博労淵。個別の精密な持場は示さない",
+      "scope": "地域と経過の確認。部隊の個別持場・総兵数・連続的な移動は未確定。",
+      "accessed": "2026-11-01"
+    },
+    "kizujouMuseum": {
+      "author": "大阪歴史博物館",
+      "title": "共同研究成果報告書17・第2章第1節",
+      "url": "https://www.osakamushis.jp/education/publication/kyodokenkyu/pdf/kyodo-17/kyodo-17_3.pdf",
+      "locator": "32〜34頁・木津城。1614年の徳川付城、集落と浜堤、所在地・規模・構造の不明確さ。1576年の木津城と1614年の河口砦を同一地点と確定しない",
+      "scope": "地域と経過の確認。部隊の個別持場・総兵数・連続的な移動は未確定。",
+      "accessed": "2026-11-01"
+    },
     "eventHarima": {
       "author": "姫路市",
       "title": "姫路城保存活用計画 第2章",
@@ -6672,6 +6918,22 @@
       "scope": "毛利秀元の攻城、富田信高の守備。藤堂期の津城を1600年へ遡らせない。",
       "accessed": "2026-10-31"
     },
+    "takatenjinFortCommand": {
+      "author": "掛川市",
+      "title": "高天神城の攻防に関する講演資料",
+      "url": "https://www.city.kakegawa.shizuoka.jp/fs/6/2/4/3/5/5/_/_____________________________.pdf",
+      "locator": "六砦の配置と担当",
+      "scope": "大須賀康高らの包囲拠点。落城当日の各将の位置までは示さない。",
+      "accessed": "2026-10-31"
+    },
+    "shigisanChronicle": {
+      "author": "太田牛一",
+      "title": "信長公記",
+      "url": "https://ja.wikisource.org/wiki/信長公記",
+      "locator": "巻十（九）信貴城被攻落之事",
+      "scope": "旧暦10月3日の着陣と10日夜の攻城。攻め口を割り当てられた武将を記すが、それぞれの方角は特定できない。",
+      "accessed": "2026-10-31"
+    },
     "odawara1590": {
       "author": "小田原城総合管理事務所",
       "title": "小田原城の歴史年表",
@@ -6719,6 +6981,70 @@
       "locator": "旧暦8月13日の守門分担と16日の落城",
       "scope": "東門楊元・李新芳、西門毛承先、南門蔣表、北門李福男。門の正確な座標は図示しない。",
       "accessed": "2026-10-31"
+    },
+    "kozukiChronology": {
+      "author": "佐用町",
+      "title": "佐用の史跡文化財 上月城と上月合戦",
+      "url": "https://www.town.sayo.lg.jp/cms-sypher/www/info/detail.jsp?id=11722",
+      "locator": "天正6年の包囲・高倉山着陣・撤退・開城",
+      "scope": "吉川・小早川の包囲と秀吉・村重の救援。吉川元長書状にみえる毛利3万・織田1万を城兵数と混ぜない。",
+      "accessed": "2026-11-03"
+    },
+    "kozukiSiteTable": {
+      "author": "赤松裕和／兵庫県立歴史博物館",
+      "title": "千種川流域の城館構成について―赤松居館跡の分析を通して―",
+      "url": "https://rekihaku.pref.hyogo.lg.jp/wp-content/uploads/2021/03/kiyo05_05.pdf",
+      "locator": "本文72頁・表2 S10 高倉山城跡（X 134.35666、Y 34.97853）",
+      "scope": "高倉山城跡の代表座標。秀吉・村重各隊の細かな持場の座標ではない。",
+      "accessed": "2026-11-03"
+    },
+    "ariokaChronicle": {
+      "author": "太田牛一",
+      "title": "信長公記",
+      "url": "https://ja.wikisource.org/wiki/信長公記",
+      "locator": "巻十二（十三）伊丹城謀叛之事、（十五）伊丹之城ニ在之年寄共妻子兄弟置捨退出之事",
+      "scope": "10月15日外郭突破、岸・鵯塚の守将、11月19日久左衛門らの退出と織田信澄の警固。再生内の時間配分は演出。",
+      "accessed": "2026-11-03"
+    },
+    "ariokaDeparture": {
+      "author": "伊丹市",
+      "title": "第2回 有岡城で織田信長と戦った?!",
+      "url": "https://www.city.itami.lg.jp/SOSIKI/TOSHIKATSURYOKU/BUNKA/bunnkazai/KEIHATU_ZIGYO/ouchideariokajyou/1588049228013.html",
+      "locator": "村重は戦況打開のために有岡城脱出・有岡城跡惣構図",
+      "scope": "1579年9月の村重の尼崎移動、10月の滝川一益の侵入。添付総構図を城跡・岸の砦代表点へ対応させた概略配置。",
+      "accessed": "2026-11-03"
+    },
+    "ariokaKishiPoint": {
+      "author": "伊丹市",
+      "title": "猪名野神社 3棟",
+      "url": "https://www.city.itami.lg.jp/SOSIKI/TOSHIKATSURYOKU/BUNKA/bunnkazai/SINAI_BUNKAZAI/KEN_SITEI/1582252824285.html",
+      "locator": "地図情報（34.7851887,135.4151939）",
+      "scope": "現代神社の地図代表点。岸の砦との対応は伊丹市総構図による。後世の社殿を戦国期へ遡らせない。",
+      "accessed": "2026-11-03"
+    },
+    "anotsuChronology": {
+      "author": "竹田憲治／三重県埋蔵文化財センター",
+      "title": "関ヶ原の戦と三重の城郭",
+      "url": "https://www.pref.mie.lg.jp/common/content/001067704.pdf",
+      "locator": "2022年11月講演資料・PDF5頁「津城での戦い」",
+      "scope": "8月22日鍋島勝茂の浜手攻撃・二ノ丸進入、24～25日毛利勢、25日長束正家の和議。城方の富田知信表記は津市の信高説明と対照。",
+      "accessed": "2026-11-03"
+    },
+    "anotsuDefenders": {
+      "author": "津市",
+      "title": "津城かわら版② 富田氏とその時代の津城",
+      "url": "https://www.info.city.tsu.mie.jp/www/contents/1685003046920/simple/kawaraban2.pdf",
+      "locator": "広報津2023年8月16日号7頁",
+      "scope": "信高・分部光嘉・津の住民の籠城。富田時代の絵図未確認と明記されるため、藤堂期の縄張や後世の砲撃図を1600年の実測として用いない。",
+      "accessed": "2026-11-03"
+    },
+    "takamatsuHeadquarters": {
+      "author": "岡山県古代吉備文化財センター",
+      "title": "備中高松城跡・高松城水攻め陣営配置図",
+      "url": "https://www.pref.okayama.jp/site/kodai/628728.html",
+      "locator": "「秀吉の陣」段落、陣営配置図・石井山（羽柴秀吉②・黒田孝高）",
+      "scope": "龍王山から石井山への本陣移転。各兵の持場や移転日の精密な復元ではない。",
+      "accessed": "2026-11-02"
     },
     "nirayamaChronology": {
       "author": "伊豆の国市文化振興課",
@@ -6844,6 +7170,30 @@
       "accessed": "2026-11-01",
       "scope": "足助・作手・野田・二連木・吉田方面の武田軍の作戦。本文の天正3年に対応する西暦1572という誤記は採用せず、長篠の1575年を別資料と照合。"
     },
+    "rokujurigoShonaiMap": {
+      "author": "国土交通省東北地方整備局 酒田河川国道事務所",
+      "title": "六十里越街道・現地調査一覧図（庄内）",
+      "url": "https://www.thr.mlit.go.jp/sakata/road/60history/011.html",
+      "locator": "青の旧道線353点、1:200000、羽黒山・品倉山・月山・三足一分山で登録",
+      "accessed": "2026-11-02",
+      "scope": "湯殿山の独立照合で約5px。図の隠れた区間と2枚の図外接続は概略。精密な戦国期の中心線ではない。"
+    },
+    "rokujurigoApproachReference": {
+      "author": "OpenStreetMap contributors / FOSSGIS OSRM",
+      "title": "六十里越街道両端の比較歩行道路",
+      "url": "https://www.openstreetmap.org/copyright",
+      "locator": "2026-11-02、鶴岡・松根側と寒河江・山形側",
+      "accessed": "2026-11-02",
+      "scope": "旧道図に接続する現代比較線。松根の地名点へ往復する2.869kmの寄り道を除去。図間の29.487km候補は過大迂回で不採用。"
+    },
+    "rokujurigoInlandMap": {
+      "author": "国土交通省東北地方整備局 酒田河川国道事務所",
+      "title": "六十里越街道・現地調査一覧図（内陸）",
+      "url": "https://www.thr.mlit.go.jp/sakata/road/60history/010.html",
+      "locator": "青の旧道線、本道寺・白岩・寒河江方面、1:200000",
+      "accessed": "2026-11-02",
+      "scope": "青線395点を駅記号で位置合わせ。近現代の旧道調査図で、全期間の精密な線形を保証しない。庄内側と山形側の残区間は従来の概略線。"
+    },
     "tosaCoastComparison": {
       "author": "国土地理院 / OpenStreetMap contributors",
       "title": "室戸半島沿岸の道路比較",
@@ -6891,6 +7241,38 @@
       "locator": "2026-11-02、敦賀側は道路中心線・湯尾側は歩行向け比較",
       "accessed": "2026-11-02",
       "scope": "近現代の比較道路。取得範囲を補足して接続し、現代の橋・隧道の年代は別に扱う。"
+    },
+    "wakasaMlit": {
+      "author": "観光庁",
+      "title": "多言語解説文データベース「若狭街道（鯖街道）」",
+      "url": "https://www.mlit.go.jp/tagengo-db/R4-00114.html",
+      "locator": "熊川・朽木・大原・八瀬を経る経路の説明",
+      "accessed": "2026-11-02",
+      "scope": "経由地の順序。針畑越は別系統として扱う。"
+    },
+    "wakasaKumagawa": {
+      "author": "若狭町",
+      "title": "熊川宿",
+      "url": "https://www.town.fukui-wakasa.lg.jp/soshiki/kankoumatizukurika/gyomuannai/1/3/3224.html",
+      "locator": "1589年の宿場町化",
+      "accessed": "2026-11-02",
+      "scope": "熊川の位置と宿場の成立年代。"
+    },
+    "wakasaComparison": {
+      "author": "OpenStreetMap contributors / OSRM",
+      "title": "若狭街道の比較車道（国道367号・303号・27号）",
+      "url": "https://www.openstreetmap.org/copyright",
+      "locator": "2026-11-02取得、京都・朽木市場・熊川・小浜を経由点に照会",
+      "accessed": "2026-11-02",
+      "scope": "近現代の比較道路。花折峠はトンネルの位置を通る。"
+    },
+    "koreaRoadComparison": {
+      "author": "OpenStreetMap contributors / OSRM",
+      "title": "義州大路・関北路の比較車道",
+      "url": "https://www.openstreetmap.org/copyright",
+      "locator": "2026-11-02取得、経由地の区間ごとに照会。軍事境界線などでつながらない区間は経由地の直線",
+      "accessed": "2026-11-02",
+      "scope": "近現代の比較道路。表示だけに使い、行軍計算は経由地の線を保持する。"
     },
     "modernRoadReference": {
       "author": "OpenStreetMap contributors / FOSSGIS OSRM",
@@ -7149,6 +7531,30 @@
       "scope": "移陣の順序。点間の細かな通過線・再生配分は模式表現。医王寺山は長篠城の約600m北方を概略表示。",
       "accessed": "2026-11-01"
     },
+    "ikedaTerumasaBirth": {
+      "author": "兵庫県立歴史博物館",
+      "title": "ひょうご伝説紀行－妖怪・自然の世界－用語解説",
+      "url": "https://rekihaku.pref.hyogo.lg.jp/digital_museum/legend3/term/",
+      "locator": "池田輝政の項・冒頭の1565〜1613",
+      "scope": "年齢計算用の西暦生年1565。具体的出生月日の採否は決めない。",
+      "accessed": "2026-11-04"
+    },
+    "ikedaTerumasaBirthDates": {
+      "author": "講談社／小学館（谷口澄夫）",
+      "title": "日本人名大辞典+Plus／日本大百科全書「池田輝政」",
+      "url": "https://kotobank.jp/word/池田輝政-30292",
+      "locator": "講談社の永禄7年12月29日・1565*、小学館の永禄7年11月晦日",
+      "scope": "月日説は異なるが、どちらも西暦1565へ換算される。出生原史料を照合済みとはしない。",
+      "accessed": "2026-11-04"
+    },
+    "ikedaTerumasaBirthEra": {
+      "author": "鳥取県文化財課",
+      "title": "鳥取池田家年譜",
+      "url": "https://www.pref.tottori.lg.jp/82462.htm",
+      "locator": "永禄7年（1564年）の池田輝政出生欄",
+      "scope": "和暦年と西暦年の対応表記として保持し、出生日の西暦年1564と同一視しない。",
+      "accessed": "2026-11-04"
+    },
     "tsubakiGsi": {
       "author": "建設省国土地理院",
       "title": "土地条件調査報告書（銚子・鹿島地区）",
@@ -7261,6 +7667,14 @@
       "scope": "郡山が毛利氏の本拠だったこと。1571年を輝元の家督相続年とする資料ではない。",
       "accessed": "2026-11-01"
     },
+    "shimazuIinoResidence": {
+      "author": "鹿児島県観光サイト「かごしまの旅」",
+      "title": "島津義弘公の戦い（第一部）",
+      "url": "https://www.kagoshima-kankou.com/feature/shimadu2019/introduction2",
+      "locator": "永禄7年（1564年）・元亀3年（1572年）の項、飯野城跡の説明",
+      "scope": "1564年の飯野入城と木崎原合戦時の飯野からの出陣。兵数・経路・時刻は記述の精度と異説を別途検討する。",
+      "accessed": "2026-11-02"
+    },
     "suwaharaChronology": {
       "author": "島田市博物館",
       "title": "牧野城とは・牧野城に在城した徳川の武将たち",
@@ -7269,6 +7683,89 @@
       "locator": "牧野城とは、今川氏真の項（今川氏真詠草の旧暦8月24日）",
       "scope": "1575年8月24日の攻略と改称、武田から徳川への移行。1590年廃城は推定説。紹介ページの廃城時期不明という説明も保持。",
       "accessed": "2026-11-01"
+    },
+    "kurodaNagamasaSuccession": {
+      "author": "福岡市博物館",
+      "title": "没後400年 黒田長政",
+      "url": "https://museum.city.fukuoka.jp/exhibition/599/index02.html",
+      "locator": "黒田家の当主となる（22歳）・朝鮮に出兵・関ヶ原の戦い",
+      "scope": "1588年中津築城、1589年家督継承。日々の滞在地や1599年の帰着日を確定しない。",
+      "accessed": "2026-11-03"
+    },
+    "kurodaYukuhashiSuccession": {
+      "author": "行橋市",
+      "title": "行橋市史 黒田氏の入国",
+      "url": "https://adeac.jp/yukuhashi-city/texthtml/d100010/mp000000-000010/ht2040100020",
+      "locator": "242〜243頁、末段の天正17年5月家督継承",
+      "scope": "黒田領六郡と森吉成領二郡、1589年5月の家督継承。継承日と日々の滞在を確定しない。",
+      "accessed": "2026-11-03"
+    },
+    "nakatsuCastleHistory": {
+      "author": "中津市教育委員会",
+      "title": "中津城を知る",
+      "url": "https://www.city-nakatsu.jp/doc/2013100100011/file_contents/nakatsujo.pdf",
+      "locator": "PDF2頁 中津城の歴史・築城の歴史",
+      "scope": "1588年着工、1600年細川氏入城、1602年小倉移転と中津城の存続。",
+      "accessed": "2026-11-03"
+    },
+    "kurodaKafu1600Ndl1911": {
+      "author": "貝原益軒",
+      "title": "黒田家譜 巻之九・十（益軒全集 巻5、益軒全集刊行部、1911年）",
+      "url": "https://dl.ndl.go.jp/pid/1023982",
+      "locator": "巻9 pp.263–268（コマ127–130）、巻10 pp.279–283（コマ136–138）",
+      "scope": "原画像で長政の旧暦1600/6/6大坂天満、7/5伏見発、8/14清洲近村着陣を読取。同時代日記ではなく後世編纂の家譜であり、家康の行程・名簿・長政の個別出発を区別する。",
+      "accessed": "2026-11-03",
+      "sourceType": "retrospective-house-chronicle",
+      "editionYear": 1911,
+      "publisher": "益軒全集刊行部",
+      "repository": "国立国会図書館",
+      "persistentId": "info:ndljp/pid/1023982",
+      "doi": "10.11501/1023982",
+      "imageManifest": "https://dl.ndl.go.jp/api/iiif/1023982/manifest.json",
+      "accessStatus": "source-images-read",
+      "rights": "NDL IIIF metadata Access Restrictions: PDM",
+      "localNote": "data/inputs/kuroda-itinerary-review/README.md"
+    },
+    "bizenKeichoNorthShore": {
+      "author": "岡山大学附属図書館・岡山シティミュージアム",
+      "title": "備前国図（T1-5）・児島湾北岸",
+      "url": "https://www.city.okayama.jp/okayama-city-museum/0000079739.html",
+      "locator": "第1章1、今保から十日市の岸・慶長1596〜1615年推定",
+      "scope": "原図の岸179点を現代住所代表点で局所登録。村中心と住所代表点の差を含み、1560〜1615年の毎年の実測岸を確定しない。",
+      "accessed": "2026-11-03"
+    },
+    "iinoMapPoint": {
+      "author": "人文学オープンデータ共同利用センター（CODH）",
+      "title": "日本歴史地名大系 施設・地点項目・宮崎県一覧",
+      "url": "https://geoshape.ex.nii.ac.jp/nrct-poi/resource/46/index.html",
+      "locator": "飯野城跡・460000138600",
+      "scope": "CC BY 4.0。東経130.867591・北緯32.054126の代表点。城域・城門・出陣路の実測値ではない。",
+      "accessed": "2026-11-02"
+    },
+    "kizakibaruModernRoute": {
+      "author": "OpenStreetMap contributors / OSRM",
+      "title": "飯野城―木崎原の現代歩行道路比較",
+      "url": "https://routing.openstreetmap.de/routed-foot/route/v1/driving/130.867591,32.054126;130.83012518518,32.041051361571?overview=full&geometries=geojson&steps=false&continue_straight=false",
+      "locator": "2026-11-02取得・152道路点、両端の代表点接続",
+      "scope": "ODbL 1.0。現代道路の参考線。1572年の通過線・渡河位置・出発到着時刻を確定しない。",
+      "accessed": "2026-11-02"
+    },
+    "igagoeArchives": {
+      "author": "国立公文書館",
+      "title": "本能寺の変｜徳川家康ー将軍家蔵書からみるその生涯ー",
+      "url": "https://www.archives.go.jp/exhibition/digital/ieyasu/contents1_07/",
+      "locator": "天正10年6月2日に堺で変を知り、伊賀経由で帰国、6月4日に岡崎城へ到着",
+      "accessed": "2026-11-03",
+      "scope": "出発・到着の日付と伊賀経由であること。途中の宿泊地・日付は記載なし。"
+    },
+    "igagoeMie": {
+      "author": "三重県環境生活部文化振興課（海津裕子）",
+      "title": "県史あれこれ「家康の『伊賀越え』と甲賀・伊賀者」",
+      "year": "1991",
+      "url": "https://www.bunka.pref.mie.lg.jp/rekishi/kenshi/asp/arekore/detail66.html",
+      "locator": "堺→南山城→近江信楽付近→伊賀丸柱→鈴鹿の山を越え伊勢へ。渡海地は白子・若松説と長太浦・四日市説",
+      "accessed": "2026-11-03",
+      "scope": "経由の順序。渡海地は確定できないと明記。供は30人余り。"
     },
     "toyotomiOffices": {
       "author": "白峰旬／別府大学史学研究会",

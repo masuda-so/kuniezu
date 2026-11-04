@@ -1,0 +1,40 @@
+{
+  "id": "location:kuroda-nagamasa-kiyosu-arrival-1600",
+  "person": "person:kuroda-nagamasa",
+  "place": "place:kiyosu-vicinity",
+  "relation": "attested-presence",
+  "time": {
+    "kind": "dated-event",
+    "date": [
+      1600,
+      8,
+      14
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": false,
+    "precision": "day"
+  },
+  "source": "kurodaKafu1600Ndl1911",
+  "sourceUrl": "https://dl.ndl.go.jp/pid/1023982",
+  "locator": "巻10 p.281上段（コマ137左頁）。長政を含む先陣名簿、八月十四日尾州に着、清洲名古屋の近村々に陣。",
+  "summary": "長政を含む東軍諸隊が清洲・名古屋の近村へ着陣する",
+  "uncertainty": "家譜の諸隊集結日であり長政の城門通過時刻・個隊の陣所を確定しない。8月13日付孝高書状の清洲接近報告は時期の照合に限る。家康の9月上旬の西上に長政を重ねない。",
+  "sourceType": "retrospective-house-chronicle",
+  "recordType": "sourced-location-observation",
+  "status": "verified-in-specified-scope",
+  "recordedAt": "2026-11-03",
+  "gameBindings": [
+    "history-index:person:kuroda-nagamasa",
+    "TK.PERSON_LOCATION_ITINERARIES:kuroda-nagamasa-1600",
+    "G.personLocationInfo"
+  ],
+  "runtimeMarchBinding": false,
+  "corroboratingSources": [
+    "kurodaYoshitakaLetter16000813Kobe"
+  ],
+  "runtimeLocationBinding": {
+    "itinerary": "kuroda-nagamasa-1600",
+    "kind": "sourced-observations-with-estimated-road-intervals",
+    "troopStrengthAsserted": false
+  }
+}

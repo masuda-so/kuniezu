@@ -814,21 +814,6 @@
     {
       "date": [
         1581,
-        9,
-        20
-      ],
-      "title": null,
-      "kind": "absorb",
-      "clan": "shimazu",
-      "castles": [],
-      "additional": null,
-      "source": null,
-      "precision": null,
-      "review": "出典未登録。史実照合済みとは扱わない"
-    },
-    {
-      "date": [
-        1581,
         10,
         10
       ],
@@ -1617,13 +1602,24 @@
       "kind": "take",
       "clan": "hashiba",
       "castles": [
-        "kawara",
-        "kosho",
-        "kumamoto",
-        "agata",
-        "tonokori",
-        "hitoyoshi",
-        "tachibana"
+        "agata"
+      ],
+      "additional": null,
+      "source": null,
+      "precision": null,
+      "review": "出典未登録。史実照合済みとは扱わない"
+    },
+    {
+      "date": [
+        1587,
+        5,
+        9
+      ],
+      "title": null,
+      "kind": "take",
+      "clan": "hashiba",
+      "castles": [
+        "kosho"
       ],
       "additional": null,
       "source": null,
@@ -1634,18 +1630,18 @@
       "date": [
         1587,
         7,
-        10
+        7
       ],
-      "title": null,
+      "title": "佐々成政の肥後拝領",
       "kind": "take",
       "clan": "hashiba",
       "castles": [
-        "yanagawa"
+        "kumamoto"
       ],
       "additional": null,
-      "source": null,
+      "source": "https://sitereports.nabunken.go.jp/files/attach/22/22101/16337_1_%E4%B8%8B%E5%9F%8E%E9%81%BA%E8%B7%A1.pdf",
       "precision": null,
-      "review": "出典未登録。史実照合済みとは扱わない"
+      "review": "出典リンクあり。資料が当該全拠点の日付を裏付けるとは限らない"
     },
     {
       "date": [
@@ -1667,12 +1663,63 @@
     {
       "date": [
         1587,
+        7,
+        30
+      ],
+      "title": "立花宗茂の筑後拝領",
+      "kind": "take",
+      "clan": "hashiba",
+      "castles": [
+        "yanagawa"
+      ],
+      "additional": null,
+      "source": "https://artsandculture.google.com/story/KgWRWPxXFzYZIQ?hl=ja",
+      "precision": null,
+      "review": "出典リンクあり。資料が当該全拠点の日付を裏付けるとは限らない"
+    },
+    {
+      "date": [
+        1587,
+        7,
+        30
+      ],
+      "title": "小早川隆景の筑前拝領",
+      "kind": "take",
+      "clan": "hashiba",
+      "castles": [
+        "tachibana"
+      ],
+      "additional": null,
+      "source": "https://i-manabi.jp/system/regionals/regionals/ecode%3A2/64/view/8144",
+      "precision": null,
+      "review": "出典リンクあり。資料が当該全拠点の日付を裏付けるとは限らない"
+    },
+    {
+      "date": [
+        1587,
+        8,
+        6
+      ],
+      "title": "森吉成の豊前拝領",
+      "kind": "take",
+      "clan": "hashiba",
+      "castles": [
+        "kawara"
+      ],
+      "additional": null,
+      "source": "https://adeac.jp/yukuhashi-city/texthtml/d100010/mp000000-000010/ht2040100020",
+      "precision": "日",
+      "review": "出典リンクあり。資料が当該全拠点の日付を裏付けるとは限らない"
+    },
+    {
+      "date": [
+        1587,
         11,
         25
       ],
       "title": "新発田城落城",
       "kind": "take",
-      "clan": "uesugi",
+      "clan": "nagao",
       "castles": [
         "shibata"
       ],
@@ -2473,6 +2520,40 @@
     },
     {
       "date": [
+        1614,
+        8,
+        18
+      ],
+      "title": "有馬直純の県入部",
+      "kind": "take",
+      "clan": "arima",
+      "castles": [
+        "agata"
+      ],
+      "additional": null,
+      "source": "https://history.miyazaki.jp/nenpyo.html",
+      "precision": null,
+      "review": "出典リンクあり。資料が当該全拠点の日付を裏付けるとは限らない"
+    },
+    {
+      "date": [
+        1614,
+        8,
+        18
+      ],
+      "title": "日野江の有馬旧領を幕府が管理",
+      "kind": "take",
+      "clan": "tokugawa",
+      "castles": [
+        "hinoe"
+      ],
+      "additional": null,
+      "source": "https://www.city.shimabara.lg.jp/rekishi/page2678.html",
+      "precision": "年",
+      "review": "出典リンクあり。資料が当該全拠点の日付を裏付けるとは限らない"
+    },
+    {
+      "date": [
         1615,
         6,
         4
@@ -2576,7 +2657,7 @@
       "date": {
         "y": 1565,
         "m": 6,
-        "d": 20
+        "d": 21
       },
       "castle": "kyo",
       "from": "ashikaga",
@@ -3051,16 +3132,6 @@
       "castle": "yanagawa",
       "from": "otomo",
       "to": "ryuzoji"
-    },
-    {
-      "date": {
-        "y": 1581,
-        "m": 9,
-        "d": 20
-      },
-      "castle": "hitoyoshi",
-      "from": "sagara",
-      "to": "shimazu"
     },
     {
       "date": {
@@ -3626,7 +3697,7 @@
       "date": {
         "y": 1584,
         "m": 12,
-        "d": 20
+        "d": 21
       },
       "castle": "ueno",
       "from": "nobukatsu",
@@ -3758,56 +3829,6 @@
         "m": 5,
         "d": 1
       },
-      "castle": "kawara",
-      "from": "akizuki",
-      "to": "hashiba"
-    },
-    {
-      "date": {
-        "y": 1587,
-        "m": 5,
-        "d": 1
-      },
-      "castle": "kosho",
-      "from": "akizuki",
-      "to": "hashiba"
-    },
-    {
-      "date": {
-        "y": 1587,
-        "m": 5,
-        "d": 1
-      },
-      "castle": "tachibana",
-      "from": "otomo",
-      "to": "hashiba"
-    },
-    {
-      "date": {
-        "y": 1587,
-        "m": 5,
-        "d": 1
-      },
-      "castle": "kumamoto",
-      "from": "shimazu",
-      "to": "hashiba"
-    },
-    {
-      "date": {
-        "y": 1587,
-        "m": 5,
-        "d": 1
-      },
-      "castle": "hitoyoshi",
-      "from": "shimazu",
-      "to": "hashiba"
-    },
-    {
-      "date": {
-        "y": 1587,
-        "m": 5,
-        "d": 1
-      },
       "castle": "agata",
       "from": "otomo",
       "to": "hashiba"
@@ -3816,20 +3837,20 @@
       "date": {
         "y": 1587,
         "m": 5,
-        "d": 1
+        "d": 9
       },
-      "castle": "tonokori",
-      "from": "shimazu",
+      "castle": "kosho",
+      "from": "akizuki",
       "to": "hashiba"
     },
     {
       "date": {
         "y": 1587,
         "m": 7,
-        "d": 10
+        "d": 7
       },
-      "castle": "yanagawa",
-      "from": "ryuzoji",
+      "castle": "kumamoto",
+      "from": "shimazu",
       "to": "hashiba"
     },
     {
@@ -3840,6 +3861,36 @@
       },
       "castle": "obi",
       "from": "shimazu",
+      "to": "hashiba"
+    },
+    {
+      "date": {
+        "y": 1587,
+        "m": 7,
+        "d": 30
+      },
+      "castle": "tachibana",
+      "from": "otomo",
+      "to": "hashiba"
+    },
+    {
+      "date": {
+        "y": 1587,
+        "m": 7,
+        "d": 30
+      },
+      "castle": "yanagawa",
+      "from": "ryuzoji",
+      "to": "hashiba"
+    },
+    {
+      "date": {
+        "y": 1587,
+        "m": 8,
+        "d": 6
+      },
+      "castle": "kawara",
+      "from": "akizuki",
       "to": "hashiba"
     },
     {
@@ -4211,6 +4262,16 @@
       "castle": "teraike",
       "from": "kasai",
       "to": "hashiba"
+    },
+    {
+      "date": {
+        "y": 1590,
+        "m": 9,
+        "d": 29
+      },
+      "castle": "yoshida",
+      "from": "hashiba",
+      "to": "ikeda"
     },
     {
       "date": {
@@ -4739,7 +4800,7 @@
         "d": 30
       },
       "castle": "yoshida",
-      "from": "hashiba",
+      "from": "ikeda",
       "to": "tokugawa"
     },
     {
@@ -5318,27 +5379,7 @@
         "m": 11,
         "d": 20
       },
-      "castle": "hitoyoshi",
-      "from": "hashiba",
-      "to": "tokugawa"
-    },
-    {
-      "date": {
-        "y": 1600,
-        "m": 11,
-        "d": 20
-      },
       "castle": "agata",
-      "from": "hashiba",
-      "to": "tokugawa"
-    },
-    {
-      "date": {
-        "y": 1600,
-        "m": 11,
-        "d": 20
-      },
-      "castle": "tonokori",
       "from": "hashiba",
       "to": "tokugawa"
     },
@@ -5381,6 +5422,26 @@
       "castle": "shirakawa",
       "from": "nagao",
       "to": "tokugawa"
+    },
+    {
+      "date": {
+        "y": 1614,
+        "m": 8,
+        "d": 18
+      },
+      "castle": "hinoe",
+      "from": "arima",
+      "to": "tokugawa"
+    },
+    {
+      "date": {
+        "y": 1614,
+        "m": 8,
+        "d": 18
+      },
+      "castle": "agata",
+      "from": "tokugawa",
+      "to": "arima"
     },
     {
       "date": {
@@ -5614,7 +5675,7 @@
     },
     {
       "a": "takeda",
-      "b": "uesugi",
+      "b": "nagao",
       "name": "甲越同盟",
       "from": [
         1579,
@@ -5740,7 +5801,7 @@
     },
     {
       "a": "sanada",
-      "b": "uesugi",
+      "b": "nagao",
       "name": "昌幸の上杉帰属",
       "from": [
         1585,
@@ -5962,7 +6023,7 @@
       "basis": "W09-05の比較輪郭。時代別の水域・湿地は別層で加える。"
     },
     {
-      "retainedOld": 5,
+      "retainedOld": 4,
       "replacedOld": 8,
       "reason": "同一湖の重複線を除去。八郎潟・巨椋池等の旧水域を現代の干拓後の形で縮めない。"
     }

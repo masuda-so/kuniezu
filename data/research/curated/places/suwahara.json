@@ -1,0 +1,46 @@
+{
+  "id": "place:suwahara",
+  "name": "諏訪原城",
+  "aliases": [
+    "牧野城"
+  ],
+  "geometry": {
+    "type": "Point",
+    "coordinates": [
+      138.119899,
+      34.81833
+    ]
+  },
+  "geometryStatus": "site-representative",
+  "note": "牧野城は同じ城の改称。別地点として増設しない。",
+  "identityBasis": {
+    "scope": "確認済み命題の対象場所。日時と関係は元命題に保持し、座標の根拠はgeometryEvidenceに保持する。城域境界は主張しない。",
+    "claimIds": [
+      "suwahara-capture-date"
+    ]
+  },
+  "geometryEvidence": {
+    "source": "codh-suwahara-site-point",
+    "sourceUrl": "https://geoshape.ex.nii.ac.jp/nrct-poi/resource/22/220000269800.html",
+    "locator": "基本情報：ジャパンナレッジID 220000269800、名称・住所・緯度経度の各行",
+    "checked": "2026-11-04",
+    "scope": "城跡の所在地を参照する代表点。城域の輪郭、当時の建物・人物・部隊の精密位置を表さない。",
+    "review": "data/research/source-notes/castle-coordinate-batch.json",
+    "coordinateOrder": "longitude-latitude",
+    "coordinateUnits": "decimal-degrees",
+    "sourceCoordinateOrder": "latitude-longitude",
+    "sourceCoordinateLiteral": "34.818330, 138.119899",
+    "sourceRecordId": "220000269800",
+    "sourceDatum": null,
+    "sourceDatumStatus": "not-stated-in-consulted-source",
+    "sourceDatumReview": "採用した個別座標ページではWGS84・JGD2000・JGD2011のいずれかを指定する記載を確認できない。緯度経度の数値を原資料どおり保持し、測地系変換は実施しない。小数桁数を位置精度とみなさない。",
+    "uncertainty": "資料掲載の代表点であり、地点ごとの測量精度は未提示。小数桁数から誤差範囲を設定しない。",
+    "identityCorroboration": {
+      "sourceUrl": "https://www.pref.shizuoka.jp/kankosports/bunkageijutsu/bunkazai/1002825/1041003/1041886/1004979/1021251.html",
+      "locator": "しずおか文化財ナビ 諏訪原城跡：指定区分・所在地（島田市菊川字城山）・文化財の説明",
+      "checked": "2026-11-04",
+      "scope": "国指定史跡の現存する城跡で、牧之原台地北端にある遺構を指す。ビジターセンターや博物館の所在地を採用しない。",
+      "establishes": "城跡の同定・所在地の対応。座標点の独立測量や城域内包含判定ではない。"
+    }
+  }
+}

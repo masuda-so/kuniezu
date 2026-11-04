@@ -1,0 +1,23 @@
+{
+  "id": "person:chosokabe-motochika",
+  "name": "長宗我部元親",
+  "gameNames": [
+    "長宗我部元親"
+  ],
+  "authorityIds": [
+    "wikidata:Q1070082",
+    "ndlna:00625510"
+  ],
+  "identityBasis": {
+    "scope": "既存の出典付き城施設命題の対象人物を登録。入居・攻撃への関与と城主・領有・通年所在を混同しない。",
+    "claimIds": [
+      "aki-1569-defeat"
+    ]
+  },
+  "authorityEvidence": {
+    "scope": "person-identity",
+    "wikidataRevision": 2559497712,
+    "snapshot": "data/research/source-notes/castle-linked-person-authority-adoption.json",
+    "basis": "1569年に安芸国虎を攻めた長宗我部元親を市年表、県教委解説と照合。Wikidata日本語ラベル、人物区分、NDL本人名が一致。父国親や子盛親とは別人。NDLの生没表記は本人同定の補助にとどめる。"
+  }
+}

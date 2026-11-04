@@ -1,0 +1,27 @@
+{
+  "id": "liaodong-1560-reference",
+  "layer": "provinces",
+  "baseRevision": "kojima-1560-source-v1",
+  "sourceSha256Before": "46ac04975ed4291bd7f1ead55f985818b5daf91f0f84430c8064e909b09bd7a4",
+  "sourceSha256After": "9e27144aa9c953299567fd3719d3ad413ea1f496ad03a097e1e25b2c6eb1a03d",
+  "source": "data/research/liaodong-reference/liaodong-1560.geojson",
+  "sourceGeojsonSha256": "9758e4001197f46f19d8ae441b7b37718ca0cacad7f37b7d5d4f72189ee9a494",
+  "feature": "ming-liaodong-1560-mask",
+  "policy": "正本のunassigned/neutral:明のみ。基幹域外の旧明は未割当に戻す。海・湖・城領を保持。軍政域参考で外交/軍/行軍の所有権には転用しない。",
+  "bounds": [
+    0,
+    3686,
+    2249,
+    8093
+  ],
+  "counts": {
+    "toMing": 3763736,
+    "toUnassigned": 164621,
+    "oldMingInsideCore": 325494,
+    "oldMingInPeriodOnly": 129008,
+    "oldMingOutsideBoth": 35613,
+    "periodPixels": 217799,
+    "protectedInsideCore": 987328,
+    "protectedInsidePeriod": 1651
+  }
+}

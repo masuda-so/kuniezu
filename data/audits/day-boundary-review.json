@@ -3,6 +3,8 @@
   "samples": 3952720,
   "jumps": [
     {
+      "kind": "point-observation",
+      "observation": "eiroku",
       "name": "三好長逸",
       "date": {
         "y": 1565,
@@ -25,6 +27,8 @@
       "travel": null
     },
     {
+      "kind": "point-observation",
+      "observation": "eiroku",
       "name": "三好義継",
       "date": {
         "y": 1565,

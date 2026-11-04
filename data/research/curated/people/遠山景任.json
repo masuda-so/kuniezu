@@ -1,0 +1,22 @@
+{
+  "id": "person:遠山景任",
+  "name": "遠山景任",
+  "gameNames": [
+    "遠山景任"
+  ],
+  "authorityIds": [
+    "wikidata:Q11642033"
+  ],
+  "identityBasis": {
+    "scope": "既存の確認済み命題の対象名を人物台帳へ登録",
+    "claimIds": [
+      "lifetime-遠山景任"
+    ]
+  },
+  "authorityEvidence": {
+    "scope": "person-identity",
+    "wikidataRevision": 2480592303,
+    "snapshot": "data/research/source-notes/reviewed-people-wikidata-identity.json",
+    "basis": "既存の出典付き人物命題の対象名と日本語ラベル・人物区分を照合。国会図書館IDはこの取得にはない。"
+  }
+}

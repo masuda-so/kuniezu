@@ -1,0 +1,24 @@
+{
+  "id": "person:羽柴秀長",
+  "name": "羽柴秀長",
+  "gameNames": [
+    "羽柴秀長",
+    "豊臣秀長"
+  ],
+  "authorityIds": [
+    "wikidata:Q1191183",
+    "ndlna:00651991"
+  ],
+  "identityBasis": {
+    "scope": "既存の確認済み命題の対象名を人物台帳へ登録",
+    "claimIds": [
+      "taka-siege-start"
+    ]
+  },
+  "authorityEvidence": {
+    "scope": "person-identity",
+    "wikidataRevision": 2547899330,
+    "ndlUrl": "https://id.ndl.go.jp/auth/ndlna/00651991",
+    "snapshot": "data/research/source-notes/redirected-person-authority-adoption.json"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "id": "eastern-jurchen-regional-distribution",
+  "entity": "region:東方の女真諸部",
+  "predicate": "regional-distribution",
+  "value": "牡丹江以東から現在の沿海州にかけて、複数の東方女真集団が活動していた。",
+  "validYears": [
+    1560,
+    1615
+  ],
+  "datePrecision": "year",
+  "source": "jurchenNikh",
+  "sourceUrl": "https://contents.history.go.kr/mobile/kc/view.do?code=kc_age_30&levelId=kc_n303310",
+  "locator": "2 여진을 통일하다 の女真諸部の説明",
+  "gameBindings": [
+    "game/liaodong-context.js",
+    "TK.contextRegionPresentation"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-03",
+  "uncertainty": "地理的な包括呼称であり、均質な一国家の精密な国境・全面占領を示さない。"
+}

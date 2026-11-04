@@ -1,8 +1,0 @@
-exec(open('/home/claude/play/lib.py').read())
-start()
-pg.mouse.click(1000,817);pg.wait_for_timeout(600)
-pg.locator('#modal button').filter(has_text='早送').click();pg.wait_for_timeout(1500)
-print(txt('#eraTxt').replace('\n',' ')); shot('ext1'); print(modal()[:600])
-pg.locator('#modal [data-act=adopt]').first.click();pg.wait_for_timeout(1200);shot('ext2')
-print(txt('#me'))
-pg.get_by_role('button',name='×32').click();pg.wait_for_timeout(4000);print(txt('#eraTxt').replace('\n',' '),modal()[:100])

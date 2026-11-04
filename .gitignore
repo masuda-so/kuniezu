@@ -2,3 +2,19 @@
 __pycache__/
 *.pyc
 node_modules/
+# 取得した元データ（再配布しない入力。生成物だけを game/ に置く）
+.cache/
+# 地図の配信物（正本 game/map_data と差分の入力 game/map/edits/*.json から node tools/map/build-map.cjs で生成。コミットしない）
+/game/map/provinces/
+/game/map/provinces-4/
+/game/map/provinces-8/
+/game/map/edges-1/
+/game/map/edges-4/
+/game/map/edges-8/
+/game/map/edges.json
+/game/map/manifest.json
+/game/map/versions.json
+/game/map/rivers-lines.json
+/game/map/relief.json
+/game/map/relief-cache/
+/game/map/edits/compiled/

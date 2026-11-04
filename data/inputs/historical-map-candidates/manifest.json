@@ -1,0 +1,137 @@
+{
+  "checked": "2026-11-02",
+  "files": [
+    {
+      "file": "JAPAN_TOKUGAWA_GIS_README.txt",
+      "sha256": "3f603437edfa665936d5db0dcd95d5df7812c2ad0ccb0785ecaeb4b79272f001",
+      "url": "https://dataverse.harvard.edu/api/access/datafile/3004362",
+      "kind": "license-and-service-reference",
+      "runtime": false
+    },
+    {
+      "file": "archives-secondary-use.md",
+      "sha256": "b63c26f6a1bd9923ec3ba2cb8b3e318f4d02d7a2a0df2e610a0a1849feb2222a",
+      "url": "https://www.digital.archives.go.jp/secondary-use",
+      "kind": "license-and-service-reference",
+      "runtime": false,
+      "originalFile": "archives-secondary-use.html",
+      "originalSha256": "ad98ef4acd3ed228d2832547bad76df9215c135c601e50fa151136a84ffcdd1e",
+      "rawArchive": "../../source-archives/html/historical-map-candidates/archives-secondary-use.html.gz",
+      "rawArchiveSha256": "1a5744f55652c9ee92af0798feba0b8df98e15eb2a7854f3bc771a9812fa0b82"
+    },
+    {
+      "file": "codh-geoshape.md",
+      "sha256": "20c2e5b3bf8ceb204cde2152dbc26aadfdc745cf4b11d20e5515152842eef06a",
+      "url": "https://geoshape.ex.nii.ac.jp/city/index.html.ja",
+      "kind": "license-and-service-reference",
+      "runtime": false,
+      "originalFile": "codh-geoshape.html",
+      "originalSha256": "9ec380de4a8e0fb7bb545c467172e2fb60b0394043005a1a5d7e96e62db5ad27",
+      "rawArchive": "../../source-archives/html/historical-map-candidates/codh-geoshape.html.gz",
+      "rawArchiveSha256": "8634d6241c6fefc4fc1fc9e2a4ec786fd0c9f6621972f756fe258f040e9a1c9f"
+    },
+    {
+      "file": "harvard-search.json",
+      "sha256": "498c1681769fab17244ddd74e47b166f92a0d54c58b8f4ba2a1adfc0e536ae34",
+      "url": "https://dataverse.harvard.edu/api/search?q=*&subtree=japan_hgis&type=dataset&per_page=100",
+      "kind": "license-and-service-reference",
+      "runtime": false
+    },
+    {
+      "file": "harvard-tokugawa-metadata.json",
+      "sha256": "3d3ccac29d03ff8a2928994c165dc6b67d1ebfc7592437c8aeecf0efa1dc0bc5",
+      "url": "https://dataverse.harvard.edu/api/datasets/:persistentId/?persistentId=doi:10.7910/DVN/2CVTR0",
+      "kind": "license-and-service-reference",
+      "runtime": false
+    },
+    {
+      "file": "naro-habs-faq.md",
+      "sha256": "8bb1c82cf7e75910dcf63108000b91027fb670a3c6ba3c47c8f13d6952f7d26c",
+      "url": "https://habs.rad.naro.go.jp/habs_faq.html",
+      "kind": "license-and-service-reference",
+      "runtime": false,
+      "originalFile": "naro-habs-faq.html",
+      "originalSha256": "9d0ae5d5f0004bc84b5b5236b3fc60cac0b8dd993d2b09bdb3754cd69b3042e5",
+      "rawArchive": "../../source-archives/html/historical-map-candidates/naro-habs-faq.html.gz",
+      "rawArchiveSha256": "88d5aa3092d39ab1c493866d55a73ecaa5a770cabe6d425b7768285581c6190c"
+    },
+    {
+      "file": "naro-habs.kml",
+      "sha256": "a085c401774217cdea5ff05c1de7e6052c436b53b3567b82c5747803bbed53f4",
+      "url": "https://habs.rad.naro.go.jp/kml/habs_cc.kml",
+      "kind": "license-and-service-reference",
+      "runtime": false
+    },
+    {
+      "file": "naro-rapid-root.kml",
+      "sha256": "2c4f894b7c71f16c006e544c980e72cf30e76ceff74a705474273c1fe7f5d1a2",
+      "url": "https://habs.rad.naro.go.jp/rapid16/doc8_16.kml",
+      "kind": "license-and-service-reference",
+      "runtime": false
+    },
+    {
+      "file": "okayama-reuse.md",
+      "sha256": "61ab3fd01d73696919b75e0755a110c10bd842b253aeb0cb6e7ad5e0afb925a9",
+      "url": "https://www.lib.okayama-u.ac.jp/collections/reuse.html",
+      "kind": "license-and-service-reference",
+      "runtime": false,
+      "originalFile": "okayama-reuse.html",
+      "originalSha256": "0122406a77a0b5fbab485a0267c75675626c98dfe935b5f3d03b2a7ff091680b",
+      "rawArchive": "../../source-archives/html/historical-map-candidates/okayama-reuse.html.gz",
+      "rawArchiveSha256": "08b00a71bffcc910ff04cf2e2d8e03f1eb116875ecad996da4f140a89f0e8283"
+    },
+    {
+      "file": "tokugawa-inspection.json",
+      "sha256": "762f45dbac97d81d269d8de83b6c166ffbc335272e15a5609695e3f37bd7ef7d",
+      "url": null,
+      "kind": "derived-inspection",
+      "runtime": false
+    },
+    {
+      "file": "tokugawa-kuni-readme.txt",
+      "sha256": "4274d492fb12cba76263d088f9840e41d71681c201e70abd52600d26e0048c85",
+      "url": null,
+      "kind": "license-and-service-reference",
+      "runtime": false
+    },
+    {
+      "file": "tokugawa-kuni.prj",
+      "sha256": "98aaf3d1c0ecadf1a424a4536de261c3daf4e373697cb86c40c43b989daf52eb",
+      "url": null,
+      "kind": "license-and-service-reference",
+      "runtime": false
+    }
+  ],
+  "decisions": [
+    {
+      "id": "japanTokugawa",
+      "status": "reference-only",
+      "reason": "配布APIはCC0、READMEは非商用。解消するまでは形状を実行時配布しない。"
+    },
+    {
+      "id": "naroRapid",
+      "status": "comparison-admissible",
+      "period": [
+        1880,
+        1886
+      ],
+      "license": "CC-BY-2.1-JP",
+      "attribution": "農研機構農業環境研究部門"
+    },
+    {
+      "id": "archivesKuniezu",
+      "status": "registration-admissible",
+      "license": "提供元二次利用規定。目録CC0、解説CC-BY-4.0、画像は自由二次利用の説明を個別保持。"
+    },
+    {
+      "id": "okayamaT1_5",
+      "status": "registration-admissible",
+      "period": [
+        1596,
+        1615
+      ],
+      "datePrecision": "inferred-period",
+      "license": "PD mark at item catalogue"
+    }
+  ]
+}

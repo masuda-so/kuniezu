@@ -1,0 +1,22 @@
+{
+  "id": "person:aki-kunitora",
+  "name": "安芸国虎",
+  "gameNames": [
+    "安芸国虎"
+  ],
+  "authorityIds": [
+    "wikidata:Q10176364"
+  ],
+  "identityBasis": {
+    "scope": "既存の出典付き城施設命題の対象人物を登録。入居・攻撃への関与と城主・領有・通年所在を混同しない。",
+    "claimIds": [
+      "aki-1569-defeat"
+    ]
+  },
+  "authorityEvidence": {
+    "scope": "person-identity",
+    "wikidataRevision": 2438642826,
+    "snapshot": "data/research/source-notes/castle-linked-person-authority-adoption.json",
+    "basis": "安芸市年表および高知県教委の安芸国虎墓の解説にある、1569年に長宗我部元親との戦いに敗れた土佐の安芸国虎を照合。安芸氏一族一般の記述だけでは個人同定しない。"
+  }
+}

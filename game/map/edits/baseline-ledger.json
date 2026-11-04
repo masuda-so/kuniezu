@@ -1,0 +1,224 @@
+{
+  "baselineCommit": "liaodong-1560-source-v1",
+  "source": "game/map_data（provinces.png・definition.csv・default.map・projection.json）",
+  "sourceSha256": "cb4674e4cb9a80bbdba08b3827e1b70438bf7cb96bbbb3250c125af2492e19fc",
+  "note": "1560年正本。児島湾補正を保持し、遼東の軍政域参考図を未割当/旧明だけへ適用。1573〜1605寛甸と1584年以後宇喜多堤は年代差分。軍政域参考線を精密国境・実効支配・軍の所属には転用しない。",
+  "applied": [
+    {
+      "id": "castle-regions",
+      "layer": "provinces",
+      "input": [
+        "castle-regions-data.js",
+        "castle-regions.js"
+      ]
+    },
+    {
+      "id": "bizen-north-shore",
+      "layer": "provinces",
+      "input": [
+        "bizen-north-shore.js"
+      ]
+    },
+    {
+      "id": "hayashima-upland",
+      "layer": "provinces",
+      "input": [
+        "applied/hayashima-upland.json"
+      ]
+    },
+    {
+      "id": "shiunji-legacy-mask",
+      "layer": "provinces",
+      "input": [
+        "applied/shiunji-legacy-mask.json"
+      ]
+    },
+    {
+      "id": "kojima-bay-reclaimed-sea",
+      "layer": "provinces",
+      "input": [
+        "applied/kojima-bay-reclaimed-sea.json"
+      ],
+      "pixels": 12643,
+      "inputSha256": "2e391ef002e8163a595ca580cd1bbf8b563dfdd91d20ef9848bbaaea6be84a6a",
+      "sourceSha256": "46ac04975ed4291bd7f1ead55f985818b5daf91f0f84430c8064e909b09bd7a4"
+    },
+    {
+      "id": "kojima-bay-restored-land",
+      "layer": "provinces",
+      "input": [
+        "applied/kojima-bay-restored-land.json"
+      ],
+      "pixels": 10663,
+      "inputSha256": "fe9cde5b41dad42e7364d2dd5e0d1ec11e79496adb6782fea5250bc1e8038bf7",
+      "sourceSha256": "46ac04975ed4291bd7f1ead55f985818b5daf91f0f84430c8064e909b09bd7a4"
+    },
+    {
+      "id": "mizushima-east-post-period-fill",
+      "layer": "provinces",
+      "input": [
+        "applied/mizushima-east-post-period-fill.json"
+      ],
+      "pixels": 216,
+      "inputSha256": "a950ff2b22cd3dc02aaa64c9be3d792bdcab2392cfddc72a7e1aa98f02f38aae",
+      "sourceSha256": "46ac04975ed4291bd7f1ead55f985818b5daf91f0f84430c8064e909b09bd7a4"
+    },
+    {
+      "id": "mizushima-post-period-fill",
+      "layer": "provinces",
+      "input": [
+        "applied/mizushima-post-period-fill.json"
+      ],
+      "pixels": 644,
+      "inputSha256": "c7c807287dbdd4a4970387db4b9fa4a1f567128723ca72deba96d89a2bc9cd62",
+      "sourceSha256": "46ac04975ed4291bd7f1ead55f985818b5daf91f0f84430c8064e909b09bd7a4"
+    },
+    {
+      "id": "mizushima-south-post-period-fill",
+      "layer": "provinces",
+      "input": [
+        "applied/mizushima-south-post-period-fill.json"
+      ],
+      "pixels": 140,
+      "inputSha256": "eedd0fe2e45ee173849ce5414066a3413f88da99a31f0d21460d4229333b3cd2",
+      "sourceSha256": "46ac04975ed4291bd7f1ead55f985818b5daf91f0f84430c8064e909b09bd7a4"
+    },
+    {
+      "id": "liaodong-1560-reference",
+      "layer": "provinces",
+      "input": [
+        "applied/liaodong-1560-reference.json"
+      ],
+      "sourceSha256": "9e27144aa9c953299567fd3719d3ad413ea1f496ad03a097e1e25b2c6eb1a03d",
+      "pixels": 3928357
+    }
+  ],
+  "pending": [
+    {
+      "id": "japan-rivers-osm",
+      "layer": "rivers",
+      "reason": "領域画像の生成対象外。現代比較線として保持"
+    }
+  ],
+  "controlPixels": [
+    {
+      "point": [
+        133.9,
+        34.64
+      ],
+      "pixel": [
+        10049,
+        12945
+      ],
+      "key": "castle:tenjin"
+    },
+    {
+      "point": [
+        133.81842,
+        34.599915
+      ],
+      "pixel": [
+        9975,
+        12990
+      ],
+      "key": "castle:bmatsuyama"
+    }
+  ],
+  "provincesSha256": "b046fd2334f79080772ea8a65df1ae04ce890fd474bd326dea35a4e546b842c8",
+  "sourceFiles": {
+    "provinces": "b046fd2334f79080772ea8a65df1ae04ce890fd474bd326dea35a4e546b842c8",
+    "definition": "e10e24cb314157770715ede8a1290d2bca807692eec8d9f269283277dd122801",
+    "defaultMap": "36b071aab05850ce318f80767cf9307dd2bc23f144d89c04fbface39529b4d1b",
+    "projection": "04bd30868c1f5a9420b308d318d606a95d1158c23a8e6f18b3f7ecfe6b01466a"
+  },
+  "baselineDate": [
+    1560,
+    1,
+    1
+  ],
+  "migration": {
+    "tool": "tools/map/bake-liaodong-baseline.cjs",
+    "source": "data/research/liaodong-reference/liaodong-1560.geojson",
+    "sourceGeojsonSha256": "9758e4001197f46f19d8ae441b7b37718ca0cacad7f37b7d5d4f72189ee9a494",
+    "sourceSha256Before": "46ac04975ed4291bd7f1ead55f985818b5daf91f0f84430c8064e909b09bd7a4",
+    "sourceSha256After": "9e27144aa9c953299567fd3719d3ad413ea1f496ad03a097e1e25b2c6eb1a03d",
+    "sourceFilesBefore": {
+      "provinces": "2b2fe511a86fb8bdfa6b8d671a2883304b21f1499da3a7544f94128922c7f1a1",
+      "definition": "e10e24cb314157770715ede8a1290d2bca807692eec8d9f269283277dd122801",
+      "defaultMap": "36b071aab05850ce318f80767cf9307dd2bc23f144d89c04fbface39529b4d1b",
+      "projection": "04bd30868c1f5a9420b308d318d606a95d1158c23a8e6f18b3f7ecfe6b01466a"
+    },
+    "sourceFilesAfter": {
+      "provinces": "b046fd2334f79080772ea8a65df1ae04ce890fd474bd326dea35a4e546b842c8",
+      "definition": "e10e24cb314157770715ede8a1290d2bca807692eec8d9f269283277dd122801",
+      "defaultMap": "36b071aab05850ce318f80767cf9307dd2bc23f144d89c04fbface39529b4d1b",
+      "projection": "04bd30868c1f5a9420b308d318d606a95d1158c23a8e6f18b3f7ecfe6b01466a"
+    },
+    "bounds": [
+      0,
+      3686,
+      2249,
+      8093
+    ],
+    "counts": {
+      "toMing": 3763736,
+      "toUnassigned": 164621,
+      "oldMingInsideCore": 325494,
+      "oldMingInPeriodOnly": 129008,
+      "oldMingOutsideBoth": 35613,
+      "periodPixels": 217799,
+      "protectedInsideCore": 987328,
+      "protectedInsidePeriod": 1651
+    },
+    "preview": {
+      "sampleStride": 8,
+      "width": 282,
+      "height": 551,
+      "colours": {
+        "ming": "#ae4d30",
+        "unassigned": "#d1ccbb",
+        "castleOrOtherLand": "#728e5b",
+        "sea": "#6da1bc"
+      }
+    },
+    "historicalAccuracy": "100m格子の分解能を歴史境界の精度と呼ばない。辺牆と領有・実効支配の完全一致は仮定しない。",
+    "periodPrecision": "1573は築堡開始年、1603〜1605は撤収過程。1月1日の一斉領有変更や1605年末までの均一統治を意味しない。"
+  },
+  "previousBaselines": [
+    {
+      "baselineCommit": "3ab7e5f2175760f5e7d5d5e134424ced9d5e742b",
+      "sourceSha256": "9b949f63027df04ce0f12ce36294dd1ac338e057693952b752eff9627680b42f",
+      "baseProvincesSha256": "01c67252315fa0afbf75b87623bca927225860102faa8c20fa98b04759d2264e"
+    },
+    {
+      "baselineCommit": "kojima-1560-source-v1",
+      "sourceSha256": "46ac04975ed4291bd7f1ead55f985818b5daf91f0f84430c8064e909b09bd7a4"
+    }
+  ],
+  "migrations": [
+    {
+      "tool": "tools/map/bake-kojima-baseline.cjs",
+      "fromVersion": "15600101-15840101",
+      "fromSourceSha256": "9b949f63027df04ce0f12ce36294dd1ac338e057693952b752eff9627680b42f",
+      "sourceFilesBefore": {
+        "provinces": "9f6f03ed2628dc7ffb406c69fbe4dfb9f00daa0d2c266474541a682e83ae2dbf",
+        "definition": "e10e24cb314157770715ede8a1290d2bca807692eec8d9f269283277dd122801",
+        "defaultMap": "36b071aab05850ce318f80767cf9307dd2bc23f144d89c04fbface39529b4d1b",
+        "projection": "04bd30868c1f5a9420b308d318d606a95d1158c23a8e6f18b3f7ecfe6b01466a"
+      },
+      "pixels": 24306,
+      "deltas": {
+        "sea": 2980,
+        "castle:tenjin": -7635,
+        "castle:bmatsuyama": 4658,
+        "castle:sogo": -3
+      }
+    }
+  ],
+  "previousSourceSha256": [
+    "9e27144aa9c953299567fd3719d3ad413ea1f496ad03a097e1e25b2c6eb1a03d",
+    "00715e4aece451dcc8a92c32b11dd2da06fa7411abd17eb359979faa210e0ab0"
+  ],
+  "regrid2026_11_04": "範囲の作り直し（tools/map/regrid-extent-2026-11-04.cjs）：北の陸の無い帯を792行削り、東に2,644列を足して右上の角を択捉島にした。千島と北端の帯の陸は Copernicus DEM から足した未割当の陸。既存の画素の区画は変えていない。年代別の差分の型紙の窓は行を792ずらした。",
+  "assign2026_11_04": "勢力の割り当て（tools/map/assign-frontier-2026-11-04.cjs）：未割当の陸のうち満州・沿海州を建州女真・海西女真・東方の女真諸部・蒙古諸部、北海道・千島を蝦夷地（アイヌ）に分け、蠣崎家の区画を和人地（上ノ国天ノ川〜知内）に縮めた。definition.csv に id 171〜175 を追加。寛甸の差分は元が建州女真の画素に当てる。"
+}

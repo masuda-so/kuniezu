@@ -1,0 +1,38 @@
+const assert=require('node:assert/strict'),{createHistoryIndex,queryHistory,indexSummary}=require('../research/history-index.cjs');
+const reference={recordType:'verified-historical-claim',status:'verified-in-specified-scope'},observation={recordType:'sourced-location-observation',status:'verified-in-specified-scope'};
+const claim={...reference,id:'long',entity:'road:test',validYears:[1,10000]},person={id:'person:stable',name:'人物甲',gameNames:['人物甲','旧名甲'],authorityIds:['wikidata:Q123']},location={...observation,id:'location:move',person:person.id,place:'place:castle',time:{kind:'year-window',year:1592,calendar:'CE-year',precision:'year'}},aliasClaim={...reference,id:'person',entity:'person:人物甲',validYears:[1592,1592]},interval={...observation,id:'location:base',person:person.id,place:'place:castle',time:{kind:'year-interval',from:1590,untilExclusive:1592}};
+const idx=createHistoryIndex({claims:[claim,aliasClaim],locations:[location,interval],people:[person],places:[{id:'place:castle',name:'城甲',geometryStatus:'site-representative',geometry:{type:'Point',coordinates:[135,35]}}]}),snapshot=JSON.stringify([claim,location]);
+assert.deepEqual(indexSummary(idx),{records:4,entities:3,temporalReferences:4,entityReferences:6,yearSnapshots:0});
+assert.equal(queryHistory(idx,{year:10000,entity:'road:test'}).length,1);assert.equal(queryHistory(idx,{year:10001,entity:'road:test'}).length,0);
+const byName=queryHistory(idx,{entity:'人物甲'});assert.equal(byName.length,3);assert.deepEqual(queryHistory(idx,{entity:'旧名甲'}).map(r=>r.id),byName.map(r=>r.id));assert(byName.every(r=>r.entities.includes(person.id)));
+const horizontal=queryHistory(idx,{year:1592}),vertical=queryHistory(idx,{entity:person.id}),intersection=queryHistory(idx,{year:1592,entity:person.id});assert.deepEqual(intersection.map(r=>r.id),horizontal.filter(r=>vertical.includes(r)).map(r=>r.id));assert.equal(intersection.length,2);assert(!intersection.some(r=>r.id===interval.id));
+assert.strictEqual(queryHistory(idx,{entity:'城甲'}).find(r=>r.id===location.id).record,location);assert.equal(JSON.stringify([claim,location]),snapshot);assert.equal(queryHistory(idx,{entity:'absent'}).length,0);assert.throws(()=>queryHistory(idx,{year:NaN}));assert.throws(()=>createHistoryIndex({claims:[claim,claim]}));assert.throws(()=>createHistoryIndex({claims:[{...claim,runId:'branch'}]}));assert.throws(()=>createHistoryIndex({locations:[{...location,estimated:true}]}));
+assert.deepEqual(queryHistory(idx,{year:1592,entity:'wikidata:Q123'}),intersection);
+assert.throws(()=>createHistoryIndex({people:[person,{...person,id:'person:other'}]}),/Duplicate authority ID/);
+assert.deepEqual(queryHistory(idx,{fromYear:1592,toYear:1592,entity:person.id}),intersection);
+assert.equal(queryHistory(idx,{fromYear:1590,toYear:1591,entity:person.id}).length,1);
+assert.equal(queryHistory(idx,{fromYear:10001}).length,0);
+assert.equal(queryHistory(idx,{toYear:0}).length,0);
+assert.throws(()=>queryHistory(idx,{fromYear:1600,toYear:1599}));
+assert.throws(()=>queryHistory(idx,{year:1600,fromYear:1599}));
+const spatial=queryHistory(idx,{bbox:[134,34,136,36],fromYear:1592,toYear:1592});
+assert.deepEqual(spatial.map(r=>r.id),[location.id]);
+assert.equal(queryHistory(idx,{bbox:[130,30,131,31]}).length,0);
+assert.throws(()=>queryHistory(idx,{bbox:[136,34,134,36]}));
+assert.throws(()=>queryHistory(idx,{bbox:[134,34,136]}));
+// A document date is exposed without replacing claim applicability or duplicating its body.
+const order={...reference,id:'order',entity:'node:agata',linkedEntities:['place:agata'],validYears:[1613,1613],eventTime:{kind:'dated-event',date:[1613,12,15],calendar:'Japanese-lunisolar',leapMonth:false,precision:'day'}};
+const orderIndex=createHistoryIndex({claims:[order],places:[{id:'place:agata',name:'縣城',aliases:['県城']}]});
+const byCastle=queryHistory(orderIndex,{entity:'県城',year:1613});
+assert.equal(byCastle.length,1);assert.strictEqual(byCastle[0].record,order);
+assert.strictEqual(byCastle[0].eventTime,order.eventTime);
+assert.equal(byCastle[0].scope,'claim-applicability');
+assert.strictEqual(queryHistory(orderIndex,{entity:'node:agata'})[0],byCastle[0]);
+assert.equal(orderIndex.records.size,1);
+assert.throws(()=>createHistoryIndex({claims:[{...order,linkedEntities:['invalid']}]}));
+console.log('PASS: time/entity views share records; inclusive/exclusive boundaries, aliases, intersections, unknown entities; no annual snapshots for 10,000-year span');
+
+const periodClaim={...reference,id:'uncertain-period',entity:'place:tonokori',validYears:[1603,1615],eventTime:{kind:'described-period',label:'江戸時代初頭',indexYears:[1603,1615],boundsAreHistoricalStartEnd:false}};
+const periodIndex=createHistoryIndex({claims:[periodClaim]});
+for(const year of [1603,1610,1615]){const result=queryHistory(periodIndex,{year});assert.equal(result.length,1);assert.equal(result[0].scope,'described-period-candidate');assert.equal(result[0].eventTime.boundsAreHistoricalStartEnd,false);}
+assert.equal(queryHistory(periodIndex,{year:1616}).length,0);

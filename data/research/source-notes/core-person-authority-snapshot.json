@@ -1,0 +1,78 @@
+{
+  "scope": "人物同定用の取得項目の抜粋。所在の観測は別記録。",
+  "retrievedAt": "2026-11-04T02:29:02.204580+00:00",
+  "requestUrl": "https://www.wikidata.org/w/api.php?action=wbgetentities&sites=jawiki&titles=%E7%B9%94%E7%94%B0%E4%BF%A1%E9%95%B7%7C%E5%BE%B3%E5%B7%9D%E5%AE%B6%E5%BA%B7%7C%E8%B1%8A%E8%87%A3%E7%A7%80%E5%90%89%7C%E6%98%8E%E6%99%BA%E5%85%89%E7%A7%80&props=info%7Clabels%7Cdescriptions%7Cclaims&languages=ja&format=json&maxlag=5",
+  "responseSha256": "a610906ac9b256916c4d8e4f35fc5e1dab30b1b713bb50ce0f5371981cec76f8",
+  "records": [
+    {
+      "wikidataId": "Q171411",
+      "wikidataRevision": 2562777300,
+      "label": "織田信長",
+      "description": "日本の戦国時代から安土桃山時代にかけての武将・大名・公卿",
+      "ndlId": "00624313",
+      "ndlIdentity": {
+        "uri": "http://id.ndl.go.jp/auth/entity/00624313",
+        "type": {
+          "uri": "http://xmlns.com/foaf/0.1/Person"
+        },
+        "name": "織田信長",
+        "dateOfBirth": "1534",
+        "dateOfDeath": "1582"
+      }
+    },
+    {
+      "wikidataId": "Q171977",
+      "wikidataRevision": 2562777293,
+      "label": "徳川家康",
+      "description": "日本の戦国時代から江戸時代にかけての武将・大名・公卿、江戸幕府初代将軍",
+      "ndlId": "00272267",
+      "ndlIdentity": {
+        "uri": "http://id.ndl.go.jp/auth/entity/00272267",
+        "type": {
+          "uri": "http://xmlns.com/foaf/0.1/Person"
+        },
+        "name": "徳川家康",
+        "dateOfBirth": "1542",
+        "dateOfDeath": "1616",
+        "biographicalInformation": [
+          "徳川初代将軍"
+        ]
+      }
+    },
+    {
+      "wikidataId": "Q187550",
+      "wikidataRevision": 2558345900,
+      "label": "豊臣秀吉",
+      "description": "日本の戦国時代から安土桃山時代にかけての武将・大名・公卿、武家関白",
+      "ndlId": "00272338",
+      "ndlIdentity": {
+        "uri": "http://id.ndl.go.jp/auth/entity/00272338",
+        "type": {
+          "uri": "http://xmlns.com/foaf/0.1/Person"
+        },
+        "name": "豊臣秀吉",
+        "dateOfBirth": "1536",
+        "dateOfDeath": "1598",
+        "biographicalInformation": [
+          "関白"
+        ]
+      }
+    },
+    {
+      "wikidataId": "Q313320",
+      "wikidataRevision": 2560744685,
+      "label": "明智光秀",
+      "description": "日本の武将",
+      "ndlId": "00626567",
+      "ndlIdentity": {
+        "uri": "http://id.ndl.go.jp/auth/entity/00626567",
+        "type": {
+          "uri": "http://xmlns.com/foaf/0.1/Person"
+        },
+        "name": "明智光秀",
+        "dateOfBirth": "1528",
+        "dateOfDeath": "1582"
+      }
+    }
+  ]
+}

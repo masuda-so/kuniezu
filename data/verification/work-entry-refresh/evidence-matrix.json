@@ -1,0 +1,267 @@
+{
+  "scope": "Existing evidence and current source review only; no tests or simulation run. M03 current rendering conflicts identified by source review and git blame. Root acceptance required, no task status changed.",
+  "baseHead": "a557eb92c2d962c3410014257ce70d0a18a27545",
+  "rows": [
+    {
+      "requestId": "M03",
+      "conditionNumber": 1,
+      "condition": "同じ行軍だけ遠景で代表隊を表示",
+      "status": "current-code-conflicts-with-acceptance",
+      "implementationBindings": [
+        "game/convoys.js:G.marchGroupKey,G.convoyLayout",
+        "game/ui.js:drawArmies"
+      ],
+      "checkSources": [
+        "tools/checks/atlas-regressions.cjs:35–37"
+      ],
+      "existingEvidence": [
+        "docs/reports/INFRASTRUCTURE_AND_CONTINUITY_REVIEW.md",
+        "data/verification/counter-refine/screens/map-far.png"
+      ],
+      "supportedObservation": "convoyLayout単体と既存回帰検査は同じ行軍だけを代表化する。しかし現行ui.js:534–538は同command/26px以内だけで別目的・別経路も再統合するため、画面側の完了条件を満たさない。",
+      "acceptanceLimit": "4fd8072d導入の後処理を修正してから対象限定で受入。atlas-regressionsのconvoyLayout単体合格だけで完了にしない。",
+      "missingPaths": [],
+      "currentConflict": {
+        "introducedBy": "4fd8072d",
+        "path": "game/ui.js",
+        "lines": [
+          532,
+          545
+        ],
+        "description": "convoyLayout後、同commandかつ26px以内なら目的/経路/倍率を問わず再統合。違うcommandは最大22pxの横ずらしと引出線。"
+      }
+    },
+    {
+      "requestId": "M03",
+      "conditionNumber": 2,
+      "condition": "拡大時に街道上の前後で個別表示",
+      "status": "current-code-conflicts-with-acceptance",
+      "implementationBindings": [
+        "game/convoys.js:G.convoyLayout",
+        "game/movement-display.js:G.offsetVisualPoint"
+      ],
+      "checkSources": [
+        "tools/checks/atlas-regressions.cjs:36,40"
+      ],
+      "existingEvidence": [
+        "docs/reports/MARCH_CLOCK_REVIEW.md",
+        "data/verification/counter-refine/screens/map-near.png",
+        "data/verification/counter-refine/screens/map-mid.png"
+      ],
+      "supportedObservation": "convoyLayoutは近景を道沿いの前後に分け、回帰検査が両端の個別化を確認する。一方、画面後処理は倍率を問わず同陣営の近接隊を再統合するため、実画面の個別性を保証できない。",
+      "acceptanceLimit": "近景でも別経路隊が再統合される条件を除き、同道の前後分離と別道の独立表示を限定確認する。旧画像の合格を現行の画面後処理へ流用しない。",
+      "missingPaths": [],
+      "currentConflict": {
+        "introducedBy": "4fd8072d",
+        "path": "game/ui.js",
+        "lines": [
+          532,
+          545
+        ],
+        "description": "convoyLayout後、同commandかつ26px以内なら目的/経路/倍率を問わず再統合。違うcommandは最大22pxの横ずらしと引出線。"
+      }
+    },
+    {
+      "requestId": "M03",
+      "conditionNumber": 3,
+      "condition": "別の位置へ行軍しているような横ずらしをしない",
+      "status": "current-code-conflicts-with-acceptance",
+      "implementationBindings": [
+        "game/convoys.js:G.convoyLayout",
+        "game/ui.js:armyGroups,anchorX,anchorY"
+      ],
+      "checkSources": [
+        "tools/checks/atlas-regressions.cjs:35–40",
+        "tools/checks/usability-browser.cjs:co-located groups"
+      ],
+      "existingEvidence": [
+        "docs/reports/INFRASTRUCTURE_AND_CONTINUITY_REVIEW.md",
+        "data/verification/usability/usability.json",
+        "data/verification/usability/overlap-selection.png"
+      ],
+      "supportedObservation": "既存usability.jsonは異陣営3隊の同地点座標不変を記録している。しかし現行ui.js:539–540は異陣営の近接駒を最大22px押し離すため、現在の条件とは矛盾する。",
+      "acceptanceLimit": "4fd8072dの横ずらし/引出線を修正対象としてrootへ連絡済み。ゲームコードは本候補では変更せず、過去の証拠だけでcompleteにしない。",
+      "missingPaths": [],
+      "currentConflict": {
+        "introducedBy": "4fd8072d",
+        "path": "game/ui.js",
+        "lines": [
+          532,
+          545
+        ],
+        "description": "convoyLayout後、同commandかつ26px以内なら目的/経路/倍率を問わず再統合。違うcommandは最大22pxの横ずらしと引出線。"
+      }
+    },
+    {
+      "requestId": "M03",
+      "conditionNumber": 4,
+      "condition": "画面外の軍・兵数・家紋・カーソル詳細を実画面確認",
+      "status": "awaiting-root-acceptance",
+      "implementationBindings": [
+        "game/ui.js:renderArmyEdges,army-edge,hitArmy",
+        "game/kamon.js:G.armyIdentity"
+      ],
+      "checkSources": [
+        "tools/checks/visual-repair.cjs",
+        "tools/checks/infrastructure-browser.cjs",
+        "tools/checks/march-clock-browser.cjs"
+      ],
+      "existingEvidence": [
+        "docs/reports/VISUAL_REPAIR.md",
+        "docs/reports/INFRASTRUCTURE_AND_CONTINUITY_REVIEW.md",
+        "docs/reports/MARCH_CLOCK_REVIEW.md",
+        "data/verification/visual-repair/armies-outside.png",
+        "data/verification/infrastructure/army-hover.png",
+        "data/verification/march-clock-final/counter-mobile.png",
+        "data/verification/march-clock-final/mitsuhide-counter.png"
+      ],
+      "supportedObservation": "画面外軍は方向ボタンから実位置へ移動。兵数・家紋・カーソル詳細は実画面保存があり、明智の紋/陣営と狭幅表示の検査を記録。",
+      "acceptanceLimit": "複数の時点の証拠を組み合わせる。直近の駒意匠はcounter-refine、合戦端切れはbattle-displayに別証拠。現行全幅を新たに一括通過したと書かない。",
+      "missingPaths": []
+    },
+    {
+      "requestId": "U02",
+      "conditionNumber": 1,
+      "condition": "西暦と和暦・速度・家メニューを狭幅で整理",
+      "status": "awaiting-root-acceptance",
+      "implementationBindings": [
+        "game/ui.js:syncHUD,renderTop,compactSpeed",
+        "game/theme-washi.css"
+      ],
+      "checkSources": [
+        "tools/checks/visual-repair.cjs",
+        "tools/checks/completion-browser.cjs",
+        "tools/checks/infrastructure-browser.cjs"
+      ],
+      "existingEvidence": [
+        "docs/reports/VISUAL_REPAIR.md",
+        "docs/reports/ATLAS_REPAIR.md",
+        "data/verification/atlas-repair/hud-320.png",
+        "data/verification/atlas-repair/menu.png",
+        "data/verification/infrastructure/lord-menu-mobile.png"
+      ],
+      "supportedObservation": "和暦・西暦を上部で併記し、820px以下は家と速度操作を日付枠へ配置。旧320/390/820検査と390当主肖像/メニューの実画面を保存。",
+      "acceptanceLimit": "最新HUDの顔読込修正はb977dc0/portrait-loading。古い画面にある外交斜線・旧駒意匠を現行仕様と扱わない。",
+      "missingPaths": []
+    },
+    {
+      "requestId": "U02",
+      "conditionNumber": 2,
+      "condition": "東北を含む全勢力を直接選択可能にする",
+      "status": "awaiting-root-acceptance",
+      "implementationBindings": [
+        "game/ui.js:renderPick,pickRegion,PICK_REGIONS"
+      ],
+      "checkSources": [
+        "tools/checks/usability-browser.cjs"
+      ],
+      "existingEvidence": [
+        "docs/reports/USABILITY_AND_GEOGRAPHY_REVIEW.md",
+        "data/verification/usability/usability.json",
+        "data/verification/usability/northeast-390.png",
+        "data/verification/usability/northeast-1400.png",
+        "data/verification/portrait-loading/pick.png"
+      ],
+      "supportedObservation": "現行renderPickは全alive勢力を母集団にし、上位15家制限なし。既存実画面ログは7シナリオ×390/1400の東北全勢力を実クリックして選択IDを確認し、例外0。",
+      "acceptanceLimit": "ログは東北の14ケース。全地域の全勢力を実クリックした証拠ではない。全件条件には現行allリストと成立前候補の表示経路のコード照合、必要なら地域を限定した追加操作をrootが判断する。",
+      "missingPaths": []
+    },
+    {
+      "requestId": "U02",
+      "conditionNumber": 3,
+      "condition": "制作側の未照合文言と不要UIをプレイ画面から整理",
+      "status": "awaiting-root-acceptance",
+      "implementationBindings": [
+        "game/player-copy.js:G.playerText,G.sitePresentation",
+        "game/ui.js:menu,scene markup"
+      ],
+      "checkSources": [
+        "tools/checks/deployments-browser.cjs"
+      ],
+      "existingEvidence": [
+        "docs/reports/INFRASTRUCTURE_AND_CONTINUITY_REVIEW.md",
+        "docs/reports/USABILITY_AND_GEOGRAPHY_REVIEW.md",
+        "data/verification/usability/sekigahara-390.png",
+        "data/verification/usability/compact-3.png",
+        "data/verification/borders-family/historical-observer-choices.png"
+      ],
+      "supportedObservation": "制作向け未照合文を一般説明から分離し、不要な常設参加者索引・百分率等を整理。会津征伐は実際の出兵と西上へ転換した説明へ訂正。",
+      "acceptanceLimit": "出典欄の書誌不足表示と一般説明の開発メモを区別する。確認したUI領域の検査であり、全文章を新たに読了したとはしない。",
+      "missingPaths": []
+    },
+    {
+      "requestId": "U02",
+      "conditionNumber": 4,
+      "condition": "タイトル・ズームバー・保存復元を実画面確認",
+      "status": "awaiting-root-acceptance",
+      "implementationBindings": [
+        "game/index.html:title",
+        "game/ui.js:mapZoomRange,zoom-in,zoom-out,zoom-fit,doSave"
+      ],
+      "checkSources": [
+        "tools/checks/completion-browser.cjs",
+        "tools/checks/usability-browser.cjs",
+        "tools/checks/movement-save-position.cjs"
+      ],
+      "existingEvidence": [
+        "docs/reports/HISTORY_FOCUS_REVIEW.md",
+        "docs/reports/ATLAS_REPAIR.md",
+        "docs/reports/USABILITY_AND_GEOGRAPHY_REVIEW.md",
+        "docs/reports/ALIASED_ARRIVAL_AND_SAVE_REVIEW.md",
+        "data/verification/atlas-repair/title-wide.png",
+        "data/verification/atlas-repair/save-320.png",
+        "data/verification/usability/zoom-390.png",
+        "data/verification/usability/usability.json"
+      ],
+      "supportedObservation": "タイトルをプロジェクト名へ統一。実クリックの拡縮・スライダー・全域復帰、保存/37日後自動保存と復元の既存検証記録あり。日内保存移行はgeometryVersion=22の後続検査を参照。",
+      "acceptanceLimit": "保存の資料は複数の時点に分かれる。旧79合戦の記録を111合戦の新規検査と数えない。今回の作業は証拠整理のみでユーザー保存を触っていない。",
+      "missingPaths": []
+    }
+  ],
+  "sourceSha256": {
+    "data/verification/atlas-repair/hud-320.png": "57594dc02cca9ca1afabd3aa166b1f298021e14be4e983f0c2f024af2d473b94",
+    "data/verification/atlas-repair/menu.png": "1f3725555747044c76633008fdf2e7460b5a8a57f2a48fedf67eaf17e5e23951",
+    "data/verification/atlas-repair/save-320.png": "d8a2907b2722d4329f4b3c34f9b62de9bb40a894346bdfe47bac62c546ce3f5f",
+    "data/verification/atlas-repair/title-wide.png": "9d1ea5e79ecc3292bfd2ee5ccb7e159bb34bde2bf1f568c9245de53cfc853911",
+    "data/verification/borders-family/historical-observer-choices.png": "db26ad25776df0f12719e0e7e07aa759958d525ddfe01a282e48a6c32a933d85",
+    "data/verification/counter-refine/screens/map-far.png": "8ed35f8d2677347d467c10f6ce2acbd7f5f3c117486693c4d6d7a913f110e611",
+    "data/verification/counter-refine/screens/map-mid.png": "6022d5c975134c4b1cf7b8f84c22ea625c617ad88e4504eb9143482a36a2ce60",
+    "data/verification/counter-refine/screens/map-near.png": "2385f55c5e652159dc4ef85a1ac04e81aa1fe304d15ac1f21342ddfa443adea5",
+    "data/verification/infrastructure/army-hover.png": "1ac5699a77586b321bacf8839d19b506b6eb4c670e2bd07541bb7a01cea1680f",
+    "data/verification/infrastructure/lord-menu-mobile.png": "8d34e5e207393081b7c5150cae2d7bc254b07d564480cedcc0af4963417598e7",
+    "data/verification/march-clock-final/counter-mobile.png": "21605fbaefff6402262a3484a54b520a0b9a5f02c5dbae4edf6bf19d951f62f6",
+    "data/verification/march-clock-final/mitsuhide-counter.png": "92eae446f07a18fc438a61083236ac12b09da54b3f5c36706ad3ea083dab2780",
+    "data/verification/portrait-loading/pick.png": "68fee09270399b237cd63f6239187411d915656eb0a4a9c660ecb1279bf836d5",
+    "data/verification/usability/compact-3.png": "a65bf80eb9c32eacbafd9777ba7b633092d40948ad6819ba2a47082d981d790e",
+    "data/verification/usability/northeast-1400.png": "25ef72aa79809c998b1755bfa5139ab28b0472034690aeca7bfd3ad776a5b578",
+    "data/verification/usability/northeast-390.png": "57ff083162074c093d54fa10848508ecaeebfda58f5c2b1678ab3e5e4ccd159c",
+    "data/verification/usability/overlap-selection.png": "a7b3c3a7d60ac3b5210cac031a9944157516fe6d9442db04b87840269583fd7e",
+    "data/verification/usability/sekigahara-390.png": "4ffa1ba5ceb21a7bab4ece0cd26a3bacf7ac842dd0a7088871e7c3d23b66d1c0",
+    "data/verification/usability/usability.json": "6a70cac7a7bd4de4ecfbf8d2381c68271cb0ccba0204b119a4a98b45994b2ccd",
+    "data/verification/usability/zoom-390.png": "311ccd45ab01dc89a7029d7b11cc9eb2234402aec4e5017b430147e931a8331e",
+    "data/verification/visual-repair/armies-outside.png": "5f9859360b841b6cd26e5a0b1c80ec4693bee3c0773d4d3dada35be0f2900241",
+    "docs/reports/ALIASED_ARRIVAL_AND_SAVE_REVIEW.md": "0b847f01c391d7551bd839e46f89d85c3cdbeee5fe0394ad757060c24daa4e7d",
+    "docs/reports/ATLAS_REPAIR.md": "bf5c0cac737df69363b7413f836b1e4bf9c0d3cbde84f497358fddbb5c338875",
+    "docs/reports/HISTORY_FOCUS_REVIEW.md": "4faa622692893f0de05b647c7db50287e9a79098dc0a26c38e9289e56bfc88d1",
+    "docs/reports/INFRASTRUCTURE_AND_CONTINUITY_REVIEW.md": "123a4c8342c00d701011c0459a0cafbc637e660606a825fb3ebb62786fd761fa",
+    "docs/reports/MARCH_CLOCK_REVIEW.md": "b849b4a5584cc19ed09ed4611bfefd2142cb6d53f3d16a6096eb2aba7daa6331",
+    "docs/reports/USABILITY_AND_GEOGRAPHY_REVIEW.md": "19e57e86bb4429a2f31f91e01feea3b127c34fafb8075956547cb31b67eceed3",
+    "docs/reports/VISUAL_REPAIR.md": "859df87e449e48f4bd5e46ee9f23ef54d39ab8bc56db112f0c339c568e667e06",
+    "game/convoys.js": "3c305732bbc94d04e3ffe826dbb74f3195ad775b9ae69ac14b94f8728949e519",
+    "game/index.html": "cf17278e0da6a81b2f3d232df3dc64ebf787167686c024db1d79fef77f373c5d",
+    "game/kamon.js": "573fe83e6fe7b997460f4640774253180fd46f2e807d6b64a32dd244e2db5052",
+    "game/movement-display.js": "8d7819507b5c969d2e902ef3240dd86bcd2e91a5b0acd84d598cf7cf0f6748f7",
+    "game/player-copy.js": "2557e2027d92219fc1250f2b5197d64f5f0a431b026efdd51ad72c89f7c38da2",
+    "game/theme-washi.css": "c7e951f2f1d07f580a1d94fde249e598b6cfe118b2bed9404c14aa5ecb86dd3c",
+    "game/ui.js": "c46e152c6ad2e0124825a7c25def02c03c6e9dfc1282ad00b55bb72ddb821bc0",
+    "tools/checks/atlas-regressions.cjs": "ec1683649349366900101e7494dcae11efe508fe46e421d94f6aa6a0db11c61e",
+    "tools/checks/completion-browser.cjs": "2ee3d6051062c59d6f1ef36c78982cca3ac8e9db67b0cc9c7bcdf025c637b603",
+    "tools/checks/deployments-browser.cjs": "5c9983eea22fc77c69fd60d2b201b958e1c317824db98564129423f36e77f951",
+    "tools/checks/infrastructure-browser.cjs": "ae6cdbb194db89a43510d59906fadb4027cc9ebc25e50b61eb0f2908e535acb5",
+    "tools/checks/march-clock-browser.cjs": "bb04eafeb1974dca19ae22708eef854208ec14197227c93b17aafe6d33703161",
+    "tools/checks/movement-save-position.cjs": "24d3268af3df93282c22b0775291eef7927e6dbcfea05c6dd133fb32eb6486b8",
+    "tools/checks/usability-browser.cjs": "f35eca35527a08ee053d625383c64dcb08865168d02e55ddc9f808f9993408d1",
+    "tools/checks/visual-repair.cjs": "0813c797c4937c942a43de6da171ab63be1fa20cd2bebf09573dec9ac03ef515"
+  },
+  "missingPaths": []
+}

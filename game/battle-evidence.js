@@ -33,7 +33,7 @@
   const f=TK.BATTLES['伏見城の戦い'];f.sources=[...new Set([...f.sources,'fushimiDiary','fushimiLetter','fushimiUdono','fushimiSano'])];
   for(const [id,n,side,role,source] of [['suzuki','鈴木孫三郎（重朝）','a','三成書状に元忠討取の報告','fushimiLetter'],['udono','鵜殿氏次','b','籠城・戦死','fushimiUdono'],['sano','佐野綱正','b','籠城・旧暦7月29日に戦死とする辞典記載','fushimiSano']])if(!f.units.some(u=>u.id===id))f.units.push({id,n,g:n,side,clan:side==='a'?'ishida':'tokugawa',role,source,tr:0,arm:'yari',path:[]});
   f.relatedPeople=[{n:'石田三成',role:'政務・連絡。書状を送った事実から現地の攻め口は決めない。',source:'fushimiLetter'}];
-  f.reviewNote='参加と持ち場は別の情報です。守将の担当曲輪・攻城各隊の位置は確定できないため、駒と攻撃線は描きません。城郭図は豊臣期・徳川期を含む後世の復原図を参照した参考図です。';
+  f.reviewNote='守備側の駒は、個々の持ち場が分からないため城内の代表点に置いています。西軍の攻城側は参加者一覧で確認できます。城郭図は豊臣期・徳川期の復原資料を参照した概略図です。';
   for(const u of f.units)u.source=u.source||(['ukita','hideaki'].includes(u.id)?'fushimiDiary':['torii','naito','motonaga'].includes(u.id)?'fushimiNaito':null);
   const sek=TK.BATTLES['関ヶ原の戦い'];sek.sources=[...new Set([...sek.sources,'sekigaharaGuide'])];
   for(const [side,names] of [['a',['竹中重門','加藤嘉明','田中吉政','筒井定次','京極高知','古田重勝','寺沢広高','金森長近','生駒一正','有馬豊氏','山内一豊']],['b',['島津豊久','大谷吉勝','木下頼継','平塚為広','戸田重政','蒲生備中','明石掃部','長束正家']]])for(const n of names)if(!sek.units.some(u=>(u.g||u.n)===n))sek.units.push({id:'roster-'+n,n,g:n,side,clan:side==='a'?'tokugawa':'ishida',role:'ガイドマップ記載・個別陣地は図示せず',source:'sekigaharaGuide',path:[],tr:0,arm:'yari'});

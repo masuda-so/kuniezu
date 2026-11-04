@@ -1,0 +1,250 @@
+{
+  "ok": true,
+  "scope": "display-only saved 1600 state with explicit dates; no day simulation; M03 uses three deliberate display fixtures",
+  "uiSha256": "d3314a5e334cdc7a0e3f85058f02b6673bbceab42bb511a95beead2ebc78a705",
+  "historySha256": "4e457cc42a817669f4452ffb1b0e625bade433492fe2dcae0e5e1a6bc67891e7",
+  "checks": [
+    {
+      "case": "separate marches same/different command, no displacement, all hover/tap",
+      "rows": [
+        {
+          "id": 99100,
+          "x": 860,
+          "y": 451,
+          "members": [
+            99100
+          ],
+          "troops": 6000,
+          "location": false
+        },
+        {
+          "id": 99101,
+          "x": 860,
+          "y": 451,
+          "members": [
+            99101
+          ],
+          "troops": 2000,
+          "location": false
+        },
+        {
+          "id": 99102,
+          "x": 860,
+          "y": 451,
+          "members": [
+            99102
+          ],
+          "troops": 2000,
+          "location": false
+        }
+      ],
+      "tip": {
+        "hidden": false,
+        "text": "徳川家康徳川家 ・ 自家行軍中 ・ 6,000 ・ 士気85目的地：岐阜城出陣（推定）：慶長五年六月十五日（1600年7月25日）本多忠勝徳川家 ・ 自家行軍中 ・ 2,000 ・ 士気85目的地：岐阜城出陣（推定）：慶長五年六月十五日（1600年7月25日）石田三成石田家 ・ 未成立・滅亡行軍中 ・ 2,000 ・ 士気85目的地：岐阜城出陣（推定）：慶長五年六月十五日（1600年7月25日）",
+        "sections": [
+          "徳川家康徳川家 ・ 自家 行軍中 ・ 6,000 ・ 士気85 目的地：岐阜城 出陣（推定）：慶長五年六月十五日（1600年7月25日）",
+          "本多忠勝徳川家 ・ 自家 行軍中 ・ 2,000 ・ 士気85 目的地：岐阜城 出陣（推定）：慶長五年六月十五日（1600年7月25日）",
+          "石田三成石田家 ・ 未成立・滅亡 行軍中 ・ 2,000 ・ 士気85 目的地：岐阜城 出陣（推定）：慶長五年六月十五日（1600年7月25日）"
+        ]
+      }
+    },
+    {
+      "case": "same march far",
+      "rows": [
+        {
+          "id": 99100,
+          "x": 860,
+          "y": 451,
+          "members": [
+            99100,
+            99101
+          ],
+          "troops": 8000,
+          "location": false
+        }
+      ]
+    },
+    {
+      "case": "same march near follows actual road layout and paused repeat",
+      "rows": [
+        {
+          "id": 99100,
+          "x": 862.1276334390022,
+          "y": 464.97512901507423,
+          "members": [
+            99100
+          ],
+          "troops": 6000,
+          "location": false
+        },
+        {
+          "id": 99101,
+          "x": 858.3790897751759,
+          "y": 429.57725888370555,
+          "members": [
+            99101
+          ],
+          "troops": 2000,
+          "location": false
+        }
+      ]
+    },
+    {
+      "case": "Kuroda 3 observations and estimated description (data presentation)",
+      "descriptions": [
+        {
+          "date": {
+            "t": 5475,
+            "kind": "observation",
+            "label": "大坂天満",
+            "day": "旧暦6月6日"
+          },
+          "info": {
+            "kind": "observation",
+            "label": "大坂天満",
+            "description": "旧暦6月6日 所在の記録"
+          }
+        },
+        {
+          "date": {
+            "t": 5502,
+            "kind": "observation",
+            "label": "伏見",
+            "day": "旧暦7月5日"
+          },
+          "info": {
+            "kind": "observation",
+            "label": "伏見",
+            "description": "旧暦7月5日 出発"
+          }
+        },
+        {
+          "date": {
+            "t": 5521,
+            "kind": "estimated",
+            "label": "伏見 → 清洲近村",
+            "day": "推定"
+          },
+          "info": {
+            "kind": "estimated",
+            "label": "伏見 → 清洲近村",
+            "description": "地点間の道筋と途中の日程は推定です。"
+          }
+        },
+        {
+          "date": {
+            "t": 5540,
+            "kind": "observation",
+            "label": "清洲近村",
+            "day": "旧暦8月14日"
+          },
+          "info": {
+            "kind": "observation",
+            "label": "清洲近村",
+            "description": "旧暦8月14日 着陣"
+          }
+        }
+      ]
+    },
+    {
+      "case": "Kuroda Osaka real portrait and hover",
+      "date": {
+        "t": 5475,
+        "kind": "observation",
+        "label": "大坂天満",
+        "day": "旧暦6月6日"
+      },
+      "point": [
+        1022.5974808899371,
+        1409.9999999999995,
+        0.11300893965671077
+      ],
+      "row": {
+        "id": "documented:person-location:kuroda-nagamasa-1600",
+        "x": 860,
+        "y": 451,
+        "members": [
+          "documented:person-location:kuroda-nagamasa-1600"
+        ],
+        "troops": 0,
+        "location": true
+      },
+      "tip": {
+        "hidden": false,
+        "text": "黒田長政所在の記録大坂天満旧暦6月6日 所在の記録",
+        "sections": [
+          "黒田長政所在の記録 大坂天満 旧暦6月6日 所在の記録"
+        ]
+      }
+    }
+  ],
+  "faces": [
+    {
+      "id": "documented:person-location:kuroda-nagamasa-1600",
+      "name": "黒田長政",
+      "x": 802.8589923559748,
+      "y": 561.7679999999998,
+      "ready": false,
+      "width": 0
+    },
+    {
+      "id": "documented:person-location:kuroda-nagamasa-1600",
+      "name": "黒田長政",
+      "x": 802.8589923559748,
+      "y": 561.7679999999998,
+      "ready": false,
+      "width": 0
+    },
+    {
+      "id": "documented:person-location:kuroda-nagamasa-1600",
+      "name": "黒田長政",
+      "x": 802.8589923559748,
+      "y": 561.7679999999998,
+      "ready": true,
+      "width": 26
+    },
+    {
+      "id": "documented:person-location:kuroda-nagamasa-1600",
+      "name": "黒田長政",
+      "x": 802.8589923559748,
+      "y": 561.7679999999998,
+      "ready": true,
+      "width": 26
+    },
+    {
+      "id": "documented:person-location:kuroda-nagamasa-1600",
+      "name": "黒田長政",
+      "x": 860,
+      "y": 451,
+      "ready": true,
+      "width": 32
+    },
+    {
+      "id": "documented:person-location:kuroda-nagamasa-1600",
+      "name": "黒田長政",
+      "x": 860,
+      "y": 451,
+      "ready": true,
+      "width": 32
+    }
+  ],
+  "counts": {
+    "days": 0,
+    "newGames": 0
+  },
+  "substituted": {
+    "/historical-register.js": 1,
+    "/ui.js": 1
+  },
+  "errors": [],
+  "httpErrors": [
+    {
+      "url": "http://localhost:8000/favicon.ico",
+      "status": 404
+    }
+  ],
+  "loadFailures": [],
+  "browserPid": 90577,
+  "browserPidAlive": false,
+  "screenshotLimit": "Initial test set S.t for the record without refreshing the top date HUD; tooltip/model are 1600-07-16, screenshot top date remains saved 1600-07-26. Script corrected afterward; no additional run yet."
+}

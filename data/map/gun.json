@@ -1,0 +1,13 @@
+{
+ "generated": "tools/map/build-gun.cjs",
+ "source": "日本：旧国・旧郡境界データセット（CODH）。朝鮮：国史編纂委員会 歴史地理情報「행정구역 GIS 데이터 (1910~1945년)」の1910年5月時点の府・郡",
+ "license": "日本 CC BY-NC 4.0／朝鮮 공공누리 제1유형（출처표시）",
+ "credit": "『旧国・旧郡境界データセット』（CODH作成） 「幕末明治地勢地図境界データ」（人間文化研究機構作成）を加工 doi:10.20676/00000454 ／ 국사편찬위원회 역사지리정보（https://hgis.history.go.kr）「행정구역 GIS 데이터 (1910~1945년)」를 가공",
+ "note": "日本は江戸末期の郡境、朝鮮は1910年（1914年の統合前）の府郡境。どちらも戦国期・1592年の境とは違う所がある。画素の番号は gun.csv の n（G は上位バイト、B は下位バイト）。",
+ "inputSha256": "0c663aa3a99052792b47dad78f79dbe5b316c624ca9e020419fdedcaf0909589",
+ "guns": 1139,
+ "overlapPixels": 5,
+ "projectionSha256": "3576c5ceb1fc809ac06f538f14dd8be842f343fc18e374edcbdbc8bb4d9e8cee",
+ "gunPngSha256": "ad423311500a0fac21fec48a9014cde659e493ceefa7ce65a616fb95b5360e62",
+ "regrid": "2026-11-04：北を792行削り東に2,644列を足した（足した所は郡なし）"
+}

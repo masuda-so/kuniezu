@@ -1,0 +1,29 @@
+{
+  "checked": "2026-11-02",
+  "sources": [
+    {
+      "author": "国土地理院",
+      "title": "地理院タイル一覧・1974年〜1978年空中写真/標準地図",
+      "url": "https://maps.gsi.go.jp/help/use.html",
+      "inputs": "seam-era-tiles/manifest.json",
+      "scope": "全84タイルを同じWeb Mercator座標枠へ配置、欠落0。写真の撮影期間と対象ゲーム年代は異なる。"
+    },
+    {
+      "author": "国土交通省酒田河川国道事務所",
+      "title": "本道寺から志津へ",
+      "url": "https://www.thr.mlit.go.jp/sakata/road/60history/013.html",
+      "locator": "図11「砂子関」説明、上道・下道の記述",
+      "scope": "湖底化した集落と複数の道の記述。現代の検索ルートをそのまま遡らせない。"
+    },
+    {
+      "author": "国土交通省山形河川国道事務所",
+      "title": "国道112号 横手トンネルの概要・諸元・変状状況",
+      "url": "https://www.thr.mlit.go.jp/yamagata/road/yokotetonneru/pdf/kanshitaisei.pdf",
+      "file": "yokote-tunnel-relocation.pdf",
+      "sha256": "4eb9fa22bd50e9e4508e2ed1d40815ddd7378545ce6ac170233c40fe0df9a8b2",
+      "locator": "1頁・1979年建設の説明",
+      "scope": "ダムに伴う近代の付替道路の確認。"
+    }
+  ],
+  "decision": "写真の幹線路と小縮尺図の端点は一致しない。局所の登録基準が必要。今回の写真を16世紀の確定道筋として自動採用せず、ゲームの道路形状は変更しない。"
+}

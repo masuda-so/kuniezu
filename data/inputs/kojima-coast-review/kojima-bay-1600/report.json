@@ -1,0 +1,224 @@
+{
+ "generated": "tools/geo/kojima-bay-1600.cjs",
+ "scope": "1560〜1615年の児島湾・高梁川河口の海陸の推定。図4-1-1（高田正規原図）の干拓区画と現代標高から復元。",
+ "sources": [
+  {
+   "author": "国土交通省 河川局",
+   "title": "高梁川水系の流域及び河川の概要（案）参考資料1-1",
+   "locator": "図4-1-1 岡山平野の干拓進展図（高田正規原図、出典『日本地誌 第17巻』）、43ページ",
+   "file": ".cache/kojima-takada/ref1-1.pdf",
+   "sha256": "d31c082725b9b42dea803a0ff6a892fe871586685d3b3a5f7ecef06a44a2cef2"
+  },
+  {
+   "author": "農林水産省",
+   "title": "近代の児島湾干拓計画を策定したムルデル",
+   "url": "https://www.maff.go.jp/j/nousin/sekkei/museum/m_izin/okayama_02/index.html",
+   "locator": "1582年の児島は島"
+  },
+  {
+   "author": "倉敷市",
+   "title": "文化財資料（宇喜多堤）",
+   "url": "https://www.city.kurashiki.okayama.jp/_res/projects/default_project/_page_/001/007/924/26390_276.pdf",
+   "locator": "宇喜多堤は天正12年（1584）、早島から二日市の岩崎へ"
+  },
+  {
+   "author": "岡山県 砂防史",
+   "title": "海面古図と年表",
+   "url": "https://sites.google.com/site/okayamasabo/",
+   "locator": "連島・倉敷・早島・箕島・天城は島。児島が陸続きになったのは元和4年（1618）"
+  },
+  {
+   "author": "岡山シティミュージアム",
+   "title": "広がる大地－絵図でたどる児島湾のかんたく－",
+   "url": "https://www.city.okayama.jp/okayama-city-museum/0000079739.html",
+   "locator": "慶長期（1596〜1615年推定）の備前国図で児島・天城は島"
+  }
+ ],
+ "registration": {
+  "LON": 133.9,
+  "LAT": 34.55,
+  "KX": 91.68666884302182,
+  "KY": 110.95,
+  "s": 37.35,
+  "tx": 1315,
+  "ty": 1417,
+  "method": "図の黒画素と Copernicus DEM の現代海岸（0mと正の境、0.001度ごと）を、縮尺30〜42画素/km・平行移動の格子探索で照合。近傍3画素以内の一致率0.847。",
+  "figureSha256": "939b9c720a877febd2365137a28fd258ca087358802726bfdef5ff612b77ea0b",
+  "render": "pdf.js 3.11.174 で PDF 47ページを scale 4 で描画（2384×3368）"
+ },
+ "classification": {
+  "dilate": 2,
+  "openMin": 100000,
+  "polyMin": 400,
+  "landH": 0.5,
+  "hillH": 10,
+  "hillMin": 80,
+  "late16Dark": 15,
+  "late16Box": [
+   920,
+   1137,
+   1193,
+   1273
+  ],
+  "islands": [
+   [
+    730,
+    1390,
+    "大平山（連島）"
+   ],
+   [
+    548,
+    1462,
+    "乙島"
+   ],
+   [
+    460,
+    1470,
+    "柏島"
+   ],
+   [
+    1015,
+    1340,
+    "天城"
+   ]
+  ],
+  "industrial": [
+   [
+    710,
+    1645
+   ],
+   [
+    685,
+    1533
+   ],
+   [
+    821,
+    1620
+   ],
+   [
+    561,
+    1583
+   ]
+  ],
+  "zone": [
+   [
+    400,
+    1026
+   ],
+   [
+    772,
+    1026
+   ],
+   [
+    945,
+    1088
+   ],
+   [
+    994,
+    1075
+   ],
+   [
+    1168,
+    1026
+   ],
+   [
+    1267,
+    1001
+   ],
+   [
+    1477,
+    951
+   ],
+   [
+    1762,
+    939
+   ],
+   [
+    2010,
+    1026
+   ],
+   [
+    2010,
+    1533
+   ],
+   [
+    1713,
+    1533
+   ],
+   [
+    1713,
+    1880
+   ],
+   [
+    400,
+    1880
+   ]
+  ]
+ },
+ "window": [
+  9734,
+  12823,
+  630,
+  390
+ ],
+ "edits": {
+  "kojima-bay-reclaimed-sea": {
+   "pixels": 12643,
+   "keys": [
+    "sea"
+   ]
+  },
+  "kojima-bay-restored-land": {
+   "pixels": 10663,
+   "keys": [
+    "castle:bmatsuyama",
+    "castle:tenjin"
+   ]
+  },
+  "kojima-bay-ukita-sea-before-1584": {
+   "pixels": 0,
+   "note": "基準版で既に条件どおりのため差分なし"
+  },
+  "kojima-bay-ukita-land-from-1584": {
+   "pixels": 366,
+   "keys": [
+    "castle:bmatsuyama",
+    "castle:tenjin"
+   ]
+  }
+ },
+ "cleanup": {
+  "filledSeaPixels": 270,
+  "droppedLandPixels": 10
+ },
+ "checks": {
+  "1560-1583": {
+   "fujitoPassage": true,
+   "kojimaJoinsMainland": false,
+   "amakiJoinsMainland": false,
+   "hayashimaJoinsMainland": false,
+   "kyogashima": "land",
+   "fujitoji": "land",
+   "ukisuiwa": "land",
+   "shionasu": "land",
+   "hayashimaShrine": "land",
+   "kurashiki": "land",
+   "mizushima": "sea",
+   "castlesOffLand": []
+  },
+  "1584-1615": {
+   "fujitoPassage": true,
+   "kojimaJoinsMainland": false,
+   "amakiJoinsMainland": false,
+   "hayashimaJoinsMainland": true,
+   "kyogashima": "land",
+   "fujitoji": "land",
+   "ukisuiwa": "land",
+   "shionasu": "land",
+   "hayashimaShrine": "land",
+   "kurashiki": "land",
+   "mizushima": "sea",
+   "castlesOffLand": []
+  }
+ }
+}

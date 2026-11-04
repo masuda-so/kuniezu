@@ -1,0 +1,153 @@
+{
+  "status": "pass",
+  "observations": [
+    {
+      "date": [
+        1600,
+        7,
+        16
+      ],
+      "lunar": [
+        1600,
+        6,
+        6
+      ],
+      "point": [
+        1022.5974808899371,
+        1409.9999999999995,
+        0.11300893965671079
+      ],
+      "locationId": "location:kuroda-nagamasa-osaka-tenma-1600"
+    },
+    {
+      "date": [
+        1600,
+        8,
+        13
+      ],
+      "lunar": [
+        1600,
+        7,
+        5
+      ],
+      "point": [
+        1064.8281679963086,
+        1362.3999999999996,
+        -2.331843706839266
+      ],
+      "locationId": "location:kuroda-nagamasa-fushimi-departure-1600"
+    },
+    {
+      "date": [
+        1600,
+        9,
+        21
+      ],
+      "lunar": [
+        1600,
+        8,
+        14
+      ],
+      "point": [
+        1236.0161640060464,
+        1306.6000000000004,
+        null
+      ],
+      "locationId": "location:kuroda-nagamasa-kiyosu-arrival-1600"
+    }
+  ],
+  "estimatedRoute": {
+    "vertices": 4330,
+    "km": 1105.9176452509116,
+    "waypoints": [
+      {
+        "place": "宇都宮方面",
+        "point": [
+          139.883,
+          36.555
+        ],
+        "locator": "巻10 p.279",
+        "date": null
+      },
+      {
+        "place": "小山方面",
+        "point": [
+          139.8,
+          36.315
+        ],
+        "locator": "巻10 p.279",
+        "date": null
+      }
+    ],
+    "datesAssigned": false
+  },
+  "saveMigration": {
+    "oldPoint": [
+      887.1754789879159,
+      1365.3379999999997,
+      null
+    ],
+    "afterPoint": [
+      887.1754789879159,
+      1365.3379999999997,
+      0.2075781296755917
+    ],
+    "existingFieldsUnchanged": true,
+    "roundTrip": true
+  },
+  "divergentStateExcluded": true,
+  "firstObservationApproach": true,
+  "battleDayObservationDoesNotReappear": true,
+  "ui": {
+    "portraitBranch": true,
+    "fallbackBranch": true,
+    "locationList": true,
+    "convoyIsolationAtZooms": [
+      0.4,
+      4
+    ],
+    "unfoundedTroopsOrMorale": false
+  },
+  "join": {
+    "date": {
+      "y": 1600,
+      "m": 8,
+      "d": 30
+    },
+    "point": [
+      1594.2719732162764,
+      1073.4269732172704,
+      -0.5482946449537438
+    ],
+    "kind": "estimated"
+  },
+  "handoff": {
+    "date": {
+      "y": 1600,
+      "m": 10,
+      "d": 19
+    },
+    "origin": "kiyosu",
+    "path": [
+      "kiyosu",
+      "gifu"
+    ],
+    "point": [
+      1236.0161640060464,
+      1306.6000000000004,
+      1.225275806781505
+    ],
+    "visualStart": [
+      1236.0161640060464,
+      1306.6000000000004
+    ],
+    "lastObservationPoint": [
+      1236.0161640060464,
+      1306.6000000000004
+    ]
+  },
+  "simulationDays": 85,
+  "maxDayKm": 26.37784830611839,
+  "chromeUsed": false,
+  "newGameCalled": false
+}

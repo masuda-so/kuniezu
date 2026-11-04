@@ -1,0 +1,57 @@
+{
+  "result": {
+    "date": {
+      "y": 1582,
+      "m": 6,
+      "leap": 0,
+      "d": 1,
+      "gy": 1582,
+      "gm": 6,
+      "gd": 20
+    },
+    "point": [
+      748.837132624577,
+      1412.7544
+    ],
+    "target": [
+      748.837132624577,
+      1412.7544
+    ],
+    "historyTitle": "備中高松城の水攻め",
+    "version": 18,
+    "distance": 0
+  },
+  "groups": [
+    {
+      "id": "group-0",
+      "label": "城内・備中高松城",
+      "members": [
+        "b-0"
+      ],
+      "side": "b",
+      "point": [
+        133.822,
+        34.693
+      ],
+      "precision": "籠城先・個別持場不詳",
+      "dock": false,
+      "source": "takamatsuHeadquarters"
+    },
+    {
+      "id": "group-1",
+      "label": "石井山・羽柴秀吉本陣",
+      "members": [
+        "a-0"
+      ],
+      "side": "a",
+      "point": [
+        133.828068,
+        34.686228
+      ],
+      "precision": "県の陣営配置図の代表点・読取幅約200m",
+      "dock": false,
+      "source": "takamatsuHeadquarters"
+    }
+  ],
+  "errors": []
+}

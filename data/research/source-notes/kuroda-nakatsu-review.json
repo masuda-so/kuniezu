@@ -1,0 +1,85 @@
+{
+  "checked": "2026-11-03",
+  "decisions": {
+    "1599-01-20-kawara-move": "reject as unsupported; preserve table slot as no-op",
+    "1589-succession": "adopt; lunar fifth month, day unknown",
+    "nakatsu-home": "principal base/lordship, not continuous presence",
+    "mori-yoshinari-grant": "1587 lunar 7/3, replaces provisional 6/25",
+    "1600-new-itinerary": "do not invent new dated route from conflicting secondary chronology"
+  },
+  "sources": [
+    {
+      "url": "https://museum.city.fukuoka.jp/exhibition/599/index02.html",
+      "access": "full text",
+      "locator": "黒田家の当主となる、関ヶ原の戦い",
+      "summary": "1588年中津築城、1589年長政が家督継承。関ヶ原後は福島正則と大坂城接収。"
+    },
+    {
+      "url": "https://adeac.jp/yukuhashi-city/texthtml/d100010/mp000000-000010/ht2040100020",
+      "access": "full text",
+      "locator": "242〜243頁",
+      "summary": "1587年7月3日に黒田六郡と森吉成二郡の配置確定。1589年5月に家督を長政へ。"
+    },
+    {
+      "url": "https://www.city-nakatsu.jp/doc/2013100100011/file_contents/nakatsujo.pdf",
+      "access": "full PDF text, page count 8",
+      "locator": "PDF2頁",
+      "summary": "1588年中津城着工、1600年細川氏、1602年小倉移転。"
+    },
+    {
+      "url": "https://museum.city.fukuoka.jp/archives/leaflet/138/index.html",
+      "access": "full text",
+      "locator": "はじめに",
+      "summary": "関ヶ原当時の長政は中津城主。東軍参戦後に筑前へ転封。"
+    },
+    {
+      "url": "https://museum.city.fukuoka.jp/exhibition/510/",
+      "access": "full text",
+      "locator": "3 如水の文芸活動",
+      "summary": "1589年隠居の後も従軍。1598年以後上方の連歌会に参加。隠居から中津への全日滞在は導けない。"
+    },
+    {
+      "url": "https://tachibana.repo.nii.ac.jp/record/330/files/joseirekishi_015_1-21.pdf",
+      "access": "search-index excerpt only; direct PDF 429",
+      "locator": "本文14頁の検索収録",
+      "summary": "黒田家譜を引用し1600年6月6日の長政婚姻を大坂天満屋敷とする。原PDF再取得は未実施。",
+      "adoption": "research lead only, not dated location record"
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/1/19/NDL950970_%E9%BB%92%E7%94%B0%E5%A6%82%E6%B0%B4%E4%BC%9D_part3.pdf",
+      "access": "search-index excerpt only; direct download rejected 65MB",
+      "locator": "長政婚姻後の出陣の段",
+      "summary": "旧伝記は1600年6/16大坂発とする。後記二次年表の7/5伏見発と相違する。",
+      "adoption": "research lead only, no new large download"
+    },
+    {
+      "url": "https://rekimoku.xsrv.jp/2-zinbutu-08-kuroda-nagamasa.html",
+      "access": "full page",
+      "locator": "慶長5年条",
+      "summary": "黒田家譜等を典拠とする二次年表に7/5伏見発、8/1江戸発、8/14清須着、11/17大坂発の記載。6/16大坂発の伝記との関係は未確定。",
+      "adoption": "conflict retained, not loaded as exact travel dates"
+    },
+    {
+      "url": "https://sengokumap.net/history/1600-2/",
+      "access": "full page",
+      "locator": "西上開始",
+      "summary": "7/26小山から西上、7/29家康書状で長政が既に西上していることを記載。先鋒隊の地図上の日時は推定と明記。",
+      "adoption": "comparison of evidence precision, not exact daily positions"
+    }
+  ],
+  "runtimeAudit": {
+    "file": "marches-before-fix.json",
+    "spanDays": 500,
+    "kuroda1600Origin": "kiyosu",
+    "nativeReturnArmyObserved": false,
+    "documentedArmyObserved": false,
+    "newGameAdministrativeLoc": "himeji",
+    "gameplayCastleGensChanged": false
+  },
+  "limitations": [
+    "Exact 1599 return date is not established.",
+    "No guessed replacement castle move.",
+    "Already executed old-save locations/routes are preserved.",
+    "Whole 1600 itinerary is not claimed complete."
+  ]
+}

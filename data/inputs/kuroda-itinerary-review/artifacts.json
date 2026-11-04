@@ -1,0 +1,83 @@
+{
+  "retrievedAt": "2026-11-03",
+  "repository": "国立国会図書館",
+  "rights": "NDL IIIF accessRestrictions PDM",
+  "manifestSource": "https://dl.ndl.go.jp/api/iiif/1023982/manifest.json",
+  "manifestSha256": "6f2fb79b6968baa90a4f1c8dbeaef5633b06f5bfe5331c579e2bf37d78c1cefd",
+  "items": [
+    {
+      "path": "data/inputs/kuroda-itinerary-review/ndl1023982-127.jpg",
+      "sha256": "54a8ec60761c5b67e687f843c865f1deb5334cbf72b7b4ca45d45ef2ba7c7768",
+      "bytes": 1292946,
+      "sourceUrl": "https://dl.ndl.go.jp/api/iiif/1023982/R0000127/full/2200,/0/default.jpg",
+      "pid": "1023982",
+      "canvas": 127,
+      "printedPages": [
+        262,
+        263
+      ]
+    },
+    {
+      "path": "data/inputs/kuroda-itinerary-review/ndl1023982-128.jpg",
+      "sha256": "99c734decd4304d89c6112481cf23205c08f5ce2ee93d179b12a621704292edc",
+      "bytes": 1302028,
+      "sourceUrl": "https://dl.ndl.go.jp/api/iiif/1023982/R0000128/full/2200,/0/default.jpg",
+      "pid": "1023982",
+      "canvas": 128,
+      "printedPages": [
+        264,
+        265
+      ]
+    },
+    {
+      "path": "data/inputs/kuroda-itinerary-review/ndl1023982-130.jpg",
+      "sha256": "347689dbf73b3c96fbdf165777007864ebb85eaa132ad5d3b788c5c31b238c43",
+      "bytes": 830091,
+      "sourceUrl": "https://dl.ndl.go.jp/api/iiif/1023982/R0000130/full/1600,/0/default.jpg",
+      "pid": "1023982",
+      "canvas": 130,
+      "printedPages": [
+        268,
+        269
+      ]
+    },
+    {
+      "path": "data/inputs/kuroda-itinerary-review/ndl1023982-136.jpg",
+      "sha256": "db63bef273bcc2055808b5c645c87c0ba3612dc6c07c018371ecff85bd0236f1",
+      "bytes": 1119372,
+      "sourceUrl": "https://dl.ndl.go.jp/api/iiif/1023982/R0000136/full/2200,/0/default.jpg",
+      "pid": "1023982",
+      "canvas": 136,
+      "printedPages": [
+        278,
+        279
+      ],
+      "locator": "巻10 p.279下段、長政の宇都宮から小山への移動",
+      "scope": "福島とともに先手として宇都宮へ下り、その後小山へ帰った順序。個別の通過日・道筋はこの段落から確定しない。p.282の厚木からの再召還とは別の叙述。"
+    },
+    {
+      "path": "data/inputs/kuroda-itinerary-review/ndl1023982-137.jpg",
+      "sha256": "c5b70db453ba7f850c94bc5498e6637b4c4590e92f4588dadc26cae3a07033b7",
+      "bytes": 1044233,
+      "sourceUrl": "https://dl.ndl.go.jp/api/iiif/1023982/R0000137/full/2000,/0/default.jpg",
+      "pid": "1023982",
+      "canvas": 137,
+      "printedPages": [
+        280,
+        281
+      ]
+    },
+    {
+      "path": "data/inputs/kuroda-itinerary-review/ndl1023982-138.jpg",
+      "sha256": "eb1c3efc4934e1b71af889a125443b433ffdba0cb135f25ad31ec5c2838ddc60",
+      "bytes": 1194318,
+      "sourceUrl": "https://dl.ndl.go.jp/api/iiif/1023982/R0000138/full/2200,/0/default.jpg",
+      "pid": "1023982",
+      "canvas": 138,
+      "printedPages": [
+        282,
+        283
+      ]
+    }
+  ]
+}

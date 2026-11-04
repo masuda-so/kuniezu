@@ -3,19 +3,35 @@
   "entity": "place:安芸城",
   "predicate": "military-event",
   "value": "1569年、安芸国虎が長宗我部元親の攻撃を受けて敗れる。",
-  "source": "akiCastleCity",
-  "sourceUrl": "https://www.city.aki.kochi.jp/life/dtl.php?hdnKey=44",
-  "locator": "城跡解説",
+  "source": "akiHistoryChronology",
+  "sourceUrl": "https://www.city.aki.kochi.jp/rekimin/info/dtl.php?hdnKey=7968",
+  "locator": "1569年の項",
   "gameBindings": [
     "TK.CASTLE_EVIDENCE:安芸城"
   ],
   "recordType": "verified-historical-claim",
   "status": "verified-in-specified-scope",
-  "checked": "2026-11-02",
+  "checked": "2026-11-04",
   "uncertainty": "年単位の説明を逐日の入城・落城日へ置き換えない。",
   "validYears": [
     1569,
     1569
   ],
-  "datePrecision": "year"
+  "datePrecision": "year",
+  "linkedEntities": [
+    "place:安芸城",
+    "person:aki-kunitora",
+    "person:chosokabe-motochika"
+  ],
+  "eventTime": {
+    "kind": "year-window",
+    "year": 1569,
+    "calendar": "CE-year",
+    "precision": "year"
+  },
+  "eventRelation": "military-defeat",
+  "eventScope": "敗北した年。正確な落城日・領主交代日・土地の移管範囲を補わない。",
+  "corroboratingSources": [
+    "kochiAkiKunitoraGrave"
+  ]
 }

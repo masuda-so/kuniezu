@@ -1,0 +1,24 @@
+{
+  "id": "location:kuroda-nagamasa-nakatsu-base",
+  "person": "person:kuroda-nagamasa",
+  "place": "place:nakatsu",
+  "relation": "principal-base",
+  "time": {
+    "kind": "year-interval",
+    "from": 1589,
+    "untilExclusive": 1600,
+    "calendar": "CE-year",
+    "precision": "year"
+  },
+  "source": "kurodaNagamasaSuccession",
+  "sourceUrl": "https://museum.city.fukuoka.jp/exhibition/599/index02.html",
+  "locator": "黒田家の当主となる（22歳）・朝鮮に出兵・関ヶ原の戦い",
+  "uncertainty": "家督継承以降の本拠。1599年1月20日の移動も連続在城も意味しない。1600年は移封年なので別記録とする。",
+  "recordType": "sourced-location-observation",
+  "status": "verified-in-specified-scope",
+  "recordedAt": "2026-11-03",
+  "gameBindings": [
+    "TK.PERSON_RESIDENCE_EVIDENCE.黒田長政",
+    "site:中津城"
+  ]
+}

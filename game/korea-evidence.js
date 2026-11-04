@@ -2,6 +2,7 @@
 /* 朝鮮の邑城・山城・鎮城・宮殿・水軍拠点と、日本軍築城の倭城を区別。 */
 (function(){
 const refs={
+ krBongeunsa:['韓国学中央研究院','수도산 봉은사（修道山 奉恩寺）','https://encykorea.aks.ac.kr/Article/E0023980','本文・沿革','1562年の修道山移転と壬辰倭乱での焼失。焼失の日付と戦後の活動再開時期は未確定。'],
  krBongseonsa:['김성연／韓国学中央研究院','운악산 봉선사（雲岳山奉先寺）','https://encykorea.aks.ac.kr/Article/E0023921','歴史的変遷','1469年の再興、1592年の焼失、1593年の再建。月日は確定しない。'],
  krHaeinsaDepository:['김성수／韓国学中央研究院','판전（板殿）','https://encykorea.aks.ac.kr/Article/E0080168','1）海印寺蔵経板殿','1457・1488年の再建と壬辰倭乱を免れた蔵経施設。寺域全体の建物が同年代とはしない。'],
  krBusan:['韓国学中央研究院','부산진성（釜山鎮城）','https://encykorea.aks.ac.kr/Article/E0024279','内容','侵攻前の城は鄭公壇付近、1593年の子城台は別施設。'],
@@ -20,8 +21,10 @@ const refs={
 for(const [id,[author,title,url,locator,scope]] of Object.entries(refs))TK.RESEARCH_SOURCES[id]={author,title,url,locator,scope,accessed:'2026-10-31',year:'各項目の更新年による'};
 for(const id of ['krBongseonsa','krHaeinsaDepository'])TK.RESEARCH_SOURCES[id].accessed='2026-11-01';
 TK.RESEARCH_SOURCES.krBongseonsa.year='2023年執筆／2024年9月28日改訂';TK.RESEARCH_SOURCES.krHaeinsaDepository.year='2022年執筆／2024年7月2日改訂';
+TK.RESEARCH_SOURCES.krBongeunsa.accessed='2026-11-04';
 G.YOSHO_FX['宮']={n:'宮殿',fx:'王朝の儀礼と政務の場'};
 const sites=[
+ ['奉恩寺（修道山）','寺',127.057,37.51517,'1562年、靖陵の移転に伴い修道山に移された禅宗の拠点。壬辰倭乱で焼失した。',1562,1592,'寺院・禅宗の拠点','krBongeunsa'],
  ['奉先寺','寺',127.1835518,37.7473504,'世祖の陵を守る寺院として1469年に再興された。1592年に焼失し、翌1593年に再建された。',1469,null,'陵寺・仏教の拠点','krBongseonsa'],
  ['海印寺（蔵経施設）','寺',128.0980383,35.8010416,'高麗大蔵経の版木を守る寺院。蔵経施設は15世紀に整備され、壬辰倭乱の戦火を免れた。',1488,null,'寺院・経典の保存拠点','krHaeinsaDepository'],
  ['東萊邑城','城',129.091,35.207,'地方行政と防御を兼ねる邑城。1592年に宋象賢らが抵抗。現存の城壁には1731年以後の整備を含む。',null,null,'邑城','krDongnae'],

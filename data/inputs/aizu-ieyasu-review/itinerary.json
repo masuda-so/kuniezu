@@ -1,0 +1,308 @@
+{
+  "rows": [
+    {
+      "date": [
+        1600,
+        7,
+        26
+      ],
+      "place": "大坂",
+      "point": [
+        135.526,
+        34.687
+      ],
+      "via": [
+        [
+          135.781,
+          34.938
+        ],
+        [
+          136.839,
+          35.217
+        ],
+        [
+          137.159,
+          34.956
+        ],
+        [
+          137.725,
+          34.711
+        ],
+        [
+          138.014,
+          34.775
+        ],
+        [
+          138.383,
+          34.976
+        ],
+        [
+          139.153,
+          35.25
+        ]
+      ],
+      "lunar": [
+        1600,
+        6,
+        16
+      ],
+      "sourceIds": [
+        "ieyasu1600Chronology"
+      ],
+      "precision": "place-representative",
+      "intervalGeometry": "estimated-road-reference"
+    },
+    {
+      "date": [
+        1600,
+        8,
+        10
+      ],
+      "place": "江戸",
+      "point": [
+        139.752,
+        35.685
+      ],
+      "lunar": [
+        1600,
+        7,
+        2
+      ],
+      "sourceIds": [
+        "ieyasu1600Chronology"
+      ],
+      "precision": "place-representative",
+      "intervalGeometry": "estimated-road-reference"
+    },
+    {
+      "date": [
+        1600,
+        8,
+        29
+      ],
+      "place": "江戸出陣",
+      "point": [
+        139.752,
+        35.685
+      ],
+      "lunar": [
+        1600,
+        7,
+        21
+      ],
+      "sourceIds": [
+        "ieyasu1600EdoDeparture"
+      ],
+      "precision": "place-representative",
+      "intervalGeometry": "estimated-road-reference"
+    },
+    {
+      "date": [
+        1600,
+        9,
+        1
+      ],
+      "place": "小山",
+      "point": [
+        139.8,
+        36.315
+      ],
+      "lunar": [
+        1600,
+        7,
+        24
+      ],
+      "sourceIds": [
+        "aizuTurn"
+      ],
+      "precision": "place-representative",
+      "intervalGeometry": "estimated-road-reference"
+    },
+    {
+      "date": [
+        1600,
+        9,
+        2
+      ],
+      "place": "小山",
+      "point": [
+        139.8,
+        36.315
+      ],
+      "lunar": [
+        1600,
+        7,
+        25
+      ],
+      "sourceIds": [
+        "aizuTurn"
+      ],
+      "precision": "place-representative",
+      "intervalGeometry": "estimated-road-reference"
+    },
+    {
+      "date": [
+        1600,
+        9,
+        7
+      ],
+      "place": "宇都宮方面",
+      "point": [
+        139.883,
+        36.555
+      ],
+      "lunar": [
+        1600,
+        7,
+        30
+      ],
+      "sourceIds": [
+        "ieyasu1600West"
+      ],
+      "precision": "place-representative",
+      "intervalGeometry": "estimated-road-reference"
+    },
+    {
+      "date": [
+        1600,
+        9,
+        12
+      ],
+      "place": "江戸",
+      "point": [
+        139.752,
+        35.685
+      ],
+      "lunar": [
+        1600,
+        8,
+        5
+      ],
+      "sourceIds": [
+        "ieyasu1600Return"
+      ],
+      "precision": "place-representative",
+      "intervalGeometry": "estimated-road-reference"
+    },
+    {
+      "date": [
+        1600,
+        10,
+        7
+      ],
+      "place": "江戸出陣",
+      "point": [
+        139.752,
+        35.685
+      ],
+      "via": [
+        [
+          139.153,
+          35.25
+        ],
+        [
+          138.383,
+          34.976
+        ],
+        [
+          138.014,
+          34.775
+        ],
+        [
+          137.725,
+          34.711
+        ],
+        [
+          137.159,
+          34.956
+        ]
+      ],
+      "lunar": [
+        1600,
+        9,
+        1
+      ],
+      "sourceIds": [
+        "tono1600"
+      ],
+      "precision": "place-representative",
+      "intervalGeometry": "estimated-road-reference"
+    },
+    {
+      "date": [
+        1600,
+        10,
+        17
+      ],
+      "place": "清須",
+      "point": [
+        136.839,
+        35.217
+      ],
+      "lunar": [
+        1600,
+        9,
+        11
+      ],
+      "sourceIds": [
+        "ieyasu1600West"
+      ],
+      "precision": "place-representative",
+      "intervalGeometry": "estimated-road-reference"
+    },
+    {
+      "date": [
+        1600,
+        10,
+        20
+      ],
+      "place": "赤坂",
+      "point": [
+        136.577,
+        35.389
+      ],
+      "lunar": [
+        1600,
+        9,
+        14
+      ],
+      "sourceIds": [
+        "ieyasu1600West"
+      ],
+      "precision": "place-representative",
+      "intervalGeometry": "estimated-road-reference"
+    },
+    {
+      "date": [
+        1600,
+        10,
+        21
+      ],
+      "place": "関ヶ原",
+      "point": [
+        136.49,
+        35.361
+      ],
+      "lunar": [
+        1600,
+        9,
+        15
+      ],
+      "sourceIds": [
+        "ieyasuJinba"
+      ],
+      "precision": "place-representative",
+      "intervalGeometry": "estimated-road-reference"
+    }
+  ],
+  "sources": [
+    "ieyasu1600Chronology",
+    "ieyasu1600EdoDeparture",
+    "aizuTurn",
+    "ieyasu1600West",
+    "ieyasu1600Return",
+    "tono1600",
+    "ieyasuJinba"
+  ],
+  "scope": "所在地の代表点と日程。無日付経由点・区間内速度・帰路は参考経路。"
+}

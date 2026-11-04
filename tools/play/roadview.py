@@ -1,5 +1,0 @@
-exec(open('/home/claude/play/lib.py').read())
-start();pg.wait_for_timeout(2500)
-pg.evaluate("TKUI.cam(1180,1180,2.2)");pg.wait_for_timeout(800);shot('rv1')
-pg.evaluate("TKUI.cam(1250,1270,3.5)");pg.wait_for_timeout(800);shot('rv2')
-pg.mouse.move(700,430);pg.wait_for_timeout(300)

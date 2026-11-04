@@ -2,20 +2,35 @@
   "id": "aki-1601-goto",
   "entity": "place:安芸城",
   "predicate": "residence",
-  "value": "1601年に五藤為重が入り土居を構える。",
-  "source": "akiCastleCity",
-  "sourceUrl": "https://www.city.aki.kochi.jp/life/dtl.php?hdnKey=44",
-  "locator": "城跡解説",
+  "value": "1601年、山内氏家臣の五藤為重が安芸城跡の土居に入る。",
+  "source": "akiHistoryChronology",
+  "sourceUrl": "https://www.city.aki.kochi.jp/rekimin/info/dtl.php?hdnKey=7968",
+  "locator": "1601年の項。五藤為重個人の同定は高知城歴史博物館「土佐史の人々－初期－」五藤為重の項と照合。",
   "gameBindings": [
     "TK.CASTLE_EVIDENCE:安芸城"
   ],
   "recordType": "verified-historical-claim",
   "status": "verified-in-specified-scope",
-  "checked": "2026-11-02",
-  "uncertainty": "年単位の説明を逐日の入城・落城日へ置き換えない。",
+  "checked": "2026-11-04",
+  "uncertainty": "市年表の五藤氏の入居年と、博物館の為重本人が土佐入国時に安芸城を預けられた説明を照合。日付、新築年、家老就任年、全安芸領有や通年在城は採用しない。",
   "validYears": [
     1601,
     1601
   ],
-  "datePrecision": "year"
+  "datePrecision": "year",
+  "linkedEntities": [
+    "place:安芸城",
+    "person:goto-tameshige"
+  ],
+  "eventTime": {
+    "kind": "year-window",
+    "year": 1601,
+    "calendar": "CE-year",
+    "precision": "year"
+  },
+  "eventRelation": "residence-established",
+  "eventScope": "入居の年精度。終年の在城や土佐一国の領主という関係へ拡大しない。",
+  "corroboratingSources": [
+    "gotoTameshigeKochiMuseum"
+  ]
 }

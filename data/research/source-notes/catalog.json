@@ -1,0 +1,362 @@
+{
+  "formatVersion": 1,
+  "scope": "取得HTMLの読書用要約。史実命題の検証状態はcurated/claimsと別。",
+  "sources": [
+    {
+      "id": "aizu-ieyasu-review/oyama",
+      "title": "徳川家康ゆかりの地 小山評定と小山御殿",
+      "author": "小山市",
+      "url": "https://www.city.oyama.tochigi.jp/kankou-bunka/rekishi_bunka/bunkazai/page000011.html",
+      "locator": "小山評定（おやまひょうじょう）とは？",
+      "originalFile": "data/inputs/aizu-ieyasu-review/oyama.html",
+      "encoding": "utf-8",
+      "originalSha256": "9cf515d4983c8909c48f95549f4c75612ea712969aa34193cf9c2ae98219d76c",
+      "summary": [
+        "1600年の小山評定と、その後の東軍の動きを紹介する。",
+        "ゲームでは家康の小山到着・転進を照合する資料の一つ。"
+      ],
+      "limits": [
+        "自治体の解説であり、全武将の各日の所在や各部隊の経路を確定する資料ではない。"
+      ],
+      "kind": "source-summary",
+      "organized": "2026-11-02"
+    },
+    {
+      "id": "aizu-ieyasu-review/tono",
+      "title": "資料紹介69 関ヶ原直前の東濃",
+      "author": "中津川市 苗木遠山史料館",
+      "url": "https://www.city.nakatsugawa.lg.jp/museum/t/archives/materials/1496.html",
+      "locator": "資料紹介 関ヶ原直前の東濃",
+      "originalFile": "data/inputs/aizu-ieyasu-review/tono.html",
+      "encoding": "utf-8",
+      "originalSha256": "98f731e29e49ff3d9111a426484b4f41a3fd93c22a2b8b96d848821f9022287d",
+      "summary": [
+        "関ヶ原直前の東濃地域の動向を紹介する。",
+        "東濃での戦闘と、会津へ向かう家康本隊の行程は別の事象として照合する。"
+      ],
+      "limits": [
+        "本文の地域・人物・時点を確認し、家康がその場で参戦したことの根拠へ読み替えない。"
+      ],
+      "kind": "source-summary",
+      "organized": "2026-11-02"
+    },
+    {
+      "id": "aki-castle-review/oko-bunka",
+      "title": "岡豊城跡",
+      "author": "文化庁・文化遺産オンライン",
+      "url": "https://online.bunka.go.jp/heritages/detail/207413",
+      "locator": "所在地の地図・解説",
+      "originalFile": "data/inputs/aki-castle-review/oko-bunka.html",
+      "encoding": "utf-8",
+      "originalSha256": "da7be1834c20e3f76dc98de872e323e776efb5e9c1101e6de5c8c2ce99c48d46",
+      "summary": [
+        "岡豊城跡の所在地と城跡の解説。",
+        "地図代表点は東経133.62237598、北緯33.5952898として座標照合に使用。"
+      ],
+      "limits": [
+        "代表点は城域の境界や各曲輪の測量位置ではない。"
+      ],
+      "kind": "source-summary",
+      "organized": "2026-11-02"
+    },
+    {
+      "id": "historical-map-candidates/archives-secondary-use",
+      "title": "データの二次利用",
+      "author": "国立公文書館",
+      "url": "https://www.digital.archives.go.jp/secondary-use",
+      "locator": "デジタルコンテンツ・目録情報・利用にあたってのお願い",
+      "originalFile": "data/inputs/historical-map-candidates/archives-secondary-use.html",
+      "encoding": "utf-8",
+      "originalSha256": "ad98ef4acd3ed228d2832547bad76df9215c135c601e50fa151136a84ffcdd1e",
+      "summary": [
+        "画像等は営利・非営利を問わず複製・改変・再配布が可能で、申請不要と説明される。",
+        "目録情報はCC0。解説文等はCC BY 4.0。出典と加工した旨を記録する。"
+      ],
+      "limits": [
+        "画像、目録、解説を同じライセンスと扱わない。第三者の権利に関する注意も参照。"
+      ],
+      "kind": "source-summary",
+      "organized": "2026-11-02"
+    },
+    {
+      "id": "historical-map-candidates/codh-geoshape",
+      "title": "歴史的行政区域データセットβ版",
+      "author": "ROIS-DS人文学オープンデータ共同利用センター（CODH）",
+      "url": "https://geoshape.ex.nii.ac.jp/city/index.html.ja",
+      "locator": "概要・ポリゴンデータ・ライセンス",
+      "originalFile": "data/inputs/historical-map-candidates/codh-geoshape.html",
+      "encoding": "utf-8",
+      "originalSha256": "9ec380de4a8e0fb7bb545c467172e2fb60b0394043005a1a5d7e96e62db5ad27",
+      "summary": [
+        "1889年以降の市区町村を対象とする時系列データ。GeoJSON/TopoJSONと代表点を提供。",
+        "サイトはCC BY 4.0。出典は「歴史的行政区域データセットβ版（CODH作成）doi:10.20676/00000447」。元の国土数値情報の条件も確認する。"
+      ],
+      "limits": [
+        "1889年以前の関連地名データはポリゴンを提供しない。戦国期の領土境界ではない。"
+      ],
+      "kind": "source-summary",
+      "organized": "2026-11-02"
+    },
+    {
+      "id": "historical-map-candidates/naro-habs-faq",
+      "title": "歴史的農業環境閲覧システムFAQ",
+      "author": "農研機構 農業環境研究部門",
+      "url": "https://habs.rad.naro.go.jp/habs_faq.html",
+      "locator": "利用条件・迅速測図の年代・位置精度",
+      "originalFile": "data/inputs/historical-map-candidates/naro-habs-faq.html",
+      "encoding": "utf-8",
+      "originalSha256": "9d0ae5d5f0004bc84b5b5236b3fc60cac0b8dd993d2b09bdb3754cd69b3042e5",
+      "summary": [
+        "関東の迅速測図は1880〜1886年。元縮尺は1:20000、位置誤差は大きな所で約100mと説明。",
+        "基本条件はCC BY 2.1 JP。出典「農研機構農業環境研究部門」を表示。別表示のあるリンク先は個別条件による。"
+      ],
+      "limits": [
+        "明治期の比較地図であり、江戸期の治水や干拓を遡って戦国期へ一括転用しない。"
+      ],
+      "kind": "source-summary",
+      "organized": "2026-11-02"
+    },
+    {
+      "id": "historical-map-candidates/okayama-reuse",
+      "title": "貴重資料の二次利用について",
+      "author": "岡山大学図書館",
+      "url": "https://www.lib.okayama-u.ac.jp/collections/reuse.html",
+      "locator": "自由に利用できる画像・お願い",
+      "originalFile": "data/inputs/historical-map-candidates/okayama-reuse.html",
+      "encoding": "utf-8",
+      "originalSha256": "0122406a77a0b5fbab485a0267c75675626c98dfe935b5f3d03b2a7ff091680b",
+      "summary": [
+        "個別資料にPDと記載された画像は、改変・商用利用を含め自由利用可能と説明（2026年4月から）。",
+        "所蔵元と加工した旨を表示し、利用状況の写し等の寄贈依頼を確認する。"
+      ],
+      "limits": [
+        "すべての所蔵画像が対象ではない。個別のPD表示を確認する。"
+      ],
+      "kind": "source-summary",
+      "organized": "2026-11-02"
+    },
+    {
+      "id": "hokurikudo-review/source-ancient-traffic",
+      "title": "図説福井県史 古代13 北陸道と北の海つ道（1）",
+      "author": "福井県文書館",
+      "url": "https://www.library-archives.pref.fukui.lg.jp/fukui/07/zusetsu/A13/A131.htm",
+      "locator": "古代の交通路",
+      "originalFile": "data/inputs/hokurikudo-review/source-ancient-traffic.html",
+      "encoding": "cp932",
+      "originalSha256": "fa8f2a709fe810ce893aa5f9fb5fc090d77f96ccc9bb3fdc24fd28ff4c2609e6",
+      "summary": [
+        "奈良時代・平安時代で異なる北陸道の経路と駅制を説明。",
+        "木ノ芽峠・山中峠などを年代別の交通路として区別する。"
+      ],
+      "limits": [
+        "古代の駅路をそのまま戦国期の軍の経路へ適用しない。"
+      ],
+      "kind": "source-summary",
+      "organized": "2026-11-02"
+    },
+    {
+      "id": "hokurikudo-review/source-early-modern-map-page",
+      "title": "図説福井県史 近世15 街道と川舟（2）拡大図",
+      "author": "福井県文書館",
+      "url": "https://www.library-archives.pref.fukui.lg.jp/fukui/07/zusetsu/C15/C1521.htm",
+      "locator": "越前・若狭の交通路の拡大画像",
+      "originalFile": "data/inputs/hokurikudo-review/source-early-modern-map-page.html",
+      "encoding": "cp932",
+      "originalSha256": "6a19e3507a975a0cf89daa783d257896f59609fc8d13ea0405683788e06a3107",
+      "summary": [
+        "交通路の拡大画像へ接続するページ。関連画像はsource-early-modern-map.gif。"
+      ],
+      "limits": [
+        "本文で年代を確かめる。ページの存在だけで線形・年代の確認済みとしない。"
+      ],
+      "kind": "image-access-record",
+      "organized": "2026-11-02"
+    },
+    {
+      "id": "hokurikudo-review/source-early-modern-traffic",
+      "title": "図説福井県史 近世15 街道と川舟（1）",
+      "author": "福井県文書館",
+      "url": "https://www.library-archives.pref.fukui.lg.jp/fukui/07/zusetsu/C15/C151.htm",
+      "locator": "街道と宿場・木ノ芽峠・交通路図の注記",
+      "originalFile": "data/inputs/hokurikudo-review/source-early-modern-traffic.html",
+      "encoding": "cp932",
+      "originalSha256": "7e66c80d1d249c34271f46d68f80fcae4ebe24f43e1ca45b1a0d649f87b3c77f",
+      "summary": [
+        "近世の北国街道、今庄から木ノ芽峠を経る道、敦賀・若狭の街道を解説。",
+        "交通路図の越前部分は1685年の越前国絵図に基づくと明記。"
+      ],
+      "limits": [
+        "1685年を戦国期の確定経路へ読み替えない。近世の宿駅の成立年代を分ける。"
+      ],
+      "kind": "source-summary",
+      "organized": "2026-11-02"
+    },
+    {
+      "id": "hokurikudo-review/source-genpei-routes",
+      "title": "福井県史 通史編1 原始・古代 源平北陸合戦",
+      "author": "福井県文書館",
+      "url": "https://www.library-archives.pref.fukui.lg.jp/fukui/07/kenshi/T1/6a7-01-04-03-03.htm",
+      "locator": "第六章 第四節 三 武者往来の道",
+      "originalFile": "data/inputs/hokurikudo-review/source-genpei-routes.html",
+      "encoding": "cp932",
+      "originalSha256": "c2ba6d38f6bd5831d3f2377e989e70cf1afcf07560d7adb868cb98df8b5af630",
+      "summary": [
+        "源平合戦に関わる東西の進路と、史料に記された地名を解説。"
+      ],
+      "limits": [
+        "12世紀の軍の動きである。16世紀の利用・通行可能性を自動的に確定しない。"
+      ],
+      "kind": "source-summary",
+      "organized": "2026-11-02"
+    },
+    {
+      "id": "hokurikudo-review/source-medieval-forts",
+      "title": "福井県史 通史編2 中世 交通と城塞",
+      "author": "福井県文書館",
+      "url": "https://www.library-archives.pref.fukui.lg.jp/fukui/07/kenshi/T2/T2-5-01-03-01-10.htm",
+      "locator": "中世の城塞と交通路",
+      "originalFile": "data/inputs/hokurikudo-review/source-medieval-forts.html",
+      "encoding": "cp932",
+      "originalSha256": "08baadd6a9a966678822434affc25e579755c1b7c074c019cd0c443a88d9ccb0",
+      "summary": [
+        "中世の城塞と交通路の関係を調べるための資料。"
+      ],
+      "limits": [
+        "特定の城郭・時点の記述を個別に確認する。精密な道路中心線のデータではない。"
+      ],
+      "kind": "source-summary",
+      "organized": "2026-11-02"
+    },
+    {
+      "id": "hokurikudo-review/source-medieval-traffic",
+      "title": "福井県史 通史編2 中世 西街道と舟運",
+      "author": "福井県文書館",
+      "url": "https://www.library-archives.pref.fukui.lg.jp/fukui/07/kenshi/T2/T2-5-01-01-03-01.htm",
+      "locator": "蕪木・河野・今泉と道路整備",
+      "originalFile": "data/inputs/hokurikudo-review/source-medieval-traffic.html",
+      "encoding": "cp932",
+      "originalSha256": "e1585bfe4c106a0c89183fde4c3bfcf55b13ab7cf64ebf29a8ba7c0bb1e08870",
+      "summary": [
+        "中世の舟運上陸地点や西街道の変遷を解説。",
+        "蕪木から河野・今泉への変化と道路整備の推測を区別して読む。"
+      ],
+      "limits": [
+        "推測と史料に確認できる記録を分ける。単一の固定経路として全時代へ適用しない。"
+      ],
+      "kind": "source-summary",
+      "organized": "2026-11-02"
+    },
+    {
+      "id": "hokurikudo-review/source-road-introduction",
+      "title": "福井県史 通史編1 産業・交通と都市 陸路",
+      "author": "福井県文書館",
+      "url": "https://www.library-archives.pref.fukui.lg.jp/fukui/07/kenshi/T1/0a1-01-03-02-01.htm",
+      "locator": "通史編序説 二 交通 陸路",
+      "originalFile": "data/inputs/hokurikudo-review/source-road-introduction.html",
+      "encoding": "cp932",
+      "originalSha256": "ade9a11080cf21b4560dcaa96299e36a5944f3927e80be0c82a81d44488b6ba6",
+      "summary": [
+        "海津道・塩津道、木ノ芽峠・栃ノ木峠、若狭から今津・朽木への道を解説。",
+        "時代による経路と宿駅の変化を照合する。"
+      ],
+      "limits": [
+        "古代・中世・近世の記述が混在する。対象年に合う記述を選ぶ。"
+      ],
+      "kind": "source-summary",
+      "organized": "2026-11-02"
+    },
+    {
+      "id": "kashiwagi-review/bunka-page",
+      "title": "柏木城跡",
+      "author": "文化庁・文化遺産オンライン",
+      "url": "https://online.bunka.go.jp/heritages/detail/520604",
+      "locator": "所在地の地図・解説",
+      "originalFile": "data/inputs/kashiwagi-review/bunka-page.html",
+      "encoding": "utf-8",
+      "originalSha256": "6e6d9c7c346b85170df06017e903592ffa8b084912e39d38e23c7bb5e55d89ff",
+      "summary": [
+        "城跡所在地の地図代表点を座標照合に使用。東経139.97655556、北緯37.66630556。"
+      ],
+      "limits": [
+        "城域全体や建物の測量点ではない。"
+      ],
+      "kind": "source-summary",
+      "organized": "2026-11-02"
+    },
+    {
+      "id": "kojima-coast-review/bizen-keicho",
+      "title": "備前国図 池田家文庫T1-5",
+      "author": "岡山大学図書館",
+      "url": "https://ousar.lib.okayama-u.ac.jp/ikedake/ezu/ja/5",
+      "locator": "書誌・年代・寸法・利用条件",
+      "originalFile": "data/inputs/kojima-coast-review/bizen-keicho.html",
+      "encoding": "utf-8",
+      "originalSha256": "01acee5b4445394eb95d4614050a26506aded6facf3e58fa5f2910db995916da",
+      "summary": [
+        "慶長年間（1596〜1615）と推定される国図。作者未詳、329.0×280.7cm。",
+        "個別目録の利用条件はパブリックドメイン（PD）。児島湾の島・集落・海域の対応に使う。"
+      ],
+      "limits": [
+        "絵画的な国図であり、全図を単一変換して精密な現代座標の汀線とはしない。"
+      ],
+      "kind": "source-summary",
+      "organized": "2026-11-02"
+    },
+    {
+      "id": "kojima-coast-review/bizen-keicho-adeac",
+      "title": "備前国図 T1-5 公開画像案内",
+      "author": "岡山県デジタルアーカイブ／岡山大学図書館",
+      "url": "https://adeac.jp/okayama-pref-digioka/viewer/M2004092519241341842/M2004092519241341842/",
+      "locator": "画像案内ページ",
+      "originalFile": "data/inputs/kojima-coast-review/bizen-keicho-adeac.html",
+      "encoding": "utf-8",
+      "originalSha256": "b298f60161c02619ffb6f6d8e77bf73e76efbd386e009c3023d8d7cc4620e583",
+      "summary": [
+        "岡山大学の原図を公開ビューアへたどるための案内。画像取得URL・寸法・SHAは同フォルダのmanifest.jsonに保持。"
+      ],
+      "limits": [
+        "歴史記述の追加根拠ではなく、原図取得の記録。"
+      ],
+      "kind": "image-access-record",
+      "organized": "2026-11-02"
+    },
+    {
+      "id": "kojima-coast-review/bizen-keicho-viewer",
+      "title": "備前国図 画像ビューア取得記録",
+      "author": "岡山県デジタルアーカイブ／ADEAC",
+      "url": "https://adeac.jp/viewitem/okayama-pref-digioka/viewer/viewer/M2004092519241341842/index.html",
+      "locator": "画像ビューアの入口",
+      "originalFile": "data/inputs/kojima-coast-review/bizen-keicho-viewer.html",
+      "encoding": "utf-8",
+      "originalSha256": "2c3466c63aee44d0b5198e8627123856b629b51fa36ecf5187beba61544e718a",
+      "summary": [
+        "原図画像リストと公開画像の場所を確認した記録。原画像はbizen-keicho-map.jpgとして別に保存。"
+      ],
+      "limits": [
+        "ビューアのプログラムや画面装飾を史実の根拠にしない。"
+      ],
+      "kind": "image-access-record",
+      "organized": "2026-11-02"
+    },
+    {
+      "id": "okitanawate-review/shimabara-cultural-source",
+      "title": "沖田畷合戦場跡 龍造寺隆信供養塔",
+      "author": "島原市",
+      "url": "https://www.city.shimabara.lg.jp/rekishi/page2793.html",
+      "locator": "合戦場跡の案内",
+      "originalFile": "data/inputs/okitanawate-review/shimabara-cultural-source.html",
+      "encoding": "utf-8",
+      "originalSha256": "0f56cc8d3351963de0fff9c983712743279578b4db049bdbe792be9f9691ec13",
+      "summary": [
+        "沖田畷の戦いに関する史跡案内。合戦地域と顕彰施設の位置関係の照合に使用。"
+      ],
+      "limits": [
+        "供養塔の位置が、当日の全軍の布陣や本陣の精密位置を示すわけではない。"
+      ],
+      "kind": "source-summary",
+      "organized": "2026-11-02",
+      "archiveWithheld": "原HTMLは第三者の埋め込みAPIキーを含むため保存しない。本文抽出は data/inputs/okitanawate-review/shimabara-cultural-source.txt",
+      "retainedTextFile": "data/inputs/okitanawate-review/shimabara-cultural-source.txt"
+    }
+  ]
+}

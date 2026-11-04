@@ -1,0 +1,62 @@
+{
+  "scope": "Modern elevation comparison only",
+  "seed": [
+    133.81842,
+    34.599915
+  ],
+  "connectivity": 4,
+  "sourceTiles": [
+    "https://cyberjapandata.gsi.go.jp/xyz/dem_png/14/14281/6511.png",
+    "https://cyberjapandata.gsi.go.jp/xyz/dem_png/14/14282/6511.png",
+    "https://cyberjapandata.gsi.go.jp/xyz/dem_png/14/14283/6511.png",
+    "https://cyberjapandata.gsi.go.jp/xyz/dem_png/14/14281/6512.png",
+    "https://cyberjapandata.gsi.go.jp/xyz/dem_png/14/14282/6512.png",
+    "https://cyberjapandata.gsi.go.jp/xyz/dem_png/14/14283/6512.png"
+  ],
+  "components": [
+    {
+      "minimumMetres": 5,
+      "boundsPixels": [
+        0,
+        0,
+        768,
+        329
+      ],
+      "pixelCount": 108146,
+      "touchesTileExtent": true
+    },
+    {
+      "minimumMetres": 8,
+      "boundsPixels": [
+        290,
+        182,
+        52,
+        52
+      ],
+      "pixelCount": 1362,
+      "touchesTileExtent": false
+    },
+    {
+      "minimumMetres": 10,
+      "boundsPixels": [
+        291,
+        183,
+        50,
+        50
+      ],
+      "pixelCount": 1115,
+      "touchesTileExtent": false
+    },
+    {
+      "minimumMetres": 12,
+      "boundsPixels": [
+        293,
+        183,
+        47,
+        47
+      ],
+      "pixelCount": 894,
+      "touchesTileExtent": false
+    }
+  ]
+}

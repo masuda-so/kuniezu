@@ -1,0 +1,179 @@
+{
+  "ok": true,
+  "beforeRoot": "/Users/masudaso/Desktop/天下分け目の国絵図",
+  "sourceSha256": "46ac04975ed4291bd7f1ead55f985818b5daf91f0f84430c8064e909b09bd7a4",
+  "tiles": [
+    {
+      "date": 15600101,
+      "oldVersion": "15600101-15840101",
+      "newVersion": null,
+      "tiles": 251,
+      "bytesEqual": 251,
+      "decodedEqual": 0,
+      "publishedPixels": 257424040,
+      "implicitSeaPixels": 286766816,
+      "allPixels": 544190856,
+      "levels": {
+        "1": 223539200,
+        "4": 25997312,
+        "8": 7887528
+      }
+    },
+    {
+      "date": 16000101,
+      "oldVersion": "15840101-16160101",
+      "newVersion": "15840101-16160101",
+      "tiles": 251,
+      "bytesEqual": 251,
+      "decodedEqual": 0,
+      "publishedPixels": 257424040,
+      "implicitSeaPixels": 286766816,
+      "allPixels": 544190856,
+      "levels": {
+        "1": 223539200,
+        "4": 25997312,
+        "8": 7887528
+      }
+    }
+  ],
+  "edges": [
+    {
+      "date": 15600101,
+      "tilePositions": 224,
+      "geometryMatches": true
+    },
+    {
+      "date": 16000101,
+      "tilePositions": 224,
+      "geometryMatches": true
+    }
+  ],
+  "source": {
+    "source": "game/map_data/provinces.png",
+    "sourceSha256": "46ac04975ed4291bd7f1ead55f985818b5daf91f0f84430c8064e909b09bd7a4",
+    "window": [
+      9770,
+      12890,
+      451,
+      379
+    ],
+    "results": {
+      "westEndpointIsSea": true,
+      "eastEndpointIsSea": true,
+      "fujitoPassageConnected": true,
+      "mainlandControlIsLand": true,
+      "kojimaControlIsLand": true,
+      "kojimaConnectedToMainland": false
+    },
+    "controls": [
+      {
+        "name": "経ヶ島",
+        "point": [
+          133.8108903,
+          34.5610021
+        ],
+        "pixel": [
+          9969,
+          13033
+        ],
+        "key": "castle:tenjin",
+        "kind": "land"
+      },
+      {
+        "name": "藤戸寺",
+        "point": [
+          133.8095872,
+          34.5601554
+        ],
+        "pixel": [
+          9967,
+          13034
+        ],
+        "key": "castle:tenjin",
+        "kind": "land"
+      },
+      {
+        "name": "塩生",
+        "point": [
+          133.771388,
+          34.476388
+        ],
+        "pixel": [
+          9933,
+          13128
+        ],
+        "key": "castle:tenjin",
+        "kind": "land"
+      },
+      {
+        "name": "浮洲岩跡",
+        "point": [
+          133.8052177,
+          34.5598924
+        ],
+        "pixel": [
+          9963,
+          13035
+        ],
+        "key": "castle:tenjin",
+        "kind": "land"
+      },
+      {
+        "name": "水島",
+        "point": [
+          133.718,
+          34.517
+        ],
+        "pixel": [
+          9885,
+          13082
+        ],
+        "key": "sea",
+        "kind": "sea"
+      },
+      {
+        "name": "早島の丘",
+        "point": [
+          133.81842,
+          34.599915
+        ],
+        "pixel": [
+          9975,
+          12990
+        ],
+        "key": "castle:bmatsuyama",
+        "kind": "land"
+      },
+      {
+        "name": "北岸確認点",
+        "point": [
+          133.9,
+          34.64
+        ],
+        "pixel": [
+          10049,
+          12945
+        ],
+        "key": "castle:tenjin",
+        "kind": "land"
+      }
+    ]
+  },
+  "guards": [
+    {
+      "script": "tools/map/build-provinces.cjs",
+      "status": 1,
+      "sourceUnchanged": true
+    },
+    {
+      "script": "tools/geo/kojima-bay-1600.cjs",
+      "status": 1,
+      "sourceUnchanged": true
+    },
+    {
+      "script": "tools/map/bake-kojima-baseline.cjs",
+      "status": 1,
+      "sourceUnchanged": true
+    }
+  ]
+}

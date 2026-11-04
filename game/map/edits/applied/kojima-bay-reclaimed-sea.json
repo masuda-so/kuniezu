@@ -1,0 +1,40 @@
+{
+  "id": "kojima-bay-reclaimed-sea",
+  "layer": "provinces",
+  "baseRevision": "3ab7e5f2175760f5e7d5d5e134424ced9d5e742b",
+  "validFrom": [
+    1560,
+    1,
+    1
+  ],
+  "validUntil": [
+    1616,
+    1,
+    1
+  ],
+  "payload": {
+    "mask": "../../../../data/inputs/kojima-coast-review/kojima-bay-1600/kojima-bay-reclaimed-sea.png",
+    "maskSha256": "a443d7cd87bb307064a755f9e6be8a4c5f05e4d417a5d07b49d6ae687875e0a3",
+    "window": [
+      9734,
+      12823,
+      630,
+      390
+    ],
+    "from": "land",
+    "keys": [
+      "sea"
+    ]
+  },
+  "sourceIds": [
+    "高梁川水系の流域及び河川の概要（案）参考資料1-1",
+    "近代の児島湾干拓計画を策定したムルデル",
+    "文化財資料（宇喜多堤）",
+    "海面古図と年表",
+    "広がる大地－絵図でたどる児島湾のかんたく－"
+  ],
+  "basis": "干拓進展図で17世紀以降の干拓地の区画（網点・白抜き）と、区画の外で現代標高0.5m以下の水面。区画の中の標高10m以上の丘、早島の丘、藤戸の史跡3画素は除く。藤戸の瀬戸は Codex の100m比較経路と標高6m未満の隣を加える。",
+  "review": "小縮尺の概観図を現代の海岸で位置合わせした推定。各年の汀線、干潟と深い海の区別、藤戸の水路幅は示さない。",
+  "generated": "tools/geo/kojima-bay-1600.cjs",
+  "appliedToSourceSha256": "46ac04975ed4291bd7f1ead55f985818b5daf91f0f84430c8064e909b09bd7a4"
+}

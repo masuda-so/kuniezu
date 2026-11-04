@@ -1,0 +1,1341 @@
+{
+  "schema": "castle-history-connection-candidates-v1",
+  "createdAt": "2026-11-04T03:00:55.942210+00:00",
+  "purpose": "既存の確認済み命題を一記録のまま、城・施設・人物の安定IDと元の精度の出来事日時へ接続する候補。共有への統合・実装は親担当。",
+  "method": "既存curated命題・出典台帳・報告書の再利用。今回、外部の原資料の再取得・再読了は行っていない。",
+  "scopeBoundary": "確認済み命題の範囲内で採用候補を抽出。全城の領主史・全明渡し日が完成したという意味ではない。",
+  "integrationContract": {
+    "recordIdentity": "claim:<existing id> を共通索引で再利用。本文を場所別・年別に複製しない。",
+    "proposedEntities": "entity-registrations.json は同名照合と既存ID確認後に登録。今回geometryは全件null。",
+    "datePrecision": "eventTimeとclaimApplicabilityYearsを別欄に保持。年精度は1月1日にしない。記録日と実施日を分ける。",
+    "currentSchemaLimit": "現location-storeは人物→場所4関係のみ。築城・明渡し命令・施設焼失等をattested-presence等へ押し込まない。共通history-indexの既存claimに複数対象ID/出来事時点を接続する方が重複が少ない。",
+    "noRuntimeOwnerInference": "game node管理域・在城者・イベント実行日を根拠として逆流させない。",
+    "samePhysicalSite": "諏訪原/牧野は改称、縣城/松尾城は別城地、奉先寺焼失/再建は同一施設。"
+  },
+  "accepted": [
+    {
+      "recordRef": "claim:suwahara-capture-date",
+      "decision": "accept-link",
+      "scope": "castle-or-facility",
+      "relation": "military-control-transfer",
+      "entities": [
+        "place:suwahara"
+      ],
+      "eventTime": {
+        "kind": "dated-event",
+        "date": [
+          1575,
+          8,
+          24
+        ],
+        "calendar": "Japanese-lunisolar",
+        "leapMonth": false,
+        "precision": "day"
+      },
+      "summary": "諏訪原城が徳川方へ降り、牧野城へ改称。",
+      "limits": "島田市が採用する攻略日。個別城主の就任・現地所在・周辺知行の移管日を自動設定しない。",
+      "source": {
+        "claimFile": "data/research/curated/claims/a6531af676bf437b.json",
+        "claimSha256": "5a16aaa5660f5e003d9e102f67623b5aa13f69c59f6d79a82fdcbd7eb518d154",
+        "id": "suwaharaChronology",
+        "url": "https://www.city.shimada.shizuoka.jp/shimahaku/docs/863749869.html",
+        "title": "牧野城とは・牧野城に在城した徳川の武将たち",
+        "locator": "今川氏真の項：今川氏真詠草に基づく旧暦8月24日の説明",
+        "priorCheckedAt": "2026-11-01"
+      },
+      "claimApplicabilityYears": [
+        1575,
+        1575
+      ],
+      "integration": {
+        "reuseExistingRecord": true,
+        "newHistoricalClaim": false,
+        "newLocationObservation": false,
+        "continuousPresenceAssumed": false,
+        "exactPresenceConfirmed": false,
+        "inheritedGameBindings": [
+          "G.yOwner",
+          "G.sitePresentation",
+          "G.siteName"
+        ]
+      },
+      "parties": [
+        {
+          "name": "徳川方",
+          "role": "receiving-side"
+        }
+      ],
+      "reviewReport": "docs/reports/SUWAHARA_PERIOD_REVIEW.md",
+      "inheritedUncertainty": "自治体が採用する落城日。異説を全て否定する意味ではない。"
+    },
+    {
+      "recordRef": "claim:agata-castle-construction",
+      "decision": "accept-link",
+      "scope": "castle-or-facility",
+      "relation": "castle-construction",
+      "entities": [
+        "place:agata",
+        "place:matsuo-hyuga",
+        "person:高橋元種"
+      ],
+      "eventTime": {
+        "kind": "year-window",
+        "year": 1603,
+        "calendar": "CE-year",
+        "precision": "year"
+      },
+      "summary": "高橋元種が縣城を築城。旧本拠は松尾城。",
+      "limits": "1603年1月1日に築城・入城したと扱わない。築城記録だけで松尾城の廃止日も決めない。",
+      "source": {
+        "claimFile": "data/research/curated/claims/agata-castle-construction.json",
+        "claimSha256": "0e195f8fc7f8e6f36baadca755a0ea8774514675d5538f6d0d682a74732d4249",
+        "id": "nobeokaAgataHistory",
+        "url": "https://www.city.nobeoka.miyazaki.jp/soshiki/6/1689.html",
+        "title": "延岡市の歴史",
+        "locator": "慶長8年の県城築城",
+        "priorCheckedAt": "2026-11-03"
+      },
+      "claimApplicabilityYears": [
+        1603,
+        1603
+      ],
+      "integration": {
+        "reuseExistingRecord": true,
+        "newHistoricalClaim": false,
+        "newLocationObservation": false,
+        "continuousPresenceAssumed": false,
+        "exactPresenceConfirmed": false,
+        "inheritedGameBindings": [
+          "node:agata",
+          "timeline:高橋元種の縣城築城"
+        ]
+      },
+      "inheritedUncertainty": "月日は確認範囲外。ゲームは1603年の年初を切替に使う。"
+    },
+    {
+      "recordRef": "claim:agata-receipt-order",
+      "decision": "accept-link",
+      "scope": "castle-or-facility",
+      "relation": "castle-receipt-order",
+      "entities": [
+        "place:agata"
+      ],
+      "eventTime": {
+        "kind": "dated-event",
+        "date": [
+          1613,
+          12,
+          15
+        ],
+        "calendar": "Japanese-lunisolar",
+        "leapMonth": false,
+        "precision": "day"
+      },
+      "summary": "県城の請取を命じる文書。",
+      "limits": "文書発給日。受取実施日、城主交代日、現地入城日を表さない。",
+      "source": {
+        "claimFile": "data/research/curated/claims/agata-receipt-order.json",
+        "claimSha256": "e5c1690488cc92335cf7405cdb4c585a78143515dd79e45b690b32d402c5eb5a",
+        "id": "agata-receipt-order",
+        "url": "https://dcollections.lib.keio.ac.jp/ja/sagara/003-113",
+        "title": "県城の請取命令",
+        "locator": "相良家文書 003-113",
+        "priorCheckedAt": "2026-11-03"
+      },
+      "claimApplicabilityYears": [
+        1613,
+        1613
+      ],
+      "integration": {
+        "reuseExistingRecord": true,
+        "newHistoricalClaim": false,
+        "newLocationObservation": false,
+        "continuousPresenceAssumed": false,
+        "exactPresenceConfirmed": false,
+        "inheritedGameBindings": [
+          "timeline:幕府が県城の請取を命じる",
+          "node:agata"
+        ]
+      },
+      "parties": [
+        {
+          "name": "江戸幕府年寄",
+          "role": "document-author"
+        }
+      ],
+      "inheritedUncertainty": "書状の日付。実際の城の明渡日や知行の移管日は別。"
+    },
+    {
+      "recordRef": "claim:agata-handover-report",
+      "decision": "accept-link",
+      "scope": "castle-or-facility",
+      "relation": "castle-handover-completion-report",
+      "entities": [
+        "place:agata"
+      ],
+      "eventTime": {
+        "kind": "dated-event",
+        "date": [
+          1614,
+          8,
+          25
+        ],
+        "calendar": "Japanese-lunisolar",
+        "leapMonth": false,
+        "precision": "day"
+      },
+      "summary": "県城の引渡しが落着したことを伝える報告。",
+      "limits": "報告日。明渡しの実施日と同一扱いしない。受領者の氏名はこの命題から補わない。",
+      "source": {
+        "claimFile": "data/research/curated/claims/agata-handover-report.json",
+        "claimSha256": "15e1eaf83f02cbe7983d58987660bb89b187571e408c5fa69fd085290561301b",
+        "id": "agata-handover-report",
+        "url": "https://dcollections.lib.keio.ac.jp/ja/sagara/003-116",
+        "title": "県城の引渡し落着の報告",
+        "locator": "相良家文書 003-116",
+        "priorCheckedAt": "2026-11-03"
+      },
+      "claimApplicabilityYears": [
+        1614,
+        1614
+      ],
+      "integration": {
+        "reuseExistingRecord": true,
+        "newHistoricalClaim": false,
+        "newLocationObservation": false,
+        "continuousPresenceAssumed": false,
+        "exactPresenceConfirmed": false,
+        "inheritedGameBindings": [
+          "timeline:県城引渡しの落着",
+          "node:agata"
+        ]
+      },
+      "parties": [
+        {
+          "name": "本多正信",
+          "role": "document-author"
+        }
+      ],
+      "inheritedUncertainty": "書状の日付。実際の城の明渡日や知行の移管日は別。"
+    },
+    {
+      "recordRef": "claim:aki-1569-defeat",
+      "decision": "accept-link",
+      "scope": "castle-or-facility",
+      "relation": "military-defeat",
+      "entities": [
+        "place:安芸城",
+        "person:aki-kunitora",
+        "person:chosokabe-motochika"
+      ],
+      "eventTime": {
+        "kind": "year-window",
+        "year": 1569,
+        "calendar": "CE-year",
+        "precision": "year"
+      },
+      "summary": "安芸国虎が長宗我部元親の攻撃を受けて敗れる。",
+      "limits": "敗北した年。正確な落城日・領主交代日・土地の移管範囲を補わない。",
+      "source": {
+        "claimFile": "data/research/curated/claims/aki-1569-defeat.json",
+        "claimSha256": "87075bec3d64d5180e6bf004676cb19035358b6ae61891a5660a87ebc05ffb79",
+        "id": "akiCastleCity",
+        "url": "https://www.city.aki.kochi.jp/life/dtl.php?hdnKey=44",
+        "title": "安芸城跡",
+        "locator": "城跡解説",
+        "priorCheckedAt": "2026-11-02"
+      },
+      "claimApplicabilityYears": [
+        1569,
+        1569
+      ],
+      "integration": {
+        "reuseExistingRecord": true,
+        "newHistoricalClaim": false,
+        "newLocationObservation": false,
+        "continuousPresenceAssumed": false,
+        "exactPresenceConfirmed": false,
+        "inheritedGameBindings": [
+          "TK.CASTLE_EVIDENCE:安芸城"
+        ]
+      },
+      "reviewReport": "docs/reports/AKI_CASTLE_POSITION_REVIEW.md",
+      "inheritedUncertainty": "年単位の説明を逐日の入城・落城日へ置き換えない。"
+    },
+    {
+      "recordRef": "claim:aki-1601-goto",
+      "decision": "accept-link",
+      "scope": "castle-or-facility",
+      "relation": "residence-established",
+      "entities": [
+        "place:安芸城",
+        "person:goto-tameshige"
+      ],
+      "eventTime": {
+        "kind": "year-window",
+        "year": 1601,
+        "calendar": "CE-year",
+        "precision": "year"
+      },
+      "summary": "五藤為重が安芸に入り、土居を構える。",
+      "limits": "入居の年精度。終年の在城や土佐一国の領主という関係へ拡大しない。",
+      "source": {
+        "claimFile": "data/research/curated/claims/aki-1601-goto.json",
+        "claimSha256": "28522e04763293a62a9be9dfb77477c0ebcb0f8b224635eb819a58b449c4e68a",
+        "id": "akiCastleCity",
+        "url": "https://www.city.aki.kochi.jp/life/dtl.php?hdnKey=44",
+        "title": "安芸城跡",
+        "locator": "城跡解説",
+        "priorCheckedAt": "2026-11-02"
+      },
+      "claimApplicabilityYears": [
+        1601,
+        1601
+      ],
+      "integration": {
+        "reuseExistingRecord": true,
+        "newHistoricalClaim": false,
+        "newLocationObservation": false,
+        "continuousPresenceAssumed": false,
+        "exactPresenceConfirmed": false,
+        "inheritedGameBindings": [
+          "TK.CASTLE_EVIDENCE:安芸城"
+        ]
+      },
+      "reviewReport": "docs/reports/AKI_CASTLE_POSITION_REVIEW.md",
+      "inheritedUncertainty": "年単位の説明を逐日の入城・落城日へ置き換えない。"
+    },
+    {
+      "recordRef": "claim:akizuki-tanetaka-grant",
+      "decision": "accept-link",
+      "scope": "castle-or-facility",
+      "relation": "castle-grant-order",
+      "entities": [
+        "place:takarabe-castle",
+        "person:秋月種長",
+        "person:toyotomi-hideyoshi"
+      ],
+      "eventTime": {
+        "kind": "dated-event",
+        "date": [
+          1587,
+          7,
+          3
+        ],
+        "calendar": "Japanese-lunisolar",
+        "leapMonth": false,
+        "precision": "day"
+      },
+      "summary": "秀吉の朱印状が秋月種長へ日向財部の城を宛行う。",
+      "limits": "発給日。父・種実への移封説明と混ぜず、種長の入城日や古処山の明渡し日を作らない。",
+      "source": {
+        "claimFile": "data/research/curated/claims/akizuki-tanetaka-grant.json",
+        "claimSha256": "061c80c588d0eb08206cc9fc286de857b646f95a471da8d7ed36258df948f8f0",
+        "id": "takanabeHideyoshiGrant",
+        "url": "https://www.town.takanabe.lg.jp/choseijoho/takanabemachi/1026.html",
+        "title": "高鍋の歴史と文化",
+        "locator": "秀吉朱印状",
+        "priorCheckedAt": "2026-11-03"
+      },
+      "claimApplicabilityYears": [
+        1587,
+        1587
+      ],
+      "integration": {
+        "reuseExistingRecord": true,
+        "newHistoricalClaim": false,
+        "newLocationObservation": false,
+        "continuousPresenceAssumed": false,
+        "exactPresenceConfirmed": false,
+        "inheritedGameBindings": [
+          "campaign:九州平定"
+        ]
+      },
+      "inheritedUncertainty": "朱印状の発給日。現地への入城日、古処山城の明渡し日、知行目録の範囲を示さない。"
+    },
+    {
+      "recordRef": "claim:ganjaku-fall",
+      "decision": "accept-link",
+      "scope": "castle-or-facility",
+      "relation": "castle-fall",
+      "entities": [
+        "place:ganjaku",
+        "person:gamo-ujisato",
+        "person:前田利長"
+      ],
+      "eventTime": {
+        "kind": "dated-event",
+        "date": [
+          1587,
+          4,
+          1
+        ],
+        "calendar": "Japanese-lunisolar",
+        "leapMonth": false,
+        "precision": "day"
+      },
+      "summary": "蒲生氏郷・前田利長らの攻撃で岩石城が落城。",
+      "limits": "岩石城だけの落城日。古処山の落城日や攻撃者の城主就任に転用しない。",
+      "source": {
+        "claimFile": "data/research/curated/claims/ganjaku-fall.json",
+        "claimSha256": "beb67cb5479bf58eda895ec862b19f5122690fe0fb4b7d08a169811b86fcfe56",
+        "id": "soedaGanjakuFall",
+        "url": "https://www.town.soeda.fukuoka.jp/uploaded/attachment/1792.pdf",
+        "title": "添田町歴史的風致維持向上計画",
+        "locator": "第2章、岩石城の攻防",
+        "priorCheckedAt": "2026-11-03"
+      },
+      "claimApplicabilityYears": [
+        1587,
+        1587
+      ],
+      "integration": {
+        "reuseExistingRecord": true,
+        "newHistoricalClaim": false,
+        "newLocationObservation": false,
+        "continuousPresenceAssumed": false,
+        "exactPresenceConfirmed": false,
+        "inheritedGameBindings": [
+          "timeline:岩石城の落城",
+          "site:岩石城"
+        ]
+      },
+      "inheritedUncertainty": "岩石城の落城日。古処山城の明渡し日や秋月氏の知行移管日とは区別する。"
+    },
+    {
+      "recordRef": "claim:mamushizuka-1574-refortification",
+      "decision": "accept-link",
+      "scope": "castle-or-facility",
+      "relation": "garrison-commander-assignment",
+      "entities": [
+        "place:mamushizuka",
+        "person:大須賀康高",
+        "person:tokugawa-ieyasu"
+      ],
+      "eventTime": {
+        "kind": "year-window",
+        "year": 1574,
+        "calendar": "CE-year",
+        "precision": "year"
+      },
+      "summary": "家康による改修に伴い大須賀康高が馬伏塚城の守将となる。",
+      "limits": "守将配置を領主・家督・毎日の在城と同一視しない。改修を初築にしない。",
+      "source": {
+        "claimFile": "data/research/curated/claims/mamushizuka-1574-refortification.json",
+        "claimSha256": "7f43e82ddc94cf56e48fcf12fec1d165b7a7a344bbb5a2d0b00506110bf1c430",
+        "id": "mamushizuka-exhibition",
+        "url": "https://sitereports.nabunken.go.jp/files/attach/43/43731/110679_1_%E8%A2%8B%E4%BA%95%E5%B8%82%E6%95%99%E8%82%B2%E5%A7%94%E5%93%A1%E4%BC%9A%E3%83%BB%E6%8E%9B%E5%B7%9D%E5%B8%82%E6%95%99%E8%82%B2%E5%A7%94%E5%93%A1%E4%BC%9A%E5%85%B1%E5%82%AC%E7%89%B9%E5%88%A5%E5%B1%95%E9%A6%AC%E4%BC%8F%E5%A1%9A%E5%9F%8E%E3%81%A8%E9%AB%98%E5%A4%A9%E7%A5%9E.pdf",
+        "title": "共催特別展 馬伏塚城と高天神城",
+        "locator": "本文11頁、天正2年",
+        "priorCheckedAt": "2026-11-03"
+      },
+      "claimApplicabilityYears": [
+        1574,
+        1574
+      ],
+      "integration": {
+        "reuseExistingRecord": true,
+        "newHistoricalClaim": false,
+        "newLocationObservation": false,
+        "continuousPresenceAssumed": false,
+        "exactPresenceConfirmed": false,
+        "inheritedGameBindings": [
+          "site:馬伏塚城"
+        ]
+      },
+      "reviewReport": "docs/reports/TAKATENJIN_REMAINING_FORTS_REVIEW.md",
+      "inheritedUncertainty": "築城そのものは以前。廃城年は確定しない。"
+    },
+    {
+      "recordRef": "claim:yokosuka-castle-construction",
+      "decision": "accept-link",
+      "scope": "castle-or-facility",
+      "relation": "castle-construction-start",
+      "entities": [
+        "place:yokosuka-totomi",
+        "person:大須賀康高",
+        "person:tokugawa-ieyasu"
+      ],
+      "eventTime": {
+        "kind": "year-window",
+        "year": 1578,
+        "calendar": "CE-year",
+        "precision": "year"
+      },
+      "summary": "大須賀康高が家康の命で横須賀城の築城を開始。",
+      "limits": "着手年。竣工日・入城日や高天神城の領有変更日はこの記録にない。",
+      "source": {
+        "claimFile": "data/research/curated/claims/yokosuka-castle-construction.json",
+        "claimSha256": "116fb8a9fbdd9580958c63beec0154d77f680851b6038f848f427b8ead9301a4",
+        "id": "yokosuka-castle-history",
+        "url": "https://www.city.kakegawa.shizuoka.jp/gyosei/docs/7478.html",
+        "title": "横須賀城跡",
+        "locator": "天正6年の築城",
+        "priorCheckedAt": "2026-11-03"
+      },
+      "claimApplicabilityYears": [
+        1578,
+        1578
+      ],
+      "integration": {
+        "reuseExistingRecord": true,
+        "newHistoricalClaim": false,
+        "newLocationObservation": false,
+        "continuousPresenceAssumed": false,
+        "exactPresenceConfirmed": false,
+        "inheritedGameBindings": [
+          "site:横須賀城"
+        ]
+      },
+      "inheritedUncertainty": "施設の稼働表示は年単位。工事の完了日や着手月日はこの記録の確認範囲外。"
+    },
+    {
+      "recordRef": "claim:bongeunsa-sudosan-relocation",
+      "decision": "accept-link",
+      "scope": "castle-or-facility",
+      "relation": "institution-relocation",
+      "entities": [
+        "place:奉恩寺（修道山）"
+      ],
+      "eventTime": {
+        "kind": "year-window",
+        "year": 1562,
+        "calendar": "CE-year",
+        "precision": "year"
+      },
+      "summary": "奉恩寺が修道山へ移転。",
+      "limits": "寺院組織の移転記録。旧寺地の点座標・1562年の伽藍・焼失年・現代寺院の連続状態を補わない。",
+      "source": {
+        "claimFile": "data/research/curated/claims/bongeunsa-sudosan-relocation.json",
+        "claimSha256": "8766ebc5e5476bc8dc4cf886b125d9dc23daf3f6bbb7b14bb618df2dc9d7419d",
+        "id": "krBongeunsa",
+        "url": "https://encykorea.aks.ac.kr/Article/E0023980",
+        "title": "수도산 봉은사（修道山 奉恩寺）",
+        "locator": "本文・沿革の1562年移転の記述",
+        "priorCheckedAt": "2026-11-04"
+      },
+      "claimApplicabilityYears": [
+        1562,
+        1562
+      ],
+      "integration": {
+        "reuseExistingRecord": true,
+        "newHistoricalClaim": false,
+        "newLocationObservation": false,
+        "continuousPresenceAssumed": false,
+        "exactPresenceConfirmed": false,
+        "inheritedGameBindings": [
+          "TK.KOREA_SITES:奉恩寺（修道山）"
+        ]
+      },
+      "inheritedUncertainty": "位置は現境内の代表点（OpenStreetMap way 74010857、https://www.openstreetmap.org/way/74010857）。1562年の伽藍配置は未確定。1592年は戦乱前施設を表示するための終了境界で、焼失年・焼失日を確定した値ではない。"
+    },
+    {
+      "recordRef": "claim:bongseonsa-burned-1592",
+      "decision": "accept-link",
+      "scope": "castle-or-facility",
+      "relation": "facility-burned",
+      "entities": [
+        "place:bongseonsa"
+      ],
+      "eventTime": {
+        "kind": "year-window",
+        "year": 1592,
+        "calendar": "CE-year",
+        "precision": "year"
+      },
+      "summary": "壬辰倭乱で奉先寺が焼失。",
+      "limits": "年精度。1月1日の焼失イベントや全建物の同日消滅を作らない。",
+      "source": {
+        "claimFile": "data/research/curated/claims/5cd919b97af58ed1.json",
+        "claimSha256": "69ebad4867a28c092693338f106c276cd810d280c3d28edffd629dd011920b9e",
+        "id": "krBongseonsa",
+        "url": "https://encykorea.aks.ac.kr/Article/E0023921",
+        "title": "운악산 봉선사（雲岳山奉先寺）",
+        "locator": "歴史的変遷・壬辰倭乱と翌1593年の重創",
+        "priorCheckedAt": "2026-11-01"
+      },
+      "claimApplicabilityYears": [
+        1592,
+        1592
+      ],
+      "integration": {
+        "reuseExistingRecord": true,
+        "newHistoricalClaim": false,
+        "newLocationObservation": false,
+        "continuousPresenceAssumed": false,
+        "exactPresenceConfirmed": false,
+        "inheritedGameBindings": [
+          "TK.SITE_ACTIVITY:奉先寺",
+          "G.yActive"
+        ]
+      },
+      "reviewReport": "docs/reports/KOREAN_FACILITIES_REVIEW.md",
+      "inheritedUncertainty": "月日と寺域全体の構造は確定しない"
+    },
+    {
+      "recordRef": "claim:bongseonsa-rebuilt-1593",
+      "decision": "accept-link",
+      "scope": "castle-or-facility",
+      "relation": "facility-rebuilt",
+      "entities": [
+        "place:bongseonsa"
+      ],
+      "eventTime": {
+        "kind": "year-window",
+        "year": 1593,
+        "calendar": "CE-year",
+        "precision": "year"
+      },
+      "summary": "朗慧が奉先寺を再建。",
+      "limits": "年精度。再建月日・全寺域の一斉竣工を確定しない。奉先寺を二施設へ分裂させない。",
+      "source": {
+        "claimFile": "data/research/curated/claims/1241e8a0ed0d8b87.json",
+        "claimSha256": "93fb4cb09f85cca52f611045028cd4cc67d80635e16b9946c1b8ca380d8432e0",
+        "id": "krBongseonsa",
+        "url": "https://encykorea.aks.ac.kr/Article/E0023921",
+        "title": "운악산 봉선사（雲岳山奉先寺）",
+        "locator": "歴史的変遷・1593年朗慧の重創",
+        "priorCheckedAt": "2026-11-01"
+      },
+      "claimApplicabilityYears": [
+        1593,
+        1615
+      ],
+      "integration": {
+        "reuseExistingRecord": true,
+        "newHistoricalClaim": false,
+        "newLocationObservation": false,
+        "continuousPresenceAssumed": false,
+        "exactPresenceConfirmed": false,
+        "inheritedGameBindings": [
+          "TK.SITE_ACTIVITY:奉先寺",
+          "G.yActive"
+        ]
+      },
+      "parties": [
+        {
+          "name": "朗慧",
+          "role": "rebuilding-agent"
+        }
+      ],
+      "reviewReport": "docs/reports/KOREAN_FACILITIES_REVIEW.md",
+      "inheritedUncertainty": "月日と寺域全体の構造は確定しない"
+    },
+    {
+      "recordRef": "claim:taki-abandon",
+      "decision": "accept-link",
+      "scope": "castle-or-facility",
+      "relation": "castle-abandoned",
+      "entities": [
+        "place:taki"
+      ],
+      "eventTime": {
+        "kind": "year-window",
+        "year": 1590,
+        "calendar": "CE-year",
+        "precision": "year"
+      },
+      "summary": "滝の城は1590年に落城し、その後廃城。",
+      "limits": "命題のvalidYears1590〜1615は廃城状態の参照範囲であり、毎年の廃城ではない。月日は補わない。",
+      "source": {
+        "claimFile": "data/research/curated/claims/053335fa1d7300d2.json",
+        "claimSha256": "2e3b5c26db3a3ad08a72c443d48e114922a41677093b10effac27d600341f171",
+        "id": "takiCastle",
+        "url": "https://www.city.tokorozawa.saitama.jp/iitokoro/enjoy/bunkakyoyo/bunkazai/kenshiteibunkazai/bunzai_20100126153048508.html",
+        "title": "滝の城跡",
+        "locator": "1590年落城・以後廃城",
+        "priorCheckedAt": "2026-11-01"
+      },
+      "claimApplicabilityYears": [
+        1590,
+        1615
+      ],
+      "integration": {
+        "reuseExistingRecord": true,
+        "newHistoricalClaim": false,
+        "newLocationObservation": false,
+        "continuousPresenceAssumed": false,
+        "exactPresenceConfirmed": false,
+        "inheritedGameBindings": [
+          "G.yActive:滝の城"
+        ]
+      },
+      "inheritedUncertainty": "日付は確定しない"
+    },
+    {
+      "recordRef": "claim:takatenjin-six-forts-preparation-years",
+      "decision": "accept-link",
+      "scope": "castle-or-facility",
+      "relation": "encirclement-fort-preparation",
+      "entities": [
+        "place:takatenjin",
+        "place:ogasayama-fort",
+        "place:nakamura-fort",
+        "place:mitsuiyama-fort",
+        "place:nogesaka-fort",
+        "place:higamine-fort",
+        "place:shishigahana-fort"
+      ],
+      "eventTime": {
+        "kind": "dated-components",
+        "calendar": "CE-year",
+        "precision": "year",
+        "components": [
+          {
+            "year": 1579,
+            "entities": [
+              "place:ogasayama-fort",
+              "place:nakamura-fort",
+              "place:mitsuiyama-fort"
+            ]
+          },
+          {
+            "year": 1580,
+            "entities": [
+              "place:nogesaka-fort",
+              "place:higamine-fort",
+              "place:shishigahana-fort"
+            ]
+          }
+        ]
+      },
+      "summary": "高天神包囲六砦の整備は1579年と1580年に分かれる。",
+      "limits": "1つの出典命題を6件の調査として水増ししない。整備年を初築日・廃止日へ変換しない。担当と毎日の所在は別。",
+      "source": {
+        "claimFile": "data/research/curated/claims/takatenjin-six-forts-preparation-years.json",
+        "claimSha256": "ccd8f4a81f4a454ed5195a07de5a859a735ddaa9a1edffb8feb76670bc09bac7",
+        "id": "kakegawa-history-appendix",
+        "url": "https://www.city.kakegawa.shizuoka.jp/fs/1/7/6/4/6/9/_/10appendix.pdf",
+        "title": "掛川市歴史的風致維持向上計画 資料編",
+        "locator": "資料編1（PDF3頁）、1579・1580年の行",
+        "priorCheckedAt": "2026-11-03"
+      },
+      "claimApplicabilityYears": [
+        1579,
+        1580
+      ],
+      "integration": {
+        "reuseExistingRecord": true,
+        "newHistoricalClaim": false,
+        "newLocationObservation": false,
+        "continuousPresenceAssumed": false,
+        "exactPresenceConfirmed": false,
+        "inheritedGameBindings": [
+          "site:小笠山砦",
+          "site:中村砦",
+          "site:三井山砦",
+          "site:能ヶ坂砦",
+          "site:火ヶ峰砦",
+          "site:獅子ヶ鼻砦"
+        ]
+      },
+      "reviewReport": "docs/reports/TAKATENJIN_REMAINING_FORTS_REVIEW.md",
+      "inheritedUncertainty": "個別の整備月日・初築・廃城日は確定しない。"
+    },
+    {
+      "recordRef": "claim:tonokori-sadowara-outer-castle",
+      "decision": "accept-qualified-link",
+      "scope": "castle-or-facility",
+      "relation": "outer-castle-role",
+      "entities": [
+        "place:tonokori",
+        "place:sadowara"
+      ],
+      "eventTime": {
+        "kind": "described-period",
+        "label": "江戸時代初頭",
+        "indexYears": [
+          1603,
+          1615
+        ],
+        "precision": "period",
+        "calendar": "Japanese-era-description",
+        "boundsAreHistoricalStartEnd": false
+      },
+      "summary": "都於郡城は佐土原城に対する外城。",
+      "limits": "1603年が就任・従属開始日との主張ではない。郡域支配と城郭の役割を分ける。",
+      "source": {
+        "claimFile": "data/research/curated/claims/tonokori-sadowara-outer-castle.json",
+        "claimSha256": "a2340218c2cbe07f0ff411525ca2e9d78e526a5894feaf29cba0b8a2cfcc248f",
+        "id": "tonokoriDesignation",
+        "url": "https://online.bunka.go.jp/heritages/detail/173805",
+        "title": "都於郡城跡",
+        "locator": "江戸時代初頭の佐土原藩成立と外城",
+        "priorCheckedAt": "2026-11-03"
+      },
+      "claimApplicabilityYears": [
+        1603,
+        1615
+      ],
+      "integration": {
+        "reuseExistingRecord": true,
+        "newHistoricalClaim": false,
+        "newLocationObservation": false,
+        "continuousPresenceAssumed": false,
+        "exactPresenceConfirmed": false,
+        "inheritedGameBindings": [
+          "node:tonokori"
+        ]
+      },
+      "parties": [
+        {
+          "name": "島津氏",
+          "role": "ruling-house"
+        }
+      ],
+      "inheritedUncertainty": "年代範囲は検索用。外城としての開始年や城の明渡し日を確定するものではない。"
+    },
+    {
+      "recordRef": "claim:kashiwagi-1585-defence",
+      "decision": "accept-link",
+      "scope": "castle-or-facility",
+      "relation": "garrison-defence",
+      "entities": [
+        "place:kashiwagi"
+      ],
+      "eventTime": {
+        "kind": "year-window",
+        "year": 1585,
+        "calendar": "CE-year",
+        "precision": "year"
+      },
+      "summary": "柏木城は蘆名軍が籠城した防衛拠点。",
+      "limits": "籠城年。城主個人・築城月日・領主交代日へ変換しない。",
+      "source": {
+        "claimFile": "data/research/curated/claims/kashiwagi-1585-defence.json",
+        "claimSha256": "a87dfa608763af3386c45b6c49efd8cd20b83443370e1a3fa46181f33bed8007",
+        "id": "kashiwagiBunka",
+        "url": "https://online.bunka.go.jp/heritages/detail/520604",
+        "title": "柏木城跡",
+        "locator": "解説第1段落",
+        "priorCheckedAt": "2026-11-01"
+      },
+      "claimApplicabilityYears": [
+        1585,
+        1585
+      ],
+      "integration": {
+        "reuseExistingRecord": true,
+        "newHistoricalClaim": false,
+        "newLocationObservation": false,
+        "continuousPresenceAssumed": false,
+        "exactPresenceConfirmed": false,
+        "inheritedGameBindings": [
+          "TK.CASTLE_EVIDENCE:柏木城"
+        ]
+      },
+      "parties": [
+        {
+          "name": "蘆名軍",
+          "role": "defending-force"
+        }
+      ],
+      "reviewReport": "docs/reports/KASHIWAGI_POSITION_REVIEW.md",
+      "inheritedUncertainty": "築城年月日と城域境界はこの命題から確定しない。"
+    }
+  ],
+  "existingConnections": [
+    {
+      "recordRef": "location:hosokawa-nakatsu-1600",
+      "person": "person:hosokawa-tadaoki",
+      "place": "place:nakatsu",
+      "relation": "residence-transfer",
+      "time": {
+        "kind": "dated-event",
+        "date": [
+          1600,
+          12,
+          26
+        ],
+        "calendar": "Japanese-lunisolar",
+        "leapMonth": false,
+        "precision": "day"
+      },
+      "decision": "reuse-existing-location",
+      "action": "人物・地点・年代の既存参照を維持し、新しい同内容の所在記録を作らない。"
+    },
+    {
+      "recordRef": "location:ietada-kajiro-1592",
+      "person": "person:matsudaira-ietada",
+      "place": "place:kazusa-kajiro",
+      "relation": "residence-transfer",
+      "time": {
+        "kind": "dated-event",
+        "date": [
+          1592,
+          2,
+          19
+        ],
+        "calendar": "Japanese-lunisolar",
+        "leapMonth": false,
+        "precision": "day"
+      },
+      "decision": "reuse-existing-location",
+      "action": "人物・地点・年代の既存参照を維持し、新しい同内容の所在記録を作らない。"
+    },
+    {
+      "recordRef": "location:ietada-omigawa-1594",
+      "person": "person:matsudaira-ietada",
+      "place": "place:omigawa",
+      "relation": "residence-transfer",
+      "time": {
+        "kind": "year-window",
+        "year": 1594,
+        "calendar": "CE-year",
+        "precision": "year"
+      },
+      "decision": "reuse-existing-location",
+      "action": "人物・地点・年代の既存参照を維持し、新しい同内容の所在記録を作らない。"
+    },
+    {
+      "recordRef": "location:ietada-oshi-1590",
+      "person": "person:matsudaira-ietada",
+      "place": "place:oshi",
+      "relation": "residence-transfer",
+      "time": {
+        "kind": "year-window",
+        "year": 1590,
+        "calendar": "CE-year",
+        "precision": "year"
+      },
+      "decision": "reuse-existing-location",
+      "action": "人物・地点・年代の既存参照を維持し、新しい同内容の所在記録を作らない。"
+    },
+    {
+      "recordRef": "location:ieyasu-edo-arrival-1600",
+      "person": "person:tokugawa-ieyasu",
+      "place": "place:edo",
+      "relation": "attested-presence",
+      "time": {
+        "kind": "dated-event",
+        "date": [
+          1600,
+          7,
+          2
+        ],
+        "calendar": "Japanese-lunisolar",
+        "leapMonth": false,
+        "precision": "day"
+      },
+      "decision": "reuse-existing-location",
+      "action": "人物・地点・年代の既存参照を維持し、新しい同内容の所在記録を作らない。"
+    },
+    {
+      "recordRef": "location:ieyasu-osaka-departure-1600",
+      "person": "person:tokugawa-ieyasu",
+      "place": "place:osaka-castle",
+      "relation": "attested-presence",
+      "time": {
+        "kind": "dated-event",
+        "date": [
+          1600,
+          6,
+          16
+        ],
+        "calendar": "Japanese-lunisolar",
+        "leapMonth": false,
+        "precision": "day"
+      },
+      "decision": "reuse-existing-location",
+      "action": "人物・地点・年代の既存参照を維持し、新しい同内容の所在記録を作らない。"
+    },
+    {
+      "recordRef": "location:ieyasu-oyama-arrival-1600",
+      "person": "person:tokugawa-ieyasu",
+      "place": "place:oyama",
+      "relation": "attested-presence",
+      "time": {
+        "kind": "dated-event",
+        "date": [
+          1600,
+          7,
+          24
+        ],
+        "calendar": "Japanese-lunisolar",
+        "leapMonth": false,
+        "precision": "day"
+      },
+      "decision": "reuse-existing-location",
+      "action": "人物・地点・年代の既存参照を維持し、新しい同内容の所在記録を作らない。"
+    },
+    {
+      "recordRef": "location:katsuyori-takato-1562",
+      "person": "person:takeda-katsuyori",
+      "place": "place:takato",
+      "relation": "held-castle-lordship",
+      "time": {
+        "kind": "year-window",
+        "year": 1562,
+        "calendar": "CE-year",
+        "precision": "year"
+      },
+      "decision": "reuse-existing-location",
+      "action": "人物・地点・年代の既存参照を維持し、新しい同内容の所在記録を作らない。"
+    },
+    {
+      "recordRef": "location:katsuyori-tsutsujigasaki-1573",
+      "person": "person:takeda-katsuyori",
+      "place": "place:tsutsujigasaki",
+      "relation": "residence-transfer",
+      "time": {
+        "kind": "year-window",
+        "year": 1573,
+        "calendar": "CE-year",
+        "precision": "year"
+      },
+      "decision": "reuse-existing-location",
+      "action": "人物・地点・年代の既存参照を維持し、新しい同内容の所在記録を作らない。"
+    },
+    {
+      "recordRef": "location:kuroda-nagamasa-fushimi-departure-1600",
+      "person": "person:kuroda-nagamasa",
+      "place": "place:fushimi",
+      "relation": "attested-presence",
+      "time": {
+        "kind": "dated-event",
+        "date": [
+          1600,
+          7,
+          5
+        ],
+        "calendar": "Japanese-lunisolar",
+        "leapMonth": false,
+        "precision": "day"
+      },
+      "decision": "reuse-existing-location",
+      "action": "人物・地点・年代の既存参照を維持し、新しい同内容の所在記録を作らない。"
+    },
+    {
+      "recordRef": "location:kuroda-nagamasa-kiyosu-arrival-1600",
+      "person": "person:kuroda-nagamasa",
+      "place": "place:kiyosu-vicinity",
+      "relation": "attested-presence",
+      "time": {
+        "kind": "dated-event",
+        "date": [
+          1600,
+          8,
+          14
+        ],
+        "calendar": "Japanese-lunisolar",
+        "leapMonth": false,
+        "precision": "day"
+      },
+      "decision": "reuse-existing-location",
+      "action": "人物・地点・年代の既存参照を維持し、新しい同内容の所在記録を作らない。"
+    },
+    {
+      "recordRef": "location:kuroda-nagamasa-nakatsu-base",
+      "person": "person:kuroda-nagamasa",
+      "place": "place:nakatsu",
+      "relation": "principal-base",
+      "time": {
+        "kind": "year-interval",
+        "from": 1589,
+        "untilExclusive": 1600,
+        "calendar": "CE-year",
+        "precision": "year"
+      },
+      "decision": "reuse-existing-location",
+      "action": "人物・地点・年代の既存参照を維持し、新しい同内容の所在記録を作らない。"
+    },
+    {
+      "recordRef": "location:kuroda-nagamasa-nakatsu-lord1600",
+      "person": "person:kuroda-nagamasa",
+      "place": "place:nakatsu",
+      "relation": "held-castle-lordship",
+      "time": {
+        "kind": "year-window",
+        "year": 1600,
+        "calendar": "CE-year",
+        "precision": "year"
+      },
+      "decision": "reuse-existing-location",
+      "action": "人物・地点・年代の既存参照を維持し、新しい同内容の所在記録を作らない。"
+    },
+    {
+      "recordRef": "location:kuroda-nagamasa-osaka-tenma-1600",
+      "person": "person:kuroda-nagamasa",
+      "place": "place:osaka-tenma",
+      "relation": "attested-presence",
+      "time": {
+        "kind": "dated-event",
+        "date": [
+          1600,
+          6,
+          6
+        ],
+        "calendar": "Japanese-lunisolar",
+        "leapMonth": false,
+        "precision": "day"
+      },
+      "decision": "reuse-existing-location",
+      "action": "人物・地点・年代の既存参照を維持し、新しい同内容の所在記録を作らない。"
+    },
+    {
+      "recordRef": "location:kuroda-umagatake-1587",
+      "person": "person:kuroda-yoshitaka",
+      "place": "place:umagatake",
+      "relation": "residence-transfer",
+      "time": {
+        "kind": "year-window",
+        "year": 1587,
+        "calendar": "CE-year",
+        "precision": "year"
+      },
+      "decision": "reuse-existing-location",
+      "action": "人物・地点・年代の既存参照を維持し、新しい同内容の所在記録を作らない。"
+    },
+    {
+      "recordRef": "location:mitsuhide-kameyama-departure-1582",
+      "person": "person:akechi-mitsuhide",
+      "place": "place:tanba-kameyama",
+      "relation": "attested-presence",
+      "time": {
+        "kind": "dated-event",
+        "date": [
+          1582,
+          6,
+          1
+        ],
+        "calendar": "Japanese-lunisolar",
+        "leapMonth": false,
+        "precision": "day"
+      },
+      "decision": "reuse-existing-location",
+      "action": "人物・地点・年代の既存参照を維持し、新しい同内容の所在記録を作らない。"
+    },
+    {
+      "recordRef": "location:nobunaga-kiyosu-departure-1560",
+      "person": "person:oda-nobunaga",
+      "place": "place:kiyosu-castle",
+      "relation": "attested-presence",
+      "time": {
+        "kind": "dated-event",
+        "date": [
+          1560,
+          5,
+          19
+        ],
+        "calendar": "Japanese-lunisolar",
+        "leapMonth": false,
+        "precision": "day"
+      },
+      "decision": "reuse-existing-location",
+      "action": "人物・地点・年代の既存参照を維持し、新しい同内容の所在記録を作らない。"
+    },
+    {
+      "recordRef": "location:terumoto-hiroshima-1591",
+      "person": "person:mori-terumoto",
+      "place": "place:hiroshima",
+      "relation": "residence-transfer",
+      "time": {
+        "kind": "year-window",
+        "year": 1591,
+        "calendar": "CE-year",
+        "precision": "year"
+      },
+      "decision": "reuse-existing-location",
+      "action": "人物・地点・年代の既存参照を維持し、新しい同内容の所在記録を作らない。"
+    },
+    {
+      "recordRef": "location:terumoto-koriyama-base",
+      "person": "person:mori-terumoto",
+      "place": "place:aki-koriyama",
+      "relation": "principal-base",
+      "time": {
+        "kind": "year-interval",
+        "from": 1571,
+        "untilExclusive": 1591,
+        "calendar": "CE-year",
+        "precision": "year"
+      },
+      "decision": "reuse-existing-location",
+      "action": "人物・地点・年代の既存参照を維持し、新しい同内容の所在記録を作らない。"
+    },
+    {
+      "recordRef": "location:yoshihiro-iino-1564",
+      "person": "person:shimazu-yoshihiro",
+      "place": "place:iino",
+      "relation": "residence-transfer",
+      "time": {
+        "kind": "year-window",
+        "year": 1564,
+        "calendar": "CE-year",
+        "precision": "year"
+      },
+      "decision": "reuse-existing-location",
+      "action": "人物・地点・年代の既存参照を維持し、新しい同内容の所在記録を作らない。"
+    },
+    {
+      "recordRef": "location:yoshihiro-iino-kizakibaru-1572",
+      "person": "person:shimazu-yoshihiro",
+      "place": "place:iino",
+      "relation": "attested-presence",
+      "time": {
+        "kind": "dated-event",
+        "date": [
+          1572,
+          5,
+          4
+        ],
+        "leapMonth": false,
+        "calendar": "Japanese-lunisolar",
+        "precision": "day"
+      },
+      "decision": "reuse-existing-location",
+      "action": "人物・地点・年代の既存参照を維持し、新しい同内容の所在記録を作らない。"
+    },
+    {
+      "recordRef": "location:yoshihiro-kizakibaru-1572",
+      "person": "person:shimazu-yoshihiro",
+      "place": "place:kizakibaru",
+      "relation": "attested-presence",
+      "time": {
+        "kind": "dated-event",
+        "date": [
+          1572,
+          5,
+          4
+        ],
+        "leapMonth": false,
+        "calendar": "Japanese-lunisolar",
+        "precision": "day"
+      },
+      "decision": "reuse-existing-location",
+      "action": "人物・地点・年代の既存参照を維持し、新しい同内容の所在記録を作らない。"
+    }
+  ],
+  "regionalOnly": [
+    {
+      "recordRef": "claim:sagara-kuma-confirmation",
+      "decision": "retain-as-regional-record",
+      "territorialObject": "球磨郡",
+      "reason": "人吉城の受取日を付けない。",
+      "source": "sagaraKumaConfirmation",
+      "sourceUrl": "https://dcollections.lib.keio.ac.jp/en/sagara/003-077",
+      "locator": "相良家文書 寅77、年月日・差出・宛先",
+      "claimFile": "data/research/curated/claims/sagara-kuma-confirmation.json",
+      "dateOrYear": [
+        1587,
+        5,
+        30
+      ],
+      "calendar": "和暦",
+      "newCastleOwnershipAssertion": false
+    },
+    {
+      "recordRef": "claim:sassa-higo-grant",
+      "decision": "retain-as-regional-record",
+      "territorialObject": "肥後の統治",
+      "reason": "隈本城への入城日を付けない。",
+      "source": "kumamotoSassaGrant",
+      "sourceUrl": "https://sitereports.nabunken.go.jp/files/attach/22/22101/16337_1_%E4%B8%8B%E5%9F%8E%E9%81%BA%E8%B7%A1.pdf",
+      "locator": "天正15年6月2日の佐々成政の肥後領治",
+      "claimFile": "data/research/curated/claims/sassa-higo-grant.json",
+      "dateOrYear": [
+        1587,
+        6,
+        2
+      ],
+      "calendar": "和暦",
+      "newCastleOwnershipAssertion": false
+    },
+    {
+      "recordRef": "claim:kobayakawa-chikuzen-grant",
+      "decision": "retain-as-regional-record",
+      "territorialObject": "筑前",
+      "reason": "立花山城の明渡し日に転用しない。",
+      "source": "kobayakawaChikuzenGrant",
+      "sourceUrl": "https://i-manabi.jp/system/regionals/regionals/ecode%3A2/64/view/8144",
+      "locator": "天正15年6月条・毛利家文書918（6月25日付豊臣秀吉朱印領知目録）",
+      "claimFile": "data/research/curated/claims/kobayakawa-chikuzen-grant.json",
+      "dateOrYear": [
+        1587,
+        6,
+        25
+      ],
+      "calendar": "和暦",
+      "newCastleOwnershipAssertion": false
+    },
+    {
+      "recordRef": "claim:tachibana-chikugo-grant",
+      "decision": "retain-as-regional-record",
+      "territorialObject": "山門・三潴・下妻・三池四郡",
+      "reason": "柳川城の入城日に転用しない。",
+      "source": "tachibanaChikugoGrant",
+      "sourceUrl": "https://artsandculture.google.com/story/KgWRWPxXFzYZIQ?hl=ja",
+      "locator": "第3章の天正15年6月25日付領知の解説",
+      "claimFile": "data/research/curated/claims/tachibana-chikugo-grant.json",
+      "dateOrYear": [
+        1587,
+        6,
+        25
+      ],
+      "calendar": "和暦",
+      "newCastleOwnershipAssertion": false
+    },
+    {
+      "recordRef": "claim:akizuki-takarabe-transfer",
+      "decision": "retain-as-regional-record",
+      "territorialObject": "筑前秋月から日向財部",
+      "reason": "古処山城の明渡し日と財部城への入城日を付けない。",
+      "source": "asakuraAkizukiHistory",
+      "sourceUrl": "https://www.city.asakura.lg.jp/soshiki/33/2926.html",
+      "locator": "天正15年（1587）の秋月種実の移封",
+      "claimFile": "data/research/curated/claims/akizuki-takarabe-transfer.json",
+      "dateOrYear": 1587,
+      "calendar": "CE-year",
+      "newCastleOwnershipAssertion": false
+    }
+  ],
+  "deferred": [
+    {
+      "recordRef": "claim:suwahara-abandonment-hypothesis",
+      "decision": "do-not-promote-hypothesis",
+      "reason": "1590年廃城は採用仮説。他の島田市解説は廃城時期不明とする。確認済みの廃城日として台帳へ格上げしない。",
+      "source": "suwaharaChronology"
+    },
+    {
+      "recordRef": "claim:suwahara-renamed",
+      "decision": "reuse-dated-capture-for-event",
+      "reason": "1575〜1615は名称の適用範囲。同一の1575年改称を新しい事件として重複追加しない。",
+      "existingEventRef": "claim:suwahara-capture-date"
+    },
+    {
+      "recordRef": "claim:enoshima-iwamotobo-medieval",
+      "decision": "do-not-infer-lordship",
+      "reason": "寄進・戦勝祈念書状は保護・信仰関係の証拠。領有や江島の城主職、書状全期間の同一支配に変換しない。"
+    },
+    {
+      "recordRef": "claim:tsurusaki-origin-tradition",
+      "decision": "do-not-promote-tradition",
+      "reason": "正中年間の創祀伝承。戦国期の施設位置や連続的な領主を定める証拠にしない。"
+    },
+    {
+      "recordRef": "report:BORDERS_AND_SUCCESSION_REVIEW",
+      "decision": "needs-separate-source-extract",
+      "reason": "清須会議後の諸郡配分と後続移封は総括報告にあるが、個別の命題ID・原史料箇所・効力日が未分解。ゲーム処理日から入城日・郡境を逆算しない。",
+      "report": "docs/reports/BORDERS_AND_SUCCESSION_REVIEW.md"
+    },
+    {
+      "recordRef": "report:HISTORY_FOCUS_REVIEW:甲州征伐",
+      "decision": "do-not-infer-handover-date",
+      "reason": "旧武田領6拠点の一括整理日は便宜日と報告されている。個別開城・引渡し・新領主就任の記録として採用しない。",
+      "report": "docs/reports/HISTORY_FOCUS_REVIEW.md"
+    },
+    {
+      "recordRef": "report:KURODA_NAKATSU_RESIDENCE_REVIEW:1599",
+      "decision": "reject-unsupported-residence",
+      "reason": "黒田長政の1599年1月20日香春岳転居には根拠がなく撤去済み。代替の転居日も生成しない。",
+      "report": "docs/reports/KURODA_NAKATSU_RESIDENCE_REVIEW.md"
+    },
+    {
+      "recordRef": "report:TAKATENJIN_REMAINING_FORTS_REVIEW:能ヶ坂",
+      "decision": "do-not-identify-commander",
+      "reason": "官途表記に異同があり本多勢以上の個人同定をしない。本多忠勝等の場所・城主職へ接続しない。",
+      "report": "docs/reports/TAKATENJIN_REMAINING_FORTS_REVIEW.md"
+    }
+  ]
+}

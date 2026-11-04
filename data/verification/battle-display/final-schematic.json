@@ -1,0 +1,518 @@
+{
+  "before": {
+    "head": "b303aec6e6329d0f7b78feedc26cdc243cf61fbb",
+    "status": "M data/audits/history-focus-audit.json\n M data/audits/march-audit.json\n M data/audits/person-lifetime-review.json\n?? data/verification/claude-perf-merge/",
+    "diffSha256": "0bda0a3d39c28a82413bb9d90b650efd1c12f59c9df311f1854cbe824a2345aa",
+    "files": {
+      "game/index.html": "474ce28124d333898eb3e91a87f80cf558760cff8fcce1ad528cb02e865d9c3a",
+      "game/battle-atlas.js": "de204bb11687da5a79554a1d752b105d0455f4b45e718fa89ea589f8c8dc6df2",
+      "game/battle-motion.js": "fab363e0c85928ba0709eeff13eadba888c6d059958beef88bab05e0d930109d",
+      "game/battle-deployments.js": "673f1257dcea89e1890d28cb9704cfef6ab34f972abf2589c7ba4cf8dc31e9c3",
+      "game/battle-event-catalog.js": "9f771a6e5bd5ba528e70f92bc40091dd152cb69d1fc42ce547c7b7a53aecf978"
+    }
+  },
+  "url": "http://localhost:8000/index.html",
+  "profile": "/var/folders/p6/_cz1nnqd7ksfd45n2t859zvw0000gn/T/kuniezu-check-BVXvgM",
+  "rows": [
+    {
+      "title": "木津川口の戦い",
+      "index": 0,
+      "samples": [
+        {
+          "width": 757,
+          "time": 40,
+          "clock": "蜂須賀勢が先行",
+          "expectedClock": "蜂須賀勢が先行",
+          "description": "蜂須賀至鎮勢が先行して砦を攻める。",
+          "states": [
+            {
+              "id": "extra-a-0",
+              "side": "a",
+              "status": "交戦",
+              "visible": true,
+              "point": null
+            },
+            {
+              "id": "extra-a-1",
+              "side": "a",
+              "status": "攻撃命令",
+              "visible": true,
+              "point": null
+            },
+            {
+              "id": "extra-a-2",
+              "side": "a",
+              "status": "攻撃命令",
+              "visible": true,
+              "point": null
+            },
+            {
+              "id": "extra-b-0",
+              "side": "b",
+              "status": "交戦",
+              "visible": true,
+              "point": null
+            }
+          ],
+          "located": 4,
+          "estimatedPlaced": 0,
+          "groups": 4,
+          "participants": 4,
+          "people": 4,
+          "ids": [
+            "extra-a-0",
+            "extra-a-1",
+            "extra-a-2",
+            "extra-b-0"
+          ],
+          "expectedIds": [
+            "extra-a-0",
+            "extra-a-1",
+            "extra-a-2",
+            "extra-b-0"
+          ],
+          "overflow": false,
+          "expected": [
+            "extra-a-0",
+            "extra-a-1",
+            "extra-a-2",
+            "extra-b-0"
+          ],
+          "texts": [
+            "蜂須賀至鎮",
+            "浅野長晟",
+            "池田忠雄",
+            "木津川口砦の守備勢"
+          ],
+          "names": {
+            "extra-a-0": "蜂須賀至鎮",
+            "extra-a-1": "浅野長晟",
+            "extra-a-2": "池田忠雄",
+            "extra-b-0": "木津川口砦の守備勢"
+          },
+          "playing": false,
+          "flags": [
+            {
+              "x": 424.8684615384615,
+              "y": 231.54000000000002,
+              "k": 1
+            },
+            {
+              "x": 185.54,
+              "y": 374.55,
+              "k": 1
+            },
+            {
+              "x": 185.54,
+              "y": 517.5600000000001,
+              "k": 1
+            },
+            {
+              "x": 601.89,
+              "y": 231.54000000000002,
+              "k": 1
+            },
+            {
+              "x": 424.8684615384615,
+              "y": 231.54000000000002,
+              "k": 1
+            },
+            {
+              "x": 185.54,
+              "y": 374.55,
+              "k": 1
+            },
+            {
+              "x": 185.54,
+              "y": 517.5600000000001,
+              "k": 1
+            },
+            {
+              "x": 601.89,
+              "y": 231.54000000000002,
+              "k": 1
+            }
+          ],
+          "height": 681,
+          "schematic": true
+        },
+        {
+          "width": 757,
+          "time": 80,
+          "clock": "砦を攻略",
+          "expectedClock": "砦を攻略",
+          "description": "蜂須賀勢が砦を攻略した。",
+          "states": [
+            {
+              "id": "extra-a-0",
+              "side": "a",
+              "status": "攻略",
+              "visible": true,
+              "point": null
+            },
+            {
+              "id": "extra-a-1",
+              "side": "a",
+              "status": "攻撃命令",
+              "visible": true,
+              "point": null
+            },
+            {
+              "id": "extra-a-2",
+              "side": "a",
+              "status": "攻撃命令",
+              "visible": true,
+              "point": null
+            },
+            {
+              "id": "extra-b-0",
+              "side": "b",
+              "status": "砦攻略後",
+              "visible": false,
+              "point": null
+            }
+          ],
+          "located": 3,
+          "estimatedPlaced": 0,
+          "groups": 4,
+          "participants": 4,
+          "people": 4,
+          "ids": [
+            "extra-a-0",
+            "extra-a-1",
+            "extra-a-2",
+            "extra-b-0"
+          ],
+          "expectedIds": [
+            "extra-a-0",
+            "extra-a-1",
+            "extra-a-2",
+            "extra-b-0"
+          ],
+          "overflow": false,
+          "expected": [
+            "extra-a-0",
+            "extra-a-1",
+            "extra-a-2"
+          ],
+          "texts": [
+            "蜂須賀至鎮",
+            "浅野長晟",
+            "池田忠雄"
+          ],
+          "names": {
+            "extra-a-0": "蜂須賀至鎮",
+            "extra-a-1": "浅野長晟",
+            "extra-a-2": "池田忠雄",
+            "extra-b-0": "木津川口砦の守備勢"
+          },
+          "playing": false,
+          "flags": [
+            {
+              "x": 601.89,
+              "y": 231.54000000000002,
+              "k": 1
+            },
+            {
+              "x": 185.54,
+              "y": 374.55,
+              "k": 1
+            },
+            {
+              "x": 185.54,
+              "y": 517.5600000000001,
+              "k": 1
+            },
+            {
+              "x": 601.89,
+              "y": 231.54000000000002,
+              "k": 1
+            },
+            {
+              "x": 185.54,
+              "y": 374.55,
+              "k": 1
+            },
+            {
+              "x": 185.54,
+              "y": 517.5600000000001,
+              "k": 1
+            }
+          ],
+          "height": 681,
+          "schematic": true
+        },
+        {
+          "width": 334,
+          "time": 40,
+          "clock": "蜂須賀勢が先行",
+          "expectedClock": "蜂須賀勢が先行",
+          "description": "蜂須賀至鎮勢が先行して砦を攻める。",
+          "states": [
+            {
+              "id": "extra-a-0",
+              "side": "a",
+              "status": "交戦",
+              "visible": true,
+              "point": null
+            },
+            {
+              "id": "extra-a-1",
+              "side": "a",
+              "status": "攻撃命令",
+              "visible": true,
+              "point": null
+            },
+            {
+              "id": "extra-a-2",
+              "side": "a",
+              "status": "攻撃命令",
+              "visible": true,
+              "point": null
+            },
+            {
+              "id": "extra-b-0",
+              "side": "b",
+              "status": "交戦",
+              "visible": true,
+              "point": null
+            }
+          ],
+          "located": 4,
+          "estimatedPlaced": 0,
+          "groups": 4,
+          "participants": 4,
+          "people": 4,
+          "ids": [
+            "extra-a-0",
+            "extra-a-1",
+            "extra-a-2",
+            "extra-b-0"
+          ],
+          "expectedIds": [
+            "extra-a-0",
+            "extra-a-1",
+            "extra-a-2",
+            "extra-b-0"
+          ],
+          "overflow": false,
+          "expected": [
+            "extra-a-0",
+            "extra-a-1",
+            "extra-a-2",
+            "extra-b-0"
+          ],
+          "texts": [
+            "蜂須賀至鎮",
+            "浅野長晟",
+            "池田忠雄",
+            "木津川口砦の守備勢"
+          ],
+          "names": {
+            "extra-a-0": "蜂須賀至鎮",
+            "extra-a-1": "浅野長晟",
+            "extra-a-2": "池田忠雄",
+            "extra-b-0": "木津川口砦の守備勢"
+          },
+          "playing": false,
+          "flags": [
+            {
+              "x": 190.0753846153846,
+              "y": 102.34,
+              "k": 0.55
+            },
+            {
+              "x": 84.48,
+              "y": 165.55,
+              "k": 0.55
+            },
+            {
+              "x": 84.48,
+              "y": 228.76,
+              "k": 0.55
+            },
+            {
+              "x": 268.18,
+              "y": 102.34,
+              "k": 0.55
+            },
+            {
+              "x": 190.0753846153846,
+              "y": 102.34,
+              "k": 0.55
+            },
+            {
+              "x": 84.48,
+              "y": 165.55,
+              "k": 0.55
+            },
+            {
+              "x": 84.48,
+              "y": 228.76,
+              "k": 0.55
+            },
+            {
+              "x": 268.18,
+              "y": 102.34,
+              "k": 0.55
+            }
+          ],
+          "height": 301,
+          "schematic": true
+        },
+        {
+          "width": 334,
+          "time": 80,
+          "clock": "砦を攻略",
+          "expectedClock": "砦を攻略",
+          "description": "蜂須賀勢が砦を攻略した。",
+          "states": [
+            {
+              "id": "extra-a-0",
+              "side": "a",
+              "status": "攻略",
+              "visible": true,
+              "point": null
+            },
+            {
+              "id": "extra-a-1",
+              "side": "a",
+              "status": "攻撃命令",
+              "visible": true,
+              "point": null
+            },
+            {
+              "id": "extra-a-2",
+              "side": "a",
+              "status": "攻撃命令",
+              "visible": true,
+              "point": null
+            },
+            {
+              "id": "extra-b-0",
+              "side": "b",
+              "status": "砦攻略後",
+              "visible": false,
+              "point": null
+            }
+          ],
+          "located": 3,
+          "estimatedPlaced": 0,
+          "groups": 4,
+          "participants": 4,
+          "people": 4,
+          "ids": [
+            "extra-a-0",
+            "extra-a-1",
+            "extra-a-2",
+            "extra-b-0"
+          ],
+          "expectedIds": [
+            "extra-a-0",
+            "extra-a-1",
+            "extra-a-2",
+            "extra-b-0"
+          ],
+          "overflow": false,
+          "expected": [
+            "extra-a-0",
+            "extra-a-1",
+            "extra-a-2"
+          ],
+          "texts": [
+            "蜂須賀至鎮",
+            "浅野長晟",
+            "池田忠雄"
+          ],
+          "names": {
+            "extra-a-0": "蜂須賀至鎮",
+            "extra-a-1": "浅野長晟",
+            "extra-a-2": "池田忠雄",
+            "extra-b-0": "木津川口砦の守備勢"
+          },
+          "playing": false,
+          "flags": [
+            {
+              "x": 268.18,
+              "y": 102.34,
+              "k": 0.55
+            },
+            {
+              "x": 84.48,
+              "y": 165.55,
+              "k": 0.55
+            },
+            {
+              "x": 84.48,
+              "y": 228.76,
+              "k": 0.55
+            },
+            {
+              "x": 268.18,
+              "y": 102.34,
+              "k": 0.55
+            },
+            {
+              "x": 84.48,
+              "y": 165.55,
+              "k": 0.55
+            },
+            {
+              "x": 84.48,
+              "y": 228.76,
+              "k": 0.55
+            }
+          ],
+          "height": 301,
+          "schematic": true
+        }
+      ],
+      "autoPlay": true,
+      "naturalClose": true
+    }
+  ],
+  "phases": [],
+  "errors": [],
+  "failures": [],
+  "screens": [
+    "battle-0-1400-40.png",
+    "battle-0-1400-80.png",
+    "battle-0-390-40.png",
+    "battle-0-390-80.png"
+  ],
+  "serverOperations": false,
+  "userProfileUsed": false,
+  "candidateOverrides": [
+    "battle-atlas.js",
+    "battle-motion.js",
+    "battle-deployments.js",
+    "battle-event-catalog.js"
+  ],
+  "candidateHashes": {
+    "battle-atlas.js": "bf3f5b897f4f72d4ff6c7e297a9b34946187c8d7cfc7eb1b8a0cb77bb0e8497f",
+    "battle-motion.js": "ee1ba0635b94d699ff8fd8802dec0cd6a4ba9cac1f15e4f0114ed27f60bd9448",
+    "battle-deployments.js": "cac0581da9455aafc4e8c5b778ff2b769b825dba670501efbdc2bdecba0eb944",
+    "battle-event-catalog.js": "25977088fe5859e673cc9d8874ad867905c51efe9a7f692ba2a9e30ec2c93a69"
+  },
+  "networkErrors": [
+    {
+      "url": "http://localhost:8000/favicon.ico",
+      "status": 404
+    }
+  ],
+  "schematicTerrainRequests": [],
+  "after": {
+    "head": "b303aec6e6329d0f7b78feedc26cdc243cf61fbb",
+    "status": "M data/audits/history-focus-audit.json\n M data/audits/march-audit.json\n M data/audits/person-lifetime-review.json\n?? data/verification/claude-perf-merge/",
+    "diffSha256": "0bda0a3d39c28a82413bb9d90b650efd1c12f59c9df311f1854cbe824a2345aa",
+    "files": {
+      "game/index.html": "474ce28124d333898eb3e91a87f80cf558760cff8fcce1ad528cb02e865d9c3a",
+      "game/battle-atlas.js": "de204bb11687da5a79554a1d752b105d0455f4b45e718fa89ea589f8c8dc6df2",
+      "game/battle-motion.js": "fab363e0c85928ba0709eeff13eadba888c6d059958beef88bab05e0d930109d",
+      "game/battle-deployments.js": "673f1257dcea89e1890d28cb9704cfef6ab34f972abf2589c7ba4cf8dc31e9c3",
+      "game/battle-event-catalog.js": "9f771a6e5bd5ba528e70f92bc40091dd152cb69d1fc42ce547c7b7a53aecf978"
+    }
+  },
+  "changedFiles": [],
+  "ok": true
+}

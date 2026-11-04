@@ -287,7 +287,7 @@ TK.HIST=[
  {d:[1574,4,1],k:'appear',clan:'hashiba',clanAlt:'oda',at:'ishiyama',g:'伊東祐兵|58|62|56|60|1559'},
  {d:[1571,4,1],k:'appear',clan:'hashiba',clanAlt:'oda',at:'saika',g:'藤堂高虎|80|82|75|80|1556'},
  {d:[1571,4,1],k:'appear',clan:'hashiba',clanAlt:'oda',at:'kiriyama',g:'蒲生氏郷|86|84|78|86|1556'},
- {d:[1579,4,1],k:'appear',clan:'hashiba',clanAlt:'oda',at:'gifu',g:'池田輝政|76|75|65|75|1564'},
+ {d:[1579,4,1],k:'appear',clan:'hashiba',clanAlt:'oda',at:'gifu',g:'池田輝政|76|75|65|75|1565'},
  {d:[1585,3,1],k:'appear',clan:'hashiba',clanAlt:'oda',at:'iwamura',g:'森忠政|60|65|50|55|1570'},
  {d:[1561,4,1],k:'appear',clan:'hashiba',clanAlt:'oda',at:'nanao',g:'前田安勝|55|58|50|58|1530'},
  {d:[1577,4,1],k:'appear',clan:'hashiba',clanAlt:'oda',at:'oyama',g:'前田利長|65|65|60|68|1562'},
@@ -493,7 +493,6 @@ Object.assign(TK.DEATH_Y,{'長続連':1577,'山名豊数':1580,'蜂屋頼隆':15
 TK.HIST.push(
  {d:[1587,7,10],k:'take',clan:'hashiba',castles:['yanagawa'],admin:1,join:['立花宗茂'],text:'九州国分で、立花宗茂は筑後柳川に取り立てられ、豊臣の大名となった。',who:'立花宗茂'},
  {d:[1587,7,10],k:'take',clan:'hashiba',castles:['obi'],admin:1,join:['伊東祐兵'],text:'秀吉の九州攻めで道案内を務めた伊東祐兵が、旧領の日向飫肥に返り咲いた。',who:'伊東祐兵'},
- {d:[1587,7,12],k:'move',n:'黒田孝高',at:'kawara',quiet:1},{d:[1587,7,12],k:'move',n:'黒田長政',at:'kawara',text:'黒田孝高・長政父子が豊前に移り、中津に城を築いた。',who:'黒田孝高'},
  {d:[1588,6,1],k:'move',n:'加藤清正',at:'kumamoto',text:'佐々成政の切腹ののち、肥後は北半分が加藤清正、南半分が小西行長に分けられた。',who:'加藤清正'},{d:[1588,6,1],k:'move',n:'小西行長',at:'kumamoto',quiet:1},
  {d:[1585,9,1],k:'move',n:'筒井定次',at:'ueno',text:'筒井定次が大和から伊賀へ移された。',who:'筒井定次'},
  {d:[1590,9,10],k:'move',n:'池田輝政',at:'yoshida',quiet:1},{d:[1590,9,10],k:'move',n:'山内一豊',at:'kakegawa',quiet:1},{d:[1590,9,10],k:'move',n:'堀尾吉晴',at:'hikuma',quiet:1},
@@ -514,7 +513,7 @@ TK.HIST.push(
  {d:[1588,3,1],k:'move',n:'高山右近',at:'oyama',text:'伴天連追放令で領地を捨てた高山右近は、前田利家に招かれて加賀に移った。',who:'高山右近'},
  // 朝鮮から戻った諸将は、それぞれの領国へ帰る
  {d:[1599,1,20],k:'move',n:'加藤清正',at:'kumamoto',quiet:1},{d:[1599,1,20],k:'move',n:'小西行長',at:'kumamoto',quiet:1},{d:[1599,1,20],k:'move',n:'藤堂高虎',at:'kurose',quiet:1},
- {d:[1599,1,20],k:'move',n:'黒田長政',at:'kawara',quiet:1},{d:[1599,1,20],k:'move',n:'立花宗茂',at:'yanagawa',quiet:1},{d:[1599,1,20],k:'move',n:'加藤嘉明',at:'yuzuki',quiet:1},
+ {d:[1599,1,20],k:'note',n:'黒田長政',quiet:1,correction:'kuroda-1599-unfounded-move'},{d:[1599,1,20],k:'move',n:'立花宗茂',at:'yanagawa',quiet:1},{d:[1599,1,20],k:'move',n:'加藤嘉明',at:'yuzuki',quiet:1},
  {d:[1599,1,20],k:'move',n:'伊東祐兵',at:'obi',quiet:1},{d:[1599,1,20],k:'move',n:'島津義弘',at:'uchi',quiet:1},{d:[1599,1,20],k:'move',n:'宇喜多秀家',at:'tenjin',quiet:1},
  {d:[1600,3,1],k:'move',n:'森忠政',at:'kaizu',text:'森忠政が美濃金山から信濃川中島へ移った。',who:'森忠政'});
 

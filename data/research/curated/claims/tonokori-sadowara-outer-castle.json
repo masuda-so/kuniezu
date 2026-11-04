@@ -1,0 +1,43 @@
+{
+  "id": "tonokori-sadowara-outer-castle",
+  "entity": "node:tonokori",
+  "predicate": "historical-castle-role",
+  "value": {
+    "period": "江戸時代初頭",
+    "role": "外城",
+    "mainCastle": "佐土原城",
+    "ruler": "島津氏"
+  },
+  "validYears": [
+    1603,
+    1615
+  ],
+  "datePrecision": "period",
+  "source": "tonokoriDesignation",
+  "sourceUrl": "https://online.bunka.go.jp/heritages/detail/173805",
+  "locator": "江戸時代初頭の佐土原藩成立と外城",
+  "gameBindings": [
+    "node:tonokori"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-03",
+  "uncertainty": "年代範囲は検索用。外城としての開始年や城の明渡し日を確定するものではない。",
+  "linkedEntities": [
+    "place:tonokori",
+    "place:sadowara"
+  ],
+  "eventTime": {
+    "kind": "described-period",
+    "label": "江戸時代初頭",
+    "indexYears": [
+      1603,
+      1615
+    ],
+    "precision": "period",
+    "calendar": "Japanese-era-description",
+    "boundsAreHistoricalStartEnd": false
+  },
+  "eventRelation": "outer-castle-role",
+  "eventScope": "1603年が就任・従属開始日との主張ではない。郡域支配と城郭の役割を分ける。"
+}

@@ -12,8 +12,9 @@ window.TKBattlePresentation={
  // 図のない合戦も経過の再生と自動終了を統一。戦闘座標や射線は作らない。
  record(cv,sc,opt){let t=0,speed=1,playing=false,ended=false,last=0,raf,beat=-1;
   const emit=()=>{opt.onProgress?.(t);const beats=(sc.beats||[]).filter(b=>b[0]<=t),b=beats.length-1;if(b!==beat){beat=b;opt.onBeat?.(b>=0?{t:beats[b][0],txt:beats[b][1]}:null);}};
-  function step(now){if(playing&&last){t=Math.min(100,t+Math.min(.1,(now-last)/1000)*speed*100/(opt.dur||30));emit();if(t>=100){playing=false;ended=true;opt.onEnd?.();opt.onState?.();}}last=now;raf=requestAnimationFrame(step);}
-  raf=requestAnimationFrame(step);
-  return {play(){if(t>=100)t=0;playing=true;ended=false;emit();opt.onState?.();},pause(){playing=false;opt.onState?.();},toggle(){playing?this.pause():this.play();},get playing(){return playing;},get t(){return t;},get ended(){return ended;},get speed(){return speed;},setSpeed(v){speed=v;opt.onState?.();},seek(v){t=Math.max(0,Math.min(100,v));ended=t>=100;emit();},unitStates(){return [];},select(){},toggleRoutes(){return false;},destroy(){cancelAnimationFrame(raf);}};
+  // 再生中だけ毎フレーム進める。止めている間・終了後はループを回さない（発熱の原因だった）。
+  function step(now){raf=0;if(!playing){last=0;return;}if(last){t=Math.min(100,t+Math.min(.1,Math.max(0,now-last)/1000)*speed*100/(opt.dur||30));emit();if(t>=100){playing=false;ended=true;last=0;opt.onEnd?.();opt.onState?.();return;}}last=now;raf=requestAnimationFrame(step);}
+  const run=()=>{if(!raf){last=performance.now();raf=requestAnimationFrame(step);}};
+  return {play(){if(t>=100)t=0;playing=true;ended=false;emit();run();opt.onState?.();},pause(){playing=false;opt.onState?.();},toggle(){playing?this.pause():this.play();},get playing(){return playing;},get t(){return t;},get ended(){return ended;},get speed(){return speed;},setSpeed(v){speed=v;opt.onState?.();},seek(v){t=Math.max(0,Math.min(100,v));ended=t>=100;emit();},unitStates(){return [];},select(){},toggleRoutes(){return false;},destroy(){playing=false;if(raf)cancelAnimationFrame(raf);raf=0;}};
  }
 };

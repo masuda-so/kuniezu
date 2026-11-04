@@ -1,0 +1,16 @@
+{
+  "id": "akizuki-takarabe-transfer",
+  "entity": "person:秋月種実",
+  "predicate": "territorial-transfer",
+  "value": {"year": 1587, "from": "筑前秋月", "to": "日向財部"},
+  "validYears": [1587, 1587],
+  "datePrecision": "year",
+  "source": "asakuraAkizukiHistory",
+  "sourceUrl": "https://www.city.asakura.lg.jp/soshiki/33/2926.html",
+  "locator": "天正15年（1587）の秋月種実の移封",
+  "gameBindings": ["node:kosho", "campaign:九州平定"],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-03",
+  "uncertainty": "移封の年のみ。古処山城の明渡し日や、旧領の郡・村ごとの移管日を含まない。"
+}

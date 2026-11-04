@@ -1,0 +1,217 @@
+{
+  "url": "http://localhost:8000/index.html",
+  "view": [
+    1024,
+    768,
+    2
+  ],
+  "overrides": [
+    "terrain-tiles.js",
+    "ui.js"
+  ],
+  "startup": {
+    "domContentLoadedSec": 0.12,
+    "loadSec": 1.74,
+    "titleReadySec": 1.81,
+    "requests": 196,
+    "transferMB": 15.77,
+    "byKind": {
+      "local js": "86件 10.6MB",
+      "local jpg": "8件 2.7MB",
+      "fonts.gstatic.com woff2": "80件 1.4MB",
+      "local webp": "1件 0.6MB",
+      "local svg": "16件 0.3MB",
+      "fonts.googleapis.com ": "1件 0.2MB",
+      "local html": "1件 0.1MB",
+      "local css": "1件 0.0MB"
+    },
+    "scripts": 86,
+    "heapMB": 105.6
+  },
+  "rows": [
+    {
+      "view": "九州へ移動",
+      "name": "地形読込",
+      "seconds": 6.24,
+      "topDrawsPerSec": 1.3,
+      "baseDrawsPerSec": 1.3,
+      "domMutationsPerSec": 0.6,
+      "framesPerSec": 43.8,
+      "days": 0,
+      "modal": null,
+      "mainThreadBusy": 0.312,
+      "scriptBusy": 0.254,
+      "layoutsPerSec": 0.8,
+      "styleRecalcsPerSec": 0.8,
+      "heapMB": 75.6,
+      "cpu": [
+        "drawImage :0 1266ms",
+        "save :0 177ms",
+        "setTransform :0 43ms",
+        "fillText :0 15ms",
+        "clip :0 12ms",
+        "strokeText :0 8ms",
+        "at ui.js:163 7ms",
+        "measureText :0 6ms",
+        "pump terrain-tiles.js:59 4ms",
+        "G.yActive engine.js:299 3ms"
+      ],
+      "tilesLoaded": 163
+    },
+    {
+      "view": "全国",
+      "name": "停止",
+      "seconds": 3.09,
+      "topDrawsPerSec": 0,
+      "baseDrawsPerSec": 0,
+      "domMutationsPerSec": 0,
+      "framesPerSec": 58.9,
+      "days": 0,
+      "modal": null,
+      "mainThreadBusy": 0.035,
+      "scriptBusy": 0.001,
+      "layoutsPerSec": 0,
+      "styleRecalcsPerSec": 0,
+      "heapMB": 75.1,
+      "cpu": [
+        "requestAnimationFrame :0 3ms"
+      ]
+    },
+    {
+      "view": "全国",
+      "name": "再生×2",
+      "seconds": 5.09,
+      "topDrawsPerSec": 7.7,
+      "baseDrawsPerSec": 0.2,
+      "domMutationsPerSec": 2.9,
+      "framesPerSec": 59.3,
+      "days": 2,
+      "modal": null,
+      "mainThreadBusy": 0.092,
+      "scriptBusy": 0.019,
+      "layoutsPerSec": 0.8,
+      "styleRecalcsPerSec": 0.8,
+      "heapMB": 74.9,
+      "cpu": [
+        "renderTop ui.js:716 26ms",
+        "drawImage :0 26ms",
+        "requestAnimationFrame :0 8ms",
+        "f :1 6ms",
+        "G.historyPoint movement-continuity.js:31 4ms",
+        "isUnit campaign-evidence.js:65 4ms",
+        "drawTopLayers ui.js:380 4ms",
+        "setHTML ui.js:709 4ms",
+        "G.convoyLayout convoys.js:4 3ms",
+        "measureText :0 3ms"
+      ]
+    },
+    {
+      "view": "全国",
+      "name": "再生×16",
+      "seconds": 5.1,
+      "topDrawsPerSec": 30,
+      "baseDrawsPerSec": 0.4,
+      "domMutationsPerSec": 11.2,
+      "framesPerSec": 55.3,
+      "days": 20,
+      "modal": null,
+      "mainThreadBusy": 0.201,
+      "scriptBusy": 0.089,
+      "layoutsPerSec": 5.9,
+      "styleRecalcsPerSec": 5.9,
+      "heapMB": 75.9,
+      "cpu": [
+        "drawImage :0 258ms",
+        "save :0 68ms",
+        "nearest movement-display.js:18 8ms",
+        "setTransform :0 8ms",
+        "roadLabelsTop ui.js:161 6ms",
+        "drawTopLayers ui.js:380 6ms",
+        "clip :0 5ms",
+        "stroke :0 5ms",
+        "strokeText :0 4ms",
+        "measureText :0 4ms"
+      ]
+    },
+    {
+      "view": "近景",
+      "name": "停止",
+      "seconds": 3.09,
+      "topDrawsPerSec": 0,
+      "baseDrawsPerSec": 0,
+      "domMutationsPerSec": 0,
+      "framesPerSec": 59.2,
+      "days": 0,
+      "modal": null,
+      "mainThreadBusy": 0.034,
+      "scriptBusy": 0.002,
+      "layoutsPerSec": 0,
+      "styleRecalcsPerSec": 0,
+      "heapMB": 76.2,
+      "cpu": [
+        "f :1 2ms",
+        "requestAnimationFrame :0 1ms"
+      ]
+    },
+    {
+      "view": "近景",
+      "name": "再生×2",
+      "seconds": 5.09,
+      "topDrawsPerSec": 16.9,
+      "baseDrawsPerSec": 0,
+      "domMutationsPerSec": 3.3,
+      "framesPerSec": 59.3,
+      "days": 3,
+      "modal": null,
+      "mainThreadBusy": 0.141,
+      "scriptBusy": 0.025,
+      "layoutsPerSec": 1.2,
+      "styleRecalcsPerSec": 1.2,
+      "heapMB": 77.6,
+      "cpu": [
+        "drawImage :0 35ms",
+        "fillText :0 9ms",
+        "drawTopLayers ui.js:380 7ms",
+        "requestAnimationFrame :0 5ms",
+        "drawSmoke ui.js:364 4ms",
+        "stroke :0 4ms",
+        "at ui.js:163 4ms",
+        "drawCounter ui.js:507 4ms",
+        "renderTop ui.js:716 4ms",
+        "addColorStop :0 3ms"
+      ]
+    },
+    {
+      "view": "近景",
+      "name": "再生×16",
+      "seconds": 5.1,
+      "topDrawsPerSec": 27.8,
+      "baseDrawsPerSec": 0.2,
+      "domMutationsPerSec": 10.8,
+      "framesPerSec": 56.6,
+      "days": 20,
+      "modal": null,
+      "mainThreadBusy": 0.198,
+      "scriptBusy": 0.085,
+      "layoutsPerSec": 5.9,
+      "styleRecalcsPerSec": 5.9,
+      "heapMB": 77,
+      "cpu": [
+        "drawImage :0 267ms",
+        "save :0 39ms",
+        "fillText :0 10ms",
+        "drawStill ui.js:441 9ms",
+        "at ui.js:163 5ms",
+        "drawTopLayers ui.js:380 5ms",
+        "clanCastles engine.js:268 5ms",
+        "drawYosho ui.js:342 4ms",
+        "setTransform :0 4ms",
+        "hits logistics-review.js:8 4ms"
+      ]
+    }
+  ],
+  "afterPlay": {
+    "heapMB": 77,
+    "domNodes": 1730
+  }
+}

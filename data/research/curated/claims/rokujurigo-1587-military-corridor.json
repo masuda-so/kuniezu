@@ -1,0 +1,23 @@
+{
+  "id": "rokujurigo-1587-military-corridor",
+  "entity": "road:六十里越街道",
+  "predicate": "military-corridor",
+  "value": "1587年、最上義光は庄内へ進攻する際に六十里越街道を越えた。",
+  "validYears": [
+    1587,
+    1587
+  ],
+  "datePrecision": "year",
+  "source": "rokujurigoSengoku",
+  "sourceUrl": "https://www.thr.mlit.go.jp/sakata/road/60history/004.html",
+  "locator": "第1段落・天正十五年の最上義光の庄内進攻",
+  "gameBindings": [
+    "TK.ROADS:六十里越街道",
+    "game/road-display.js",
+    "data/inputs/rokujurigo-review/shonai-registration-accepted.json"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-02",
+  "uncertainty": "街道を通った歴史的利用の確認。今回の旧道図・現代比較線が当時の全線と一致するという命題ではない。"
+}

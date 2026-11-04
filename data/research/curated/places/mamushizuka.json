@@ -1,0 +1,44 @@
+{
+  "id": "place:mamushizuka",
+  "name": "馬伏塚城",
+  "aliases": [],
+  "geometry": {
+    "type": "Point",
+    "coordinates": [
+      137.9337706,
+      34.71066836
+    ]
+  },
+  "geometryStatus": "site-representative",
+  "note": "1574年の記録は改修・守将就任。初築ではない。",
+  "identityBasis": {
+    "scope": "確認済み命題の対象場所。日時と関係は元命題に保持し、座標の根拠はgeometryEvidenceに保持する。城域境界は主張しない。",
+    "claimIds": [
+      "mamushizuka-1574-refortification"
+    ]
+  },
+  "geometryEvidence": {
+    "source": "fukuroi-mamushizuka-cultural-site-point",
+    "sourceUrl": "https://opendata.pref.shizuoka.jp/dataset/10242/resource/72251/content.html",
+    "locator": "20210315_文化財一覧：市区町村コード222160・番号75・馬伏塚城跡の行、緯度・経度列",
+    "checked": "2026-11-04",
+    "scope": "城跡の所在地を参照する代表点。城域の輪郭、当時の建物・人物・部隊の精密位置を表さない。",
+    "review": "data/research/source-notes/castle-coordinate-batch.json",
+    "coordinateOrder": "longitude-latitude",
+    "coordinateUnits": "decimal-degrees",
+    "sourceCoordinateOrder": "latitude-longitude",
+    "sourceCoordinateLiteral": "緯度 34.71066836／経度 137.9337706",
+    "sourceRecordId": "222160:75",
+    "sourceDatum": null,
+    "sourceDatumStatus": "not-stated-in-consulted-source",
+    "sourceDatumReview": "採用した個別座標ページではWGS84・JGD2000・JGD2011のいずれかを指定する記載を確認できない。緯度経度の数値を原資料どおり保持し、測地系変換は実施しない。小数桁数を位置精度とみなさない。",
+    "uncertainty": "資料掲載の代表点であり、地点ごとの測量精度は未提示。小数桁数から誤差範囲を設定しない。",
+    "identityCorroboration": {
+      "sourceUrl": "https://www.city.fukuroi.shizuoka.jp/soshiki/syougyou/2/bunkazai/panfu/1507611528966.html",
+      "locator": "馬伏塚城見学案内パンフレット：所在地と調査により明らかになった遺構・見学路の紹介",
+      "checked": "2026-11-04",
+      "scope": "袋井市浅名の馬伏塚城遺構を対象とする。文化財一覧は浅名1156の市指定史跡として登録。市の窓口（浅名1028）の座標を使用しない。",
+      "establishes": "城跡の同定・所在地の対応。座標点の独立測量や城域内包含判定ではない。"
+    }
+  }
+}

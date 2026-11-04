@@ -1,0 +1,27 @@
+{
+  "id": "kuroda-nagamasa-succession",
+  "entity": "person:黒田長政",
+  "predicate": "family-head-succession",
+  "value": {
+    "from": "黒田孝高",
+    "to": "黒田長政",
+    "year": 1589,
+    "lunarMonth": 5
+  },
+  "validYears": [
+    1589,
+    1589
+  ],
+  "datePrecision": "month",
+  "source": "kurodaYukuhashiSuccession",
+  "sourceUrl": "https://adeac.jp/yukuhashi-city/texthtml/d100010/mp000000-000010/ht2040100020",
+  "locator": "242〜243頁、末段の天正17年5月家督継承",
+  "gameBindings": [
+    "TK.PERSON_RESIDENCE_EVIDENCE.黒田長政",
+    "site:中津城"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-03",
+  "uncertainty": "旧暦5月まで。継承日・現地滞在・1599年の帰着日を示さない。"
+}

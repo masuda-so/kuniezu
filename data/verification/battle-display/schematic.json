@@ -1,0 +1,41 @@
+{
+  "ok": true,
+  "unchangedOtherBattles": 110,
+  "schematicBattle": "木津川口の戦い",
+  "participants": [
+    "蜂須賀至鎮",
+    "浅野長晟",
+    "池田忠雄",
+    "木津川口砦の守備勢"
+  ],
+  "geographicUnitCoordinates": 0,
+  "visibilityBoundaries": [
+    [
+      0,
+      4
+    ],
+    [
+      40,
+      4
+    ],
+    [
+      79.999,
+      4
+    ],
+    [
+      80,
+      3
+    ],
+    [
+      100,
+      3
+    ]
+  ],
+  "rebuildsStable": 2,
+  "sourceIds": [
+    "eventKizugawa1614",
+    "atlasRelief",
+    "kizujouMuseum"
+  ],
+  "scope": "順序の記録と画面レイアウトを分離。40/80等の割合は表示用で実時刻ではない。"
+}

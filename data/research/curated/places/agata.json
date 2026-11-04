@@ -1,0 +1,19 @@
+{
+  "id": "place:agata",
+  "name": "縣城",
+  "aliases": [
+    "県城",
+    "延岡城"
+  ],
+  "geometry": null,
+  "geometryStatus": "not-asserted",
+  "note": "1603年築城の物理的城地。game node:agata がそれ以前に表す松尾城と別。",
+  "identityBasis": {
+    "scope": "確認済み命題の対象場所。日時と関係は元命題に保持し、座標は未主張。",
+    "claimIds": [
+      "agata-castle-construction",
+      "agata-receipt-order",
+      "agata-handover-report"
+    ]
+  }
+}

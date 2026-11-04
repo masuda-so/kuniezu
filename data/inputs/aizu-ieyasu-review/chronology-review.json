@@ -1,0 +1,53 @@
+{
+  "status": "dated-representative-itinerary-implemented-and-tested",
+  "lunarDates": {
+    "osakaDeparture": [
+      1600,
+      6,
+      16
+    ],
+    "edoArrival": [
+      1600,
+      7,
+      2
+    ],
+    "oyamaArrival": [
+      1600,
+      7,
+      24
+    ],
+    "oyamaMeeting": [
+      1600,
+      7,
+      25
+    ],
+    "edoReturnReport": [
+      1600,
+      8,
+      5
+    ],
+    "edoWestDeparture": [
+      1600,
+      9,
+      1
+    ]
+  },
+  "sources": [
+    "ohtawara-1600.pdf PDF4頁",
+    "oyama.md",
+    "栃木県立博物館2021家康展資料8・家康書状写",
+    "tono.md"
+  ],
+  "runtimeDefects": [
+    "会津noteがシナリオ開始前日",
+    "唐沢山→宇都宮から出発",
+    "西上が高遠・伊那経由"
+  ],
+  "presentationFixed": "会津から東美濃別働隊の文を切離し。独立出典は保持。",
+  "implementation": "campaign-evidence.js / scenario-openings.js, movementGeometryVersion 17",
+  "limits": [
+    "7月21日は論文注19の検索収録本文。原本PDFは取得失敗。",
+    "7月30日・西上中間日程は指定サイトの二次整理。",
+    "区間内の街道選択と速度配分、帰路の船路は精密確定ではない。"
+  ]
+}

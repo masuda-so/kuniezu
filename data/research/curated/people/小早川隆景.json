@@ -1,0 +1,24 @@
+{
+  "id": "person:小早川隆景",
+  "name": "小早川隆景",
+  "gameNames": [
+    "小早川隆景"
+  ],
+  "authorityIds": [
+    "wikidata:Q1143508",
+    "ndlna:00624015"
+  ],
+  "identityBasis": {
+    "scope": "既存の確認済み命題の対象名を人物台帳へ登録",
+    "claimIds": [
+      "kobayakawa-chikuzen-grant"
+    ]
+  },
+  "authorityEvidence": {
+    "scope": "person-identity",
+    "wikidataRevision": 2521639167,
+    "wikidataRetrievedAt": "2026-11-04T02:41:38.962147+00:00",
+    "ndlUrl": "https://id.ndl.go.jp/auth/ndlna/00624015",
+    "snapshot": "data/research/source-notes/reviewed-people-authority-adoption.json"
+  }
+}

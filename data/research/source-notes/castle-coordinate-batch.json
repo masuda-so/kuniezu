@@ -1,0 +1,193 @@
+{
+  "schemaVersion": 1,
+  "reviewedAt": "2026-11-04",
+  "baseHead": "bf6767664e0309ae37b13d6bbd4737246069437f",
+  "scope": "現存する城跡の地理参照用代表点4件。人物の所在時点、軍勢の持場、城域境界、城主の支配域を追加主張しない。",
+  "gameCoordinatesRead": false,
+  "gameCoordinatesUsed": false,
+  "coordinateTransformApplied": false,
+  "dataModel": "既存geometryEvidenceを使用。geometryは経度・緯度順のPointで、sourceDatumが未明示のデータをWGS84測量済みと扱わない。",
+  "sourceAccessMethod": "webツールによる各URL本文の閲覧。生HTMLは保存せず、座標・書誌・locatorと要約を保持する。",
+  "codhMethod": {
+    "url": "https://geoshape.ex.nii.ac.jp/nrct-poi/",
+    "locator": "位置の推定手法 1〜7／末尾の位置精度に関する注記",
+    "checked": "2026-11-04",
+    "summary": "CODHは文化財総覧等の地点情報、地図と地名、発掘調査資料などを組み合わせる。個別項目にどの手法を適用したかは今回のページでは判明しない。場合により数十〜数百mの誤差があり、各点の誤差半径は確定していない。",
+    "quantifiedErrorBoundMeters": null,
+    "license": "CC BY 4.0",
+    "attribution": "『日本歴史地名大系』施設・地点項目データセット（CODH作成） doi:10.20676/00000456"
+  },
+  "accepted": [
+    {
+      "place": "place:suwahara",
+      "name": "諏訪原城",
+      "coordinates": [
+        138.119899,
+        34.81833
+      ],
+      "sourceCoordinateLiteral": "34.818330, 138.119899",
+      "sourceName": "諏訪原城跡",
+      "sourceUrl": "https://geoshape.ex.nii.ac.jp/nrct-poi/resource/22/220000269800.html",
+      "sourceLocator": "基本情報：ジャパンナレッジID 220000269800、名称・住所・緯度経度の各行",
+      "sourceAddress": "静岡県島田市菊川",
+      "retrievedAt": "2026-11-04",
+      "bibliography": "静岡県の地名、2000-10-25、ISBN 4582490220",
+      "identitySourceUrl": "https://www.pref.shizuoka.jp/kankosports/bunkageijutsu/bunkazai/1002825/1041003/1041886/1004979/1021251.html",
+      "identityLocator": "しずおか文化財ナビ 諏訪原城跡：指定区分・所在地（島田市菊川字城山）・文化財の説明",
+      "identityResult": "国指定史跡の現存する城跡で、牧之原台地北端にある遺構を指す。ビジターセンターや博物館の所在地を採用しない。",
+      "identityCoordinatesIndependentlyValidated": false,
+      "sourceDatum": null,
+      "coordinateOrder": "longitude-latitude",
+      "status": "accepted-as-source-representative-only"
+    },
+    {
+      "place": "place:ganjaku",
+      "name": "岩石城",
+      "coordinates": [
+        130.871738,
+        33.577313
+      ],
+      "sourceCoordinateLiteral": "33.577313, 130.871738",
+      "sourceName": "岩石城跡",
+      "sourceUrl": "https://geoshape.ex.nii.ac.jp/nrct-poi/resource/41/410000417400.html",
+      "sourceLocator": "基本情報：ジャパンナレッジID 410000417400、名称・住所・緯度経度の各行",
+      "sourceAddress": "福岡県田川郡赤村大字赤",
+      "retrievedAt": "2026-11-04",
+      "bibliography": "福岡県の地名、2004-10-20、ISBN 4582490417",
+      "identitySourceUrl": "https://www.town.soeda.fukuoka.jp/site/siteibunkazai/1065.html",
+      "identityLocator": "岩石城跡（1）／岩石山：白山宮奥の宮から曲輪・本丸推定地へ至る遺構の説明",
+      "identityResult": "岩石山の山城遺構を対象とする。山麓の現代の城形施設と区別する。CODHの住所表記は赤村大字赤のまま保持し、資料間の市町村表記から境界を創作しない。",
+      "identityCoordinatesIndependentlyValidated": false,
+      "sourceDatum": null,
+      "coordinateOrder": "longitude-latitude",
+      "status": "accepted-as-source-representative-only"
+    },
+    {
+      "place": "place:yokosuka-totomi",
+      "name": "横須賀城",
+      "coordinates": [
+        137.971296,
+        34.685708
+      ],
+      "sourceCoordinateLiteral": "34.685708, 137.971296",
+      "sourceName": "横須賀城跡",
+      "sourceUrl": "https://geoshape.ex.nii.ac.jp/nrct-poi/resource/22/220000289500.html",
+      "sourceLocator": "基本情報：ジャパンナレッジID 220000289500、名称・住所・緯度経度の各行",
+      "sourceAddress": "静岡県掛川市西大渕",
+      "retrievedAt": "2026-11-04",
+      "bibliography": "静岡県の地名、2000-10-25、ISBN 4582490220",
+      "identitySourceUrl": "https://www.city.kakegawa.shizuoka.jp/gyosei/docs/7478.html",
+      "identityLocator": "横須賀城跡：地理的景観、詳細情報／施設名称・所在位置",
+      "identityResult": "遠江の横須賀城跡公園を指す。市の説明は初期主郭と近世中期までの拡張を区別しており、代表点から全期間の城域を生成しない。",
+      "identityCoordinatesIndependentlyValidated": false,
+      "sourceDatum": null,
+      "coordinateOrder": "longitude-latitude",
+      "status": "accepted-as-source-representative-only"
+    },
+    {
+      "place": "place:mamushizuka",
+      "name": "馬伏塚城",
+      "coordinates": [
+        137.9337706,
+        34.71066836
+      ],
+      "sourceCoordinateLiteral": "緯度 34.71066836／経度 137.9337706",
+      "sourceName": "文化財一覧（20210315）／馬伏塚城跡",
+      "sourceUrl": "https://opendata.pref.shizuoka.jp/dataset/10242/resource/72251/content.html",
+      "sourceLocator": "20210315_文化財一覧：市区町村コード222160・番号75・馬伏塚城跡の行、緯度・経度列",
+      "sourceAddress": "静岡県袋井市浅名1156",
+      "retrievedAt": "2026-11-04",
+      "bibliography": "袋井市 令和3年3月15日文化財一覧（静岡県オープンデータ公開）",
+      "identitySourceUrl": "https://www.city.fukuroi.shizuoka.jp/soshiki/syougyou/2/bunkazai/panfu/1507611528966.html",
+      "identityLocator": "馬伏塚城見学案内パンフレット：所在地と調査により明らかになった遺構・見学路の紹介",
+      "identityResult": "袋井市浅名の馬伏塚城遺構を対象とする。文化財一覧は浅名1156の市指定史跡として登録。市の窓口（浅名1028）の座標を使用しない。",
+      "identityCoordinatesIndependentlyValidated": false,
+      "sourceDatum": null,
+      "coordinateOrder": "longitude-latitude",
+      "status": "accepted-as-source-representative-only"
+    }
+  ],
+  "withheld": [
+    {
+      "place": "place:kiyosu-castle",
+      "sourceUrl": "https://geoshape.ex.nii.ac.jp/nrct-poi/resource/23/230000125700.html",
+      "locator": "基本情報：230000125700／緯度経度",
+      "checked": "2026-11-04",
+      "sourceCoordinateLiteral": "35.213304, 136.841027",
+      "status": "not-adopted-in-this-batch",
+      "reason": "城下町を含む代表点なのか旧本丸の代表点なのかを原資料から確認し切れないため、物理的城跡の代表点として今回は登録しない。",
+      "identitySourceUrl": "https://www.city.kiyosu.aichi.jp/shisetsu_annai/kanko_shisetsu_sonota/kiyosu_koen.html",
+      "identityLocator": "清洲古城跡公園／場所・施設紹介",
+      "identityFinding": "市は古城448番地の城跡公園と川の対岸の現代施設を区別する。この本文には古城跡の緯度経度がない。",
+      "rejectedSubstitutions": [
+        "観光施設の復興天守座標",
+        "清洲城下町遺跡の任意の発掘区代表点",
+        "現ゲーム座標"
+      ],
+      "nextEvidenceNeeded": "旧城跡の範囲・本丸代表点を区別できる自治体文化財GISまたは図面と、その測地系。"
+    }
+  ],
+  "files": [
+    {
+      "path": "data/research/curated/places/suwahara.json",
+      "baseSha256": "a75aebcfa0719a612c2885fd85920ee91f68d06c398638f69ed22b9254522d72",
+      "candidateSha256": "e9e2bda10fc1b1982c366b846439b0b3cd37b3ead2796d0e7627a02c8438a3ba"
+    },
+    {
+      "path": "data/research/curated/sources/codh-suwahara-site-point.json",
+      "baseSha256": null,
+      "candidateSha256": "8288d373753dd212a4852521e40a43c6ccf44ac7fe9dd6afef8f55f64d3caa97"
+    },
+    {
+      "path": "data/research/curated/places/ganjaku.json",
+      "baseSha256": "c6561c62404d0d8a3bc9395d2d3937927a012c50ba49c8a0157decbcd3d82596",
+      "candidateSha256": "7afa68029308747a78fab6346163546fa64e398382126894b3e4bee77f1f0502"
+    },
+    {
+      "path": "data/research/curated/sources/codh-ganjaku-site-point.json",
+      "baseSha256": null,
+      "candidateSha256": "ad8a70ef4ce856efbe51149cf2244d11ba8960f46bd328f46659222b8957542c"
+    },
+    {
+      "path": "data/research/curated/places/yokosuka-totomi.json",
+      "baseSha256": "7b1030288a30bf5bf631a3c0bb926ae7d23299dc0e845f4e44e8ff5a51598ce8",
+      "candidateSha256": "e2e6dc5d5fa8e50ef77a7c5fe287692dea443e8df95c04ad8ece78bda12f4839"
+    },
+    {
+      "path": "data/research/curated/sources/codh-yokosuka-site-point.json",
+      "baseSha256": null,
+      "candidateSha256": "f0a1d4844eaba334f13e0dd06356d6ea1ee7d2eb1fda3a8913720a58b128214f"
+    },
+    {
+      "path": "data/research/curated/places/mamushizuka.json",
+      "baseSha256": "a78fc103f97e9f84271e81a31957cd2d359e93539590b932701b9c70ba729010",
+      "candidateSha256": "ad3a77af13c144d293c94301ffbc14c73218cffa54174a38cdea0662fd4ea0f1"
+    },
+    {
+      "path": "data/research/curated/sources/fukuroi-mamushizuka-cultural-site-point.json",
+      "baseSha256": null,
+      "candidateSha256": "7d0bed1bcd96a3fd86843231066cfd282d46b294163fb426cd3729dccbe59892"
+    }
+  ],
+  "secondaryChecks": [
+    {
+      "place": "place:yokosuka-totomi",
+      "url": "https://sitereports.nabunken.go.jp/142079",
+      "locator": "所収遺跡／史跡横須賀城跡／北緯・東経（日本測地系／世界測地系）",
+      "checked": "2026-11-04",
+      "result": "掛川市2025保存活用計画の書誌・対象城跡は確認したが、Web抄録の測地系別座標欄は空欄。測地系確定の根拠にしない。"
+    },
+    {
+      "place": "place:mamushizuka",
+      "url": "https://geoshape.ex.nii.ac.jp/nrct-poi/resource/22/220000338000.html",
+      "checked": "2026-11-04",
+      "result": "検索結果では座標34.710795, 137.933518を確認したが、個別ページ本文の取得がCache missだったため採用根拠から除外。自治体文化財一覧の本文の座標を採用した。"
+    },
+    {
+      "place": "place:mamushizuka",
+      "url": "https://opendata.pref.shizuoka.jp/dataset/10242/resource/106443/content.html",
+      "checked": "2026-11-04",
+      "result": "カタログには20260228更新版が存在するがプレビュー本文はCache miss。確認できた20210315版を版日付付きで採用し、最新版照合済みとはしない。"
+    }
+  ]
+}

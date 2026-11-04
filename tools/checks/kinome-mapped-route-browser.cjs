@@ -26,7 +26,7 @@ const cover=()=>ev('(()=>{const {corners}=TKUI.mapBounds();return corners[0][0]<
  const target=await call('Target.createTarget',{url:'about:blank'},null);session=(await call('Target.attachToTarget',{targetId:target.targetId,flatten:true},null)).sessionId;await call('Runtime.enable');await call('Page.enable');await view(1400,1000);await load();await start();await click('#modal [data-act=close]');await ev('TKUI.speed=0');
 const rows=[];
 for(const [name,lon,lat,z]of [['木ノ芽峠',136.14015,35.71709,8],['今庄合流',136.200321,35.770328,8],['湯尾峠',136.197032,35.78728,8]]){
- const r=await ev(`(()=>{TKUI.cam(...G.PJ(${lon},${lat}),${z});const road=TK.roadDisplay(G.ROADS.find(r=>r.name==='北陸道'));return {name:${JSON.stringify(name)},version:G.S().movementGeometryVersion,sources:road.evidence.sources};})()`);assert.equal(r.version,16);assert.ok(r.sources.includes('kinomeBunkaMap'));rows.push(r);await sleep(1800);await shot('kinome-'+rows.length);
+ const r=await ev(`(()=>{TKUI.cam(...G.PJ(${lon},${lat}),${z});const road=TK.roadDisplay(G.ROADS.find(r=>r.name==='北陸道'));return {name:${JSON.stringify(name)},version:G.S().movementGeometryVersion,sources:road.evidence.sources};})()`);assert.equal(r.version,22);assert.ok(r.sources.includes('kinomeBunkaMap'));rows.push(r);await sleep(1800);await shot('kinome-'+rows.length);
 }
 assert.deepEqual(errors,[]);fs.writeFileSync(path.join(OUT,'result.json'),JSON.stringify({rows,errors},null,2));console.log('PASS Kinome mapped corridor and Imajo merge render in three views; no exceptions');
 

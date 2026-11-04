@@ -1,0 +1,70 @@
+{
+  "checked": "2026-11-03",
+  "documents": [
+    {
+      "id": "kakegawa-history-appendix",
+      "author": "掛川市",
+      "title": "掛川市歴史的風致維持向上計画 資料編",
+      "url": "https://www.city.kakegawa.shizuoka.jp/fs/1/7/6/4/6/9/_/10appendix.pdf",
+      "locator": "資料編1（PDF3頁）、1579・1580年の行",
+      "file": ".cache/takatenjin-remaining-forts/kakegawa-appendix.pdf（取得物。再配布しない）",
+      "bytes": 1246078,
+      "sha256": "16e33d517f568807dc247b28394b81968a782760712749ae5038656cc4f9b861",
+      "visualCheck": "pdftoppm 120dpiでPDF3頁を画像化、年と砦名の行対応を確認"
+    },
+    {
+      "id": "kato-takatenjin-2024",
+      "author": "加藤理文（日本城郭協会）／掛川市掲載",
+      "title": "史跡磨き上げプロジェクト 高天神城跡",
+      "date": "2024-11-03",
+      "url": "https://www.city.kakegawa.shizuoka.jp/fs/6/2/4/3/5/5/_/_____________________________.pdf",
+      "locator": "4頁・徳川家康による高天神攻め",
+      "file": ".cache/takatenjin-remaining-forts/kato-2024.pdf（取得物。再配布しない）",
+      "bytes": 3869977,
+      "sha256": "cbfbafaf105be413d6845f949f7571bfab9d5ed88ada84b8b067ac0e510c87fc",
+      "visualCheck": "pdftoppm 120dpiでPDF4頁を画像化、砦担当・本多備後守の文字を確認"
+    },
+    {
+      "id": "kikugawa-shishigahana",
+      "author": "菊川市",
+      "title": "獅子ヶ鼻砦跡",
+      "updated": "2025-06-26",
+      "url": "https://www.city.kikugawa.shizuoka.jp/shoukoukankou/shishigahana.html",
+      "locator": "本文・住所・地図",
+      "summary": "天正8年6月の築造・大須賀康高の守備とされる。案内マーカーは別座標。"
+    },
+    {
+      "id": "kakegawa-six-forts",
+      "author": "掛川市",
+      "title": "今、よみがえる高天神城 家康の六砦",
+      "url": "https://takatenjinjyo.com/rokutoride/",
+      "locator": "能ヶ坂・火ヶ峰・獅子ヶ鼻・中村各項",
+      "summary": "位置関係、遺構、火ヶ峰の二説、中村の物資運搬機能。"
+    },
+    {
+      "id": "kakegawa-six-forts-markers",
+      "author": "掛川市サイクリングマップ",
+      "title": "高天神城と六砦 小笠山一周",
+      "url": "https://www.bt-r.jp/kakegawa/map-ogasayama/",
+      "locator": "基本＋オプションのGoogle Map・地点2〜5",
+      "extract": "map-marker-extract.json"
+    },
+    {
+      "id": "kikugawa-club-ogasa-quote",
+      "author": "菊川歴史くらぶ",
+      "title": "獅子ヶ鼻砦跡・小笠町誌の紹介",
+      "url": "https://www.kikugawarekishiclub.com/fortshishigahana",
+      "locator": "小笠町誌 獅子ヶ鼻砦",
+      "summary": "町誌紹介には1579〜1580年の幅と本多豊後守の表記。原本の独立照合ではなく異同の記録に限定。"
+    },
+    {
+      "id": "kakegawa-nakamura-rejected-date",
+      "author": "掛川市",
+      "title": "2017年3月31日 家康が築いた中村砦 市民団体と市が管理覚書",
+      "url": "https://www.city.kakegawa.shizuoka.jp/gyosei/docs/6328.html",
+      "locator": "1590年ころという年代表記",
+      "decision": "reject-date",
+      "reason": "同市年表の1579年築造・1581年落城と矛盾する。"
+    }
+  ]
+}

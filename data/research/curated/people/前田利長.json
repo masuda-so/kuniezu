@@ -1,0 +1,24 @@
+{
+  "id": "person:前田利長",
+  "name": "前田利長",
+  "gameNames": [
+    "前田利長"
+  ],
+  "authorityIds": [
+    "wikidata:Q1186742",
+    "ndlna:01133744"
+  ],
+  "identityBasis": {
+    "scope": "既存の確認済み命題の対象名を人物台帳へ登録",
+    "claimIds": [
+      "toyotomi-office-3"
+    ]
+  },
+  "authorityEvidence": {
+    "scope": "person-identity",
+    "wikidataRevision": 2556895718,
+    "wikidataRetrievedAt": "2026-11-04T02:41:38.962147+00:00",
+    "ndlUrl": "https://id.ndl.go.jp/auth/ndlna/01133744",
+    "snapshot": "data/research/source-notes/reviewed-people-authority-adoption.json"
+  }
+}

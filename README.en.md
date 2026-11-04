@@ -5,7 +5,7 @@
 ## Overview
 
 A map game set in Japan and Korea between 1560 and 1615. It runs as plain HTML and
-JavaScript with no build step. Development currently prioritizes observation of
+JavaScript (only the map's served files are generated from the source map). Development currently prioritizes observation of
 recorded history; free sieges and non-historical routes are on hold.
 
 Read [HANDOFF.md](HANDOFF.md) first. The entry point for development and research
@@ -42,7 +42,24 @@ is [docs/README.md](docs/README.md); open requests and ownership are in
 
 ## Getting started and usage
 
-No build is required. Serve `game/` as static files and open `index.html` in a
+Only the map source in `game/map_data/` (a single full-map `provinces.png` and
+related files, in the Paradox style) is tracked in Git. The tiles, borders, river
+lines and relief served to the browser (generated files in `game/map/`) are not
+in the repository. Generate them once after cloning, and again after changing the
+source or the dated edits (`game/map/edits/*.json`). This takes a few minutes.
+
+```sh
+node tools/map/build-map.cjs
+```
+
+To also build the terrain relief, fetch `game/map_data/heightmap.png` with Git LFS
+and pass a Python that has NumPy and Pillow (the game runs without relief).
+
+```sh
+node tools/map/build-map.cjs --height --python /path/to/python3
+```
+
+After generating, serve `game/` as static files and open `index.html` in a
 browser.
 
 Starting and stopping the server is done by the user. Verification connects to an

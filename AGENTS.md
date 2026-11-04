@@ -2,16 +2,16 @@
 
 ## プロジェクト構成とモジュールの配置
 
-1560〜1615 年の日本・朝鮮を舞台にした地図ゲーム。`game/` はビルド不要の素の HTML/JavaScript で、`game/index.html` の `game-scripts` が実際の依存順（データ定義 → 史実訂正 → 地理と移動 → 表示）。順序を変えると API の上書き関係が変わるので、ファイル名順に並べ替えない。
+1560〜1615 年の日本・朝鮮を舞台にした地図ゲーム。`game/` は素の HTML/JavaScript で（地図の配信物だけ正本から生成する）、`game/index.html` の `game-scripts` が実際の依存順（データ定義 → 史実訂正 → 地理と移動 → 表示）。順序を変えると API の上書き関係が変わるので、ファイル名順に並べ替えない。
 
 - `game/`（84 の JS、`atlas/` 合戦地形、`terrain/` 標高・陰影、`portraits/` 肖像、`kamon/` 家紋、`licenses/` 素材の出典）。配信 URL は変えない。
 - `docs/`（`architecture/` 構成と依存順、`work/` 残要望と担当、`reports/` 報告書、`history/` 過去の原文）。作業前に `HANDOFF.md` を読む。
 - `data/`（`inputs/` 調査・生成の入力、`research/` 出典と史実命題 `claims.jsonl`、`audits/` 検査が生成する JSON、`verification/` 実画面の証拠）。
-- `tools/`（`checks/` 検査、`work/` 作業一覧と担当記録、`research/` 史料の出力、`geo/` と `faces/` 配信用データの生成元、`play/` 旧版の検証）。`archive/` は保留中の非史実実装で、起動では読まない。
+- `tools/`（`checks/` 検査、`work/` 作業一覧と担当記録、`research/` 史料の出力、`geo/` と `faces/` 配信用データの生成元）。`archive/` は保留中の非史実実装で、起動では読まない。
 
 ## ビルド・テスト・開発コマンド
 
-- ビルドは無い。`game/` を静的ファイルとして配信し `index.html` を開く。サーバーの起動・停止は利用者のみが行い、エージェントは起動済みの `http://localhost:8000/index.html` に専用の一時ブラウザで接続する。
+- 地図は正本 `game/map_data/` と年代別の差分の入力 `game/map/edits/*.json` だけを Git で管理する。配信物（`game/map/` の provinces*・edges*・relief*・manifest など）は追跡せず、`node tools/map/build-map.cjs`（陰影は `--height --python <NumPy・Pillow の Python>`）で生成する。生成物はコミットしない。ほかにビルドは無い。`game/` を静的ファイルとして配信し `index.html` を開く。サーバーの起動・停止は利用者のみが行い、エージェントは起動済みの `http://localhost:8000/index.html` に専用の一時ブラウザで接続する。
 - `node tools/checks/offline.cjs` — 構文・保存・史実進行の基本検査（CI の必須チェック `Offline checks`）。`node tools/checks/organization.cjs`、`node tools/checks/infrastructure.cjs` も CI で実行する。
 - `GAME_TEST_OUTPUT=data/verification/<担当名-対象名> node tools/checks/march-clock-browser.cjs` — 実画面の検査（起動済みサーバーが必要）。分野別の検査は `tools/checks/README.md` の表から選ぶ。
 - `node tools/work/tasks.cjs claim <対象ID> --owner <担当名> --files <ファイル>` — 担当の記録。完了条件を全て満たす場合だけ `complete`、引き継ぎだけなら `release`。

@@ -1,0 +1,38 @@
+{
+  "id": "yokosuka-castle-construction",
+  "entity": "person:大須賀康高",
+  "predicate": "castle-construction",
+  "value": {
+    "year": 1578,
+    "castle": "横須賀城",
+    "action": "徳川家康の命で築城を開始"
+  },
+  "validYears": [
+    1578,
+    1578
+  ],
+  "datePrecision": "year",
+  "source": "yokosuka-castle-history",
+  "sourceUrl": "https://www.city.kakegawa.shizuoka.jp/gyosei/docs/7478.html",
+  "locator": "天正6年の築城",
+  "gameBindings": [
+    "site:横須賀城"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-03",
+  "uncertainty": "施設の稼働表示は年単位。工事の完了日や着手月日はこの記録の確認範囲外。",
+  "linkedEntities": [
+    "place:yokosuka-totomi",
+    "person:大須賀康高",
+    "person:tokugawa-ieyasu"
+  ],
+  "eventTime": {
+    "kind": "year-window",
+    "year": 1578,
+    "calendar": "CE-year",
+    "precision": "year"
+  },
+  "eventRelation": "castle-construction-start",
+  "eventScope": "着手年。竣工日・入城日や高天神城の領有変更日はこの記録にない。"
+}

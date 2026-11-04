@@ -1,0 +1,24 @@
+{
+  "status": "pass",
+  "checkedAt": "2026-11-04T03:00:55.942210+00:00",
+  "checks": [
+    "既存22所在のIDを再利用、重複新設なし",
+    "候補17命題の元ファイル・出典URL・該当箇所が存在",
+    "候補内の対象ID重複なし・参照欠落なし",
+    "年精度を日精度へ昇格していない",
+    "請取命令/完了報告/軍事落城/領知/現地所在を別関係に保持",
+    "座標追加なし、全画素/モデル/ブラウザ検査なし"
+  ],
+  "counts": {
+    "claimsInspected": 82,
+    "existingLocations": 22,
+    "sourceMetadata": 419,
+    "acceptedLinks": 16,
+    "qualifiedLinks": 1,
+    "regionalRecordsKeptSeparate": 5,
+    "deferredOrRejected": 8,
+    "proposedEntities": 31
+  },
+  "inputHashesUnchangedAtCompletion": true,
+  "changedInputs": []
+}

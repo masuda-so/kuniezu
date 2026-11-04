@@ -19,13 +19,23 @@
   ishigakibaruDeployment:['別府市','軍師官兵衛ゆかりの石垣原合戦','https://www.city.beppu.oita.jp/gakusyuu/bunkazai/kassen_index.html','9月13日・15日の経過','吉弘統幸、黒田・松井勢と大友義統の降伏。'],
   anotsuDeployment:['津市','津藩祖 藤堂高虎','https://www.info.city.tsu.mie.jp/kosodate_kyouiku/kyouikuiinkai/1004357/1004663/1004713/1004736.html','富田氏の入城と関ヶ原前の攻城','毛利秀元の攻城、富田信高の守備。藤堂期の津城を1600年へ遡らせない。'],
  };
+ sources.takatenjinFortCommand=['掛川市','高天神城の攻防に関する講演資料','https://www.city.kakegawa.shizuoka.jp/fs/6/2/4/3/5/5/_/_____________________________.pdf','六砦の配置と担当','大須賀康高らの包囲拠点。落城当日の各将の位置までは示さない。'];
+ sources.shigisanChronicle=['太田牛一','信長公記','https://ja.wikisource.org/wiki/信長公記','巻十（九）信貴城被攻落之事','旧暦10月3日の着陣と10日夜の攻城。攻め口を割り当てられた武将を記すが、それぞれの方角は特定できない。'];
  sources.odawara1590=['小田原城総合管理事務所','小田原城の歴史年表','https://odawaracastle.com/history/nenpyo/index.html','1590年の小田原合戦','1561年の上杉攻城と1590年の総構・石垣山本陣を区別する。'];
  sources.sawayamaDeployment=['彦根市','佐和山城','https://www.city.hikone.lg.jp/kanko/rekishi/9/6/7608.html','城の沿革・遺構','山城の位置と沿革。個別の攻め口は図示しない。'];
  sources.krChilcheon=['趙成都／韓国学中央研究院','칠천량해전（漆川梁海戦）','https://encykorea.aks.ac.kr/Article/E0058551','内容・1597年旧暦7月14～15日の夜戦（16日説もある）','元均・李億祺・崔湖・裴楔、日本側の藤堂・脇坂・加藤。戦役総兵数を海戦人数へ流用しない。'];
  sources.krChungju=['金鎮鳳／韓国学中央研究院','탄금대전투（弾琴台戦闘）','https://encykorea.aks.ac.kr/Article/E0058773','申砬の弾琴台布陣・忠州城方面の交戦','弾琴台と忠州城の位置関係。川の現在の水面形を当日の河道としない。'];
  sources.krByeokje=['李章熙／韓国学中央研究院','벽제관전투（碧蹄館戦闘）','https://encykorea.aks.ac.kr/Article/E0022875','礪石嶺・恵陰嶺・望客峴の説明','駅館だけでなく南約3kmの戦闘域を含む。李如松・査大受・楊元と小早川・立花。'];
  sources.krNamwon=['宋正鉉／韓国学中央研究院','남원전투（南原戦闘）','https://encykorea.aks.ac.kr/Article/E0012070','旧暦8月13日の守門分担と16日の落城','東門楊元・李新芳、西門毛承先、南門蔣表、北門李福男。門の正確な座標は図示しない。'];
+ sources.kozukiChronology=['佐用町','佐用の史跡文化財 上月城と上月合戦','https://www.town.sayo.lg.jp/cms-sypher/www/info/detail.jsp?id=11722','天正6年の包囲・高倉山着陣・撤退・開城','吉川・小早川の包囲と秀吉・村重の救援。吉川元長書状にみえる毛利3万・織田1万を城兵数と混ぜない。'];
+ sources.kozukiSiteTable=['赤松裕和／兵庫県立歴史博物館','千種川流域の城館構成について―赤松居館跡の分析を通して―','https://rekihaku.pref.hyogo.lg.jp/wp-content/uploads/2021/03/kiyo05_05.pdf','本文72頁・表2 S10 高倉山城跡（X 134.35666、Y 34.97853）','高倉山城跡の代表座標。秀吉・村重各隊の細かな持場の座標ではない。'];
+ sources.ariokaChronicle=['太田牛一','信長公記','https://ja.wikisource.org/wiki/信長公記','巻十二（十三）伊丹城謀叛之事、（十五）伊丹之城ニ在之年寄共妻子兄弟置捨退出之事','10月15日外郭突破、岸・鵯塚の守将、11月19日久左衛門らの退出と織田信澄の警固。再生内の時間配分は演出。'];
+ sources.ariokaDeparture=['伊丹市','第2回 有岡城で織田信長と戦った?!','https://www.city.itami.lg.jp/SOSIKI/TOSHIKATSURYOKU/BUNKA/bunnkazai/KEIHATU_ZIGYO/ouchideariokajyou/1588049228013.html','村重は戦況打開のために有岡城脱出・有岡城跡惣構図','1579年9月の村重の尼崎移動、10月の滝川一益の侵入。添付総構図を城跡・岸の砦代表点へ対応させた概略配置。'];
+ sources.ariokaKishiPoint=['伊丹市','猪名野神社 3棟','https://www.city.itami.lg.jp/SOSIKI/TOSHIKATSURYOKU/BUNKA/bunnkazai/SINAI_BUNKAZAI/KEN_SITEI/1582252824285.html','地図情報（34.7851887,135.4151939）','現代神社の地図代表点。岸の砦との対応は伊丹市総構図による。後世の社殿を戦国期へ遡らせない。'];
+ sources.anotsuChronology=['竹田憲治／三重県埋蔵文化財センター','関ヶ原の戦と三重の城郭','https://www.pref.mie.lg.jp/common/content/001067704.pdf','2022年11月講演資料・PDF5頁「津城での戦い」','8月22日鍋島勝茂の浜手攻撃・二ノ丸進入、24～25日毛利勢、25日長束正家の和議。城方の富田知信表記は津市の信高説明と対照。'];
+ sources.anotsuDefenders=['津市','津城かわら版② 富田氏とその時代の津城','https://www.info.city.tsu.mie.jp/www/contents/1685003046920/simple/kawaraban2.pdf','広報津2023年8月16日号7頁','信高・分部光嘉・津の住民の籠城。富田時代の絵図未確認と明記されるため、藤堂期の縄張や後世の砲撃図を1600年の実測として用いない。'];
  for(const [id,[author,title,url,locator,scope]] of Object.entries(sources))TK.RESEARCH_SOURCES[id]={author,title,url,locator,scope,accessed:'2026-10-31'};
+ for(const id of ['kozukiChronology','kozukiSiteTable','ariokaChronicle','ariokaDeparture','ariokaKishiPoint','anotsuChronology','anotsuDefenders'])TK.RESEARCH_SOURCES[id].accessed='2026-11-03';
  const P={};
  const define=(title,kind,summary,sourceIds,groups=[])=>P[title]={kind,summary,sourceIds,groups};
  // group [地域名, 対象id（*a/*bは未割当の全隊）, 緯経度またはnull, 根拠の種類]
@@ -51,8 +61,49 @@
  define('大坂冬の陣','siege','大坂城と南の真田丸、東の今福・鴫野、西の木津川方面を分ける。各段階を同時の配置としない。',['osakaMuseum','osakaStructure','osakaMap'],[g('大坂城内','hideyori ono kimura chosokabe',135.526,34.687),g('真田丸方面','sanada goto',135.526,34.673),g('茶臼山・徳川本陣','ieyasu',135.509,34.651),g('岡山・秀忠本陣','hidetada',135.532,34.663),g('真田丸正面','maeda ii matsudaira',135.527,34.668,'攻撃方面の概略'),g('今福・鴫野方面','uesugi satake',135.55,34.693),g('木津川方面','hachisuka',135.482,34.668),g('その他の包囲軍・持場未詳','date todo asano',null)]);
  // 攻城は城域と攻め手を分離。未確認の包囲部隊には地理座標を与えない。
  const sieges=[
- ['伏見城の戦い','木幡山伏見城','b','fushimiDiary'],['大津城の戦い','大津城','b','otsu'],['第二次上田合戦','上田城','b','ueda'],['田辺城の戦い','田辺城','b','tanabe'],['長谷堂城の戦い','長谷堂城','b','hasedo'],['高遠城の戦い','高遠城','b','takato'],['小田原城の戦い','小田原城（1561年）','b','odawara1561'],['永禄の変','二条御所','b','eirokuStudy'],['箕輪城落城','箕輪城','b','minowaSite'],['月山富田城開城','月山富田城','b','gassanSite'],['稲葉山城の戦い','稲葉山城','b',null],['大河内城の戦い','大河内城','b','okawachiSite'],['小谷城落城','小谷城','b','odaniSite'],['長島一向一揆の平定','長島・願証寺などの一揆拠点','b',null],['七尾城の戦い','七尾城','b','nanaoSite'],['信貴山城の戦い','信貴山城','b','shigisan'],['上月城の戦い','上月城','b',null],['有岡城の戦い','有岡城・総構','b','ariokaSite'],['高天神城の戦い','高天神城','b','takatenjinSite'],['備中高松城の水攻め','備中高松城','b','takamatsuSite'],['岩屋城の戦い','岩屋城','b','iwaya'],['新発田城落城','新発田城','b',null],['韮山城の戦い','韮山城','b',null],['鉢形城の開城','鉢形城','b',null],['第一次晋州城の戦い','晋州城','b',null],['平壌の戦い','平壌城','b',null],['幸州山城の戦い','幸州山城','b','krHaengjuBattle'],['第二次晋州城の戦い','晋州城','b',null],['蔚山城の戦い','島山・蔚山倭城','b','krUlsanBattle'],['安濃津城の戦い','安濃津城','b','anotsuDeployment'],['佐和山城落城','佐和山城','b','sawayamaDeployment']];
+ ['伏見城の戦い','木幡山伏見城','b','fushimiDiary'],['第二次上田合戦','上田城','b','ueda'],['田辺城の戦い','田辺城','b','tanabe'],['高遠城の戦い','高遠城','b','takato'],['小田原城の戦い','小田原城（1561年）','b','odawara1561'],['永禄の変','二条御所','b','eirokuStudy'],['箕輪城落城','箕輪城','b','minowaSite'],['月山富田城開城','月山富田城','b','gassanSite'],['稲葉山城の戦い','稲葉山城','b',null],['大河内城の戦い','大河内城','b','okawachiSite'],['小谷城落城','小谷城','b','odaniSite'],['長島一向一揆の平定','長島・願証寺などの一揆拠点','b',null],['七尾城の戦い','七尾城','b','nanaoSite'],['上月城の戦い','上月城','b',null],['有岡城の戦い','有岡城・総構','b','ariokaSite'],['備中高松城の水攻め','備中高松城','b','takamatsuSite'],['岩屋城の戦い','岩屋城','b','iwaya'],['新発田城落城','新発田城','b',null],['韮山城の戦い','韮山城','b',null],['鉢形城の開城','鉢形城','b',null],['第一次晋州城の戦い','晋州城','b',null],['平壌の戦い','平壌城','b',null],['幸州山城の戦い','幸州山城','b','krHaengjuBattle'],['第二次晋州城の戦い','晋州城','b',null],['蔚山城の戦い','島山・蔚山倭城','b','krUlsanBattle'],['安濃津城の戦い','安濃津城','b','anotsuDeployment'],['佐和山城落城','佐和山城','b','sawayamaDeployment']];
  for(const [title,site,side,src] of sieges)define(title,'siege',site+'の守備と攻城側を表示。攻め口未詳の部隊は図内の欄に置き、特定の方角へ布陣したと扱わない。',src?[src]:[],[['城内・'+site,'*'+side,'center','籠城先・個別持場不詳'],g('攻城側・攻め口未詳','*'+(side==='b'?'a':'b'),null)]);
+ define('上月城の戦い','siege','毛利方が上月城を包囲。高倉山の救援軍は三木攻めを優先して撤退し、城は開城した。',['kozukiChronology','kozukiSiteTable'],[
+  g('上月城・尼子方','b-0 b-1',134.324477,34.975678,'城跡の代表点'),
+  g('高倉山・織田方救援軍','relief-hideyoshi relief-araki',134.35666,34.97853,'城館一覧の代表点・各隊の持場は未詳'),
+  g('毛利方・包囲軍','*a',null)]);
+ // 伊丹市総構図を城跡と岸の砦の代表点で相似登録。局所位置は概略で、縄張測量ではない。
+ const ariokaPoints={main:[135.420992,34.781112],kishi:[135.4151939,34.7851887],joro:[135.417613,34.779251],hiyodori:[135.421566,34.773778]};
+ define('有岡城の戦い','siege','村重が尼崎へ移った後、滝川一益が上臈塚から侵入。外郭を失った城は開城し、織田信澄が警固に入った。',['ariokaChronicle','ariokaDeparture','ariokaKishiPoint','ariokaSite'],[
+  g('有岡城主郭・荒木方','b-0',...ariokaPoints.main,'城跡の代表点'),
+  g('上臈塚・侵入する織田勢','a-0',...ariokaPoints.joro,'伊丹市総構図の概略位置・読取幅約100m'),
+  g('岸の砦・渡辺勘太夫','b-kishi',...ariokaPoints.kishi,'現代神社の地図代表点・砦の外郭全体ではない'),
+  g('鵯塚・野村丹後と雑賀勢','b-hiyodori b-saika',...ariokaPoints.hiyodori,'伊丹市総構図の概略位置・読取幅約100m'),
+  g('有岡城主郭・開城後の警固','a-nobusumi',...ariokaPoints.main,'城跡の代表点・11月19日以後')]);
+ define('安濃津城の戦い','siege','鍋島勢が浜手から攻め、毛利勢も交戦。富田信高・分部光嘉らの籠城は長束正家の仲介で終わった。',['anotsuChronology','anotsuDefenders','anotsuDeployment'],[
+  g('安濃津城・守備軍','*b',136.50749,34.71778,'津城跡の代表点・藤堂期の縄張とは区別'),
+  g('二ノ丸へ進入・鍋島勝茂','a-nabeshima',136.50749,34.71778,'城域の代表点・二ノ丸の精密な位置ではない'),
+  g('西軍・攻城と和議','*a',null)]);
+ const takatenjinPoints=new Map(TK.TAKATENJIN_FORTS.map(([name,lon,lat])=>[name,[lon,lat]]));
+ TK.BATTLE_ATLAS['高天神城の戦い'].points.push(...TK.TAKATENJIN_FORTS.map(([name,lon,lat])=>({name,lon,lat,basis:'visitor-map-marker',source:'takatenjinFortMap'})));
+ define('高天神城の戦い','siege','徳川方は周囲の砦で補給を断ち、城内の岡部元信らは旧暦3月22日に討って出た。',['takatenjinSite','takatenjinFortCommand'],[
+  g('高天神城・岡部元信ら','*b',138.035571,34.698262,'城跡の代表点'),
+  g('小笠山砦・担当', 'add-石川康通',...takatenjinPoints.get('小笠山砦'),'包囲期の担当拠点'),
+  g('能ヶ坂砦・担当', 'add-本多勢',...takatenjinPoints.get('能ヶ坂砦'),'包囲期の担当拠点'),
+  g('三井山砦・担当', 'add-酒井重忠',...takatenjinPoints.get('三井山砦'),'包囲期の担当拠点'),
+  g('徳川方・包囲拠点の諸将','*a',null)]);
+ define('信貴山城の戦い','siege','信忠軍は旧暦10月3日に城を包囲し、10日夜に諸手から攻め上った。',['shigisan','shigisanChronicle'],[
+  g('信貴山城・松永方','*b',135.67871,34.616335,'城跡の代表点'),
+  g('織田方・包囲と夜攻め','*a',null)]);
+ define('大津城の戦い','siege','長等山方面の西軍と、大津城で籠城する京極高次。',['otsu','otsuTime'],[
+  g('長等山方面・毛利・立花勢','a0 a1',135.852,35.007,'城の南西の山腹を示す概略点。各将の持場は未詳'),
+  g('大津城・京極高次','b0',135.864026,35.011417,'城跡の代表点')]);
+ // 長谷堂城跡の北約1.1km。菅沢山の陣地を示す代表点で、遺構の測量値ではない。
+ define('長谷堂城の戦い','siege','菅沢山に直江兼続の本陣、長谷堂城に志村光安の守備隊。',['hasedo','hasedoTerrain','hasedoMuseum'],[
+  g('菅沢山・直江本陣','a0',140.270,38.222,'長谷堂城跡の北約1.1kmに置く菅沢山の概略点'),
+  g('長谷堂城・志村光安','b0',140.272397,38.212599,'城跡の代表点')]);
+ // 岡山県の陣営配置図を高松城と吉備津神社の代表点で登録した概略位置。
+ // 石井山本陣の測量点ではなく、図記号・基準点の幅を含め約200mの読取精度。
+ TK.RESEARCH_SOURCES.takamatsuHeadquarters={author:'岡山県古代吉備文化財センター',title:'備中高松城跡・高松城水攻め陣営配置図',url:'https://www.pref.okayama.jp/site/kodai/628728.html',locator:'「秀吉の陣」段落、陣営配置図・石井山（羽柴秀吉②・黒田孝高）',scope:'龍王山から石井山への本陣移転。各兵の持場や移転日の精密な復元ではない。',accessed:'2026-11-02'};
+ define('備中高松城の水攻め','siege','高松城を囲む水攻めと、石井山に移った羽柴秀吉の本陣。',['takamatsuHeadquarters','takamatsuSite'],[
+  ['城内・備中高松城','*b','center','籠城先・個別持場不詳'],
+  g('石井山・羽柴秀吉本陣','a-0',133.828068,34.686228,'県の陣営配置図の代表点・読取幅約200m'),
+  g('その他の攻城側','*a',null)]);
  define('森部の戦い','field','森部での両軍の対陣。細かな戦場範囲と陣地は未詳。',['moribeSite']);
  define('第二次国府台合戦','field','江戸川東岸・国府台の里見方と北条方。渡河点・陣形を一意に復元しない。',['konodaiSite'],[g('国府台・里見方','*b',139.9,35.751),g('北条方・攻撃方向未詳','*a',null)]);
  define('休松の戦い','field','古処山城周辺の攻囲から、休松の大友本陣への夜襲に至る。',['yasumimatsuDeployment'],[g('休松・大友本陣','*b',130.692,33.444,'柿原付近の概略点'),g('夜襲・秋月方','*a',null)]);
@@ -84,9 +135,11 @@
  define('今福・鴫野の戦い','field','今福と鴫野を別地点に表示。佐竹方・上杉方と豊臣方の守備・救援。',['osakaMuseum'],[g('今福・豊臣方','*b',135.552,34.705),g('今福・佐竹方','add-佐竹義宣',135.56,34.705,'攻撃方面の概略'),g('鴫野・上杉方','add-上杉景勝',135.552,34.692,'攻撃方面の概略')]);
  define('道明寺の戦い','field','小松山の後藤勢と大和路からの徳川方、後着の真田・毛利勢を分ける。',['osakaMuseum'],[g('小松山・後藤勢','a-0',135.637,34.576),g('国分・大和路から徳川方','*b',135.645,34.571,'進攻地域の概略'),g('道明寺方面・後着部隊','a-1 a-2',135.627,34.567,'後着時の概略地域')]);
  define('八尾・若江の戦い','field','八尾の藤堂対長宗我部と、若江の井伊対木村を分ける。',['osakaMuseum'],[g('八尾・長宗我部方','b-1',135.604,34.626),g('八尾・藤堂方','a-0',135.614,34.625,'対陣地域の概略'),g('若江・木村方','b-0',135.601,34.653),g('若江・井伊方','a-1',135.611,34.653,'対陣地域の概略')]);
- for(const [title,d] of Object.entries(TK.EXTRA_BATTLES||{}))define(title,d.kind,d.summary,[d.source],d.groups);
+ for(const [title,d] of Object.entries(TK.EXTRA_BATTLES||{}))define(title,d.kind,d.summary,d.sources||[d.source],d.groups);
  TK.DEPLOYMENT_PLANS=P;
  const additions={
+  '高天神城の戦い':[['大須賀康高','a'],['酒井重忠','a'],['石川康通','a'],['本多勢','a']],
+  '信貴山城の戦い':[['佐久間信盛','a'],['羽柴秀吉','a'],['明智光秀','a'],['丹羽長秀','a']],
   '稲葉山城の戦い':[['斎藤龍興','b']], '長島一向一揆の平定':[['長島一向一揆衆','b']],
   '宇喜多勢の讃岐攻め':[['香川親和ら長宗我部方','b']], '小早川隆景の伊予攻め':[['金子元宅ら伊予勢','b']],
   '九州平定':[['島津義久','b'],['豊臣秀長','a']], '新発田城落城':[['新発田重家','b']],
@@ -111,6 +164,47 @@
   const labels={'稲葉山城の戦い':['織田方','斎藤方'],'長島一向一揆の平定':['織田方','長島一向一揆'],'宇喜多勢の讃岐攻め':['宇喜多方','讃岐の長宗我部方'],'小早川隆景の伊予攻め':['毛利・小早川方','伊予諸勢力'],'九州平定':['豊臣方','島津方'],'新発田城落城':['上杉方','新発田方'],'北国勢の上野攻め':['豊臣方北国軍','北条方'],'石垣原の戦い':['大友方','黒田・松井方'],'佐和山城落城':['東軍','石田方'],'今福・鴫野の戦い':['徳川方','豊臣方']};
   if(labels[title])for(const [i,side] of ['a','b'].entries())sc.sides[side].n=labels[title][i];
   if(title==='南原城の戦い'){sc.sides.b.n='明・朝鮮連合守備軍';sc.sides.b.tr='明約3,000・朝鮮約1,000';sc.sides.b.clan='ming';for(const u of sc.units)if((u.g||'').includes('楊元')){u.tr=3000;u.role='明軍総兵・東門、3,000は明軍全体で個人の持場兵数ではない';}TK.BATTLE_TROOPS[title].b.lead='楊元・李福男ら明朝鮮連合軍';}
+  if(title==='上月城の戦い'){
+   sc.date='天正6年4月18日〜7月5日';
+   sc.calendar=[[0,'4月18日・毛利方が包囲'],[25,'5月4日・救援軍が高倉山に着陣'],[78,'6月26日・秀吉が撤退'],[100,'7月5日・開城']];
+   const unit=(id,g,side,clan,role,from=0)=>({id,g,n:g,side,clan,role,tr:0,arm:'yari',path:[],from,source:'kozukiChronology'});
+   sc.units=[unit('a-0','吉川元春','a','mori','上月城を包囲'),unit('a-1','小早川隆景','a','mori','上月城を包囲'),unit('b-0','尼子勝久','b','amago','上月城に籠城'),unit('b-1','山中幸盛','b','amago','上月城に籠城、開城を申し入れる'),unit('relief-hideyoshi','羽柴秀吉','b','oda','高倉山の救援軍',25),unit('relief-araki','荒木村重','b','oda','高倉山の救援軍',25)];
+   sc.units.find(u=>u.id==='b-0').die=100;
+   sc.mapVisibleUntil={'relief-hideyoshi':78,'relief-araki':78};sc.mapExitLabels={'relief-hideyoshi':'撤退','relief-araki':'救援終了'};
+   sc.sides.a={clan:'mori',n:'毛利方',tr:'約30,000'};sc.sides.b={clan:'amago',n:'尼子方・織田方救援軍',tr:'救援軍 約10,000・城兵数は別'};
+   sc.participantClans=[...new Set([...sc.participantClans,'oda'])];
+   sc.beats=[[0,'吉川元春・小早川隆景らが上月城を包囲する。'],[25,'羽柴秀吉・荒木村重らの救援軍が高倉山に着陣する。'],[78,'織田信長の命により秀吉が撤退。上月城は孤立する。'],[100,'上月城が開城。尼子勝久らは自害し、山中幸盛は捕らえられて備中へ送られる。']];
+  }
+  if(title==='有岡城の戦い'){
+   sc.date='天正7年10月15日〜11月19日';
+   sc.calendar=[[0,'10月15日・滝川一益が上臈塚から侵入'],[20,'外郭を失い主郭が孤立'],[100,'11月19日・荒木方が退城、織田信澄が警固']];
+   const unit=(id,g,side,role,from=0)=>({id,g,n:g,side,clan:side==='a'?'oda':'unknown',role,tr:0,arm:'yari',path:[],from,source:'ariokaChronicle'});
+   sc.units=[unit('a-0','滝川一益','a','上臈塚から城内へ進入'),unit('a-nobusumi','織田信澄','a','開城後の城内警固',100),unit('b-0','荒木久左衛門','b','城内を守り、11月19日に尼崎へ退出'),unit('b-kishi','渡辺勘太夫','b','岸の砦を守る'),unit('b-hiyodori','野村丹後','b','鵯塚を守る'),unit('b-saika','雑賀勢','b','野村丹後と鵯塚を守る')];
+   sc.mapVisibleUntil={'b-0':100,'b-kishi':20,'b-hiyodori':20,'b-saika':20};sc.mapExitLabels={'b-0':'尼崎へ退出','b-kishi':'砦陥落','b-hiyodori':'砦陥落','b-saika':'砦陥落'};
+   sc.sides.a={clan:'oda',n:'織田方',tr:'兵数未詳'};sc.sides.b={clan:'unknown',n:'荒木方',tr:'兵数未詳'};
+   sc.recordSides=['織田方（滝川一益・織田信澄）','有岡城の荒木方'];
+   sc.beats=[[0,'村重はすでに尼崎へ移っている。滝川一益の軍勢が内応を得て上臈塚へ入る。'],[10,'織田勢は侍町に火をかけ、有岡城の外郭を押さえる。'],[20,'岸の砦の渡辺勘太夫は多田へ退く。鵯塚の野村丹後・雑賀勢も抗しきれず、主郭は孤立する。'],[100,'荒木久左衛門らは尼崎へ向かい、織田信澄が有岡城内の警固に入る。']];
+   // 長期包囲全体の旧概数を、1579年10～11月の各将の兵数へ流用しない。
+   TK.BATTLE_TROOPS[title].a={lead:'滝川一益・織田信澄',tr:0};TK.BATTLE_TROOPS[title].b={lead:'荒木久左衛門ら有岡城守備方',tr:0};
+   TK.BATTLE_TROOPS[title].certainty='天正7年10～11月の各部隊の兵数は未確定';
+  }
+  if(title==='安濃津城の戦い'){
+   sc.date='慶長5年8月22日〜25日';
+   sc.calendar=[[0,'8月22日・鍋島勢が浜手から攻撃'],[60,'8月24日・毛利勢が攻撃'],[100,'8月25日・長束正家の仲介で開城']];
+   const unit=(id,g,side,role,from=0,source='anotsuChronology')=>({id,g,n:g,side,clan:g==='毛利秀元'?'mori':'unknown',role,tr:0,arm:'yari',path:[],from,source});
+   sc.units=[unit('a-0','毛利秀元','a','西軍の攻城軍を率いる',60,'anotsuDeployment'),unit('a-hiroie','吉川広家','a','毛利勢の攻城に参加',60),unit('a-nabeshima','鍋島勝茂','a','浜手から攻撃、二ノ丸へ進入',20),unit('a-natsuka','長束正家','a','西軍の先遣と和議の仲介'),unit('a-ekei','安国寺恵瓊','a','長束正家と先遣'),unit('b-0','富田信高','b','津城の守備',0,'anotsuDefenders'),unit('b-wakebe','分部光嘉','b','富田信高とともに籠城',0,'anotsuDefenders')];
+   sc.sides.a={clan:'mori',n:'西軍',tr:'全体 約30,000'};sc.sides.b={clan:'unknown',n:'富田・分部方',tr:'全体 2,000未満'};
+   sc.beats=[[0,'鍋島勝茂の軍勢が浜手から安濃津城を攻める。'],[20,'鍋島勢が二ノ丸へ入り、城方は本丸に退いて戦う。',['a-nabeshima','b-0']],[60,'毛利勢も攻城。富田信高・分部光嘉らが城を守る。'],[100,'長束正家の仲介によって和議が成立し、城は明け渡された。']];
+  }
+  if(title==='高天神城の戦い'){
+   for(const u of sc.units.filter(u=>u.side==='a'))u.role=u.g==='徳川家康'?'包囲作戦を指揮':'包囲の砦を担当';
+   sc.units.find(u=>u.g==='大須賀康高').role='火ヶ峰・獅子ヶ鼻・中村の三砦を担当';
+   sc.calendar=[[0,'1580年・砦で包囲を強化'],[60,'兵糧が尽きる'],[100,'旧暦3月22日・岡部元信らが出撃、落城']];
+  }
+  if(title==='信貴山城の戦い'){
+   sc.date='天正5年10月3日〜10日';
+   sc.calendar=[[0,'10月3日・織田信忠が着陣'],[60,'信貴山城を包囲'],[100,'10月10日夜・攻城と落城']];
+  }
   if(title==='石垣原の戦い'){const u=sc.units.find(u=>u.id==='b-0');if(u){u.tr=0;u.role='旧暦9月13日夜に実相寺山着陣。昼間の戦闘とは区別';}sc.calendar=[[0,'9月13日・黒田松井勢と大友勢が交戦'],[75,'同日夜・黒田孝高が実相寺山へ着陣'],[100,'9月15日・大友義統降伏']];}
   if(title==='四万十川の戦い')sc.sides.a.clan='ichijo';
   if(title==='平壌の戦い')sc.sides.a.clan='ming';
@@ -127,8 +221,30 @@
   sc.atlasBasis=plan.kind==='campaign'?'戦役・方面配置図':plan.kind==='naval'?'海戦・配置概略図':plan.kind==='siege'?'城郭・攻囲配置図':'布陣概略図';
   sc.reviewNote=plan.summary;sc.presentationNote='地形上の所在と、位置不詳の部隊欄を区別して表示。';
   sc.deploymentKind=plan.kind;
+  if(title==='木津川口の戦い'){
+   // 文献が記す攻撃の順序を図解。これらは画面座標で、陣地の経緯度ではない。
+   // 木津村の徳川付城や後世の冬陣図を、11月19日の豊臣方河口砦へ転用しない。
+   sc.atlasPlan=true;sc.atlasSchematic={
+    lead:'extra-a-0',capturedAt:80,
+    title:'木津川河口の砦を攻撃',caption:'攻撃の順序を示す模式図・方位と距離は表しません',
+    paths:{'extra-a-0':[[0,.22,.34],[22,.22,.34],[48,.61,.34],[80,.77,.34],[100,.77,.34]],
+     'extra-a-1':[[0,.22,.55]],'extra-a-2':[[0,.22,.76]],'extra-b-0':[[0,.77,.34]]}
+   };
+   sc.feats=[];sc.atlasBasis='攻撃順序の模式図';
+   sc.reviewNote='旧暦11月19日。蜂須賀・浅野・池田の三隊に砦攻撃が命じられ、蜂須賀勢が先に攻略した。';
+   sc.presentationNote='部隊は個別に表示し、攻撃の順序を示します。位置や進路を再現した図ではありません。';
+   sc.mapVisibleUntil={...(sc.mapVisibleUntil||{}),'extra-b-0':80};
+   sc.mapExitLabels={...(sc.mapExitLabels||{}),'extra-b-0':'砦攻略後'};
+   sc.beats=[[0,'三隊に木津川河口の砦の攻撃が命じられた',[]],
+    [40,'蜂須賀至鎮勢が先行して砦を攻める',['extra-a-0','extra-b-0']],
+    [80,'蜂須賀勢が砦を攻略した',[]],[100,'木津川口の攻略',[]]];
+   sc.calendar=[[0,'旧暦11月19日・砦攻撃の命令'],[40,'蜂須賀勢が先行'],[80,'砦を攻略'],[100,'木津川口の攻略']];
+   for(const u of sc.units){u.path=[];u.tr=0;u.role=u.side==='b'?'木津川河口の砦を守る豊臣方':u.g==='蜂須賀至鎮'?'先行して木津川河口の砦を攻略':'木津川河口の砦の攻撃を命じられた部隊';}
+   for(const g of sc.atlasGroups){delete g.point;g.dock=false;g.schematic=true;g.precision='文献に記された攻撃順序の模式表示・陣地の位置ではない';}
+   sc.atlasUnits=[];
+  }
   // 内側の旧監査は、初回と再構築時で追加出典の有無が異なる。最終的な表示の確認範囲で統一する。
   sc.audit=['出典が裏付ける範囲は各資料欄に明示','地形・城郭・全参加者の精密な復元は未完了'];
-  const row=TK.BATTLE_AUDIT?.find(r=>r.title===title);if(row)Object.assign(row,{atlasBasis:sc.atlasBasis,units:sc.units.length,positionedGroups:groups.filter(g=>g.point).length,unlocatedGroups:groups.filter(g=>g.dock).length,displayedParticipants:groups.reduce((n,g)=>n+g.members.length,0),sourceIds:sc.sources,issues:sc.audit});
+  const row=TK.BATTLE_AUDIT?.find(r=>r.title===title);if(row)Object.assign(row,{atlasBasis:sc.atlasBasis,units:sc.units.length,positionedGroups:groups.filter(g=>g.point).length,unlocatedGroups:groups.filter(g=>g.dock).length,displayedParticipants:groups.reduce((n,g)=>n+g.members.length,0),...(sc.atlasSchematic?{schematicParticipants:sc.units.length}:{}),sourceIds:sc.sources,issues:sc.audit});
  }};
 })();

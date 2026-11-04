@@ -1,0 +1,1086 @@
+{
+  "ok": true,
+  "before": {
+    "mode": "pick",
+    "clan": "oda",
+    "selected": "oda",
+    "scroll": 90,
+    "renderAll": 0,
+    "draws": {
+      "base": 11,
+      "top": 11,
+      "still": 11
+    },
+    "load": {
+      "active": 2,
+      "queued": 10,
+      "records": [
+        {
+          "src": "portraits/quality-長尾景虎.jpg",
+          "state": "loading",
+          "attempts": 1,
+          "width": 0
+        },
+        {
+          "src": "portraits/quality-尼子晴久.jpg",
+          "state": "loading",
+          "attempts": 1,
+          "width": 0
+        },
+        {
+          "src": "portraits/顕如.jpg",
+          "state": "queued",
+          "attempts": 0,
+          "width": 0
+        },
+        {
+          "src": "portraits/quality-六角義賢.jpg",
+          "state": "queued",
+          "attempts": 0,
+          "width": 0
+        },
+        {
+          "src": "portraits/斎藤義龍.jpg",
+          "state": "queued",
+          "attempts": 0,
+          "width": 0
+        },
+        {
+          "src": "portraits/quality-龍造寺隆信.jpg",
+          "state": "queued",
+          "attempts": 0,
+          "width": 0
+        },
+        {
+          "src": "portraits/quality-伊達晴宗.jpg",
+          "state": "queued",
+          "attempts": 0,
+          "width": 0
+        },
+        {
+          "src": "portraits/quality-足利義輝.jpg",
+          "state": "queued",
+          "attempts": 0,
+          "width": 0
+        },
+        {
+          "src": "portraits/quality-安東愛季.jpg",
+          "state": "queued",
+          "attempts": 0,
+          "width": 0
+        },
+        {
+          "src": "portraits/quality-佐野昌綱.jpg",
+          "state": "queued",
+          "attempts": 0,
+          "width": 0
+        },
+        {
+          "src": "portraits/quality-相良義陽.jpg",
+          "state": "queued",
+          "attempts": 0,
+          "width": 0
+        },
+        {
+          "src": "portraits/宗義調.jpg",
+          "state": "queued",
+          "attempts": 0,
+          "width": 0
+        }
+      ]
+    },
+    "panelKept": true,
+    "faces": [
+      {
+        "name": "織田信長",
+        "complete": true,
+        "width": 98
+      },
+      {
+        "name": "今川義元",
+        "complete": true,
+        "width": 36
+      },
+      {
+        "name": "北条氏康",
+        "complete": true,
+        "width": 36
+      },
+      {
+        "name": "大友義鎮",
+        "complete": true,
+        "width": 36
+      },
+      {
+        "name": "三好長慶",
+        "complete": true,
+        "width": 36
+      },
+      {
+        "name": "武田信玄",
+        "complete": true,
+        "width": 36
+      },
+      {
+        "name": "顕如",
+        "complete": true,
+        "width": 36
+      },
+      {
+        "name": "長尾景虎",
+        "complete": true,
+        "width": 36
+      },
+      {
+        "name": "毛利元就",
+        "complete": true,
+        "width": 36
+      },
+      {
+        "name": "尼子晴久",
+        "complete": true,
+        "width": 36
+      },
+      {
+        "name": "朝倉義景",
+        "complete": true,
+        "width": 36
+      },
+      {
+        "name": "六角義賢",
+        "complete": true,
+        "width": 36
+      },
+      {
+        "name": "島津貴久",
+        "complete": true,
+        "width": 36
+      },
+      {
+        "name": "織田信長",
+        "complete": true,
+        "width": 36
+      },
+      {
+        "name": "北畠具教",
+        "complete": true,
+        "width": 36
+      },
+      {
+        "name": "南部晴政",
+        "complete": true,
+        "width": 36
+      },
+      {
+        "name": "里見義堯",
+        "complete": true,
+        "width": 36
+      },
+      {
+        "name": "斎藤義龍",
+        "complete": true,
+        "width": 36
+      },
+      {
+        "name": "長野業正",
+        "complete": true,
+        "width": 36
+      },
+      {
+        "name": "蘆名盛氏",
+        "complete": true,
+        "width": 36
+      },
+      {
+        "name": "龍造寺隆信",
+        "complete": true,
+        "width": 36
+      },
+      {
+        "name": "浅井久政",
+        "complete": true,
+        "width": 36
+      },
+      {
+        "name": "伊達晴宗",
+        "complete": true,
+        "width": 36
+      },
+      {
+        "name": "小田氏治",
+        "complete": true,
+        "width": 36
+      },
+      {
+        "name": "足利義輝",
+        "complete": true,
+        "width": 36
+      },
+      {
+        "name": "安東愛季",
+        "complete": true,
+        "width": 36
+      },
+      {
+        "name": "太田資正",
+        "complete": true,
+        "width": 36
+      },
+      {
+        "name": "佐野昌綱",
+        "complete": true,
+        "width": 36
+      },
+      {
+        "name": "相良義陽",
+        "complete": true,
+        "width": 36
+      },
+      {
+        "name": "一条兼定",
+        "complete": true,
+        "width": 36
+      },
+      {
+        "name": "宗義調",
+        "complete": true,
+        "width": 36
+      }
+    ],
+    "hidden": false
+  },
+  "hiddenBefore": {
+    "mode": "pick",
+    "clan": "oda",
+    "selected": "oda",
+    "scroll": 90,
+    "renderAll": 0,
+    "draws": {
+      "base": 11,
+      "top": 11,
+      "still": 11
+    },
+    "load": {
+      "active": 2,
+      "queued": 10,
+      "records": [
+        {
+          "src": "portraits/quality-長尾景虎.jpg",
+          "state": "loading",
+          "attempts": 1,
+          "width": 0
+        },
+        {
+          "src": "portraits/quality-尼子晴久.jpg",
+          "state": "loading",
+          "attempts": 1,
+          "width": 0
+        },
+        {
+          "src": "portraits/顕如.jpg",
+          "state": "queued",
+          "attempts": 0,
+          "width": 0
+        },
+        {
+          "src": "portraits/quality-六角義賢.jpg",
+          "state": "queued",
+          "attempts": 0,
+          "width": 0
+        },
+        {
+          "src": "portraits/斎藤義龍.jpg",
+          "state": "queued",
+          "attempts": 0,
+          "width": 0
+        },
+        {
+          "src": "portraits/quality-龍造寺隆信.jpg",
+          "state": "queued",
+          "attempts": 0,
+          "width": 0
+        },
+        {
+          "src": "portraits/quality-伊達晴宗.jpg",
+          "state": "queued",
+          "attempts": 0,
+          "width": 0
+        },
+        {
+          "src": "portraits/quality-足利義輝.jpg",
+          "state": "queued",
+          "attempts": 0,
+          "width": 0
+        },
+        {
+          "src": "portraits/quality-安東愛季.jpg",
+          "state": "queued",
+          "attempts": 0,
+          "width": 0
+        },
+        {
+          "src": "portraits/quality-佐野昌綱.jpg",
+          "state": "queued",
+          "attempts": 0,
+          "width": 0
+        },
+        {
+          "src": "portraits/quality-相良義陽.jpg",
+          "state": "queued",
+          "attempts": 0,
+          "width": 0
+        },
+        {
+          "src": "portraits/宗義調.jpg",
+          "state": "queued",
+          "attempts": 0,
+          "width": 0
+        }
+      ]
+    },
+    "panelKept": true,
+    "faces": [
+      {
+        "name": "織田信長",
+        "complete": true,
+        "width": 98
+      },
+      {
+        "name": "今川義元",
+        "complete": true,
+        "width": 36
+      },
+      {
+        "name": "北条氏康",
+        "complete": true,
+        "width": 36
+      },
+      {
+        "name": "大友義鎮",
+        "complete": true,
+        "width": 36
+      },
+      {
+        "name": "三好長慶",
+        "complete": true,
+        "width": 36
+      },
+      {
+        "name": "武田信玄",
+        "complete": true,
+        "width": 36
+      },
+      {
+        "name": "顕如",
+        "complete": true,
+        "width": 36
+      },
+      {
+        "name": "長尾景虎",
+        "complete": true,
+        "width": 36
+      },
+      {
+        "name": "毛利元就",
+        "complete": true,
+        "width": 36
+      },
+      {
+        "name": "尼子晴久",
+        "complete": true,
+        "width": 36
+      },
+      {
+        "name": "朝倉義景",
+        "complete": true,
+        "width": 36
+      },
+      {
+        "name": "六角義賢",
+        "complete": true,
+        "width": 36
+      },
+      {
+        "name": "島津貴久",
+        "complete": true,
+        "width": 36
+      },
+      {
+        "name": "織田信長",
+        "complete": true,
+        "width": 36
+      },
+      {
+        "name": "北畠具教",
+        "complete": true,
+        "width": 36
+      },
+      {
+        "name": "南部晴政",
+        "complete": true,
+        "width": 36
+      },
+      {
+        "name": "里見義堯",
+        "complete": true,
+        "width": 36
+      },
+      {
+        "name": "斎藤義龍",
+        "complete": true,
+        "width": 36
+      },
+      {
+        "name": "長野業正",
+        "complete": true,
+        "width": 36
+      },
+      {
+        "name": "蘆名盛氏",
+        "complete": true,
+        "width": 36
+      },
+      {
+        "name": "龍造寺隆信",
+        "complete": true,
+        "width": 36
+      },
+      {
+        "name": "浅井久政",
+        "complete": true,
+        "width": 36
+      },
+      {
+        "name": "伊達晴宗",
+        "complete": true,
+        "width": 36
+      },
+      {
+        "name": "小田氏治",
+        "complete": true,
+        "width": 36
+      },
+      {
+        "name": "足利義輝",
+        "complete": true,
+        "width": 36
+      },
+      {
+        "name": "安東愛季",
+        "complete": true,
+        "width": 36
+      },
+      {
+        "name": "太田資正",
+        "complete": true,
+        "width": 36
+      },
+      {
+        "name": "佐野昌綱",
+        "complete": true,
+        "width": 36
+      },
+      {
+        "name": "相良義陽",
+        "complete": true,
+        "width": 36
+      },
+      {
+        "name": "一条兼定",
+        "complete": true,
+        "width": 36
+      },
+      {
+        "name": "宗義調",
+        "complete": true,
+        "width": 36
+      }
+    ],
+    "hidden": true
+  },
+  "hiddenAfter": {
+    "mode": "pick",
+    "clan": "oda",
+    "selected": "oda",
+    "scroll": 90,
+    "renderAll": 0,
+    "draws": {
+      "base": 11,
+      "top": 11,
+      "still": 11
+    },
+    "load": {
+      "active": 0,
+      "queued": 11,
+      "records": [
+        {
+          "src": "portraits/quality-長尾景虎.jpg",
+          "state": "queued",
+          "attempts": 1,
+          "width": 0
+        },
+        {
+          "src": "portraits/quality-尼子晴久.jpg",
+          "state": "ready",
+          "attempts": 1,
+          "width": 256
+        },
+        {
+          "src": "portraits/顕如.jpg",
+          "state": "queued",
+          "attempts": 0,
+          "width": 0
+        },
+        {
+          "src": "portraits/quality-六角義賢.jpg",
+          "state": "queued",
+          "attempts": 0,
+          "width": 0
+        },
+        {
+          "src": "portraits/斎藤義龍.jpg",
+          "state": "queued",
+          "attempts": 0,
+          "width": 0
+        },
+        {
+          "src": "portraits/quality-龍造寺隆信.jpg",
+          "state": "queued",
+          "attempts": 0,
+          "width": 0
+        },
+        {
+          "src": "portraits/quality-伊達晴宗.jpg",
+          "state": "queued",
+          "attempts": 0,
+          "width": 0
+        },
+        {
+          "src": "portraits/quality-足利義輝.jpg",
+          "state": "queued",
+          "attempts": 0,
+          "width": 0
+        },
+        {
+          "src": "portraits/quality-安東愛季.jpg",
+          "state": "queued",
+          "attempts": 0,
+          "width": 0
+        },
+        {
+          "src": "portraits/quality-佐野昌綱.jpg",
+          "state": "queued",
+          "attempts": 0,
+          "width": 0
+        },
+        {
+          "src": "portraits/quality-相良義陽.jpg",
+          "state": "queued",
+          "attempts": 0,
+          "width": 0
+        },
+        {
+          "src": "portraits/宗義調.jpg",
+          "state": "queued",
+          "attempts": 0,
+          "width": 0
+        }
+      ]
+    },
+    "panelKept": true,
+    "faces": [
+      {
+        "name": "織田信長",
+        "complete": true,
+        "width": 98
+      },
+      {
+        "name": "今川義元",
+        "complete": true,
+        "width": 36
+      },
+      {
+        "name": "北条氏康",
+        "complete": true,
+        "width": 36
+      },
+      {
+        "name": "大友義鎮",
+        "complete": true,
+        "width": 36
+      },
+      {
+        "name": "三好長慶",
+        "complete": true,
+        "width": 36
+      },
+      {
+        "name": "武田信玄",
+        "complete": true,
+        "width": 36
+      },
+      {
+        "name": "顕如",
+        "complete": true,
+        "width": 36
+      },
+      {
+        "name": "長尾景虎",
+        "complete": true,
+        "width": 36
+      },
+      {
+        "name": "毛利元就",
+        "complete": true,
+        "width": 36
+      },
+      {
+        "name": "尼子晴久",
+        "complete": true,
+        "width": 36
+      },
+      {
+        "name": "朝倉義景",
+        "complete": true,
+        "width": 36
+      },
+      {
+        "name": "六角義賢",
+        "complete": true,
+        "width": 36
+      },
+      {
+        "name": "島津貴久",
+        "complete": true,
+        "width": 36
+      },
+      {
+        "name": "織田信長",
+        "complete": true,
+        "width": 36
+      },
+      {
+        "name": "北畠具教",
+        "complete": true,
+        "width": 36
+      },
+      {
+        "name": "南部晴政",
+        "complete": true,
+        "width": 36
+      },
+      {
+        "name": "里見義堯",
+        "complete": true,
+        "width": 36
+      },
+      {
+        "name": "斎藤義龍",
+        "complete": true,
+        "width": 36
+      },
+      {
+        "name": "長野業正",
+        "complete": true,
+        "width": 36
+      },
+      {
+        "name": "蘆名盛氏",
+        "complete": true,
+        "width": 36
+      },
+      {
+        "name": "龍造寺隆信",
+        "complete": true,
+        "width": 36
+      },
+      {
+        "name": "浅井久政",
+        "complete": true,
+        "width": 36
+      },
+      {
+        "name": "伊達晴宗",
+        "complete": true,
+        "width": 36
+      },
+      {
+        "name": "小田氏治",
+        "complete": true,
+        "width": 36
+      },
+      {
+        "name": "足利義輝",
+        "complete": true,
+        "width": 36
+      },
+      {
+        "name": "安東愛季",
+        "complete": true,
+        "width": 36
+      },
+      {
+        "name": "太田資正",
+        "complete": true,
+        "width": 36
+      },
+      {
+        "name": "佐野昌綱",
+        "complete": true,
+        "width": 36
+      },
+      {
+        "name": "相良義陽",
+        "complete": true,
+        "width": 36
+      },
+      {
+        "name": "一条兼定",
+        "complete": true,
+        "width": 36
+      },
+      {
+        "name": "宗義調",
+        "complete": true,
+        "width": 36
+      }
+    ],
+    "hidden": true
+  },
+  "after": {
+    "mode": "pick",
+    "clan": "oda",
+    "selected": "oda",
+    "scroll": 90,
+    "renderAll": 0,
+    "draws": {
+      "base": 11,
+      "top": 12,
+      "still": 12
+    },
+    "load": {
+      "active": 0,
+      "queued": 0,
+      "records": [
+        {
+          "src": "portraits/quality-長尾景虎.jpg",
+          "state": "ready",
+          "attempts": 2,
+          "width": 256
+        },
+        {
+          "src": "portraits/quality-尼子晴久.jpg",
+          "state": "ready",
+          "attempts": 1,
+          "width": 256
+        },
+        {
+          "src": "portraits/顕如.jpg",
+          "state": "ready",
+          "attempts": 1,
+          "width": 651
+        },
+        {
+          "src": "portraits/quality-六角義賢.jpg",
+          "state": "ready",
+          "attempts": 1,
+          "width": 256
+        },
+        {
+          "src": "portraits/斎藤義龍.jpg",
+          "state": "ready",
+          "attempts": 1,
+          "width": 1113
+        },
+        {
+          "src": "portraits/quality-龍造寺隆信.jpg",
+          "state": "ready",
+          "attempts": 1,
+          "width": 256
+        },
+        {
+          "src": "portraits/quality-伊達晴宗.jpg",
+          "state": "ready",
+          "attempts": 1,
+          "width": 256
+        },
+        {
+          "src": "portraits/quality-足利義輝.jpg",
+          "state": "ready",
+          "attempts": 1,
+          "width": 256
+        },
+        {
+          "src": "portraits/quality-安東愛季.jpg",
+          "state": "ready",
+          "attempts": 1,
+          "width": 256
+        },
+        {
+          "src": "portraits/quality-佐野昌綱.jpg",
+          "state": "ready",
+          "attempts": 1,
+          "width": 256
+        },
+        {
+          "src": "portraits/quality-相良義陽.jpg",
+          "state": "ready",
+          "attempts": 1,
+          "width": 256
+        },
+        {
+          "src": "portraits/宗義調.jpg",
+          "state": "ready",
+          "attempts": 1,
+          "width": 192
+        }
+      ]
+    },
+    "panelKept": true,
+    "faces": [
+      {
+        "name": "織田信長",
+        "complete": true,
+        "width": 98
+      },
+      {
+        "name": "今川義元",
+        "complete": true,
+        "width": 36
+      },
+      {
+        "name": "北条氏康",
+        "complete": true,
+        "width": 36
+      },
+      {
+        "name": "大友義鎮",
+        "complete": true,
+        "width": 36
+      },
+      {
+        "name": "三好長慶",
+        "complete": true,
+        "width": 36
+      },
+      {
+        "name": "武田信玄",
+        "complete": true,
+        "width": 36
+      },
+      {
+        "name": "顕如",
+        "complete": true,
+        "width": 36
+      },
+      {
+        "name": "長尾景虎",
+        "complete": true,
+        "width": 36
+      },
+      {
+        "name": "毛利元就",
+        "complete": true,
+        "width": 36
+      },
+      {
+        "name": "尼子晴久",
+        "complete": true,
+        "width": 36
+      },
+      {
+        "name": "朝倉義景",
+        "complete": true,
+        "width": 36
+      },
+      {
+        "name": "六角義賢",
+        "complete": true,
+        "width": 36
+      },
+      {
+        "name": "島津貴久",
+        "complete": true,
+        "width": 36
+      },
+      {
+        "name": "織田信長",
+        "complete": true,
+        "width": 36
+      },
+      {
+        "name": "北畠具教",
+        "complete": true,
+        "width": 36
+      },
+      {
+        "name": "南部晴政",
+        "complete": true,
+        "width": 36
+      },
+      {
+        "name": "里見義堯",
+        "complete": true,
+        "width": 36
+      },
+      {
+        "name": "斎藤義龍",
+        "complete": true,
+        "width": 36
+      },
+      {
+        "name": "長野業正",
+        "complete": true,
+        "width": 36
+      },
+      {
+        "name": "蘆名盛氏",
+        "complete": true,
+        "width": 36
+      },
+      {
+        "name": "龍造寺隆信",
+        "complete": true,
+        "width": 36
+      },
+      {
+        "name": "浅井久政",
+        "complete": true,
+        "width": 36
+      },
+      {
+        "name": "伊達晴宗",
+        "complete": true,
+        "width": 36
+      },
+      {
+        "name": "小田氏治",
+        "complete": true,
+        "width": 36
+      },
+      {
+        "name": "足利義輝",
+        "complete": true,
+        "width": 36
+      },
+      {
+        "name": "安東愛季",
+        "complete": true,
+        "width": 36
+      },
+      {
+        "name": "太田資正",
+        "complete": true,
+        "width": 36
+      },
+      {
+        "name": "佐野昌綱",
+        "complete": true,
+        "width": 36
+      },
+      {
+        "name": "相良義陽",
+        "complete": true,
+        "width": 36
+      },
+      {
+        "name": "一条兼定",
+        "complete": true,
+        "width": 36
+      },
+      {
+        "name": "宗義調",
+        "complete": true,
+        "width": 36
+      }
+    ],
+    "hidden": false
+  },
+  "candidate": "/tmp/kuniezu-portrait-proposal/candidate/game/ui.js",
+  "sha256": "f9feecc679b4a1043f2842a0d2abbef2e397f7c0d04042391413c815b18f16a6",
+  "peakPortraitRequests": 2,
+  "failedURL": "http://localhost:8000/portraits/quality-%E9%95%B7%E5%B0%BE%E6%99%AF%E8%99%8E.jpg",
+  "recovered": {
+    "src": "portraits/quality-長尾景虎.jpg",
+    "state": "ready",
+    "attempts": 2,
+    "width": 256
+  },
+  "events": [
+    {
+      "event": "inject-one-reset",
+      "url": "http://localhost:8000/portraits/quality-%E9%95%B7%E5%B0%BE%E6%99%AF%E8%99%8E.jpg"
+    }
+  ],
+  "attempts": [
+    [
+      "http://localhost:8000/portraits/quality-%E9%95%B7%E5%B0%BE%E6%99%AF%E8%99%8E.jpg",
+      2
+    ],
+    [
+      "http://localhost:8000/portraits/quality-%E5%B0%BC%E5%AD%90%E6%99%B4%E4%B9%85.jpg",
+      1
+    ],
+    [
+      "http://localhost:8000/portraits/%E9%A1%95%E5%A6%82.jpg",
+      1
+    ],
+    [
+      "http://localhost:8000/portraits/quality-%E5%85%AD%E8%A7%92%E7%BE%A9%E8%B3%A2.jpg",
+      1
+    ],
+    [
+      "http://localhost:8000/portraits/%E6%96%8E%E8%97%A4%E7%BE%A9%E9%BE%8D.jpg",
+      1
+    ],
+    [
+      "http://localhost:8000/portraits/quality-%E9%BE%8D%E9%80%A0%E5%AF%BA%E9%9A%86%E4%BF%A1.jpg",
+      1
+    ],
+    [
+      "http://localhost:8000/portraits/quality-%E4%BC%8A%E9%81%94%E6%99%B4%E5%AE%97.jpg",
+      1
+    ],
+    [
+      "http://localhost:8000/portraits/quality-%E8%B6%B3%E5%88%A9%E7%BE%A9%E8%BC%9D.jpg",
+      1
+    ],
+    [
+      "http://localhost:8000/portraits/quality-%E5%AE%89%E6%9D%B1%E6%84%9B%E5%AD%A3.jpg",
+      1
+    ],
+    [
+      "http://localhost:8000/portraits/quality-%E4%BD%90%E9%87%8E%E6%98%8C%E7%B6%B1.jpg",
+      1
+    ],
+    [
+      "http://localhost:8000/portraits/quality-%E7%9B%B8%E8%89%AF%E7%BE%A9%E9%99%BD.jpg",
+      1
+    ],
+    [
+      "http://localhost:8000/portraits/%E5%AE%97%E7%BE%A9%E8%AA%BF.jpg",
+      1
+    ]
+  ],
+  "errors": [],
+  "httpErrors": [
+    {
+      "url": "http://localhost:8000/favicon.ico",
+      "status": 404
+    }
+  ],
+  "loadFailures": [
+    {
+      "requestId": "76159.1005",
+      "timestamp": 9099.812244,
+      "type": "Image",
+      "errorText": "net::ERR_CONNECTION_RESET",
+      "canceled": false,
+      "url": "http://localhost:8000/portraits/quality-%E9%95%B7%E5%B0%BE%E6%99%AF%E8%99%8E.jpg"
+    }
+  ],
+  "visibilityScope": "synthetic document.hidden/visibilitychange; not OS tab hiding",
+  "instrumentation": "renderAll counter + read-only private loader snapshot",
+  "browserPid": 76126,
+  "browserPidAlive": false
+}

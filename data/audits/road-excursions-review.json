@@ -1,10 +1,10 @@
 {
-  "scope": "全85描画街道を点検。近現代参考線の完全往復と個別確認した10閉路だけを整理。史実上の全支線の有無を確定しない。",
+  "scope": "全85描画街道を点検。近現代参考線の完全往復と個別確認した9閉路だけを整理。史実上の全支線の有無を確定しない。",
   "summary": {
     "roads": 85,
-    "correctedRoads": 61,
-    "excursions": 203,
-    "removedKm": 180.34428454114817
+    "correctedRoads": 60,
+    "excursions": 201,
+    "removedKm": 163.46884315978212
   },
   "rows": [
     {
@@ -1033,31 +1033,8 @@
     {
       "name": "若狭街道",
       "modernReference": true,
-      "removedVertices": 333,
-      "excursions": [
-        {
-          "first": 319,
-          "last": 624,
-          "lengthKm": 14.968562563609403,
-          "returnRatio": 0.5862969072300362,
-          "reviewed": true,
-          "junction": [
-            135.90359,
-            35.184503
-          ]
-        },
-        {
-          "first": 1207,
-          "last": 1235,
-          "lengthKm": 1.906878817756649,
-          "returnRatio": 1,
-          "reviewed": false,
-          "junction": [
-            135.964086,
-            35.452897
-          ]
-        }
-      ]
+      "removedVertices": 0,
+      "excursions": []
     },
     {
       "name": "伊勢路",
@@ -2712,7 +2689,7 @@
     },
     {
       "name": "六十里越街道",
-      "modernReference": false,
+      "modernReference": true,
       "removedVertices": 0,
       "excursions": []
     },

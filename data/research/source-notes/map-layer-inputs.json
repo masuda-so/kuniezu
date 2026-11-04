@@ -1,0 +1,744 @@
+{
+  "schemaVersion": 1,
+  "reviewedAt": "2026-11-03",
+  "purpose": "全域heightmap/rivers入力監査。実標高の単一正本、全縮尺派生、陰影生成、児島湾補正後格子との接続と配信用候補を検査。河川は別担当。",
+  "sharedTreeReadOnly": "/Users/masudaso/Desktop/天下分け目の国絵図",
+  "codeChanges": true,
+  "serverOperations": false,
+  "downloads": false,
+  "grid": {
+    "path": "/Users/masudaso/Desktop/天下分け目の国絵図/game/map_data/projection.json",
+    "sha256": "04bd30868c1f5a9420b308d318d606a95d1158c23a8e6f18b3f7ecfe6b01466a",
+    "width": 20782,
+    "height": 24288,
+    "pixels": 504753216,
+    "origin": [
+      -1045,
+      -903.8965145526411
+    ],
+    "stepUnits": 0.17966223499820339,
+    "stepMetres": 100,
+    "lonLatBounds": [
+      122.7415448175636,
+      24.451300754581386,
+      145.81733057789472,
+      46.26948257276321
+    ],
+    "currentManifest": "/Users/masudaso/Desktop/天下分け目の国絵図/game/map/manifest.json",
+    "currentManifestSha256": "b2a9421197ded4b08b522c40a9fd2472bacac517166dc3d30a3fab64e6bd303f",
+    "sameProjectionAndDimensionsAsCurrentManifest": true,
+    "rawU16Bytes": 1009506432
+  },
+  "heightInputs": {
+    "path": "/Users/masudaso/Desktop/天下分け目の国絵図/.cache/copernicus-dem-90m",
+    "fileCount": 239,
+    "fileBytes": 681184723,
+    "sha256Sums": "/Users/masudaso/Desktop/天下分け目の国絵図/.cache/copernicus-dem-90m/SHA256SUMS",
+    "sha256SumsDigest": "61d3bcc4172ac459de1b8ea34308824a4d12b8f834a0ae2f4b4ae12e31359806",
+    "allHashesMatch": true,
+    "allGeoTIFFTagsMatch": true,
+    "sourceMode": "float32",
+    "sourceShape": [
+      1200,
+      1200
+    ],
+    "sourceEPSG": 4326,
+    "sourceRasterType": "PixelIsPoint",
+    "sourceStepDegrees": 0.0008333333333333334,
+    "sourceFiniteSamples": 344160000,
+    "sourceNonfiniteSamples": 0,
+    "sourceMinMetres": -326.99853515625,
+    "sourceMaxMetres": 3754.667236328125,
+    "sourceSamplesOutsideExistingEncoding": 0,
+    "legacyTemporaryOutputPresent": false,
+    "newWholeHeightImageCanBeMadeWithoutDownload": true,
+    "metadata": {
+      "source": "https://dataspace.copernicus.eu/explore-data/data-collections/copernicus-contributing-missions/collections-description/COP-DEM",
+      "product": "COP-DEM-GLO-90-F",
+      "acquired": "2026-11-03",
+      "license": "https://dataspace.copernicus.eu/sites/default/files/media/files/2025-06/copernicus_contributing_mission_data_access_v2_cop_dem_licenses.pdf",
+      "notice": "produced using Copernicus WorldDEM™-90 © DLR e.V. 2010-2014 and © Airbus Defence and Space GmbH 2014-2018 provided under COPERNICUS by the European Union and ESA; all rights reserved",
+      "disclaimer": "The organisations in charge of the Copernicus programme by law or by delegation do not incur any liability for any use of the Copernicus WorldDEM™-90"
+    },
+    "currentLandFootprintCoverage": {
+      "scope": "全現行100m領域タイルを読み、入力1度フットプリントに含まれるか比較。出力PNG再生成の検査ではない。",
+      "landPixels": 111104186,
+      "landOutsideInputs": 28,
+      "assignedLandOutsideInputs": 0,
+      "missingTile": "15-17",
+      "missingInput": "Copernicus_DSM_COG_30_N29_00_E140_00_DEM.tif",
+      "location": "孀婦岩付近の未割当陸。海や0mで埋めずNoDataを保持。"
+    }
+  },
+  "heightGenerationPlan": {
+    "reuseGenerator": "tools/map/build-copernicus-height.py",
+    "existingInputContract": [
+      "grid manifest with projection/width/height/tile/levels",
+      "local GeoTIFF directory with SHA256SUMS",
+      "new output directory",
+      "--acquired YYYY-MM-DD",
+      "--factor 1|4|8"
+    ],
+    "existingOutput": "16-bit grayscale elevation tiles plus manifest.json",
+    "proposedOutput": "same grid single heightmap.png plus encoding/source metadata; derived hillshade tiles remain caches",
+    "encoding": {
+      "pngColorType": 0,
+      "pngBitDepth": 16,
+      "noData": 0,
+      "offsetMetres": -500,
+      "codesPerMetre": 4,
+      "encode": "round((metres + 500) * 4) + 1",
+      "decode": "-500 + (code - 1) / 4",
+      "quantizationMaxErrorMetres": 0.125,
+      "accuracyNote": "0.25m量子化は原DEMの実測精度を意味しない。Copernicus DSMを戦国期地形や裸地標高と同一視しない。"
+    },
+    "neededChanges": [
+      "旧coverage検査はgame/map/definition.csvの旧ヘッダーに依存。現在のmap_data/definition.csvとdefault.map分類を読むよう修正が必要。"
+    ],
+    "forbidden": [
+      "relief WebP or hillshade PNG to elevation inversion",
+      "claiming CK3 editor compatibility without a load test"
+    ],
+    "implementedBy": "heightImplementation"
+  },
+  "riverInputs": {
+    "currentRenderedInputAudit": {
+      "method": "read-only diagnostic Bresenham; same current runtime input selection; overlapping groups are candidates, not errors",
+      "lineRecords": 643,
+      "uniqueGroups": 143,
+      "vertices": 21749,
+      "rasterPixels": 97183,
+      "outsideGridVertices": 96,
+      "crossGroupPixels": 125,
+      "crossGroupExamples": [
+        {
+          "pixel": "7679,15888",
+          "names": [
+            "geo:5",
+            "geo:6"
+          ]
+        },
+        {
+          "pixel": "9212,14558",
+          "names": [
+            "geo:20",
+            "geo:21"
+          ]
+        },
+        {
+          "pixel": "13339,12635",
+          "names": [
+            "geo:54",
+            "geo:55"
+          ]
+        },
+        {
+          "pixel": "13864,12390",
+          "names": [
+            "大井川",
+            "geo:58"
+          ]
+        },
+        {
+          "pixel": "13864,12386",
+          "names": [
+            "大井川",
+            "geo:58"
+          ]
+        },
+        {
+          "pixel": "13867,12386",
+          "names": [
+            "大井川",
+            "geo:58"
+          ]
+        },
+        {
+          "pixel": "13872,12387",
+          "names": [
+            "大井川",
+            "geo:58"
+          ]
+        },
+        {
+          "pixel": "13873,12387",
+          "names": [
+            "大井川",
+            "geo:58"
+          ]
+        }
+      ],
+      "sourceSHA256": {
+        "geo.js": "cfe6cbae3b1fd022b2109f2c4c0504ccb05b1f8be395be9ca8fecebfc4c3e202",
+        "regional-rivers.js": "1f5efcddc658229f9da9c41a48db13a45a2ed10fff8c64d5f35e7e80a4a9a235",
+        "korean-rivers-major.js": "d3b1819262b887d1436deb899d08da22c53b5eb86a64396e9ca0597fda5cc0ec",
+        "japan-rivers-osm.js": "b65370150932bc5210db0ac9ddb4f4a067c51e251a703ceed60427c8bf700ad5",
+        "hydrography-policy.js": "d57ea71c83cfc18e157e445d8ab7662141cef91cbe19cb7499b02e1c07a7d861"
+      }
+    },
+    "currentSourceFiles": [
+      "game/geo.js",
+      "game/regional-rivers.js",
+      "game/korean-rivers-major.js",
+      "game/japan-rivers-osm.js",
+      "game/hydrography-policy.js"
+    ],
+    "componentCounts": {
+      "geoRiverLinesBeforeFilter": 133,
+      "geoRiverPointsBeforeFilter": 4244,
+      "regionalRecordsBeforeGrouping": 7,
+      "regionalPointsBeforeReplacement": 1147,
+      "koreanSelectedSections": 344,
+      "koreanSelectedPoints": 14447,
+      "japanOsmSections": 172,
+      "japanOsmNames": [
+        "天竜川",
+        "大井川"
+      ]
+    },
+    "historyStatus": "現代河道の参照データ。これをラスタ化しても1560〜1615年の全河道を検証したことにはならない。",
+    "structuredJapanInput": "/Users/masudaso/Desktop/天下分け目の国絵図/data/inputs/japan-rivers-review/tenryu-oi-modern.json",
+    "availableTemporaryShapefile": "/private/tmp/kuniezu-japan-waterways/261031/kansai/gis_osm_waterways_free_1.shp",
+    "temporaryShapefileRole": "追加比較用。既存ゲームで採用済みの入力とは別。",
+    "sourceAttribution": {
+      "japanOsm": "OpenStreetMap contributors / Geofabrik Chubu 2026-10-31, ODbL 1.0",
+      "koreaOsm": "OpenStreetMap contributors / Geofabrik, ODbL 1.0; major selection from retained detail input",
+      "regional": "Natural Earth river centerlines; public domain",
+      "geo": "既存投影線。個別名称・出典IDを失っている線があり、移行時に入力ファイルSHAと旧線indexを保持する。"
+    }
+  },
+  "riverGenerationPlan": {
+    "reuseGenerator": "tools/map/build-river-raster.py",
+    "existingInputContract": [
+      "grid manifest",
+      "JSON with basis/source/license/attribution/rivers[]",
+      "each row: id/part/name/points"
+    ],
+    "existingOutput": "8-bit grayscale feature-ID tiles plus manifest.json; 0=no river, maximum255 named IDs",
+    "newWholeRiverImageCanBeMadeFromExistingLines": true,
+    "existingGeneratorWorksUnmodifiedForWholeInput": false,
+    "problems": [
+      "遼河96頂点が西端より外。現行生成器は1点でも範囲外なら停止。線分クリップが必要であり点だけ削除すると人工直線になる。",
+      "別河川/旧比較線の接触125画素を診断。現行生成器は別ID重なりで停止する。合流点と重複流路を区別する。",
+      "大井川の詳細OSMとgeo.js概略線の重複候補が存在する。現在の描画入力をそのまま焼く前に同川を重複除去する。",
+      "朝鮮行にはpartがなく、geo.js線にはname/id/partがない。安定した出典付きIDへ正規化する。",
+      "現行143群なら8bit以内だが、無名河川を同一名で統合しない。全詳細/将来地域追加には255制限への対応が必要。",
+      "現在の符号化はCK3の河川パレットではない。名称だけrivers.pngへ変更して公式互換としない。"
+    ],
+    "neededChanges": [
+      "既存生成器へ共通格子で単一PNGを出力する選択肢を追加。",
+      "河川中心線ID層を維持する場合、合流画素の複数所属を別表に保持するか共通水系IDとする契約を先に決める。",
+      "真の川幅が入力にないため1画素中心線を100m幅の川岸と解釈しない。",
+      "段差を防ぐ線分ラスタ化と境界クリップを全地域共通にし、タイル/全体生成が同画素になるか検査。",
+      "出典・現代比較区分・個別入力SHAをマニフェストへ保持。"
+    ]
+  },
+  "relatedExistingTools": [
+    {
+      "path": "tools/map/build-height-raster.py",
+      "role": "保有GSI/Terrarium z/x/y PNGを同格子U16タイルへ。全域入力はここにはない。"
+    },
+    {
+      "path": "tools/map/build-hillshade-raster.py",
+      "role": "U16標高から描画専用RGBA陰影。逆方向の入力ではない。"
+    },
+    {
+      "path": "tools/map/encode-relief-webp.cjs",
+      "tree": "shared",
+      "role": "陰影PNGの配布用WebP変換。標高正本の作成には使わない。"
+    },
+    {
+      "path": "tools/checks/elevation-coverage.py",
+      "role": "標高/陰影/領域のカバレッジ照合。旧definition.csv形式の更新が必要。"
+    }
+  ],
+  "heightImplementation": {
+    "status": "generated-and-checked-locally-not-integrated",
+    "filesChanged": [
+      "tools/map/build-copernicus-height.py",
+      "tools/checks/copernicus-height.py",
+      "data/research/source-notes/map-layer-inputs.json"
+    ],
+    "masterDirectory": "/tmp/kuniezu-map-layers/height-adaptive",
+    "masterFile": "/tmp/kuniezu-map-layers/height-adaptive/heightmap.png",
+    "metadataFile": "/tmp/kuniezu-map-layers/height-adaptive/heightmap.json",
+    "width": 20782,
+    "height": 24288,
+    "bytes": 149955254,
+    "sha256": "14d112e468c2e75b7d16c11376f19111c183a62cd9f7d3144cc1396fcd71befe",
+    "validPixels": 225529885,
+    "noDataPixels": 279223331,
+    "minCode": 693,
+    "maxCode": 16945,
+    "inputChecksumsSha256": "61d3bcc4172ac459de1b8ea34308824a4d12b8f834a0ae2f4b4ae12e31359806",
+    "projectionSha256": "04bd30868c1f5a9420b308d318d606a95d1158c23a8e6f18b3f7ecfe6b01466a",
+    "gridSha256": "b2a9421197ded4b08b522c40a9fd2472bacac517166dc3d30a3fab64e6bd303f",
+    "encoding": {
+      "noData": 0,
+      "offsetMetres": -500,
+      "codesPerMetre": 4,
+      "decode": "offsetMetres + (code - 1) / codesPerMetre"
+    },
+    "streaming": {
+      "bandRows": 128,
+      "sourceCacheTiles": 24
+    },
+    "publishing": "一時ディレクトリへPNGとmanifestを完成後rename。既存出力があれば拒否し上書きしない。例外時は一時出力を除去。",
+    "derivedEntry": "--from-heightmap INPUT.png は同stemのJSONを読む。新ディレクトリはheightmap.json、旧ディレクトリはmanifest.jsonにも対応。factor1/4/8を同じ入口から派生。",
+    "derived8": {
+      "directory": "/tmp/kuniezu-map-layers/height-adaptive/derived-8",
+      "width": 2598,
+      "height": 3036,
+      "tiles": 9,
+      "allTileHashesMatch": true,
+      "allTileHashesEqualToFilter0Derived": true,
+      "sourceHeightmapSha256": "14d112e468c2e75b7d16c11376f19111c183a62cd9f7d3144cc1396fcd71befe"
+    },
+    "fixtureChecks": [
+      "PillowによるPNG独立復号",
+      "負値/0m/NoData区別",
+      "1度区画の継ぎ目",
+      "旧タイル経路と全画素一致",
+      "正本からfactor1/4/8",
+      "端数タイル",
+      "既存出力保持",
+      "投影差異拒否",
+      "標高範囲外ロールバック",
+      "PNG CRC異常ロールバック",
+      "複数IDAT行ストリーム",
+      "PNG全標準filter0〜4をPillow独立復号",
+      "Average/PaethのCFFIとPython参照復号一致",
+      "PNG+同stemJSON入力",
+      "旧directory/manifest互換",
+      "圧縮前後の実データ全504753216画素一致"
+    ],
+    "realSamples": [
+      {
+        "name": "京都",
+        "pixel": [
+          11724,
+          12522
+        ],
+        "priorRecordedMetres": 55.25,
+        "sourceMetres": 55.33282470703125,
+        "masterMetres": 55.25
+      },
+      {
+        "name": "ソウル",
+        "pixel": [
+          3815,
+          9688
+        ],
+        "priorRecordedMetres": 30.25,
+        "sourceMetres": 30.192461013793945,
+        "masterMetres": 30.25
+      },
+      {
+        "name": "瀋陽",
+        "pixel": [
+          620,
+          4975
+        ],
+        "priorRecordedMetres": 51.5,
+        "sourceMetres": 51.38782501220703,
+        "masterMetres": 51.5
+      },
+      {
+        "name": "札幌",
+        "pixel": [
+          16762,
+          3570
+        ],
+        "sourceMetres": 26.27488136291504,
+        "masterMetres": 26.25
+      },
+      {
+        "name": "那覇",
+        "pixel": [
+          4448,
+          22327
+        ],
+        "sourceMetres": 12.175174713134766,
+        "masterMetres": 12.25
+      },
+      {
+        "name": "孀婦岩付近の欠測",
+        "pixel": [
+          15864,
+          18319
+        ],
+        "sourceMetres": null,
+        "masterMetres": null
+      }
+    ],
+    "legacyComparisonBasis": "ELEVATION_RASTER_REVIEW.mdの旧100m標高数値3点と一致。旧一時PNG本体は残っておらず、陰影WebPから値を復元していない。",
+    "wallTimeSeconds": 59.136100833,
+    "peakMemoryMeasured": true,
+    "timingNote": "Python monotonic clock and resource.getrusage(RUSAGE_SELF); Darwin ru_maxrss bytes.",
+    "limits": [
+      "現代DSMの数値正本であり戦国期地形の確定ではない。",
+      "海陸判定は領域正本が担い、NoDataを0mや海と解釈しない。",
+      "既存のelevation-coverage.pyは旧definition形式の移行が別途必要。",
+      "実行時接続・配布用陰影再生成は本担当では行っていない。",
+      "読込は認証済み16bit灰色・標準filter0〜4・非インターレースPNGに対応。パレットや任意PNGの汎用取込ではない。",
+      "Average/Paeth復号は利用可能ならCFFI+Cコンパイラで加速。ない場合もPython参照復号は同じ値を返すが遅い。",
+      "149,955,254 bytesは100MBを超える。精度を落とす量子化・間引きは行っていない。"
+    ],
+    "previousFilter0": {
+      "masterDirectory": "/tmp/kuniezu-map-layers/height",
+      "masterFile": "/tmp/kuniezu-map-layers/height/heightmap.png",
+      "metadataFile": "/tmp/kuniezu-map-layers/height/manifest.json",
+      "bytes": 182079239,
+      "sha256": "50bbf0dca8d9df162c1d2f41015719250c05f6635bf7a0286da81fc27972427f",
+      "wallTimeSeconds": 55.9,
+      "timingNote": "生成器は完了して成果を確定。外側/usr/bin/time -lはsysctl kern.clockrateの権限エラーで終了1となりRSSは取得できなかった。続く検査CLIと派生CLIはいずれも終了0。"
+    },
+    "png": {
+      "colorType": 0,
+      "bitDepth": 16,
+      "filterMethod": 0,
+      "interlace": 0,
+      "filterSelection": "adaptive",
+      "compressionLevel": 6
+    },
+    "scanlineFilterCounts": {
+      "0": 300,
+      "1": 179,
+      "2": 4237,
+      "3": 1,
+      "4": 19571
+    },
+    "peakResidentBytes": 233570304,
+    "losslessComparison": {
+      "before": "/tmp/kuniezu-map-layers/height/heightmap.png",
+      "after": "/tmp/kuniezu-map-layers/height-adaptive/heightmap.png",
+      "pixelsCompared": 504753216,
+      "differingPixels": 0,
+      "beforeBytes": 182079239,
+      "afterBytes": 149955254,
+      "savingFraction": 0.1764285987596862,
+      "bandComparison": {
+        "source": "/tmp/kuniezu-map-layers/height/heightmap.png",
+        "bandWidth": 20782,
+        "bands": [
+          {
+            "startRow": 3500,
+            "rows": 64,
+            "bytes": {
+              "0": 1399624,
+              "1": 1183440,
+              "2": 1174027,
+              "4": 1152700,
+              "adaptive": 1152700
+            },
+            "adaptiveChoices": {
+              "0": 0,
+              "1": 1,
+              "2": 0,
+              "4": 63
+            },
+            "seconds": 1.058
+          },
+          {
+            "startRow": 5000,
+            "rows": 64,
+            "bytes": {
+              "0": 740704,
+              "1": 613388,
+              "2": 612000,
+              "4": 598655,
+              "adaptive": 598654
+            },
+            "adaptiveChoices": {
+              "0": 0,
+              "1": 1,
+              "2": 0,
+              "4": 63
+            },
+            "seconds": 0.336
+          },
+          {
+            "startRow": 9500,
+            "rows": 64,
+            "bytes": {
+              "0": 481272,
+              "1": 415923,
+              "2": 413339,
+              "4": 407744,
+              "adaptive": 407744
+            },
+            "adaptiveChoices": {
+              "0": 0,
+              "1": 1,
+              "2": 0,
+              "4": 63
+            },
+            "seconds": 0.125
+          },
+          {
+            "startRow": 12500,
+            "rows": 64,
+            "bytes": {
+              "0": 819245,
+              "1": 731108,
+              "2": 724110,
+              "4": 717972,
+              "adaptive": 717972
+            },
+            "adaptiveChoices": {
+              "0": 0,
+              "1": 1,
+              "2": 0,
+              "4": 63
+            },
+            "seconds": 0.197
+          },
+          {
+            "startRow": 16000,
+            "rows": 64,
+            "bytes": {
+              "0": 131942,
+              "1": 116129,
+              "2": 114819,
+              "4": 113446,
+              "adaptive": 113453
+            },
+            "adaptiveChoices": {
+              "0": 0,
+              "1": 5,
+              "2": 0,
+              "4": 59
+            },
+            "seconds": 0.056
+          },
+          {
+            "startRow": 22300,
+            "rows": 64,
+            "bytes": {
+              "0": 21873,
+              "1": 20869,
+              "2": 19162,
+              "4": 19008,
+              "adaptive": 19005
+            },
+            "adaptiveChoices": {
+              "0": 0,
+              "1": 2,
+              "2": 6,
+              "4": 56
+            },
+            "seconds": 0.068
+          }
+        ],
+        "totals": {
+          "0": 3594660,
+          "1": 3080857,
+          "2": 3057457,
+          "4": 3009525,
+          "adaptive": 3009528
+        }
+      },
+      "compressionLevelDecision": "6採用。2帯32行のlevel9比較は0.13〜0.16%縮小に対し約2.5倍の圧縮時間だったため値は維持し設定6を選択。"
+    },
+    "commands": {
+      "master": [
+        "python3",
+        "tools/map/build-copernicus-height.py",
+        "<map manifest.json>",
+        "<Copernicus GeoTIFF cache>",
+        "<new output dir>",
+        "--single-image",
+        "--factor",
+        "1",
+        "--acquired",
+        "2026-11-03",
+        "--projection",
+        "<map_data/projection.json>",
+        "--png-filter",
+        "adaptive",
+        "--compression-level",
+        "6"
+      ],
+      "derive": [
+        "python3",
+        "tools/map/build-copernicus-height.py",
+        "<map manifest.json>",
+        "<map_data/heightmap.png>",
+        "<new tile output dir>",
+        "--from-heightmap",
+        "--factor",
+        "8",
+        "--projection",
+        "<map_data/projection.json>"
+      ],
+      "verify": [
+        "python3",
+        "tools/checks/copernicus-height.py",
+        "--master",
+        "<map_data/heightmap.png>",
+        "--grid",
+        "<map manifest.json>",
+        "--input",
+        "<Copernicus GeoTIFF cache>",
+        "--compare-master",
+        "<previous master dir>"
+      ]
+    }
+  },
+  "heightDerivatives": {
+    "status": "generation-and-candidate-validation-complete",
+    "sharedWrites": false,
+    "generator": "tools/map/build-copernicus-height.py",
+    "shader": "tools/map/build-hillshade-raster.py",
+    "fullCheck": "tools/checks/height-derivatives.py",
+    "temporaryRoot": "/tmp/kuniezu-map-layers/derived",
+    "candidateMap": "/tmp/kuniezu-map-layers/derived/candidate/game/map",
+    "candidateReliefSha256": "78cfbcf6f28c13ce5eba2f1dcf812c4013c442cfeaf5bcb27516e7470d51b8e3",
+    "newGridSha256": "b8a6b1561f3ea75500cfad95daa053a12862b5101437c80f03867b9ec6a74a0a",
+    "oldGenerationGridSha256": "b2a9421197ded4b08b522c40a9fd2472bacac517166dc3d30a3fab64e6bd303f",
+    "projectionSha256": "04bd30868c1f5a9420b308d318d606a95d1158c23a8e6f18b3f7ecfe6b01466a",
+    "gridGeometryUnchanged": true,
+    "masterSha256": "14d112e468c2e75b7d16c11376f19111c183a62cd9f7d3144cc1396fcd71befe",
+    "masterMetadataSha256": "e219fef1a8268621312ea9a2f947bb44360a0d4fc042ed624d6a8dc098959f05",
+    "masterMetadataPolicy": "正本の生成当時のgrid SHAを含むメタデータは変更しない。派生側は投影・格子が同じことを検査した後、新しい領域manifest SHAへ接続。",
+    "levels": [
+      {
+        "factor": 1,
+        "heightTiles": 310,
+        "shadeTiles": 310,
+        "masterPixelsCompared": 504753216,
+        "masterDifferingPixels": 0,
+        "heightValidityEqualsShadeAlpha": true,
+        "heightShadePixelsCompared": 320331776,
+        "distributedTilesChecked": 310,
+        "previousPngHashesIdentical": 81,
+        "previousPngHashesDifferent": 229,
+        "newTileKeys": [],
+        "removedTileKeys": [],
+        "distributedAlphaDifferingPixels": 0,
+        "newPngVersusDistributedWebpRgbMeanAbsoluteError": 1.2887926449304046
+      },
+      {
+        "factor": 4,
+        "heightTiles": 32,
+        "shadeTiles": 32,
+        "masterPixelsCompared": 31550112,
+        "masterDifferingPixels": 0,
+        "heightValidityEqualsShadeAlpha": true,
+        "heightShadePixelsCompared": 31244288,
+        "distributedTilesChecked": 32,
+        "previousPngHashesIdentical": 29,
+        "previousPngHashesDifferent": 3,
+        "newTileKeys": [],
+        "removedTileKeys": [],
+        "distributedAlphaDifferingPixels": 0,
+        "newPngVersusDistributedWebpRgbMeanAbsoluteError": 1.4196205353215636
+      },
+      {
+        "factor": 8,
+        "heightTiles": 9,
+        "shadeTiles": 9,
+        "masterPixelsCompared": 7887528,
+        "masterDifferingPixels": 0,
+        "heightValidityEqualsShadeAlpha": true,
+        "heightShadePixelsCompared": 7887528,
+        "distributedTilesChecked": 9,
+        "previousPngHashesIdentical": 9,
+        "previousPngHashesDifferent": 0,
+        "newTileKeys": [],
+        "removedTileKeys": [],
+        "distributedAlphaDifferingPixels": 0,
+        "newPngVersusDistributedWebpRgbMeanAbsoluteError": 1.4120478862021637
+      }
+    ],
+    "pixelProof": {
+      "path": "/tmp/kuniezu-map-layers/derived/source-png-equivalence.json",
+      "sha256": "f779cf192bd4331ec171444920d479919b8cb5a37281d0b7db3129fa17a443f3",
+      "method": "Decode each new shade PNG to pixels, reencode with retained Pillow 11.3.0, and compare SHA256 with distributed sourceSha256. No output image replacement.",
+      "encoder": {
+        "pillow": "11.3.0",
+        "zlib": "1.3.1.zlib-ng"
+      },
+      "levels": [
+        {
+          "factor": 1,
+          "tiles": 310,
+          "equivalentToPreviousSource": 310
+        },
+        {
+          "factor": 4,
+          "tiles": 32,
+          "equivalentToPreviousSource": 5
+        },
+        {
+          "factor": 8,
+          "tiles": 9,
+          "equivalentToPreviousSource": 0
+        }
+      ]
+    },
+    "legacyDirectControl": [
+      {
+        "factor": 4,
+        "tiles": 32,
+        "oldSourceHashesMatch": 32,
+        "elapsedSeconds": 30.148210834
+      },
+      {
+        "factor": 8,
+        "tiles": 9,
+        "oldSourceHashesMatch": 9,
+        "elapsedSeconds": 25.985007792
+      }
+    ],
+    "coarseDifferenceCause": "旧版は粗い格子の中心からDEMへ独立して最近傍採取。今回の派生は100m正本から中心セルを抽出（4倍=2、8倍=4セル目）。旧直接採取を再現した対照実験は41/41 PNG SHA一致し、差の原因を切り分け済み。",
+    "previousPngCompressionDifference": "Pillow 12.3と11.3は同じRGBA画素でもPNGバイト列が違う。Pillow 11.3で新PNG画素を再圧縮すると100m310枚すべて既存sourceSha256と一致。400mは5枚、800mは0枚が同値。",
+    "webp": {
+      "reusedByteForByte": 315,
+      "reencoded": 36,
+      "quality": 0.82,
+      "encoder": {
+        "browser": "Chrome/156.0.8078.80",
+        "baseScriptSha256": "c52ace0751108a800112952555c1ea8c82a5c67ec4d4556fbe52687e84cc3b41",
+        "adaptationSha256": "8fec4b9aa975effe10f759b85c92c988929f845da98eecfa2cb92b5a6c2ee223"
+      },
+      "sourceNoDataEqualsPngAlpha": true,
+      "pngAlphaEqualsWebpAlpha": true,
+      "allDistributedFileHashesChecked": 351,
+      "candidateEncoderScript": "/tmp/kuniezu-map-layers/derived/encode-candidate.cjs",
+      "sourceShaPolicy": "sourceSha256は実際にWebPへ入力したPNGのSHAを保持。previousSourceSha256とregeneratedSourceSha256を別に保存し、同画素証明のsourcePixelSha256と旧エンコーダの再生成SHAも保持。"
+    },
+    "manifestChain": "heightmap.png/heightmap.json → height-{1,4,8}/manifest.json → shade-{1,4,8}/manifest.json → relief.jsonの各level。relief rootも正本PNG/metadata/新grid/projectionのSHAを保持。",
+    "heightBoundaryChecks": [
+      "全544,190,856画素の正本→各段比較: 差0",
+      "標高NoDataとPNG alphaは全351枚一致",
+      "PNG alphaと配信WebP alphaは全351枚一致",
+      "既存hillshade seam/partial tile/missing elevation fixture通過",
+      "14件のheight fixture通過"
+    ],
+    "reports": [
+      {
+        "path": "/tmp/kuniezu-map-layers/derived/verification.json",
+        "sha256": "4516a6474e5ee2865df7d0b65d3a3da9b67cff4d6a75bd1615ffff61d628433d"
+      },
+      {
+        "path": "/tmp/kuniezu-map-layers/derived/source-png-equivalence.json",
+        "sha256": "f779cf192bd4331ec171444920d479919b8cb5a37281d0b7db3129fa17a443f3"
+      },
+      {
+        "path": "/tmp/kuniezu-map-layers/derived/candidate/verification.json",
+        "sha256": "de0fb969794c887af27a209d06bdfafed8be4408a483bd40e6e0f2e27046c8e2"
+      },
+      {
+        "path": "/tmp/kuniezu-map-layers/derived/candidate/integration-plan.json",
+        "sha256": "08b2ff70d623e28c2a194cb96e93637488cb5437bcf259ec3bc5d0700347bedc"
+      }
+    ],
+    "adoption": "共有への採用・コミットは親担当。候補の生成と検査を完了したが配信済みとは表現しない。",
+    "limits": [
+      "現代DSMの標高を陰影へ派生したもので、戦国期の地表高ではない。",
+      "WebPは非可逆な表示派生。正本16bit標高は変えない。",
+      "RGBA一致とPNG SHA一致は区別する。圧縮器の違いを地形差として扱わない。"
+    ]
+  }
+}

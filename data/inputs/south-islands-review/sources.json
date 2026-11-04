@@ -1,0 +1,13 @@
+{
+  "note": "南の島の割り当て（tools/map/assign-south-islands-2026-11-04.cjs）と年代別の差分 amami-satsuma-from-1609 の出典。",
+  "sources": {
+    "mlit-amami-history": {"title": "奄美大島の歴史（観光庁 多言語解説文データベース R2-00848）", "url": "https://www.mlit.go.jp/tagengo-db/R2-00848.html", "claim": "1609年の島津氏の琉球侵攻の後、奄美群島は薩摩に割かれた。名目上は琉球の一部とされた。", "accessed": "2026-11-04"},
+    "mlit-ogasawara": {"title": "小笠原諸島の概要：自然、歴史（観光庁 多言語解説文データベース R1-02254）", "url": "https://www.mlit.go.jp/tagengo-db/R1-02254.html", "claim": "1670年に漂着で知られ、1830年に最初の定住。それ以前は無人。", "accessed": "2026-11-04"},
+    "kagoshima-kumage": {"title": "鹿児島県 熊毛地域の概要", "url": "https://www.pref.kagoshima.jp/ap01/kumageiju.html", "claim": "熊毛地域は種子島・屋久島・口永良部島・馬毛島の4島。口永良部島は屋久島と同じ領主の島として近い区画（屋久島）に合わせた。", "accessed": "2026-11-04"},
+    "jmic-ming-islands": {"title": "Journal of Marine and Island Cultures Vol.5 No.1（明実録に見る明初の海島の統治）", "url": "https://jmic.online/issues/v5n1/2/", "claim": "明は沿海の島を倭寇の防御の対象として扱った。", "accessed": "2026-11-04"}
+  },
+  "unverified": [
+    "伊豆諸島での北条氏（1590年以後は徳川氏）の島の支配の実態。今回は伊豆国賀茂郡の島として韮山城の区画に合わせた（国郡制での所属）。",
+    "大東諸島の1900年の開拓は観光系の資料のみで確認（一次資料は未確認）。1560〜1615年に無人だったことは開拓の記録と矛盾しない。"
+  ]
+}

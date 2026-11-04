@@ -1,0 +1,47 @@
+{
+  "checked": "2026-11-02",
+  "files": [
+    {
+      "file": "bike-candidate.json",
+      "sha256": "68c69e119d91bf71fd88d780e13c6c14432fd7137c099edbd9d02eac85be4f45"
+    },
+    {
+      "file": "car-candidate.json",
+      "sha256": "5d47c7cc173e9a072de460777690d6be86ee03aa1f7b615455d29fbbfad88849"
+    },
+    {
+      "file": "corridor-candidate.json",
+      "sha256": "1faacc6fa1947dfde732e00858aa2ec6e987f3ca760558a4a98b07372d715131"
+    },
+    {
+      "file": "foot-candidate.json",
+      "sha256": "12d53f53ab21be5e85af24ec86595dd20188af88cd7b45f8c1a8d2f9768f54c4"
+    },
+    {
+      "file": "gsi-controls.json",
+      "sha256": "4de09d8d784a3f743874bd4b8c04d4fdb4920528ec25194a379dc1f90558b1eb"
+    },
+    {
+      "file": "sabakaido-bicycle-map.pdf",
+      "sha256": "f5064a84514fc1b2426dd61ba660c20ee3d662436ab5b41d0e90597b641a1753"
+    }
+  ],
+  "sources": [
+    {
+      "url": "https://www.mlit.go.jp/tagengo-db/R4-00114.html",
+      "scope": "若狭街道は熊川・朽木・大原・八瀬を経る。針畑越は別系統。"
+    },
+    {
+      "url": "https://www.town.fukui-wakasa.lg.jp/soshiki/kankoumatizukurika/gyomuannai/1/3/3224.html",
+      "scope": "熊川の宿場町化1589。鯖街道名称の背景は18世紀後半。"
+    },
+    {
+      "url": "https://wakasa-obama.jp/wp-content/uploads/2025/03/sabakaido-bicycle-map1.pdf",
+      "file": "sabakaido-bicycle-map.pdf",
+      "scope": "現代の自転車参考経路77.1km。戦国期中心線ではない。"
+    }
+  ],
+  "decision": "runtime-unchanged",
+  "reason": "歩行候補97.330kmに花折付近4.245kmの完全往復、自転車115.724kmも閉往復。carは接続失敗。候補を無条件採用しない。",
+  "handoff": "若狭街道の続行はReason連携中のClaude担当へ。Codexは古湖岸と到着監査へ集中。"
+}

@@ -1,0 +1,16 @@
+{
+  "id": "sassa-higo-grant",
+  "entity": "person:佐々成政",
+  "predicate": "grant-order",
+  "value": {"date": [1587, 6, 2], "calendar": "和暦", "issuer": "豊臣秀吉", "grant": "肥後の統治"},
+  "validYears": [1587, 1587],
+  "datePrecision": "day",
+  "source": "kumamotoSassaGrant",
+  "sourceUrl": "https://sitereports.nabunken.go.jp/files/attach/22/22101/16337_1_%E4%B8%8B%E5%9F%8E%E9%81%BA%E8%B7%A1.pdf",
+  "locator": "天正15年6月2日の佐々成政の肥後領治",
+  "gameBindings": ["timeline:佐々成政の肥後拝領", "node:kumamoto"],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-03",
+  "uncertainty": "領治を任された日。隈本城の明渡しや成政の入城、郡村ごとの知行範囲は含まない。"
+}

@@ -110,6 +110,20 @@
       "units": [
         {
           "until": "長篠の戦い",
+          "state": "camp",
+          "commanders": [
+            "武田勝頼"
+          ],
+          "path": [
+            "tsutsuji",
+            "sunpu",
+            "kakegawa",
+            "yoshida"
+          ],
+          "scheduledArrival": 5445
+        },
+        {
+          "until": "長篠の戦い",
           "state": "march",
           "commanders": [
             "織田信長"
@@ -139,16 +153,14 @@
         },
         {
           "until": "長篠の戦い",
-          "state": "camp",
-          "commanders": [
-            "武田勝頼"
-          ],
+          "state": "march",
+          "commanders": [],
           "path": [
             "iida",
             "okazaki",
             "yoshida"
           ],
-          "scheduledArrival": 5445
+          "scheduledArrival": 5458
         }
       ]
     },
@@ -213,18 +225,6 @@
             "kyo"
           ],
           "scheduledArrival": 5527
-        },
-        {
-          "until": "小山評定",
-          "state": "march",
-          "commanders": [
-            "徳川家康"
-          ],
-          "path": [
-            "karasawa",
-            "utsunomiya"
-          ],
-          "scheduledArrival": 5518
         }
       ]
     },

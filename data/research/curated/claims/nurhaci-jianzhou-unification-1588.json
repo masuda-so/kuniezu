@@ -1,0 +1,22 @@
+{
+  "id": "nurhaci-jianzhou-unification-1588",
+  "entity": "person:ヌルハチ",
+  "predicate": "jianzhou-unification",
+  "value": "1588年に建州の諸部を統合した。",
+  "validYears": [
+    1588,
+    1588
+  ],
+  "datePrecision": "year",
+  "source": "jurchenNikh",
+  "sourceUrl": "https://contents.history.go.kr/mobile/kc/view.do?code=kc_age_30&levelId=kc_n303310",
+  "locator": "2 여진을 통일하다",
+  "gameBindings": [
+    "game/liaodong-context.js",
+    "TK.contextRegionPresentation"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-03",
+  "uncertainty": "全女真の統一・後金建国・対明断交を意味しない。"
+}

@@ -2,7 +2,7 @@
 const fs=require('node:fs'),path=require('node:path'),os=require('node:os'),vm=require('node:vm'),assert=require('node:assert/strict'),cp=require('node:child_process');
 const root=path.resolve(__dirname,'../..'),migration=require('../../docs/architecture/path-migration.json');
 for(const m of migration.moves){assert.ok(fs.existsSync(path.join(root,m.to)),m.to);assert.ok(!fs.existsSync(path.join(root,m.from)),m.from+' obsolete');}
-const html=fs.readFileSync(path.join(root,'game/index.html'),'utf8'),scripts=[...html.matchAll(/<script src="([^"]+)"/g)].map(m=>m[1]);assert.equal(new Set(scripts).size,scripts.length);
+const html=fs.readFileSync(path.join(root,'game/index.html'),'utf8'),scripts=[...html.matchAll(/<script src="([^"?]+)(?:\?v=[0-9a-f]+)?"/g)].map(m=>m[1]);assert.equal(new Set(scripts).size,scripts.length);
 for(const f of scripts){const p=path.join(root,'game',f);assert.ok(fs.existsSync(p),f);new vm.Script(fs.readFileSync(p,'utf8'),{filename:f});}
 const modules=require('../../docs/architecture/modules.json').modules;assert.deepEqual(modules.map(r=>r.file),scripts.map(f=>'game/'+f));
 for(const dir of ['tools','docs']){function walk(p){for(const n of fs.readdirSync(p)){const f=path.join(p,n);if(fs.statSync(f).isDirectory()){if(n!=='history'&&n!=='state'&&n!=='claims')walk(f);continue;}if(!/\.(md|cjs|js|py|html)$/.test(n))continue;const s=fs.readFileSync(f,'utf8');for(const m of migration.moves.filter(m=>m.from.startsWith('data/')))assert.ok(!s.includes(m.from),path.relative(root,f)+' obsolete '+m.from);}}walk(path.join(root,dir));}

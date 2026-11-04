@@ -1,2 +1,0 @@
-r=pg.evaluate("""(()=>{G.newGame('s1560','__none');const S=G.S();S.player='__none';const out=[];let t0=performance.now();for(let y=1561;y<=1615;y+=6){const end=G.evT({d:[y,1,1]});while(S.t<end){G.day();S.evQ=[];if(S.battleQ)S.battleQ.length=0;if(S.sceneQ)S.sceneQ.length=0;}out.push(y+':'+Math.round(performance.now()-t0)+'ms u'+S.units.length);t0=performance.now();}return out.join(' ');})()""")
-print(r)

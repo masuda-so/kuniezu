@@ -1,0 +1,1696 @@
+{
+  "rows": [
+    {
+      "title": "上月城の戦い",
+      "time": 0,
+      "clock": "4月18日・毛利方が包囲",
+      "description": "吉川元春・小早川隆景らが上月城を包囲する。",
+      "states": [
+        {
+          "id": "b-0",
+          "side": "b",
+          "status": "布陣",
+          "visible": true,
+          "point": [
+            134.324477,
+            34.975678
+          ],
+          "name": "尼子勝久"
+        },
+        {
+          "id": "b-1",
+          "side": "b",
+          "status": "布陣",
+          "visible": true,
+          "point": [
+            134.324477,
+            34.975678
+          ],
+          "name": "山中幸盛"
+        },
+        {
+          "id": "relief-hideyoshi",
+          "side": "b",
+          "status": "着陣前",
+          "visible": false,
+          "point": [
+            134.35666,
+            34.97853
+          ],
+          "name": "羽柴秀吉"
+        },
+        {
+          "id": "relief-araki",
+          "side": "b",
+          "status": "着陣前",
+          "visible": false,
+          "point": [
+            134.35666,
+            34.97853
+          ],
+          "name": "荒木村重"
+        },
+        {
+          "id": "a-0",
+          "side": "a",
+          "status": "布陣",
+          "visible": true,
+          "point": null,
+          "name": "吉川元春"
+        },
+        {
+          "id": "a-1",
+          "side": "a",
+          "status": "布陣",
+          "visible": true,
+          "point": null,
+          "name": "小早川隆景"
+        }
+      ],
+      "located": 2,
+      "expected": [
+        "b-0",
+        "b-1"
+      ],
+      "texts": [
+        "尼",
+        "尼子勝久",
+        "山中幸盛"
+      ]
+    },
+    {
+      "title": "上月城の戦い",
+      "time": 1,
+      "clock": "4月18日・毛利方が包囲",
+      "description": "吉川元春・小早川隆景らが上月城を包囲する。",
+      "states": [
+        {
+          "id": "b-0",
+          "side": "b",
+          "status": "布陣",
+          "visible": true,
+          "point": [
+            134.324477,
+            34.975678
+          ],
+          "name": "尼子勝久"
+        },
+        {
+          "id": "b-1",
+          "side": "b",
+          "status": "布陣",
+          "visible": true,
+          "point": [
+            134.324477,
+            34.975678
+          ],
+          "name": "山中幸盛"
+        },
+        {
+          "id": "relief-hideyoshi",
+          "side": "b",
+          "status": "着陣前",
+          "visible": false,
+          "point": [
+            134.35666,
+            34.97853
+          ],
+          "name": "羽柴秀吉"
+        },
+        {
+          "id": "relief-araki",
+          "side": "b",
+          "status": "着陣前",
+          "visible": false,
+          "point": [
+            134.35666,
+            34.97853
+          ],
+          "name": "荒木村重"
+        },
+        {
+          "id": "a-0",
+          "side": "a",
+          "status": "布陣",
+          "visible": true,
+          "point": null,
+          "name": "吉川元春"
+        },
+        {
+          "id": "a-1",
+          "side": "a",
+          "status": "布陣",
+          "visible": true,
+          "point": null,
+          "name": "小早川隆景"
+        }
+      ],
+      "located": 2,
+      "expected": [
+        "b-0",
+        "b-1"
+      ],
+      "texts": [
+        "尼",
+        "尼子勝久",
+        "山中幸盛"
+      ]
+    },
+    {
+      "title": "上月城の戦い",
+      "time": 26,
+      "clock": "5月4日・救援軍が高倉山に着陣",
+      "description": "羽柴秀吉・荒木村重らの救援軍が高倉山に着陣する。",
+      "states": [
+        {
+          "id": "b-0",
+          "side": "b",
+          "status": "布陣",
+          "visible": true,
+          "point": [
+            134.324477,
+            34.975678
+          ],
+          "name": "尼子勝久"
+        },
+        {
+          "id": "b-1",
+          "side": "b",
+          "status": "布陣",
+          "visible": true,
+          "point": [
+            134.324477,
+            34.975678
+          ],
+          "name": "山中幸盛"
+        },
+        {
+          "id": "relief-hideyoshi",
+          "side": "b",
+          "status": "布陣",
+          "visible": true,
+          "point": [
+            134.35666,
+            34.97853
+          ],
+          "name": "羽柴秀吉"
+        },
+        {
+          "id": "relief-araki",
+          "side": "b",
+          "status": "布陣",
+          "visible": true,
+          "point": [
+            134.35666,
+            34.97853
+          ],
+          "name": "荒木村重"
+        },
+        {
+          "id": "a-0",
+          "side": "a",
+          "status": "布陣",
+          "visible": true,
+          "point": null,
+          "name": "吉川元春"
+        },
+        {
+          "id": "a-1",
+          "side": "a",
+          "status": "布陣",
+          "visible": true,
+          "point": null,
+          "name": "小早川隆景"
+        }
+      ],
+      "located": 4,
+      "expected": [
+        "b-0",
+        "b-1",
+        "relief-hideyoshi",
+        "relief-araki"
+      ],
+      "texts": [
+        "尼",
+        "尼子勝久",
+        "山中幸盛",
+        "羽柴秀吉",
+        "荒木村重"
+      ]
+    },
+    {
+      "title": "上月城の戦い",
+      "time": 77,
+      "clock": "5月4日・救援軍が高倉山に着陣",
+      "description": "羽柴秀吉・荒木村重らの救援軍が高倉山に着陣する。",
+      "states": [
+        {
+          "id": "b-0",
+          "side": "b",
+          "status": "布陣",
+          "visible": true,
+          "point": [
+            134.324477,
+            34.975678
+          ],
+          "name": "尼子勝久"
+        },
+        {
+          "id": "b-1",
+          "side": "b",
+          "status": "布陣",
+          "visible": true,
+          "point": [
+            134.324477,
+            34.975678
+          ],
+          "name": "山中幸盛"
+        },
+        {
+          "id": "relief-hideyoshi",
+          "side": "b",
+          "status": "布陣",
+          "visible": true,
+          "point": [
+            134.35666,
+            34.97853
+          ],
+          "name": "羽柴秀吉"
+        },
+        {
+          "id": "relief-araki",
+          "side": "b",
+          "status": "布陣",
+          "visible": true,
+          "point": [
+            134.35666,
+            34.97853
+          ],
+          "name": "荒木村重"
+        },
+        {
+          "id": "a-0",
+          "side": "a",
+          "status": "布陣",
+          "visible": true,
+          "point": null,
+          "name": "吉川元春"
+        },
+        {
+          "id": "a-1",
+          "side": "a",
+          "status": "布陣",
+          "visible": true,
+          "point": null,
+          "name": "小早川隆景"
+        }
+      ],
+      "located": 4,
+      "expected": [
+        "b-0",
+        "b-1",
+        "relief-hideyoshi",
+        "relief-araki"
+      ],
+      "texts": [
+        "尼",
+        "尼子勝久",
+        "山中幸盛",
+        "羽柴秀吉",
+        "荒木村重"
+      ]
+    },
+    {
+      "title": "上月城の戦い",
+      "time": 78,
+      "clock": "6月26日・秀吉が撤退",
+      "description": "織田信長の命により秀吉が撤退。上月城は孤立する。",
+      "states": [
+        {
+          "id": "b-0",
+          "side": "b",
+          "status": "布陣",
+          "visible": true,
+          "point": [
+            134.324477,
+            34.975678
+          ],
+          "name": "尼子勝久"
+        },
+        {
+          "id": "b-1",
+          "side": "b",
+          "status": "布陣",
+          "visible": true,
+          "point": [
+            134.324477,
+            34.975678
+          ],
+          "name": "山中幸盛"
+        },
+        {
+          "id": "relief-hideyoshi",
+          "side": "b",
+          "status": "撤退",
+          "visible": false,
+          "point": [
+            134.35666,
+            34.97853
+          ],
+          "name": "羽柴秀吉"
+        },
+        {
+          "id": "relief-araki",
+          "side": "b",
+          "status": "救援終了",
+          "visible": false,
+          "point": [
+            134.35666,
+            34.97853
+          ],
+          "name": "荒木村重"
+        },
+        {
+          "id": "a-0",
+          "side": "a",
+          "status": "布陣",
+          "visible": true,
+          "point": null,
+          "name": "吉川元春"
+        },
+        {
+          "id": "a-1",
+          "side": "a",
+          "status": "布陣",
+          "visible": true,
+          "point": null,
+          "name": "小早川隆景"
+        }
+      ],
+      "located": 2,
+      "expected": [
+        "b-0",
+        "b-1"
+      ],
+      "texts": [
+        "尼",
+        "尼子勝久",
+        "山中幸盛"
+      ]
+    },
+    {
+      "title": "上月城の戦い",
+      "time": 79,
+      "clock": "6月26日・秀吉が撤退",
+      "description": "織田信長の命により秀吉が撤退。上月城は孤立する。",
+      "states": [
+        {
+          "id": "b-0",
+          "side": "b",
+          "status": "布陣",
+          "visible": true,
+          "point": [
+            134.324477,
+            34.975678
+          ],
+          "name": "尼子勝久"
+        },
+        {
+          "id": "b-1",
+          "side": "b",
+          "status": "布陣",
+          "visible": true,
+          "point": [
+            134.324477,
+            34.975678
+          ],
+          "name": "山中幸盛"
+        },
+        {
+          "id": "relief-hideyoshi",
+          "side": "b",
+          "status": "撤退",
+          "visible": false,
+          "point": [
+            134.35666,
+            34.97853
+          ],
+          "name": "羽柴秀吉"
+        },
+        {
+          "id": "relief-araki",
+          "side": "b",
+          "status": "救援終了",
+          "visible": false,
+          "point": [
+            134.35666,
+            34.97853
+          ],
+          "name": "荒木村重"
+        },
+        {
+          "id": "a-0",
+          "side": "a",
+          "status": "布陣",
+          "visible": true,
+          "point": null,
+          "name": "吉川元春"
+        },
+        {
+          "id": "a-1",
+          "side": "a",
+          "status": "布陣",
+          "visible": true,
+          "point": null,
+          "name": "小早川隆景"
+        }
+      ],
+      "located": 2,
+      "expected": [
+        "b-0",
+        "b-1"
+      ],
+      "texts": [
+        "尼",
+        "尼子勝久",
+        "山中幸盛"
+      ]
+    },
+    {
+      "title": "上月城の戦い",
+      "time": 99,
+      "clock": "6月26日・秀吉が撤退",
+      "description": "織田信長の命により秀吉が撤退。上月城は孤立する。",
+      "states": [
+        {
+          "id": "b-0",
+          "side": "b",
+          "status": "布陣",
+          "visible": true,
+          "point": [
+            134.324477,
+            34.975678
+          ],
+          "name": "尼子勝久"
+        },
+        {
+          "id": "b-1",
+          "side": "b",
+          "status": "布陣",
+          "visible": true,
+          "point": [
+            134.324477,
+            34.975678
+          ],
+          "name": "山中幸盛"
+        },
+        {
+          "id": "relief-hideyoshi",
+          "side": "b",
+          "status": "撤退",
+          "visible": false,
+          "point": [
+            134.35666,
+            34.97853
+          ],
+          "name": "羽柴秀吉"
+        },
+        {
+          "id": "relief-araki",
+          "side": "b",
+          "status": "救援終了",
+          "visible": false,
+          "point": [
+            134.35666,
+            34.97853
+          ],
+          "name": "荒木村重"
+        },
+        {
+          "id": "a-0",
+          "side": "a",
+          "status": "布陣",
+          "visible": true,
+          "point": null,
+          "name": "吉川元春"
+        },
+        {
+          "id": "a-1",
+          "side": "a",
+          "status": "布陣",
+          "visible": true,
+          "point": null,
+          "name": "小早川隆景"
+        }
+      ],
+      "located": 2,
+      "expected": [
+        "b-0",
+        "b-1"
+      ],
+      "texts": [
+        "尼",
+        "尼子勝久",
+        "山中幸盛"
+      ]
+    },
+    {
+      "title": "上月城の戦い",
+      "time": 100,
+      "clock": "7月5日・開城",
+      "description": "上月城が開城。尼子勝久らは自害し、山中幸盛は捕らえられて備中へ送られる。",
+      "states": [
+        {
+          "id": "b-0",
+          "side": "b",
+          "status": "討死",
+          "visible": true,
+          "point": [
+            134.324477,
+            34.975678
+          ],
+          "name": "尼子勝久"
+        },
+        {
+          "id": "b-1",
+          "side": "b",
+          "status": "戦闘終了",
+          "visible": true,
+          "point": [
+            134.324477,
+            34.975678
+          ],
+          "name": "山中幸盛"
+        },
+        {
+          "id": "relief-hideyoshi",
+          "side": "b",
+          "status": "撤退",
+          "visible": false,
+          "point": [
+            134.35666,
+            34.97853
+          ],
+          "name": "羽柴秀吉"
+        },
+        {
+          "id": "relief-araki",
+          "side": "b",
+          "status": "救援終了",
+          "visible": false,
+          "point": [
+            134.35666,
+            34.97853
+          ],
+          "name": "荒木村重"
+        },
+        {
+          "id": "a-0",
+          "side": "a",
+          "status": "戦闘終了",
+          "visible": true,
+          "point": null,
+          "name": "吉川元春"
+        },
+        {
+          "id": "a-1",
+          "side": "a",
+          "status": "戦闘終了",
+          "visible": true,
+          "point": null,
+          "name": "小早川隆景"
+        }
+      ],
+      "located": 2,
+      "expected": [
+        "b-0",
+        "b-1"
+      ],
+      "texts": [
+        "尼",
+        "尼子勝久・討死",
+        "山中幸盛"
+      ]
+    },
+    {
+      "title": "有岡城の戦い",
+      "time": 0,
+      "clock": "10月15日・滝川一益が上臈塚から侵入",
+      "description": "村重はすでに尼崎へ移っている。滝川一益の軍勢が内応を得て上臈塚へ入る。",
+      "states": [
+        {
+          "id": "b-0",
+          "side": "b",
+          "status": "布陣",
+          "visible": true,
+          "point": [
+            135.420992,
+            34.781112
+          ],
+          "name": "荒木久左衛門"
+        },
+        {
+          "id": "a-0",
+          "side": "a",
+          "status": "布陣",
+          "visible": true,
+          "point": [
+            135.417613,
+            34.779251
+          ],
+          "name": "滝川一益"
+        },
+        {
+          "id": "b-kishi",
+          "side": "b",
+          "status": "布陣",
+          "visible": true,
+          "point": [
+            135.4151939,
+            34.7851887
+          ],
+          "name": "渡辺勘太夫"
+        },
+        {
+          "id": "b-hiyodori",
+          "side": "b",
+          "status": "布陣",
+          "visible": true,
+          "point": [
+            135.421566,
+            34.773778
+          ],
+          "name": "野村丹後"
+        },
+        {
+          "id": "b-saika",
+          "side": "b",
+          "status": "布陣",
+          "visible": true,
+          "point": [
+            135.421566,
+            34.773778
+          ],
+          "name": "雑賀勢"
+        },
+        {
+          "id": "a-nobusumi",
+          "side": "a",
+          "status": "着陣前",
+          "visible": false,
+          "point": [
+            135.420992,
+            34.781112
+          ],
+          "name": "織田信澄"
+        }
+      ],
+      "located": 5,
+      "expected": [
+        "b-0",
+        "a-0",
+        "b-kishi",
+        "b-hiyodori",
+        "b-saika"
+      ],
+      "texts": [
+        "荒木久左衛門",
+        "滝川一益",
+        "渡辺勘太夫",
+        "野村丹後",
+        "雑賀勢"
+      ]
+    },
+    {
+      "title": "有岡城の戦い",
+      "time": 1,
+      "clock": "10月15日・滝川一益が上臈塚から侵入",
+      "description": "村重はすでに尼崎へ移っている。滝川一益の軍勢が内応を得て上臈塚へ入る。",
+      "states": [
+        {
+          "id": "b-0",
+          "side": "b",
+          "status": "布陣",
+          "visible": true,
+          "point": [
+            135.420992,
+            34.781112
+          ],
+          "name": "荒木久左衛門"
+        },
+        {
+          "id": "a-0",
+          "side": "a",
+          "status": "布陣",
+          "visible": true,
+          "point": [
+            135.417613,
+            34.779251
+          ],
+          "name": "滝川一益"
+        },
+        {
+          "id": "b-kishi",
+          "side": "b",
+          "status": "布陣",
+          "visible": true,
+          "point": [
+            135.4151939,
+            34.7851887
+          ],
+          "name": "渡辺勘太夫"
+        },
+        {
+          "id": "b-hiyodori",
+          "side": "b",
+          "status": "布陣",
+          "visible": true,
+          "point": [
+            135.421566,
+            34.773778
+          ],
+          "name": "野村丹後"
+        },
+        {
+          "id": "b-saika",
+          "side": "b",
+          "status": "布陣",
+          "visible": true,
+          "point": [
+            135.421566,
+            34.773778
+          ],
+          "name": "雑賀勢"
+        },
+        {
+          "id": "a-nobusumi",
+          "side": "a",
+          "status": "着陣前",
+          "visible": false,
+          "point": [
+            135.420992,
+            34.781112
+          ],
+          "name": "織田信澄"
+        }
+      ],
+      "located": 5,
+      "expected": [
+        "b-0",
+        "a-0",
+        "b-kishi",
+        "b-hiyodori",
+        "b-saika"
+      ],
+      "texts": [
+        "荒木久左衛門",
+        "滝川一益",
+        "渡辺勘太夫",
+        "野村丹後",
+        "雑賀勢"
+      ]
+    },
+    {
+      "title": "有岡城の戦い",
+      "time": 19,
+      "clock": "10月15日・滝川一益が上臈塚から侵入",
+      "description": "織田勢は侍町に火をかけ、有岡城の外郭を押さえる。",
+      "states": [
+        {
+          "id": "b-0",
+          "side": "b",
+          "status": "布陣",
+          "visible": true,
+          "point": [
+            135.420992,
+            34.781112
+          ],
+          "name": "荒木久左衛門"
+        },
+        {
+          "id": "a-0",
+          "side": "a",
+          "status": "布陣",
+          "visible": true,
+          "point": [
+            135.417613,
+            34.779251
+          ],
+          "name": "滝川一益"
+        },
+        {
+          "id": "b-kishi",
+          "side": "b",
+          "status": "布陣",
+          "visible": true,
+          "point": [
+            135.4151939,
+            34.7851887
+          ],
+          "name": "渡辺勘太夫"
+        },
+        {
+          "id": "b-hiyodori",
+          "side": "b",
+          "status": "布陣",
+          "visible": true,
+          "point": [
+            135.421566,
+            34.773778
+          ],
+          "name": "野村丹後"
+        },
+        {
+          "id": "b-saika",
+          "side": "b",
+          "status": "布陣",
+          "visible": true,
+          "point": [
+            135.421566,
+            34.773778
+          ],
+          "name": "雑賀勢"
+        },
+        {
+          "id": "a-nobusumi",
+          "side": "a",
+          "status": "着陣前",
+          "visible": false,
+          "point": [
+            135.420992,
+            34.781112
+          ],
+          "name": "織田信澄"
+        }
+      ],
+      "located": 5,
+      "expected": [
+        "b-0",
+        "a-0",
+        "b-kishi",
+        "b-hiyodori",
+        "b-saika"
+      ],
+      "texts": [
+        "荒木久左衛門",
+        "滝川一益",
+        "渡辺勘太夫",
+        "野村丹後",
+        "雑賀勢"
+      ]
+    },
+    {
+      "title": "有岡城の戦い",
+      "time": 20,
+      "clock": "外郭を失い主郭が孤立",
+      "description": "岸の砦の渡辺勘太夫は多田へ退く。鵯塚の野村丹後・雑賀勢も抗しきれず、主郭は孤立する。",
+      "states": [
+        {
+          "id": "b-0",
+          "side": "b",
+          "status": "布陣",
+          "visible": true,
+          "point": [
+            135.420992,
+            34.781112
+          ],
+          "name": "荒木久左衛門"
+        },
+        {
+          "id": "a-0",
+          "side": "a",
+          "status": "布陣",
+          "visible": true,
+          "point": [
+            135.417613,
+            34.779251
+          ],
+          "name": "滝川一益"
+        },
+        {
+          "id": "b-kishi",
+          "side": "b",
+          "status": "砦陥落",
+          "visible": false,
+          "point": [
+            135.4151939,
+            34.7851887
+          ],
+          "name": "渡辺勘太夫"
+        },
+        {
+          "id": "b-hiyodori",
+          "side": "b",
+          "status": "砦陥落",
+          "visible": false,
+          "point": [
+            135.421566,
+            34.773778
+          ],
+          "name": "野村丹後"
+        },
+        {
+          "id": "b-saika",
+          "side": "b",
+          "status": "砦陥落",
+          "visible": false,
+          "point": [
+            135.421566,
+            34.773778
+          ],
+          "name": "雑賀勢"
+        },
+        {
+          "id": "a-nobusumi",
+          "side": "a",
+          "status": "着陣前",
+          "visible": false,
+          "point": [
+            135.420992,
+            34.781112
+          ],
+          "name": "織田信澄"
+        }
+      ],
+      "located": 2,
+      "expected": [
+        "b-0",
+        "a-0"
+      ],
+      "texts": [
+        "荒木久左衛門",
+        "滝川一益"
+      ]
+    },
+    {
+      "title": "有岡城の戦い",
+      "time": 21,
+      "clock": "外郭を失い主郭が孤立",
+      "description": "岸の砦の渡辺勘太夫は多田へ退く。鵯塚の野村丹後・雑賀勢も抗しきれず、主郭は孤立する。",
+      "states": [
+        {
+          "id": "b-0",
+          "side": "b",
+          "status": "布陣",
+          "visible": true,
+          "point": [
+            135.420992,
+            34.781112
+          ],
+          "name": "荒木久左衛門"
+        },
+        {
+          "id": "a-0",
+          "side": "a",
+          "status": "布陣",
+          "visible": true,
+          "point": [
+            135.417613,
+            34.779251
+          ],
+          "name": "滝川一益"
+        },
+        {
+          "id": "b-kishi",
+          "side": "b",
+          "status": "砦陥落",
+          "visible": false,
+          "point": [
+            135.4151939,
+            34.7851887
+          ],
+          "name": "渡辺勘太夫"
+        },
+        {
+          "id": "b-hiyodori",
+          "side": "b",
+          "status": "砦陥落",
+          "visible": false,
+          "point": [
+            135.421566,
+            34.773778
+          ],
+          "name": "野村丹後"
+        },
+        {
+          "id": "b-saika",
+          "side": "b",
+          "status": "砦陥落",
+          "visible": false,
+          "point": [
+            135.421566,
+            34.773778
+          ],
+          "name": "雑賀勢"
+        },
+        {
+          "id": "a-nobusumi",
+          "side": "a",
+          "status": "着陣前",
+          "visible": false,
+          "point": [
+            135.420992,
+            34.781112
+          ],
+          "name": "織田信澄"
+        }
+      ],
+      "located": 2,
+      "expected": [
+        "b-0",
+        "a-0"
+      ],
+      "texts": [
+        "荒木久左衛門",
+        "滝川一益"
+      ]
+    },
+    {
+      "title": "有岡城の戦い",
+      "time": 99,
+      "clock": "外郭を失い主郭が孤立",
+      "description": "岸の砦の渡辺勘太夫は多田へ退く。鵯塚の野村丹後・雑賀勢も抗しきれず、主郭は孤立する。",
+      "states": [
+        {
+          "id": "b-0",
+          "side": "b",
+          "status": "布陣",
+          "visible": true,
+          "point": [
+            135.420992,
+            34.781112
+          ],
+          "name": "荒木久左衛門"
+        },
+        {
+          "id": "a-0",
+          "side": "a",
+          "status": "布陣",
+          "visible": true,
+          "point": [
+            135.417613,
+            34.779251
+          ],
+          "name": "滝川一益"
+        },
+        {
+          "id": "b-kishi",
+          "side": "b",
+          "status": "砦陥落",
+          "visible": false,
+          "point": [
+            135.4151939,
+            34.7851887
+          ],
+          "name": "渡辺勘太夫"
+        },
+        {
+          "id": "b-hiyodori",
+          "side": "b",
+          "status": "砦陥落",
+          "visible": false,
+          "point": [
+            135.421566,
+            34.773778
+          ],
+          "name": "野村丹後"
+        },
+        {
+          "id": "b-saika",
+          "side": "b",
+          "status": "砦陥落",
+          "visible": false,
+          "point": [
+            135.421566,
+            34.773778
+          ],
+          "name": "雑賀勢"
+        },
+        {
+          "id": "a-nobusumi",
+          "side": "a",
+          "status": "着陣前",
+          "visible": false,
+          "point": [
+            135.420992,
+            34.781112
+          ],
+          "name": "織田信澄"
+        }
+      ],
+      "located": 2,
+      "expected": [
+        "b-0",
+        "a-0"
+      ],
+      "texts": [
+        "荒木久左衛門",
+        "滝川一益"
+      ]
+    },
+    {
+      "title": "有岡城の戦い",
+      "time": 100,
+      "clock": "11月19日・荒木方が退城、織田信澄が警固",
+      "description": "荒木久左衛門らは尼崎へ向かい、織田信澄が有岡城内の警固に入る。",
+      "states": [
+        {
+          "id": "b-0",
+          "side": "b",
+          "status": "尼崎へ退出",
+          "visible": false,
+          "point": [
+            135.420992,
+            34.781112
+          ],
+          "name": "荒木久左衛門"
+        },
+        {
+          "id": "a-0",
+          "side": "a",
+          "status": "戦闘終了",
+          "visible": true,
+          "point": [
+            135.417613,
+            34.779251
+          ],
+          "name": "滝川一益"
+        },
+        {
+          "id": "b-kishi",
+          "side": "b",
+          "status": "砦陥落",
+          "visible": false,
+          "point": [
+            135.4151939,
+            34.7851887
+          ],
+          "name": "渡辺勘太夫"
+        },
+        {
+          "id": "b-hiyodori",
+          "side": "b",
+          "status": "砦陥落",
+          "visible": false,
+          "point": [
+            135.421566,
+            34.773778
+          ],
+          "name": "野村丹後"
+        },
+        {
+          "id": "b-saika",
+          "side": "b",
+          "status": "砦陥落",
+          "visible": false,
+          "point": [
+            135.421566,
+            34.773778
+          ],
+          "name": "雑賀勢"
+        },
+        {
+          "id": "a-nobusumi",
+          "side": "a",
+          "status": "戦闘終了",
+          "visible": true,
+          "point": [
+            135.420992,
+            34.781112
+          ],
+          "name": "織田信澄"
+        }
+      ],
+      "located": 2,
+      "expected": [
+        "a-0",
+        "a-nobusumi"
+      ],
+      "texts": [
+        "滝川一益",
+        "織田信澄"
+      ]
+    },
+    {
+      "title": "安濃津城の戦い",
+      "time": 0,
+      "clock": "8月22日・鍋島勢が浜手から攻撃",
+      "description": "鍋島勝茂の軍勢が浜手から安濃津城を攻める。",
+      "states": [
+        {
+          "id": "b-0",
+          "side": "b",
+          "status": "布陣",
+          "visible": true,
+          "point": [
+            136.50749,
+            34.71778
+          ],
+          "name": "富田信高"
+        },
+        {
+          "id": "b-wakebe",
+          "side": "b",
+          "status": "布陣",
+          "visible": true,
+          "point": [
+            136.50749,
+            34.71778
+          ],
+          "name": "分部光嘉"
+        },
+        {
+          "id": "a-nabeshima",
+          "side": "a",
+          "status": "着陣前",
+          "visible": false,
+          "point": [
+            136.50749,
+            34.71778
+          ],
+          "name": "鍋島勝茂"
+        },
+        {
+          "id": "a-0",
+          "side": "a",
+          "status": "着陣前",
+          "visible": false,
+          "point": null,
+          "name": "毛利秀元"
+        },
+        {
+          "id": "a-hiroie",
+          "side": "a",
+          "status": "着陣前",
+          "visible": false,
+          "point": null,
+          "name": "吉川広家"
+        },
+        {
+          "id": "a-natsuka",
+          "side": "a",
+          "status": "布陣",
+          "visible": true,
+          "point": null,
+          "name": "長束正家"
+        },
+        {
+          "id": "a-ekei",
+          "side": "a",
+          "status": "布陣",
+          "visible": true,
+          "point": null,
+          "name": "安国寺恵瓊"
+        }
+      ],
+      "located": 2,
+      "expected": [
+        "b-0",
+        "b-wakebe"
+      ],
+      "texts": [
+        "富田信高",
+        "分部光嘉"
+      ]
+    },
+    {
+      "title": "安濃津城の戦い",
+      "time": 1,
+      "clock": "8月22日・鍋島勢が浜手から攻撃",
+      "description": "鍋島勝茂の軍勢が浜手から安濃津城を攻める。",
+      "states": [
+        {
+          "id": "b-0",
+          "side": "b",
+          "status": "布陣",
+          "visible": true,
+          "point": [
+            136.50749,
+            34.71778
+          ],
+          "name": "富田信高"
+        },
+        {
+          "id": "b-wakebe",
+          "side": "b",
+          "status": "布陣",
+          "visible": true,
+          "point": [
+            136.50749,
+            34.71778
+          ],
+          "name": "分部光嘉"
+        },
+        {
+          "id": "a-nabeshima",
+          "side": "a",
+          "status": "着陣前",
+          "visible": false,
+          "point": [
+            136.50749,
+            34.71778
+          ],
+          "name": "鍋島勝茂"
+        },
+        {
+          "id": "a-0",
+          "side": "a",
+          "status": "着陣前",
+          "visible": false,
+          "point": null,
+          "name": "毛利秀元"
+        },
+        {
+          "id": "a-hiroie",
+          "side": "a",
+          "status": "着陣前",
+          "visible": false,
+          "point": null,
+          "name": "吉川広家"
+        },
+        {
+          "id": "a-natsuka",
+          "side": "a",
+          "status": "布陣",
+          "visible": true,
+          "point": null,
+          "name": "長束正家"
+        },
+        {
+          "id": "a-ekei",
+          "side": "a",
+          "status": "布陣",
+          "visible": true,
+          "point": null,
+          "name": "安国寺恵瓊"
+        }
+      ],
+      "located": 2,
+      "expected": [
+        "b-0",
+        "b-wakebe"
+      ],
+      "texts": [
+        "富田信高",
+        "分部光嘉"
+      ]
+    },
+    {
+      "title": "安濃津城の戦い",
+      "time": 61,
+      "clock": "8月24日・毛利勢が攻撃",
+      "description": "毛利勢も攻城。富田信高・分部光嘉らが城を守る。",
+      "states": [
+        {
+          "id": "b-0",
+          "side": "b",
+          "status": "布陣",
+          "visible": true,
+          "point": [
+            136.50749,
+            34.71778
+          ],
+          "name": "富田信高"
+        },
+        {
+          "id": "b-wakebe",
+          "side": "b",
+          "status": "布陣",
+          "visible": true,
+          "point": [
+            136.50749,
+            34.71778
+          ],
+          "name": "分部光嘉"
+        },
+        {
+          "id": "a-nabeshima",
+          "side": "a",
+          "status": "布陣",
+          "visible": true,
+          "point": [
+            136.50749,
+            34.71778
+          ],
+          "name": "鍋島勝茂"
+        },
+        {
+          "id": "a-0",
+          "side": "a",
+          "status": "布陣",
+          "visible": true,
+          "point": null,
+          "name": "毛利秀元"
+        },
+        {
+          "id": "a-hiroie",
+          "side": "a",
+          "status": "布陣",
+          "visible": true,
+          "point": null,
+          "name": "吉川広家"
+        },
+        {
+          "id": "a-natsuka",
+          "side": "a",
+          "status": "布陣",
+          "visible": true,
+          "point": null,
+          "name": "長束正家"
+        },
+        {
+          "id": "a-ekei",
+          "side": "a",
+          "status": "布陣",
+          "visible": true,
+          "point": null,
+          "name": "安国寺恵瓊"
+        }
+      ],
+      "located": 3,
+      "expected": [
+        "b-0",
+        "b-wakebe",
+        "a-nabeshima"
+      ],
+      "texts": [
+        "富田信高",
+        "分部光嘉",
+        "鍋島勝茂"
+      ]
+    },
+    {
+      "title": "安濃津城の戦い",
+      "time": 99,
+      "clock": "8月24日・毛利勢が攻撃",
+      "description": "毛利勢も攻城。富田信高・分部光嘉らが城を守る。",
+      "states": [
+        {
+          "id": "b-0",
+          "side": "b",
+          "status": "布陣",
+          "visible": true,
+          "point": [
+            136.50749,
+            34.71778
+          ],
+          "name": "富田信高"
+        },
+        {
+          "id": "b-wakebe",
+          "side": "b",
+          "status": "布陣",
+          "visible": true,
+          "point": [
+            136.50749,
+            34.71778
+          ],
+          "name": "分部光嘉"
+        },
+        {
+          "id": "a-nabeshima",
+          "side": "a",
+          "status": "布陣",
+          "visible": true,
+          "point": [
+            136.50749,
+            34.71778
+          ],
+          "name": "鍋島勝茂"
+        },
+        {
+          "id": "a-0",
+          "side": "a",
+          "status": "布陣",
+          "visible": true,
+          "point": null,
+          "name": "毛利秀元"
+        },
+        {
+          "id": "a-hiroie",
+          "side": "a",
+          "status": "布陣",
+          "visible": true,
+          "point": null,
+          "name": "吉川広家"
+        },
+        {
+          "id": "a-natsuka",
+          "side": "a",
+          "status": "布陣",
+          "visible": true,
+          "point": null,
+          "name": "長束正家"
+        },
+        {
+          "id": "a-ekei",
+          "side": "a",
+          "status": "布陣",
+          "visible": true,
+          "point": null,
+          "name": "安国寺恵瓊"
+        }
+      ],
+      "located": 3,
+      "expected": [
+        "b-0",
+        "b-wakebe",
+        "a-nabeshima"
+      ],
+      "texts": [
+        "富田信高",
+        "分部光嘉",
+        "鍋島勝茂"
+      ]
+    },
+    {
+      "title": "安濃津城の戦い",
+      "time": 100,
+      "clock": "8月25日・長束正家の仲介で開城",
+      "description": "長束正家の仲介によって和議が成立し、城は明け渡された。",
+      "states": [
+        {
+          "id": "b-0",
+          "side": "b",
+          "status": "戦闘終了",
+          "visible": true,
+          "point": [
+            136.50749,
+            34.71778
+          ],
+          "name": "富田信高"
+        },
+        {
+          "id": "b-wakebe",
+          "side": "b",
+          "status": "戦闘終了",
+          "visible": true,
+          "point": [
+            136.50749,
+            34.71778
+          ],
+          "name": "分部光嘉"
+        },
+        {
+          "id": "a-nabeshima",
+          "side": "a",
+          "status": "戦闘終了",
+          "visible": true,
+          "point": [
+            136.50749,
+            34.71778
+          ],
+          "name": "鍋島勝茂"
+        },
+        {
+          "id": "a-0",
+          "side": "a",
+          "status": "戦闘終了",
+          "visible": true,
+          "point": null,
+          "name": "毛利秀元"
+        },
+        {
+          "id": "a-hiroie",
+          "side": "a",
+          "status": "戦闘終了",
+          "visible": true,
+          "point": null,
+          "name": "吉川広家"
+        },
+        {
+          "id": "a-natsuka",
+          "side": "a",
+          "status": "戦闘終了",
+          "visible": true,
+          "point": null,
+          "name": "長束正家"
+        },
+        {
+          "id": "a-ekei",
+          "side": "a",
+          "status": "戦闘終了",
+          "visible": true,
+          "point": null,
+          "name": "安国寺恵瓊"
+        }
+      ],
+      "located": 3,
+      "expected": [
+        "b-0",
+        "b-wakebe",
+        "a-nabeshima"
+      ],
+      "texts": [
+        "富田信高",
+        "分部光嘉",
+        "鍋島勝茂"
+      ]
+    },
+    {
+      "fort": {
+        "dates": [
+          {
+            "year": 1578,
+            "active": false,
+            "owner": "tokugawa"
+          },
+          {
+            "year": 1579,
+            "active": true,
+            "owner": "tokugawa"
+          },
+          {
+            "year": 1580,
+            "active": true,
+            "owner": "tokugawa"
+          }
+        ],
+        "id": "yosho:中村砦:138.0632234:34.6787393",
+        "notices": [
+          {
+            "clan": "utsunomiya",
+            "old": "宇都宮広綱",
+            "next": "芳賀高定"
+          },
+          {
+            "clan": "akamatsu",
+            "old": "赤松義祐",
+            "next": "小寺政職"
+          },
+          {
+            "clan": "tsuchimochi",
+            "old": "土持親成",
+            "next": "土持家一門"
+          },
+          {
+            "clan": "hatano",
+            "old": "波多野秀治",
+            "next": "波多野家一門"
+          }
+        ]
+      }
+    }
+  ],
+  "errors": []
+}

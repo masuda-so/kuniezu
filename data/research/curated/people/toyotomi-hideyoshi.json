@@ -1,0 +1,20 @@
+{
+  "id": "person:toyotomi-hideyoshi",
+  "name": "豊臣秀吉",
+  "gameNames": [
+    "木下秀吉",
+    "羽柴秀吉",
+    "豊臣秀吉"
+  ],
+  "authorityIds": [
+    "wikidata:Q187550",
+    "ndlna:00272338"
+  ],
+  "authorityEvidence": {
+    "scope": "person-identity",
+    "wikidataRevision": 2558345900,
+    "wikidataRetrievedAt": "2026-11-04T02:29:02.204580+00:00",
+    "ndlUrl": "https://id.ndl.go.jp/auth/ndlna/00272338",
+    "snapshot": "data/research/source-notes/core-person-authority-snapshot.json"
+  }
+}
