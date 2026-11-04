@@ -64,7 +64,7 @@ for(const L of levels){const byPos=new Map(L.tiles.map(t=>[t.col+','+t.row,path.
 // 国・道の境界線：郡画像（game/map/admin/gun.png 全域1枚、日本は CODH の旧国、朝鮮は1910年の道を八道へ戻したもの）の国が変わる所に引く（kind:'kuni'）。
 // 陸奥・出羽の明治の分割は戻す。海との境は引かない（海岸は coast で引く）。郡画像は年代の版で変わらないので、版の辺のファイルにも同じ線を足す。
 const gunDir=MD.layers.admin,gunRows=fs.readFileSync(path.join(gunDir,'gun.csv'),'utf8').trim().split('\n').slice(1).map(l=>l.split(';'));
-const normK=k=>['磐城','岩代','陸前','陸中','陸奥'].includes(k)?'陸奥':['羽前','羽後'].includes(k)?'出羽':k;const kuniNames=[...new Set(gunRows.map(r=>normK(r[4])))],kuniOf=new Uint16Array(gunRows.length+2);for(const r of gunRows)kuniOf[+r[0]]=kuniNames.indexOf(normK(r[4]))+1;
+const normK=MD.normalizeKuni;const kuniNames=[...new Set(gunRows.map(r=>normK(r[4])))],kuniOf=new Uint16Array(gunRows.length+2);for(const r of gunRows)kuniOf[+r[0]]=kuniNames.indexOf(normK(r[4]))+1;
 // 郡画像 game/map/admin/gun.png（全域1枚、G が上位・B が下位の郡番号）を国の番号の配列にし、段ごとのタイルは画素中心の最近傍で切り出す。
 const GW=m.width,GH=m.height,kuniPx=new Uint8Array(GW*GH);
 let kuniLines=0;

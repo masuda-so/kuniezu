@@ -53,6 +53,8 @@ node tools/map/build-map.cjs
 node tools/map/build-map.cjs --height --python /path/to/python3
 ```
 
+正本の PNG は大きすぎて VS Code などでは開けないので、生成の最後に、層ごとの 1/4 の縮小版（経緯度の目盛り付き）を `game/map/build/previews/` に作ります（`control.png` 支配、`admin.png` 行政区分、`rivers.png` 川、`height.png` 標高）。目で確かめるときはこちらを開いてください。
+
 生成後は `game/` を静的ファイルとして配信し、ブラウザで `index.html` を開きます。
 
 サーバーの起動・停止は利用者が行います。検証は起動済み `http://localhost:8000/index.html` に接続します。検査結果の保存先は `GAME_TEST_OUTPUT` で指定できます。

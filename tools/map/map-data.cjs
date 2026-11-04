@@ -34,4 +34,6 @@ const readProjection=()=>JSON.parse(fs.readFileSync(files.projection,'utf8'));
 // 正本3点の確認値（生成物がどの正本から作られたかを示す）
 const sourceSha256=()=>crypto.createHash('sha256').update(['provinces','definition','defaultMap','projection'].map(k=>sha(files[k])).join('\n')).digest('hex');
 return {dir,layers,files,readDefinition,writeDefinition,readProjection,sourceSha256};}
-module.exports={root,sha,parseDefaultMap,at,...at(path.join(root,'game/map')),out:path.join(root,'game/map/build')};
+// 郡の一覧（admin/gun.csv）の国名は明治の分国を含む。1560〜1615年の国に戻す（陸奥・出羽の分割は1868年）。境界線と縮小版で同じ規則を使う。
+const normalizeKuni=k=>['磐城','岩代','陸前','陸中','陸奥'].includes(k)?'陸奥':['羽前','羽後'].includes(k)?'出羽':k;
+module.exports={root,sha,parseDefaultMap,normalizeKuni,at,...at(path.join(root,'game/map')),out:path.join(root,'game/map/build')};
