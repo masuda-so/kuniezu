@@ -7,6 +7,7 @@ window.TKBattleMotion=(function(){
  const clamp=(v,a,b)=>Math.max(a,Math.min(b,v));
  // 推定配置だけの画面余白。顔は左34px、幟は右37px/上41pxまで張り出す。
  function fitPlacement(p,W,H){const small=W<560,left=small?28:40,right=small?28:40,top=small?28:46,bottom=54;return [clamp(p[0],left,Math.max(left,W-right)),clamp(p[1],top,Math.max(top,H-bottom))];}
+ const held=(sc,u)=>sc.motionFallbacks?.[u.id]?.mode==='hold'&&!u.turn&&u.rout==null;
  const ease=f=>f<.5?2*f*f:1-Math.pow(-2*f+2,2)/2;
  // 模式の経過を t で補間する（区間ごとに緩急を付ける）。
  function at(path,t){if(!path?.length)return null;if(t<=path[0][0])return [path[0][1],path[0][2]];for(let i=1;i<path.length;i++){const a=path[i-1],b=path[i];if(t<=b[0]){const f=ease((t-a[0])/Math.max(1e-6,b[0]-a[0]));return [a[1]+(b[1]-a[1])*f,a[2]+(b[2]-a[2])*f];}}const l=path.at(-1);return [l[1],l[2]];}
@@ -36,7 +37,7 @@ window.TKBattleMotion=(function(){
   const maxShift=Math.min(W,H)*.32,margin=24;
   const fit=p=>[clamp(p[0],margin,W-margin),clamp(p[1],margin,H-margin-30)];
   const byId=new Map(units.map(u=>[u.id,u]));
-  for(const u of units){if(sourced.has(u.id))continue;if(base.has(u.id)){if(u.path.length>1)out.estimated.add(u.id);}else if(anchorG){out.estimated.add(u.id);out.placed.add(u.id);}}
+  for(const u of units){if(sourced.has(u.id))continue;if(base.has(u.id)){if(u.path.length>1)out.estimated.add(u.id);}else if(anchorG&&(u.path.length>1||!held(sc,u))){out.estimated.add(u.id);out.placed.add(u.id);}}
   const gen=generic(sc,base,W,H,home,sourced,{pos:()=>null,estimated:new Set(),placed:new Set(),basis:''},out.estimated);for(const id of gen.estimated)out.estimated.add(id);for(const id of gen.placed)out.placed.add(id);
   out.pos=(id,t)=>{if(gen.estimated.has(id))return gen.pos(id,t);const u=byId.get(id);if(!u||!out.estimated.has(id))return null;const p=at(u.path,t);
    if(base.has(id)){const b=base.get(id),d=rot([p[0]-u.path[0][1],p[1]-u.path[0][2]]),m=Math.hypot(...d),k=m>maxShift?maxShift/m:1;return fit([b[0]+d[0]*k,b[1]+d[1]*k]);}
@@ -52,12 +53,13 @@ window.TKBattleMotion=(function(){
   const located=sc.units.filter(u=>base.has(u.id)),bySide=s=>located.filter(u=>side(u)===s);
   const fit=p=>[clamp(p[0],24,W-24),clamp(p[1],24,H-54)];
   const plans=new Map();
-  for(const u of located){if(sourced.has(u.id)||skip.has(u.id))continue;const b=base.get(u.id),foes=bySide(enemyOf(side(u)));if(!foes.length)continue;
+  // 待機の典拠がある隊へ、記録のない前進を付けない。明示された寝返り・退却は妨げない。
+  for(const u of located){if(sourced.has(u.id)||skip.has(u.id)||held(sc,u))continue;const b=base.get(u.id),foes=bySide(enemyOf(side(u)));if(!foes.length)continue;
    const tgt=foes.map(f=>base.get(f.id)).sort((p,q)=>Math.hypot(p[0]-b[0],p[1]-b[1])-Math.hypot(q[0]-b[0],q[1]-b[1]))[0],d=[tgt[0]-b[0],tgt[1]-b[1]],L=Math.hypot(...d);if(L<4)continue;
    const reach=Math.min(L*.32,S*.14),dir=[d[0]/L,d[1]/L],m=mention(u.id),ts=m!=null?Math.max(0,m-10):t0,te=m!=null?m+2:t1,seed=u.id.length*7+u.id.charCodeAt(u.id.length-1);
    plans.set(u.id,{b,dir,reach,ts,te,seed});}
   // 位置の記録がない隊：相手の陣（位置の分かる側の重心）を、本拠の方角から半円に囲む。
-  for(const s of ['a','b']){const own=sc.units.filter(u=>side(u)===s&&!base.has(u.id)&&!sourced.has(u.id)&&!skip.has(u.id)&&!(u.path?.length>1));const foes=bySide(enemyOf(s));if(!own.length||!foes.length||bySide(s).length)continue;
+  for(const s of ['a','b']){const own=sc.units.filter(u=>side(u)===s&&!base.has(u.id)&&!sourced.has(u.id)&&!skip.has(u.id)&&!held(sc,u)&&!(u.path?.length>1));const foes=bySide(enemyOf(s));if(!own.length||!foes.length||bySide(s).length)continue;
    const c=[foes.reduce((n,f)=>n+base.get(f.id)[0],0)/foes.length,foes.reduce((n,f)=>n+base.get(f.id)[1],0)/foes.length],h=home(s);let dir=h?[h[0]-c[0],h[1]-c[1]]:[s==='a'?-1:1,0];const L=Math.hypot(...dir)||1;dir=[dir[0]/L,dir[1]/L];
    const base0=Math.atan2(dir[1],dir[0]),n=own.length;
    own.forEach((u,i)=>{const ang=base0+(n>1?(i/(n-1)-.5)*Math.PI*.9:0);plans.set(u.id,{ring:true,c,ang,r0:S*.3,r1:S*.07+i%2*S*.025,ts:t0,te:t1,seed:i*13+5});out.placed.add(u.id);});}

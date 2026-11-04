@@ -83,11 +83,18 @@ const temp=fs.mkdtempSync(path.join(os.tmpdir(),'kuniezu-sql-input-'));try{for(c
                         (record_id, kind, r['source'], first, until, scope, relation, text(event) if event else None, text(r)))
                     row_id = cursor.lastrowid
                     if event:
-                        components = event.get('components', [event])
+                        # Extract only the fields validated for this temporal kind.
+                        time_kind = event['kind']
+                        components = event['components'] if time_kind == 'dated-components' else [event]
                         for i, component in enumerate(components):
-                            date = component.get('date', [component.get('year'), None, None])
+                            date = (event['date'] if time_kind == 'dated-event' else
+                                    [component['year'], None, None] if time_kind in ('year-window', 'dated-components') else
+                                    [None, None, None])
+                            leap_month = event['leapMonth'] if time_kind == 'dated-event' else None
+                            date_entities = component['entities'] if time_kind == 'dated-components' else entities
                             db.execute('INSERT INTO event_date VALUES (?,?,?,?,?,?,?,?,?)',
-                                (row_id, i, component.get('calendar', event.get('calendar', 'unspecified')), component.get('precision', event.get('precision', 'unspecified')), *date, component.get('leapMonth'), text(sorted({canonical(e) for e in component.get('entities', entities)}))))
+                                (row_id, i, event['calendar'], event['precision'], *date, leap_month,
+                                 text(sorted({canonical(e) for e in date_entities}))))
                     for entity in sorted({canonical(e) for e in entities}):
                         # Unregistered referenced IDs stay explicit, not invented historical identities.
                         db.execute('INSERT OR IGNORE INTO entity VALUES (?,?,?,0)', (entity, entity.split(':')[0], entity))
