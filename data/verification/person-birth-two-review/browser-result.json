@@ -1,0 +1,21 @@
+{
+  "ok": true,
+  "scope": "candidate file browser runtime, no served HTTP",
+  "actual": {
+    "born": 1565,
+    "age": "35歳",
+    "text": "1565年生まれ。関わった出来事：1600年 岐阜城の戦い、1600年 関ヶ原の戦い。",
+    "source": "兵庫県立歴史博物館「ひょうご伝説紀行－妖怪・自然の世界－用語解説」 池田輝政の項・冒頭の1565〜1613 https://rekihaku.pref.hyogo.lg.jp/digital_museum/legend3/term/",
+    "panel": {
+      "castle": "yoshida",
+      "hidden": false,
+      "lord": "池田輝政\n当主 35歳 ・ 統76 武75 知65"
+    }
+  },
+  "errors": [],
+  "browserPid": 27749,
+  "browserPidAlive": false,
+  "integrationCandidate": "35c36f3a64fcef7e027f492f588be7bfd6376a99",
+  "screenshot": "ikeda-age-drawer.png",
+  "fixture": "1600年旧セーブを一時プロファイルに読み込み、吉田城詳細を表示"
+}

@@ -42,3 +42,9 @@
 `/tmp/kuniezu-s1600-state-b303.json` を変更前・候補の双方の実行モデルへ読み込んで比較した。189人中、輝政（id108）のbornだけが1564→1565となり、他188人と全ての他フィールドは一致。再保存相当のJSON化・再読み込み後も全フィールド一致し、再補正も冪等。家督継承イベントは不変。史料集には博物館の生年出典が付く。
 
 分岐4種・非史実モード・別生年5種・未登録名を維持し、canonical aliasの契約もfixtureで確認（ゲームへ未確認の別名を追加していない）。newGame0回・シミュレーション0日。結果は `data/verification/person-birth-two-review/save-result.json`。実行コマンドは `node /tmp/kuniezu-birth-year-review-final/check-save.cjs`。
+
+## 統合候補のブラウザ確認
+
+候補 `35c36f3` をローカルファイルとして一時Chromeで読み込んだ。1600年の旧セーブから吉田城の詳細を開くと、池田輝政が「当主 35歳」と表示された。人物事典のデータは西暦1565年生まれと博物館の出典を返した。実行時例外0件。8000番の配信版の確認とは区別する。
+
+[表示画像](../../data/verification/person-birth-two-review/ikeda-age-drawer.png) · [検証結果](../../data/verification/person-birth-two-review/browser-result.json)
