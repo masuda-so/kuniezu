@@ -481,7 +481,8 @@ function beginLayer(c,z,cc,world){c.setTransform(DPR,0,0,DPR,0,0);c.clearRect(0,
  c.save();const clip0=w2s(CONT.x0,CONT.y0),clip1=w2s(CONT.x1,CONT.y1);c.beginPath();c.rect(clip0[0],clip0[1],clip1[0]-clip0[0],clip1[1]-clip0[1]);c.clip();
  if(world){c.save();c.setTransform(DPR*z,0,0,DPR*z,DPR*(cc[0]-cam.x*z),DPR*(cc[1]-cam.y*z));}}
 function fitLayer(L){if(L.cv.width!==top_.width)L.cv.width=top_.width;if(L.cv.height!==top_.height)L.cv.height=top_.height;}
-function blit(c,L){c.save();c.setTransform(1,0,0,1,0,0);c.drawImage(L.cv,0,0);c.restore();}
+// 画面の大きさが0の間（枠を開く途中など）は層も0で、drawImage が例外を投げて描画の繰り返しが止まるため貼らない。
+function blit(c,L){if(!L.cv.width||!L.cv.height)return;c.save();c.setTransform(1,0,0,1,0,0);c.drawImage(L.cv,0,0);c.restore();}
 // still が真なら静止層も描き直す。戻り値は、時間で動く表示（攻城の輪・煙・交戦中の駒）が画面にあるか。
 function drawTop(still){LANDV=landFor(cam.z);vcMemo=vcCalc();try{return drawTopLayers(still);}finally{vcMemo=null;}}
 function drawTopLayers(still){

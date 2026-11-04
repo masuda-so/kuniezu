@@ -6,6 +6,10 @@ window.TKMapVersion=(function(){let list=[],lastT=null,lastS=null,cur=null;
  function active(){const S=window.G?.S?.();const t=S?S.t:null;if(t===lastT&&S===lastS)return cur;lastT=t;lastS=S;cur=null;if(t==null)return null;
   for(const v of list){const a=G.evT({d:v.period[0]}),b=G.evT({d:v.period[1]});if(t>=a&&t<b){cur=v;break;}}return cur;}
  return {active,list:()=>list};})();
+/* タイルを地図平面へ貼る時、四隅を画面の画素の格子に丸める。隣り合うタイルは同じ端を共有し、端数の位置での
+   アンチエイリアスの隙間（タイルの形の細い線）も重なりも出ない。変換は拡大と平行移動だけ（回転しない）とする。 */
+window.TKDrawTile=function(c,img,x,y,w,h){const m=c.getTransform(),X0=Math.round(m.a*x+m.e),Y0=Math.round(m.d*y+m.f),X1=Math.round(m.a*(x+w)+m.e),Y1=Math.round(m.d*(y+h)+m.f);
+ if(X1>X0&&Y1>Y0)c.drawImage(img,(X0-m.e)/m.a,(Y0-m.f)/m.d,(X1-X0)/m.a,(Y1-Y0)/m.d);};
 /* ラスター地図の実行時部品。game/map/ の領域画像（1画素1領域）を読み、「領域ID→色」の表で塗った画像を地図平面へ貼る。
    表示の細かさに合わせて 100m（provinces/）・400m（provinces-4/）・800m（provinces-8/）のどれかを選ぶ。
    日が進んでも、領主が変わった時だけ表を引き直す。読み込み中のタイルは一段粗いものを代わりに貼る。 */
@@ -45,7 +49,7 @@ window.TKRaster=(function(){
   c.putImageData(im,0,0);rec.canvases.set(sig,cv);painted.push({rec,sig,cv,used:paintSeq});while(rec.canvases.size>6){const [k,old]=rec.canvases.entries().next().value;rec.canvases.delete(k);old.width=old.height=0;const i=painted.findIndex(x=>x.cv===old);if(i>=0)painted.splice(i,1);}trimCanvases();return cv;}
  /* c は地図平面の座標で描く文脈（setTransform 済み）。view=[x0,y0,x1,y1]。colorOf(def)→[r,g,b,a]（a は0〜255）か null。 */
  function paint(c,view,z,dpr,colorOf,sig){if(!ready)return false;paintSeq++;const f=pickFactor(z,dpr);let complete=true;
-  const draw=(ff,t,rec)=>{const s=man.projection.stepUnits*ff,x=man.projection.origin[0]+t.col*man.tile*s,y=man.projection.origin[1]+t.row*man.tile*s;c.drawImage(canvasFor(rec,colorOf,sig+'|'+ff),x,y,t.width*s,t.height*s);};
+  const draw=(ff,t,rec)=>{const s=man.projection.stepUnits*ff,x=man.projection.origin[0]+t.col*man.tile*s,y=man.projection.origin[1]+t.row*man.tile*s;TKDrawTile(c,canvasFor(rec,colorOf,sig+'|'+ff),x,y,t.width*s,t.height*s);};
   const visible=ff=>{const s=man.projection.stepUnits*ff,span=man.tile*s;return level(ff).tiles.filter(t=>{const x=man.projection.origin[0]+t.col*span,y=man.projection.origin[1]+t.row*span;return x<view[2]&&x+t.width*s>view[0]&&y<view[3]&&y+t.height*s>view[1];});};
   c.save();c.imageSmoothingEnabled=false;
   // 細かいタイルが届いていない区画だけ、粗い段（800m、起動時に読み込み済み）をその区画に切り抜いて敷く。
@@ -79,7 +83,7 @@ window.TKRelief=(function(){
  function pick(z,dpr){const unit=1/(z*dpr);for(const f of [8,4])if(man.step*f<=unit*1.5)return f;return 1;}
  function paint(c,view,z,dpr){if(!ready)return false;const f=pick(z,dpr);let complete=true;
   const vis=ff=>{const s=man.step*ff,span=man.tile*s;return level(ff).tiles.filter(t=>{const x=man.origin[0]+t.col*span,y=man.origin[1]+t.row*span;return x<view[2]&&x+t.width*s>view[0]&&y<view[3]&&y+t.height*s>view[1];});};
-  const draw=(ff,t,rec)=>{const s=man.step*ff;c.drawImage(rec.im,man.origin[0]+t.col*man.tile*s,man.origin[1]+t.row*man.tile*s,t.width*s,t.height*s);};
+  const draw=(ff,t,rec)=>{const s=man.step*ff;TKDrawTile(c,rec.im,man.origin[0]+t.col*man.tile*s,man.origin[1]+t.row*man.tile*s,t.width*s,t.height*s);};
   pinned=new Set([...[f,4,8].flatMap(ff=>vis(ff).map(t=>ff+':'+t.file))]);
   c.save();c.imageSmoothingEnabled=true;c.imageSmoothingQuality='high';
   // 代わりの段は 800m を敷き、その上に 400m（細かい段が 100m の時は先に読み始める）を重ねる。
