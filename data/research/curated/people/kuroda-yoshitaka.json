@@ -2,7 +2,8 @@
   "id": "person:kuroda-yoshitaka",
   "name": "黒田孝高",
   "gameNames": [
-    "黒田孝高"
+    "黒田孝高",
+    "黒田官兵衛"
   ],
   "authorityIds": [
     "wikidata:Q907019",
@@ -12,6 +13,16 @@
     "scope": "person-identity",
     "wikidataRevision": 2528553386,
     "wikidataRetrievedAt": "2026-11-03T15:20:32.054Z",
-    "ndlUrl": "https://id.ndl.go.jp/auth/ndlna/00623215"
-  }
+    "ndlUrl": "https://id.ndl.go.jp/auth/ndlna/00623215",
+    "snapshot": "data/research/source-notes/person-authority-snapshot.json"
+  },
+  "aliasEvidence": [
+    {
+      "name": "黒田官兵衛",
+      "sourceUrl": "https://museum.city.fukuoka.jp/archives/leaflet/432/index.html",
+      "locator": "冒頭・黒田孝高の通称と法名",
+      "checked": "2026-11-04",
+      "scope": "同一人物の名寄せ。名称の使用開始・終了日はここでは確定しない。"
+    }
+  ]
 }

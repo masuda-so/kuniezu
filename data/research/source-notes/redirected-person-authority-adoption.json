@@ -1,0 +1,52 @@
+{
+  "scope": "転送名から人物IDを照合。名称を使った期間は未採用。",
+  "redirects": [
+    {
+      "from": "羽柴秀長",
+      "to": "豊臣秀長"
+    },
+    {
+      "from": "真田信幸",
+      "to": "真田信之"
+    },
+    {
+      "from": "北条氏房",
+      "to": "太田氏房"
+    }
+  ],
+  "records": [
+    {
+      "wikidataId": "Q11070250",
+      "wikidataRevision": 2480585944,
+      "japaneseLabel": "太田氏房",
+      "ndlId": "001219628",
+      "ndlIdentity": {
+        "uri": "http://id.ndl.go.jp/auth/entity/001219628",
+        "type": {
+          "uri": "http://xmlns.com/foaf/0.1/Person"
+        },
+        "name": "北条氏房",
+        "dateOfBirth": "1565",
+        "dateOfDeath": "1592",
+        "biographicalInformation": [
+          "武将・岩槻城主"
+        ]
+      }
+    },
+    {
+      "wikidataId": "Q1191183",
+      "wikidataRevision": 2547899330,
+      "japaneseLabel": "豊臣秀長",
+      "ndlId": "00651991",
+      "ndlIdentity": {
+        "uri": "http://id.ndl.go.jp/auth/entity/00651991",
+        "type": {
+          "uri": "http://xmlns.com/foaf/0.1/Person"
+        },
+        "name": "豊臣秀長",
+        "dateOfBirth": "1540",
+        "dateOfDeath": "1591"
+      }
+    }
+  ]
+}

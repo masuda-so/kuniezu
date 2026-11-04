@@ -1,0 +1,23 @@
+{
+  "id": "person:大須賀康高",
+  "name": "大須賀康高",
+  "gameNames": [
+    "大須賀康高"
+  ],
+  "authorityIds": [
+    "wikidata:Q10938514"
+  ],
+  "identityBasis": {
+    "scope": "既存の確認済み命題の対象名を人物台帳へ登録",
+    "claimIds": [
+      "mamushizuka-1574-refortification",
+      "yokosuka-castle-construction"
+    ]
+  },
+  "authorityEvidence": {
+    "scope": "person-identity",
+    "wikidataRevision": 2480585791,
+    "snapshot": "data/research/source-notes/reviewed-people-wikidata-identity.json",
+    "basis": "既存の出典付き人物命題の対象名と日本語ラベル・人物区分を照合。国会図書館IDはこの取得にはない。"
+  }
+}

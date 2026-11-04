@@ -9,4 +9,10 @@ const horizontal=queryHistory(idx,{year:1592}),vertical=queryHistory(idx,{entity
 assert.strictEqual(queryHistory(idx,{entity:'城甲'}).find(r=>r.id===location.id).record,location);assert.equal(JSON.stringify([claim,location]),snapshot);assert.equal(queryHistory(idx,{entity:'absent'}).length,0);assert.throws(()=>queryHistory(idx,{year:NaN}));assert.throws(()=>createHistoryIndex({claims:[claim,claim]}));assert.throws(()=>createHistoryIndex({claims:[{...claim,runId:'branch'}]}));assert.throws(()=>createHistoryIndex({locations:[{...location,estimated:true}]}));
 assert.deepEqual(queryHistory(idx,{year:1592,entity:'wikidata:Q123'}),intersection);
 assert.throws(()=>createHistoryIndex({people:[person,{...person,id:'person:other'}]}),/Duplicate authority ID/);
+assert.deepEqual(queryHistory(idx,{fromYear:1592,toYear:1592,entity:person.id}),intersection);
+assert.equal(queryHistory(idx,{fromYear:1590,toYear:1591,entity:person.id}).length,1);
+assert.equal(queryHistory(idx,{fromYear:10001}).length,0);
+assert.equal(queryHistory(idx,{toYear:0}).length,0);
+assert.throws(()=>queryHistory(idx,{fromYear:1600,toYear:1599}));
+assert.throws(()=>queryHistory(idx,{year:1600,fromYear:1599}));
 console.log('PASS: time/entity views share records; inclusive/exclusive boundaries, aliases, intersections, unknown entities; no annual snapshots for 10,000-year span');

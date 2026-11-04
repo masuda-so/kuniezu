@@ -1,0 +1,31 @@
+{
+  "id": "person:真田信幸",
+  "name": "真田信幸",
+  "gameNames": [
+    "真田信幸",
+    "真田信之"
+  ],
+  "authorityIds": [
+    "wikidata:Q1141305"
+  ],
+  "identityBasis": {
+    "scope": "既存の確認済み命題の対象名を人物台帳へ登録",
+    "claimIds": [
+      "nobuyuki-side"
+    ]
+  },
+  "aliasEvidence": [
+    {
+      "name": "真田信之",
+      "sourceUrl": "https://www.city.numata.gunma.jp/kanko/1004186/1004286/1004222/1004299.html",
+      "locator": "1 真田信幸（信之）",
+      "checked": "2026-11-04",
+      "scope": "同一人物の名寄せ。名称の使用開始・終了日はここでは確定しない。"
+    }
+  ],
+  "authorityEvidence": {
+    "scope": "person-identity",
+    "wikidataRevision": 2556899652,
+    "snapshot": "data/research/source-notes/ikeda-sanada-authority-adoption.json"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "id": "person:高橋元種",
+  "name": "高橋元種",
+  "gameNames": [
+    "高橋元種"
+  ],
+  "authorityIds": [
+    "wikidata:Q8514131"
+  ],
+  "identityBasis": {
+    "scope": "既存の確認済み命題の対象名を人物台帳へ登録",
+    "claimIds": [
+      "agata-castle-construction"
+    ]
+  },
+  "authorityEvidence": {
+    "scope": "person-identity",
+    "wikidataRevision": 2555356227,
+    "snapshot": "data/research/source-notes/reviewed-people-wikidata-identity.json",
+    "basis": "既存の出典付き人物命題の対象名と日本語ラベル・人物区分を照合。国会図書館IDはこの取得にはない。"
+  }
+}

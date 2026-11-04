@@ -1,0 +1,38 @@
+{
+  "scope": "人物同定のみ。典拠の生年表記をゲームの生年へ自動反映しない。",
+  "records": [
+    {
+      "wikidataId": "Q1385927",
+      "wikidataRevision": 2556896914,
+      "japaneseLabel": "池田輝政",
+      "instanceOf": [
+        "Q5"
+      ],
+      "ndlId": "001279858",
+      "ndlIdentity": {
+        "uri": "http://id.ndl.go.jp/auth/entity/001279858",
+        "type": {
+          "uri": "http://xmlns.com/foaf/0.1/Person"
+        },
+        "name": "池田輝政",
+        "dateOfBirth": "1564",
+        "dateOfDeath": "1613",
+        "biographicalInformation": [
+          "武将"
+        ]
+      },
+      "birthYearNote": "典拠の1564という表記は取得内容として保持。ゲームの西暦生年1565の採否は別の出典命題を参照。"
+    },
+    {
+      "wikidataId": "Q1141305",
+      "wikidataRevision": 2556899652,
+      "japaneseLabel": "真田信之",
+      "instanceOf": [
+        "Q5"
+      ],
+      "existingClaimIds": [
+        "nobuyuki-side"
+      ]
+    }
+  ]
+}

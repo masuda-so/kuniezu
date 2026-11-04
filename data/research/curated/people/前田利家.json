@@ -1,0 +1,24 @@
+{
+  "id": "person:前田利家",
+  "name": "前田利家",
+  "gameNames": [
+    "前田利家"
+  ],
+  "authorityIds": [
+    "wikidata:Q1196817",
+    "ndlna:00624871"
+  ],
+  "identityBasis": {
+    "scope": "既存の確認済み命題の対象名を人物台帳へ登録",
+    "claimIds": [
+      "toyotomi-office-2"
+    ]
+  },
+  "authorityEvidence": {
+    "scope": "person-identity",
+    "wikidataRevision": 2550956775,
+    "wikidataRetrievedAt": "2026-11-04T02:41:38.962147+00:00",
+    "ndlUrl": "https://id.ndl.go.jp/auth/ndlna/00624871",
+    "snapshot": "data/research/source-notes/reviewed-people-authority-adoption.json"
+  }
+}

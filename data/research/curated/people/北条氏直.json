@@ -1,0 +1,24 @@
+{
+  "id": "person:北条氏直",
+  "name": "北条氏直",
+  "gameNames": [
+    "北条氏直"
+  ],
+  "authorityIds": [
+    "wikidata:Q1156668",
+    "ndlna:001343563"
+  ],
+  "identityBasis": {
+    "scope": "既存の確認済み命題の対象名を人物台帳へ登録",
+    "claimIds": [
+      "lifetime-北条氏直"
+    ]
+  },
+  "authorityEvidence": {
+    "scope": "person-identity",
+    "wikidataRevision": 2480575966,
+    "wikidataRetrievedAt": "2026-11-04T02:41:38.962147+00:00",
+    "ndlUrl": "https://id.ndl.go.jp/auth/ndlna/001343563",
+    "snapshot": "data/research/source-notes/reviewed-people-authority-adoption.json"
+  }
+}

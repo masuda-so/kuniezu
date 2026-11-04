@@ -1,0 +1,22 @@
+{
+  "id": "person:秋月種長",
+  "name": "秋月種長",
+  "gameNames": [
+    "秋月種長"
+  ],
+  "authorityIds": [
+    "wikidata:Q1082804"
+  ],
+  "identityBasis": {
+    "scope": "既存の確認済み命題の対象名を人物台帳へ登録",
+    "claimIds": [
+      "akizuki-tanetaka-grant"
+    ]
+  },
+  "authorityEvidence": {
+    "scope": "person-identity",
+    "wikidataRevision": 2555357441,
+    "snapshot": "data/research/source-notes/reviewed-people-wikidata-identity.json",
+    "basis": "既存の出典付き人物命題の対象名と日本語ラベル・人物区分を照合。国会図書館IDはこの取得にはない。"
+  }
+}

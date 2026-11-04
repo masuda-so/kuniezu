@@ -1,0 +1,27 @@
+{
+  "id": "location:mitsuhide-kameyama-departure-1582",
+  "person": "person:akechi-mitsuhide",
+  "place": "place:tanba-kameyama",
+  "relation": "attested-presence",
+  "time": {
+    "kind": "dated-event",
+    "date": [
+      1582,
+      6,
+      1
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": false,
+    "precision": "day"
+  },
+  "source": "mitsuhideKameokaDeparture",
+  "sourceUrl": "https://www.city.kameoka.kyoto.jp/site/kirin/1290.html",
+  "locator": "本文・6月1日の夕刻の出陣",
+  "uncertainty": "自治体の歴史解説による出陣記録。出発前の連続滞在と、その後の時刻別位置は確定しない。",
+  "recordType": "sourced-location-observation",
+  "status": "verified-in-specified-scope",
+  "recordedAt": "2026-11-04",
+  "gameBindings": [
+    "history-index:person:akechi-mitsuhide"
+  ]
+}
