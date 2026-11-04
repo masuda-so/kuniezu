@@ -6,3 +6,18 @@ try{put('a.json',r);assert.equal(loadEvidence({claimDir,sourceDir,baseSources}).
  for(const change of [{status:'unverified'},{source:'absent'},{validYears:[1600,1590]},{sourceUrl:'https://example.invalid'},{gameBindings:[]}]){put('b.json',{...r,id:'invalid',...change});assert.throws(()=>loadEvidence({claimDir,sourceDir,baseSources}));}
  console.log('PASS: independent author inputs preserved; duplicates, unreviewed claims, missing sources, reversed years and wrong URLs rejected');
 }finally{fs.rmSync(dir,{recursive:true,force:true});}
+
+const research=path.join(root,'data/research');
+const people=fs.readFileSync(path.join(research,'people.jsonl'),'utf8').trim().split('\n').map(JSON.parse);
+const claims=new Map(fs.readFileSync(path.join(research,'claims.jsonl'),'utf8').trim().split('\n').map(JSON.parse).map(r=>[r.id,r]));
+for(const person of people){
+ const basis=person.identityBasis;
+ if(!basis)continue;
+ assert.ok(Array.isArray(basis.claimIds)&&basis.claimIds.length,person.id+' identity claims');
+ for(const id of basis.claimIds){
+  const claim=claims.get(id);
+  assert.ok(claim,person.id+' missing claim '+id);
+  assert.equal(claim.entity,person.id,person.id+' claim belongs to a different entity');
+ }
+}
+console.log('PASS: registered person identity bases refer to existing claims for the same entity');
