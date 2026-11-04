@@ -48,3 +48,7 @@ node tools/research/query-history.cjs --entity 県城
 Wikidata の候補取得は `node tools/research/fetch-authorities.cjs --output /tmp/kuniezu-authorities.json`。登録済み人物の典拠 ID をまとめて取得する。既存出力を上書きせず、結果を自動採用しない。氏名・同名人物・出典を確認してから curated 入力へ反映する。
 
 年代の正規化は `eventTime.calendar` を参照する。既存の `value.calendar` は原文表現・互換用に保持する。`boundsAreHistoricalStartEnd: false` の命題は索引の `scope: described-period-candidate` として返し、検索結果は確定した存続期間と区別する。文書標題の「県城」は原表記を残し、場所の別名から「縣城」と同一地点として検索する。
+
+### SQL・時空間検索
+
+SQLiteの関係DB、経緯度×年のR-tree索引、原暦の日付表、疎な時空間キューブVIEWを実装。編集正本はcurated JSON、DBは生成物。構成・生成・SQL例は [史実データベース](../../docs/architecture/history-database.md)。`python3 tools/research/history_sqlite.py build --output /tmp/kuniezu-history.sqlite3` で生成する。
