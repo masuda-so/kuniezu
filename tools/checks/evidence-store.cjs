@@ -41,3 +41,14 @@ for(const person of people){
  }
 }
 console.log('PASS: adopted authorities match retained identity snapshots');
+
+const {validateEventTime}=require('../research/evidence-store.cjs');
+const order=JSON.parse(fs.readFileSync(path.join(research,'curated/claims/agata-receipt-order.json')));
+validateEventTime(order);
+for(const eventTime of [{...order.eventTime,date:[1614,12,15]},{...order.eventTime,date:[1613,13,1]},{...order.eventTime,calendar:'CE-year'},{kind:'unsupported'}])assert.throws(()=>validateEventTime({...order,eventTime}));
+for(const r of claims.values())validateEventTime(r);
+const forts=claims.get('takatenjin-six-forts-preparation-years');
+assert.throws(()=>validateEventTime({...forts,eventTime:{...forts.eventTime,components:[{year:1579,entities:['place:not-linked']}]}}));
+const period=claims.get('tonokori-sadowara-outer-castle');
+assert.throws(()=>validateEventTime({...period,eventTime:{...period.eventTime,boundsAreHistoricalStartEnd:true}}));
+console.log('PASS: event dates preserve calendar, applicability bounds, component targets and uncertain-period semantics');
