@@ -2,9 +2,11 @@ const vm=require('node:vm'),fs=require('node:fs'),path=require('node:path'),asse
 const jobs=[],paint=[];let readSource;
 class Image{set src(s){this.url=s;if(s){const done=()=>this.onload?.();done.url=s;done.image=this;jobs.push(done);}}}
 const document={createElement(){const cv={};cv.getContext=()=>({drawImage(im){cv.source=im.source||im.url;},getImageData(){readSource=cv.source;return {data:new Uint8ClampedArray(256*256*4)};},createImageData(){cv.source=readSource;return {data:new Uint8ClampedArray(256*256*4)};},putImageData(){}});return cv;}};
-const c=vm.createContext({Image,document,TKGEO:{K:200,CX:Math.cos(Math.PI/5),LON0:129.2,LAT0:41.75}});c.window=c;
+// 地図平面は円錐図法（game/map-projection.js）。固定具にも同じ投影の API を渡す
+const TKP=require('../../game/map-projection.js');
+const c=vm.createContext({Image,document,TKGEO:{K:TKP.legacy.K,CX:TKP.legacy.CX,LON0:TKP.legacy.LON0,LAT0:TKP.legacy.LAT0,project:TKP.project,unproject:TKP.unproject,plane:TKP.plane}});c.window=c;
 vm.runInContext(fs.readFileSync(path.resolve(__dirname,'../../game/terrain-tiles.js'),'utf8'),c);
-const ctx={save(){},restore(){},clip(){},drawImage(im){paint.push(im);}},x=(136.7-129.2)*200*Math.cos(Math.PI/5),y=(41.75-35.3)*200,view=[x-35,y-35,x+35,y+35];
+const ctx={save(){},restore(){},clip(){},drawImage(im){paint.push(im);}},[x,y]=TKP.project(136.7,35.3),view=[x-35,y-35,x+35,y+35];
 c.TKTerrain.draw(ctx,view,.05,1,null,{});while(jobs.length)jobs.shift()();paint.length=0;c.TKTerrain.draw(ctx,view,.05,1,null,{});assert.ok(paint.length>0);
 const overview=new Set(paint);c.TKTerrain.draw(ctx,view,8,1,null,{});
 // Finish only the intermediate layer. Fine requests deliberately remain pending.
