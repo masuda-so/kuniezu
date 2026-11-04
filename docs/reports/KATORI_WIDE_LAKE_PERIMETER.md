@@ -30,3 +30,5 @@
 `build-map.cjs` で正本から再生成後、raster-map・province-editsを実行。`katori-water.cjs` で湖面1719、保護陸70、全段・全年代360220岸線区間を検査した。専用Chromeのfile://候補を3段階ズームで確認し、湖内3地点と保護陸・北岸の分類、JavaScript例外0を確認。証拠は `data/verification/codex-katori-water/`。共有サーバーの起動・停止や共有作業ツリーへの適用は行っていない。
 
 通常再生成: `node tools/map/build-map.cjs`。局所再検査: `node tools/checks/katori-water.cjs`。実画面再検査: `node tools/checks/katori-water-browser.cjs`（既定は当該作業ツリーのfile://、既存HTTPにはGAME_URLを指定）。生成物はGit追跡せず正本と生成器を管理する。
+
+2026-11-04追従：先行PR #6のsquash後、公開済み履歴を書き換えず、mainのc2e0a07から `codex/katori-water-main` を作り、担当変更1コミットだけを載せ直した。READMEの日英双方へ推定湖面と水上補正境界の仕様を追記。元の検査時点・出典確認値は履歴として保持する。
