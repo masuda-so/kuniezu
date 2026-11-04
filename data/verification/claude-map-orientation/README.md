@@ -5,4 +5,4 @@
 - `kinai-rot11.jpg`：畿内の拡大。城名・大名の札は画面で読める向き、国名（わざと回して描く文字）は地図と一緒に回る。
 - `select-date-rot11.jpg`：回した画面で伊達政宗の札を押し、名生城が選ばれた（当たり判定の逆変換）。
 - 画像は Git に入れない（.gitignore）。
-- `side-by-side.jpg`・`overlay-dainippon-vs-game.jpg`・`orientation-compare.html`：手本と本作を並べ、重ねた比較（html は不透明度・移動・拡大・角度を変えられる）。
+- `side-by-side.jpg`・`overlay-dainippon-vs-game.jpg`：手本と本作を並べ、重ねた比較。重ねを動かせる比較ページ `orientation-compare.html` は画像を埋め込むため Git に入れず、利用者へ直接渡した（画像と同じ扱い）。
