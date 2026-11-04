@@ -41,6 +41,7 @@ jobs:
       - name: Battle atlas source and framing
         run: |
           node tools/checks/atlas-regressions.cjs
+          node tools/checks/battle-viewport.cjs
           node tools/checks/battle-rivers.cjs
       - name: Asset version stamps
         run: node tools/build/stamp-assets.cjs --check
