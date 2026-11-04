@@ -23,6 +23,9 @@ is [docs/README.md](docs/README.md); open requests and ownership are in
   non-historical implementations under `archive/` are not loaded at startup.
 - Modern comparison terrain, estimates derived from sources and confirmed
   historical facts are kept apart. Unsupported text is not shown in the game.
+- The historical database retains personal authority IDs and sourced aliases.
+  Aliases can be searched; comparative records outside the game period are not
+  reassigned to events within it.
 
 | Folder | Contents |
 |---|---|

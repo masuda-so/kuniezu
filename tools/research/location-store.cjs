@@ -10,6 +10,7 @@ function validateTime(t){if(!t)throw Error('年代が必要');
 }
 function validateLocations({people,places,locations,sources}){
  const persons=unique(people,'person:'),sites=unique(places,'place:');unique(locations,'location:');
+ for(const p of [...people,...places])if(p.aliases!==undefined&&(!Array.isArray(p.aliases)||p.aliases.some(name=>typeof name!=='string'||!name.trim())||new Set(p.aliases).size!==p.aliases.length))throw Error('別名は重複のない名称配列で指定: '+p.id);
  const authorityOwners=new Set();
  for(const p of people){
   if(!p.name||!Array.isArray(p.gameNames))throw Error('人物の名称が必要');
@@ -50,7 +51,7 @@ function queryLocations(data,{person='',place='',year,fromYear,toYear,lunarDate,
  const people=new Map(data.people.map(p=>[p.id,p])),places=new Map(data.places.map(p=>[p.id,p]));
  const selectedPeople=person?data.people.filter(p=>{
   if(/^(?:person|wikidata|ndlna):/.test(person))return [p.id,...(p.authorityIds??[])].includes(person);
-  return [p.name,...p.gameNames].some(name=>name.includes(person));
+  return [p.name,...p.gameNames,...(p.aliases??[])].some(name=>name.includes(person));
  }):data.people;
  const selectedIds=new Set(selectedPeople.map(p=>p.id));
  const matches=data.locations.filter(r=>{

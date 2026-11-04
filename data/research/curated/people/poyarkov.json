@@ -1,0 +1,23 @@
+{
+  "id": "person:ヴァシーリー・ポヤルコフ",
+  "name": "ヴァシーリー・ポヤルコフ",
+  "gameNames": [],
+  "aliases": [
+    "ヴァシリー・ポヤルコフ"
+  ],
+  "authorityIds": [
+    "wikidata:Q982229"
+  ],
+  "identityBasis": {
+    "scope": "ゲーム期間外の1643〜1646年の比較史料に現れる人物の同定。1560〜1615年の所在・出陣・領有を付与しない。",
+    "claimIds": [
+      "poyarkov-amur-expedition-1643-1646"
+    ]
+  },
+  "authorityEvidence": {
+    "scope": "person-identity",
+    "wikidataRevision": 2521711368,
+    "snapshot": "data/research/source-notes/frontier-person-authority-adoption.json",
+    "basis": "ロシア大統領図書館の Василий Данилович Поярков と原APIのロシア語氏名・人物区分・17世紀探検家の説明を照合。1643〜1646年のアムール遠征の人物で、同名船舶や姓だけが同じ人物とは別。ゲーム期間外の比較史料に現れる人物であり、ゲーム登場人物を追加するものではない。"
+  }
+}
