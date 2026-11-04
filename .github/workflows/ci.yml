@@ -31,6 +31,7 @@ jobs:
         run: node tools/checks/secret-scan.cjs
       - name: Historical records and authority identities
         run: |
+          node tools/checks/battle-event-classification.cjs
           node tools/checks/evidence-store.cjs
           node tools/checks/location-store.cjs
           node tools/checks/history-index.cjs

@@ -21,6 +21,8 @@ is [docs/README.md](docs/README.md); open requests and ownership are in
   Battles appear automatically only when the player's forces take part.
 - Free sieges, non-historical routes and in-play AI generation are disabled. The
   non-historical implementations under `archive/` are not loaded at startup.
+- Battle-related timeline notes are classified separately from battle phases.
+  Castle falls without supported deployments remain timeline entries and historic sites.
 - Modern comparison terrain, estimates derived from sources and confirmed
   historical facts are kept apart. Unsupported text is not shown in the game.
 - The historical database retains personal authority IDs and sourced aliases.
