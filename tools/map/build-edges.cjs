@@ -14,7 +14,7 @@ function decode(file){const buf=fs.readFileSync(file);let i=8,w=0,h=0;const part
  for(let y=0;y<h;y++){const ft=raw[y*(stride+1)],src=y*(stride+1)+1,o=y*stride;for(let i=0;i<stride;i++){const x=raw[src+i],a=i>=bpp?img[o+i-bpp]:0,b=y?img[o-stride+i]:0,c=y&&i>=bpp?img[o-stride+i-bpp]:0;let v;
   if(ft===0)v=x;else if(ft===1)v=x+a;else if(ft===2)v=x+b;else if(ft===3)v=x+((a+b)>>1);else if(ft===4){const p=a+b-c,pa=Math.abs(p-a),pb=Math.abs(p-b),pc=Math.abs(p-c);v=x+(pa<=pb&&pa<=pc?a:pb<=pc?b:c);}else throw Error('PNG filter '+ft+': '+file);img[o+i]=v&255;}}
  for(let k=0;k<w*h;k++){const v=byColor.get(img[k*3]<<16|img[k*3+1]<<8|img[k*3+2]);if(v===undefined)throw Error('unknown colour '+file);ids[k]=v;}return {w,h,ids};}
-const kindOf=(a,b)=>{const ka=defs[a]?.kind,kb=defs[b]?.kind;/* 郡の線では a・b が国の番号なので定義に無い */if(ka==='sea'||kb==='sea')return 'coast';if(ka==='lake'||kb==='lake')return 'lake';return 'region';};
+const kindOf=(a,b)=>{const ka=defs[a]?.kind,kb=defs[b]?.kind;/* 郡の線では a・b が国の番号なので定義に無い */if(['sea','lake'].includes(ka)&&['sea','lake'].includes(kb))return null;if(ka==='sea'||kb==='sea')return 'coast';if(ka==='lake'||kb==='lake')return 'lake';return 'region';};
 function simplify(pts,tol){if(pts.length<=4)return pts;const n=pts.length/2,keep=new Uint8Array(n);keep[0]=keep[n-1]=1;const st=[[0,n-1]];
  while(st.length){const [a,b]=st.pop();const ax=pts[a*2],ay=pts[a*2+1],bx=pts[b*2],by=pts[b*2+1],dx=bx-ax,dy=by-ay,L=dx*dx+dy*dy;let best=-1,bi=-1;
   for(let i=a+1;i<b;i++){const px=pts[i*2]-ax,py=pts[i*2+1]-ay,t=L?Math.max(0,Math.min(1,(px*dx+py*dy)/L)):0,d=Math.hypot(px-t*dx,py-t*dy);if(d>best){best=d;bi=i;}}
@@ -43,7 +43,7 @@ function edgesOfTile(L,get,c,r,none=SEA){// none：タイルの外・地図の�
    for(const [p,l] of adj)if(l.length===1&&!used[l[0]])lines.push(walk(p));
    for(let i=0;i<n;i++)if(!used[i])lines.push(walk(key(s[i*4],s[i*4+1])));
    const geo=lines.filter(p=>p.length>=4).map(p=>{const q=simplify(p,L.tol);const o=[];for(let j=0;j<q.length;j+=2)o.push(+(X0+(c*T+q[j])*step).toFixed(2),+(Y0+(r*T+q[j+1])*step).toFixed(2));return o;});
-   if(geo.length)items.push({a,b,kind:kindOf(a,b),lines:geo});}
+   const kind=none===SEA?kindOf(a,b):'region';if(geo.length&&kind)items.push({a,b,kind,lines:geo});}
   return items;}
 const sha=b=>crypto.createHash('sha256').update(b).digest('hex');
 index.versions=[];
