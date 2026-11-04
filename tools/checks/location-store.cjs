@@ -14,7 +14,7 @@ assert.equal(queryLocations(data,{place:'place:fushimi',fromYear:1601}).matches.
 assert.throws(()=>queryLocations(data,{fromYear:1601,toYear:1600}));
 reject(d=>{d.people[0].authorityIds=['wikidata:Q0'];});
 reject(d=>{const [owner,other]=d.people.filter(p=>p.authorityIds?.length);other.authorityIds=[...owner.authorityIds];});
-const registeredUnknown=queryLocations(data,{person:'織田信長',year:1560});
+const registeredUnknown=queryLocations(data,{person:'織田信長',year:1561});
 assert.deepEqual(registeredUnknown.matchedPeople,[{id:'person:oda-nobunaga',name:'織田信長'}]);
 assert.equal(registeredUnknown.answerable,false);
 assert.deepEqual(queryLocations(data,{person:'__unregistered_person__'}).matchedPeople,[]);
