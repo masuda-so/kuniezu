@@ -110,6 +110,37 @@ def main():
          '場所の経緯度が不正'),
         ('wrong_geometry_type', lambda d: d['places'][0]['geometry'].update(type='LineString'),
          '場所の代表点形式が不正'),
+        ('year_claim_date_override', lambda d: d['claims'][0]['eventTime'].update(date=[1700, 12, 31]),
+         '出来事の年代・対象参照が不正'),
+        ('component_date_override', lambda d: d['claims'][0].update(eventTime={
+            'kind': 'dated-components', 'calendar': 'CE-year', 'precision': 'year', 'components': [
+                {'year': 1600, 'date': [1700, 12, 31], 'entities': ['place:a']}]}),
+         '出来事の年代・対象参照が不正'),
+        ('component_calendar_override', lambda d: d['claims'][0].update(eventTime={
+            'kind': 'dated-components', 'calendar': 'CE-year', 'precision': 'year', 'components': [
+                {'year': 1600, 'calendar': 'invented-calendar', 'entities': ['place:a']}]}),
+         '出来事の年代・対象参照が不正'),
+        ('component_precision_override', lambda d: d['claims'][0].update(eventTime={
+            'kind': 'dated-components', 'calendar': 'CE-year', 'precision': 'year', 'components': [
+                {'year': 1600, 'precision': 'minute', 'entities': ['place:a']}]}),
+         '出来事の年代・対象参照が不正'),
+        ('component_estimated_override', lambda d: d['claims'][0].update(eventTime={
+            'kind': 'dated-components', 'calendar': 'CE-year', 'precision': 'year', 'components': [
+                {'year': 1600, 'estimated': True, 'entities': ['place:a']}]}),
+         '出来事の年代・対象参照が不正'),
+        ('claim_entity_override', lambda d: d['claims'][0]['eventTime'].update(entities=['place:missing']),
+         '出来事の年代・対象参照が不正'),
+        ('location_year_date_override', lambda d: d['location-observations'][0].update(time={
+            'kind': 'year-window', 'year': 1600, 'date': [1700, 12, 31],
+            'calendar': 'CE-year', 'precision': 'year'}),
+         '年代形式と矛盾する時間欄'),
+        ('location_interval_year_override', lambda d: d['location-observations'][0].update(time={
+            'kind': 'year-interval', 'from': 1589, 'untilExclusive': 1600, 'year': 1700,
+            'calendar': 'CE-year', 'precision': 'year'}),
+         '年代形式と矛盾する時間欄'),
+        ('location_day_component_override', lambda d: d['location-observations'][0]['time'].update(
+            components=[{'year': 1700, 'entities': ['place:a']}]),
+         '年代形式と矛盾する時間欄'),
     ]
     rejections = []
     for name, mutate, message in invalid:
@@ -175,7 +206,7 @@ def main():
     if args.report:
         args.report.parent.mkdir(parents=True, exist_ok=True)
         args.report.write_text(json.dumps(report, ensure_ascii=False, indent=2) + '\n')
-    print('PASS: actual SQLite compiler rejects 7 invalid inputs; 5 cube cases preserve place, calendar and period semantics')
+    print(f'PASS: actual SQLite compiler rejects {len(rejections)} invalid inputs; {len(cases)} cube cases preserve place, calendar and period semantics')
 
 
 if __name__ == '__main__':

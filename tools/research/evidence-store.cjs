@@ -1,8 +1,11 @@
 /* 審査済み命題は独立ファイルで保持。出力の再生成で別担当の入力を消さない。 */
 const fs=require('node:fs'),path=require('node:path');
+const {validateTemporalFields}=require('./location-store.cjs');
 function validateEventTime(r){
  if(r.eventTime===undefined)return;
  const t=r.eventTime,fail=()=>{throw Error('出来事の年代・対象参照が不正: '+r.id);};
+ const allowed={'year-window':['year'],'dated-event':['date','leapMonth'],'dated-components':['components'],'described-period':['label','indexYears','boundsAreHistoricalStartEnd']};
+ validateTemporalFields(t,['kind','calendar','precision',...(allowed[t?.kind]||[])],fail);
  const year=y=>Number.isInteger(y)&&r.validYears[0]<=y&&y<=r.validYears[1];
  if(!Array.isArray(r.linkedEntities)||!r.linkedEntities.length||!r.eventRelation||!r.eventScope)fail();
  if(r.linkedEntities.some(id=>typeof id!=='string'||!/^(place|person):.+/.test(id))||new Set(r.linkedEntities).size!==r.linkedEntities.length)fail();
@@ -13,7 +16,10 @@ function validateEventTime(r){
   if(t.calendar!=='Japanese-lunisolar'||t.precision!=='day'||typeof t.leapMonth!=='boolean'||!Array.isArray(d)||d.length!==3||!d.every(Number.isInteger)||!year(d[0])||d[1]<1||d[1]>12||d[2]<1||d[2]>30)fail();
  }else if(t.kind==='dated-components'){
   if(t.calendar!=='CE-year'||t.precision!=='year'||!Array.isArray(t.components)||!t.components.length)fail();
-  for(const c of t.components)if(!year(c.year)||!Array.isArray(c.entities)||!c.entities.length||c.entities.some(id=>!r.linkedEntities.includes(id)))fail();
+  for(const c of t.components){
+   validateTemporalFields(c,['year','entities'],fail);
+   if(!year(c.year)||!Array.isArray(c.entities)||!c.entities.length||c.entities.some(id=>!r.linkedEntities.includes(id)))fail();
+  }
  }else if(t.kind==='described-period'){
   if(!t.label||t.precision!=='period'||t.calendar!=='Japanese-era-description'||t.boundsAreHistoricalStartEnd!==false||!Array.isArray(t.indexYears)||t.indexYears.length!==2||t.indexYears.some((y,i)=>y!==r.validYears[i]))fail();
  }else fail();
