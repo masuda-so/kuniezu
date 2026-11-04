@@ -14,6 +14,6 @@ try{
  }
  const root=path.resolve(__dirname,'../../data/research'),read=name=>fs.readFileSync(path.join(root,name+'.jsonl'),'utf8').trim().split('\n').filter(Boolean).map(JSON.parse);
  const index=createHistoryIndex({claims:read('claims'),locations:read('location-observations'),people:read('people'),places:read('places')});
- const matches=queryHistory(index,opts).map(r=>({...r,entityNames:r.entities.map(id=>index.labels.get(id)||id),interpretation:r.scope==='claim-applicability'?'命題の適用年代。指定年に発生した事件とは限らない。':r.scope==='attested-interval'?'記録に基づく関係の期間。毎日の現地滞在は保証しない。':'その年の記録。原記録の暦・精度を参照。'}));
+ const matches=queryHistory(index,opts).map(r=>({...r,entityNames:r.entities.map(id=>index.labels.get(id)||id),interpretation:r.scope==='described-period-candidate'?'記述年代の検索用範囲と重なる候補。歴史上の開始・終了年や、この年の存続を確定しない。':r.scope==='claim-applicability'?'命題の適用年代。指定年に発生した事件とは限らない。':r.scope==='attested-interval'?'記録に基づく関係の期間。毎日の現地滞在は保証しない。':'その年の記録。原記録の暦・精度を参照。'}));
  console.log(JSON.stringify({query:opts,index:indexSummary(index),matches,scope:'確認済み命題と所在観測の参照。年精度を特定日に変換せず、未記録の年は補完しない。'},null,2));
 }catch(e){console.error(e.message);process.exitCode=1;}
