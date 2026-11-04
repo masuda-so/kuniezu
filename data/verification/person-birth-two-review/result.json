@@ -1,0 +1,79 @@
+{
+  "pass": true,
+  "baseHead": "f23056f926bff3008b4e813ec431b2ac9e8d991f",
+  "checks": [
+    "5 changed JS modules compile; shared base content unchanged",
+    "only Ikeda 2 birth year tokens changed; inheritance and all dates, stats, places unchanged",
+    "Ikeda all 3 inputs use CE1565; Shiba raw inputs retained without historical adoption",
+    "real ageLabel and KB builder show unknown Shiba birth and year-only Ikeda1565",
+    "both dictionary lunar date variants independently run through current TK.lunarDate and produce CE1565",
+    "8 references have locators; year precision and no exact birth-date adoption recorded"
+  ],
+  "years": {
+    "池田輝政": [
+      {
+        "file": "game/data.js",
+        "year": 1565
+      },
+      {
+        "file": "game/hist.js",
+        "year": 1565
+      },
+      {
+        "file": "game/historical-families.js",
+        "year": 1565
+      }
+    ],
+    "斯波詮直": [
+      {
+        "file": "game/data.js",
+        "year": 1546
+      },
+      {
+        "file": "game/hist.js",
+        "year": 1546
+      },
+      {
+        "file": "game/hist.js",
+        "year": 1560
+      }
+    ]
+  },
+  "calendarConversion": {
+    "monthDays": 30,
+    "calendar": "Julian before 1582-10-15",
+    "conversions": [
+      {
+        "lunar": [
+          1564,
+          11,
+          30
+        ],
+        "western": [
+          1565,
+          1,
+          2
+        ]
+      },
+      {
+        "lunar": [
+          1564,
+          12,
+          29
+        ],
+        "western": [
+          1565,
+          1,
+          31
+        ]
+      }
+    ],
+    "exactBirthDateAdopted": false
+  },
+  "browserRun": false,
+  "fullPeriodSimulationRun": false,
+  "serverChanged": false,
+  "sharedChanged": false,
+  "existingSaveFilesChanged": false,
+  "checkScriptSha256": "26f81521a710f6332d92b0f60deb4ee1af8176e945d1e16f8d66d081635b43b0"
+}

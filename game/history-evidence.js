@@ -20,6 +20,6 @@ TK.HIST.sort((a,b)=>(a.d[0]-b.d[0])*400+(a.d[1]-b.d[1])*32+(a.d[2]-b.d[2]));
 // 同梱の暦表に対応する内部の西暦日付へ修正（旧実装は十二月二十日になっていた）。
 {const e=TK.HIST.find(e=>e.title==='大坂冬の陣の和睦');if(e){e.d=[1615,1,18];e.text='旧暦十二月十九日、講和交渉が妥結した。停戦命令や誓書交換、堀の埋め立ては続く過程であり、同日の出来事として一括しない。';e.source='https://www.archives.go.jp/exhibition/digital/ieyasu/contents5_04/';e.evidenceStatus='official_summary';e.lunarDate=[1614,12,19];}}
 TK.HIST.sort((a,b)=>(a.d[0]-b.d[0])*400+(a.d[1]-b.d[1])*32+(a.d[2]-b.d[2]));
-// 数値の食い違いは史料で確定するまで正しい年齢として表示しない。
-TK.PERSON_UNCERTAINTY={'斯波詮直':{field:'birthYear',variants:[1546,1560],note:'シナリオ・登場イベント間で生年が一致しない。史料照合が済むまで年齢表示を保留する。'}};
-G.ageLabel=g=>TK.PERSON_UNCERTAINTY[g.n]?'年齢確認中':G.age(g)+'歳';
+// 確認した公的資料に生年がない人物は、既存ゲーム値を史料上の異説や確定年齢として表示しない。
+TK.PERSON_UNCERTAINTY={'斯波詮直':{field:'birthYear',status:'unconfirmed',legacyInputYears:[1546,1560],label:'生年不詳',note:'紫波町の高水寺城跡・片寄城跡・斯波御所（その二）には出生年の記載がない。1546/1560は既存ゲーム値であり、史料上の異説とはしない。',review:'data/research/source-notes/person-birth-two-review.json',checked:'2026-11-03'}};
+G.ageLabel=g=>TK.PERSON_UNCERTAINTY[g.n]?.label||G.age(g)+'歳';

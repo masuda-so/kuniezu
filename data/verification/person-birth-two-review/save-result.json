@@ -1,0 +1,93 @@
+{
+  "pass": true,
+  "baseHead": "f23056f926bff3008b4e813ec431b2ac9e8d991f",
+  "snapshot": {
+    "path": "/tmp/kuniezu-s1600-state-b303.json",
+    "sha256": "e5e913bbd75b63c712ef794114310b12aa9d9c75597afd466e5bd3107edb0298",
+    "subjects": 189,
+    "t": 5485,
+    "player": "tokugawa"
+  },
+  "onlyDelta": {
+    "person": "池田輝政",
+    "id": 108,
+    "field": "born",
+    "before": 1564,
+    "after": 1565
+  },
+  "ageAfter": 35,
+  "otherPeopleUnchanged": 188,
+  "allOtherFieldsEqual": true,
+  "resaveReloadStable": true,
+  "reconciliationIdempotent": true,
+  "eventsUnchangedExceptBirthToken": true,
+  "inheritanceEventUnchanged": true,
+  "guards": [
+    {
+      "kind": "explicit-birth",
+      "born": 1565,
+      "preserved": true
+    },
+    {
+      "kind": "explicit-birth",
+      "born": 1566,
+      "preserved": true
+    },
+    {
+      "kind": "explicit-birth",
+      "born": 1546,
+      "preserved": true
+    },
+    {
+      "kind": "explicit-birth",
+      "born": "1564",
+      "preserved": true
+    },
+    {
+      "kind": "explicit-birth",
+      "born": null,
+      "preserved": true
+    },
+    {
+      "kind": "divergence",
+      "field": "div",
+      "preserved": true
+    },
+    {
+      "kind": "divergence",
+      "field": "arcs",
+      "preserved": true
+    },
+    {
+      "kind": "divergence",
+      "field": "altQ",
+      "preserved": true
+    },
+    {
+      "kind": "divergence",
+      "field": "branches",
+      "preserved": true
+    },
+    {
+      "kind": "nonhistorical-mode",
+      "preserved": true
+    },
+    {
+      "kind": "canonical-alias-contract",
+      "corrected": true,
+      "note": "fixture only; no unsupported runtime alias added"
+    },
+    {
+      "kind": "unregistered-name",
+      "preserved": true
+    }
+  ],
+  "lateResidenceAndMarchCodeUnchanged": true,
+  "birthEvidenceShownInKnowledgeEntry": true,
+  "newGameCalls": 0,
+  "browserUsed": false,
+  "simulationDays": 0,
+  "sharedFilesWritten": false,
+  "serverOperations": false,
+  "checkScriptSha256": "4b77867423565262d8b5ba10e1e12efe6faca4d646a0d974b251cd0d0f1d3ae4"
+}
