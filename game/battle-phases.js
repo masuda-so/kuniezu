@@ -19,7 +19,10 @@
  G.battleUnitVisible=(sc,u,t)=>{const {from,until}=G.battleUnitWindow(sc,u);return t>=from&&t<until;};
  G.battleActiveUnits=(sc,t)=>{const b=(sc.beats||[]).filter(b=>b[0]<=t).at(-1);return b?.[2]||[];};
  const build=G.buildBattleCatalog;G.buildBattleCatalog=function(){build();for(const sc of Object.values(TK.BATTLES)){sc.researchBeats=sc.researchBeats||sc.beats.map(b=>b.slice());sc.beats=sc.beats.map(b=>[b[0],(b[1]||'').split('。').filter(s=>s&&!/表示|復元|比較|未確認|未確定|未詳|未考証|未照合|区別|混同|断定|確定|個別|として.*置|参照図/.test(s)).join('。')+(b[1]?'。':''),...b.slice(2)]);sc.calendar=(sc.calendar||[]).map(([t,s])=>[t,/比較|未復元/.test(s)?t>=100?'経過の終わり':'布陣':s]);}
-  const s=TK.BATTLES['関ヶ原の戦い'];if(s){for(const u of s.units){const m=TK.BATTLE_MOVEMENTS[s.title]?.find(m=>m.name===(u.g||u.n));if(u.turn&&m)u.turn[0]=m.from;}s.sources=[...new Set([...(s.sources||[]),'ieyasuJinba'])];s.beats=[[0,'東西の軍勢が関ヶ原に布陣する。'],[15,'東軍の先鋒と宇喜多勢が交戦する。',['fukushima','ukita']],[30,'石田・宇喜多・小西・大谷の諸隊が東軍を迎え撃つ。',['kuroda','mitsunari']],[40,'家康は桃配山から陣場野へ本陣を進める。',['ieyasu']],[55,'小早川秀秋が東軍に加担し、大谷勢へ攻めかかる。',['kobayakawa','otani']],[61,'脇坂・朽木・赤座・小川の四将も東軍側へ転じる。',['wakisaka','otani']],[78,'西軍が崩れ、大谷吉継が戦死。三成らは戦場を離れる。'],[88,'島津勢が敵中を突破し、伊勢街道へ退却する。',['shimazu','ii']],[100,'東軍の勝利に終わる。']];}
+  const s=TK.BATTLES['関ヶ原の戦い'];if(s){
+   // 本戦で動かなかった南宮山・栗原山方面の5隊。既知の経路・寝返り・退却は優先する。
+   s.motionFallbacks=Object.fromEntries(['mori','kikkawa','ankokuji','chosokabe','roster-長束正家'].map(id=>[id,{mode:'hold',source:'sekigaharaGuide'}]));
+   for(const u of s.units){const m=TK.BATTLE_MOVEMENTS[s.title]?.find(m=>m.name===(u.g||u.n));if(u.turn&&m)u.turn[0]=m.from;}s.sources=[...new Set([...(s.sources||[]),'ieyasuJinba'])];s.beats=[[0,'東西の軍勢が関ヶ原に布陣する。'],[15,'東軍の先鋒と宇喜多勢が交戦する。',['fukushima','ukita']],[30,'石田・宇喜多・小西・大谷の諸隊が東軍を迎え撃つ。',['kuroda','mitsunari']],[40,'家康は桃配山から陣場野へ本陣を進める。',['ieyasu']],[55,'小早川秀秋が東軍に加担し、大谷勢へ攻めかかる。',['kobayakawa','otani']],[61,'脇坂・朽木・赤座・小川の四将も東軍側へ転じる。',['wakisaka','otani']],[78,'西軍が崩れ、大谷吉継が戦死。三成らは戦場を離れる。'],[88,'島津勢が敵中を突破し、伊勢街道へ退却する。',['shimazu','ii']],[100,'東軍の勝利に終わる。']];}
  };
  // 開戦前の布陣プレビュー。地図の点には位置の記録がある群だけを置く（不詳の持場を座標として作らない）。
 // 位置の記録がない側は G.deploymentUnlocated で返し、画面では合戦地に添えた札（陣営別の欄）に名前を並べる。
