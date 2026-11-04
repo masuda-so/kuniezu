@@ -17,17 +17,23 @@ window.TKBattleAtlas=(function(){
   if(sc.atlasSchematic)cv.setAttribute('aria-label',sc.title+'の攻撃順序を示す模式図');
   // 位置の記録がない隊は、推定の配置（TKBattleMotion）が置けるときだけ別枠で描く。groups（記録の群）には混ぜない。
   const recordedIds=new Set(groups.filter(g=>g.point).flatMap(g=>g.members)),estGroups=sc.atlasPlan?[]:sc.units.filter(u=>!recordedIds.has(u.id)).map(u=>({id:'est-'+u.id,label:u.g||u.n,members:[u.id],side:u.side,point:null,estimated:true}));
-  let motion=null,motionKey='';
-  function motionPlan(){const key=W+'|'+H+'|'+VS+'|'+VX+'|'+VY;if(motion&&motionKey===key)return motion;motionKey=key;const base=new Map();for(const g of groups)if(g.point)base.set(g.members[0],pj(...g.point));const sourced=new Set(sc.units.filter(u=>moveByName.has(u.g||u.n)).map(u=>u.id));motion=window.TKBattleMotion&&!sc.atlasPlan?TKBattleMotion.plan(sc,base,W,H,opponentHome,sourced):{pos:()=>null,estimated:new Set(),placed:new Set(),basis:'none'};return motion;}
-  const estAt=(g,tt)=>{const m=motionPlan();return m.pos(g.members[0],tt);};
+  // 推定経路は一定の基準平面で一度だけ計算し、表示幅・地区拡大は投影だけを変える。
+  const motionW=1000,motionH=700;
+  const motionProject=(lo,la)=>[(lo-meta.bounds[0])/(meta.bounds[2]-meta.bounds[0])*motionW,(meta.bounds[1]-la)/(meta.bounds[1]-meta.bounds[3])*motionH];
+  let motion=null;
+  function motionPlan(){if(motion)return motion;const base=new Map();for(const g of groups)if(g.point)base.set(g.members[0],motionProject(...g.point));const sourced=new Set(sc.units.filter(u=>moveByName.has(u.g||u.n)).map(u=>u.id));motion=window.TKBattleMotion&&!sc.atlasPlan?TKBattleMotion.plan(sc,base,motionW,motionH,side=>{const p=opponentHomePoint(side);return p&&motionProject(...p);},sourced):{pos:()=>null,estimated:new Set(),placed:new Set(),basis:'none'};return motion;}
+  const estAt=(g,tt)=>{const p=motionPlan().pos(g.members[0],tt);return p?[p[0]/motionW*W*VS-VX,p[1]/motionH*H*VS-VY]:null;};
   // 表示範囲（全体か、選んだ地区の拡大）。VS は倍率、VX・VY は拡大後の左上のずれ（画面の画素）。
   let VS=1,VX=0,VY=0,viewIndex=0,views=[];
   const pj=(lo,la)=>[(lo-meta.bounds[0])/(meta.bounds[2]-meta.bounds[0])*W*VS-VX,(meta.bounds[1]-la)/(meta.bounds[1]-meta.bounds[3])*H*VS-VY];
+  const unproject=p=>[meta.bounds[0]+(p[0]+VX)/(W*VS)*(meta.bounds[2]-meta.bounds[0]),meta.bounds[1]-(p[1]+VY)/(H*VS)*(meta.bounds[1]-meta.bounds[3])];
   const wp=(x,y)=>pj(TKGEO.LON0+x/TKGEO.K/TKGEO.CX,TKGEO.LAT0-y/TKGEO.K);
   const inside=(x,y)=>x>=0&&x<=W&&y>=0&&y<=H;
   const onView=(b,proj)=>{const p=proj(b[0],b[1]),q=proj(b[2],b[3]);return Math.max(p[0],q[0])>-60&&Math.min(p[0],q[0])<W+60&&Math.max(p[1],q[1])>-60&&Math.min(p[1],q[1])<H+60;};
   function text(c,txt,x,y,size=12,color='#254532',align='center'){
-   c.font=`600 ${size}px ${FONT}`;c.textAlign=align;c.textBaseline='middle';c.lineJoin='round';c.lineWidth=3;c.strokeStyle='rgba(251,250,233,.96)';c.strokeText(txt,x,y);c.fillStyle=color;c.fillText(txt,x,y);
+   c.font=`600 ${size}px ${FONT}`;const width=Math.min(c.measureText(txt).width,W-8),left=align==='left'?0:align==='right'?width:width/2,right=width-left;
+   x=clamp(x,4+left,W-4-right);y=clamp(y,4+size/2,H-4-size/2);
+   c.textAlign=align;c.textBaseline='middle';c.lineJoin='round';c.lineWidth=3;c.strokeStyle='rgba(251,250,233,.96)';c.strokeText(txt,x,y,width);c.fillStyle=color;c.fillText(txt,x,y,width);
   }
   function path(c,pts,world=false,close=false){c.beginPath();for(let i=0;i<pts.length;i++){const p=world?wp(...pts[i]):[pts[i][0]*W,pts[i][1]*H];i?c.lineTo(...p):c.moveTo(...p);}if(close)c.closePath();}
   const riverPath=(c,pts)=>TK.riverPath(c,pts);
@@ -78,7 +84,7 @@ window.TKBattleAtlas=(function(){
     if(f.k==='dryMoat'){c.strokeStyle='#768864';c.lineWidth=4;c.stroke();c.strokeStyle='#edf0d7';c.lineWidth=1.4;c.stroke();}
     if(f.k==='road'){c.strokeStyle='#897b61';c.lineWidth=1.2;c.stroke();}
    }for(const f of sc.feats||[])if(f.n&&f.x!=null&&!['caption','keep'].includes(f.k))text(c,f.n,f.x*W,f.y*H,W>650?12:10);}
-   else {const seen=[];for(const p of meta.points||[]){const [x,y]=pj(p.lon,p.lat);if(seen.some(q=>Math.hypot(q[0]-x,q[1]-y)<40))continue;seen.push([x,y]);c.fillStyle='#435940';c.fillRect(x-3,y-3,6,6);text(c,p.name,x,y+12,W>650?11:9);}
+   else {const seen=[];for(const p of meta.points||[]){const [x,y]=pj(p.lon,p.lat);if(!inside(x,y)||seen.some(q=>Math.hypot(q[0]-x,q[1]-y)<40))continue;seen.push([x,y]);c.fillStyle='#435940';c.fillRect(x-3,y-3,6,6);text(c,p.name,x,y+12,W>650?11:9);}
     if(!meta.points.length&&!units.length){const [x,y]=pj(meta.geo[0],meta.geo[1]);text(c,meta.label,x,y-10,W>650?13:11);text(c,'地域の位置・戦場の境界ではありません',x,y+12,10,'#617057');}
    }
    if(!sc.atlasPlan)for(const l of sc.atlasLandmarks||[]){const [x,y]=pj(...l.point);if(inside(x,y))text(c,l.name,clamp(x,35,W-35),clamp(y-53,14,H-14),W>650?14:11,'#536546');}
@@ -89,12 +95,14 @@ window.TKBattleAtlas=(function(){
   const mapped=g=>!!(g.point||sc.atlasSchematic?.paths?.[g.members[0]]);
   const pinFor=g=>{if(sc.atlasSchematic?.paths?.[g.members[0]])return schematicAt(g,t);if(g.estimated)return estAt(g,t);if(!g.point)return null;if(sc.atlasPlan)return [W*.56,H*.48];const u=unitById.get(g.members[0]);if(u&&!moveByName.has(u.g||u.n)){const e=estAt(g,t);if(e)return e;}const p=G.battlePhasePoint(sc,u?.g||u?.n,t,g.point);return pj(...p);};
   const isEst=g=>g.estimated||motionPlan().estimated.has(g.members[0]);
+  const selectionGroup=id=>groups.find(g=>g.id===id)||estGroups.find(g=>g.id===id)||groups.find(g=>g.members.includes(id))||estGroups.find(g=>g.members.includes(id));
   function selectionPanel(ids){const el=cv.closest('.battle-stage')?.querySelector('.atlas-selection');if(!el)return;el.replaceChildren();el.hidden=!ids.length;if(!ids.length)return;
    const head=document.createElement('strong');head.textContent=ids.length>1?'表示位置が重なる部隊（'+ids.length+'隊）':'部隊の記録';el.append(head);
-   for(const id of ids){const g=groups.find(g=>g.id===id||g.members.includes(id));if(!g)continue;const u=unitById.get(g.members[0]);if(!u)continue;const button=document.createElement('button');button.type='button';button.className='atlas-unit-choice';button.dataset.unitId=u.id;const face=opt.face?.(u.g,14,COL[g.side]);if(face){const im=document.createElement('img');im.src=face.toDataURL();im.width=28;im.height=28;im.alt='';button.append(im);}const name=document.createElement('span');name.textContent=u.g||u.n;button.append(name);button.onclick=()=>{selected=g.id;frameDraw();};el.append(button);}
+   for(const id of ids){const g=selectionGroup(id);if(!g)continue;const u=unitById.get(g.members[0]);if(!u)continue;const button=document.createElement('button');button.type='button';button.className='atlas-unit-choice';button.dataset.unitId=u.id;const face=opt.face?.(u.g,14,COL[sideOf(u)]);if(face){const im=document.createElement('img');im.src=face.toDataURL();im.width=28;im.height=28;im.alt='';button.append(im);}const name=document.createElement('span');name.textContent=u.g||u.n;button.append(name);button.onclick=()=>{selected=g.id;frameDraw();};el.append(button);}
    const close=document.createElement('button');close.type='button';close.textContent='閉じる';close.className='mini';close.onclick=()=>{selected=null;el.hidden=true;frameDraw();};el.append(close);
   }
-  const homeCache={};function opponentHome(side){if(side in homeCache)return homeCache[side];const st=G.S?.(),clan=sc.sides?.[side]?.clan,cap=st?.clans?.[clan]?.cap,C=cap&&G.C[cap];let p=null;if(C){const lo=TKGEO.LON0+C.x/TKGEO.K/TKGEO.CX,la=TKGEO.LAT0-C.y/TKGEO.K;p=pj(lo,la);}return homeCache[side]=p;}
+  const homeCache={};function opponentHomePoint(side){if(side in homeCache)return homeCache[side];const st=G.S?.(),clan=sc.sides?.[side]?.clan,cap=st?.clans?.[clan]?.cap,C=cap&&G.C[cap];return homeCache[side]=C?[TKGEO.LON0+C.x/TKGEO.K/TKGEO.CX,TKGEO.LAT0-C.y/TKGEO.K]:null;}
+  const opponentHome=side=>{const p=opponentHomePoint(side);return p&&pj(...p);};
   // 参陣前・退去後の将を同じ陣地に残さない。
   const visibleFrom=u=>G.battleUnitWindow(sc,u).from;
   const visible=u=>G.battleUnitVisible(sc,u,t);
@@ -102,18 +110,12 @@ window.TKBattleAtlas=(function(){
   const isDead=u=>u.die!=null&&t>=u.die,isRouted=u=>u.rout!=null&&t>u.rout;
   // 段階移動の通過点。典拠点を結んだ線のうち、現在位置までを返す。
   function traversed(move,P){const line=G.battlePhaseGeometry(move).map(p=>wp(...p)),f=clamp((t-move.from)/(move.to-move.from),0,1);let total=0;const cum=[0];for(let i=1;i<line.length;i++){total+=Math.hypot(line[i][0]-line[i-1][0],line[i][1]-line[i-1][1]);cum.push(total);}const d=f*total,out=[line[0]];for(let i=1;i<line.length&&cum[i]<=d;i++)out.push(line[i]);out.push(P);return out;}
-  function groupDraw(dt,now,playing){const mp=motionPlan(),located=[...groups.filter(mapped),...estGroups.filter(g=>mp.placed.has(g.members[0]))].filter(g=>visible(unitById.get(g.members[0])||{})),pins=located.map(pinFor),named=[],badged=new Set();
+  const locatedGroups=()=>[...groups.filter(mapped),...estGroups.filter(g=>motionPlan().placed.has(g.members[0]))].filter(g=>visible(unitById.get(g.members[0])||{}));
+  function groupDraw(dt,now,playing){const located=locatedGroups(),pins=located.map(pinFor),named=[],badged=new Set();
    groupOf.clear();located.forEach((g,i)=>groupOf.set(g.members[0],{g,pin:pins[i]}));
    const kb=clamp(W/760,.62,1.1),small=W<560;
-   // 同じ代表点に重なる隊は、陣営順に小さな輪へ振り分けて個別に見せる。実位置（pins）は変えず、輪の中心に点を打つ。
-   const disp=pins.map(p=>[p[0],p[1]]),stacked=new Set();{const byKey=new Map();located.forEach((g,i)=>{const key=Math.round(pins[i][0]/3)+','+Math.round(pins[i][1]/3);if(!byKey.has(key))byKey.set(key,[]);byKey.get(key).push(i);});
-    for(const idx of byKey.values()){if(idx.length<2)continue;idx.sort((a,b)=>sideOf(unitById.get(located[a].members[0])).localeCompare(sideOf(unitById.get(located[b].members[0])))||a-b);const r=small?7:9;idx.forEach((i,j)=>{const th=Math.PI*2*j/idx.length-Math.PI/2;disp[i]=[pins[i][0]+Math.cos(th)*r,pins[i][1]+Math.sin(th)*r];stacked.add(i);});}
-    // 近すぎる駒どうしを押し離す（最大24画素）。実位置（pins）は変えず、離れた駒には元の位置へ細い線を引く。
-    const md=small?24:30,maxShift=small?18:24;for(let it=0;it<6;it++)for(let i=0;i<disp.length;i++)for(let j=i+1;j<disp.length;j++){const dx=disp[j][0]-disp[i][0],dy=disp[j][1]-disp[i][1],d=Math.hypot(dx,dy);if(d>=md)continue;const ux=d>.01?dx/d:Math.cos(i+j),uy=d>.01?dy/d:Math.sin(i+j),push=(md-d)/2;
-     for(const [k,sg] of [[i,-1],[j,1]]){const nx=disp[k][0]+ux*push*sg,ny=disp[k][1]+uy*push*sg;if(Math.hypot(nx-pins[k][0],ny-pins[k][1])<=maxShift)disp[k]=[clamp(nx,14,W-14),clamp(ny,14,H-40)];}}
-    disp.forEach((p,i)=>{if(Math.hypot(p[0]-pins[i][0],p[1]-pins[i][1])>4)stacked.add(i);});}
-   // 推定配置の駒は重なり回避後も幟・顔まで画面内へ収める。史料の点は動かさない。
-   for(let i=0;i<disp.length;i++)if(located[i].estimated&&window.TKBattleMotion?.fitPlacement)disp[i]=TKBattleMotion.fitPlacement(disp[i],W,H);
+   // 駒は投影地点に固定する。同地点の隊も別の地理位置へ押し離さず、名札だけを分ける。
+   const disp=pins;
    // 交戦の組（beats の第3要素）。開城・撤退へ進んだら以前の交戦を止める。
    const stage=(sc.beats||[]).filter(b=>b[0]<=t).at(-1),beat=stage?.[2]?.length?stage:null,active=new Set(beat?beat[2]:[]),clashK=beat?Math.max(.35,1-(t-beat[0])/16):0;
    const livePin=id=>{const r=groupOf.get(id);if(!r)return null;const u=unitById.get(id);return u&&!isDead(u)?r.pin:null;};
@@ -123,7 +125,7 @@ window.TKBattleAtlas=(function(){
    // 段階移動の足跡は駒より下に描く。
    for(const [index,g]of located.entries()){const u=unitById.get(g.members[0]);const move=u&&moveByName.get(u.g||u.n);if(move&&t>move.from)fx.trail(ctx,traversed(move,pins[index]),COL[sideOf(u)]||COL.unknown,kb);else if(u&&isEst(g)&&t>0){const from=visibleFrom(u),pts=[];for(let k=0;k<=24;k++){const tt=from+(t-from)*k/24,p=estAt(g,tt);if(p)pts.push(p);}let len=0;for(let k=1;k<pts.length;k++)len+=Math.hypot(pts[k][0]-pts[k-1][0],pts[k][1]-pts[k-1][1]);if(len>6)fx.trail(ctx,pts,COL[sideOf(u)]||COL.unknown,kb,true);}}
    for(const [index,g]of located.entries()){const u=unitById.get(g.members[0]);if(!u)continue;const [x,y]=disp[index],[px0,py0]=pins[index],mySide=sideOf(u),near=located.filter((q,j)=>sideOf(unitById.get(q.members[0]))===mySide&&Math.hypot(pins[j][0]-px0,pins[j][1]-py0)<20),sel=selected===g.id||selected===g.parentId||g.members.includes(selected),side=sideOf(u),dead=isDead(u),routed=isRouted(u),col=dead?'#8a8174':u.turn&&t>=u.turn[0]?'#b47712':COL[side]||COL.unknown;
-    if(stacked.has(index)){ctx.save();ctx.strokeStyle='rgba(42,29,16,.5)';ctx.lineWidth=.9;ctx.beginPath();ctx.moveTo(px0,py0);ctx.lineTo(x,y);ctx.stroke();ctx.fillStyle='#2a1d10';ctx.beginPath();ctx.arc(px0,py0,1.6,0,Math.PI*2);ctx.fill();ctx.restore();}
+    if(!inside(x,y))continue;
     ctx.save();const from=visibleFrom(u);let alpha=from&&from<100?clamp((t-from)/2,0,1):1;if(dead)alpha*=clamp(1-(t-u.die)/10,.32,1);else if(routed)alpha*=clamp(1-(t-u.rout)/14,.45,1);ctx.globalAlpha=alpha;
     const move=moveByName.get(u.g||u.n),moving=move&&t>move.from&&t<move.to;let aim=null;
     if(move&&t>move.from){const f=G.battlePhasePoint(sc,u.g||u.n,Math.min(move.to,t+.05),g.point),p=G.battlePhasePoint(sc,u.g||u.n,Math.max(move.from,Math.min(move.to,t)-.05),g.point),A=pj(...p),B=pj(...f);if(Math.hypot(B[0]-A[0],B[1]-A[1])>1e-6)aim=[B[0]-A[0],B[1]-A[1]];}
@@ -135,12 +137,12 @@ window.TKBattleAtlas=(function(){
     const target=aim?Math.atan2(aim[1],aim[0])+Math.PI/2:undefined,ang=fx.heading(g.id,target,dt,!playing||lastSnap);
     const estMoving=est&&!isDead(u)&&(()=>{const a=estAt(g,Math.max(0,t-.5)),b=estAt(g,Math.min(100,t+.5));return a&&b&&Math.hypot(b[0]-a[0],b[1]-a[1])>.8;})();
     if((moving||estMoving)&&playing&&fx.rnd()<dt*10)fx.spawn(x,y,'dust');
-    ctx.save();ctx.translate(x,y);if(Number.isFinite(ang))ctx.rotate(ang);const cw=small?18:28,ch=small?13:19;TKCounter.path(ctx,cw,ch);ctx.fillStyle=col;ctx.fill();ctx.save();TKCounter.path(ctx,cw,ch);ctx.clip();const tint=ctx.createLinearGradient(0,-ch*.55,0,ch*.55);tint.addColorStop(0,'rgba(255,255,240,.20)');tint.addColorStop(.5,'rgba(255,255,240,0)');tint.addColorStop(1,'rgba(30,15,0,.14)');ctx.fillStyle=tint;ctx.fillRect(-cw,-ch,cw*2,ch*2);ctx.restore();TKCounter.path(ctx,cw,ch);ctx.strokeStyle=sel?'#e5ad3f':'#2a1d10';ctx.lineWidth=sel?2.6:active.has(u.id)?2.4:1.7;ctx.lineJoin='round';ctx.stroke();ctx.restore();
+    ctx.save();ctx.translate(x,y);if(Number.isFinite(ang))ctx.rotate(ang);const cw=small?18:28,ch=small?13:19;TKCounter.path(ctx,cw,ch);ctx.fillStyle=col;ctx.fill();ctx.save();TKCounter.path(ctx,cw,ch);ctx.clip();const tint=ctx.createLinearGradient(0,-ch*.55,0,ch*.55);tint.addColorStop(0,'rgba(255,255,240,.20)');tint.addColorStop(.5,'rgba(255,255,240,0)');tint.addColorStop(1,'rgba(30,15,0,.14)');ctx.fillStyle=tint;ctx.fillRect(-cw,-ch,cw*2,ch*2);ctx.restore();TKCounter.path(ctx,cw,ch);ctx.strokeStyle=sel?'#e5ad3f':'#2a1d10';ctx.lineWidth=sel?2.6:active.has(u.id)?2.4:1.7;ctx.lineJoin='round';ctx.setLineDash(g.estimated?[3,2]:[]);ctx.stroke();ctx.restore();
     // 鉄砲：記録の射撃区間（fire）か、鉄砲隊が交戦中の間、相手へ向けて発砲の閃光と煙を出す。射線は引かない。
     const firing=!dead&&!routed&&(u.fire?t>=u.fire[0]&&t<=u.fire[1]:u.arm==='teppo'&&active.has(u.id));
     if(firing){let tp=u.fireTarget?livePin(u.fireTarget):null;if(!tp){let best=Infinity;for(const [j,q] of located.entries()){const v=unitById.get(q.members[0]);if(sideOf(v)===side||isDead(v))continue;const d=Math.hypot(pins[j][0]-x,pins[j][1]-y);if(d>1&&d<best){best=d;tp=pins[j];}}}
      if(tp){const dir=Math.atan2(tp[1]-y,tp[0]-x),fxp=[x+Math.cos(dir)*16*kb,y+Math.sin(dir)*16*kb];if(playing&&fx.rnd()<dt*16){fx.spawn(fxp[0]+(fx.rnd()-.5)*12,fxp[1]+(fx.rnd()-.5)*12,'flash',dir);fx.spawn(fxp[0],fxp[1],'smoke',dir);}}}
-    const crestKey=G.armyCrestKey({clan:u.clan,gens:[],commanders:[u.g||u.n],until:sc.title}),crest=G.kamonImage(crestKey,11),family=crestKey&&TK.CLANS[crestKey]?G.CN(crestKey):u.clan&&TK.CLANS[u.clan]?G.CN(u.clan):'';const flagK=small?.55:1,flagX=inside(x,y)?clamp(x+(small?11:19),2,W-18*flagK):x+(small?11:19),flagY=inside(x,y)?Math.max(y,41*flagK+1):y;fx.flag(ctx,flagX,flagY,flagK,col,crest,now,playing&&!dead,family?family.replace(/家$/,'').slice(0,1):'');
+    const crestKey=G.armyCrestKey({clan:u.clan,gens:[],commanders:[u.g||u.n],until:sc.title}),crest=G.kamonImage(crestKey,11),family=crestKey&&TK.CLANS[crestKey]?G.CN(crestKey):u.clan&&TK.CLANS[u.clan]?G.CN(u.clan):'';const flagK=small?.55:1,flagX=clamp(x+(small?11:19),4,W-19*flagK-3),flagY=clamp(y,42*flagK+3,H-10*flagK-3);fx.flag(ctx,flagX,flagY,flagK,col,crest,now,playing&&!dead,family?family.replace(/家$/,'').slice(0,1):'');
     if(dead)fx.cross(ctx,x,y);
     const status=dead?'討死':routed?'退却':'';
     {
@@ -163,7 +165,7 @@ window.TKBattleAtlas=(function(){
       b=around.find(b=>!clash(b));
      }
      if(!b&&sel)b=box(cands[0]);
-     if(b){const faceSize=small?16:24,face=opt.face?.(u.g,faceSize/2,col);if(face)ctx.drawImage(face,x-(small?23:34),y-faceSize/2,faceSize,faceSize);
+     if(b){const faceSize=small?16:24,face=opt.face?.(u.g,faceSize/2,col);if(face)ctx.drawImage(face,clamp(x-(small?23:34),2,W-faceSize-2),clamp(y-faceSize/2,2,H-faceSize-2),faceSize,faceSize);
       const tx=clamp(x,b.x,b.x+w),ty=clamp(y,b.y,b.y+h),d=Math.hypot(tx-x,ty-y);
       if(d>12){ctx.beginPath();ctx.moveTo(x+(tx-x)*12/d,y+(ty-y)*12/d);ctx.lineTo(tx,ty);ctx.strokeStyle=col;ctx.lineWidth=.85;ctx.stroke();}
       boxes.push({...b,id:g.id,label:true});ctx.fillStyle='rgba(253,247,230,.94)';ctx.fillRect(b.x,b.y,w,h);ctx.strokeStyle='#2a1d10';ctx.lineWidth=.8;ctx.strokeRect(b.x+.5,b.y+.5,w-1,h-1);ctx.fillStyle=col;ctx.fillRect(b.x,b.y,3,h);ctx.font=`600 12px ${FONT}`;ctx.textAlign='left';ctx.textBaseline='middle';ctx.fillStyle=status?'#7a2218':'#302719';ctx.fillText(label,b.x+7,b.y+h/2+.5);named.push(b);}}
@@ -211,15 +213,15 @@ window.TKBattleAtlas=(function(){
   let controller=null;controller=TKBattlePresentation.record(cv,sc,{...opt,onProgress(v){t=v;opt.onProgress?.(v);wake();if(!controller?.playing){const key=Math.floor(t*20)+'|'+selected+'|'+sc.units.filter(u=>u.turn&&t>=u.turn[0]).map(u=>u.id).join(',');if(key!==lastKey){lastKey=key;frameDraw();}}}});
   const onClick=e=>{const r=cv.getBoundingClientRect(),x=e.clientX-r.left,y=e.clientY-r.top,hit=boxes.filter(b=>x>=b.x&&x<=b.x+b.w&&y>=b.y&&y<=b.y+b.h);if(hit.length){
    const label=hit.findLast(b=>b.label);selected=(label||hit[0]).id;
-   const g=groups.find(g=>g.id===selected);
+   const g=selectionGroup(selected);
    if(label)selectionPanel([selected]);
-   else if(g){const p=pinFor(g),ids=groups.filter(q=>mapped(q)&&visible(unitById.get(q.members[0])||{})&&Math.hypot(...pinFor(q).map((v,i)=>v-p[i]))<20).map(q=>q.id);selectionPanel(ids);}
+   else if(g){const p=pinFor(g),ids=locatedGroups().filter(q=>{const pin=pinFor(q);return p&&pin&&inside(...pin)&&Math.hypot(pin[0]-p[0],pin[1]-p[1])<20;}).map(q=>q.id);selectionPanel(ids);}
    frameDraw();
   }};
 
   cv.addEventListener('click',onClick);const ro=new ResizeObserver(size);size();ro.observe(cv.parentElement);
   if(!sc.atlasSchematic)load(meta).then(d=>{if(dead)return;data=d;backdrop();frameDraw();if(pendingPlay){pendingPlay=false;controller.play();}}).catch(()=>{if(dead)return;error='地形を読み込めません。ページを再読み込みしてください。';backdrop();frameDraw();});
-  return {...controller,play(){if(!data&&!sc.atlasPlan){pendingPlay=true;return;}controller.play();wake();},pause(){pendingPlay=false;controller.pause();},seek(v){controller.seek(v);fx.clear();lastSnap=true;frameDraw();},get playing(){return pendingPlay||controller.playing;},get t(){return controller.t;},get ended(){return controller.ended;},get speed(){return controller.speed;},select(id){const u=unitById.get(id);if(u){const {from,until}=G.battleUnitWindow(sc,u);if(!visible(u)){controller.seek(t<from?Math.min(from+2,(from+until)/2,100):Math.max(from,until-1));fx.clear();lastSnap=true;}}selected=id;selectionPanel([id]);frameDraw();},unitStates(){return groups.map(g=>{const u=unitById.get(g.members[0]),move=moveByName.get(u.g||u.n),side=sideOf(u),status=t>=G.battleUnitWindow(sc,u).until?(sc.mapExitLabels?.[u.id]||'退去'):t<(sc.mapVisibleFrom?.[u.id]||0)?'参陣前':t<(u.from||0)?'着陣前':u.die!=null&&t>=u.die?'討死':u.rout!=null&&t>u.rout?'退却':move&&t>move.from&&t<move.to?'移動中':G.battleActiveUnits(sc,t).includes(u.id)?'交戦':t>=100?'戦闘終了':sc.atlasSchematic?(u.side==='b'?'守備':u.id===sc.atlasSchematic.lead&&t>=sc.atlasSchematic.capturedAt?'攻略':'攻撃命令'):'布陣';return {id:u.id,side,status,visible:visible(u),point:g.point?G.battlePhasePoint(sc,u.g||u.n,t,g.point):null};});},destroy(){dead=true;cv.closest('.battle-stage')?.querySelector('.atlas-views')?.remove();if(fxRaf)cancelAnimationFrame(fxRaf);fxRaf=0;controller.destroy();ro.disconnect();cv.removeEventListener('click',onClick);}};
+  return {...controller,play(){if(!data&&!sc.atlasPlan){pendingPlay=true;return;}controller.play();wake();},pause(){pendingPlay=false;controller.pause();},seek(v){controller.seek(v);fx.clear();lastSnap=true;frameDraw();},get playing(){return pendingPlay||controller.playing;},get t(){return controller.t;},get ended(){return controller.ended;},get speed(){return controller.speed;},select(id){const u=unitById.get(id);if(u){const {from,until}=G.battleUnitWindow(sc,u);if(!visible(u)){controller.seek(t<from?Math.min(from+2,(from+until)/2,100):Math.max(from,until-1));fx.clear();lastSnap=true;}}selected=id;selectionPanel([id]);frameDraw();},unitStates(){return groups.map(g=>{const u=unitById.get(g.members[0]),move=moveByName.get(u.g||u.n),side=sideOf(u),status=t>=G.battleUnitWindow(sc,u).until?(sc.mapExitLabels?.[u.id]||'退去'):t<(sc.mapVisibleFrom?.[u.id]||0)?'参陣前':t<(u.from||0)?'着陣前':u.die!=null&&t>=u.die?'討死':u.rout!=null&&t>u.rout?'退却':move&&t>move.from&&t<move.to?'移動中':G.battleActiveUnits(sc,t).includes(u.id)?'交戦':t>=100?'戦闘終了':sc.atlasSchematic?(u.side==='b'?'守備':u.id===sc.atlasSchematic.lead&&t>=sc.atlasSchematic.capturedAt?'攻略':'攻撃命令'):'布陣';const schematic=!!(sc.atlasSchematic||sc.atlasPlan),drawGroup=g.point||schematic?g:estGroups.find(e=>e.members[0]===u.id)||g,screenPoint=pinFor(drawGroup);return {id:u.id,side,status,visible:visible(u),point:g.point?G.battlePhasePoint(sc,u.g||u.n,t,g.point):null,screenPoint,renderedPoint:!schematic&&screenPoint?unproject(screenPoint):null,positionBasis:schematic?'schematic':!screenPoint?'unplaced':!g.point?'estimated-placement':isEst(g)?'estimated-motion':'recorded'};});},destroy(){dead=true;cv.closest('.battle-stage')?.querySelector('.atlas-views')?.remove();if(fxRaf)cancelAnimationFrame(fxRaf);fxRaf=0;controller.destroy();ro.disconnect();cv.removeEventListener('click',onClick);}};
  }
  return {make,preload(title){const m=TK.BATTLE_ATLAS[title];return m&&!TK.BATTLES[title]?.atlasSchematic?load(m):Promise.resolve(null);}};
 })();
