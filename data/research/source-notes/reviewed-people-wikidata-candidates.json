@@ -1,0 +1,2149 @@
+{
+  "status": "identity-candidates-not-adopted",
+  "retrievedAt": "2026-11-04T02:40:58.554592+00:00",
+  "requestUrl": "https://www.wikidata.org/w/api.php?action=wbgetentities&sites=jawiki&titles=%E5%A4%A7%E9%A0%88%E8%B3%80%E5%BA%B7%E9%AB%98%7C%E4%BD%90%E3%80%85%E6%88%90%E6%94%BF%7C%E5%8C%97%E6%9D%A1%E6%B0%8F%E7%9B%B4%7C%E5%89%8D%E7%94%B0%E5%88%A9%E5%AE%B6%7C%E5%8C%97%E6%9D%A1%E6%B0%8F%E9%82%A6%7C%E9%95%B7%E6%9D%9F%E6%AD%A3%E5%AE%B6%7C%E6%B5%85%E9%87%8E%E9%95%B7%E6%94%BF%7C%E7%AB%8B%E8%8A%B1%E5%AE%97%E8%8C%82%7C%E5%8C%97%E6%9D%A1%E6%B0%8F%E6%88%BF%7C%E9%81%A0%E5%B1%B1%E6%99%AF%E4%BB%BB%7C%E7%A7%8B%E6%9C%88%E7%A8%AE%E5%AE%9F%7C%E5%B0%8F%E6%97%A9%E5%B7%9D%E9%9A%86%E6%99%AF%7C%E5%89%8D%E7%94%B0%E5%88%A9%E9%95%B7%7C%E7%9B%B8%E8%89%AF%E9%A0%BC%E6%88%BF%7C%E7%9F%B3%E7%94%B0%E4%B8%89%E6%88%90%7C%E4%B8%8A%E6%9D%89%E6%99%AF%E5%8B%9D%7C%E7%BE%BD%E6%9F%B4%E7%A7%80%E9%95%B7%7C%E5%AE%87%E5%96%9C%E5%A4%9A%E7%A7%80%E5%AE%B6%7C%E5%B3%B6%E6%B4%A5%E7%BE%A9%E4%B9%85%7C%E5%A2%97%E7%94%B0%E9%95%B7%E7%9B%9B%7C%E9%AB%98%E6%A9%8B%E5%85%83%E7%A8%AE%7C%E7%B9%94%E7%94%B0%E4%BF%A1%E5%BF%A0%7C%E5%89%8D%E7%94%B0%E7%8E%84%E4%BB%A5%7C%E6%9C%9D%E5%80%89%E6%99%AF%E9%8F%A1%7C%E7%A7%8B%E6%9C%88%E7%A8%AE%E9%95%B7%7C%E7%9C%9F%E7%94%B0%E4%BF%A1%E5%B9%B8&props=info%7Clabels%7Cdescriptions%7Cclaims%7Caliases&languages=ja&format=json&maxlag=5",
+  "responseSha256": "fc9c6353d0be71512b89591f529c6c30bef932e3d738cd8b96c23f115cffd302",
+  "entities": {
+    "-1": {
+      "site": "jawiki",
+      "title": "北条氏房",
+      "missing": "",
+      "identityClaims": {
+        "P31": [],
+        "P349": []
+      }
+    },
+    "-2": {
+      "site": "jawiki",
+      "title": "羽柴秀長",
+      "missing": "",
+      "identityClaims": {
+        "P31": [],
+        "P349": []
+      }
+    },
+    "-3": {
+      "site": "jawiki",
+      "title": "真田信幸",
+      "missing": "",
+      "identityClaims": {
+        "P31": [],
+        "P349": []
+      }
+    },
+    "Q10938514": {
+      "title": "Q10938514",
+      "lastrevid": 2480585791,
+      "id": "Q10938514",
+      "labels": {
+        "ja": {
+          "language": "ja",
+          "value": "大須賀康高"
+        }
+      },
+      "descriptions": {
+        "ja": {
+          "language": "ja",
+          "value": "日本の戦国時代の武将、徳川氏の家臣"
+        }
+      },
+      "aliases": {
+        "ja": [
+          {
+            "language": "ja",
+            "value": "おおすが やすたか"
+          },
+          {
+            "language": "ja",
+            "value": "五郎左衛門尉"
+          }
+        ]
+      },
+      "identityClaims": {
+        "P31": [
+          {
+            "mainsnak": {
+              "snaktype": "value",
+              "property": "P31",
+              "hash": "ad7d38a03cdd40cdc373de0dc4e7b7fcbccb31d9",
+              "datavalue": {
+                "value": {
+                  "entity-type": "item",
+                  "numeric-id": 5,
+                  "id": "Q5"
+                },
+                "type": "wikibase-entityid"
+              },
+              "datatype": "wikibase-item"
+            },
+            "type": "statement",
+            "id": "Q10938514$AE71DBC9-C433-46DB-8988-1FB14248649A",
+            "rank": "normal"
+          }
+        ],
+        "P349": []
+      }
+    },
+    "Q1186700": {
+      "title": "Q1186700",
+      "lastrevid": 2539523740,
+      "id": "Q1186700",
+      "labels": {
+        "ja": {
+          "language": "ja",
+          "value": "佐々成政"
+        }
+      },
+      "descriptions": {
+        "ja": {
+          "language": "ja",
+          "value": "1536?-1588, 戦国時代～安土桃山時代の武将、大名"
+        }
+      },
+      "aliases": {
+        "ja": [
+          {
+            "language": "ja",
+            "value": "さらさら越え"
+          }
+        ]
+      },
+      "identityClaims": {
+        "P31": [
+          {
+            "mainsnak": {
+              "snaktype": "value",
+              "property": "P31",
+              "hash": "ad7d38a03cdd40cdc373de0dc4e7b7fcbccb31d9",
+              "datavalue": {
+                "value": {
+                  "entity-type": "item",
+                  "numeric-id": 5,
+                  "id": "Q5"
+                },
+                "type": "wikibase-entityid"
+              },
+              "datatype": "wikibase-item"
+            },
+            "type": "statement",
+            "id": "Q1186700$B9229BFF-B988-4A71-8648-94A7D182D055",
+            "rank": "normal",
+            "references": [
+              {
+                "hash": "288ab581e7d2d02995a26dfa8b091d96e78457fc",
+                "snaks": {
+                  "P143": [
+                    {
+                      "snaktype": "value",
+                      "property": "P143",
+                      "hash": "6a164248fc96bfa583bbb495cb63ae6401ec203c",
+                      "datavalue": {
+                        "value": {
+                          "entity-type": "item",
+                          "numeric-id": 206855,
+                          "id": "Q206855"
+                        },
+                        "type": "wikibase-entityid"
+                      },
+                      "datatype": "wikibase-item"
+                    }
+                  ]
+                },
+                "snaks-order": [
+                  "P143"
+                ]
+              }
+            ]
+          }
+        ],
+        "P349": [
+          {
+            "mainsnak": {
+              "snaktype": "value",
+              "property": "P349",
+              "hash": "0308331dfc60f687ca95cb6eb2f990249b54d525",
+              "datavalue": {
+                "value": "00623257",
+                "type": "string"
+              },
+              "datatype": "external-id"
+            },
+            "type": "statement",
+            "id": "Q1186700$042B0F87-2820-4C42-B415-225C489EA9A7",
+            "rank": "normal"
+          }
+        ]
+      }
+    },
+    "Q1156668": {
+      "title": "Q1156668",
+      "lastrevid": 2480575966,
+      "id": "Q1156668",
+      "labels": {
+        "ja": {
+          "language": "ja",
+          "value": "北条氏直"
+        }
+      },
+      "descriptions": {
+        "ja": {
+          "language": "ja",
+          "value": "日本の武将"
+        }
+      },
+      "aliases": {
+        "ja": [
+          {
+            "language": "ja",
+            "value": "北条見性斎"
+          },
+          {
+            "language": "ja",
+            "value": "国王丸"
+          },
+          {
+            "language": "ja",
+            "value": "新九郎"
+          },
+          {
+            "language": "ja",
+            "value": "松巌院太円宗徹"
+          }
+        ]
+      },
+      "identityClaims": {
+        "P31": [
+          {
+            "mainsnak": {
+              "snaktype": "value",
+              "property": "P31",
+              "hash": "ad7d38a03cdd40cdc373de0dc4e7b7fcbccb31d9",
+              "datavalue": {
+                "value": {
+                  "entity-type": "item",
+                  "numeric-id": 5,
+                  "id": "Q5"
+                },
+                "type": "wikibase-entityid"
+              },
+              "datatype": "wikibase-item"
+            },
+            "type": "statement",
+            "id": "Q1156668$B79B3424-FB90-449A-BCB8-CA12041A3F3F",
+            "rank": "normal",
+            "references": [
+              {
+                "hash": "288ab581e7d2d02995a26dfa8b091d96e78457fc",
+                "snaks": {
+                  "P143": [
+                    {
+                      "snaktype": "value",
+                      "property": "P143",
+                      "hash": "6a164248fc96bfa583bbb495cb63ae6401ec203c",
+                      "datavalue": {
+                        "value": {
+                          "entity-type": "item",
+                          "numeric-id": 206855,
+                          "id": "Q206855"
+                        },
+                        "type": "wikibase-entityid"
+                      },
+                      "datatype": "wikibase-item"
+                    }
+                  ]
+                },
+                "snaks-order": [
+                  "P143"
+                ]
+              }
+            ]
+          }
+        ],
+        "P349": [
+          {
+            "mainsnak": {
+              "snaktype": "value",
+              "property": "P349",
+              "hash": "ac2951911b5f1962e2d30980eecc64249f0e7df7",
+              "datavalue": {
+                "value": "001343563",
+                "type": "string"
+              },
+              "datatype": "external-id"
+            },
+            "type": "statement",
+            "id": "Q1156668$b5d02469-4264-ad7a-c742-da9e7579a3e5",
+            "rank": "normal"
+          }
+        ]
+      }
+    },
+    "Q1196817": {
+      "title": "Q1196817",
+      "lastrevid": 2550956775,
+      "id": "Q1196817",
+      "labels": {
+        "ja": {
+          "language": "ja",
+          "value": "前田利家"
+        }
+      },
+      "descriptions": {
+        "ja": {
+          "language": "ja",
+          "value": "日本の武将"
+        }
+      },
+      "aliases": {
+        "ja": [
+          {
+            "language": "ja",
+            "value": "加賀百万石の祖"
+          },
+          {
+            "language": "ja",
+            "value": "犬千代"
+          },
+          {
+            "language": "ja",
+            "value": "又左衞門"
+          },
+          {
+            "language": "ja",
+            "value": "又左"
+          },
+          {
+            "language": "ja",
+            "value": "又四郎"
+          },
+          {
+            "language": "ja",
+            "value": "孫四郎"
+          },
+          {
+            "language": "ja",
+            "value": "越中少将"
+          },
+          {
+            "language": "ja",
+            "value": "加賀大納言"
+          },
+          {
+            "language": "ja",
+            "value": "槍の又左衞門"
+          },
+          {
+            "language": "ja",
+            "value": "槍の又左"
+          },
+          {
+            "language": "ja",
+            "value": "高徳院殿桃雲浄見大居士"
+          }
+        ]
+      },
+      "identityClaims": {
+        "P31": [
+          {
+            "mainsnak": {
+              "snaktype": "value",
+              "property": "P31",
+              "hash": "ad7d38a03cdd40cdc373de0dc4e7b7fcbccb31d9",
+              "datavalue": {
+                "value": {
+                  "entity-type": "item",
+                  "numeric-id": 5,
+                  "id": "Q5"
+                },
+                "type": "wikibase-entityid"
+              },
+              "datatype": "wikibase-item"
+            },
+            "type": "statement",
+            "id": "Q1196817$489D8CCF-DE9E-4C94-8764-C6B0C07DB7A3",
+            "rank": "normal",
+            "references": [
+              {
+                "hash": "fa278ebfc458360e5aed63d5058cca83c46134f1",
+                "snaks": {
+                  "P143": [
+                    {
+                      "snaktype": "value",
+                      "property": "P143",
+                      "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                      "datavalue": {
+                        "value": {
+                          "entity-type": "item",
+                          "numeric-id": 328,
+                          "id": "Q328"
+                        },
+                        "type": "wikibase-entityid"
+                      },
+                      "datatype": "wikibase-item"
+                    }
+                  ]
+                },
+                "snaks-order": [
+                  "P143"
+                ]
+              }
+            ]
+          }
+        ],
+        "P349": [
+          {
+            "mainsnak": {
+              "snaktype": "value",
+              "property": "P349",
+              "hash": "be19a3d9ce62e39ed87d15f9794f36773501a005",
+              "datavalue": {
+                "value": "00624871",
+                "type": "string"
+              },
+              "datatype": "external-id"
+            },
+            "type": "statement",
+            "id": "Q1196817$06DE430C-E815-4B45-8085-0DBBFBFFFC43",
+            "rank": "normal"
+          }
+        ]
+      }
+    },
+    "Q3138651": {
+      "title": "Q3138651",
+      "lastrevid": 2350249869,
+      "id": "Q3138651",
+      "labels": {
+        "ja": {
+          "language": "ja",
+          "value": "北条氏邦"
+        }
+      },
+      "descriptions": {
+        "ja": {
+          "language": "ja",
+          "value": "戦国武将。北条氏康の四男? 五男?"
+        }
+      },
+      "aliases": {
+        "ja": [
+          {
+            "language": "ja",
+            "value": "藤田氏邦"
+          }
+        ]
+      },
+      "identityClaims": {
+        "P31": [
+          {
+            "mainsnak": {
+              "snaktype": "value",
+              "property": "P31",
+              "hash": "ad7d38a03cdd40cdc373de0dc4e7b7fcbccb31d9",
+              "datavalue": {
+                "value": {
+                  "entity-type": "item",
+                  "numeric-id": 5,
+                  "id": "Q5"
+                },
+                "type": "wikibase-entityid"
+              },
+              "datatype": "wikibase-item"
+            },
+            "type": "statement",
+            "id": "Q3138651$D82184A1-41CC-4C7A-A877-119AA0428C67",
+            "rank": "normal"
+          }
+        ],
+        "P349": [
+          {
+            "mainsnak": {
+              "snaktype": "value",
+              "property": "P349",
+              "hash": "d9f0791594b6458a00cac0b6636933fc80e31fcd",
+              "datavalue": {
+                "value": "00626462",
+                "type": "string"
+              },
+              "datatype": "external-id"
+            },
+            "type": "statement",
+            "id": "Q3138651$66AE41C1-1C47-4886-871E-251347F6DE2E",
+            "rank": "normal"
+          }
+        ]
+      }
+    },
+    "Q8190311": {
+      "title": "Q8190311",
+      "lastrevid": 2491237289,
+      "id": "Q8190311",
+      "labels": {
+        "ja": {
+          "language": "ja",
+          "value": "長束正家"
+        }
+      },
+      "descriptions": {
+        "ja": {
+          "language": "ja",
+          "value": "戦国武将"
+        }
+      },
+      "aliases": {},
+      "identityClaims": {
+        "P31": [
+          {
+            "mainsnak": {
+              "snaktype": "value",
+              "property": "P31",
+              "hash": "ad7d38a03cdd40cdc373de0dc4e7b7fcbccb31d9",
+              "datavalue": {
+                "value": {
+                  "entity-type": "item",
+                  "numeric-id": 5,
+                  "id": "Q5"
+                },
+                "type": "wikibase-entityid"
+              },
+              "datatype": "wikibase-item"
+            },
+            "type": "statement",
+            "id": "Q8190311$DF93C866-782E-457C-9A68-58C2B93EDADB",
+            "rank": "normal",
+            "references": [
+              {
+                "hash": "fa278ebfc458360e5aed63d5058cca83c46134f1",
+                "snaks": {
+                  "P143": [
+                    {
+                      "snaktype": "value",
+                      "property": "P143",
+                      "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                      "datavalue": {
+                        "value": {
+                          "entity-type": "item",
+                          "numeric-id": 328,
+                          "id": "Q328"
+                        },
+                        "type": "wikibase-entityid"
+                      },
+                      "datatype": "wikibase-item"
+                    }
+                  ]
+                },
+                "snaks-order": [
+                  "P143"
+                ]
+              }
+            ]
+          }
+        ],
+        "P349": []
+      }
+    },
+    "Q1067546": {
+      "title": "Q1067546",
+      "lastrevid": 2556834878,
+      "id": "Q1067546",
+      "labels": {
+        "ja": {
+          "language": "ja",
+          "value": "浅野長政"
+        }
+      },
+      "descriptions": {
+        "ja": {
+          "language": "ja",
+          "value": "日本の戦国～江戸時代の武将、大名、第14代浅野家当主、初代真壁藩藩主"
+        }
+      },
+      "aliases": {
+        "ja": [
+          {
+            "language": "ja",
+            "value": "浅野長吉"
+          },
+          {
+            "language": "ja",
+            "value": "弥兵衛"
+          }
+        ]
+      },
+      "identityClaims": {
+        "P31": [
+          {
+            "mainsnak": {
+              "snaktype": "value",
+              "property": "P31",
+              "hash": "ad7d38a03cdd40cdc373de0dc4e7b7fcbccb31d9",
+              "datavalue": {
+                "value": {
+                  "entity-type": "item",
+                  "numeric-id": 5,
+                  "id": "Q5"
+                },
+                "type": "wikibase-entityid"
+              },
+              "datatype": "wikibase-item"
+            },
+            "type": "statement",
+            "id": "Q1067546$63EE3BBE-FE77-486D-A997-4B67A03A7FF6",
+            "rank": "normal",
+            "references": [
+              {
+                "hash": "fa278ebfc458360e5aed63d5058cca83c46134f1",
+                "snaks": {
+                  "P143": [
+                    {
+                      "snaktype": "value",
+                      "property": "P143",
+                      "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                      "datavalue": {
+                        "value": {
+                          "entity-type": "item",
+                          "numeric-id": 328,
+                          "id": "Q328"
+                        },
+                        "type": "wikibase-entityid"
+                      },
+                      "datatype": "wikibase-item"
+                    }
+                  ]
+                },
+                "snaks-order": [
+                  "P143"
+                ]
+              },
+              {
+                "hash": "288ab581e7d2d02995a26dfa8b091d96e78457fc",
+                "snaks": {
+                  "P143": [
+                    {
+                      "snaktype": "value",
+                      "property": "P143",
+                      "hash": "6a164248fc96bfa583bbb495cb63ae6401ec203c",
+                      "datavalue": {
+                        "value": {
+                          "entity-type": "item",
+                          "numeric-id": 206855,
+                          "id": "Q206855"
+                        },
+                        "type": "wikibase-entityid"
+                      },
+                      "datatype": "wikibase-item"
+                    }
+                  ]
+                },
+                "snaks-order": [
+                  "P143"
+                ]
+              }
+            ]
+          }
+        ],
+        "P349": [
+          {
+            "mainsnak": {
+              "snaktype": "value",
+              "property": "P349",
+              "hash": "f788dfbbd4e9e050ca9a189babe70aa120339c61",
+              "datavalue": {
+                "value": "00793581",
+                "type": "string"
+              },
+              "datatype": "external-id"
+            },
+            "type": "statement",
+            "id": "Q1067546$557A33B7-59DB-4710-96D5-047B92CF6058",
+            "rank": "normal"
+          }
+        ]
+      }
+    },
+    "Q1071770": {
+      "title": "Q1071770",
+      "lastrevid": 2555343651,
+      "id": "Q1071770",
+      "labels": {
+        "ja": {
+          "language": "ja",
+          "value": "立花宗茂"
+        }
+      },
+      "descriptions": {
+        "ja": {
+          "language": "ja",
+          "value": "日本の安土桃山～江戸時代の武将、大名"
+        }
+      },
+      "aliases": {
+        "ja": [
+          {
+            "language": "ja",
+            "value": "高橋統虎"
+          },
+          {
+            "language": "ja",
+            "value": "立花統虎"
+          }
+        ]
+      },
+      "identityClaims": {
+        "P31": [
+          {
+            "mainsnak": {
+              "snaktype": "value",
+              "property": "P31",
+              "hash": "ad7d38a03cdd40cdc373de0dc4e7b7fcbccb31d9",
+              "datavalue": {
+                "value": {
+                  "entity-type": "item",
+                  "numeric-id": 5,
+                  "id": "Q5"
+                },
+                "type": "wikibase-entityid"
+              },
+              "datatype": "wikibase-item"
+            },
+            "type": "statement",
+            "id": "Q1071770$738EBD60-CADD-49AC-9597-9FD5939F2CAE",
+            "rank": "normal",
+            "references": [
+              {
+                "hash": "d4bd87b862b12d99d26e86472d44f26858dee639",
+                "snaks": {
+                  "P143": [
+                    {
+                      "snaktype": "value",
+                      "property": "P143",
+                      "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                      "datavalue": {
+                        "value": {
+                          "entity-type": "item",
+                          "numeric-id": 8447,
+                          "id": "Q8447"
+                        },
+                        "type": "wikibase-entityid"
+                      },
+                      "datatype": "wikibase-item"
+                    }
+                  ]
+                },
+                "snaks-order": [
+                  "P143"
+                ]
+              }
+            ]
+          }
+        ],
+        "P349": [
+          {
+            "mainsnak": {
+              "snaktype": "value",
+              "property": "P349",
+              "hash": "dba13a24cfc7045bfecc8d3100f2f0716e26edff",
+              "datavalue": {
+                "value": "00626788",
+                "type": "string"
+              },
+              "datatype": "external-id"
+            },
+            "type": "statement",
+            "id": "Q1071770$B656DA46-3ABE-4DC0-BC83-0EFA6B0CFD3F",
+            "rank": "normal",
+            "references": [
+              {
+                "hash": "a29a646602abf65105ed0f39a44231c962ece9ee",
+                "snaks": {
+                  "P143": [
+                    {
+                      "snaktype": "value",
+                      "property": "P143",
+                      "hash": "c6f1777471211df31724ac60175786f3872c83e9",
+                      "datavalue": {
+                        "value": {
+                          "entity-type": "item",
+                          "numeric-id": 177837,
+                          "id": "Q177837"
+                        },
+                        "type": "wikibase-entityid"
+                      },
+                      "datatype": "wikibase-item"
+                    }
+                  ]
+                },
+                "snaks-order": [
+                  "P143"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "Q11642033": {
+      "title": "Q11642033",
+      "lastrevid": 2480592303,
+      "id": "Q11642033",
+      "labels": {
+        "ja": {
+          "language": "ja",
+          "value": "遠山景任"
+        }
+      },
+      "descriptions": {
+        "ja": {
+          "language": "ja",
+          "value": "戦国時代の武将・大名。岩村遠山氏当主。美濃恵那郡岩村城主。大和守"
+        }
+      },
+      "aliases": {
+        "ja": [
+          {
+            "language": "ja",
+            "value": "友通"
+          },
+          {
+            "language": "ja",
+            "value": "左衛門尉"
+          },
+          {
+            "language": "ja",
+            "value": "修理亮"
+          },
+          {
+            "language": "ja",
+            "value": "内匠助"
+          }
+        ]
+      },
+      "identityClaims": {
+        "P31": [
+          {
+            "mainsnak": {
+              "snaktype": "value",
+              "property": "P31",
+              "hash": "ad7d38a03cdd40cdc373de0dc4e7b7fcbccb31d9",
+              "datavalue": {
+                "value": {
+                  "entity-type": "item",
+                  "numeric-id": 5,
+                  "id": "Q5"
+                },
+                "type": "wikibase-entityid"
+              },
+              "datatype": "wikibase-item"
+            },
+            "type": "statement",
+            "id": "Q11642033$D6184089-D2BB-496A-83FA-80E9BD2D4E16",
+            "rank": "normal"
+          }
+        ],
+        "P349": []
+      }
+    },
+    "Q1080643": {
+      "title": "Q1080643",
+      "lastrevid": 2555328687,
+      "id": "Q1080643",
+      "labels": {
+        "ja": {
+          "language": "ja",
+          "value": "秋月種実"
+        }
+      },
+      "descriptions": {
+        "ja": {
+          "language": "ja",
+          "value": "日本の戦国時代～安土桃山時代の大名。大友家・毛利家・龍造寺家・島津家の家臣。筑前古処山城主秋月文種次男で、秋月氏16代当主。秋月氏の最盛期を築いたとされる"
+        }
+      },
+      "aliases": {
+        "ja": [
+          {
+            "language": "ja",
+            "value": "秋月宗闇"
+          }
+        ]
+      },
+      "identityClaims": {
+        "P31": [
+          {
+            "mainsnak": {
+              "snaktype": "value",
+              "property": "P31",
+              "hash": "ad7d38a03cdd40cdc373de0dc4e7b7fcbccb31d9",
+              "datavalue": {
+                "value": {
+                  "entity-type": "item",
+                  "numeric-id": 5,
+                  "id": "Q5"
+                },
+                "type": "wikibase-entityid"
+              },
+              "datatype": "wikibase-item"
+            },
+            "type": "statement",
+            "id": "Q1080643$E6529A8D-B5EE-4578-B8B0-236898B8A614",
+            "rank": "normal",
+            "references": [
+              {
+                "hash": "fa278ebfc458360e5aed63d5058cca83c46134f1",
+                "snaks": {
+                  "P143": [
+                    {
+                      "snaktype": "value",
+                      "property": "P143",
+                      "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                      "datavalue": {
+                        "value": {
+                          "entity-type": "item",
+                          "numeric-id": 328,
+                          "id": "Q328"
+                        },
+                        "type": "wikibase-entityid"
+                      },
+                      "datatype": "wikibase-item"
+                    }
+                  ]
+                },
+                "snaks-order": [
+                  "P143"
+                ]
+              }
+            ]
+          }
+        ],
+        "P349": []
+      }
+    },
+    "Q1143508": {
+      "title": "Q1143508",
+      "lastrevid": 2521639167,
+      "id": "Q1143508",
+      "labels": {
+        "ja": {
+          "language": "ja",
+          "value": "小早川隆景"
+        }
+      },
+      "descriptions": {
+        "ja": {
+          "language": "ja",
+          "value": "日本の武将"
+        }
+      },
+      "aliases": {
+        "ja": [
+          {
+            "language": "ja",
+            "value": "毛利徳寿丸"
+          },
+          {
+            "language": "ja",
+            "value": "又四郎"
+          },
+          {
+            "language": "ja",
+            "value": "筑前宰相"
+          },
+          {
+            "language": "ja",
+            "value": "三原中納言"
+          },
+          {
+            "language": "ja",
+            "value": "隆景寺殿前黄門泰雲紹閑大居士"
+          },
+          {
+            "language": "ja",
+            "value": "黄梅院泰雲紹閑"
+          }
+        ]
+      },
+      "identityClaims": {
+        "P31": [
+          {
+            "mainsnak": {
+              "snaktype": "value",
+              "property": "P31",
+              "hash": "ad7d38a03cdd40cdc373de0dc4e7b7fcbccb31d9",
+              "datavalue": {
+                "value": {
+                  "entity-type": "item",
+                  "numeric-id": 5,
+                  "id": "Q5"
+                },
+                "type": "wikibase-entityid"
+              },
+              "datatype": "wikibase-item"
+            },
+            "type": "statement",
+            "id": "Q1143508$013AB5D4-F522-4687-9BA6-4609790F5FFE",
+            "rank": "normal",
+            "references": [
+              {
+                "hash": "fa278ebfc458360e5aed63d5058cca83c46134f1",
+                "snaks": {
+                  "P143": [
+                    {
+                      "snaktype": "value",
+                      "property": "P143",
+                      "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                      "datavalue": {
+                        "value": {
+                          "entity-type": "item",
+                          "numeric-id": 328,
+                          "id": "Q328"
+                        },
+                        "type": "wikibase-entityid"
+                      },
+                      "datatype": "wikibase-item"
+                    }
+                  ]
+                },
+                "snaks-order": [
+                  "P143"
+                ]
+              }
+            ]
+          }
+        ],
+        "P349": [
+          {
+            "mainsnak": {
+              "snaktype": "value",
+              "property": "P349",
+              "hash": "6ca85c959033f6d34206d3d4609c61d9c48fc5bb",
+              "datavalue": {
+                "value": "00624015",
+                "type": "string"
+              },
+              "datatype": "external-id"
+            },
+            "type": "statement",
+            "id": "Q1143508$967966C6-5050-4D61-B47B-DA064EB7D138",
+            "rank": "normal"
+          }
+        ]
+      }
+    },
+    "Q1186742": {
+      "title": "Q1186742",
+      "lastrevid": 2556895718,
+      "id": "Q1186742",
+      "labels": {
+        "ja": {
+          "language": "ja",
+          "value": "前田利長"
+        }
+      },
+      "descriptions": {
+        "ja": {
+          "language": "ja",
+          "value": "日本の武将"
+        }
+      },
+      "aliases": {
+        "ja": [
+          {
+            "language": "ja",
+            "value": "利勝"
+          },
+          {
+            "language": "ja",
+            "value": "犬千代"
+          },
+          {
+            "language": "ja",
+            "value": "孫四郎"
+          },
+          {
+            "language": "ja",
+            "value": "肥前守"
+          },
+          {
+            "language": "ja",
+            "value": "越中少将"
+          },
+          {
+            "language": "ja",
+            "value": "瑞龍院殿聖山英賢大居士"
+          }
+        ]
+      },
+      "identityClaims": {
+        "P31": [
+          {
+            "mainsnak": {
+              "snaktype": "value",
+              "property": "P31",
+              "hash": "ad7d38a03cdd40cdc373de0dc4e7b7fcbccb31d9",
+              "datavalue": {
+                "value": {
+                  "entity-type": "item",
+                  "numeric-id": 5,
+                  "id": "Q5"
+                },
+                "type": "wikibase-entityid"
+              },
+              "datatype": "wikibase-item"
+            },
+            "type": "statement",
+            "id": "Q1186742$D9602B88-68CC-4D52-B885-8105C2AD94E3",
+            "rank": "normal",
+            "references": [
+              {
+                "hash": "fa278ebfc458360e5aed63d5058cca83c46134f1",
+                "snaks": {
+                  "P143": [
+                    {
+                      "snaktype": "value",
+                      "property": "P143",
+                      "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                      "datavalue": {
+                        "value": {
+                          "entity-type": "item",
+                          "numeric-id": 328,
+                          "id": "Q328"
+                        },
+                        "type": "wikibase-entityid"
+                      },
+                      "datatype": "wikibase-item"
+                    }
+                  ]
+                },
+                "snaks-order": [
+                  "P143"
+                ]
+              }
+            ]
+          }
+        ],
+        "P349": [
+          {
+            "mainsnak": {
+              "snaktype": "value",
+              "property": "P349",
+              "hash": "daec243a6e0eb83c2745bd55cd53d71d640d7fde",
+              "datavalue": {
+                "value": "01133744",
+                "type": "string"
+              },
+              "datatype": "external-id"
+            },
+            "type": "statement",
+            "id": "Q1186742$C97FE8A8-2319-4883-BA31-D436EBAD2169",
+            "rank": "normal"
+          }
+        ]
+      }
+    },
+    "Q610933": {
+      "title": "Q610933",
+      "lastrevid": 2555750417,
+      "id": "Q610933",
+      "labels": {
+        "ja": {
+          "language": "ja",
+          "value": "相良頼房"
+        }
+      },
+      "descriptions": {
+        "ja": {
+          "language": "ja",
+          "value": "日本の安土桃山時代～江戸時代前期の大名"
+        }
+      },
+      "aliases": {},
+      "identityClaims": {
+        "P31": [
+          {
+            "mainsnak": {
+              "snaktype": "value",
+              "property": "P31",
+              "hash": "ad7d38a03cdd40cdc373de0dc4e7b7fcbccb31d9",
+              "datavalue": {
+                "value": {
+                  "entity-type": "item",
+                  "numeric-id": 5,
+                  "id": "Q5"
+                },
+                "type": "wikibase-entityid"
+              },
+              "datatype": "wikibase-item"
+            },
+            "type": "statement",
+            "id": "Q610933$EDE97B7D-8020-499C-AA65-FEA6C3DF6A38",
+            "rank": "normal"
+          }
+        ],
+        "P349": []
+      }
+    },
+    "Q334107": {
+      "title": "Q334107",
+      "lastrevid": 2528337675,
+      "id": "Q334107",
+      "labels": {
+        "ja": {
+          "language": "ja",
+          "value": "石田三成"
+        }
+      },
+      "descriptions": {
+        "ja": {
+          "language": "ja",
+          "value": "日本の武将"
+        }
+      },
+      "aliases": {
+        "ja": [
+          {
+            "language": "ja",
+            "value": "石田佐吉"
+          },
+          {
+            "language": "ja",
+            "value": "石田治部少輔"
+          },
+          {
+            "language": "ja",
+            "value": "石田三也"
+          }
+        ]
+      },
+      "identityClaims": {
+        "P31": [
+          {
+            "mainsnak": {
+              "snaktype": "value",
+              "property": "P31",
+              "hash": "ad7d38a03cdd40cdc373de0dc4e7b7fcbccb31d9",
+              "datavalue": {
+                "value": {
+                  "entity-type": "item",
+                  "numeric-id": 5,
+                  "id": "Q5"
+                },
+                "type": "wikibase-entityid"
+              },
+              "datatype": "wikibase-item"
+            },
+            "type": "statement",
+            "id": "Q334107$1D08CD74-8F9B-4107-B38D-496D9A85048E",
+            "rank": "normal",
+            "references": [
+              {
+                "hash": "288ab581e7d2d02995a26dfa8b091d96e78457fc",
+                "snaks": {
+                  "P143": [
+                    {
+                      "snaktype": "value",
+                      "property": "P143",
+                      "hash": "6a164248fc96bfa583bbb495cb63ae6401ec203c",
+                      "datavalue": {
+                        "value": {
+                          "entity-type": "item",
+                          "numeric-id": 206855,
+                          "id": "Q206855"
+                        },
+                        "type": "wikibase-entityid"
+                      },
+                      "datatype": "wikibase-item"
+                    }
+                  ]
+                },
+                "snaks-order": [
+                  "P143"
+                ]
+              }
+            ]
+          }
+        ],
+        "P349": [
+          {
+            "mainsnak": {
+              "snaktype": "value",
+              "property": "P349",
+              "hash": "5be3af6445437e8ff3eee20ef9c2fe9d0ad8fc30",
+              "datavalue": {
+                "value": "00624714",
+                "type": "string"
+              },
+              "datatype": "external-id"
+            },
+            "type": "statement",
+            "id": "Q334107$66FAECA7-15E8-471F-BF8A-F7F9D7638E6A",
+            "rank": "normal",
+            "references": [
+              {
+                "hash": "9a24f7c0208b05d6be97077d855671d1dfdbc0dd",
+                "snaks": {
+                  "P143": [
+                    {
+                      "snaktype": "value",
+                      "property": "P143",
+                      "hash": "d38375ffe6fe142663ff55cd783aa4df4301d83d",
+                      "datavalue": {
+                        "value": {
+                          "entity-type": "item",
+                          "numeric-id": 48183,
+                          "id": "Q48183"
+                        },
+                        "type": "wikibase-entityid"
+                      },
+                      "datatype": "wikibase-item"
+                    }
+                  ]
+                },
+                "snaks-order": [
+                  "P143"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "Q1376605": {
+      "title": "Q1376605",
+      "lastrevid": 2554030271,
+      "id": "Q1376605",
+      "labels": {
+        "ja": {
+          "language": "ja",
+          "value": "上杉景勝"
+        }
+      },
+      "descriptions": {
+        "ja": {
+          "language": "ja",
+          "value": "日本の武将 (1555-1623)"
+        }
+      },
+      "aliases": {
+        "ja": [
+          {
+            "language": "ja",
+            "value": "長尾顕景"
+          },
+          {
+            "language": "ja",
+            "value": "長尾卯松"
+          },
+          {
+            "language": "ja",
+            "value": "喜平次"
+          },
+          {
+            "language": "ja",
+            "value": "越後宰相中将"
+          },
+          {
+            "language": "ja",
+            "value": "越後中納言"
+          },
+          {
+            "language": "ja",
+            "value": "会津中納言"
+          },
+          {
+            "language": "ja",
+            "value": "御中城様"
+          },
+          {
+            "language": "ja",
+            "value": "宗心"
+          },
+          {
+            "language": "ja",
+            "value": "覚上院殿法印権大僧都宗心"
+          },
+          {
+            "language": "ja",
+            "value": "覚上院空山宗心"
+          }
+        ]
+      },
+      "identityClaims": {
+        "P31": [
+          {
+            "mainsnak": {
+              "snaktype": "value",
+              "property": "P31",
+              "hash": "ad7d38a03cdd40cdc373de0dc4e7b7fcbccb31d9",
+              "datavalue": {
+                "value": {
+                  "entity-type": "item",
+                  "numeric-id": 5,
+                  "id": "Q5"
+                },
+                "type": "wikibase-entityid"
+              },
+              "datatype": "wikibase-item"
+            },
+            "type": "statement",
+            "id": "Q1376605$A6D902B5-DE3E-480E-AC9B-36ABC0F70C85",
+            "rank": "normal",
+            "references": [
+              {
+                "hash": "fa278ebfc458360e5aed63d5058cca83c46134f1",
+                "snaks": {
+                  "P143": [
+                    {
+                      "snaktype": "value",
+                      "property": "P143",
+                      "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                      "datavalue": {
+                        "value": {
+                          "entity-type": "item",
+                          "numeric-id": 328,
+                          "id": "Q328"
+                        },
+                        "type": "wikibase-entityid"
+                      },
+                      "datatype": "wikibase-item"
+                    }
+                  ]
+                },
+                "snaks-order": [
+                  "P143"
+                ]
+              }
+            ]
+          }
+        ],
+        "P349": [
+          {
+            "mainsnak": {
+              "snaktype": "value",
+              "property": "P349",
+              "hash": "f79e75141a994ed00c94ff0891f8676013504b34",
+              "datavalue": {
+                "value": "00624268",
+                "type": "string"
+              },
+              "datatype": "external-id"
+            },
+            "type": "statement",
+            "id": "Q1376605$8B0C9235-3574-48E6-A9B7-053C0FA6C09D",
+            "rank": "normal"
+          }
+        ]
+      }
+    },
+    "Q1329792": {
+      "title": "Q1329792",
+      "lastrevid": 2553773295,
+      "id": "Q1329792",
+      "labels": {
+        "ja": {
+          "language": "ja",
+          "value": "宇喜多秀家"
+        }
+      },
+      "descriptions": {
+        "ja": {
+          "language": "ja",
+          "value": "日本の武将"
+        }
+      },
+      "aliases": {
+        "ja": [
+          {
+            "language": "ja",
+            "value": "宇喜田秀家"
+          },
+          {
+            "language": "ja",
+            "value": "宇喜多家氏"
+          },
+          {
+            "language": "ja",
+            "value": "八郎"
+          },
+          {
+            "language": "ja",
+            "value": "備前宰相"
+          },
+          {
+            "language": "ja",
+            "value": "成元"
+          },
+          {
+            "language": "ja",
+            "value": "羽柴秀家"
+          },
+          {
+            "language": "ja",
+            "value": "豊臣秀家"
+          },
+          {
+            "language": "ja",
+            "value": "休復"
+          },
+          {
+            "language": "ja",
+            "value": "久福"
+          },
+          {
+            "language": "ja",
+            "value": "尊光院殿秀月久福大居士"
+          },
+          {
+            "language": "ja",
+            "value": "秀家 宇喜多"
+          }
+        ]
+      },
+      "identityClaims": {
+        "P31": [
+          {
+            "mainsnak": {
+              "snaktype": "value",
+              "property": "P31",
+              "hash": "ad7d38a03cdd40cdc373de0dc4e7b7fcbccb31d9",
+              "datavalue": {
+                "value": {
+                  "entity-type": "item",
+                  "numeric-id": 5,
+                  "id": "Q5"
+                },
+                "type": "wikibase-entityid"
+              },
+              "datatype": "wikibase-item"
+            },
+            "type": "statement",
+            "id": "Q1329792$47153FC9-3B6D-435C-A313-1B072ECD15FA",
+            "rank": "normal",
+            "references": [
+              {
+                "hash": "288ab581e7d2d02995a26dfa8b091d96e78457fc",
+                "snaks": {
+                  "P143": [
+                    {
+                      "snaktype": "value",
+                      "property": "P143",
+                      "hash": "6a164248fc96bfa583bbb495cb63ae6401ec203c",
+                      "datavalue": {
+                        "value": {
+                          "entity-type": "item",
+                          "numeric-id": 206855,
+                          "id": "Q206855"
+                        },
+                        "type": "wikibase-entityid"
+                      },
+                      "datatype": "wikibase-item"
+                    }
+                  ]
+                },
+                "snaks-order": [
+                  "P143"
+                ]
+              }
+            ]
+          }
+        ],
+        "P349": [
+          {
+            "mainsnak": {
+              "snaktype": "value",
+              "property": "P349",
+              "hash": "e8c0ff8b1d61b545c8c2b390a1fbab7de7a660c8",
+              "datavalue": {
+                "value": "00839597",
+                "type": "string"
+              },
+              "datatype": "external-id"
+            },
+            "type": "statement",
+            "id": "Q1329792$B8054565-E011-486F-A9F5-480F763530C3",
+            "rank": "normal"
+          }
+        ]
+      }
+    },
+    "Q955727": {
+      "title": "Q955727",
+      "lastrevid": 2514068357,
+      "id": "Q955727",
+      "labels": {
+        "ja": {
+          "language": "ja",
+          "value": "島津義久"
+        }
+      },
+      "descriptions": {
+        "ja": {
+          "language": "ja",
+          "value": "日本の武将・戦国大名"
+        }
+      },
+      "aliases": {
+        "ja": [
+          {
+            "language": "ja",
+            "value": "虎寿丸"
+          },
+          {
+            "language": "ja",
+            "value": "龍伯"
+          },
+          {
+            "language": "ja",
+            "value": "太守公"
+          },
+          {
+            "language": "ja",
+            "value": "貫明公"
+          },
+          {
+            "language": "ja",
+            "value": "大国豊知主命"
+          },
+          {
+            "language": "ja",
+            "value": "妙谷寺殿貫明存忠庵主"
+          },
+          {
+            "language": "ja",
+            "value": "島津忠良"
+          },
+          {
+            "language": "ja",
+            "value": "島津義辰"
+          },
+          {
+            "language": "ja",
+            "value": "島津又三郎"
+          },
+          {
+            "language": "ja",
+            "value": "島津三郎左衛門尉"
+          },
+          {
+            "language": "ja",
+            "value": "島津龍伯"
+          }
+        ]
+      },
+      "identityClaims": {
+        "P31": [
+          {
+            "mainsnak": {
+              "snaktype": "value",
+              "property": "P31",
+              "hash": "ad7d38a03cdd40cdc373de0dc4e7b7fcbccb31d9",
+              "datavalue": {
+                "value": {
+                  "entity-type": "item",
+                  "numeric-id": 5,
+                  "id": "Q5"
+                },
+                "type": "wikibase-entityid"
+              },
+              "datatype": "wikibase-item"
+            },
+            "type": "statement",
+            "id": "Q955727$6D851567-B5E3-49F0-B0E1-983504496AA6",
+            "rank": "normal",
+            "references": [
+              {
+                "hash": "fa278ebfc458360e5aed63d5058cca83c46134f1",
+                "snaks": {
+                  "P143": [
+                    {
+                      "snaktype": "value",
+                      "property": "P143",
+                      "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                      "datavalue": {
+                        "value": {
+                          "entity-type": "item",
+                          "numeric-id": 328,
+                          "id": "Q328"
+                        },
+                        "type": "wikibase-entityid"
+                      },
+                      "datatype": "wikibase-item"
+                    }
+                  ]
+                },
+                "snaks-order": [
+                  "P143"
+                ]
+              }
+            ]
+          }
+        ],
+        "P349": []
+      }
+    },
+    "Q1059785": {
+      "title": "Q1059785",
+      "lastrevid": 2438362794,
+      "id": "Q1059785",
+      "labels": {
+        "ja": {
+          "language": "ja",
+          "value": "増田長盛"
+        }
+      },
+      "descriptions": {
+        "ja": {
+          "language": "ja",
+          "value": "安土桃山時代から江戸時代初期の武将、大名。豊臣政権五奉行の第三席。従五位下・右衛門少尉。弟に増田長俊"
+        }
+      },
+      "aliases": {
+        "ja": [
+          {
+            "language": "ja",
+            "value": "仁右衛門"
+          }
+        ]
+      },
+      "identityClaims": {
+        "P31": [
+          {
+            "mainsnak": {
+              "snaktype": "value",
+              "property": "P31",
+              "hash": "ad7d38a03cdd40cdc373de0dc4e7b7fcbccb31d9",
+              "datavalue": {
+                "value": {
+                  "entity-type": "item",
+                  "numeric-id": 5,
+                  "id": "Q5"
+                },
+                "type": "wikibase-entityid"
+              },
+              "datatype": "wikibase-item"
+            },
+            "type": "statement",
+            "id": "Q1059785$DD3D3132-F647-4D19-9CE5-05423B9F8B1B",
+            "rank": "normal",
+            "references": [
+              {
+                "hash": "fa278ebfc458360e5aed63d5058cca83c46134f1",
+                "snaks": {
+                  "P143": [
+                    {
+                      "snaktype": "value",
+                      "property": "P143",
+                      "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                      "datavalue": {
+                        "value": {
+                          "entity-type": "item",
+                          "numeric-id": 328,
+                          "id": "Q328"
+                        },
+                        "type": "wikibase-entityid"
+                      },
+                      "datatype": "wikibase-item"
+                    }
+                  ]
+                },
+                "snaks-order": [
+                  "P143"
+                ]
+              }
+            ]
+          }
+        ],
+        "P349": []
+      }
+    },
+    "Q8514131": {
+      "title": "Q8514131",
+      "lastrevid": 2555356227,
+      "id": "Q8514131",
+      "labels": {
+        "ja": {
+          "language": "ja",
+          "value": "高橋元種"
+        }
+      },
+      "descriptions": {},
+      "aliases": {},
+      "identityClaims": {
+        "P31": [
+          {
+            "mainsnak": {
+              "snaktype": "value",
+              "property": "P31",
+              "hash": "ad7d38a03cdd40cdc373de0dc4e7b7fcbccb31d9",
+              "datavalue": {
+                "value": {
+                  "entity-type": "item",
+                  "numeric-id": 5,
+                  "id": "Q5"
+                },
+                "type": "wikibase-entityid"
+              },
+              "datatype": "wikibase-item"
+            },
+            "type": "statement",
+            "id": "Q8514131$2573EA71-25DF-48D5-B4C0-3A929B3CA146",
+            "rank": "normal",
+            "references": [
+              {
+                "hash": "a29a646602abf65105ed0f39a44231c962ece9ee",
+                "snaks": {
+                  "P143": [
+                    {
+                      "snaktype": "value",
+                      "property": "P143",
+                      "hash": "c6f1777471211df31724ac60175786f3872c83e9",
+                      "datavalue": {
+                        "value": {
+                          "entity-type": "item",
+                          "numeric-id": 177837,
+                          "id": "Q177837"
+                        },
+                        "type": "wikibase-entityid"
+                      },
+                      "datatype": "wikibase-item"
+                    }
+                  ]
+                },
+                "snaks-order": [
+                  "P143"
+                ]
+              }
+            ]
+          }
+        ],
+        "P349": []
+      }
+    },
+    "Q2446917": {
+      "title": "Q2446917",
+      "lastrevid": 2550308124,
+      "id": "Q2446917",
+      "labels": {
+        "ja": {
+          "language": "ja",
+          "value": "織田信忠"
+        }
+      },
+      "descriptions": {
+        "ja": {
+          "language": "ja",
+          "value": "戦国時代から安土桃山時代にかけての武将・大名。織田政権2代。織田信長の長男・嫡男。"
+        }
+      },
+      "aliases": {
+        "ja": [
+          {
+            "language": "ja",
+            "value": "奇妙丸"
+          },
+          {
+            "language": "ja",
+            "value": "勘九郎信重"
+          },
+          {
+            "language": "ja",
+            "value": "三位中将"
+          },
+          {
+            "language": "ja",
+            "value": "岐阜中将"
+          },
+          {
+            "language": "ja",
+            "value": "大雲院三品羽林仙巖大禅定門"
+          },
+          {
+            "language": "ja",
+            "value": "景徳院"
+          },
+          {
+            "language": "ja",
+            "value": "光勝院殿贈三品羽林郎悦巌大禅定門"
+          }
+        ]
+      },
+      "identityClaims": {
+        "P31": [
+          {
+            "mainsnak": {
+              "snaktype": "value",
+              "property": "P31",
+              "hash": "ad7d38a03cdd40cdc373de0dc4e7b7fcbccb31d9",
+              "datavalue": {
+                "value": {
+                  "entity-type": "item",
+                  "numeric-id": 5,
+                  "id": "Q5"
+                },
+                "type": "wikibase-entityid"
+              },
+              "datatype": "wikibase-item"
+            },
+            "type": "statement",
+            "id": "q2446917$9D7B9A99-5DDC-4E9E-8A4C-1D9DD3703593",
+            "rank": "normal",
+            "references": [
+              {
+                "hash": "288ab581e7d2d02995a26dfa8b091d96e78457fc",
+                "snaks": {
+                  "P143": [
+                    {
+                      "snaktype": "value",
+                      "property": "P143",
+                      "hash": "6a164248fc96bfa583bbb495cb63ae6401ec203c",
+                      "datavalue": {
+                        "value": {
+                          "entity-type": "item",
+                          "numeric-id": 206855,
+                          "id": "Q206855"
+                        },
+                        "type": "wikibase-entityid"
+                      },
+                      "datatype": "wikibase-item"
+                    }
+                  ]
+                },
+                "snaks-order": [
+                  "P143"
+                ]
+              }
+            ]
+          }
+        ],
+        "P349": []
+      }
+    },
+    "Q6729101": {
+      "title": "Q6729101",
+      "lastrevid": 2556908853,
+      "id": "Q6729101",
+      "labels": {
+        "ja": {
+          "language": "ja",
+          "value": "前田玄以"
+        }
+      },
+      "descriptions": {
+        "ja": {
+          "language": "ja",
+          "value": "日本の戦国～安土桃山時代の僧侶、武将、大名"
+        }
+      },
+      "aliases": {
+        "ja": [
+          {
+            "language": "ja",
+            "value": "基勝"
+          },
+          {
+            "language": "ja",
+            "value": "孫十郎"
+          },
+          {
+            "language": "ja",
+            "value": "半夢斎"
+          },
+          {
+            "language": "ja",
+            "value": "徳善院"
+          },
+          {
+            "language": "ja",
+            "value": "徳善院殿天涼以公大居士"
+          }
+        ]
+      },
+      "identityClaims": {
+        "P31": [
+          {
+            "mainsnak": {
+              "snaktype": "value",
+              "property": "P31",
+              "hash": "ad7d38a03cdd40cdc373de0dc4e7b7fcbccb31d9",
+              "datavalue": {
+                "value": {
+                  "entity-type": "item",
+                  "numeric-id": 5,
+                  "id": "Q5"
+                },
+                "type": "wikibase-entityid"
+              },
+              "datatype": "wikibase-item"
+            },
+            "type": "statement",
+            "id": "Q6729101$AC30EE2D-E7BA-4550-928A-6B7128624002",
+            "rank": "normal"
+          }
+        ],
+        "P349": []
+      }
+    },
+    "Q4803439": {
+      "title": "Q4803439",
+      "lastrevid": 2480762876,
+      "id": "Q4803439",
+      "labels": {
+        "ja": {
+          "language": "ja",
+          "value": "朝倉景鏡"
+        }
+      },
+      "descriptions": {
+        "ja": {
+          "language": "ja",
+          "value": "日本の戦国時代の武将"
+        }
+      },
+      "aliases": {
+        "ja": [
+          {
+            "language": "ja",
+            "value": "土橋信鏡"
+          },
+          {
+            "language": "ja",
+            "value": "朝倉信鏡"
+          }
+        ]
+      },
+      "identityClaims": {
+        "P31": [
+          {
+            "mainsnak": {
+              "snaktype": "value",
+              "property": "P31",
+              "hash": "ad7d38a03cdd40cdc373de0dc4e7b7fcbccb31d9",
+              "datavalue": {
+                "value": {
+                  "entity-type": "item",
+                  "numeric-id": 5,
+                  "id": "Q5"
+                },
+                "type": "wikibase-entityid"
+              },
+              "datatype": "wikibase-item"
+            },
+            "type": "statement",
+            "id": "Q4803439$2B60DCFE-37F7-42FE-BF74-2A7B76B1BD9E",
+            "rank": "normal",
+            "references": [
+              {
+                "hash": "d4bd87b862b12d99d26e86472d44f26858dee639",
+                "snaks": {
+                  "P143": [
+                    {
+                      "snaktype": "value",
+                      "property": "P143",
+                      "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                      "datavalue": {
+                        "value": {
+                          "entity-type": "item",
+                          "numeric-id": 8447,
+                          "id": "Q8447"
+                        },
+                        "type": "wikibase-entityid"
+                      },
+                      "datatype": "wikibase-item"
+                    }
+                  ]
+                },
+                "snaks-order": [
+                  "P143"
+                ]
+              }
+            ]
+          }
+        ],
+        "P349": []
+      }
+    },
+    "Q1082804": {
+      "title": "Q1082804",
+      "lastrevid": 2555357441,
+      "id": "Q1082804",
+      "labels": {
+        "ja": {
+          "language": "ja",
+          "value": "秋月種長"
+        }
+      },
+      "descriptions": {
+        "ja": {
+          "language": "ja",
+          "value": "日本の戦国時代末期～江戸時代初期の大名"
+        }
+      },
+      "aliases": {
+        "ja": [
+          {
+            "language": "ja",
+            "value": "龍雲寺雄山俊英大居士"
+          },
+          {
+            "language": "ja",
+            "value": "三郎"
+          },
+          {
+            "language": "ja",
+            "value": "竜雲寺殿雄山俊英大居士"
+          }
+        ]
+      },
+      "identityClaims": {
+        "P31": [
+          {
+            "mainsnak": {
+              "snaktype": "value",
+              "property": "P31",
+              "hash": "ad7d38a03cdd40cdc373de0dc4e7b7fcbccb31d9",
+              "datavalue": {
+                "value": {
+                  "entity-type": "item",
+                  "numeric-id": 5,
+                  "id": "Q5"
+                },
+                "type": "wikibase-entityid"
+              },
+              "datatype": "wikibase-item"
+            },
+            "type": "statement",
+            "id": "Q1082804$13FE3FAF-E0FF-47A0-817E-6BFD2476A7D5",
+            "rank": "normal",
+            "references": [
+              {
+                "hash": "fa278ebfc458360e5aed63d5058cca83c46134f1",
+                "snaks": {
+                  "P143": [
+                    {
+                      "snaktype": "value",
+                      "property": "P143",
+                      "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                      "datavalue": {
+                        "value": {
+                          "entity-type": "item",
+                          "numeric-id": 328,
+                          "id": "Q328"
+                        },
+                        "type": "wikibase-entityid"
+                      },
+                      "datatype": "wikibase-item"
+                    }
+                  ]
+                },
+                "snaks-order": [
+                  "P143"
+                ]
+              }
+            ]
+          }
+        ],
+        "P349": []
+      }
+    }
+  },
+  "retainedScope": "人物同定に使う名称・別名・人物区分・国会図書館ID。取得全量のSHAを別項目に保持。"
+}

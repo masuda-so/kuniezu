@@ -8,7 +8,8 @@
  const active=G.yActive;G.yActive=y=>y.n==='滝の城'?G.date().y<1590||G.date().y===1590&&G.S().t<G.evT({d:TK.lunarDate(1590,7,5)}):active(y);
  TK.CASTLE_EVIDENCE['滝の城']={role:'北条氏の連絡・兵站拠点',description:y?.[4],source,checked:'2026-11-01'};
  G.sitePresentation=function(y){const text=(y.desc||'').replace(/(個別.*?未照合|検証中|未検証|ゲーム.*?仮定).*$/,'').trim(),on=G.yActive(y),kind=y.kind==='城'?'城郭':G.YOSHO_FX[y.kind]?.n||y.kind;
-  return {title:y.n+(on?'':'跡'),kind,description:text,state:on?'':y.y0&&G.date().y<y.y0?'築かれる前':y.n==='滝の城'?'1590年の落城後、城跡となっています。':'この年代には使われていません。',role:TK.CASTLE_EVIDENCE[y.n]?.role||kind};
+  const before=y.y0&&G.date().y<y.y0;
+  return {title:y.n+(!on&&!before&&!y.n.endsWith('跡')?'跡':''),kind,description:text,state:on?'':before?'成立する前':y.n==='滝の城'?'1590年の落城後、城跡となっています。':'この年代には使われていません。',role:TK.CASTLE_EVIDENCE[y.n]?.role||kind};
  };
  const src=TK.RESEARCH_SOURCES;
  src.aizuTurn={author:'小山市',title:'徳川家康ゆかりの地 小山評定と小山御殿',url:'https://www.city.oyama.tochigi.jp/kankou-bunka/rekishi_bunka/bunkazai/page000011.html',locator:'1600年旧暦7月24日小山在陣・翌日の軍議',accessed:'2026-11-01',scope:'会津への出兵と西上への転換。会津での家康対上杉の本戦はない。'};

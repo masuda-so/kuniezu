@@ -16,7 +16,7 @@ function validateLocations({people,places,locations,sources}){
   const ids=p.authorityIds??[];
   if(!Array.isArray(ids))throw Error('人物の典拠IDは配列で指定: '+p.id);
   for(const id of ids){
-   if(typeof id!=='string'||!/^(?:wikidata:Q[1-9][0-9]*|ndlna:[0-9]{8})$/.test(id))throw Error('人物の典拠ID形式が不正: '+p.id);
+   if(typeof id!=='string'||!/^(?:wikidata:Q[1-9][0-9]*|ndlna:[0-9]{8,9})$/.test(id))throw Error('人物の典拠ID形式が不正: '+p.id);
    if(authorityOwners.has(id))throw Error('人物の典拠IDが重複: '+id);
    authorityOwners.add(id);
   }
@@ -37,21 +37,20 @@ function queryLocations(data,{person='',place='',year,fromYear,toYear,lunarDate,
  const lower=fromYear??-Infinity,upper=toYear??Infinity;
  if(lower>upper||year!==undefined&&(year<lower||year>upper))throw Error('検索年と期間の指定が不一致');
  const people=new Map(data.people.map(p=>[p.id,p])),places=new Map(data.places.map(p=>[p.id,p]));
+ const selectedPeople=person?data.people.filter(p=>{
+  if(/^(?:person|wikidata|ndlna):/.test(person))return [p.id,...(p.authorityIds??[])].includes(person);
+  return [p.name,...p.gameNames].some(name=>name.includes(person));
+ }):data.people;
+ const selectedIds=new Set(selectedPeople.map(p=>p.id));
  const matches=data.locations.filter(r=>{
-  const p=people.get(r.person),site=places.get(r.place),t=r.time;
-  if(person){
-   const exactId=/^(?:person|wikidata|ndlna):/.test(person);
-   const found=exactId
-    ? [p.id,...(p.authorityIds??[])].includes(person)
-    : [p.name,...p.gameNames].some(name=>name.includes(person));
-   if(!found)return false;
-  }
+  const site=places.get(r.place),t=r.time;
+  if(!selectedIds.has(r.person))return false;
   if(place&&!(place.startsWith('place:')?site.id===place:site.name.includes(place)))return false;
   const start=t.kind==='year-interval'?t.from:t.year??t.date[0];
   const end=t.kind==='year-interval'?t.untilExclusive-1:start;
   if(end<(year??lower)||start>(year??upper))return false;
   if(lunarDate&&t.kind==='dated-event'&&(t.date.some((v,i)=>v!==lunarDate[i])||t.leapMonth!==leapMonth))return false;return true;
  }).map(r=>({...r,personName:people.get(r.person).name,placeName:places.get(r.place).name,interpretation:r.relation==='principal-base'?'本拠の情報。現地滞在を保証しない':r.relation==='held-castle-lordship'?'城主就任・役職の情報。現地滞在を保証しない':r.time.kind==='year-window'?'この年の記録。指定日の滞在は確定しない':'日付のある出来事。前後の連続滞在は確定しない'}));
- return {matches,answerable:!!matches.length,exactPresenceConfirmed:!!lunarDate&&matches.some(r=>r.relation==='attested-presence'&&r.time.kind==='dated-event'),continuousPresenceAssumed:false};
+ return {matchedPeople:person?selectedPeople.map(p=>({id:p.id,name:p.name})):[],matches,answerable:!!matches.length,exactPresenceConfirmed:!!lunarDate&&matches.some(r=>r.relation==='attested-presence'&&r.time.kind==='dated-event'),continuousPresenceAssumed:false};
 }
 module.exports={loadLocations,validateLocations,queryLocations};

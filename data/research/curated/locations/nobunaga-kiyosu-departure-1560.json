@@ -1,0 +1,27 @@
+{
+  "id": "location:nobunaga-kiyosu-departure-1560",
+  "person": "person:oda-nobunaga",
+  "place": "place:kiyosu-castle",
+  "relation": "attested-presence",
+  "time": {
+    "kind": "dated-event",
+    "date": [
+      1560,
+      5,
+      19
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": false,
+    "precision": "day"
+  },
+  "source": "nobunagaKiyosuDepartureToyoake",
+  "sourceUrl": "https://www.city.toyoake.lg.jp/2001.htm",
+  "locator": "5月19日未明清洲城出陣の記述",
+  "uncertainty": "出陣の記録。正確な出発時刻、前日までの連続滞在、各隊の進路と兵数はこの記録で確定しない。",
+  "recordType": "sourced-location-observation",
+  "status": "verified-in-specified-scope",
+  "recordedAt": "2026-11-04",
+  "gameBindings": [
+    "history-index:person:oda-nobunaga"
+  ]
+}
