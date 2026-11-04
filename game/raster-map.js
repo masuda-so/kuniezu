@@ -1,5 +1,5 @@
 "use strict";
-/* 年代別の地図の版（game/map/versions.json）。ゲームの日付が期間 [from,to) に入る版を一つ選ぶ。塗り・当たり判定・境界線は同じ版を使う。 */
+/* 年代別の地図の版（game/map/build/versions.json）。ゲームの日付が期間 [from,to) に入る版を一つ選ぶ。塗り・当たり判定・境界線は同じ版を使う。 */
 window.TKMapVersion=(function(){let list=[],lastT=null,lastS=null,cur=null;
  if(typeof fetch==='function'&&typeof document!=='undefined')fetch('map/build/versions.json',{cache:'no-cache'}).then(r=>r.ok?r.json():{versions:[]}).then(v=>{list=v.versions||[];lastT=null;lastS=null;window.TKRaster?.bump?.();window.TKEdges?.bump?.();}).catch(()=>{});
  // 記憶は「遊んでいる場（G.S() の参照）」と日付の両方で引く。シナリオやセーブが替わって同じ t になっても古い版を使わない。
@@ -68,7 +68,7 @@ window.TKRaster=(function(){
  return {bump(){verMemo=null;revision++;onChange?.();},paint,idAt,pickAt,bounds,ready:()=>ready,revision:()=>revision,defs:()=>defs,onChange(fn){onChange=fn;}};
 })();
 
-/* 地形の陰影（Copernicus DEM GLO-90 から開発時に作った画像。game/map/relief.json）。
+/* 地形の陰影（Copernicus DEM GLO-90 から開発時に作った画像。game/map/build/relief.json）。
    実行時に外部の標高タイルを取り寄せて計算することはしない。表示の細かさで 100m・400m・800m の段を選び、
    細かい段が届くまでは 800m の段を下に敷く（陰影は陸で不透明なので二重にならない）。 */
 window.TKRelief=(function(){
@@ -94,7 +94,7 @@ window.TKRelief=(function(){
  return {paint,ready:()=>ready,revision:()=>revision,notice:()=>man&&{notice:man.notice,disclaimer:man.disclaimer,license:man.license},onChange(fn){onChange=fn;},states:()=>Object.fromEntries([...tiles].map(([k,r])=>[k,r.state+(r.err?' '+r.err:'')]))};
 })();
 
-/* 境界線（game/map/edges.json）。領域画像から生成した共有辺で、塗りと同じ版・同じ段から取る（Codex との契約）。
+/* 境界線（game/map/build/edges.json）。領域画像から生成した共有辺で、塗りと同じ版・同じ段から取る（Codex との契約）。
    段は TKRaster と同じ選び方。細かい段のタイルが届くまでは、届いている粗い段を使い、塗りの段と食い違う線は重ねない。 */
 window.TKEdges=(function(){
  let man=null,grid=null,ready=false,revision=0,onChange=null;const tiles=new Map();

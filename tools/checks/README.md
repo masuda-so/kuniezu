@@ -13,12 +13,13 @@
 | 読み込みの確認値（更新後に古い版を使わせない） | `node tools/build/stamp-assets.cjs --check`（CIでも実行。game/ のファイルを変えたら `node tools/build/stamp-assets.cjs` を実行） | — |
 | フォルダ・担当管理 | `organization.cjs` | `march-clock-browser.cjs` の起動・行軍・合戦確認 |
 | 史料入力・出力 | `evidence-store.cjs`、`history-index.cjs`、`tools/research/export-evidence.cjs` | 該当する史料・説明の表示 |
+| 史実SQL・時空間キューブ | `python3 tools/checks/history-sqlite.py`、`python3 tools/checks/history-sqlite-inputs.py`、`python3 tools/checks/history-cube.py` | —（研究用の読取DB・ゲーム描画は変更しない） |
 | 人物・開始配置 | `historical-register.cjs`、`scenario-openings.cjs` | `march-clock-browser.cjs` |
 | 領土・分家・外交 | `families-territory.cjs`、`map-history.cjs` | `borders-family-browser.cjs` |
 | 行軍・保存・速度 | `movement-display.cjs`、`movement-clock.cjs`、`movement-save.cjs`、`logistics-review.cjs` | `march-clock-browser.cjs` |
 | 全期間の移動 | `march-audit.cjs`、`warp-audit.cjs` | 発見したケースを再現 |
 | 街道・河川・地図 | `road-display.cjs`、`battle-rivers.cjs`、`terrain-transition.cjs`、`terrain-cache.cjs`、`raster-map.cjs`（正本 `game/map` と配信タイルの一致）、`province-edits.cjs`（年代別の差分の負例） | `zoom-regressions.cjs` |
-| 合戦 | `deployments.cjs`、`atlas-regressions.cjs`、`battle-review.cjs` | `all-battles-browser.cjs`、`battle-loading-browser.cjs` |
+| 合戦 | `deployments.cjs`、`atlas-regressions.cjs`、`battle-review.cjs`、`battle-viewport.cjs` | `all-battles-browser.cjs`、`battle-loading-browser.cjs`、`battle-viewport-browser.cjs` |
 | UI・肖像・性能 | `infrastructure.cjs` | `usability-browser.cjs`、`portrait-browser.cjs`、`render-performance.cjs`、`load-performance.cjs`（起動・再生中の負荷。`GAME_OVERRIDE_ROOT` で作業ツリーの変更分だけ差し替え） |
 | 棚卸し | `coverage-review.cjs`、`history-audit.cjs`、`road-shape-review.cjs` | 棚卸しだけで表示検査済みにしない |
 
