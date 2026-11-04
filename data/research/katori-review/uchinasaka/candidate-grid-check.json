@@ -1,0 +1,44 @@
+{
+  "scope": "1885 comparison only; not a historical shoreline or approved map edit",
+  "sourceManifestSha256": "30948d6cf0b847f0eb9190fe9137bca8b04db6c480f8c34f81477467a9a4f84a",
+  "cellsByShape": {
+    "uchinasaka-inner-lake": 142,
+    "uchinasaka-mouth-channel": 140,
+    "uchinasaka-southeast-tongue": 70
+  },
+  "waterCellsBeforeLandProtection": 893,
+  "landConflictCells": 0,
+  "waterCellsAfterLandProtection": 893,
+  "connectedWaterCellsFromInnerCore": 893,
+  "southReferenceCells": 518,
+  "southReferenceConnectedCells": 518,
+  "outerReferenceCells": 194,
+  "outerReferenceConnectedCells": 194,
+  "currentKitauraSampleReached": true,
+  "controls": {
+    "lake-core-west": {
+      "waterCandidate": true,
+      "connectedToInnerCore": true
+    },
+    "lake-core-south": {
+      "waterCandidate": true,
+      "connectedToInnerCore": true
+    },
+    "north-fringe": {
+      "waterCandidate": false,
+      "connectedToInnerCore": false
+    },
+    "southeast-tongue": {
+      "waterCandidate": false,
+      "connectedToInnerCore": false
+    },
+    "marsh-north-edge": {
+      "waterCandidate": true,
+      "connectedToInnerCore": true
+    },
+    "outer-connection": {
+      "waterCandidate": true,
+      "connectedToInnerCore": true
+    }
+  }
+}

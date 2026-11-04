@@ -1,0 +1,521 @@
+{
+  "checked": "2026-11-04",
+  "baseSharedHead": "8d50e08",
+  "scope": "内浪逆浦・現潮来市日の出地区の一地域",
+  "targetYears": [
+    1560,
+    1615
+  ],
+  "sources": [
+    {
+      "id": "itako-development",
+      "author": "潮来市",
+      "title": "日の出地区液状化対策検討資料 第1章 概況整理",
+      "url": "https://www.city.itako.lg.jp/data/doc/1385542213_doc_1_0.pdf",
+      "locator": "PDF3頁（1-1）、5頁（1-3 表1.1-1と造成履歴）、6頁（1-4）",
+      "accessed": "2026-11-04",
+      "originalLocalPath": "data/inputs/katori-uchinasaka-review/itako-development.pdf",
+      "sha256": "f14c83915e2a217883f0ade0f2b82fc0a12b0eeabfc0b3a3913a1509b25db8cb",
+      "bytes": 5865578,
+      "visuallyReadPages": [
+        3,
+        5,
+        6
+      ]
+    },
+    {
+      "id": "gsi-land-history",
+      "author": "国土地理院",
+      "title": "土地の成り立ちを知る：潮来市日の出地区",
+      "url": "https://www.gsi.go.jp/common/000190592.pdf",
+      "locator": "PDF5頁・液状化と地形の変貌",
+      "accessed": "2026-11-04",
+      "originalLocalPath": "data/inputs/katori-uchinasaka-review/gsi-land-history.pdf",
+      "sha256": "28cf99e7426cbd30c45d84f33a252c6b02d89053be2bdb936abcc3fc03c97e7a",
+      "bytes": 4200764,
+      "visuallyReadPages": [
+        5
+      ]
+    },
+    {
+      "id": "mlit-landclassification",
+      "author": "茨城県企画部企画課（国土交通省公開）",
+      "title": "土地分類基本調査 潮来・銚子",
+      "url": "https://nlftp.mlit.go.jp/kokjo/tochimizu/F3/data/pdf/0811t.pdf",
+      "locator": "1989年3月。本文22–23・25・33–34頁（PDF29–31・38–39頁）",
+      "accessed": "2026-11-04",
+      "originalLocalPath": "data/inputs/katori-uchinasaka-review/mlit-landclassification.pdf",
+      "sha256": "b6092a29a8db2481e5b9002cbd4f7d36f6b41917f270fde6f0bf46393b2228ee",
+      "bytes": 3589469,
+      "visuallyReadPages": [
+        29,
+        30,
+        31,
+        38,
+        39
+      ]
+    },
+    {
+      "id": "naro-rapid1885-itako",
+      "author": "農研機構農業環境研究部門",
+      "title": "第一軍管区地方2万分1迅速測図原図・内浪逆浦付近",
+      "url": "https://habs.rad.naro.go.jp/habs_faq.html",
+      "license": "CC BY 2.1 JP",
+      "year": 1885,
+      "yearCaveat": "GSI同地区図版の表示。個別図郭外の年号はこのタイルでは見えていない。",
+      "priorAcquisition": "2026-11-02",
+      "visuallyRead": "2026-11-04",
+      "localDirectory": "data/inputs/katori-rapid-review",
+      "tiles": [
+        {
+          "layer": "rapid1880",
+          "tile": [
+            13,
+            7294,
+            3218
+          ],
+          "sourceRow": 4973,
+          "url": "https://habs.rad.naro.go.jp/rapid16/13/7294/4973.png",
+          "file": "rapid1880-13-7294-3218.png",
+          "transparentPixelCount": 0,
+          "status": "saved",
+          "sha256": "a210ebbe5d58abf8afdb936f1710e567ffbb9a810aabc202e464a2ea3ea45ebc"
+        },
+        {
+          "layer": "rapid1880",
+          "tile": [
+            13,
+            7295,
+            3218
+          ],
+          "sourceRow": 4973,
+          "url": "https://habs.rad.naro.go.jp/rapid16/13/7295/4973.png",
+          "file": "rapid1880-13-7295-3218.png",
+          "transparentPixelCount": 0,
+          "status": "saved",
+          "sha256": "767e5178bbb76df0c36493498093b75b64dac3423ddf9e344b06d12112029021"
+        },
+        {
+          "layer": "rapid1880",
+          "tile": [
+            13,
+            7294,
+            3219
+          ],
+          "sourceRow": 4972,
+          "url": "https://habs.rad.naro.go.jp/rapid16/13/7294/4972.png",
+          "file": "rapid1880-13-7294-3219.png",
+          "transparentPixelCount": 0,
+          "status": "saved",
+          "sha256": "d2edd72e5b1976ed26934c8fa4ca72e4806b8fa52d0fb0803700bfa59250e2bf"
+        },
+        {
+          "layer": "rapid1880",
+          "tile": [
+            13,
+            7295,
+            3219
+          ],
+          "sourceRow": 4972,
+          "url": "https://habs.rad.naro.go.jp/rapid16/13/7295/4972.png",
+          "file": "rapid1880-13-7295-3219.png",
+          "transparentPixelCount": 0,
+          "status": "saved",
+          "sha256": "18f91d3d3aa75cd559f49c3f1e64ad4bff53781945e5d8975750dee05a2c3ffe"
+        }
+      ]
+    }
+  ],
+  "runtimeAudit": {
+    "sourceFiles": [
+      {
+        "path": "game/map_data/projection.json",
+        "sha256": "04bd30868c1f5a9420b308d318d606a95d1158c23a8e6f18b3f7ecfe6b01466a"
+      },
+      {
+        "path": "game/map_data/definition.csv",
+        "sha256": "e10e24cb314157770715ede8a1290d2bca807692eec8d9f269283277dd122801"
+      },
+      {
+        "path": "game/map_data/default.map",
+        "sha256": "36b071aab05850ce318f80767cf9307dd2bc23f144d89c04fbface39529b4d1b"
+      },
+      {
+        "path": "game/map/provinces/15-11.png",
+        "sha256": "8799a563ba64c3a2759197a600ef0d1b4bf349089356b7d44d6e8982e014f07d"
+      },
+      {
+        "path": "game/map/edits/baseline-ledger.json",
+        "sha256": "c833a33d2f022e5322fe6a65ab30aca367e54e994339e65cb07e0f031c8104e8"
+      },
+      {
+        "path": "game/katori-lowlands.js",
+        "sha256": "26875658e4ec6789bf0c603d65132b1dbc6feb3c151b807903870c74d4889820"
+      },
+      {
+        "path": "game/period-waters.js",
+        "sha256": "2ab4ff00a50a76bdd5fe44a51535434090ddda9c10d8115145be50144477eb20"
+      },
+      {
+        "path": "game/water-evidence.js",
+        "sha256": "74d1424653abfc3007daed0c5398623cf139512a57586d8dc46ea5bc5a6c7009"
+      }
+    ],
+    "epochs": [
+      {
+        "path": "game/map/edits/compiled/15730101-15840101/manifest.json",
+        "sha256": "bb9d6ac67f057eb85b40c40b3c3bd2a350e40c2e9e6654e78fffd2b42f60e81a",
+        "includesTargetTile": false
+      },
+      {
+        "path": "game/map/edits/compiled/16060101-16160101/manifest.json",
+        "sha256": "3f070b40771d62360de5165211d88f1713631d8cc3a5f44d406c6ade231e751b",
+        "includesTargetTile": false
+      },
+      {
+        "path": "game/map/edits/compiled/15840101-16060101/manifest.json",
+        "sha256": "a04bb4ce93b85ebc83dc4934fce1ddc6dbb0e417e0a18e9872d46175ce247f97",
+        "includesTargetTile": false
+      }
+    ],
+    "pointSamples": [
+      {
+        "id": "lake-core-west",
+        "name": "旧内浪逆浦西部の湖内",
+        "referenceYear": 1885,
+        "referenceYearBasis": "GSI資料PDF5頁は当地区の迅速測図を明治18年測図と表示。提供タイル個別図郭の年号は切れている。",
+        "sourceId": "naro-rapid1885-itako",
+        "sourcePixel": {
+          "tileOrigin": [
+            13,
+            7294,
+            3218
+          ],
+          "pixel": [
+            175,
+            190
+          ]
+        },
+        "mapReading": "water",
+        "positionUncertaintyMetres": 100,
+        "positionUncertaintyMeaning": "配信元FAQの大きな所で約100mという概説。16世紀湖岸の精度保証ではない。",
+        "targetYears": [
+          1560,
+          1615
+        ],
+        "directHistoricShorelineAdoption": false,
+        "decision": "1950年頃の干拓・1970年代の造成地を1560年の陸地根拠にしない。湖内の参考復元候補。",
+        "currentRaster": {
+          "tile": "15-11.png",
+          "globalCell": [
+            16053,
+            11505
+          ],
+          "rgb": [
+            141,
+            129,
+            47
+          ],
+          "id": 82,
+          "key": "castle:odajo",
+          "modernTerrainMarshOverlay": true
+        }
+      },
+      {
+        "id": "lake-core-south",
+        "name": "旧内浪逆浦南部の湖内",
+        "referenceYear": 1885,
+        "referenceYearBasis": "GSI資料PDF5頁は当地区の迅速測図を明治18年測図と表示。提供タイル個別図郭の年号は切れている。",
+        "sourceId": "naro-rapid1885-itako",
+        "sourcePixel": {
+          "tileOrigin": [
+            13,
+            7294,
+            3218
+          ],
+          "pixel": [
+            205,
+            222
+          ]
+        },
+        "mapReading": "water",
+        "positionUncertaintyMetres": 100,
+        "positionUncertaintyMeaning": "配信元FAQの大きな所で約100mという概説。16世紀湖岸の精度保証ではない。",
+        "targetYears": [
+          1560,
+          1615
+        ],
+        "directHistoricShorelineAdoption": false,
+        "decision": "迅速測図では水面。現代造成面の標高による陸判定を採用しない。",
+        "currentRaster": {
+          "tile": "15-11.png",
+          "globalCell": [
+            16058,
+            11510
+          ],
+          "rgb": [
+            141,
+            129,
+            47
+          ],
+          "id": 82,
+          "key": "castle:odajo",
+          "modernTerrainMarshOverlay": true
+        }
+      },
+      {
+        "id": "north-fringe",
+        "name": "内浪逆浦北岸の耕地側",
+        "referenceYear": 1885,
+        "referenceYearBasis": "GSI資料PDF5頁は当地区の迅速測図を明治18年測図と表示。提供タイル個別図郭の年号は切れている。",
+        "sourceId": "naro-rapid1885-itako",
+        "sourcePixel": {
+          "tileOrigin": [
+            13,
+            7294,
+            3218
+          ],
+          "pixel": [
+            170,
+            125
+          ]
+        },
+        "mapReading": "land-or-field",
+        "positionUncertaintyMetres": 100,
+        "positionUncertaintyMeaning": "配信元FAQの大きな所で約100mという概説。16世紀湖岸の精度保証ではない。",
+        "targetYears": [
+          1560,
+          1615
+        ],
+        "directHistoricShorelineAdoption": false,
+        "decision": "明治期には陸地。1560年まで同じ岸だった証拠ではない。水域への一括変更は採用しない。",
+        "currentRaster": {
+          "tile": "15-11.png",
+          "globalCell": [
+            16052,
+            11495
+          ],
+          "rgb": [
+            141,
+            129,
+            47
+          ],
+          "id": 82,
+          "key": "castle:odajo",
+          "modernTerrainMarshOverlay": false
+        }
+      },
+      {
+        "id": "southeast-tongue",
+        "name": "入江南東側の耕地・自然堤防側",
+        "referenceYear": 1885,
+        "referenceYearBasis": "GSI資料PDF5頁は当地区の迅速測図を明治18年測図と表示。提供タイル個別図郭の年号は切れている。",
+        "sourceId": "naro-rapid1885-itako",
+        "sourcePixel": {
+          "tileOrigin": [
+            13,
+            7294,
+            3218
+          ],
+          "pixel": [
+            270,
+            230
+          ]
+        },
+        "mapReading": "land-or-field",
+        "positionUncertaintyMetres": 100,
+        "positionUncertaintyMeaning": "配信元FAQの大きな所で約100mという概説。16世紀湖岸の精度保証ではない。",
+        "targetYears": [
+          1560,
+          1615
+        ],
+        "directHistoricShorelineAdoption": false,
+        "decision": "明治期の島状陸地を日の出宅地区画とともに水没させない。戦国期の島形は別照合。",
+        "currentRaster": {
+          "tile": "15-11.png",
+          "globalCell": [
+            16068,
+            11511
+          ],
+          "rgb": [
+            141,
+            129,
+            47
+          ],
+          "id": 82,
+          "key": "castle:odajo",
+          "modernTerrainMarshOverlay": false
+        }
+      },
+      {
+        "id": "marsh-north-edge",
+        "name": "入江北岸の葦原・水際帯",
+        "referenceYear": 1885,
+        "referenceYearBasis": "GSI資料PDF5頁は当地区の迅速測図を明治18年測図と表示。提供タイル個別図郭の年号は切れている。",
+        "sourceId": "naro-rapid1885-itako",
+        "sourcePixel": {
+          "tileOrigin": [
+            13,
+            7294,
+            3218
+          ],
+          "pixel": [
+            175,
+            163
+          ]
+        },
+        "mapReading": "marsh-or-shore",
+        "positionUncertaintyMetres": 100,
+        "positionUncertaintyMeaning": "配信元FAQの大きな所で約100mという概説。16世紀湖岸の精度保証ではない。",
+        "targetYears": [
+          1560,
+          1615
+        ],
+        "directHistoricShorelineAdoption": false,
+        "decision": "藍色の水際帯。明治の線は比較用、1560年の精密汀線には不採用。",
+        "currentRaster": {
+          "tile": "15-11.png",
+          "globalCell": [
+            16053,
+            11501
+          ],
+          "rgb": [
+            141,
+            129,
+            47
+          ],
+          "id": 82,
+          "key": "castle:odajo",
+          "modernTerrainMarshOverlay": true
+        }
+      },
+      {
+        "id": "outer-connection",
+        "name": "外浪逆浦へ開く入江口の水域",
+        "referenceYear": 1885,
+        "referenceYearBasis": "GSI資料PDF5頁は当地区の迅速測図を明治18年測図と表示。提供タイル個別図郭の年号は切れている。",
+        "sourceId": "naro-rapid1885-itako",
+        "sourcePixel": {
+          "tileOrigin": [
+            13,
+            7294,
+            3218
+          ],
+          "pixel": [
+            318,
+            265
+          ]
+        },
+        "mapReading": "water",
+        "positionUncertaintyMetres": 100,
+        "positionUncertaintyMeaning": "配信元FAQの大きな所で約100mという概説。16世紀湖岸の精度保証ではない。",
+        "targetYears": [
+          1560,
+          1615
+        ],
+        "directHistoricShorelineAdoption": false,
+        "decision": "内外の水域接続の比較点。堤防・排水水路の形を戦国期へ転用しない。",
+        "currentRaster": {
+          "tile": "15-11.png",
+          "globalCell": [
+            16075,
+            11517
+          ],
+          "rgb": [
+            141,
+            129,
+            47
+          ],
+          "id": 82,
+          "key": "castle:odajo",
+          "modernTerrainMarshOverlay": true
+        }
+      }
+    ],
+    "summary": "正本由来の100mタイルでは旧湖内が城管理域の陸。古水域正本・年代差分はない。別描画の現代標高制約付き湿地が一部重なる。迅速図は前回調査でcomparison-onlyであり、これを戦国湖岸として直接移植した痕跡はない。"
+  },
+  "chronology": [
+    {
+      "interval": [
+        1560,
+        1615
+      ],
+      "event": "対象期間",
+      "decision": "昭和干拓・宅地造成・1654年以後の土砂堆積を先取りしない。局所の精密汀線は未確定。"
+    },
+    {
+      "year": 1654,
+      "event": "利根川東遷後のこの地域への流入・堆積",
+      "source": "mlit-landclassification",
+      "locator": "本文33頁",
+      "decision": "明治図と戦国期の輪郭一致を保証しない理由。"
+    },
+    {
+      "year": 1885,
+      "event": "迅速測図に入江・水面・葦原・耕地を描く",
+      "source": "naro-rapid1885-itako",
+      "decision": "この形状を直接確認できる年限。戦国期へ遡及しない。"
+    },
+    {
+      "years": [
+        1931,
+        1941,
+        1949,
+        1950
+      ],
+      "event": "干拓開始・再開・完成",
+      "sources": [
+        "itako-development",
+        "gsi-land-history",
+        "mlit-landclassification"
+      ],
+      "decision": "1931開始、1941堤防排水工事、1950事業完成を潮来市表により区別。GSIの完成1949との差は保持し、正確な竣工日として一本化しない。いずれも対象期間外。"
+    },
+    {
+      "years": [
+        1969,
+        1970,
+        1974,
+        1977
+      ],
+      "event": "住宅地への転換、土砂吹上、宅地区画造成・完了",
+      "sources": [
+        "itako-development",
+        "gsi-land-history"
+      ],
+      "decision": "宅地区画・盛土・排水路は全て1560〜1615に不採用。"
+    }
+  ],
+  "adoptionDecision": {
+    "accepted": [
+      "内浪逆浦を昭和造成後の一枚の陸として扱う根拠は不適切と判定する。",
+      "迅速図の湖内確認点・水域と外浪逆浦の接続は1885年の位置付き証拠として採用。",
+      "1560〜1615の描画を改める場合、現代標高3m閾値を復元根拠から外し、古い入江を示す推定水域として扱う方針は採用可能。"
+    ],
+    "rejected": [
+      "1885年の岸を1560年の測量岸として直接コピー。",
+      "現代の日の出地区196ha全域を一律に水面へ反転。",
+      "1931〜1950年の堤防、1970年代の排水路・盛土面・宅地区画を戦国期に表示。",
+      "1590年・1603年の一括地形切替、年代不明の中間汀線補間。"
+    ],
+    "notEstablished": [
+      "1560年の精密な外縁、季節水位、葦原と恒常水面の境界。",
+      "1654年以前から1885年まで変わらない岸区間。",
+      "南東の自然堤防・耕地の形を特定の戦国年へ固定すること。"
+    ],
+    "nextDecisiveEvidence": [
+      "正保期の延方前洲・徳島地を描いた提出絵図の所在と原図（地域の境界争論史料に言及）。既知の延方・潮来・下幡木を同定し、内浪逆浦北岸と南東洲を別に登録する。",
+      "天正〜慶長の津知・延方・大洲の検地帳／村田氏系図と、その所在地がわかる考古・字限図。家数や開拓開始年を岸線そのものに読み替えない。",
+      "日の出70m地質コアの上部自然層について年代測定と旧水面・汽水指標。現代造成層を差し引いた標高だけで1560年の水位を決めない。"
+    ],
+    "rasterPatchReady": false,
+    "reason": "近現代造成の誤採用を退ける判断は終了。16世紀の精密外縁が未確定なので、虚偽の確定岸を量産せず位置付き参考水域として提案する。"
+  },
+  "operations": {
+    "mapEdited": false,
+    "wholeRasterDecoded": false,
+    "browserLaunched": false,
+    "fullSimulation": false,
+    "localRasterTilesDecoded": 1
+  }
+}

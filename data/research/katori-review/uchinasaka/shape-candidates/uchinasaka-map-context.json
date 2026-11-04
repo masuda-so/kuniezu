@@ -1,0 +1,68 @@
+{
+ "sourceSha256": "9e27144aa9c953299567fd3719d3ad413ea1f496ad03a097e1e25b2c6eb1a03d",
+ "existingLakes": [
+  {
+   "key": "lake:140.55,36.05",
+   "id": 156
+  },
+  {
+   "key": "lake:140.37,36.04",
+   "id": 154
+  }
+ ],
+ "currentOwnerOfArea": "castle:odajo（湖の候補の中はすべてこの城の領域の陸）",
+ "controls": [
+  {
+   "id": "lake-core-west",
+   "reading": "water",
+   "inside": [
+    "uchinasaka-inner-lake"
+   ],
+   "currentKey": "castle:odajo"
+  },
+  {
+   "id": "lake-core-south",
+   "reading": "water",
+   "inside": [
+    "uchinasaka-inner-lake"
+   ],
+   "currentKey": "castle:odajo"
+  },
+  {
+   "id": "north-fringe",
+   "reading": "land-or-field",
+   "inside": [],
+   "currentKey": "castle:odajo"
+  },
+  {
+   "id": "southeast-tongue",
+   "reading": "land-or-field",
+   "inside": [
+    "uchinasaka-southeast-tongue"
+   ],
+   "currentKey": "castle:odajo"
+  },
+  {
+   "id": "marsh-north-edge",
+   "reading": "marsh-or-shore",
+   "inside": [
+    "uchinasaka-inner-lake"
+   ],
+   "currentKey": "castle:odajo"
+  },
+  {
+   "id": "outer-connection",
+   "reading": "water",
+   "inside": [
+    "uchinasaka-mouth-channel"
+   ],
+   "currentKey": "castle:odajo"
+  }
+ ],
+ "castlesNear": [],
+ "sitesNear": [],
+ "cautions": [
+  "外浪逆浦・常陸利根川・利根川の水面も今の正本では陸（castle:odajo・castle:sakura）。内浪逆浦だけを水にすると周りから切り離された湖になる。",
+  "湖の候補の中の陸は今すべて castle:odajo。水にする時は lake の新しい区画を definition.csv と default.map の lakes に足すか、既存の湖の区画へつなぐかを決める。"
+ ]
+}

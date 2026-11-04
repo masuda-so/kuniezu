@@ -1,0 +1,35 @@
+{
+  "scope": "Current served-tile comparison. Grid distance is not a historical channel length.",
+  "sourceManifestSha256": "30948d6cf0b847f0eb9190fe9137bca8b04db6c480f8c34f81477467a9a4f84a",
+  "boundsPixels": [
+    16029,
+    10673,
+    16137,
+    10795
+  ],
+  "mouthPixel": [
+    16075,
+    10725
+  ],
+  "nearestWater": {
+    "lake:140.55,36.05": {
+      "pixel": [
+        16093,
+        10696
+      ],
+      "lonLat": [
+        140.6113435921709,
+        35.949234638878906
+      ],
+      "gridDistanceMetres": 3413.21
+    }
+  },
+  "counts": {
+    "castle:odajo": 8619,
+    "lake:140.55,36.05": 315,
+    "castle:sakura": 4473
+  },
+  "tileHashes": {
+    "15-10.png": "ecac155c55b1ba5707f71c75d354abc99b3d3b2365a4df390d1f2ae23794eda1"
+  }
+}

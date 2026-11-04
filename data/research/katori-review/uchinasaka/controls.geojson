@@ -1,0 +1,423 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "lake-core-west",
+        "name": "旧内浪逆浦西部の湖内",
+        "referenceYear": 1885,
+        "referenceYearBasis": "GSI資料PDF5頁は当地区の迅速測図を明治18年測図と表示。提供タイル個別図郭の年号は切れている。",
+        "sourceId": "naro-rapid1885-itako",
+        "sourcePixel": {
+          "tileOrigin": [
+            13,
+            7294,
+            3218
+          ],
+          "pixel": [
+            175,
+            190
+          ]
+        },
+        "mapReading": "water",
+        "positionUncertaintyMetres": 100,
+        "positionUncertaintyMeaning": "配信元FAQの大きな所で約100mという概説。16世紀湖岸の精度保証ではない。",
+        "targetYears": [
+          1560,
+          1615
+        ],
+        "directHistoricShorelineAdoption": false,
+        "decision": "1950年頃の干拓・1970年代の造成地を1560年の陸地根拠にしない。湖内の参考復元候補。",
+        "currentRaster": {
+          "tile": "15-11.png",
+          "globalCell": [
+            16053,
+            11505
+          ],
+          "rgb": [
+            141,
+            129,
+            47
+          ],
+          "id": 82,
+          "key": "castle:odajo",
+          "modernTerrainMarshOverlay": true
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.56715012,
+          35.93381863
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "lake-core-south",
+        "name": "旧内浪逆浦南部の湖内",
+        "referenceYear": 1885,
+        "referenceYearBasis": "GSI資料PDF5頁は当地区の迅速測図を明治18年測図と表示。提供タイル個別図郭の年号は切れている。",
+        "sourceId": "naro-rapid1885-itako",
+        "sourcePixel": {
+          "tileOrigin": [
+            13,
+            7294,
+            3218
+          ],
+          "pixel": [
+            205,
+            222
+          ]
+        },
+        "mapReading": "water",
+        "positionUncertaintyMetres": 100,
+        "positionUncertaintyMeaning": "配信元FAQの大きな所で約100mという概説。16世紀湖岸の精度保証ではない。",
+        "targetYears": [
+          1560,
+          1615
+        ],
+        "directHistoricShorelineAdoption": false,
+        "decision": "迅速測図では水面。現代造成面の標高による陸判定を採用しない。",
+        "currentRaster": {
+          "tile": "15-11.png",
+          "globalCell": [
+            16058,
+            11510
+          ],
+          "rgb": [
+            141,
+            129,
+            47
+          ],
+          "id": 82,
+          "key": "castle:odajo",
+          "modernTerrainMarshOverlay": true
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.57229996,
+          35.92937072
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "north-fringe",
+        "name": "内浪逆浦北岸の耕地側",
+        "referenceYear": 1885,
+        "referenceYearBasis": "GSI資料PDF5頁は当地区の迅速測図を明治18年測図と表示。提供タイル個別図郭の年号は切れている。",
+        "sourceId": "naro-rapid1885-itako",
+        "sourcePixel": {
+          "tileOrigin": [
+            13,
+            7294,
+            3218
+          ],
+          "pixel": [
+            170,
+            125
+          ]
+        },
+        "mapReading": "land-or-field",
+        "positionUncertaintyMetres": 100,
+        "positionUncertaintyMeaning": "配信元FAQの大きな所で約100mという概説。16世紀湖岸の精度保証ではない。",
+        "targetYears": [
+          1560,
+          1615
+        ],
+        "directHistoricShorelineAdoption": false,
+        "decision": "明治期には陸地。1560年まで同じ岸だった証拠ではない。水域への一括変更は採用しない。",
+        "currentRaster": {
+          "tile": "15-11.png",
+          "globalCell": [
+            16052,
+            11495
+          ],
+          "rgb": [
+            141,
+            129,
+            47
+          ],
+          "id": 82,
+          "key": "castle:odajo",
+          "modernTerrainMarshOverlay": false
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.56629181,
+          35.94285269
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "southeast-tongue",
+        "name": "入江南東側の耕地・自然堤防側",
+        "referenceYear": 1885,
+        "referenceYearBasis": "GSI資料PDF5頁は当地区の迅速測図を明治18年測図と表示。提供タイル個別図郭の年号は切れている。",
+        "sourceId": "naro-rapid1885-itako",
+        "sourcePixel": {
+          "tileOrigin": [
+            13,
+            7294,
+            3218
+          ],
+          "pixel": [
+            270,
+            230
+          ]
+        },
+        "mapReading": "land-or-field",
+        "positionUncertaintyMetres": 100,
+        "positionUncertaintyMeaning": "配信元FAQの大きな所で約100mという概説。16世紀湖岸の精度保証ではない。",
+        "targetYears": [
+          1560,
+          1615
+        ],
+        "directHistoricShorelineAdoption": false,
+        "decision": "明治期の島状陸地を日の出宅地区画とともに水没させない。戦国期の島形は別照合。",
+        "currentRaster": {
+          "tile": "15-11.png",
+          "globalCell": [
+            16068,
+            11511
+          ],
+          "rgb": [
+            141,
+            129,
+            47
+          ],
+          "id": 82,
+          "key": "castle:odajo",
+          "modernTerrainMarshOverlay": false
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.58345795,
+          35.9282587
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "marsh-north-edge",
+        "name": "入江北岸の葦原・水際帯",
+        "referenceYear": 1885,
+        "referenceYearBasis": "GSI資料PDF5頁は当地区の迅速測図を明治18年測図と表示。提供タイル個別図郭の年号は切れている。",
+        "sourceId": "naro-rapid1885-itako",
+        "sourcePixel": {
+          "tileOrigin": [
+            13,
+            7294,
+            3218
+          ],
+          "pixel": [
+            175,
+            163
+          ]
+        },
+        "mapReading": "marsh-or-shore",
+        "positionUncertaintyMetres": 100,
+        "positionUncertaintyMeaning": "配信元FAQの大きな所で約100mという概説。16世紀湖岸の精度保証ではない。",
+        "targetYears": [
+          1560,
+          1615
+        ],
+        "directHistoricShorelineAdoption": false,
+        "decision": "藍色の水際帯。明治の線は比較用、1560年の精密汀線には不採用。",
+        "currentRaster": {
+          "tile": "15-11.png",
+          "globalCell": [
+            16053,
+            11501
+          ],
+          "rgb": [
+            141,
+            129,
+            47
+          ],
+          "id": 82,
+          "key": "castle:odajo",
+          "modernTerrainMarshOverlay": true
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.56715012,
+          35.93757136
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "outer-connection",
+        "name": "外浪逆浦へ開く入江口の水域",
+        "referenceYear": 1885,
+        "referenceYearBasis": "GSI資料PDF5頁は当地区の迅速測図を明治18年測図と表示。提供タイル個別図郭の年号は切れている。",
+        "sourceId": "naro-rapid1885-itako",
+        "sourcePixel": {
+          "tileOrigin": [
+            13,
+            7294,
+            3218
+          ],
+          "pixel": [
+            318,
+            265
+          ]
+        },
+        "mapReading": "water",
+        "positionUncertaintyMetres": 100,
+        "positionUncertaintyMeaning": "配信元FAQの大きな所で約100mという概説。16世紀湖岸の精度保証ではない。",
+        "targetYears": [
+          1560,
+          1615
+        ],
+        "directHistoricShorelineAdoption": false,
+        "decision": "内外の水域接続の比較点。堤防・排水水路の形を戦国期へ転用しない。",
+        "currentRaster": {
+          "tile": "15-11.png",
+          "globalCell": [
+            16075,
+            11517
+          ],
+          "rgb": [
+            141,
+            129,
+            47
+          ],
+          "id": 82,
+          "key": "castle:odajo",
+          "modernTerrainMarshOverlay": true
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.59169769,
+          35.92339344
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "inner-water-reference-core",
+        "name": "明治図で湖内と読める内浪逆浦の中央部",
+        "sourceId": "naro-rapid1885-itako",
+        "referenceYear": 1885,
+        "sourcePixels": [
+          [
+            158,
+            180
+          ],
+          [
+            180,
+            173
+          ],
+          [
+            205,
+            180
+          ],
+          [
+            219,
+            191
+          ],
+          [
+            218,
+            213
+          ],
+          [
+            207,
+            228
+          ],
+          [
+            191,
+            228
+          ],
+          [
+            173,
+            211
+          ],
+          [
+            158,
+            191
+          ],
+          [
+            158,
+            180
+          ]
+        ],
+        "geometryUse": "evidence-controls-only-not-a-shoreline",
+        "targetYears": [
+          1560,
+          1615
+        ],
+        "decision": "昭和造成陸を退ける局所照合域。1560年の確定水面ポリゴンとして直接焼き込まない。",
+        "recommendedHistoricalRendering": "水域存在の推定復元を採るなら、この湖内域から位置合わせを始める。葦原の外縁や周囲の田畑へ拡張しない。",
+        "directHistoricShorelineAdoption": false
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              140.56423187,
+              35.93520855
+            ],
+            [
+              140.56800842,
+              35.93618148
+            ],
+            [
+              140.57229996,
+              35.93520855
+            ],
+            [
+              140.57470322,
+              35.93367964
+            ],
+            [
+              140.57453156,
+              35.93062172
+            ],
+            [
+              140.57264328,
+              35.9285367
+            ],
+            [
+              140.5698967,
+              35.9285367
+            ],
+            [
+              140.56680679,
+              35.93089971
+            ],
+            [
+              140.56423187,
+              35.93367964
+            ],
+            [
+              140.56423187,
+              35.93520855
+            ]
+          ]
+        ]
+      }
+    }
+  ]
+}
