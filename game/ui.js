@@ -164,17 +164,21 @@ function resize(){DPR=Math.min(2,devicePixelRatio||1);const app=$('#app');VPW=ap
   const w=Math.round(VW*DPR),h=Math.round(VH*DPR);if(c.width!==w)c.width=w;if(c.height!==h)c.height=h;}
  const nm=$('#northMark');if(nm)nm.style.transform=`rotate(${-U.mapRotation}deg)`;U.baseDirty=true;}
 U.setMapRotation=deg=>{U.mapRotation=+deg||0;try{localStorage.setItem('tenka-maprot',String(U.mapRotation));}catch(e){}resize();if(U.mode==='title')fitTitle();else clampCam();vcMemo=null;drawBase();};
-// 文字は画布の回転を打ち消して、画面で読める向きに描く（道の名など、わざと回して描く文字はそのまま）
-for(const c of [bctx,tctx])for(const k of ['fillText','strokeText']){const f=c[k].bind(c);c[k]=function(t,x,y,mw){const a=rotRad();const m=this.getTransform();if(!a||Math.abs(m.b)>1e-9||Math.abs(m.c)>1e-9)return f(t,x,y,mw);this.save();this.translate(x,y);this.rotate(a);const r=f(t,0,0,mw);this.restore();return r;};}
+// 文字は画布の回転を打ち消して、画面で読める向きに描く（道の名など、わざと回して描く文字はそのまま）。
+// 回した画布へ最終的に載る文脈（画布そのもの、層、下図の控え）を rotText で登録する。合戦図や書き出し用の画布は登録しない
+const ROTTEXT=new WeakSet();const rotText=c=>{ROTTEXT.add(c);return c;};rotText(bctx);rotText(tctx);
+for(const k of ['fillText','strokeText']){const f=CanvasRenderingContext2D.prototype[k];CanvasRenderingContext2D.prototype[k]=function(t,x,y,mw){const a=ROTTEXT.has(this)?rotRad():0;const m=a?this.getTransform():null;if(!a||Math.abs(m.b)>1e-9||Math.abs(m.c)>1e-9)return f.call(this,t,x,y,mw);this.save();this.translate(x,y);this.rotate(a);const r=f.call(this,t,0,0,mw);this.restore();return r;};}
 addEventListener('resize',()=>{TL.sig='';});addEventListener('resize',()=>{resize();if(U.mode==='title')fitTitle();else clampCam();});
 let tlNode=null;function narrowTL(){tlNode=tlNode||document.getElementById('tline');return !tlNode||tlNode.hidden||document.body.classList.contains('narrowSel');}
 // 描画中は画面の中心が変わらないので、一度の描画で何千回も呼ぶ座標変換のために結果を控える。
-let vcMemo=null;function vc(){return vcMemo||vcCalc();}
+let vcMemo=null,vcsMemo=null;function vc(){return vcMemo||vcCalc();}
+// パネルを除いた画面の領域（画面の座標、DOM の配置用）：[中心x,中心y,幅,高さ]
+function vcs(){if(!vcMemo||!vcsMemo)vcCalc();return vcsMemo;}// 描画の外では毎回計算し直す（画面の大きさや選択で変わる）
 function vcCalc(){const W=VPW||VW,H=VPH||VH,mob=W<=820;let l=0,r=0,t=0,b=0;
  if(U.mode==='game'){if(mob){t=U.hudTop||104;b=U.sel?H*.46:196;}else{const nar=U.sel&&W<1200;l=nar?0:320;r=U.sel?360:0;t=72;b=narrowTL()?0:70;}}
  else if(U.mode==='pick'){if(mob)b=H*.52;else r=400;}
  // 中心は画面（パネルを除いた所）で決め、画布の座標へ回し戻す。幅・高さは画面のまま
- const [cx,cy]=v2c(l+(W-l-r)/2,t+(H-t-b)/2);return [cx,cy,W-l-r,H-t-b];}
+ vcsMemo=[l+(W-l-r)/2,t+(H-t-b)/2,W-l-r,H-t-b];const [cx,cy]=v2c(vcsMemo[0],vcsMemo[1]);return [cx,cy,W-l-r,H-t-b];}
 const w2s=(x,y)=>{const c=vc();return [(x-cam.x)*cam.z+c[0],(y-cam.y)*cam.z+c[1]];};
 U.pos=id=>w2s(G.C[id].x,G.C[id].y);
 U.cam=(x,y,z)=>{U.sel=null;side.hidden=true;cam.x=x;cam.y=y;cam.z=z;clampCam();U.baseDirty=true;};
@@ -195,7 +199,7 @@ function syncZoomControl(){const nav=$('#mapZoom');if(nav)nav.hidden=U.mode==='t
 function setMapZoom(z){anim=null;beginZoom();cam.z=z;clampCam();tip(null);}
 // 全域は表示範囲 CONT の中心を画面の中心に合わせる（パネルの偏りを見込む。最小の倍率で範囲が画面全体を覆う。端へ寄せられるのは拡大した時）。
 function fitAll(){cam.z=0;clampCam();const c=vc();cam.x=(CONT.x0+CONT.x1)/2+(c[0]-VW/2)/cam.z;cam.y=(CONT.y0+CONT.y1)/2+(c[1]-VH/2)/cam.z;clampCam();}
-function fitTitle(){[cam.x,cam.y]=G.PJ(136.6,35.5);cam.z=VW<=820?Math.max(.8,VH/1100):Math.max(.6,VW/2350,VH/1600);clampCam();}
+function fitTitle(){[cam.x,cam.y]=G.PJ(136.6,35.5);cam.z=VPW<=820?Math.max(.8,VPH/1100):Math.max(.6,VPW/2350,VPH/1600);clampCam();}
 U.fitAll=fitAll;U.mapBounds=()=>({bounds:{...CONT},camera:{...cam},viewport:vc(),corners:[w2s(CONT.x0,CONT.y0),w2s(CONT.x1,CONT.y1)]});
 let anim=null;function focus(id,z){const c=G.C[id];anim={x:c.x,y:c.y,z:z||Math.max(cam.z,1.3),t:0};}
 
@@ -402,7 +406,7 @@ function drawBase(){
   // 大画面での過剰なメモリ確保を避ける。縮小画像を拡大する方式にはしない。
   if((VW+pad*2)*(VH+pad*2)*DPR*DPR>12000000){baseSurface=null;paintBase(bctx);U.baseCacheStats.builds++;U.baseDirty=false;return;}
   const cv=document.createElement('canvas');cv.width=Math.ceil((VW+pad*2)*DPR);cv.height=Math.ceil((VH+pad*2)*DPR);
-  paintBase(cv.getContext('2d'),pad);baseSurface={cv,key,state:S,x:cam.x,y:cam.y,z:cam.z,cc:cc.slice()};U.baseCacheStats.builds++;
+  paintBase(rotText(cv.getContext('2d')),pad);baseSurface={cv,key,state:S,x:cam.x,y:cam.y,z:cam.z,cc:cc.slice()};U.baseCacheStats.builds++;
  }else U.baseCacheStats.hits++;
  const t=baseSurface,sx=(pad+(cam.x-t.x)*cam.z)*DPR,sy=(pad+(cam.y-t.y)*cam.z)*DPR;
  bctx.setTransform(1,0,0,1,0,0);bctx.clearRect(0,0,base.width,base.height);bctx.drawImage(t.cv,sx,sy,base.width,base.height,0,0,base.width,base.height);U.baseDirty=false;
@@ -494,7 +498,7 @@ function drawCastleFires(c){
 // 上層は三つに分けて描く。選択した国の縁取り（下敷き）と、城・名札・肖像・街道名・合戦地などの静止層は、
 // 日付・視点・選択が変わった時だけ別のキャンバスへ描いて控える。行軍の道筋・駒・移動中の人物・煙・攻城の輪など
 // 時間で動くものだけを毎回描き、控えた層を従来と同じ重なり順で重ねる。
-const layer=()=>{const cv=document.createElement('canvas');return {cv,c:cv.getContext('2d'),on:false};};
+const layer=()=>{const cv=document.createElement('canvas');return {cv,c:rotText(cv.getContext('2d')),on:false};};
 const UNDER=layer(),STILL=layer();
 function beginLayer(c,z,cc,world){c.setTransform(DPR,0,0,DPR,0,0);c.clearRect(0,0,VW,VH);
  c.save();const clip0=w2s(CONT.x0,CONT.y0),clip1=w2s(CONT.x1,CONT.y1);c.beginPath();c.rect(clip0[0],clip0[1],clip1[0]-clip0[0],clip1[1]-clip0[1]);c.clip();
@@ -546,9 +550,9 @@ function drawTopLayers(still){
  // 同じ行軍の遠近表示は convoyLayout に任せ、別行軍の位置は動かさない。
  let mapUnits=[...(G.visibleNativeArmies?.()||S.units),...(G.documentedArmies?.()||[])];if(U.deploymentPreview?.t===S.t){const deployment=G.deploymentArmies(U.deploymentPreview.title),names=new Set(deployment.flatMap(u=>u.commanders));mapUnits=mapUnits.filter(u=>!(u.commanders||u.gens.map(id=>G.gen(id)?.n)).some(n=>names.has(n))).concat(deployment);}
  U.mapUnits=mapUnits;renderDeployNote();const candidates=G.convoyLayout(mapUnits.filter(u=>G.marchPhase?.(u).key!=='waiting'),z,w2s,uXY);
- const v=vc(),area=U.mode==='game'?{left:v[0]-v[2]/2+8,top:v[1]-v[3]/2+8,width:Math.max(120,v[2]-16),height:Math.max(120,v[3]-16)}:{left:0,top:0,width:VW,height:VH};
+ const v=vcs(),area=U.mode==='game'?{left:v[0]-v[2]/2+8,top:v[1]-v[3]/2+8,width:Math.max(120,v[2]-16),height:Math.max(120,v[3]-16)}:{left:0,top:0,width:VPW,height:VPH};// 画面の座標（DOM の矢印用）
  const outside={left:[],right:[],top:[],bottom:[],more:[]},laid=[];
- for(const p of candidates){if(p.x<0||p.x>VW||p.y<0||p.y>VH){outside[p.x<0?'left':p.x>VW?'right':p.y<0?'top':'bottom'].push(p);continue;}laid.push(p);}
+ for(const p of candidates){const [sx,sy]=c2v(p.x,p.y);if(sx<0||sx>VPW||sy<0||sy>VPH){outside[sx<0?'left':sx>VPW?'right':sy<0?'top':'bottom'].push(p);continue;}laid.push(p);}// 画面の外かどうかは画面の座標で判定し、描く位置は画布の座標のまま
  const layout={visible:laid,outside};U.armyGroups=laid;
 
  U._UP=new Map(laid.flatMap(p=>p.members.map(m=>[m.id,[m.x,m.y]])));U.outsideArmies=layout.outside;
@@ -618,9 +622,9 @@ function drawStill(z,cc,lvl){fitLayer(STILL);const c=STILL.c;beginLayer(c,z,cc,t
 // 布陣プレビュー：位置の記録がない側は地図の点にせず、合戦地に添えた札へ陣営ごとに名前を並べる。
 function renderDeployNote(){const el=$('#deployNote');if(!el)return;const P=U.deploymentPreview;const rows=P&&P.t===S?.t&&G.deploymentUnlocated?G.deploymentUnlocated(P.title):[];
  if(!rows.length){if(!el.hidden){el.hidden=true;el._k='';}return;}
- const site=rows[0].site?w2s(...G.PJ(...rows[0].site)):[VW/2,VH/2];const k=P.title+'|'+rows.map(r=>r.side+r.names.join()).join('/');
+ const site=rows[0].site?c2v(...w2s(...G.PJ(...rows[0].site))):[VPW/2,VPH/2];const k=P.title+'|'+rows.map(r=>r.side+r.names.join()).join('/');// DOM なので画面の座標
  if(el._k!==k){el._k=k;el.innerHTML=`<b>${esc(P.title)}</b><small>持場の記録がない参加者</small>`+rows.map(r=>`<div class="dn-row" style="--army:${r.side==='a'?'#c83339':'#216d9f'}"><i></i><span>${esc(r.name)}</span><em>${esc(r.names.filter(n=>n!==r.name).slice(0,4).join('・'))}${r.names.length>4?' ほか'+(r.names.length-4)+'名':''}</em></div>`).join('');}
- el.hidden=false;el.style.left=Math.round(Math.max(8,Math.min(VW-el.offsetWidth-8,site[0]+28)))+'px';el.style.top=Math.round(Math.max(8,Math.min(VH-el.offsetHeight-90,site[1]-el.offsetHeight/2)))+'px';}
+ el.hidden=false;el.style.left=Math.round(Math.max(8,Math.min(VPW-el.offsetWidth-8,site[0]+28)))+'px';el.style.top=Math.round(Math.max(8,Math.min(VPH-el.offsetHeight-90,site[1]-el.offsetHeight/2)))+'px';}
 // 画面外の隊は実位置を変えず、方向・隊数だけを端に示す。
 function renderArmyEdges(groups,a,units){const el=$('#armyEdges');if(!el)return;
  const positions={left:[a.left,a.top+a.height/2,'translateY(-50%)','◀'],right:[a.left+a.width,a.top+a.height/2,'translate(-100%,-50%)','▶'],top:[a.left+a.width/2,a.top,'translateX(-50%)','▲'],bottom:[a.left+a.width/2,a.top+a.height,'translate(-50%,-100%)','▼'],more:[a.left+a.width,a.top+a.height,'translate(-100%,-100%)','一覧']};
@@ -736,7 +740,7 @@ function tapCastle(id){tipEl.hidden=true;
  if(U.mode!=='game'||U.modal)return;
  if(U.picking&&id){const o=S.castles[id].owner;if(G.ADJ[U.picking].includes(id)&&o!==S.player&&!G.allied(S.player,o)){doAttack(U.picking,id);return;}U.picking=null;}
  U.sel=id||null;renderSide();U.baseDirty=true;
- if(id){const c=vc();const [x,y]=w2s(G.C[id].x,G.C[id].y);const l=c[0]-c[2]/2,r=c[0]+c[2]/2,t=c[1]-c[3]/2,b=c[1]+c[3]/2;
+ if(id){const c=vcs();const [x,y]=c2v(...w2s(G.C[id].x,G.C[id].y));const l=c[0]-c[2]/2,r=c[0]+c[2]/2,t=c[1]-c[3]/2,b=c[1]+c[3]/2;// 画面の座標で判定
   if(x<l+30||x>r-30||y<t+30||y>b-30)anim={x:G.C[id].x,y:G.C[id].y,z:cam.z,t:0};}}
 
 
@@ -944,7 +948,7 @@ function jokakuInfo(id,mine){const p=S.plans&&S.plans[id],w=S.works&&S.works[id]
  return {line,btn};}
 function renderSide(){
  if(U.mode!=='game')return;
- document.body.classList.toggle('narrowSel',!!U.sel&&VW<1200&&VW>820);document.body.classList.toggle('mobsel',!!U.sel&&VW<=820);
+ document.body.classList.toggle('narrowSel',!!U.sel&&VPW<1200&&VPW>820);document.body.classList.toggle('mobsel',!!U.sel&&VPW<=820);
  if(!U.sel){side.hidden=true;return;}side.hidden=false;
  const id=U.sel,C=G.C[id],c=S.castles[id],k=c.owner,cl=S.clans[k],me=S.player,mine=k===me,alive=S.clans[me]&&S.clans[me].alive;
  const gs=(G.displayCastleGens||G.castleGens)(id).sort((a,b)=>(G.isLeader(b)-G.isLeader(a))||(hasFace(b.n)-hasFace(a.n))||(b.t+b.b+b.c+b.s)-(a.t+a.b+a.c+a.s));
@@ -1370,7 +1374,7 @@ function renderPick(){
 
  <div class="tbtns"><button class="btn" data-act="back-scen">戻る</button></div>`;}
 function startGame(){G.newGame(U.pickScen,U.pickClan);S=G.S();S.hsig=G.histSig();S.chats={};U.sel=null;U.ended=false;enterGame();
- const R0=G.retainer();const cap=R0?((G.genByName(R0.leader)||{}).loc||R0.castles[0]):S.clans[S.player].cap;focus(cap,VW<=820?1.1:1.3);if(R0)setTimeout(()=>toast(`${R0.leader}は${G.CNK(R0.parent)}の家臣として始まります。登録された史実の日に独立します`),2600);setSpeed(0);openModal('intro',{step:0});}
+ const R0=G.retainer();const cap=R0?((G.genByName(R0.leader)||{}).loc||R0.castles[0]):S.clans[S.player].cap;focus(cap,VPW<=820?1.1:1.3);if(R0)setTimeout(()=>toast(`${R0.leader}は${G.CNK(R0.parent)}の家臣として始まります。登録された史実の日に独立します`),2600);setSpeed(0);openModal('intro',{step:0});}
 const INTRO=[['時を進める','左上の ▶ で進み、もう一度押すと止まります。×1では4秒で1日進みます。速度は ×128 まで切り替えられます。'],['城と軍勢を見る','城を押すと城主や在城者を確認できます。周辺の城や施設の説明はカーソルを合わせるか、タップして開きます。軍勢は凸駒で表示します。'],['史料と照合する','現在は史実の観察専用です。合戦図の出典には確認範囲と未確認部分を明記しています。メニューから保存・読み込みと資料の確認ができます。']];
 MODALS.intro=d=>{const i=Math.max(0,Math.min(2,d.step||0)),v=INTRO[i];return `<header><div><small>はじめの操作 ${i+1} / 3</small><h2>${v[0]}</h2></div></header><p>${v[1]}</p><footer><button class="btn" data-act="close">案内を閉じる</button>${i?'<button class="btn" data-act="intro-prev">戻る</button>':''}<button class="btn pri" data-act="intro-next">${i===2?'地図へ':'次へ'}</button></footer>`;};
 ACT['army-edge']=b=>{const ps=U.outsideArmies?.[b.dataset.side];if(!ps?.length)return;if(b.dataset.side==='more'){openModal('army-list');return;}const units=[...(G.visibleNativeArmies?.()||S.units),...(G.documentedArmies?.()||[])],u=units.find(u=>u.id===ps[0].id);if(u){const [x,y]=uXY(u);U.cam(x,y,Math.max(cam.z,1.2));}};
