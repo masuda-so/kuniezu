@@ -181,3 +181,21 @@ Paradox のゲームと同じく、地図の正本は `game/map_data/`（provinc
 - 取得後と、正本や差分を変えた後に `node tools/map/build-map.cjs` で作る。陰影は `--height --python <NumPy・Pillow の Python>`（heightmap は Git LFS）。陰影が無くてもゲームは動く。
 - CI（`Offline checks`）は正本から地図を作り（陰影は除く）、raster-map と province-edits の検査を通す。正本と差分から配信物が作れることを毎回確かめる。
 - ブラウザが1枚の画像として開けない大きさ（100m の段は展開すると約2.2GB）なので、配る時の分割は残る。分割は表示のための生成物で、編集・検査・差分の対象は正本の1枚だけ。
+
+## 地図を game/map に一つにまとめ、層ごとに分ける（2026-11-04、利用者の指示）
+
+利用者の方針「map_data と map を統合し、ファイル構造を MECE にする」「行政区分（国家 → 道 → 国 → 郡）に倣う」に合わせ、地図の正本と生成物を `game/map/` 一つにまとめた。以上の節に出てくる `game/map_data/`・`data/map/`・`game/map/<生成物>` は、この時点より前の置き場。
+
+| 置き場 | 層 | 中身 |
+|---|---|---|
+| `game/map/admin/` | 行政区分 | 郡の画像 `gun.png`・一覧 `gun.csv`・`gun.json`（最小単位。国・道・国家への階層は次の段階で加える） |
+| `game/map/control/` | 支配 | 城の支配域 `provinces.png`・`definition.csv`・`default.map`（CK3 の map_data の書式）、郡と城の対応 `gun-assignment.csv`・`gun-overrides.json` |
+| `game/map/physical/` | 自然 | 標高 `heightmap.png`（Git LFS）・`heightmap.json`、川 `rivers.png`・`rivers.json`、岸の線を描かない切れ目 `shoreline_masks.geojson` |
+| `game/map/projection.json` | 共有 | 経緯度→格子の変換（全層で共通） |
+| `game/map/edits/` | 年代別の差分 | 差分の入力・台帳・適用履歴 |
+| `game/map/build/` | 生成物 | `build-map.cjs` が作る配信物（Git で追跡しない）。ゲームは `map/build/` から読む |
+
+- ファイルは移しただけで中身は変えていない。正本の確認値（`sourceSha256`）も同じ。
+- 地図の URL は `map/…` から `map/build/…`（生成物）と `map/control/…`（区画の表）に変わった（利用者の判断で AGENTS.md の「配信 URL は変えない」の例外とした）。
+- 旧い置き場に残った生成物（`game/map/provinces/` など）は、`raster-map.cjs` が残っていると知らせる。手元では消してから `node tools/map/build-map.cjs` を実行する。
+- 次の段階：郡 → 国 → 道 → 国家の階層表、郡の無い地域も含めて最小単位で全域を覆うこと、城の支配域を郡の組み合わせで表すこと、街道を画像の層として加えること。

@@ -1,5 +1,5 @@
 /* 年代別の領域差分（game/map/edits/*.json）を基準版の領域画像へ当て、変わるタイルだけを版ごとに書き出す。Pillow を使わない Node 版。
-   期間の境目（各差分の validFrom・validUntil）で区切った半開区間ごとに一つの版を作り、game/map/edits/compiled/<開始>-<終了>/ に置く。
+   期間の境目（各差分の validFrom・validUntil）で区切った半開区間ごとに一つの版を作り、game/map/build/edits/compiled/<開始>-<終了>/ に置く。
    差分の中身は二通り。
    ・面（payload.file＋feature）：GeoJSON の多角形の内側に画素中心が入る所を fromKey から toKey へ置き換える（旧 Python 版と同じ規則）。
    ・型紙（payload.mask＋window）：100m 格子の窓 [列,行,幅,高さ] に合わせた PNG。画素の値 n（G が上位、B が下位）が 1 以上なら keys[n-1] を書く。
@@ -12,12 +12,12 @@ const fs=require('node:fs'),path=require('node:path'),zlib=require('node:zlib'),
 const decodePNG=require('../geo/png-decode.cjs');
 const sha=b=>crypto.createHash('sha256').update(b).digest('hex');
 const MD=require('./map-data.cjs');
-function build({mapDir=path.join(MD.root,'game/map'),md=MD,editsDir=path.join(mapDir,'edits'),compiledDir=path.join(editsDir,'compiled')}={}){
+function build({mapDir=MD.out,md=MD,editsDir=path.join(MD.root,'game/map/edits'),compiledDir=path.join(mapDir,'edits/compiled')}={}){
 const dir=mapDir,edits=editsDir,compiled=compiledDir;
 const ledger=JSON.parse(fs.readFileSync(path.join(edits,'baseline-ledger.json'),'utf8'));
-// 基準版は正本 game/map_data（provinces.png 全域1枚ほか）。読むのはそこから作った配信タイルなので、タイルが同じ正本から作られたことも確かめる。
+// 基準版は正本 game/map（provinces.png 全域1枚ほか）。読むのはそこから作った配信タイルなので、タイルが同じ正本から作られたことも確かめる。
 const baseProvincesSha256=md.sourceSha256();
-if(baseProvincesSha256!==ledger.sourceSha256)throw Error('正本 game/map_data が台帳と違う（土台を変えたら台帳と差分を見直す）');
+if(baseProvincesSha256!==ledger.sourceSha256)throw Error('正本 game/map が台帳と違う（土台を変えたら台帳と差分を見直す）');
 const m=JSON.parse(fs.readFileSync(path.join(dir,'manifest.json'),'utf8')),P=m.projection,[OX,OY]=P.origin,S=P.stepUnits,T=m.tile;
 if(m.source?.sha256!==baseProvincesSha256)throw Error('配信タイルが正本と合わない。先に node tools/map/build-map-tiles.cjs');
 const defs=md.readDefinition().rows.filter(Boolean);

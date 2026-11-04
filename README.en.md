@@ -64,9 +64,11 @@ is [docs/README.md](docs/README.md); open requests and ownership are in
 
 ## Getting started and usage
 
-Only the map source in `game/map_data/` (a single full-map `provinces.png` and
-related files, in the Paradox style) is tracked in Git. The tiles, borders, river
-lines and relief served to the browser (generated files in `game/map/`) are not
+The map source lives in `game/map/`, one folder per layer, and is tracked in Git:
+administrative divisions in `admin/` (districts), control in `control/` (castle
+domains, including the single full-map `provinces.png` in the Paradox style),
+nature in `physical/` (elevation and rivers), and dated edits in `edits/`. The tiles, borders, river
+lines and relief served to the browser (generated files in `game/map/build/`) are not
 in the repository. Generate them once after cloning, and again after changing the
 source or the dated edits (`game/map/edits/*.json`). This takes a few minutes.
 
@@ -74,7 +76,7 @@ source or the dated edits (`game/map/edits/*.json`). This takes a few minutes.
 node tools/map/build-map.cjs
 ```
 
-To also build the terrain relief, fetch `game/map_data/heightmap.png` with Git LFS
+To also build the terrain relief, fetch `game/map/physical/heightmap.png` with Git LFS
 and pass a Python that has NumPy and Pillow (the game runs without relief).
 
 ```sh

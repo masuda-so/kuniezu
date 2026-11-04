@@ -1,6 +1,6 @@
 # 標高正本から配信用陰影を再生成する
 
-標高の正本は `game/map_data/heightmap.png` と同名の `heightmap.json`。実数標高を符号化した16bit灰色画像で、表示用の陰影やWebPから高さを逆算しない。Copernicusの元GeoTIFFが手元になくても、この正本と格子情報だけで配信用陰影を再生成できる。
+標高の正本は `game/map/physical/heightmap.png` と同名の `heightmap.json`。実数標高を符号化した16bit灰色画像で、表示用の陰影やWebPから高さを逆算しない。Copernicusの元GeoTIFFが手元になくても、この正本と格子情報だけで配信用陰影を再生成できる。
 
 ## 一つのコマンド
 
@@ -10,10 +10,10 @@
 
 ```sh
 python3 tools/map/build-height-cache.py \
-  --grid game/map/manifest.json \
-  --heightmap game/map_data/heightmap.png \
-  --projection game/map_data/projection.json \
-  --output game/map
+  --grid game/map/build/manifest.json \
+  --heightmap game/map/physical/heightmap.png \
+  --projection game/map/projection.json \
+  --output game/map/build
 ```
 
 これはサーバーを起動・停止しない。元GeoTIFFの取得や再読込、ネットワークからの標高取得も行わない。`--heightmap` はPNGファイルを指定する。同じディレクトリの `heightmap.json` を読み込む。
@@ -22,9 +22,9 @@ python3 tools/map/build-height-cache.py \
 
 ```sh
 python3 tools/map/build-height-cache.py \
-  --grid game/map/manifest.json \
-  --heightmap game/map_data/heightmap.png \
-  --projection game/map_data/projection.json \
+  --grid game/map/build/manifest.json \
+  --heightmap game/map/physical/heightmap.png \
+  --projection game/map/projection.json \
   --previous game/map \
   --output /tmp/kuniezu-height-preview
 ```
@@ -66,7 +66,7 @@ PNGの圧縮器が変わると、同じ画素でもファイルのSHAが変わ�
 
 ## 配信中の画像を保つ公開手順
 
-出力は `game/map/relief-cache/<内容SHA>/` に世代別に生成する。そこに `relief-1/4/8` と `provenance/` を置き、全検査が通った後で `game/map/relief.json` だけを同一ファイルシステム上でatomic置換する。`TKRelief` は各段の `dir` を読むため、描画実装の変更は不要。
+出力は `game/map/build/relief-cache/<内容SHA>/` に世代別に生成する。そこに `relief-1/4/8` と `provenance/` を置き、全検査が通った後で `game/map/build/relief.json` だけを同一ファイルシステム上でatomic置換する。`TKRelief` は各段の `dir` を読むため、描画実装の変更は不要。
 
 `provenance/` には正本メタデータ、投影、標高・陰影manifest各3件、入力と生成器のSHAを残す。巨大な正本PNGや中間PNGの複製は置かない。
 

@@ -75,7 +75,7 @@ const riverLines=[...(TK.JAPAN_RIVERS_OSM?.rivers||[]).map(r=>r.points.map(p=>G.
 const riverPathCache=new WeakMap();
 function riverView(){const a=s2w(0,0),b=s2w(VW,VH);return [a[0],a[1],b[0],b[1]];}
 function riverPath(r,z){let cached=riverPathCache.get(r);if(!cached||cached.z!==z){const path=new Path2D();TK.riverPath(path,r.points,2/z);cached={z,path};riverPathCache.set(r,cached);}return cached.path;}
-// 河川は正本 map_data/rivers.png から作った線（TKRivers）で、日本・朝鮮とも同じ描き方。読み込み前だけ従来の線。
+// 河川は正本 game/map/physical/rivers.png から作った線（TKRivers）で、日本・朝鮮とも同じ描き方。読み込み前だけ従来の線。
 function drawMapRivers(c,z){const view=riverView();onLand(c,c=>{c.lineCap='round';c.lineJoin='round';
  if(window.TKRivers?.ready()){for(const r of TKRivers.records())for(const line of r.geometries){if(!TK.riverVisible(line,view,z))continue;const path=riverPath(line,z);if(r.border){c.setLineDash([5/z,4/z]);c.strokeStyle='rgba(96,67,48,.6)';c.lineWidth=2.8/z;c.stroke(path);c.setLineDash([]);}c.strokeStyle='rgba(95,135,175,.75)';c.lineWidth=1.1/z;c.stroke(path);}return;}
  c.strokeStyle='rgba(95,135,175,.75)';c.lineWidth=1.1/z;for(const r of riverLines)if(TK.riverVisible(r,view,z))c.stroke(riverPath(r,z));});}
@@ -167,7 +167,7 @@ function clampCam(){const c=vc(),CW=CONT.x1-CONT.x0,CH=CONT.y1-CONT.y0;
  cam.x=Math.max(CONT.x0+c[0]/cam.z,Math.min(CONT.x1-(VW-c[0])/cam.z,cam.x));
  cam.y=Math.max(CONT.y0+c[1]/cam.z,Math.min(CONT.y1-(VH-c[1])/cam.z,cam.y));U.baseDirty=true;syncZoomControl();}
 const CONT={x0:-1045,x1:3163.7675,y0:-761.604,y1:3459.7398};
-// 地図の表示範囲は正本の画像（game/map_data/provinces.png）が覆う範囲に合わせる。読み込むまでは上の値（画像を作った時の基準）。
+// 地図の表示範囲は正本の画像（game/map/control/provinces.png）が覆う範囲に合わせる。読み込むまでは上の値（画像を作った時の基準）。
 // 遼陽など西端・北端に近い所も、最大倍率で年表の外に出せる。
 function syncContToSource(){const b=window.TKRaster?.bounds?.();if(!b||CONT.x0===b.x0&&CONT.y0===b.y0&&CONT.x1===b.x1&&CONT.y1===b.y1)return;Object.assign(CONT,b);if(VW>0&&VH>0)clampCam();}
 // 表示範囲の基準（docs/architecture/raster-map.md、2026-11-04 改定）：右上の角＝国土地理院の日本の最北端（択捉島カモイワッカ岬、北緯45°33′26″・東経148°45′08″）、
