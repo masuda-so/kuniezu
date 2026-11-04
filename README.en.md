@@ -85,12 +85,15 @@ node tools/checks/offline.cjs
 
 The normal CI on GitHub Actions runs the server-free checks (syntax, storage and
 territory; folders and ownership; infrastructure) with Node.js. On-screen
-verification runs in the user's environment and is recorded under
-`data/verification/`.
+verification runs in the user's environment; a summary of the results is recorded
+under `data/verification/` (screenshots are attached to the pull request, not
+committed).
 
 Before changing the repository, consult the agreements in [HANDOFF.md](HANDOFF.md)
-and the completion criteria in [docs/work/README.md](docs/work/README.md), and
-describe the change and its verification in the pull request. Shared working rules
+and the completion criteria in [docs/work/README.md](docs/work/README.md). Create
+a branch from main for each piece of work and describe the change and its
+verification in a small pull request with one purpose (GitHub flow; pull requests
+are squash-merged). Shared working rules
 are in [AGENTS.md](AGENTS.md). PR descriptions and review comments use Japanese by
 default; an explicit request for another language takes precedence.
 
