@@ -1,0 +1,188 @@
+{
+  "id": "katori-uchinasaka-independent-adoption-20261104",
+  "targetYears": [
+    1560,
+    1615
+  ],
+  "decision": "accept-inferred-connected-water-interiors-with-protected-land",
+  "decisionSummary": "内浪逆浦を現代造成後の陸地のままにせず、湖本体・口部・外水域の内部を推定古水域として採用する。独立文献で中世の湖沼の存在が補強されたため、追加の精密汀線発見をこの判断の前提条件にはしない。",
+  "evidence": [
+    {
+      "id": "medieval-existence",
+      "sourceIds": [
+        "sabo110-p6"
+      ],
+      "claim": "中世の佐原〜潮来周辺の湖沼として内浪逆浦・外浪逆浦などを明記。",
+      "kind": "museum-researcher-secondary-synthesis",
+      "supports": "湖の存在",
+      "doesNotSupport": "1560年の岸の座標・水位・全画素の恒常水面",
+      "sourceCaution": "同頁には別河道の年号併記の誤りがあるため、河道改変年の根拠としては使わない。"
+    },
+    {
+      "id": "late-medieval-settlement",
+      "sourceIds": [
+        "itako-338"
+      ],
+      "years": [
+        1590,
+        1592,
+        1615,
+        1641
+      ],
+      "claim": "村田氏の1590年移住、文禄・慶長期の七軒島、1641年検地の記述を確認。",
+      "kind": "municipal-history-using-family-records",
+      "supports": "対象期に水辺の洲と居住地があったこと",
+      "doesNotSupport": "地名中心点を汀線へ読み替えること"
+    },
+    {
+      "id": "shoal-and-water-commons",
+      "sourceIds": [
+        "itako-343",
+        "itako-348"
+      ],
+      "years": [
+        1634,
+        1644,
+        1648,
+        1649,
+        1674
+      ],
+      "claim": "徳島の離洲・湖沼資源利用・1634年以後の帰属争論・1649年検地・正保図の鰐川境界を述べる。",
+      "kind": "municipal-history-discussing-documents",
+      "supports": "湖を一面の陸/一面の水に単純化しない制約",
+      "doesNotSupport": "正保提出原図を直接入手・読図したとの主張"
+    },
+    {
+      "id": "not-monotonic-shore",
+      "sourceIds": [
+        "mlit-landclassification",
+        "urban32-p62"
+      ],
+      "claim": "砂州・自然堤防・三角州と近世以後の堆積に加え、小水位変化・堆積速度差でも岸辺の状態は変わる。",
+      "kind": "geomorphological-and-sediment-studies",
+      "supports": "1885年の水面を1560年の水面の厳密な部分集合と証明できない理由",
+      "doesNotSupport": "現代標高を使う水没閾値/16c精密輪郭"
+    }
+  ],
+  "geometry": {
+    "file": "adoption-regions.geojson",
+    "crs": "WGS84 lon/lat",
+    "referenceYear": 1885,
+    "referenceYearLimit": "地域図の年代は国土地理院の解説に拠る。配信タイルは図郭外の測量年を含まない。",
+    "acceptedWaterInteriorCells100m": 893,
+    "protectedTongueCells100m": 70,
+    "exactHistoricalShoreline": false,
+    "waterGeometryRole": "minimally bounded reconstruction reference, not statistically estimated confidence region",
+    "controls": [
+      {
+        "id": "lake-core-west",
+        "coordinates": [
+          140.56715012,
+          35.93381863
+        ],
+        "decision": "water-interior",
+        "reason": "湖内比較点。推定水域へ変更。"
+      },
+      {
+        "id": "lake-core-south",
+        "coordinates": [
+          140.57229996,
+          35.92937072
+        ],
+        "decision": "water-interior",
+        "reason": "湖内比較点。推定水域へ変更。"
+      },
+      {
+        "id": "outer-connection",
+        "coordinates": [
+          140.59169769,
+          35.92339344
+        ],
+        "decision": "water-connection",
+        "reason": "内外の水面を接続。"
+      },
+      {
+        "id": "north-fringe",
+        "coordinates": [
+          140.56629181,
+          35.94285269
+        ],
+        "decision": "retain-land",
+        "reason": "今回の水域化から除外。1560年の陸地確定とはしない。"
+      },
+      {
+        "id": "southeast-tongue",
+        "coordinates": [
+          140.58345795,
+          35.9282587
+        ],
+        "decision": "retain-land",
+        "reason": "70セルの舌状陸を保護。徳島/大洲との同定は行わない。"
+      },
+      {
+        "id": "marsh-north-edge",
+        "coordinates": [
+          140.56715012,
+          35.93757136
+        ],
+        "decision": "uncertain-littoral",
+        "reason": "湿潤な岸辺として扱う。恒常水面と陸の精密境界として固定しない。"
+      }
+    ]
+  },
+  "integrationConditions": [
+    {
+      "id": "do-not-draw-southern-cut",
+      "status": "mandatory",
+      "featureId": "south-open-water-cut",
+      "coordinates": [
+        [
+          140.6174469,
+          35.89405652
+        ],
+        [
+          140.61538696,
+          35.89280494
+        ]
+      ],
+      "reason": "迅速図でなお水面が続く部分を比較範囲として閉じた辺。ここを陸水境界にすれば架空の堤になる。",
+      "action": "最終描画前に続く水面へ接続し、境界を岸線から除外する。確認資料の追加探索ではなく形状統合時の制約。"
+    },
+    {
+      "id": "preserve-shoals",
+      "status": "mandatory",
+      "action": "南東の70セル・北岸の陸確認点を一括水没させない。保護形状を16c確定の島形と呼ばない。"
+    },
+    {
+      "id": "no-modern-dem-threshold",
+      "status": "mandatory",
+      "action": "昭和盛土の現標高で旧湖内を陸へ戻さない。"
+    },
+    {
+      "id": "epochs",
+      "status": "mandatory",
+      "action": "1560〜1615に共通する推定基底として扱う。証拠のない1590/1603の湖岸切替を加えない。"
+    },
+    {
+      "id": "marsh-transition",
+      "status": "mandatory",
+      "action": "北岸の葦原帯を恒常開水面確定としない。推定湖縁/湿地の扱いはメタデータへ残す。"
+    }
+  ],
+  "rejected": [
+    "1885年の水際を1560年の測量岸と称すること",
+    "明治水域は必ず中世水域内という単純な包含証明",
+    "日の出196ha全域の一括水没",
+    "正保提出絵図と町史p342の年代不明村絵図の同一視",
+    "南東舌状陸を根拠なく徳島または大洲と断定",
+    "近現代の堤防・宅地・排水路・境界を対象期間の地形へ採用"
+  ],
+  "finishedScope": "入江存在の独立根拠、採用する水面内部、保護陸、描画禁止の仮境界の判定。game/共有への反映作業は親担当。",
+  "operations": {
+    "sharedWrite": false,
+    "gameMapWrite": false,
+    "browserUsed": false,
+    "wholeMapRasterDecoded": false,
+    "fullSimulation": false
+  }
+}

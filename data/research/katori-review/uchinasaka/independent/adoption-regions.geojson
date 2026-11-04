@@ -1,0 +1,974 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "uchinasaka-inner-lake",
+        "role": "water-candidate",
+        "name": "内浪逆浦（湖の本体）",
+        "note": "迅速測図の水際の暈し（水側）を外縁として読んだ。湖内の確認点2つを含む。1885年の岸で、1560年の確定汀線ではない。",
+        "cells100m": 142,
+        "currentKeys": {
+          "castle:odajo": 142
+        },
+        "targetYears": [
+          1560,
+          1615
+        ],
+        "reconstructionStatus": "accepted-inferred-water-interior",
+        "approvedAsExactHistoricalShoreline": false,
+        "historicalBasis": [
+          "sabo110-p6",
+          "itako-338",
+          "itako-343",
+          "itako-348",
+          "mlit-landclassification",
+          "urban32-p62"
+        ],
+        "geometryReferenceYear": 1885,
+        "interpretation": "Inner and outer water are reconstructed as an inferred connected water body. Polygon outlines are not certified historical shorelines.",
+        "previousApproval": null,
+        "approvedForInferredInterior": true,
+        "approvedAsClosedCoastlinePolygon": false,
+        "applicationCondition": "水面内部の採用。未確認の周縁を岸として閉じず、南端の水上切断線を既存・次区間の水面へ接続する。"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              140.562859,
+              35.936737
+            ],
+            [
+              140.563889,
+              35.938405
+            ],
+            [
+              140.566978,
+              35.939378
+            ],
+            [
+              140.570755,
+              35.939656
+            ],
+            [
+              140.573502,
+              35.9391
+            ],
+            [
+              140.574875,
+              35.936737
+            ],
+            [
+              140.575218,
+              35.933263
+            ],
+            [
+              140.575218,
+              35.931456
+            ],
+            [
+              140.576591,
+              35.929927
+            ],
+            [
+              140.575218,
+              35.928815
+            ],
+            [
+              140.573845,
+              35.927703
+            ],
+            [
+              140.571785,
+              35.92673
+            ],
+            [
+              140.568695,
+              35.926591
+            ],
+            [
+              140.56612,
+              35.927425
+            ],
+            [
+              140.564404,
+              35.929093
+            ],
+            [
+              140.563202,
+              35.931178
+            ],
+            [
+              140.562687,
+              35.933958
+            ],
+            [
+              140.562859,
+              35.936737
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "uchinasaka-mouth-channel",
+        "role": "water-candidate",
+        "name": "入江口から外浪逆浦へ抜ける水路",
+        "note": "舌状の陸の北と東を回って外浪逆浦へ開く水路。東端（経度140.59付近）は外浪逆浦の続きで、ここで切っただけ。外浪逆浦そのものも今の正本では陸。",
+        "cells100m": 140,
+        "currentKeys": {
+          "castle:odajo": 140
+        },
+        "targetYears": [
+          1560,
+          1615
+        ],
+        "reconstructionStatus": "accepted-inferred-water-interior",
+        "approvedAsExactHistoricalShoreline": false,
+        "historicalBasis": [
+          "sabo110-p6",
+          "itako-338",
+          "itako-343",
+          "itako-348",
+          "mlit-landclassification",
+          "urban32-p62"
+        ],
+        "geometryReferenceYear": 1885,
+        "interpretation": "Inner and outer water are reconstructed as an inferred connected water body. Polygon outlines are not certified historical shorelines.",
+        "previousApproval": null,
+        "approvedForInferredInterior": true,
+        "approvedAsClosedCoastlinePolygon": false,
+        "applicationCondition": "水面内部の採用。未確認の周縁を岸として閉じず、南端の水上切断線を既存・次区間の水面へ接続する。"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              140.575218,
+              35.931456
+            ],
+            [
+              140.578995,
+              35.931595
+            ],
+            [
+              140.582428,
+              35.931873
+            ],
+            [
+              140.58672,
+              35.932151
+            ],
+            [
+              140.590153,
+              35.931178
+            ],
+            [
+              140.594444,
+              35.92951
+            ],
+            [
+              140.598736,
+              35.927981
+            ],
+            [
+              140.603027,
+              35.926313
+            ],
+            [
+              140.603027,
+              35.920752
+            ],
+            [
+              140.591869,
+              35.920752
+            ],
+            [
+              140.589294,
+              35.921447
+            ],
+            [
+              140.588608,
+              35.923532
+            ],
+            [
+              140.587921,
+              35.925618
+            ],
+            [
+              140.587921,
+              35.927703
+            ],
+            [
+              140.586891,
+              35.929649
+            ],
+            [
+              140.584145,
+              35.930483
+            ],
+            [
+              140.580711,
+              35.930483
+            ],
+            [
+              140.576591,
+              35.929927
+            ],
+            [
+              140.575218,
+              35.931456
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "uchinasaka-southeast-tongue",
+        "role": "protect-land",
+        "name": "入江南東の舌状の陸（田畑・自然堤防側）",
+        "note": "確認点 southeast-tongue を含む。水にしない。",
+        "cells100m": 70,
+        "currentKeys": {
+          "castle:odajo": 70
+        },
+        "targetYears": [
+          1560,
+          1615
+        ],
+        "reconstructionStatus": "required-exclusion",
+        "approvedAsExactHistoricalShoreline": false,
+        "historicalBasis": [
+          "itako-338",
+          "itako-343",
+          "itako-348",
+          "mlit-landclassification",
+          "genroku-hitachi-crop",
+          "naro-rapid1885-itako"
+        ],
+        "geometryReferenceYear": 1885,
+        "interpretation": "Do not flood this tongue in this repair; its precise sixteenth-century outline and named identity are not established."
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              140.576591,
+              35.929927
+            ],
+            [
+              140.580711,
+              35.930483
+            ],
+            [
+              140.584145,
+              35.930483
+            ],
+            [
+              140.586891,
+              35.929649
+            ],
+            [
+              140.587921,
+              35.927703
+            ],
+            [
+              140.587921,
+              35.925618
+            ],
+            [
+              140.588608,
+              35.923532
+            ],
+            [
+              140.585861,
+              35.923254
+            ],
+            [
+              140.582428,
+              35.923532
+            ],
+            [
+              140.578995,
+              35.924228
+            ],
+            [
+              140.576935,
+              35.926313
+            ],
+            [
+              140.575562,
+              35.927981
+            ],
+            [
+              140.576591,
+              35.929927
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "uchinasaka-outer-water-core",
+        "role": "comparison-water-core",
+        "source": "農研機構・迅速測図（CC BY 2.1 JP）",
+        "sourceOriginXYZ": [
+          13,
+          7294,
+          3218
+        ],
+        "sourcePixels": [
+          [
+            305,
+            251
+          ],
+          [
+            329,
+            252
+          ],
+          [
+            357,
+            265
+          ],
+          [
+            390,
+            275
+          ],
+          [
+            427,
+            276
+          ],
+          [
+            454,
+            262
+          ],
+          [
+            470,
+            236
+          ],
+          [
+            480,
+            195
+          ],
+          [
+            495,
+            158
+          ],
+          [
+            498,
+            137
+          ],
+          [
+            478,
+            123
+          ],
+          [
+            452,
+            111
+          ],
+          [
+            438,
+            88
+          ],
+          [
+            427,
+            69
+          ],
+          [
+            414,
+            55
+          ],
+          [
+            396,
+            59
+          ],
+          [
+            397,
+            78
+          ],
+          [
+            407,
+            102
+          ],
+          [
+            427,
+            116
+          ],
+          [
+            452,
+            129
+          ],
+          [
+            479,
+            145
+          ],
+          [
+            478,
+            160
+          ],
+          [
+            464,
+            185
+          ],
+          [
+            451,
+            221
+          ],
+          [
+            440,
+            245
+          ],
+          [
+            419,
+            257
+          ],
+          [
+            391,
+            258
+          ],
+          [
+            363,
+            244
+          ],
+          [
+            337,
+            233
+          ],
+          [
+            314,
+            232
+          ],
+          [
+            305,
+            251
+          ]
+        ],
+        "scope": "水色の内側に置いた接続検証用範囲。汀線でも16世紀の確定復元でもない。",
+        "targetYears": [
+          1560,
+          1615
+        ],
+        "reconstructionStatus": "accepted-inferred-water-interior",
+        "approvedAsExactHistoricalShoreline": false,
+        "historicalBasis": [
+          "sabo110-p6",
+          "itako-338",
+          "itako-343",
+          "itako-348",
+          "mlit-landclassification",
+          "urban32-p62"
+        ],
+        "geometryReferenceYear": 1885,
+        "interpretation": "Inner and outer water are reconstructed as an inferred connected water body. Polygon outlines are not certified historical shorelines.",
+        "previousApproval": false,
+        "approvedForInferredInterior": true,
+        "approvedAsClosedCoastlinePolygon": false,
+        "applicationCondition": "水面内部の採用。未確認の周縁を岸として閉じず、南端の水上切断線を既存・次区間の水面へ接続する。"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              140.58946609,
+              35.92533958
+            ],
+            [
+              140.59358597,
+              35.92520057
+            ],
+            [
+              140.59839249,
+              35.92339344
+            ],
+            [
+              140.60405731,
+              35.92200331
+            ],
+            [
+              140.61040878,
+              35.92186429
+            ],
+            [
+              140.61504364,
+              35.92381047
+            ],
+            [
+              140.61779022,
+              35.92742467
+            ],
+            [
+              140.61950684,
+              35.93312366
+            ],
+            [
+              140.62208176,
+              35.93826629
+            ],
+            [
+              140.62259674,
+              35.94118494
+            ],
+            [
+              140.61916351,
+              35.94313064
+            ],
+            [
+              140.61470032,
+              35.94479835
+            ],
+            [
+              140.61229706,
+              35.94799469
+            ],
+            [
+              140.61040878,
+              35.95063505
+            ],
+            [
+              140.60817719,
+              35.95258052
+            ],
+            [
+              140.60508728,
+              35.95202467
+            ],
+            [
+              140.60525894,
+              35.94938436
+            ],
+            [
+              140.60697556,
+              35.94604911
+            ],
+            [
+              140.61040878,
+              35.94410347
+            ],
+            [
+              140.61470032,
+              35.94229677
+            ],
+            [
+              140.61933517,
+              35.94007309
+            ],
+            [
+              140.61916351,
+              35.93798832
+            ],
+            [
+              140.61676025,
+              35.93451359
+            ],
+            [
+              140.61452866,
+              35.92950972
+            ],
+            [
+              140.61264038,
+              35.92617362
+            ],
+            [
+              140.60903549,
+              35.92450552
+            ],
+            [
+              140.60422897,
+              35.92436651
+            ],
+            [
+              140.59942245,
+              35.92631263
+            ],
+            [
+              140.59495926,
+              35.92784169
+            ],
+            [
+              140.59101105,
+              35.92798069
+            ],
+            [
+              140.58946609,
+              35.92533958
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "uchinasaka-outer-south-water",
+        "role": "comparison-water-core",
+        "source": "農研機構・迅速測図（CC BY 2.1 JP）",
+        "sourceOriginXYZ": [
+          13,
+          7294,
+          3218
+        ],
+        "sourcePixels": [
+          [
+            315,
+            256
+          ],
+          [
+            338,
+            247
+          ],
+          [
+            361,
+            255
+          ],
+          [
+            384,
+            266
+          ],
+          [
+            405,
+            269
+          ],
+          [
+            432,
+            266
+          ],
+          [
+            446,
+            259
+          ],
+          [
+            434,
+            275
+          ],
+          [
+            429,
+            294
+          ],
+          [
+            428,
+            318
+          ],
+          [
+            425,
+            344
+          ],
+          [
+            423,
+            367
+          ],
+          [
+            423,
+            392
+          ],
+          [
+            429,
+            415
+          ],
+          [
+            437,
+            434
+          ],
+          [
+            451,
+            453
+          ],
+          [
+            468,
+            476
+          ],
+          [
+            456,
+            485
+          ],
+          [
+            440,
+            466
+          ],
+          [
+            423,
+            451
+          ],
+          [
+            403,
+            435
+          ],
+          [
+            382,
+            424
+          ],
+          [
+            359,
+            415
+          ],
+          [
+            345,
+            402
+          ],
+          [
+            333,
+            389
+          ],
+          [
+            316,
+            381
+          ],
+          [
+            301,
+            377
+          ],
+          [
+            295,
+            365
+          ],
+          [
+            294,
+            351
+          ],
+          [
+            290,
+            333
+          ],
+          [
+            289,
+            315
+          ],
+          [
+            283,
+            296
+          ],
+          [
+            276,
+            279
+          ],
+          [
+            279,
+            265
+          ],
+          [
+            292,
+            267
+          ],
+          [
+            307,
+            267
+          ],
+          [
+            315,
+            256
+          ]
+        ],
+        "scope": "迅速測図の外浪逆浦南側の水面内を読図。南端は画像範囲内で閉じた比較上の切断であり岸線ではない。",
+        "targetYears": [
+          1560,
+          1615
+        ],
+        "reconstructionStatus": "accepted-inferred-water-interior",
+        "approvedAsExactHistoricalShoreline": false,
+        "historicalBasis": [
+          "sabo110-p6",
+          "itako-338",
+          "itako-343",
+          "itako-348",
+          "mlit-landclassification",
+          "urban32-p62"
+        ],
+        "geometryReferenceYear": 1885,
+        "interpretation": "Inner and outer water are reconstructed as an inferred connected water body. Polygon outlines are not certified historical shorelines.",
+        "previousApproval": false,
+        "approvedForInferredInterior": true,
+        "approvedAsClosedCoastlinePolygon": false,
+        "applicationCondition": "水面内部の採用。未確認の周縁を岸として閉じず、南端の水上切断線を既存・次区間の水面へ接続する。"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              140.59118271,
+              35.92464453
+            ],
+            [
+              140.59513092,
+              35.92589561
+            ],
+            [
+              140.59907913,
+              35.92478354
+            ],
+            [
+              140.60302734,
+              35.92325442
+            ],
+            [
+              140.60663223,
+              35.92283739
+            ],
+            [
+              140.61126709,
+              35.92325442
+            ],
+            [
+              140.61367035,
+              35.9242275
+            ],
+            [
+              140.61161041,
+              35.92200331
+            ],
+            [
+              140.61075211,
+              35.91936199
+            ],
+            [
+              140.61058044,
+              35.91602547
+            ],
+            [
+              140.61006546,
+              35.91241074
+            ],
+            [
+              140.60972214,
+              35.90921297
+            ],
+            [
+              140.60972214,
+              35.90573697
+            ],
+            [
+              140.61075211,
+              35.90253892
+            ],
+            [
+              140.6121254,
+              35.89989696
+            ],
+            [
+              140.61452866,
+              35.89725491
+            ],
+            [
+              140.6174469,
+              35.89405652
+            ],
+            [
+              140.61538696,
+              35.89280494
+            ],
+            [
+              140.61264038,
+              35.89544714
+            ],
+            [
+              140.60972214,
+              35.89753302
+            ],
+            [
+              140.60628891,
+              35.89975791
+            ],
+            [
+              140.60268402,
+              35.90128748
+            ],
+            [
+              140.59873581,
+              35.90253892
+            ],
+            [
+              140.59633255,
+              35.90434653
+            ],
+            [
+              140.59427261,
+              35.9061541
+            ],
+            [
+              140.59135437,
+              35.90726643
+            ],
+            [
+              140.58877945,
+              35.90782259
+            ],
+            [
+              140.58774948,
+              35.90949104
+            ],
+            [
+              140.58757782,
+              35.91143752
+            ],
+            [
+              140.58689117,
+              35.91394007
+            ],
+            [
+              140.58671951,
+              35.91644254
+            ],
+            [
+              140.58568954,
+              35.91908395
+            ],
+            [
+              140.58448792,
+              35.92144725
+            ],
+            [
+              140.5850029,
+              35.92339344
+            ],
+            [
+              140.5872345,
+              35.92311541
+            ],
+            [
+              140.58980942,
+              35.92311541
+            ],
+            [
+              140.59118271,
+              35.92464453
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "south-open-water-cut",
+        "role": "forbidden-coastline",
+        "decision": "This diagonal closes the inspected extent within continuing water. Join the continuing water surface before treating the patch perimeter as coast. Do not introduce a bank here.",
+        "sourceLocator": "outer-south-water-reference sourcePixels [468,476] to [456,485]"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            140.6174469,
+            35.89405652
+          ],
+          [
+            140.61538696,
+            35.89280494
+          ]
+        ]
+      }
+    }
+  ],
+  "scope": "Independent adoption classification of existing comparison geometry; no game raster edited."
+}

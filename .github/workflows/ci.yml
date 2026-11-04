@@ -45,3 +45,5 @@ jobs:
         run: node --max-old-space-size=8000 tools/checks/raster-map.cjs
       - name: Dated map edit checks
         run: node --max-old-space-size=8000 tools/checks/province-edits.cjs
+      - name: Katori water and shoreline masks
+        run: node tools/checks/katori-water.cjs

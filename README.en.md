@@ -26,6 +26,10 @@ is [docs/README.md](docs/README.md); open requests and ownership are in
 - The historical database retains personal authority IDs and sourced aliases.
   Aliases can be searched; comparative records outside the game period are not
   reassigned to events within it.
+- Uchinasakaura and Sotonasakaura in the Katori Sea are shown as inferred water
+  bodies, using medieval evidence of the lakes and later shoreline references.
+  Correction boundaries crossing open water are excluded from shoreline strokes.
+  See the [evidence and checks](docs/reports/KATORI_WIDE_LAKE_PERIMETER.md) (Japanese).
 
 | Folder | Contents |
 |---|---|
