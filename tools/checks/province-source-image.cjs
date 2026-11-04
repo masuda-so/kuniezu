@@ -158,8 +158,8 @@ async function verify(options){
  const snapshots=new Map([[manifestPath,manifestBytes]]);
  const capture=async file=>{if(!snapshots.has(file))snapshots.set(file,await fsp.readFile(file));return snapshots.get(file);};
  if(width*Math.min(tile,height)*3>512*1024*1024)fail('DIMENSION','One tile band exceeds 512 MiB limit',{width,height,tile});
- // 正本は生成物の置き場（game/map/build）の一つ上（game/map）。旧来の並び（map と map_data）も読む。
- const modern=[path.join(mapDir,'..'),path.join(mapDir,'../map_data')].find(d=>fs.existsSync(path.join(d,'definition.csv'))),definition=path.resolve(options.definition||(modern?path.join(modern,'definition.csv'):path.join(mapDir,'definition.csv')));
+ // 正本の区画の表は生成物の置き場（game/map/build）の隣の game/map/control。旧来の並び（map と map_data、層に分ける前の game/map）も読む。
+ const modern=[path.join(mapDir,'../control'),path.join(mapDir,'..'),path.join(mapDir,'../map_data')].find(d=>fs.existsSync(path.join(d,'definition.csv'))),definition=path.resolve(options.definition||(modern?path.join(modern,'definition.csv'):path.join(mapDir,'definition.csv')));
  const adjacentDefault=path.join(path.dirname(definition),'default.map');
  const defaultMap=options.defaultMap?path.resolve(options.defaultMap):fs.existsSync(adjacentDefault)?adjacentDefault:null;
  const definitions=readDefinitions(definition,defaultMap,{definition:await capture(definition),defaultMap:defaultMap?await capture(defaultMap):null});
