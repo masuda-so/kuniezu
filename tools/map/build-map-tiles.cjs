@@ -33,7 +33,7 @@ const sha=b=>crypto.createHash('sha256').update(b).digest('hex');
  for(const c of counts.keys())if(!def.byRGB.has(c))throw Error('definition.csv にない色 '+c);
  const {note,width,height,...projection}=proj;
  const manifest={generated:'tools/map/build-map-tiles.cjs',basis:'正本 game/map/control/provinces.png（全域1枚）から作った Web 配信用のタイル。手で直さない。',
-  source:{dir:'game/map',provinces:'provinces.png',definition:'definition.csv',defaultMap:'default.map',projection:'projection.json',sha256:MD.sourceSha256()},
+  source:{dir:'game/map',...Object.fromEntries(Object.entries(MD.files).map(([k,f])=>[k,path.relative(MD.dir,f).split(path.sep).join('/')])),sha256:MD.sourceSha256()},// 各ファイルは dir からの相対パス（control/provinces.png・projection.json など）
   projection,width:W,height:H,tile:TILE,tiles:lv[0].tiles,levels:lv.slice(1).map(L=>({factor:L.f,dir:L.dir,width:L.w,height:L.h,tiles:L.tiles}))};
  const mf=path.join(out,'manifest.json'),text=JSON.stringify(manifest,null,1);
  if(CHECK){if(fs.readFileSync(mf,'utf8')!==text)throw Error('manifest.json が正本と違う');for(const L of lv){const extra=fs.readdirSync(path.join(out,L.dir)).filter(f=>!L.files.has(f));if(extra.length)throw Error('正本に無いタイル: '+L.dir+'/'+extra[0]);}console.log('PASS: 配信タイルは正本どおり');}
