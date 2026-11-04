@@ -1,0 +1,151 @@
+{
+  "scope": "既存の史料付き人物とWikidataの人物項目を対応付ける。生没年や所在の自動採用はしない。",
+  "records": [
+    {
+      "wikidataId": "Q10938514",
+      "wikidataRevision": 2480585791,
+      "japaneseLabel": "大須賀康高",
+      "instanceOf": [
+        "Q5"
+      ],
+      "description": "日本の戦国時代の武将、徳川氏の家臣",
+      "existingClaimIds": [
+        "mamushizuka-1574-refortification",
+        "yokosuka-castle-construction"
+      ]
+    },
+    {
+      "wikidataId": "Q8190311",
+      "wikidataRevision": 2491237289,
+      "japaneseLabel": "長束正家",
+      "instanceOf": [
+        "Q5"
+      ],
+      "description": "戦国武将",
+      "existingClaimIds": [
+        "toyotomi-office-10"
+      ]
+    },
+    {
+      "wikidataId": "Q11642033",
+      "wikidataRevision": 2480592303,
+      "japaneseLabel": "遠山景任",
+      "instanceOf": [
+        "Q5"
+      ],
+      "description": "戦国時代の武将・大名。岩村遠山氏当主。美濃恵那郡岩村城主。大和守",
+      "existingClaimIds": [
+        "lifetime-遠山景任"
+      ]
+    },
+    {
+      "wikidataId": "Q1080643",
+      "wikidataRevision": 2555328687,
+      "japaneseLabel": "秋月種実",
+      "instanceOf": [
+        "Q5"
+      ],
+      "description": "日本の戦国時代～安土桃山時代の大名。大友家・毛利家・龍造寺家・島津家の家臣。筑前古処山城主秋月文種次男で、秋月氏16代当主。秋月氏の最盛期を築いたとされる",
+      "existingClaimIds": [
+        "akizuki-takarabe-transfer",
+        "lifetime-秋月種実"
+      ]
+    },
+    {
+      "wikidataId": "Q610933",
+      "wikidataRevision": 2555750417,
+      "japaneseLabel": "相良頼房",
+      "instanceOf": [
+        "Q5"
+      ],
+      "description": "日本の安土桃山時代～江戸時代前期の大名",
+      "existingClaimIds": [
+        "sagara-kuma-confirmation"
+      ]
+    },
+    {
+      "wikidataId": "Q955727",
+      "wikidataRevision": 2514068357,
+      "japaneseLabel": "島津義久",
+      "instanceOf": [
+        "Q5"
+      ],
+      "description": "日本の武将・戦国大名",
+      "existingClaimIds": [
+        "nejirozaka-night-attack"
+      ]
+    },
+    {
+      "wikidataId": "Q1059785",
+      "wikidataRevision": 2438362794,
+      "japaneseLabel": "増田長盛",
+      "instanceOf": [
+        "Q5"
+      ],
+      "description": "安土桃山時代から江戸時代初期の武将、大名。豊臣政権五奉行の第三席。従五位下・右衛門少尉。弟に増田長俊",
+      "existingClaimIds": [
+        "toyotomi-office-9"
+      ]
+    },
+    {
+      "wikidataId": "Q8514131",
+      "wikidataRevision": 2555356227,
+      "japaneseLabel": "高橋元種",
+      "instanceOf": [
+        "Q5"
+      ],
+      "description": null,
+      "existingClaimIds": [
+        "agata-castle-construction"
+      ]
+    },
+    {
+      "wikidataId": "Q2446917",
+      "wikidataRevision": 2550308124,
+      "japaneseLabel": "織田信忠",
+      "instanceOf": [
+        "Q5"
+      ],
+      "description": "戦国時代から安土桃山時代にかけての武将・大名。織田政権2代。織田信長の長男・嫡男。",
+      "existingClaimIds": [
+        "shigisan-siege-start"
+      ]
+    },
+    {
+      "wikidataId": "Q6729101",
+      "wikidataRevision": 2556908853,
+      "japaneseLabel": "前田玄以",
+      "instanceOf": [
+        "Q5"
+      ],
+      "description": "日本の戦国～安土桃山時代の僧侶、武将、大名",
+      "existingClaimIds": [
+        "toyotomi-office-8"
+      ]
+    },
+    {
+      "wikidataId": "Q4803439",
+      "wikidataRevision": 2480762876,
+      "japaneseLabel": "朝倉景鏡",
+      "instanceOf": [
+        "Q5"
+      ],
+      "description": "日本の戦国時代の武将",
+      "existingClaimIds": [
+        "lifetime-朝倉景鏡"
+      ]
+    },
+    {
+      "wikidataId": "Q1082804",
+      "wikidataRevision": 2555357441,
+      "japaneseLabel": "秋月種長",
+      "instanceOf": [
+        "Q5"
+      ],
+      "description": "日本の戦国時代末期～江戸時代初期の大名",
+      "existingClaimIds": [
+        "akizuki-tanetaka-grant"
+      ]
+    }
+  ]
+}

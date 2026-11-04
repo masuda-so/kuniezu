@@ -32,7 +32,12 @@ for(const person of people){
  const row=matches[0];
  assert.equal(row.wikidataRevision,evidence.wikidataRevision);
  assert.ok([person.name,...person.gameNames].includes(row.japaneseLabel??row.label??row.name));
- assert.ok([person.name,...person.gameNames].includes(row.ndlIdentity.name));
- assert.ok(person.authorityIds.includes('ndlna:'+row.ndlId));
+ if(person.authorityIds.some(id=>id.startsWith('ndlna:'))){
+  assert.ok([person.name,...person.gameNames].includes(row.ndlIdentity.name));
+  assert.ok(person.authorityIds.includes('ndlna:'+row.ndlId));
+ }else{
+  assert.ok(row.instanceOf.includes('Q5'));
+  assert.deepEqual(row.existingClaimIds,person.identityBasis.claimIds);
+ }
 }
 console.log('PASS: adopted authorities match retained identity snapshots');
