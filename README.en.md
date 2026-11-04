@@ -114,5 +114,10 @@ are squash-merged). Shared working rules
 are in [AGENTS.md](AGENTS.md). PR descriptions and review comments use Japanese by
 default; an explicit request for another language takes precedence.
 
+Battle-map frames are inputs in `data/inputs/battle-atlas-frames.json`. Use
+`--titles` to regenerate selected maps. See the
+[Takatenjin regeneration and verification](docs/reports/TAKATENJIN_ATLAS_BOUNDS.md)
+(Japanese).
+
 The repository is licensed under [LICENSE](LICENSE) (MIT). Bundled or derived map
 data follows the terms of each source.
