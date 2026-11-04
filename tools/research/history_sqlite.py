@@ -87,7 +87,7 @@ const temp=fs.mkdtempSync(path.join(os.tmpdir(),'kuniezu-sql-input-'));try{for(c
                         for i, component in enumerate(components):
                             date = component.get('date', [component.get('year'), None, None])
                             db.execute('INSERT INTO event_date VALUES (?,?,?,?,?,?,?,?,?)',
-                                (row_id, i, component.get('calendar', event.get('calendar', 'unspecified')), component.get('precision', event.get('precision', 'unspecified')), *date, component.get('leapMonth'), text(component.get('entities', entities))))
+                                (row_id, i, component.get('calendar', event.get('calendar', 'unspecified')), component.get('precision', event.get('precision', 'unspecified')), *date, component.get('leapMonth'), text(sorted({canonical(e) for e in component.get('entities', entities)}))))
                     for entity in sorted({canonical(e) for e in entities}):
                         # Unregistered referenced IDs stay explicit, not invented historical identities.
                         db.execute('INSERT OR IGNORE INTO entity VALUES (?,?,?,0)', (entity, entity.split(':')[0], entity))
