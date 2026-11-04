@@ -32,6 +32,7 @@ python3 tools/research/history_sqlite.py build --output /tmp/kuniezu-history.sql
 python3 tools/research/history_sqlite.py query --db /tmp/kuniezu-history.sqlite3 --entity 県城 --from-year 1613 --to-year 1614
 python3 tools/research/history_sqlite.py query --db /tmp/kuniezu-history.sqlite3 --bbox 133.9 33.5 134 33.6 --from-year 1600 --to-year 1615
 python3 tools/checks/history-sqlite.py
+python3 tools/checks/history-sqlite-inputs.py
 ```
 
 SQL例（入力はパラメーターで束縛する）：
