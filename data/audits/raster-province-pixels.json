@@ -1,6 +1,6 @@
 {
  "generated": "tools/map/build-map-tiles.cjs",
- "source": "c6f51ceed847b1362fe0b9f2165987565d3afa2c7d687ac5c92d5f191317ec06",
+ "source": "cb4674e4cb9a80bbdba08b3827e1b70438bf7cb96bbbb3250c125af2492e19fc",
  "provinces": [
   {
    "id": 1,
@@ -12,13 +12,13 @@
    "id": 2,
    "key": "unassigned",
    "kind": "land",
-   "pixels": 182999
+   "pixels": 0
   },
   {
    "id": 3,
    "key": "castle:agata",
    "kind": "land",
-   "pixels": 304864
+   "pixels": 304867
   },
   {
    "id": 4,
@@ -36,7 +36,7 @@
    "id": 6,
    "key": "castle:busan",
    "kind": "land",
-   "pixels": 309131
+   "pixels": 309353
   },
   {
    "id": 7,
@@ -66,19 +66,19 @@
    "id": 11,
    "key": "castle:funai",
    "kind": "land",
-   "pixels": 522654
+   "pixels": 522656
   },
   {
    "id": 12,
    "key": "castle:gaeseong",
    "kind": "land",
-   "pixels": 357731
+   "pixels": 357830
   },
   {
    "id": 13,
    "key": "castle:gassan",
    "kind": "land",
-   "pixels": 260781
+   "pixels": 260782
   },
   {
    "id": 14,
@@ -90,7 +90,7 @@
    "id": 15,
    "key": "castle:gongju",
    "kind": "land",
-   "pixels": 827494
+   "pixels": 828302
   },
   {
    "id": 16,
@@ -102,19 +102,19 @@
    "id": 17,
    "key": "castle:haeju",
    "kind": "land",
-   "pixels": 1728203
+   "pixels": 1728387
   },
   {
    "id": 18,
    "key": "castle:hamhung",
    "kind": "land",
-   "pixels": 5781564
+   "pixels": 5781594
   },
   {
    "id": 19,
    "key": "castle:hanseong",
    "kind": "land",
-   "pixels": 976313
+   "pixels": 976678
   },
   {
    "id": 20,
@@ -126,19 +126,19 @@
    "id": 21,
    "key": "castle:himeji",
    "kind": "land",
-   "pixels": 284379
+   "pixels": 284380
   },
   {
    "id": 22,
    "key": "castle:hinoe",
    "kind": "land",
-   "pixels": 141196
+   "pixels": 141198
   },
   {
    "id": 23,
    "key": "castle:hirado",
    "kind": "land",
-   "pixels": 190011
+   "pixels": 190016
   },
   {
    "id": 24,
@@ -150,13 +150,13 @@
    "id": 25,
    "key": "castle:hiyama",
    "kind": "land",
-   "pixels": 477656
+   "pixels": 477657
   },
   {
    "id": 26,
    "key": "castle:hondo",
    "kind": "land",
-   "pixels": 82806
+   "pixels": 82816
   },
   {
    "id": 27,
@@ -168,7 +168,7 @@
    "id": 28,
    "key": "castle:ichijodani",
    "kind": "land",
-   "pixels": 263793
+   "pixels": 263795
   },
   {
    "id": 29,
@@ -180,7 +180,7 @@
    "id": 30,
    "key": "castle:ishikawa",
    "kind": "land",
-   "pixels": 515008
+   "pixels": 515009
   },
   {
    "id": 31,
@@ -192,7 +192,7 @@
    "id": 32,
    "key": "castle:iwaki",
    "kind": "land",
-   "pixels": 168927
+   "pixels": 168930
   },
   {
    "id": 33,
@@ -210,19 +210,19 @@
    "id": 35,
    "key": "castle:izumi",
    "kind": "land",
-   "pixels": 176099
+   "pixels": 176102
   },
   {
    "id": 36,
    "key": "castle:jeonju",
    "kind": "land",
-   "pixels": 608313
+   "pixels": 608348
   },
   {
    "id": 37,
    "key": "castle:jinju",
    "kind": "land",
-   "pixels": 768836
+   "pixels": 769032
   },
   {
    "id": 38,
@@ -264,7 +264,7 @@
    "id": 44,
    "key": "castle:kannabe",
    "kind": "land",
-   "pixels": 363268
+   "pixels": 363269
   },
   {
    "id": 45,
@@ -288,7 +288,7 @@
    "id": 48,
    "key": "castle:kasugayama",
    "kind": "land",
-   "pixels": 246046
+   "pixels": 246050
   },
   {
    "id": 49,
@@ -360,13 +360,13 @@
    "id": 60,
    "key": "castle:kousuiji",
    "kind": "land",
-   "pixels": 935106
+   "pixels": 935107
   },
   {
    "id": 61,
    "key": "castle:kouyama",
    "kind": "land",
-   "pixels": 358141
+   "pixels": 361838
   },
   {
    "id": 62,
@@ -384,7 +384,7 @@
    "id": 64,
    "key": "castle:kurose",
    "kind": "land",
-   "pixels": 231145
+   "pixels": 231148
   },
   {
    "id": 65,
@@ -444,7 +444,7 @@
    "id": 74,
    "key": "castle:nakamura",
    "kind": "land",
-   "pixels": 331471
+   "pixels": 331473
   },
   {
    "id": 75,
@@ -468,7 +468,7 @@
    "id": 78,
    "key": "castle:nirayama",
    "kind": "land",
-   "pixels": 142215
+   "pixels": 171017
   },
   {
    "id": 79,
@@ -486,7 +486,7 @@
    "id": 81,
    "key": "castle:obi",
    "kind": "land",
-   "pixels": 199581
+   "pixels": 199582
   },
   {
    "id": 82,
@@ -522,7 +522,7 @@
    "id": 87,
    "key": "castle:oko",
    "kind": "land",
-   "pixels": 187277
+   "pixels": 187279
   },
   {
    "id": 88,
@@ -546,7 +546,7 @@
    "id": 91,
    "key": "castle:pyongyang",
    "kind": "land",
-   "pixels": 1571833
+   "pixels": 1571891
   },
   {
    "id": 92,
@@ -558,7 +558,7 @@
    "id": 93,
    "key": "castle:saika",
    "kind": "land",
-   "pixels": 254297
+   "pixels": 254300
   },
   {
    "id": 94,
@@ -582,7 +582,7 @@
    "id": 97,
    "key": "castle:sannohe",
    "kind": "land",
-   "pixels": 778393
+   "pixels": 778397
   },
   {
    "id": 98,
@@ -612,13 +612,13 @@
    "id": 102,
    "key": "castle:shozui",
    "kind": "land",
-   "pixels": 404368
+   "pixels": 404369
   },
   {
    "id": 103,
    "key": "castle:sogo",
    "kind": "land",
-   "pixels": 182355
+   "pixels": 182356
   },
   {
    "id": 104,
@@ -636,7 +636,7 @@
    "id": 106,
    "key": "castle:suncheon",
    "kind": "land",
-   "pixels": 1242579
+   "pixels": 1243642
   },
   {
    "id": 107,
@@ -678,7 +678,7 @@
    "id": 113,
    "key": "castle:tango",
    "kind": "land",
-   "pixels": 129504
+   "pixels": 129505
   },
   {
    "id": 114,
@@ -690,7 +690,7 @@
    "id": 115,
    "key": "castle:teraike",
    "kind": "land",
-   "pixels": 537857
+   "pixels": 537859
   },
   {
    "id": 116,
@@ -708,7 +708,7 @@
    "id": 118,
    "key": "castle:tonokori",
    "kind": "land",
-   "pixels": 284158
+   "pixels": 284160
   },
   {
    "id": 119,
@@ -726,7 +726,7 @@
    "id": 121,
    "key": "castle:tsushima",
    "kind": "land",
-   "pixels": 67254
+   "pixels": 67256
   },
   {
    "id": 122,
@@ -738,7 +738,7 @@
    "id": 123,
    "key": "castle:uchi",
    "kind": "land",
-   "pixels": 172787
+   "pixels": 172871
   },
   {
    "id": 124,
@@ -750,7 +750,7 @@
    "id": 125,
    "key": "castle:uiju",
    "kind": "land",
-   "pixels": 3132977
+   "pixels": 3133126
   },
   {
    "id": 126,
@@ -780,7 +780,7 @@
    "id": 130,
    "key": "castle:wonju",
    "kind": "land",
-   "pixels": 2682889
+   "pixels": 2682945
   },
   {
    "id": 131,
@@ -792,7 +792,7 @@
    "id": 132,
    "key": "castle:yamabuki",
    "kind": "land",
-   "pixels": 353985
+   "pixels": 353986
   },
   {
    "id": 133,
@@ -858,7 +858,7 @@
    "id": 143,
    "key": "neutral:隠岐",
    "kind": "land",
-   "pixels": 34441
+   "pixels": 34442
   },
   {
    "id": 144,
@@ -1014,19 +1014,19 @@
    "id": 169,
    "key": "castle:shuri",
    "kind": "land",
-   "pixels": 145573
+   "pixels": 275615
   },
   {
    "id": 170,
    "key": "castle:jeju",
    "kind": "land",
-   "pixels": 180220
+   "pixels": 180260
   },
   {
    "id": 171,
    "key": "context:jianzhou",
    "kind": "land",
-   "pixels": 3451953
+   "pixels": 3451962
   },
   {
    "id": 172,
@@ -1051,6 +1051,18 @@
    "key": "context:ainu",
    "kind": "land",
    "pixels": 9134492
+  },
+  {
+   "id": 176,
+   "key": "context:uninhabited",
+   "kind": "land",
+   "pixels": 14956
+  },
+  {
+   "id": 177,
+   "key": "context:ming-zhejiang",
+   "kind": "land",
+   "pixels": 2038
   }
  ]
 }
