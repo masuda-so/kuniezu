@@ -17,5 +17,16 @@
   "status": "verified-in-specified-scope",
   "sourceUrl": "https://online.bunka.go.jp/heritages/detail/520604",
   "checked": "2026-11-01",
-  "uncertainty": "築城年月日と城域境界はこの命題から確定しない。"
+  "uncertainty": "築城年月日と城域境界はこの命題から確定しない。",
+  "linkedEntities": [
+    "place:kashiwagi"
+  ],
+  "eventTime": {
+    "kind": "year-window",
+    "year": 1585,
+    "calendar": "CE-year",
+    "precision": "year"
+  },
+  "eventRelation": "garrison-defence",
+  "eventScope": "籠城年。城主個人・築城月日・領主交代日へ変換しない。"
 }

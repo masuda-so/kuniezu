@@ -17,5 +17,16 @@
   "recordType": "verified-historical-claim",
   "status": "verified-in-specified-scope",
   "checked": "2026-11-04",
-  "uncertainty": "位置は現境内の代表点（OpenStreetMap way 74010857、https://www.openstreetmap.org/way/74010857）。1562年の伽藍配置は未確定。1592年は戦乱前施設を表示するための終了境界で、焼失年・焼失日を確定した値ではない。"
+  "uncertainty": "位置は現境内の代表点（OpenStreetMap way 74010857、https://www.openstreetmap.org/way/74010857）。1562年の伽藍配置は未確定。1592年は戦乱前施設を表示するための終了境界で、焼失年・焼失日を確定した値ではない。",
+  "linkedEntities": [
+    "place:奉恩寺（修道山）"
+  ],
+  "eventTime": {
+    "kind": "year-window",
+    "year": 1562,
+    "calendar": "CE-year",
+    "precision": "year"
+  },
+  "eventRelation": "institution-relocation",
+  "eventScope": "寺院組織の移転記録。旧寺地の点座標・1562年の伽藍・焼失年・現代寺院の連続状態を補わない。"
 }

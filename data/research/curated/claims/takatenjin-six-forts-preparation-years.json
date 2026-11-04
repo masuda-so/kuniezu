@@ -33,5 +33,39 @@
   "recordType": "verified-historical-claim",
   "status": "verified-in-specified-scope",
   "checked": "2026-11-03",
-  "uncertainty": "個別の整備月日・初築・廃城日は確定しない。"
+  "uncertainty": "個別の整備月日・初築・廃城日は確定しない。",
+  "linkedEntities": [
+    "place:takatenjin",
+    "place:ogasayama-fort",
+    "place:nakamura-fort",
+    "place:mitsuiyama-fort",
+    "place:nogesaka-fort",
+    "place:higamine-fort",
+    "place:shishigahana-fort"
+  ],
+  "eventTime": {
+    "kind": "dated-components",
+    "calendar": "CE-year",
+    "precision": "year",
+    "components": [
+      {
+        "year": 1579,
+        "entities": [
+          "place:ogasayama-fort",
+          "place:nakamura-fort",
+          "place:mitsuiyama-fort"
+        ]
+      },
+      {
+        "year": 1580,
+        "entities": [
+          "place:nogesaka-fort",
+          "place:higamine-fort",
+          "place:shishigahana-fort"
+        ]
+      }
+    ]
+  },
+  "eventRelation": "encirclement-fort-preparation",
+  "eventScope": "1つの出典命題を6件の調査として水増ししない。整備年を初築日・廃止日へ変換しない。担当と毎日の所在は別。"
 }

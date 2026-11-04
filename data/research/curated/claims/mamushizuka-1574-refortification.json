@@ -21,5 +21,18 @@
   "recordType": "verified-historical-claim",
   "status": "verified-in-specified-scope",
   "checked": "2026-11-03",
-  "uncertainty": "築城そのものは以前。廃城年は確定しない。"
+  "uncertainty": "築城そのものは以前。廃城年は確定しない。",
+  "linkedEntities": [
+    "place:mamushizuka",
+    "person:大須賀康高",
+    "person:tokugawa-ieyasu"
+  ],
+  "eventTime": {
+    "kind": "year-window",
+    "year": 1574,
+    "calendar": "CE-year",
+    "precision": "year"
+  },
+  "eventRelation": "garrison-commander-assignment",
+  "eventScope": "守将配置を領主・家督・毎日の在城と同一視しない。改修を初築にしない。"
 }

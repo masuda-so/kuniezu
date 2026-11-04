@@ -17,5 +17,17 @@
     1601,
     1601
   ],
-  "datePrecision": "year"
+  "datePrecision": "year",
+  "linkedEntities": [
+    "place:安芸城",
+    "person:goto-tameshige"
+  ],
+  "eventTime": {
+    "kind": "year-window",
+    "year": 1601,
+    "calendar": "CE-year",
+    "precision": "year"
+  },
+  "eventRelation": "residence-established",
+  "eventScope": "入居の年精度。終年の在城や土佐一国の領主という関係へ拡大しない。"
 }

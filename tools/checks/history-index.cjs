@@ -20,4 +20,14 @@ assert.deepEqual(spatial.map(r=>r.id),[location.id]);
 assert.equal(queryHistory(idx,{bbox:[130,30,131,31]}).length,0);
 assert.throws(()=>queryHistory(idx,{bbox:[136,34,134,36]}));
 assert.throws(()=>queryHistory(idx,{bbox:[134,34,136]}));
+// A document date is exposed without replacing claim applicability or duplicating its body.
+const order={...reference,id:'order',entity:'node:agata',linkedEntities:['place:agata'],validYears:[1613,1613],eventTime:{kind:'dated-event',date:[1613,12,15],calendar:'Japanese-lunisolar',leapMonth:false,precision:'day'}};
+const orderIndex=createHistoryIndex({claims:[order],places:[{id:'place:agata',name:'縣城',aliases:['県城']}]});
+const byCastle=queryHistory(orderIndex,{entity:'県城',year:1613});
+assert.equal(byCastle.length,1);assert.strictEqual(byCastle[0].record,order);
+assert.strictEqual(byCastle[0].eventTime,order.eventTime);
+assert.equal(byCastle[0].scope,'claim-applicability');
+assert.strictEqual(queryHistory(orderIndex,{entity:'node:agata'})[0],byCastle[0]);
+assert.equal(orderIndex.records.size,1);
+assert.throws(()=>createHistoryIndex({claims:[{...order,linkedEntities:['invalid']}]}));
 console.log('PASS: time/entity views share records; inclusive/exclusive boundaries, aliases, intersections, unknown entities; no annual snapshots for 10,000-year span');

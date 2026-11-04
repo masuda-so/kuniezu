@@ -17,5 +17,18 @@
     1569,
     1569
   ],
-  "datePrecision": "year"
+  "datePrecision": "year",
+  "linkedEntities": [
+    "place:安芸城",
+    "person:aki-kunitora",
+    "person:chosokabe-motochika"
+  ],
+  "eventTime": {
+    "kind": "year-window",
+    "year": 1569,
+    "calendar": "CE-year",
+    "precision": "year"
+  },
+  "eventRelation": "military-defeat",
+  "eventScope": "敗北した年。正確な落城日・領主交代日・土地の移管範囲を補わない。"
 }

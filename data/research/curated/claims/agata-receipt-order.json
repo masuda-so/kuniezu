@@ -26,5 +26,21 @@
   "recordType": "verified-historical-claim",
   "status": "verified-in-specified-scope",
   "checked": "2026-11-03",
-  "uncertainty": "書状の日付。実際の城の明渡日や知行の移管日は別。"
+  "uncertainty": "書状の日付。実際の城の明渡日や知行の移管日は別。",
+  "linkedEntities": [
+    "place:agata"
+  ],
+  "eventTime": {
+    "kind": "dated-event",
+    "date": [
+      1613,
+      12,
+      15
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": false,
+    "precision": "day"
+  },
+  "eventRelation": "castle-receipt-order",
+  "eventScope": "文書発給日。受取実施日、城主交代日、現地入城日を表さない。"
 }

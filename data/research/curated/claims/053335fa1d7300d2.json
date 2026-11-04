@@ -17,5 +17,16 @@
   "status": "verified-in-specified-scope",
   "sourceUrl": "https://www.city.tokorozawa.saitama.jp/iitokoro/enjoy/bunkakyoyo/bunkazai/kenshiteibunkazai/bunzai_20100126153048508.html",
   "checked": "2026-11-01",
-  "uncertainty": "日付は確定しない"
+  "uncertainty": "日付は確定しない",
+  "linkedEntities": [
+    "place:taki"
+  ],
+  "eventTime": {
+    "kind": "year-window",
+    "year": 1590,
+    "calendar": "CE-year",
+    "precision": "year"
+  },
+  "eventRelation": "castle-abandoned",
+  "eventScope": "命題のvalidYears1590〜1615は廃城状態の参照範囲であり、毎年の廃城ではない。月日は補わない。"
 }

@@ -1,0 +1,309 @@
+{
+  "schema": "candidate-entity-registrations-v1",
+  "automaticRegistration": false,
+  "entities": [
+    {
+      "id": "place:suwahara",
+      "name": "諏訪原城",
+      "kind": "place",
+      "aliases": [
+        "牧野城"
+      ],
+      "existing": false,
+      "note": "牧野城は同じ城の改称。別地点として増設しない。",
+      "geometry": null,
+      "geometryStatus": "not-asserted"
+    },
+    {
+      "id": "place:agata",
+      "name": "縣城",
+      "kind": "place",
+      "aliases": [
+        "県城",
+        "延岡城"
+      ],
+      "existing": false,
+      "note": "1603年築城の物理的城地。game node:agata がそれ以前に表す松尾城と別。",
+      "geometry": null,
+      "geometryStatus": "not-asserted"
+    },
+    {
+      "id": "place:matsuo-hyuga",
+      "name": "松尾城（日向）",
+      "kind": "place",
+      "aliases": [
+        "日向松尾城"
+      ],
+      "existing": false,
+      "note": "縣城築城前の本拠。正確な移転日はこの抽出で確定しない。",
+      "geometry": null,
+      "geometryStatus": "not-asserted"
+    },
+    {
+      "id": "place:安芸城",
+      "name": "安芸城",
+      "kind": "place",
+      "aliases": [],
+      "existing": true,
+      "note": "土佐の安芸城跡と五藤氏土居。広島県の安芸国全体を示さない。",
+      "geometry": null,
+      "geometryStatus": "not-asserted"
+    },
+    {
+      "id": "place:takarabe-castle",
+      "name": "財部城",
+      "kind": "place",
+      "aliases": [
+        "高鍋城"
+      ],
+      "existing": false,
+      "note": "史料にいう日向財部の城。財部という地域全体と区別する。",
+      "geometry": null,
+      "geometryStatus": "not-asserted"
+    },
+    {
+      "id": "place:ganjaku",
+      "name": "岩石城",
+      "kind": "place",
+      "aliases": [],
+      "existing": false,
+      "note": "秋月氏の支城。古処山城と混同しない。",
+      "geometry": null,
+      "geometryStatus": "not-asserted"
+    },
+    {
+      "id": "place:mamushizuka",
+      "name": "馬伏塚城",
+      "kind": "place",
+      "aliases": [],
+      "existing": false,
+      "note": "1574年の記録は改修・守将就任。初築ではない。",
+      "geometry": null,
+      "geometryStatus": "not-asserted"
+    },
+    {
+      "id": "place:yokosuka-totomi",
+      "name": "横須賀城",
+      "kind": "place",
+      "aliases": [],
+      "existing": false,
+      "note": "遠江の横須賀城。築城着手と完工を分ける。",
+      "geometry": null,
+      "geometryStatus": "not-asserted"
+    },
+    {
+      "id": "place:奉恩寺（修道山）",
+      "name": "奉恩寺（修道山）",
+      "kind": "place",
+      "aliases": [
+        "修道山奉恩寺"
+      ],
+      "existing": true,
+      "note": "1562年移転先。旧寺地や当時の境内形状は未登録。",
+      "geometry": null,
+      "geometryStatus": "not-asserted"
+    },
+    {
+      "id": "place:bongseonsa",
+      "name": "奉先寺",
+      "kind": "place",
+      "aliases": [
+        "雲岳山奉先寺"
+      ],
+      "existing": false,
+      "note": "南楊州・雲岳山の寺。奉恩寺と別施設。",
+      "geometry": null,
+      "geometryStatus": "not-asserted"
+    },
+    {
+      "id": "place:taki",
+      "name": "滝の城",
+      "kind": "place",
+      "aliases": [],
+      "existing": false,
+      "note": "所沢市の城跡。1590年以降の廃城状態と廃城が起きた年を区別する。",
+      "geometry": null,
+      "geometryStatus": "not-asserted"
+    },
+    {
+      "id": "place:takatenjin",
+      "name": "高天神城",
+      "kind": "place",
+      "aliases": [],
+      "existing": false,
+      "note": "六砦が包囲対象とした城。砦を武田側の支城にしない。",
+      "geometry": null,
+      "geometryStatus": "not-asserted"
+    },
+    {
+      "id": "place:ogasayama-fort",
+      "name": "小笠山砦",
+      "kind": "place",
+      "aliases": [],
+      "existing": false,
+      "note": "包囲砦。1579年整備の確認範囲。",
+      "geometry": null,
+      "geometryStatus": "not-asserted"
+    },
+    {
+      "id": "place:nakamura-fort",
+      "name": "中村砦",
+      "kind": "place",
+      "aliases": [],
+      "existing": false,
+      "note": "包囲砦。1579年整備の確認範囲。",
+      "geometry": null,
+      "geometryStatus": "not-asserted"
+    },
+    {
+      "id": "place:mitsuiyama-fort",
+      "name": "三井山砦",
+      "kind": "place",
+      "aliases": [],
+      "existing": false,
+      "note": "包囲砦。1579年整備の確認範囲。",
+      "geometry": null,
+      "geometryStatus": "not-asserted"
+    },
+    {
+      "id": "place:nogesaka-fort",
+      "name": "能ヶ坂砦",
+      "kind": "place",
+      "aliases": [],
+      "existing": false,
+      "note": "包囲砦。本多勢の担当から特定個人を割り出さない。",
+      "geometry": null,
+      "geometryStatus": "not-asserted"
+    },
+    {
+      "id": "place:higamine-fort",
+      "name": "火ヶ峰砦",
+      "kind": "place",
+      "aliases": [],
+      "existing": false,
+      "note": "位置に異説がある。今回座標を登録しない。",
+      "geometry": null,
+      "geometryStatus": "not-asserted"
+    },
+    {
+      "id": "place:shishigahana-fort",
+      "name": "獅子ヶ鼻砦",
+      "kind": "place",
+      "aliases": [],
+      "existing": false,
+      "note": "開始年は1580年。個別の初築月日を補わない。",
+      "geometry": null,
+      "geometryStatus": "not-asserted"
+    },
+    {
+      "id": "place:tonokori",
+      "name": "都於郡城",
+      "kind": "place",
+      "aliases": [],
+      "existing": false,
+      "note": "江戸初頭の外城という役割を参照。1587年の明渡し日は別。",
+      "geometry": null,
+      "geometryStatus": "not-asserted"
+    },
+    {
+      "id": "place:sadowara",
+      "name": "佐土原城",
+      "kind": "place",
+      "aliases": [],
+      "existing": false,
+      "note": "都於郡城の外城関係の本城。個人の在城は意味しない。",
+      "geometry": null,
+      "geometryStatus": "not-asserted"
+    },
+    {
+      "id": "place:kashiwagi",
+      "name": "柏木城",
+      "kind": "place",
+      "aliases": [],
+      "existing": false,
+      "note": "1585年の蘆名方防衛拠点。築城日・領主就任日ではない。",
+      "geometry": null,
+      "geometryStatus": "not-asserted"
+    },
+    {
+      "id": "person:高橋元種",
+      "name": "高橋元種",
+      "kind": "person",
+      "aliases": [],
+      "existing": true,
+      "note": "縣城築城の主体。"
+    },
+    {
+      "id": "person:goto-tameshige",
+      "name": "五藤為重",
+      "kind": "person",
+      "aliases": [],
+      "existing": false,
+      "note": "1601年に安芸へ入り土居を構えた人物。"
+    },
+    {
+      "id": "person:秋月種長",
+      "name": "秋月種長",
+      "kind": "person",
+      "aliases": [],
+      "existing": true,
+      "note": "1587年7月3日朱印状の宛先。父の種実と別。"
+    },
+    {
+      "id": "person:大須賀康高",
+      "name": "大須賀康高",
+      "kind": "person",
+      "aliases": [],
+      "existing": true,
+      "note": "馬伏塚守将・横須賀築城担当。"
+    },
+    {
+      "id": "person:tokugawa-ieyasu",
+      "name": "徳川家康",
+      "kind": "person",
+      "aliases": [],
+      "existing": true,
+      "note": "馬伏塚改修・横須賀築城の命令主体。"
+    },
+    {
+      "id": "person:gamo-ujisato",
+      "name": "蒲生氏郷",
+      "kind": "person",
+      "aliases": [],
+      "existing": false,
+      "note": "岩石城攻撃側。攻撃した事実を領主職へ変換しない。"
+    },
+    {
+      "id": "person:前田利長",
+      "name": "前田利長",
+      "kind": "person",
+      "aliases": [],
+      "existing": true,
+      "note": "岩石城攻撃側。攻撃した事実を領主職へ変換しない。"
+    },
+    {
+      "id": "person:aki-kunitora",
+      "name": "安芸国虎",
+      "kind": "person",
+      "aliases": [],
+      "existing": false,
+      "note": "1569年敗北した側。命題には正確な落城日がない。"
+    },
+    {
+      "id": "person:chosokabe-motochika",
+      "name": "長宗我部元親",
+      "kind": "person",
+      "aliases": [],
+      "existing": false,
+      "note": "安芸攻略側。1569年の戦闘と知行移管日を分ける。"
+    },
+    {
+      "id": "person:toyotomi-hideyoshi",
+      "name": "豊臣秀吉",
+      "kind": "person",
+      "aliases": [],
+      "existing": true,
+      "note": "財部城の宛行朱印状の発給者。"
+    }
+  ]
+}
