@@ -10,7 +10,8 @@ try{put('a.json',r);assert.equal(loadEvidence({claimDir,sourceDir,baseSources}).
 const research=path.join(root,'data/research');
 const people=fs.readFileSync(path.join(research,'people.jsonl'),'utf8').trim().split('\n').map(JSON.parse);
 const claims=new Map(fs.readFileSync(path.join(research,'claims.jsonl'),'utf8').trim().split('\n').map(JSON.parse).map(r=>[r.id,r]));
-for(const person of people){
+const places=fs.readFileSync(path.join(research,'places.jsonl'),'utf8').trim().split('\n').map(JSON.parse);
+for(const person of [...people,...places]){
  const basis=person.identityBasis;
  if(!basis)continue;
  assert.ok(Array.isArray(basis.claimIds)&&basis.claimIds.length,person.id+' identity claims');
@@ -20,7 +21,7 @@ for(const person of people){
   assert.equal(claim.entity,person.id,person.id+' claim belongs to a different entity');
  }
 }
-console.log('PASS: registered person identity bases refer to existing claims for the same entity');
+console.log('PASS: registered person and place identity bases refer to existing claims for the same entity');
 
 for(const person of people){
  const evidence=person.authorityEvidence;
