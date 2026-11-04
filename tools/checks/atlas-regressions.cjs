@@ -9,7 +9,26 @@ for(const [title,b] of battles){
  const m=TK.BATTLE_ATLAS[title],d=JSON.parse(fs.readFileSync(path.join(__dirname,'../../game/atlas',m.file)));
  assert.equal(d.title,title);assert.equal(Buffer.from(d.heights,'base64').length,d.width*d.height*2);
  assert.ok(d.bounds[0]<d.bounds[2]&&d.bounds[1]>d.bounds[3]);
+ assert.deepEqual(Array.from(m.bounds),d.bounds,title+' relief and projected points share the same bounds');
  for(const p of d.points)assert.ok(p.lon>=d.bounds[0]&&p.lon<=d.bounds[2]&&p.lat<=d.bounds[1]&&p.lat>=d.bounds[3]);
+}
+const takatenjin=TK.BATTLE_ATLAS['高天神城の戦い'],takatenjinData=JSON.parse(fs.readFileSync(path.join(__dirname,'../../game/atlas',takatenjin.file)));
+for(const [name,lon,lat] of TK.TAKATENJIN_FORTS){
+ assert.ok(lon>takatenjin.bounds[0]&&lon<takatenjin.bounds[2]&&lat<takatenjin.bounds[1]&&lat>takatenjin.bounds[3],name+' included without moving its source point');
+ assert.ok(takatenjin.points.some(p=>p.name===name&&p.lon===lon&&p.lat===lat),name+' source point preserved');
+}
+assert.ok(TK.BATTLES['高天神城の戦い'].atlasGroups.every(g=>!g.precision.includes('表示範囲外')),'Takatenjin deployment not clipped');
+assert.ok(takatenjinData.elevationSource?.tiles?.length,'Takatenjin elevation keeps source checksums');
+// Verify the new frame against retained source tiles, rather than a stretched old grid.
+const crypto=require('node:crypto'),decodePNG=require('../geo/png-decode.cjs'),dem=new Map();
+for(const tile of takatenjinData.elevationSource.tiles){const file=path.join(__dirname,'../../data/inputs/battle-atlas-dem',tile.key.join('-')+'.png'),bytes=fs.readFileSync(file);assert.equal(crypto.createHash('sha256').update(bytes).digest('hex'),tile.sha256);const image=decodePNG(bytes);assert.equal(image.width,256);assert.equal(image.height,256);dem.set(tile.key.join('-'),image);}
+const grid=Buffer.from(takatenjinData.heights,'base64'),bb=takatenjinData.bounds,zoom=2**takatenjinData.zoom;
+const evenRound=n=>{const lo=Math.floor(n);return n-lo===.5?lo+lo%2:Math.round(n);};
+for(let y=0;y<takatenjinData.height;y++)for(let x=0;x<takatenjinData.width;x++){
+ const lon=bb[0]+(bb[2]-bb[0])*x/(takatenjinData.width-1),lat=bb[1]+(bb[3]-bb[1])*y/(takatenjinData.height-1),tx=(lon+180)/360*zoom,ty=(1-Math.asinh(Math.tan(lat*Math.PI/180))/Math.PI)/2*zoom;
+ const ix=Math.floor(tx),iy=Math.floor(ty),image=dem.get([takatenjinData.zoom,ix,iy].join('-'));assert.ok(image,'source tile for '+x+','+y);
+ const px=Math.min(255,Math.floor((tx-ix)*256)),py=Math.min(255,Math.floor((ty-iy)*256)),i=(py*256+px)*4;
+ assert.equal(grid.readUInt16LE((y*takatenjinData.width+x)*2),Math.max(0,Math.min(65535,evenRound(image.data[i]*256+image.data[i+1]+image.data[i+2]/256))),'source elevation '+x+','+y);
 }
 G.newGame('s1560','hojo');assert.equal(G.S().settings.scenes,'mine');
 assert.equal(G.sceneIsRelevant(TK.BATTLES['桶狭間の戦い'],'hojo'),false);
