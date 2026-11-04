@@ -1,0 +1,64 @@
+{
+  "date": "2026-11-04",
+  "method": "Independent Shapely point-in-polygon at recorded 100m cell centres and Python deque four-neighbour traversal; no whole map decoded.",
+  "inputFiles": {
+    "review.json": "1ad43b7dfad60080791fe7834484148f83bfa68091e8cf51fe01d1d88f5d7dee",
+    "early-shore-constraints.json": "bd83a74f634b1901015115bcc712f31eb6a04cba65b71427cce4056205970bf8",
+    "outer-water-reference.geojson": "1a3072c2e3e8d59cce13961d5a098c14cdf60ad7def69cbc44236b49d6e7a619",
+    "outer-south-water-reference.geojson": "9d8d5a512e4679c7cf43f86dc56fda0be734ba371425ba8b237b86315088c07a",
+    "candidate-grid-check.json": "74602f27b80d869107dae2ef7f8436834f38da796843786158c8b9d6228fefef",
+    "shape-candidates/uchinasaka-shape-candidates.geojson": "48ebc46f7e208f3b7e43a951e1808fa2c972c044e38a83b10c4f457c92b58957",
+    "current-control-pixels.json": "bf471df34277b76007c4b45b29ee38b95d08b15e5f47ff5fb3c537c22d631a86"
+  },
+  "gridProjection": {
+    "K": 200,
+    "CX": 0.8090169943749475,
+    "LON0": 129.2,
+    "LAT0": 41.75,
+    "origin": [
+      -1045,
+      -761.604024434064
+    ],
+    "stepUnits": 0.17966223499820339,
+    "stepMetres": 100,
+    "extent": "右上の角＝国土地理院の日本の最北端（択捉島カモイワッカ岬、北緯45°33′26″・東経148°45′08″）、左下＝最西端（与那国島）の西側。2026-11-04 に北の空白を削り東を足した。",
+    "tileShiftFromV1": [
+      0,
+      4
+    ],
+    "rowsDroppedFromV2": 792
+  },
+  "sourceManifestSha256": "30948d6cf0b847f0eb9190fe9137bca8b04db6c480f8c34f81477467a9a4f84a",
+  "cellsByShape": {
+    "uchinasaka-inner-lake": 142,
+    "uchinasaka-mouth-channel": 140,
+    "uchinasaka-southeast-tongue": 70,
+    "uchinasaka-outer-water-core": 194,
+    "uchinasaka-outer-south-water": 518
+  },
+  "waterCells": 893,
+  "connectedWaterCells": 893,
+  "protectionConflictCells": 0,
+  "controlResults": {
+    "lake-core-west": true,
+    "lake-core-south": true,
+    "north-fringe": false,
+    "southeast-tongue": false,
+    "marsh-north-edge": true,
+    "outer-connection": true
+  },
+  "reachesExistingKitauraCell": true,
+  "approvedSouthernCoastline": false,
+  "sourcePixelsOfForbiddenSouthernCut": [
+    [
+      468,
+      476
+    ],
+    [
+      456,
+      485
+    ]
+  ],
+  "mapEdited": false,
+  "browserUsed": false
+}
