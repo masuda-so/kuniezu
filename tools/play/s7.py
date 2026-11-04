@@ -1,8 +1,0 @@
-exec(open('/home/claude/play/lib.py').read())
-start()
-pg.mouse.click(860,478);pg.wait_for_timeout(800);shot('c1_own')
-print('DRAWER1:',txt('#drawer')[:1500])
-pg.mouse.click(920,492);pg.wait_for_timeout(800);shot('c2_okazaki')
-print('DRAWER2:',txt('#drawer')[:1500])
-pg.mouse.click(833,350);pg.wait_for_timeout(800);shot('c3_saito')
-print('DRAWER3:',txt('#drawer')[:1500])

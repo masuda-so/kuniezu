@@ -1,6 +1,0 @@
-exec(open('/home/claude/play/lib.py').read())
-pg.get_by_text('はじめる').click(); pg.wait_for_timeout(700)
-pg.get_by_text('関ヶ原前夜').click(); pg.wait_for_timeout(1500)
-pg.locator('#pick details summary').click();pg.wait_for_timeout(400)
-shot('faces_pick')
-print(pg.evaluate("['最上義光','島津義弘','真田信繁','直江兼続','福島正則','徳川秀忠'].map(n=>n+':'+TK.faceOf(n)).join(' ')"))

@@ -7,7 +7,7 @@
 - `game/`（84 の JS、`atlas/` 合戦地形、`terrain/` 標高・陰影、`portraits/` 肖像、`kamon/` 家紋、`licenses/` 素材の出典）。配信 URL は変えない。
 - `docs/`（`architecture/` 構成と依存順、`work/` 残要望と担当、`reports/` 報告書、`history/` 過去の原文）。作業前に `HANDOFF.md` を読む。
 - `data/`（`inputs/` 調査・生成の入力、`research/` 出典と史実命題 `claims.jsonl`、`audits/` 検査が生成する JSON、`verification/` 実画面の証拠）。
-- `tools/`（`checks/` 検査、`work/` 作業一覧と担当記録、`research/` 史料の出力、`geo/` と `faces/` 配信用データの生成元、`play/` 旧版の検証）。`archive/` は保留中の非史実実装で、起動では読まない。
+- `tools/`（`checks/` 検査、`work/` 作業一覧と担当記録、`research/` 史料の出力、`geo/` と `faces/` 配信用データの生成元）。`archive/` は保留中の非史実実装で、起動では読まない。
 
 ## ビルド・テスト・開発コマンド
 

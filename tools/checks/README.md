@@ -31,4 +31,4 @@ GAME_TEST_OUTPUT=data/verification/自分の担当名 node tools/checks/march-cl
 
 変更に応じた検査が通ったら、理由なく全件を繰り返さない。新たな失敗・変更・懸念がある場合だけ追加する。生成JSONは `data/audits/`。最新報告は [古湖岸・人物・合戦の再照合](../../docs/reports/HISTORICAL_RECHECK.md)。
 
-検査の合格は、史料の未読箇所や歴史上の全件の網羅を証明しない。分岐・任意攻城を扱う `legacy-*` と `tools/play/` は過去の検証であり、現行版の完了条件へ流用しない。旧手順は [履歴](../../docs/history/CHECKS-2026-11-01.md) に保存。
+検査の合格は、史料の未読箇所や歴史上の全件の網羅を証明しない。分岐・任意攻城を扱う `legacy-*` 系の試験は過去の検証であり、現行版の完了条件へ流用しない。旧手順は [履歴](../../docs/history/CHECKS-2026-11-01.md) に保存。

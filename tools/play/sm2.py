@@ -1,1 +1,0 @@
-shot('vm_title')

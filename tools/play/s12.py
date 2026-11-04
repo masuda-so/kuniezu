@@ -1,5 +1,0 @@
-exec(open('/home/claude/play/lib.py').read())
-start()
-pg.locator('#me button').filter(has_text='外交').first.click();pg.wait_for_timeout(700)
-pg.locator('#modal button').filter(has_text='使者').nth(2).click();pg.wait_for_timeout(900)
-shot('env1'); print(modal()[:1500])

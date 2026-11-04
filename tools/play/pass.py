@@ -1,1 +1,0 @@
-print(pg.evaluate("""(()=>{G.newGame('s1575','oda');const S=G.S();const p=G.findPath('kiyosu','sunpu','oda','pass');return JSON.stringify([p&&p.map(G.cname),G.passOK('oda','tokugawa','takeda'),G.rel('oda','tokugawa')]);})()"""))

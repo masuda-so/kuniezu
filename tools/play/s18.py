@@ -1,8 +1,0 @@
-exec(open('/home/claude/play/lib.py').read())
-pg.get_by_text('はじめる').click(); pg.wait_for_timeout(700)
-pg.get_by_text('桶狭間前夜').click(); pg.wait_for_timeout(900)
-pg.locator('#pick button, .pgrid button, button').filter(has_text='今川義元').first.click(); pg.wait_for_timeout(600)
-pg.locator('text=で見守る').first.click(); pg.wait_for_timeout(1200)
-print(txt('#me'))
-run(70, tag='ima', pick=1, every=10)
-print(txt('#chron')[:2000]); print(txt('#me'))
