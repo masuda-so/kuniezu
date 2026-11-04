@@ -78,6 +78,12 @@ and pass a Python that has NumPy and Pillow (the game runs without relief).
 node tools/map/build-map.cjs --height --python /path/to/python3
 ```
 
+The source PNGs are too large to open in VS Code and similar viewers, so the
+build also writes quarter-scale previews of each layer, with a one-degree
+graticule, to `game/map/build/previews/` (`control.png` control, `admin.png`
+administrative divisions, `rivers.png` rivers, `height.png` elevation). Open
+these to check the map by eye.
+
 After generating, serve `game/` as static files and open `index.html` in a
 browser.
 
