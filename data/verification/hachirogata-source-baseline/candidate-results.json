@@ -1,0 +1,67 @@
+{
+  "sourceHead": "da416bcc6739689d7958bf35fc5c98f41f0c9f09",
+  "readGlobalPng": false,
+  "projection": {
+    "note": "経緯度→格子。x=(経度-LON0)·K·CX、y=(LAT0-緯度)·K の地図平面で、画素(列,行)の左上が origin+(列,行)·stepUnits。1画素＝緯度方向100m。",
+    "K": 200,
+    "CX": 0.8090169943749475,
+    "LON0": 129.2,
+    "LAT0": 41.75,
+    "origin": [
+      -1045,
+      -761.604024434064
+    ],
+    "stepUnits": 0.17966223499820339,
+    "stepMetres": 100,
+    "width": 23426,
+    "height": 23496,
+    "extent": "右上の角＝国土地理院の日本の最北端（択捉島カモイワッカ岬、北緯45°33′26″・東経148°45′08″）、左下＝最西端（与那国島）の西側。2026-11-04 に北の空白を削り東を足した。",
+    "tileShiftFromV1": [
+      0,
+      4
+    ],
+    "rowsDroppedFromV2": 792
+  },
+  "sourceTileHashes": [
+    {
+      "path": "game/map/provinces/14-5.png",
+      "exists": false
+    },
+    {
+      "path": "game/map/provinces/15-5.png",
+      "exists": true,
+      "sha256": "b43a8746e4bf494af6b447a75d9ba8b56a1bc9cb984a4dec67921e66899c292d"
+    },
+    {
+      "path": "game/map/provinces/14-6.png",
+      "exists": true,
+      "sha256": "7128bb1c6c923964ebf10c0d3fe929b39a807341365c2a0349b8ac59f6586e64"
+    },
+    {
+      "path": "game/map/provinces/15-6.png",
+      "exists": true,
+      "sha256": "1a7019aedf2bc4d06c9cff8ff5fdc415862d36eec66048dc252d1661873d59ea"
+    }
+  ],
+  "candidateType": "review-only-source-derived-shore",
+  "changes": {
+    "castle:hiyama -> lake:139.99,39.98": 6141,
+    "lake:139.99,39.98 -> castle:hiyama": 4284
+  },
+  "area": {
+    "beforeLakeKm2": 199.33372059651333,
+    "candidateLakeKm2": 216.86340796698238
+  },
+  "changedPixels": 10425,
+  "changedGlobalPixelBox": [
+    15449,
+    6080,
+    15628,
+    6336
+  ],
+  "preserveSea": true,
+  "preserveOtherRegions": true,
+  "originalReviewResultSha256": "a66318b89d660bc8fb3ff751b8466e216667db7db386892d53efbc5400518dfa",
+  "rasterApplicationHandoff": "transfer-only/original-raster-application.json（親が汎用fromKey/toKey/runsへ変換。一組だけを恒久採用しこの引渡形式はコピーしない）",
+  "sourceReference": "data/research/hachirogata-reference/hachirogata-comparison-shore.geojson"
+}

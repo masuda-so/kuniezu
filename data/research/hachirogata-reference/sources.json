@@ -1,0 +1,239 @@
+{
+  "createdAt": "2026-11-04T04:17:39.188357+00:00",
+  "task": "八郎潟の局所画像と干拓前比較岸",
+  "sources": [
+    {
+      "id": "ogata-before-reclamation",
+      "title": "干拓前の八郎潟",
+      "publisher": "大潟村",
+      "url": "https://www.vill.ogata.akita.jp/encyclopedia/history/2-2.html",
+      "locator": "(1) 干拓前の八郎潟／干拓前の八郎潟のすがた、(2) 八郎潟の氷下漁業",
+      "summary": "干拓前は約220.4 km²で船越水道を介して海につながる汽水湖。鎌倉時代から漁業があったことを記す。中世の湖の存在を支えるが、個別汀線を与えない。",
+      "retrievedOn": "2026-11-04"
+    },
+    {
+      "id": "maff-hachiro-history",
+      "title": "地域の歴史：八郎潟干拓の成り立ち",
+      "publisher": "農林水産省東北農政局",
+      "url": "https://www.maff.go.jp/tohoku/nouson/kokuei/hatirougata/rekisi.html",
+      "locator": "八郎潟干拓の成り立ち 第3・4・8段落",
+      "summary": "国営事業は1957年度着工、中央干拓地は1966年全面干陸、事業完成は1977年3月。開始・干陸・村の設置・全体完成を混同しない。",
+      "retrievedOn": "2026-11-04"
+    },
+    {
+      "id": "gsj-gojome-1970",
+      "title": "五城目地域の地質",
+      "authors": [
+        "長谷紘和",
+        "平山次郎"
+      ],
+      "publisher": "地質調査所",
+      "year": 1970,
+      "url": "https://www.gsj.jp/data/50KGM/PDF/GSJ_MAP_G050_06003_1970_D.pdf",
+      "locator": "印刷p.2「八郎潟周辺低地」、印刷p.4 第3図（PDF p.8）",
+      "summary": "第3図は干拓以前の湖底地形を示し「八郎潟の研究（1965）による」とする。1965は引用文献の刊年であり測深年としては採用しない。湖内の大きな三角形の島はなく、湖岸近くの旧汀線退却も説明する。",
+      "retrievedOn": "2026-11-04",
+      "consultedOriginalFileName": "gsj-gojome-1970.pdf",
+      "consultedOriginalSha256": "40a92753f6e9cb15480189056b4d8cc95c5125b65d5b77d69402b030d3ec722e",
+      "originalRetention": "研究時に読解した原本PDF。最小採用組には画像比較に必要な4図幅だけを含め、このPDFは再取得URLとSHAで照会する。"
+    },
+    {
+      "id": "miura-hachiro-1970",
+      "title": "八郎潟東岸平野における開発の歴史地理学的研究",
+      "authors": [
+        "三浦鉄郎"
+      ],
+      "publisher": "日本地理学会",
+      "year": 1970,
+      "journal": "地理学評論 43(11), 674–685",
+      "doi": "10.4157/grj.43.674",
+      "url": "https://www.jstage.jst.go.jp/article/grj1925/43/11/43_11_674/_article/-char/ja/",
+      "locator": "p.674–676 中世の開発、p.680以降 近代の開発",
+      "summary": "1519年の知行目録や1592年分限帳等による中世の開発を扱う。江戸期の平野開発、近代の湖岸開発があり、近代の測量岸を中世の確定岸にそのまま遡及できない。",
+      "retrievedOn": "2026-11-04",
+      "consultedOriginalFileName": "miura-1970.pdf",
+      "consultedOriginalSha256": "a94f1e9de6c1dbbba9503b24eb8d47da15998f086c4e15bff314847b15fad440",
+      "originalRetention": "研究時に読解した原本PDF。最小採用組には画像比較に必要な4図幅だけを含め、このPDFは再取得URLとSHAで照会する。"
+    },
+    {
+      "id": "oga-onamatsu-reclamation",
+      "title": "秋田の開拓の父",
+      "publisher": "男鹿半島・大潟ジオパーク",
+      "date": "2023-06-12",
+      "url": "https://www.oga-ogata-geo.jp/blog/news/25279.html",
+      "locator": "1819年頃の鳥居長根（現在の払戸）の開拓、滝の頭湧水からの水路と渡部村の成立",
+      "summary": "西岸にも戦国期以後の開田がある。南西岸の全てを16世紀の確定陸とはしない。中央湖面の欠損とは区別し、年代差を比較岸の推定性に保持する。",
+      "retrievedOn": "2026-11-04"
+    },
+    {
+      "id": "oga-reclamation-chronology",
+      "title": "干拓の歴史／八郎潟の干拓と大潟村の略年表",
+      "publisher": "男鹿半島・大潟ジオパーク",
+      "url": "https://www.oga-ogata-geo.jp/wp-content/uploads/2017/04/72c5413e120fcbc51121d10ca3456488.pdf",
+      "locator": "年表 1825年、1957年、1977年",
+      "summary": "1825年の西岸約400haの開拓を記載。今回戻す陸地約40 km²の全域をその事業に対応させる根拠はない。個別事業の境界線は今回未採用。",
+      "retrievedOn": "2026-11-04"
+    },
+    {
+      "id": "mapwarper:1207",
+      "title": "森岳 50,000分1図",
+      "publisher": "大日本帝国陸地測量部",
+      "url": "https://mapwarper.h-gis.jp/maps/1207",
+      "creationOrPublicationYear": 1915,
+      "surveyYear": 1912,
+      "datePrecisionNote": "1912年測図、1915年10月発行。",
+      "locator": "八郎潟の湖岸・湖面、公開された四隅の基準点CSV、WMS EPSG:4326局所画像",
+      "imageFile": "images/historical-sheet-1207.png",
+      "sourceRole": "georeferenced-pre-reclamation-comparison-not-16c-boundary",
+      "rightsNote": "配信原画像をゲーム描画用素材として採用しない。比較・根拠のために保持。",
+      "originalInstitution": "Stanford University Libraries",
+      "originalUrl": "https://purl.stanford.edu/ss018bw2455",
+      "providerRightsLabel": "CC BY-NC 3.0 Unported, Stanford University",
+      "retrievedOn": "2026-11-04",
+      "imageFileSha256": "d6292cabe4f7c00d13ff771f848fa09d8988d3082d10de3f32210a3689b35cc5",
+      "gcpSourceUrl": "https://mapwarper.h-gis.jp/maps/1207/gcps.csv",
+      "gcpRegistrationReference": "registration.json / sources[mapID=1207].controlPoints",
+      "retrievedGcpSha256": "9fd8daef4969f5c12b69298d3897d419a9a4011554b76a730322a459b0ec84c9",
+      "wmsRetrieval": {
+        "mapID": 1207,
+        "url": "https://mapwarper.h-gis.jp/maps/wms/1207?SERVICE=WMS&VERSION=1.1.1&REQUEST=GetMap&LAYERS=image&STYLES=&SRS=EPSG%3A4326&BBOX=139.77911852108207%2C39.77918433345311%2C140.1710804291466%2C40.18072942867409&WIDTH=1059&HEIGHT=1341&FORMAT=image%2Fpng&TRANSPARENT=TRUE",
+        "sha256": "d6292cabe4f7c00d13ff771f848fa09d8988d3082d10de3f32210a3689b35cc5",
+        "bytes": 833148,
+        "retrievedAt": "2026-11-04T04:07:18.805168+00:00"
+      },
+      "imageDescription": "原図を公開GCPで幾何補正したWMSの八郎潟周辺局所取得画像。未補正の全図スキャンとは区別する。"
+    },
+    {
+      "id": "mapwarper:1199",
+      "title": "船川 50,000分1図",
+      "publisher": "大日本帝国陸地測量部",
+      "url": "https://mapwarper.h-gis.jp/maps/1199",
+      "creationOrPublicationYear": 1927,
+      "surveyYear": 1912,
+      "datePrecisionNote": "1925年鉄道補入、1927年2月発行。",
+      "locator": "八郎潟の湖岸・湖面、公開された四隅の基準点CSV、WMS EPSG:4326局所画像",
+      "imageFile": "images/historical-sheet-1199.png",
+      "sourceRole": "georeferenced-pre-reclamation-comparison-not-16c-boundary",
+      "rightsNote": "配信原画像をゲーム描画用素材として採用しない。比較・根拠のために保持。",
+      "originalInstitution": "Stanford University Libraries",
+      "originalUrl": "https://purl.stanford.edu/fs463gs0397",
+      "providerRightsLabel": "CC BY-NC 3.0 Unported, Stanford University",
+      "retrievedOn": "2026-11-04",
+      "imageFileSha256": "3993035785ef9660ccd84e97ce9047c67092f9039fbfead6c53184986200332f",
+      "gcpSourceUrl": "https://mapwarper.h-gis.jp/maps/1199/gcps.csv",
+      "gcpRegistrationReference": "registration.json / sources[mapID=1199].controlPoints",
+      "retrievedGcpSha256": "4f2dab54ab0e16ad6dd3e3d94151c272377f345fcafe021a2b7d202a0b701224",
+      "wmsRetrieval": {
+        "mapID": 1199,
+        "url": "https://mapwarper.h-gis.jp/maps/wms/1199?SERVICE=WMS&VERSION=1.1.1&REQUEST=GetMap&LAYERS=image&STYLES=&SRS=EPSG%3A4326&BBOX=139.77911852108207%2C39.77918433345311%2C140.1710804291466%2C40.18072942867409&WIDTH=1059&HEIGHT=1341&FORMAT=image%2Fpng&TRANSPARENT=TRUE",
+        "sha256": "3993035785ef9660ccd84e97ce9047c67092f9039fbfead6c53184986200332f",
+        "bytes": 870103,
+        "retrievedAt": "2026-11-04T04:07:19.585922+00:00"
+      },
+      "imageDescription": "原図を公開GCPで幾何補正したWMSの八郎潟周辺局所取得画像。未補正の全図スキャンとは区別する。"
+    },
+    {
+      "id": "mapwarper:3672",
+      "title": "深浦 200,000分1図",
+      "publisher": "公的旧版地形・地勢図（日本版Map Warperの国土地理院利用表示）",
+      "url": "https://mapwarper.h-gis.jp/maps/3672",
+      "creationOrPublicationYear": 1920,
+      "surveyYear": null,
+      "datePrecisionNote": "1920/1946は配信メタデータの作成年。測量年との同一視はしない。",
+      "locator": "八郎潟の湖岸・湖面、公開された四隅の基準点CSV、WMS EPSG:4326局所画像",
+      "imageFile": "images/historical-sheet-3672.png",
+      "sourceRole": "georeferenced-pre-reclamation-comparison-not-16c-boundary",
+      "rightsNote": "配信原画像をゲーム描画用素材として採用しない。比較・根拠のために保持。",
+      "retrievedOn": "2026-11-04",
+      "imageFileSha256": "64d31ea7ea9d5bdc33393cfb841b10feff4fbbf6a90fac1c2ef9378f510c0262",
+      "gcpSourceUrl": "https://mapwarper.h-gis.jp/maps/3672/gcps.csv",
+      "gcpRegistrationReference": "registration.json / sources[mapID=3672].controlPoints",
+      "retrievedGcpSha256": "ed156ba8a6fd6363bc4c8c170f741e812c620a847be3e2d00da183422b630d01",
+      "wmsRetrieval": {
+        "id": 3672,
+        "url": "https://mapwarper.h-gis.jp/maps/wms/3672?SERVICE=WMS&VERSION=1.1.1&REQUEST=GetMap&LAYERS=image&STYLES=&SRS=EPSG%3A4326&BBOX=139.77911852108207%2C39.77918433345311%2C140.1710804291466%2C40.18072942867409&WIDTH=1059&HEIGHT=1341&FORMAT=image%2Fpng&TRANSPARENT=TRUE",
+        "sha256": "64d31ea7ea9d5bdc33393cfb841b10feff4fbbf6a90fac1c2ef9378f510c0262",
+        "retrievedAt": "2026-11-04T04:09:58.753554+00:00"
+      },
+      "imageDescription": "原図を公開GCPで幾何補正したWMSの八郎潟周辺局所取得画像。未補正の全図スキャンとは区別する。"
+    },
+    {
+      "id": "mapwarper:3492",
+      "title": "五城目 50,000分1図",
+      "publisher": "公的旧版地形・地勢図（日本版Map Warperの国土地理院利用表示）",
+      "url": "https://mapwarper.h-gis.jp/maps/3492",
+      "creationOrPublicationYear": 1946,
+      "surveyYear": null,
+      "datePrecisionNote": "1920/1946は配信メタデータの作成年。測量年との同一視はしない。",
+      "locator": "八郎潟の湖岸・湖面、公開された四隅の基準点CSV、WMS EPSG:4326局所画像",
+      "imageFile": "images/historical-sheet-3492.png",
+      "sourceRole": "georeferenced-pre-reclamation-comparison-not-16c-boundary",
+      "rightsNote": "配信原画像をゲーム描画用素材として採用しない。比較・根拠のために保持。",
+      "retrievedOn": "2026-11-04",
+      "imageFileSha256": "a9376642d8c32d895a062e6bf4e23a02ee4bcb9b3c60f1b62f2141eb9a5b1c3f",
+      "gcpSourceUrl": "https://mapwarper.h-gis.jp/maps/3492/gcps.csv",
+      "gcpRegistrationReference": "registration.json / sources[mapID=3492].controlPoints",
+      "retrievedGcpSha256": "d1ac0eb28c2230920508bf5edc9706ec090d2b1738fc21bce33c897dc72d4d83",
+      "wmsRetrieval": {
+        "mapID": 3492,
+        "url": "https://mapwarper.h-gis.jp/maps/wms/3492?SERVICE=WMS&VERSION=1.1.1&REQUEST=GetMap&LAYERS=image&STYLES=&SRS=EPSG%3A4326&BBOX=139.77911852108207%2C39.77918433345311%2C140.1710804291466%2C40.18072942867409&WIDTH=1059&HEIGHT=1341&FORMAT=image%2Fpng&TRANSPARENT=TRUE",
+        "sha256": "a9376642d8c32d895a062e6bf4e23a02ee4bcb9b3c60f1b62f2141eb9a5b1c3f",
+        "bytes": 447331,
+        "retrievedAt": "2026-11-04T04:07:20.272070+00:00"
+      },
+      "imageDescription": "原図を公開GCPで幾何補正したWMSの八郎潟周辺局所取得画像。未補正の全図スキャンとは区別する。"
+    }
+  ],
+  "claims": [
+    {
+      "id": "hachiro-medieval-lake",
+      "statement": "八郎潟は中世に湖として存在し漁業が行われていた。",
+      "sources": [
+        "ogata-before-reclamation",
+        "miura-hachiro-1970"
+      ],
+      "certainty": "supported-existence-not-boundary"
+    },
+    {
+      "id": "hachiro-major-reclamation-outside-game",
+      "statement": "中央湖面を大規模に陸化した国営干拓はゲーム期間後の1957〜1977年。",
+      "sources": [
+        "maff-hachiro-history"
+      ],
+      "certainty": "documented"
+    },
+    {
+      "id": "hachiro-spurious-inner-ring",
+      "statement": "現行画像は旧geo.jsの内輪郭に相当する北側の湖面欠損を含む。公的干拓前比較図はその場所を湖として示す。",
+      "sources": [
+        "mapwarper:1207",
+        "mapwarper:3672",
+        "gsj-gojome-1970"
+      ],
+      "certainty": "code-and-image-comparison",
+      "causeNotClaimed": "1960年代干拓の形を意図して描いたかは断定しない。"
+    },
+    {
+      "id": "hachiro-western-overreach",
+      "statement": "現行外輪郭は干拓前図の南西の陸地へ大きく張り出す。内輪郭だけ除く修正では過大な湖面になる。",
+      "sources": [
+        "mapwarper:1199",
+        "mapwarper:3492"
+      ],
+      "certainty": "image-comparison"
+    },
+    {
+      "id": "hachiro-shore-period-gap",
+      "statement": "江戸・近代の岸辺開発があるため、今回の比較岸は1560〜1615年への推定輪郭として採用し、当時の実測汀線とは扱わない。",
+      "sources": [
+        "miura-hachiro-1970",
+        "oga-onamatsu-reclamation",
+        "oga-reclamation-chronology",
+        "gsj-gojome-1970"
+      ],
+      "certainty": "inference-limited-by-source-date"
+    }
+  ],
+  "imageSourceAuthority": "派生タイルを読取検査。正本全域PNGはデコードしていない。実適用は親担当が正本へ一度だけ行う。",
+  "packageStatus": "adoptable-local-comparison-reference; canonical raster application and browser acceptance handled by parent"
+}

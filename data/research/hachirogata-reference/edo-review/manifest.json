@@ -1,0 +1,121 @@
+{
+  "schemaVersion": 1,
+  "createdAt": "2026-11-04T04:54:18.162298+00:00",
+  "purpose": "八郎潟の旧候補から近世造成に関係する低地を保留する追加レビュー",
+  "baseResultSha256": "a66318b89d660bc8fb3ff751b8466e216667db7db386892d53efbc5400518dfa",
+  "files": [
+    {
+      "path": "REPORT.md",
+      "bytes": 5612,
+      "sha256": "1a74bbf4e532305328836566081b73010e788c112fd5134083c796bbec0edc45"
+    },
+    {
+      "path": "source-notes.json",
+      "bytes": 6577,
+      "sha256": "cdff306eff7d5ddd42c1793778421f18bfcc4a0b7f5674a341ca5b8af89abfbc"
+    },
+    {
+      "path": "land-restoration-deferral.geojson",
+      "bytes": 5743,
+      "sha256": "59297a546bc0bee850a38ffb52e527aa81f3637dcd83e768d9ed9a037e48fcd5"
+    },
+    {
+      "path": "deferral-overlap-results.json",
+      "bytes": 2964,
+      "sha256": "bc4fa3d092af69d6d997d633e3863560f2921b36ba275890c7967fac57192181"
+    },
+    {
+      "path": "validation.json",
+      "bytes": 520,
+      "sha256": "c7a57da4a7a638bfd432b9c93a22af855a8787f6db7df6692cf7d5a16728a5e9"
+    },
+    {
+      "path": "validate-deferral.py",
+      "bytes": 3350,
+      "sha256": "8c415ff8dce33501a649f1585cc73d61d773184d055644476948cc50092b3f60"
+    },
+    {
+      "path": "build-hold-mask.py",
+      "bytes": 5859,
+      "sha256": "36da239897e7b0fef4fdda763947663d7dda4ab2d653292b204f697c0a222b44"
+    },
+    {
+      "path": "funakawa-1912-west-detail.png",
+      "bytes": 1798989,
+      "sha256": "ce2d0f0dbfbc8552694d79bca1f58bf35c7f2b5854434917229cab17b809121f"
+    },
+    {
+      "path": "funakawa-detail-registration.json",
+      "bytes": 459,
+      "sha256": "7c550128d4c4f84322ae74c51cbde04a020e4eb9bb0c422e62975dc37c6060eb"
+    },
+    {
+      "path": "deferral-to-land-overlay.png",
+      "bytes": 1783562,
+      "sha256": "ce8a57b5d158a47fa7cc80f8ef47667511c256fb2a254ced28a93b22952efef5"
+    },
+    {
+      "path": "local-deferral-candidate-ids.png",
+      "bytes": 3309,
+      "sha256": "754db75ece23bd8dc46b2ce8472c135e8152ce01be29acb10b1b27337afbee03"
+    },
+    {
+      "path": "watanabe-weir-1988.pdf",
+      "bytes": 1388991,
+      "sha256": "2862b277d0b559ccbd6e56edbe8f27e07b34df190003d3e811f4316ec8415d8f"
+    },
+    {
+      "path": "watanabe-weir-1988-p6.png",
+      "bytes": 592798,
+      "sha256": "90600711c22514eda4de9104dcc3285d20f407fd0d8fc44f0b2700580bb7679c"
+    },
+    {
+      "path": "ndl980789-manifest.json",
+      "bytes": 105570,
+      "sha256": "9c7d54531b1a9124a56df1e109a5dc23b86ce0dead7df417db28a6b11d6b8a30"
+    },
+    {
+      "path": "ndl980789-canvas-16.jpg",
+      "bytes": 557045,
+      "sha256": "e48c6a2e3406900157bc34dcb2c3f1afe564cb3aab47267e32deb24bde746f69"
+    },
+    {
+      "path": "ndl980789-canvas-20.jpg",
+      "bytes": 563296,
+      "sha256": "20842dde0176baad36e0393e02b6bd2ea779911dc92f8e0750bfe4e6ab637074"
+    },
+    {
+      "path": "ndl980789-canvas-28.jpg",
+      "bytes": 582158,
+      "sha256": "2101b61d5b97a08ac694182a873431949d8d91c8722774fa62643135379a4b71"
+    },
+    {
+      "path": "ndl980789-canvas-29.jpg",
+      "bytes": 571457,
+      "sha256": "f751f33879e1edac2daa0a73d955fba1a99e8e2d806e8ce67a69aff2de9abdd0"
+    },
+    {
+      "path": "ndl-retrieval.json",
+      "bytes": 1348,
+      "sha256": "955aef21a281a6455f230ac556e24061b36582d373e7aa8dbafb9fee9be2f0f8"
+    },
+    {
+      "path": "retrieval.json",
+      "bytes": 721,
+      "sha256": "097aa8212b3734b90e0769214719ba198ad863fd8aeb465fc136d1a635140e39"
+    }
+  ],
+  "externalContextOnly": [
+    {
+      "path": "oga-land-improvement-2025.pdf",
+      "file": "oga-land-improvement-2025.pdf",
+      "url": "https://www.pref.akita.lg.jp/uploads/public/genre_0000087738_00/%E7%94%B7%E9%B9%BF%E5%B8%82%E5%9C%9F%E5%9C%B0%E6%94%B9%E8%89%AF%E5%8C%BA%E3%81%AE%E6%A6%82%E8%A6%81%EF%BC%88202503ver%EF%BC%89.pdf",
+      "sha256": "d97aefcf12207b4a8717edabc095c938e27d76d40750ac4fab919daa011f27b4",
+      "bytes": 16337008,
+      "retrievedAt": "2026-11-04T04:37:50.155422+00:00"
+    }
+  ],
+  "gameWritten": false,
+  "allImagesLocal": true,
+  "globalImageDecoded": false
+}
