@@ -1,0 +1,23 @@
+{
+  "id": "person:gamo-ujisato",
+  "name": "蒲生氏郷",
+  "gameNames": [
+    "蒲生氏郷"
+  ],
+  "authorityIds": [
+    "wikidata:Q906580",
+    "ndlna:00269409"
+  ],
+  "identityBasis": {
+    "scope": "既存の出典付き城施設命題の対象人物を登録。入居・攻撃への関与と城主・領有・通年所在を混同しない。",
+    "claimIds": [
+      "ganjaku-fall"
+    ]
+  },
+  "authorityEvidence": {
+    "scope": "person-identity",
+    "wikidataRevision": 2480575094,
+    "snapshot": "data/research/source-notes/castle-linked-person-authority-adoption.json",
+    "basis": "既存岩石城攻撃命題の蒲生氏郷を、日本語ラベル、人物区分、NDL本人名と武将区分で照合。日野町の鶴千代・賦秀から氏郷への改名説明がAPI別名と一致。父蒲生賢秀とは別人。出生順の異なる記述は採用しない。"
+  }
+}

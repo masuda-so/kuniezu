@@ -1,0 +1,255 @@
+{
+  "status": "identity-candidates-not-adopted",
+  "people": 4,
+  "requestedIds": 4,
+  "requests": [
+    {
+      "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q10176364%7CQ1070082%7CQ11372654%7CQ906580&props=info%7Clabels%7Cdescriptions%7Caliases%7Cclaims&languages=ja&format=json&maxlag=5",
+      "retrievedAt": "2026-11-04T03:15:13.217Z"
+    }
+  ],
+  "records": [
+    {
+      "id": "Q10176364",
+      "revision": 2438642826,
+      "missing": false,
+      "label": "安芸国虎",
+      "description": "日本の武将",
+      "aliases": [],
+      "identityClaims": {
+        "P31": [
+          {
+            "mainsnak": {
+              "snaktype": "value",
+              "property": "P31",
+              "hash": "ad7d38a03cdd40cdc373de0dc4e7b7fcbccb31d9",
+              "datavalue": {
+                "value": {
+                  "entity-type": "item",
+                  "numeric-id": 5,
+                  "id": "Q5"
+                },
+                "type": "wikibase-entityid"
+              },
+              "datatype": "wikibase-item"
+            },
+            "type": "statement",
+            "id": "Q10176364$4DD0E769-2FE2-485D-B765-5AB1AF80E877",
+            "rank": "normal"
+          }
+        ],
+        "P349": []
+      }
+    },
+    {
+      "id": "Q1070082",
+      "revision": 2559497712,
+      "missing": false,
+      "label": "長宗我部元親",
+      "description": "日本の戦国時代の武将",
+      "aliases": [
+        "土佐の出来人",
+        "鳥無き島の蝙蝠",
+        "姫若子",
+        "鬼若子",
+        "長曾我部元親",
+        "秦元親",
+        "ちょうそかべもとちか",
+        "長曽我部元親",
+        "弥三郎",
+        "雪蹊恕三",
+        "土佐侍従",
+        "雪渓如三大居士",
+        "雪蹊恕三大禅定門"
+      ],
+      "identityClaims": {
+        "P31": [
+          {
+            "mainsnak": {
+              "snaktype": "value",
+              "property": "P31",
+              "hash": "ad7d38a03cdd40cdc373de0dc4e7b7fcbccb31d9",
+              "datavalue": {
+                "value": {
+                  "entity-type": "item",
+                  "numeric-id": 5,
+                  "id": "Q5"
+                },
+                "type": "wikibase-entityid"
+              },
+              "datatype": "wikibase-item"
+            },
+            "type": "statement",
+            "id": "Q1070082$5C6135D9-665A-4EB4-BF9C-1096B08783B7",
+            "rank": "normal",
+            "references": [
+              {
+                "hash": "fa278ebfc458360e5aed63d5058cca83c46134f1",
+                "snaks": {
+                  "P143": [
+                    {
+                      "snaktype": "value",
+                      "property": "P143",
+                      "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                      "datavalue": {
+                        "value": {
+                          "entity-type": "item",
+                          "numeric-id": 328,
+                          "id": "Q328"
+                        },
+                        "type": "wikibase-entityid"
+                      },
+                      "datatype": "wikibase-item"
+                    }
+                  ]
+                },
+                "snaks-order": [
+                  "P143"
+                ]
+              }
+            ]
+          }
+        ],
+        "P349": [
+          {
+            "mainsnak": {
+              "snaktype": "value",
+              "property": "P349",
+              "hash": "65ebffb3d06aec41ac30802989ac6bf21c1fad52",
+              "datavalue": {
+                "value": "00625510",
+                "type": "string"
+              },
+              "datatype": "external-id"
+            },
+            "type": "statement",
+            "id": "Q1070082$C922062F-BA2F-4EE4-8A40-CE5EDB6D2F55",
+            "rank": "normal"
+          }
+        ]
+      }
+    },
+    {
+      "id": "Q11372654",
+      "revision": 2394079777,
+      "missing": false,
+      "label": "五藤為重",
+      "description": "日本の武将 (1558-1629)",
+      "aliases": [
+        "五藤吉蔵"
+      ],
+      "identityClaims": {
+        "P31": [
+          {
+            "mainsnak": {
+              "snaktype": "value",
+              "property": "P31",
+              "hash": "ad7d38a03cdd40cdc373de0dc4e7b7fcbccb31d9",
+              "datavalue": {
+                "value": {
+                  "entity-type": "item",
+                  "numeric-id": 5,
+                  "id": "Q5"
+                },
+                "type": "wikibase-entityid"
+              },
+              "datatype": "wikibase-item"
+            },
+            "type": "statement",
+            "id": "Q11372654$57BC304E-205B-4501-807E-41CE86D478F9",
+            "rank": "normal"
+          }
+        ],
+        "P349": []
+      }
+    },
+    {
+      "id": "Q906580",
+      "revision": 2480575094,
+      "missing": false,
+      "label": "蒲生氏郷",
+      "description": "戦国時代から安土桃山時代の武将",
+      "aliases": [
+        "蒲生賦秀",
+        "蒲生教秀",
+        "レオン",
+        "レオ",
+        "レアン",
+        "鶴千代",
+        "忠三郎",
+        "飛騨守",
+        "琉球守",
+        "松ヶ島侍従",
+        "松坂少将",
+        "昌林院殿高岩宗忠大居士",
+        "近江日野城主、伊勢松阪城主、陸奥黒川城主。蒲生賢秀の三男・嫡男。母はおきり（後藤播磨守の娘）。キリシタン大名。従四位下侍従、正四位下左近衛少将、従三位参議。近江蒲生氏19代"
+      ],
+      "identityClaims": {
+        "P31": [
+          {
+            "mainsnak": {
+              "snaktype": "value",
+              "property": "P31",
+              "hash": "ad7d38a03cdd40cdc373de0dc4e7b7fcbccb31d9",
+              "datavalue": {
+                "value": {
+                  "entity-type": "item",
+                  "numeric-id": 5,
+                  "id": "Q5"
+                },
+                "type": "wikibase-entityid"
+              },
+              "datatype": "wikibase-item"
+            },
+            "type": "statement",
+            "id": "Q906580$4B0FE72C-1EB7-45CC-A060-0D16FC7BB141",
+            "rank": "normal",
+            "references": [
+              {
+                "hash": "e71a7903858496c67eea189a7084d5559f788edb",
+                "snaks": {
+                  "P143": [
+                    {
+                      "snaktype": "value",
+                      "property": "P143",
+                      "hash": "5d3b16d350189b0a81818758208505444c86c127",
+                      "datavalue": {
+                        "value": {
+                          "entity-type": "item",
+                          "numeric-id": 565,
+                          "id": "Q565"
+                        },
+                        "type": "wikibase-entityid"
+                      },
+                      "datatype": "wikibase-item"
+                    }
+                  ]
+                },
+                "snaks-order": [
+                  "P143"
+                ]
+              }
+            ]
+          }
+        ],
+        "P349": [
+          {
+            "mainsnak": {
+              "snaktype": "value",
+              "property": "P349",
+              "hash": "ca0894ca7c452ddce4cf18978f9dc23ad69cc3aa",
+              "datavalue": {
+                "value": "00269409",
+                "type": "string"
+              },
+              "datatype": "external-id"
+            },
+            "type": "statement",
+            "id": "Q906580$348FEE06-8E81-4DF9-94A8-C8E5B6417A74",
+            "rank": "normal"
+          }
+        ]
+      }
+    }
+  ]
+}

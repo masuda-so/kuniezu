@@ -1,0 +1,160 @@
+{
+  "scope": "城施設命題に参照される人物4名の本人同定。生没・領有・所在は自動採用しない。",
+  "checkedAt": "2026-11-04T03:21:25.340389+00:00",
+  "records": [
+    {
+      "entityId": "person:goto-tameshige",
+      "name": "五藤為重",
+      "japaneseLabel": "五藤為重",
+      "wikidataId": "Q11372654",
+      "wikidataRevision": 2394079777,
+      "wikidataUrl": "https://www.wikidata.org/wiki/Q11372654",
+      "wikidataRevisionUrl": "https://www.wikidata.org/w/index.php?oldid=2394079777",
+      "wikidataRequestUrl": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q10176364%7CQ1070082%7CQ11372654%7CQ906580&props=info%7Clabels%7Cdescriptions%7Caliases%7Cclaims&languages=ja&format=json&maxlag=5",
+      "retrievedAt": "2026-11-04T03:15:13.217Z",
+      "rawIdentitySnapshot": "data/research/source-notes/castle-linked-person-authority-candidates.json",
+      "instanceOf": [
+        "Q5"
+      ],
+      "existingClaimIds": [
+        "aki-1601-goto"
+      ],
+      "identitySourceIds": [
+        "akiHistoryChronology",
+        "gotoTameshigeKochiMuseum"
+      ],
+      "decision": "link-identity-only",
+      "identityReason": "年表の五藤氏と博物館の五藤為重（山内一豊に仕え、兄為浄の跡を継ぎ、安芸城を預けられた人物）を照合。兄の五藤為浄とは別人。1601年の入居年は市年表、個人の同定は博物館解説による。",
+      "notAdopted": [
+        "生没年の命題",
+        "領有範囲",
+        "連続所在期間",
+        "役職の就任年月日"
+      ],
+      "ndlDecision": "今回取得したWikidataにP349がないため未接続。NDL典拠自体の不存在とは判断しない。"
+    },
+    {
+      "entityId": "person:gamo-ujisato",
+      "name": "蒲生氏郷",
+      "japaneseLabel": "蒲生氏郷",
+      "wikidataId": "Q906580",
+      "wikidataRevision": 2480575094,
+      "wikidataUrl": "https://www.wikidata.org/wiki/Q906580",
+      "wikidataRevisionUrl": "https://www.wikidata.org/w/index.php?oldid=2480575094",
+      "wikidataRequestUrl": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q10176364%7CQ1070082%7CQ11372654%7CQ906580&props=info%7Clabels%7Cdescriptions%7Caliases%7Cclaims&languages=ja&format=json&maxlag=5",
+      "retrievedAt": "2026-11-04T03:15:13.217Z",
+      "rawIdentitySnapshot": "data/research/source-notes/castle-linked-person-authority-candidates.json",
+      "instanceOf": [
+        "Q5"
+      ],
+      "existingClaimIds": [
+        "ganjaku-fall"
+      ],
+      "identitySourceIds": [
+        "hinoGamoUjisatoIdentity"
+      ],
+      "decision": "link-identity-only",
+      "identityReason": "既存岩石城攻撃命題の蒲生氏郷を、日本語ラベル、人物区分、NDL本人名と武将区分で照合。日野町の鶴千代・賦秀から氏郷への改名説明がAPI別名と一致。父蒲生賢秀とは別人。出生順の異なる記述は採用しない。",
+      "notAdopted": [
+        "生没年の命題",
+        "領有範囲",
+        "連続所在期間",
+        "役職の就任年月日"
+      ],
+      "ndlId": "00269409",
+      "ndlIdentity": {
+        "uri": "http://id.ndl.go.jp/auth/entity/00269409",
+        "type": {
+          "uri": "http://xmlns.com/foaf/0.1/Person"
+        },
+        "name": "蒲生氏郷",
+        "dateOfBirth": "1556",
+        "dateOfDeath": "1595",
+        "biographicalInformation": [
+          "武将"
+        ]
+      },
+      "ndlUrl": "https://id.ndl.go.jp/auth/ndlna/00269409",
+      "ndlRequestUrl": "https://id.ndl.go.jp/auth/ndlna/00269409.json",
+      "ndlRetrievedAt": "2026-11-04T03:15:42.969Z",
+      "ndlModified": "2026-01-21T08:34:49",
+      "ndlResponseSha256": "2ed727cc9f5e99f16f4bfade4b7e6ce878a8352b33e2ad8bafcbc8e352b73bd0"
+    },
+    {
+      "entityId": "person:aki-kunitora",
+      "name": "安芸国虎",
+      "japaneseLabel": "安芸国虎",
+      "wikidataId": "Q10176364",
+      "wikidataRevision": 2438642826,
+      "wikidataUrl": "https://www.wikidata.org/wiki/Q10176364",
+      "wikidataRevisionUrl": "https://www.wikidata.org/w/index.php?oldid=2438642826",
+      "wikidataRequestUrl": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q10176364%7CQ1070082%7CQ11372654%7CQ906580&props=info%7Clabels%7Cdescriptions%7Caliases%7Cclaims&languages=ja&format=json&maxlag=5",
+      "retrievedAt": "2026-11-04T03:15:13.217Z",
+      "rawIdentitySnapshot": "data/research/source-notes/castle-linked-person-authority-candidates.json",
+      "instanceOf": [
+        "Q5"
+      ],
+      "existingClaimIds": [
+        "aki-1569-defeat"
+      ],
+      "identitySourceIds": [
+        "akiHistoryChronology",
+        "kochiAkiKunitoraGrave"
+      ],
+      "decision": "link-identity-only",
+      "identityReason": "安芸市年表および高知県教委の安芸国虎墓の解説にある、1569年に長宗我部元親との戦いに敗れた土佐の安芸国虎を照合。安芸氏一族一般の記述だけでは個人同定しない。",
+      "notAdopted": [
+        "生没年の命題",
+        "領有範囲",
+        "連続所在期間",
+        "役職の就任年月日"
+      ],
+      "ndlDecision": "今回取得したWikidataにP349がないため未接続。NDL典拠自体の不存在とは判断しない。"
+    },
+    {
+      "entityId": "person:chosokabe-motochika",
+      "name": "長宗我部元親",
+      "japaneseLabel": "長宗我部元親",
+      "wikidataId": "Q1070082",
+      "wikidataRevision": 2559497712,
+      "wikidataUrl": "https://www.wikidata.org/wiki/Q1070082",
+      "wikidataRevisionUrl": "https://www.wikidata.org/w/index.php?oldid=2559497712",
+      "wikidataRequestUrl": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q10176364%7CQ1070082%7CQ11372654%7CQ906580&props=info%7Clabels%7Cdescriptions%7Caliases%7Cclaims&languages=ja&format=json&maxlag=5",
+      "retrievedAt": "2026-11-04T03:15:13.217Z",
+      "rawIdentitySnapshot": "data/research/source-notes/castle-linked-person-authority-candidates.json",
+      "instanceOf": [
+        "Q5"
+      ],
+      "existingClaimIds": [
+        "aki-1569-defeat"
+      ],
+      "identitySourceIds": [
+        "akiHistoryChronology",
+        "kochiAkiKunitoraGrave"
+      ],
+      "decision": "link-identity-only",
+      "identityReason": "1569年に安芸国虎を攻めた長宗我部元親を市年表、県教委解説と照合。Wikidata日本語ラベル、人物区分、NDL本人名が一致。父国親や子盛親とは別人。NDLの生没表記は本人同定の補助にとどめる。",
+      "notAdopted": [
+        "生没年の命題",
+        "領有範囲",
+        "連続所在期間",
+        "役職の就任年月日"
+      ],
+      "ndlId": "00625510",
+      "ndlIdentity": {
+        "uri": "http://id.ndl.go.jp/auth/entity/00625510",
+        "type": {
+          "uri": "http://xmlns.com/foaf/0.1/Person"
+        },
+        "name": "長宗我部元親",
+        "dateOfBirth": "1539",
+        "dateOfDeath": "1599"
+      },
+      "ndlUrl": "https://id.ndl.go.jp/auth/ndlna/00625510",
+      "ndlRequestUrl": "https://id.ndl.go.jp/auth/ndlna/00625510.json",
+      "ndlRetrievedAt": "2026-11-04T03:15:43.235Z",
+      "ndlModified": "2026-01-21T08:34:39",
+      "ndlResponseSha256": "d66ec5cb3a4080dfd3212797dbd8bc2c50f837540e78f6e3f9529515ed35117b"
+    }
+  ]
+}

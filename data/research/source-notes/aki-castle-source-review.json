@@ -1,0 +1,89 @@
+{
+  "checkedAt": "2026-11-04T03:21:25.340389+00:00",
+  "oldSource": {
+    "id": "akiCastleCity",
+    "url": "https://www.city.aki.kochi.jp/life/dtl.php?hdnKey=44",
+    "finding": "現本文は安芸氏と長宗我部元親の1569年攻防。五藤為重・1601年入居・安芸国虎の個人名がなく、既存2命題の単独根拠には不足。"
+  },
+  "corrections": [
+    {
+      "claim": "aki-1569-defeat",
+      "decision": "replace-source",
+      "sources": [
+        "akiHistoryChronology",
+        "kochiAkiKunitoraGrave"
+      ],
+      "scope": "敗北年と当事者名のみ。落城日へ精密化しない。"
+    },
+    {
+      "claim": "aki-1601-goto",
+      "decision": "replace-source-and-narrow-wording",
+      "sources": [
+        "akiHistoryChronology",
+        "gotoTameshigeKochiMuseum"
+      ],
+      "scope": "年表の五藤氏と人物解説を照合。新築を示唆する「土居を構える」を「土居に入る」に変更。家老就任年は資料間の表現差があり不採用。"
+    }
+  ],
+  "sources": [
+    {
+      "id": "akiHistoryChronology",
+      "author": "安芸市立歴史民俗資料館",
+      "title": "安芸の歴史 年表",
+      "locator": "1569年・1601年の項",
+      "url": "https://www.city.aki.kochi.jp/rekimin/info/dtl.php?hdnKey=7968",
+      "published": "2025-02-12",
+      "accessed": "2026-11-04",
+      "scope": "1569年の安芸国虎と長宗我部元親、1601年の五藤氏の安芸城跡土居への入居。五藤為重個人の同定は高知城歴史博物館の人物解説と照合する。年表の家老就任説明は今回採用しない。",
+      "readingNote": "年表1569年に国虎・元親、1601年に五藤氏の安芸城跡入居を記す。姓のみの五藤氏を個人へ接続する部分は次の人物解説との照合結果。"
+    },
+    {
+      "id": "gotoTameshigeKochiMuseum",
+      "author": "高知県立高知城歴史博物館",
+      "title": "土佐史の人々－初期－",
+      "locator": "五藤為重の項",
+      "url": "https://www.kochi-johaku.jp/column/4516/",
+      "published": "2019-11-27",
+      "accessed": "2026-11-04",
+      "scope": "五藤為重本人が山内一豊に仕え、兄為浄の跡を継ぎ、土佐入国時に安芸城を預けられたという同定根拠。家老就任の厳密な年や全安芸領有・通年所在へ拡張しない。",
+      "readingNote": "為重と兄為浄を区別。為重が一豊に仕え、兄の跡を継いで土佐入国時に安芸城を預けられたと記す。"
+    },
+    {
+      "id": "kochiAkiKunitoraGrave",
+      "author": "高知県教育委員会文化財課",
+      "title": "安芸国虎墓",
+      "locator": "安芸国虎の敗北と自刃の説明",
+      "url": "https://www.kochinet.ed.jp/bunkazai/details/410-2/410-2-12.htm",
+      "accessed": "2026-11-04",
+      "scope": "1569年に長宗我部元親との戦いに敗れた安芸国虎の同定。墓塔の所在地を生前の居所に転用しない。",
+      "readingNote": "国虎が元親との戦いに敗れて永禄12年に自刃したと記す。"
+    },
+    {
+      "id": "hinoGamoUjisatoIdentity",
+      "author": "日野町",
+      "title": "蒲生氏郷",
+      "locator": "人物解説・鶴千代、賦秀から氏郷への改名",
+      "url": "https://www.town.shiga-hino.lg.jp/0000003695.html",
+      "published": "2017-03-01",
+      "updated": "2025-06-20",
+      "accessed": "2026-11-04",
+      "scope": "蒲生氏郷本人の別名・時代・活動を照合する人物同定資料。生没日、出生順、所領変遷、行軍日程を自動採用しない。",
+      "readingNote": "鶴千代・賦秀から氏郷への改名と豊臣方での活動を記す。出生順の相違は同定情報へ取り込まない。"
+    }
+  ],
+  "notUsed": [
+    {
+      "url": "https://www.kochi-ebooks.jp/wp-content/themes/ebooks_article/img/city-aki/akishi-yoran2024.pdf",
+      "reason": "全文32,421,277バイトでweb取得不可。検索抜粋を原PDF読了として扱わず、今回の採用根拠には用いない。"
+    },
+    {
+      "url": "https://sitereports.nabunken.go.jp/",
+      "title": "五藤家屋敷跡発掘調査報告書（1987）",
+      "reason": "web取得429。別取得は20,985,975バイトと判明し20MB上限で本文保存前に中止。検索抜粋を原PDF読了として扱わず採用根拠にしない。"
+    },
+    {
+      "url": "https://id.ndl.go.jp/auth/ndlna/00276110",
+      "reason": "安芸市教育委員会の団体典拠であり、五藤為重の人物IDとして採用しない。"
+    }
+  ]
+}

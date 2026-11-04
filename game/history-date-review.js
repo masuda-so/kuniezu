@@ -69,10 +69,14 @@
 (function(){
  const name='安芸城',point=[133.912590,33.519865],y=TK.YOSHO.find(y=>y[0]===name);if(!y)throw Error(name);
  y[2]=point[0];y[3]=point[1];
- y[4]='土佐国・平山城。安芸平野中央の丘に築かれた安芸氏の本拠。1569年、安芸国虎は長宗我部元親の攻撃を受けて敗れた。1601年には山内氏家臣の五藤為重が入り、土居を構えた。';
- TK.RESEARCH_SOURCES.akiCastleCity={author:'安芸市',title:'安芸城跡',locator:'城跡解説（位置・歴史）',url:'https://www.city.aki.kochi.jp/life/dtl.php?hdnKey=44',accessed:'2026-11-02',scope:'安芸平野中央の城跡、1569年の攻防と五藤氏の土居。城域全体の測量値ではない。'};
+ y[4]='土佐国・平山城。安芸平野中央の丘に築かれた安芸氏の本拠。1569年、安芸国虎は長宗我部元親の攻撃を受けて敗れた。1601年には山内氏家臣の五藤為重が安芸城跡の土居に入った。';
+ TK.RESEARCH_SOURCES.akiCastleCity={"author":"安芸市","title":"安芸城跡","locator":"城跡解説（位置・歴史）","url":"https://www.city.aki.kochi.jp/life/dtl.php?hdnKey=44","accessed":"2026-11-04","scope":"安芸平野中央の城跡と1569年の安芸氏・長宗我部元親の攻防。現本文には五藤為重・1601年の入居はなく、城域全体の測量値でもない。"};
+ TK.RESEARCH_SOURCES.akiHistoryChronology={"author":"安芸市立歴史民俗資料館","title":"安芸の歴史 年表","locator":"1569年・1601年の項","url":"https://www.city.aki.kochi.jp/rekimin/info/dtl.php?hdnKey=7968","published":"2025-02-12","accessed":"2026-11-04","scope":"1569年の安芸国虎と長宗我部元親、1601年の五藤氏の安芸城跡土居への入居。五藤為重個人の同定は高知城歴史博物館の人物解説と照合する。年表の家老就任説明は今回採用しない。"};
+ TK.RESEARCH_SOURCES.gotoTameshigeKochiMuseum={"author":"高知県立高知城歴史博物館","title":"土佐史の人々－初期－","locator":"五藤為重の項","url":"https://www.kochi-johaku.jp/column/4516/","published":"2019-11-27","accessed":"2026-11-04","scope":"五藤為重本人が山内一豊に仕え、兄為浄の跡を継ぎ、土佐入国時に安芸城を預けられたという同定根拠。家老就任の厳密な年や全安芸領有・通年所在へ拡張しない。"};
+ TK.RESEARCH_SOURCES.hinoGamoUjisatoIdentity={"author":"日野町","title":"蒲生氏郷","locator":"人物解説・鶴千代、賦秀から氏郷への改名","url":"https://www.town.shiga-hino.lg.jp/0000003695.html","published":"2017-03-01","updated":"2025-06-20","accessed":"2026-11-04","scope":"蒲生氏郷本人の別名・時代・活動を照合する人物同定資料。生没日、出生順、所領変遷、行軍日程を自動採用しない。"};
+ TK.RESEARCH_SOURCES.kochiAkiKunitoraGrave={"author":"高知県教育委員会文化財課","title":"安芸国虎墓","locator":"安芸国虎の敗北と自刃の説明","url":"https://www.kochinet.ed.jp/bunkazai/details/410-2/410-2-12.htm","accessed":"2026-11-04","scope":"1569年に長宗我部元親との戦いに敗れた安芸国虎の同定。墓塔の所在地を生前の居所に転用しない。"};
  TK.SITE_POSITION_EVIDENCE[name]={kind:'facility',name,point,ref:'400000033600',source:'codhSites',url:'https://geoshape.ex.nii.ac.jp/nrct-poi/resource/40/400000033600.html',basis:'歴史地名代表点。安芸市・観光協会の城跡説明と地図を独立照合。'};
- TK.CASTLE_EVIDENCE[name]={role:'安芸氏の本拠、後の五藤氏土居',description:y[4],source:TK.RESEARCH_SOURCES.akiCastleCity.url,checked:'2026-11-02'};
+ TK.CASTLE_EVIDENCE[name]={role:'安芸氏の本拠、後の五藤氏土居',description:y[4],source:TK.RESEARCH_SOURCES.akiHistoryChronology.url,sourceIds:['akiHistoryChronology','gotoTameshigeKochiMuseum'],checked:'2026-11-04'};
 })();
 
 /* 朱印状の発給を、開城・入城・知行の移管から分けて記録する。 */

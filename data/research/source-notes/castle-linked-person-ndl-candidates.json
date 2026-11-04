@@ -1,0 +1,81 @@
+{
+  "records": [
+    {
+      "ndlId": "00269409",
+      "url": "https://id.ndl.go.jp/auth/ndlna/00269409.json",
+      "retrievedAt": "2026-11-04T03:15:42.969Z",
+      "responseSha256": "2ed727cc9f5e99f16f4bfade4b7e6ce878a8352b33e2ad8bafcbc8e352b73bd0",
+      "modified": "2026-01-21T08:34:49",
+      "identity": {
+        "uri": "http://id.ndl.go.jp/auth/entity/00269409",
+        "type": {
+          "uri": "http://xmlns.com/foaf/0.1/Person"
+        },
+        "name": "蒲生氏郷",
+        "dateOfBirth": "1556",
+        "dateOfDeath": "1595",
+        "biographicalInformation": [
+          "武将"
+        ]
+      },
+      "prefLabel": {
+        "literalForm": "蒲生, 氏郷, 1556-1595",
+        "transcription": "ガモウ, ウジサト, 1556-1595",
+        "transcription-l": [
+          {
+            "@value": "ガモウ, ウジサト, 1556-1595",
+            "@language": "ja-Kana"
+          },
+          {
+            "@value": "Gamo, Ujisato, 1556-1595",
+            "@language": "ja-Latn"
+          }
+        ]
+      },
+      "altLabel": [
+        {
+          "literalForm": "教秀",
+          "description": "名"
+        }
+      ],
+      "source": [
+        "紀行",
+        "日本人名辞典"
+      ]
+    },
+    {
+      "ndlId": "00625510",
+      "url": "https://id.ndl.go.jp/auth/ndlna/00625510.json",
+      "retrievedAt": "2026-11-04T03:15:43.235Z",
+      "responseSha256": "d66ec5cb3a4080dfd3212797dbd8bc2c50f837540e78f6e3f9529515ed35117b",
+      "modified": "2026-01-21T08:34:39",
+      "identity": {
+        "uri": "http://id.ndl.go.jp/auth/entity/00625510",
+        "type": {
+          "uri": "http://xmlns.com/foaf/0.1/Person"
+        },
+        "name": "長宗我部元親",
+        "dateOfBirth": "1539",
+        "dateOfDeath": "1599"
+      },
+      "prefLabel": {
+        "literalForm": "長宗我部, 元親, 1539-1599",
+        "transcription": "チョウソカベ, モトチカ, 1539-1599",
+        "transcription-l": [
+          {
+            "@value": "チョウソカベ, モトチカ, 1539-1599",
+            "@language": "ja-Kana"
+          },
+          {
+            "@value": "Chosokabe, Motochika, 1539-1599",
+            "@language": "ja-Latn"
+          }
+        ]
+      },
+      "source": [
+        "長宗我部元親 / 山本大 著",
+        "日本史小辞典"
+      ]
+    }
+  ]
+}
