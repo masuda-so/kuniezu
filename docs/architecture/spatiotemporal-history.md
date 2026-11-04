@@ -103,3 +103,15 @@ node tools/research/query-history.cjs --from-year 1590 --to-year 1600 --entity w
 ```
 
 単年の `--year` と期間指定の同時使用は入力エラーにする。旧暦の年を西暦へ日付換算する検索ではないため、日単位の所在には `query-locations.cjs --lunar` を使う。
+
+### 照合済みの場所代表点
+
+場所の座標を確認できた場合は `geometryStatus: site-representative` とGeoJSONのPointで保持し、出典URL・該当箇所・確認日・位置の意味を `geometryEvidence` に記録する。安芸城の登録点が最初の対象。未照合の場所は従来どおり `geometry: null` にする。代表点を人物の精密な所在、城域の境界、古湖岸の測量点へ転用しない。
+
+### 代表点と期間の交差検索
+
+```sh
+node tools/research/query-history.cjs --bbox 133.9,33.5,134,33.6 --from-year 1600 --to-year 1615
+```
+
+`--bbox` は西経度・南緯度・東経度・北緯度の順。範囲内の照合済み場所代表点に直接関連する記録と、年代条件を交差させる。座標未登録の場所を近隣へ推定配置しない。人物の本拠からその期間の在城を推定する結合も行わない。範囲の端は含む。日付変更線をまたぐ範囲は二つに分けて検索する。
