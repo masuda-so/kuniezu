@@ -99,8 +99,8 @@ window.TKTerrain=(function(){
     if(level===z&&!complete){const finer=[];for(const t of cache.values()){if(t.provider!==provider||!t.ready||t.z<=z||t.z>z+4)continue;const tw=(t.x/2**t.z*360-180),te=((t.x+1)/2**t.z*360-180);if(te<w||tw>e||t.south>n||t.north<s)continue;finer.push(t);}
      finer.sort((a,b)=>a.z-b.z);for(const t of finer)t.seen=frame;selected.push(...finer);}
    }
-   for(const t of selected){t.drawnFrame=frame;const level=t.z,[x0,,bx1]=tileBox(level,t.x,t.y),w=bx1-x0;
-    const y0=(lat0-t.north)*K,y1=(lat0-t.south)*K;c.drawImage(t.im,x0,y0,w,y1-y0+.008);
+   for(const t of selected){t.drawnFrame=frame;const [x0,y0,x1,y1]=tileBox(t.z,t.x,t.y);// 四隅を写した外接長方形（円錐図法では少し回った四角形の近似）
+    c.drawImage(t.im,x0,y0,x1-x0,y1-y0+.008);
    }
   };
   layer('dem',[west,east,north,south]);
