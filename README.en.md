@@ -22,6 +22,8 @@ is [docs/README.md](docs/README.md); open requests and ownership are in
   non-participating Sekigahara units receive no generic advance animation.
 - Free sieges, non-historical routes and in-play AI generation are disabled. The
   non-historical implementations under `archive/` are not loaded at startup.
+- Battle-related timeline notes are classified separately from battle phases.
+  Castle falls without supported deployments remain timeline entries and historic sites.
 - Modern comparison terrain, estimates derived from sources and confirmed
   historical facts are kept apart. Unsupported text is not shown in the game.
 - The historical database preserves original calendars and date precision, and rejects
@@ -34,6 +36,10 @@ is [docs/README.md](docs/README.md); open requests and ownership are in
   bodies, using medieval evidence of the lakes and later shoreline references.
   Correction boundaries crossing open water are excluded from shoreline strokes.
   See the [evidence and checks](docs/reports/KATORI_WIDE_LAKE_PERIMETER.md) (Japanese).
+
+- Hachirogata uses an inferred pre-reclamation shoreline from historical comparison
+  maps, excluding possible later fill from land restoration. See the
+  [evidence and checks](docs/reports/HACHIROGATA_WATER_REVIEW.md) (Japanese).
 
 | Folder | Contents |
 |---|---|

@@ -1,7 +1,7 @@
 {
   "baselineCommit": "liaodong-1560-source-v1",
   "source": "game/map_data（provinces.png・definition.csv・default.map・projection.json）",
-  "sourceSha256": "93a002ec3d3af85bbbbf0fed95c17bfded790ee19e37c19aac84c850f6be2549",
+  "sourceSha256": "a88cb31c9fbfd90cb1881a2901904331dd7aac9e0639159df2cbc93b1a7d62ad",
   "note": "1560年正本。児島湾補正を保持し、遼東の軍政域参考図を未割当/旧明だけへ適用。1573〜1605寛甸と1584年以後宇喜多堤は年代差分。軍政域参考線を精密国境・実効支配・軍の所属には転用しない。",
   "applied": [
     {
@@ -104,6 +104,21 @@
       "changedCells": 1637,
       "preservedExistingWater": 82,
       "exactHistoricalShoreline": false
+    },
+    {
+      "id": "hachirogata-source-comparison-reconstruction",
+      "layer": "provinces",
+      "input": [
+        "data/research/hachirogata-reference/pixel-reconstruction.json"
+      ],
+      "changedPixels": 10021,
+      "waterAddedPixels": 6201,
+      "landRestoredPixels": 3820,
+      "basis": "干拓前の公的地形図と中世湖沼の存在に基づく推定湖面。16世紀の精密汀線とはしない。",
+      "exactHistoricalShoreline": false,
+      "deferredLandPixels": 199,
+      "islandProtectedPixels": 18,
+      "oldOutletRestored": true
     }
   ],
   "pending": [
@@ -139,10 +154,10 @@
   ],
   "provincesSha256": "b046fd2334f79080772ea8a65df1ae04ce890fd474bd326dea35a4e546b842c8",
   "sourceFiles": {
-    "provinces": "b046fd2334f79080772ea8a65df1ae04ce890fd474bd326dea35a4e546b842c8",
-    "definition": "e10e24cb314157770715ede8a1290d2bca807692eec8d9f269283277dd122801",
+    "provinces": "b4749d9fda3fd61eb238d0d6c9f79a48a8fa11ff968b8680d4671ad08a5c046d",
+    "definition": "ebcdf8ed8ac9bc01371ec8d04bfbb37e6d7994eb9a882db0bda2fac49621619f",
     "defaultMap": "36b071aab05850ce318f80767cf9307dd2bc23f144d89c04fbface39529b4d1b",
-    "projection": "04bd30868c1f5a9420b308d318d606a95d1158c23a8e6f18b3f7ecfe6b01466a"
+    "projection": "3576c5ceb1fc809ac06f538f14dd8be842f343fc18e374edcbdbc8bb4d9e8cee"
   },
   "baselineDate": [
     1560,

@@ -1,0 +1,21 @@
+{
+  "url": "https://mapwarper.h-gis.jp/maps/wms/1199?SERVICE=WMS&VERSION=1.1.1&REQUEST=GetMap&LAYERS=image&STYLES=&SRS=EPSG%3A4326&BBOX=139.92%2C39.85%2C140.015%2C39.93&WIDTH=1200&HEIGHT=1280&FORMAT=image%2Fpng&TRANSPARENT=TRUE",
+  "mapID": 1199,
+  "title": "船川 1912測図・1925鉄道補入・1927発行",
+  "bbox": [
+    139.92,
+    39.85,
+    140.015,
+    39.93
+  ],
+  "size": [
+    1200,
+    1280
+  ],
+  "outputSrs": "EPSG:4326",
+  "sha256": "26b40ac133e34ad13925140979a08c94c4c6b353269c273d8e24626d176088bd",
+  "retrievedAt": "2026-11-04T05:20:48.085428+00:00",
+  "originalDatumVerified": false,
+  "horizontalDisplayUncertaintyMetres": 500,
+  "statisticalAccuracyClaim": false
+}
