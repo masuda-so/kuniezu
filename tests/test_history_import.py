@@ -27,6 +27,7 @@ from kuniezu.history.models import Status
 from kuniezu.history.models import Thing
 from kuniezu.history.models import ThingKey
 from kuniezu.history.models import ThingKind
+from kuniezu.history.models import ThingName
 
 pytestmark = pytest.mark.django_db
 ROOT = Path(settings.BASE_DIR)
@@ -590,3 +591,26 @@ def test_merged_identifiers_end_at_one_thing_in_either_order(inputs, first):
     for claim in ("claim:ganjaku-fall", "claim:ganjaku-fall-again"):
         subject = Phenomenon.objects.get(key=claim).participations.get(role="subject")
         assert subject.thing == castle
+
+
+@pytest.mark.parametrize("first", ["old", "new"])
+def test_a_merged_name_still_finds_the_thing(inputs, first):
+    # Two claims name one castle, which no registry holds, by two names.
+    path = inputs / RESEARCH / "claims.jsonl"
+    claims = lines(path)
+    fall = next(row for row in claims if row["id"] == "ganjaku-fall")
+    old = fall | {"id": "castle-old", "entity": "site:試験旧城"}
+    new = fall | {"id": "castle-new", "entity": "site:試験新城"}
+    ordered = [old, new] if first == "old" else [new, old]
+    with path.open("w", encoding="utf-8") as stream:
+        for row in [*ordered, *claims]:
+            stream.write(json.dumps(row, ensure_ascii=False) + "\n")
+    identity(inputs, "renamed", "same-site", ["site:試験新城", "site:試験旧城"])
+
+    import_history(inputs)
+
+    castle = Thing.objects.get(key="site:試験新城")
+    for name in ("試験旧城", "試験新城"):
+        assert list(queries.find_things(name)) == [castle]
+    # A registry identifier is not a name: it finds the place only as a key.
+    assert not ThingName.objects.filter(name="ganjaku").exists()

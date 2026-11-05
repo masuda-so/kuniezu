@@ -106,7 +106,12 @@ The relational history database is built from the inputs in `data/research/` and
 `docs/work/` into `db.sqlite3` at the repository root (not tracked in Git):
 `uv run python manage.py migrate`, then `uv run python manage.py import_history`.
 Query it by thing, year or a longitude/latitude box, for example
-`uv run python manage.py history_query --about 織田信長 --year 1582`. It holds every
+`uv run python manage.py history_query --about 織田信長 --year 1582`. A thing can be
+named by a name or by an identifier such as `place:ganjaku`; a name that matches
+several things lists the candidates and stops. That two identifiers are one thing,
+or that a game site stands for a registry place, is stated by sourced records in
+`data/research/curated/identities/*.json` (format in that folder's `README.md`);
+without such a record, things of the same name are never merged. It holds every
 current input record and keeps source-verified records apart from the unverified
 inventory of what the game implements (`docs/architecture/history-rdb.md`).
 

@@ -238,6 +238,9 @@ class Importer:
         # The identifiers the inputs themselves use, before any identity is applied.
         self.used: set[str] = set()
         # Every identifier an input has used, and the thing it turned out to be.
+        # The identifiers an input gives a name to. Any other identifier is
+        # itself the name, as in ``site:岩石城``.
+        self.titled: set[str] = set()
         self.keyed: dict[str, Thing] = {}
         self.phenomena: dict[str, Phenomenon] = {}
         self.by_title: dict[str, list[Phenomenon]] = {}
@@ -316,6 +319,7 @@ class Importer:
         names: tuple[str, ...] = (),
     ) -> Thing:
         given, key = key, self.same.get(key, key)
+        self.titled.add(given)
         thing = self.find(given)
         if thing is None:
             thing = Thing.objects.create(
@@ -328,11 +332,15 @@ class Importer:
             thing.save(update_fields=["registered", "name"])
         thing.records.add(record)
         self.known_as(thing, given)
-        for label in dict.fromkeys((name, *names)):
-            _, created = ThingName.objects.get_or_create(thing=thing, name=label)
-            if created:
-                self.by_name.setdefault((thing.kind, label), []).append(thing)
+        self.label(thing, name, *names)
         return thing
+
+    def label(self, thing: Thing, *names: str) -> None:
+        """Let a thing be found by each of these names."""
+        for name in dict.fromkeys(names):
+            _, created = ThingName.objects.get_or_create(thing=thing, name=name)
+            if created:
+                self.by_name.setdefault((thing.kind, name), []).append(thing)
 
     def known_as(self, thing: Thing, identifier: str) -> None:
         """Note that an input names a thing by an identifier."""
@@ -366,8 +374,11 @@ class Importer:
                 known = same[0]
         if known is None:
             return self.thing(identifier, kind, identifier.partition(":")[2], record)
-        # However it was found, the thing is now known by this identifier too.
+        # However it was found, the thing is now known by this identifier too,
+        # and by the name the identifier carries when no input names it.
         self.known_as(known, identifier)
+        if identifier not in self.titled:
+            self.label(known, identifier.partition(":")[2])
         known.records.add(record)
         return known
 
