@@ -90,3 +90,17 @@ for(const source of retainedSources){
  for(const item of archives.values()){assert.equal(item.archiveKey,'sha256:'+item.sha256);assert.equal(item.includedInGit,false);assert.ok(!path.isAbsolute(item.archiveRelativePath)&&!item.archiveRelativePath.split(/[\\/]/).includes('..'));}
 }
 console.log('PASS: retained numeric inputs and source manifests match SHA; local originals remain separate');
+
+const {G,TK}=require('./history-focus.cjs').model();
+G.newGame('s1560','oda');
+const timeline=TK.HIST.filter(event=>event.k!=='premarch');
+const exportedEvents=fs.readFileSync(path.join(research,'implemented-events.jsonl'),'utf8').trim().split('\n').map(JSON.parse);
+assert.equal(exportedEvents.length,timeline.length);
+assert.ok(timeline.some(event=>event.text),'timeline must contain descriptions');
+for(const [index,event] of timeline.entries()){
+ const row=exportedEvents[index];
+ assert.equal(row.id,'event:'+index);
+ assert.equal(row.text,event.text||null,row.id+' timeline description');
+ assert.equal(row.status,'not-a-verified-historical-claim',row.id+' evidence status');
+}
+console.log('PASS: timeline export preserves every description and distinguishes implementation records');
