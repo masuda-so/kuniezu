@@ -6,9 +6,10 @@ const URL=process.env.GAME_URL||'http://localhost:8000/index.html';
 const OUT=path.resolve(process.env.GAME_TEST_OUTPUT||path.join(os.tmpdir(),'kuniezu-load-performance'));fs.mkdirSync(OUT,{recursive:true});
 const SCEN=process.env.GAME_PERF_SCENARIO||'s1585';
 const [W,H,DSF]=(process.env.GAME_PERF_VIEW||'1024,768,2').split(',').map(Number);
-const root=process.env.GAME_OVERRIDE_ROOT,overrides={};
+// 差し替えの鍵は URL のパス（Django は kuniezu/static/kuniezu/x を /static/kuniezu/x で配る）。ページはテンプレートを描いて返す。
+const PAGE=require('../build/game-page.cjs'),root=process.env.GAME_OVERRIDE_ROOT,overrides={};
 if(root){const base=process.env.GAME_OVERRIDE_BASE||'HEAD';const git=(...a)=>execFileSync('git',['-C',root,...a],{encoding:'utf8'}).split('\n').filter(Boolean);
- for(const f of [...git('diff','--name-only',base,'--','kuniezu/static/kuniezu'),...git('ls-files','--others','--exclude-standard','--','kuniezu/static/kuniezu')]){const p=path.join(root,f);if(fs.existsSync(p))overrides[f.slice(5)]=fs.readFileSync(p);}}
+ for(const f of [...git('diff','--name-only',base,'--','kuniezu/static/kuniezu',PAGE.TEMPLATE),...git('ls-files','--others','--exclude-standard','--','kuniezu/static/kuniezu')]){const p=path.join(root,f);if(!fs.existsSync(p))continue;if(f===PAGE.TEMPLATE)overrides['index.html']=Buffer.from(PAGE.render(root));else overrides[f.slice('kuniezu/'.length)]=fs.readFileSync(p);}}
 const TYPES={js:'application/javascript',html:'text/html; charset=utf-8',json:'application/json',css:'text/css',png:'image/png',webp:'image/webp',svg:'image/svg+xml'};
 const profile=fs.mkdtempSync(path.join(os.tmpdir(),'kuniezu-perf-'));
 const chrome=spawn(process.env.CHROME_PATH||'/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',['--headless','--disable-gpu','--no-first-run','--no-default-browser-check',`--user-data-dir=${profile}`,'--remote-debugging-pipe'],{stdio:['ignore','ignore','ignore','pipe','pipe']});
