@@ -9,6 +9,7 @@
 | `kuniezu/` | Django のアプリ。ゲームのページを返す `views.py`、テンプレート `templates/`、静的ファイル `static/kuniezu/` |
 | `kuniezu/templates/index.html` | ゲームのページ。`game-scripts` がスクリプトの読込順 |
 | `kuniezu/static/kuniezu/` | ゲームの原本（素の JavaScript・CSS・素材）と、地図の配信物 `map/build/`（生成物。Git に入れない） |
+| `kuniezu/history/` | 史実の関係データベース（Django のアプリ）。表・取り込み・検索。設計は `docs/architecture/history-rdb.md` |
 | `kuniezu/map/` | 地図の正本（行政区分 `admin/`・支配 `control/`・自然 `physical/`・`projection.json`・年代別の差分の入力 `edits/`）。配信しない |
 | `scripts/` | 静的書き出し `build_static.py` |
 | `tests/` | Django 側の試験（pytest） |
@@ -37,6 +38,7 @@ uv run ruff check
 uv run ruff format --check
 uv run mypy kuniezu config scripts tests
 uv run python manage.py check --settings=config.settings.test
+uv run python manage.py migrate && uv run python manage.py import_history   # 史実データベースを作る
 uv run python scripts/build_static.py
 ```
 
