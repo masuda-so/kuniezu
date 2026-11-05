@@ -1,0 +1,52 @@
+/* 起動済みHTTPサーバーを専用Chromeで検証する。起動停止は行わない。
+   GAME_OVERRIDE_ROOT/GAME_OVERRIDE_BASE は候補の静的ファイルとテンプレートの差分のみを専用ブラウザ内で差し替える。 */
+const {spawn,execFileSync}=require('node:child_process');
+const crypto=require('node:crypto');
+const fs=require('node:fs'),os=require('node:os'),path=require('node:path'),assert=require('node:assert/strict');
+const URL=process.env.GAME_URL||'http://localhost:8000/index.html';
+const OUT=path.resolve(process.env.GAME_TEST_OUTPUT||path.join(os.tmpdir(),'kuniezu-browser-results'));
+const PAGE=require('../build/game-page.cjs');
+const root=process.env.GAME_OVERRIDE_ROOT,overrides={};
+if(root){
+ const base=process.env.GAME_OVERRIDE_BASE||'origin/main';
+ const files=execFileSync('git',['-C',root,'diff','--name-only',base,'--','kuniezu/static/kuniezu',PAGE.TEMPLATE],{encoding:'utf8'}).split('\n').filter(Boolean);
+ for(const file of files){
+  const candidate=path.join(root,file);
+  if(!fs.existsSync(candidate))continue;
+  if(file===PAGE.TEMPLATE)overrides['index.html']=Buffer.from(PAGE.render(root));
+  else overrides[file.slice('kuniezu/'.length)]=fs.readFileSync(candidate);
+ }
+}
+const TYPES={js:'application/javascript',html:'text/html; charset=utf-8',json:'application/json'};
+const profile=fs.mkdtempSync(path.join(os.tmpdir(),'kuniezu-check-'));fs.mkdirSync(OUT,{recursive:true});
+const chrome=spawn(process.env.CHROME_PATH||'/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',['--headless',...(new globalThis.URL(URL).protocol==='file:'?['--allow-file-access-from-files']:[]),'--disable-gpu','--no-first-run','--no-default-browser-check',`--user-data-dir=${profile}`,'--remote-debugging-pipe'],{stdio:['ignore','ignore','ignore','pipe','pipe']});
+let seq=0,buf='',session,chooser;const pending=new Map(),errors=[],events=[];
+chrome.stdio[4].on('data',data=>{buf+=data.toString();let i;while((i=buf.indexOf('\0'))>=0){const str=buf.slice(0,i);buf=buf.slice(i+1);if(!str)continue;const m=JSON.parse(str);if(m.id){const p=pending.get(m.id);pending.delete(m.id);if(p)m.error?p.reject(Error(JSON.stringify(m.error))):p.resolve(m.result);}else{
+ if(m.method==='Fetch.requestPaused'){const f=decodeURIComponent(new globalThis.URL(m.params.request.url).pathname.slice(1))||'index.html',body=overrides[f];if(body)call('Fetch.fulfillRequest',{requestId:m.params.requestId,responseCode:200,responseHeaders:[{name:'Content-Type',value:TYPES[f.split('.').pop()]||'application/octet-stream'}],body:body.toString('base64')}).catch(e=>console.error(e));else call('Fetch.continueRequest',{requestId:m.params.requestId}).catch(e=>console.error(e));}
+ events.push(m);if(m.method==='Runtime.exceptionThrown')errors.push(m.params.exceptionDetails.exception?.description||m.params.exceptionDetails.text);if(m.method==='Page.fileChooserOpened')chooser=m.params;
+ }}});
+const call=(method,params={},sid=session)=>new Promise((resolve,reject)=>{const id=++seq;pending.set(id,{resolve,reject});chrome.stdio[3].write(JSON.stringify({id,method,params,...(sid?{sessionId:sid}:{})})+'\0');});
+const sleep=ms=>new Promise(r=>setTimeout(r,ms));
+const ev=async expression=>{const r=await call('Runtime.evaluate',{expression,returnByValue:true,awaitPromise:true});if(r.exceptionDetails)throw Error(r.exceptionDetails.exception?.description||r.exceptionDetails.text);return r.result.value;};
+async function until(expr){for(let i=0;i<100;i++){if(await ev(expr))return;await sleep(100);}throw Error('Timed out: '+expr);}
+async function click(selector){const p=await ev(`(()=>{const el=document.querySelector(${JSON.stringify(selector)});if(!el||el.disabled)throw Error('missing/disabled '+${JSON.stringify(selector)});el.scrollIntoView({block:'center'});const r=el.getBoundingClientRect();return {x:r.x+r.width/2,y:r.y+r.height/2};})()`);await call('Input.dispatchMouseEvent',{type:'mousePressed',button:'left',clickCount:1,...p});await call('Input.dispatchMouseEvent',{type:'mouseReleased',button:'left',clickCount:1,...p});await sleep(120);}
+async function shot(name){await ev("(()=>{const e=document.querySelector('.mbox');if(e)e.scrollTop=0;})()");const r=await call('Page.captureScreenshot',{format:'png'});fs.writeFileSync(path.join(OUT,name+'.png'),Buffer.from(r.data,'base64'));}
+async function view(width,height){await call('Emulation.setDeviceMetricsOverride',{width,height,deviceScaleFactor:1,mobile:width<820});await sleep(300);}
+async function load(){await call('Page.navigate',{url:URL});await until("!!document.querySelector('[data-act=new]')&&!document.getElementById('boot')");}
+const timer=setTimeout(()=>{console.error('timeout');chrome.kill();process.exitCode=1},480000);
+const fixtures=JSON.parse(require('node:zlib').gunzipSync(fs.readFileSync(process.env.KIYOSU_FIXTURES||path.resolve(__dirname,'../../data/inputs/kiyosu-custody/legacy-saves.json.gz'))));
+async function saved(day){const raw=fixtures.snapshots[String(day)];assert.equal(crypto.createHash('sha256').update(raw).digest('hex'),fixtures.originalSnapshotSha256[String(day)]);await ev(`(()=>{localStorage.setItem('kuniezu-history-v1-kiyosu-test',${JSON.stringify(raw)});TKUI.api.ACT.load({dataset:{v:'kiyosu-test'}});TKUI.speed=0;})()`);await until("TKUI.mode==='game'&&!TKUI.modal");}
+async function state(city){return ev(`(()=>{const g=G.genByName('織田秀信');TKUI.sel=${JSON.stringify(city)};TKUI.api.renderAll();return {date:G.date(),management:g.loc,residence:G.documentedResidence(g),point:G.personPoint(g),military:G.castleGens(${JSON.stringify(city)}).some(p=>p.id===g.id),display:G.displayCastleGens(${JSON.stringify(city)}).some(p=>p.id===g.id),travel:g.tr||null,text:document.querySelector('#drawer').innerText};})()`);}
+(async()=>{try{
+ const target=await call('Target.createTarget',{url:'about:blank'},null);session=(await call('Target.attachToTarget',{targetId:target.targetId,flatten:true},null)).sessionId;
+ await call('Runtime.enable');await call('Page.enable');if(root)await call('Fetch.enable',{patterns:[{urlPattern:new globalThis.URL(URL).origin+'/*',requestStage:'Request'}]});await view(1400,1000);await load();const rows=[];
+ for(const day of [16,17,18]){
+  await saved(day);const row=await state('gifu');assert.equal(row.date.y,1582);assert.equal(row.date.m,7);assert.equal(row.date.d,day);assert.equal(row.management,day===18?'kannonji':'gifu');assert.equal(row.residence.status,'custody');assert.ok(row.display);assert.equal(row.military,false);assert.ok(row.text.includes('三法師（織田宗家・織田信孝の預かり）'));assert.ok(!row.travel);assert.equal(row.text.includes('当主 三法師'),false);rows.push({day,city:'gifu',...row});await shot('gifu-legacy-'+day);
+  const azuchi=await state('kannonji');assert.equal(azuchi.display,false);assert.equal(azuchi.military,false);assert.ok(!azuchi.text.includes('預かり'));rows.push({day,city:'kannonji',...azuchi});
+ }
+ await saved(18);await view(390,844);const narrow=await state('gifu');assert.ok(narrow.text.includes('織田信孝の預かり'));await shot('gifu-legacy-18-narrow');rows.push({day:18,viewport:[390,844],...narrow});await view(1400,1000);
+ // Advance this saved historical state only to the known record boundary, retaining real ownership changes.
+ const advanced=await ev(`(()=>{const s=G.S(),g=G.genByName('織田秀信'),until=G.evT({d:TK.DOCUMENTED_RESIDENCES[g.documentedResidence].until});let days=0;TKUI.ffwd=true;try{while(s.t<until){if(++days>220)throw Error('bounded replay limit');G.day();for(const k of ['evQ','sceneQ','battleQ','propQ','observerQ','prisonQ'])s[k]=[];}}finally{TKUI.ffwd=false;}TKUI.api.renderAll();return {days,date:G.date(),point:G.personPoint(g),residence:G.documentedResidence(g),travel:g.tr||null};})()`);assert.equal(advanced.residence.status,'unknown');assert.equal(advanced.point,null);assert.equal(advanced.travel,null);
+ for(const city of ['gifu','kannonji']){const row=await state(city);assert.equal(row.point,null);assert.equal(row.display,false);assert.equal(row.military,false);assert.ok(!row.text.includes('預かり'));rows.push({expiry:true,city,...row});await shot(city+'-after-receipt');}
+ assert.deepEqual(errors,[]);fs.writeFileSync(path.join(OUT,'result.json'),JSON.stringify({url:URL,sourceFixtureCommit:fixtures.sourceCommit,overrides:Object.keys(overrides),candidateHashes:Object.fromEntries(Object.entries(overrides).map(([name,body])=>[name,crypto.createHash('sha256').update(body).digest('hex')])),rows,advanced,errors},null,2));console.log('PASS: 3 real legacy loads, current-clan custody display, military exclusion, narrow drawer, bounded historical expiry');
+}catch(e){console.error(e.stack);console.error(errors);try{await shot('failure')}catch{}process.exitCode=1;}finally{clearTimeout(timer);try{await call('Browser.close',{},null)}catch{}chrome.kill();fs.rmSync(profile,{recursive:true,force:true});}})();

@@ -1,0 +1,16 @@
+{
+  "id": "place:gifu",
+  "name": "岐阜",
+  "aliases": [
+    "岐阜城"
+  ],
+  "geometry": null,
+  "geometryStatus": "not-asserted",
+  "note": "滋賀県資料の預かり先は「岐阜」、岐阜市の秀信解説は「岐阜城にとどめた」と記す。この所在参照は、本人の居室・山上城郭・山麓居館の精密地点や現代岐阜市域全体を表さない。検証済み代表点は今回登録せず、ゲームの管理ノード座標から作らない。",
+  "identityBasis": {
+    "scope": "公的解説が記す三法師の預かり先としての岐阜を登録。地点の同定と実座標・居館の位置の確定を分ける。",
+    "claimIds": [
+      "oda-hidenobu-gifu-custody-described"
+    ]
+  }
+}

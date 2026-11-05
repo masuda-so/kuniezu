@@ -1,0 +1,26 @@
+{
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-04",
+  "id": "oda-hidenobu-sanboshi-identity",
+  "entity": "person:oda-hidenobu",
+  "predicate": "person-name-identity",
+  "value": {
+    "name": "織田秀信",
+    "childhoodName": "三法師",
+    "disambiguation": "織田信忠の長男"
+  },
+  "validYears": [
+    1580,
+    1605
+  ],
+  "datePrecision": "identity",
+  "source": "gifuSuccession",
+  "sourceUrl": "https://www.city.gifu.lg.jp/kankoubunka/kankou/1013051/1005097/1034742/1034737.html",
+  "locator": "「12 織田秀信」冒頭の親子関係と幼名。「8 織田信孝」も信忠の子・三法師をのちの秀信とする。",
+  "gameBindings": [
+    "TK.PORTRAIT_ALIAS:三法師",
+    "person:oda-hidenobu"
+  ],
+  "uncertainty": "本人同定の命題。索引用の適用年は同ページが掲げる生没年であり、毎年の現地滞在、具体的な生没日、各年の名前の使用開始を証明しない。外部典拠IDは今回未採用。"
+}

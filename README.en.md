@@ -18,6 +18,7 @@ is [docs/README.md](docs/README.md); open requests and ownership are in
   marches along historical roads, and battle deployments and movements, each with
   its source.
 - Battle markers retain their geographic positions when the viewport or district changes. Co-located units can be selected individually.
+- Sanboshi’s documented custody after the Kiyosu meeting is shown separately from the family capital. Unknown whereabouts are not filled with invented journeys; legacy saves use the same distinction.
 - Diplomacy is shown as borders only; marches are shown as pieces on roads.
   Battles appear automatically only when the player's forces take part. The five
   non-participating Sekigahara units receive no generic advance animation.

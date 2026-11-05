@@ -1,0 +1,43 @@
+{
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-04",
+  "id": "sanboshi-receipt-three-elders-1582-12-21",
+  "entity": "document:azuchi-three-elders-1582-12-21",
+  "predicate": "document-reports-receipt-and-attendance",
+  "value": {
+    "personName": "三法師",
+    "documentTitle": "池田恒興・丹羽長秀・羽柴秀吉連署状",
+    "holdingInstitution": "滋賀県立安土城考古博物館",
+    "content": "若子様を当日受け取り供奉したと伝える。",
+    "location": null
+  },
+  "validYears": [
+    1582,
+    1582
+  ],
+  "datePrecision": "day",
+  "source": "kiyosuDistribution",
+  "sourceUrl": "https://www.pref.shiga.lg.jp/documents/2526/5456533_1.pdf",
+  "locator": "PDF22頁末〜23頁上・節7。博物館蔵の連署状翻刻の本文、極月21日の署日、遠山佐渡守父子の宛所。",
+  "gameBindings": [
+    "TK.DOCUMENTED_RESIDENCES:sanboshi-gifu-custody-1582.until"
+  ],
+  "linkedEntities": [
+    "person:oda-hidenobu"
+  ],
+  "eventTime": {
+    "kind": "dated-event",
+    "date": [
+      1582,
+      12,
+      21
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": false,
+    "precision": "day"
+  },
+  "eventRelation": "reported-receipt-and-attendance",
+  "eventScope": "受取と供奉を通知する文書の原暦日付。「今日」の受取を記すが、引取場所・到着場所・安土到着日・経路・時刻はこの命題で特定しない。",
+  "uncertainty": "公刊資料に掲載された翻刻の確認であり、書状現物・影印の再読ではない。直前の上原孝夫氏所蔵・愛知県史217号連署状写とは別文書。場所を推定しないためplace参照を付けない。年索引は原暦1582年とし、ゲーム表示の1583年1月14日を別の史実イベントとして複製しない。"
+}

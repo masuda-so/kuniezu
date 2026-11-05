@@ -33,6 +33,7 @@ jobs:
         run: |
           node tools/checks/sekigahara-motion.cjs
           node tools/checks/battle-event-classification.cjs
+          node tools/checks/kiyosu-custody.cjs
           node tools/checks/evidence-store.cjs
           node tools/checks/location-store.cjs
           node tools/checks/history-index.cjs
