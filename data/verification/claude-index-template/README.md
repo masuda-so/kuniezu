@@ -19,14 +19,21 @@ main（`5483a5f`）のページと新しいページを同じ条件で開き、�
 - ページを読むほかの検査：`history-focus.cjs`・`aizu-legacy-calendar.cjs` が PASS。
 - サーバーなしで開くブラウザ検査：`katori-water-browser.cjs`・`hachirogata-water-browser.cjs` が PASS（一時ファイルを開く形に変えた）。
 
+## 実画面（この worktree から起動した Django の開発サーバー、8001 番）
+
+- `/` と `/index.html` は同じ内容（12,293 文字）で、`<base href="/static/kuniezu/">` が入る。題名画面が出て、`document.baseURI` は `http://localhost:8001/static/kuniezu/`。
+- `<style>` は 0 個。スタイルシートは `index.css`（503 規則）、Google Fonts、`theme-washi.css`（114 規則）の 3 つ。
+- 「続きから」で、移動前に保存した局（慶長五年六月十六日、徳川家）を読み込めた。197 件の要求のうち 404 は `map/build/relief.json` だけ（地図を陰影なしで生成したため）。
+- `GAME_URL=http://localhost:8001/index.html` で `march-clock-browser.cjs` が PASS（出陣、停止と再開、桶狭間、合戦の読み込み、狭い画面、JS の例外なし）。
+
 ## 未確認
 
-- Django の開発サーバー越しの実画面。サーバーの起動は利用者が行うため、この枝からの起動後に確認する。
-- `bizen-north-shore-browser.cjs`・`arrival-aliases-browser.cjs`（8000 番のサーバーが要る）と、保存ファイルを引数に取る `person-location-itinerary.cjs`。どれもページの読み方だけを変えた。`arrival-aliases-browser.cjs` は、差し替えるページを作る処理が動くことだけを確かめた。
-- 8000 番へつなぐほかのブラウザ検査。
+- `bizen-north-shore-browser.cjs`・`arrival-aliases-browser.cjs` と、保存ファイルを引数に取る `person-location-itinerary.cjs`。どれもページの読み方だけを変えた。`arrival-aliases-browser.cjs` は、差し替えるページを作る処理が動くことだけを確かめた。
+- ほかのブラウザ検査。
 
 ## 気づいた点（この変更の範囲外）
 
 - `battle-viewport-browser.cjs` と `load-performance.cjs` の差し替え（`GAME_OVERRIDE_ROOT`）は、段 1b-1 の置き換えで壊れている。差し替えるファイルの名前を `f.slice(5)`（旧 `game/` の長さ）で作ったままで、`kuniezu/static/kuniezu/…` に合っていない。
 - `arrival-aliases-browser.cjs` と `bizen-north-shore-browser.cjs` は、差し替える JS の URL をページと同じ階層（`/ui.js` など）と見なしている。Django の配信では `/static/kuniezu/ui.js` なので、差し替えが効かない。
+- `startup-browser.cjs` は main でも失敗するはず：差し替えの URL パターン `*history-focus.js` が、確認値つきの URL（`history-focus.js?v=…`）に合わず、再試行を 1 度も起こせない（`0 !== 2`）。
 - `offline.cjs` を実行すると `data/audits/history-focus-audit.json` に差分が出る（main の時点で既に古い）。この PR では戻した。
