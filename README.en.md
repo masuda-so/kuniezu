@@ -49,7 +49,8 @@ is [docs/README.md](docs/README.md); open requests and ownership are in
 
 | Folder | Contents |
 |---|---|
-| `kuniezu/static/kuniezu/` | The game served to the browser and its bundled assets; load order follows `index.html` |
+| `kuniezu/static/kuniezu/` | The game served to the browser and its bundled assets |
+| `kuniezu/templates/` | The game page `index.html` (a Django template); it sets the script load order |
 | `docs/architecture/` | Structure, file move records and dependency order |
 | `docs/work/` | Open requests, completion criteria, per-subject task lists, ownership and results |
 | `docs/reports/` | Research, fix and on-screen verification reports |
@@ -90,11 +91,12 @@ graticule, to `kuniezu/static/kuniezu/map/build/previews/` (`control.png` contro
 administrative divisions, `rivers.png` rivers, `height.png` elevation). Open
 these to check the map by eye.
 
-After generating, serve `kuniezu/static/kuniezu/` as static files and open `index.html` in a
-browser. The Django development server shows the same page (`uv sync --locked`,
-then `uv run python manage.py runserver 8000`; needs Python 3.14 and uv), and
-`uv run python scripts/build_static.py` writes the public static files to
-`dist/client/`. The layout is being aligned with the Django structure of the
+After generating, start the Django development server and open
+`http://localhost:8000/index.html` in a browser (`uv sync --locked`, then
+`uv run python manage.py runserver 8000`; needs Python 3.14 and uv). The page is
+a Django template, so serving only `kuniezu/static/kuniezu/` as static files no
+longer works. `uv run python scripts/build_static.py` writes the public static
+files to `dist/client/`, which can be served as plain static files. The layout is being aligned with the Django structure of the
 website project (`docs/structure.md`, `docs/architecture/replatform-plan.md`). The map on screen is turned 16° counter-clockwise after the Meiji-era
 "Dai Nippon Zenzu"; "Map orientation" in the display settings restores north-up
 (`docs/reports/MAP_ORIENTATION.md`).

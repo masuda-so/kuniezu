@@ -2,6 +2,8 @@
 
 サーバーの起動・停止はユーザーのみ。ブラウザ検証は既存8000番へ専用の一時Chromeで接続し、普段のプロフィール・保存を使わない。負荷測定は他のブラウザ検証と同時実行しない。
 
+ページは Django のテンプレート（`kuniezu/templates/index.html`）なので、8000 番は Django の開発サーバーか `dist/client/` の配信を指す。ページをディスクから読む検査は `tools/build/game-page.cjs` で描く。`hachirogata-water-browser.cjs` と `katori-water-browser.cjs` は、`GAME_URL` を指定しなければサーバーなしで一時ファイルを開く。
+
 地図の配信物（`kuniezu/static/kuniezu/map/build/` の生成物）は Git で追跡しない。取得後と、地図の正本や差分を変えた後は、検査の前に `node tools/map/build-map.cjs` で作る（CI も同じ）。
 
 コマンドはプロジェクト直下で実行する。ブラウザ検査は `GAME_URL`、`GAME_TEST_OUTPUT`、`CHROME_PATH` を指定可能。毎回の成果は `data/verification/担当名-対象名/` に保存し、別担当の結果を上書きしない。コミットするのは結果の要約（README.md）だけで、画像・動画は PR に添付する（`.gitignore` 済み）。

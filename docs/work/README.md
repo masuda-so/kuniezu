@@ -36,7 +36,7 @@ node tools/work/tasks.cjs release 対象ID --owner 担当名
 node tools/work/tasks.cjs complete 対象ID --owner 担当名 --evidence docs/reports/成果.md,data/verification/成果/検証.json --checks "対象の全完了条件を確認"
 ```
 
-担当は `claims/`、完了結果は `state/` の対象別ファイルへ保存する。別担当の記録を上書きしない。期限だけで担当を勝手に解放しない。共通の `kuniezu/static/kuniezu/index.html`、`engine.js`、`ui.js`、史料出力処理は特に調整が必要。
+担当は `claims/`、完了結果は `state/` の対象別ファイルへ保存する。別担当の記録を上書きしない。期限だけで担当を勝手に解放しない。共通の `kuniezu/templates/index.html`、`engine.js`、`ui.js`、史料出力処理は特に調整が必要。
 
 ## 完了の基準
 

@@ -8,8 +8,7 @@ BASE_DIR = Path(__file__).resolve(strict=True).parent.parent.parent
 # kuniezu/
 APPS_DIR = BASE_DIR / "kuniezu"
 # The game's source files, served under /static/kuniezu/ as the app's static
-# files. index.html still sits among them until it becomes a Django template
-# (docs/architecture/replatform-plan.md, stage 1b).
+# files. The page itself is the template kuniezu/templates/index.html.
 GAME_DIR = APPS_DIR / "static" / "kuniezu"
 env = environ.Env()
 
