@@ -29,6 +29,7 @@
 |---|---|
 | `kuniezu/static/kuniezu/` | ブラウザへ配信するゲームと同梱素材 |
 | `kuniezu/templates/` | ゲームのページ `index.html`（Django のテンプレート）。スクリプトの読込順はここで決まる |
+| `kuniezu/history/` | 史実の関係データベース（Django のアプリ）。対象・事象・出典と、取り込み・検索 |
 | `docs/architecture/` | 構成、ファイルの移動記録、依存順 |
 | `docs/work/` | 残要望、完了条件、対象別作業一覧、担当と成果の記録 |
 | `docs/reports/` | 調査・修正・実画面確認の報告書 |
@@ -59,6 +60,8 @@ node tools/map/build-map.cjs --height --python /path/to/python3
 正本の PNG は大きすぎて VS Code などでは開けないので、生成の最後に、層ごとの 1/4 の縮小版（経緯度の目盛り付き）を `kuniezu/static/kuniezu/map/build/previews/` に作ります（`control.png` 支配、`admin.png` 行政区分、`rivers.png` 川、`height.png` 標高）。目で確かめるときはこちらを開いてください。
 
 生成後は Django の開発サーバーを起動し、ブラウザで `http://localhost:8000/index.html` を開きます（`uv sync --locked` の後 `uv run python manage.py runserver 8000`。Python 3.14 と uv が必要）。ページは Django のテンプレートなので、`kuniezu/static/kuniezu/` だけを静的ファイルとして配信しても開けません。`uv run python scripts/build_static.py` は公開用の静的ファイルを `dist/client/` に書き出し、こちらは静的ファイルとして配信すれば開けます。構成は website と同じ Django の並びへ揃える途中です（`docs/structure.md`、`docs/architecture/replatform-plan.md`）。画面の地図は北が上です。表示設定の「地図の向き」で、明治「大日本全図」に合わせた向き（北を左へ 16 度）などに回せます（`docs/reports/MAP_ORIENTATION.md`）。
+
+史実の関係データベースは、`uv run python manage.py migrate` の後 `uv run python manage.py import_history` で、`data/research/` と `docs/work/` の入力から根の `db.sqlite3` に作ります（Git には入れません）。`uv run python manage.py history_query --about 織田信長 --year 1582` のように、対象・年・経緯度の範囲で引けます。入っているのは今ある入力の全件で、出典で確認済みのものと、実装の棚卸し（未照合）を区別して持ちます（`docs/architecture/history-rdb.md`）。
 
 サーバーの起動・停止は利用者が行います。検証は起動済み `http://localhost:8000/index.html` に接続します。検査結果の保存先は `GAME_TEST_OUTPUT` で指定できます。
 
