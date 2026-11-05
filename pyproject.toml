@@ -118,6 +118,8 @@ lint.ignore = [
   "S101",   # Use of assert detected https://docs.astral.sh/ruff/rules/assert/
   "SIM102", # sometimes it's better to nest
 ]
+# Labels shown to people are Japanese and use full-width brackets.
+lint.allowed-confusables = [ "（", "）" ]
 lint.isort.force-single-line = true
 
 # ==== pyproject-fmt ====
