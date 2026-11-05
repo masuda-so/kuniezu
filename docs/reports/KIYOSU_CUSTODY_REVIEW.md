@@ -63,3 +63,5 @@
 Django 移行後の main f80286c を取り込み、出力を再生成した。108記録・272件のJS/SQL検索比較が合格。
 [書誌・確認箇所と採用範囲](../../data/research/source-notes/sanboshi-custody.md)と
 [構造化した読書ノート](../../data/research/source-notes/sanboshi-custody.json)を参照。
+
+現行のDjango史実DBで、三法師の岐阜預かりを1582・1583年の通常検索で拾い、範囲が史料に明記された記録に限る `asserted_only=True` の検索からは除くことを確認した。同じ1583年の厳密検索で、旧暦天正10年12月21日の受取・列席文書は返る。友利の建物と都於郡の城の役割でも、時期呼称による検索範囲と確認済みの始終を区別できた。
