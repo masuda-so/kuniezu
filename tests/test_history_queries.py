@@ -164,6 +164,9 @@ def test_the_query_command_prints_json(world, capsys):
     assert [row["key"] for row in answer] == ["a-osaka"]
     assert answer[0]["western"] == [[1600, 7, 26], [1600, 7, 26]]
     assert answer[0]["place"] == "大坂"
+    # The point is the place's representative point, with how it was obtained.
+    assert answer[0]["placePoint"] == list(OSAKA)
+    assert answer[0]["placeBasis"] == "test"
 
     call_command("history_query", legs="旅人")
 
