@@ -55,3 +55,5 @@ Codex 担当の入力（十三湊の発掘で確認した飛砂の堆積、PR #5
 - `history_query` の出力に、場所の代表点 `placePoint` と、その根拠 `placeBasis` を出す。範囲検索は場所の代表点で当たるので、発掘地点そのものと読まれないようにする。
 
 試験は `tests/test_history_import.py`（述語の分類）と `tests/test_history_queries.py`（出力）。
+- 清洲会議の入力（PR #40）の述語 `described-custody`（移動・所在）、`person-name-identity`（名称）、`document-reports-receipt-and-attendance`（文書）を分類に足す。
+- 分類の表に無い述語が入力に入っても、試験は落ちないようにした。その事象は「その他」に入り、取り込みの結果（`unclassified`）に述語ごとの件数が出る。分類の表に足すまでの間、何も失われない。

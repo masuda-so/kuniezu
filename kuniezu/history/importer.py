@@ -102,7 +102,7 @@ CLAIM_KIND = {
         "departure adopted-departure-date headquarters-move passes-through "
         "residence residence-transfer residence-after-succession "
         "principal-residence stationed site-relocation relative-position "
-        "military-civilian-withdrawal route-change"
+        "military-civilian-withdrawal route-change described-custody"
     ),
     PhenomenonKind.CONFLICT: (
         "siege-and-field-battle documented-siege-phase military-event castle-fall "
@@ -119,7 +119,7 @@ CLAIM_KIND = {
     PhenomenonKind.OFFICE: (
         "central-office military-role military-religious-role historical-castle-role"
     ),
-    PhenomenonKind.NAMING: "renamed same-person-alias",
+    PhenomenonKind.NAMING: "renamed same-person-alias person-name-identity",
     PhenomenonKind.WORKS: (
         "castle-construction construction-year rebuilt road-improvement "
         "land-development-period archaeological-building-observation "
@@ -131,7 +131,7 @@ CLAIM_KIND = {
     ),
     PhenomenonKind.DOCUMENT: (
         "administrative-document grant-order new-field-development-order "
-        "reclamation-permission"
+        "reclamation-permission document-reports-receipt-and-attendance"
     ),
     PhenomenonKind.NATURE: "windblown-sand-deposition",
 }
