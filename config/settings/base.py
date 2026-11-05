@@ -33,7 +33,8 @@ USE_TZ = True
 # DATABASES
 # ------------------------------------------------------------------------------
 # https://docs.djangoproject.com/en/dev/ref/settings/#databases
-# No model uses the database yet. Stage 5 puts the history database here.
+# The history database (kuniezu.history). It is filled from the inputs in
+# data/research/ and docs/work/ by ``manage.py import_history``.
 DATABASES = {
     "default": env.db(
         "DATABASE_URL",
@@ -57,6 +58,7 @@ DJANGO_APPS = [
 ]
 LOCAL_APPS = [
     "kuniezu",
+    "kuniezu.history",
 ]
 # https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
 INSTALLED_APPS = DJANGO_APPS + LOCAL_APPS
