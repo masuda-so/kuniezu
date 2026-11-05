@@ -1,0 +1,38 @@
+{
+  "id": "death-date-toyotomi-hidetsugu",
+  "entity": "person:豊臣秀次",
+  "predicate": "death-date",
+  "value": "秀吉が福島正則・福原直高・池田秀氏を高野山へ遣わし、秀次を自害させた。",
+  "validYears": [
+    1595,
+    1595
+  ],
+  "datePrecision": "day",
+  "source": "hiDainihonshiryoKobun",
+  "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+  "locator": "綱文：和暦 文禄4年7月15日 第2条（区分 史料綜覧、編11・冊913（データベースの表示値）、93頁）",
+  "gameBindings": [
+    "TK.HIST:秀次事件"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-05",
+  "uncertainty": "綱文は秀吉が自害させたと記す。自害に至る経緯の諸説は、この綱文だけでは判断しない。 綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。",
+  "linkedEntities": [
+    "person:豊臣秀次",
+    "person:toyotomi-hideyoshi"
+  ],
+  "eventTime": {
+    "kind": "dated-event",
+    "date": [
+      1595,
+      7,
+      15
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": false,
+    "precision": "day"
+  },
+  "eventRelation": "death",
+  "eventScope": "綱文が掲げる死去の日付と、綱文に書かれた相手・場所。ゲームの年表の日付（旧暦をゲームの暦表で西暦に直した日）と一致することを確かめた。死因・享年・時刻・精密な位置は補わない。"
+}
