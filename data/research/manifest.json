@@ -1,5 +1,5 @@
 {
-  "date": "2026-11-04",
+  "date": "2026-11-05",
   "version": 4,
   "curatedInputs": "curated/{claims,sources,people,places,locations}/*.json",
   "scope": "日本・朝鮮・明の全施設・人物の網羅を証明するものではない。既存登録と確認済み史実命題を分離。",
@@ -16,7 +16,7 @@
   "files": [
     {
       "file": "claims.jsonl",
-      "sha256": "f0561facb6a0eff22d94e591bb4e1013b55d777b44fb38b11eda7510f75e97d1"
+      "sha256": "dcc7237368e8224595262df467b1b93a29594d098bb47ba6ad451c076f1d6eed"
     },
     {
       "file": "implemented-events.jsonl",
@@ -40,11 +40,11 @@
     },
     {
       "file": "places.jsonl",
-      "sha256": "98f5461430c3d175fb2c3650833bfe1b3b3fd44b02beb62861270e30f7ddf99d"
+      "sha256": "c6c52edca9ec40a65683b4d7fe533aae26164ce5f07377b5c8c0c504273c6dcc"
     },
     {
       "file": "sources.jsonl",
-      "sha256": "d9b2fd4e8ca72494d70ecf5196488b8a57c94afa97a9ec3fb092284b7996d699"
+      "sha256": "71dae55682a414ab70f7a7e8ddb9d2bbce2b55f45a45e86ff4c2651b694857ea"
     }
   ]
 }

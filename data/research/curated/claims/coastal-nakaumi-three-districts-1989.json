@@ -1,0 +1,44 @@
+{
+  "id": "coastal-nakaumi-three-districts-1989",
+  "entity": "place:nakaumi",
+  "predicate": "reclamation-district-completion",
+  "value": {
+    "statement": "島根県は揖屋・安来・弓浜の3地区の干拓事業完了を平成元年3月と記す。",
+    "sourceTime": {
+      "label": "平成元年3月",
+      "calendar": "Gregorian-era-name",
+      "precision": "month",
+      "year": 1989,
+      "month": 3
+    }
+  },
+  "validYears": [
+    1989,
+    1989
+  ],
+  "datePrecision": "month",
+  "eventTime": {
+    "kind": "year-window",
+    "calendar": "CE-year",
+    "precision": "year",
+    "year": 1989
+  },
+  "linkedEntities": [
+    "place:nakaumi"
+  ],
+  "eventRelation": "reclamation-district-completion",
+  "eventScope": "年単位の検索用。原暦・元の精度はvalue.sourceTimeへ保持。完成対象は記名された3地区。月は保持するが日を補わず、地区境界・現湖岸を登録していない。",
+  "source": "coastal-nakaumi-shimane",
+  "sourceUrl": "https://www1.pref.shimane.lg.jp/industry/norin/seibi/kokuei/kokueinouchiuridashityuu.html",
+  "locator": "「国営中海土地改良事業」第2段落／揖屋・安来・弓浜の完了",
+  "checked": "2026-11-04",
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "gameBindings": [
+    "kuniezu/static/kuniezu/map/control/provinces.png"
+  ],
+  "bindingScope": "地形の年代比較・監査の参照先。正本・ゲームイベントへの変更は未適用。",
+  "uncertainty": "完成対象は記名された3地区。月は保持するが日を補わず、地区境界・現湖岸を登録していない。 精密輪郭・座標は採用していない。",
+  "review": "data/research/source-notes/coastal-period-review/adoption.json",
+  "reviewInputId": "nakaumi-modern-four-districts"
+}

@@ -1,0 +1,47 @@
+{
+  "id": "coastal-hibiya-earthwork-1592",
+  "entity": "place:hibiya-inlet",
+  "predicate": "reclamation-stage",
+  "value": {
+    "statement": "港区教育史は、江戸城の堀割工事の残土を日比谷入江へ投入した時期を文禄元年とする。",
+    "sourceTime": {
+      "label": "文禄元年（1592）",
+      "calendar": "Japanese-lunisolar",
+      "precision": "year",
+      "year": 1592
+    }
+  },
+  "validYears": [
+    1592,
+    1592
+  ],
+  "datePrecision": "year",
+  "eventTime": {
+    "kind": "year-window",
+    "calendar": "CE-year",
+    "precision": "year",
+    "year": 1592
+  },
+  "linkedEntities": [
+    "place:hibiya-inlet",
+    "place:edo"
+  ],
+  "eventRelation": "reclamation-stage",
+  "eventScope": "年単位の検索用。原暦・元の精度はvalue.sourceTimeへ保持。この年に全入江が消失したことや埋立完了日を示さない。",
+  "source": "coastal-tokyo-minato-history",
+  "sourceUrl": "https://adeac.jp/minato-city-kyouiku/texthtml/d100010/mp100010/ht100120",
+  "locator": "自然的立地（掲載頁12–19）／「文禄元年（1592）」を記す堀割残土の段落",
+  "checked": "2026-11-04",
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "gameBindings": [
+    "kuniezu/static/kuniezu/map/control/provinces.png"
+  ],
+  "bindingScope": "地形の年代比較・監査の参照先。正本・ゲームイベントへの変更は未適用。",
+  "uncertainty": "この年に全入江が消失したことや埋立完了日を示さない。 精密輪郭・座標は採用していない。",
+  "review": "data/research/source-notes/coastal-period-review/adoption.json",
+  "reviewInputId": "tokyo-hibiya-1592-1603",
+  "corroboratingSources": [
+    "coastal-tokyo-ndl-hibiya"
+  ]
+}

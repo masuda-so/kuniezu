@@ -1,0 +1,43 @@
+{
+  "id": "coastal-nakaumi-start-1963",
+  "entity": "place:nakaumi",
+  "predicate": "land-improvement-commencement",
+  "value": {
+    "statement": "島根県は、干拓と淡水化による農業用水確保を目的とした国営中海土地改良事業の着工を昭和38年と記す。",
+    "sourceTime": {
+      "label": "昭和38年",
+      "calendar": "Gregorian-era-name",
+      "precision": "year",
+      "year": 1963
+    }
+  },
+  "validYears": [
+    1963,
+    1963
+  ],
+  "datePrecision": "year",
+  "eventTime": {
+    "kind": "year-window",
+    "calendar": "CE-year",
+    "precision": "year",
+    "year": 1963
+  },
+  "linkedEntities": [
+    "place:nakaumi"
+  ],
+  "eventRelation": "land-improvement-commencement",
+  "eventScope": "年単位の検索用。原暦・元の精度はvalue.sourceTimeへ保持。当初計画2230haを完成干陸面積として使わない。",
+  "source": "coastal-nakaumi-shimane",
+  "sourceUrl": "https://www1.pref.shimane.lg.jp/industry/norin/seibi/kokuei/kokueinouchiuridashityuu.html",
+  "locator": "「国営中海土地改良事業」第1段落／着工年",
+  "checked": "2026-11-04",
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "gameBindings": [
+    "kuniezu/static/kuniezu/map/control/provinces.png"
+  ],
+  "bindingScope": "地形の年代比較・監査の参照先。正本・ゲームイベントへの変更は未適用。",
+  "uncertainty": "当初計画2230haを完成干陸面積として使わない。 精密輪郭・座標は採用していない。",
+  "review": "data/research/source-notes/coastal-period-review/adoption.json",
+  "reviewInputId": "nakaumi-modern-four-districts"
+}

@@ -1,0 +1,43 @@
+{
+  "id": "coastal-tsugaru-new-field-order-1620",
+  "entity": "place:tsugaru-plain",
+  "predicate": "new-field-development-order",
+  "value": {
+    "statement": "東北農政局は、津軽地方の新田開発が1620年の新田開発令で本格化したと説明する。",
+    "sourceTime": {
+      "label": "1620年「新田開発令」",
+      "calendar": "CE-year-label",
+      "precision": "year",
+      "year": 1620
+    }
+  },
+  "validYears": [
+    1620,
+    1620
+  ],
+  "datePrecision": "year",
+  "eventTime": {
+    "kind": "year-window",
+    "calendar": "CE-year",
+    "precision": "year",
+    "year": 1620
+  },
+  "linkedEntities": [
+    "place:tsugaru-plain"
+  ],
+  "eventRelation": "new-field-development-order",
+  "eventScope": "年単位の検索用。原暦・元の精度はvalue.sourceTimeへ保持。対象は津軽地方の広域的開発であって十三湖の一斉干拓ではない。",
+  "source": "coastal-jusan-maff-history",
+  "sourceUrl": "https://www.maff.go.jp/tohoku/nouson/kokuei/tugaruhokubu/chiikinorekishi.html",
+  "locator": "「新田開発の歴史」第2段落",
+  "checked": "2026-11-04",
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "gameBindings": [
+    "kuniezu/static/kuniezu/map/control/provinces.png"
+  ],
+  "bindingScope": "地形の年代比較・監査の参照先。正本・ゲームイベントへの変更は未適用。",
+  "uncertainty": "対象は津軽地方の広域的開発であって十三湖の一斉干拓ではない。 精密輪郭・座標は採用していない。",
+  "review": "data/research/source-notes/coastal-period-review/adoption.json",
+  "reviewInputId": "jusan-modern-reclamation"
+}
