@@ -335,7 +335,7 @@ function paintBase(c,pad=0){LANDV=landFor(cam.z);rasterLand=null;
   // 陸だけの層 L に下地の色を塗り、陰影と領主の色を「陸の上だけ」に重ね、最後に海の模様の上へ貼る。
   const L=landLayer(c);L.setTransform(c.getTransform());
   const landRGB=flat?[251,250,246,255]:[236,226,198,255],lakeRGB=flat?[170,196,223,255]:[167,209,223,255];
-  const M=landLayer(c,1);M.setTransform(c.getTransform());TKRaster.paint(M,[x0,y0,x1,y1],z,DPR,d=>d.kind==='sea'?null:landRGB,'land|'+flat);rasterLand={base:c.canvas,canvas:M.canvas};
+  const M=landLayer(c,1);M.setTransform(c.getTransform());TKRaster.paint(M,[x0,y0,x1,y1],z,DPR,d=>d.kind==='sea'?null:landRGB,'land-mask|'+flat);rasterLand={base:c.canvas,canvas:M.canvas};
   TKRaster.paint(L,[x0,y0,x1,y1],z,DPR,d=>d.kind==='sea'?null:d.kind==='lake'?lakeRGB:landRGB,'land|'+flat);
   L.globalCompositeOperation='source-atop';
   if(!flat&&window.TKRelief?.ready()){L.save();L.globalAlpha=1;TKRelief.paint(L,[x0,y0,x1,y1],z,DPR);L.restore();
