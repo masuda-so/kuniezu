@@ -56,8 +56,10 @@ window.TKTerrain=(function(){
   else{t.error=true;failed++;}running--;settled();pump();}
  function cancel(t){const r=t.request;if(!r)return;if(r.job){jobs.delete(r.job);worker?.postMessage({cancel:r.job});}else{r.onload=r.onerror=null;r.src='';}}
  const tileUrl=t=>t.provider==='gsi'?`https://cyberjapandata.gsi.go.jp/xyz/dem_png/${t.z}/${t.x}/${t.y}.png`:t.z===6&&t.x>=53&&t.x<=58&&t.y>=23&&t.y<=27?`terrain/overview/6-${t.x}-${t.y}.png`:`https://s3.amazonaws.com/elevation-tiles-prod/terrarium/${t.z}/${t.x}/${t.y}.png`;
+ // Worker へ渡す絶対 URL は、ページの base 要素（Django の配信では /static/kuniezu/）に合わせて解決する。base が無ければページの URL
+ const pageBase=()=>typeof document!=='undefined'&&document.baseURI||location.href;
  function pump(){while(running<6&&pending.length){const t=pending.shift();running++;t.started=clock();
-  const w=tileWorker();if(w){const id=++jobSeq;jobs.set(id,t);t.request={job:id};active.add(t);w.postMessage({id,url:new URL(tileUrl(t),location.href).href,t:{provider:t.provider,z:t.z,x:t.x,y:t.y}});continue;}
+  const w=tileWorker();if(w){const id=++jobSeq;jobs.set(id,t);t.request={job:id};active.add(t);w.postMessage({id,url:new URL(tileUrl(t),pageBase()).href,t:{provider:t.provider,z:t.z,x:t.x,y:t.y}});continue;}
   const im=new Image();im.crossOrigin='anonymous';t.request=im;active.add(t);
   im.onload=()=>{if(!active.delete(t))return;try{const arrived=clock();t.im=project(shade(im,t),t);timings.push({provider:t.provider,z:t.z,x:t.x,y:t.y,loadMs:arrived-t.started,processMs:clock()-arrived});if(timings.length>80)timings.shift();t.ready=true;loaded++;}catch(e){t.error=true;failed++;}running--;settled();pump();};
   im.onerror=()=>{if(!active.delete(t))return;t.error=true;failed++;running--;settled();pump();};

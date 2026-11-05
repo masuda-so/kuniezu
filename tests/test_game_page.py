@@ -34,6 +34,18 @@ def test_page_is_the_game_index_with_a_base_element(game_dir):
     assert '<script src="data.js?v=1"></script>' in html
 
 
+def test_the_traditional_entry_point_serves_the_same_page(game_dir):
+    (game_dir / "index.html").write_text(
+        "<!doctype html><html><head></head><body></body></html>",
+        encoding="utf-8",
+    )
+
+    client = Client()
+
+    assert client.get("/index.html").status_code == HTTPStatus.OK
+    assert client.get("/index.html").content == client.get("/").content
+
+
 def test_real_game_index_has_exactly_one_head(settings):
     html = game_page_html()
 

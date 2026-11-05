@@ -68,6 +68,7 @@ def build(dist: Path = DIST) -> Path:
     if response.status_code != HTTPStatus.OK:
         message = f"Page render failed for /: HTTP {response.status_code}"
         raise RuntimeError(message)
+    # Static hosts serve this one file for both / and /index.html.
     (client_dir / "index.html").write_bytes(response.content)
 
     static_url = settings.STATIC_URL.strip("/")
