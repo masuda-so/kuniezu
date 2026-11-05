@@ -17,3 +17,12 @@ node_modules/
 
 # 検証の比較ページ（画像を埋め込むので Git に入れない）
 data/verification/**/*.html
+
+# Django・uv の骨組み（docs/architecture/replatform-plan.md 段 1）
+.venv/
+/dist/
+/staticfiles/
+/db.sqlite3
+.ruff_cache/
+.mypy_cache/
+.pytest_cache/

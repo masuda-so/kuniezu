@@ -91,7 +91,11 @@ administrative divisions, `rivers.png` rivers, `height.png` elevation). Open
 these to check the map by eye.
 
 After generating, serve `game/` as static files and open `index.html` in a
-browser. The map on screen is turned 16° counter-clockwise after the Meiji-era
+browser. The Django development server shows the same page (`uv sync --locked`,
+then `uv run python manage.py runserver 8000`; needs Python 3.14 and uv), and
+`uv run python scripts/build_static.py` writes the public static files to
+`dist/client/`. The layout is being aligned with the Django structure of the
+website project (`docs/structure.md`, `docs/architecture/replatform-plan.md`). The map on screen is turned 16° counter-clockwise after the Meiji-era
 "Dai Nippon Zenzu"; "Map orientation" in the display settings restores north-up
 (`docs/reports/MAP_ORIENTATION.md`).
 
