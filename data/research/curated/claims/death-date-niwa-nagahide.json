@@ -1,0 +1,37 @@
+{
+  "id": "death-date-niwa-nagahide",
+  "entity": "person:丹羽長秀",
+  "predicate": "death-date",
+  "value": "越前北荘の惟住（丹羽）長秀が死去し、子の長重が家督を継いだ。",
+  "validYears": [
+    1585,
+    1585
+  ],
+  "datePrecision": "day",
+  "source": "hiDainihonshiryoKobun",
+  "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+  "locator": "綱文：和暦 天正13年4月16日 第2条（区分 大日本史料、第11編之14、420頁）",
+  "gameBindings": [
+    "TK.HIST:丹羽長秀死去"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-05",
+  "uncertainty": "死因は補わない。 綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。",
+  "linkedEntities": [
+    "person:丹羽長秀"
+  ],
+  "eventTime": {
+    "kind": "dated-event",
+    "date": [
+      1585,
+      4,
+      16
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": false,
+    "precision": "day"
+  },
+  "eventRelation": "death",
+  "eventScope": "綱文が掲げる死去の日付と、綱文に書かれた相手・場所。ゲームの年表の日付（旧暦をゲームの暦表で西暦に直した日）と一致することを確かめた。死因・享年・時刻・精密な位置は補わない。"
+}
