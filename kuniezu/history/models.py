@@ -55,6 +55,7 @@ class RecordType(models.TextChoices):
     PLACE = "place", "場所の登録"
     IMPLEMENTED_EVENT = "implemented-event", "年表の実装"
     IMPLEMENTED_SITE = "implemented-site", "拠点の実装"
+    IDENTITY = "identity", "対象の同一性"
     CATALOG = "catalog", "作業台帳の対象"
 
 
@@ -155,6 +156,20 @@ class Thing(models.Model):
         return self.name
 
 
+class ThingKey(models.Model):
+    """An identifier a thing is known by.
+
+    A thing has its own key, and the keys of the inputs that an identity record
+    showed to be the same thing.
+    """
+
+    thing = models.ForeignKey(Thing, on_delete=models.CASCADE, related_name="keys")
+    key = models.CharField(max_length=300, unique=True)
+
+    def __str__(self) -> str:
+        return self.key
+
+
 class ThingName(models.Model):
     """A name a thing goes by."""
 
@@ -196,7 +211,9 @@ class Place(models.Model):
     thing = models.OneToOneField(Thing, on_delete=models.CASCADE, related_name="place")
     longitude = models.FloatField()
     latitude = models.FloatField()
-    # How the point was obtained (a surveyed site point, a game position, ...).
+    # How the point was obtained: ``site-representative`` (a sourced point of the
+    # site), ``game-position`` (where the game puts it), ``borrowed-from-namesake``
+    # or ``represented-by-game-site`` (the point of another thing, see the importer).
     basis = models.CharField(max_length=60)
 
     class Meta:

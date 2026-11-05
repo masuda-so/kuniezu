@@ -36,6 +36,7 @@ from kuniezu.history.models import Role
 from kuniezu.history.models import Source
 from kuniezu.history.models import Status
 from kuniezu.history.models import Thing
+from kuniezu.history.models import ThingKey
 from kuniezu.history.models import ThingKind
 from kuniezu.history.models import ThingName
 
@@ -46,6 +47,7 @@ Json = dict[str, Any]
 
 RESEARCH = "data/research"
 CATALOG = "docs/work/catalog.jsonl"
+IDENTITIES = "data/research/curated/identities"
 MONTH_TABLE = "kuniezu/static/kuniezu/koyomi.js"
 TITLE_LENGTH = 80
 
@@ -66,6 +68,12 @@ THING_PREFIX = {
     "region": ThingKind.REGION,
 }
 PHENOMENON_PREFIX = ("battle", "campaign")
+
+# An identity record says how two identifiers relate.
+PAIR = 2
+SAME = "same-site"  # one thing under two identifiers
+REPRESENTED = "represented-by"  # the game's site stands for a registry place
+IDENTITY_FIELDS = ("id", "relation", "things", "basis", "source", "locator", "checked")
 
 # What each word of the inputs is about. A word that is missing here is counted
 # as ``other`` and shows up in the import summary.
@@ -165,6 +173,8 @@ class Summary:
     records: dict[str, int] = field(default_factory=dict)
     new_versions: int = 0
     borrowed_points: int = 0
+    merged_things: int = 0
+    represented_points: int = 0
     retired: int = 0
     things: dict[str, int] = field(default_factory=dict)
     phenomena: dict[str, int] = field(default_factory=dict)
@@ -177,6 +187,8 @@ class Summary:
             "retired": self.retired,
             "things": self.things,
             "borrowed_points": self.borrowed_points,
+            "merged_things": self.merged_things,
+            "represented_points": self.represented_points,
             "phenomena": self.phenomena,
             "unclassified": self.unclassified,
         }
@@ -218,6 +230,12 @@ class Importer:
         self.sources: dict[str, Source] = {}
         self.things: dict[str, Thing] = {}
         self.by_name: dict[tuple[str, str], list[Thing]] = {}
+        # From identity records: an identifier and the one it is the same as,
+        # a registry place and the game site that stands for it, and the
+        # records to attach to the things they name.
+        self.same: dict[str, str] = {}
+        self.represented: dict[str, str] = {}
+        self.identity_records: dict[str, list[Record]] = {}
         self.phenomena: dict[str, Phenomenon] = {}
         self.by_title: dict[str, list[Phenomenon]] = {}
         self.timeline: dict[tuple[str, str, str], list[Phenomenon]] = {}
@@ -285,6 +303,7 @@ class Importer:
         registered: bool = False,
         names: tuple[str, ...] = (),
     ) -> Thing:
+        given, key = key, self.same.get(key, key)
         thing = self.things.get(key)
         if thing is None:
             thing = Thing.objects.create(
@@ -297,6 +316,14 @@ class Importer:
             thing.name = name
             thing.save(update_fields=["registered", "name"])
         thing.records.add(record)
+        for known_as in dict.fromkeys((key, given)):
+            _, added = ThingKey.objects.get_or_create(
+                key=known_as, defaults={"thing": thing}
+            )
+            if added and known_as != key:
+                self.summary.merged_things += 1
+        for identity in self.identity_records.get(given, []):
+            thing.records.add(identity)
         for label in dict.fromkeys((name, *names)):
             _, created = ThingName.objects.get_or_create(thing=thing, name=label)
             if created:
@@ -309,8 +336,8 @@ class Importer:
         kind = THING_PREFIX.get(prefix)
         if kind is None:
             return None
-        known = self.things.get(identifier)
-        if known is None:
+        known = self.things.get(self.same.get(identifier, identifier))
+        if known is None and identifier not in self.same:
             # A record may name a registered thing by one of its names.
             same = self.by_name.get((kind, name), [])
             if len(same) == 1:
@@ -470,6 +497,36 @@ class Importer:
                     "payload": row,
                 },
             )
+
+    def load_identities(self) -> None:
+        """Read which identifiers name one thing, before any thing is made."""
+        folder = self.root / IDENTITIES
+        for path in sorted(folder.glob("*.json")) if folder.is_dir() else []:
+            row = json.loads(path.read_text(encoding="utf-8"))
+            lacking = [name for name in IDENTITY_FIELDS if not row.get(name)]
+            things = row.get("things") or []
+            if (
+                lacking
+                or len(things) != PAIR
+                or row["relation"] not in (SAME, REPRESENTED)
+            ):
+                message = f"{path.name}: an identity needs {', '.join(IDENTITY_FIELDS)}"
+                raise ValueError(message)
+            if row["source"] not in self.sources:
+                message = f"{path.name}: unknown source {row['source']}"
+                raise ValueError(message)
+            record = self.record(row["id"], RecordType.IDENTITY, Status.VERIFIED, row)
+            kept, other = things
+            if kept in self.same or other in self.same or other in self.same.values():
+                message = f"{path.name}: {other} is already part of another identity"
+                raise ValueError(message)
+            if row["relation"] == SAME:
+                self.same[other] = kept
+                for key in things:
+                    self.identity_records.setdefault(key, []).append(record)
+            else:
+                self.represented[kept] = other
+                self.identity_records.setdefault(kept, []).append(record)
 
     def load_registry(self) -> None:
         for row in read_jsonl(self.root / RESEARCH / "people.jsonl"):
@@ -794,6 +851,49 @@ class Importer:
                     located[thing.pk] = point
                     self.summary.borrowed_points += 1
 
+    def represent_points(self) -> None:
+        """Give a registry place the point of the game site that stands for it.
+
+        Only a place without a point of its own takes one; a sourced point is
+        never replaced. The basis keeps the two apart.
+        """
+        located = {
+            thing_id: (longitude, latitude)
+            for thing_id, longitude, latitude in Place.objects.values_list(
+                "thing_id", "longitude", "latitude"
+            )
+        }
+        for place_key, site_key in self.represented.items():
+            place = self.things.get(self.same.get(place_key, place_key))
+            site = self.things.get(self.same.get(site_key, site_key))
+            if place is None or site is None:
+                message = (
+                    f"identity names a thing no input has: {place_key}, {site_key}"
+                )
+                raise ValueError(message)
+            for identity in self.identity_records.get(place_key, []):
+                place.records.add(identity)
+                site.records.add(identity)
+            if place.pk not in located and site.pk in located:
+                point = located[site.pk]
+                Place.objects.create(
+                    thing=place,
+                    longitude=point[0],
+                    latitude=point[1],
+                    basis="represented-by-game-site",
+                )
+                located[place.pk] = point
+                self.summary.represented_points += 1
+        missing = [key for key in self.same if key not in self.seen_keys()]
+        if missing:
+            message = (
+                f"identity names a thing no input has: {', '.join(sorted(missing))}"
+            )
+            raise ValueError(message)
+
+    def seen_keys(self) -> set[str]:
+        return set(ThingKey.objects.values_list("key", flat=True))
+
     # ---- one import ----
 
     @transaction.atomic
@@ -804,6 +904,7 @@ class Importer:
         Phenomenon.objects.all().delete()
         Thing.objects.all().delete()
         self.load_sources()
+        self.load_identities()
         self.load_registry()
         self.load_sites()
         self.load_timeline()
@@ -811,6 +912,7 @@ class Importer:
         self.load_claims()
         self.load_locations()
         self.borrow_points()
+        self.represent_points()
         self.retire_missing()
         self.run.counts = self.summary.as_json()
         self.run.save(update_fields=["counts"])

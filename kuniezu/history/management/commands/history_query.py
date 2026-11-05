@@ -47,7 +47,9 @@ class Command(BaseCommand):
     help = "史実データベースを、対象・年・範囲・軌跡で引く"
 
     def add_arguments(self, parser: CommandParser) -> None:
-        parser.add_argument("--about", help="対象の名前（人物は改名前後のどの名でも）")
+        parser.add_argument(
+            "--about", help="対象の名前（人物は改名前後のどの名でも）か、対象のキー"
+        )
         parser.add_argument("--year", type=int, help="西暦の年")
         parser.add_argument(
             "--box", type=float, nargs=4, metavar=("WEST", "EAST", "SOUTH", "NORTH")
@@ -59,7 +61,15 @@ class Command(BaseCommand):
     def thing(self, name: str) -> Thing:
         found = list(queries.find_things(name))
         if len(found) != 1:
-            message = f"「{name}」に当たる対象が {len(found)} 件"
+            # Several things share the name: list them so one can be picked by key.
+            listed = "".join(
+                f"\n  {thing.key} [{thing.get_kind_display()}] {thing.name} "
+                f"(point: {getattr(getattr(thing, 'place', None), 'basis', 'none')})"
+                for thing in found
+            )
+            message = (
+                f"「{name}」に当たる対象が {len(found)} 件。キーで指定する{listed}"
+            )
             raise CommandError(message)
         return found[0]
 
