@@ -15,6 +15,7 @@ from itertools import pairwise
 from typing import TYPE_CHECKING
 
 from django.db.models import Count
+from django.db.models import Q
 
 from kuniezu.history import dates
 from kuniezu.history.models import Phenomenon
@@ -42,15 +43,39 @@ def about(thing: Thing) -> QuerySet[Phenomenon]:
     )
 
 
-def during(jd_start: int, jd_end: int) -> QuerySet[Phenomenon]:
-    """Phenomena whose time extent meets a span of days."""
-    return Phenomenon.objects.filter(
-        jd_start__lte=jd_end, jd_end__gte=jd_start
-    ).order_by("jd_start", "jd_end", "key")
+def meeting(
+    found: QuerySet[Phenomenon], jd_start: int, jd_end: int, *, asserted_only: bool
+) -> QuerySet[Phenomenon]:
+    """Narrow phenomena to those whose time extent meets a span of days.
+
+    An end that is unknown does not limit the extent. A phenomenon without any
+    date is never found by time.
+    """
+    found = (
+        found.exclude(jd_start__isnull=True, jd_end__isnull=True)
+        .filter(Q(jd_start__isnull=True) | Q(jd_start__lte=jd_end))
+        .filter(Q(jd_end__isnull=True) | Q(jd_end__gte=jd_start))
+    )
+    if asserted_only:
+        found = found.filter(bounds_asserted=True)
+    return found.order_by("jd_start", "jd_end", "key")
 
 
-def in_year(year: int) -> QuerySet[Phenomenon]:
-    return during(*dates.year_bounds(year))
+def during(
+    jd_start: int, jd_end: int, *, asserted_only: bool = False
+) -> QuerySet[Phenomenon]:
+    """Phenomena whose time extent meets a span of days.
+
+    A period the source only names ("early Edo") is found by its search window
+    and carries ``bounds_asserted=False``; ``asserted_only`` leaves it out.
+    """
+    return meeting(
+        Phenomenon.objects.all(), jd_start, jd_end, asserted_only=asserted_only
+    )
+
+
+def in_year(year: int, *, asserted_only: bool = False) -> QuerySet[Phenomenon]:
+    return during(*dates.year_bounds(year), asserted_only=asserted_only)
 
 
 def in_box(  # noqa: PLR0913
@@ -70,7 +95,7 @@ def in_box(  # noqa: PLR0913
         place__place__latitude__lte=north,
     )
     if jd_start is not None and jd_end is not None:
-        found = found.filter(jd_start__lte=jd_end, jd_end__gte=jd_start)
+        return meeting(found, jd_start, jd_end, asserted_only=False)
     return found.order_by("jd_start", "jd_end", "key")
 
 
@@ -92,7 +117,8 @@ def path(thing: Thing) -> list[Stop]:
     """The thing's path: its dated, located movements and stays, in order."""
     found = (
         about(thing)
-        .filter(kind=PhenomenonKind.MOVEMENT, jd_start__isnull=False)
+        .filter(kind=PhenomenonKind.MOVEMENT)
+        .filter(jd_start__isnull=False, jd_end__isnull=False)
         .filter(place__place__isnull=False)
         .select_related("place__place")
     )

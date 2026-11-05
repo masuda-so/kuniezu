@@ -25,12 +25,14 @@ def describe(item: Phenomenon) -> dict[str, Any]:
         "date": [item.year, item.month, item.day] if item.year else None,
         "leapMonth": item.leap_month,
         "precision": item.precision,
+        "label": item.time_label,
+        "boundsAsserted": item.bounds_asserted,
+        "exact": item.jd_exact,
         "days": [item.jd_start, item.jd_end],
-        "western": (
-            [dates.jd_to_western(item.jd_start), dates.jd_to_western(item.jd_end)]
-            if item.jd_start is not None and item.jd_end is not None
-            else None
-        ),
+        "western": [
+            None if number is None else dates.jd_to_western(number)
+            for number in (item.jd_start, item.jd_end)
+        ],
         "place": item.place.name if item.place else None,
         "records": sorted(record.key for record in item.records.all()),
     }

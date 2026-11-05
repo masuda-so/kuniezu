@@ -240,6 +240,7 @@ class Calendar(models.TextChoices):
     LUNISOLAR = "Japanese-lunisolar", "和暦（旧暦）"
     WESTERN = "western", "西暦（1582年10月15日からグレゴリオ暦、前はユリウス暦）"
     CE_YEAR = "CE-year", "西暦の年"
+    DESCRIBED = "Japanese-era-description", "時期の呼び名"
 
 
 class Precision(models.TextChoices):
@@ -269,18 +270,24 @@ class Phenomenon(models.Model):
         Thing, null=True, blank=True, on_delete=models.SET_NULL, related_name="located"
     )
     # When, as the source gives it.
-    calendar = models.CharField(max_length=20, choices=Calendar.choices, blank=True)
+    calendar = models.CharField(max_length=30, choices=Calendar.choices, blank=True)
     precision = models.CharField(max_length=10, choices=Precision.choices)
     year = models.IntegerField(null=True, blank=True)
     month = models.IntegerField(null=True, blank=True)
     day = models.IntegerField(null=True, blank=True)
     leap_month = models.BooleanField(default=False)
+    # The source's own words for a period ("early Edo"), when it gives no dates.
+    time_label = models.TextField(blank=True)
     # When, as Julian Day Numbers: the earliest and latest day it can cover.
+    # One end is empty when only the other is known.
     jd_start = models.IntegerField(null=True, blank=True)
     jd_end = models.IntegerField(null=True, blank=True)
     # True when the day numbers come from the source's own date; False when a
     # year or period was widened to whole western years.
     jd_exact = models.BooleanField(default=False)
+    # False when the day numbers are only a window to search by, not the start
+    # and end the source asserts (a period named by an era, for example).
+    bounds_asserted = models.BooleanField(default=True)
 
     class Meta:
         indexes = [
@@ -290,7 +297,8 @@ class Phenomenon(models.Model):
         ]
         constraints = [
             models.CheckConstraint(
-                condition=models.Q(jd_start__isnull=True, jd_end__isnull=True)
+                condition=models.Q(jd_start__isnull=True)
+                | models.Q(jd_end__isnull=True)
                 | models.Q(jd_start__lte=models.F("jd_end")),
                 name="history_time_ordered",
             )

@@ -122,9 +122,17 @@ CLAIM_KIND = {
     PhenomenonKind.NAMING: "renamed same-person-alias",
     PhenomenonKind.WORKS: (
         "castle-construction construction-year rebuilt road-improvement "
-        "land-development-period archaeological-building-observation"
+        "land-development-period archaeological-building-observation "
+        "reclamation-stage land-improvement-project-period "
+        "river-mouth-work-commencement river-mouth-work-completion "
+        "reclamation-district-completion drying-plan-cancellation "
+        "land-improvement-commencement levee-construction-commencement "
+        "reclamation-development-success river-diversion reclamation-commencement"
     ),
-    PhenomenonKind.DOCUMENT: "administrative-document grant-order",
+    PhenomenonKind.DOCUMENT: (
+        "administrative-document grant-order new-field-development-order "
+        "reclamation-permission"
+    ),
 }
 CLAIM_KIND_OF = {
     word: kind for kind, words in CLAIM_KIND.items() for word in words.split()
@@ -145,6 +153,8 @@ class When:
     jd_start: int | None = None
     jd_end: int | None = None
     exact: bool = False
+    label: str = ""
+    asserted: bool = True
 
 
 @dataclass
@@ -355,6 +365,8 @@ class Importer:
             jd_start=when.jd_start,
             jd_end=when.jd_end,
             jd_exact=when.exact,
+            time_label=when.label,
+            bounds_asserted=when.asserted,
         )
         item.records.add(record)
         self.phenomena[key] = item
@@ -421,7 +433,28 @@ class Importer:
             return self.years(time["year"], time["year"])
         if time and kind == "year-interval":
             return self.years(time["from"], time["untilExclusive"] - 1)
+        if time and kind == "described-period":
+            # The source names a period; the years only help to find it.
+            start, end = dates.year_bounds(*time["indexYears"])
+            return When(
+                precision=Precision.PERIOD,
+                calendar=time["calendar"],
+                jd_start=start,
+                jd_end=end,
+                label=time["label"],
+                asserted=bool(time.get("boundsAreHistoricalStartEnd")),
+            )
         return self.years(valid[0], valid[1])
+
+    def open_years(self, first: int | None, last: int | None) -> When:
+        """A span of years whose start or end may be unknown."""
+        return When(
+            precision=Precision.PERIOD,
+            calendar=Calendar.CE_YEAR,
+            year=first,
+            jd_start=dates.western_to_jd(first, 1, 1) if first else None,
+            jd_end=dates.western_to_jd(last, 12, 31) if last else None,
+        )
 
     # ---- the inputs ----
 
@@ -482,16 +515,19 @@ class Importer:
             )
             thing = self.thing(row["id"], ThingKind.SITE, row["name"], record)
             self.place(thing, row.get("point"), "game-position")
-            known = [y for y in (row.get("fromYear"), row.get("toYear")) if y]
-            if known:
+            periods = row.get("activityPeriods") or [row]
+            for number, period in enumerate(periods):
+                first, last = period.get("fromYear"), period.get("toYear")
+                if not (first or last):
+                    continue
                 item = self.phenomenon(
-                    "site-period:" + row["id"],
+                    f"site-period:{row['id']}" + (f"#{number}" if number else ""),
                     record,
                     mode=Mode.STATE,
                     kind=PhenomenonKind.EXISTENCE,
                     subtype="active-period",
                     title=row["name"],
-                    when=self.years(known[0], known[-1]),
+                    when=self.open_years(first, last),
                     status=Status.IMPLEMENTATION,
                     place=thing,
                 )
@@ -515,7 +551,8 @@ class Importer:
                 title=row.get("title") or "",
                 when=self.western_day(row["date"]),
                 status=Status.IMPLEMENTATION,
-                place=sites[0] if sites else None,
+                # With several castles the event has no single place.
+                place=sites[0] if len(sites) == 1 else None,
             )
             if row.get("clan"):
                 clan = self.resolve("clan:" + row["clan"], record)
@@ -620,10 +657,12 @@ class Importer:
                 else json.dumps(value, ensure_ascii=False)
             )
             subject = self.resolve(row["entity"], record)
-            linked = [
-                self.resolve(key, record) for key in row.get("linkedEntities", [])
-            ]
-            sites = [t for t in (subject, *linked) if t and t.kind == ThingKind.SITE]
+            linked = {
+                key: self.resolve(key, record) for key in row.get("linkedEntities", [])
+            }
+            parts = (time or {}).get("components") or []
+            in_parts = {key for part in parts for key in part["entities"]}
+            kind = CLAIM_KIND_OF.get(row["predicate"], PhenomenonKind.OTHER)
             item = self.phenomenon(
                 "claim:" + row["id"],
                 record,
@@ -632,7 +671,7 @@ class Importer:
                     if (time or {}).get("kind") in CLAIM_EVENT_TIMES
                     else Mode.STATE
                 ),
-                kind=CLAIM_KIND_OF.get(row["predicate"], PhenomenonKind.OTHER),
+                kind=kind,
                 subtype=row["predicate"],
                 title=text
                 if len(text) <= TITLE_LENGTH
@@ -640,12 +679,44 @@ class Importer:
                 summary=text,
                 when=self.event_time(time, row["validYears"]),
                 status=Status.VERIFIED,
-                place=sites[0] if sites else None,
+                place=self.claim_place(subject, linked),
                 parent=self.larger(row["entity"], record),
             )
             self.take_part(item, subject, Role.SUBJECT)
-            for thing in linked:
-                self.take_part(item, thing, Role.PARTICIPANT)
+            for key, thing in linked.items():
+                # A thing dated by a component belongs to that component only.
+                if key not in in_parts:
+                    self.take_part(item, thing, Role.PARTICIPANT)
+            for number, part in enumerate(parts):
+                piece = self.phenomenon(
+                    f"claim:{row['id']}#{number}",
+                    record,
+                    mode=Mode.EVENT,
+                    kind=kind,
+                    subtype=row["predicate"],
+                    title=item.title,
+                    when=self.years(part["year"], part["year"]),
+                    status=Status.VERIFIED,
+                    parent=item,
+                )
+                for key in part["entities"]:
+                    self.take_part(piece, linked.get(key), Role.PARTICIPANT)
+
+    def claim_place(
+        self, subject: Thing | None, linked: dict[str, Thing | None]
+    ) -> Thing | None:
+        """Where a claim places its phenomenon, when it says so without doubt.
+
+        A registered place among the linked things is the place the source
+        names. The subject may be a game site that stands for a different spot,
+        so it counts only when the claim links no place at all.
+        """
+        named = [thing for key, thing in linked.items() if key.startswith("place:")]
+        if len(named) == 1:
+            return named[0]
+        if not named and subject is not None and subject.kind == ThingKind.SITE:
+            return subject
+        return None
 
     def larger(self, identifier: str, record: Record) -> Phenomenon | None:
         """The battle or campaign a claim is about, when it names one."""

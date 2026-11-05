@@ -6,10 +6,12 @@ import pytest
 from django.conf import settings
 
 from kuniezu.history import dates
+from kuniezu.history import queries
 from kuniezu.history.importer import CATALOG
 from kuniezu.history.importer import MONTH_TABLE
 from kuniezu.history.importer import RESEARCH
 from kuniezu.history.importer import import_history
+from kuniezu.history.models import Calendar
 from kuniezu.history.models import ImportRun
 from kuniezu.history.models import Mode
 from kuniezu.history.models import Participation
@@ -171,8 +173,6 @@ def test_importing_twice_changes_nothing(inputs):
 
 
 def test_earlier_contents_stay_reachable(inputs):
-    from kuniezu.history import queries  # noqa: PLC0415
-
     import_history(inputs)
     first_run = ImportRun.objects.get()
     path = inputs / RESEARCH / "claims.jsonl"
@@ -213,3 +213,83 @@ def test_earlier_contents_stay_reachable(inputs):
     assert "claim:" + removed["id"] in back
     still = {v.record.key for v in queries.records_as_of(second_run.pk)}
     assert "claim:" + removed["id"] not in still
+
+
+def test_a_named_period_is_found_by_its_window_but_not_asserted(inputs):
+    import_history(inputs)
+
+    building = Phenomenon.objects.get(key="claim:tomori-area6-momoyama-building1")
+    assert building.calendar == Calendar.DESCRIBED
+    assert building.time_label == "安土桃山時代（考古学的時期区分）"
+    assert not building.bounds_asserted
+    assert building.year is None
+    # The window finds it, and a search for asserted periods leaves it out.
+    assert building in queries.in_year(1600)
+    assert building not in queries.in_year(1600, asserted_only=True)
+    death = Phenomenon.objects.get(key="claim:death-date-maeda-toshiie")
+    assert death.bounds_asserted
+    assert death in queries.in_year(1599, asserted_only=True)
+
+
+def test_a_period_with_one_known_end_stays_open(inputs):
+    import_history(inputs)
+
+    # Enryaku-ji: known to end in 1571, start not given.
+    temple = Phenomenon.objects.get(
+        key__startswith="site-period:", title="延暦寺", jd_start__isnull=True
+    )
+    assert temple.jd_end == dates.western_to_jd(1571, 12, 31)
+    assert temple in queries.in_year(1560)
+    assert temple in queries.in_year(1200)
+    assert temple not in queries.in_year(1572)
+    # Iwami silver mine: known from 1533, end not given.
+    mine = Phenomenon.objects.get(key__startswith="site-period:", title="石見銀山")
+    assert mine.jd_start == dates.western_to_jd(1533, 1, 1)
+    assert mine.jd_end is None
+    assert mine in queries.in_year(1600)
+    assert mine not in queries.in_year(1532)
+    # A site with several periods keeps each of them.
+    periods = Phenomenon.objects.filter(key__startswith="site-period:", title="奉先寺")
+    spans = sorted((p.jd_start, p.jd_end) for p in periods)
+    assert spans == [
+        (dates.western_to_jd(1469, 1, 1), dates.western_to_jd(1592, 12, 31)),
+        (dates.western_to_jd(1593, 1, 1), None),
+    ]
+
+
+def test_each_part_of_a_compound_claim_keeps_its_own_year(inputs):
+    import_history(inputs)
+
+    whole = Phenomenon.objects.get(key="claim:takatenjin-six-forts-preparation-years")
+    early = Thing.objects.get(key="place:ogasayama-fort")
+    late = Thing.objects.get(key="place:nogesaka-fort")
+    parts = list(whole.parts.order_by("key"))
+
+    assert [(p.year, p.precision) for p in parts] == [(1579, "year"), (1580, "year")]
+    assert early in [link.thing for link in parts[0].participations.all()]
+    assert late in [link.thing for link in parts[1].participations.all()]
+    # A fort is found in the year it was prepared, and not in the other year.
+    assert list(queries.about(early).filter(pk__in=queries.in_year(1579))) == [parts[0]]
+    assert not queries.about(early).filter(pk__in=queries.in_year(1580)).exists()
+    assert list(queries.about(late).filter(pk__in=queries.in_year(1580))) == [parts[1]]
+    assert not queries.about(late).filter(pk__in=queries.in_year(1579)).exists()
+    # The whole keeps the castle the claim is about.
+    castle = Thing.objects.get(key="place:takatenjin")
+    assert whole in queries.about(castle)
+
+
+def test_a_claim_is_placed_where_it_says_and_nowhere_else(inputs):
+    import_history(inputs)
+
+    # The claim is about the game's node, but names the castle site it means.
+    order = Phenomenon.objects.get(key="claim:agata-receipt-order")
+    assert order.place == Thing.objects.get(key="place:agata")
+    # Two named places: the claim does not single one out.
+    outer = Phenomenon.objects.get(key="claim:tonokori-sadowara-outer-castle")
+    assert outer.place is None
+    # A timeline event that moves several castles has no single place.
+    timeline = Record.objects.filter(record_type=RecordType.IMPLEMENTED_EVENT)
+    several = next(r for r in timeline if len(r.payload["castles"]) > 1)
+    single = next(r for r in timeline if len(r.payload["castles"]) == 1)
+    assert several.phenomena.get().place is None
+    assert single.phenomena.get().place is not None
