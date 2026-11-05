@@ -5,4 +5,4 @@
 - [文化庁「会津・米沢街道―桧原峠越」選定地図](https://www.bunka.go.jp/seisaku/bunkazai/shokai/kinenbutsu/rekishinomichi/pdf/92088301_s084_01.pdf)。旧線は桧原峠・大塩を経て、水没前の桧原宿も通る。
 - [新潟県「会津街道概略図」](https://www.pref.niigata.lg.jp/uploaded/attachment/77275.pdf) と [「越後街道ものがたり」](https://gokujo-aizu.com/pdf/nishiaizu-echigostory.pdf)。津川・天満の通過順と近世の車峠・宿場の移動を確認した。旧道への置換には近世以前の経路と現行の比較線を分けて登録する必要がある。
 
-全85描画線と4地点の回帰検査、[専用Chrome](../../data/verification/codex-aizu-road-excursions/README.md)に合格。既存の road-display.cjs は変更前後とも東海道の表示名に「近現代」を期待する箇所で失敗した。
+全85描画線と4地点の回帰検査、[専用Chrome](../../data/verification/codex-aizu-road-excursions/README.md)に合格。街道名の検査は表示名と比較線の区分を分けて確認するよう修正した。全85街道の表示名・描画座標・原経路の保持を検証し、東海道の箱根尾根筋の検査も合格した。
