@@ -7,3 +7,7 @@
 - [国土交通省「乳井通り 弘前～尾上編」](https://www.thr.mlit.go.jp/aomori/syutu/hirokoku/hirokoku_rekisi/hirokoku-rekisi/aomori_rekisikaidou/nyui-kaidou/nyui-kaidou-1.html)
 
 全85街道の閉路・原線・端点検査、行軍表示、旧保存移行、[専用Chromeでの表示確認](../../data/verification/codex-ushu-road-excursion/README.md)に合格。別の road-display 検査は東海道の表示名に「近現代」を求める旧期待で、変更前にも同じ失敗を再現した。
+
+## 行軍経路への反映
+
+同じ1560年開始データで、比較線の修正前後の `G.visualEdgeGeo` を全319城間接続で比較した。接続IDと両端座標は全件一致。行軍描画用の折れ線が変わったのは檜山―石川と石川―三戸の2接続だった。ゲーム投影上の折れ線長の目安は、檜山―石川で108.8kmから95.6km、石川―三戸で158.5kmから157.3km。史実の行程距離を示す値ではない。
