@@ -13,6 +13,13 @@ assert.deepEqual(Array.from(ganjaku.lunarDate),ganjakuClaim.eventTime.date);
 assert.deepEqual(Array.from(ganjaku.d),Array.from(TK.lunarDate(...ganjakuClaim.eventTime.date)));
 assert.ok(TK.BATTLE_EVENT_EXCLUSIONS[ganjaku.title]);
 assert.ok(!TK.BATTLES[ganjaku.title],'Ganjaku has no unsupported deployment scene');
+const ganjakuPlace=require('../../data/research/curated/places/ganjaku.json');
+for(const year of [1560,1587,1615]){
+ const markers=TK.contextPlaces(year).filter(p=>p.name===ganjaku.site);
+ assert.equal(markers.length,1,'Ganjaku has one geographic label in '+year);
+ assert.deepEqual(Array.from(markers[0].at),ganjakuPlace.geometry.coordinates);
+}
+assert.ok(!G.YOSHO.some(y=>y.n===ganjaku.site),'site label grants no facility bonus');
 for(const [title,battle,lunar,phase] of [
  ['鍋島勝茂が安濃津城を攻める','安濃津城の戦い',[1600,8,22],'8月22日'],
  ['毛利勢が安濃津城を攻める','安濃津城の戦い',[1600,8,24],'8月24日'],
