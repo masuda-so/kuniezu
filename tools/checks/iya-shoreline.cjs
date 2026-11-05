@@ -33,6 +33,6 @@ for(const level of levels){
   }
   assert.ok(count>0);counts.push(count);
 }
-assert.equal(counts[0],operation.expectedPixels);
+assert.deepEqual(counts,[operation.expectedPixels,20,4]);
 for(const {xy:[x,y],key} of recipe.unchangedControls)expect(levels[0],x,y,key);
 console.log('PASS: Iya lake cells at 100/400/800 m: '+counts.join('/')+'; four surrounding controls');
