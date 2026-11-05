@@ -90,7 +90,7 @@
 
 1. 正本の置き場：**決定（2026-11-05、利用者）** アプリのデータに分ける。正本は `kuniezu/map/`、生成物だけを `kuniezu/static/kuniezu/map/build/` に置く。実行時に読む `definition.csv`・`default.map` は生成のときに `build/` へ写す（段 1b-3）。
 2. MapLibre の置き方：`static/vendor/` に通知付きで置くか、外部から読むか（website は第三者の依存をアプリの原本に写さない決まり）。
-3. 史実 DB の正本：curated JSON を正本のまま、Django の DB を派生物にするか。管理画面で編集した結果を JSON へ書き戻す運用にするか。
+3. 史実 DB の正本：**着手（2026-11-05、利用者の指示で段 5 を前倒し）** 入力（Git の JSON）を正本のまま、Django のデータベースに全件を取り込む形で作った（`docs/architecture/history-rdb.md`）。記録の変化はデータベースの中にも積む。管理画面での編集と書き戻しは未着手。以下は当初の問い：curated JSON を正本のまま、Django の DB を派生物にするか。管理画面で編集した結果を JSON へ書き戻す運用にするか。
 4. 測量法の承認の要否：必要なら国土地理院へ問い合わせる。確認が取れるまで、タイルの同梱・加工配布はしない。
 5. 公開先：website と同じ Vercel に載せるか。
 
