@@ -1,0 +1,37 @@
+{
+  "id": "death-date-mori-motonari",
+  "entity": "person:毛利元就",
+  "predicate": "death-date",
+  "value": "毛利元就が死去した。",
+  "validYears": [
+    1571,
+    1571
+  ],
+  "datePrecision": "day",
+  "source": "hiDainihonshiryoKobun",
+  "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+  "locator": "綱文：和暦 元亀2年6月14日 第3条（区分 大日本史料、第10編之6、341頁）",
+  "gameBindings": [
+    "TK.HIST:毛利元就の死"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-05",
+  "uncertainty": "死去の場所と死因は補わない。 綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。",
+  "linkedEntities": [
+    "person:毛利元就"
+  ],
+  "eventTime": {
+    "kind": "dated-event",
+    "date": [
+      1571,
+      6,
+      14
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": false,
+    "precision": "day"
+  },
+  "eventRelation": "death",
+  "eventScope": "綱文が掲げる死去の日付と、綱文に書かれた相手・場所。ゲームの年表の日付（旧暦をゲームの暦表で西暦に直した日）と一致することを確かめた。死因・享年・時刻・精密な位置は補わない。"
+}

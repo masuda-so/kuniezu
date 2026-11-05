@@ -1,0 +1,37 @@
+{
+  "id": "death-date-toyotomi-hideyoshi",
+  "entity": "person:toyotomi-hideyoshi",
+  "predicate": "death-date",
+  "value": "豊臣秀吉が死去し、子の秀頼が継いだ。",
+  "validYears": [
+    1598,
+    1598
+  ],
+  "datePrecision": "day",
+  "source": "hiDainihonshiryoKobun",
+  "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+  "locator": "綱文：和暦 慶長3年8月18日 第1条（区分 史料綜覧、編11・冊913（データベースの表示値）、170頁）",
+  "gameBindings": [
+    "TK.HIST:豊臣秀吉の死"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-05",
+  "uncertainty": "死去の場所は綱文に無い。死が秘された期間は補わない。 綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。",
+  "linkedEntities": [
+    "person:toyotomi-hideyoshi"
+  ],
+  "eventTime": {
+    "kind": "dated-event",
+    "date": [
+      1598,
+      8,
+      18
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": false,
+    "precision": "day"
+  },
+  "eventRelation": "death",
+  "eventScope": "綱文が掲げる死去の日付と、綱文に書かれた相手・場所。ゲームの年表の日付（旧暦をゲームの暦表で西暦に直した日）と一致することを確かめた。死因・享年・時刻・精密な位置は補わない。"
+}
