@@ -407,6 +407,9 @@ def test_a_game_site_that_stands_for_a_place_lends_its_point(inputs):
         {"relation": "same-name"},
         {"things": ["place:suwahara"]},
         {"things": ["place:suwahara", "yosho:no-such-site"]},
+        # A misspelt identifier on the side that is kept.
+        {"things": ["place:no-such-place", SUWAHARA]},
+        {"things": [SUWAHARA, SUWAHARA]},
     ],
 )
 def test_an_identity_without_grounds_is_refused(inputs, changes):
@@ -419,3 +422,95 @@ def test_an_identity_without_grounds_is_refused(inputs, changes):
 
     # Nothing of the failed import stays.
     assert not Record.objects.exists()
+
+
+@pytest.mark.parametrize(
+    ("first", "second"),
+    [
+        # Two sites cannot both stand for one place.
+        (
+            ("represented-by", ["place:edo", "node:edo"]),
+            ("represented-by", ["place:edo", "node:kiyosu"]),
+        ),
+        # An identifier is merged into one thing only.
+        (
+            ("same-site", ["place:suwahara", SUWAHARA]),
+            ("same-site", ["place:takatenjin", SUWAHARA]),
+        ),
+        # An identifier that is merged away plays no other part.
+        (
+            ("same-site", ["place:suwahara", SUWAHARA]),
+            ("represented-by", ["place:edo", SUWAHARA]),
+        ),
+        (
+            ("same-site", ["place:suwahara", SUWAHARA]),
+            ("same-site", [SUWAHARA, "site:諏訪原城"]),
+        ),
+    ],
+)
+def test_identities_that_contradict_each_other_are_refused(inputs, first, second):
+    identity(inputs, "a", *first)
+    identity(inputs, "b", *second)
+
+    with pytest.raises(ValueError, match=r"represented by another|merged"):
+        import_history(inputs)
+
+    assert not Record.objects.exists()
+
+
+def test_one_place_may_gather_several_identifiers(inputs):
+    # The game's site and the name a claim uses are both the registry place.
+    identity(inputs, "site", "same-site", ["place:suwahara", SUWAHARA])
+    identity(inputs, "claim", "same-site", ["place:suwahara", "site:諏訪原城"])
+
+    import_history(inputs)
+
+    castle = Thing.objects.get(key="place:suwahara")
+    keys = set(castle.keys.values_list("key", flat=True))
+    assert keys == {"place:suwahara", SUWAHARA, "site:諏訪原城"}
+    assert list(queries.find_things("site:諏訪原城")) == [castle]
+    capture = Phenomenon.objects.get(key="claim:suwahara-capture-date")
+    assert castle in [link.thing for link in capture.participations.all()]
+    assert castle.records.filter(record_type=RecordType.IDENTITY).count() == 2  # noqa: PLR2004
+
+
+def test_an_identifier_only_a_claim_uses_can_be_merged(inputs):
+    identity(inputs, "claim", "same-site", ["place:suwahara", "site:諏訪原城"])
+
+    import_history(inputs)
+
+    castle = Thing.objects.get(key="place:suwahara")
+    assert ThingKey.objects.get(key="site:諏訪原城").thing == castle
+    assert not Thing.objects.filter(key="site:諏訪原城").exists()
+    # The game's site of the same name is not merged by this record.
+    assert Thing.objects.filter(key=SUWAHARA).exists()
+
+
+def test_a_stated_representative_wins_over_a_namesake(inputs):
+    import_history(inputs)
+    # Without a record, the registry castle borrows the point of its namesake.
+    castle = Thing.objects.get(key="place:kiyosu-castle")
+    assert castle.place.basis == "borrowed-from-namesake"
+    kiyosu = Thing.objects.get(key="node:kiyosu").place
+
+    identity(inputs, "kiyosu", "represented-by", ["place:kiyosu-castle", "node:kiyosu"])
+    import_history(inputs)
+
+    castle = Thing.objects.get(key="place:kiyosu-castle")
+    assert castle.place.basis == "represented-by-game-site"
+    assert (castle.place.longitude, castle.place.latitude) == (
+        kiyosu.longitude,
+        kiyosu.latitude,
+    )
+
+    # A record naming another site decides, whatever the names say.
+    identity(inputs, "kiyosu", "represented-by", ["place:kiyosu-castle", "node:edo"])
+    import_history(inputs)
+
+    castle = Thing.objects.get(key="place:kiyosu-castle")
+    edo = Thing.objects.get(key="node:edo").place
+    assert castle.place.basis == "represented-by-game-site"
+    assert (castle.place.longitude, castle.place.latitude) == (
+        edo.longitude,
+        edo.latitude,
+    )
