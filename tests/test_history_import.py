@@ -410,6 +410,13 @@ def test_a_game_site_that_stands_for_a_place_lends_its_point(inputs):
         # A misspelt identifier on the side that is kept.
         {"things": ["place:no-such-place", SUWAHARA]},
         {"things": [SUWAHARA, SUWAHARA]},
+        # Two things of different kinds, or an identifier that names no thing.
+        {"things": ["person:oda-nobunaga", "place:edo"]},
+        {"things": ["place:suwahara", "battle:長篠の戦い"]},
+        {
+            "relation": "represented-by",
+            "things": ["person:oda-nobunaga", "person:織田信忠"],
+        },
     ],
 )
 def test_an_identity_without_grounds_is_refused(inputs, changes):
@@ -556,3 +563,30 @@ def test_a_merged_game_site_keeps_its_catalog_entry(inputs):
     assert [thing.key for thing in entry.things.all()] == ["place:matsuo-hyuga"]
     other = Thing.objects.get(key="place:agata")
     assert entry not in other.records.all()
+
+
+@pytest.mark.parametrize("first", ["site", "structure"])
+def test_merged_identifiers_end_at_one_thing_in_either_order(inputs, first):
+    # A second claim names the castle of "site:岩石城" as "structure:岩石城".
+    path = inputs / RESEARCH / "claims.jsonl"
+    claims = lines(path)
+    fall = next(row for row in claims if row["id"] == "ganjaku-fall")
+    assert fall["entity"] == "site:岩石城"
+    again = fall | {"id": "ganjaku-fall-again", "entity": "structure:岩石城"}
+    rest = [row for row in claims if row["id"] != "ganjaku-fall"]
+    ordered = [fall, again] if first == "site" else [again, fall]
+    with path.open("w", encoding="utf-8") as stream:
+        for row in [*ordered, *rest]:
+            stream.write(json.dumps(row, ensure_ascii=False) + "\n")
+    identity(inputs, "ganjaku", "same-site", ["site:岩石城", "structure:岩石城"])
+
+    import_history(inputs)
+
+    # Both identifiers, and the name they share, are the registry castle.
+    castle = Thing.objects.get(key="place:ganjaku")
+    for key in ("site:岩石城", "structure:岩石城"):
+        assert ThingKey.objects.get(key=key).thing == castle
+        assert not Thing.objects.filter(key=key).exists()
+    for claim in ("claim:ganjaku-fall", "claim:ganjaku-fall-again"):
+        subject = Phenomenon.objects.get(key=claim).participations.get(role="subject")
+        assert subject.thing == castle

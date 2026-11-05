@@ -228,7 +228,6 @@ class Importer:
         self.seen: set[str] = set()
         self.known: dict[str, Record] = {}
         self.sources: dict[str, Source] = {}
-        self.things: dict[str, Thing] = {}
         self.by_name: dict[tuple[str, str], list[Thing]] = {}
         # From identity records: an identifier and the one it is the same as,
         # a registry place and the game site that stands for it, and the
@@ -297,6 +296,15 @@ class Importer:
 
     # ---- things (what persists) ----
 
+    def find(self, identifier: str) -> Thing | None:
+        """The thing an identifier already stands for, by any route.
+
+        Either an input settled the identifier itself, or an identity record
+        merges it into an identifier that is settled.
+        """
+        kept = self.same.get(identifier, identifier)
+        return self.keyed.get(identifier) or self.keyed.get(kept)
+
     def thing(  # noqa: PLR0913
         self,
         key: str,
@@ -308,12 +316,11 @@ class Importer:
         names: tuple[str, ...] = (),
     ) -> Thing:
         given, key = key, self.same.get(key, key)
-        thing = self.things.get(key) or self.keyed.get(given)
+        thing = self.find(given)
         if thing is None:
             thing = Thing.objects.create(
                 key=key, kind=kind, name=name, registered=registered
             )
-            self.things[key] = thing
             self.summary.things[kind] = self.summary.things.get(kind, 0) + 1
         elif registered and not thing.registered:
             thing.registered = True
@@ -330,8 +337,11 @@ class Importer:
     def known_as(self, thing: Thing, identifier: str) -> None:
         """Note that an input names a thing by an identifier."""
         self.used.add(identifier)
-        for key in dict.fromkeys((thing.key, identifier)):
-            self.keyed[key] = thing
+        kept = self.same.get(identifier, identifier)
+        for key in dict.fromkeys((thing.key, identifier, kept)):
+            if self.keyed.setdefault(key, thing) != thing:
+                message = f"{key} names two things: {self.keyed[key].key}, {thing.key}"
+                raise ValueError(message)
             _, added = ThingKey.objects.get_or_create(
                 key=key, defaults={"thing": thing}
             )
@@ -342,22 +352,20 @@ class Importer:
 
     def resolve(self, identifier: str, record: Record) -> Thing | None:
         """The thing an identifier such as ``person:羽柴秀吉`` stands for."""
-        prefix, _, name = identifier.partition(":")
-        kind = THING_PREFIX.get(prefix)
-        if kind is None:
+        # An identifier that an identity record merges is read as the one kept,
+        # so both end at the same thing whichever an input uses first.
+        kept = self.same.get(identifier, identifier)
+        kind = THING_PREFIX.get(kept.partition(":")[0])
+        if kind is None or identifier.partition(":")[0] not in THING_PREFIX:
             return None
-        # The identifier as an earlier record settled it, the thing of that key,
-        # or the thing an identity record merges it into.
-        known = self.keyed.get(identifier) or self.things.get(
-            self.same.get(identifier, identifier)
-        )
-        if known is None and identifier not in self.same:
+        known = self.find(identifier)
+        if known is None:
             # A record may name a registered thing by one of its names.
-            same = self.by_name.get((kind, name), [])
+            same = self.by_name.get((kind, kept.partition(":")[2]), [])
             if len(same) == 1:
                 known = same[0]
         if known is None:
-            return self.thing(identifier, kind, name, record)
+            return self.thing(identifier, kind, identifier.partition(":")[2], record)
         # However it was found, the thing is now known by this identifier too.
         self.known_as(known, identifier)
         known.records.add(record)
@@ -514,26 +522,37 @@ class Importer:
                 },
             )
 
+    def read_identity(self, path: Path) -> Json:
+        """One identity record, refused unless it is complete and makes sense."""
+        row = json.loads(path.read_text(encoding="utf-8"))
+        lacking = [name for name in IDENTITY_FIELDS if not row.get(name)]
+        things = row.get("things") or []
+        if lacking or len(set(things)) != PAIR:
+            message = f"{path.name}: an identity needs {', '.join(IDENTITY_FIELDS)}"
+            raise ValueError(message)
+        if row["relation"] not in (SAME, REPRESENTED):
+            message = f"{path.name}: unknown relation of an identity"
+            raise ValueError(message)
+        if row["source"] not in self.sources:
+            message = f"{path.name}: unknown source {row['source']}"
+            raise ValueError(message)
+        kinds = {THING_PREFIX.get(key.partition(":")[0]) for key in things}
+        if len(kinds) != 1 or None in kinds:
+            message = f"{path.name}: an identity joins two things of one kind"
+            raise ValueError(message)
+        if row["relation"] == REPRESENTED and kinds != {ThingKind.SITE}:
+            message = f"{path.name}: only a site stands for a place (identity)"
+            raise ValueError(message)
+        return row
+
     def load_identities(self) -> None:
         """Read which identifiers name one thing, before any thing is made."""
         folder = self.root / IDENTITIES
         merged_into: dict[str, str] = {}
         for path in sorted(folder.glob("*.json")) if folder.is_dir() else []:
-            row = json.loads(path.read_text(encoding="utf-8"))
-            lacking = [name for name in IDENTITY_FIELDS if not row.get(name)]
-            things = row.get("things") or []
-            if (
-                lacking
-                or len(set(things)) != PAIR
-                or row["relation"] not in (SAME, REPRESENTED)
-            ):
-                message = f"{path.name}: an identity needs {', '.join(IDENTITY_FIELDS)}"
-                raise ValueError(message)
-            if row["source"] not in self.sources:
-                message = f"{path.name}: unknown source {row['source']}"
-                raise ValueError(message)
+            row = self.read_identity(path)
             record = self.record(row["id"], RecordType.IDENTITY, Status.VERIFIED, row)
-            kept, other = things
+            kept, other = row["things"]
             if row["relation"] == SAME:
                 # An identifier is merged into one thing only.
                 if merged_into.setdefault(other, kept) != kept:
@@ -543,7 +562,7 @@ class Importer:
                 # A place has one site that stands for it.
                 message = f"{path.name}: {kept} is represented by another site too"
                 raise ValueError(message)
-            for key in things:
+            for key in row["things"]:
                 self.identity_records.setdefault(key, []).append(record)
         # An identifier that is merged away plays no other part: it is not kept
         # by another identity, and neither stands for a place nor is one.
