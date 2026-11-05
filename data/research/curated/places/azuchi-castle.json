@@ -1,14 +1,36 @@
 {
   "id": "place:azuchi-castle",
   "name": "安土城",
-  "aliases": [],
-  "geometry": null,
-  "geometryStatus": "not-asserted",
-  "note": "安土山の城を対象とし、観音寺城と区別する。今回の火災報では城の座標を登録しない。",
+  "aliases": [
+    "安土城跡"
+  ],
+  "geometry": {
+    "type": "Point",
+    "coordinates": [
+      136.1393,
+      35.15638
+    ]
+  },
+  "geometryStatus": "site-representative",
+  "note": "安土山の城跡の代表点。観音寺城や火災の出火地点とは区別する。",
   "identityBasis": {
     "scope": "『兼見卿記（別本）』天正10年6月15日条の火災報の対象。",
     "claimIds": [
       "azuchi-fire-report-1582-06-15"
     ]
+  },
+  "geometryEvidence": {
+    "source": "nabunken-azuchi-castle-point",
+    "sourceUrl": "https://heritagemap.nabunken.go.jp/statistic/98015844-%E5%AE%89%E5%9C%9F%E5%9F%8E%E8%B7%A1.html",
+    "locator": "RecNo 98015844、世界測地系の北緯・東経",
+    "checked": "2026-11-05",
+    "scope": "特別史跡安土城跡の台帳上の代表点。出火地点や焼失範囲を示さない。",
+    "coordinateOrder": "longitude-latitude",
+    "coordinateUnits": "decimal-degrees",
+    "sourceCoordinateOrder": "latitude-longitude",
+    "sourceCoordinateLiteral": "35.15638, 136.1393",
+    "sourceRecordId": "98015844",
+    "sourceDatum": "世界測地系",
+    "sourceDatumStatus": "as-labelled"
   }
 }
