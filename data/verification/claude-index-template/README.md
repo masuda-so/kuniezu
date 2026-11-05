@@ -22,7 +22,7 @@ main（`5483a5f`）のページと新しいページを同じ条件で開き、�
 ## 未確認
 
 - Django の開発サーバー越しの実画面。サーバーの起動は利用者が行うため、この枝からの起動後に確認する。
-- `bizen-north-shore-browser.cjs`（8000 番のサーバーが要る）と、保存ファイルを引数に取る `person-location-itinerary.cjs`。どちらもページの読み方だけを変えた。
+- `bizen-north-shore-browser.cjs`・`arrival-aliases-browser.cjs`（8000 番のサーバーが要る）と、保存ファイルを引数に取る `person-location-itinerary.cjs`。どれもページの読み方だけを変えた。`arrival-aliases-browser.cjs` は、差し替えるページを作る処理が動くことだけを確かめた。
 - 8000 番へつなぐほかのブラウザ検査。
 
 ## 気づいた点（この変更の範囲外）
