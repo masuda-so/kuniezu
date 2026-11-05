@@ -12,6 +12,7 @@
 
 - 地図：`raster-map`・`province-edits`・`province-runs`・`hachirogata-water`・`katori-water` が PASS。`province-source-image.cjs` は自己検査 23 件と、実物（`--source kuniezu/map/control/provinces.png --map-dir kuniezu/static/kuniezu/map/build`）の両方が PASS。
 - `offline`・`organization`・`infrastructure`・`secret-scan`・`stamp-assets --check` が PASS。
+- 史料（`sekigahara-motion`・`battle-event-classification`・`evidence-store`・`location-store`・`history-index`・`history-sqlite.py`・`history-sqlite-inputs.py`・`history-cube.py`）と合戦地形（`atlas-regressions`・`battle-viewport`・`battle-rivers`）が PASS。最初の push では史料の検査を手元で回しておらず、CI で `history-sqlite.py` が落ちた。`tools/research/history_sqlite.py` が地図の置き場を `kuniezu/static/kuniezu` と `map/control/…` に分けて組み立てていて、置き換えから漏れていた（区画の表が見つからないと黙って飛ばす作り）。直した後、CI と同じ検査を全て手元で回した。
 - Django 側：`uv run pytest` 7 件、`ruff check`・`ruff format --check`・`mypy` 問題なし。`scripts/build_static.py` の出力 `dist/client/static/kuniezu/map/` には `build/` だけが入り、正本の画像は入らない。
 
 ## 実画面（この worktree から起動した Django の開発サーバー、8001 番）
