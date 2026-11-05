@@ -1,4 +1,4 @@
-/* 河川の正本 kuniezu/static/kuniezu/map/physical/rivers.png（全域1枚、1画素幅の中心線。色は rivers.json の codes でその画素が属する河川の組）から、
+/* 河川の正本 kuniezu/map/physical/rivers.png（全域1枚、1画素幅の中心線。色は rivers.json の codes でその画素が属する河川の組）から、
    Web 配信用の線 kuniezu/static/kuniezu/map/build/rivers-lines.json を作る。画素の中心を河川ごとに辿って折れ線にし、0.5画素の許容で間引く。
    斜めのつながりは、共通の上下左右の画素で既につながっている時は辿らない（階段の二重線を作らない）。
    線は現代の参考の河道（basis: modern-reference）で、戦国期の河道を確定したものではない。正本を直したらこれを流し直す。
@@ -31,8 +31,8 @@ const CHECK=process.argv.includes('--check'),src=path.join(MD.layers.physical,'r
   const geo=lines.filter(l=>l.length>=2).map(l=>{const flat=l.flatMap(k=>[k%W+.5,Math.floor(k/W)+.5]);return simplify(flat,.5).map((v,i)=>+((i%2?OY:OX)+v*S).toFixed(2));});
   segments+=geo.length;points+=geo.reduce((n,g)=>n+g.length/2,0);features.push({id:f.id,name:f.name,pixels:f.pixels,lines:geo});}
  const doc={generated:'tools/map/build-river-lines.cjs',basis:R.basis||'modern-reference',
-  note:'正本 kuniezu/static/kuniezu/map/physical/rivers.png の1画素幅の中心線を河川ごとに辿った線（地図平面の座標）。現代の参考の河道で、戦国期の河道を確定したものではない。手で直さない。',
-  source:{rivers:'kuniezu/static/kuniezu/map/physical/rivers.png',sha256:R.sha256,meta:'kuniezu/static/kuniezu/map/physical/rivers.json',metaSha256:MD.sha(meta),projectionSha256:MD.sha(MD.files.projection)},
+  note:'正本 kuniezu/map/physical/rivers.png の1画素幅の中心線を河川ごとに辿った線（地図平面の座標）。現代の参考の河道で、戦国期の河道を確定したものではない。手で直さない。',
+  source:{rivers:'kuniezu/map/physical/rivers.png',sha256:R.sha256,meta:'kuniezu/map/physical/rivers.json',metaSha256:MD.sha(meta),projectionSha256:MD.sha(MD.files.projection)},
   license:R.license,features};
  const text=JSON.stringify(doc);
  if(CHECK){if(!fs.existsSync(out)||fs.readFileSync(out,'utf8')!==text)throw Error('rivers-lines.json が正本と違う。node tools/map/build-river-lines.cjs で作り直す');console.log('PASS: 河川の線は正本どおり');}

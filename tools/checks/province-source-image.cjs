@@ -158,8 +158,9 @@ async function verify(options){
  const snapshots=new Map([[manifestPath,manifestBytes]]);
  const capture=async file=>{if(!snapshots.has(file))snapshots.set(file,await fsp.readFile(file));return snapshots.get(file);};
  if(width*Math.min(tile,height)*3>512*1024*1024)fail('DIMENSION','One tile band exceeds 512 MiB limit',{width,height,tile});
- // 正本の区画の表は生成物の置き場（kuniezu/static/kuniezu/map/build）の隣の kuniezu/static/kuniezu/map/control。旧来の並び（map と map_data、層に分ける前の kuniezu/static/kuniezu/map）も読む。
- const modern=[path.join(mapDir,'../control'),path.join(mapDir,'..'),path.join(mapDir,'../map_data')].find(d=>fs.existsSync(path.join(d,'definition.csv'))),definition=path.resolve(options.definition||(modern?path.join(modern,'definition.csv'):path.join(mapDir,'definition.csv')));
+ // 正本の区画の表は、検査する画像と同じフォルダ（kuniezu/map/control）にある。旧来の並び（生成物の隣の control、map と map_data、層に分ける前の配置）も読む。
+ // どれも無ければ、生成物の置き場に写した控え（kuniezu/static/kuniezu/map/build/definition.csv）を使う。
+ const modern=[path.dirname(path.resolve(source)),path.join(mapDir,'../control'),path.join(mapDir,'..'),path.join(mapDir,'../map_data')].find(d=>fs.existsSync(path.join(d,'definition.csv'))),definition=path.resolve(options.definition||(modern?path.join(modern,'definition.csv'):path.join(mapDir,'definition.csv')));
  const adjacentDefault=path.join(path.dirname(definition),'default.map');
  const defaultMap=options.defaultMap?path.resolve(options.defaultMap):fs.existsSync(adjacentDefault)?adjacentDefault:null;
  const definitions=readDefinitions(definition,defaultMap,{definition:await capture(definition),defaultMap:defaultMap?await capture(defaultMap):null});
@@ -327,7 +328,7 @@ async function selfTest(){
   const projection=path.join(dir,'projection.json'),projectionBytes=Buffer.from('{"width":7,"height":7}\n');await fsp.writeFile(projection,projectionBytes);
   const parts=[valid,await fsp.readFile(modern),await fsp.readFile(defaultMap),projectionBytes];
   const compound=sha256(parts.map(sha256).join('\n'));
-  const manifestPath=path.join(mapDir,'manifest.json'),baseManifest={width:w,height:h,tile,tiles},declared={...baseManifest,generated:'tools/map/build-map-tiles.cjs',source:{dir:'kuniezu/static/kuniezu/map',provinces:'provinces.png',definition:'definition.csv',defaultMap:'default.map',projection:'projection.json',sha256:compound}};
+  const manifestPath=path.join(mapDir,'manifest.json'),baseManifest={width:w,height:h,tile,tiles},declared={...baseManifest,generated:'tools/map/build-map-tiles.cjs',source:{dir:'kuniezu/map',provinces:'provinces.png',definition:'definition.csv',defaultMap:'default.map',projection:'projection.json',sha256:compound}};
   await fsp.writeFile(manifestPath,JSON.stringify(declared));
   const fingerprintPass=await verify(options);
   assert.equal(fingerprintPass.manifestSourceSha256Matches,true);assert.equal(fingerprintPass.sourceCompositeFingerprint.actual,compound);
@@ -340,11 +341,11 @@ async function selfTest(){
   const unknownContract=await verify(options);assert.equal(unknownContract.manifestSourceSha256Matches,null);assert.ok(unknownContract.sourceCompositeFingerprint.reason);tested.push('unknown fingerprint contract returns null with explanation');
   await fsp.writeFile(manifestPath,JSON.stringify({...declared,source:{...declared.source,projection:'missing-projection.json'}}));
   const missingComponent=await verify(options);assert.equal(missingComponent.manifestSourceSha256Matches,null);assert.match(missingComponent.sourceCompositeFingerprint.reason,/unavailable/);tested.push('missing declared fingerprint component returns null with explanation');
-  // 層に分けた配置（kuniezu/static/kuniezu/map/control/provinces.png と共有の kuniezu/static/kuniezu/map/projection.json）でも、正本4点の複合確認値を照合する。
+  // 層に分けた配置（kuniezu/map/control/provinces.png と共有の kuniezu/map/projection.json）でも、正本4点の複合確認値を照合する。
   const layered=path.join(dir,'layered'),control=path.join(layered,'control');await fsp.mkdir(control,{recursive:true});
   const layeredSource=path.join(control,'provinces.png'),layeredDef=path.join(control,'definition.csv'),layeredMap=path.join(control,'default.map');
   await fsp.writeFile(layeredSource,valid);await fsp.copyFile(modern,layeredDef);await fsp.copyFile(defaultMap,layeredMap);await fsp.writeFile(path.join(layered,'projection.json'),projectionBytes);
-  const layeredDeclared={...declared,source:{dir:'kuniezu/static/kuniezu/map',provinces:'control/provinces.png',definition:'control/definition.csv',defaultMap:'control/default.map',projection:'projection.json',sha256:compound}};
+  const layeredDeclared={...declared,source:{dir:'kuniezu/map',provinces:'control/provinces.png',definition:'control/definition.csv',defaultMap:'control/default.map',projection:'projection.json',sha256:compound}};
   await fsp.writeFile(manifestPath,JSON.stringify(layeredDeclared));
   const layeredPass=await verify({...options,source:layeredSource,definition:layeredDef,defaultMap:layeredMap});
   assert.equal(layeredPass.manifestSourceSha256Matches,true);assert.equal(layeredPass.sourceCompositeFingerprint.componentPaths.projection,path.join(layered,'projection.json'));tested.push('layered source folders resolve the shared projection');

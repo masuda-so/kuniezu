@@ -32,15 +32,15 @@ under their own terms, which are recorded below and in
 
 ## Historical district boundaries
 
-- **CODH 旧国・旧郡境界データセット** (CC BY-NC 4.0) — rasterised into `kuniezu/static/kuniezu/map/admin/gun.png` (one full-map image) and used as
-  the smallest unit of the map partition in Japan (`kuniezu/static/kuniezu/map/control/gun-assignment.csv`). Credit: 『旧国・旧郡境界データセット』（CODH作成） 「幕末明治地勢地図境界データ」
+- **CODH 旧国・旧郡境界データセット** (CC BY-NC 4.0) — rasterised into `kuniezu/map/admin/gun.png` (one full-map image) and used as
+  the smallest unit of the map partition in Japan (`kuniezu/map/control/gun-assignment.csv`). Credit: 『旧国・旧郡境界データセット』（CODH作成） 「幕末明治地勢地図境界データ」
   （人間文化研究機構作成）を加工 doi:10.20676/00000454. Because of the NC term, any build that
   includes data derived from it must be distributed non-commercially (the maintainer has confirmed
   the game is non-commercial).
 
 - **국사편찬위원회 역사지리정보「행정구역 GIS 데이터 (1910~1945년)」** (공공누리 제1유형, 출처표시) — the
   府・郡 polygons valid on 1910-05-10 (before the 1914 consolidation; 333 units) are rasterised into
-  `kuniezu/static/kuniezu/map/admin/gun.png` as the smallest unit of the map partition in Korea. Downloaded by the maintainer on
+  `kuniezu/map/admin/gun.png` as the smallest unit of the map partition in Korea. Downloaded by the maintainer on
   2026-11-03; the GeoPackage is not redistributed. Credit: 본 저작물은 국사편찬위원회에서 작성하여
   공공누리 제1유형으로 개방한 '행정구역 GIS 데이터 (1910~1945년)'을 이용하였으며, 해당 저작물은
   국사편찬위원회 역사지리정보(https://hgis.history.go.kr)에서 무료로 다운받으실 수 있습니다.

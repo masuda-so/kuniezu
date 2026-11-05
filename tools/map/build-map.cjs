@@ -1,7 +1,7 @@
-/* 地図の通常の再生成の入口。正本 kuniezu/static/kuniezu/map/ から Web 配信用の生成物（kuniezu/static/kuniezu/map/build/、Git で追跡しない）を順に作る。重い処理なので一つずつ直列に動かす。
+/* 地図の通常の再生成の入口。正本 kuniezu/map/ から Web 配信用の生成物（kuniezu/static/kuniezu/map/build/、Git で追跡しない）を順に作る。重い処理なので一つずつ直列に動かす。
    1. 領域タイル   tools/map/build-map-tiles.cjs      provinces.png → kuniezu/static/kuniezu/map/build/provinces{,-4,-8}/・manifest.json
-   2. 年代別の版   tools/map/build-province-edits.cjs kuniezu/static/kuniezu/map/edits/*.json → kuniezu/static/kuniezu/map/build/edits/compiled/
-   3. 境界線       tools/map/build-edges.cjs          領域タイル・版・kuniezu/static/kuniezu/map/admin/gun.png → kuniezu/static/kuniezu/map/build/edges-1・edges-4・edges-8・versions.json
+   2. 年代別の版   tools/map/build-province-edits.cjs kuniezu/map/edits/*.json → kuniezu/static/kuniezu/map/build/edits/compiled/
+   3. 境界線       tools/map/build-edges.cjs          領域タイル・版・kuniezu/map/admin/gun.png → kuniezu/static/kuniezu/map/build/edges-1・edges-4・edges-8・versions.json
    4. 河川の線     tools/map/build-river-lines.cjs    rivers.png → kuniezu/static/kuniezu/map/build/rivers-lines.json
    5. 陰影         tools/map/build-height-cache.py    heightmap.png → kuniezu/static/kuniezu/map/build/relief-cache/・relief.json（--height の時だけ。NumPy・Pillow の Python が要る）
    6. 縮小版       tools/map/build-previews.cjs       正本の各層 → kuniezu/static/kuniezu/map/build/previews/（人が目で確かめる 1/4 の画像。--no-previews で省く）
@@ -19,7 +19,7 @@ const steps=args.includes('--check')?[
  ['年代別の版',...node('tools/map/build-province-edits.cjs')],
  ['境界線',...node('tools/map/build-edges.cjs')],
  ['河川の線',...node('tools/map/build-river-lines.cjs')],
- ...(args.includes('--height')?[['陰影',arg('--python')||'python3',[path.join(root,'tools/map/build-height-cache.py'),'--grid','kuniezu/static/kuniezu/map/build/manifest.json','--heightmap','kuniezu/static/kuniezu/map/physical/heightmap.png','--projection','kuniezu/static/kuniezu/map/projection.json','--output','kuniezu/static/kuniezu/map/build']]]:[]),
+ ...(args.includes('--height')?[['陰影',arg('--python')||'python3',[path.join(root,'tools/map/build-height-cache.py'),'--grid','kuniezu/static/kuniezu/map/build/manifest.json','--heightmap','kuniezu/map/physical/heightmap.png','--projection','kuniezu/map/projection.json','--output','kuniezu/static/kuniezu/map/build']]]:[]),
  ...(args.includes('--no-previews')?[]:[['縮小版',...node('tools/map/build-previews.cjs')]]),
  ['読み込みの確認値',...node('tools/build/stamp-assets.cjs')]];
 for(const [name,cmd,a] of steps){const t=Date.now();console.log(`— ${name}`);const r=spawnSync(cmd,a,{cwd:root,stdio:'inherit'});

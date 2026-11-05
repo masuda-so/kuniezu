@@ -1,4 +1,4 @@
-/* 正本 kuniezu/static/kuniezu/map/control/provinces.png（全域1枚）から、Web 配信用のタイル kuniezu/static/kuniezu/map/build/provinces{,-4,-8}/ と kuniezu/static/kuniezu/map/build/manifest.json を作る。
+/* 正本 kuniezu/map/control/provinces.png（全域1枚）から、Web 配信用のタイル kuniezu/static/kuniezu/map/build/provinces{,-4,-8}/ と kuniezu/static/kuniezu/map/build/manifest.json を作る。
    タイルは 1024 画素四方の可逆 PNG。海だけのタイルは出さない。400m・800m は f 画素ごとの中心の画素を採る（最近傍。区画の色を混ぜない）。
    タイルは正本から決まる生成物で、手で直さない。区画ごとの画素数は data/audits/raster-province-pixels.json に書く。
    実行：node --max-old-space-size=4000 tools/map/build-map-tiles.cjs   （--check：書かずに、今あるタイルと manifest が正本どおりか確かめる） */
@@ -32,13 +32,15 @@ const sha=b=>crypto.createHash('sha256').update(b).digest('hex');
  if(info.width!==W||info.height!==H)throw Error('provinces.png の大きさが projection.json と違う');
  for(const c of counts.keys())if(!def.byRGB.has(c))throw Error('definition.csv にない色 '+c);
  const {note,width,height,...projection}=proj;
- const manifest={generated:'tools/map/build-map-tiles.cjs',basis:'正本 kuniezu/static/kuniezu/map/control/provinces.png（全域1枚）から作った Web 配信用のタイル。手で直さない。',
-  source:{dir:'kuniezu/static/kuniezu/map',...Object.fromEntries(Object.entries(MD.files).map(([k,f])=>[k,path.relative(MD.dir,f).split(path.sep).join('/')])),sha256:MD.sourceSha256()},// 各ファイルは dir からの相対パス（control/provinces.png・projection.json など）
+ const manifest={generated:'tools/map/build-map-tiles.cjs',basis:'正本 kuniezu/map/control/provinces.png（全域1枚）から作った Web 配信用のタイル。手で直さない。',
+  source:{dir:'kuniezu/map',...Object.fromEntries(Object.entries(MD.files).map(([k,f])=>[k,path.relative(MD.dir,f).split(path.sep).join('/')])),sha256:MD.sourceSha256()},// 各ファイルは dir からの相対パス（control/provinces.png・projection.json など）
   projection,width:W,height:H,tile:TILE,tiles:lv[0].tiles,levels:lv.slice(1).map(L=>({factor:L.f,dir:L.dir,width:L.w,height:L.h,tiles:L.tiles}))};
  const mf=path.join(out,'manifest.json'),text=JSON.stringify(manifest,null,1);
- if(CHECK){if(fs.readFileSync(mf,'utf8')!==text)throw Error('manifest.json が正本と違う');for(const L of lv){const extra=fs.readdirSync(path.join(out,L.dir)).filter(f=>!L.files.has(f));if(extra.length)throw Error('正本に無いタイル: '+L.dir+'/'+extra[0]);}console.log('PASS: 配信タイルは正本どおり');}
+ // 実行時に読む区画の表（definition.csv・default.map）は、正本から配信物の置き場へそのまま写す。
+ const copies=['definition','defaultMap'].map(k=>[MD.files[k],path.join(out,path.basename(MD.files[k]))]);
+ if(CHECK){if(fs.readFileSync(mf,'utf8')!==text)throw Error('manifest.json が正本と違う');for(const [from,to] of copies)if(!fs.existsSync(to)||!fs.readFileSync(to).equals(fs.readFileSync(from)))throw Error('区画の表の写しが正本と違う: '+path.basename(to));for(const L of lv){const extra=fs.readdirSync(path.join(out,L.dir)).filter(f=>!L.files.has(f));if(extra.length)throw Error('正本に無いタイル: '+L.dir+'/'+extra[0]);}console.log('PASS: 配信タイルは正本どおり');}
  else{for(const L of lv){const old=path.join(out,L.dir+'.old');fs.rmSync(old,{recursive:true,force:true});if(fs.existsSync(path.join(out,L.dir)))fs.renameSync(path.join(out,L.dir),old);fs.renameSync(path.join(stage,L.dir),path.join(out,L.dir));fs.rmSync(old,{recursive:true,force:true});}
-  fs.rmSync(stage,{recursive:true,force:true});fs.writeFileSync(mf,text);
+  fs.rmSync(stage,{recursive:true,force:true});fs.writeFileSync(mf,text);for(const [from,to] of copies)fs.copyFileSync(from,to);
   const px=def.rows.filter(Boolean).map(r=>({id:r.id,key:r.key,kind:r.kind,pixels:counts.get(r.rgb.join(','))||0}));
   fs.writeFileSync(path.join(MD.root,'data/audits/raster-province-pixels.json'),JSON.stringify({generated:'tools/map/build-map-tiles.cjs',source:manifest.source.sha256,provinces:px},null,1)+'\n');
   console.log(JSON.stringify({tiles:lv.map(L=>[L.dir,L.tiles.length])}));}
