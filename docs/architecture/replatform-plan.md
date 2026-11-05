@@ -67,6 +67,8 @@
 | 4 | **道具の Python 化**：地図（`tools/map`）→ 史料（`tools/research`）→ 肖像・地理。JS を実行する検査は pytest から Node を呼ぶ形に包む | 生成物が Node 版と一致し、Node 版を消せる |
 | 5 | **史実 DB を Django に**：今の関係表（entity・alias・authority・place・source・record・event_date・spatial_reference ほか）をモデルと移行にし、管理画面で閲覧・編集、curated JSON との取り込み・書き出しを管理コマンドにする | 取り込み→書き出しで curated JSON が変わらない。時空間検索と集計が今の結果と一致する |
 
+段 1 は 2 つに分ける。**1a**：Django・uv の骨組み（設定・URL・ページ・静的書き出し・試験・CI）を足し、`game/` は動かさない。ページは `game/index.html` に `<base>` を入れて返すだけの仮の橋渡し（`docs/structure.md`）。**1b**：`game/` を `kuniezu/static/kuniezu/` と `kuniezu/templates/` へ移し、道具・検査・文書の経路を直し、`index.html` を本物のテンプレートにする。
+
 段 1 を最初にするのは、全ファイルの移動を、開いている枝が少ない今のうちに済ませるため。Codex の作業中の枝（`codex/*`、一時停止中）は、段 1 の後に main へ付け替える必要がある。
 
 ## 未決の点（該当の段で利用者に確認する）
