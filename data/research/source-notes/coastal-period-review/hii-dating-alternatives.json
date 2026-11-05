@@ -1,0 +1,32 @@
+{
+  "checked": "2026-11-04",
+  "subject": "斐伊川の東流年代",
+  "status": "unresolved-not-curated-claim",
+  "alternatives": [
+    {
+      "source": "coastal-hii-fureai-148",
+      "locator": "PDF2頁 左年表",
+      "attributedYears": [
+        1635,
+        1639
+      ],
+      "reading": "1635年と1639年の洪水を東流に結びつける2006年の広報説明。",
+      "precision": "years-in-retrospective-chronology"
+    },
+    {
+      "source": "coastal-hii-matsue-column79",
+      "locator": "PDF5–7頁 出雲国図・追記",
+      "attributedMapYear": 1633,
+      "reading": "1633年幕府収納絵図の写しとされる図に東流が描かれる。描写と作成年が正しければ東流はそれ以前という条件付きの問題提起。",
+      "precision": "attributed-copy-date-not-transformation-date",
+      "conditions": [
+        "描写の時期が正しいこと",
+        "制作年・写本年代・改筆の来歴が正しいこと"
+      ]
+    }
+  ],
+  "retainedConclusion": "東流の正確な時期はこの照合で確定しない。1635年まで必ず西流とすることも、現代の東流を全年代で確定することもしない。",
+  "needed": "原絵図の来歴・描写と、後続の年代測定・歴史地理研究を対応させる。",
+  "geometry": null,
+  "automaticDateSwitch": false
+}

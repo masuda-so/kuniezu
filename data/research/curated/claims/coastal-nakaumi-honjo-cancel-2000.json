@@ -1,0 +1,44 @@
+{
+  "id": "coastal-nakaumi-honjo-cancel-2000",
+  "entity": "place:nakaumi",
+  "predicate": "drying-plan-cancellation",
+  "value": {
+    "statement": "島根県は本庄地区について平成12年9月に干陸を中止することになったと記す。",
+    "sourceTime": {
+      "label": "平成12年9月",
+      "calendar": "Gregorian-era-name",
+      "precision": "month",
+      "year": 2000,
+      "month": 9
+    }
+  },
+  "validYears": [
+    2000,
+    2000
+  ],
+  "datePrecision": "month",
+  "eventTime": {
+    "kind": "year-window",
+    "calendar": "CE-year",
+    "precision": "year",
+    "year": 2000
+  },
+  "linkedEntities": [
+    "place:nakaumi"
+  ],
+  "eventRelation": "drying-plan-cancellation",
+  "eventScope": "年単位の検索用。原暦・元の精度はvalue.sourceTimeへ保持。干陸の中止であって、完成した干拓地の成立年やすべての施設撤去年ではない。",
+  "source": "coastal-nakaumi-shimane",
+  "sourceUrl": "https://www1.pref.shimane.lg.jp/industry/norin/seibi/kokuei/kokueinouchiuridashityuu.html",
+  "locator": "「国営中海土地改良事業」第3段落／本庄地区の干陸中止",
+  "checked": "2026-11-04",
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "gameBindings": [
+    "kuniezu/map/control/provinces.png"
+  ],
+  "bindingScope": "地形の年代比較・監査の参照先。正本・ゲームイベントへの変更は未適用。",
+  "uncertainty": "干陸の中止であって、完成した干拓地の成立年やすべての施設撤去年ではない。 精密輪郭・座標は採用していない。",
+  "review": "data/research/source-notes/coastal-period-review/adoption.json",
+  "reviewInputId": "nakaumi-modern-four-districts"
+}

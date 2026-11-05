@@ -1,0 +1,44 @@
+{
+  "id": "coastal-tsumori-development-1702",
+  "entity": "place:tsumori-shinden",
+  "predicate": "reclamation-development-success",
+  "value": {
+    "statement": "大阪市立図書館は、津守新田の開発成功を元禄15年3月と記す。",
+    "sourceTime": {
+      "label": "元禄15（1702）年3月",
+      "calendar": "Japanese-lunisolar",
+      "precision": "month",
+      "year": 1702,
+      "month": 3
+    }
+  },
+  "validYears": [
+    1702,
+    1702
+  ],
+  "datePrecision": "month",
+  "eventTime": {
+    "kind": "year-window",
+    "calendar": "CE-year",
+    "precision": "year",
+    "year": 1702
+  },
+  "linkedEntities": [
+    "place:tsumori-shinden"
+  ],
+  "eventRelation": "reclamation-development-success",
+  "eventScope": "年単位の検索用。原暦・元の精度はvalue.sourceTimeへ保持。原文の3月は旧暦月であり西暦3月には変換しない。1707年の被災・以後の再建があるため、その後ずっと陸地だったという証明ではない。",
+  "source": "coastal-osaka-tsumori-library",
+  "sourceUrl": "https://www.oml.city.osaka.lg.jp/torikomi/page/1297_nishinari.html",
+  "locator": "「津守新田の開発について」回答第1段落／開発成功",
+  "checked": "2026-11-04",
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "gameBindings": [
+    "kuniezu/map/control/provinces.png"
+  ],
+  "bindingScope": "地形の年代比較・監査の参照先。正本・ゲームイベントへの変更は未適用。",
+  "uncertainty": "原文の3月は旧暦月であり西暦3月には変換しない。1707年の被災・以後の再建があるため、その後ずっと陸地だったという証明ではない。 精密輪郭・座標は採用していない。",
+  "review": "data/research/source-notes/coastal-period-review/adoption.json",
+  "reviewInputId": "osaka-tsumori-1698-1702"
+}

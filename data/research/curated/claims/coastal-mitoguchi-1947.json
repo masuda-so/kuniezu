@@ -1,0 +1,45 @@
+{
+  "id": "coastal-mitoguchi-1947",
+  "entity": "place:jusan-mitoguchi",
+  "predicate": "river-mouth-work-completion",
+  "value": {
+    "statement": "国土交通省の河川伝統技術データベースは、十三湖水戸口の突堤の完成を昭和22（1947）年と記す。",
+    "sourceTime": {
+      "label": "昭和22（1947）年",
+      "calendar": "Gregorian-era-name",
+      "precision": "year",
+      "year": 1947
+    }
+  },
+  "validYears": [
+    1947,
+    1947
+  ],
+  "datePrecision": "year",
+  "eventTime": {
+    "kind": "year-window",
+    "calendar": "CE-year",
+    "precision": "year",
+    "year": 1947
+  },
+  "linkedEntities": [
+    "place:jusan-mitoguchi",
+    "place:jusan-lake"
+  ],
+  "eventRelation": "river-mouth-work-completion",
+  "eventScope": "年単位の検索用。原暦・元の精度はvalue.sourceTimeへ保持。近代の河口安定工事であり、現在の固定開口を1560～1615年へ転記しない。",
+  "source": "coastal-jusan-mlit-gijutsu",
+  "sourceUrl": "https://www.mlit.go.jp/river/pamphlet_jirei/kasen/rekishibunka/kasengijutsu06.html",
+  "locator": "No.11 岩木川「水戸口突堤」／調査、着工と完成を説明する段落",
+  "checked": "2026-11-04",
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "gameBindings": [
+    "kuniezu/map/control/provinces.png",
+    "game/map_data/rivers.png"
+  ],
+  "bindingScope": "地形の年代比較・監査の参照先。正本・ゲームイベントへの変更は未適用。",
+  "uncertainty": "近代の河口安定工事であり、現在の固定開口を1560～1615年へ転記しない。 精密輪郭・座標は採用していない。",
+  "review": "data/research/source-notes/coastal-period-review/adoption.json",
+  "reviewInputId": "jusan-modern-mitoguchi"
+}

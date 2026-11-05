@@ -1,0 +1,47 @@
+{
+  "id": "coastal-okakoi-start-1608",
+  "entity": "place:kiso-okakoi-levee",
+  "predicate": "levee-construction-commencement",
+  "value": {
+    "statement": "農林水産省は木曽川左岸の御囲堤を慶長13年から2年で完成したと説明する。国土交通省の図説は御囲堤と左岸派川の締切りを1608年の整備に関連づける。",
+    "sourceTime": {
+      "label": "慶長13年（1608）から2年",
+      "calendar": "Japanese-lunisolar",
+      "precision": "year",
+      "year": 1608
+    }
+  },
+  "validYears": [
+    1608,
+    1608
+  ],
+  "datePrecision": "year",
+  "eventTime": {
+    "kind": "year-window",
+    "calendar": "CE-year",
+    "precision": "year",
+    "year": 1608
+  },
+  "linkedEntities": [
+    "place:kiso-okakoi-levee"
+  ],
+  "eventRelation": "levee-construction-commencement",
+  "eventScope": "年単位の検索用。原暦・元の精度はvalue.sourceTimeへ保持。ここでは着工年を採用する。2年という工期から一律の1610年完成日や各派川の締切日を逆算しない。",
+  "source": "coastal-nobi-maff-history",
+  "sourceUrl": "https://www.maff.go.jp/tokai/noson/shinnobi/pr/juyowa/juyowa.html",
+  "locator": "第3話「御囲堤」／「慶長13年（1608）からわずか2年で完成」の段落",
+  "checked": "2026-11-04",
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "gameBindings": [
+    "kuniezu/map/control/provinces.png",
+    "game/map_data/rivers.png"
+  ],
+  "bindingScope": "地形の年代比較・監査の参照先。正本・ゲームイベントへの変更は未適用。",
+  "uncertainty": "ここでは着工年を採用する。2年という工期から一律の1610年完成日や各派川の締切日を逆算しない。 精密輪郭・座標は採用していない。",
+  "review": "data/research/source-notes/coastal-period-review/adoption.json",
+  "reviewInputId": "nobi-okakoi-1608",
+  "corroboratingSources": [
+    "coastal-nobi-mlit-water-use-pdf"
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "id": "coastal-yamato-old-channel-fields-1705",
+  "entity": "place:yamato-lower-river",
+  "predicate": "reclamation-commencement",
+  "value": {
+    "statement": "大和川付替えの翌年から、久宝寺川・玉櫛川などの旧川筋と新開池・深野池などで新田開発が始まったと河川事務所が説明する。",
+    "sourceTime": {
+      "label": "宝永2（1705）年から",
+      "calendar": "Japanese-lunisolar",
+      "precision": "year",
+      "year": 1705
+    }
+  },
+  "validYears": [
+    1705,
+    1705
+  ],
+  "datePrecision": "year",
+  "eventTime": {
+    "kind": "year-window",
+    "calendar": "CE-year",
+    "precision": "year",
+    "year": 1705
+  },
+  "linkedEntities": [
+    "place:yamato-lower-river",
+    "place:shinkai-ike",
+    "place:fukono-ike"
+  ],
+  "eventRelation": "reclamation-commencement",
+  "eventScope": "年単位の検索用。原暦・元の精度はvalue.sourceTimeへ保持。複数区域にわたる開発開始の概括であり、各池・各筆が一斉に干陸した年ではない。",
+  "source": "coastal-osaka-yamato-effects",
+  "sourceUrl": "https://www.kkr.mlit.go.jp/yamato/about/yamato300/tukekae/tukekae3.html",
+  "locator": "宝永2年から旧川筋・新開池・深野池の開発が始まったとする段落",
+  "checked": "2026-11-04",
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "gameBindings": [
+    "kuniezu/map/control/provinces.png"
+  ],
+  "bindingScope": "地形の年代比較・監査の参照先。正本・ゲームイベントへの変更は未適用。",
+  "uncertainty": "複数区域にわたる開発開始の概括であり、各池・各筆が一斉に干陸した年ではない。 精密輪郭・座標は採用していない。",
+  "review": "data/research/source-notes/coastal-period-review/adoption.json",
+  "reviewInputId": "osaka-new-fields-1705"
+}

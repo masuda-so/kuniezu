@@ -23,3 +23,5 @@ HTMLで取得した資料を、書誌・確認箇所・要約・適用範囲が�
 | 児島湾・備前国図 | [備前国図 T1-5 公開画像案内](../../inputs/kojima-coast-review/bizen-keicho-adeac.md) | 画像接続記録 |
 | 児島湾・備前国図 | [備前国図 画像ビューア取得記録](../../inputs/kojima-coast-review/bizen-keicho-viewer.md) | 画像接続記録 |
 | 沖田畷の戦い | [沖田畷合戦場跡 龍造寺隆信供養塔](../../inputs/okitanawate-review/shimabara-cultural-source.md) | 要約 |
+
+- [沿岸5地域の工事年代と採否](coastal-period-review/README.md) — 東京湾・大阪湾・濃尾平野・中海／宍道湖・十三湖。開始、許可、完成、中止と各資料の年代精度を区別する。

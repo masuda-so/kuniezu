@@ -1,0 +1,43 @@
+{
+  "id": "coastal-edo-reclamation-1603",
+  "entity": "place:edo",
+  "predicate": "reclamation-stage",
+  "value": {
+    "statement": "港区教育史は、慶長8年の江戸城・城下町整備の天下普請とともに、現在の日本橋浜町から新橋付近で埋立が進んだと説明する。",
+    "sourceTime": {
+      "label": "慶長8年（1603）",
+      "calendar": "Japanese-lunisolar",
+      "precision": "year",
+      "year": 1603
+    }
+  },
+  "validYears": [
+    1603,
+    1603
+  ],
+  "datePrecision": "year",
+  "eventTime": {
+    "kind": "year-window",
+    "calendar": "CE-year",
+    "precision": "year",
+    "year": 1603
+  },
+  "linkedEntities": [
+    "place:edo"
+  ],
+  "eventRelation": "reclamation-stage",
+  "eventScope": "年単位の検索用。原暦・元の精度はvalue.sourceTimeへ保持。広域の工事段階の記録であり、浜町～新橋の全土地・日比谷入江の完成範囲を1603年一日に確定しない。",
+  "source": "coastal-tokyo-minato-history",
+  "sourceUrl": "https://adeac.jp/minato-city-kyouiku/texthtml/d100010/mp100010/ht100120",
+  "locator": "自然的立地（掲載頁12–19）／「慶長8年（1603）」の天下普請の段落",
+  "checked": "2026-11-04",
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "gameBindings": [
+    "kuniezu/map/control/provinces.png"
+  ],
+  "bindingScope": "地形の年代比較・監査の参照先。正本・ゲームイベントへの変更は未適用。",
+  "uncertainty": "広域の工事段階の記録であり、浜町～新橋の全土地・日比谷入江の完成範囲を1603年一日に確定しない。 精密輪郭・座標は採用していない。",
+  "review": "data/research/source-notes/coastal-period-review/adoption.json",
+  "reviewInputId": "tokyo-hibiya-1592-1603"
+}
