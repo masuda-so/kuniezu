@@ -26,3 +26,5 @@
 ## 地理座標
 
 入力の経緯度、ゲーム内平面、画面ピクセル、他地域追加時の扱いは [地理座標と画面座標](geographic-coordinates.md) を参照する。
+
+再編の計画（website と同じ Django の構成、地理院地図Vector の下図）は [replatform-plan.md](replatform-plan.md)。
