@@ -5,4 +5,11 @@ const original=JSON.stringify(TK.MODERN_ROAD_REFERENCE),rows=[];for(const r of G
 assert.equal(JSON.stringify(TK.MODERN_ROAD_REFERENCE),original);for(const [name,junction]of [['東山道',[137.814665,35.908807]],['三州街道',[137.708965,35.306391]],['白河街道',[140.06797,37.38636]],['石見路',[133.023579,35.12505]],['羽州道',[140.559313,40.483289]]]){const r=rows.find(r=>r.name===name);assert.ok(r.excursions.some(e=>e.reviewed&&JSON.stringify(e.junction)===JSON.stringify(junction)));}
 const tosa=rows.find(r=>r.name==='土佐東街道');assert.ok(tosa.excursions.some(e=>e.reviewed&&Math.abs(e.junction[0]-134.285063)<1e-7),'reviewed Kochi coastal waypoint detour removed');
 const hyugaBefore=JSON.parse(fs.readFileSync('data/inputs/hyuga-road-review/before-modern-reference.json')).points,hyugaReviews=JSON.parse(fs.readFileSync('data/inputs/road-excursion-reviews.json')).reviews.filter(r=>r.road==='日向街道');assert.equal(TK.cleanReferenceExcursions(hyugaBefore,hyugaReviews).excursions.filter(e=>e.reviewed).length,3,'three old comparison detours remain reproducibly reviewed');
+const ushu=JSON.parse(fs.readFileSync('data/inputs/ushu-edo-reference.json'));
+const ushuView=TK.roadDisplay(G.ROADS.find(r=>r.name===ushu.road));
+const projectedAnchors=ushu.anchors.map(p=>Array.from(G.PJ(...p)));
+const [ushuStart,ushuEnd]=projectedAnchors.map(([x,y])=>ushuView.pts.findIndex(p=>p[0]===x&&p[1]===y));
+assert.ok(ushuStart>=0&&ushuEnd>ushuStart,'both Ushu comparison joins exist in order');
+assert.deepEqual(Array.from(ushuView.pts.slice(ushuStart+1,ushuEnd),p=>Array.from(p)),ushu.points.map(p=>Array.from(G.PJ(...p))));
+assert.ok(ushuView.evidence.sources.includes('ushuEdoComparison'));
 const summary={roads:rows.length,correctedRoads:rows.filter(r=>r.removedVertices).length,excursions:rows.reduce((n,r)=>n+r.excursions.length,0),removedKm:rows.flatMap(r=>r.excursions).reduce((n,e)=>n+e.lengthKm,0)};fs.writeFileSync('data/audits/road-excursions-review.json',JSON.stringify({scope:'全85描画街道を点検。近現代参考線の完全往復と個別確認した閉路だけを整理。史実上の全支線の有無を確定しない。',summary,rows},null,2));console.log('PASS: exact returns removed, genuine circuits retained, all-road source/endpoints preserved, reviewed Tosando/Sanshu corrections',summary);
