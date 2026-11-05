@@ -27,7 +27,7 @@ async function menu(){await click('#me [data-m=menu]');}
 const timer=setTimeout(()=>{console.error('timeout');chrome.kill();process.exitCode=1},480000);
 const cover=()=>ev('(()=>{const {corners}=TKUI.mapBounds();return corners[0][0]<=.01&&corners[0][1]<=.01&&corners[1][0]>=innerWidth-.01&&corners[1][1]>=innerHeight-.01})()');
 (async()=>{try{
- const target=await call('Target.createTarget',{url:'about:blank'},null);session=(await call('Target.attachToTarget',{targetId:target.targetId,flatten:true},null)).sessionId;await call('Runtime.enable');await call('Page.enable');if(overrideRoot)await call('Fetch.enable',{patterns:overrideNames.map(name=>({urlPattern:new globalThis.URL(name,URL).href,requestStage:'Request'}))});await view(1400,1000);await load();await start();await click('#modal [data-act=close]');await ev('TKUI.speed=0');
+ const target=await call('Target.createTarget',{url:'about:blank'},null);session=(await call('Target.attachToTarget',{targetId:target.targetId,flatten:true},null)).sessionId;await call('Runtime.enable');await call('Page.enable');if(overrideRoot)await call('Fetch.enable',{patterns:overrideNames.map(name=>({urlPattern:(name==='index.html'?URL:new globalThis.URL(require('../build/game-page.cjs').STATIC_URL+name,URL).href+'*'),requestStage:'Request'}))});await view(1400,1000);await load();await start();await click('#modal [data-act=close]');await ev('TKUI.speed=0');
  const result=await ev(`(()=>{
   const title='木崎原の戦い',end=G.evT({d:TK.BATTLES[title].eventDate});TKUI.ffwd=true;
   try{for(let i=0;i<1400&&G.S().t<end;i++){G.day();for(const q of ['evQ','sceneQ','battleQ','propQ','prisonQ','observerQ'])G.S()[q]=[];}}
