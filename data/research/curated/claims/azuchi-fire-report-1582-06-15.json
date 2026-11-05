@@ -1,0 +1,37 @@
+{
+  "id": "azuchi-fire-report-1582-06-15",
+  "entity": "place:azuchi-castle",
+  "predicate": "document-reports-fire",
+  "value": "吉田兼見は天正10年旧暦6月15日の日記に安土城の火災の報を記した。",
+  "validYears": [
+    1582,
+    1582
+  ],
+  "datePrecision": "day",
+  "source": "shiga-azuchi-fire-kamikyoki",
+  "sourceUrl": "https://www.pref.shiga.lg.jp/file/attachment/5456533.pdf",
+  "locator": "第4節「安土炎上」、『兼見卿記（別本）』天正10年6月15日条",
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-05",
+  "uncertainty": "講座資料は炎上を旧暦6月14〜15日とする。日記の日付は報を記した日で、出火時刻や出火原因、放火者を確定しない。",
+  "linkedEntities": [
+    "place:azuchi-castle"
+  ],
+  "eventTime": {
+    "kind": "dated-event",
+    "calendar": "Japanese-lunisolar",
+    "precision": "day",
+    "date": [
+      1582,
+      6,
+      15
+    ],
+    "leapMonth": false
+  },
+  "eventRelation": "document-reports-fire",
+  "eventScope": "日記に火災の報が記された日。炎上の開始日とは区別する。",
+  "gameBindings": [
+    "TK.JOKAKU:安土城炎上"
+  ]
+}

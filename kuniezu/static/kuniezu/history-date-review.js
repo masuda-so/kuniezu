@@ -25,6 +25,22 @@
  // 全国遺跡報告総覧・文化財総覧WebGIS 城跡点190000156100。縄張全域の中心ではない。
  Object.assign(build,{lon:138.425240,lat:35.735151,coordinateBasis:'全国遺跡報告総覧 城跡点190000156100'});
  TK.JOKAKU.find(e=>e.title==='新府城炎上').source=TK.RESEARCH_SOURCES.shinpuChronology.url;
+ const azuchiFire=TK.RESEARCH_SOURCES['shiga-azuchi-fire-kamikyoki']={
+  "author": "松下浩（滋賀県文化財保護課）",
+  "title": "本能寺の変以後の安土城と織田家",
+  "url": "https://www.pref.shiga.lg.jp/file/attachment/5456533.pdf",
+  "locator": "第4節「安土炎上」、『兼見卿記（別本）』天正10年6月15日条",
+  "scope": "炎上の時期、発掘調査による焼失範囲、史料にみえる複数の原因説。ここでは翻刻の日記が伝える火災の報を採用。",
+  "accessed": "2026-11-05",
+  "year": "2024"
+ };
+ // 文化財総覧WebGIS 98015844 の城跡代表点。観音寺城の基準点は別に保持する。
+ Object.assign(TK.JOKAKU.find(e=>e.k==='build'&&e.n==='安土城'),{lon:136.1393,lat:35.15638});
+ Object.assign(TK.JOKAKU.find(e=>e.title==='安土城炎上'),{
+  source:azuchiFire.url,
+  text:'安土城の天主などが焼け落ちた。旧暦六月十五日付の日記に火災の報が残る。出火の原因は分かっていない。'
+ });
+
  const h=TK.YOSHO.find(y=>y[0]==='彦根城');if(h){h[5]=1604;h[4]='近江国・平山城。井伊氏の居城。彦根市の調査では1604年旧暦7月1日着工。従来の1603年説とは区別し、着工時点を完成とは扱わない。';}
  Object.assign(TK.CASTLE_EVIDENCE,{
   '韮山城':{role:'北条氏規の居城・小田原の支城',description:'北条家初期の本拠と、1590年の氏規の籠城拠点では役割が異なる。旧暦6月24日開城、8月に内藤信成入城、1601年廃城。ゲームの領域管理上の本城という分類とは区別する。',source:n.source,checked:'2026-10-31'},
