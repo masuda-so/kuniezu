@@ -1,0 +1,37 @@
+{
+  "id": "death-date-takahashi-joun",
+  "entity": "person:高橋紹運",
+  "predicate": "death-date",
+  "value": "島津忠長・伊集院忠棟らが大友氏の将の高橋紹運を筑前の岩屋城に囲んでいたが、この日に城が落ち、紹運は戦死した。",
+  "validYears": [
+    1586,
+    1586
+  ],
+  "datePrecision": "day",
+  "source": "hiDainihonshiryoKobun",
+  "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+  "locator": "綱文：和暦 天正14年7月26日 第3条（区分 史料綜覧、編11・冊912（データベースの表示値）、133頁）",
+  "gameBindings": [
+    "TK.HIST:岩屋城の戦い"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-05",
+  "uncertainty": "綱文は落城と戦死を 7 月 26 日条に掲げる。 綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。",
+  "linkedEntities": [
+    "person:高橋紹運"
+  ],
+  "eventTime": {
+    "kind": "dated-event",
+    "date": [
+      1586,
+      7,
+      26
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": false,
+    "precision": "day"
+  },
+  "eventRelation": "death",
+  "eventScope": "綱文が掲げる死去の日付と、綱文に書かれた相手・場所。ゲームの年表の日付は 1586 年 9 月 10 日（旧暦 7 月 27 日に当たる）で、綱文の旧暦 7 月 26 日をゲームの暦表で直した 9 月 9 日より 1 日遅い。年表は変えていない（どちらを採るかは未判断）。 死因・享年・時刻・精密な位置は補わない。"
+}
