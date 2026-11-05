@@ -1,0 +1,209 @@
+{
+  "schema": "ogura-tomori-archaeological-evidence-v1",
+  "checked": "2026-11-04",
+  "source": "kyoto-arc-2023-2",
+  "claim": "tomori-area6-momoyama-building1",
+  "place": "place:tomori-area6",
+  "readSourcePages": [
+    6,
+    19,
+    51,
+    56,
+    66
+  ],
+  "independentVisualInspectionThisTask": [
+    6,
+    19,
+    56,
+    66
+  ],
+  "sourceDataVersusGame": "実測図からの地理情報を史料台帳へ接続する。ゲームの座標を出典に転記していない。",
+  "temporalInterpretation": {
+    "originalLabel": "安土桃山時代",
+    "originalCalendar": "archaeological-period",
+    "databaseCalendar": "Japanese-era-description",
+    "indexWindow": [
+      1560,
+      1615
+    ],
+    "indexWindowBasis": "game-search-window-only",
+    "historicalStart": null,
+    "historicalEnd": null,
+    "continuousOccupationAsserted": false,
+    "scopeExpected": "described-period-candidate"
+  },
+  "coordinateInterpretation": {
+    "source": "kyoto-arc-2023-2",
+    "sourceUrl": "https://www.kyoto-arc.or.jp/news/chousahoukoku/2023-02.pdf",
+    "locator": "報告書抄録（PDF66頁）、所収遺跡名・所在地・北緯・東経の欄",
+    "checked": "2026-11-04",
+    "scope": "富ノ森城跡の当該調査を参照する公刊代表点。調査枠・城域・柱穴中心や個々の遺構の位置ではない。",
+    "review": "data/research/source-notes/ogura-tomori-archaeology.json",
+    "coordinateOrder": "longitude-latitude",
+    "coordinateUnits": "decimal-degrees",
+    "sourceCoordinateOrder": "latitude-longitude",
+    "sourceCoordinateLiteral": "北緯34度55分03秒／東経135度43分55秒",
+    "sourceCoordinateUnits": "degrees-minutes-seconds",
+    "sourceAngularResolutionArcSeconds": 1,
+    "sourceDatum": null,
+    "sourceDatumStatus": "not-stated-for-abstract-coordinate",
+    "sourceDatumReview": "抄録の経緯度欄には測地系指定がない。例言8は実測図に世界測地系VI系を用いたとするが、抄録点との直接対応・測地系の版や元期は明記しない。抄録の公刊値を度分秒から十進度へ表記換算しただけで、測地系変換やWGS84確認は行っていない。",
+    "absolutePositionAccuracyMetres": null,
+    "datumTransformationToWGS84Performed": false,
+    "geographicDatumEPSG": null,
+    "coordinateConversion": {
+      "method": "degrees-minutes-seconds-to-decimal-degrees-only",
+      "datumTransformation": false,
+      "epochCorrectionPerformed": false
+    },
+    "uncertainty": "原表の表示は1秒単位。丸め方式・測量精度は非明示であり、1秒を誤差保証にしない。小数桁の追加は表記換算による。"
+  },
+  "detailedObservationCoordinates": {
+    "source": "kyoto-arc-2023-2",
+    "sourceUrl": "https://www.kyoto-arc.or.jp/news/chousahoukoku/2023-02.pdf",
+    "locator": "例言8（PDF6頁）・図版10の建物1、柱穴52とX/Y座標格子（PDF56頁）；図版5で調査地内の位置を照合",
+    "checked": "2026-11-04",
+    "scope": "柱穴52中心を実測図から読んだ詳細観測座標。DBの地点代表点には採用しない。現地独立測量値・建物壁面・湖岸・城域境界を表さない。",
+    "review": "data/research/source-notes/ogura-tomori-archaeology.json",
+    "coordinateOrder": "longitude-latitude",
+    "coordinateUnits": "decimal-degrees",
+    "sourceCoordinateOrder": "northing-easting",
+    "sourceCoordinateLiteral": [
+      -120046.21378677768,
+      -24479.924786566007
+    ],
+    "sourceCoordinateUnits": "metres",
+    "sourceDatum": "世界測地系・平面直角座標系VI",
+    "sourceDatumStatus": "world-geodetic-realization-and-epoch-not-stated",
+    "sourceDatumReview": "原報告は世界測地系VI系と記すが、JGD2000/JGD2011・測量元期を明記しない。国土地理院APIで同系の平面座標を経緯度へ換算した値を保持し、WGS84への測地系変換済みとは扱わない。",
+    "absolutePositionAccuracyMetres": null,
+    "datumTransformationToWGS84Performed": false,
+    "geographicDatumEPSG": null,
+    "coordinateConversion": {
+      "method": "local affine through three official GSI VI->geographic API responses; unused fourth response checked",
+      "apiDocumentation": "https://vldb.gsi.go.jp/sokuchi/surveycalc/api_help.html",
+      "apiLocator": "緯度・経度への換算：refFrame=2（世界測地系）、zone=6、publicX/publicYはm",
+      "parameters": {
+        "refFrame": 2,
+        "zone": 6
+      },
+      "registration": {
+        "path": "data/inputs/ogura-local-observations/registration.json",
+        "sha256": "6f9e42b66e208bd093bd8068f1b7c730167afff633976096c319e5826de063d0"
+      },
+      "responses": {
+        "path": "data/inputs/ogura-local-observations/gsi-coordinate-api.json",
+        "sha256": "41047fe3c2eb875699061a533b4f036568cc42c262af95d25bf22aadf5d08434"
+      },
+      "arithmeticCheckDifferenceMetres": 0.001439590066433704,
+      "checkIsAbsoluteSurveyAccuracy": false,
+      "epochCorrectionPerformed": false
+    },
+    "localGeometry": {
+      "path": "data/inputs/ogura-local-observations/tomori-observations.geojson",
+      "sha256": "ac4f2c3f639fd0de32a757d1821840ff4fb249eb2e0ffefddf8043ac6c739b93",
+      "featureId": "tomori-building1-post-52"
+    },
+    "uncertainty": "元図の格子と柱穴を読図した座標。小数桁数・局所換算の数mm差を歴史位置精度に読み替えない。",
+    "status": "detailed-readout-not-used-as-db-site-representative",
+    "derivedCoordinates": [
+      135.73208083874374,
+      34.917602031049704
+    ]
+  },
+  "rasterComparison": {
+    "source": "frozen-local-shapes-validation",
+    "input": {
+      "path": "data/inputs/ogura-local-observations/local-shapes-validation.json",
+      "sha256": "12ef47d6b522158787d0abe8620301ffd727f1a0b5486c7f7573384505a090ec"
+    },
+    "buildingPostsInOldLake": 6,
+    "rasterSampleCentresWithinSurvey": 0,
+    "approved100mRasterCellChanges": 0,
+    "comparedMapIsLatestLive": false,
+    "oldLakeSnapshotSha256": "71374ee0f7ff61b61861a3ada8998c96d61b63c8c7ca4ac4740c0391b9777e50",
+    "conclusion": "小規模遺構の観測を100mセル全域へ拡大しない。旧比較結果は最新正本の再検査や湖岸修正完了の証明ではない。",
+    "oldLakeSnapshot": {
+      "path": "data/inputs/ogura-local-observations/old-lake-comparison-snapshot.json",
+      "sha256": "71374ee0f7ff61b61861a3ada8998c96d61b63c8c7ca4ac4740c0391b9777e50"
+    }
+  },
+  "retainedInputs": [
+    {
+      "path": "data/inputs/ogura-local-observations/tomori-observations.geojson",
+      "sha256": "ac4f2c3f639fd0de32a757d1821840ff4fb249eb2e0ffefddf8043ac6c739b93",
+      "role": "local-digitization"
+    },
+    {
+      "path": "data/inputs/ogura-local-observations/registration.json",
+      "sha256": "6f9e42b66e208bd093bd8068f1b7c730167afff633976096c319e5826de063d0",
+      "role": "grid-registration"
+    },
+    {
+      "path": "data/inputs/ogura-local-observations/gsi-coordinate-api.json",
+      "sha256": "41047fe3c2eb875699061a533b4f036568cc42c262af95d25bf22aadf5d08434",
+      "role": "official-api-requests-and-responses"
+    },
+    {
+      "path": "data/inputs/ogura-local-observations/gsi-vi-0.json",
+      "sha256": "589f8b87cab98bd1bdd675dd9fd31172327b57424fedf88c8a027262014a3bc4",
+      "role": "official-api-raw-response"
+    },
+    {
+      "path": "data/inputs/ogura-local-observations/gsi-vi-1.json",
+      "sha256": "54200f1aa3b6b18a805c1e6ce1f890b075a269d037da123d1945e6fab5d60c24",
+      "role": "official-api-raw-response"
+    },
+    {
+      "path": "data/inputs/ogura-local-observations/gsi-vi-2.json",
+      "sha256": "d53e6a7583e5d4fc7073a00b0b9b31f94c664027ea1ceac58acbb7c6c9111f4e",
+      "role": "official-api-raw-response"
+    },
+    {
+      "path": "data/inputs/ogura-local-observations/gsi-vi-3.json",
+      "sha256": "10744a4098b7023e5fef7ecfeb62b78f80e6f175e36fd3ad6358f73d987f184e",
+      "role": "official-api-raw-response"
+    },
+    {
+      "path": "data/inputs/ogura-local-observations/local-shapes-validation.json",
+      "sha256": "12ef47d6b522158787d0abe8620301ffd727f1a0b5486c7f7573384505a090ec",
+      "role": "frozen-comparison-results"
+    },
+    {
+      "path": "data/inputs/ogura-local-observations/old-lake-comparison-snapshot.json",
+      "sha256": "71374ee0f7ff61b61861a3ada8998c96d61b63c8c7ca4ac4740c0391b9777e50",
+      "role": "frozen-game-map-comparison-not-current-coast"
+    },
+    {
+      "archiveKey": "sha256:5040b198c2caed5115857b6b41a94c845ce5dd7557f3c46f833186602a6a5ae2",
+      "sha256": "5040b198c2caed5115857b6b41a94c845ce5dd7557f3c46f833186602a6a5ae2",
+      "role": "published-source",
+      "storage": "durable-local-source-archive",
+      "includedInGit": false
+    },
+    {
+      "archiveKey": "sha256:a37014fb0ece676c8859719010a85c3c2930831bfde6a8554e21d4d8e3de344b",
+      "sha256": "a37014fb0ece676c8859719010a85c3c2930831bfde6a8554e21d4d8e3de344b",
+      "role": "plate-5-grid-read-image",
+      "storage": "durable-local-source-archive",
+      "includedInGit": false
+    },
+    {
+      "archiveKey": "sha256:ac05329cc5dca17e593c83438c818b5809c4c98f0ad8395e19cb16153d481d61",
+      "sha256": "ac05329cc5dca17e593c83438c818b5809c4c98f0ad8395e19cb16153d481d61",
+      "role": "plate-10-posthole-read-image",
+      "storage": "durable-local-source-archive",
+      "includedInGit": false
+    }
+  ],
+  "sourceLimitations": [
+    "城名は周知の遺跡名称。築城者・築城年・全城域をこの観測から確定しない。",
+    "全調査枠には後世の攪乱や異なる年代の遺構を含む。枠全体を桃山期陸地としない。",
+    "掘立柱建物の観測は当該地の一時期の利用の根拠であり、水際・浸水頻度・常時乾燥を決めない。"
+  ],
+  "preservationManifest": {
+    "path": "data/inputs/ogura-local-observations/retention-manifest.json",
+    "sha256": "92a836d62d8bd919f64e88d7a0fedbb1862f961fa210cfbe5df782c336d2e865"
+  },
+  "readingNote": "data/research/source-notes/ogura-tomori-archaeology.md"
+}

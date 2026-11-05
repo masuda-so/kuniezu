@@ -3,7 +3,7 @@
    旧線は before-modern-reference.json に保存し、両端の座標は旧線と同じにする。経由地から500mを超えて離れる場合は止める。
    実行：node tools/geo/wakasa-road-reference.cjs */
 const fs=require('node:fs'),path=require('node:path'),crypto=require('node:crypto');
-const root=path.resolve(__dirname,'../..'),inputs=path.join(root,'data/inputs/wakasa-road-review'),game=path.join(root,'game/modern-road-reference.js');
+const root=path.resolve(__dirname,'../..'),inputs=path.join(root,'data/inputs/wakasa-road-review'),game=path.join(root,'kuniezu/static/kuniezu/modern-road-reference.js');
 const text=fs.readFileSync(game,'utf8'),lines=text.split('\n'),at=lines.findIndex(l=>l.startsWith('TK.MODERN_ROAD_REFERENCE={')),refs=JSON.parse(lines[at].slice('TK.MODERN_ROAD_REFERENCE='.length).replace(/;$/,''));
 const backup=path.join(inputs,'before-modern-reference.json');
 if(!fs.existsSync(backup))fs.writeFileSync(backup,JSON.stringify({name:'若狭街道',points:refs['若狭街道'],gameFileSha256:crypto.createHash('sha256').update(text).digest('hex')}));

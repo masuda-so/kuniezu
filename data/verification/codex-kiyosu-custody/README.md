@@ -14,3 +14,8 @@
 Gitに含めるのはこの要約だけ。元保存3件は `data/inputs/kiyosu-custody/legacy-saves.json.gz`。
 原保存JSONのSHAを検査し、通常CIでも再現できる。実画面検査は
 `GAME_OVERRIDE_ROOT=<候補tree> GAME_OVERRIDE_BASE=origin/main GAME_TEST_OUTPUT=<証拠先> node tools/checks/kiyosu-custody-browser.cjs`。
+
+Django 移行後の main f80286c を取り込んだ版も、専用Chromeで同じ9表示と
+176日の進行を再検証した。8000番に接続できなかったため、テンプレートを
+`tools/build/game-page.cjs` で一時HTMLに描画し、ローカルファイルとして開いた。
+この確認は表示と旧保存を対象とし、Django の HTTP 配信経路は別途確認する。

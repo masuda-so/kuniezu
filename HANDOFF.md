@@ -25,7 +25,7 @@
 
 - `AGENTS.md` と担当調整に従う。編集前にHEAD・差分・対象ファイルのSHAを確認して保全する。他担当の変更をリセット・巻戻し・一括上書きしない。
 - 並行担当には対象ID・年代・編集ファイル・完了条件を渡す。ReasonでClaudeとの分担を調整し、共通の `ui.js`・`engine.js`・`index.html` を無調整で同時編集しない。Codex担当分はCodexが署名コミットしてよい。Gitの作者・署名・PR規則は `AGENTS.md` を参照。
-- `game/index.html` の `game-scripts` が依存順の正本。ファイル名順へ並べ替えない。地図の編集正本は `game/map_data/`、配信タイル・陰影・境界は生成物。G04の形式・生成契約は [地図仕様](docs/architecture/raster-map.md) に集約する。
+- `kuniezu/templates/index.html`（Django のテンプレート）の `game-scripts` が依存順の正本。ファイル名順へ並べ替えない。地図の編集正本は `kuniezu/static/kuniezu/map/` の層ごとのフォルダ（admin・control・physical・edits）、配信タイル・陰影・境界は生成物。G04の形式・生成契約は [地図仕様](docs/architecture/raster-map.md) に集約する。
 - 史料の入力と採否は `data/inputs/`・`data/research/`、検査出力は `data/audits/`、実画面証拠は `data/verification/`。監査JSONを手修正しない。資料本文は読書用Markdownと原本の保管を分け、秘密情報を混ぜない。
 - 史実は一記録を年月と対象IDの両方から引く。年ごとの全件複製はしない。新たな出典命題・所在記録は `curated/` に登録し、`export-evidence.cjs` で出力を更新する。
 - 検査は変更に必要なものだけ。発熱対策のためChrome・負荷測定・重い全画素検査は調整して一つずつ実施し、終了後は自分の一時プロセスを片付ける。通過済みの全件検査を理由なく繰り返さない。

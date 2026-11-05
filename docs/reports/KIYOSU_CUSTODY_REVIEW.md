@@ -60,7 +60,6 @@
 引取は原暦の文書日付であり、引取場所・安土到着・日ごとの所在を付け足さない。
 岐阜の精密座標と人物の外部典拠IDは未採用。ゲーム座標を史料の座標へ転記しない。
 
-このPRの基準main5217b126では107記録・269件のJS/SQL検索比較が合格。
-別PRの追加記録数とは合算せず、統合後は出力器で再計数する。
+Django 移行後の main f80286c を取り込み、出力を再生成した。108記録・272件のJS/SQL検索比較が合格。
 [書誌・確認箇所と採用範囲](../../data/research/source-notes/sanboshi-custody.md)と
 [構造化した読書ノート](../../data/research/source-notes/sanboshi-custody.json)を参照。

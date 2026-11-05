@@ -1,0 +1,169 @@
+{% load static %}<!doctype html><html><head><base href="{% static 'kuniezu/' %}"><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><link rel="stylesheet" href="index.css?v=39f269913f"></head><body>{% verbatim %}
+<title>天下分け目の国絵図</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='10' fill='%237a2a1d'/%3E%3Ctext x='32' y='46' font-size='40' text-anchor='middle' fill='%23f4ead2' font-family='serif'%3E%E5%9B%BD%3C/text%3E%3C/svg%3E">
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" media="print" onload="this.media='all'" href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@600;700;800&family=Zen+Kaku+Gothic+New:wght@400;500;700&family=Yuji+Syuku&display=swap">
+<link rel="stylesheet" href="theme-washi.css?v=c7e951f2f1">
+
+<div id="app" data-mode="title">
+  <canvas id="base" aria-hidden="true"></canvas>
+  <canvas id="top" aria-label="戦国大名配置図"></canvas>
+  <div id="era" class="frame gonly"><div id="eraTxt"></div></div>
+  <div id="me" class="frame gonly"></div>
+  <aside id="chron" class="frame gonly" aria-live="polite"></aside>
+  <aside id="drawer" class="frame gonly" hidden></aside>
+  <div id="armyEdges" aria-label="画面外の軍勢"></div>
+  <div id="deployNote" class="frame" hidden aria-live="polite"></div>
+  <nav id="mapZoom" class="frame" aria-label="地図の拡大縮小"><button type="button" data-act="zoom-in" aria-label="拡大">＋</button><input id="mapZoomRange" type="range" min="0" max="100" value="30" aria-label="地図の縮尺"><button type="button" data-act="zoom-out" aria-label="縮小">−</button><button type="button" data-act="zoom-fit" aria-label="地図全域を表示">全域</button></nav>
+  <div id="northMark" class="gonly" aria-label="北の向き" title="地図の向き（表示設定で変えられる）"><span class="arrow"></span><span class="n">北</span></div>
+  <div id="legend" class="frame gonly" aria-label="凡例"></div>
+  <div id="tline" class="frame gonly" hidden><div class="tlctl"><button type="button" id="ppBtn" class="pp" data-act="playpause" aria-label="時を進める">▶</button><div class="mult" role="group" aria-label="時の速さ"><button type="button" data-act="speed" data-v="1" title="4秒で1日">×1</button><button type="button" data-act="speed" data-v="2" title="4秒で2日">×2</button><button type="button" data-act="speed" data-v="3" title="4秒で4日">×4</button><button type="button" data-act="speed" data-v="4" title="4秒で8日">×8</button><button type="button" data-act="speed" data-v="5" title="4秒で16日">×16</button><button type="button" data-act="speed" data-v="6" title="4秒で32日">×32</button><button type="button" data-act="speed" data-v="7" title="4秒で64日">×64</button><button type="button" data-act="speed" data-v="8" title="4秒で128日">×128</button></div></div><button id="tlBack" class="tlb" type="button" title="少し前に戻る" aria-label="少し前に戻る">⏮</button><button id="tlPlay" class="tlb pri" type="button" aria-label="進める">▶</button><div id="tlTrack"><div class="tlbar"><span id="tlHead"></span><span id="tlFill"></span></div><div id="tlMarks"></div><span id="tlKnob"></span><span id="tlTip" hidden></span></div><button id="tlNow" class="tlb" type="button" title="次の出来事まで進める">⏭</button><div id="tlD"></div><button type="button" class="tlsrc" data-act="open" data-m="image-credits" title="地図・標高・肖像・家紋の出典と利用条件">出典</button></div>
+  <div id="big" class="frame" hidden></div>
+  <aside id="pick" hidden></aside>
+  <div id="tip" hidden></div>
+  <div id="toast" role="status"></div>
+  <div id="news" aria-live="polite"></div>
+  <div id="modal" hidden></div>
+  <div id="title"></div>
+  <small id="credit">出典：<a href="https://maps.gsi.go.jp/development/ichiran.html" target="_blank" rel="noopener">国土地理院</a>（地球地図日本・低湿地資料・標高・道路中心線）を加工して作成 ・ 地図の地形の陰影：<a href="https://dataspace.copernicus.eu/explore-data/data-collections/copernicus-contributing-missions/collections-description/COP-DEM" target="_blank" rel="noopener">Copernicus DEM GLO-90</a>（produced using Copernicus WorldDEM™-90 © DLR e.V. 2010-2014 and © Airbus Defence and Space GmbH 2014-2018 provided under COPERNICUS by the European Union and ESA; all rights reserved。現代の標高を加工） ・ 合戦図の標高：<a href="https://registry.opendata.aws/terrain-tiles/" target="_blank" rel="noopener">Mapzen / USGS / NOAA</a>（現代） ・ 郡境：<a href="https://geoshape.ex.nii.ac.jp/kg/" target="_blank" rel="noopener">旧国・旧郡境界データセット（CODH・人間文化研究機構）</a>（CC BY-NC 4.0、加工）・<a href="https://hgis.history.go.kr" target="_blank" rel="noopener">국사편찬위원회 역사지리정보</a>（1910年府郡、공공누리 제1유형、加工） ・ 児島湾の戦国期の海：国土交通省「高梁川水系の流域及び河川の概要」図4-1-1（岡山平野の干拓進展図、高田正規原図）を読図した推定 ・ 水際の比較：<a href="licenses/DATA_SOURCES.md" target="_blank" rel="noopener">国土交通省W09-05・GSHHG（加工・利用条件）</a> ・ 道路・河川参考：<a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">© OpenStreetMap contributors（ODbL）</a> ・ 肖像：Wikimedia Commons</small>
+</div>
+<div id="boot" role="status" aria-live="polite" style="position:fixed;inset:0;z-index:1000;display:grid;place-content:center;padding:24px;text-align:center;background:#1c3157;color:#f3e8cc">
+  <p id="bootMessage">地図を準備しています…</p>
+  <small id="bootDetail"></small>
+  <button id="bootReload" type="button" hidden style="margin:20px auto 0;padding:10px 20px;border:1px solid #d9b866;border-radius:4px">再読み込み</button>
+</div>
+<!-- 依存順を保ち、通信で読めなかったファイルだけ再取得する。 -->
+<template id="game-scripts">
+<script src="data.js?v=fdbc394b58"></script>
+<script src="frontier-polities.js?v=0eef3b8f23"></script>
+<script src="koyomi.js?v=b6a2e5999a"></script>
+<script src="geo.js?v=cfe6cbae3b"></script>
+<script src="hist.js?v=3b7c5a474d"></script>
+<script src="frontier-history.js?v=4aced0bfbe"></script>
+<script src="jokaku.js?v=dfafa4bbc1"></script>
+<script src="battles.js?v=82bf18f75c"></script>
+<script src="battles2.js?v=739f483744"></script>
+<script src="battle-osaka.js?v=fa76bc4fc0"></script>
+<script src="battle-sites.js?v=5b056de73c"></script>
+<script src="counter-symbol.js?v=df0c6834ea"></script>
+<script src="bscene.js?v=9c19c30424"></script>
+<script src="engine.js?v=197769fbf1"></script>
+<script src="battle-catalog.js?v=ec655cd54c"></script>
+<script src="branch-war.js?v=385abe9f64"></script>
+<script src="territory.js?v=4d0fc7607d"></script>
+
+<script src="history-evidence.js?v=64dacc9743"></script>
+<script src="battle-research.js?v=ab533fca53"></script>
+<script src="campaigns.js?v=306f4a218d"></script>
+<script src="battle-timing.js?v=acc295f939"></script>
+<script src="history-focus.js?v=78dc777d02"></script>
+<script src="road-revision.js?v=822ddfd102"></script>
+<script src="road-evidence-update.js?v=64467b2d26"></script>
+<script src="battle-landscape.js?v=d20d5a8298"></script>
+<script src="march-model.js?v=bf7ad7afa6"></script>
+<script src="korea-evidence.js?v=c28a4d6612"></script>
+<script src="succession-evidence.js?v=c045862276"></script>
+<script src="campaign-evidence.js?v=98bb668a4f"></script>
+<script src="lake-baselines.js?v=85996f9013"></script>
+<script src="korea-coast.js?v=4a5e95c4aa"></script>
+<script src="tsubaki-lake.js?v=c75f7241f2"></script>
+<script src="water-evidence.js?v=74d1424653"></script>
+<script src="land-extension.js?v=f4eb5730ce"></script>
+<script src="regional-rivers.js?v=1f5efcddc6"></script>
+<script src="korean-rivers-major.js?v=d3b1819262"></script>
+<script src="map-sources.js?v=68d4070ae7"></script>
+<script src="liaodong-context.js?v=83be0b2308"></script>
+<script src="hydrography-policy.js?v=d57ea71c83"></script>
+<script src="katori-lowlands.js?v=26875658e4"></script>
+<script src="period-waters.js?v=2ab4ff00a5"></script>
+<script src="kanto-repair.js?v=dc3ec046cd"></script>
+<script src="castle-regions-data.js?v=9e44fcf843"></script>
+<script src="castle-regions.js?v=0f0222c3f7"></script>
+<script src="japan-rivers-osm.js?v=b653701509"></script>
+<script src="site-coordinates.js?v=0552c319e5"></script>
+<script src="katori-sites.js?v=04b6240f15"></script>
+<script src="battle-rebuild.js?v=2f5e6dd226"></script>
+<script src="battle-fushimi.js?v=cb588a4ec2"></script>
+<script src="battle-evidence.js?v=b9d2a0d1da"></script>
+<script src="battle-presentation.js?v=b8a5c94272"></script>
+<script src="battle-atlas-data.js?v=c9ca99e5f0"></script>
+<script src="battle-catalog-extra.js?v=c5b8e0f48d"></script>
+<script src="battle-event-catalog.js?v=25977088fe"></script>
+<script src="battle-atlas-policy.js?v=f6fe1e9a2b"></script>
+<script src="battle-deployments.js?v=cac0581da9"></script>
+<script src="history-date-review.js?v=14ef8dcbda"></script>
+<script src="modern-road-reference.js?v=da164f634d"></script>
+<script src="fukasaka-route.js?v=5be9758052"></script>
+<script src="road-maritime-review.js?v=afde86d09d"></script>
+<script src="ina-approach.js?v=3f5b2505b9"></script>
+<script src="road-display.js?v=e9f19877fc"></script>
+<script src="display-road-network.js?v=7cf0a3fbbd"></script>
+<script src="movement-display.js?v=8d7819507b"></script>
+<script src="logistics-review.js?v=0bee4961da"></script>
+<script src="route-terrain-profiles.js?v=4bc70eae05"></script>
+<script src="infrastructure.js?v=4dc259a287"></script>
+<script src="movement-continuity.js?v=a024509e1a"></script>
+<script src="battle-atlas-effects.js?v=9278df9282"></script>
+<script src="battle-motion.js?v=c9fc2ebde3"></script>
+<script src="battle-atlas.js?v=0906014b57"></script>
+<script src="history-mode.js?v=93adf7ef7a"></script>
+<script src="map-relations.js?v=554816ca9a"></script>
+<script src="historical-families.js?v=a1650485ef"></script>
+<script src="alliance-history.js?v=ccd57ea53d"></script>
+<script src="player-copy.js?v=b6fca6715e"></script>
+<script src="terrain-tiles.js?v=a32cbcfa3e"></script>
+<script src="storage.js?v=9ec684a32b"></script>
+<script src="portrait-layout.js?v=0aa4666e19"></script>
+<script src="kamon-data.js?v=171bb17c3a"></script>
+<script src="kamon.js?v=573fe83e6f"></script>
+<script src="convoys.js?v=3c305732bb"></script>
+<script src="battle-phases.js?v=92e9911b22"></script>
+<script src="history-state-migration.js?v=026b48da42"></script>
+<script src="scenario-openings.js?v=df101b99bc"></script>
+<script src="historical-register.js?v=cc89737c66"></script>
+<script src="bizen-north-shore.js?v=8ea4f76ac5"></script>
+<script src="hayashima-upland.js?v=bcc083405f"></script>
+<script src="kizakibaru-march.js?v=9fefa3574b"></script>
+<script src="documented-marches-extra.js?v=35d5c70d5b"></script>
+<script src="central-offices.js?v=39b6c412ce"></script>
+<script src="raster-map.js?v=30b543963f"></script>
+<script src="ui.js?v=6e2ef98ed7"></script>
+<script src="kb.js?v=00b342e31e"></script>
+</template>
+<script>
+(async function boot(){
+  const panel=document.getElementById('boot'),message=document.getElementById('bootMessage');
+  const detail=document.getElementById('bootDetail'),reload=document.getElementById('bootReload');
+  reload.addEventListener('click',()=>location.reload());
+  function load(src){return new Promise((resolve,reject)=>{
+    const script=document.createElement('script');let executionError=null;
+    const url=new URL(src,document.baseURI).href;
+    const onError=event=>{if(event.filename===url)executionError=event.error||new Error(event.message);};
+    function clean(){window.removeEventListener('error',onError);script.onload=script.onerror=null;}
+    window.addEventListener('error',onError);
+    script.async=false;script.src=src;
+    script.onload=()=>{clean();if(executionError)reject({src,retry:false,error:executionError});else resolve();};
+    script.onerror=()=>{clean();script.remove();reject({src,retry:true});};
+    document.body.append(script);
+  });}
+  try{
+    for(const item of document.getElementById('game-scripts').content.querySelectorAll('script[src]')){
+      const src=item.getAttribute('src');
+      for(let attempt=0;;attempt++){
+        try{await load(src);break;}
+        catch(error){if(!error.retry||attempt>=2)throw error;await new Promise(resolve=>setTimeout(resolve,250*(attempt+1)));}
+      }
+    }
+    panel.remove();
+  }catch(error){
+    panel.setAttribute('role','alert');
+    message.textContent=error.retry?'必要なファイルを読み込めませんでした。サーバーの接続を確認して、再読み込みしてください。':'ゲームの準備中にエラーが発生しました。再読み込みしてください。';
+    detail.textContent=error.src||'';reload.hidden=false;
+    console.error('ゲームの起動に失敗しました',error);
+  }
+})();
+</script>
+{% endverbatim %}</body></html>
+

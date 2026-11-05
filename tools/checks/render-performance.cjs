@@ -7,7 +7,7 @@ const DOWNLOAD=path.join(OUT,'downloads-'+Date.now());fs.mkdirSync(DOWNLOAD,{rec
 const profile=fs.mkdtempSync(path.join(os.tmpdir(),'kuniezu-check-'));fs.mkdirSync(OUT,{recursive:true});
 const chrome=spawn(process.env.CHROME_PATH||'/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',['--headless','--disable-gpu','--no-first-run','--no-default-browser-check',`--user-data-dir=${profile}`,'--remote-debugging-pipe'],{stdio:['ignore','ignore','ignore','pipe','pipe']});
 const baseline=process.env.GAME_PERF_BASELINE;
-const overrides=baseline?Object.fromEntries(['ui.js','terrain-tiles.js'].map(f=>[f,fs.readFileSync(path.join(baseline,'game',f))])):{};
+const overrides=baseline?Object.fromEntries(['ui.js','terrain-tiles.js'].map(f=>[f,fs.readFileSync(path.join(baseline,'kuniezu/static/kuniezu',f))])):{};
 let seq=0,buf='',session,chooser;const pending=new Map(),errors=[],events=[];
 chrome.stdio[4].on('data',data=>{buf+=data.toString();let i;while((i=buf.indexOf('\0'))>=0){const str=buf.slice(0,i);buf=buf.slice(i+1);if(!str)continue;const m=JSON.parse(str);if(m.id){const p=pending.get(m.id);pending.delete(m.id);if(p)m.error?p.reject(Error(JSON.stringify(m.error))):p.resolve(m.result);}else{
  if(m.method==='Fetch.requestPaused'){const f=new globalThis.URL(m.params.request.url).pathname.split('/').pop();call('Fetch.fulfillRequest',{requestId:m.params.requestId,responseCode:200,responseHeaders:[{name:'Content-Type',value:'application/javascript'}],body:overrides[f].toString('base64')}).catch(e=>console.error(e));}
@@ -26,7 +26,7 @@ async function menu(){await click('#me [data-m=menu]');}
 const timer=setTimeout(()=>{console.error('timeout');chrome.kill();process.exitCode=1},180000);
 const cover=()=>ev('(()=>{const {corners}=TKUI.mapBounds();return corners[0][0]<=.01&&corners[0][1]<=.01&&corners[1][0]>=innerWidth-.01&&corners[1][1]>=innerHeight-.01})()');
 (async()=>{try{
-const target=await call('Target.createTarget',{url:'about:blank'},null);session=(await call('Target.attachToTarget',{targetId:target.targetId,flatten:true},null)).sessionId;await call('Runtime.enable');await call('Page.enable');await call('Performance.enable');if(baseline)await call('Fetch.enable',{patterns:Object.keys(overrides).map(f=>({urlPattern:'*/'+f,requestStage:'Request'}))});
+const target=await call('Target.createTarget',{url:'about:blank'},null);session=(await call('Target.attachToTarget',{targetId:target.targetId,flatten:true},null)).sessionId;await call('Runtime.enable');await call('Page.enable');await call('Performance.enable');if(baseline)await call('Fetch.enable',{patterns:Object.keys(overrides).map(f=>({urlPattern:'*/'+f+'*',requestStage:'Request'}))});
 await view(1400,950);await load();await start();await click('#modal [data-act=close]');await ev('TKUI.cam(...G.PJ(140.35,36.0),5)');await sleep(1000);await shot('kasumi');const loadingStart=await ev('TKTerrain.stats()');for(let i=0;i<300;i++){if(await ev('TKTerrain.stats().pending===0&&TKTerrain.stats().running===0'))break;await sleep(100);}await sleep(500);const ready=await ev('TKTerrain.stats()');assert.equal(ready.pending+ready.running,0,'wait for terrain before comparing movement');await shot('kasumi-ready');
 const report={environment:{baseline:baseline||null,viewport:[1400,950],zoom:5,terrainBeforeWait:loadingStart,terrainReady:ready}};
 for(const [name,expr] of [['play','TKUI.speed=2'],['pan','TKUI.speed=0']]){

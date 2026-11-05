@@ -34,4 +34,19 @@ async function readRGB(file,onRow){
   else if(type==='IEND')break;pos+=12+len;}
  inf.end();await rows;fs.closeSync(fd);if(y!==H)throw Error(`行が足りない ${y}/${H}`);return {width:W,height:H};}
 
-module.exports={writeRGB,readRGB};
+// 16bit 灰色（標高の正本 heightmap.png）を行ごとに読む。onRow(y, Uint16Array) … 非インターレース、フィルタ0〜4。
+async function readGray16(file,onRow){
+ const fd=fs.openSync(file,'r');let pos=8,W=0,H=0,stride=0,buf=Buffer.alloc(0),y=0,prev=null;const bpp=2,inf=zlib.createInflate();
+ const rows=new Promise((ok,ng)=>{inf.on('data',d=>{buf=buf.length?Buffer.concat([buf,d]):d;
+  while(buf.length>=stride+1&&y<H){const f=buf[0],cur=Buffer.from(buf.subarray(1,stride+1));buf=buf.subarray(stride+1);
+   for(let x=0;x<stride;x++){const a=x>=bpp?cur[x-bpp]:0,b=prev?prev[x]:0,c=x>=bpp&&prev?prev[x-bpp]:0;let v=cur[x];
+    if(f===1)v+=a;else if(f===2)v+=b;else if(f===3)v+=(a+b)>>1;else if(f===4){const p=a+b-c,pa=Math.abs(p-a),pb=Math.abs(p-b),pc=Math.abs(p-c);v+=pa<=pb&&pa<=pc?a:pb<=pc?b:c;}cur[x]=v;}
+   prev=cur;const out=new Uint16Array(W);for(let x=0;x<W;x++)out[x]=cur[x*2]<<8|cur[x*2+1];onRow(y++,out);}});
+  inf.on('end',ok);inf.on('error',ng);});
+ const hdr=Buffer.alloc(8);
+ for(;;){fs.readSync(fd,hdr,0,8,pos);const len=hdr.readUInt32BE(0),type=hdr.toString('ascii',4,8);
+  if(type==='IHDR'){const d=Buffer.alloc(13);fs.readSync(fd,d,0,13,pos+8);W=d.readUInt32BE(0);H=d.readUInt32BE(4);if(d[8]!==16||d[9]!==0||d[12])throw Error('16bit 灰色 非インターレースのみ');stride=W*bpp;}
+  else if(type==='IDAT'){const d=Buffer.alloc(len);fs.readSync(fd,d,0,len,pos+8);if(!inf.write(d))await new Promise(r=>inf.once('drain',r));}
+  else if(type==='IEND')break;pos+=12+len;}
+ inf.end();await rows;fs.closeSync(fd);if(y!==H)throw Error(`行が足りない ${y}/${H}`);return {width:W,height:H};}
+module.exports={writeRGB,readRGB,readGray16};

@@ -4,7 +4,7 @@
  * No map generator or shared PNG decoder is imported.
  * PNG filters/chunks: https://www.w3.org/TR/png-3/ sections 5, 9 and 11.
  * Usage: node tools/checks/province-source-image.cjs --source .../provinces.png
- *   --map-dir .../game/map --definition .../definition.csv
+ *   --map-dir .../kuniezu/static/kuniezu/map/build --definition .../definition.csv
  *   --default-map .../default.map --output /tmp/province-source-check.json
  * Or: --self-test (temporary fixtures only; does not read/write game data).
  */
@@ -158,7 +158,8 @@ async function verify(options){
  const snapshots=new Map([[manifestPath,manifestBytes]]);
  const capture=async file=>{if(!snapshots.has(file))snapshots.set(file,await fsp.readFile(file));return snapshots.get(file);};
  if(width*Math.min(tile,height)*3>512*1024*1024)fail('DIMENSION','One tile band exceeds 512 MiB limit',{width,height,tile});
- const modern=path.join(mapDir,'../map_data'),definition=path.resolve(options.definition||(fs.existsSync(path.join(modern,'definition.csv'))?path.join(modern,'definition.csv'):path.join(mapDir,'definition.csv')));
+ // 正本の区画の表は生成物の置き場（kuniezu/static/kuniezu/map/build）の隣の kuniezu/static/kuniezu/map/control。旧来の並び（map と map_data、層に分ける前の kuniezu/static/kuniezu/map）も読む。
+ const modern=[path.join(mapDir,'../control'),path.join(mapDir,'..'),path.join(mapDir,'../map_data')].find(d=>fs.existsSync(path.join(d,'definition.csv'))),definition=path.resolve(options.definition||(modern?path.join(modern,'definition.csv'):path.join(mapDir,'definition.csv')));
  const adjacentDefault=path.join(path.dirname(definition),'default.map');
  const defaultMap=options.defaultMap?path.resolve(options.defaultMap):fs.existsSync(adjacentDefault)?adjacentDefault:null;
  const definitions=readDefinitions(definition,defaultMap,{definition:await capture(definition),defaultMap:defaultMap?await capture(defaultMap):null});
@@ -170,11 +171,15 @@ async function verify(options){
  const sourceMeta=manifest.source,componentPaths={provinces:source};
  let fingerprintReason=null;
  if(!sourceMeta?.sha256)fingerprintReason='Manifest has no source fingerprint';
- else if(manifest.generated!=='tools/map/build-map-tiles.cjs'||['provinces','definition','defaultMap','projection'].some(k=>typeof sourceMeta[k]!=='string'||path.basename(sourceMeta[k])!==sourceMeta[k]))
+ // 各ファイルは source.dir からの相対パス（層に分けた配置では control/provinces.png・projection.json など。旧い配置ではファイル名だけ）。
+ // 上の階層へ出るパスと絶対パスは認めない。正本の置き場は、検査する画像のパスから declared の provinces を取り除いて求める。
+ else if(manifest.generated!=='tools/map/build-map-tiles.cjs'||['provinces','definition','defaultMap','projection'].some(k=>typeof sourceMeta[k]!=='string'||path.isAbsolute(sourceMeta[k])||sourceMeta[k].split('/').some(p=>p===''||p==='.'||p==='..')))
   fingerprintReason='Source fingerprint algorithm is not identified by the supported map-data contract';
  else{
+  const declared=sourceMeta.provinces.split('/'),parts=path.resolve(source).split(path.sep),tail=parts.slice(-declared.length);
+  const sourceRoot=tail.join('/')===sourceMeta.provinces?parts.slice(0,-declared.length).join(path.sep)||path.sep:path.dirname(source);
   for(const key of ['definition','defaultMap','projection']){
-   const file=path.resolve(path.dirname(source),sourceMeta[key]);componentPaths[key]=file;
+   const file=path.resolve(sourceRoot,...sourceMeta[key].split('/'));componentPaths[key]=file;
    try{await capture(file);}catch(error){if(error.code!=='ENOENT')throw error;fingerprintReason='Declared source component is unavailable: '+file;break;}
   }
  }
@@ -322,7 +327,7 @@ async function selfTest(){
   const projection=path.join(dir,'projection.json'),projectionBytes=Buffer.from('{"width":7,"height":7}\n');await fsp.writeFile(projection,projectionBytes);
   const parts=[valid,await fsp.readFile(modern),await fsp.readFile(defaultMap),projectionBytes];
   const compound=sha256(parts.map(sha256).join('\n'));
-  const manifestPath=path.join(mapDir,'manifest.json'),baseManifest={width:w,height:h,tile,tiles},declared={...baseManifest,generated:'tools/map/build-map-tiles.cjs',source:{dir:'game/map_data',provinces:'provinces.png',definition:'definition.csv',defaultMap:'default.map',projection:'projection.json',sha256:compound}};
+  const manifestPath=path.join(mapDir,'manifest.json'),baseManifest={width:w,height:h,tile,tiles},declared={...baseManifest,generated:'tools/map/build-map-tiles.cjs',source:{dir:'kuniezu/static/kuniezu/map',provinces:'provinces.png',definition:'definition.csv',defaultMap:'default.map',projection:'projection.json',sha256:compound}};
   await fsp.writeFile(manifestPath,JSON.stringify(declared));
   const fingerprintPass=await verify(options);
   assert.equal(fingerprintPass.manifestSourceSha256Matches,true);assert.equal(fingerprintPass.sourceCompositeFingerprint.actual,compound);
@@ -335,6 +340,17 @@ async function selfTest(){
   const unknownContract=await verify(options);assert.equal(unknownContract.manifestSourceSha256Matches,null);assert.ok(unknownContract.sourceCompositeFingerprint.reason);tested.push('unknown fingerprint contract returns null with explanation');
   await fsp.writeFile(manifestPath,JSON.stringify({...declared,source:{...declared.source,projection:'missing-projection.json'}}));
   const missingComponent=await verify(options);assert.equal(missingComponent.manifestSourceSha256Matches,null);assert.match(missingComponent.sourceCompositeFingerprint.reason,/unavailable/);tested.push('missing declared fingerprint component returns null with explanation');
+  // 層に分けた配置（kuniezu/static/kuniezu/map/control/provinces.png と共有の kuniezu/static/kuniezu/map/projection.json）でも、正本4点の複合確認値を照合する。
+  const layered=path.join(dir,'layered'),control=path.join(layered,'control');await fsp.mkdir(control,{recursive:true});
+  const layeredSource=path.join(control,'provinces.png'),layeredDef=path.join(control,'definition.csv'),layeredMap=path.join(control,'default.map');
+  await fsp.writeFile(layeredSource,valid);await fsp.copyFile(modern,layeredDef);await fsp.copyFile(defaultMap,layeredMap);await fsp.writeFile(path.join(layered,'projection.json'),projectionBytes);
+  const layeredDeclared={...declared,source:{dir:'kuniezu/static/kuniezu/map',provinces:'control/provinces.png',definition:'control/definition.csv',defaultMap:'control/default.map',projection:'projection.json',sha256:compound}};
+  await fsp.writeFile(manifestPath,JSON.stringify(layeredDeclared));
+  const layeredPass=await verify({...options,source:layeredSource,definition:layeredDef,defaultMap:layeredMap});
+  assert.equal(layeredPass.manifestSourceSha256Matches,true);assert.equal(layeredPass.sourceCompositeFingerprint.componentPaths.projection,path.join(layered,'projection.json'));tested.push('layered source folders resolve the shared projection');
+  await fsp.writeFile(manifestPath,JSON.stringify({...layeredDeclared,source:{...layeredDeclared.source,projection:'../projection.json'}}));
+  const escaping=await verify({...options,source:layeredSource,definition:layeredDef,defaultMap:layeredMap});assert.equal(escaping.manifestSourceSha256Matches,null);tested.push('component path escaping the source folder is not accepted');
+  await fsp.writeFile(manifestPath,JSON.stringify(declared));
   await assert.rejects(()=>decodePngRows(source,{onRow:async(row,y)=>{if(y===0){const replacement=source+'.replacement';await fsp.writeFile(replacement,valid);await fsp.rename(replacement,source);}}}),e=>e.code==='CHANGED');tested.push('atomic replacement of source during row consumption');
   return {ok:true,selfTest:true,cases:tested.length,tests:tested};
  }finally{await fsp.rm(dir,{recursive:true,force:true});}
@@ -344,7 +360,7 @@ async function main(argv){
  const options={};const args={source:'source','map-dir':'mapDir',definition:'definition','default-map':'defaultMap',output:'output','sea-rgb':'seaRgb'};
  for(let i=0;i<argv.length;i++){
   const a=argv[i];if(a==='--self-test')options.selfTest=true;else if(a==='--quiet')options.quiet=true;
-  else if(a==='--help'){console.log('Usage: node tools/checks/province-source-image.cjs --source provinces.png --map-dir game/map [--definition definition.csv] [--default-map default.map] [--sea-rgb R,G,B] [--output result.json] [--quiet]\n       node tools/checks/province-source-image.cjs --self-test [--output result.json]');return;}
+  else if(a==='--help'){console.log('Usage: node tools/checks/province-source-image.cjs --source provinces.png --map-dir kuniezu/static/kuniezu/map/build [--definition definition.csv] [--default-map default.map] [--sea-rgb R,G,B] [--output result.json] [--quiet]\n       node tools/checks/province-source-image.cjs --self-test [--output result.json]');return;}
   else{const key=args[a.replace(/^--/,'')];if(!a.startsWith('--')||!key||!argv[i+1]||argv[i+1].startsWith('--'))fail('ARGUMENT','Invalid or incomplete option',{option:a});options[key]=argv[++i];}
  }
  if(options.output){
@@ -357,7 +373,7 @@ async function main(argv){
   }
   if(options.mapDir){
    const mapDir=path.resolve(options.mapDir),realMap=await fsp.realpath(mapDir).catch(()=>mapDir);
-   for(const dir of [mapDir,realMap,path.resolve(mapDir,'../map_data'),path.resolve(realMap,'../map_data')])
+   for(const dir of [mapDir,realMap,path.resolve(mapDir,'..'),path.resolve(realMap,'..'),path.resolve(mapDir,'../map_data'),path.resolve(realMap,'../map_data')])
     if(inside(target,dir)||inside(realTarget,dir))fail('OUTPUT','Map data is read-only; choose a report outside map/map_data',{target});
   }
  }

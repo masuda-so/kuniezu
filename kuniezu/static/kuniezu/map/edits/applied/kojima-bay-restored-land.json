@@ -1,0 +1,41 @@
+{
+  "id": "kojima-bay-restored-land",
+  "layer": "provinces",
+  "baseRevision": "3ab7e5f2175760f5e7d5d5e134424ced9d5e742b",
+  "validFrom": [
+    1560,
+    1,
+    1
+  ],
+  "validUntil": [
+    1616,
+    1,
+    1
+  ],
+  "payload": {
+    "mask": "../../../../../../data/inputs/kojima-coast-review/kojima-bay-1600/kojima-bay-restored-land.png",
+    "maskSha256": "325eef8c853b03615c05f9c702385478012dc3b0d13c7f58b77d0d2bf27f1ba8",
+    "window": [
+      9734,
+      12823,
+      630,
+      390
+    ],
+    "from": "sea",
+    "keys": [
+      "castle:bmatsuyama",
+      "castle:tenjin"
+    ]
+  },
+  "sourceIds": [
+    "高梁川水系の流域及び河川の概要（案）参考資料1-1",
+    "近代の児島湾干拓計画を策定したムルデル",
+    "文化財資料（宇喜多堤）",
+    "海面古図と年表",
+    "広がる大地－絵図でたどる児島湾のかんたく－"
+  ],
+  "basis": "旧来の地図が倉敷から岡山の南まで帯状に海としていた所のうち、干拓進展図で干拓区画の外（干拓前からの陸）にあり、現代標高0.5m超の所。図の西端（東経133.63度）より西は同じ帯の続きとして標高で補う。",
+  "review": "図の区画の外を干拓前からの陸と読む推定。河口の州や後世の盛土を区別していない。領域は隣の既存の陸から同じ郡の中で広げたゲーム上の管理単位。",
+  "generated": "tools/geo/kojima-bay-1600.cjs",
+  "appliedToSourceSha256": "46ac04975ed4291bd7f1ead55f985818b5daf91f0f84430c8064e909b09bd7a4"
+}

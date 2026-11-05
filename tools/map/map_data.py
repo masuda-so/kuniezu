@@ -1,4 +1,4 @@
-"""Read the canonical map source in game/map_data (Crusader Kings III style map_data names).
+"""Read the canonical map source in kuniezu/static/kuniezu/map (Crusader Kings III style map_data names).
 
 definition.csv has no header: the first row is the reserved `0;0;0;0;x;x;` and the rest are
 `id;R;G;B;name;x;`, where name is the region key. Sea and lake ids come from default.map
@@ -10,8 +10,8 @@ import re
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
-MAP_DATA = ROOT / "game/map_data"
-FILES = ("provinces.png", "definition.csv", "default.map", "projection.json")
+MAP_DATA = ROOT / "kuniezu/static/kuniezu/map"
+FILES = ("control/provinces.png", "control/definition.csv", "control/default.map", "projection.json")
 
 
 def _lists(text):
@@ -23,10 +23,10 @@ def _lists(text):
 def read_definition(directory=MAP_DATA):
     """Return rows as dicts with id, r, g, b, key and kind (sea, lake or land)."""
     directory = Path(directory)
-    lists = _lists((directory / "default.map").read_text(encoding="utf-8"))
+    lists = _lists((directory / "control/default.map").read_text(encoding="utf-8"))
     sea, lake = set(lists.get("sea_zones", [])), set(lists.get("lakes", []))
     rows = []
-    for line in (directory / "definition.csv").read_text(encoding="utf-8").splitlines():
+    for line in (directory / "control/definition.csv").read_text(encoding="utf-8").splitlines():
         parts = line.split(";")
         if not line.strip() or int(parts[0]) == 0:
             continue

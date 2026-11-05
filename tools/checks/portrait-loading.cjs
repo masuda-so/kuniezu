@@ -1,7 +1,7 @@
 'use strict';
 // 実候補のローダー部分だけを評価する。ネットワーク・ブラウザ・画像の復号は行わない。
 const fs=require('node:fs'),vm=require('node:vm'),assert=require('node:assert/strict');
-const s=fs.readFileSync(require('node:path').resolve(__dirname,'../../game/ui.js'),'utf8');
+const s=fs.readFileSync(require('node:path').resolve(__dirname,'../../kuniezu/static/kuniezu/ui.js'),'utf8');
 const code=s.slice(s.indexOf('const FT=128,FCOLS=10;'),s.indexOf('function portrait(name,r,ring,col){'));
 function fixture(){const images=[],timers=[],events={},els=[];const context={Image:class{constructor(){images.push(this);}set src(v){this.url=v;}get src(){return this.url;}},devicePixelRatio:1,TK:{faceOf:()=>-1},document:{hidden:false,querySelectorAll:()=>els,addEventListener:(n,f)=>events[n]=f},setTimeout:(f,ms)=>{const t={f,ms};timers.push(t);return t;},pressLock:0,topSig:'old',U:{wakeLoop(){}},faceHTML:(n,z,k)=>n+'|'+z+'|'+k};vm.createContext(context);vm.runInContext(code+'\nglobalThis.api={extraPortrait,pumpPortraits,refreshPortraits,queuePortraitRefresh,pcache,urlCache,extraFaceImages,get active(){return faceActive;}};',context);return {context,images,timers,events,els,api:context.api,finish(im,ok=true){im.naturalWidth=ok?128:0;(ok?im.onload:im.onerror)();},timer(ms){const i=timers.findIndex(t=>t.ms===ms);assert.ok(i>=0,'timer '+ms);timers.splice(i,1)[0].f();}};}
 const a=fixture();assert.deepEqual(a.images.map(i=>i.url),['faces.webp'],'no eager extras');

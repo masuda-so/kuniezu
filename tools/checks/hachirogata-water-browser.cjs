@@ -1,7 +1,8 @@
 /* 候補のローカルHTML、または起動済みHTTPサーバーを専用Chromeで検証する。サーバーは起動・停止しない。 */
 const {spawn}=require('node:child_process');
 const fs=require('node:fs'),os=require('node:os'),path=require('node:path'),assert=require('node:assert/strict');
-const URL=process.env.GAME_URL||require('node:url').pathToFileURL(path.resolve(__dirname,'../../game/index.html')).href;
+// サーバーなしの既定：テンプレートを描いた一時ファイルを開く（<base> は静的ファイルのフォルダ）。
+const URL=process.env.GAME_URL||require('../build/game-page.cjs').writeLocalPage(fs.mkdtempSync(path.join(os.tmpdir(),'kuniezu-page-')));
 const OUT=path.resolve(process.env.GAME_TEST_OUTPUT||path.resolve(__dirname,'../../data/verification/codex-hachirogata-water'));
 const DOWNLOAD=path.join(OUT,'downloads-'+Date.now());fs.mkdirSync(DOWNLOAD,{recursive:true});
 const profile=fs.mkdtempSync(path.join(os.tmpdir(),'kuniezu-check-'));fs.mkdirSync(OUT,{recursive:true});

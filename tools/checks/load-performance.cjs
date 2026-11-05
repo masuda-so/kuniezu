@@ -1,14 +1,15 @@
 /* 起動時間と再生中・停止中の負荷を、起動済みHTTPサーバーに専用Chromeで接続して測る。サーバーは起動・停止しない。
-   GAME_OVERRIDE_ROOT を指定すると、その作業ツリーで基準コミット（GAME_OVERRIDE_BASE、既定 HEAD）から変えた game/ のファイルだけを差し替えて配信する。 */
+   GAME_OVERRIDE_ROOT を指定すると、その作業ツリーで基準コミット（GAME_OVERRIDE_BASE、既定 HEAD）から変えた kuniezu/static/kuniezu/ のファイルだけを差し替えて配信する。 */
 const {spawn,execFileSync}=require('node:child_process');
 const fs=require('node:fs'),os=require('node:os'),path=require('node:path'),assert=require('node:assert/strict');
 const URL=process.env.GAME_URL||'http://localhost:8000/index.html';
 const OUT=path.resolve(process.env.GAME_TEST_OUTPUT||path.join(os.tmpdir(),'kuniezu-load-performance'));fs.mkdirSync(OUT,{recursive:true});
 const SCEN=process.env.GAME_PERF_SCENARIO||'s1585';
 const [W,H,DSF]=(process.env.GAME_PERF_VIEW||'1024,768,2').split(',').map(Number);
-const root=process.env.GAME_OVERRIDE_ROOT,overrides={};
+// 差し替えの鍵は URL のパス（Django は kuniezu/static/kuniezu/x を /static/kuniezu/x で配る）。ページはテンプレートを描いて返す。
+const PAGE=require('../build/game-page.cjs'),root=process.env.GAME_OVERRIDE_ROOT,overrides={};
 if(root){const base=process.env.GAME_OVERRIDE_BASE||'HEAD';const git=(...a)=>execFileSync('git',['-C',root,...a],{encoding:'utf8'}).split('\n').filter(Boolean);
- for(const f of [...git('diff','--name-only',base,'--','game'),...git('ls-files','--others','--exclude-standard','--','game')]){const p=path.join(root,f);if(fs.existsSync(p))overrides[f.slice(5)]=fs.readFileSync(p);}}
+ for(const f of [...git('diff','--name-only',base,'--','kuniezu/static/kuniezu',PAGE.TEMPLATE),...git('ls-files','--others','--exclude-standard','--','kuniezu/static/kuniezu')]){const p=path.join(root,f);if(!fs.existsSync(p))continue;if(f===PAGE.TEMPLATE)overrides['index.html']=Buffer.from(PAGE.render(root));else overrides[f.slice('kuniezu/'.length)]=fs.readFileSync(p);}}
 const TYPES={js:'application/javascript',html:'text/html; charset=utf-8',json:'application/json',css:'text/css',png:'image/png',webp:'image/webp',svg:'image/svg+xml'};
 const profile=fs.mkdtempSync(path.join(os.tmpdir(),'kuniezu-perf-'));
 const chrome=spawn(process.env.CHROME_PATH||'/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',['--headless','--disable-gpu','--no-first-run','--no-default-browser-check',`--user-data-dir=${profile}`,'--remote-debugging-pipe'],{stdio:['ignore','ignore','ignore','pipe','pipe']});

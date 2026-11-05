@@ -30,7 +30,7 @@ def audit(base, output):
     if canonical:
         sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "map"))
         from map_data import read_definition, source_sha256
-        directory = base.parent.parent / canonical
+        directory = Path(__file__).resolve().parents[2] / canonical  # 生成物の置き場（kuniezu/static/kuniezu/map/build）の深さに依らずリポジトリから引く
         if source_sha256(directory) != grid["source"]["sha256"]:
             raise ValueError("Province tiles target a different canonical source")
         definition = read_definition(directory)

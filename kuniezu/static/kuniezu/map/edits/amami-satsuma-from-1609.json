@@ -1,0 +1,35 @@
+{
+  "id": "amami-satsuma-from-1609",
+  "layer": "provinces",
+  "baseRevision": "liaodong-1560-source-v1",
+  "validFrom": [
+    1609,
+    3,
+    7
+  ],
+  "validUntil": [
+    1616,
+    1,
+    1
+  ],
+  "payload": {
+    "mask": "../../../../../data/inputs/south-islands-review/amami-satsuma-from-1609-mask.png",
+    "maskSha256": "dae637c084e9503e6bdc3faec5114980f00f7a7186b7e9d27f9cb18bc87c470d",
+    "window": [
+      5091,
+      18937,
+      1479,
+      1700
+    ],
+    "from": "key:castle:shuri",
+    "keys": [
+      "castle:uchi"
+    ]
+  },
+  "sourceIds": [
+    "mlit-amami-history"
+  ],
+  "basis": "1609年の島津氏の琉球侵攻の後、奄美群島（奄美大島・喜界島・徳之島・沖永良部島・与論島ほか）は薩摩に割かれた（国土交通省 観光庁 多言語解説文「奄美大島の歴史」）。",
+  "review": "開始日は島津軍の奄美大島への渡海（慶長14年3月）に合わせた。名目上は琉球の一部とされ、統治の制度（大島置目之条々など）は後年に整う。硫黄鳥島は琉球に残るので含めない。",
+  "uncertaintyKm": 0
+}

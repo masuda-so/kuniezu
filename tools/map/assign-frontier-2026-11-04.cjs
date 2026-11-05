@@ -51,6 +51,6 @@ const count={};
  await writeRGB(src+'.assign',W,H,y=>{fs.readSync(rd,buf,0,W*3,y*W*3);return buf;});fs.closeSync(rd);fs.rmSync(tmpRaw);fs.renameSync(src+'.assign',src);
  MD.writeDefinition(rows);
  // 寛甸方面の年代別の差分（1573〜1605年に明）は、元が建州女真の画素に当てる
- const ep=path.join(MD.root,'game/map/edits/ming-kuandian-1573-1605-reference.json'),e=JSON.parse(fs.readFileSync(ep,'utf8'));if(e.payload.from==='key:unassigned'){e.payload.from='key:context:jianzhou';fs.writeFileSync(ep,JSON.stringify(e,null,2)+'\n');}
+ const ep=path.join(MD.root,'kuniezu/static/kuniezu/map/edits/ming-kuandian-1573-1605-reference.json'),e=JSON.parse(fs.readFileSync(ep,'utf8'));if(e.payload.from==='key:unassigned'){e.payload.from='key:context:jianzhou';fs.writeFileSync(ep,JSON.stringify(e,null,2)+'\n');}
  console.log(JSON.stringify({added:add.map(r=>[r.id,r.key,r.rgb]),count}));
 })().catch(e=>{console.error(e);process.exit(1);});

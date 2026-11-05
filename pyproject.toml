@@ -1,0 +1,160 @@
+[project]
+name = "kuniezu"
+version = "0.0.1"
+description = "A map game of Japan, 1560-1615: Django skeleton and static export for the browser game"
+readme = "README.md"
+license = "MIT"
+license-files = [ "LICENSE", "THIRD_PARTY_NOTICES.md" ]
+authors = [
+  { name = "masudaso", email = "258961222+masuda-so@users.noreply.github.com" },
+]
+requires-python = "==3.14.*"
+classifiers = [
+  "Programming Language :: Python :: 3 :: Only",
+  "Programming Language :: Python :: 3.14",
+]
+dependencies = [
+  "django==6.1.2",
+  "django-environ==0.14.0",
+]
+
+[dependency-groups]
+dev = [
+  "django-stubs[compatible-mypy]==6.1.2",
+  "djlint==1.46.6",
+  "mypy==2.4.0",
+  "pre-commit==4.7.0",
+  "pytest==9.1.1",
+  "pytest-django==4.14.0",
+  "ruff==0.17.1",
+]
+
+# ==== djLint ====
+[tool.djlint]
+profile = "django"
+include = "H017,H035"
+indent = 2
+max_line_length = 119
+blank_line_after_tag = "load,extends"
+close_void_tags = true
+format_css = true
+format_js = true
+# TODO: remove T002 when fixed https://github.com/djlint/djLint/issues/687
+ignore = "H006,H030,H031,T002"
+css.indent_size = 2
+# The game page is kept as written: the Node tools read its tags with regular
+# expressions (tools/build/stamp-assets.cjs, tools/checks/).
+extend_exclude = "kuniezu/templates/index.html"
+js.indent_size = 2
+
+# ==== ruff ====
+[tool.ruff]
+# The game (kuniezu/static/), research data, the Node and Python tools and the
+# parked code are not part of the Django project yet. Stage 4 of the re-platforming
+# brings the Python tools under these rules.
+extend-exclude = [
+  "*/migrations/*.py",
+  "archive/*",
+  "data/*",
+  "dist/*",
+  "docs/*",
+  "kuniezu/static/*",
+  "staticfiles/*",
+  "tools/*",
+]
+lint.select = [
+  "A",
+  "ASYNC",
+  "B",
+  "BLE",
+  "C4",
+  "C90",
+  "COM",
+  "DJ",
+  "DTZ",
+  "E",
+  "EM",
+  "ERA",
+  "EXE",
+  "F",
+  "FA",
+  "FBT",
+  "FLY",
+  "G",
+  "I",
+  "ICN",
+  "INP",
+  "INT",
+  "ISC",
+  "N",
+  "PD",
+  "PERF",
+  "PGH",
+  "PIE",
+  "PL",
+  "PT",
+  "PTH",
+  "PYI",
+  "Q",
+  "RET",
+  "RSE",
+  "RUF",
+  "S",
+  "SIM",
+  "SLF",
+  "SLOT",
+  "T10",
+  "T20",
+  "TC",
+  "TID",
+  "TRY",
+  "UP",
+  "W",
+  "YTT",
+]
+lint.ignore = [
+  "COM812", # Trailing commas are handled by the Ruff formatter.
+  "RUF012", # Mutable class attributes should be annotated with `typing.ClassVar`
+  "S101",   # Use of assert detected https://docs.astral.sh/ruff/rules/assert/
+  "SIM102", # sometimes it's better to nest
+]
+lint.isort.force-single-line = true
+
+# ==== pyproject-fmt ====
+[tool.pyproject-fmt]
+keep_full_version = true
+
+# ==== mypy ====
+[tool.mypy]
+ignore_missing_imports = true
+python_version = "3.14"
+check_untyped_defs = true
+warn_redundant_casts = true
+warn_unused_ignores = true
+plugins = [
+  "mypy_django_plugin.main",
+]
+warn_unused_configs = true
+overrides = [
+  # Django migrations should not produce any errors:
+  { module = "*.migrations.*", ignore_errors = true },
+]
+
+[tool.django-stubs]
+django_settings_module = "config.settings.test"
+
+# ==== pytest ====
+[tool.pytest]
+addopts = [
+  "--ds=config.settings.test",
+  "--import-mode=importlib",
+]
+minversion = "9.0"
+python_files = [
+  "tests.py",
+  "test_*.py",
+]
+testpaths = [
+  "kuniezu",
+  "tests",
+]

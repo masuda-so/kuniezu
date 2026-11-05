@@ -1,0 +1,37 @@
+{
+  "id": "ming-kuandian-1573-1605-reference",
+  "layer": "provinces",
+  "baseRevision": "liaodong-1560-source-v1",
+  "validFrom": [
+    1573,
+    1,
+    1
+  ],
+  "validUntil": [
+    1606,
+    1,
+    1
+  ],
+  "payload": {
+    "mask": "../../../../../data/inputs/liaodong-frontier-review/kuandian-1573-1605-mask.png",
+    "maskSha256": "c13d566eb6cdb8d7ed9e9801b2ac03c60d5a687408e0d2cd2240f471240e4777",
+    "window": [
+      1481,
+      5135,
+      470,
+      885
+    ],
+    "from": "key:context:jianzhou",
+    "keys": [
+      "neutral:明"
+    ]
+  },
+  "sourceIds": [
+    "lee-2014-fig1",
+    "masui-2022"
+  ],
+  "basis": "史料図の寛甸外郭と基幹域の差を、正本の未割当陸だけに限定した年精度の軍政域参考。",
+  "review": "1573は築堡開始年、1603〜1605は撤収過程。1月1日の一斉領有変更や1605年末までの均一統治を意味しない。",
+  "displayPolicy": "年精度の拡張軍政域参考として期間中表示可。1603〜1605は撤収期説明を必ず併記し、軍・外交・史実行軍の所有者へ転用しない。",
+  "uncertaintyKm": 25
+}

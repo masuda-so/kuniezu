@@ -6,13 +6,13 @@ assert.equal(battles.length,111);
 for(const [title,b] of battles){
  assert.ok(Array.isArray(b.participantClans),title+' participation');
  for(const k of b.participantClans)assert.ok(TK.CLANS[k],title+' unknown faction '+k);
- const m=TK.BATTLE_ATLAS[title],d=JSON.parse(fs.readFileSync(path.join(__dirname,'../../game/atlas',m.file)));
+ const m=TK.BATTLE_ATLAS[title],d=JSON.parse(fs.readFileSync(path.join(__dirname,'../../kuniezu/static/kuniezu/atlas',m.file)));
  assert.equal(d.title,title);assert.equal(Buffer.from(d.heights,'base64').length,d.width*d.height*2);
  assert.ok(d.bounds[0]<d.bounds[2]&&d.bounds[1]>d.bounds[3]);
  assert.deepEqual(Array.from(m.bounds),d.bounds,title+' relief and projected points share the same bounds');
  for(const p of d.points)assert.ok(p.lon>=d.bounds[0]&&p.lon<=d.bounds[2]&&p.lat<=d.bounds[1]&&p.lat>=d.bounds[3]);
 }
-const takatenjin=TK.BATTLE_ATLAS['高天神城の戦い'],takatenjinData=JSON.parse(fs.readFileSync(path.join(__dirname,'../../game/atlas',takatenjin.file)));
+const takatenjin=TK.BATTLE_ATLAS['高天神城の戦い'],takatenjinData=JSON.parse(fs.readFileSync(path.join(__dirname,'../../kuniezu/static/kuniezu/atlas',takatenjin.file)));
 for(const [name,lon,lat] of TK.TAKATENJIN_FORTS){
  assert.ok(lon>takatenjin.bounds[0]&&lon<takatenjin.bounds[2]&&lat<takatenjin.bounds[1]&&lat>takatenjin.bounds[3],name+' included without moving its source point');
  assert.ok(takatenjin.points.some(p=>p.name===name&&p.lon===lon&&p.lat===lat),name+' source point preserved');

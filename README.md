@@ -11,12 +11,15 @@
 ## 主な機能と制約
 
 - 古湖岸、城・施設・人物の史実照合、街道上の行軍、合戦の布陣と動きを、出典を付けて表示します。
+- 合戦図の駒は表示幅や地区切替で地理的位置を変えません。同地点の隊は選択候補から個別に確認できます。
 - 清洲会議後の三法師の預かり先と宗家の本拠を分けて表示し、記録後の所在不明期間を架空の移動で補いません。旧保存も同じ表示へ移行します。
 - 外交は国境のみを表示し、行軍は街道上の駒で表します。合戦は自軍参加時だけ自動表示します。関ヶ原の不参戦5隊には汎用の前進演出を加えません。
 - 自由攻城、非史実ルート、プレイ中のAI生成は停止しています。`archive/` の非史実実装は通常の起動では読みません。
 - 合戦関連の年表注記は既存合戦の経過と区別して分類し、個別布陣の根拠がない落城は年表・史跡で保持します。
 - 現代の比較地形、史料からの推定、確認済みの史実は区別して扱います。根拠のない文章をプレイ画面へ出しません。
 - 史実DBは原暦と日付精度を維持し、時間形式と矛盾する追加日付欄を拒否します。[DB構成と操作](docs/architecture/history-database.md)を参照してください。
+- 富ノ森の発掘観測を出典付きで史実DBに登録しています。考古学的な時期区分と確定年月日を分け、原本はSHA付きで参照し、読書用Markdownと数値を保持します。
+- 史実DBの集計は `python3 tools/research/history_sqlite.py cube --db <生成済みDB> --from-year 1600 --to-year 1615 --calendar Japanese-lunisolar` で読取専用検索できます。出典記録数を原暦・精度別に集計し、不明な年を展開しません。
 - 史実DBは本人の典拠IDと出典付き別名を保持します。別名で検索でき、ゲーム期間外の比較史料を期間内の出来事へ置き換えません。
 - 香取海の内浪逆浦・外浪逆浦は、中世の湖沼資料と後世の比較岸による推定湖面として表示します。補正範囲を閉じる水面上の辺は、岸線として描きません。[根拠と検査](docs/reports/KATORI_WIDE_LAKE_PERIMETER.md)を参照してください。
 
@@ -24,7 +27,8 @@
 
 | フォルダ | 内容 |
 |---|---|
-| `game/` | ブラウザへ配信するゲームと同梱素材。読込順は `index.html` |
+| `kuniezu/static/kuniezu/` | ブラウザへ配信するゲームと同梱素材 |
+| `kuniezu/templates/` | ゲームのページ `index.html`（Django のテンプレート）。スクリプトの読込順はここで決まる |
 | `docs/architecture/` | 構成、ファイルの移動記録、依存順 |
 | `docs/work/` | 残要望、完了条件、対象別作業一覧、担当と成果の記録 |
 | `docs/reports/` | 調査・修正・実画面確認の報告書 |
@@ -40,19 +44,21 @@
 
 ## 導入と使い方
 
-地図は正本 `game/map_data/`（Paradox 方式の `provinces.png` 全域1枚など）だけを Git で管理し、ブラウザへ配る分割タイル・境界線・河川の線・陰影（`game/map/` の生成物）はリポジトリに含めません。取得後と、正本や年代別の差分（`game/map/edits/*.json`）を変えた後に、一度生成してください（数分かかります）。
+地図の正本は `kuniezu/static/kuniezu/map/` に層ごとに置き、Git で管理します。行政区分 `admin/`（郡）、支配 `control/`（城の支配域。Paradox 方式の `provinces.png` 全域1枚など）、自然 `physical/`（標高・川）、年代別の差分 `edits/` です。ブラウザへ配る分割タイル・境界線・河川の線・陰影（`kuniezu/static/kuniezu/map/build/` の生成物）はリポジトリに含めません。取得後と、正本や年代別の差分（`kuniezu/static/kuniezu/map/edits/*.json`）を変えた後に、一度生成してください（数分かかります）。
 
 ```sh
 node tools/map/build-map.cjs
 ```
 
-地形の陰影も作る場合は、Git LFS で `game/map_data/heightmap.png` を取得し、NumPy と Pillow の入った Python を指定します（陰影が無くてもゲームは動きます）。
+地形の陰影も作る場合は、Git LFS で `kuniezu/static/kuniezu/map/physical/heightmap.png` を取得し、NumPy と Pillow の入った Python を指定します（陰影が無くてもゲームは動きます）。
 
 ```sh
 node tools/map/build-map.cjs --height --python /path/to/python3
 ```
 
-生成後は `game/` を静的ファイルとして配信し、ブラウザで `index.html` を開きます。
+正本の PNG は大きすぎて VS Code などでは開けないので、生成の最後に、層ごとの 1/4 の縮小版（経緯度の目盛り付き）を `kuniezu/static/kuniezu/map/build/previews/` に作ります（`control.png` 支配、`admin.png` 行政区分、`rivers.png` 川、`height.png` 標高）。目で確かめるときはこちらを開いてください。
+
+生成後は Django の開発サーバーを起動し、ブラウザで `http://localhost:8000/index.html` を開きます（`uv sync --locked` の後 `uv run python manage.py runserver 8000`。Python 3.14 と uv が必要）。ページは Django のテンプレートなので、`kuniezu/static/kuniezu/` だけを静的ファイルとして配信しても開けません。`uv run python scripts/build_static.py` は公開用の静的ファイルを `dist/client/` に書き出し、こちらは静的ファイルとして配信すれば開けます。構成は website と同じ Django の並びへ揃える途中です（`docs/structure.md`、`docs/architecture/replatform-plan.md`）。画面の地図は北が上です。表示設定の「地図の向き」で、明治「大日本全図」に合わせた向き（北を左へ 16 度）などに回せます（`docs/reports/MAP_ORIENTATION.md`）。
 
 サーバーの起動・停止は利用者が行います。検証は起動済み `http://localhost:8000/index.html` に接続します。検査結果の保存先は `GAME_TEST_OUTPUT` で指定できます。
 
@@ -67,7 +73,7 @@ node tools/checks/offline.cjs
 - 現行仕様と合意事項: [HANDOFF.md](HANDOFF.md)
 - 文書の入口: [docs/README.md](docs/README.md)
 - 史料と実装の区別: [data/research/README.md](data/research/README.md)
-- 地形・水域データの出典と加工: [game/licenses/DATA_SOURCES.md](game/licenses/DATA_SOURCES.md)
+- 地形・水域データの出典と加工: [kuniezu/static/kuniezu/licenses/DATA_SOURCES.md](kuniezu/static/kuniezu/licenses/DATA_SOURCES.md)
 - 第三者データの表記: [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md)
 
 ## 開発と貢献

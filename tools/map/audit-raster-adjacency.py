@@ -18,7 +18,7 @@ def audit(root, overlay=None):
     if canonical:
         sys.path.insert(0, str(Path(__file__).resolve().parent))
         from map_data import read_definition, source_sha256
-        source_dir = root.parent.parent / canonical
+        source_dir = Path(__file__).resolve().parents[2] / canonical  # 生成物の置き場（kuniezu/static/kuniezu/map/build）の深さに依らずリポジトリから引く
         rows = read_definition(source_dir)
         baseline_sha = source_sha256(source_dir)
         if baseline_sha != manifest["source"]["sha256"]:
@@ -109,13 +109,13 @@ def audit(root, overlay=None):
         # 正本の画素数を配信タイルとは独立に集計する。
         decoder = Path(__file__).resolve().parent / "png-big.cjs"
         if not decoder.exists():
-            decoder = root.parent.parent / "tools/map/png-big.cjs"
+            decoder = Path(__file__).resolve().parents[2] / "tools/map/png-big.cjs"
         script = """const {readRGB}=require(process.argv[1]);
 const counts=new Uint32Array(1<<24);
 readRGB(process.argv[2],(y,row)=>{for(let i=0;i<row.length;i+=3)counts[(row[i]<<16)|(row[i+1]<<8)|row[i+2]]++;})
 .then(dim=>{const pixels={};for(let i=0;i<counts.length;i++)if(counts[i])pixels[i]=counts[i];
 console.log(JSON.stringify({...dim,pixels}));}).catch(e=>{console.error(e.message);process.exit(1);});"""
-        result = subprocess.run(["node", "-e", script, str(decoder), str(source_dir / "provinces.png")],
+        result = subprocess.run(["node", "-e", script, str(decoder), str(source_dir / manifest["source"].get("provinces", "provinces.png"))],
                                 check=True, capture_output=True, text=True)
         source = json.loads(result.stdout)
         if (source["width"], source["height"]) != (width, height):

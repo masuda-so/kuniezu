@@ -47,7 +47,7 @@ const timer=setTimeout(()=>{console.error('browser verification timed out');chro
  await ev("TKUI.open('scene',{title:'関ヶ原の戦い'})");await sleep(500);await click('[data-act=b-routes]');await shot('mobile-battle');await click('[data-act=site-map]');await shot('mobile-site-map');await click('[data-act=site-back]');await click('[data-act=b-close]');
  await ev("TKUI.open('scene',{title:'大坂冬の陣'})");await sleep(300);await shot('mobile-osaka-winter');await click('[data-act=b-close]');
  const overflow=await ev('({width:innerWidth,scroll:document.documentElement.scrollWidth})');assert.ok(overflow.scroll<=overflow.width);
- console.log('PASS: mobile 390x844 game/menu/intro/battle; no document horizontal overflow');
+ console.log('PASS: mobile 390x844 kuniezu/static/kuniezu/menu/intro/battle; no document horizontal overflow');
  await menu();await click('#modal [data-act=to-title]');await start();await click('#modal [data-act=close]');
  const withdrawal=await ev(`(()=>{const S=G.S();S.clans[S.player].food=50000;S.clans[S.player].gold=10000;const y=G.YOSHO.find(y=>G.branchOffer(y.id).ok),r=G.branchOffer(y.id);TKUI.open('branch',{id:y.id});return {id:y.id,from:r.from,before:S.castles[r.from].troops};})()`);
  await click('[data-act=branch-go]');await ev(`TKUI.open('branch',{id:${JSON.stringify(withdrawal.id)}})`);await click('[data-act=branch-withdraw]');assert.equal(await ev(`G.S().castles[${JSON.stringify(withdrawal.from)}].troops`),withdrawal.before);console.log('PASS: ordinary branch army withdrawal through UI');

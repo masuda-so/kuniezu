@@ -8,7 +8,7 @@ from shapely.geometry import LineString
 
 root=Path(__file__).resolve().parents[2]
 inputs=root/'data/inputs/hyuga-road-review'
-game=root/'game/modern-road-reference.js'
+game=root/'kuniezu/static/kuniezu/modern-road-reference.js'
 head,body=game.read_text().split('TK.MODERN_ROAD_REFERENCE=')
 existing=json.loads(body.strip().removesuffix(';'))
 backup=inputs/'before-modern-reference.json'

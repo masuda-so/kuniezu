@@ -1,12 +1,22 @@
 /* 起動済みHTTPサーバーを専用Chromeで検証する。起動停止は行わない。
-   GAME_OVERRIDE_ROOT/GAME_OVERRIDE_BASE は候補のgame差分のみを専用ブラウザ内で差し替える。 */
+   GAME_OVERRIDE_ROOT/GAME_OVERRIDE_BASE は候補の静的ファイルとテンプレートの差分のみを専用ブラウザ内で差し替える。 */
 const {spawn,execFileSync}=require('node:child_process');
 const crypto=require('node:crypto');
 const fs=require('node:fs'),os=require('node:os'),path=require('node:path'),assert=require('node:assert/strict');
 const URL=process.env.GAME_URL||'http://localhost:8000/index.html';
 const OUT=path.resolve(process.env.GAME_TEST_OUTPUT||path.join(os.tmpdir(),'kuniezu-browser-results'));
+const PAGE=require('../build/game-page.cjs');
 const root=process.env.GAME_OVERRIDE_ROOT,overrides={};
-if(root){for(const f of execFileSync('git',['-C',root,'diff','--name-only',process.env.GAME_OVERRIDE_BASE||'origin/main','--','game'],{encoding:'utf8'}).trim().split('\n').filter(Boolean)){const p=path.join(root,f);if(fs.existsSync(p))overrides[f.slice(5)]=fs.readFileSync(p);}}
+if(root){
+ const base=process.env.GAME_OVERRIDE_BASE||'origin/main';
+ const files=execFileSync('git',['-C',root,'diff','--name-only',base,'--','kuniezu/static/kuniezu',PAGE.TEMPLATE],{encoding:'utf8'}).split('\n').filter(Boolean);
+ for(const file of files){
+  const candidate=path.join(root,file);
+  if(!fs.existsSync(candidate))continue;
+  if(file===PAGE.TEMPLATE)overrides['index.html']=Buffer.from(PAGE.render(root));
+  else overrides[file.slice('kuniezu/'.length)]=fs.readFileSync(candidate);
+ }
+}
 const TYPES={js:'application/javascript',html:'text/html; charset=utf-8',json:'application/json'};
 const profile=fs.mkdtempSync(path.join(os.tmpdir(),'kuniezu-check-'));fs.mkdirSync(OUT,{recursive:true});
 const chrome=spawn(process.env.CHROME_PATH||'/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',['--headless',...(new globalThis.URL(URL).protocol==='file:'?['--allow-file-access-from-files']:[]),'--disable-gpu','--no-first-run','--no-default-browser-check',`--user-data-dir=${profile}`,'--remote-debugging-pipe'],{stdio:['ignore','ignore','ignore','pipe','pipe']});
