@@ -6,6 +6,7 @@
 
 - `game/`（84 の JS、`map/` 地図の正本と配信物、`atlas/` 合戦地形、`terrain/` 標高・陰影、`portraits/` 肖像、`kamon/` 家紋、`licenses/` 素材の出典）。配信 URL は変えない（地図は 2026-11-04 に利用者の判断で `map/build/` と `map/control/` へ移した）。
 - `docs/`（`architecture/` 構成と依存順、`work/` 残要望と担当、`reports/` 報告書、`history/` 過去の原文）。作業前に `HANDOFF.md` を読む。
+- 再編の途中：利用者の決定（2026-11-05）で、`masuda-so/website` と同じ Django の構成に揃え、地理院地図Vector を下図にする。段取りと未決の点は `docs/architecture/replatform-plan.md`。各段が main に入るまでは、この文書の現行の決まりに従う。
 - `data/`（`inputs/` 調査・生成の入力、`research/` 出典と史実命題 `claims.jsonl`、`audits/` 検査が生成する JSON、`verification/` 実画面の証拠）。
 - `tools/`（`checks/` 検査、`work/` 作業一覧と担当記録、`research/` 史料の出力、`geo/` と `faces/` 配信用データの生成元）。`archive/` は保留中の非史実実装で、起動では読まない。
 
