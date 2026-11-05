@@ -4,13 +4,35 @@
   "aliases": [
     "十三湊遺跡"
   ],
-  "geometry": null,
-  "geometryStatus": "not-asserted",
+  "geometry": {
+    "type": "Point",
+    "coordinates": [
+      140.329421,
+      41.027996
+    ]
+  },
+  "geometryStatus": "site-representative",
   "note": "十三湖西岸の港町遺跡。十三湖の全域や第54次調査区の座標と区別する。",
   "identityBasis": {
     "scope": "第54次調査が行われた十三湊遺跡を対象として登録する。",
     "claimIds": [
       "tosaminato-54-windblown-sand-layer"
     ]
+  },
+  "geometryEvidence": {
+    "source": "aomori-kenshi-tosaminato-point",
+    "sourceUrl": "https://kenshi-archives.pref.aomori.lg.jp/il/meta_pub/G0000004txt_ARCH3-3-3-068",
+    "locator": "資料205172、606〜607頁、遺跡の位置・緯度・経度",
+    "checked": "2026-11-05",
+    "scope": "青森県史が十三湊遺跡に与えた代表座標。第54次発掘区・港の水際・遺跡指定境界の座標ではない。",
+    "coordinateOrder": "longitude-latitude",
+    "coordinateUnits": "decimal-degrees",
+    "sourceCoordinateOrder": "latitude-longitude",
+    "sourceCoordinateLiteral": "41.027996, 140.329421",
+    "sourceRecordId": "ARCH3-3-3-068",
+    "sourceDatum": null,
+    "sourceDatumStatus": "not-stated-in-consulted-source",
+    "sourceDatumReview": "個別ページに測地系の記載を確認できない。原資料の十進度を変換せずに保持した。",
+    "uncertainty": "同じ遺跡を指すCODH点とは約72m離れる。差を誤差限界とみなさない。"
   }
 }
