@@ -1,6 +1,6 @@
 # 標高正本から配信用陰影を再生成する
 
-標高の正本は `kuniezu/static/kuniezu/map/physical/heightmap.png` と同名の `heightmap.json`。実数標高を符号化した16bit灰色画像で、表示用の陰影やWebPから高さを逆算しない。Copernicusの元GeoTIFFが手元になくても、この正本と格子情報だけで配信用陰影を再生成できる。
+標高の正本は `kuniezu/map/physical/heightmap.png` と同名の `heightmap.json`。実数標高を符号化した16bit灰色画像で、表示用の陰影やWebPから高さを逆算しない。Copernicusの元GeoTIFFが手元になくても、この正本と格子情報だけで配信用陰影を再生成できる。
 
 ## 一つのコマンド
 
@@ -11,8 +11,8 @@
 ```sh
 python3 tools/map/build-height-cache.py \
   --grid kuniezu/static/kuniezu/map/build/manifest.json \
-  --heightmap kuniezu/static/kuniezu/map/physical/heightmap.png \
-  --projection kuniezu/static/kuniezu/map/projection.json \
+  --heightmap kuniezu/map/physical/heightmap.png \
+  --projection kuniezu/map/projection.json \
   --output kuniezu/static/kuniezu/map/build
 ```
 
@@ -23,9 +23,9 @@ python3 tools/map/build-height-cache.py \
 ```sh
 python3 tools/map/build-height-cache.py \
   --grid kuniezu/static/kuniezu/map/build/manifest.json \
-  --heightmap kuniezu/static/kuniezu/map/physical/heightmap.png \
-  --projection kuniezu/static/kuniezu/map/projection.json \
-  --previous kuniezu/static/kuniezu/map \
+  --heightmap kuniezu/map/physical/heightmap.png \
+  --projection kuniezu/map/projection.json \
+  --previous kuniezu/map \
   --output /tmp/kuniezu-height-preview
 ```
 

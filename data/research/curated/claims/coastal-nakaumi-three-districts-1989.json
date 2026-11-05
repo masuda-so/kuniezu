@@ -35,7 +35,7 @@
   "recordType": "verified-historical-claim",
   "status": "verified-in-specified-scope",
   "gameBindings": [
-    "kuniezu/static/kuniezu/map/control/provinces.png"
+    "kuniezu/map/control/provinces.png"
   ],
   "bindingScope": "地形の年代比較・監査の参照先。正本・ゲームイベントへの変更は未適用。",
   "uncertainty": "完成対象は記名された3地区。月は保持するが日を補わず、地区境界・現湖岸を登録していない。 精密輪郭・座標は採用していない。",
