@@ -33,11 +33,11 @@ async function intercept(params){
 (async()=>{try{
  const target=await call('Target.createTarget',{url:'about:blank'},null);session=(await call('Target.attachToTarget',{targetId:target.targetId,flatten:true},null)).sessionId;
  await call('Runtime.enable');await call('Page.enable');await call('Network.enable');await call('Network.setCacheDisabled',{cacheDisabled:true});
- await call('Fetch.enable',{patterns:[{urlPattern:'*history-focus.js',requestStage:'Request'}]});
+ await call('Fetch.enable',{patterns:[{urlPattern:'*history-focus.js*',requestStage:'Request'}]});
  await view(390,900);await load();await until("!document.getElementById('boot')");
  assert.equal(attempts,2);assert.deepEqual(errors,[]);await shot('retried-title');
  fault='always';attempts=0;await call('Page.navigate',{url:URL});await until("!!document.querySelector('#bootReload:not([hidden])')");
- assert.equal(attempts,3);assert.equal(await ev("document.getElementById('bootDetail').textContent"),'history-focus.js');
+ assert.equal(attempts,3);assert.match(await ev("document.getElementById('bootDetail').textContent"),/^history-focus\.js(\?v=[0-9a-f]+)?$/);
  assert.equal(await ev("typeof TK.EXTRA_BATTLES"),'undefined');assert.deepEqual(errors,[]);await shot('connection-failure');
  fault='runtime';attempts=0;await click('#bootReload');await until("!!document.querySelector('#bootReload:not([hidden])')");
  assert.equal(attempts,1);assert.equal(errors.length,1);assert.match(errors[0],/startup-runtime-test/);
