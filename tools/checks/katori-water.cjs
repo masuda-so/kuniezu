@@ -10,7 +10,7 @@ function visit(f,check){const rings=f.geometry.coordinates.map(r=>r.map(grid)),x
 assert.equal(visit(feature('uchinasaka-combined-wide-water'),d=>assert.equal(d.key,'lake:140.55,36.05')),1719);
 assert.equal(visit(feature('protected-southeast-land'),d=>assert.equal(d.kind,'land')),70);
 const temp=fs.mkdtempSync(path.join(os.tmpdir(),'kuniezu-shore-check-'));let tested=0;
-try{const mask=JSON.parse(fs.readFileSync(path.join(root,'kuniezu/static/kuniezu/map/physical/shoreline_masks.geojson')));assert.equal(mask.features.length,5);for(const f of mask.features)f.properties.bufferMetres=25;const file=path.join(temp,'masks.json');fs.writeFileSync(file,JSON.stringify(mask));const nearCut=loadMasks(file,p),index=JSON.parse(fs.readFileSync(path.join(root,'kuniezu/static/kuniezu/map/build/edges.json')));
+try{const mask=JSON.parse(fs.readFileSync(path.join(root,'kuniezu/map/physical/shoreline_masks.geojson')));assert.equal(mask.features.length,5);for(const f of mask.features)f.properties.bufferMetres=25;const file=path.join(temp,'masks.json');fs.writeFileSync(file,JSON.stringify(mask));const nearCut=loadMasks(file,p),index=JSON.parse(fs.readFileSync(path.join(root,'kuniezu/static/kuniezu/map/build/edges.json')));
 const refs=index.levels.flatMap(l=>l.tiles.map(t=>path.join(root,'kuniezu/static/kuniezu/map/build',l.dir,t.file))).concat(index.versions.map(t=>path.join(root,'kuniezu/static/kuniezu/map/build','edges-'+t.factor,t.file)));
 for(const file of refs)for(const item of JSON.parse(fs.readFileSync(file))){if(!['coast','lake'].includes(item.kind))continue;for(const line of item.lines)for(let i=2;i<line.length;i+=2){assert(!nearCut(line[i-2],line[i-1],line[i],line[i+1]),'架空の岸線: '+file);tested++;}}
 }finally{fs.rmSync(temp,{recursive:true,force:true});}

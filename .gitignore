@@ -4,7 +4,7 @@ __pycache__/
 node_modules/
 # 取得した元データ（再配布しない入力。生成物だけを kuniezu/static/kuniezu/ に置く）
 .cache/
-# 地図の配信物（正本 kuniezu/static/kuniezu/map と差分の入力 kuniezu/static/kuniezu/map/edits/*.json から node tools/map/build-map.cjs で kuniezu/static/kuniezu/map/build に生成。コミットしない）
+# 地図の配信物（正本 kuniezu/map と差分の入力 kuniezu/map/edits/*.json から node tools/map/build-map.cjs で kuniezu/static/kuniezu/map/build に生成。コミットしない）
 /kuniezu/static/kuniezu/map/build/
 # 実画面の証拠の画像・動画（結果の要約 README.md だけをコミットし、画像は PR に添付する。既に追跡中のものは履歴として残る）
 /data/verification/**/*.png

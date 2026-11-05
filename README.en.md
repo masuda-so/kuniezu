@@ -66,19 +66,19 @@ is [docs/README.md](docs/README.md); open requests and ownership are in
 
 ## Getting started and usage
 
-The map source lives in `kuniezu/static/kuniezu/map/`, one folder per layer, and is tracked in Git:
+The map source lives in `kuniezu/map/`, one folder per layer, and is tracked in Git:
 administrative divisions in `admin/` (districts), control in `control/` (castle
 domains, including the single full-map `provinces.png` in the Paradox style),
 nature in `physical/` (elevation and rivers), and dated edits in `edits/`. The tiles, borders, river
 lines and relief served to the browser (generated files in `kuniezu/static/kuniezu/map/build/`) are not
 in the repository. Generate them once after cloning, and again after changing the
-source or the dated edits (`kuniezu/static/kuniezu/map/edits/*.json`). This takes a few minutes.
+source or the dated edits (`kuniezu/map/edits/*.json`). This takes a few minutes.
 
 ```sh
 node tools/map/build-map.cjs
 ```
 
-To also build the terrain relief, fetch `kuniezu/static/kuniezu/map/physical/heightmap.png` with Git LFS
+To also build the terrain relief, fetch `kuniezu/map/physical/heightmap.png` with Git LFS
 and pass a Python that has NumPy and Pillow (the game runs without relief).
 
 ```sh

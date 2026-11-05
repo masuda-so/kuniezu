@@ -1,6 +1,6 @@
 # リポジトリの構成（再編の途中）
 
-`masuda-so/website` と同じ Django の構成へ揃える途中（`docs/architecture/replatform-plan.md`）。今は段 1b-2 まで：Django・uv の骨組みを足し（1a）、ゲームの原本を `game/` から Django アプリの静的ファイル `kuniezu/static/kuniezu/` へ移し（1b-1）、`index.html` を Django のテンプレートにした（1b-2）。ゲームの JS と相対 URL は変えていない。
+`masuda-so/website` と同じ Django の構成へ揃える途中（`docs/architecture/replatform-plan.md`）。今は段 1 まで：Django・uv の骨組みを足し（1a）、ゲームの原本を `game/` から Django アプリの静的ファイル `kuniezu/static/kuniezu/` へ移し（1b-1）、`index.html` を Django のテンプレートにし（1b-2）、地図の正本を配信物から分けて `kuniezu/map/` へ移した（1b-3）。ゲームの JS と相対 URL は変えていない。
 
 | 場所 | 役割 |
 | --- | --- |
@@ -8,7 +8,8 @@
 | `config/` | 設定（`settings/base.py`・`local.py`・`test.py`）、URL、WSGI |
 | `kuniezu/` | Django のアプリ。ゲームのページを返す `views.py`、テンプレート `templates/`、静的ファイル `static/kuniezu/` |
 | `kuniezu/templates/index.html` | ゲームのページ。`game-scripts` がスクリプトの読込順 |
-| `kuniezu/static/kuniezu/` | ゲームの原本（素の JavaScript・CSS・素材）と地図の正本・配信物。段 1b-3 で地図の正本を `kuniezu/map/` へ移す |
+| `kuniezu/static/kuniezu/` | ゲームの原本（素の JavaScript・CSS・素材）と、地図の配信物 `map/build/`（生成物。Git に入れない） |
+| `kuniezu/map/` | 地図の正本（行政区分 `admin/`・支配 `control/`・自然 `physical/`・`projection.json`・年代別の差分の入力 `edits/`）。配信しない |
 | `scripts/` | 静的書き出し `build_static.py` |
 | `tests/` | Django 側の試験（pytest） |
 | `tools/` | 検査と生成の道具（Node と Python）。段 4 で、JS を実行しない道具を Python に移す |
@@ -22,7 +23,8 @@
 - インライン CSS は `kuniezu/static/kuniezu/index.css` に出した（元の 2 つの `<style>` を元の順のまま 1 つに）。CSS の `{#` や `%}` がテンプレートの記法と衝突しないようにするため。`<head>` の `<link>` から読み、確認値（`?v=`）は `tools/build/stamp-assets.cjs` が付ける。
 - テンプレートは djLint の対象から外してある（整形すると、道具が正規表現で読むタグの並びが変わるため）。
 - ゲームはアプリの静的ファイルなので、開発サーバーは `kuniezu/static/kuniezu/` を `/static/kuniezu/` として配る（`STATICFILES_DIRS` の指定は要らない）。ページは Django が描くので、`kuniezu/static/kuniezu/` だけを静的ファイルとして配信しても開けない。静的に配るなら `dist/client/` を使う。
-- `scripts/build_static.py` は、ページを Django で描画して `dist/client/index.html` に書き、ブラウザが実行時に読むファイルだけを `dist/client/static/kuniezu/` に写す。地図の正本（`map/admin`・`map/physical`・`map/edits`・`map/control/provinces.png` など）と縮小版は写さない。
+- 地図の正本は静的ファイルの外（`kuniezu/map/`）にあり、ブラウザへは配らない。`node tools/map/build-map.cjs` が `kuniezu/static/kuniezu/map/build/` に配信物を作り、実行時に読む区画の表（`definition.csv`・`default.map`）もそこへ写す。
+- `scripts/build_static.py` は、ページを Django で描画して `dist/client/index.html` に書き、ゲームの静的ファイルを `dist/client/static/kuniezu/` に写す。地図の縮小版（`map/build/previews`）は写さない。
 
 ## 依存と検査
 

@@ -117,4 +117,4 @@ https://geoshape.ex.nii.ac.jp/nrct-poi/
 
 ## 生成元の削除（2026-11-03）
 
-地図の正本を画像（`kuniezu/static/kuniezu/map/`）にしたため、線の地図データを作っていた生成器（`tools/geo` の `korea-coast.py`・`lakes.py`・`land-extension.py`・`regional-rivers.py`・`korean-rivers.py`・`select-major-rivers.py` など）は削除した。各データの出典・ライセンスの表示はこのファイルのとおり保持する。加工手順は Git の履歴で確かめられる。
+地図の正本を画像（`kuniezu/map/`）にしたため、線の地図データを作っていた生成器（`tools/geo` の `korea-coast.py`・`lakes.py`・`land-extension.py`・`regional-rivers.py`・`korean-rivers.py`・`select-major-rivers.py` など）は削除した。各データの出典・ライセンスの表示はこのファイルのとおり保持する。加工手順は Git の履歴で確かめられる。
