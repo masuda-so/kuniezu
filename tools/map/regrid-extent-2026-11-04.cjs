@@ -53,6 +53,6 @@ async function regrid(src,dst,fillRGB,{kuril=false}={}){const tmp=dst+'.regrid';
  const gj=JSON.parse(fs.readFileSync(path.join(root,'data/map/gun.json'),'utf8'));gj.projectionSha256=sha(MD.files.projection);gj.gunPngSha256=sha(path.join(root,'data/map/gun.png'));gj.regrid='2026-11-04：北を792行削り東に2,644列を足した（足した所は郡なし）';
  fs.writeFileSync(path.join(root,'data/map/gun.json'),JSON.stringify(gj,null,1));
  // 年代別の差分の型紙の窓（行）をずらす
- const ed=path.join(root,'kuniezu/static/kuniezu/map/edits');for(const f of fs.readdirSync(ed).filter(f=>f.endsWith('.json'))){const p=path.join(ed,f),e=JSON.parse(fs.readFileSync(p,'utf8'));if(!e.payload?.window)continue;e.payload.window[1]-=DROP;if(e.payload.window[1]<0)throw Error('窓が北の削った所にかかる: '+e.id);fs.writeFileSync(p,JSON.stringify(e,null,2)+'\n');}
+ const ed=path.join(root,'kuniezu/map/edits');for(const f of fs.readdirSync(ed).filter(f=>f.endsWith('.json'))){const p=path.join(ed,f),e=JSON.parse(fs.readFileSync(p,'utf8'));if(!e.payload?.window)continue;e.payload.window[1]-=DROP;if(e.payload.window[1]<0)throw Error('窓が北の削った所にかかる: '+e.id);fs.writeFileSync(p,JSON.stringify(e,null,2)+'\n');}
  console.log(JSON.stringify({before,width:W2,height:H2,origin:[OX,OY2],kurilLandAdded:added,demTiles:[...dems].filter(([,v])=>v).map(([k])=>k)}));
 })().catch(e=>{console.error(e);process.exit(1);});
