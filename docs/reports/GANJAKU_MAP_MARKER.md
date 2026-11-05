@@ -7,3 +7,5 @@
 - [添田町の落城記録](https://www.town.soeda.fukuoka.jp/uploaded/attachment/1792.pdf)
 
 1560・1587・1615年の地点照会が同じ代表点を返し、落城は既存の旧暦1587年4月1日の年表記録として残ることを確認した。[専用Chromeでの描画確認](../../data/verification/codex-ganjaku-site/README.md) に合格。
+
+落城時は同名・同地点で表示中の地名に、年表由来の印と年だけを重ねる。専用Chromeで落城日を再現し、名称が重ならず年表記事も表示されることを確認した。
