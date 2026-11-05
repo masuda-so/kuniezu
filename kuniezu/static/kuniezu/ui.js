@@ -619,7 +619,13 @@ function drawStill(z,cc,lvl){fitLayer(STILL);const c=STILL.c;beginLayer(c,z,cc,t
  if(lvl>=1)roadLabelsTop(c,z,fits,placed);
  for(const st of (S.sites||[])){if(S.t-st.t>540)continue;const C=G.C[st.at];let [x,y]=st.x!=null?w2s(st.x,st.y2):w2s(C.x+14,C.y+12);if(x<-80||y<-40||x>VW+80||y>VH+40)continue;
   const fade=Math.max(.35,1-(S.t-st.t)/540);c.globalAlpha=fade;c.save();c.translate(x,y);c.strokeStyle='#7a1c12';c.lineWidth=2.6;c.lineCap='round';c.beginPath();c.moveTo(-7,-7);c.lineTo(7,7);c.moveTo(7,-7);c.lineTo(-7,7);c.stroke();c.restore();
-  c.font='800 12px "Shippori Mincho B1",serif';c.textBaseline='middle';const t=st.n+'の戦い';const label=/戦い|変|城|攻め|平定|乱|殺し|開城|落城|征伐|一揆/.test(st.n)?st.n:t;c.lineWidth=3.4;c.strokeStyle='rgba(255,248,230,.95)';c.strokeText(label,x+11,y+1);c.fillStyle='#7a1c12';c.fillText(label,x+11,y+1);c.font='600 10px "Zen Kaku Gothic New",sans-serif';c.lineWidth=3;c.strokeText(st.y+'年',x+11,y+14);c.fillStyle='#5a3a26';c.fillText(st.y+'年',x+11,y+14);c.globalAlpha=1;}
+  c.font='800 12px "Shippori Mincho B1",serif';c.textBaseline='middle';const label=/戦い|変|城|攻め|平定|乱|殺し|開城|落城|征伐|一揆/.test(st.n)?st.n:st.n+'の戦い';
+  // 常設の地名が同じ位置にあるときは、出来事の印と年だけを重ねる。
+  const namedHere=st.x!=null&&TK.contextPlaces?.(G.date().y).some(p=>{
+   if(p.name!==st.n||z<(p.minZoom??.55))return false;
+   const [px,py]=G.PJ(...p.at);return Math.hypot(px-st.x,py-st.y2)<.01;
+  });
+  if(!namedHere){c.lineWidth=3.4;c.strokeStyle='rgba(255,248,230,.95)';c.strokeText(label,x+11,y+1);c.fillStyle='#7a1c12';c.fillText(label,x+11,y+1);}c.font='600 10px "Zen Kaku Gothic New",sans-serif';c.lineWidth=3;c.strokeText(st.y+'年',x+11,y+14);c.fillStyle='#5a3a26';c.fillText(st.y+'年',x+11,y+14);c.globalAlpha=1;}
  c.restore();
 }
 // 布陣プレビュー：位置の記録がない側は地図の点にせず、合戦地に添えた札へ陣営ごとに名前を並べる。

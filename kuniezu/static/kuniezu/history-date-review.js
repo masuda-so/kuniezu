@@ -93,6 +93,8 @@
 {
  const lunarDate=[1587,4,1],site='岩石城';
  TK.SITE_POS[site]=[130.871738,33.577313];
+ // 城跡の代表点を地図へ出す。落城時期と別に、現存する山城遺構を参照する。
+ (TK.CONTEXT_PLACES ||= []).push({name:site,detail:'岩石山の山城',at:TK.SITE_POS[site],minZoom:1.2});
  // 添田町の落城記録は年表と史跡地点へ。部隊別配置を確認するまで局地図を作らない。
  TK.BATTLE_EVENT_EXCLUSIONS['岩石城の落城']='添田町の落城記録に基づき年表・史跡地点に表示。個別部隊の布陣と攻城経路は未照合で、九州平定の方面図をこの城の局地図として流用しない。';
  TK.HIST.push({
