@@ -1,0 +1,402 @@
+{
+  "schemaVersion": 1,
+  "reviewedAt": "2026-11-04",
+  "scope": "user-named six portraits; current and image-pending fallback",
+  "sourcesAreDepictionsNotPhotographs": true,
+  "portraits": [
+    {
+      "name": "島清興",
+      "face": 130,
+      "extra": {
+        "src": "portraits/島清興.jpg",
+        "crop": [
+          300,
+          410,
+          250,
+          250
+        ],
+        "size": [
+          724,
+          1052
+        ],
+        "source": "https://commons.wikimedia.org/wiki/File:Shima_Sakon.jpg",
+        "note": "落合芳幾による後世の浮世絵。生前の肖像ではない。"
+      },
+      "layout": null,
+      "asset": "game/portraits/島清興.jpg",
+      "sha256": "7616d1de53969b96a3c016a7cb048451119c4f2b747238629b20556a56b138a7",
+      "assetSize": [
+        724,
+        1052
+      ],
+      "activeCrop": [
+        300,
+        410,
+        250,
+        250
+      ],
+      "activeCropSourcePixels": [
+        250,
+        250
+      ],
+      "cropWithinImage": true,
+      "fallbackSpriteSize": [
+        1280,
+        2048
+      ],
+      "fallbackCell": [
+        0,
+        1664,
+        128,
+        128
+      ],
+      "currentVisualReview": {
+        "missing": false,
+        "obviousDifferentPersonFound": false,
+        "whitePaddingFound": false,
+        "cropViewed": true,
+        "scope": "資料の画題・図像と既存素材の照合。本人の容貌を科学的に復元したという意味ではない。"
+      },
+      "fallbackBefore": "顔のない胴体部分",
+      "action": "refresh sprite from same verified source and crop as normal display",
+      "sourceReview": {
+        "url": "https://commons.wikimedia.org/wiki/File:Shima_Sakon.jpg",
+        "locator": "Summary / Licensing",
+        "identity": "落合芳幾「太平記英雄伝」中の島左近を描く後世の浮世絵。本人の生前写生として扱わない。",
+        "licenseAsPublished": "PD-Art / PD-old-100; page also has a missing US-tag notice",
+        "sourceKind": "later-depiction",
+        "lineage": "既存724×1052ファイルと表示cropを維持"
+      },
+      "checkedAt": "2026-11-04",
+      "currentDisplaySize": "UI radiusで共通化。spriteは128×128。原画像の画素数は同一ではない。"
+    },
+    {
+      "name": "丹羽長重",
+      "face": 103,
+      "extra": {
+        "src": "portraits/丹羽長重.jpg",
+        "crop": [
+          175,
+          606,
+          170,
+          170
+        ],
+        "size": [
+          573,
+          1179
+        ],
+        "source": "https://commons.wikimedia.org/wiki/File:Niwa_Nagashige.jpg",
+        "review": "原画で顔全体を確認。冠の上半分だけに寄った旧切り出しを訂正。"
+      },
+      "layout": null,
+      "asset": "game/portraits/丹羽長重.jpg",
+      "sha256": "0c55df006919e9e81ceb5deda6d0b243cc96b72202b64335345f951448b92e32",
+      "assetSize": [
+        573,
+        1179
+      ],
+      "activeCrop": [
+        175,
+        606,
+        170,
+        170
+      ],
+      "activeCropSourcePixels": [
+        170,
+        170
+      ],
+      "cropWithinImage": true,
+      "fallbackSpriteSize": [
+        1280,
+        2048
+      ],
+      "fallbackCell": [
+        384,
+        1280,
+        128,
+        128
+      ],
+      "currentVisualReview": {
+        "missing": false,
+        "obviousDifferentPersonFound": false,
+        "whitePaddingFound": false,
+        "cropViewed": true,
+        "scope": "資料の画題・図像と既存素材の照合。本人の容貌を科学的に復元したという意味ではない。"
+      },
+      "fallbackBefore": "冠に寄り、顔が下端へ外れる",
+      "action": "refresh sprite from same verified source and crop as normal display",
+      "sourceReview": {
+        "url": "https://commons.wikimedia.org/wiki/File:Niwa_Nagashige.jpg",
+        "locator": "File information; Summary; hidden license categories (indexed full file-description result)",
+        "identity": "白河藩主丹羽長重の肖像として登録された573×1179画像。既存再点検manifestとSHA一致。",
+        "licenseAsPublished": "PD-Art (PD-old-100-expired), from indexed description; direct open returned cache miss",
+        "corroboration": "https://www.city.nihonmatsu.lg.jp/bunka_sports_syo/bunka_rekishi/shitei_bunka/nihonmatsu/page001289.html",
+        "corroborationScope": "丹羽長重の肖像の存在・来歴の参考。同市ページだけで本デジタル画像の所蔵先を断定しない。",
+        "lineage": "data/inputs/portrait-recheck/manifest.jsonの取得済み正本と一致"
+      },
+      "checkedAt": "2026-11-04",
+      "currentDisplaySize": "UI radiusで共通化。spriteは128×128。原画像の画素数は同一ではない。"
+    },
+    {
+      "name": "斎藤義龍",
+      "face": 27,
+      "extra": {
+        "src": "portraits/斎藤義龍.jpg",
+        "crop": [
+          325,
+          1000,
+          410,
+          410
+        ],
+        "size": [
+          1113,
+          2282
+        ],
+        "source": "https://commons.wikimedia.org/wiki/File:Saitō_Yoshitatsu.jpg",
+        "identitySource": "https://www.pref.gifu.lg.jp/page/354743.html",
+        "review": "常在寺蔵の義龍像を原画で照合。顔外を縦横に引き伸ばした旧スプライトを使わず、原画像から等比で顔を切り出す。"
+      },
+      "layout": null,
+      "asset": "game/portraits/斎藤義龍.jpg",
+      "sha256": "4a14419275e7e26db5d4c94e9b1591d71f535ce604fc51e0cd404ef7200b685f",
+      "assetSize": [
+        1113,
+        2282
+      ],
+      "activeCrop": [
+        325,
+        1000,
+        410,
+        410
+      ],
+      "activeCropSourcePixels": [
+        410,
+        410
+      ],
+      "cropWithinImage": true,
+      "fallbackSpriteSize": [
+        1280,
+        2048
+      ],
+      "fallbackCell": [
+        896,
+        256,
+        128,
+        128
+      ],
+      "currentVisualReview": {
+        "missing": false,
+        "obviousDifferentPersonFound": false,
+        "whitePaddingFound": false,
+        "cropViewed": true,
+        "scope": "資料の画題・図像と既存素材の照合。本人の容貌を科学的に復元したという意味ではない。"
+      },
+      "fallbackBefore": "上下左右にedge複製の引伸ばし",
+      "action": "refresh sprite from same verified source and crop as normal display",
+      "sourceReview": {
+        "url": "https://commons.wikimedia.org/wiki/File:Saitō_Yoshitatsu.jpg",
+        "locator": "Painting description / Permission",
+        "identity": "常在寺の斎藤義龍像。岐阜県の文化財説明と一致。没後の追善像とされる。",
+        "licenseAsPublished": "PD-Art / public-domain artwork",
+        "corroboration": "https://www.pref.gifu.lg.jp/page/354743.html",
+        "corroborationLocator": "絹本著色斎藤義龍像、常在寺所有・岐阜市歴史博物館寄託、制作時期の解説",
+        "lineage": "data/inputs/yoshitatsu-review/manifest.jsonの取得済み正本と一致"
+      },
+      "checkedAt": "2026-11-04",
+      "currentDisplaySize": "UI radiusで共通化。spriteは128×128。原画像の画素数は同一ではない。"
+    },
+    {
+      "name": "足利義輝",
+      "face": 38,
+      "extra": {
+        "src": "portraits/quality-足利義輝.jpg",
+        "crop": [
+          0,
+          0,
+          256,
+          256
+        ],
+        "source": "https://commons.wikimedia.org/wiki/File:Ashikaga_Yoshiteru.jpg",
+        "size": [
+          256,
+          256
+        ],
+        "confidence": 0.8726938366889954,
+        "detail": "existing source, higher face detail",
+        "review": "原画像外の切出しを訂正"
+      },
+      "layout": null,
+      "asset": "game/portraits/quality-足利義輝.jpg",
+      "sha256": "1fb66618a180910ac7bdaead6d0743a7042860dcb6e9e7baebabd855f41794ad",
+      "assetSize": [
+        256,
+        256
+      ],
+      "activeCrop": [
+        0,
+        0,
+        256,
+        256
+      ],
+      "activeCropSourcePixels": [
+        256,
+        256
+      ],
+      "cropWithinImage": true,
+      "fallbackSpriteSize": [
+        1280,
+        2048
+      ],
+      "fallbackCell": [
+        1024,
+        384,
+        128,
+        128
+      ],
+      "currentVisualReview": {
+        "missing": false,
+        "obviousDifferentPersonFound": false,
+        "whitePaddingFound": false,
+        "cropViewed": true,
+        "scope": "資料の画題・図像と既存素材の照合。本人の容貌を科学的に復元したという意味ではない。"
+      },
+      "fallbackBefore": "旧低解像度セルと通常cropが不一致（現通常に白枠はない）",
+      "action": "refresh sprite from same verified source and crop as normal display",
+      "sourceReview": {
+        "url": "https://commons.wikimedia.org/wiki/File:Ashikaga_Yoshiteru.jpg",
+        "locator": "Painting description / Permission",
+        "identity": "1577年の足利義輝像。策彦周良賛、土佐光吉筆か。生前写真ではない。",
+        "licenseAsPublished": "PD-Art / PD-old-100",
+        "corroboration": "https://khirin.rekihaku.ac.jp/pid/nmjh_collection/H-16.html",
+        "corroborationLocator": "国立歴史民俗博物館 H-16、十三回忌に制作",
+        "lineage": "game/portraits/quality-足利義輝.jpg は tools/faces/hr/lo_足利義輝.jpg とSHA同一。256×256の切出し済み派生画像。Commonsの1455×3087原画像そのものではない。",
+        "metadataLicenseScope": "歴博書誌のCC BY-SAをCommonsの画像利用条件に置換しない"
+      },
+      "checkedAt": "2026-11-04",
+      "currentDisplaySize": "UI radiusで共通化。spriteは128×128。原画像の画素数は同一ではない。"
+    },
+    {
+      "name": "三好長慶",
+      "face": 26,
+      "extra": null,
+      "layout": null,
+      "asset": "game/faces.webp",
+      "sha256": "ab95fc4214a1ac382c8124c20e6673b877d041fa89ca2154c7a99d8a6f23fad1",
+      "assetSize": [
+        1280,
+        2048
+      ],
+      "activeCrop": [
+        768,
+        256,
+        128,
+        128
+      ],
+      "activeCropSourcePixels": [
+        128,
+        128
+      ],
+      "cropWithinImage": true,
+      "fallbackSpriteSize": [
+        1280,
+        2048
+      ],
+      "fallbackCell": [
+        768,
+        256,
+        128,
+        128
+      ],
+      "currentVisualReview": {
+        "missing": false,
+        "obviousDifferentPersonFound": false,
+        "whitePaddingFound": false,
+        "cropViewed": true,
+        "scope": "資料の画題・図像と既存素材の照合。本人の容貌を科学的に復元したという意味ではない。"
+      },
+      "fallbackBefore": "表示不具合なし。未使用花押の取込metaが現用の説明と混同される",
+      "action": "preserve sprite cell 26; correct active-source metadata",
+      "sourceReview": {
+        "url": "https://commons.wikimedia.org/wiki/File:三好長慶.jpg",
+        "locator": "Summary / Licensing",
+        "identity": "大徳寺聚光院の三好長慶像として公表された画像と画題・構図を照合。花押を顔として使っていない。",
+        "licenseAsPublished": "PD-Japan; file page requests additional US public-domain tag",
+        "corroboration": "https://www.tobunken.go.jp/materials/nenki/862896.html",
+        "corroborationLocator": "年紀資料9952、三好長慶像（大徳寺聚光院）、1566、笑嶺宗訢賛",
+        "lineage": "実使用はoverride qy → hr/q_三好長慶.jpg（535×700）。Commons原画像は1291×2818。切出しの厳密な元座標は残っておらず、byte同一の原本とは記録しない。",
+        "generationInputSha256": "40521d1e9b4c278573707b794cc0ae11ab35279e5c154d6cbb74107a2d5c7f52",
+        "oldInactiveInput": "raw/三好長慶.jpg は花押SVGの340×340変換。未使用の旧取込と現用overrideの区別をmetaへ保存。"
+      },
+      "generationInput": "tools/faces/hr/q_三好長慶.jpg",
+      "checkedAt": "2026-11-04",
+      "currentDisplaySize": "UI radiusで共通化。spriteは128×128。原画像の画素数は同一ではない。"
+    },
+    {
+      "name": "顕如",
+      "face": 7,
+      "extra": {
+        "src": "portraits/顕如.jpg",
+        "crop": [
+          145,
+          145,
+          355,
+          355
+        ],
+        "size": [
+          651,
+          542
+        ],
+        "source": "https://commons.wikimedia.org/wiki/File:Kennyo02.JPG",
+        "review": "頭部と肩の中心を原画で手動確認"
+      },
+      "layout": null,
+      "asset": "game/portraits/顕如.jpg",
+      "sha256": "83acfccdfa9e6ed6c35aed35d4d7d9cdfe32ac4ce5968450a2e746d5328849cb",
+      "assetSize": [
+        651,
+        542
+      ],
+      "activeCrop": [
+        145,
+        145,
+        355,
+        355
+      ],
+      "activeCropSourcePixels": [
+        355,
+        355
+      ],
+      "cropWithinImage": true,
+      "fallbackSpriteSize": [
+        1280,
+        2048
+      ],
+      "fallbackCell": [
+        896,
+        0,
+        128,
+        128
+      ],
+      "currentVisualReview": {
+        "missing": false,
+        "obviousDifferentPersonFound": false,
+        "whitePaddingFound": false,
+        "cropViewed": true,
+        "scope": "資料の画題・図像と既存素材の照合。本人の容貌を科学的に復元したという意味ではない。"
+      },
+      "fallbackBefore": "顔中心が下寄り",
+      "action": "refresh sprite from same verified source and crop as normal display",
+      "sourceReview": {
+        "url": "https://commons.wikimedia.org/wiki/File:Kennyo02.JPG",
+        "locator": "Summary / Licensing; parent File:Kennyo.jpg Summary",
+        "identity": "顕如像。親画像の説明は江戸時代初期、個人蔵。生前写生・制作年代不明の近代写真等として扱わない。",
+        "licenseAsPublished": "PD-user: uploader ブレイズマン released this image to public domain",
+        "parentSource": "https://commons.wikimedia.org/wiki/File:Kennyo.jpg",
+        "lineage": "game/portraits/顕如.jpg と tools/faces/hr/q_顕如.jpg はSHA同一。651×542の派生画像であり、Commonsの651×903ファイルそのものではない。"
+      },
+      "checkedAt": "2026-11-04",
+      "currentDisplaySize": "UI radiusで共通化。spriteは128×128。原画像の画素数は同一ではない。"
+    }
+  ],
+  "fallbackCropDefinitions": "tools/faces/fallback-crops.json"
+}

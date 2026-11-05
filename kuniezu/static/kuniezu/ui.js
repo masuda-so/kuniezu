@@ -126,11 +126,22 @@ function pumpPortraits(){if(document.hidden)return;while(faceActive<2&&faceQueue
   pumpPortraits();};
  im.onload=()=>settle(im.naturalWidth>0);im.onerror=()=>settle(false);im.src=entry.src;}}
 function extraPortrait(name,extra){let entry=extraFaceImages.get(extra.src);if(!entry){entry={src:extra.src,names:new Set(),state:'queued',attempts:0,image:null};extraFaceImages.set(extra.src,entry);faceQueue.push(entry);}entry.names.add(name);pumpPortraits();return entry.state==='ready'?entry.image:null;}
-faceImg.onload=()=>{faceReady=true;queuePortraitRefresh();};faceImg.src='faces.webp';
+faceImg.onload=()=>{faceReady=true;queuePortraitRefresh();};faceImg.src='faces.webp?v=ab95fc4214';
+// 原画像の取得待ちや失敗時に、確認済みの切り抜きを小さい画像で共有する。
+const portraitFallbackNames=["顕如","丹羽長重","島清興","斎藤義龍","足利義輝"];
+const portraitFallbackSrc='faces-fallback.webp?v=8bbde2726c';
 document.addEventListener('visibilitychange',()=>{if(!document.hidden){pumpPortraits();if(portraitAtlasDirty||portraitChanged.size)queuePortraitRefresh([]);}});
 function portrait(name,r,ring,col){
  const idx=TK.faceOf(name);let extra=TK.EXTRA_PORTRAITS?.[name]||TK.EXTRA_PORTRAITS?.[TK.PORTRAIT_ALIAS[name]];let source=faceImg,crop=[(idx%FCOLS)*FT,Math.floor(idx/FCOLS)*FT,FT,FT];
- if(extra){const im=extraPortrait(name,extra);if(!im){if(idx<0||!faceReady)return null;extra=null;}else{source=im;crop=extra.crop;}}else if(idx<0||!faceReady)return null;
+ if(extra){
+  const im=extraPortrait(name,extra);
+  if(im){source=im;crop=extra.crop;}
+  else{
+   const row=portraitFallbackNames.indexOf(TK.PORTRAIT_ALIAS[name]||name),fallback=row<0?null:extraPortrait(name,{src:portraitFallbackSrc});
+   if(fallback){source=fallback;crop=[0,row*FT,FT,FT];}
+   else{if(row>=0||idx<0||!faceReady)return null;extra=null;}
+  }
+ }else if(idx<0||!faceReady)return null;
  const key=name+'|'+idx+'|'+r+'|'+ring+'|'+col;if(pcache.has(key))return pcache.get(key);
  const s=Math.ceil(r*2+6),c=document.createElement('canvas');c.width=s*PDPR;c.height=s*PDPR;c.css=s;const x=c.getContext('2d');x.scale(PDPR,PDPR);
  const cx=s/2,cy=s/2;

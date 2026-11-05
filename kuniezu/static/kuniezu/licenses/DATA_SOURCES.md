@@ -77,7 +77,7 @@ https://geoshape.ex.nii.ac.jp/nrct-poi/
 
 `korean-rivers-detail.js` は © OpenStreetMap contributors / ODbL 1.0。Geofabrikの https://download.geofabrik.de/asia/south-korea.html と https://download.geofabrik.de/asia/north-korea.html の2026-10-30スナップショットからwaterwaysだけを抽出。`tools/geo/korean-rivers.py` でriverクラスを選択し簡略化。現代の中心線であり、16世紀の川岸・ダム建設前の河道ではない。道路データと同じODbL条件・画面帰属表示を適用する。
 
-`portraits/` は既存の調査素材を無改変で同梱し、Canvas側で顔の大きさ・中心を揃える。`data/audits/portrait-audit.json` に153件の検出結果と追加・高精細素材の出典を記録。新規登録の秋山虎繁（松本楓湖）、石川数正（長篠合戦図屏風）、有馬晴信（1943年刊行資料）、長宗我部信親（錦絵）はWikimedia Commonsの原資料ページで説明・パブリックドメイン表示を確認。写真による本人確認画像ではなく、肖像・後世の図像。AIで顔を生成しない。
+`portraits/` の既存素材は個別の出典に従って収録し、Canvas側で顔の大きさ・中心を揃える。補助画像 `faces-fallback.webp` は5点を確認済み範囲で切り抜き、128ピクセル角へ縮小したもの。`data/audits/portrait-audit.json` に153件の検出結果と追加・高精細素材の出典を記録。新規登録の秋山虎繁（松本楓湖）、石川数正（長篠合戦図屏風）、有馬晴信（1943年刊行資料）、長宗我部信親（錦絵）はWikimedia Commonsの原資料ページで説明・パブリックドメイン表示を確認。写真による本人確認画像ではなく、肖像・後世の図像。AIで顔を生成しない。
 
 
 ## 2026-11-01 地図と操作の点検
