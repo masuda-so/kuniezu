@@ -50,11 +50,12 @@ Object.assign(TK.BATTLES['田辺城の戦い'],{date:'慶長5年7月21日〜9月
 TK.BATTLES['田辺城の戦い'].sources.push('tanabeDates');
 TK.BATTLES['田辺城の戦い'].sides.a.tr='約15,000（伝承）';TK.BATTLES['田辺城の戦い'].sides.b.tr='約500（伝承）';
 TK.RESEARCH_SOURCES.iwaya={author:'太宰府市',title:'岩屋城跡',year:'2024',url:'https://www.city.dazaifu.lg.jp/site/kanko/12002.html',locator:'岩屋城と高橋紹運',accessed:'2026-10-31',scope:'攻め手4万・守備700余の伝承値。別の市解説には5万・763人とあり確定値にしない。'};
+TK.RESEARCH_SOURCES.iwayaDiary={"author":"上井覚兼（鹿児島県編）","title":"鹿児島県史料 旧記雑録後編二 所収「上井覚兼日記」","url":"https://www.pref.kagoshima.jp/ab25/documents/6756_20221201091952-1_1.pdf#page=92","locator":"第166号、205–208頁（PDF 92–95頁）、天正14年7月26・27日条","accessed":"2026-11-05","scope":"26日の下柵突破と包囲、27日朝の攻撃、同日午後の落城。個々の攻め口・高橋紹運の戦死時刻は特定できない。"};
 TK.RESEARCH_SOURCES.iwayaVariant={author:'太宰府市',title:'中世の太宰府',url:'https://www.city.dazaifu.lg.jp/site/bunkazai/33942.html',locator:'16世紀・戦国時代の太宰府',accessed:'2026-10-31',scope:'攻め手5万・守備763人という別表記。観光解説の4万と一致しない。'};
 TK.BATTLE_TROOPS['岩屋城の戦い'].sources=['iwaya','iwayaVariant'];TK.BATTLE_TROOPS['岩屋城の戦い'].certainty='自治体解説にも攻め手4万／5万、守備700余／763人の異表記がある';
 TK.RESEARCH_SOURCES.okawachi={author:'田所寛士・三重県',title:'大河内城の戦いと信長の伊勢進攻',year:'1992',url:'https://www.bunka.pref.mie.lg.jp/rekishi/kenshi/asp/arekore/detail65.html',locator:'県史あれこれ・本文',accessed:'2026-10-31',scope:'旧暦8月20日岐阜発・23日木造・27日桂瀬山、10月初旬の和睦。5万対7〜8千は概数。'};
 const okawachi=TK.HIST.find(e=>e.title==='大河内城の戦い');okawachi.source=TK.RESEARCH_SOURCES.okawachi.url;okawachi.text='約2か月の攻囲後に和議が成立し、信長の子を北畠氏の養子に迎えた。地図は織田方の支配下として一括表示するが、全城が同日落城・北畠家が即日消滅した意味ではない。領主継承の個別処理は未整備。';
-TK.BATTLE_SOURCE_PATCHES={'信貴山城の戦い':['shigisan'],'岩屋城の戦い':['iwaya','iwayaVariant'],'大河内城の戦い':['okawachi']};
+TK.BATTLE_SOURCE_PATCHES={'信貴山城の戦い':['shigisan'],'岩屋城の戦い':['iwayaDiary','iwaya','iwayaVariant'],'大河内城の戦い':['okawachi']};
 const catalog=G.buildBattleCatalog;G.buildBattleCatalog=function(){catalog();for(const [title,ids] of Object.entries(TK.BATTLE_SOURCE_PATCHES)){const b=TK.BATTLES[title];if(b){b.sources=ids;b.audit=(b.audit||[]).filter(s=>s!=='個別の出典本文・頁が未照合');b.mapNote=(b.layoutStatus==='unresearched'?'配置は比較表示で未復元。':'概略図。')+' 出典で確認した内容と未確認部分は下の出典欄に明記。';if(title==='信貴山城の戦い')b.beats=[[0,shigi.text]];const row=TK.BATTLE_AUDIT.find(r=>r.title===title);if(row){row.sourceIds=ids;row.issues=b.audit;}}}};
 if(TK.BATTLES[yam.title]){TK.BATTLES[yam.title].eventDate=yam.d.slice();TK.BATTLES[yam.title].sources=['yamazaki','himeji'];TK.BATTLES[yam.title].mapNote='日付は旧暦6月13日。部隊の経路は模式表示。秀吉本人の到着時刻を断定しない。';}
 const im=TK.SHOW.find(x=>x.scen==='s1560'&&x.gen==='今川義元');if(im){im.depart=TK.lunarDate(1560,5,12);im.arrive=TK.lunarDate(1560,5,18);im.stopAt=1;im.source=TK.RESEARCH_SOURCES.okehazama.url;im.routeNote='駿府発→三河→沓掛。通過城間の経路は概略。25,000は総動員の伝承値で本陣兵数ではない。';}

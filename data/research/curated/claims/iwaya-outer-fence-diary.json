@@ -1,0 +1,37 @@
+{
+  "id": "iwaya-outer-fence-diary",
+  "entity": "place:岩屋城（筑前）",
+  "predicate": "outer-defence-breached",
+  "value": "島津軍が岩屋城の下柵を破り、城を包囲した。",
+  "validYears": [
+    1586,
+    1586
+  ],
+  "datePrecision": "day",
+  "source": "iwayaDiary",
+  "sourceUrl": "https://www.pref.kagoshima.jp/ab25/documents/6756_20221201091952-1_1.pdf#page=92",
+  "locator": "第166号、205–206頁、天正14年7月26日条",
+  "gameBindings": [
+    "TK.BATTLES:岩屋城の戦い"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-05",
+  "uncertainty": "下柵の位置や個々の隊の攻め口、高橋紹運の戦死時刻は特定しない。",
+  "eventTime": {
+    "kind": "dated-event",
+    "date": [
+      1586,
+      7,
+      26
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": false,
+    "precision": "day"
+  },
+  "eventScope": "上井覚兼が日記に記した攻城経過。史料綜覧の7月26日条とは別の記録。",
+  "linkedEntities": [
+    "place:岩屋城（筑前）"
+  ],
+  "eventRelation": "outer-defence-breached"
+}
