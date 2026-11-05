@@ -4,7 +4,7 @@
 
 ## 現行の正本と年代差分
 
-児島湾・水島の全期間に有効な5補正は、`game/map/control/provinces.png` 自体へ焼き込む。1560～1583年とタイトル画面はこの正本の形を使う。`applied/` は適用履歴で、生成器は再適用しない。1584年以後の宇喜多堤の366画素を `kojima-bay-ukita-land-from-1584.json` に保持する。遼東基幹域も正本へ入り、1573〜1605年の寛甸軍政域参考は別の年代差分とする。1603〜1605年の撤収過程を含む年精度の表示区切りで、一斉の領有変更を意味しない。1584年1月1日の切替は年精度の仮定で、築堤月日を断定しない。
+児島湾・水島の全期間に有効な5補正は、`kuniezu/static/kuniezu/map/control/provinces.png` 自体へ焼き込む。1560～1583年とタイトル画面はこの正本の形を使う。`applied/` は適用履歴で、生成器は再適用しない。1584年以後の宇喜多堤の366画素を `kojima-bay-ukita-land-from-1584.json` に保持する。遼東基幹域も正本へ入り、1573〜1605年の寛甸軍政域参考は別の年代差分とする。1603〜1605年の撤収過程を含む年精度の表示区切りで、一斉の領有変更を意味しない。1584年1月1日の切替は年精度の仮定で、築堤月日を断定しない。
 
 正本4入力の確認値と適用履歴は [baseline-ledger.json](baseline-ledger.json)。`baselineCommit` は既存スキーマ名だが、画像移行後は基準版IDを格納する。正本の一致は `sourceSha256` で検査する。
 
@@ -48,21 +48,21 @@ node tools/map/build-edges.cjs
 
 ## 領域差分の生成
 
-`node --max-old-space-size=6000 tools/map/build-province-edits.cjs` で、全部の期間の版をまとめて作る（下の「Node 版の生成と型紙の差分」）。基準版は正本 `game/map/control/`（全域1枚の `provinces.png` ほか）で、台帳 `baseline-ledger.json` の `sourceSha256` と照合する。旧 Python 版は廃止した。
+`node --max-old-space-size=6000 tools/map/build-province-edits.cjs` で、全部の期間の版をまとめて作る（下の「Node 版の生成と型紙の差分」）。基準版は正本 `kuniezu/static/kuniezu/map/control/`（全域1枚の `provinces.png` ほか）で、台帳 `baseline-ledger.json` の `sourceSha256` と照合する。旧 Python 版は廃止した。
 
 領域差分は `payload.file` の GeoJSON、`payload.feature` の配列番号、変更前後の `fromKey`・`toKey` を指定する。基準版と元タイルのハッシュを検証し、100m画素の中心が面の内部にあるところだけ置換する。選択年に重複する書き込み、すでに基準版へ反映したID、変更前の値の不一致は生成エラー。出力は変更タイルと検査用マニフェストで、基準版には書き戻さない。描画側への接続と、標高・河川の差分生成は別工程。
 
-領域の隣接検査は、Pillow・NumPy を入れた Python で `python3 tools/map/audit-raster-adjacency.py game/map/build` を実行する（区画の表は正本 `game/map/control` から読む）。100m基準版（0d92c0a）では全画素が定義色に一致し、城・中立領域の4近傍と8近傍はいずれも301組で、斜め接触だけの組は0。タイル角をまたいで斜めに接する合成入力では4近傍が0、8近傍が1になることを確認した。海峡の接続特例や道路グラフはこの画素検査の集計に含めない。
+領域の隣接検査は、Pillow・NumPy を入れた Python で `python3 tools/map/audit-raster-adjacency.py kuniezu/static/kuniezu/map/build` を実行する（区画の表は正本 `kuniezu/static/kuniezu/map/control` から読む）。100m基準版（0d92c0a）では全画素が定義色に一致し、城・中立領域の4近傍と8近傍はいずれも301組で、斜め接触だけの組は0。タイル角をまたいで斜めに接する合成入力では4近傍が0、8近傍が1になることを確認した。海峡の接続特例や道路グラフはこの画素検査の集計に含めない。
 
 ## 河川の比較レイヤー
 
-（削除済み）旧 `build-river-raster.py` による河川の試験生成。河川の正本は `game/map/physical/rivers.png`、配信用の線は `tools/map/build-river-lines.cjs`。以下はその時の記録。
+（削除済み）旧 `build-river-raster.py` による河川の試験生成。河川の正本は `kuniezu/static/kuniezu/map/physical/rivers.png`、配信用の線は `tools/map/build-river-lines.cjs`。以下はその時の記録。
 
 天竜川・大井川の現代比較データで、共通の2タイルへ2,043画素と1,716画素をそれぞれ生成した。元データの出典・ODbL・現代比較レイヤー区分をマニフェストへ保持する。既存ゲームの河川表示への切り替えは未実施。
 
 ## 標高の生成
 
-（削除済み）旧 `build-height-raster.py` による地理院標高の試験変換。標高の正本は `game/map/physical/heightmap.png`、陰影は `tools/map/build-height-cache.py`。以下はその時の記録。
+（削除済み）旧 `build-height-raster.py` による地理院標高の試験変換。標高の正本は `kuniezu/static/kuniezu/map/physical/heightmap.png`、陰影は `tools/map/build-height-cache.py`。以下はその時の記録。
 
 早島の6入力タイルから有効標高2,360画素の1タイルを生成した。鶴崎神社の確認点を含む100m画素の標高値は9.75mで、元の細かい格子で現所在地を直接採取した12.27mとは異なる。入力タイルのハッシュと符号化を出力マニフェストに記録した。広域生成、朝鮮側の標高入力の変換、陰影描画への接続は別工程。
 
@@ -77,9 +77,9 @@ node tools/map/build-edges.cjs
 ### 早島の適用前後を比較
 
 ```sh
-python3 tools/map/audit-raster-adjacency.py /path/to/baseline/game/map
-python3 tools/map/audit-raster-adjacency.py /path/to/baseline/game/map \
-  --overlay game/map/build/edits/compiled/15600101-16160101
+python3 tools/map/audit-raster-adjacency.py /path/to/baseline/kuniezu/static/kuniezu/map
+python3 tools/map/audit-raster-adjacency.py /path/to/baseline/kuniezu/static/kuniezu/map \
+  --overlay kuniezu/static/kuniezu/map/build/edits/compiled/15600101-16160101
 ```
 
 基準版と適用後の `fourNeighbourPairHash` および `eightNeighbourPairHash` はいずれも `72e0703ecb4b1655ccbb86b3fb3b707f62c2de85ecb5d0c944e5052fa797d2e0`。100mで1タイルを置換し、`sea` は9画素減、`castle:bmatsuyama` は9画素増。組数だけでなく隣接するIDの組が一致する。比較には同一基準版のID表を使う。監査は100mの合成結果を対象とし、ブラウザによるタイル選択や描画は別途確認する。

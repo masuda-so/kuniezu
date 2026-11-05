@@ -1,7 +1,7 @@
 /* 一度だけの割り当て（2026-11-04、利用者の指示「南の島も分けましょう」）。
    正本 provinces.png の北緯35.3度より南に残る「未割当の陸」（島558個、約18万画素）を、1560〜1615年の帰属で分ける。
    ・奄美群島（奄美大島・喜界・徳之島・沖永良部・与論ほか） castle:shuri。1609年3月の島津の琉球侵攻の後は薩摩へ割かれたので、
-     年代別の差分 game/map/edits/amami-satsuma-from-1609.json（型紙）で castle:uchi にする。
+     年代別の差分 kuniezu/static/kuniezu/map/edits/amami-satsuma-from-1609.json（型紙）で castle:uchi にする。
    ・琉球の島（久米島・粟国・渡名喜・慶良間・硫黄鳥島など） castle:shuri。硫黄鳥島は1609年の後も琉球に残るので奄美の差分に入れない。
    ・伊豆諸島 castle:nirayama（伊豆国賀茂郡の島々。国郡制での所属に合わせた。北条氏の島の支配の実態は未確認）。
    ・無人島（大東諸島・小笠原諸島・火山列島・鳥島・孀婦岩・西之島・尖閣諸島） context:uninhabited。1560〜1615年に定住の記録がない。
@@ -65,6 +65,6 @@ const sha=f=>crypto.createHash('sha256').update(fs.readFileSync(f)).digest('hex'
   basis:'1609年の島津氏の琉球侵攻の後、奄美群島（奄美大島・喜界島・徳之島・沖永良部島・与論島ほか）は薩摩に割かれた（国土交通省 観光庁 多言語解説文「奄美大島の歴史」）。',
   review:'開始日は島津軍の奄美大島への渡海（慶長14年3月）に合わせた。名目上は琉球の一部とされ、統治の制度（大島置目之条々など）は後年に整う。硫黄鳥島は琉球に残るので含めない。',
   uncertaintyKm:0};
- fs.writeFileSync(path.join(MD.root,'game/map/edits/amami-satsuma-from-1609.json'),JSON.stringify(edit,null,2)+'\n');
+ fs.writeFileSync(path.join(MD.root,'kuniezu/static/kuniezu/map/edits/amami-satsuma-from-1609.json'),JSON.stringify(edit,null,2)+'\n');
  console.log(JSON.stringify({islands:list.length,count,amamiPixels:amami.length,window:[c0,r0,w,h]}));
 })().catch(e=>{console.error(e);process.exit(1);});

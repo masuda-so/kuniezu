@@ -15,7 +15,7 @@ const rows=TK.CAMPAIGN_API.rows(4);for(const n of requested)assert.equal(rows.fi
 assert.equal(rows.find(r=>r.name==='小早川秀秋').side,'a');assert.equal(rows.find(r=>r.name==='吉川広家').side,'b');
 for(const n of ['毛利輝元','徳川秀忠','京極高次','細川幽斎','上杉景勝','直江兼続','本庄繁長'])assert.ok(!TK.BATTLES['関ヶ原の戦い'].units.some(u=>u.g===n),n+' must be in separate theatre');
 console.log('PASS: all '+requested.length+' requested commanders in '+rows.length+' campaign roster, defection versus collusion and separate theatres');
-const {arrange}=require(path.join(root,'game/battle-layout.js'));
+const {arrange}=require(path.join(root,'kuniezu/static/kuniezu/battle-layout.js'));
 for(const count of [1,8,40,100]){const items=Array.from({length:count},(_,id)=>({id,x:500,y:350})),out=arrange(items);assert.equal(out.length,count);for(let i=0;i<out.length;i++){assert.equal(out[i].anchorX,500);for(let j=i+1;j<out.length;j++)assert.ok(Math.abs(out[i].x-out[j].x)>=96||Math.abs(out[i].y-out[j].y)>=44);}}
 console.log('PASS: coincident armies remain individually laid out without changing anchor coordinates');
 G.newGame('s1600','tokugawa');const f=TK.HIST.find(e=>e.title==='伏見城の戦い'&&e.k==='take');let s=G.S();s.t=G.evT(f)-1;G.hist();

@@ -30,7 +30,7 @@ joins = [distance(prefix_points[first], gsi['points'][0]),
 assert max(joins) < 25, 'Do not invent a missing road between data sources'
 merged = prefix_points[:first+1] + gsi['points'] + prefix_points[last:]
 merged = [[round(x, 6), round(y, 6)] for x, y in LineString(merged).simplify(.00002).coords]
-game = root / 'game/modern-road-reference.js'
+game = root / 'kuniezu/static/kuniezu/modern-road-reference.js'
 text = game.read_text()
 marker = 'TK.MODERN_ROAD_REFERENCE='
 head, body = text.split(marker)

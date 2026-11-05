@@ -23,7 +23,7 @@ W09-05は名称の接尾語を正規化して十和田湖も抽出。自然湖�
 
 - Wessel, P. / Smith, W. H. F. ほか、**GSHHG 2.3.7**（2017-06-15）、full resolution L1。 [配布元と解説](https://www.soest.hawaii.edu/wessel/gshhg/)。[NOAA公開ファイル](https://www.ncei.noaa.gov/data/oceans/archive/arc0234/0304143/1.1/data/0-data/GSHHS_shp/f/GSHHS_f_L1.shp)。2026-11-01取得。
 - 加工物：`korea-coast.js`。東経121.5〜131.3度・北緯33〜43度を切り出し、日本側の既存データと重ならない島を選別、座標を丸めてJSON化。2,336輪郭・128,835頂点（2026-11-01更新）。
-- 加工手順だった `tools/geo/korea-coast.py` は削除済み（Git の履歴に残る）。`game/korea-coast.js` は加工済みのデータとして保持する。
+- 加工手順だった `tools/geo/korea-coast.py` は削除済み（Git の履歴に残る）。`kuniezu/static/kuniezu/korea-coast.js` は加工済みのデータとして保持する。
 - 原データおよびこの抽出データのライセンスは **GNU LGPL v3**。同じディレクトリの `GSHHG-LGPL-3.0.txt` に全文、`GSHHG-README.txt` に元の説明を同梱。抽出データとその加工手順を改変・再配布する際も、この表示とライセンスを保持する。
 - 現代の世界海岸資料から構成された比較線。港湾埋立・干拓・干潟の時代差、測地ずれは解消していない。
 
@@ -117,4 +117,4 @@ https://geoshape.ex.nii.ac.jp/nrct-poi/
 
 ## 生成元の削除（2026-11-03）
 
-地図の正本を画像（`game/map/`）にしたため、線の地図データを作っていた生成器（`tools/geo` の `korea-coast.py`・`lakes.py`・`land-extension.py`・`regional-rivers.py`・`korean-rivers.py`・`select-major-rivers.py` など）は削除した。各データの出典・ライセンスの表示はこのファイルのとおり保持する。加工手順は Git の履歴で確かめられる。
+地図の正本を画像（`kuniezu/static/kuniezu/map/`）にしたため、線の地図データを作っていた生成器（`tools/geo` の `korea-coast.py`・`lakes.py`・`land-extension.py`・`regional-rivers.py`・`korean-rivers.py`・`select-major-rivers.py` など）は削除した。各データの出典・ライセンスの表示はこのファイルのとおり保持する。加工手順は Git の履歴で確かめられる。

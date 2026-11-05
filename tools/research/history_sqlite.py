@@ -106,7 +106,7 @@ const temp=fs.mkdtempSync(path.join(os.tmpdir(),'kuniezu-sql-input-'));try{for(c
                             ref = db.execute('INSERT INTO spatial_reference(record_id,place_id) VALUES (?,?)', (row_id, entity)).lastrowid
                             lon, lat = point
                             db.execute('INSERT INTO spacetime VALUES (?,?,?,?,?,?,?)', (ref, lon, lon, lat, lat, first, until))
-            map_root = research.parent.parent / 'game'
+            map_root = research.parent.parent / 'kuniezu/static/kuniezu'
             definition = map_root / 'map/control/definition.csv'
             if definition.exists():
                 # Render IDs are a separate namespace, never historical ownership claims.

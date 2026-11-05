@@ -1,7 +1,7 @@
 // 合戦図の推定の動き：全合戦で、史料の動きがある隊を推定で上書きしない・記録位置のある隊を「推定の配置」にしない・
 // 同じ時刻なら同じ位置（再生位置を動かしても一致）を確かめる。画角外の点を内側へ動かす要求はしない。
 const fs=require('node:fs'),vm=require('node:vm'),assert=require('node:assert/strict'),{TK}=require('./history-focus.cjs').model();
-const ctx={window:{},Math};vm.runInNewContext(fs.readFileSync('game/battle-motion.js','utf8'),ctx);const M=ctx.window.TKBattleMotion;
+const ctx={window:{},Math};vm.runInNewContext(fs.readFileSync('kuniezu/static/kuniezu/battle-motion.js','utf8'),ctx);const M=ctx.window.TKBattleMotion;
 const W=900,H=630,rows=[];
 for(const [title,sc] of Object.entries(TK.BATTLES)){if(sc.atlasPlan)continue;const meta=TK.BATTLE_ATLAS[title];if(!meta)continue;
  const pj=(lo,la)=>[(lo-meta.bounds[0])/(meta.bounds[2]-meta.bounds[0])*W,(meta.bounds[1]-la)/(meta.bounds[1]-meta.bounds[3])*H];

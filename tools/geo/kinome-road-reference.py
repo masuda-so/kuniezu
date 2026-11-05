@@ -7,7 +7,7 @@ from pathlib import Path
 from shapely.geometry import LineString
 
 root=Path(__file__).resolve().parents[2];inputs=root/'data/inputs/hokurikudo-review'
-game=root/'game/modern-road-reference.js';head,body=game.read_text().split('TK.MODERN_ROAD_REFERENCE=')
+game=root/'kuniezu/static/kuniezu/modern-road-reference.js';head,body=game.read_text().split('TK.MODERN_ROAD_REFERENCE=')
 references=json.loads(body.strip().removesuffix(';'));backup=inputs/'before-modern-reference.json'
 if not backup.exists():backup.write_text(json.dumps({'name':'北陸道','points':references['北陸道'],'gameFileSha256':hashlib.sha256(game.read_bytes()).hexdigest()},ensure_ascii=False))
 old=json.loads(backup.read_text())['points'];anchors=json.loads((inputs/'reference-anchors.json').read_text())

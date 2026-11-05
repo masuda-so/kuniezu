@@ -1,5 +1,5 @@
 /* 拡大で集約を解き、同地点の座標を動かさない。HTTPサーバー不要。 */
-const assert=require('node:assert/strict'),{cluster}=require('../../game/battle-layout.js');
+const assert=require('node:assert/strict'),{cluster}=require('../../kuniezu/static/kuniezu/battle-layout.js');
 const source=[{id:'a',x:0,y:0},{id:'b',x:28,y:2},{id:'c',x:58,y:5}];
 function projected(z){return source.map(p=>({...p,x:200+p.x*z,y:200+p.y*z}));}
 const low=cluster(projected(1),{zoom:1}),high=cluster(projected(4),{zoom:4});

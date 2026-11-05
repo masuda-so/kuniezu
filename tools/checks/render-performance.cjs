@@ -7,7 +7,7 @@ const DOWNLOAD=path.join(OUT,'downloads-'+Date.now());fs.mkdirSync(DOWNLOAD,{rec
 const profile=fs.mkdtempSync(path.join(os.tmpdir(),'kuniezu-check-'));fs.mkdirSync(OUT,{recursive:true});
 const chrome=spawn(process.env.CHROME_PATH||'/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',['--headless','--disable-gpu','--no-first-run','--no-default-browser-check',`--user-data-dir=${profile}`,'--remote-debugging-pipe'],{stdio:['ignore','ignore','ignore','pipe','pipe']});
 const baseline=process.env.GAME_PERF_BASELINE;
-const overrides=baseline?Object.fromEntries(['ui.js','terrain-tiles.js'].map(f=>[f,fs.readFileSync(path.join(baseline,'game',f))])):{};
+const overrides=baseline?Object.fromEntries(['ui.js','terrain-tiles.js'].map(f=>[f,fs.readFileSync(path.join(baseline,'kuniezu/static/kuniezu',f))])):{};
 let seq=0,buf='',session,chooser;const pending=new Map(),errors=[],events=[];
 chrome.stdio[4].on('data',data=>{buf+=data.toString();let i;while((i=buf.indexOf('\0'))>=0){const str=buf.slice(0,i);buf=buf.slice(i+1);if(!str)continue;const m=JSON.parse(str);if(m.id){const p=pending.get(m.id);pending.delete(m.id);if(p)m.error?p.reject(Error(JSON.stringify(m.error))):p.resolve(m.result);}else{
  if(m.method==='Fetch.requestPaused'){const f=new globalThis.URL(m.params.request.url).pathname.split('/').pop();call('Fetch.fulfillRequest',{requestId:m.params.requestId,responseCode:200,responseHeaders:[{name:'Content-Type',value:'application/javascript'}],body:overrides[f].toString('base64')}).catch(e=>console.error(e));}

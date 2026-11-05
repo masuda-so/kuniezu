@@ -52,7 +52,7 @@ State of JavaScript 2025（Devographics、回答1万〜2.5万）と各社の比�
 
 ## 段階
 
-1. 基盤：pnpm + Vite + TypeScript の雛形、既存の game/ を `legacy/` として並走させる。検査を Vitest に写す。
+1. 基盤：pnpm + Vite + TypeScript の雛形、既存の kuniezu/static/kuniezu/ を `legacy/` として並走させる。検査を Vitest に写す。
 2. データ層：巨大 JS を JSON / バイナリへ分離し、遅延読込。起動時間の短縮をここで得る。
 3. 地図層：PixiJS で地形・領土・街道・河川・城・駒を描く。地形陰影は Worker。
 4. UI 層：和風化した HUD（年表・家欄・操作・家選び）を Svelte で。

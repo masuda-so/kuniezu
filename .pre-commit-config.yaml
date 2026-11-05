@@ -1,6 +1,6 @@
-# The game (game/), research data, the tools and the parked code keep their own
+# The game (kuniezu/static/), research data, the tools and the parked code keep their own
 # conventions (.editorconfig, tools/checks). Only the Django project is linted here.
-exclude: '^docs/|^game/|^data/|^tools/|^archive/|/migrations/|devcontainer.json'
+exclude: '^docs/|^kuniezu/static/|^data/|^tools/|^archive/|/migrations/|devcontainer.json'
 default_stages: [pre-commit]
 minimum_pre_commit_version: "3.2.0"
 

@@ -4,7 +4,7 @@ const path = require('node:path');
 const vm = require('node:vm');
 
 const root = path.resolve(__dirname, '../..');
-const [geometry = path.join(root, 'game/geo.js'), lakeIndex = '0'] = process.argv.slice(2);
+const [geometry = path.join(root, 'kuniezu/static/kuniezu/geo.js'), lakeIndex = '0'] = process.argv.slice(2);
 const context = {window: {}};
 vm.runInNewContext(fs.readFileSync(geometry, 'utf8'), context);
 const {K, CX, LON0, LAT0, lakes} = context.window.TKGEO;

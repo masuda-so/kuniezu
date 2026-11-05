@@ -1,5 +1,5 @@
 "use strict";
-/* 年代別の地図の版（game/map/build/versions.json）。ゲームの日付が期間 [from,to) に入る版を一つ選ぶ。塗り・当たり判定・境界線は同じ版を使う。 */
+/* 年代別の地図の版（kuniezu/static/kuniezu/map/build/versions.json）。ゲームの日付が期間 [from,to) に入る版を一つ選ぶ。塗り・当たり判定・境界線は同じ版を使う。 */
 window.TKMapVersion=(function(){let list=[],lastT=null,lastS=null,cur=null;
  if(typeof fetch==='function'&&typeof document!=='undefined')fetch('map/build/versions.json',{cache:'no-cache'}).then(r=>r.ok?r.json():{versions:[]}).then(v=>{list=v.versions||[];lastT=null;lastS=null;window.TKRaster?.bump?.();window.TKEdges?.bump?.();}).catch(()=>{});
  // 記憶は「遊んでいる場（G.S() の参照）」と日付の両方で引く。シナリオやセーブが替わって同じ t になっても古い版を使わない。
@@ -10,7 +10,7 @@ window.TKMapVersion=(function(){let list=[],lastT=null,lastS=null,cur=null;
    アンチエイリアスの隙間（タイルの形の細い線）も重なりも出ない。変換は拡大と平行移動だけ（回転しない）とする。 */
 window.TKDrawTile=function(c,img,x,y,w,h){const m=c.getTransform(),X0=Math.round(m.a*x+m.e),Y0=Math.round(m.d*y+m.f),X1=Math.round(m.a*(x+w)+m.e),Y1=Math.round(m.d*(y+h)+m.f);
  if(X1>X0&&Y1>Y0)c.drawImage(img,(X0-m.e)/m.a,(Y0-m.f)/m.d,(X1-X0)/m.a,(Y1-Y0)/m.d);};
-/* ラスター地図の実行時部品。game/map/ の領域画像（1画素1領域）を読み、「領域ID→色」の表で塗った画像を地図平面へ貼る。
+/* ラスター地図の実行時部品。kuniezu/static/kuniezu/map/ の領域画像（1画素1領域）を読み、「領域ID→色」の表で塗った画像を地図平面へ貼る。
    表示の細かさに合わせて 100m（provinces/）・400m（provinces-4/）・800m（provinces-8/）のどれかを選ぶ。
    日が進んでも、領主が変わった時だけ表を引き直す。読み込み中のタイルは一段粗いものを代わりに貼る。 */
 window.TKRaster=(function(){
@@ -18,7 +18,7 @@ window.TKRaster=(function(){
  const key=(f,t)=>f+':'+t.file;
  // 通信のない検査環境（node の vm）では読まない。描画は従来の線の領域へ戻る。
  if(typeof fetch==='function'&&typeof document!=='undefined')Promise.all([fetch('map/build/manifest.json',{cache:'no-cache'}).then(r=>r.json()),fetch('map/control/definition.csv',{cache:'no-cache'}).then(r=>r.text()),fetch('map/control/default.map',{cache:'no-cache'}).then(r=>r.text())]).then(([m,csv,dm])=>{
-  // 正本 game/map/control（CK3 の map_data の書式）：definition.csv は `id;R;G;B;name;x;`（id 0 は予約）、海・湖は default.map の sea_zones・lakes。defs は id で引く。
+  // 正本 kuniezu/static/kuniezu/map/control（CK3 の map_data の書式）：definition.csv は `id;R;G;B;name;x;`（id 0 は予約）、海・湖は default.map の sea_zones・lakes。defs は id で引く。
   const list=k=>new Set(((dm.match(new RegExp(k+'\\s*=\\s*LIST\\s*\\{([^}]*)\\}'))||[])[1]||'').trim().split(/\s+/).filter(Boolean).map(Number)),sea=list('sea_zones'),lake=list('lakes');
   man=m;defs=[];for(const l of csv.split(/\r?\n/)){const p=l.split(';'),id=+p[0];if(!id)continue;defs[id]={id,rgb:[+p[1],+p[2],+p[3]],key:p[4],kind:sea.has(id)?'sea':lake.has(id)?'lake':'land'};}
   for(const d of defs)if(d){byColor.set(d.rgb[0]<<16|d.rgb[1]<<8|d.rgb[2],d.id);if(d.key==='sea')seaId=d.id;}
@@ -68,7 +68,7 @@ window.TKRaster=(function(){
  return {bump(){verMemo=null;revision++;onChange?.();},paint,idAt,pickAt,bounds,ready:()=>ready,revision:()=>revision,defs:()=>defs,onChange(fn){onChange=fn;}};
 })();
 
-/* 地形の陰影（Copernicus DEM GLO-90 から開発時に作った画像。game/map/build/relief.json）。
+/* 地形の陰影（Copernicus DEM GLO-90 から開発時に作った画像。kuniezu/static/kuniezu/map/build/relief.json）。
    実行時に外部の標高タイルを取り寄せて計算することはしない。表示の細かさで 100m・400m・800m の段を選び、
    細かい段が届くまでは 800m の段を下に敷く（陰影は陸で不透明なので二重にならない）。 */
 window.TKRelief=(function(){
@@ -94,7 +94,7 @@ window.TKRelief=(function(){
  return {paint,ready:()=>ready,revision:()=>revision,notice:()=>man&&{notice:man.notice,disclaimer:man.disclaimer,license:man.license},onChange(fn){onChange=fn;},states:()=>Object.fromEntries([...tiles].map(([k,r])=>[k,r.state+(r.err?' '+r.err:'')]))};
 })();
 
-/* 境界線（game/map/build/edges.json）。領域画像から生成した共有辺で、塗りと同じ版・同じ段から取る（Codex との契約）。
+/* 境界線（kuniezu/static/kuniezu/map/build/edges.json）。領域画像から生成した共有辺で、塗りと同じ版・同じ段から取る（Codex との契約）。
    段は TKRaster と同じ選び方。細かい段のタイルが届くまでは、届いている粗い段を使い、塗りの段と食い違う線は重ねない。 */
 window.TKEdges=(function(){
  let man=null,grid=null,ready=false,revision=0,onChange=null;const tiles=new Map();
@@ -115,7 +115,7 @@ window.TKEdges=(function(){
   return null;}
  return {bump(){verMemo=null;revision++;onChange?.();},ready:()=>ready,revision:()=>revision,inView,onChange(fn){onChange=fn;}};
 })();
-/* 河川（正本 game/map/physical/rivers.png の1画素幅の中心線を tools/map/build-river-lines.cjs が辿った線 map/build/rivers-lines.json）。現代の参考の河道。
+/* 河川（正本 kuniezu/static/kuniezu/map/physical/rivers.png の1画素幅の中心線を tools/map/build-river-lines.cjs が辿った線 map/build/rivers-lines.json）。現代の参考の河道。
    日本・朝鮮とも同じ線・同じ描き方。名前の表示と国境の破線は、従来の主要河川の一覧（TK.REGIONAL_RIVERS）と名前が合う河川だけ。 */
 window.TKRivers=(function(){let recs=null,revision=0,onChange=null;
  if(typeof fetch==='function'&&typeof document!=='undefined')fetch('map/build/rivers-lines.json',{cache:'no-cache'}).then(r=>r.json()).then(d=>{

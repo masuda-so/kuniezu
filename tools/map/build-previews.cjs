@@ -1,4 +1,4 @@
-/* 地図の正本を人が目で確かめるための縮小版（game/map/build/previews/、Git で追跡しない）。
+/* 地図の正本を人が目で確かめるための縮小版（kuniezu/static/kuniezu/map/build/previews/、Git で追跡しない）。
    正本の PNG は 23,426×23,496 画素で、VS Code（Chromium）が一度に展開できる上限を超えて開けない。郡の画像は番号を色の値に入れたもの、
    川の画像は黒地に1画素幅の線なので、そのままでは読めない。そこで層ごとに 1/4（約 5,900 画素角）の見やすい画像にし、1度ごとの経緯度の目盛りと数字を入れる。
    control.png  支配：城の支配域（definition.csv の色）。海は紺、湖は青。
@@ -56,6 +56,6 @@ const hue=n=>{const h=(n*0.618033988749895)%1,s=.45,v=.92,i=Math.floor(h*6),f=h*
  await readGray16(path.join(MD.layers.physical,'heightmap.png'),(y,row)=>{if(y%F!==C)return;const pyy=(y-C)/F;for(let c=0;c<PW;c++){const v=row[Math.min(W-1,c*F+C)],i=pyy*PW+c;
   if(v===enc.noData||kind[i]===0){put(hgt,i,SEA);continue;}if(kind[i]===1){put(hgt,i,LAKE);continue;}put(hgt,i,colorAt(enc.offsetMetres+(v-1)/enc.codesPerMetre));}});
  await save('height.png',hgt);}
- fs.writeFileSync(path.join(out,'README.md'),`# 地図の正本の縮小版（生成物、Git で追跡しない）\n\n\`node tools/map/build-previews.cjs\` が正本 game/map から作る。1/4 縮尺（${PW}×${PH} 画素、1画素＝${F*100}m）。細い線は1度ごとの経緯度で、数字は経度（上下の端）と緯度（左右の端）。\n\n| ファイル | 層 | 見方 |\n|---|---|---|\n| control.png | 支配 | 城の支配域ごとの色。紺は海、青は湖。 |\n| admin.png | 行政区分 | 郡ごとの色、濃い線は国の境。薄い灰色は郡の無い陸。 |\n| rivers.png | 自然 | 青い線が川。 |\n| height.png | 自然 | 標高の段彩（低地の緑→山地の茶→高山の白）。 |\n`);
+ fs.writeFileSync(path.join(out,'README.md'),`# 地図の正本の縮小版（生成物、Git で追跡しない）\n\n\`node tools/map/build-previews.cjs\` が正本 kuniezu/static/kuniezu/map から作る。1/4 縮尺（${PW}×${PH} 画素、1画素＝${F*100}m）。細い線は1度ごとの経緯度で、数字は経度（上下の端）と緯度（左右の端）。\n\n| ファイル | 層 | 見方 |\n|---|---|---|\n| control.png | 支配 | 城の支配域ごとの色。紺は海、青は湖。 |\n| admin.png | 行政区分 | 郡ごとの色、濃い線は国の境。薄い灰色は郡の無い陸。 |\n| rivers.png | 自然 | 青い線が川。 |\n| height.png | 自然 | 標高の段彩（低地の緑→山地の茶→高山の白）。 |\n`);
  console.log(JSON.stringify({out:path.relative(MD.root,out),size:[PW,PH],seconds:Math.round((Date.now()-t0)/1000)}));
 })().catch(e=>{console.error(e);process.exit(1);});

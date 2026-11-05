@@ -4,7 +4,7 @@
 // 実際の convoyLayout と、その後の ui.js の配置・描画コードを連結して検査する。
 // 全ゲームモデル、ネットワーク、ブラウザ、画像は起動しない。
 const fs=require('node:fs'),path=require('node:path'),vm=require('node:vm'),assert=require('node:assert/strict');
-const root=process.env.KUNIEZU_ROOT||path.resolve(__dirname,'../..'),ROOT=path.join(root,'game');
+const root=process.env.KUNIEZU_ROOT||path.resolve(__dirname,'../..'),ROOT=path.join(root,'kuniezu/static/kuniezu');
 const before=process.env.KUNIEZU_BASELINE_UI?fs.readFileSync(process.env.KUNIEZU_BASELINE_UI,'utf8'):null,after=fs.readFileSync(process.argv[2]||path.join(ROOT,'ui.js'),'utf8'),report=process.argv[3];
 const movement=fs.readFileSync(ROOT+'/movement-display.js','utf8'),convoys=fs.readFileSync(ROOT+'/convoys.js','utf8');
 const copy=x=>JSON.parse(JSON.stringify(x)),results=[];

@@ -19,7 +19,7 @@ async function fetchAll(){fs.mkdirSync(dir,{recursive:true});for(const n of Obje
 const simplify=(p,tol)=>{if(p.length<3)return p;const keep=new Uint8Array(p.length);keep[0]=keep[p.length-1]=1;const st=[[0,p.length-1]];
  while(st.length){const [a,b]=st.pop();let best=-1,bi=-1;for(let i=a+1;i<b;i++){const A=p[a],B=p[b],P=p[i],cx=Math.cos(A[1]*Math.PI/180),dx=(B[0]-A[0])*cx,dy=B[1]-A[1],px=(P[0]-A[0])*cx,py=P[1]-A[1],L=dx*dx+dy*dy,t=L?Math.max(0,Math.min(1,(px*dx+py*dy)/L)):0,d=Math.hypot(px-t*dx,py-t*dy)*111320;if(d>best){best=d;bi=i;}}
  if(best>tol){keep[bi]=1;st.push([a,bi],[bi,b]);}}return p.filter((_,i)=>keep[i]);};
-function build(){const game=path.join(root,'game/modern-road-reference.js'),text=fs.readFileSync(game,'utf8'),lines=text.split('\n'),at=lines.findIndex(l=>l.startsWith('TK.MODERN_ROAD_REFERENCE={')),refs=JSON.parse(lines[at].slice('TK.MODERN_ROAD_REFERENCE='.length).replace(/;$/,''));
+function build(){const game=path.join(root,'kuniezu/static/kuniezu/modern-road-reference.js'),text=fs.readFileSync(game,'utf8'),lines=text.split('\n'),at=lines.findIndex(l=>l.startsWith('TK.MODERN_ROAD_REFERENCE={')),refs=JSON.parse(lines[at].slice('TK.MODERN_ROAD_REFERENCE='.length).replace(/;$/,''));
  const report={};for(const n of Object.keys(ROADS)){const src=JSON.parse(fs.readFileSync(path.join(dir,`osrm-${n}.json`),'utf8'));let pts=[],routed=0,straight=0;const gaps=[];
   for(const leg of src.legs){const direct=m(leg.from,leg.to);let line;
    if(leg.code==='Ok'&&leg.points&&leg.distance<=Math.max(2*direct,direct+3000)&&Math.max(...leg.snap)<1500){line=leg.points.map(p=>[+p[0].toFixed(6),+p[1].toFixed(6)]);line[0]=leg.from;line[line.length-1]=leg.to;routed+=leg.distance;}

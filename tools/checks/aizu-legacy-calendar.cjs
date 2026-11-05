@@ -1,9 +1,9 @@
 /* 実際の修正前3モジュールから保存を作り、変更した年表順序の移行を検査。 */
 const fs=require('node:fs'),vm=require('node:vm'),path=require('node:path'),assert=require('node:assert/strict');
 const root=path.resolve(__dirname,'../..'),c=vm.createContext({console});c.window=c;
-for(const m of fs.readFileSync(path.join(root,'game/index.html'),'utf8').matchAll(/<script src="([^"?]+)(?:\?v=[0-9a-f]+)?"/g)){
+for(const m of fs.readFileSync(path.join(root,'kuniezu/static/kuniezu/index.html'),'utf8').matchAll(/<script src="([^"?]+)(?:\?v=[0-9a-f]+)?"/g)){
  const file=m[1];if(['ui.js','kb.js','bscene.js','terrain-tiles.js'].includes(file))continue;
- const archived=path.join(root,'data/inputs/aizu-ieyasu-review/legacy-runtime',file),p=fs.existsSync(archived)?archived:path.join(root,'game',file);vm.runInContext(fs.readFileSync(p,'utf8'),c,{filename:file});
+ const archived=path.join(root,'data/inputs/aizu-ieyasu-review/legacy-runtime',file),p=fs.existsSync(archived)?archived:path.join(root,'kuniezu/static/kuniezu',file);vm.runInContext(fs.readFileSync(p,'utf8'),c,{filename:file});
 }
 c.G.build();c.G.buildBattleCatalog();c.G.newGame('s1600','tokugawa');c.G.S().player='__none';const target=c.G.evT({d:c.TK.lunarDate(1600,7,23)});
 while(c.G.S().t<target){c.G.day();for(const q of ['evQ','sceneQ','battleQ','propQ','observerQ'])c.G.S()[q]=[];}

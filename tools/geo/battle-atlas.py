@@ -24,11 +24,11 @@ if not args.reuse_points and (not args.poi or not args.catalog):
     parser.error('--poi and --catalog are required unless --reuse-points is used')
 old = json.loads(pathlib.Path(args.catalog).read_text()) if args.catalog else {}
 pois = list(csv.DictReader(open(args.poi))) if args.poi else []
-meta_file = ROOT/'game/battle-atlas-data.js'
+meta_file = ROOT/'kuniezu/static/kuniezu/battle-atlas-data.js'
 prior_text = meta_file.read_text() if meta_file.exists() else ''
 prior = json.loads(prior_text.split('TK.BATTLE_ATLAS=', 1)[1].rsplit(';', 1)[0]) if args.titles else {}
 cache = pathlib.Path(args.cache); cache.mkdir(exist_ok=True)
-out = ROOT/'game/atlas'; out.mkdir(exist_ok=True)
+out = ROOT/'kuniezu/static/kuniezu/atlas'; out.mkdir(exist_ok=True)
 N, M = 160, 112
 def xy(lon, lat, z):
     return (lon+180)/360*2**z, (1-math.asinh(math.tan(math.radians(lat)))/math.pi)/2*2**z
@@ -95,6 +95,6 @@ for ix,title,f,b,z,keys in specs:
               'tiles':[{'key':list(k),'sha256':hashlib.sha256((cache/f'{k[0]}-{k[1]}-{k[2]}.png').read_bytes()).hexdigest()} for k in keys]}}
     (out/file).write_text(json.dumps(payload,ensure_ascii=False,separators=(',',':'))+'\n')
     meta[title]={'file':file,'geo':f[:3],'bounds':b,'label':f[3],'points':points,'scope':'現代の標高と地名の代表点。編集した表示範囲であり戦場の境界ではない。'}
-(ROOT/'game/battle-atlas-data.js').write_text('"use strict";\nTK.BATTLE_ATLAS='+json.dumps(meta,ensure_ascii=False,separators=(',',':'))+';\n')
+(ROOT/'kuniezu/static/kuniezu/battle-atlas-data.js').write_text('"use strict";\nTK.BATTLE_ATLAS='+json.dumps(meta,ensure_ascii=False,separators=(',',':'))+';\n')
 (ROOT/'data/audits/battle-atlas-audit.json').write_text(json.dumps(meta,ensure_ascii=False,indent=2)+'\n')
 print('BUILT',len(specs),'battle maps;',len(tiles),'DEM tiles',flush=True)

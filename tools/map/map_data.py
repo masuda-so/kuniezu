@@ -1,4 +1,4 @@
-"""Read the canonical map source in game/map (Crusader Kings III style map_data names).
+"""Read the canonical map source in kuniezu/static/kuniezu/map (Crusader Kings III style map_data names).
 
 definition.csv has no header: the first row is the reserved `0;0;0;0;x;x;` and the rest are
 `id;R;G;B;name;x;`, where name is the region key. Sea and lake ids come from default.map
@@ -10,7 +10,7 @@ import re
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
-MAP_DATA = ROOT / "game/map"
+MAP_DATA = ROOT / "kuniezu/static/kuniezu/map"
 FILES = ("control/provinces.png", "control/definition.csv", "control/default.map", "projection.json")
 
 
