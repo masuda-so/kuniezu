@@ -1,5 +1,6 @@
 {"id":"place:agata","name":"縣城","aliases":["県城","延岡城"],"geometry":null,"geometryStatus":"not-asserted","note":"1603年築城の物理的城地。game node:agata がそれ以前に表す松尾城と別。","identityBasis":{"scope":"確認済み命題の対象場所。日時と関係は元命題に保持し、座標は未主張。","claimIds":["agata-castle-construction","agata-receipt-order","agata-handover-report"]}}
 {"id":"place:aki-koriyama","name":"安芸郡山城","geometry":null,"geometryStatus":"not-asserted","note":"名称による場所同定。精密な座標・城域やゲームの管理拠点との同一性は、この登録だけで確定しない。"}
+{"id":"place:azuchi-castle","name":"安土城","aliases":[],"geometry":null,"geometryStatus":"not-asserted","note":"安土山の城を対象とし、観音寺城と区別する。今回の火災報では城の座標を登録しない。","identityBasis":{"scope":"『兼見卿記（別本）』天正10年6月15日条の火災報の対象。","claimIds":["azuchi-fire-report-1582-06-15"]}}
 {"id":"place:bongseonsa","name":"奉先寺","aliases":["雲岳山奉先寺"],"geometry":null,"geometryStatus":"not-asserted","note":"南楊州・雲岳山の寺。奉恩寺と別施設。","identityBasis":{"scope":"確認済み命題の対象場所。日時と関係は元命題に保持し、座標は未主張。","claimIds":["bongseonsa-burned-1592","bongseonsa-rebuilt-1593"]}}
 {"id":"place:edo","name":"江戸","geometry":null,"geometryStatus":"not-asserted","note":"所在地名の記録。本文は城内の持場や宿泊地点を特定しない。"}
 {"id":"place:fushimi","name":"伏見","geometry":null,"geometryStatus":"not-asserted","note":"原文は伏見を立つ。伏見城天守・屋敷・街道の出発点の精密位置はこの記録から確定しない。"}
