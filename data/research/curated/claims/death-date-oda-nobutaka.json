@@ -1,0 +1,38 @@
+{
+  "id": "death-date-oda-nobutaka",
+  "entity": "person:織田信孝",
+  "predicate": "death-date",
+  "value": "北畠（織田）信雄が神戸（織田）信孝を岐阜城に囲み、羽柴秀吉は柴田勝家を滅ぼした後、信雄と謀って信孝を尾張の内海へ移らせ、使者を送って死を促した。信孝は大御堂寺で自害した。",
+  "validYears": [
+    1583,
+    1583
+  ],
+  "datePrecision": "day",
+  "source": "hiDainihonshiryoKobun",
+  "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+  "locator": "綱文：和暦 天正11年5月2日 第3条（区分 大日本史料、第11編之4、441頁）",
+  "gameBindings": [
+    "TK.HIST:織田信孝の自害"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-05",
+  "uncertainty": "綱文は岐阜城の包囲から自害までを 5 月 2 日条にまとめて掲げる。自害の日を旧暦 4 月 29 日とする説があるとの指摘を Codex 担当から受けた（岐阜県博物館調査研究報告 37 号。Claude は未読で、この命題の根拠にしていない）。4 月 29 日条の綱文には信孝の記事が無い。 綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。",
+  "linkedEntities": [
+    "person:織田信孝",
+    "person:toyotomi-hideyoshi"
+  ],
+  "eventTime": {
+    "kind": "dated-event",
+    "date": [
+      1583,
+      5,
+      2
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": false,
+    "precision": "day"
+  },
+  "eventRelation": "death",
+  "eventScope": "綱文が掲げる死去の日付と、綱文に書かれた相手・場所。ゲームの年表の日付（旧暦をゲームの暦表で西暦に直した日）と一致することを確かめた。死因・享年・時刻・精密な位置は補わない。"
+}

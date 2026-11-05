@@ -1,0 +1,38 @@
+{
+  "id": "death-date-ryuzoji-takanobu",
+  "entity": "person:龍造寺隆信",
+  "predicate": "death-date",
+  "value": "龍造寺隆信が、島津義久の弟の家久と肥前日野江の有馬鎮貴（晴信）らと肥前の島原で戦い、敗死した。",
+  "validYears": [
+    1584,
+    1584
+  ],
+  "datePrecision": "day",
+  "source": "hiDainihonshiryoKobun",
+  "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+  "locator": "綱文：和暦 天正12年3月24日 第2条（区分 大日本史料、第11編之6、161頁）",
+  "gameBindings": [
+    "TK.HIST:沖田畷の戦い"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-05",
+  "uncertainty": "綱文の地名は「島原」。合戦の経過と討ち取った人物は補わない。 綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。",
+  "linkedEntities": [
+    "person:龍造寺隆信",
+    "person:島津義久"
+  ],
+  "eventTime": {
+    "kind": "dated-event",
+    "date": [
+      1584,
+      3,
+      24
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": false,
+    "precision": "day"
+  },
+  "eventRelation": "death",
+  "eventScope": "綱文が掲げる死去の日付と、綱文に書かれた相手・場所。ゲームの年表の日付（旧暦をゲームの暦表で西暦に直した日）と一致することを確かめた。 死因・享年・時刻・精密な位置は補わない。"
+}

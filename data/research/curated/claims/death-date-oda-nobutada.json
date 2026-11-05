@@ -1,0 +1,39 @@
+{
+  "id": "death-date-oda-nobutada",
+  "entity": "person:織田信忠",
+  "predicate": "death-date",
+  "value": "織田信忠が誠仁親王らを禁中へ移し、二条御所に拠って光秀の兵と戦い、自害した。",
+  "validYears": [
+    1582,
+    1582
+  ],
+  "datePrecision": "day",
+  "source": "hiDainihonshiryoKobun",
+  "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+  "locator": "綱文：和暦 天正10年6月2日 第1条（区分 史料綜覧、編10・冊911（データベースの表示値）、339頁）",
+  "gameBindings": [
+    "TK.HIST:本能寺の変"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-05",
+  "uncertainty": "信長の死去と同じ条の綱文。時刻と戦闘の経過は補わない。 綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。",
+  "linkedEntities": [
+    "person:織田信忠",
+    "person:akechi-mitsuhide",
+    "person:oda-nobunaga"
+  ],
+  "eventTime": {
+    "kind": "dated-event",
+    "date": [
+      1582,
+      6,
+      2
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": false,
+    "precision": "day"
+  },
+  "eventRelation": "death",
+  "eventScope": "綱文が掲げる死去の日付と、綱文に書かれた相手・場所。ゲームの年表の日付（旧暦をゲームの暦表で西暦に直した日）と一致することを確かめた。死因・享年・時刻・精密な位置は補わない。"
+}
