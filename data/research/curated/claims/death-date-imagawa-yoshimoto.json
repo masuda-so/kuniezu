@@ -1,0 +1,38 @@
+{
+  "id": "death-date-imagawa-yoshimoto",
+  "entity": "person:今川義元",
+  "predicate": "death-date",
+  "value": "織田信長が今川義元を尾張の田楽狭間に襲い、義元を斬った。",
+  "validYears": [
+    1560,
+    1560
+  ],
+  "datePrecision": "day",
+  "source": "hiDainihonshiryoKobun",
+  "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+  "locator": "綱文：和暦 永禄3年5月19日 第1条（区分 史料綜覧、編9・冊910（データベースの表示値）、498頁）",
+  "gameBindings": [
+    "TK.HIST:桶狭間の戦い"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-05",
+  "uncertainty": "綱文の地名は「田楽狭間」。合戦の経過・時刻・両軍の位置は補わない。 綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。",
+  "linkedEntities": [
+    "person:今川義元",
+    "person:oda-nobunaga"
+  ],
+  "eventTime": {
+    "kind": "dated-event",
+    "date": [
+      1560,
+      5,
+      19
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": false,
+    "precision": "day"
+  },
+  "eventRelation": "death",
+  "eventScope": "綱文が掲げる死去の日付と、綱文に書かれた相手・場所。ゲームの年表の日付（旧暦をゲームの暦表で西暦に直した日）と一致することを確かめた。死因・享年・時刻・精密な位置は補わない。"
+}
