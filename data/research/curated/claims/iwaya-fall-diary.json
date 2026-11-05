@@ -1,0 +1,37 @@
+{
+  "id": "iwaya-fall-diary",
+  "entity": "place:岩屋城（筑前）",
+  "predicate": "fall-date",
+  "value": "島津軍は朝に岩屋城を攻め、午後までに城内の守備兵を討ち取った。",
+  "validYears": [
+    1586,
+    1586
+  ],
+  "datePrecision": "day",
+  "source": "iwayaDiary",
+  "sourceUrl": "https://www.pref.kagoshima.jp/ab25/documents/6756_20221201091952-1_1.pdf#page=92",
+  "locator": "第166号、207–208頁、天正14年7月27日条",
+  "gameBindings": [
+    "TK.BATTLES:岩屋城の戦い"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-05",
+  "uncertainty": "下柵の位置や個々の隊の攻め口、高橋紹運の戦死時刻は特定しない。",
+  "eventTime": {
+    "kind": "dated-event",
+    "date": [
+      1586,
+      7,
+      27
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": false,
+    "precision": "day"
+  },
+  "eventScope": "上井覚兼が日記に記した攻城経過。史料綜覧の7月26日条とは別の記録。",
+  "linkedEntities": [
+    "place:岩屋城（筑前）"
+  ],
+  "eventRelation": "fall-date"
+}
