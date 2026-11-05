@@ -22,6 +22,6 @@
 | battles | 全合戦の布陣・地物・段階移動・読込・再生 | battle-deployments, battle-phases, battle-atlas, atlas生成元 | atlas-regressions, all-battles-browser, battle-loading-browser |
 | ui-assets | 小画面、メニュー、兵数、駒、肖像、家紋、性能 | ui, counter-symbol, portrait-layout, kamon, index CSS | usability-browser, portrait-browser, render-performance |
 
-`kuniezu/static/kuniezu/index.html` が実際の依存順。上記はファイル所有権ではなく担当の入口。`docs/architecture/modules.json` で現在の読込順と生成候補を確認する。
+`kuniezu/templates/index.html` が実際の依存順。上記はファイル所有権ではなく担当の入口。`docs/architecture/modules.json` で現在の読込順と生成候補を確認する。
 
 依頼例：「catalogの対象ID、調べる年代/地域、編集予定ファイル、期待する成果、実行する検査、触れないファイル」を明記する。複数担当が同じ中核ファイルを編集する場合は代表担当へ変更案を渡し、勝手に置き換えない。新しい分岐機能やサーバー操作を依頼のついでに実施しない。

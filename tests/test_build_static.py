@@ -1,10 +1,11 @@
+from django.test import Client
+
 from scripts.build_static import build
 
 
 def test_export_writes_the_page_and_only_run_time_files(tmp_path, settings):
     game = tmp_path / "game"
     for name in (
-        "index.html",
         "data.js",
         "portraits/a.jpg",
         "map/projection.json",
@@ -21,9 +22,7 @@ def test_export_writes_the_page_and_only_run_time_files(tmp_path, settings):
     ):
         path = game / name
         path.parent.mkdir(parents=True, exist_ok=True)
-        path.write_text(
-            "<head></head>" if name == "index.html" else "x", encoding="utf-8"
-        )
+        path.write_text("x", encoding="utf-8")
     settings.GAME_DIR = game
 
     client_dir = build(tmp_path / "dist")
@@ -42,5 +41,6 @@ def test_export_writes_the_page_and_only_run_time_files(tmp_path, settings):
         "static/kuniezu/map/control/definition.csv",
         "static/kuniezu/portraits/a.jpg",
     ]
-    page = (client_dir / "index.html").read_text(encoding="utf-8")
-    assert page == '<head><base href="/static/kuniezu/"></head>'
+    page = (client_dir / "index.html").read_bytes()
+    assert page == Client().get("/").content
+    assert b'<base href="/static/kuniezu/">' in page

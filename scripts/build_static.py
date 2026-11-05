@@ -23,7 +23,6 @@ LOGGER = logging.getLogger(__name__)
 TEST_CLIENT_HOST = "testserver"
 # Paths relative to the game directory that the browser never requests.
 EXCLUDED = (
-    "index.html",
     "map/admin",
     "map/physical",
     "map/edits",

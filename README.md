@@ -26,7 +26,8 @@
 
 | フォルダ | 内容 |
 |---|---|
-| `kuniezu/static/kuniezu/` | ブラウザへ配信するゲームと同梱素材。読込順は `index.html` |
+| `kuniezu/static/kuniezu/` | ブラウザへ配信するゲームと同梱素材 |
+| `kuniezu/templates/` | ゲームのページ `index.html`（Django のテンプレート）。スクリプトの読込順はここで決まる |
 | `docs/architecture/` | 構成、ファイルの移動記録、依存順 |
 | `docs/work/` | 残要望、完了条件、対象別作業一覧、担当と成果の記録 |
 | `docs/reports/` | 調査・修正・実画面確認の報告書 |
@@ -56,7 +57,7 @@ node tools/map/build-map.cjs --height --python /path/to/python3
 
 正本の PNG は大きすぎて VS Code などでは開けないので、生成の最後に、層ごとの 1/4 の縮小版（経緯度の目盛り付き）を `kuniezu/static/kuniezu/map/build/previews/` に作ります（`control.png` 支配、`admin.png` 行政区分、`rivers.png` 川、`height.png` 標高）。目で確かめるときはこちらを開いてください。
 
-生成後は `kuniezu/static/kuniezu/` を静的ファイルとして配信し、ブラウザで `index.html` を開きます。Django の開発サーバーでも同じ画面を開けます（`uv sync --locked` の後 `uv run python manage.py runserver 8000`。Python 3.14 と uv が必要）。`uv run python scripts/build_static.py` は公開用の静的ファイルを `dist/client/` に書き出します。構成は website と同じ Django の並びへ揃える途中です（`docs/structure.md`、`docs/architecture/replatform-plan.md`）。画面の地図は明治「大日本全図」に合わせて北を左へ 16 度傾けてあり、表示設定の「地図の向き」で北を上にもできます（`docs/reports/MAP_ORIENTATION.md`）。
+生成後は Django の開発サーバーを起動し、ブラウザで `http://localhost:8000/index.html` を開きます（`uv sync --locked` の後 `uv run python manage.py runserver 8000`。Python 3.14 と uv が必要）。ページは Django のテンプレートなので、`kuniezu/static/kuniezu/` だけを静的ファイルとして配信しても開けません。`uv run python scripts/build_static.py` は公開用の静的ファイルを `dist/client/` に書き出し、こちらは静的ファイルとして配信すれば開けます。構成は website と同じ Django の並びへ揃える途中です（`docs/structure.md`、`docs/architecture/replatform-plan.md`）。画面の地図は明治「大日本全図」に合わせて北を左へ 16 度傾けてあり、表示設定の「地図の向き」で北を上にもできます（`docs/reports/MAP_ORIENTATION.md`）。
 
 サーバーの起動・停止は利用者が行います。検証は起動済み `http://localhost:8000/index.html` に接続します。検査結果の保存先は `GAME_TEST_OUTPUT` で指定できます。
 
