@@ -1,10 +1,10 @@
 {
-  "scope": "全85描画街道を点検。近現代参考線の完全往復と個別確認した9閉路だけを整理。史実上の全支線の有無を確定しない。",
+  "scope": "全85描画街道を点検。近現代参考線の完全往復と個別確認した閉路だけを整理。史実上の全支線の有無を確定しない。",
   "summary": {
     "roads": 85,
     "correctedRoads": 60,
-    "excursions": 201,
-    "removedKm": 163.46884315978212
+    "excursions": 202,
+    "removedKm": 246.99998201152272
   },
   "rows": [
     {
@@ -1930,7 +1930,7 @@
     },
     {
       "name": "義州大路",
-      "modernReference": false,
+      "modernReference": true,
       "removedVertices": 0,
       "excursions": []
     },
@@ -1954,7 +1954,7 @@
     },
     {
       "name": "関北路",
-      "modernReference": false,
+      "modernReference": true,
       "removedVertices": 0,
       "excursions": []
     },
@@ -1973,28 +1973,28 @@
     {
       "name": "越後街道",
       "modernReference": true,
-      "removedVertices": 8,
+      "removedVertices": 414,
       "excursions": [
         {
-          "first": 1090,
-          "last": 1092,
-          "lengthKm": 0.08613873123326243,
-          "returnRatio": 1,
-          "reviewed": false,
+          "first": 916,
+          "last": 1228,
+          "lengthKm": 20.7269357178932,
+          "returnRatio": 0.5750364716942058,
+          "reviewed": true,
           "junction": [
-            139.470681,
-            37.702181
+            139.472293,
+            37.651709
           ]
         },
         {
-          "first": 1574,
-          "last": 1580,
-          "lengthKm": 0.16944745041269016,
-          "returnRatio": 1,
-          "reviewed": false,
+          "first": 1526,
+          "last": 1628,
+          "lengthKm": 4.748200764883734,
+          "returnRatio": 0.43708879361279246,
+          "reviewed": true,
           "junction": [
-            139.620711,
-            37.597138
+            139.629664,
+            37.592735
           ]
         }
       ]
@@ -2002,17 +2002,28 @@
     {
       "name": "米沢街道",
       "modernReference": true,
-      "removedVertices": 12,
+      "removedVertices": 760,
       "excursions": [
         {
-          "first": 1310,
-          "last": 1322,
-          "lengthKm": 0.7639634295564974,
-          "returnRatio": 1,
-          "reviewed": false,
+          "first": 35,
+          "last": 223,
+          "lengthKm": 14.41121810953249,
+          "returnRatio": 0.536312673407227,
+          "reviewed": true,
           "junction": [
-            139.974442,
-            37.753913
+            140.045265,
+            37.876495
+          ]
+        },
+        {
+          "first": 987,
+          "last": 1559,
+          "lengthKm": 31.215195379566225,
+          "returnRatio": 0.4646938679922587,
+          "reviewed": true,
+          "junction": [
+            139.880667,
+            37.724013
           ]
         }
       ]
@@ -2020,17 +2031,17 @@
     {
       "name": "二本松街道",
       "modernReference": true,
-      "removedVertices": 6,
+      "removedVertices": 193,
       "excursions": [
         {
-          "first": 327,
-          "last": 333,
-          "lengthKm": 0.17369537810841962,
-          "returnRatio": 1,
-          "reviewed": false,
+          "first": 231,
+          "last": 424,
+          "lengthKm": 13.62283386917581,
+          "returnRatio": 0.529172337423449,
+          "reviewed": true,
           "junction": [
-            140.264047,
-            37.582617
+            140.264256,
+            37.536379
           ]
         }
       ]

@@ -1,6 +1,6 @@
 {
   "date": "2026-11-02",
-  "source": "game/modern-road-reference.js (OpenStreetMap / OSRM reference)",
+  "source": "kuniezu/static/kuniezu/modern-road-reference.js (OpenStreetMap / OSRM reference)",
   "scope": "表示参考線の個別採否。歴史的な道路の実在記録ではない。",
   "reviews": [
     {
@@ -134,6 +134,87 @@
       "basis": "modern-routing-observation",
       "reason": "近現代比較線が粗い経由点を訪れて同じ交差点へ戻る寄道を整理する。歴史的な日向道の内陸経由地は別途原図から再構成し、この整理を史実全線の復元とは扱わない。",
       "reviewInput": "data/audits/road-remaining-excursions.json"
+    },
+    {
+      "road": "米沢街道",
+      "junction": [
+        140.045265,
+        37.876495
+      ],
+      "lengthRange": [
+        14,
+        15
+      ],
+      "basis": "modern-routing-observation",
+      "reason": "米沢南方で同じ交差点へ戻る比較線。桧原峠越を経る旧道は選定地図の範囲で別に照合する。",
+      "sourceUrls": [
+        "https://www.bunka.go.jp/seisaku/bunkazai/shokai/kinenbutsu/rekishinomichi/pdf/92088301_s084_01.pdf"
+      ]
+    },
+    {
+      "road": "米沢街道",
+      "junction": [
+        139.880667,
+        37.724013
+      ],
+      "lengthRange": [
+        31,
+        32
+      ],
+      "basis": "modern-routing-observation",
+      "reason": "大峠方面の比較線から東側へ往復し、同じ交差点へ戻る。現代の迂回を除く。旧道への付替えではない。",
+      "sourceUrls": [
+        "https://www.bunka.go.jp/seisaku/bunkazai/shokai/kinenbutsu/rekishinomichi/pdf/92088301_s084_01.pdf"
+      ]
+    },
+    {
+      "road": "越後街道",
+      "junction": [
+        139.472293,
+        37.651709
+      ],
+      "lengthRange": [
+        20,
+        21
+      ],
+      "basis": "modern-routing-observation",
+      "reason": "阿賀町七堀付近から鹿瀬方面へ出て同一点へ戻る比較線。県の旧道図では諏訪峠・津川を順に通る。",
+      "sourceUrls": [
+        "https://www.pref.niigata.lg.jp/uploaded/attachment/77275.pdf"
+      ]
+    },
+    {
+      "road": "越後街道",
+      "junction": [
+        139.629664,
+        37.592735
+      ],
+      "lengthRange": [
+        4.7,
+        4.9
+      ],
+      "basis": "modern-routing-observation",
+      "reason": "芦沼西から大沼側へ寄って同一点に戻る比較線。旧道図の芦沼経由と区別する。",
+      "sourceUrls": [
+        "https://gokujo-aizu.com/pdf/nishiaizu-echigostory.pdf"
+      ]
+    },
+    {
+      "road": "二本松街道",
+      "junction": [
+        140.264256,
+        37.536379
+      ],
+      "lengthRange": [
+        13,
+        14
+      ],
+      "basis": "modern-routing-observation",
+      "reason": "東西の比較線が同一交差点から北へ回り、約13.6kmで同じ地点へ戻る。会津藩期の上下街道は別の通過経路であり、この現代比較線の閉路を裏づけない。戦国期の道筋は確定しない。",
+      "sourceUrls": [
+        "https://www.town.bandai.fukushima.jp/uploaded/attachment/1585.pdf",
+        "https://www.city.aizuwakamatsu.fukushima.jp/docs/2023042400018/file_contents/05ni1.pdf"
+      ]
     }
   ]
 }
