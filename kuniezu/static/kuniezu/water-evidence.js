@@ -9,6 +9,15 @@
  };
  for(const [id,[author,title,year,url,locator,scope]] of Object.entries(refs))TK.RESEARCH_SOURCES[id]={author,title,year,url,locator,scope,accessed:'2026-10-31'};
  TK.RESEARCH_SOURCES.kasumiTransition={author:'国土交通省関東地方整備局 霞ヶ浦河川事務所',title:'霞ヶ浦の歴史・治水対策',url:'https://www.ktr.mlit.go.jp/kasumi/kasumi00771.html',locator:'霞ヶ浦の歴史・利根川東遷事業',scope:'現在に近い姿は江戸時代中期。17世紀中頃の海との連絡悪化・淡水化と、戦国期の入江を区別する。8世紀の面積2〜3倍という説明を16世紀へ転用しない。',accessed:'2026-10-31'};
+ TK.RESEARCH_SOURCES.jusanOutletHistory={
+  author:'国土交通省東北地方整備局 青森河川国道事務所',
+  title:'十三湖水戸口突堤の土木遺産認定資料',
+  year:'2016',
+  url:'https://www.thr.mlit.go.jp/bumon/kisya/kisyah/images/62929_1.pdf#page=3',
+  locator:'水戸口の変遷・大正11年と12年の水戸口変形図',
+  scope:'地図の水戸口は現在の突堤付近にあります。十三湖と日本海を結ぶ水路は、砂で閉じたり、開く場所が変わったりしました。戦国期の開口位置は分かっていません。',
+  accessed:'2026-11-05'
+ };
  // 関東低地全体を一つの湖にしていた旧ポリゴンを取り除く。
  const {K,CX,LON0,LAT0}=TKGEO;
  // 旧塩津潟の概略輪郭は新発田城本丸まで覆う。水域名だけを残す。
