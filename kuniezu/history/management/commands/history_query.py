@@ -14,6 +14,9 @@ from kuniezu.history.models import Thing
 
 
 def describe(item: Phenomenon) -> dict[str, Any]:
+    # The point is the place's representative point, and ``placeBasis`` says how
+    # it was obtained. It is not the exact spot of the phenomenon.
+    point = getattr(item.place, "place", None) if item.place else None
     return {
         "key": item.key,
         "mode": item.mode,
@@ -34,6 +37,8 @@ def describe(item: Phenomenon) -> dict[str, Any]:
             for number in (item.jd_start, item.jd_end)
         ],
         "place": item.place.name if item.place else None,
+        "placePoint": [point.longitude, point.latitude] if point else None,
+        "placeBasis": point.basis if point else None,
         "records": sorted(record.key for record in item.records.all()),
     }
 
@@ -97,6 +102,8 @@ class Command(BaseCommand):
             found = found.order_by("jd_start", "jd_end", "key")
             answer = [
                 describe(item)
-                for item in found.select_related("place").prefetch_related("records")
+                for item in found.select_related("place__place").prefetch_related(
+                    "records"
+                )
             ]
         self.stdout.write(json.dumps(answer, ensure_ascii=False, indent=1))

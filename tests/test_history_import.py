@@ -8,6 +8,7 @@ from django.conf import settings
 from kuniezu.history import dates
 from kuniezu.history import queries
 from kuniezu.history.importer import CATALOG
+from kuniezu.history.importer import CLAIM_KIND_OF
 from kuniezu.history.importer import MONTH_TABLE
 from kuniezu.history.importer import RESEARCH
 from kuniezu.history.importer import import_history
@@ -85,7 +86,7 @@ def test_every_input_record_is_kept_once(inputs):
 
 
 def test_things_and_phenomena_fall_into_exactly_one_class(inputs):
-    import_history(inputs)
+    summary = import_history(inputs)
 
     assert not Thing.objects.exclude(kind__in=ThingKind.values).exists()
     assert not Phenomenon.objects.exclude(kind__in=PhenomenonKind.values).exists()
@@ -99,9 +100,13 @@ def test_things_and_phenomena_fall_into_exactly_one_class(inputs):
     assert events.count() == len(timeline)
     assert not events.exclude(mode=Mode.EVENT).exists()
     assert not events.filter(jd_exact=False).exists()
-    # Only timeline notes are left without a class of their own.
+    # What has no class of its own is counted in the summary, word by word. A
+    # new word in the inputs lands there until the importer's table names it.
     other = Phenomenon.objects.filter(kind=PhenomenonKind.OTHER)
-    assert set(other.values_list("subtype", flat=True)) == {"note"}
+    words = set(other.values_list("subtype", flat=True))
+    assert words == {word for word, count in summary.unclassified.items() if count}
+    assert "note" in words
+    assert sum(summary.unclassified.values()) == other.count()
 
 
 def test_people_are_one_thing_under_all_their_names(inputs):
@@ -293,3 +298,13 @@ def test_a_claim_is_placed_where_it_says_and_nowhere_else(inputs):
     single = next(r for r in timeline if len(r.payload["castles"]) == 1)
     assert several.phenomena.get().place is None
     assert single.phenomena.get().place is not None
+
+
+def test_every_word_for_a_claim_has_one_class():
+    # A deposit of wind-blown sand found by excavation is a natural phenomenon.
+    assert CLAIM_KIND_OF["windblown-sand-deposition"] == PhenomenonKind.NATURE
+    assert CLAIM_KIND_OF["fall-date"] == PhenomenonKind.CONFLICT
+    assert CLAIM_KIND_OF["reclamation-permission"] == PhenomenonKind.DOCUMENT
+    assert CLAIM_KIND_OF["described-custody"] == PhenomenonKind.MOVEMENT
+    assert CLAIM_KIND_OF["person-name-identity"] == PhenomenonKind.NAMING
+    assert set(CLAIM_KIND_OF.values()) <= set(PhenomenonKind) - {PhenomenonKind.OTHER}
