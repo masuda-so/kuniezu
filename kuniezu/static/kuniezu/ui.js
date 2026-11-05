@@ -9,11 +9,12 @@ const esc=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&g
 const GEO=window.TKGEO;
 const U={pslot:{},dipView:false,mode:'title',sel:null,modal:null,mdata:{},pickScen:null,pickClan:null,hover:null,speed:0,acc:0,baseDirty:true,chatCtl:null,picking:null};
 try{U.mapStyle=localStorage.getItem('tenka-mapstyle2')||'relief';}catch(e){U.mapStyle='relief';}
-/* 地図の向き（図北の角度）。北を上から反時計回りに何度回すか（北が左へ傾く）。既定の 16 度は明治「大日本全図」（1880 年頃）の海岸線に
-   本作の海岸線を最も重ねられる角度（最適値 16.5 度、docs/reports/MAP_ORIENTATION.md）。画布を CSS で回し、文字は読める向きに戻す。
+/* 地図の向き（図北の角度）。北を上から反時計回りに何度回すか（北が左へ傾く）。既定は北が上（0 度、国土地理院の地図と同じ）。
+   選べる 16 度は明治「大日本全図」（1880 年頃）の海岸線に本作の海岸線を最も重ねられる角度（最適値 16.5 度、
+   docs/reports/MAP_ORIENTATION.md）。回すときは画布を CSS で回し、文字は読める向きに戻す。
    当たり判定は画面の座標を画布の座標へ逆に回して行う。 */
 U.MAP_ROTATIONS=[{deg:0,name:'北が上'},{deg:16,name:'大日本全図の向き（16度）'},{deg:11,name:'本州の軸だけ合わせる（11度）'},{deg:25,name:'本州を立てる（25度）'}];
-try{const v=+localStorage.getItem('tenka-maprot');U.mapRotation=Number.isFinite(v)&&localStorage.getItem('tenka-maprot')!==null?v:16;}catch(e){U.mapRotation=16;}
+try{const v=+localStorage.getItem('tenka-maprot');U.mapRotation=Number.isFinite(v)&&localStorage.getItem('tenka-maprot')!==null?v:0;}catch(e){U.mapRotation=0;}
 window.TKUI=U;U.open=(n,d)=>openModal(n,d);
 let S=null;
 // 外部書体はゲーム開始を待たせない。到着後に地図の文字幅と狭幅の帯を更新する。
