@@ -10,15 +10,15 @@ window.TKMapVersion=(function(){let list=[],lastT=null,lastS=null,cur=null;
    アンチエイリアスの隙間（タイルの形の細い線）も重なりも出ない。変換は拡大と平行移動だけ（回転しない）とする。 */
 window.TKDrawTile=function(c,img,x,y,w,h){const m=c.getTransform(),X0=Math.round(m.a*x+m.e),Y0=Math.round(m.d*y+m.f),X1=Math.round(m.a*(x+w)+m.e),Y1=Math.round(m.d*(y+h)+m.f);
  if(X1>X0&&Y1>Y0)c.drawImage(img,(X0-m.e)/m.a,(Y0-m.f)/m.d,(X1-X0)/m.a,(Y1-Y0)/m.d);};
-/* ラスター地図の実行時部品。kuniezu/static/kuniezu/map/ の領域画像（1画素1領域）を読み、「領域ID→色」の表で塗った画像を地図平面へ貼る。
+/* ラスター地図の実行時部品。kuniezu/map/ の領域画像（1画素1領域）を読み、「領域ID→色」の表で塗った画像を地図平面へ貼る。
    表示の細かさに合わせて 100m（provinces/）・400m（provinces-4/）・800m（provinces-8/）のどれかを選ぶ。
    日が進んでも、領主が変わった時だけ表を引き直す。読み込み中のタイルは一段粗いものを代わりに貼る。 */
 window.TKRaster=(function(){
  let man=null,defs=[],seaId=1,ready=false,revision=0,onChange=null;const byColor=new Map(),tiles=new Map(),order=[];
  const key=(f,t)=>f+':'+t.file;
  // 通信のない検査環境（node の vm）では読まない。描画は従来の線の領域へ戻る。
- if(typeof fetch==='function'&&typeof document!=='undefined')Promise.all([fetch('map/build/manifest.json',{cache:'no-cache'}).then(r=>r.json()),fetch('map/control/definition.csv',{cache:'no-cache'}).then(r=>r.text()),fetch('map/control/default.map',{cache:'no-cache'}).then(r=>r.text())]).then(([m,csv,dm])=>{
-  // 正本 kuniezu/static/kuniezu/map/control（CK3 の map_data の書式）：definition.csv は `id;R;G;B;name;x;`（id 0 は予約）、海・湖は default.map の sea_zones・lakes。defs は id で引く。
+ if(typeof fetch==='function'&&typeof document!=='undefined')Promise.all([fetch('map/build/manifest.json',{cache:'no-cache'}).then(r=>r.json()),fetch('map/build/definition.csv',{cache:'no-cache'}).then(r=>r.text()),fetch('map/build/default.map',{cache:'no-cache'}).then(r=>r.text())]).then(([m,csv,dm])=>{
+  // 正本 kuniezu/map/control の写し（生成のときに map/build へ写す。CK3 の map_data の書式）：definition.csv は `id;R;G;B;name;x;`（id 0 は予約）、海・湖は default.map の sea_zones・lakes。defs は id で引く。
   const list=k=>new Set(((dm.match(new RegExp(k+'\\s*=\\s*LIST\\s*\\{([^}]*)\\}'))||[])[1]||'').trim().split(/\s+/).filter(Boolean).map(Number)),sea=list('sea_zones'),lake=list('lakes');
   man=m;defs=[];for(const l of csv.split(/\r?\n/)){const p=l.split(';'),id=+p[0];if(!id)continue;defs[id]={id,rgb:[+p[1],+p[2],+p[3]],key:p[4],kind:sea.has(id)?'sea':lake.has(id)?'lake':'land'};}
   for(const d of defs)if(d){byColor.set(d.rgb[0]<<16|d.rgb[1]<<8|d.rgb[2],d.id);if(d.key==='sea')seaId=d.id;}
@@ -115,7 +115,7 @@ window.TKEdges=(function(){
   return null;}
  return {bump(){verMemo=null;revision++;onChange?.();},ready:()=>ready,revision:()=>revision,inView,onChange(fn){onChange=fn;}};
 })();
-/* 河川（正本 kuniezu/static/kuniezu/map/physical/rivers.png の1画素幅の中心線を tools/map/build-river-lines.cjs が辿った線 map/build/rivers-lines.json）。現代の参考の河道。
+/* 河川（正本 kuniezu/map/physical/rivers.png の1画素幅の中心線を tools/map/build-river-lines.cjs が辿った線 map/build/rivers-lines.json）。現代の参考の河道。
    日本・朝鮮とも同じ線・同じ描き方。名前の表示と国境の破線は、従来の主要河川の一覧（TK.REGIONAL_RIVERS）と名前が合う河川だけ。 */
 window.TKRivers=(function(){let recs=null,revision=0,onChange=null;
  if(typeof fetch==='function'&&typeof document!=='undefined')fetch('map/build/rivers-lines.json',{cache:'no-cache'}).then(r=>r.json()).then(d=>{

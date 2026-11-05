@@ -106,12 +106,12 @@ const temp=fs.mkdtempSync(path.join(os.tmpdir(),'kuniezu-sql-input-'));try{for(c
                             ref = db.execute('INSERT INTO spatial_reference(record_id,place_id) VALUES (?,?)', (row_id, entity)).lastrowid
                             lon, lat = point
                             db.execute('INSERT INTO spacetime VALUES (?,?,?,?,?,?,?)', (ref, lon, lon, lat, lat, first, until))
-            map_root = research.parent.parent / 'kuniezu/static/kuniezu'
-            definition = map_root / 'map/control/definition.csv'
+            map_root = research.parent.parent / 'kuniezu/map'
+            definition = map_root / 'control/definition.csv'
             if definition.exists():
                 # Render IDs are a separate namespace, never historical ownership claims.
                 from re import findall
-                default = (map_root / 'map/control/default.map').read_text()
+                default = (map_root / 'control/default.map').read_text()
                 groups = {key: {int(n) for n in findall(r'\d+', body)} for key, body in findall(r'(sea_zones|lakes)\s*=\s*LIST\s*\{([^}]*)\}', default)}
                 for line in definition.read_text().splitlines():
                     fields = line.split(';')
@@ -127,7 +127,7 @@ const temp=fs.mkdtempSync(path.join(os.tmpdir(),'kuniezu-sql-input-'));try{for(c
                         region = 'castle:' + key[5:]
                         if db.execute('SELECT 1 FROM map_region WHERE region_key=?', (region,)).fetchone():
                             db.execute('INSERT INTO record_map_region VALUES (?,?,?)', (row_id, region, 'implementation-binding; not historical ownership'))
-                for file in sorted((map_root / 'map/edits').glob('*.json')):
+                for file in sorted((map_root / 'edits').glob('*.json')):
                     edit = json.loads(file.read_text())
                     if all(key in edit for key in ['id','validFrom','validUntil']):
                         db.execute('INSERT INTO map_edit VALUES (?,?,?,?)', (edit['id'], text(edit['validFrom']), text(edit['validUntil']), text(edit)))
