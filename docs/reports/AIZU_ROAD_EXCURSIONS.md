@@ -1,0 +1,8 @@
+# 米沢・越後街道の比較道路から往復を除く
+
+米沢街道の米沢南方14.41km・大峠方面31.22km、越後街道の七堀付近20.73km・芦沼西4.75kmは、現代の比較線が同じ交差点へ戻る区間。描画用の比較線から除いた。原比較線と描画の両端、行軍用の城間接続は保持した。
+
+- [文化庁「会津・米沢街道―桧原峠越」選定地図](https://www.bunka.go.jp/seisaku/bunkazai/shokai/kinenbutsu/rekishinomichi/pdf/92088301_s084_01.pdf)。旧線は桧原峠・大塩を経て、水没前の桧原宿も通る。
+- [新潟県「会津街道概略図」](https://www.pref.niigata.lg.jp/uploaded/attachment/77275.pdf) と [「越後街道ものがたり」](https://gokujo-aizu.com/pdf/nishiaizu-echigostory.pdf)。津川・天満の通過順と近世の車峠・宿場の移動を確認した。旧道への置換には近世以前の経路と現行の比較線を分けて登録する必要がある。
+
+全85描画線と4地点の回帰検査、[専用Chrome](../../data/verification/codex-aizu-road-excursions/README.md)に合格。既存の road-display.cjs は変更前後とも東海道の表示名に「近現代」を期待する箇所で失敗した。
