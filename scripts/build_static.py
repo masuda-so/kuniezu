@@ -1,10 +1,9 @@
 """Build the static export of the game for deployment.
 
-Renders the game page through Django and copies the files the browser needs to
-``dist/client/``. The map sources (CK3-style images and tables under
-``kuniezu/static/kuniezu/map/``) are build inputs, so only what the game
-fetches at run time is exported: ``map/build/`` and the two definition files
-in ``map/control/``.
+Renders the game page through Django and copies the game's static files to
+``dist/client/``. The map sources live outside the static files (kuniezu/map/),
+so only the generated ``map/build/`` is exported; its previews and working
+grid are left out because the browser never requests them.
 """
 
 from __future__ import annotations
@@ -23,13 +22,6 @@ LOGGER = logging.getLogger(__name__)
 TEST_CLIENT_HOST = "testserver"
 # Paths relative to the game directory that the browser never requests.
 EXCLUDED = (
-    "map/admin",
-    "map/physical",
-    "map/edits",
-    "map/projection.json",
-    "map/control/provinces.png",
-    "map/control/gun-assignment.csv",
-    "map/control/gun-overrides.json",
     "map/build/previews",
     "map/build/grid",
 )

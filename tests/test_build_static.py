@@ -8,14 +8,10 @@ def test_export_writes_the_page_and_only_run_time_files(tmp_path, settings):
     for name in (
         "data.js",
         "portraits/a.jpg",
-        "map/projection.json",
-        "map/control/definition.csv",
-        "map/control/default.map",
-        "map/control/provinces.png",
-        "map/physical/heightmap.png",
-        "map/admin/gun.png",
-        "map/edits/x.json",
         "map/build/manifest.json",
+        "map/build/definition.csv",
+        "map/build/default.map",
+        "map/build/grid/work.bin",
         "map/build/provinces/0-0.png",
         "map/build/previews/control.png",
         ".DS_Store",
@@ -35,10 +31,10 @@ def test_export_writes_the_page_and_only_run_time_files(tmp_path, settings):
     assert exported == [
         "index.html",
         "static/kuniezu/data.js",
+        "static/kuniezu/map/build/default.map",
+        "static/kuniezu/map/build/definition.csv",
         "static/kuniezu/map/build/manifest.json",
         "static/kuniezu/map/build/provinces/0-0.png",
-        "static/kuniezu/map/control/default.map",
-        "static/kuniezu/map/control/definition.csv",
         "static/kuniezu/portraits/a.jpg",
     ]
     page = (client_dir / "index.html").read_bytes()

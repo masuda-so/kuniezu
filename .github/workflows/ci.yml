@@ -47,7 +47,7 @@ jobs:
           node tools/checks/battle-rivers.cjs
       - name: Asset version stamps
         run: node tools/build/stamp-assets.cjs --check
-      # 地図の配信物は追跡しない。正本 kuniezu/static/kuniezu/map から作れること、年代別の差分が当たることを確かめる（陰影は除く）。
+      # 地図の配信物は追跡しない。正本 kuniezu/map から作れること、年代別の差分が当たることを確かめる（陰影は除く）。
       - name: Build the map from its source
         run: node tools/map/build-map.cjs --no-previews
       - name: Raster map checks
