@@ -38,6 +38,13 @@
  v=use?{...r,pts:detailed,modernReference:true,referenceCleanup:cleanup,evidence:{...e,label:r.name}}:r;if(!use&&pts&&e.level==='corridor'&&!['東海道','塩津街道'].includes(r.name)){const modern=pts.map(p=>G.PJ(...p)),nearest=P=>modern.reduce((v,p,i)=>{const d=Math.hypot(p[0]-P[0],p[1]-P[1]);return d<v.d?{i,d}:v;},{i:0,d:Infinity}),out=[r.pts[0]];let aligned=0;
  for(let i=1;i<r.pts.length;i++){const A=r.pts[i-1],B=r.pts[i],a=nearest(A),b=nearest(B),direct=Math.hypot(B[0]-A[0],B[1]-A[1]);if(a.i!==b.i&&Math.max(a.d,b.d)<1.5){const mid=a.i<b.i?modern.slice(a.i,b.i+1):modern.slice(b.i,a.i+1).reverse(),line=[A,...mid,B],length=line.slice(1).reduce((n,p,j)=>n+Math.hypot(p[0]-line[j][0],p[1]-line[j][1]),0);if(length<direct*2.2+.25){out.push(...mid,B);aligned++;continue;}}out.push(B);}
  if(aligned)v={...r,pts:out,modernAligned:aligned,evidence:{...e,alignment:'史料の経由地を保持し、近接する近現代道の屈曲を局所参照'}};
- }cache.set(r,v);return v;};
+ }
+ // 庄内・内陸の調査図をつないだ直線は、表示用の街道から除く。
+ if(use&&r.name==='六十里越街道'){
+  const gap=reference.findIndex(([lon,lat],i)=>lon===140.07500097702786&&lat===38.43303846713317
+   &&reference[i-1]?.[0]===140.02573006313045&&reference[i-1]?.[1]===38.44764340004135);
+  if(gap>1&&gap<detailed.length-1)v.sections=[detailed.slice(0,gap),detailed.slice(gap)];
+ }
+ cache.set(r,v);return v;};
  TK.RESEARCH_SOURCES.modernRoadReference={author:'OpenStreetMap contributors / FOSSGIS OSRM',title:'日朝の一般道路・小道の比較線',url:'https://www.openstreetmap.org/copyright',locator:'2026-11-01、82街道の通過点で照会、78本取得。過大迂回・5km超の吸着は不採用',scope:'現代の自転車向け経路。高速道路優先を避けるが、近代の橋・トンネルを含みうる。史実の街道・行軍経路を確定する資料ではない。表示だけに使用し、行軍計算は既存経路を保持。',accessed:'2026-11-01'};
 })();
