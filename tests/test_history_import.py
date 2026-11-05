@@ -83,6 +83,14 @@ def test_every_input_record_is_kept_once(inputs):
     # A record keeps its input unchanged.
     claim = lines(inputs / RESEARCH / "claims.jsonl")[0]
     assert Record.objects.get(key="claim:" + claim["id"]).payload == claim
+    timeline = lines(inputs / RESEARCH / "implemented-events.jsonl")
+    assert any(row.get("text") for row in timeline)
+    records = Record.objects.filter(
+        record_type=RecordType.IMPLEMENTED_EVENT, status=Status.IMPLEMENTATION
+    )
+    assert dict(records.values_list("key", "payload")) == {
+        "timeline:" + row["id"]: row for row in timeline
+    }
 
 
 def test_things_and_phenomena_fall_into_exactly_one_class(inputs):
