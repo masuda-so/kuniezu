@@ -108,7 +108,7 @@ CLAIM_KIND = {
         "siege-and-field-battle documented-siege-phase military-event castle-fall "
         "campaign-action military-side command hoifa-conquest ula-conquest "
         "jianzhou-unification amur-expedition encirclement-fort-preparation "
-        "military-corridor"
+        "military-corridor fall-date outer-defence-breached"
     ),
     PhenomenonKind.CONTROL: (
         "captured-and-renamed territorial-transfer territory-confirmation "
