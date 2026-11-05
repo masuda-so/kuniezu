@@ -51,6 +51,7 @@ is [docs/README.md](docs/README.md); open requests and ownership are in
 |---|---|
 | `kuniezu/static/kuniezu/` | The game served to the browser and its bundled assets |
 | `kuniezu/templates/` | The game page `index.html` (a Django template); it sets the script load order |
+| `kuniezu/history/` | The relational history database (a Django app): things, phenomena, sources, import and queries |
 | `docs/architecture/` | Structure, file move records and dependency order |
 | `docs/work/` | Open requests, completion criteria, per-subject task lists, ownership and results |
 | `docs/reports/` | Research, fix and on-screen verification reports |
@@ -100,6 +101,14 @@ files to `dist/client/`, which can be served as plain static files. The layout i
 website project (`docs/structure.md`, `docs/architecture/replatform-plan.md`). The map on screen is north-up by default. "Map orientation" in the display
 settings can turn it, for example 16° counter-clockwise after the Meiji-era
 "Dai Nippon Zenzu" (`docs/reports/MAP_ORIENTATION.md`).
+
+The relational history database is built from the inputs in `data/research/` and
+`docs/work/` into `db.sqlite3` at the repository root (not tracked in Git):
+`uv run python manage.py migrate`, then `uv run python manage.py import_history`.
+Query it by thing, year or a longitude/latitude box, for example
+`uv run python manage.py history_query --about 織田信長 --year 1582`. It holds every
+current input record and keeps source-verified records apart from the unverified
+inventory of what the game implements (`docs/architecture/history-rdb.md`).
 
 Starting and stopping the server is done by the user. Verification connects to an
 already running `http://localhost:8000/index.html`. The output folder for check

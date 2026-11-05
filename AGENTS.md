@@ -15,6 +15,7 @@
 
 - 地図は `kuniezu/map/` に層ごとに置く。行政区分 `admin/`（郡）、支配 `control/`（城の支配域 `provinces.png` ほか）、自然 `physical/`（標高・川）、共有の `projection.json`、年代別の差分の入力 `edits/` が正本で、Git で管理する。配信物（`kuniezu/static/kuniezu/map/build/`）は追跡せず、`node tools/map/build-map.cjs`（陰影は `--height --python <NumPy・Pillow の Python>`）で生成する。生成物はコミットしない。ほかにビルドは無い。ページは Django が描くので、Django の開発サーバー（`uv run python manage.py runserver 8000`）か、静的書き出し `dist/client/` の配信で開く。`kuniezu/static/kuniezu/` だけを配信しても開けない。サーバーの起動・停止は利用者のみが行い、エージェントは起動済みの `http://localhost:8000/index.html` に専用の一時ブラウザで接続する。
 - `uv sync --locked` の後 `uv run pytest` — Django 側の試験（CI の `Django CI`）。`uv run ruff check`・`uv run mypy kuniezu config scripts tests`・`uv run python scripts/build_static.py`（`dist/client/` への静的書き出し）は手元で実行する。Django の開発サーバー（`uv run python manage.py runserver 8000`）の起動・停止も利用者のみが行う。
+- `uv run python manage.py migrate` の後 `uv run python manage.py import_history` — 史実の関係データベース（`db.sqlite3`、Git に入れない）を入力から作る。`uv run python manage.py history_query --about <名前>` で引く。設計は `docs/architecture/history-rdb.md`。
 - `node tools/checks/offline.cjs` — 構文・保存・史実進行の基本検査（CI の必須チェック `Offline checks`）。`node tools/checks/organization.cjs`、`node tools/checks/infrastructure.cjs` も CI で実行する。
 - `GAME_TEST_OUTPUT=data/verification/<担当名-対象名> node tools/checks/march-clock-browser.cjs` — 実画面の検査（起動済みサーバーが必要）。分野別の検査は `tools/checks/README.md` の表から選ぶ。
 - `node tools/work/tasks.cjs claim <対象ID> --owner <担当名> --files <ファイル>` — 担当の記録。完了条件を全て満たす場合だけ `complete`、引き継ぎだけなら `release`。
