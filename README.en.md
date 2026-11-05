@@ -97,9 +97,9 @@ After generating, start the Django development server and open
 a Django template, so serving only `kuniezu/static/kuniezu/` as static files no
 longer works. `uv run python scripts/build_static.py` writes the public static
 files to `dist/client/`, which can be served as plain static files. The layout is being aligned with the Django structure of the
-website project (`docs/structure.md`, `docs/architecture/replatform-plan.md`). The map on screen is turned 16° counter-clockwise after the Meiji-era
-"Dai Nippon Zenzu"; "Map orientation" in the display settings restores north-up
-(`docs/reports/MAP_ORIENTATION.md`).
+website project (`docs/structure.md`, `docs/architecture/replatform-plan.md`). The map on screen is north-up by default. "Map orientation" in the display
+settings can turn it, for example 16° counter-clockwise after the Meiji-era
+"Dai Nippon Zenzu" (`docs/reports/MAP_ORIENTATION.md`).
 
 Starting and stopping the server is done by the user. Verification connects to an
 already running `http://localhost:8000/index.html`. The output folder for check
