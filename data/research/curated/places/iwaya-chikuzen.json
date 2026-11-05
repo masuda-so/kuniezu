@@ -2,11 +2,35 @@
   "id": "place:岩屋城（筑前）",
   "name": "岩屋城（筑前）",
   "aliases": [],
-  "geometry": null,
-  "geometryStatus": "not-asserted",
+  "geometry": {
+    "type": "Point",
+    "coordinates": [
+      130.52047222222222,
+      33.52594444444444
+    ]
+  },
+  "geometryStatus": "site-representative",
   "note": "天正14年の島津軍による攻城の対象。立花山城や同名の城とは別の地点。日記の攻城記録は城域や下柵の座標を与えない。",
   "identityBasis": {
     "scope": "『上井覚兼日記』第166号の7月26・27日条の攻城地点を登録する。",
-    "claimIds": ["iwaya-outer-fence-diary", "iwaya-fall-diary"]
+    "claimIds": [
+      "iwaya-outer-fence-diary",
+      "iwaya-fall-diary"
+    ]
+  },
+  "geometryEvidence": {
+    "source": "nabunken-iwaya-chikuzen-point",
+    "sourceUrl": "https://heritagemap.nabunken.go.jp/statistic/165875-%E5%B2%A9%E5%B1%8B%E5%9F%8E%E8%B7%A1.html",
+    "locator": "RecNo 165875、北緯・東経（世界測地系）、遺構概要",
+    "checked": "2026-11-05",
+    "scope": "太宰府市・四王寺山中腹の岩屋城跡の台帳上の代表地点。1586年の下柵・攻め口・城域の座標は示さない。",
+    "coordinateOrder": "longitude-latitude",
+    "coordinateUnits": "decimal-degrees",
+    "sourceCoordinateOrder": "latitude-longitude",
+    "sourceCoordinateLiteral": "333133.4, 1303113.7",
+    "sourceRecordId": "165875",
+    "sourceDatum": "世界測地系",
+    "sourceDatumStatus": "as-labelled",
+    "uncertainty": "0.1秒単位の記載は測量精度を意味しない。"
   }
 }
