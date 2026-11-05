@@ -1,0 +1,159 @@
+# 史実データベース（関係データベース）の設計
+
+利用者の指示（2026-11-05）：人物・非人間を問わず、全ての事象をデータベースに保存する。時間地理学と時空間データベースを参考に、関係データベースを作る。
+
+Django のアプリ `kuniezu.history` に実装した。既定のデータベースは根の `db.sqlite3`（SQLite。Git には入れない）。
+
+```sh
+uv run python manage.py migrate
+uv run python manage.py import_history          # 入力を全て取り込む（何度実行しても同じ結果）
+uv run python manage.py history_query --about 織田信長 --year 1582
+uv run python manage.py history_query --box 135 136 34 36 --year 1600
+uv run python manage.py history_query --path 徳川家康     # 軌跡
+uv run python manage.py history_query --legs 徳川家康     # 隣り合う 2 点を結ぶのに要る速さ
+uv run python manage.py history_query --bundle 織田信長   # 同じ事象に関わった対象
+```
+
+## 考え方
+
+### 分け方（重なりなく、漏れなく）
+
+記録するものを、まず 2 つに分ける（Grenon & Smith 2004 の SNAP と SPAN）。
+
+- **対象**（`Thing`）：時間を通じて存在し続けるもの。人物も、人物でないものも同じ表に入る。
+- **事象**（`Phenomenon`）：対象に起きること、対象について成り立つこと。
+
+対象は、種類をちょうど 1 つ持つ。
+
+| 種類 | 中身 |
+|---|---|
+| `person` 人物 | 個人 |
+| `group` 集団 | 家・政権・軍勢 |
+| `site` 施設・地点 | 城・関・橋・宿・湊・鉱山・寺社・市・牧 |
+| `route` 経路 | 街道、城と城の接続 |
+| `region` 領域 | 国・郡・支配域 |
+| `water` 水域 | 湖・潟・湾 |
+| `object` 物 | 文書・器物（まだ入力が無い） |
+
+事象は、あり方（`mode`）と内容（`kind`）をそれぞれちょうど 1 つ持つ。
+
+| あり方 | 意味 |
+|---|---|
+| `event` 出来事 | ある時点に起きる |
+| `state` 状態 | ある期間に成り立つ |
+
+| 内容 | 中身 |
+|---|---|
+| `existence` 生没・存廃 | 誕生、死去、創建、廃絶、存続した期間 |
+| `movement` 移動・所在 | 出発、到着、移転、居所、本拠 |
+| `conflict` 戦闘 | 合戦、包囲、戦役 |
+| `control` 支配・帰属 | 城の移動、所領の移転、家督、城主 |
+| `relation` 関係 | 同盟、従属、朝貢 |
+| `office` 役職・組織 | 役職、軍事上の役割 |
+| `naming` 名称 | 改名、別名 |
+| `works` 造営・土木 | 築城、再建、街道の整備、干拓 |
+| `document` 文書・命令 | 命令、報告、宛行 |
+| `nature` 自然 | 災害、天文（まだ入力が無い） |
+| `other` その他 | 上のどれにも分けていないもの。取り込みの結果に件数が出る |
+
+どの事象も、Peuquet（1994）の 3 つの問いに答える形で持つ：**何が**（内容と、関わる対象）、**どこで**（場所）、**いつ**（時間）。
+
+### 時間（すべての歴史を遡れる形）
+
+時間は 2 通りに持つ。
+
+- **出典の書き方のまま**：暦（和暦の旧暦／西暦／西暦の年）、年・月・日、閏月、精度（日／年／期間／年代なし）。旧暦の日付を西暦の日付に書き換えて保存しない。
+- **ユリウス通日**（`jd_start`・`jd_end`）：日を途切れなく数える整数。暦や時代が違っても、整数の大小で前後を比べ、期間で引ける。紀元前の日付も同じ式で数えられる。旧暦の日は、ゲームの暦表（`koyomi.js`、国立天文台の暦日データに基づく。1553〜1622 年）で通日に直す。西暦は 1582 年 10 月 15 日からグレゴリオ暦、前はユリウス暦。年や期間の記録は、その年の初日から末日までの幅で持ち、`jd_exact` を偽にして、日まで決まった記録と区別する。
+
+これは事象が**成り立った時間**（有効時間）。もう 1 つ、データベースが**いつ何を持っていたか**（トランザクション時間）を別に持つ（Snodgrass 1999 の二時制）。
+
+- `ImportRun`：取り込み 1 回。日時と Git のコミット。
+- `RecordVersion`：記録の変化の履歴。記録が初めて入った時、内容が変わった時、入力から消えた時に 1 行ずつ足す。行は消さない。`queries.records_as_of(取り込み番号)` で、その時点の中身を引き戻せる。
+
+### 時間地理学との対応
+
+Hägerstrand（1970）の時間地理学の言葉を、表と検索に対応させた。
+
+| 時間地理学 | このデータベース |
+|---|---|
+| 軌跡（path）：対象が時空間に描く線 | `queries.path(対象)`：日付と場所のある移動・所在を時間順に並べる |
+| 停留点（station）：対象が留まる所 | 場所を持つ状態（居所、本拠） |
+| 束（bundle）：複数の軌跡が同じ時・同じ所に集まること | `Participation`：1 つの事象に複数の対象が関わる。`queries.bundle(対象)` |
+| プリズム（prism）：2 つの時点の間に到達できる範囲 | `queries.legs(対象)`：隣り合う 2 点を結ぶのに要る速さ（1 日あたりの距離）。上限を超える組は、日付か場所のどちらかが誤り |
+| 権威の制約・領域（domain）：誰の支配下か | 内容 `control` の事象（城の移動、城主、所領） |
+
+`queries.legs` は 2 点の間を大圏距離（直線）で測る。直線は最短なので、「到達できない」と出た組は、どの街道を通っても到達できない。
+
+### 出どころ
+
+どの対象も事象も、もとの入力（`Record`）に結ばれている。`Record` は入力 1 件を書き換えずに `payload` に持つ。状態は 3 つ。
+
+| 状態 | 意味 |
+|---|---|
+| `verified` | 出典の指定箇所で確認済み（命題、所在の記録） |
+| `registered` | 台帳に登録（人物・場所。個々の事実は命題で確認する） |
+| `implementation` | 実装の棚卸し（年表、拠点、作業台帳。未照合） |
+
+同じ出来事について、確認済みの命題と、年表の実装は、別の事象として並ぶ。年表の日付が出典と合うかどうかは、2 つを突き合わせて分かる（`docs/reports/DEATH_DATE_KOBUN_REVIEW.md`）。
+
+## 表
+
+| 表 | 役割 | 件数（2026-11-05） |
+|---|---|---:|
+| `ImportRun` | 取り込みの履歴 | — |
+| `Source` | 出典 | 432 |
+| `Record` | 入力 1 件（損失なし） | 2,858 |
+| `RecordVersion` | 記録の変化の履歴 | 2,858 |
+| `Thing` | 対象 | 1,390 |
+| `ThingName` | 対象の名前（改名前後、別名） | 1,414 |
+| `Authority` | 外部の典拠 ID（Wikidata、国立国会図書館） | 72 |
+| `Place` | 対象の代表点（経緯度） | 489 |
+| `Phenomenon` | 事象 | 906 |
+| `Participation` | 事象に関わる対象 | 896 |
+
+## 入力と取り込み
+
+正本は Git の入力のまま（命題 1 件 1 ファイル。レビューと変更の履歴は Git と PR に残る）。データベースは、入力を全て読んで作る。取り込みは何度実行しても同じ結果になる。
+
+| 入力 | 件数 | 取り込み先 |
+|---|---:|---|
+| `data/research/people.jsonl` | 59 | 対象（人物）、名前、典拠 ID |
+| `data/research/places.jsonl` | 42 | 対象（施設・地点）、代表点 |
+| `data/research/claims.jsonl` | 103 | 事象（確認済み）。`eventTime` があれば出来事、無ければ状態 |
+| `data/research/location-observations.jsonl` | 22 | 事象（確認済み）。移転は出来事、所在・本拠・城主は状態 |
+| `data/research/implemented-events.jsonl` | 665 | 事象（年表の実装）。全て出来事 |
+| `data/research/implemented-sites.jsonl` | 461 | 対象（施設・地点）と代表点、存続期間の状態 |
+| `docs/work/catalog.jsonl`（要望 20 件を除く） | 1,506 | 対象（人物 378、街道 85、接続 315、水域 26、拠点 448）と、合戦 111・領土変更 143 の年表への結び付け |
+| `data/research/sources.jsonl` | 432 | 出典 |
+
+- 作業台帳の「要望」20 件は、史実ではなく作業の依頼なので取り込まない。
+- 合戦 111 件は、同じ題名の年表の出来事に 1 対 1 で結び、その内容を `conflict` にする。領土変更 143 件は、日付・種類・題名が同じ年表の出来事に結ぶ。新しい事象は作らない（同じ出来事を二重に数えない）。
+- 人物は、ゲームの表示名と台帳の人物を名前で結ぶ（例：`羽柴秀吉` と `person:toyotomi-hideyoshi` は 1 つの対象）。
+- 命題が合戦や戦役を対象にしている場合（`battle:長篠の戦い` など）、その命題の事象を、合戦の事象の一部（`parent`）にする。
+
+### 取り込んだ中身（2026-11-05）
+
+- 対象 1,390：人物 384、集団 63、施設・地点 514、経路 401、領域 2、水域 26。
+- 事象 906：出来事 711、状態 195。確認済み 127、実装の棚卸し 779。日まで決まる 702、年 149、期間 53、年代なし 2。
+- 内容：移動・所在 320、生没・存廃 219、戦闘 129、支配・帰属 90、関係 36、名称 20、役職 15、造営・土木 7、文書 6、その他 64。
+- 「その他」64 件は、年表の説明（`note`）のうち合戦に結ばれなかったもの。
+
+## 限界と次の作業
+
+- **同一性**：台帳の場所（`place:edo`「江戸」）と、ゲームの拠点（「江戸城」）は、名前が違うと別の対象のまま。同じ名前で点が 1 つに決まる 22 件だけ、台帳の場所に点を借りている（`borrowed-from-namesake` と明記。同じ場所だという主張ではない）。台帳の場所 18 件に点が無く、その人物の軌跡は出ない。同一性を出典付きで結ぶ表が要る。
+- **年表の中身**：年表は書き出し済みの項目（題名・日付・種類・家・城）だけを取り込んでいる。本文と人物名は書き出しに無い。
+- **経路・領域の形**：街道の線、支配域の面は、まだ表に入れていない（代表点だけ）。
+- **自然・物**：入力がまだ無い。
+- **範囲**：全ての事象を保存できる形にしたが、入っているのは今ある入力の全件。歴史上の全件ではない。
+- 既存の一時的な SQLite（`tools/research/history_sqlite.py`）と検索道具は、そのまま残している。
+
+## 参考にしたもの
+
+- Hägerstrand, T. (1970) "What about people in regional science?" *Papers of the Regional Science Association* 24: 7–21.（時間地理学：軌跡、停留点、束、プリズム、3 つの制約）
+- Peuquet, D. J. (1994) "It's about time: A conceptual framework for the representation of temporal dynamics in geographic information systems." *Annals of the Association of American Geographers* 84(3): 441–461.（何が・どこで・いつ の三つ組）
+- Grenon, P. & Smith, B. (2004) "SNAP and SPAN: Towards dynamic spatial ontology." *Spatial Cognition and Computation* 4(1): 69–104.（存在し続けるものと、起きることの区別）
+- Snodgrass, R. T. (1999) *Developing Time-Oriented Database Applications in SQL*. Morgan Kaufmann.（有効時間とトランザクション時間）
+- Worboys, M. (2005) "Event-oriented approaches to geographic phenomena." *International Journal of Geographical Information Science* 19(1): 1–28.（出来事を中心に置く時空間モデル）
+- Güting, R. H. & Schneider, M. (2005) *Moving Objects Databases*. Morgan Kaufmann.（動く対象の時空間データベース）
+
+書誌は記憶に基づく。この設計のために原典を読み直してはいない。
