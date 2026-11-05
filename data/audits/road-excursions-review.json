@@ -1,10 +1,10 @@
 {
-  "scope": "全85描画街道を点検。近現代参考線の完全往復と個別確認した9閉路だけを整理。史実上の全支線の有無を確定しない。",
+  "scope": "全85描画街道を点検。近現代参考線の完全往復と個別確認した閉路だけを整理。史実上の全支線の有無を確定しない。",
   "summary": {
     "roads": 85,
     "correctedRoads": 60,
     "excursions": 201,
-    "removedKm": 163.46884315978212
+    "removedKm": 176.05006158670272
   },
   "rows": [
     {
@@ -693,7 +693,7 @@
     {
       "name": "羽州道",
       "modernReference": true,
-      "removedVertices": 20,
+      "removedVertices": 177,
       "excursions": [
         {
           "first": 918,
@@ -729,14 +729,14 @@
           ]
         },
         {
-          "first": 4769,
-          "last": 4771,
-          "lengthKm": 0.34726089586683884,
-          "returnRatio": 1,
-          "reviewed": false,
+          "first": 4687,
+          "last": 4846,
+          "lengthKm": 12.928479322787439,
+          "returnRatio": 0.5213495436255368,
+          "reviewed": true,
           "junction": [
-            140.619267,
-            40.478544
+            140.559313,
+            40.483289
           ]
         }
       ]
@@ -1930,7 +1930,7 @@
     },
     {
       "name": "義州大路",
-      "modernReference": false,
+      "modernReference": true,
       "removedVertices": 0,
       "excursions": []
     },
@@ -1954,7 +1954,7 @@
     },
     {
       "name": "関北路",
-      "modernReference": false,
+      "modernReference": true,
       "removedVertices": 0,
       "excursions": []
     },

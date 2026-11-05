@@ -134,6 +134,24 @@
       "basis": "modern-routing-observation",
       "reason": "近現代比較線が粗い経由点を訪れて同じ交差点へ戻る寄道を整理する。歴史的な日向道の内陸経由地は別途原図から再構成し、この整理を史実全線の復元とは扱わない。",
       "reviewInput": "data/audits/road-remaining-excursions.json"
+    },
+    {
+      "road": "羽州道",
+      "junction": [
+        140.559313,
+        40.483289
+      ],
+      "lengthRange": [
+        12,
+        14
+      ],
+      "basis": "modern-routing-observation",
+      "reason": "大鰐付近から東の比較用経由点を通って同一交差点へ帰る約12.9km。弘前国道維持出張所が示す大鰐・石川・弘前の通過順および別路線の乳井通りを参照し、羽州道の比較線から閉路を除く。戦国期の街道細部の確定とは区別する。",
+      "sourceUrls": [
+        "https://www.thr.mlit.go.jp/aomori/syutu/hirokoku/rekishi_kaidou/usyu-kaidou2/usyu-kaidou2.html",
+        "https://www.thr.mlit.go.jp/aomori/syutu/hirokoku/rekishi_kaidou/usyu-kaidou3/usyu-kaidou3.html",
+        "https://www.thr.mlit.go.jp/aomori/syutu/hirokoku/hirokoku_rekisi/hirokoku-rekisi/aomori_rekisikaidou/nyui-kaidou/nyui-kaidou-1.html"
+      ]
     }
   ]
 }
