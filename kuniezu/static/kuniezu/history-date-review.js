@@ -34,6 +34,8 @@
   "accessed": "2026-11-05",
   "year": "2024"
  };
+ // 文化財総覧WebGIS 98015844 の城跡代表点。観音寺城の基準点は別に保持する。
+ Object.assign(TK.JOKAKU.find(e=>e.k==='build'&&e.n==='安土城'),{lon:136.1393,lat:35.15638});
  Object.assign(TK.JOKAKU.find(e=>e.title==='安土城炎上'),{
   source:azuchiFire.url,
   text:'安土城の天主などが焼け落ちた。旧暦六月十五日付の日記に火災の報が残る。出火の原因は分かっていない。'
