@@ -514,3 +514,45 @@ def test_a_stated_representative_wins_over_a_namesake(inputs):
         edo.longitude,
         edo.latitude,
     )
+
+
+def test_an_identifier_settled_by_name_is_kept_as_a_key(inputs):
+    import_history(inputs)
+
+    # A claim names the castle "site:岩石城"; only the registry place has that name.
+    castle = Thing.objects.get(key="place:ganjaku")
+    assert ThingKey.objects.get(key="site:岩石城").thing == castle
+    assert list(queries.find_things("site:岩石城")) == [castle]
+    assert not Thing.objects.filter(key="site:岩石城").exists()
+    # Nothing was merged: no identity record says so.
+    assert import_history(inputs).merged_things == 0
+
+    # Being an identifier the inputs use, an identity record may name it.
+    identity(inputs, "edo", "represented-by", ["place:edo", "site:岩石城"])
+    import_history(inputs)
+
+    edo = Thing.objects.get(key="place:edo")
+    castle = Thing.objects.get(key="place:ganjaku")
+    assert edo.place.basis == "represented-by-game-site"
+    assert (edo.place.longitude, edo.place.latitude) == (
+        castle.place.longitude,
+        castle.place.latitude,
+    )
+
+
+def test_a_merged_game_site_keeps_its_catalog_entry(inputs):
+    import_history(inputs)
+    # The work catalog lists the game's node "agata" under the name 縣城, while
+    # the node is Matsuo castle and the registry keeps 縣城 as another site.
+    entry = Record.objects.get(
+        record_type=RecordType.CATALOG, payload__context__siteId="agata"
+    )
+    assert [thing.key for thing in entry.things.all()] == ["node:agata"]
+
+    identity(inputs, "matsuo", "same-site", ["place:matsuo-hyuga", "node:agata"])
+    import_history(inputs)
+
+    entry.refresh_from_db()
+    assert [thing.key for thing in entry.things.all()] == ["place:matsuo-hyuga"]
+    other = Thing.objects.get(key="place:agata")
+    assert entry not in other.records.all()

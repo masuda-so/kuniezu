@@ -238,6 +238,8 @@ class Importer:
         self.identity_records: dict[str, list[Record]] = {}
         # The identifiers the inputs themselves use, before any identity is applied.
         self.used: set[str] = set()
+        # Every identifier an input has used, and the thing it turned out to be.
+        self.keyed: dict[str, Thing] = {}
         self.phenomena: dict[str, Phenomenon] = {}
         self.by_title: dict[str, list[Phenomenon]] = {}
         self.timeline: dict[tuple[str, str, str], list[Phenomenon]] = {}
@@ -306,7 +308,7 @@ class Importer:
         names: tuple[str, ...] = (),
     ) -> Thing:
         given, key = key, self.same.get(key, key)
-        thing = self.things.get(key)
+        thing = self.things.get(key) or self.keyed.get(given)
         if thing is None:
             thing = Thing.objects.create(
                 key=key, kind=kind, name=name, registered=registered
@@ -329,10 +331,11 @@ class Importer:
         """Note that an input names a thing by an identifier."""
         self.used.add(identifier)
         for key in dict.fromkeys((thing.key, identifier)):
+            self.keyed[key] = thing
             _, added = ThingKey.objects.get_or_create(
                 key=key, defaults={"thing": thing}
             )
-            if added and key != thing.key:
+            if added and key in self.same:
                 self.summary.merged_things += 1
         for identity in self.identity_records.get(identifier, []):
             thing.records.add(identity)
@@ -343,17 +346,20 @@ class Importer:
         kind = THING_PREFIX.get(prefix)
         if kind is None:
             return None
-        known = self.things.get(self.same.get(identifier, identifier))
-        if known is not None:
-            # The identifier itself, or the thing an identity record merges it into.
-            self.known_as(known, identifier)
-        elif identifier not in self.same:
+        # The identifier as an earlier record settled it, the thing of that key,
+        # or the thing an identity record merges it into.
+        known = self.keyed.get(identifier) or self.things.get(
+            self.same.get(identifier, identifier)
+        )
+        if known is None and identifier not in self.same:
             # A record may name a registered thing by one of its names.
             same = self.by_name.get((kind, name), [])
             if len(same) == 1:
                 known = same[0]
         if known is None:
             return self.thing(identifier, kind, name, record)
+        # However it was found, the thing is now known by this identifier too.
+        self.known_as(known, identifier)
         known.records.add(record)
         return known
 
@@ -676,7 +682,8 @@ class Importer:
 
     def catalog_site(self, subject: str, key: str, record: Record) -> None:
         """A site in the work catalog is the game's site of that identifier."""
-        found = self.things.get("node:" + key) or self.things.get(key)
+        # The identifier may have been merged into another thing by an identity.
+        found = self.keyed.get("node:" + key) or self.keyed.get(key)
         if found is None:
             self.resolve("site:" + subject, record)
         else:
@@ -885,7 +892,7 @@ class Importer:
             )
         }
         for place_key, site_key in self.represented.items():
-            place, site = self.things[place_key], self.things[site_key]
+            place, site = self.keyed[place_key], self.keyed[site_key]
             if place.pk not in located and site.pk in located:
                 point = located[site.pk]
                 Place.objects.create(
