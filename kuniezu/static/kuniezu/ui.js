@@ -235,35 +235,41 @@ function drawBorders(c,z,k0){if(!S)return;drawContextBorders(c,z);const EDGE=bor
  c.setLineDash([]);
 }
 
+function roadDrawSections(){
+ return G.ROADS.flatMap(raw=>{
+  const road=TK.roadDisplay(raw);
+  return (road.sections||[road.pts]).map(pts=>({road,pts}));
+ });
+}
 const ROADP=[];
-function roadPaths(){if(ROADP.length)return ROADP;for(const raw of G.ROADS){const r=TK.roadDisplay(raw),pts=r.pts;const p=new Path2D();p.moveTo(pts[0][0],pts[0][1]);
-  for(let i=1;i<pts.length;i++)p.lineTo(pts[i][0],pts[i][1]);
+function roadPaths(){if(ROADP.length)return ROADP;for(const {road:r,pts} of roadDrawSections()){
   // 名札は一番長い区間の中ほどに
   let bi=1,bl=0;for(let i=1;i<pts.length;i++){const l=Math.hypot(pts[i][0]-pts[i-1][0],pts[i][1]-pts[i-1][1]);if(l>bl&&i>1&&i<pts.length-1||bl===0){bl=l;bi=i;}}
-  const A=pts[bi-1],B=pts[bi];ROADP.push({p,name:r.name,mx:(A[0]+B[0])/2,my:(A[1]+B[1])/2,ang:Math.atan2(B[1]-A[1],B[0]-A[0])});}return ROADP;}
+  const A=pts[bi-1],B=pts[bi];ROADP.push({name:r.name,mx:(A[0]+B[0])/2,my:(A[1]+B[1])/2,ang:Math.atan2(B[1]-A[1],B[0]-A[0])});}return ROADP;}
 function drawRoadLabels(c,z){c.save();for(const r of roadPaths()){c.save();c.translate(r.mx,r.my);let a=r.ang;if(a>Math.PI/2)a-=Math.PI;if(a<-Math.PI/2)a+=Math.PI;c.rotate(a);c.font=`700 ${11/z}px "Shippori Mincho B1",serif`;c.textAlign='center';c.textBaseline='bottom';c.lineWidth=3/z;c.strokeStyle='rgba(255,248,230,.9)';c.strokeText(r.name,0,-2/z);c.fillStyle='#6a3e1c';c.fillText(r.name,0,-2/z);c.restore();}c.restore();}
 
 // 街道の名札は城の名札・肖像を描いたあとに、空いている所だけに置く（重なる所は出さない）
 const RCUM=new Map();
 function roadLabelsTop(c,z,fits,placed){if(z<.95)return;
- const list=G.ROADS.map(raw=>{const r=TK.roadDisplay(raw);let cum=RCUM.get(r);if(!cum){cum=[0];for(let i=1;i<r.pts.length;i++)cum.push(cum[i-1]+Math.hypot(r.pts[i][0]-r.pts[i-1][0],r.pts[i][1]-r.pts[i-1][1]));RCUM.set(r,cum);}return {r,cum,L:cum[cum.length-1]};}).sort((a,b)=>b.L-a.L);
- const at=(o,d)=>{const {r,cum}=o;d=Math.max(0,Math.min(o.L,d));let lo=1,hi=cum.length-1;while(lo<hi){const mid=(lo+hi)>>1;if(cum[mid]<d)lo=mid+1;else hi=mid;}const i=lo;const a=r.pts[i-1],b=r.pts[i],t=(d-cum[i-1])/Math.max(1e-6,cum[i]-cum[i-1]);return [a[0]+(b[0]-a[0])*t,a[1]+(b[1]-a[1])*t];};
+ const list=roadDrawSections().map(({road:r,pts})=>{let cum=RCUM.get(pts);if(!cum){cum=[0];for(let i=1;i<pts.length;i++)cum.push(cum[i-1]+Math.hypot(pts[i][0]-pts[i-1][0],pts[i][1]-pts[i-1][1]));RCUM.set(pts,cum);}return {r,pts,cum,L:cum[cum.length-1]};}).sort((a,b)=>b.L-a.L);
+ const at=(o,d)=>{const {pts,cum}=o;d=Math.max(0,Math.min(o.L,d));let lo=1,hi=cum.length-1;while(lo<hi){const mid=(lo+hi)>>1;if(cum[mid]<d)lo=mid+1;else hi=mid;}const i=lo;const a=pts[i-1],b=pts[i],t=(d-cum[i-1])/Math.max(1e-6,cum[i]-cum[i-1]);return [a[0]+(b[0]-a[0])*t,a[1]+(b[1]-a[1])*t];};
  const ic=[];for(const C of G.CL){const [x,y]=w2s(C.x,C.y);if(x>-20&&y>-20&&x<VW+20&&y<VH+20)ic.push([x-11,y-14,22,22]);}
  const ok=(x,y,w,h)=>{if(!fits(x,y,w,h))return false;for(const r of ic)if(x<r[0]+r[2]&&x+w>r[0]&&y<r[1]+r[3]&&y+h>r[1])return false;return true;};
  c.save();c.font='700 10.5px "Shippori Mincho B1",serif';c.textAlign='center';c.textBaseline='middle';
- for(const o of list){const roadName=o.r.evidence?.label||o.r.name;const tw=c.measureText(roadName).width+6;const wl=tw/z;if(o.L<wl*1.5)continue;
+ const named=new Set();
+ for(const o of list){if(named.has(o.r.name))continue;const roadName=o.r.evidence?.label||o.r.name;const tw=c.measureText(roadName).width+6;const wl=tw/z;if(o.L<wl*1.5)continue;
   for(const f of [.5,.38,.62,.26,.74,.16,.84]){const d=o.L*f;const A=at(o,d-wl/2),B=at(o,d+wl/2),M=at(o,d);const [sx,sy]=w2s(M[0],M[1]);if(sx<tw/2||sy<12||sx>VW-tw/2||sy>VH-12)continue;
    const [ax,ay]=w2s(A[0],A[1]),[bx,by]=w2s(B[0],B[1]);if(Math.hypot(bx-ax,by-ay)<tw*.8)continue; // 曲がりくねった所は避ける
    let a=Math.atan2(by-ay,bx-ax);if(a>Math.PI/2)a-=Math.PI;if(a<-Math.PI/2)a+=Math.PI;
    const ca=Math.abs(Math.cos(a)),sa=Math.abs(Math.sin(a)),bw=tw*ca+13*sa,bh=tw*sa+13*ca;const ox=-Math.sin(a)*-7,oy=Math.cos(a)*-7;
    const bx0=sx+ox-bw/2,by0=sy+oy-bh/2;if(!ok(bx0,by0,bw,bh))continue;placed.push([bx0,by0,bw,bh]);
-   c.save();c.translate(sx+ox,sy+oy);c.rotate(a);c.lineWidth=3;c.strokeStyle='rgba(255,248,230,.88)';c.strokeText(roadName,0,0);c.fillStyle='#6a3e1c';c.fillText(roadName,0,0);c.restore();break;}}
+   c.save();c.translate(sx+ox,sy+oy);c.rotate(a);c.lineWidth=3;c.strokeStyle='rgba(255,248,230,.88)';c.strokeText(roadName,0,0);c.fillStyle='#6a3e1c';c.fillText(roadName,0,0);c.restore();named.add(o.r.name);break;}}
  c.restore();}
 let SEAMASK=null;
 // 全街道を一つの道筋にまとめ、縮尺ごとに画面で0.35px未満の折れを間引く（街道の線形データは変えない）。
 const roadLOD=new Map();
 function roadsFor(z){const lv=Math.max(-3,Math.min(4,Math.floor(Math.log2(Math.max(.01,z)))));let p=roadLOD.get(lv);if(p)return p;p=new Path2D();const tol=.35/2**lv;
- for(const raw of G.ROADS){const pts=TK.roadDisplay(raw).pts;const flat=[];for(const q of pts)flat.push(q[0],q[1]);const r=lv>=4?flat:simplifyRing(flat,tol);p.moveTo(r[0],r[1]);for(let i=2;i<r.length;i+=2)p.lineTo(r[i],r[i+1]);}
+ for(const {pts} of roadDrawSections()){const flat=[];for(const q of pts)flat.push(q[0],q[1]);const r=lv>=4?flat:simplifyRing(flat,tol);p.moveTo(r[0],r[1]);for(let i=2;i<r.length;i+=2)p.lineTo(r[i],r[i+1]);}
  roadLOD.set(lv,p);return p;}
 function drawRoads(c,z,labels){
  // 海や湖を渡る区間（七里の渡し・今切の渡しなど）は、陸の線と変えて細い点線で描く
