@@ -198,6 +198,23 @@
       "sourceUrls": [
         "https://gokujo-aizu.com/pdf/nishiaizu-echigostory.pdf"
       ]
+    },
+    {
+      "road": "二本松街道",
+      "junction": [
+        140.264256,
+        37.536379
+      ],
+      "lengthRange": [
+        13,
+        14
+      ],
+      "basis": "modern-routing-observation",
+      "reason": "東西の比較線が同一交差点から北へ回り、約13.6kmで同じ地点へ戻る。会津藩期の上下街道は別の通過経路であり、この現代比較線の閉路を裏づけない。戦国期の道筋は確定しない。",
+      "sourceUrls": [
+        "https://www.town.bandai.fukushima.jp/uploaded/attachment/1585.pdf",
+        "https://www.city.aizuwakamatsu.fukushima.jp/docs/2023042400018/file_contents/05ni1.pdf"
+      ]
     }
   ]
 }

@@ -4,7 +4,7 @@
     "roads": 85,
     "correctedRoads": 60,
     "excursions": 202,
-    "removedKm": 233.55084352045532
+    "removedKm": 246.99998201152272
   },
   "rows": [
     {
@@ -2031,17 +2031,17 @@
     {
       "name": "二本松街道",
       "modernReference": true,
-      "removedVertices": 6,
+      "removedVertices": 193,
       "excursions": [
         {
-          "first": 327,
-          "last": 333,
-          "lengthKm": 0.17369537810841962,
-          "returnRatio": 1,
-          "reviewed": false,
+          "first": 231,
+          "last": 424,
+          "lengthKm": 13.62283386917581,
+          "returnRatio": 0.529172337423449,
+          "reviewed": true,
           "junction": [
-            140.264047,
-            37.582617
+            140.264256,
+            37.536379
           ]
         }
       ]
