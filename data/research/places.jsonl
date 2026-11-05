@@ -8,6 +8,7 @@
 {"id":"place:higamine-fort","name":"火ヶ峰砦","aliases":[],"geometry":null,"geometryStatus":"not-asserted","note":"位置に異説がある。今回座標を登録しない。","identityBasis":{"scope":"確認済み命題の対象場所。日時と関係は元命題に保持し、座標は未主張。","claimIds":["takatenjin-six-forts-preparation-years"]}}
 {"id":"place:hiroshima","name":"広島城","geometry":null,"geometryStatus":"not-asserted","note":"名称による場所同定。精密な座標・城域やゲームの管理拠点との同一性は、この登録だけで確定しない。"}
 {"id":"place:iino","name":"飯野城","geometry":null,"geometryStatus":"not-asserted","note":"史料の地名による場所同定。精密な城域・布陣や経路の座標はこの所在記録では確定しない。"}
+{"id":"place:岩屋城（筑前）","name":"岩屋城（筑前）","aliases":[],"geometry":null,"geometryStatus":"not-asserted","note":"天正14年の島津軍による攻城の対象。立花山城や同名の城とは別の地点。日記の攻城記録は城域や下柵の座標を与えない。","identityBasis":{"scope":"『上井覚兼日記』第166号の7月26・27日条の攻城地点を登録する。","claimIds":["iwaya-outer-fence-diary","iwaya-fall-diary"]}}
 {"id":"place:kashiwagi","name":"柏木城","aliases":[],"geometry":null,"geometryStatus":"not-asserted","note":"1585年の蘆名方防衛拠点。築城日・領主就任日ではない。","identityBasis":{"scope":"確認済み命題の対象場所。日時と関係は元命題に保持し、座標は未主張。","claimIds":["kashiwagi-1585-defence"]}}
 {"id":"place:kazusa-kajiro","name":"上代","geometry":null,"geometryStatus":"not-asserted","note":"名称による場所同定。精密な座標・城域やゲームの管理拠点との同一性は、この登録だけで確定しない。"}
 {"id":"place:kiyosu-castle","name":"清洲城","geometry":null,"geometryStatus":"not-asserted","note":"城を指す記録。清洲付近という広域の所在観測とは別の場所IDで保持。"}
