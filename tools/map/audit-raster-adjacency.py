@@ -18,7 +18,7 @@ def audit(root, overlay=None):
     if canonical:
         sys.path.insert(0, str(Path(__file__).resolve().parent))
         from map_data import read_definition, source_sha256
-        source_dir = Path(__file__).resolve().parents[2] / canonical  # 生成物の置き場（game/map/build）の深さに依らずリポジトリから引く
+        source_dir = Path(__file__).resolve().parents[2] / canonical  # 生成物の置き場（kuniezu/static/kuniezu/map/build）の深さに依らずリポジトリから引く
         rows = read_definition(source_dir)
         baseline_sha = source_sha256(source_dir)
         if baseline_sha != manifest["source"]["sha256"]:

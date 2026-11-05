@@ -67,13 +67,13 @@
 | 4 | **道具の Python 化**：地図（`tools/map`）→ 史料（`tools/research`）→ 肖像・地理。JS を実行する検査は pytest から Node を呼ぶ形に包む | 生成物が Node 版と一致し、Node 版を消せる |
 | 5 | **史実 DB を Django に**：今の関係表（entity・alias・authority・place・source・record・event_date・spatial_reference ほか）をモデルと移行にし、管理画面で閲覧・編集、curated JSON との取り込み・書き出しを管理コマンドにする | 取り込み→書き出しで curated JSON が変わらない。時空間検索と集計が今の結果と一致する |
 
-段 1 は 2 つに分ける。**1a**：Django・uv の骨組み（設定・URL・ページ・静的書き出し・試験・CI）を足し、`game/` は動かさない。ページは `game/index.html` に `<base>` を入れて返すだけの仮の橋渡し（`docs/structure.md`）。**1b**：`game/` を `kuniezu/static/kuniezu/` と `kuniezu/templates/` へ移し、道具・検査・文書の経路を直し、`index.html` を本物のテンプレートにする。
+段 1 は 2 つに分ける。**1a**：Django・uv の骨組み（設定・URL・ページ・静的書き出し・試験・CI）を足し、`game/` は動かさない。ページは `game/index.html` に `<base>` を入れて返すだけの仮の橋渡し（`docs/structure.md`）。**1b**：`game/` を `kuniezu/static/kuniezu/` と `kuniezu/templates/` へ移し、道具・検査・文書の経路を直し、`index.html` を本物のテンプレートにする。1b は 3 つの PR に分ける：**1b-1** `game/` を `kuniezu/static/kuniezu/` へ移し、道具・検査・文書の経路を直す（`index.html` は仮の橋渡しのまま）。**1b-2** `index.html` を `kuniezu/templates/` のテンプレートにし、インライン CSS を静的ファイルへ出す。**1b-3** 地図の正本を `kuniezu/map/` へ移し、`kuniezu/static/kuniezu/map/build/` には生成物だけを置く。
 
 段 1 を最初にするのは、全ファイルの移動を、開いている枝が少ない今のうちに済ませるため。Codex の作業中の枝（`codex/*`、一時停止中）は、段 1 の後に main へ付け替える必要がある。
 
 ## 未決の点（該当の段で利用者に確認する）
 
-1. 正本の置き場：`game/map/`（正本）と `game/map/build/`（生成物）を Django の構成でどこに置くか（アプリ内のデータと `static/` の生成物に分ける案）。
+1. 正本の置き場：**決定（2026-11-05、利用者）** アプリのデータに分ける。正本は `kuniezu/map/`、生成物だけを `kuniezu/static/kuniezu/map/build/` に置く。実行時に読む `definition.csv`・`default.map` は生成のときに `build/` へ写す（段 1b-3）。
 2. MapLibre の置き方：`static/vendor/` に通知付きで置くか、外部から読むか（website は第三者の依存をアプリの原本に写さない決まり）。
 3. 史実 DB の正本：curated JSON を正本のまま、Django の DB を派生物にするか。管理画面で編集した結果を JSON へ書き戻す運用にするか。
 4. 測量法の承認の要否：必要なら国土地理院へ問い合わせる。確認が取れるまで、タイルの同梱・加工配布はしない。

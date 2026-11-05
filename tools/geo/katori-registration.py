@@ -46,7 +46,7 @@ geo={'type':'FeatureCollection','properties':{'method':'香取市の中世内海
 waters=[]
 for f in features:
  waters.append({'name':f['properties']['name'],'type':'tidal-marsh','source':'katoriTerrain','rings':[[[round(x,6),round(y,6)]for x,y in r]for r in f['geometry']['coordinates']],'note':geo['properties']['method']})
-(ROOT/'game/katori-lowlands.js').write_text('"use strict";\n/* 自動生成。tools/geo/katori-registration.py。精密な旧汀線ではなく低地制約付き推定湿地。 */\nTK.KATORI_LOWLANDS='+json.dumps(waters,ensure_ascii=False,separators=(',',':'))+';\n')
+(ROOT/'kuniezu/static/kuniezu/katori-lowlands.js').write_text('"use strict";\n/* 自動生成。tools/geo/katori-registration.py。精密な旧汀線ではなく低地制約付き推定湿地。 */\nTK.KATORI_LOWLANDS='+json.dumps(waters,ensure_ascii=False,separators=(',',':'))+';\n')
 # 同一座標・縮尺の比較。古絵図を再投影し、ゲームの現代比較湖岸を青で重ねる。
 img=Image.open('/tmp/kuniezu-hitachi-north-large.png').convert('RGB');w,h=1400,850;lo0,lo1,la0,la1=140.12,140.9,35.72,36.25
 T=np.array([[(lo1-lo0)/w,0],[0,-(la1-la0)/h],[lo0,la1]])
@@ -56,7 +56,7 @@ P=np.linalg.inv(H)@D
 im=img.transform((w,h),Image.Transform.AFFINE,tuple(P[:2].flat),Image.Resampling.BILINEAR,fillcolor='#e8e1d0');dr=ImageDraw.Draw(im)
 def xy(p):return ((p[0]-lo0)/(lo1-lo0)*w,(la1-p[1])/(la1-la0)*h)
 # read plain JSON array in generated baseline
-text=(ROOT/'game/lake-baselines.js').read_text();start=text.index('[');end=text.rfind(']');lakes=json.loads(text[start:end+1])
+text=(ROOT/'kuniezu/static/kuniezu/lake-baselines.js').read_text();start=text.index('[');end=text.rfind(']');lakes=json.loads(text[start:end+1])
 for l in lakes:
  for ring in l['rings']:
   if any(lo0<x<lo1 and la0<y<la1 for x,y in ring):dr.line([xy(p)for p in ring],fill='#075bde',width=2)

@@ -21,5 +21,5 @@ for r in corridors:
     assert all(len(w['point'])==2 and all(isinstance(v,(int,float)) for v in w['point']) for w in r['waypoints'])
 lines.append('TK.CAMPAIGN_CORRIDORS=(TK.CAMPAIGN_CORRIDORS||[]).concat('+json.dumps(corridors,ensure_ascii=False,separators=(',',':'))+');')
 lines+=['})();']
-(root/'game/ina-approach.js').write_text('\n'.join(lines)+'\n')
+(root/'kuniezu/static/kuniezu/ina-approach.js').write_text('\n'.join(lines)+'\n')
 (root/'data/audits/ina-approach-source-review.json').write_text(json.dumps({'scope':'長い直線接続を現代道路比較で改善。史実経路の確定ではない。','source':'https://routing.openstreetmap.de/routed-bike/','copyright':'© OpenStreetMap contributors','license':'https://opendatacommons.org/licenses/odbl/1-0/','accessed':'2026-11-01','routes':reference['audit'],'anchors':anchors},ensure_ascii=False,indent=2)+'\n')

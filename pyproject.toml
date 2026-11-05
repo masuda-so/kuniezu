@@ -46,8 +46,8 @@ js.indent_size = 2
 
 # ==== ruff ====
 [tool.ruff]
-# The game (game/), research data, the Node and Python tools and the parked
-# code are not part of the Django project yet. Stage 4 of the re-platforming
+# The game (kuniezu/static/), research data, the Node and Python tools and the
+# parked code are not part of the Django project yet. Stage 4 of the re-platforming
 # brings the Python tools under these rules.
 extend-exclude = [
   "*/migrations/*.py",
@@ -55,7 +55,7 @@ extend-exclude = [
   "data/*",
   "dist/*",
   "docs/*",
-  "game/*",
+  "kuniezu/static/*",
   "staticfiles/*",
   "tools/*",
 ]

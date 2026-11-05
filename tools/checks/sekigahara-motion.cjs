@@ -5,8 +5,8 @@ const fs=require('node:fs'),path=require('node:path'),vm=require('node:vm'),asse
 const root=process.argv[2]||path.resolve(__dirname,'../..'),overlay=process.argv[3],reportPath=process.argv[4];
 const read=f=>fs.readFileSync(overlay&&fs.existsSync(path.join(overlay,f))?path.join(overlay,f):path.join(root,f),'utf8');
 const c=vm.createContext({console});c.window=c;
-for(const [,f] of read('game/index.html').matchAll(/<script src="([^"?]+)(?:\?v=[0-9a-f]+)?"/g)){
- if(!['ui.js','kb.js','bscene.js','terrain-tiles.js'].includes(f))vm.runInContext(read('game/'+f),c,{filename:f});
+for(const [,f] of read('kuniezu/static/kuniezu/index.html').matchAll(/<script src="([^"?]+)(?:\?v=[0-9a-f]+)?"/g)){
+ if(!['ui.js','kb.js','bscene.js','terrain-tiles.js'].includes(f))vm.runInContext(read('kuniezu/static/kuniezu/'+f),c,{filename:f});
 }
 c.G.build();c.G.buildBattleCatalog();
 const {TK,G,TKBattleMotion:M}=c,sc=TK.BATTLES['関ヶ原の戦い'];

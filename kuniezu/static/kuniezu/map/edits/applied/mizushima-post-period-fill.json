@@ -1,5 +1,5 @@
 {
-  "id": "mizushima-east-post-period-fill",
+  "id": "mizushima-post-period-fill",
   "layer": "provinces",
   "baseRevision": "3ab7e5f2175760f5e7d5d5e134424ced9d5e742b",
   "validFrom": [
@@ -13,9 +13,9 @@
     1
   ],
   "payload": {
-    "file": "../../../../data/inputs/kojima-coast-review/mizushima-east-meiji-core.geojson",
+    "file": "../../../../../../data/inputs/kojima-coast-review/mizushima-west-meiji-core.geojson",
     "feature": 0,
-    "fromKey": "castle:tenjin",
+    "fromKey": "castle:bmatsuyama",
     "toKey": "sea"
   },
   "basis": "国土交通省の倉敷地形分類図で旧水部と埋立地が重なり、明治期の土地利用図でも水面側にある範囲",

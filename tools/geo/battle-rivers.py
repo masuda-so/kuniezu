@@ -43,7 +43,7 @@ for name,m in meta.items():
   for part in parts:
    if part.geom_type!='LineString' or part.length<max(.0001,(e-w)*.002):continue
    part=part.simplify(max(.00007,(e-w)/1800),preserve_topology=True);rivers.append({'id':way['id'],'name':way['name'],'kind':way['kind'],'points':[[round(x,6),round(y,6)]for x,y in part.coords]})
- path=root/'game/atlas'/m['file'];d=json.loads(path.read_text());d['comparisonRivers']=rivers;d['riverSource']={'dataset':'OpenStreetMap contributors / Geofabrik','license':'ODbL 1.0','url':'https://www.openstreetmap.org/copyright','accessed':args.accessed,'scope':'現代河川中心線。16世紀の河道・幅・堤防ではない。広域では川だけ、25km以下では名前付き細流も表示。','inputFiles':{pathlib.Path(file).parent.name+'/'+pathlib.Path(file).name:digest for file,digest in inputs.items()}};path.write_text(json.dumps(d,ensure_ascii=False,separators=(',',':'))+'\n');report.append({'title':name,'lines':len(rivers),'points':sum(len(r['points'])for r in rivers),'file':m['file']})
+ path=root/'kuniezu/static/kuniezu/atlas'/m['file'];d=json.loads(path.read_text());d['comparisonRivers']=rivers;d['riverSource']={'dataset':'OpenStreetMap contributors / Geofabrik','license':'ODbL 1.0','url':'https://www.openstreetmap.org/copyright','accessed':args.accessed,'scope':'現代河川中心線。16世紀の河道・幅・堤防ではない。広域では川だけ、25km以下では名前付き細流も表示。','inputFiles':{pathlib.Path(file).parent.name+'/'+pathlib.Path(file).name:digest for file,digest in inputs.items()}};path.write_text(json.dumps(d,ensure_ascii=False,separators=(',',':'))+'\n');report.append({'title':name,'lines':len(rivers),'points':sum(len(r['points'])for r in rivers),'file':m['file']})
 if args.titles:
  previous=json.loads((root/'data/audits/battle-rivers-review.json').read_text())
  replacements={row['title']:row for row in report}

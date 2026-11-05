@@ -1,4 +1,4 @@
-/* 地図の正本 game/map/ の読み書き。層ごとにフォルダを分け、各層の中は Paradox/CK3 の公開されている map_data の名前と書式に合わせる。
+/* 地図の正本 kuniezu/static/kuniezu/map/ の読み書き。層ごとにフォルダを分け、各層の中は Paradox/CK3 の公開されている map_data の名前と書式に合わせる。
    admin/    行政区分（郡の画像 gun.png・一覧 gun.csv）。最小単位の郡から国・道・国家へ積み上がる。
    control/  支配（城の支配域 provinces.png・definition.csv・default.map、郡と城の対応 gun-assignment.csv・gun-overrides.json）。
    physical/ 自然（標高 heightmap.png・川 rivers.png・岸の線を描かない切れ目 shoreline_masks.geojson）。
@@ -7,7 +7,7 @@
    definition.csv  見出しなし。1行目は予約の `0;0;0;0;x;x;`、以下 `id;R;G;B;name;x;`。name は区画キー（sea・unassigned・castle:…・lake:…・neutral:…）。
    default.map     CK3 の文法（key = "値"、key = LIST { … }）。definitions・provinces と、海（sea_zones）・湖（lakes）の id。
    projection.json 本作だけの情報：経緯度→格子の変換（CK3 の地図は経緯度を持たない）。
-   Web 配信用の生成物（game/map/build/、Git で追跡しない）は tools/map/build-map.cjs がここから作る。 */
+   Web 配信用の生成物（kuniezu/static/kuniezu/map/build/、Git で追跡しない）は tools/map/build-map.cjs がここから作る。 */
 const fs=require('node:fs'),path=require('node:path'),crypto=require('node:crypto');
 const root=path.resolve(__dirname,'../..');
 const sha=f=>crypto.createHash('sha256').update(fs.readFileSync(f)).digest('hex');
@@ -16,7 +16,7 @@ function parseDefaultMap(text){const out={};const s=text.replace(/#[^\n]*/g,'');
  for(const m of s.matchAll(/(\w+)\s*=\s*LIST\s*\{([^}]*)\}/g))out[m[1]]=m[2].trim().split(/\s+/).filter(Boolean).map(Number);
  for(const m of s.matchAll(/(\w+)\s*=\s*RANGE\s*\{\s*(\d+)\s+(\d+)\s*\}/g)){const a=+m[2],b=+m[3];out[m[1]]=(out[m[1]]||[]).concat(Array.from({length:b-a+1},(_,i)=>a+i));}
  for(const m of s.matchAll(/(\w+)\s*=\s*"([^"]*)"/g))out[m[1]]=m[2];return out;}
-// at(dir)：別の置き場（検査用の小さな正本など）を読む。既定は game/map。
+// at(dir)：別の置き場（検査用の小さな正本など）を読む。既定は kuniezu/static/kuniezu/map。
 function at(dir){const layers={admin:path.join(dir,'admin'),control:path.join(dir,'control'),physical:path.join(dir,'physical')};
  const files={provinces:path.join(layers.control,'provinces.png'),definition:path.join(layers.control,'definition.csv'),defaultMap:path.join(layers.control,'default.map'),projection:path.join(dir,'projection.json')};
 // 区画の一覧。rows[id] = {id, rgb, key, kind}（kind は default.map の sea_zones→sea、lakes→lake、ほかは land）。
@@ -36,4 +36,4 @@ const sourceSha256=()=>crypto.createHash('sha256').update(['provinces','definiti
 return {dir,layers,files,readDefinition,writeDefinition,readProjection,sourceSha256};}
 // 郡の一覧（admin/gun.csv）の国名は明治の分国を含む。1560〜1615年の国に戻す（陸奥・出羽の分割は1868年）。境界線と縮小版で同じ規則を使う。
 const normalizeKuni=k=>['磐城','岩代','陸前','陸中','陸奥'].includes(k)?'陸奥':['羽前','羽後'].includes(k)?'出羽':k;
-module.exports={root,sha,parseDefaultMap,normalizeKuni,at,...at(path.join(root,'game/map')),out:path.join(root,'game/map/build')};
+module.exports={root,sha,parseDefaultMap,normalizeKuni,at,...at(path.join(root,'kuniezu/static/kuniezu/map')),out:path.join(root,'kuniezu/static/kuniezu/map/build')};

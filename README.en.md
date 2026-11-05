@@ -49,7 +49,7 @@ is [docs/README.md](docs/README.md); open requests and ownership are in
 
 | Folder | Contents |
 |---|---|
-| `game/` | The game served to the browser and its bundled assets; load order follows `index.html` |
+| `kuniezu/static/kuniezu/` | The game served to the browser and its bundled assets; load order follows `index.html` |
 | `docs/architecture/` | Structure, file move records and dependency order |
 | `docs/work/` | Open requests, completion criteria, per-subject task lists, ownership and results |
 | `docs/reports/` | Research, fix and on-screen verification reports |
@@ -65,19 +65,19 @@ is [docs/README.md](docs/README.md); open requests and ownership are in
 
 ## Getting started and usage
 
-The map source lives in `game/map/`, one folder per layer, and is tracked in Git:
+The map source lives in `kuniezu/static/kuniezu/map/`, one folder per layer, and is tracked in Git:
 administrative divisions in `admin/` (districts), control in `control/` (castle
 domains, including the single full-map `provinces.png` in the Paradox style),
 nature in `physical/` (elevation and rivers), and dated edits in `edits/`. The tiles, borders, river
-lines and relief served to the browser (generated files in `game/map/build/`) are not
+lines and relief served to the browser (generated files in `kuniezu/static/kuniezu/map/build/`) are not
 in the repository. Generate them once after cloning, and again after changing the
-source or the dated edits (`game/map/edits/*.json`). This takes a few minutes.
+source or the dated edits (`kuniezu/static/kuniezu/map/edits/*.json`). This takes a few minutes.
 
 ```sh
 node tools/map/build-map.cjs
 ```
 
-To also build the terrain relief, fetch `game/map/physical/heightmap.png` with Git LFS
+To also build the terrain relief, fetch `kuniezu/static/kuniezu/map/physical/heightmap.png` with Git LFS
 and pass a Python that has NumPy and Pillow (the game runs without relief).
 
 ```sh
@@ -86,11 +86,11 @@ node tools/map/build-map.cjs --height --python /path/to/python3
 
 The source PNGs are too large to open in VS Code and similar viewers, so the
 build also writes quarter-scale previews of each layer, with a one-degree
-graticule, to `game/map/build/previews/` (`control.png` control, `admin.png`
+graticule, to `kuniezu/static/kuniezu/map/build/previews/` (`control.png` control, `admin.png`
 administrative divisions, `rivers.png` rivers, `height.png` elevation). Open
 these to check the map by eye.
 
-After generating, serve `game/` as static files and open `index.html` in a
+After generating, serve `kuniezu/static/kuniezu/` as static files and open `index.html` in a
 browser. The Django development server shows the same page (`uv sync --locked`,
 then `uv run python manage.py runserver 8000`; needs Python 3.14 and uv), and
 `uv run python scripts/build_static.py` writes the public static files to
@@ -115,7 +115,7 @@ node tools/checks/offline.cjs
 - Current specification and agreements: [HANDOFF.md](HANDOFF.md)
 - Documentation entry point: [docs/README.md](docs/README.md)
 - Sources versus implementation: [data/research/README.md](data/research/README.md)
-- Terrain and water data sources and processing: [game/licenses/DATA_SOURCES.md](game/licenses/DATA_SOURCES.md)
+- Terrain and water data sources and processing: [kuniezu/static/kuniezu/licenses/DATA_SOURCES.md](kuniezu/static/kuniezu/licenses/DATA_SOURCES.md)
 - Third-party data notices: [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md)
 
 ## Development and contributions

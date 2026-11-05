@@ -7,8 +7,8 @@ const {TK,G}=c;
 // Explicit display fixture: 11 km frame. This is not an assertion of the battle boundary.
 const TAKATENJIN_BOUNDS=[137.98111632074472,34.740754030237156,138.10131617925526,34.671584069762844];
 TK.BATTLE_ATLAS['高天神城の戦い']={...TK.BATTLE_ATLAS['高天神城の戦い'],bounds:TAKATENJIN_BOUNDS};
-const fixedMotion=fs.readFileSync(path.join(ROOT,'game/battle-motion.js'),'utf8');
-const fixedAtlas=fs.readFileSync(path.join(ROOT,'game/battle-atlas.js'),'utf8');
+const fixedMotion=fs.readFileSync(path.join(ROOT,'kuniezu/static/kuniezu/battle-motion.js'),'utf8');
+const fixedAtlas=fs.readFileSync(path.join(ROOT,'kuniezu/static/kuniezu/battle-atlas.js'),'utf8');
 const simple=x=>JSON.parse(JSON.stringify(x));
 let activeId=null,observer,stage;
 class Context{

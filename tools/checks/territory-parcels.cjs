@@ -6,7 +6,7 @@ const vm = require('node:vm');
 
 const calendar = {window: {}};
 calendar.TK = calendar.window.TK = {};
-vm.runInNewContext(fs.readFileSync(path.join(__dirname, '../../game/koyomi.js'), 'utf8'), calendar);
+vm.runInNewContext(fs.readFileSync(path.join(__dirname, '../../kuniezu/static/kuniezu/koyomi.js'), 'utf8'), calendar);
 const months = calendar.TK.KOYOMI.m;
 const monthIndex = new Map(months.map(([year, month, leap], i) => [[year, month, leap].join('/'), i]));
 

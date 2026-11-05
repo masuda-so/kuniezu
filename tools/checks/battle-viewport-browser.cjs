@@ -6,7 +6,7 @@ const fs=require('node:fs'),os=require('node:os'),path=require('node:path'),asse
 const URL=process.env.GAME_URL||'http://localhost:8000/index.html';
 const OUT=path.resolve(process.env.GAME_TEST_OUTPUT||path.join(os.tmpdir(),'kuniezu-browser-results'));
 const root=process.env.GAME_OVERRIDE_ROOT,overrides={};
-if(root){for(const f of execFileSync('git',['-C',root,'diff','--name-only',process.env.GAME_OVERRIDE_BASE||'origin/main','--','game'],{encoding:'utf8'}).trim().split('\n').filter(Boolean)){const p=path.join(root,f);if(fs.existsSync(p))overrides[f.slice(5)]=fs.readFileSync(p);}}
+if(root){for(const f of execFileSync('git',['-C',root,'diff','--name-only',process.env.GAME_OVERRIDE_BASE||'origin/main','--','kuniezu/static/kuniezu'],{encoding:'utf8'}).trim().split('\n').filter(Boolean)){const p=path.join(root,f);if(fs.existsSync(p))overrides[f.slice(5)]=fs.readFileSync(p);}}
 const TYPES={js:'application/javascript',html:'text/html; charset=utf-8',json:'application/json'};
 const profile=fs.mkdtempSync(path.join(os.tmpdir(),'kuniezu-check-'));fs.mkdirSync(OUT,{recursive:true});
 const chrome=spawn(process.env.CHROME_PATH||'/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',['--headless',...(new globalThis.URL(URL).protocol==='file:'?['--allow-file-access-from-files']:[]),'--disable-gpu','--no-first-run','--no-default-browser-check',`--user-data-dir=${profile}`,'--remote-debugging-pipe'],{stdio:['ignore','ignore','ignore','pipe','pipe']});

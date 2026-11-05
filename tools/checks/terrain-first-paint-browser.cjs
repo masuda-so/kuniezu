@@ -4,7 +4,7 @@ const fs=require('node:fs'),os=require('node:os'),path=require('node:path'),asse
 const URL=process.env.GAME_URL||'http://localhost:8000/index.html';
 const OUT=path.resolve(process.env.GAME_TEST_OUTPUT||path.join(os.tmpdir(),'kuniezu-browser-results'));
 const DOWNLOAD=path.join(OUT,'downloads-'+Date.now());fs.mkdirSync(DOWNLOAD,{recursive:true});
-const terrainPath=path.resolve(__dirname,'../../game/terrain-tiles.js');const checksum=()=>require('node:crypto').createHash('sha256').update(fs.readFileSync(terrainPath)).digest('hex');const terrainBefore=checksum();
+const terrainPath=path.resolve(__dirname,'../../kuniezu/static/kuniezu/terrain-tiles.js');const checksum=()=>require('node:crypto').createHash('sha256').update(fs.readFileSync(terrainPath)).digest('hex');const terrainBefore=checksum();
 const profile=fs.mkdtempSync(path.join(os.tmpdir(),'kuniezu-check-'));fs.mkdirSync(OUT,{recursive:true});
 const chrome=spawn(process.env.CHROME_PATH||'/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',['--headless','--disable-gpu','--no-first-run','--no-default-browser-check',`--user-data-dir=${profile}`,'--remote-debugging-pipe'],{stdio:['ignore','ignore','ignore','pipe','pipe']});
 let seq=0,buf='',session,chooser;const pending=new Map(),errors=[],events=[];

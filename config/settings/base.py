@@ -7,10 +7,10 @@ import environ
 BASE_DIR = Path(__file__).resolve(strict=True).parent.parent.parent
 # kuniezu/
 APPS_DIR = BASE_DIR / "kuniezu"
-# The game's source files. They still live in game/ during stage 1a of the
-# re-platforming (docs/architecture/replatform-plan.md); stage 1b moves them
-# under kuniezu/static/kuniezu/ and this setting goes away.
-GAME_DIR = BASE_DIR / "game"
+# The game's source files, served under /static/kuniezu/ as the app's static
+# files. index.html still sits among them until it becomes a Django template
+# (docs/architecture/replatform-plan.md, stage 1b).
+GAME_DIR = APPS_DIR / "static" / "kuniezu"
 env = environ.Env()
 
 READ_DOT_ENV_FILE = env.bool("DJANGO_READ_DOT_ENV_FILE", default=False)
@@ -77,9 +77,6 @@ MIDDLEWARE = [
 STATIC_ROOT = str(BASE_DIR / "staticfiles")
 # https://docs.djangoproject.com/en/dev/ref/settings/#static-url
 STATIC_URL = "/static/"
-# https://docs.djangoproject.com/en/dev/ref/contrib/staticfiles/#std:setting-STATICFILES_DIRS
-# The game is served under /static/kuniezu/ from where it lives today.
-STATICFILES_DIRS = [("kuniezu", str(GAME_DIR))]
 # https://docs.djangoproject.com/en/dev/ref/contrib/staticfiles/#staticfiles-finders
 STATICFILES_FINDERS = [
     "django.contrib.staticfiles.finders.FileSystemFinder",

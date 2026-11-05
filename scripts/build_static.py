@@ -2,8 +2,9 @@
 
 Renders the game page through Django and copies the files the browser needs to
 ``dist/client/``. The map sources (CK3-style images and tables under
-``game/map/``) are build inputs, so only what the game fetches at run time is
-exported: ``map/build/`` and the two definition files in ``map/control/``.
+``kuniezu/static/kuniezu/map/``) are build inputs, so only what the game
+fetches at run time is exported: ``map/build/`` and the two definition files
+in ``map/control/``.
 """
 
 from __future__ import annotations

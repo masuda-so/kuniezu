@@ -1,6 +1,6 @@
 /* UI・サーバーを起動せず、構文・保存と支城処理を検証する。 */
 const fs=require('node:fs'),path=require('node:path'),vm=require('node:vm'),assert=require('node:assert/strict');
-const root=path.resolve(__dirname,'../..'),game=path.join(root,'game');
+const root=path.resolve(__dirname,'../..'),game=path.join(root,'kuniezu/static/kuniezu');
 for(const f of fs.readdirSync(game).filter(f=>f.endsWith('.js')))new vm.Script(fs.readFileSync(path.join(game,f),'utf8'),{filename:f});
 for(const match of fs.readFileSync(path.join(game,'index.html'),'utf8').matchAll(/<script\b(?![^>]*\bsrc=)[^>]*>([\s\S]*?)<\/script>/g))new vm.Script(match[1],{filename:'index.html inline script'});
 console.log('PASS: JavaScript syntax');

@@ -1,6 +1,9 @@
 from http import HTTPStatus
+from pathlib import Path
 
 import pytest
+from django.conf import settings as django_settings
+from django.contrib.staticfiles import finders
 from django.core.exceptions import ImproperlyConfigured
 from django.test import Client
 
@@ -51,6 +54,15 @@ def test_real_game_index_has_exactly_one_head(settings):
 
     assert html.count("<head>") == 1
     assert html.count("<base ") == 1
+
+
+def test_game_files_are_the_apps_static_files():
+    # The game lives in kuniezu/static/kuniezu/, so the app finder serves it
+    # under /static/kuniezu/ without an extra STATICFILES_DIRS entry.
+    found = finders.find("kuniezu/engine.js")
+
+    assert found is not None
+    assert Path(found) == Path(django_settings.GAME_DIR) / "engine.js"
 
 
 @pytest.mark.parametrize("content", ["<html><body></body></html>", "<head><head>"])

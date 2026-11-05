@@ -1,7 +1,7 @@
 /* 非史実ルートを含む旧版専用。現行版の検証には offline.cjs を使用。 */
 /* UI・サーバーを起動せず、構文・保存と支城処理を検証する。 */
 const fs=require('node:fs'),path=require('node:path'),vm=require('node:vm'),assert=require('node:assert/strict');
-const root=path.resolve(__dirname,'../..'),game=path.join(root,'game');
+const root=path.resolve(__dirname,'../..'),game=path.join(root,'kuniezu/static/kuniezu');
 for(const f of fs.readdirSync(game).filter(f=>f.endsWith('.js')))new vm.Script(fs.readFileSync(path.join(game,f),'utf8'),{filename:f});
 console.log('PASS: JavaScript syntax');
 const storage=require(path.join(game,'storage.js'));

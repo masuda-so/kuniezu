@@ -9,7 +9,7 @@ for r in rows:
  r['scope']='城域・築城年代・移転年代・城主の同定とは別。資料自体にも位置推定の誤差がある。'
  if ok:out.append({k:r[k] for k in ['kind','id','name','point','ref']})
 (root/'data/audits/site-coordinate-audit.json').write_text(json.dumps(rows,ensure_ascii=False,indent=2)+'\n')
-(root/'game/site-coordinates.js').write_text('''"use strict";
+(root/'kuniezu/static/kuniezu/site-coordinates.js').write_text('''"use strict";
 /* 『日本歴史地名大系』施設・地点項目データセット（CODH作成）
  doi:10.20676/00000456 / 2025-05-15 / CC BY 4.0。代表点であり城域の測量値ではない。 */
 (function(){
