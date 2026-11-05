@@ -2,6 +2,8 @@
 /* 地形と部隊の史料は独立。位置の根拠のない人物を、画面上の空き場所へ配置しない。 */
 window.TKBattleAtlas=(function(){
  const cache=new Map(),decoded=new Map(),backgrounds=new Map(),COL={a:'#c83339',b:'#216d9f',unknown:'#665b49'};
+ const placeLabels=new WeakMap();
+ const overlaps=(a,b)=>a.x<b.x+b.w&&a.x+a.w>b.x&&a.y<b.y+b.h&&a.y+a.h>b.y;
  const FONT='"Shippori Mincho B1","Hiragino Mincho ProN","Yu Mincho",serif';
  const palettes=['#dce9cd','#cce0b9','#b6d39f','#9dc48a','#82b373','#6c9e62','#5b8855','#4b744b'];
  function load(meta){let p=cache.get(meta.file);if(!p){p=fetch('atlas/'+meta.file).then(r=>{if(!r.ok)throw Error('地形データを読めません');return r.json();}).then(d=>{const raw=atob(d.heights),a=new Int16Array(d.width*d.height);for(let i=0;i<a.length;i++)a[i]=(raw.charCodeAt(i*2)+raw.charCodeAt(i*2+1)*256)-32768;d.values=a;decoded.set(meta.file,d);if(decoded.size>12)decoded.delete(decoded.keys().next().value);return d;});cache.set(meta.file,p);if(cache.size>12)cache.delete(cache.keys().next().value);}return p;}
@@ -30,10 +32,15 @@ window.TKBattleAtlas=(function(){
   const wp=(x,y)=>pj(TKGEO.LON0+x/TKGEO.K/TKGEO.CX,TKGEO.LAT0-y/TKGEO.K);
   const inside=(x,y)=>x>=0&&x<=W&&y>=0&&y<=H;
   const onView=(b,proj)=>{const p=proj(b[0],b[1]),q=proj(b[2],b[3]);return Math.max(p[0],q[0])>-60&&Math.min(p[0],q[0])<W+60&&Math.max(p[1],q[1])>-60&&Math.min(p[1],q[1])<H+60;};
-  function text(c,txt,x,y,size=12,color='#254532',align='center'){
+  function text(c,txt,x,y,size=12,color='#254532',align='center',reserved=null){
    c.font=`600 ${size}px ${FONT}`;const width=Math.min(c.measureText(txt).width,W-8),left=align==='left'?0:align==='right'?width:width/2,right=width-left;
    x=clamp(x,4+left,W-4-right);y=clamp(y,4+size/2,H-4-size/2);
-   c.textAlign=align;c.textBaseline='middle';c.lineJoin='round';c.lineWidth=3;c.strokeStyle='rgba(251,250,233,.96)';c.strokeText(txt,x,y,width);c.fillStyle=color;c.fillText(txt,x,y,width);
+   if(reserved){
+    const bounds={x:x-left-2,y:y-size/2-2,w:width+4,h:size+4};
+    if(reserved.some(b=>overlaps(bounds,b)))return;
+    reserved.push(bounds);
+   }
+   c.textAlign=align;c.textBaseline='middle';c.lineJoin='round';c.lineWidth=3;c.strokeStyle='rgba(251,250,233,.96)';c.strokeText(txt,x,y,width);c.fillStyle=color;c.fillText(txt,x,y,width);return true;
   }
   function path(c,pts,world=false,close=false){c.beginPath();for(let i=0;i<pts.length;i++){const p=world?wp(...pts[i]):[pts[i][0]*W,pts[i][1]*H];i?c.lineTo(...p):c.moveTo(...p);}if(close)c.closePath();}
   const riverPath=(c,pts)=>TK.riverPath(c,pts);
@@ -84,10 +91,27 @@ window.TKBattleAtlas=(function(){
     if(f.k==='dryMoat'){c.strokeStyle='#768864';c.lineWidth=4;c.stroke();c.strokeStyle='#edf0d7';c.lineWidth=1.4;c.stroke();}
     if(f.k==='road'){c.strokeStyle='#897b61';c.lineWidth=1.2;c.stroke();}
    }for(const f of sc.feats||[])if(f.n&&f.x!=null&&!['caption','keep'].includes(f.k))text(c,f.n,f.x*W,f.y*H,W>650?12:10);}
-   else {const seen=[];for(const p of meta.points||[]){const [x,y]=pj(p.lon,p.lat);if(!inside(x,y)||seen.some(q=>Math.hypot(q[0]-x,q[1]-y)<40))continue;seen.push([x,y]);c.fillStyle='#435940';c.fillRect(x-3,y-3,6,6);text(c,p.name,x,y+12,W>650?11:9);}
-    if(!meta.points.length&&!units.length){const [x,y]=pj(meta.geo[0],meta.geo[1]);text(c,meta.label,x,y-10,W>650?13:11);text(c,'地域の位置・戦場の境界ではありません',x,y+12,10,'#617057');}
+   else {
+    const reserved=W<560?[]:null;
+    if(reserved)placeLabels.set(bg,reserved);
+    const landmarks=sc.atlasLandmarks||[],shownLandmarks=new Set();
+    for(const l of landmarks){
+     const [x,y]=pj(...l.point);
+     if(inside(x,y)&&text(c,l.name,clamp(x,35,W-35),clamp(y-53,14,H-14),W>650?14:11,'#536546','center',reserved))shownLandmarks.add(l.name);
+    }
+    const seen=[];
+    for(const p of meta.points||[]){
+     const [x,y]=pj(p.lon,p.lat);
+     if(!inside(x,y)||seen.some(q=>Math.hypot(q[0]-x,q[1]-y)<40))continue;
+     seen.push([x,y]);c.fillStyle='#435940';c.fillRect(x-3,y-3,6,6);
+     if(!reserved||!shownLandmarks.has(p.name))text(c,p.name,x,y+12,W>650?11:9,undefined,'center',reserved);
+    }
+    if(!meta.points.length&&!units.length){
+     const [x,y]=pj(meta.geo[0],meta.geo[1]);
+     text(c,meta.label,x,y-10,W>650?13:11,undefined,'center',reserved);
+     text(c,'地域の位置・戦場の境界ではありません',x,y+12,10,'#617057','center',reserved);
+    }
    }
-   if(!sc.atlasPlan)for(const l of sc.atlasLandmarks||[]){const [x,y]=pj(...l.point);if(inside(x,y))text(c,l.name,clamp(x,35,W-35),clamp(y-53,14,H-14),W>650?14:11,'#536546');}
    if(error)text(c,error,W/2,H/2,12,'#8a3633');else if(!data&&!sc.atlasPlan)text(c,'地形を読み込んでいます',W/2,30,11);if(!error){backgrounds.set(cacheKey,bg);if(backgrounds.size>4)backgrounds.delete(backgrounds.keys().next().value);}
   }
   const boxes=[];
@@ -113,7 +137,7 @@ window.TKBattleAtlas=(function(){
   // 段階移動の通過点。典拠点を結んだ線のうち、現在位置までを返す。
   function traversed(move,P){const line=G.battlePhaseGeometry(move).map(p=>wp(...p)),f=clamp((t-move.from)/(move.to-move.from),0,1);let total=0;const cum=[0];for(let i=1;i<line.length;i++){total+=Math.hypot(line[i][0]-line[i-1][0],line[i][1]-line[i-1][1]);cum.push(total);}const d=f*total,out=[line[0]];for(let i=1;i<line.length&&cum[i]<=d;i++)out.push(line[i]);out.push(P);return out;}
   const locatedGroups=()=>[...groups.filter(mapped),...estGroups.filter(g=>motionPlan().placed.has(g.members[0]))].filter(g=>visible(unitById.get(g.members[0])||{}));
-  function groupDraw(dt,now,playing){const located=locatedGroups(),pins=located.map(pinFor),named=[];
+  function groupDraw(dt,now,playing){const located=locatedGroups(),pins=located.map(pinFor),named=[...(placeLabels.get(bg)||[])];
    groupOf.clear();located.forEach((g,i)=>groupOf.set(g.members[0],{g,pin:pins[i]}));
    const kb=clamp(W/760,.62,1.1),small=W<560;
    // 駒は投影地点に固定する。同地点の隊も別の地理位置へ押し離さず、名札だけを分ける。
@@ -156,7 +180,7 @@ window.TKBattleAtlas=(function(){
       {x:right,y:below},{x:left,y:below},{x:right,y:above},{x:left,y:above},
       {x:x-w/2,y:below+h+5},{x:x-w/2,y:above-h-5}
      ];
-     const clash=b=>named.some(a=>b.x<a.x+a.w&&b.x+b.w>a.x&&b.y<a.y+a.h&&b.y+b.h>a.y)||disp.some((q,j)=>(j!==index||!!sc.atlasSchematic)&&b.x<q[0]+(small?17:22)&&b.x+b.w>q[0]-(small?23:34)&&b.y<q[1]+(small?10:14)&&b.y+b.h>q[1]-(small?23:38));
+     const clash=b=>named.some(a=>overlaps(a,b))||disp.some((q,j)=>(j!==index||!!sc.atlasSchematic)&&b.x<q[0]+(small?17:22)&&b.x+b.w>q[0]-(small?23:34)&&b.y<q[1]+(small?10:14)&&b.y+b.h>q[1]-(small?23:38));
      const box=p=>({x:clamp(p.x,2,W-w-2),y:clamp(p.y,2,H-h-2),w,h});
      let b=cands.map(box).find(b=>!clash(b));
      for(let radius=64;!b&&radius<=120;radius+=28){
@@ -166,7 +190,7 @@ window.TKBattleAtlas=(function(){
       });
       b=around.find(b=>!clash(b));
      }
-     if(!b&&sel)b=box(cands[0]);
+     if(!b&&sel&&!placeLabels.has(bg))b=box(cands[0]);
      if(b){const faceSize=small?16:24,face=opt.face?.(u.g,faceSize/2,col);if(face)ctx.drawImage(face,clamp(x-(small?23:34),2,W-faceSize-2),clamp(y-faceSize/2,2,H-faceSize-2),faceSize,faceSize);
       const tx=clamp(x,b.x,b.x+w),ty=clamp(y,b.y,b.y+h),d=Math.hypot(tx-x,ty-y);
       if(d>12){ctx.beginPath();ctx.moveTo(x+(tx-x)*12/d,y+(ty-y)*12/d);ctx.lineTo(tx,ty);ctx.strokeStyle=col;ctx.lineWidth=.85;ctx.stroke();}
