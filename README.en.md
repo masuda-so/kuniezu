@@ -68,6 +68,9 @@ is [docs/README.md](docs/README.md); open requests and ownership are in
   sections include modern roads and tunnels; they are not an exact sixteenth-century
   centerline. See the [inputs and regeneration](data/inputs/sanshu-road-review/README.md)
   (Japanese).
+- Kennyo, Niwa Nagashige, Shima Sakon, Saito Yoshitatsu and Ashikaga Yoshiteru use
+  the same reviewed portrait crops while originals load or fail. Depictions include
+  later artwork. See [asset regeneration and checks](docs/reports/PORTRAIT_FALLBACK_CROPS.md) (Japanese).
 - Late elevation, river and boundary loads refresh the map while the camera stays still.
 - Dated events without a known related place remain searchable by their subject.
   Locations are not invented, and Edo-period reclamation records are kept separate
