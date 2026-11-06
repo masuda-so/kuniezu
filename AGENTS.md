@@ -7,6 +7,7 @@
 - `kuniezu/static/kuniezu/`（84 の JS、`map/` 地図の正本と配信物、`atlas/` 合戦地形、`terrain/` 標高・陰影、`portraits/` 肖像、`kamon/` 家紋、`licenses/` 素材の出典）。配信 URL は変えない（地図は 2026-11-04 に利用者の判断で `map/build/` と `map/control/` へ移した）。
 - `docs/`（`architecture/` 構成と依存順、`work/` 残要望と担当、`reports/` 報告書、`history/` 過去の原文）。作業前に `HANDOFF.md` を読む。
 - 再編の途中：`masuda-so/website` と同じ Django の構成に揃える。地図は利用者の決定（2026-11-07）で、CODHの海岸線／水域・湖沼・主要街道・宿場を大いに活用するベクター実装へ移行する。旧来の画像正本維持を移行の制約にしない。現行表示を移行完了前に削除せず、江戸期の参照形状と戦国期の史料付き補正を区別する。現行方針と受入条件は `docs/architecture/codh-vector-map.md`、段取りの履歴は `docs/architecture/replatform-plan.md`。
+- ベクターの編集正本は、改変済みGeoJSONを直接編集する形とする（利用者確認、2026-11-07）。CODH原本は照合用に保持する。年代で形が変わる場合も改変済みファイルを事前に持ち、描画側はそれを選んで読む。通常ビルドで原本と補正定義から編集正本を上書きしない。準備器は初回移行・検証用で、ゲーム実行中に座標や線を補正しない。
 - 段 1a（Django・uv の骨組み）、段 1b-1（`game/` を Django アプリの静的ファイル `kuniezu/static/kuniezu/` へ移動）、段 1b-2（`index.html` をテンプレート `kuniezu/templates/index.html` に、インライン CSS を `index.css` に）、段 1b-3（地図の正本を `kuniezu/map/` へ。配信するのは生成物 `kuniezu/static/kuniezu/map/build/` だけ）が入った：`manage.py`・`config/`・`kuniezu/`・`scripts/`・`tests/`・`pyproject.toml`・`uv.lock`。段 1 はここまで。今の構成と Django 側のコマンドは `docs/structure.md`。
 - `data/`（`inputs/` 調査・生成の入力、`research/` 出典と史実命題 `claims.jsonl`、`audits/` 検査が生成する JSON、`verification/` 実画面の証拠）。
 - `tools/`（`checks/` 検査、`work/` 作業一覧と担当記録、`research/` 史料の出力、`geo/` と `faces/` 配信用データの生成元）。`archive/` は保留中の非史実実装で、起動では読まない。
@@ -25,7 +26,7 @@
 
 - 素の JavaScript。各ファイルは読込順に同じグローバルを拡張する。`.editorconfig`（2 スペース、LF、UTF-8）に従い、触ったファイルの慣習に合わせる。実行時の依存を増やさない。
 - `data.js` / `hist.js` / `geo.js` / `jokaku.js` の修正は出典付きの訂正モジュールを確認し、同じ事項への二重適用を避ける。`engine.js` / `ui.js` / `index.html` は全分野の共通箇所なので同時編集を避け、担当を調整する。
-- 配信用データは生成元（`tools/geo/`、`tools/faces/`）を直して再生成する。生成物だけを直さない。`data/audits/` の JSON を手で変えない。
+- 改変済みベクターGeoJSONは正本を直接編集する。それ以外の配信用データは生成元（`tools/geo/`、`tools/faces/`）を直して再生成する。生成物だけを直さない。`data/audits/` の JSON を手で変えない。
 
 ## テストの指針
 

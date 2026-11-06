@@ -17,6 +17,16 @@ is [docs/README.md](docs/README.md); open requests and ownership are in
 - A vector-map migration using CODH coast, lake, road and post datasets is in progress.
   [Reference inputs and preparation](data/inputs/codh-edo/README.md) are retained;
   the game has not switched to vector rendering yet.
+- Edited GeoJSON will be the directly maintained source of truth. Rendering reads
+  the files for the selected period. CODH originals remain available for comparison,
+  and normal builds will not overwrite the edited source data.
+- `uv run python tools/geo/codh_topology.py --output /tmp/codh-surfaces-new`
+  prepares valid reference surfaces and combined land/lake geometry using a
+  linework method that retains source edges and coordinate positions. Collapsed
+  source lines remain in residual layers, without being asserted as Sengoku
+  shorelines. Shapely is a development-only dependency.
+- Add `--surfaces /tmp/codh-surfaces-new` when building the comparison viewer
+  to load the prepared surfaces after checking their source versions and hashes.
 - `uv run python tools/geo/codh_preview.py --output /tmp/codh-preview-new`
   generates a standalone Edo-period vector viewer. Open its `index.html` directly
   to inspect Kanto and Kojima Bay, pan, zoom and toggle layers. It does not alter

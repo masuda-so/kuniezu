@@ -28,6 +28,7 @@ dev = [
   "pytest==9.1.1",
   "pytest-django==4.14.0",
   "ruff==0.17.1",
+  "shapely==2.2.0",
 ]
 
 # ==== djLint ====

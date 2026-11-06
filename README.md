@@ -11,6 +11,9 @@
 ## 主な機能と制約
 
 - CODHの海岸・湖沼・街道・宿場を用いるベクター地図へ移行を進めています。[参照入力と変換手順](data/inputs/codh-edo/README.md)を保持していますが、ゲーム画面のベクター切替はまだ行っていません。
+- 移行後のベクターは改変済みGeoJSONを正本として直接編集し、描画側は年代に応じたファイルを読みます。CODH原本は照合用に残し、通常ビルドで編集正本を上書きしません。
+- `uv run python tools/geo/codh_topology.py --output /tmp/codh-surfaces-new` で、原本の辺・座標位置を保持する方式による有効な参照面と陸・湖の合成面を生成できます。面にならない元の線は残差層へ保持し、戦国期の岸線とは扱いません。Shapelyは開発時だけの依存です。
+- 比較画面の生成に `--surfaces /tmp/codh-surfaces-new` を付けると、原本版とSHAを検査して合成済みの面を読み込めます。
 - `uv run python tools/geo/codh_preview.py --output /tmp/codh-preview-new` で独立した江戸期ベクター参照画面を生成し、出力先の `index.html` を直接開けます。関東・児島湾への移動、拡大縮小と層の切替ができ、ゲームの地図や保存には適用しません。
 - `uv run python tools/geo/prepare_era_overrides.py --at 1560-01-01 --output /tmp/era-overrides-new` で、香取海の既存推定水面・保護陸・岸線として描かない切口を一体で取り出せます。CODH原本やゲーム画面には自動適用しません。
 - 古湖岸、城・施設・人物の史実照合、街道上の行軍、合戦の布陣と動きを、出典を付けて表示します。
