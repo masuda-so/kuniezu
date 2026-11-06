@@ -27,6 +27,9 @@ is [docs/README.md](docs/README.md); open requests and ownership are in
   Castle falls without supported deployments remain timeline entries and historic sites.
 - Modern comparison terrain, estimates derived from sources and confirmed
   historical facts are kept apart. Unsupported text is not shown in the game.
+- Dated events without a known related place remain searchable by their subject.
+  Locations are not invented, and Edo-period reclamation records are kept separate
+  from evidence for Sengoku-period shorelines.
 - The historical database preserves original calendars and date precision, and rejects
   additional date fields that conflict with the time format. See the
   [database design and commands](docs/architecture/history-database.md) (Japanese).
