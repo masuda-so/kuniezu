@@ -1,0 +1,21 @@
+{
+  "id": "person:mogami-yoshiaki",
+  "name": "最上義光",
+  "gameNames": [
+    "最上義光"
+  ],
+  "authorityIds": [
+    "wikidata:Q839377"
+  ],
+  "authorityEvidence": {
+    "scope": "person-identity",
+    "wikidataRevision": 2553973881,
+    "checked": "2026-11-07",
+    "snapshot": "data/research/source-notes/person-authority-next-twelve.json",
+    "sourceIds": [
+      "yamagataMogamiIdentity"
+    ],
+    "basis": "自治体・博物館の本文と、姓名以外の2項目を照合。生没年は比較値に限定し、史実命題へ自動採用しない。",
+    "note": "data/research/source-notes/person-authority-next-twelve.md"
+  }
+}

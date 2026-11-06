@@ -1,0 +1,21 @@
+{
+  "id": "person:hojo-ujiyasu",
+  "name": "北条氏康",
+  "gameNames": [
+    "北条氏康"
+  ],
+  "authorityIds": [
+    "wikidata:Q943643"
+  ],
+  "authorityEvidence": {
+    "scope": "person-identity",
+    "wikidataRevision": 2480575293,
+    "checked": "2026-11-07",
+    "snapshot": "data/research/source-notes/person-authority-next-twelve.json",
+    "sourceIds": [
+      "atsugiHojoIdentity"
+    ],
+    "basis": "自治体・博物館の本文と、姓名以外の2項目を照合。生没年は比較値に限定し、史実命題へ自動採用しない。",
+    "note": "data/research/source-notes/person-authority-next-twelve.md"
+  }
+}
