@@ -105,6 +105,11 @@ is [docs/README.md](docs/README.md); open requests and ownership are in
 
 ## Getting started and usage
 
+Run `node tools/map/build-map.cjs --vectors-only` to republish edited GeoJSON,
+or add `--check` to verify byte-for-byte agreement with the canonical files.
+It does not regenerate or correct the edited source. The five comparison lakes
+retain their sources and limitations in the [input notes](data/inputs/mlit-w09-2005/README.md).
+
 The map source lives in `kuniezu/map/`, one folder per layer, and is tracked in Git:
 administrative divisions in `admin/` (districts), control in `control/` (castle
 domains, including the single full-map `provinces.png` in the Paradox style),

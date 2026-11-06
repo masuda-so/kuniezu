@@ -29,6 +29,8 @@
 
 ## 依存と検査
 
+編集済みベクターは `kuniezu/map/physical`・`admin`・`control` のGeoJSONが正本。`node tools/map/build-map.cjs --vectors-only` が検査後に `map/build/vector/` へバイト複写し、`--vectors-only --check` は一致を検査する。通常ビルドも同じ処理を含む。元の座標・属性・書式を変更せず、正本へ書き戻さない。画像と独立して更新できる。
+
 依存の契約は Python 3.14、`pyproject.toml`、`uv.lock`。
 
 ```sh

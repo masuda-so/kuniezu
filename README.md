@@ -55,6 +55,8 @@
 
 ## 導入と使い方
 
+編集済みGeoJSONだけを配信し直す場合は `node tools/map/build-map.cjs --vectors-only`、正本とのバイト一致を確かめる場合は `node tools/map/build-map.cjs --vectors-only --check` を使います。原本からの再生成や正本への補正は行いません。5湖の比較形状は [入力ノート](data/inputs/mlit-w09-2005/README.md) に出典と限界を記録しています。
+
 地図の正本は `kuniezu/map/` に層ごとに置き、Git で管理します。行政区分 `admin/`（郡）、支配 `control/`（城の支配域。Paradox 方式の `provinces.png` 全域1枚など）、自然 `physical/`（標高・川）、年代別の差分 `edits/` です。ブラウザへ配る分割タイル・境界線・河川の線・陰影（`kuniezu/static/kuniezu/map/build/` の生成物）はリポジトリに含めません。取得後と、正本や年代別の差分（`kuniezu/map/edits/*.json`）を変えた後に、一度生成してください（数分かかります）。
 
 ```sh

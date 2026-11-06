@@ -24,6 +24,7 @@ dev = [
   "djlint==1.46.6",
   "mypy==2.4.0",
   "pre-commit==4.7.0",
+  "pyproj==3.8.0",
   "pyshp==3.1.6",
   "pytest==9.1.1",
   "pytest-django==4.14.0",

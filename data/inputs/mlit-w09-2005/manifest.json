@@ -1,0 +1,91 @@
+{
+  "url": "https://nlftp.mlit.go.jp/ksj/gml/data/W09/W09-05/W09-05_GML.zip",
+  "accessed": "2026-11-07",
+  "bytes": 8082201,
+  "sha256": "e5d0f1bc77427c8c44a855ff361d3b9d94b76fe3c5e31a423ab9abc570950787",
+  "page": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-W09-2005.html",
+  "terms": "https://nlftp.mlit.go.jp/ksj/other/agreement_02.html",
+  "crsFiles": {},
+  "sourceCrs": "JGD2000 geographic, EPSG:4612",
+  "sourceAxisOrder": "SHP x=longitude,y=latitude; GML B,L is latitude,longitude",
+  "dbfEncoding": "cp932",
+  "metadataEncoding": "shift_jis",
+  "records": 556,
+  "selected": [
+    {
+      "id": "lake:towada",
+      "sourceRecord": 114,
+      "sourceName": "十和田湖（東湖・中湖・西湖）",
+      "positions": 4243,
+      "legacyRoundedCoordinatesMatch": true
+    },
+    {
+      "id": "lake:tazawa",
+      "sourceRecord": 170,
+      "sourceName": "田沢湖",
+      "positions": 1228,
+      "legacyRoundedCoordinatesMatch": true
+    },
+    {
+      "id": "lake:inawashiro",
+      "sourceRecord": 186,
+      "sourceName": "猪苗代湖",
+      "positions": 3467,
+      "legacyRoundedCoordinatesMatch": true
+    },
+    {
+      "id": "lake:kiba",
+      "sourceRecord": 294,
+      "sourceName": "木場潟",
+      "positions": 434,
+      "legacyRoundedCoordinatesMatch": true
+    },
+    {
+      "id": "lake:yogo",
+      "sourceRecord": 423,
+      "sourceName": "余呉湖",
+      "positions": 349,
+      "legacyRoundedCoordinatesMatch": true
+    }
+  ],
+  "coordinateOperation": {
+    "target": "OGC:CRS84",
+    "alwaysXY": true,
+    "allowBallpark": false,
+    "network": false,
+    "description": "JGD2000 to WGS 84 (1) + axis order change (2D) (with axis order normalized for visualization)",
+    "definition": "proj=noop ellps=GRS80",
+    "accuracyMetres": 1.0,
+    "pyproj": "3.8.0",
+    "proj": "9.8.1"
+  },
+  "license": "MLIT National Land Numerical Information terms, old agreement compliant version (individual W09 page: commercial use allowed)",
+  "credit": "国土数値情報（湖沼データ）国土交通省を加工して作成",
+  "coverageChecks": [
+    {
+      "id": "lake:towada",
+      "referenceLandFractionBeforeComplement": 1.0000000000000004
+    },
+    {
+      "id": "lake:tazawa",
+      "referenceLandFractionBeforeComplement": 1.000000000000002
+    },
+    {
+      "id": "lake:inawashiro",
+      "referenceLandFractionBeforeComplement": 0.9999999999999983
+    },
+    {
+      "id": "lake:kiba",
+      "referenceLandFractionBeforeComplement": 0.9999999999999987
+    },
+    {
+      "id": "lake:yogo",
+      "referenceLandFractionBeforeComplement": 1.0000000000000004
+    }
+  ],
+  "codhInputManifestSha256": "c43ed015d4fa95c05a1b30eb9c4eb2cf47869befc251e3c2707462f001959390",
+  "generalTerms": "https://nlftp.mlit.go.jp/ksj/other/agreement.html",
+  "licenseBasis": "W09 individual page commercial-use link points to agreement_02.html; do not replace the specific designation with general PDL terms",
+  "sourceCrsDeclaration": "JGD2000 / (B,L)",
+  "sourceCrsInterpretation": "EPSG:4612; shapefile X=longitude,Y=latitude"
+}
