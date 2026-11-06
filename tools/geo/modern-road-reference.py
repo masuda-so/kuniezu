@@ -12,7 +12,7 @@ if override.exists():
     if extra.get('accepted') is True:
         r['roads'].update(extra['roads']);r['audit']=[a for a in r['audit'] if a['name'] not in extra['roads']]+extra['audit']
 out={n:[[round(x,6),round(y,6)] for x,y in LineString(p).simplify(.00006).coords] for n,p in r['roads'].items()}
-for folder in ['hokkokukaido-review','tosa-road-review','hyuga-road-review','hokurikudo-review']:
+for folder in ['hokkokukaido-review','tosa-road-review','hyuga-road-review','hokurikudo-review','sanshu-road-review']:
     accepted=root/'data/inputs'/folder/'accepted-whole-reference.json'
     if accepted.exists():
         record=json.loads(accepted.read_text());assert record['status']=='accepted-modern-comparison';out[record['name']]=record['points']

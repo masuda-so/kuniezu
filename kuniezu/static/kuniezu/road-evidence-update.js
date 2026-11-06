@@ -50,3 +50,16 @@ TK.RESEARCH_SOURCES["gsiExperimentalRoads"]={"author": "国土地理院", "title
 TK.RESEARCH_SOURCES["hokkokuNagahamaGuide"]={"author": "長浜米原観光協会", "title": "北国街道 長浜宿", "url": "https://kitabiwako.jp/spot/spot_1701", "year": "刊年未詳", "locator": "琵琶湖東岸・柳ヶ瀬・栃ノ木峠の経由説明", "scope": "街道の地域的経由関係。全時代で同じ道筋・路幅とは断定しない。", "accessed": "2026-11-01"};
 TK.ROAD_EVIDENCE["北国街道（近江）"]={"geometry": "modern-reference", "level": "unverified", "sources": ["gsiExperimentalRoads", "hokkokuNagahamaGuide", "modernRoadReference"], "status": "南部は既存OSM参考線を保持。木之本付近以北はGSI現代中心線。旧道の経由関係と区別し、16世紀中心線の確定とはしない。"};
 })();
+/* end hokkokukaido-apply.py: comparison geometry */
+
+/* sanshu-reference.py generated correction */
+(function(){
+TK.RESEARCH_SOURCES["sanshuShiojiri"]={"author":"塩尻市","title":"街道を学ぶ 三州街道","url":"https://www.city.shiojiri.lg.jp/soshiki/35/3943.html","locator":"三州街道（伊那街道）の本文","scope":"塩尻・善知鳥峠・小野・辰野・伊那谷・駒場・根羽・岡崎の経由関係。16世紀の全線中心線は確定しない。","accessed":"2026-11-07"};
+TK.RESEARCH_SOURCES["sanshuCodhPosts"]={"author":"ROIS-DS人文学オープンデータ共同利用センター","title":"江戸宿場データセット v1.1・伊那街道 R505","url":"https://geoshape.ex.nii.ac.jp/edo/post/R505/","locator":"R505-006〜025のうち採用した18地点","scope":"江戸期の歴史地名の代表座標。街道の北側経由地・足助・岡崎方面の比較点として用い、戦国期の宿駅成立や関所位置を確定しない。","license":"CC BY 4.0","doi":"10.20676/00000477","accessed":"2026-11-07"};
+TK.RESEARCH_SOURCES["sanshuModernMountain"]={"author":"国土地理院","title":"道路中心線ベクトルタイル提供実験・浪合から稲武","url":"https://github.com/gsi-cyberjapan/experimental_rdcl","locator":"2026-11-07取得の225タイルのうち道路を含む193タイル","scope":"現代の道路の物理的形状。現代トンネルを含めて連結を調べる比較線で、戦国期の存在や当日の通行を確定しない。","accessed":"2026-11-07"};
+TK.RESEARCH_SOURCES["sanshuModernFoot"]={"author":"OpenStreetMap contributors / FOSSGIS OSRM","title":"三州街道の地名代表点間の現代歩行参考線","url":"https://www.openstreetmap.org/copyright","locator":"2026-11-07取得・routed-foot。山間部の約110kmの過大迂回は採用せず、北側と稲武以南のみ使用。","scope":"現代の歩行向け経路。史実の街道線や軍の経路とは区別する。","license":"ODbL 1.0","accessed":"2026-11-07"};
+const r=TK.ROADS.find(r=>r[0]==="三州街道");if(r)r[1]=[[137.974827,36.103711],[137.9692,36.043],[137.986,35.97722],[137.9859,35.91271],[137.952643,35.837772],[137.94133,35.763542],[137.9319,35.73303],[137.926156,35.678912],[137.89056,35.606379],[137.860471,35.557007],[137.832742,35.511852],[137.7454,35.44613],[137.6856,35.37308],[137.6316,35.32143],[137.582,35.25275],[137.5035,35.21577],[137.318207,35.135353],[137.169267,34.958]];
+delete TK.ROADFIX["三州街道"];
+TK.ROAD_EVIDENCE["三州街道"]={"geometry":"modern-reference","level":"unverified","sources":["sanshuShiojiri","sanshuCodhPosts","sanshuModernMountain","sanshuModernFoot"],"status":"塩尻から伊那谷・駒場・根羽・足助を経て岡崎へ至る道。表示線は現代道路の比較で、山間部には近代の隧道も含む。"};
+})();
+/* end sanshu-reference.py generated correction */
