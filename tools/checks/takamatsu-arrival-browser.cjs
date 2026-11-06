@@ -18,12 +18,12 @@ async function click(selector){const p=await ev(`(()=>{const el=document.querySe
 async function shot(name){await ev("(()=>{const e=document.querySelector('.mbox');if(e)e.scrollTop=0;})()");const r=await call('Page.captureScreenshot',{format:'png'});fs.writeFileSync(path.join(OUT,name+'.png'),Buffer.from(r.data,'base64'));}
 async function view(width,height){await call('Emulation.setDeviceMetricsOverride',{width,height,deviceScaleFactor:1,mobile:width<820});await sleep(300);}
 async function load(){await call('Page.navigate',{url:URL});await until("!!document.querySelector('[data-act=new]')&&!document.getElementById('boot')");}
-async function start(){await click('[data-act=new]');await click('[data-act=scen][data-id=s1582]');await click('[data-act=start]');await until("TKUI.modal==='intro'");}
+async function start(){await click('[data-act=new]');await click('[data-act=scen][data-id=s1582]');await click('#pick [data-act=pick].on');await until("TKUI.mode==='game'&&!TKUI.modal");}
 async function menu(){await click('#me [data-m=menu]');}
 const timer=setTimeout(()=>{console.error('timeout');chrome.kill();process.exitCode=1},480000);
 const cover=()=>ev('(()=>{const {corners}=TKUI.mapBounds();return corners[0][0]<=.01&&corners[0][1]<=.01&&corners[1][0]>=innerWidth-.01&&corners[1][1]>=innerHeight-.01})()');
 (async()=>{try{
- const target=await call('Target.createTarget',{url:'about:blank'},null);session=(await call('Target.attachToTarget',{targetId:target.targetId,flatten:true},null)).sessionId;await call('Runtime.enable');await call('Page.enable');await view(1400,1000);await load();await start();await click('#modal [data-act=close]');await ev('TKUI.speed=0');
+ const target=await call('Target.createTarget',{url:'about:blank'},null);session=(await call('Target.attachToTarget',{targetId:target.targetId,flatten:true},null)).sessionId;await call('Runtime.enable');await call('Page.enable');await view(1400,1000);await load();await start();await ev('TKUI.speed=0');
  const result=await ev(`(()=>{const u=G.S().units.find(u=>u.gens.some(id=>G.gen(id)?.n==='羽柴秀吉')),p=G.historyPoint(u),target=G.PJ(133.828068,34.686228);TKUI.cam(p[0],p[1],8);TKUI.api.renderAll();return {date:G.kyu(),point:p.slice(0,2),target,historyTitle:u.historyTitle,version:G.S().movementGeometryVersion,distance:Math.hypot(p[0]-target[0],p[1]-target[1])};})()`);
  assert.equal(result.version,24);assert.equal(result.historyTitle,'備中高松城の水攻め');assert.ok(result.distance<1e-6);await sleep(1800);await shot('ishii-map');
  await ev("TKUI.open('scene',{title:'備中高松城の水攻め'})");await until("document.querySelector('#bCv')?.dataset.mapReady==='true'");await sleep(1200);await shot('takamatsu-atlas');

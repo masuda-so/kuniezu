@@ -19,7 +19,7 @@ async function click(selector){const p=await ev(`(()=>{const el=document.querySe
 async function shot(name){await ev("(()=>{const e=document.querySelector('.mbox');if(e)e.scrollTop=0;})()");const r=await call('Page.captureScreenshot',{format:'png'});fs.writeFileSync(path.join(OUT,name+'.png'),Buffer.from(r.data,'base64'));}
 async function view(width,height){await call('Emulation.setDeviceMetricsOverride',{width,height,deviceScaleFactor:1,mobile:width<820});await sleep(300);}
 async function load(){await call('Page.navigate',{url:URL});await until("!!document.querySelector('[data-act=new]')");}
-async function start(){await click('[data-act=new]');await click('[data-act=scen][data-id=s1560]');await click('[data-act=start]');await until("TKUI.modal==='intro'");}
+async function start(){await click('[data-act=new]');await click('[data-act=scen][data-id=s1560]');await click('#pick [data-act=pick].on');await until("TKUI.mode==='game'&&!TKUI.modal");}
 async function menu(){await click('#me [data-m=menu]');}
 const timer=setTimeout(()=>{console.error('timeout');chrome.kill();process.exitCode=1},480000);
 const cover=()=>ev('(()=>{const {corners}=TKUI.mapBounds();return corners[0][0]<=.01&&corners[0][1]<=.01&&corners[1][0]>=innerWidth-.01&&corners[1][1]>=innerHeight-.01})()');
@@ -43,6 +43,6 @@ async function intercept(params){
  assert.equal(attempts,1);assert.equal(errors.length,1);assert.match(errors[0],/startup-runtime-test/);
  assert.equal(await ev("typeof TK.EXTRA_BATTLES"),'undefined');await shot('execution-failure');
  fault='none';attempts=0;errors.length=0;await click('#bootReload');await until("!!document.querySelector('[data-act=new]')&&!document.getElementById('boot')");
- await start();await click('#modal [data-act=close]');assert.equal(await ev('TKUI.mode'),'game');assert.deepEqual(errors,[]);
+ await start();assert.equal(await ev('TKUI.mode'),'game');assert.deepEqual(errors,[]);
  console.log('PASS: transient file failure retries, permanent failure stops dependents, execution failure is not retried, reload restores game');
 }catch(e){console.error(e.stack);console.error(errors);try{await shot('failure')}catch{}process.exitCode=1;}finally{clearTimeout(timer);try{await call('Browser.close',{},null)}catch{}chrome.kill();}})();

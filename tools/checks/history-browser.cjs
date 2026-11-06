@@ -18,14 +18,14 @@ async function click(selector){const p=await ev(`(()=>{const el=document.querySe
 async function shot(name){const r=await call('Page.captureScreenshot',{format:'png'});fs.writeFileSync(path.join(OUT,name+'.png'),Buffer.from(r.data,'base64'));}
 async function view(width,height){await call('Emulation.setDeviceMetricsOverride',{width,height,deviceScaleFactor:1,mobile:width<820});await sleep(300);}
 async function load(){await call('Page.navigate',{url:URL});await until("!!document.querySelector('[data-act=new]')");}
-async function start(){await click('[data-act=new]');await click('[data-act=scen][data-id=s1560]');await click('[data-act=start]');await until("TKUI.modal==='intro'");}
+async function start(){await click('[data-act=new]');await click('[data-act=scen][data-id=s1560]');await click('#pick [data-act=pick].on');await until("TKUI.mode==='game'&&!TKUI.modal");}
 async function menu(){await click('#me [data-m=menu]');}
 const timer=setTimeout(()=>{console.error('browser verification timed out');chrome.kill();process.exitCode=1;},150000);
 (async()=>{try{
  const target=await call('Target.createTarget',{url:'about:blank'},null);session=(await call('Target.attachToTarget',{targetId:target.targetId,flatten:true},null)).sessionId;
  await call('Runtime.enable');await call('Page.enable');await view(1400,1000);await load();
  assert.equal(await ev('document.title'),'天下分け目の国絵図');assert.equal(await ev("document.querySelector('#title h1').textContent"),'天下分け目の国絵図');await shot('title');
- await start();await click('#modal [data-act=close]');await sleep(500);
+ await start();await sleep(500);
  await ev('TKUI.fitAll()');await sleep(300);let bounds=await ev('TKUI.mapBounds()');checkBounds(bounds);await shot('whole-map');
  await ev("TKUI.cam(G.C.kiyosu.x,G.C.kiyosu.y,3)");await sleep(5000);console.log('TERRAIN',await ev('TKTerrain.stats()'));assert.ok(await ev('TKTerrain.stats().loaded')>0,'terrain tiles load');await shot('kiyosu-roads');
  const location=await ev("(()=>{const y=G.YOSHO.find(y=>y.n==='沓掛城');TKUI.cam(y.x,y.y,3);return y;})()");await sleep(300);const vc=await ev('TKUI.mapBounds().viewport');await call('Input.dispatchMouseEvent',{type:'mouseMoved',x:vc[0],y:vc[1]});await sleep(250);assert.ok((await ev("document.querySelector('#tip').innerText")).includes('沓掛城'));assert.ok((await ev("document.querySelector('#tip').innerText")).includes('1560年時点'));await shot('castle-hover');
