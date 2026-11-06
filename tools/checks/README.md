@@ -1,6 +1,6 @@
 # 現行版の検証
 
-サーバーの起動・停止はユーザーのみ。ブラウザ検証は既存8000番へ専用の一時Chromeで接続し、普段のプロフィール・保存を使わない。負荷測定は他のブラウザ検証と同時実行しない。
+利用者が起動したことのある許可済み8000番はエージェントも起動・停止できる（127.0.0.1限定、配信先と所有者を確認）。ブラウザ検証は既存8000番へ専用の一時Chromeで接続し、普段のプロフィール・保存を使わない。負荷測定は他のブラウザ検証と同時実行しない。
 
 ページは Django のテンプレート（`kuniezu/templates/index.html`）なので、8000 番は Django の開発サーバーか `dist/client/` の配信を指す。ページをディスクから読む検査は `tools/build/game-page.cjs` で描く。`hachirogata-water-browser.cjs` と `katori-water-browser.cjs` は、`GAME_URL` を指定しなければサーバーなしで一時ファイルを開く。
 
@@ -10,6 +10,7 @@
 
 | 分野 | サーバー不要の検査 | 実画面の検査 |
 |---|---|---|
+| 本体ベクター描画 | `vector-map.cjs`・`vector-assets.cjs` | `vector-game-browser.cjs`（広幅・狭幅・回転・全図）、`VECTOR_FAIL_SOURCE=1`（取得失敗と再読込） |
 | 基本・保存・史実進行 | `offline.cjs` | `completion-browser.cjs` |
 | 秘密情報（APIキー・秘密鍵など。gzipも展開） | `secret-scan.cjs`（CIでも実行。第三者ページの保存前は `tools/research/source-privacy.cjs`） | — |
 | 読み込みの確認値（更新後に古い版を使わせない） | `node tools/build/stamp-assets.cjs --check`（CIでも実行。kuniezu/static/kuniezu/ のファイルを変えたら `node tools/build/stamp-assets.cjs` を実行） | — |
