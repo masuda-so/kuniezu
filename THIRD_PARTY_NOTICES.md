@@ -8,6 +8,17 @@ under their own terms, which are recorded below and in
 
 ## Geographic data
 
+- **CODH 江戸期地理データセット** — retained reference inputs in
+  `data/inputs/codh-edo/` are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).
+  Credits: 『江戸末期海岸線／水域データセット』（ROIS-DS人文学オープンデータ共同利用センター作成）doi:10.20676/00000453;
+  『江戸末期湖沼データセット』（同センター作成）doi:10.20676/00000467;
+  『江戸主要街道データセット』（同センター作成）doi:10.20676/00000452;
+  『江戸宿場データセット』（同センター作成）doi:10.20676/00000477.
+  Original bytes are retained in gzip archives. The optional derived GeoJSON removes
+  the legacy CRS declaration and adds row identifiers, preserving coordinates and
+  properties. These Edo references are not assertions of Sengoku-period geography.
+  Exact URLs, versions, hashes and license evidence are in the input manifest and README.
+
 - **GSHHG (Global Self-consistent, Hierarchical, High-resolution Geography)** —
   coastline and water body outlines. Licensed under the GNU Lesser General Public
   License v3.0; the license text and upstream README are kept in
