@@ -2,8 +2,9 @@
 /* 編集済み経緯度の描画専用。水面の合成・補正・平滑化は準備時に済ませる。 */
 (function(root){
  const day=value=>Array.isArray(value)?value[0]*10000+value[1]*100+value[2]:value;
+ const mapDay=value=>{value=day(value);if(!Number.isFinite(value))throw Error('Expected map date');return value;};
  function create({project,Path=root.Path2D}){
-  let rows=[],revision=0;const listeners=new Set();
+  let rows=[],periods=[],revision=0;const listeners=new Set(),wholePaths=new Map();
   function compile(collection){
    if(collection.type!=='FeatureCollection'||!Array.isArray(collection.features))throw Error('Expected vector FeatureCollection');
    if(collection.crs||collection.coordinateReferenceSystem&&collection.coordinateReferenceSystem!=='OGC:CRS84')throw Error('Expected OGC:CRS84');
@@ -41,16 +42,17 @@
    return row.path=path;
   }
   const active=(row,date)=>row.from<=date&&date<row.until;
+  function epoch(date){let lo=0,hi=periods.length;while(lo<hi){const mid=(lo+hi)>>1;if(periods[mid]<=date)lo=mid+1;else hi=mid;}return lo;}
   const intersects=(a,b)=>a[0]<=b[2]&&a[2]>=b[0]&&a[1]<=b[3]&&a[3]>=b[1];
   function selected(role,date,view){date=day(date);return rows.filter(row=>row.role===role&&active(row,date)&&(!view||intersects(row.bounds,view)));}
   function inRing(x,y,ring){let inside=false;for(let i=0,j=ring.length-1;i<ring.length;j=i++){const a=ring[i],b=ring[j];if((a[1]>y)!==(b[1]>y)&&x<(b[0]-a[0])*(y-a[1])/(b[1]-a[1])+a[0])inside=!inside;}return inside;}
   return {
-   replace(collections){const next=collections.flatMap(compile);rows=next;revision++;for(const f of listeners)f();return next.length;},
+   replace(collections){const next=collections.flatMap(compile);rows=next;periods=[...new Set(rows.flatMap(row=>[row.from,row.until]).filter(Number.isFinite))].sort((a,b)=>a-b);wholePaths.clear();revision++;for(const f of listeners)f();return next.length;},
    draw(context,role,date,view){const found=selected(role,date,view);for(const row of found){if(role==='shore')context.stroke(path(row));else context.fill(path(row),'nonzero');}return found.length;},
-   path(role,date,view){const all=new Path();for(const row of selected(role,date,view))all.addPath(path(row));return all;},
+   path(role,date,view){date=mapDay(date);const key=role+':'+epoch(date);if(!view&&wholePaths.has(key))return wholePaths.get(key);const all=new Path();for(const row of selected(role,date,view))all.addPath(path(row));if(!view){wholePaths.set(key,all);if(wholePaths.size>6)wholePaths.delete(wholePaths.keys().next().value);}return all;},
    contains(x,y,date){return selected('land',date,[x,y,x,y]).some(row=>row.coordinates.some(poly=>inRing(x,y,poly[0])&&!poly.slice(1).some(ring=>inRing(x,y,ring))));},
    bounds(role,date){const found=selected(role,date);return found.length?[Math.min(...found.map(r=>r.bounds[0])),Math.min(...found.map(r=>r.bounds[1])),Math.max(...found.map(r=>r.bounds[2])),Math.max(...found.map(r=>r.bounds[3]))]:null;},
-   revision:()=>revision,onChange(fn){listeners.add(fn);return ()=>listeners.delete(fn);},
+   epoch:date=>epoch(mapDay(date)),revision:()=>revision,onChange(fn){listeners.add(fn);return ()=>listeners.delete(fn);},
    stats:()=>({features:rows.length,paths:rows.filter(row=>row.path).length,revision})
   };
  }

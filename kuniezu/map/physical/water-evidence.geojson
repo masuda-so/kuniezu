@@ -1,0 +1,928 @@
+{
+  "type": "FeatureCollection",
+  "coordinateReferenceSystem": "OGC:CRS84",
+  "status": "migration-candidate",
+  "periodSemantics": "validFrom/validUntilはゲーム内の表示適用範囲であり、湖沼の成立・消滅日や原図の制作・描写年代を確定しない。",
+  "sourcePolicy": {
+    "editedSource": true,
+    "normalBuild": "byte-copy-only",
+    "runtimeCoordinateCorrection": false,
+    "changesLandMask": false,
+    "affectsMovement": false,
+    "polygonSource": "existing-rendered-tsubaki-rings-only",
+    "pointSemantics": "name-label-only"
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "id": "historic-water:iinuma",
+      "properties": {
+        "id": "iinuma",
+        "name": "飯沼",
+        "label": "飯沼",
+        "description": "下総国に広がっていた沼。",
+        "kind": "lake",
+        "drawRole": "water-label",
+        "shapeRole": "label-only",
+        "positionRole": "approximate-label",
+        "labelAt": [
+          139.947,
+          36.13
+        ],
+        "labelPositionRole": "approximate-label",
+        "changesLandMask": false,
+        "affectsMovement": false,
+        "exactHistoricalShoreline": false,
+        "validFrom": [
+          1560,
+          1,
+          1
+        ],
+        "validUntil": [
+          1616,
+          1,
+          1
+        ],
+        "periodSemantics": "display-applicability-only",
+        "provenance": {
+          "originalLabel": "飯沼（湖岸未確定）",
+          "originalSourceScope": "享保年間の干拓以前の沼。現在の3市1町にまたがる。旧表示の7頂点の輪郭は史料から復元したものではない。",
+          "sourceModule": {
+            "path": "kuniezu/static/kuniezu/water-evidence.js",
+            "sha256": "74d1424653abfc3007daed0c5398623cf139512a57586d8dc46ea5bc5a6c7009",
+            "bytes": 7103,
+            "role": "元の地名と概略ラベル位置"
+          },
+          "geometrySource": {
+            "path": "kuniezu/static/kuniezu/water-evidence.js",
+            "sha256": "74d1424653abfc3007daed0c5398623cf139512a57586d8dc46ea5bc5a6c7009",
+            "bytes": 7103,
+            "role": "元のatだけを採用。旧polyは採用しない。"
+          },
+          "generator": null,
+          "registrationReport": null,
+          "sources": [
+            {
+              "id": "water-iinuma",
+              "author": "坂東市立坂東郷土館ミューズ",
+              "title": "ミューズ企画展「飯沼新田物語」",
+              "url": "https://www.city.bando.lg.jp/page/page002762.html",
+              "locator": "干拓・造成以前の水域と年代",
+              "recordedScope": "享保年間の干拓以前の沼。現在の3市1町にまたがる。旧表示の7頂点の輪郭は史料から復元したものではない。",
+              "previouslyAccessed": "2026-11-01",
+              "published": {
+                "date": [
+                  2015,
+                  9,
+                  27
+                ],
+                "calendar": "CE",
+                "meaning": "ページ末尾の表示日。展示資料個々の制作日ではない。"
+              },
+              "depicts": {
+                "label": "享保期の干拓前の沼と1724年の開発許可、近現代の改良史",
+                "exactHistoricalShoreline": false
+              }
+            },
+            {
+              "id": "iinumaLandHistory",
+              "author": "国土交通省",
+              "title": "土地分類基本調査（土地履歴調査）水海道 説明書",
+              "url": "https://nlftp.mlit.go.jp/kokjo/inspect/landclassification/land/land_history_2011/mapdata/533977/533977_REF.pdf",
+              "locator": "32頁・図4-5 飯沼の新田開発の状況",
+              "recordedScope": "元禄と天保の下総国絵図の比較、享保10年の工事着手。戦国期の湖岸座標は示さない。",
+              "previouslyAccessed": "2026-11-06",
+              "published": {
+                "year": null,
+                "label": "既存出典台帳には刊年の記録なし"
+              },
+              "depicts": {
+                "label": "元禄・天保の下総国絵図の比較と享保10年の工事着手",
+                "exactHistoricalShoreline": false
+              }
+            }
+          ],
+          "uncertainty": "表示点は従来ラベルの概略位置。旧7頂点の面は史料から復元した輪郭でないため移さない。元禄・天保や享保期の資料から戦国期の面積・水際を確定しない。",
+          "registrationApplicability": "点は史料上の測点や湖心ではなく、地名の表示位置である。",
+          "reviewReports": [
+            {
+              "path": "docs/reports/DEPLOYMENT_REVIEW.md",
+              "sha256": "45a163d04f5660ae5b92f456875e8d06e80c5ef48143c74fb3777cbea7a9e530",
+              "bytes": 15661,
+              "role": "旧水域の区分・出典の移行記録"
+            }
+          ]
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.947,
+          36.13
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "historic-water:minuma",
+      "properties": {
+        "id": "minuma",
+        "name": "見沼",
+        "label": "見沼",
+        "description": "武蔵国の沼沢地。",
+        "kind": "marsh",
+        "drawRole": "water-label",
+        "shapeRole": "label-only",
+        "positionRole": "approximate-label",
+        "labelAt": [
+          139.7,
+          35.9
+        ],
+        "labelPositionRole": "approximate-label",
+        "changesLandMask": false,
+        "affectsMovement": false,
+        "exactHistoricalShoreline": false,
+        "validFrom": [
+          1560,
+          1,
+          1
+        ],
+        "validUntil": [
+          1616,
+          1,
+          1
+        ],
+        "periodSemantics": "display-applicability-only",
+        "provenance": {
+          "originalLabel": "見沼（沼沢地・概略）",
+          "originalSourceScope": "江戸初期まで沼沢地。1629年に八丁堤で溜井化。対象時代の水面範囲は未確定で、溜井完成形として表示しない。",
+          "sourceModule": {
+            "path": "kuniezu/static/kuniezu/water-evidence.js",
+            "sha256": "74d1424653abfc3007daed0c5398623cf139512a57586d8dc46ea5bc5a6c7009",
+            "bytes": 7103,
+            "role": "元の地名と概略ラベル位置"
+          },
+          "geometrySource": {
+            "path": "kuniezu/static/kuniezu/water-evidence.js",
+            "sha256": "74d1424653abfc3007daed0c5398623cf139512a57586d8dc46ea5bc5a6c7009",
+            "bytes": 7103,
+            "role": "元のatだけを採用。旧polyは採用しない。"
+          },
+          "generator": null,
+          "registrationReport": null,
+          "sources": [
+            {
+              "id": "water-minuma",
+              "author": "さいたま市図書館",
+              "title": "中央図書館 見沼田んぼコーナー",
+              "url": "https://www.lib.city.saitama.jp/contents?5=&pid=133",
+              "locator": "干拓・造成以前の水域と年代",
+              "recordedScope": "江戸初期まで沼沢地。1629年に八丁堤で溜井化。対象時代の水面範囲は未確定で、溜井完成形として表示しない。",
+              "previouslyAccessed": "2026-11-01",
+              "published": {
+                "year": null,
+                "label": "既存出典台帳には刊年の記録なし"
+              },
+              "depicts": {
+                "label": "江戸初期以前の沼沢地と1629年の溜井化以降",
+                "exactHistoricalShoreline": false
+              }
+            },
+            {
+              "id": "minumaSaitamaWater",
+              "author": "埼玉県",
+              "title": "見沼代用水",
+              "url": "https://www.pref.saitama.lg.jp/documents/10406/51242.pdf",
+              "locator": "見沼溜井の成立と代用水の開削",
+              "recordedScope": "1629年の八丁堤、1727年の着手と1728年の代用水完成。戦国期の水際は特定しない。",
+              "previouslyAccessed": "2026-11-06",
+              "published": {
+                "year": null,
+                "label": "既存出典台帳には刊年の記録なし"
+              },
+              "depicts": {
+                "label": "1629年の八丁堤、1727年の着手、1728年の代用水完成",
+                "exactHistoricalShoreline": false
+              }
+            }
+          ],
+          "uncertainty": "表示点は従来ラベルの概略位置。旧8頂点の面は移さない。1629年の八丁堤で成立した溜井の完成形を1560〜1615年に遡らせない。",
+          "registrationApplicability": "点は史料上の測点や湖心ではなく、地名の表示位置である。",
+          "reviewReports": [
+            {
+              "path": "docs/reports/DEPLOYMENT_REVIEW.md",
+              "sha256": "45a163d04f5660ae5b92f456875e8d06e80c5ef48143c74fb3777cbea7a9e530",
+              "bytes": 15661,
+              "role": "旧水域の区分・出典の移行記録"
+            }
+          ]
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.7,
+          35.9
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "historic-water:tsubaki",
+      "properties": {
+        "id": "tsubaki",
+        "name": "椿海",
+        "label": "椿海",
+        "description": "下総国東部にあった湖。江戸時代に干拓された。",
+        "kind": "lake",
+        "drawRole": "inferred-water",
+        "shapeRole": "source-traced-approximate",
+        "positionRole": "source-traced-approximate",
+        "labelAt": [
+          140.6,
+          35.74
+        ],
+        "labelPositionRole": "approximate-label",
+        "changesLandMask": false,
+        "affectsMovement": false,
+        "exactHistoricalShoreline": false,
+        "validFrom": [
+          1560,
+          1,
+          1
+        ],
+        "validUntil": [
+          1616,
+          1,
+          1
+        ],
+        "periodSemantics": "display-applicability-only",
+        "provenance": {
+          "originalLabel": "椿海（湖岸未確定）",
+          "originalSourceScope": "1670年の干拓と旭・匝瑳・東庄の旧湖。旧表示の6頂点の輪郭を確定湖岸とは扱わない。",
+          "sourceModule": {
+            "path": "kuniezu/static/kuniezu/water-evidence.js",
+            "sha256": "74d1424653abfc3007daed0c5398623cf139512a57586d8dc46ea5bc5a6c7009",
+            "bytes": 7103,
+            "role": "元の地名と概略ラベル位置"
+          },
+          "geometrySource": {
+            "path": "kuniezu/static/kuniezu/tsubaki-lake.js",
+            "sha256": "c75f7241f2a03b3846c9e9bb2e5f4c8c5d74cfcef60ab192e67a3052b1a382b4",
+            "bytes": 2553,
+            "role": "現表示の小数6桁102座標。追加丸め・平滑化・再投影なし"
+          },
+          "generator": {
+            "path": "tools/geo/tsubaki-registration.py",
+            "sha256": "98d8bde75e4b94158c7a9ca9cacf409d5246688f4faf3043644bb811eb60f684",
+            "bytes": 3555,
+            "role": "既存形状の生成元。移行時・通常ビルド・実行時には再実行しない。"
+          },
+          "registrationReport": {
+            "path": "data/verification/tsubaki/registration.json",
+            "sha256": "a43dc8566c876200a66ba63f55978162c4e3dc6aaa7e8557fa5c2dd9a2d45699",
+            "bytes": 2315,
+            "role": "既存の位置合わせ報告"
+          },
+          "sources": [
+            {
+              "id": "tsubakiGsi",
+              "author": "建設省国土地理院",
+              "title": "土地条件調査報告書（銚子・鹿島地区）",
+              "url": "https://www1.gsi.go.jp/geowww/landcondition/report/d2031.pdf",
+              "locator": "本文47頁・図16 椿海疏洑始成図（PDF54頁）。図17は干拓直後の比較に使用。",
+              "recordedScope": "椿海の水際を古図から読図し村名位置と比較。干拓時の絵図を用いた概略復元で、1560年の測量岸ではない。",
+              "previouslyAccessed": "2026-11-01",
+              "published": {
+                "year": 1979,
+                "calendar": "CE"
+              },
+              "depicts": {
+                "label": "17世紀の干拓時を扱う図16。図17は干拓後の比較",
+                "exactYear": null,
+                "exactHistoricalShoreline": false
+              },
+              "reproductionChain": [
+                {
+                  "year": 1958,
+                  "title": "大利根用水事業史",
+                  "role": "1979年報告が転載元として参照。原図の制作年と同一視しない。"
+                },
+                {
+                  "year": 1979,
+                  "title": "土地条件調査報告書（銚子・鹿島地区）",
+                  "role": "今回の読図に使われた公刊報告"
+                }
+              ],
+              "unresolvedOriginalAnnotation": {
+                "labels": [
+                  "寛文12",
+                  "1670"
+                ],
+                "resolvedYear": null,
+                "decision": "登録報告に残る年号・西暦の不整合を保持。いずれかへ修正せず、特定日の水際として扱わない。"
+              },
+              "rawOriginal": {
+                "path": "data/research/reference-documents/choushi-kashima-landcondition.pdf",
+                "sha256": "0746e62d0c96473ed582090742811e138f19eab6cf84468b4153971d288b8735",
+                "bytes": 16102782,
+                "includedInCandidate": false
+              }
+            },
+            {
+              "id": "water-tsubaki",
+              "author": "千葉県海匝農業事務所",
+              "title": "干潟干拓の歴史",
+              "url": "https://www.pref.chiba.lg.jp/ap-kaisou/kaisou/kibanseibi/higata.html",
+              "locator": "干拓・造成以前の水域と年代",
+              "recordedScope": "1670年の干拓と旭・匝瑳・東庄の旧湖。旧表示の6頂点の輪郭を確定湖岸とは扱わない。",
+              "previouslyAccessed": "2026-11-01",
+              "published": {
+                "date": [
+                  2024,
+                  4,
+                  26
+                ],
+                "calendar": "CE",
+                "meaning": "ウェブページ更新日"
+              },
+              "depicts": {
+                "label": "1670年（寛文10年）の干拓とその後の農地・用排水史",
+                "exactHistoricalShoreline": false
+              }
+            }
+          ],
+          "uncertainty": "対応点は村の代表位置で独立検証点ではない。数百m以上の誤差・絵図の内部歪みを含む。細かな汀線・水位の確定には使用しない。",
+          "registrationApplicability": "当てはめ誤差は形状の絶対精度ではない。",
+          "reviewReports": [
+            {
+              "path": "docs/reports/DEPLOYMENT_REVIEW.md",
+              "sha256": "45a163d04f5660ae5b92f456875e8d06e80c5ef48143c74fb3777cbea7a9e530",
+              "bytes": 15661,
+              "role": "旧水域の区分・出典の移行記録"
+            },
+            {
+              "path": "docs/reports/HISTORICAL_RECHECK.md",
+              "sha256": "93dd986f39d9314ed97ed5b180cd823a14ff44dfcf1937e5f44659691c289ecc",
+              "bytes": 6962,
+              "role": "102座標採用と限界"
+            }
+          ],
+          "traceInput": {
+            "path": "data/research/tsubaki-trace-input.json",
+            "sha256": "d4f531cb7200d47d375d29df5f9f7638f5ce00a0c9d0e3846daa3491406cccfd",
+            "bytes": 4162,
+            "role": "既存の読図点と5対応点"
+          },
+          "earlierFullPrecisionShape": {
+            "path": "data/verification/tsubaki/lake.geojson",
+            "sha256": "6d756f5702f3b89f18708509cc1741a810e8776ec8ed67a72c07b579637e733b",
+            "bytes": 6063,
+            "role": "移行不採用。現表示と異なる精度の座標へ差し替えない。"
+          },
+          "registration": {
+            "method": "図16の内側の水際を読図、5村名代表点でアフィン登録。検索結果の地名が一致しない上代・太田は採用しない。",
+            "rmsMetres": 643,
+            "fitControlCount": 5,
+            "independentValidationPointCount": 0,
+            "controlsAreVillageRepresentatives": true,
+            "sourceDate": "17世紀の干拓時図を1958年の大利根用水事業史経由で転載。1560年の実測図ではない。図16の年号換算にも寛文12と1670の不一致があり、特定日の岸とはしない。"
+          }
+        }
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              140.569858,
+              35.748581
+            ],
+            [
+              140.572331,
+              35.751115
+            ],
+            [
+              140.576728,
+              35.753711
+            ],
+            [
+              140.581085,
+              35.755974
+            ],
+            [
+              140.585234,
+              35.757557
+            ],
+            [
+              140.589018,
+              35.758227
+            ],
+            [
+              140.593269,
+              35.7596
+            ],
+            [
+              140.597868,
+              35.760674
+            ],
+            [
+              140.603526,
+              35.762063
+            ],
+            [
+              140.608191,
+              35.763693
+            ],
+            [
+              140.612896,
+              35.765656
+            ],
+            [
+              140.617717,
+              35.76752
+            ],
+            [
+              140.622342,
+              35.768817
+            ],
+            [
+              140.626504,
+              35.770511
+            ],
+            [
+              140.631093,
+              35.772575
+            ],
+            [
+              140.634791,
+              35.774668
+            ],
+            [
+              140.639764,
+              35.775665
+            ],
+            [
+              140.644363,
+              35.776739
+            ],
+            [
+              140.649144,
+              35.778269
+            ],
+            [
+              140.65372,
+              35.780221
+            ],
+            [
+              140.657484,
+              35.782871
+            ],
+            [
+              140.659597,
+              35.785592
+            ],
+            [
+              140.663116,
+              35.78833
+            ],
+            [
+              140.665113,
+              35.791151
+            ],
+            [
+              140.668825,
+              35.793355
+            ],
+            [
+              140.671682,
+              35.794823
+            ],
+            [
+              140.674019,
+              35.795143
+            ],
+            [
+              140.676251,
+              35.794573
+            ],
+            [
+              140.677562,
+              35.79271
+            ],
+            [
+              140.679416,
+              35.791115
+            ],
+            [
+              140.681528,
+              35.789544
+            ],
+            [
+              140.682269,
+              35.787189
+            ],
+            [
+              140.682481,
+              35.784677
+            ],
+            [
+              140.681776,
+              35.781972
+            ],
+            [
+              140.680335,
+              35.779531
+            ],
+            [
+              140.68157,
+              35.778102
+            ],
+            [
+              140.683818,
+              35.778744
+            ],
+            [
+              140.687384,
+              35.779725
+            ],
+            [
+              140.690715,
+              35.779804
+            ],
+            [
+              140.692893,
+              35.778789
+            ],
+            [
+              140.693906,
+              35.776569
+            ],
+            [
+              140.693624,
+              35.773131
+            ],
+            [
+              140.692581,
+              35.769736
+            ],
+            [
+              140.690157,
+              35.766546
+            ],
+            [
+              140.688005,
+              35.763491
+            ],
+            [
+              140.686561,
+              35.75995
+            ],
+            [
+              140.684846,
+              35.756274
+            ],
+            [
+              140.683906,
+              35.752667
+            ],
+            [
+              140.684889,
+              35.749124
+            ],
+            [
+              140.686401,
+              35.745738
+            ],
+            [
+              140.687153,
+              35.742393
+            ],
+            [
+              140.68754,
+              35.738136
+            ],
+            [
+              140.684845,
+              35.734812
+            ],
+            [
+              140.680759,
+              35.732683
+            ],
+            [
+              140.67668,
+              35.732757
+            ],
+            [
+              140.671906,
+              35.733429
+            ],
+            [
+              140.667598,
+              35.734803
+            ],
+            [
+              140.663149,
+              35.736054
+            ],
+            [
+              140.658971,
+              35.737439
+            ],
+            [
+              140.654958,
+              35.738069
+            ],
+            [
+              140.651012,
+              35.739255
+            ],
+            [
+              140.647648,
+              35.741044
+            ],
+            [
+              140.644235,
+              35.743489
+            ],
+            [
+              140.641878,
+              35.745148
+            ],
+            [
+              140.640172,
+              35.744775
+            ],
+            [
+              140.63858,
+              35.743201
+            ],
+            [
+              140.637941,
+              35.741052
+            ],
+            [
+              140.638775,
+              35.739476
+            ],
+            [
+              140.640294,
+              35.738292
+            ],
+            [
+              140.642652,
+              35.736633
+            ],
+            [
+              140.644261,
+              35.735127
+            ],
+            [
+              140.639288,
+              35.734129
+            ],
+            [
+              140.634537,
+              35.733922
+            ],
+            [
+              140.630133,
+              35.733417
+            ],
+            [
+              140.625409,
+              35.733432
+            ],
+            [
+              140.621727,
+              35.732551
+            ],
+            [
+              140.617684,
+              35.731858
+            ],
+            [
+              140.614496,
+              35.731901
+            ],
+            [
+              140.611891,
+              35.732548
+            ],
+            [
+              140.609192,
+              35.732415
+            ],
+            [
+              140.605702,
+              35.731001
+            ],
+            [
+              140.602471,
+              35.72961
+            ],
+            [
+              140.599683,
+              35.7298
+            ],
+            [
+              140.597217,
+              35.729468
+            ],
+            [
+              140.594495,
+              35.730214
+            ],
+            [
+              140.591694,
+              35.730292
+            ],
+            [
+              140.588599,
+              35.731115
+            ],
+            [
+              140.585811,
+              35.731304
+            ],
+            [
+              140.58248,
+              35.731225
+            ],
+            [
+              140.579405,
+              35.730068
+            ],
+            [
+              140.57607,
+              35.728888
+            ],
+            [
+              140.572491,
+              35.727796
+            ],
+            [
+              140.56982,
+              35.727886
+            ],
+            [
+              140.568274,
+              35.728848
+            ],
+            [
+              140.567648,
+              35.731103
+            ],
+            [
+              140.567837,
+              35.733761
+            ],
+            [
+              140.567638,
+              35.736385
+            ],
+            [
+              140.568847,
+              35.739025
+            ],
+            [
+              140.569009,
+              35.741461
+            ],
+            [
+              140.567917,
+              35.743014
+            ],
+            [
+              140.568738,
+              35.745619
+            ],
+            [
+              140.569858,
+              35.748581
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "historic-water:shiunji",
+      "properties": {
+        "id": "shiunji",
+        "name": "塩津潟",
+        "label": "塩津潟",
+        "description": "越後国にあった潟。紫雲寺潟とも呼ばれた。",
+        "kind": "lake",
+        "drawRole": "water-label",
+        "shapeRole": "label-only",
+        "positionRole": "approximate-label",
+        "labelAt": [
+          139.35,
+          38.02
+        ],
+        "labelPositionRole": "approximate-label",
+        "changesLandMask": false,
+        "affectsMovement": false,
+        "exactHistoricalShoreline": false,
+        "validFrom": [
+          1560,
+          1,
+          1
+        ],
+        "validUntil": [
+          1616,
+          1,
+          1
+        ],
+        "periodSemantics": "display-applicability-only",
+        "provenance": {
+          "originalLabel": "塩津潟（湖岸未確定）",
+          "originalSourceScope": "8〜9頁。南岸の集落と自然堤防、干拓前の潟。ラベルは概略位置。",
+          "sourceModule": {
+            "path": "kuniezu/static/kuniezu/water-evidence.js",
+            "sha256": "74d1424653abfc3007daed0c5398623cf139512a57586d8dc46ea5bc5a6c7009",
+            "bytes": 7103,
+            "role": "元の地名と概略ラベル位置"
+          },
+          "geometrySource": {
+            "path": "kuniezu/static/kuniezu/water-evidence.js",
+            "sha256": "74d1424653abfc3007daed0c5398623cf139512a57586d8dc46ea5bc5a6c7009",
+            "bytes": 7103,
+            "role": "元のatだけを採用。旧polyは採用しない。"
+          },
+          "generator": null,
+          "registrationReport": null,
+          "sources": [
+            {
+              "id": "water-shiunji",
+              "author": "新潟県教育委員会・新潟県埋蔵文化財調査事業団",
+              "title": "野中土手付遺跡・砂山中道下遺跡",
+              "url": "https://sitereports.nabunken.go.jp/files/attach/33/33132/24225_1_%E9%87%8E%E4%B8%AD%E5%9C%9F%E6%89%8B%E4%BB%98%E9%81%BA%E8%B7%A1%E7%A0%82%E5%B1%B1%E4%B8%AD%E9%81%93%E4%B8%8B%E9%81%BA%E8%B7%A1.pdf",
+              "locator": "印刷8〜9頁・第8図（1645年図の復元）・第10図（干拓直後）。既存HISTORICAL_TERRITORY_UNITS.mdの読図記録を継承。",
+              "recordedScope": "8〜9頁。南岸の集落と自然堤防、干拓前の潟。ラベルは概略位置。",
+              "previouslyAccessed": "2026-11-01",
+              "published": {
+                "year": null,
+                "label": "刊年は既存出典台帳に記録なし。今回の移行では原本の再読を行わない。"
+              },
+              "depicts": {
+                "label": "印刷8〜9頁。第8図は1645年越後国絵図の復元図、第10図は干拓直後の古地理。別時期の図を分離。",
+                "comparisonYears": [
+                  1645
+                ],
+                "exactHistoricalShoreline": false
+              }
+            },
+            {
+              "id": "niigata-shiotsugata-reclamation",
+              "author": "新潟県新発田地域振興局 農村整備部",
+              "title": "3 塩津潟（紫雲寺潟）干拓",
+              "url": "https://www.pref.niigata.lg.jp/sec/shibata_noson/1356833203513.html",
+              "locator": "長者堀の初回掘削・再掘削と今泉川の瀬替え",
+              "recordedScope": "江戸期に塩津潟の排水条件が変わった過程。戦国期の汀線は示さない。",
+              "previouslyAccessed": "2026-11-07",
+              "published": {
+                "date": [
+                  2019,
+                  3,
+                  29
+                ],
+                "calendar": "CE",
+                "meaning": "既存出典台帳のウェブページ更新日"
+              },
+              "depicts": {
+                "label": "1721年の長者堀掘削、1728年の再掘削、1732年の瀬替えと増水",
+                "exactHistoricalShoreline": false
+              }
+            }
+          ],
+          "uncertainty": "表示点は従来ラベルの概略位置。1645年図・1721年図・干拓直後の古地理は異なる時点を示す。南岸の集落対応の可能性を確定湖岸とせず、旧面を復活させない。",
+          "registrationApplicability": "点は史料上の測点や湖心ではなく、地名の表示位置である。",
+          "reviewReports": [
+            {
+              "path": "docs/reports/DEPLOYMENT_REVIEW.md",
+              "sha256": "45a163d04f5660ae5b92f456875e8d06e80c5ef48143c74fb3777cbea7a9e530",
+              "bytes": 15661,
+              "role": "旧水域の区分・出典の移行記録"
+            },
+            {
+              "path": "docs/reports/HISTORICAL_TERRITORY_UNITS.md",
+              "sha256": "b6071ac4f44287ae8d75a77d908b7f18992fdf5c36229238e84cb8524a4cc716",
+              "bytes": 17128,
+              "role": "旧面の史跡包含と年代別比較の限界"
+            }
+          ]
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.35,
+          38.02
+        ]
+      }
+    }
+  ]
+}

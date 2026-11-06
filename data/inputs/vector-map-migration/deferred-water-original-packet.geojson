@@ -1,0 +1,3833 @@
+{
+  "type": "FeatureCollection",
+  "coordinateReferenceSystem": "OGC:CRS84",
+  "status": "candidate-only-current-game-unchanged",
+  "provenance": {
+    "inputs": [
+      {
+        "path": "/tmp/kuniezu-era-land-candidate/land-1560.geojson",
+        "sha256": "ff937cd6c180a1ff8cab8cd9f8943afe5549eb77640a51ec2b9103b39654b93d"
+      },
+      {
+        "path": "/Users/masudaso/.codex/worktrees/history-cube-query/天下分け目の国絵図/kuniezu/map/projection.json",
+        "sha256": "3576c5ceb1fc809ac06f538f14dd8be842f343fc18e374edcbdbc8bb4d9e8cee"
+      },
+      {
+        "path": "/tmp/kuniezu-current-water-regions/verification.json",
+        "sha256": "899571652199ab9954ca38fd4975ac97b779214b8c04f68a02eee52e22725322"
+      },
+      {
+        "path": "/tmp/kuniezu-current-water-regions/hachirogata.geojson",
+        "sha256": "56f8ea4ee1e63a584a4ffc56f6c808c8673c1c8274116e1f4e46e78f3f8987e2"
+      },
+      {
+        "path": "/Users/masudaso/.codex/worktrees/history-cube-query/天下分け目の国絵図/data/research/hachirogata-reference/pixel-reconstruction.json",
+        "sha256": "7adcf3bee47fb0c53217fc65dd7026d2d94430fcda819d2d1180b2b7bf1773d9"
+      },
+      {
+        "path": "/Users/masudaso/.codex/worktrees/history-cube-query/天下分け目の国絵図/data/research/hachirogata-reference/edo-review/deferral-overlap-results.json",
+        "sha256": "bc4fa3d092af69d6d997d633e3863560f2921b36ba275890c7967fac57192181"
+      },
+      {
+        "path": "/Users/masudaso/.codex/worktrees/history-cube-query/天下分け目の国絵図/data/research/hachirogata-reference/outlet/results.json",
+        "sha256": "97b2eda266678a4b919787fd9ae1c943469f897a7909d54ab26b3d9d980b3312"
+      },
+      {
+        "path": "/tmp/kuniezu-current-water-regions/ogura.geojson",
+        "sha256": "7cfb920f3e4a4fec2fe912fdbf03dda59e676dc07f860cc1b1ba8790be95f62b"
+      },
+      {
+        "path": "/Users/masudaso/.codex/worktrees/history-cube-query/天下分け目の国絵図/kuniezu/map/edits/vector/manifest.json",
+        "sha256": "d4c4ab32facba13968d100ff451f6e79f2cecf74e7980b73512b7bfa547c1563"
+      },
+      {
+        "path": "/Users/masudaso/.codex/worktrees/history-cube-query/天下分け目の国絵図/data/research/katori-review/uchinasaka/south-connection/wide-lake-perimeter.geojson",
+        "sha256": "f30bfbcfc000b10b4d2d696b2c6ba1ccd15bc8301981eda1cd156073b676fdc0"
+      },
+      {
+        "path": "/tmp/kuniezu-kojima-vectors-final/kojima-bay-ukita-land-from-1584.geojson",
+        "sha256": "d1d287a80d4943e241531e0e4981c846cf502b2f653c6bc9199de4ec05014d5a"
+      },
+      {
+        "path": "/tmp/kuniezu-vector-seed-candidate/water.geojson",
+        "sha256": "d6f84aabf0369d5f159e93de3e6c51c70aa6b57ee373198c6b75eeeda73c4515"
+      },
+      {
+        "path": "/tmp/kuniezu-era-land-candidate/open-boundaries.geojson",
+        "sha256": "12fa858f2e8d797d5a8251e8c377c280de0a1dd5ddc0ca20648743ce3afda2af"
+      },
+      {
+        "path": "/Users/masudaso/.codex/worktrees/history-cube-query/天下分け目の国絵図/kuniezu/map/physical/shoreline_masks.geojson",
+        "sha256": "0bed4a3577bf6f07507a0300ae1a836222f5c2fac91466c9217178b3fc88363a"
+      },
+      {
+        "path": "/Users/masudaso/.codex/worktrees/history-cube-query/天下分け目の国絵図/kuniezu/map/edits/vector/manifest.json",
+        "sha256": "d4c4ab32facba13968d100ff451f6e79f2cecf74e7980b73512b7bfa547c1563"
+      },
+      {
+        "path": "/Users/masudaso/.codex/worktrees/history-cube-query/天下分け目の国絵図/data/research/katori-review/uchinasaka/south-connection/wide-lake-perimeter.geojson",
+        "sha256": "f30bfbcfc000b10b4d2d696b2c6ba1ccd15bc8301981eda1cd156073b676fdc0"
+      }
+    ],
+    "sourceProvenance": {
+      "preparedManifest": {
+        "schemaVersion": 1,
+        "temporalScope": "Edo-reference-not-Sengoku-assertion",
+        "algorithm": "make_valid(method=linework, keep_collapsed=True); union_all; difference",
+        "shapely": "2.2.0",
+        "geos": "3.14.1",
+        "layers": [
+          {
+            "key": "coast-polygons",
+            "source": {
+              "features": 1888,
+              "geometryTypes": {
+                "MultiPolygon": 1,
+                "Polygon": 1885,
+                "null": 2
+              },
+              "vertices": 438971,
+              "bbox": [
+                122.93404700599645,
+                24.04567285298772,
+                148.89323590501118,
+                45.557160145137594
+              ],
+              "sourceIdField": "object_id",
+              "uniqueSourceIds": 1,
+              "duplicateSourceIds": {
+                "1929": 1888
+              },
+              "coordinateSystem": "OGC:CRS84",
+              "coordinateOrder": "longitude-latitude",
+              "key": "coast-polygons",
+              "sourceSha256": "52683d617e664de41396e7c8d33a3c93742a1b013fe7c9f91e103c563ff9a80b",
+              "credit": "『江戸末期海岸線／水域データセット』（ROIS-DS人文学オープンデータ共同利用センター作成） doi:10.20676/00000453",
+              "url": "https://codh.rois.ac.jp/historical-gis/edo-coast/coast-polygon.zip",
+              "dataset": "江戸末期海岸線／水域データセット",
+              "license": "CC-BY-4.0",
+              "sourceCrs": "GEOGCS[\"GCS_WGS_1984\",DATUM[\"D_WGS_1984\",SPHEROID[\"WGS_1984\",6378137.0,298.257223563]],PRIMEM[\"Greenwich\",0.0],UNIT[\"Degree\",0.0174532925199433]]",
+              "crsInterpretation": "declared-WGS84-geographic-XY; emitted-CRS84-without-coordinate-transform",
+              "temporalScope": "Edo-reference-not-Sengoku-assertion",
+              "featureIdentity": "sha256:52683d617e664de41396e7c8d33a3c93742a1b013fe7c9f91e103c563ff9a80b#/coast-polygon/coast-polygon.shp/records/<zero-based-row>"
+            },
+            "repairs": [
+              {
+                "row": 8,
+                "featureId": 8,
+                "reason": "Ring Self-intersection[128.621152476679 32.6404390059563]",
+                "method": "linework",
+                "sourceCoordinatePositions": 412,
+                "retainedSourceCoordinatePositions": 412,
+                "insertedIntersectionPositions": 0,
+                "surfaceType": "Polygon",
+                "residualParts": 1
+              },
+              {
+                "row": 37,
+                "featureId": 37,
+                "reason": "Self-intersection[129.34359317957 33.0060498204245]",
+                "method": "linework",
+                "sourceCoordinatePositions": 14,
+                "retainedSourceCoordinatePositions": 14,
+                "insertedIntersectionPositions": 1,
+                "surfaceType": "MultiPolygon",
+                "residualParts": 0
+              },
+              {
+                "row": 42,
+                "featureId": 42,
+                "reason": "Self-intersection[129.358513687159 33.0036126954217]",
+                "method": "linework",
+                "sourceCoordinatePositions": 22,
+                "retainedSourceCoordinatePositions": 22,
+                "insertedIntersectionPositions": 1,
+                "surfaceType": "MultiPolygon",
+                "residualParts": 0
+              },
+              {
+                "row": 89,
+                "featureId": 89,
+                "reason": "Self-intersection[133.162338264019 34.2869754944881]",
+                "method": "linework",
+                "sourceCoordinatePositions": 39,
+                "retainedSourceCoordinatePositions": 39,
+                "insertedIntersectionPositions": 3,
+                "surfaceType": "MultiPolygon",
+                "residualParts": 0
+              },
+              {
+                "row": 91,
+                "featureId": 91,
+                "reason": "Self-intersection[133.171754216874 34.2874953940241]",
+                "method": "linework",
+                "sourceCoordinatePositions": 13,
+                "retainedSourceCoordinatePositions": 13,
+                "insertedIntersectionPositions": 1,
+                "surfaceType": "MultiPolygon",
+                "residualParts": 0
+              },
+              {
+                "row": 1694,
+                "featureId": 1694,
+                "reason": "Self-intersection[132.683139022276 32.9138037116878]",
+                "method": "linework",
+                "sourceCoordinatePositions": 22,
+                "retainedSourceCoordinatePositions": 22,
+                "insertedIntersectionPositions": 1,
+                "surfaceType": "MultiPolygon",
+                "residualParts": 0
+              },
+              {
+                "row": 1698,
+                "featureId": 1698,
+                "reason": "Ring Self-intersection[130.468846746118 33.8648521846405]",
+                "method": "linework",
+                "sourceCoordinatePositions": 32,
+                "retainedSourceCoordinatePositions": 32,
+                "insertedIntersectionPositions": 0,
+                "surfaceType": "Polygon",
+                "residualParts": 1
+              },
+              {
+                "row": 1710,
+                "featureId": 1710,
+                "reason": "Ring Self-intersection[132.552536907193 32.7722696713697]",
+                "method": "linework",
+                "sourceCoordinatePositions": 10,
+                "retainedSourceCoordinatePositions": 10,
+                "insertedIntersectionPositions": 0,
+                "surfaceType": "Polygon",
+                "residualParts": 1
+              },
+              {
+                "row": 1711,
+                "featureId": 1711,
+                "reason": "Self-intersection[132.556447561599 32.7683474246802]",
+                "method": "linework",
+                "sourceCoordinatePositions": 18,
+                "retainedSourceCoordinatePositions": 18,
+                "insertedIntersectionPositions": 0,
+                "surfaceType": "Polygon",
+                "residualParts": 1
+              },
+              {
+                "row": 1762,
+                "featureId": 1762,
+                "reason": "Ring Self-intersection[130.879869309437 34.332448888]",
+                "method": "linework",
+                "sourceCoordinatePositions": 15,
+                "retainedSourceCoordinatePositions": 15,
+                "insertedIntersectionPositions": 0,
+                "surfaceType": "Polygon",
+                "residualParts": 1
+              },
+              {
+                "row": 1768,
+                "featureId": 1768,
+                "reason": "Ring Self-intersection[130.290786226172 33.6892380972566]",
+                "method": "linework",
+                "sourceCoordinatePositions": 11,
+                "retainedSourceCoordinatePositions": 11,
+                "insertedIntersectionPositions": 0,
+                "surfaceType": "Polygon",
+                "residualParts": 1
+              },
+              {
+                "row": 1769,
+                "featureId": 1769,
+                "reason": "Ring Self-intersection[130.314046522833 33.6623054588737]",
+                "method": "linework",
+                "sourceCoordinatePositions": 118,
+                "retainedSourceCoordinatePositions": 118,
+                "insertedIntersectionPositions": 0,
+                "surfaceType": "Polygon",
+                "residualParts": 1
+              },
+              {
+                "row": 1780,
+                "featureId": 1780,
+                "reason": "Ring Self-intersection[129.357011147491 33.1925778323652]",
+                "method": "linework",
+                "sourceCoordinatePositions": 14,
+                "retainedSourceCoordinatePositions": 14,
+                "insertedIntersectionPositions": 0,
+                "surfaceType": "Polygon",
+                "residualParts": 1
+              },
+              {
+                "row": 1785,
+                "featureId": 1785,
+                "reason": "Ring Self-intersection[129.658512651429 33.1345628048381]",
+                "method": "linework",
+                "sourceCoordinatePositions": 12,
+                "retainedSourceCoordinatePositions": 12,
+                "insertedIntersectionPositions": 0,
+                "surfaceType": "Polygon",
+                "residualParts": 1
+              },
+              {
+                "row": 1801,
+                "featureId": 1801,
+                "reason": "Ring Self-intersection[130.212184037319 32.3373077300799]",
+                "method": "linework",
+                "sourceCoordinatePositions": 10,
+                "retainedSourceCoordinatePositions": 10,
+                "insertedIntersectionPositions": 0,
+                "surfaceType": "Polygon",
+                "residualParts": 1
+              },
+              {
+                "row": 1802,
+                "featureId": 1802,
+                "reason": "Ring Self-intersection[130.08620368119 32.2199842466917]",
+                "method": "linework",
+                "sourceCoordinatePositions": 8,
+                "retainedSourceCoordinatePositions": 8,
+                "insertedIntersectionPositions": 0,
+                "surfaceType": "Polygon",
+                "residualParts": 1
+              },
+              {
+                "row": 1810,
+                "featureId": 1810,
+                "reason": "Ring Self-intersection[130.407120516651 32.3897664634752]",
+                "method": "linework",
+                "sourceCoordinatePositions": 9,
+                "retainedSourceCoordinatePositions": 9,
+                "insertedIntersectionPositions": 0,
+                "surfaceType": "Polygon",
+                "residualParts": 1
+              },
+              {
+                "row": 1814,
+                "featureId": 1814,
+                "reason": "Ring Self-intersection[130.49491720833 32.4790996420576]",
+                "method": "linework",
+                "sourceCoordinatePositions": 10,
+                "retainedSourceCoordinatePositions": 10,
+                "insertedIntersectionPositions": 0,
+                "surfaceType": "Polygon",
+                "residualParts": 1
+              },
+              {
+                "row": 1820,
+                "featureId": 1820,
+                "reason": "Ring Self-intersection[130.33089453696 32.6048604198871]",
+                "method": "linework",
+                "sourceCoordinatePositions": 27,
+                "retainedSourceCoordinatePositions": 27,
+                "insertedIntersectionPositions": 0,
+                "surfaceType": "MultiPolygon",
+                "residualParts": 0
+              },
+              {
+                "row": 1823,
+                "featureId": 1823,
+                "reason": "Self-intersection[130.263354461454 32.1502450897653]",
+                "method": "linework",
+                "sourceCoordinatePositions": 30,
+                "retainedSourceCoordinatePositions": 30,
+                "insertedIntersectionPositions": 1,
+                "surfaceType": "MultiPolygon",
+                "residualParts": 0
+              },
+              {
+                "row": 1825,
+                "featureId": 1825,
+                "reason": "Ring Self-intersection[130.189972772791 32.0809667021869]",
+                "method": "linework",
+                "sourceCoordinatePositions": 11,
+                "retainedSourceCoordinatePositions": 11,
+                "insertedIntersectionPositions": 0,
+                "surfaceType": "Polygon",
+                "residualParts": 1
+              },
+              {
+                "row": 1829,
+                "featureId": 1829,
+                "reason": "Ring Self-intersection[130.180388559599 31.7411976028635]",
+                "method": "linework",
+                "sourceCoordinatePositions": 16,
+                "retainedSourceCoordinatePositions": 16,
+                "insertedIntersectionPositions": 0,
+                "surfaceType": "Polygon",
+                "residualParts": 1
+              },
+              {
+                "row": 1840,
+                "featureId": 1840,
+                "reason": "Ring Self-intersection[131.862584104382 33.1932398424534]",
+                "method": "linework",
+                "sourceCoordinatePositions": 13,
+                "retainedSourceCoordinatePositions": 13,
+                "insertedIntersectionPositions": 0,
+                "surfaceType": "Polygon",
+                "residualParts": 1
+              },
+              {
+                "row": 1841,
+                "featureId": 1841,
+                "reason": "Ring Self-intersection[131.860510638944 33.1925877826127]",
+                "method": "linework",
+                "sourceCoordinatePositions": 8,
+                "retainedSourceCoordinatePositions": 8,
+                "insertedIntersectionPositions": 0,
+                "surfaceType": "Polygon",
+                "residualParts": 1
+              },
+              {
+                "row": 1850,
+                "featureId": 1850,
+                "reason": "Self-intersection[131.865176275857 37.2442383292382]",
+                "method": "linework",
+                "sourceCoordinatePositions": 38,
+                "retainedSourceCoordinatePositions": 38,
+                "insertedIntersectionPositions": 1,
+                "surfaceType": "MultiPolygon",
+                "residualParts": 0
+              },
+              {
+                "row": 1855,
+                "featureId": 1855,
+                "reason": "Ring Self-intersection[132.462114294735 34.3509352940654]",
+                "method": "linework",
+                "sourceCoordinatePositions": 67,
+                "retainedSourceCoordinatePositions": 67,
+                "insertedIntersectionPositions": 0,
+                "surfaceType": "Polygon",
+                "residualParts": 1
+              },
+              {
+                "row": 1858,
+                "featureId": 1858,
+                "reason": "Ring Self-intersection[132.486918872002 33.3132348612429]",
+                "method": "linework",
+                "sourceCoordinatePositions": 24,
+                "retainedSourceCoordinatePositions": 24,
+                "insertedIntersectionPositions": 0,
+                "surfaceType": "Polygon",
+                "residualParts": 1
+              },
+              {
+                "row": 1859,
+                "featureId": 1859,
+                "reason": "Ring Self-intersection[132.512279722565 33.2201386175632]",
+                "method": "linework",
+                "sourceCoordinatePositions": 38,
+                "retainedSourceCoordinatePositions": 38,
+                "insertedIntersectionPositions": 0,
+                "surfaceType": "Polygon",
+                "residualParts": 1
+              },
+              {
+                "row": 1862,
+                "featureId": 1862,
+                "reason": "Ring Self-intersection[132.721772905104 32.8828869955058]",
+                "method": "linework",
+                "sourceCoordinatePositions": 20,
+                "retainedSourceCoordinatePositions": 20,
+                "insertedIntersectionPositions": 0,
+                "surfaceType": "Polygon",
+                "residualParts": 1
+              }
+            ],
+            "surfaceFeatures": 1886,
+            "residualFeatures": 21
+          },
+          {
+            "key": "lake-polygons",
+            "source": {
+              "features": 573,
+              "geometryTypes": {
+                "MultiPolygon": 573
+              },
+              "vertices": 81638,
+              "bbox": [
+                125.2413478325561,
+                24.92537685417345,
+                145.55867428749036,
+                45.39991939758036
+              ],
+              "sourceIdField": "id",
+              "uniqueSourceIds": 573,
+              "duplicateSourceIds": {},
+              "coordinateSystem": "OGC:CRS84",
+              "coordinateOrder": "longitude-latitude",
+              "key": "lake-polygons",
+              "sourceSha256": "956781b441cdbcc433ecb841f556eea624738141f7c2e7923fe91b6d367d52ca",
+              "credit": "『江戸末期湖沼データセット』（ROIS-DS人文学オープンデータ共同利用センター作成） doi:10.20676/00000467",
+              "url": "https://codh.rois.ac.jp/historical-gis/edo-lake/lake_polygon.geojson",
+              "dataset": "江戸末期湖沼データセット",
+              "license": "CC-BY-4.0",
+              "sourceCrs": "urn:ogc:def:crs:OGC:1.3:CRS84",
+              "crsInterpretation": "declared-CRS84",
+              "temporalScope": "Edo-reference-not-Sengoku-assertion",
+              "featureIdentity": "sha256:956781b441cdbcc433ecb841f556eea624738141f7c2e7923fe91b6d367d52ca#/features/<zero-based-row>"
+            },
+            "repairs": [
+              {
+                "row": 3,
+                "featureId": 3,
+                "reason": "Self-intersection[141.146579192004 38.6731679701384]",
+                "method": "linework",
+                "sourceCoordinatePositions": 64,
+                "retainedSourceCoordinatePositions": 64,
+                "insertedIntersectionPositions": 2,
+                "surfaceType": "MultiPolygon",
+                "residualParts": 0
+              },
+              {
+                "row": 6,
+                "featureId": 6,
+                "reason": "Self-intersection[141.221731835229 38.6219096113585]",
+                "method": "linework",
+                "sourceCoordinatePositions": 70,
+                "retainedSourceCoordinatePositions": 70,
+                "insertedIntersectionPositions": 1,
+                "surfaceType": "MultiPolygon",
+                "residualParts": 0
+              },
+              {
+                "row": 12,
+                "featureId": 12,
+                "reason": "Self-intersection[141.224259184139 38.4779067920348]",
+                "method": "linework",
+                "sourceCoordinatePositions": 206,
+                "retainedSourceCoordinatePositions": 206,
+                "insertedIntersectionPositions": 1,
+                "surfaceType": "MultiPolygon",
+                "residualParts": 0
+              },
+              {
+                "row": 15,
+                "featureId": 15,
+                "reason": "Self-intersection[141.20279062829 38.7736212611631]",
+                "method": "linework",
+                "sourceCoordinatePositions": 80,
+                "retainedSourceCoordinatePositions": 80,
+                "insertedIntersectionPositions": 1,
+                "surfaceType": "Polygon",
+                "residualParts": 0
+              },
+              {
+                "row": 17,
+                "featureId": 17,
+                "reason": "Self-intersection[141.187627806527 38.6013844236966]",
+                "method": "linework",
+                "sourceCoordinatePositions": 130,
+                "retainedSourceCoordinatePositions": 130,
+                "insertedIntersectionPositions": 1,
+                "surfaceType": "MultiPolygon",
+                "residualParts": 0
+              },
+              {
+                "row": 35,
+                "featureId": 35,
+                "reason": "Self-intersection[141.158117564345 38.6287698265199]",
+                "method": "linework",
+                "sourceCoordinatePositions": 52,
+                "retainedSourceCoordinatePositions": 52,
+                "insertedIntersectionPositions": 1,
+                "surfaceType": "MultiPolygon",
+                "residualParts": 0
+              },
+              {
+                "row": 46,
+                "featureId": 46,
+                "reason": "Self-intersection[140.900164107066 37.988619050132]",
+                "method": "linework",
+                "sourceCoordinatePositions": 467,
+                "retainedSourceCoordinatePositions": 467,
+                "insertedIntersectionPositions": 1,
+                "surfaceType": "MultiPolygon",
+                "residualParts": 0
+              },
+              {
+                "row": 61,
+                "featureId": 61,
+                "reason": "Self-intersection[138.991807307094 37.8633048415913]",
+                "method": "linework",
+                "sourceCoordinatePositions": 48,
+                "retainedSourceCoordinatePositions": 48,
+                "insertedIntersectionPositions": 1,
+                "surfaceType": "MultiPolygon",
+                "residualParts": 0
+              },
+              {
+                "row": 69,
+                "featureId": 69,
+                "reason": "Self-intersection[137.089235599267 34.9451055121398]",
+                "method": "linework",
+                "sourceCoordinatePositions": 140,
+                "retainedSourceCoordinatePositions": 140,
+                "insertedIntersectionPositions": 1,
+                "surfaceType": "MultiPolygon",
+                "residualParts": 0
+              },
+              {
+                "row": 85,
+                "featureId": 85,
+                "reason": "Self-intersection[133.767030221382 34.2125829222441]",
+                "method": "linework",
+                "sourceCoordinatePositions": 60,
+                "retainedSourceCoordinatePositions": 60,
+                "insertedIntersectionPositions": 1,
+                "surfaceType": "MultiPolygon",
+                "residualParts": 0
+              },
+              {
+                "row": 182,
+                "featureId": 182,
+                "reason": "Self-intersection[140.259131304653 39.5252838111306]",
+                "method": "linework",
+                "sourceCoordinatePositions": 180,
+                "retainedSourceCoordinatePositions": 180,
+                "insertedIntersectionPositions": 1,
+                "surfaceType": "MultiPolygon",
+                "residualParts": 0
+              }
+            ],
+            "surfaceFeatures": 573,
+            "residualFeatures": 0
+          }
+        ],
+        "outputs": [
+          {
+            "file": "coast-polygons.geojson",
+            "sha256": "35e17561d8402292ab61dc4d1f232eb655e7e56d4b35cc655d773f0eb86d33e2"
+          },
+          {
+            "file": "coast-polygons-residuals.geojson",
+            "sha256": "0b0642536559e0727f8ab6bb5c25ae8891733b91ce36e63f48136d8334749d9e"
+          },
+          {
+            "file": "lake-polygons.geojson",
+            "sha256": "b4374fe8673187fcf0e7ed9169c0d78feabc35375c5c182ce0c784fd2baffa63"
+          },
+          {
+            "file": "lake-polygons-residuals.geojson",
+            "sha256": "2efac2ed3cc2aa0ecf6749dfbb6ced7ad789c05ee074915fb203cd48ef2ea2b8"
+          },
+          {
+            "file": "coast-union.geojson",
+            "sha256": "317b24c2cc43212feae53680e21b41aa4621c9cccd5a79cf9e1028d1a11fa76e"
+          },
+          {
+            "file": "lake-union.geojson",
+            "sha256": "5a5ec2eda0d22102ccc2b84b81334b7659c0698cdb10e7f8eb51f705fc0f5cc4"
+          },
+          {
+            "file": "land-with-water.geojson",
+            "sha256": "e0e1c15cfd5eb13f09337500197085d5066c8bf1125cfc790bfd7cf1d374b523"
+          }
+        ]
+      },
+      "preparedInputSha256": {
+        "manifest.json": "91131a0e0e47124bb6de4d3c6c2b1d6d51098e6000335cf282b9850897e7aeb2",
+        "land-with-water.geojson": "e0e1c15cfd5eb13f09337500197085d5066c8bf1125cfc790bfd7cf1d374b523",
+        "lake-polygons.geojson": "b4374fe8673187fcf0e7ed9169c0d78feabc35375c5c182ce0c784fd2baffa63"
+      },
+      "canonicalFiveSha256": "c93a5d31f40259f791fc0c82c4dae10ff4ed82705df2221976bec37655b6729e",
+      "mlitSourceManifest": {
+        "url": "https://nlftp.mlit.go.jp/ksj/gml/data/W09/W09-05/W09-05_GML.zip",
+        "accessed": "2026-11-07",
+        "bytes": 8082201,
+        "sha256": "e5d0f1bc77427c8c44a855ff361d3b9d94b76fe3c5e31a423ab9abc570950787",
+        "page": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-W09-2005.html",
+        "terms": "https://nlftp.mlit.go.jp/ksj/other/agreement_02.html",
+        "crsFiles": {},
+        "sourceCrs": "JGD2000 geographic, EPSG:4612",
+        "sourceAxisOrder": "SHP x=longitude,y=latitude; GML B,L is latitude,longitude",
+        "dbfEncoding": "cp932",
+        "metadataEncoding": "shift_jis",
+        "records": 556,
+        "selected": [
+          {
+            "id": "lake:towada",
+            "sourceRecord": 114,
+            "sourceName": "十和田湖（東湖・中湖・西湖）",
+            "positions": 4243,
+            "legacyRoundedCoordinatesMatch": true
+          },
+          {
+            "id": "lake:tazawa",
+            "sourceRecord": 170,
+            "sourceName": "田沢湖",
+            "positions": 1228,
+            "legacyRoundedCoordinatesMatch": true
+          },
+          {
+            "id": "lake:inawashiro",
+            "sourceRecord": 186,
+            "sourceName": "猪苗代湖",
+            "positions": 3467,
+            "legacyRoundedCoordinatesMatch": true
+          },
+          {
+            "id": "lake:kiba",
+            "sourceRecord": 294,
+            "sourceName": "木場潟",
+            "positions": 434,
+            "legacyRoundedCoordinatesMatch": true
+          },
+          {
+            "id": "lake:yogo",
+            "sourceRecord": 423,
+            "sourceName": "余呉湖",
+            "positions": 349,
+            "legacyRoundedCoordinatesMatch": true
+          }
+        ],
+        "coordinateOperation": {
+          "target": "OGC:CRS84",
+          "alwaysXY": true,
+          "allowBallpark": false,
+          "network": false,
+          "description": "JGD2000 to WGS 84 (1) + axis order change (2D) (with axis order normalized for visualization)",
+          "definition": "proj=noop ellps=GRS80",
+          "accuracyMetres": 1.0,
+          "pyproj": "3.8.0",
+          "proj": "9.8.1"
+        },
+        "license": "MLIT National Land Numerical Information terms, old agreement compliant version (individual W09 page: commercial use allowed)",
+        "credit": "国土数値情報（湖沼データ）国土交通省を加工して作成",
+        "coverageChecks": [
+          {
+            "id": "lake:towada",
+            "referenceLandFractionBeforeComplement": 1.0000000000000004
+          },
+          {
+            "id": "lake:tazawa",
+            "referenceLandFractionBeforeComplement": 1.000000000000002
+          },
+          {
+            "id": "lake:inawashiro",
+            "referenceLandFractionBeforeComplement": 0.9999999999999983
+          },
+          {
+            "id": "lake:kiba",
+            "referenceLandFractionBeforeComplement": 0.9999999999999987
+          },
+          {
+            "id": "lake:yogo",
+            "referenceLandFractionBeforeComplement": 1.0000000000000004
+          }
+        ],
+        "codhInputManifestSha256": "c43ed015d4fa95c05a1b30eb9c4eb2cf47869befc251e3c2707462f001959390",
+        "generalTerms": "https://nlftp.mlit.go.jp/ksj/other/agreement.html",
+        "licenseBasis": "W09 individual page commercial-use link points to agreement_02.html; do not replace the specific designation with general PDL terms",
+        "sourceCrsDeclaration": "JGD2000 / (B,L)",
+        "sourceCrsInterpretation": "EPSG:4612; shapefile X=longitude,Y=latitude"
+      },
+      "canonicalFiveMetadata": {
+        "type": "FeatureCollection",
+        "coordinateReferenceSystem": "OGC:CRS84",
+        "attribution": "国土数値情報（湖沼データ）国土交通省を加工して作成",
+        "processedBy": "天下分け目の国絵図",
+        "sourceLimitations": "原典由来の空間・時期の誤差がある2005年の比較形状。測量・航法や戦国期の実測湖岸として扱わず、利用条件と適用限界はlicenseUrlを参照する。",
+        "sourceUrl": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-W09-2005.html",
+        "licenseUrl": "https://nlftp.mlit.go.jp/ksj/other/agreement_02.html",
+        "name": "comparison-lakes-not-in-CODH-polygons",
+        "sourceManifest": "data/inputs/mlit-w09-2005/manifest.json"
+      },
+      "rawSources": [
+        {
+          "file": "/Users/masudaso/.codex/worktrees/history-cube-query/天下分け目の国絵図/data/inputs/codh-edo/lake-polygons.geojson.gz",
+          "archiveSha256": "2ba4215e60b1b2d1eb644e86cba7243476c433554a8dbcbc21b045c6fb09216d",
+          "sourceSha256": "956781b441cdbcc433ecb841f556eea624738141f7c2e7923fe91b6d367d52ca",
+          "verified": true
+        },
+        {
+          "file": "/Users/masudaso/.codex/worktrees/history-cube-query/天下分け目の国絵図/data/inputs/codh-edo/coast-polygons.zip",
+          "archiveSha256": "52683d617e664de41396e7c8d33a3c93742a1b013fe7c9f91e103c563ff9a80b",
+          "sourceSha256": "52683d617e664de41396e7c8d33a3c93742a1b013fe7c9f91e103c563ff9a80b",
+          "verified": true
+        },
+        {
+          "file": "/Users/masudaso/.codex/worktrees/history-cube-query/天下分け目の国絵図/data/inputs/mlit-w09-2005/W09-05_GML.zip",
+          "sha256": "e5d0f1bc77427c8c44a855ff361d3b9d94b76fe3c5e31a423ab9abc570950787",
+          "verified": true
+        }
+      ]
+    },
+    "canonicalFiveMetadata": {
+      "type": "FeatureCollection",
+      "coordinateReferenceSystem": "OGC:CRS84",
+      "attribution": "国土数値情報（湖沼データ）国土交通省を加工して作成",
+      "processedBy": "天下分け目の国絵図",
+      "sourceLimitations": "原典由来の空間・時期の誤差がある2005年の比較形状。測量・航法や戦国期の実測湖岸として扱わず、利用条件と適用限界はlicenseUrlを参照する。",
+      "sourceUrl": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-W09-2005.html",
+      "licenseUrl": "https://nlftp.mlit.go.jp/ksj/other/agreement_02.html",
+      "name": "comparison-lakes-not-in-CODH-polygons",
+      "sourceManifest": "data/inputs/mlit-w09-2005/manifest.json"
+    },
+    "mlitSourceManifest": {
+      "url": "https://nlftp.mlit.go.jp/ksj/gml/data/W09/W09-05/W09-05_GML.zip",
+      "accessed": "2026-11-07",
+      "bytes": 8082201,
+      "sha256": "e5d0f1bc77427c8c44a855ff361d3b9d94b76fe3c5e31a423ab9abc570950787",
+      "page": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-W09-2005.html",
+      "terms": "https://nlftp.mlit.go.jp/ksj/other/agreement_02.html",
+      "crsFiles": {},
+      "sourceCrs": "JGD2000 geographic, EPSG:4612",
+      "sourceAxisOrder": "SHP x=longitude,y=latitude; GML B,L is latitude,longitude",
+      "dbfEncoding": "cp932",
+      "metadataEncoding": "shift_jis",
+      "records": 556,
+      "selected": [
+        {
+          "id": "lake:towada",
+          "sourceRecord": 114,
+          "sourceName": "十和田湖（東湖・中湖・西湖）",
+          "positions": 4243,
+          "legacyRoundedCoordinatesMatch": true
+        },
+        {
+          "id": "lake:tazawa",
+          "sourceRecord": 170,
+          "sourceName": "田沢湖",
+          "positions": 1228,
+          "legacyRoundedCoordinatesMatch": true
+        },
+        {
+          "id": "lake:inawashiro",
+          "sourceRecord": 186,
+          "sourceName": "猪苗代湖",
+          "positions": 3467,
+          "legacyRoundedCoordinatesMatch": true
+        },
+        {
+          "id": "lake:kiba",
+          "sourceRecord": 294,
+          "sourceName": "木場潟",
+          "positions": 434,
+          "legacyRoundedCoordinatesMatch": true
+        },
+        {
+          "id": "lake:yogo",
+          "sourceRecord": 423,
+          "sourceName": "余呉湖",
+          "positions": 349,
+          "legacyRoundedCoordinatesMatch": true
+        }
+      ],
+      "coordinateOperation": {
+        "target": "OGC:CRS84",
+        "alwaysXY": true,
+        "allowBallpark": false,
+        "network": false,
+        "description": "JGD2000 to WGS 84 (1) + axis order change (2D) (with axis order normalized for visualization)",
+        "definition": "proj=noop ellps=GRS80",
+        "accuracyMetres": 1.0,
+        "pyproj": "3.8.0",
+        "proj": "9.8.1"
+      },
+      "license": "MLIT National Land Numerical Information terms, old agreement compliant version (individual W09 page: commercial use allowed)",
+      "credit": "国土数値情報（湖沼データ）国土交通省を加工して作成",
+      "coverageChecks": [
+        {
+          "id": "lake:towada",
+          "referenceLandFractionBeforeComplement": 1.0000000000000004
+        },
+        {
+          "id": "lake:tazawa",
+          "referenceLandFractionBeforeComplement": 1.000000000000002
+        },
+        {
+          "id": "lake:inawashiro",
+          "referenceLandFractionBeforeComplement": 0.9999999999999983
+        },
+        {
+          "id": "lake:kiba",
+          "referenceLandFractionBeforeComplement": 0.9999999999999987
+        },
+        {
+          "id": "lake:yogo",
+          "referenceLandFractionBeforeComplement": 1.0000000000000004
+        }
+      ],
+      "codhInputManifestSha256": "c43ed015d4fa95c05a1b30eb9c4eb2cf47869befc251e3c2707462f001959390",
+      "generalTerms": "https://nlftp.mlit.go.jp/ksj/other/agreement.html",
+      "licenseBasis": "W09 individual page commercial-use link points to agreement_02.html; do not replace the specific designation with general PDL terms",
+      "sourceCrsDeclaration": "JGD2000 / (B,L)",
+      "sourceCrsInterpretation": "EPSG:4612; shapefile X=longitude,Y=latitude"
+    },
+    "katoriAdoption": {
+      "id": "katori-uchinasaka-wide-water",
+      "source": "data/research/katori-review/uchinasaka/south-connection/wide-lake-perimeter.geojson",
+      "sha256": "f30bfbcfc000b10b4d2d696b2c6ba1ccd15bc8301981eda1cd156073b676fdc0",
+      "validFrom": [
+        1560,
+        1,
+        1
+      ],
+      "validUntil": [
+        1616,
+        1,
+        1
+      ],
+      "datePrecision": "year",
+      "interpretation": "inferred-period-waterbody",
+      "exactHistoricalShoreline": false,
+      "report": "docs/reports/KATORI_RAPID_MAP_REVIEW.md",
+      "components": {
+        "water": [
+          "uchinasaka-combined-wide-water"
+        ],
+        "protectedLand": [
+          "protected-southeast-land"
+        ],
+        "comparisonShores": [
+          "outer-lake-comparison-shores"
+        ],
+        "openBoundaries": [
+          "north-existing-water",
+          "east-channel-opening",
+          "south-channel-opening",
+          "west-old-channel-opening",
+          "northwest-lake-opening"
+        ]
+      },
+      "boundaryPolicy": "Never stroke the complete water polygon; open boundaries are not shores. Comparison shores are later-period references."
+    },
+    "ukitaAdoption": {
+      "id": "kojima-bay-ukita-land-from-1584",
+      "layer": "provinces",
+      "baseRevision": "liaodong-1560-source-v1",
+      "validFrom": [
+        1584,
+        1,
+        1
+      ],
+      "validUntil": [
+        1616,
+        1,
+        1
+      ],
+      "payload": {
+        "mask": "../../../data/inputs/kojima-coast-review/kojima-bay-1600/kojima-bay-ukita-land-from-1584.png",
+        "maskSha256": "291e5a0f9764de879d0713685c569f69ddf9988c18ea4526aaf5ccc6f6415d1c",
+        "window": [
+          9734,
+          12031,
+          630,
+          390
+        ],
+        "from": "sea",
+        "keys": [
+          "castle:bmatsuyama",
+          "castle:tenjin"
+        ]
+      },
+      "sourceIds": [
+        "高梁川水系の流域及び河川の概要（案）参考資料1-1",
+        "近代の児島湾干拓計画を策定したムルデル",
+        "文化財資料（宇喜多堤）",
+        "海面古図と年表",
+        "広がる大地－絵図でたどる児島湾のかんたく－"
+      ],
+      "basis": "干拓進展図の「16世紀末」（宇喜多期）の区画のうち、1560年正本で海の所。宇喜多堤（天正12年・1584）の後は陸とする。",
+      "review": "築堤の月日と開墾の完了日は不明。1584年1月1日で切り替えるのは年単位の推定。",
+      "generated": "tools/geo/kojima-bay-1600.cjs"
+    }
+  },
+  "katoriAdoption": {
+    "id": "katori-uchinasaka-wide-water",
+    "source": "data/research/katori-review/uchinasaka/south-connection/wide-lake-perimeter.geojson",
+    "sha256": "f30bfbcfc000b10b4d2d696b2c6ba1ccd15bc8301981eda1cd156073b676fdc0",
+    "validFrom": [
+      1560,
+      1,
+      1
+    ],
+    "validUntil": [
+      1616,
+      1,
+      1
+    ],
+    "datePrecision": "year",
+    "interpretation": "inferred-period-waterbody",
+    "exactHistoricalShoreline": false,
+    "report": "docs/reports/KATORI_RAPID_MAP_REVIEW.md",
+    "components": {
+      "water": [
+        "uchinasaka-combined-wide-water"
+      ],
+      "protectedLand": [
+        "protected-southeast-land"
+      ],
+      "comparisonShores": [
+        "outer-lake-comparison-shores"
+      ],
+      "openBoundaries": [
+        "north-existing-water",
+        "east-channel-opening",
+        "south-channel-opening",
+        "west-old-channel-opening",
+        "northwest-lake-opening"
+      ]
+    },
+    "boundaryPolicy": "Never stroke the complete water polygon; open boundaries are not shores. Comparison shores are later-period references."
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "04001",
+        "pref_no": "4",
+        "pref": "宮城県",
+        "jk_id": "040000025500",
+        "name": "内町溜池",
+        "yomi": "うちまちためいけ",
+        "remarks": "1685築堤（歴史地名体系）現在は東部分が湿地。旧版５万をもとに現在の地形図に合わせる",
+        "jk_url": "https://japanknowledge.com/lib/display/?lid=30020040000025500",
+        "sourceRowId": 32,
+        "drawRole": "water",
+        "shapeRole": "edo-reference",
+        "validFrom": [
+          1560,
+          1,
+          1
+        ],
+        "validUntil": [
+          1616,
+          1,
+          1
+        ]
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              140.83040620212327,
+              37.95852476541866
+            ],
+            [
+              140.83064836616583,
+              37.95852476541866
+            ],
+            [
+              140.8308395483047,
+              37.95852476541866
+            ],
+            [
+              140.8310944578232,
+              37.958448292563105
+            ],
+            [
+              140.83126014901023,
+              37.95837181970756
+            ],
+            [
+              140.83146407662502,
+              37.95835907423164
+            ],
+            [
+              140.83210135042125,
+              37.95828260137609
+            ],
+            [
+              140.8323307689879,
+              37.95820612852054
+            ],
+            [
+              140.8328023515971,
+              37.95811691018907
+            ],
+            [
+              140.83308275206744,
+              37.95818063756869
+            ],
+            [
+              140.83327393420632,
+              37.958244364948314
+            ],
+            [
+              140.8334778618211,
+              37.95834632875571
+            ],
+            [
+              140.83360531658036,
+              37.958435547087184
+            ],
+            [
+              140.83370728038776,
+              37.958435547087184
+            ],
+            [
+              140.8337327713396,
+              37.95835907423164
+            ],
+            [
+              140.83366904396,
+              37.958244364948314
+            ],
+            [
+              140.83343962539334,
+              37.958053182809444
+            ],
+            [
+              140.8332611887304,
+              37.957823764242804
+            ],
+            [
+              140.8332611887304,
+              37.95768356400763
+            ],
+            [
+              140.8334651163452,
+              37.957403163537286
+            ],
+            [
+              140.83372002586367,
+              37.95725021782619
+            ],
+            [
+              140.83389846252663,
+              37.95716099949472
+            ],
+            [
+              140.83422984490068,
+              37.957033544735474
+            ],
+            [
+              140.83454848179878,
+              37.957008053783625
+            ],
+            [
+              140.8348161367932,
+              37.956982562831776
+            ],
+            [
+              140.83490535512468,
+              37.95693158092808
+            ],
+            [
+              140.83495633702836,
+              37.956816871644754
+            ],
+            [
+              140.83498182798022,
+              37.956587453078114
+            ],
+            [
+              140.83512202821538,
+              37.95626881617999
+            ],
+            [
+              140.83537693773388,
+              37.9561158704689
+            ],
+            [
+              140.83558086534867,
+              37.95607763404112
+            ],
+            [
+              140.83567008368016,
+              37.956154106896676
+            ],
+            [
+              140.83567008368016,
+              37.95630705260777
+            ],
+            [
+              140.8356318472524,
+              37.95661294402996
+            ],
+            [
+              140.83561910177644,
+              37.9568423625966
+            ],
+            [
+              140.83561910177644,
+              37.957262963302114
+            ],
+            [
+              140.83568282915607,
+              37.95737767258544
+            ],
+            [
+              140.83581028391532,
+              37.95746689091691
+            ],
+            [
+              140.83612892081345,
+              37.95755610924839
+            ],
+            [
+              140.83633284842824,
+              37.95768356400763
+            ],
+            [
+              140.83660050342266,
+              37.95786200067057
+            ],
+            [
+              140.83676619460968,
+              37.958027691857595
+            ],
+            [
+              140.836880903893,
+              37.95815514661684
+            ],
+            [
+              140.83709757698372,
+              37.95835907423164
+            ],
+            [
+              140.83732699555037,
+              37.95847378351496
+            ],
+            [
+              140.83749268673736,
+              37.95846103803903
+            ],
+            [
+              140.83768386887624,
+              37.95839731065941
+            ],
+            [
+              140.8378240691114,
+              37.95834632875571
+            ],
+            [
+              140.83787505101512,
+              37.95828260137609
+            ],
+            [
+              140.8378113236355,
+              37.95811691018907
+            ],
+            [
+              140.83769661435218,
+              37.9579257280502
+            ],
+            [
+              140.83746719578554,
+              37.95763258210393
+            ],
+            [
+              140.83727601364666,
+              37.95746689091691
+            ],
+            [
+              140.83712306793555,
+              37.957364927109516
+            ],
+            [
+              140.83704659508,
+              37.95712276306695
+            ],
+            [
+              140.83705934055592,
+              37.95682961712068
+            ],
+            [
+              140.8369318857967,
+              37.95667667140958
+            ],
+            [
+              140.8370338496041,
+              37.95652372569849
+            ],
+            [
+              140.83716130436335,
+              37.95644725284294
+            ],
+            [
+              140.8373015045985,
+              37.956205088800374
+            ],
+            [
+              140.83731425007443,
+              37.9561158704689
+            ],
+            [
+              140.83719954079112,
+              37.95609037951705
+            ],
+            [
+              140.83708483150778,
+              37.9561158704689
+            ],
+            [
+              140.8369318857967,
+              37.95603939761335
+            ],
+            [
+              140.8366769762782,
+              37.955962924757806
+            ],
+            [
+              140.8363201029523,
+              37.95591194285411
+            ],
+            [
+              140.8361034298616,
+              37.95589919737818
+            ],
+            [
+              140.83588675677086,
+              37.95591194285411
+            ],
+            [
+              140.83531321035426,
+              37.955988415709655
+            ],
+            [
+              140.83494359155245,
+              37.95597567023373
+            ],
+            [
+              140.83463770013026,
+              37.956026652137425
+            ],
+            [
+              140.83444651799138,
+              37.95612861594483
+            ],
+            [
+              140.83421709942473,
+              37.956243325228144
+            ],
+            [
+              140.83361806205627,
+              37.956434507367014
+            ],
+            [
+              140.83328667968223,
+              37.95647274379479
+            ],
+            [
+              140.8329043154045,
+              37.95645999831886
+            ],
+            [
+              140.83252195112678,
+              37.956396270939244
+            ],
+            [
+              140.83216507780088,
+              37.95633254355962
+            ],
+            [
+              140.83171898614353,
+              37.956370779987395
+            ],
+            [
+              140.83123465805838,
+              37.956396270939244
+            ],
+            [
+              140.8308395483047,
+              37.956370779987395
+            ],
+            [
+              140.8304699295029,
+              37.95631979808369
+            ],
+            [
+              140.83012580165294,
+              37.95630705260777
+            ],
+            [
+              140.82974343737519,
+              37.95630705260777
+            ],
+            [
+              140.82962872809188,
+              37.956409016415165
+            ],
+            [
+              140.82976892832704,
+              37.95705903568732
+            ],
+            [
+              140.82994736498998,
+              37.95825711042424
+            ],
+            [
+              140.83002383784554,
+              37.958384565183486
+            ],
+            [
+              140.83010031070108,
+              37.958435547087184
+            ],
+            [
+              140.8302532564122,
+              37.95852476541866
+            ],
+            [
+              140.83040620212327,
+              37.95852476541866
+            ]
+          ]
+        ]
+      },
+      "id": "water:codh-lake:32"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "28006",
+        "pref_no": "28",
+        "pref": "兵庫県",
+        "jk_id": "290000483000",
+        "name": "安政池",
+        "yomi": "あんせいいけ",
+        "remarks": "旧版5万参照。現在は鴨川ダムのダム湖（昭和33年）。ダム湖のあった場所にあった。",
+        "jk_url": "https://japanknowledge.com/lib/display/?lid=30020290000483000",
+        "sourceRowId": 456,
+        "drawRole": "water",
+        "shapeRole": "edo-reference",
+        "validFrom": [
+          1560,
+          1,
+          1
+        ],
+        "validUntil": [
+          1616,
+          1,
+          1
+        ]
+      },
+      "geometry": {
+        "type": "MultiPolygon",
+        "coordinates": [
+          [
+            [
+              [
+                135.0077312978665,
+                34.89824077175485
+              ],
+              [
+                135.00768078070215,
+                34.89844284041236
+              ],
+              [
+                135.00760500495556,
+                34.89864490906986
+              ],
+              [
+                135.0077312978665,
+                34.89874594339861
+              ],
+              [
+                135.00783233219528,
+                34.898796460562984
+              ],
+              [
+                135.00785759077746,
+                34.89884697772736
+              ],
+              [
+                135.00785759077746,
+                34.898998529220485
+              ],
+              [
+                135.00788284935965,
+                34.899099563549235
+              ],
+              [
+                135.00793336652401,
+                34.8991753392958
+              ],
+              [
+                135.00808491801715,
+                34.899099563549235
+              ],
+              [
+                135.00813543518152,
+                34.898922753473926
+              ],
+              [
+                135.0081606937637,
+                34.89859439190548
+              ],
+              [
+                135.0083627624212,
+                34.89844284041236
+              ],
+              [
+                135.00848905533215,
+                34.89846809899454
+              ],
+              [
+                135.00874164115402,
+                34.89849335757673
+              ],
+              [
+                135.00889319264715,
+                34.89861965048767
+              ],
+              [
+                135.0090194855581,
+                34.898695426234234
+              ],
+              [
+                135.00907000272247,
+                34.89874594339861
+              ],
+              [
+                135.00914577846902,
+                34.898796460562984
+              ],
+              [
+                135.0094236228731,
+                34.89872068481642
+              ],
+              [
+                135.00954991578405,
+                34.89861965048767
+              ],
+              [
+                135.0096256915306,
+                34.89854387474111
+              ],
+              [
+                135.00965095011279,
+                34.89844284041236
+              ],
+              [
+                135.00957517436623,
+                34.898316547501416
+              ],
+              [
+                135.0094236228731,
+                34.898215513172666
+              ],
+              [
+                135.00934784712652,
+                34.898013444515165
+              ],
+              [
+                135.00944888145528,
+                34.897988185932974
+              ],
+              [
+                135.00952465720184,
+                34.8979376687686
+              ],
+              [
+                135.00987827735247,
+                34.89765982436453
+              ],
+              [
+                135.00965095011279,
+                34.897609307200156
+              ],
+              [
+                135.0094236228731,
+                34.897609307200156
+              ],
+              [
+                135.00919629563342,
+                34.897609307200156
+              ],
+              [
+                135.00909526130465,
+                34.89753353145359
+              ],
+              [
+                135.00891845122933,
+                34.897381979960464
+              ],
+              [
+                135.00886793406497,
+                34.89725568704953
+              ],
+              [
+                135.0085648310787,
+                34.89723042846734
+              ],
+              [
+                135.0081606937637,
+                34.897280945631714
+              ],
+              [
+                135.00788284935965,
+                34.89735672137828
+              ],
+              [
+                135.00778181503088,
+                34.897584048617965
+              ],
+              [
+                135.0077312978665,
+                34.898013444515165
+              ],
+              [
+                135.0077312978665,
+                34.89824077175485
+              ]
+            ]
+          ],
+          [
+            [
+              [
+                135.01018138033874,
+                34.89978154526831
+              ],
+              [
+                135.01030767324968,
+                34.89985732101487
+              ],
+              [
+                135.0104592247428,
+                34.89983206243269
+              ],
+              [
+                135.0104592247428,
+                34.89968051093956
+              ],
+              [
+                135.01038344899624,
+                34.899604735192995
+              ],
+              [
+                135.01035819041405,
+                34.899402666535494
+              ],
+              [
+                135.01028241466747,
+                34.89932689078893
+              ],
+              [
+                135.0102571560853,
+                34.89920059787799
+              ],
+              [
+                135.01013086317437,
+                34.89907430496705
+              ],
+              [
+                135.01008034600997,
+                34.89894801205611
+              ],
+              [
+                135.00987827735247,
+                34.89887223630955
+              ],
+              [
+                135.00980250160592,
+                34.89884697772736
+              ],
+              [
+                135.00965095011279,
+                34.89887223630955
+              ],
+              [
+                135.00957517436623,
+                34.8989732706383
+              ],
+              [
+                135.00960043294842,
+                34.89912482213143
+              ],
+              [
+                135.0098530187703,
+                34.89942792511768
+              ],
+              [
+                135.00997931168124,
+                34.89955421802862
+              ],
+              [
+                135.01008034600997,
+                34.89965525235737
+              ],
+              [
+                135.01018138033874,
+                34.89978154526831
+              ]
+            ]
+          ]
+        ]
+      },
+      "id": "water:codh-lake:456"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "37006",
+        "pref_no": "37",
+        "pref": "香川県",
+        "jk_id": "380000069800",
+        "name": "公淵池",
+        "yomi": "きんぶちいけ",
+        "remarks": "縮小する。昭和8年嵩上げ。旧版5万を参照。地形図は「公渕池」",
+        "jk_url": "https://japanknowledge.com/lib/display/?lid=30020380000069800",
+        "sourceRowId": 517,
+        "drawRole": "water",
+        "shapeRole": "edo-reference",
+        "validFrom": [
+          1560,
+          1,
+          1
+        ],
+        "validUntil": [
+          1616,
+          1,
+          1
+        ]
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              134.10657579276662,
+              34.24100204435198
+            ],
+            [
+              134.1065127959746,
+              34.241033542748
+            ],
+            [
+              134.10650229650926,
+              34.24111753847072
+            ],
+            [
+              134.10654429437062,
+              34.241212033658776
+            ],
+            [
+              134.1065967916973,
+              34.241296029381495
+            ],
+            [
+              134.1065967916973,
+              34.24136952563887
+            ],
+            [
+              134.10653379490526,
+              34.24153751708431
+            ],
+            [
+              134.10647079811324,
+              34.24168450959907
+            ],
+            [
+              134.10639730185585,
+              34.24181050318314
+            ],
+            [
+              134.1062503093411,
+              34.241924830694614
+            ],
+            [
+              134.1062503093411,
+              34.24211498767799
+            ],
+            [
+              134.10627130827177,
+              34.24245097056886
+            ],
+            [
+              134.1061663136184,
+              34.24295494490517
+            ],
+            [
+              134.10606131896498,
+              34.24312293635061
+            ],
+            [
+              134.10608231789567,
+              34.24331192672672
+            ],
+            [
+              134.10654429437062,
+              34.243605911756234
+            ],
+            [
+              134.1066702879547,
+              34.24375290427099
+            ],
+            [
+              134.10692227512286,
+              34.24383689999371
+            ],
+            [
+              134.10704826870693,
+              34.24396289357779
+            ],
+            [
+              134.10723725908304,
+              34.244067888231186
+            ],
+            [
+              134.1073632526671,
+              34.244088887161865
+            ],
+            [
+              134.107699235558,
+              34.24392089571643
+            ],
+            [
+              134.10776223235004,
+              34.24385789892439
+            ],
+            [
+              134.1078042302114,
+              34.24375290427099
+            ],
+            [
+              134.10786722700342,
+              34.24362691068691
+            ],
+            [
+              134.10788822593412,
+              34.243542914964195
+            ],
+            [
+              134.10795122272614,
+              34.24341692138012
+            ],
+            [
+              134.1080142195182,
+              34.24326992886537
+            ],
+            [
+              134.10830820454768,
+              34.24312293635061
+            ],
+            [
+              134.10843419813176,
+              34.24312293635061
+            ],
+            [
+              134.10866518636925,
+              34.24322793100401
+            ],
+            [
+              134.10870298444448,
+              34.24325942940003
+            ],
+            [
+              134.10880167941866,
+              34.24325942940003
+            ],
+            [
+              134.1088961746067,
+              34.24323843046935
+            ],
+            [
+              134.1089906697948,
+              34.24321743153867
+            ],
+            [
+              134.10905366658682,
+              34.24319643260799
+            ],
+            [
+              134.10913766230954,
+              34.24317543367731
+            ],
+            [
+              134.10920065910156,
+              34.24317543367731
+            ],
+            [
+              134.10930565375497,
+              34.24320693207333
+            ],
+            [
+              134.10935815108166,
+              34.24323843046935
+            ],
+            [
+              134.10940014894302,
+              34.24324892993469
+            ],
+            [
+              134.10942114787372,
+              34.24326992886537
+            ],
+            [
+              134.1094736452004,
+              34.243353924588085
+            ],
+            [
+              134.10949464413108,
+              34.243427420845464
+            ],
+            [
+              134.10953664199243,
+              34.24350091710284
+            ],
+            [
+              134.10955764092313,
+              34.2435429149642
+            ],
+            [
+              134.10958913931916,
+              34.24357441336022
+            ],
+            [
+              134.10964163664585,
+              34.24362691068692
+            ],
+            [
+              134.1096836345072,
+              34.2436479096176
+            ],
+            [
+              134.10971513290323,
+              34.24365840908294
+            ],
+            [
+              134.10972825723488,
+              34.24365840908294
+            ],
+            [
+              134.1097571307646,
+              34.24365840908294
+            ],
+            [
+              134.10983062702195,
+              34.24365840908294
+            ],
+            [
+              134.1098726248833,
+              34.24362691068692
+            ],
+            [
+              134.109893623814,
+              34.2435954122909
+            ],
+            [
+              134.109893623814,
+              34.24353241549886
+            ],
+            [
+              134.10985162595264,
+              34.24345891924148
+            ],
+            [
+              134.10980962809128,
+              34.243385422984105
+            ],
+            [
+              134.10977812969526,
+              34.243311926726726
+            ],
+            [
+              134.1097571307646,
+              34.24322793100401
+            ],
+            [
+              134.1097571307646,
+              34.24317543367731
+            ],
+            [
+              134.10976763022992,
+              34.24292344650916
+            ],
+            [
+              134.10977812969526,
+              34.24279745292508
+            ],
+            [
+              134.10976848732912,
+              34.24267853040954
+            ],
+            [
+              134.10979912862595,
+              34.24255596522226
+            ],
+            [
+              134.1098411264873,
+              34.24234597591546
+            ],
+            [
+              134.10998811900205,
+              34.242177984470025
+            ],
+            [
+              134.1102401061702,
+              34.242135986608666
+            ],
+            [
+              134.11063908585314,
+              34.24209398874731
+            ],
+            [
+              134.11074408050652,
+              34.2419049983712
+            ],
+            [
+              134.11057608906108,
+              34.24177900478712
+            ],
+            [
+              134.11038709868498,
+              34.24163201227236
+            ],
+            [
+              134.1099671200714,
+              34.24154801654964
+            ],
+            [
+              134.10992512221003,
+              34.241380025104206
+            ],
+            [
+              134.11011411258613,
+              34.24125403152013
+            ],
+            [
+              134.11030310296226,
+              34.24119103472809
+            ],
+            [
+              134.1104710944077,
+              34.24114903686673
+            ],
+            [
+              134.110450095477,
+              34.24096004649061
+            ],
+            [
+              134.11040809761565,
+              34.240813053975856
+            ],
+            [
+              134.11051309226906,
+              34.24068706039178
+            ],
+            [
+              134.11093307088265,
+              34.24070805932246
+            ],
+            [
+              134.11140671343028,
+              34.24101837685367
+            ],
+            [
+              134.11145804414963,
+              34.24104404221334
+            ],
+            [
+              134.11159453719904,
+              34.24106504114402
+            ],
+            [
+              134.11169953185245,
+              34.24107554060936
+            ],
+            [
+              134.11180452650584,
+              34.24107554060936
+            ],
+            [
+              134.11187802276322,
+              34.24102304328266
+            ],
+            [
+              134.11183602490186,
+              34.24096004649062
+            ],
+            [
+              134.11181502597117,
+              34.24089704969858
+            ],
+            [
+              134.11175202917912,
+              34.24080255451051
+            ],
+            [
+              134.11173103024845,
+              34.240771056114504
+            ],
+            [
+              134.11162603559507,
+              34.240676560926445
+            ],
+            [
+              134.11148954254566,
+              34.240655561995766
+            ],
+            [
+              134.11140554682294,
+              34.240645062530426
+            ],
+            [
+              134.1114055468229,
+              34.24064506253042
+            ],
+            [
+              134.11130055216952,
+              34.24061356413441
+            ],
+            [
+              134.11128305306062,
+              34.2405960650255
+            ],
+            [
+              134.11125855430817,
+              34.24057156627305
+            ],
+            [
+              134.11114306018942,
+              34.24052956841169
+            ],
+            [
+              134.1109225714173,
+              34.24030907963956
+            ],
+            [
+              134.1108700740906,
+              34.2402145844515
+            ],
+            [
+              134.11085957462527,
+              34.24014108819412
+            ],
+            [
+              134.11086857416697,
+              34.240042093235246
+            ],
+            [
+              134.1108700740906,
+              34.240025594075384
+            ],
+            [
+              134.1108740113901,
+              34.240020344342696
+            ],
+            [
+              134.11093307088262,
+              34.239941598352665
+            ],
+            [
+              134.1109461952143,
+              34.23991534968932
+            ],
+            [
+              134.11098556820934,
+              34.23983660369927
+            ],
+            [
+              134.11114306018942,
+              34.23971061011519
+            ],
+            [
+              134.11130055216952,
+              34.23966861225383
+            ],
+            [
+              134.11135654931797,
+              34.23966550130114
+            ],
+            [
+              134.11148954254566,
+              34.23965811278849
+            ],
+            [
+              134.11153154040701,
+              34.23964761332315
+            ],
+            [
+              134.1116365350604,
+              34.23956361760043
+            ],
+            [
+              134.1116575339911,
+              34.23949012134305
+            ],
+            [
+              134.11164103483125,
+              34.23942412470376
+            ],
+            [
+              134.1116365350604,
+              34.239406125620334
+            ],
+            [
+              134.1116575339911,
+              34.239311630432276
+            ],
+            [
+              134.1116365350604,
+              34.23915413845218
+            ],
+            [
+              134.1116575339911,
+              34.23910164112548
+            ],
+            [
+              134.1118255254365,
+              34.23905964326412
+            ],
+            [
+              134.1119830174166,
+              34.23900714593742
+            ],
+            [
+              134.1121155655802,
+              34.23901734195001
+            ],
+            [
+              134.11211951046602,
+              34.23901764540276
+            ],
+            [
+              134.1122140056541,
+              34.2390281448681
+            ],
+            [
+              134.11231900030748,
+              34.23899664647208
+            ],
+            [
+              134.11235718018145,
+              34.23895846659812
+            ],
+            [
+              134.11236099816884,
+              34.23895464861073
+            ],
+            [
+              134.11236099816884,
+              34.23891265074937
+            ],
+            [
+              134.11236099816884,
+              34.23884965395733
+            ],
+            [
+              134.11236099816884,
+              34.23879715663063
+            ],
+            [
+              134.11252898961428,
+              34.238692161977234
+            ],
+            [
+              134.11260248587166,
+              34.238660663581214
+            ],
+            [
+              134.11272847945574,
+              34.238650164115874
+            ],
+            [
+              134.11283347410912,
+              34.238608166254515
+            ],
+            [
+              134.11293846876254,
+              34.2385241705318
+            ],
+            [
+              134.11299096608923,
+              34.23846117373976
+            ],
+            [
+              134.11301880188108,
+              34.23838694496153
+            ],
+            [
+              134.11302246448525,
+              34.23837717801704
+            ],
+            [
+              134.11300146555456,
+              34.23834567962102
+            ],
+            [
+              134.11294896822787,
+              34.23837717801704
+            ],
+            [
+              134.11284397357448,
+              34.23840867641306
+            ],
+            [
+              134.11275997785177,
+              34.23845067427442
+            ],
+            [
+              134.11262348480233,
+              34.23849267213578
+            ],
+            [
+              134.1124554933569,
+              34.23853466999714
+            ],
+            [
+              134.11238623726823,
+              34.23855445745104
+            ],
+            [
+              134.11230850084215,
+              34.238576667858496
+            ],
+            [
+              134.11220350618873,
+              34.238608166254515
+            ],
+            [
+              134.11210901100068,
+              34.238639664650535
+            ],
+            [
+              134.1120355147433,
+              34.238671163046554
+            ],
+            [
+              134.1119830174166,
+              34.238618665719855
+            ],
+            [
+              134.1119830174166,
+              34.23853466999714
+            ],
+            [
+              134.1119830174166,
+              34.23849267213578
+            ],
+            [
+              134.11204601420866,
+              34.23838767748238
+            ],
+            [
+              134.11208801207002,
+              34.23829318229432
+            ],
+            [
+              134.11213000993138,
+              34.23824068496762
+            ],
+            [
+              134.11210901100068,
+              34.238212686393375
+            ],
+            [
+              134.11209851153535,
+              34.23819868710626
+            ],
+            [
+              134.11201451581263,
+              34.23821968603694
+            ],
+            [
+              134.1120138158483,
+              34.23822061932274
+            ],
+            [
+              134.11195151902058,
+              34.23830368175966
+            ],
+            [
+              134.11183602490186,
+              34.23842967534374
+            ],
+            [
+              134.11178352757514,
+              34.23853466999714
+            ],
+            [
+              134.1116575339911,
+              34.238671163046554
+            ],
+            [
+              134.1113740484269,
+              34.23889165181869
+            ],
+            [
+              134.11131105163486,
+              34.23891265074937
+            ],
+            [
+              134.11120605698147,
+              34.23898614700674
+            ],
+            [
+              134.11120605698147,
+              34.2390806421948
+            ],
+            [
+              134.11114306018942,
+              34.23919613631354
+            ],
+            [
+              134.1110275660707,
+              34.239290631501596
+            ],
+            [
+              134.11088057355593,
+              34.239385126689655
+            ],
+            [
+              134.1107335810412,
+              34.23946912241237
+            ],
+            [
+              134.11046059494234,
+              34.23954261866975
+            ],
+            [
+              134.1102926034969,
+              34.23959511599645
+            ],
+            [
+              134.11013511151683,
+              34.23958461653111
+            ],
+            [
+              134.11006161525944,
+              34.23953211920441
+            ],
+            [
+              134.11005165422822,
+              34.23945243095465
+            ],
+            [
+              134.1100301168634,
+              34.23944812348169
+            ],
+            [
+              134.10998811900205,
+              34.23936412775897
+            ],
+            [
+              134.10986212541798,
+              34.23917513738286
+            ],
+            [
+              134.10977812969526,
+              34.2390281448681
+            ],
+            [
+              134.1097361318339,
+              34.238860153422664
+            ],
+            [
+              134.10965213611118,
+              34.23869216197723
+            ],
+            [
+              134.10958913931916,
+              34.23856616839315
+            ],
+            [
+              134.1095261425271,
+              34.23848217267043
+            ],
+            [
+              134.10940014894302,
+              34.23839817694771
+            ],
+            [
+              134.10927415535895,
+              34.23846117373975
+            ],
+            [
+              134.10925315642828,
+              34.23865016411587
+            ],
+            [
+              134.10929515428964,
+              34.23894414914538
+            ],
+            [
+              134.10935815108166,
+              34.23930113096693
+            ],
+            [
+              134.10936957155275,
+              34.23951811991728
+            ],
+            [
+              134.10942114787372,
+              34.23961611492713
+            ],
+            [
+              134.10946314573508,
+              34.23977360690723
+            ],
+            [
+              134.10950514359644,
+              34.239941598352665
+            ],
+            [
+              134.10956814038846,
+              34.24014108819412
+            ],
+            [
+              134.10955764092313,
+              34.24028808070888
+            ],
+            [
+              134.10916916070556,
+              34.24052956841169
+            ],
+            [
+              134.10913766230954,
+              34.24054006787703
+            ],
+            [
+              134.10903266765615,
+              34.24060306466907
+            ],
+            [
+              134.10902928073185,
+              34.24060814505554
+            ],
+            [
+              134.1089906697948,
+              34.240666061461106
+            ],
+            [
+              134.10900116926013,
+              34.24079205504518
+            ],
+            [
+              134.10903266765615,
+              34.24088655023324
+            ],
+            [
+              134.10904713989214,
+              34.2410023281213
+            ],
+            [
+              134.10905366658682,
+              34.24105454167868
+            ],
+            [
+              134.1089696708641,
+              34.2411910347281
+            ],
+            [
+              134.1087071842306,
+              34.241327527777514
+            ],
+            [
+              134.1086021895772,
+              34.24141152350023
+            ],
+            [
+              134.1085905235046,
+              34.241423189572814
+            ],
+            [
+              134.10856019171584,
+              34.24145352136159
+            ],
+            [
+              134.10845519706245,
+              34.24159001441101
+            ],
+            [
+              134.10830718697835,
+              34.24183423104975
+            ],
+            [
+              134.10824520775566,
+              34.24193649676722
+            ],
+            [
+              134.10815275246375,
+              34.24199679369672
+            ],
+            [
+              134.10812446390426,
+              34.24201524275726
+            ],
+            [
+              134.10800372005284,
+              34.242093988747314
+            ],
+            [
+              134.10794288315083,
+              34.24218524410035
+            ],
+            [
+              134.10742624945917,
+              34.24238797377683
+            ],
+            [
+              134.10715326336032,
+              34.24233547645013
+            ],
+            [
+              134.10711126549896,
+              34.24223048179673
+            ],
+            [
+              134.1069327745882,
+              34.242041491420615
+            ],
+            [
+              134.10686977779613,
+              34.2419049983712
+            ],
+            [
+              134.10684877886547,
+              34.24173700692576
+            ],
+            [
+              134.10690127619216,
+              34.24157951494567
+            ],
+            [
+              134.10700627084557,
+              34.24140102403489
+            ],
+            [
+              134.10716376282565,
+              34.24118053526276
+            ],
+            [
+              134.107205760687,
+              34.24101254381732
+            ],
+            [
+              134.107205760687,
+              34.24089704969858
+            ],
+            [
+              134.10721626015237,
+              34.240771056114504
+            ],
+            [
+              134.10719526122168,
+              34.240729058253145
+            ],
+            [
+              134.10716376282565,
+              34.24079205504518
+            ],
+            [
+              134.10711126549896,
+              34.2408235534412
+            ],
+            [
+              134.10702726977624,
+              34.24085505183722
+            ],
+            [
+              134.1068956346884,
+              34.24110891950663
+            ],
+            [
+              134.10683827940014,
+              34.24112803793606
+            ],
+            [
+              134.106649289024,
+              34.24107554060936
+            ],
+            [
+              134.10661779062798,
+              34.241033542748
+            ],
+            [
+              134.10657579276662,
+              34.24100204435198
+            ]
+          ]
+        ]
+      },
+      "id": "water:codh-lake:517"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "37015",
+        "pref_no": "37",
+        "pref": "香川県",
+        "jk_id": "380000062500",
+        "name": "奈良須池",
+        "yomi": "ならずいけ",
+        "remarks": "旧版5万、地理院明治の湿地参照。",
+        "jk_url": "https://japanknowledge.com/lib/display/?lid=30020380000062500",
+        "sourceRowId": 518,
+        "drawRole": "water",
+        "shapeRole": "edo-reference",
+        "validFrom": [
+          1560,
+          1,
+          1
+        ],
+        "validUntil": [
+          1616,
+          1,
+          1
+        ]
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              133.9905672002276,
+              34.27099901682765
+            ],
+            [
+              133.9906063960967,
+              34.27098268521552
+            ],
+            [
+              133.99060919808898,
+              34.270999016827666
+            ],
+            [
+              133.99217361842457,
+              34.27030605211524
+            ],
+            [
+              133.99250960131545,
+              34.2701380606698
+            ],
+            [
+              133.9927825874143,
+              34.27016955906582
+            ],
+            [
+              133.99303457458245,
+              34.27023255585786
+            ],
+            [
+              133.99327606228528,
+              34.2701905579965
+            ],
+            [
+              133.99486148155157,
+              34.26899361894777
+            ],
+            [
+              133.99486148155157,
+              34.26886762536369
+            ],
+            [
+              133.9946619917101,
+              34.26878362964097
+            ],
+            [
+              133.99449400026467,
+              34.26878362964097
+            ],
+            [
+              133.99402152432438,
+              34.26832165316602
+            ],
+            [
+              133.99401102485905,
+              34.26819565958195
+            ],
+            [
+              133.99413701844313,
+              34.267891175087094
+            ],
+            [
+              133.99435750721526,
+              34.26758669059224
+            ],
+            [
+              133.9943365082846,
+              34.26746069700816
+            ],
+            [
+              133.99427351149254,
+              34.26705121785991
+            ],
+            [
+              133.9943365082846,
+              34.266505245662245
+            ],
+            [
+              133.99471448903682,
+              34.26539230233623
+            ],
+            [
+              133.9950819703237,
+              34.26487782853458
+            ],
+            [
+              133.99540745374924,
+              34.26424786061419
+            ],
+            [
+              133.99589042915485,
+              34.26368088948585
+            ],
+            [
+              133.99612141739235,
+              34.263302908733614
+            ],
+            [
+              133.9961634152537,
+              34.263166415684196
+            ],
+            [
+              133.996142416323,
+              34.26297742530808
+            ],
+            [
+              133.99592192755088,
+              34.26298792477342
+            ],
+            [
+              133.99583793182816,
+              34.263176915149536
+            ],
+            [
+              133.9956069435907,
+              34.26344990124837
+            ],
+            [
+              133.99524996176913,
+              34.263775384673906
+            ],
+            [
+              133.99512396818506,
+              34.2640378713074
+            ],
+            [
+              133.99490347941293,
+              34.26427935901021
+            ],
+            [
+              133.9945254986607,
+              34.26430035794089
+            ],
+            [
+              133.9943155093539,
+              34.26432135687157
+            ],
+            [
+              133.9941265189778,
+              34.26430035794089
+            ],
+            [
+              133.99395852753236,
+              34.26421636221817
+            ],
+            [
+              133.99379053608692,
+              34.264069369703414
+            ],
+            [
+              133.9936855414335,
+              34.26381738253526
+            ],
+            [
+              133.99364354357215,
+              34.26360739322846
+            ],
+            [
+              133.99358054678012,
+              34.26341840285235
+            ],
+            [
+              133.99353854891876,
+              34.263208413545556
+            ],
+            [
+              133.99355954784943,
+              34.2630614210308
+            ],
+            [
+              133.99351754998807,
+              34.26297742530808
+            ],
+            [
+              133.99334955854263,
+              34.26297742530808
+            ],
+            [
+              133.9931815670972,
+              34.26308241996148
+            ],
+            [
+              133.9930765724438,
+              34.26314541675352
+            ],
+            [
+              133.99305557351312,
+              34.263166415684196
+            ],
+            [
+              133.99288758206768,
+              34.263166415684196
+            ],
+            [
+              133.9927825874143,
+              34.26299842423876
+            ],
+            [
+              133.99261459596886,
+              34.26297742530808
+            ],
+            [
+              133.99248860238478,
+              34.26304042210012
+            ],
+            [
+              133.99238360773137,
+              34.263166415684196
+            ],
+            [
+              133.99238360773137,
+              34.26339740392167
+            ],
+            [
+              133.99259359703817,
+              34.26360739322846
+            ],
+            [
+              133.9927825874143,
+              34.263922377188656
+            ],
+            [
+              133.9929715777904,
+              34.26427935901021
+            ],
+            [
+              133.99309757137448,
+              34.264510347247686
+            ],
+            [
+              133.99311857030517,
+              34.26476233441584
+            ],
+            [
+              133.99305557351312,
+              34.26486732906924
+            ],
+            [
+              133.9929715777904,
+              34.26495132479195
+            ],
+            [
+              133.99274058955294,
+              34.26493032586128
+            ],
+            [
+              133.99265659383022,
+              34.2649093269306
+            ],
+            [
+              133.99248860238478,
+              34.26476233441584
+            ],
+            [
+              133.99223661521663,
+              34.26448934831701
+            ],
+            [
+              133.99204762484052,
+              34.26438435366361
+            ],
+            [
+              133.99192163125645,
+              34.26440535259429
+            ],
+            [
+              133.99181663660303,
+              34.264552345109045
+            ],
+            [
+              133.99183763553373,
+              34.2646993376238
+            ],
+            [
+              133.9916486451576,
+              34.26511931623739
+            ],
+            [
+              133.9912496654747,
+              34.2654133012669
+            ],
+            [
+              133.9910186772372,
+              34.26547629805894
+            ],
+            [
+              133.99071419274236,
+              34.265476298058935
+            ],
+            [
+              133.9901682205447,
+              34.26562329057369
+            ],
+            [
+              133.99012622268333,
+              34.265707286296404
+            ],
+            [
+              133.99010522375264,
+              34.26585427881116
+            ],
+            [
+              133.99008422482197,
+              34.2660222702566
+            ],
+            [
+              133.9900422269606,
+              34.26633725421679
+            ],
+            [
+              133.98968524513904,
+              34.266862227483784
+            ],
+            [
+              133.9895382526243,
+              34.26698822106786
+            ],
+            [
+              133.98939126010953,
+              34.267051217859894
+            ],
+            [
+              133.98928626545614,
+              34.267051217859894
+            ],
+            [
+              133.9891182740107,
+              34.26709321572125
+            ],
+            [
+              133.98897128149594,
+              34.26717721144397
+            ],
+            [
+              133.98888728577322,
+              34.26740819968145
+            ],
+            [
+              133.98871929432778,
+              34.26829015476999
+            ],
+            [
+              133.98878229111983,
+              34.26843714728474
+            ],
+            [
+              133.98886628684255,
+              34.26866813552222
+            ],
+            [
+              133.9889082847039,
+              34.2687941291063
+            ],
+            [
+              133.98899228042663,
+              34.268899123759695
+            ],
+            [
+              133.98905527721865,
+              34.268962120551734
+            ],
+            [
+              133.98916027187207,
+              34.26902511734377
+            ],
+            [
+              133.98916027187207,
+              34.26908811413581
+            ],
+            [
+              133.98918127080273,
+              34.26923510665057
+            ],
+            [
+              133.9891182740107,
+              34.26929810344261
+            ],
+            [
+              133.9890132793573,
+              34.26931910237329
+            ],
+            [
+              133.9889082847039,
+              34.26938209916533
+            ],
+            [
+              133.98886628684255,
+              34.269529091680084
+            ],
+            [
+              133.98884528791186,
+              34.2696130874028
+            ],
+            [
+              133.98888728577322,
+              34.26980207777891
+            ],
+            [
+              133.98905527721865,
+              34.26992807136299
+            ],
+            [
+              133.9892232686641,
+              34.27001206708571
+            ],
+            [
+              133.9893072643868,
+              34.27005406494707
+            ],
+            [
+              133.98934926224817,
+              34.27009606280843
+            ],
+            [
+              133.98934926224817,
+              34.270201057461826
+            ],
+            [
+              133.9893072643868,
+              34.2703270510459
+            ],
+            [
+              133.9893072643868,
+              34.2704320456993
+            ],
+            [
+              133.98937026117886,
+              34.27051604142202
+            ],
+            [
+              133.98947525583225,
+              34.27051604142202
+            ],
+            [
+              133.9895382526243,
+              34.27051604142202
+            ],
+            [
+              133.9897482419311,
+              34.27039004783794
+            ],
+            [
+              133.98987423551517,
+              34.27039004783794
+            ],
+            [
+              133.99002122802992,
+              34.27045304462998
+            ],
+            [
+              133.99010522375264,
+              34.27060003714474
+            ],
+            [
+              133.99012622268333,
+              34.270768028590176
+            ],
+            [
+              133.9901682205447,
+              34.27091502110493
+            ],
+            [
+              133.99026271573274,
+              34.271009516293
+            ],
+            [
+              133.99027321519807,
+              34.27104101468901
+            ],
+            [
+              133.99033621199013,
+              34.27108301255036
+            ],
+            [
+              133.99048320450487,
+              34.27104101468901
+            ],
+            [
+              133.9905672002276,
+              34.27099901682765
+            ]
+          ]
+        ]
+      },
+      "id": "water:codh-lake:518"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "37048",
+        "pref_no": "37",
+        "pref": "香川県",
+        "jk_id": "380000044500 ",
+        "name": "竜満池",
+        "yomi": "りゅうまんいけ",
+        "remarks": "旧版5万参照",
+        "jk_url": "https://japanknowledge.com/lib/display/?lid=30020380000044500",
+        "sourceRowId": 523,
+        "drawRole": "water",
+        "shapeRole": "edo-reference",
+        "validFrom": [
+          1560,
+          1,
+          1
+        ],
+        "validUntil": [
+          1616,
+          1,
+          1
+        ]
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              134.03447071454596,
+              34.2447556032109
+            ],
+            [
+              134.03473320117945,
+              34.2445981112308
+            ],
+            [
+              134.03544716482256,
+              34.24453511443876
+            ],
+            [
+              134.03567815306002,
+              34.244409120854684
+            ],
+            [
+              134.03590914129748,
+              34.24411513582517
+            ],
+            [
+              134.03610863113894,
+              34.24391564598371
+            ],
+            [
+              134.03632911991107,
+              34.24361116148886
+            ],
+            [
+              134.0364656129605,
+              34.24354816469682
+            ],
+            [
+              134.0366231049406,
+              34.24343267057809
+            ],
+            [
+              134.03681209531672,
+              34.243054689825854
+            ],
+            [
+              134.03684359371275,
+              34.24277120426168
+            ],
+            [
+              134.03664410387128,
+              34.242435221370805
+            ],
+            [
+              134.03665460333661,
+              34.24205724061858
+            ],
+            [
+              134.03669660119797,
+              34.2419837443612
+            ],
+            [
+              134.03681209531672,
+              34.241658260935665
+            ],
+            [
+              134.03700108569282,
+              34.24125928125275
+            ],
+            [
+              134.03759955521718,
+              34.240802554510466
+            ],
+            [
+              134.03755755735583,
+              34.24066606146105
+            ],
+            [
+              134.03753655842516,
+              34.24052956841163
+            ],
+            [
+              134.03755755735583,
+              34.24045607215425
+            ],
+            [
+              134.03762055414788,
+              34.240372076431534
+            ],
+            [
+              134.03761005468255,
+              34.240319579104835
+            ],
+            [
+              134.03751555949447,
+              34.240309079639495
+            ],
+            [
+              134.03741056484108,
+              34.240351077500854
+            ],
+            [
+              134.0372320739303,
+              34.240351077500854
+            ],
+            [
+              134.0371795766036,
+              34.240277581243475
+            ],
+            [
+              134.0370745819502,
+              34.240235583382116
+            ],
+            [
+              134.03701158515815,
+              34.2402040849861
+            ],
+            [
+              134.03690659050477,
+              34.240267081778136
+            ],
+            [
+              134.03692758943544,
+              34.24040357482755
+            ],
+            [
+              134.03700108569282,
+              34.24060306466901
+            ],
+            [
+              134.03694858836613,
+              34.24077105611445
+            ],
+            [
+              134.03674909852467,
+              34.24093904755988
+            ],
+            [
+              134.0365916065446,
+              34.24118053526269
+            ],
+            [
+              134.03648661189118,
+              34.24118053526269
+            ],
+            [
+              134.03642361509915,
+              34.241023043282595
+            ],
+            [
+              134.03645511349515,
+              34.24064506253037
+            ],
+            [
+              134.03647611242585,
+              34.24049807001561
+            ],
+            [
+              134.03640261616846,
+              34.24043507322357
+            ],
+            [
+              134.036171627931,
+              34.24045607215425
+            ],
+            [
+              134.03583564504012,
+              34.24054006787697
+            ],
+            [
+              134.03539466749584,
+              34.24062406359969
+            ],
+            [
+              134.03465970492206,
+              34.240876050767845
+            ],
+            [
+              134.03410323325906,
+              34.241065041143955
+            ],
+            [
+              134.03344176694264,
+              34.24131702831211
+            ],
+            [
+              134.0330637861904,
+              34.24149551922289
+            ],
+            [
+              134.03259131025013,
+              34.242240981262015
+            ],
+            [
+              134.0320243391218,
+              34.243479918172106
+            ],
+            [
+              134.03206633698315,
+              34.2444563684487
+            ],
+            [
+              134.03238132094333,
+              34.244855348131615
+            ],
+            [
+              134.03354676159606,
+              34.245033839042385
+            ],
+            [
+              134.0337147530415,
+              34.24491309519099
+            ],
+            [
+              134.03396674020965,
+              34.24476610267624
+            ],
+            [
+              134.03410323325906,
+              34.2447556032109
+            ],
+            [
+              134.03447071454596,
+              34.2447556032109
+            ]
+          ]
+        ]
+      },
+      "id": "water:codh-lake:523"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "37052",
+        "pref_no": "37",
+        "pref": "香川県",
+        "jk_id": "380000042800 ",
+        "name": "衣懸池",
+        "yomi": "こかけいけ",
+        "remarks": "さぬきの水物語/香川県では「衣掛池」。旧版5万参照",
+        "jk_url": "https://japanknowledge.com/lib/display/?lid=30020380000042800",
+        "sourceRowId": 524,
+        "drawRole": "water",
+        "shapeRole": "edo-reference",
+        "validFrom": [
+          1560,
+          1,
+          1
+        ],
+        "validUntil": [
+          1616,
+          1,
+          1
+        ]
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              133.98514422637973,
+              34.31320161776082
+            ],
+            [
+              133.9852702199638,
+              34.31292863166198
+            ],
+            [
+              133.98522822210245,
+              34.312550650909756
+            ],
+            [
+              133.9851862242411,
+              34.31189968405869
+            ],
+            [
+              133.9848712402809,
+              34.311269716138305
+            ],
+            [
+              133.98501823279565,
+              34.31082873859403
+            ],
+            [
+              133.9855012082013,
+              34.31021976960432
+            ],
+            [
+              133.98543821140925,
+              34.309967782436175
+            ],
+            [
+              133.9852702199638,
+              34.30982078992142
+            ],
+            [
+              133.98510222851837,
+              34.30982078992142
+            ],
+            [
+              133.98489223921158,
+              34.309967782436175
+            ],
+            [
+              133.98432526808324,
+              34.310240768535
+            ],
+            [
+              133.98335931727198,
+              34.310156772812284
+            ],
+            [
+              133.98300233545044,
+              34.30979979099074
+            ],
+            [
+              133.98243536432207,
+              34.30982078992142
+            ],
+            [
+              133.98193138998576,
+              34.30971579526802
+            ],
+            [
+              133.9816794028176,
+              34.309442809169184
+            ],
+            [
+              133.98142741564945,
+              34.30908582734763
+            ],
+            [
+              133.98123842527335,
+              34.30910682627831
+            ],
+            [
+              133.9811754284813,
+              34.30914882413967
+            ],
+            [
+              133.98113343061993,
+              34.30923281986239
+            ],
+            [
+              133.9809864381052,
+              34.309295816654426
+            ],
+            [
+              133.98094444024383,
+              34.30923281986239
+            ],
+            [
+              133.98090244238247,
+              34.30910682627831
+            ],
+            [
+              133.9808604445211,
+              34.30898083269423
+            ],
+            [
+              133.9808604445211,
+              34.308854839110154
+            ],
+            [
+              133.98081844665975,
+              34.308812841248795
+            ],
+            [
+              133.9807974477291,
+              34.30874984445676
+            ],
+            [
+              133.98069245307568,
+              34.308707846595404
+            ],
+            [
+              133.98060845735296,
+              34.308665848734044
+            ],
+            [
+              133.9805664594916,
+              34.308560854080646
+            ],
+            [
+              133.98062945628365,
+              34.30849785728861
+            ],
+            [
+              133.98071345200637,
+              34.30847685835793
+            ],
+            [
+              133.98075544986773,
+              34.30837186370453
+            ],
+            [
+              133.98069245307568,
+              34.30830886691249
+            ],
+            [
+              133.9805874584223,
+              34.30828786798181
+            ],
+            [
+              133.98039846804616,
+              34.30830886691249
+            ],
+            [
+              133.98012548194734,
+              34.30837186370453
+            ],
+            [
+              133.9799364915712,
+              34.30845585942725
+            ],
+            [
+              133.97991549264054,
+              34.308560854080646
+            ],
+            [
+              133.9799364915712,
+              34.308665848734044
+            ],
+            [
+              133.97997848943257,
+              34.30874984445676
+            ],
+            [
+              133.98004148622462,
+              34.308833840179474
+            ],
+            [
+              133.980146480878,
+              34.30891783590219
+            ],
+            [
+              133.98025147553142,
+              34.30898083269423
+            ],
+            [
+              133.98033547125414,
+              34.30921182093171
+            ],
+            [
+              133.98033547125414,
+              34.309400811307825
+            ],
+            [
+              133.98031447232344,
+              34.3096317995453
+            ],
+            [
+              133.9801674798087,
+              34.309904785644136
+            ],
+            [
+              133.98002048729393,
+              34.31007277708957
+            ],
+            [
+              133.98002048729393,
+              34.310156772812284
+            ],
+            [
+              133.98004148622462,
+              34.31026176746568
+            ],
+            [
+              133.98012548194734,
+              34.31036676211908
+            ],
+            [
+              133.980671454145,
+              34.31053475356452
+            ],
+            [
+              133.98115442955063,
+              34.31080773966335
+            ],
+            [
+              133.98144841458014,
+              34.31084973752471
+            ],
+            [
+              133.98157440816422,
+              34.310765741801994
+            ],
+            [
+              133.9816794028176,
+              34.310639748217916
+            ],
+            [
+              133.98182639533238,
+              34.31051375463384
+            ],
+            [
+              133.98201538570848,
+              34.31049275570316
+            ],
+            [
+              133.9821203803619,
+              34.3105557524952
+            ],
+            [
+              133.98218337715392,
+              34.31061874928724
+            ],
+            [
+              133.98226737287663,
+              34.310702745009955
+            ],
+            [
+              133.98228837180733,
+              34.31082873859403
+            ],
+            [
+              133.98228837180733,
+              34.31091273431675
+            ],
+            [
+              133.98235136859935,
+              34.31105972683151
+            ],
+            [
+              133.98214137929256,
+              34.311332712930344
+            ],
+            [
+              133.9838632916083,
+              34.31292863166198
+            ],
+            [
+              133.98459825418206,
+              34.313390608136935
+            ],
+            [
+              133.98493423707293,
+              34.313411607067614
+            ],
+            [
+              133.98514422637973,
+              34.31320161776082
+            ]
+          ]
+        ]
+      },
+      "id": "water:codh-lake:524"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "37107",
+        "pref_no": "37",
+        "pref": "香川県",
+        "jk_id": null,
+        "name": "千歳池",
+        "yomi": "ちとせいけ",
+        "remarks": "昭和16年より青葉池などを併合して拡張したため、縮小作図する。旧版5万、地理院明治の湿地参照。",
+        "jk_url": "歴史地名体系記載なし",
+        "sourceRowId": 528,
+        "drawRole": "water",
+        "shapeRole": "edo-reference",
+        "validFrom": [
+          1560,
+          1,
+          1
+        ],
+        "validUntil": [
+          1616,
+          1,
+          1
+        ]
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              133.68048386548196,
+              34.06641693468222
+            ],
+            [
+              133.680546862274,
+              34.06626994216747
+            ],
+            [
+              133.68039986975924,
+              34.06605995286068
+            ],
+            [
+              133.68018988045245,
+              34.0659339592766
+            ],
+            [
+              133.67993789328432,
+              34.06591296034592
+            ],
+            [
+              133.67945491787867,
+              34.06601795499932
+            ],
+            [
+              133.67899294140372,
+              34.066101950722036
+            ],
+            [
+              133.67863595958218,
+              34.066206945375434
+            ],
+            [
+              133.6782999766913,
+              34.06633293895951
+            ],
+            [
+              133.67813198524587,
+              34.06641693468222
+            ],
+            [
+              133.6779849927311,
+              34.06656392719698
+            ],
+            [
+              133.6779849927311,
+              34.06668992078106
+            ],
+            [
+              133.6780899873845,
+              34.06708890046397
+            ],
+            [
+              133.6784889670674,
+              34.06736188656281
+            ],
+            [
+              133.67867795744354,
+              34.06738288549349
+            ],
+            [
+              133.67926592750257,
+              34.06717289618669
+            ],
+            [
+              133.68048386548196,
+              34.06641693468222
+            ]
+          ]
+        ]
+      },
+      "id": "water:codh-lake:528"
+    }
+  ],
+  "packetRole": "quarantined-original-features-not-runtime-water",
+  "packetWarning": "Feature validFrom/validUntil are preserved ORIGINAL attributes, NOT endorsed activation. Apply decision.json by top-level feature id. This is a review input only.",
+  "packetSource": {
+    "path": "/tmp/kuniezu-era-surfaces-reviewed-candidate/water.geojson",
+    "sha256": "5d8295fd4b67df28fedf4e82c2a76c4d86f8aed39725cffc5783631edc97b1bf"
+  }
+}

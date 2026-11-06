@@ -20,6 +20,11 @@ is [docs/README.md](docs/README.md); open requests and ownership are in
 - Edited GeoJSON will be the directly maintained source of truth. Rendering reads
   the files for the selected period. CODH originals remain available for comparison,
   and normal builds will not overwrite the edited source data.
+- Edited land, water and shoreline sources are stored in
+  `kuniezu/map/physical/{land,water,coastline}.geojson` with an
+  [adoption record](data/inputs/vector-map-migration/README.md) and period checks.
+  The game cutover is separate. Use `--canonical kuniezu/map/physical
+  --at 1584-01-01` in the comparison viewer to inspect a period.
 - `uv run python tools/geo/codh_topology.py --output /tmp/codh-surfaces-new`
   prepares valid reference surfaces and combined land/lake geometry using a
   linework method that retains source edges and coordinate positions. Collapsed

@@ -28,8 +28,11 @@ def test_direct_geojson_sources_have_valid_surfaces_and_preserve_lake_centres():
             assert data["type"] == "FeatureCollection"
             for feature in data["features"]:
                 if feature["geometry"] is not None:
-                    assert shapely.is_valid(shape(feature["geometry"])), str(file)
-    file = ROOT / "kuniezu/map/physical/lakes-reference.geojson"
+                    geometry = shape(feature["geometry"])
+                    assert shapely.is_valid(geometry), str(file)
+                    if "bbox" in feature:
+                        assert feature["bbox"] == list(geometry.bounds), str(file)
+    file = ROOT / "kuniezu/map/physical/water.geojson"
     data = json.loads(file.read_text(encoding="utf-8"))
     features = {f["id"]: f for f in data["features"]}
     assert set(CENTRES) <= set(features)

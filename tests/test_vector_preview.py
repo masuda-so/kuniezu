@@ -31,6 +31,24 @@ def test_edited_surface_preview_keeps_geometry_and_uses_shared_renderer(
         file.write_text(json.dumps(data), encoding="utf-8")
         collections[name] = (data, file.read_bytes())
 
+    coastline = {
+        "type": "FeatureCollection",
+        "features": [
+            {
+                "type": "Feature",
+                "id": "shore",
+                "properties": {"drawRole": "shore"},
+                "geometry": {
+                    "type": "LineString",
+                    "coordinates": [[130, 30], [131, 30]],
+                },
+            }
+        ],
+    }
+    coast_file = source / "coastline.geojson"
+    coast_file.write_text(json.dumps(coastline), encoding="utf-8")
+    collections["coastline"] = (coastline, coast_file.read_bytes())
+
     def prepare(_manifest, output):
         output.mkdir()
         for key in ("coast-polygons", "lake-polygons", "roads", "posts"):
@@ -40,7 +58,7 @@ def test_edited_surface_preview_keeps_geometry_and_uses_shared_renderer(
         return {"datasets": []}
 
     monkeypatch.setattr(codh_preview, "prepare", prepare)
-    result = codh_preview.build(tmp_path / "preview", canonical=source)
+    result = codh_preview.build(tmp_path / "preview", canonical=source, at=[1584, 1, 1])
     html = result.read_text(encoding="utf-8")
     raw = html.split('<script type="application/json" id="data">', 1)[1].split(
         "</script>", 1
@@ -48,6 +66,8 @@ def test_edited_surface_preview_keeps_geometry_and_uses_shared_renderer(
     payload = json.loads(raw)
     assert payload["layers"]["coast-polygons"] == collections["land"][0]
     assert payload["layers"]["lake-polygons"] == collections["water"][0]
+    assert payload["layers"]["shores"] == coastline
+    assert payload["date"] == [1584, 1, 1]
     for name, (_, before) in collections.items():
         assert (source / (name + ".geojson")).read_bytes() == before
     assert "__VECTOR_RENDERER__" not in html
