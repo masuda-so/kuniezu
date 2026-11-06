@@ -27,6 +27,7 @@ is [docs/README.md](docs/README.md); open requests and ownership are in
   Castle falls without supported deployments remain timeline entries and historic sites.
 - Modern comparison terrain, estimates derived from sources and confirmed
   historical facts are kept apart. Unsupported text is not shown in the game.
+- Late elevation, river and boundary loads refresh the map while the camera stays still.
 - The historical database preserves original calendars and date precision, and rejects
   additional date fields that conflict with the time format. See the
   [database design and commands](docs/architecture/history-database.md) (Japanese).
