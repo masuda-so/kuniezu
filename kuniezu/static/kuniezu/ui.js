@@ -1312,16 +1312,17 @@ const HELP=`<div class="help"><p><b>年代を進める</b>　左上の ▶ で�
 
 /* ===== 保存 ===== */
 const SAVE_KEY2='kuniezu-history-v1-',LEGACY_SAVE_KEY='tenka-haichizu-v7-';
-function doSave(n){S.visualFraction=Math.max(0,Math.min(1,U.acc||0));const d=G.date();let r;try{r=TKStorage.write(localStorage,SAVE_KEY2+n,S,`${G.eraK()}${G.monK()}${G.dayK()}（${d.y}） ${G.CNK(S.player)}`);}catch(error){r={ok:false,error};}
+function saveFraction(){return Math.max(0,Math.min(1,U.acc||0));}
+function doSave(n){S.visualFraction=saveFraction();const d=G.date();let r;try{r=TKStorage.write(localStorage,SAVE_KEY2+n,S,`${G.eraK()}${G.monK()}${G.dayK()}（${d.y}） ${G.CNK(S.player)}`);}catch(error){r={ok:false,error};}
  U.saveFailure=r.ok?null:{name:r.error?.name||'SaveError',message:r.error?.message||'保存処理が失敗しました'};
  if(!r.ok)toast('保存できませんでした。ブラウザの保存容量や設定を確認し、ファイルに書き出してください。','bad');return r.ok;}
-function exportSave(){try{const blob=new Blob([TKStorage.encode(S)],{type:'application/json'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download=`天下分け目の国絵図-${G.date().y}-${G.date().m}-${G.date().d}.json`;a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);toast('保存データを書き出しました','good');}catch(_){toast('書き出せませんでした','bad');}}
+function exportSave(){try{const blob=new Blob([TKStorage.encode({...S,visualFraction:saveFraction()})],{type:'application/json'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download=`天下分け目の国絵図-${G.date().y}-${G.date().m}-${G.date().d}.json`;a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);toast('保存データを書き出しました','good');}catch(_){toast('書き出せませんでした','bad');}}
 function importSave(){const input=document.createElement('input');input.type='file';input.accept='.json,application/json';input.hidden=true;document.body.append(input);input.addEventListener('cancel',()=>input.remove(),{once:true});
  input.onchange=async()=>{const file=input.files[0];input.remove();if(!file)return;try{if(file.size>20000000)throw new Error('size');const next=cleanSave(TKStorage.decode(await file.text()));if(!next)throw new Error('shape');U.pendingImport=next;openModal('import-confirm');}catch(_){toast('取り込めませんでした。国絵図の保存ファイルを選んでください。','bad');}};input.click();}
 MODALS['import-confirm']=()=>`<header><h2>保存ファイルを取り込む</h2></header><p>現在のプレイを、選んだファイルの続きに切り替えます。現在のプレイを残す場合は、先に保存または書き出しをしてください。</p><footer><button class="btn" data-act="import-cancel">やめる</button><button class="btn pri" data-act="import-go">取り込む</button></footer>`;
 ACT['import-cancel']=()=>{U.pendingImport=null;openModal('menu');};
 ACT['import-go']=()=>{if(!U.pendingImport)return;const previous=S;try{S=U.pendingImport;G.setS(S);G.fixHist();U.sel=null;U.ended=false;enterGame();closeModal();U.pendingImport=null;toast('ファイルから再開しました','good');}catch(_){S=previous;G.setS(S);U.pendingImport=null;enterGame();openModal('menu');toast('取り込めませんでした。元のプレイに戻しました。','bad');}};
-function autosave(){if(!S||U.mode!=='game')return false;S.visualFraction=Math.max(0,Math.min(1,U.acc||0));const now=Date.now();if(U.saveRetry&&now<U.saveRetry)return false;
+function autosave(){if(!S||U.mode!=='game')return false;S.visualFraction=saveFraction();const now=Date.now();if(U.saveRetry&&now<U.saveRetry)return false;
  const ok=doSave('auto');if(ok){U.lastSave=S.t;U.savedAt=now;U.saveRetry=0;U.saveError=false;}else{U.saveRetry=now+10000;U.saveError=true;}return ok;}
 setInterval(()=>{if(U.mode==='game'&&S&&S.t!==U.lastSave)autosave();},45000);
 addEventListener('pagehide',()=>autosave());
