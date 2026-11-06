@@ -1,0 +1,21 @@
+{
+  "id": "person:otomo-yoshimune",
+  "name": "大友義統",
+  "gameNames": [
+    "大友義統"
+  ],
+  "authorityIds": [
+    "wikidata:Q5354141"
+  ],
+  "authorityEvidence": {
+    "scope": "person-identity",
+    "wikidataRevision": 2522070119,
+    "checked": "2026-11-07",
+    "snapshot": "data/research/source-notes/person-authority-next-three.json",
+    "sourceIds": [
+      "oitaHistoryFiguresYoshimune"
+    ],
+    "basis": "公的資料と姓名以外の2項目以上を照合。生没日は同定の比較値に限定し、史実命題へ自動採用しない。",
+    "note": "data/research/source-notes/person-authority-next-three.md"
+  }
+}
