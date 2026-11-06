@@ -19,7 +19,7 @@
 - 史実DBは原暦と日付精度を維持し、時間形式と矛盾する追加日付欄を拒否します。[DB構成と操作](docs/architecture/history-database.md)を参照してください。
 - 富ノ森の発掘観測を出典付きで史実DBに登録しています。考古学的な時期区分と確定年月日を分け、原本はSHA付きで参照し、読書用Markdownと数値を保持します。
 - 史実DBの集計は `python3 tools/research/history_sqlite.py cube --db <生成済みDB> --from-year 1600 --to-year 1615 --calendar Japanese-lunisolar` で読取専用検索できます。出典記録数を原暦・精度別に集計し、不明な年を展開しません。
-- 史実DBは本人の典拠IDと出典付き別名を保持します。別名で検索でき、ゲーム期間外の比較史料を期間内の出来事へ置き換えません。
+- 史実DBは本人の典拠IDと出典付き別名を保持します。[人物典拠10人の照合記録](data/research/source-notes/person-authority-expansion.md)を追加し、取得版と同名人物の判別根拠を保存しています。別名で検索でき、ゲーム期間外の比較史料を期間内の出来事へ置き換えません。
 - 香取海の内浪逆浦・外浪逆浦は、中世の湖沼資料と後世の比較岸による推定湖面として表示します。補正範囲を閉じる水面上の辺は、岸線として描きません。[根拠と検査](docs/reports/KATORI_WIDE_LAKE_PERIMETER.md)を参照してください。
 
 - 八郎潟は干拓前の比較地形図を用いた推定湖面として修正し、後世の造成が疑われる湖岸を陸へ先取りしません。[根拠と検査](docs/reports/HACHIROGATA_WATER_REVIEW.md)を参照してください。

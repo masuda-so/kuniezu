@@ -59,6 +59,18 @@ for(const person of people){
    assert.throws(()=>verifyNdlAlternativeName(person,row,otherPerson,wikidata),/NDL ID differs/);
    assert.throws(()=>verifyNdlAlternativeName(person,{...row,ndlNameMatch:{...row.ndlNameMatch,value:row.ndlIdentity.name}},raw,wikidata),/NDL alternate name/);
   }
+ }else if(row.rawEntityDataSnapshot){
+  const bytes=fs.readFileSync(path.join(root,row.rawEntityDataSnapshot));
+  assert.equal(require('node:crypto').createHash('sha256').update(bytes).digest('hex'),snapshot.rawSha256);
+  const item=JSON.parse(bytes)[row.wikidataId];
+  assert.equal(item.id,row.wikidataId);
+  assert.equal(item.lastrevid,row.wikidataRevision);
+  assert.equal(item.labels?.ja?.value??null,row.wikidataJapaneseLabel);
+  assert.ok(item.claims.P31.some(c=>c.mainsnak?.datavalue?.value?.id==='Q5'));
+  assert.equal(evidence.scope,'person-identity');
+  assert.ok(new Set(row.identityChecks).size>=2,'two identity checks required');
+  assert.match(row.identitySourceUrl,/^https:\/\//);
+  assert.equal(row.revisionUrl,`https://www.wikidata.org/w/index.php?title=${row.wikidataId}&oldid=${row.wikidataRevision}`);
  }else{
   assert.ok(row.instanceOf.includes('Q5'));
   assert.deepEqual(row.existingClaimIds,person.identityBasis.claimIds);
