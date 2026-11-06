@@ -40,3 +40,5 @@ GAME_TEST_OUTPUT=data/verification/自分の担当名 node tools/checks/march-cl
 変更に応じた検査が通ったら、理由なく全件を繰り返さない。新たな失敗・変更・懸念がある場合だけ追加する。生成JSONは `data/audits/`。最新報告は [古湖岸・人物・合戦の再照合](../../docs/reports/HISTORICAL_RECHECK.md)。
 
 検査の合格は、史料の未読箇所や歴史上の全件の網羅を証明しない。分岐・任意攻城を扱う `legacy-*` 系の試験は過去の検証であり、現行版の完了条件へ流用しない。旧手順は [履歴](../../docs/history/CHECKS-2026-11-01.md) に保存。
+
+`node tools/checks/vector-map.cjs` は共通ベクター描画器の穴・年代境界・表示範囲・入力保持を検査します。比較ページの実画面は `VECTOR_PREVIEW_URL=file:///absolute/path/index.html GAME_TEST_OUTPUT=data/verification/<担当名-対象名> node tools/checks/vector-map-browser.cjs` で専用Chromeから確認します。ゲーム本体の受入検査とは別です。

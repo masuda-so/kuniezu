@@ -27,6 +27,10 @@ is [docs/README.md](docs/README.md); open requests and ownership are in
   shorelines. Shapely is a development-only dependency.
 - Add `--surfaces /tmp/codh-surfaces-new` when building the comparison viewer
   to load the prepared surfaces after checking their source versions and hashes.
+- The viewer also accepts `--canonical <directory>` to read edited
+  `land.geojson` and `water.geojson`. The shared renderer preserves holes and
+  periods for drawing and hit testing, without runtime geometry corrections.
+  Switching the game itself requires separate verification.
 - `uv run python tools/geo/codh_preview.py --output /tmp/codh-preview-new`
   generates a standalone Edo-period vector viewer. Open its `index.html` directly
   to inspect Kanto and Kojima Bay, pan, zoom and toggle layers. It does not alter

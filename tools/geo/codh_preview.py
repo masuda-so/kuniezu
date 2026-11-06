@@ -22,13 +22,16 @@ def load_surfaces(directory, expected_sources):
         manifest.get("schemaVersion") != 1
         or manifest.get("temporalScope") != "Edo-reference-not-Sengoku-assertion"
     ):
-        raise ValueError("Expected versioned Edo reference surfaces")
+        msg = "Expected versioned Edo reference surfaces"
+        raise ValueError(msg)
     sources = {row["key"]: row["source"]["sourceSha256"] for row in manifest["layers"]}
     if any(sources.get(key) != value for key, value in expected_sources.items()):
-        raise ValueError("Prepared surfaces use different source versions")
+        msg = "Prepared surfaces use different source versions"
+        raise ValueError(msg)
     hashes = {row["file"]: row["sha256"] for row in manifest["outputs"]}
     if len(hashes) != len(manifest["outputs"]):
-        raise ValueError("Duplicate prepared output identity")
+        msg = "Duplicate prepared output identity"
+        raise ValueError(msg)
     result = {}
     for key, name in (
         ("coast-polygons", "land-with-water.geojson"),
@@ -36,12 +39,16 @@ def load_surfaces(directory, expected_sources):
     ):
         raw = (directory / name).read_bytes()
         if hashlib.sha256(raw).hexdigest() != hashes.get(name):
-            raise ValueError("Prepared surface SHA mismatch")
+            msg = "Prepared surface SHA mismatch"
+            raise ValueError(msg)
         result[key] = json.loads(raw)
     return result
 
 
-def build(output, surfaces=None):
+def build(output, surfaces=None, canonical=None):
+    if surfaces is not None and canonical is not None:
+        msg = "Choose prepared reference or edited canonical surfaces"
+        raise ValueError(msg)
     template = Path(__file__).with_name("codh_preview.html").read_text(encoding="utf-8")
     projection = json.loads(
         (ROOT / "kuniezu/map/projection.json").read_text(encoding="utf-8")
@@ -57,6 +64,22 @@ def build(output, surfaces=None):
             if row["key"] in {"coast-polygons", "lake-polygons"}
         }
         adopted = load_surfaces(surfaces, expected)
+    if canonical is not None:
+        for key, name, role in (
+            ("coast-polygons", "land.geojson", "land"),
+            ("lake-polygons", "water.geojson", "water"),
+        ):
+            collection = json.loads((Path(canonical) / name).read_bytes())
+            if (
+                collection.get("type") != "FeatureCollection"
+                or not isinstance(collection.get("features"), list)
+                or any(
+                    feature.get("properties", {}).get("drawRole") != role
+                    for feature in collection.get("features", [])
+                )
+            ):
+                raise ValueError("Edited surface needs explicit drawRole: " + name)
+            adopted[key] = collection
     report = prepare(source_manifest, output)
     layers = {}
     for key in ("coast-polygons", "lake-polygons", "roads", "posts"):
@@ -71,7 +94,11 @@ def build(output, surfaces=None):
         separators=(",", ":"),
     ).replace("<", "\\u003c")
     (output / "index.html").write_text(
-        template.replace("__CODH_DATA__", payload), encoding="utf-8"
+        template.replace("__CODH_DATA__", payload).replace(
+            "__VECTOR_RENDERER__",
+            (ROOT / "kuniezu/static/kuniezu/vector-map.js").read_text(encoding="utf-8"),
+        ),
+        encoding="utf-8",
     )
     return output / "index.html"
 
@@ -86,8 +113,13 @@ def main():
         type=Path,
         help="Prepared topology directory; SHA and source versions are checked",
     )
+    parser.add_argument(
+        "--canonical",
+        type=Path,
+        help="Read edited land.geojson/water.geojson unchanged",
+    )
     args = parser.parse_args()
-    sys.stdout.write(str(build(args.output, args.surfaces)) + "\n")
+    sys.stdout.write(str(build(args.output, args.surfaces, args.canonical)) + "\n")
 
 
 if __name__ == "__main__":
