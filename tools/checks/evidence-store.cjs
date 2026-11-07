@@ -45,6 +45,21 @@ function verifyNdlAlternativeName(person,row,raw,wikidata){
  assert.ok(names.includes(match.value),'NDL alternate name does not identify this person');
 }
 
+// Preserve both existing QID-keyed snapshots and unmodified Special:EntityData JSON.
+function verifyRawAuthority(row,snapshot,bytes){
+ const expectedSha=row.rawSha256??snapshot.rawSha256;
+ assert.match(expectedSha,/^[a-f0-9]{64}$/,'raw SHA is required');
+ assert.equal(require('node:crypto').createHash('sha256').update(bytes).digest('hex'),expectedSha,'raw SHA differs');
+ const raw=JSON.parse(bytes),item=(raw.entities??raw)[row.wikidataId];
+ assert.ok(item,'missing entity '+row.wikidataId);
+ assert.equal(item.id,row.wikidataId);
+ assert.equal(item.lastrevid,row.wikidataRevision,'revision differs');
+ assert.equal(item.labels?.ja?.value??null,row.wikidataJapaneseLabel);
+ assert.ok(item.claims.P31.some(c=>c.mainsnak?.datavalue?.value?.id==='Q5'));
+ return item;
+}
+const authoritySources=new Map(fs.readFileSync(path.join(research,'sources.jsonl'),'utf8').trim().split('\n').map(JSON.parse).map(row=>[row.id,row]));
+
 for(const person of people){
  const evidence=person.authorityEvidence;
  if(!evidence?.snapshot)continue;
@@ -53,6 +68,12 @@ for(const person of people){
  assert.equal(matches.length,1,person.id+' authority snapshot identity');
  const row=matches[0];
  assert.equal(row.wikidataRevision,evidence.wikidataRevision);
+ if(evidence.sourceIds){
+  assert.ok(evidence.sourceIds.length,'authority source IDs are required');
+  assert.deepEqual(evidence.sourceIds,row.identitySourceIds);
+  for(const id of evidence.sourceIds)assert.ok(authoritySources.has(id),'missing authority source '+id);
+  assert.ok(evidence.sourceIds.some(id=>authoritySources.get(id).url===row.identitySourceUrl),'authority source URL differs');
+ }
  assert.ok([person.name,...person.gameNames].includes(row.japaneseLabel??row.label??row.name));
  if(person.authorityIds.some(id=>id.startsWith('ndlna:'))){
   assert.ok(person.authorityIds.includes('ndlna:'+row.ndlId));
@@ -67,12 +88,12 @@ for(const person of people){
   }
  }else if(row.rawEntityDataSnapshot){
   const bytes=fs.readFileSync(path.join(root,row.rawEntityDataSnapshot));
-  assert.equal(require('node:crypto').createHash('sha256').update(bytes).digest('hex'),snapshot.rawSha256);
-  const item=JSON.parse(bytes)[row.wikidataId];
-  assert.equal(item.id,row.wikidataId);
-  assert.equal(item.lastrevid,row.wikidataRevision);
-  assert.equal(item.labels?.ja?.value??null,row.wikidataJapaneseLabel);
-  assert.ok(item.claims.P31.some(c=>c.mainsnak?.datavalue?.value?.id==='Q5'));
+  verifyRawAuthority(row,snapshot,bytes);
+  if(row.rawSha256){
+   assert.throws(()=>verifyRawAuthority({...row,rawSha256:'0'.repeat(64)},snapshot,bytes),/raw SHA/);
+   assert.throws(()=>verifyRawAuthority({...row,wikidataRevision:row.wikidataRevision+1},snapshot,bytes),/revision/);
+   assert.throws(()=>verifyRawAuthority({...row,wikidataId:'Q1'},snapshot,bytes),/missing entity/);
+  }
   assert.equal(evidence.scope,'person-identity');
   assert.ok(new Set(row.identityChecks).size>=2,'two identity checks required');
   assert.match(row.identitySourceUrl,/^https:\/\//);

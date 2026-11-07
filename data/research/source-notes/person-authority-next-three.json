@@ -1,0 +1,159 @@
+{
+  "scope": "3名の人物同定。公的資料との照合を保持し、史実の生没日・所在を追加しない。",
+  "checked": "2026-11-07",
+  "rawLicense": {
+    "name": "CC0 1.0",
+    "url": "https://www.wikidata.org/wiki/Wikidata:Licensing"
+  },
+  "fetchPolicy": {
+    "maxConcurrency": 1,
+    "stopOn429": true,
+    "http429Count": 0,
+    "actionApiMaxlagResponses": 1,
+    "maxlagHandledAsSuccess": false,
+    "fixedRevisionDocumentation": "https://www.wikidata.org/wiki/Help:Linked_Data_Interface"
+  },
+  "records": [
+    {
+      "name": "大友義統",
+      "wikidataId": "Q5354141",
+      "wikidataRevision": 2522070119,
+      "wikidataJapaneseLabel": "大友義統",
+      "entityDataUrl": "https://www.wikidata.org/wiki/Special:EntityData/Q5354141.json?revision=2522070119",
+      "revisionUrl": "https://www.wikidata.org/w/index.php?title=Q5354141&oldid=2522070119",
+      "retrievedAt": "2026-11-07T07:58:34.440641+00:00",
+      "rawEntityDataSnapshot": "data/research/source-notes/person-authority-next-three/Q5354141-revision-2522070119.json",
+      "rawSha256": "9270626b063d62cd99380c69cfbdc9b488f39d983c964f741c124d22681b5fed",
+      "identityChecks": [
+        "年のみ一致。Wikidataの暦モデル/年精度を保持し、日付へ補完しない。 比較値：1558",
+        "原JSONの父Q1185032=宗麟と、大分市本文の父・宗麟が一致。 比較値：Q1185032"
+      ],
+      "identitySourceUrl": "https://www.city.oita.oita.jp/o169/rekimachi/documents/1syou.pdf",
+      "identitySourceIds": [
+        "oitaHistoryFiguresYoshimune"
+      ],
+      "identitySourceLocator": "冊子p.40（PDF2頁）⑦大友義統",
+      "nonNameMatches": [
+        {
+          "dimension": "birth-year",
+          "wikidataProperty": "P569",
+          "comparedValue": 1558,
+          "sourceId": "oitaHistoryFiguresYoshimune",
+          "match": "年のみ一致。Wikidataの暦モデル/年精度を保持し、日付へ補完しない。"
+        },
+        {
+          "dimension": "father",
+          "wikidataProperty": "P22",
+          "comparedValue": "Q1185032",
+          "sourceId": "oitaHistoryFiguresYoshimune",
+          "match": "原JSONの父Q1185032=宗麟と、大分市本文の父・宗麟が一致。",
+          "labelSourceUrl": "https://www.wikidata.org/w/index.php?title=Q1185032&oldid=2380257720",
+          "labelSourceScope": "父IDのラベルを宗麟（義鎮）へ対応付ける参照だけ。別人物として追加登録しない。"
+        }
+      ],
+      "unresolvedComparisons": [
+        {
+          "dimension": "death-year",
+          "wikidataValue": 1610,
+          "sourceId": "oitaHistoryFiguresYoshimune",
+          "sourceValue": 1605,
+          "decision": "没年は未解決の相違として保持。どちらも史実命題やゲーム生没年へ採用しない。"
+        }
+      ],
+      "additionalAuthorityIdsNotAdopted": [],
+      "scope": "人物の同定のみ。原JSONの暦モデル・精度を保持し、生没日・所在・所属の史実命題へ転用しない。"
+    },
+    {
+      "name": "相良義陽",
+      "wikidataId": "Q7399045",
+      "wikidataRevision": 2555352349,
+      "wikidataJapaneseLabel": "相良義陽",
+      "entityDataUrl": "https://www.wikidata.org/wiki/Special:EntityData/Q7399045.json?revision=2555352349",
+      "revisionUrl": "https://www.wikidata.org/w/index.php?title=Q7399045&oldid=2555352349",
+      "retrievedAt": "2026-11-07T07:58:46.635466+00:00",
+      "rawEntityDataSnapshot": "data/research/source-notes/person-authority-next-three/Q7399045-revision-2555352349.json",
+      "rawSha256": "362cd9cef3f3f81334179512461dae250f5df332da216cd9eaf8536b194801f8",
+      "identityChecks": [
+        "年のみ一致。日付は同定対象外。 比較値：1544",
+        "年のみ一致。原暦の日付換算は未照合。 比較値：1581",
+        "16世紀の相良氏当主という地域・時代文脈と整合。 比較値：日本の戦国時代～安土桃山時代の大名"
+      ],
+      "identitySourceUrl": "https://www.city.yatsushiro.lg.jp/museum/kiji0035543/3_5543_145596_up_0qcliuks.pdf",
+      "identitySourceIds": [
+        "yatsushiroMuseumSagaraYoshihi"
+      ],
+      "identitySourceLocator": "p.2、冒頭2段落（記事末尾署名：石原）",
+      "nonNameMatches": [
+        {
+          "dimension": "birth-year",
+          "wikidataProperty": "P569",
+          "comparedValue": 1544,
+          "sourceId": "yatsushiroMuseumSagaraYoshihi",
+          "match": "年のみ一致。日付は同定対象外。"
+        },
+        {
+          "dimension": "death-year",
+          "wikidataProperty": "P570",
+          "comparedValue": 1581,
+          "sourceId": "yatsushiroMuseumSagaraYoshihi",
+          "match": "年のみ一致。原暦の日付換算は未照合。"
+        },
+        {
+          "dimension": "role-context",
+          "wikidataProperty": "descriptions.ja",
+          "comparedValue": "日本の戦国時代～安土桃山時代の大名",
+          "sourceId": "yatsushiroMuseumSagaraYoshihi",
+          "match": "16世紀の相良氏当主という地域・時代文脈と整合。"
+        }
+      ],
+      "unresolvedComparisons": [],
+      "additionalAuthorityIdsNotAdopted": [],
+      "scope": "人物の同定のみ。原JSONの暦モデル・精度を保持し、生没日・所在・所属の史実命題へ転用しない。"
+    },
+    {
+      "name": "清水宗治",
+      "wikidataId": "Q1046032",
+      "wikidataRevision": 2550964681,
+      "wikidataJapaneseLabel": "清水宗治",
+      "entityDataUrl": "https://www.wikidata.org/wiki/Special:EntityData/Q1046032.json?revision=2550964681",
+      "revisionUrl": "https://www.wikidata.org/w/index.php?title=Q1046032&oldid=2550964681",
+      "retrievedAt": "2026-11-07T07:59:02.500307+00:00",
+      "rawEntityDataSnapshot": "data/research/source-notes/person-authority-next-three/Q1046032-revision-2550964681.json",
+      "rawSha256": "757a679cb3ddbfed9b43fd8e2a2ba3ff13e10e51f51d5c29ee7bc2165dfebc6b",
+      "identityChecks": [
+        "年のみ一致。 比較値：1537",
+        "年のみ一致。Wikidataの月日は原暦の年月日へ転記しない。 比較値：1582"
+      ],
+      "identitySourceUrl": "https://www.nact.jp/artcommons/user/detail/76939",
+      "identitySourceIds": [
+        "okayamaMuseumShimizuMuneharu"
+      ],
+      "identitySourceLocator": "展覧会概要 第1段落（2024年6月12日登録・更新）",
+      "nonNameMatches": [
+        {
+          "dimension": "birth-year",
+          "wikidataProperty": "P569",
+          "comparedValue": 1537,
+          "sourceId": "okayamaMuseumShimizuMuneharu",
+          "match": "年のみ一致。"
+        },
+        {
+          "dimension": "death-year",
+          "wikidataProperty": "P570",
+          "comparedValue": 1582,
+          "sourceId": "okayamaMuseumShimizuMuneharu",
+          "match": "年のみ一致。Wikidataの月日は原暦の年月日へ転記しない。"
+        }
+      ],
+      "unresolvedComparisons": [],
+      "additionalAuthorityIdsNotAdopted": [
+        {
+          "scheme": "ndlna",
+          "id": "01007209",
+          "reason": "Wikidata P349は取得済みだがNDL原典の本人照合は今回の3QID調査範囲外。"
+        }
+      ],
+      "scope": "人物の同定のみ。原JSONの暦モデル・精度を保持し、生没日・所在・所属の史実命題へ転用しない。"
+    }
+  ]
+}
