@@ -1,0 +1,38 @@
+{
+  "id": "alliance-soen",
+  "entity": "person:北条氏政",
+  "predicate": "alliance-formation",
+  "value": "北条氏政が徳川家康と和し、武田勝頼を挟み撃ちにすることを約した。",
+  "validYears": [
+    1579,
+    1579
+  ],
+  "datePrecision": "day",
+  "source": "hiDainihonshiryoKobun",
+  "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+  "locator": "綱文：和暦 天正7年9月5日 第3条（区分 史料綜覧、編10・冊911（データベースの表示値）、223頁）",
+  "gameBindings": [
+    "TK.HIST:相遠同盟"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-07",
+  "uncertainty": "綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。",
+  "linkedEntities": [
+    "person:北条氏政",
+    "person:徳川家康"
+  ],
+  "eventTime": {
+    "kind": "dated-event",
+    "date": [
+      1579,
+      9,
+      5
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": false,
+    "precision": "day"
+  },
+  "eventRelation": "alliance-formation",
+  "eventScope": "綱文が掲げる関係の成立とその日付、綱文に書かれた相手。不一致（年の精度）。年表は 1580 年（注記は「成立月日は別途幅がある」）、綱文の天正7年9月5日はゲームの暦表で 1579 年 9 月 25 日。 年表は変えていない（どちらを採るかは未判断）。 条件・期間・関係の終わりは補わない。"
+}

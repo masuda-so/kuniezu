@@ -2,6 +2,7 @@ import json
 
 import pytest
 from django.core.management import call_command
+from django.core.management.base import CommandError
 
 from kuniezu.history import dates
 from kuniezu.history import queries
@@ -18,6 +19,7 @@ from kuniezu.history.models import RecordType
 from kuniezu.history.models import Role
 from kuniezu.history.models import Status
 from kuniezu.history.models import Thing
+from kuniezu.history.models import ThingKey
 from kuniezu.history.models import ThingKind
 from kuniezu.history.models import ThingName
 
@@ -155,6 +157,22 @@ def test_about_lists_everything_recorded_for_a_thing(world):
     assert queries.about(traveller).count() == Phenomenon.objects.count()
     assert [item.key for item in queries.about(companion)] == ["a-osaka"]
     assert list(queries.find_things("旅人")) == [traveller]
+
+
+def test_a_shared_name_is_settled_by_key(world):
+    traveller, _ = world
+    twin = Thing.objects.create(key="person:twin", kind=ThingKind.PERSON, name="旅人")
+    ThingName.objects.create(thing=twin, name="旅人")
+    ThingKey.objects.create(thing=twin, key="person:twin")
+    ThingKey.objects.create(thing=traveller, key="person:traveller")
+
+    with pytest.raises(CommandError) as failure:
+        call_command("history_query", about="旅人")
+
+    # The candidates are listed with their keys.
+    assert "person:traveller" in str(failure.value)
+    assert "person:twin" in str(failure.value)
+    assert list(queries.find_things("person:twin")) == [twin]
 
 
 def test_the_query_command_prints_json(world, capsys):
