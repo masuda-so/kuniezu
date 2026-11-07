@@ -54,6 +54,7 @@ jobs:
           node tools/checks/nagakute-local-scene.cjs
           node tools/checks/atlas-regressions.cjs
           node tools/checks/battle-viewport.cjs
+          node tools/checks/battle-relief.cjs
           node tools/checks/battle-counter-density.cjs
           node tools/checks/battle-label-cards.cjs
           node tools/checks/battle-mode-labels.cjs

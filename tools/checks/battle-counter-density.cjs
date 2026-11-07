@@ -6,8 +6,8 @@ const bodies=h=>[...new Map(h.cv.context.counters.map(b=>[b.id,b])).values()];
 const geo=h=>simple(h.ctrl.unitStates().map(u=>[u.id,u.point,u.renderedPoint,u.status]));
 const inFrame=(u,h)=>u.visible&&u.screenPoint&&u.screenPoint[0]>=0&&u.screenPoint[0]<=h.ctrl.viewport().W&&u.screenPoint[1]>=0&&u.screenPoint[1]<=h.ctrl.viewport().H;
 function sizes(h,width){
- const narrow=width<560,base=narrow?18:28,floor=narrow?14:18;
- for(const b of bodies(h)){assert.ok(b.w>=floor-1e-8&&b.w<=base+1e-8);assert.ok(Math.abs(b.h/b.w-(narrow?13/18:19/28))<1e-8);}
+ const narrow=width<560,base=narrow?16:22,floor=narrow?14:16;
+ for(const b of bodies(h)){assert.ok(b.w>=floor-1e-8&&b.w<=base+1e-8);assert.ok(Math.abs(b.h/b.w-(narrow?11/16:15/22))<1e-8);}
  for(const f of h.cv.context.faces){assert.ok(f.w>=16&&f.w<=(narrow?16:24));assert.equal(f.w%2,0,'portrait radii stay in a bounded cache key set');assert.equal(f.h,f.w);}
  for(const f of h.cv.context.flags)assert.ok(f.k>=(narrow?.55:.7)&&f.k<=(narrow?.55:1));
 }
@@ -18,7 +18,7 @@ function sizes(h,width){
   try{for(let vi=0;vi<Math.max(1,h.views().length);vi++){
    if(h.views().length)h.views()[vi].onclick();
    for(const t of [0,25,50,75,100]){h.ctrl.seek(t);counters(h,TK.BATTLES[title]);sizes(h,width);frames++;count++;
-    for(const b of bodies(h)){if(b.w<(width<560?18:28)-1e-8)reduced++;else fullSize++;}
+    for(const b of bodies(h)){if(b.w<(width<560?16:22)-1e-8)reduced++;else fullSize++;}
    }
   }}finally{h.ctrl.destroy();}
   rows.push({title,width,frames:count});
@@ -35,7 +35,7 @@ function sizes(h,width){
     assert.equal(body.id,matching,'selected body is last');assert.equal(body.w,beforeSizes.get(matching),'selection preserves density size');
     const face=ctx.faces.findLast(f=>f.id===matching),flag=ctx.flags.findLast(f=>f.id===matching),button=choices(h).find(b=>b.dataset.unitId===u.id);
     assert.ok(face||button.children.some(el=>el.tag==='img'&&el.width===28),'selected commander portrait remains on map, annotation or individual record');
-    if(flag){assert.ok(face);assert.equal(face.w,Math.max(16,Math.round((width<560?16:24)*body.w/(width<560?18:28)/2)*2));assert.equal(flag.k,Math.max(width<560?.55:.7,(width<560?.55:1)*body.w/(width<560?18:28)));}
+    if(flag){if(face)assert.equal(face.w,16,'selected name keeps its readable portrait');assert.equal(flag.k,Math.max(width<560?.55:.7,(width<560?.55:1)*body.w/(width<560?16:22)));}
     else if(face)assert.equal(face.w,16,'annotation portraits keep a readable common size');
     assert.equal(new Set(ctx.flags.map(f=>f.id)).size,ctx.flags.length,'a troop does not repeat its map flag');
     const geometry=JSON.stringify({states:h.ctrl.unitStates(),bodies:bodies(h).map(b=>[b.id,b.w,b.h]),boxes:h.ctrl.testBoxes()});

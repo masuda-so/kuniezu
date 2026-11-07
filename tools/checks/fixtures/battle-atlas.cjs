@@ -26,6 +26,7 @@ class Context{
  fillText(text,x,y,maxWidth){const size=Number(this.font.match(/([\d.]+)px/)?.[1])||12,width=Math.min(this.measureText(text).width,maxWidth??Infinity);this.texts.push({text,x,y,width,size,align:this.textAlign});}
  drawImage(im,x,y,w,h){if(im.face)this.faces.push({id:activeId,x,y,w,h,alpha:this.globalAlpha});else if(im.context)this.texts.push(...im.context.texts);}
  clearRect(){this.reset();}
+ createImageData(width,height){return {width,height,data:new Uint8ClampedArray(width*height*4)};}putImageData(){}
  createLinearGradient(){return {addColorStop(){}};}
  beginPath(){this.counterPath=null;}closePath(){}moveTo(){}lineTo(){}arc(){}rect(){}clip(){}fill(){if(this.counterPath)this.counterFills.push({id:this.counterPath,color:this.fillStyle});}stroke(){if(this.counterPath)this.counterStrokes.push({id:this.counterPath,color:this.strokeStyle,width:this.lineWidth,dash:this.lineDash.slice(),alpha:this.globalAlpha});else this.freeStrokes.push({color:this.strokeStyle,width:this.lineWidth});}fillRect(){}strokeRect(){this.rectStrokes.push(this.lineDash.slice());}strokeText(){}setLineDash(dash){this.lineDash=Array.from(dash);}quadraticCurveTo(){}bezierCurveTo(){}
 }
