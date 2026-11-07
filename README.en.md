@@ -14,6 +14,9 @@ is [docs/README.md](docs/README.md); open requests and ownership are in
 
 ## Features and limitations
 
+- A vector-map migration using CODH coast, lake, road and post datasets is in progress.
+  [Reference inputs and preparation](data/inputs/codh-edo/README.md) are retained;
+  the game has not switched to vector rendering yet.
 - Shows former lakeshores, castles, facilities and people checked against sources,
   marches along historical roads, and battle deployments and movements, each with
   its source.

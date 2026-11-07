@@ -6,7 +6,7 @@
 
 - `kuniezu/static/kuniezu/`（84 の JS、`map/` 地図の正本と配信物、`atlas/` 合戦地形、`terrain/` 標高・陰影、`portraits/` 肖像、`kamon/` 家紋、`licenses/` 素材の出典）。配信 URL は変えない（地図は 2026-11-04 に利用者の判断で `map/build/` と `map/control/` へ移した）。
 - `docs/`（`architecture/` 構成と依存順、`work/` 残要望と担当、`reports/` 報告書、`history/` 過去の原文）。作業前に `HANDOFF.md` を読む。
-- 再編の途中：利用者の決定（2026-11-05）で、`masuda-so/website` と同じ Django の構成に揃え、地理院地図Vector を下図にする。段取りと未決の点は `docs/architecture/replatform-plan.md`。各段が main に入るまでは、この文書の現行の決まりに従う。
+- 再編の途中：`masuda-so/website` と同じ Django の構成に揃える。地図は利用者の決定（2026-11-07）で、CODHの海岸線／水域・湖沼・主要街道・宿場を大いに活用するベクター実装へ移行する。旧来の画像正本維持を移行の制約にしない。現行表示を移行完了前に削除せず、江戸期の参照形状と戦国期の史料付き補正を区別する。現行方針と受入条件は `docs/architecture/codh-vector-map.md`、段取りの履歴は `docs/architecture/replatform-plan.md`。
 - 段 1a（Django・uv の骨組み）、段 1b-1（`game/` を Django アプリの静的ファイル `kuniezu/static/kuniezu/` へ移動）、段 1b-2（`index.html` をテンプレート `kuniezu/templates/index.html` に、インライン CSS を `index.css` に）、段 1b-3（地図の正本を `kuniezu/map/` へ。配信するのは生成物 `kuniezu/static/kuniezu/map/build/` だけ）が入った：`manage.py`・`config/`・`kuniezu/`・`scripts/`・`tests/`・`pyproject.toml`・`uv.lock`。段 1 はここまで。今の構成と Django 側のコマンドは `docs/structure.md`。
 - `data/`（`inputs/` 調査・生成の入力、`research/` 出典と史実命題 `claims.jsonl`、`audits/` 検査が生成する JSON、`verification/` 実画面の証拠）。
 - `tools/`（`checks/` 検査、`work/` 作業一覧と担当記録、`research/` 史料の出力、`geo/` と `faces/` 配信用データの生成元）。`archive/` は保留中の非史実実装で、起動では読まない。
@@ -14,6 +14,7 @@
 ## ビルド・テスト・開発コマンド
 
 - 地図は `kuniezu/map/` に層ごとに置く。行政区分 `admin/`（郡）、支配 `control/`（城の支配域 `provinces.png` ほか）、自然 `physical/`（標高・川）、共有の `projection.json`、年代別の差分の入力 `edits/` が正本で、Git で管理する。配信物（`kuniezu/static/kuniezu/map/build/`）は追跡せず、`node tools/map/build-map.cjs`（陰影は `--height --python <NumPy・Pillow の Python>`）で生成する。生成物はコミットしない。ほかにビルドは無い。ページは Django が描くので、Django の開発サーバー（`uv run python manage.py runserver 8000`）か、静的書き出し `dist/client/` の配信で開く。`kuniezu/static/kuniezu/` だけを配信しても開けない。サーバーの起動・停止は利用者のみが行い、エージェントは起動済みの `http://localhost:8000/index.html` に専用の一時ブラウザで接続する。
+- CODH参照入力は `data/inputs/codh-edo/`。`uv run python tools/geo/codh_reference.py` で原本SHA・座標・重複と形状の欠落を検査し、`--output <新規ディレクトリ>` で派生GeoJSONを作る。原本の座標・属性・地物境界を保持し、点だけの水域や線がない街道を補間しない。この入力処理は現行ゲーム地図へ自動適用しない。
 - `uv sync --locked` の後 `uv run pytest` — Django 側の試験（CI の `Django CI`）。`uv run ruff check`・`uv run mypy kuniezu config scripts tests`・`uv run python scripts/build_static.py`（`dist/client/` への静的書き出し）は手元で実行する。Django の開発サーバー（`uv run python manage.py runserver 8000`）の起動・停止も利用者のみが行う。
 - `uv run python manage.py migrate` の後 `uv run python manage.py import_history` — 史実の関係データベース（`db.sqlite3`、Git に入れない）を入力から作る。`uv run python manage.py history_query --about <名前>` で引く。設計は `docs/architecture/history-rdb.md`。
 - `node tools/checks/offline.cjs` — 構文・保存・史実進行の基本検査（CI の必須チェック `Offline checks`）。`node tools/checks/organization.cjs`、`node tools/checks/infrastructure.cjs` も CI で実行する。
