@@ -67,7 +67,7 @@ function decorations(h,title){
  const {W,H}=h.ctrl.viewport(),ctx=h.cv.context;
  for(const f of ctx.faces)assert.ok(f.x>=0&&f.y>=0&&f.x+f.w<=W&&f.y+f.h<=H,title+' face clipped '+JSON.stringify(f));
  for(const f of ctx.flags)assert.ok(f.x-2*f.k>=0&&f.x+18*f.k+1<=W&&f.y-41*f.k-1>=0&&f.y+10*f.k+1<=H,title+' flag clipped '+JSON.stringify(f));
- for(const tx of ctx.texts){if(tx.text.includes('点線の軌跡'))continue;const left=tx.align==='center'?tx.x-tx.width/2:tx.align==='right'?tx.x-tx.width:tx.x;assert.ok(left>=-1e-6&&left+tx.width<=W+1e-6&&tx.y-tx.size/2>=-1e-6&&tx.y+tx.size/2<=H+1e-6,title+' text clipped '+JSON.stringify(tx));}
+ for(const tx of ctx.texts){assert.ok(!tx.text.includes('点線の軌跡'),'inferred-motion annotation stays outside the map');const left=tx.align==='center'?tx.x-tx.width/2:tx.align==='right'?tx.x-tx.width:tx.x;assert.ok(left>=-1e-6&&left+tx.width<=W+1e-6&&tx.y-tx.size/2>=-1e-6&&tx.y+tx.size/2<=H+1e-6,title+' text clipped '+JSON.stringify(tx));}
 }
 function counters(h,sc){
  const states=h.ctrl.unitStates(),byUnit=new Map(states.map(u=>[u.id,u])),byId=new Map(),drawn=new Set(),{W,H}=h.ctrl.viewport();
