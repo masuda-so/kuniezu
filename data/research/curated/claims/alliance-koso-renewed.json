@@ -1,0 +1,38 @@
+{
+  "id": "alliance-koso-renewed",
+  "entity": "person:北条氏政",
+  "predicate": "alliance-formation",
+  "value": "北条氏政が上杉謙信と手を切り、武田信玄と和した。",
+  "validYears": [
+    1571,
+    1572
+  ],
+  "datePrecision": "period",
+  "source": "hiDainihonshiryoKobun",
+  "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+  "locator": "綱文：和暦 元亀2年是冬 第1条（区分 大日本史料、第10編之7、295頁）",
+  "gameBindings": [
+    "TK.HIST:甲相同盟の再締結"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-07",
+  "uncertainty": "綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。",
+  "linkedEntities": [
+    "person:北条氏政",
+    "person:武田信玄"
+  ],
+  "eventTime": {
+    "kind": "described-period",
+    "label": "元亀2年冬（綱文は「是冬」）",
+    "indexYears": [
+      1571,
+      1572
+    ],
+    "calendar": "Japanese-era-description",
+    "precision": "period",
+    "boundsAreHistoricalStartEnd": false
+  },
+  "eventRelation": "alliance-formation",
+  "eventScope": "綱文が掲げる関係の成立とその日付、綱文に書かれた相手。一致（季節の精度）。元亀2年の冬（10〜12月）はゲームの暦表で 1571 年 10 月 19 日〜1572 年 1 月 14 日。年表の 1572 年 1 月 5 日はこの間にある。 年表は変えていない（どちらを採るかは未判断）。 条件・期間・関係の終わりは補わない。"
+}
