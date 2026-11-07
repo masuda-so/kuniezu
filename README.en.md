@@ -32,6 +32,10 @@ is [docs/README.md](docs/README.md); open requests and ownership are in
   Castle falls without supported deployments remain timeline entries and historic sites.
 - Modern comparison terrain, estimates derived from sources and confirmed
   historical facts are kept apart. Unsupported text is not shown in the game.
+- The Sanshu road comparison follows the Ina valley, Komaba and Neba. Mountain
+  sections include modern roads and tunnels; they are not an exact sixteenth-century
+  centerline. See the [inputs and regeneration](data/inputs/sanshu-road-review/README.md)
+  (Japanese).
 - Late elevation, river and boundary loads refresh the map while the camera stays still.
 - Dated events without a known related place remain searchable by their subject.
   Locations are not invented, and Edo-period reclamation records are kept separate

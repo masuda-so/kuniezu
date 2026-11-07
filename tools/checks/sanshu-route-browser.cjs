@@ -5,7 +5,7 @@ const URL=process.env.GAME_URL||'http://localhost:8000/index.html';
 const OUT=path.resolve(process.env.GAME_TEST_OUTPUT||path.join(os.tmpdir(),'kuniezu-browser-results'));
 const DOWNLOAD=path.join(OUT,'downloads-'+Date.now());fs.mkdirSync(DOWNLOAD,{recursive:true});
 const profile=fs.mkdtempSync(path.join(os.tmpdir(),'kuniezu-check-'));fs.mkdirSync(OUT,{recursive:true});
-const chrome=spawn(process.env.CHROME_PATH||'/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',['--headless','--disable-gpu','--no-first-run','--no-default-browser-check',`--user-data-dir=${profile}`,'--remote-debugging-pipe'],{stdio:['ignore','ignore','ignore','pipe','pipe']});
+const chrome=spawn(process.env.CHROME_PATH||'/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',['--headless',...(URL.startsWith('file:')?['--allow-file-access-from-files']:[]),'--disable-gpu','--no-first-run','--no-default-browser-check',`--user-data-dir=${profile}`,'--remote-debugging-pipe'],{stdio:['ignore','ignore','ignore','pipe','pipe']});
 let seq=0,buf='',session,chooser;const pending=new Map(),errors=[],events=[];
 chrome.stdio[4].on('data',data=>{buf+=data.toString();let i;while((i=buf.indexOf('\0'))>=0){const str=buf.slice(0,i);buf=buf.slice(i+1);if(!str)continue;const m=JSON.parse(str);if(m.id){const p=pending.get(m.id);pending.delete(m.id);if(p)m.error?p.reject(Error(JSON.stringify(m.error))):p.resolve(m.result);}else{
  events.push(m);if(m.method==='Runtime.exceptionThrown')errors.push(m.params.exceptionDetails.exception?.description||m.params.exceptionDetails.text);if(m.method==='Page.fileChooserOpened')chooser=m.params;
@@ -24,5 +24,23 @@ const timer=setTimeout(()=>{console.error('timeout');chrome.kill();process.exitC
 const cover=()=>ev('(()=>{const {corners}=TKUI.mapBounds();return corners[0][0]<=.01&&corners[0][1]<=.01&&corners[1][0]>=innerWidth-.01&&corners[1][1]>=innerHeight-.01})()');
 (async()=>{try{
  const target=await call('Target.createTarget',{url:'about:blank'},null);session=(await call('Target.attachToTarget',{targetId:target.targetId,flatten:true},null)).sessionId;await call('Runtime.enable');await call('Page.enable');await view(1400,1000);await load();await start();await click('#modal [data-act=close]');await ev('TKUI.speed=0');
-const result=await ev(`(()=>{const r=G.ROADS.find(r=>r.name==='三州街道'),d=TK.roadDisplay(r),p=G.PJ(137.49,35.35);TKUI.cam(...p,3);return {points:d.pts.length,modernReference:d.modernReference,version:G.S().movementGeometryVersion};})()`);assert.equal(result.version,11);assert.ok(result.points>1000);await sleep(4000);await shot('iwamura-road-context');await ev('TKUI.cam(...G.PJ(137.66,35.38),3)');await sleep(2500);await shot('komaba-neba');assert.deepEqual(errors,[]);fs.writeFileSync(path.join(OUT,'result.json'),JSON.stringify({result,errors},null,2));console.log('PASS: Iwamura road context and southern pass rendered; no exceptions');
+const rows=[];
+for(const width of [1400,390]){
+ await view(width,width===390?900:1000);
+ for(const [name,lon,lat,z]of [['ina-takato',138.005,35.84,4],['namiai-hiraya',137.66,35.35,6],['iwamura-neba',137.56,35.27,4]]){
+  const result=await ev(`(()=>{const r=G.ROADS.find(r=>r.name==='三州街道'),d=TK.roadDisplay(r),pts=d.pts,near=p=>pts.reduce((best,q,i)=>Math.hypot(q[0]-p[0],q[1]-p[1])<best.d?{i,d:Math.hypot(q[0]-p[0],q[1]-p[1])}:best,{i:0,d:Infinity});const a=near(G.PJ(137.6856,35.37308)),b=near(G.PJ(137.6316,35.32143)),line=G.visualBetween(pts[a.i],pts[b.i]);TKUI.cam(...G.PJ(${lon},${lat}),${z});TKUI.api.renderAll();return {points:d.pts.length,modernReference:d.modernReference,version:G.S().movementGeometryVersion,sources:d.evidence.sources,movementPoints:line.length,onRoad:line.every(p=>pts.some(q=>Math.hypot(p[0]-q[0],p[1]-q[1])<1e-6))};})()`);
+  assert.equal(result.version,24);assert.equal(result.modernReference,true);assert.equal(result.points,3086);assert.ok(result.sources.includes('sanshuModernMountain'));assert.ok(result.movementPoints>100);assert.equal(result.onRoad,true);
+  rows.push({width,name,...result});await sleep(900);await shot(name+'-'+width);
+ }
+}
+const migrations=[];
+for(const version of [22,23]){
+ const before=await ev(`(()=>{TKUI.speed=0;TKUI.acc=.63;const s=JSON.parse(JSON.stringify(G.S())),u=s.units.find(u=>u.clan==='imagawa');s.movementGeometryVersion=${version};s.visualFraction=.63;localStorage.setItem('kuniezu-history-v1-1',JSON.stringify(s));return {day:s.t,fraction:TKUI.acc,point:G.historyPoint(G.S().units.find(u=>u.clan==='imagawa')).slice(0,2),troops:u.troops,end:u.visualTravel.end};})()`);
+ await ev("TKUI.open('menu-save')");await click('#modal [data-act=load][data-v="1"]');await until("TKUI.mode==='game'&&!TKUI.modal");
+ const after=await ev("(()=>{const u=G.S().units.find(u=>u.clan==='imagawa');return {day:G.S().t,fraction:TKUI.acc,point:G.historyPoint(u).slice(0,2),troops:u.troops,end:u.visualTravel.end,version:G.S().movementGeometryVersion};})()");
+ assert.equal(after.version,24);assert.equal(after.day,before.day);assert.equal(after.fraction,before.fraction);assert.equal(after.troops,before.troops);assert.equal(after.end,before.end);assert.ok(Math.hypot(after.point[0]-before.point[0],after.point[1]-before.point[1])<1e-6);
+ migrations.push({from:version,before,after});await shot('saved-route-'+version+'-to-24');
+}
+assert.deepEqual(errors,[]);fs.writeFileSync(path.join(OUT,'result.json'),JSON.stringify({rows,migrations,errors},null,2));console.log('PASS: Sanshu valley and mountain comparison, movement follows road, 3 regions at 2 widths, version 22/23 slot migration, no exceptions');
+
 }catch(e){console.error(e.stack);console.error(errors);try{await shot('failure')}catch{}process.exitCode=1;}finally{clearTimeout(timer);try{await call('Browser.close',{},null)}catch{}chrome.kill();}})();
