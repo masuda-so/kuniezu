@@ -1,0 +1,39 @@
+{
+  "id": "peace-hashiba-nobukatsu",
+  "entity": "person:羽柴秀吉",
+  "predicate": "alliance-formation",
+  "value": "羽柴秀吉が織田信雄・徳川家康と和を講じ、伊勢桑名の近くで信雄と会った。",
+  "validYears": [
+    1584,
+    1584
+  ],
+  "datePrecision": "day",
+  "source": "hiDainihonshiryoKobun",
+  "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+  "locator": "綱文：和暦 天正12年11月15日 第1条（区分 大日本史料、第11編之10、159頁）",
+  "gameBindings": [
+    "TK.HIST:信雄、秀吉と和睦"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-07",
+  "uncertainty": "綱文は伊賀・伊勢半国の割譲を書かない。 綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。",
+  "linkedEntities": [
+    "person:羽柴秀吉",
+    "person:織田信雄",
+    "person:徳川家康"
+  ],
+  "eventTime": {
+    "kind": "dated-event",
+    "date": [
+      1584,
+      11,
+      15
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": false,
+    "precision": "day"
+  },
+  "eventRelation": "alliance-formation",
+  "eventScope": "綱文が掲げる関係の変化とその日付、綱文に書かれた相手。不一致。年表は 1584 年 12 月 15 日、綱文の天正12年11月15日はゲームの暦表で 1584 年 12 月 16 日（1 日の差）。 年表は変えていない（どちらを採るかは未判断）。 条件・領地の範囲・関係の終わりは補わない。"
+}

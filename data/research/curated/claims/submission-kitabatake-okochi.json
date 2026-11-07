@@ -1,0 +1,38 @@
+{
+  "id": "submission-kitabatake-okochi",
+  "entity": "person:北畠具教",
+  "predicate": "submission",
+  "value": "織田信長が伊勢大河内城に北畠具教を攻め、具教が和を乞うた。信長は次子の茶筅を北畠氏の跡継ぎとする約束で、これを承諾した。",
+  "validYears": [
+    1569,
+    1569
+  ],
+  "datePrecision": "day",
+  "source": "hiDainihonshiryoKobun",
+  "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+  "locator": "綱文：和暦 永禄12年10月11日 第2条（区分 大日本史料、第10編之3、303頁）",
+  "gameBindings": [
+    "TK.HIST:大河内城の戦い"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-07",
+  "uncertainty": "この綱文は攻囲・和議・信長の入京をひとまとめに掲げ、掲出日が和議の日そのものかは綱文から分からない。 綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。",
+  "linkedEntities": [
+    "person:北畠具教",
+    "person:織田信長"
+  ],
+  "eventTime": {
+    "kind": "dated-event",
+    "date": [
+      1569,
+      10,
+      11
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": false,
+    "precision": "day"
+  },
+  "eventRelation": "submission",
+  "eventScope": "綱文が掲げる関係の変化とその日付、綱文に書かれた相手。不一致。年表は 1569 年 11 月 11 日（注記は「和議は旧暦10月初旬」）、綱文の永禄12年10月11日はゲームの暦表で 1569 年 11 月 19 日（8 日の差）。 年表は変えていない（どちらを採るかは未判断）。 条件・領地の範囲・関係の終わりは補わない。"
+}
