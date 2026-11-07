@@ -14,6 +14,7 @@
 - 移行後のベクターは改変済みGeoJSONを正本として直接編集し、描画側は年代に応じたファイルを読みます。CODH原本は照合用に残し、通常ビルドで編集正本を上書きしません。
 - `uv run python tools/geo/codh_topology.py --output /tmp/codh-surfaces-new` で、原本の辺・座標位置を保持する方式による有効な参照面と陸・湖の合成面を生成できます。面にならない元の線は残差層へ保持し、戦国期の岸線とは扱いません。Shapelyは開発時だけの依存です。
 - 比較画面の生成に `--surfaces /tmp/codh-surfaces-new` を付けると、原本版とSHAを検査して合成済みの面を読み込めます。
+- 比較画面の `--canonical <ディレクトリ>` は編集済み `land.geojson`・`water.geojson` を読みます。共通描画器が面の穴と年代を保って描画・位置判定し、実行時の形状補正は行いません。ゲーム本体の切替は別途検証します。
 - `uv run python tools/geo/codh_preview.py --output /tmp/codh-preview-new` で独立した江戸期ベクター参照画面を生成し、出力先の `index.html` を直接開けます。関東・児島湾への移動、拡大縮小と層の切替ができ、ゲームの地図や保存には適用しません。
 - `node tools/geo/prepare-mask-vectors.cjs --output /tmp/kojima-vectors-new` で、児島湾の既存補正マスクを対応する格子版から経緯度の面へ取り出せます。100mの採用範囲を保持する変換であり、史実岸線の精密化やゲームへの再適用は行いません。
 - `uv run python tools/geo/prepare_era_overrides.py --at 1560-01-01 --output /tmp/era-overrides-new` で、香取海の既存推定水面・保護陸・岸線として描かない切口を一体で取り出せます。CODH原本やゲーム画面には自動適用しません。
