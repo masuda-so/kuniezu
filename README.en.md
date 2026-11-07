@@ -30,6 +30,9 @@ is [docs/README.md](docs/README.md); open requests and ownership are in
 - Dated events without a known related place remain searchable by their subject.
   Locations are not invented, and Edo-period reclamation records are kept separate
   from evidence for Sengoku-period shorelines.
+- [Ten additional person identities](data/research/source-notes/person-authority-expansion.md)
+  retain Wikidata revisions and identity checks. Dates and whereabouts are not
+  imported as new historical claims.
 - The historical database preserves original calendars and date precision, and rejects
   additional date fields that conflict with the time format. See the
   [database design and commands](docs/architecture/history-database.md) (Japanese).
