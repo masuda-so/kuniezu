@@ -1053,8 +1053,8 @@ const ACT={
  'back-scen':()=>showScen(),'back-title':()=>showTitle(),start:()=>startGame(),
  'help-title':()=>{$('#titleHelp').hidden=!$('#titleHelp').hidden;}
 };
-addEventListener('keydown',e=>{if(e.target.closest('input,textarea'))return;if(U.mode!=='game')return;
- if(e.code==='Space'){e.preventDefault();ACT.playpause();}if(U.mode==='game'&&!U.modal&&/^[1-8]$/.test(e.key))setSpeed(+e.key);if(e.key==='Escape'){if(U.modal&&U.modal!=='prop'&&U.modal!=='event'&&!(U.modal==='battle'&&!U.mdata.res))closeModal();else{U.sel=null;U.picking=null;renderSide();}}});
+addEventListener('keydown',e=>{if(e.target.isContentEditable||e.target.closest('input,textarea,select'))return;if(U.mode!=='game')return;const control=e.target.closest('button,a');
+ if(e.code==='Space'&&!U.modal&&!control){e.preventDefault();ACT.playpause();}if(!U.modal&&!control&&/^[1-8]$/.test(e.key))setSpeed(+e.key);if(e.key==='Escape'){if(U.modal&&U.modal!=='prop'&&U.modal!=='event'&&!(U.modal==='battle'&&!U.mdata.res))closeModal();else{U.sel=null;U.picking=null;renderSide();}}});
 function doAttack(from,to){openAttack(to,from);}
 function openAttack(to,from){const src=reachable(to);if(!src.length){toast('兵を出せる城がありません','bad');return;}
  const adj=src.filter(m=>G.ADJ[m].includes(to)&&S.castles[m].troops>=3000);U.atk={to,src:new Set(from?[from,...adj.filter(m=>m!==from)]:adj.length?adj:src.filter(m=>G.ADJ[m].includes(to))),all:src,tac:'chikara',pct:75};
