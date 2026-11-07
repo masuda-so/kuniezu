@@ -13,6 +13,7 @@ chrome.stdio[4].on('data',data=>{buf+=data.toString();let i;while((i=buf.indexOf
 const call=(method,params={},sid=session)=>new Promise((resolve,reject)=>{const id=++seq;pending.set(id,{resolve,reject});chrome.stdio[3].write(JSON.stringify({id,method,params,...(sid?{sessionId:sid}:{})})+'\0');});
 const sleep=ms=>new Promise(r=>setTimeout(r,ms));
 const ev=async expression=>{const r=await call('Runtime.evaluate',{expression,returnByValue:true,awaitPromise:true});if(r.exceptionDetails)throw Error(r.exceptionDetails.exception?.description||r.exceptionDetails.text);return r.result.value;};
+const evArgs=require('./browser-runtime.cjs')(call);
 async function until(expr){for(let i=0;i<600;i++){if(await ev(expr))return;await sleep(100);}throw Error('Timed out: '+expr);}
 async function click(selector){const p=await ev(`(()=>{const el=document.querySelector(${JSON.stringify(selector)});if(!el||el.disabled)throw Error('missing/disabled '+${JSON.stringify(selector)});el.scrollIntoView({block:'center'});const r=el.getBoundingClientRect();return {x:r.x+r.width/2,y:r.y+r.height/2};})()`);await call('Input.dispatchMouseEvent',{type:'mousePressed',button:'left',clickCount:1,...p});await call('Input.dispatchMouseEvent',{type:'mouseReleased',button:'left',clickCount:1,...p});await sleep(120);}
 async function shot(name){await ev("(()=>{const e=document.querySelector('.mbox');if(e)e.scrollTop=0;})()");const r=await call('Page.captureScreenshot',{format:'png'});fs.writeFileSync(path.join(OUT,name+'.png'),Buffer.from(r.data,'base64'));}
@@ -26,7 +27,7 @@ const cover=()=>ev('(()=>{const {corners}=TKUI.mapBounds();return corners[0][0]<
  const target=await call('Target.createTarget',{url:'about:blank'},null);session=(await call('Target.attachToTarget',{targetId:target.targetId,flatten:true},null)).sessionId;await call('Runtime.enable');await call('Page.enable');await view(1400,1000);await load();await start();await click('#modal [data-act=close]');await ev('TKUI.speed=0');
 const rows=[];
 for(const [name,lon,lat,z]of [['松根側',139.868095,38.643731,8],['大網側',139.90,38.60,8],['湯殿山旧道',139.985,38.53,8],['図間接続',140.05,38.44,8],['寒河江',140.27,38.38,8],['山形側',140.32,38.30,8]]){
- const r=await ev(`(()=>{TKUI.cam(...G.PJ(${lon},${lat}),${z});const road=TK.roadDisplay(G.ROADS.find(r=>r.name==='六十里越街道'));return {name:${JSON.stringify(name)},version:G.S().movementGeometryVersion,sources:road.evidence.sources};})()`);assert.equal(r.version,24);assert.ok(r.sources.includes('rokujurigoShonaiMap'));rows.push(r);await sleep(1800);await shot('rokujurigo-'+rows.length);
+ const r=await evArgs(function(name,lon,lat,z){TKUI.cam(...G.PJ(lon,lat),z);const road=TK.roadDisplay(G.ROADS.find(r=>r.name==='六十里越街道'));return {name:name,version:G.S().movementGeometryVersion,sources:road.evidence.sources};},name,lon,lat,z);assert.equal(r.version,24);assert.ok(r.sources.includes('rokujurigoShonaiMap'));rows.push(r);await sleep(1800);await shot('rokujurigo-'+rows.length);
 }
 assert.deepEqual(errors,[]);fs.writeFileSync(path.join(OUT,'result.json'),JSON.stringify({rows,errors},null,2));console.log('PASS Rokujurigo Shonai and approach routes render in six views; no exceptions');
 

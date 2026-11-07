@@ -33,3 +33,9 @@ sanshu-route.cjsで棄却入力の適用拒否、原データ不変、457点の�
 検証：`sanshu-route.cjs`、`road-regeneration.cjs`、`road-display.cjs`、`road-excursions.cjs`、`movement-save-position.cjs`、`offline.cjs`（7シナリオ各720日）、`organization.cjs`、`infrastructure.cjs`、配信確認値、追加試験のRuff・mypyが合格。専用Chromeで3地域×2幅と保存枠の22・23→24移行を確認。[独立ブランチの実画面記録](../../data/verification/codex-sanshu-isolated/README.md)。
 
 共有8000番は変更していない。合格は史料の全件照合や非閉路の全支道の復元を証明するものではない。
+
+### PRのCodeQL指摘への対応（2026-11-07）
+
+PR #59の8つのブラウザ検査で、検査値を評価コードへ埋め込む処理が指摘された。固定の検査値であってもコードと値を分け、共通の `browser-runtime.cjs` から `Runtime.callFunctionOn` の `arguments` で渡すよう変更した。取得したリモートオブジェクトは呼出し後に解放する。仕様は [Chrome DevTools Protocol Runtime](https://chromedevtools.github.io/devtools-protocol/tot/Runtime/#method-callFunctionOn) に従う。
+
+専用一時Chromeを1つだけ使用し、引用符・改行・コード断片を含む値の非実行、例外伝播、画面遷移後の呼出し、実際のゲームで8検査関数すべての戻り値と版24を確認した。9モジュールの構文も合格。サーバーは起動していない。画面の見た目に変更はなく、全8検査のスクリーンショット撮影を繰り返したという意味ではない。

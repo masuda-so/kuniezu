@@ -13,6 +13,7 @@ chrome.stdio[4].on('data',data=>{buf+=data.toString();let i;while((i=buf.indexOf
 const call=(method,params={},sid=session)=>new Promise((resolve,reject)=>{const id=++seq;pending.set(id,{resolve,reject});chrome.stdio[3].write(JSON.stringify({id,method,params,...(sid?{sessionId:sid}:{})})+'\0');});
 const sleep=ms=>new Promise(r=>setTimeout(r,ms));
 const ev=async expression=>{const r=await call('Runtime.evaluate',{expression,returnByValue:true,awaitPromise:true});if(r.exceptionDetails)throw Error(r.exceptionDetails.exception?.description||r.exceptionDetails.text);return r.result.value;};
+const evArgs=require('./browser-runtime.cjs')(call);
 async function until(expr){for(let i=0;i<600;i++){if(await ev(expr))return;await sleep(100);}throw Error('Timed out: '+expr);}
 async function click(selector){const p=await ev(`(()=>{const el=document.querySelector(${JSON.stringify(selector)});if(!el||el.disabled)throw Error('missing/disabled '+${JSON.stringify(selector)});el.scrollIntoView({block:'center'});const r=el.getBoundingClientRect();return {x:r.x+r.width/2,y:r.y+r.height/2};})()`);await call('Input.dispatchMouseEvent',{type:'mousePressed',button:'left',clickCount:1,...p});await call('Input.dispatchMouseEvent',{type:'mouseReleased',button:'left',clickCount:1,...p});await sleep(120);}
 async function shot(name){await ev("(()=>{const e=document.querySelector('.mbox');if(e)e.scrollTop=0;})()");const r=await call('Page.captureScreenshot',{format:'png'});fs.writeFileSync(path.join(OUT,name+'.png'),Buffer.from(r.data,'base64'));}
@@ -26,7 +27,7 @@ const cover=()=>ev('(()=>{const {corners}=TKUI.mapBounds();return corners[0][0]<
  const target=await call('Target.createTarget',{url:'about:blank'},null);session=(await call('Target.attachToTarget',{targetId:target.targetId,flatten:true},null)).sessionId;await call('Runtime.enable');await call('Page.enable');await view(1400,1000);await load();await start();await click('#modal [data-act=close]');await ev('TKUI.speed=0');
 const rows=[];
 for(const [name,lon,lat,z] of [['安芸城',133.91259,33.519865,12],['室戸半島',134.16,33.39,6],['短い折返し修正点',134.549844,33.80116,14]]){
- const r=await ev(`(()=>{TKUI.cam(...G.PJ(${lon},${lat}),${z});const site=G.YOSHO.find(y=>y.n==='安芸城');return {name:${JSON.stringify(name)},version:G.S().movementGeometryVersion,aki:{id:site.id,x:site.x,y:site.y}}})()`);assert.equal(r.version,24);assert.equal(r.aki.id,'yosho:安芸城:133.54:33.31');rows.push(r);await sleep(1800);await shot('tosa-'+rows.length);
+ const r=await evArgs(function(name,lon,lat,z){TKUI.cam(...G.PJ(lon,lat),z);const site=G.YOSHO.find(y=>y.n==='安芸城');return {name:name,version:G.S().movementGeometryVersion,aki:{id:site.id,x:site.x,y:site.y}}},name,lon,lat,z);assert.equal(r.version,24);assert.equal(r.aki.id,'yosho:安芸城:133.54:33.31');rows.push(r);await sleep(1800);await shot('tosa-'+rows.length);
 }
 assert.deepEqual(errors,[]);fs.writeFileSync(path.join(OUT,'result.json'),JSON.stringify({rows,errors},null,2));console.log('PASS Aki and coastal road views render without exceptions; saved site identity retained');
 
