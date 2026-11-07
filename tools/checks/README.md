@@ -10,6 +10,7 @@
 
 | 分野 | サーバー不要の検査 | 実画面の検査 |
 |---|---|---|
+| 初期の勢力選択・年表・表示設定 | `offline.cjs` | `selection-ui-browser.cjs`（全シナリオ・広狭幅・地域・二重入力・保存復元・城から選択） |
 | 本体ベクター描画 | `vector-map.cjs`・`vector-assets.cjs` | `vector-game-browser.cjs`（広幅・狭幅・回転・全図）、`VECTOR_FAIL_SOURCE=1`（取得失敗と再読込） |
 | 肖像の代替crop | `portrait-loading.cjs`、`build_fallback.py --root . --check` | `portrait-fallback-browser.cjs`（`PORTRAIT_MODE=normal/primary-fail/all-fail`） |
 | 基本・保存・史実進行 | `offline.cjs` | `completion-browser.cjs` |

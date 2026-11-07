@@ -18,14 +18,14 @@ async function click(selector){const p=await ev(`(()=>{const el=document.querySe
 async function shot(name){await ev("(()=>{const e=document.querySelector('.mbox');if(e)e.scrollTop=0;})()");const r=await call('Page.captureScreenshot',{format:'png'});fs.writeFileSync(path.join(OUT,name+'.png'),Buffer.from(r.data,'base64'));}
 async function view(width,height){await call('Emulation.setDeviceMetricsOverride',{width,height,deviceScaleFactor:1,mobile:width<820});await sleep(300);}
 async function load(){await call('Page.navigate',{url:URL});await until("!!document.querySelector('[data-act=new]')&&!document.getElementById('boot')");}
-async function start(){await click('[data-act=new]');await click('[data-act=scen][data-id=s1560]');await click('[data-act=start]');await until("TKUI.modal==='intro'");}
+async function start(){await click('[data-act=new]');await click('[data-act=scen][data-id=s1560]');await click('#pick [data-act=pick].on');await until("TKUI.mode==='game'&&!TKUI.modal");}
 async function menu(){await click('#me [data-m=menu]');}
 const timer=setTimeout(()=>{console.error('timeout');chrome.kill();process.exitCode=1},480000);
 const checkEnd=process.argv.includes('--playback-end');
 const viewport=process.argv.includes('--mobile')?[390,844]:[1400,1000];
 const cover=()=>ev('(()=>{const {corners}=TKUI.mapBounds();return corners[0][0]<=.01&&corners[0][1]<=.01&&corners[1][0]>=innerWidth-.01&&corners[1][1]>=innerHeight-.01})()');
 (async()=>{try{
- const target=await call('Target.createTarget',{url:'about:blank'},null);session=(await call('Target.attachToTarget',{targetId:target.targetId,flatten:true},null)).sessionId;await call('Runtime.enable');await call('Page.enable');await view(...viewport);await load();await start();await click('#modal [data-act=close]');await ev('TKUI.speed=0');const titles=await ev('Object.keys(TK.BATTLES)');for(const title of titles){await ev(`TKUI.open('scene',{title:${JSON.stringify(title)}})`);await until("document.querySelector('#bCv')?.dataset.mapReady==='true'");assert.equal(await ev("+document.querySelector('#bCv').dataset.mapGroups"),await ev(`TK.BATTLES[${JSON.stringify(title)}].units.length`),title);if(['関ヶ原の戦い','伏見城の戦い','大坂冬の陣'].includes(title))await shot(title);if(checkEnd){
+ const target=await call('Target.createTarget',{url:'about:blank'},null);session=(await call('Target.attachToTarget',{targetId:target.targetId,flatten:true},null)).sessionId;await call('Runtime.enable');await call('Page.enable');await view(...viewport);await load();await start();await ev('TKUI.speed=0');const titles=await ev('Object.keys(TK.BATTLES)');for(const title of titles){await ev(`TKUI.open('scene',{title:${JSON.stringify(title)}})`);await until("document.querySelector('#bCv')?.dataset.mapReady==='true'");assert.equal(await ev("+document.querySelector('#bCv').dataset.mapGroups"),await ev(`TK.BATTLES[${JSON.stringify(title)}].units.length`),title);if(['関ヶ原の戦い','伏見城の戦い','大坂冬の陣'].includes(title))await shot(title);if(checkEnd){
   assert.equal(await ev("document.querySelector('#bPlay').getAttribute('aria-label')"),'一時停止',title);
   await ev(`(()=>{const seek=document.querySelector('#bSeek');seek.value=99;seek.dispatchEvent(new Event('input',{bubbles:true}));})()`);
   assert.equal(await ev("document.querySelector('#bPlay').getAttribute('aria-label')"),'再生',title);

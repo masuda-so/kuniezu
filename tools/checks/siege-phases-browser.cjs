@@ -18,14 +18,14 @@ async function click(selector){const p=await ev(`(()=>{const el=document.querySe
 async function shot(name){await ev("(()=>{const e=document.querySelector('.mbox');if(e)e.scrollTop=0;})()");const r=await call('Page.captureScreenshot',{format:'png'});fs.writeFileSync(path.join(OUT,name+'.png'),Buffer.from(r.data,'base64'));}
 async function view(width,height){await call('Emulation.setDeviceMetricsOverride',{width,height,deviceScaleFactor:1,mobile:width<820});await sleep(300);}
 async function load(){await call('Page.navigate',{url:URL});await until("!!document.querySelector('[data-act=new]')&&!document.getElementById('boot')");}
-async function start(){await click('[data-act=new]');await click('[data-act=scen][data-id=s1575]');await click('[data-act=start]');await until("TKUI.modal==='intro'");}
+async function start(){await click('[data-act=new]');await click('[data-act=scen][data-id=s1575]');await click('#pick [data-act=pick].on');await until("TKUI.mode==='game'&&!TKUI.modal");}
 async function menu(){await click('#me [data-m=menu]');}
 const timer=setTimeout(()=>{console.error('timeout');chrome.kill();process.exitCode=1},480000);
 
 (async()=>{try{
  const target=await call('Target.createTarget',{url:'about:blank'},null);
  session=(await call('Target.attachToTarget',{targetId:target.targetId,flatten:true},null)).sessionId;
- await call('Runtime.enable');await call('Page.enable');await view(1400,1000);await load();await start();await click('#modal [data-act=close]');await ev('TKUI.speed=0');
+ await call('Runtime.enable');await call('Page.enable');await view(1400,1000);await load();await start();await ev('TKUI.speed=0');
  await ev(`(()=>{const make=TKBattleAtlas.make;TKBattleAtlas.make=(...args)=>(window.__siegeController=make(...args));const text=CanvasRenderingContext2D.prototype.fillText;window.__siegeText=[];window.__canvasUnderflows=0;const levels=new WeakMap(),save=CanvasRenderingContext2D.prototype.save,restore=CanvasRenderingContext2D.prototype.restore;CanvasRenderingContext2D.prototype.save=function(){if(this.canvas.id==='bCv')levels.set(this,(levels.get(this)||0)+1);return save.call(this);};CanvasRenderingContext2D.prototype.restore=function(){if(this.canvas.id==='bCv'){const n=levels.get(this)||0;if(!n)window.__canvasUnderflows++;levels.set(this,Math.max(0,n-1));}return restore.call(this);};CanvasRenderingContext2D.prototype.fillText=function(s,...args){if(this.canvas.id==='bCv')window.__siegeText.push(String(s));return text.call(this,s,...args);};})()`);
  const rows=[];
  for(const title of ['上月城の戦い','有岡城の戦い','安濃津城の戦い']){

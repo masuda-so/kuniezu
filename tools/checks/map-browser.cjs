@@ -18,13 +18,13 @@ async function click(selector){const p=await ev(`(()=>{const el=document.querySe
 async function shot(name){const r=await call('Page.captureScreenshot',{format:'png'});fs.writeFileSync(path.join(OUT,name+'.png'),Buffer.from(r.data,'base64'));}
 async function view(width,height){await call('Emulation.setDeviceMetricsOverride',{width,height,deviceScaleFactor:1,mobile:width<820});await sleep(300);}
 async function load(){await call('Page.navigate',{url:URL});await until("!!document.querySelector('[data-act=new]')");}
-async function start(){await click('[data-act=new]');await click('[data-act=scen][data-id=s1560]');await click('[data-act=start]');await until("TKUI.modal==='intro'");}
+async function start(){await click('[data-act=new]');await click('[data-act=scen][data-id=s1560]');await click('#pick [data-act=pick].on');await until("TKUI.mode==='game'&&!TKUI.modal");}
 async function menu(){await click('#me [data-m=menu]');}
 const timer=setTimeout(()=>{chrome.kill();process.exitCode=1},90000);
 (async()=>{try{
  const target=await call('Target.createTarget',{url:'about:blank'},null);session=(await call('Target.attachToTarget',{targetId:target.targetId,flatten:true},null)).sessionId;await call('Runtime.enable');await call('Page.enable');await call('Performance.enable');
  for(const width of [1400,820,390]){await view(width,900);await load();await sleep(1200);await shot('title-'+width);await click('[data-act=new]');await shot('scenarios-'+width);await click('[data-act=scen][data-id=s1560]');await sleep(400);await shot('pick-'+width);}
- await view(1400,900);await load();await start();await click('#modal [data-act=close]');await sleep(4000);
+ await view(1400,900);await load();await start();await sleep(4000);
  await ev('TKUI.fitAll()');await sleep(500);await shot('whole');
  const a=await call('Performance.getMetrics');await sleep(3000);const b=await call('Performance.getMetrics');const m=x=>Object.fromEntries(x.metrics.map(y=>[y.name,y.value]));const aa=m(a),bb=m(b);console.log('PAUSED_METRICS',Object.fromEntries(['TaskDuration','ScriptDuration','LayoutDuration','RecalcStyleDuration'].map(k=>[k,bb[k]-aa[k]])));
  await ev("(()=>{const s=G.S();while(G.date().y===1560&&G.date().m<7){G.day();s.sceneQ=[];}TKUI.api.renderAll();})()");await sleep(300);await shot('motoyasu');console.log('REL',await ev("({date:G.date(),allies:G.S().ally,vassal:G.S().vassal})"));

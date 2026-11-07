@@ -18,13 +18,13 @@ async function click(selector){const p=await ev(`(()=>{const el=document.querySe
 async function shot(name){const r=await call('Page.captureScreenshot',{format:'png'});fs.writeFileSync(path.join(OUT,name+'.png'),Buffer.from(r.data,'base64'));}
 async function view(width,height){await call('Emulation.setDeviceMetricsOverride',{width,height,deviceScaleFactor:1,mobile:width<820});await sleep(300);}
 async function load(){await call('Page.navigate',{url:URL});await until("!!document.querySelector('[data-act=new]')");}
-async function start(){await click('[data-act=new]');await click('[data-act=scen][data-id=s1560]');await click('[data-act=start]');await until("TKUI.modal==='intro'");}
+async function start(){await click('[data-act=new]');await click('[data-act=scen][data-id=s1560]');await click('#pick [data-act=pick].on');await until("TKUI.mode==='game'&&!TKUI.modal");}
 async function menu(){await click('#me [data-m=menu]');}
 const timer=setTimeout(()=>{console.error('timeout');chrome.kill();process.exitCode=1},180000);
 const cover=()=>ev('(()=>{const {corners}=TKUI.mapBounds();return corners[0][0]<=.01&&corners[0][1]<=.01&&corners[1][0]>=innerWidth-.01&&corners[1][1]>=innerHeight-.01})()');
 (async()=>{try{
 const target=await call('Target.createTarget',{url:'about:blank'},null);session=(await call('Target.attachToTarget',{targetId:target.targetId,flatten:true},null)).sessionId;await call('Runtime.enable');await call('Page.enable');
-await view(1400,950);await load();await sleep(3000);await shot('title-wide');assert.ok(await cover());await start();await click('#modal [data-act=close]');
+await view(1400,950);await load();await sleep(3000);await shot('title-wide');assert.ok(await cover());await start();
 for(const [name,lon,lat,z] of [['terrain',136.7,35.3,4],['minoji',136.76,35.28,8],['otsu',135.85,35.00,8]]){await ev(`TKUI.cam(...G.PJ(${lon},${lat}),${z})`);await sleep(4000);await shot(name);}
 assert.ok(await ev('TKTerrain.stats().gsiLoaded>0'));console.log('TERRAIN',await ev('TKTerrain.stats()'));
 await ev("TKUI.open('scene',{title:'伏見城の戦い'})");await sleep(250);assert.equal(await ev("document.querySelector('#bPlay').getAttribute('aria-label')"),'一時停止');await click('[data-act=b-play]');await ev("document.querySelector('#modal .mbox').scrollTop=0");await shot('fushimi');
@@ -32,7 +32,7 @@ const canvas=await ev("document.querySelector('#bCv').toDataURL('image/png')");f
 await click('[data-act=b-close]');
 await ev("(()=>{const s=G.S(),t=G.evT({d:TK.lunarDate(1560,5,18)});while(s.t<t){G.day();s.sceneQ=[];}TKUI.api.renderAll();TKUI.cam(...G.PJ(127,38),4);})()");await sleep(400);
 const edge=await ev("({visible:TKUI._UP.size,groups:Object.values(TKUI.outsideArmies).reduce((n,a)=>n+a.length,0),side:document.querySelector('#armyEdges button')?.dataset.side})");assert.ok(edge.groups>0);assert.equal(edge.visible,0);assert.ok(edge.side);await shot('armies-outside');await click('#armyEdges button');await sleep(250);assert.ok(await ev('TKUI._UP.size>0'));await shot('armies-focused');
-for(const width of [820,390,320]){await view(width,900);await load();assert.ok(await cover());await shot('title-'+width);await click('[data-act=new]');assert.ok(await cover());await shot('scenario-'+width);await click('[data-act=scen][data-id=s1560]');assert.ok(await cover());await shot('pick-'+width);await click('[data-act=start]');await click('#modal [data-act=close]');await sleep(250);
+for(const width of [820,390,320]){await view(width,900);await load();assert.ok(await cover());await shot('title-'+width);await click('[data-act=new]');assert.ok(await cover());await shot('scenario-'+width);await click('[data-act=scen][data-id=s1560]');assert.ok(await cover());await shot('pick-'+width);await click('#pick [data-act=pick].on');await sleep(250);
  const hud=await ev("(()=>{const e=document.querySelector('#era'),m=document.querySelector('#me'),d=document.querySelector('#eraTxt .e3');return {top:e.getBoundingClientRect().top,bottom:m.getBoundingClientRect().bottom,date:getComputedStyle(d).display,text:d.innerText,width:document.documentElement.scrollWidth,edge:innerWidth}})()");assert.ok(hud.top<=4);assert.ok(hud.bottom<=115);assert.notEqual(hud.date,'none');assert.ok(hud.text.includes('1560'));assert.ok(hud.width<=hud.edge);assert.ok(await cover());await shot('game-'+width);
  for(const z of [8,.01,4,.01]){await ev(`TKUI.cam(...G.PJ(136.7,35.3),${z})`);await sleep(60);assert.ok(await cover());}await shot('zoom-out-'+width);console.log('HUD',width,hud);
 }
