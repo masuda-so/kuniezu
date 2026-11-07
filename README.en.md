@@ -17,6 +17,10 @@ is [docs/README.md](docs/README.md); open requests and ownership are in
 - A vector-map migration using CODH coast, lake, road and post datasets is in progress.
   [Reference inputs and preparation](data/inputs/codh-edo/README.md) are retained;
   the game has not switched to vector rendering yet.
+- `uv run python tools/geo/codh_preview.py --output /tmp/codh-preview-new`
+  generates a standalone Edo-period vector viewer. Open its `index.html` directly
+  to inspect Kanto and Kojima Bay, pan, zoom and toggle layers. It does not alter
+  the game map or saves.
 - Shows former lakeshores, castles, facilities and people checked against sources,
   marches along historical roads, and battle deployments and movements, each with
   its source.
