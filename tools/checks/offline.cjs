@@ -4,6 +4,8 @@ const root=path.resolve(__dirname,'../..'),game=path.join(root,'kuniezu/static/k
 for(const f of fs.readdirSync(game).filter(f=>f.endsWith('.js')))new vm.Script(fs.readFileSync(path.join(game,f),'utf8'),{filename:f});
 for(const match of fs.readFileSync(path.join(root,'kuniezu/templates/index.html'),'utf8').matchAll(/<script\b(?![^>]*\bsrc=)[^>]*>([\s\S]*?)<\/script>/g))new vm.Script(match[1],{filename:'index.html inline script'});
 console.log('PASS: JavaScript syntax');
+require('./mask-vector.cjs');
+require('./kojima-mask-vectors.cjs');
 const storage=require(path.join(game,'storage.js'));
 const map=new Map(),mem={setItem:(k,v)=>map.set(k,v)},state={x:'日本語',t:42};
 assert.equal(storage.write(mem,'test',state,'meta').ok,true);assert.deepEqual(JSON.parse(map.get('test')),state);

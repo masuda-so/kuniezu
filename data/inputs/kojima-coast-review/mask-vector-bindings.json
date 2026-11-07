@@ -1,0 +1,46 @@
+{
+  "schemaVersion": 1,
+  "role": "adopted-raster-extent-not-historical-shoreline",
+  "regridCommit": "550179070dbdb3493bae5e654312f7b62445db07",
+  "rowShift": 792,
+  "grids": {
+    "before": {
+      "file": "data/inputs/kojima-coast-review/grid-before-2026-11-04.json",
+      "sha256": "04bd30868c1f5a9420b308d318d606a95d1158c23a8e6f18b3f7ecfe6b01466a",
+      "gitSource": "550179070dbdb3493bae5e654312f7b62445db07^:game/map_data/projection.json"
+    },
+    "current": {
+      "file": "kuniezu/map/projection.json",
+      "sha256": "3576c5ceb1fc809ac06f538f14dd8be842f343fc18e374edcbdbc8bb4d9e8cee"
+    }
+  },
+  "bindings": [
+    {
+      "id": "kojima-bay-reclaimed-sea",
+      "edit": "kuniezu/map/edits/applied/kojima-bay-reclaimed-sea.json",
+      "editSha256": "226db4146639f1e187a82cec2f0bfe90ae14efb40d7d4ffec68ee72be7ec9930",
+      "grid": "before",
+      "expectedCells": 12643
+    },
+    {
+      "id": "kojima-bay-restored-land",
+      "edit": "kuniezu/map/edits/applied/kojima-bay-restored-land.json",
+      "editSha256": "5473c3bc3eca0d65b1207b0da80f135713627cd54ac38196ec5fb893e7591788",
+      "grid": "before",
+      "expectedCells": 10663
+    },
+    {
+      "id": "kojima-bay-ukita-land-from-1584",
+      "edit": "kuniezu/map/edits/kojima-bay-ukita-land-from-1584.json",
+      "editSha256": "0fae113ab734d17d1845bd6156f16ac9efce8dce6bb67f864805da176b0a5808",
+      "grid": "current",
+      "expectedCells": 366
+    }
+  ],
+  "reviewedCurrentWindow": [
+    9734,
+    12031,
+    630,
+    390
+  ]
+}
