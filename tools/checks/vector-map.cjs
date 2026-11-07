@@ -9,4 +9,9 @@ assert.equal(map.replace([input]),2);assert.equal(changes,1);assert.equal(map.st
 const fills=[],ctx={fill(p,rule){fills.push({p,rule});},stroke(){throw Error('land must fill');}};
 assert.equal(map.draw(ctx,'land',[1560,1,1],[259,-69,269,-59]),1);assert.equal(fills[0].rule,'nonzero');assert.deepEqual(fills[0].p.ops[0],['M',260,-60]);assert.equal(fills[0].p.ops.filter(o=>o[0]==='Z').length,2);assert.equal(map.draw(ctx,'land',[1560,1,1],[100,0,110,10]),0);assert.equal(map.stats().paths,1);
 assert.throws(()=>map.replace([{type:'FeatureCollection',features:[feature('bad',[[[999,0],[0,0],[0,1],[999,0]]])]}]));assert.equal(changes,1);assert.equal(map.stats().features,2);assert.equal(JSON.stringify(input),before);
-console.log('PASS: holes, projection, exact temporal boundaries, view culling, lazy path reuse, unchanged source and atomic failure');
+
+
+const allBefore=map.path('land',[1560,1,1]);assert.equal(map.path('land',[1561,2,3]),allBefore,'same period reuses the combined clip path across days');assert.notEqual(map.path('land',[1584,1,1]),allBefore,'period boundary gets its own clip');
+assert.throws(()=>map.path('land',undefined),/map date/);assert.equal(map.path('land',[1562,1,1]),allBefore);
+assert.equal(map.epoch([1560,1,1]),map.epoch([1561,1,1]));assert.notEqual(map.epoch([1560,1,1]),map.epoch([1584,1,1]));
+console.log('PASS: holes, projection, dates, culling, unchanged source and atomic failure; combined clip reused across days');

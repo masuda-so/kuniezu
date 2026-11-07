@@ -1,6 +1,6 @@
 # 現行版の検証
 
-サーバーの起動・停止はユーザーのみ。ブラウザ検証は既存8000番へ専用の一時Chromeで接続し、普段のプロフィール・保存を使わない。負荷測定は他のブラウザ検証と同時実行しない。
+利用者が起動したことのある許可済み8000番はエージェントも起動・停止できる（127.0.0.1限定、配信先と所有者を確認）。ブラウザ検証は既存8000番へ専用の一時Chromeで接続し、普段のプロフィール・保存を使わない。負荷測定は他のブラウザ検証と同時実行しない。
 
 ページは Django のテンプレート（`kuniezu/templates/index.html`）なので、8000 番は Django の開発サーバーか `dist/client/` の配信を指す。ページをディスクから読む検査は `tools/build/game-page.cjs` で描く。`hachirogata-water-browser.cjs` と `katori-water-browser.cjs` は、`GAME_URL` を指定しなければサーバーなしで一時ファイルを開く。
 
@@ -10,6 +10,8 @@
 
 | 分野 | サーバー不要の検査 | 実画面の検査 |
 |---|---|---|
+| 本体ベクター描画 | `vector-map.cjs`・`vector-assets.cjs` | `vector-game-browser.cjs`（広幅・狭幅・回転・全図）、`VECTOR_FAIL_SOURCE=1`（取得失敗と再読込） |
+| 肖像の代替crop | `portrait-loading.cjs`、`build_fallback.py --root . --check` | `portrait-fallback-browser.cjs`（`PORTRAIT_MODE=normal/primary-fail/all-fail`） |
 | 基本・保存・史実進行 | `offline.cjs` | `completion-browser.cjs` |
 | 秘密情報（APIキー・秘密鍵など。gzipも展開） | `secret-scan.cjs`（CIでも実行。第三者ページの保存前は `tools/research/source-privacy.cjs`） | — |
 | 読み込みの確認値（更新後に古い版を使わせない） | `node tools/build/stamp-assets.cjs --check`（CIでも実行。kuniezu/static/kuniezu/ のファイルを変えたら `node tools/build/stamp-assets.cjs` を実行） | — |
@@ -42,3 +44,5 @@ GAME_TEST_OUTPUT=data/verification/自分の担当名 node tools/checks/march-cl
 検査の合格は、史料の未読箇所や歴史上の全件の網羅を証明しない。分岐・任意攻城を扱う `legacy-*` 系の試験は過去の検証であり、現行版の完了条件へ流用しない。旧手順は [履歴](../../docs/history/CHECKS-2026-11-01.md) に保存。
 
 `node tools/checks/vector-map.cjs` は共通ベクター描画器の穴・年代境界・表示範囲・入力保持を検査します。比較ページの実画面は `VECTOR_PREVIEW_URL=file:///absolute/path/index.html GAME_TEST_OUTPUT=data/verification/<担当名-対象名> node tools/checks/vector-map-browser.cjs` で専用Chromeから確認します。ゲーム本体の受入検査とは別です。
+
+`uv run pytest tests/test_vector_sources.py tests/test_vector_era_sources.py` は編集済み面の有効性・bbox・5湖と元の宇喜多マスク366セルの年代・香取保護・両年代の岸線一致を検査する。局所PNG読取のPillowは開発用依存のみ。比較画面の `--at YYYY-MM-DD` は表示適用区間を選び、史料の確定日を追加しない。

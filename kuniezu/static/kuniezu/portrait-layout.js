@@ -9,3 +9,7 @@ TK.EXTRA_PORTRAITS["宗義調"]={"src": "portraits/宗義調.jpg", "crop": [45, 
 TK.EXTRA_PORTRAITS["三好義継"]={"src": "portraits/三好義継.jpg", "crop": [60, 75, 90, 90], "size": [211, 340], "source": "https://commons.wikimedia.org/wiki/File:Miyoshi_Yoshitugu.jpg", "review": "原画で顔を中心に手動確認。全身に寄った旧表示を訂正。"};
 
 TK.EXTRA_PORTRAITS["斎藤義龍"]={"src":"portraits/斎藤義龍.jpg","crop":[325,1000,410,410],"size":[1113,2282],"source":"https://commons.wikimedia.org/wiki/File:Saitō_Yoshitatsu.jpg","identitySource":"https://www.pref.gifu.lg.jp/page/354743.html","review":"常在寺蔵の義龍像を原画で照合。顔外を縦横に引き伸ばした旧スプライトを使わず、原画像から等比で顔を切り出す。"};
+
+// reviewed-fallback:start
+TK.PORTRAIT_FALLBACK={"顕如":{"src":"faces-fallback.webp?v=48ecefa928","crop":[0,0,128,128]},"丹羽長重":{"src":"faces-fallback.webp?v=48ecefa928","crop":[0,128,128,128]},"島清興":{"src":"faces-fallback.webp?v=48ecefa928","crop":[0,256,128,128]},"斎藤義龍":{"src":"faces-fallback.webp?v=48ecefa928","crop":[0,384,128,128]},"足利義輝":{"src":"faces-fallback.webp?v=48ecefa928","crop":[0,512,128,128]}};
+// reviewed-fallback:end

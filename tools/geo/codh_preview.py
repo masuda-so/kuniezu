@@ -6,6 +6,7 @@ import hashlib
 import importlib
 import json
 import sys
+from datetime import date
 from pathlib import Path
 
 references = importlib.import_module(
@@ -45,7 +46,7 @@ def load_surfaces(directory, expected_sources):
     return result
 
 
-def build(output, surfaces=None, canonical=None):
+def build(output, surfaces=None, canonical=None, at=None):
     if surfaces is not None and canonical is not None:
         msg = "Choose prepared reference or edited canonical surfaces"
         raise ValueError(msg)
@@ -80,6 +81,16 @@ def build(output, surfaces=None, canonical=None):
             ):
                 raise ValueError("Edited surface needs explicit drawRole: " + name)
             adopted[key] = collection
+        shore_file = Path(canonical) / "coastline.geojson"
+        if shore_file.exists():
+            shores = json.loads(shore_file.read_bytes())
+            if any(
+                f.get("properties", {}).get("drawRole") != "shore"
+                for f in shores["features"]
+            ):
+                msg = "Edited coastline needs explicit shore role"
+                raise ValueError(msg)
+            adopted["shores"] = shores
     report = prepare(source_manifest, output)
     layers = {}
     for key in ("coast-polygons", "lake-polygons", "roads", "posts"):
@@ -89,7 +100,12 @@ def build(output, surfaces=None, canonical=None):
     layers.update(adopted)
     # An inert JSON script must not be terminated by source attribute strings.
     payload = json.dumps(
-        {"projection": projection, "layers": layers, "sources": report["datasets"]},
+        {
+            "projection": projection,
+            "layers": layers,
+            "sources": report["datasets"],
+            "date": at or [1560, 1, 1],
+        },
         ensure_ascii=False,
         separators=(",", ":"),
     ).replace("<", "\\u003c")
@@ -118,8 +134,19 @@ def main():
         type=Path,
         help="Read edited land.geojson/water.geojson unchanged",
     )
+    parser.add_argument("--at", type=date.fromisoformat, default=date(1560, 1, 1))
     args = parser.parse_args()
-    sys.stdout.write(str(build(args.output, args.surfaces, args.canonical)) + "\n")
+    sys.stdout.write(
+        str(
+            build(
+                args.output,
+                args.surfaces,
+                args.canonical,
+                [args.at.year, args.at.month, args.at.day],
+            )
+        )
+        + "\n"
+    )
 
 
 if __name__ == "__main__":

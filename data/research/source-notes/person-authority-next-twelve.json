@@ -1,0 +1,623 @@
+{
+  "scope": "12名の人物同定。公的資料との照合と留保を保持し、生没日・所在の史実命題を追加しない。",
+  "checked": "2026-11-07",
+  "rawLicense": {
+    "name": "CC0 1.0",
+    "url": "https://www.wikidata.org/wiki/Wikidata:Licensing"
+  },
+  "fetchPolicy": {
+    "maxConcurrency": 1,
+    "stopOn429": true,
+    "http429Count": 0,
+    "actionApiMaxlagResponses": 1,
+    "maxlagHandledAsSuccess": false,
+    "fixedRevisionDocumentation": "https://www.wikidata.org/wiki/Help:Linked_Data_Interface",
+    "cache": "取得済み原本を再利用。current版と固定版を二重収録しない。"
+  },
+  "records": [
+    {
+      "name": "井伊直政",
+      "wikidataId": "Q1334437",
+      "wikidataRevision": 2562123366,
+      "wikidataJapaneseLabel": "井伊直政",
+      "entityDataUrl": "https://www.wikidata.org/wiki/Special:EntityData/Q1334437.json?revision=2562123366",
+      "revisionUrl": "https://www.wikidata.org/w/index.php?title=Q1334437&oldid=2562123366",
+      "retrievedAt": "2026-11-07T10:14:02.554083+00:00",
+      "rawEntityDataSnapshot": "data/research/source-notes/person-authority-next-twelve/Q1334437-revision-2562123366.json",
+      "rawSha256": "f391191c9e31a773ae4bdd250c02800724ba31d821042337ee02b7b1216e0224",
+      "identityChecks": [
+        "birth-year: 1561。資料の西暦年表記と原JSONの年が一致。月日・暦換算は同定対象外。",
+        "death-year: 1602。資料の西暦年表記と原JSONの年が一致。月日・暦換算は同定対象外。"
+      ],
+      "identitySourceUrl": "https://hikone-castle-museum.jp/history/index.php",
+      "identitySourceIds": [
+        "hikoneIiNaomasaIdentity"
+      ],
+      "identitySourceLocator": "「井伊直政（井伊家初代）」見出し1561〜1602",
+      "nonNameMatches": [
+        {
+          "dimension": "birth-year",
+          "wikidataProperty": "P569",
+          "comparedValue": 1561,
+          "sourceId": "hikoneIiNaomasaIdentity",
+          "match": "資料の西暦年表記と原JSONの年が一致。月日・暦換算は同定対象外。"
+        },
+        {
+          "dimension": "death-year",
+          "wikidataProperty": "P570",
+          "comparedValue": 1602,
+          "sourceId": "hikoneIiNaomasaIdentity",
+          "match": "資料の西暦年表記と原JSONの年が一致。月日・暦換算は同定対象外。"
+        }
+      ],
+      "unresolvedComparisons": [],
+      "additionalAuthorityIdsNotAdopted": [
+        {
+          "scheme": "ndlna",
+          "id": "00621864",
+          "reason": "原WikidataのP349参照値。NDL原典を今回照合していないため外部典拠IDとしては未採用。"
+        }
+      ],
+      "scope": "人物の同定のみ。原JSONの暦モデル・精度を保持し、生没日・所属・所在の史実命題へ転用しない。"
+    },
+    {
+      "name": "伊達政宗",
+      "wikidataId": "Q311183",
+      "wikidataRevision": 2553969029,
+      "wikidataJapaneseLabel": "伊達政宗",
+      "entityDataUrl": "https://www.wikidata.org/wiki/Special:EntityData/Q311183.json?revision=2553969029",
+      "revisionUrl": "https://www.wikidata.org/w/index.php?title=Q311183&oldid=2553969029",
+      "retrievedAt": "2026-11-07T10:14:04.431046+00:00",
+      "rawEntityDataSnapshot": "data/research/source-notes/person-authority-next-twelve/Q311183-revision-2553969029.json",
+      "rawSha256": "a6423c0cf62a5b80274793901898ad755ae0d0642deaf5cb88caa60999a67528",
+      "identityChecks": [
+        "birth-year: 1567。資料の西暦年表記と原JSONの年が一致。月日・暦換算は同定対象外。",
+        "death-year: 1636。資料の西暦年表記と原JSONの年が一致。月日・暦換算は同定対象外。"
+      ],
+      "identitySourceUrl": "https://www.city.sendai.jp/museum/shuzohin/shuzohin/shuzohin-21.html",
+      "identitySourceIds": [
+        "sendaiMuseumMasamuneIdentity"
+      ],
+      "identitySourceLocator": "「年表で見る伊達政宗の一生」1567年・1636年の行",
+      "nonNameMatches": [
+        {
+          "dimension": "birth-year",
+          "wikidataProperty": "P569",
+          "comparedValue": 1567,
+          "sourceId": "sendaiMuseumMasamuneIdentity",
+          "match": "資料の西暦年表記と原JSONの年が一致。月日・暦換算は同定対象外。"
+        },
+        {
+          "dimension": "death-year",
+          "wikidataProperty": "P570",
+          "comparedValue": 1636,
+          "sourceId": "sendaiMuseumMasamuneIdentity",
+          "match": "資料の西暦年表記と原JSONの年が一致。月日・暦換算は同定対象外。"
+        }
+      ],
+      "unresolvedComparisons": [
+        {
+          "dimension": "death-date",
+          "wikidataValues": [
+            {
+              "time": "+1636-06-27T00:00:00Z",
+              "timezone": 0,
+              "before": 0,
+              "after": 0,
+              "precision": 11,
+              "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+            },
+            {
+              "time": "+1636-08-24T00:00:00Z",
+              "timezone": 0,
+              "before": 0,
+              "after": 0,
+              "precision": 11,
+              "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+            }
+          ],
+          "decision": "同一原JSONに同じ年の異なる月日が並存する。年の一致を人物同定にのみ使用し、月日の正否・暦換算を決めない。"
+        }
+      ],
+      "additionalAuthorityIdsNotAdopted": [
+        {
+          "scheme": "ndlna",
+          "id": "00621795",
+          "reason": "原WikidataのP349参照値。NDL原典を今回照合していないため外部典拠IDとしては未採用。"
+        }
+      ],
+      "scope": "人物の同定のみ。原JSONの暦モデル・精度を保持し、生没日・所属・所在の史実命題へ転用しない。"
+    },
+    {
+      "name": "加藤嘉明",
+      "wikidataId": "Q1371657",
+      "wikidataRevision": 2555269422,
+      "wikidataJapaneseLabel": "加藤嘉明",
+      "entityDataUrl": "https://www.wikidata.org/wiki/Special:EntityData/Q1371657.json?revision=2555269422",
+      "revisionUrl": "https://www.wikidata.org/w/index.php?title=Q1371657&oldid=2555269422",
+      "retrievedAt": "2026-11-07T10:14:07.214308+00:00",
+      "rawEntityDataSnapshot": "data/research/source-notes/person-authority-next-twelve/Q1371657-revision-2555269422.json",
+      "rawSha256": "e9a2247b53b77ec5261dbaabd66ff74eb7018726b10c0b2c63afdc42bc0b1df6",
+      "identityChecks": [
+        "birth-year: 1563。資料の西暦年表記と原JSONの年が一致。月日・暦換算は同定対象外。",
+        "death-year: 1631。資料の西暦年表記と原JSONの年が一致。月日・暦換算は同定対象外。"
+      ],
+      "identitySourceUrl": "https://i-manabi.jp/museum/seiji_gyosei.php",
+      "identitySourceIds": [
+        "ehimeKatoYoshiakiIdentity"
+      ],
+      "identitySourceLocator": "加藤嘉明の行、1563〜1631・松山城主",
+      "nonNameMatches": [
+        {
+          "dimension": "birth-year",
+          "wikidataProperty": "P569",
+          "comparedValue": 1563,
+          "sourceId": "ehimeKatoYoshiakiIdentity",
+          "match": "資料の西暦年表記と原JSONの年が一致。月日・暦換算は同定対象外。"
+        },
+        {
+          "dimension": "death-year",
+          "wikidataProperty": "P570",
+          "comparedValue": 1631,
+          "sourceId": "ehimeKatoYoshiakiIdentity",
+          "match": "資料の西暦年表記と原JSONの年が一致。月日・暦換算は同定対象外。"
+        }
+      ],
+      "unresolvedComparisons": [],
+      "additionalAuthorityIdsNotAdopted": [
+        {
+          "scheme": "ndlna",
+          "id": "00757866",
+          "reason": "原WikidataのP349参照値。NDL原典を今回照合していないため外部典拠IDとしては未採用。"
+        }
+      ],
+      "scope": "人物の同定のみ。原JSONの暦モデル・精度を保持し、生没日・所属・所在の史実命題へ転用しない。"
+    },
+    {
+      "name": "北条氏康",
+      "wikidataId": "Q943643",
+      "wikidataRevision": 2480575293,
+      "wikidataJapaneseLabel": "北条氏康",
+      "entityDataUrl": "https://www.wikidata.org/wiki/Special:EntityData/Q943643.json?revision=2480575293",
+      "revisionUrl": "https://www.wikidata.org/w/index.php?title=Q943643&oldid=2480575293",
+      "retrievedAt": "2026-11-07T10:14:08.881063+00:00",
+      "rawEntityDataSnapshot": "data/research/source-notes/person-authority-next-twelve/Q943643-revision-2480575293.json",
+      "rawSha256": "3483fb6db1de677bfa85ded8d2df412ca7d9e0f2e70102cc6230c257bf838f76",
+      "identityChecks": [
+        "birth-year: 1515。資料の西暦年表記と原JSONの年が一致。月日・暦換算は同定対象外。",
+        "death-year: 1571。資料の西暦年表記と原JSONの年が一致。月日・暦換算は同定対象外。"
+      ],
+      "identitySourceUrl": "https://www.city.atsugi.kanagawa.jp/atsugicitymuseum/2/greatfiguresinhistory/46732.html",
+      "identitySourceIds": [
+        "atsugiHojoIdentity"
+      ],
+      "identitySourceLocator": "氏康・氏政の段落冒頭。氏政生年は1538年または1539年と併記",
+      "nonNameMatches": [
+        {
+          "dimension": "birth-year",
+          "wikidataProperty": "P569",
+          "comparedValue": 1515,
+          "sourceId": "atsugiHojoIdentity",
+          "match": "資料の西暦年表記と原JSONの年が一致。月日・暦換算は同定対象外。"
+        },
+        {
+          "dimension": "death-year",
+          "wikidataProperty": "P570",
+          "comparedValue": 1571,
+          "sourceId": "atsugiHojoIdentity",
+          "match": "資料の西暦年表記と原JSONの年が一致。月日・暦換算は同定対象外。"
+        }
+      ],
+      "unresolvedComparisons": [],
+      "additionalAuthorityIdsNotAdopted": [
+        {
+          "scheme": "ndlna",
+          "id": "00269765",
+          "reason": "原WikidataのP349参照値。NDL原典を今回照合していないため外部典拠IDとしては未採用。"
+        }
+      ],
+      "scope": "人物の同定のみ。原JSONの暦モデル・精度を保持し、生没日・所属・所在の史実命題へ転用しない。"
+    },
+    {
+      "name": "北条氏政",
+      "wikidataId": "Q736948",
+      "wikidataRevision": 2480574594,
+      "wikidataJapaneseLabel": "北条氏政",
+      "entityDataUrl": "https://www.wikidata.org/wiki/Special:EntityData/Q736948.json?revision=2480574594",
+      "revisionUrl": "https://www.wikidata.org/w/index.php?title=Q736948&oldid=2480574594",
+      "retrievedAt": "2026-11-07T10:14:10.820077+00:00",
+      "rawEntityDataSnapshot": "data/research/source-notes/person-authority-next-twelve/Q736948-revision-2480574594.json",
+      "rawSha256": "78fe29b38252a86d911b2e38cd5f9638a571a2dad2283c59232e52fdcd07bd88",
+      "identityChecks": [
+        "death-year: 1590。資料の西暦年表記と原JSONの年が一致。月日・暦換算は同定対象外。",
+        "father: Q943643。本文の父・北条氏康と一致。父QIDの姓名は同じバッチの固定改訂原JSONで確認。"
+      ],
+      "identitySourceUrl": "https://ch.kanagawa-museum.jp/dm/gohojyo/relation/d_houjyo_04.html",
+      "identitySourceIds": [
+        "kanagawaUjimasaIdentity",
+        "atsugiHojoIdentity"
+      ],
+      "identitySourceLocator": "人物見出し1538〜1590、本文冒頭「父氏康」",
+      "nonNameMatches": [
+        {
+          "dimension": "death-year",
+          "wikidataProperty": "P570",
+          "comparedValue": 1590,
+          "sourceId": "kanagawaUjimasaIdentity",
+          "match": "資料の西暦年表記と原JSONの年が一致。月日・暦換算は同定対象外。"
+        },
+        {
+          "dimension": "father",
+          "wikidataProperty": "P22",
+          "comparedValue": "Q943643",
+          "sourceId": "kanagawaUjimasaIdentity",
+          "match": "本文の父・北条氏康と一致。父QIDの姓名は同じバッチの固定改訂原JSONで確認。",
+          "labelSourceUrl": "https://www.wikidata.org/w/index.php?title=Q943643&oldid=2480575293",
+          "labelSourceSnapshot": "data/research/source-notes/person-authority-next-twelve/Q943643-revision-2480575293.json"
+        }
+      ],
+      "unresolvedComparisons": [
+        {
+          "dimension": "birth-year",
+          "wikidataValue": 1538,
+          "sourceId": "atsugiHojoIdentity",
+          "sourceValues": [
+            1538,
+            1539
+          ],
+          "decision": "神奈川県立歴史博物館は1538年、厚木市は1538年または1539年を併記。生年は採用せず、没年と父の組合せで同定する。"
+        }
+      ],
+      "additionalAuthorityIdsNotAdopted": [
+        {
+          "scheme": "ndlna",
+          "id": "001286460",
+          "reason": "原WikidataのP349参照値。NDL原典を今回照合していないため外部典拠IDとしては未採用。"
+        }
+      ],
+      "scope": "人物の同定のみ。原JSONの暦モデル・精度を保持し、生没日・所属・所在の史実命題へ転用しない。"
+    },
+    {
+      "name": "最上義光",
+      "wikidataId": "Q839377",
+      "wikidataRevision": 2553973881,
+      "wikidataJapaneseLabel": "最上義光",
+      "entityDataUrl": "https://www.wikidata.org/wiki/Special:EntityData/Q839377.json?revision=2553973881",
+      "revisionUrl": "https://www.wikidata.org/w/index.php?title=Q839377&oldid=2553973881",
+      "retrievedAt": "2026-11-07T10:14:13.036892+00:00",
+      "rawEntityDataSnapshot": "data/research/source-notes/person-authority-next-twelve/Q839377-revision-2553973881.json",
+      "rawSha256": "e9f9f3e022bf0f9d41a33afc4e39745585da941ab570d6c7cb9c8ae5ee26f0ee",
+      "identityChecks": [
+        "birth-year: 1546。資料の西暦年表記と原JSONの年が一致。月日・暦換算は同定対象外。",
+        "death-year: 1614。資料の西暦年表記と原JSONの年が一致。月日・暦換算は同定対象外。"
+      ],
+      "identitySourceUrl": "https://www.city.yamagata-yamagata.lg.jp/bunkasports/geijyutsu/1006703/1013262.html",
+      "identitySourceIds": [
+        "yamagataMogamiIdentity"
+      ],
+      "identitySourceLocator": "「最上義光公とは」冒頭",
+      "nonNameMatches": [
+        {
+          "dimension": "birth-year",
+          "wikidataProperty": "P569",
+          "comparedValue": 1546,
+          "sourceId": "yamagataMogamiIdentity",
+          "match": "資料の西暦年表記と原JSONの年が一致。月日・暦換算は同定対象外。"
+        },
+        {
+          "dimension": "death-year",
+          "wikidataProperty": "P570",
+          "comparedValue": 1614,
+          "sourceId": "yamagataMogamiIdentity",
+          "match": "資料の西暦年表記と原JSONの年が一致。月日・暦換算は同定対象外。"
+        }
+      ],
+      "unresolvedComparisons": [
+        {
+          "dimension": "death-date",
+          "wikidataValues": [
+            {
+              "time": "+1614-11-29T00:00:00Z",
+              "timezone": 0,
+              "before": 0,
+              "after": 0,
+              "precision": 11,
+              "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+            },
+            {
+              "time": "+1614-02-26T00:00:00Z",
+              "timezone": 0,
+              "before": 0,
+              "after": 0,
+              "precision": 11,
+              "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+            }
+          ],
+          "decision": "同一原JSONに同じ年の異なる月日が並存する。年の一致を人物同定にのみ使用し、月日の正否・暦換算を決めない。"
+        }
+      ],
+      "additionalAuthorityIdsNotAdopted": [
+        {
+          "scheme": "ndlna",
+          "id": "00623370",
+          "reason": "原WikidataのP349参照値。NDL原典を今回照合していないため外部典拠IDとしては未採用。"
+        }
+      ],
+      "scope": "人物の同定のみ。原JSONの暦モデル・精度を保持し、生没日・所属・所在の史実命題へ転用しない。"
+    },
+    {
+      "name": "本多忠勝",
+      "wikidataId": "Q467417",
+      "wikidataRevision": 2556824239,
+      "wikidataJapaneseLabel": "本多忠勝",
+      "entityDataUrl": "https://www.wikidata.org/wiki/Special:EntityData/Q467417.json?revision=2556824239",
+      "revisionUrl": "https://www.wikidata.org/w/index.php?title=Q467417&oldid=2556824239",
+      "retrievedAt": "2026-11-07T10:14:15.587407+00:00",
+      "rawEntityDataSnapshot": "data/research/source-notes/person-authority-next-twelve/Q467417-revision-2556824239.json",
+      "rawSha256": "828320b4904ab62a405a56936d8462538d3978f5021fe340851587acfd10a734",
+      "identityChecks": [
+        "birth-year: 1548。資料の西暦年表記と原JSONの年が一致。月日・暦換算は同定対象外。",
+        "death-year: 1610。資料の西暦年表記と原JSONの年が一致。月日・暦換算は同定対象外。"
+      ],
+      "identitySourceUrl": "https://www.city.okazaki.lg.jp/bunka/torikumi_bunka/1004568/1004592/1004726/1004739.html",
+      "identitySourceIds": [
+        "okazakiHondaTadakatsuIdentity"
+      ],
+      "identitySourceLocator": "本文冒頭、ページ番号1004739",
+      "nonNameMatches": [
+        {
+          "dimension": "birth-year",
+          "wikidataProperty": "P569",
+          "comparedValue": 1548,
+          "sourceId": "okazakiHondaTadakatsuIdentity",
+          "match": "資料の西暦年表記と原JSONの年が一致。月日・暦換算は同定対象外。"
+        },
+        {
+          "dimension": "death-year",
+          "wikidataProperty": "P570",
+          "comparedValue": 1610,
+          "sourceId": "okazakiHondaTadakatsuIdentity",
+          "match": "資料の西暦年表記と原JSONの年が一致。月日・暦換算は同定対象外。"
+        }
+      ],
+      "unresolvedComparisons": [],
+      "additionalAuthorityIdsNotAdopted": [
+        {
+          "scheme": "ndlna",
+          "id": "00626531",
+          "reason": "原WikidataのP349参照値。NDL原典を今回照合していないため外部典拠IDとしては未採用。"
+        }
+      ],
+      "scope": "人物の同定のみ。原JSONの暦モデル・精度を保持し、生没日・所属・所在の史実命題へ転用しない。"
+    },
+    {
+      "name": "榊原康政",
+      "wikidataId": "Q1062738",
+      "wikidataRevision": 2555301582,
+      "wikidataJapaneseLabel": "榊原康政",
+      "entityDataUrl": "https://www.wikidata.org/wiki/Special:EntityData/Q1062738.json?revision=2555301582",
+      "revisionUrl": "https://www.wikidata.org/w/index.php?title=Q1062738&oldid=2555301582",
+      "retrievedAt": "2026-11-07T10:14:17.648812+00:00",
+      "rawEntityDataSnapshot": "data/research/source-notes/person-authority-next-twelve/Q1062738-revision-2555301582.json",
+      "rawSha256": "703340396a512b4c73fe86fcf26bcf83aa863db040a387e241fef3c1ce021656",
+      "identityChecks": [
+        "birth-year: 1548。資料の西暦年表記と原JSONの年が一致。月日・暦換算は同定対象外。",
+        "death-year: 1606。資料の西暦年表記と原JSONの年が一致。月日・暦換算は同定対象外。"
+      ],
+      "identitySourceUrl": "https://emuseum.nich.go.jp/detail?content_base_id=100509&content_part_id=002&content_pict_id=006&langId=ja&webView=0",
+      "identitySourceIds": [
+        "emuseumSakakibaraIdentity"
+      ],
+      "identitySourceLocator": "解説冒頭、榊原康政1548〜1606。列品番号F-20138-1",
+      "nonNameMatches": [
+        {
+          "dimension": "birth-year",
+          "wikidataProperty": "P569",
+          "comparedValue": 1548,
+          "sourceId": "emuseumSakakibaraIdentity",
+          "match": "資料の西暦年表記と原JSONの年が一致。月日・暦換算は同定対象外。"
+        },
+        {
+          "dimension": "death-year",
+          "wikidataProperty": "P570",
+          "comparedValue": 1606,
+          "sourceId": "emuseumSakakibaraIdentity",
+          "match": "資料の西暦年表記と原JSONの年が一致。月日・暦換算は同定対象外。"
+        }
+      ],
+      "unresolvedComparisons": [],
+      "additionalAuthorityIdsNotAdopted": [
+        {
+          "scheme": "ndlna",
+          "id": "00623445",
+          "reason": "原WikidataのP349参照値。NDL原典を今回照合していないため外部典拠IDとしては未採用。"
+        }
+      ],
+      "scope": "人物の同定のみ。原JSONの暦モデル・精度を保持し、生没日・所属・所在の史実命題へ転用しない。"
+    },
+    {
+      "name": "真田信繁",
+      "wikidataId": "Q3948081",
+      "wikidataRevision": 2554306508,
+      "wikidataJapaneseLabel": "真田信繁",
+      "entityDataUrl": "https://www.wikidata.org/wiki/Special:EntityData/Q3948081.json?revision=2554306508",
+      "revisionUrl": "https://www.wikidata.org/w/index.php?title=Q3948081&oldid=2554306508",
+      "retrievedAt": "2026-11-07T10:14:19.420522+00:00",
+      "rawEntityDataSnapshot": "data/research/source-notes/person-authority-next-twelve/Q3948081-revision-2554306508.json",
+      "rawSha256": "0d00ba5b8ee086d00dd6941635050828aaf0ae39fcd805aff3d3eb52ba319daa",
+      "identityChecks": [
+        "death-year: 1615。資料の西暦年表記と原JSONの年が一致。月日・暦換算は同定対象外。",
+        "father: Q1144171。本文の父・真田昌幸と一致。父QIDの姓名は同じバッチの固定改訂原JSONで確認。"
+      ],
+      "identitySourceUrl": "https://www.sanadahoumotsukan.com/sanadake.php",
+      "identitySourceIds": [
+        "sanadaMuseumFamilyIdentity"
+      ],
+      "identitySourceLocator": "「真田昌幸」「真田信繁（幸村）」見出しと各本文",
+      "nonNameMatches": [
+        {
+          "dimension": "death-year",
+          "wikidataProperty": "P570",
+          "comparedValue": 1615,
+          "sourceId": "sanadaMuseumFamilyIdentity",
+          "match": "資料の西暦年表記と原JSONの年が一致。月日・暦換算は同定対象外。"
+        },
+        {
+          "dimension": "father",
+          "wikidataProperty": "P22",
+          "comparedValue": "Q1144171",
+          "sourceId": "sanadaMuseumFamilyIdentity",
+          "match": "本文の父・真田昌幸と一致。父QIDの姓名は同じバッチの固定改訂原JSONで確認。",
+          "labelSourceUrl": "https://www.wikidata.org/w/index.php?title=Q1144171&oldid=2541889328",
+          "labelSourceSnapshot": "data/research/source-notes/person-authority-next-twelve/Q1144171-revision-2541889328.json"
+        }
+      ],
+      "unresolvedComparisons": [
+        {
+          "dimension": "birth-year",
+          "wikidataValue": 1567,
+          "sourceId": "sanadaMuseumFamilyIdentity",
+          "sourceValue": "1567？年生／1567年ごろ",
+          "decision": "公的資料が確定を留保。生年を採用せず、没年と父の組合せで同定する。"
+        }
+      ],
+      "additionalAuthorityIdsNotAdopted": [
+        {
+          "scheme": "ndlna",
+          "id": "00624414",
+          "reason": "原WikidataのP349参照値。NDL原典を今回照合していないため外部典拠IDとしては未採用。"
+        }
+      ],
+      "scope": "人物の同定のみ。原JSONの暦モデル・精度を保持し、生没日・所属・所在の史実命題へ転用しない。"
+    },
+    {
+      "name": "真田昌幸",
+      "wikidataId": "Q1144171",
+      "wikidataRevision": 2541889328,
+      "wikidataJapaneseLabel": "真田昌幸",
+      "entityDataUrl": "https://www.wikidata.org/wiki/Special:EntityData/Q1144171.json?revision=2541889328",
+      "revisionUrl": "https://www.wikidata.org/w/index.php?title=Q1144171&oldid=2541889328",
+      "retrievedAt": "2026-11-07T10:14:21.093299+00:00",
+      "rawEntityDataSnapshot": "data/research/source-notes/person-authority-next-twelve/Q1144171-revision-2541889328.json",
+      "rawSha256": "c425c93a2f4c99cd41c90e455649fcc4c11ad20c8c5c7a494601868578873346",
+      "identityChecks": [
+        "birth-year: 1547。資料の西暦年表記と原JSONの年が一致。月日・暦換算は同定対象外。",
+        "death-year: 1611。資料の西暦年表記と原JSONの年が一致。月日・暦換算は同定対象外。"
+      ],
+      "identitySourceUrl": "https://www.sanadahoumotsukan.com/sanadake.php",
+      "identitySourceIds": [
+        "sanadaMuseumFamilyIdentity"
+      ],
+      "identitySourceLocator": "「真田昌幸」「真田信繁（幸村）」見出しと各本文",
+      "nonNameMatches": [
+        {
+          "dimension": "birth-year",
+          "wikidataProperty": "P569",
+          "comparedValue": 1547,
+          "sourceId": "sanadaMuseumFamilyIdentity",
+          "match": "資料の西暦年表記と原JSONの年が一致。月日・暦換算は同定対象外。"
+        },
+        {
+          "dimension": "death-year",
+          "wikidataProperty": "P570",
+          "comparedValue": 1611,
+          "sourceId": "sanadaMuseumFamilyIdentity",
+          "match": "資料の西暦年表記と原JSONの年が一致。月日・暦換算は同定対象外。"
+        }
+      ],
+      "unresolvedComparisons": [],
+      "additionalAuthorityIdsNotAdopted": [
+        {
+          "scheme": "ndlna",
+          "id": "00651984",
+          "reason": "原WikidataのP349参照値。NDL原典を今回照合していないため外部典拠IDとしては未採用。"
+        }
+      ],
+      "scope": "人物の同定のみ。原JSONの暦モデル・精度を保持し、生没日・所属・所在の史実命題へ転用しない。"
+    },
+    {
+      "name": "福島正則",
+      "wikidataId": "Q1194995",
+      "wikidataRevision": 2556900076,
+      "wikidataJapaneseLabel": "福島正則",
+      "entityDataUrl": "https://www.wikidata.org/wiki/Special:EntityData/Q1194995.json?revision=2556900076",
+      "revisionUrl": "https://www.wikidata.org/w/index.php?title=Q1194995&oldid=2556900076",
+      "retrievedAt": "2026-11-07T10:14:23.610146+00:00",
+      "rawEntityDataSnapshot": "data/research/source-notes/person-authority-next-twelve/Q1194995-revision-2556900076.json",
+      "rawSha256": "62cd960f8c4cad56034b485677fe28e88bc7f9bfcd90be18d508c05e954ebf29",
+      "identityChecks": [
+        "birth-year: 1561。資料の西暦年表記と原JSONの年が一致。月日・暦換算は同定対象外。",
+        "death-year: 1624。資料の西暦年表記と原JSONの年が一致。月日・暦換算は同定対象外。"
+      ],
+      "identitySourceUrl": "https://www.city.hiroshima.lg.jp/tourism-culture/history/1026883/1026891/1038090/1030815.html",
+      "identitySourceIds": [
+        "hiroshimaFukushimaIdentity"
+      ],
+      "identitySourceLocator": "「（1）福島正則（1561年〜1624年）とは」",
+      "nonNameMatches": [
+        {
+          "dimension": "birth-year",
+          "wikidataProperty": "P569",
+          "comparedValue": 1561,
+          "sourceId": "hiroshimaFukushimaIdentity",
+          "match": "資料の西暦年表記と原JSONの年が一致。月日・暦換算は同定対象外。"
+        },
+        {
+          "dimension": "death-year",
+          "wikidataProperty": "P570",
+          "comparedValue": 1624,
+          "sourceId": "hiroshimaFukushimaIdentity",
+          "match": "資料の西暦年表記と原JSONの年が一致。月日・暦換算は同定対象外。"
+        }
+      ],
+      "unresolvedComparisons": [],
+      "additionalAuthorityIdsNotAdopted": [
+        {
+          "scheme": "ndlna",
+          "id": "00626332",
+          "reason": "原WikidataのP349参照値。NDL原典を今回照合していないため外部典拠IDとしては未採用。"
+        }
+      ],
+      "scope": "人物の同定のみ。原JSONの暦モデル・精度を保持し、生没日・所属・所在の史実命題へ転用しない。"
+    },
+    {
+      "name": "酒井忠次",
+      "wikidataId": "Q1132756",
+      "wikidataRevision": 2541103126,
+      "wikidataJapaneseLabel": "酒井忠次",
+      "entityDataUrl": "https://www.wikidata.org/wiki/Special:EntityData/Q1132756.json?revision=2541103126",
+      "revisionUrl": "https://www.wikidata.org/w/index.php?title=Q1132756&oldid=2541103126",
+      "retrievedAt": "2026-11-07T10:14:25.499118+00:00",
+      "rawEntityDataSnapshot": "data/research/source-notes/person-authority-next-twelve/Q1132756-revision-2541103126.json",
+      "rawSha256": "7d4e7bc7a5f0f7b8ebdf5f20e4d1a0d07c588bfe3e2da3e78b9f42217e0b5456",
+      "identityChecks": [
+        "birth-year: 1527。資料の西暦年表記と原JSONの年が一致。月日・暦換算は同定対象外。",
+        "death-year: 1596。資料の西暦年表記と原JSONの年が一致。月日・暦換算は同定対象外。"
+      ],
+      "identitySourceUrl": "https://online.bunka.go.jp/heritages/detail/104981",
+      "identitySourceIds": [
+        "chidoSakaiTadatsuguIdentity"
+      ],
+      "identitySourceLocator": "概要、作者「酒井忠次」欄1527年〜1596年",
+      "nonNameMatches": [
+        {
+          "dimension": "birth-year",
+          "wikidataProperty": "P569",
+          "comparedValue": 1527,
+          "sourceId": "chidoSakaiTadatsuguIdentity",
+          "match": "資料の西暦年表記と原JSONの年が一致。月日・暦換算は同定対象外。"
+        },
+        {
+          "dimension": "death-year",
+          "wikidataProperty": "P570",
+          "comparedValue": 1596,
+          "sourceId": "chidoSakaiTadatsuguIdentity",
+          "match": "資料の西暦年表記と原JSONの年が一致。月日・暦換算は同定対象外。"
+        }
+      ],
+      "unresolvedComparisons": [],
+      "additionalAuthorityIdsNotAdopted": [],
+      "scope": "人物の同定のみ。原JSONの暦モデル・精度を保持し、生没日・所属・所在の史実命題へ転用しない。"
+    }
+  ]
+}

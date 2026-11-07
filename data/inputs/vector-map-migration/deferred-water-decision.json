@@ -1,0 +1,371 @@
+{
+  "status": "implementation-input-candidate-not-applied",
+  "created": "2026-11-07",
+  "source": {
+    "path": "/tmp/kuniezu-era-surfaces-reviewed-candidate/water.geojson",
+    "sha256": "5d8295fd4b67df28fedf4e82c2a76c4d86f8aed39725cffc5783631edc97b1bf"
+  },
+  "auditSource": {
+    "path": "/tmp/kuniezu-codh-postperiod-waters.json",
+    "sha256": "3cdcb169245c62f6c83b505600098aecaedfa3edc972bc65a196b53ecae06b19"
+  },
+  "selection": "exact top-level feature IDs; do not apply by numeric property id or geographic name alone",
+  "deferred": [
+    {
+      "featureId": "water:codh-lake:32",
+      "sourceRowId": 32,
+      "sourceAttributesId": "04001",
+      "name": "内町溜池",
+      "action": "defer-current-large-pond-outline",
+      "blockedInterval": {
+        "fromInclusive": [
+          1560,
+          1,
+          1
+        ],
+        "untilExclusive": [
+          1616,
+          1,
+          1
+        ]
+      },
+      "confidence": "secondary-encyclopedia-corrobates-source-remark; original-document-unread",
+      "classification": "postperiod-construction-secondary-supported",
+      "reason": "1685築堤はCODHと歴史地名体系で一致。公的現代記録は所在地のみ確認。前身自然水域は未確認。",
+      "sourceFeatureCanonicalSha256": "7283d8a1a5bed4173fd00659f1077234209cce8d5df92f9ca3c9e84b95516480",
+      "originalGeometryCanonicalSha256": "9d0c57d2adf7b86ccc7de6a12bb842fdddca59c47c08accd85424f2703a79790",
+      "originalAttributesCanonicalSha256": "61a786058b5a76d085990475fe7dbc3667b9edeccdd2f6ae434a4c1b9e3653e8",
+      "evidence": [
+        {
+          "evidenceId": "uchimachi-secondary",
+          "url": "https://kotobank.jp/word/内町溜池-3024462",
+          "publisher": "平凡社 日本歴史地名大系（コトバンク公開）",
+          "title": "内町溜池",
+          "locator": "宮城県角田市尾山、築造の段落",
+          "level": "secondary-encyclopedia",
+          "read": true,
+          "supports": "1685年築造と尾山の同定。CODH remarksと一致。",
+          "precision": "year",
+          "doesNotSupport": "行政側原帳の実見や、築造以前の自然水域の有無。"
+        },
+        {
+          "evidenceId": "uchimachi-city",
+          "url": "https://www.city.kakuda.lg.jp/soshiki/13/12433.html",
+          "publisher": "角田市",
+          "title": "農村地域防災減災事業の採択決定について",
+          "locator": "内町上・下ため池概要",
+          "level": "public-administration-current-record",
+          "read": true,
+          "supports": "角田市南東部の親子ため池である現代の同定。",
+          "precision": "current-only",
+          "doesNotSupport": "1685年築造の検証。"
+        }
+      ],
+      "predecessorReconstruction": "none; no new geometry supplied",
+      "backgroundMeaning": "coarse-unidentified-game-background; not demonstrated dry land; not a RAG historical proposition"
+    },
+    {
+      "featureId": "water:codh-lake:456",
+      "sourceRowId": 456,
+      "sourceAttributesId": "28006",
+      "name": "安政池",
+      "action": "defer-current-large-pond-outline",
+      "blockedInterval": {
+        "fromInclusive": [
+          1560,
+          1,
+          1
+        ],
+        "untilExclusive": [
+          1616,
+          1,
+          1
+        ]
+      },
+      "confidence": "institutional-history-republication-citing-account-book-and-inscription; originals-unread",
+      "classification": "postperiod-construction-supported",
+      "reason": "1856–1858安政池の建設を確認。候補は135.007付近で松沢側、鴨川ダム本体というremarksは誤同定疑い。先在奥池を同時消去しない。",
+      "sourceFeatureCanonicalSha256": "d72e7b4e1476658014a350b92a14e517e6048e3756e0385fcbe4f91e008875ff",
+      "originalGeometryCanonicalSha256": "3aa6c51fc6663e870ef11636555f6b62b6cbb4518b51d12614f50853bb68df02",
+      "originalAttributesCanonicalSha256": "49456208d34ed3031663bc57b9eb93ba55d6a746501ffa5798fdbbe7ae537886",
+      "evidence": [
+        {
+          "evidenceId": "hyogo-summary",
+          "url": "https://web.pref.hyogo.lg.jp/nhk08/toujyougawasosui/documents/03_07.pdf",
+          "publisher": "兵庫県",
+          "title": "東条川疏水 ダム＆池",
+          "locator": "PDF 1頁「安政池」本文（抽出時は見出しの列順に注意）",
+          "level": "public-administration-history-summary",
+          "read": true,
+          "supports": "旧安政池は江戸期。1958–1963は堤防嵩上げ、鴨川ダムの補助水源であり鴨川ダム本体とは別。",
+          "precision": "era; expansion year range",
+          "doesNotSupport": "江戸初期の1615以前を直接否定できる創始年月。"
+        },
+        {
+          "evidenceId": "hyogo-history",
+          "url": "https://www.hyogo-tameike.com/activity/2418/",
+          "publisher": "ひょうごため池保全県民運動",
+          "title": "安政池（兵庫のため池誌1984年の加筆転載）",
+          "locator": "(1)所在地、(4)築造の経緯、(5)碑、(6)安政ダム",
+          "level": "institutional-republication-with-original-document-citations",
+          "read": true,
+          "supports": "松沢大深谷、1856年着手・1858年完成。原帳と1859年建立碑の紹介。旧奥池を前身として区別。",
+          "precision": "year; reported original lunar month/day not normalized",
+          "doesNotSupport": "原帳・原碑の直接実見。本文の寛永/嘉永の誤植は採用しない。"
+        }
+      ],
+      "predecessorReconstruction": "none; no new geometry supplied",
+      "backgroundMeaning": "coarse-unidentified-game-background; not demonstrated dry land; not a RAG historical proposition"
+    },
+    {
+      "featureId": "water:codh-lake:517",
+      "sourceRowId": 517,
+      "sourceAttributesId": "37006",
+      "name": "公淵池",
+      "action": "defer-current-large-pond-outline",
+      "blockedInterval": {
+        "fromInclusive": [
+          1560,
+          1,
+          1
+        ],
+        "untilExclusive": [
+          1616,
+          1,
+          1
+        ]
+      },
+      "confidence": "public-prefectural-history-explicit-construction",
+      "classification": "postperiod-construction-confirmed-public",
+      "reason": "県資料は1863新造と1933拡張を区別。小さく復元した旧輪郭も戦国期にはできない。",
+      "sourceFeatureCanonicalSha256": "fc37c0801c85bfafc4b50d139257c6daa9ae28ef4a9921b66aa53cbd0d255168",
+      "originalGeometryCanonicalSha256": "7d1f2ba0cee42d1dae31ddbf9a23c51be6da5b94acba7c05fbcb7c9d2dc3c374",
+      "originalAttributesCanonicalSha256": "bb3f94e612330dd12f19483b66185355bc18f6ee16380b2265904b8acb644952",
+      "evidence": [
+        {
+          "evidenceId": "kagawa-kinbuchi",
+          "url": "https://www.pref.kagawa.lg.jp/documents/37437/68.pdf",
+          "publisher": "香川県",
+          "title": "公渕池",
+          "locator": "PDF 1頁 本文第1・2段落",
+          "level": "public-administration-history-summary",
+          "read": true,
+          "supports": "1862年4月着工・1863年9月完成。1930–1933年はその後の拡張。周辺先行池と公渕池の新造を区別。",
+          "precision": "month",
+          "doesNotSupport": "新造前の谷全体が完全な乾燥陸だったという細部や前身水域の厳密輪郭。"
+        }
+      ],
+      "predecessorReconstruction": "none; no new geometry supplied",
+      "backgroundMeaning": "coarse-unidentified-game-background; not demonstrated dry land; not a RAG historical proposition"
+    },
+    {
+      "featureId": "water:codh-lake:518",
+      "sourceRowId": 518,
+      "sourceAttributesId": "37015",
+      "name": "奈良須池",
+      "action": "defer-current-large-pond-outline",
+      "blockedInterval": {
+        "fromInclusive": [
+          1560,
+          1,
+          1
+        ],
+        "untilExclusive": [
+          1616,
+          1,
+          1
+        ]
+      },
+      "confidence": "public-library-hosted-secondary-history; predecessor-four-ponds-explicit",
+      "classification": "postperiod-enlargement-with-predecessor-ponds",
+      "reason": "1670大池成立以前に4小池があったと郷土資料に記載。全域を水/陸のどちらかと断定不可。",
+      "sourceFeatureCanonicalSha256": "92c8b35165b12dc804c13147261c886039d38251da5adcd4cbcf5dba0bd90e54",
+      "originalGeometryCanonicalSha256": "71d8dfdb73495314e744f863943a4d62416584145a56988f05752ef0f8e6c3c0",
+      "originalAttributesCanonicalSha256": "ae6251519c3de19f03eef773323f170d8425390b82cb8d659ec9efb7589fc1e0",
+      "evidence": [
+        {
+          "evidenceId": "kagawa-library",
+          "url": "https://www.library.pref.kagawa.lg.jp/know/local/local_0005-23",
+          "publisher": "香川県立図書館（底本 香川県図書館協会）",
+          "title": "讃岐ものしり事典 農業（1982年底本の公開翻刻）",
+          "locator": "奈良須池・竜満池・衣掛池の各項目",
+          "level": "public-library-hosted-secondary-local-history",
+          "read": true,
+          "supports": "奈良須池1670年完成と前身4小池。竜満池1627年築造の伝承。衣掛池は碑に基づく寛永期築造という紹介。",
+          "precision": "year-or-era; original-text-era-AD-inconsistency",
+          "doesNotSupport": "原碑・原文書の直接実見や、前身各池の1560年時点の形。衣掛項目は寛永3–13年と西暦1627–1637の換算にずれがあり厳密年は未確定。"
+        }
+      ],
+      "predecessorReconstruction": "none; no new geometry supplied",
+      "backgroundMeaning": "coarse-unidentified-game-background; not demonstrated dry land; not a RAG historical proposition"
+    },
+    {
+      "featureId": "water:codh-lake:523",
+      "sourceRowId": 523,
+      "sourceAttributesId": "37048",
+      "name": "竜満池",
+      "action": "defer-current-large-pond-outline",
+      "blockedInterval": {
+        "fromInclusive": [
+          1560,
+          1,
+          1
+        ],
+        "untilExclusive": [
+          1616,
+          1,
+          1
+        ]
+      },
+      "confidence": "public-library-hosted-secondary-history; construction-tradition",
+      "classification": "postperiod-construction-tradition",
+      "reason": "郷土事典では1627築造と伝える。伝承の精度で保持し一次確定日と扱わない。",
+      "sourceFeatureCanonicalSha256": "28029bbc9cefb54c3dea43b2c7ac94831fd3c614a2b9dae5d03a45e8cb92acfb",
+      "originalGeometryCanonicalSha256": "36c6bbda0a63883bb043ee03f8e9d54cd2d875f3a85b0be3fcd67dd44ae24ad9",
+      "originalAttributesCanonicalSha256": "09a9ffb96eabf2d4d91e897a3cef8327ab3bbd196c0bba5261104fcd642d3bfc",
+      "evidence": [
+        {
+          "evidenceId": "kagawa-library",
+          "url": "https://www.library.pref.kagawa.lg.jp/know/local/local_0005-23",
+          "publisher": "香川県立図書館（底本 香川県図書館協会）",
+          "title": "讃岐ものしり事典 農業（1982年底本の公開翻刻）",
+          "locator": "奈良須池・竜満池・衣掛池の各項目",
+          "level": "public-library-hosted-secondary-local-history",
+          "read": true,
+          "supports": "奈良須池1670年完成と前身4小池。竜満池1627年築造の伝承。衣掛池は碑に基づく寛永期築造という紹介。",
+          "precision": "year-or-era; original-text-era-AD-inconsistency",
+          "doesNotSupport": "原碑・原文書の直接実見や、前身各池の1560年時点の形。衣掛項目は寛永3–13年と西暦1627–1637の換算にずれがあり厳密年は未確定。"
+        }
+      ],
+      "predecessorReconstruction": "none; no new geometry supplied",
+      "backgroundMeaning": "coarse-unidentified-game-background; not demonstrated dry land; not a RAG historical proposition"
+    },
+    {
+      "featureId": "water:codh-lake:524",
+      "sourceRowId": 524,
+      "sourceAttributesId": "37052",
+      "name": "衣懸池",
+      "action": "defer-current-large-pond-outline",
+      "blockedInterval": {
+        "fromInclusive": [
+          1560,
+          1,
+          1
+        ],
+        "untilExclusive": [
+          1616,
+          1,
+          1
+        ]
+      },
+      "confidence": "public-library-hosted-secondary-history-citing-inscription; era-AD-conversion-inconsistent",
+      "classification": "postperiod-construction-secondary-supported",
+      "reason": "碑に基づく寛永期築造という紹介。年号換算に不一致があり年を確定しない。",
+      "sourceFeatureCanonicalSha256": "12314a55764f6763be7debe930f7d68a67935a2f987ccea2eb9b7cd610af1469",
+      "originalGeometryCanonicalSha256": "820643ffda9ff458358ec6ee9a06dc340e6f6ab336c367ab3bf20c8539cd2532",
+      "originalAttributesCanonicalSha256": "a373ebc66ee8c40c80e7806db2cb3b29942430f10005b7baf6dd0db031f02659",
+      "evidence": [
+        {
+          "evidenceId": "kagawa-library",
+          "url": "https://www.library.pref.kagawa.lg.jp/know/local/local_0005-23",
+          "publisher": "香川県立図書館（底本 香川県図書館協会）",
+          "title": "讃岐ものしり事典 農業（1982年底本の公開翻刻）",
+          "locator": "奈良須池・竜満池・衣掛池の各項目",
+          "level": "public-library-hosted-secondary-local-history",
+          "read": true,
+          "supports": "奈良須池1670年完成と前身4小池。竜満池1627年築造の伝承。衣掛池は碑に基づく寛永期築造という紹介。",
+          "precision": "year-or-era; original-text-era-AD-inconsistency",
+          "doesNotSupport": "原碑・原文書の直接実見や、前身各池の1560年時点の形。衣掛項目は寛永3–13年と西暦1627–1637の換算にずれがあり厳密年は未確定。"
+        }
+      ],
+      "predecessorReconstruction": "none; no new geometry supplied",
+      "backgroundMeaning": "coarse-unidentified-game-background; not demonstrated dry land; not a RAG historical proposition"
+    },
+    {
+      "featureId": "water:codh-lake:528",
+      "sourceRowId": 528,
+      "sourceAttributesId": "37107",
+      "name": "千歳池",
+      "action": "defer-current-large-pond-outline",
+      "blockedInterval": {
+        "fromInclusive": [
+          1560,
+          1,
+          1
+        ],
+        "untilExclusive": [
+          1616,
+          1,
+          1
+        ]
+      },
+      "confidence": "secondary-encyclopedia; primary-construction-record-unread",
+      "classification": "postperiod-construction-secondary-supported",
+      "reason": "1941併合の記載だけでは成立を判断不可。地名辞典は1675新造。公的一次創始年は未確認。",
+      "sourceFeatureCanonicalSha256": "36be935f8052839f15e43013cd5fdc55aad1da2aae8a6b4828d0ce65d86b62a4",
+      "originalGeometryCanonicalSha256": "92f312caa69f00d55d22e25da2ac791ccbb01572e1ac48385adc7aa6972b0ac9",
+      "originalAttributesCanonicalSha256": "e551b11fb9d40d05726a69094465fbd9f1c2ae1d1791d24211a5f03d23d68530",
+      "evidence": [
+        {
+          "evidenceId": "chitose-secondary",
+          "url": "https://jlogos.com/ausp/word.html?id=7429201",
+          "publisher": "角川日本地名大辞典（JLogos公開）",
+          "title": "大野原",
+          "locator": "開墾・ため池の段落",
+          "level": "secondary-encyclopedia",
+          "read": true,
+          "supports": "千歳池は延宝3（1675）築造という記載。",
+          "precision": "year",
+          "doesNotSupport": "行政原典・前身青葉池の創始や候補輪郭との厳密対応。"
+        }
+      ],
+      "predecessorReconstruction": "none; no new geometry supplied",
+      "backgroundMeaning": "coarse-unidentified-game-background; not demonstrated dry land; not a RAG historical proposition"
+    }
+  ],
+  "uncertainReferenceOnly": [
+    {
+      "featureId": "water:codh-lake:57",
+      "sourceRowId": 57,
+      "name": "上堰潟",
+      "action": "no-removal-authorized-by-this-packet",
+      "reason": "Founding era is unconfirmed. Modern drainage and excavation alone do not establish absence in 1560. CODH Meiji-origin wording is tentative, not verified.",
+      "originalFeatureCanonicalSha256": "838941849343aefda2d49c4df6e3ff9665916ae8486218ed1d5df9e0dd1188bb",
+      "evidence": [
+        {
+          "evidenceId": "uwaseki-guide",
+          "url": "https://www.niigata-satokata.com/wp-content/uploads/guide_uwaseki2023.pdf",
+          "publisher": "新潟市里潟研究ネットワーク掲載",
+          "title": "上堰潟・仁箇堤ガイドブック 改訂版2023年3月",
+          "locator": "p1概要、p17聞き取り（PDF頁index1/17）",
+          "level": "institutional-guide-local-investigation",
+          "read": true,
+          "supports": "既往の潟が乾燥後、1990年代に掘削して人工的に復元されたこと。",
+          "precision": "decade",
+          "doesNotSupport": "CODH remarksの明治初期創始という推測の確認。現代復元を古い潟の初成立と取り違えない。"
+        },
+        {
+          "evidenceId": "uwaseki-city",
+          "url": "https://www.city.niigata.lg.jp/kurashi/kankyo/kataken/kataken_kankoubutsu.files/27nobuo_inoue.pdf",
+          "publisher": "新潟市潟環境研究所",
+          "title": "上堰潟の魚類相調査報告",
+          "locator": "冊子p45（PDF1頁）はじめに",
+          "level": "municipal-research-report",
+          "read": true,
+          "supports": "1950年代の潟、1965–1975排水・乾燥、その後の遊水地化という相の区別。",
+          "precision": "decade",
+          "doesNotSupport": "江戸以前の初成立の時期。"
+        }
+      ]
+    }
+  ],
+  "applicationContract": [
+    "This packet supplies no land or shore replacement geometry. Root must edit water, land and shore consistently after natural17 additions.",
+    "No polygonization, simplification, interpolation, unions or coordinate edits occurred here.",
+    "Preserved original validFrom1560 in deferred-waters.geojson is rejected for activation by these decisions; never load the quarantine collection as active water.",
+    "Predecessor four ponds at Narasu and Oku pond at Ansei remain historically possible; their locations/shape/time are not reconstructed.",
+    "Any coarse background used after deferral is unspecified game presentation, not confirmed dry land, and must not become a RAG historical fact.",
+    "Confidence labels distinguish explicit administrative history, institutional secondary transcription, traditions, and uninspected original records.",
+    "Upstream natural17 changes must preserve these IDs or explicitly map them; do not silently match changed geometry by name."
+  ]
+}

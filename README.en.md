@@ -14,12 +14,18 @@ is [docs/README.md](docs/README.md); open requests and ownership are in
 
 ## Features and limitations
 
-- A vector-map migration using CODH coast, lake, road and post datasets is in progress.
-  [Reference inputs and preparation](data/inputs/codh-edo/README.md) are retained;
-  the game has not switched to vector rendering yet.
+- Land, water and shorelines are rendered as vectors from edited GeoJSON.
+  [CODH inputs and preparation](data/inputs/codh-edo/README.md) distinguish
+  Edo-period comparison shapes from adopted period corrections. Ownership colours
+  and relief remain image layers.
 - Edited GeoJSON will be the directly maintained source of truth. Rendering reads
   the files for the selected period. CODH originals remain available for comparison,
   and normal builds will not overwrite the edited source data.
+- Edited land, water and shoreline sources are stored in
+  `kuniezu/map/physical/{land,water,coastline}.geojson` with an
+  [adoption record](data/inputs/vector-map-migration/README.md) and period checks.
+  The game reads the same canonical sources. Use `--canonical kuniezu/map/physical
+  --at 1584-01-01` in the comparison viewer to inspect a period.
 - `uv run python tools/geo/codh_topology.py --output /tmp/codh-surfaces-new`
   prepares valid reference surfaces and combined land/lake geometry using a
   linework method that retains source edges and coordinate positions. Collapsed
@@ -30,7 +36,7 @@ is [docs/README.md](docs/README.md); open requests and ownership are in
 - The viewer also accepts `--canonical <directory>` to read edited
   `land.geojson` and `water.geojson`. The shared renderer preserves holes and
   periods for drawing and hit testing, without runtime geometry corrections.
-  Switching the game itself requires separate verification.
+  Game boot, interaction and source failures have separate browser checks.
 - `uv run python tools/geo/codh_preview.py --output /tmp/codh-preview-new`
   generates a standalone Edo-period vector viewer. Open its `index.html` directly
   to inspect Kanto and Kojima Bay, pan, zoom and toggle layers. It does not alter
@@ -47,6 +53,8 @@ is [docs/README.md](docs/README.md); open requests and ownership are in
   marches along historical roads, and battle deployments and movements, each with
   its source.
 - Battle markers retain their geographic positions when the viewport or district changes. Co-located units can be selected individually.
+- Wide battles show individual counters and portraits in the overview, with nearby
+  commander labels in district views. Narrow screens use a single-row district selector.
 - File exports, save slots and autosaves preserve sub-day time so marching units
   resume at the saved position.
 - Diplomacy is shown as borders only; marches are shown as pieces on roads.
@@ -62,6 +70,9 @@ is [docs/README.md](docs/README.md); open requests and ownership are in
   sections include modern roads and tunnels; they are not an exact sixteenth-century
   centerline. See the [inputs and regeneration](data/inputs/sanshu-road-review/README.md)
   (Japanese).
+- Kennyo, Niwa Nagashige, Shima Sakon, Saito Yoshitatsu and Ashikaga Yoshiteru use
+  the same reviewed portrait crops while originals load or fail. Depictions include
+  later artwork. See [asset regeneration and checks](docs/reports/PORTRAIT_FALLBACK_CROPS.md) (Japanese).
 - Late elevation, river and boundary loads refresh the map while the camera stays still.
 - Dated events without a known related place remain searchable by their subject.
   Locations are not invented, and Edo-period reclamation records are kept separate
