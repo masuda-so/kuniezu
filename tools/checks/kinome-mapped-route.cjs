@@ -1,15 +1,16 @@
+const {legacyRoad,canonicalView,hasProjectedPoint}=require('./fixtures/road-inputs.cjs');
 const fs=require('node:fs'),assert=require('node:assert/strict'),{G,TK}=require('./history-focus.cjs').model();
 const input=JSON.parse(fs.readFileSync('data/inputs/hokurikudo-review/accepted-whole-reference.json'));
 const before=JSON.parse(fs.readFileSync('data/inputs/hokurikudo-review/before-modern-reference.json'));
-assert.deepEqual(Array.from(TK.MODERN_ROAD_REFERENCE['北陸道'],p=>Array.from(p)),input.points);
+assert.deepEqual(legacyRoad('北陸道'),input.points);
 assert.deepEqual(input.points[0],before.points[0]);assert.deepEqual(input.points.at(-1),before.points.at(-1));
 assert.ok(input.joinMetres.every(n=>n<25));
 G.newGame('s1560','oda');
 const section=input.sections.find(s=>s.kind==='published-map-corridor'),road=TK.roadDisplay(G.ROADS.find(r=>r.name==='北陸道'));
-assert.ok(road.evidence.sources.includes('kinomeBunkaMap'));
+canonicalView('北陸道',road,G.PJ);assert.ok(road.evidence.sources.includes('kinomeBunkaMap'));
 assert.ok((road.referenceCleanup?.excursions||[]).every(c=>c.last<section.first||c.first>section.last),'published pass hairpins must remain intact');
-const keys=new Set(road.pts.map(p=>p.join(',')));
-for(const p of input.points.slice(section.first,section.last+1))assert.ok(keys.has(G.PJ(...p).join(',')));
+
+for(const p of input.points.slice(section.first,section.last+1))assert.ok(hasProjectedPoint(road.pts,G.PJ(...p)));
 const [x,y]=G.PJ(...input.imaJoSharedPoint),nodes=G.DISPLAY_RNET;
 const local=new Set(nodes.map((n,i)=>Math.hypot(n.x-x,n.y-y)<1?i:-1).filter(i=>i>=0));
 const nearest=name=>[...local].filter(i=>nodes[i].roads.has(name)).sort((a,b)=>Math.hypot(nodes[a].x-x,nodes[a].y-y)-Math.hypot(nodes[b].x-x,nodes[b].y-y))[0];

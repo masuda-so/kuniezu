@@ -1,0 +1,16 @@
+{
+  "taskId": "request-449c824eeb0b",
+  "owner": "codex-root",
+  "files": [
+    "kuniezu/map/physical/roads-reference.geojson",
+    "kuniezu/static/kuniezu/vector-assets.js",
+    "kuniezu/static/kuniezu/road-source.js",
+    "kuniezu/static/kuniezu/vector-ui.js",
+    "tools/geo/prepare-road-vectors.cjs",
+    "tools/checks/road-vectors.cjs",
+    "tools/checks/road-vectors-browser.cjs",
+    "data/inputs/road-vector-migration",
+    "tools/checks/road-vector-loading.cjs"
+  ],
+  "claimedAt": "2026-11-08T12:00:28.658Z"
+}

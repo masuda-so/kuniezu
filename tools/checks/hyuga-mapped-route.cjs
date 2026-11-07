@@ -1,16 +1,17 @@
+const {legacyRoad,canonicalView,hasProjectedPoint}=require('./fixtures/road-inputs.cjs');
 const fs=require('node:fs'),assert=require('node:assert/strict'),{G,TK}=require('./history-focus.cjs').model();
 const input=JSON.parse(fs.readFileSync('data/inputs/hyuga-road-review/accepted-whole-reference.json'));
 const old=JSON.parse(fs.readFileSync('data/inputs/hyuga-road-review/before-modern-reference.json'));
-assert.deepEqual(Array.from(TK.MODERN_ROAD_REFERENCE['日向街道'],p=>Array.from(p)),input.points);
+assert.deepEqual(legacyRoad('日向街道'),input.points);
 assert.deepEqual(input.points[0],old.points[0]);assert.deepEqual(input.points.at(-1),old.points.at(-1));
 assert.ok(input.joinMetres.every(d=>d<25));
 const section=input.segments.find(s=>s.kind==='official-map-segment');assert.ok(section.last-section.first>500);
 G.newGame('s1560','oda');
 const road=TK.roadDisplay(G.ROADS.find(r=>r.name==='日向街道'));
-assert.ok(road.evidence.sources.includes('hyugaMikuniMap'));
+canonicalView('日向街道',road,G.PJ);assert.ok(road.evidence.sources.includes('hyugaMikuniMap'));
 assert.ok((road.referenceCleanup?.excursions||[]).every(c=>c.last<section.first||c.first>section.last),'source-map hairpins must not be removed as modern routing excursions');
-const drawn=new Set(road.pts.map(p=>p.join(',')));
-for(const point of input.points.slice(section.first,section.last+1))assert.ok(drawn.has(G.PJ(...point).join(',')),'every adopted source-map point remains in the displayed line');
+
+for(const point of input.points.slice(section.first,section.last+1))assert.ok(hasProjectedPoint(road.pts,G.PJ(...point)),'every adopted source-map point remains in the displayed line');
 const distances=[];
 for(const i of [section.first,Math.floor((section.first+section.last)/2),section.last]){
  const p=G.PJ(...input.points[i]);

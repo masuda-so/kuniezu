@@ -1,6 +1,6 @@
 # 構成と編集箇所
 
-ゲームはビルドを必要としない。ページ `kuniezu/templates/index.html` の `game-scripts` テンプレートが実際の依存順で、データ定義→史実訂正→地理と移動→表示という順に同じグローバルを拡張する。順序の変更はAPIの上書き関係を変えるため、ファイル名順へ並べ替えない。
+ページはDjangoが描き、地図の配信物は編集正本から生成する。ページ `kuniezu/templates/index.html` の `game-scripts` テンプレートが実際の依存順で、データ定義→史実訂正→地理と移動→表示という順に同じグローバルを拡張する。順序の変更はAPIの上書き関係を変えるため、ファイル名順へ並べ替えない。
 
 現行の読込順と担当分野の入口は [modules.json](modules.json)。生成候補は参照文字列からの抽出であり、手編集可能という判定ではない。
 
@@ -8,7 +8,8 @@
 - `engine.js` / `ui.js` / `index.html`：全分野の共通箇所。同時編集を避け、担当を調整する。
 - `movement-*` / `march-model` / `convoys`：連続時刻、道筋、隊の表示。`movementGeometryVersion` を変える場合は旧保存の移行も確認する。
 - `battle-deployments` / `battle-phases` / `battle-atlas`：史料上の布陣、段階移動、描画。現代地形と史実配置の根拠は別。
-- `tools/geo/` / `tools/faces/`：配信用データの生成元。生成物だけを直して次回生成で消さない。
+- `kuniezu/map/`：改変済みGeoJSONの編集正本。道路を含め通常ビルドでは無改変で複写する。
+- `tools/geo/` / `tools/faces/`：編集正本以外の配信用データの生成元。生成物だけを直して次回生成で消さない。
 - `data/research/claims.jsonl`：指定箇所で確認した一命題。ゲームのデータに名前があるだけでは追加しない。
 
 ゲーム内ファイルのURLは維持している。起動中サーバーの配信先を変えず、整理は文書・調査入力・検査出力で実施した。[path-migration.json](path-migration.json) に旧→新パスを記録している。
@@ -28,3 +29,7 @@
 入力の経緯度、ゲーム内平面、画面ピクセル、他地域追加時の扱いは [地理座標と画面座標](geographic-coordinates.md) を参照する。
 
 再編の計画（website と同じ Django の構成、地理院地図Vector の下図）は [replatform-plan.md](replatform-plan.md)。
+
+## 街道の読込
+
+`vector-assets.js`がmanifest・サイズ・SHA・CRSを共通検査し、`road-source.js`を明示ロードする。テンプレートは`data-ready="roads"`を待ってから後続を読み、`G.build()`の経路網構築前に経緯度の索引を用意する。投影は最初の参照時だけ行い、`TK.roadDisplay`を描画・行軍表示の共通入口とする。道路の補正・吸着・閉路除去は実行時に置かない。[移行入力と採否](../../data/inputs/road-vector-migration/README.md)

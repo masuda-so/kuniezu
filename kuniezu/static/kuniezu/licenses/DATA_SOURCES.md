@@ -69,7 +69,9 @@ https://geoshape.ex.nii.ac.jp/nrct-poi/
 
 ## 現代道路の比較形状
 
-`modern-road-reference.js` の道路形状は © OpenStreetMap contributors / ODbL 1.0。https://www.openstreetmap.org/copyright および https://opendatacommons.org/licenses/odbl/1-0/ を参照。派生道路データにも同じODbL 1.0を適用する。2026-11-01、FOSSGIS OSRMのrouted-bikeを使用し、既存の通過点順で82本を比較、過大な迂回や5km超の吸着を除外した78本を収録。形状の簡略化は `tools/geo/modern-road-reference.py`、取得と不採用の台帳は `data/audits/modern-road-reference-audit.json`。現代の橋・トンネルを含みうるため、史実未照合の線の描画用参考として使用し、行軍計算には使わない。
+`kuniezu/map/physical/roads-reference.geojson` は移行時に採用していた85路線の編集正本。日本の戦略地図用74路線と、海外の歴史文脈・合戦図用11路線を区別する。各地物の `geometrySources` と書誌台帳から出典を引く。OSM由来部分は © OpenStreetMap contributors / ODbL 1.0（https://www.openstreetmap.org/copyright 、https://opendatacommons.org/licenses/odbl/1-0/）。派生するOSM部分にも同じODbLを適用し、地理院・文化庁選定図の加工部分は下記の個別の帰属・利用条件を保持する。
+
+2026-11-01の初回比較はFOSSGIS OSRM routed-bikeで82本を照会し78本を収録した記録であり、現在の85採用路線と同じ母数ではない。元の取得・不採用記録は `data/audits/modern-road-reference-audit.json`、後続変更を含む移行直前の比較入力は `data/inputs/road-vector-migration/legacy-comparison-lines.json` に保持する。旧簡略化生成器はGitの9baa7286版で確認でき、通常ビルドやゲーム実行時には使わない。現代の橋・トンネルを含みうる比較形状で、表示用の行軍にも共通使用するが、史実の道路中心線や着陣日の確定根拠ではない。
 
 湖沼の比較輪郭は関東5湖に加え、河北潟・諏訪湖・余呉湖・宍道湖等の自然湖を含む18レコードへ拡張。原資料と利用条件は同じW09-05。干拓前の八郎潟等を2005年の面積へ縮める処理は行わない。
 
@@ -124,7 +126,7 @@ https://geoshape.ex.nii.ac.jp/nrct-poi/
 - 地名代表点：『江戸宿場データセット』（ROIS-DS人文学オープンデータ共同利用センター作成）、v1.1、doi:10.20676/00000477、CC BY 4.0。https://codh.rois.ac.jp/historical-gis/edo-post/ 。R505の18地点を比較用の通過地域に使用。江戸期の代表点を戦国期の宿駅成立・関所位置の証明には用いない。
 - 浪合〜稲武の物理的形状：国土地理院「道路中心線ベクトルタイル提供実験」を加工。https://github.com/gsi-cyberjapan/experimental_rdcl 。2026-11-07取得。現代の隧道を含む比較であり、16世紀の道路の存在・姿を確定しない。
 - 北側・稲武以南：© OpenStreetMap contributors / FOSSGIS OSRM、routed-foot、ODbL 1.0。全体に過大迂回がある照会結果から、審査した区間だけ採用。派生比較線を同じODbL 1.0で提供する。
-- 入力・採否・SHA：`data/inputs/sanshu-road-review/`、生成器：`tools/geo/sanshu-reference.py`。表示と表示用行軍の共通線。史実の着陣日は変更しない。
+- 入力・採否・SHA：`data/inputs/sanshu-road-review/`、現行の編集正本：`kuniezu/map/physical/roads-reference.geojson`。旧生成器はGitの9baa7286版に保持。表示と表示用行軍の共通線。史実の着陣日は変更しない。
 
 ## 確認済み肖像の代替画像（2026-11-07）
 

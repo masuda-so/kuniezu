@@ -51,3 +51,5 @@ MapLibre・GeoJSON・ベクタータイルの使い分けや正本の具体的�
 ## 本体の接続
 
 `vector-ui.js` は配信manifestと陸・水域・岸線・推定表示層のSHA/サイズを検査して一括採用する。`G.build()`で射影を構築後に生成し、テンプレートは `TKUI.ready` と初回描画を待つ。元の拒否を保持して取得失敗を再読込UIへ渡す。物理形状と推定表示、未知背景からの標高推論は分離する。実配信と失敗時の検査は `vector-game-browser.cjs`、記録は [本体報告](../reports/vector-game-renderer.md)。
+
+街道の現採用形状も`physical/roads-reference.geojson`へ固定し、共通loaderが`G.build()`より前の準備を保証する。通常ビルドは同じ無改変コピーを使う。これは既存の比較・概略線の正本移行であり、CODH47路線と戦国期の経路を全て区間照合したという意味ではない。[街道の保持入力](../../data/inputs/road-vector-migration/README.md)
