@@ -19,13 +19,13 @@ async function click(selector){const p=await ev(`(()=>{const el=document.querySe
 async function shot(name){const r=await call('Page.captureScreenshot',{format:'png'});fs.writeFileSync(path.join(OUT,name+'.png'),Buffer.from(r.data,'base64'));}
 async function view(width,height){await call('Emulation.setDeviceMetricsOverride',{width,height,deviceScaleFactor:1,mobile:width<820});await sleep(300);}
 async function load(){await call('Page.navigate',{url:URL});await until("!!document.querySelector('[data-act=new]')");}
-async function start(){await click('[data-act=new]');await click('[data-act=scen][data-id=s1560]');await click('[data-act=start]');await until("TKUI.modal==='intro'");}
+async function start(){await click('[data-act=new]');await click('[data-act=scen][data-id=s1560]');await click('#pick [data-act=pick].on');await until("TKUI.mode==='game'&&!TKUI.modal");}
 async function menu(){await click('#me [data-m=menu]');}
 const timer=setTimeout(()=>{console.error('timeout');chrome.kill();process.exitCode=1},160000);
 
 (async()=>{try{
  const target=await call('Target.createTarget',{url:'about:blank'},null);session=(await call('Target.attachToTarget',{targetId:target.targetId,flatten:true},null)).sessionId;await call('Runtime.enable');await call('Page.enable');
- await view(1400,950);await load();await start();await click('#modal [data-act=close]');
+ await view(1400,950);await load();await start();
  await until('!!window.TKRaster?.ready()');
  const controls=[['inner-west',140.56715012,35.93381863,'lake'],['inner-south',140.57229996,35.92937072,'lake'],['mouth',140.59169769,35.92339344,'lake'],['north-fringe',140.56629181,35.94285269,'land'],['protected-tongue',140.58345795,35.9282587,'land']];
  const rows=[];
