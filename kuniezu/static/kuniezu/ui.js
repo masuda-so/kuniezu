@@ -808,7 +808,7 @@ function tick(){
  if(S.prisonQ.length){S.prisonQ.length=0;G.prisoners(S.player).forEach(g=>G.release(g));}
  if(S.propQ.length&&!U.modal){openModal('prop');}
  if(S.battleQ&&S.battleQ.length&&!U.modal){const q=S.battleQ.shift();if(G.battleInfo(q.a,q.b))openModal('battle',{a:q.a,b:q.b});}
- while(S.sceneQ&&S.sceneQ.length&&!U.modal){const q=S.sceneQ[0],t=typeof q==='string'?q:q.title,b=TK.BATTLES?.[t];if(!b||!sceneWanted(b)){S.sceneQ.shift();continue;}if(!U.deploymentPreview||U.deploymentPreview.title!==t){TKBattleAtlas.preload(t).catch(()=>{});U.deploymentPreview={title:t,t:S.t,until:performance.now()+2400};U.previewSpeed=U.speed;U.speed=0;U.baseDirty=true;renderTop();return;}if(performance.now()<U.deploymentPreview.until)return;S.sceneQ.shift();U.speed=U.previewSpeed||0;openModal('scene',{title:t,triggerT:typeof q==='string'?S.t:q.t});break;}
+ while(S.sceneQ&&S.sceneQ.length&&!U.modal){const q=S.sceneQ[0],eventTitle=typeof q==='string'?q:q.title,t=G.sceneTitleForEvent?G.sceneTitleForEvent(eventTitle,typeof q==='string'?null:q.t):eventTitle,b=TK.BATTLES?.[t];if(!b||!sceneWanted(b)){S.sceneQ.shift();continue;}if(!U.deploymentPreview||U.deploymentPreview.title!==t){TKBattleAtlas.preload(t).catch(()=>{});U.deploymentPreview={title:t,t:S.t,until:performance.now()+2400};U.previewSpeed=U.speed;U.speed=0;U.baseDirty=true;renderTop();return;}if(performance.now()<U.deploymentPreview.until)return;S.sceneQ.shift();U.speed=U.previewSpeed||0;openModal('scene',{title:t,triggerT:typeof q==='string'?S.t:q.t});break;}
  if(S.observerQ?.length&&!U.modal)openModal('observer-branch');
  if(S.evQ&&S.evQ.length&&!U.modal){if(G.eventView())openModal('event');else S.evQ.shift();}
  if((S.over||S.unified)&&!U.ended){U.ended=true;setTimeout(()=>openModal('end'),900);}
