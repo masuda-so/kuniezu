@@ -27,6 +27,9 @@ is [docs/README.md](docs/README.md); open requests and ownership are in
   Castle falls without supported deployments remain timeline entries and historic sites.
 - Modern comparison terrain, estimates derived from sources and confirmed
   historical facts are kept apart. Unsupported text is not shown in the game.
+- Dated events without a known related place remain searchable by their subject.
+  Locations are not invented, and Edo-period reclamation records are kept separate
+  from evidence for Sengoku-period shorelines.
 - [Ten additional person identities](data/research/source-notes/person-authority-expansion.md)
   retain Wikidata revisions and identity checks. Dates and whereabouts are not
   imported as new historical claims.
