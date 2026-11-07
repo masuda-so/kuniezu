@@ -1,0 +1,62 @@
+{
+    "@context": "https://id.ndl.go.jp/auth/context.json",
+    "uri": "http://id.ndl.go.jp/auth/ndlna/00625175",
+    "primaryTopic": {
+        "uri": "http://id.ndl.go.jp/auth/entity/00625175",
+        "type": {
+            "uri": "http://xmlns.com/foaf/0.1/Person"
+        },
+        "name": "大友宗麟",
+        "dateOfBirth": "1530",
+        "dateOfDeath": "1587"
+    },
+    "type": {
+        "uri": "http://www.w3.org/2004/02/skos/core#Concept"
+    },
+    "modified": "2025-12-16T09:13:48",
+    "created": "2021-02-26",
+    "prefLabel": {
+        "literalForm": "大友, 宗麟, 1530-1587",
+        "transcription": "オオトモ, ソウリン, 1530-1587",
+        "transcription-l": [
+            {
+                "@value": "オオトモ, ソウリン, 1530-1587",
+                "@language": "ja-Kana"
+            },
+            {
+                "@value": "Ootomo, Sorin, 1530-1587",
+                "@language": "ja-Latn"
+            }
+        ]
+    },
+    "label": "大友, 宗麟, 1530-1587",
+    "altLabel": [
+        {
+            "literalForm": "大友, 義鎮",
+            "transcription": "オオトモ, ヨシシゲ",
+            "transcription-l": [
+                {
+                    "@value": "オオトモ, ヨシシゲ",
+                    "@language": "ja-Kana"
+                },
+                {
+                    "@value": "Otomo, Yoshishige",
+                    "@language": "ja-Latn"
+                }
+            ]
+        }
+    ],
+    "source": [
+        "宗麟 / 高山通男 編著",
+        "大人名事典"
+    ],
+    "exactMatch": [
+        {
+            "uri": "http://viaf.org/viaf/sourceID/NDL%7C00625175#skos:Concept"
+        }
+    ],
+    "inScheme": {
+        "uri": "http://id.ndl.go.jp/auth#personalNames"
+    }
+}
+

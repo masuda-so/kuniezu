@@ -112,16 +112,43 @@ def test_things_and_phenomena_fall_into_exactly_one_class(inputs):
     assert sum(summary.unclassified.values()) == other.count()
 
 
-def test_people_are_one_thing_under_all_their_names(inputs):
+@pytest.mark.parametrize(
+    "person_key,names,game_name,scheme,identifier",
+    [
+        (
+            "person:toyotomi-hideyoshi",
+            {"木下秀吉", "羽柴秀吉", "豊臣秀吉"},
+            "羽柴秀吉",
+            "wikidata",
+            "Q187550",
+        ),
+        (
+            "person:otomo-sorin",
+            {"大友宗麟", "大友義鎮"},
+            "大友義鎮",
+            "ndlna",
+            "00625175",
+        ),
+    ],
+)
+def test_people_are_one_thing_under_all_their_names(
+    inputs, person_key, names, game_name, scheme, identifier
+):
     import_history(inputs)
 
-    hideyoshi = Thing.objects.get(key="person:toyotomi-hideyoshi")
-    names = set(hideyoshi.names.values_list("name", flat=True))
-    assert {"木下秀吉", "羽柴秀吉", "豊臣秀吉"} <= names
-    # The game's display name and the registry entry are the same person.
-    assert not Thing.objects.filter(key="person:羽柴秀吉").exists()
-    assert hideyoshi.records.filter(record_type=RecordType.CATALOG).exists()
-    assert hideyoshi.authorities.filter(scheme="wikidata").exists()
+    person = Thing.objects.get(key=person_key)
+    assert names <= set(person.names.values_list("name", flat=True))
+    # Import the game's catalog alias into the curated identity, not a new thing.
+    assert not Thing.objects.filter(key="person:" + game_name).exists()
+    assert person.records.filter(record_type=RecordType.CATALOG).exists()
+    assert person.authorities.filter(scheme=scheme, identifier=identifier).count() == 1
+    assert Thing.objects.filter(
+        authorities__scheme=scheme, authorities__identifier=identifier
+    ).get() == person
+    for name in names:
+        assert Thing.objects.filter(names__name=name).distinct().get() == person
+    if scheme == "ndlna":
+        assert not person.authorities.filter(scheme="wikidata").exists()
 
 
 def test_a_verified_date_keeps_its_calendar_and_its_day_number(inputs):
