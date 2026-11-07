@@ -11,6 +11,7 @@
 | 分野 | サーバー不要の検査 | 実画面の検査 |
 |---|---|---|
 | 本体ベクター描画 | `vector-map.cjs`・`vector-assets.cjs` | `vector-game-browser.cjs`（広幅・狭幅・回転・全図）、`VECTOR_FAIL_SOURCE=1`（取得失敗と再読込） |
+| 肖像の代替crop | `portrait-loading.cjs`、`build_fallback.py --root . --check` | `portrait-fallback-browser.cjs`（`PORTRAIT_MODE=normal/primary-fail/all-fail`） |
 | 基本・保存・史実進行 | `offline.cjs` | `completion-browser.cjs` |
 | 秘密情報（APIキー・秘密鍵など。gzipも展開） | `secret-scan.cjs`（CIでも実行。第三者ページの保存前は `tools/research/source-privacy.cjs`） | — |
 | 読み込みの確認値（更新後に古い版を使わせない） | `node tools/build/stamp-assets.cjs --check`（CIでも実行。kuniezu/static/kuniezu/ のファイルを変えたら `node tools/build/stamp-assets.cjs` を実行） | — |
