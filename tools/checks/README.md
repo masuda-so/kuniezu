@@ -21,7 +21,7 @@
 | 行軍・保存・速度 | `movement-display.cjs`、`movement-clock.cjs`、`movement-save.cjs`、`logistics-review.cjs` | `march-clock-browser.cjs` |
 | 全期間の移動 | `march-audit.cjs`、`warp-audit.cjs` | 発見したケースを再現 |
 | 街道の入力と再生成 | `sanshu-route.cjs`、`road-regeneration.cjs`（Python標準ライブラリ。Django CIの試験にも含む） | `sanshu-route-browser.cjs`（両幅と保存版22・23の移行） |
-| 街道・河川・地図 | `road-display.cjs`、`battle-rivers.cjs`、`terrain-transition.cjs`、`terrain-cache.cjs`、`raster-map.cjs`（正本 `kuniezu/map` と配信タイルの一致）、`province-edits.cjs`（年代別の差分の負例） | `zoom-regressions.cjs` |
+| 街道・河川・地図 | `road-display.cjs`、`battle-rivers.cjs`、`terrain-transition.cjs`、`terrain-cache.cjs`、`map-layer-notifications.cjs`（遅着層の再描画通知）、`raster-map.cjs`（正本 `kuniezu/map` と配信タイルの一致）、`province-edits.cjs`（年代別の差分の負例） | `zoom-regressions.cjs`、`map-layer-notifications-browser.cjs`（停止画面への遅着） |
 | 合戦 | `deployments.cjs`、`atlas-regressions.cjs`、`battle-review.cjs`、`battle-viewport.cjs` | `all-battles-browser.cjs`、`battle-loading-browser.cjs`、`battle-viewport-browser.cjs` |
 | UI・肖像・性能 | `infrastructure.cjs` | `usability-browser.cjs`、`portrait-browser.cjs`、`render-performance.cjs`、`load-performance.cjs`（起動・再生中の負荷。`GAME_OVERRIDE_ROOT` で作業ツリーの変更分だけ差し替え） |
 | 棚卸し | `coverage-review.cjs`、`history-audit.cjs`、`road-shape-review.cjs` | 棚卸しだけで表示検査済みにしない |

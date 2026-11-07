@@ -31,6 +31,13 @@ is [docs/README.md](docs/README.md); open requests and ownership are in
   sections include modern roads and tunnels; they are not an exact sixteenth-century
   centerline. See the [inputs and regeneration](data/inputs/sanshu-road-review/README.md)
   (Japanese).
+- Late elevation, river and boundary loads refresh the map while the camera stays still.
+- Dated events without a known related place remain searchable by their subject.
+  Locations are not invented, and Edo-period reclamation records are kept separate
+  from evidence for Sengoku-period shorelines.
+- [Ten additional person identities](data/research/source-notes/person-authority-expansion.md)
+  retain Wikidata revisions and identity checks. Dates and whereabouts are not
+  imported as new historical claims.
 - The historical database preserves original calendars and date precision, and rejects
   additional date fields that conflict with the time format. See the
   [database design and commands](docs/architecture/history-database.md) (Japanese).

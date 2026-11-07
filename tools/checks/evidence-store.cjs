@@ -4,6 +4,12 @@ const r=JSON.parse(fs.readFileSync(path.join(root,'data/research/curated/claims'
 try{put('a.json',r);assert.equal(loadEvidence({claimDir,sourceDir,baseSources}).facts.length,1);put('b.json',{...r,id:'second-author'});assert.equal(loadEvidence({claimDir,sourceDir,baseSources}).facts.length,2);const before=fs.readFileSync(path.join(claimDir,'b.json'),'utf8');loadEvidence({claimDir,sourceDir,baseSources});assert.equal(fs.readFileSync(path.join(claimDir,'b.json'),'utf8'),before);
  put('b.json',{...r,id:'duplicate'});put('a.json',{...r,id:'duplicate'});assert.throws(()=>loadEvidence({claimDir,sourceDir,baseSources}),/重複/);put('a.json',r);
  for(const change of [{status:'unverified'},{source:'absent'},{validYears:[1600,1590]},{sourceUrl:'https://example.invalid'},{gameBindings:[]}]){put('b.json',{...r,id:'invalid',...change});assert.throws(()=>loadEvidence({claimDir,sourceDir,baseSources}));}
+ fs.rmSync(path.join(claimDir,'b.json'));
+ const alone={...r,id:'subject-only-event',entity:'water:lagoon',predicate:'reclamation-stage',value:'工事の年は記録され、地点は特定されていない。',datePrecision:'year',validYears:[1728,1728],linkedEntities:[],eventRelation:'drainage-work-stage',eventScope:'地点を推定しない年の記録',eventTime:{kind:'year-window',calendar:'CE-year',precision:'year',year:1728}};
+ put('a.json',alone);assert.equal(loadEvidence({claimDir,sourceDir,baseSources}).facts.length,1,'known year does not require invented related places');
+ put('a.json',{...alone,datePrecision:'day',validYears:[1600,1600],eventTime:{kind:'dated-event',calendar:'Japanese-lunisolar',precision:'day',date:[1600,9,15],leapMonth:false}});assert.equal(loadEvidence({claimDir,sourceDir,baseSources}).facts.length,1,'known day can have only its primary subject');
+ for(const change of [{linkedEntities:undefined},{linkedEntities:['water:unsupported']},{linkedEntities:['place:x','place:x']},{eventRelation:undefined},{eventScope:undefined},{eventTime:{kind:'dated-components',calendar:'CE-year',precision:'year',components:[{year:1728,entities:['place:x']}]}},{eventTime:{kind:'described-period',calendar:'Japanese-era-description',precision:'period',label:'時期を限定できない',indexYears:[1728,1728],boundsAreHistoricalStartEnd:false}}]){put('a.json',{...alone,...change});assert.throws(()=>loadEvidence({claimDir,sourceDir,baseSources}),/年代・対象/);}
+ console.log('PASS: explicit subject-only year/day events accepted; missing, duplicate and invalid links and unsupported empty components rejected');
  console.log('PASS: independent author inputs preserved; duplicates, unreviewed claims, missing sources, reversed years and wrong URLs rejected');
 }finally{fs.rmSync(dir,{recursive:true,force:true});}
 
@@ -59,6 +65,18 @@ for(const person of people){
    assert.throws(()=>verifyNdlAlternativeName(person,row,otherPerson,wikidata),/NDL ID differs/);
    assert.throws(()=>verifyNdlAlternativeName(person,{...row,ndlNameMatch:{...row.ndlNameMatch,value:row.ndlIdentity.name}},raw,wikidata),/NDL alternate name/);
   }
+ }else if(row.rawEntityDataSnapshot){
+  const bytes=fs.readFileSync(path.join(root,row.rawEntityDataSnapshot));
+  assert.equal(require('node:crypto').createHash('sha256').update(bytes).digest('hex'),snapshot.rawSha256);
+  const item=JSON.parse(bytes)[row.wikidataId];
+  assert.equal(item.id,row.wikidataId);
+  assert.equal(item.lastrevid,row.wikidataRevision);
+  assert.equal(item.labels?.ja?.value??null,row.wikidataJapaneseLabel);
+  assert.ok(item.claims.P31.some(c=>c.mainsnak?.datavalue?.value?.id==='Q5'));
+  assert.equal(evidence.scope,'person-identity');
+  assert.ok(new Set(row.identityChecks).size>=2,'two identity checks required');
+  assert.match(row.identitySourceUrl,/^https:\/\//);
+  assert.equal(row.revisionUrl,`https://www.wikidata.org/w/index.php?title=${row.wikidataId}&oldid=${row.wikidataRevision}`);
  }else{
   assert.ok(row.instanceOf.includes('Q5'));
   assert.deepEqual(row.existingClaimIds,person.identityBasis.claimIds);

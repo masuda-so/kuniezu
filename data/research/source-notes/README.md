@@ -23,3 +23,7 @@ HTMLで取得した資料を、書誌・確認箇所・要約・適用範囲が�
 | 児島湾・備前国図 | [備前国図 T1-5 公開画像案内](../../inputs/kojima-coast-review/bizen-keicho-adeac.md) | 画像接続記録 |
 | 児島湾・備前国図 | [備前国図 画像ビューア取得記録](../../inputs/kojima-coast-review/bizen-keicho-viewer.md) | 画像接続記録 |
 | 沖田畷の戦い | [沖田畷合戦場跡 龍造寺隆信供養塔](../../inputs/okitanawate-review/shimabara-cultural-source.md) | 要約 |
+
+## 人物典拠
+
+- [人物典拠10人の同定](person-authority-expansion.md)：固定revision、取得JSON、役職・親族・戦役による照合。生没日・所在の新規命題とは区別。

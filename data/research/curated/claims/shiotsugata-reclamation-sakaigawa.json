@@ -1,0 +1,30 @@
+{
+  "id": "shiotsugata-reclamation-sakaigawa",
+  "entity": "water:塩津潟",
+  "predicate": "reclamation-stage",
+  "value": "加治川から塩津潟への流入を抑える境川の締切工事が完了した。",
+  "validYears": [
+    1728,
+    1728
+  ],
+  "datePrecision": "year",
+  "source": "niigata-shiotsugata-reclamation",
+  "sourceUrl": "https://www.pref.niigata.lg.jp/sec/shibata_noson/1356833203513.html",
+  "locator": "享保13年（1728）の境川の締切工事",
+  "gameBindings": [
+    "TK.HISTORIC_WATERS:shiunji"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-07",
+  "uncertainty": "県の概説の年を採録。締切地点の座標と当日の水位は特定しない。",
+  "eventTime": {
+    "kind": "year-window",
+    "year": 1728,
+    "calendar": "CE-year",
+    "precision": "year"
+  },
+  "eventRelation": "drainage-work-stage",
+  "eventScope": "江戸期の排水条件の変化。戦国期の湖岸の根拠に転用しない。",
+  "linkedEntities": []
+}

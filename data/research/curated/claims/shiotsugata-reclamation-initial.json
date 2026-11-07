@@ -1,0 +1,32 @@
+{
+  "id": "shiotsugata-reclamation-initial",
+  "entity": "water:塩津潟",
+  "predicate": "reclamation-stage",
+  "value": "長者堀の掘削が許可され、塩津潟の排水路を開く工事が行われた。",
+  "validYears": [
+    1721,
+    1721
+  ],
+  "datePrecision": "year",
+  "source": "niigata-shiotsugata-reclamation",
+  "sourceUrl": "https://www.pref.niigata.lg.jp/sec/shibata_noson/1356833203513.html",
+  "locator": "享保6年の長者堀掘削",
+  "gameBindings": [
+    "TK.HISTORIC_WATERS:shiunji"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-07",
+  "uncertainty": "県の概説を年単位で採録。工事当日の水際や水位は特定しない。",
+  "linkedEntities": [
+    "place:chojabori"
+  ],
+  "eventTime": {
+    "kind": "year-window",
+    "year": 1721,
+    "calendar": "CE-year",
+    "precision": "year"
+  },
+  "eventRelation": "drainage-work-stage",
+  "eventScope": "江戸期の排水条件の変化。戦国期の湖岸の根拠に転用しない。"
+}
