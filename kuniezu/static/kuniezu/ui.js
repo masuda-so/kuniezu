@@ -138,7 +138,15 @@ faceImg.onload=()=>{faceReady=true;queuePortraitRefresh();};faceImg.src='faces.w
 document.addEventListener('visibilitychange',()=>{if(!document.hidden){pumpPortraits();if(portraitAtlasDirty||portraitChanged.size)queuePortraitRefresh([]);}});
 function portrait(name,r,ring,col){
  const idx=TK.faceOf(name);let extra=TK.EXTRA_PORTRAITS?.[name]||TK.EXTRA_PORTRAITS?.[TK.PORTRAIT_ALIAS[name]];let source=faceImg,crop=[(idx%FCOLS)*FT,Math.floor(idx/FCOLS)*FT,FT,FT];
- if(extra){const im=extraPortrait(name,extra);if(!im){if(idx<0||!faceReady)return null;extra=null;}else{source=im;crop=extra.crop;}}else if(idx<0||!faceReady)return null;
+ if(extra){
+  const im=extraPortrait(name,extra);
+  if(im){source=im;crop=extra.crop;}
+  else{
+   const fallback=TK.PORTRAIT_FALLBACK?.[name]||TK.PORTRAIT_FALLBACK?.[TK.PORTRAIT_ALIAS[name]],fallbackImage=fallback&&extraPortrait(name,fallback);
+   if(fallbackImage){source=fallbackImage;crop=fallback.crop;}
+   else{if(fallback||idx<0||!faceReady)return null;extra=null;}
+  }
+ }else if(idx<0||!faceReady)return null;
  const key=name+'|'+idx+'|'+r+'|'+ring+'|'+col;if(pcache.has(key))return pcache.get(key);
  const s=Math.ceil(r*2+6),c=document.createElement('canvas');c.width=s*PDPR;c.height=s*PDPR;c.css=s;const x=c.getContext('2d');x.scale(PDPR,PDPR);
  const cx=s/2,cy=s/2;

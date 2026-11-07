@@ -125,3 +125,15 @@ https://geoshape.ex.nii.ac.jp/nrct-poi/
 - 浪合〜稲武の物理的形状：国土地理院「道路中心線ベクトルタイル提供実験」を加工。https://github.com/gsi-cyberjapan/experimental_rdcl 。2026-11-07取得。現代の隧道を含む比較であり、16世紀の道路の存在・姿を確定しない。
 - 北側・稲武以南：© OpenStreetMap contributors / FOSSGIS OSRM、routed-foot、ODbL 1.0。全体に過大迂回がある照会結果から、審査した区間だけ採用。派生比較線を同じODbL 1.0で提供する。
 - 入力・採否・SHA：`data/inputs/sanshu-road-review/`、生成器：`tools/geo/sanshu-reference.py`。表示と表示用行軍の共通線。史実の着陣日は変更しない。
+
+## 確認済み肖像の代替画像（2026-11-07）
+
+`faces-fallback.webp` は `tools/faces/fallback-crops.json` の5素材を、通常表示と同じ正方形の切り抜きから128px角へ縮小して並べた派生画像。原画のSHAと、`portrait-layout.js`・島清興の `kamon.js` の確認済みcropに一致する場合だけ `tools/faces/build_fallback.py` が生成する。画像自体をAIで補作しない。原作・取得済み派生画像・画面の切り抜きを区別する。
+
+- 丹羽長重：Commons `File:Niwa_Nagashige.jpg`。白河藩主の肖像、作者不詳・17世紀。公開ページのPD-Art表示を参照。
+- 斎藤義龍：Commons `File:Saitō_Yoshitatsu.jpg`。常在寺所蔵の追福像という帰属は[岐阜県](https://www.pref.gifu.lg.jp/page/354743.html)と照合。生前の容貌の忠実性を保証しない。
+- 足利義輝：Commons `File:Ashikaga_Yoshiteru.jpg` に由来する既存quality画像。公開原本からの派生256px画像を用い、原本そのものと呼ばない。
+- 顕如：Commons `File:Kennyo02.JPG` に由来する既存651×542px画像。現公開原本651×903pxとは異なる派生で、元の切り抜き座標は未記録。公開ページは投稿者によるPD提供とする。
+- 島清興：Commons `File:Shima_Sakon.jpg`、落合芳幾の後世の浮世絵。生前写生とはしない。
+
+三好長慶の現行生成入力は `tools/faces/hr/q_三好長慶.jpg`（535×700px、Commons `File:三好長慶.jpg` に由来する派生）。`meta.json` はこの有効入力と旧花押rawを分けて記録する。原本からの切り抜き座標は未記録。今回、三好の表示画像は変更しない。Commonsの表示にUSタグを求める注意がある資料は、その注意を取り除いた権利確認済みとは扱わない。
