@@ -21,6 +21,8 @@ is [docs/README.md](docs/README.md); open requests and ownership are in
   marches along historical roads, and battle deployments and movements, each with
   its source.
 - Battle markers retain their geographic positions when the viewport or district changes. Co-located units can be selected individually.
+- File exports, save slots and autosaves preserve sub-day time so marching units
+  resume at the saved position.
 - Diplomacy is shown as borders only; marches are shown as pieces on roads.
   Battles appear automatically only when the player's forces take part. The five
   non-participating Sekigahara units receive no generic advance animation.

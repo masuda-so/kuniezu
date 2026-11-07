@@ -23,3 +23,5 @@ console.log('PASS: clipped territories area, duplicate seeds, lake/hole preserva
 require('node:child_process').execFileSync(process.execPath,[path.join(__dirname,'history-focus.cjs')],{stdio:'inherit'});
 
 require('./map-layer-notifications.cjs');
+
+require('node:child_process').execFileSync(process.execPath,[path.join(__dirname,'export-save-clock.cjs')],{stdio:'inherit'});
