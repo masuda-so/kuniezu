@@ -60,7 +60,7 @@ function verifyRawAuthority(row,snapshot,bytes){
 }
 const authoritySources=new Map(fs.readFileSync(path.join(research,'sources.jsonl'),'utf8').trim().split('\n').map(JSON.parse).map(row=>[row.id,row]));
 
-// NDL-only identities retain their own original response; no invented Wikidata row.
+// NDL primary-name and alternate-name evidence retain their own original response.
 function verifyNdlSnapshot(person,snapshot,bytes){
  const n=snapshot.ndl,raw=JSON.parse(bytes),names=[person.name,...person.gameNames,...(person.aliases??[])];
  const norm=value=>value.replace(/[\s,、]/g,'');
@@ -72,9 +72,28 @@ function verifyNdlSnapshot(person,snapshot,bytes){
  assert.equal(norm(raw.primaryTopic.name),n.primaryName,'NDL primary name');
  assert(names.includes(n.primaryName),'NDL local primary name');
  const alternatives=(raw.altLabel??[]).map(row=>norm(row.literalForm));
- assert(n.alternateNames.length,'NDL alternative required');
+ assert(Array.isArray(n.alternateNames),'NDL alternatives must be listed explicitly');
  for(const name of n.alternateNames){assert(alternatives.includes(name),'NDL alternate name');assert(names.includes(name),'NDL local alias');}
  assert(/^\d{4}-\d{2}-\d{2}$/.test(n.checked),'NDL checked date');
+}
+// A local search name may be supported by NDL even when Wikidata omits it.
+function verifyNameEvidence(person,row,item,ndl){
+ const local=new Set([person.name,...person.gameNames,...(person.aliases??[])]),records=row.nameEvidence;
+ assert(Array.isArray(records)&&records.length,'name evidence required');
+ assert.equal(new Set(records.map(r=>r.name)).size,records.length,'duplicate name evidence');
+ assert.deepEqual([...new Set(records.map(r=>r.name))].sort(),[...local].sort(),'local name coverage');
+ const rawNames=[item.labels?.ja?.value,...(item.aliases?.ja??[]).map(a=>a.value)],rawAliases=(item.aliases?.ja??[]).map(a=>a.value);
+ for(const r of records){
+  assert(Array.isArray(r.supports)&&r.supports.length,'name support required');let direct=false;
+  for(const support of r.supports){
+   if(support==='wikidata-ja-label-or-alias'){assert(rawNames.includes(r.name),'Wikidata name evidence differs');direct=true;}
+   else if(support==='wikidata-ja-alias'){assert(rawAliases.includes(r.name),'Wikidata alias evidence differs');direct=true;}
+   else if(support==='ndl-primary'){assert.equal(ndl?.primaryName,r.name,'NDL primary evidence differs');direct=true;}
+   else if(support==='ndl-altLabel'){assert(ndl?.alternateNames.includes(r.name),'NDL alias evidence differs');direct=true;}
+   else assert.equal(support,'public-source','unknown name evidence support');
+  }
+  assert(direct,'raw authority support required for local name');
+ }
 }
 for(const person of people){
  const evidence=person.authorityEvidence;
@@ -115,6 +134,14 @@ for(const person of people){
  if(row.rawEntityDataSnapshot){
   const bytes=fs.readFileSync(path.join(root,row.rawEntityDataSnapshot));
   const rawEntity=verifyRawAuthority(row,snapshot,bytes);
+  if(row.nameEvidence){
+   const ndl=evidence.ndlSnapshot?JSON.parse(fs.readFileSync(path.join(root,evidence.ndlSnapshot),'utf8')).ndl:null;
+   verifyNameEvidence(person,row,rawEntity,ndl);
+   assert.throws(()=>verifyNameEvidence({...person,gameNames:[...person.gameNames,'未確認の別名']},row,rawEntity,ndl),/local name coverage/);
+   const wrong={...row,nameEvidence:row.nameEvidence.map((r,i)=>i===0?{...r,supports:['ndl-altLabel']}:r)};
+   assert.throws(()=>verifyNameEvidence(person,wrong,rawEntity,{primaryName:person.name,alternateNames:[]}),/NDL alias evidence/);
+   if(ndl)assert(rawEntity.claims.P349?.some(c=>c.mainsnak?.datavalue?.value===ndl.id),'Wikidata NDL link differs');
+  }
   if(row.adoptedNames){
    const verifyNames=(names,item)=>{const rawNames=[item.labels?.ja?.value,...(item.aliases?.ja||[]).map(a=>a.value)],localNames=[person.name,...person.gameNames,...(person.aliases||[])];assert.ok(names.length,'adopted names required');for(const name of names){assert.ok(rawNames.includes(name),'adopted name absent from raw authority');assert.ok(localNames.includes(name),'adopted name absent from local person');}};
    verifyNames(row.adoptedNames,rawEntity);

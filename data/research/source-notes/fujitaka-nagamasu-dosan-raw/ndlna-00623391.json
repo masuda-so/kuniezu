@@ -1,0 +1,48 @@
+{
+    "@context": "https://id.ndl.go.jp/auth/context.json",
+    "uri": "http://id.ndl.go.jp/auth/ndlna/00623391",
+    "primaryTopic": {
+        "uri": "http://id.ndl.go.jp/auth/entity/00623391",
+        "type": {
+            "uri": "http://xmlns.com/foaf/0.1/Person"
+        },
+        "name": "斎藤道三",
+        "dateOfBirth": "1494",
+        "dateOfDeath": "1556"
+    },
+    "type": {
+        "uri": "http://www.w3.org/2004/02/skos/core#Concept"
+    },
+    "modified": "2025-03-10T08:45:16",
+    "created": "1998-01-30",
+    "prefLabel": {
+        "literalForm": "斎藤, 道三, 1494-1556",
+        "transcription": "サイトウ, ドウサン, 1494-1556",
+        "transcription-l": [
+            {
+                "@value": "サイトウ, ドウサン, 1494-1556",
+                "@language": "ja-Kana"
+            },
+            {
+                "@value": "Saito, Dosan, 1494-1556",
+                "@language": "ja-Latn"
+            }
+        ]
+    },
+    "label": "斎藤, 道三, 1494-1556",
+    "source": [
+        "斎藤道三 / 土橋治重 著"
+    ],
+    "exactMatch": [
+        {
+            "uri": "http://id.loc.gov/authorities/names/no2015155368"
+        },
+        {
+            "uri": "http://viaf.org/viaf/sourceID/NDL%7C00623391#skos:Concept"
+        }
+    ],
+    "inScheme": {
+        "uri": "http://id.ndl.go.jp/auth#personalNames"
+    }
+}
+

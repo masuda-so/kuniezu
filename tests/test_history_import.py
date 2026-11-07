@@ -126,6 +126,18 @@ def test_things_and_phenomena_fall_into_exactly_one_class(inputs):
     "identity",
     [
         (
+            "person:hosokawa-fujitaka",
+            {"細川藤孝", "細川幽斎"},
+            "細川藤孝",
+            {("wikidata", "Q1207509"), ("ndlna", "00269750")},
+        ),
+        (
+            "person:oda-nagamasu",
+            {"織田長益", "織田有楽斎", "織田有楽"},
+            "織田長益",
+            {("wikidata", "Q837903")},
+        ),
+        (
             "person:toyotomi-hideyoshi",
             {"木下秀吉", "羽柴秀吉", "豊臣秀吉"},
             "羽柴秀吉",
@@ -172,6 +184,22 @@ def test_people_are_one_thing_under_all_their_names(inputs, identity):
             authorities__scheme=scheme, authorities__identifier=identifier
         ).get() == person
     for name in names:
+        assert Thing.objects.filter(names__name=name).distinct().get() == person
+
+
+def test_preperiod_person_names_do_not_invent_a_playable_catalog_entry(inputs):
+    import_history(inputs)
+
+    person = Thing.objects.get(key="person:saito-dosan")
+    assert set(person.names.values_list("name", flat=True)) >= {"斎藤道三", "斎藤利政"}
+    assert person.records.filter(record_type=RecordType.PERSON).exists()
+    assert not person.records.filter(record_type=RecordType.CATALOG).exists()
+    assert not Thing.objects.filter(key="person:斎藤道三").exists()
+    assert set(person.authorities.values_list("scheme", "identifier")) == {
+        ("wikidata", "Q1202670"),
+        ("ndlna", "00623391"),
+    }
+    for name in ("斎藤道三", "斎藤利政"):
         assert Thing.objects.filter(names__name=name).distinct().get() == person
 
 

@@ -1,0 +1,28 @@
+{
+  "id": "person:oda-nagamasu",
+  "name": "織田長益",
+  "gameNames": [
+    "織田長益",
+    "織田有楽斎",
+    "織田有楽"
+  ],
+  "authorityIds": [
+    "wikidata:Q837903"
+  ],
+  "authorityEvidence": {
+    "scope": "person-identity",
+    "checked": "2026-11-08",
+    "wikidataRevision": 2556896461,
+    "snapshot": "data/research/source-notes/fujitaka-nagamasu-dosan-authority.json",
+    "sourceNote": "data/research/source-notes/fujitaka-nagamasu-dosan-authority.json",
+    "note": "data/research/source-notes/fujitaka-nagamasu-dosan-authority.md",
+    "sourceIds": [
+      "naraOdaNagamasuIdentity"
+    ],
+    "identityChecks": [
+      "奈良県が織田長益を茶人織田有楽斎として同定",
+      "奈良県の信長の弟という関係とWikidata P3373のQ171411が対応する"
+    ],
+    "basis": "織田長益と織田有楽斎の同定、信長の弟で茶人という比較文脈。所領・年月日を命題に転記しない。"
+  }
+}

@@ -1,0 +1,159 @@
+{
+  "checked": "2026-11-08",
+  "scope": "三人物の名寄せのみ。生没日・所在・名乗り開始日を命題にしない。",
+  "rawLicense": {
+    "name": "CC0 1.0",
+    "url": "https://www.wikidata.org/wiki/Wikidata:Licensing"
+  },
+  "records": [
+    {
+      "name": "細川藤孝",
+      "japaneseLabel": "細川藤孝",
+      "wikidataId": "Q1207509",
+      "wikidataRevision": 2492267030,
+      "wikidataJapaneseLabel": "細川藤孝",
+      "entityDataUrl": "https://www.wikidata.org/wiki/Special:EntityData/Q1207509.json",
+      "revisionUrl": "https://www.wikidata.org/w/index.php?title=Q1207509&oldid=2492267030",
+      "rawEntityDataSnapshot": "data/research/source-notes/fujitaka-nagamasu-dosan-raw/Q1207509.json",
+      "rawSha256": "7f2e5dea867660de6fd6360f4185a0de07c330b36ea1f699a090c9c054499763",
+      "identitySourceIds": [
+        "kyotoChutanFujitakaIdentity"
+      ],
+      "identitySourceUrl": "https://www.pref.kyoto.jp/koho/dayori/202008/info_chutan.html",
+      "identitySourceLocator": "光秀ゆかりの地を巡るin中丹・田辺城段落",
+      "identityChecks": [
+        "NDL00269750の主名藤孝と別名細川幽斎が同じPerson典拠に属する",
+        "京都府田辺城解説が藤孝（幽斎）を同一の築城者として記す"
+      ],
+      "adoptedNames": [
+        "細川藤孝"
+      ],
+      "scope": "person-identity-only; raw dates and locations are not adopted historical claims",
+      "ndlId": "00269750",
+      "ndlIdentity": {
+        "uri": "http://id.ndl.go.jp/auth/entity/00269750",
+        "type": {
+          "uri": "http://xmlns.com/foaf/0.1/Person"
+        },
+        "name": "細川藤孝",
+        "dateOfBirth": "1534",
+        "dateOfDeath": "1610",
+        "biographicalInformation": [
+          "歌人, 武将"
+        ]
+      },
+      "nameEvidence": [
+        {
+          "name": "細川藤孝",
+          "supports": [
+            "ndl-primary"
+          ]
+        },
+        {
+          "name": "細川幽斎",
+          "supports": [
+            "ndl-altLabel"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "織田長益",
+      "japaneseLabel": "織田長益",
+      "wikidataId": "Q837903",
+      "wikidataRevision": 2556896461,
+      "wikidataJapaneseLabel": "織田長益",
+      "entityDataUrl": "https://www.wikidata.org/wiki/Special:EntityData/Q837903.json",
+      "revisionUrl": "https://www.wikidata.org/w/index.php?title=Q837903&oldid=2556896461",
+      "rawEntityDataSnapshot": "data/research/source-notes/fujitaka-nagamasu-dosan-raw/Q837903.json",
+      "rawSha256": "ec8b5ad8ac890549c8bc0fa78134824501a1a09dd10803d27f3f1eabf8a10b28",
+      "identitySourceIds": [
+        "naraOdaNagamasuIdentity"
+      ],
+      "identitySourceUrl": "https://www.pref.nara.lg.jp/ikasu-nara/tonosama/oda/index.html",
+      "identitySourceLocator": "織田長益の段落（「次は、信長の弟で」）",
+      "identityChecks": [
+        "奈良県が織田長益を茶人織田有楽斎として同定",
+        "奈良県の信長の弟という関係とWikidata P3373のQ171411が対応する"
+      ],
+      "adoptedNames": [
+        "織田長益",
+        "織田有楽斎",
+        "織田有楽"
+      ],
+      "scope": "person-identity-only; raw dates and locations are not adopted historical claims",
+      "nameEvidence": [
+        {
+          "name": "織田長益",
+          "supports": [
+            "wikidata-ja-label-or-alias",
+            "public-source"
+          ]
+        },
+        {
+          "name": "織田有楽斎",
+          "supports": [
+            "wikidata-ja-label-or-alias",
+            "public-source"
+          ]
+        },
+        {
+          "name": "織田有楽",
+          "supports": [
+            "wikidata-ja-alias"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "斎藤道三",
+      "japaneseLabel": "斎藤道三",
+      "wikidataId": "Q1202670",
+      "wikidataRevision": 2554504493,
+      "wikidataJapaneseLabel": "斎藤道三",
+      "entityDataUrl": "https://www.wikidata.org/wiki/Special:EntityData/Q1202670.json",
+      "revisionUrl": "https://www.wikidata.org/w/index.php?title=Q1202670&oldid=2554504493",
+      "rawEntityDataSnapshot": "data/research/source-notes/fujitaka-nagamasu-dosan-raw/Q1202670.json",
+      "rawSha256": "a23ee3c0f4eb530751b6be9bf57d097c3e24a0c1cfbcd07ba8c67072a83b11f3",
+      "identitySourceIds": [
+        "gifuDosanToshimasaIdentity"
+      ],
+      "identitySourceUrl": "https://www.city.gifu.lg.jp/kankoubunka/kankou/1013051/1005097/1034742/1034737.html",
+      "identitySourceLocator": "3 斎藤道三、名乗りを説明する本文段落",
+      "identityChecks": [
+        "岐阜市の道三節が本人の名乗りとして斎藤利政を記す",
+        "岐阜市が父長井新左衛門尉と本人を区別し、NDL主名道三とWikidata主名道三を対応させる"
+      ],
+      "adoptedNames": [
+        "斎藤道三",
+        "斎藤利政"
+      ],
+      "scope": "person-identity-only; raw dates and locations are not adopted historical claims",
+      "ndlId": "00623391",
+      "ndlIdentity": {
+        "uri": "http://id.ndl.go.jp/auth/entity/00623391",
+        "type": {
+          "uri": "http://xmlns.com/foaf/0.1/Person"
+        },
+        "name": "斎藤道三",
+        "dateOfBirth": "1494",
+        "dateOfDeath": "1556"
+      },
+      "nameEvidence": [
+        {
+          "name": "斎藤道三",
+          "supports": [
+            "ndl-primary"
+          ]
+        },
+        {
+          "name": "斎藤利政",
+          "supports": [
+            "wikidata-ja-label-or-alias",
+            "public-source"
+          ]
+        }
+      ]
+    }
+  ]
+}
