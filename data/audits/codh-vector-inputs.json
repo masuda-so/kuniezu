@@ -1,0 +1,285 @@
+{
+  "datasets": [
+    {
+      "features": 1888,
+      "geometryTypes": {
+        "LineString": 1881,
+        "MultiLineString": 5,
+        "null": 2
+      },
+      "vertices": 438845,
+      "bbox": [
+        122.934047,
+        24.045673,
+        148.893236,
+        45.55716
+      ],
+      "sourceIdField": "object_id",
+      "uniqueSourceIds": 1,
+      "duplicateSourceIds": {
+        "1929": 1888
+      },
+      "coordinateSystem": "OGC:CRS84",
+      "coordinateOrder": "longitude-latitude",
+      "key": "coast-lines",
+      "sourceSha256": "8c18cb55c39073e73f0b4f94c9da4d2b39613736016a87d633f44a84188bef2a",
+      "credit": "『江戸末期海岸線／水域データセット』（ROIS-DS人文学オープンデータ共同利用センター作成） doi:10.20676/00000453",
+      "url": "https://geoshape.ex.nii.ac.jp/edo/coast/coast.geojson",
+      "dataset": "江戸末期海岸線／水域データセット",
+      "license": "CC-BY-4.0",
+      "sourceCrs": "urn:ogc:def:crs:OGC:1.3:CRS84",
+      "crsInterpretation": "declared-CRS84",
+      "temporalScope": "Edo-reference-not-Sengoku-assertion",
+      "featureIdentity": "sha256:8c18cb55c39073e73f0b4f94c9da4d2b39613736016a87d633f44a84188bef2a#/features/<zero-based-row>"
+    },
+    {
+      "features": 1551,
+      "geometryTypes": {
+        "MultiPoint": 1551
+      },
+      "vertices": 1551,
+      "bbox": [
+        122.94797936019451,
+        24.45297344305878,
+        148.7441041233976,
+        45.431296002621295
+      ],
+      "sourceIdField": "id",
+      "uniqueSourceIds": 1550,
+      "duplicateSourceIds": {
+        "29006": 2
+      },
+      "coordinateSystem": "OGC:CRS84",
+      "coordinateOrder": "longitude-latitude",
+      "key": "lake-points",
+      "sourceSha256": "b35fd92aab947326c0c0f9ebecd5dabdf98df8dc0ffbef4e7053e27d0a7421f3",
+      "credit": "『江戸末期湖沼データセット』（ROIS-DS人文学オープンデータ共同利用センター作成） doi:10.20676/00000467",
+      "url": "https://codh.rois.ac.jp/historical-gis/edo-lake/lake_point.geojson",
+      "dataset": "江戸末期湖沼データセット",
+      "license": "CC-BY-4.0",
+      "sourceCrs": "urn:ogc:def:crs:OGC:1.3:CRS84",
+      "crsInterpretation": "declared-CRS84",
+      "temporalScope": "Edo-reference-not-Sengoku-assertion",
+      "featureIdentity": "sha256:b35fd92aab947326c0c0f9ebecd5dabdf98df8dc0ffbef4e7053e27d0a7421f3#/features/<zero-based-row>"
+    },
+    {
+      "features": 573,
+      "geometryTypes": {
+        "MultiPolygon": 573
+      },
+      "vertices": 81638,
+      "bbox": [
+        125.2413478325561,
+        24.92537685417345,
+        145.55867428749036,
+        45.39991939758036
+      ],
+      "sourceIdField": "id",
+      "uniqueSourceIds": 573,
+      "duplicateSourceIds": {},
+      "coordinateSystem": "OGC:CRS84",
+      "coordinateOrder": "longitude-latitude",
+      "key": "lake-polygons",
+      "sourceSha256": "956781b441cdbcc433ecb841f556eea624738141f7c2e7923fe91b6d367d52ca",
+      "credit": "『江戸末期湖沼データセット』（ROIS-DS人文学オープンデータ共同利用センター作成） doi:10.20676/00000467",
+      "url": "https://codh.rois.ac.jp/historical-gis/edo-lake/lake_polygon.geojson",
+      "dataset": "江戸末期湖沼データセット",
+      "license": "CC-BY-4.0",
+      "sourceCrs": "urn:ogc:def:crs:OGC:1.3:CRS84",
+      "crsInterpretation": "declared-CRS84",
+      "temporalScope": "Edo-reference-not-Sengoku-assertion",
+      "featureIdentity": "sha256:956781b441cdbcc433ecb841f556eea624738141f7c2e7923fe91b6d367d52ca#/features/<zero-based-row>"
+    },
+    {
+      "features": 47,
+      "geometryTypes": {
+        "LineString": 47
+      },
+      "vertices": 45419,
+      "bbox": [
+        129.88729,
+        31.58811,
+        141.308927,
+        41.824097
+      ],
+      "sourceIdField": "numbering",
+      "uniqueSourceIds": 46,
+      "duplicateSourceIds": {
+        "R200": 2
+      },
+      "coordinateSystem": "OGC:CRS84",
+      "coordinateOrder": "longitude-latitude",
+      "key": "roads",
+      "sourceSha256": "eabd30045df5b6b35ba80f397bce92c8a589c14fc12342ae2325943740489051",
+      "credit": "『江戸主要街道データセット』（ROIS-DS人文学オープンデータ共同利用センター作成） doi:10.20676/00000452",
+      "url": "https://geoshape.ex.nii.ac.jp/edo/road/road.geojson",
+      "dataset": "江戸主要街道データセット",
+      "license": "CC-BY-4.0",
+      "sourceCrs": "urn:ogc:def:crs:OGC:1.3:CRS84",
+      "crsInterpretation": "declared-CRS84",
+      "temporalScope": "Edo-reference-not-Sengoku-assertion",
+      "featureIdentity": "sha256:eabd30045df5b6b35ba80f397bce92c8a589c14fc12342ae2325943740489051#/features/<zero-based-row>"
+    },
+    {
+      "features": 1569,
+      "geometryTypes": {
+        "Point": 1569
+      },
+      "vertices": 1569,
+      "bbox": [
+        127.7195378,
+        26.2170985,
+        141.9692,
+        41.824313
+      ],
+      "sourceIdField": "id",
+      "uniqueSourceIds": 1569,
+      "duplicateSourceIds": {},
+      "coordinateSystem": "OGC:CRS84",
+      "coordinateOrder": "longitude-latitude",
+      "key": "posts",
+      "sourceSha256": "709d82d9461d4b4a4f81de78b3242ad0eaa39a90b3789864d1857dcb74c321a4",
+      "credit": "『江戸宿場データセット』（ROIS-DS人文学オープンデータ共同利用センター作成） doi:10.20676/00000477",
+      "url": "https://geoshape.ex.nii.ac.jp/edo/post/post.geojson",
+      "dataset": "江戸宿場データセット",
+      "license": "CC-BY-4.0",
+      "sourceCrs": null,
+      "crsInterpretation": "RFC7946-longitude-latitude",
+      "temporalScope": "Edo-reference-not-Sengoku-assertion",
+      "featureIdentity": "sha256:709d82d9461d4b4a4f81de78b3242ad0eaa39a90b3789864d1857dcb74c321a4#/features/<zero-based-row>"
+    },
+    {
+      "features": 1888,
+      "geometryTypes": {
+        "MultiPolygon": 1,
+        "Polygon": 1885,
+        "null": 2
+      },
+      "vertices": 438971,
+      "bbox": [
+        122.93404700599645,
+        24.04567285298772,
+        148.89323590501118,
+        45.557160145137594
+      ],
+      "sourceIdField": "object_id",
+      "uniqueSourceIds": 1,
+      "duplicateSourceIds": {
+        "1929": 1888
+      },
+      "coordinateSystem": "OGC:CRS84",
+      "coordinateOrder": "longitude-latitude",
+      "key": "coast-polygons",
+      "sourceSha256": "52683d617e664de41396e7c8d33a3c93742a1b013fe7c9f91e103c563ff9a80b",
+      "credit": "『江戸末期海岸線／水域データセット』（ROIS-DS人文学オープンデータ共同利用センター作成） doi:10.20676/00000453",
+      "url": "https://codh.rois.ac.jp/historical-gis/edo-coast/coast-polygon.zip",
+      "dataset": "江戸末期海岸線／水域データセット",
+      "license": "CC-BY-4.0",
+      "sourceCrs": "GEOGCS[\"GCS_WGS_1984\",DATUM[\"D_WGS_1984\",SPHEROID[\"WGS_1984\",6378137.0,298.257223563]],PRIMEM[\"Greenwich\",0.0],UNIT[\"Degree\",0.0174532925199433]]",
+      "crsInterpretation": "declared-WGS84-geographic-XY; emitted-CRS84-without-coordinate-transform",
+      "temporalScope": "Edo-reference-not-Sengoku-assertion",
+      "featureIdentity": "sha256:52683d617e664de41396e7c8d33a3c93742a1b013fe7c9f91e103c563ff9a80b#/coast-polygon/coast-polygon.shp/records/<zero-based-row>"
+    }
+  ],
+  "relationships": {
+    "roadPost": {
+      "roadFeatures": 47,
+      "roadBaseIds": 37,
+      "postFeatures": 1569,
+      "uniquePostIds": 1421,
+      "postRowsWithoutCoordinates": [],
+      "postRoadIds": 90,
+      "postRoadIdsWithoutLines": [
+        "R203",
+        "R210",
+        "R211",
+        "R212",
+        "R213",
+        "R214",
+        "R215",
+        "R216",
+        "R217",
+        "R218",
+        "R222",
+        "R302",
+        "R310",
+        "R311",
+        "R312",
+        "R313",
+        "R315",
+        "R316",
+        "R410",
+        "R500",
+        "R501",
+        "R502",
+        "R504",
+        "R505",
+        "R510",
+        "R511",
+        "R512",
+        "R513",
+        "R514",
+        "R515",
+        "R517",
+        "R601",
+        "R602",
+        "R612",
+        "R613",
+        "R614",
+        "R615",
+        "R616",
+        "R617",
+        "R618",
+        "R710",
+        "R711",
+        "R712",
+        "R713",
+        "R714",
+        "R811",
+        "R812",
+        "R813",
+        "R817",
+        "R818",
+        "R910",
+        "R911",
+        "R912",
+        "R950"
+      ],
+      "repeatedRoadIds": {
+        "R200": 2
+      },
+      "postIdsWithDifferentCoordinates": {
+        "SHUKU001159": [
+          [
+            136.6281957,
+            34.4904682
+          ],
+          [
+            136.6324847,
+            34.4908874
+          ]
+        ],
+        "SHUKU001580": [
+          [
+            130.6989121,
+            32.8040945
+          ],
+          [
+            130.7058442,
+            32.8063933
+          ]
+        ]
+      },
+      "automaticMergeOrConnectionPerformed": false
+    },
+    "lake": {
+      "pointRows": 1551,
+      "uniquePointIds": 1550,
+      "polygonRows": 573,
+      "uniquePolygonIds": 573,
+      "pointRowsWithoutPolygon": 978,
+      "polygonIdsWithoutPoint": [],
+      "polygonInferredFromPoint": false
+    }
+  }
+}
