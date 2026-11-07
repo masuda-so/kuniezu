@@ -7,7 +7,8 @@ function validateEventTime(r){
  const allowed={'year-window':['year'],'dated-event':['date','leapMonth'],'dated-components':['components'],'described-period':['label','indexYears','boundsAreHistoricalStartEnd']};
  validateTemporalFields(t,['kind','calendar','precision',...(allowed[t?.kind]||[])],fail);
  const year=y=>Number.isInteger(y)&&r.validYears[0]<=y&&y<=r.validYears[1];
- if(!Array.isArray(r.linkedEntities)||!r.linkedEntities.length||!r.eventRelation||!r.eventScope)fail();
+ // 主語と年・日が既知でも、関連地点・人物が不明な記録には空配列を明示する。
+ if(!Array.isArray(r.linkedEntities)||!r.linkedEntities.length&&!['year-window','dated-event'].includes(t.kind)||!r.eventRelation||!r.eventScope)fail();
  if(r.linkedEntities.some(id=>typeof id!=='string'||!/^(place|person):.+/.test(id))||new Set(r.linkedEntities).size!==r.linkedEntities.length)fail();
  if(t.kind==='year-window'){
   if(t.calendar!=='CE-year'||t.precision!=='year'||!year(t.year))fail();

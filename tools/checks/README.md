@@ -18,9 +18,12 @@
 | 史実SQL・時空間キューブ | `python3 tools/checks/history-sqlite.py`、`python3 tools/checks/history-sqlite-inputs.py`、`python3 tools/checks/history-cube.py` | —（研究用の読取DB・ゲーム描画は変更しない） |
 | 人物・開始配置 | `historical-register.cjs`、`scenario-openings.cjs` | `march-clock-browser.cjs` |
 | 領土・分家・外交 | `families-territory.cjs`、`map-history.cjs` | `borders-family-browser.cjs` |
-| 行軍・保存・速度 | `movement-display.cjs`、`movement-clock.cjs`、`movement-save.cjs`、`logistics-review.cjs` | `march-clock-browser.cjs` |
+| 行軍・保存・速度 | `movement-display.cjs`、`movement-clock.cjs`、`movement-save.cjs`、`export-save-clock.cjs`、`logistics-review.cjs` | `march-clock-browser.cjs`、`export-save-clock-browser.cjs` |
 | 全期間の移動 | `march-audit.cjs`、`warp-audit.cjs` | 発見したケースを再現 |
-| 街道・河川・地図 | `road-display.cjs`、`battle-rivers.cjs`、`terrain-transition.cjs`、`terrain-cache.cjs`、`raster-map.cjs`（正本 `kuniezu/map` と配信タイルの一致）、`province-edits.cjs`（年代別の差分の負例） | `zoom-regressions.cjs` |
+| 街道の入力と再生成 | `sanshu-route.cjs`、`road-regeneration.cjs`（Python標準ライブラリ。Django CIの試験にも含む） | `sanshu-route-browser.cjs`（両幅と保存版22・23の移行） |
+| 児島湾の補正マスクのベクター化 | `mask-vector.cjs`（穴・対角接触・単純リング）、`kojima-mask-vectors.cjs`（旧格子対応と737,100セルの逆変換一致。Offline checksにも含む） | —（移行入力のみ。ゲーム表示は変更しない） |
+| 編集済みGeoJSONの配信 | `vector-assets.cjs`（バイト複写・直接編集保持・上書き保護・統合CLI。Offline checksにも含む）、`uv run pytest tests/test_vector_sources.py`（位相・5湖の欠落防止・W09原本/座標系） | 全体地図の切替時に確認 |
+| 街道・河川・地図 | `road-display.cjs`、`battle-rivers.cjs`、`terrain-transition.cjs`、`terrain-cache.cjs`、`map-layer-notifications.cjs`（遅着層の再描画通知）、`raster-map.cjs`（正本 `kuniezu/map` と配信タイルの一致）、`province-edits.cjs`（年代別の差分の負例） | `zoom-regressions.cjs`、`map-layer-notifications-browser.cjs`（停止画面への遅着） |
 | 合戦 | `deployments.cjs`、`atlas-regressions.cjs`、`battle-review.cjs`、`battle-viewport.cjs` | `all-battles-browser.cjs`、`battle-loading-browser.cjs`、`battle-viewport-browser.cjs` |
 | UI・肖像・性能 | `infrastructure.cjs` | `usability-browser.cjs`、`portrait-browser.cjs`、`render-performance.cjs`、`load-performance.cjs`（起動・再生中の負荷。`GAME_OVERRIDE_ROOT` で作業ツリーの変更分だけ差し替え） |
 | 棚卸し | `coverage-review.cjs`、`history-audit.cjs`、`road-shape-review.cjs` | 棚卸しだけで表示検査済みにしない |
@@ -37,3 +40,5 @@ GAME_TEST_OUTPUT=data/verification/自分の担当名 node tools/checks/march-cl
 変更に応じた検査が通ったら、理由なく全件を繰り返さない。新たな失敗・変更・懸念がある場合だけ追加する。生成JSONは `data/audits/`。最新報告は [古湖岸・人物・合戦の再照合](../../docs/reports/HISTORICAL_RECHECK.md)。
 
 検査の合格は、史料の未読箇所や歴史上の全件の網羅を証明しない。分岐・任意攻城を扱う `legacy-*` 系の試験は過去の検証であり、現行版の完了条件へ流用しない。旧手順は [履歴](../../docs/history/CHECKS-2026-11-01.md) に保存。
+
+`node tools/checks/vector-map.cjs` は共通ベクター描画器の穴・年代境界・表示範囲・入力保持を検査します。比較ページの実画面は `VECTOR_PREVIEW_URL=file:///absolute/path/index.html GAME_TEST_OUTPUT=data/verification/<担当名-対象名> node tools/checks/vector-map-browser.cjs` で専用Chromeから確認します。ゲーム本体の受入検査とは別です。

@@ -14,10 +14,41 @@ is [docs/README.md](docs/README.md); open requests and ownership are in
 
 ## Features and limitations
 
+- A vector-map migration using CODH coast, lake, road and post datasets is in progress.
+  [Reference inputs and preparation](data/inputs/codh-edo/README.md) are retained;
+  the game has not switched to vector rendering yet.
+- Edited GeoJSON will be the directly maintained source of truth. Rendering reads
+  the files for the selected period. CODH originals remain available for comparison,
+  and normal builds will not overwrite the edited source data.
+- `uv run python tools/geo/codh_topology.py --output /tmp/codh-surfaces-new`
+  prepares valid reference surfaces and combined land/lake geometry using a
+  linework method that retains source edges and coordinate positions. Collapsed
+  source lines remain in residual layers, without being asserted as Sengoku
+  shorelines. Shapely is a development-only dependency.
+- Add `--surfaces /tmp/codh-surfaces-new` when building the comparison viewer
+  to load the prepared surfaces after checking their source versions and hashes.
+- The viewer also accepts `--canonical <directory>` to read edited
+  `land.geojson` and `water.geojson`. The shared renderer preserves holes and
+  periods for drawing and hit testing, without runtime geometry corrections.
+  Switching the game itself requires separate verification.
+- `uv run python tools/geo/codh_preview.py --output /tmp/codh-preview-new`
+  generates a standalone Edo-period vector viewer. Open its `index.html` directly
+  to inspect Kanto and Kojima Bay, pan, zoom and toggle layers. It does not alter
+  the game map or saves.
+- `node tools/geo/prepare-mask-vectors.cjs --output /tmp/kojima-vectors-new`
+  converts existing Kojima Bay correction masks to geographic polygons using
+  their explicit grid versions. It preserves the adopted 100 m cells, without
+  refining the historical shoreline or reapplying changes to the game map.
+- `uv run python tools/geo/prepare_era_overrides.py --at 1560-01-01 --output /tmp/era-overrides-new`
+  prepares the existing inferred Katori water area together with protected land
+  and cuts that must not be drawn as shores. It does not automatically modify
+  CODH originals or the game display.
 - Shows former lakeshores, castles, facilities and people checked against sources,
   marches along historical roads, and battle deployments and movements, each with
   its source.
 - Battle markers retain their geographic positions when the viewport or district changes. Co-located units can be selected individually.
+- File exports, save slots and autosaves preserve sub-day time so marching units
+  resume at the saved position.
 - Diplomacy is shown as borders only; marches are shown as pieces on roads.
   Battles appear automatically only when the player's forces take part. The five
   non-participating Sekigahara units receive no generic advance animation.
@@ -27,6 +58,17 @@ is [docs/README.md](docs/README.md); open requests and ownership are in
   Castle falls without supported deployments remain timeline entries and historic sites.
 - Modern comparison terrain, estimates derived from sources and confirmed
   historical facts are kept apart. Unsupported text is not shown in the game.
+- The Sanshu road comparison follows the Ina valley, Komaba and Neba. Mountain
+  sections include modern roads and tunnels; they are not an exact sixteenth-century
+  centerline. See the [inputs and regeneration](data/inputs/sanshu-road-review/README.md)
+  (Japanese).
+- Late elevation, river and boundary loads refresh the map while the camera stays still.
+- Dated events without a known related place remain searchable by their subject.
+  Locations are not invented, and Edo-period reclamation records are kept separate
+  from evidence for Sengoku-period shorelines.
+- [Ten additional person identities](data/research/source-notes/person-authority-expansion.md)
+  retain Wikidata revisions and identity checks. Dates and whereabouts are not
+  imported as new historical claims.
 - The historical database preserves original calendars and date precision, and rejects
   additional date fields that conflict with the time format. See the
   [database design and commands](docs/architecture/history-database.md) (Japanese).
@@ -66,6 +108,11 @@ is [docs/README.md](docs/README.md); open requests and ownership are in
 | `archive/` | Suspended non-historical implementations; not loaded at startup |
 
 ## Getting started and usage
+
+Run `node tools/map/build-map.cjs --vectors-only` to republish edited GeoJSON,
+or add `--check` to verify byte-for-byte agreement with the canonical files.
+It does not regenerate or correct the edited source. The five comparison lakes
+retain their sources and limitations in the [input notes](data/inputs/mlit-w09-2005/README.md).
 
 The map source lives in `kuniezu/map/`, one folder per layer, and is tracked in Git:
 administrative divisions in `admin/` (districts), control in `control/` (castle

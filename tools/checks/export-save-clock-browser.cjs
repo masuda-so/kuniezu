@@ -1,0 +1,44 @@
+/* 専用Chromeでメニューからファイル保存・取り込みを検証する。サーバーは起動しない。 */
+const fs=require('fs'),path=require('path'),os=require('os'),assert=require('assert/strict'),{spawn}=require('child_process');
+const root=path.resolve(__dirname,'../..');
+const out=path.resolve(process.env.GAME_TEST_OUTPUT||path.join(os.tmpdir(),'kuniezu-export-clock-results'));fs.mkdirSync(out,{recursive:true});
+const page=fs.mkdtempSync(path.join(os.tmpdir(),'kuniezu-export-clock-page-'));
+const url=process.env.GAME_URL||require('../build/game-page.cjs').writeLocalPage(page,root);
+const profile=fs.mkdtempSync(path.join(os.tmpdir(),'kuniezu-export-clock-profile-'));
+const chrome=spawn(process.env.CHROME_PATH||'/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',['--headless','--disable-gpu','--no-first-run','--no-default-browser-check','--allow-file-access-from-files','--user-data-dir='+profile,'--remote-debugging-pipe'],{stdio:['ignore','ignore','ignore','pipe','pipe']});
+let seq=0,buffer='',session;const pending=new Map();let chooser;const errors=[];
+chrome.stdio[4].on('data',chunk=>{buffer+=chunk;let end;while((end=buffer.indexOf('\0'))>=0){const packet=buffer.slice(0,end);buffer=buffer.slice(end+1);if(!packet)continue;const m=JSON.parse(packet),p=pending.get(m.id);if(m.method==='Page.fileChooserOpened')chooser=m.params;if(m.method==='Runtime.exceptionThrown')errors.push(m.params.exceptionDetails.text);if(p){pending.delete(m.id);m.error?p.reject(Error(JSON.stringify(m.error))):p.resolve(m.result);}}});
+const call=(method,params={},sid=session)=>new Promise((resolve,reject)=>{const id=++seq;pending.set(id,{resolve,reject});chrome.stdio[3].write(JSON.stringify({id,method,params,...(sid?{sessionId:sid}:{})})+'\0');});
+const invoke=async(fn,...values)=>{const global=await call('Runtime.evaluate',{expression:'globalThis'});try{const r=await call('Runtime.callFunctionOn',{objectId:global.result.objectId,functionDeclaration:fn.toString(),arguments:values.map(value=>({value})),returnByValue:true,awaitPromise:true,userGesture:true});if(r.exceptionDetails)throw Error(r.exceptionDetails.exception?.description||r.exceptionDetails.text);return r.result.value;}finally{await call('Runtime.releaseObject',{objectId:global.result.objectId}).catch(()=>{});}};
+const sleep=ms=>new Promise(r=>setTimeout(r,ms));
+const timeout=setTimeout(()=>{chrome.kill();process.exitCode=1},90000);
+(async()=>{try{
+const target=await call('Target.createTarget',{url:'about:blank'},null);session=(await call('Target.attachToTarget',{targetId:target.targetId,flatten:true},null)).sessionId;
+await call('Runtime.enable');await call('Page.enable');
+const downloads=fs.mkdtempSync(path.join(out,'downloads-'));
+await call('Browser.setDownloadBehavior',{behavior:'allow',downloadPath:downloads},null);
+await call('Page.setInterceptFileChooserDialog',{enabled:true});
+await call('Page.navigate',{url});
+async function until(fn){for(let i=0;i<300;i++){if(await invoke(fn))return;await sleep(100);}throw Error('page wait timed out');}
+await until(function(){return !!document.querySelector('[data-act=new]')&&!document.getElementById('boot')});
+await invoke(function(){document.querySelector('[data-act=new]').click();document.querySelector('[data-act=scen][data-id=s1560]').click();document.querySelector('[data-act=start]').click();});
+await until(function(){return TKUI.modal==='intro'});
+await invoke(function(){document.querySelector('#modal [data-act=close]').click();TKUI.acc=.63;TKUI.speed=1;document.querySelector('#me [data-m=menu]').click();});
+await invoke(function(){document.querySelector('#modal [data-act=open][data-m=menu-save]').click();});
+const before=await invoke(function(){const s=G.S(),u=s.units.find(u=>u.clan==='imagawa');s.visualFraction=0;const p=G.historyPoint(u);TKUI.cam(p[0],p[1],3);return {fraction:TKUI.acc,id:u.id,point:p,date:G.dstr(),troops:u.troops,end:u.schedule.end};});
+assert.equal(before.fraction,.63);
+await invoke(function(){G.S().visualFraction=0;document.querySelector('#modal [data-act=export]').click();});
+let file;for(let i=0;i<100;i++){file=fs.readdirSync(downloads).find(n=>n.endsWith('.json'));if(file)break;await sleep(100);}assert.ok(file,'actual download');
+const filePath=path.join(downloads,file),saved=require(path.join(root,'kuniezu/static/kuniezu/storage.js')).decode(fs.readFileSync(filePath,'utf8'));
+assert.equal(saved.visualFraction,.63,'download contains current fraction');
+await invoke(function(){document.querySelector('#modal [data-act=import]').click();});
+for(let i=0;i<100&&!chooser;i++)await sleep(50);assert.ok(chooser,'actual file chooser');
+await call('DOM.setFileInputFiles',{backendNodeId:chooser.backendNodeId,files:[filePath]});
+await until(function(){return TKUI.modal==='import-confirm'});
+const after=await invoke(function(){document.querySelector('#modal [data-act=import-go]').click();const u=G.S().units.find(u=>u.clan==='imagawa');return {fraction:TKUI.acc,id:u.id,point:G.historyPoint(u),date:G.dstr(),troops:u.troops,end:u.schedule.end,modal:TKUI.modal};});
+assert.equal(after.fraction,before.fraction);assert.equal(after.id,before.id);assert.equal(after.date,before.date);assert.equal(after.troops,before.troops);assert.equal(after.end,before.end);
+assert.ok(Math.hypot(before.point[0]-after.point[0],before.point[1]-after.point[1])<1e-8,'import does not move marching army');assert.deepEqual(errors,[]);
+const screenshot=await call('Page.captureScreenshot',{format:'png'});fs.writeFileSync(path.join(out,'restored.png'),Buffer.from(screenshot.data,'base64'));
+fs.writeFileSync(path.join(out,'result.json'),JSON.stringify({before,after,exportedFraction:saved.visualFraction,errors},null,2));
+console.log('PASS: real menu export/download/chooser/import preserves sub-day clock and marching army');
+}catch(e){console.error(e.stack);process.exitCode=1;}finally{clearTimeout(timeout);const exited=chrome.exitCode!==null||chrome.signalCode!==null?Promise.resolve():new Promise(resolve=>chrome.once('exit',resolve));try{await call('Browser.close',{},null)}catch{}chrome.kill();await exited;fs.rmSync(profile,{recursive:true,force:true,maxRetries:5,retryDelay:100});fs.rmSync(page,{recursive:true,force:true});}})();

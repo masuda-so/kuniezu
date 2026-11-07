@@ -1,0 +1,32 @@
+{
+  "id": "shiotsugata-reclamation-blockage",
+  "entity": "water:塩津潟",
+  "predicate": "channel-siltation",
+  "value": "長者堀が土砂で埋まった。",
+  "validYears": [
+    1722,
+    1722
+  ],
+  "datePrecision": "year",
+  "source": "niigata-shiotsugata-reclamation",
+  "sourceUrl": "https://www.pref.niigata.lg.jp/sec/shibata_noson/1356833203513.html",
+  "locator": "享保6年（1721）の工事の翌年に埋まったという記述",
+  "gameBindings": [
+    "TK.HISTORIC_WATERS:shiunji"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-07",
+  "uncertainty": "1722年は本文の「1721年の翌年」から算出。工事日・水際・水位は特定しない。",
+  "linkedEntities": [
+    "place:chojabori"
+  ],
+  "eventTime": {
+    "kind": "year-window",
+    "year": 1722,
+    "calendar": "CE-year",
+    "precision": "year"
+  },
+  "eventRelation": "drainage-work-stage",
+  "eventScope": "江戸期の排水条件の変化。戦国期の湖岸の根拠に転用しない。"
+}

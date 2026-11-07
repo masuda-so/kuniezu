@@ -3,8 +3,8 @@
   "summary": {
     "roads": 85,
     "correctedRoads": 60,
-    "excursions": 201,
-    "removedKm": 163.46884315978212
+    "excursions": 200,
+    "removedKm": 141.5891469099526
   },
   "rows": [
     {
@@ -1930,7 +1930,7 @@
     },
     {
       "name": "義州大路",
-      "modernReference": false,
+      "modernReference": true,
       "removedVertices": 0,
       "excursions": []
     },
@@ -1954,7 +1954,7 @@
     },
     {
       "name": "関北路",
-      "modernReference": false,
+      "modernReference": true,
       "removedVertices": 0,
       "excursions": []
     },
@@ -2201,50 +2201,39 @@
     {
       "name": "三州街道",
       "modernReference": true,
-      "removedVertices": 469,
+      "removedVertices": 18,
       "excursions": [
         {
-          "first": 213,
-          "last": 221,
-          "lengthKm": 0.3766036535615527,
+          "first": 385,
+          "last": 387,
+          "lengthKm": 0.3240081804226733,
           "returnRatio": 1,
           "reviewed": false,
           "junction": [
-            137.996822,
-            35.948486
+            137.987693,
+            35.912617
           ]
         },
         {
-          "first": 323,
-          "last": 325,
-          "lengthKm": 0.05670240574963259,
+          "first": 970,
+          "last": 974,
+          "lengthKm": 0.159306539841225,
           "returnRatio": 1,
           "reviewed": false,
           "junction": [
-            138.060718,
-            35.830651
+            137.859711,
+            35.556875
           ]
         },
         {
-          "first": 1289,
-          "last": 1746,
-          "lengthKm": 22.512551902471643,
-          "returnRatio": 0.48520019530374,
-          "reviewed": true,
-          "junction": [
-            137.708965,
-            35.306391
-          ]
-        },
-        {
-          "first": 2951,
-          "last": 2953,
-          "lengthKm": 0.07724222505061107,
+          "first": 1042,
+          "last": 1054,
+          "lengthKm": 0.6600892167400048,
           "returnRatio": 1,
           "reviewed": false,
           "junction": [
-            137.319715,
-            35.130292
+            137.829728,
+            35.51291
           ]
         }
       ]

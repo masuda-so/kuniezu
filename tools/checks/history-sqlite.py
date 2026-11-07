@@ -17,9 +17,14 @@ with tempfile.TemporaryDirectory(prefix='kuniezu-sql-check-') as temp:
     output = Path(temp)/'history.sqlite3'
     count = store.build(research, output)
     queries = [{}] + [{'fromYear': y, 'toYear': y} for y in range(1560,1617)]
+    # 比較史料の年も、全年度へ展開せず記録の変化点だけを検査する。
+    claims = [json.loads(s) for s in (research/'claims.jsonl').read_text().splitlines()]
+    outside_years = {y for row in claims for y in row['validYears']} - set(range(1560, 1617))
+    queries += [{'fromYear': y, 'toYear': y} for y in sorted(outside_years)]
     people = [json.loads(s) for s in (research/'people.jsonl').read_text().splitlines()]
     places = [json.loads(s) for s in (research/'places.jsonl').read_text().splitlines()]
     queries += [{'entity': r['id']} for r in people+places]
+    queries += [{'entity': entity} for entity in sorted({row['entity'] for row in claims})]
     queries += [{'entity': name} for r in people for n in r.get('gameNames', []) for name in [n,'person:'+n]]
     queries += [{'entity': name} for r in people+places for name in r.get('aliases', [])]
     queries += [{'entity': '県城', 'fromYear':1613,'toYear':1614}, {'entity':'都於郡城','fromYear':1610,'toYear':1610}, {'entity':'wikidata:Q171977'}, {'entity':'塩津街道'}, {'entity':'ヌルハチ'}]

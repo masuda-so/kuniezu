@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="ja">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CODH 江戸期地理・ベクター比較</title>
+<style>
+  *{box-sizing:border-box}body{margin:0;background:#e8e0c9;color:#292a26;font:14px system-ui}
+  header{position:absolute;z-index:1;top:12px;left:12px;max-width:calc(100% - 24px);padding:12px;background:#fffaf0ed;border:1px solid #bcb49b;border-radius:6px}
+  h1{font-size:16px;margin:0 0 8px}p{margin:6px 0}button,label{margin-right:8px}button{padding:5px 10px}
+  canvas{display:block;width:100vw;height:100vh;touch-action:none;cursor:grab}canvas:active{cursor:grabbing}
+  footer{position:absolute;bottom:0;padding:6px 12px;background:#fffaf0ed;font-size:11px;max-width:100%}
+  output{font-variant-numeric:tabular-nums}
+  @media(max-width:600px){header{top:6px;left:6px;max-width:calc(100% - 12px);padding:8px;font-size:12px}h1{font-size:14px}button{margin-right:4px;padding:5px 8px}footer{font-size:10px}}
+</style>
+<header>
+  <h1>CODH 江戸期地理・ベクター比較</h1>
+  <p>江戸末期の参照図です。戦国期の地形・宿場の存在を示す図ではありません。</p>
+  <p><button data-region="japan">日本</button><button data-region="kanto">関東</button><button data-region="kojima">児島湾</button><button id="in" aria-label="拡大">＋</button><button id="out" aria-label="縮小">−</button></p>
+  <p><label><input type="checkbox" data-layer="lake-polygons" checked>湖沼</label><label><input type="checkbox" data-layer="roads" checked>街道</label><label><input type="checkbox" data-layer="posts" checked>宿場</label></p>
+  <output id="info" aria-live="polite"></output>
+</header>
+<canvas aria-label="拡大縮小・移動可能な江戸期地理参照図"></canvas>
+<footer><details><summary>出典：CODH 江戸期地理データセット／CC BY 4.0</summary>ROIS-DS人文学オープンデータ共同利用センター作成：海岸線・水域 doi:10.20676/00000453、湖沼 doi:10.20676/00000467、街道 doi:10.20676/00000452、宿場 doi:10.20676/00000477。陸の塗り・縁取り・位置判定は読み込んだ同じ面を使用。編集済み面の補正範囲は入力台帳を参照。国土交通省W09-05を含む入力の出典・利用条件は各GeoJSONのprovenanceを参照。</details></footer>
+<script type="application/json" id="data">__CODH_DATA__</script>
+<script>__VECTOR_RENDERER__</script>
+<script>
+'use strict';
+const data=JSON.parse(document.getElementById('data').textContent),p=data.projection;
+const canvas=document.querySelector('canvas'),ctx=canvas.getContext('2d'),info=document.getElementById('info');
+const project=([lon,lat])=>[(lon-p.LON0)*p.K*p.CX,(p.LAT0-lat)*p.K];
+const camera={x:0,y:0,scale:1},enabled=new Set(['coast-polygons','lake-polygons','roads','posts']);
+const layers={},surfaceLayers={},regions={japan:[128,29,146,46],kanto:[138.7,34.8,141.1,36.8],kojima:[133.7,34.42,134.15,34.75]};
+let width=1,height=1,pending=false,drag=null,buildMilliseconds=0;
+const started=performance.now();
+for(const [key,collection] of Object.entries(data.layers)){
+  if(key==='coast-polygons'||key==='lake-polygons'){
+    const role=key==='coast-polygons'?'land':'water',model=TKVectorMap.create({project:(lon,lat)=>project([lon,lat])});
+    model.replace([{...collection,features:collection.features.map(f=>({...f,properties:{...f.properties,drawRole:role}}))}]);
+    surfaceLayers[key]={role,model};continue;
+  }
+  layers[key]=collection.features.flatMap(feature=>{
+    if(!feature.geometry)return [];
+    const {type,coordinates}=feature.geometry,path=new Path2D(),bounds=[Infinity,Infinity,-Infinity,-Infinity];
+    function point(position){const [x,y]=project(position);bounds[0]=Math.min(bounds[0],x);bounds[1]=Math.min(bounds[1],y);bounds[2]=Math.max(bounds[2],x);bounds[3]=Math.max(bounds[3],y);return [x,y];}
+    function line(positions,closed){positions.forEach((v,i)=>{const [x,y]=point(v);if(i===0)path.moveTo(x,y);else path.lineTo(x,y);});if(closed)path.closePath();}
+    if(type==='Polygon')coordinates.forEach(ring=>line(ring,true));
+    else if(type==='MultiPolygon')coordinates.forEach(polygon=>polygon.forEach(ring=>line(ring,true)));
+    else if(type==='LineString')line(coordinates,false);
+    else if(type==='Point')point(coordinates);
+    else throw Error('Unexpected reference geometry: '+type);
+    return [{path,bounds,id:feature.id}];
+  });
+}
+buildMilliseconds=performance.now()-started;
+function invalidate(){if(!pending){pending=true;requestAnimationFrame(draw);}}
+function fit(region){const [west,south,east,north]=regions[region],a=project([west,north]),b=project([east,south]);camera.x=(a[0]+b[0])/2;camera.y=(a[1]+b[1])/2;camera.scale=Math.min(width/(b[0]-a[0]),height/(b[1]-a[1]))*.86;invalidate();}
+function draw(){
+  pending=false;const time=performance.now(),dpr=window.devicePixelRatio||1,s=camera.scale;
+  ctx.setTransform(dpr,0,0,dpr,0,0);ctx.fillStyle='#aac5c9';ctx.fillRect(0,0,width,height);
+  ctx.translate(width/2,height/2);ctx.scale(s,s);ctx.translate(-camera.x,-camera.y);
+  const view=[camera.x-width/2/s,camera.y-height/2/s,camera.x+width/2/s,camera.y+height/2/s];let visible=0;
+  for(const key of ['coast-polygons','lake-polygons','roads','posts']){
+    if(!enabled.has(key))continue;
+    ctx.lineWidth=(key==='roads'?1.4:.8)/s;ctx.strokeStyle=key==='roads'?'#865e38':'#476968';
+    ctx.fillStyle=key==='coast-polygons'?'#e8e0c9':key==='posts'?'#762f35':'#aac5c9';
+    if(surfaceLayers[key]){
+      const {model,role}=surfaceLayers[key];visible+=model.draw(ctx,role,[1560,1,1],view);
+      ctx.stroke(model.path(role,[1560,1,1],view));continue;
+    }
+    for(const feature of layers[key]){
+      const b=feature.bounds;if(b[2]<view[0]||b[0]>view[2]||b[3]<view[1]||b[1]>view[3])continue;
+      visible++;
+      if(key==='posts'){ctx.beginPath();ctx.arc(b[0],b[1],2.5/s,0,Math.PI*2);ctx.fill();}
+      else {if(key!=='roads')ctx.fill(feature.path,'evenodd');ctx.stroke(feature.path);}
+    }
+  }
+  const elapsed=performance.now()-time;
+  info.textContent=`表示 ${visible} 地物 ／ 描画 ${elapsed.toFixed(1)} ms ／ 初期パス生成 ${buildMilliseconds.toFixed(1)} ms`;
+  window.codhPreview={camera:{...camera},visible,elapsed,buildMilliseconds,counts:{...Object.fromEntries(Object.entries(layers).map(([key,rows])=>[key,rows.length])),...Object.fromEntries(Object.entries(surfaceLayers).map(([key,row])=>[key,row.model.stats().features]))},paths:Object.fromEntries(Object.entries(surfaceLayers).map(([key,row])=>[key,row.model.stats().paths]))};
+}
+function zoom(factor,x=width/2,y=height/2){const old=camera.scale,next=Math.max(.05,Math.min(500,old*factor));camera.x+=(x-width/2)*(1/old-1/next);camera.y+=(y-height/2)*(1/old-1/next);camera.scale=next;invalidate();}
+function resize(){width=innerWidth;height=innerHeight;const dpr=devicePixelRatio||1;canvas.width=Math.round(width*dpr);canvas.height=Math.round(height*dpr);invalidate();}
+canvas.addEventListener('wheel',event=>{event.preventDefault();zoom(Math.exp(-event.deltaY*.001),event.clientX,event.clientY);},{passive:false});
+canvas.addEventListener('pointerdown',event=>{if(!event.isPrimary)return;drag={id:event.pointerId,x:event.clientX,y:event.clientY};canvas.setPointerCapture(event.pointerId);});
+canvas.addEventListener('pointermove',event=>{if(!drag||drag.id!==event.pointerId)return;camera.x-=(event.clientX-drag.x)/camera.scale;camera.y-=(event.clientY-drag.y)/camera.scale;drag.x=event.clientX;drag.y=event.clientY;invalidate();});
+for(const kind of ['pointerup','pointercancel','lostpointercapture'])canvas.addEventListener(kind,()=>{drag=null;});
+document.querySelectorAll('[data-region]').forEach(button=>button.addEventListener('click',()=>fit(button.dataset.region)));
+document.querySelectorAll('[data-layer]').forEach(box=>box.addEventListener('change',()=>{if(box.checked)enabled.add(box.dataset.layer);else enabled.delete(box.dataset.layer);invalidate();}));
+document.getElementById('in').addEventListener('click',()=>zoom(1.5));document.getElementById('out').addEventListener('click',()=>zoom(1/1.5));
+addEventListener('resize',resize);resize();fit('japan');
+</script>
+</html>

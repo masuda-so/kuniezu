@@ -1,4 +1,5 @@
 /* 地図の通常の再生成の入口。正本 kuniezu/map/ から Web 配信用の生成物（kuniezu/static/kuniezu/map/build/、Git で追跡しない）を順に作る。重い処理なので一つずつ直列に動かす。
+   0. ベクター配信 tools/map/build-vector-assets.cjs 編集済みGeoJSONを座標を変えずにmap/build/vector/へ複写
    1. 領域タイル   tools/map/build-map-tiles.cjs      provinces.png → kuniezu/static/kuniezu/map/build/provinces{,-4,-8}/・manifest.json
    2. 年代別の版   tools/map/build-province-edits.cjs kuniezu/map/edits/*.json → kuniezu/static/kuniezu/map/build/edits/compiled/
    3. 境界線       tools/map/build-edges.cjs          領域タイル・版・kuniezu/map/admin/gun.png → kuniezu/static/kuniezu/map/build/edges-1・edges-4・edges-8・versions.json
@@ -6,15 +7,19 @@
    5. 陰影         tools/map/build-height-cache.py    heightmap.png → kuniezu/static/kuniezu/map/build/relief-cache/・relief.json（--height の時だけ。NumPy・Pillow の Python が要る）
    6. 縮小版       tools/map/build-previews.cjs       正本の各層 → kuniezu/static/kuniezu/map/build/previews/（人が目で確かめる 1/4 の画像。--no-previews で省く）
    最後に tools/build/stamp-assets.cjs で読み込みの確認値をそろえる。
-   正本は画像そのものを直す。旧来の線や外部データから正本を作った移行用の道具は削除した（必要なら Git の履歴を見る）。
+   ベクター正本はGeoJSONを直接編集し、画像正本は画像そのものを直す。配信で形状を改変しない。
    実行：node tools/map/build-map.cjs [--height] [--python /path/to/python3] [--no-previews]
-         node tools/map/build-map.cjs --check   （書かずに、領域タイルと河川の線が正本どおりか確かめる） */
+         node tools/map/build-map.cjs --vectors-only （編集済みGeoJSONの複写だけ）
+         node tools/map/build-map.cjs --check   （書かずに、ベクター複写・領域タイル・河川の線を確かめる） */
 const {spawnSync}=require('node:child_process'),path=require('node:path');
 const root=path.resolve(__dirname,'../..'),args=process.argv.slice(2),arg=k=>{const i=args.indexOf(k);return i>=0?args[i+1]:null;};
 const node=(file,...a)=>[process.execPath,['--max-old-space-size=8000',path.join(root,file),...a]];
-const steps=args.includes('--check')?[
+const checking=args.includes('--check'),vector=['ベクターデータ',...node('tools/map/build-vector-assets.cjs',...(checking?['--check']:[]))];
+const steps=args.includes('--vectors-only')?[vector]:checking?[
+ vector,
  ['領域タイル',...node('tools/map/build-map-tiles.cjs','--check')],
  ['河川の線',...node('tools/map/build-river-lines.cjs','--check')]]:[
+ vector,
  ['領域タイル',...node('tools/map/build-map-tiles.cjs')],
  ['年代別の版',...node('tools/map/build-province-edits.cjs')],
  ['境界線',...node('tools/map/build-edges.cjs')],
@@ -24,4 +29,4 @@ const steps=args.includes('--check')?[
  ['読み込みの確認値',...node('tools/build/stamp-assets.cjs')]];
 for(const [name,cmd,a] of steps){const t=Date.now();console.log(`— ${name}`);const r=spawnSync(cmd,a,{cwd:root,stdio:'inherit'});
  if(r.status!==0){console.error(`${name} で止まった（${r.error?.message||'終了コード '+r.status}）。後の段は動かしていない。`);process.exit(1);}console.log(`  ${((Date.now()-t)/1000).toFixed(1)} 秒`);}
-console.log(args.includes('--check')?'PASS: 領域タイルと河川の線は正本どおり（年代別の版・境界線・陰影はこの照合に含まない）':'完了：配信物を正本から作り直した');
+console.log(args.includes('--vectors-only')?(checking?'PASS: 配信用GeoJSONは編集正本とバイト一致':'完了：編集済みGeoJSONを形状を変えずに複写した'):checking?'PASS: ベクター複写・領域タイル・河川の線は正本どおり（年代別の版・境界線・陰影はこの照合に含まない）':'完了：配信物を正本から作り直した');

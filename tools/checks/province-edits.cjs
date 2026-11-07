@@ -28,6 +28,9 @@ const snapshot=dir=>{const rows=[];const walk=(p,prefix='')=>{for(const name of 
   const mf=path.join(mapDir,'manifest.json'),lf=path.join(editsDir,'baseline-ledger.json');
   const ledger={baselineCommit:'fixture',sourceSha256:md.sourceSha256(),applied:[{id:'baked'}]};
   write(mf,manifest);write(lf,ledger);
+  // ベクター参照の別契約を直下の領域差分として解釈しない。
+  fs.mkdirSync(path.join(editsDir,'vector'));
+  fs.copyFileSync(path.join(root,'kuniezu/map/edits/vector/manifest.json'),path.join(editsDir,'vector/manifest.json'));
   const polygon=(name,x,y)=>write(path.join(tmp,name+'.geojson'),{features:[{geometry:{type:'Polygon',coordinates:[[[x,-y],[x+1,-y],[x+1,-y-1],[x,-y-1],[x,-y]]]}}]});
   polygon('one',0,0);polygon('corner',1,1);
   const edit={id:'one',baseRevision:'fixture',layer:'provinces',validFrom:[1560,1,1],validUntil:[1616,1,1],payload:{file:'../../one.geojson',feature:0,fromKey:'sea',toKey:'castle:a'}};

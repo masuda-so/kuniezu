@@ -614,3 +614,44 @@ def test_a_merged_name_still_finds_the_thing(inputs, first):
         assert list(queries.find_things(name)) == [castle]
     # A registry identifier is not a name: it finds the place only as a key.
     assert not ThingName.objects.filter(name="ganjaku").exists()
+
+
+def test_dated_water_works_do_not_invent_locations(inputs):
+    import_history(inputs)
+    water = Thing.objects.get(key="water:塩津潟")
+    prefix = "claim:shiotsugata-reclamation-"
+    found = queries.about(water).filter(key__startswith=prefix)
+    expected_by_year = {
+        1721: {"initial"},
+        1722: {"blockage"},
+        1728: {"reopening", "sakaigawa"},
+        1732: {"drainage", "flood"},
+    }
+    for year, suffixes in expected_by_year.items():
+        assert set(
+            found.filter(pk__in=queries.in_year(year)).values_list("key", flat=True)
+        ) == {prefix + suffix for suffix in suffixes}
+    expected_by_kind = {
+        PhenomenonKind.WORKS: {"initial", "reopening", "sakaigawa", "drainage"},
+        PhenomenonKind.NATURE: {"blockage", "flood"},
+    }
+    for kind, suffixes in expected_by_kind.items():
+        assert set(found.filter(kind=kind).values_list("key", flat=True)) == {
+            prefix + suffix for suffix in suffixes
+        }
+    for suffix in ["sakaigawa", "drainage"]:
+        event = found.get(key=prefix + suffix)
+        assert event.place is None
+        assert event.mode == Mode.EVENT
+        assert event.calendar == Calendar.CE_YEAR
+        assert event.participations.count() == 1
+        assert event.participations.filter(thing=water).exists()
+        record = Record.objects.get(key=prefix + suffix)
+        assert record.payload["linkedEntities"] == []
+    for suffix in ["initial", "blockage", "reopening", "flood"]:
+        event = found.get(key=prefix + suffix)
+        assert event.place is not None
+        assert event.place.key == "place:chojabori"
+    chojabori = Thing.objects.get(key="place:chojabori")
+    assert not Place.objects.filter(thing=chojabori).exists()
+    assert not queries.in_box(139, 140, 37, 39).filter(key__startswith=prefix).exists()

@@ -311,7 +311,12 @@ function terrainBackdrop(c,view,z){
 const rgbCache=new Map(),rgbCtx=document.createElement('canvas').getContext('2d');
 function cssRGB(css){if(rgbCache.has(css))return rgbCache.get(css);rgbCtx.fillStyle='#000';rgbCtx.fillStyle=css;const v=rgbCtx.fillStyle,m=v.startsWith('#')?[1,3,5].map(i=>parseInt(v.slice(i,i+2),16)):v.match(/\d+(\.\d+)?/g).slice(0,3).map(Number);rgbCache.set(css,m);return m;}
 function rasterColor(flat){return d=>{if(!d)return null;const context=TK.CONTEXT_REGION_STYLES?.[d.key];if(context&&d.kind==='land')return [...cssRGB(context.color),Math.round(Math.min(1,(context.alpha??.28)+(flat?.06:0))*255)];if(!d.key.startsWith('castle:'))return null;const st=S?.castles[d.key.slice(7)];if(!st)return null;const k=st.owner,a=flat?(k===S.player?.5:.35):(k===S.player?.44:.32);return [...cssRGB(pastel(k)),Math.round(a*255)];};}
-window.TKRaster?.onChange(()=>{syncContToSource();U.baseDirty=true;U.wakeLoop?.();});syncContToSource();// 読み込みが先に終わっていた時のため、登録直後にも合わせるwindow.TKRelief?.onChange(()=>{U.baseDirty=true;U.wakeLoop?.();});window.TKEdges?.onChange(()=>{U.baseDirty=true;U.wakeLoop?.();});window.TKRivers?.onChange(()=>{U.baseDirty=true;U.wakeLoop?.();});
+window.TKRaster?.onChange(()=>{syncContToSource();U.baseDirty=true;U.wakeLoop?.();});
+// 読み込みが先に終わっていた時のため、登録直後にも合わせる。
+syncContToSource();
+window.TKRelief?.onChange(()=>{U.baseDirty=true;U.wakeLoop?.();});
+window.TKEdges?.onChange(()=>{U.baseDirty=true;U.wakeLoop?.();});
+window.TKRivers?.onChange(()=>{U.baseDirty=true;U.wakeLoop?.();});
 // 陸だけの描画層（paintBase が使う）。描く先と同じ大きさのキャンバスを使い回す。
 const LANDLAYERS=[];function landLayer(c,n=0){const w=c.canvas.width,h=c.canvas.height;if(!LANDLAYERS[n])LANDLAYERS[n]=document.createElement('canvas').getContext('2d');const L=LANDLAYERS[n];if(L.canvas.width!==w||L.canvas.height!==h){L.canvas.width=w;L.canvas.height=h;}L.setTransform(1,0,0,1,0,0);L.globalCompositeOperation='source-over';L.globalAlpha=1;L.shadowBlur=0;L.clearRect(0,0,w,h);return L;}
 // 正本の陸の型（paintBase が領域画像から作る、下地と同じ大きさの canvas）。川・道路・時代の水域などは、旧来の線の陸 LANDV ではなくこの型で切る。
@@ -1307,16 +1312,17 @@ const HELP=`<div class="help"><p><b>年代を進める</b>　左上の ▶ で�
 
 /* ===== 保存 ===== */
 const SAVE_KEY2='kuniezu-history-v1-',LEGACY_SAVE_KEY='tenka-haichizu-v7-';
-function doSave(n){S.visualFraction=Math.max(0,Math.min(1,U.acc||0));const d=G.date();let r;try{r=TKStorage.write(localStorage,SAVE_KEY2+n,S,`${G.eraK()}${G.monK()}${G.dayK()}（${d.y}） ${G.CNK(S.player)}`);}catch(error){r={ok:false,error};}
+function saveFraction(){return Math.max(0,Math.min(1,U.acc||0));}
+function doSave(n){S.visualFraction=saveFraction();const d=G.date();let r;try{r=TKStorage.write(localStorage,SAVE_KEY2+n,S,`${G.eraK()}${G.monK()}${G.dayK()}（${d.y}） ${G.CNK(S.player)}`);}catch(error){r={ok:false,error};}
  U.saveFailure=r.ok?null:{name:r.error?.name||'SaveError',message:r.error?.message||'保存処理が失敗しました'};
  if(!r.ok)toast('保存できませんでした。ブラウザの保存容量や設定を確認し、ファイルに書き出してください。','bad');return r.ok;}
-function exportSave(){try{const blob=new Blob([TKStorage.encode(S)],{type:'application/json'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download=`天下分け目の国絵図-${G.date().y}-${G.date().m}-${G.date().d}.json`;a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);toast('保存データを書き出しました','good');}catch(_){toast('書き出せませんでした','bad');}}
+function exportSave(){try{const blob=new Blob([TKStorage.encode({...S,visualFraction:saveFraction()})],{type:'application/json'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download=`天下分け目の国絵図-${G.date().y}-${G.date().m}-${G.date().d}.json`;a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);toast('保存データを書き出しました','good');}catch(_){toast('書き出せませんでした','bad');}}
 function importSave(){const input=document.createElement('input');input.type='file';input.accept='.json,application/json';input.hidden=true;document.body.append(input);input.addEventListener('cancel',()=>input.remove(),{once:true});
  input.onchange=async()=>{const file=input.files[0];input.remove();if(!file)return;try{if(file.size>20000000)throw new Error('size');const next=cleanSave(TKStorage.decode(await file.text()));if(!next)throw new Error('shape');U.pendingImport=next;openModal('import-confirm');}catch(_){toast('取り込めませんでした。国絵図の保存ファイルを選んでください。','bad');}};input.click();}
 MODALS['import-confirm']=()=>`<header><h2>保存ファイルを取り込む</h2></header><p>現在のプレイを、選んだファイルの続きに切り替えます。現在のプレイを残す場合は、先に保存または書き出しをしてください。</p><footer><button class="btn" data-act="import-cancel">やめる</button><button class="btn pri" data-act="import-go">取り込む</button></footer>`;
 ACT['import-cancel']=()=>{U.pendingImport=null;openModal('menu');};
 ACT['import-go']=()=>{if(!U.pendingImport)return;const previous=S;try{S=U.pendingImport;G.setS(S);G.fixHist();U.sel=null;U.ended=false;enterGame();closeModal();U.pendingImport=null;toast('ファイルから再開しました','good');}catch(_){S=previous;G.setS(S);U.pendingImport=null;enterGame();openModal('menu');toast('取り込めませんでした。元のプレイに戻しました。','bad');}};
-function autosave(){if(!S||U.mode!=='game')return false;S.visualFraction=Math.max(0,Math.min(1,U.acc||0));const now=Date.now();if(U.saveRetry&&now<U.saveRetry)return false;
+function autosave(){if(!S||U.mode!=='game')return false;S.visualFraction=saveFraction();const now=Date.now();if(U.saveRetry&&now<U.saveRetry)return false;
  const ok=doSave('auto');if(ok){U.lastSave=S.t;U.savedAt=now;U.saveRetry=0;U.saveError=false;}else{U.saveRetry=now+10000;U.saveError=true;}return ok;}
 setInterval(()=>{if(U.mode==='game'&&S&&S.t!==U.lastSave)autosave();},45000);
 addEventListener('pagehide',()=>autosave());

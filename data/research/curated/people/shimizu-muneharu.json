@@ -1,0 +1,21 @@
+{
+  "id": "person:shimizu-muneharu",
+  "name": "清水宗治",
+  "gameNames": [
+    "清水宗治"
+  ],
+  "authorityIds": [
+    "wikidata:Q1046032"
+  ],
+  "authorityEvidence": {
+    "scope": "person-identity",
+    "wikidataRevision": 2550964681,
+    "checked": "2026-11-07",
+    "snapshot": "data/research/source-notes/person-authority-next-three.json",
+    "sourceIds": [
+      "okayamaMuseumShimizuMuneharu"
+    ],
+    "basis": "公的資料と姓名以外の2項目以上を照合。生没日は同定の比較値に限定し、史実命題へ自動採用しない。",
+    "note": "data/research/source-notes/person-authority-next-three.md"
+  }
+}
