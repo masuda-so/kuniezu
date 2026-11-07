@@ -1500,8 +1500,8 @@
       "displayPolicy": "atlas",
       "atlasBasis": "城郭・攻囲配置図",
       "positionedUnits": 0,
-      "positionedGroups": 2,
-      "unlocatedGroups": 3,
+      "positionedGroups": 4,
+      "unlocatedGroups": 1,
       "displayedParticipants": 6
     },
     {
@@ -7124,8 +7124,44 @@
       "title": "安芸城跡",
       "locator": "城跡解説（位置・歴史）",
       "url": "https://www.city.aki.kochi.jp/life/dtl.php?hdnKey=44",
-      "accessed": "2026-11-02",
-      "scope": "安芸平野中央の城跡、1569年の攻防と五藤氏の土居。城域全体の測量値ではない。"
+      "accessed": "2026-11-04",
+      "scope": "安芸平野中央の城跡と1569年の安芸氏・長宗我部元親の攻防。現本文には五藤為重・1601年の入居はなく、城域全体の測量値でもない。"
+    },
+    "akiHistoryChronology": {
+      "author": "安芸市立歴史民俗資料館",
+      "title": "安芸の歴史 年表",
+      "locator": "1569年・1601年の項",
+      "url": "https://www.city.aki.kochi.jp/rekimin/info/dtl.php?hdnKey=7968",
+      "published": "2025-02-12",
+      "accessed": "2026-11-04",
+      "scope": "1569年の安芸国虎と長宗我部元親、1601年の五藤氏の安芸城跡土居への入居。五藤為重個人の同定は高知城歴史博物館の人物解説と照合する。年表の家老就任説明は今回採用しない。"
+    },
+    "gotoTameshigeKochiMuseum": {
+      "author": "高知県立高知城歴史博物館",
+      "title": "土佐史の人々－初期－",
+      "locator": "五藤為重の項",
+      "url": "https://www.kochi-johaku.jp/column/4516/",
+      "published": "2019-11-27",
+      "accessed": "2026-11-04",
+      "scope": "五藤為重本人が山内一豊に仕え、兄為浄の跡を継ぎ、土佐入国時に安芸城を預けられたという同定根拠。家老就任の厳密な年や全安芸領有・通年所在へ拡張しない。"
+    },
+    "hinoGamoUjisatoIdentity": {
+      "author": "日野町",
+      "title": "蒲生氏郷",
+      "locator": "人物解説・鶴千代、賦秀から氏郷への改名",
+      "url": "https://www.town.shiga-hino.lg.jp/0000003695.html",
+      "published": "2017-03-01",
+      "updated": "2025-06-20",
+      "accessed": "2026-11-04",
+      "scope": "蒲生氏郷本人の別名・時代・活動を照合する人物同定資料。生没日、出生順、所領変遷、行軍日程を自動採用しない。"
+    },
+    "kochiAkiKunitoraGrave": {
+      "author": "高知県教育委員会文化財課",
+      "title": "安芸国虎墓",
+      "locator": "安芸国虎の敗北と自刃の説明",
+      "url": "https://www.kochinet.ed.jp/bunkazai/details/410-2/410-2-12.htm",
+      "accessed": "2026-11-04",
+      "scope": "1569年に長宗我部元親との戦いに敗れた安芸国虎の同定。墓塔の所在地を生前の居所に転用しない。"
     },
     "fukasakaCourse": {
       "author": "長浜市北部振興局農林課",
