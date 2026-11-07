@@ -16,4 +16,4 @@
 
 原本の同一性はZIPのSHAとレコード番号の組で保持する。これらの範囲は既存 `lake-baselines.js` の小数6桁座標とも全て一致した。独立担当は5湖とも原本と編集正本の形状一致を確認した。CODHの合成参照陸では5湖の面積のほぼ全てが陸となるため、移行で既存湖を消さないための補完である。
 
-編集正本は `kuniezu/map/physical/lakes-reference.geojson`。初回の原本照合と、以後の直接編集は区別する。通常の配信は正本のバイト複写だけで、ここにある原本から編集正本を再生成しない。
+編集正本は `kuniezu/map/physical/water.geojson` 内の同じ5 ID。初回の独立ファイル `lakes-reference.geojson` は重複を避けて統合し、[移行記録](../vector-map-migration/README.md)に旧Git版とSHAを残した。初回の原本照合と、以後の直接編集は区別する。通常の配信は正本のバイト複写だけで、ここにある原本から編集正本を再生成しない。

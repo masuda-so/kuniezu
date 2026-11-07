@@ -49,3 +49,5 @@ CI の `Django CI` は website と同じく試験（`uv run pytest`）だけを�
 ゲームの検査（`node tools/checks/offline.cjs` ほか、CI の `Offline checks`）は従来どおり。ゲームの JS を実行するので Node が要る。
 
 開発サーバーの起動・停止は利用者が行う：`uv run python manage.py runserver 8000`。
+
+編集済み地理面は `kuniezu/map/physical/land.geojson`・`water.geojson`・`coastline.geojson`。岸線は陸の派生なので一緒に更新し、`tests/test_vector_era_sources.py` で年代ごとの境界一致と保護を検査する。初回採用のコード・原本・SHA・精度上限は `data/inputs/vector-map-migration/` へ保持し、通常の配信ビルドで正本を再生成しない。
