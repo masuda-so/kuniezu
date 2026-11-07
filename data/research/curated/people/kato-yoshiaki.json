@@ -1,0 +1,21 @@
+{
+  "id": "person:kato-yoshiaki",
+  "name": "加藤嘉明",
+  "gameNames": [
+    "加藤嘉明"
+  ],
+  "authorityIds": [
+    "wikidata:Q1371657"
+  ],
+  "authorityEvidence": {
+    "scope": "person-identity",
+    "wikidataRevision": 2555269422,
+    "checked": "2026-11-07",
+    "snapshot": "data/research/source-notes/person-authority-next-twelve.json",
+    "sourceIds": [
+      "ehimeKatoYoshiakiIdentity"
+    ],
+    "basis": "自治体・博物館の本文と、姓名以外の2項目を照合。生没年は比較値に限定し、史実命題へ自動採用しない。",
+    "note": "data/research/source-notes/person-authority-next-twelve.md"
+  }
+}
