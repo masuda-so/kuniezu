@@ -9,6 +9,7 @@ from kuniezu.history import dates
 from kuniezu.history import queries
 from kuniezu.history.importer import CATALOG
 from kuniezu.history.importer import CLAIM_KIND_OF
+from kuniezu.history.importer import IDENTITIES
 from kuniezu.history.importer import MONTH_TABLE
 from kuniezu.history.importer import RESEARCH
 from kuniezu.history.importer import import_history
@@ -24,7 +25,9 @@ from kuniezu.history.models import RecordType
 from kuniezu.history.models import RecordVersion
 from kuniezu.history.models import Status
 from kuniezu.history.models import Thing
+from kuniezu.history.models import ThingKey
 from kuniezu.history.models import ThingKind
+from kuniezu.history.models import ThingName
 
 pytestmark = pytest.mark.django_db
 ROOT = Path(settings.BASE_DIR)
@@ -308,6 +311,309 @@ def test_every_word_for_a_claim_has_one_class():
     assert CLAIM_KIND_OF["described-custody"] == PhenomenonKind.MOVEMENT
     assert CLAIM_KIND_OF["person-name-identity"] == PhenomenonKind.NAMING
     assert set(CLAIM_KIND_OF.values()) <= set(PhenomenonKind) - {PhenomenonKind.OTHER}
+
+
+SUWAHARA = "yosho:諏訪原城:138.12:34.82"
+
+
+def identity(inputs, name, relation, things, **changes):
+    """Write an identity record into the copied inputs."""
+    row = {
+        "id": "identity:" + name,
+        "relation": relation,
+        "things": things,
+        "basis": "試験用の根拠",
+        "source": "suwaharaChronology",
+        "locator": "試験",
+        "checked": "2026-11-05",
+        "status": "verified-in-specified-scope",
+    } | changes
+    folder = inputs / IDENTITIES
+    folder.mkdir(parents=True, exist_ok=True)
+    (folder / f"{name}.json").write_text(
+        json.dumps(row, ensure_ascii=False), encoding="utf-8"
+    )
+    return row
+
+
+def test_two_identifiers_shown_to_be_one_site_become_one_thing(inputs):
+    import_history(inputs)
+    apart = Thing.objects.count()
+    assert Thing.objects.filter(key=SUWAHARA).exists()
+    # Two things share the name, so a claim about "site:諏訪原城" made a third.
+    assert Thing.objects.filter(key="site:諏訪原城").exists()
+
+    row = identity(inputs, "suwahara", "same-site", ["place:suwahara", SUWAHARA])
+    summary = import_history(inputs)
+
+    castle = Thing.objects.get(key="place:suwahara")
+    # The game's site joins the registry place, and the claim's subject, now
+    # naming one thing only, is that thing too.
+    assert Thing.objects.count() == apart - 2
+    assert summary.merged_things == 1
+    assert not Thing.objects.filter(key=SUWAHARA).exists()
+    assert not Thing.objects.filter(key="site:諏訪原城").exists()
+    capture = Phenomenon.objects.get(key="claim:suwahara-capture-date")
+    assert castle in [link.thing for link in capture.participations.all()]
+    # Either identifier finds the one thing.
+    assert ThingKey.objects.get(key=SUWAHARA).thing == castle
+    assert list(queries.find_things(SUWAHARA)) == [castle]
+    assert list(queries.find_things("諏訪原城")) == [castle]
+    # It carries the registry entry, the game's site and the identity record.
+    types = set(castle.records.values_list("record_type", flat=True))
+    assert {RecordType.PLACE, RecordType.IMPLEMENTED_SITE, RecordType.IDENTITY} <= types
+    assert Record.objects.get(key=row["id"]).payload == row
+    # The sourced point of the registry is kept; the game's position is not used.
+    assert castle.place.basis == "site-representative"
+    # Running again changes nothing.
+    assert import_history(inputs).new_versions == 0
+    assert Thing.objects.count() == apart - 2
+
+
+def test_a_game_site_that_stands_for_a_place_lends_its_point(inputs):
+    import_history(inputs)
+    things = Thing.objects.count()
+    edo = Thing.objects.get(key="place:edo")
+    assert not Place.objects.filter(thing=edo).exists()
+    ieyasu = Thing.objects.get(key="person:tokugawa-ieyasu")
+    assert "江戸" not in [stop.place for stop in queries.path(ieyasu)]
+
+    identity(inputs, "edo", "represented-by", ["place:edo", "node:edo"])
+    # A place that has a sourced point keeps it.
+    identity(inputs, "suwahara", "represented-by", ["place:suwahara", SUWAHARA])
+    summary = import_history(inputs)
+
+    # The two stay separate things; the place takes the site's point, marked.
+    assert Thing.objects.count() == things
+    assert summary.represented_points == 1
+    site = Thing.objects.get(key="node:edo")
+    edo = Thing.objects.get(key="place:edo")
+    assert edo.place.basis == "represented-by-game-site"
+    assert (edo.place.longitude, edo.place.latitude) == (
+        site.place.longitude,
+        site.place.latitude,
+    )
+    assert site.place.basis == "game-position"
+    assert Thing.objects.get(key="place:suwahara").place.basis == "site-representative"
+    # The dated stay at Edo is now on the path.
+    ieyasu = Thing.objects.get(key="person:tokugawa-ieyasu")
+    assert "江戸" in [stop.place for stop in queries.path(ieyasu)]
+
+
+@pytest.mark.parametrize(
+    "changes",
+    [
+        {"basis": ""},
+        {"source": "no-such-source"},
+        {"relation": "same-name"},
+        {"things": ["place:suwahara"]},
+        {"things": ["place:suwahara", "yosho:no-such-site"]},
+        # A misspelt identifier on the side that is kept.
+        {"things": ["place:no-such-place", SUWAHARA]},
+        {"things": [SUWAHARA, SUWAHARA]},
+        # Two things of different kinds, or an identifier that names no thing.
+        {"things": ["person:oda-nobunaga", "place:edo"]},
+        {"things": ["place:suwahara", "battle:長篠の戦い"]},
+        {
+            "relation": "represented-by",
+            "things": ["person:oda-nobunaga", "person:織田信忠"],
+        },
+    ],
+)
+def test_an_identity_without_grounds_is_refused(inputs, changes):
+    values = {"relation": "same-site", "things": ["place:suwahara", SUWAHARA]}
+    values |= changes
+    identity(inputs, "bad", values.pop("relation"), values.pop("things"), **values)
+
+    with pytest.raises(ValueError, match=r"identity|source"):
+        import_history(inputs)
+
+    # Nothing of the failed import stays.
+    assert not Record.objects.exists()
+
+
+@pytest.mark.parametrize(
+    ("first", "second"),
+    [
+        # Two sites cannot both stand for one place.
+        (
+            ("represented-by", ["place:edo", "node:edo"]),
+            ("represented-by", ["place:edo", "node:kiyosu"]),
+        ),
+        # An identifier is merged into one thing only.
+        (
+            ("same-site", ["place:suwahara", SUWAHARA]),
+            ("same-site", ["place:takatenjin", SUWAHARA]),
+        ),
+        # An identifier that is merged away plays no other part.
+        (
+            ("same-site", ["place:suwahara", SUWAHARA]),
+            ("represented-by", ["place:edo", SUWAHARA]),
+        ),
+        (
+            ("same-site", ["place:suwahara", SUWAHARA]),
+            ("same-site", [SUWAHARA, "site:諏訪原城"]),
+        ),
+    ],
+)
+def test_identities_that_contradict_each_other_are_refused(inputs, first, second):
+    identity(inputs, "a", *first)
+    identity(inputs, "b", *second)
+
+    with pytest.raises(ValueError, match=r"represented by another|merged"):
+        import_history(inputs)
+
+    assert not Record.objects.exists()
+
+
+def test_one_place_may_gather_several_identifiers(inputs):
+    # The game's site and the name a claim uses are both the registry place.
+    identity(inputs, "site", "same-site", ["place:suwahara", SUWAHARA])
+    identity(inputs, "claim", "same-site", ["place:suwahara", "site:諏訪原城"])
+
+    import_history(inputs)
+
+    castle = Thing.objects.get(key="place:suwahara")
+    keys = set(castle.keys.values_list("key", flat=True))
+    assert keys == {"place:suwahara", SUWAHARA, "site:諏訪原城"}
+    assert list(queries.find_things("site:諏訪原城")) == [castle]
+    capture = Phenomenon.objects.get(key="claim:suwahara-capture-date")
+    assert castle in [link.thing for link in capture.participations.all()]
+    assert castle.records.filter(record_type=RecordType.IDENTITY).count() == 2  # noqa: PLR2004
+
+
+def test_an_identifier_only_a_claim_uses_can_be_merged(inputs):
+    identity(inputs, "claim", "same-site", ["place:suwahara", "site:諏訪原城"])
+
+    import_history(inputs)
+
+    castle = Thing.objects.get(key="place:suwahara")
+    assert ThingKey.objects.get(key="site:諏訪原城").thing == castle
+    assert not Thing.objects.filter(key="site:諏訪原城").exists()
+    # The game's site of the same name is not merged by this record.
+    assert Thing.objects.filter(key=SUWAHARA).exists()
+
+
+def test_a_stated_representative_wins_over_a_namesake(inputs):
+    import_history(inputs)
+    # Without a record, the registry castle borrows the point of its namesake.
+    castle = Thing.objects.get(key="place:kiyosu-castle")
+    assert castle.place.basis == "borrowed-from-namesake"
+    kiyosu = Thing.objects.get(key="node:kiyosu").place
+
+    identity(inputs, "kiyosu", "represented-by", ["place:kiyosu-castle", "node:kiyosu"])
+    import_history(inputs)
+
+    castle = Thing.objects.get(key="place:kiyosu-castle")
+    assert castle.place.basis == "represented-by-game-site"
+    assert (castle.place.longitude, castle.place.latitude) == (
+        kiyosu.longitude,
+        kiyosu.latitude,
+    )
+
+    # A record naming another site decides, whatever the names say.
+    identity(inputs, "kiyosu", "represented-by", ["place:kiyosu-castle", "node:edo"])
+    import_history(inputs)
+
+    castle = Thing.objects.get(key="place:kiyosu-castle")
+    edo = Thing.objects.get(key="node:edo").place
+    assert castle.place.basis == "represented-by-game-site"
+    assert (castle.place.longitude, castle.place.latitude) == (
+        edo.longitude,
+        edo.latitude,
+    )
+
+
+def test_an_identifier_settled_by_name_is_kept_as_a_key(inputs):
+    import_history(inputs)
+
+    # A claim names the castle "site:岩石城"; only the registry place has that name.
+    castle = Thing.objects.get(key="place:ganjaku")
+    assert ThingKey.objects.get(key="site:岩石城").thing == castle
+    assert list(queries.find_things("site:岩石城")) == [castle]
+    assert not Thing.objects.filter(key="site:岩石城").exists()
+    # Nothing was merged: no identity record says so.
+    assert import_history(inputs).merged_things == 0
+
+    # Being an identifier the inputs use, an identity record may name it.
+    identity(inputs, "edo", "represented-by", ["place:edo", "site:岩石城"])
+    import_history(inputs)
+
+    edo = Thing.objects.get(key="place:edo")
+    castle = Thing.objects.get(key="place:ganjaku")
+    assert edo.place.basis == "represented-by-game-site"
+    assert (edo.place.longitude, edo.place.latitude) == (
+        castle.place.longitude,
+        castle.place.latitude,
+    )
+
+
+def test_a_merged_game_site_keeps_its_catalog_entry(inputs):
+    import_history(inputs)
+    # The work catalog lists the game's node "agata" under the name 縣城, while
+    # the node is Matsuo castle and the registry keeps 縣城 as another site.
+    entry = Record.objects.get(
+        record_type=RecordType.CATALOG, payload__context__siteId="agata"
+    )
+    assert [thing.key for thing in entry.things.all()] == ["node:agata"]
+
+    identity(inputs, "matsuo", "same-site", ["place:matsuo-hyuga", "node:agata"])
+    import_history(inputs)
+
+    entry.refresh_from_db()
+    assert [thing.key for thing in entry.things.all()] == ["place:matsuo-hyuga"]
+    other = Thing.objects.get(key="place:agata")
+    assert entry not in other.records.all()
+
+
+@pytest.mark.parametrize("first", ["site", "structure"])
+def test_merged_identifiers_end_at_one_thing_in_either_order(inputs, first):
+    # A second claim names the castle of "site:岩石城" as "structure:岩石城".
+    path = inputs / RESEARCH / "claims.jsonl"
+    claims = lines(path)
+    fall = next(row for row in claims if row["id"] == "ganjaku-fall")
+    assert fall["entity"] == "site:岩石城"
+    again = fall | {"id": "ganjaku-fall-again", "entity": "structure:岩石城"}
+    rest = [row for row in claims if row["id"] != "ganjaku-fall"]
+    ordered = [fall, again] if first == "site" else [again, fall]
+    with path.open("w", encoding="utf-8") as stream:
+        for row in [*ordered, *rest]:
+            stream.write(json.dumps(row, ensure_ascii=False) + "\n")
+    identity(inputs, "ganjaku", "same-site", ["site:岩石城", "structure:岩石城"])
+
+    import_history(inputs)
+
+    # Both identifiers, and the name they share, are the registry castle.
+    castle = Thing.objects.get(key="place:ganjaku")
+    for key in ("site:岩石城", "structure:岩石城"):
+        assert ThingKey.objects.get(key=key).thing == castle
+        assert not Thing.objects.filter(key=key).exists()
+    for claim in ("claim:ganjaku-fall", "claim:ganjaku-fall-again"):
+        subject = Phenomenon.objects.get(key=claim).participations.get(role="subject")
+        assert subject.thing == castle
+
+
+@pytest.mark.parametrize("first", ["old", "new"])
+def test_a_merged_name_still_finds_the_thing(inputs, first):
+    # Two claims name one castle, which no registry holds, by two names.
+    path = inputs / RESEARCH / "claims.jsonl"
+    claims = lines(path)
+    fall = next(row for row in claims if row["id"] == "ganjaku-fall")
+    old = fall | {"id": "castle-old", "entity": "site:試験旧城"}
+    new = fall | {"id": "castle-new", "entity": "site:試験新城"}
+    ordered = [old, new] if first == "old" else [new, old]
+    with path.open("w", encoding="utf-8") as stream:
+        for row in [*ordered, *claims]:
+            stream.write(json.dumps(row, ensure_ascii=False) + "\n")
+    identity(inputs, "renamed", "same-site", ["site:試験新城", "site:試験旧城"])
+
+    import_history(inputs)
+
+    castle = Thing.objects.get(key="site:試験新城")
+    for name in ("試験旧城", "試験新城"):
+        assert list(queries.find_things(name)) == [castle]
+    # A registry identifier is not a name: it finds the place only as a key.
+    assert not ThingName.objects.filter(name="ganjaku").exists()
 
 
 def test_dated_water_works_do_not_invent_locations(inputs):
