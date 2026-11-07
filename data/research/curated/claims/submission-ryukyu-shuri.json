@@ -1,0 +1,38 @@
+{
+  "id": "submission-ryukyu-shuri",
+  "entity": "person:尚寧",
+  "predicate": "submission",
+  "value": "島津氏の臣樺山久高らが大島・徳之島などを攻め取り、運天港に上陸して首里城を攻めた。琉球王尚寧は人質を出して降を請い、この日、城を明け渡して去った。",
+  "validYears": [
+    1609,
+    1609
+  ],
+  "datePrecision": "day",
+  "source": "hiDainihonshiryoKobun",
+  "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+  "locator": "綱文：和暦 慶長14年4月5日 第1条（区分 大日本史料、第12編之6、249頁）",
+  "gameBindings": [
+    "TK.HIST:島津の琉球侵攻"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-07",
+  "uncertainty": "年表の 4 月 5 日は綱文の旧暦の月日と同じ数字。 綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。",
+  "linkedEntities": [
+    "person:尚寧",
+    "person:樺山久高"
+  ],
+  "eventTime": {
+    "kind": "dated-event",
+    "date": [
+      1609,
+      4,
+      5
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": false,
+    "precision": "day"
+  },
+  "eventRelation": "submission",
+  "eventScope": "綱文が掲げる関係の変化とその日付、綱文に書かれた相手。不一致。年表は 1609 年 4 月 5 日、綱文の慶長14年4月5日はゲームの暦表で 1609 年 5 月 8 日（33 日の差）。 年表は変えていない（どちらを採るかは未判断）。 条件・領地の範囲・関係の終わりは補わない。"
+}

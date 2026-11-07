@@ -125,7 +125,7 @@ CLAIM_KIND = {
     ),
     PhenomenonKind.RELATION: (
         "relationship-to-ming recorded-ming-tribute-missions alliance-formation "
-        "submission-accepted"
+        "submission-accepted submission"
     ),
     PhenomenonKind.OFFICE: (
         "central-office military-role military-religious-role historical-castle-role"
