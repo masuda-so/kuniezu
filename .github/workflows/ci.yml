@@ -24,7 +24,10 @@ jobs:
       - name: Syntax, storage and territory checks
         run: node tools/checks/offline.cjs
       - name: Folder and ownership checks
-        run: node tools/checks/organization.cjs
+        run: |
+          node tools/checks/organization.cjs
+          node tools/checks/work-policy.cjs
+          node tools/work/build-catalog.cjs --requests-only --check
       - name: Infrastructure checks
         run: node tools/checks/infrastructure.cjs
       - name: Secret scan

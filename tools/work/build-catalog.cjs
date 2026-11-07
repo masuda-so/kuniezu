@@ -1,6 +1,23 @@
 /* 現行の棚卸しから対象別作業を生成。出典の存在だけで完了へ変更しない。 */
 const fs=require('node:fs'),path=require('node:path'),crypto=require('node:crypto');
 const root=path.resolve(__dirname,'../..'),work=path.join(root,'docs/work'),read=p=>JSON.parse(fs.readFileSync(path.join(root,p),'utf8'));
+function syncRequests(catalog,requests){
+ const byId=new Map(requests.map(r=>[r.id,r]));if(byId.size!==requests.length)throw Error('duplicate request ID');
+ const seen=new Set();const next=catalog.map(row=>{if(row.kind!=='request')return row;
+  const id=row.requestIds?.[0],r=byId.get(id);if(!r||seen.has(id))throw Error('missing or duplicate request: '+id);
+  if(row.area!==r.area)throw Error('request area changed: '+id);seen.add(id);
+  return {...row,subject:r.title,acceptance:r.acceptance,context:{...row.context,priority:r.priority}};
+ });if(seen.size!==requests.length)throw Error('request inventory changed');return next;
+}
+if(require.main!==module)module.exports={syncRequests};
+else if(process.argv.includes('--requests-only')){
+ const file=path.join(work,'catalog.jsonl'),old=fs.readFileSync(file,'utf8'),requests=read('docs/work/requests.json').requests;
+ const next=syncRequests(old.trim().split('\n').map(JSON.parse),requests).map(r=>JSON.stringify(r)).join('\n')+'\n';
+ const manifest=read('docs/work/catalog-manifest.json'),sha=crypto.createHash('sha256').update(fs.readFileSync(path.join(work,'requests.json'))).digest('hex');
+ if(process.argv.includes('--check')){if(next!==old||manifest.requestPolicySha256!==sha)throw Error('request policy is not synchronized');}
+ else{manifest.requestPolicyUpdatedAt=new Date().toISOString();manifest.requestPolicySha256=sha;fs.writeFileSync(file,next);fs.writeFileSync(path.join(work,'catalog-manifest.json'),JSON.stringify(manifest,null,2)+'\n');}
+ console.log('PASS: request policies synchronized; subject IDs, non-request rows and task state preserved');
+}else{
 const coverage=read('data/audits/coverage-review.json'),atlas=read('data/audits/deployment-audit.json'),rows=[];
 function add(kind,key,subject,area,requestIds,checks,context={}){rows.push({id:kind+'-'+crypto.createHash('sha256').update(String(key)).digest('hex').slice(0,12),kind,subject,area,requestIds,acceptance:checks,context});}
 for(const s of coverage.sites)add('site',s.id,s.name,'history',['H01','H02'],['位置の同定と出典','1560～1615年内の存在・名称・領主と主支城の役割','実装との差異の修正','該当年代の表示確認'],{siteId:s.id,positionReference:s.reference,periodStatus:s.period});
@@ -17,3 +34,5 @@ for(const r of read('docs/work/requests.json').requests)add('request',r.id,r.tit
 const manifest={generatedAt:new Date().toISOString(),scope:'登録スナップショットと要望の対象別作業。歴史上の全件の網羅を証明しない。',inputs:['data/audits/coverage-review.json','data/audits/battle-atlas-audit.json','docs/work/requests.json'],counts:{sites:coverage.sites.length,people:coverage.people.length,roads:coverage.roads.length,links:coverage.links.length,battles:rows.filter(r=>r.kind==='battle').length,transfers:rows.filter(r=>r.kind==='transfer').length,waters:rows.filter(r=>r.kind==='water').length,requests:rows.filter(r=>r.kind==='request').length,total:rows.length}};
 if(manifest.counts.battles!==111)throw Error('合戦台帳の読取形式を点検: '+manifest.counts.battles);
 fs.writeFileSync(path.join(work,'catalog.jsonl'),rows.map(r=>JSON.stringify(r)).join('\n')+'\n');fs.writeFileSync(path.join(work,'catalog-manifest.json'),JSON.stringify(manifest,null,2)+'\n');console.log(manifest.counts);
+
+}
