@@ -36,6 +36,7 @@ from kuniezu.history.models import Role
 from kuniezu.history.models import Source
 from kuniezu.history.models import Status
 from kuniezu.history.models import Thing
+from kuniezu.history.models import ThingKey
 from kuniezu.history.models import ThingKind
 from kuniezu.history.models import ThingName
 
@@ -46,6 +47,7 @@ Json = dict[str, Any]
 
 RESEARCH = "data/research"
 CATALOG = "docs/work/catalog.jsonl"
+IDENTITIES = "data/research/curated/identities"
 MONTH_TABLE = "kuniezu/static/kuniezu/koyomi.js"
 TITLE_LENGTH = 80
 
@@ -66,6 +68,12 @@ THING_PREFIX = {
     "region": ThingKind.REGION,
 }
 PHENOMENON_PREFIX = ("battle", "campaign")
+
+# An identity record says how two identifiers relate.
+PAIR = 2
+SAME = "same-site"  # one thing under two identifiers
+REPRESENTED = "represented-by"  # the game's site stands for a registry place
+IDENTITY_FIELDS = ("id", "relation", "things", "basis", "source", "locator", "checked")
 
 # What each word of the inputs is about. A word that is missing here is counted
 # as ``other`` and shows up in the import summary.
@@ -167,6 +175,8 @@ class Summary:
     records: dict[str, int] = field(default_factory=dict)
     new_versions: int = 0
     borrowed_points: int = 0
+    merged_things: int = 0
+    represented_points: int = 0
     retired: int = 0
     things: dict[str, int] = field(default_factory=dict)
     phenomena: dict[str, int] = field(default_factory=dict)
@@ -179,6 +189,8 @@ class Summary:
             "retired": self.retired,
             "things": self.things,
             "borrowed_points": self.borrowed_points,
+            "merged_things": self.merged_things,
+            "represented_points": self.represented_points,
             "phenomena": self.phenomena,
             "unclassified": self.unclassified,
         }
@@ -218,8 +230,20 @@ class Importer:
         self.seen: set[str] = set()
         self.known: dict[str, Record] = {}
         self.sources: dict[str, Source] = {}
-        self.things: dict[str, Thing] = {}
         self.by_name: dict[tuple[str, str], list[Thing]] = {}
+        # From identity records: an identifier and the one it is the same as,
+        # a registry place and the game site that stands for it, and the
+        # records to attach to the things they name.
+        self.same: dict[str, str] = {}
+        self.represented: dict[str, str] = {}
+        self.identity_records: dict[str, list[Record]] = {}
+        # The identifiers the inputs themselves use, before any identity is applied.
+        self.used: set[str] = set()
+        # Every identifier an input has used, and the thing it turned out to be.
+        # The identifiers an input gives a name to. Any other identifier is
+        # itself the name, as in ``site:岩石城``.
+        self.titled: set[str] = set()
+        self.keyed: dict[str, Thing] = {}
         self.phenomena: dict[str, Phenomenon] = {}
         self.by_title: dict[str, list[Phenomenon]] = {}
         self.timeline: dict[tuple[str, str, str], list[Phenomenon]] = {}
@@ -277,6 +301,15 @@ class Importer:
 
     # ---- things (what persists) ----
 
+    def find(self, identifier: str) -> Thing | None:
+        """The thing an identifier already stands for, by any route.
+
+        Either an input settled the identifier itself, or an identity record
+        merges it into an identifier that is settled.
+        """
+        kept = self.same.get(identifier, identifier)
+        return self.keyed.get(identifier) or self.keyed.get(kept)
+
     def thing(  # noqa: PLR0913
         self,
         key: str,
@@ -287,38 +320,67 @@ class Importer:
         registered: bool = False,
         names: tuple[str, ...] = (),
     ) -> Thing:
-        thing = self.things.get(key)
+        given, key = key, self.same.get(key, key)
+        self.titled.add(given)
+        thing = self.find(given)
         if thing is None:
             thing = Thing.objects.create(
                 key=key, kind=kind, name=name, registered=registered
             )
-            self.things[key] = thing
             self.summary.things[kind] = self.summary.things.get(kind, 0) + 1
         elif registered and not thing.registered:
             thing.registered = True
             thing.name = name
             thing.save(update_fields=["registered", "name"])
         thing.records.add(record)
-        for label in dict.fromkeys((name, *names)):
-            _, created = ThingName.objects.get_or_create(thing=thing, name=label)
-            if created:
-                self.by_name.setdefault((thing.kind, label), []).append(thing)
+        self.known_as(thing, given)
+        self.label(thing, name, *names)
         return thing
+
+    def label(self, thing: Thing, *names: str) -> None:
+        """Let a thing be found by each of these names."""
+        for name in dict.fromkeys(names):
+            _, created = ThingName.objects.get_or_create(thing=thing, name=name)
+            if created:
+                self.by_name.setdefault((thing.kind, name), []).append(thing)
+
+    def known_as(self, thing: Thing, identifier: str) -> None:
+        """Note that an input names a thing by an identifier."""
+        self.used.add(identifier)
+        kept = self.same.get(identifier, identifier)
+        for key in dict.fromkeys((thing.key, identifier, kept)):
+            if self.keyed.setdefault(key, thing) != thing:
+                message = f"{key} names two things: {self.keyed[key].key}, {thing.key}"
+                raise ValueError(message)
+            _, added = ThingKey.objects.get_or_create(
+                key=key, defaults={"thing": thing}
+            )
+            if added and key in self.same:
+                self.summary.merged_things += 1
+        for identity in self.identity_records.get(identifier, []):
+            thing.records.add(identity)
 
     def resolve(self, identifier: str, record: Record) -> Thing | None:
         """The thing an identifier such as ``person:羽柴秀吉`` stands for."""
-        prefix, _, name = identifier.partition(":")
-        kind = THING_PREFIX.get(prefix)
-        if kind is None:
+        # An identifier that an identity record merges is read as the one kept,
+        # so both end at the same thing whichever an input uses first.
+        kept = self.same.get(identifier, identifier)
+        kind = THING_PREFIX.get(kept.partition(":")[0])
+        if kind is None or identifier.partition(":")[0] not in THING_PREFIX:
             return None
-        known = self.things.get(identifier)
+        known = self.find(identifier)
         if known is None:
             # A record may name a registered thing by one of its names.
-            same = self.by_name.get((kind, name), [])
+            same = self.by_name.get((kind, kept.partition(":")[2]), [])
             if len(same) == 1:
                 known = same[0]
         if known is None:
-            return self.thing(identifier, kind, name, record)
+            return self.thing(identifier, kind, identifier.partition(":")[2], record)
+        # However it was found, the thing is now known by this identifier too,
+        # and by the name the identifier carries when no input names it.
+        self.known_as(known, identifier)
+        if identifier not in self.titled:
+            self.label(known, identifier.partition(":")[2])
         known.records.add(record)
         return known
 
@@ -473,6 +535,57 @@ class Importer:
                 },
             )
 
+    def read_identity(self, path: Path) -> Json:
+        """One identity record, refused unless it is complete and makes sense."""
+        row = json.loads(path.read_text(encoding="utf-8"))
+        lacking = [name for name in IDENTITY_FIELDS if not row.get(name)]
+        things = row.get("things") or []
+        if lacking or len(set(things)) != PAIR:
+            message = f"{path.name}: an identity needs {', '.join(IDENTITY_FIELDS)}"
+            raise ValueError(message)
+        if row["relation"] not in (SAME, REPRESENTED):
+            message = f"{path.name}: unknown relation of an identity"
+            raise ValueError(message)
+        if row["source"] not in self.sources:
+            message = f"{path.name}: unknown source {row['source']}"
+            raise ValueError(message)
+        kinds = {THING_PREFIX.get(key.partition(":")[0]) for key in things}
+        if len(kinds) != 1 or None in kinds:
+            message = f"{path.name}: an identity joins two things of one kind"
+            raise ValueError(message)
+        if row["relation"] == REPRESENTED and kinds != {ThingKind.SITE}:
+            message = f"{path.name}: only a site stands for a place (identity)"
+            raise ValueError(message)
+        return row
+
+    def load_identities(self) -> None:
+        """Read which identifiers name one thing, before any thing is made."""
+        folder = self.root / IDENTITIES
+        merged_into: dict[str, str] = {}
+        for path in sorted(folder.glob("*.json")) if folder.is_dir() else []:
+            row = self.read_identity(path)
+            record = self.record(row["id"], RecordType.IDENTITY, Status.VERIFIED, row)
+            kept, other = row["things"]
+            if row["relation"] == SAME:
+                # An identifier is merged into one thing only.
+                if merged_into.setdefault(other, kept) != kept:
+                    message = f"{path.name}: {other} is merged by another identity too"
+                    raise ValueError(message)
+            elif self.represented.setdefault(kept, other) != other:
+                # A place has one site that stands for it.
+                message = f"{path.name}: {kept} is represented by another site too"
+                raise ValueError(message)
+            for key in row["things"]:
+                self.identity_records.setdefault(key, []).append(record)
+        # An identifier that is merged away plays no other part: it is not kept
+        # by another identity, and neither stands for a place nor is one.
+        others = {*merged_into.values(), *self.represented, *self.represented.values()}
+        tangled = sorted(set(merged_into) & others)
+        if tangled:
+            message = f"identity: {', '.join(tangled)} is merged and used again"
+            raise ValueError(message)
+        self.same = merged_into
+
     def load_registry(self) -> None:
         for row in read_jsonl(self.root / RESEARCH / "people.jsonl"):
             record = self.record(
@@ -601,7 +714,8 @@ class Importer:
 
     def catalog_site(self, subject: str, key: str, record: Record) -> None:
         """A site in the work catalog is the game's site of that identifier."""
-        found = self.things.get("node:" + key) or self.things.get(key)
+        # The identifier may have been merged into another thing by an identity.
+        found = self.keyed.get("node:" + key) or self.keyed.get(key)
         if found is None:
             self.resolve("site:" + subject, record)
         else:
@@ -796,6 +910,45 @@ class Importer:
                     located[thing.pk] = point
                     self.summary.borrowed_points += 1
 
+    def represent_points(self) -> None:
+        """Give a registry place the point of the game site that stands for it.
+
+        Only a place without a point of its own takes one; a sourced point is
+        never replaced. The basis keeps the two apart. This runs before points
+        are borrowed by name, so what a record states wins over a guess.
+        """
+        located = {
+            thing_id: (longitude, latitude)
+            for thing_id, longitude, latitude in Place.objects.values_list(
+                "thing_id", "longitude", "latitude"
+            )
+        }
+        for place_key, site_key in self.represented.items():
+            place, site = self.keyed[place_key], self.keyed[site_key]
+            if place.pk not in located and site.pk in located:
+                point = located[site.pk]
+                Place.objects.create(
+                    thing=place,
+                    longitude=point[0],
+                    latitude=point[1],
+                    basis="represented-by-game-site",
+                )
+                located[place.pk] = point
+                self.summary.represented_points += 1
+
+    def check_identities(self) -> None:
+        """Refuse an identity that names an identifier no input uses.
+
+        Both sides count: a misspelt identifier on the side that is kept would
+        move a real thing under a key that stands for nothing.
+        """
+        named = {*self.same, *self.same.values(), *self.represented}
+        named |= set(self.represented.values())
+        missing = sorted(named - self.used)
+        if missing:
+            message = f"identity names a thing no input has: {', '.join(missing)}"
+            raise ValueError(message)
+
     # ---- one import ----
 
     @transaction.atomic
@@ -806,12 +959,15 @@ class Importer:
         Phenomenon.objects.all().delete()
         Thing.objects.all().delete()
         self.load_sources()
+        self.load_identities()
         self.load_registry()
         self.load_sites()
         self.load_timeline()
         self.load_catalog()
         self.load_claims()
         self.load_locations()
+        self.check_identities()
+        self.represent_points()
         self.borrow_points()
         self.retire_missing()
         self.run.counts = self.summary.as_json()

@@ -30,7 +30,13 @@ EARTH_RADIUS_KM = 6371.0088
 
 
 def find_things(name: str) -> QuerySet[Thing]:
-    """Things that go by a name (people under any of their names)."""
+    """Things that go by a name (people under any of their names).
+
+    An identifier such as ``place:edo`` finds the one thing known by it.
+    """
+    by_key = Thing.objects.filter(keys__key=name)
+    if by_key.exists():
+        return by_key
     return Thing.objects.filter(names__name=name).distinct().order_by("key")
 
 
