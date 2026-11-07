@@ -31,6 +31,10 @@ is [docs/README.md](docs/README.md); open requests and ownership are in
   generates a standalone Edo-period vector viewer. Open its `index.html` directly
   to inspect Kanto and Kojima Bay, pan, zoom and toggle layers. It does not alter
   the game map or saves.
+- `node tools/geo/prepare-mask-vectors.cjs --output /tmp/kojima-vectors-new`
+  converts existing Kojima Bay correction masks to geographic polygons using
+  their explicit grid versions. It preserves the adopted 100 m cells, without
+  refining the historical shoreline or reapplying changes to the game map.
 - `uv run python tools/geo/prepare_era_overrides.py --at 1560-01-01 --output /tmp/era-overrides-new`
   prepares the existing inferred Katori water area together with protected land
   and cuts that must not be drawn as shores. It does not automatically modify
