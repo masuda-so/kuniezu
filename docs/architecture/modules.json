@@ -582,7 +582,7 @@
       "generatedByCandidates": []
     },
     {
-      "order": 87,
+      "order": 90,
       "file": "kuniezu/static/kuniezu/documented-marches-extra.js",
       "area": "battles",
       "generatedByCandidates": []
@@ -591,22 +591,32 @@
       "file": "kuniezu/static/kuniezu/central-offices.js",
       "area": "history",
       "generatedByCandidates": [],
-      "order": 88
+      "order": 91
     },
     {
-      "order": 89,
+      "order": 92,
       "file": "kuniezu/static/kuniezu/raster-map.js",
       "area": "ui-assets",
       "generatedByCandidates": []
     },
     {
-      "order": 90,
+      "file": "kuniezu/static/kuniezu/vector-map.js",
+      "area": "ui-assets",
+      "generatedByCandidates": []
+    },
+    {
+      "file": "kuniezu/static/kuniezu/vector-ui.js",
+      "area": "ui-assets",
+      "generatedByCandidates": []
+    },
+    {
+      "order": 95,
       "file": "kuniezu/static/kuniezu/ui.js",
       "area": "ui-assets",
       "generatedByCandidates": []
     },
     {
-      "order": 91,
+      "order": 96,
       "file": "kuniezu/static/kuniezu/kb.js",
       "area": "history",
       "generatedByCandidates": []
