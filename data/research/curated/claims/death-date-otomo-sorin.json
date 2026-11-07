@@ -1,0 +1,38 @@
+{
+  "id": "death-date-otomo-sorin",
+  "entity": "person:大友宗麟",
+  "predicate": "death-date",
+  "value": "大友宗麟が死去した。",
+  "validYears": [
+    1587,
+    1587
+  ],
+  "datePrecision": "day",
+  "source": "hiDainihonshiryoKobun",
+  "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+  "locator": "綱文：和暦 天正15年5月23日 第1条（区分 史料綜覧、編11・冊912（データベースの表示値）、167頁）",
+  "gameBindings": [
+    "TK.HIST:death:大友宗麟",
+    "TK.HIST:death:大友義鎮"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-07",
+  "uncertainty": "綱文は「宗滴（宗麟）」と書く。ゲームの年表は同じ日に「大友宗麟」と「大友義鎮」の死去を別々に載せている（同じ人の諱と法号）。 綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。",
+  "linkedEntities": [
+    "person:大友宗麟"
+  ],
+  "eventTime": {
+    "kind": "dated-event",
+    "date": [
+      1587,
+      5,
+      23
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": false,
+    "precision": "day"
+  },
+  "eventRelation": "death",
+  "eventScope": "綱文が掲げる死去の日付と、綱文に書かれた相手・場所。ゲームの年表の日付（旧暦をゲームの暦表で西暦に直した日）と一致することを確かめた。 死因・享年・時刻・精密な位置は補わない。"
+}
