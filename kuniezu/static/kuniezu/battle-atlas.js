@@ -123,6 +123,7 @@ window.TKBattleAtlas=(function(){
   const selectionPortraits=[];
   function selectionPanel(ids){const el=cv.closest('.battle-stage')?.querySelector('.atlas-selection');if(!el)return;selectionPortraits.length=0;el.replaceChildren();el.hidden=!ids.length;if(!ids.length)return;
    const header=document.createElement('div');header.className='atlas-selection-header';const head=document.createElement('strong');head.textContent=ids.length>1?'部隊を選ぶ':'部隊の記録';header.append(head);el.append(header);
+   if(!sc.atlasPlan&&!sc.atlasSchematic&&ids.length){const focus=document.createElement('button');focus.type='button';focus.className='mini';focus.textContent='この周辺を見る';focus.onclick=()=>focusSelection(selected||ids[0]);header.append(focus);}
    const close=document.createElement('button');close.type='button';close.textContent='閉じる';close.className='mini';close.onclick=()=>{selected=null;selectionPortraits.length=0;el.hidden=true;frameDraw();};header.append(close);const list=document.createElement('div');list.className='atlas-selection-choices';el.append(list);
    for(const id of ids){const g=selectionGroup(id);if(!g)continue;const u=unitById.get(g.members[0]);if(!u)continue;const button=document.createElement('button');button.type='button';button.className='atlas-unit-choice';button.dataset.unitId=u.id;const face=opt.face?.(u.g,14,COL[sideOf(u)]);if(face){const im=document.createElement('img');im.src=face.toDataURL();im.width=28;im.height=28;im.alt='';button.append(im);selectionPortraits.push({u,im,side:sideOf(u)});}const name=document.createElement('span');name.textContent=u.g||u.n;button.append(name);button.setAttribute('aria-pressed',String(selected===g.id||selected===g.parentId||g.members.includes(selected)));button.onclick=()=>{selected=g.id;for(const b of list.children)if(b.dataset?.unitId)b.setAttribute('aria-pressed',String(b===button));frameDraw();};list.append(button);}
   }
@@ -165,12 +166,12 @@ window.TKBattleAtlas=(function(){
     const target=aim?Math.atan2(aim[1],aim[0])+Math.PI/2:undefined,ang=fx.heading(g.id,target,dt,!playing||lastSnap);
     const estMoving=est&&!isDead(u)&&(()=>{const a=estAt(g,Math.max(0,t-.5)),b=estAt(g,Math.min(100,t+.5));return a&&b&&Math.hypot(b[0]-a[0],b[1]-a[1])>.8;})();
     if((moving||estMoving)&&playing&&fx.rnd()<dt*10)fx.spawn(x,y,'dust');
-    const counterScale=sel?1:Math.max(small?14/18:18/28,Math.min(1,nearby[index]/((small?18:28)*1.25+2)));
+    const counterScale=Math.max(small?14/18:18/28,Math.min(1,nearby[index]/((small?18:28)*1.25+2)));
     const paintCounter=()=>{ctx.save();ctx.globalAlpha=alpha;
     ctx.save();ctx.translate(x,y);if(Number.isFinite(ang))ctx.rotate(ang);const cw=(small?18:28)*counterScale,ch=(small?13:19)*counterScale;TKCounter.path(ctx,cw,ch);ctx.fillStyle=col;ctx.fill();ctx.save();TKCounter.path(ctx,cw,ch);ctx.clip();const tint=ctx.createLinearGradient(0,-ch*.55,0,ch*.55);tint.addColorStop(0,'rgba(255,255,240,.20)');tint.addColorStop(.5,'rgba(255,255,240,0)');tint.addColorStop(1,'rgba(30,15,0,.14)');ctx.fillStyle=tint;ctx.fillRect(-cw,-ch,cw*2,ch*2);ctx.restore();TKCounter.path(ctx,cw,ch);ctx.strokeStyle=sel?'#e5ad3f':'#2a1d10';ctx.lineWidth=sel?2.6:active.has(u.id)?2.4:1.7;ctx.lineJoin='round';ctx.setLineDash(g.estimated?[3,2]:[]);ctx.stroke();ctx.restore();
-    const crestKey=G.armyCrestKey({clan:u.clan,gens:[],commanders:[u.g||u.n],until:sc.title}),crest=G.kamonImage(crestKey,11),family=crestKey&&TK.CLANS[crestKey]?G.CN(crestKey):u.clan&&TK.CLANS[u.clan]?G.CN(u.clan):'';const flagK=sel?(small?.55:1):Math.max(small?.55:.7,(small?.55:1)*counterScale),flagX=clamp(x+(small?11:19),4,W-19*flagK-3),flagY=clamp(y,42*flagK+3,H-10*flagK-3);fx.flag(ctx,flagX,flagY,flagK,col,crest,now,playing&&!dead,family?family.replace(/家$/,'').slice(0,1):'');
+    const crestKey=G.armyCrestKey({clan:u.clan,gens:[],commanders:[u.g||u.n],until:sc.title}),crest=G.kamonImage(crestKey,11),family=crestKey&&TK.CLANS[crestKey]?G.CN(crestKey):u.clan&&TK.CLANS[u.clan]?G.CN(u.clan):'';const flagK=Math.max(small?.55:.7,(small?.55:1)*counterScale),flagX=clamp(x+(small?11:19),4,W-19*flagK-3),flagY=clamp(y,42*flagK+3,H-10*flagK-3);fx.flag(ctx,flagX,flagY,flagK,col,crest,now,playing&&!dead,family?family.replace(/家$/,'').slice(0,1):'');
     if(dead)fx.cross(ctx,x,y);
-    const faceSize=sel?(small?16:24):Math.max(16,Math.round((small?16:24)*counterScale/2)*2),face=opt.face?.(u.g,faceSize/2,col);if(face)ctx.drawImage(face,clamp(x-(small?23:34),2,W-faceSize-2),clamp(y-faceSize/2,2,H-faceSize-2),faceSize,faceSize);
+    const faceSize=Math.max(16,Math.round((small?16:24)*counterScale/2)*2),face=opt.face?.(u.g,faceSize/2,col);if(face)ctx.drawImage(face,clamp(x-(small?23:34),2,W-faceSize-2),clamp(y-faceSize/2,2,H-faceSize-2),faceSize,faceSize);
     ctx.restore();};
     if(sel)foreground.push(paintCounter);else paintCounter();
     // 鉄砲：記録の射撃区間（fire）か、鉄砲隊が交戦中の間、相手へ向けて発砲の閃光と煙を出す。射線は引かない。
@@ -228,6 +229,8 @@ window.TKBattleAtlas=(function(){
    cv.dataset.mapReady=data||sc.atlasPlan?'true':'false';cv.dataset.mapUnits=String(units.length);
   }
   // 範囲の広い合戦は、隊の位置のまとまり（地区）ごとに拡大して見られるようにする。
+  function focusSelection(id){const g=selectionGroup(id),p=g&&pinFor(g);if(!p)return;const base=[(p[0]+VX)/VS,(p[1]+VY)/VS],near=locatedGroups().filter(q=>q.id!==g.id).map(q=>pinFor(q)).filter(Boolean).map(q=>Math.hypot(q[0]-p[0],q[1]-p[1])/VS).filter(d=>d>1e-6),nearest=Math.min(Infinity,...near),scale=clamp(Number.isFinite(nearest)?64/nearest:VS*2,Math.max(VS,2),6);if(scale<=VS+.01)return;
+   if(!views.length)views=[{name:'全体',s:1,x:0,y:0}];views=views.filter(v=>!v.selectionFocus);views.push({name:'選択部隊の周辺',selectionFocus:true,s:scale,x:clamp(base[0]*scale-W/2,0,W*scale-W),y:clamp(base[1]*scale-H/2,0,H*scale-H)});viewIndex=views.length-1;const v=views[viewIndex];[VS,VX,VY]=[v.s,v.x,v.y];motion=null;renderViews();backdrop();frameDraw();}
   function refreshViews(){const previousName=views[viewIndex]?.name;VS=1;VX=0;VY=0;const pts=groups.filter(g=>g.point).map(g=>({g,p:pj(...g.point)}));const th=Math.min(W,H)*.2,cl=[];
    for(const q of pts){const hit=cl.filter(c=>c.some(o=>Math.hypot(o.p[0]-q.p[0],o.p[1]-q.p[1])<th));if(!hit.length)cl.push([q]);else{const m=hit.flat();for(const h of hit)cl.splice(cl.indexOf(h),1);cl.push([...m,q]);}}
    const xs=pts.map(q=>q.p[0]),ys=pts.map(q=>q.p[1]),spread=pts.length?Math.max(Math.max(...xs)-Math.min(...xs),Math.max(...ys)-Math.min(...ys)):0;
