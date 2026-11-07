@@ -1,15 +1,18 @@
-"""Verify retained CODH GeoJSON and prepare versioned vector reference layers."""
+"""Verify retained CODH vector inputs and prepare versioned GeoJSON references."""
 import argparse
 from collections import Counter
 import gzip
 import hashlib
+from io import BytesIO
 import json
 import math
 from pathlib import Path
 from typing import Any
+from zipfile import ZipFile
 
 ROOT = Path(__file__).resolve().parents[2]
 CRS84 = "urn:ogc:def:crs:OGC:1.3:CRS84"
+WGS84_WKT = 'GEOGCS["GCS_WGS_1984",DATUM["D_WGS_1984",SPHEROID["WGS_1984",6378137.0,298.257223563]],PRIMEM["Greenwich",0.0],UNIT["Degree",0.0174532925199433]]'
 DEPTH = {"Point": 0, "MultiPoint": 1, "LineString": 1,
          "MultiLineString": 2, "Polygon": 2, "MultiPolygon": 3}
 
@@ -117,6 +120,32 @@ def relationships(prepared):
     return report
 
 
+def shapefile_collection(raw, row):
+    import shapefile
+
+    base = row["memberBase"]
+    with ZipFile(BytesIO(raw)) as archive:
+        wkt = archive.read(base + ".prj").decode("utf-8").strip()
+        if wkt != WGS84_WKT or wkt != row["projectionWkt"]:
+            raise ValueError("Unsupported Shapefile projection; no relabelling performed")
+        if archive.read(base + ".cpg").decode("ascii").strip().upper() != "UTF-8":
+            raise ValueError("Unexpected Shapefile character encoding")
+        with shapefile.Reader(
+            shp=BytesIO(archive.read(base + ".shp")),
+            shx=BytesIO(archive.read(base + ".shx")),
+            dbf=BytesIO(archive.read(base + ".dbf")), encoding="utf-8",
+        ) as reader:
+            if reader.shapeType != shapefile.POLYGON:
+                raise ValueError("Expected the official 2D polygon Shapefile")
+            features = [{"type": "Feature", "properties": record.record.as_dict(),
+                         "geometry": None if record.shape.shapeType == shapefile.NULL
+                         else record.shape.__geo_interface__}
+                        for record in reader.iterShapeRecords()]
+    # Serialize the public geo-interface, preserving values while making tuples JSON arrays.
+    return json.loads(json.dumps({"type": "FeatureCollection", "features": features,
+                                 "crs": {"properties": {"name": CRS84}}})), wkt
+
+
 def prepare(manifest_path, output=None):
     manifest_path = Path(manifest_path)
     manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
@@ -132,11 +161,14 @@ def prepare(manifest_path, output=None):
         packed = source.read_bytes()
         if hashlib.sha256(packed).hexdigest() != row["archiveSha256"]:
             raise ValueError("Archive SHA mismatch: " + key)
-        raw = gzip.decompress(packed)
+        raw = packed if row.get("format") == "shapefile-zip" else gzip.decompress(packed)
         if len(raw) != row["bytes"] or hashlib.sha256(raw).hexdigest() != row["sha256"]:
             raise ValueError("Original SHA/size mismatch: " + key)
-        data = json.loads(raw)
-        declared_crs = data.get("crs", {}).get("properties", {}).get("name")
+        if row.get("format") == "shapefile-zip":
+            data, declared_crs = shapefile_collection(raw, row)
+        else:
+            data = json.loads(raw)
+            declared_crs = data.get("crs", {}).get("properties", {}).get("name")
         if declared_crs != row["sourceCrs"]:
             raise ValueError("Source CRS metadata differs from retained data: " + key)
         if row["temporalScope"] != "Edo-reference-not-Sengoku-assertion":
@@ -148,7 +180,7 @@ def prepare(manifest_path, output=None):
                        url=row["url"], dataset=row["dataset"], license=row["license"],
                        sourceCrs=row["sourceCrs"], crsInterpretation=row["interpretation"],
                        temporalScope=row["temporalScope"],
-                       featureIdentity="sourceSha256 + /features/<zero-based-row>")
+                       featureIdentity=row.get("sourceLocator", "sourceSha256 + /features/<zero-based-row>"))
         normalized = {key: value for key, value in data.items() if key != "crs"}
         normalized["features"] = [
             {**feature, "id": index} for index, feature in enumerate(data["features"])]

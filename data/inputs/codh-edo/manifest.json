@@ -129,6 +129,32 @@
       "httpResponseDate": "Sat, 07 Nov 2026 05:48:49 GMT",
       "httpLastModified": "Wed, 30 Sep 2026 08:51:46 GMT",
       "retrievedAt": "2026-11-07T05:48:49.452456+00:00"
+    },
+    {
+      "key": "coast-polygons",
+      "file": "coast-polygons.zip",
+      "format": "shapefile-zip",
+      "memberBase": "coast-polygon/coast-polygon",
+      "projectionWkt": "GEOGCS[\"GCS_WGS_1984\",DATUM[\"D_WGS_1984\",SPHEROID[\"WGS_1984\",6378137.0,298.257223563]],PRIMEM[\"Greenwich\",0.0],UNIT[\"Degree\",0.0174532925199433]]",
+      "url": "https://codh.rois.ac.jp/historical-gis/edo-coast/coast-polygon.zip",
+      "checked": "2026-11-07",
+      "versionLabel": "2026-05-14（公式説明・DBF日付）",
+      "dataset": "江戸末期海岸線／水域データセット",
+      "doi": "10.20676/00000453",
+      "license": "CC-BY-4.0",
+      "licenseUrl": "https://codh.rois.ac.jp/historical-gis/edo-coast/",
+      "credit": "『江戸末期海岸線／水域データセット』（ROIS-DS人文学オープンデータ共同利用センター作成） doi:10.20676/00000453",
+      "bytes": 5033809,
+      "sha256": "52683d617e664de41396e7c8d33a3c93742a1b013fe7c9f91e103c563ff9a80b",
+      "archiveSha256": "52683d617e664de41396e7c8d33a3c93742a1b013fe7c9f91e103c563ff9a80b",
+      "features": 1888,
+      "sourceIdField": "object_id",
+      "temporalScope": "Edo-reference-not-Sengoku-assertion",
+      "coordinateOrder": "longitude-latitude",
+      "sourceCrs": "GEOGCS[\"GCS_WGS_1984\",DATUM[\"D_WGS_1984\",SPHEROID[\"WGS_1984\",6378137.0,298.257223563]],PRIMEM[\"Greenwich\",0.0],UNIT[\"Degree\",0.0174532925199433]]",
+      "interpretation": "declared-WGS84-geographic-XY; emitted-CRS84-without-coordinate-transform",
+      "distribution": "official-polygon-Shapefile-ZIP",
+      "sourceLocator": "sha256:52683d617e664de41396e7c8d33a3c93742a1b013fe7c9f91e103c563ff9a80b#/coast-polygon/coast-polygon.shp/records/<zero-based-row>"
     }
   ]
 }

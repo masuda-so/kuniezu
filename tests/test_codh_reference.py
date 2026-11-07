@@ -2,10 +2,13 @@ import gzip
 import hashlib
 import json
 from pathlib import Path
+from zipfile import ZipFile
 
 import pytest
+import shapefile
 
 from tools.geo.codh_reference import CRS84
+from tools.geo.codh_reference import WGS84_WKT
 from tools.geo.codh_reference import inspect_collection
 from tools.geo.codh_reference import prepare
 from tools.geo.codh_reference import relationships
@@ -149,3 +152,75 @@ def test_post_with_unknown_coordinates_remains_unlocated():
     assert report["postIdsWithDifferentCoordinates"] == {}
     assert report["postRoadIdsWithoutLines"] == ["R200"]
     assert report["automaticMergeOrConnectionPerformed"] is False
+
+
+def retained_polygons(tmp_path, wkt=WGS84_WKT, encoding="UTF-8"):
+    base = tmp_path / "shape"
+    with shapefile.Writer(str(base), shapeType=shapefile.POLYGON) as writer:
+        writer.field("data_name", "C", size=10)
+        writer.field("object_id", "C", size=10)
+        writer.poly(
+            [
+                [[0, 0], [0, 4], [4, 4], [4, 0], [0, 0]],
+                [[1, 1], [2, 1], [2, 2], [1, 2], [1, 1]],
+            ]
+        )
+        writer.record("coastline", "1929")
+        writer.null()
+        writer.record("coastline", "1929")
+    base.with_suffix(".prj").write_text(wkt)
+    base.with_suffix(".cpg").write_text(encoding)
+    archive_path = tmp_path / "polygons.zip"
+    with ZipFile(archive_path, "w") as archive:
+        for extension in [".shp", ".shx", ".dbf", ".prj", ".cpg"]:
+            archive.write(base.with_suffix(extension), arcname="shape" + extension)
+    raw = archive_path.read_bytes()
+    manifest, _ = retained(tmp_path, collection([feature(None), feature(None)]))
+    data = json.loads(manifest.read_text())
+    data["datasets"][0].update(
+        file="polygons.zip",
+        format="shapefile-zip",
+        memberBase="shape",
+        projectionWkt=wkt,
+        sourceCrs=wkt,
+        sourceIdField="object_id",
+        archiveSha256=hashlib.sha256(raw).hexdigest(),
+        sha256=hashlib.sha256(raw).hexdigest(),
+        bytes=len(raw),
+    )
+    manifest.write_text(json.dumps(data))
+    return manifest
+
+
+def test_shapefile_preserves_hole_null_and_original_attributes(tmp_path):
+    manifest = retained_polygons(tmp_path)
+    output = tmp_path / "output"
+    prepare(manifest, output)
+    features = json.loads((output / "reference.geojson").read_text())["features"]
+    polygon, empty = features
+    assert polygon["geometry"] == {
+        "type": "Polygon",
+        "coordinates": [
+            [[0, 0], [0, 4], [4, 4], [4, 0], [0, 0]],
+            [[1, 1], [2, 1], [2, 2], [1, 2], [1, 1]],
+        ],
+    }
+    assert polygon["properties"] == {"data_name": "coastline", "object_id": "1929"}
+    assert empty["geometry"] is None
+    assert empty["properties"] == polygon["properties"]
+    assert polygon["id"] != empty["id"]
+
+
+@pytest.mark.parametrize(
+    ("wkt", "encoding", "error"),
+    [
+        ("EPSG:3857", "UTF-8", "Unsupported Shapefile projection"),
+        (WGS84_WKT, "CP932", "Unexpected Shapefile character encoding"),
+    ],
+)
+def test_shapefile_unknown_projection_or_encoding_is_rejected(
+    tmp_path, wkt, encoding, error
+):
+    manifest = retained_polygons(tmp_path, wkt, encoding)
+    with pytest.raises(ValueError, match=error):
+        prepare(manifest)

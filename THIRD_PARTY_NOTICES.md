@@ -14,8 +14,8 @@ under their own terms, which are recorded below and in
   『江戸末期湖沼データセット』（同センター作成）doi:10.20676/00000467;
   『江戸主要街道データセット』（同センター作成）doi:10.20676/00000452;
   『江戸宿場データセット』（同センター作成）doi:10.20676/00000477.
-  Original bytes are retained in gzip archives. The optional derived GeoJSON removes
-  the legacy CRS declaration and adds row identifiers, preserving coordinates and
+  Original bytes are retained in gzip archives and the official coast-polygon ZIP. The optional derived GeoJSON removes
+  the legacy CRS declaration, reads the verified WGS84 Shapefile via PyShp, and adds row identifiers, preserving coordinates and
   properties. These Edo references are not assertions of Sengoku-period geography.
   Exact URLs, versions, hashes and license evidence are in the input manifest and README.
 
