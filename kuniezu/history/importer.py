@@ -133,7 +133,9 @@ CLAIM_KIND = {
         "administrative-document grant-order new-field-development-order "
         "reclamation-permission document-reports-receipt-and-attendance"
     ),
-    PhenomenonKind.NATURE: "windblown-sand-deposition",
+    PhenomenonKind.NATURE: (
+        "windblown-sand-deposition channel-siltation flood-induced-channel-change"
+    ),
 }
 CLAIM_KIND_OF = {
     word: kind for kind, words in CLAIM_KIND.items() for word in words.split()
