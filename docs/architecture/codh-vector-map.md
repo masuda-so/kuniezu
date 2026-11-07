@@ -45,3 +45,5 @@ MapLibre・GeoJSON・ベクタータイルの使い分けや正本の具体的�
 面の合成に必要な位相処理は [codh_topology.py](../../tools/geo/codh_topology.py) で検証する。有効だった面は変えず、無効な面はlinework方式で派生化し、残差と原本座標位置を保持する。Shapelyは開発時だけで、ゲームに持ち込まない。[検証範囲](../reports/codh-topology.md)と、戦国期の地理的採否を区別する。
 
 共通の面描画と位置判定は `kuniezu/static/kuniezu/vector-map.js` に実装し、まず独立比較画面へ接続する。既存の経緯度投影を受け取り、穴・適用期間・表示範囲を同じデータで扱う。`codh_preview.py --canonical <ディレクトリ>` は編集済みland/waterをそのまま読む。現行ゲーム本体への既定切替や歴史補正全件の移植を、この接続だけで完了扱いにしない。
+
+初回の編集正本は `physical/land.geojson`・`water.geojson`・`coastline.geojson`。岸線を陸と別に保持するのは、5つの開口を岸にしない事前導出と表示範囲ごとの選択のためで、独立した地形の真偽を持つものではない。陸/水域と同時に更新し、各年代で有効陸境界との一致を検査する。[原本・採用・監査の恒久記録](../../data/inputs/vector-map-migration/README.md)を参照。全期間共通の基準面に変化時点の部分面だけを足し、年ごとの全国複製はしない。

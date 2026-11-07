@@ -1,0 +1,4499 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-11-07",
+  "role": "initial-direct-edit-source-adoption",
+  "priorMain": "600d9432",
+  "normalBuildPolicy": "Copy edited GeoJSON bytes; do not rerun initial preparation or overwrite canonical geometry.",
+  "historicalPrecision": "Edo/later reference with existing evidence-backed adopted corrections; not measured Sengoku shorelines.",
+  "canonical": [
+    {
+      "file": "kuniezu/map/physical/land.geojson",
+      "initialSha256": "ef504784b4c5ecc211ce61ea3f1ed62f88ee696ebf04c678de97967591c6702d",
+      "features": 2203,
+      "candidateSha256": "823bb8a470ef269a5242262133bef235023c407606265f2f601fd7ce3b156681",
+      "geometryValuesUnchangedDuringAdoption": true
+    },
+    {
+      "file": "kuniezu/map/physical/water.geojson",
+      "initialSha256": "e5a434faaa9b373982d613b3b9788cda31e34e3f203338b2336373948bd22d26",
+      "features": 584,
+      "candidateSha256": "43836af9d71cc1837a4c725a8ada3455e99da21577c5c66d8043b7d9f7757427",
+      "geometryValuesUnchangedDuringAdoption": true
+    },
+    {
+      "file": "kuniezu/map/physical/coastline.geojson",
+      "initialSha256": "4e6ca7a0cad8ce22be0f3c926eab050f3bb7dfb8787793ede5132e0688e617d0",
+      "features": 2969,
+      "candidateSha256": "e9f6e8f7c75eb7e25bf10081c001293241f9071a00461265b14c139ead8fbe99",
+      "geometryValuesUnchangedDuringAdoption": true
+    }
+  ],
+  "review": "Independent review fixed protected Katori land, shoreline role, rectangular seams, source metadata and IDs.",
+  "verification": {
+    "status": "candidate-only-current-game-unchanged",
+    "inputs": [
+      {
+        "path": "derivation-artifact:kuniezu-era-land-candidate/land-1560.geojson",
+        "sha256": "ff937cd6c180a1ff8cab8cd9f8943afe5549eb77640a51ec2b9103b39654b93d"
+      },
+      {
+        "path": "kuniezu/map/projection.json",
+        "sha256": "3576c5ceb1fc809ac06f538f14dd8be842f343fc18e374edcbdbc8bb4d9e8cee"
+      },
+      {
+        "path": "derivation-artifact:kuniezu-current-water-regions/verification.json",
+        "sha256": "899571652199ab9954ca38fd4975ac97b779214b8c04f68a02eee52e22725322"
+      },
+      {
+        "path": "derivation-artifact:kuniezu-current-water-regions/hachirogata.geojson",
+        "sha256": "56f8ea4ee1e63a584a4ffc56f6c808c8673c1c8274116e1f4e46e78f3f8987e2"
+      },
+      {
+        "path": "data/research/hachirogata-reference/pixel-reconstruction.json",
+        "sha256": "7adcf3bee47fb0c53217fc65dd7026d2d94430fcda819d2d1180b2b7bf1773d9"
+      },
+      {
+        "path": "data/research/hachirogata-reference/edo-review/deferral-overlap-results.json",
+        "sha256": "bc4fa3d092af69d6d997d633e3863560f2921b36ba275890c7967fac57192181"
+      },
+      {
+        "path": "data/research/hachirogata-reference/outlet/results.json",
+        "sha256": "97b2eda266678a4b919787fd9ae1c943469f897a7909d54ab26b3d9d980b3312"
+      },
+      {
+        "path": "derivation-artifact:kuniezu-current-water-regions/ogura.geojson",
+        "sha256": "7cfb920f3e4a4fec2fe912fdbf03dda59e676dc07f860cc1b1ba8790be95f62b"
+      },
+      {
+        "path": "kuniezu/map/edits/vector/manifest.json",
+        "sha256": "d4c4ab32facba13968d100ff451f6e79f2cecf74e7980b73512b7bfa547c1563"
+      },
+      {
+        "path": "data/research/katori-review/uchinasaka/south-connection/wide-lake-perimeter.geojson",
+        "sha256": "f30bfbcfc000b10b4d2d696b2c6ba1ccd15bc8301981eda1cd156073b676fdc0"
+      },
+      {
+        "path": "derivation-artifact:kuniezu-kojima-vectors-final/kojima-bay-ukita-land-from-1584.geojson",
+        "sha256": "d1d287a80d4943e241531e0e4981c846cf502b2f653c6bc9199de4ec05014d5a"
+      },
+      {
+        "path": "derivation-artifact:kuniezu-vector-seed-candidate/water.geojson",
+        "sha256": "d6f84aabf0369d5f159e93de3e6c51c70aa6b57ee373198c6b75eeeda73c4515"
+      },
+      {
+        "path": "derivation-artifact:kuniezu-era-land-candidate/open-boundaries.geojson",
+        "sha256": "12fa858f2e8d797d5a8251e8c377c280de0a1dd5ddc0ca20648743ce3afda2af"
+      },
+      {
+        "path": "kuniezu/map/physical/shoreline_masks.geojson",
+        "sha256": "0bed4a3577bf6f07507a0300ae1a836222f5c2fac91466c9217178b3fc88363a"
+      },
+      {
+        "path": "kuniezu/map/edits/vector/manifest.json",
+        "sha256": "d4c4ab32facba13968d100ff451f6e79f2cecf74e7980b73512b7bfa547c1563"
+      },
+      {
+        "path": "data/research/katori-review/uchinasaka/south-connection/wide-lake-perimeter.geojson",
+        "sha256": "f30bfbcfc000b10b4d2d696b2c6ba1ccd15bc8301981eda1cd156073b676fdc0"
+      }
+    ],
+    "regions": [
+      {
+        "region": "hachirogata",
+        "adoptedSubsetChecks": {
+          "lake": {
+            "cells": 23423,
+            "currentClassificationMatch": true
+          },
+          "restore": {
+            "cells": 3820,
+            "currentClassificationMatch": true
+          },
+          "defer": {
+            "cells": 199,
+            "currentClassificationMatch": true
+          },
+          "island": {
+            "cells": 18,
+            "currentClassificationMatch": true
+          }
+        },
+        "entireRectangleMatchNotRequired": true
+      },
+      {
+        "region": "ogura",
+        "cells": 8500,
+        "beforeAndAfterLandClassificationExact": true
+      }
+    ],
+    "cutBoundaryAudit": [
+      {
+        "region": "hachirogata",
+        "newBoundaryOnCutLengthDegrees": 0.0,
+        "newBoundaryOnCutParts": 6
+      },
+      {
+        "region": "ogura",
+        "newBoundaryOnCutLengthDegrees": 0.0,
+        "newBoundaryOnCutParts": 0
+      }
+    ],
+    "referenceWaterLandConflicts": [
+      {
+        "id": "water:codh-lake:177",
+        "name": "八郎潟",
+        "beforeAreaDegreesSquared": 0.0002808360476467696,
+        "afterAreaDegreesSquared": 0.0002808360476467696
+      },
+      {
+        "id": "water:codh-lake:190",
+        "name": "長沼",
+        "beforeAreaDegreesSquared": 2.0759862302022947e-05,
+        "afterAreaDegreesSquared": 2.0759862302022947e-05
+      },
+      {
+        "id": "water:codh-lake:192",
+        "name": "沖田溜池",
+        "beforeAreaDegreesSquared": 8.283470455444656e-06,
+        "afterAreaDegreesSquared": 8.283470455444656e-06
+      },
+      {
+        "id": "water:codh-lake:221",
+        "name": "外浪逆浦",
+        "beforeAreaDegreesSquared": 1.2500363124941383e-05,
+        "afterAreaDegreesSquared": 1.2500363124941383e-05
+      },
+      {
+        "id": "water:codh-lake:408",
+        "name": "巨椋池",
+        "beforeAreaDegreesSquared": 7.280868214313237e-06,
+        "afterAreaDegreesSquared": 7.280868214313237e-06
+      },
+      {
+        "id": "water:codh-lake:409",
+        "name": "大内池",
+        "beforeAreaDegreesSquared": 1.2325060684437663e-06,
+        "afterAreaDegreesSquared": 1.2325060684437663e-06
+      }
+    ],
+    "referenceWaterConflictCount": 6,
+    "shoreChecks": {
+      "before": {
+        "equals": true,
+        "symmetricDifferenceLengthDegrees": 0.0,
+        "missingLengthDegrees": 0.0,
+        "extraLengthDegrees": 0.0
+      },
+      "after": {
+        "equals": true,
+        "symmetricDifferenceLengthDegrees": 0.0,
+        "missingLengthDegrees": 0.0,
+        "extraLengthDegrees": 0.0
+      }
+    },
+    "shoreFeatureCount": 2929,
+    "shoreVertexCount": 532128,
+    "katoriProtectedCells": 70,
+    "katoriProtectedAllLandBothEras": true,
+    "katoriProtectedWaterOverlapBeforeDegreesSquared": 4.861175023851633e-20,
+    "katoriProtectedWaterOverlapAfterDegreesSquared": 4.861175023851633e-20,
+    "allLandValid": true,
+    "effectiveWaterUkitaOverlapAreaDegreesSquared": 0.0,
+    "effectiveWaterCommonAllYears": true,
+    "effectiveWaterLandOverlapBeforeDegreesSquared": 0.0,
+    "effectiveWaterLandOverlapAfterDegreesSquared": 0.0,
+    "baselineUkitaOverlapAreaDegreesSquared": 0.0,
+    "ukitaDeltaSymmetricDifferenceDegreesSquared": 0.0,
+    "katoriOpenBoundarySuppression": "150m buffers from existing physical shoreline_masks; metric EPSG6677; not historical channel width",
+    "warning": "Rectangular seam lengths are angular degrees, not physical shore precision. Raw reference conflicts listed; effective water subtracts active land and regional replacement windows.",
+    "shoreOutputBytes": 28288974,
+    "actualWaterFeaturesProtectedOverlapAreaDegreesSquared": 0,
+    "waterUnionProtectedResidualInterpretation": "Each emitted water feature has exact zero overlap with protected polygon. Residual4.861e-20 only appears when unioning all water features in GEOS; retained honestly, not historical area.",
+    "outputValidation": {
+      "land": {
+        "features": 2195,
+        "allValid": true,
+        "idsUnique": true
+      },
+      "water": {
+        "features": 574,
+        "allValid": true,
+        "idsUnique": true
+      },
+      "coastline": {
+        "features": 2929,
+        "allValid": true,
+        "idsUnique": true
+      }
+    }
+  },
+  "preparationPrograms": [
+    {
+      "name": "kuniezu-seed-vector-surfaces.py",
+      "sha256": "c0786ecf5dc584dd10fd577b46f7176893447d539422e47e4c4c36f1d4a8ddef",
+      "retainedIn": "data/inputs/vector-map-migration/initial-preparation.md"
+    },
+    {
+      "name": "kuniezu-seed-era-land.py",
+      "sha256": "9a2e9d17e69621a40fa068121950dfd0d9a2176d5a317af59f4042a09e9569ac",
+      "retainedIn": "data/inputs/vector-map-migration/initial-preparation.md"
+    },
+    {
+      "name": "extract-current-water-regions.py",
+      "sha256": "efdd90f6b70b48b14de05ce35ebaf9dcacb5060168a0b983e7a102458ff89ea7",
+      "retainedIn": "data/inputs/vector-map-migration/initial-preparation.md"
+    },
+    {
+      "name": "kuniezu-finalize-era-surfaces.py",
+      "sha256": "2f12ad50a05d8b40b7cceda2cb5cbb89bae4e70bc8565ecee386edd28a36c90f",
+      "retainedIn": "data/inputs/vector-map-migration/initial-preparation.md"
+    },
+    {
+      "name": "kuniezu-review-era-surfaces.py",
+      "sha256": "46c4b07fc34b3aa12f9cf95d933500fcf80d44a8fd07a4d1d700553a690186b9",
+      "retainedIn": "data/inputs/vector-map-migration/initial-preparation.md"
+    },
+    {
+      "name": "kuniezu-supplement-natural-lakes.py",
+      "sha256": "1a4dbd6934b3502b7f6f059e358a6938138e78391882a00788fec89186f23304",
+      "retainedIn": "data/inputs/vector-map-migration/initial-preparation.md"
+    },
+    {
+      "name": "kuniezu-defer-period-waters.py",
+      "sha256": "8fc0ee1b494751707a8ace9ed68658d98589ef5729f539f0f652c57f8032ffda",
+      "retainedIn": "data/inputs/vector-map-migration/initial-preparation.md"
+    }
+  ],
+  "priorFiveLakeSource": {
+    "git": "288947e1:kuniezu/map/physical/lakes-reference.geojson",
+    "sha256": "c93a5d31f40259f791fc0c82c4dae10ff4ed82705df2221976bec37655b6729e",
+    "destination": "kuniezu/map/physical/water.geojson",
+    "ids": [
+      "lake:towada",
+      "lake:tazawa",
+      "lake:inawashiro",
+      "lake:kiba",
+      "lake:yogo"
+    ]
+  },
+  "referenceSeed": {
+    "landFeatures": 2153,
+    "waterFeatures": 578,
+    "allValid": true,
+    "differenceEquals": true,
+    "fiveLakeOverlapAreaDegreesSquared": 0.0,
+    "repairPerformed": false,
+    "originalHashesVerified": [
+      {
+        "file": "data/inputs/codh-edo/lake-polygons.geojson.gz",
+        "archiveSha256": "2ba4215e60b1b2d1eb644e86cba7243476c433554a8dbcbc21b045c6fb09216d",
+        "sourceSha256": "956781b441cdbcc433ecb841f556eea624738141f7c2e7923fe91b6d367d52ca",
+        "verified": true
+      },
+      {
+        "file": "data/inputs/codh-edo/coast-polygons.zip",
+        "archiveSha256": "52683d617e664de41396e7c8d33a3c93742a1b013fe7c9f91e103c563ff9a80b",
+        "sourceSha256": "52683d617e664de41396e7c8d33a3c93742a1b013fe7c9f91e103c563ff9a80b",
+        "verified": true
+      },
+      {
+        "file": "data/inputs/mlit-w09-2005/W09-05_GML.zip",
+        "sha256": "e5d0f1bc77427c8c44a855ff361d3b9d94b76fe3c5e31a423ab9abc570950787",
+        "verified": true
+      }
+    ],
+    "currentGameSwitched": false,
+    "idPolicy": "Seed IDs stable for identical inputs; retain IDs on future direct edits.",
+    "secondRunRefused": true,
+    "existingOutputUnchanged": true,
+    "outputSha256": {
+      "README.md": "e0c77a3a2c0bce21bcf99e7cdd1884c0b9ca3d955764b9bd9ef12b62925d0124",
+      "verification.json": "a41cd5cd209bc335587f701bfe469ad11367e7bdce31be856824f9d27d185cb0",
+      "water.geojson": "d6f84aabf0369d5f159e93de3e6c51c70aa6b57ee373198c6b75eeeda73c4515",
+      "land.geojson": "8b0086eb44356f4210d8f1a9254e4c73c6150bc687344b7c46941636108b048a"
+    }
+  },
+  "currentRegions": {
+    "sourceManifestSha256": "fb266cc343fa2edc1a9e8571fe84046661743e5c6e5b87ecacabba1e7edf88e5",
+    "sourceLedgerSha256": "2857d2c0e3ebc1586984903e0fe2e1088d1a99a8244d361021c43d86a7f780c7",
+    "sourceBinding": {
+      "dir": "kuniezu/map",
+      "provinces": "control/provinces.png",
+      "definition": "control/definition.csv",
+      "defaultMap": "control/default.map",
+      "projection": "projection.json",
+      "sha256": "a88cb31c9fbfd90cb1881a2901904331dd7aac9e0639159df2cbc93b1a7d62ad"
+    },
+    "verifiedMetadata": {
+      "/Users/masudaso/.codex/worktrees/history-cube-query/天下分け目の国絵図/kuniezu/map/projection.json": "3576c5ceb1fc809ac06f538f14dd8be842f343fc18e374edcbdbc8bb4d9e8cee",
+      "/Users/masudaso/.codex/worktrees/history-cube-query/天下分け目の国絵図/kuniezu/map/control/definition.csv": "ebcdf8ed8ac9bc01371ec8d04bfbb37e6d7994eb9a882db0bda2fac49621619f",
+      "/Users/masudaso/.codex/worktrees/history-cube-query/天下分け目の国絵図/kuniezu/map/control/default.map": "36b071aab05850ce318f80767cf9307dd2bc23f144d89c04fbface39529b4d1b"
+    },
+    "tileProofs": [
+      {
+        "file": "kuniezu/static/kuniezu/map/build/provinces/15-5.png",
+        "sha256": "fc6086970cb361abcb17caf12d1cca24b062aa90a58713555e2e5f10da97dc21"
+      },
+      {
+        "file": "kuniezu/static/kuniezu/map/build/provinces/15-6.png",
+        "sha256": "aafac00021d610f3af79b8516015ade1cafa097ebc4b7c93d0e8e831f8acc552"
+      },
+      {
+        "file": "kuniezu/static/kuniezu/map/build/provinces/11-11.png",
+        "sha256": "603883b098f59b1e1dfb2ee0483565b3398bc7c4eb990dbba7f2713585dd007a"
+      }
+    ],
+    "regions": [
+      {
+        "name": "hachirogata",
+        "window": [
+          15434,
+          6042,
+          217,
+          346
+        ],
+        "cells": 75082,
+        "targetLakeKey": "lake:139.99,39.98",
+        "targetLakeCellsInside": 23423,
+        "targetLakeGlobalAuditCells": 23423,
+        "globalCoverageVerifiedAgainstSourceBoundAudit": true,
+        "targetDoesNotTouchWindowEdge": true,
+        "allCellCentresRoundtripMatch": true,
+        "allShapesValid": true,
+        "counts": [
+          {
+            "provinceId": 1,
+            "key": "sea",
+            "drawRole": "sea",
+            "cells": 16331,
+            "shapeRole": "existing-adopted-100m-cell-extent",
+            "exactHistoricalShoreline": false
+          },
+          {
+            "provinceId": 25,
+            "key": "castle:hiyama",
+            "drawRole": "land",
+            "cells": 35328,
+            "shapeRole": "existing-adopted-100m-cell-extent",
+            "exactHistoricalShoreline": false
+          },
+          {
+            "provinceId": 148,
+            "key": "lake:139.99,39.98",
+            "drawRole": "lake",
+            "cells": 23423,
+            "shapeRole": "existing-adopted-100m-cell-extent",
+            "exactHistoricalShoreline": false
+          }
+        ]
+      },
+      {
+        "name": "ogura",
+        "window": [
+          11683,
+          11808,
+          100,
+          85
+        ],
+        "cells": 8500,
+        "targetLakeKey": "lake:135.77,34.91",
+        "targetLakeCellsInside": 3323,
+        "targetLakeGlobalAuditCells": 3323,
+        "globalCoverageVerifiedAgainstSourceBoundAudit": true,
+        "targetDoesNotTouchWindowEdge": true,
+        "allCellCentresRoundtripMatch": true,
+        "allShapesValid": true,
+        "counts": [
+          {
+            "provinceId": 67,
+            "key": "castle:kyo",
+            "drawRole": "land",
+            "cells": 5177,
+            "shapeRole": "existing-adopted-100m-cell-extent",
+            "exactHistoricalShoreline": false
+          },
+          {
+            "provinceId": 146,
+            "key": "lake:135.77,34.91",
+            "drawRole": "lake",
+            "cells": 3323,
+            "shapeRole": "existing-adopted-100m-cell-extent",
+            "exactHistoricalShoreline": false
+          }
+        ]
+      }
+    ],
+    "limits": "Only three factor1 1024px tiles decoded; whole-map PNG streamed for SHA only, never decoded. Whole-lake coverage verified via source-bound global pixel counts. Existing100m cells are not historical precision.",
+    "sourceProvincesCompressedSha256Verified": "b4749d9fda3fd61eb238d0d6c9f79a48a8fa11ff968b8680d4671ad08a5c046d",
+    "sourceProvincesCompressedBytes": 2789708
+  },
+  "ukitaHayashima": {
+    "inputs": [
+      {
+        "path": "derivation-artifact:kuniezu-kojima-vectors-final/kojima-bay-ukita-land-from-1584.geojson",
+        "sha256": "d1d287a80d4943e241531e0e4981c846cf502b2f653c6bc9199de4ec05014d5a"
+      },
+      {
+        "path": "kuniezu/map/edits/applied/hayashima-upland.json",
+        "sha256": "88f25d2cf1a53ddaf447125ab825bd8daa43f4dc2954a087da45a98fb583123b"
+      },
+      {
+        "path": "data/inputs/kojima-coast-review/hayashima-upland-comparison.geojson",
+        "sha256": "5baa4f521b379934eb8df9ce66c757a08ff6647cb2799b7c19b6bceee3704f90"
+      },
+      {
+        "path": "kuniezu/map/projection.json",
+        "sha256": "3576c5ceb1fc809ac06f538f14dd8be842f343fc18e374edcbdbc8bb4d9e8cee"
+      }
+    ],
+    "ukitaCellCentres": 366,
+    "hayashimaContainingUkitaCentres": 0,
+    "overlapBounds": [
+      133.8164377,
+      34.5986312,
+      133.8207949828252,
+      34.60177067327741
+    ],
+    "overlapCentroid": [
+      133.8184753663357,
+      34.59990675670712
+    ],
+    "overlapAreaDegreesSquared": 9.694934386244987e-07,
+    "overlappingGridCells": [
+      {
+        "col": 9975,
+        "row": 12196,
+        "centre": [
+          133.81807743483736,
+          34.60176787639238
+        ],
+        "centreInsideUkita": true,
+        "centreInsideHayashima": false,
+        "continuousOverlapAreaDegreesSquared": 1.720980208202862e-07
+      },
+      {
+        "col": 9974,
+        "row": 12198,
+        "centre": [
+          133.8169670611601,
+          34.5999712540424
+        ],
+        "centreInsideUkita": true,
+        "centreInsideHayashima": false,
+        "continuousOverlapAreaDegreesSquared": 2.850612497431977e-07
+      },
+      {
+        "col": 9975,
+        "row": 12199,
+        "centre": [
+          133.81807743483736,
+          34.59907294286741
+        ],
+        "centreInsideUkita": true,
+        "centreInsideHayashima": false,
+        "continuousOverlapAreaDegreesSquared": 2.027484925471944e-07
+      },
+      {
+        "col": 9977,
+        "row": 12199,
+        "centre": [
+          133.82029818219183,
+          34.59907294286741
+        ],
+        "centreInsideUkita": true,
+        "centreInsideHayashima": false,
+        "continuousOverlapAreaDegreesSquared": 3.0958567551382034e-07
+      }
+    ],
+    "conclusion": "partial-cell geometric intersection, no cell-centre classification conflict",
+    "allUkitaCentres": [
+      {
+        "col": 10002,
+        "row": 12185,
+        "point": [
+          133.84805752412274,
+          34.61164929931728
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 10003,
+        "row": 12185,
+        "point": [
+          133.8491678978,
+          34.61164929931728
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 10004,
+        "row": 12185,
+        "point": [
+          133.8502782714772,
+          34.61164929931728
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 10005,
+        "row": 12185,
+        "point": [
+          133.85138864515446,
+          34.61164929931728
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9999,
+        "row": 12186,
+        "point": [
+          133.84472640309102,
+          34.61075098814229
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 10000,
+        "row": 12186,
+        "point": [
+          133.84583677676827,
+          34.61075098814229
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 10001,
+        "row": 12186,
+        "point": [
+          133.8469471504455,
+          34.61075098814229
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 10002,
+        "row": 12186,
+        "point": [
+          133.84805752412274,
+          34.61075098814229
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 10003,
+        "row": 12186,
+        "point": [
+          133.8491678978,
+          34.61075098814229
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 10004,
+        "row": 12186,
+        "point": [
+          133.8502782714772,
+          34.61075098814229
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 10005,
+        "row": 12186,
+        "point": [
+          133.85138864515446,
+          34.61075098814229
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 10007,
+        "row": 12186,
+        "point": [
+          133.85360939250893,
+          34.61075098814229
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9997,
+        "row": 12187,
+        "point": [
+          133.84250565573655,
+          34.6098526769673
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9998,
+        "row": 12187,
+        "point": [
+          133.8436160294138,
+          34.6098526769673
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9999,
+        "row": 12187,
+        "point": [
+          133.84472640309102,
+          34.6098526769673
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 10000,
+        "row": 12187,
+        "point": [
+          133.84583677676827,
+          34.6098526769673
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 10001,
+        "row": 12187,
+        "point": [
+          133.8469471504455,
+          34.6098526769673
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 10002,
+        "row": 12187,
+        "point": [
+          133.84805752412274,
+          34.6098526769673
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 10003,
+        "row": 12187,
+        "point": [
+          133.8491678978,
+          34.6098526769673
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 10004,
+        "row": 12187,
+        "point": [
+          133.8502782714772,
+          34.6098526769673
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 10005,
+        "row": 12187,
+        "point": [
+          133.85138864515446,
+          34.6098526769673
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 10006,
+        "row": 12187,
+        "point": [
+          133.85249901883168,
+          34.6098526769673
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 10007,
+        "row": 12187,
+        "point": [
+          133.85360939250893,
+          34.6098526769673
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 10008,
+        "row": 12187,
+        "point": [
+          133.85471976618615,
+          34.6098526769673
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9980,
+        "row": 12188,
+        "point": [
+          133.82362930322353,
+          34.608954365792314
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9981,
+        "row": 12188,
+        "point": [
+          133.82473967690078,
+          34.608954365792314
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9997,
+        "row": 12188,
+        "point": [
+          133.84250565573655,
+          34.608954365792314
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9998,
+        "row": 12188,
+        "point": [
+          133.8436160294138,
+          34.608954365792314
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9999,
+        "row": 12188,
+        "point": [
+          133.84472640309102,
+          34.608954365792314
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 10000,
+        "row": 12188,
+        "point": [
+          133.84583677676827,
+          34.608954365792314
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 10001,
+        "row": 12188,
+        "point": [
+          133.8469471504455,
+          34.608954365792314
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 10002,
+        "row": 12188,
+        "point": [
+          133.84805752412274,
+          34.608954365792314
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 10003,
+        "row": 12188,
+        "point": [
+          133.8491678978,
+          34.608954365792314
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 10004,
+        "row": 12188,
+        "point": [
+          133.8502782714772,
+          34.608954365792314
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 10005,
+        "row": 12188,
+        "point": [
+          133.85138864515446,
+          34.608954365792314
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 10006,
+        "row": 12188,
+        "point": [
+          133.85249901883168,
+          34.608954365792314
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 10007,
+        "row": 12188,
+        "point": [
+          133.85360939250893,
+          34.608954365792314
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 10008,
+        "row": 12188,
+        "point": [
+          133.85471976618615,
+          34.608954365792314
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 10009,
+        "row": 12188,
+        "point": [
+          133.8558301398634,
+          34.608954365792314
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9979,
+        "row": 12189,
+        "point": [
+          133.8225189295463,
+          34.60805605461732
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9980,
+        "row": 12189,
+        "point": [
+          133.82362930322353,
+          34.60805605461732
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9981,
+        "row": 12189,
+        "point": [
+          133.82473967690078,
+          34.60805605461732
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9997,
+        "row": 12189,
+        "point": [
+          133.84250565573655,
+          34.60805605461732
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9998,
+        "row": 12189,
+        "point": [
+          133.8436160294138,
+          34.60805605461732
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9999,
+        "row": 12189,
+        "point": [
+          133.84472640309102,
+          34.60805605461732
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 10000,
+        "row": 12189,
+        "point": [
+          133.84583677676827,
+          34.60805605461732
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 10001,
+        "row": 12189,
+        "point": [
+          133.8469471504455,
+          34.60805605461732
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 10002,
+        "row": 12189,
+        "point": [
+          133.84805752412274,
+          34.60805605461732
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 10003,
+        "row": 12189,
+        "point": [
+          133.8491678978,
+          34.60805605461732
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 10004,
+        "row": 12189,
+        "point": [
+          133.8502782714772,
+          34.60805605461732
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 10005,
+        "row": 12189,
+        "point": [
+          133.85138864515446,
+          34.60805605461732
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 10006,
+        "row": 12189,
+        "point": [
+          133.85249901883168,
+          34.60805605461732
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 10007,
+        "row": 12189,
+        "point": [
+          133.85360939250893,
+          34.60805605461732
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 10008,
+        "row": 12189,
+        "point": [
+          133.85471976618615,
+          34.60805605461732
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9979,
+        "row": 12190,
+        "point": [
+          133.8225189295463,
+          34.60715774344233
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9981,
+        "row": 12190,
+        "point": [
+          133.82473967690078,
+          34.60715774344233
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9982,
+        "row": 12190,
+        "point": [
+          133.825850050578,
+          34.60715774344233
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9995,
+        "row": 12190,
+        "point": [
+          133.84028490838207,
+          34.60715774344233
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9996,
+        "row": 12190,
+        "point": [
+          133.84139528205932,
+          34.60715774344233
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9997,
+        "row": 12190,
+        "point": [
+          133.84250565573655,
+          34.60715774344233
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9998,
+        "row": 12190,
+        "point": [
+          133.8436160294138,
+          34.60715774344233
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9999,
+        "row": 12190,
+        "point": [
+          133.84472640309102,
+          34.60715774344233
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 10000,
+        "row": 12190,
+        "point": [
+          133.84583677676827,
+          34.60715774344233
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 10001,
+        "row": 12190,
+        "point": [
+          133.8469471504455,
+          34.60715774344233
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 10002,
+        "row": 12190,
+        "point": [
+          133.84805752412274,
+          34.60715774344233
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 10003,
+        "row": 12190,
+        "point": [
+          133.8491678978,
+          34.60715774344233
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9977,
+        "row": 12191,
+        "point": [
+          133.82029818219183,
+          34.606259432267336
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9978,
+        "row": 12191,
+        "point": [
+          133.82140855586906,
+          34.606259432267336
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9979,
+        "row": 12191,
+        "point": [
+          133.8225189295463,
+          34.606259432267336
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9994,
+        "row": 12191,
+        "point": [
+          133.83917453470485,
+          34.606259432267336
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9995,
+        "row": 12191,
+        "point": [
+          133.84028490838207,
+          34.606259432267336
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9996,
+        "row": 12191,
+        "point": [
+          133.84139528205932,
+          34.606259432267336
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9997,
+        "row": 12191,
+        "point": [
+          133.84250565573655,
+          34.606259432267336
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9998,
+        "row": 12191,
+        "point": [
+          133.8436160294138,
+          34.606259432267336
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9999,
+        "row": 12191,
+        "point": [
+          133.84472640309102,
+          34.606259432267336
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 10000,
+        "row": 12191,
+        "point": [
+          133.84583677676827,
+          34.606259432267336
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 10001,
+        "row": 12191,
+        "point": [
+          133.8469471504455,
+          34.606259432267336
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9976,
+        "row": 12192,
+        "point": [
+          133.81918780851458,
+          34.60536112109234
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9977,
+        "row": 12192,
+        "point": [
+          133.82029818219183,
+          34.60536112109234
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9978,
+        "row": 12192,
+        "point": [
+          133.82140855586906,
+          34.60536112109234
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9993,
+        "row": 12192,
+        "point": [
+          133.8380641610276,
+          34.60536112109234
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9994,
+        "row": 12192,
+        "point": [
+          133.83917453470485,
+          34.60536112109234
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9995,
+        "row": 12192,
+        "point": [
+          133.84028490838207,
+          34.60536112109234
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9996,
+        "row": 12192,
+        "point": [
+          133.84139528205932,
+          34.60536112109234
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9997,
+        "row": 12192,
+        "point": [
+          133.84250565573655,
+          34.60536112109234
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9998,
+        "row": 12192,
+        "point": [
+          133.8436160294138,
+          34.60536112109234
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9999,
+        "row": 12192,
+        "point": [
+          133.84472640309102,
+          34.60536112109234
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9974,
+        "row": 12193,
+        "point": [
+          133.8169670611601,
+          34.60446280991735
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9975,
+        "row": 12193,
+        "point": [
+          133.81807743483736,
+          34.60446280991735
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9976,
+        "row": 12193,
+        "point": [
+          133.81918780851458,
+          34.60446280991735
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9977,
+        "row": 12193,
+        "point": [
+          133.82029818219183,
+          34.60446280991735
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9978,
+        "row": 12193,
+        "point": [
+          133.82140855586906,
+          34.60446280991735
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9992,
+        "row": 12193,
+        "point": [
+          133.83695378735038,
+          34.60446280991735
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9993,
+        "row": 12193,
+        "point": [
+          133.8380641610276,
+          34.60446280991735
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9994,
+        "row": 12193,
+        "point": [
+          133.83917453470485,
+          34.60446280991735
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9995,
+        "row": 12193,
+        "point": [
+          133.84028490838207,
+          34.60446280991735
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9996,
+        "row": 12193,
+        "point": [
+          133.84139528205932,
+          34.60446280991735
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9997,
+        "row": 12193,
+        "point": [
+          133.84250565573655,
+          34.60446280991735
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9998,
+        "row": 12193,
+        "point": [
+          133.8436160294138,
+          34.60446280991735
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9999,
+        "row": 12193,
+        "point": [
+          133.84472640309102,
+          34.60446280991735
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9972,
+        "row": 12194,
+        "point": [
+          133.81474631380564,
+          34.603564498742365
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9973,
+        "row": 12194,
+        "point": [
+          133.81585668748286,
+          34.603564498742365
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9974,
+        "row": 12194,
+        "point": [
+          133.8169670611601,
+          34.603564498742365
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9975,
+        "row": 12194,
+        "point": [
+          133.81807743483736,
+          34.603564498742365
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9976,
+        "row": 12194,
+        "point": [
+          133.81918780851458,
+          34.603564498742365
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9977,
+        "row": 12194,
+        "point": [
+          133.82029818219183,
+          34.603564498742365
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9978,
+        "row": 12194,
+        "point": [
+          133.82140855586906,
+          34.603564498742365
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9979,
+        "row": 12194,
+        "point": [
+          133.8225189295463,
+          34.603564498742365
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9992,
+        "row": 12194,
+        "point": [
+          133.83695378735038,
+          34.603564498742365
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9993,
+        "row": 12194,
+        "point": [
+          133.8380641610276,
+          34.603564498742365
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9994,
+        "row": 12194,
+        "point": [
+          133.83917453470485,
+          34.603564498742365
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9995,
+        "row": 12194,
+        "point": [
+          133.84028490838207,
+          34.603564498742365
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9996,
+        "row": 12194,
+        "point": [
+          133.84139528205932,
+          34.603564498742365
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9997,
+        "row": 12194,
+        "point": [
+          133.84250565573655,
+          34.603564498742365
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9998,
+        "row": 12194,
+        "point": [
+          133.8436160294138,
+          34.603564498742365
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9969,
+        "row": 12195,
+        "point": [
+          133.81141519277392,
+          34.60266618756737
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9970,
+        "row": 12195,
+        "point": [
+          133.81252556645117,
+          34.60266618756737
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9971,
+        "row": 12195,
+        "point": [
+          133.8136359401284,
+          34.60266618756737
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9972,
+        "row": 12195,
+        "point": [
+          133.81474631380564,
+          34.60266618756737
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9973,
+        "row": 12195,
+        "point": [
+          133.81585668748286,
+          34.60266618756737
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9974,
+        "row": 12195,
+        "point": [
+          133.8169670611601,
+          34.60266618756737
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9975,
+        "row": 12195,
+        "point": [
+          133.81807743483736,
+          34.60266618756737
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9976,
+        "row": 12195,
+        "point": [
+          133.81918780851458,
+          34.60266618756737
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9977,
+        "row": 12195,
+        "point": [
+          133.82029818219183,
+          34.60266618756737
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9978,
+        "row": 12195,
+        "point": [
+          133.82140855586906,
+          34.60266618756737
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9979,
+        "row": 12195,
+        "point": [
+          133.8225189295463,
+          34.60266618756737
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9980,
+        "row": 12195,
+        "point": [
+          133.82362930322353,
+          34.60266618756737
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9989,
+        "row": 12195,
+        "point": [
+          133.83362266631866,
+          34.60266618756737
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9990,
+        "row": 12195,
+        "point": [
+          133.8347330399959,
+          34.60266618756737
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9991,
+        "row": 12195,
+        "point": [
+          133.83584341367313,
+          34.60266618756737
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9992,
+        "row": 12195,
+        "point": [
+          133.83695378735038,
+          34.60266618756737
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9993,
+        "row": 12195,
+        "point": [
+          133.8380641610276,
+          34.60266618756737
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9994,
+        "row": 12195,
+        "point": [
+          133.83917453470485,
+          34.60266618756737
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9995,
+        "row": 12195,
+        "point": [
+          133.84028490838207,
+          34.60266618756737
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9996,
+        "row": 12195,
+        "point": [
+          133.84139528205932,
+          34.60266618756737
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9997,
+        "row": 12195,
+        "point": [
+          133.84250565573655,
+          34.60266618756737
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9998,
+        "row": 12195,
+        "point": [
+          133.8436160294138,
+          34.60266618756737
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9968,
+        "row": 12196,
+        "point": [
+          133.8103048190967,
+          34.60176787639238
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9969,
+        "row": 12196,
+        "point": [
+          133.81141519277392,
+          34.60176787639238
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9970,
+        "row": 12196,
+        "point": [
+          133.81252556645117,
+          34.60176787639238
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9971,
+        "row": 12196,
+        "point": [
+          133.8136359401284,
+          34.60176787639238
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9972,
+        "row": 12196,
+        "point": [
+          133.81474631380564,
+          34.60176787639238
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9973,
+        "row": 12196,
+        "point": [
+          133.81585668748286,
+          34.60176787639238
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9975,
+        "row": 12196,
+        "point": [
+          133.81807743483736,
+          34.60176787639238
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9976,
+        "row": 12196,
+        "point": [
+          133.81918780851458,
+          34.60176787639238
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9977,
+        "row": 12196,
+        "point": [
+          133.82029818219183,
+          34.60176787639238
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9978,
+        "row": 12196,
+        "point": [
+          133.82140855586906,
+          34.60176787639238
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9979,
+        "row": 12196,
+        "point": [
+          133.8225189295463,
+          34.60176787639238
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9980,
+        "row": 12196,
+        "point": [
+          133.82362930322353,
+          34.60176787639238
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9988,
+        "row": 12196,
+        "point": [
+          133.83251229264144,
+          34.60176787639238
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9989,
+        "row": 12196,
+        "point": [
+          133.83362266631866,
+          34.60176787639238
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9990,
+        "row": 12196,
+        "point": [
+          133.8347330399959,
+          34.60176787639238
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9991,
+        "row": 12196,
+        "point": [
+          133.83584341367313,
+          34.60176787639238
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9992,
+        "row": 12196,
+        "point": [
+          133.83695378735038,
+          34.60176787639238
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9993,
+        "row": 12196,
+        "point": [
+          133.8380641610276,
+          34.60176787639238
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9994,
+        "row": 12196,
+        "point": [
+          133.83917453470485,
+          34.60176787639238
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9995,
+        "row": 12196,
+        "point": [
+          133.84028490838207,
+          34.60176787639238
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9996,
+        "row": 12196,
+        "point": [
+          133.84139528205932,
+          34.60176787639238
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9997,
+        "row": 12196,
+        "point": [
+          133.84250565573655,
+          34.60176787639238
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9968,
+        "row": 12197,
+        "point": [
+          133.8103048190967,
+          34.600869565217394
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9969,
+        "row": 12197,
+        "point": [
+          133.81141519277392,
+          34.600869565217394
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9970,
+        "row": 12197,
+        "point": [
+          133.81252556645117,
+          34.600869565217394
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9971,
+        "row": 12197,
+        "point": [
+          133.8136359401284,
+          34.600869565217394
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9972,
+        "row": 12197,
+        "point": [
+          133.81474631380564,
+          34.600869565217394
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9973,
+        "row": 12197,
+        "point": [
+          133.81585668748286,
+          34.600869565217394
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9978,
+        "row": 12197,
+        "point": [
+          133.82140855586906,
+          34.600869565217394
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9979,
+        "row": 12197,
+        "point": [
+          133.8225189295463,
+          34.600869565217394
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9980,
+        "row": 12197,
+        "point": [
+          133.82362930322353,
+          34.600869565217394
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9988,
+        "row": 12197,
+        "point": [
+          133.83251229264144,
+          34.600869565217394
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9989,
+        "row": 12197,
+        "point": [
+          133.83362266631866,
+          34.600869565217394
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9990,
+        "row": 12197,
+        "point": [
+          133.8347330399959,
+          34.600869565217394
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9991,
+        "row": 12197,
+        "point": [
+          133.83584341367313,
+          34.600869565217394
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9992,
+        "row": 12197,
+        "point": [
+          133.83695378735038,
+          34.600869565217394
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9993,
+        "row": 12197,
+        "point": [
+          133.8380641610276,
+          34.600869565217394
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9994,
+        "row": 12197,
+        "point": [
+          133.83917453470485,
+          34.600869565217394
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9995,
+        "row": 12197,
+        "point": [
+          133.84028490838207,
+          34.600869565217394
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9996,
+        "row": 12197,
+        "point": [
+          133.84139528205932,
+          34.600869565217394
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9997,
+        "row": 12197,
+        "point": [
+          133.84250565573655,
+          34.600869565217394
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9962,
+        "row": 12198,
+        "point": [
+          133.8036425770333,
+          34.5999712540424
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9963,
+        "row": 12198,
+        "point": [
+          133.8047529507105,
+          34.5999712540424
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9964,
+        "row": 12198,
+        "point": [
+          133.80586332438776,
+          34.5999712540424
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9965,
+        "row": 12198,
+        "point": [
+          133.80697369806498,
+          34.5999712540424
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9969,
+        "row": 12198,
+        "point": [
+          133.81141519277392,
+          34.5999712540424
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9970,
+        "row": 12198,
+        "point": [
+          133.81252556645117,
+          34.5999712540424
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9971,
+        "row": 12198,
+        "point": [
+          133.8136359401284,
+          34.5999712540424
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9973,
+        "row": 12198,
+        "point": [
+          133.81585668748286,
+          34.5999712540424
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9974,
+        "row": 12198,
+        "point": [
+          133.8169670611601,
+          34.5999712540424
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9978,
+        "row": 12198,
+        "point": [
+          133.82140855586906,
+          34.5999712540424
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9979,
+        "row": 12198,
+        "point": [
+          133.8225189295463,
+          34.5999712540424
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9988,
+        "row": 12198,
+        "point": [
+          133.83251229264144,
+          34.5999712540424
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9989,
+        "row": 12198,
+        "point": [
+          133.83362266631866,
+          34.5999712540424
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9990,
+        "row": 12198,
+        "point": [
+          133.8347330399959,
+          34.5999712540424
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9991,
+        "row": 12198,
+        "point": [
+          133.83584341367313,
+          34.5999712540424
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9992,
+        "row": 12198,
+        "point": [
+          133.83695378735038,
+          34.5999712540424
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9994,
+        "row": 12198,
+        "point": [
+          133.83917453470485,
+          34.5999712540424
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9995,
+        "row": 12198,
+        "point": [
+          133.84028490838207,
+          34.5999712540424
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9996,
+        "row": 12198,
+        "point": [
+          133.84139528205932,
+          34.5999712540424
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9997,
+        "row": 12198,
+        "point": [
+          133.84250565573655,
+          34.5999712540424
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9957,
+        "row": 12199,
+        "point": [
+          133.7980907086471,
+          34.59907294286741
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9958,
+        "row": 12199,
+        "point": [
+          133.79920108232432,
+          34.59907294286741
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9959,
+        "row": 12199,
+        "point": [
+          133.80031145600157,
+          34.59907294286741
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9960,
+        "row": 12199,
+        "point": [
+          133.8014218296788,
+          34.59907294286741
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9961,
+        "row": 12199,
+        "point": [
+          133.80253220335604,
+          34.59907294286741
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9962,
+        "row": 12199,
+        "point": [
+          133.8036425770333,
+          34.59907294286741
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9963,
+        "row": 12199,
+        "point": [
+          133.8047529507105,
+          34.59907294286741
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9964,
+        "row": 12199,
+        "point": [
+          133.80586332438776,
+          34.59907294286741
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9965,
+        "row": 12199,
+        "point": [
+          133.80697369806498,
+          34.59907294286741
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9970,
+        "row": 12199,
+        "point": [
+          133.81252556645117,
+          34.59907294286741
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9975,
+        "row": 12199,
+        "point": [
+          133.81807743483736,
+          34.59907294286741
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9977,
+        "row": 12199,
+        "point": [
+          133.82029818219183,
+          34.59907294286741
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9978,
+        "row": 12199,
+        "point": [
+          133.82140855586906,
+          34.59907294286741
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9988,
+        "row": 12199,
+        "point": [
+          133.83251229264144,
+          34.59907294286741
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9989,
+        "row": 12199,
+        "point": [
+          133.83362266631866,
+          34.59907294286741
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9990,
+        "row": 12199,
+        "point": [
+          133.8347330399959,
+          34.59907294286741
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9991,
+        "row": 12199,
+        "point": [
+          133.83584341367313,
+          34.59907294286741
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9992,
+        "row": 12199,
+        "point": [
+          133.83695378735038,
+          34.59907294286741
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9994,
+        "row": 12199,
+        "point": [
+          133.83917453470485,
+          34.59907294286741
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9995,
+        "row": 12199,
+        "point": [
+          133.84028490838207,
+          34.59907294286741
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9996,
+        "row": 12199,
+        "point": [
+          133.84139528205932,
+          34.59907294286741
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9952,
+        "row": 12200,
+        "point": [
+          133.7925388402609,
+          34.598174631692416
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9953,
+        "row": 12200,
+        "point": [
+          133.79364921393815,
+          34.598174631692416
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9954,
+        "row": 12200,
+        "point": [
+          133.79475958761537,
+          34.598174631692416
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9955,
+        "row": 12200,
+        "point": [
+          133.79586996129262,
+          34.598174631692416
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9956,
+        "row": 12200,
+        "point": [
+          133.79698033496985,
+          34.598174631692416
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9957,
+        "row": 12200,
+        "point": [
+          133.7980907086471,
+          34.598174631692416
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9958,
+        "row": 12200,
+        "point": [
+          133.79920108232432,
+          34.598174631692416
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9959,
+        "row": 12200,
+        "point": [
+          133.80031145600157,
+          34.598174631692416
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9960,
+        "row": 12200,
+        "point": [
+          133.8014218296788,
+          34.598174631692416
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9961,
+        "row": 12200,
+        "point": [
+          133.80253220335604,
+          34.598174631692416
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9962,
+        "row": 12200,
+        "point": [
+          133.8036425770333,
+          34.598174631692416
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9963,
+        "row": 12200,
+        "point": [
+          133.8047529507105,
+          34.598174631692416
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9964,
+        "row": 12200,
+        "point": [
+          133.80586332438776,
+          34.598174631692416
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9965,
+        "row": 12200,
+        "point": [
+          133.80697369806498,
+          34.598174631692416
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9989,
+        "row": 12200,
+        "point": [
+          133.83362266631866,
+          34.598174631692416
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9990,
+        "row": 12200,
+        "point": [
+          133.8347330399959,
+          34.598174631692416
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9991,
+        "row": 12200,
+        "point": [
+          133.83584341367313,
+          34.598174631692416
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9995,
+        "row": 12200,
+        "point": [
+          133.84028490838207,
+          34.598174631692416
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9951,
+        "row": 12201,
+        "point": [
+          133.79142846658368,
+          34.59727632051742
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9952,
+        "row": 12201,
+        "point": [
+          133.7925388402609,
+          34.59727632051742
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9953,
+        "row": 12201,
+        "point": [
+          133.79364921393815,
+          34.59727632051742
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9954,
+        "row": 12201,
+        "point": [
+          133.79475958761537,
+          34.59727632051742
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9955,
+        "row": 12201,
+        "point": [
+          133.79586996129262,
+          34.59727632051742
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9956,
+        "row": 12201,
+        "point": [
+          133.79698033496985,
+          34.59727632051742
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9957,
+        "row": 12201,
+        "point": [
+          133.7980907086471,
+          34.59727632051742
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9958,
+        "row": 12201,
+        "point": [
+          133.79920108232432,
+          34.59727632051742
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9959,
+        "row": 12201,
+        "point": [
+          133.80031145600157,
+          34.59727632051742
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9960,
+        "row": 12201,
+        "point": [
+          133.8014218296788,
+          34.59727632051742
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9961,
+        "row": 12201,
+        "point": [
+          133.80253220335604,
+          34.59727632051742
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9962,
+        "row": 12201,
+        "point": [
+          133.8036425770333,
+          34.59727632051742
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9963,
+        "row": 12201,
+        "point": [
+          133.8047529507105,
+          34.59727632051742
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9964,
+        "row": 12201,
+        "point": [
+          133.80586332438776,
+          34.59727632051742
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9965,
+        "row": 12201,
+        "point": [
+          133.80697369806498,
+          34.59727632051742
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9990,
+        "row": 12201,
+        "point": [
+          133.8347330399959,
+          34.59727632051742
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9951,
+        "row": 12202,
+        "point": [
+          133.79142846658368,
+          34.59637800934244
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9952,
+        "row": 12202,
+        "point": [
+          133.7925388402609,
+          34.59637800934244
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9953,
+        "row": 12202,
+        "point": [
+          133.79364921393815,
+          34.59637800934244
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9954,
+        "row": 12202,
+        "point": [
+          133.79475958761537,
+          34.59637800934244
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9955,
+        "row": 12202,
+        "point": [
+          133.79586996129262,
+          34.59637800934244
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9956,
+        "row": 12202,
+        "point": [
+          133.79698033496985,
+          34.59637800934244
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9957,
+        "row": 12202,
+        "point": [
+          133.7980907086471,
+          34.59637800934244
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9958,
+        "row": 12202,
+        "point": [
+          133.79920108232432,
+          34.59637800934244
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9959,
+        "row": 12202,
+        "point": [
+          133.80031145600157,
+          34.59637800934244
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9960,
+        "row": 12202,
+        "point": [
+          133.8014218296788,
+          34.59637800934244
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9961,
+        "row": 12202,
+        "point": [
+          133.80253220335604,
+          34.59637800934244
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9962,
+        "row": 12202,
+        "point": [
+          133.8036425770333,
+          34.59637800934244
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9963,
+        "row": 12202,
+        "point": [
+          133.8047529507105,
+          34.59637800934244
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9964,
+        "row": 12202,
+        "point": [
+          133.80586332438776,
+          34.59637800934244
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9965,
+        "row": 12202,
+        "point": [
+          133.80697369806498,
+          34.59637800934244
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9951,
+        "row": 12203,
+        "point": [
+          133.79142846658368,
+          34.595479698167445
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9952,
+        "row": 12203,
+        "point": [
+          133.7925388402609,
+          34.595479698167445
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9953,
+        "row": 12203,
+        "point": [
+          133.79364921393815,
+          34.595479698167445
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9954,
+        "row": 12203,
+        "point": [
+          133.79475958761537,
+          34.595479698167445
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9955,
+        "row": 12203,
+        "point": [
+          133.79586996129262,
+          34.595479698167445
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9956,
+        "row": 12203,
+        "point": [
+          133.79698033496985,
+          34.595479698167445
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9957,
+        "row": 12203,
+        "point": [
+          133.7980907086471,
+          34.595479698167445
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9958,
+        "row": 12203,
+        "point": [
+          133.79920108232432,
+          34.595479698167445
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9959,
+        "row": 12203,
+        "point": [
+          133.80031145600157,
+          34.595479698167445
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9960,
+        "row": 12203,
+        "point": [
+          133.8014218296788,
+          34.595479698167445
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9961,
+        "row": 12203,
+        "point": [
+          133.80253220335604,
+          34.595479698167445
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9962,
+        "row": 12203,
+        "point": [
+          133.8036425770333,
+          34.595479698167445
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9963,
+        "row": 12203,
+        "point": [
+          133.8047529507105,
+          34.595479698167445
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9964,
+        "row": 12203,
+        "point": [
+          133.80586332438776,
+          34.595479698167445
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9950,
+        "row": 12204,
+        "point": [
+          133.79031809290643,
+          34.59458138699245
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9951,
+        "row": 12204,
+        "point": [
+          133.79142846658368,
+          34.59458138699245
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9952,
+        "row": 12204,
+        "point": [
+          133.7925388402609,
+          34.59458138699245
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9953,
+        "row": 12204,
+        "point": [
+          133.79364921393815,
+          34.59458138699245
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9954,
+        "row": 12204,
+        "point": [
+          133.79475958761537,
+          34.59458138699245
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9955,
+        "row": 12204,
+        "point": [
+          133.79586996129262,
+          34.59458138699245
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9956,
+        "row": 12204,
+        "point": [
+          133.79698033496985,
+          34.59458138699245
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9957,
+        "row": 12204,
+        "point": [
+          133.7980907086471,
+          34.59458138699245
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9958,
+        "row": 12204,
+        "point": [
+          133.79920108232432,
+          34.59458138699245
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9959,
+        "row": 12204,
+        "point": [
+          133.80031145600157,
+          34.59458138699245
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9960,
+        "row": 12204,
+        "point": [
+          133.8014218296788,
+          34.59458138699245
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9961,
+        "row": 12204,
+        "point": [
+          133.80253220335604,
+          34.59458138699245
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9962,
+        "row": 12204,
+        "point": [
+          133.8036425770333,
+          34.59458138699245
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9963,
+        "row": 12204,
+        "point": [
+          133.8047529507105,
+          34.59458138699245
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9964,
+        "row": 12204,
+        "point": [
+          133.80586332438776,
+          34.59458138699245
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9965,
+        "row": 12204,
+        "point": [
+          133.80697369806498,
+          34.59458138699245
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9951,
+        "row": 12205,
+        "point": [
+          133.79142846658368,
+          34.59368307581746
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9952,
+        "row": 12205,
+        "point": [
+          133.7925388402609,
+          34.59368307581746
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9953,
+        "row": 12205,
+        "point": [
+          133.79364921393815,
+          34.59368307581746
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9954,
+        "row": 12205,
+        "point": [
+          133.79475958761537,
+          34.59368307581746
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9955,
+        "row": 12205,
+        "point": [
+          133.79586996129262,
+          34.59368307581746
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9956,
+        "row": 12205,
+        "point": [
+          133.79698033496985,
+          34.59368307581746
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9957,
+        "row": 12205,
+        "point": [
+          133.7980907086471,
+          34.59368307581746
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9958,
+        "row": 12205,
+        "point": [
+          133.79920108232432,
+          34.59368307581746
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9959,
+        "row": 12205,
+        "point": [
+          133.80031145600157,
+          34.59368307581746
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9960,
+        "row": 12205,
+        "point": [
+          133.8014218296788,
+          34.59368307581746
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9961,
+        "row": 12205,
+        "point": [
+          133.80253220335604,
+          34.59368307581746
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9962,
+        "row": 12205,
+        "point": [
+          133.8036425770333,
+          34.59368307581746
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9963,
+        "row": 12205,
+        "point": [
+          133.8047529507105,
+          34.59368307581746
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9964,
+        "row": 12205,
+        "point": [
+          133.80586332438776,
+          34.59368307581746
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9965,
+        "row": 12205,
+        "point": [
+          133.80697369806498,
+          34.59368307581746
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9951,
+        "row": 12206,
+        "point": [
+          133.79142846658368,
+          34.592784764642474
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9952,
+        "row": 12206,
+        "point": [
+          133.7925388402609,
+          34.592784764642474
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9953,
+        "row": 12206,
+        "point": [
+          133.79364921393815,
+          34.592784764642474
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9954,
+        "row": 12206,
+        "point": [
+          133.79475958761537,
+          34.592784764642474
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9955,
+        "row": 12206,
+        "point": [
+          133.79586996129262,
+          34.592784764642474
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9956,
+        "row": 12206,
+        "point": [
+          133.79698033496985,
+          34.592784764642474
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9957,
+        "row": 12206,
+        "point": [
+          133.7980907086471,
+          34.592784764642474
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9958,
+        "row": 12206,
+        "point": [
+          133.79920108232432,
+          34.592784764642474
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9959,
+        "row": 12206,
+        "point": [
+          133.80031145600157,
+          34.592784764642474
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9960,
+        "row": 12206,
+        "point": [
+          133.8014218296788,
+          34.592784764642474
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9961,
+        "row": 12206,
+        "point": [
+          133.80253220335604,
+          34.592784764642474
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9962,
+        "row": 12206,
+        "point": [
+          133.8036425770333,
+          34.592784764642474
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9963,
+        "row": 12206,
+        "point": [
+          133.8047529507105,
+          34.592784764642474
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9951,
+        "row": 12207,
+        "point": [
+          133.79142846658368,
+          34.59188645346748
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9952,
+        "row": 12207,
+        "point": [
+          133.7925388402609,
+          34.59188645346748
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9953,
+        "row": 12207,
+        "point": [
+          133.79364921393815,
+          34.59188645346748
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9954,
+        "row": 12207,
+        "point": [
+          133.79475958761537,
+          34.59188645346748
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9955,
+        "row": 12207,
+        "point": [
+          133.79586996129262,
+          34.59188645346748
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9956,
+        "row": 12207,
+        "point": [
+          133.79698033496985,
+          34.59188645346748
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9957,
+        "row": 12207,
+        "point": [
+          133.7980907086471,
+          34.59188645346748
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9958,
+        "row": 12207,
+        "point": [
+          133.79920108232432,
+          34.59188645346748
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9959,
+        "row": 12207,
+        "point": [
+          133.80031145600157,
+          34.59188645346748
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9960,
+        "row": 12207,
+        "point": [
+          133.8014218296788,
+          34.59188645346748
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9961,
+        "row": 12207,
+        "point": [
+          133.80253220335604,
+          34.59188645346748
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9952,
+        "row": 12208,
+        "point": [
+          133.7925388402609,
+          34.59098814229249
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9953,
+        "row": 12208,
+        "point": [
+          133.79364921393815,
+          34.59098814229249
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9954,
+        "row": 12208,
+        "point": [
+          133.79475958761537,
+          34.59098814229249
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9955,
+        "row": 12208,
+        "point": [
+          133.79586996129262,
+          34.59098814229249
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9956,
+        "row": 12208,
+        "point": [
+          133.79698033496985,
+          34.59098814229249
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9957,
+        "row": 12208,
+        "point": [
+          133.7980907086471,
+          34.59098814229249
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9958,
+        "row": 12208,
+        "point": [
+          133.79920108232432,
+          34.59098814229249
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9959,
+        "row": 12208,
+        "point": [
+          133.80031145600157,
+          34.59098814229249
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9952,
+        "row": 12209,
+        "point": [
+          133.7925388402609,
+          34.590089831117496
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9953,
+        "row": 12209,
+        "point": [
+          133.79364921393815,
+          34.590089831117496
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9954,
+        "row": 12209,
+        "point": [
+          133.79475958761537,
+          34.590089831117496
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9955,
+        "row": 12209,
+        "point": [
+          133.79586996129262,
+          34.590089831117496
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9956,
+        "row": 12209,
+        "point": [
+          133.79698033496985,
+          34.590089831117496
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9957,
+        "row": 12209,
+        "point": [
+          133.7980907086471,
+          34.590089831117496
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9958,
+        "row": 12209,
+        "point": [
+          133.79920108232432,
+          34.590089831117496
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9952,
+        "row": 12210,
+        "point": [
+          133.7925388402609,
+          34.58919151994251
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9953,
+        "row": 12210,
+        "point": [
+          133.79364921393815,
+          34.58919151994251
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9954,
+        "row": 12210,
+        "point": [
+          133.79475958761537,
+          34.58919151994251
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9955,
+        "row": 12210,
+        "point": [
+          133.79586996129262,
+          34.58919151994251
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9956,
+        "row": 12210,
+        "point": [
+          133.79698033496985,
+          34.58919151994251
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9957,
+        "row": 12210,
+        "point": [
+          133.7980907086471,
+          34.58919151994251
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9952,
+        "row": 12211,
+        "point": [
+          133.7925388402609,
+          34.58829320876752
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9953,
+        "row": 12211,
+        "point": [
+          133.79364921393815,
+          34.58829320876752
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9954,
+        "row": 12211,
+        "point": [
+          133.79475958761537,
+          34.58829320876752
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9955,
+        "row": 12211,
+        "point": [
+          133.79586996129262,
+          34.58829320876752
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9956,
+        "row": 12211,
+        "point": [
+          133.79698033496985,
+          34.58829320876752
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9953,
+        "row": 12212,
+        "point": [
+          133.79364921393815,
+          34.587394897592525
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9954,
+        "row": 12212,
+        "point": [
+          133.79475958761537,
+          34.587394897592525
+        ],
+        "insideHayashima": false
+      },
+      {
+        "col": 9955,
+        "row": 12212,
+        "point": [
+          133.79586996129262,
+          34.587394897592525
+        ],
+        "insideHayashima": false
+      }
+    ]
+  },
+  "initialPrototypeCanonical": [
+    {
+      "file": "kuniezu/map/physical/land.geojson",
+      "initialSha256": "7f4ff8c076341c3d5a6a52e69d14a898708cf0af078964273a096439fc352613",
+      "features": 2195,
+      "candidateSha256": "2e2df9cbb46faa4e721767626d22bbddb8ce2798a46c5127a1c5ce1e10be07fd",
+      "geometryValuesUnchangedDuringAdoption": true
+    },
+    {
+      "file": "kuniezu/map/physical/water.geojson",
+      "initialSha256": "ec68b5a933213f8b3e8939976430b50c5127fc2699ae7f51d84eaada3df5d88e",
+      "features": 574,
+      "candidateSha256": "5d8295fd4b67df28fedf4e82c2a76c4d86f8aed39725cffc5783631edc97b1bf",
+      "geometryValuesUnchangedDuringAdoption": true
+    },
+    {
+      "file": "kuniezu/map/physical/coastline.geojson",
+      "initialSha256": "9eff038cba9c83ac62d497968b775c3d6330c09eee571e93b39113d83448ad04",
+      "features": 2929,
+      "candidateSha256": "2b5717c0fd780e063baa92047334a047fdc889223e39ad33a34d1cbc2e20165d",
+      "geometryValuesUnchangedDuringAdoption": true
+    }
+  ],
+  "naturalLakeSupplement": {
+    "parentInputSha256": {
+      "land": "7f4ff8c076341c3d5a6a52e69d14a898708cf0af078964273a096439fc352613",
+      "water": "ec68b5a933213f8b3e8939976430b50c5127fc2699ae7f51d84eaada3df5d88e",
+      "coastline": "9eff038cba9c83ac62d497968b775c3d6330c09eee571e93b39113d83448ad04"
+    },
+    "originalZipSha256": "e5d0f1bc77427c8c44a855ff361d3b9d94b76fe3c5e31a423ab9abc570950787",
+    "addedLakes": [
+      {
+        "id": "lake:shikotsu",
+        "sourceRecord": 24,
+        "sourceName": "支笏湖",
+        "islandHolesPreserved": 0,
+        "newCentre": [
+          141.32752688832278,
+          42.753854585
+        ],
+        "centreCovered": true
+      },
+      {
+        "id": "lake:toya",
+        "sourceRecord": 68,
+        "sourceName": "洞爺湖",
+        "islandHolesPreserved": 5,
+        "newCentre": [
+          140.89573363248383,
+          42.60188847
+        ],
+        "centreCovered": true
+      },
+      {
+        "id": "lake:kuttara",
+        "sourceRecord": 69,
+        "sourceName": "倶多楽湖",
+        "islandHolesPreserved": 0,
+        "newCentre": [
+          141.18196464341312,
+          42.49995681
+        ],
+        "centreCovered": true
+      },
+      {
+        "id": "lake:shikaribetsu",
+        "sourceRecord": 81,
+        "sourceName": "然別湖",
+        "islandHolesPreserved": 2,
+        "newCentre": [
+          143.11675175575016,
+          43.281538885
+        ],
+        "centreCovered": true
+      },
+      {
+        "id": "lake:mashu",
+        "sourceRecord": 98,
+        "sourceName": "摩周湖",
+        "islandHolesPreserved": 1,
+        "newCentre": [
+          144.51705255392045,
+          43.57892319
+        ],
+        "centreCovered": true
+      },
+      {
+        "id": "lake:kussharo",
+        "sourceRecord": 99,
+        "sourceName": "屈斜路湖",
+        "islandHolesPreserved": 1,
+        "newCentre": [
+          144.3105306413072,
+          43.616569580000004
+        ],
+        "centreCovered": true
+      },
+      {
+        "id": "lake:akan",
+        "sourceRecord": 102,
+        "sourceName": "阿寒湖",
+        "islandHolesPreserved": 11,
+        "newCentre": [
+          144.09939492503617,
+          43.456048335
+        ],
+        "centreCovered": true
+      },
+      {
+        "id": "lake:chuzenji",
+        "sourceRecord": 214,
+        "sourceName": "中禅寺湖",
+        "islandHolesPreserved": 1,
+        "newCentre": [
+          139.47686744623633,
+          36.736807084999995
+        ],
+        "centreCovered": true
+      },
+      {
+        "id": "lake:ashinoko",
+        "sourceRecord": 268,
+        "sourceName": "芦ノ湖",
+        "islandHolesPreserved": 0,
+        "newCentre": [
+          139.00205543821443,
+          35.214498469999995
+        ],
+        "centreCovered": true
+      },
+      {
+        "id": "lake:motosu",
+        "sourceRecord": 312,
+        "sourceName": "本栖湖",
+        "islandHolesPreserved": 0,
+        "newCentre": [
+          138.58550496267617,
+          35.464305555
+        ],
+        "centreCovered": true
+      },
+      {
+        "id": "lake:shoji",
+        "sourceRecord": 313,
+        "sourceName": "精進湖",
+        "islandHolesPreserved": 6,
+        "newCentre": [
+          138.6066333747165,
+          35.488801245000005
+        ],
+        "centreCovered": true
+      },
+      {
+        "id": "lake:yamanaka",
+        "sourceRecord": 318,
+        "sourceName": "山中湖",
+        "islandHolesPreserved": 0,
+        "newCentre": [
+          138.8767785030358,
+          35.41870708
+        ],
+        "centreCovered": true
+      },
+      {
+        "id": "lake:sai",
+        "sourceRecord": 319,
+        "sourceName": "西湖",
+        "islandHolesPreserved": 0,
+        "newCentre": [
+          138.68539282574324,
+          35.49852347
+        ],
+        "centreCovered": true
+      },
+      {
+        "id": "lake:kawaguchi",
+        "sourceRecord": 320,
+        "sourceName": "河口湖",
+        "islandHolesPreserved": 3,
+        "newCentre": [
+          138.74495297462028,
+          35.513121944999995
+        ],
+        "centreCovered": true
+      },
+      {
+        "id": "lake:aoki",
+        "sourceRecord": 332,
+        "sourceName": "青木湖",
+        "islandHolesPreserved": 0,
+        "newCentre": [
+          137.85103343632545,
+          36.61042472
+        ],
+        "centreCovered": true
+      },
+      {
+        "id": "lake:nojiri-nagano",
+        "sourceRecord": 363,
+        "sourceName": "野尻湖（芙蓉湖）",
+        "islandHolesPreserved": 1,
+        "newCentre": [
+          138.2180770451452,
+          36.82534458
+        ],
+        "centreCovered": true
+      },
+      {
+        "id": "lake:ikeda",
+        "sourceRecord": 545,
+        "sourceName": "池田湖",
+        "islandHolesPreserved": 0,
+        "newCentre": [
+          130.56380365294814,
+          31.234778755
+        ],
+        "centreCovered": true
+      }
+    ],
+    "held": [
+      "鰻池:404/search-index only",
+      "御池:source geometry absent"
+    ],
+    "changedExistingLandIds": [
+      "land:baseline:00928",
+      "land:baseline:01887",
+      "land:baseline:02174"
+    ],
+    "changedExistingShoreIds": [],
+    "shoreChecks": {
+      "1560": {
+        "equalsExpectedParentShorePlusLakeEdges": true,
+        "differenceLengthDegrees": 0.0
+      },
+      "1584": {
+        "equalsExpectedParentShorePlusLakeEdges": true,
+        "differenceLengthDegrees": 0.0
+      }
+    },
+    "allValid": true,
+    "existingIdsRetained": true,
+    "fiveCanonicalIdsRetained": true,
+    "katoriProtected70BothLand": true,
+    "retainedAdoptionRegions": [
+      "hachirogata",
+      "ogura"
+    ],
+    "ukita366GeometryRetained": true,
+    "waterLandOverlapDegreesSquared": {
+      "1560": 0.0,
+      "1584": 0.0
+    },
+    "currentGameUnchanged": true,
+    "fileBytes": {
+      "land": 30421074,
+      "water": 6012774,
+      "coastline": 29462549
+    },
+    "featureCounts": {
+      "land": 2195,
+      "water": 591,
+      "coastline": 2977
+    },
+    "evidenceNote": "Chuzenji uses read MLIT1-page PDF; Kuttara uses read JMAHTML; Unagi held.",
+    "newShoreFeatures": 48,
+    "shorePreservedWithoutSegmentFragmentation": true
+  },
+  "deferredWaterApplication": {
+    "removedWaterIds": [
+      "water:codh-lake:32",
+      "water:codh-lake:456",
+      "water:codh-lake:517",
+      "water:codh-lake:518",
+      "water:codh-lake:523",
+      "water:codh-lake:524",
+      "water:codh-lake:528"
+    ],
+    "removedCount": 7,
+    "retainedUncertain57": true,
+    "deletedShoreIds": [
+      "shore:common:01547",
+      "shore:common:01556",
+      "shore:common:01557",
+      "shore:common:01561",
+      "shore:common:01566",
+      "shore:common:02116",
+      "shore:common:02117",
+      "shore:common:02434"
+    ],
+    "changedShoreIds": [],
+    "splitShoreIds": [],
+    "backgroundFeatures": 8,
+    "backgroundAreaDegreesSquared": 8.612387066721766e-05,
+    "shoreChecks": {
+      "1560": {
+        "equals": true,
+        "symmetricDifferenceLengthDegrees": 0.0,
+        "extraLengthDegrees": 0.0,
+        "missingLengthDegrees": 0.0,
+        "hausdorffMismatchWindowDegrees": 0,
+        "maxExtraVertexDistanceDegrees": 0
+      },
+      "1584": {
+        "equals": true,
+        "symmetricDifferenceLengthDegrees": 0.0,
+        "extraLengthDegrees": 0.0,
+        "missingLengthDegrees": 0.0,
+        "hausdorffMismatchWindowDegrees": 0,
+        "maxExtraVertexDistanceDegrees": 0
+      }
+    },
+    "waterLandOverlapDegreesSquared": {
+      "1560": 0.0,
+      "1584": 0.0
+    },
+    "retention": {
+      "natural17": true,
+      "canonical5": true,
+      "katoriProtected70": true,
+      "hachirogata": true,
+      "ogura": true,
+      "ukita366": true
+    },
+    "retentionMethod": "Existing land features byte-equivalent objects; retained water geometries identical; new background restricted to seven removed footprints minus remaining water and existing land. Thus original local masks and natural lakes unchanged.",
+    "allValid": true,
+    "currentGameUnchanged": true,
+    "inputHashes": {
+      "/tmp/kuniezu-natural-lake-supplement-candidate/land.geojson": "5fcd438c3282ebecd85f8c88cafb501dc70231fd7ffa2715ba2e5660585f4d50",
+      "/tmp/kuniezu-natural-lake-supplement-candidate/water.geojson": "ae4f539b85762c2e812f79aa68d273e098eb2d1f8a2d717788d425d6e984ce89",
+      "/tmp/kuniezu-natural-lake-supplement-candidate/coastline.geojson": "913f1cd19bf6662aec632c44e87e276d77aa4915316e57cdb05f9f8a11a85f24",
+      "/tmp/kuniezu-codh-deferred-waters/deferred-waters.geojson": "47ea5e77410bedbd1c5bf1375d2759cde6e9db51440253ac3d81956d80ce3e8b",
+      "/tmp/kuniezu-codh-deferred-waters/decision.json": "aea1a47136c2a440f23a27b356dfe4882508455848cbf0fb4085122b691b59c1"
+    },
+    "comparisonCorrection": "Do not reconstruct suppression as land.boundary minus shore: clipped crossing points can differ infinitesimally from the uncut boundary. Correct comparison uses the actual five metric suppression buffers and raw MultiLineStrings, matching canonical test.",
+    "featureCounts": {
+      "land": 2203,
+      "water": 584,
+      "coastline": 2969,
+      "deferred-waters": 7
+    }
+  },
+  "finalIndependentReview": {
+    "landOriginalObjectsUnchanged": true,
+    "retainedWaterGeometryUnchanged": true,
+    "quarantineParentObjectsExact": true,
+    "originalPacketByteExact": true,
+    "57GeometryUnchanged": true,
+    "unknownBackgroundCount": 8,
+    "backgroundNoInference": true,
+    "natural17SourceChecks": [
+      {
+        "id": "lake:shikotsu",
+        "row": 24,
+        "nameMatch": true,
+        "attrsMatch": true,
+        "exactTransformedGeometry": true,
+        "rawGeometryShaMatch": true,
+        "holes": 0
+      },
+      {
+        "id": "lake:toya",
+        "row": 68,
+        "nameMatch": true,
+        "attrsMatch": true,
+        "exactTransformedGeometry": true,
+        "rawGeometryShaMatch": true,
+        "holes": 5
+      },
+      {
+        "id": "lake:kuttara",
+        "row": 69,
+        "nameMatch": true,
+        "attrsMatch": true,
+        "exactTransformedGeometry": true,
+        "rawGeometryShaMatch": true,
+        "holes": 0
+      },
+      {
+        "id": "lake:shikaribetsu",
+        "row": 81,
+        "nameMatch": true,
+        "attrsMatch": true,
+        "exactTransformedGeometry": true,
+        "rawGeometryShaMatch": true,
+        "holes": 2
+      },
+      {
+        "id": "lake:mashu",
+        "row": 98,
+        "nameMatch": true,
+        "attrsMatch": true,
+        "exactTransformedGeometry": true,
+        "rawGeometryShaMatch": true,
+        "holes": 1
+      },
+      {
+        "id": "lake:kussharo",
+        "row": 99,
+        "nameMatch": true,
+        "attrsMatch": true,
+        "exactTransformedGeometry": true,
+        "rawGeometryShaMatch": true,
+        "holes": 1
+      },
+      {
+        "id": "lake:akan",
+        "row": 102,
+        "nameMatch": true,
+        "attrsMatch": true,
+        "exactTransformedGeometry": true,
+        "rawGeometryShaMatch": true,
+        "holes": 11
+      },
+      {
+        "id": "lake:chuzenji",
+        "row": 214,
+        "nameMatch": true,
+        "attrsMatch": true,
+        "exactTransformedGeometry": true,
+        "rawGeometryShaMatch": true,
+        "holes": 1
+      },
+      {
+        "id": "lake:ashinoko",
+        "row": 268,
+        "nameMatch": true,
+        "attrsMatch": true,
+        "exactTransformedGeometry": true,
+        "rawGeometryShaMatch": true,
+        "holes": 0
+      },
+      {
+        "id": "lake:motosu",
+        "row": 312,
+        "nameMatch": true,
+        "attrsMatch": true,
+        "exactTransformedGeometry": true,
+        "rawGeometryShaMatch": true,
+        "holes": 0
+      },
+      {
+        "id": "lake:shoji",
+        "row": 313,
+        "nameMatch": true,
+        "attrsMatch": true,
+        "exactTransformedGeometry": true,
+        "rawGeometryShaMatch": true,
+        "holes": 6
+      },
+      {
+        "id": "lake:yamanaka",
+        "row": 318,
+        "nameMatch": true,
+        "attrsMatch": true,
+        "exactTransformedGeometry": true,
+        "rawGeometryShaMatch": true,
+        "holes": 0
+      },
+      {
+        "id": "lake:sai",
+        "row": 319,
+        "nameMatch": true,
+        "attrsMatch": true,
+        "exactTransformedGeometry": true,
+        "rawGeometryShaMatch": true,
+        "holes": 0
+      },
+      {
+        "id": "lake:kawaguchi",
+        "row": 320,
+        "nameMatch": true,
+        "attrsMatch": true,
+        "exactTransformedGeometry": true,
+        "rawGeometryShaMatch": true,
+        "holes": 3
+      },
+      {
+        "id": "lake:aoki",
+        "row": 332,
+        "nameMatch": true,
+        "attrsMatch": true,
+        "exactTransformedGeometry": true,
+        "rawGeometryShaMatch": true,
+        "holes": 0
+      },
+      {
+        "id": "lake:nojiri-nagano",
+        "row": 363,
+        "nameMatch": true,
+        "attrsMatch": true,
+        "exactTransformedGeometry": true,
+        "rawGeometryShaMatch": true,
+        "holes": 1
+      },
+      {
+        "id": "lake:ikeda",
+        "row": 545,
+        "nameMatch": true,
+        "attrsMatch": true,
+        "exactTransformedGeometry": true,
+        "rawGeometryShaMatch": true,
+        "holes": 0
+      }
+    ],
+    "natural17Count": 17,
+    "unagiAbsent": true,
+    "years": {
+      "1560": {
+        "waterLandOverlap": 0.0,
+        "shoreEquals": true,
+        "shoreDeltaLength": 0.0
+      },
+      "1584": {
+        "waterLandOverlap": 0.0,
+        "shoreEquals": true,
+        "shoreDeltaLength": 0.0
+      }
+    },
+    "eraDeltaUnchanged": true,
+    "sourceBodyReview": {
+      "scope": "Official/institutional bodies independently opened for Shikotsu,Toya,Kuttara,Mashu,Shikaribetsu,Akan,Chuzenji,Ashinoko,FujiFive,Aoki,Nojiri; Ikeda page has legacy encoding but 5500-year clause readable after encoding issue; Kussharo original research opened. These support lake origins, not 1560 exact shoreline.",
+      "unagi404NotAdopted": true,
+      "mandatoryFindings": []
+    }
+  },
+  "sourceScope": "Edited reference map plus evidence-backed local changes. Unknown prior pond backgrounds are not assertions of historically dry land; do not derive history or terrain effects from them.",
+  "waterEvidence": {
+    "file": "kuniezu/map/physical/water-evidence.geojson",
+    "initialSha256": "c8674b878375d83877afa502f5110b3d4b6f61218b47002374809ff0138c86d2",
+    "features": 4,
+    "verification": {
+      "status": "pass",
+      "features": 4,
+      "pointFeatures": 3,
+      "polygonFeatures": 1,
+      "tsubaki": {
+        "coordinates": 102,
+        "uniqueCoordinates": 101,
+        "unchangedFromRuntimeJS": true,
+        "ringsClosed": true,
+        "decimalPlacesMax": 6,
+        "orientation": "clockwise",
+        "orientationPreserved": true,
+        "registrationRmsMetres": 643,
+        "fitControlCount": 5,
+        "independentValidationPointCount": 0
+      },
+      "labelPositionsUnchanged": true,
+      "legacyInferredPolygonsMigrated": 0,
+      "landMaskChanges": 0,
+      "movementRuleChanges": 0,
+      "displayTextPolicy": "name and historical description only",
+      "negativeCasesRejected": 5,
+      "inputsUnchanged": 17,
+      "outputSha256": "c8674b878375d83877afa502f5110b3d4b6f61218b47002374809ff0138c86d2",
+      "scope": "構造・座標同一性・適用境界の検査。戦国期の汀線確定や実画面の検査ではない。"
+    },
+    "inputs": {
+      "created": "2026-11-07",
+      "scope": "4旧水域の表示情報を移行する候補。史実の追加確定や陸海・行軍判定の変更なし。",
+      "inputs": [
+        {
+          "path": "kuniezu/static/kuniezu/water-evidence.js",
+          "sha256": "74d1424653abfc3007daed0c5398623cf139512a57586d8dc46ea5bc5a6c7009",
+          "bytes": 7103
+        },
+        {
+          "path": "kuniezu/static/kuniezu/tsubaki-lake.js",
+          "sha256": "c75f7241f2a03b3846c9e9bb2e5f4c8c5d74cfcef60ab192e67a3052b1a382b4",
+          "bytes": 2553
+        },
+        {
+          "path": "data/verification/tsubaki/registration.json",
+          "sha256": "a43dc8566c876200a66ba63f55978162c4e3dc6aaa7e8557fa5c2dd9a2d45699",
+          "bytes": 2315
+        },
+        {
+          "path": "tools/geo/tsubaki-registration.py",
+          "sha256": "98d8bde75e4b94158c7a9ca9cacf409d5246688f4faf3043644bb811eb60f684",
+          "bytes": 3555
+        },
+        {
+          "path": "data/research/tsubaki-trace-input.json",
+          "sha256": "d4f531cb7200d47d375d29df5f9f7638f5ce00a0c9d0e3846daa3491406cccfd",
+          "bytes": 4162
+        },
+        {
+          "path": "data/verification/tsubaki/lake.geojson",
+          "sha256": "6d756f5702f3b89f18708509cc1741a810e8776ec8ed67a72c07b579637e733b",
+          "bytes": 6063
+        },
+        {
+          "path": "docs/reports/HISTORICAL_RECHECK.md",
+          "sha256": "93dd986f39d9314ed97ed5b180cd823a14ff44dfcf1937e5f44659691c289ecc",
+          "bytes": 6962
+        },
+        {
+          "path": "docs/reports/DEPLOYMENT_REVIEW.md",
+          "sha256": "45a163d04f5660ae5b92f456875e8d06e80c5ef48143c74fb3777cbea7a9e530",
+          "bytes": 15661
+        },
+        {
+          "path": "docs/reports/HISTORICAL_TERRITORY_UNITS.md",
+          "sha256": "b6071ac4f44287ae8d75a77d908b7f18992fdf5c36229238e84cb8524a4cc716",
+          "bytes": 17128
+        },
+        {
+          "path": "kuniezu/static/kuniezu/historical-register.js",
+          "sha256": "8b5e4994fcf968e7b2ffb7d458386444c4724be1118e4179d90e16b94d102c44",
+          "bytes": 27096
+        },
+        {
+          "path": "kuniezu/static/kuniezu/licenses/DATA_SOURCES.md",
+          "sha256": "3ae76e5dfa4afae47d272b9d10c8443eaff6fbce8d00a9b2a636e6576b5807d1",
+          "bytes": 18428
+        },
+        {
+          "path": "data/research/sources.jsonl",
+          "sha256": "74ae8aa5a878c7c245378a452b00ea8c7a8bc18c76f3b785f9b4bfc4e057f9c6",
+          "bytes": 304076
+        },
+        {
+          "path": "data/research/curated/sources/iinumaLandHistory.json",
+          "sha256": "4ea6b18c827dc1d9643c4a9d0c603268af53894194cf64c7b6e633be843ede46",
+          "bytes": 489
+        },
+        {
+          "path": "data/research/curated/sources/minumaSaitamaWater.json",
+          "sha256": "6bdc9659e1d6ea7ef1a1c753d836fdc585edae579800cb033a13d1e6109ee8d8",
+          "bytes": 367
+        },
+        {
+          "path": "data/research/curated/sources/niigata-shiotsugata-reclamation.json",
+          "sha256": "4acff77f176d780d92fdf19e1efaeb1befe10a00710b350fb82058620c69ff1e",
+          "bytes": 493
+        },
+        {
+          "path": "data/research/reference-documents/manifest.json",
+          "sha256": "536acda851f89d3132e337eb4341e639693b68b705da7a08775cc701402722dc",
+          "bytes": 4337
+        },
+        {
+          "path": "data/research/reference-documents/choushi-kashima-landcondition.pdf",
+          "sha256": "0746e62d0c96473ed582090742811e138f19eab6cf84468b4153971d288b8735",
+          "bytes": 16102782
+        }
+      ],
+      "output": {
+        "file": "water-evidence.geojson",
+        "sha256": "c8674b878375d83877afa502f5110b3d4b6f61218b47002374809ff0138c86d2"
+      },
+      "sourceRechecks": [
+        {
+          "id": "water-iinuma",
+          "date": "2026-11-07",
+          "status": "page-read",
+          "locator": "享保期の新田開発とページ末尾2015年9月27日"
+        },
+        {
+          "id": "water-tsubaki",
+          "date": "2026-11-07",
+          "status": "page-read",
+          "locator": "2024年4月26日更新、本文冒頭1670年（寛文10年）"
+        },
+        {
+          "id": "water-minuma",
+          "date": "2026-11-07",
+          "status": "live-fetch-unavailable",
+          "decision": "既存台帳の出典・留保を継承。今回の本文再読成功とはしない。"
+        },
+        {
+          "id": "water-shiunji",
+          "date": "2026-11-07",
+          "status": "existing-review-retained",
+          "decision": "原PDF再取得・再読なし。既存読図報告SHAと印刷頁を参照する。"
+        }
+      ]
+    },
+    "policy": "Three approximate labels and one sourced inferred overlay; no land-mask or movement effects.",
+    "canonicalMetadataCorrection": {
+      "field": "coordinateReferenceSystem",
+      "from": "EPSG:4326",
+      "to": "OGC:CRS84",
+      "reason": "RFC 7946 longitude/latitude order; coordinates and properties unchanged. Original packet retained by its original SHA.",
+      "canonicalSha256": "46c7c3dc1498374d1b2c09a5eba1b175c717ba8c78a8d8a8251a101affe7d713",
+      "canonicalBytes": 30500
+    }
+  },
+  "implementationState": {
+    "canonicalApplied": true,
+    "gameRendererCutover": false,
+    "decisionPacketStatus": "Historical selection packet retained unchanged; application is recorded by deferredWaterApplication."
+  }
+}
