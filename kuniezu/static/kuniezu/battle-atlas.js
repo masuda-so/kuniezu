@@ -257,7 +257,21 @@ window.TKBattleAtlas=(function(){
     select.value=viewIndex?String(viewIndex):'';select.onchange=()=>choose(select.value?Number(select.value):0);bar.replaceChildren(all,select);cv.dataset.atlasViews=String(views.length);return;
    }
    bar.replaceChildren(...views.map((v,i)=>{const b=document.createElement('button');b.type='button';b.className='mini';b.textContent=v.name;b.setAttribute('aria-pressed',String(i===viewIndex));b.onclick=()=>{viewIndex=i;[VS,VX,VY]=[v.s,v.x,v.y];motion=null;renderViews();backdrop();frameDraw();};return b;}));cv.dataset.atlasViews=String(views.length);}
-  function size(){const r=cv.parentElement.getBoundingClientRect(),dock=cv.closest('.battle-stage')?.querySelector('.battle-dock')?.getBoundingClientRect().height||110,room=Math.max(240,(innerHeight-Math.max(0,r.top)-dock-28)/aspect),next=Math.max(240,Math.round(Math.min(r.width,room))),d=Math.min(2,devicePixelRatio||1);if(next===W&&d===D&&bg)return;W=next;H=Math.round(W*aspect);D=d;cv.style.width=W+'px';cv.style.height=H+'px';cv.style.margin='0 auto';cv.width=W*D;cv.height=H*D;refreshViews();backdrop();frameDraw();}
+  // 全経過文の最大高を幅ごとに予約し、再生する文が変わっても図を伸縮させない。
+  let dockWidth=-1;
+  function reserveDock(dock){
+   if(!dock?.cloneNode)return;
+   const width=Math.round(dock.getBoundingClientRect().width);if(!width||width===dockWidth)return;dockWidth=width;
+   const probe=dock.cloneNode(true),now=probe.querySelector('#bNow'),clock=probe.querySelector('#bClock');
+   for(const el of probe.querySelectorAll('[id]'))el.removeAttribute('id');
+   probe.setAttribute('aria-hidden','true');Object.assign(probe.style,{position:'fixed',visibility:'hidden',pointerEvents:'none',width:width+'px',minHeight:'0',left:'0',top:'0'});
+   dock.parentElement.append(probe);
+   try{
+    if(clock){let max=0,text='';for(const mark of sc.calendar||[[0,'布陣'],[20,'交戦'],[80,'終盤'],[100,'終了']]){clock.textContent=mark[1];const h=clock.getBoundingClientRect().height;if(h>max){max=h;text=mark[1];}}clock.textContent=text;}
+    let height=probe.getBoundingClientRect().height;for(const beat of sc.beats||[]){if(now)now.textContent=beat[1]||'　';height=Math.max(height,probe.getBoundingClientRect().height);}dock.style.minHeight=Math.ceil(height)+'px';
+   }finally{probe.remove();}
+  }
+  function size(){const dockEl=cv.closest('.battle-stage')?.querySelector('.battle-dock');reserveDock(dockEl);const r=cv.parentElement.getBoundingClientRect(),dock=cv.closest('.battle-stage')?.querySelector('.battle-dock')?.getBoundingClientRect().height||110,top=r.top+(cv.closest('.mbox')?.scrollTop||0),room=Math.max(240,(innerHeight-Math.max(0,top)-dock-28)/aspect),next=Math.max(240,Math.round(Math.min(r.width,room))),d=Math.min(2,devicePixelRatio||1);if(next===W&&d===D&&bg)return;W=next;H=Math.round(W*aspect);D=d;cv.style.width=W+'px';cv.style.height=H+'px';cv.style.margin='0 auto';cv.width=W*D;cv.height=H*D;refreshViews();backdrop();frameDraw();}
   // 再生中・粉が残る間・停止直後の静止描画を、一つの描画ループで行う。停止後は粉が消えると止まる（雨・霧は静止画で描く）。
   function loop(now){if(dead){fxRaf=0;return;}const dt=fxLast?Math.min(.1,(now-fxLast)/1000):0;fxLast=now;const live=controller.playing||fx.count>0;frameDraw(live?dt:0,now);if(!live){fxRaf=0;fxLast=0;return;}fxRaf=requestAnimationFrame(loop);}
   function wake(){if(!fxRaf){fxLast=0;fxRaf=requestAnimationFrame(loop);}}
@@ -270,7 +284,7 @@ window.TKBattleAtlas=(function(){
    frameDraw();
   }};
 
-  cv.addEventListener('click',onClick);const ro=new ResizeObserver(size);size();ro.observe(cv.parentElement);
+  cv.addEventListener('click',onClick);const ro=new ResizeObserver(size);size();ro.observe(cv.parentElement);const dock=cv.closest('.battle-stage')?.querySelector('.battle-dock');if(dock)ro.observe(dock);document.fonts?.ready.then(()=>{if(!dead){dockWidth=-1;size();}});
   if(!sc.atlasSchematic)load(meta).then(d=>{if(dead)return;data=d;backdrop();frameDraw();if(pendingPlay){pendingPlay=false;controller.play();}}).catch(()=>{if(dead)return;error='地形を読み込めません。ページを再読み込みしてください。';backdrop();frameDraw();});
   return {...controller,play(){if(!data&&!sc.atlasPlan){pendingPlay=true;return;}controller.play();wake();},pause(){pendingPlay=false;controller.pause();},seek(v){controller.seek(v);fx.clear();lastSnap=true;frameDraw();},get playing(){return pendingPlay||controller.playing;},get t(){return controller.t;},get ended(){return controller.ended;},get speed(){return controller.speed;},select(id){const u=unitById.get(id);if(u){const {from,until}=G.battleUnitWindow(sc,u);if(!visible(u)){controller.seek(t<from?Math.min(from+2,(from+until)/2,100):Math.max(from,until-1));fx.clear();lastSnap=true;}}selected=id;selectionPanel([id]);frameDraw();},unitStates(){return groups.map(g=>{const u=unitById.get(g.members[0]),move=moveByName.get(u.g||u.n),side=sideOf(u),status=t>=G.battleUnitWindow(sc,u).until?(sc.mapExitLabels?.[u.id]||'退去'):t<(sc.mapVisibleFrom?.[u.id]||0)?'参陣前':t<(u.from||0)?'着陣前':u.die!=null&&t>=u.die?'討死':u.rout!=null&&t>u.rout?'退却':move&&t>move.from&&t<move.to?'移動中':G.battleActiveUnits(sc,t).includes(u.id)?'交戦':t>=100?'戦闘終了':sc.atlasSchematic?(u.side==='b'?'守備':u.id===sc.atlasSchematic.lead&&t>=sc.atlasSchematic.capturedAt?'攻略':'攻撃命令'):'布陣';const schematic=!!(sc.atlasSchematic||sc.atlasPlan),drawGroup=g.point||schematic?g:estGroups.find(e=>e.members[0]===u.id)||g,screenPoint=pinFor(drawGroup);return {id:u.id,side,status,visible:visible(u),point:g.point?G.battlePhasePoint(sc,u.g||u.n,t,g.point):null,screenPoint,renderedPoint:!schematic&&screenPoint?unproject(screenPoint):null,positionBasis:schematic?'schematic':!screenPoint?'unplaced':!g.point?'estimated-placement':isEst(g)?'estimated-motion':'recorded'};});},destroy(){dead=true;cv.closest('.battle-stage')?.querySelector('.atlas-views')?.remove();if(fxRaf)cancelAnimationFrame(fxRaf);fxRaf=0;controller.destroy();ro.disconnect();cv.removeEventListener('click',onClick);}};
  }

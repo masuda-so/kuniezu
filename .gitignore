@@ -6,7 +6,8 @@ node_modules/
 .cache/
 # 地図の配信物（正本 kuniezu/map と差分の入力 kuniezu/map/edits/*.json から node tools/map/build-map.cjs で kuniezu/static/kuniezu/map/build に生成。コミットしない）
 /kuniezu/static/kuniezu/map/build/
-# 実画面の証拠の画像・動画（結果の要約 README.md だけをコミットし、画像は PR に添付する。既に追跡中のものは履歴として残る）
+# 実画面の画像・動画・JSONログ（結果の要約 README.md だけをコミットし、画像は PR に添付する。既に追跡中のものは履歴として残る）
+/data/verification/**/*.json
 /data/verification/**/*.png
 /data/verification/**/*.jpg
 /data/verification/**/*.jpeg
@@ -26,3 +27,6 @@ data/verification/**/*.html
 .ruff_cache/
 .mypy_cache/
 .pytest_cache/
+
+# Local battle DEM build workspace; served relief and source provenance are tracked.
+/data/inputs/nagakute-dem/build/

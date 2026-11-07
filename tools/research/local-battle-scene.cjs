@@ -36,9 +36,15 @@ function filterLocalScene(original,spec){
  if([...effectiveIds].some(id=>!located.has(id)))fail('unit has no retained group');
  for(const key of ['mapVisibleFrom','mapVisibleUntil'])if(sc[key])sc[key]=Object.fromEntries(Object.entries(sc[key]).filter(([id])=>effectiveIds.has(id)).map(([id,t])=>[id,map(t)]));
  for(const key of ['mapExitLabels','motionFallbacks'])if(sc[key])sc[key]=Object.fromEntries(Object.entries(sc[key]).filter(([id])=>effectiveIds.has(id)));
- const timeline=(rows,allowed)=>rows.filter(b=>allowed.includes(b[0])&&b[0]>=start&&b[0]<=end).map(b=>[map(b[0]),b[1],...(b[2]?[b[2].filter(id=>effectiveIds.has(id))]:[])]);
+ const timing=new Map();
+ for(const change of spec.beatTiming||[]){
+  if(!Number.isFinite(change.from)||!Number.isFinite(change.to)||change.to<start||change.to>end||!change.reason||timing.has(change.from)||!(spec.keepBeatSourcePercentages||[]).includes(change.from)||!(original.beats||[]).some(b=>b[0]===change.from))fail('beat timing');
+  timing.set(change.from,change.to);
+ }
+ const timeline=(rows,allowed,adjust=false)=>rows.filter(b=>allowed.includes(b[0])&&b[0]>=start&&b[0]<=end).map(b=>[map(adjust?(timing.get(b[0])??b[0]):b[0]),b[1],...(b[2]?[b[2].filter(id=>effectiveIds.has(id))]:[])]).sort((a,b)=>a[0]-b[0]);
  for(const t of [...(spec.keepBeatSourcePercentages||[]),...(spec.keepCalendarSourcePercentages||[])])if(!Number.isFinite(t)||t<start||t>end)fail('timeline outside source window');
- sc.beats=timeline(sc.beats||[],spec.keepBeatSourcePercentages||[]);sc.researchBeats=timeline(sc.researchBeats||[],spec.keepBeatSourcePercentages||[]);sc.calendar=timeline(sc.calendar||[],spec.keepCalendarSourcePercentages||[]);
+ sc.beats=timeline(sc.beats||[],spec.keepBeatSourcePercentages||[],true);sc.researchBeats=timeline(sc.researchBeats||[],spec.keepBeatSourcePercentages||[]);sc.calendar=timeline(sc.calendar||[],spec.keepCalendarSourcePercentages||[]);
+ if(timing.size)sc.presentationTiming=clone(spec.beatTiming);
  sc.atlasLandmarks=(sc.atlasLandmarks||[]).filter(p=>(spec.allowLandmarkNames||[]).includes(p.name));
  sc.feats=(sc.feats||[]).filter(f=>!(spec.excludeFeatureNames||[]).includes(f.n));
  for(const side of Object.values(sc.sides||{}))side.tr='—';

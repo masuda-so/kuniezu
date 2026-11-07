@@ -1,0 +1,78 @@
+{
+  "schemaVersion": 1,
+  "title": "長久手の戦い",
+  "label": "長久手・御旗山方面",
+  "frame": [
+    137.04,
+    35.18,
+    137.06,
+    35.163
+  ],
+  "size": [
+    192,
+    192
+  ],
+  "zoom": 14,
+  "outputFile": "nagakute-local.json",
+  "inputs": [
+    {
+      "key": [
+        14,
+        14428,
+        6479
+      ],
+      "file": "inputs/dem_png-14-14428-6479.png",
+      "sha256": "4a9d162cd3e8b2cb4ce8926937c5fe6a5b1377af5497370fd73bd6145dcc38ab",
+      "bytes": 59343,
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/dem_png/14/14428/6479.png"
+    },
+    {
+      "key": [
+        14,
+        14429,
+        6479
+      ],
+      "file": "inputs/dem_png-14-14429-6479.png",
+      "sha256": "dd7a9db92cb7d852711c1ad9b87d927400d9275e97b85361db1453d1562d2ad9",
+      "bytes": 73793,
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/dem_png/14/14429/6479.png"
+    },
+    {
+      "key": [
+        14,
+        14428,
+        6480
+      ],
+      "file": "inputs/dem_png-14-14428-6480.png",
+      "sha256": "c43fffd1a8fdce1268f96c016730c936d106c3e18be3febaf502f1bf2d27a3bb",
+      "bytes": 76835,
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/dem_png/14/14428/6480.png"
+    },
+    {
+      "key": [
+        14,
+        14429,
+        6480
+      ],
+      "file": "inputs/dem_png-14-14429-6480.png",
+      "sha256": "0e086020116aca0a0f972c08979fdae3eb332df3234e6d8982ae8fb2ef93d881",
+      "bytes": 78643,
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/dem_png/14/14429/6480.png"
+    }
+  ],
+  "riverInput": {
+    "file": "kuniezu/static/kuniezu/atlas/09.json",
+    "sha256": "54980c3dd7ad0e10ef615b675f06651a6ca392689b13a7a60a915476a642ee37"
+  },
+  "elevationSource": {
+    "dataset": "国土地理院 標高タイル DEM10B",
+    "registry": "https://maps.gsi.go.jp/development/ichiran.html",
+    "specification": "https://maps.gsi.go.jp/development/demtile.html",
+    "license": "PDL1.0 / 国土地理院コンテンツ利用規約",
+    "licenseURL": "https://www.gsi.go.jp/kikakuchousei/kikakuchousei40182.html",
+    "credit": "地理院タイル（標高タイル DEM10B）を加工して作成",
+    "scope": "現代比較標高。戦国期の地形・造成前の地表・城郭平面を復元したものではない。",
+    "sampling": "WebMercator z14 tile containing each regular lon/lat grid sample; nearest pixel; official RGB 0.01m signed decode; round to nearest 1m for current renderer uint16le-plus32768; reject NoData without interpolation"
+  },
+  "expectedOutputSHA256": "1e8daa20a4b513657b4ad9c49d419d6c4becb6f41772a3e1ba382d2405f2a4bf"
+}

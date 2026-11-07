@@ -1,0 +1,75 @@
+{
+  "schemaVersion": 1,
+  "offline": true,
+  "inputManifestSHA256": "06778dc3b8ab858fb617c0177c17f28a590efb8cee387e74073722923d3f2203",
+  "generatorSHA256": "d2835e1aac3e7adf71f2118217c6f4eca416d4bb0efbdfe74dc891daf6fbadb9",
+  "decoderSHA256": "e2e82162753c9d5217fdd9dbb8cee76f019bad6280587254dfb3e4efe5a63daf",
+  "bounds": [
+    137.04,
+    35.18,
+    137.06,
+    35.163
+  ],
+  "width": 192,
+  "height": 192,
+  "inputTileCount": 4,
+  "inputTotalBytes": 288614,
+  "distinctInputPixels": 36864,
+  "distinctRoundedHeights": 42,
+  "minHeight": 55,
+  "maxHeight": 96,
+  "maxIntegerRoundingErrorMetres": 0.5,
+  "noDataSamples": 0,
+  "comparisonRiverRecords": 6,
+  "outputSHA256": "1e8daa20a4b513657b4ad9c49d419d6c4becb6f41772a3e1ba382d2405f2a4bf",
+  "inputs": [
+    {
+      "key": [
+        14,
+        14428,
+        6479
+      ],
+      "file": "inputs/dem_png-14-14428-6479.png",
+      "sha256": "4a9d162cd3e8b2cb4ce8926937c5fe6a5b1377af5497370fd73bd6145dcc38ab",
+      "bytes": 59343,
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/dem_png/14/14428/6479.png"
+    },
+    {
+      "key": [
+        14,
+        14429,
+        6479
+      ],
+      "file": "inputs/dem_png-14-14429-6479.png",
+      "sha256": "dd7a9db92cb7d852711c1ad9b87d927400d9275e97b85361db1453d1562d2ad9",
+      "bytes": 73793,
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/dem_png/14/14429/6479.png"
+    },
+    {
+      "key": [
+        14,
+        14428,
+        6480
+      ],
+      "file": "inputs/dem_png-14-14428-6480.png",
+      "sha256": "c43fffd1a8fdce1268f96c016730c936d106c3e18be3febaf502f1bf2d27a3bb",
+      "bytes": 76835,
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/dem_png/14/14428/6480.png"
+    },
+    {
+      "key": [
+        14,
+        14429,
+        6480
+      ],
+      "file": "inputs/dem_png-14-14429-6480.png",
+      "sha256": "0e086020116aca0a0f972c08979fdae3eb332df3234e6d8982ae8fb2ef93d881",
+      "bytes": 78643,
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/dem_png/14/14429/6480.png"
+    }
+  ],
+  "riverInput": {
+    "file": "kuniezu/static/kuniezu/atlas/09.json",
+    "sha256": "54980c3dd7ad0e10ef615b675f06651a6ca392689b13a7a60a915476a642ee37"
+  }
+}
