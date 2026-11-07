@@ -29,6 +29,8 @@
 
 確認済み命題の `linkedEntities` は人物・場所への追加参照、`eventTime` は原史料の精度を保った出来事の時点、`eventRelation` と `eventScope` はその意味と限界を示す。本文・出典は同じ命題に一度だけ保持する。共通索引は従来の `entity` と追加参照の両方から同じ記録を返す。場所の `aliases`（例：県城／縣城）も検索できる。
 
+日・年が判明している出来事（`dated-event`・`year-window`）は、追加の人物・場所が確認できなければ `linkedEntities: []` を明記できる。主対象 `entity` からの参照は維持し、近隣施設を出来事の場所として補わない。期間説明・複合出来事には従来どおり追加参照を要求する。
+
 `validYears` による検索は命題の適用年代であり、事件発生日だけの検索ではない。旧暦の命令日・報告日を実際の明渡し日へ変換しない。六砦のような複合記録は `dated-components` に各対象の整備年を保持する。「江戸時代初頭」の検索用範囲は `boundsAreHistoricalStartEnd: false` とし、開始・終了年の確定と区別する。採否と照合元は `reviews/castle-history-connections/` に保持する。
 
 ### 複数エージェントでの編集・確認
