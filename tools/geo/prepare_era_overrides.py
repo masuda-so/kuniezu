@@ -3,13 +3,13 @@
 import argparse
 from datetime import date
 import hashlib
+import importlib
 import json
 from pathlib import Path
 
-if __package__:
-    from .codh_reference import inspect_collection
-else:
-    from codh_reference import inspect_collection
+inspect_collection = importlib.import_module(
+    "tools.geo.codh_reference" if __package__ else "codh_reference"
+).inspect_collection
 
 ROOT = Path(__file__).resolve().parents[2]
 ROLES = {
