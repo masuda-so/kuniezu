@@ -142,4 +142,9 @@ a,.evidence-person a,.atlas-person-link{color:#f0a283!important}
 /* 合戦図：範囲の広い合戦の地区切り替え */
 .atlas-views{display:flex;flex-wrap:wrap;gap:6px;align-items:center;padding:6px 8px;background:rgba(29,23,18,.92);border-bottom:1px solid #6b5a3e}
 .atlas-views::before{content:'表示する地区';color:#cdbb92;font-size:12px;margin-right:4px}
-.atlas-views .mini[aria-pressed="true"]{background:#a8742c;color:#fff7e2;border-color:#d9b866}
+.atlas-views .mini[aria-pressed="true"]{background:#a8742c!important;color:#fff7e2!important;border-color:#d9b866!important}
+
+/* 広い戦場では全体と地区を切り替え、狭幅の操作を一行へ収める。 */
+.atlas-views select{min-height:34px;font:inherit;color:#f4e4bd;background:#302719;border:1px solid #8d7041;border-radius:3px;padding:4px 8px}
+.atlas-views select:focus-visible{outline:2px solid #e3bb67;outline-offset:2px}
+@media(max-width:560px){.atlas-views::before{content:'戦場'}.atlas-views .mini{min-height:34px}.atlas-views select{width:0;flex:1}}

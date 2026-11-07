@@ -43,7 +43,7 @@ c.innerHeight=10000;c.devicePixelRatio=1;c.performance={now:()=>0};c.requestAnim
 c.ResizeObserver=class{constructor(fn){observer=fn;}observe(){}disconnect(){}};
 c.atob=s=>Buffer.from(s,'base64').toString('binary');
 c.fetch=async()=>({ok:true,json:async()=>({width:2,height:2,heights:Buffer.from([0,128,0,128,0,128,0,128]).toString('base64'),comparisonRivers:[]})});
-G.date=()=>({y:1600});G.ROADS=[];G.armyCrestKey=()=>null;G.kamonImage=()=>null;
+G.date=()=>({y:1600});G.CN=k=>TK.CLANS[k]?.[0]||k;G.ROADS=[];G.armyCrestKey=()=>null;G.kamonImage=()=>null;
 G.S=()=>({clans:{tokugawa:{cap:'hamamatsu'},takeda:{cap:'tsutsujigasaki'},oda:{cap:'kiyosu'}}});
 c.TKGEO.land=[];c.TKGEO.lakes=[];c.TKGEO.rivers=[];TK.HISTORIC_WATERS=[];TK.REGIONAL_RIVERS=[];TK.KOREAN_RIVERS_DETAIL=[];TK.periodWaters=()=>[];
 c.TKCounter={path(ctx){ctx.counterPath=activeId;ctx.counters.push({id:activeId,p:[ctx.m[4],ctx.m[5]]});}};
@@ -61,7 +61,7 @@ async function make(title,width){
  const cv=new Element('canvas');cv.parentElement=parent;
  const faceCalls=[];const ctrl=c.TKBattleAtlas.make(cv,TK.BATTLES[title],{title,face:(name,size,color)=>{faceCalls.push({name,size,color});return {face:true,toDataURL:()=>'data:image/png;base64,'+Buffer.from(color||'').toString('base64')};}});
  await new Promise(resolve=>setImmediate(resolve));
- return {cv,ctrl,stage,faceCalls,resize(width){parent.width=width;observer();},views(){return stage.querySelector('.atlas-views')?.children||[];}};
+ return {cv,ctrl,stage,faceCalls,resize(width){parent.width=width;observer();},views(){const children=stage.querySelector('.atlas-views')?.children||[];return children.flatMap(e=>e.tag==='select'?e.children.filter(o=>o.value!=='').map(o=>({textContent:o.textContent,onclick(){e.value=o.value;e.onchange();}})):[e]);}};
 }
 function decorations(h,title){
  const {W,H}=h.ctrl.viewport(),ctx=h.cv.context;
@@ -87,6 +87,12 @@ function clickBody(h,id){const body=h.cv.context.counters.find(x=>x.id===id);ass
 function clickLabel(h,id){const box=h.ctrl.testBoxes().find(x=>x.id===id&&x.label);assert.ok(box,'label exists '+id);h.cv.listeners.click({clientX:box.x+box.w/2,clientY:box.y+box.h/2});}
 
 (async()=>{
+ const districtChecks=[];
+ for(const title of ['関ヶ原の戦い','高天神城の戦い','長篠の戦い','大坂冬の陣']){
+  const h=await make(title,390);h.ctrl.seek(50);const original=simple(h.ctrl.unitStates()),t=h.ctrl.t,buttons=h.views();const transitions=[];
+  for(let i=0;i<buttons.length;i++){h.views()[i].onclick();const states=simple(h.ctrl.unitStates());assert.equal(h.ctrl.t,t,'district transition preserves time');assert.deepEqual(states.map(u=>[u.id,u.point,u.renderedPoint,u.status]),original.map(u=>[u.id,u.point,u.renderedPoint,u.status]),'district transition cannot move units');let selections=0;for(const u of states){h.ctrl.select(u.id);if(u.visible)assert.equal(h.ctrl.t,t);assert.ok(choices(h).some(e=>e.dataset.unitId===u.id));h.ctrl.seek(t);assert.deepEqual(simple(h.ctrl.unitStates()).map(u=>[u.id,u.point,u.renderedPoint,u.status]),original.map(u=>[u.id,u.point,u.renderedPoint,u.status]));selections++;}transitions.push({name:h.views()[i].textContent,individualSelections:selections,labelCount:h.ctrl.testBoxes().filter(b=>b.label).length});}
+  districtChecks.push({title,viewCount:buttons.length,transitions,allUnitIds:original.map(u=>u.id)});h.ctrl.destroy();
+ }
  for(const title of ['関ヶ原の戦い','高天神城の戦い']){
   const h=await make(title,940),sc=TK.BATTLES[title],bounds=TK.BATTLE_ATLAS[title].bounds,reference=new Map();let maxKm=0,bodyChecks=0,frameCount=0,offscreen=0;const held=title==='関ヶ原の戦い'?['mori','kikkawa','ankokuji','chosokabe','roster-長束正家']:[];
   for(const t of [0,20,50,80,100]){
@@ -149,7 +155,7 @@ function clickLabel(h,id){const box=h.ctrl.testBoxes().find(x=>x.id===id&&x.labe
  panel.children.find(e=>e.textContent==='閉じる').onclick();assert.equal(panel.hidden,true);assert.equal(turning.ctrl.testSelected(),null);turning.faceCalls.length=0;turning.ctrl.seek(50);turning.ctrl.seek(30);assert.equal(panel.hidden,true,'seek never reopens closed panel');assert.equal(turning.ctrl.testSelected(),null);assert.equal(turning.faceCalls.filter(f=>f.size===14).length,0,'closed panel does not regenerate portrait');assert.equal(panel.replaceCount,replaceCount);turning.ctrl.destroy();
  // Recorded anchors with inferred movement keep solid outlines, distinct from estimated placement.
  const moved='recorded-motion-style';TK.BATTLE_ATLAS[moved]={file:'moved.json',bounds:[0,1,1,0],points:[],geo:[.5,.5],label:'fixture'};TK.BATTLES[moved]={title:moved,units:[{id:'a',g:'記録地点甲',side:'a'},{id:'b',g:'記録地点乙',side:'b'}],atlasGroups:[{id:'a',side:'a',point:[.3,.5],members:['a']},{id:'b',side:'b',point:[.7,.5],members:['b']}],beats:[[30,'',['a','b']]]};const moving=await make(moved,940);moving.ctrl.seek(50);assert.ok(moving.ctrl.unitStates().every(u=>u.positionBasis==='estimated-motion'&&u.point));assert.ok(counters(moving,TK.BATTLES[moved])>0);assert.ok(moving.cv.context.counterStrokes.every(s=>s.dash.length===0));moving.ctrl.destroy();
- const report={passed:true,browserRun:false,newGameRun:false,dailySimulationRun:false,wholeMapDecoded:false,scope:'actual atlas draw commands for two geographic battles, one schematic, edge and one-side fixtures',rows,schematicHasNoGeographicPoint:true,estimatedPlacementDistinctFromRecordedPoint:true,edgeDecorationsInBounds:true,coincidentCountersNotDisplaced:true,estimatedBodiesChecked:true,allVisibleBodiesChecked:true,estimatedClickSelection:true,coincidentClickSelection:true,mixedClickSelection:true,offscreenBodiesNotClickable:true,estimatedPlacementStrokeStyles:strokeStyles,recordedMotionSolid:true,lineDashIsolation:true,selectionPanelFollowsTurn:true,selectionPanelReverseSeek:true,selectionPanelCloseStable:true,selectionPanelNoFrameRebuild:true,limits:['Canvas text metrics use deterministic character widths; actual font rendering needs a separate browser check.','This validates projections and draw command anchors, not historical truth of estimated motion.','Source movement geometry and historical source data were not modified.']};
+ const report={districtChecks,passed:true,browserRun:false,newGameRun:false,dailySimulationRun:false,wholeMapDecoded:false,scope:'actual atlas draw commands for two geographic battles, one schematic, edge and one-side fixtures',rows,schematicHasNoGeographicPoint:true,estimatedPlacementDistinctFromRecordedPoint:true,edgeDecorationsInBounds:true,coincidentCountersNotDisplaced:true,estimatedBodiesChecked:true,allVisibleBodiesChecked:true,estimatedClickSelection:true,coincidentClickSelection:true,mixedClickSelection:true,offscreenBodiesNotClickable:true,estimatedPlacementStrokeStyles:strokeStyles,recordedMotionSolid:true,lineDashIsolation:true,selectionPanelFollowsTurn:true,selectionPanelReverseSeek:true,selectionPanelCloseStable:true,selectionPanelNoFrameRebuild:true,limits:['Canvas text metrics use deterministic character widths; actual font rendering needs a separate browser check.','This validates projections and draw command anchors, not historical truth of estimated motion.','Source movement geometry and historical source data were not modified.']};
  if(process.env.GAME_TEST_OUTPUT){const out=path.resolve(process.env.GAME_TEST_OUTPUT);fs.mkdirSync(out,{recursive:true});fs.writeFileSync(path.join(out,'battle-viewport.json'),JSON.stringify(report,null,2)+'\n');}
  console.log(JSON.stringify(report,null,2));
 })().catch(e=>{console.error(e);process.exitCode=1;});
