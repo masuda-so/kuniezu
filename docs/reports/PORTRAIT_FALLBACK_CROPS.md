@@ -35,3 +35,5 @@ node tools/build/stamp-assets.cjs --check
 - `pytest tests/test_portrait_fallback.py -q`：生成物一致、誤SHA拒否、正本crop不一致拒否の3件に合格。
 - 構文・asset stamp・構成・差分の検査に合格。既存素材のHEAD/SHA一致、UIの `portrait()` 外が基点とバイト一致すること、metaの他項目不変を確認。
 - 親担当が専用Chrome内の応答差替えで、通常・原画だけ失敗・両方失敗の3条件を確認。5人と島左近の別名をsm/lg/xlで表示し、誤atlasへの逆戻りなし、同時取得2枚以下、再試行1回以下、JavaScript例外0。両方失敗では文字表示となる。通常サーバーへ新ファイルを配信した検査とは区別する。
+
+親担当の配信worktreeを合戦図PR80との統合コミットへ切り替え、古いテンプレートを保持していた8000番を再起動した。応答のUI/layout/strip差替えを行わない実配信でも、通常18画像と原画失敗時の代替18画像を確認。JavaScript例外0、同時取得最大2・再試行1回以下。両方失敗の文字表示は候補接続の別検査で確認済み。

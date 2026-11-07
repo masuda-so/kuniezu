@@ -8,3 +8,5 @@
 - 同時取得最大2、各URLの再試行は1回以下、例外0。終了後にChromeと一時プロフィールを削除。
 
 `portrait-fallback-browser.cjs` の `PORTRAIT_MODE=normal|primary-fail|all-fail` で再現する。候補差替え時のみ `PORTRAIT_CANDIDATE_ROOT` に候補worktreeを指定する。画像/JSONは親担当の `data/verification/codex-portrait-{normal,primary-fail,all-fail}/` に保持し、Gitには本要約のみ。画像同定と歴史精度の全件検証ではない。
+
+合戦図PR80との統合後、実配信（候補ファイルの応答差替えなし）でも通常・原画失敗を確認した。記録は親worktreeの `codex-portrait-actual/` と `codex-portrait-actual-primary-fail/` に保持。入力失敗を作る503以外は実サーバーの応答を使用した。
