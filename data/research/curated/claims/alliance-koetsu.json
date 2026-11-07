@@ -1,0 +1,38 @@
+{
+  "id": "alliance-koetsu",
+  "entity": "person:上杉景勝",
+  "predicate": "alliance-formation",
+  "value": "上杉景勝が武田勝頼に和を求め、勝頼が承諾した。のちに景勝は誓書を勝頼に送った。",
+  "validYears": [
+    1578,
+    1578
+  ],
+  "datePrecision": "day",
+  "source": "hiDainihonshiryoKobun",
+  "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+  "locator": "綱文：和暦 天正6年6月7日 第2条（区分 史料綜覧、編10・冊911（データベースの表示値）、179頁）",
+  "gameBindings": [
+    "TK.HIST:甲越同盟"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-07",
+  "uncertainty": "綱文は天正6年12月23日に景勝と勝頼の妹の婚約、天正7年8月20日（1579 年 9 月 10 日）に景勝が誓書を納めて和すことを掲げる。年表の 1579 年はこの後者と同じ年。 綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。",
+  "linkedEntities": [
+    "person:上杉景勝",
+    "person:武田勝頼"
+  ],
+  "eventTime": {
+    "kind": "dated-event",
+    "date": [
+      1578,
+      6,
+      7
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": false,
+    "precision": "day"
+  },
+  "eventRelation": "alliance-formation",
+  "eventScope": "綱文が掲げる関係の成立とその日付、綱文に書かれた相手。不一致（年の精度）。年表は 1579 年（注記は「成立過程。日付は年内表示用」）、綱文の和睦は天正6年6月7日（ゲームの暦表で 1578 年 7 月 11 日）。 年表は変えていない（どちらを採るかは未判断）。 条件・期間・関係の終わりは補わない。"
+}

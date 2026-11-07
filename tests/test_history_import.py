@@ -310,6 +310,9 @@ def test_every_word_for_a_claim_has_one_class():
     assert CLAIM_KIND_OF["reclamation-permission"] == PhenomenonKind.DOCUMENT
     assert CLAIM_KIND_OF["described-custody"] == PhenomenonKind.MOVEMENT
     assert CLAIM_KIND_OF["person-name-identity"] == PhenomenonKind.NAMING
+    # An alliance, or a surrender that is accepted, is a relation between parties.
+    assert CLAIM_KIND_OF["alliance-formation"] == PhenomenonKind.RELATION
+    assert CLAIM_KIND_OF["submission-accepted"] == PhenomenonKind.RELATION
     assert set(CLAIM_KIND_OF.values()) <= set(PhenomenonKind) - {PhenomenonKind.OTHER}
 
 

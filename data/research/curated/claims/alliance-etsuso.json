@@ -1,0 +1,38 @@
+{
+  "id": "alliance-etsuso",
+  "entity": "person:上杉輝虎",
+  "predicate": "alliance-formation",
+  "value": "上杉輝虎が北条氏康と和し、北条氏照に書を送って甲斐への出兵を承諾した。",
+  "validYears": [
+    1569,
+    1569
+  ],
+  "datePrecision": "day",
+  "source": "hiDainihonshiryoKobun",
+  "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+  "locator": "綱文：和暦 永禄12年閏5月3日 第1条（区分 大日本史料、第10編之2、657頁）",
+  "gameBindings": [
+    "TK.HIST:越相同盟"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-07",
+  "uncertainty": "交渉は永禄12年1月2日の綱文（氏康が輝虎に和親を求める）から続き、6月9日に誓書を交わしている。年表の 1 月は交渉の始まりの月と同じ。 綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。",
+  "linkedEntities": [
+    "person:上杉輝虎",
+    "person:北条氏康"
+  ],
+  "eventTime": {
+    "kind": "dated-event",
+    "date": [
+      1569,
+      5,
+      3
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": true,
+    "precision": "day"
+  },
+  "eventRelation": "alliance-formation",
+  "eventScope": "綱文が掲げる関係の成立とその日付、綱文に書かれた相手。不一致（月の精度）。年表は 1569 年 1 月（年表の注記は「成立年・月の概略」）、綱文の閏 5 月 3 日はゲームの暦表で 1569 年 6 月 17 日。 年表は変えていない（どちらを採るかは未判断）。 条件・期間・関係の終わりは補わない。"
+}
