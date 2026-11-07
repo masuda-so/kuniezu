@@ -1,4 +1,25 @@
-const assert=require('node:assert/strict'),fs=require('node:fs'),{spawnSync}=require('node:child_process');
-const r=JSON.parse(fs.readFileSync('data/inputs/sanshu-modern.json'));assert.equal(r.accepted,false);assert.match(r.rejection,/閉路/);const before=fs.readFileSync('kuniezu/static/kuniezu/modern-road-reference.js','utf8');const run=spawnSync('/tmp/kuniezu-geo-env/bin/python',['tools/geo/sanshu-reference.py'],{encoding:'utf8'});assert.notEqual(run.status,0);assert.equal(fs.readFileSync('kuniezu/static/kuniezu/modern-road-reference.js','utf8'),before);console.log('PASS: rejected Sanshu candidate cannot replace runtime roads');
-
-const {G,TK}=require('./history-focus.cjs').model();G.newGame('s1560','oda');const road=G.ROADS.find(r=>r.name==='三州街道'),raw=TK.MODERN_ROAD_REFERENCE[road.name],view=TK.roadDisplay(road);assert.ok(raw.length-view.pts.length>=457);assert.ok(view.referenceCleanup.excursions.some(e=>e.last-e.first===457));const junction=G.PJ(137.708965,35.306391);assert.equal(view.pts.filter(p=>p[0]===junction[0]&&p[1]===junction[1]).length,1);assert.deepEqual(Array.from(view.pts[0]),Array.from(G.PJ(...raw[0])));assert.deepEqual(Array.from(view.pts.at(-1)),Array.from(G.PJ(...raw.at(-1))));console.log('PASS: reviewed 22km out-and-back removed from display, raw input and endpoints preserved');
+const assert=require('node:assert/strict'),fs=require('node:fs'),crypto=require('node:crypto'),{spawnSync}=require('node:child_process');
+const target='kuniezu/static/kuniezu/modern-road-reference.js',before=fs.readFileSync(target,'utf8');
+const rejected=spawnSync(process.env.PYTHON||'python3',['tools/geo/sanshu-reference.py','--input','data/inputs/sanshu-modern.json'],{encoding:'utf8'});
+assert.equal(rejected.status,1);assert.match(rejected.stderr,/Unreviewed or rejected route/);assert.equal(fs.readFileSync(target,'utf8'),before,'legacy rejected candidate cannot mutate roads');
+const check=spawnSync(process.env.PYTHON||'python3',['tools/geo/sanshu-reference.py','--check'],{encoding:'utf8'});
+assert.equal(check.status,0,check.stderr);assert.match(check.stdout,/PASS: reviewed Sanshu/);
+const {G,TK}=require('./history-focus.cjs').model();G.newGame('s1560','oda');
+const controls=JSON.parse(fs.readFileSync('data/inputs/sanshu-road-review/controls.json')).places;
+const accepted=JSON.parse(fs.readFileSync('data/inputs/sanshu-road-review/accepted-whole-reference.json'));
+const raw=TK.MODERN_ROAD_REFERENCE['三州街道'],road=G.ROADS.find(r=>r.name==='三州街道'),view=TK.roadDisplay(road);
+assert.equal(crypto.createHash('sha256').update(JSON.stringify(Array.from(raw,p=>Array.from(p)))).digest('hex'),accepted.pointSha256);
+assert.deepEqual(Array.from(TK.ROADS.find(r=>r[0]==='三州街道')[1],p=>Array.from(p)),controls.map(r=>r.point));
+assert.ok(view.modernReference);assert.equal(view.evidence.geometry,'modern-reference');
+const closest=(point,line=view.pts)=>{const p=G.PJ(...point);let best=Infinity;for(let i=1;i<line.length;i++){const a=line[i-1],b=line[i],dx=b[0]-a[0],dy=b[1]-a[1],d=dx*dx+dy*dy,f=d?Math.max(0,Math.min(1,((p[0]-a[0])*dx+(p[1]-a[1])*dy)/d)):0;best=Math.min(best,Math.hypot(p[0]-a[0]-f*dx,p[1]-a[1]-f*dy));}return best*111.32/200;};
+for(const p of controls){assert.ok(closest(p.point,Array.from(raw,q=>G.PJ(...q)))<.065,p.name+' raw comparison control');assert.ok(closest(p.point)<.5,p.name+' region retained after exact-return cleanup');}
+assert.ok(closest([138.06,35.83])>5,'Takato is not a Sanshu through waypoint');
+assert.ok(closest([137.708965,35.306391])>1,'old 22km excursion is absent from replacement');
+assert.deepEqual(Array.from(view.pts[0]),Array.from(G.PJ(...raw[0])));assert.deepEqual(Array.from(view.pts.at(-1)),Array.from(G.PJ(...raw.at(-1))));
+const nearest=p=>view.pts.reduce((best,q,i)=>Math.hypot(q[0]-p[0],q[1]-p[1])<best.d?{i,d:Math.hypot(q[0]-p[0],q[1]-p[1])}:best,{i:0,d:Infinity});
+const a=nearest(G.PJ(137.6856,35.37308)),b=nearest(G.PJ(137.6316,35.32143));
+const movement=G.visualBetween(view.pts[a.i],view.pts[b.i]);
+assert.ok(movement.length>100,'mountain movement follows detailed street geometry');
+assert.ok(movement.every(p=>view.pts.some(q=>Math.hypot(p[0]-q[0],p[1]-q[1])<1e-6)),'movement and road use the same line');
+assert.equal(G.S().movementGeometryVersion,24);
+console.log('PASS: reviewed 18-place Sanshu corridor, reproducible comparison, rejected legacy protected, Takato detour absent, endpoints and modern classification retained');

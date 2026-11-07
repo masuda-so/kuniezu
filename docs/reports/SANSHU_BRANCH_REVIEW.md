@@ -17,3 +17,25 @@ road-return-audit.cjsで85街道を点検、0.5kmを超える閉路候補は63�
 ## 検査
 
 sanshu-route.cjsで棄却入力の適用拒否、原データ不変、457点の往復除去、始終点保持を確認。road-displayとmovement-saveも通過。保存経路版6へ更新し、旧保存の時刻・領土・兵数は変更しない。専用Chromeの画像・結果はdata/verification/iwamura-road-correction/。地形描画の共通化方針はdocs/architecture/regional-algorithms.md。
+
+## 2026-11-07：伊那谷経由の比較線を採用
+
+塩尻市が説明する塩尻・伊那谷・駒場・根羽・岡崎の経由関係へ入力を訂正した。高遠を本線に入れる旧設定を使わない。位置比較にはCODH『江戸宿場データセット』v1.1の18地名代表点を用い、江戸期の宿駅や後世に移転した浪合関所の位置を戦国期へ先取りしない。
+
+新しい徒歩参考線も山間部に過大迂回を含んだため、全線をそのまま採用せず、浪合〜稲武だけ取得済み地理院道路形状で置換した。約110kmの過大迂回が解消され、3mの簡略化後は約204.71km・3104点。2km超の同一点閉路はなく、共通の完全往復除去後の表示は3086点となる。近代の隧道を含む現代比較であり、精密な戦国期中心線の確定とは扱わない。
+
+入力・原取得結果・SHA・採否は [sanshu-road-review](../../data/inputs/sanshu-road-review/README.md)。保存した入力から同じ点列を再生成できる。`modern-road-reference.js` の他84項目は基準mainと一致し、他地域の訂正候補を混ぜていない。全体の道路再生成もこの採用入力を最後に読み、旧線へ戻さない。
+
+レビューで、北国街道の生成器が共通の訂正ファイルの末尾を切り捨てる問題も確認した。両生成器を共通の境界付き置換へ変更し、旧形式からの移行、北国→三州・三州→北国の順、再実行不変を実入力で検査した。閉じ忘れた旧ブロックが後続の訂正を取り込む場合も拒否する。試験は既存のDjango CIのpytestに含め、単独の `road-regeneration.cjs` からも同じ試験を呼ぶ。
+
+経路版を24へ進め、旧22・23の保存の残り経路を再構築する。進軍・帰還・出発待ち・軍を伴わない移動の位置・日内進捗・日付・兵数・到着時刻を保持し、再読込で再構築を繰り返さない。
+
+検証：`sanshu-route.cjs`、`road-regeneration.cjs`、`road-display.cjs`、`road-excursions.cjs`、`movement-save-position.cjs`、`offline.cjs`（7シナリオ各720日）、`organization.cjs`、`infrastructure.cjs`、配信確認値、追加試験のRuff・mypyが合格。専用Chromeで3地域×2幅と保存枠の22・23→24移行を確認。[独立ブランチの実画面記録](../../data/verification/codex-sanshu-isolated/README.md)。
+
+共有8000番は変更していない。合格は史料の全件照合や非閉路の全支道の復元を証明するものではない。
+
+### PRのCodeQL指摘への対応（2026-11-07）
+
+PR #59の8つのブラウザ検査で、検査値を評価コードへ埋め込む処理が指摘された。固定の検査値であってもコードと値を分け、共通の `browser-runtime.cjs` から `Runtime.callFunctionOn` の `arguments` で渡すよう変更した。取得したリモートオブジェクトは呼出し後に解放する。仕様は [Chrome DevTools Protocol Runtime](https://chromedevtools.github.io/devtools-protocol/tot/Runtime/#method-callFunctionOn) に従う。
+
+専用一時Chromeを1つだけ使用し、引用符・改行・コード断片を含む値の非実行、例外伝播、画面遷移後の呼出し、実際のゲームで8検査関数すべての戻り値と版24を確認した。9モジュールの構文も合格。サーバーは起動していない。画面の見た目に変更はなく、全8検査のスクリーンショット撮影を繰り返したという意味ではない。

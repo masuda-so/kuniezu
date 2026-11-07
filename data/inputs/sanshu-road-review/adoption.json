@@ -1,0 +1,18 @@
+{
+  "accepted": true,
+  "checked": "2026-11-07",
+  "pointSha256": "6c28c7522fe9aaac1fe1d8b7a990ebfbb5ce5902470359657e9e54e9e97f2431",
+  "inputs": {
+    "controls.json": "aea6cd1c2d540e72a1b1c90fa1bd94938bb26848cdfe9b482135791bf8590da6",
+    "osrm-foot.json.gz": "8f3b51e82cb8f5d1c5f1ecb85e6a14e943f3971d27cca706b19f63e3563529ac",
+    "gsi-road-tiles.tar.gz": "ae26e12d08438b325ab3ffaeffb54939b0f7daec80c42f7e4477b8a14d5a2444"
+  },
+  "decision": "18地名代表点で伊那谷経由を照合。全体を棄却したOSRM候補から北側・稲武以南だけ採用し、浪合〜稲武は連続するGSI現代形状で置換。史実の中心線とはしない。",
+  "rejectedLegacy": "data/inputs/sanshu-modern.json（accepted:falseのまま保持）",
+  "sources": [
+    "sanshuShiojiri",
+    "sanshuCodhPosts",
+    "sanshuModernMountain",
+    "sanshuModernFoot"
+  ]
+}

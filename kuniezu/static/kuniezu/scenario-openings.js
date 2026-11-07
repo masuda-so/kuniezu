@@ -46,7 +46,7 @@
   }
   for(const row of TK.BATTLE_AUDIT||[])row.sourceIds=TK.BATTLES[row.title]?.sources||row.sourceIds;
  };
- const geometryVersion=22,placementVersion=2,set=G.setS;
+ const geometryVersion=24,placementVersion=2,set=G.setS;
  const siegeVersions=new Map([['長谷堂城の戦い',1],['大津城の戦い',2]]);
  G.setS=function(s){const result=set(s);if(!s)return result;
   const migrateAll=s.movementGeometryVersion!==geometryVersion;

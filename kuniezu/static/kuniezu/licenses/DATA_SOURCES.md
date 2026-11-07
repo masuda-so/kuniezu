@@ -118,3 +118,10 @@ https://geoshape.ex.nii.ac.jp/nrct-poi/
 ## 生成元の削除（2026-11-03）
 
 地図の正本を画像（`kuniezu/map/`）にしたため、線の地図データを作っていた生成器（`tools/geo` の `korea-coast.py`・`lakes.py`・`land-extension.py`・`regional-rivers.py`・`korean-rivers.py`・`select-major-rivers.py` など）は削除した。各データの出典・ライセンスの表示はこのファイルのとおり保持する。加工手順は Git の履歴で確かめられる。
+
+## 三州街道の伊那谷経由の比較線（2026-11-07）
+
+- 地名代表点：『江戸宿場データセット』（ROIS-DS人文学オープンデータ共同利用センター作成）、v1.1、doi:10.20676/00000477、CC BY 4.0。https://codh.rois.ac.jp/historical-gis/edo-post/ 。R505の18地点を比較用の通過地域に使用。江戸期の代表点を戦国期の宿駅成立・関所位置の証明には用いない。
+- 浪合〜稲武の物理的形状：国土地理院「道路中心線ベクトルタイル提供実験」を加工。https://github.com/gsi-cyberjapan/experimental_rdcl 。2026-11-07取得。現代の隧道を含む比較であり、16世紀の道路の存在・姿を確定しない。
+- 北側・稲武以南：© OpenStreetMap contributors / FOSSGIS OSRM、routed-foot、ODbL 1.0。全体に過大迂回がある照会結果から、審査した区間だけ採用。派生比較線を同じODbL 1.0で提供する。
+- 入力・採否・SHA：`data/inputs/sanshu-road-review/`、生成器：`tools/geo/sanshu-reference.py`。表示と表示用行軍の共通線。史実の着陣日は変更しない。
