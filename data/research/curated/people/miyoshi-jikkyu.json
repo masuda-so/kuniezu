@@ -1,0 +1,28 @@
+{
+  "id": "person:miyoshi-jikkyu",
+  "name": "三好実休",
+  "gameNames": [
+    "三好実休",
+    "三好義賢"
+  ],
+  "authorityIds": [
+    "wikidata:Q1058953"
+  ],
+  "authorityEvidence": {
+    "scope": "person-identity",
+    "checked": "2026-11-08",
+    "sourceIds": [
+      "kyotoHyakugoMiyoshiJikkyu",
+      "osakaShikinagayoshiDocuments"
+    ],
+    "basis": "公的古文書目録の人名欄が実休と三好義賢を併記し、大阪市の文化財解説も長慶の弟・義賢（実休）を三好実休禁制の発給者とする。別名同定だけに使用する。",
+    "note": "data/research/source-notes/person-alias-three-authority.md",
+    "sourceNote": "data/research/source-notes/person-alias-three-authority.json",
+    "wikidataRevision": 2521638118,
+    "snapshot": "data/research/source-notes/person-alias-three-authority.json",
+    "identityChecks": [
+      "京都府の一次文書目録が実休（三好義賢）を明記",
+      "大阪市の禁制解説が長慶の弟・義賢（実休）を発給者と同定"
+    ]
+  }
+}

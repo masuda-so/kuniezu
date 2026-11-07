@@ -39,6 +39,7 @@
 - 史実DBの集計は `python3 tools/research/history_sqlite.py cube --db <生成済みDB> --from-year 1600 --to-year 1615 --calendar Japanese-lunisolar` で読取専用検索できます。出典記録数を原暦・精度別に集計し、不明な年を展開しません。
 - 史実DBでは、日・年が判明し関連地点が不明な出来事も、主対象から検索できます。場所を推定して補わず、江戸期の干拓記録は戦国期の湖岸と区別します。
 - 史実DBは本人の典拠IDと出典付き別名を保持します。[人物典拠10人の照合記録](data/research/source-notes/person-authority-expansion.md)を追加し、取得版と同名人物の判別根拠を保存しています。別名で検索でき、ゲーム期間外の比較史料を期間内の出来事へ置き換えません。
+- 三好実休／義賢、真田幸綱／幸隆、立花道雪／戸次鑑連の[同定記録](data/research/source-notes/person-alias-three-authority.md)も保持します。別名の対応と、生没日・所在の確認を分けて扱います。
 - 香取海の内浪逆浦・外浪逆浦は、中世の湖沼資料と後世の比較岸による推定湖面として表示します。補正範囲を閉じる水面上の辺は、岸線として描きません。[根拠と検査](docs/reports/KATORI_WIDE_LAKE_PERIMETER.md)を参照してください。
 
 - 八郎潟は干拓前の比較地形図を用いた推定湖面として修正し、後世の造成が疑われる湖岸を陸へ先取りしません。[根拠と検査](docs/reports/HACHIROGATA_WATER_REVIEW.md)を参照してください。

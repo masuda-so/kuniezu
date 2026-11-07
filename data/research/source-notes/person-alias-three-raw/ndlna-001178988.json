@@ -1,0 +1,54 @@
+{
+    "@context": "https://id.ndl.go.jp/auth/context.json",
+    "uri": "http://id.ndl.go.jp/auth/ndlna/001178988",
+    "primaryTopic": {
+        "uri": "http://id.ndl.go.jp/auth/entity/001178988",
+        "type": {
+            "uri": "http://xmlns.com/foaf/0.1/Person"
+        },
+        "name": "真田幸隆",
+        "dateOfBirth": "1513",
+        "dateOfDeath": "1574",
+        "biographicalInformation": [
+            "戦国時代の武将"
+        ]
+    },
+    "type": {
+        "uri": "http://www.w3.org/2004/02/skos/core#Concept"
+    },
+    "modified": "2019-01-07T18:15:06",
+    "created": "2014-08-19",
+    "prefLabel": {
+        "literalForm": "真田, 幸隆, 1513-1574",
+        "transcription": "サナダ, ユキタカ, 1513-1574",
+        "transcription-l": [
+            {
+                "@value": "サナダ, ユキタカ, 1513-1574",
+                "@language": "ja-Kana"
+            },
+            {
+                "@value": "Sanada, Yukitaka, 1513-1574",
+                "@language": "ja-Latn"
+            }
+        ]
+    },
+    "label": "真田, 幸隆, 1513-1574",
+    "altLabel": [
+        {
+            "literalForm": "真田, 幸綱"
+        }
+    ],
+    "source": [
+        "真田幸隆のルーツと山城紀行, 2014.6",
+        "日本人名大辞典"
+    ],
+    "exactMatch": [
+        {
+            "uri": "http://viaf.org/viaf/sourceID/NDL%7C001178988#skos:Concept"
+        }
+    ],
+    "inScheme": {
+        "uri": "http://id.ndl.go.jp/auth#personalNames"
+    }
+}
+
