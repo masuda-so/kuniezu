@@ -123,7 +123,10 @@ CLAIM_KIND = {
         "castle-assignment family-head-succession regional-distribution "
         "administrative-seat"
     ),
-    PhenomenonKind.RELATION: "relationship-to-ming recorded-ming-tribute-missions",
+    PhenomenonKind.RELATION: (
+        "relationship-to-ming recorded-ming-tribute-missions alliance-formation "
+        "submission-accepted"
+    ),
     PhenomenonKind.OFFICE: (
         "central-office military-role military-religious-role historical-castle-role"
     ),

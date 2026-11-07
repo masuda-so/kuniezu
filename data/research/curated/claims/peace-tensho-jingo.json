@@ -1,0 +1,38 @@
+{
+  "id": "peace-tensho-jingo",
+  "entity": "person:徳川家康",
+  "predicate": "alliance-formation",
+  "value": "徳川家康が北条氏直と和を講じ、上野沼田を氏直の信濃佐久・甲斐都留の二郡と換え、家康の娘を氏直に嫁がせることを約して、人質を交わした。",
+  "validYears": [
+    1582,
+    1582
+  ],
+  "datePrecision": "day",
+  "source": "hiDainihonshiryoKobun",
+  "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+  "locator": "綱文：和暦 天正10年10月29日 第1条（区分 大日本史料、第11編之2、846頁）",
+  "gameBindings": [
+    "TK.HIST:天正壬午の和睦"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-07",
+  "uncertainty": "綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。",
+  "linkedEntities": [
+    "person:徳川家康",
+    "person:北条氏直"
+  ],
+  "eventTime": {
+    "kind": "dated-event",
+    "date": [
+      1582,
+      10,
+      29
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": false,
+    "precision": "day"
+  },
+  "eventRelation": "alliance-formation",
+  "eventScope": "綱文が掲げる関係の成立とその日付、綱文に書かれた相手。不一致。年表は 1582 年 11 月 14 日、綱文の天正10年10月29日はゲームの暦表で 1582 年 11 月 24 日（10 日の差）。 年表は変えていない（どちらを採るかは未判断）。 条件・期間・関係の終わりは補わない。"
+}

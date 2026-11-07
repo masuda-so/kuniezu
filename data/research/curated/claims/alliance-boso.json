@@ -1,0 +1,37 @@
+{
+  "id": "alliance-boso",
+  "entity": "person:里見義弘",
+  "predicate": "alliance-formation",
+  "value": "北条氏の兵が安房の里見義弘を攻め、これと和した。",
+  "validYears": [
+    1577,
+    1577
+  ],
+  "datePrecision": "period",
+  "source": "hiDainihonshiryoKobun",
+  "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+  "locator": "綱文：和暦 天正5年是夏 第1条（区分 史料綜覧、編10・冊911（データベースの表示値）、148頁）",
+  "gameBindings": [
+    "TK.HIST:房相一和"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-07",
+  "uncertainty": "綱文は北条方の人名を挙げない。 綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。",
+  "linkedEntities": [
+    "person:里見義弘"
+  ],
+  "eventTime": {
+    "kind": "described-period",
+    "label": "天正5年夏（綱文は「是夏」）",
+    "indexYears": [
+      1577,
+      1577
+    ],
+    "calendar": "Japanese-era-description",
+    "precision": "period",
+    "boundsAreHistoricalStartEnd": false
+  },
+  "eventRelation": "alliance-formation",
+  "eventScope": "綱文が掲げる関係の成立とその日付、綱文に書かれた相手。一致（年の精度）。年表は 1577 年（注記は「1577年成立」）、綱文は天正5年の夏（ゲームの暦表で 1577 年 4 月 18 日〜7 月 15 日）。 年表は変えていない（どちらを採るかは未判断）。 条件・期間・関係の終わりは補わない。"
+}

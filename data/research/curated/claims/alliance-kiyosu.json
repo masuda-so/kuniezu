@@ -1,0 +1,38 @@
+{
+  "id": "alliance-kiyosu",
+  "entity": "person:松平元康",
+  "predicate": "alliance-formation",
+  "value": "松平元康が尾張清洲に赴いて織田信長と盟約し、信長も林通勝らを岡崎に遣わして答礼した。",
+  "validYears": [
+    1562,
+    1562
+  ],
+  "datePrecision": "period",
+  "source": "hiDainihonshiryoKobun",
+  "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+  "locator": "綱文：和暦 永禄5年1月是月 第1条（区分 史料綜覧、編9・冊910（データベースの表示値）、541頁）",
+  "gameBindings": [
+    "TK.HIST:清洲同盟"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-07",
+  "uncertainty": "綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。",
+  "linkedEntities": [
+    "person:松平元康",
+    "person:織田信長"
+  ],
+  "eventTime": {
+    "kind": "described-period",
+    "label": "永禄5年1月（綱文は「是月」）",
+    "indexYears": [
+      1562,
+      1562
+    ],
+    "calendar": "Japanese-era-description",
+    "precision": "period",
+    "boundsAreHistoricalStartEnd": false
+  },
+  "eventRelation": "alliance-formation",
+  "eventScope": "綱文が掲げる関係の成立とその日付、綱文に書かれた相手。一致（月の精度）。綱文は月までで、永禄5年1月はゲームの暦表で 1562 年 2 月 4 日〜3 月 4 日。年表の 1562 年 2 月 15 日はこの月の中にある。 年表は変えていない（どちらを採るかは未判断）。 条件・期間・関係の終わりは補わない。"
+}
