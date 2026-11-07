@@ -53,6 +53,8 @@ is [docs/README.md](docs/README.md); open requests and ownership are in
   marches along historical roads, and battle deployments and movements, each with
   its source.
 - Battle markers retain their geographic positions when the viewport or district changes. Co-located units can be selected individually.
+- Wide battles show individual counters and portraits in the overview, with nearby
+  commander labels in district views. Narrow screens use a single-row district selector.
 - File exports, save slots and autosaves preserve sub-day time so marching units
   resume at the saved position.
 - Diplomacy is shown as borders only; marches are shown as pieces on roads.
