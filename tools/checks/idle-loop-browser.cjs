@@ -22,7 +22,7 @@ async function main(){
  await call('Runtime.enable');await call('Page.enable');await call('Network.enable');await call('Performance.enable');await call('Fetch.enable',{patterns:[{urlPattern:'*/ui.js*'}]});await call('Emulation.setDeviceMetricsOverride',{width:1200,height:800,deviceScaleFactor:1,mobile:false});await call('Page.navigate',{url:URL});
  await until("!!document.querySelector('[data-act=new]')&&!document.getElementById('boot')&&TKRaster.ready()&&TKRelief.ready()&&TKEdges.ready()");await idle();await sleep(1800);
  const initial=await sample('initial-title',4000);assert.ok(initial.loops<=25);assert.equal(initial.draws.top,0);
- await button('[data-act=new]');await button('[data-act=scen][data-id=s1560]');await button('[data-act=start]');await until("TKUI.modal==='intro'");await button('#modal [data-act=close]');await idle();await sleep(1800);
+ await button('[data-act=new]');await button('[data-act=scen][data-id=s1560]');await button('#pick [data-act=pick].on');await until("TKUI.mode==='game'&&!TKUI.modal");await idle();await sleep(1800);
  const paused=await sample('paused-game',3000);assert.ok(paused.loops<=25);
  await ev("TKUI.api.ACT.speed({dataset:{v:'1'}});TKUI.wakeLoop()");const play=await sample('playing',1500);assert.ok(play.after.fraction>play.before.fraction||play.after.time>play.before.time);
  await ev("TKUI.api.ACT.open({dataset:{m:'menu'}})");await button('#modal [data-act=to-title]');await idle();await sleep(1800);const title=await sample('returned-title',6000);assert.equal(title.after.speed,0);assert.ok(title.loops<=40);assert.equal(title.draws.top,0);assert.equal(title.draws.base,0);

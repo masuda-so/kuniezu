@@ -1,0 +1,61 @@
+/* 専用Chromeで初期勢力の確定・年表・設定・保存復元を検証。サーバーは操作しない。 */
+const {spawn,execFileSync}=require('node:child_process');
+const crypto=require('node:crypto');
+const fs=require('node:fs'),os=require('node:os'),path=require('node:path'),assert=require('node:assert/strict');
+const URL=process.env.GAME_URL||'http://localhost:8000/index.html';
+const OUT=path.resolve(process.env.GAME_TEST_OUTPUT||path.join(os.tmpdir(),'kuniezu-browser-results'));
+// 差し替えの鍵は URL のパス（Django は kuniezu/static/kuniezu/x を /static/kuniezu/x で配る）。ページはテンプレートを描いて返す。
+const PAGE=require('../build/game-page.cjs'),root=process.env.GAME_OVERRIDE_ROOT,overrides={};
+if(root){for(const f of execFileSync('git',['-C',root,'diff','--name-only',process.env.GAME_OVERRIDE_BASE||'origin/main','--','kuniezu/static/kuniezu',PAGE.TEMPLATE],{encoding:'utf8'}).trim().split('\n').filter(Boolean)){const p=path.join(root,f);if(!fs.existsSync(p))continue;if(f===PAGE.TEMPLATE)overrides['index.html']=Buffer.from(PAGE.render(root));else overrides[f.slice('kuniezu/'.length)]=fs.readFileSync(p);}}
+const TYPES={js:'application/javascript',html:'text/html; charset=utf-8',json:'application/json',css:'text/css',png:'image/png',webp:'image/webp',svg:'image/svg+xml'};
+const profile=fs.mkdtempSync(path.join(os.tmpdir(),'kuniezu-check-'));fs.mkdirSync(OUT,{recursive:true});
+const chrome=spawn(process.env.CHROME_PATH||'/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',['--headless',...(new globalThis.URL(URL).protocol==='file:'?['--allow-file-access-from-files']:[]),'--disable-gpu','--no-first-run','--no-default-browser-check',`--user-data-dir=${profile}`,'--remote-debugging-pipe'],{stdio:['ignore','ignore','ignore','pipe','pipe']});
+let seq=0,buf='',session,chooser;const pending=new Map(),errors=[],events=[];
+chrome.stdio[4].on('data',data=>{buf+=data.toString();let i;while((i=buf.indexOf('\0'))>=0){const str=buf.slice(0,i);buf=buf.slice(i+1);if(!str)continue;const m=JSON.parse(str);if(m.id){const p=pending.get(m.id);pending.delete(m.id);if(p)m.error?p.reject(Error(JSON.stringify(m.error))):p.resolve(m.result);}else{
+ if(m.method==='Fetch.requestPaused'){const f=decodeURIComponent(new globalThis.URL(m.params.request.url).pathname.slice(1))||'index.html',body=overrides[f];if(body)call('Fetch.fulfillRequest',{requestId:m.params.requestId,responseCode:200,responseHeaders:[{name:'Content-Type',value:TYPES[f.split('.').pop()]||'application/octet-stream'}],body:body.toString('base64')}).catch(e=>console.error(e));else call('Fetch.continueRequest',{requestId:m.params.requestId}).catch(e=>console.error(e));}
+ events.push(m);if(m.method==='Runtime.exceptionThrown')errors.push(m.params.exceptionDetails.exception?.description||m.params.exceptionDetails.text);if(m.method==='Page.fileChooserOpened')chooser=m.params;
+ }}});
+const call=(method,params={},sid=session)=>new Promise((resolve,reject)=>{const id=++seq;pending.set(id,{resolve,reject});chrome.stdio[3].write(JSON.stringify({id,method,params,...(sid?{sessionId:sid}:{})})+'\0');});
+const sleep=ms=>new Promise(r=>setTimeout(r,ms));
+const ev=async expression=>{const r=await call('Runtime.evaluate',{expression,returnByValue:true,awaitPromise:true});if(r.exceptionDetails)throw Error(r.exceptionDetails.exception?.description||r.exceptionDetails.text);return r.result.value;};
+async function until(expr){for(let i=0;i<100;i++){if(await ev(expr))return;await sleep(100);}throw Error('Timed out: '+expr);}
+async function run(functionDeclaration,...values){
+ const target=await call('Runtime.evaluate',{expression:'window',returnByValue:false});let result;
+ try{result=await call('Runtime.callFunctionOn',{objectId:target.result.objectId,functionDeclaration,arguments:values.map(value=>({value})),returnByValue:true,awaitPromise:true});}
+ finally{await call('Runtime.releaseObject',{objectId:target.result.objectId});}
+ if(result.exceptionDetails)throw Error(result.exceptionDetails.exception?.description||result.exceptionDetails.text);return result.result.value;
+}
+async function click(selector){const p=await run('function(selector){const el=document.querySelector(selector);if(!el||el.disabled)throw Error("missing/disabled "+selector);el.scrollIntoView({block:"center"});const r=el.getBoundingClientRect();return {x:r.x+r.width/2,y:r.y+r.height/2};}',selector);await call('Input.dispatchMouseEvent',{type:'mousePressed',button:'left',clickCount:1,...p});await call('Input.dispatchMouseEvent',{type:'mouseReleased',button:'left',clickCount:1,...p});await sleep(120);}
+async function shot(name){await ev("(()=>{const e=document.querySelector('.mbox');if(e)e.scrollTop=0;})()");const r=await call('Page.captureScreenshot',{format:'png'});fs.writeFileSync(path.join(OUT,name+'.png'),Buffer.from(r.data,'base64'));}
+async function view(width,height){await call('Emulation.setDeviceMetricsOverride',{width,height,deviceScaleFactor:1,mobile:width<820});await sleep(300);}
+async function load(){await call('Page.navigate',{url:URL});await until("!!document.querySelector('[data-act=new]')&&!document.getElementById('boot')");}
+
+const timer=setTimeout(()=>{console.error('selection verification timeout');chrome.kill();process.exitCode=1},180000);
+async function prepare(id){await ev("TKUI.api.ACT['to-title']()");await click('[data-act=new]');await click('[data-act=scen][data-id='+id+']');assert.equal(await ev('TKUI.mode'),'pick');assert.equal(await ev('G.S().player'),'__none');}
+async function chooseRegion(region){return run('function(region){const e=document.getElementById("pickRegion");e.value=region;e.dispatchEvent(new Event("change",{bubbles:true}));return {mode:TKUI.mode,player:G.S().player,count:document.querySelectorAll("#pick .pick-all [data-clan]").length};}',region);}
+async function state(){return ev(`(()=>{const p=document.getElementById('pick'),c=document.getElementById('chron'),a=p.getBoundingClientRect(),b=c.getBoundingClientRect();return {mode:TKUI.mode,player:G.S().player,speed:TKUI.speed,modal:TKUI.modal,pickHidden:p.hidden,chronVisible:getComputedStyle(c).display!=='none',chronTitle:c.querySelector('h3')?.textContent,newGames:__newGames,pickRect:{x:a.x,y:a.y,width:a.width},chronRect:{x:b.x,y:b.y,width:b.width},saved:TKStorage.decode(localStorage.getItem('kuniezu-history-v1-auto')).player};})()`);}
+function game(s,k){assert.equal(s.mode,'game');assert.equal(s.player,k);assert.equal(s.speed,0);assert.equal(s.modal,null);assert.equal(s.pickHidden,true);assert.equal(s.chronVisible,true);assert.equal(s.chronTitle,'年表');assert.equal(s.saved,k);}
+(async()=>{try{
+ const target=await call('Target.createTarget',{url:'about:blank'},null);session=(await call('Target.attachToTarget',{targetId:target.targetId,flatten:true},null)).sessionId;
+ await call('Runtime.enable');await call('Page.enable');if(root)await call('Fetch.enable',{patterns:[{urlPattern:new globalThis.URL(URL).origin+'/*',requestStage:'Request'}]});
+ await call('Page.addScriptToEvaluateOnNewDocument',{source:"localStorage.setItem('tenka-mapstyle2','flat')"});await view(1400,950);await load();assert.equal(await ev('TKUI.mapStyle'),'relief');
+ await ev('window.__newGames=0;const originalNewGame=G.newGame;G.newGame=function(...args){__newGames++;return originalNewGame.apply(this,args);}');
+ const rows=[],scenarios=await ev('Object.keys(TK.SCEN)');
+ for(const width of [1400,390]){await view(width,900);for(const id of scenarios){
+  await prepare(id);const initial=await ev('({mode:TKUI.mode,calls:__newGames,rect:document.getElementById("pick").getBoundingClientRect().toJSON()})');
+  if(width>820){assert.ok(initial.rect.x<24);assert.ok(initial.rect.width<=300);}else assert.ok(initial.rect.width<=width);
+  for(const region of ['九州','東北']){const filtered=await chooseRegion(region);assert.equal(filtered.mode,'pick');assert.equal(filtered.player,'__none');assert.equal(await ev('__newGames'),initial.calls);}
+  assert.equal(await ev("document.getElementById('pick').scrollWidth>document.getElementById('pick').clientWidth+1"),false);
+  await shot('pick-'+id+'-'+width);await click('#pick [data-act=pick][data-clan=date]');const s=await state();game(s,'date');assert.equal(s.newGames,initial.calls+1);
+  const guard=await ev("(()=>{const before=G.S(),count=__newGames;TKUI.api.ACT.pick({dataset:{clan:'hojo'}});TKUI.api.ACT.start();return {same:G.S()===before,calls:__newGames-count};})()");assert.equal(guard.same,true);assert.equal(guard.calls,0);
+  if(width>820)assert.ok(Math.abs(s.chronRect.x-initial.rect.x)<1&&Math.abs(s.chronRect.width-initial.rect.width)<1,'chronology reuses left column');
+  rows.push({id,width,...s,guard});await shot('chron-'+id+'-'+width);
+ }}
+ await view(335,844);await prepare('s1560');await chooseRegion('関東');await click('#pick [data-act=pick][data-clan=hojo]');game(await state(),'hojo');await shot('hojo-335');
+ await ev("TKUI.open('menu-settings')");assert.equal(await ev("!!document.getElementById('mapStyleSetting')"),false);assert.equal(await ev("Object.hasOwn(TKUI.api.ACT,'mapstyle')"),false);assert.equal(await ev('TKUI.mapStyle'),'relief');assert.deepEqual(await ev("[...document.querySelectorAll('#modal select')].map(e=>e.id)"),['mapRotationSetting','relationSetting','sceneSetting']);await shot('settings-335');await ev('TKUI.api.closeModal()');
+ const save=await ev("(()=>{TKUI.acc=.42;TKUI.api.ACT.save({dataset:{v:'1'}});const before={t:G.S().t,player:G.S().player};G.S().t+=3;TKUI.api.ACT.load({dataset:{v:'1'}});return {before,after:{t:G.S().t,player:G.S().player},fraction:TKUI.acc,mode:TKUI.mode,pickHidden:document.getElementById('pick').hidden};})()");assert.deepEqual(save.after,save.before);assert.equal(save.fraction,.42);assert.equal(save.mode,'game');assert.equal(save.pickHidden,true);
+ await view(1400,950);await prepare('s1560');assert.deepEqual(await ev('G.preList()'),[],'future independent houses remain unavailable in historical observation');
+ await prepare('s1560');const invalid=await ev("(()=>{const before=G.S(),count=__newGames;TKUI.api.ACT.pick({dataset:{clan:'missing-clan'}});return {same:before===G.S(),mode:TKUI.mode,calls:__newGames-count};})()");assert.deepEqual(invalid,{same:true,mode:'pick',calls:0});
+ const point=await ev("(()=>{const id=G.clanCastles('hojo')[0];window.__mapChoice=id;TKUI.cam(G.C[id].x,G.C[id].y,5);TKUI.wakeLoop();return id;})()");await sleep(350);const xy=await ev('(()=>{const p=TKUI.pos(__mapChoice);return {x:p[0],y:p[1]};})()');await call('Input.dispatchMouseEvent',{type:'mousePressed',button:'left',clickCount:1,...xy});await call('Input.dispatchMouseEvent',{type:'mouseReleased',button:'left',clickCount:1,...xy});await until("TKUI.mode==='game'");game(await state(),'hojo');rows.push({mapCastle:point,...await state()});await shot('map-choice');
+ assert.deepEqual(errors,[]);fs.writeFileSync(path.join(OUT,'result.json'),JSON.stringify({scenarios,rows,save,invalid,legacyMapStyleIgnored:true,candidateOverrides:Object.keys(overrides),errors},null,2)+'\n');console.log('PASS: initial choice commits once, region filter stays uncommitted, chronology replaces left selection, settings and save/load; '+rows.length+' cases');
+}catch(e){console.error(e.stack);console.error(errors);try{console.error(await ev('({mode:TKUI.mode,modal:TKUI.modal,player:G.S().player})'));await shot('failure');}catch{}process.exitCode=1;}finally{clearTimeout(timer);const stopped=chrome.exitCode!==null||chrome.signalCode!==null?Promise.resolve():new Promise(r=>chrome.once('close',r));try{await call('Browser.close',{},null)}catch{}const force=setTimeout(()=>chrome.kill(),1500);await stopped;clearTimeout(force);fs.rmSync(profile,{recursive:true,force:true,maxRetries:10,retryDelay:100});}})();

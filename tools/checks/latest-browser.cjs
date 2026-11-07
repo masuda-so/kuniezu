@@ -18,13 +18,13 @@ async function click(selector){const p=await ev(`(()=>{const el=document.querySe
 async function shot(name){await ev("(()=>{const e=document.querySelector('.mbox');if(e)e.scrollTop=0;})()");const r=await call('Page.captureScreenshot',{format:'png'});fs.writeFileSync(path.join(OUT,name+'.png'),Buffer.from(r.data,'base64'));}
 async function view(width,height){await call('Emulation.setDeviceMetricsOverride',{width,height,deviceScaleFactor:1,mobile:width<820});await sleep(300);}
 async function load(){await call('Page.navigate',{url:URL});await until("!!document.querySelector('[data-act=new]')");}
-async function start(){await click('[data-act=new]');await click('[data-act=scen][data-id=s1560]');await click('[data-act=start]');await until("TKUI.modal==='intro'");}
+async function start(){await click('[data-act=new]');await click('[data-act=scen][data-id=s1560]');await click('#pick [data-act=pick].on');await until("TKUI.mode==='game'&&!TKUI.modal");}
 async function menu(){await click('#me [data-m=menu]');}
 const timer=setTimeout(()=>{console.error('timeout');chrome.kill();process.exitCode=1},480000);
 const cover=()=>ev('(()=>{const {corners}=TKUI.mapBounds();return corners[0][0]<=.01&&corners[0][1]<=.01&&corners[1][0]>=innerWidth-.01&&corners[1][1]>=innerHeight-.01})()');
 (async()=>{try{
  const target=await call('Target.createTarget',{url:'about:blank'},null);session=(await call('Target.attachToTarget',{targetId:target.targetId,flatten:true},null)).sessionId;await call('Runtime.enable');await call('Page.enable');
- await view(1400,950);await load();await shot('title-wide');await click('[data-act=new]');await click('[data-act=scen][data-id=s1560]');await click('[data-act=pick][data-clan=hojo]');await click('[data-act=start]');await until("TKUI.modal==='intro'");await click('#modal [data-act=close]');
+ await view(1400,950);await load();await shot('title-wide');await click('[data-act=new]');await click('[data-act=scen][data-id=s1560]');await click('[data-act=pick][data-clan=hojo]');await until("TKUI.mode==='game'&&!TKUI.modal");
  assert.equal(await ev('G.S().player'),'hojo');assert.equal(await ev('G.S().settings.scenes'),'mine');
  await ev("G.S().sceneQ=[{title:'桶狭間の戦い',t:G.S().t}];TKUI.speed=1");await until('!G.S().sceneQ.length');await ev('TKUI.speed=0');assert.equal(await ev('TKUI.modal'),null);
  const queueDay=await ev("G.S().sceneQ=[{title:'桶狭間の戦い',t:G.S().t},{title:'小田原城の戦い',t:G.S().t}];TKUI.acc=0;TKUI.speed=1;G.S().t");await until("TKUI.modal==='scene'");await ev('TKUI.speed=0');assert.equal(await ev('TKUI.mdata.title'),'小田原城の戦い');assert.equal(await ev('G.S().t'),queueDay+1,'excluded scenes must not postpone the relevant scene');await ev('TKUI.api.closeModal()');

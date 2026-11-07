@@ -24,7 +24,7 @@ async function click(selector){
 async function shot(name){await ev("(()=>{const e=document.querySelector('.mbox');if(e)e.scrollTop=0;})()");const r=await call('Page.captureScreenshot',{format:'png'});fs.writeFileSync(path.join(OUT,name+'.png'),Buffer.from(r.data,'base64'));}
 async function view(width,height){await call('Emulation.setDeviceMetricsOverride',{width,height,deviceScaleFactor:1,mobile:width<820});await sleep(300);}
 async function load(){await call('Page.navigate',{url:URL});await until("!!document.querySelector('[data-act=new]')&&!document.getElementById('boot')");}
-async function start(){await click('[data-act=new]');await click('[data-act=scen][data-id=s1560]');await click('[data-act=start]');await until("TKUI.modal==='intro'");}
+async function start(){await click('[data-act=new]');await click('[data-act=scen][data-id=s1560]');await click('#pick [data-act=pick].on');await until("TKUI.mode==='game'&&!TKUI.modal");}
 async function menu(){await click('#me [data-m=menu]');}
 const timer=setTimeout(()=>{console.error('timeout');chrome.kill();process.exitCode=1},90000);
 const cover=()=>ev('(()=>{const {corners}=TKUI.mapBounds();return corners[0][0]<=.01&&corners[0][1]<=.01&&corners[1][0]>=innerWidth-.01&&corners[1][1]>=innerHeight-.01})()');
@@ -33,7 +33,7 @@ const cover=()=>ev('(()=>{const {corners}=TKUI.mapBounds();return corners[0][0]<
  if(failSource){await call('Fetch.enable',{patterns:[{urlPattern:'*/map/build/vector/manifest.json',requestStage:'Request'}]});await call('Page.navigate',{url:URL});await until("document.getElementById('boot')?.getAttribute('role')==='alert'");assert.equal(await ev('__vectorUnderTest.ready()'),false);assert.equal(await ev('!document.getElementById("bootReload").hidden'),true);await shot('source-failure');assert.deepEqual(errors,[]);fs.writeFileSync(path.join(OUT,'result.json'),JSON.stringify({scope:'Unavailable canonical source stays behind boot overlay and offers reload',errors},null,2)+'\n');console.log('PASS: missing source keeps boot overlay and reload; no partial source promoted');return;}
  await load();await shot('title');
  const state=await ev('({title:document.title,mode:TKUI.mode,boot:!!document.getElementById("boot"),vectorReady:__vectorUnderTest.ready(),stats:__vectorUnderTest.stats(),bounds:TKUI.mapBounds()})');assert.equal(state.mode,'title');assert.equal(state.boot,false);assert.equal(state.vectorReady,true);assert.ok(state.stats.features>5000);
- await start();await click('[data-act=close]');await until("TKUI.mode==='game'&&!TKUI.modal");await shot('game-wide');
+ await start();await until("TKUI.mode==='game'&&!TKUI.modal");await shot('game-wide');
  const game=await ev('({mode:TKUI.mode,date:G.date(),vector:__vectorUnderTest.stats(),bounds:TKUI.mapBounds()})');
  await view(390,844);await shot('game-narrow');await ev('TKUI.setMapRotation(16)');await sleep(200);await shot('game-rotated');await ev('TKUI.setMapRotation(0);TKUI.fitAll()');await sleep(200);await shot('game-all-japan');assert.deepEqual(errors,[]);
  const inverseUnion=await ev(`(async()=>{

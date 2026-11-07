@@ -8,7 +8,7 @@ const man=n=>n>=10000?(Math.round(n/1000)/10)+'万':fmt(n);
 const esc=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 const GEO=window.TKGEO;
 const U={pslot:{},dipView:false,mode:'title',sel:null,modal:null,mdata:{},pickScen:null,pickClan:null,hover:null,speed:0,acc:0,baseDirty:true,chatCtl:null,picking:null};
-try{U.mapStyle=localStorage.getItem('tenka-mapstyle2')||'relief';}catch(e){U.mapStyle='relief';}
+U.mapStyle='relief';
 /* 地図の向き（図北の角度）。北を上から反時計回りに何度回すか（北が左へ傾く）。既定は北が上（0 度、国土地理院の地図と同じ）。
    選べる 16 度は明治「大日本全図」（1880 年頃）の海岸線に本作の海岸線を最も重ねられる角度（最適値 16.5 度、
    docs/reports/MAP_ORIENTATION.md）。回すときは画布を CSS で回し、文字は読める向きに戻す。
@@ -193,7 +193,7 @@ let vcMemo=null,vcsMemo=null;function vc(){return vcMemo||vcCalc();}
 function vcs(){if(!vcMemo||!vcsMemo)vcCalc();return vcsMemo;}// 描画の外では毎回計算し直す（画面の大きさや選択で変わる）
 function vcCalc(){const W=VPW||VW,H=VPH||VH,mob=W<=820;let l=0,r=0,t=0,b=0;
  if(U.mode==='game'){if(mob){t=U.hudTop||104;b=U.sel?H*.46:196;}else{const nar=U.sel&&W<1200;l=nar?0:320;r=U.sel?360:0;t=72;b=narrowTL()?0:70;}}
- else if(U.mode==='pick'){if(mob)b=H*.52;else r=400;}
+ else if(U.mode==='pick'){if(mob)b=H*.52;else l=320;}
  // 中心は画面（パネルを除いた所）で決め、画布の座標へ回し戻す。幅・高さは画面のまま
  vcsMemo=[l+(W-l-r)/2,t+(H-t-b)/2,W-l-r,H-t-b];const [cx,cy]=v2c(vcsMemo[0],vcsMemo[1]);return [cx,cy,W-l-r,H-t-b];}
 const w2s=(x,y)=>{const c=vc();return [(x-cam.x)*cam.z+c[0],(y-cam.y)*cam.z+c[1]];};
@@ -751,11 +751,11 @@ function tip(id,e){if(!id||!S||(e&&e.pointerType==='touch')||U.mode==='title'||i
   ${inc.length?`<span class="tw">向かってくる：${inc.map(u=>`${G.CN(u.clan)} ${man(u.troops)}`).join('、')}</span>`:''}`;
  tipEl.hidden=false;const tw=tipEl.offsetWidth||230,th=tipEl.offsetHeight||100;let x=e.clientX+14,y=e.clientY+14;const lim=side.hidden?VPW:side.getBoundingClientRect().left;if(x+tw>lim-6)x=e.clientX-tw-14;tipEl.style.left=Math.max(6,x)+'px';tipEl.style.top=Math.max(6,Math.min(VPH-th-6,y))+'px';}
 function onTap(sx,sy){const group=U.armyGroups?.filter(p=>Math.abs(p.x-sx)<48&&sy>p.y-40&&sy<p.y+48).sort((a,b)=>Math.hypot(a.x-sx,a.y-sy)-Math.hypot(b.x-sx,b.y-sy))[0];if(group&&U.mode==='game'){const near=U.armyGroups.filter(p=>Math.hypot(p.x-group.x,p.y-group.y)<18);openModal('army-list',{ids:[...new Set(near.flatMap(p=>p.members.map(m=>m.id)))],sameLocation:near.every(p=>Math.hypot(p.x-group.x,p.y-group.y)<1),nearby:true});return;}const id=hit(sx,sy);if(U.mode==='game'&&!U.modal){const y=hitY(sx,sy);if(y&&y.kind==='城'&&G.yActive(y)){openModal('branch',{id:y.id});return;}}
+ if(U.mode==='pick'){if(id)chooseInitialClan(S.castles[id].owner);return;}
  if(!id){const region=hitContext(sx,sy);if(region){tapCastle(null);openModal('context-region',region);return;}}
- if(U.mode==='pick'){if(id){U.pickClan=S.castles[id].owner;renderPick();}return;}
  tapCastle(id);}
 function tapCastle(id){tipEl.hidden=true;
- if(U.mode==='pick'){if(id){U.pickClan=S.castles[id].owner;renderPick();}return;}
+ if(U.mode==='pick'){if(id)chooseInitialClan(S.castles[id].owner);return;}
  if(U.mode!=='game'||U.modal)return;
  if(U.picking&&id){const o=S.castles[id].owner;if(G.ADJ[U.picking].includes(id)&&o!==S.player&&!G.allied(S.player,o)){doAttack(U.picking,id);return;}U.picking=null;}
  U.sel=id||null;renderSide();U.baseDirty=true;
@@ -1036,7 +1036,6 @@ const ACT={
    closeModal();U.sel=null;terrSig='';U.baseDirty=true;U.ended=false;renderAll();renderLegend();renderTL();toast(`${G.dstr()}の天下を開いた。史実の観察を続けます`);};
   setTimeout(step,20);},
  ffgo:b=>{const t=+b.dataset.t;closeModal();setTimeout(()=>tlForward(t),30);},
- mapstyle:()=>{U.mapStyle=U.mapStyle==='relief'?'flat':'relief';if(U.mapStyle==='relief')ensureLand();try{localStorage.setItem('tenka-mapstyle2',U.mapStyle);}catch(e){}U.baseDirty=true;drawBase();renderModal();},
  setting:b=>{const k=b.dataset.k;S.settings=S.settings||{};S.settings[k]=S.settings[k]===false;renderModal();},
  'prop':b=>{const p=S.propQ.shift();if(b.dataset.t==='yes'){S.ally[G.ekey(S.player,p.from)]=720;G.addRel(S.player,p.from,10);toast(`${G.CNK(p.from)}と同盟`,'good');}closeModal();},
  open:b=>{const name=b.dataset.m;if(U.modal&&name!=='menu'){(U.modalTrail||=[]).push({name:U.modal,data:U.mdata});openModal(name,{},true);}else openModal(name);},
@@ -1050,7 +1049,7 @@ const ACT={
  adopt:b=>{const j=b.dataset.clan;if(!S.clans[j]||!S.clans[j].alive)return;S.player=j;S.extinct=0;U.sel=null;closeModal();terrSig='';U.baseDirty=true;renderAll();renderLegend&&renderLegend();const cap=S.clans[j].cap;if(cap)focus(cap,Math.max(cam.z,1));toast(`${G.CNK(j)}として続けます`,'good');},
  new:()=>showScen(),continue:()=>{if(doLoad('auto'))toast('続きから再開','good');},
  scen:b=>showPick(b.dataset.id),
- pick:b=>{U.pickClan=b.dataset.clan;renderPick();const pr=G.preList().find(x=>x.k===U.pickClan);if(pr){focus(pr.castles[0],Math.max(cam.z,.9));return;}const ids=G.clanCastles(U.pickClan);if(ids.length)focus(S.clans[U.pickClan].cap||ids[0],Math.max(cam.z,.9));},
+ pick:b=>chooseInitialClan(b.dataset.clan),
  'back-scen':()=>showScen(),'back-title':()=>showTitle(),start:()=>startGame(),
  'help-title':()=>{$('#titleHelp').hidden=!$('#titleHelp').hidden;}
 };
@@ -1303,14 +1302,14 @@ MODALS['image-credits']=()=>`${menuHeader('出典と利用条件')}<h3>地図・
 MODALS.infrastructure=d=>{const kind=d.kind||'road',s=G.S(),ids=kind==='road'?Object.keys(G.EDGES).filter(id=>G.improvementOwner('road',id)===s.player):G.YOSHO.filter(y=>G.yOwner(y)===s.player&&G.yActive(y)&&y.kind!=='社').map(y=>y.id);return `${menuHeader('街道・施設の整備')}<p>金 <b>${fmt(s.clans[s.player]?.gold||0)}</b>　整備は領内に残り、行軍・補給・守りに役立ちます。</p><div class="infra-tabs"><button class="btn ${kind==='road'?'pri':''}" data-act="infra-tab" data-kind="road">街道</button><button class="btn ${kind==='site'?'pri':''}" data-act="infra-tab" data-kind="site">施設</button></div><div class="infra-list">${ids.map(id=>{const r=G.improvementOffer(kind,id),e=G.EDGES[id],y=kind==='site'&&G.YOSHO.find(y=>y.id===id),title=y?y.n:G.cname(e.a)+'―'+G.cname(e.b),text=G.infrastructureText(kind,id),progress=r.project?Math.min(100,Math.round((s.t-r.project.start)/(r.project.end-r.project.start)*100)):0;return `<article class="infra-card"><header><b>${esc(title)}</b><span class="infra-level">Lv.${r.level}${' ◆'.repeat(r.level-1)}</span></header><p>${esc(text)}</p>${r.project?`<progress max="100" value="${progress}" aria-label="整備の進捗"></progress><small>あと${Math.max(0,r.project.end-s.t)}日で Lv.${r.project.to}</small>`:r.level<4?`<button class="btn" data-act="infra-upgrade" data-kind="${kind}" data-id="${esc(id)}" ${r.ok?'':'disabled'}>Lv.${r.next}へ整備　金${r.cost}・${r.days}日</button>${!r.ok?'<small>'+esc(r.reason)+'</small>':''}`:'<small>整備は最高段階です</small>'}</article>`;}).join('')||'<p>この時点では、整備できる対象がありません。</p>'}</div><p class="hint">史実の出陣・着陣日は保ちます。整備は補給・疲労・区間ごとの行軍や守備に反映されます。</p>`;};
 ACT['infra-tab']=b=>openModal('infrastructure',{kind:b.dataset.kind});
 ACT['infra-upgrade']=b=>{const r=G.startImprovement(b.dataset.kind,b.dataset.id);toast(r.msg,r.ok?'good':'bad');if(r.ok){autosave();U.baseDirty=true;renderModal();}};
-MODALS.menu=()=>`${menuHeader('操作と保存')}<p class="save-status">${U.saveError?'自動保存に失敗しました。保存・読込からファイルに書き出せます。':'自動保存：'+esc(readMeta('auto')||'まだありません')}</p><nav class="menu-links" aria-label="ゲームの操作">${menuLink('army-list','軍勢一覧','出陣・行軍・在陣する各隊')}${menuLink('dip','諸家の関係','同盟・主従・交戦')}${menuLink('infrastructure','街道・施設の整備','道普請・補給・守備を充実')}${menuLink('menu-save','保存・読込','自動保存・手動の保存枠・ファイル')}${menuLink('menu-settings','表示設定','地形・勢力の色・合戦の表示')}${menuLink('menu-library','合戦と史料','合戦一覧・出典・考証の範囲')}${menuLink('menu-help','操作案内','地図・時間・軍勢の見方')}</nav><footer><button class="btn" data-act="to-title">タイトルへ</button><button class="btn pri" data-act="close">地図へ戻る</button></footer>`;
+MODALS.menu=()=>`${menuHeader('操作と保存')}<p class="save-status">${U.saveError?'自動保存に失敗しました。保存・読込からファイルに書き出せます。':'自動保存：'+esc(readMeta('auto')||'まだありません')}</p><nav class="menu-links" aria-label="ゲームの操作">${menuLink('army-list','軍勢一覧','出陣・行軍・在陣する各隊')}${menuLink('dip','諸家の関係','同盟・主従・交戦')}${menuLink('infrastructure','街道・施設の整備','道普請・補給・守備を充実')}${menuLink('menu-save','保存・読込','自動保存・手動の保存枠・ファイル')}${menuLink('menu-settings','表示設定','向き・外交境界・合戦の表示')}${menuLink('menu-library','合戦と史料','合戦一覧・出典・考証の範囲')}${menuLink('menu-help','操作案内','地図・時間・軍勢の見方')}</nav><footer><button class="btn" data-act="to-title">タイトルへ</button><button class="btn pri" data-act="close">地図へ戻る</button></footer>`;
 MODALS['menu-save']=()=>{const slots=[1,2,3].map(n=>{const m=readMeta(n);return `<div class="slot"><span><b>保存枠 ${n}</b><small>${m?esc(m):'空き'}</small></span><button class="mini" data-act="save" data-v="${n}" aria-label="保存枠${n}に保存">保存</button><button class="mini" data-act="load" data-v="${n}" aria-label="保存枠${n}から読込" ${m?'':'disabled'}>読込</button></div>`;}).join('');return `${menuHeader('保存・読込')}<p class="hint">ゲーム内30日ごと・停止時・画面を離れる時に、このブラウザへ自動保存します。</p><div class="slot"><span><b>自動保存</b><small>${esc(readMeta('auto')||'まだありません')}${U.saveError?' ／ 直近の保存に失敗':''}</small></span><button class="mini" data-act="load" data-v="auto" ${readMeta('auto')?'':'disabled'}>読込</button></div>${slots}<h3>ファイルに残す</h3><p class="hint">別のブラウザや端末に移す場合は、ファイルへ書き出してください。</p><div class="mtop"><button class="btn" data-act="export">書き出す</button><button class="btn" data-act="import">取り込む</button></div>`;};
-MODALS['menu-settings']=()=>`${menuHeader('表示設定')}<div class="setting-row"><label for="mapStyleSetting">地図の描き方</label><select id="mapStyleSetting"><option value="relief" ${U.mapStyle==='relief'?'selected':''}>地形図</option><option value="flat" ${U.mapStyle!=='relief'?'selected':''}>白地図</option></select></div><div class="setting-row"><label for="mapRotationSetting">地図の向き</label><select id="mapRotationSetting">${U.MAP_ROTATIONS.map(o=>`<option value="${o.deg}" ${U.mapRotation===o.deg?'selected':''}>${o.name}</option>`).join('')}</select></div><div class="setting-row"><label for="relationSetting">外交境界の線</label><select id="relationSetting"><option value="clan" ${!U.dipView?'selected':''}>標準</option><option value="relation" ${U.dipView?'selected':''}>境界を強調</option></select></div><div class="setting-row"><label for="sceneSetting">合戦を自動で開く</label><select id="sceneSetting"><option value="mine" ${sceneMode()==='mine'?'selected':''}>自軍が参加する合戦</option><option value="all" ${sceneMode()==='all'?'selected':''}>すべて</option><option value="off" ${sceneMode()==='off'?'selected':''}>開かない</option></select></div><p class="hint">布陣を確かめられない合戦は、経過・参加者・史料を表示します。合戦一覧からいつでも開けます。</p>`;
+MODALS['menu-settings']=()=>`${menuHeader('表示設定')}<div class="setting-row"><label for="mapRotationSetting">地図の向き</label><select id="mapRotationSetting">${U.MAP_ROTATIONS.map(o=>`<option value="${o.deg}" ${U.mapRotation===o.deg?'selected':''}>${o.name}</option>`).join('')}</select></div><div class="setting-row"><label for="relationSetting">外交境界の線</label><select id="relationSetting"><option value="clan" ${!U.dipView?'selected':''}>標準</option><option value="relation" ${U.dipView?'selected':''}>境界を強調</option></select></div><div class="setting-row"><label for="sceneSetting">合戦を自動で開く</label><select id="sceneSetting"><option value="mine" ${sceneMode()==='mine'?'selected':''}>自軍が参加する合戦</option><option value="all" ${sceneMode()==='all'?'selected':''}>すべて</option><option value="off" ${sceneMode()==='off'?'selected':''}>開かない</option></select></div><p class="hint">布陣を確かめられない合戦は、経過・参加者・史料を表示します。合戦一覧からいつでも開けます。</p>`;
 MODALS['menu-library']=()=>`${menuHeader('合戦と史料')}<nav class="menu-links">${menuLink('battle-list','合戦一覧','布陣図・参加者・経過')}${menuLink('domain-records','領地再分配の記録','清須会議・宗家と各領国')}${menuLink('alliance-records','盟約と軍事協力','呼称・期間・主従の区別')}${menuLink('research','地図と行軍の出典','街道・湖岸・城の座標')}${menuLink('histv','史実データの確認状況','日付・支配・人物の照合範囲')}${menuLink('menu-about','この作品について','史料・画像・地図の権利表示')}</nav>`;
 MODALS['menu-help']=()=>`${menuHeader('操作案内')}${HELP}`;
 MODALS['menu-about']=()=>`${menuHeader('この作品について')}${ABOUT}`;
 ACT['modal-back']=()=>{const last=U.modalTrail?.pop();if(last)openModal(last.name,last.data,true);};
-document.addEventListener('change',e=>{if(e.target.id==='sceneSetting'){S.settings.scenes=e.target.value==='off'?false:e.target.value;autosave();}if(e.target.id==='mapStyleSetting'){U.mapStyle=e.target.value;try{localStorage.setItem('tenka-mapstyle2',U.mapStyle);}catch(_){}U.baseDirty=true;}if(e.target.id==='mapRotationSetting')U.setMapRotation(e.target.value);if(e.target.id==='relationSetting'){U.dipView=e.target.value==='relation';U.baseDirty=true;renderLegend();renderTop();}});
+document.addEventListener('change',e=>{if(e.target.id==='sceneSetting'){S.settings.scenes=e.target.value==='off'?false:e.target.value;autosave();}if(e.target.id==='mapRotationSetting')U.setMapRotation(e.target.value);if(e.target.id==='relationSetting'){U.dipView=e.target.value==='relation';U.baseDirty=true;renderLegend();renderTop();}});
 const ABOUT=`<h3>この作品について</h3><div class="help">
  <p><b>史実の扱い</b>　出来事の日付や城の持ち主は、通説をもとに置いています。年代や人物の比定には諸説あるものも含みます。現在は史実の観察専用です。未照合の出来事・配置は考証を継続しています。</p>
  <p><b>地図</b>　国土地理院の「地球地図日本」「標高タイル」「明治期の低湿地」を加工して作成しました。明治期の低湿地と手作業の補いで、後の埋め立てや干拓の前の海岸に近づけています。戦国期の正確な海岸線ではありません。国境は今の市町村境をもとに、令制国の範囲へまとめたものです。</p>
@@ -1378,28 +1377,27 @@ function showPick(sid){U.pickScen=sid;U.pickRegion='all';U.mode='pick';$('#app')
  U.pickClan=[DEF[sid],'oda','hashiba'].find(al)||Object.keys(S.clans).filter(al).sort((a,b)=>G.power(b)-G.power(a))[0];renderPick();}
 const PICK_REGIONS={'東北':['陸奥','出羽','蝦夷'],'関東':['常陸','下野','上野','下総','上総','安房','武蔵','相模'],'甲信越':['甲斐','信濃','越後','佐渡'],'東海':['尾張','美濃','三河','遠江','駿河','伊豆','伊勢','伊賀','志摩','飛騨'],'北陸':['越中','越前','加賀','能登','若狭'],'近畿':['近江','山城','大和','摂津','河内','和泉','紀伊','丹波','丹後','但馬'],'中国・四国':['因幡','伯耆','出雲','石見','隠岐','播磨','美作','備前','備中','備後','安芸','周防','長門','讃岐','阿波','伊予','土佐'],'九州':['筑前','筑後','豊前','豊後','肥前','肥後','日向','大隅','薩摩','壱岐'],'朝鮮・対馬':['対馬']};
 function pickRegion(k){const p=G.C[S.clans[k]?.cap]?.prov;return k==='joseon'?'朝鮮・対馬':Object.keys(PICK_REGIONS).find(n=>PICK_REGIONS[n].includes(p))||'その他';}
-document.addEventListener('change',e=>{if(e.target.id==='pickRegion'){U.pickRegion=e.target.value;renderPick();}});
+document.addEventListener('change',e=>{if(U.mode==='pick'&&e.target.id==='pickRegion'){U.pickRegion=e.target.value;renderPick();}});
 function renderPick(){
  const sc=TK.SCEN[U.pickScen],all=Object.keys(S.clans).filter(j=>S.clans[j].alive),list=all.filter(j=>!U.pickRegion||U.pickRegion==='all'||pickRegion(j)===U.pickRegion).sort((a,b)=>G.power(b)-G.power(a));if(list.length&&!list.includes(U.pickClan))U.pickClan=list[0];
  const PRE=G.preList();const pre=PRE.find(x=>x.k===U.pickClan);if(!pre&&!(S.clans[U.pickClan]&&S.clans[U.pickClan].alive))U.pickClan=list[0];
- const k=U.pickClan;const L=pre?(G.genByName(pre.leader)||{n:pre.leader}):G.gen(S.clans[k].leader);
- const preCard=x=>{const LL=G.genByName(x.leader);return `<button class="pc${x.k===k?' on':''}" data-act="pick" data-clan="${x.k}">${familyMarkHTML(x.k)}${faceHTML(x.leader,'sm',x.k)}<span>${G.CN(x.k)}<small>${esc(x.leader)}・${esc(G.CNK(x.parent))}に従う（${x.d[0]}年に自立）</small></span></button>`;};
+ const k=U.pickClan;
+ const preCard=x=>{return `<button class="pc${x.k===k?' on':''}" data-act="pick" data-clan="${x.k}">${familyMarkHTML(x.k)}${faceHTML(x.leader,'sm',x.k)}<span>${G.CN(x.k)}<small>${esc(x.leader)}・${esc(G.CNK(x.parent))}に従う（${x.d[0]}年に自立）</small></span></button>`;};
  const top=list;
  $('#pick').hidden=false;
  $('#pick').innerHTML=`<div class="phead"><small class="eyebrow">${sc.era}（${sc.year}）</small><h2>${esc(sc.title)}</h2></div>
- <div class="pcur">${L?faceHTML(L.n,'xl',k):''}<div><small class="eyebrow">${familyMarkHTML(k,30)}${G.CNK(k)} 当主</small><h2>${esc(L?L.n:'')}</h2><small>${pre?`いまは${G.CNK(pre.parent)}の下で${pre.castles.length}城を預かる ・ ${pre.d[0]}年${pre.d[1]}月に自立${pre.title?'（'+esc(pre.title)+'）':''}`:`${G.clanCastles(k).length}城 ・ ${Math.round(G.clanKoku(k))}万石`}</small></div></div>
- <button class="btn pri big wide" data-act="start">${G.CNK(k)}で見守る</button>
- <p class="hint">地図の城をタップしても大名家を選べます。</p>${PRE.length?`<h4 class="ph4">主家に従う家（のちに自立する家）</h4><p class="hint">城を持たない家臣として始まり、登録された史実の日に独立します。</p><div class="pgrid">${PRE.map(preCard).join('')}</div>`:''}
+ <p class="hint">家を選ぶと、その家の歴史の観察が始まります。地図の城からも選べます。</p>${PRE.length?`<h4 class="ph4">主家に従う家（のちに自立する家）</h4><p class="hint">城を持たない家臣として始まり、登録された史実の日に独立します。</p><div class="pgrid">${PRE.map(preCard).join('')}</div>`:''}
  <label class="pick-region">地域<select id="pickRegion"><option value="all">すべての地域</option>${Object.keys(PICK_REGIONS).map(r=>`<option value="${r}" ${U.pickRegion===r?'selected':''}>${r}</option>`).join('')}</select></label><div class="pgrid pick-all">${top.map(j=>{const LL=G.gen(S.clans[j].leader);return `<button class="pc${j===k?' on':''}" data-act="pick" data-clan="${j}">${familyMarkHTML(j)}${LL?faceHTML(LL.n,'sm',j):''}<span>${G.CN(j)}<small>${esc(LL?LL.n:'')}</small></span></button>`;}).join('')}</div>
 
  <div class="tbtns"><button class="btn" data-act="back-scen">戻る</button></div>`;}
-function startGame(){G.newGame(U.pickScen,U.pickClan);S=G.S();S.hsig=G.histSig();S.chats={};U.sel=null;U.ended=false;enterGame();
- const R0=G.retainer();const cap=R0?((G.genByName(R0.leader)||{}).loc||R0.castles[0]):S.clans[S.player].cap;focus(cap,VPW<=820?1.1:1.3);if(R0)setTimeout(()=>toast(`${R0.leader}は${G.CNK(R0.parent)}の家臣として始まります。登録された史実の日に独立します`),2600);setSpeed(0);openModal('intro',{step:0});}
-const INTRO=[['時を進める','左上の ▶ で進み、もう一度押すと止まります。×1では4秒で1日進みます。速度は ×128 まで切り替えられます。'],['城と軍勢を見る','城を押すと城主や在城者を確認できます。周辺の城や施設の説明はカーソルを合わせるか、タップして開きます。軍勢は凸駒で表示します。'],['史料と照合する','現在は史実の観察専用です。合戦図の出典には確認範囲と未確認部分を明記しています。メニューから保存・読み込みと資料の確認ができます。']];
-MODALS.intro=d=>{const i=Math.max(0,Math.min(2,d.step||0)),v=INTRO[i];return `<header><div><small>はじめの操作 ${i+1} / 3</small><h2>${v[0]}</h2></div></header><p>${v[1]}</p><footer><button class="btn" data-act="close">案内を閉じる</button>${i?'<button class="btn" data-act="intro-prev">戻る</button>':''}<button class="btn pri" data-act="intro-next">${i===2?'地図へ':'次へ'}</button></footer>`;};
+function chooseInitialClan(k){
+ if(U.mode!=='pick'||!TK.SCEN[U.pickScen])return;
+ if(!S.clans[k]?.alive&&!G.preList().some(x=>x.k===k))return;
+ U.pickClan=k;startGame();
+}
+function startGame(){if(U.mode!=='pick')return;G.newGame(U.pickScen,U.pickClan);S=G.S();S.hsig=G.histSig();S.chats={};U.sel=null;U.ended=false;enterGame();
+ const R0=G.retainer();const cap=R0?((G.genByName(R0.leader)||{}).loc||R0.castles[0]):S.clans[S.player].cap;focus(cap,VPW<=820?1.1:1.3);if(R0)setTimeout(()=>toast(`${R0.leader}は${G.CNK(R0.parent)}の家臣として始まります。登録された史実の日に独立します`),2600);setSpeed(0);}
 ACT['army-edge']=b=>{const ps=U.outsideArmies?.[b.dataset.side];if(!ps?.length)return;if(b.dataset.side==='more'){openModal('army-list');return;}const units=[...(G.visibleNativeArmies?.()||S.units),...(G.documentedArmies?.()||[])],u=units.find(u=>u.id===ps[0].id);if(u){const [x,y]=uXY(u);U.cam(x,y,Math.max(cam.z,1.2));}};
-ACT['intro-next']=()=>{const i=U.mdata.step||0;if(i===2)closeModal();else openModal('intro',{step:i+1});};
-ACT['intro-prev']=()=>openModal('intro',{step:(U.mdata.step||0)-1});
 function enterGame(){U.mode='game';U.acc=Math.max(0,Math.min(1,S.visualFraction||0));U.deploymentPreview=null;$('#app').dataset.mode='game';title.hidden=true;$('#pick').hidden=true;terrSig='';U.dipView=false;document.body.classList.remove('dipv');renderLegend();S.chats=S.chats||{};
  G.setS(S);resize();U.speed=0;U.lastSave=S.t;U.saveRetry=0;renderAll();tlReset();autosave();}
 

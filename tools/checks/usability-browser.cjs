@@ -18,15 +18,22 @@ async function click(selector){const p=await ev(`(()=>{const el=document.querySe
 async function shot(name){await ev("(()=>{const e=document.querySelector('.mbox');if(e)e.scrollTop=0;})()");const r=await call('Page.captureScreenshot',{format:'png'});fs.writeFileSync(path.join(OUT,name+'.png'),Buffer.from(r.data,'base64'));}
 async function view(width,height){await call('Emulation.setDeviceMetricsOverride',{width,height,deviceScaleFactor:1,mobile:width<820});await sleep(300);}
 async function load(){await call('Page.navigate',{url:URL});await until("!!document.querySelector('[data-act=new]')&&!document.getElementById('boot')");}
-async function start(){await click('[data-act=new]');await click('[data-act=scen][data-id=s1560]');await click('[data-act=start]');await until("TKUI.modal==='intro'");}
+async function start(){await click('[data-act=new]');await click('[data-act=scen][data-id=s1560]');await click('#pick [data-act=pick].on');await until("TKUI.mode==='game'&&!TKUI.modal");}
 async function menu(){await click('#me [data-m=menu]');}
 const timer=setTimeout(()=>{console.error('timeout');chrome.kill();process.exitCode=1},480000);
 const cover=()=>ev('(()=>{const {corners}=TKUI.mapBounds();return corners[0][0]<=.01&&corners[0][1]<=.01&&corners[1][0]>=innerWidth-.01&&corners[1][1]>=innerHeight-.01})()');
 (async()=>{try{
  const target=await call('Target.createTarget',{url:'about:blank'},null);session=(await call('Target.attachToTarget',{targetId:target.targetId,flatten:true},null)).sessionId;await call('Runtime.enable');await call('Page.enable');await view(1400,1000);await load();await click('[data-act=new]');
  const scenarios=await ev('Object.keys(TK.SCEN)');const selections=[];
- for(const width of [1400,390]){await view(width,900);for(const id of scenarios){await ev(`TKUI.api.ACT.scen({dataset:{id:${JSON.stringify(id)}}})`);await ev("(()=>{const e=document.querySelector('#pickRegion');e.value='東北';e.dispatchEvent(new Event('change',{bubbles:true}));})()");const clans=await ev("[...document.querySelectorAll('.pick-all [data-clan]')].map(e=>e.dataset.clan)");assert.ok(clans.includes('date'),id+' Date selectable');assert.ok(clans.includes('mogami'),id+' Mogami selectable');for(const k of clans){await click(`[data-act=pick][data-clan=${k}]`);assert.equal(await ev('TKUI.pickClan'),k);}assert.equal(await ev("document.querySelector('#pick').scrollWidth>document.querySelector('#pick').clientWidth+1"),false);selections.push({width,id,clans});}await shot('northeast-'+width);}
- await click('[data-act=start]');await until("TKUI.modal==='intro'");await click('[data-act=close]');await ev('TKUI.speed=0');
+ for(const width of [1400,390]){await view(width,900);for(const id of scenarios){
+  await ev(`TKUI.api.ACT.scen({dataset:{id:${JSON.stringify(id)}}})`);
+  const filter="(()=>{const e=document.querySelector('#pickRegion');e.value='東北';e.dispatchEvent(new Event('change',{bubbles:true}));})()";await ev(filter);
+  const clans=await ev("[...document.querySelectorAll('.pick-all [data-clan]')].map(e=>e.dataset.clan)");assert.ok(clans.includes('date'),id+' Date selectable');assert.ok(clans.includes('mogami'),id+' Mogami selectable');
+  assert.equal(await ev('TKUI.mode'),'pick');assert.equal(await ev("document.querySelector('#pick').scrollWidth>document.querySelector('#pick').clientWidth+1"),false);await shot('northeast-'+id+'-'+width);
+  for(const k of clans){await ev(`TKUI.api.ACT.scen({dataset:{id:${JSON.stringify(id)}}})`);await ev(filter);await click(`[data-act=pick][data-clan=${k}]`);assert.equal(await ev('G.S().player'),k);assert.equal(await ev('TKUI.mode'),'game');assert.equal(await ev("document.querySelector('#pick').hidden"),true);assert.equal(await ev("getComputedStyle(document.querySelector('#chron')).display==='none'"),false);}
+  selections.push({width,id,clans});
+ }}
+ await ev('TKUI.speed=0');
  for(const width of [1400,390]){await view(width,900);const before=await ev('TKUI.mapBounds().camera.z');await click('[data-act=zoom-in]');assert.ok(await ev('TKUI.mapBounds().camera.z')>before);await click('[data-act=zoom-out]');await ev("(()=>{const e=document.querySelector('#mapZoomRange');e.value=90;e.dispatchEvent(new Event('input',{bubbles:true}));})()");assert.ok(await ev('TKUI.mapBounds().camera.z')>before);await click('[data-act=zoom-fit]');await shot('zoom-'+width);}
  await view(1400,1000);await ev("TKUI.cam(...G.PJ(140.49,35.94),5)");await sleep(900);await shot('katori');await ev("TKUI.cam(...G.PJ(123.65,41.15),2)");await sleep(600);await shot('liaodong');
  await ev("(()=>{window.testOrigin=G.PJ(136.46,35.36);const u=G.S().units[0];window.testArmies=[0,1,2].map(i=>({...u,id:9100+i,gens:[],commanders:[['徳川家康','石田三成','宇喜多秀家'][i]],clan:['tokugawa','ishida','ukita'][i],state:'march',__p:[...testOrigin,null]}));const old=G.historyPoint;G.historyPoint=u=>u.__p||old(u);G.visibleNativeArmies=()=>testArmies;G.documentedArmies=()=>[];G.marchPhase=()=>({key:'march'});TKUI.cam(...testOrigin,4);})()");await sleep(300);

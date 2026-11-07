@@ -21,9 +21,9 @@ await call('Page.setInterceptFileChooserDialog',{enabled:true});
 await call('Page.navigate',{url});
 async function until(fn){for(let i=0;i<300;i++){if(await invoke(fn))return;await sleep(100);}throw Error('page wait timed out');}
 await until(function(){return !!document.querySelector('[data-act=new]')&&!document.getElementById('boot')});
-await invoke(function(){document.querySelector('[data-act=new]').click();document.querySelector('[data-act=scen][data-id=s1560]').click();document.querySelector('[data-act=start]').click();});
-await until(function(){return TKUI.modal==='intro'});
-await invoke(function(){document.querySelector('#modal [data-act=close]').click();TKUI.acc=.63;TKUI.speed=1;document.querySelector('#me [data-m=menu]').click();});
+await invoke(function(){document.querySelector('[data-act=new]').click();document.querySelector('[data-act=scen][data-id=s1560]').click();document.querySelector('#pick [data-act=pick].on').click();});
+await until(function(){return TKUI.mode==='game'&&!TKUI.modal});
+await invoke(function(){TKUI.acc=.63;TKUI.speed=1;document.querySelector('#me [data-m=menu]').click();});
 await invoke(function(){document.querySelector('#modal [data-act=open][data-m=menu-save]').click();});
 const before=await invoke(function(){const s=G.S(),u=s.units.find(u=>u.clan==='imagawa');s.visualFraction=0;const p=G.historyPoint(u);TKUI.cam(p[0],p[1],3);return {fraction:TKUI.acc,id:u.id,point:p,date:G.dstr(),troops:u.troops,end:u.schedule.end};});
 assert.equal(before.fraction,.63);

@@ -18,13 +18,13 @@ async function click(selector){const p=await ev(`(()=>{const el=document.querySe
 async function shot(name){await ev("(()=>{const e=document.querySelector('.mbox');if(e)e.scrollTop=0;})()");const r=await call('Page.captureScreenshot',{format:'png'});fs.writeFileSync(path.join(OUT,name+'.png'),Buffer.from(r.data,'base64'));}
 async function view(width,height){await call('Emulation.setDeviceMetricsOverride',{width,height,deviceScaleFactor:1,mobile:width<820});await sleep(300);}
 async function load(){await call('Page.navigate',{url:URL});await until("!!document.querySelector('[data-act=new]')&&!document.getElementById('boot')");}
-async function start(){await click('[data-act=new]');await click('[data-act=scen][data-id=s1560]');await click('[data-act=start]');await until("TKUI.modal==='intro'");}
+async function start(){await click('[data-act=new]');await click('[data-act=scen][data-id=s1560]');await click('#pick [data-act=pick].on');await until("TKUI.mode==='game'&&!TKUI.modal");}
 async function menu(){await click('#me [data-m=menu]');}
 const timer=setTimeout(()=>{console.error('timeout');chrome.kill();process.exitCode=1},480000);
 const cover=()=>ev('(()=>{const {corners}=TKUI.mapBounds();return corners[0][0]<=.01&&corners[0][1]<=.01&&corners[1][0]>=innerWidth-.01&&corners[1][1]>=innerHeight-.01})()');
 (async()=>{try{
  const target=await call('Target.createTarget',{url:'about:blank'},null);session=(await call('Target.attachToTarget',{targetId:target.targetId,flatten:true},null)).sessionId;await call('Runtime.enable');await call('Page.enable');
- await view(1400,1000);await load();await start();await click('#modal [data-act=close]');await ev('TKUI.speed=0');
+ await view(1400,1000);await load();await start();await ev('TKUI.speed=0');
  await ev("(()=>{window.testOrigin=G.PJ(136.46,35.36);const u=G.S().units[0];window.testArmies=[0,1,2].map(i=>({...u,id:9100+i,gens:[],commanders:[['徳川家康','石田三成','宇喜多秀家'][i]],clan:['tokugawa','ishida','ukita'][i],state:'march',__p:[...testOrigin,null]}));const old=G.historyPoint;G.historyPoint=u=>u.__p||old(u);G.visibleNativeArmies=()=>testArmies;G.documentedArmies=()=>[];G.marchPhase=()=>({key:'march'});TKUI.cam(...testOrigin,1);})()");await sleep(300);
  for(const zoom of [1,4]){await ev(`TKUI.cam(...testOrigin,${zoom})`);await sleep(250);assert.equal(await ev('TKUI.armyGroups.length'),3);assert.ok(await ev('TKUI.armyGroups.every(g=>g.members.length===1)'));await shot('individual-'+zoom);}
  await ev("TKUI.open('scene',{title:'関ヶ原の戦い'})");await until("document.querySelector('#bCv')?.dataset.mapReady==='true'");
