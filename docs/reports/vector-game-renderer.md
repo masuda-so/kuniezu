@@ -11,3 +11,5 @@
 検証の要約は `data/verification/codex-vector-game-renderer/README.md` と `codex-vector-game-source-failure/README.md`。読込順はテンプレートとmodules台帳を一致させ、asset stampも更新する。
 
 海側の街道は別キャンバスへ描いて陸面の和集合を消す方式にし、重なる陸面を偶奇の逆クリップで海へ戻さない。実Canvasの重なりfixtureで陸2点のalpha0・海のalpha255を確認した。旧陸LODの先行生成は止め、街道LODだけを準備する。領域の共有辺が未着の時に旧領域の海岸輪郭を再描画しない。
+
+本体の変更後に `march-clock-browser.cjs` も実行し、停止/再開の同位置・桶狭間の段階移動・地図読込完了・狭幅・光秀の家紋/陣営色を確認した。JavaScript例外0。[検査要約](../../data/verification/codex-vector-march-battle/README.md)。検査用Chrome終了後は一時プロフィールも削除する。
