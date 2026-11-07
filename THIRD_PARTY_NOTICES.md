@@ -8,6 +8,19 @@ under their own terms, which are recorded below and in
 
 ## Geographic data
 
+- **国土数値情報 湖沼データ W09-05（国土交通省）** — original archive in
+  `data/inputs/mlit-w09-2005/`, with five edited comparison lakes in
+  `kuniezu/map/physical/lakes-reference.geojson`.
+  [The individual data page](https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-W09-2005.html)
+  specifies commercial use under the
+  [individual MLIT terms](https://nlftp.mlit.go.jp/ksj/other/agreement_02.html).
+  Credit: 国土数値情報（湖沼データ）国土交通省を加工して作成（天下分け目の国絵図）.
+  Preserve the attribution, processing notice, terms and applicability limits
+  when distributing the data. These are modern comparison shapes, with the
+  positional and temporal limitations of their sources; they are not surveying,
+  navigation or measured Sengoku shoreline data. The general PDL terms alone
+  are not substituted for the dataset-specific designation.
+
 - **CODH 江戸期地理データセット** — retained reference inputs in
   `data/inputs/codh-edo/` are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).
   Credits: 『江戸末期海岸線／水域データセット』（ROIS-DS人文学オープンデータ共同利用センター作成）doi:10.20676/00000453;
