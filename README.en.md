@@ -21,6 +21,10 @@ is [docs/README.md](docs/README.md); open requests and ownership are in
   generates a standalone Edo-period vector viewer. Open its `index.html` directly
   to inspect Kanto and Kojima Bay, pan, zoom and toggle layers. It does not alter
   the game map or saves.
+- `uv run python tools/geo/prepare_era_overrides.py --at 1560-01-01 --output /tmp/era-overrides-new`
+  prepares the existing inferred Katori water area together with protected land
+  and cuts that must not be drawn as shores. It does not automatically modify
+  CODH originals or the game display.
 - Shows former lakeshores, castles, facilities and people checked against sources,
   marches along historical roads, and battle deployments and movements, each with
   its source.

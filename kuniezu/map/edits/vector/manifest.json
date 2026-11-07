@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "coordinateOrder": "longitude-latitude",
+  "referencePolicy": "Edo-reference-with-separate-evidence-backed-overrides",
+  "overrides": [
+    {
+      "id": "katori-uchinasaka-wide-water",
+      "source": "data/research/katori-review/uchinasaka/south-connection/wide-lake-perimeter.geojson",
+      "sha256": "f30bfbcfc000b10b4d2d696b2c6ba1ccd15bc8301981eda1cd156073b676fdc0",
+      "validFrom": [1560, 1, 1],
+      "validUntil": [1616, 1, 1],
+      "datePrecision": "year",
+      "interpretation": "inferred-period-waterbody",
+      "exactHistoricalShoreline": false,
+      "report": "docs/reports/KATORI_RAPID_MAP_REVIEW.md",
+      "components": {
+        "water": ["uchinasaka-combined-wide-water"],
+        "protectedLand": ["protected-southeast-land"],
+        "comparisonShores": ["outer-lake-comparison-shores"],
+        "openBoundaries": [
+          "north-existing-water",
+          "east-channel-opening",
+          "south-channel-opening",
+          "west-old-channel-opening",
+          "northwest-lake-opening"
+        ]
+      },
+      "boundaryPolicy": "Never stroke the complete water polygon; open boundaries are not shores. Comparison shores are later-period references."
+    }
+  ]
+}
