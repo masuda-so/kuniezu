@@ -78,7 +78,7 @@ node tools/map/build-map.cjs --height --python /path/to/python3
 
 史実の関係データベースは、`uv run python manage.py migrate` の後 `uv run python manage.py import_history` で、`data/research/` と `docs/work/` の入力から根の `db.sqlite3` に作ります（Git には入れません）。`uv run python manage.py history_query --about 織田信長 --year 1582` のように、対象・年・経緯度の範囲で引けます。対象は名前でも識別子（`place:ganjaku` など）でも指せ、名前が複数の対象に当たると候補を並べて止まります。2 つの識別子が同じ対象であること、ゲームの拠点が台帳の場所を代表することは、出典付きの記録として `data/research/curated/identities/*.json` に置きます（形は同フォルダの `README.md`。記録が無い限り、同じ名前の対象を自動ではまとめません）。入っているのは今ある入力の全件で、出典で確認済みのものと、実装の棚卸し（未照合）を区別して持ちます（`docs/architecture/history-rdb.md`）。
 
-サーバーの起動・停止は利用者が行います。検証は起動済み `http://localhost:8000/index.html` に接続します。検査結果の保存先は `GAME_TEST_OUTPUT` で指定できます。
+サーバーは、利用者が一度起動したポート（8000番・8001番）に限り、エージェントも起動・停止します。それ以外のポートは起動しません。検証は起動済みの `http://localhost:8000/index.html` に接続します。検査結果の保存先は `GAME_TEST_OUTPUT` で指定できます。
 
 基本の確認は次のコマンドです。詳しくは [検証手順](tools/checks/README.md) を参照してください。
 
