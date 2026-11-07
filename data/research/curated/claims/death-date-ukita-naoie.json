@@ -1,0 +1,37 @@
+{
+  "id": "death-date-ukita-naoie",
+  "entity": "person:宇喜多直家",
+  "predicate": "death-date",
+  "value": "備前の宇喜多直家が死去し、この日に喪を発した。",
+  "validYears": [
+    1582,
+    1582
+  ],
+  "datePrecision": "day",
+  "source": "hiDainihonshiryoKobun",
+  "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+  "locator": "綱文：和暦 天正10年1月9日 第1条（区分 史料綜覧、編10・冊911（データベースの表示値）、319頁）",
+  "gameBindings": [
+    "TK.HIST:death:宇喜多直家"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-07",
+  "uncertainty": "綱文の日付は喪を発した日で、死去の日そのものとは書かない。 綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。",
+  "linkedEntities": [
+    "person:宇喜多直家"
+  ],
+  "eventTime": {
+    "kind": "dated-event",
+    "date": [
+      1582,
+      1,
+      9
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": false,
+    "precision": "day"
+  },
+  "eventRelation": "death",
+  "eventScope": "綱文が掲げる死去の日付と、綱文に書かれた相手・場所。ゲームの年表の日付（旧暦をゲームの暦表で西暦に直した日）と一致することを確かめた。 死因・享年・時刻・精密な位置は補わない。"
+}

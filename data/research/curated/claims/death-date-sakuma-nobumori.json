@@ -1,0 +1,37 @@
+{
+  "id": "death-date-sakuma-nobumori",
+  "entity": "person:佐久間信盛",
+  "predicate": "death-date",
+  "value": "信長の将佐久間信盛が大和十津川で死んだ。",
+  "validYears": [
+    1581,
+    1581
+  ],
+  "datePrecision": "day",
+  "source": "hiDainihonshiryoKobun",
+  "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+  "locator": "綱文：和暦 天正9年7月24日 第2条（区分 史料綜覧、編10・冊911（データベースの表示値）、300頁）",
+  "gameBindings": [
+    "TK.HIST:death:佐久間信盛"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-07",
+  "uncertainty": "綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。",
+  "linkedEntities": [
+    "person:佐久間信盛"
+  ],
+  "eventTime": {
+    "kind": "dated-event",
+    "date": [
+      1581,
+      7,
+      24
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": false,
+    "precision": "day"
+  },
+  "eventRelation": "death",
+  "eventScope": "綱文が掲げる死去の日付と、綱文に書かれた相手・場所。ゲームの年表の日付は 1582 年 2 月 1 日で、綱文の旧暦 7 月 24 日をゲームの暦表で直した 1581 年 8 月 23 日より 162 日遅い。年表は変えていない（どちらを採るかは未判断）。 死因・享年・時刻・精密な位置は補わない。"
+}

@@ -1,0 +1,37 @@
+{
+  "id": "death-date-miyoshi-jikkyu",
+  "entity": "person:三好実休",
+  "predicate": "death-date",
+  "value": "畠山高政らが三好義賢・安宅冬康らと和泉久米田で戦い、義賢が敗れて死んだ。",
+  "validYears": [
+    1562,
+    1562
+  ],
+  "datePrecision": "day",
+  "source": "hiDainihonshiryoKobun",
+  "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+  "locator": "綱文：和暦 永禄5年3月5日 第2条（区分 史料綜覧、編9・冊910（データベースの表示値）、544頁）",
+  "gameBindings": [
+    "TK.HIST:death:三好実休"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-07",
+  "uncertainty": "綱文は実休を諱の「義賢」で書く。 綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。",
+  "linkedEntities": [
+    "person:三好実休"
+  ],
+  "eventTime": {
+    "kind": "dated-event",
+    "date": [
+      1562,
+      3,
+      5
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": false,
+    "precision": "day"
+  },
+  "eventRelation": "death",
+  "eventScope": "綱文が掲げる死去の日付と、綱文に書かれた相手・場所。ゲームの年表の日付（旧暦をゲームの暦表で西暦に直した日）と一致することを確かめた。 死因・享年・時刻・精密な位置は補わない。"
+}
