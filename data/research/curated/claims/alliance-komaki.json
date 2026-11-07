@@ -1,0 +1,38 @@
+{
+  "id": "alliance-komaki",
+  "entity": "person:織田信雄",
+  "predicate": "alliance-formation",
+  "value": "織田信雄が徳川家康と謀り、老臣の津川義冬・岡田重孝・浅井田宮丸を斬って、秀吉と絶った。",
+  "validYears": [
+    1584,
+    1584
+  ],
+  "datePrecision": "day",
+  "source": "hiDainihonshiryoKobun",
+  "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+  "locator": "綱文：和暦 天正12年3月6日 第3条（区分 大日本史料、第11編之5、733頁）",
+  "gameBindings": [
+    "TK.HIST:小牧・長久手の盟約"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-07",
+  "uncertainty": "年表の 3 月 13 日は、犬山城が攻め落とされた旧暦の月日（同年3月13日の綱文）と同じ数字。 綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。",
+  "linkedEntities": [
+    "person:織田信雄",
+    "person:徳川家康"
+  ],
+  "eventTime": {
+    "kind": "dated-event",
+    "date": [
+      1584,
+      3,
+      6
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": false,
+    "precision": "day"
+  },
+  "eventRelation": "alliance-formation",
+  "eventScope": "綱文が掲げる関係の成立とその日付、綱文に書かれた相手。不一致。年表は 1584 年 3 月 13 日、綱文の天正12年3月6日はゲームの暦表で 1584 年 4 月 16 日（34 日の差）。 年表は変えていない（どちらを採るかは未判断）。 条件・期間・関係の終わりは補わない。"
+}

@@ -1,0 +1,38 @@
+{
+  "id": "alignment-ukita-oda",
+  "entity": "person:宇喜多直家",
+  "predicate": "submission-accepted",
+  "value": "信長が備前の宇喜多直家の降伏を受け入れ、同日、直家の名代の基家が摂津古屋野で織田信忠に礼を述べた。",
+  "validYears": [
+    1579,
+    1579
+  ],
+  "datePrecision": "day",
+  "source": "hiDainihonshiryoKobun",
+  "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+  "locator": "綱文：和暦 天正7年10月30日 第2条（区分 史料綜覧、編10・冊911（データベースの表示値）、229頁）",
+  "gameBindings": [
+    "TK.HIST:宇喜多直家の織田方転属"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-07",
+  "uncertainty": "綱文は同盟ではなく「降を容る」と書く。 綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。",
+  "linkedEntities": [
+    "person:宇喜多直家",
+    "person:織田信長"
+  ],
+  "eventTime": {
+    "kind": "dated-event",
+    "date": [
+      1579,
+      10,
+      30
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": false,
+    "precision": "day"
+  },
+  "eventRelation": "submission-accepted",
+  "eventScope": "綱文が掲げる関係の成立とその日付、綱文に書かれた相手。不一致。年表は 1579 年 10 月 1 日、綱文の天正7年10月30日はゲームの暦表で 1579 年 11 月 18 日（48 日の差）。 年表は変えていない（どちらを採るかは未判断）。 条件・期間・関係の終わりは補わない。"
+}
