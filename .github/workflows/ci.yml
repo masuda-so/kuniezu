@@ -30,6 +30,10 @@ jobs:
           node tools/work/build-catalog.cjs --requests-only --check
       - name: Infrastructure checks
         run: node tools/checks/infrastructure.cjs
+      - name: Canonical road source and readiness
+        run: |
+          node tools/checks/road-vector-loading.cjs
+          node tools/checks/road-vectors.cjs
       - name: Secret scan
         run: node tools/checks/secret-scan.cjs
       - name: Historical records and authority identities

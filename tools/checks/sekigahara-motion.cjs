@@ -8,6 +8,7 @@ const c=vm.createContext({console});c.window=c;
 for(const [,f] of read('kuniezu/templates/index.html').matchAll(/<script src="([^"?]+)(?:\?v=[0-9a-f]+)?"/g)){
  if(!['ui.js','kb.js','bscene.js','terrain-tiles.js'].includes(f))vm.runInContext(read('kuniezu/static/kuniezu/'+f),c,{filename:f});
 }
+require('./history-focus.cjs').prepareRoads(c,read);
 c.G.build();c.G.buildBattleCatalog();
 const {TK,G,TKBattleMotion:M}=c,sc=TK.BATTLES['関ヶ原の戦い'];
 const held=['mori','kikkawa','ankokuji','chosokabe','roster-長束正家'],heldSet=new Set(held);

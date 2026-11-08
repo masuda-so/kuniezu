@@ -381,21 +381,25 @@
       "generatedByCandidates": []
     },
     {
-      "order": 58,
-      "file": "kuniezu/static/kuniezu/modern-road-reference.js",
+      "file": "kuniezu/static/kuniezu/vector-assets.js",
       "area": "geography",
-      "generatedByCandidates": [
-        "tools/geo/modern-road-reference.py"
-      ]
+      "generatedByCandidates": [],
+      "order": 58
     },
     {
-      "order": 59,
+      "file": "kuniezu/static/kuniezu/road-source.js",
+      "area": "geography",
+      "generatedByCandidates": [],
+      "order": 59
+    },
+    {
+      "order": 60,
       "file": "kuniezu/static/kuniezu/fukasaka-route.js",
       "area": "history",
       "generatedByCandidates": []
     },
     {
-      "order": 60,
+      "order": 61,
       "file": "kuniezu/static/kuniezu/road-maritime-review.js",
       "area": "geography",
       "generatedByCandidates": []
@@ -406,34 +410,34 @@
       "generatedByCandidates": [
         "tools/geo/ina-approach.py"
       ],
-      "order": 61
+      "order": 62
     },
     {
-      "order": 62,
+      "order": 63,
       "file": "kuniezu/static/kuniezu/road-display.js",
       "area": "geography",
       "generatedByCandidates": []
     },
     {
-      "order": 63,
+      "order": 64,
       "file": "kuniezu/static/kuniezu/display-road-network.js",
       "area": "geography",
       "generatedByCandidates": []
     },
     {
-      "order": 64,
+      "order": 65,
       "file": "kuniezu/static/kuniezu/movement-display.js",
       "area": "movement",
       "generatedByCandidates": []
     },
     {
-      "order": 65,
+      "order": 66,
       "file": "kuniezu/static/kuniezu/logistics-review.js",
       "area": "movement",
       "generatedByCandidates": []
     },
     {
-      "order": 66,
+      "order": 67,
       "file": "kuniezu/static/kuniezu/route-terrain-profiles.js",
       "area": "geography",
       "generatedByCandidates": [
@@ -441,79 +445,79 @@
       ]
     },
     {
-      "order": 67,
+      "order": 68,
       "file": "kuniezu/static/kuniezu/infrastructure.js",
       "area": "movement",
       "generatedByCandidates": []
     },
     {
-      "order": 68,
+      "order": 69,
       "file": "kuniezu/static/kuniezu/movement-continuity.js",
       "area": "movement",
       "generatedByCandidates": []
     },
     {
-      "order": 69,
+      "order": 70,
       "file": "kuniezu/static/kuniezu/battle-atlas-effects.js",
       "area": "battles",
       "generatedByCandidates": []
     },
     {
-      "order": 70,
+      "order": 71,
       "file": "kuniezu/static/kuniezu/battle-motion.js",
       "area": "battles",
       "generatedByCandidates": []
     },
     {
-      "order": 71,
+      "order": 72,
       "file": "kuniezu/static/kuniezu/battle-atlas.js",
       "area": "battles",
       "generatedByCandidates": []
     },
     {
-      "order": 72,
+      "order": 73,
       "file": "kuniezu/static/kuniezu/history-mode.js",
       "area": "history",
       "generatedByCandidates": []
     },
     {
-      "order": 73,
+      "order": 74,
       "file": "kuniezu/static/kuniezu/map-relations.js",
       "area": "history",
       "generatedByCandidates": []
     },
     {
-      "order": 74,
+      "order": 75,
       "file": "kuniezu/static/kuniezu/historical-families.js",
       "area": "history",
       "generatedByCandidates": []
     },
     {
-      "order": 75,
+      "order": 76,
       "file": "kuniezu/static/kuniezu/alliance-history.js",
       "area": "history",
       "generatedByCandidates": []
     },
     {
-      "order": 76,
+      "order": 77,
       "file": "kuniezu/static/kuniezu/player-copy.js",
       "area": "history",
       "generatedByCandidates": []
     },
     {
-      "order": 77,
+      "order": 78,
       "file": "kuniezu/static/kuniezu/terrain-tiles.js",
       "area": "geography",
       "generatedByCandidates": []
     },
     {
-      "order": 78,
+      "order": 79,
       "file": "kuniezu/static/kuniezu/storage.js",
       "area": "ui-assets",
       "generatedByCandidates": []
     },
     {
-      "order": 79,
+      "order": 80,
       "file": "kuniezu/static/kuniezu/portrait-layout.js",
       "area": "ui-assets",
       "generatedByCandidates": [
@@ -521,7 +525,7 @@
       ]
     },
     {
-      "order": 80,
+      "order": 81,
       "file": "kuniezu/static/kuniezu/kamon-data.js",
       "area": "ui-assets",
       "generatedByCandidates": [
@@ -529,19 +533,19 @@
       ]
     },
     {
-      "order": 81,
+      "order": 82,
       "file": "kuniezu/static/kuniezu/kamon.js",
       "area": "ui-assets",
       "generatedByCandidates": []
     },
     {
-      "order": 82,
+      "order": 83,
       "file": "kuniezu/static/kuniezu/convoys.js",
       "area": "movement",
       "generatedByCandidates": []
     },
     {
-      "order": 83,
+      "order": 84,
       "file": "kuniezu/static/kuniezu/battle-phases.js",
       "area": "battles",
       "generatedByCandidates": []
@@ -550,16 +554,16 @@
       "file": "kuniezu/static/kuniezu/history-state-migration.js",
       "area": "history",
       "generatedByCandidates": [],
-      "order": 84
+      "order": 85
     },
     {
-      "order": 85,
+      "order": 86,
       "file": "kuniezu/static/kuniezu/scenario-openings.js",
       "area": "history",
       "generatedByCandidates": []
     },
     {
-      "order": 86,
+      "order": 87,
       "file": "kuniezu/static/kuniezu/historical-register.js",
       "area": "history",
       "generatedByCandidates": []
@@ -570,22 +574,22 @@
       "generatedByCandidates": [
         "tools/geo/bizen-north-shore.py"
       ],
-      "order": 87
+      "order": 88
     },
     {
       "file": "kuniezu/static/kuniezu/hayashima-upland.js",
       "area": "geography",
       "generatedByCandidates": [],
-      "order": 88
+      "order": 89
     },
     {
       "file": "kuniezu/static/kuniezu/kizakibaru-march.js",
       "area": "history",
       "generatedByCandidates": [],
-      "order": 89
+      "order": 90
     },
     {
-      "order": 90,
+      "order": 91,
       "file": "kuniezu/static/kuniezu/documented-marches-extra.js",
       "area": "battles",
       "generatedByCandidates": []
@@ -594,10 +598,10 @@
       "file": "kuniezu/static/kuniezu/central-offices.js",
       "area": "history",
       "generatedByCandidates": [],
-      "order": 91
+      "order": 92
     },
     {
-      "order": 92,
+      "order": 93,
       "file": "kuniezu/static/kuniezu/raster-map.js",
       "area": "ui-assets",
       "generatedByCandidates": []
@@ -606,16 +610,16 @@
       "file": "kuniezu/static/kuniezu/vector-map.js",
       "area": "ui-assets",
       "generatedByCandidates": [],
-      "order": 93
+      "order": 94
     },
     {
       "file": "kuniezu/static/kuniezu/vector-ui.js",
       "area": "ui-assets",
       "generatedByCandidates": [],
-      "order": 94
+      "order": 95
     },
     {
-      "order": 95,
+      "order": 96,
       "file": "kuniezu/static/kuniezu/battle-conflicts.js",
       "area": "history",
       "generatedByCandidates": [
@@ -623,13 +627,13 @@
       ]
     },
     {
-      "order": 96,
+      "order": 97,
       "file": "kuniezu/static/kuniezu/ui.js",
       "area": "ui-assets",
       "generatedByCandidates": []
     },
     {
-      "order": 97,
+      "order": 98,
       "file": "kuniezu/static/kuniezu/kb.js",
       "area": "history",
       "generatedByCandidates": []

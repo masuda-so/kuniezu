@@ -1,4 +1,4 @@
-"""実入力の生成順を変え、同居する街道の訂正と形状を保持する。"""
+"""編集正本の別路線への変更を通常配信ビルドが上書きしない。"""
 
 import json
 import shutil
@@ -11,8 +11,7 @@ from pathlib import Path
 from tools.geo.generated_js_block import replace_generated_block
 
 ROOT = Path(__file__).resolve().parents[1]
-MODULE = "kuniezu/static/kuniezu/road-evidence-update.js"
-ROADS = "kuniezu/static/kuniezu/modern-road-reference.js"
+ROADS = "kuniezu/map/physical/roads-reference.geojson"
 
 
 class RoadRegenerationTests(unittest.TestCase):
@@ -36,78 +35,103 @@ class RoadRegenerationTests(unittest.TestCase):
                     continue
                 raise AssertionError(bad)
 
-    def test_real_generators_preserve_other_roads(self) -> None:
+    def test_build_preserves_independently_edited_roads(self) -> None:
         with tempfile.TemporaryDirectory(prefix="kuniezu-road-regen-") as temporary:
             fixture = Path(temporary)
-            (fixture / "data/audits").mkdir(parents=True)
-            files = [
-                "tools/geo/generated_js_block.py",
-                "tools/geo/road_reference_review.py",
-                "tools/geo/road_geometry_network.py",
-                "tools/geo/hokkokukaido-apply.py",
-                "tools/geo/sanshu-reference.py",
-                MODULE,
-                ROADS,
-                "data/inputs/sanshu-road-review",
-                "data/inputs/hokkokukaido-review/gsi-network-candidate.json",
-            ]
-            files.extend(
-                f"data/research/curated/sources/{source_id}.json"
-                for source_id in [
-                    "hokkokuNagahamaGuide",
-                    "gsiExperimentalRoads",
-                    "sanshuShiojiri",
-                    "sanshuCodhPosts",
-                    "sanshuModernMountain",
-                    "sanshuModernFoot",
-                ]
-            )
-            for name in files:
-                source, target = ROOT / name, fixture / name
-                target.parent.mkdir(parents=True, exist_ok=True)
-                if source.is_dir():
-                    shutil.copytree(source, target)
-                else:
-                    shutil.copy2(source, target)
+            source = fixture / "source"
+            canonical = source / "physical" / "roads-reference.geojson"
+            output = fixture / "published"
+            canonical.parent.mkdir(parents=True)
+            shutil.copy2(ROOT / ROADS, canonical)
+            records = json.loads(canonical.read_text())
+            originals = {
+                feature["properties"]["name"]: feature
+                for feature in records["features"]
+            }
+            first = json.loads(json.dumps(originals["三州街道"]))
+            second = json.loads(json.dumps(originals["北国街道（近江）"]))
+            first["geometry"]["coordinates"][1][0] += 0.000001
+            second["geometry"]["coordinates"][1][1] += 0.000001
+            replacements = {"三州街道": first, "北国街道（近江）": second}
 
-            def run(name: str) -> None:
-                result = subprocess.run(  # noqa: S603 -- このリポジトリ内の生成器のみ実行
-                    [sys.executable, name],
-                    cwd=fixture,
+            node = shutil.which("node")
+            assert node is not None
+
+            def build() -> None:
+                result = subprocess.run(  # noqa: S603 -- このリポジトリ内の生成器のみ
+                    [
+                        node,
+                        "-e",
+                        (
+                            "require(process.argv[1]).build({"
+                            "source:process.argv[2],output:process.argv[3]})"
+                        ),
+                        str(ROOT / "tools/map/build-vector-assets.cjs"),
+                        str(source),
+                        str(output),
+                    ],
                     capture_output=True,
                     text=True,
                     check=False,
                 )
                 assert result.returncode == 0, result.stderr
+                assert (output / "physical/roads-reference.geojson").read_bytes() == (
+                    canonical.read_bytes()
+                )
 
-            def block(start: str, end: str) -> str:
-                text = (fixture / MODULE).read_text()
-                first = text.index(start)
-                last = text.index(end, first)
-                return text[first : last + len(end)]
+            for name in ("三州街道", "北国街道（近江）"):
+                records["features"] = [
+                    replacements[name]
+                    if feature["properties"]["name"] == name
+                    else feature
+                    for feature in records["features"]
+                ]
+                canonical.write_text(json.dumps(records, ensure_ascii=False))
+                before = canonical.read_bytes()
+                build()
+                assert canonical.read_bytes() == before
 
-            def roads() -> dict[str, object]:
-                text = (fixture / ROADS).read_text()
-                payload = text.split("TK.MODERN_ROAD_REFERENCE=")[1].split(";")[0]
-                return dict(json.loads(payload))
+            stable = canonical.read_bytes()
+            build()
+            assert canonical.read_bytes() == stable
+            after = {
+                feature["properties"]["name"]: feature
+                for feature in json.loads(stable)["features"]
+            }
+            assert after["三州街道"] == first
+            assert after["北国街道（近江）"] == second
+            assert {
+                key: value for key, value in after.items() if key not in replacements
+            } == {
+                key: value
+                for key, value in originals.items()
+                if key not in replacements
+            }
 
-            sanshu_markers = (
-                "/* sanshu-reference.py generated correction */",
-                "/* end sanshu-reference.py generated correction */",
+    def test_ina_generation_keeps_geometry_out_of_runtime_metadata(self) -> None:
+        with tempfile.TemporaryDirectory(prefix="kuniezu-ina-metadata-") as temporary:
+            fixture = Path(temporary)
+            module = "kuniezu/static/kuniezu/ina-approach.js"
+            files = (
+                "tools/geo/ina-approach.py",
+                "data/inputs/ina-approach-route.json",
+                "data/inputs/ina-approach-corridors.json",
+                module,
             )
-            hok_markers = (
-                "/* hokkokukaido-apply.py: comparison geometry */",
-                "/* end hokkokukaido-apply.py: comparison geometry */",
+            for name in files:
+                target = fixture / name
+                target.parent.mkdir(parents=True, exist_ok=True)
+                shutil.copy2(ROOT / name, target)
+            result = subprocess.run(  # noqa: S603 -- 保持するメタデータ生成器だけ
+                [sys.executable, str(fixture / "tools/geo/ina-approach.py")],
+                cwd=fixture,
+                capture_output=True,
+                text=True,
+                check=False,
             )
-            before_roads = roads()
-            sanshu = block(*sanshu_markers)
-            run("tools/geo/hokkokukaido-apply.py")
-            assert block(*sanshu_markers) == sanshu
-            hok = block(*hok_markers)
-            run("tools/geo/sanshu-reference.py")
-            assert block(*hok_markers) == hok
-            stable = (fixture / MODULE).read_text()
-            run("tools/geo/hokkokukaido-apply.py")
-            run("tools/geo/sanshu-reference.py")
-            assert (fixture / MODULE).read_text() == stable
-            assert roads() == before_roads
+            assert result.returncode == 0, result.stderr
+            generated = (fixture / module).read_bytes()
+            assert generated == (ROOT / module).read_bytes()
+            assert b"MODERN_ROAD_REFERENCE" not in generated
+            assert b"TK.CAMPAIGN_CORRIDORS" in generated
+            assert b"TK.ROADS.push" in generated

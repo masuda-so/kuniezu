@@ -53,6 +53,9 @@ is [docs/README.md](docs/README.md); open requests and ownership are in
   prepares the existing inferred Katori water area together with protected land
   and cuts that must not be drawn as shores. It does not automatically modify
   CODH originals or the game display.
+- Roads use an [edited GeoJSON source](data/inputs/road-vector-migration/README.md)
+  shared by map drawing and displayed marches. Normal builds copy the edited
+  geometry without applying corrections again.
 - Shows former lakeshores, castles, facilities and people checked against sources,
   marches along historical roads, and battle deployments and movements, each with
   its source.
