@@ -1,0 +1,23 @@
+{
+  "id": "person:otomo-sorin",
+  "name": "大友宗麟",
+  "gameNames": [
+    "大友宗麟",
+    "大友義鎮"
+  ],
+  "authorityIds": [
+    "ndlna:00625175"
+  ],
+  "authorityEvidence": {
+    "scope": "person-identity",
+    "checked": "2026-11-07",
+    "ndlUrl": "https://id.ndl.go.jp/auth/ndlna/00625175",
+    "sourceNote": "data/research/source-notes/otomo-sorin-authority.json",
+    "identityChecks": [
+      "国立国会図書館典拠が宗麟と義鎮の別名関係を明記",
+      "大分市文化財課が大友21代当主と府内の館を同定",
+      "宗像古文書翻刻が宗麟署名の人物を大友義鎮と同定"
+    ],
+    "ndlSnapshot": "data/research/source-notes/otomo-sorin-authority.json"
+  }
+}
