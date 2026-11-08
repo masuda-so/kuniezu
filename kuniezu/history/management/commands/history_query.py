@@ -57,6 +57,10 @@ class Command(BaseCommand):
         parser.add_argument("--path", help="対象の軌跡（日付と場所のある移動・所在）")
         parser.add_argument("--legs", help="軌跡の隣り合う 2 点を結ぶのに要る速さ")
         parser.add_argument("--bundle", help="同じ事象に関わった対象")
+        parser.add_argument(
+            "--phenomenon",
+            help="事象のキー（campaign:文禄の役 など）。その事象と、親・部分の事象",
+        )
 
     def thing(self, name: str) -> Thing:
         found = list(queries.find_things(name))
@@ -75,7 +79,30 @@ class Command(BaseCommand):
 
     def handle(self, *args: Any, **options: Any) -> None:
         answer: Any
-        if options["path"]:
+        if options["phenomenon"]:
+            others = [
+                name
+                for name in ("about", "year", "box", "path", "legs", "bundle")
+                if options.get(name) is not None
+            ]
+            if others:
+                # One phenomenon and its parent and parts: nothing to combine.
+                listed = ", ".join("--" + name for name in others)
+                message = f"--phenomenon は {listed} と一緒には使えない"
+                raise CommandError(message)
+            key = options["phenomenon"]
+            item = Phenomenon.objects.filter(key=key).first()
+            if item is None:
+                message = f"事象のキー「{key}」は無い"
+                raise CommandError(message)
+            answer = describe(item) | {
+                "parent": item.parent.key if item.parent else None,
+                "parts": [
+                    describe(part)
+                    for part in item.parts.order_by("jd_start", "jd_end", "key")
+                ],
+            }
+        elif options["path"]:
             answer = [
                 stop.__dict__ for stop in queries.path(self.thing(options["path"]))
             ]
