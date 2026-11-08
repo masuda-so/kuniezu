@@ -48,6 +48,10 @@ Json = dict[str, Any]
 RESEARCH = "data/research"
 CATALOG = "docs/work/catalog.jsonl"
 IDENTITIES = "data/research/curated/identities"
+# The index of 綱文 (one row per article), by year. It holds where each article
+# is, never its text; every article starts unclassified.
+KOBUN_INDEX = "data/research/kobun-index"
+KOBUN_UNCLASSIFIED = "kobun-unclassified"
 MONTH_TABLE = "kuniezu/static/kuniezu/koyomi.js"
 TITLE_LENGTH = 80
 
@@ -116,7 +120,7 @@ CLAIM_KIND = {
         "siege-and-field-battle documented-siege-phase military-event castle-fall "
         "campaign-action military-side command hoifa-conquest ula-conquest "
         "jianzhou-unification amur-expedition encirclement-fort-preparation "
-        "military-corridor fall-date outer-defence-breached"
+        "military-corridor fall-date outer-defence-breached castle-surrender"
     ),
     PhenomenonKind.CONTROL: (
         "captured-and-renamed territorial-transfer territory-confirmation "
@@ -125,7 +129,7 @@ CLAIM_KIND = {
     ),
     PhenomenonKind.RELATION: (
         "relationship-to-ming recorded-ming-tribute-missions alliance-formation "
-        "submission-accepted"
+        "submission-accepted submission diplomatic-audience peace-agreement"
     ),
     PhenomenonKind.OFFICE: (
         "central-office military-role military-religious-role historical-castle-role"
@@ -952,6 +956,55 @@ class Importer:
             message = f"identity names a thing no input has: {', '.join(missing)}"
             raise ValueError(message)
 
+    # ---- the 綱文 index ----
+
+    def kobun_time(self, row: Json) -> When:
+        """The article's own date, kept in its calendar and to its precision."""
+        year = row["year"]
+        if row["precision"] == "day":
+            when = self.lunisolar_day(
+                [year, row["month"], row["day"]], leap=bool(row["leapMonth"])
+            )
+        else:
+            start, end = dates.year_bounds(year)
+            when = When(
+                precision=Precision.PERIOD,
+                calendar=Calendar.LUNISOLAR,
+                year=year,
+                month=row["month"],
+                leap=bool(row["leapMonth"]),
+                jd_start=start,
+                jd_end=end,
+                label=row["jcDate"],
+                asserted=False,
+            )
+        if not when.exact:
+            # Outside the month table the lunar year runs into the next
+            # western year, so the bounds are widened and not asserted.
+            when.jd_end = dates.year_bounds(year + 1)[1]
+            when.asserted = False
+        return when
+
+    def load_kobun_index(self) -> None:
+        folder = self.root / KOBUN_INDEX
+        if not folder.exists():
+            return
+        for path in sorted(folder.glob("*.jsonl")):
+            for row in read_jsonl(path):
+                record = self.record(
+                    row["id"], RecordType.KOBUN, Status.REGISTERED, row
+                )
+                self.phenomenon(
+                    row["id"],
+                    record,
+                    mode=Mode.EVENT,
+                    kind=PhenomenonKind.OTHER,
+                    subtype=KOBUN_UNCLASSIFIED,
+                    title=f"{row['jcDate']} 第{row['article']}条",
+                    when=self.kobun_time(row),
+                    status=Status.REGISTERED,
+                )
+
     # ---- one import ----
 
     @transaction.atomic
@@ -969,6 +1022,7 @@ class Importer:
         self.load_catalog()
         self.load_claims()
         self.load_locations()
+        self.load_kobun_index()
         self.check_identities()
         self.represent_points()
         self.borrow_points()

@@ -10,6 +10,7 @@ from kuniezu.history import queries
 from kuniezu.history.importer import CATALOG
 from kuniezu.history.importer import CLAIM_KIND_OF
 from kuniezu.history.importer import IDENTITIES
+from kuniezu.history.importer import KOBUN_INDEX
 from kuniezu.history.importer import MONTH_TABLE
 from kuniezu.history.importer import RESEARCH
 from kuniezu.history.importer import import_history
@@ -57,6 +58,7 @@ def inputs(tmp_path):
     for name in (CATALOG, MONTH_TABLE):
         (tmp_path / name).parent.mkdir(parents=True, exist_ok=True)
         shutil.copy(ROOT / name, tmp_path / name)
+    shutil.copytree(ROOT / KOBUN_INDEX, tmp_path / KOBUN_INDEX)
     return tmp_path
 
 
@@ -78,6 +80,9 @@ def test_every_input_record_is_kept_once(inputs):
             lines(inputs / RESEARCH / "implemented-sites.jsonl")
         ),
         RecordType.CATALOG: len(catalog),
+        RecordType.KOBUN: sum(
+            len(lines(path)) for path in (inputs / KOBUN_INDEX).glob("*.jsonl")
+        ),
     }
     for record_type, count in expected.items():
         assert Record.objects.filter(record_type=record_type).count() == count
@@ -340,6 +345,10 @@ def test_every_word_for_a_claim_has_one_class():
     # An alliance, or a surrender that is accepted, is a relation between parties.
     assert CLAIM_KIND_OF["alliance-formation"] == PhenomenonKind.RELATION
     assert CLAIM_KIND_OF["submission-accepted"] == PhenomenonKind.RELATION
+    assert CLAIM_KIND_OF["submission"] == PhenomenonKind.RELATION
+    assert CLAIM_KIND_OF["diplomatic-audience"] == PhenomenonKind.RELATION
+    assert CLAIM_KIND_OF["peace-agreement"] == PhenomenonKind.RELATION
+    assert CLAIM_KIND_OF["castle-surrender"] == PhenomenonKind.CONFLICT
     assert set(CLAIM_KIND_OF.values()) <= set(PhenomenonKind) - {PhenomenonKind.OTHER}
 
 
@@ -685,3 +694,65 @@ def test_dated_water_works_do_not_invent_locations(inputs):
     chojabori = Thing.objects.get(key="place:chojabori")
     assert not Place.objects.filter(thing=chojabori).exists()
     assert not queries.in_box(139, 140, 37, 39).filter(key__startswith=prefix).exists()
+
+
+ARTICLES_1534 = 478
+
+
+def test_every_kobun_article_of_a_year_is_listed_once_and_unclassified(inputs):
+    summary = import_history(inputs)
+
+    listed = Record.objects.filter(record_type=RecordType.KOBUN, retired_run=None)
+    # The 1534 index holds every article of 天文3年 that the database returns.
+    assert listed.count() == ARTICLES_1534
+    assert len({record.payload["mgno"] for record in listed}) == ARTICLES_1534
+    assert not any("kobun" in record.payload for record in listed)
+    articles = Phenomenon.objects.filter(records__record_type=RecordType.KOBUN)
+    assert articles.count() == ARTICLES_1534
+    assert set(articles.values_list("kind", flat=True)) == {PhenomenonKind.OTHER}
+    assert summary.unclassified["kobun-unclassified"] == ARTICLES_1534
+    # 1534 lies outside the month table: the day is kept, its bounds are not
+    # asserted, and they reach into the next western year.
+    first = articles.get(key="kobun:020100200909")
+    assert (first.calendar, first.year, first.month, first.day) == (
+        Calendar.LUNISOLAR,
+        1534,
+        1,
+        1,
+    )
+    assert not first.jd_exact
+    assert not first.bounds_asserted
+    assert first.jd_end == dates.year_bounds(1535)[1]
+    leap = articles.get(key="kobun:020100200950")
+    assert leap.leap_month
+    year_only = articles.get(key="kobun:020100201384")
+    assert year_only.precision == "period"
+    assert year_only.time_label == "天文3年是歳"
+
+
+def test_contact_peace_and_surrender_keep_their_narrow_meaning(inputs):
+    import_history(inputs)
+    for key in (
+        "submission-date-masamune",
+        "submission-tokugawa-ieyasu",
+        "submission-uesugi-kagekatsu",
+    ):
+        item = Phenomenon.objects.get(key="claim:" + key)
+        assert item.subtype == "diplomatic-audience"
+        assert item.kind == PhenomenonKind.RELATION
+        assert item.mode == Mode.EVENT
+    audience = Phenomenon.objects.get(key="claim:submission-date-masamune")
+    assert "翌日" not in audience.summary
+    assert "帰国" not in audience.summary
+    assert "黒川城" not in audience.summary
+    peace = Phenomenon.objects.get(key="claim:peace-hashiba-nobukatsu")
+    assert peace.subtype == "peace-agreement"
+    assert peace.kind == PhenomenonKind.RELATION
+    surrender = Phenomenon.objects.get(key="claim:submission-ryukyu-shuri")
+    assert surrender.subtype == "castle-surrender"
+    assert surrender.kind == PhenomenonKind.CONFLICT
+    assert "大島" not in surrender.summary
+    assert "運天" not in surrender.summary
+    assert not Participation.objects.filter(
+        phenomenon=surrender, thing__name="樺山久高"
+    ).exists()

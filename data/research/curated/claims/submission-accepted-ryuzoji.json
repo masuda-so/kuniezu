@@ -1,0 +1,38 @@
+{
+  "id": "submission-accepted-ryuzoji",
+  "entity": "person:龍造寺政家",
+  "predicate": "submission-accepted",
+  "value": "秀吉が、龍造寺政家・原田信種らが款を通じたことを賞し、所領を安堵して、戦功を励ました。",
+  "validYears": [
+    1587,
+    1587
+  ],
+  "datePrecision": "day",
+  "source": "hiDainihonshiryoKobun",
+  "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+  "locator": "綱文：和暦 天正15年1月23日 第1条（区分 史料綜覧、編11・冊912（データベースの表示値）、151頁）",
+  "gameBindings": [
+    "TK.HIST:龍造寺の羽柴への帰属"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-07",
+  "uncertainty": "款を通じた日そのものは綱文に無い。政家が秀吉に来謁したのは4月11日（4月10日の綱文の「翌日」）。 綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。",
+  "linkedEntities": [
+    "person:龍造寺政家",
+    "person:羽柴秀吉"
+  ],
+  "eventTime": {
+    "kind": "dated-event",
+    "date": [
+      1587,
+      1,
+      23
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": false,
+    "precision": "day"
+  },
+  "eventRelation": "submission-accepted",
+  "eventScope": "綱文が掲げる関係の変化とその日付、綱文に書かれた相手。不一致。年表は 1587 年 6 月 1 日、綱文の天正15年1月23日はゲームの暦表で 1587 年 3 月 2 日（91 日の差）。 年表は変えていない（どちらを採るかは未判断）。 条件・領地の範囲・関係の終わりは補わない。"
+}

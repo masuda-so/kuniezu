@@ -1,0 +1,37 @@
+{
+  "id": "death-date-amago-haruhisa",
+  "entity": "person:尼子晴久",
+  "predicate": "death-date",
+  "value": "尼子晴久が死去し、子の義久が継いだ。",
+  "validYears": [
+    1560,
+    1560
+  ],
+  "datePrecision": "day",
+  "source": "hiDainihonshiryoKobun",
+  "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+  "locator": "綱文：和暦 永禄3年12月24日 第6条（区分 史料綜覧、編9・冊910（データベースの表示値）、514頁）",
+  "gameBindings": [
+    "TK.HIST:death:尼子晴久"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-07",
+  "uncertainty": "綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。",
+  "linkedEntities": [
+    "person:尼子晴久"
+  ],
+  "eventTime": {
+    "kind": "dated-event",
+    "date": [
+      1560,
+      12,
+      24
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": false,
+    "precision": "day"
+  },
+  "eventRelation": "death",
+  "eventScope": "綱文が掲げる死去の日付と、綱文に書かれた相手・場所。ゲームの年表の日付（旧暦をゲームの暦表で西暦に直した日）と一致することを確かめた。 死因・享年・時刻・精密な位置は補わない。"
+}
