@@ -753,3 +753,15 @@ def test_a_named_scene_must_be_one_timeline_event(inputs):
 
     with pytest.raises(ValueError, match="no single timeline event"):
         import_history(inputs)
+
+
+def test_a_named_scene_is_checked_against_the_timeline_itself(inputs):
+    # Without its timeline event, the catalog still makes "battle:玉浦海戦".
+    path = inputs / RESEARCH / "implemented-events.jsonl"
+    rows = [row for row in lines(path) if row.get("title") != "玉浦海戦"]
+    with path.open("w", encoding="utf-8") as stream:
+        for row in rows:
+            stream.write(json.dumps(row, ensure_ascii=False) + "\n")
+
+    with pytest.raises(ValueError, match="no single timeline event is 玉浦海戦"):
+        import_history(inputs)

@@ -893,15 +893,20 @@ class Importer:
         if not path.exists():
             return
         rows = json.loads(path.read_text(encoding="utf-8"))["conflicts"]
+        events = {item.pk for items in self.timeline.values() for item in items}
         for row in rows:
             record = self.record(
                 "conflict:" + row["id"], RecordType.CONFLICT, Status.REGISTERED, row
             )
             known = self.phenomena.get(row["id"])
             scene = row.get("existingSceneTitle")
-            if known is None and scene:
-                same = self.by_title.get(scene, [])
-                if len(same) != 1:
+            if scene:
+                # The named scene must be one timeline event, whatever else
+                # already goes by this identifier or this title.
+                same = [
+                    item for item in self.by_title.get(scene, []) if item.pk in events
+                ]
+                if len(same) != 1 or (known is not None and known != same[0]):
                     message = f"{row['id']}: no single timeline event is {scene}"
                     raise ValueError(message)
                 known = same[0]
