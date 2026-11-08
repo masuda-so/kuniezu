@@ -235,5 +235,11 @@ Battle-map frames are inputs in `data/inputs/battle-atlas-frames.json`. Detailed
 [Takatenjin regeneration and verification](docs/reports/TAKATENJIN_ATLAS_BOUNDS.md)
 (Japanese).
 
+Reviewed portrait originals, sources, and crops are recorded in
+`tools/faces/reviewed-portraits.json`. Verify published additions with
+`uv run python tools/faces/build_reviewed.py --check`; after editing those inputs,
+use `--write` and `node tools/build/stamp-assets.cjs` to regenerate them. This does
+not fetch images or rebuild the entire portrait collection.
+
 The repository is licensed under [LICENSE](LICENSE) (MIT). Bundled or derived map
 data follows the terms of each source.

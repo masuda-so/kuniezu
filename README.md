@@ -112,4 +112,6 @@ GitHub Actionsの通常CIは、サーバー不要の検査（構文・保存・�
 
 合戦図の範囲入力は `data/inputs/battle-atlas-frames.json` です。生成器の `--titles` で対象だけを更新できます。細密比較標高の指定がある対象は旧生成器で上書きせず、[原本と再生成手順](data/inputs/battle-dem-detail/README.md)に従います。[高天神の再生成と検証](docs/reports/TAKATENJIN_ATLAS_BOUNDS.md)を参照してください。
 
+追加肖像の原本・出典・切出しは `tools/faces/reviewed-portraits.json` で管理します。`uv run python tools/faces/build_reviewed.py --check` で配信画像との一致を確認し、入力を更新した場合は `--write` と `node tools/build/stamp-assets.cjs` で再生成します。ネットワーク取得や全肖像の再生成は行いません。
+
 ライセンスは [LICENSE](LICENSE)（MIT）です。同梱・派生する地図データ等は各出典の条件に従います。

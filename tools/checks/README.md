@@ -13,6 +13,7 @@
 | 初期の勢力選択・年表・表示設定 | `offline.cjs` | `selection-ui-browser.cjs`（全シナリオ・広狭幅・地域・二重入力・保存復元・城から選択） |
 | 本体ベクター描画 | `vector-map.cjs`・`vector-assets.cjs` | `vector-game-browser.cjs`（広幅・狭幅・回転・全図）、`VECTOR_FAIL_SOURCE=1`（取得失敗と再読込） |
 | 肖像の代替crop | `portrait-loading.cjs`、`build_fallback.py --root . --check` | `portrait-fallback-browser.cjs`（`PORTRAIT_MODE=normal/primary-fail/all-fail`） |
+| 登録漏れの追加肖像 | `uv run pytest tests/test_reviewed_portraits.py`、`build_reviewed.py --check` | 同じブラウザ検査へ `PORTRAIT_MANIFEST=tools/faces/reviewed-portraits.json PORTRAIT_FALLBACK_FILE=portraits/reviewed-fallback.webp` を渡す |
 | 基本・保存・史実進行 | `offline.cjs` | `completion-browser.cjs` |
 | 秘密情報（APIキー・秘密鍵など。gzipも展開） | `secret-scan.cjs`（CIでも実行。第三者ページの保存前は `tools/research/source-privacy.cjs`） | — |
 | 読み込みの確認値（更新後に古い版を使わせない） | `node tools/build/stamp-assets.cjs --check`（CIでも実行。kuniezu/static/kuniezu/ のファイルを変えたら `node tools/build/stamp-assets.cjs` を実行） | — |

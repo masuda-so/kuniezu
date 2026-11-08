@@ -1,0 +1,67 @@
+{
+  "version": 1,
+  "outputSize": 128,
+  "portraits": [
+    {
+      "name": "伊東義祐",
+      "input": "data/inputs/reviewed-portraits/伊東義祐.png",
+      "sha256": "a5264516fd4237b07f58c33fa38d90d93c2177cc68f926d80bee006bc9bda56d",
+      "crop": [
+        320,
+        200,
+        330,
+        330
+      ],
+      "output": "portraits/reviewed-伊東義祐.jpg",
+      "source": "https://commons.wikimedia.org/wiki/File:It%C5%8D_Yoshisuke.png",
+      "downloadUrl": "https://upload.wikimedia.org/wikipedia/commons/0/0f/It%C5%8D_Yoshisuke.png",
+      "identitySource": "https://www.lib-sakai.jp/yuduriha/yuduriha27screen.pdf",
+      "sourceType": "historical-portrait-photograph",
+      "licenseBasis": "Commons: faithful reproduction of public-domain historical artwork; PD-Art/PDM; preserve source notices",
+      "sourceNotice": "Commons requests supplementary US public-domain tagging; image upload date is not the artwork creation date",
+      "review": "顔と肩の位置を原画で目視確認。原画の傷み・色・陰影を保ち、別人や想像画へ置き換えない。",
+      "acquired": "2026-11-09"
+    },
+    {
+      "name": "高橋紹運",
+      "input": "data/inputs/reviewed-portraits/高橋紹運.jpg",
+      "sha256": "7db566ebeb3a1a6f11da9006bef0dee51b5bd133d8f34caccff61403ac235415",
+      "crop": [
+        270,
+        225,
+        400,
+        400
+      ],
+      "output": "portraits/reviewed-高橋紹運.jpg",
+      "source": "https://commons.wikimedia.org/wiki/File:Takahashi_Zyoun.jpg",
+      "downloadUrl": "https://upload.wikimedia.org/wikipedia/commons/5/56/Takahashi_Zyoun.jpg",
+      "identitySource": "https://commons.wikimedia.org/wiki/File:Takahashi_Zyoun.jpg",
+      "sourceType": "historical-portrait-photograph",
+      "licenseBasis": "Commons: faithful reproduction of public-domain historical artwork; PD-Art/PDM; preserve source notices",
+      "sourceNotice": "Commons requests supplementary US public-domain tagging; image upload date is not the artwork creation date",
+      "review": "顔と肩の位置を原画で目視確認。原画の傷み・色・陰影を保ち、別人や想像画へ置き換えない。",
+      "acquired": "2026-11-09"
+    },
+    {
+      "name": "龍造寺政家",
+      "input": "data/inputs/reviewed-portraits/龍造寺政家.jpg",
+      "sha256": "05048813cd489f23905fb1d1010e3fde1307eff3fe332462d39d34c734e80fa1",
+      "crop": [
+        570,
+        2020,
+        500,
+        500
+      ],
+      "output": "portraits/reviewed-龍造寺政家.jpg",
+      "source": "https://commons.wikimedia.org/wiki/File:Ry%C5%ABz%C5%8Dji_Masaie.jpg",
+      "downloadUrl": "https://upload.wikimedia.org/wikipedia/commons/5/5f/Ry%C5%ABz%C5%8Dji_Masaie.jpg",
+      "identitySource": "https://commons.wikimedia.org/wiki/File:Ry%C5%ABz%C5%8Dji_Masaie.jpg",
+      "sourceType": "historical-portrait-photograph",
+      "licenseBasis": "Commons: faithful reproduction of public-domain historical artwork; PD-Art/PD-old/PDM; preserve source notices",
+      "sourceNotice": "Commons requests supplementary US public-domain tagging; image upload date is not the artwork creation date",
+      "review": "画賛冒頭の政家名と顔を原画で確認。冠や賛でなく顔を中心に等比で切り出し、隆信像や高房像へ置き換えない。",
+      "acquired": "2026-11-09",
+      "inscriptionReading": "貞享二年乙丑六月一日と読図。画賛の年記であり絵の制作日を断定しない。"
+    }
+  ]
+}
