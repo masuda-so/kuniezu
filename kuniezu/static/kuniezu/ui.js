@@ -429,8 +429,12 @@ function drawBase(){
  if(!valid){
   // 大画面での過剰なメモリ確保を避ける。縮小画像を拡大する方式にはしない。
   if((VW+pad*2)*(VH+pad*2)*DPR*DPR>12000000){baseSurface=null;paintBase(bctx);U.baseCacheStats.builds++;U.baseDirty=false;return;}
-  const cv=document.createElement('canvas');cv.width=Math.ceil((VW+pad*2)*DPR);cv.height=Math.ceil((VH+pad*2)*DPR);
-  paintBase(rotText(cv.getContext('2d')),pad);baseSurface={cv,key,state:S,x:cam.x,y:cam.y,z:cam.z,cc:cc.slice()};U.baseCacheStats.builds++;
+  // 視点や領主が変わっても画布は再利用する。画布に付随する海・川の層も保持し、再確保を減らす。
+  const cv=baseSurface?.cv||document.createElement('canvas'),w=Math.ceil((VW+pad*2)*DPR),h=Math.ceil((VH+pad*2)*DPR);
+  if(cv.width!==w)cv.width=w;if(cv.height!==h)cv.height=h;
+  // 現在のパスはsave/restoreで戻らないので、前の描画から持ち越さない。
+  const c=rotText(cv.getContext('2d'));c.save();c.beginPath();try{paintBase(c,pad);}finally{c.restore();}
+  baseSurface={cv,key,state:S,x:cam.x,y:cam.y,z:cam.z,cc:cc.slice()};U.baseCacheStats.builds++;
  }else U.baseCacheStats.hits++;
  const t=baseSurface,sx=(pad+(cam.x-t.x)*cam.z)*DPR,sy=(pad+(cam.y-t.y)*cam.z)*DPR;
  bctx.setTransform(1,0,0,1,0,0);bctx.clearRect(0,0,base.width,base.height);bctx.drawImage(t.cv,sx,sy,base.width,base.height,0,0,base.width,base.height);U.baseDirty=false;
