@@ -1,0 +1,488 @@
+{
+  "checked": "2026-11-08",
+  "scope": "未登録ゲーム人物10名の同定のみ。生没日・所在・所属・別名開始日の命題追加なし。",
+  "rawLicense": {
+    "name": "CC0 1.0",
+    "url": "https://www.wikidata.org/wiki/Wikidata:Licensing",
+    "scope": "Wikidata JSON only; NDL and public institution originals retain their own terms"
+  },
+  "records": [
+    {
+      "name": "堀秀政",
+      "japaneseLabel": "堀秀政",
+      "wikidataId": "Q8190166",
+      "wikidataRevision": 2550972369,
+      "wikidataJapaneseLabel": "堀秀政",
+      "entityDataUrl": "https://www.wikidata.org/wiki/Special:EntityData/Q8190166.json",
+      "revisionUrl": "https://www.wikidata.org/w/index.php?title=Q8190166&oldid=2550972369",
+      "rawEntityDataSnapshot": "data/research/source-notes/authority-batch-a-raw/Q8190166.json",
+      "rawSha256": "e7b537e6fc606aaac84779987f25d66c70171b84c5a9c092e78120befc4493c9",
+      "identitySourceIds": [
+        "ndlBatchAHoriHidemasa"
+      ],
+      "identitySourceUrl": "https://id.ndl.go.jp/auth/ndlna/01071990",
+      "identitySourceLocator": "個人名典拠01071990のprimaryTopic・名称、別名欄",
+      "identityChecks": [
+        "NDL原本の典拠URI・Person区分・主名が対象人物に対応",
+        "Wikidata原本のQ5人物型とP349のNDL 01071990が同じ典拠を参照する"
+      ],
+      "adoptedNames": [
+        "堀秀政"
+      ],
+      "scope": "identity-only; no date/location claims",
+      "ndlId": "01071990",
+      "ndlIdentity": {
+        "uri": "http://id.ndl.go.jp/auth/entity/01071990",
+        "type": {
+          "uri": "http://xmlns.com/foaf/0.1/Person"
+        },
+        "name": "堀秀政",
+        "dateOfBirth": "1553",
+        "dateOfDeath": "1590",
+        "biographicalInformation": [
+          "安土桃山時代の武将"
+        ]
+      },
+      "excludedNames": [
+        "堀久太郎",
+        "名人久太郎"
+      ],
+      "nameEvidence": [
+        {
+          "name": "堀秀政",
+          "supports": [
+            "wikidata-ja-label-or-alias",
+            "ndl-primary"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "堀秀治",
+      "japaneseLabel": "堀秀治",
+      "wikidataId": "Q9755540",
+      "wikidataRevision": 2556900847,
+      "wikidataJapaneseLabel": "堀秀治",
+      "entityDataUrl": "https://www.wikidata.org/wiki/Special:EntityData/Q9755540.json",
+      "revisionUrl": "https://www.wikidata.org/w/index.php?title=Q9755540&oldid=2556900847",
+      "rawEntityDataSnapshot": "data/research/source-notes/authority-batch-a-raw/Q9755540.json",
+      "rawSha256": "6334785074493c87ec1a75881e2c8e3144d0605bc3ea35d7d8aae867973667f2",
+      "identitySourceIds": [
+        "publicBatchAHoriHideharu"
+      ],
+      "identitySourceUrl": "https://history-museum.city.fukui.lg.jp/tenji/tenran/202505kitanosho.html",
+      "identitySourceLocator": "導入本文。北庄の歴代領主に堀秀政・秀治を挙げる。",
+      "identityChecks": [
+        "公的機関本文が堀秀治を対象の武将として記載",
+        "WikidataのQ5人物型・主名称と公的本文の人物役割を照合。他の同姓人物と区別"
+      ],
+      "adoptedNames": [
+        "堀秀治"
+      ],
+      "scope": "identity-only; no date/location claims",
+      "excludedNames": [
+        "堀 秀治"
+      ],
+      "nameEvidence": [
+        {
+          "name": "堀秀治",
+          "supports": [
+            "wikidata-ja-label-or-alias"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "島清興",
+      "japaneseLabel": "島清興",
+      "wikidataId": "Q1926883",
+      "wikidataRevision": 2521638867,
+      "wikidataJapaneseLabel": "島清興",
+      "entityDataUrl": "https://www.wikidata.org/wiki/Special:EntityData/Q1926883.json",
+      "revisionUrl": "https://www.wikidata.org/w/index.php?title=Q1926883&oldid=2521638867",
+      "rawEntityDataSnapshot": "data/research/source-notes/authority-batch-a-raw/Q1926883.json",
+      "rawSha256": "4138a9780c820f089c5685e24de1f638ce9a9f14a59d248bffe34dfe7fcec0ab",
+      "identitySourceIds": [
+        "ndlBatchAShimaKiyooki"
+      ],
+      "identitySourceUrl": "https://id.ndl.go.jp/auth/ndlna/00863084",
+      "identitySourceLocator": "個人名典拠00863084のprimaryTopic・名称、別名欄",
+      "identityChecks": [
+        "NDL原本の典拠URI・Person区分・主名が対象人物に対応",
+        "Wikidata原本のQ5人物型とP349のNDL 00863084が同じ典拠を参照する"
+      ],
+      "adoptedNames": [
+        "島清興",
+        "島左近"
+      ],
+      "scope": "identity-only; no date/location claims",
+      "ndlId": "00863084",
+      "ndlIdentity": {
+        "uri": "http://id.ndl.go.jp/auth/entity/00863084",
+        "type": {
+          "uri": "http://xmlns.com/foaf/0.1/Person"
+        },
+        "name": "島清興",
+        "dateOfDeath": "1600",
+        "biographicalInformation": [
+          "武将"
+        ]
+      },
+      "excludedNames": [
+        "島勝猛"
+      ],
+      "nameEvidence": [
+        {
+          "name": "島清興",
+          "supports": [
+            "wikidata-ja-label-or-alias",
+            "ndl-primary"
+          ]
+        },
+        {
+          "name": "島左近",
+          "supports": [
+            "wikidata-ja-label-or-alias",
+            "ndl-altLabel"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "田中吉政",
+      "japaneseLabel": "田中吉政",
+      "wikidataId": "Q11575390",
+      "wikidataRevision": 2555348205,
+      "wikidataJapaneseLabel": "田中吉政",
+      "entityDataUrl": "https://www.wikidata.org/wiki/Special:EntityData/Q11575390.json",
+      "revisionUrl": "https://www.wikidata.org/w/index.php?title=Q11575390&oldid=2555348205",
+      "rawEntityDataSnapshot": "data/research/source-notes/authority-batch-a-raw/Q11575390.json",
+      "rawSha256": "d1bb816e2a5f7f2b950f65421c550ba3a8414221be0d6f688a7e842c22efe64d",
+      "identitySourceIds": [
+        "ndlBatchATanakaYoshimasa"
+      ],
+      "identitySourceUrl": "https://id.ndl.go.jp/auth/ndlna/01013675",
+      "identitySourceLocator": "個人名典拠01013675のprimaryTopic・名称、別名欄",
+      "identityChecks": [
+        "NDL原本の典拠URI・Person区分・主名が対象人物に対応",
+        "Wikidata原本のQ5人物型とP349のNDL 01013675が同じ典拠を参照する"
+      ],
+      "adoptedNames": [
+        "田中吉政"
+      ],
+      "scope": "identity-only; no date/location claims",
+      "ndlId": "01013675",
+      "ndlIdentity": {
+        "uri": "http://id.ndl.go.jp/auth/entity/01013675",
+        "type": {
+          "uri": "http://xmlns.com/foaf/0.1/Person"
+        },
+        "name": "田中吉政",
+        "dateOfBirth": "1548",
+        "dateOfDeath": "1609",
+        "biographicalInformation": [
+          "武将, 大名"
+        ]
+      },
+      "excludedNames": [],
+      "nameEvidence": [
+        {
+          "name": "田中吉政",
+          "supports": [
+            "wikidata-ja-label-or-alias",
+            "ndl-primary"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "鳥居元忠",
+      "japaneseLabel": "鳥居元忠",
+      "wikidataId": "Q665518",
+      "wikidataRevision": 2559618691,
+      "wikidataJapaneseLabel": "鳥居元忠",
+      "entityDataUrl": "https://www.wikidata.org/wiki/Special:EntityData/Q665518.json",
+      "revisionUrl": "https://www.wikidata.org/w/index.php?title=Q665518&oldid=2559618691",
+      "rawEntityDataSnapshot": "data/research/source-notes/authority-batch-a-raw/Q665518.json",
+      "rawSha256": "4380ceb5dc27762d35b6122b6f5b9310bf08e186d1d79f38cac69b56c975003f",
+      "identitySourceIds": [
+        "ndlBatchAToriiMototada"
+      ],
+      "identitySourceUrl": "https://id.ndl.go.jp/auth/ndlna/00800190",
+      "identitySourceLocator": "個人名典拠00800190のprimaryTopic・名称、別名欄",
+      "identityChecks": [
+        "NDL原本の典拠URI・Person区分・主名が対象人物に対応",
+        "Wikidata原本のQ5人物型とP349のNDL 00800190が同じ典拠を参照する"
+      ],
+      "adoptedNames": [
+        "鳥居元忠"
+      ],
+      "scope": "identity-only; no date/location claims",
+      "ndlId": "00800190",
+      "ndlIdentity": {
+        "uri": "http://id.ndl.go.jp/auth/entity/00800190",
+        "type": {
+          "uri": "http://xmlns.com/foaf/0.1/Person"
+        },
+        "name": "鳥居元忠",
+        "dateOfBirth": "1539",
+        "dateOfDeath": "1600",
+        "biographicalInformation": [
+          "武将"
+        ]
+      },
+      "excludedNames": [],
+      "nameEvidence": [
+        {
+          "name": "鳥居元忠",
+          "supports": [
+            "wikidata-ja-label-or-alias",
+            "ndl-primary"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "前野長康",
+      "japaneseLabel": "前野長康",
+      "wikidataId": "Q1059898",
+      "wikidataRevision": 2543528669,
+      "wikidataJapaneseLabel": "前野長康",
+      "entityDataUrl": "https://www.wikidata.org/wiki/Special:EntityData/Q1059898.json",
+      "revisionUrl": "https://www.wikidata.org/w/index.php?title=Q1059898&oldid=2543528669",
+      "rawEntityDataSnapshot": "data/research/source-notes/authority-batch-a-raw/Q1059898.json",
+      "rawSha256": "424ac2253d8af93c206fa90bcfa19fb18702566ea2a24364f54f2bedb2dffe5c",
+      "identitySourceIds": [
+        "publicBatchAMaenoNagayasu"
+      ],
+      "identitySourceUrl": "https://www.hyogo-c.ed.jp/~rekihaku-bo/historystation/sp/rekihaku-db/castle/hyogo/ca_01.html",
+      "identitySourceLocator": "出石城・導入段落",
+      "identityChecks": [
+        "公的機関本文が前野長康を対象の武将として記載",
+        "WikidataのQ5人物型・主名称と公的本文の人物役割を照合。他の同姓人物と区別"
+      ],
+      "adoptedNames": [
+        "前野長康"
+      ],
+      "scope": "identity-only; no date/location claims",
+      "excludedNames": [
+        "坪内光景"
+      ],
+      "nameEvidence": [
+        {
+          "name": "前野長康",
+          "supports": [
+            "wikidata-ja-label-or-alias"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "中村一氏",
+      "japaneseLabel": "中村一氏",
+      "wikidataId": "Q10875670",
+      "wikidataRevision": 2556892534,
+      "wikidataJapaneseLabel": "中村一氏",
+      "entityDataUrl": "https://www.wikidata.org/wiki/Special:EntityData/Q10875670.json",
+      "revisionUrl": "https://www.wikidata.org/w/index.php?title=Q10875670&oldid=2556892534",
+      "rawEntityDataSnapshot": "data/research/source-notes/authority-batch-a-raw/Q10875670.json",
+      "rawSha256": "576942d9b6c9cc0fe409c2208e94c64954cc8c55af35790d8e805a62ab3252fc",
+      "identitySourceIds": [
+        "ndlBatchANakamuraKazuuji"
+      ],
+      "identitySourceUrl": "https://id.ndl.go.jp/auth/ndlna/00625369",
+      "identitySourceLocator": "個人名典拠00625369のprimaryTopic・名称、別名欄",
+      "identityChecks": [
+        "NDL原本の典拠URI・Person区分・主名が対象人物に対応",
+        "Wikidata原本のQ5人物型とP349のNDL 00625369が同じ典拠を参照する"
+      ],
+      "adoptedNames": [
+        "中村一氏"
+      ],
+      "scope": "identity-only; no date/location claims",
+      "ndlId": "00625369",
+      "ndlIdentity": {
+        "uri": "http://id.ndl.go.jp/auth/entity/00625369",
+        "type": {
+          "uri": "http://xmlns.com/foaf/0.1/Person"
+        },
+        "name": "中村一氏",
+        "dateOfDeath": "1600"
+      },
+      "excludedNames": [
+        "孫平次",
+        "大竜院殿一源心公大禅定門"
+      ],
+      "nameEvidence": [
+        {
+          "name": "中村一氏",
+          "supports": [
+            "wikidata-ja-label-or-alias",
+            "ndl-primary"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "高山右近",
+      "japaneseLabel": "高山右近",
+      "wikidataId": "Q749873",
+      "wikidataRevision": 2553941235,
+      "wikidataJapaneseLabel": "高山右近",
+      "entityDataUrl": "https://www.wikidata.org/wiki/Special:EntityData/Q749873.json",
+      "revisionUrl": "https://www.wikidata.org/w/index.php?title=Q749873&oldid=2553941235",
+      "rawEntityDataSnapshot": "data/research/source-notes/authority-batch-a-raw/Q749873.json",
+      "rawSha256": "1fc72e9507c46983b6487c527c10a36b96aeb49a500b56677fe88bd40b09435a",
+      "identitySourceIds": [
+        "ndlBatchATakayamaUkon"
+      ],
+      "identitySourceUrl": "https://id.ndl.go.jp/auth/ndlna/00623123",
+      "identitySourceLocator": "個人名典拠00623123のprimaryTopic・名称、別名欄",
+      "identityChecks": [
+        "NDL原本の典拠URI・Person区分・主名が対象人物に対応",
+        "Wikidata原本のQ5人物型とP349のNDL 00623123が同じ典拠を参照する"
+      ],
+      "adoptedNames": [
+        "高山右近"
+      ],
+      "scope": "identity-only; no date/location claims",
+      "ndlId": "00623123",
+      "ndlIdentity": {
+        "uri": "http://id.ndl.go.jp/auth/entity/00623123",
+        "type": {
+          "uri": "http://xmlns.com/foaf/0.1/Person"
+        },
+        "name": "高山右近",
+        "dateOfBirth": "1552",
+        "dateOfDeath": "1614"
+      },
+      "excludedNames": [
+        "高山長房",
+        "彦五郎",
+        "右近大夫",
+        "右近允",
+        "右近助",
+        "南坊等伯",
+        "友祥",
+        "高山重友",
+        "ジュスト",
+        "ユスト",
+        "ジュスト・ウコン殿",
+        "南坊",
+        "等伯",
+        "福者 ユスト高山右近"
+      ],
+      "nameEvidence": [
+        {
+          "name": "高山右近",
+          "supports": [
+            "wikidata-ja-label-or-alias",
+            "ndl-primary"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "石川数正",
+      "japaneseLabel": "石川数正",
+      "wikidataId": "Q873166",
+      "wikidataRevision": 2560600276,
+      "wikidataJapaneseLabel": "石川数正",
+      "entityDataUrl": "https://www.wikidata.org/wiki/Special:EntityData/Q873166.json",
+      "revisionUrl": "https://www.wikidata.org/w/index.php?title=Q873166&oldid=2560600276",
+      "rawEntityDataSnapshot": "data/research/source-notes/authority-batch-a-raw/Q873166.json",
+      "rawSha256": "30e213eea7d55b08a87a687c61ec8dc37c949ef7b0cc57f505fddba6162176a9",
+      "identitySourceIds": [
+        "publicBatchAIshikawaKazumasa"
+      ],
+      "identitySourceUrl": "https://www.city.matsumoto.nagano.jp/soshiki/135/4121.html",
+      "identitySourceLocator": "歴代城主・石川家（数正・康長）の項",
+      "identityChecks": [
+        "公的機関本文が石川数正を対象の武将として記載",
+        "WikidataのQ5人物型・主名称と公的本文の人物役割を照合。他の同姓人物と区別"
+      ],
+      "adoptedNames": [
+        "石川数正"
+      ],
+      "scope": "identity-only; no date/location claims",
+      "excludedNames": [
+        "石川与七郎",
+        "助四郎",
+        "康輝",
+        "吉輝",
+        "伯耆守",
+        "出雲守",
+        "箇三寺",
+        "寂音院殿靜誉了禅大居士位"
+      ],
+      "nameEvidence": [
+        {
+          "name": "石川数正",
+          "supports": [
+            "wikidata-ja-label-or-alias"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "柴田勝家",
+      "japaneseLabel": "柴田勝家",
+      "wikidataId": "Q707587",
+      "wikidataRevision": 2556833086,
+      "wikidataJapaneseLabel": "柴田勝家",
+      "entityDataUrl": "https://www.wikidata.org/wiki/Special:EntityData/Q707587.json",
+      "revisionUrl": "https://www.wikidata.org/w/index.php?title=Q707587&oldid=2556833086",
+      "rawEntityDataSnapshot": "data/research/source-notes/authority-batch-a-raw/Q707587.json",
+      "rawSha256": "b1fbdb61f68be6b04cea4e3cd1f7fef6e9daa640df50eae6a5465cc2f56502b9",
+      "identitySourceIds": [
+        "ndlBatchAShibataKatsuie"
+      ],
+      "identitySourceUrl": "https://id.ndl.go.jp/auth/ndlna/01052712",
+      "identitySourceLocator": "個人名典拠01052712のprimaryTopic・名称、別名欄",
+      "identityChecks": [
+        "NDL原本の典拠URI・Person区分・主名が対象人物に対応",
+        "Wikidata原本のQ5人物型とP349のNDL 01052712が同じ典拠を参照する"
+      ],
+      "adoptedNames": [
+        "柴田勝家"
+      ],
+      "scope": "identity-only; no date/location claims",
+      "ndlId": "01052712",
+      "ndlIdentity": {
+        "uri": "http://id.ndl.go.jp/auth/entity/01052712",
+        "type": {
+          "uri": "http://xmlns.com/foaf/0.1/Person"
+        },
+        "name": "柴田勝家",
+        "dateOfBirth": "1522",
+        "dateOfDeath": "1583",
+        "biographicalInformation": [
+          "安土桃山時代の武将"
+        ]
+      },
+      "excludedNames": [
+        "柴田権六",
+        "権六郎",
+        "修理進",
+        "勝栄",
+        "鬼柴田",
+        "かかれ柴田",
+        "瓶割り柴田",
+        "浄勝",
+        "幡岳",
+        "摧鬼院殿台岳還道大居士",
+        "幡岳寺殿籌山勝公大居士",
+        "千場田修理進辰家"
+      ],
+      "nameEvidence": [
+        {
+          "name": "柴田勝家",
+          "supports": [
+            "wikidata-ja-label-or-alias",
+            "ndl-primary"
+          ]
+        }
+      ]
+    }
+  ]
+}

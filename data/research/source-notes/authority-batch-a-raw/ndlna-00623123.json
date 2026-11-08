@@ -1,0 +1,52 @@
+{
+    "@context": "https://id.ndl.go.jp/auth/context.json",
+    "uri": "http://id.ndl.go.jp/auth/ndlna/00623123",
+    "primaryTopic": {
+        "uri": "http://id.ndl.go.jp/auth/entity/00623123",
+        "type": {
+            "uri": "http://xmlns.com/foaf/0.1/Person"
+        },
+        "name": "高山右近",
+        "dateOfBirth": "1552",
+        "dateOfDeath": "1614"
+    },
+    "type": {
+        "uri": "http://www.w3.org/2004/02/skos/core#Concept"
+    },
+    "modified": "2026-01-21T08:34:48",
+    "created": "1998-01-30",
+    "prefLabel": {
+        "literalForm": "高山, 右近, 1552-1614",
+        "transcription": "タカヤマ, ウコン, 1552-1614",
+        "transcription-l": [
+            {
+                "@value": "タカヤマ, ウコン, 1552-1614",
+                "@language": "ja-Kana"
+            },
+            {
+                "@value": "Takayama, Ukon, 1552-1614",
+                "@language": "ja-Latn"
+            }
+        ]
+    },
+    "label": "高山, 右近, 1552-1614",
+    "source": [
+        "高山右近の研究と史料 / ヨハネス・ラウレス 著 ; 松田毅一 訳",
+        "日本史小辞典"
+    ],
+    "exactMatch": [
+        {
+            "uri": "http://id.loc.gov/authorities/names/nr91002457"
+        },
+        {
+            "uri": "https://isni.org/isni/0000000047318084"
+        },
+        {
+            "uri": "http://viaf.org/viaf/sourceID/NDL%7C00623123#skos:Concept"
+        }
+    ],
+    "inScheme": {
+        "uri": "http://id.ndl.go.jp/auth#personalNames"
+    }
+}
+

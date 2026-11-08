@@ -1,0 +1,55 @@
+{
+    "@context": "https://id.ndl.go.jp/auth/context.json",
+    "uri": "http://id.ndl.go.jp/auth/ndlna/01013675",
+    "primaryTopic": {
+        "uri": "http://id.ndl.go.jp/auth/entity/01013675",
+        "type": {
+            "uri": "http://xmlns.com/foaf/0.1/Person"
+        },
+        "name": "田中吉政",
+        "dateOfBirth": "1548",
+        "dateOfDeath": "1609",
+        "biographicalInformation": [
+            "武将, 大名"
+        ]
+    },
+    "type": {
+        "uri": "http://www.w3.org/2004/02/skos/core#Concept"
+    },
+    "modified": "2026-01-21T08:34:47",
+    "created": "2005-10-13",
+    "prefLabel": {
+        "literalForm": "田中, 吉政, 1548-1609",
+        "transcription": "タナカ, ヨシマサ, 1548-1609",
+        "transcription-l": [
+            {
+                "@value": "タナカ, ヨシマサ, 1548-1609",
+                "@language": "ja-Kana"
+            },
+            {
+                "@value": "Tanaka, Yoshimasa, 1548-1609",
+                "@language": "ja-Latn"
+            }
+        ]
+    },
+    "label": "田中, 吉政, 1548-1609",
+    "source": [
+        "秀吉を支えた武将田中吉政 / 市立長浜城歴史博物館, 岡崎市美術博物館, 柳川古文書館 企画・編集",
+        "国史大辞典"
+    ],
+    "exactMatch": [
+        {
+            "uri": "http://id.loc.gov/authorities/names/no2006048039"
+        },
+        {
+            "uri": "https://isni.org/isni/0000000053909673"
+        },
+        {
+            "uri": "http://viaf.org/viaf/sourceID/NDL%7C01013675#skos:Concept"
+        }
+    ],
+    "inScheme": {
+        "uri": "http://id.ndl.go.jp/auth#personalNames"
+    }
+}
+

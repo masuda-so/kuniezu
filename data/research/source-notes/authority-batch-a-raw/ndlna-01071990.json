@@ -1,0 +1,49 @@
+{
+    "@context": "https://id.ndl.go.jp/auth/context.json",
+    "uri": "http://id.ndl.go.jp/auth/ndlna/01071990",
+    "primaryTopic": {
+        "uri": "http://id.ndl.go.jp/auth/entity/01071990",
+        "type": {
+            "uri": "http://xmlns.com/foaf/0.1/Person"
+        },
+        "name": "堀秀政",
+        "dateOfBirth": "1553",
+        "dateOfDeath": "1590",
+        "biographicalInformation": [
+            "安土桃山時代の武将"
+        ]
+    },
+    "type": {
+        "uri": "http://www.w3.org/2004/02/skos/core#Concept"
+    },
+    "modified": "2019-01-07T18:13:11",
+    "created": "2007-01-25",
+    "prefLabel": {
+        "literalForm": "堀, 秀政, 1553-1590",
+        "transcription": "ホリ, ヒデマサ, 1553-1590",
+        "transcription-l": [
+            {
+                "@value": "ホリ, ヒデマサ, 1553-1590",
+                "@language": "ja-Kana"
+            },
+            {
+                "@value": "Hori, Hidemasa, 1553-1590",
+                "@language": "ja-Latn"
+            }
+        ]
+    },
+    "label": "堀, 秀政, 1553-1590",
+    "source": [
+        "北荘城主堀秀政 / 山下春溪 著",
+        "国史大辞典"
+    ],
+    "exactMatch": [
+        {
+            "uri": "http://viaf.org/viaf/sourceID/NDL%7C01071990#skos:Concept"
+        }
+    ],
+    "inScheme": {
+        "uri": "http://id.ndl.go.jp/auth#personalNames"
+    }
+}
+

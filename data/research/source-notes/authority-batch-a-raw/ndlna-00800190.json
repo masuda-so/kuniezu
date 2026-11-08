@@ -1,0 +1,59 @@
+{
+    "@context": "https://id.ndl.go.jp/auth/context.json",
+    "uri": "http://id.ndl.go.jp/auth/ndlna/00800190",
+    "primaryTopic": {
+        "uri": "http://id.ndl.go.jp/auth/entity/00800190",
+        "type": {
+            "uri": "http://xmlns.com/foaf/0.1/Person"
+        },
+        "name": "鳥居元忠",
+        "dateOfBirth": "1539",
+        "dateOfDeath": "1600",
+        "biographicalInformation": [
+            "武将"
+        ]
+    },
+    "type": {
+        "uri": "http://www.w3.org/2004/02/skos/core#Concept"
+    },
+    "modified": "2019-01-07T18:14:50",
+    "created": "2000-03-23",
+    "prefLabel": {
+        "literalForm": "鳥居, 元忠, 1539-1600",
+        "transcription": "トリイ, モトタダ, 1539-1600",
+        "transcription-l": [
+            {
+                "@value": "トリイ, モトタダ, 1539-1600",
+                "@language": "ja-Kana"
+            },
+            {
+                "@value": "Torii, Mototada, 1539-1600",
+                "@language": "ja-Latn"
+            }
+        ]
+    },
+    "label": "鳥居, 元忠, 1539-1600",
+    "altLabel": [
+        {
+            "literalForm": "彦右衛門",
+            "description": "通称"
+        },
+        {
+            "literalForm": "平",
+            "description": "本姓"
+        }
+    ],
+    "source": [
+        "鳥居元忠 / 和田兼三郎 編著",
+        "国書人名辞典"
+    ],
+    "exactMatch": [
+        {
+            "uri": "http://viaf.org/viaf/sourceID/NDL%7C00800190#skos:Concept"
+        }
+    ],
+    "inScheme": {
+        "uri": "http://id.ndl.go.jp/auth#personalNames"
+    }
+}
+

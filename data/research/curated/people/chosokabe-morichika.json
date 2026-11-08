@@ -1,0 +1,28 @@
+{
+  "id": "person:chosokabe-morichika",
+  "name": "長宗我部盛親",
+  "gameNames": [
+    "長宗我部盛親"
+  ],
+  "authorityIds": [
+    "wikidata:Q589151",
+    "ndlna:00625511"
+  ],
+  "authorityEvidence": {
+    "scope": "person-identity",
+    "checked": "2026-11-08",
+    "wikidataRevision": 2549138423,
+    "snapshot": "data/research/source-notes/authority-batch-b.json",
+    "sourceNote": "data/research/source-notes/authority-batch-b.json",
+    "note": "data/research/source-notes/authority-batch-b.md",
+    "identityChecks": [
+      "NDL00625511の主名長宗我部盛親がPerson典拠に属する",
+      "Wikidata Q589151の日本語主名とP349が同じNDL典拠へ対応する"
+    ],
+    "basis": "人物の同定のみ。原本にある生没日・所在・所領・関係の時期は新たな史実命題へ採用しない。",
+    "ndlSnapshot": "data/research/source-notes/chosokabe-morichika-ndl-authority.json",
+    "sourceIds": [
+      "ndlChosokabeMorichikaIdentity"
+    ]
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "id": "person:kuki-yoshitaka",
+  "name": "九鬼嘉隆",
+  "gameNames": [
+    "九鬼嘉隆"
+  ],
+  "authorityIds": [
+    "wikidata:Q921113",
+    "ndlna:01226769"
+  ],
+  "authorityEvidence": {
+    "scope": "person-identity",
+    "checked": "2026-11-08",
+    "wikidataRevision": 2552573614,
+    "snapshot": "data/research/source-notes/authority-batch-b.json",
+    "sourceNote": "data/research/source-notes/authority-batch-b.json",
+    "note": "data/research/source-notes/authority-batch-b.md",
+    "identityChecks": [
+      "NDL01226769の主名九鬼嘉隆がPerson典拠に属する",
+      "Wikidata Q921113の日本語主名とP349が同じNDL典拠へ対応する"
+    ],
+    "basis": "人物の同定のみ。原本にある生没日・所在・所領・関係の時期は新たな史実命題へ採用しない。",
+    "ndlSnapshot": "data/research/source-notes/kuki-yoshitaka-ndl-authority.json",
+    "sourceIds": [
+      "ndlKukiYoshitakaIdentity"
+    ]
+  }
+}

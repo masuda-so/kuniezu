@@ -1,0 +1,26 @@
+{
+  "id": "person:maeno-nagayasu",
+  "name": "前野長康",
+  "gameNames": [
+    "前野長康"
+  ],
+  "authorityIds": [
+    "wikidata:Q1059898"
+  ],
+  "authorityEvidence": {
+    "scope": "person-identity",
+    "checked": "2026-11-08",
+    "wikidataRevision": 2543528669,
+    "snapshot": "data/research/source-notes/authority-batch-a.json",
+    "sourceNote": "data/research/source-notes/authority-batch-a.json",
+    "note": "data/research/source-notes/authority-batch-a.md",
+    "sourceIds": [
+      "publicBatchAMaenoNagayasu"
+    ],
+    "identityChecks": [
+      "公的機関本文が前野長康を対象の武将として記載",
+      "WikidataのQ5人物型・主名称と公的本文の人物役割を照合。他の同姓人物と区別"
+    ],
+    "basis": "豊臣秀吉の家臣で有子山旧城の石垣を改修した前野長康という人物同定の文脈だけ。改修年月日・所在を新命題へ採らない。"
+  }
+}

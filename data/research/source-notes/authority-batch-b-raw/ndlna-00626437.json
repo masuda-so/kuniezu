@@ -1,0 +1,68 @@
+{
+    "@context": "https://id.ndl.go.jp/auth/context.json",
+    "uri": "http://id.ndl.go.jp/auth/ndlna/00626437",
+    "primaryTopic": {
+        "uri": "http://id.ndl.go.jp/auth/entity/00626437",
+        "type": {
+            "uri": "http://xmlns.com/foaf/0.1/Person"
+        },
+        "name": "蜂須賀正勝",
+        "dateOfBirth": "1526",
+        "dateOfDeath": "1586"
+    },
+    "type": {
+        "uri": "http://www.w3.org/2004/02/skos/core#Concept"
+    },
+    "modified": "2026-01-21T08:34:35",
+    "created": "1998-01-30",
+    "prefLabel": {
+        "literalForm": "蜂須賀, 正勝, 1526-1586",
+        "transcription": "ハチスカ, マサカツ, 1526-1586",
+        "transcription-l": [
+            {
+                "@value": "ハチスカ, マサカツ, 1526-1586",
+                "@language": "ja-Kana"
+            },
+            {
+                "@value": "Hachisuka, Masakatsu, 1526-1586",
+                "@language": "ja-Latn"
+            }
+        ]
+    },
+    "label": "蜂須賀, 正勝, 1526-1586",
+    "altLabel": [
+        {
+            "literalForm": "蜂須賀, 小六",
+            "transcription": "ハチスカ, コロク",
+            "transcription-l": [
+                {
+                    "@value": "ハチスカ, コロク",
+                    "@language": "ja-Kana"
+                },
+                {
+                    "@value": "Hachisuka, Koroku",
+                    "@language": "ja-Latn"
+                }
+            ],
+            "description": "幼名"
+        }
+    ],
+    "source": [
+        "蜂須賀小六正勝 / 渡辺世祐 著"
+    ],
+    "exactMatch": [
+        {
+            "uri": "http://id.loc.gov/authorities/names/n87919069"
+        },
+        {
+            "uri": "https://isni.org/isni/0000000027233008"
+        },
+        {
+            "uri": "http://viaf.org/viaf/sourceID/NDL%7C00626437#skos:Concept"
+        }
+    ],
+    "inScheme": {
+        "uri": "http://id.ndl.go.jp/auth#personalNames"
+    }
+}
+

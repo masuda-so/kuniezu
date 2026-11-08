@@ -1,0 +1,51 @@
+{
+    "@context": "https://id.ndl.go.jp/auth/context.json",
+    "uri": "http://id.ndl.go.jp/auth/ndlna/00625511",
+    "primaryTopic": {
+        "uri": "http://id.ndl.go.jp/auth/entity/00625511",
+        "type": {
+            "uri": "http://xmlns.com/foaf/0.1/Person"
+        },
+        "name": "長宗我部盛親",
+        "dateOfBirth": "1575",
+        "dateOfDeath": "1615"
+    },
+    "type": {
+        "uri": "http://www.w3.org/2004/02/skos/core#Concept"
+    },
+    "modified": "2026-01-21T08:35:00",
+    "created": "1998-01-30",
+    "prefLabel": {
+        "literalForm": "長宗我部, 盛親, 1575-1615",
+        "transcription": "チョウソカベ, モリチカ, 1575-1615",
+        "transcription-l": [
+            {
+                "@value": "チョウソカベ, モリチカ, 1575-1615",
+                "@language": "ja-Kana"
+            },
+            {
+                "@value": "Chosokabe, Morichika, 1575-1615",
+                "@language": "ja-Latn"
+            }
+        ]
+    },
+    "label": "長宗我部, 盛親, 1575-1615",
+    "source": [
+        "長宗我部盛親 / 寺石正路 著"
+    ],
+    "exactMatch": [
+        {
+            "uri": "http://id.loc.gov/authorities/names/nr2007012732"
+        },
+        {
+            "uri": "https://isni.org/isni/0000000054413258"
+        },
+        {
+            "uri": "http://viaf.org/viaf/sourceID/NDL%7C00625511#skos:Concept"
+        }
+    ],
+    "inScheme": {
+        "uri": "http://id.ndl.go.jp/auth#personalNames"
+    }
+}
+
