@@ -1,3 +1,6 @@
 * text=auto
 
 kuniezu/map/physical/heightmap.png filter=lfs diff=lfs merge=lfs -text
+
+# Retained authority response: preserve original bytes for SHA verification.
+data/research/source-notes/otomo-sorin-authority-raw.json -text

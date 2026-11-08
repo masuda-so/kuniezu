@@ -60,8 +60,33 @@ function verifyRawAuthority(row,snapshot,bytes){
 }
 const authoritySources=new Map(fs.readFileSync(path.join(research,'sources.jsonl'),'utf8').trim().split('\n').map(JSON.parse).map(row=>[row.id,row]));
 
+// NDL-only identities retain their own original response; no invented Wikidata row.
+function verifyNdlSnapshot(person,snapshot,bytes){
+ const n=snapshot.ndl,raw=JSON.parse(bytes),names=[person.name,...person.gameNames,...(person.aliases??[])];
+ const norm=value=>value.replace(/[\s,、]/g,'');
+ assert.equal(require('node:crypto').createHash('sha256').update(bytes).digest('hex'),n.rawSha256,'NDL raw SHA');
+ assert(person.authorityIds.includes('ndlna:'+n.id),'NDL authority ID');
+ assert.equal(raw.uri,'http://id.ndl.go.jp/auth/ndlna/'+n.id,'NDL response ID');
+ assert.equal(raw.primaryTopic.uri,'http://id.ndl.go.jp/auth/entity/'+n.id,'NDL entity ID');
+ assert.equal(raw.primaryTopic.type.uri,'http://xmlns.com/foaf/0.1/Person','NDL person type');
+ assert.equal(norm(raw.primaryTopic.name),n.primaryName,'NDL primary name');
+ assert(names.includes(n.primaryName),'NDL local primary name');
+ const alternatives=(raw.altLabel??[]).map(row=>norm(row.literalForm));
+ assert(n.alternateNames.length,'NDL alternative required');
+ for(const name of n.alternateNames){assert(alternatives.includes(name),'NDL alternate name');assert(names.includes(name),'NDL local alias');}
+ assert(/^\d{4}-\d{2}-\d{2}$/.test(n.checked),'NDL checked date');
+}
 for(const person of people){
  const evidence=person.authorityEvidence;
+ if(evidence?.ndlSnapshot){
+  const snapshot=JSON.parse(fs.readFileSync(path.join(root,evidence.ndlSnapshot),'utf8'));
+  const bytes=fs.readFileSync(path.join(root,snapshot.ndl.rawSnapshot));
+  verifyNdlSnapshot(person,snapshot,bytes);
+  assert.throws(()=>verifyNdlSnapshot(person,{...snapshot,ndl:{...snapshot.ndl,id:'00269409'}},bytes),/NDL authority ID/);
+  assert.throws(()=>verifyNdlSnapshot(person,{...snapshot,ndl:{...snapshot.ndl,alternateNames:['別人']}},bytes),/NDL alternate name/);
+  assert.throws(()=>verifyNdlSnapshot(person,{...snapshot,ndl:{...snapshot.ndl,rawSha256:'0'.repeat(64)}},bytes),/NDL raw SHA/);
+ }
+
  if(!evidence?.snapshot)continue;
  const snapshot=JSON.parse(fs.readFileSync(path.join(root,evidence.snapshot),'utf8'));
  const matches=snapshot.records.filter(row=>person.authorityIds.includes('wikidata:'+row.wikidataId));

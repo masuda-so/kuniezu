@@ -1,0 +1,66 @@
+{
+  "checked": "2026-11-07",
+  "sameIdentityConclusion": "confirmed-by-NDL-authority-and-municipal-history-plus-edited-primary-letter",
+  "sources": [
+    {
+      "id": "ndlna-00625175",
+      "author": "国立国会図書館",
+      "title": "Web NDL Authorities 大友, 宗麟, 1530-1587",
+      "url": "https://id.ndl.go.jp/auth/ndlna/00625175",
+      "locator": "典拠ID・名称/タイトル・別名/別タイトル",
+      "checked": "2026-11-07",
+      "lastUpdated": "2025-12-16T09:13:48",
+      "summary": "個人名典拠00625175の標目は大友宗麟、別名に大友義鎮（オオトモヨシシゲ）。",
+      "scope": "person-identity-only; 生没年は今回命題に転記しない"
+    },
+    {
+      "id": "oita-city-otomo-site",
+      "author": "大分市教育委員会事務局教育部文化財課",
+      "title": "大友氏遺跡事業",
+      "url": "https://www.city.oita.oita.jp/o204/bunkasports/rekishi/1118118836045.html",
+      "locator": "大友氏館跡 第1段落・豊後府内 第1段落",
+      "checked": "2026-11-07",
+      "pageUpdated": "2026-02-26",
+      "summary": "義鎮（宗麟）の館、北部九州六カ国守護と説明。大友21代宗麟（義鎮）を20代義鑑・22代義統と区別。",
+      "scope": "person-identity; 同姓他世代との区別"
+    },
+    {
+      "id": "munakata-letter-154",
+      "author": "世界遺産「神宿る島」宗像・沖ノ島と関連遺産群保存活用協議会（事務局福岡県）",
+      "title": "大友宗麟〈義鎮〉書状",
+      "url": "https://www.munakata-archives.asia/frmSearchArchiveDetail.aspx?id=1154&langid=",
+      "locator": "八巻文書第6巻 文書154、文書名・読み下し末尾、出典『宗像大社文書』第1巻",
+      "checked": "2026-11-07",
+      "summary": "推定永禄10年3月13日付書状の署名宗麟を、翻刻注で大友義鎮と同定。宛先宗像大宮司氏貞、秋月文種討伐と所領安堵の内容。",
+      "scope": "primary-document-transcription-authority; 編者同定、原本署名に義鎮併記との主張ではない。",
+      "dateCaution": "年は括弧付き推定。西暦3月13日をグレゴリオ暦換算日として採用しない。"
+    }
+  ],
+  "excludedClaims": [
+    "死去日",
+    "朝倉宗滴または他の宗滴表記と綱文の同一性",
+    "日単位別名使用開始日",
+    "生没年の新命題"
+  ],
+  "rights": "原HTMLや長文翻刻を保存せず、書誌URLと短い要約のみ。古文書画像の権利や配信許可は主張しない。",
+  "ndl": {
+    "id": "00625175",
+    "checked": "2026-11-07",
+    "retrievedAt": "2026-11-07T14:56:52.428057+00:00",
+    "requestUrl": "https://id.ndl.go.jp/auth/ndlna/00625175.json",
+    "rawSnapshot": "data/research/source-notes/otomo-sorin-authority-raw.json",
+    "rawSha256": "5076009c5c51af0c6e4ccb9bf60c19d935cfa50cd2871ac3ce66bb214e87f50f",
+    "primaryName": "大友宗麟",
+    "alternateNames": [
+      "大友義鎮"
+    ],
+    "scope": "person-identity-only; raw birth/death metadata not adopted as historical claims"
+  },
+  "adoptionStatus": "adopted-in-curated-person-identity",
+  "preAdoptionCollisionAudit": {
+    "peopleCount": 84,
+    "matchingPeople": [],
+    "checked": "2026-11-07",
+    "scope": "Before adding person:otomo-sorin; not the current people total"
+  }
+}
