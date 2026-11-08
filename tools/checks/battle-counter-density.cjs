@@ -1,7 +1,7 @@
 /* All registered displays use real source bounds; this is a draw/selection regression,
    not verification of the historical positions or of real portrait readability. */
 const fs=require('node:fs'),path=require('node:path'),assert=require('node:assert/strict');
-const {TK,make,counters,choices,simple}=require('./fixtures/battle-atlas.cjs').createFixture({actualBounds:true,emptyGame:true});
+const {c,TK,make,counters,choices,simple}=require('./fixtures/battle-atlas.cjs').createFixture({actualBounds:true,emptyGame:true});
 const bodies=h=>[...new Map(h.cv.context.counters.map(b=>[b.id,b])).values()];
 const geo=h=>simple(h.ctrl.unitStates().map(u=>[u.id,u.point,u.renderedPoint,u.status]));
 const inFrame=(u,h)=>u.visible&&u.screenPoint&&u.screenPoint[0]>=0&&u.screenPoint[0]<=h.ctrl.viewport().W&&u.screenPoint[1]>=0&&u.screenPoint[1]<=h.ctrl.viewport().H;
@@ -67,11 +67,12 @@ function sizes(h,width){
 const target=units.reduce((best,u)=>Math.hypot(u.screenPoint[0]-units[0].screenPoint[0],u.screenPoint[1]-units[0].screenPoint[1])>Math.hypot(best.screenPoint[0]-units[0].screenPoint[0],best.screenPoint[1]-units[0].screenPoint[1])?u:best,units[0]);h.ctrl.select(target.id);focus(h);const b=h.ctrl.viewport();assert.equal(b.VS,6);assert.ok(Math.hypot(a.VX-b.VX,a.VY-b.VY)>1,'at maximum zoom another unit recenters');assert.equal(h.ctrl.testSelected(),target.id);assert.equal(h.ctrl.t,time);assert.deepEqual(geo(h),original);
 h.resize(width===335?940:335);const v=h.ctrl.viewport(),at=h.ctrl.unitStates().find(u=>u.id===target.id);assert.equal(v.VS,6);assert.equal(h.ctrl.testSelected(),target.id);assert.equal(h.ctrl.t,time);assert.deepEqual(geo(h),original);const base=[target.screenPoint[0]/width*v.W,target.screenPoint[1]/(a.H)*v.H];assert.ok(Math.abs(v.VX-clamp(base[0]*6-v.W/2,0,v.W*5))<1e-7);assert.ok(Math.abs(v.VY-clamp(base[1]*6-v.H/2,0,v.H*5))<1e-7);assert.ok(h.views().some(v=>v.textContent==='選択部隊の周辺'));h.ctrl.destroy();}}
  let estimatedFocusChecks=0;
- for(const title of ['関ヶ原の戦い','長篠の戦い','大坂冬の陣','大坂夏の陣']){
-  const h=await make(title,940);try{h.ctrl.seek(50);const target=h.ctrl.unitStates().find(u=>u.visible&&u.screenPoint&&u.positionBasis==='estimated-placement');if(!target)continue;
-   h.ctrl.select(target.id);const focus=()=>h.stage.querySelector('.atlas-selection').children[0].children.find(b=>b.textContent==='この周辺を見る').onclick();focus();assert.ok(h.ctrl.viewport().VS>=2,'API selection focuses estimated placement');estimatedFocusChecks++;const scale=h.ctrl.viewport().VS,time=h.ctrl.t;
-   h.resize(335);assert.equal(h.ctrl.viewport().VS,scale,'estimated group keeps local view on resize');assert.equal(h.ctrl.t,time);assert.equal(h.ctrl.testSelected(),target.id);assert.ok(h.views().some(v=>v.textContent==='選択部隊の周辺'));
-  }finally{h.ctrl.destroy();}
+ {const title='__estimated_focus_fixture__';TK.BATTLE_ATLAS[title]={bounds:[0,1,1,0],geo:[.5,.5],points:[]};TK.BATTLES[title]={title,units:[{id:'a',g:'記録点',side:'a'},{id:'b',g:'推定点',side:'b'},{id:'c',g:'未配置',side:'b'}],atlasGroups:[{id:'a',point:[.2,.5],members:['a'],side:'a'},{id:'b',members:['b'],side:'b'},{id:'c',members:['c'],side:'b'}],beats:[]};
+  const h=await make(title,940),old=c.TKBattleMotion.plan;try{c.TKBattleMotion.plan=(sc,base,w,ht)=>({placed:new Set(['b']),estimated:new Set(['b']),pos:id=>id==='b'?[w*.8,ht*.5]:null,basis:'test'});h.ctrl.setViewport(1,0,0);h.ctrl.seek(50);h.ctrl.select('b');
+   const focus=()=>h.stage.querySelector('.atlas-selection').children[0].children.find(b=>b.textContent==='この周辺を見る').onclick();focus();assert.ok(h.ctrl.viewport().VS>=2,'API selection focuses estimated placement');estimatedFocusChecks++;const scale=h.ctrl.viewport().VS,time=h.ctrl.t;
+   h.resize(335);assert.equal(h.ctrl.viewport().VS,scale,'estimated group keeps local view on resize');assert.equal(h.ctrl.t,time);assert.equal(h.ctrl.testSelected(),'b');assert.ok(h.views().some(v=>v.textContent==='選択部隊の周辺'));
+   const before=simple(h.ctrl.viewport());h.ctrl.select('c');focus();assert.deepEqual(simple(h.ctrl.viewport()),before,'unplaced unit cannot invent a focus point');
+  }finally{c.TKBattleMotion.plan=old;h.ctrl.destroy();}
  }
  assert.ok(estimatedFocusChecks>0,'estimated placement focus is exercised');
  const result={estimatedFocusChecks,focusChecks,frames,reduced,fullSize,selections,coincidentSelections,views,rows,fadeRestored:true,centerLabelPriority:true,limits:['Canvas mock, fixed times and empty game context; no browser or historical-source verification.','Exact coincidence is handled by individual selection, not separated by invented positions.']};
