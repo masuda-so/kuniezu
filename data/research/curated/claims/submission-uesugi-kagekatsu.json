@@ -1,0 +1,39 @@
+{
+  "id": "submission-uesugi-kagekatsu",
+  "entity": "person:上杉景勝",
+  "predicate": "diplomatic-audience",
+  "value": "上杉景勝が大坂に至り、秀吉に謁見した。",
+  "validYears": [
+    1586,
+    1586
+  ],
+  "datePrecision": "day",
+  "source": "hiDainihonshiryoKobun",
+  "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+  "locator": "綱文：和暦 天正14年6月14日 第3条（区分 史料綜覧、編11・冊912（データベースの表示値）、129頁）",
+  "gameBindings": [
+    "TK.HIST:上杉の羽柴への帰属"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-07",
+  "uncertainty": "綱文は「謁す」と書き、「帰属」「臣従」の語は無い。 綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。",
+  "linkedEntities": [
+    "person:上杉景勝",
+    "person:羽柴秀吉"
+  ],
+  "eventTime": {
+    "kind": "dated-event",
+    "date": [
+      1586,
+      6,
+      14
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": false,
+    "precision": "day"
+  },
+  "eventRelation": "diplomatic-audience",
+  "eventScope": "綱文が掲げる引見・謁見とその日付。臣従関係の成立日・条件・終了時期は断定しない。ゲームの帰属・上洛項目は実装の比較参照であり、同じ行為とは限らない。",
+  "gameBindingRelation": "comparison-not-event-equivalence"
+}

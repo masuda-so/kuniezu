@@ -1,0 +1,39 @@
+{
+  "id": "submission-tokugawa-ieyasu",
+  "entity": "person:徳川家康",
+  "predicate": "diplomatic-audience",
+  "value": "徳川家康が大坂城で秀吉に謁見した。",
+  "validYears": [
+    1586,
+    1586
+  ],
+  "datePrecision": "day",
+  "source": "hiDainihonshiryoKobun",
+  "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+  "locator": "綱文：和暦 天正14年10月27日 第1条（区分 史料綜覧、編11・冊912（データベースの表示値）、142頁）",
+  "gameBindings": [
+    "TK.HIST:徳川家康の上洛"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-07",
+  "uncertainty": "綱文は「謁す」と書き、「臣従」の語は無い。前日（10月26日）の綱文は、家康が大坂に着き羽柴秀長の屋敷に泊まったと書く。 綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。",
+  "linkedEntities": [
+    "person:徳川家康",
+    "person:羽柴秀吉"
+  ],
+  "eventTime": {
+    "kind": "dated-event",
+    "date": [
+      1586,
+      10,
+      27
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": false,
+    "precision": "day"
+  },
+  "eventRelation": "diplomatic-audience",
+  "eventScope": "綱文が掲げる引見・謁見とその日付。臣従関係の成立日・条件・終了時期は断定しない。ゲームの帰属・上洛項目は実装の比較参照であり、同じ行為とは限らない。",
+  "gameBindingRelation": "comparison-not-event-equivalence"
+}
