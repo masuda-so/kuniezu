@@ -318,6 +318,10 @@ def test_every_word_for_a_claim_has_one_class():
     # An alliance, or a surrender that is accepted, is a relation between parties.
     assert CLAIM_KIND_OF["alliance-formation"] == PhenomenonKind.RELATION
     assert CLAIM_KIND_OF["submission-accepted"] == PhenomenonKind.RELATION
+    assert CLAIM_KIND_OF["submission"] == PhenomenonKind.RELATION
+    assert CLAIM_KIND_OF["diplomatic-audience"] == PhenomenonKind.RELATION
+    assert CLAIM_KIND_OF["peace-agreement"] == PhenomenonKind.RELATION
+    assert CLAIM_KIND_OF["castle-surrender"] == PhenomenonKind.CONFLICT
     assert set(CLAIM_KIND_OF.values()) <= set(PhenomenonKind) - {PhenomenonKind.OTHER}
 
 
@@ -697,3 +701,31 @@ def test_every_kobun_article_of_a_year_is_listed_once_and_unclassified(inputs):
     year_only = articles.get(key="kobun:020100201384")
     assert year_only.precision == "period"
     assert year_only.time_label == "天文3年是歳"
+
+
+def test_contact_peace_and_surrender_keep_their_narrow_meaning(inputs):
+    import_history(inputs)
+    for key in (
+        "submission-date-masamune",
+        "submission-tokugawa-ieyasu",
+        "submission-uesugi-kagekatsu",
+    ):
+        item = Phenomenon.objects.get(key="claim:" + key)
+        assert item.subtype == "diplomatic-audience"
+        assert item.kind == PhenomenonKind.RELATION
+        assert item.mode == Mode.EVENT
+    audience = Phenomenon.objects.get(key="claim:submission-date-masamune")
+    assert "翌日" not in audience.summary
+    assert "帰国" not in audience.summary
+    assert "黒川城" not in audience.summary
+    peace = Phenomenon.objects.get(key="claim:peace-hashiba-nobukatsu")
+    assert peace.subtype == "peace-agreement"
+    assert peace.kind == PhenomenonKind.RELATION
+    surrender = Phenomenon.objects.get(key="claim:submission-ryukyu-shuri")
+    assert surrender.subtype == "castle-surrender"
+    assert surrender.kind == PhenomenonKind.CONFLICT
+    assert "大島" not in surrender.summary
+    assert "運天" not in surrender.summary
+    assert not Participation.objects.filter(
+        phenomenon=surrender, thing__name="樺山久高"
+    ).exists()

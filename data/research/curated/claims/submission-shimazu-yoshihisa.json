@@ -1,0 +1,40 @@
+{
+  "id": "submission-shimazu-yoshihisa",
+  "entity": "person:島津義久",
+  "predicate": "submission",
+  "value": "島津義久が、応其・一色昭秀らの勧めを容れて伊集院忠棟を人質とし、羽柴秀長を通じて秀吉に降った。",
+  "validYears": [
+    1587,
+    1587
+  ],
+  "datePrecision": "day",
+  "source": "hiDainihonshiryoKobun",
+  "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+  "locator": "綱文：和暦 天正15年4月21日 第2条（区分 史料綜覧、編11・冊912（データベースの表示値）、163頁）",
+  "gameBindings": [
+    "TK.HIST:島津の羽柴への帰属"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-07",
+  "uncertainty": "秀吉が義久の降を知って赦したのは5月3日、義久が剃髪して泰平寺で秀吉に謁したのは5月8日の綱文。降ったことを最初に掲げる4月21日の条を採った。 綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。",
+  "linkedEntities": [
+    "person:島津義久",
+    "person:羽柴秀吉",
+    "person:羽柴秀長",
+    "person:伊集院忠棟"
+  ],
+  "eventTime": {
+    "kind": "dated-event",
+    "date": [
+      1587,
+      4,
+      21
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": false,
+    "precision": "day"
+  },
+  "eventRelation": "submission",
+  "eventScope": "綱文が掲げる関係の変化とその日付、綱文に書かれた相手。不一致。年表は 1587 年 6 月 1 日、綱文の天正15年4月21日はゲームの暦表で 1587 年 5 月 28 日（4 日の差）。 年表は変えていない（どちらを採るかは未判断）。 条件・領地の範囲・関係の終わりは補わない。"
+}
