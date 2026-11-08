@@ -894,7 +894,7 @@ function syncHUD(){const era=$('#era'),me=$('#me');if(innerWidth<=820){if(me.par
 function renderTop(){
  if(!S||U.mode!=='game')return;const d=G.date(),k=S.player;
  setHTML($('#eraTxt'),`<span class="e1">${G.eraK()}</span><span class="e2">${G.monK()}${G.dayK()}</span><span class="e3" title="1582年10月15日より前はユリウス暦、それ以後はグレゴリオ暦">西暦${G.dstrW()}</span>`);
- document.querySelectorAll('[data-act="speed"]').forEach(b=>{setAttr(b,'aria-pressed',String(+b.dataset.v===U.speed));const cur=!U.speed&&+b.dataset.v===(U.lastSp||1);if(b.classList.contains('cur')!==cur)b.classList.toggle('cur',cur);});
+ document.querySelectorAll('[data-act="speed"]').forEach(b=>{setAttr(b,'aria-pressed',String(+b.dataset.v===(U.speed||U.lastSp||1)));const cur=!U.speed&&+b.dataset.v===(U.lastSp||1);if(b.classList.contains('cur')!==cur)b.classList.toggle('cur',cur);});
  {const pp=$('#ppBtn');if(pp){setText(pp,U.speed?'❚❚':'▶');if(pp.classList.contains('on')!==!!U.speed)pp.classList.toggle('on',!!U.speed);setAttr(pp,'aria-label',U.speed?'止める':'時を進める');}}
  syncHUD();const alive=S.clans[k]&&S.clans[k].alive,L=alive?G.gen(S.clans[k].leader):null;
  const meHTML=alive?`${L?faceHTML(L.n,'sm',k):''}${kamonHTML(k,24)}<div><b>${G.CNK(k)}</b>${L?officeBadge(L.n):''}<small>城 ${G.clanCastles(k).length} ・ 兵 ${man(G.clanTroops(k))}</small></div>
@@ -1378,13 +1378,14 @@ function showScen(){anim=null;U.speed=0;U.acc=0;U.mode='title';$('#app').dataset
 function showPick(sid){U.pickScen=sid;U.pickRegion='all';U.mode='pick';$('#app').dataset.mode='pick';title.hidden=true;
  const sc=TK.SCEN[sid];G.newGame(sid,sc.owners?Object.keys(sc.owners)[0]:'oda');S=G.S();S.player='__none';resize();fitTitle();
  // 配置図を変えたら、その時代の主役の家を初めに選んでおく
- const DEF={s1585:'hashiba',s1592:'hashiba',s1600:'tokugawa'};const al=k=>k&&S.clans[k]&&S.clans[k].alive;
+ const DEF={s1585:'hashiba',s1592:'hashiba',s1600:'tokugawa'};const al=pickableClan;
  U.pickClan=[DEF[sid],'oda','hashiba'].find(al)||Object.keys(S.clans).filter(al).sort((a,b)=>G.power(b)-G.power(a))[0];renderPick();}
-const PICK_REGIONS={'東北':['陸奥','出羽','蝦夷'],'関東':['常陸','下野','上野','下総','上総','安房','武蔵','相模'],'甲信越':['甲斐','信濃','越後','佐渡'],'東海':['尾張','美濃','三河','遠江','駿河','伊豆','伊勢','伊賀','志摩','飛騨'],'北陸':['越中','越前','加賀','能登','若狭'],'近畿':['近江','山城','大和','摂津','河内','和泉','紀伊','丹波','丹後','但馬'],'中国・四国':['因幡','伯耆','出雲','石見','隠岐','播磨','美作','備前','備中','備後','安芸','周防','長門','讃岐','阿波','伊予','土佐'],'九州':['筑前','筑後','豊前','豊後','肥前','肥後','日向','大隅','薩摩','壱岐'],'朝鮮・対馬':['対馬']};
-function pickRegion(k){const p=G.C[S.clans[k]?.cap]?.prov;return k==='joseon'?'朝鮮・対馬':Object.keys(PICK_REGIONS).find(n=>PICK_REGIONS[n].includes(p))||'その他';}
+const PICK_REGIONS={'東北':['陸奥','出羽','蝦夷'],'関東':['常陸','下野','上野','下総','上総','安房','武蔵','相模'],'甲信越':['甲斐','信濃','越後','佐渡'],'東海':['尾張','美濃','三河','遠江','駿河','伊豆','伊勢','伊賀','志摩','飛騨'],'北陸':['越中','越前','加賀','能登','若狭'],'近畿':['近江','山城','大和','摂津','河内','和泉','紀伊','丹波','丹後','但馬'],'中国・四国':['因幡','伯耆','出雲','石見','隠岐','播磨','美作','備前','備中','備後','安芸','周防','長門','讃岐','阿波','伊予','土佐'],'九州':['筑前','筑後','豊前','豊後','肥前','肥後','日向','大隅','薩摩','壱岐','対馬']};
+function pickableClan(k){return !!S.clans[k]?.alive&&G.clanCastles(k).some(id=>vector.strategyCastle(G.C[id]));}
+function pickRegion(k){const p=G.C[S.clans[k]?.cap]?.prov;return Object.keys(PICK_REGIONS).find(n=>PICK_REGIONS[n].includes(p))||'その他';}
 document.addEventListener('change',e=>{if(U.mode==='pick'&&e.target.id==='pickRegion'){U.pickRegion=e.target.value;renderPick();}});
 function renderPick(){
- const sc=TK.SCEN[U.pickScen],all=Object.keys(S.clans).filter(j=>S.clans[j].alive),list=all.filter(j=>!U.pickRegion||U.pickRegion==='all'||pickRegion(j)===U.pickRegion).sort((a,b)=>G.power(b)-G.power(a));if(list.length&&!list.includes(U.pickClan))U.pickClan=list[0];
+ const sc=TK.SCEN[U.pickScen],all=Object.keys(S.clans).filter(pickableClan),list=all.filter(j=>!U.pickRegion||U.pickRegion==='all'||pickRegion(j)===U.pickRegion).sort((a,b)=>G.power(b)-G.power(a));if(list.length&&!list.includes(U.pickClan))U.pickClan=list[0];
  const PRE=G.preList();const pre=PRE.find(x=>x.k===U.pickClan);if(!pre&&!(S.clans[U.pickClan]&&S.clans[U.pickClan].alive))U.pickClan=list[0];
  const k=U.pickClan;
  const preCard=x=>{return `<button class="pc${x.k===k?' on':''}" data-act="pick" data-clan="${x.k}">${familyMarkHTML(x.k)}${faceHTML(x.leader,'sm',x.k)}<span>${G.CN(x.k)}<small>${esc(x.leader)}・${esc(G.CNK(x.parent))}に従う（${x.d[0]}年に自立）</small></span></button>`;};
@@ -1397,7 +1398,7 @@ function renderPick(){
  <div class="tbtns"><button class="btn" data-act="back-scen">戻る</button></div>`;}
 function chooseInitialClan(k){
  if(U.mode!=='pick'||!TK.SCEN[U.pickScen])return;
- if(!S.clans[k]?.alive&&!G.preList().some(x=>x.k===k))return;
+ if(!pickableClan(k)&&!G.preList().some(x=>x.k===k))return;
  U.pickClan=k;startGame();
 }
 function startGame(){if(U.mode!=='pick')return;G.newGame(U.pickScen,U.pickClan);S=G.S();S.hsig=G.histSig();S.chats={};U.sel=null;U.ended=false;enterGame();

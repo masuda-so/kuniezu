@@ -14,6 +14,10 @@ is [docs/README.md](docs/README.md); open requests and ownership are in
 
 ## Features and limitations
 
+- House selection is limited to the Japanese strategic map. Korean history remains
+  available in the chronology and individual battle maps. Pausing preserves the
+  selected speed, which is used when playback resumes.
+
 - The history DB uses Julian dates through 4 October 1582 and Gregorian dates from 15 October. It rejects the reform gap (5–14 October), and distinguishes Japanese and Korean lunisolar dates.
 - The Bunroku, Nagashino and Komaki–Nagakute campaign overviews link to individual battles. The Shitaragahara view includes eleven local units and the Nagakute view five, keeping other fronts outside the local diagram. The Busan diagram covers the old fortress assault, with Korean-calendar dates and conversion sources kept distinct.
 
