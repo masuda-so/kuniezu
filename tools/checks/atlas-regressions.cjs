@@ -2,12 +2,15 @@
 const fs=require('node:fs'),path=require('node:path'),assert=require('node:assert/strict');
 const {G,TK,TKLayout}=require('./history-focus.cjs').model();
 const battles=Object.entries(TK.BATTLES);
-assert.equal(battles.length,111);
+const scoped=Object.values(TK.CONFLICT_CATALOG||{}).filter(r=>r.scene);
+assert.equal(battles.filter(([,b])=>!b.conflictId).length,111);
+assert.equal(battles.length,111+scoped.length);
 for(const [title,b] of battles){
  assert.ok(Array.isArray(b.participantClans),title+' participation');
  for(const k of b.participantClans)assert.ok(TK.CLANS[k],title+' unknown faction '+k);
  const m=TK.BATTLE_ATLAS[title],d=JSON.parse(fs.readFileSync(path.join(__dirname,'../../kuniezu/static/kuniezu/atlas',m.file)));
- assert.equal(d.title,title);assert.equal(Buffer.from(d.heights,'base64').length,d.width*d.height*2);
+ const reused=TK.CONFLICT_CATALOG?.[title]?.scene;
+ assert.equal(d.title,reused?.sourceTitle||title);assert.equal(Buffer.from(d.heights,'base64').length,d.width*d.height*2);
  assert.ok(d.bounds[0]<d.bounds[2]&&d.bounds[1]>d.bounds[3]);
  assert.deepEqual(Array.from(m.bounds),d.bounds,title+' relief and projected points share the same bounds');
  for(const p of d.points)assert.ok(p.lon>=d.bounds[0]&&p.lon<=d.bounds[2]&&p.lat<=d.bounds[1]&&p.lat>=d.bounds[3]);
@@ -54,6 +57,6 @@ const units=[0,1,2].map(i=>({id:8000+i,clan:'oda',gens:[],commanders:['織田信
 const before=JSON.stringify(units),groups=G.convoyLayout(units,1,(x,y)=>[x,y],position);assert.equal(JSON.stringify(units),before);assert.equal(groups.length,1);assert.equal(groups[0].u.id,8002);assert.equal(groups[0].members.length,3);assert.equal(groups[0].displayUnit.troops,6000);
 const separate=G.convoyLayout(units,4,(x,y)=>[x*4,y*4],position);assert.equal(separate.length,3);assert.ok(separate.every(g=>g.members.length===1));
 units[1].path=['kiyosu','okazaki'];assert.ok(G.convoyLayout(units,1,(x,y)=>[x,y],position).length>1);
-console.log('PASS: 111 local relief maps, strict participants, Hojo filter, save policy, old Honnoji site, Toda alias, same-march convoy grouping and zoom separation');
+console.log('PASS: '+battles.length+' battle views with 111 retained local relief maps, strict participants, Hojo filter, save policy, old Honnoji site, Toda alias, same-march convoy grouping and zoom separation');
 
 const route=G.visualEdgeGeo('gifu','kiyosu');for(const f of [0,1]){const point=G.visualPathPoint(route,f),a=units.map(u=>({...u,path:['gifu','kiyosu']})),rows=G.convoyLayout(a,5,(x,y)=>[x*5,y*5],()=>point);assert.equal(new Set(rows.map(r=>r.x.toFixed(3)+','+r.y.toFixed(3))).size,3,'convoy stays separate at both road endpoints');}
