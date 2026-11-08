@@ -45,6 +45,7 @@ jobs:
       - name: Battle atlas source and framing
         run: |
           node tools/checks/battle-conflicts.cjs
+          node tools/checks/local-battle-scene.cjs
           node tools/checks/atlas-regressions.cjs
           node tools/checks/battle-viewport.cjs
           node tools/checks/battle-counter-density.cjs

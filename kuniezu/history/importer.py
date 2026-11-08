@@ -120,7 +120,7 @@ CLAIM_KIND = {
         "siege-and-field-battle documented-siege-phase military-event castle-fall "
         "campaign-action military-side command hoifa-conquest ula-conquest "
         "jianzhou-unification amur-expedition encirclement-fort-preparation "
-        "military-corridor fall-date outer-defence-breached"
+        "military-corridor fall-date outer-defence-breached castle-surrender"
     ),
     PhenomenonKind.CONTROL: (
         "captured-and-renamed territorial-transfer territory-confirmation "
@@ -129,7 +129,7 @@ CLAIM_KIND = {
     ),
     PhenomenonKind.RELATION: (
         "relationship-to-ming recorded-ming-tribute-missions alliance-formation "
-        "submission-accepted"
+        "submission-accepted submission diplomatic-audience peace-agreement"
     ),
     PhenomenonKind.OFFICE: (
         "central-office military-role military-religious-role historical-castle-role"

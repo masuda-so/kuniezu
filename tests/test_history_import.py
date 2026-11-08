@@ -117,16 +117,43 @@ def test_things_and_phenomena_fall_into_exactly_one_class(inputs):
     assert sum(summary.unclassified.values()) == other.count()
 
 
-def test_people_are_one_thing_under_all_their_names(inputs):
+@pytest.mark.parametrize(
+    "person_key,names,game_name,scheme,identifier",
+    [
+        (
+            "person:toyotomi-hideyoshi",
+            {"木下秀吉", "羽柴秀吉", "豊臣秀吉"},
+            "羽柴秀吉",
+            "wikidata",
+            "Q187550",
+        ),
+        (
+            "person:otomo-sorin",
+            {"大友宗麟", "大友義鎮"},
+            "大友義鎮",
+            "ndlna",
+            "00625175",
+        ),
+    ],
+)
+def test_people_are_one_thing_under_all_their_names(
+    inputs, person_key, names, game_name, scheme, identifier
+):
     import_history(inputs)
 
-    hideyoshi = Thing.objects.get(key="person:toyotomi-hideyoshi")
-    names = set(hideyoshi.names.values_list("name", flat=True))
-    assert {"木下秀吉", "羽柴秀吉", "豊臣秀吉"} <= names
-    # The game's display name and the registry entry are the same person.
-    assert not Thing.objects.filter(key="person:羽柴秀吉").exists()
-    assert hideyoshi.records.filter(record_type=RecordType.CATALOG).exists()
-    assert hideyoshi.authorities.filter(scheme="wikidata").exists()
+    person = Thing.objects.get(key=person_key)
+    assert names <= set(person.names.values_list("name", flat=True))
+    # Import the game's catalog alias into the curated identity, not a new thing.
+    assert not Thing.objects.filter(key="person:" + game_name).exists()
+    assert person.records.filter(record_type=RecordType.CATALOG).exists()
+    assert person.authorities.filter(scheme=scheme, identifier=identifier).count() == 1
+    assert Thing.objects.filter(
+        authorities__scheme=scheme, authorities__identifier=identifier
+    ).get() == person
+    for name in names:
+        assert Thing.objects.filter(names__name=name).distinct().get() == person
+    if scheme == "ndlna":
+        assert not person.authorities.filter(scheme="wikidata").exists()
 
 
 def test_a_verified_date_keeps_its_calendar_and_its_day_number(inputs):
@@ -318,6 +345,10 @@ def test_every_word_for_a_claim_has_one_class():
     # An alliance, or a surrender that is accepted, is a relation between parties.
     assert CLAIM_KIND_OF["alliance-formation"] == PhenomenonKind.RELATION
     assert CLAIM_KIND_OF["submission-accepted"] == PhenomenonKind.RELATION
+    assert CLAIM_KIND_OF["submission"] == PhenomenonKind.RELATION
+    assert CLAIM_KIND_OF["diplomatic-audience"] == PhenomenonKind.RELATION
+    assert CLAIM_KIND_OF["peace-agreement"] == PhenomenonKind.RELATION
+    assert CLAIM_KIND_OF["castle-surrender"] == PhenomenonKind.CONFLICT
     assert set(CLAIM_KIND_OF.values()) <= set(PhenomenonKind) - {PhenomenonKind.OTHER}
 
 
@@ -697,3 +728,31 @@ def test_every_kobun_article_of_a_year_is_listed_once_and_unclassified(inputs):
     year_only = articles.get(key="kobun:020100201384")
     assert year_only.precision == "period"
     assert year_only.time_label == "天文3年是歳"
+
+
+def test_contact_peace_and_surrender_keep_their_narrow_meaning(inputs):
+    import_history(inputs)
+    for key in (
+        "submission-date-masamune",
+        "submission-tokugawa-ieyasu",
+        "submission-uesugi-kagekatsu",
+    ):
+        item = Phenomenon.objects.get(key="claim:" + key)
+        assert item.subtype == "diplomatic-audience"
+        assert item.kind == PhenomenonKind.RELATION
+        assert item.mode == Mode.EVENT
+    audience = Phenomenon.objects.get(key="claim:submission-date-masamune")
+    assert "翌日" not in audience.summary
+    assert "帰国" not in audience.summary
+    assert "黒川城" not in audience.summary
+    peace = Phenomenon.objects.get(key="claim:peace-hashiba-nobukatsu")
+    assert peace.subtype == "peace-agreement"
+    assert peace.kind == PhenomenonKind.RELATION
+    surrender = Phenomenon.objects.get(key="claim:submission-ryukyu-shuri")
+    assert surrender.subtype == "castle-surrender"
+    assert surrender.kind == PhenomenonKind.CONFLICT
+    assert "大島" not in surrender.summary
+    assert "運天" not in surrender.summary
+    assert not Participation.objects.filter(
+        phenomenon=surrender, thing__name="樺山久高"
+    ).exists()
