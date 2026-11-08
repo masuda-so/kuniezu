@@ -44,8 +44,8 @@ const timer=setTimeout(()=>{console.error('timeout');chrome.kill();process.exitC
  const t0=(await metrics()).Timestamp;await call('Page.navigate',{url:URL});
  await until("!!document.querySelector('[data-act=new]')&&!document.getElementById('boot')");const ready=(await metrics()).Timestamp;await until('document.readyState==="complete"');await sleep(300);
  const startup={domContentLoadedSec:+(domAt-t0).toFixed(2),loadSec:+(loadAt-t0).toFixed(2),titleReadySec:+(ready-t0).toFixed(2),requests:net.requests,transferMB:+(net.bytes/1048576).toFixed(2),byKind:Object.fromEntries(Object.entries(net.kinds).sort((a,b)=>b[1][1]-a[1][1]).slice(0,8).map(([k,[n,b]])=>[k,n+"件 "+(b/1048576).toFixed(1)+"MB"])),scripts:await ev("document.querySelectorAll('script[src]').length"),heapMB:+((await metrics()).JSHeapUsedSize/1048576).toFixed(1)};
- await ev("document.querySelector('[data-act=new]').click()");await until("!!document.querySelector('[data-act=scen][data-id="+SCEN+"]')");await ev("document.querySelector('[data-act=scen][data-id="+SCEN+"]').click()");await until("!!document.querySelector('[data-act=start]')");await ev("document.querySelector('[data-act=start]').click()");await until("TKUI.modal==='intro'");
- await ev("document.querySelector('#modal [data-act=close]').click()");await until('!TKUI.modal');await ev(observe);await sleep(1500);
+ await ev("document.querySelector('[data-act=new]').click()");await until("!!document.querySelector('[data-act=scen][data-id="+SCEN+"]')");await ev("document.querySelector('[data-act=scen][data-id="+SCEN+"]').click()");await until("!!document.querySelector('#pick [data-act=pick].on')");await ev("document.querySelector('#pick [data-act=pick].on').click()");await until("TKUI.mode==='game'&&!TKUI.modal");
+ await until('!TKUI.modal');await ev(observe);await sleep(1500);
  const rows=[];
  // 新しい地域へ寄った直後の地形タイル読込中（停止中）の負荷。
  await ev("TKUI.speed=0");await ev("TKUI.cam(...G.PJ(130.6,32.4),2.2),1");rows.push({view:"九州へ移動",...await sample("地形読込",6000),tilesLoaded:await ev("TKTerrain.stats().loaded")});

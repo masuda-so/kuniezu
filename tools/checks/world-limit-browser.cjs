@@ -18,12 +18,12 @@ async function click(selector){const p=await ev(`(()=>{const el=document.querySe
 async function shot(name){await ev("(()=>{const e=document.querySelector('.mbox');if(e)e.scrollTop=0;})()");const r=await call('Page.captureScreenshot',{format:'png'});fs.writeFileSync(path.join(OUT,name+'.png'),Buffer.from(r.data,'base64'));}
 async function view(width,height){await call('Emulation.setDeviceMetricsOverride',{width,height,deviceScaleFactor:1,mobile:width<820});await sleep(300);}
 async function load(){await call('Page.navigate',{url:URL});await until("!!document.querySelector('[data-act=new]')&&!document.getElementById('boot')");}
-async function start(){await click('[data-act=new]');await click('[data-act=scen][data-id=s1560]');await click('[data-act=start]');await until("TKUI.modal==='intro'");}
+async function start(){await click('[data-act=new]');await click('[data-act=scen][data-id=s1560]');await click('#pick [data-act=pick].on');await until("TKUI.mode==='game'&&!TKUI.modal");}
 async function menu(){await click('#me [data-m=menu]');}
 const timer=setTimeout(()=>{console.error('timeout');chrome.kill();process.exitCode=1},480000);
 const cover=()=>ev('(()=>{const {corners}=TKUI.mapBounds();return corners[0][0]<=.01&&corners[0][1]<=.01&&corners[1][0]>=innerWidth-.01&&corners[1][1]>=innerHeight-.01})()');
 (async()=>{try{
- const target=await call('Target.createTarget',{url:'about:blank'},null);session=(await call('Target.attachToTarget',{targetId:target.targetId,flatten:true},null)).sessionId;await call('Runtime.enable');await call('Page.enable');await view(1400,1000);await load();await start();await click('#modal [data-act=close]');await ev('TKUI.speed=0');
+ const target=await call('Target.createTarget',{url:'about:blank'},null);session=(await call('Target.attachToTarget',{targetId:target.targetId,flatten:true},null)).sessionId;await call('Runtime.enable');await call('Page.enable');await view(1400,1000);await load();await start();await ev('TKUI.speed=0');
  const results=[];
  for(const [w,h]of [[1400,1000],[662,827],[390,844],[1900,700]]){await view(w,h);for(const [x,y]of [[-1e6,-1e6],[1e6,1e6],[-1e6,1e6],[1e6,-1e6]]){const r=await ev(`(()=>{TKUI.cam(${x},${y},0);return TKUI.mapBounds();})()`);assert.ok(r.corners[0][0]<=.01&&r.corners[0][1]<=.01&&r.corners[1][0]>=w-.01&&r.corners[1][1]>=h-.01,JSON.stringify(r));results.push({w,h,...r});}await sleep(250);await shot('world-limit-'+w);}
  assert.deepEqual(errors,[]);fs.writeFileSync(path.join(OUT,'result.json'),JSON.stringify({results,errors},null,2));console.log('PASS: full viewport remains inside world at all four drag limits, four aspect ratios');

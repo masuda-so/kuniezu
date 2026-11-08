@@ -14,6 +14,7 @@ is [docs/README.md](docs/README.md); open requests and ownership are in
 
 ## Features and limitations
 
+- Choosing a house from the left panel or a castle on the map starts observation and replaces the selection panel with the chronology. The map keeps its washi, wave pattern, and relief shading without a terrain/plain-map toggle.
 - Land, water and shorelines are rendered as vectors from edited GeoJSON.
   [CODH inputs and preparation](data/inputs/codh-edo/README.md) distinguish
   Edo-period comparison shapes from adopted period corrections. Ownership colours
@@ -52,7 +53,7 @@ is [docs/README.md](docs/README.md); open requests and ownership are in
 - Shows former lakeshores, castles, facilities and people checked against sources,
   marches along historical roads, and battle deployments and movements, each with
   its source.
-- Battle markers retain their geographic positions when the viewport or district changes. Co-located units can be selected individually.
+- Battle markers retain their geographic positions when the viewport or district changes. Co-located units can be selected individually. Crowded markers become smaller; the selected unit keeps its original size and appears in front.
 - Wide battles show individual counters and portraits in the overview, with nearby
   commander labels in district views. Narrow screens use a single-row district selector.
 - File exports, save slots and autosaves preserve sub-day time so marching units
@@ -70,6 +71,9 @@ is [docs/README.md](docs/README.md); open requests and ownership are in
   sections include modern roads and tunnels; they are not an exact sixteenth-century
   centerline. See the [inputs and regeneration](data/inputs/sanshu-road-review/README.md)
   (Japanese).
+- Kennyo, Niwa Nagashige, Shima Sakon, Saito Yoshitatsu and Ashikaga Yoshiteru use
+  the same reviewed portrait crops while originals load or fail. Depictions include
+  later artwork. See [asset regeneration and checks](docs/reports/PORTRAIT_FALLBACK_CROPS.md) (Japanese).
 - Late elevation, river and boundary loads refresh the map while the camera stays still.
 - Dated events without a known related place remain searchable by their subject.
   Locations are not invented, and Edo-period reclamation records are kept separate
@@ -174,7 +178,8 @@ It holds every
 current input record and keeps source-verified records apart from the unverified
 inventory of what the game implements (`docs/architecture/history-rdb.md`).
 
-Starting and stopping the server is done by the user. Verification connects to an
+Agents may start and stop the server only on ports the user has started before
+(8000 and 8001), and never start it on any other port. Verification connects to an
 already running `http://localhost:8000/index.html`. The output folder for check
 results can be set with `GAME_TEST_OUTPUT`.
 
