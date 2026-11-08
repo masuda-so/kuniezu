@@ -1,0 +1,39 @@
+{
+  "id": "territory-confirmation-sagara-yorifusa",
+  "entity": "person:相良頼房",
+  "predicate": "territory-confirmation",
+  "value": "秀吉が肥後一国を佐々成政に与え、相良頼房（長毎）をこれに属させて、その邑の求麻郡を安堵した。",
+  "validYears": [
+    1587,
+    1587
+  ],
+  "datePrecision": "day",
+  "source": "hiDainihonshiryoKobun",
+  "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+  "locator": "綱文：和暦 天正15年5月30日 第1条（区分 史料綜覧、編11・冊912（データベースの表示値）、168頁）",
+  "gameBindings": [
+    "TK.HIST:相良氏の球磨郡安堵"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-07",
+  "uncertainty": "綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。",
+  "linkedEntities": [
+    "person:相良頼房",
+    "person:羽柴秀吉",
+    "person:佐々成政"
+  ],
+  "eventTime": {
+    "kind": "dated-event",
+    "date": [
+      1587,
+      5,
+      30
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": false,
+    "precision": "day"
+  },
+  "eventRelation": "territory-confirmation",
+  "eventScope": "綱文が掲げる関係の変化とその日付、綱文に書かれた相手。一致。年表の旧暦の注記（天正15年5月30日）と綱文の日付が同じで、ゲームの暦表で直すと 1587 年 7 月 5 日。 年表は変えていない（どちらを採るかは未判断）。 条件・領地の範囲・関係の終わりは補わない。"
+}
