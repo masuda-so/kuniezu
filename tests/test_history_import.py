@@ -118,7 +118,7 @@ def test_things_and_phenomena_fall_into_exactly_one_class(inputs):
 
 
 @pytest.mark.parametrize(
-    "person_key,names,game_name,scheme,identifier",
+    "identity",
     [
         (
             "person:toyotomi-hideyoshi",
@@ -136,9 +136,8 @@ def test_things_and_phenomena_fall_into_exactly_one_class(inputs):
         ),
     ],
 )
-def test_people_are_one_thing_under_all_their_names(
-    inputs, person_key, names, game_name, scheme, identifier
-):
+def test_people_are_one_thing_under_all_their_names(inputs, identity):
+    person_key, names, game_name, scheme, identifier = identity
     import_history(inputs)
 
     person = Thing.objects.get(key=person_key)

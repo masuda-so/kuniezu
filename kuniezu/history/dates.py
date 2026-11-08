@@ -18,10 +18,19 @@ if TYPE_CHECKING:
     from pathlib import Path
 
 GREGORIAN_START = 2299161  # 15 October 1582
+LAST_JULIAN_DATE = (1582, 10, 4)
+FIRST_GREGORIAN_DATE = (1582, 10, 15)
 MONTH_TABLE = re.compile(r"\[(\d+),(\d+),([01]),(\d+)\]")
 
 
 def western_to_jd(year: int, month: int, day: int) -> int:
+    """Convert a hybrid Western date, rejecting the calendar reform gap."""
+    if LAST_JULIAN_DATE < (year, month, day) < FIRST_GREGORIAN_DATE:
+        message = (
+            "1582-10-05 through 1582-10-14 do not exist "
+            "in the hybrid western calendar"
+        )
+        raise ValueError(message)
     a = (14 - month) // 12
     y = year + 4800 - a
     m = month + 12 * a - 3
