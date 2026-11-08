@@ -2,7 +2,7 @@
 
 ## プロジェクト構成とモジュールの配置
 
-1560〜1615 年の日本・朝鮮を舞台にした地図ゲーム。`kuniezu/static/kuniezu/` は素の HTML/JavaScript で（地図の配信物だけ正本から生成する）、ページは Django のテンプレート `kuniezu/templates/index.html` で、その `game-scripts` が実際の依存順（データ定義 → 史実訂正 → 地理と移動 → 表示）。順序を変えると API の上書き関係が変わるので、ファイル名順に並べ替えない。
+1534〜1615年の日本を対象に拡張する地図ゲーム。現行の開始シナリオは1560年で、1534年開始は調査・実装を進める対象。朝鮮関連は史実DB・年表・個別合戦図で扱う。`kuniezu/static/kuniezu/` は素の HTML/JavaScript で（地図の配信物だけ正本から生成する）、ページは Django のテンプレート `kuniezu/templates/index.html` で、その `game-scripts` が実際の依存順（データ定義 → 史実訂正 → 地理と移動 → 表示）。順序を変えると API の上書き関係が変わるので、ファイル名順に並べ替えない。
 
 - `kuniezu/static/kuniezu/`（84 の JS、`map/` 地図の正本と配信物、`atlas/` 合戦地形、`terrain/` 標高・陰影、`portraits/` 肖像、`kamon/` 家紋、`licenses/` 素材の出典）。配信 URL は変えない（地図は 2026-11-04 に利用者の判断で `map/build/` と `map/control/` へ移した）。
 - `docs/`（`architecture/` 構成と依存順、`work/` 残要望と担当、`reports/` 報告書、`history/` 過去の原文）。作業前に `HANDOFF.md` を読む。
