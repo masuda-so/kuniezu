@@ -33,8 +33,11 @@ function sizes(h,width){
     const before=geo(h),beforeSizes=new Map(bodies(h).map(b=>[b.id,b.w]));h.ctrl.select(u.id);assert.deepEqual(geo(h),before,'selecting cannot move any unit');assert.equal(choices(h).find(b=>b.dataset.unitId===u.id)?.getAttribute('aria-pressed'),'true','unit-ID selection also marks its button');counters(h,TK.BATTLES[title]);sizes(h,width);
     const ctx=h.cv.context,body=bodies(h).at(-1),matching=(TK.BATTLES[title].atlasGroups||[]).flatMap(g=>g.members.map((id,i)=>[id,g.id+'-'+i])).find(x=>x[0]===u.id)?.[1]||'est-'+u.id;
     assert.equal(body.id,matching,'selected body is last');assert.equal(body.w,beforeSizes.get(matching),'selection preserves density size');
-    assert.equal(ctx.faces.at(-1).id,matching);assert.equal(ctx.faces.at(-1).w,Math.max(16,Math.round((width<560?16:24)*body.w/(width<560?18:28)/2)*2));
-    assert.equal(ctx.flags.at(-1).id,matching);assert.equal(ctx.flags.at(-1).k,Math.max(width<560?.55:.7,(width<560?.55:1)*body.w/(width<560?18:28)));
+    const face=ctx.faces.findLast(f=>f.id===matching),flag=ctx.flags.findLast(f=>f.id===matching),button=choices(h).find(b=>b.dataset.unitId===u.id);
+    assert.ok(face||button.children.some(el=>el.tag==='img'&&el.width===28),'selected commander portrait remains on map, annotation or individual record');
+    if(flag){assert.ok(face);assert.equal(face.w,Math.max(16,Math.round((width<560?16:24)*body.w/(width<560?18:28)/2)*2));assert.equal(flag.k,Math.max(width<560?.55:.7,(width<560?.55:1)*body.w/(width<560?18:28)));}
+    else if(face)assert.equal(face.w,16,'annotation portraits keep a readable common size');
+    assert.equal(new Set(ctx.flags.map(f=>f.id)).size,ctx.flags.length,'a troop does not repeat its map flag');
     const geometry=JSON.stringify({states:h.ctrl.unitStates(),bodies:bodies(h).map(b=>[b.id,b.w,b.h]),boxes:h.ctrl.testBoxes()});
     h.ctrl.pause();h.ctrl.seek(50);assert.equal(JSON.stringify({states:h.ctrl.unitStates(),bodies:bodies(h).map(b=>[b.id,b.w,b.h]),boxes:h.ctrl.testBoxes()}),geometry,'pause and seek keep deterministic size and location');
     const peers=h.ctrl.unitStates().filter(v=>inFrame(v,h)&&Math.hypot(v.screenPoint[0]-u.screenPoint[0],v.screenPoint[1]-u.screenPoint[1])<1e-8);

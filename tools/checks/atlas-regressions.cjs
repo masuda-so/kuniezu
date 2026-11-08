@@ -10,7 +10,7 @@ for(const [title,b] of battles){
  for(const k of b.participantClans)assert.ok(TK.CLANS[k],title+' unknown faction '+k);
  const m=TK.BATTLE_ATLAS[title],d=JSON.parse(fs.readFileSync(path.join(__dirname,'../../kuniezu/static/kuniezu/atlas',m.file)));
  const reused=TK.CONFLICT_CATALOG?.[title]?.scene;
- assert.equal(d.title,reused?.sourceTitle||title);assert.equal(Buffer.from(d.heights,'base64').length,d.width*d.height*2);
+ assert.equal(d.title,reused?.terrainFile?title:reused?.sourceTitle||title);assert.equal(Buffer.from(d.heights,'base64').length,d.width*d.height*2);
  assert.ok(d.bounds[0]<d.bounds[2]&&d.bounds[1]>d.bounds[3]);
  if(reused?.bounds){assert.deepEqual(Array.from(m.bounds),Array.from(reused.bounds),title+' local bounds');assert.ok(m.bounds[0]>=d.bounds[0]&&m.bounds[2]<=d.bounds[2]&&m.bounds[1]<=d.bounds[1]&&m.bounds[3]>=d.bounds[3],title+' crop stays inside source relief');}
  else assert.deepEqual(Array.from(m.bounds),d.bounds,title+' relief and projected points share the same bounds');
