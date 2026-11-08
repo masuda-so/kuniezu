@@ -156,6 +156,139 @@
         }
       ],
       "existingSceneTitle": "第二次晋州城の戦い"
+    },
+    {
+      "id": "campaign:長篠の戦い",
+      "title": "長篠の戦い",
+      "kind": "campaign",
+      "dateLabel": "1575年",
+      "summary": "長篠城の攻防、設楽原の本戦、鳶ヶ巣山砦への攻撃を分けて見る。",
+      "children": [
+        "battle:長篠城の攻防1575",
+        "battle:設楽原の戦い",
+        "battle:鳶ヶ巣山砦攻撃1575"
+      ],
+      "autoSceneTitle": "設楽原の戦い",
+      "sources": [
+        {
+          "author": "新城市",
+          "title": "長篠・設楽原の戦い",
+          "url": "https://www.city.shinshiro.lg.jp/kanko/meisyo/nagashino-shitaragah.html",
+          "locator": "両軍の布陣・激闘10時間",
+          "scope": "長篠城攻防・設楽原本戦・鳶ヶ巣山攻撃の区別。個々の部隊の時刻・兵数・模式経路を確定する根拠にはしない。",
+          "accessed": "2026-11-08"
+        }
+      ]
+    },
+    {
+      "id": "battle:設楽原の戦い",
+      "title": "設楽原の戦い",
+      "kind": "battle",
+      "parent": "campaign:長篠の戦い",
+      "summary": "連吾川を挟む織田・徳川軍と武田軍の本戦。",
+      "scene": {
+        "sourceTitle": "長篠の戦い",
+        "date": "天正三年五月二十一日（1575年6月29日・ユリウス暦）",
+        "eventDate": [
+          1575,
+          6,
+          29
+        ],
+        "scope": "三河国 設楽原・連吾川両岸",
+        "bounds": [
+          137.503,
+          34.935,
+          137.542,
+          34.917
+        ],
+        "selection": {
+          "allowGroupIds": [
+            "group-0",
+            "group-1",
+            "group-2",
+            "group-3"
+          ],
+          "allowUnitIds": [
+            "nobunaga",
+            "teppo1",
+            "teppo2",
+            "ieyasu",
+            "okubo",
+            "katsuyori",
+            "yamagata",
+            "naito",
+            "baba",
+            "sanada",
+            "tsuchiya"
+          ],
+          "sourceClockWindow": [
+            35,
+            100
+          ],
+          "keepBeatSourcePercentages": [
+            35,
+            65,
+            85
+          ],
+          "keepCalendarSourcePercentages": [
+            35,
+            85
+          ],
+          "allowLandmarkNames": [
+            "極楽寺山",
+            "弾正山"
+          ],
+          "excludeFeatureNames": [
+            "鳶ヶ巣山",
+            "鳶ヶ巣山砦",
+            "長篠城"
+          ]
+        }
+      },
+      "sources": [
+        {
+          "author": "新城市",
+          "title": "長篠・設楽原の戦い",
+          "url": "https://www.city.shinshiro.lg.jp/kanko/meisyo/nagashino-shitaragah.html",
+          "locator": "両軍の布陣・激闘10時間",
+          "scope": "長篠城攻防・設楽原本戦・鳶ヶ巣山攻撃の区別。個々の部隊の時刻・兵数・模式経路を確定する根拠にはしない。",
+          "accessed": "2026-11-08"
+        }
+      ]
+    },
+    {
+      "id": "battle:長篠城の攻防1575",
+      "title": "長篠城の攻防（1575年）",
+      "kind": "battle",
+      "parent": "campaign:長篠の戦い",
+      "summary": "奥平信昌が守る長篠城を武田勢が包囲した。",
+      "sources": [
+        {
+          "author": "新城市",
+          "title": "長篠・設楽原の戦い",
+          "url": "https://www.city.shinshiro.lg.jp/kanko/meisyo/nagashino-shitaragah.html",
+          "locator": "両軍の布陣・激闘10時間",
+          "scope": "長篠城攻防・設楽原本戦・鳶ヶ巣山攻撃の区別。個々の部隊の時刻・兵数・模式経路を確定する根拠にはしない。",
+          "accessed": "2026-11-08"
+        }
+      ]
+    },
+    {
+      "id": "battle:鳶ヶ巣山砦攻撃1575",
+      "title": "鳶ヶ巣山砦への攻撃（1575年）",
+      "kind": "battle",
+      "parent": "campaign:長篠の戦い",
+      "summary": "酒井忠次らによる鳶ヶ巣山砦への攻撃。",
+      "sources": [
+        {
+          "author": "新城市",
+          "title": "長篠・設楽原の戦い",
+          "url": "https://www.city.shinshiro.lg.jp/kanko/meisyo/nagashino-shitaragah.html",
+          "locator": "両軍の布陣・激闘10時間",
+          "scope": "長篠城攻防・設楽原本戦・鳶ヶ巣山攻撃の区別。個々の部隊の時刻・兵数・模式経路を確定する根拠にはしない。",
+          "accessed": "2026-11-08"
+        }
+      ]
     }
   ]
 }
