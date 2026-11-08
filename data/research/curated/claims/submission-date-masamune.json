@@ -1,8 +1,8 @@
 {
   "id": "submission-date-masamune",
   "entity": "person:伊達政宗",
-  "predicate": "submission",
-  "value": "秀吉が伊達政宗を陣中に引見し、翌日饗応した。のちに帰国を許し、木村清久・浅野正勝を同行させて陸奥会津の黒川城を収めさせた。",
+  "predicate": "diplomatic-audience",
+  "value": "秀吉が陣中で伊達政宗を引見した。",
   "validYears": [
     1590,
     1590
@@ -17,7 +17,7 @@
   "recordType": "verified-historical-claim",
   "status": "verified-in-specified-scope",
   "checked": "2026-11-07",
-  "uncertainty": "天正18年3月〜6月の綱文は、政宗が小田原へ来謁するよう周りから勧められ続けたことを掲げる。 綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。",
+  "uncertainty": "天正18年3月〜6月の綱文は、政宗が小田原へ来謁するよう周りから勧められ続けたことを掲げる。 綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。 翌日の饗応、後日の帰国許可と黒川城収受は綱文の文脈として保持し、この単日の命題には含めない。",
   "linkedEntities": [
     "person:伊達政宗",
     "person:羽柴秀吉"
@@ -33,6 +33,8 @@
     "leapMonth": false,
     "precision": "day"
   },
-  "eventRelation": "submission",
-  "eventScope": "綱文が掲げる関係の変化とその日付、綱文に書かれた相手。不一致。年表は 1590 年 4 月 2 日、綱文の天正18年6月9日はゲームの暦表で 1590 年 7 月 10 日（99 日の差）。 年表は変えていない（どちらを採るかは未判断）。 条件・領地の範囲・関係の終わりは補わない。"
+  "eventRelation": "diplomatic-audience",
+  "eventScope": "綱文が掲げる引見・謁見とその日付。臣従関係の成立日・条件・終了時期は断定しない。ゲームの帰属・上洛項目は実装の比較参照であり、同じ行為とは限らない。",
+  "gameBindingRelation": "comparison-not-event-equivalence",
+  "sourceContext": "秀吉が伊達政宗を陣中に引見し、翌日饗応した。のちに帰国を許し、木村清久・浅野正勝を同行させて陸奥会津の黒川城を収めさせた。"
 }

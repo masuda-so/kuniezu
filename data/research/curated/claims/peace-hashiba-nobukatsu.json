@@ -1,7 +1,7 @@
 {
   "id": "peace-hashiba-nobukatsu",
   "entity": "person:羽柴秀吉",
-  "predicate": "alliance-formation",
+  "predicate": "peace-agreement",
   "value": "羽柴秀吉が織田信雄・徳川家康と和を講じ、伊勢桑名の近くで信雄と会った。",
   "validYears": [
     1584,
@@ -34,6 +34,6 @@
     "leapMonth": false,
     "precision": "day"
   },
-  "eventRelation": "alliance-formation",
-  "eventScope": "綱文が掲げる関係の変化とその日付、綱文に書かれた相手。不一致。年表は 1584 年 12 月 15 日、綱文の天正12年11月15日はゲームの暦表で 1584 年 12 月 16 日（1 日の差）。 年表は変えていない（どちらを採るかは未判断）。 条件・領地の範囲・関係の終わりは補わない。"
+  "eventRelation": "peace-agreement",
+  "eventScope": "綱文が掲げる和睦とその日付。軍事同盟の成立・領地割譲の範囲や関係の終了時期を補わない。"
 }

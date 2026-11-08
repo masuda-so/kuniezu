@@ -1,8 +1,8 @@
 {
   "id": "submission-ryukyu-shuri",
   "entity": "person:尚寧",
-  "predicate": "submission",
-  "value": "島津氏の臣樺山久高らが大島・徳之島などを攻め取り、運天港に上陸して首里城を攻めた。琉球王尚寧は人質を出して降を請い、この日、城を明け渡して去った。",
+  "predicate": "castle-surrender",
+  "value": "琉球王尚寧が首里城を明け渡して退去した。",
   "validYears": [
     1609,
     1609
@@ -17,10 +17,9 @@
   "recordType": "verified-historical-claim",
   "status": "verified-in-specified-scope",
   "checked": "2026-11-07",
-  "uncertainty": "年表の 4 月 5 日は綱文の旧暦の月日と同じ数字。 綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。",
+  "uncertainty": "年表の 4 月 5 日は綱文の旧暦の月日と同じ数字。 綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。 先行する大島・徳之島の攻略と運天上陸は、当日の命題と参加者から分離した文脈に保持する。",
   "linkedEntities": [
-    "person:尚寧",
-    "person:樺山久高"
+    "person:尚寧"
   ],
   "eventTime": {
     "kind": "dated-event",
@@ -33,6 +32,11 @@
     "leapMonth": false,
     "precision": "day"
   },
-  "eventRelation": "submission",
-  "eventScope": "綱文が掲げる関係の変化とその日付、綱文に書かれた相手。不一致。年表は 1609 年 4 月 5 日、綱文の慶長14年4月5日はゲームの暦表で 1609 年 5 月 8 日（33 日の差）。 年表は変えていない（どちらを採るかは未判断）。 条件・領地の範囲・関係の終わりは補わない。"
+  "eventRelation": "castle-surrender",
+  "eventScope": "綱文が「この日」と記す首里城の明渡しに限定。年表の侵攻項目は複数過程をまとめた実装参照であり、侵攻開始や島々攻略の日時をこの日へ結び付けない。",
+  "sourceContext": "島津氏の臣樺山久高らが大島・徳之島などを攻め取り、運天港に上陸して首里城を攻めた。琉球王尚寧は人質を出して降を請い、この日、城を明け渡して去った。",
+  "sourceContextEntities": [
+    "person:樺山久高"
+  ],
+  "gameBindingRelation": "component-of-implemented-summary"
 }

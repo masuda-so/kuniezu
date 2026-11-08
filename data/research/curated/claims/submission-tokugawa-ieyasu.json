@@ -1,7 +1,7 @@
 {
   "id": "submission-tokugawa-ieyasu",
   "entity": "person:徳川家康",
-  "predicate": "submission",
+  "predicate": "diplomatic-audience",
   "value": "徳川家康が大坂城で秀吉に謁見した。",
   "validYears": [
     1586,
@@ -33,6 +33,7 @@
     "leapMonth": false,
     "precision": "day"
   },
-  "eventRelation": "submission",
-  "eventScope": "綱文が掲げる関係の変化とその日付、綱文に書かれた相手。一致。綱文の天正14年10月27日をゲームの暦表で直した 1586 年 12 月 7 日は、年表の日付と同じ。 年表は変えていない（どちらを採るかは未判断）。 条件・領地の範囲・関係の終わりは補わない。"
+  "eventRelation": "diplomatic-audience",
+  "eventScope": "綱文が掲げる引見・謁見とその日付。臣従関係の成立日・条件・終了時期は断定しない。ゲームの帰属・上洛項目は実装の比較参照であり、同じ行為とは限らない。",
+  "gameBindingRelation": "comparison-not-event-equivalence"
 }
