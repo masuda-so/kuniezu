@@ -14,6 +14,7 @@ is [docs/README.md](docs/README.md); open requests and ownership are in
 
 ## Features and limitations
 
+- The history DB uses Julian dates through 4 October 1582 and Gregorian dates from 15 October. It rejects the reform gap (5–14 October), and distinguishes Japanese and Korean lunisolar dates.
 - The Bunroku and Nagashino campaign overviews link to individual battles. The Shitaragahara view includes only its eleven local units. The Busan diagram covers the old fortress assault, with Korean-calendar dates and conversion sources kept distinct.
 
 - Choosing a house from the left panel or a castle on the map starts observation and replaces the selection panel with the chronology. The map keeps its washi, wave pattern, and relief shading without a terrain/plain-map toggle.
@@ -175,7 +176,8 @@ or that a game site stands for a registry place, is stated by sourced records in
 without such a record, things of the same name are never merged. As the backbone
 of the whole, it imports an index of the Historiographical Institute's article
 headings (綱文), one row per article with its location only and never its text
-(`data/research/kobun-index/`); it now covers 1534 (478 articles), all unclassified.
+(`data/research/kobun-index/`); it now covers 1534 (478 articles), all unclassified. It also imports which
+battles each campaign is made of (`data/research/conflicts.json`).
 It holds every
 current input record and keeps source-verified records apart from the unverified
 inventory of what the game implements (`docs/architecture/history-rdb.md`).
