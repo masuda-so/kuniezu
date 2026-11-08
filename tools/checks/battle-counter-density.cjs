@@ -62,7 +62,19 @@ function sizes(h,width){
   fixture.ctrl.testBoxes().push(remote);fixture.cv.listeners.click({clientX:a.screenPoint[0]+8,clientY:a.screenPoint[1]});assert.deepEqual(choices(fixture).map(e=>e.dataset.unitId),['b'],'label outside a troop center keeps its own action');
   fixture.ctrl.select('b');assert.equal(ctx.counterStrokes.at(-1).alpha,1);assert.equal(ctx.faces.at(-1).alpha,1);assert.equal(ctx.globalAlpha,1);
  }finally{fixture.ctrl.destroy();}
- const result={focusChecks,frames,reduced,fullSize,selections,coincidentSelections,views,rows,fadeRestored:true,centerLabelPriority:true,limits:['Canvas mock, fixed times and empty game context; no browser or historical-source verification.','Exact coincidence is handled by individual selection, not separated by invented positions.']};
+
+ {const focus=h=>{const header=h.stage.querySelector('.atlas-selection').children[0];header.children.find(b=>b.textContent==='この周辺を見る').onclick();};const clamp=(x,a,b)=>Math.max(a,Math.min(b,x));for(const width of [335,940]){const h=await make('関ヶ原の戦い',width);h.ctrl.seek(50);const original=geo(h),time=h.ctrl.t,units=h.ctrl.unitStates().filter(u=>u.visible&&u.screenPoint);h.ctrl.setViewport(6,0,0);h.ctrl.select(units[0].id);focus(h);const a=h.ctrl.viewport();
+const target=units.reduce((best,u)=>Math.hypot(u.screenPoint[0]-units[0].screenPoint[0],u.screenPoint[1]-units[0].screenPoint[1])>Math.hypot(best.screenPoint[0]-units[0].screenPoint[0],best.screenPoint[1]-units[0].screenPoint[1])?u:best,units[0]);h.ctrl.select(target.id);focus(h);const b=h.ctrl.viewport();assert.equal(b.VS,6);assert.ok(Math.hypot(a.VX-b.VX,a.VY-b.VY)>1,'at maximum zoom another unit recenters');assert.equal(h.ctrl.testSelected(),target.id);assert.equal(h.ctrl.t,time);assert.deepEqual(geo(h),original);
+h.resize(width===335?940:335);const v=h.ctrl.viewport(),at=h.ctrl.unitStates().find(u=>u.id===target.id);assert.equal(v.VS,6);assert.equal(h.ctrl.testSelected(),target.id);assert.equal(h.ctrl.t,time);assert.deepEqual(geo(h),original);const base=[target.screenPoint[0]/width*v.W,target.screenPoint[1]/(a.H)*v.H];assert.ok(Math.abs(v.VX-clamp(base[0]*6-v.W/2,0,v.W*5))<1e-7);assert.ok(Math.abs(v.VY-clamp(base[1]*6-v.H/2,0,v.H*5))<1e-7);assert.ok(h.views().some(v=>v.textContent==='選択部隊の周辺'));h.ctrl.destroy();}}
+ let estimatedFocusChecks=0;
+ for(const title of ['関ヶ原の戦い','長篠の戦い','大坂冬の陣','大坂夏の陣']){
+  const h=await make(title,940);try{h.ctrl.seek(50);const target=h.ctrl.unitStates().find(u=>u.visible&&u.screenPoint&&u.positionBasis==='estimated-placement');if(!target)continue;
+   h.ctrl.select(target.id);const focus=()=>h.stage.querySelector('.atlas-selection').children[0].children.find(b=>b.textContent==='この周辺を見る').onclick();focus();assert.ok(h.ctrl.viewport().VS>=2,'API selection focuses estimated placement');estimatedFocusChecks++;const scale=h.ctrl.viewport().VS,time=h.ctrl.t;
+   h.resize(335);assert.equal(h.ctrl.viewport().VS,scale,'estimated group keeps local view on resize');assert.equal(h.ctrl.t,time);assert.equal(h.ctrl.testSelected(),target.id);assert.ok(h.views().some(v=>v.textContent==='選択部隊の周辺'));
+  }finally{h.ctrl.destroy();}
+ }
+ assert.ok(estimatedFocusChecks>0,'estimated placement focus is exercised');
+ const result={estimatedFocusChecks,focusChecks,frames,reduced,fullSize,selections,coincidentSelections,views,rows,fadeRestored:true,centerLabelPriority:true,limits:['Canvas mock, fixed times and empty game context; no browser or historical-source verification.','Exact coincidence is handled by individual selection, not separated by invented positions.']};
  if(process.env.GAME_TEST_OUTPUT){const out=path.resolve(process.env.GAME_TEST_OUTPUT);fs.mkdirSync(out,{recursive:true});fs.writeFileSync(path.join(out,'density.json'),JSON.stringify(result,null,2)+'\n');}
  console.log(`PASS: ${frames} frames; ${selections} selected units and ${coincidentSelections} coincident choices; fixed positions, readable size floors, foreground selection and bounded portrait sizes`);
 })().catch(e=>{console.error(e);process.exitCode=1;});

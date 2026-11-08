@@ -119,7 +119,7 @@ window.TKBattleAtlas=(function(){
   const mapped=g=>!!(g.point||sc.atlasSchematic?.paths?.[g.members[0]]);
   const pinFor=g=>{if(sc.atlasSchematic?.paths?.[g.members[0]])return schematicAt(g,t);if(g.estimated)return estAt(g,t);if(!g.point)return null;if(sc.atlasPlan)return [W*.56,H*.48];const u=unitById.get(g.members[0]);if(u&&!moveByName.has(u.g||u.n)){const e=estAt(g,t);if(e)return e;}const p=G.battlePhasePoint(sc,u?.g||u?.n,t,g.point);return pj(...p);};
   const isEst=g=>g.estimated||motionPlan().estimated.has(g.members[0]);
-  const selectionGroup=id=>groups.find(g=>g.id===id)||estGroups.find(g=>g.id===id)||groups.find(g=>g.members.includes(id))||estGroups.find(g=>g.members.includes(id));
+  const selectionGroup=id=>groups.find(g=>g.id===id&&(g.point||sc.atlasPlan||sc.atlasSchematic))||estGroups.find(g=>g.id===id)||groups.find(g=>g.members.includes(id)&&(g.point||sc.atlasPlan||sc.atlasSchematic))||estGroups.find(g=>g.members.includes(id))||groups.find(g=>g.id===id||g.members.includes(id));
   const selectionPortraits=[];
   function selectionPanel(ids){const el=cv.closest('.battle-stage')?.querySelector('.atlas-selection');if(!el)return;selectionPortraits.length=0;el.replaceChildren();el.hidden=!ids.length;if(!ids.length)return;
    const header=document.createElement('div');header.className='atlas-selection-header';const head=document.createElement('strong');head.textContent=ids.length>1?'部隊を選ぶ':'部隊の記録';header.append(head);el.append(header);
@@ -229,9 +229,9 @@ window.TKBattleAtlas=(function(){
    cv.dataset.mapReady=data||sc.atlasPlan?'true':'false';cv.dataset.mapUnits=String(units.length);
   }
   // 範囲の広い合戦は、隊の位置のまとまり（地区）ごとに拡大して見られるようにする。
-  function focusSelection(id){const g=selectionGroup(id),p=g&&pinFor(g);if(!p)return;const base=[(p[0]+VX)/VS,(p[1]+VY)/VS],near=locatedGroups().filter(q=>q.id!==g.id).map(q=>pinFor(q)).filter(Boolean).map(q=>Math.hypot(q[0]-p[0],q[1]-p[1])/VS).filter(d=>d>1e-6),nearest=Math.min(Infinity,...near),scale=clamp(Number.isFinite(nearest)?64/nearest:VS*2,Math.max(VS,2),6);if(scale<=VS+.01)return;
-   if(!views.length)views=[{name:'全体',s:1,x:0,y:0}];views=views.filter(v=>!v.selectionFocus);views.push({name:'選択部隊の周辺',selectionFocus:true,s:scale,x:clamp(base[0]*scale-W/2,0,W*scale-W),y:clamp(base[1]*scale-H/2,0,H*scale-H)});viewIndex=views.length-1;const v=views[viewIndex];[VS,VX,VY]=[v.s,v.x,v.y];motion=null;renderViews();backdrop();frameDraw();}
-  function refreshViews(){const previousName=views[viewIndex]?.name;VS=1;VX=0;VY=0;const pts=groups.filter(g=>g.point).map(g=>({g,p:pj(...g.point)}));const th=Math.min(W,H)*.2,cl=[];
+  function focusSelection(id,minScale=VS,draw=true){const g=selectionGroup(id),p=g&&pinFor(g);if(!p)return;const base=[(p[0]+VX)/VS,(p[1]+VY)/VS],near=locatedGroups().filter(q=>q.id!==g.id).map(q=>pinFor(q)).filter(Boolean).map(q=>Math.hypot(q[0]-p[0],q[1]-p[1])/VS).filter(d=>d>1e-6),nearest=Math.min(Infinity,...near),scale=clamp(Number.isFinite(nearest)?64/nearest:VS*2,Math.max(minScale,2),6);
+   if(!views.length)views=[{name:'全体',s:1,x:0,y:0}];views=views.filter(v=>!v.selectionFocus);views.push({name:'選択部隊の周辺',selectionFocus:true,selectionId:g.id,s:scale,x:clamp(base[0]*scale-W/2,0,W*scale-W),y:clamp(base[1]*scale-H/2,0,H*scale-H)});viewIndex=views.length-1;const v=views[viewIndex];[VS,VX,VY]=[v.s,v.x,v.y];motion=null;renderViews();if(draw){backdrop();frameDraw();}}
+  function refreshViews(){const previous=views[viewIndex],previousName=previous?.name;VS=1;VX=0;VY=0;const pts=groups.filter(g=>g.point).map(g=>({g,p:pj(...g.point)}));const th=Math.min(W,H)*.2,cl=[];
    for(const q of pts){const hit=cl.filter(c=>c.some(o=>Math.hypot(o.p[0]-q.p[0],o.p[1]-q.p[1])<th));if(!hit.length)cl.push([q]);else{const m=hit.flat();for(const h of hit)cl.splice(cl.indexOf(h),1);cl.push([...m,q]);}}
    const xs=pts.map(q=>q.p[0]),ys=pts.map(q=>q.p[1]),spread=pts.length?Math.max(Math.max(...xs)-Math.min(...xs),Math.max(...ys)-Math.min(...ys)):0;
    views=[];if(pts.length>=8&&cl.length>=2&&spread>Math.min(W,H)*.5&&!sc.atlasPlan&&!sc.atlasSchematic){views.push({name:'全体',s:1,x:0,y:0});
@@ -240,7 +240,7 @@ window.TKBattleAtlas=(function(){
      const person=unitById.get(c[0].g.members[0]),personName=person?.g||person?.n||c[0].g.label,name=named&&named.d<Math.min(W,H)*.3?named.n+'付近':(personName?personName+'の周辺':null);if(!name||views.some(v=>v.name===name))continue;
      const bw=Math.max(...c.map(q=>q.p[0]))-Math.min(...c.map(q=>q.p[0]))+Math.min(W,H)*.3,bh=Math.max(...c.map(q=>q.p[1]))-Math.min(...c.map(q=>q.p[1]))+Math.min(W,H)*.3,z=clamp(Math.min(W/bw,H/bh),1.4,3.5);
      views.push({name,s:z,x:clamp(cx*z-W/2,0,W*z-W),y:clamp(cy*z-H/2,0,H*z-H)});}}
-   if(views.length<3)views=[];viewIndex=Math.max(0,views.findIndex(v=>v.name===previousName));const v=views[viewIndex];[VS,VX,VY]=v?[v.s,v.x,v.y]:[1,0,0];renderViews();}
+   if(views.length<3)views=[];viewIndex=Math.max(0,views.findIndex(v=>v.name===previousName));const v=views[viewIndex];[VS,VX,VY]=v?[v.s,v.x,v.y]:[1,0,0];if(previous?.selectionFocus){focusSelection(previous.selectionId,previous.s,false);return;}renderViews();}
   function renderViews(){const stage=cv.closest('.battle-stage');if(!stage)return;let bar=stage.querySelector('.atlas-views');if(!views.length){bar?.remove();return;}
    if(!bar){bar=document.createElement('div');bar.className='atlas-views';bar.setAttribute('role','group');bar.setAttribute('aria-label','全体と地区を切り替える');bar.title='全体では駒を選んで名前を確認できます。地区では近くの部隊名を表示します。';stage.insertBefore(bar,stage.firstChild);}
    bar.style.display='flex';bar.style.flexWrap=W<560?'nowrap':'';
