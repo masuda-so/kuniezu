@@ -175,7 +175,8 @@ or that a game site stands for a registry place, is stated by sourced records in
 without such a record, things of the same name are never merged. As the backbone
 of the whole, it imports an index of the Historiographical Institute's article
 headings (綱文), one row per article with its location only and never its text
-(`data/research/kobun-index/`); it now covers 1534 (478 articles), all unclassified.
+(`data/research/kobun-index/`); it now covers 1534 (478 articles), all unclassified. It also imports which
+battles each campaign is made of (`data/research/conflicts.json`).
 It holds every
 current input record and keeps source-verified records apart from the unverified
 inventory of what the game implements (`docs/architecture/history-rdb.md`).

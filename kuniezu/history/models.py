@@ -58,6 +58,7 @@ class RecordType(models.TextChoices):
     IDENTITY = "identity", "対象の同一性"
     CATALOG = "catalog", "作業台帳の対象"
     KOBUN = "kobun", "綱文の所在（目録）"
+    CONFLICT = "conflict", "戦役と合戦の親子"
 
 
 class Status(models.TextChoices):

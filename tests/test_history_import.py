@@ -9,6 +9,7 @@ from kuniezu.history import dates
 from kuniezu.history import queries
 from kuniezu.history.importer import CATALOG
 from kuniezu.history.importer import CLAIM_KIND_OF
+from kuniezu.history.importer import CONFLICTS
 from kuniezu.history.importer import IDENTITIES
 from kuniezu.history.importer import KOBUN_INDEX
 from kuniezu.history.importer import MONTH_TABLE
@@ -59,6 +60,7 @@ def inputs(tmp_path):
         (tmp_path / name).parent.mkdir(parents=True, exist_ok=True)
         shutil.copy(ROOT / name, tmp_path / name)
     shutil.copytree(ROOT / KOBUN_INDEX, tmp_path / KOBUN_INDEX)
+    shutil.copy(ROOT / CONFLICTS, tmp_path / CONFLICTS)
     return tmp_path
 
 
@@ -80,6 +82,9 @@ def test_every_input_record_is_kept_once(inputs):
             lines(inputs / RESEARCH / "implemented-sites.jsonl")
         ),
         RecordType.CATALOG: len(catalog),
+        RecordType.CONFLICT: len(
+            json.loads((inputs / CONFLICTS).read_text(encoding="utf-8"))["conflicts"]
+        ),
         RecordType.KOBUN: sum(
             len(lines(path)) for path in (inputs / KOBUN_INDEX).glob("*.jsonl")
         ),
@@ -697,3 +702,54 @@ def test_every_kobun_article_of_a_year_is_listed_once_and_unclassified(inputs):
     year_only = articles.get(key="kobun:020100201384")
     assert year_only.precision == "period"
     assert year_only.time_label == "天文3年是歳"
+
+
+def test_a_campaign_holds_its_battles_and_has_no_map_of_its_own(inputs):
+    summary = import_history(inputs)
+
+    rows = json.loads((inputs / CONFLICTS).read_text(encoding="utf-8"))["conflicts"]
+    campaign = Phenomenon.objects.get(key="campaign:文禄の役")
+    assert campaign.kind == PhenomenonKind.CONFLICT
+    assert campaign.subtype == "campaign"
+    assert campaign.parent is None
+    battles = [row for row in rows if row.get("parent") == "campaign:文禄の役"]
+    assert summary.conflict_links == len(battles)
+    assert campaign.parts.count() == len(battles)
+    # A battle the timeline already holds is that event, not a second one.
+    okpo = campaign.parts.get(title="玉浦海戦")
+    assert okpo.records.filter(record_type=RecordType.IMPLEMENTED_EVENT).exists()
+    assert not Phenomenon.objects.filter(key="battle:玉浦海戦").exists()
+    # A battle the timeline does not hold becomes a conflict of its own.
+    busan = campaign.parts.get(key="battle:釜山鎮の戦い")
+    assert busan.kind == PhenomenonKind.CONFLICT
+    assert busan.status == Status.REGISTERED
+    # The campaign is not merged into the timeline event of the same name.
+    event = Phenomenon.objects.filter(
+        title="文禄の役", records__record_type=RecordType.IMPLEMENTED_EVENT
+    )
+    assert campaign not in event
+
+
+def test_a_battle_whose_campaign_has_no_record_is_refused(inputs):
+    path = inputs / CONFLICTS
+    data = json.loads(path.read_text(encoding="utf-8"))
+    data["conflicts"] = [
+        row for row in data["conflicts"] if row["id"] != "campaign:文禄の役"
+    ]
+    path.write_text(json.dumps(data, ensure_ascii=False), encoding="utf-8")
+
+    with pytest.raises(ValueError, match="names a campaign with no record"):
+        import_history(inputs)
+
+
+def test_a_named_scene_must_be_one_timeline_event(inputs):
+    path = inputs / CONFLICTS
+    data = json.loads(path.read_text(encoding="utf-8"))
+    for row in data["conflicts"]:
+        if row.get("existingSceneTitle"):
+            row["existingSceneTitle"] = "存在しない合戦"
+            break
+    path.write_text(json.dumps(data, ensure_ascii=False), encoding="utf-8")
+
+    with pytest.raises(ValueError, match="no single timeline event"):
+        import_history(inputs)
