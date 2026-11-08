@@ -170,11 +170,16 @@ named by a name or by an identifier such as `place:ganjaku`; a name that matches
 several things lists the candidates and stops. That two identifiers are one thing,
 or that a game site stands for a registry place, is stated by sourced records in
 `data/research/curated/identities/*.json` (format in that folder's `README.md`);
-without such a record, things of the same name are never merged. It holds every
+without such a record, things of the same name are never merged. As the backbone
+of the whole, it imports an index of the Historiographical Institute's article
+headings (綱文), one row per article with its location only and never its text
+(`data/research/kobun-index/`); it now covers 1534 (478 articles), all unclassified.
+It holds every
 current input record and keeps source-verified records apart from the unverified
 inventory of what the game implements (`docs/architecture/history-rdb.md`).
 
-Starting and stopping the server is done by the user. Verification connects to an
+Agents may start and stop the server only on ports the user has started before
+(8000 and 8001), and never start it on any other port. Verification connects to an
 already running `http://localhost:8000/index.html`. The output folder for check
 results can be set with `GAME_TEST_OUTPUT`.
 
