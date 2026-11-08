@@ -44,3 +44,5 @@ node tools/work/tasks.cjs complete 対象ID --owner 担当名 --evidence docs/re
 - 表示・動作：再現手順を残し、修正後の検査と実画面で期待する表示を確認する。
 - 出典：確認した事実を一命題に分け、年代と実装先へ結び付ける。URLがあるだけで確認済みにしない。
 - 全体：各要望の残項目と新しく発見した不具合が解決し、必要な検査が通る。フォルダ整理、台帳生成、構造検査だけで全体を完了にしない。
+
+受入方針だけを更新した場合は `node tools/work/build-catalog.cjs --requests-only` で要望行のみ同期し、`--requests-only --check` で確認する。対象別の行・ID・担当state・完了証拠は作り直さず、元の棚卸し生成日と方針更新日を分けて保持する。

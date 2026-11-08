@@ -206,6 +206,8 @@ node tools/checks/offline.cjs
 
 ## Development and contributions
 
+After updating acceptance policy, run `node tools/work/build-catalog.cjs --requests-only` to synchronize request rows while preserving subject IDs, ownership, and completion evidence. Validate with `--requests-only --check`.
+
 The normal CI on GitHub Actions runs the server-free checks (syntax, storage and
 territory; folders and ownership; infrastructure) with Node.js. On-screen
 verification runs in the user's environment; a summary of the results is recorded
