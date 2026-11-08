@@ -1,0 +1,29 @@
+{
+  "id": "person:hosokawa-fujitaka",
+  "name": "細川藤孝",
+  "gameNames": [
+    "細川藤孝",
+    "細川幽斎"
+  ],
+  "authorityIds": [
+    "wikidata:Q1207509",
+    "ndlna:00269750"
+  ],
+  "authorityEvidence": {
+    "scope": "person-identity",
+    "checked": "2026-11-08",
+    "wikidataRevision": 2492267030,
+    "snapshot": "data/research/source-notes/fujitaka-nagamasu-dosan-authority.json",
+    "sourceNote": "data/research/source-notes/fujitaka-nagamasu-dosan-authority.json",
+    "note": "data/research/source-notes/fujitaka-nagamasu-dosan-authority.md",
+    "sourceIds": [
+      "kyotoChutanFujitakaIdentity"
+    ],
+    "identityChecks": [
+      "NDL00269750の主名藤孝と別名細川幽斎が同じPerson典拠に属する",
+      "京都府田辺城解説が藤孝（幽斎）を同一の築城者として記す"
+    ],
+    "basis": "細川藤孝（幽斎）の同定と田辺城の築城者という同定文脈。築城日・所在地・経歴を新命題にしない。",
+    "ndlSnapshot": "data/research/source-notes/hosokawa-fujitaka-ndl-authority.json"
+  }
+}

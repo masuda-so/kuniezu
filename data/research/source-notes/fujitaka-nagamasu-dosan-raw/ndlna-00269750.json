@@ -1,0 +1,114 @@
+{
+    "@context": "https://id.ndl.go.jp/auth/context.json",
+    "uri": "http://id.ndl.go.jp/auth/ndlna/00269750",
+    "primaryTopic": {
+        "uri": "http://id.ndl.go.jp/auth/entity/00269750",
+        "type": {
+            "uri": "http://xmlns.com/foaf/0.1/Person"
+        },
+        "name": "細川藤孝",
+        "dateOfBirth": "1534",
+        "dateOfDeath": "1610",
+        "biographicalInformation": [
+            "歌人, 武将"
+        ]
+    },
+    "type": {
+        "uri": "http://www.w3.org/2004/02/skos/core#Concept"
+    },
+    "modified": "2026-01-21T08:32:01",
+    "created": "1993-06-25",
+    "prefLabel": {
+        "literalForm": "細川, 藤孝, 1534-1610",
+        "transcription": "ホソカワ, フジタカ, 1534-1610",
+        "transcription-l": [
+            {
+                "@value": "ホソカワ, フジタカ, 1534-1610",
+                "@language": "ja-Kana"
+            },
+            {
+                "@value": "Hosokawa, Fujitaka, 1534-1610",
+                "@language": "ja-Latn"
+            }
+        ]
+    },
+    "label": "細川, 藤孝, 1534-1610",
+    "altLabel": [
+        {
+            "literalForm": "幽斎",
+            "transcription": "ユウサイ",
+            "transcription-l": [
+                {
+                    "@value": "ユウサイ",
+                    "@language": "ja-Kana"
+                },
+                {
+                    "@value": "Yusai",
+                    "@language": "ja-Latn"
+                }
+            ]
+        },
+        {
+            "literalForm": "細川, 玄旨",
+            "transcription": "ホソカワ, ゲンシ",
+            "transcription-l": [
+                {
+                    "@value": "ホソカワ, ゲンシ",
+                    "@language": "ja-Kana"
+                },
+                {
+                    "@value": "Hosokawa, Genshi",
+                    "@language": "ja-Latn"
+                }
+            ]
+        },
+        {
+            "literalForm": "細川, 幽斎",
+            "transcription": "ホソカワ, ユウサイ",
+            "transcription-l": [
+                {
+                    "@value": "ホソカワ, ユウサイ",
+                    "@language": "ja-Kana"
+                },
+                {
+                    "@value": "Hosokawa, Yusai",
+                    "@language": "ja-Latn"
+                }
+            ]
+        },
+        {
+            "literalForm": "万吉",
+            "description": "通称"
+        },
+        {
+            "literalForm": "藤孝",
+            "description": "諱"
+        },
+        {
+            "literalForm": "玄旨",
+            "description": "法号"
+        }
+    ],
+    "source": [
+        "細川玄旨聞書",
+        "大人名事典"
+    ],
+    "exactMatch": [
+        {
+            "uri": "http://id.loc.gov/authorities/names/n84083838"
+        },
+        {
+            "uri": "https://isni.org/isni/0000000081175320"
+        },
+        {
+            "uri": "https://ci.nii.ac.jp/author/DA00312659"
+        },
+        {
+            "uri": "http://viaf.org/viaf/sourceID/NDL%7C00269750#skos:Concept"
+        }
+    ],
+    "inScheme": {
+        "uri": "http://id.ndl.go.jp/auth#personalNames"
+    }
+}
+
