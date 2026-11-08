@@ -9,11 +9,12 @@ window.TKBattleMotion=(function(){
  const ease=f=>f<.5?2*f*f:1-Math.pow(-2*f+2,2)/2;
  // 模式の経過を t で補間する（区間ごとに緩急を付ける）。
  function at(path,t){if(!path?.length)return null;if(t<=path[0][0])return [path[0][1],path[0][2]];for(let i=1;i<path.length;i++){const a=path[i-1],b=path[i];if(t<=b[0]){const f=ease((t-a[0])/Math.max(1e-6,b[0]-a[0]));return [a[1]+(b[1]-a[1])*f,a[2]+(b[2]-a[2])*f];}}const l=path.at(-1);return [l[1],l[2]];}
+ const atUnit=(u,t)=>u.sourcePath&&u.pathClock?at(u.sourcePath,u.pathClock.from+(u.pathClock.to-u.pathClock.from)*t/100):at(u.path,t);
  const centroid=ps=>ps.length?[ps.reduce((s,p)=>s+p[0],0)/ps.length,ps.reduce((s,p)=>s+p[1],0)/ps.length]:null;
  /* sc：合戦、base：位置の記録がある隊の画面座標 Map(id→[x,y])、W,H：画面の大きさ、home(side)：その陣営の本拠の画面座標、
     sourced：史料の動きがある隊の id 集合。返り値 pos(id,t) は推定の隊だけ座標を返し、それ以外は null。 */
  function plan(sc,base,W,H,home,sourced=new Set()){
-  const units=sc.units.filter(u=>u.path?.length),start=u=>[u.path[0][1],u.path[0][2]];
+  const units=sc.units.filter(u=>u.path?.length),start=u=>atUnit(u,0);
   const sideUnits=s=>units.filter(u=>u.side===s);
   const sA=centroid(sideUnits('a').map(start)),sB=centroid(sideUnits('b').map(start));
   const gA=centroid(sc.units.filter(u=>u.side==='a'&&base.has(u.id)).map(u=>base.get(u.id))),gB=centroid(sc.units.filter(u=>u.side==='b'&&base.has(u.id)).map(u=>base.get(u.id)));
@@ -36,8 +37,8 @@ window.TKBattleMotion=(function(){
   const byId=new Map(units.map(u=>[u.id,u]));
   for(const u of units){if(sourced.has(u.id))continue;if(base.has(u.id)){if(u.path.length>1)out.estimated.add(u.id);}else if(anchorG&&(u.path.length>1||!held(sc,u))){out.estimated.add(u.id);out.placed.add(u.id);}}
   const gen=generic(sc,base,W,H,home,sourced,{pos:()=>null,estimated:new Set(),placed:new Set(),basis:''},out.estimated);for(const id of gen.estimated)out.estimated.add(id);for(const id of gen.placed)out.placed.add(id);
-  out.pos=(id,t)=>{if(gen.estimated.has(id))return gen.pos(id,t);const u=byId.get(id);if(!u||!out.estimated.has(id))return null;const p=at(u.path,t);
-   if(base.has(id)){const b=base.get(id),d=rot([p[0]-u.path[0][1],p[1]-u.path[0][2]]),m=Math.hypot(...d),k=m>maxShift?maxShift/m:1;return [b[0]+d[0]*k,b[1]+d[1]*k];}
+  out.pos=(id,t)=>{if(gen.estimated.has(id))return gen.pos(id,t);const u=byId.get(id);if(!u||!out.estimated.has(id))return null;const p=atUnit(u,t),initial=atUnit(u,0);
+   if(base.has(id)){const b=base.get(id),d=rot([p[0]-initial[0],p[1]-initial[1]]),m=Math.hypot(...d),k=m>maxShift?maxShift/m:1;return [b[0]+d[0]*k,b[1]+d[1]*k];}
    const d=rot([p[0]-anchorS[0],p[1]-anchorS[1]]);return [anchorG[0]+d[0],anchorG[1]+d[1]];};
   return out;
  }
@@ -69,5 +70,5 @@ window.TKBattleMotion=(function(){
   if(!out.basis)out.basis=plans.size?'generic':'none';
   return out;
  }
- return {plan,at};
+ return {plan,at,atUnit};
 })();
