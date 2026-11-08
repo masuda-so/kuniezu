@@ -12,7 +12,8 @@ for(const [title,b] of battles){
  const reused=TK.CONFLICT_CATALOG?.[title]?.scene;
  assert.equal(d.title,reused?.sourceTitle||title);assert.equal(Buffer.from(d.heights,'base64').length,d.width*d.height*2);
  assert.ok(d.bounds[0]<d.bounds[2]&&d.bounds[1]>d.bounds[3]);
- assert.deepEqual(Array.from(m.bounds),d.bounds,title+' relief and projected points share the same bounds');
+ if(reused?.bounds){assert.deepEqual(Array.from(m.bounds),Array.from(reused.bounds),title+' local bounds');assert.ok(m.bounds[0]>=d.bounds[0]&&m.bounds[2]<=d.bounds[2]&&m.bounds[1]<=d.bounds[1]&&m.bounds[3]>=d.bounds[3],title+' crop stays inside source relief');}
+ else assert.deepEqual(Array.from(m.bounds),d.bounds,title+' relief and projected points share the same bounds');
  for(const p of d.points)assert.ok(p.lon>=d.bounds[0]&&p.lon<=d.bounds[2]&&p.lat<=d.bounds[1]&&p.lat>=d.bounds[3]);
 }
 const takatenjin=TK.BATTLE_ATLAS['高天神城の戦い'],takatenjinData=JSON.parse(fs.readFileSync(path.join(__dirname,'../../kuniezu/static/kuniezu/atlas',takatenjin.file)));
