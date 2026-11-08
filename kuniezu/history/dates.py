@@ -27,8 +27,7 @@ def western_to_jd(year: int, month: int, day: int) -> int:
     """Convert a hybrid Western date, rejecting the calendar reform gap."""
     if LAST_JULIAN_DATE < (year, month, day) < FIRST_GREGORIAN_DATE:
         message = (
-            "1582-10-05 through 1582-10-14 do not exist "
-            "in the hybrid western calendar"
+            "1582-10-05 through 1582-10-14 do not exist in the hybrid western calendar"
         )
         raise ValueError(message)
     a = (14 - month) // 12
