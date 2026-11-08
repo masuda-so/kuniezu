@@ -24,4 +24,5 @@
  // 正本準備はbootが待つ。描画とmovement-displayはこの同じptsを参照する。
  TK.roadDisplay=r=>TKRoadSource.view(r,G.PJ);
  TK.RESEARCH_SOURCES.modernRoadReference={author:'OpenStreetMap contributors / FOSSGIS OSRM',title:'日朝の一般道路・小道の比較線',url:'https://www.openstreetmap.org/copyright',locator:'2026-11-01、82街道の通過点で照会、78本取得。過大迂回・5km超の吸着は不採用',scope:'現代の自転車向け経路。高速道路優先を避けるが、近代の橋・トンネルを含みうる。史実の街道・行軍経路を確定する資料ではない。地図と行軍の表示に共通使用し、史実の着陣日や戦闘計算の確定根拠とはしない。',accessed:'2026-11-01'};
+ TK.RESEARCH_SOURCES.ushuEdoComparison={author:'ROIS-DS人文学オープンデータ共同利用センター',title:'江戸主要街道データセット',url:'https://codh.rois.ac.jp/historical-gis/edo-road/',locator:'公開地図GeoJSON R201 羽州街道、頂点1778〜1973（0始まり、両端含む）、doi:10.20676/00000452、CC BY 4.0',accessed:'2026-11-09',scope:'矢立峠から石川付近までの江戸期比較線。戦国期の精密な経路は未確定。両端は約12m・239mの概略接続。'};
 })();
