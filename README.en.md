@@ -56,9 +56,11 @@ is [docs/README.md](docs/README.md); open requests and ownership are in
 - Shows former lakeshores, castles, facilities and people checked against sources,
   marches along historical roads, and battle deployments and movements, each with
   its source.
-- Battle markers retain their geographic positions when the viewport or district changes. Co-located units can be selected individually. Crowded markers become smaller; the selected unit keeps its original size and appears in front.
-- Wide battles show individual counters and portraits in the overview, with nearby
-  commander labels in district views. Narrow screens use a single-row district selector.
+- Battle markers retain their geographic positions when the viewport or district changes. Co-located units can be selected individually. Crowded markers become smaller; selection keeps that size and highlights the unit in front.
+- Wide battles offer overview and district views. Commander labels have no leader
+  lines; crowded portraits move into nearby name cards. Units whose labels do not
+  fit remain individually selectable through their counters. Narrow screens use
+  a single-row district selector.
 - File exports, save slots and autosaves preserve sub-day time so marching units
   resume at the saved position.
 - Diplomacy is shown as borders only; marches are shown as pieces on roads.
