@@ -5,6 +5,7 @@ for(const m of fs.readFileSync(path.join(root,'kuniezu/templates/index.html'),'u
  const file=m[1];if(['ui.js','kb.js','bscene.js','terrain-tiles.js'].includes(file))continue;
  const archived=path.join(root,'data/inputs/aizu-ieyasu-review/legacy-runtime',file),p=fs.existsSync(archived)?archived:path.join(root,'kuniezu/static/kuniezu',file);vm.runInContext(fs.readFileSync(p,'utf8'),c,{filename:file});
 }
+require('./history-focus.cjs').prepareRoads(c);
 c.G.build();c.G.buildBattleCatalog();c.G.newGame('s1600','tokugawa');c.G.S().player='__none';const target=c.G.evT({d:c.TK.lunarDate(1600,7,23)});
 while(c.G.S().t<target){c.G.day();for(const q of ['evQ','sceneQ','battleQ','propQ','observerQ'])c.G.S()[q]=[];}
 const save=JSON.parse(JSON.stringify(c.G.S()));assert.equal(save.movementGeometryVersion,16);assert.ok(save.chron.some(e=>e.title==='小山評定'&&e.ok));assert.ok(save.sites.some(e=>e.n==='小山'));
