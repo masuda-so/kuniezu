@@ -80,6 +80,16 @@ class Command(BaseCommand):
     def handle(self, *args: Any, **options: Any) -> None:
         answer: Any
         if options["phenomenon"]:
+            others = [
+                name
+                for name in ("about", "year", "box", "path", "legs", "bundle")
+                if options.get(name) is not None
+            ]
+            if others:
+                # One phenomenon and its parent and parts: nothing to combine.
+                listed = ", ".join("--" + name for name in others)
+                message = f"--phenomenon は {listed} と一緒には使えない"
+                raise CommandError(message)
             key = options["phenomenon"]
             item = Phenomenon.objects.filter(key=key).first()
             if item is None:

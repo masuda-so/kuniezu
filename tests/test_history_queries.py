@@ -228,3 +228,20 @@ def test_the_query_command_prints_a_campaign_with_its_battles(capsys):
 
     with pytest.raises(CommandError, match="無い"):
         call_command("history_query", phenomenon="campaign:無い役")
+
+
+@pytest.mark.django_db
+@pytest.mark.parametrize(
+    "other",
+    [
+        {"about": "旅人"},
+        {"year": 1600},
+        {"box": [130.0, 140.0, 30.0, 40.0]},
+        {"path": "旅人"},
+        {"legs": "旅人"},
+        {"bundle": "旅人"},
+    ],
+)
+def test_a_phenomenon_is_not_combined_with_other_questions(other):
+    with pytest.raises(CommandError, match="一緒には使えない"):
+        call_command("history_query", phenomenon="campaign:試験の役", **other)
