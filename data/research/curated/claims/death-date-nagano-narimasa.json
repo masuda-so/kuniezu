@@ -1,0 +1,37 @@
+{
+  "id": "death-date-nagano-narimasa",
+  "entity": "person:長野業正",
+  "predicate": "death-date",
+  "value": "上野箕輪城の長野業正が死去し、子の業盛が継いだ。",
+  "validYears": [
+    1561,
+    1561
+  ],
+  "datePrecision": "day",
+  "source": "hiDainihonshiryoKobun",
+  "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+  "locator": "綱文：和暦 永禄4年6月21日 第2条（区分 史料綜覧、編9・冊910（データベースの表示値）、528頁）",
+  "gameBindings": [
+    "TK.HIST:death:長野業正"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-07",
+  "uncertainty": "綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。",
+  "linkedEntities": [
+    "person:長野業正"
+  ],
+  "eventTime": {
+    "kind": "dated-event",
+    "date": [
+      1561,
+      6,
+      21
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": false,
+    "precision": "day"
+  },
+  "eventRelation": "death",
+  "eventScope": "綱文が掲げる死去の日付と、綱文に書かれた相手・場所。ゲームの年表の日付は 1561 年 8 月 1 日で、綱文の旧暦 6 月 21 日をゲームの暦表で直した 1561 年 8 月 2 日より 1 日早い。年表は変えていない（どちらを採るかは未判断）。 死因・享年・時刻・精密な位置は補わない。"
+}

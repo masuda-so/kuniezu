@@ -1,0 +1,37 @@
+{
+  "id": "death-date-kitabatake-tomonori",
+  "entity": "person:北畠具教",
+  "predicate": "death-date",
+  "value": "信長が北畠具教の旧臣藤方具俊らに命じ、具教を伊勢三瀬で殺させた。",
+  "validYears": [
+    1576,
+    1576
+  ],
+  "datePrecision": "day",
+  "source": "hiDainihonshiryoKobun",
+  "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+  "locator": "綱文：和暦 天正4年11月25日 第1条（区分 史料綜覧、編10・冊911（データベースの表示値）、131頁）",
+  "gameBindings": [
+    "TK.HIST:death:北畠具教"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-07",
+  "uncertainty": "綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。",
+  "linkedEntities": [
+    "person:北畠具教"
+  ],
+  "eventTime": {
+    "kind": "dated-event",
+    "date": [
+      1576,
+      11,
+      25
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": false,
+    "precision": "day"
+  },
+  "eventRelation": "death",
+  "eventScope": "綱文が掲げる死去の日付と、綱文に書かれた相手・場所。ゲームの年表の日付（旧暦をゲームの暦表で西暦に直した日）と一致することを確かめた。 死因・享年・時刻・精密な位置は補わない。"
+}
