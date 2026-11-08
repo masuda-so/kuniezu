@@ -12,6 +12,7 @@ uv run python manage.py history_query --box 135 136 34 36 --year 1600
 uv run python manage.py history_query --path 徳川家康     # 軌跡
 uv run python manage.py history_query --legs 徳川家康     # 隣り合う 2 点を結ぶのに要る速さ
 uv run python manage.py history_query --bundle 織田信長   # 同じ事象に関わった対象
+uv run python manage.py history_query --phenomenon campaign:文禄の役   # 事象と、その親・部分（戦役なら中の合戦）
 ```
 
 ## 考え方

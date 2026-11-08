@@ -190,3 +190,41 @@ def test_the_query_command_prints_json(world, capsys):
 
     legs = json.loads(capsys.readouterr().out)
     assert [leg["possible"] for leg in legs] == [True, False]
+
+
+@pytest.mark.django_db
+def test_the_query_command_prints_a_campaign_with_its_battles(capsys):
+    campaign = Phenomenon.objects.create(
+        key="campaign:試験の役",
+        mode=Mode.EVENT,
+        kind=PhenomenonKind.CONFLICT,
+        subtype="campaign",
+        title="試験の役",
+        status=Status.REGISTERED,
+    )
+    for name in ("甲の戦い", "乙の戦い"):
+        Phenomenon.objects.create(
+            key="battle:" + name,
+            mode=Mode.EVENT,
+            kind=PhenomenonKind.CONFLICT,
+            subtype="battle",
+            title=name,
+            status=Status.REGISTERED,
+            parent=campaign,
+        )
+
+    call_command("history_query", phenomenon="campaign:試験の役")
+
+    answer = json.loads(capsys.readouterr().out)
+    assert answer["key"] == "campaign:試験の役"
+    assert answer["parent"] is None
+    assert {part["key"] for part in answer["parts"]} == {
+        "battle:甲の戦い",
+        "battle:乙の戦い",
+    }
+
+    call_command("history_query", phenomenon="battle:甲の戦い")
+    assert json.loads(capsys.readouterr().out)["parent"] == "campaign:試験の役"
+
+    with pytest.raises(CommandError, match="無い"):
+        call_command("history_query", phenomenon="campaign:無い役")
