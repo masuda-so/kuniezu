@@ -1,0 +1,37 @@
+{
+  "id": "death-date-ataka-fuyuyasu",
+  "entity": "person:安宅冬康",
+  "predicate": "death-date",
+  "value": "三好長慶が松永久秀の讒言を信じ、弟の安宅冬康を河内飯盛城に誘って殺した。",
+  "validYears": [
+    1564,
+    1564
+  ],
+  "datePrecision": "day",
+  "source": "hiDainihonshiryoKobun",
+  "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+  "locator": "綱文：和暦 永禄7年5月9日 第1条（区分 史料綜覧、編9・冊910（データベースの表示値）、590頁）",
+  "gameBindings": [
+    "TK.HIST:death:安宅冬康"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-07",
+  "uncertainty": "綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。",
+  "linkedEntities": [
+    "person:安宅冬康"
+  ],
+  "eventTime": {
+    "kind": "dated-event",
+    "date": [
+      1564,
+      5,
+      9
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": false,
+    "precision": "day"
+  },
+  "eventRelation": "death",
+  "eventScope": "綱文が掲げる死去の日付と、綱文に書かれた相手・場所。ゲームの年表の日付は 1564 年 6 月 22 日で、綱文の旧暦 5 月 9 日をゲームの暦表で直した 1564 年 6 月 17 日より 5 日遅い。年表は変えていない（どちらを採るかは未判断）。 死因・享年・時刻・精密な位置は補わない。"
+}
