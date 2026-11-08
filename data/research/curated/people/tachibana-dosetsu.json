@@ -1,0 +1,34 @@
+{
+  "id": "person:tachibana-dosetsu",
+  "name": "立花道雪",
+  "gameNames": [
+    "立花道雪",
+    "戸次鑑連",
+    "戸次道雪"
+  ],
+  "authorityIds": [
+    "wikidata:Q6379490"
+  ],
+  "authorityEvidence": {
+    "scope": "person-identity",
+    "checked": "2026-11-08",
+    "sourceIds": [
+      "source:fukuoka-museum-dosetsu-087",
+      "source:oita-city-dosetsu"
+    ],
+    "basis": "福岡市博物館の戸次道雪＝鑑連と、大分市の立花道雪＝戸次鑑連を、大友家重臣・立花城・養子宗茂という人物関係を含めて照合。",
+    "limitations": [
+      "立花姓を本人がいつ用いたかは確定しない。",
+      "裸の「鑑連」は曖昧なため検索別名に採用しない。",
+      "生没年・没日・別名使用開始日は採用しない。"
+    ],
+    "sourceNote": "data/research/source-notes/person-alias-three-authority.json",
+    "note": "data/research/source-notes/person-alias-three-authority.md",
+    "wikidataRevision": 2480580207,
+    "snapshot": "data/research/source-notes/person-alias-three-authority.json",
+    "identityChecks": [
+      "福岡市博物館が戸次道雪の名を鑑連とし大友重臣・立花城督と説明",
+      "大分市が立花道雪を戸次鑑連と同定し宗茂の婿養子関係を説明"
+    ]
+  }
+}

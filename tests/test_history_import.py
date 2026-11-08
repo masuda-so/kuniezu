@@ -129,20 +129,36 @@ def test_things_and_phenomena_fall_into_exactly_one_class(inputs):
             "person:toyotomi-hideyoshi",
             {"木下秀吉", "羽柴秀吉", "豊臣秀吉"},
             "羽柴秀吉",
-            "wikidata",
-            "Q187550",
+            {("wikidata", "Q187550"), ("ndlna", "00272338")},
         ),
         (
             "person:otomo-sorin",
             {"大友宗麟", "大友義鎮"},
             "大友義鎮",
-            "ndlna",
-            "00625175",
+            {("ndlna", "00625175")},
+        ),
+        (
+            "person:miyoshi-jikkyu",
+            {"三好実休", "三好義賢"},
+            "三好実休",
+            {("wikidata", "Q1058953")},
+        ),
+        (
+            "person:sanada-yukitsuna",
+            {"真田幸綱", "真田幸隆"},
+            "真田幸綱",
+            {("wikidata", "Q1373396"), ("ndlna", "001178988")},
+        ),
+        (
+            "person:tachibana-dosetsu",
+            {"立花道雪", "戸次鑑連", "戸次道雪"},
+            "戸次鑑連",
+            {("wikidata", "Q6379490")},
         ),
     ],
 )
 def test_people_are_one_thing_under_all_their_names(inputs, identity):
-    person_key, names, game_name, scheme, identifier = identity
+    person_key, names, game_name, authorities = identity
     import_history(inputs)
 
     person = Thing.objects.get(key=person_key)
@@ -150,14 +166,13 @@ def test_people_are_one_thing_under_all_their_names(inputs, identity):
     # Import the game's catalog alias into the curated identity, not a new thing.
     assert not Thing.objects.filter(key="person:" + game_name).exists()
     assert person.records.filter(record_type=RecordType.CATALOG).exists()
-    assert person.authorities.filter(scheme=scheme, identifier=identifier).count() == 1
-    assert Thing.objects.filter(
-        authorities__scheme=scheme, authorities__identifier=identifier
-    ).get() == person
+    assert set(person.authorities.values_list("scheme", "identifier")) == authorities
+    for scheme, identifier in authorities:
+        assert Thing.objects.filter(
+            authorities__scheme=scheme, authorities__identifier=identifier
+        ).get() == person
     for name in names:
         assert Thing.objects.filter(names__name=name).distinct().get() == person
-    if scheme == "ndlna":
-        assert not person.authorities.filter(scheme="wikidata").exists()
 
 
 def test_a_verified_date_keeps_its_calendar_and_its_day_number(inputs):

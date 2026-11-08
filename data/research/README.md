@@ -51,6 +51,8 @@ node tools/research/query-history.cjs --entity 県城
 
 Wikidata の候補取得は `node tools/research/fetch-authorities.cjs --output /tmp/kuniezu-authorities.json`。登録済み人物の典拠 ID をまとめて取得する。既存出力を上書きせず、結果を自動採用しない。氏名・同名人物・出典を確認してから curated 入力へ反映する。
 
+[三好・真田・立花の検索別名](source-notes/person-alias-three-authority.md)は公的目録・自治体・博物館と外部典拠を照合し、原本JSONと読むためのMarkdownを分けて保持する。複数典拠がある場合も各原本のSHA・人物型・採用名を検査し、生没日や所在を同定だけから追加しない。
+
 年代の正規化は `eventTime.calendar` を参照する。既存の `value.calendar` は原文表現・互換用に保持する。`boundsAreHistoricalStartEnd: false` の命題は索引の `scope: described-period-candidate` として返し、検索結果は確定した存続期間と区別する。文書標題の「県城」は原表記を残し、場所の別名から「縣城」と同一地点として検索する。
 
 ### SQL・時空間検索

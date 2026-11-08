@@ -97,6 +97,9 @@ is [docs/README.md](docs/README.md); open requests and ownership are in
 - The historical database retains personal authority IDs and sourced aliases.
   Aliases can be searched; comparative records outside the game period are not
   reassigned to events within it.
+- [Identity records for Miyoshi Jikkyu/Yoshikata, Sanada Yukitsuna/Yukitaka and
+  Tachibana Dosetsu/Bekki Akitsura](data/research/source-notes/person-alias-three-authority.md)
+  keep name matching separate from verification of dates and whereabouts.
 - Uchinasakaura and Sotonasakaura in the Katori Sea are shown as inferred water
   bodies, using medieval evidence of the lakes and later shoreline references.
   Correction boundaries crossing open water are excluded from shoreline strokes.

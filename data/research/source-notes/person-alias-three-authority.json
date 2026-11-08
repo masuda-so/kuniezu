@@ -1,0 +1,102 @@
+{
+  "scope": "三名の人物同定のみ。生没日・所在・別名開始日は採用しない。",
+  "checked": "2026-11-08",
+  "rawLicense": {
+    "name": "CC0 1.0",
+    "url": "https://www.wikidata.org/wiki/Wikidata:Licensing"
+  },
+  "records": [
+    {
+      "name": "三好実休",
+      "japaneseLabel": "三好実休",
+      "wikidataId": "Q1058953",
+      "wikidataRevision": 2521638118,
+      "wikidataJapaneseLabel": "三好義賢",
+      "entityDataUrl": "https://www.wikidata.org/wiki/Special:EntityData/Q1058953.json",
+      "revisionUrl": "https://www.wikidata.org/w/index.php?title=Q1058953&oldid=2521638118",
+      "rawEntityDataSnapshot": "data/research/source-notes/person-alias-three-raw/Q1058953.json",
+      "rawSha256": "89fadb1f9095c33bbc3e6f2aac90efe1602765d434ea4328a3b54213b040c856",
+      "identitySourceIds": [
+        "kyotoHyakugoMiyoshiJikkyu",
+        "osakaShikinagayoshiDocuments"
+      ],
+      "identitySourceUrl": "https://hyakugo.pref.kyoto.lg.jp/contents/detail.php?id=228&p=2",
+      "identitySourceLocator": "人名欄：実休（三好義賢）。文書名・函番号・差出人欄を併読",
+      "identityChecks": [
+        "京都府の一次文書目録が実休（三好義賢）を明記",
+        "大阪市の禁制解説が長慶の弟・義賢（実休）を発給者と同定"
+      ],
+      "adoptedNames": [
+        "三好実休",
+        "三好義賢"
+      ],
+      "scope": "person-identity-only; no historical birth/death/date/location claim adoption"
+    },
+    {
+      "name": "真田幸綱",
+      "japaneseLabel": "真田幸綱",
+      "wikidataId": "Q1373396",
+      "wikidataRevision": 2555544445,
+      "wikidataJapaneseLabel": "真田幸隆",
+      "entityDataUrl": "https://www.wikidata.org/wiki/Special:EntityData/Q1373396.json",
+      "revisionUrl": "https://www.wikidata.org/w/index.php?title=Q1373396&oldid=2555544445",
+      "rawEntityDataSnapshot": "data/research/source-notes/person-alias-three-raw/Q1373396.json",
+      "rawSha256": "caa0a15d452ecf6b97a4914d41962076d430e1e71e1f257ae239bb884fa7400a",
+      "identitySourceIds": [
+        "naganoHarunobuSanadaDocument",
+        "sanadaMuseumYukitsunaIdentity"
+      ],
+      "identitySourceUrl": "https://adeac.jp/nagano-city/catalog/sc00001990",
+      "identitySourceLocator": "受取・解説・所蔵機関・資料番号欄。資料番号 吉087",
+      "identityChecks": [
+        "長野市吉087の受取人は真田弾正忠（幸綱）、解説は幸綱（幸隆）",
+        "真田宝物館の幸綱（幸隆）・昌幸父子の解説と原JSONの子昌幸を比較"
+      ],
+      "adoptedNames": [
+        "真田幸綱",
+        "真田幸隆"
+      ],
+      "scope": "person-identity-only; no historical birth/death/date/location claim adoption",
+      "ndlId": "001178988",
+      "ndlIdentity": {
+        "uri": "http://id.ndl.go.jp/auth/entity/001178988",
+        "type": {
+          "uri": "http://xmlns.com/foaf/0.1/Person"
+        },
+        "name": "真田幸隆",
+        "dateOfBirth": "1513",
+        "dateOfDeath": "1574",
+        "biographicalInformation": [
+          "戦国時代の武将"
+        ]
+      }
+    },
+    {
+      "name": "立花道雪",
+      "japaneseLabel": "立花道雪",
+      "wikidataId": "Q6379490",
+      "wikidataRevision": 2480580207,
+      "wikidataJapaneseLabel": "立花道雪",
+      "entityDataUrl": "https://www.wikidata.org/wiki/Special:EntityData/Q6379490.json",
+      "revisionUrl": "https://www.wikidata.org/w/index.php?title=Q6379490&oldid=2480580207",
+      "rawEntityDataSnapshot": "data/research/source-notes/person-alias-three-raw/Q6379490.json",
+      "rawSha256": "2be6b1f34ce9f45b75e886b75b13640220486827ae75c9fb64f025e2eca71066",
+      "identitySourceIds": [
+        "source:fukuoka-museum-dosetsu-087",
+        "source:oita-city-dosetsu"
+      ],
+      "identitySourceUrl": "https://museum.city.fukuoka.jp/archives/leaflet/087/index.html",
+      "identitySourceLocator": "「1 戦国武将 戸次道雪」「2 立花城督」",
+      "identityChecks": [
+        "福岡市博物館が戸次道雪の名を鑑連とし大友重臣・立花城督と説明",
+        "大分市が立花道雪を戸次鑑連と同定し宗茂の婿養子関係を説明"
+      ],
+      "adoptedNames": [
+        "立花道雪",
+        "戸次鑑連",
+        "戸次道雪"
+      ],
+      "scope": "person-identity-only; no historical birth/death/date/location claim adoption"
+    }
+  ]
+}

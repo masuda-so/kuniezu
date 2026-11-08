@@ -111,9 +111,17 @@ for(const person of people){
    assert.throws(()=>verifyNdlAlternativeName(person,row,otherPerson,wikidata),/NDL ID differs/);
    assert.throws(()=>verifyNdlAlternativeName(person,{...row,ndlNameMatch:{...row.ndlNameMatch,value:row.ndlIdentity.name}},raw,wikidata),/NDL alternate name/);
   }
- }else if(row.rawEntityDataSnapshot){
+ }
+ if(row.rawEntityDataSnapshot){
   const bytes=fs.readFileSync(path.join(root,row.rawEntityDataSnapshot));
-  verifyRawAuthority(row,snapshot,bytes);
+  const rawEntity=verifyRawAuthority(row,snapshot,bytes);
+  if(row.adoptedNames){
+   const verifyNames=(names,item)=>{const rawNames=[item.labels?.ja?.value,...(item.aliases?.ja||[]).map(a=>a.value)],localNames=[person.name,...person.gameNames,...(person.aliases||[])];assert.ok(names.length,'adopted names required');for(const name of names){assert.ok(rawNames.includes(name),'adopted name absent from raw authority');assert.ok(localNames.includes(name),'adopted name absent from local person');}};
+   verifyNames(row.adoptedNames,rawEntity);
+   assert.throws(()=>verifyNames([...row.adoptedNames,'未確認の別名'],rawEntity),/adopted name absent from raw authority/);
+   const notPerson={...rawEntity,claims:{...rawEntity.claims,P31:[]}},notBytes=Buffer.from(JSON.stringify({entities:{[row.wikidataId]:notPerson}}));
+   assert.throws(()=>verifyRawAuthority({...row,rawSha256:require('node:crypto').createHash('sha256').update(notBytes).digest('hex')},snapshot,notBytes));
+  }
   if(row.rawSha256){
    assert.throws(()=>verifyRawAuthority({...row,rawSha256:'0'.repeat(64)},snapshot,bytes),/raw SHA/);
    assert.throws(()=>verifyRawAuthority({...row,wikidataRevision:row.wikidataRevision+1},snapshot,bytes),/revision/);
@@ -123,7 +131,7 @@ for(const person of people){
   assert.ok(new Set(row.identityChecks).size>=2,'two identity checks required');
   assert.match(row.identitySourceUrl,/^https:\/\//);
   assert.equal(row.revisionUrl,`https://www.wikidata.org/w/index.php?title=${row.wikidataId}&oldid=${row.wikidataRevision}`);
- }else{
+ }else if(!person.authorityIds.some(id=>id.startsWith('ndlna:'))){
   assert.ok(row.instanceOf.includes('Q5'));
   assert.deepEqual(row.existingClaimIds,person.identityBasis.claimIds);
  }
