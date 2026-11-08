@@ -9,12 +9,13 @@ const {TK,G}=c;
 const TAKATENJIN_BOUNDS=[137.98111632074472,34.740754030237156,138.10131617925526,34.671584069762844];
 if(!actualBounds)TK.BATTLE_ATLAS['高天神城の戦い']={...TK.BATTLE_ATLAS['高天神城の戦い'],bounds:TAKATENJIN_BOUNDS};
 const fixedMotion=fs.readFileSync(path.join(ROOT,'kuniezu/static/kuniezu/battle-motion.js'),'utf8');
-const fixedAtlas=fs.readFileSync(path.join(ROOT,'kuniezu/static/kuniezu/battle-atlas.js'),'utf8').replace('const paintCounter=()=>{','const paintCounter=()=>{__setActive(g.id);');
+const fixedAtlas=fs.readFileSync(path.join(ROOT,'kuniezu/static/kuniezu/battle-atlas.js'),'utf8').replace('const paintCounter=()=>{','const paintCounter=()=>{__setActive(g.id);').replace('for(const [i,r] of rs.entries()){','for(const [i,r] of rs.entries()){__setActive(r.g.id);').replace('function groupDraw(dt,now,playing){','function groupDraw(dt,now,playing){__resetLabelPlans();').replace('if(!placed)continue;labelSlots.set','if(!placed)continue;__recordLabelPlan({...placed,ids:plan.anchorIds,rowIds:rs.map(r=>r.g.id)});labelSlots.set');
+c.__labelPlans=[];c.__resetLabelPlans=()=>{c.__labelPlans=[];};c.__recordLabelPlan=p=>c.__labelPlans.push(JSON.parse(JSON.stringify(p)));
 const simple=x=>JSON.parse(JSON.stringify(x));
 let activeId=null,observer,stage;c.__setActive=id=>{activeId=id;};
 class Context{
  constructor(){this.font='12px serif';this.textAlign='left';this.textBaseline='middle';this.m=[1,0,0,1,0,0];this.stack=[];this.lineDash=[];this.globalAlpha=1;this.reset();}
- reset(){this.counters=[];this.counterStrokes=[];this.counterFills=[];this.rectStrokes=[];this.flags=[];this.faces=[];this.texts=[];}
+ reset(){this.freeStrokes=[];this.trails=[];this.counters=[];this.counterStrokes=[];this.counterFills=[];this.rectStrokes=[];this.flags=[];this.faces=[];this.texts=[];}
  save(){this.stack.push({m:this.m.slice(),font:this.font,textAlign:this.textAlign,textBaseline:this.textBaseline,lineDash:this.lineDash.slice(),strokeStyle:this.strokeStyle,fillStyle:this.fillStyle,lineWidth:this.lineWidth,globalAlpha:this.globalAlpha});}
  restore(){Object.assign(this,this.stack.pop()||{});}
  setTransform(a,b,c,d,e,f){this.m=[a,b,c,d,e,f];}
@@ -26,7 +27,7 @@ class Context{
  drawImage(im,x,y,w,h){if(im.face)this.faces.push({id:activeId,x,y,w,h,alpha:this.globalAlpha});else if(im.context)this.texts.push(...im.context.texts);}
  clearRect(){this.reset();}
  createLinearGradient(){return {addColorStop(){}};}
- beginPath(){this.counterPath=null;}closePath(){}moveTo(){}lineTo(){}arc(){}rect(){}clip(){}fill(){if(this.counterPath)this.counterFills.push({id:this.counterPath,color:this.fillStyle});}stroke(){if(this.counterPath)this.counterStrokes.push({id:this.counterPath,color:this.strokeStyle,width:this.lineWidth,dash:this.lineDash.slice(),alpha:this.globalAlpha});}fillRect(){}strokeRect(){this.rectStrokes.push(this.lineDash.slice());}strokeText(){}setLineDash(dash){this.lineDash=Array.from(dash);}quadraticCurveTo(){}bezierCurveTo(){}
+ beginPath(){this.counterPath=null;}closePath(){}moveTo(){}lineTo(){}arc(){}rect(){}clip(){}fill(){if(this.counterPath)this.counterFills.push({id:this.counterPath,color:this.fillStyle});}stroke(){if(this.counterPath)this.counterStrokes.push({id:this.counterPath,color:this.strokeStyle,width:this.lineWidth,dash:this.lineDash.slice(),alpha:this.globalAlpha});else this.freeStrokes.push({color:this.strokeStyle,width:this.lineWidth});}fillRect(){}strokeRect(){this.rectStrokes.push(this.lineDash.slice());}strokeText(){}setLineDash(dash){this.lineDash=Array.from(dash);}quadraticCurveTo(){}bezierCurveTo(){}
 }
 class Element{
  constructor(tag){this.tag=tag;this.children=[];this.style={};this.dataset={};this.classList={toggle(){}};if(tag==='canvas')this.context=new Context();}
@@ -48,7 +49,7 @@ G.date=()=>({y:1600});G.CN=k=>TK.CLANS[k]?.[0]||k;G.ROADS=[];G.armyCrestKey=()=>
 G.S=()=>({clans:emptyGame?{}:{tokugawa:{cap:'hamamatsu'},takeda:{cap:'tsutsujigasaki'},oda:{cap:'kiyosu'}}});
 c.TKGEO.land=[];c.TKGEO.lakes=[];c.TKGEO.rivers=[];TK.HISTORIC_WATERS=[];TK.REGIONAL_RIVERS=[];TK.KOREAN_RIVERS_DETAIL=[];TK.periodWaters=()=>[];
 c.TKCounter={path(ctx,w,h){ctx.counterPath=activeId;ctx.counters.push({id:activeId,p:[ctx.m[4],ctx.m[5]],w,h,m:ctx.m.slice()});}};
-c.TKBattleEffects={create:()=>({heading(id,a){activeId=id;return a;},flag(ctx,x,y,k){ctx.flags.push({id:activeId,x,y,k,dash:ctx.lineDash.slice()});},rnd:()=>1,spawn(){},cross(){},trail(){},clash(){},ring(){},step(){},draw(){},weather(){},clear(){},count:0})};
+c.TKBattleEffects={create:()=>({heading(id,a){activeId=id;return a;},flag(ctx,x,y,k){ctx.flags.push({id:activeId,x,y,k,dash:ctx.lineDash.slice()});},rnd:()=>1,spawn(){},cross(){},trail(ctx,points,color,k,dashed){ctx.trails.push({points,color,dashed:!!dashed});},clash(){},ring(){},step(){},draw(){},weather(){},clear(){},count:0})};
 c.TKBattlePresentation={record(cv,sc,opt){let t=0;return {get t(){return t;},get playing(){return false;},get ended(){return t>=100;},seek(v){t=v;opt.onProgress(v);},pause(){},play(){},destroy(){}};}};
 const distance=(a,b)=>Math.hypot((a[0]-b[0])*111.32*Math.cos((a[1]+b[1])*Math.PI/360),(a[1]-b[1])*111.32);
 const world=(p,v,b)=>[b[0]+(p[0]+v.VX)/(v.W*v.VS)*(b[2]-b[0]),b[1]-(p[1]+v.VY)/(v.H*v.VS)*(b[1]-b[3])];

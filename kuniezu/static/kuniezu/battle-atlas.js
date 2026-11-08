@@ -14,6 +14,15 @@ window.TKBattleAtlas=(function(){
  const bbPairs=a=>{let b=BB.get(a);if(!b){let x0=Infinity,y0=Infinity,x1=-Infinity,y1=-Infinity;for(const p of a){const x=p[0],y=p[1];if(x<x0)x0=x;if(x>x1)x1=x;if(y<y0)y0=y;if(y>y1)y1=y;}b=[x0,y0,x1,y1];BB.set(a,b);}return b;};
  // 元の標高格子を、表示する経緯度の枠へ投影する。格子自体は作り直さない。
  function reliefTransform(source,frame,W,H){return {translate:[(source[0]-frame[0])/(frame[2]-frame[0])*W,(frame[1]-source[1])/(frame[1]-frame[3])*H],scale:[(source[2]-source[0])/(frame[2]-frame[0]),(source[1]-source[3])/(frame[1]-frame[3])]};}
+ // 表示用の束。元pointが厳密一致し、現在も1px以内の隊だけ。同じ場所へ再配置しない。
+ function labelBuckets(items){const out=[];for(const item of items){const b=Array.isArray(item.point)&&out.find(b=>Array.isArray(b.point)&&b.point[0]===item.point[0]&&b.point[1]===item.point[1]&&b.items.every(q=>Math.hypot(q.pin[0]-item.pin[0],q.pin[1]-item.pin[1])<1));if(b)b.items.push(item);else out.push({point:item.point,items:[item]});}return out;}
+ function labelPlacement(item,layout){const {W,H,small,named,anchors,previous}=layout,[x,y]=item.pin,w=item.w,h=item.h,clamp=(n,a,b)=>Math.max(a,Math.min(b,n));if(w>W-4||h>H-4)return null;
+  const gap=item.ornaments?(small?30:42):(small?18:24),top=item.ornaments?(small?50:60):24;
+  const cands=[{x:x+gap,y:y-h/2},{x:x-w/2,y:y+24},{x:x-w-gap,y:y-h/2},{x:x-w/2,y:y-h-top},{x:x+gap,y:y+20},{x:x-w-gap,y:y+20},{x:x+gap,y:y-h-20},{x:x-w-gap,y:y-h-20}],order=[...new Set([previous,0,1,2,3,4,5,6,7].filter(i=>Number.isInteger(i)&&i>=0&&i<cands.length))];
+  for(const slot of order){const p=cands[slot],box={x:clamp(p.x,2,W-w-2),y:clamp(p.y,2,H-h-2),w,h};if(named.some(b=>overlaps(b,box))||anchors.some(b=>overlaps(b,box)))continue;const distance=Math.hypot(clamp(x,box.x,box.x+w)-x,clamp(y,box.y,box.y+h)-y);if(distance>(small?32:44))continue;return {box,slot};}
+  return null;
+ }
+
  function make(cv,sc,opt){
   const title=opt.title,meta=TK.BATTLE_ATLAS[title],ctx=cv.getContext('2d');let W=0,H=0,D=1,bg=null,data=decoded.get(meta.file)||null,dead=false,selected=null,error='',lastKey='',frame;
   let t=0,pendingPlay=false,fxRaf=0,fxLast=0,lastSnap=true;const fx=TKBattleEffects.create({seed:(meta.file||'').length*131+sc.units.length});const groups=(sc.atlasGroups||[]).flatMap(g=>g.members.map((id,i)=>({...g,id:g.id+'-'+i,label:sc.units.find(u=>u.id===id)?.g||g.label,members:[id],parentId:g.id,point:g.point}))),units=sc.atlasUnits||[],notes=sc.atlasNotes||[],aspect=sc.atlasSchematic?.9:sc.atlasPlan?1100/1050:meta.aspect||.7;
@@ -34,12 +43,12 @@ window.TKBattleAtlas=(function(){
   const wp=(x,y)=>pj(TKGEO.LON0+x/TKGEO.K/TKGEO.CX,TKGEO.LAT0-y/TKGEO.K);
   const inside=(x,y)=>x>=0&&x<=W&&y>=0&&y<=H;
   const onView=(b,proj)=>{const p=proj(b[0],b[1]),q=proj(b[2],b[3]);return Math.max(p[0],q[0])>-60&&Math.min(p[0],q[0])<W+60&&Math.max(p[1],q[1])>-60&&Math.min(p[1],q[1])<H+60;};
-  function text(c,txt,x,y,size=12,color='#254532',align='center',reserved=null){
+  function text(c,txt,x,y,size=12,color='#254532',align='center',reserved=null,recordOnly=false){
    c.font=`600 ${size}px ${FONT}`;const width=Math.min(c.measureText(txt).width,W-8),left=align==='left'?0:align==='right'?width:width/2,right=width-left;
    x=clamp(x,4+left,W-4-right);y=clamp(y,4+size/2,H-4-size/2);
    if(reserved){
     const bounds={x:x-left-2,y:y-size/2-2,w:width+4,h:size+4};
-    if(reserved.some(b=>overlaps(bounds,b)))return;
+    if(!recordOnly&&reserved.some(b=>overlaps(bounds,b)))return;
     reserved.push(bounds);
    }
    c.textAlign=align;c.textBaseline='middle';c.lineJoin='round';c.lineWidth=3;c.strokeStyle='rgba(251,250,233,.96)';c.strokeText(txt,x,y,width);c.fillStyle=color;c.fillText(txt,x,y,width);return true;
@@ -65,7 +74,7 @@ window.TKBattleAtlas=(function(){
    }
    c.restore();
   }
-  function backdrop(){if(!W||!data&&!sc.atlasPlan&&!error)return;const cacheKey=meta.file+'|'+title+'|'+meta.bounds.join(',')+'|'+W+'|'+H+'|'+D+'|'+G.date().y+'|'+!!data+'|'+VS.toFixed(3)+'|'+Math.round(VX)+'|'+Math.round(VY);if(!error&&backgrounds.has(cacheKey)){bg=backgrounds.get(cacheKey);return;}bg=document.createElement('canvas');bg.width=W*D;bg.height=H*D;const c=bg.getContext('2d');c.scale(D,D);if(sc.atlasSchematic){c.fillStyle='#f3eedb';c.fillRect(0,0,W,H);text(c,sc.atlasSchematic.title,W/2,22,W<560?13:16,'#493c28');text(c,'攻撃を命じられた部隊',W*.22,H*.16,W<560?10:12,'#9a3435');text(c,'豊臣方の河口砦',W*.77,H*.16,W<560?10:12,'#216d9f');text(c,sc.atlasSchematic.caption,W/2,H-17,W<560?8:11,'#665b49');backgrounds.set(cacheKey,bg);if(backgrounds.size>4)backgrounds.delete(backgrounds.keys().next().value);return;}c.save();c.translate(-VX,-VY);c.scale(VS,VS);relief(c);c.restore();
+  function backdrop(){if(!W||!data&&!sc.atlasPlan&&!error)return;const cacheKey=meta.file+'|'+title+'|'+meta.bounds.join(',')+'|'+W+'|'+H+'|'+D+'|'+G.date().y+'|'+!!data+'|'+VS.toFixed(3)+'|'+Math.round(VX)+'|'+Math.round(VY);if(!error&&backgrounds.has(cacheKey)){bg=backgrounds.get(cacheKey);return;}bg=document.createElement('canvas');bg.width=W*D;bg.height=H*D;const c=bg.getContext('2d');c.scale(D,D);if(sc.atlasSchematic){const reserved=[];placeLabels.set(bg,reserved);c.fillStyle='#f3eedb';c.fillRect(0,0,W,H);text(c,sc.atlasSchematic.title,W/2,22,W<560?13:16,'#493c28','center',reserved,true);text(c,'攻撃を命じられた部隊',W*.22,H*.16,W<560?10:12,'#9a3435','center',reserved,true);text(c,'豊臣方の河口砦',W*.77,H*.16,W<560?10:12,'#216d9f','center',reserved,true);text(c,sc.atlasSchematic.caption,W/2,H-17,W<560?8:11,'#665b49','center',reserved,true);backgrounds.set(cacheKey,bg);if(backgrounds.size>4)backgrounds.delete(backgrounds.keys().next().value);return;}c.save();c.translate(-VX,-VY);c.scale(VS,VS);relief(c);c.restore();
    // 現代の水域は比較用。旧河道・埋立前の海岸の復元として扱わない。
    c.save();c.beginPath();c.rect(0,0,W,H);c.clip();
    const land=new Path2D();for(const poly of TKGEO.land)for(const ring of poly){if(!onView(bbFlat(ring),wp))continue;for(let i=0;i<ring.length;i+=2){const p=wp(ring[i],ring[i+1]);i?land.lineTo(...p):land.moveTo(...p);}land.closePath();}
@@ -86,7 +95,7 @@ window.TKBattleAtlas=(function(){
    for(const r of G.ROADS){const raw=TK.roadDisplay(r).pts;if(!onView(bbPairs(raw),wp))continue;const pts=raw.map(p=>wp(...p));if(!pts.some(p=>inside(...p)))continue;c.beginPath();pts.forEach((p,i)=>i?c.lineTo(...p):c.moveTo(...p));c.strokeStyle='#81735a';c.lineWidth=1.25;c.setLineDash([5,4]);c.stroke();}c.setLineDash([]);
    c.restore();
    // 史料を読図した城郭平面図は独立した概略図として、現代標高と混ぜない。
-   if(sc.atlasPlan){c.fillStyle='#e9ebcf';c.fillRect(0,0,W,H);for(const f of sc.feats||[]){
+   if(sc.atlasPlan){const reserved=[];placeLabels.set(bg,reserved);c.fillStyle='#e9ebcf';c.fillRect(0,0,W,H);for(const f of sc.feats||[]){
     if(!f.pts)continue;path(c,f.pts,false,!['road','dryMoat'].includes(f.k));
     if(f.k==='landform'){c.fillStyle='#a4c58f';c.fill();}
     if(['water','sea','lake'].includes(f.k)){c.fillStyle='#acd5e2';c.fill();c.strokeStyle='#5e9cae';c.lineWidth=1;c.stroke();}
@@ -94,9 +103,9 @@ window.TKBattleAtlas=(function(){
     if(f.k==='bailey'){c.fillStyle='#f2edce';c.fill();c.strokeStyle='#746b4e';c.lineWidth=1.4;c.stroke();}
     if(f.k==='dryMoat'){c.strokeStyle='#768864';c.lineWidth=4;c.stroke();c.strokeStyle='#edf0d7';c.lineWidth=1.4;c.stroke();}
     if(f.k==='road'){c.strokeStyle='#897b61';c.lineWidth=1.2;c.stroke();}
-   }for(const f of sc.feats||[])if(f.n&&f.x!=null&&!['caption','keep'].includes(f.k))text(c,f.n,f.x*W,f.y*H,W>650?12:10);}
+   }for(const f of sc.feats||[])if(f.n&&f.x!=null&&!['caption','keep'].includes(f.k))text(c,f.n,f.x*W,f.y*H,W>650?12:10,'#254532','center',reserved,true);}
    else {
-    const reserved=W<560?[]:null;
+    const reserved=[];
     if(reserved)placeLabels.set(bg,reserved);
     const landmarks=sc.atlasLandmarks||[],shownLandmarks=new Set();
     for(const l of landmarks){
@@ -124,6 +133,7 @@ window.TKBattleAtlas=(function(){
   const pinFor=g=>{if(sc.atlasSchematic?.paths?.[g.members[0]])return schematicAt(g,t);if(g.estimated)return estAt(g,t);if(!g.point)return null;if(sc.atlasPlan)return [W*.56,H*.48];const u=unitById.get(g.members[0]);if(u&&!moveByName.has(u.g||u.n)){const e=estAt(g,t);if(e)return e;}const p=G.battlePhasePoint(sc,u?.g||u?.n,t,g.point);return pj(...p);};
   const isEst=g=>g.estimated||motionPlan().estimated.has(g.members[0]);
   const selectionGroup=id=>groups.find(g=>g.id===id&&(g.point||sc.atlasPlan||sc.atlasSchematic))||estGroups.find(g=>g.id===id)||groups.find(g=>g.members.includes(id)&&(g.point||sc.atlasPlan||sc.atlasSchematic))||estGroups.find(g=>g.members.includes(id))||groups.find(g=>g.id===id||g.members.includes(id));
+  const labelSlots=new Map();
   const selectionPortraits=[];
   function selectionPanel(ids){const el=cv.closest('.battle-stage')?.querySelector('.atlas-selection');if(!el)return;selectionPortraits.length=0;el.replaceChildren();el.hidden=!ids.length;if(!ids.length)return;
    const header=document.createElement('div');header.className='atlas-selection-header';const head=document.createElement('strong');head.textContent=ids.length>1?'部隊を選ぶ':'部隊の記録';header.append(head);el.append(header);
@@ -151,12 +161,15 @@ window.TKBattleAtlas=(function(){
    // 交戦の組（beats の第3要素）。開城・撤退へ進んだら以前の交戦を止める。
    const stage=(sc.beats||[]).filter(b=>b[0]<=t).at(-1),beat=stage?.[2]?.length?stage:null,active=new Set(beat?beat[2]:[]),clashK=beat?Math.max(.35,1-(t-beat[0])/16):0;
    const overview=views.length>1&&viewIndex===0&&VS===1;
+   const labelItems=located.map((g,index)=>({g,index,point:g.point,pin:pins[index],selected:selected===g.id||selected===g.parentId||g.members.includes(selected)})).filter(q=>inside(...q.pin)),buckets=labelBuckets(labelItems);
+   const decorationById=new Map(labelItems.map(q=>[q.g.id,nearby[q.index]>=(small?38:58)]));
+   const rows=[],anchorRects=labelItems.map(q=>{const full=decorationById.get(q.g.id);return {id:q.g.id,x:q.pin[0]-(full?(small?23:34):(small?12:17)),y:q.pin[1]-(full?(small?27:45):(small?12:17)),w:full?(small?48:75):(small?24:34),h:full?(small?42:64):(small?24:34)};});
    const livePin=id=>{const r=groupOf.get(id);if(!r)return null;const u=unitById.get(id);return u&&!isDead(u)?r.pin:null;};
    if(beat)for(let i=0;i+1<beat[2].length;i+=2){const a=livePin(beat[2][i]),b=livePin(beat[2][i+1]);if(!a||!b)continue;const d=Math.hypot(a[0]-b[0],a[1]-b[1]);
     if(d<Math.max(150,W*.28)){const mx=(a[0]+b[0])/2,my=(a[1]+b[1])/2;fx.clash(ctx,mx,my,now,clashK,kb);if(playing&&fx.rnd()<dt*40*clashK)fx.spawn(mx+(fx.rnd()-.5)*16,my+(fx.rnd()-.5)*10,'spark');if(playing&&fx.rnd()<dt*14*clashK)fx.spawn(mx,my,'dust');}
     else for(const p of [a,b]){fx.ring(ctx,p[0],p[1],now,clashK,small?18:22);if(playing&&fx.rnd()<dt*8*clashK)fx.spawn(p[0],p[1],'dust');}}
    // 段階移動の足跡は駒より下に描く。
-   for(const [index,g]of located.entries()){const u=unitById.get(g.members[0]);const move=u&&moveByName.get(u.g||u.n);if(move&&t>move.from)fx.trail(ctx,traversed(move,pins[index]),COL[sideOf(u)]||COL.unknown,kb);else if(u&&isEst(g)&&t>0){const from=visibleFrom(u),pts=[];for(let k=0;k<=24;k++){const tt=from+(t-from)*k/24,p=estAt(g,tt);if(p)pts.push(p);}let len=0;for(let k=1;k<pts.length;k++)len+=Math.hypot(pts[k][0]-pts[k-1][0],pts[k][1]-pts[k-1][1]);if(len>6)fx.trail(ctx,pts,COL[sideOf(u)]||COL.unknown,kb,true);}}
+   for(const [index,g]of located.entries()){if(!(selected===g.id||selected===g.parentId||g.members.includes(selected)))continue;const u=unitById.get(g.members[0]);const move=u&&moveByName.get(u.g||u.n);if(move&&t>move.from)fx.trail(ctx,traversed(move,pins[index]),COL[sideOf(u)]||COL.unknown,kb);else if(u&&isEst(g)&&t>0){const from=visibleFrom(u),pts=[];for(let k=0;k<=24;k++){const tt=from+(t-from)*k/24,p=estAt(g,tt);if(p)pts.push(p);}let len=0;for(let k=1;k<pts.length;k++)len+=Math.hypot(pts[k][0]-pts[k-1][0],pts[k][1]-pts[k-1][1]);if(len>6)fx.trail(ctx,pts,COL[sideOf(u)]||COL.unknown,kb,true);}}
    for(const [index,g]of located.entries()){const u=unitById.get(g.members[0]);if(!u)continue;const [x,y]=disp[index],[px0,py0]=pins[index],sel=selected===g.id||selected===g.parentId||g.members.includes(selected),side=sideOf(u),dead=isDead(u),routed=isRouted(u),col=dead?'#8a8174':u.turn&&t>=u.turn[0]?'#b47712':COL[side]||COL.unknown;
     if(!inside(x,y))continue;
     ctx.save();const from=visibleFrom(u);let alpha=from&&from<100?clamp((t-from)/2,0,1):1;if(dead)alpha*=clamp(1-(t-u.die)/10,.32,1);else if(routed)alpha*=clamp(1-(t-u.rout)/14,.45,1);ctx.globalAlpha=alpha;
@@ -171,46 +184,32 @@ window.TKBattleAtlas=(function(){
     const estMoving=est&&!isDead(u)&&(()=>{const a=estAt(g,Math.max(0,t-.5)),b=estAt(g,Math.min(100,t+.5));return a&&b&&Math.hypot(b[0]-a[0],b[1]-a[1])>.8;})();
     if((moving||estMoving)&&playing&&fx.rnd()<dt*10)fx.spawn(x,y,'dust');
     const counterScale=Math.max(small?14/18:18/28,Math.min(1,nearby[index]/((small?18:28)*1.25+2)));
+    const decorate=decorationById.get(g.id);
     const paintCounter=()=>{ctx.save();ctx.globalAlpha=alpha;
     ctx.save();ctx.translate(x,y);if(Number.isFinite(ang))ctx.rotate(ang);const cw=(small?18:28)*counterScale,ch=(small?13:19)*counterScale;TKCounter.path(ctx,cw,ch);ctx.fillStyle=col;ctx.fill();ctx.save();TKCounter.path(ctx,cw,ch);ctx.clip();const tint=ctx.createLinearGradient(0,-ch*.55,0,ch*.55);tint.addColorStop(0,'rgba(255,255,240,.20)');tint.addColorStop(.5,'rgba(255,255,240,0)');tint.addColorStop(1,'rgba(30,15,0,.14)');ctx.fillStyle=tint;ctx.fillRect(-cw,-ch,cw*2,ch*2);ctx.restore();TKCounter.path(ctx,cw,ch);ctx.strokeStyle=sel?'#e5ad3f':'#2a1d10';ctx.lineWidth=sel?2.6:active.has(u.id)?2.4:1.7;ctx.lineJoin='round';ctx.setLineDash(g.estimated?[3,2]:[]);ctx.stroke();ctx.restore();
+    if(decorate){
     const crestKey=G.armyCrestKey({clan:u.clan,gens:[],commanders:[u.g||u.n],until:sc.title}),crest=G.kamonImage(crestKey,11),family=crestKey&&TK.CLANS[crestKey]?G.CN(crestKey):u.clan&&TK.CLANS[u.clan]?G.CN(u.clan):'';const flagK=Math.max(small?.55:.7,(small?.55:1)*counterScale),flagX=clamp(x+(small?11:19),4,W-19*flagK-3),flagY=clamp(y,42*flagK+3,H-10*flagK-3);fx.flag(ctx,flagX,flagY,flagK,col,crest,now,playing&&!dead,family?family.replace(/家$/,'').slice(0,1):'');
-    if(dead)fx.cross(ctx,x,y);
+    }if(dead)fx.cross(ctx,x,y);if(decorate){
     const faceSize=Math.max(16,Math.round((small?16:24)*counterScale/2)*2),face=opt.face?.(u.g,faceSize/2,col);if(face)ctx.drawImage(face,clamp(x-(small?23:34),2,W-faceSize-2),clamp(y-faceSize/2,2,H-faceSize-2),faceSize,faceSize);
-    ctx.restore();};
+    }ctx.restore();};
     if(sel)foreground.push(paintCounter);else paintCounter();
     // 鉄砲：記録の射撃区間（fire）か、鉄砲隊が交戦中の間、相手へ向けて発砲の閃光と煙を出す。射線は引かない。
     const firing=!dead&&!routed&&(u.fire?t>=u.fire[0]&&t<=u.fire[1]:u.arm==='teppo'&&active.has(u.id));
     if(firing){let tp=u.fireTarget?livePin(u.fireTarget):null;if(!tp){let best=Infinity;for(const [j,q] of located.entries()){const v=unitById.get(q.members[0]);if(sideOf(v)===side||isDead(v))continue;const d=Math.hypot(pins[j][0]-x,pins[j][1]-y);if(d>1&&d<best){best=d;tp=pins[j];}}}
      if(tp){const dir=Math.atan2(tp[1]-y,tp[0]-x),fxp=[x+Math.cos(dir)*16*kb,y+Math.sin(dir)*16*kb];if(playing&&fx.rnd()<dt*16){fx.spawn(fxp[0]+(fx.rnd()-.5)*12,fxp[1]+(fx.rnd()-.5)*12,'flash',dir);fx.spawn(fxp[0],fxp[1],'smoke',dir);}}}
-    const status=dead?'討死':routed?'退却':'';
-    if(!overview||sel){
-     // 名札だけを動かす。密集時は引き出し線で対応する駒を示す。
-     const label=(u.g||u.n)+(status?'・'+status:'');ctx.font=`600 12px ${FONT}`;const w=ctx.measureText(label).width+10,h=18;
-     const right=x+(small?30:36),left=x-w-(small?32:38),below=y+(small?22:26),above=y-(small?58:66);
-     const cands=[
-      {x:right,y:y-16},{x:x-w/2,y:below},{x:left,y:y-16},{x:x-w/2,y:above},
-      {x:right,y:below},{x:left,y:below},{x:right,y:above},{x:left,y:above},
-      {x:x-w/2,y:below+h+5},{x:x-w/2,y:above-h-5}
-     ];
-     const clash=b=>named.some(a=>overlaps(a,b))||disp.some((q,j)=>(j!==index||!!sc.atlasSchematic)&&b.x<q[0]+(small?17:22)&&b.x+b.w>q[0]-(small?23:34)&&b.y<q[1]+(small?10:14)&&b.y+b.h>q[1]-(small?23:38));
-     const box=p=>({x:clamp(p.x,2,W-w-2),y:clamp(p.y,2,H-h-2),w,h});
-     const near=b=>!small||Math.hypot(clamp(x,b.x,b.x+b.w)-x,clamp(y,b.y,b.y+b.h)-y)<=36;
-     let b=cands.map(box).find(b=>near(b)&&!clash(b));
-     for(let radius=64;!small&&!b&&radius<=120;radius+=28){
-      const around=Array.from({length:12},(_,i)=>{
-       const angle=i*Math.PI/6;
-       return box({x:x+Math.cos(angle)*radius-w/2,y:y+Math.sin(angle)*radius-h/2});
-      });
-      b=around.find(b=>!clash(b));
-     }
-     if(!b&&sel&&!placeLabels.has(bg))b=box(cands[0]);
-     if(b){
-      const tx=clamp(x,b.x,b.x+w),ty=clamp(y,b.y,b.y+h),d=Math.hypot(tx-x,ty-y);
-      if(d>12){ctx.beginPath();ctx.moveTo(x+(tx-x)*12/d,y+(ty-y)*12/d);ctx.lineTo(tx,ty);ctx.strokeStyle=col;ctx.lineWidth=.85;ctx.stroke();}
-      boxes.push({...b,id:g.id,label:true});ctx.fillStyle='rgba(253,247,230,.94)';ctx.fillRect(b.x,b.y,w,h);ctx.strokeStyle='#2a1d10';ctx.lineWidth=.8;ctx.strokeRect(b.x+.5,b.y+.5,w-1,h-1);ctx.fillStyle=col;ctx.fillRect(b.x,b.y,3,h);ctx.font=`600 12px ${FONT}`;ctx.textAlign='left';ctx.textBaseline='middle';ctx.fillStyle=status?'#7a2218':'#302719';ctx.fillText(label,b.x+7,b.y+h/2+.5);named.push(b);}}
+    const status=dead?'討死':routed?'退却':'';rows.push({g,u,pin:[x,y],sel,col,alpha,status,decorate});
     boxes.push(small?{x:x-24,y:y-25,w:48,h:50,id:g.id}:{x:x-36,y:y-40,w:72,h:76,id:g.id});ctx.restore();
    }
    for(const paint of foreground)paint();
+   // 選択した名札を先に予約。地理点ではなく、顔・名前を収める表示カードだけを配置する。
+   const rowById=new Map(rows.map(r=>[r.g.id,r])),labelPlans=buckets.map(b=>{const rs=b.items.map(q=>rowById.get(q.g.id)).filter(Boolean),chosen=rs.find(r=>r.sel);return {items:overview?(chosen?[chosen]:[]):rs,chosen,anchorIds:b.items.map(q=>q.g.id),key:b.items.map(q=>q.g.id).join('|')};}).filter(b=>b.items.length).sort((a,b)=>Number(!!b.chosen)-Number(!!a.chosen));
+   const liveKeys=new Set(labelPlans.map(b=>b.key));for(const key of labelSlots.keys())if(!liveKeys.has(key))labelSlots.delete(key);
+   for(const plan of labelPlans){let rs=plan.items;if(rs.length>5){if(!plan.chosen)continue;rs=[plan.chosen];}const many=rs.length>1;const portrait=many||rs.some(r=>!r.decorate);ctx.font=`600 12px ${FONT}`;const w=Math.ceil(Math.max(...rs.map(r=>ctx.measureText((r.u.g||r.u.n)+(r.status?'・'+r.status:'')).width))+(portrait?34:12)),h=portrait?rs.length*24+(many?4:0):20,pin=(plan.chosen||rs[0]).pin;
+    const placed=labelPlacement({pin,w,h,ornaments:rs.some(r=>r.decorate),ids:plan.anchorIds},{W,H,small,named,anchors:anchorRects,previous:labelSlots.get(plan.key)});if(!placed)continue;labelSlots.set(plan.key,placed.slot);const b=placed.box;
+    ctx.fillStyle='rgba(253,247,230,.96)';ctx.fillRect(b.x,b.y,b.w,b.h);ctx.strokeStyle=plan.chosen?'#c28d30':'#827563';ctx.lineWidth=plan.chosen?1.3:.7;ctx.strokeRect(b.x+.5,b.y+.5,b.w-1,b.h-1);
+    for(const [i,r] of rs.entries()){const row={x:b.x,y:b.y+(many?2+i*24:0),w:b.w,h:portrait?24:20,id:r.g.id,label:true};ctx.save();ctx.globalAlpha=r.alpha;if(r.sel){ctx.fillStyle='rgba(217,184,102,.18)';ctx.fillRect(row.x+1,row.y+1,row.w-2,row.h-2);}ctx.fillStyle=r.col;ctx.fillRect(row.x,row.y,3,row.h);if(portrait){const face=opt.face?.(r.u.g||r.u.n,8,r.col);if(face)ctx.drawImage(face,row.x+6,row.y+4,16,16);}ctx.font=`600 12px ${FONT}`;ctx.textAlign='left';ctx.textBaseline='middle';ctx.fillStyle=r.status?'#7a2218':'#302719';ctx.fillText((r.u.g||r.u.n)+(r.status?'・'+r.status:''),row.x+(portrait?27:7),row.y+row.h/2+.5);ctx.restore();boxes.push(row);}
+    named.push(b);
+   }
    const estCount=located.filter(isEst).length;
    cv.dataset.estimatedGroups=String(estCount);cv.dataset.estimatedPlaced=String(located.filter(g=>g.estimated).length);cv.dataset.motionBasis=sc.atlasSchematic?'documented-sequence-schematic':motionPlan().basis;cv.dataset.schematicGroups=String(located.filter(g=>sc.atlasSchematic?.paths?.[g.members[0]]).length);
    lastSnap=!playing;
@@ -221,13 +220,13 @@ window.TKBattleAtlas=(function(){
    const pins=units.map(u=>u.point?pj(...u.point):[u.x*W,u.y*H]);
    for(const [index,u] of units.entries()){const [x,y]=pins[index],col=COL[u.side]||COL.unknown,sel=selected===u.id,r=W>650?10:7;
     ctx.save();ctx.translate(x,y);ctx.rotate(u.angle||0);ctx.beginPath();ctx.moveTo(-r,-r*.25);ctx.lineTo(-r*.36,-r*.25);ctx.lineTo(-r*.36,-r);ctx.lineTo(r*.36,-r);ctx.lineTo(r*.36,-r*.25);ctx.lineTo(r,-r*.25);ctx.lineTo(r,r*.65);ctx.lineTo(-r,r*.65);ctx.closePath();ctx.fillStyle=col;ctx.fill();ctx.lineWidth=sel?3:1.4;ctx.strokeStyle=sel?'#e4ac28':'#fffdf0';ctx.stroke();ctx.restore();
-    // 文字だけをずらし、部隊の位置は保持。引出線を付けて別位置の部隊と誤認させない。
+    // 文字だけをずらし、部隊の位置は保持。引出線は付けない。
     const txt=u.label||u.name||u.g,size=W>650?12:10;ctx.font=`600 ${size}px sans-serif`;const tw=ctx.measureText(txt).width+8,bh=size+7,candidates=[];
     for(let row=-6;row<=6;row++)for(let col=-3;col<=3;col++){const bx=clamp(x-tw/2+col*(tw/2+8),4,W-tw-4),by=clamp(y+14+row*(bh+3),4,H-bh-42);candidates.push({bx,by,d:Math.hypot(bx+tw/2-x,by+bh/2-y)});}
     candidates.sort((a,b)=>a.d-b.d);
     const free=p=>!boxes.some(b=>p.bx<b.x+b.w+2&&p.bx+tw+2>b.x&&p.by<b.y+b.h+2&&p.by+bh+2>b.y)&&!pins.some(q=>p.bx<q[0]+10&&p.bx+tw>q[0]-10&&p.by<q[1]+10&&p.by+bh>q[1]-10);
     const place=candidates.find(free)||candidates[0];const {bx,by}=place;
-    boxes.push({x:bx,y:by,w:tw,h:bh,id:u.id});ctx.strokeStyle=col;ctx.lineWidth=.7;ctx.beginPath();ctx.moveTo(x,y+6);ctx.lineTo(bx+tw/2,by);ctx.stroke();ctx.fillStyle='rgba(252,250,233,.86)';ctx.fillRect(bx,by,tw,bh);text(ctx,txt,bx+tw/2,by+bh/2,size,col);
+    boxes.push({x:bx,y:by,w:tw,h:bh,id:u.id});ctx.fillStyle='rgba(252,250,233,.86)';ctx.fillRect(bx,by,tw,bh);text(ctx,txt,bx+tw/2,by+bh/2,size,col);
     if(sel){const im=opt.face?.(u.g||u.name,19,col);if(im)ctx.drawImage(im,clamp(x-20,0,W-40),clamp(y-56,0,H-40),40,40);}
    }
    cv.dataset.mapReady=data||sc.atlasPlan?'true':'false';cv.dataset.mapUnits=String(units.length);
@@ -257,7 +256,21 @@ window.TKBattleAtlas=(function(){
     select.value=viewIndex?String(viewIndex):'';select.onchange=()=>choose(select.value?Number(select.value):0);bar.replaceChildren(all,select);cv.dataset.atlasViews=String(views.length);return;
    }
    bar.replaceChildren(...views.map((v,i)=>{const b=document.createElement('button');b.type='button';b.className='mini';b.textContent=v.name;b.setAttribute('aria-pressed',String(i===viewIndex));b.onclick=()=>{viewIndex=i;[VS,VX,VY]=[v.s,v.x,v.y];motion=null;renderViews();backdrop();frameDraw();};return b;}));cv.dataset.atlasViews=String(views.length);}
-  function size(){const r=cv.parentElement.getBoundingClientRect(),dock=cv.closest('.battle-stage')?.querySelector('.battle-dock')?.getBoundingClientRect().height||110,room=Math.max(240,(innerHeight-Math.max(0,r.top)-dock-28)/aspect),next=Math.max(240,Math.round(Math.min(r.width,room))),d=Math.min(2,devicePixelRatio||1);if(next===W&&d===D&&bg)return;W=next;H=Math.round(W*aspect);D=d;cv.style.width=W+'px';cv.style.height=H+'px';cv.style.margin='0 auto';cv.width=W*D;cv.height=H*D;refreshViews();backdrop();frameDraw();}
+  // 全経過文の最大高を幅ごとに予約し、再生する文が変わっても図を伸縮させない。
+  let dockWidth=-1;
+  function reserveDock(dock){
+   if(!dock?.cloneNode)return;
+   const width=Math.round(dock.getBoundingClientRect().width);if(!width||width===dockWidth)return;dockWidth=width;
+   const probe=dock.cloneNode(true),now=probe.querySelector('#bNow'),clock=probe.querySelector('#bClock');
+   for(const el of probe.querySelectorAll('[id]'))el.removeAttribute('id');
+   probe.setAttribute('aria-hidden','true');Object.assign(probe.style,{position:'fixed',visibility:'hidden',pointerEvents:'none',width:width+'px',minHeight:'0',height:'auto',left:'0',top:'0',bottom:'auto'});
+   dock.parentElement.append(probe);
+   try{
+    if(clock){let max=0,text='';for(const mark of [[0,'経過を読む'],...(sc.calendar||[[0,'布陣'],[20,'交戦'],[80,'終盤'],[100,'終了']])]){clock.textContent=mark[1];const h=clock.getBoundingClientRect().height;if(h>max){max=h;text=mark[1];}}clock.textContent=text;}
+    let height=probe.getBoundingClientRect().height;for(const beat of sc.beats||[]){if(now)now.textContent=beat[1]||'　';height=Math.max(height,probe.getBoundingClientRect().height);}dock.style.minHeight=Math.ceil(height)+'px';
+   }finally{probe.remove();}
+  }
+  function size(){const dockEl=cv.closest('.battle-stage')?.querySelector('.battle-dock');reserveDock(dockEl);const r=cv.parentElement.getBoundingClientRect(),dock=cv.closest('.battle-stage')?.querySelector('.battle-dock')?.getBoundingClientRect().height||110,top=r.top+(cv.closest('.mbox')?.scrollTop||0),room=Math.max(240,(innerHeight-Math.max(0,top)-dock-28)/aspect),next=Math.max(240,Math.round(Math.min(r.width,room))),d=Math.min(2,devicePixelRatio||1);if(next===W&&d===D&&bg)return;W=next;H=Math.round(W*aspect);D=d;cv.style.width=W+'px';cv.style.height=H+'px';cv.style.margin='0 auto';cv.width=W*D;cv.height=H*D;refreshViews();backdrop();frameDraw();}
   // 再生中・粉が残る間・停止直後の静止描画を、一つの描画ループで行う。停止後は粉が消えると止まる（雨・霧は静止画で描く）。
   function loop(now){if(dead){fxRaf=0;return;}const dt=fxLast?Math.min(.1,(now-fxLast)/1000):0;fxLast=now;const live=controller.playing||fx.count>0;frameDraw(live?dt:0,now);if(!live){fxRaf=0;fxLast=0;return;}fxRaf=requestAnimationFrame(loop);}
   function wake(){if(!fxRaf){fxLast=0;fxRaf=requestAnimationFrame(loop);}}
@@ -270,9 +283,9 @@ window.TKBattleAtlas=(function(){
    frameDraw();
   }};
 
-  cv.addEventListener('click',onClick);const ro=new ResizeObserver(size);size();ro.observe(cv.parentElement);
+  cv.addEventListener('click',onClick);const ro=new ResizeObserver(size);size();ro.observe(cv.parentElement);const dock=cv.closest('.battle-stage')?.querySelector('.battle-dock');if(dock)ro.observe(dock);document.fonts?.ready.then(()=>{if(!dead){dockWidth=-1;size();}});
   if(!sc.atlasSchematic)load(meta).then(d=>{if(dead)return;data=d;backdrop();frameDraw();if(pendingPlay){pendingPlay=false;controller.play();}}).catch(()=>{if(dead)return;error='地形を読み込めません。ページを再読み込みしてください。';backdrop();frameDraw();});
   return {...controller,play(){if(!data&&!sc.atlasPlan){pendingPlay=true;return;}controller.play();wake();},pause(){pendingPlay=false;controller.pause();},seek(v){controller.seek(v);fx.clear();lastSnap=true;frameDraw();},get playing(){return pendingPlay||controller.playing;},get t(){return controller.t;},get ended(){return controller.ended;},get speed(){return controller.speed;},select(id){const u=unitById.get(id);if(u){const {from,until}=G.battleUnitWindow(sc,u);if(!visible(u)){controller.seek(t<from?Math.min(from+2,(from+until)/2,100):Math.max(from,until-1));fx.clear();lastSnap=true;}}selected=id;selectionPanel([id]);frameDraw();},unitStates(){return groups.map(g=>{const u=unitById.get(g.members[0]),move=moveByName.get(u.g||u.n),side=sideOf(u),status=t>=G.battleUnitWindow(sc,u).until?(sc.mapExitLabels?.[u.id]||'退去'):t<(sc.mapVisibleFrom?.[u.id]||0)?'参陣前':t<(u.from||0)?'着陣前':u.die!=null&&t>=u.die?'討死':u.rout!=null&&t>u.rout?'退却':move&&t>move.from&&t<move.to?'移動中':G.battleActiveUnits(sc,t).includes(u.id)?'交戦':t>=100?'戦闘終了':sc.atlasSchematic?(u.side==='b'?'守備':u.id===sc.atlasSchematic.lead&&t>=sc.atlasSchematic.capturedAt?'攻略':'攻撃命令'):'布陣';const schematic=!!(sc.atlasSchematic||sc.atlasPlan),drawGroup=g.point||schematic?g:estGroups.find(e=>e.members[0]===u.id)||g,screenPoint=pinFor(drawGroup);return {id:u.id,side,status,visible:visible(u),point:g.point?G.battlePhasePoint(sc,u.g||u.n,t,g.point):null,screenPoint,renderedPoint:!schematic&&screenPoint?unproject(screenPoint):null,positionBasis:schematic?'schematic':!screenPoint?'unplaced':!g.point?'estimated-placement':isEst(g)?'estimated-motion':'recorded'};});},destroy(){dead=true;cv.closest('.battle-stage')?.querySelector('.atlas-views')?.remove();if(fxRaf)cancelAnimationFrame(fxRaf);fxRaf=0;controller.destroy();ro.disconnect();cv.removeEventListener('click',onClick);}};
  }
- return {make,reliefTransform,preload(title){const m=TK.BATTLE_ATLAS[title];return m&&!TK.BATTLES[title]?.atlasSchematic?load(m):Promise.resolve(null);}};
+ return {make,reliefTransform,labelBuckets,labelPlacement,preload(title){const m=TK.BATTLE_ATLAS[title];return m&&!TK.BATTLES[title]?.atlasSchematic?load(m):Promise.resolve(null);}};
 })();
