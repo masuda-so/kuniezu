@@ -59,7 +59,8 @@ function attachScenes(){for(const r of records){
  if(bounds[0]<meta.bounds[0]||bounds[1]>meta.bounds[1]||bounds[2]>meta.bounds[2]||bounds[3]<meta.bounds[3])throw Error("Local frame outside source: "+r.id);
  TK.BATTLES[r.title]={...local,title:r.title,date:r.scene.date,place:r.scene.scope,conflictId:r.id,eventDate:r.scene.eventDate||local.eventDate,sources:[...new Set([...(original.sources||[]),...sourceIds])]};
  if(r.scene.selection){TK.BATTLES[r.title].dur=(original.dur||44)*(r.scene.selection.sourceClockWindow[1]-r.scene.selection.sourceClockWindow[0])/100;TK.BATTLE_MOVEMENTS[r.title]=[];}
- TK.BATTLE_ATLAS[r.title]={...meta,bounds,points:(meta.points||[]).filter(p=>p.lon>=bounds[0]&&p.lon<=bounds[2]&&p.lat<=bounds[1]&&p.lat>=bounds[3])};
+ const aspect=r.scene.bounds?(bounds[1]-bounds[3])/((bounds[2]-bounds[0])*Math.cos((bounds[1]+bounds[3])*Math.PI/360)):meta.aspect;
+ TK.BATTLE_ATLAS[r.title]={...meta,bounds,...(aspect?{aspect}:{}),points:(meta.points||[]).filter(p=>p.lon>=bounds[0]&&p.lon<=bounds[2]&&p.lat<=bounds[1]&&p.lat>=bounds[3])};
 }}
 const build=G.buildBattleCatalog;
 G.buildBattleCatalog=function(...args){for(const r of records)if(r.scene&&TK.BATTLES[r.title]?.conflictId===r.id)delete TK.BATTLES[r.title];const result=build.apply(this,args);attachScenes();return result;};

@@ -16,6 +16,7 @@ assert.ok(child.beats.every(b=>(b[2]||[]).every(id=>child.units.some(u=>u.id===i
 assert.deepEqual(JSON.parse(JSON.stringify(TK.BATTLE_MOVEMENTS[record.title])),[]);
 for(const bad of [{sourceClockWindow:[100,35]},{sourceClockWindow:[-1,100]},{allowUnitIds:[...spec.allowUnitIds,'missing']},{allowGroupIds:[...spec.allowGroupIds,'missing']},{allowUnitIds:spec.allowUnitIds.filter(id=>id!=='nobunaga')},{keepBeatSourcePercentages:[0]}])assert.throws(()=>isolated(original,{...spec,...bad}),/Invalid local scene scope/);
 const sourceBounds=TK.BATTLE_ATLAS['長篠の戦い'].bounds,frame=TK.BATTLE_ATLAS[record.title].bounds;
+const aspect=TK.BATTLE_ATLAS[record.title].aspect;assert.ok(Math.abs(aspect-(frame[1]-frame[3])/((frame[2]-frame[0])*Math.cos((frame[1]+frame[3])*Math.PI/360)))<1e-12,'local viewport keeps east-west and north-south geographic scale');
 for(const [W,H] of [[335,235],[940,658]]){const tr=TKBattleAtlas.reliefTransform(sourceBounds,frame,W,H);for(let x=0;x<=4;x++)for(let y=0;y<=4;y++){
  const p=[frame[0]+(frame[2]-frame[0])*x/4,frame[1]-(frame[1]-frame[3])*y/4];
  const sourcePixel=[(p[0]-sourceBounds[0])/(sourceBounds[2]-sourceBounds[0])*W,(sourceBounds[1]-p[1])/(sourceBounds[1]-sourceBounds[3])*H];
