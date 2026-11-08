@@ -1,0 +1,40 @@
+{
+  "id": "submission-date-masamune",
+  "entity": "person:伊達政宗",
+  "predicate": "diplomatic-audience",
+  "value": "秀吉が陣中で伊達政宗を引見した。",
+  "validYears": [
+    1590,
+    1590
+  ],
+  "datePrecision": "day",
+  "source": "hiDainihonshiryoKobun",
+  "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+  "locator": "綱文：和暦 天正18年6月9日 第3条（区分 史料綜覧、編11・冊912（データベースの表示値）、292頁）",
+  "gameBindings": [
+    "TK.HIST:伊達の羽柴への帰属"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-07",
+  "uncertainty": "天正18年3月〜6月の綱文は、政宗が小田原へ来謁するよう周りから勧められ続けたことを掲げる。 綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。 翌日の饗応、後日の帰国許可と黒川城収受は綱文の文脈として保持し、この単日の命題には含めない。",
+  "linkedEntities": [
+    "person:伊達政宗",
+    "person:羽柴秀吉"
+  ],
+  "eventTime": {
+    "kind": "dated-event",
+    "date": [
+      1590,
+      6,
+      9
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": false,
+    "precision": "day"
+  },
+  "eventRelation": "diplomatic-audience",
+  "eventScope": "綱文が掲げる引見・謁見とその日付。臣従関係の成立日・条件・終了時期は断定しない。ゲームの帰属・上洛項目は実装の比較参照であり、同じ行為とは限らない。",
+  "gameBindingRelation": "comparison-not-event-equivalence",
+  "sourceContext": "秀吉が伊達政宗を陣中に引見し、翌日饗応した。のちに帰国を許し、木村清久・浅野正勝を同行させて陸奥会津の黒川城を収めさせた。"
+}

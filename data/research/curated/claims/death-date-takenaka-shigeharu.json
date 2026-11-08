@@ -1,0 +1,37 @@
+{
+  "id": "death-date-takenaka-shigeharu",
+  "entity": "person:竹中重治",
+  "predicate": "death-date",
+  "value": "信長の将竹中重治が播磨の陣中で死去した。",
+  "validYears": [
+    1579,
+    1579
+  ],
+  "datePrecision": "day",
+  "source": "hiDainihonshiryoKobun",
+  "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+  "locator": "綱文：和暦 天正7年6月13日 第1条（区分 史料綜覧、編10・冊911（データベースの表示値）、215頁）",
+  "gameBindings": [
+    "TK.HIST:death:竹中重治"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-07",
+  "uncertainty": "綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。",
+  "linkedEntities": [
+    "person:竹中重治"
+  ],
+  "eventTime": {
+    "kind": "dated-event",
+    "date": [
+      1579,
+      6,
+      13
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": false,
+    "precision": "day"
+  },
+  "eventRelation": "death",
+  "eventScope": "綱文が掲げる死去の日付と、綱文に書かれた相手・場所。ゲームの年表の日付は 1579 年 7 月 9 日で、綱文の旧暦 6 月 13 日をゲームの暦表で直した 1579 年 7 月 6 日より 3 日遅い。年表は変えていない（どちらを採るかは未判断）。 死因・享年・時刻・精密な位置は補わない。"
+}

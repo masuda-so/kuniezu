@@ -1,0 +1,37 @@
+{
+  "id": "death-date-miyoshi-yoshioki",
+  "entity": "person:三好義興",
+  "predicate": "death-date",
+  "value": "三好義興が死去した。子が無いため、父の長慶は十河一存の子（義継）に家督を継がせた。",
+  "validYears": [
+    1563,
+    1563
+  ],
+  "datePrecision": "day",
+  "source": "hiDainihonshiryoKobun",
+  "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+  "locator": "綱文：和暦 永禄6年8月25日 第1条（区分 史料綜覧、編9・冊910（データベースの表示値）、574頁）",
+  "gameBindings": [
+    "TK.HIST:death:三好義興"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-07",
+  "uncertainty": "綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。",
+  "linkedEntities": [
+    "person:三好義興"
+  ],
+  "eventTime": {
+    "kind": "dated-event",
+    "date": [
+      1563,
+      8,
+      25
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": false,
+    "precision": "day"
+  },
+  "eventRelation": "death",
+  "eventScope": "綱文が掲げる死去の日付と、綱文に書かれた相手・場所。ゲームの年表の日付は 1563 年 9 月 20 日で、綱文の旧暦 8 月 25 日をゲームの暦表で直した 1563 年 9 月 12 日より 8 日遅い。年表は変えていない（どちらを採るかは未判断）。 死因・享年・時刻・精密な位置は補わない。"
+}

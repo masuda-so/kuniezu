@@ -15,7 +15,7 @@ is [docs/README.md](docs/README.md); open requests and ownership are in
 ## Features and limitations
 
 - The history DB uses Julian dates through 4 October 1582 and Gregorian dates from 15 October. It rejects the reform gap (5–14 October), and distinguishes Japanese and Korean lunisolar dates.
-- The Bunroku campaign overview links to individual battles. The Busan diagram covers the old fortress assault, with Korean-calendar dates and conversion sources kept distinct.
+- The Bunroku and Nagashino campaign overviews link to individual battles. The Shitaragahara view includes only its eleven local units. The Busan diagram covers the old fortress assault, with Korean-calendar dates and conversion sources kept distinct.
 
 - Choosing a house from the left panel or a castle on the map starts observation and replaces the selection panel with the chronology. The map keeps its washi, wave pattern, and relief shading without a terrain/plain-map toggle.
 - Land, water and shorelines are rendered as vectors from edited GeoJSON.
