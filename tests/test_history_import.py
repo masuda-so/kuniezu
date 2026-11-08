@@ -160,7 +160,11 @@ def test_a_battle_is_the_timeline_event_seen_as_a_conflict(inputs):
     types = set(battle.records.values_list("record_type", flat=True))
     assert types == {RecordType.IMPLEMENTED_EVENT, RecordType.CATALOG}
     # A claim about a battle is a part of it.
-    part = Phenomenon.objects.filter(parent__title="長篠の戦い").first()
+    # The timeline battle, not the campaign of the same name.
+    part = Phenomenon.objects.filter(
+        parent__title="長篠の戦い",
+        parent__records__record_type=RecordType.IMPLEMENTED_EVENT,
+    ).first()
     assert part is not None
     assert part.status == Status.VERIFIED
 
@@ -713,7 +717,7 @@ def test_a_campaign_holds_its_battles_and_has_no_map_of_its_own(inputs):
     assert campaign.subtype == "campaign"
     assert campaign.parent is None
     battles = [row for row in rows if row.get("parent") == "campaign:文禄の役"]
-    assert summary.conflict_links == len(battles)
+    assert summary.conflict_links == sum(1 for row in rows if row.get("parent"))
     assert campaign.parts.count() == len(battles)
     # A battle the timeline already holds is that event, not a second one.
     okpo = campaign.parts.get(title="玉浦海戦")
@@ -765,3 +769,19 @@ def test_a_named_scene_is_checked_against_the_timeline_itself(inputs):
 
     with pytest.raises(ValueError, match="no single timeline event is 玉浦海戦"):
         import_history(inputs)
+
+
+def test_a_campaign_is_not_the_battle_of_the_same_name(inputs):
+    import_history(inputs)
+
+    campaign = Phenomenon.objects.get(key="campaign:長篠の戦い")
+    battle = Phenomenon.objects.get(
+        title="長篠の戦い", records__record_type=RecordType.IMPLEMENTED_EVENT
+    )
+    assert campaign != battle
+    assert battle.parent is None
+    assert set(campaign.parts.values_list("key", flat=True)) >= {"battle:設楽原の戦い"}
+    # A claim naming "battle:長篠の戦い" stays with the timeline battle.
+    assert not Phenomenon.objects.filter(
+        parent=campaign, records__record_type=RecordType.CLAIM
+    ).exists()
