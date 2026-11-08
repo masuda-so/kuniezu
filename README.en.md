@@ -21,7 +21,9 @@ is [docs/README.md](docs/README.md); open requests and ownership are in
 - Land, water and shorelines are rendered as vectors from edited GeoJSON.
   [CODH inputs and preparation](data/inputs/codh-edo/README.md) distinguish
   Edo-period comparison shapes from adopted period corrections. Ownership colours
-  and relief remain image layers.
+  and relief retain image layers. Precise game-control boundaries in
+  `control/subcell.geojson` are shared by colouring and picking; they are kept
+  separate from verified historical landholding claims.
 - Edited GeoJSON will be the directly maintained source of truth. Rendering reads
   the files for the selected period. CODH originals remain available for comparison,
   and normal builds will not overwrite the edited source data.
