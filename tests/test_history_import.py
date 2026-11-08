@@ -738,16 +738,55 @@ def test_a_campaign_holds_its_battles_and_has_no_map_of_its_own(inputs):
     assert campaign not in event
 
 
-def test_a_battle_whose_campaign_has_no_record_is_refused(inputs):
+def bad_conflicts(rows):
+    """Change the campaign and battle record in place, as one wrong edit."""
+    return {row["id"]: row for row in rows}
+
+
+@pytest.mark.parametrize(
+    ("change", "why"),
+    [
+        (lambda rows: rows.remove(bad_conflicts(rows)["campaign:文禄の役"]), "name"),
+        (
+            lambda rows: bad_conflicts(rows)["battle:釜山鎮の戦い"].update(
+                parent="battle:東萊城の戦い"
+            ),
+            "does not name it back",
+        ),
+        (
+            lambda rows: bad_conflicts(rows)["battle:釜山鎮の戦い"].update(
+                parent="battle:釜山鎮の戦い"
+            ),
+            "does not name it back",
+        ),
+        (
+            lambda rows: bad_conflicts(rows)["campaign:文禄の役"].update(
+                parent="campaign:長篠の戦い"
+            ),
+            "have no parent",
+        ),
+        (
+            lambda rows: bad_conflicts(rows)["campaign:文禄の役"]["children"].pop(),
+            "not listed by its campaign",
+        ),
+        (
+            lambda rows: bad_conflicts(rows)["battle:釜山鎮の戦い"].update(
+                kind="campaign"
+            ),
+            "does not name its kind",
+        ),
+        (lambda rows: rows.append(dict(rows[0])), "repeats an id"),
+    ],
+)
+def test_a_campaign_record_that_does_not_hold_together_is_refused(inputs, change, why):
     path = inputs / CONFLICTS
     data = json.loads(path.read_text(encoding="utf-8"))
-    data["conflicts"] = [
-        row for row in data["conflicts"] if row["id"] != "campaign:文禄の役"
-    ]
+    change(data["conflicts"])
     path.write_text(json.dumps(data, ensure_ascii=False), encoding="utf-8")
 
-    with pytest.raises(ValueError, match="names a campaign with no record"):
+    with pytest.raises(ValueError, match=why):
         import_history(inputs)
+    assert not Record.objects.exists()
 
 
 def test_a_named_scene_must_be_one_timeline_event(inputs):

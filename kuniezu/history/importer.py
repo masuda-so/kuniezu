@@ -16,6 +16,7 @@ from dataclasses import field
 from datetime import date
 from typing import TYPE_CHECKING
 from typing import Any
+from typing import NoReturn
 
 from django.db import transaction
 
@@ -231,6 +232,57 @@ def git_commit(root: Path) -> str:
     except OSError:
         return ""
     return result.stdout.strip() if result.returncode == 0 else ""
+
+
+def refuse_conflict(row_id: str, why: str) -> NoReturn:
+    message = f"conflicts: {row_id} {why}"
+    raise ValueError(message)
+
+
+def conflict_rows(data: Json) -> dict[str, Json]:
+    """The records by id, each naming its kind, with no id or title twice."""
+    if data.get("schemaVersion") != 1:
+        refuse_conflict("file", "has an unknown schemaVersion")
+    rows: dict[str, Json] = {}
+    titles: set[str] = set()
+    for row in data["conflicts"]:
+        row_id, kind = row["id"], row.get("kind")
+        if kind not in {"campaign", "battle"} or not row_id.startswith(kind + ":"):
+            refuse_conflict(row_id, "does not name its kind")
+        if row_id in rows or not row.get("title") or row["title"] in titles:
+            refuse_conflict(row_id, "repeats an id or a title")
+        if not row.get("sources"):
+            refuse_conflict(row_id, "has no source")
+        rows[row_id] = row
+        titles.add(row["title"])
+    return rows
+
+
+def check_conflicts(data: Json) -> None:
+    """Refuse a campaign and battle record that does not hold together.
+
+    The same conditions as ``tools/research/export-conflicts.cjs``: every id
+    names its kind, ids and titles are unique, a campaign lists its battles and
+    each of them names that campaign back, and only a battle has a parent.
+    """
+    rows = conflict_rows(data)
+    for row_id, row in rows.items():
+        if row["kind"] == "campaign":
+            children = row.get("children") or []
+            if row.get("parent") or not children or len(set(children)) != len(children):
+                refuse_conflict(row_id, "must list its battles once and have no parent")
+            for child_id in children:
+                child = rows.get(child_id) or {}
+                if child.get("kind") != "battle" or child.get("parent") != row_id:
+                    refuse_conflict(
+                        row_id, f"lists {child_id}, which does not name it back"
+                    )
+        elif row.get("parent"):
+            parent = rows.get(row["parent"]) or {}
+            if parent.get("kind") != "campaign":
+                refuse_conflict(row_id, "names a parent that is not a campaign")
+            if row_id not in (parent.get("children") or []):
+                refuse_conflict(row_id, "is not listed by its campaign")
 
 
 class Importer:
@@ -892,7 +944,9 @@ class Importer:
         path = self.root / CONFLICTS
         if not path.exists():
             return
-        rows = json.loads(path.read_text(encoding="utf-8"))["conflicts"]
+        data = json.loads(path.read_text(encoding="utf-8"))
+        check_conflicts(data)
+        rows = data["conflicts"]
         events = {item.pk for items in self.timeline.values() for item in items}
         for row in rows:
             record = self.record(
@@ -931,9 +985,6 @@ class Importer:
             parent = row.get("parent")
             if not parent:
                 continue
-            if parent not in self.phenomena:
-                message = f"{row['id']} names a campaign with no record: {parent}"
-                raise ValueError(message)
             child = self.phenomena[row["id"]]
             child.parent = self.phenomena[parent]
             child.save(update_fields=["parent"])
