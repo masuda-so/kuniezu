@@ -5,7 +5,7 @@ from datetime import datetime, timezone
 from PIL import Image
 out=Path(sys.argv[1]);out.mkdir(parents=True,exist_ok=True)
 west,south,east,north=map(float,sys.argv[2:6]);z=int(sys.argv[6]);layers=sys.argv[7:]
-assert set(layers)<= {'gazo1','std','rapid1880'},'Only registered source layers are supported'
+assert set(layers)<= {'gazo1','std','rapid1880','ort_old10'},'Only registered source layers are supported'
 assert -180<=west<east<=180 and -85<south<north<85 and 0<=z<=18
 def xy(lon,lat):return ((lon+180)/360*2**z,(1-math.asinh(math.tan(math.radians(lat)))/math.pi)/2*2**z)
 x0,y0=map(math.floor,xy(west,north));x1,y1=map(math.floor,xy(east,south));assert (x1-x0+1)*(y1-y0+1)*len(layers)<=150
@@ -32,5 +32,5 @@ for layer in layers:
   if r['layer']==layer and r['status']=='saved':
    _,x,y=r['tile'];tile=Image.open(out/r['file']).convert('RGBA');im.paste(tile,((x-x0)*256,(y-y0)*256),tile)
  im.save(out/f'{layer}-mosaic.jpg',quality=94)
-(out/'manifest.json').write_text(json.dumps({'accessed':datetime.now(timezone.utc).date().isoformat(),'source':'国土地理院・地理院タイル / 農研機構・迅速測図'if 'rapid1880'in layers else'国土地理院・地理院タイル','registry':'https://maps.gsi.go.jp/help/use.html','requestedBounds':[west,south,east,north],'zoom':z,'tileOrigin':[x0,y0],'tileEnd':[x1,y1],'layers':layers,'layerMetadata':{layer:({'period':[1974,1978],'kind':'aerial-photograph-era'} if layer=='gazo1' else ({'period':[1880,1886],'kind':'georeferenced-historical-map','source':'農研機構農業環境研究部門','license':'CC BY 2.1 JP','registry':'https://habs.rad.naro.go.jp/habs_faq.html','sourceAddressing':'TMS, south-origin rows','positionLimit':'提供元FAQは大きな所で約100mの誤差。各図幅の測量年は個別照合。'}if layer=='rapid1880'else{'period':'current-at-access','kind':'standard-map'})) for layer in layers},'pixelProjection':'Web Mercator tile pixels, 256px per tile','scope':'各レイヤの撮影・測量年代と透明画素を保持。近現代の地図や写真をゲーム年代の精密復元と同一視しない。','tiles':rows},ensure_ascii=False,indent=2)+'\n')
+(out/'manifest.json').write_text(json.dumps({'accessed':datetime.now(timezone.utc).date().isoformat(),'source':'国土地理院・地理院タイル / 農研機構・迅速測図'if 'rapid1880'in layers else'国土地理院・地理院タイル','registry':'https://maps.gsi.go.jp/help/use.html','requestedBounds':[west,south,east,north],'zoom':z,'tileOrigin':[x0,y0],'tileEnd':[x1,y1],'layers':layers,'layerMetadata':{layer:({'period':([1961,1969] if layer=='ort_old10' else [1974,1978]),'kind':'aerial-photograph-era'} if layer in {'gazo1','ort_old10'} else ({'period':[1880,1886],'kind':'georeferenced-historical-map','source':'農研機構農業環境研究部門','license':'CC BY 2.1 JP','registry':'https://habs.rad.naro.go.jp/habs_faq.html','sourceAddressing':'TMS, south-origin rows','positionLimit':'提供元FAQは大きな所で約100mの誤差。各図幅の測量年は個別照合。'}if layer=='rapid1880'else{'period':'current-at-access','kind':'standard-map'})) for layer in layers},'pixelProjection':'Web Mercator tile pixels, 256px per tile','scope':'各レイヤの撮影・測量年代と透明画素を保持。近現代の地図や写真をゲーム年代の精密復元と同一視しない。','tiles':rows},ensure_ascii=False,indent=2)+'\n')
 print(json.dumps({'tiles':len(rows),'saved':sum(r['status']=='saved'for r in rows),'missing':sum(r['status']!='saved'for r in rows)}))
