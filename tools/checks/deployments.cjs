@@ -1,7 +1,9 @@
 const assert=require('node:assert/strict');
 const fs=require('node:fs'),path=require('node:path');
 const {G,TK}=require('./history-focus.cjs').model();
-assert.equal(Object.keys(TK.BATTLES).length,111);
+const scoped=Object.values(TK.CONFLICT_CATALOG||{}).filter(r=>r.scene);
+assert.equal(Object.values(TK.BATTLES).filter(b=>!b.conflictId).length,111);
+assert.equal(Object.keys(TK.BATTLES).length,111+scoped.length);
 for(const e of TK.HIST)if(TK.BATTLE_TROOPS[e.title]&&!TK.BATTLE_TROOPS[e.title].skip)assert.ok(TK.BATTLES[e.title]?.atlasGroups?.length,e.title+' omitted from catalog');
 for(const e of TK.HIST)if(e.k!=='premarch'&&/戦い|合戦|落城|開城|の陣|攻め|平定|征伐|の変|の役|海戦/.test(e.title||''))assert.ok(TK.BATTLES[e.title]||TK.BATTLE_EVENT_EXCLUSIONS[e.title],e.title+' missing scene or documented event classification');
 const {ganjaku}=require('./battle-event-classification.cjs').checkEvents({G,TK});
@@ -41,4 +43,4 @@ for(const [id,lunar] of [['hachigata',[1590,6,14]],['nirayama',[1590,6,24]]]){
 }
 const n=TK.HIST.find(e=>e.title==='韮山城の戦い');assert.equal(G.evT(n)+n.hold,G.evT({d:TK.BATTLES[n.title].eventDate}));
 fs.writeFileSync(path.join(__dirname,'../../data/audits/deployment-audit.json'),JSON.stringify({generated:new Date().toISOString(),battles:report,note:'表示網羅性の検査。全隊の位置を史料で確定したとの意味ではない。'},null,2)+'\n');
-console.log('PASS 111 deployment rosters, both sides, unique membership, bounds, source registry, idempotence, corrected sea-battle numbers, dated roads, actual castle handovers, and 4 classified timeline events without fabricated or duplicate scenes');
+console.log('PASS '+Object.keys(TK.BATTLES).length+' deployment rosters (111 retained plus scoped scenes), both sides, unique membership, bounds, source registry, idempotence, corrected sea-battle numbers, dated roads, actual castle handovers, and 4 classified timeline events without fabricated or duplicate scenes');
