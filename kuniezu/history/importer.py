@@ -16,6 +16,7 @@ from dataclasses import field
 from datetime import date
 from typing import TYPE_CHECKING
 from typing import Any
+from typing import NoReturn
 
 from django.db import transaction
 
@@ -51,6 +52,9 @@ IDENTITIES = "data/research/curated/identities"
 # The index of 綱文 (one row per article), by year. It holds where each article
 # is, never its text; every article starts unclassified.
 KOBUN_INDEX = "data/research/kobun-index"
+# Which battles a campaign is made of. A campaign has no battle map of its own;
+# each battle in it does (the user's decision, 2026-11-07).
+CONFLICTS = "data/research/conflicts.json"
 KOBUN_UNCLASSIFIED = "kobun-unclassified"
 MONTH_TABLE = "kuniezu/static/kuniezu/koyomi.js"
 TITLE_LENGTH = 80
@@ -184,6 +188,7 @@ class Summary:
     borrowed_points: int = 0
     merged_things: int = 0
     represented_points: int = 0
+    conflict_links: int = 0
     retired: int = 0
     things: dict[str, int] = field(default_factory=dict)
     phenomena: dict[str, int] = field(default_factory=dict)
@@ -198,6 +203,7 @@ class Summary:
             "borrowed_points": self.borrowed_points,
             "merged_things": self.merged_things,
             "represented_points": self.represented_points,
+            "conflict_links": self.conflict_links,
             "phenomena": self.phenomena,
             "unclassified": self.unclassified,
         }
@@ -226,6 +232,57 @@ def git_commit(root: Path) -> str:
     except OSError:
         return ""
     return result.stdout.strip() if result.returncode == 0 else ""
+
+
+def refuse_conflict(row_id: str, why: str) -> NoReturn:
+    message = f"conflicts: {row_id} {why}"
+    raise ValueError(message)
+
+
+def conflict_rows(data: Json) -> dict[str, Json]:
+    """The records by id, each naming its kind, with no id or title twice."""
+    if data.get("schemaVersion") != 1:
+        refuse_conflict("file", "has an unknown schemaVersion")
+    rows: dict[str, Json] = {}
+    titles: set[str] = set()
+    for row in data["conflicts"]:
+        row_id, kind = row["id"], row.get("kind")
+        if kind not in {"campaign", "battle"} or not row_id.startswith(kind + ":"):
+            refuse_conflict(row_id, "does not name its kind")
+        if row_id in rows or not row.get("title") or row["title"] in titles:
+            refuse_conflict(row_id, "repeats an id or a title")
+        if not row.get("sources"):
+            refuse_conflict(row_id, "has no source")
+        rows[row_id] = row
+        titles.add(row["title"])
+    return rows
+
+
+def check_conflicts(data: Json) -> None:
+    """Refuse a campaign and battle record that does not hold together.
+
+    The same conditions as ``tools/research/export-conflicts.cjs``: every id
+    names its kind, ids and titles are unique, a campaign lists its battles and
+    each of them names that campaign back, and only a battle has a parent.
+    """
+    rows = conflict_rows(data)
+    for row_id, row in rows.items():
+        if row["kind"] == "campaign":
+            children = row.get("children") or []
+            if row.get("parent") or not children or len(set(children)) != len(children):
+                refuse_conflict(row_id, "must list its battles once and have no parent")
+            for child_id in children:
+                child = rows.get(child_id) or {}
+                if child.get("kind") != "battle" or child.get("parent") != row_id:
+                    refuse_conflict(
+                        row_id, f"lists {child_id}, which does not name it back"
+                    )
+        elif row.get("parent"):
+            parent = rows.get(row["parent"]) or {}
+            if parent.get("kind") != "campaign":
+                refuse_conflict(row_id, "names a parent that is not a campaign")
+            if row_id not in (parent.get("children") or []):
+                refuse_conflict(row_id, "is not listed by its campaign")
 
 
 class Importer:
@@ -849,7 +906,13 @@ class Importer:
             return None
         known = self.phenomena.get(identifier)
         if known is None:
-            same = self.by_title.get(name, [])
+            # A campaign is never found by the name of a battle, nor the other
+            # way round: only things of the same kind share a name.
+            same = [
+                item
+                for item in self.by_title.get(name, [])
+                if (item.subtype == "campaign") == (prefix == "campaign")
+            ]
             if len(same) == 1:
                 known = same[0]
         if known is None:
@@ -865,6 +928,67 @@ class Importer:
             )
         known.records.add(record)
         return known
+
+    def load_conflicts(self) -> None:
+        """Campaigns and the battles they are made of, from their own record.
+
+        Identifiers are matched whole: a campaign and a battle of the same name
+        are different things, and nothing is merged by its name alone. Only a
+        battle whose record states the title of an existing timeline event
+        (``existingSceneTitle``) is that event; every other entry becomes a
+        conflict of its own. Each battle then points at its campaign as its
+        parent, and claims that name the same identifier reach the same
+        phenomenon. Dates, units and people in a battle's scene are not read:
+        they are not claims checked against a source.
+        """
+        path = self.root / CONFLICTS
+        if not path.exists():
+            return
+        data = json.loads(path.read_text(encoding="utf-8"))
+        check_conflicts(data)
+        rows = data["conflicts"]
+        events = {item.pk for items in self.timeline.values() for item in items}
+        for row in rows:
+            record = self.record(
+                "conflict:" + row["id"], RecordType.CONFLICT, Status.REGISTERED, row
+            )
+            known = self.phenomena.get(row["id"])
+            scene = row.get("existingSceneTitle")
+            if scene:
+                # The named scene must be one timeline event, whatever else
+                # already goes by this identifier or this title.
+                same = [
+                    item for item in self.by_title.get(scene, []) if item.pk in events
+                ]
+                if len(same) != 1 or (known is not None and known != same[0]):
+                    message = f"{row['id']}: no single timeline event is {scene}"
+                    raise ValueError(message)
+                known = same[0]
+            if known is None:
+                known = self.phenomenon(
+                    row["id"],
+                    record,
+                    mode=Mode.EVENT,
+                    kind=PhenomenonKind.CONFLICT,
+                    subtype=row["kind"],
+                    title=row["title"],
+                    summary=row.get("summary") or "",
+                    when=When(label=row.get("dateLabel") or ""),
+                    status=Status.REGISTERED,
+                )
+            else:
+                known.records.add(record)
+                if known.kind != PhenomenonKind.CONFLICT:
+                    self.recount(known, PhenomenonKind.CONFLICT)
+            self.phenomena[row["id"]] = known
+        for row in rows:
+            parent = row.get("parent")
+            if not parent:
+                continue
+            child = self.phenomena[row["id"]]
+            child.parent = self.phenomena[parent]
+            child.save(update_fields=["parent"])
+            self.summary.conflict_links += 1
 
     def load_locations(self) -> None:
         for row in read_jsonl(self.root / RESEARCH / "location-observations.jsonl"):
@@ -1020,6 +1144,7 @@ class Importer:
         self.load_sites()
         self.load_timeline()
         self.load_catalog()
+        self.load_conflicts()
         self.load_claims()
         self.load_locations()
         self.load_kobun_index()
