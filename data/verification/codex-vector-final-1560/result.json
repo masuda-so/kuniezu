@@ -1,0 +1,102 @@
+{
+  "runtimeSha256": "e67e484acad27723f97adcaeb7509e42ce4c9940aacb01ed8ad14a6712a1a53b",
+  "cases": [
+    {
+      "region": "japan",
+      "date": [
+        1560,
+        1,
+        1
+      ],
+      "camera": {
+        "x": 1086.2900063285504,
+        "y": 1389.7167001874686,
+        "scale": 0.17990387867845234
+      },
+      "visible": 7353,
+      "elapsed": 2,
+      "buildMilliseconds": 164.5,
+      "counts": {
+        "roads": 47,
+        "posts": 1569,
+        "coast-polygons": 2203,
+        "lake-polygons": 584,
+        "shores": 2969
+      },
+      "paths": {
+        "coast-polygons": 2201,
+        "lake-polygons": 584,
+        "shores": 2952
+      }
+    },
+    {
+      "region": "kanto",
+      "date": [
+        1560,
+        1,
+        1
+      ],
+      "camera": {
+        "x": 1731.2963679623879,
+        "y": 1190.0000000000005,
+        "scale": 1.9350000000000003
+      },
+      "visible": 765,
+      "elapsed": 0.5999999940395355,
+      "buildMilliseconds": 164.5,
+      "counts": {
+        "roads": 47,
+        "posts": 1569,
+        "coast-polygons": 2203,
+        "lake-polygons": 584,
+        "shores": 2969
+      },
+      "paths": {
+        "coast-polygons": 2201,
+        "lake-polygons": 584,
+        "shores": 2952
+      }
+    },
+    {
+      "region": "kojima",
+      "date": [
+        1560,
+        1,
+        1
+      ],
+      "camera": {
+        "x": 764.5210596843267,
+        "y": 1432.9999999999998,
+        "scale": 11.727272727272808
+      },
+      "visible": 275,
+      "elapsed": 0.7999999970197678,
+      "buildMilliseconds": 164.5,
+      "counts": {
+        "roads": 47,
+        "posts": 1569,
+        "coast-polygons": 2203,
+        "lake-polygons": 584,
+        "shores": 2969
+      },
+      "paths": {
+        "coast-polygons": 2201,
+        "lake-polygons": 584,
+        "shores": 2952
+      }
+    }
+  ],
+  "paritySamples": 368,
+  "parityMatches": true,
+  "ukitaEraChecks": {
+    "year": 1560,
+    "cells": 366,
+    "allMatch": true
+  },
+  "overlapUnion": true,
+  "fiveLakeHoles": true,
+  "panZoom": true,
+  "narrow": true,
+  "idleRepaint": false,
+  "errors": []
+}

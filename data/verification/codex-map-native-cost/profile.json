@@ -1,0 +1,981 @@
+{
+  "environment": {
+    "viewport": [
+      1400,
+      950
+    ],
+    "candidate": false,
+    "candidateSHA": null,
+    "dpr": 1,
+    "headless": true,
+    "gpuDisabled": true,
+    "region": [
+      140.35,
+      36
+    ],
+    "mapStyle": "relief",
+    "scope": "short single-machine diagnostic; JS callback elapsed time is not FPS or temperature"
+  },
+  "rows": [
+    {
+      "name": "wheel",
+      "wallMs": 3857,
+      "taskMs": 2252.7650000000003,
+      "scriptMs": 1880.6640000000004,
+      "heapMB": 199.66506958007812,
+      "frames": 132,
+      "callbackP50": 0,
+      "callbackP95": 219.70000000298023,
+      "callbackMax": 369.5,
+      "before": {
+        "draw": {
+          "base": 17,
+          "top": 19,
+          "still": 19
+        },
+        "cache": {
+          "builds": 15,
+          "hits": 2
+        }
+      },
+      "after": {
+        "draw": {
+          "base": 40,
+          "top": 42,
+          "still": 42
+        },
+        "cache": {
+          "builds": 21,
+          "hits": 2
+        }
+      },
+      "native": [
+        {
+          "name": "drawImage",
+          "ms": 25,
+          "canvas": [
+            "",
+            1720,
+            1270
+          ],
+          "source": {
+            "width": 1720,
+            "height": 1270
+          },
+          "stack": [
+            "    at CanvasRenderingContext2D.<computed> [as drawImage] (<anonymous>:1:539)",
+            "    at Object.offLand (http://localhost:8000/static/kuniezu/vector-ui.js?v=b37f662087:45:44)",
+            "    at offLand (http://localhost:8000/static/kuniezu/ui.js?v=70c8429b80:343:52)",
+            "    at drawRoads (http://localhost:8000/static/kuniezu/ui.js?v=70c8429b80:286:26)",
+            "    at paintBase (http://localhost:8000/static/kuniezu/ui.js?v=70c8429b80:389:13)",
+            "    at drawBase (http://localhost:8000/static/kuniezu/ui.js?v=70c8429b80:432:3)",
+            "    at loop (http://localhost:8000/static/kuniezu/ui.js?v=70c8429b80:782:36)"
+          ]
+        },
+        {
+          "name": "drawImage",
+          "ms": 187.5,
+          "canvas": [
+            "base",
+            1400,
+            950
+          ],
+          "source": {
+            "width": 1720,
+            "height": 1270
+          },
+          "stack": [
+            "    at CanvasRenderingContext2D.<computed> [as drawImage] (<anonymous>:1:539)",
+            "    at drawBase (http://localhost:8000/static/kuniezu/ui.js?v=70c8429b80:435:81)",
+            "    at loop (http://localhost:8000/static/kuniezu/ui.js?v=70c8429b80:782:36)",
+            "    at <anonymous>:1:191"
+          ]
+        },
+        {
+          "name": "drawImage",
+          "ms": 25.599999994039536,
+          "canvas": [
+            "",
+            1720,
+            1270
+          ],
+          "source": {
+            "width": 1720,
+            "height": 1270
+          },
+          "stack": [
+            "    at CanvasRenderingContext2D.<computed> [as drawImage] (<anonymous>:1:539)",
+            "    at Object.offLand (http://localhost:8000/static/kuniezu/vector-ui.js?v=b37f662087:45:44)",
+            "    at offLand (http://localhost:8000/static/kuniezu/ui.js?v=70c8429b80:343:52)",
+            "    at drawRoads (http://localhost:8000/static/kuniezu/ui.js?v=70c8429b80:286:26)",
+            "    at paintBase (http://localhost:8000/static/kuniezu/ui.js?v=70c8429b80:389:13)",
+            "    at drawBase (http://localhost:8000/static/kuniezu/ui.js?v=70c8429b80:432:3)",
+            "    at loop (http://localhost:8000/static/kuniezu/ui.js?v=70c8429b80:782:36)"
+          ]
+        },
+        {
+          "name": "drawImage",
+          "ms": 188.20000000298023,
+          "canvas": [
+            "base",
+            1400,
+            950
+          ],
+          "source": {
+            "width": 1720,
+            "height": 1270
+          },
+          "stack": [
+            "    at CanvasRenderingContext2D.<computed> [as drawImage] (<anonymous>:1:539)",
+            "    at drawBase (http://localhost:8000/static/kuniezu/ui.js?v=70c8429b80:435:81)",
+            "    at loop (http://localhost:8000/static/kuniezu/ui.js?v=70c8429b80:782:36)",
+            "    at <anonymous>:1:191"
+          ]
+        },
+        {
+          "name": "clip",
+          "ms": 13.799999997019768,
+          "canvas": [
+            "",
+            1720,
+            1270
+          ],
+          "source": {},
+          "stack": [
+            "    at CanvasRenderingContext2D.<computed> [as clip] (<anonymous>:1:539)",
+            "    at Object.onLand (http://localhost:8000/static/kuniezu/vector-ui.js?v=b37f662087:39:30)",
+            "    at onLand (http://localhost:8000/static/kuniezu/ui.js?v=70c8429b80:342:51)",
+            "    at paintBase (http://localhost:8000/static/kuniezu/ui.js?v=70c8429b80:388:98)",
+            "    at drawBase (http://localhost:8000/static/kuniezu/ui.js?v=70c8429b80:432:3)",
+            "    at loop (http://localhost:8000/static/kuniezu/ui.js?v=70c8429b80:782:36)",
+            "    at <anonymous>:1:191"
+          ]
+        },
+        {
+          "name": "drawImage",
+          "ms": 25.200000002980232,
+          "canvas": [
+            "",
+            1720,
+            1270
+          ],
+          "source": {
+            "width": 1720,
+            "height": 1270
+          },
+          "stack": [
+            "    at CanvasRenderingContext2D.<computed> [as drawImage] (<anonymous>:1:539)",
+            "    at Object.offLand (http://localhost:8000/static/kuniezu/vector-ui.js?v=b37f662087:45:44)",
+            "    at offLand (http://localhost:8000/static/kuniezu/ui.js?v=70c8429b80:343:52)",
+            "    at drawRoads (http://localhost:8000/static/kuniezu/ui.js?v=70c8429b80:286:26)",
+            "    at paintBase (http://localhost:8000/static/kuniezu/ui.js?v=70c8429b80:389:13)",
+            "    at drawBase (http://localhost:8000/static/kuniezu/ui.js?v=70c8429b80:432:3)",
+            "    at loop (http://localhost:8000/static/kuniezu/ui.js?v=70c8429b80:782:36)"
+          ]
+        },
+        {
+          "name": "restore",
+          "ms": 104.8999999910593,
+          "canvas": [
+            "",
+            1720,
+            1270
+          ],
+          "stack": [
+            "    at CanvasRenderingContext2D.<computed> [as restore] (<anonymous>:1:539)",
+            "    at Object.offLand (http://localhost:8000/static/kuniezu/vector-ui.js?v=b37f662087:45:68)",
+            "    at offLand (http://localhost:8000/static/kuniezu/ui.js?v=70c8429b80:343:52)",
+            "    at drawRoads (http://localhost:8000/static/kuniezu/ui.js?v=70c8429b80:286:26)",
+            "    at paintBase (http://localhost:8000/static/kuniezu/ui.js?v=70c8429b80:389:13)",
+            "    at drawBase (http://localhost:8000/static/kuniezu/ui.js?v=70c8429b80:432:3)",
+            "    at loop (http://localhost:8000/static/kuniezu/ui.js?v=70c8429b80:782:36)"
+          ]
+        },
+        {
+          "name": "drawImage",
+          "ms": 93.90000000596046,
+          "canvas": [
+            "base",
+            1400,
+            950
+          ],
+          "source": {
+            "width": 1720,
+            "height": 1270
+          },
+          "stack": [
+            "    at CanvasRenderingContext2D.<computed> [as drawImage] (<anonymous>:1:539)",
+            "    at drawBase (http://localhost:8000/static/kuniezu/ui.js?v=70c8429b80:435:81)",
+            "    at loop (http://localhost:8000/static/kuniezu/ui.js?v=70c8429b80:782:36)",
+            "    at <anonymous>:1:191"
+          ]
+        },
+        {
+          "name": "restore",
+          "ms": 37.8999999910593,
+          "canvas": [
+            "",
+            1720,
+            1270
+          ],
+          "stack": [
+            "    at CanvasRenderingContext2D.<computed> [as restore] (<anonymous>:1:539)",
+            "    at Object.paint (http://localhost:8000/static/kuniezu/raster-map.js?v=2a7abeff81:93:62)",
+            "    at relief (http://localhost:8000/static/kuniezu/ui.js?v=70c8429b80:354:128)",
+            "    at Object.paintLand (http://localhost:8000/static/kuniezu/vector-ui.js?v=b37f662087:49:77)",
+            "    at paintBase (http://localhost:8000/static/kuniezu/ui.js?v=70c8429b80:354:28)",
+            "    at drawBase (http://localhost:8000/static/kuniezu/ui.js?v=70c8429b80:432:3)",
+            "    at loop (http://localhost:8000/static/kuniezu/ui.js?v=70c8429b80:782:36)"
+          ]
+        },
+        {
+          "name": "drawImage",
+          "ms": 24.399999991059303,
+          "canvas": [
+            "",
+            1720,
+            1270
+          ],
+          "source": {
+            "width": 1720,
+            "height": 1270
+          },
+          "stack": [
+            "    at CanvasRenderingContext2D.<computed> [as drawImage] (<anonymous>:1:539)",
+            "    at Object.offLand (http://localhost:8000/static/kuniezu/vector-ui.js?v=b37f662087:45:44)",
+            "    at offLand (http://localhost:8000/static/kuniezu/ui.js?v=70c8429b80:343:52)",
+            "    at drawRoads (http://localhost:8000/static/kuniezu/ui.js?v=70c8429b80:286:26)",
+            "    at paintBase (http://localhost:8000/static/kuniezu/ui.js?v=70c8429b80:389:13)",
+            "    at drawBase (http://localhost:8000/static/kuniezu/ui.js?v=70c8429b80:432:3)",
+            "    at loop (http://localhost:8000/static/kuniezu/ui.js?v=70c8429b80:782:36)"
+          ]
+        },
+        {
+          "name": "restore",
+          "ms": 44.19999998807907,
+          "canvas": [
+            "",
+            1720,
+            1270
+          ],
+          "stack": [
+            "    at CanvasRenderingContext2D.<computed> [as restore] (<anonymous>:1:539)",
+            "    at Object.offLand (http://localhost:8000/static/kuniezu/vector-ui.js?v=b37f662087:45:68)",
+            "    at offLand (http://localhost:8000/static/kuniezu/ui.js?v=70c8429b80:343:52)",
+            "    at drawRoads (http://localhost:8000/static/kuniezu/ui.js?v=70c8429b80:286:26)",
+            "    at paintBase (http://localhost:8000/static/kuniezu/ui.js?v=70c8429b80:389:13)",
+            "    at drawBase (http://localhost:8000/static/kuniezu/ui.js?v=70c8429b80:432:3)",
+            "    at loop (http://localhost:8000/static/kuniezu/ui.js?v=70c8429b80:782:36)"
+          ]
+        },
+        {
+          "name": "drawImage",
+          "ms": 89.5,
+          "canvas": [
+            "base",
+            1400,
+            950
+          ],
+          "source": {
+            "width": 1720,
+            "height": 1270
+          },
+          "stack": [
+            "    at CanvasRenderingContext2D.<computed> [as drawImage] (<anonymous>:1:539)",
+            "    at drawBase (http://localhost:8000/static/kuniezu/ui.js?v=70c8429b80:435:81)",
+            "    at loop (http://localhost:8000/static/kuniezu/ui.js?v=70c8429b80:782:36)",
+            "    at <anonymous>:1:191"
+          ]
+        },
+        {
+          "name": "restore",
+          "ms": 37.5,
+          "canvas": [
+            "",
+            1720,
+            1270
+          ],
+          "stack": [
+            "    at CanvasRenderingContext2D.<computed> [as restore] (<anonymous>:1:539)",
+            "    at Object.paint (http://localhost:8000/static/kuniezu/raster-map.js?v=2a7abeff81:93:62)",
+            "    at relief (http://localhost:8000/static/kuniezu/ui.js?v=70c8429b80:354:128)",
+            "    at Object.paintLand (http://localhost:8000/static/kuniezu/vector-ui.js?v=b37f662087:49:77)",
+            "    at paintBase (http://localhost:8000/static/kuniezu/ui.js?v=70c8429b80:354:28)",
+            "    at drawBase (http://localhost:8000/static/kuniezu/ui.js?v=70c8429b80:432:3)",
+            "    at loop (http://localhost:8000/static/kuniezu/ui.js?v=70c8429b80:782:36)"
+          ]
+        },
+        {
+          "name": "drawImage",
+          "ms": 25.19999998807907,
+          "canvas": [
+            "",
+            1720,
+            1270
+          ],
+          "source": {
+            "width": 1720,
+            "height": 1270
+          },
+          "stack": [
+            "    at CanvasRenderingContext2D.<computed> [as drawImage] (<anonymous>:1:539)",
+            "    at Object.offLand (http://localhost:8000/static/kuniezu/vector-ui.js?v=b37f662087:45:44)",
+            "    at offLand (http://localhost:8000/static/kuniezu/ui.js?v=70c8429b80:343:52)",
+            "    at drawRoads (http://localhost:8000/static/kuniezu/ui.js?v=70c8429b80:286:26)",
+            "    at paintBase (http://localhost:8000/static/kuniezu/ui.js?v=70c8429b80:389:13)",
+            "    at drawBase (http://localhost:8000/static/kuniezu/ui.js?v=70c8429b80:432:3)",
+            "    at loop (http://localhost:8000/static/kuniezu/ui.js?v=70c8429b80:782:36)"
+          ]
+        },
+        {
+          "name": "restore",
+          "ms": 50.5,
+          "canvas": [
+            "",
+            1720,
+            1270
+          ],
+          "stack": [
+            "    at CanvasRenderingContext2D.<computed> [as restore] (<anonymous>:1:539)",
+            "    at Object.offLand (http://localhost:8000/static/kuniezu/vector-ui.js?v=b37f662087:45:68)",
+            "    at offLand (http://localhost:8000/static/kuniezu/ui.js?v=70c8429b80:343:52)",
+            "    at drawRoads (http://localhost:8000/static/kuniezu/ui.js?v=70c8429b80:286:26)",
+            "    at paintBase (http://localhost:8000/static/kuniezu/ui.js?v=70c8429b80:389:13)",
+            "    at drawBase (http://localhost:8000/static/kuniezu/ui.js?v=70c8429b80:432:3)",
+            "    at loop (http://localhost:8000/static/kuniezu/ui.js?v=70c8429b80:782:36)"
+          ]
+        },
+        {
+          "name": "drawImage",
+          "ms": 89.6000000089407,
+          "canvas": [
+            "base",
+            1400,
+            950
+          ],
+          "source": {
+            "width": 1720,
+            "height": 1270
+          },
+          "stack": [
+            "    at CanvasRenderingContext2D.<computed> [as drawImage] (<anonymous>:1:539)",
+            "    at drawBase (http://localhost:8000/static/kuniezu/ui.js?v=70c8429b80:435:81)",
+            "    at loop (http://localhost:8000/static/kuniezu/ui.js?v=70c8429b80:782:36)",
+            "    at <anonymous>:1:191"
+          ]
+        },
+        {
+          "name": "drawImage",
+          "ms": 19.69999998807907,
+          "canvas": [
+            "top",
+            1400,
+            950
+          ],
+          "source": {
+            "width": 1400,
+            "height": 950
+          },
+          "stack": [
+            "    at CanvasRenderingContext2D.<computed> [as drawImage] (<anonymous>:1:539)",
+            "    at blit (http://localhost:8000/static/kuniezu/ui.js?v=70c8429b80:533:95)",
+            "    at drawTopLayers (http://localhost:8000/static/kuniezu/ui.js?v=70c8429b80:567:2)",
+            "    at drawTop (http://localhost:8000/static/kuniezu/ui.js?v=70c8429b80:535:73)",
+            "    at loop (http://localhost:8000/static/kuniezu/ui.js?v=70c8429b80:791:89)",
+            "    at <anonymous>:1:191"
+          ]
+        },
+        {
+          "name": "drawImage",
+          "ms": 16.599999994039536,
+          "canvas": [
+            "top",
+            1400,
+            950
+          ],
+          "source": {
+            "width": 1400,
+            "height": 950
+          },
+          "stack": [
+            "    at CanvasRenderingContext2D.<computed> [as drawImage] (<anonymous>:1:539)",
+            "    at blit (http://localhost:8000/static/kuniezu/ui.js?v=70c8429b80:533:95)",
+            "    at drawTopLayers (http://localhost:8000/static/kuniezu/ui.js?v=70c8429b80:567:2)",
+            "    at drawTop (http://localhost:8000/static/kuniezu/ui.js?v=70c8429b80:535:73)",
+            "    at loop (http://localhost:8000/static/kuniezu/ui.js?v=70c8429b80:791:89)",
+            "    at <anonymous>:1:191"
+          ]
+        },
+        {
+          "name": "drawImage",
+          "ms": 14.100000008940697,
+          "canvas": [
+            "top",
+            1400,
+            950
+          ],
+          "source": {
+            "width": 1400,
+            "height": 950
+          },
+          "stack": [
+            "    at CanvasRenderingContext2D.<computed> [as drawImage] (<anonymous>:1:539)",
+            "    at blit (http://localhost:8000/static/kuniezu/ui.js?v=70c8429b80:533:95)",
+            "    at drawTopLayers (http://localhost:8000/static/kuniezu/ui.js?v=70c8429b80:567:2)",
+            "    at drawTop (http://localhost:8000/static/kuniezu/ui.js?v=70c8429b80:535:73)",
+            "    at loop (http://localhost:8000/static/kuniezu/ui.js?v=70c8429b80:791:89)",
+            "    at <anonymous>:1:191"
+          ]
+        },
+        {
+          "name": "drawImage",
+          "ms": 91.90000000596046,
+          "canvas": [
+            "",
+            1720,
+            1270
+          ],
+          "source": {
+            "width": 1024,
+            "height": 1024
+          },
+          "stack": [
+            "    at CanvasRenderingContext2D.<computed> [as drawImage] (<anonymous>:1:539)",
+            "    at window.TKDrawTile (http://localhost:8000/static/kuniezu/raster-map.js?v=2a7abeff81:12:20)",
+            "    at draw (http://localhost:8000/static/kuniezu/raster-map.js?v=2a7abeff81:86:47)",
+            "    at Object.paint (http://localhost:8000/static/kuniezu/raster-map.js?v=2a7abeff81:93:48)",
+            "    at relief (http://localhost:8000/static/kuniezu/ui.js?v=70c8429b80:354:128)",
+            "    at Object.paintLand (http://localhost:8000/static/kuniezu/vector-ui.js?v=b37f662087:49:77)",
+            "    at paintBase (http://localhost:8000/static/kuniezu/ui.js?v=70c8429b80:354:28)"
+          ]
+        },
+        {
+          "name": "drawImage",
+          "ms": 19.099999994039536,
+          "canvas": [
+            "",
+            1720,
+            1270
+          ],
+          "source": {
+            "width": 1024,
+            "height": 1024
+          },
+          "stack": [
+            "    at CanvasRenderingContext2D.<computed> [as drawImage] (<anonymous>:1:539)",
+            "    at window.TKDrawTile (http://localhost:8000/static/kuniezu/raster-map.js?v=2a7abeff81:12:20)",
+            "    at draw (http://localhost:8000/static/kuniezu/raster-map.js?v=2a7abeff81:52:151)",
+            "    at Object.paint (http://localhost:8000/static/kuniezu/raster-map.js?v=2a7abeff81:57:74)",
+            "    at vector.paintLand.owners (http://localhost:8000/static/kuniezu/ui.js?v=70c8429b80:354:198)",
+            "    at Object.paintLand (http://localhost:8000/static/kuniezu/vector-ui.js?v=b37f662087:50:15)",
+            "    at paintBase (http://localhost:8000/static/kuniezu/ui.js?v=70c8429b80:354:28)"
+          ]
+        },
+        {
+          "name": "drawImage",
+          "ms": 21,
+          "canvas": [
+            "",
+            1720,
+            1270
+          ],
+          "source": {
+            "width": 1720,
+            "height": 1270
+          },
+          "stack": [
+            "    at CanvasRenderingContext2D.<computed> [as drawImage] (<anonymous>:1:539)",
+            "    at Object.offLand (http://localhost:8000/static/kuniezu/vector-ui.js?v=b37f662087:45:44)",
+            "    at offLand (http://localhost:8000/static/kuniezu/ui.js?v=70c8429b80:343:52)",
+            "    at drawRoads (http://localhost:8000/static/kuniezu/ui.js?v=70c8429b80:286:26)",
+            "    at paintBase (http://localhost:8000/static/kuniezu/ui.js?v=70c8429b80:389:13)",
+            "    at drawBase (http://localhost:8000/static/kuniezu/ui.js?v=70c8429b80:432:3)",
+            "    at loop (http://localhost:8000/static/kuniezu/ui.js?v=70c8429b80:782:36)"
+          ]
+        },
+        {
+          "name": "drawImage",
+          "ms": 125.20000000298023,
+          "canvas": [
+            "base",
+            1400,
+            950
+          ],
+          "source": {
+            "width": 1720,
+            "height": 1270
+          },
+          "stack": [
+            "    at CanvasRenderingContext2D.<computed> [as drawImage] (<anonymous>:1:539)",
+            "    at drawBase (http://localhost:8000/static/kuniezu/ui.js?v=70c8429b80:435:81)",
+            "    at loop (http://localhost:8000/static/kuniezu/ui.js?v=70c8429b80:782:36)",
+            "    at <anonymous>:1:191"
+          ]
+        },
+        {
+          "name": "drawImage",
+          "ms": 13.600000008940697,
+          "canvas": [
+            "top",
+            1400,
+            950
+          ],
+          "source": {
+            "width": 1400,
+            "height": 950
+          },
+          "stack": [
+            "    at CanvasRenderingContext2D.<computed> [as drawImage] (<anonymous>:1:539)",
+            "    at blit (http://localhost:8000/static/kuniezu/ui.js?v=70c8429b80:533:95)",
+            "    at drawTopLayers (http://localhost:8000/static/kuniezu/ui.js?v=70c8429b80:567:2)",
+            "    at drawTop (http://localhost:8000/static/kuniezu/ui.js?v=70c8429b80:535:73)",
+            "    at loop (http://localhost:8000/static/kuniezu/ui.js?v=70c8429b80:791:89)",
+            "    at <anonymous>:1:191"
+          ]
+        },
+        {
+          "name": "drawImage",
+          "ms": 17.899999991059303,
+          "canvas": [
+            "top",
+            1400,
+            950
+          ],
+          "source": {
+            "width": 1400,
+            "height": 950
+          },
+          "stack": [
+            "    at CanvasRenderingContext2D.<computed> [as drawImage] (<anonymous>:1:539)",
+            "    at blit (http://localhost:8000/static/kuniezu/ui.js?v=70c8429b80:533:95)",
+            "    at drawTopLayers (http://localhost:8000/static/kuniezu/ui.js?v=70c8429b80:567:2)",
+            "    at drawTop (http://localhost:8000/static/kuniezu/ui.js?v=70c8429b80:535:73)",
+            "    at loop (http://localhost:8000/static/kuniezu/ui.js?v=70c8429b80:791:89)",
+            "    at <anonymous>:1:191"
+          ]
+        },
+        {
+          "name": "drawImage",
+          "ms": 15.300000011920929,
+          "canvas": [
+            "top",
+            1400,
+            950
+          ],
+          "source": {
+            "width": 1400,
+            "height": 950
+          },
+          "stack": [
+            "    at CanvasRenderingContext2D.<computed> [as drawImage] (<anonymous>:1:539)",
+            "    at blit (http://localhost:8000/static/kuniezu/ui.js?v=70c8429b80:533:95)",
+            "    at drawTopLayers (http://localhost:8000/static/kuniezu/ui.js?v=70c8429b80:567:2)",
+            "    at drawTop (http://localhost:8000/static/kuniezu/ui.js?v=70c8429b80:535:73)",
+            "    at loop (http://localhost:8000/static/kuniezu/ui.js?v=70c8429b80:791:89)",
+            "    at <anonymous>:1:191"
+          ]
+        },
+        {
+          "name": "drawImage",
+          "ms": 14.799999997019768,
+          "canvas": [
+            "top",
+            1400,
+            950
+          ],
+          "source": {
+            "width": 1400,
+            "height": 950
+          },
+          "stack": [
+            "    at CanvasRenderingContext2D.<computed> [as drawImage] (<anonymous>:1:539)",
+            "    at blit (http://localhost:8000/static/kuniezu/ui.js?v=70c8429b80:533:95)",
+            "    at drawTopLayers (http://localhost:8000/static/kuniezu/ui.js?v=70c8429b80:567:2)",
+            "    at drawTop (http://localhost:8000/static/kuniezu/ui.js?v=70c8429b80:535:73)",
+            "    at loop (http://localhost:8000/static/kuniezu/ui.js?v=70c8429b80:791:89)",
+            "    at <anonymous>:1:191"
+          ]
+        },
+        {
+          "name": "restore",
+          "ms": 77,
+          "canvas": [
+            "",
+            1720,
+            1270
+          ],
+          "stack": [
+            "    at CanvasRenderingContext2D.<computed> [as restore] (<anonymous>:1:539)",
+            "    at Object.paint (http://localhost:8000/static/kuniezu/raster-map.js?v=2a7abeff81:60:5)",
+            "    at vector.paintLand.owners (http://localhost:8000/static/kuniezu/ui.js?v=70c8429b80:354:198)",
+            "    at Object.paintLand (http://localhost:8000/static/kuniezu/vector-ui.js?v=b37f662087:50:15)",
+            "    at paintBase (http://localhost:8000/static/kuniezu/ui.js?v=70c8429b80:354:28)",
+            "    at drawBase (http://localhost:8000/static/kuniezu/ui.js?v=70c8429b80:432:3)",
+            "    at loop (http://localhost:8000/static/kuniezu/ui.js?v=70c8429b80:782:36)"
+          ]
+        },
+        {
+          "name": "drawImage",
+          "ms": 21.399999991059303,
+          "canvas": [
+            "",
+            1720,
+            1270
+          ],
+          "source": {
+            "width": 1720,
+            "height": 1270
+          },
+          "stack": [
+            "    at CanvasRenderingContext2D.<computed> [as drawImage] (<anonymous>:1:539)",
+            "    at Object.offLand (http://localhost:8000/static/kuniezu/vector-ui.js?v=b37f662087:45:44)",
+            "    at offLand (http://localhost:8000/static/kuniezu/ui.js?v=70c8429b80:343:52)",
+            "    at drawRoads (http://localhost:8000/static/kuniezu/ui.js?v=70c8429b80:286:26)",
+            "    at paintBase (http://localhost:8000/static/kuniezu/ui.js?v=70c8429b80:389:13)",
+            "    at drawBase (http://localhost:8000/static/kuniezu/ui.js?v=70c8429b80:432:3)",
+            "    at loop (http://localhost:8000/static/kuniezu/ui.js?v=70c8429b80:782:36)"
+          ]
+        },
+        {
+          "name": "drawImage",
+          "ms": 151.29999999701977,
+          "canvas": [
+            "base",
+            1400,
+            950
+          ],
+          "source": {
+            "width": 1720,
+            "height": 1270
+          },
+          "stack": [
+            "    at CanvasRenderingContext2D.<computed> [as drawImage] (<anonymous>:1:539)",
+            "    at drawBase (http://localhost:8000/static/kuniezu/ui.js?v=70c8429b80:435:81)",
+            "    at loop (http://localhost:8000/static/kuniezu/ui.js?v=70c8429b80:782:36)",
+            "    at <anonymous>:1:191"
+          ]
+        },
+        {
+          "name": "drawImage",
+          "ms": 17.299999997019768,
+          "canvas": [
+            "top",
+            1400,
+            950
+          ],
+          "source": {
+            "width": 1400,
+            "height": 950
+          },
+          "stack": [
+            "    at CanvasRenderingContext2D.<computed> [as drawImage] (<anonymous>:1:539)",
+            "    at blit (http://localhost:8000/static/kuniezu/ui.js?v=70c8429b80:533:95)",
+            "    at drawTopLayers (http://localhost:8000/static/kuniezu/ui.js?v=70c8429b80:567:2)",
+            "    at drawTop (http://localhost:8000/static/kuniezu/ui.js?v=70c8429b80:535:73)",
+            "    at loop (http://localhost:8000/static/kuniezu/ui.js?v=70c8429b80:791:89)",
+            "    at <anonymous>:1:191"
+          ]
+        },
+        {
+          "name": "drawImage",
+          "ms": 6.699999988079071,
+          "canvas": [
+            "top",
+            1400,
+            950
+          ],
+          "source": {
+            "width": 1400,
+            "height": 950
+          },
+          "stack": [
+            "    at CanvasRenderingContext2D.<computed> [as drawImage] (<anonymous>:1:539)",
+            "    at blit (http://localhost:8000/static/kuniezu/ui.js?v=70c8429b80:533:95)",
+            "    at drawTopLayers (http://localhost:8000/static/kuniezu/ui.js?v=70c8429b80:567:2)",
+            "    at drawTop (http://localhost:8000/static/kuniezu/ui.js?v=70c8429b80:535:73)",
+            "    at loop (http://localhost:8000/static/kuniezu/ui.js?v=70c8429b80:791:89)",
+            "    at <anonymous>:1:191"
+          ]
+        },
+        {
+          "name": "drawImage",
+          "ms": 6.9000000059604645,
+          "canvas": [
+            "top",
+            1400,
+            950
+          ],
+          "source": {
+            "width": 1400,
+            "height": 950
+          },
+          "stack": [
+            "    at CanvasRenderingContext2D.<computed> [as drawImage] (<anonymous>:1:539)",
+            "    at blit (http://localhost:8000/static/kuniezu/ui.js?v=70c8429b80:533:95)",
+            "    at drawTopLayers (http://localhost:8000/static/kuniezu/ui.js?v=70c8429b80:567:2)",
+            "    at drawTop (http://localhost:8000/static/kuniezu/ui.js?v=70c8429b80:535:73)",
+            "    at loop (http://localhost:8000/static/kuniezu/ui.js?v=70c8429b80:791:89)",
+            "    at <anonymous>:1:191"
+          ]
+        },
+        {
+          "name": "drawImage",
+          "ms": 7,
+          "canvas": [
+            "top",
+            1400,
+            950
+          ],
+          "source": {
+            "width": 1400,
+            "height": 950
+          },
+          "stack": [
+            "    at CanvasRenderingContext2D.<computed> [as drawImage] (<anonymous>:1:539)",
+            "    at blit (http://localhost:8000/static/kuniezu/ui.js?v=70c8429b80:533:95)",
+            "    at drawTopLayers (http://localhost:8000/static/kuniezu/ui.js?v=70c8429b80:567:2)",
+            "    at drawTop (http://localhost:8000/static/kuniezu/ui.js?v=70c8429b80:535:73)",
+            "    at loop (http://localhost:8000/static/kuniezu/ui.js?v=70c8429b80:791:89)",
+            "    at <anonymous>:1:191"
+          ]
+        },
+        {
+          "name": "drawImage",
+          "ms": 6.299999997019768,
+          "canvas": [
+            "top",
+            1400,
+            950
+          ],
+          "source": {
+            "width": 1400,
+            "height": 950
+          },
+          "stack": [
+            "    at CanvasRenderingContext2D.<computed> [as drawImage] (<anonymous>:1:539)",
+            "    at blit (http://localhost:8000/static/kuniezu/ui.js?v=70c8429b80:533:95)",
+            "    at drawTopLayers (http://localhost:8000/static/kuniezu/ui.js?v=70c8429b80:567:2)",
+            "    at drawTop (http://localhost:8000/static/kuniezu/ui.js?v=70c8429b80:535:73)",
+            "    at loop (http://localhost:8000/static/kuniezu/ui.js?v=70c8429b80:791:89)",
+            "    at <anonymous>:1:191"
+          ]
+        },
+        {
+          "name": "drawImage",
+          "ms": 5.300000011920929,
+          "canvas": [
+            "top",
+            1400,
+            950
+          ],
+          "source": {
+            "width": 1400,
+            "height": 950
+          },
+          "stack": [
+            "    at CanvasRenderingContext2D.<computed> [as drawImage] (<anonymous>:1:539)",
+            "    at blit (http://localhost:8000/static/kuniezu/ui.js?v=70c8429b80:533:95)",
+            "    at drawTopLayers (http://localhost:8000/static/kuniezu/ui.js?v=70c8429b80:567:2)",
+            "    at drawTop (http://localhost:8000/static/kuniezu/ui.js?v=70c8429b80:535:73)",
+            "    at loop (http://localhost:8000/static/kuniezu/ui.js?v=70c8429b80:791:89)",
+            "    at <anonymous>:1:191"
+          ]
+        },
+        {
+          "name": "drawImage",
+          "ms": 5.799999997019768,
+          "canvas": [
+            "top",
+            1400,
+            950
+          ],
+          "source": {
+            "width": 1400,
+            "height": 950
+          },
+          "stack": [
+            "    at CanvasRenderingContext2D.<computed> [as drawImage] (<anonymous>:1:539)",
+            "    at blit (http://localhost:8000/static/kuniezu/ui.js?v=70c8429b80:533:95)",
+            "    at drawTopLayers (http://localhost:8000/static/kuniezu/ui.js?v=70c8429b80:567:2)",
+            "    at drawTop (http://localhost:8000/static/kuniezu/ui.js?v=70c8429b80:535:73)",
+            "    at loop (http://localhost:8000/static/kuniezu/ui.js?v=70c8429b80:791:89)",
+            "    at <anonymous>:1:191"
+          ]
+        },
+        {
+          "name": "drawImage",
+          "ms": 5.399999991059303,
+          "canvas": [
+            "top",
+            1400,
+            950
+          ],
+          "source": {
+            "width": 1400,
+            "height": 950
+          },
+          "stack": [
+            "    at CanvasRenderingContext2D.<computed> [as drawImage] (<anonymous>:1:539)",
+            "    at blit (http://localhost:8000/static/kuniezu/ui.js?v=70c8429b80:533:95)",
+            "    at drawTopLayers (http://localhost:8000/static/kuniezu/ui.js?v=70c8429b80:567:2)",
+            "    at drawTop (http://localhost:8000/static/kuniezu/ui.js?v=70c8429b80:535:73)",
+            "    at loop (http://localhost:8000/static/kuniezu/ui.js?v=70c8429b80:791:89)",
+            "    at <anonymous>:1:191"
+          ]
+        },
+        {
+          "name": "restore",
+          "ms": 46.8999999910593,
+          "canvas": [
+            "",
+            1720,
+            1270
+          ],
+          "stack": [
+            "    at CanvasRenderingContext2D.<computed> [as restore] (<anonymous>:1:539)",
+            "    at Object.paint (http://localhost:8000/static/kuniezu/raster-map.js?v=2a7abeff81:93:62)",
+            "    at relief (http://localhost:8000/static/kuniezu/ui.js?v=70c8429b80:354:128)",
+            "    at Object.paintLand (http://localhost:8000/static/kuniezu/vector-ui.js?v=b37f662087:49:77)",
+            "    at paintBase (http://localhost:8000/static/kuniezu/ui.js?v=70c8429b80:354:28)",
+            "    at drawBase (http://localhost:8000/static/kuniezu/ui.js?v=70c8429b80:432:3)",
+            "    at loop (http://localhost:8000/static/kuniezu/ui.js?v=70c8429b80:782:36)"
+          ]
+        },
+        {
+          "name": "drawImage",
+          "ms": 24.299999997019768,
+          "canvas": [
+            "",
+            1720,
+            1270
+          ],
+          "source": {
+            "width": 1720,
+            "height": 1270
+          },
+          "stack": [
+            "    at CanvasRenderingContext2D.<computed> [as drawImage] (<anonymous>:1:539)",
+            "    at Object.offLand (http://localhost:8000/static/kuniezu/vector-ui.js?v=b37f662087:45:44)",
+            "    at offLand (http://localhost:8000/static/kuniezu/ui.js?v=70c8429b80:343:52)",
+            "    at drawRoads (http://localhost:8000/static/kuniezu/ui.js?v=70c8429b80:286:26)",
+            "    at paintBase (http://localhost:8000/static/kuniezu/ui.js?v=70c8429b80:389:13)",
+            "    at drawBase (http://localhost:8000/static/kuniezu/ui.js?v=70c8429b80:432:3)",
+            "    at loop (http://localhost:8000/static/kuniezu/ui.js?v=70c8429b80:782:36)"
+          ]
+        },
+        {
+          "name": "restore",
+          "ms": 42,
+          "canvas": [
+            "",
+            1720,
+            1270
+          ],
+          "stack": [
+            "    at CanvasRenderingContext2D.<computed> [as restore] (<anonymous>:1:539)",
+            "    at Object.offLand (http://localhost:8000/static/kuniezu/vector-ui.js?v=b37f662087:45:68)",
+            "    at offLand (http://localhost:8000/static/kuniezu/ui.js?v=70c8429b80:343:52)",
+            "    at drawRoads (http://localhost:8000/static/kuniezu/ui.js?v=70c8429b80:286:26)",
+            "    at paintBase (http://localhost:8000/static/kuniezu/ui.js?v=70c8429b80:389:13)",
+            "    at drawBase (http://localhost:8000/static/kuniezu/ui.js?v=70c8429b80:432:3)",
+            "    at loop (http://localhost:8000/static/kuniezu/ui.js?v=70c8429b80:782:36)"
+          ]
+        },
+        {
+          "name": "drawImage",
+          "ms": 87.1000000089407,
+          "canvas": [
+            "base",
+            1400,
+            950
+          ],
+          "source": {
+            "width": 1720,
+            "height": 1270
+          },
+          "stack": [
+            "    at CanvasRenderingContext2D.<computed> [as drawImage] (<anonymous>:1:539)",
+            "    at drawBase (http://localhost:8000/static/kuniezu/ui.js?v=70c8429b80:435:81)",
+            "    at loop (http://localhost:8000/static/kuniezu/ui.js?v=70c8429b80:782:36)",
+            "    at <anonymous>:1:191"
+          ]
+        }
+      ],
+      "cpu": [
+        [
+          "(idle) :0",
+          1593.6329999999978
+        ],
+        [
+          "drawImage :0",
+          1078.860999999997
+        ],
+        [
+          "(program) :0",
+          686.8260000000006
+        ],
+        [
+          "restore :0",
+          466.69299999999976
+        ],
+        [
+          "(garbage collector) :0",
+          92.09199999999998
+        ],
+        [
+          "canvasFor raster-map.js?v=2a7abeff81:46",
+          58.84300000000001
+        ],
+        [
+          "clip :0",
+          49.002999999999986
+        ],
+        [
+          "(anonymous) raster-map.js?v=2a7abeff81:36",
+          31.556000000000008
+        ],
+        [
+          "fillText :0",
+          18.936
+        ],
+        [
+          "setTransform :0",
+          16.93
+        ],
+        [
+          "getImageData :0",
+          13.216999999999999
+        ],
+        [
+          "strokeText :0",
+          11.551
+        ],
+        [
+          "drawStill ui.js?v=70c8429b80:597",
+          11.076
+        ],
+        [
+          "putImageData :0",
+          7.547
+        ],
+        [
+          "drawTopLayers ui.js?v=70c8429b80:536",
+          7.508999999999999
+        ],
+        [
+          "CanvasRenderingContext2D.<computed> :1",
+          7.3
+        ],
+        [
+          "roadLabelsTop ui.js?v=70c8429b80:264",
+          6.047999999999999
+        ],
+        [
+          "riverPath ui.js?v=70c8429b80:91",
+          4.519
+        ]
+      ]
+    }
+  ],
+  "errors": []
+}

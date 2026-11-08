@@ -1,0 +1,102 @@
+{
+  "runtimeSha256": "e67e484acad27723f97adcaeb7509e42ce4c9940aacb01ed8ad14a6712a1a53b",
+  "cases": [
+    {
+      "region": "japan",
+      "date": [
+        1584,
+        1,
+        1
+      ],
+      "camera": {
+        "x": 1086.2900063285504,
+        "y": 1389.7167001874686,
+        "scale": 0.17990387867845234
+      },
+      "visible": 7364,
+      "elapsed": 2.2999999970197678,
+      "buildMilliseconds": 155.69999998807907,
+      "counts": {
+        "roads": 47,
+        "posts": 1569,
+        "coast-polygons": 2203,
+        "lake-polygons": 584,
+        "shores": 2969
+      },
+      "paths": {
+        "coast-polygons": 2203,
+        "lake-polygons": 584,
+        "shores": 2961
+      }
+    },
+    {
+      "region": "kanto",
+      "date": [
+        1584,
+        1,
+        1
+      ],
+      "camera": {
+        "x": 1731.2963679623879,
+        "y": 1190.0000000000005,
+        "scale": 1.9350000000000003
+      },
+      "visible": 765,
+      "elapsed": 0.5999999940395355,
+      "buildMilliseconds": 155.69999998807907,
+      "counts": {
+        "roads": 47,
+        "posts": 1569,
+        "coast-polygons": 2203,
+        "lake-polygons": 584,
+        "shores": 2969
+      },
+      "paths": {
+        "coast-polygons": 2203,
+        "lake-polygons": 584,
+        "shores": 2961
+      }
+    },
+    {
+      "region": "kojima",
+      "date": [
+        1584,
+        1,
+        1
+      ],
+      "camera": {
+        "x": 764.5210596843267,
+        "y": 1432.9999999999998,
+        "scale": 11.727272727272808
+      },
+      "visible": 286,
+      "elapsed": 1.0999999940395355,
+      "buildMilliseconds": 155.69999998807907,
+      "counts": {
+        "roads": 47,
+        "posts": 1569,
+        "coast-polygons": 2203,
+        "lake-polygons": 584,
+        "shores": 2969
+      },
+      "paths": {
+        "coast-polygons": 2203,
+        "lake-polygons": 584,
+        "shores": 2961
+      }
+    }
+  ],
+  "paritySamples": 368,
+  "parityMatches": true,
+  "ukitaEraChecks": {
+    "year": 1584,
+    "cells": 366,
+    "allMatch": true
+  },
+  "overlapUnion": true,
+  "fiveLakeHoles": true,
+  "panZoom": true,
+  "narrow": true,
+  "idleRepaint": false,
+  "errors": []
+}

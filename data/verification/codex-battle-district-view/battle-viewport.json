@@ -1,0 +1,281 @@
+{
+  "districtChecks": [
+    {
+      "title": "関ヶ原の戦い",
+      "viewCount": 5,
+      "transitions": [
+        {
+          "name": "全体",
+          "individualSelections": 45,
+          "labelCount": 1
+        },
+        {
+          "name": "北天満山付近",
+          "individualSelections": 45,
+          "labelCount": 6
+        },
+        {
+          "name": "桃配山付近",
+          "individualSelections": 45,
+          "labelCount": 3
+        },
+        {
+          "name": "南宮山付近",
+          "individualSelections": 45,
+          "labelCount": 6
+        },
+        {
+          "name": "徳川家康",
+          "individualSelections": 45,
+          "labelCount": 1
+        }
+      ],
+      "allUnitIds": [
+        "mitsunari",
+        "sakon",
+        "gamo",
+        "shimazu",
+        "toyo",
+        "konishi",
+        "ukita",
+        "roster-明石掃部",
+        "otani",
+        "hiratsuka",
+        "toda",
+        "roster-大谷吉勝",
+        "roster-木下頼継",
+        "kobayakawa",
+        "wakisaka",
+        "kutsuki",
+        "akaza",
+        "ogawa",
+        "kuroda",
+        "hosokawa",
+        "tanaka",
+        "roster-竹中重門",
+        "yuraku",
+        "kato",
+        "tsutsui",
+        "kanamori",
+        "ikoma",
+        "fukushima",
+        "ii",
+        "tadayoshi",
+        "todo",
+        "kyogoku",
+        "roster-古田重勝",
+        "roster-寺沢広高",
+        "ieyasu",
+        "honda",
+        "asano",
+        "yamauchi",
+        "arima",
+        "ikeda",
+        "mori",
+        "kikkawa",
+        "ankokuji",
+        "chosokabe",
+        "roster-長束正家"
+      ]
+    },
+    {
+      "title": "高天神城の戦い",
+      "viewCount": 0,
+      "transitions": [],
+      "allUnitIds": [
+        "record-side-b",
+        "add-石川康通",
+        "add-本多勢",
+        "add-酒井重忠",
+        "a-0",
+        "add-大須賀康高"
+      ]
+    },
+    {
+      "title": "長篠の戦い",
+      "viewCount": 5,
+      "transitions": [
+        {
+          "name": "全体",
+          "individualSelections": 14,
+          "labelCount": 1
+        },
+        {
+          "name": "設楽原古戦場付近",
+          "individualSelections": 14,
+          "labelCount": 6
+        },
+        {
+          "name": "弾正山付近",
+          "individualSelections": 14,
+          "labelCount": 8
+        },
+        {
+          "name": "鳶ヶ巣山付近",
+          "individualSelections": 14,
+          "labelCount": 2
+        },
+        {
+          "name": "長篠城付近",
+          "individualSelections": 14,
+          "labelCount": 1
+        }
+      ],
+      "allUnitIds": [
+        "nobunaga",
+        "teppo1",
+        "teppo2",
+        "ieyasu",
+        "okubo",
+        "katsuyori",
+        "yamagata",
+        "naito",
+        "baba",
+        "sanada",
+        "tsuchiya",
+        "sakai",
+        "kawakubo",
+        "okudaira"
+      ]
+    },
+    {
+      "title": "大坂冬の陣",
+      "viewCount": 5,
+      "transitions": [
+        {
+          "name": "全体",
+          "individualSelections": 17,
+          "labelCount": 0
+        },
+        {
+          "name": "岡山付近",
+          "individualSelections": 17,
+          "labelCount": 8
+        },
+        {
+          "name": "上杉景勝",
+          "individualSelections": 17,
+          "labelCount": 2
+        },
+        {
+          "name": "茶臼山付近",
+          "individualSelections": 17,
+          "labelCount": 0
+        },
+        {
+          "name": "蜂須賀至鎮",
+          "individualSelections": 17,
+          "labelCount": 1
+        }
+      ],
+      "allUnitIds": [
+        "hideyori",
+        "ono",
+        "kimura",
+        "chosokabe",
+        "sanada",
+        "goto",
+        "ieyasu",
+        "hidetada",
+        "maeda",
+        "ii",
+        "matsudaira",
+        "uesugi",
+        "satake",
+        "hachisuka",
+        "date",
+        "todo",
+        "asano"
+      ]
+    }
+  ],
+  "passed": true,
+  "browserRun": false,
+  "newGameRun": false,
+  "dailySimulationRun": false,
+  "wholeMapDecoded": false,
+  "scope": "actual atlas draw commands for two geographic battles, one schematic, edge and one-side fixtures",
+  "rows": [
+    {
+      "title": "関ヶ原の戦い",
+      "frames": 60,
+      "bodyChecks": 5700,
+      "maxGeographicDifferenceKm": 0,
+      "offscreenStatesPreserved": 800,
+      "heldUnits": [
+        "mori",
+        "kikkawa",
+        "ankokuji",
+        "chosokabe",
+        "roster-長束正家"
+      ]
+    },
+    {
+      "title": "高天神城の戦い",
+      "frames": 60,
+      "bodyChecks": 432,
+      "maxGeographicDifferenceKm": 0,
+      "offscreenStatesPreserved": 96,
+      "heldUnits": []
+    }
+  ],
+  "schematicHasNoGeographicPoint": true,
+  "estimatedPlacementDistinctFromRecordedPoint": true,
+  "edgeDecorationsInBounds": true,
+  "coincidentCountersNotDisplaced": true,
+  "estimatedBodiesChecked": true,
+  "allVisibleBodiesChecked": true,
+  "estimatedClickSelection": true,
+  "coincidentClickSelection": true,
+  "mixedClickSelection": true,
+  "offscreenBodiesNotClickable": true,
+  "estimatedPlacementStrokeStyles": [
+    {
+      "state": "normal",
+      "dash": [
+        3,
+        2
+      ],
+      "fill": "#216d9f",
+      "outline": "#2a1d10"
+    },
+    {
+      "state": "selected",
+      "dash": [
+        3,
+        2
+      ],
+      "fill": "#216d9f",
+      "outline": "#e5ad3f"
+    },
+    {
+      "state": "dead",
+      "dash": [
+        3,
+        2
+      ],
+      "fill": "#8a8174",
+      "outline": "#2a1d10"
+    },
+    {
+      "state": "turned",
+      "dash": [
+        3,
+        2
+      ],
+      "fill": "#b47712",
+      "outline": "#2a1d10"
+    }
+  ],
+  "recordedMotionSolid": true,
+  "lineDashIsolation": true,
+  "selectionPanelFollowsTurn": true,
+  "selectionPanelReverseSeek": true,
+  "selectionPanelCloseStable": true,
+  "selectionPanelNoFrameRebuild": true,
+  "limits": [
+    "Canvas text metrics use deterministic character widths; actual font rendering needs a separate browser check.",
+    "This validates projections and draw command anchors, not historical truth of estimated motion.",
+    "Source movement geometry and historical source data were not modified."
+  ]
+}

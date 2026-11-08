@@ -1,0 +1,76 @@
+{
+  "rows": [
+    {
+      "title": "関ヶ原の戦い",
+      "width": 940,
+      "small": false,
+      "bodies": 135,
+      "faces": 45,
+      "peers": [
+        "yuraku",
+        "kato",
+        "tsutsui",
+        "kanamori",
+        "ikoma"
+      ],
+      "selected": "ikoma"
+    },
+    {
+      "title": "関ヶ原の戦い",
+      "width": 335,
+      "small": true,
+      "bodies": 135,
+      "faces": 45,
+      "peers": [
+        "yuraku",
+        "kato",
+        "tsutsui",
+        "kanamori",
+        "ikoma"
+      ],
+      "selected": "ikoma"
+    },
+    {
+      "title": "伏見城の戦い",
+      "width": 940,
+      "small": false,
+      "bodies": 21,
+      "faces": 7,
+      "peers": [
+        "torii",
+        "naito",
+        "motonaga",
+        "ietada",
+        "chikamasa",
+        "udono",
+        "sano"
+      ],
+      "selected": "sano"
+    },
+    {
+      "title": "伏見城の戦い",
+      "width": 335,
+      "small": true,
+      "bodies": 21,
+      "faces": 7,
+      "peers": [
+        "torii",
+        "naito",
+        "motonaga",
+        "ietada",
+        "chikamasa",
+        "udono",
+        "sano"
+      ],
+      "selected": "sano"
+    }
+  ],
+  "reduced": 288,
+  "peerChecks": 4,
+  "candidateOverrides": [
+    "static/kuniezu/battle-atlas.js",
+    "static/kuniezu/index.css",
+    "index.html"
+  ],
+  "errors": []
+}

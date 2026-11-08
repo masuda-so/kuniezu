@@ -1,0 +1,34 @@
+{
+  "url": "http://localhost:8000/index.html",
+  "rows": [
+    {
+      "id": "s1560",
+      "width": 1024,
+      "mode": "game",
+      "player": "date",
+      "speed": 0,
+      "modal": null,
+      "pickHidden": true,
+      "chronVisible": true,
+      "chronTitle": "年表",
+      "newGames": 3,
+      "pickRect": {
+        "x": 0,
+        "y": 0,
+        "width": 0
+      },
+      "chronRect": {
+        "x": 16,
+        "y": 44,
+        "width": 288
+      },
+      "saved": "date",
+      "guard": {
+        "same": true,
+        "calls": 0
+      }
+    }
+  ],
+  "candidateOverrides": [],
+  "errors": []
+}

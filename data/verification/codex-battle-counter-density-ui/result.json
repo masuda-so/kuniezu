@@ -1,0 +1,148 @@
+{
+  "rows": [
+    {
+      "title": "関ヶ原の戦い",
+      "width": 940,
+      "small": false,
+      "bodies": 135,
+      "faces": 45,
+      "peers": [
+        "yuraku",
+        "kato",
+        "tsutsui",
+        "kanamori",
+        "ikoma"
+      ],
+      "selected": "ikoma"
+    },
+    {
+      "title": "関ヶ原の戦い",
+      "width": 335,
+      "small": true,
+      "bodies": 135,
+      "faces": 45,
+      "peers": [
+        "yuraku",
+        "kato",
+        "tsutsui",
+        "kanamori",
+        "ikoma"
+      ],
+      "selected": "ikoma"
+    },
+    {
+      "title": "長篠の戦い",
+      "width": 940,
+      "small": false,
+      "bodies": 42,
+      "faces": 14,
+      "peers": [
+        "baba",
+        "sanada"
+      ],
+      "selected": "sanada"
+    },
+    {
+      "title": "長篠の戦い",
+      "width": 335,
+      "small": true,
+      "bodies": 42,
+      "faces": 14,
+      "peers": [
+        "baba",
+        "sanada"
+      ],
+      "selected": "sanada"
+    },
+    {
+      "title": "大坂冬の陣",
+      "width": 940,
+      "small": false,
+      "bodies": 39,
+      "faces": 13,
+      "peers": [
+        "hideyori",
+        "ono",
+        "chosokabe"
+      ],
+      "selected": "chosokabe"
+    },
+    {
+      "title": "大坂冬の陣",
+      "width": 335,
+      "small": true,
+      "bodies": 39,
+      "faces": 13,
+      "peers": [
+        "hideyori",
+        "ono",
+        "chosokabe"
+      ],
+      "selected": "chosokabe"
+    },
+    {
+      "title": "大坂夏の陣",
+      "width": 940,
+      "small": false,
+      "bodies": 30,
+      "faces": 10,
+      "peers": [
+        "hideyori"
+      ],
+      "selected": "hideyori"
+    },
+    {
+      "title": "大坂夏の陣",
+      "width": 335,
+      "small": true,
+      "bodies": 30,
+      "faces": 10,
+      "peers": [
+        "hideyori"
+      ],
+      "selected": "hideyori"
+    },
+    {
+      "title": "伏見城の戦い",
+      "width": 940,
+      "small": false,
+      "bodies": 21,
+      "faces": 7,
+      "peers": [
+        "torii",
+        "naito",
+        "motonaga",
+        "ietada",
+        "chikamasa",
+        "udono",
+        "sano"
+      ],
+      "selected": "sano"
+    },
+    {
+      "title": "伏見城の戦い",
+      "width": 335,
+      "small": true,
+      "bodies": 21,
+      "faces": 7,
+      "peers": [
+        "torii",
+        "naito",
+        "motonaga",
+        "ietada",
+        "chikamasa",
+        "udono",
+        "sano"
+      ],
+      "selected": "sano"
+    }
+  ],
+  "reduced": 447,
+  "peerChecks": 8,
+  "candidateOverrides": [
+    "static/kuniezu/battle-atlas.js",
+    "static/kuniezu/index.css",
+    "index.html"
+  ],
+  "errors": []
+}

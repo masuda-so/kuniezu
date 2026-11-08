@@ -1,0 +1,75 @@
+{
+  "cases": [
+    {
+      "region": "japan",
+      "camera": {
+        "x": 1262.0665112249199,
+        "y": 850,
+        "scale": 0.22764705882352942
+      },
+      "visible": 4212,
+      "elapsed": 5.5999999940395355,
+      "buildMilliseconds": 105.59999999403954,
+      "counts": {
+        "roads": 47,
+        "posts": 1569,
+        "coast-polygons": 2153,
+        "lake-polygons": 578
+      },
+      "paths": {
+        "coast-polygons": 2033,
+        "lake-polygons": 573
+      }
+    },
+    {
+      "region": "kanto",
+      "camera": {
+        "x": 1731.2963679623879,
+        "y": 1190.0000000000005,
+        "scale": 1.9350000000000003
+      },
+      "visible": 558,
+      "elapsed": 2.1000000089406967,
+      "buildMilliseconds": 105.59999999403954,
+      "counts": {
+        "roads": 47,
+        "posts": 1569,
+        "coast-polygons": 2153,
+        "lake-polygons": 578
+      },
+      "paths": {
+        "coast-polygons": 2033,
+        "lake-polygons": 573
+      }
+    },
+    {
+      "region": "kojima",
+      "camera": {
+        "x": 764.5210596843267,
+        "y": 1432.9999999999998,
+        "scale": 11.727272727272808
+      },
+      "visible": 79,
+      "elapsed": 1.9000000059604645,
+      "buildMilliseconds": 105.59999999403954,
+      "counts": {
+        "roads": 47,
+        "posts": 1569,
+        "coast-polygons": 2153,
+        "lake-polygons": 578
+      },
+      "paths": {
+        "coast-polygons": 2033,
+        "lake-polygons": 573
+      }
+    }
+  ],
+  "paritySamples": 368,
+  "parityMatches": true,
+  "overlapUnion": true,
+  "fiveLakeHoles": true,
+  "panZoom": true,
+  "narrow": true,
+  "idleRepaint": false,
+  "errors": []
+}

@@ -1,0 +1,388 @@
+{
+  "environment": {
+    "viewport": [
+      1400,
+      950
+    ],
+    "dpr": 1,
+    "headless": true,
+    "gpuDisabled": true,
+    "region": [
+      140.35,
+      36
+    ],
+    "mapStyle": "relief",
+    "scope": "short single-machine diagnostic; JS callback elapsed time is not FPS or temperature"
+  },
+  "rows": [
+    {
+      "name": "idle",
+      "wallMs": 811,
+      "taskMs": 5.6080000000005015,
+      "scriptMs": 0.5340000000000344,
+      "heapMB": 181.09014892578125,
+      "frames": 20,
+      "callbackP50": 0,
+      "callbackP95": 0.10000000894069672,
+      "callbackMax": 0.10000000894069672,
+      "before": {
+        "draw": {
+          "base": 17,
+          "top": 19,
+          "still": 19
+        },
+        "cache": {
+          "builds": 17,
+          "hits": 0
+        }
+      },
+      "after": {
+        "draw": {
+          "base": 17,
+          "top": 19,
+          "still": 19
+        },
+        "cache": {
+          "builds": 17,
+          "hits": 0
+        }
+      },
+      "cpu": [
+        [
+          "(idle) :0",
+          799.8329999999993
+        ],
+        [
+          "(program) :0",
+          338.742
+        ],
+        [
+          "(anonymous) :1",
+          1.254
+        ]
+      ]
+    },
+    {
+      "name": "drag",
+      "wallMs": 2155,
+      "taskMs": 393.8199999999998,
+      "scriptMs": 295.3330000000003,
+      "heapMB": 195.329833984375,
+      "frames": 118,
+      "callbackP50": 0,
+      "callbackP95": 3.2999999970197678,
+      "callbackMax": 214.90000000596046,
+      "before": {
+        "draw": {
+          "base": 17,
+          "top": 19,
+          "still": 19
+        },
+        "cache": {
+          "builds": 17,
+          "hits": 0
+        }
+      },
+      "after": {
+        "draw": {
+          "base": 41,
+          "top": 44,
+          "still": 44
+        },
+        "cache": {
+          "builds": 18,
+          "hits": 23
+        }
+      },
+      "cpu": [
+        [
+          "(idle) :0",
+          1750.1600000000005
+        ],
+        [
+          "(program) :0",
+          263.7639999999999
+        ],
+        [
+          "drawImage :0",
+          138.84
+        ],
+        [
+          "restore :0",
+          88.95500000000001
+        ],
+        [
+          "tip ui.js?v=18c7c2485c:740",
+          7.928
+        ],
+        [
+          "clip :0",
+          7.533999999999999
+        ],
+        [
+          "drawStill ui.js?v=18c7c2485c:597",
+          6.031
+        ],
+        [
+          "roadLabelsTop ui.js?v=18c7c2485c:264",
+          5.028
+        ],
+        [
+          "clanCastles engine.js?v=78407f2685:268",
+          4.956
+        ],
+        [
+          "(anonymous) :1",
+          3.768
+        ],
+        [
+          "at ui.js?v=18c7c2485c:266",
+          2.9819999999999998
+        ],
+        [
+          "strokeText :0",
+          2.7969999999999997
+        ],
+        [
+          "measureText :0",
+          2.518
+        ],
+        [
+          "fmt ui.js?v=18c7c2485c:6",
+          2.516
+        ],
+        [
+          "stroke :0",
+          2.516
+        ],
+        [
+          "setTransform :0",
+          2.505
+        ],
+        [
+          "drawYosho ui.js?v=18c7c2485c:479",
+          2.401
+        ],
+        [
+          "deep ui.js?v=18c7c2485c:44",
+          1.595
+        ]
+      ]
+    },
+    {
+      "name": "wheel",
+      "wallMs": 2620,
+      "taskMs": 1294.7550000000003,
+      "scriptMs": 1030.5809999999997,
+      "heapMB": 190.03366470336914,
+      "frames": 113,
+      "callbackP50": 0,
+      "callbackP95": 19.30000001192093,
+      "callbackMax": 301.20000000298023,
+      "before": {
+        "draw": {
+          "base": 43,
+          "top": 46,
+          "still": 46
+        },
+        "cache": {
+          "builds": 20,
+          "hits": 23
+        }
+      },
+      "after": {
+        "draw": {
+          "base": 63,
+          "top": 66,
+          "still": 66
+        },
+        "cache": {
+          "builds": 23,
+          "hits": 23
+        }
+      },
+      "cpu": [
+        [
+          "(idle) :0",
+          1317.9219999999993
+        ],
+        [
+          "drawImage :0",
+          708.5510000000003
+        ],
+        [
+          "(program) :0",
+          475.81699999999984
+        ],
+        [
+          "restore :0",
+          158.8969999999999
+        ],
+        [
+          "(garbage collector) :0",
+          34.029
+        ],
+        [
+          "clip :0",
+          19.933
+        ],
+        [
+          "fillText :0",
+          19.897
+        ],
+        [
+          "canvasFor raster-map.js?v=2a7abeff81:46",
+          18.932
+        ],
+        [
+          "drawStill ui.js?v=18c7c2485c:597",
+          10.931
+        ],
+        [
+          "strokeText :0",
+          10.161
+        ],
+        [
+          "setTransform :0",
+          7.433
+        ],
+        [
+          "at ui.js?v=18c7c2485c:266",
+          6.273999999999999
+        ],
+        [
+          "measureText :0",
+          6.273
+        ],
+        [
+          "fmt ui.js?v=18c7c2485c:6",
+          5.0280000000000005
+        ],
+        [
+          "loop ui.js?v=18c7c2485c:772",
+          4.186
+        ],
+        [
+          "(anonymous) raster-map.js?v=2a7abeff81:36",
+          4.03
+        ],
+        [
+          "drawTopLayers ui.js?v=18c7c2485c:536",
+          3.771
+        ],
+        [
+          "getImageData :0",
+          3.6579999999999995
+        ]
+      ]
+    },
+    {
+      "name": "play1x",
+      "wallMs": 2173,
+      "taskMs": 187.96000000000035,
+      "scriptMs": 44.25000000000168,
+      "heapMB": 199.42241287231445,
+      "frames": 132,
+      "callbackP50": 0.10000000894069672,
+      "callbackP95": 0.8999999910593033,
+      "callbackMax": 6.600000008940697,
+      "before": {
+        "draw": {
+          "base": 63,
+          "top": 66,
+          "still": 66
+        },
+        "cache": {
+          "builds": 23,
+          "hits": 23
+        }
+      },
+      "after": {
+        "draw": {
+          "base": 63,
+          "top": 127,
+          "still": 68
+        },
+        "cache": {
+          "builds": 23,
+          "hits": 23
+        }
+      },
+      "cpu": [
+        [
+          "(idle) :0",
+          1985.9829999999968
+        ],
+        [
+          "(program) :0",
+          325.31099999999986
+        ],
+        [
+          "drawTopLayers ui.js?v=18c7c2485c:536",
+          10.015
+        ],
+        [
+          "(anonymous) :1",
+          5.013
+        ],
+        [
+          "drawImage :0",
+          3.774
+        ],
+        [
+          "evT engine.js?v=78407f2685:764",
+          2.8209999999999997
+        ],
+        [
+          "G.historyPoint campaign-evidence.js?v=98bb668a4f:121",
+          1.739
+        ],
+        [
+          "renderArmyEdges ui.js?v=18c7c2485c:648",
+          1.268
+        ],
+        [
+          "priority ui.js?v=18c7c2485c:605",
+          1.264
+        ],
+        [
+          "fmt ui.js?v=18c7c2485c:6",
+          1.262
+        ],
+        [
+          "clanCastles engine.js?v=78407f2685:268",
+          1.26
+        ],
+        [
+          "G.convoyLayout convoys.js?v=3c305732bb:4",
+          1.257
+        ],
+        [
+          "G.marchPhase march-model.js?v=bf7ad7afa6:26",
+          1.254
+        ],
+        [
+          "roadLabelsTop ui.js?v=18c7c2485c:264",
+          1.251
+        ],
+        [
+          "drawYosho ui.js?v=18c7c2485c:479",
+          1.25
+        ],
+        [
+          "w2s ui.js?v=18c7c2485c:199",
+          1.247
+        ],
+        [
+          "narrowTL ui.js?v=18c7c2485c:189",
+          1.243
+        ],
+        [
+          "clearRect :0",
+          1.241
+        ]
+      ]
+    }
+  ],
+  "errors": []
+}

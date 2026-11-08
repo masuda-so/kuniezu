@@ -1,0 +1,190 @@
+{
+  "scope": "Actual Django UI/layout/strip responses in dedicated Chrome",
+  "mode": "primary-fail",
+  "names": [
+    "顕如",
+    "丹羽長重",
+    "島清興",
+    "斎藤義龍",
+    "足利義輝",
+    "島左近"
+  ],
+  "peakImages": 2,
+  "requests": {
+    "portraits/顕如.jpg": 2,
+    "faces-fallback.webp": 1,
+    "portraits/丹羽長重.jpg": 2,
+    "portraits/島清興.jpg": 2,
+    "portraits/斎藤義龍.jpg": 2,
+    "portraits/quality-足利義輝.jpg": 2
+  },
+  "state": {
+    "images": 18,
+    "letters": 0,
+    "calls": [
+      {
+        "src": "http://127.0.0.1:8000/static/kuniezu/faces-fallback.webp?v=48ecefa928",
+        "crop": [
+          0,
+          0,
+          128,
+          128
+        ]
+      },
+      {
+        "src": "http://127.0.0.1:8000/static/kuniezu/faces-fallback.webp?v=48ecefa928",
+        "crop": [
+          0,
+          0,
+          128,
+          128
+        ]
+      },
+      {
+        "src": "http://127.0.0.1:8000/static/kuniezu/faces-fallback.webp?v=48ecefa928",
+        "crop": [
+          0,
+          0,
+          128,
+          128
+        ]
+      },
+      {
+        "src": "http://127.0.0.1:8000/static/kuniezu/faces-fallback.webp?v=48ecefa928",
+        "crop": [
+          0,
+          128,
+          128,
+          128
+        ]
+      },
+      {
+        "src": "http://127.0.0.1:8000/static/kuniezu/faces-fallback.webp?v=48ecefa928",
+        "crop": [
+          0,
+          128,
+          128,
+          128
+        ]
+      },
+      {
+        "src": "http://127.0.0.1:8000/static/kuniezu/faces-fallback.webp?v=48ecefa928",
+        "crop": [
+          0,
+          128,
+          128,
+          128
+        ]
+      },
+      {
+        "src": "http://127.0.0.1:8000/static/kuniezu/faces-fallback.webp?v=48ecefa928",
+        "crop": [
+          0,
+          256,
+          128,
+          128
+        ]
+      },
+      {
+        "src": "http://127.0.0.1:8000/static/kuniezu/faces-fallback.webp?v=48ecefa928",
+        "crop": [
+          0,
+          256,
+          128,
+          128
+        ]
+      },
+      {
+        "src": "http://127.0.0.1:8000/static/kuniezu/faces-fallback.webp?v=48ecefa928",
+        "crop": [
+          0,
+          256,
+          128,
+          128
+        ]
+      },
+      {
+        "src": "http://127.0.0.1:8000/static/kuniezu/faces-fallback.webp?v=48ecefa928",
+        "crop": [
+          0,
+          384,
+          128,
+          128
+        ]
+      },
+      {
+        "src": "http://127.0.0.1:8000/static/kuniezu/faces-fallback.webp?v=48ecefa928",
+        "crop": [
+          0,
+          384,
+          128,
+          128
+        ]
+      },
+      {
+        "src": "http://127.0.0.1:8000/static/kuniezu/faces-fallback.webp?v=48ecefa928",
+        "crop": [
+          0,
+          384,
+          128,
+          128
+        ]
+      },
+      {
+        "src": "http://127.0.0.1:8000/static/kuniezu/faces-fallback.webp?v=48ecefa928",
+        "crop": [
+          0,
+          512,
+          128,
+          128
+        ]
+      },
+      {
+        "src": "http://127.0.0.1:8000/static/kuniezu/faces-fallback.webp?v=48ecefa928",
+        "crop": [
+          0,
+          512,
+          128,
+          128
+        ]
+      },
+      {
+        "src": "http://127.0.0.1:8000/static/kuniezu/faces-fallback.webp?v=48ecefa928",
+        "crop": [
+          0,
+          512,
+          128,
+          128
+        ]
+      },
+      {
+        "src": "http://127.0.0.1:8000/static/kuniezu/faces-fallback.webp?v=48ecefa928",
+        "crop": [
+          0,
+          256,
+          128,
+          128
+        ]
+      },
+      {
+        "src": "http://127.0.0.1:8000/static/kuniezu/faces-fallback.webp?v=48ecefa928",
+        "crop": [
+          0,
+          256,
+          128,
+          128
+        ]
+      },
+      {
+        "src": "http://127.0.0.1:8000/static/kuniezu/faces-fallback.webp?v=48ecefa928",
+        "crop": [
+          0,
+          256,
+          128,
+          128
+        ]
+      }
+    ]
+  },
+  "errors": []
+}

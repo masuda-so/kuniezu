@@ -1,0 +1,27 @@
+{
+  "scope": "Candidate UI/layout/strip responses in dedicated Chrome; root files unchanged",
+  "mode": "all-fail",
+  "names": [
+    "顕如",
+    "丹羽長重",
+    "島清興",
+    "斎藤義龍",
+    "足利義輝",
+    "島左近"
+  ],
+  "peakImages": 2,
+  "requests": {
+    "portraits/顕如.jpg": 2,
+    "faces-fallback.webp": 2,
+    "portraits/丹羽長重.jpg": 2,
+    "portraits/島清興.jpg": 2,
+    "portraits/斎藤義龍.jpg": 2,
+    "portraits/quality-足利義輝.jpg": 2
+  },
+  "state": {
+    "images": 0,
+    "letters": 18,
+    "calls": []
+  },
+  "errors": []
+}

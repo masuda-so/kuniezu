@@ -1,0 +1,438 @@
+{
+  "scenarios": [
+    "s1560",
+    "s1585",
+    "s1570",
+    "s1575",
+    "s1592",
+    "s1600",
+    "s1582"
+  ],
+  "rows": [
+    {
+      "id": "s1560",
+      "width": 1400,
+      "mode": "game",
+      "player": "date",
+      "speed": 0,
+      "modal": null,
+      "pickHidden": true,
+      "chronVisible": true,
+      "chronTitle": "年表",
+      "newGames": 3,
+      "pickRect": {
+        "x": 0,
+        "y": 0,
+        "width": 0
+      },
+      "chronRect": {
+        "x": 16,
+        "y": 44,
+        "width": 288
+      },
+      "saved": "date",
+      "guard": {
+        "same": true,
+        "calls": 0
+      }
+    },
+    {
+      "id": "s1585",
+      "width": 1400,
+      "mode": "game",
+      "player": "date",
+      "speed": 0,
+      "modal": null,
+      "pickHidden": true,
+      "chronVisible": true,
+      "chronTitle": "年表",
+      "newGames": 6,
+      "pickRect": {
+        "x": 0,
+        "y": 0,
+        "width": 0
+      },
+      "chronRect": {
+        "x": 16,
+        "y": 111,
+        "width": 288
+      },
+      "saved": "date",
+      "guard": {
+        "same": true,
+        "calls": 0
+      }
+    },
+    {
+      "id": "s1570",
+      "width": 1400,
+      "mode": "game",
+      "player": "date",
+      "speed": 0,
+      "modal": null,
+      "pickHidden": true,
+      "chronVisible": true,
+      "chronTitle": "年表",
+      "newGames": 10,
+      "pickRect": {
+        "x": 0,
+        "y": 0,
+        "width": 0
+      },
+      "chronRect": {
+        "x": 16,
+        "y": 111,
+        "width": 288
+      },
+      "saved": "date",
+      "guard": {
+        "same": true,
+        "calls": 0
+      }
+    },
+    {
+      "id": "s1575",
+      "width": 1400,
+      "mode": "game",
+      "player": "date",
+      "speed": 0,
+      "modal": null,
+      "pickHidden": true,
+      "chronVisible": true,
+      "chronTitle": "年表",
+      "newGames": 14,
+      "pickRect": {
+        "x": 0,
+        "y": 0,
+        "width": 0
+      },
+      "chronRect": {
+        "x": 16,
+        "y": 111,
+        "width": 288
+      },
+      "saved": "date",
+      "guard": {
+        "same": true,
+        "calls": 0
+      }
+    },
+    {
+      "id": "s1592",
+      "width": 1400,
+      "mode": "game",
+      "player": "date",
+      "speed": 0,
+      "modal": null,
+      "pickHidden": true,
+      "chronVisible": true,
+      "chronTitle": "年表",
+      "newGames": 18,
+      "pickRect": {
+        "x": 0,
+        "y": 0,
+        "width": 0
+      },
+      "chronRect": {
+        "x": 16,
+        "y": 111,
+        "width": 288
+      },
+      "saved": "date",
+      "guard": {
+        "same": true,
+        "calls": 0
+      }
+    },
+    {
+      "id": "s1600",
+      "width": 1400,
+      "mode": "game",
+      "player": "date",
+      "speed": 0,
+      "modal": null,
+      "pickHidden": true,
+      "chronVisible": true,
+      "chronTitle": "年表",
+      "newGames": 22,
+      "pickRect": {
+        "x": 0,
+        "y": 0,
+        "width": 0
+      },
+      "chronRect": {
+        "x": 16,
+        "y": 111,
+        "width": 288
+      },
+      "saved": "date",
+      "guard": {
+        "same": true,
+        "calls": 0
+      }
+    },
+    {
+      "id": "s1582",
+      "width": 1400,
+      "mode": "game",
+      "player": "date",
+      "speed": 0,
+      "modal": null,
+      "pickHidden": true,
+      "chronVisible": true,
+      "chronTitle": "年表",
+      "newGames": 26,
+      "pickRect": {
+        "x": 0,
+        "y": 0,
+        "width": 0
+      },
+      "chronRect": {
+        "x": 16,
+        "y": 111,
+        "width": 288
+      },
+      "saved": "date",
+      "guard": {
+        "same": true,
+        "calls": 0
+      }
+    },
+    {
+      "id": "s1560",
+      "width": 390,
+      "mode": "game",
+      "player": "date",
+      "speed": 0,
+      "modal": null,
+      "pickHidden": true,
+      "chronVisible": true,
+      "chronTitle": "年表",
+      "newGames": 29,
+      "pickRect": {
+        "x": 0,
+        "y": 0,
+        "width": 0
+      },
+      "chronRect": {
+        "x": 0,
+        "y": 754,
+        "width": 390
+      },
+      "saved": "date",
+      "guard": {
+        "same": true,
+        "calls": 0
+      }
+    },
+    {
+      "id": "s1585",
+      "width": 390,
+      "mode": "game",
+      "player": "date",
+      "speed": 0,
+      "modal": null,
+      "pickHidden": true,
+      "chronVisible": true,
+      "chronTitle": "年表",
+      "newGames": 32,
+      "pickRect": {
+        "x": 0,
+        "y": 0,
+        "width": 0
+      },
+      "chronRect": {
+        "x": 0,
+        "y": 754,
+        "width": 390
+      },
+      "saved": "date",
+      "guard": {
+        "same": true,
+        "calls": 0
+      }
+    },
+    {
+      "id": "s1570",
+      "width": 390,
+      "mode": "game",
+      "player": "date",
+      "speed": 0,
+      "modal": null,
+      "pickHidden": true,
+      "chronVisible": true,
+      "chronTitle": "年表",
+      "newGames": 35,
+      "pickRect": {
+        "x": 0,
+        "y": 0,
+        "width": 0
+      },
+      "chronRect": {
+        "x": 0,
+        "y": 754,
+        "width": 390
+      },
+      "saved": "date",
+      "guard": {
+        "same": true,
+        "calls": 0
+      }
+    },
+    {
+      "id": "s1575",
+      "width": 390,
+      "mode": "game",
+      "player": "date",
+      "speed": 0,
+      "modal": null,
+      "pickHidden": true,
+      "chronVisible": true,
+      "chronTitle": "年表",
+      "newGames": 38,
+      "pickRect": {
+        "x": 0,
+        "y": 0,
+        "width": 0
+      },
+      "chronRect": {
+        "x": 0,
+        "y": 754,
+        "width": 390
+      },
+      "saved": "date",
+      "guard": {
+        "same": true,
+        "calls": 0
+      }
+    },
+    {
+      "id": "s1592",
+      "width": 390,
+      "mode": "game",
+      "player": "date",
+      "speed": 0,
+      "modal": null,
+      "pickHidden": true,
+      "chronVisible": true,
+      "chronTitle": "年表",
+      "newGames": 41,
+      "pickRect": {
+        "x": 0,
+        "y": 0,
+        "width": 0
+      },
+      "chronRect": {
+        "x": 0,
+        "y": 754,
+        "width": 390
+      },
+      "saved": "date",
+      "guard": {
+        "same": true,
+        "calls": 0
+      }
+    },
+    {
+      "id": "s1600",
+      "width": 390,
+      "mode": "game",
+      "player": "date",
+      "speed": 0,
+      "modal": null,
+      "pickHidden": true,
+      "chronVisible": true,
+      "chronTitle": "年表",
+      "newGames": 44,
+      "pickRect": {
+        "x": 0,
+        "y": 0,
+        "width": 0
+      },
+      "chronRect": {
+        "x": 0,
+        "y": 754,
+        "width": 390
+      },
+      "saved": "date",
+      "guard": {
+        "same": true,
+        "calls": 0
+      }
+    },
+    {
+      "id": "s1582",
+      "width": 390,
+      "mode": "game",
+      "player": "date",
+      "speed": 0,
+      "modal": null,
+      "pickHidden": true,
+      "chronVisible": true,
+      "chronTitle": "年表",
+      "newGames": 47,
+      "pickRect": {
+        "x": 0,
+        "y": 0,
+        "width": 0
+      },
+      "chronRect": {
+        "x": 0,
+        "y": 754,
+        "width": 390
+      },
+      "saved": "date",
+      "guard": {
+        "same": true,
+        "calls": 0
+      }
+    },
+    {
+      "mapCastle": "nirayama",
+      "mode": "game",
+      "player": "hojo",
+      "speed": 0,
+      "modal": null,
+      "pickHidden": true,
+      "chronVisible": true,
+      "chronTitle": "年表",
+      "newGames": 55,
+      "pickRect": {
+        "x": 0,
+        "y": 0,
+        "width": 0
+      },
+      "chronRect": {
+        "x": 16,
+        "y": 111,
+        "width": 288
+      },
+      "saved": "hojo"
+    }
+  ],
+  "save": {
+    "before": {
+      "t": 34,
+      "player": "hojo"
+    },
+    "after": {
+      "t": 34,
+      "player": "hojo"
+    },
+    "fraction": 0.42,
+    "mode": "game",
+    "pickHidden": true
+  },
+  "invalid": {
+    "same": true,
+    "mode": "pick",
+    "calls": 0
+  },
+  "legacyMapStyleIgnored": true,
+  "candidateOverrides": [
+    "static/kuniezu/index.css",
+    "static/kuniezu/ui.js",
+    "index.html"
+  ],
+  "errors": []
+}

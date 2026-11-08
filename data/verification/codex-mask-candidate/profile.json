@@ -1,0 +1,366 @@
+{
+  "environment": {
+    "viewport": [
+      1400,
+      950
+    ],
+    "candidate": true,
+    "candidateSHA": "ec4d05a353889ba36a4f9dd3dee6aede08a8a75c5bb0645eaadb8e1c8cae27c0",
+    "dpr": 1,
+    "headless": true,
+    "gpuDisabled": true,
+    "region": [
+      140.35,
+      36
+    ],
+    "mapStyle": "relief",
+    "scope": "short single-machine diagnostic; JS callback elapsed time is not FPS or temperature"
+  },
+  "rows": [
+    {
+      "name": "idle",
+      "wallMs": 846,
+      "taskMs": 44.14100000000154,
+      "scriptMs": 0.5350000000001742,
+      "heapMB": 178.9756965637207,
+      "frames": 41,
+      "callbackP50": 0,
+      "callbackP95": 0.09999999403953552,
+      "callbackMax": 0.10000000894069672,
+      "before": {
+        "draw": {
+          "base": 15,
+          "top": 17,
+          "still": 17
+        },
+        "cache": {
+          "builds": 13,
+          "hits": 2
+        }
+      },
+      "after": {
+        "draw": {
+          "base": 15,
+          "top": 17,
+          "still": 17
+        },
+        "cache": {
+          "builds": 13,
+          "hits": 2
+        }
+      },
+      "cpu": [
+        [
+          "(idle) :0",
+          801.8220000000007
+        ],
+        [
+          "(program) :0",
+          359.9369999999999
+        ],
+        [
+          "requestAnimationFrame :0",
+          1.505
+        ]
+      ]
+    },
+    {
+      "name": "drag",
+      "wallMs": 2133,
+      "taskMs": 268.41000000000116,
+      "scriptMs": 148.3599999999994,
+      "heapMB": 201.08448791503906,
+      "frames": 122,
+      "callbackP50": 0,
+      "callbackP95": 5.799999997019768,
+      "callbackMax": 15.900000005960464,
+      "before": {
+        "draw": {
+          "base": 15,
+          "top": 17,
+          "still": 17
+        },
+        "cache": {
+          "builds": 13,
+          "hits": 2
+        }
+      },
+      "after": {
+        "draw": {
+          "base": 38,
+          "top": 40,
+          "still": 40
+        },
+        "cache": {
+          "builds": 13,
+          "hits": 25
+        }
+      },
+      "cpu": [
+        [
+          "(idle) :0",
+          1859.7860000000014
+        ],
+        [
+          "(program) :0",
+          292.3329999999998
+        ],
+        [
+          "drawImage :0",
+          50.34
+        ],
+        [
+          "CanvasRenderingContext2D.<computed> ui.js?v=70c8429b80:187",
+          9.032
+        ],
+        [
+          "strokeText :0",
+          7.536
+        ],
+        [
+          "at ui.js?v=70c8429b80:266",
+          7.516
+        ],
+        [
+          "fillText :0",
+          7.513999999999999
+        ],
+        [
+          "clanCastles engine.js?v=78407f2685:268",
+          7.23
+        ],
+        [
+          "drawYosho ui.js?v=70c8429b80:479",
+          4.529
+        ],
+        [
+          "save :0",
+          4.516
+        ],
+        [
+          "drawTopLayers ui.js?v=70c8429b80:536",
+          3.6979999999999995
+        ],
+        [
+          "drawStill ui.js?v=70c8429b80:597",
+          3.02
+        ],
+        [
+          "mix ui.js?v=70c8429b80:42",
+          3.019
+        ],
+        [
+          "requestAnimationFrame :0",
+          3.016
+        ],
+        [
+          "castleIcon ui.js?v=70c8429b80:451",
+          3.016
+        ],
+        [
+          "roadLabelsTop ui.js?v=70c8429b80:264",
+          3.0149999999999997
+        ],
+        [
+          "measureText :0",
+          3.014
+        ],
+        [
+          "setPointerCapture :0",
+          3.011
+        ]
+      ]
+    },
+    {
+      "name": "wheel",
+      "wallMs": 3023,
+      "taskMs": 1619.5509999999995,
+      "scriptMs": 1360.278,
+      "heapMB": 190.74319076538086,
+      "frames": 116,
+      "callbackP50": 0,
+      "callbackP95": 22.599999994039536,
+      "callbackMax": 321.29999999701977,
+      "before": {
+        "draw": {
+          "base": 41,
+          "top": 43,
+          "still": 43
+        },
+        "cache": {
+          "builds": 16,
+          "hits": 25
+        }
+      },
+      "after": {
+        "draw": {
+          "base": 61,
+          "top": 63,
+          "still": 63
+        },
+        "cache": {
+          "builds": 19,
+          "hits": 25
+        }
+      },
+      "cpu": [
+        [
+          "(idle) :0",
+          1404.4419999999993
+        ],
+        [
+          "drawImage :0",
+          1128.7489999999984
+        ],
+        [
+          "(program) :0",
+          375.337
+        ],
+        [
+          "canvasFor raster-map.js?v=2a7abeff81:46",
+          55.339
+        ],
+        [
+          "(anonymous) raster-map.js?v=2a7abeff81:36",
+          49.67800000000001
+        ],
+        [
+          "restore :0",
+          46.419999999999995
+        ],
+        [
+          "clip :0",
+          17.123
+        ],
+        [
+          "(garbage collector) :0",
+          15.654
+        ],
+        [
+          "getImageData :0",
+          15.177999999999999
+        ],
+        [
+          "fillText :0",
+          15.012999999999998
+        ],
+        [
+          "setTransform :0",
+          14.749999999999998
+        ],
+        [
+          "(anonymous) ui.js?v=70c8429b80:650",
+          13.001
+        ],
+        [
+          "fmt ui.js?v=70c8429b80:6",
+          5.606999999999999
+        ],
+        [
+          "measureText :0",
+          5.566000000000001
+        ],
+        [
+          "drawStill ui.js?v=70c8429b80:597",
+          4.552
+        ],
+        [
+          "strokeText :0",
+          4.513
+        ],
+        [
+          "putImageData :0",
+          4.511
+        ],
+        [
+          "drawTopLayers ui.js?v=70c8429b80:536",
+          3.202
+        ]
+      ]
+    },
+    {
+      "name": "play1x",
+      "wallMs": 2159,
+      "taskMs": 128.10900000000026,
+      "scriptMs": 28.93199999999929,
+      "heapMB": 200.13277435302734,
+      "frames": 131,
+      "callbackP50": 0.09999999403953552,
+      "callbackP95": 0.7999999970197678,
+      "callbackMax": 2.7000000029802322,
+      "before": {
+        "draw": {
+          "base": 61,
+          "top": 63,
+          "still": 63
+        },
+        "cache": {
+          "builds": 19,
+          "hits": 25
+        }
+      },
+      "after": {
+        "draw": {
+          "base": 61,
+          "top": 124,
+          "still": 65
+        },
+        "cache": {
+          "builds": 19,
+          "hits": 25
+        }
+      },
+      "cpu": [
+        [
+          "(idle) :0",
+          2031.9579999999971
+        ],
+        [
+          "(program) :0",
+          291.90599999999995
+        ],
+        [
+          "drawTopLayers ui.js?v=70c8429b80:536",
+          4.4879999999999995
+        ],
+        [
+          "at ui.js?v=70c8429b80:266",
+          3.016
+        ],
+        [
+          "(anonymous) :1",
+          1.686
+        ],
+        [
+          "drawImage :0",
+          1.517
+        ],
+        [
+          "G.CNK engine.js?v=78407f2685:102",
+          1.516
+        ],
+        [
+          "G.convoyLayout convoys.js?v=3c305732bb:4",
+          1.511
+        ],
+        [
+          "clearRect :0",
+          1.506
+        ],
+        [
+          "mix ui.js?v=70c8429b80:42",
+          1.49
+        ],
+        [
+          "inPeriod campaign-evidence.js?v=98bb668a4f:106",
+          0.858
+        ],
+        [
+          "active historical-register.js?v=8b5e4994fc:105",
+          0.022
+        ]
+      ]
+    }
+  ],
+  "errors": []
+}
