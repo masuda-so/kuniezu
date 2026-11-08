@@ -267,7 +267,7 @@ window.TKBattleAtlas=(function(){
    probe.setAttribute('aria-hidden','true');Object.assign(probe.style,{position:'fixed',visibility:'hidden',pointerEvents:'none',width:width+'px',minHeight:'0',left:'0',top:'0'});
    dock.parentElement.append(probe);
    try{
-    if(clock){let max=0,text='';for(const mark of sc.calendar||[[0,'布陣'],[20,'交戦'],[80,'終盤'],[100,'終了']]){clock.textContent=mark[1];const h=clock.getBoundingClientRect().height;if(h>max){max=h;text=mark[1];}}clock.textContent=text;}
+    if(clock){let max=0,text='';for(const mark of [[0,'経過を読む'],...(sc.calendar||[[0,'布陣'],[20,'交戦'],[80,'終盤'],[100,'終了']])]){clock.textContent=mark[1];const h=clock.getBoundingClientRect().height;if(h>max){max=h;text=mark[1];}}clock.textContent=text;}
     let height=probe.getBoundingClientRect().height;for(const beat of sc.beats||[]){if(now)now.textContent=beat[1]||'　';height=Math.max(height,probe.getBoundingClientRect().height);}dock.style.minHeight=Math.ceil(height)+'px';
    }finally{probe.remove();}
   }
