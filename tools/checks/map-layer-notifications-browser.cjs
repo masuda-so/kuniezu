@@ -27,9 +27,9 @@ const rows=[];
 for(const version of ['current']){
  await call('Page.navigate',{url:url});
  for(let i=0;i<300;i++){if(await invoke(function(){return !!document.querySelector('[data-act=new]')&&!document.getElementById('boot')}))break;if(i===299)throw Error('page load timeout');await sleep(100);}
- await invoke(function(){document.querySelector('[data-act=new]').click();document.querySelector('[data-act=scen][data-id=s1560]').click();document.querySelector('[data-act=start]').click();});
- for(let i=0;i<100;i++){if(await invoke(function(){return TKUI.modal==='intro'}))break;await sleep(100);}
- await invoke(function(){document.querySelector('#modal [data-act=close]').click();TKUI.speed=0;TKUI.cam(...G.PJ(139.7,36),3);});
+ await invoke(function(){document.querySelector('[data-act=new]').click();document.querySelector('[data-act=scen][data-id=s1560]').click();document.querySelector('#pick [data-act=pick].on').click();});
+ for(let i=0;i<100;i++){if(await invoke(function(){return TKUI.mode==='game'&&!TKUI.modal}))break;if(i===99)throw Error('faction selection did not enter the game');await sleep(100);}
+ await invoke(function(){TKUI.speed=0;TKUI.cam(...G.PJ(139.7,36),3);});
  for(let i=0;i<100;i++){if(await invoke(function(){return __heldRelief.length>0&&TKRaster.ready()}))break;if(i===99)throw Error('no held relief bitmap');await sleep(100);}
  let previous=-1,stable=0;for(let i=0;i<80;i++){const current=await invoke(function(){return TKUI.baseCacheStats.builds});stable=current===previous?stable+1:0;previous=current;if(stable>=8)break;await sleep(150);}
  const before=await invoke(function(){return {builds:TKUI.baseCacheStats.builds,revision:TKRelief.revision(),held:__heldRelief.length,day:G.dstr(),cam:TKUI.mapBounds().camera}});

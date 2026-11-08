@@ -1,6 +1,6 @@
 # 現行版の検証
 
-サーバーの起動・停止はユーザーのみ。ブラウザ検証は既存8000番へ専用の一時Chromeで接続し、普段のプロフィール・保存を使わない。負荷測定は他のブラウザ検証と同時実行しない。
+利用者が起動したことのある許可済み8000番はエージェントも起動・停止できる（127.0.0.1限定、配信先と所有者を確認）。ブラウザ検証は既存8000番へ専用の一時Chromeで接続し、普段のプロフィール・保存を使わない。負荷測定は他のブラウザ検証と同時実行しない。
 
 ページは Django のテンプレート（`kuniezu/templates/index.html`）なので、8000 番は Django の開発サーバーか `dist/client/` の配信を指す。ページをディスクから読む検査は `tools/build/game-page.cjs` で描く。`hachirogata-water-browser.cjs` と `katori-water-browser.cjs` は、`GAME_URL` を指定しなければサーバーなしで一時ファイルを開く。
 
@@ -10,6 +10,9 @@
 
 | 分野 | サーバー不要の検査 | 実画面の検査 |
 |---|---|---|
+| 初期の勢力選択・年表・表示設定 | `offline.cjs` | `selection-ui-browser.cjs`（全シナリオ・広狭幅・地域・二重入力・保存復元・城から選択） |
+| 本体ベクター描画 | `vector-map.cjs`・`vector-assets.cjs` | `vector-game-browser.cjs`（広幅・狭幅・回転・全図）、`VECTOR_FAIL_SOURCE=1`（取得失敗と再読込） |
+| 肖像の代替crop | `portrait-loading.cjs`、`build_fallback.py --root . --check` | `portrait-fallback-browser.cjs`（`PORTRAIT_MODE=normal/primary-fail/all-fail`） |
 | 基本・保存・史実進行 | `offline.cjs` | `completion-browser.cjs` |
 | 秘密情報（APIキー・秘密鍵など。gzipも展開） | `secret-scan.cjs`（CIでも実行。第三者ページの保存前は `tools/research/source-privacy.cjs`） | — |
 | 読み込みの確認値（更新後に古い版を使わせない） | `node tools/build/stamp-assets.cjs --check`（CIでも実行。kuniezu/static/kuniezu/ のファイルを変えたら `node tools/build/stamp-assets.cjs` を実行） | — |
@@ -24,7 +27,7 @@
 | 児島湾の補正マスクのベクター化 | `mask-vector.cjs`（穴・対角接触・単純リング）、`kojima-mask-vectors.cjs`（旧格子対応と737,100セルの逆変換一致。Offline checksにも含む） | —（移行入力のみ。ゲーム表示は変更しない） |
 | 編集済みGeoJSONの配信 | `vector-assets.cjs`（バイト複写・直接編集保持・上書き保護・統合CLI。Offline checksにも含む）、`uv run pytest tests/test_vector_sources.py`（位相・5湖の欠落防止・W09原本/座標系） | 全体地図の切替時に確認 |
 | 街道・河川・地図 | `road-display.cjs`、`battle-rivers.cjs`、`terrain-transition.cjs`、`terrain-cache.cjs`、`map-layer-notifications.cjs`（遅着層の再描画通知）、`raster-map.cjs`（正本 `kuniezu/map` と配信タイルの一致）、`province-edits.cjs`（年代別の差分の負例） | `zoom-regressions.cjs`、`map-layer-notifications-browser.cjs`（停止画面への遅着） |
-| 合戦 | `deployments.cjs`、`atlas-regressions.cjs`、`battle-review.cjs`、`battle-viewport.cjs` | `all-battles-browser.cjs`、`battle-loading-browser.cjs`、`battle-viewport-browser.cjs` |
+| 合戦 | `deployments.cjs`、`atlas-regressions.cjs`、`battle-review.cjs`、`battle-viewport.cjs`、`battle-counter-density.cjs` | `all-battles-browser.cjs`、`battle-loading-browser.cjs`、`battle-viewport-browser.cjs`、`battle-counter-density-browser.cjs` |
 | UI・肖像・性能 | `infrastructure.cjs` | `usability-browser.cjs`、`portrait-browser.cjs`、`render-performance.cjs`、`load-performance.cjs`（起動・再生中の負荷。`GAME_OVERRIDE_ROOT` で作業ツリーの変更分だけ差し替え） |
 | 棚卸し | `coverage-review.cjs`、`history-audit.cjs`、`road-shape-review.cjs` | 棚卸しだけで表示検査済みにしない |
 

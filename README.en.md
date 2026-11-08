@@ -14,16 +14,20 @@ is [docs/README.md](docs/README.md); open requests and ownership are in
 
 ## Features and limitations
 
-- A vector-map migration using CODH coast, lake, road and post datasets is in progress.
-  [Reference inputs and preparation](data/inputs/codh-edo/README.md) are retained;
-  the game has not switched to vector rendering yet.
+- The Bunroku campaign overview links to individual battles. The Busan diagram covers the old fortress assault, with Korean-calendar dates and conversion sources kept distinct.
+
+- Choosing a house from the left panel or a castle on the map starts observation and replaces the selection panel with the chronology. The map keeps its washi, wave pattern, and relief shading without a terrain/plain-map toggle.
+- Land, water and shorelines are rendered as vectors from edited GeoJSON.
+  [CODH inputs and preparation](data/inputs/codh-edo/README.md) distinguish
+  Edo-period comparison shapes from adopted period corrections. Ownership colours
+  and relief remain image layers.
 - Edited GeoJSON will be the directly maintained source of truth. Rendering reads
   the files for the selected period. CODH originals remain available for comparison,
   and normal builds will not overwrite the edited source data.
 - Edited land, water and shoreline sources are stored in
   `kuniezu/map/physical/{land,water,coastline}.geojson` with an
   [adoption record](data/inputs/vector-map-migration/README.md) and period checks.
-  The game cutover is separate. Use `--canonical kuniezu/map/physical
+  The game reads the same canonical sources. Use `--canonical kuniezu/map/physical
   --at 1584-01-01` in the comparison viewer to inspect a period.
 - `uv run python tools/geo/codh_topology.py --output /tmp/codh-surfaces-new`
   prepares valid reference surfaces and combined land/lake geometry using a
@@ -35,7 +39,7 @@ is [docs/README.md](docs/README.md); open requests and ownership are in
 - The viewer also accepts `--canonical <directory>` to read edited
   `land.geojson` and `water.geojson`. The shared renderer preserves holes and
   periods for drawing and hit testing, without runtime geometry corrections.
-  Switching the game itself requires separate verification.
+  Game boot, interaction and source failures have separate browser checks.
 - `uv run python tools/geo/codh_preview.py --output /tmp/codh-preview-new`
   generates a standalone Edo-period vector viewer. Open its `index.html` directly
   to inspect Kanto and Kojima Bay, pan, zoom and toggle layers. It does not alter
@@ -51,7 +55,9 @@ is [docs/README.md](docs/README.md); open requests and ownership are in
 - Shows former lakeshores, castles, facilities and people checked against sources,
   marches along historical roads, and battle deployments and movements, each with
   its source.
-- Battle markers retain their geographic positions when the viewport or district changes. Co-located units can be selected individually.
+- Battle markers retain their geographic positions when the viewport or district changes. Co-located units can be selected individually. Crowded markers become smaller; the selected unit keeps its original size and appears in front.
+- Wide battles show individual counters and portraits in the overview, with nearby
+  commander labels in district views. Narrow screens use a single-row district selector.
 - File exports, save slots and autosaves preserve sub-day time so marching units
   resume at the saved position.
 - Diplomacy is shown as borders only; marches are shown as pieces on roads.
@@ -67,6 +73,9 @@ is [docs/README.md](docs/README.md); open requests and ownership are in
   sections include modern roads and tunnels; they are not an exact sixteenth-century
   centerline. See the [inputs and regeneration](data/inputs/sanshu-road-review/README.md)
   (Japanese).
+- Kennyo, Niwa Nagashige, Shima Sakon, Saito Yoshitatsu and Ashikaga Yoshiteru use
+  the same reviewed portrait crops while originals load or fail. Depictions include
+  later artwork. See [asset regeneration and checks](docs/reports/PORTRAIT_FALLBACK_CROPS.md) (Japanese).
 - Late elevation, river and boundary loads refresh the map while the camera stays still.
 - Dated events without a known related place remain searchable by their subject.
   Locations are not invented, and Edo-period reclamation records are kept separate
@@ -163,11 +172,16 @@ named by a name or by an identifier such as `place:ganjaku`; a name that matches
 several things lists the candidates and stops. That two identifiers are one thing,
 or that a game site stands for a registry place, is stated by sourced records in
 `data/research/curated/identities/*.json` (format in that folder's `README.md`);
-without such a record, things of the same name are never merged. It holds every
+without such a record, things of the same name are never merged. As the backbone
+of the whole, it imports an index of the Historiographical Institute's article
+headings (綱文), one row per article with its location only and never its text
+(`data/research/kobun-index/`); it now covers 1534 (478 articles), all unclassified.
+It holds every
 current input record and keeps source-verified records apart from the unverified
 inventory of what the game implements (`docs/architecture/history-rdb.md`).
 
-Starting and stopping the server is done by the user. Verification connects to an
+Agents may start and stop the server only on ports the user has started before
+(8000 and 8001), and never start it on any other port. Verification connects to an
 already running `http://localhost:8000/index.html`. The output folder for check
 results can be set with `GAME_TEST_OUTPUT`.
 

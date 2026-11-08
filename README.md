@@ -10,22 +10,27 @@
 
 ## 主な機能と制約
 
-- CODHの海岸・湖沼・街道・宿場を用いるベクター地図へ移行を進めています。[参照入力と変換手順](data/inputs/codh-edo/README.md)を保持していますが、ゲーム画面のベクター切替はまだ行っていません。
+- 文禄の役は戦役の案内と各地の局地戦を分けて閲覧できます。釜山鎮の図は旧城の攻防に限定し、朝鮮暦の日付と換暦の出典を示します。
+
+- 左の勢力カードや地図の城から家を選ぶと観察を開始し、選択パネルは年表に切り替わります。地形図／白地図の切り替えは設けず、和紙・青海波と地形の陰影を表示します。
+- 地図の陸・水域・岸線は編集済みGeoJSONからベクター描画します。[CODH参照入力と変換手順](data/inputs/codh-edo/README.md)を保持し、江戸期の比較形状と戦国期の採用補正を区別します。支配色と陰影は画像を組み合わせます。
 - 移行後のベクターは改変済みGeoJSONを正本として直接編集し、描画側は年代に応じたファイルを読みます。CODH原本は照合用に残し、通常ビルドで編集正本を上書きしません。
-- 陸・水域・岸線の正本を `kuniezu/map/physical/{land,water,coastline}.geojson` へ移行しました。[採用記録](data/inputs/vector-map-migration/README.md)と年代別整合検査を保持します。本体の切替は別工程です。比較する場合は `--canonical kuniezu/map/physical --at 1584-01-01` を指定できます。
+- 陸・水域・岸線の正本を `kuniezu/map/physical/{land,water,coastline}.geojson` へ移行しました。[採用記録](data/inputs/vector-map-migration/README.md)と年代別整合検査を保持します。本体も同じ正本を読みます。比較する場合は `--canonical kuniezu/map/physical --at 1584-01-01` を指定できます。
 - `uv run python tools/geo/codh_topology.py --output /tmp/codh-surfaces-new` で、原本の辺・座標位置を保持する方式による有効な参照面と陸・湖の合成面を生成できます。面にならない元の線は残差層へ保持し、戦国期の岸線とは扱いません。Shapelyは開発時だけの依存です。
 - 比較画面の生成に `--surfaces /tmp/codh-surfaces-new` を付けると、原本版とSHAを検査して合成済みの面を読み込めます。
-- 比較画面の `--canonical <ディレクトリ>` は編集済み `land.geojson`・`water.geojson` を読みます。共通描画器が面の穴と年代を保って描画・位置判定し、実行時の形状補正は行いません。ゲーム本体の切替は別途検証します。
+- 比較画面の `--canonical <ディレクトリ>` は編集済み `land.geojson`・`water.geojson` を読みます。共通描画器が面の穴と年代を保って描画・位置判定し、実行時の形状補正は行いません。比較ページとは別に、本体の起動・操作・失敗時の表示を検査します。
 - `uv run python tools/geo/codh_preview.py --output /tmp/codh-preview-new` で独立した江戸期ベクター参照画面を生成し、出力先の `index.html` を直接開けます。関東・児島湾への移動、拡大縮小と層の切替ができ、ゲームの地図や保存には適用しません。
 - `node tools/geo/prepare-mask-vectors.cjs --output /tmp/kojima-vectors-new` で、児島湾の既存補正マスクを対応する格子版から経緯度の面へ取り出せます。100mの採用範囲を保持する変換であり、史実岸線の精密化やゲームへの再適用は行いません。
 - `uv run python tools/geo/prepare_era_overrides.py --at 1560-01-01 --output /tmp/era-overrides-new` で、香取海の既存推定水面・保護陸・岸線として描かない切口を一体で取り出せます。CODH原本やゲーム画面には自動適用しません。
 - 古湖岸、城・施設・人物の史実照合、街道上の行軍、合戦の布陣と動きを、出典を付けて表示します。
-- 合戦図の駒は表示幅や地区切替で地理的位置を変えません。同地点の隊は選択候補から個別に確認できます。
+- 合戦図の駒は表示幅や地区切替で地理的位置を変えません。同地点の隊は選択候補から個別に確認できます。 密集時は駒の大きさを抑え、選択した隊を元の大きさで前面に表示します。
+- 広域戦は全体図で個別の駒・顔を把握し、地区表示で武将名を確認できます。狭幅の地区選択は一行で操作できます。
 - ファイル書き出し・手動枠・自動保存で日内時刻を保持し、取り込み後も行軍途中の位置から再開します。
 - 外交は国境のみを表示し、行軍は街道上の駒で表します。合戦は自軍参加時だけ自動表示します。関ヶ原の不参戦5隊には汎用の前進演出を加えません。
 - 自由攻城、非史実ルート、プレイ中のAI生成は停止しています。`archive/` の非史実実装は通常の起動では読みません。
 - 合戦関連の年表注記は既存合戦の経過と区別して分類し、個別布陣の根拠がない落城は年表・史跡で保持します。
 - 標高・河川・境界線の読み込みが遅れた場合も、カメラを動かさずに地図を更新します。
+- 顕如・丹羽長重・島清興・斎藤義龍・足利義輝の肖像は、原画の取得待ちや失敗時も同じ確認済み切り抜きを使います。肖像は後世の図像を含みます。[素材の再生成と確認](docs/reports/PORTRAIT_FALLBACK_CROPS.md)を参照してください。
 - 現代の比較地形、史料からの推定、確認済みの史実は区別して扱います。根拠のない文章をプレイ画面へ出しません。
 - 三州街道は伊那谷・駒場・根羽経由の比較線を表示します。山間部には現代の道路・隧道を含み、戦国期の精密中心線とは区別します。[入力と再生成](data/inputs/sanshu-road-review/README.md)を参照してください。
 - 史実DBは原暦と日付精度を維持し、時間形式と矛盾する追加日付欄を拒否します。[DB構成と操作](docs/architecture/history-database.md)を参照してください。
@@ -75,9 +80,9 @@ node tools/map/build-map.cjs --height --python /path/to/python3
 
 生成後は Django の開発サーバーを起動し、ブラウザで `http://localhost:8000/index.html` を開きます（`uv sync --locked` の後 `uv run python manage.py runserver 8000`。Python 3.14 と uv が必要）。ページは Django のテンプレートなので、`kuniezu/static/kuniezu/` だけを静的ファイルとして配信しても開けません。`uv run python scripts/build_static.py` は公開用の静的ファイルを `dist/client/` に書き出し、こちらは静的ファイルとして配信すれば開けます。構成は website と同じ Django の並びへ揃える途中です（`docs/structure.md`、`docs/architecture/replatform-plan.md`）。画面の地図は北が上です。表示設定の「地図の向き」で、明治「大日本全図」に合わせた向き（北を左へ 16 度）などに回せます（`docs/reports/MAP_ORIENTATION.md`）。
 
-史実の関係データベースは、`uv run python manage.py migrate` の後 `uv run python manage.py import_history` で、`data/research/` と `docs/work/` の入力から根の `db.sqlite3` に作ります（Git には入れません）。`uv run python manage.py history_query --about 織田信長 --year 1582` のように、対象・年・経緯度の範囲で引けます。対象は名前でも識別子（`place:ganjaku` など）でも指せ、名前が複数の対象に当たると候補を並べて止まります。2 つの識別子が同じ対象であること、ゲームの拠点が台帳の場所を代表することは、出典付きの記録として `data/research/curated/identities/*.json` に置きます（形は同フォルダの `README.md`。記録が無い限り、同じ名前の対象を自動ではまとめません）。入っているのは今ある入力の全件で、出典で確認済みのものと、実装の棚卸し（未照合）を区別して持ちます（`docs/architecture/history-rdb.md`）。
+史実の関係データベースは、`uv run python manage.py migrate` の後 `uv run python manage.py import_history` で、`data/research/` と `docs/work/` の入力から根の `db.sqlite3` に作ります（Git には入れません）。`uv run python manage.py history_query --about 織田信長 --year 1582` のように、対象・年・経緯度の範囲で引けます。全件の背骨として、史料編纂所の綱文を 1 本条＝1 件で並べた所在の目録（`data/research/kobun-index/`、文面は置かない）を取り込みます。今は 1534 年分（478 条）で、どの条も未分類です。対象は名前でも識別子（`place:ganjaku` など）でも指せ、名前が複数の対象に当たると候補を並べて止まります。2 つの識別子が同じ対象であること、ゲームの拠点が台帳の場所を代表することは、出典付きの記録として `data/research/curated/identities/*.json` に置きます（形は同フォルダの `README.md`。記録が無い限り、同じ名前の対象を自動ではまとめません）。入っているのは今ある入力の全件で、出典で確認済みのものと、実装の棚卸し（未照合）を区別して持ちます（`docs/architecture/history-rdb.md`）。
 
-サーバーの起動・停止は利用者が行います。検証は起動済み `http://localhost:8000/index.html` に接続します。検査結果の保存先は `GAME_TEST_OUTPUT` で指定できます。
+サーバーは、利用者が一度起動したポート（8000番・8001番）に限り、エージェントも起動・停止します。それ以外のポートは起動しません。検証は起動済みの `http://localhost:8000/index.html` に接続します。検査結果の保存先は `GAME_TEST_OUTPUT` で指定できます。
 
 基本の確認は次のコマンドです。詳しくは [検証手順](tools/checks/README.md) を参照してください。
 

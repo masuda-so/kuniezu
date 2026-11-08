@@ -1,0 +1,3503 @@
+{
+  "schemaVersion": 1,
+  "reviewed": "2026-11-08",
+  "status": "classification-review-not-adopted-claims",
+  "rule": "広さ・期間・接尾辞ではなく内包する別戦闘の根拠で判定。開城・退去・対陣は戦闘と区別。",
+  "scope": "既存111場面の分類候補。確認済みの局所図を破棄せず、戦役の全体図とは区別する。各行の根拠確認範囲を超えて採用しない。",
+  "counts": {
+    "rows": 111,
+    "kinds": {
+      "battle": 81,
+      "campaign": 28,
+      "compound-battles": 2
+    },
+    "evidenceLevels": {
+      "code-scope-only-or-unread": 84,
+      "public-explanatory-body-recorded": 26,
+      "partial-public-body-recorded": 1
+    },
+    "classificationUse": {
+      "needs-review": 91,
+      "ready-for-parent-scope-review": 20
+    }
+  },
+  "rows": [
+    {
+      "ordinal": 1,
+      "title": "桶狭間の戦い",
+      "proposedKind": "battle",
+      "evidenceLevel": "code-scope-only-or-unread",
+      "classificationUse": "needs-review",
+      "classificationHolds": [
+        "本文確認済みの根拠がこの整理にはない。既存局所図の対象確認と史実確認を分ける"
+      ],
+      "children": [],
+      "evidence": []
+    },
+    {
+      "ordinal": 2,
+      "title": "第四次川中島の戦い",
+      "proposedKind": "battle",
+      "evidenceLevel": "code-scope-only-or-unread",
+      "classificationUse": "needs-review",
+      "classificationHolds": [
+        "本文確認済みの根拠がこの整理にはない。既存局所図の対象確認と史実確認を分ける"
+      ],
+      "children": [],
+      "evidence": []
+    },
+    {
+      "ordinal": 3,
+      "title": "長篠の戦い",
+      "proposedKind": "campaign",
+      "evidenceLevel": "public-explanatory-body-recorded",
+      "classificationUse": "ready-for-parent-scope-review",
+      "classificationHolds": [],
+      "children": [
+        {
+          "title": "長篠城攻防（1575）",
+          "nature": "battle-candidate",
+          "existingExactTitle": null,
+          "possibleExistingAlias": null,
+          "registration": "not-separately-registered",
+          "evidenceScope": "parent-record-only-do-not-assume-all-child-details-confirmed",
+          "sourceIds": [],
+          "original": {
+            "name": "長篠城攻防（1575）",
+            "registeredTitle": null,
+            "registration": "not-separately-registered",
+            "historicalStatus": "candidate-source-scope-described-in-parent-row",
+            "newFigure": "not-created-user-confirmation-required"
+          },
+          "newDiagramCreated": false
+        },
+        {
+          "title": "設楽原の戦い",
+          "nature": "battle-candidate",
+          "existingExactTitle": null,
+          "possibleExistingAlias": null,
+          "registration": "not-separately-registered",
+          "evidenceScope": "parent-record-only-do-not-assume-all-child-details-confirmed",
+          "sourceIds": [],
+          "original": {
+            "name": "設楽原の戦い",
+            "registeredTitle": null,
+            "registration": "not-separately-registered",
+            "historicalStatus": "candidate-source-scope-described-in-parent-row",
+            "newFigure": "not-created-user-confirmation-required"
+          },
+          "newDiagramCreated": false
+        },
+        {
+          "title": "鳶ヶ巣山砦攻撃",
+          "nature": "battle-candidate",
+          "existingExactTitle": null,
+          "possibleExistingAlias": null,
+          "registration": "not-separately-registered",
+          "evidenceScope": "parent-record-only-do-not-assume-all-child-details-confirmed",
+          "sourceIds": [],
+          "original": {
+            "name": "鳶ヶ巣山砦攻撃",
+            "registeredTitle": null,
+            "registration": "not-separately-registered",
+            "historicalStatus": "candidate-source-scope-described-in-parent-row",
+            "newFigure": "not-created-user-confirmation-required"
+          },
+          "newDiagramCreated": false
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.city.shinshiro.lg.jp/kanko/meisyo/nagashino-shitaragah.html",
+          "locator": "長篠城をめぐる戦い／両軍の布陣／激闘10時間（本文291–312行）",
+          "readStatus": "public-body-confirmed",
+          "provenance": "first-half/decisions.json",
+          "note": "調査担当の読了記録を引継ぎ。今回独立再読なし"
+        }
+      ]
+    },
+    {
+      "ordinal": 4,
+      "title": "関ヶ原の戦い",
+      "proposedKind": "battle",
+      "evidenceLevel": "code-scope-only-or-unread",
+      "classificationUse": "needs-review",
+      "classificationHolds": [
+        "本文確認済みの根拠がこの整理にはない。既存局所図の対象確認と史実確認を分ける"
+      ],
+      "children": [],
+      "evidence": []
+    },
+    {
+      "ordinal": 5,
+      "title": "姉川の戦い",
+      "proposedKind": "battle",
+      "evidenceLevel": "code-scope-only-or-unread",
+      "classificationUse": "needs-review",
+      "classificationHolds": [
+        "本文確認済みの根拠がこの整理にはない。既存局所図の対象確認と史実確認を分ける"
+      ],
+      "children": [],
+      "evidence": []
+    },
+    {
+      "ordinal": 6,
+      "title": "三方ヶ原の戦い",
+      "proposedKind": "battle",
+      "evidenceLevel": "code-scope-only-or-unread",
+      "classificationUse": "needs-review",
+      "classificationHolds": [
+        "本文確認済みの根拠がこの整理にはない。既存局所図の対象確認と史実確認を分ける"
+      ],
+      "children": [],
+      "evidence": []
+    },
+    {
+      "ordinal": 7,
+      "title": "本能寺の変",
+      "proposedKind": "campaign",
+      "evidenceLevel": "code-scope-only-or-unread",
+      "classificationUse": "needs-review",
+      "classificationHolds": [
+        "本文確認済みの根拠がこの整理にはない。既存局所図の対象確認と史実確認を分ける",
+        "期間・事件/出兵と戦役の境界を要確認。修復本文の範囲を超えて確定しない"
+      ],
+      "children": [
+        {
+          "title": "本能寺攻撃",
+          "nature": "battle-candidate",
+          "existingExactTitle": null,
+          "possibleExistingAlias": null,
+          "registration": "not-separately-registered",
+          "evidenceScope": "parent-record-only-do-not-assume-all-child-details-confirmed",
+          "sourceIds": [],
+          "original": {
+            "name": "本能寺攻撃",
+            "registeredTitle": null,
+            "registration": "not-separately-registered",
+            "historicalStatus": "candidate-source-scope-described-in-parent-row",
+            "newFigure": "not-created-user-confirmation-required"
+          },
+          "newDiagramCreated": false
+        },
+        {
+          "title": "二条新御所の戦闘",
+          "nature": "battle-candidate",
+          "existingExactTitle": null,
+          "possibleExistingAlias": null,
+          "registration": "not-separately-registered",
+          "evidenceScope": "parent-record-only-do-not-assume-all-child-details-confirmed",
+          "sourceIds": [],
+          "original": {
+            "name": "二条新御所の戦闘",
+            "registeredTitle": null,
+            "registration": "not-separately-registered",
+            "historicalStatus": "candidate-source-scope-described-in-parent-row",
+            "newFigure": "not-created-user-confirmation-required"
+          },
+          "newDiagramCreated": false
+        }
+      ],
+      "evidence": []
+    },
+    {
+      "ordinal": 8,
+      "title": "山崎の戦い",
+      "proposedKind": "battle",
+      "evidenceLevel": "code-scope-only-or-unread",
+      "classificationUse": "needs-review",
+      "classificationHolds": [
+        "本文確認済みの根拠がこの整理にはない。既存局所図の対象確認と史実確認を分ける"
+      ],
+      "children": [],
+      "evidence": []
+    },
+    {
+      "ordinal": 9,
+      "title": "賤ヶ岳の戦い",
+      "proposedKind": "battle",
+      "evidenceLevel": "code-scope-only-or-unread",
+      "classificationUse": "needs-review",
+      "classificationHolds": [
+        "本文確認済みの根拠がこの整理にはない。既存局所図の対象確認と史実確認を分ける"
+      ],
+      "children": [],
+      "evidence": []
+    },
+    {
+      "ordinal": 10,
+      "title": "小牧・長久手の戦い",
+      "proposedKind": "campaign",
+      "evidenceLevel": "public-explanatory-body-recorded",
+      "classificationUse": "ready-for-parent-scope-review",
+      "classificationHolds": [],
+      "children": [
+        {
+          "title": "羽黒の戦い",
+          "nature": "battle-candidate",
+          "existingExactTitle": null,
+          "possibleExistingAlias": null,
+          "registration": "not-separately-registered",
+          "evidenceScope": "parent-record-only-do-not-assume-all-child-details-confirmed",
+          "sourceIds": [],
+          "original": {
+            "name": "羽黒の戦い",
+            "registeredTitle": null,
+            "registration": "not-separately-registered",
+            "historicalStatus": "candidate-source-scope-described-in-parent-row",
+            "newFigure": "not-created-user-confirmation-required"
+          },
+          "newDiagramCreated": false
+        },
+        {
+          "title": "岩崎城の戦い",
+          "nature": "battle-candidate",
+          "existingExactTitle": null,
+          "possibleExistingAlias": null,
+          "registration": "not-separately-registered",
+          "evidenceScope": "parent-record-only-do-not-assume-all-child-details-confirmed",
+          "sourceIds": [],
+          "original": {
+            "name": "岩崎城の戦い",
+            "registeredTitle": null,
+            "registration": "not-separately-registered",
+            "historicalStatus": "candidate-source-scope-described-in-parent-row",
+            "newFigure": "not-created-user-confirmation-required"
+          },
+          "newDiagramCreated": false
+        },
+        {
+          "title": "白山林の戦い",
+          "nature": "battle-candidate",
+          "existingExactTitle": null,
+          "possibleExistingAlias": null,
+          "registration": "not-separately-registered",
+          "evidenceScope": "parent-record-only-do-not-assume-all-child-details-confirmed",
+          "sourceIds": [],
+          "original": {
+            "name": "白山林の戦い",
+            "registeredTitle": null,
+            "registration": "not-separately-registered",
+            "historicalStatus": "candidate-source-scope-described-in-parent-row",
+            "newFigure": "not-created-user-confirmation-required"
+          },
+          "newDiagramCreated": false
+        },
+        {
+          "title": "檜ヶ根の戦い",
+          "nature": "battle-candidate",
+          "existingExactTitle": null,
+          "possibleExistingAlias": null,
+          "registration": "not-separately-registered",
+          "evidenceScope": "parent-record-only-do-not-assume-all-child-details-confirmed",
+          "sourceIds": [],
+          "original": {
+            "name": "檜ヶ根の戦い",
+            "registeredTitle": null,
+            "registration": "not-separately-registered",
+            "historicalStatus": "candidate-source-scope-described-in-parent-row",
+            "newFigure": "not-created-user-confirmation-required"
+          },
+          "newDiagramCreated": false
+        },
+        {
+          "title": "長久手の戦い",
+          "nature": "battle-candidate",
+          "existingExactTitle": null,
+          "possibleExistingAlias": null,
+          "registration": "not-separately-registered",
+          "evidenceScope": "parent-record-only-do-not-assume-all-child-details-confirmed",
+          "sourceIds": [],
+          "original": {
+            "name": "長久手の戦い",
+            "registeredTitle": null,
+            "registration": "not-separately-registered",
+            "historicalStatus": "candidate-source-scope-described-in-parent-row",
+            "newFigure": "not-created-user-confirmation-required"
+          },
+          "newDiagramCreated": false
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.city.nagakute.lg.jp/material/files/group/14/2shiryou5.pdf",
+          "locator": "PDF2頁：総称と長久手合戦の区別。各子戦闘の全名称は現beats由来で個別原典確認は別途。",
+          "readStatus": "public-body-confirmed",
+          "provenance": "first-half/decisions.json",
+          "note": "調査担当の読了記録を引継ぎ。今回独立再読なし"
+        }
+      ]
+    },
+    {
+      "ordinal": 11,
+      "title": "耳川の戦い",
+      "proposedKind": "battle",
+      "evidenceLevel": "code-scope-only-or-unread",
+      "classificationUse": "needs-review",
+      "classificationHolds": [
+        "本文確認済みの根拠がこの整理にはない。既存局所図の対象確認と史実確認を分ける"
+      ],
+      "children": [],
+      "evidence": []
+    },
+    {
+      "ordinal": 12,
+      "title": "沖田畷の戦い",
+      "proposedKind": "battle",
+      "evidenceLevel": "code-scope-only-or-unread",
+      "classificationUse": "needs-review",
+      "classificationHolds": [
+        "本文確認済みの根拠がこの整理にはない。既存局所図の対象確認と史実確認を分ける"
+      ],
+      "children": [],
+      "evidence": []
+    },
+    {
+      "ordinal": 13,
+      "title": "第一次上田合戦",
+      "proposedKind": "battle",
+      "evidenceLevel": "code-scope-only-or-unread",
+      "classificationUse": "needs-review",
+      "classificationHolds": [
+        "本文確認済みの根拠がこの整理にはない。既存局所図の対象確認と史実確認を分ける"
+      ],
+      "children": [],
+      "evidence": []
+    },
+    {
+      "ordinal": 14,
+      "title": "摺上原の戦い",
+      "proposedKind": "battle",
+      "evidenceLevel": "code-scope-only-or-unread",
+      "classificationUse": "needs-review",
+      "classificationHolds": [
+        "本文確認済みの根拠がこの整理にはない。既存局所図の対象確認と史実確認を分ける"
+      ],
+      "children": [],
+      "evidence": []
+    },
+    {
+      "ordinal": 15,
+      "title": "小田原征伐",
+      "proposedKind": "campaign",
+      "evidenceLevel": "public-explanatory-body-recorded",
+      "classificationUse": "ready-for-parent-scope-review",
+      "classificationHolds": [],
+      "children": [
+        {
+          "title": "山中城の戦い",
+          "nature": "battle-candidate",
+          "existingExactTitle": null,
+          "possibleExistingAlias": null,
+          "registration": "not-separately-registered",
+          "evidenceScope": "parent-record-only-do-not-assume-all-child-details-confirmed",
+          "sourceIds": [],
+          "original": {
+            "name": "山中城の戦い",
+            "registeredTitle": null,
+            "registration": "not-separately-registered",
+            "historicalStatus": "candidate-source-scope-described-in-parent-row",
+            "newFigure": "not-created-user-confirmation-required"
+          },
+          "newDiagramCreated": false
+        },
+        {
+          "title": "韮山城の戦い",
+          "nature": "battle-candidate",
+          "existingExactTitle": "韮山城の戦い",
+          "possibleExistingAlias": null,
+          "registration": "exact-title-date-needs-check",
+          "evidenceScope": "parent-record-only-do-not-assume-all-child-details-confirmed",
+          "sourceIds": [],
+          "original": {
+            "name": "韮山城の戦い",
+            "registeredTitle": "韮山城の戦い",
+            "registration": "existing-exact-title-date-needs-check",
+            "historicalStatus": "candidate-source-scope-described-in-parent-row",
+            "newFigure": "not-created-user-confirmation-required"
+          },
+          "newDiagramCreated": false
+        },
+        {
+          "title": "鉢形城の戦い",
+          "nature": "battle-candidate",
+          "existingExactTitle": null,
+          "possibleExistingAlias": "鉢形城の開城",
+          "registration": "alias-needs-date-and-scope-check",
+          "evidenceScope": "parent-record-only-do-not-assume-all-child-details-confirmed",
+          "sourceIds": [],
+          "original": {
+            "name": "鉢形城の戦い",
+            "registeredTitle": null,
+            "registration": "not-separately-registered",
+            "historicalStatus": "candidate-source-scope-described-in-parent-row",
+            "newFigure": "not-created-user-confirmation-required"
+          },
+          "newDiagramCreated": false
+        },
+        {
+          "title": "八王子城の戦い",
+          "nature": "battle-candidate",
+          "existingExactTitle": null,
+          "possibleExistingAlias": null,
+          "registration": "not-separately-registered",
+          "evidenceScope": "parent-record-only-do-not-assume-all-child-details-confirmed",
+          "sourceIds": [],
+          "original": {
+            "name": "八王子城の戦い",
+            "registeredTitle": null,
+            "registration": "not-separately-registered",
+            "historicalStatus": "candidate-source-scope-described-in-parent-row",
+            "newFigure": "not-created-user-confirmation-required"
+          },
+          "newDiagramCreated": false
+        },
+        {
+          "title": "小田原城攻囲（1590）",
+          "nature": "battle-candidate",
+          "existingExactTitle": null,
+          "possibleExistingAlias": "小田原開城",
+          "registration": "alias-needs-date-and-scope-check",
+          "evidenceScope": "parent-record-only-do-not-assume-all-child-details-confirmed",
+          "sourceIds": [],
+          "original": {
+            "name": "小田原城攻囲（1590）",
+            "registeredTitle": null,
+            "registration": "not-separately-registered",
+            "historicalStatus": "candidate-source-scope-described-in-parent-row",
+            "newFigure": "not-created-user-confirmation-required"
+          },
+          "newDiagramCreated": false
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.city.odawara.kanagawa.jp/kanko/hojo/p09347.html",
+          "locator": "北条氏五代100年の歴史・1590年条（山中・鉢形・八王子・韮山の各城）",
+          "readStatus": "public-body-confirmed",
+          "provenance": "first-half/decisions.json",
+          "note": "調査担当の読了記録を引継ぎ。今回独立再読なし"
+        }
+      ]
+    },
+    {
+      "ordinal": 16,
+      "title": "大坂夏の陣",
+      "proposedKind": "campaign",
+      "evidenceLevel": "public-explanatory-body-recorded",
+      "classificationUse": "ready-for-parent-scope-review",
+      "classificationHolds": [],
+      "children": [
+        {
+          "title": "樫井の戦い",
+          "nature": "battle-candidate",
+          "existingExactTitle": null,
+          "possibleExistingAlias": null,
+          "registration": "not-separately-registered",
+          "evidenceScope": "parent-record-only-do-not-assume-all-child-details-confirmed",
+          "sourceIds": [],
+          "original": {
+            "name": "樫井の戦い",
+            "registeredTitle": null,
+            "registration": "not-separately-registered",
+            "historicalStatus": "candidate-source-scope-described-in-parent-row",
+            "newFigure": "not-created-user-confirmation-required"
+          },
+          "newDiagramCreated": false
+        },
+        {
+          "title": "道明寺の戦い",
+          "nature": "battle-candidate",
+          "existingExactTitle": "道明寺の戦い",
+          "possibleExistingAlias": null,
+          "registration": "exact-title-date-needs-check",
+          "evidenceScope": "parent-record-only-do-not-assume-all-child-details-confirmed",
+          "sourceIds": [],
+          "original": {
+            "name": "道明寺の戦い",
+            "registeredTitle": "道明寺の戦い",
+            "registration": "existing-exact-title-date-needs-check",
+            "historicalStatus": "candidate-source-scope-described-in-parent-row",
+            "newFigure": "not-created-user-confirmation-required"
+          },
+          "newDiagramCreated": false
+        },
+        {
+          "title": "八尾・若江の戦い",
+          "nature": "battle-candidate",
+          "existingExactTitle": "八尾・若江の戦い",
+          "possibleExistingAlias": null,
+          "registration": "exact-title-date-needs-check",
+          "evidenceScope": "parent-record-only-do-not-assume-all-child-details-confirmed",
+          "sourceIds": [],
+          "original": {
+            "name": "八尾・若江の戦い",
+            "registeredTitle": "八尾・若江の戦い",
+            "registration": "existing-exact-title-date-needs-check",
+            "historicalStatus": "candidate-source-scope-described-in-parent-row",
+            "newFigure": "not-created-user-confirmation-required"
+          },
+          "newDiagramCreated": false
+        },
+        {
+          "title": "天王寺・岡山の戦い",
+          "nature": "battle-candidate",
+          "existingExactTitle": null,
+          "possibleExistingAlias": null,
+          "registration": "not-separately-registered",
+          "evidenceScope": "parent-record-only-do-not-assume-all-child-details-confirmed",
+          "sourceIds": [],
+          "original": {
+            "name": "天王寺・岡山の戦い",
+            "registeredTitle": null,
+            "registration": "not-separately-registered",
+            "historicalStatus": "candidate-source-scope-described-in-parent-row",
+            "newFigure": "not-created-user-confirmation-required"
+          },
+          "newDiagramCreated": false
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.archives.go.jp/exhibition/digital/ieyasu/contents5_04/",
+          "locator": "本文・夏の陣は旧暦4月25日開始～5月8日終結。子戦闘名のうち道明寺/八尾若江は別登録。樫井と天王寺岡山の個別本文は追加確認対象。",
+          "readStatus": "public-body-confirmed",
+          "provenance": "first-half/decisions.json",
+          "note": "調査担当の読了記録を引継ぎ。今回独立再読なし"
+        }
+      ]
+    },
+    {
+      "ordinal": 17,
+      "title": "大坂冬の陣",
+      "proposedKind": "campaign",
+      "evidenceLevel": "public-explanatory-body-recorded",
+      "classificationUse": "ready-for-parent-scope-review",
+      "classificationHolds": [],
+      "children": [
+        {
+          "title": "木津川口の戦い",
+          "nature": "battle-candidate",
+          "existingExactTitle": "木津川口の戦い",
+          "possibleExistingAlias": null,
+          "registration": "exact-title-date-needs-check",
+          "evidenceScope": "parent-record-only-do-not-assume-all-child-details-confirmed",
+          "sourceIds": [],
+          "original": {
+            "name": "木津川口の戦い",
+            "registeredTitle": "木津川口の戦い",
+            "registration": "existing-exact-title-date-needs-check",
+            "historicalStatus": "candidate-source-scope-described-in-parent-row",
+            "newFigure": "not-created-user-confirmation-required"
+          },
+          "newDiagramCreated": false
+        },
+        {
+          "title": "今福・鴫野の戦い",
+          "nature": "battle-candidate",
+          "existingExactTitle": "今福・鴫野の戦い",
+          "possibleExistingAlias": null,
+          "registration": "exact-title-date-needs-check",
+          "evidenceScope": "parent-record-only-do-not-assume-all-child-details-confirmed",
+          "sourceIds": [],
+          "original": {
+            "name": "今福・鴫野の戦い",
+            "registeredTitle": "今福・鴫野の戦い",
+            "registration": "existing-exact-title-date-needs-check",
+            "historicalStatus": "candidate-source-scope-described-in-parent-row",
+            "newFigure": "not-created-user-confirmation-required"
+          },
+          "newDiagramCreated": false
+        },
+        {
+          "title": "真田丸の戦い",
+          "nature": "battle-candidate",
+          "existingExactTitle": "真田丸の戦い",
+          "possibleExistingAlias": null,
+          "registration": "exact-title-date-needs-check",
+          "evidenceScope": "parent-record-only-do-not-assume-all-child-details-confirmed",
+          "sourceIds": [],
+          "original": {
+            "name": "真田丸の戦い",
+            "registeredTitle": "真田丸の戦い",
+            "registration": "existing-exact-title-date-needs-check",
+            "historicalStatus": "candidate-source-scope-described-in-parent-row",
+            "newFigure": "not-created-user-confirmation-required"
+          },
+          "newDiagramCreated": false
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.archives.go.jp/exhibition/digital/ieyasu/contents5_04/",
+          "locator": "冬の陣の包囲と真田丸、12月19日和睦の本文。全子の個別場所は既存catalogと合わせ確認。",
+          "readStatus": "public-body-confirmed",
+          "provenance": "first-half/decisions.json",
+          "note": "調査担当の読了記録を引継ぎ。今回独立再読なし"
+        }
+      ]
+    },
+    {
+      "ordinal": 18,
+      "title": "伏見城の戦い",
+      "proposedKind": "battle",
+      "evidenceLevel": "code-scope-only-or-unread",
+      "classificationUse": "needs-review",
+      "classificationHolds": [
+        "本文確認済みの根拠がこの整理にはない。既存局所図の対象確認と史実確認を分ける"
+      ],
+      "children": [],
+      "evidence": []
+    },
+    {
+      "ordinal": 19,
+      "title": "大津城の戦い",
+      "proposedKind": "battle",
+      "evidenceLevel": "code-scope-only-or-unread",
+      "classificationUse": "needs-review",
+      "classificationHolds": [
+        "本文確認済みの根拠がこの整理にはない。既存局所図の対象確認と史実確認を分ける"
+      ],
+      "children": [],
+      "evidence": []
+    },
+    {
+      "ordinal": 20,
+      "title": "第二次上田合戦",
+      "proposedKind": "battle",
+      "evidenceLevel": "code-scope-only-or-unread",
+      "classificationUse": "needs-review",
+      "classificationHolds": [
+        "本文確認済みの根拠がこの整理にはない。既存局所図の対象確認と史実確認を分ける"
+      ],
+      "children": [],
+      "evidence": []
+    },
+    {
+      "ordinal": 21,
+      "title": "田辺城の戦い",
+      "proposedKind": "battle",
+      "evidenceLevel": "code-scope-only-or-unread",
+      "classificationUse": "needs-review",
+      "classificationHolds": [
+        "本文確認済みの根拠がこの整理にはない。既存局所図の対象確認と史実確認を分ける"
+      ],
+      "children": [],
+      "evidence": []
+    },
+    {
+      "ordinal": 22,
+      "title": "長谷堂城の戦い",
+      "proposedKind": "battle",
+      "evidenceLevel": "code-scope-only-or-unread",
+      "classificationUse": "needs-review",
+      "classificationHolds": [
+        "本文確認済みの根拠がこの整理にはない。既存局所図の対象確認と史実確認を分ける"
+      ],
+      "children": [],
+      "evidence": []
+    },
+    {
+      "ordinal": 23,
+      "title": "高遠城の戦い",
+      "proposedKind": "battle",
+      "evidenceLevel": "code-scope-only-or-unread",
+      "classificationUse": "needs-review",
+      "classificationHolds": [
+        "本文確認済みの根拠がこの整理にはない。既存局所図の対象確認と史実確認を分ける"
+      ],
+      "children": [],
+      "evidence": []
+    },
+    {
+      "ordinal": 24,
+      "title": "長尾景虎の関東出兵",
+      "proposedKind": "campaign",
+      "evidenceLevel": "code-scope-only-or-unread",
+      "classificationUse": "needs-review",
+      "classificationHolds": [
+        "本文確認済みの根拠がこの整理にはない。既存局所図の対象確認と史実確認を分ける",
+        "別戦闘を内包する根拠が不足。戦役名・広さだけで分類を確定しない",
+        "期間・事件/出兵と戦役の境界を要確認。修復本文の範囲を超えて確定しない"
+      ],
+      "children": [
+        {
+          "title": "沼田城進出（1560）",
+          "nature": "noncombat-stage",
+          "existingExactTitle": null,
+          "possibleExistingAlias": null,
+          "registration": "not-separately-registered",
+          "evidenceScope": "parent-record-only-do-not-assume-all-child-details-confirmed",
+          "sourceIds": [],
+          "original": {
+            "name": "沼田城進出（1560）",
+            "registeredTitle": null,
+            "registration": "not-separately-registered",
+            "historicalStatus": "candidate-source-scope-described-in-parent-row",
+            "newFigure": "not-created-user-confirmation-required"
+          },
+          "newDiagramCreated": false
+        },
+        {
+          "title": "小田原城の戦い",
+          "nature": "battle-candidate",
+          "existingExactTitle": "小田原城の戦い",
+          "possibleExistingAlias": null,
+          "registration": "exact-title-date-needs-check",
+          "evidenceScope": "parent-record-only-do-not-assume-all-child-details-confirmed",
+          "sourceIds": [],
+          "original": {
+            "name": "小田原城の戦い",
+            "registeredTitle": "小田原城の戦い",
+            "registration": "existing-exact-title-date-needs-check",
+            "historicalStatus": "candidate-source-scope-described-in-parent-row",
+            "newFigure": "not-created-user-confirmation-required"
+          },
+          "newDiagramCreated": false
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.city.numata.gunma.jp/kanko/1004186/1004286/sanada/1001161.html",
+          "locator": "永禄3年（1560）・関東進出で沼田城が上杉氏へ帰属。戦闘があったとまではこの条で確定しない。",
+          "readStatus": "boundary-pending",
+          "provenance": "first-half/decisions.json",
+          "note": "調査担当の読了記録を引継ぎ。今回独立再読なし"
+        }
+      ]
+    },
+    {
+      "ordinal": 25,
+      "title": "小田原城の戦い",
+      "proposedKind": "battle",
+      "evidenceLevel": "code-scope-only-or-unread",
+      "classificationUse": "needs-review",
+      "classificationHolds": [
+        "本文確認済みの根拠がこの整理にはない。既存局所図の対象確認と史実確認を分ける"
+      ],
+      "children": [],
+      "evidence": []
+    },
+    {
+      "ordinal": 26,
+      "title": "牛久保城攻め",
+      "proposedKind": "battle",
+      "evidenceLevel": "code-scope-only-or-unread",
+      "classificationUse": "needs-review",
+      "classificationHolds": [
+        "本文確認済みの根拠がこの整理にはない。既存局所図の対象確認と史実確認を分ける"
+      ],
+      "children": [],
+      "evidence": []
+    },
+    {
+      "ordinal": 27,
+      "title": "森部の戦い",
+      "proposedKind": "battle",
+      "evidenceLevel": "code-scope-only-or-unread",
+      "classificationUse": "needs-review",
+      "classificationHolds": [
+        "本文確認済みの根拠がこの整理にはない。既存局所図の対象確認と史実確認を分ける"
+      ],
+      "children": [],
+      "evidence": []
+    },
+    {
+      "ordinal": 28,
+      "title": "第二次国府台合戦",
+      "proposedKind": "battle",
+      "evidenceLevel": "code-scope-only-or-unread",
+      "classificationUse": "needs-review",
+      "classificationHolds": [
+        "本文確認済みの根拠がこの整理にはない。既存局所図の対象確認と史実確認を分ける"
+      ],
+      "children": [],
+      "evidence": []
+    },
+    {
+      "ordinal": 29,
+      "title": "三河平定",
+      "proposedKind": "campaign",
+      "evidenceLevel": "code-scope-only-or-unread",
+      "classificationUse": "needs-review",
+      "classificationHolds": [
+        "本文確認済みの根拠がこの整理にはない。既存局所図の対象確認と史実確認を分ける",
+        "別戦闘を内包する根拠が不足。戦役名・広さだけで分類を確定しない",
+        "期間・事件/出兵と戦役の境界を要確認。修復本文の範囲を超えて確定しない"
+      ],
+      "children": [
+        {
+          "title": "吉田城の明渡し（1565）",
+          "nature": "noncombat-stage",
+          "existingExactTitle": null,
+          "possibleExistingAlias": null,
+          "registration": "not-separately-registered",
+          "evidenceScope": "parent-record-only-do-not-assume-all-child-details-confirmed",
+          "sourceIds": [],
+          "original": {
+            "name": "吉田城の明渡し（1565）",
+            "registeredTitle": null,
+            "registration": "not-separately-registered",
+            "historicalStatus": "candidate-source-scope-described-in-parent-row",
+            "newFigure": "not-created-user-confirmation-required"
+          },
+          "newDiagramCreated": false
+        }
+      ],
+      "evidence": []
+    },
+    {
+      "ordinal": 30,
+      "title": "永禄の変",
+      "proposedKind": "battle",
+      "evidenceLevel": "code-scope-only-or-unread",
+      "classificationUse": "needs-review",
+      "classificationHolds": [
+        "本文確認済みの根拠がこの整理にはない。既存局所図の対象確認と史実確認を分ける"
+      ],
+      "children": [],
+      "evidence": []
+    },
+    {
+      "ordinal": 31,
+      "title": "箕輪城落城",
+      "proposedKind": "battle",
+      "evidenceLevel": "code-scope-only-or-unread",
+      "classificationUse": "needs-review",
+      "classificationHolds": [
+        "本文確認済みの根拠がこの整理にはない。既存局所図の対象確認と史実確認を分ける"
+      ],
+      "children": [],
+      "evidence": []
+    },
+    {
+      "ordinal": 32,
+      "title": "月山富田城開城",
+      "proposedKind": "battle",
+      "evidenceLevel": "code-scope-only-or-unread",
+      "classificationUse": "needs-review",
+      "classificationHolds": [
+        "本文確認済みの根拠がこの整理にはない。既存局所図の対象確認と史実確認を分ける"
+      ],
+      "children": [],
+      "evidence": []
+    },
+    {
+      "ordinal": 33,
+      "title": "休松の戦い",
+      "proposedKind": "battle",
+      "evidenceLevel": "code-scope-only-or-unread",
+      "classificationUse": "needs-review",
+      "classificationHolds": [
+        "本文確認済みの根拠がこの整理にはない。既存局所図の対象確認と史実確認を分ける"
+      ],
+      "children": [],
+      "evidence": []
+    },
+    {
+      "ordinal": 34,
+      "title": "稲葉山城の戦い",
+      "proposedKind": "battle",
+      "evidenceLevel": "code-scope-only-or-unread",
+      "classificationUse": "needs-review",
+      "classificationHolds": [
+        "本文確認済みの根拠がこの整理にはない。既存局所図の対象確認と史実確認を分ける"
+      ],
+      "children": [],
+      "evidence": []
+    },
+    {
+      "ordinal": 35,
+      "title": "信長上洛",
+      "proposedKind": "campaign",
+      "evidenceLevel": "code-scope-only-or-unread",
+      "classificationUse": "needs-review",
+      "classificationHolds": [
+        "本文確認済みの根拠がこの整理にはない。既存局所図の対象確認と史実確認を分ける"
+      ],
+      "children": [
+        {
+          "title": "箕作城の戦い",
+          "nature": "battle-candidate",
+          "existingExactTitle": null,
+          "possibleExistingAlias": null,
+          "registration": "not-separately-registered",
+          "evidenceScope": "parent-record-only-do-not-assume-all-child-details-confirmed",
+          "sourceIds": [],
+          "original": {
+            "name": "箕作城の戦い",
+            "registeredTitle": null,
+            "registration": "not-separately-registered",
+            "historicalStatus": "candidate-source-scope-described-in-parent-row",
+            "newFigure": "not-created-user-confirmation-required"
+          },
+          "newDiagramCreated": false
+        },
+        {
+          "title": "観音寺城の攻略",
+          "nature": "battle-candidate",
+          "existingExactTitle": null,
+          "possibleExistingAlias": null,
+          "registration": "not-separately-registered",
+          "evidenceScope": "parent-record-only-do-not-assume-all-child-details-confirmed",
+          "sourceIds": [],
+          "original": {
+            "name": "観音寺城の攻略",
+            "registeredTitle": null,
+            "registration": "not-separately-registered",
+            "historicalStatus": "candidate-source-scope-described-in-parent-row",
+            "newFigure": "not-created-user-confirmation-required"
+          },
+          "newDiagramCreated": false
+        }
+      ],
+      "evidence": []
+    },
+    {
+      "ordinal": 36,
+      "title": "掛川城開城",
+      "proposedKind": "battle",
+      "evidenceLevel": "code-scope-only-or-unread",
+      "classificationUse": "needs-review",
+      "classificationHolds": [
+        "本文確認済みの根拠がこの整理にはない。既存局所図の対象確認と史実確認を分ける"
+      ],
+      "children": [],
+      "evidence": []
+    },
+    {
+      "ordinal": 37,
+      "title": "大河内城の戦い",
+      "proposedKind": "battle",
+      "evidenceLevel": "code-scope-only-or-unread",
+      "classificationUse": "needs-review",
+      "classificationHolds": [
+        "本文確認済みの根拠がこの整理にはない。既存局所図の対象確認と史実確認を分ける"
+      ],
+      "children": [],
+      "evidence": []
+    },
+    {
+      "ordinal": 38,
+      "title": "三増峠の戦い",
+      "proposedKind": "battle",
+      "evidenceLevel": "code-scope-only-or-unread",
+      "classificationUse": "needs-review",
+      "classificationHolds": [
+        "本文確認済みの根拠がこの整理にはない。既存局所図の対象確認と史実確認を分ける"
+      ],
+      "children": [],
+      "evidence": []
+    },
+    {
+      "ordinal": 39,
+      "title": "手這坂の戦い",
+      "proposedKind": "battle",
+      "evidenceLevel": "code-scope-only-or-unread",
+      "classificationUse": "needs-review",
+      "classificationHolds": [
+        "本文確認済みの根拠がこの整理にはない。既存局所図の対象確認と史実確認を分ける"
+      ],
+      "children": [],
+      "evidence": []
+    },
+    {
+      "ordinal": 40,
+      "title": "金ヶ崎の退き口",
+      "proposedKind": "battle",
+      "evidenceLevel": "code-scope-only-or-unread",
+      "classificationUse": "needs-review",
+      "classificationHolds": [
+        "本文確認済みの根拠がこの整理にはない。既存局所図の対象確認と史実確認を分ける"
+      ],
+      "children": [],
+      "evidence": []
+    },
+    {
+      "ordinal": 41,
+      "title": "石山合戦はじまる",
+      "proposedKind": "campaign",
+      "evidenceLevel": "public-explanatory-body-recorded",
+      "classificationUse": "needs-review",
+      "classificationHolds": [
+        "期間・事件/出兵と戦役の境界を要確認。修復本文の範囲を超えて確定しない"
+      ],
+      "children": [
+        {
+          "title": "野田・福島の戦い",
+          "nature": "battle-candidate",
+          "existingExactTitle": null,
+          "possibleExistingAlias": null,
+          "registration": "not-separately-registered",
+          "evidenceScope": "parent-record-only-do-not-assume-all-child-details-confirmed",
+          "sourceIds": [],
+          "original": {
+            "name": "野田・福島の戦い",
+            "registeredTitle": null,
+            "registration": "not-separately-registered",
+            "historicalStatus": "candidate-source-scope-described-in-parent-row",
+            "newFigure": "not-created-user-confirmation-required"
+          },
+          "newDiagramCreated": false
+        },
+        {
+          "title": "天王寺の戦い",
+          "nature": "battle-candidate",
+          "existingExactTitle": "天王寺の戦い",
+          "possibleExistingAlias": null,
+          "registration": "exact-title-date-needs-check",
+          "evidenceScope": "parent-record-only-do-not-assume-all-child-details-confirmed",
+          "sourceIds": [],
+          "original": {
+            "name": "天王寺の戦い",
+            "registeredTitle": "天王寺の戦い",
+            "registration": "existing-exact-title-date-needs-check",
+            "historicalStatus": "candidate-source-scope-described-in-parent-row",
+            "newFigure": "not-created-user-confirmation-required"
+          },
+          "newDiagramCreated": false
+        },
+        {
+          "title": "第一次木津川口の戦い",
+          "nature": "battle-candidate",
+          "existingExactTitle": "第一次木津川口の戦い",
+          "possibleExistingAlias": null,
+          "registration": "exact-title-date-needs-check",
+          "evidenceScope": "parent-record-only-do-not-assume-all-child-details-confirmed",
+          "sourceIds": [],
+          "original": {
+            "name": "第一次木津川口の戦い",
+            "registeredTitle": "第一次木津川口の戦い",
+            "registration": "existing-exact-title-date-needs-check",
+            "historicalStatus": "candidate-source-scope-described-in-parent-row",
+            "newFigure": "not-created-user-confirmation-required"
+          },
+          "newDiagramCreated": false
+        },
+        {
+          "title": "第二次木津川口の戦い",
+          "nature": "battle-candidate",
+          "existingExactTitle": "第二次木津川口の戦い",
+          "possibleExistingAlias": null,
+          "registration": "exact-title-date-needs-check",
+          "evidenceScope": "parent-record-only-do-not-assume-all-child-details-confirmed",
+          "sourceIds": [],
+          "original": {
+            "name": "第二次木津川口の戦い",
+            "registeredTitle": "第二次木津川口の戦い",
+            "registration": "existing-exact-title-date-needs-check",
+            "historicalStatus": "candidate-source-scope-described-in-parent-row",
+            "newFigure": "not-created-user-confirmation-required"
+          },
+          "newDiagramCreated": false
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.honganji.or.jp/about/",
+          "locator": "今回取得は東京浅草の東本願寺の法統説明。石山合戦の該当根拠が取得本文に見つからず、このURLだけで子関係を採用しない。",
+          "readStatus": "boundary-pending",
+          "provenance": "first-half/decisions.json",
+          "note": "調査担当の読了記録を引継ぎ。今回独立再読なし"
+        },
+        {
+          "id": "osakaMuseumIshiyamaPeriod",
+          "author": "大阪歴史博物館",
+          "title": "絵本拾遺信長記―描かれた石山合戦をよむ―",
+          "url": "https://www.osakamushis.jp/news/2020/tenjigae/201209.html",
+          "locator": "冒頭解説、抽出本文59行",
+          "accessed": "2026-11-08",
+          "published": "2020-12-07",
+          "readStatus": "body-read",
+          "summary": "館の解説は1570〜1580年にわたる織田信長と大坂本願寺の戦いを石山合戦とする。展示される読本は江戸時代の娯楽作品で、描かれた個別戦闘を一次記録として採用しない。",
+          "datePrecision": "year-range",
+          "dates": {
+            "from": 1570,
+            "through": 1580
+          },
+          "supports": [
+            "長期戦役と開始時点のイベントの区別"
+          ],
+          "notSupports": [
+            "日単位の開戦日",
+            "本文にない子合戦の詳細"
+          ],
+          "provenance": "campaign-source-repairs/repairs.json",
+          "note": "修復担当の読了記録を引継ぎ。今回独立再読なし"
+        },
+        {
+          "id": "osakaCityHistoryVol2IshiyamaContents",
+          "author": "大阪市立図書館",
+          "title": "新修大阪市史 第2巻 目次",
+          "url": "https://www.oml.city.osaka.lg.jp/page/1171.html",
+          "locator": "第5章第3節2・3、653/660頁の見出しと細目（抽出本文339〜342行）",
+          "accessed": "2026-11-08",
+          "readStatus": "catalog-contents-read-not-book-body",
+          "summary": "公的目次は野田・福島の合戦と本願寺の挙兵、籠城戦・川口の合戦・開城を段階として分ける。市史本巻本文は今回未読。",
+          "supports": [
+            "野田・福島と川口の戦いが別局面として実在する目次上の構成"
+          ],
+          "notSupports": [
+            "川口が第一次/第二次木津川口のどちらかの確定",
+            "正確な個別日付"
+          ],
+          "provenance": "campaign-source-repairs/repairs.json",
+          "note": "修復担当の読了記録を引継ぎ。今回独立再読なし"
+        },
+        {
+          "id": "osakaFukushimaHistoricalSites",
+          "author": "大阪市福島区",
+          "title": "名所・旧跡",
+          "url": "https://www.city.osaka.lg.jp/fukushima/page/0000000858.html",
+          "locator": "海老江八坂神社の元亀元年条／野田城跡の石山合戦解説",
+          "accessed": "2026-11-08",
+          "readStatus": "body-read",
+          "summary": "区の解説は1570年の野田城と石山本願寺攻め、長期化した石山合戦、1576年の包囲と1578年の水軍との対抗拠点を記す。細かな人物行動・神社伝承は別検証とし、今回戦役内の複数局面の存在だけを比較する。",
+          "datePrecision": "year",
+          "supports": [
+            "1570開始局面と後年の局面の分離"
+          ],
+          "notSupports": [
+            "新しい図の精密な陣地"
+          ],
+          "provenance": "campaign-source-repairs/repairs.json",
+          "note": "修復担当の読了記録を引継ぎ。今回独立再読なし"
+        }
+      ]
+    },
+    {
+      "ordinal": 42,
+      "title": "木崎原の戦い",
+      "proposedKind": "battle",
+      "evidenceLevel": "code-scope-only-or-unread",
+      "classificationUse": "needs-review",
+      "classificationHolds": [
+        "本文確認済みの根拠がこの整理にはない。既存局所図の対象確認と史実確認を分ける"
+      ],
+      "children": [],
+      "evidence": []
+    },
+    {
+      "ordinal": 43,
+      "title": "朝倉氏滅亡",
+      "proposedKind": "campaign",
+      "evidenceLevel": "public-explanatory-body-recorded",
+      "classificationUse": "needs-review",
+      "classificationHolds": [
+        "別戦闘を内包する根拠が不足。戦役名・広さだけで分類を確定しない"
+      ],
+      "children": [
+        {
+          "title": "刀根坂の戦い",
+          "nature": "battle-candidate",
+          "existingExactTitle": null,
+          "possibleExistingAlias": null,
+          "registration": "not-separately-registered",
+          "evidenceScope": "parent-record-only-do-not-assume-all-child-details-confirmed",
+          "sourceIds": [],
+          "original": {
+            "name": "刀根坂の戦い",
+            "registeredTitle": null,
+            "registration": "not-separately-registered",
+            "historicalStatus": "candidate-source-scope-described-in-parent-row",
+            "newFigure": "not-created-user-confirmation-required"
+          },
+          "newDiagramCreated": false
+        },
+        {
+          "title": "一乗谷への侵攻",
+          "nature": "operation-or-retreat-stage",
+          "existingExactTitle": null,
+          "possibleExistingAlias": null,
+          "registration": "not-separately-registered",
+          "evidenceScope": "parent-record-only-do-not-assume-all-child-details-confirmed",
+          "sourceIds": [],
+          "original": {
+            "name": "一乗谷への侵攻",
+            "registeredTitle": null,
+            "registration": "not-separately-registered",
+            "historicalStatus": "candidate-source-scope-described-in-parent-row",
+            "newFigure": "not-created-user-confirmation-required"
+          },
+          "newDiagramCreated": false
+        },
+        {
+          "title": "大野方面への追撃",
+          "nature": "operation-or-retreat-stage",
+          "existingExactTitle": null,
+          "possibleExistingAlias": null,
+          "registration": "not-separately-registered",
+          "evidenceScope": "parent-record-only-do-not-assume-all-child-details-confirmed",
+          "sourceIds": [],
+          "original": {
+            "name": "大野方面への追撃",
+            "registeredTitle": null,
+            "registration": "not-separately-registered",
+            "historicalStatus": "candidate-source-scope-described-in-parent-row",
+            "newFigure": "not-created-user-confirmation-required"
+          },
+          "newDiagramCreated": false
+        }
+      ],
+      "evidence": [
+        {
+          "id": "asakuraMuseumFinalCampaignHistory",
+          "author": "福井県立一乗谷朝倉氏遺跡博物館",
+          "title": "朝倉氏の歴史",
+          "url": "https://asakura-museum.pref.fukui.lg.jp/site/history",
+          "locator": "元亀の争乱末尾、刀根坂敗北～一乗谷破却～大野移動（本文134〜135行）",
+          "accessed": "2026-11-08",
+          "readStatus": "body-read",
+          "summary": "刀根坂の敗北、一乗谷帰陣後の大野移動、織田方による一乗谷の破壊と義景の最期を異なる場所・段階で述べる。1573年の最終作戦を一乗谷一地点の決戦と扱わない。",
+          "datePrecision": "year/month; sourceJapanese-day-unconverted",
+          "dates": {
+            "year": 1573,
+            "japaneseMonth": 8,
+            "burningDays": [
+              18,
+              20
+            ]
+          },
+          "supports": [
+            "刀根坂の戦闘",
+            "一乗谷破却と大野での最期の分離"
+          ],
+          "notSupports": [
+            "大野の戦いという独立固有名",
+            "各隊の精密配置"
+          ],
+          "provenance": "campaign-source-repairs/repairs.json",
+          "note": "修復担当の読了記録を引継ぎ。今回独立再読なし"
+        },
+        {
+          "id": "asakuraMuseumGuide17Live",
+          "author": "福井県立一乗谷朝倉氏遺跡博物館",
+          "title": "音声ガイドマップ 17 城下町の滅亡とその後",
+          "url": "https://asakura-museum.pref.fukui.lg.jp/theme/ver2022/voiceguide/index.html",
+          "locator": "17 城下町の滅亡とその後",
+          "accessed": "2026-11-08",
+          "readStatus": "body-read",
+          "summary": "旧URLと異なりガイドのテキストを取得できる。1573年8月の刀根坂敗北と一乗谷から大野への退却を分ける。",
+          "datePrecision": "month",
+          "supports": [
+            "最終戦役の経路と局面分離"
+          ],
+          "provenance": "campaign-source-repairs/repairs.json",
+          "note": "修復担当の読了記録を引継ぎ。今回独立再読なし"
+        }
+      ]
+    },
+    {
+      "ordinal": 44,
+      "title": "小谷城落城",
+      "proposedKind": "battle",
+      "evidenceLevel": "code-scope-only-or-unread",
+      "classificationUse": "needs-review",
+      "classificationHolds": [
+        "本文確認済みの根拠がこの整理にはない。既存局所図の対象確認と史実確認を分ける"
+      ],
+      "children": [],
+      "evidence": []
+    },
+    {
+      "ordinal": 45,
+      "title": "長島一向一揆の平定",
+      "proposedKind": "campaign",
+      "evidenceLevel": "public-explanatory-body-recorded",
+      "classificationUse": "ready-for-parent-scope-review",
+      "classificationHolds": [],
+      "children": [
+        {
+          "title": "大鳥居城攻撃",
+          "nature": "battle-candidate",
+          "existingExactTitle": null,
+          "possibleExistingAlias": null,
+          "registration": "not-separately-registered",
+          "evidenceScope": "parent-record-only-do-not-assume-all-child-details-confirmed",
+          "sourceIds": [],
+          "original": {
+            "name": "大鳥居城攻撃",
+            "registeredTitle": null,
+            "registration": "not-separately-registered",
+            "historicalStatus": "candidate-source-scope-described-in-parent-row",
+            "newFigure": "not-created-user-confirmation-required"
+          },
+          "newDiagramCreated": false
+        },
+        {
+          "title": "篠橋城攻撃",
+          "nature": "battle-candidate",
+          "existingExactTitle": null,
+          "possibleExistingAlias": null,
+          "registration": "not-separately-registered",
+          "evidenceScope": "parent-record-only-do-not-assume-all-child-details-confirmed",
+          "sourceIds": [],
+          "original": {
+            "name": "篠橋城攻撃",
+            "registeredTitle": null,
+            "registration": "not-separately-registered",
+            "historicalStatus": "candidate-source-scope-described-in-parent-row",
+            "newFigure": "not-created-user-confirmation-required"
+          },
+          "newDiagramCreated": false
+        },
+        {
+          "title": "中江・屋長島攻撃",
+          "nature": "battle-candidate",
+          "existingExactTitle": null,
+          "possibleExistingAlias": null,
+          "registration": "not-separately-registered",
+          "evidenceScope": "parent-record-only-do-not-assume-all-child-details-confirmed",
+          "sourceIds": [],
+          "original": {
+            "name": "中江・屋長島攻撃",
+            "registeredTitle": null,
+            "registration": "not-separately-registered",
+            "historicalStatus": "candidate-source-scope-described-in-parent-row",
+            "newFigure": "not-created-user-confirmation-required"
+          },
+          "newDiagramCreated": false
+        },
+        {
+          "title": "長島城攻撃",
+          "nature": "battle-candidate",
+          "existingExactTitle": null,
+          "possibleExistingAlias": null,
+          "registration": "not-separately-registered",
+          "evidenceScope": "parent-record-only-do-not-assume-all-child-details-confirmed",
+          "sourceIds": [],
+          "original": {
+            "name": "長島城攻撃",
+            "registeredTitle": null,
+            "registration": "not-separately-registered",
+            "historicalStatus": "candidate-source-scope-described-in-parent-row",
+            "newFigure": "not-created-user-confirmation-required"
+          },
+          "newDiagramCreated": false
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.city.kuwana.lg.jp/documents/11574/symposium10.pdf",
+          "locator": "検索索引の1574年条に各攻撃を確認したが本文の直接取得は404。検索抜粋だけで正式採用しない。",
+          "readStatus": "source-fetch-failed",
+          "provenance": "first-half/decisions.json",
+          "note": "調査担当の読了記録を引継ぎ。今回独立再読なし"
+        },
+        {
+          "id": "kuwanaNagashima2020CityExplanation",
+          "author": "桑名市",
+          "title": "令和2年12月定例会 提出議案の概要について",
+          "url": "https://www.city.kuwana.lg.jp/documents/12519/20201203-094106.pdf",
+          "locator": "PDF15頁（印刷15）、長島一向一揆の年代別解説（抽出104〜118行）",
+          "accessed": "2026-11-08",
+          "published": "2020-12",
+          "readStatus": "body-read",
+          "summary": "市のPR事業説明に付された歴史概説が、1571・1573・1574年の長島攻めを区別し、1574年には長島・篠橋・大鳥居・柳ヶ島・中江等の拠点を列挙する。講談自体の本文や演出は史実根拠にしない。",
+          "datePrecision": "year",
+          "dates": [
+            1571,
+            1573,
+            1574
+          ],
+          "supports": [
+            "複数年の攻勢を区別",
+            "1574年攻略が単一地点だけではない"
+          ],
+          "notSupports": [
+            "各城の落城日",
+            "兵数や正確な攻撃隊配置"
+          ],
+          "provenance": "campaign-source-repairs/repairs.json",
+          "note": "修復担当の読了記録を引継ぎ。今回独立再読なし"
+        }
+      ]
+    },
+    {
+      "ordinal": 46,
+      "title": "備中兵乱",
+      "proposedKind": "campaign",
+      "evidenceLevel": "public-explanatory-body-recorded",
+      "classificationUse": "ready-for-parent-scope-review",
+      "classificationHolds": [],
+      "children": [
+        {
+          "title": "寺山城攻防",
+          "nature": "battle-candidate",
+          "existingExactTitle": null,
+          "possibleExistingAlias": null,
+          "registration": "not-separately-registered",
+          "evidenceScope": "parent-record-only-do-not-assume-all-child-details-confirmed",
+          "sourceIds": [],
+          "original": {
+            "name": "寺山城攻防",
+            "registeredTitle": null,
+            "registration": "not-separately-registered",
+            "historicalStatus": "candidate-source-scope-described-in-parent-row",
+            "newFigure": "not-created-user-confirmation-required"
+          },
+          "newDiagramCreated": false
+        },
+        {
+          "title": "備中松山城攻防",
+          "nature": "battle-candidate",
+          "existingExactTitle": null,
+          "possibleExistingAlias": null,
+          "registration": "not-separately-registered",
+          "evidenceScope": "parent-record-only-do-not-assume-all-child-details-confirmed",
+          "sourceIds": [],
+          "original": {
+            "name": "備中松山城攻防",
+            "registeredTitle": null,
+            "registration": "not-separately-registered",
+            "historicalStatus": "candidate-source-scope-described-in-parent-row",
+            "newFigure": "not-created-user-confirmation-required"
+          },
+          "newDiagramCreated": false
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.city.takahashi.lg.jp/site/bichu-matsuyama/enkaku.html",
+          "locator": "備中兵乱見出し・1574冬～1575夏、備中諸城の激戦。寺山は別の地名をあるく39本文。人物名/日付の誤植疑いを含むため日付命題へ転記しない。",
+          "readStatus": "public-body-confirmed",
+          "provenance": "first-half/decisions.json",
+          "note": "調査担当の読了記録を引継ぎ。今回独立再読なし"
+        }
+      ]
+    },
+    {
+      "ordinal": 47,
+      "title": "四万十川の戦い",
+      "proposedKind": "battle",
+      "evidenceLevel": "code-scope-only-or-unread",
+      "classificationUse": "needs-review",
+      "classificationHolds": [
+        "本文確認済みの根拠がこの整理にはない。既存局所図の対象確認と史実確認を分ける"
+      ],
+      "children": [],
+      "evidence": []
+    },
+    {
+      "ordinal": 48,
+      "title": "天王寺の戦い",
+      "proposedKind": "battle",
+      "evidenceLevel": "code-scope-only-or-unread",
+      "classificationUse": "needs-review",
+      "classificationHolds": [
+        "本文確認済みの根拠がこの整理にはない。既存局所図の対象確認と史実確認を分ける"
+      ],
+      "children": [],
+      "evidence": []
+    },
+    {
+      "ordinal": 49,
+      "title": "第一次木津川口の戦い",
+      "proposedKind": "battle",
+      "evidenceLevel": "code-scope-only-or-unread",
+      "classificationUse": "needs-review",
+      "classificationHolds": [
+        "本文確認済みの根拠がこの整理にはない。既存局所図の対象確認と史実確認を分ける"
+      ],
+      "children": [],
+      "evidence": []
+    },
+    {
+      "ordinal": 50,
+      "title": "七尾城の戦い",
+      "proposedKind": "battle",
+      "evidenceLevel": "code-scope-only-or-unread",
+      "classificationUse": "needs-review",
+      "classificationHolds": [
+        "本文確認済みの根拠がこの整理にはない。既存局所図の対象確認と史実確認を分ける"
+      ],
+      "children": [],
+      "evidence": []
+    },
+    {
+      "ordinal": 51,
+      "title": "手取川の戦い",
+      "proposedKind": "battle",
+      "evidenceLevel": "code-scope-only-or-unread",
+      "classificationUse": "needs-review",
+      "classificationHolds": [
+        "本文確認済みの根拠がこの整理にはない。既存局所図の対象確認と史実確認を分ける"
+      ],
+      "children": [],
+      "evidence": []
+    },
+    {
+      "ordinal": 52,
+      "title": "信貴山城の戦い",
+      "proposedKind": "battle",
+      "evidenceLevel": "code-scope-only-or-unread",
+      "classificationUse": "needs-review",
+      "classificationHolds": [
+        "本文確認済みの根拠がこの整理にはない。既存局所図の対象確認と史実確認を分ける"
+      ],
+      "children": [],
+      "evidence": []
+    },
+    {
+      "ordinal": 53,
+      "title": "中国攻め",
+      "proposedKind": "campaign",
+      "evidenceLevel": "public-explanatory-body-recorded",
+      "classificationUse": "ready-for-parent-scope-review",
+      "classificationHolds": [],
+      "children": [
+        {
+          "title": "上月城の戦い",
+          "nature": "battle-candidate",
+          "existingExactTitle": "上月城の戦い",
+          "possibleExistingAlias": null,
+          "registration": "exact-title-date-needs-check",
+          "evidenceScope": "parent-record-only-do-not-assume-all-child-details-confirmed",
+          "sourceIds": [],
+          "original": {
+            "name": "上月城の戦い",
+            "registeredTitle": "上月城の戦い",
+            "registration": "existing-exact-title-date-needs-check",
+            "historicalStatus": "candidate-source-scope-described-in-parent-row",
+            "newFigure": "not-created-user-confirmation-required"
+          },
+          "newDiagramCreated": false
+        },
+        {
+          "title": "三木の干殺し",
+          "nature": "battle-candidate",
+          "existingExactTitle": "三木の干殺し",
+          "possibleExistingAlias": null,
+          "registration": "exact-title-date-needs-check",
+          "evidenceScope": "parent-record-only-do-not-assume-all-child-details-confirmed",
+          "sourceIds": [],
+          "original": {
+            "name": "三木の干殺し",
+            "registeredTitle": "三木の干殺し",
+            "registration": "existing-exact-title-date-needs-check",
+            "historicalStatus": "candidate-source-scope-described-in-parent-row",
+            "newFigure": "not-created-user-confirmation-required"
+          },
+          "newDiagramCreated": false
+        },
+        {
+          "title": "鳥取城の戦い",
+          "nature": "battle-candidate",
+          "existingExactTitle": null,
+          "possibleExistingAlias": "鳥取の渇え殺し",
+          "registration": "alias-needs-date-and-scope-check",
+          "evidenceScope": "parent-record-only-do-not-assume-all-child-details-confirmed",
+          "sourceIds": [],
+          "original": {
+            "name": "鳥取城の戦い",
+            "registeredTitle": null,
+            "registration": "not-separately-registered",
+            "historicalStatus": "candidate-source-scope-described-in-parent-row",
+            "newFigure": "not-created-user-confirmation-required"
+          },
+          "newDiagramCreated": false
+        },
+        {
+          "title": "備中高松城の戦い",
+          "nature": "battle-candidate",
+          "existingExactTitle": null,
+          "possibleExistingAlias": "備中高松城の水攻め",
+          "registration": "alias-needs-date-and-scope-check",
+          "evidenceScope": "parent-record-only-do-not-assume-all-child-details-confirmed",
+          "sourceIds": [],
+          "original": {
+            "name": "備中高松城の戦い",
+            "registeredTitle": null,
+            "registration": "not-separately-registered",
+            "historicalStatus": "candidate-source-scope-described-in-parent-row",
+            "newFigure": "not-created-user-confirmation-required"
+          },
+          "newDiagramCreated": false
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.city.miki.lg.jp/soshiki/33/91671.html",
+          "locator": "三木合戦の中国攻略内での位置付け本文、年表の上月攻略。鳥取/高松との関係は三木史跡解説に包囲戦の後続事例としてあり、正式な戦役子関係は別検証。",
+          "readStatus": "public-body-confirmed",
+          "provenance": "first-half/decisions.json",
+          "note": "調査担当の読了記録を引継ぎ。今回独立再読なし"
+        }
+      ]
+    },
+    {
+      "ordinal": 54,
+      "title": "御館の乱",
+      "proposedKind": "campaign",
+      "evidenceLevel": "partial-public-body-recorded",
+      "classificationUse": "needs-review",
+      "classificationHolds": [
+        "本文確認済みの根拠がこの整理にはない。既存局所図の対象確認と史実確認を分ける"
+      ],
+      "children": [
+        {
+          "title": "御館攻防",
+          "nature": "battle-candidate",
+          "existingExactTitle": null,
+          "possibleExistingAlias": null,
+          "registration": "not-separately-registered",
+          "evidenceScope": "parent-record-only-do-not-assume-all-child-details-confirmed",
+          "sourceIds": [],
+          "original": {
+            "name": "御館攻防",
+            "registeredTitle": null,
+            "registration": "not-separately-registered",
+            "historicalStatus": "candidate-source-scope-described-in-parent-row",
+            "newFigure": "not-created-user-confirmation-required"
+          },
+          "newDiagramCreated": false
+        },
+        {
+          "title": "鮫ヶ尾城の戦い",
+          "nature": "battle-candidate",
+          "existingExactTitle": null,
+          "possibleExistingAlias": null,
+          "registration": "not-separately-registered",
+          "evidenceScope": "parent-record-only-do-not-assume-all-child-details-confirmed",
+          "sourceIds": [],
+          "original": {
+            "name": "鮫ヶ尾城の戦い",
+            "registeredTitle": null,
+            "registration": "not-separately-registered",
+            "historicalStatus": "candidate-source-scope-described-in-parent-row",
+            "newFigure": "not-created-user-confirmation-required"
+          },
+          "newDiagramCreated": false
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.city.joetsu.niigata.jp/uploaded/attachment/48764.pdf",
+          "locator": "上杉景勝書状の公的解説。検索本文には御館落城→鮫ヶ尾退去を記載、直接PDF抽出は文字脱落で詳細判読不十分。書状3月19日より後の3月24日を手紙に書いた事実としない。",
+          "readStatus": "public-body-partial",
+          "provenance": "first-half/decisions.json",
+          "note": "調査担当の読了記録を引継ぎ。今回独立再読なし"
+        }
+      ]
+    },
+    {
+      "ordinal": 55,
+      "title": "上月城の戦い",
+      "proposedKind": "battle",
+      "evidenceLevel": "code-scope-only-or-unread",
+      "classificationUse": "needs-review",
+      "classificationHolds": [
+        "本文確認済みの根拠がこの整理にはない。既存局所図の対象確認と史実確認を分ける"
+      ],
+      "children": [],
+      "evidence": []
+    },
+    {
+      "ordinal": 56,
+      "title": "第二次木津川口の戦い",
+      "proposedKind": "battle",
+      "evidenceLevel": "code-scope-only-or-unread",
+      "classificationUse": "needs-review",
+      "classificationHolds": [
+        "本文確認済みの根拠がこの整理にはない。既存局所図の対象確認と史実確認を分ける"
+      ],
+      "children": [],
+      "evidence": []
+    },
+    {
+      "ordinal": 57,
+      "title": "丹波・丹後平定",
+      "proposedKind": "campaign",
+      "evidenceLevel": "public-explanatory-body-recorded",
+      "classificationUse": "needs-review",
+      "classificationHolds": [
+        "期間・事件/出兵と戦役の境界を要確認。修復本文の範囲を超えて確定しない"
+      ],
+      "children": [
+        {
+          "title": "八上城の戦い",
+          "nature": "battle-candidate",
+          "existingExactTitle": null,
+          "possibleExistingAlias": null,
+          "registration": "not-separately-registered",
+          "evidenceScope": "parent-record-only-do-not-assume-all-child-details-confirmed",
+          "sourceIds": [],
+          "original": {
+            "name": "八上城の戦い",
+            "registeredTitle": null,
+            "registration": "not-separately-registered",
+            "historicalStatus": "candidate-source-scope-described-in-parent-row",
+            "newFigure": "not-created-user-confirmation-required"
+          },
+          "newDiagramCreated": false
+        },
+        {
+          "title": "黒井城の戦い",
+          "nature": "battle-candidate",
+          "existingExactTitle": null,
+          "possibleExistingAlias": null,
+          "registration": "not-separately-registered",
+          "evidenceScope": "parent-record-only-do-not-assume-all-child-details-confirmed",
+          "sourceIds": [],
+          "original": {
+            "name": "黒井城の戦い",
+            "registeredTitle": null,
+            "registration": "not-separately-registered",
+            "historicalStatus": "candidate-source-scope-described-in-parent-row",
+            "newFigure": "not-created-user-confirmation-required"
+          },
+          "newDiagramCreated": false
+        },
+        {
+          "title": "丹後方面の攻略（名称未確定）",
+          "nature": "battle-candidate",
+          "existingExactTitle": null,
+          "possibleExistingAlias": null,
+          "registration": "not-separately-registered",
+          "evidenceScope": "parent-record-only-do-not-assume-all-child-details-confirmed",
+          "sourceIds": [],
+          "original": {
+            "name": "丹後方面の攻略（名称未確定）",
+            "registeredTitle": null,
+            "registration": "not-separately-registered",
+            "historicalStatus": "candidate-source-scope-described-in-parent-row",
+            "newFigure": "not-created-user-confirmation-required"
+          },
+          "newDiagramCreated": false
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.city.tambasasayama.lg.jp/material/files/group/75/sengokuransenomichi.pdf",
+          "locator": "既存locator八上城/付城。今回PDFは11MB超で本文取得失敗。市長日記の園部/八上/黒井記事は補助資料に留める。",
+          "readStatus": "source-fetch-failed",
+          "provenance": "first-half/decisions.json",
+          "note": "調査担当の読了記録を引継ぎ。今回独立再読なし"
+        },
+        {
+          "id": "sasayamaHatanoHideharuCampaign",
+          "author": "丹波篠山市",
+          "title": "波多野秀治（悲運の武将）",
+          "url": "https://www.city.tambasasayama.lg.jp/photo_history/2/jinbutu/tambasasayamanoyumeijin/18757.html",
+          "locator": "丹波攻略の開始と八上城包囲の段落（本文47行）",
+          "accessed": "2026-11-08",
+          "published": "2021-10-19",
+          "readStatus": "body-read",
+          "summary": "1575年に始まる丹波攻略と1578年からの八上城包囲を区別する。八上は戦役中の具体的攻囲として候補化できる。秀治の最期の異説や日付は今回採用しない。",
+          "datePrecision": "year",
+          "dates": [
+            1575,
+            1578
+          ],
+          "supports": [
+            "丹波攻略→八上城包囲"
+          ],
+          "provenance": "campaign-source-repairs/repairs.json",
+          "note": "修復担当の読了記録を引継ぎ。今回独立再読なし"
+        },
+        {
+          "id": "tambaKuroiCastleCampaign",
+          "author": "丹波市 社会教育・文化財課",
+          "title": "黒井城跡",
+          "url": "https://www.city.tamba.lg.jp/soshiki/shakaikyoikubunkazaika/gyomuannai/7/1/1922.html",
+          "locator": "国指定文化財（史跡）の冒頭（本文148行）",
+          "accessed": "2026-11-08",
+          "published": "2026-09-16",
+          "readStatus": "body-read",
+          "summary": "黒井城が信長・明智による二度の丹波攻略の舞台と説明される。1回の1579決戦へ全攻勢を混ぜない。",
+          "datePrecision": "undated-in-this-paragraph",
+          "supports": [
+            "丹波攻略→黒井城の攻防"
+          ],
+          "provenance": "campaign-source-repairs/repairs.json",
+          "note": "修復担当の読了記録を引継ぎ。今回独立再読なし"
+        },
+        {
+          "id": "tambaYagiLetterLecture2025",
+          "author": "山崎裕太／丹波市公開講座資料",
+          "title": "中世城郭の楽しみ方と春日の山城",
+          "url": "https://www.city.tamba.lg.jp/material/files/group/50/rekisikouza6.pdf",
+          "locator": "PDF1〜2頁、（天正3年）11月24日吉川元春宛八木豊信書状の書き下しと現代語訳",
+          "accessed": "2026-11-08",
+          "published": "2025-02-01",
+          "readStatus": "transcription-read-not-original-handwriting",
+          "summary": "吉川家文書の翻刻紹介は、明智の丹波侵攻と荻野の黒井籠城、周囲の陣所を同じ状況報告として示す。来春の統一予測は噂であり実際の平定完了ではない。",
+          "datePrecision": "source-lunisolar-day-with-supplied-year",
+          "date": {
+            "year": 1575,
+            "japaneseMonth": 11,
+            "japaneseDay": 24,
+            "yearSupplied": true
+          },
+          "supports": [
+            "同時代書状の翻刻による丹波侵攻と黒井攻囲の結び付き"
+          ],
+          "notSupports": [
+            "12/13陣の精密位置",
+            "予測された翌春の平定を史実化"
+          ],
+          "provenance": "campaign-source-repairs/repairs.json",
+          "note": "修復担当の読了記録を引継ぎ。今回独立再読なし"
+        }
+      ]
+    },
+    {
+      "ordinal": 58,
+      "title": "有岡城の戦い",
+      "proposedKind": "battle",
+      "evidenceLevel": "code-scope-only-or-unread",
+      "classificationUse": "needs-review",
+      "classificationHolds": [
+        "本文確認済みの根拠がこの整理にはない。既存局所図の対象確認と史実確認を分ける"
+      ],
+      "children": [],
+      "evidence": []
+    },
+    {
+      "ordinal": 59,
+      "title": "三木の干殺し",
+      "proposedKind": "campaign",
+      "evidenceLevel": "public-explanatory-body-recorded",
+      "classificationUse": "ready-for-parent-scope-review",
+      "classificationHolds": [],
+      "children": [
+        {
+          "title": "平田大村合戦",
+          "nature": "battle-candidate",
+          "existingExactTitle": null,
+          "possibleExistingAlias": null,
+          "registration": "not-separately-registered",
+          "evidenceScope": "parent-record-only-do-not-assume-all-child-details-confirmed",
+          "sourceIds": [],
+          "original": {
+            "name": "平田大村合戦",
+            "registeredTitle": null,
+            "registration": "not-separately-registered",
+            "historicalStatus": "candidate-source-scope-described-in-parent-row",
+            "newFigure": "not-created-user-confirmation-required"
+          },
+          "newDiagramCreated": false
+        },
+        {
+          "title": "平井山本陣への攻撃",
+          "nature": "battle-candidate",
+          "existingExactTitle": null,
+          "possibleExistingAlias": null,
+          "registration": "not-separately-registered",
+          "evidenceScope": "parent-record-only-do-not-assume-all-child-details-confirmed",
+          "sourceIds": [],
+          "original": {
+            "name": "平井山本陣への攻撃",
+            "registeredTitle": null,
+            "registration": "not-separately-registered",
+            "historicalStatus": "candidate-source-scope-described-in-parent-row",
+            "newFigure": "not-created-user-confirmation-required"
+          },
+          "newDiagramCreated": false
+        },
+        {
+          "title": "三木城の最終開城",
+          "nature": "noncombat-stage",
+          "existingExactTitle": null,
+          "possibleExistingAlias": null,
+          "registration": "not-separately-registered",
+          "evidenceScope": "parent-record-only-do-not-assume-all-child-details-confirmed",
+          "sourceIds": [],
+          "original": {
+            "name": "三木城の最終開城",
+            "registeredTitle": null,
+            "registration": "not-separately-registered",
+            "historicalStatus": "candidate-source-scope-described-in-parent-row",
+            "newFigure": "not-created-user-confirmation-required"
+          },
+          "newDiagramCreated": false
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.city.miki.lg.jp/soshiki/33/91671.html",
+          "locator": "年表・1579年9月9/10日平田大村合戦。平井山攻撃は史跡三木城跡及び付城跡・土塁ページの検索本文、今回その段落全文は未確認。",
+          "readStatus": "public-body-confirmed",
+          "provenance": "first-half/decisions.json",
+          "note": "調査担当の読了記録を引継ぎ。今回独立再読なし"
+        }
+      ]
+    },
+    {
+      "ordinal": 60,
+      "title": "高天神城の戦い",
+      "proposedKind": "battle",
+      "evidenceLevel": "code-scope-only-or-unread",
+      "classificationUse": "needs-review",
+      "classificationHolds": [
+        "本文確認済みの根拠がこの整理にはない。既存局所図の対象確認と史実確認を分ける"
+      ],
+      "children": [],
+      "evidence": []
+    },
+    {
+      "ordinal": 61,
+      "title": "天正伊賀の乱",
+      "proposedKind": "campaign",
+      "evidenceLevel": "public-explanatory-body-recorded",
+      "classificationUse": "ready-for-parent-scope-review",
+      "classificationHolds": [],
+      "children": [
+        {
+          "title": "雨乞山城の戦い",
+          "nature": "battle-candidate",
+          "existingExactTitle": null,
+          "possibleExistingAlias": null,
+          "registration": "not-separately-registered",
+          "evidenceScope": "parent-record-only-do-not-assume-all-child-details-confirmed",
+          "sourceIds": [
+            "igaSecond"
+          ],
+          "original": {
+            "title": "雨乞山城の戦い",
+            "registration": "未登録",
+            "sourceIds": [
+              "igaSecond"
+            ]
+          },
+          "newDiagramCreated": false
+        },
+        {
+          "title": "柏原城の戦い",
+          "nature": "battle-candidate",
+          "existingExactTitle": null,
+          "possibleExistingAlias": null,
+          "registration": "not-separately-registered",
+          "evidenceScope": "parent-record-only-do-not-assume-all-child-details-confirmed",
+          "sourceIds": [
+            "igaMuseum"
+          ],
+          "original": {
+            "title": "柏原城の戦い",
+            "registration": "未登録",
+            "sourceIds": [
+              "igaMuseum"
+            ]
+          },
+          "newDiagramCreated": false
+        }
+      ],
+      "evidence": [
+        {
+          "id": "igaMuseum",
+          "author": "伊賀市デジタルミュージアム／伊賀流忍者博物館",
+          "title": "柏原城跡",
+          "url": "https://adeac.jp/iga-city/viewer/mp100110-100020/ninja-relimg-011/",
+          "locator": "解題・説明",
+          "summary": "第二次天正伊賀の乱で最後まで立て籠もって織田軍と戦った城。原伊乱記の翻刻は未読。",
+          "status": "本文確認",
+          "accessed": "2026-11-08",
+          "provenance": "second-half/sources.json",
+          "note": "調査担当の読了記録を引継ぎ。今回独立再読なし"
+        },
+        {
+          "id": "igaSecond",
+          "author": "伊賀流忍者博物館",
+          "title": "第二次天正伊賀の乱",
+          "url": "https://www.ninja-museum.com/tensyoiganoran/tensyoiga02.html",
+          "locator": "本文とゆかりの地",
+          "summary": "複数方向からの侵攻と雨乞山城への攻撃、柏原城などの拠点を紹介。信長の現地指揮や兵数を新命題として採用しない。",
+          "status": "本文確認",
+          "accessed": "2026-11-08",
+          "provenance": "second-half/sources.json",
+          "note": "調査担当の読了記録を引継ぎ。今回独立再読なし"
+        }
+      ]
+    },
+    {
+      "ordinal": 62,
+      "title": "鳥取の渇え殺し",
+      "proposedKind": "battle",
+      "evidenceLevel": "code-scope-only-or-unread",
+      "classificationUse": "needs-review",
+      "classificationHolds": [
+        "本文確認済みの根拠がこの整理にはない。既存局所図の対象確認と史実確認を分ける"
+      ],
+      "children": [],
+      "evidence": []
+    },
+    {
+      "ordinal": 63,
+      "title": "甲州征伐",
+      "proposedKind": "campaign",
+      "evidenceLevel": "public-explanatory-body-recorded",
+      "classificationUse": "ready-for-parent-scope-review",
+      "classificationHolds": [],
+      "children": [
+        {
+          "title": "高遠城の戦い",
+          "nature": "battle-candidate",
+          "existingExactTitle": "高遠城の戦い",
+          "possibleExistingAlias": null,
+          "registration": "exact-title-date-needs-check",
+          "evidenceScope": "parent-record-only-do-not-assume-all-child-details-confirmed",
+          "sourceIds": [
+            "kaiGifu"
+          ],
+          "original": {
+            "title": "高遠城の戦い",
+            "registration": "登録済",
+            "sourceIds": [
+              "kaiGifu"
+            ]
+          },
+          "newDiagramCreated": false
+        },
+        {
+          "title": "天目山麓の戦い（田野）",
+          "nature": "battle-candidate",
+          "existingExactTitle": null,
+          "possibleExistingAlias": null,
+          "registration": "not-separately-registered",
+          "evidenceScope": "parent-record-only-do-not-assume-all-child-details-confirmed",
+          "sourceIds": [
+            "kaiGifu"
+          ],
+          "original": {
+            "title": "天目山麓の戦い（田野）",
+            "registration": "未登録",
+            "sourceIds": [
+              "kaiGifu"
+            ]
+          },
+          "newDiagramCreated": false
+        }
+      ],
+      "evidence": [
+        {
+          "id": "kaiGifu",
+          "author": "岐阜市",
+          "title": "第5章 安土城での絶頂期から本能寺の変",
+          "url": "https://www.city.gifu.lg.jp/_res/projects/default_project/_page_/001/005/148/chapter_5_s.pdf",
+          "locator": "本文106頁「天目山麓の戦い 甲州征伐」",
+          "summary": "複数方面から武田領へ侵攻し、高遠城の抵抗と田野での最終追撃を区別。天目山麓の単一戦闘と征伐全体を同一視しない。",
+          "status": "本文確認",
+          "accessed": "2026-11-08",
+          "provenance": "second-half/sources.json",
+          "note": "調査担当の読了記録を引継ぎ。今回独立再読なし"
+        }
+      ]
+    },
+    {
+      "ordinal": 64,
+      "title": "備中高松城の水攻め",
+      "proposedKind": "battle",
+      "evidenceLevel": "code-scope-only-or-unread",
+      "classificationUse": "needs-review",
+      "classificationHolds": [
+        "本文確認済みの根拠がこの整理にはない。既存局所図の対象確認と史実確認を分ける"
+      ],
+      "children": [],
+      "evidence": []
+    },
+    {
+      "ordinal": 65,
+      "title": "神流川の戦い",
+      "proposedKind": "battle",
+      "evidenceLevel": "code-scope-only-or-unread",
+      "classificationUse": "needs-review",
+      "classificationHolds": [
+        "本文確認済みの根拠がこの整理にはない。既存局所図の対象確認と史実確認を分ける"
+      ],
+      "children": [],
+      "evidence": []
+    },
+    {
+      "ordinal": 66,
+      "title": "若神子の対陣",
+      "proposedKind": "battle",
+      "evidenceLevel": "code-scope-only-or-unread",
+      "classificationUse": "needs-review",
+      "classificationHolds": [
+        "本文確認済みの根拠がこの整理にはない。既存局所図の対象確認と史実確認を分ける",
+        "非戦闘の対陣であり、二値battle/campaignへの押込みを避ける"
+      ],
+      "children": [],
+      "evidence": []
+    },
+    {
+      "ordinal": 67,
+      "title": "中富川の戦い",
+      "proposedKind": "battle",
+      "evidenceLevel": "code-scope-only-or-unread",
+      "classificationUse": "needs-review",
+      "classificationHolds": [
+        "本文確認済みの根拠がこの整理にはない。既存局所図の対象確認と史実確認を分ける"
+      ],
+      "children": [],
+      "evidence": []
+    },
+    {
+      "ordinal": 68,
+      "title": "黒駒合戦",
+      "proposedKind": "battle",
+      "evidenceLevel": "code-scope-only-or-unread",
+      "classificationUse": "needs-review",
+      "classificationHolds": [
+        "本文確認済みの根拠がこの整理にはない。既存局所図の対象確認と史実確認を分ける"
+      ],
+      "children": [],
+      "evidence": []
+    },
+    {
+      "ordinal": 69,
+      "title": "岐阜城の開城",
+      "proposedKind": "battle",
+      "evidenceLevel": "code-scope-only-or-unread",
+      "classificationUse": "needs-review",
+      "classificationHolds": [
+        "本文確認済みの根拠がこの整理にはない。既存局所図の対象確認と史実確認を分ける"
+      ],
+      "children": [],
+      "evidence": []
+    },
+    {
+      "ordinal": 70,
+      "title": "松ヶ島城の戦い",
+      "proposedKind": "battle",
+      "evidenceLevel": "code-scope-only-or-unread",
+      "classificationUse": "needs-review",
+      "classificationHolds": [
+        "本文確認済みの根拠がこの整理にはない。既存局所図の対象確認と史実確認を分ける"
+      ],
+      "children": [],
+      "evidence": []
+    },
+    {
+      "ordinal": 71,
+      "title": "紀州征伐",
+      "proposedKind": "campaign",
+      "evidenceLevel": "public-explanatory-body-recorded",
+      "classificationUse": "ready-for-parent-scope-review",
+      "classificationHolds": [],
+      "children": [
+        {
+          "title": "根来寺攻め",
+          "nature": "battle-candidate",
+          "existingExactTitle": null,
+          "possibleExistingAlias": null,
+          "registration": "not-separately-registered",
+          "evidenceScope": "parent-record-only-do-not-assume-all-child-details-confirmed",
+          "sourceIds": [
+            "kishuMuseum"
+          ],
+          "original": {
+            "title": "根来寺攻め",
+            "registration": "未登録",
+            "sourceIds": [
+              "kishuMuseum"
+            ]
+          },
+          "newDiagramCreated": false
+        },
+        {
+          "title": "粉河寺焼き討ち",
+          "nature": "battle-candidate",
+          "existingExactTitle": null,
+          "possibleExistingAlias": null,
+          "registration": "not-separately-registered",
+          "evidenceScope": "parent-record-only-do-not-assume-all-child-details-confirmed",
+          "sourceIds": [
+            "kishuMuseum"
+          ],
+          "original": {
+            "title": "粉河寺焼き討ち",
+            "registration": "未登録",
+            "sourceIds": [
+              "kishuMuseum"
+            ]
+          },
+          "newDiagramCreated": false
+        },
+        {
+          "title": "太田城の水攻め",
+          "nature": "battle-candidate",
+          "existingExactTitle": null,
+          "possibleExistingAlias": null,
+          "registration": "not-separately-registered",
+          "evidenceScope": "parent-record-only-do-not-assume-all-child-details-confirmed",
+          "sourceIds": [
+            "kishuMuseum"
+          ],
+          "original": {
+            "title": "太田城の水攻め",
+            "registration": "未登録",
+            "sourceIds": [
+              "kishuMuseum"
+            ]
+          },
+          "newDiagramCreated": false
+        }
+      ],
+      "evidence": [
+        {
+          "id": "kishuMuseum",
+          "author": "和歌山県立博物館",
+          "title": "ミュージアムトークを行いました",
+          "url": "https://hakubutu.wakayama.jp/information/ミュージアムトークを行いました/",
+          "locator": "展示資料紹介2 羽柴秀吉朱印状",
+          "summary": "紀州への出陣、根来寺・粉河寺の焼き討ち、太田城の抗戦、高野山の屈服を区別。朱印状の公式解説であり原文全体の翻刻ではない。",
+          "status": "本文確認",
+          "accessed": "2026-11-08",
+          "provenance": "second-half/sources.json",
+          "note": "調査担当の読了記録を引継ぎ。今回独立再読なし"
+        }
+      ]
+    },
+    {
+      "ordinal": 72,
+      "title": "宇喜多勢の讃岐攻め",
+      "proposedKind": "campaign",
+      "evidenceLevel": "public-explanatory-body-recorded",
+      "classificationUse": "ready-for-parent-scope-review",
+      "classificationHolds": [],
+      "children": [
+        {
+          "title": "喜岡城の戦い",
+          "nature": "battle-candidate",
+          "existingExactTitle": null,
+          "possibleExistingAlias": null,
+          "registration": "not-separately-registered",
+          "evidenceScope": "parent-record-only-do-not-assume-all-child-details-confirmed",
+          "sourceIds": [
+            "sanukiLibrary"
+          ],
+          "original": {
+            "title": "喜岡城の戦い",
+            "registration": "未登録",
+            "sourceIds": [
+              "sanukiLibrary"
+            ]
+          },
+          "newDiagramCreated": false
+        },
+        {
+          "title": "香西城の戦い",
+          "nature": "battle-candidate",
+          "existingExactTitle": null,
+          "possibleExistingAlias": null,
+          "registration": "not-separately-registered",
+          "evidenceScope": "parent-record-only-do-not-assume-all-child-details-confirmed",
+          "sourceIds": [
+            "sanukiLibrary"
+          ],
+          "original": {
+            "title": "香西城の戦い",
+            "registration": "未登録",
+            "sourceIds": [
+              "sanukiLibrary"
+            ]
+          },
+          "newDiagramCreated": false
+        }
+      ],
+      "evidence": [
+        {
+          "id": "sanukiLibrary",
+          "author": "香川県立図書館",
+          "title": "香川県史年表 近世1585年～",
+          "url": "https://www.library.pref.kagawa.lg.jp/know/local/local_2033-02",
+          "locator": "1585年条",
+          "summary": "宇喜多・黒田軍の屋島上陸、喜岡城・香西城等の攻略、四国征討軍と長宗我部軍の和議を記載。家譜に依拠する日付は今回は採用しない。",
+          "status": "本文確認",
+          "accessed": "2026-11-08",
+          "provenance": "second-half/sources.json",
+          "note": "調査担当の読了記録を引継ぎ。今回独立再読なし"
+        }
+      ]
+    },
+    {
+      "ordinal": 73,
+      "title": "小早川隆景の伊予攻め",
+      "proposedKind": "campaign",
+      "evidenceLevel": "public-explanatory-body-recorded",
+      "classificationUse": "ready-for-parent-scope-review",
+      "classificationHolds": [],
+      "children": [
+        {
+          "title": "高尾城の戦い",
+          "nature": "battle-candidate",
+          "existingExactTitle": null,
+          "possibleExistingAlias": null,
+          "registration": "not-separately-registered",
+          "evidenceScope": "parent-record-only-do-not-assume-all-child-details-confirmed",
+          "sourceIds": [
+            "iyoNewsletter"
+          ],
+          "original": {
+            "title": "高尾城の戦い",
+            "registration": "未登録",
+            "sourceIds": [
+              "iyoNewsletter"
+            ]
+          },
+          "newDiagramCreated": false
+        },
+        {
+          "title": "丸山城の戦い",
+          "nature": "battle-candidate",
+          "existingExactTitle": null,
+          "possibleExistingAlias": null,
+          "registration": "not-separately-registered",
+          "evidenceScope": "parent-record-only-do-not-assume-all-child-details-confirmed",
+          "sourceIds": [
+            "iyoNewsletter"
+          ],
+          "original": {
+            "title": "丸山城の戦い",
+            "registration": "未登録",
+            "sourceIds": [
+              "iyoNewsletter"
+            ]
+          },
+          "newDiagramCreated": false
+        },
+        {
+          "title": "野々市ヶ原の戦い",
+          "nature": "battle-candidate",
+          "existingExactTitle": null,
+          "possibleExistingAlias": null,
+          "registration": "not-separately-registered",
+          "evidenceScope": "parent-record-only-do-not-assume-all-child-details-confirmed",
+          "sourceIds": [
+            "iyoNewsletter"
+          ],
+          "original": {
+            "title": "野々市ヶ原の戦い",
+            "registration": "未登録",
+            "sourceIds": [
+              "iyoNewsletter"
+            ]
+          },
+          "newDiagramCreated": false
+        }
+      ],
+      "evidence": [
+        {
+          "id": "iyoNewsletter",
+          "author": "新居浜市神郷公民館",
+          "title": "神郷公民館だより 平成29年9月号",
+          "url": "https://www.city.niihama.lg.jp/uploaded/attachment/29146.pdf",
+          "locator": "PDF2頁「天正の陣」その後、領地・子孫",
+          "summary": "小早川軍に対する高尾城・丸山・野々市ヶ原の戦闘を区別。公民館の地域史紹介であり詳細日時・兵数の精密根拠にはしない。検索見出しの館報15年10月号とPDF実内容は異なる。",
+          "status": "本文確認",
+          "accessed": "2026-11-08",
+          "provenance": "second-half/sources.json",
+          "note": "調査担当の読了記録を引継ぎ。今回独立再読なし"
+        }
+      ]
+    },
+    {
+      "ordinal": 74,
+      "title": "四国攻め",
+      "proposedKind": "campaign",
+      "evidenceLevel": "public-explanatory-body-recorded",
+      "classificationUse": "ready-for-parent-scope-review",
+      "classificationHolds": [],
+      "children": [
+        {
+          "title": "喜岡城の戦い",
+          "nature": "battle-candidate",
+          "existingExactTitle": null,
+          "possibleExistingAlias": null,
+          "registration": "not-separately-registered",
+          "evidenceScope": "parent-record-only-do-not-assume-all-child-details-confirmed",
+          "sourceIds": [
+            "sanukiLibrary"
+          ],
+          "original": {
+            "title": "喜岡城の戦い",
+            "registration": "未登録",
+            "sourceIds": [
+              "sanukiLibrary"
+            ]
+          },
+          "newDiagramCreated": false
+        },
+        {
+          "title": "香西城の戦い",
+          "nature": "battle-candidate",
+          "existingExactTitle": null,
+          "possibleExistingAlias": null,
+          "registration": "not-separately-registered",
+          "evidenceScope": "parent-record-only-do-not-assume-all-child-details-confirmed",
+          "sourceIds": [
+            "sanukiLibrary"
+          ],
+          "original": {
+            "title": "香西城の戦い",
+            "registration": "未登録",
+            "sourceIds": [
+              "sanukiLibrary"
+            ]
+          },
+          "newDiagramCreated": false
+        },
+        {
+          "title": "一宮城の戦い",
+          "nature": "battle-candidate",
+          "existingExactTitle": null,
+          "possibleExistingAlias": null,
+          "registration": "not-separately-registered",
+          "evidenceScope": "parent-record-only-do-not-assume-all-child-details-confirmed",
+          "sourceIds": [
+            "ichinomiyaAttack"
+          ],
+          "original": {
+            "title": "一宮城の戦い",
+            "registration": "未登録",
+            "sourceIds": [
+              "ichinomiyaAttack"
+            ]
+          },
+          "newDiagramCreated": false
+        },
+        {
+          "title": "高尾城の戦い",
+          "nature": "battle-candidate",
+          "existingExactTitle": null,
+          "possibleExistingAlias": null,
+          "registration": "not-separately-registered",
+          "evidenceScope": "parent-record-only-do-not-assume-all-child-details-confirmed",
+          "sourceIds": [
+            "iyoNewsletter"
+          ],
+          "original": {
+            "title": "高尾城の戦い",
+            "registration": "未登録",
+            "sourceIds": [
+              "iyoNewsletter"
+            ]
+          },
+          "newDiagramCreated": false
+        },
+        {
+          "title": "丸山城の戦い",
+          "nature": "battle-candidate",
+          "existingExactTitle": null,
+          "possibleExistingAlias": null,
+          "registration": "not-separately-registered",
+          "evidenceScope": "parent-record-only-do-not-assume-all-child-details-confirmed",
+          "sourceIds": [
+            "iyoNewsletter"
+          ],
+          "original": {
+            "title": "丸山城の戦い",
+            "registration": "未登録",
+            "sourceIds": [
+              "iyoNewsletter"
+            ]
+          },
+          "newDiagramCreated": false
+        },
+        {
+          "title": "野々市ヶ原の戦い",
+          "nature": "battle-candidate",
+          "existingExactTitle": null,
+          "possibleExistingAlias": null,
+          "registration": "not-separately-registered",
+          "evidenceScope": "parent-record-only-do-not-assume-all-child-details-confirmed",
+          "sourceIds": [
+            "iyoNewsletter"
+          ],
+          "original": {
+            "title": "野々市ヶ原の戦い",
+            "registration": "未登録",
+            "sourceIds": [
+              "iyoNewsletter"
+            ]
+          },
+          "newDiagramCreated": false
+        }
+      ],
+      "evidence": [
+        {
+          "id": "ichinomiyaAttack",
+          "author": "徳島市（配信PR TIMES）",
+          "title": "豊臣兄弟！主人公羽柴秀長が攻めた城 一宮城跡を歩く",
+          "url": "https://prtimes.jp/main/html/rd/p/000000570.000096281.html",
+          "locator": "本文第2段落",
+          "summary": "四国平定のため秀長が一宮城を攻め、長宗我部側が明け渡したと説明する自治体発表。",
+          "status": "本文確認",
+          "accessed": "2026-11-08",
+          "provenance": "second-half/sources.json",
+          "note": "調査担当の読了記録を引継ぎ。今回独立再読なし"
+        },
+        {
+          "id": "iyoNewsletter",
+          "author": "新居浜市神郷公民館",
+          "title": "神郷公民館だより 平成29年9月号",
+          "url": "https://www.city.niihama.lg.jp/uploaded/attachment/29146.pdf",
+          "locator": "PDF2頁「天正の陣」その後、領地・子孫",
+          "summary": "小早川軍に対する高尾城・丸山・野々市ヶ原の戦闘を区別。公民館の地域史紹介であり詳細日時・兵数の精密根拠にはしない。検索見出しの館報15年10月号とPDF実内容は異なる。",
+          "status": "本文確認",
+          "accessed": "2026-11-08",
+          "provenance": "second-half/sources.json",
+          "note": "調査担当の読了記録を引継ぎ。今回独立再読なし"
+        },
+        {
+          "id": "sanukiLibrary",
+          "author": "香川県立図書館",
+          "title": "香川県史年表 近世1585年～",
+          "url": "https://www.library.pref.kagawa.lg.jp/know/local/local_2033-02",
+          "locator": "1585年条",
+          "summary": "宇喜多・黒田軍の屋島上陸、喜岡城・香西城等の攻略、四国征討軍と長宗我部軍の和議を記載。家譜に依拠する日付は今回は採用しない。",
+          "status": "本文確認",
+          "accessed": "2026-11-08",
+          "provenance": "second-half/sources.json",
+          "note": "調査担当の読了記録を引継ぎ。今回独立再読なし"
+        }
+      ]
+    },
+    {
+      "ordinal": 75,
+      "title": "富山の役",
+      "proposedKind": "campaign",
+      "evidenceLevel": "code-scope-only-or-unread",
+      "classificationUse": "needs-review",
+      "classificationHolds": [
+        "本文確認済みの根拠がこの整理にはない。既存局所図の対象確認と史実確認を分ける",
+        "別戦闘を内包する根拠が不足。戦役名・広さだけで分類を確定しない",
+        "期間・事件/出兵と戦役の境界を要確認。修復本文の範囲を超えて確定しない"
+      ],
+      "children": [],
+      "evidence": []
+    },
+    {
+      "ordinal": 76,
+      "title": "人取橋の戦い",
+      "proposedKind": "battle",
+      "evidenceLevel": "code-scope-only-or-unread",
+      "classificationUse": "needs-review",
+      "classificationHolds": [
+        "本文確認済みの根拠がこの整理にはない。既存局所図の対象確認と史実確認を分ける"
+      ],
+      "children": [],
+      "evidence": []
+    },
+    {
+      "ordinal": 77,
+      "title": "岩屋城の戦い",
+      "proposedKind": "battle",
+      "evidenceLevel": "code-scope-only-or-unread",
+      "classificationUse": "needs-review",
+      "classificationHolds": [
+        "本文確認済みの根拠がこの整理にはない。既存局所図の対象確認と史実確認を分ける"
+      ],
+      "children": [],
+      "evidence": []
+    },
+    {
+      "ordinal": 78,
+      "title": "戸次川の戦い",
+      "proposedKind": "battle",
+      "evidenceLevel": "code-scope-only-or-unread",
+      "classificationUse": "needs-review",
+      "classificationHolds": [
+        "本文確認済みの根拠がこの整理にはない。既存局所図の対象確認と史実確認を分ける"
+      ],
+      "children": [],
+      "evidence": []
+    },
+    {
+      "ordinal": 79,
+      "title": "九州平定",
+      "proposedKind": "campaign",
+      "evidenceLevel": "public-explanatory-body-recorded",
+      "classificationUse": "ready-for-parent-scope-review",
+      "classificationHolds": [],
+      "children": [
+        {
+          "title": "岩石城の戦い",
+          "nature": "battle-candidate",
+          "existingExactTitle": null,
+          "possibleExistingAlias": null,
+          "registration": "not-separately-registered",
+          "evidenceScope": "parent-record-only-do-not-assume-all-child-details-confirmed",
+          "sourceIds": [
+            "ganjaku"
+          ],
+          "original": {
+            "title": "岩石城の戦い",
+            "registration": "独立図未登録・年表注記「岩石城の落城」あり",
+            "sourceIds": [
+              "ganjaku"
+            ]
+          },
+          "newDiagramCreated": false
+        },
+        {
+          "title": "根白坂の戦い",
+          "nature": "battle-candidate",
+          "existingExactTitle": "根白坂の戦い",
+          "possibleExistingAlias": null,
+          "registration": "exact-title-date-needs-check",
+          "evidenceScope": "parent-record-only-do-not-assume-all-child-details-confirmed",
+          "sourceIds": [
+            "nejirozaka"
+          ],
+          "original": {
+            "title": "根白坂の戦い",
+            "registration": "登録済",
+            "sourceIds": [
+              "nejirozaka"
+            ]
+          },
+          "newDiagramCreated": false
+        }
+      ],
+      "evidence": [
+        {
+          "id": "ganjaku",
+          "author": "添田町",
+          "title": "岩石城跡（1）",
+          "url": "https://www.town.soeda.fukuoka.jp/site/siteibunkazai/1065.html",
+          "locator": "岩石山",
+          "summary": "九州平定の際の岩石城の戦いを明示。既存には史実注記があるが独立合戦図はない。",
+          "status": "本文確認",
+          "accessed": "2026-11-08",
+          "provenance": "second-half/sources.json",
+          "note": "調査担当の読了記録を引継ぎ。今回独立再読なし"
+        },
+        {
+          "id": "nejirozaka",
+          "author": "木城町",
+          "title": "城山公園・高城川合戦場・根白坂古戦場跡",
+          "url": "https://www.town.kijo.lg.jp/kankou_bunka_supo-tu/rekisi_bunkazai/1409.html",
+          "locator": "根白坂古戦場跡",
+          "summary": "九州征伐における高城救援のための島津軍と豊臣軍の戦闘として位置付ける。1578年の耳川・高城川合戦は別段落で区別。",
+          "status": "本文確認",
+          "accessed": "2026-11-08",
+          "provenance": "second-half/sources.json",
+          "note": "調査担当の読了記録を引継ぎ。今回独立再読なし"
+        }
+      ]
+    },
+    {
+      "ordinal": 80,
+      "title": "根白坂の戦い",
+      "proposedKind": "battle",
+      "evidenceLevel": "public-explanatory-body-recorded",
+      "classificationUse": "ready-for-parent-scope-review",
+      "classificationHolds": [],
+      "children": [],
+      "evidence": [
+        {
+          "id": "nejirozaka",
+          "author": "木城町",
+          "title": "城山公園・高城川合戦場・根白坂古戦場跡",
+          "url": "https://www.town.kijo.lg.jp/kankou_bunka_supo-tu/rekisi_bunkazai/1409.html",
+          "locator": "根白坂古戦場跡",
+          "summary": "九州征伐における高城救援のための島津軍と豊臣軍の戦闘として位置付ける。1578年の耳川・高城川合戦は別段落で区別。",
+          "status": "本文確認",
+          "accessed": "2026-11-08",
+          "provenance": "second-half/sources.json",
+          "note": "調査担当の読了記録を引継ぎ。今回独立再読なし"
+        }
+      ]
+    },
+    {
+      "ordinal": 81,
+      "title": "新発田城落城",
+      "proposedKind": "battle",
+      "evidenceLevel": "code-scope-only-or-unread",
+      "classificationUse": "needs-review",
+      "classificationHolds": [
+        "本文確認済みの根拠がこの整理にはない。既存局所図の対象確認と史実確認を分ける"
+      ],
+      "children": [],
+      "evidence": []
+    },
+    {
+      "ordinal": 82,
+      "title": "韮山城の戦い",
+      "proposedKind": "battle",
+      "evidenceLevel": "code-scope-only-or-unread",
+      "classificationUse": "needs-review",
+      "classificationHolds": [
+        "本文確認済みの根拠がこの整理にはない。既存局所図の対象確認と史実確認を分ける"
+      ],
+      "children": [],
+      "evidence": []
+    },
+    {
+      "ordinal": 83,
+      "title": "北国勢の上野攻め",
+      "proposedKind": "campaign",
+      "evidenceLevel": "public-explanatory-body-recorded",
+      "classificationUse": "needs-review",
+      "classificationHolds": [
+        "別戦闘を内包する根拠が不足。戦役名・広さだけで分類を確定しない"
+      ],
+      "children": [
+        {
+          "title": "松井田城の戦い",
+          "nature": "battle-candidate",
+          "existingExactTitle": null,
+          "possibleExistingAlias": null,
+          "registration": "not-separately-registered",
+          "evidenceScope": "parent-record-only-do-not-assume-all-child-details-confirmed",
+          "sourceIds": [
+            "matsuidaAnnaka"
+          ],
+          "original": {
+            "title": "松井田城の戦い",
+            "registration": "未登録",
+            "sourceIds": [
+              "matsuidaAnnaka"
+            ]
+          },
+          "newDiagramCreated": false
+        },
+        {
+          "title": "箕輪城の開城（1590年）",
+          "nature": "noncombat-stage",
+          "existingExactTitle": null,
+          "possibleExistingAlias": null,
+          "registration": "not-separately-registered",
+          "evidenceScope": "parent-record-only-do-not-assume-all-child-details-confirmed",
+          "sourceIds": [
+            "minowaLetter"
+          ],
+          "original": {
+            "title": "箕輪城の開城（1590年）",
+            "registration": "未登録",
+            "sourceIds": [
+              "minowaLetter"
+            ]
+          },
+          "newDiagramCreated": false
+        }
+      ],
+      "evidence": [
+        {
+          "id": "matsuidaAnnaka",
+          "author": "安中市",
+          "title": "貴重な遺構 松井田城址",
+          "url": "https://www.city.annaka.lg.jp/page/21636.html",
+          "locator": "松井田城址の沿革",
+          "summary": "北国勢が松井田城を攻略した後、上野・武蔵諸城を攻略して小田原へ至るという複数段階。",
+          "status": "本文確認",
+          "accessed": "2026-11-08",
+          "provenance": "second-half/sources.json",
+          "note": "調査担当の読了記録を引継ぎ。今回独立再読なし"
+        },
+        {
+          "id": "minowaLetter",
+          "author": "信州地域史料アーカイブ／真田宝物館蔵",
+          "title": "真田昌幸宛豊臣秀吉書状",
+          "url": "https://adeac.jp/shinshu-chiiki/texthtml/d100040-w000010-100040/w000010-100040/ht096230",
+          "locator": "天正18年4月29日・史料解説および訓読",
+          "summary": "松井田城落城後の箕輪城受取を説明し、武具・兵糧の受領等を命じる書状の訓読を掲載。1590年の箕輪を1566年登録と混同しない。",
+          "status": "本文確認",
+          "accessed": "2026-11-08",
+          "provenance": "second-half/sources.json",
+          "note": "調査担当の読了記録を引継ぎ。今回独立再読なし"
+        }
+      ]
+    },
+    {
+      "ordinal": 84,
+      "title": "鉢形城の開城",
+      "proposedKind": "battle",
+      "evidenceLevel": "code-scope-only-or-unread",
+      "classificationUse": "needs-review",
+      "classificationHolds": [
+        "本文確認済みの根拠がこの整理にはない。既存局所図の対象確認と史実確認を分ける"
+      ],
+      "children": [],
+      "evidence": []
+    },
+    {
+      "ordinal": 85,
+      "title": "小田原開城",
+      "proposedKind": "battle",
+      "evidenceLevel": "code-scope-only-or-unread",
+      "classificationUse": "needs-review",
+      "classificationHolds": [
+        "本文確認済みの根拠がこの整理にはない。既存局所図の対象確認と史実確認を分ける"
+      ],
+      "children": [],
+      "evidence": []
+    },
+    {
+      "ordinal": 86,
+      "title": "文禄の役",
+      "proposedKind": "campaign",
+      "evidenceLevel": "public-explanatory-body-recorded",
+      "classificationUse": "ready-for-parent-scope-review",
+      "classificationHolds": [],
+      "children": [
+        {
+          "title": "釜山鎮の戦い",
+          "nature": "battle-candidate",
+          "existingExactTitle": null,
+          "possibleExistingAlias": null,
+          "registration": "not-separately-registered",
+          "evidenceScope": "parent-record-only-do-not-assume-all-child-details-confirmed",
+          "sourceIds": [
+            "imjin"
+          ],
+          "original": {
+            "title": "釜山鎮の戦い",
+            "registration": "現「文禄の役」に図素材あり・単一名未登録",
+            "sourceIds": [
+              "imjin"
+            ]
+          },
+          "newDiagramCreated": false
+        },
+        {
+          "title": "東莱城の戦い",
+          "nature": "battle-candidate",
+          "existingExactTitle": null,
+          "possibleExistingAlias": null,
+          "registration": "not-separately-registered",
+          "evidenceScope": "parent-record-only-do-not-assume-all-child-details-confirmed",
+          "sourceIds": [
+            "imjin"
+          ],
+          "original": {
+            "title": "東莱城の戦い",
+            "registration": "未登録",
+            "sourceIds": [
+              "imjin"
+            ]
+          },
+          "newDiagramCreated": false
+        },
+        {
+          "title": "尚州の戦い",
+          "nature": "battle-candidate",
+          "existingExactTitle": "尚州の戦い",
+          "possibleExistingAlias": null,
+          "registration": "exact-title-date-needs-check",
+          "evidenceScope": "parent-record-only-do-not-assume-all-child-details-confirmed",
+          "sourceIds": [
+            "imjin"
+          ],
+          "original": {
+            "title": "尚州の戦い",
+            "registration": "登録済",
+            "sourceIds": [
+              "imjin"
+            ]
+          },
+          "newDiagramCreated": false
+        },
+        {
+          "title": "忠州の戦い",
+          "nature": "battle-candidate",
+          "existingExactTitle": "忠州の戦い",
+          "possibleExistingAlias": null,
+          "registration": "exact-title-date-needs-check",
+          "evidenceScope": "parent-record-only-do-not-assume-all-child-details-confirmed",
+          "sourceIds": [
+            "imjin"
+          ],
+          "original": {
+            "title": "忠州の戦い",
+            "registration": "登録済",
+            "sourceIds": [
+              "imjin"
+            ]
+          },
+          "newDiagramCreated": false
+        },
+        {
+          "title": "玉浦海戦",
+          "nature": "battle-candidate",
+          "existingExactTitle": "玉浦海戦",
+          "possibleExistingAlias": null,
+          "registration": "exact-title-date-needs-check",
+          "evidenceScope": "parent-record-only-do-not-assume-all-child-details-confirmed",
+          "sourceIds": [
+            "imjin"
+          ],
+          "original": {
+            "title": "玉浦海戦",
+            "registration": "登録済",
+            "sourceIds": [
+              "imjin"
+            ]
+          },
+          "newDiagramCreated": false
+        },
+        {
+          "title": "閑山島海戦",
+          "nature": "battle-candidate",
+          "existingExactTitle": "閑山島海戦",
+          "possibleExistingAlias": null,
+          "registration": "exact-title-date-needs-check",
+          "evidenceScope": "parent-record-only-do-not-assume-all-child-details-confirmed",
+          "sourceIds": [
+            "imjin"
+          ],
+          "original": {
+            "title": "閑山島海戦",
+            "registration": "登録済",
+            "sourceIds": [
+              "imjin"
+            ]
+          },
+          "newDiagramCreated": false
+        },
+        {
+          "title": "第一次晋州城の戦い",
+          "nature": "battle-candidate",
+          "existingExactTitle": "第一次晋州城の戦い",
+          "possibleExistingAlias": null,
+          "registration": "exact-title-date-needs-check",
+          "evidenceScope": "parent-record-only-do-not-assume-all-child-details-confirmed",
+          "sourceIds": [
+            "imjin"
+          ],
+          "original": {
+            "title": "第一次晋州城の戦い",
+            "registration": "登録済",
+            "sourceIds": [
+              "imjin"
+            ]
+          },
+          "newDiagramCreated": false
+        },
+        {
+          "title": "平壌の戦い",
+          "nature": "battle-candidate",
+          "existingExactTitle": "平壌の戦い",
+          "possibleExistingAlias": null,
+          "registration": "exact-title-date-needs-check",
+          "evidenceScope": "parent-record-only-do-not-assume-all-child-details-confirmed",
+          "sourceIds": [
+            "imjin"
+          ],
+          "original": {
+            "title": "平壌の戦い",
+            "registration": "登録済",
+            "sourceIds": [
+              "imjin"
+            ]
+          },
+          "newDiagramCreated": false
+        },
+        {
+          "title": "碧蹄館の戦い",
+          "nature": "battle-candidate",
+          "existingExactTitle": "碧蹄館の戦い",
+          "possibleExistingAlias": null,
+          "registration": "exact-title-date-needs-check",
+          "evidenceScope": "parent-record-only-do-not-assume-all-child-details-confirmed",
+          "sourceIds": [
+            "imjin"
+          ],
+          "original": {
+            "title": "碧蹄館の戦い",
+            "registration": "登録済",
+            "sourceIds": [
+              "imjin"
+            ]
+          },
+          "newDiagramCreated": false
+        },
+        {
+          "title": "幸州山城の戦い",
+          "nature": "battle-candidate",
+          "existingExactTitle": "幸州山城の戦い",
+          "possibleExistingAlias": null,
+          "registration": "exact-title-date-needs-check",
+          "evidenceScope": "parent-record-only-do-not-assume-all-child-details-confirmed",
+          "sourceIds": [
+            "imjin"
+          ],
+          "original": {
+            "title": "幸州山城の戦い",
+            "registration": "登録済",
+            "sourceIds": [
+              "imjin"
+            ]
+          },
+          "newDiagramCreated": false
+        },
+        {
+          "title": "第二次晋州城の戦い",
+          "nature": "battle-candidate",
+          "existingExactTitle": "第二次晋州城の戦い",
+          "possibleExistingAlias": null,
+          "registration": "exact-title-date-needs-check",
+          "evidenceScope": "parent-record-only-do-not-assume-all-child-details-confirmed",
+          "sourceIds": [
+            "imjin"
+          ],
+          "original": {
+            "title": "第二次晋州城の戦い",
+            "registration": "登録済",
+            "sourceIds": [
+              "imjin"
+            ]
+          },
+          "newDiagramCreated": false
+        }
+      ],
+      "evidence": [
+        {
+          "id": "imjin",
+          "author": "韓国学中央研究院",
+          "title": "임진왜란（壬辰倭乱）",
+          "url": "https://encykorea.aks.ac.kr/Article/E0047674",
+          "locator": "戦闘経過・主要戦闘表、1592～1593年部分",
+          "summary": "釜山・東莱・尚州・弾琴台・玉浦等の戦闘、晋州・閑山・平壌・碧蹄館・幸州を別件として扱う。1597年以降の再侵攻は別節であり文禄の役の子へ混ぜない。",
+          "status": "本文確認",
+          "accessed": "2026-11-08",
+          "provenance": "second-half/sources.json",
+          "note": "調査担当の読了記録を引継ぎ。今回独立再読なし"
+        },
+        {
+          "id": "busan",
+          "author": "韓国学中央研究院",
+          "title": "부산진성（釜山鎮城）",
+          "url": "https://encykorea.aks.ac.kr/Article/E0024279",
+          "locator": "内容・侵攻前の城の所在地",
+          "summary": "侵攻前の釜山鎮城は鄭公壇周辺で、1592年の戦闘後に破壊された。1593年に築かれた子城台は別施設。",
+          "status": "本文確認",
+          "accessed": "2026-11-08",
+          "provenance": "second-half/sources.json",
+          "note": "調査担当の読了記録を引継ぎ。今回独立再読なし"
+        }
+      ]
+    },
+    {
+      "ordinal": 87,
+      "title": "尚州の戦い",
+      "proposedKind": "battle",
+      "evidenceLevel": "code-scope-only-or-unread",
+      "classificationUse": "needs-review",
+      "classificationHolds": [
+        "本文確認済みの根拠がこの整理にはない。既存局所図の対象確認と史実確認を分ける"
+      ],
+      "children": [],
+      "evidence": []
+    },
+    {
+      "ordinal": 88,
+      "title": "忠州の戦い",
+      "proposedKind": "battle",
+      "evidenceLevel": "code-scope-only-or-unread",
+      "classificationUse": "needs-review",
+      "classificationHolds": [
+        "本文確認済みの根拠がこの整理にはない。既存局所図の対象確認と史実確認を分ける"
+      ],
+      "children": [],
+      "evidence": []
+    },
+    {
+      "ordinal": 89,
+      "title": "玉浦海戦",
+      "proposedKind": "battle",
+      "evidenceLevel": "code-scope-only-or-unread",
+      "classificationUse": "needs-review",
+      "classificationHolds": [
+        "本文確認済みの根拠がこの整理にはない。既存局所図の対象確認と史実確認を分ける"
+      ],
+      "children": [],
+      "evidence": []
+    },
+    {
+      "ordinal": 90,
+      "title": "閑山島海戦",
+      "proposedKind": "battle",
+      "evidenceLevel": "code-scope-only-or-unread",
+      "classificationUse": "needs-review",
+      "classificationHolds": [
+        "本文確認済みの根拠がこの整理にはない。既存局所図の対象確認と史実確認を分ける"
+      ],
+      "children": [],
+      "evidence": []
+    },
+    {
+      "ordinal": 91,
+      "title": "第一次晋州城の戦い",
+      "proposedKind": "battle",
+      "evidenceLevel": "code-scope-only-or-unread",
+      "classificationUse": "needs-review",
+      "classificationHolds": [
+        "本文確認済みの根拠がこの整理にはない。既存局所図の対象確認と史実確認を分ける"
+      ],
+      "children": [],
+      "evidence": []
+    },
+    {
+      "ordinal": 92,
+      "title": "平壌の戦い",
+      "proposedKind": "battle",
+      "evidenceLevel": "code-scope-only-or-unread",
+      "classificationUse": "needs-review",
+      "classificationHolds": [
+        "本文確認済みの根拠がこの整理にはない。既存局所図の対象確認と史実確認を分ける"
+      ],
+      "children": [],
+      "evidence": []
+    },
+    {
+      "ordinal": 93,
+      "title": "碧蹄館の戦い",
+      "proposedKind": "battle",
+      "evidenceLevel": "code-scope-only-or-unread",
+      "classificationUse": "needs-review",
+      "classificationHolds": [
+        "本文確認済みの根拠がこの整理にはない。既存局所図の対象確認と史実確認を分ける"
+      ],
+      "children": [],
+      "evidence": []
+    },
+    {
+      "ordinal": 94,
+      "title": "幸州山城の戦い",
+      "proposedKind": "battle",
+      "evidenceLevel": "code-scope-only-or-unread",
+      "classificationUse": "needs-review",
+      "classificationHolds": [
+        "本文確認済みの根拠がこの整理にはない。既存局所図の対象確認と史実確認を分ける"
+      ],
+      "children": [],
+      "evidence": []
+    },
+    {
+      "ordinal": 95,
+      "title": "第二次晋州城の戦い",
+      "proposedKind": "battle",
+      "evidenceLevel": "code-scope-only-or-unread",
+      "classificationUse": "needs-review",
+      "classificationHolds": [
+        "本文確認済みの根拠がこの整理にはない。既存局所図の対象確認と史実確認を分ける"
+      ],
+      "children": [],
+      "evidence": []
+    },
+    {
+      "ordinal": 96,
+      "title": "慶長の役・漆川梁海戦",
+      "proposedKind": "battle",
+      "evidenceLevel": "public-explanatory-body-recorded",
+      "classificationUse": "ready-for-parent-scope-review",
+      "classificationHolds": [],
+      "children": [],
+      "evidence": [
+        {
+          "id": "chilcheon",
+          "author": "韓国学中央研究院",
+          "title": "칠천량해전（漆川梁海戦）",
+          "url": "https://encykorea.aks.ac.kr/Article/E0058551",
+          "locator": "定義・内容",
+          "summary": "1597年に元均の朝鮮水軍と日本水軍が漆川梁で行った海戦と定義。現在の複合題名は慶長の役全体の図ではない。",
+          "status": "本文確認",
+          "accessed": "2026-11-08",
+          "provenance": "second-half/sources.json",
+          "note": "調査担当の読了記録を引継ぎ。今回独立再読なし"
+        }
+      ]
+    },
+    {
+      "ordinal": 97,
+      "title": "南原城の戦い",
+      "proposedKind": "battle",
+      "evidenceLevel": "code-scope-only-or-unread",
+      "classificationUse": "needs-review",
+      "classificationHolds": [
+        "本文確認済みの根拠がこの整理にはない。既存局所図の対象確認と史実確認を分ける"
+      ],
+      "children": [],
+      "evidence": []
+    },
+    {
+      "ordinal": 98,
+      "title": "鳴梁海戦",
+      "proposedKind": "battle",
+      "evidenceLevel": "code-scope-only-or-unread",
+      "classificationUse": "needs-review",
+      "classificationHolds": [
+        "本文確認済みの根拠がこの整理にはない。既存局所図の対象確認と史実確認を分ける"
+      ],
+      "children": [],
+      "evidence": []
+    },
+    {
+      "ordinal": 99,
+      "title": "蔚山城の戦い",
+      "proposedKind": "battle",
+      "evidenceLevel": "code-scope-only-or-unread",
+      "classificationUse": "needs-review",
+      "classificationHolds": [
+        "本文確認済みの根拠がこの整理にはない。既存局所図の対象確認と史実確認を分ける"
+      ],
+      "children": [],
+      "evidence": []
+    },
+    {
+      "ordinal": 100,
+      "title": "露梁海戦",
+      "proposedKind": "battle",
+      "evidenceLevel": "code-scope-only-or-unread",
+      "classificationUse": "needs-review",
+      "classificationHolds": [
+        "本文確認済みの根拠がこの整理にはない。既存局所図の対象確認と史実確認を分ける"
+      ],
+      "children": [],
+      "evidence": []
+    },
+    {
+      "ordinal": 101,
+      "title": "会津征伐",
+      "proposedKind": "campaign",
+      "evidenceLevel": "code-scope-only-or-unread",
+      "classificationUse": "needs-review",
+      "classificationHolds": [
+        "本文確認済みの根拠がこの整理にはない。既存局所図の対象確認と史実確認を分ける",
+        "別戦闘を内包する根拠が不足。戦役名・広さだけで分類を確定しない",
+        "期間・事件/出兵と戦役の境界を要確認。修復本文の範囲を超えて確定しない",
+        "未遂出兵。架空の会津本戦や関ヶ原の自動子関係を作らない"
+      ],
+      "children": [],
+      "evidence": []
+    },
+    {
+      "ordinal": 102,
+      "title": "浅井畷の戦い",
+      "proposedKind": "battle",
+      "evidenceLevel": "code-scope-only-or-unread",
+      "classificationUse": "needs-review",
+      "classificationHolds": [
+        "本文確認済みの根拠がこの整理にはない。既存局所図の対象確認と史実確認を分ける"
+      ],
+      "children": [],
+      "evidence": []
+    },
+    {
+      "ordinal": 103,
+      "title": "岐阜城の戦い",
+      "proposedKind": "battle",
+      "evidenceLevel": "code-scope-only-or-unread",
+      "classificationUse": "needs-review",
+      "classificationHolds": [
+        "本文確認済みの根拠がこの整理にはない。既存局所図の対象確認と史実確認を分ける"
+      ],
+      "children": [],
+      "evidence": []
+    },
+    {
+      "ordinal": 104,
+      "title": "安濃津城の戦い",
+      "proposedKind": "battle",
+      "evidenceLevel": "code-scope-only-or-unread",
+      "classificationUse": "needs-review",
+      "classificationHolds": [
+        "本文確認済みの根拠がこの整理にはない。既存局所図の対象確認と史実確認を分ける"
+      ],
+      "children": [],
+      "evidence": []
+    },
+    {
+      "ordinal": 105,
+      "title": "石垣原の戦い",
+      "proposedKind": "battle",
+      "evidenceLevel": "code-scope-only-or-unread",
+      "classificationUse": "needs-review",
+      "classificationHolds": [
+        "本文確認済みの根拠がこの整理にはない。既存局所図の対象確認と史実確認を分ける"
+      ],
+      "children": [],
+      "evidence": []
+    },
+    {
+      "ordinal": 106,
+      "title": "佐和山城落城",
+      "proposedKind": "battle",
+      "evidenceLevel": "code-scope-only-or-unread",
+      "classificationUse": "needs-review",
+      "classificationHolds": [
+        "本文確認済みの根拠がこの整理にはない。既存局所図の対象確認と史実確認を分ける"
+      ],
+      "children": [],
+      "evidence": []
+    },
+    {
+      "ordinal": 107,
+      "title": "木津川口の戦い",
+      "proposedKind": "battle",
+      "evidenceLevel": "code-scope-only-or-unread",
+      "classificationUse": "needs-review",
+      "classificationHolds": [
+        "本文確認済みの根拠がこの整理にはない。既存局所図の対象確認と史実確認を分ける"
+      ],
+      "children": [],
+      "evidence": []
+    },
+    {
+      "ordinal": 108,
+      "title": "今福・鴫野の戦い",
+      "proposedKind": "compound-battles",
+      "evidenceLevel": "public-explanatory-body-recorded",
+      "classificationUse": "needs-review",
+      "classificationHolds": [
+        "二局地戦の集合。親戦役と同じ階層に扱うか分類粒度を決める"
+      ],
+      "children": [
+        {
+          "title": "今福の戦い",
+          "nature": "battle-candidate",
+          "existingExactTitle": null,
+          "possibleExistingAlias": null,
+          "registration": "not-separately-registered",
+          "evidenceScope": "parent-record-only-do-not-assume-all-child-details-confirmed",
+          "sourceIds": [
+            "imafuku"
+          ],
+          "original": {
+            "title": "今福の戦い",
+            "registration": "複合項目内のみ登録",
+            "sourceIds": [
+              "imafuku"
+            ]
+          },
+          "newDiagramCreated": false
+        },
+        {
+          "title": "鴫野の戦い",
+          "nature": "battle-candidate",
+          "existingExactTitle": null,
+          "possibleExistingAlias": null,
+          "registration": "not-separately-registered",
+          "evidenceScope": "parent-record-only-do-not-assume-all-child-details-confirmed",
+          "sourceIds": [
+            "imafuku"
+          ],
+          "original": {
+            "title": "鴫野の戦い",
+            "registration": "複合項目内のみ登録",
+            "sourceIds": [
+              "imafuku"
+            ]
+          },
+          "newDiagramCreated": false
+        }
+      ],
+      "evidence": [
+        {
+          "id": "imafuku",
+          "author": "大阪市城東区",
+          "title": "吉村区長の城東見聞録 大坂冬の陣",
+          "url": "https://www.city.osaka.lg.jp/joto/page/0000638076.html",
+          "locator": "上杉景勝本陣跡／今福・蒲生の戦い跡",
+          "summary": "鴫野の上杉軍の戦いと今福の佐竹軍・増援の戦いを別節で紹介。両戦闘間の救援関係を示す。",
+          "status": "本文確認",
+          "accessed": "2026-11-08",
+          "provenance": "second-half/sources.json",
+          "note": "調査担当の読了記録を引継ぎ。今回独立再読なし"
+        }
+      ]
+    },
+    {
+      "ordinal": 109,
+      "title": "真田丸の戦い",
+      "proposedKind": "battle",
+      "evidenceLevel": "code-scope-only-or-unread",
+      "classificationUse": "needs-review",
+      "classificationHolds": [
+        "本文確認済みの根拠がこの整理にはない。既存局所図の対象確認と史実確認を分ける"
+      ],
+      "children": [],
+      "evidence": []
+    },
+    {
+      "ordinal": 110,
+      "title": "道明寺の戦い",
+      "proposedKind": "battle",
+      "evidenceLevel": "public-explanatory-body-recorded",
+      "classificationUse": "ready-for-parent-scope-review",
+      "classificationHolds": [],
+      "children": [],
+      "evidence": [
+        {
+          "id": "domyoji",
+          "author": "柏原市",
+          "title": "玉手山と大坂夏の陣",
+          "url": "https://www.city.kashiwara.lg.jp/docs/2014041800015/",
+          "locator": "7 小松山の戦い（国分・道明寺の戦い）",
+          "summary": "小松山から道明寺・誉田へ続く局地戦闘と撤退援護。現在の道明寺図の複数地点は一連の局地戦の段階であり夏の陣全体ではない。",
+          "status": "本文確認",
+          "accessed": "2026-11-08",
+          "provenance": "second-half/sources.json",
+          "note": "調査担当の読了記録を引継ぎ。今回独立再読なし"
+        }
+      ]
+    },
+    {
+      "ordinal": 111,
+      "title": "八尾・若江の戦い",
+      "proposedKind": "compound-battles",
+      "evidenceLevel": "public-explanatory-body-recorded",
+      "classificationUse": "needs-review",
+      "classificationHolds": [
+        "二局地戦の集合。親戦役と同じ階層に扱うか分類粒度を決める"
+      ],
+      "children": [
+        {
+          "title": "八尾の戦い",
+          "nature": "battle-candidate",
+          "existingExactTitle": null,
+          "possibleExistingAlias": null,
+          "registration": "not-separately-registered",
+          "evidenceScope": "parent-record-only-do-not-assume-all-child-details-confirmed",
+          "sourceIds": [
+            "yao"
+          ],
+          "original": {
+            "title": "八尾の戦い",
+            "registration": "複合項目内のみ登録",
+            "sourceIds": [
+              "yao"
+            ]
+          },
+          "newDiagramCreated": false
+        },
+        {
+          "title": "若江の戦い",
+          "nature": "battle-candidate",
+          "existingExactTitle": null,
+          "possibleExistingAlias": null,
+          "registration": "not-separately-registered",
+          "evidenceScope": "parent-record-only-do-not-assume-all-child-details-confirmed",
+          "sourceIds": [
+            "yao"
+          ],
+          "original": {
+            "title": "若江の戦い",
+            "registration": "複合項目内のみ登録",
+            "sourceIds": [
+              "yao"
+            ]
+          },
+          "newDiagramCreated": false
+        }
+      ],
+      "evidence": [
+        {
+          "id": "yao",
+          "author": "八尾市",
+          "title": "続・河内名所図会を訪ねて（3）",
+          "url": "https://www.city.yao.osaka.jp/bunka_sports_event/bunka_geijutsu_reikishi/1011330/1011406/1011409/1011415/1011419.html",
+          "locator": "本文の八尾・若江の説明",
+          "summary": "若江で井伊家と木村軍、八尾で藤堂家と長宗我部軍が交戦したと区別。両地の戦いの素材を一つの決戦に集約しない。",
+          "status": "本文確認",
+          "accessed": "2026-11-08",
+          "provenance": "second-half/sources.json",
+          "note": "調査担当の読了記録を引継ぎ。今回独立再読なし"
+        }
+      ]
+    }
+  ]
+}

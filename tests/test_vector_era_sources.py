@@ -110,7 +110,8 @@ def test_deferred_ponds_do_not_become_historical_terrain_facts():
     assert len(removed) == DEFERRED_POND_COUNT
     assert removed.isdisjoint(f["id"] for f in surfaces()[1])
     backgrounds = [
-        f for f in surfaces()[0]
+        f
+        for f in surfaces()[0]
         if f["properties"].get("shapeRole") == "unresolved-prior-surface-background"
     ]
     assert backgrounds
@@ -127,7 +128,10 @@ def test_water_evidence_is_separate_from_physical_water():
     assert source["coordinateReferenceSystem"] == "OGC:CRS84"
     evidence = source["features"]
     assert {f["properties"]["id"] for f in evidence} == {
-        "iinuma", "minuma", "tsubaki", "shiunji"
+        "iinuma",
+        "minuma",
+        "tsubaki",
+        "shiunji",
     }
     physical_ids = {f["id"] for f in surfaces()[1]}
     for feature in evidence:

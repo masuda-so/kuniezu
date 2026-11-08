@@ -18,12 +18,12 @@ async function click(selector){const p=await ev(`(()=>{const el=document.querySe
 async function shot(name){await ev("(()=>{const e=document.querySelector('.mbox');if(e)e.scrollTop=0;})()");const r=await call('Page.captureScreenshot',{format:'png'});fs.writeFileSync(path.join(OUT,name+'.png'),Buffer.from(r.data,'base64'));}
 async function view(width,height){await call('Emulation.setDeviceMetricsOverride',{width,height,deviceScaleFactor:1,mobile:width<820});await sleep(300);}
 async function load(){await call('Page.navigate',{url:URL});await until("!!document.querySelector('[data-act=new]')&&!document.getElementById('boot')");}
-async function start(){await click('[data-act=new]');await click('[data-act=scen][data-id=s1560]');await click('[data-act=start]');await until("TKUI.modal==='intro'");}
+async function start(){await click('[data-act=new]');await click('[data-act=scen][data-id=s1560]');await click('#pick [data-act=pick].on');await until("TKUI.mode==='game'&&!TKUI.modal");}
 async function menu(){await click('#me [data-m=menu]');}
 const timer=setTimeout(()=>{console.error('timeout');chrome.kill();process.exitCode=1},480000);
 const cover=()=>ev('(()=>{const {corners}=TKUI.mapBounds();return corners[0][0]<=.01&&corners[0][1]<=.01&&corners[1][0]>=innerWidth-.01&&corners[1][1]>=innerHeight-.01})()');
 (async()=>{try{
- const target=await call('Target.createTarget',{url:'about:blank'},null);session=(await call('Target.attachToTarget',{targetId:target.targetId,flatten:true},null)).sessionId;await call('Runtime.enable');await call('Page.enable');await view(1400,1000);await load();await start();await click('#modal [data-act=close]');await ev('TKUI.speed=0');
+ const target=await call('Target.createTarget',{url:'about:blank'},null);session=(await call('Target.attachToTarget',{targetId:target.targetId,flatten:true},null)).sessionId;await call('Runtime.enable');await call('Page.enable');await view(1400,1000);await load();await start();await ev('TKUI.speed=0');
  await ev("TKUI.open('infrastructure',{kind:'site'})");await until("!!document.querySelector('[data-act=infra-upgrade]:not(:disabled)')");await click('[data-act=infra-upgrade]:not(:disabled)');assert.equal(await ev('G.S().improvements.projects.length'),1);await shot('infrastructure-sites');
  await ev("(()=>{const p=G.S().improvements.projects[0];p.end=G.S().t+1;G.day();TKUI.api.closeModal();TKUI.open('infrastructure',{kind:'site'});})()");assert.ok(await ev('Object.values(G.S().improvements.sites).includes(2)'));await shot('infrastructure-complete');
  await ev('TKUI.api.closeModal()');await view(390,844);await shot('lord-menu-mobile');assert.ok(await ev("document.querySelector('#me img.face')?.getBoundingClientRect().width>0"));

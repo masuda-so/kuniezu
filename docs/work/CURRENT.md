@@ -2,13 +2,13 @@
 
 全体ゴール **active**。許可済み8000番はエージェントも起動・停止可（2026-11-07再確認）、127.0.0.1限定。自由攻城・非史実ルート・プレイ中AI生成は保留。継続する合意と共同作業規則は [HANDOFF](../../HANDOFF.md)、受入条件は [requests.json](requests.json) を読む。
 
-2026-11-07のmain確認HEADは `600d9432`（PR #72取り込み後）。取り込み時は現在のHEAD・未コミット変更を再確認する。以下の過去の画像・行軍証拠と、直近のベクター移行成果を区別し、新たな全史実照合の完了宣言にしない。
+2026-11-07のmain確認HEADは `b6ff0d14`（合戦図の注記整理#83取り込み後）。取り込み時は現在のHEAD・未コミット変更を再確認する。以下の過去の画像・行軍証拠と、直近のベクター移行成果を区別し、新たな全史実照合の完了宣言にしない。
 
 ## 登録数と台帳
 
 [現行カタログ](catalog-manifest.json) は **448拠点・378人物表示名・85街道・315城間接続・111合戦・143領土変更・26水域・20要望、計1526対象**。歴史上存在した全対象の網羅ではない。旧436/440人物は文字列展開の誤集計、旧82街道・445拠点は更新前の母数。
 
-史料台帳は2026-11-07の追跡済みJSONL実数で **109命題・22所在記録・72人物ID・43地点ID・466資料**。人物典拠と確認済みの所在・生没日を同一視しない。人物表示名378件とも別の母数。[年月×対象の参照構造](../architecture/spatiotemporal-history.md)で一記録を縦横から引き、年別複製しない。過去のHTTP追加所在の証拠は3観測日・顔・所在説明・上部日付に限定される。
+史料台帳は2026-11-07の追跡済みJSONL実数で **118命題・22所在記録・84人物ID・43地点ID・477資料**。人物典拠と確認済みの所在・生没日を同一視しない。人物表示名378件とも別の母数。[年月×対象の参照構造](../architecture/spatiotemporal-history.md)で一記録を縦横から引き、年別複製しない。過去のHTTP追加所在の証拠は3観測日・顔・所在説明・上部日付に限定される。
 
 完了記録は大項目ORGと諏訪原城（`site-419be35cc2ac`）。ほかのqueuedは未実装断定ではなく受入審査待ち。[M03/U02条件別の証拠](../reports/WORK_ACCEPTANCE_EVIDENCE_REVIEW.md) は受入判定の記録で、全体のcomplete操作はしていない。担当の現況は `node tools/work/tasks.cjs list --status active` で確認する。
 
@@ -21,7 +21,7 @@
 | 児島湾・遼東の最新HTTP確認 | 7年×広狭と逆年代の計15ケース。実hover/touch・寛甸の年切替・児島湾の海峡通水を確認。JavaScript/asset/loadエラー0。任意favicon404は別記 | [検査結果](../../data/verification/liaodong-context/http/result.json) |
 | 標高・河川 | 共通格子の全域正本から配信用画像を再生成。通常派生は旧JS原線へ依存しない。現代参考線・標高を戦国期の実測値としない | [標高再生成](../architecture/heightmap-cache.md)、[河川正本](../architecture/river-source-image.md) |
 | 合戦 | 全111の読込・参加者・自動再生・自然閉鎖。3包囲戦の段階/退出、伊予・讃岐の端切れを修正。木津川口1614は4隊の攻撃順序図。110地理図＋1模式図で、全員の精密配置確定とは別 | [3包囲戦](../reports/SIEGE_PLACEMENT_BATCH_REVIEW.md)、[実画面](../../data/verification/battle-display/browser.json)、[最終模式図](../../data/verification/battle-display/final-schematic.json)、[表示修正](../reports/BATTLE_DISPLAY_ACCEPTANCE_REVIEW.md) |
-| 行軍・保存 | 道沿いの共通時計・接線、停止・日内保存。geometryVersion=22、siegePlacementVersion=2。全期間3,952,720標本で残る永禄の変2名は地点観測。「記」表示を確認し架空の経路を追加しない | [別名と保存](../reports/ALIASED_ARRIVAL_AND_SAVE_REVIEW.md)、[木崎原](../reports/KIZAKIBARU_LOCAL_MARCH_REVIEW.md)、[日跨ぎ](../../data/audits/day-boundary-review.json) |
+| 行軍・保存 | 道沿いの共通時計・接線、停止・日内保存。geometryVersion=24、siegePlacementVersion=2。全期間3,952,720標本で残る永禄の変2名は地点観測。「記」表示を確認し架空の経路を追加しない | [別名と保存](../reports/ALIASED_ARRIVAL_AND_SAVE_REVIEW.md)、[木崎原](../reports/KIZAKIBARU_LOCAL_MARCH_REVIEW.md)、[日跨ぎ](../../data/audits/day-boundary-review.json) |
 | 人物・年表 | 家督通知の重複、黒田長政の架空の1599香春岳移動、九州平定後の豊前配分を訂正。基準本拠と戦役中の本人所在は分ける | [黒田](../reports/KURODA_NAKATSU_RESIDENCE_REVIEW.md)、[年表等](../reports/CHRONOLOGY_PORTRAIT_FOOTER_REVIEW.md) |
 | 肖像・発熱 | 肖像要求を制限し失敗時に再試行、表示中DOMを保持。停止/タイトル/非表示の不要ループを抑止。旧HTTP失敗と後続の修復を別々に保存 | [肖像実画面](../../data/verification/portrait-loading/browser.json)、[停止・再開の観測](../../data/verification/idle-loop/result.json)、[発熱の観測範囲](../reports/THERMAL_LOAD_REVIEW.md) |
 
@@ -29,11 +29,12 @@
 
 ## 2026-11-07の追加反映
 
+- 広域合戦の全体/地区表示と肖像代替の切り抜きをmainへ反映（#80・#81）。不要な合戦下部注記も#83で反映。左の家カード→年表への即時遷移と地形切替整理は[個別報告](../reports/SELECTION_CHRONOLOGY_UI.md)と[実画面証拠](../../data/verification/codex-selection-ui-final/README.md)で確認した。各PRの取り込み状態はGitHubで確認し、全UI受入の完了とは区別する。
 - 保存のファイル書出しでも日内時計を保持（PR #64）。人物典拠の追加（#61・#70）と出典メタデータ（#66）は、未検証の生没日・所在の自動採用とは分離。
 - CODHの原本・参照画面・位相準備、香取の保護/開口契約、児島の既採用マスクを移行の補助として保持（#63・#65・#67〜#69）。元画像へ二重適用しない。
 - 改変済みGeoJSONを直接編集する正本とし、配信時は無改変コピー（#71）。CODHで欠ける5比較湖は公式W09原本と照合し、個別利用条件を保持。[記録](../reports/vector-lake-source.md)
 - 共通の面描画/位置判定を比較画面へ接続（#72）。368地点の実Canvas判定、穴/重なり、3地域、パン/ズーム・狭幅・停止を確認。[記録](../reports/vector-surface-renderer.md)。ゲーム本体はまだ切り替えていない。
-- 編集正本の初回移行は[採用記録](../../data/inputs/vector-map-migration/README.md)と[報告](../reports/vector-map-canonical.md)へ接続。香取70保護・既採用の八郎潟/巨椋・宇喜多366セルの年代差・岸線整合を確認した。次は本体の描画・クリップ・海側選択へ接続する。飯沼/見沼の概略面を精密湖岸へ昇格させない。8000番は応答なしを確認後、利用者の権限再確認に従い、エージェントが現worktreeで127.0.0.1限定・noreloadで起動しHTTP200を確認した（2026-11-07）。
+- 編集正本の初回移行は[採用記録](../../data/inputs/vector-map-migration/README.md)と[報告](../reports/vector-map-canonical.md)へ接続。香取70保護・既採用の八郎潟/巨椋・宇喜多366セルの年代差・岸線整合を確認した。本体の描画・クリップ・海側選択は新branchで接続し、実配信の検証を進めている。飯沼/見沼の概略面を精密湖岸へ昇格させない。8000番は応答なしを確認後、利用者の権限再確認に従い、エージェントが現worktreeで127.0.0.1限定・noreloadで起動しHTTP200を確認した（2026-11-07）。
 - 追加照合で自然湖17件を補完し、後世の完成輪郭7件を保留、概略水域4件を物理地形から分離。最終正本は陸2203・水域584・岸線2969。最終データの1560/1584比較描画、368点の塗り/判定・宇喜多366セルの年代差が通過。本体接続は独立再レビューで必須指摘なし。児島湾の旧100m画像由来の階段岸は精密化の対象として残し、移行検査の合格だけで岸線改善完了としない。
 
 ## 次の作業を具体化する
@@ -48,3 +49,13 @@
 基本検査・担当別手順は [検証の入口](../../tools/checks/README.md)。発熱対策のためChromeと重い生成/全画素検査は同時に増やさない。必要な対象検査が通った後、理由なく全111や全期間シミュレーションを繰り返さない。
 
 整理前の全文は [継続記録の履歴](../history/CURRENT-2026-11-03-before-refresh.md)。履歴へある旧外部DEM取得・旧地形補正の再適用・古い母数を現行手順として実行しない。
+
+## 本体ベクター接続の作業
+
+地理正本PR77は `ea7b6b66` でmainへ取り込み済み。`codex/vector-game-renderer` はそこから開始。陸・水域・岸線・推定表示の分離、初回起動待ち、画像の支配色/陰影との接続を実装した。射影初期化順と取得失敗時のPromise拒否を実画面で修正。広幅・狭幅・回転・全図と、取得失敗の再読込表示が通過。[報告](../reports/vector-game-renderer.md)。現在の8000番は同じworktreeで再起動済み。既存buildを共有先へ書き込まず、task専用 `/tmp/kuniezu-vector-runtime-build` の新vectorと既存素材への読取リンクを配信している。正本からの生成手順は通常の `build-map.cjs --vectors-only` と同一で、配信物はGitへ入れない。
+
+史実DBのローカルSQLiteは空だったため、2 migrations適用後に最新入力を初回取り込みした。1398対象・924事象・97外部典拠IDを保持。これらはゲーム由来の未照合記録も含み、84人物の公的典拠と全対象の史実確定を同一視しない。Wikidata Q311183と伊達政宗の対応、名前検索、1582年の織田信長関連2事象を実DBで確認。[記録](../../data/verification/codex-history-live-import/README.md)。DB本体はGitへ入れない。
+
+## 合戦図の全体・地区表示
+
+`codex/battle-district-view` で、全体は個別駒・顔を維持して名前を選択隊へ絞り、地区で近接名札を読む形へ変更。広域条件は全合戦共通で、狭幅は全体ボタン＋地区select一行、選択色・focusを維持する。111合戦×2幅の描画命令検査と、広域戦を含む7例の実Chrome確認が通過。[報告](../reports/battle-district-view.md)。個別部隊の位置・日時・史実データは変更していない。肖像fallbackと児島湾の原図照合は別担当の候補をレビュー済みで、まだ本体へ混在させない。

@@ -1,11 +1,11 @@
-{% load static %}<!doctype html><html><head><base href="{% static 'kuniezu/' %}"><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><link rel="stylesheet" href="index.css?v=39f269913f"></head><body>{% verbatim %}
+{% load static %}<!doctype html><html><head><base href="{% static 'kuniezu/' %}"><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><link rel="stylesheet" href="index.css?v=510e4a3208"></head><body>{% verbatim %}
 <title>天下分け目の国絵図</title>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='10' fill='%237a2a1d'/%3E%3Ctext x='32' y='46' font-size='40' text-anchor='middle' fill='%23f4ead2' font-family='serif'%3E%E5%9B%BD%3C/text%3E%3C/svg%3E">
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" media="print" onload="this.media='all'" href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@600;700;800&family=Zen+Kaku+Gothic+New:wght@400;500;700&family=Yuji+Syuku&display=swap">
-<link rel="stylesheet" href="theme-washi.css?v=c7e951f2f1">
+<link rel="stylesheet" href="theme-washi.css?v=2f2b65d604">
 
 <div id="app" data-mode="title">
   <canvas id="base" aria-hidden="true"></canvas>
@@ -107,7 +107,7 @@
 <script src="movement-continuity.js?v=d7f08747db"></script>
 <script src="battle-atlas-effects.js?v=9278df9282"></script>
 <script src="battle-motion.js?v=c9fc2ebde3"></script>
-<script src="battle-atlas.js?v=0906014b57"></script>
+<script src="battle-atlas.js?v=234cde7992"></script>
 <script src="history-mode.js?v=93adf7ef7a"></script>
 <script src="map-relations.js?v=554816ca9a"></script>
 <script src="historical-families.js?v=dbf499e0f7"></script>
@@ -115,7 +115,7 @@
 <script src="player-copy.js?v=b6fca6715e"></script>
 <script src="terrain-tiles.js?v=a32cbcfa3e"></script>
 <script src="storage.js?v=9ec684a32b"></script>
-<script src="portrait-layout.js?v=0aa4666e19"></script>
+<script src="portrait-layout.js?v=05f76c04b4"></script>
 <script src="kamon-data.js?v=171bb17c3a"></script>
 <script src="kamon.js?v=573fe83e6f"></script>
 <script src="convoys.js?v=3c305732bb"></script>
@@ -129,7 +129,10 @@
 <script src="documented-marches-extra.js?v=35d5c70d5b"></script>
 <script src="central-offices.js?v=39b6c412ce"></script>
 <script src="raster-map.js?v=2a7abeff81"></script>
-<script src="ui.js?v=d9945e3140"></script>
+<script src="vector-map.js?v=e67e484aca"></script>
+<script src="vector-ui.js?v=b37f662087"></script>
+<script src="battle-conflicts.js?v=c8c5a7262e"></script>
+<script src="ui.js?v=46bdf1df12"></script>
 <script src="kb.js?v=00b342e31e"></script>
 </template>
 <script>
@@ -156,6 +159,9 @@
         catch(error){if(!error.retry||attempt>=2)throw error;await new Promise(resolve=>setTimeout(resolve,250*(attempt+1)));}
       }
     }
+    if(!window.TKUI?.ready)throw {src:'vector-map',retry:false};
+    await TKUI.ready;
+    await new Promise(resolve=>requestAnimationFrame(()=>requestAnimationFrame(resolve)));
     panel.remove();
   }catch(error){
     panel.setAttribute('role','alert');
