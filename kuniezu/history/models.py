@@ -57,6 +57,7 @@ class RecordType(models.TextChoices):
     IMPLEMENTED_SITE = "implemented-site", "拠点の実装"
     IDENTITY = "identity", "対象の同一性"
     CATALOG = "catalog", "作業台帳の対象"
+    KOBUN = "kobun", "綱文の所在（目録）"
 
 
 class Status(models.TextChoices):
