@@ -1,0 +1,38 @@
+{
+  "id": "urio-surrender-1568",
+  "entity": "place:urio-castle",
+  "predicate": "castle-surrender",
+  "value": "長宗我部元親が本山将監を土佐の瓜生野城に攻め、将監は力尽きて降った。",
+  "validYears": [
+    1568,
+    1569
+  ],
+  "datePrecision": "period",
+  "source": "hiDainihonshiryoKobun",
+  "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+  "locator": "綱文：和暦 永禄11年是冬 第1条（区分 大日本史料、第10編之1（データベースの表示値）、540頁）",
+  "gameBindings": [
+    "TK.HIST:1568-5-1"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-09",
+  "uncertainty": "綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。綱文は「是冬」とだけ書き、月日を掲げない。",
+  "linkedEntities": [
+    "place:urio-castle",
+    "person:chosokabe-motochika"
+  ],
+  "eventTime": {
+    "kind": "described-period",
+    "label": "永禄11年冬（綱文は「是冬」）",
+    "indexYears": [
+      1568,
+      1569
+    ],
+    "calendar": "Japanese-era-description",
+    "precision": "period",
+    "boundsAreHistoricalStartEnd": false
+  },
+  "eventRelation": "castle-surrender",
+  "eventScope": "綱文が掲げる季節。旧暦の冬は西暦の翌年の初めにかかりうるので、索引の年を1568・1569にし、境界は主張しない。最終年表の題名なしの出来事（1568年5月1日、旧暦4月5日、本山氏を下して土佐中部を得る）は季節が違い、城も年表は node:motoyama（本山城）で、綱文の瓜生野城とは別の城（報告のみ）。本山将監に人物の ID は無いので結ばない。"
+}

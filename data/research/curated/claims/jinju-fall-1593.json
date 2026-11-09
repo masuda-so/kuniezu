@@ -1,0 +1,41 @@
+{
+  "id": "jinju-fall-1593",
+  "entity": "place:jinju",
+  "predicate": "castle-fall",
+  "value": "秀吉の命で宇喜多秀家・加藤清正・毛利秀元らが慶尚道の晋州城を攻め、この日に城が落ちた。",
+  "validYears": [
+    1593,
+    1593
+  ],
+  "datePrecision": "day",
+  "source": "hiDainihonshiryoKobun",
+  "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+  "locator": "綱文：和暦 文禄2年6月29日 第2条（区分 史料綜覧、編11・冊913（データベースの表示値）、24頁）",
+  "gameBindings": [
+    "TK.HIST:第二次晋州城の戦い",
+    "node:jinju"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-09",
+  "uncertainty": "綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。",
+  "linkedEntities": [
+    "place:jinju",
+    "person:宇喜多秀家",
+    "person:加藤清正",
+    "person:毛利秀元"
+  ],
+  "eventTime": {
+    "kind": "dated-event",
+    "date": [
+      1593,
+      6,
+      29
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": false,
+    "precision": "day"
+  },
+  "eventRelation": "castle-fall",
+  "eventScope": "綱文が掲げる日付。文禄2年6月29日はゲーム共通の暦表で1593年7月27日。最終年表の第二次晋州城の戦い（旧暦1593年6月29日、1593年7月27日）は一致する。落城の日。攻城の始まりの日付は補わない。死者の数には広げない。"
+}

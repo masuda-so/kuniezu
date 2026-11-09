@@ -1,0 +1,39 @@
+{
+  "id": "date-iwatezawa-transfer-1591",
+  "entity": "person:date-masamune",
+  "predicate": "territorial-transfer",
+  "value": "秀吉が伊達政宗を出羽米沢から陸奥の大崎・葛西に移し、米沢などを蒲生氏郷に与えた。この日、政宗は岩手沢城に移った。",
+  "validYears": [
+    1591,
+    1591
+  ],
+  "datePrecision": "day",
+  "source": "hiDainihonshiryoKobun",
+  "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+  "locator": "綱文：和暦 天正19年9月23日 第1条（区分 史料綜覧、編11・冊912（データベースの表示値）、338頁）",
+  "gameBindings": [
+    "TK.HIST:岩出山への国替え"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-09",
+  "uncertainty": "綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。",
+  "linkedEntities": [
+    "person:date-masamune",
+    "person:gamo-ujisato",
+    "place:iwatezawa-castle"
+  ],
+  "eventTime": {
+    "kind": "dated-event",
+    "date": [
+      1591,
+      9,
+      23
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": false,
+    "precision": "day"
+  },
+  "eventRelation": "territorial-transfer",
+  "eventScope": "国替えと居城の移りを、綱文が一つの条に掲げる日。天正19年9月23日はゲーム共通の暦表で1591年11月9日。最終年表の岩出山への国替え（旧暦1591年8月14日、1591年10月1日）は綱文より39日早い。国替えの命令の日付は補わない。綱文は「岩手沢城」と書く。後の名の岩出山城との同定は、ここでは出典を確かめていないので、ゲームの yosho:岩出山城 とは結ばない。"
+}

@@ -1,0 +1,40 @@
+{
+  "id": "pyongyang-withdrawal-1593",
+  "entity": "place:pyongyang",
+  "predicate": "military-event",
+  "value": "明の提督李如松に平壌を囲まれた小西行長が、この日、平壌から退いた。",
+  "validYears": [
+    1593,
+    1593
+  ],
+  "datePrecision": "day",
+  "source": "hiDainihonshiryoKobun",
+  "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+  "locator": "綱文：和暦 文禄2年1月7日 第4条（区分 史料綜覧、編11・冊913（データベースの表示値）、2頁）",
+  "gameBindings": [
+    "TK.HIST:平壌の戦い",
+    "node:pyongyang"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-09",
+  "uncertainty": "綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。",
+  "linkedEntities": [
+    "place:pyongyang",
+    "person:小西行長",
+    "person:李如松"
+  ],
+  "eventTime": {
+    "kind": "dated-event",
+    "date": [
+      1593,
+      1,
+      7
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": false,
+    "precision": "day"
+  },
+  "eventRelation": "military-event",
+  "eventScope": "綱文が掲げる日付。文禄2年1月7日はゲーム共通の暦表で1593年2月8日。最終年表の平壌の戦い（旧暦1593年1月7日、1593年2月8日）は一致する。撤退の日。包囲の始まりの日付は補わない。漢城への退却の到着日には広げない。"
+}
