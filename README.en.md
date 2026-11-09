@@ -28,6 +28,7 @@ is [docs/README.md](docs/README.md); open requests and ownership are in
   and relief retain image layers. Precise game-control boundaries in
   `control/subcell.geojson` are shared by colouring and picking; they are kept
   separate from verified historical landholding claims.
+- The Ushu route near Yatate Pass and Ishikawa adopts the stored CODH Edo-period comparison line in the edited source. The [adoption report](docs/reports/USHU_VECTOR_REFERENCE.md) distinguishes approximate joins from unresolved Sengoku-period geometry.
 - Edited GeoJSON will be the directly maintained source of truth. Rendering reads
   the files for the selected period. CODH originals remain available for comparison,
   and normal builds will not overwrite the edited source data.
@@ -208,9 +209,9 @@ It holds every
 current input record and keeps source-verified records apart from the unverified
 inventory of what the game implements (`docs/architecture/history-rdb.md`).
 
-Agents may start and stop the server only on ports the user has started before
-(8000 and 8001), and never start it on any other port. Verification connects to an
-already running `http://localhost:8000/index.html`. The output folder for check
+Agents may start and stop the server only at `127.0.0.1:8000`. Port 8001 and all
+other ports must not be started or used. Verification connects to an
+already running `http://127.0.0.1:8000/index.html`. The output folder for check
 results can be set with `GAME_TEST_OUTPUT`.
 
 The basic check is the command below. See

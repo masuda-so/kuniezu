@@ -29,7 +29,7 @@ for(const width of [1400,390]){
  await view(width,width===390?900:1000);
  for(const [name,lon,lat,z]of [['ina-takato',138.005,35.84,4],['namiai-hiraya',137.66,35.35,6],['iwamura-neba',137.56,35.27,4]]){
   const result=await ev(`(()=>{const r=G.ROADS.find(r=>r.name==='三州街道'),d=TK.roadDisplay(r),pts=d.pts,near=p=>pts.reduce((best,q,i)=>Math.hypot(q[0]-p[0],q[1]-p[1])<best.d?{i,d:Math.hypot(q[0]-p[0],q[1]-p[1])}:best,{i:0,d:Infinity});const a=near(G.PJ(137.6856,35.37308)),b=near(G.PJ(137.6316,35.32143)),line=G.visualBetween(pts[a.i],pts[b.i]);TKUI.cam(...G.PJ(${lon},${lat}),${z});TKUI.api.renderAll();return {points:d.pts.length,modernReference:d.modernReference,version:G.S().movementGeometryVersion,sources:d.evidence.sources,movementPoints:line.length,onRoad:line.every(p=>pts.some(q=>Math.hypot(p[0]-q[0],p[1]-q[1])<1e-6))};})()`);
-  assert.equal(result.version,26);assert.equal(result.modernReference,true);assert.equal(result.points,3086);assert.ok(result.sources.includes('sanshuModernMountain'));assert.ok(result.movementPoints>100);assert.equal(result.onRoad,true);
+  assert.equal(result.version,27);assert.equal(result.modernReference,true);assert.equal(result.points,3086);assert.ok(result.sources.includes('sanshuModernMountain'));assert.ok(result.movementPoints>100);assert.equal(result.onRoad,true);
   rows.push({width,name,...result});await sleep(900);await shot(name+'-'+width);
  }
 }
@@ -38,7 +38,7 @@ for(const version of [22,23]){
  const before=await ev(`(()=>{TKUI.speed=0;TKUI.acc=.63;const s=JSON.parse(JSON.stringify(G.S())),u=s.units.find(u=>u.clan==='imagawa');s.movementGeometryVersion=${version};s.visualFraction=.63;localStorage.setItem('kuniezu-history-v1-1',JSON.stringify(s));return {day:s.t,fraction:TKUI.acc,point:G.historyPoint(G.S().units.find(u=>u.clan==='imagawa')).slice(0,2),troops:u.troops,end:u.visualTravel.end};})()`);
  await ev("TKUI.open('menu-save')");await click('#modal [data-act=load][data-v="1"]');await until("TKUI.mode==='game'&&!TKUI.modal");
  const after=await ev("(()=>{const u=G.S().units.find(u=>u.clan==='imagawa');return {day:G.S().t,fraction:TKUI.acc,point:G.historyPoint(u).slice(0,2),troops:u.troops,end:u.visualTravel.end,version:G.S().movementGeometryVersion};})()");
- assert.equal(after.version,26);assert.equal(after.day,before.day);assert.equal(after.fraction,before.fraction);assert.equal(after.troops,before.troops);assert.equal(after.end,before.end);assert.ok(Math.hypot(after.point[0]-before.point[0],after.point[1]-before.point[1])<1e-6);
+ assert.equal(after.version,27);assert.equal(after.day,before.day);assert.equal(after.fraction,before.fraction);assert.equal(after.troops,before.troops);assert.equal(after.end,before.end);assert.ok(Math.hypot(after.point[0]-before.point[0],after.point[1]-before.point[1])<1e-6);
  migrations.push({from:version,before,after});await shot('saved-route-'+version+'-to-25');
 }
 assert.deepEqual(errors,[]);fs.writeFileSync(path.join(OUT,'result.json'),JSON.stringify({rows,migrations,errors},null,2));console.log('PASS: Sanshu valley and mountain comparison, movement follows road, 3 regions at 2 widths, version 22/23 slot migration, no exceptions');

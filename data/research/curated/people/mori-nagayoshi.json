@@ -1,0 +1,26 @@
+{
+  "id": "person:mori-nagayoshi",
+  "name": "森長可",
+  "gameNames": [
+    "森長可"
+  ],
+  "authorityIds": [
+    "wikidata:Q1071391"
+  ],
+  "authorityEvidence": {
+    "scope": "person-identity",
+    "checked": "2026-11-09",
+    "wikidataRevision": 2453491158,
+    "snapshot": "data/research/source-notes/appear-authority-batch-1.json",
+    "sourceNote": "data/research/source-notes/appear-authority-batch-1.json",
+    "note": "data/research/source-notes/appear-authority-batch-1.md",
+    "identityChecks": [
+      "可児市の本文が兼山城主森武蔵（長可）を、小牧・長久手の戦いで天正十二年（1584年）四月九日に27才で果てたとする",
+      "Wikidata Q1071391の日本語主名が森長可で、P570の年が1584、P569の年が1558（27才の数えと合う）"
+    ],
+    "basis": "人物の同定のみ。原本にある生没日・所在・所領・関係の時期は新たな史実命題へ採用しない。",
+    "sourceIds": [
+      "kaniNagayoshiIdentity"
+    ]
+  }
+}

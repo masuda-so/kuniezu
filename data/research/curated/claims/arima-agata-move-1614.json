@@ -1,0 +1,37 @@
+{
+  "id": "arima-agata-move-1614",
+  "entity": "place:agata",
+  "predicate": "residence-transfer",
+  "value": "幕府が肥前日野江城主の有馬直純を日向の県（延岡）に移封して一万三千石を加えていたところ、この月、直純は県に移り住んだ。",
+  "validYears": [
+    1614,
+    1614
+  ],
+  "source": "hiDainihonshiryoKobun",
+  "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+  "locator": "綱文：和暦 慶長19年7月是月 第2条（区分 大日本史料、第12編之14（データベースの表示値）、414頁）",
+  "gameBindings": [
+    "TK.HIST:有馬直純の県入部"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-09",
+  "uncertainty": "綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。",
+  "linkedEntities": [
+    "place:agata"
+  ],
+  "eventRelation": "residence-transfer",
+  "datePrecision": "period",
+  "eventTime": {
+    "kind": "described-period",
+    "label": "慶長19年7月（綱文は「是月」）",
+    "indexYears": [
+      1614,
+      1614
+    ],
+    "calendar": "Japanese-era-description",
+    "precision": "period",
+    "boundsAreHistoricalStartEnd": false
+  },
+  "eventScope": "綱文は「是月」とだけ書き、日を掲げない。移封の決定は「是より先」で日付が無い。有馬直純は人物の ID が無いので結ばず、移り住んだ先の県（place:agata）を主体にする。最終年表の有馬直純の県入部（訂正モジュールの適用後。旧暦1614年7月13日、1614年8月18日）。期間の精度なので日の比較はしない。"
+}

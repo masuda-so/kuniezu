@@ -26,6 +26,7 @@
 - `uv run python tools/geo/prepare_era_overrides.py --at 1560-01-01 --output /tmp/era-overrides-new` で、香取海の既存推定水面・保護陸・岸線として描かない切口を一体で取り出せます。CODH原本やゲーム画面には自動適用しません。
 - 街道も[編集済みGeoJSONの正本](data/inputs/road-vector-migration/README.md)を使い、描画と行軍表示が同じ道筋を参照します。通常ビルドは線を再補正せず、そのまま複写します。
 - 米沢・越後の比較線の4閉路を除き、旧保存の途中位置と着陣時刻を保持します。[適用範囲と検証](docs/reports/AIZU_VECTOR_REFERENCE_LOOPS.md)を記録しています。
+- 羽州道の矢立峠―石川付近はCODHの江戸期比較線を編集正本へ採用し、交差点へ戻る閉路を除きます。概略接続と戦国期の未確定範囲は[採用記録](docs/reports/USHU_VECTOR_REFERENCE.md)で区別します。
 - 東山道の現代比較線に残っていた同一点へ戻る巡回を除きました。旧保存は位置と着陣日を保って道筋を更新します。戦国期の精密な道筋の確定とは区別します。[採否と検査](docs/reports/TOSANDO_REFERENCE_LOOP.md)を参照してください。
 - 古湖岸、城・施設・人物の史実照合、街道上の行軍、合戦の布陣と動きを、出典を付けて表示します。
 - 合戦図の駒は表示幅や地区切替で地理的位置を変えません。同地点の隊は選択候補から個別に確認できます。密集時は駒の大きさを抑え、選択した隊は大きさを変えず前面で強調します。
@@ -90,7 +91,7 @@ node tools/map/build-map.cjs --height --python /path/to/python3
 
 史実の関係データベースは、`uv run python manage.py migrate` の後 `uv run python manage.py import_history` で、`data/research/` と `docs/work/` の入力から根の `db.sqlite3` に作ります（Git には入れません）。`uv run python manage.py history_query --about 織田信長 --year 1582` のように、対象・年・経緯度の範囲で引けます。全件の背骨として、史料編纂所の綱文を 1 本条＝1 件で並べた所在の目録（`data/research/kobun-index/`、文面は置かない）を取り込みます。今は 1534 年分（478 条）で、どの条も未分類です。戦役と、それを作る合戦の親子（`data/research/conflicts.json`）も取り込みます。対象は名前でも識別子（`place:ganjaku` など）でも指せ、名前が複数の対象に当たると候補を並べて止まります。2 つの識別子が同じ対象であること、ゲームの拠点が台帳の場所を代表することは、出典付きの記録として `data/research/curated/identities/*.json` に置きます（形は同フォルダの `README.md`。記録が無い限り、同じ名前の対象を自動ではまとめません）。入っているのは今ある入力の全件で、出典で確認済みのものと、実装の棚卸し（未照合）を区別して持ちます（`docs/architecture/history-rdb.md`）。
 
-サーバーは、利用者が一度起動したポート（8000番・8001番）に限り、エージェントも起動・停止します。それ以外のポートは起動しません。検証は起動済みの `http://localhost:8000/index.html` に接続します。検査結果の保存先は `GAME_TEST_OUTPUT` で指定できます。
+エージェントが起動・停止してよいサーバーは `127.0.0.1:8000` だけです。8001番や他ポートは起動・利用しません。検証は起動済みの `http://127.0.0.1:8000/index.html` に接続します。検査結果の保存先は `GAME_TEST_OUTPUT` で指定できます。
 
 基本の確認は次のコマンドです。詳しくは [検証手順](tools/checks/README.md) を参照してください。
 
