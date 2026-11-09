@@ -1,0 +1,37 @@
+{
+  "id": "ina-shimojo-grant-1582",
+  "entity": "region:伊那郡",
+  "predicate": "territorial-transfer",
+  "value": "徳川家康が信濃下条城主の下条頼安に、小笠原信嶺・知久頼氏の邑を除いた伊那郡の地を与え、奥平信昌らを伊那に遣わして頼安を援けさせた。",
+  "validYears": [
+    1582,
+    1582
+  ],
+  "datePrecision": "day",
+  "source": "hiDainihonshiryoKobun",
+  "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+  "locator": "綱文：和暦 天正10年8月12日 第2条（区分 大日本史料、第11編之2（データベースの表示値）、291頁）",
+  "gameBindings": [
+    "TK.HIST:1582-7-28"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-09",
+  "uncertainty": "綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。",
+  "linkedEntities": [
+    "person:tokugawa-ieyasu"
+  ],
+  "eventTime": {
+    "kind": "dated-event",
+    "date": [
+      1582,
+      8,
+      12
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": false,
+    "precision": "day"
+  },
+  "eventRelation": "territorial-transfer",
+  "eventScope": "綱文が掲げる日付。天正10年8月12日はゲーム共通の暦表で1582年8月29日。最終年表の題名なしの出来事（旧暦1582年7月9日、1582年7月28日）は綱文より32日早い。給与の日。年表の出来事は伊那の国衆が徳川に従ったことで、この給与と同じではない。郡の境の輪郭は持たない。下条頼安は人物の ID が無いので結ばない。主体は地域の参照（region:）。"
+}

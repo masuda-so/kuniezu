@@ -1,0 +1,38 @@
+{
+  "id": "hideyoshi-kurokawa-entry-1590",
+  "entity": "place:kurokawa-castle",
+  "predicate": "military-event",
+  "value": "秀吉が陸奥会津の黒川城に入った。その後、小田原に参陣しなかった大崎・葛西らの邑を没収し、蒲生氏郷を会津に封じた。",
+  "validYears": [
+    1590,
+    1590
+  ],
+  "datePrecision": "day",
+  "source": "hiDainihonshiryoKobun",
+  "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+  "locator": "綱文：和暦 天正18年8月9日 第2条（区分 史料綜覧、編11・冊912（データベースの表示値）、304頁）",
+  "gameBindings": [
+    "TK.HIST:奥州仕置"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-09",
+  "uncertainty": "綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。",
+  "linkedEntities": [
+    "place:kurokawa-castle",
+    "person:toyotomi-hideyoshi"
+  ],
+  "eventTime": {
+    "kind": "dated-event",
+    "date": [
+      1590,
+      8,
+      9
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": false,
+    "precision": "day"
+  },
+  "eventRelation": "military-event",
+  "eventScope": "綱文が掲げる日付。天正18年8月9日はゲーム共通の暦表で1590年9月7日。綱文のこの日は秀吉の黒川城入りの日で、邑の没収と氏郷の会津への封は綱文が「尋で（その後）」と書くので、この日にしない（封の命題は作らない）。氏郷の会津への封は「尋で」の後なので、氏郷はこの日の入城に結ばない。"
+}

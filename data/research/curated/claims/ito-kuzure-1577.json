@@ -1,0 +1,39 @@
+{
+  "id": "ito-kuzure-1577",
+  "entity": "region:日向",
+  "predicate": "campaign-action",
+  "value": "島津義久と忠平（義弘）が伊東義祐の将の内応によって義祐を攻め、この日、義祐を敗走させて、その領国を奪った。",
+  "validYears": [
+    1577,
+    1577
+  ],
+  "datePrecision": "day",
+  "source": "hiDainihonshiryoKobun",
+  "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+  "locator": "綱文：和暦 天正5年12月11日 第1条（区分 史料綜覧、編10・冊911（データベースの表示値）、162頁）",
+  "gameBindings": [
+    "TK.HIST:伊東崩れ"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-09",
+  "uncertainty": "綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。",
+  "linkedEntities": [
+    "person:島津義久",
+    "person:shimazu-yoshihiro",
+    "person:伊東義祐"
+  ],
+  "eventTime": {
+    "kind": "dated-event",
+    "date": [
+      1577,
+      12,
+      11
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": false,
+    "precision": "day"
+  },
+  "eventRelation": "campaign-action",
+  "eventScope": "綱文が掲げる日付。天正5年12月11日はゲーム共通の暦表で1578年1月18日。最終年表の伊東崩れ（旧暦1577年11月23日、1578年1月1日）は綱文より17日早い。義祐の敗走と領国の取得を綱文が一つの条に掲げる日。義祐の豊後への移りの日付や、日向の全域の支配の確定には広げない。主体は地域の参照（region:）。"
+}

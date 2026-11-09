@@ -1,0 +1,39 @@
+{
+  "id": "tsuchimochi-capture-1578",
+  "entity": "place:matsuo-hyuga",
+  "predicate": "military-event",
+  "value": "豊後の大友義統が日向に入り、島津方の土持親成を松尾城に攻めて捕らえた。",
+  "validYears": [
+    1578,
+    1578
+  ],
+  "datePrecision": "day",
+  "source": "hiDainihonshiryoKobun",
+  "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+  "locator": "綱文：和暦 天正6年4月12日 第1条（区分 史料綜覧、編10・冊911（データベースの表示値）、174頁）",
+  "gameBindings": [
+    "TK.HIST:1578-4-10"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-09",
+  "uncertainty": "綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。",
+  "linkedEntities": [
+    "place:matsuo-hyuga",
+    "person:otomo-yoshimune",
+    "person:土持親成"
+  ],
+  "eventTime": {
+    "kind": "dated-event",
+    "date": [
+      1578,
+      4,
+      12
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": false,
+    "precision": "day"
+  },
+  "eventRelation": "military-event",
+  "eventScope": "綱文が掲げる日付。天正6年4月12日はゲーム共通の暦表で1578年5月18日。最終年表の題名なしの出来事（旧暦1578年3月4日、1578年4月10日）は綱文より38日早い。親成の捕縛の日。綱文は親成を「島津氏の将」と書く。土持氏の滅亡の日付や、日向北部の支配には広げない。"
+}
