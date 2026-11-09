@@ -37,6 +37,6 @@
  G.buildBattleCatalog=function(){build();for(const [title,d] of Object.entries(X)){
   const sc=TK.BATTLES[title];if(!sc)throw Error('表示台帳への登録漏れ: '+title);
   sc.units=[];for(const [i,side] of ['a','b'].entries()){sc.sides[side].n=d.labels[i];sc.sides[side].tr='参加兵数未確定';for(const [j,n] of d.names[i].entries())sc.units.push({id:'extra-'+side+'-'+j,side,n,g:n,tr:0,path:[],role:'関係部隊・個別持場と兵数は不詳'});}
-  sc.place=d.geo[3];sc.sources=[...new Set([...(sc.sources||[]),d.source])];sc.beats=[[0,d.summary],[100,'図の部隊は登録済みの関係者。全参加者や日別の移動を確定した図ではありません。']];sc.calendar=[[0,'地勢と両軍の配置'],[100,'記録の確認・終了']];
+  sc.place=d.geo[3];sc.sources=[...new Set([...(sc.sources||[]),d.source])];sc.beats=[[100,d.summary]];sc.calendar=[[0,'地勢と両軍の配置'],[100,'記録の確認・終了']];
  }};
 })();
