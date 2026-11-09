@@ -1,0 +1,26 @@
+{
+  "id": "person:hachisuka-yoshishige",
+  "name": "蜂須賀至鎮",
+  "gameNames": [
+    "蜂須賀至鎮"
+  ],
+  "authorityIds": [
+    "wikidata:Q3125481"
+  ],
+  "authorityEvidence": {
+    "scope": "person-identity",
+    "checked": "2026-11-08",
+    "wikidataRevision": 2556853148,
+    "snapshot": "data/research/source-notes/authority-batch-b.json",
+    "sourceNote": "data/research/source-notes/authority-batch-b.json",
+    "note": "data/research/source-notes/authority-batch-b.md",
+    "identityChecks": [
+      "徳島城博物館の本文が家政の嫡子を至鎮とする",
+      "Wikidata Q3125481の主名が蜂須賀至鎮、P22は家政Q1073557に対応する"
+    ],
+    "basis": "人物の同定のみ。原本にある生没日・所在・所領・関係の時期は新たな史実命題へ採用しない。",
+    "sourceIds": [
+      "tokushimaHachisukaLineIdentity"
+    ]
+  }
+}

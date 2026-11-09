@@ -402,3 +402,12 @@ body[data-modal] #news{visibility:hidden}body[data-modal=scene] #toast,body[data
 .atlas-selection{border-top:1px solid var(--rule);background:var(--lac2)}.atlas-selection[hidden]{display:none}.atlas-selection-header{display:flex;align-items:center;gap:8px;padding:8px 10px}.atlas-selection-header strong{flex:1;font-size:12px}.atlas-selection-choices{display:flex;flex-wrap:wrap;align-content:flex-start;gap:8px;padding:0 10px 10px;max-height:min(172px,calc(28vh - 48px));overflow-y:auto;overscroll-behavior:contain}.atlas-unit-choice[aria-pressed="true"]{border-color:var(--gold);background:rgba(217,184,102,.15)}.atlas-unit-choice{display:flex;align-items:center;gap:6px;background:transparent;border:1px solid var(--rule);color:var(--paper);border-radius:4px;padding:5px 9px;font:inherit;cursor:pointer}.evidence-scene .battle-dock{padding:8px 12px;gap:6px}.evidence-scene .atlas-caption{font-size:11px;line-height:1.5}.evidence-scene .battle-totals{display:none}.battle-anchor{font-size:11px;opacity:.7;margin:3px 0 8px}
 
 .campaign-conflicts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:20px 0}.campaign-conflicts article{min-width:0;padding:12px;border:1px solid #715a33;border-radius:4px}.campaign-conflicts .act{width:100%;text-align:left}.campaign-conflicts h3{margin:0 0 8px}.campaign-conflicts p{margin:8px 0 0}@media(max-width:560px){.campaign-conflicts{grid-template-columns:1fr;gap:8px;margin:12px 0}}
+
+/* 合戦図は地形と布陣を主役にし、操作と記録は薄い紙面へまとめる。 */
+.atlas-stage{border-color:#b5bcad;border-radius:2px;background:#e2e7db}
+.evidence-scene .battle-dock{background:#f4f1e6;color:#384536;border-top:1px solid #bdc7b5;padding:6px 10px;gap:4px}
+.evidence-scene .battle-dock .mini,.evidence-scene .battle-dock .ic{color:#3f523a;border-color:#bdc7b5;background:#faf8ef}
+.evidence-scene .battle-dock .bnar{padding:5px 8px;min-height:48px}
+.evidence-scene .battle-dock .bnar p{margin:0;min-height:2lh;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;overflow:hidden;font-size:12px;line-height:1.55}
+.evidence-scene .battle-seek{font-size:11px}.evidence-scene .battle-seek input{accent-color:#6b8062}
+.mbox.scene>header{margin-bottom:8px}.mbox.scene>header h2{font-size:22px;margin:2px 0 3px}

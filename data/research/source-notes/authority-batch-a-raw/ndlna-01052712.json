@@ -1,0 +1,59 @@
+{
+    "@context": "https://id.ndl.go.jp/auth/context.json",
+    "uri": "http://id.ndl.go.jp/auth/ndlna/01052712",
+    "primaryTopic": {
+        "uri": "http://id.ndl.go.jp/auth/entity/01052712",
+        "type": {
+            "uri": "http://xmlns.com/foaf/0.1/Person"
+        },
+        "name": "柴田勝家",
+        "dateOfBirth": "1522",
+        "dateOfDeath": "1583",
+        "biographicalInformation": [
+            "安土桃山時代の武将"
+        ]
+    },
+    "type": {
+        "uri": "http://www.w3.org/2004/02/skos/core#Concept"
+    },
+    "modified": "2026-01-21T08:34:34",
+    "created": "2006-08-04",
+    "prefLabel": {
+        "literalForm": "柴田, 勝家, 1522-1583",
+        "transcription": "シバタ, カツイエ, 1522-1583",
+        "transcription-l": [
+            {
+                "@value": "シバタ, カツイエ, 1522-1583",
+                "@language": "ja-Kana"
+            },
+            {
+                "@value": "Shibata, Katsuie, 1522-1583",
+                "@language": "ja-Latn"
+            }
+        ]
+    },
+    "label": "柴田, 勝家, 1522-1583",
+    "source": [
+        "柴田勝家 / 福井市立郷土歴史博物館 企画・制作・編集",
+        "国史大辞典",
+        "郷土歴史人物事典福井(生年)"
+    ],
+    "exactMatch": [
+        {
+            "uri": "http://id.loc.gov/authorities/names/n79031136"
+        },
+        {
+            "uri": "https://isni.org/isni/0000000021480825"
+        },
+        {
+            "uri": "http://viaf.org/viaf/sourceID/NDL%7C01052712#skos:Concept"
+        }
+    ],
+    "inScheme": {
+        "uri": "http://id.ndl.go.jp/auth#personalNames"
+    },
+    "historyNote": [
+        "生年追加 (20180606)"
+    ]
+}
+

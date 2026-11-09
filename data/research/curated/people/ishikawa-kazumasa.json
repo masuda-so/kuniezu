@@ -1,0 +1,26 @@
+{
+  "id": "person:ishikawa-kazumasa",
+  "name": "石川数正",
+  "gameNames": [
+    "石川数正"
+  ],
+  "authorityIds": [
+    "wikidata:Q873166"
+  ],
+  "authorityEvidence": {
+    "scope": "person-identity",
+    "checked": "2026-11-08",
+    "wikidataRevision": 2560600276,
+    "snapshot": "data/research/source-notes/authority-batch-a.json",
+    "sourceNote": "data/research/source-notes/authority-batch-a.json",
+    "note": "data/research/source-notes/authority-batch-a.md",
+    "sourceIds": [
+      "publicBatchAIshikawaKazumasa"
+    ],
+    "identityChecks": [
+      "公的機関本文が石川数正を対象の武将として記載",
+      "WikidataのQ5人物型・主名称と公的本文の人物役割を照合。他の同姓人物と区別"
+    ],
+    "basis": "数正と次代康長を区別する同定文脈だけ。入封日・天守築造日・所在は新命題へ採らない。"
+  }
+}

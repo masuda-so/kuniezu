@@ -1,0 +1,275 @@
+{
+  "schemaVersion": 1,
+  "title": "長篠の戦い",
+  "label": "長篠の戦い・現行範囲比較標高",
+  "frame": [
+    137.49917791724945,
+    34.944152712899744,
+    137.58682208275056,
+    34.89384728710025
+  ],
+  "size": [
+    512,
+    358
+  ],
+  "zoom": 14,
+  "outputFile": "02.json",
+  "inputs": [
+    {
+      "key": [
+        14,
+        14449,
+        6492
+      ],
+      "file": "inputs/dem_png-14-14449-6492.png",
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/dem_png/14/14449/6492.png",
+      "bytes": 105514,
+      "sha256": "d09544ba866f8417201cae1a3b27342de39690734dedd0446c6316d7ad7f47d6",
+      "retrievedAt": "2026-11-08T15:06:11.773778+00:00"
+    },
+    {
+      "key": [
+        14,
+        14450,
+        6492
+      ],
+      "file": "inputs/dem_png-14-14450-6492.png",
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/dem_png/14/14450/6492.png",
+      "bytes": 108274,
+      "sha256": "5119adb06ac6c1d3f30727fc32b644cf522356e6092f526bd82def9bc37d79d5",
+      "retrievedAt": "2026-11-08T15:06:11.838405+00:00"
+    },
+    {
+      "key": [
+        14,
+        14451,
+        6492
+      ],
+      "file": "inputs/dem_png-14-14451-6492.png",
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/dem_png/14/14451/6492.png",
+      "bytes": 106881,
+      "sha256": "c76928b6994c727957047ad25eb458346d448e476eaade3b46235147ea6a0fe6",
+      "retrievedAt": "2026-11-08T15:06:12.016966+00:00"
+    },
+    {
+      "key": [
+        14,
+        14452,
+        6492
+      ],
+      "file": "inputs/dem_png-14-14452-6492.png",
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/dem_png/14/14452/6492.png",
+      "bytes": 106915,
+      "sha256": "ea3149f53f7ba17ce110067bb3668299ad7fa3ecb97fafe4014ba90a5c46adc8",
+      "retrievedAt": "2026-11-08T15:06:12.131923+00:00"
+    },
+    {
+      "key": [
+        14,
+        14453,
+        6492
+      ],
+      "file": "inputs/dem_png-14-14453-6492.png",
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/dem_png/14/14453/6492.png",
+      "bytes": 105633,
+      "sha256": "c7aae9c6f8d37c89e452d0c6b53f9cd43ab3727b1d675545c5aa41413c64162d",
+      "retrievedAt": "2026-11-08T15:06:12.306914+00:00"
+    },
+    {
+      "key": [
+        14,
+        14449,
+        6493
+      ],
+      "file": "inputs/dem_png-14-14449-6493.png",
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/dem_png/14/14449/6493.png",
+      "bytes": 106606,
+      "sha256": "06a96b9ba8efe5c5cdb214edbd1fdf05813d79f5c9878f56a172df25b75c7487",
+      "retrievedAt": "2026-11-08T15:06:12.398673+00:00"
+    },
+    {
+      "key": [
+        14,
+        14450,
+        6493
+      ],
+      "file": "inputs/dem_png-14-14450-6493.png",
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/dem_png/14/14450/6493.png",
+      "bytes": 101497,
+      "sha256": "603fa1a2a428136696122de8a6a261fd8a4594c575d933dac6a0d68b161e6cea",
+      "retrievedAt": "2026-11-08T15:06:12.554364+00:00"
+    },
+    {
+      "key": [
+        14,
+        14451,
+        6493
+      ],
+      "file": "inputs/dem_png-14-14451-6493.png",
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/dem_png/14/14451/6493.png",
+      "bytes": 93494,
+      "sha256": "563417c4f4454eccc3239768749e06cef1f955075784aff202455fbff96ba081",
+      "retrievedAt": "2026-11-08T15:06:12.649715+00:00"
+    },
+    {
+      "key": [
+        14,
+        14452,
+        6493
+      ],
+      "file": "inputs/dem_png-14-14452-6493.png",
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/dem_png/14/14452/6493.png",
+      "bytes": 95624,
+      "sha256": "2386dff6a6073623f6f015c991a217be27e766a61787b91162d67b4734b60e7d",
+      "retrievedAt": "2026-11-08T15:06:12.804677+00:00"
+    },
+    {
+      "key": [
+        14,
+        14453,
+        6493
+      ],
+      "file": "inputs/dem_png-14-14453-6493.png",
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/dem_png/14/14453/6493.png",
+      "bytes": 102274,
+      "sha256": "5b3c28124521107ca68ca7024b210c91db02d679bde3152ebb2e114baaa64e3e",
+      "retrievedAt": "2026-11-08T15:06:12.887879+00:00"
+    },
+    {
+      "key": [
+        14,
+        14449,
+        6494
+      ],
+      "file": "inputs/dem_png-14-14449-6494.png",
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/dem_png/14/14449/6494.png",
+      "bytes": 85931,
+      "sha256": "f357034c10ca9de64d1e5584710cfa09bd2fe18d7c5b93f8e6fc825850ceef0d",
+      "retrievedAt": "2026-11-08T15:06:13.050780+00:00"
+    },
+    {
+      "key": [
+        14,
+        14450,
+        6494
+      ],
+      "file": "inputs/dem_png-14-14450-6494.png",
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/dem_png/14/14450/6494.png",
+      "bytes": 73823,
+      "sha256": "caddbda443bf0554ffbda1e334ada1bd4489e9c85286655e062c2352eeee4fe3",
+      "retrievedAt": "2026-11-08T15:06:13.098537+00:00"
+    },
+    {
+      "key": [
+        14,
+        14451,
+        6494
+      ],
+      "file": "inputs/dem_png-14-14451-6494.png",
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/dem_png/14/14451/6494.png",
+      "bytes": 89903,
+      "sha256": "413370ba072f6b6cf611978fb34b4b5451e5066430c940c18fb6f0c2513b270a",
+      "retrievedAt": "2026-11-08T15:06:13.304943+00:00"
+    },
+    {
+      "key": [
+        14,
+        14452,
+        6494
+      ],
+      "file": "inputs/dem_png-14-14452-6494.png",
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/dem_png/14/14452/6494.png",
+      "bytes": 99755,
+      "sha256": "fb8e7faa1bbf719f94558d1ecaef72f72b73db917090dd461d4e6be982ba5d4d",
+      "retrievedAt": "2026-11-08T15:06:13.328294+00:00"
+    },
+    {
+      "key": [
+        14,
+        14453,
+        6494
+      ],
+      "file": "inputs/dem_png-14-14453-6494.png",
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/dem_png/14/14453/6494.png",
+      "bytes": 105148,
+      "sha256": "398460b52230f929160dd2a27490af75cee49a3f921edb1f6ba2881fb2f780c2",
+      "retrievedAt": "2026-11-08T15:06:13.588093+00:00"
+    },
+    {
+      "key": [
+        14,
+        14449,
+        6495
+      ],
+      "file": "inputs/dem_png-14-14449-6495.png",
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/dem_png/14/14449/6495.png",
+      "bytes": 68582,
+      "sha256": "2424e0db4b38b25f90f6ac2cd2ab1baef18af7ba6b28999df62d359f94422bae",
+      "retrievedAt": "2026-11-08T15:06:13.608873+00:00"
+    },
+    {
+      "key": [
+        14,
+        14450,
+        6495
+      ],
+      "file": "inputs/dem_png-14-14450-6495.png",
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/dem_png/14/14450/6495.png",
+      "bytes": 90878,
+      "sha256": "99c44563b367d0b99091dfcc596eada22190d2174aa127290c36a50fdf06d3dc",
+      "retrievedAt": "2026-11-08T15:06:13.844045+00:00"
+    },
+    {
+      "key": [
+        14,
+        14451,
+        6495
+      ],
+      "file": "inputs/dem_png-14-14451-6495.png",
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/dem_png/14/14451/6495.png",
+      "bytes": 101168,
+      "sha256": "cb840d7990798bc5624da4dbd48e75ef19c4a83c38c5d8f0877ae2e31f24f47e",
+      "retrievedAt": "2026-11-08T15:06:13.883420+00:00"
+    },
+    {
+      "key": [
+        14,
+        14452,
+        6495
+      ],
+      "file": "inputs/dem_png-14-14452-6495.png",
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/dem_png/14/14452/6495.png",
+      "bytes": 106445,
+      "sha256": "14ffdad7edde00eadcb098f034fa0844d134300d87433fcb460fe01ceaa1beb1",
+      "retrievedAt": "2026-11-08T15:06:14.131173+00:00"
+    },
+    {
+      "key": [
+        14,
+        14453,
+        6495
+      ],
+      "file": "inputs/dem_png-14-14453-6495.png",
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/dem_png/14/14453/6495.png",
+      "bytes": 105470,
+      "sha256": "86e8b47f4195036c761fda574e80400a98901b0052aea6491b5e28339e4af0db",
+      "retrievedAt": "2026-11-08T15:06:14.123075+00:00"
+    }
+  ],
+  "riverInput": {
+    "file": "data/inputs/battle-dem-detail/02/river-reference.json",
+    "sha256": "c9fb8bc945f34c681bd01af455b9b56784fdafee474f4ae1a38f81cc449abf87",
+    "upstreamRepositoryFile": "kuniezu/static/kuniezu/atlas/02.json"
+  },
+  "elevationSource": {
+    "dataset": "国土地理院 標高タイル DEM10B",
+    "registry": "https://maps.gsi.go.jp/development/ichiran.html",
+    "specification": "https://maps.gsi.go.jp/development/demtile.html",
+    "license": "PDL1.0 / 国土地理院コンテンツ利用規約",
+    "licenseURL": "https://www.gsi.go.jp/kikakuchousei/kikakuchousei40182.html",
+    "credit": "地理院タイル（標高タイル DEM10B）を加工して作成",
+    "scope": "現代比較標高。戦国期の地形・造成前の地表・城郭平面を復元したものではない。",
+    "sampling": "WebMercator z14 tile containing each regular lon/lat grid sample; nearest pixel; official RGB 0.01m signed decode; round to nearest 1m for current renderer uint16le-plus32768; reject NoData without interpolation"
+  },
+  "expectedOutputSHA256": "5fcc62824e67820daa9e7cbd08f7393742079d2dfdf77f0397ae58303cc19346"
+}
