@@ -661,17 +661,34 @@ class Importer:
         """
         if end is None:
             return None, None
-        precision = end.get("precision")
-        if precision == Precision.DAY and end.get("calendar") == Calendar.LUNISOLAR:
-            year, month, day = end["date"]
-            leap = bool(end.get("leapMonth"))
-            number = dates.lunisolar_to_jd(self.table, year, month, day, leap=leap)
-            if number is not None:
-                return number, number
-        elif precision == Precision.YEAR and end.get("calendar") == Calendar.CE_YEAR:
-            year = end["year"]
-            return dates.western_to_jd(year, 1, 1), dates.western_to_jd(year + 1, 1, 1)
         message = f"{name}: an end of a period is a lunisolar day or a year"
+        # Anything but a mapping falls through to the refusal below.
+        end = end if isinstance(end, dict) else {}
+        precision, calendar = end.get("precision"), end.get("calendar")
+        if precision == Precision.DAY and calendar == Calendar.LUNISOLAR:
+            date, leap = end.get("date"), end.get("leapMonth", False)
+            fields = {"date", "calendar", "leapMonth", "precision"}
+            if (
+                set(end) <= fields
+                and isinstance(date, list)
+                and len(date) == DAY_PARTS
+                and all(is_number(part) for part in date)
+                and isinstance(leap, bool)
+            ):
+                year, month, day = date
+                number = dates.lunisolar_to_jd(self.table, year, month, day, leap=leap)
+                if number is not None:
+                    return number, number
+        elif precision == Precision.YEAR and calendar == Calendar.CE_YEAR:
+            year = end.get("year")
+            if (
+                set(end) <= {"year", "calendar", "precision"}
+                and is_number(year)
+                and isinstance(year, int)
+            ):
+                return dates.western_to_jd(year, 1, 1), dates.western_to_jd(
+                    year + 1, 1, 1
+                )
         raise ValueError(message)
 
     def period_span(self, name: str, period: Json | None) -> tuple[int | None, ...]:
@@ -1281,6 +1298,14 @@ class Importer:
         return self.summary
 
 
+DAY_PARTS = 3
+
+
+def is_number(value: object) -> bool:
+    """A whole number written as one, not a flag or a string."""
+    return isinstance(value, int) and not isinstance(value, bool)
+
+
 def surely_overlap(a: tuple[int | None, ...], b: tuple[int | None, ...]) -> bool:
     """Whether the parts of two periods that surely hold share a day.
 
@@ -1288,6 +1313,11 @@ def surely_overlap(a: tuple[int | None, ...], b: tuple[int | None, ...]) -> bool
     empty end is open.
     """
     a_from, a_to, b_from, b_to = a[1], a[2], b[1], b[2]
+    # A period whose sure part is empty (a short span known only to its year)
+    # surely holds on no day, so it meets nothing.
+    for start, end in ((a_from, a_to), (b_from, b_to)):
+        if start is not None and end is not None and start >= end:
+            return False
     return (a_from is None or b_to is None or a_from < b_to) and (
         b_from is None or a_to is None or b_from < a_to
     )

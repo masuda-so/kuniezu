@@ -166,6 +166,19 @@ def test_two_representations_that_surely_meet_are_refused(inputs, second):
         import_history(inputs)
 
 
+@pytest.mark.parametrize("other", [None, {"from": year(1560)}])
+def test_a_period_with_no_sure_day_meets_nothing(inputs, other):
+    # Known only to lie inside 1573: possible there, sure on no day.
+    stands(inputs, "short", AFTER, SITE, {"from": year(1573), "until": year(1573)})
+    stands(inputs, "wide", AFTER, OTHER_SITE, other)
+    import_history(inputs)
+    place = Thing.objects.get(key=AFTER)
+    found = {
+        (item.site.key, item.sure) for item in queries.represented_by(place, mid(1573))
+    }
+    assert found == {(SITE, False), (OTHER_SITE, True)}
+
+
 def test_periods_that_meet_only_in_an_uncertain_year_are_kept(inputs):
     stands(inputs, "first", AFTER, SITE, {"until": year(1580)})
     stands(inputs, "second", AFTER, OTHER_SITE, {"from": year(1580)})
@@ -189,6 +202,25 @@ def test_periods_that_meet_only_in_an_uncertain_year_are_kept(inputs):
             "lunisolar day or a year",
         ),
         ({"from": year(1573), "since": year(1573)}, "represented-by", "only"),
+        (
+            {"from": year(1573) | {"day": 1}},
+            "represented-by",
+            "lunisolar day or a year",
+        ),
+        (
+            {"from": {"year": True, "calendar": "CE-year", "precision": "year"}},
+            "represented-by",
+            "lunisolar day or a year",
+        ),
+        ({"from": year("1573")}, "represented-by", "lunisolar day or a year"),
+        ({"from": "1573"}, "represented-by", "lunisolar day or a year"),
+        ({"from": day([1573, 7])}, "represented-by", "lunisolar day or a year"),
+        ({"from": day([1573, "7", 1])}, "represented-by", "lunisolar day or a year"),
+        (
+            {"from": day([1573, 7, 1]) | {"leapMonth": "no"}},
+            "represented-by",
+            "lunisolar day or a year",
+        ),
     ],
 )
 def test_a_period_that_makes_no_sense_is_refused(inputs, period, relation, why):
