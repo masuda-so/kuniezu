@@ -1,0 +1,26 @@
+{
+  "id": "person:maeda-toshitsune",
+  "name": "前田利常",
+  "gameNames": [
+    "前田利常"
+  ],
+  "authorityIds": [
+    "wikidata:Q587204"
+  ],
+  "authorityEvidence": {
+    "scope": "person-identity",
+    "checked": "2026-11-09",
+    "wikidataRevision": 2556900878,
+    "snapshot": "data/research/source-notes/appear-authority-batch-1.json",
+    "sourceNote": "data/research/source-notes/appear-authority-batch-1.json",
+    "note": "data/research/source-notes/appear-authority-batch-1.md",
+    "identityChecks": [
+      "石川県立図書館の人物詳細が前田利常を前田利家の四男・第三世加賀藩藩主とし、生年月日を文禄2年11月25日、没年月日を万治元年10月12日（1658）とする",
+      "Wikidata Q587204の日本語主名が前田利常で、P569・P570の年が1594・1658（文禄2年11月25日は西暦1594年1月に当たる）"
+    ],
+    "basis": "人物の同定のみ。原本にある生没日・所在・所領・関係の時期は新たな史実命題へ採用しない。",
+    "sourceIds": [
+      "ishikawaToshitsuneIdentity"
+    ]
+  }
+}
