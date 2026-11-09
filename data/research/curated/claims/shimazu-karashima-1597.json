@@ -1,8 +1,8 @@
 {
-  "id": "jeolla-entry-1597",
-  "entity": "region:全羅道",
-  "predicate": "campaign-action",
-  "value": "宇喜多秀家・毛利秀元が諸将とともに全羅道に入った。",
+  "id": "shimazu-karashima-1597",
+  "entity": "person:shimazu-yoshihiro",
+  "predicate": "departure",
+  "value": "宇喜多秀家・毛利秀元が諸将とともに全羅道に入るなか、この日、島津義弘らが唐島（巨済島）を発った。",
   "validYears": [
     1597,
     1597
@@ -19,6 +19,7 @@
   "checked": "2026-11-09",
   "uncertainty": "綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。",
   "linkedEntities": [
+    "person:shimazu-yoshihiro",
     "person:宇喜多秀家",
     "person:毛利秀元"
   ],
@@ -33,6 +34,6 @@
     "leapMonth": false,
     "precision": "day"
   },
-  "eventRelation": "campaign-action",
-  "eventScope": "綱文が掲げる日付。慶長2年7月28日はゲーム共通の暦表で1597年9月9日。最終年表の題名なしの出来事（旧暦1597年8月20日、1597年10月1日）は綱文より22日遅い。全羅道に入った日。全羅道・忠清道への進出（年表の出来事）の全体には広げない。主体は地域の参照（region:）。朝鮮の地名は、日本に関わる出来事として記録する（地図の範囲とは別）。"
+  "eventRelation": "departure",
+  "eventScope": "綱文が掲げる日付。慶長2年7月28日はゲーム共通の暦表で1597年9月9日。綱文の「是日」が掛かるのは島津義弘らの唐島の出発だけで、秀家・秀元の全羅道入りはこの日より前か同じ頃だが日付が無い（全羅道入りの命題は作らない）。朝鮮の地名は、日本に関わる出来事として記録する（地図の範囲とは別）。"
 }
