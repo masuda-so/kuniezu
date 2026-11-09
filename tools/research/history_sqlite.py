@@ -28,7 +28,7 @@ def build(research, output):
     validation = r"""const fs=require('fs'),os=require('os'),path=require('path'),root=process.argv[1],data=JSON.parse(fs.readFileSync(0));
 const sources=Object.fromEntries(data.sources.map(s=>{const {id,sourceType,recordType,verifiedScope,retained,...meta}=s;return [id,meta];}));
 require(path.join(root,'tools/research/location-store.cjs')).validateLocations({...data,sources});
-const temp=fs.mkdtempSync(path.join(os.tmpdir(),'kuniezu-sql-input-'));try{for(const [i,r] of data.claims.entries())fs.writeFileSync(path.join(temp,i+'.json'),JSON.stringify(r));require(path.join(root,'tools/research/evidence-store.cjs')).loadEvidence({claimDir:temp,sourceDir:path.join(temp,'none'),baseSources:sources});}finally{fs.rmSync(temp,{recursive:true,force:true});}"""
+const temp=fs.mkdtempSync(path.join(os.tmpdir(),'kuniezu-sql-input-'));try{for(const [i,r] of data.claims.entries())fs.writeFileSync(path.join(temp,i+'.json'),JSON.stringify(r));const store=require(path.join(root,'tools/research/evidence-store.cjs'));store.loadEvidence({claimDir:temp,sourceDir:path.join(temp,'none'),baseSources:sources,knownWaterKeys:store.catalogWaterKeys(path.join(root,'docs/work/catalog.jsonl'))});}finally{fs.rmSync(temp,{recursive:true,force:true});}"""
     subprocess.run(['node', '-e', validation, str(ROOT)], input=text(dict(sources=sources,people=people,places=places,claims=claims,locations=locations)), text=True, check=True)
     if output.exists():
         raise ValueError('既存DBは上書きしない: ' + str(output))
