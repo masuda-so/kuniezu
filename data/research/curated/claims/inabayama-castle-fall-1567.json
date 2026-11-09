@@ -1,0 +1,40 @@
+{
+  "id": "inabayama-castle-fall-1567",
+  "entity": "place:inabayama",
+  "predicate": "castle-fall",
+  "value": "美濃三人衆の内応により、織田信長が斎藤龍興の稲葉山城を攻め落とした。",
+  "validYears": [
+    1567,
+    1567
+  ],
+  "datePrecision": "day",
+  "source": "hiDainihonshiryoKobun",
+  "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+  "locator": "綱文：和暦 永禄10年8月15日 第2条（区分 史料綜覧、編9・冊910（データベースの表示値）、663頁）",
+  "gameBindings": [
+    "TK.HIST:稲葉山城の戦い",
+    "node:gifu"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-09",
+  "uncertainty": "綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。",
+  "linkedEntities": [
+    "place:inabayama",
+    "person:oda-nobunaga",
+    "person:斎藤龍興"
+  ],
+  "eventTime": {
+    "kind": "dated-event",
+    "date": [
+      1567,
+      8,
+      15
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": false,
+    "precision": "day"
+  },
+  "eventRelation": "castle-fall",
+  "eventScope": "綱文が掲げる日付。永禄10年8月15日はゲーム共通の暦表で1567年9月17日。最終年表の稲葉山城の戦い（旧暦1567年8月15日、1567年9月17日）は一致する。落城の日。信長の移城の日や美濃一国の平定、印判の使用開始には広げない。"
+}
