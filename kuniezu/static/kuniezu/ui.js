@@ -412,8 +412,9 @@ function drawBase(){
   const cc=vc(),ratio=cam.z/baseSurface.z;
   const x=cc[0]+(baseSurface.x-cam.x)*cam.z-(baseSurface.cc[0]+160)*ratio;
   const y=cc[1]+(baseSurface.y-cam.y)*cam.z-(baseSurface.cc[1]+160)*ratio;
-  const cw=baseSurface.cv.width/DPR*ratio,ch=baseSurface.cv.height/DPR*ratio,ov=Math.max(0,Math.min(VW,x+cw)-Math.max(0,x))*Math.max(0,Math.min(VH,y+ch)-Math.max(0,y))/(VW*VH);
-  if(ov>=.85||performance.now()-(U.zoomRebuildAt||0)<120){
+  const cw=baseSurface.cv.width/DPR*ratio,ch=baseSurface.cv.height/DPR*ratio;
+  // 縮小した控えが画面を覆わないと、地形の代わりに単色の海が見える。全画面を覆う時だけ再利用する。
+  if(x<=0&&y<=0&&x+cw>=VW&&y+ch>=VH){
   bctx.setTransform(1,0,0,1,0,0);bctx.fillStyle='#1c3157';bctx.fillRect(0,0,base.width,base.height);
   bctx.drawImage(baseSurface.cv,x*DPR,y*DPR,baseSurface.cv.width*ratio,baseSurface.cv.height*ratio);U.baseDirty=false;return;}
  }
@@ -421,7 +422,6 @@ function drawBase(){
  // 到着の反映は700msごとにまとめ、カメラの動画中は待つ。最後の反映は必ず行う。
  const liveRevision=U.mapStyle==='relief'?(window.TKTerrain?.getRevision?.()||0):0,nowMs=performance.now();
  if(liveRevision!==U.terrainRevShown){if(!anim&&nowMs-(U.terrainRevAt||0)>=700){U.terrainRevShown=liveRevision;U.terrainRevAt=nowMs;}else{clearTimeout(U.terrainRevTimer);U.terrainRevTimer=setTimeout(()=>{U.baseDirty=true;},anim?120:Math.max(60,700-(nowMs-(U.terrainRevAt||0))));}}
- if(performance.now()<(U.zoomUntil||0))U.zoomRebuildAt=performance.now();
  const cc=vc(),revision=U.terrainRevShown||0;
  const key=[vector.revision(),vector.ready()?vector.epoch():-1,cam.z,DPR,VW,VH,...cc,U.mode,U.mapStyle,U.dipView,U.sel,S?.player,territorySignature(),JSON.stringify(S?.vassal||{}),JSON.stringify(S?.improvements?.roads||{}),revision,fontRevision,TK.waterPhase?.(S?G.date().y:1560),window.TKRaster?.revision()||0,window.TKRelief?.revision()||0,window.TKEdges?.revision()||0,window.TKRivers?.revision()||0,window.TKMapVersion?.active()?.id||''].join('|');
  const pad=160,dx=baseSurface?(cam.x-baseSurface.x)*cam.z:0,dy=baseSurface?(cam.y-baseSurface.y)*cam.z:0;
