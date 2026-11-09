@@ -46,6 +46,8 @@ uv run python manage.py history_query --phenomenon campaign:文禄の役   # 事
 | `event` 出来事 | ある時点に起きる |
 | `state` 状態 | ある期間に成り立つ |
 
+あり方と時刻の精度は別に持つ。命題のあり方は、時刻の形式（日・年の窓・部分ごとの日付は出来事）に加えて、述語でも決める。降伏・落城・明け渡し・死去・移り・国替え・同盟の成立・改名などの「時点の出来事」の述語（`kuniezu/history/importer.py` の `CLAIM_POINT_PREDICATES`）は、時刻が月・季節・時期の呼び名までしか分からなくても出来事にする。「永禄11年冬に降った」は、冬のあいだ降伏が続いた状態ではなく、冬のいつかに起きた出来事で、分からなさは `jd_exact`・`bounds_asserted` に残る。築城や攻城の段階のように、出典ごとに過程か完成の時点かが変わる述語は一覧に入れず、時刻の形式で決める。時刻の無い命題は、述語にかかわらず状態のまま（`claim_mode`）。
+
 | 内容 | 中身 |
 |---|---|
 | `existence` 生没・存廃 | 誕生、死去、創建、廃絶、存続した期間 |
@@ -126,7 +128,7 @@ Hägerstrand（1970）の時間地理学の言葉を、表と検索に対応さ�
 |---|---:|---|
 | `data/research/people.jsonl` | 59 | 対象（人物）、名前、典拠 ID |
 | `data/research/places.jsonl` | 42 | 対象（施設・地点）、代表点 |
-| `data/research/claims.jsonl` | 103 | 事象（確認済み）。`eventTime` があれば出来事、無ければ状態 |
+| `data/research/claims.jsonl` | 103 | 事象（確認済み）。日・年の窓・部分ごとの日付か、時点の出来事の述語なら出来事、ほかは状態 |
 | `data/research/location-observations.jsonl` | 22 | 事象（確認済み）。移転は出来事、所在・本拠・城主は状態 |
 | `data/research/implemented-events.jsonl` | 665 | 事象（年表の実装）。全て出来事 |
 | `data/research/implemented-sites.jsonl` | 461 | 対象（施設・地点）と代表点、存続期間の状態 |

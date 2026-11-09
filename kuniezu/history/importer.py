@@ -162,6 +162,55 @@ CLAIM_KIND_OF = {
     word: kind for kind, words in CLAIM_KIND.items() for word in words.split()
 }
 CLAIM_EVENT_TIMES = {"dated-event", "year-window", "dated-components"}
+# 時点の出来事を表す述語。時刻の精度（日・月・季節・時期の呼び名）にかかわらず
+# 出来事（event）にする。期間で書かれた降伏は「冬のあいだ降伏が続いた」のではなく
+# 「冬のいつかに降った」なので、精度は jd_exact・bounds_asserted に残し、あり方は
+# 述語で決める。工事や攻城の段階のように、出典ごとに過程か完成の時点かが変わる述語は
+# ここに入れず、時刻の形式で決める。時刻の無い命題は、述語にかかわらず状態のまま。
+CLAIM_POINT_PREDICATES = frozenset(
+    [
+        "castle-fall",
+        "castle-surrender",
+        "castle-handover",
+        "castle-assignment",
+        "military-event",
+        "campaign-action",
+        "departure",
+        "headquarters-move",
+        "residence-transfer",
+        "territorial-transfer",
+        "grant-order",
+        "administrative-document",
+        "alliance-formation",
+        "submission",
+        "submission-accepted",
+        "diplomatic-audience",
+        "death-date",
+        "death-year",
+        "birth-year",
+        "renamed",
+        "family-head-succession",
+        "levee-construction-commencement",
+        "reclamation-commencement",
+        "reclamation-permission",
+        "reclamation-development-success",
+        "river-mouth-work-commencement",
+        "river-mouth-work-completion",
+        "reclamation-district-completion",
+        "land-improvement-commencement",
+        "drying-plan-cancellation",
+    ]
+)
+
+
+def claim_mode(predicate: str, time: dict | None) -> str:
+    """命題のあり方。時刻の形式だけでなく、述語が時点の出来事かどうかで決める。"""
+    kind = (time or {}).get("kind")
+    if kind in CLAIM_EVENT_TIMES:
+        return Mode.EVENT
+    if time and predicate in CLAIM_POINT_PREDICATES:
+        return Mode.EVENT
+    return Mode.STATE
 
 
 @dataclass
@@ -996,11 +1045,7 @@ class Importer:
             item = self.phenomenon(
                 "claim:" + row["id"],
                 record,
-                mode=(
-                    Mode.EVENT
-                    if (time or {}).get("kind") in CLAIM_EVENT_TIMES
-                    else Mode.STATE
-                ),
+                mode=claim_mode(row["predicate"], time),
                 kind=kind,
                 subtype=row["predicate"],
                 title=text
