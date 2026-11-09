@@ -61,6 +61,9 @@ is [docs/README.md](docs/README.md); open requests and ownership are in
 - Roads use an [edited GeoJSON source](data/inputs/road-vector-migration/README.md)
   shared by map drawing and displayed marches. Normal builds copy the edited
   geometry without applying corrections again.
+- Four return loops in the Yonezawa and Echigo comparison lines are removed,
+  retaining saved positions and arrival times. See the
+  [scope and checks](docs/reports/AIZU_VECTOR_REFERENCE_LOOPS.md).
 - A return loop in the Tosando modern comparison line has been removed. Old
   saves rebuild routes while retaining their positions and arrival dates. This
   does not establish the precise Sengoku-period alignment. See the
