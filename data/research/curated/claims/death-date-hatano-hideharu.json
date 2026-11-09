@@ -1,8 +1,8 @@
 {
-  "id": "yakami-surrender-1579",
-  "entity": "place:yakami",
-  "predicate": "castle-surrender",
-  "value": "惟任（明智）光秀が丹波八上城の波多野秀治・秀尚兄弟を降し、安土へ送った。信長はこの日、兄弟を磔にした。",
+  "id": "death-date-hatano-hideharu",
+  "entity": "person:波多野秀治",
+  "predicate": "death-date",
+  "value": "惟任（明智）光秀が丹波八上城の波多野秀治・秀尚兄弟を降して安土へ送り、この日、信長は兄弟を磔にした。",
   "validYears": [
     1579,
     1579
@@ -13,6 +13,7 @@
   "locator": "綱文：和暦 天正7年6月2日 第2条（区分 史料綜覧、編10・冊911（データベースの表示値）、214頁）",
   "gameBindings": [
     "TK.HIST:丹波・丹後平定",
+    "TK.DEATH_Y",
     "node:yakami"
   ],
   "recordType": "verified-historical-claim",
@@ -20,9 +21,9 @@
   "checked": "2026-11-09",
   "uncertainty": "綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。",
   "linkedEntities": [
+    "person:波多野秀治",
     "place:yakami",
     "person:akechi-mitsuhide",
-    "person:波多野秀治",
     "person:oda-nobunaga"
   ],
   "eventTime": {
@@ -36,6 +37,6 @@
     "leapMonth": false,
     "precision": "day"
   },
-  "eventRelation": "castle-surrender",
-  "eventScope": "綱文が掲げる日付。天正7年6月2日はゲーム共通の暦表で1579年6月25日。最終年表の丹波・丹後平定（旧暦1579年6月8日、1579年7月1日）は綱文より6日遅い。綱文が掲げる日（兄弟の処刑の日）。降伏そのものの日付は補わない。丹波・丹後の平定には広げない。"
+  "eventRelation": "death-date",
+  "eventScope": "綱文が掲げる日付。天正7年6月2日はゲーム共通の暦表で1579年6月25日。最終年表の丹波・丹後平定（旧暦1579年6月8日、1579年7月1日）は綱文より6日遅い。綱文の「是日」は兄弟の処刑の日（秀治の死去の日）。八上城の降伏はこの日より前だが、その日付は綱文に無いので、降伏の日の命題は作らない。丹波・丹後の平定には広げない。"
 }
