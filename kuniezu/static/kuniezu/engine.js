@@ -93,7 +93,7 @@ G.build=function(){
  G.edgeGeo=(a,b)=>{const e=G.EDGES[ekey(a,b)];if(e)fitEdge(e);if(!e)return [[G.C[a].x,G.C[a].y],[G.C[b].x,G.C[b].y]];return e.a===a?e.g:e.g.slice().reverse();};
 };
 /* ===== 状態 ===== */
-let S=null;G.S=()=>S;G.setS=s=>{S=s;G.syncCastles&&G.syncCastles();};
+let S=null;G.S=()=>S;G.setS=s=>{S=s;G.syncCastles&&G.syncCastles();G.repairCastleEraPositions&&G.repairCastleEraPositions(s);};
 const rnd=Math.random;
 const clamp=(v,a,b)=>Math.max(a,Math.min(b,v));G.clamp=clamp;
 G.cname=id=>(S.cst&&S.cst[id]&&S.cst[id].n)||(S.sc==='s1585'?G.C[id].n2:G.C[id].n1);
@@ -202,7 +202,7 @@ function newGame0(scId,player){G._lr=null;
   if(S.clans[player]&&S.clans[player].alive){const L=gen(S.clans[player].leader);log(`${G.CNK(player)}当主・${L?L.n:''}として、天下に名乗りを上げた。`,'big',[player]);}
   return S;}
  const sc=sc0;
- S={v:4,div:{},cnm:{},chron:[],hi:0,auto:false,sc:scId,t:0,y0:sc.year,m0:sc.month,player,castles:{},clans:{},gens:[],units:[],rel:{},ally:{},log:[],uid:1,over:null,flags:{},prisonQ:[],propQ:[],settings:{pauseOnAttack:true}};
+ S={v:4,castleEraPositionVersion:1,div:{},cnm:{},chron:[],hi:0,auto:false,sc:scId,t:0,y0:sc.year,m0:sc.month,player,castles:{},clans:{},gens:[],units:[],rel:{},ally:{},log:[],uid:1,over:null,flags:{},prisonQ:[],propQ:[],settings:{pauseOnAttack:true}};
  const owner={};for(const k in sc.owners)sc.owners[k].split(' ').forEach(id=>owner[id]=k);
  for(const c of G.CL){
   const k=owner[c.id];
@@ -979,6 +979,35 @@ G.fixJokaku=function(){const sig=G.jokakuSig();if(S.jsig===sig)return false;
  return true;};
 G.syncCastles=function(){if(!S)return;S.cst=S.cst||{};S.ruins=S.ruins||[];S.forts=S.forts||{};S.plans=S.plans||{};S.works=S.works||{};S.jpend=S.jpend||[];if(S.ji==null)S.ji=0;
  for(const C of G.CL){const o=S.cst[C.id];C.x=o&&o.x!=null?o.x:C.bx;C.y=o&&o.y!=null?o.y:C.by;}};
+// 後期シナリオの既定名が一致しても、移転先の位置は別に適用する。
+function placeCastle(id,p){const C=G.C[id],[x,y]=G.PJ(p.lon,p.lat),o=S.cst[id]=S.cst[id]||{};o.n=p.n;o.x=x;o.y=y;C.x=x;C.y=y;}
+G.repairCastleEraPositions=function(s){
+ if(!s||s!==S||s.castleEraPositionVersion===1||!TK.HISTORY_ONLY||s.sc!=='s1585'||![24,25].includes(s.movementGeometryVersion)||Object.values(s.div||{}).some(Boolean)||(s.arcs||[]).length||(s.altQ||[]).length||Object.keys(s.branches||{}).length)return;
+ if(s.hsig!==G.histSig()||s.jsig!==G.jokakuSig())return;
+ const latest=new Map();for(const e of TK.JOKAKU){if(evT(e)>s.t)break;if(e.node&&(e.k==='build'&&e.lon!=null||e.k==='burn'&&e.to))latest.set(e.node,e);}
+ const changed=new Map(),near=(a,b)=>Array.isArray(a)&&Math.hypot(a[0]-b[0],a[1]-b[1])<1e-6;
+ const sample=s.t+(Number.isFinite(s.visualFraction)?Math.max(0,Math.min(1,s.visualFraction)):0);
+ const valid=(line,a,b)=>Array.isArray(line)&&line.length>1&&line.every(p=>Array.isArray(p)&&p.length>=2&&p.slice(0,2).every(Number.isFinite))&&Number.isFinite(a)&&Number.isFinite(b)&&sample>=a&&sample<b;
+ let deferred=false;
+ for(const [id,e]of latest){const C=G.C[id],o=s.cst[id];if(e.k!=='build'||!C||!s.castles[id]||s.jdone?.[e._i]||G.cname(id)!==e.n||o?.n&&o.n!==e.n)continue;
+  const old=[C.bx,C.by],dest=G.PJ(e.lon,e.lat);if(near(old,dest)||!near([C.x,C.y],old))continue;
+  // 別の位置が明示された保存は推定で上書きしない。
+  if(o&&(o.x!=null||o.y!=null)&&!near([o.x,o.y],old))continue;
+  const unknownArmy=s.units.some(u=>u.path?.at(-1)===id&&u.visualTravel&&(!valid(u.visualTravel.line,u.visualTravel.start,u.visualTravel.end)||near(u.visualTravel.line.at(-1),old)&&(!u.hist||u.record)));
+  const unknownPerson=s.gens.some(g=>g.tr?.p?.at(-1)===id&&!valid(g.tr.line,g.tr.t0,g.tr.t1));
+  if(unknownArmy||unknownPerson){deferred=true;continue;}
+  changed.set(id,{old,dest});placeCastle(id,e);s.jdone=s.jdone||{};s.jdone[e._i]=1;
+ }
+ for(const u of s.units){const row=changed.get(u.path?.at(-1)),q=u.visualTravel;if(!row||!u.hist||u.record||!q||!valid(q.line,q.start,q.end)||!near(q.line.at(-1),row.old))continue;
+  const A=G.visualPathPoint(q.line,(sample-q.start)/Math.max(1,q.end-q.start)).slice(0,2),B=G.battleArrivalPoint(u)||row.dest;
+  u.visualTravel={...q,line:G.visualBetween(A,B),start:sample};if(u.visualRouteLine)u.visualRouteLine=u.visualTravel.line;
+ }
+ for(const g of s.gens)if(changed.has(g.loc)&&g.unit==null&&!g.tr)delete g._visualPoint;
+ for(const g of s.gens){const row=changed.get(g.tr?.p?.at(-1)),q=g.tr;if(!row||!q||!valid(q.line,q.t0,q.t1)||!near(q.line.at(-1),row.old))continue;
+  const A=G.visualPathPoint(q.line,(sample-q.t0)/Math.max(1,q.t1-q.t0)).slice(0,2);g.tr={...q,line:G.visualBetween(A,row.dest),t0:sample};
+ }
+ if(!deferred)s.castleEraPositionVersion=1;
+};
 const jClans=ev=>ev.clan==null?null:[].concat(ev.clan);
 const jOwnerOk=(ev,id)=>{const o=S.castles[id].owner;if(S.div[o])return false;const cs=jClans(ev);return !cs||cs.includes(o);};
 function addRuin(id,name){const C=G.C[id];if(!name)return;S.ruins=S.ruins.filter(r=>Math.hypot(r.x-C.x,r.y-C.y)>3);S.ruins.push({n:name,x:C.x,y:C.y,y0:G.date().y});if(S.ruins.length>40)S.ruins.shift();}
@@ -998,7 +1027,8 @@ G.castleFires=()=>S?.castleFires||[];
 
 function jApply(ev,quiet){const id=ev.node;
  switch(ev.k){
-  case 'build':{S.jdone=S.jdone||{};if(!S.castles[id]||S.jdone[ev._i]||(G.cname(id)===ev.n&&ev.lon!=null))return true;
+  case 'build':{S.jdone=S.jdone||{};if(!S.castles[id]||S.jdone[ev._i])return true;
+   if(G.cname(id)===ev.n&&ev.lon!=null){const p=G.PJ(ev.lon,ev.lat),C=G.C[id];if(Math.hypot(C.x-p[0],C.y-p[1])>1e-6){if(!quiet&&!jOwnerOk(ev,id))return false;placeCastle(id,ev);}S.jdone[ev._i]=1;return true;}
    if(!quiet&&!jOwnerOk(ev,id))return false;S.jdone[ev._i]=1;doBuild(id,ev,quiet);if(!quiet)chron(Object.assign({at:id},ev),true);return true;}
   case 'burn':{if(!S.castles[id])return true;if(ev.cond&&G.cname(id)!==ev.cond)return true;if(!quiet&&!jOwnerOk(ev,id))return false;
    const c=S.castles[id],C=G.C[id];

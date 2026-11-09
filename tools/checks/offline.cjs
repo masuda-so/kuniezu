@@ -31,3 +31,5 @@ require('node:child_process').execFileSync(process.execPath,[path.join(__dirname
 require('./map-layer-notifications.cjs');
 
 require('node:child_process').execFileSync(process.execPath,[path.join(__dirname,'export-save-clock.cjs')],{stdio:'inherit'});
+
+require('node:child_process').execFileSync(process.execPath,[path.join(__dirname,'castle-era-position.cjs')],{stdio:'inherit'});
