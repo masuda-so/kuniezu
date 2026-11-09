@@ -1,0 +1,37 @@
+{
+  "id": "renamed-toyotomi-surname",
+  "entity": "person:toyotomi-hideyoshi",
+  "predicate": "renamed",
+  "value": "関白羽柴秀吉が太政大臣に任じられ、豊臣の姓を賜った。",
+  "validYears": [
+    1586,
+    1586
+  ],
+  "datePrecision": "day",
+  "source": "hiDainihonshiryoKobun",
+  "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+  "locator": "綱文：和暦 天正14年12月19日 第1条（区分 史料綜覧、編11・冊912（データベースの表示値）、147頁）",
+  "gameBindings": [
+    "TK.HIST:rename:羽柴秀吉から豊臣秀吉への改名"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-09",
+  "uncertainty": "豊臣は姓（本姓）で、名字の羽柴を捨てたのではない。綱文の日付は姓を賜った日。 綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。",
+  "linkedEntities": [
+    "person:toyotomi-hideyoshi"
+  ],
+  "eventTime": {
+    "kind": "dated-event",
+    "date": [
+      1586,
+      12,
+      19
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": false,
+    "precision": "day"
+  },
+  "eventRelation": "renamed",
+  "eventScope": "綱文が掲げる改名・改姓とその日付。ゲームの年表の日付は 1586-10-21、綱文をゲームの暦表で直すと 1587-1-27（不一致（+98 日））。年表は変えていない。 名乗りの使い分けや以後の文書の署名は補わない。"
+}

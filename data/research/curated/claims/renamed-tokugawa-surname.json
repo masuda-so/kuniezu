@@ -1,0 +1,37 @@
+{
+  "id": "renamed-tokugawa-surname",
+  "entity": "person:tokugawa-ieyasu",
+  "predicate": "renamed",
+  "value": "松平家康が氏を徳川と改めることが許され、三河守に任じられ、従五位下に叙された。",
+  "validYears": [
+    1566,
+    1566
+  ],
+  "datePrecision": "day",
+  "source": "hiDainihonshiryoKobun",
+  "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+  "locator": "綱文：和暦 永禄9年12月29日 第2条（区分 史料綜覧、編9・冊910（データベースの表示値）、649頁）",
+  "gameBindings": [
+    "TK.HIST:rename:松平家康から徳川家康への改名"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-09",
+  "uncertainty": "綱文の日付は改姓が許された日で、本人が名乗りを改めた日とは限らない。 綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。",
+  "linkedEntities": [
+    "person:tokugawa-ieyasu"
+  ],
+  "eventTime": {
+    "kind": "dated-event",
+    "date": [
+      1566,
+      12,
+      29
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": false,
+    "precision": "day"
+  },
+  "eventRelation": "renamed",
+  "eventScope": "綱文が掲げる改名・改姓とその日付。ゲームの年表の日付は 1567-2-7、綱文をゲームの暦表で直すと 1567-2-8（不一致（+1 日））。年表は変えていない。 名乗りの使い分けや以後の文書の署名は補わない。"
+}
