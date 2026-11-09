@@ -1,0 +1,15 @@
+{
+  "id": "identity:yakami-node",
+  "relation": "represented-by",
+  "things": [
+    "place:yakami",
+    "node:yakami"
+  ],
+  "basis": "ゲームのノード node:yakami（八上城）は、台帳の場所 place:yakami を地図の上で代表する実装上の拠点。台帳の場所の根拠は命題 yakami-surrender-1579。同じ場所だという史料上の主張ではない。",
+  "source": "hiDainihonshiryoKobun",
+  "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+  "locator": "綱文：和暦 天正7年6月2日 第2条（区分 史料綜覧、編10・冊911（データベースの表示値）、214頁）",
+  "checked": "2026-11-09",
+  "status": "verified-in-specified-scope",
+  "uncertainty": "代表の関係は実装上の対応で、ノードの座標は史料で確かめた位置ではない。"
+}
