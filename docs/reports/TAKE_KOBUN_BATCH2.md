@@ -32,7 +32,7 @@
 
 ## 検証
 
-- `export-evidence.cjs`：作成時は 179 件（main 168 件＋11）。#116・#120 後の main を取り込んで 197 件（186＋11）。前の PR が入るたびに main を取り込んで export し直す。
+- `export-evidence.cjs`：作成時は 179 件（main 168 件＋11）。#121 後の main を取り込んで 205 件（194＋11）。
 - 隔離 DB で `import_history`：11 件とも衝突（`conflict`）。小田城の `castle-handover` も、#116 の分類で衝突になる（#116・#120 後の main を取り込んで確かめた）。代表の記録 8 件を足し、名前による座標の借用は 0 件のまま。
 - 各検査・`pytest`・`ruff` の結果は PR の説明に書く。
 
