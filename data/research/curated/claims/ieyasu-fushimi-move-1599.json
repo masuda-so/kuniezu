@@ -1,0 +1,38 @@
+{
+  "id": "ieyasu-fushimi-move-1599",
+  "entity": "person:tokugawa-ieyasu",
+  "predicate": "residence-transfer",
+  "value": "徳川家康が山城伏見城の西の丸に移った。",
+  "validYears": [
+    1599,
+    1599
+  ],
+  "datePrecision": "day",
+  "source": "hiDainihonshiryoKobun",
+  "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+  "locator": "綱文：和暦 慶長4年閏3月13日 第1条（区分 史料綜覧、編11・冊913（データベースの表示値）、192頁）",
+  "gameBindings": [
+    "TK.HIST:家康、伏見城に入る"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-09",
+  "uncertainty": "綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。",
+  "linkedEntities": [
+    "person:tokugawa-ieyasu",
+    "place:fushimi-castle"
+  ],
+  "eventTime": {
+    "kind": "dated-event",
+    "date": [
+      1599,
+      3,
+      13
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": true,
+    "precision": "day"
+  },
+  "eventRelation": "residence-transfer",
+  "eventScope": "綱文が掲げる日付。慶長4年閏3月13日はゲーム共通の暦表で1599年5月7日。最終年表の家康、伏見城に入る（旧暦1599年閏3月16日、1599年5月10日）は綱文より3日遅い。居所を移した日。政務を執り始めた日や、伏見城の全体の支配には広げない。"
+}

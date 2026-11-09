@@ -7,7 +7,7 @@
     1573,
     1573
   ],
-  "datePrecision": "day",
+  "datePrecision": "period",
   "source": "hiDainihonshiryoKobun",
   "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
   "locator": "綱文：和暦 天正元年8月27日 第1条（区分 大日本史料、第10編之17（データベースの表示値）、266頁）",
@@ -27,16 +27,16 @@
     "person:toyotomi-hideyoshi"
   ],
   "eventTime": {
-    "kind": "dated-event",
-    "date": [
+    "kind": "described-period",
+    "label": "天正元年8月27日（綱文の条の掲出日。攻城・父子の自害・分国の給与を一つの条にまとめる）",
+    "indexYears": [
       1573,
-      8,
-      27
+      1573
     ],
-    "calendar": "Japanese-lunisolar",
-    "leapMonth": false,
-    "precision": "day"
+    "calendar": "Japanese-era-description",
+    "precision": "period",
+    "boundsAreHistoricalStartEnd": false
   },
   "eventRelation": "military-event",
-  "eventScope": "綱文が掲げる日付。天正元年8月27日はゲーム共通の暦表で1573年9月23日。最終年表の小谷城落城（旧暦1573年9月1日、1573年9月26日）は綱文より3日遅い。綱文が掲げる攻城と父子の自害の日。綱文は落城の語を使わないので、落城の日としない。久政と長政の自害を別の日に分けない。分国を与えた日付には広げない。"
+  "eventScope": "綱文が掲げる日付。天正元年8月27日はゲーム共通の暦表で1573年9月23日。最終年表の小谷城落城（旧暦1573年9月1日、1573年9月26日）は綱文より3日遅い。綱文には「是日」「尋で」の語が無く、攻城・久政父子の自害・浅井氏の分国の羽柴秀吉への給与を一つの条にまとめて掲げる。どの行為がこの日かは綱文から分けられないので、出来事の時間は日の精度の確かな日にせず、条の掲出日を名前に残した期間（境界は主張しない）として持つ。個々の行為の日（父子それぞれの自害の日など）は確定しない。綱文は落城の語を使わないので、落城の日としない。"
 }

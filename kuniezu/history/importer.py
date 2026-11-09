@@ -33,6 +33,7 @@ from kuniezu.history.models import Precision
 from kuniezu.history.models import Record
 from kuniezu.history.models import RecordType
 from kuniezu.history.models import RecordVersion
+from kuniezu.history.models import Representation
 from kuniezu.history.models import Role
 from kuniezu.history.models import Source
 from kuniezu.history.models import Status
@@ -189,6 +190,7 @@ class Summary:
     borrowed_points: int = 0
     merged_things: int = 0
     represented_points: int = 0
+    timed_representations: int = 0
     conflict_links: int = 0
     retired: int = 0
     things: dict[str, int] = field(default_factory=dict)
@@ -204,6 +206,7 @@ class Summary:
             "borrowed_points": self.borrowed_points,
             "merged_things": self.merged_things,
             "represented_points": self.represented_points,
+            "timed_representations": self.timed_representations,
             "conflict_links": self.conflict_links,
             "phenomena": self.phenomena,
             "unclassified": self.unclassified,
@@ -301,6 +304,10 @@ class Importer:
         # records to attach to the things they name.
         self.same: dict[str, str] = {}
         self.represented: dict[str, str] = {}
+        # Representations for a period: (place, site, period, record, file name).
+        self.timed: list[tuple[str, str, Json, Record, str]] = []
+        # Water bodies the catalog of this import names; a claim may only link these.
+        self.catalog_water: set[str] = set()
         self.identity_records: dict[str, list[Record]] = {}
         # The identifiers the inputs themselves use, before any identity is applied.
         self.used: set[str] = set()
@@ -621,7 +628,87 @@ class Importer:
         if row["relation"] == REPRESENTED and kinds != {ThingKind.SITE}:
             message = f"{path.name}: only a site stands for a place (identity)"
             raise ValueError(message)
+        if "period" in row:
+            self.read_period(path.name, row)
         return row
+
+    def read_period(self, name: str, row: Json) -> None:
+        """A period is allowed on a representation only, and must make sense.
+
+        Two names for one thing are one thing at every time, so ``same-site``
+        never takes a period.
+        """
+        period = row["period"]
+        if row["relation"] != REPRESENTED:
+            message = f"{name}: only a representation has a period (identity)"
+            raise ValueError(message)
+        if not isinstance(period, dict) or set(period) - {"from", "until", "basis"}:
+            message = f"{name}: a period has from, until and basis only"
+            raise ValueError(message)
+        basis = period.get("basis")
+        has_basis = isinstance(basis, str) and basis.strip() != ""
+        if not has_basis or not (period.get("from") or period.get("until")):
+            message = f"{name}: a period needs a basis and at least one end"
+            raise ValueError(message)
+        start_early, _ = self.period_end(name, period.get("from"))
+        _, end_late = self.period_end(name, period.get("until"))
+        if start_early is not None and end_late is not None and start_early >= end_late:
+            message = f"{name}: a period ends before it starts"
+            raise ValueError(message)
+
+    def period_end(self, name: str, end: Json | None) -> tuple[int | None, int | None]:
+        """The span of day numbers where an end of a period may lie.
+
+        A day given in the lunisolar calendar is one day. A year is the whole
+        year, from its first day to the first day of the next, so a year is
+        never read as a day that the input does not give.
+        """
+        if end is None:
+            return None, None
+        message = f"{name}: an end of a period is a lunisolar day or a year"
+        # Anything but a mapping falls through to the refusal below.
+        end = end if isinstance(end, dict) else {}
+        precision, calendar = end.get("precision"), end.get("calendar")
+        if precision == Precision.DAY and calendar == Calendar.LUNISOLAR:
+            date, leap = end.get("date"), end.get("leapMonth", False)
+            fields = {"date", "calendar", "leapMonth", "precision"}
+            if (
+                set(end) <= fields
+                and isinstance(date, list)
+                and len(date) == DAY_PARTS
+                and all(is_number(part) for part in date)
+                and isinstance(leap, bool)
+            ):
+                year, month, day = date
+                length = dates.lunisolar_month_length(
+                    self.table, year, month, leap=leap
+                )
+                # A day the month does not have is refused, not carried on into
+                # a later month.
+                if length is not None and 1 <= day <= length:
+                    number = dates.lunisolar_to_jd(
+                        self.table, year, month, day, leap=leap
+                    )
+                    if number is not None:
+                        return number, number
+        elif precision == Precision.YEAR and calendar == Calendar.CE_YEAR:
+            year = end.get("year")
+            if (
+                set(end) <= {"year", "calendar", "precision"}
+                and is_number(year)
+                and isinstance(year, int)
+            ):
+                return dates.western_to_jd(year, 1, 1), dates.western_to_jd(
+                    year + 1, 1, 1
+                )
+        raise ValueError(message)
+
+    def period_span(self, name: str, period: Json | None) -> tuple[int | None, ...]:
+        if period is None:
+            return None, None, None, None
+        start = self.period_end(name, period.get("from"))
+        end = self.period_end(name, period.get("until"))
+        return (*start, *end)
 
     def load_identities(self) -> None:
         """Read which identifiers name one thing, before any thing is made."""
@@ -636,6 +723,8 @@ class Importer:
                 if merged_into.setdefault(other, kept) != kept:
                     message = f"{path.name}: {other} is merged by another identity too"
                     raise ValueError(message)
+            elif row.get("period"):
+                self.timed.append((kept, other, row["period"], record, path.name))
             elif self.represented.setdefault(kept, other) != other:
                 # A place has one site that stands for it.
                 message = f"{path.name}: {kept} is represented by another site too"
@@ -645,11 +734,47 @@ class Importer:
         # An identifier that is merged away plays no other part: it is not kept
         # by another identity, and neither stands for a place nor is one.
         others = {*merged_into.values(), *self.represented, *self.represented.values()}
+        others |= {key for kept, other, *_ in self.timed for key in (kept, other)}
         tangled = sorted(set(merged_into) & others)
         if tangled:
             message = f"identity: {', '.join(tangled)} is merged and used again"
             raise ValueError(message)
         self.same = merged_into
+
+    def check_periods(self) -> None:
+        """Refuse two representations that surely hold on one day.
+
+        One place has one representative and one site stands for one place at
+        any day. Only the part of each period that surely holds counts: two
+        periods that meet in a year given only as a year are both possible
+        there, and a query reads that year as not settled.
+        """
+        spans = [
+            (place, site, self.period_span(name, period), name)
+            for place, site, period, _, name in self.timed
+        ]
+        spans += [
+            (place, site, (None,) * 4, "") for place, site in self.represented.items()
+        ]
+        # Compare the things the identifiers end at, so that two names for one
+        # thing (an identifier settled by name, a merged one) cannot hide a clash.
+        resolved = [
+            (self.find(place), self.find(site), span, name, place, site)
+            for place, site, span, name in spans
+        ]
+        for number, (place, site, span, name, place_key, site_key) in enumerate(
+            resolved
+        ):
+            for other in resolved[number + 1 :]:
+                same_place = place is not None and place == other[0]
+                same_site = site is not None and site == other[1]
+                if (same_place or same_site) and surely_overlap(span, other[2]):
+                    which = name or other[3] or "identity"
+                    message = (
+                        f"{which}: {site_key} and {other[5]} for {place_key} and "
+                        f"{other[4]} surely overlap in time"
+                    )
+                    raise ValueError(message)
 
     def load_registry(self) -> None:
         for row in read_jsonl(self.root / RESEARCH / "people.jsonl"):
@@ -747,6 +872,26 @@ class Importer:
             )
             self.timeline.setdefault(signature, []).append(item)
 
+    def catalog_water_thing(self, subject: str, record: Record) -> Thing:
+        key = "water:" + subject
+        self.catalog_water.add(key)
+        return self.thing(key, ThingKind.WATER, subject, record)
+
+    def linked_water(self, key: str, record: Record) -> Thing:
+        """A water body a claim links, which this import's catalog must name.
+
+        A water left in an old database or made first by another input does
+        not count, and no name is matched: a misspelt key is refused rather
+        than becoming a new water body.
+        """
+        thing = self.find(key) if key in self.catalog_water else None
+        if thing is None or thing.kind != ThingKind.WATER:
+            message = f"claim links a water the catalog does not name: {key}"
+            raise ValueError(message)
+        # Like any thing a claim names, the water keeps the claim as a record.
+        thing.records.add(record)
+        return thing
+
     def load_catalog(self) -> None:
         things = {
             "person": lambda subject, record: self.resolve("person:" + subject, record),
@@ -756,9 +901,7 @@ class Importer:
             "link": lambda subject, record: self.thing(
                 "link:" + subject, ThingKind.ROUTE, subject, record
             ),
-            "water": lambda subject, record: self.thing(
-                "water:" + subject, ThingKind.WATER, subject, record
-            ),
+            "water": self.catalog_water_thing,
         }
         for row in read_jsonl(self.root / CATALOG):
             kind, subject, context = row["kind"], row["subject"], row["context"]
@@ -840,7 +983,12 @@ class Importer:
             )
             subject = self.resolve(row["entity"], record)
             linked = {
-                key: self.resolve(key, record) for key in row.get("linkedEntities", [])
+                key: (
+                    self.linked_water(key, record)
+                    if key.startswith("water:")
+                    else self.resolve(key, record)
+                )
+                for key in row.get("linkedEntities", [])
             }
             parts = (time or {}).get("components") or []
             in_parts = {key for part in parts for key in part["entities"]}
@@ -1067,6 +1215,40 @@ class Importer:
                 )
                 located[place.pk] = point
                 self.summary.represented_points += 1
+        self.record_representations()
+
+    def record_representations(self) -> None:
+        """Keep every representation, for all time or for its period.
+
+        Only one for all time lends its point: a point has no time of its own.
+        """
+        self.check_periods()
+        for place_key, site_key in self.represented.items():
+            records = self.identity_records.get(place_key, [])
+            record = next(
+                item for item in records if item.payload["things"][1] == site_key
+            )
+            Representation.objects.create(
+                place=self.keyed[place_key], site=self.keyed[site_key], record=record
+            )
+        for place_key, site_key, period, record, name in self.timed:
+            span = self.period_span(name, period)
+            start_early, start_late, end_early, end_late = span
+            Representation.objects.create(
+                place=self.keyed[place_key],
+                site=self.keyed[site_key],
+                record=record,
+                start_early=start_early,
+                start_late=start_late,
+                end_early=end_early,
+                end_late=end_late,
+                label=json.dumps(
+                    {key: period.get(key) for key in ("from", "until")},
+                    ensure_ascii=False,
+                ),
+                basis=period["basis"],
+            )
+        self.summary.timed_representations = len(self.timed)
 
     def check_identities(self) -> None:
         """Refuse an identity that names an identifier no input uses.
@@ -1076,6 +1258,7 @@ class Importer:
         """
         named = {*self.same, *self.same.values(), *self.represented}
         named |= set(self.represented.values())
+        named |= {key for kept, other, *_ in self.timed for key in (kept, other)}
         missing = sorted(named - self.used)
         if missing:
             message = f"identity names a thing no input has: {', '.join(missing)}"
@@ -1156,6 +1339,31 @@ class Importer:
         self.run.counts = self.summary.as_json()
         self.run.save(update_fields=["counts"])
         return self.summary
+
+
+DAY_PARTS = 3
+
+
+def is_number(value: object) -> bool:
+    """A whole number written as one, not a flag or a string."""
+    return isinstance(value, int) and not isinstance(value, bool)
+
+
+def surely_overlap(a: tuple[int | None, ...], b: tuple[int | None, ...]) -> bool:
+    """Whether the parts of two periods that surely hold share a day.
+
+    A period surely holds from its late start to its early end (left out); an
+    empty end is open.
+    """
+    a_from, a_to, b_from, b_to = a[1], a[2], b[1], b[2]
+    # A period whose sure part is empty (a short span known only to its year)
+    # surely holds on no day, so it meets nothing.
+    for start, end in ((a_from, a_to), (b_from, b_to)):
+        if start is not None and end is not None and start >= end:
+            return False
+    return (a_from is None or b_to is None or a_from < b_to) and (
+        b_from is None or a_to is None or b_from < a_to
+    )
 
 
 def import_history(root: Path) -> Summary:

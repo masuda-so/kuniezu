@@ -1,0 +1,15 @@
+{
+  "id": "identity:namwon-node",
+  "relation": "represented-by",
+  "things": [
+    "place:namwon",
+    "node:namwon"
+  ],
+  "basis": "ゲームのノード node:namwon は、台帳の場所 place:namwon（南原城）を地図の上で代表する実装上の拠点。台帳の場所の根拠は命題 namwon-siege-1597。同じ場所だという史料上の主張ではない。",
+  "source": "hiDainihonshiryoKobun",
+  "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+  "locator": "綱文：和暦 慶長2年8月13日 第1条（区分 史料綜覧、編11・冊913（データベースの表示値）、142頁）",
+  "checked": "2026-11-09",
+  "status": "verified-in-specified-scope",
+  "uncertainty": "代表の関係は実装上の対応で、ノードの座標は史料で確かめた位置ではない。"
+}

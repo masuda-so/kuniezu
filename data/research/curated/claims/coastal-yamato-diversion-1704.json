@@ -1,0 +1,52 @@
+{
+  "id": "coastal-yamato-diversion-1704",
+  "entity": "place:yamato-lower-river",
+  "predicate": "river-diversion",
+  "value": {
+    "statement": "国土交通省の資料は、宝永元年に築留で旧川筋への入口を塞ぎ、大阪・堺の境界を河口に西へ大阪湾へ注ぐ流路へ改めたと記す。",
+    "sourceTime": {
+      "label": "宝永元年（1704年）",
+      "calendar": "Japanese-lunisolar",
+      "precision": "year",
+      "year": 1704
+    }
+  },
+  "validYears": [
+    1704,
+    1705
+  ],
+  "datePrecision": "period",
+  "eventTime": {
+    "kind": "described-period",
+    "calendar": "Japanese-era-description",
+    "precision": "period",
+    "label": "宝永元年（1704年）（原年次。西暦表示は資料の併記）",
+    "indexYears": [
+      1704,
+      1705
+    ],
+    "boundsAreHistoricalStartEnd": false
+  },
+  "linkedEntities": [
+    "place:yamato-lower-river"
+  ],
+  "eventRelation": "river-diversion",
+  "eventScope": "年単位の検索用。原暦・元の精度はvalue.sourceTimeへ保持。ゲーム期間後の改変。現代市境は資料の地理説明であり、当時の精密線・河口座標を登録していない。 原和暦年の記述を保持する。索引は対応西暦年と翌年を含む保守的な候補範囲で、元年次の開始終了をグレゴリオ暦1月1日～12月31日と同一視しない。",
+  "source": "coastal-osaka-yamato-mlit-pdf",
+  "sourceUrl": "https://www.kkr.mlit.go.jp/yamato/special/iinkai/report/pdf/5/02-07-04.pdf",
+  "locator": "PDF11頁「2-7-1. 利水の歴史／大和川下流の付け替え」第1項",
+  "checked": "2026-11-04",
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "gameBindings": [
+    "kuniezu/map/control/provinces.png",
+    "game/map_data/rivers.png"
+  ],
+  "bindingScope": "地形の年代比較・監査の参照先。正本・ゲームイベントへの変更は未適用。",
+  "uncertainty": "ゲーム期間後の改変。現代市境は資料の地理説明であり、当時の精密線・河口座標を登録していない。 精密輪郭・座標は採用していない。",
+  "review": "data/research/source-notes/coastal-period-review/adoption.json",
+  "reviewInputId": "osaka-yamato-1704",
+  "corroboratingSources": [
+    "coastal-osaka-yamato-diversion"
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "id": "sangju-fall-1592",
+  "entity": "place:sangju-castle",
+  "predicate": "castle-fall",
+  "value": "小西行長らが慶尚道の尚州城を落とし、巡辺使の李鎰は敗走した。",
+  "validYears": [
+    1592,
+    1592
+  ],
+  "datePrecision": "day",
+  "source": "hiDainihonshiryoKobun",
+  "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+  "locator": "綱文：和暦 文禄元年4月24日 第2条（区分 史料綜覧、編11・冊912（データベースの表示値）、353頁）",
+  "gameBindings": [
+    "TK.HIST:尚州の戦い",
+    "node:sangju"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-09",
+  "uncertainty": "綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。",
+  "linkedEntities": [
+    "place:sangju-castle",
+    "person:小西行長"
+  ],
+  "eventTime": {
+    "kind": "dated-event",
+    "date": [
+      1592,
+      4,
+      24
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": false,
+    "precision": "day"
+  },
+  "eventRelation": "castle-fall",
+  "eventScope": "綱文が掲げる日付。文禄元年4月24日はゲーム共通の暦表で1592年6月4日。最終年表の尚州の戦い（旧暦1592年4月26日、1592年6月6日）は綱文より2日遅い。落城の日。続く咸昌・聞慶の攻略は「尋で」なので含めない。朝鮮の地名は、日本に関わる出来事として記録する（地図の範囲とは別）。"
+}

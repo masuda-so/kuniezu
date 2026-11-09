@@ -1,0 +1,42 @@
+{
+  "id": "pyongyang-fall-1592",
+  "entity": "place:pyongyang",
+  "predicate": "castle-fall",
+  "value": "小西行長・宗義智・黒田長政・大友吉統らが大同江を渡り、戦わずに平安道の平壌城を落とした。",
+  "validYears": [
+    1592,
+    1592
+  ],
+  "datePrecision": "day",
+  "source": "hiDainihonshiryoKobun",
+  "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+  "locator": "綱文：和暦 文禄元年6月15日 第2条（区分 史料綜覧、編11・冊912（データベースの表示値）、361頁）",
+  "gameBindings": [
+    "TK.HIST:平壌入城",
+    "node:pyongyang"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-09",
+  "uncertainty": "綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。",
+  "linkedEntities": [
+    "place:pyongyang",
+    "person:小西行長",
+    "person:宗義智",
+    "person:kuroda-nagamasa",
+    "person:otomo-yoshimune"
+  ],
+  "eventTime": {
+    "kind": "dated-event",
+    "date": [
+      1592,
+      6,
+      15
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": false,
+    "precision": "day"
+  },
+  "eventRelation": "castle-fall",
+  "eventScope": "綱文が掲げる日付。文禄元年6月15日はゲーム共通の暦表で1592年7月23日。最終年表の平壌入城（旧暦1592年6月15日、1592年7月23日）は一致する。平壌城を取った日。綱文は戦わずに「陥る」と書く。国王の義州への移りには広げない。"
+}

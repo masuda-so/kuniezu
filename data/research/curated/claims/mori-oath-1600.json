@@ -1,0 +1,38 @@
+{
+  "id": "mori-oath-1600",
+  "entity": "person:mori-terumoto",
+  "predicate": "administrative-document",
+  "value": "徳川家康が毛利輝元の安芸・備後など七か国を削って周防・長門の二か国を与え、この日、輝元・秀就父子に誓書を与えた。",
+  "validYears": [
+    1600,
+    1600
+  ],
+  "datePrecision": "day",
+  "source": "hiDainihonshiryoKobun",
+  "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+  "locator": "綱文：和暦 慶長5年10月10日 第1条（区分 史料綜覧、編11・冊913（データベースの表示値）、277頁）",
+  "gameBindings": [
+    "TK.HIST:毛利の減封"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-09",
+  "uncertainty": "綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。",
+  "linkedEntities": [
+    "person:mori-terumoto",
+    "person:tokugawa-ieyasu"
+  ],
+  "eventTime": {
+    "kind": "dated-event",
+    "date": [
+      1600,
+      10,
+      10
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": false,
+    "precision": "day"
+  },
+  "eventRelation": "administrative-document",
+  "eventScope": "綱文が掲げる日付。慶長5年10月10日はゲーム共通の暦表で1600年11月15日。綱文の「是日」が掛かるのは家康が輝元・秀就父子に誓書を与えたことだけで、七か国の削減と二か国の給与はこの日より前だが日付が無い（減封の命題は作らない）。輝元の剃髪と秀就の家督（「尋で」）にも広げない。"
+}
