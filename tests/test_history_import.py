@@ -9,11 +9,13 @@ from kuniezu.history import dates
 from kuniezu.history import queries
 from kuniezu.history.importer import CATALOG
 from kuniezu.history.importer import CLAIM_KIND_OF
+from kuniezu.history.importer import CLAIM_POINT_PREDICATES
 from kuniezu.history.importer import CONFLICTS
 from kuniezu.history.importer import IDENTITIES
 from kuniezu.history.importer import KOBUN_INDEX
 from kuniezu.history.importer import MONTH_TABLE
 from kuniezu.history.importer import RESEARCH
+from kuniezu.history.importer import claim_mode
 from kuniezu.history.importer import import_history
 from kuniezu.history.models import Calendar
 from kuniezu.history.models import ImportRun
@@ -324,6 +326,40 @@ def test_a_named_period_is_found_by_its_window_but_not_asserted(inputs):
     death = Phenomenon.objects.get(key="claim:death-date-maeda-toshiie")
     assert death.bounds_asserted
     assert death in queries.in_year(1599, asserted_only=True)
+
+
+def test_an_event_known_only_to_a_season_is_still_an_event(inputs):
+    import_history(inputs)
+
+    # 永禄11年の冬のいつかに降った。冬のあいだ降伏が続いたのではない。
+    surrender = Phenomenon.objects.get(key="claim:urio-surrender-1568")
+    assert surrender.mode == Mode.EVENT
+    assert surrender.calendar == Calendar.DESCRIBED
+    assert not surrender.jd_exact
+    assert not surrender.bounds_asserted
+    assert surrender in queries.in_year(1568)
+    assert surrender not in queries.in_year(1568, asserted_only=True)
+    # 時期の呼び名で書かれた発掘の観察は、出来事にしない。
+    building = Phenomenon.objects.get(key="claim:tomori-area6-momoyama-building1")
+    assert building.mode == Mode.STATE
+    # 時刻の無い役職の在任は状態のまま。
+    office = Phenomenon.objects.get(key="claim:toyotomi-office-1")
+    assert office.mode == Mode.STATE
+    # 年しか分からない死去も、死去そのものは出来事。
+    death = Phenomenon.objects.get(key="claim:lifetime-朝倉景鏡")
+    assert death.mode == Mode.EVENT
+
+
+def test_the_mode_of_a_claim_comes_from_its_predicate_and_its_time():
+    period = {"kind": "described-period", "label": "是冬"}
+    assert claim_mode("castle-surrender", period) == Mode.EVENT
+    assert claim_mode("death-date", period) == Mode.EVENT
+    assert claim_mode("castle-construction", period) == Mode.STATE
+    assert claim_mode("central-office", None) == Mode.STATE
+    assert claim_mode("castle-surrender", None) == Mode.EVENT
+    assert claim_mode("death-year", None) == Mode.EVENT
+    assert claim_mode("central-office", {"kind": "dated-event"}) == Mode.EVENT
+    assert set(CLAIM_KIND_OF) >= CLAIM_POINT_PREDICATES
 
 
 def test_a_period_with_one_known_end_stays_open(inputs):
