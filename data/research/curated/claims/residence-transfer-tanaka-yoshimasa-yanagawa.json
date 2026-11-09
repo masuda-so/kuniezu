@@ -1,0 +1,37 @@
+{
+  "id": "residence-transfer-tanaka-yoshimasa-yanagawa",
+  "entity": "person:tanaka-yoshimasa",
+  "predicate": "residence-transfer",
+  "value": "筑後柳河の田中吉政が、初めて国に入った。",
+  "validYears": [
+    1601,
+    1601
+  ],
+  "datePrecision": "period",
+  "source": "hiDainihonshiryoKobun",
+  "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+  "locator": "綱文：和暦 慶長6年3月是月 第5条（区分 史料綜覧、編11・冊913（データベースの表示値）、294頁）",
+  "gameBindings": [
+    "G.reconcileHistoricalPeople"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-09",
+  "uncertainty": "綱文は「是月」で、日は無い。筑後を与えられた（入封の）日付は、この綱文からは分からない。綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。",
+  "linkedEntities": [
+    "person:tanaka-yoshimasa"
+  ],
+  "eventTime": {
+    "kind": "described-period",
+    "label": "慶長6年3月（綱文は「是月」）",
+    "indexYears": [
+      1601,
+      1601
+    ],
+    "calendar": "Japanese-era-description",
+    "precision": "period",
+    "boundsAreHistoricalStartEnd": false
+  },
+  "eventRelation": "residence-transfer",
+  "eventScope": "綱文が掲げる、本人が初めて領国に入った月。入封（領有の始まり）とは区別し、入封の日付・日別の所在は補わない。"
+}

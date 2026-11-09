@@ -1,0 +1,38 @@
+{
+  "id": "death-date-hori-hidemasa",
+  "entity": "person:hori-hidemasa",
+  "predicate": "death-date",
+  "value": "堀秀政が相模小田原早川口の陣中で死去し、まもなく秀吉が子の秀治に家督を継がせた。",
+  "validYears": [
+    1590,
+    1590
+  ],
+  "datePrecision": "day",
+  "source": "hiDainihonshiryoKobun",
+  "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+  "locator": "綱文：和暦 天正18年5月27日 第5条（区分 史料綜覧、編11・冊912（データベースの表示値）、289頁）",
+  "gameBindings": [
+    "TK.DEATH_Y",
+    "G.reconcileHistoricalPeople"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-09",
+  "uncertainty": "綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。",
+  "linkedEntities": [
+    "person:hori-hidemasa"
+  ],
+  "eventTime": {
+    "kind": "dated-event",
+    "date": [
+      1590,
+      5,
+      27
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": false,
+    "precision": "day"
+  },
+  "eventRelation": "death-date",
+  "eventScope": "綱文が掲げる死去の日付と場所。死因・享年・時刻・精密な位置は補わない。"
+}
