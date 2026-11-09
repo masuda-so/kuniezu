@@ -21,6 +21,7 @@ from kuniezu.history import dates
 from kuniezu.history.models import Phenomenon
 from kuniezu.history.models import PhenomenonKind
 from kuniezu.history.models import RecordVersion
+from kuniezu.history.models import Representation
 from kuniezu.history.models import Thing
 
 if TYPE_CHECKING:
@@ -210,3 +211,48 @@ def records_as_of(run_id: int) -> list[RecordVersion]:
         latest[version.record_id] = version
     held = [version for version in latest.values() if version.payload is not None]
     return sorted(held, key=lambda version: version.record.key)
+
+
+@dataclass(frozen=True)
+class Standing:
+    """A representation that may hold on a day, and whether it surely does."""
+
+    place: Thing
+    site: Thing
+    sure: bool
+
+
+def _standing_on(found: QuerySet[Representation], jd: int) -> list[Standing]:
+    possible = found.filter(
+        Q(start_early__isnull=True) | Q(start_early__lte=jd),
+        Q(end_late__isnull=True) | Q(end_late__gt=jd),
+    ).select_related("place", "site")
+    return [
+        Standing(
+            place=item.place,
+            site=item.site,
+            sure=(item.start_late is None or item.start_late <= jd)
+            and (item.end_early is None or jd < item.end_early),
+        )
+        for item in possible.order_by("place__key", "site__key")
+    ]
+
+
+def stands_for(site: Thing, jd: int) -> list[Standing]:
+    """The places a game site may stand for on a day.
+
+    A period runs from its start (included) to its end (left out). On a day
+    inside a year that is given only as a year, both the place before and the
+    place after are listed and neither is sure.
+    """
+    return _standing_on(Representation.objects.filter(site=site), jd)
+
+
+def represented_by(place: Thing, jd: int) -> list[Standing]:
+    """The game sites that may stand for a place on a day."""
+    return _standing_on(Representation.objects.filter(place=place), jd)
+
+
+def settled(standings: list[Standing]) -> Standing | None:
+    """The one representation that surely holds when no other may, else None."""
+    return standings[0] if len(standings) == 1 and standings[0].sure else None
