@@ -55,6 +55,9 @@ is [docs/README.md](docs/README.md); open requests and ownership are in
   prepares the existing inferred Katori water area together with protected land
   and cuts that must not be drawn as shores. It does not automatically modify
   CODH originals or the game display.
+- Later scenarios apply castle relocation coordinates even when the default
+  castle name already matches. Known old saves retain mid-march positions and
+  arrival times during repair. See the [position and save checks](docs/reports/CASTLE_ERA_POSITION_INIT.md).
 - Roads use an [edited GeoJSON source](data/inputs/road-vector-migration/README.md)
   shared by map drawing and displayed marches. Normal builds copy the edited
   geometry without applying corrections again.
