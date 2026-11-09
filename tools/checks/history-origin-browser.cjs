@@ -7,12 +7,17 @@ const PAGE=require('../build/game-page.cjs'),root=process.env.GAME_OVERRIDE_ROOT
 if(root)for(const name of execFileSync('git',['-C',root,'diff','--name-only',process.env.GAME_OVERRIDE_BASE||'origin/main','--',PAGE.STATIC,PAGE.TEMPLATE],{encoding:'utf8'}).trim().split('\n').filter(Boolean)){const f=path.join(root,name);if(!fs.existsSync(f))continue;overrides[name===PAGE.TEMPLATE?'index.html':name.slice('kuniezu/'.length)]=name===PAGE.TEMPLATE?Buffer.from(PAGE.render(root)):fs.readFileSync(f);}
 const profile=fs.mkdtempSync(path.join(os.tmpdir(),'kuniezu-check-'));fs.mkdirSync(OUT,{recursive:true});
 const chrome=spawn(process.env.CHROME_PATH||'/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',['--headless',...(process.env.GAME_TEST_SOFTWARE==='1'?['--disable-gpu']:[]),'--no-first-run','--no-default-browser-check',`--user-data-dir=${profile}`,'--remote-debugging-pipe'],{stdio:['ignore','ignore','ignore','pipe','pipe']});
-let seq=0,buf='',session,chooser;const pending=new Map(),errors=[],events=[];
+let seq=0,buf='',session,chooser,closed=false;const pending=new Map(),errors=[],events=[];
+const fail=error=>{closed=true;for(const p of pending.values())p.reject(error);pending.clear();};
+chrome.once('error',fail);
+chrome.once('exit',(code,signal)=>fail(Error('Chrome exited: '+(signal||code))));
+chrome.stdio[3].on('error',fail);
+chrome.stdio[4].on('error',fail);
 chrome.stdio[4].on('data',data=>{buf+=data.toString();let i;while((i=buf.indexOf('\0'))>=0){const str=buf.slice(0,i);buf=buf.slice(i+1);if(!str)continue;const m=JSON.parse(str);if(m.id){const p=pending.get(m.id);pending.delete(m.id);if(p)m.error?p.reject(Error(JSON.stringify(m.error))):p.resolve(m.result);}else{
  if(m.method==='Fetch.requestPaused'){const key=decodeURIComponent(new globalThis.URL(m.params.request.url).pathname.slice(1))||'index.html',body=overrides[key];if(body)call('Fetch.fulfillRequest',{requestId:m.params.requestId,responseCode:200,responseHeaders:[{name:'Content-Type',value:key.endsWith('.html')?'text/html; charset=utf-8':'application/javascript'}],body:body.toString('base64')}).catch(e=>console.error(e));else call('Fetch.continueRequest',{requestId:m.params.requestId}).catch(e=>console.error(e));}
  events.push(m);if(m.method==='Runtime.exceptionThrown')errors.push(m.params.exceptionDetails.exception?.description||m.params.exceptionDetails.text);if(m.method==='Page.fileChooserOpened')chooser=m.params;
  }}});
-const call=(method,params={},sid=session)=>new Promise((resolve,reject)=>{const id=++seq;pending.set(id,{resolve,reject});chrome.stdio[3].write(JSON.stringify({id,method,params,...(sid?{sessionId:sid}:{})})+'\0');});
+const call=(method,params={},sid=session)=>new Promise((resolve,reject)=>{if(closed){reject(Error('Chrome is closed'));return;}const id=++seq;pending.set(id,{resolve,reject});chrome.stdio[3].write(JSON.stringify({id,method,params,...(sid?{sessionId:sid}:{})})+'\0');});
 const sleep=ms=>new Promise(r=>setTimeout(r,ms));
 const ev=async expression=>{const r=await call('Runtime.evaluate',{expression,returnByValue:true,awaitPromise:true});if(r.exceptionDetails)throw Error(r.exceptionDetails.exception?.description||r.exceptionDetails.text);return r.result.value;};
 async function until(expr){for(let i=0;i<300;i++){if(await ev(expr))return;await sleep(100);}throw Error('Timed out: '+expr);}
