@@ -1,0 +1,40 @@
+{
+  "id": "kakegawa-handover-1569",
+  "entity": "place:kakegawa",
+  "predicate": "castle-handover",
+  "value": "今川氏真が遠江懸川城を徳川家康に明け渡し、家康は石川家成に城を守らせた。",
+  "validYears": [
+    1569,
+    1569
+  ],
+  "datePrecision": "day",
+  "source": "hiDainihonshiryoKobun",
+  "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+  "locator": "綱文：和暦 永禄12年5月17日 第2条（区分 大日本史料、第10編之2（データベースの表示値）、525頁）",
+  "gameBindings": [
+    "TK.HIST:掛川城開城",
+    "node:kakegawa"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-09",
+  "uncertainty": "綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。",
+  "linkedEntities": [
+    "place:kakegawa",
+    "person:今川氏真",
+    "person:tokugawa-ieyasu"
+  ],
+  "eventTime": {
+    "kind": "dated-event",
+    "date": [
+      1569,
+      5,
+      17
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": false,
+    "precision": "day"
+  },
+  "eventRelation": "castle-handover",
+  "eventScope": "綱文が掲げる日付。永禄12年5月17日はゲーム共通の暦表で1569年6月1日。最終年表の掛川城開城（旧暦1569年5月17日、1569年6月1日）は一致する。城の明け渡しの日。和睦の取り決めの日や、今川氏の滅亡の時期には広げない。"
+}
