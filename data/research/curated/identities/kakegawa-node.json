@@ -1,0 +1,15 @@
+{
+  "id": "identity:kakegawa-node",
+  "relation": "represented-by",
+  "things": [
+    "place:kakegawa",
+    "node:kakegawa"
+  ],
+  "basis": "ゲームのノード node:kakegawa（掛川城）は、台帳の場所 place:kakegawa を地図の上で代表する実装上の拠点。台帳の場所の根拠は命題 kakegawa-handover-1569。同じ場所だという史料上の主張ではない。",
+  "source": "hiDainihonshiryoKobun",
+  "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+  "locator": "綱文：和暦 永禄12年5月17日 第2条（区分 大日本史料、第10編之2（データベースの表示値）、525頁）",
+  "checked": "2026-11-09",
+  "status": "verified-in-specified-scope",
+  "uncertainty": "代表の関係は実装上の対応で、ノードの座標は史料で確かめた位置ではない。"
+}
