@@ -13,3 +13,5 @@
 旧版の初期化から実際に作った保存の復元と、合成の進軍保存について、途中位置・新目的地・到着時刻の保持を確認した。合成進軍は保存互換のfixtureであり、史実の新しい行程を追加したものではない。
 
 result.jsonと広狭・旧保存の画像は、親担当のroot作業ツリーの`data/verification/codex-castle-era-position-init/`に保持する。この専用ツリーへ画像やJSONを複製せず、Gitには本要約のみを登録する。本修正担当はChrome・サーバーの起動停止を実施していない。
+
+残り1日未満の補間修正後は、engineとmovement-continuityの2JS差し替えによる[最終実画面検証](../codex-castle-era-position-final/README.md)も親担当が実施し、期限での終点到達まで確認済み。
