@@ -25,6 +25,7 @@
 - `node tools/geo/prepare-mask-vectors.cjs --output /tmp/kojima-vectors-new` で、児島湾の既存補正マスクを対応する格子版から経緯度の面へ取り出せます。100mの採用範囲を保持する変換であり、史実岸線の精密化やゲームへの再適用は行いません。
 - `uv run python tools/geo/prepare_era_overrides.py --at 1560-01-01 --output /tmp/era-overrides-new` で、香取海の既存推定水面・保護陸・岸線として描かない切口を一体で取り出せます。CODH原本やゲーム画面には自動適用しません。
 - 街道も[編集済みGeoJSONの正本](data/inputs/road-vector-migration/README.md)を使い、描画と行軍表示が同じ道筋を参照します。通常ビルドは線を再補正せず、そのまま複写します。
+- 米沢・越後の比較線の4閉路を除き、旧保存の途中位置と着陣時刻を保持します。[適用範囲と検証](docs/reports/AIZU_VECTOR_REFERENCE_LOOPS.md)を記録しています。
 - 東山道の現代比較線に残っていた同一点へ戻る巡回を除きました。旧保存は位置と着陣日を保って道筋を更新します。戦国期の精密な道筋の確定とは区別します。[採否と検査](docs/reports/TOSANDO_REFERENCE_LOOP.md)を参照してください。
 - 古湖岸、城・施設・人物の史実照合、街道上の行軍、合戦の布陣と動きを、出典を付けて表示します。
 - 合戦図の駒は表示幅や地区切替で地理的位置を変えません。同地点の隊は選択候補から個別に確認できます。密集時は駒の大きさを抑え、選択した隊は大きさを変えず前面で強調します。
