@@ -1,0 +1,38 @@
+{
+  "id": "akizuki-submission-1587",
+  "entity": "person:秋月種実",
+  "predicate": "submission",
+  "value": "秀吉が筑前尾熊に陣を進め、この日、秋月宗誾（種実）父子が浅野長吉（長政）らを頼って降り、娘を人質に出し、名器の楢柴などを差し出した。",
+  "validYears": [
+    1587,
+    1587
+  ],
+  "source": "hiDainihonshiryoKobun",
+  "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+  "locator": "綱文：和暦 天正15年4月3日 第2条（区分 史料綜覧、編11・冊912（データベースの表示値）、160頁）",
+  "gameBindings": [
+    "TK.HIST:1587-5-9",
+    "node:kosho"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-09",
+  "uncertainty": "綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。",
+  "linkedEntities": [
+    "person:秋月種実"
+  ],
+  "eventRelation": "submission",
+  "datePrecision": "day",
+  "eventTime": {
+    "kind": "dated-event",
+    "date": [
+      1587,
+      4,
+      3
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": false,
+    "precision": "day"
+  },
+  "eventScope": "綱文が掲げる日付。天正15年4月3日はゲーム共通の暦表で1587年5月10日。最終年表の題名なしの出来事（古処山城）（訂正モジュールの適用後。旧暦1587年4月2日、1587年5月9日）は綱文より1日早い。降伏の日。年表の出来事は秋月氏の古処山城の領有の書き換え（本文なし）で、城の明け渡しの日付は補わない。浅野長吉は人物の ID を確かめていないので結ばない。秀吉の尾熊への進陣は「是日」の前に書かれた日付の無い前提で、綱文は降伏の相手を浅野長吉らと書くので、秀吉はこの日の降伏の当事者として結ばない（#130 の Codex のレビューの基準）。"
+}

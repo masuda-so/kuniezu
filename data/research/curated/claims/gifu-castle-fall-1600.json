@@ -1,0 +1,41 @@
+{
+  "id": "gifu-castle-fall-1600",
+  "entity": "place:inabayama",
+  "predicate": "castle-fall",
+  "value": "福島正則・池田照政（輝政）らの東軍が織田秀信の美濃岐阜城を攻め、この日、城を落とした。秀信は降った。",
+  "validYears": [
+    1600,
+    1600
+  ],
+  "datePrecision": "day",
+  "source": "hiDainihonshiryoKobun",
+  "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+  "locator": "綱文：和暦 慶長5年8月23日 第2条（区分 史料綜覧、編11・冊913（データベースの表示値）、251頁）",
+  "gameBindings": [
+    "TK.HIST:岐阜城の戦い",
+    "node:gifu"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-09",
+  "uncertainty": "綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。",
+  "linkedEntities": [
+    "place:inabayama",
+    "person:fukushima-masanori",
+    "person:ikeda-terumasa",
+    "person:織田秀信"
+  ],
+  "eventTime": {
+    "kind": "dated-event",
+    "date": [
+      1600,
+      8,
+      23
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": false,
+    "precision": "day"
+  },
+  "eventRelation": "castle-fall",
+  "eventScope": "綱文が掲げる日付。慶長5年8月23日はゲーム共通の暦表で1600年9月30日。最終年表の岐阜城の戦い（訂正モジュールの適用後。旧暦1600年8月23日、1600年9月30日）は一致する。落城と秀信の降伏の日。秀信の剃髪と高野山入り（「尋で」）には広げない。岐阜城は台帳の稲葉山城（place:inabayama）。"
+}
