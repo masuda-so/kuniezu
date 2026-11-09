@@ -1,0 +1,39 @@
+{
+  "id": "iwamura-surrender-1572",
+  "entity": "place:iwamura",
+  "predicate": "castle-surrender",
+  "value": "武田信玄の将秋山信友が美濃岩村城を攻め、降伏させた。",
+  "validYears": [
+    1572,
+    1572
+  ],
+  "datePrecision": "day",
+  "source": "hiDainihonshiryoKobun",
+  "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+  "locator": "綱文：和暦 元亀3年11月14日 第1条（区分 大日本史料、第10編之10（データベースの表示値）、334頁）",
+  "gameBindings": [
+    "TK.HIST:岩村城を得る",
+    "node:iwamura"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-09",
+  "uncertainty": "綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。",
+  "linkedEntities": [
+    "place:iwamura",
+    "person:秋山信友"
+  ],
+  "eventTime": {
+    "kind": "dated-event",
+    "date": [
+      1572,
+      11,
+      14
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": false,
+    "precision": "day"
+  },
+  "eventRelation": "castle-surrender",
+  "eventScope": "綱文が掲げる日付。元亀3年11月14日はゲーム共通の暦表で1572年12月18日。最終年表の岩村城を得る（旧暦1572年11月14日、1572年12月18日）は一致する。城の降伏の日。東美濃の支配の範囲には広げない。"
+}

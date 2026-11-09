@@ -1,0 +1,15 @@
+{
+  "id": "identity:minowa-node",
+  "relation": "represented-by",
+  "things": [
+    "place:minowa",
+    "node:minowa"
+  ],
+  "basis": "ゲームのノード node:minowa（箕輪城）は、台帳の場所 place:minowa を地図の上で代表する実装上の拠点。台帳の場所の根拠は命題 minowa-castle-fall-1566。同じ場所だという史料上の主張ではない。",
+  "source": "hiDainihonshiryoKobun",
+  "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+  "locator": "綱文：和暦 永禄9年9月29日 第1条（区分 史料綜覧、編9・冊910（データベースの表示値）、644頁）",
+  "checked": "2026-11-09",
+  "status": "verified-in-specified-scope",
+  "uncertainty": "代表の関係は実装上の対応で、ノードの座標は史料で確かめた位置ではない。"
+}
