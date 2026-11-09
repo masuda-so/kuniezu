@@ -1,0 +1,38 @@
+{
+  "id": "uesugi-yonezawa-1601",
+  "entity": "person:上杉景勝",
+  "predicate": "territorial-transfer",
+  "value": "徳川家康が上杉景勝の陸奥会津百万石を収め、出羽米沢三十万石を与えた。",
+  "validYears": [
+    1601,
+    1601
+  ],
+  "datePrecision": "day",
+  "source": "hiDainihonshiryoKobun",
+  "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+  "locator": "綱文：和暦 慶長6年8月24日 第3条（区分 史料綜覧、編11・冊913（データベースの表示値）、305頁）",
+  "gameBindings": [
+    "TK.HIST:上杉の米沢減封"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-09",
+  "uncertainty": "綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。",
+  "linkedEntities": [
+    "person:上杉景勝",
+    "person:tokugawa-ieyasu"
+  ],
+  "eventTime": {
+    "kind": "dated-event",
+    "date": [
+      1601,
+      8,
+      24
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": false,
+    "precision": "day"
+  },
+  "eventRelation": "territorial-transfer",
+  "eventScope": "綱文が掲げる日付。慶長6年8月24日はゲーム共通の暦表で1601年9月20日。最終年表の上杉の米沢減封（旧暦1601年8月5日、1601年9月1日）は綱文より19日早い。領地の収公と給与の日。最上義光による酒田城の受け取りの日付には広げない。"
+}

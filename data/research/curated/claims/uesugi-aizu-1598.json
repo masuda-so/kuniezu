@@ -1,0 +1,38 @@
+{
+  "id": "uesugi-aizu-1598",
+  "entity": "person:上杉景勝",
+  "predicate": "territorial-transfer",
+  "value": "秀吉が陸奥会津の蒲生秀行を下野宇都宮に移し、この日、越後春日山の上杉景勝を会津に封じた。",
+  "validYears": [
+    1598,
+    1598
+  ],
+  "datePrecision": "day",
+  "source": "hiDainihonshiryoKobun",
+  "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+  "locator": "綱文：和暦 慶長3年1月10日 第2条（区分 史料綜覧、編11・冊913（データベースの表示値）、154頁）",
+  "gameBindings": [
+    "TK.HIST:上杉景勝の会津移封"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-09",
+  "uncertainty": "綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。",
+  "linkedEntities": [
+    "person:上杉景勝",
+    "person:toyotomi-hideyoshi"
+  ],
+  "eventTime": {
+    "kind": "dated-event",
+    "date": [
+      1598,
+      1,
+      10
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": false,
+    "precision": "day"
+  },
+  "eventRelation": "territorial-transfer",
+  "eventScope": "綱文が掲げる日付。慶長3年1月10日はゲーム共通の暦表で1598年2月15日。最終年表の上杉景勝の会津移封（旧暦1598年2月13日、1598年3月20日）は綱文より33日遅い。移封の日。景勝が会津に入った日付や、越後の検地には広げない。"
+}

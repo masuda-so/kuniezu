@@ -1,0 +1,39 @@
+{
+  "id": "death-date-toyotomi-hideyori",
+  "entity": "person:豊臣秀頼",
+  "predicate": "death-date",
+  "value": "豊臣秀頼が生母の浅井氏（淀殿）とともに大坂城中で自害し、大野治長らが殉じた。",
+  "validYears": [
+    1615,
+    1615
+  ],
+  "datePrecision": "day",
+  "source": "hiDainihonshiryoKobun",
+  "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+  "locator": "綱文：和暦 元和元年5月8日 第1条（区分 大日本史料、第12編之20（データベースの表示値）、1頁）",
+  "gameBindings": [
+    "TK.HIST:大坂夏の陣",
+    "TK.DEATH_Y"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-09",
+  "uncertainty": "綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。",
+  "linkedEntities": [
+    "person:豊臣秀頼",
+    "place:osaka-castle"
+  ],
+  "eventTime": {
+    "kind": "dated-event",
+    "date": [
+      1615,
+      5,
+      8
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": false,
+    "precision": "day"
+  },
+  "eventRelation": "death-date",
+  "eventScope": "綱文が掲げる日付。元和元年5月8日はゲーム共通の暦表で1615年6月4日。最終年表の大坂夏の陣（旧暦1615年5月8日、1615年6月4日）は一致する。自害の日。前日の落城・炎上（別の命題）と分ける。綱文はこの年を改元前も元和元年と書く。"
+}
