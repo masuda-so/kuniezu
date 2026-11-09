@@ -1,0 +1,41 @@
+{
+  "id": "sawayama-surrender-1571",
+  "entity": "place:sawayama",
+  "predicate": "castle-surrender",
+  "value": "織田信長が浅井方の佐和山城の磯野員昌を招いて降らせ、丹羽長秀を城に入れ、員昌を近江高島へ移した。",
+  "validYears": [
+    1571,
+    1571
+  ],
+  "datePrecision": "day",
+  "source": "hiDainihonshiryoKobun",
+  "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+  "locator": "綱文：和暦 元亀2年2月17日 第1条（区分 大日本史料、第10編之5（データベースの表示値）、937頁）",
+  "gameBindings": [
+    "TK.HIST:1571-3-1",
+    "node:sawayama"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-09",
+  "uncertainty": "綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。",
+  "linkedEntities": [
+    "place:sawayama",
+    "person:oda-nobunaga",
+    "person:磯野員昌",
+    "person:丹羽長秀"
+  ],
+  "eventTime": {
+    "kind": "dated-event",
+    "date": [
+      1571,
+      2,
+      17
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": false,
+    "precision": "day"
+  },
+  "eventRelation": "castle-surrender",
+  "eventScope": "綱文が掲げる日付。元亀2年2月17日はゲーム共通の暦表で1571年3月12日。最終年表の出来事（題名なし）（旧暦1571年2月6日、1571年3月1日）は綱文より11日早い。降伏と城の受け取りの日。員昌の高島への移封の日付には広げない。"
+}
