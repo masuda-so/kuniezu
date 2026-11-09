@@ -64,7 +64,7 @@ def managed_frame(title, frame, options, prior_meta, root):
         'year': '2013年公開開始・随時更新',
         'accessed': manifest['inputs'][0]['retrievedAt'][:10] + '（UTC）',
         'url': manifest['elevationSource']['specification'],
-        'locator': 'DEM10B z' + str(manifest['zoom']) + '・' + str(len(manifest['inputs'])) + 'タイル。原本・SHAは ' + str(ref),
+        'locator': 'DEM10B z' + str(manifest['zoom']) + '・' + str(len(manifest['inputs'])) + 'タイル。' + manifest['elevationSource']['credit'] + '。原本・SHAは ' + str(ref),
         'scope': manifest['elevationSource']['scope'],
     }
     if 'viewPresentation' in options:

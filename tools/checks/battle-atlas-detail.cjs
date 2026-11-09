@@ -3,9 +3,11 @@ const fs=require('node:fs'),path=require('node:path'),os=require('node:os'),vm=r
 const root=path.resolve(__dirname,'../..'),generator=require('../geo/build-local-dem.cjs'),base=path.join(root,'data/inputs/battle-dem-detail'),frames=require('../../data/inputs/battle-atlas-frames.json'),ctx={TK:{}};vm.createContext(ctx);vm.runInContext(fs.readFileSync(path.join(root,'kuniezu/static/kuniezu/battle-atlas-data.js'),'utf8'),ctx);
 let checkedGrids=0;
 for(const file of fs.readdirSync(path.join(root,'kuniezu/static/kuniezu/atlas')).filter(f=>f.endsWith('.json'))){
- const d=JSON.parse(fs.readFileSync(path.join(root,'kuniezu/static/kuniezu/atlas',file)));if(!d.heights)continue;checkedGrids++;const bytes=Buffer.from(d.heights,'base64');assert.equal(bytes.length,d.width*d.height*2,file+' grid length');for(let i=0;i<bytes.length;i+=2)assert.notEqual(bytes.readUInt16LE(i),0,file+' has NoData; contour source must be reviewed before adoption');
+ const d=JSON.parse(fs.readFileSync(path.join(root,'kuniezu/static/kuniezu/atlas',file)));if(!d.heights)continue;checkedGrids++;const bytes=Buffer.from(d.heights,'base64');assert.equal(bytes.length,d.width*d.height*2,file+' grid length');for(let i=0;i<bytes.length;i+=2)assert.notEqual(bytes.readUInt16LE(i)-32768,d.noData??-32768,file+' has NoData; contour source must be reviewed before adoption');
 }
 assert(checkedGrids>0);console.log('PASS: '+checkedGrids+' published relief grids contain no NoData samples');
+const model=require('./history-focus.cjs').model();
+for(const title of ['関ヶ原の戦い','桶狭間の戦い','設楽原の戦い','長久手の戦い']){const sc=model.TK.BATTLES[title];assert(!sc.sources.includes('atlasRelief'),title+' cannot retain old Terrain Tiles credit');assert(sc.sources.some(id=>model.TK.RESEARCH_SOURCES[id]?.url==='https://maps.gsi.go.jp/development/demtile.html'),title+' has its actual GSI source');}
 const temp=fs.mkdtempSync(path.join(os.tmpdir(),'kuniezu-atlas-detail-'));
 try{
  for(const id of ['00','02','03']){
