@@ -1,0 +1,37 @@
+{
+  "id": "territorial-transfer-hori-hideharu-echigo",
+  "entity": "person:hori-hideharu",
+  "predicate": "territorial-transfer",
+  "value": "秀吉が越前の堀秀治・同直政・村上忠勝・溝口秀勝らを越後に移した。",
+  "validYears": [
+    1598,
+    1598
+  ],
+  "datePrecision": "day",
+  "source": "hiDainihonshiryoKobun",
+  "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+  "locator": "綱文：和暦 慶長3年4月2日 第1条（区分 史料綜覧、編11・冊913（データベースの表示値）、160頁）",
+  "gameBindings": [
+    "G.reconcileHistoricalPeople"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-09",
+  "uncertainty": "同じ綱文は小早川秀秋の筑前等の収公と石田三成の代官兼任も掲げるが、この命題には含めない。 綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。",
+  "linkedEntities": [
+    "person:hori-hideharu"
+  ],
+  "eventTime": {
+    "kind": "dated-event",
+    "date": [
+      1598,
+      4,
+      2
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": false,
+    "precision": "day"
+  },
+  "eventRelation": "territorial-transfer",
+  "eventScope": "綱文が掲げる移封の命令の日付。本人が越後に着いた日は綱文に無く、補わない。領知の範囲・石高は補わない。"
+}

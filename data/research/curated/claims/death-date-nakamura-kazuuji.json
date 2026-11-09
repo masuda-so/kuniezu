@@ -1,0 +1,38 @@
+{
+  "id": "death-date-nakamura-kazuuji",
+  "entity": "person:nakamura-kazuuji",
+  "predicate": "death-date",
+  "value": "駿河府中の中村一氏が死去した。子の忠一が幼いため、家康は弟の中村一栄と老臣横田村詮に政務を執らせ、のちに忠一を伯耆米子に移した。",
+  "validYears": [
+    1600,
+    1600
+  ],
+  "datePrecision": "day",
+  "source": "hiDainihonshiryoKobun",
+  "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+  "locator": "綱文：和暦 慶長5年7月17日 第9条（区分 史料綜覧、編11・冊913（データベースの表示値）、231頁）",
+  "gameBindings": [
+    "TK.DEATH_Y",
+    "G.reconcileHistoricalPeople"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-09",
+  "uncertainty": "綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。",
+  "linkedEntities": [
+    "person:nakamura-kazuuji"
+  ],
+  "eventTime": {
+    "kind": "dated-event",
+    "date": [
+      1600,
+      7,
+      17
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": false,
+    "precision": "day"
+  },
+  "eventRelation": "death-date",
+  "eventScope": "綱文が掲げる死去の日付。忠一の米子への移封の日付（綱文は「尋で」）は補わない。"
+}

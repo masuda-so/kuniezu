@@ -1,0 +1,39 @@
+{
+  "id": "death-date-torii-mototada",
+  "entity": "person:torii-mototada",
+  "predicate": "death-date",
+  "value": "西軍が山城伏見城を攻め落とし、鳥居元忠・松平家忠らが戦死した。",
+  "validYears": [
+    1600,
+    1600
+  ],
+  "datePrecision": "day",
+  "source": "hiDainihonshiryoKobun",
+  "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+  "locator": "綱文：和暦 慶長5年8月1日 第1条（区分 史料綜覧、編11・冊913（データベースの表示値）、241頁）",
+  "gameBindings": [
+    "TK.DEATH_Y",
+    "G.reconcileHistoricalPeople",
+    "TK.HIST:伏見城の戦い"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-09",
+  "uncertainty": "ゲームの年表の「伏見城の戦い」は 1600-9-8 で、慶長5年8月1日をゲームの暦表で直した日と比べていない（年表は変えていない）。 綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。",
+  "linkedEntities": [
+    "person:torii-mototada"
+  ],
+  "eventTime": {
+    "kind": "dated-event",
+    "date": [
+      1600,
+      8,
+      1
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": false,
+    "precision": "day"
+  },
+  "eventRelation": "death-date",
+  "eventScope": "綱文が掲げる落城と戦死の日付。攻囲の始まり（同年7月19日の綱文）や時刻は補わない。"
+}
