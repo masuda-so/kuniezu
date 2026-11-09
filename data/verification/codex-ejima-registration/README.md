@@ -5,3 +5,5 @@
 - `tools/geo/register-ejima-photo.py`、`inspect-ejima-lineage.py` はRuff合格。旧手動4点の変換は造成区画の年代混在があり不採用。
 - `matches.png` は整合点、`current-coast-overlay.png` は地理院写真へ現行陸を無補正で投影した画像。画像はGitへ入れない。南西岸と北東造成地を区別して目視確認した。
 - `data/research/ejima-review/photo-registration.json` に入力のURL・SHA・寸法と数値結果を保持。ゲーム正本への変更なし。湖岸修正後の実画面検証は別途必要。
+- 登録器は9枚の写真タイルと位置範囲・原本SHAを確認する。欠落タイル、SHA不一致、誤ったタイル原点を与えた3試行はいずれも出力前に拒否。正常入力では登録JSONがバイト単位で再現した。
+- 開いた境界2本の元ページ23画素を登録行列とWeb Mercatorから経緯度へ再計算し、保存値との差が各座標1e-12度未満であることを確認した。これは数値変換の再現で、読図内容の歴史的確定ではない。

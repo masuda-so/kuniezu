@@ -20,9 +20,35 @@ parser.add_argument("reference_directory", type=Path)
 parser.add_argument("output", type=Path)
 parser.add_argument("--preview", type=Path)
 args = parser.parse_args()
+REFERENCE_ZOOM = 15
+reference_manifest = json.loads(
+    (args.reference_directory / "manifest.json").read_text()
+)
+if (
+    reference_manifest.get("zoom") != REFERENCE_ZOOM
+    or reference_manifest.get("tileOrigin") != [28506, 12920]
+    or reference_manifest.get("tileEnd") != [28508, 12922]
+):
+    parser.error("Reference mosaic does not cover the pinned Eshima tile frame")
+expected_tiles = {
+    (REFERENCE_ZOOM, x, y) for x in range(28506, 28509) for y in range(12920, 12923)
+}
+photo_tiles = [t for t in reference_manifest["tiles"] if t["layer"] == "ort_old10"]
+if len(photo_tiles) != len(expected_tiles) or {
+    tuple(t["tile"]) for t in photo_tiles
+} != expected_tiles:
+    parser.error("Expected each of the nine pinned photo tiles exactly once")
+for tile in photo_tiles:
+    if tile["layer"] == "ort_old10":
+        if tile.get("status") != "saved":
+            parser.error("Reference photo tile is missing")
+        tile_bytes = (args.reference_directory / tile["file"]).read_bytes()
+        if hashlib.sha256(tile_bytes).hexdigest() != tile["sha256"]:
+            parser.error("Reference photo tile differs from the retained SHA")
 src = np.asarray(Image.open(args.figure).convert("L"), dtype=np.float32)
+photo_path = args.reference_directory / "ort_old10-mosaic.jpg"
 dst = np.asarray(
-    Image.open(args.reference_directory / "ort_old10-mosaic.jpg").convert("L"),
+    Image.open(photo_path).convert("L"),
     dtype=np.float32,
 )
 if src.shape != (1800, 1272) or dst.shape != (768, 768):
@@ -94,9 +120,8 @@ if len(rows) >= AFFINE_POINTS:
         ),
         "figureSize": [int(src.shape[1]), int(src.shape[0])],
         "figureSha256": hashlib.sha256(args.figure.read_bytes()).hexdigest(),
-        "referenceManifest": json.loads(
-            (args.reference_directory / "manifest.json").read_text()
-        ),
+        "referenceManifest": reference_manifest,
+        "referenceMosaicSha256": hashlib.sha256(photo_path.read_bytes()).hexdigest(),
         "matrixSourcePixelsToTileMosaic": fit.tolist(),
         "inliers": len(best),
         "matches": rows,
