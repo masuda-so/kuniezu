@@ -1,0 +1,40 @@
+{
+  "id": "shizugatake-battle-1583",
+  "entity": "place:shizugatake",
+  "predicate": "military-event",
+  "value": "羽柴秀吉が柴田勝家の将の佐久間盛政を近江賤岳で撃って大いに破り、勝家の本陣に迫った。勝家は支えきれず越前北荘へ逃れた。",
+  "validYears": [
+    1583,
+    1583
+  ],
+  "datePrecision": "day",
+  "source": "hiDainihonshiryoKobun",
+  "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+  "locator": "綱文：和暦 天正11年4月21日 第1条（区分 大日本史料、第11編之4（データベースの表示値）、132頁）",
+  "gameBindings": [
+    "TK.HIST:賤ヶ岳の戦い"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-09",
+  "uncertainty": "綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。",
+  "linkedEntities": [
+    "place:shizugatake",
+    "person:toyotomi-hideyoshi",
+    "person:佐久間盛政",
+    "person:shibata-katsuie"
+  ],
+  "eventTime": {
+    "kind": "dated-event",
+    "date": [
+      1583,
+      4,
+      21
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": false,
+    "precision": "day"
+  },
+  "eventRelation": "military-event",
+  "eventScope": "綱文が掲げる日付。天正11年4月21日はゲーム共通の暦表で1583年6月11日。最終年表の賤ヶ岳の戦い（旧暦1583年4月21日、1583年6月11日）は一致する。合戦の日。勝家の自害（同年4月24日、別の死去の命題）とは分ける。"
+}

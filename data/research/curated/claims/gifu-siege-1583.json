@@ -1,0 +1,41 @@
+{
+  "id": "gifu-siege-1583",
+  "entity": "place:inabayama",
+  "predicate": "military-event",
+  "value": "織田信雄が美濃に入って岐阜城に神戸（織田）信孝を囲んだ。秀吉は勝家を滅ぼすと信雄と謀り、信孝を尾張内海に移して自害させた。",
+  "validYears": [
+    1583,
+    1583
+  ],
+  "datePrecision": "day",
+  "source": "hiDainihonshiryoKobun",
+  "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+  "locator": "綱文：和暦 天正11年5月2日 第3条（区分 大日本史料、第11編之4（データベースの表示値）、441頁）",
+  "gameBindings": [
+    "TK.HIST:岐阜城の開城",
+    "node:gifu"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-09",
+  "uncertainty": "綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。",
+  "linkedEntities": [
+    "place:inabayama",
+    "person:oda-nobukatsu",
+    "person:織田信孝",
+    "person:toyotomi-hideyoshi"
+  ],
+  "eventTime": {
+    "kind": "dated-event",
+    "date": [
+      1583,
+      5,
+      2
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": false,
+    "precision": "day"
+  },
+  "eventRelation": "military-event",
+  "eventScope": "綱文が掲げる日付。天正11年5月2日はゲーム共通の暦表で1583年6月21日。最終年表の岐阜城の開城（旧暦1583年4月7日、1583年5月28日）は綱文より24日早い。綱文が掲げる包囲と信孝の自害の日（この条の日付）。綱文に開城の語は無いので開城の日としない。岐阜城は稲葉山城の後の名で、台帳の場所 place:inabayama を使う。"
+}

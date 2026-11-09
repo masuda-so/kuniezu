@@ -1,0 +1,39 @@
+{
+  "id": "nagahama-surrender-1582",
+  "entity": "place:nagahama-omi",
+  "predicate": "castle-surrender",
+  "value": "羽柴秀吉が近江長浜城主の柴田勝豊を誘って降らせ、進んで美濃の岐阜城に神戸信孝を囲んだ。",
+  "validYears": [
+    1582,
+    1582
+  ],
+  "datePrecision": "day",
+  "source": "hiDainihonshiryoKobun",
+  "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+  "locator": "綱文：和暦 天正10年12月20日 第2条（区分 大日本史料、第11編之3（データベースの表示値）、130頁）",
+  "gameBindings": [
+    "TK.HIST:1583-1-5"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-09",
+  "uncertainty": "綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。",
+  "linkedEntities": [
+    "place:nagahama-omi",
+    "person:toyotomi-hideyoshi",
+    "person:柴田勝豊"
+  ],
+  "eventTime": {
+    "kind": "dated-event",
+    "date": [
+      1582,
+      12,
+      20
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": false,
+    "precision": "day"
+  },
+  "eventRelation": "castle-surrender",
+  "eventScope": "綱文が掲げる日付。天正10年12月20日はゲーム共通の暦表で1583年1月13日。最終年表の出来事（題名なし）（旧暦1582年12月12日、1583年1月5日）は綱文より8日早い。長浜城の降伏の日。同じ条の岐阜城の包囲と信孝の和睦は別の出来事で、この命題に含めない。年表のこの出来事は城に node:odani を使っており、長浜城とは別の城のノード（報告のみ）。"
+}

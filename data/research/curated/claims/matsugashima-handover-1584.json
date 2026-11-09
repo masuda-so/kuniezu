@@ -1,0 +1,41 @@
+{
+  "id": "matsugashima-handover-1584",
+  "entity": "place:matsugashima",
+  "predicate": "castle-handover",
+  "value": "羽柴秀長・筒井順慶らが織田信雄方の伊勢松島（松ヶ島）城を攻め、守将の滝川雄利は城を明け渡して去った。",
+  "validYears": [
+    1584,
+    1584
+  ],
+  "datePrecision": "day",
+  "source": "hiDainihonshiryoKobun",
+  "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+  "locator": "綱文：和暦 天正12年4月7日 第4条（区分 大日本史料、第11編之6（データベースの表示値）、466頁）",
+  "gameBindings": [
+    "TK.HIST:松ヶ島城の戦い"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-09",
+  "uncertainty": "綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。",
+  "linkedEntities": [
+    "place:matsugashima",
+    "person:羽柴秀長",
+    "person:tsutsui-junkei",
+    "person:滝川雄利",
+    "person:oda-nobukatsu"
+  ],
+  "eventTime": {
+    "kind": "dated-event",
+    "date": [
+      1584,
+      4,
+      7
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": false,
+    "precision": "day"
+  },
+  "eventRelation": "castle-handover",
+  "eventScope": "綱文が掲げる日付。天正12年4月7日はゲーム共通の暦表で1584年5月16日。最終年表の松ヶ島城の戦い（旧暦1584年5月23日、1584年7月1日）は綱文より46日遅い。城の明け渡しの日。綱文は「松島」と書く。年表のこの出来事は城に node:kiriyama（霧山城）を使っており、松ヶ島城とは別の城のノード（報告のみ）。蒲生氏郷の入城の日付には広げない。"
+}

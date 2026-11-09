@@ -1,0 +1,39 @@
+{
+  "id": "osaka-handover-1583",
+  "entity": "place:osaka-castle",
+  "predicate": "castle-handover",
+  "value": "池田恒興（勝入）が大坂城を羽柴秀吉に明け渡し、秀吉は恒興を大垣に、子の元助を岐阜に移した。",
+  "validYears": [
+    1583,
+    1583
+  ],
+  "datePrecision": "day",
+  "source": "hiDainihonshiryoKobun",
+  "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+  "locator": "綱文：和暦 天正11年5月25日 第4条（区分 大日本史料、第11編之4（データベースの表示値）、569頁）",
+  "gameBindings": [
+    "TK.HIST:秀吉の天下取り"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-09",
+  "uncertainty": "綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。",
+  "linkedEntities": [
+    "place:osaka-castle",
+    "person:池田恒興",
+    "person:toyotomi-hideyoshi"
+  ],
+  "eventTime": {
+    "kind": "dated-event",
+    "date": [
+      1583,
+      5,
+      25
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": false,
+    "precision": "day"
+  },
+  "eventRelation": "castle-handover",
+  "eventScope": "綱文が掲げる日付。天正11年5月25日はゲーム共通の暦表で1583年7月14日。最終年表の秀吉の天下取り（旧暦1583年4月25日、1583年6月15日）は綱文より29日早い。大坂城の明け渡しの日。秀吉の大坂築城の始まりや、恒興父子の移封の日付には広げない。"
+}

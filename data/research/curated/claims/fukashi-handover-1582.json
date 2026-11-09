@@ -1,0 +1,39 @@
+{
+  "id": "fukashi-handover-1582",
+  "entity": "place:fukashi",
+  "predicate": "castle-handover",
+  "value": "小笠原長時の遺臣らが長時の子の貞慶を三河から迎えて深志を攻め、長時の弟の貞種は城を明け渡して越後へ逃れた。貞慶は深志に戻り、名を松本と改めた。",
+  "validYears": [
+    1582,
+    1582
+  ],
+  "datePrecision": "day",
+  "source": "hiDainihonshiryoKobun",
+  "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+  "locator": "綱文：和暦 天正10年7月17日 第2条（区分 大日本史料、第11編之2（データベースの表示値）、77頁）",
+  "gameBindings": [
+    "TK.HIST:1582-8-1",
+    "node:fukashi"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-09",
+  "uncertainty": "綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。",
+  "linkedEntities": [
+    "place:fukashi",
+    "person:小笠原貞慶"
+  ],
+  "eventTime": {
+    "kind": "dated-event",
+    "date": [
+      1582,
+      7,
+      17
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": false,
+    "precision": "day"
+  },
+  "eventRelation": "castle-handover",
+  "eventScope": "綱文が掲げる日付。天正10年7月17日はゲーム共通の暦表で1582年8月5日。最終年表の出来事（題名なし）（旧暦1582年7月13日、1582年8月1日）は綱文より4日早い。綱文が一つの条にまとめて掲げる日。木曾義昌の追放、貞種の明け渡し、松本への改名を別々の日に分けない。改名は別の命題として扱っていない。"
+}
