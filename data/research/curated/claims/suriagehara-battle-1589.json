@@ -1,0 +1,38 @@
+{
+  "id": "suriagehara-battle-1589",
+  "entity": "place:suriagehara",
+  "predicate": "military-event",
+  "value": "伊達政宗が蘆名義広を陸奥磨上原（摺上原）で迎え撃ち、大いに破った。",
+  "validYears": [
+    1589,
+    1589
+  ],
+  "datePrecision": "day",
+  "source": "hiDainihonshiryoKobun",
+  "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+  "locator": "綱文：和暦 天正17年6月5日 第3条（区分 史料綜覧、編11・冊912（データベースの表示値）、238頁）",
+  "gameBindings": [
+    "TK.HIST:摺上原の戦い"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-09",
+  "uncertainty": "綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。",
+  "linkedEntities": [
+    "place:suriagehara",
+    "person:date-masamune"
+  ],
+  "eventTime": {
+    "kind": "dated-event",
+    "date": [
+      1589,
+      6,
+      5
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": false,
+    "precision": "day"
+  },
+  "eventRelation": "military-event",
+  "eventScope": "綱文が掲げる日付。天正17年6月5日はゲーム共通の暦表で1589年7月17日。最終年表の摺上原の戦い（旧暦1589年6月5日、1589年7月17日）は一致する。合戦の日。綱文は「磨上原」と書く。会津の黒川城への入城や会津の支配には広げない。"
+}

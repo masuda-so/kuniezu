@@ -301,6 +301,8 @@ class Importer:
         # records to attach to the things they name.
         self.same: dict[str, str] = {}
         self.represented: dict[str, str] = {}
+        # Water bodies the catalog of this import names; a claim may only link these.
+        self.catalog_water: set[str] = set()
         self.identity_records: dict[str, list[Record]] = {}
         # The identifiers the inputs themselves use, before any identity is applied.
         self.used: set[str] = set()
@@ -747,6 +749,26 @@ class Importer:
             )
             self.timeline.setdefault(signature, []).append(item)
 
+    def catalog_water_thing(self, subject: str, record: Record) -> Thing:
+        key = "water:" + subject
+        self.catalog_water.add(key)
+        return self.thing(key, ThingKind.WATER, subject, record)
+
+    def linked_water(self, key: str, record: Record) -> Thing:
+        """A water body a claim links, which this import's catalog must name.
+
+        A water left in an old database or made first by another input does
+        not count, and no name is matched: a misspelt key is refused rather
+        than becoming a new water body.
+        """
+        thing = self.find(key) if key in self.catalog_water else None
+        if thing is None or thing.kind != ThingKind.WATER:
+            message = f"claim links a water the catalog does not name: {key}"
+            raise ValueError(message)
+        # Like any thing a claim names, the water keeps the claim as a record.
+        thing.records.add(record)
+        return thing
+
     def load_catalog(self) -> None:
         things = {
             "person": lambda subject, record: self.resolve("person:" + subject, record),
@@ -756,9 +778,7 @@ class Importer:
             "link": lambda subject, record: self.thing(
                 "link:" + subject, ThingKind.ROUTE, subject, record
             ),
-            "water": lambda subject, record: self.thing(
-                "water:" + subject, ThingKind.WATER, subject, record
-            ),
+            "water": self.catalog_water_thing,
         }
         for row in read_jsonl(self.root / CATALOG):
             kind, subject, context = row["kind"], row["subject"], row["context"]
@@ -840,7 +860,12 @@ class Importer:
             )
             subject = self.resolve(row["entity"], record)
             linked = {
-                key: self.resolve(key, record) for key in row.get("linkedEntities", [])
+                key: (
+                    self.linked_water(key, record)
+                    if key.startswith("water:")
+                    else self.resolve(key, record)
+                )
+                for key in row.get("linkedEntities", [])
             }
             parts = (time or {}).get("components") or []
             in_parts = {key for part in parts for key in part["entities"]}

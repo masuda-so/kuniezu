@@ -1,0 +1,394 @@
+{
+  "checked": "2026-11-04",
+  "inputCount": 13,
+  "adoptedInputCount": 8,
+  "heldInputCount": 5,
+  "claims": 15,
+  "scope": "原文の具体的年代と段階を台帳へ接続。現行地図の標本検査は史実命題に含めない。",
+  "records": [
+    {
+      "inputId": "tokyo-hibiya-after-1590",
+      "region": "tokyo",
+      "sourceIds": [
+        "coastal-tokyo-ndl-hibiya"
+      ],
+      "sourceLocators": [
+        "日比谷 本文"
+      ],
+      "sourceDates": [
+        {
+          "original": "天正18（1590）年入府の後",
+          "calendar": "Japanese-era",
+          "year": 1590,
+          "precision": "after-year-not-completion"
+        }
+      ],
+      "decision": "context-without-bounded-date",
+      "curatedClaimIds": [],
+      "basis": "1590年入府「後」は終期のない相対年代。1590年工事完了の命題や1560～1615年全期間の確定状態にしない。より具体的な1592年・1603年の別命題へ補助出典として接続。",
+      "geometryAdopted": false,
+      "periodMapChange": false
+    },
+    {
+      "inputId": "tokyo-hibiya-1592-1603",
+      "region": "tokyo",
+      "sourceIds": [
+        "coastal-tokyo-minato-history"
+      ],
+      "sourceLocators": [
+        "自然的立地 p12–19／図3 家康入府のころの江戸"
+      ],
+      "sourceDates": [
+        {
+          "original": "文禄元年（1592）",
+          "calendar": "Japanese-era",
+          "year": 1592,
+          "precision": "year"
+        },
+        {
+          "original": "慶長8年（1603）",
+          "calendar": "Japanese-era",
+          "year": 1603,
+          "precision": "year"
+        }
+      ],
+      "decision": "adopt-bounded-documentary-chronology",
+      "curatedClaimIds": [
+        "coastal-hibiya-earthwork-1592",
+        "coastal-edo-reclamation-1603"
+      ],
+      "basis": "指定箇所の原文で工事段階と年代を確認。精密形状を伴わない比較記録として採用。",
+      "geometryAdopted": false,
+      "periodMapChange": false
+    },
+    {
+      "inputId": "osaka-yamato-1704",
+      "region": "osaka",
+      "sourceIds": [
+        "coastal-osaka-yamato-mlit-pdf",
+        "coastal-osaka-yamato-diversion"
+      ],
+      "sourceLocators": [
+        "PDF p11（2-7-1）",
+        "大和川付替地図"
+      ],
+      "sourceDates": [
+        {
+          "original": "宝永元年（1704年）",
+          "calendar": "Japanese-era",
+          "year": 1704,
+          "precision": "year"
+        }
+      ],
+      "decision": "adopt-bounded-documentary-chronology",
+      "curatedClaimIds": [
+        "coastal-yamato-diversion-1704"
+      ],
+      "basis": "指定箇所の原文で工事段階と年代を確認。精密形状を伴わない比較記録として採用。",
+      "geometryAdopted": false,
+      "periodMapChange": false
+    },
+    {
+      "inputId": "osaka-new-fields-1705",
+      "region": "osaka",
+      "sourceIds": [
+        "coastal-osaka-yamato-effects"
+      ],
+      "sourceLocators": [
+        "付替え後の旧大和川の新田"
+      ],
+      "sourceDates": [
+        {
+          "original": "宝永2（1705）年から",
+          "calendar": "Japanese-era",
+          "year": 1705,
+          "precision": "from-year"
+        }
+      ],
+      "decision": "adopt-bounded-documentary-chronology",
+      "curatedClaimIds": [
+        "coastal-yamato-old-channel-fields-1705"
+      ],
+      "basis": "指定箇所の原文で工事段階と年代を確認。精密形状を伴わない比較記録として採用。",
+      "geometryAdopted": false,
+      "periodMapChange": false
+    },
+    {
+      "inputId": "osaka-tsumori-1698-1702",
+      "region": "osaka",
+      "sourceIds": [
+        "coastal-osaka-tsumori-library"
+      ],
+      "sourceLocators": [
+        "西成区／津守新田の開発について"
+      ],
+      "sourceDates": [
+        {
+          "original": "元禄11（1698）年",
+          "calendar": "Japanese-era",
+          "year": 1698,
+          "precision": "year"
+        },
+        {
+          "original": "元禄15（1702）年3月",
+          "calendar": "Japanese-lunisolar",
+          "year": 1702,
+          "month": 3,
+          "precision": "month-not-Gregorian-month"
+        }
+      ],
+      "decision": "adopt-bounded-documentary-chronology",
+      "curatedClaimIds": [
+        "coastal-tsumori-permission-1698",
+        "coastal-tsumori-development-1702"
+      ],
+      "basis": "指定箇所の原文で工事段階と年代を確認。精密形状を伴わない比較記録として採用。",
+      "geometryAdopted": false,
+      "periodMapChange": false
+    },
+    {
+      "inputId": "nobi-okakoi-1608",
+      "region": "nobi",
+      "sourceIds": [
+        "coastal-nobi-mlit-water-use-pdf",
+        "coastal-nobi-maff-history"
+      ],
+      "sourceLocators": [
+        "PDF p5（利水-2）",
+        "第3話 御囲堤"
+      ],
+      "sourceDates": [
+        {
+          "original": "慶長13年（1608年）",
+          "calendar": "Japanese-era",
+          "year": 1608,
+          "precision": "year"
+        }
+      ],
+      "decision": "adopt-bounded-documentary-chronology",
+      "curatedClaimIds": [
+        "coastal-okakoi-start-1608"
+      ],
+      "basis": "指定箇所の原文で工事段階と年代を確認。精密形状を伴わない比較記録として採用。",
+      "geometryAdopted": false,
+      "periodMapChange": false
+    },
+    {
+      "inputId": "nobi-fujimae-new-fields",
+      "region": "nobi",
+      "sourceIds": [
+        "coastal-nobi-env-fujimae"
+      ],
+      "sourceLocators": [
+        "江戸時代の新田開発"
+      ],
+      "sourceDates": [
+        {
+          "original": "江戸時代の初め／江戸時代末期",
+          "calendar": "Japanese-era-description",
+          "precision": "period"
+        }
+      ],
+      "decision": "period-and-geometry-held",
+      "curatedClaimIds": [],
+      "basis": "公的解説の概括内容は確認できるが「江戸初期」「江戸末期」と推量表現を数値の確定年へ置き換えない。藤前・永徳の個別開発図と位置登録が必要。",
+      "geometryAdopted": false,
+      "periodMapChange": false
+    },
+    {
+      "inputId": "nobi-map-1672",
+      "region": "nobi",
+      "sourceIds": [
+        "coastal-nobi-nagoya-library"
+      ],
+      "sourceLocators": [
+        "回答・回答プロセス"
+      ],
+      "sourceDates": [
+        {
+          "original": "寛文12年（1672）",
+          "calendar": "Japanese-era",
+          "year": 1672,
+          "precision": "year-depicted-in-modern-study"
+        }
+      ],
+      "decision": "bibliographic-lead-only",
+      "curatedClaimIds": [],
+      "basis": "案内された書籍図版を未取得。参照回答の存在は確認したが、1672年の線・1560年の線は未確認。",
+      "geometryAdopted": false,
+      "periodMapChange": false
+    },
+    {
+      "inputId": "nakaumi-modern-four-districts",
+      "region": "shinji-nakaumi",
+      "sourceIds": [
+        "coastal-nakaumi-shimane"
+      ],
+      "sourceLocators": [
+        "国営中海土地改良事業"
+      ],
+      "sourceDates": [
+        {
+          "original": "昭和38年",
+          "calendar": "Japanese-era",
+          "year": 1963,
+          "precision": "year"
+        },
+        {
+          "original": "平成元年3月",
+          "calendar": "Gregorian-era-name",
+          "year": 1989,
+          "month": 3,
+          "precision": "month"
+        },
+        {
+          "original": "平成4年3月",
+          "calendar": "Gregorian-era-name",
+          "year": 1992,
+          "month": 3,
+          "precision": "month"
+        },
+        {
+          "original": "平成12年9月 本庄干陸中止",
+          "calendar": "Gregorian-era-name",
+          "year": 2000,
+          "month": 9,
+          "precision": "month"
+        }
+      ],
+      "decision": "adopt-bounded-documentary-chronology",
+      "curatedClaimIds": [
+        "coastal-nakaumi-start-1963",
+        "coastal-nakaumi-three-districts-1989",
+        "coastal-nakaumi-hikona-1992",
+        "coastal-nakaumi-honjo-cancel-2000"
+      ],
+      "basis": "指定箇所の原文で工事段階と年代を確認。精密形状を伴わない比較記録として採用。",
+      "geometryAdopted": false,
+      "periodMapChange": false
+    },
+    {
+      "inputId": "shinji-west-bank-kawatae",
+      "region": "shinji-nakaumi",
+      "sourceIds": [
+        "coastal-hii-fureai-148"
+      ],
+      "sourceLocators": [
+        "PDF p2右下 斐伊川の川違え"
+      ],
+      "sourceDates": [
+        {
+          "original": "1635年頃／1687年頃／1723年頃／1785年頃／1809年頃／1832年頃",
+          "calendar": "CE-year-labels",
+          "precision": "circa-year"
+        }
+      ],
+      "decision": "schematic-map-comparison-only",
+      "curatedClaimIds": [],
+      "basis": "広報図の6年代ラベルと川違えの説明は確認。図は未登録の俯瞰説明図で「頃」を含むため、特定年の確定岸線を史実命題にしない。",
+      "geometryAdopted": false,
+      "periodMapChange": false
+    },
+    {
+      "inputId": "hii-east-flow-dating-conflict",
+      "region": "shinji-nakaumi",
+      "sourceIds": [
+        "coastal-hii-fureai-148",
+        "coastal-hii-matsue-column79"
+      ],
+      "sourceLocators": [
+        "2006 PDF p2左年表",
+        "2019 PDF p5–7"
+      ],
+      "sourceDates": [
+        {
+          "original": "寛永12年・寛永16年",
+          "calendar": "Japanese-era",
+          "years": [
+            1635,
+            1639
+          ],
+          "precision": "alternative-years"
+        },
+        {
+          "original": "寛永10年（1633）幕府収納絵図の写しとされる",
+          "calendar": "Japanese-era",
+          "year": 1633,
+          "precision": "attributed-map-date-not-secure-event-date"
+        }
+      ],
+      "decision": "competing-interpretations-retained",
+      "curatedClaimIds": [],
+      "basis": "1635/1639説と、1633年とされる図の東流描写を併記する。図の年代・描写が正しい場合という条件を落とさず、いずれも一日の流向切替の根拠にしない。",
+      "geometryAdopted": false,
+      "periodMapChange": false
+    },
+    {
+      "inputId": "jusan-modern-reclamation",
+      "region": "jusan",
+      "sourceIds": [
+        "coastal-jusan-maff-history"
+      ],
+      "sourceLocators": [
+        "新田開発の歴史／国営十三湖開拓建設事業"
+      ],
+      "sourceDates": [
+        {
+          "original": "1620年 新田開発令",
+          "calendar": "CE-year-label",
+          "year": 1620,
+          "precision": "year"
+        },
+        {
+          "original": "昭和23～44年度",
+          "calendar": "Japanese-fiscal-year",
+          "years": [
+            1948,
+            1969
+          ],
+          "precision": "fiscal-year-range"
+        }
+      ],
+      "decision": "adopt-bounded-documentary-chronology",
+      "curatedClaimIds": [
+        "coastal-tsugaru-new-field-order-1620",
+        "coastal-jusan-project-fiscal-1948-1969"
+      ],
+      "basis": "指定箇所の原文で工事段階と年代を確認。精密形状を伴わない比較記録として採用。",
+      "geometryAdopted": false,
+      "periodMapChange": false
+    },
+    {
+      "inputId": "jusan-modern-mitoguchi",
+      "region": "jusan",
+      "sourceIds": [
+        "coastal-jusan-mlit-gijutsu"
+      ],
+      "sourceLocators": [
+        "No.11 岩木川 水戸口突堤"
+      ],
+      "sourceDates": [
+        {
+          "original": "大正15（1926）年",
+          "calendar": "Japanese-era",
+          "year": 1926,
+          "precision": "year"
+        },
+        {
+          "original": "昭和22（1947）年",
+          "calendar": "Japanese-era",
+          "year": 1947,
+          "precision": "year"
+        }
+      ],
+      "decision": "adopt-bounded-documentary-chronology",
+      "curatedClaimIds": [
+        "coastal-mitoguchi-1926",
+        "coastal-mitoguchi-1947"
+      ],
+      "basis": "指定箇所の原文で工事段階と年代を確認。精密形状を伴わない比較記録として採用。",
+      "geometryAdopted": false,
+      "periodMapChange": false
+    }
+  ]
+}

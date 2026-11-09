@@ -1,0 +1,41 @@
+{
+  "id": "odawara-receipt-1590",
+  "entity": "place:odawara-castle",
+  "predicate": "castle-handover",
+  "value": "秀吉が片桐直倫（且元）・脇坂安治と徳川家康の将の榊原康政らに、相模小田原城を受け取らせた。",
+  "validYears": [
+    1590,
+    1590
+  ],
+  "datePrecision": "day",
+  "source": "hiDainihonshiryoKobun",
+  "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+  "locator": "綱文：和暦 天正18年7月6日 第1条（区分 史料綜覧、編11・冊912（データベースの表示値）、297頁）",
+  "gameBindings": [
+    "TK.HIST:小田原開城",
+    "node:odawara"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-09",
+  "uncertainty": "綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。",
+  "linkedEntities": [
+    "place:odawara-castle",
+    "person:toyotomi-hideyoshi",
+    "person:片桐且元",
+    "person:sakakibara-yasumasa"
+  ],
+  "eventTime": {
+    "kind": "dated-event",
+    "date": [
+      1590,
+      7,
+      6
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": false,
+    "precision": "day"
+  },
+  "eventRelation": "castle-handover",
+  "eventScope": "綱文が掲げる日付。天正18年7月6日はゲーム共通の暦表で1590年8月5日。最終年表の小田原開城（旧暦1590年7月5日、1590年8月4日）は綱文より1日早い。城の受け取りの日。北条氏直の降伏の日や氏政の切腹の日付、関東の家康への引き渡しには広げない。"
+}
