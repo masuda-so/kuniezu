@@ -124,10 +124,21 @@ function log(t,kind,clans){const d=G.date();S.log.unshift({t:S.t,s:`${d.y}.${d.m
 G.log=log;
 
 G._ff={};
-// 時の帯の「過去」：1560年から史実どおりに進めた歴史を、半年ごとに書き留めておく（どのシナリオからでも過去へ戻れるように）
+// 過去の再生と時の帯は、登録済みの最も早い開始配置を共用する。
+const historyDateOrder=d=>d[0]*400+d[1]*32+d[2];
+G.historyOrigin=function(){
+ const roots=Object.entries(TK.SCEN).filter(([,sc])=>!sc.base).map(([id,sc])=>({id,date:(sc.openingDate||[sc.year,sc.month||1,1]).slice()}));
+ roots.sort((a,b)=>historyDateOrder(a.date)-historyDateOrder(b.date)||a.id.localeCompare(b.id));
+ if(!roots.length)throw Error('史実を再生できる開始配置がありません。');return roots[0];
+};
+// 半年ごとの控えは一時的な再生用。史実DBの日別の所在データにはしない。
 G._past=null;
-G.pastStep=function(endD,maxDays){const cur=S;try{
-  if(!G._past){G.newGame('s1560',Object.keys(TK.SCEN.s1560.owners)[0]);S.player='__none';G._past={cur:JSON.stringify(S),snaps:[{y:1560,m:5,d:1,s:JSON.stringify(S)}],done:[1560,5,1]};}
+G.pastStep=function(endD,maxDays){const cur=S,origin=G.historyOrigin(),key=origin.id+'|'+origin.date.join('/');
+ if(historyDateOrder(endD)<historyDateOrder(origin.date))throw RangeError('史実の再生は'+origin.date.join('/')+'から開けます。');
+ try{
+  if(!G._past||G._past.origin!==key){G.newGame(origin.id,Object.keys(TK.SCEN[origin.id].owners)[0]);S.player='__none';const d=G.date(),done=[d.y,d.m,d.d],str=JSON.stringify(S);
+   if(historyDateOrder(endD)<historyDateOrder(done))throw RangeError('史実の再生は'+done.join('/')+'から開けます。');
+   G._past={origin:key,cur:str,snaps:[{y:d.y,m:d.m,d:d.d,s:str}],done};}
   const P=G._past;const [ey,em,ed]=endD;if(P.done[0]*400+P.done[1]*32+P.done[2]>=ey*400+em*32+ed)return true;
   S=JSON.parse(P.cur);G.syncCastles();const end=evT({d:endD});let n=0;
   while(S.t<end&&n<maxDays){G.day();n++;S.evQ=[];const d=G.date();if(d.d===1&&(d.m===1||d.m===7)){S.log=S.log.slice(0,30);P.snaps.push({y:d.y,m:d.m,d:1,s:JSON.stringify(S)});}}
@@ -138,7 +149,7 @@ G.pastStep=function(endD,maxDays){const cur=S;try{
 G.histSig=()=>{let h=TK.HIST.length;for(const e of TK.HIST){const t=(e.title||e.k)+e.d.join('');for(let i=0;i<t.length;i++)h=(h*31+t.charCodeAt(i))|0;}return h;};
 G.fixHist=function(){const changed=G.fixJokaku();const sig=G.histSig();if(S.hsig===sig)return changed;let i=0;while(i<TK.HIST.length&&evT(TK.HIST[i])<=S.t)i++;S.hi=i;
  const keep={};for(const u of S.units)if(u.until)keep[u.until]=1;S.pm={};for(let j=i;j<TK.HIST.length;j++){const e=TK.HIST[j];const k=e.title||e._pk;if(k&&keep[k])S.pm[j]=1;}S.hsig=sig;return true;};
-G.adoptPast=function(str,player){S=JSON.parse(str);G.syncCastles();S.hsig=G.histSig();if(!S.clans[player]||!S.clans[player].alive){S=null;return null;}
+G.adoptPast=function(str,player){const next=JSON.parse(str);if(!next?.clans?.[player]?.alive)return null;S=next;G.syncCastles();S.hsig=G.histSig();
  S.player=player;S.evQ=[];S.evSeen={};S.lastInc=S.t;S.sceneQ=[];S.battleQ=[];S.div={};S.auto=false;S.extinct=0;S.over=null;
  for(const f of (TK.FORKS||[]))if(evT(f)<S.t)S.evSeen[f.id]=1;G._lr=null;return S;};
 // まもなく史実で立つ家（本能寺の後の羽柴、関ヶ原前の石田など）。いまは主家の下にいる
