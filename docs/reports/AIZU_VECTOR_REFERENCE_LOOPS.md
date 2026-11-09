@@ -34,3 +34,7 @@
 - `pytest tests/test_road_regeneration.py`：3件と5 subtestsに合格。
 - `offline.cjs`：全体の必須検査に合格。生成した監査差分は検証ディレクトリへ保全し、作業前の監査ファイルをSHA確認付きで復元した。
 - 専用Chrome：[実画面の検証要約](../../data/verification/codex-aizu-road-vectors/README.md)。4地点×広狭、停止再開、版25→26の旧保存、0.25日期限、破損拒否と再読み込みに合格。実行時例外0件。サーバーの起動・停止なし。
+
+## レビュー後の検査互換
+
+版26への更新に追従していなかった既存検査20ファイルの期待値を更新した。旧保存fixtureの版は変更していない。`movement-save`・`sanshu-route`・`hokkokukaido-geometry`・`ina-approach`・`relay-arrival`・`aizu-itinerary`・`takamatsu-arrival` の7検査に合格し、変更した20ファイルの構文も検査した。ブラウザ検査13ファイルは期待値のみを直し、今回それぞれの実画面検査を再実行したとは扱わない。
