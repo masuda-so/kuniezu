@@ -59,6 +59,14 @@ def managed_frame(title, frame, options, prior_meta, root):
     if payload['width'] != manifest['size'][0] or payload['height'] != manifest['size'][1] or payload['zoom'] != manifest['zoom']:
         raise ValueError('Managed DEM resolution mismatch: ' + title)
     kept = dict(entry)
+    kept['terrainSource'] = {
+        'author': '国土地理院', 'title': manifest['elevationSource']['dataset'],
+        'year': '2013年公開開始・随時更新',
+        'accessed': manifest['inputs'][0]['retrievedAt'][:10] + '（UTC）',
+        'url': manifest['elevationSource']['specification'],
+        'locator': 'DEM10B z' + str(manifest['zoom']) + '・' + str(len(manifest['inputs'])) + 'タイル。原本・SHAは ' + str(ref),
+        'scope': manifest['elevationSource']['scope'],
+    }
     if 'viewPresentation' in options:
         if not isinstance(options['viewPresentation'], dict):
             raise ValueError('viewPresentation must be an object: ' + title)

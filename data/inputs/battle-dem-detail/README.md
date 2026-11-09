@@ -32,3 +32,5 @@ python3 tools/geo/battle-atlas.py --titles 関ヶ原の戦い 桶狭間の戦い
 - [国土地理院コンテンツ利用規約](https://www.gsi.go.jp/kikakuchousei/kikakuchousei40182.html)
 - 表示クレジット：地理院タイル（標高タイル DEM10B）を加工して作成。
 - 河川は従来のOpenStreetMap／Geofabrikの現代比較線（ODbL 1.0）。各旧JSONの `riverSource` と、生成物の `riverSource.inputSHA256` を参照。
+
+公式一覧でDEM10B標高タイルは「2. 基本測量成果以外で出典の記載のみで利用可能なもの」に含まれることを2026-11-09に確認した。旧再編案の地理院地図Vector下図に関する承認未確認・同梱見送りとは区別する。全112配信標高格子についてNoData標本0も検査し、新しいNoData入力は採用前に失敗させる。

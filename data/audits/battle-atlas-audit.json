@@ -109,6 +109,15 @@
           "maxScale": 2
         }
       ]
+    },
+    "terrainSource": {
+      "author": "国土地理院",
+      "title": "国土地理院 標高タイル DEM10B",
+      "year": "2013年公開開始・随時更新",
+      "accessed": "2026-11-08（UTC）",
+      "url": "https://maps.gsi.go.jp/development/demtile.html",
+      "locator": "DEM10B z14・24タイル。原本・SHAは data/inputs/battle-dem-detail/00/input-manifest.json",
+      "scope": "現代比較標高。戦国期の地形・造成前の地表・城郭平面を復元したものではない。"
     }
   },
   "第四次川中島の戦い": {
@@ -180,7 +189,16 @@
         "basis": "historical-gazetteer"
       }
     ],
-    "scope": "現代の標高と地名の代表点。編集した表示範囲であり戦場の境界ではない。"
+    "scope": "現代の標高と地名の代表点。編集した表示範囲であり戦場の境界ではない。",
+    "terrainSource": {
+      "author": "国土地理院",
+      "title": "国土地理院 標高タイル DEM10B",
+      "year": "2013年公開開始・随時更新",
+      "accessed": "2026-11-08（UTC）",
+      "url": "https://maps.gsi.go.jp/development/demtile.html",
+      "locator": "DEM10B z14・20タイル。原本・SHAは data/inputs/battle-dem-detail/02/input-manifest.json",
+      "scope": "現代比較標高。戦国期の地形・造成前の地表・城郭平面を復元したものではない。"
+    }
   },
   "関ヶ原の戦い": {
     "file": "03.json",
@@ -226,6 +244,15 @@
           "maxScale": 3.5
         }
       ]
+    },
+    "terrainSource": {
+      "author": "国土地理院",
+      "title": "国土地理院 標高タイル DEM10B",
+      "year": "2013年公開開始・随時更新",
+      "accessed": "2026-11-08（UTC）",
+      "url": "https://maps.gsi.go.jp/development/demtile.html",
+      "locator": "DEM10B z14・42タイル。原本・SHAは data/inputs/battle-dem-detail/03/input-manifest.json",
+      "scope": "現代比較標高。戦国期の地形・造成前の地表・城郭平面を復元したものではない。"
     }
   },
   "姉川の戦い": {
