@@ -366,3 +366,15 @@
  note([1600,8,24],'毛利勢が安濃津城を攻める','kiriyama',mie,'毛利秀元ら西軍が安濃津城を攻めた。');
  resolve('安濃津城の戦い',[1600,8,25],mie,'長束正家が和議を仲介し、富田信高の守る安濃津城は開城した。');
 }
+
+/* 和睦の条項と、領地・婚姻の履行を区別する。 */
+(function(){
+ const lunar=[1582,10,29],date=TK.lunarDate(...lunar);
+ const note=TK.HIST.find(e=>e.title==='徳川と北条の和睦');
+ const ally=TK.HIST.find(e=>e.k==='ally'&&e.a==='tokugawa'&&e.b==='hojo'&&e.d.join('/')==='1582/11/14');
+ if(!note||!ally)throw Error('天正壬午の和睦の訂正対象がない');
+ TK.RESEARCH_SOURCES.peaceTenshoChino={author:'茅野市神長官守矢史料館',title:'八ヶ岳通信42号',url:'https://www.city.chino.lg.jp/uploaded/attachment/37201.pdf',locator:'1頁、徳川家康と諏訪',scope:'天正10年10月29日の和睦。個別条項の実際の履行日はこの日へまとめない。',accessed:'2026-11-09'};
+ TK.TENSHO_PEACE_DATE_CHANGE={date:date.slice(),previousNote:[1582,11,13],previousAlly:[1582,11,14],previousText:note.text};
+ for(const e of [note,ally])Object.assign(e,{d:date.slice(),lunarDate:lunar.slice(),source:TK.RESEARCH_SOURCES.peaceTenshoChino.url});
+ note.text='徳川家康と北条氏直が和睦した。甲斐・信濃・上野の領有について取り決め、家康の娘・督姫と氏直の婚姻を約した。';
+})();

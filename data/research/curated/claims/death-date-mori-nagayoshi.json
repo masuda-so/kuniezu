@@ -1,0 +1,38 @@
+{
+  "id": "death-date-mori-nagayoshi",
+  "entity": "person:森長可",
+  "predicate": "death-date",
+  "value": "尾張長久手で徳川家康の軍勢に襲われて敗れ、森長可が戦死した。",
+  "validYears": [
+    1584,
+    1584
+  ],
+  "datePrecision": "day",
+  "source": "hiDainihonshiryoKobun",
+  "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+  "locator": "綱文：和暦 天正12年4月9日 第2条（区分 大日本史料、第11編之6、503頁）",
+  "gameBindings": [
+    "TK.DEATH_Y",
+    "TK.HIST:小牧・長久手の戦い"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-09",
+  "uncertainty": "綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。",
+  "linkedEntities": [
+    "person:森長可"
+  ],
+  "eventTime": {
+    "kind": "dated-event",
+    "date": [
+      1584,
+      4,
+      9
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": false,
+    "precision": "day"
+  },
+  "eventRelation": "death-date",
+  "eventScope": "綱文が掲げる長久手の合戦と戦死の日付（池田恒興と同じ条）。天正12年4月9日はゲーム共通の暦表で1584年5月18日。最終年表の小牧・長久手の戦い（1584年5月20日）は綱文より2日遅い。小牧での対陣の期間や時刻は補わない。"
+}
