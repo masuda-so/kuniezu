@@ -1,0 +1,41 @@
+{
+  "id": "iwamura-recapture-1575",
+  "entity": "place:iwamura",
+  "predicate": "military-event",
+  "value": "織田信忠が武田方の秋山信友を美濃岩村城に囲み、信長の援軍のもとで信友を捕らえて磔にした。",
+  "validYears": [
+    1575,
+    1575
+  ],
+  "datePrecision": "day",
+  "source": "hiDainihonshiryoKobun",
+  "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+  "locator": "綱文：和暦 天正3年11月21日 第2条（区分 史料綜覧、編10・冊911（データベースの表示値）、94頁）",
+  "gameBindings": [
+    "TK.HIST:1575-12-10",
+    "node:iwamura"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-09",
+  "uncertainty": "綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。",
+  "linkedEntities": [
+    "place:iwamura",
+    "person:織田信忠",
+    "person:秋山信友",
+    "person:oda-nobunaga"
+  ],
+  "eventTime": {
+    "kind": "dated-event",
+    "date": [
+      1575,
+      11,
+      21
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": false,
+    "precision": "day"
+  },
+  "eventRelation": "military-event",
+  "eventScope": "綱文が掲げる日付。天正3年11月21日はゲーム共通の暦表で1575年12月23日。最終年表の出来事（題名なし）（旧暦1575年11月8日、1575年12月10日）は綱文より13日早い。綱文が掲げる信友の捕縛と処刑の日。開城や落城の日としない。包囲の始まりの日付は補わない。"
+}

@@ -24,7 +24,7 @@
 | 人物・開始配置 | `historical-register.cjs`、`scenario-openings.cjs` | `march-clock-browser.cjs` |
 | 自治体資料で照合した没日 | `verified-death-dates.cjs`（日付・旧保存の限定移行・二重読込・継承。Offline checksにも含む） | 該当人物の前後日と保存再開を確認 |
 | 領土・分家・外交 | `families-territory.cjs`、`map-history.cjs` | `borders-family-browser.cjs` |
-| 行軍・保存・速度 | `movement-display.cjs`、`movement-clock.cjs`、`movement-save.cjs`、`export-save-clock.cjs`、`logistics-review.cjs` | `march-clock-browser.cjs`、`export-save-clock-browser.cjs` |
+| 行軍・保存・速度 | `movement-display.cjs`、`movement-clock.cjs`、`movement-save.cjs`、`castle-era-position.cjs`、`export-save-clock.cjs`、`logistics-review.cjs` | `march-clock-browser.cjs`、`export-save-clock-browser.cjs` |
 | 全期間の移動 | `march-audit.cjs`、`warp-audit.cjs` | 発見したケースを再現 |
 | 街道の入力と再生成 | `road-vectors.cjs`（`tosando-reference-loop.cjs`を含む）、`road-vector-loading.cjs`、`sanshu-route.cjs`、`road-regeneration.cjs`（Python標準ライブラリ。Django CIの試験にも含む） | `road-vectors-browser.cjs`（両幅・道上行軍・停止再開・破損拒否と再読込）、`sanshu-route-browser.cjs`（両幅と保存版22・23の移行） |
 | 児島湾の補正マスクのベクター化 | `mask-vector.cjs`（穴・対角接触・単純リング）、`kojima-mask-vectors.cjs`（旧格子対応と737,100セルの逆変換一致。Offline checksにも含む） | —（移行入力のみ。ゲーム表示は変更しない） |
