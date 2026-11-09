@@ -229,6 +229,35 @@ def test_a_period_that_makes_no_sense_is_refused(inputs, period, relation, why):
         import_history(inputs)
 
 
+@pytest.mark.parametrize("basis", [True, 42, {"text": "根拠"}, "   ", ""])
+def test_a_period_basis_must_be_written_text(inputs, basis):
+    path = inputs / IDENTITIES
+    stands(inputs, "bad", AFTER, SITE, {"from": year(1573)})
+    row = json.loads((path / "bad.json").read_text(encoding="utf-8"))
+    row["period"]["basis"] = basis
+    (path / "bad.json").write_text(
+        json.dumps(row, ensure_ascii=False), encoding="utf-8"
+    )
+    with pytest.raises(ValueError, match="needs a basis"):
+        import_history(inputs)
+
+
+@pytest.mark.parametrize("value", [[1573, 7, 0], [1573, 7, 1000], [1573, 7, 31]])
+def test_a_day_the_month_does_not_have_is_refused(inputs, value):
+    # 天正元年7月 has 29 or 30 days; a later day must not run into August.
+    stands(inputs, "bad", AFTER, SITE, {"from": day(value)})
+    with pytest.raises(ValueError, match="lunisolar day or a year"):
+        import_history(inputs)
+
+
+def test_a_clash_between_two_names_of_one_site_is_refused(inputs):
+    # site:岩石城 and place:ganjaku end at one thing once imported.
+    stands(inputs, "first", "place:edo", "site:岩石城", {"from": year(1573)})
+    stands(inputs, "second", BEFORE, "place:ganjaku", {"from": year(1573)})
+    with pytest.raises(ValueError, match="surely overlap"):
+        import_history(inputs)
+
+
 def test_a_period_with_an_unknown_site_is_refused(inputs):
     stands(inputs, "bad", AFTER, "node:存在しない拠点", {"from": year(1573)})
     with pytest.raises(ValueError, match="no input has"):

@@ -645,7 +645,9 @@ class Importer:
         if not isinstance(period, dict) or set(period) - {"from", "until", "basis"}:
             message = f"{name}: a period has from, until and basis only"
             raise ValueError(message)
-        if not period.get("basis") or not (period.get("from") or period.get("until")):
+        basis = period.get("basis")
+        has_basis = isinstance(basis, str) and basis.strip() != ""
+        if not has_basis or not (period.get("from") or period.get("until")):
             message = f"{name}: a period needs a basis and at least one end"
             raise ValueError(message)
         start_early, _ = self.period_end(name, period.get("from"))
@@ -678,9 +680,17 @@ class Importer:
                 and isinstance(leap, bool)
             ):
                 year, month, day = date
-                number = dates.lunisolar_to_jd(self.table, year, month, day, leap=leap)
-                if number is not None:
-                    return number, number
+                length = dates.lunisolar_month_length(
+                    self.table, year, month, leap=leap
+                )
+                # A day the month does not have is refused, not carried on into
+                # a later month.
+                if length is not None and 1 <= day <= length:
+                    number = dates.lunisolar_to_jd(
+                        self.table, year, month, day, leap=leap
+                    )
+                    if number is not None:
+                        return number, number
         elif precision == Precision.YEAR and calendar == Calendar.CE_YEAR:
             year = end.get("year")
             if (
@@ -730,7 +740,6 @@ class Importer:
             message = f"identity: {', '.join(tangled)} is merged and used again"
             raise ValueError(message)
         self.same = merged_into
-        self.check_periods()
 
     def check_periods(self) -> None:
         """Refuse two representations that surely hold on one day.
@@ -747,15 +756,23 @@ class Importer:
         spans += [
             (place, site, (None,) * 4, "") for place, site in self.represented.items()
         ]
-        for number, (place, site, span, name) in enumerate(spans):
-            for other_place, other_site, other, other_name in spans[number + 1 :]:
-                if (place == other_place or site == other_site) and surely_overlap(
-                    span, other
-                ):
-                    which = name or other_name or "identity"
+        # Compare the things the identifiers end at, so that two names for one
+        # thing (an identifier settled by name, a merged one) cannot hide a clash.
+        resolved = [
+            (self.find(place), self.find(site), span, name, place, site)
+            for place, site, span, name in spans
+        ]
+        for number, (place, site, span, name, place_key, site_key) in enumerate(
+            resolved
+        ):
+            for other in resolved[number + 1 :]:
+                same_place = place is not None and place == other[0]
+                same_site = site is not None and site == other[1]
+                if (same_place or same_site) and surely_overlap(span, other[2]):
+                    which = name or other[3] or "identity"
                     message = (
-                        f"{which}: {site} and {other_site} for {place} and "
-                        f"{other_place} surely overlap in time"
+                        f"{which}: {site_key} and {other[5]} for {place_key} and "
+                        f"{other[4]} surely overlap in time"
                     )
                     raise ValueError(message)
 
@@ -1205,6 +1222,7 @@ class Importer:
 
         Only one for all time lends its point: a point has no time of its own.
         """
+        self.check_periods()
         for place_key, site_key in self.represented.items():
             records = self.identity_records.get(place_key, [])
             record = next(
