@@ -34,7 +34,7 @@
 
 ## 検証
 
-- `export-evidence.cjs`：189 件（作成時の main 178 件＋11）。前の PR が入ったら main を取り込んで export し直す。
+- `export-evidence.cjs`：263 件（第 7 便の取り込み後の main 252 件＋11）。
 - 隔離 DB で `import_history`：同じ名前の対象は、台帳の場所とゲームのノードの組だけ。
 - 各検査・`pytest`・`ruff` の結果は PR の説明に書く。
 
