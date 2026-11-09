@@ -36,6 +36,8 @@ uv run python manage.py history_query --phenomenon campaign:文禄の役   # 事
 | `water` 水域 | 湖・潟・湾 |
 | `object` 物 | 文書・器物（まだ入力が無い） |
 
+命題の関係する対象（`linkedEntities`、事象への関わり方は `participant`）は人物（`person:`）・場所（`place:`）と、水域（`water:`）を取る。水域は、今回取り込む `docs/work/catalog.jsonl` の `kind=water` の行と完全に一致するキーだけを受ける。前の取り込みで DB に残った水域や、別の入力が先に作った水域では足りず、名前による推定や新しい水域の自動作成もしない（`tools/research/evidence-store.cjs` の `catalogWaterKeys`、`kuniezu/history/importer.py` の `linked_water`）。
+
 事象は、あり方（`mode`）と内容（`kind`）をそれぞれちょうど 1 つ持つ。
 
 | あり方 | 意味 |
