@@ -1,0 +1,40 @@
+{
+  "id": "busan-landing-kiyomasa-1592",
+  "entity": "place:busan-port",
+  "predicate": "military-event",
+  "value": "加藤清正が鍋島直茂・相良頼房とともに朝鮮の釜山に上陸した。",
+  "validYears": [
+    1592,
+    1592
+  ],
+  "datePrecision": "day",
+  "source": "hiDainihonshiryoKobun",
+  "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+  "locator": "綱文：和暦 文禄元年4月17日 第1条（区分 史料綜覧、編11・冊912（データベースの表示値）、352頁）",
+  "gameBindings": [
+    "TK.HIST:1592-6-1"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-09",
+  "uncertainty": "綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。",
+  "linkedEntities": [
+    "place:busan-port",
+    "person:加藤清正",
+    "person:鍋島直茂",
+    "person:相良頼房"
+  ],
+  "eventTime": {
+    "kind": "dated-event",
+    "date": [
+      1592,
+      4,
+      17
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": false,
+    "precision": "day"
+  },
+  "eventRelation": "military-event",
+  "eventScope": "綱文が掲げる日付。文禄元年4月17日はゲーム共通の暦表で1592年5月28日。最終年表の題名なしの出来事（旧暦1592年4月21日、1592年6月1日）は綱文より4日遅い。上陸の日。続く東莱・梁山・彦陽の攻略は「尋で」なので含めない。朝鮮の地名は、日本に関わる出来事として記録する（地図の範囲とは別）。"
+}

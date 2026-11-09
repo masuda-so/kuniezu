@@ -1,0 +1,38 @@
+{
+  "id": "iga-division-1581",
+  "entity": "person:oda-nobukatsu",
+  "predicate": "territorial-transfer",
+  "value": "信長が子の信雄と弟の信包らに伊賀を平定させ、この日、三郡を信雄に、一郡を信包に与えた。",
+  "validYears": [
+    1581,
+    1581
+  ],
+  "datePrecision": "day",
+  "source": "hiDainihonshiryoKobun",
+  "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+  "locator": "綱文：和暦 天正9年9月11日 第1条（区分 史料綜覧、編10・冊911（データベースの表示値）、306頁）",
+  "gameBindings": [
+    "TK.HIST:天正伊賀の乱"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-09",
+  "uncertainty": "綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。",
+  "linkedEntities": [
+    "person:oda-nobukatsu",
+    "person:oda-nobunaga"
+  ],
+  "eventTime": {
+    "kind": "dated-event",
+    "date": [
+      1581,
+      9,
+      11
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": false,
+    "precision": "day"
+  },
+  "eventRelation": "territorial-transfer",
+  "eventScope": "綱文が掲げる日付。天正9年9月11日はゲーム共通の暦表で1581年10月8日。最終年表の天正伊賀の乱（旧暦1581年9月13日、1581年10月10日）は綱文より2日遅い。平定のあとの郡の給与の日。平定の戦いの日付や、郡の境の輪郭には広げない。織田信包は人物の ID が無いので結ばない。"
+}
