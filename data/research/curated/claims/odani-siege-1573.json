@@ -1,0 +1,42 @@
+{
+  "id": "odani-siege-1573",
+  "entity": "place:odani",
+  "predicate": "military-event",
+  "value": "織田信長が浅井久政・長政父子を近江小谷城に攻め、父子は自害した。信長は浅井氏の分国を羽柴秀吉に与えた。",
+  "validYears": [
+    1573,
+    1573
+  ],
+  "datePrecision": "day",
+  "source": "hiDainihonshiryoKobun",
+  "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+  "locator": "綱文：和暦 天正元年8月27日 第1条（区分 大日本史料、第10編之17（データベースの表示値）、266頁）",
+  "gameBindings": [
+    "TK.HIST:小谷城落城",
+    "node:odani"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-09",
+  "uncertainty": "綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。",
+  "linkedEntities": [
+    "place:odani",
+    "person:oda-nobunaga",
+    "person:浅井久政",
+    "person:浅井賢政",
+    "person:toyotomi-hideyoshi"
+  ],
+  "eventTime": {
+    "kind": "dated-event",
+    "date": [
+      1573,
+      8,
+      27
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": false,
+    "precision": "day"
+  },
+  "eventRelation": "military-event",
+  "eventScope": "綱文が掲げる日付。天正元年8月27日はゲーム共通の暦表で1573年9月23日。最終年表の小谷城落城（旧暦1573年9月1日、1573年9月26日）は綱文より3日遅い。綱文が掲げる攻城と父子の自害の日。綱文は落城の語を使わないので、落城の日としない。久政と長政の自害を別の日に分けない。分国を与えた日付には広げない。"
+}
