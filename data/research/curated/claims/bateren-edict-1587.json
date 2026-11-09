@@ -1,0 +1,37 @@
+{
+  "id": "bateren-edict-1587",
+  "entity": "person:toyotomi-hideyoshi",
+  "predicate": "administrative-document",
+  "value": "秀吉が耶蘇教の弊害を認めてこれを禁じ、20日を限って宣教師を国外に追放するよう告げた。",
+  "validYears": [
+    1587,
+    1587
+  ],
+  "datePrecision": "day",
+  "source": "hiDainihonshiryoKobun",
+  "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+  "locator": "綱文：和暦 天正15年6月19日 第2条（区分 史料綜覧、編11・冊912（データベースの表示値）、171頁）",
+  "gameBindings": [
+    "TK.HIST:バテレン追放令"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-09",
+  "uncertainty": "綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。",
+  "linkedEntities": [
+    "person:toyotomi-hideyoshi"
+  ],
+  "eventTime": {
+    "kind": "dated-event",
+    "date": [
+      1587,
+      6,
+      19
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": false,
+    "precision": "day"
+  },
+  "eventRelation": "administrative-document",
+  "eventScope": "綱文が掲げる日付。天正15年6月19日はゲーム共通の暦表で1587年7月24日。最終年表のバテレン追放令（1587年7月24日）は一致する。命題は告げた日で、追放の実施には広げない。"
+}

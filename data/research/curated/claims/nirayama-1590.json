@@ -1,0 +1,39 @@
+{
+  "id": "nirayama-1590",
+  "entity": "place:nirayama-castle",
+  "predicate": "military-event",
+  "value": "織田信雄らが北条氏規を伊豆韮山城に攻め、長岡（細川）忠興が奮戦して外郭を破った。",
+  "validYears": [
+    1590,
+    1590
+  ],
+  "datePrecision": "day",
+  "source": "hiDainihonshiryoKobun",
+  "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+  "locator": "綱文：和暦 天正18年3月29日 第4条（区分 史料綜覧、編11・冊912（データベースの表示値）、277頁）",
+  "gameBindings": [
+    "TK.HIST:韮山城の戦い"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-09",
+  "uncertainty": "綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。",
+  "linkedEntities": [
+    "place:nirayama-castle",
+    "person:oda-nobukatsu",
+    "person:hosokawa-tadaoki"
+  ],
+  "eventTime": {
+    "kind": "dated-event",
+    "date": [
+      1590,
+      3,
+      29
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": false,
+    "precision": "day"
+  },
+  "eventRelation": "military-event",
+  "eventScope": "綱文が掲げる日付。天正18年3月29日はゲーム共通の暦表で1590年5月3日。最終年表の韮山城の戦い（1590年5月3日）は一致する。命題は攻撃と外郭の突破の日で、韮山城の開城（別の条）には広げない。北条氏規は人物の ID が無いので結ばない。"
+}
