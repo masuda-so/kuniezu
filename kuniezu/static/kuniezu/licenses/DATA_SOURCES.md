@@ -139,3 +139,9 @@ https://geoshape.ex.nii.ac.jp/nrct-poi/
 - 島清興：Commons `File:Shima_Sakon.jpg`、落合芳幾の後世の浮世絵。生前写生とはしない。
 
 三好長慶の現行生成入力は `tools/faces/hr/q_三好長慶.jpg`（535×700px、Commons `File:三好長慶.jpg` に由来する派生）。`meta.json` はこの有効入力と旧花押rawを分けて記録する。原本からの切り抜き座標は未記録。今回、三好の表示画像は変更しない。Commonsの表示にUSタグを求める注意がある資料は、その注意を取り除いた権利確認済みとは扱わない。
+
+## 登録漏れの追加肖像（2026-11-09）
+
+伊東義祐・高橋紹運・龍造寺政家の原寸画像を、Commons `File:Itō_Yoshisuke.png`・`File:Takahashi_Zyoun.jpg`・`File:Ryūzōji_Masaie.jpg` から取得。配布元は歴史的作品の忠実な複製としてPD-Art/PDM等を掲げる。補足タグの注意も保持し、投稿年月を絵の制作年月としない。原本と採否は `data/inputs/reviewed-portraits/README.md`、URL・SHA・顔中心の正方形cropは `tools/faces/reviewed-portraits.json`。
+
+配信JPEG3点と代替 `portraits/reviewed-fallback.webp` は `tools/faces/build_reviewed.py` の生成物。原画の傷み・色・縦横比を保持し、AIによる描き足しや別人への置換はしていない。伊東像は1930年刊『堺市史』の写真という資料経緯を図書館の公開説明でも確認。高橋像の所蔵は配布元の天叟寺という記載による。政家像は原画の画賛の名を読み、隆信像や高房像へ流用していない。
