@@ -73,7 +73,7 @@
 node tools/map/build-map.cjs
 ```
 
-地形の陰影も作る場合は、Git LFS で `kuniezu/map/physical/heightmap.png` を取得し、NumPy と Pillow の入った Python を指定します（陰影が無くてもゲームは動きます）。
+地形の陰影も作る場合は、Git LFS で `kuniezu/map/physical/heightmap.png` を取得し、NumPy と Pillow の入った Python を指定します（陰影が無くてもゲームは動きます）。その Python は `uv sync --locked --group map` で作れ、`--python .venv/bin/python` と指定します。
 
 ```sh
 node tools/map/build-map.cjs --height --python /path/to/python3

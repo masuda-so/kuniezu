@@ -6,7 +6,7 @@
 
 リポジトリのルートから実行する。Python環境にはNumPyとPillow、変換するタイルがある場合はNode.jsとChromeが必要。CFFIとCコンパイラが利用できる場合はPNGの復号を加速する。利用できない場合も値が同じ参照実装で処理する。
 
-検証したPython依存は `tools/map/requirements.txt`。専用の仮想環境へインストールして使う。例えば `python3 -m venv /tmp/kuniezu-map-env`、続いて `/tmp/kuniezu-map-env/bin/python3 -m pip install -r tools/map/requirements.txt`。以下の `python3` はその仮想環境のPythonへ読み替える。巨大画像ではCFFIの高速復号を有効にする。
+Python 依存は `pyproject.toml` の依存グループ `map`（NumPy・Pillow）で、`uv.lock` に固定している。`uv sync --locked --group map` で入れ、以下の `python3` は `uv run --group map python` へ読み替える（`build-map.cjs --height` の `--python` には `.venv/bin/python` を渡す）。CFFI は PNG の復号を速めるだけの任意の依存で、グループには入れていない。使う場合は同じ環境に別途入れる。古い `tools/map/requirements.txt`（Pillow 11.3.0 ほか）は 2026-11-09 に廃止した。巨大画像ではCFFIの高速復号を有効にする。
 
 ```sh
 python3 tools/map/build-height-cache.py \

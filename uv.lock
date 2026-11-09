@@ -312,6 +312,10 @@ dev = [
     { name = "ruff" },
     { name = "shapely" },
 ]
+map = [
+    { name = "numpy" },
+    { name = "pillow" },
+]
 
 [package.metadata]
 requires-dist = [
@@ -332,6 +336,10 @@ dev = [
     { name = "pytest-django", specifier = "==4.14.0" },
     { name = "ruff", specifier = "==0.17.1" },
     { name = "shapely", specifier = "==2.2.0" },
+]
+map = [
+    { name = "numpy", specifier = ">=2.0.2" },
+    { name = "pillow", specifier = ">=13.0.0" },
 ]
 
 [[package]]

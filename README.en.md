@@ -150,7 +150,8 @@ node tools/map/build-map.cjs
 ```
 
 To also build the terrain relief, fetch `kuniezu/map/physical/heightmap.png` with Git LFS
-and pass a Python that has NumPy and Pillow (the game runs without relief).
+and pass a Python that has NumPy and Pillow (the game runs without relief). Create it
+with `uv sync --locked --group map` and pass `--python .venv/bin/python`.
 
 ```sh
 node tools/map/build-map.cjs --height --python /path/to/python3

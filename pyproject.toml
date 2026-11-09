@@ -32,6 +32,13 @@ dev = [
   "ruff==0.17.1",
   "shapely==2.2.0",
 ]
+# Map generation and height checks (tools/map, tools/geo, tools/checks/*.py).
+# CFFI, which only speeds up PNG decoding, is optional and left out: the tools
+# give the same values without it.
+map = [
+  "numpy>=2.0.2",
+  "pillow>=13.0.0",
+]
 
 # ==== djLint ====
 [tool.djlint]
