@@ -1,14 +1,14 @@
 {
-  "id": "place:hinoe-castle",
-  "name": "日野江城",
+  "id": "place:hamamatsu",
+  "name": "浜松（遠江）",
   "aliases": [],
   "geometry": null,
   "geometryStatus": "not-asserted",
-  "note": "肥前の日野江城（有馬氏の居城）。城域の範囲は主張しない。",
+  "note": "都市としての遠江の浜松。城の範囲や位置は主張しない。引馬城・浜松城とは同一視しない。",
   "identityBasis": {
     "scope": "確認済み命題の対象場所。日時と関係は元命題に保持し、座標は未主張。",
     "claimIds": [
-      "hinoe-garrison-1614"
+      "ieyasu-kai-departure-1582"
     ]
   }
 }
