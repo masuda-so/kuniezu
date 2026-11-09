@@ -8,7 +8,7 @@ NumPy and Pillow are required. CFFI plus a C compiler optionally accelerate the
 standard PNG Average/Paeth decoder; the integer reference decoder is retained.
 """
 import argparse
-from contextlib import contextmanager
+from contextlib import chdir, contextmanager
 from datetime import date
 from functools import lru_cache
 from hashlib import sha256
@@ -246,24 +246,31 @@ def fast_unfilter():
     cache = Path(gettempdir()) / "kuniezu-height-png-filters"
     cache.mkdir(parents=True, exist_ok=True)
     try:
-        lib = ffi.verify("""
-            #include <stddef.h>
-            #include <stdlib.h>
-            void restore(unsigned char *row, const unsigned char *prev, size_t n, unsigned int f) {
-                size_t i;
-                for (i = 0; i < n; ++i) {
-                    int a = i >= 2 ? row[i-2] : 0, b = prev[i], c = i >= 2 ? prev[i-2] : 0;
-                    int value;
-                    if (f == 3) value = (a + b) / 2;
-                    else {
-                        int p = a + b - c, pa = abs(p-a), pb = abs(p-b), pc = abs(p-c);
-                        value = pa <= pb && pa <= pc ? a : (pb <= pc ? b : c);
+        # Build in the cache folder: setuptools reads the project file of the
+        # current folder and refuses the repository's multi-package layout.
+        with chdir(cache):
+            lib = ffi.verify("""
+                #include <stddef.h>
+                #include <stdlib.h>
+                void restore(unsigned char *row, const unsigned char *prev, size_t n, unsigned int f) {
+                    size_t i;
+                    for (i = 0; i < n; ++i) {
+                        int a = i >= 2 ? row[i-2] : 0, b = prev[i], c = i >= 2 ? prev[i-2] : 0;
+                        int value;
+                        if (f == 3) value = (a + b) / 2;
+                        else {
+                            int p = a + b - c, pa = abs(p-a), pb = abs(p-b), pc = abs(p-c);
+                            value = pa <= pb && pa <= pc ? a : (pb <= pc ? b : c);
+                        }
+                        row[i] = (unsigned char)(row[i] + value);
                     }
-                    row[i] = (unsigned char)(row[i] + value);
                 }
-            }
         """, tmpdir=str(cache), extra_compile_args=["-O3"])
     except (OSError, VerificationError):
+        return None
+    except Exception:  # noqa: BLE001
+        # CFFI on Python 3.12+ needs setuptools to compile; without it, or with
+        # any other build failure, the reference decoder gives the same values.
         return None
     return ffi, lib
 
