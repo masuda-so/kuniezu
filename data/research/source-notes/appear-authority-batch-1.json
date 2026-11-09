@@ -1,6 +1,6 @@
 {
   "checked": "2026-11-09",
-  "scope": "年表の登場人物12名の人物同定のみ。生没・所在の命題なし。候補は appear-person-authority-candidates.json。",
+  "scope": "年表の登場人物15名の人物同定のみ。生没・所在の命題なし。候補は appear-person-authority-candidates.json。",
   "rawLicense": {
     "name": "CC0 1.0",
     "url": "https://www.wikidata.org/wiki/Wikidata:Licensing",
@@ -470,6 +470,123 @@
       "identitySourceUrl": "https://bunkazai.pref.yamaguchi.lg.jp/bunkazai/summary.asp?mid=110060&pid=gs_ch",
       "identitySourceLocator": "解説の「岩国吉川家の始祖となる広家は」の段落",
       "reservation": "生没年は本文に無いので比べていない。父・兄との関係と家督の継承で同定した。第 1 便で同定した吉川元長（Q11412944）の弟にあたる。"
+    },
+    {
+      "name": "前田利常",
+      "japaneseLabel": "前田利常",
+      "wikidataId": "Q587204",
+      "wikidataRevision": 2556900878,
+      "wikidataJapaneseLabel": "前田利常",
+      "entityDataUrl": "https://www.wikidata.org/wiki/Special:EntityData/Q587204.json",
+      "revisionUrl": "https://www.wikidata.org/w/index.php?title=Q587204&oldid=2556900878",
+      "rawEntityDataSnapshot": "data/research/source-notes/appear-authority-batch-1-raw/Q587204.json",
+      "rawSha256": "f826fc57606b476a024620302229f82d7bd7d64f04046c2e9c1fd205c32a19e4",
+      "identityChecks": [
+        "石川県立図書館の人物詳細が前田利常を前田利家の四男・第三世加賀藩藩主とし、生年月日を文禄2年11月25日、没年月日を万治元年10月12日（1658）とする",
+        "Wikidata Q587204の日本語主名が前田利常で、P569・P570の年が1594・1658（文禄2年11月25日は西暦1594年1月に当たる）"
+      ],
+      "adoptedNames": [
+        "前田利常"
+      ],
+      "scope": "person-identity-only; no historical dates or locations adopted",
+      "nameEvidence": [
+        {
+          "name": "前田利常",
+          "supports": [
+            "wikidata-ja-label-or-alias",
+            "public-source"
+          ]
+        }
+      ],
+      "publicOriginal": {
+        "path": "data/research/source-notes/appear-authority-batch-1-raw/toshitsune-ishikawa.html.gz",
+        "compression": "gzip",
+        "uncompressedSha256": "e0b42849d1ef97146dd324e0895052d34fb1eb433a7e32816e81f0d5d8307ee9"
+      },
+      "identitySourceIds": [
+        "ishikawaToshitsuneIdentity"
+      ],
+      "identitySourceUrl": "https://www.library.pref.ishikawa.lg.jp/shosho/furucolle/list/prsn11409",
+      "identitySourceLocator": "人物詳細の生没年・系譜関係・生年月日・没年月日の欄",
+      "reservation": "石川県立図書館は生年を和暦の年に合わせて1593と書き、Wikidata は西暦の1594年とする。暦の換算の違いで、同じ日を指す。"
+    },
+    {
+      "name": "丹羽長重",
+      "japaneseLabel": "丹羽長重",
+      "wikidataId": "Q909763",
+      "wikidataRevision": 2556827356,
+      "wikidataJapaneseLabel": "丹羽長重",
+      "entityDataUrl": "https://www.wikidata.org/wiki/Special:EntityData/Q909763.json",
+      "revisionUrl": "https://www.wikidata.org/w/index.php?title=Q909763&oldid=2556827356",
+      "rawEntityDataSnapshot": "data/research/source-notes/appear-authority-batch-1-raw/Q909763.json",
+      "rawSha256": "8b50b0604756fd69a2e8145e70b24603a928038daed3805b4e6d16a24e1cc2bb",
+      "identityChecks": [
+        "白河市の本文が丹羽長重を丹羽長秀の嫡子とし、寛永14年（1637）閏3月4日に江戸で没、享年67とする",
+        "Wikidata Q909763の日本語主名が丹羽長重で、P570の年が1637、P569の年が1571（享年67の数えと合う）"
+      ],
+      "adoptedNames": [
+        "丹羽長重"
+      ],
+      "scope": "person-identity-only; no historical dates or locations adopted",
+      "nameEvidence": [
+        {
+          "name": "丹羽長重",
+          "supports": [
+            "wikidata-ja-label-or-alias",
+            "public-source"
+          ]
+        }
+      ],
+      "publicOriginal": {
+        "path": "data/research/source-notes/appear-authority-batch-1-raw/nagashige-shirakawa.html.gz",
+        "compression": "gzip",
+        "uncompressedSha256": "84fdd3a8b4fe611b431fbb690e19463523bf039c3ffe2a8b7978bb3ce10222c0"
+      },
+      "identitySourceIds": [
+        "shirakawaNagashigeIdentity"
+      ],
+      "identitySourceUrl": "https://www.city.shirakawa.fukushima.jp/page/page001454.html",
+      "identitySourceLocator": "解説の段落",
+      "reservation": "生年は白河市の本文に無く、享年67の数えから1571年と矛盾しないことだけを見た。所領の変遷は新たな命題にしない。"
+    },
+    {
+      "name": "井伊直孝",
+      "japaneseLabel": "井伊直孝",
+      "wikidataId": "Q877175",
+      "wikidataRevision": 2562123349,
+      "wikidataJapaneseLabel": "井伊直孝",
+      "entityDataUrl": "https://www.wikidata.org/wiki/Special:EntityData/Q877175.json",
+      "revisionUrl": "https://www.wikidata.org/w/index.php?title=Q877175&oldid=2562123349",
+      "rawEntityDataSnapshot": "data/research/source-notes/appear-authority-batch-1-raw/Q877175.json",
+      "rawSha256": "80cf7d68e735492d106077ac10d73d3e8fcc4afa66ce8b509ec733b09fe3202f",
+      "identityChecks": [
+        "彦根城博物館の本文が井伊直孝（井伊家2代）を天正18年（1590）〜万治2年（1659）とし、直政の次男とする",
+        "Wikidata Q877175の日本語主名が井伊直孝で、P569・P570の年が1590・1659"
+      ],
+      "adoptedNames": [
+        "井伊直孝"
+      ],
+      "scope": "person-identity-only; no historical dates or locations adopted",
+      "nameEvidence": [
+        {
+          "name": "井伊直孝",
+          "supports": [
+            "wikidata-ja-label-or-alias",
+            "public-source"
+          ]
+        }
+      ],
+      "publicOriginal": {
+        "path": "data/research/source-notes/appear-authority-batch-1-raw/naotaka-hikone.html.gz",
+        "compression": "gzip",
+        "uncompressedSha256": "12a58901aa40e079c244bfccac4ac2aea530463a77bb5396743de051fa4d6e3b"
+      },
+      "identitySourceIds": [
+        "hikoneNaotakaIdentity"
+      ],
+      "identitySourceUrl": "https://hikone-castle-museum.jp/history/",
+      "identitySourceLocator": "「井伊直孝（井伊家2代）」の見出し",
+      "reservation": "大坂冬の陣での当主就任などは同定の比較で、新たな命題にしない。"
     }
   ]
 }
