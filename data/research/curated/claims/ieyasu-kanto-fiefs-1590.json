@@ -1,0 +1,42 @@
+{
+  "id": "ieyasu-kanto-fiefs-1590",
+  "entity": "person:tokugawa-ieyasu",
+  "predicate": "territorial-transfer",
+  "value": "徳川家康が関東の諸将に城を与えた。上野の箕輪城を井伊直政に、館林城を榊原康政に、厩橋城を平岩親吉に、上総の大多喜城を本多忠勝に、相模の小田原城を大久保忠世に与えるなどした。",
+  "validYears": [
+    1590,
+    1590
+  ],
+  "datePrecision": "day",
+  "source": "hiDainihonshiryoKobun",
+  "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+  "locator": "綱文：和暦 天正18年8月15日 第2条（区分 史料綜覧、編11・冊912（データベースの表示値）、305頁）",
+  "gameBindings": [
+    "TK.HIST:1590-9-15"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-09",
+  "uncertainty": "綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。",
+  "linkedEntities": [
+    "person:tokugawa-ieyasu",
+    "person:ii-naomasa",
+    "person:sakakibara-yasumasa",
+    "person:平岩親吉",
+    "person:honda-tadakatsu",
+    "person:大久保忠世"
+  ],
+  "eventTime": {
+    "kind": "dated-event",
+    "date": [
+      1590,
+      8,
+      15
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": false,
+    "precision": "day"
+  },
+  "eventRelation": "territorial-transfer",
+  "eventScope": "綱文が掲げる日付。天正18年8月15日はゲーム共通の暦表で1590年9月13日。最終年表の徳川家臣の関東への移り（1590年9月15日、題名なし、7人）は綱文より2日遅い。命題は城を与えた日で、各将が入城した日ではない。綱文が名を挙げる9人のうち、人物を結んだのは年表に移りのある5人。松平康貞・酒井家次・大須賀康高・鳥居元忠は年表のこの日の移りに無いので結ばない。年表との食い違い（報告のみ、年表は変えていない）：榊原康政は綱文では館林城、年表では node:kanayama。本多忠勝は綱文では大多喜城、年表では node:sakura。本多正信（node:edo）と小笠原貞慶（node:koga）は綱文のこの条に名が無い。各城の場所には結ばない。"
+}
