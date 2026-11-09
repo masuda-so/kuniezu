@@ -209,9 +209,9 @@ It holds every
 current input record and keeps source-verified records apart from the unverified
 inventory of what the game implements (`docs/architecture/history-rdb.md`).
 
-Agents may start and stop the server only on ports the user has started before
-(8000 and 8001), and never start it on any other port. Verification connects to an
-already running `http://localhost:8000/index.html`. The output folder for check
+Agents may start and stop the server only at `127.0.0.1:8000`. Port 8001 and all
+other ports must not be started or used. Verification connects to an
+already running `http://127.0.0.1:8000/index.html`. The output folder for check
 results can be set with `GAME_TEST_OUTPUT`.
 
 The basic check is the command below. See
