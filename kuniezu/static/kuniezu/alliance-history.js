@@ -31,7 +31,7 @@
   pact('hojo','satomi','房相一和',[1577,1,1],[1590,8,9],'pactBoso','peace','1577年成立。表示上の1月1日は確定日ではない。'),
   pact('takeda','nagao','甲越同盟',[1579,1,1],[1582,4,3],'pactKaiEchigo','alliance','景勝との婚姻・協力を含む成立過程。日付は年内表示用。'),
   pact('tokugawa','hojo','相遠同盟',[1580,1,1],[1582,6,21],'pactTokugawaHojo','alliance','対武田の連携。成立月日は別途幅がある。'),
-  pact('tokugawa','hojo','天正壬午の和睦',[1582,11,14],[1590,8,9],'pactTokugawaHojo','peace'),
+  pact('tokugawa','hojo','天正壬午の和睦',[1582,11,24],[1590,8,9],'peaceTenshoChino','peace'),
   pact('oda','ukita','宇喜多直家の織田方転属',[1579,10,1],[1582,6,21],'pactUkita','alignment','単なる対等同盟ではなく、毛利方からの離反・帰属。'),
   pact('nobutaka','kshibata','信孝・勝家の軍事連携',[1582,7,19],[1583,6,14],'kiyosuDistribution','cooperation'),
   pact('nobukatsu','hashiba','信雄・秀吉の連携',[1582,12,20],[1584,3,12],'owariSuccession','cooperation'),
