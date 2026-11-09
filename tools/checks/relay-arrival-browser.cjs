@@ -36,7 +36,7 @@ const cover=()=>ev('(()=>{const {corners}=TKUI.mapBounds();return corners[0][0]<
   }}finally{TKUI.ffwd=false;}
   throw Error('Yamazaki relay was not reached');
  })()`);
- assert.equal(result.version,26);assert.equal(result.returning,false);assert.equal(result.bookkeepingFlag,1);assert.equal(result.phase.key,'march');assert.equal(result.visualEnd,result.arrival);assert.ok(result.distance<.02);await sleep(1800);await shot('yamazaki-arrival-map');
+ assert.equal(result.version,27);assert.equal(result.returning,false);assert.equal(result.bookkeepingFlag,1);assert.equal(result.phase.key,'march');assert.equal(result.visualEnd,result.arrival);assert.ok(result.distance<.02);await sleep(1800);await shot('yamazaki-arrival-map');
  const battle=await ev(`(()=>{TKUI.ffwd=true;try{G.day();for(const q of ['evQ','sceneQ','battleQ','propQ','prisonQ','observerQ'])G.S()[q]=[];}finally{TKUI.ffwd=false;}TKUI.acc=0;TKUI.api.renderAll();TKUI.open('scene',{title:'山崎の戦い'});return {date:G.kyu(),eventDate:TK.BATTLES['山崎の戦い'].eventDate,groups:TK.BATTLES['山崎の戦い'].atlasGroups};})()`);
  await until("document.querySelector('#bCv')?.dataset.mapReady==='true'");await sleep(1200);await shot('yamazaki-atlas');assert.deepEqual(errors,[]);
  fs.writeFileSync(path.join(OUT,'result.json'),JSON.stringify({result,battle,errors},null,2));console.log('PASS: Yamazaki relay arrives at the battle point; marching phase and battle map; no exceptions');
