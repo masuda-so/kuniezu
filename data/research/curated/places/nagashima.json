@@ -1,0 +1,14 @@
+{
+  "id": "place:nagashima",
+  "name": "長島",
+  "aliases": [],
+  "geometry": null,
+  "geometryStatus": "not-asserted",
+  "note": "長島の一向一揆の拠点群を指す地域名。特定の城とせず、ゲームの node:nagashima（長島願証寺）とは結ばない。",
+  "identityBasis": {
+    "scope": "確認済み命題の対象場所。日時と関係は元命題に保持し、座標は未主張。",
+    "claimIds": [
+      "nagashima-withdrawal-1574"
+    ]
+  }
+}

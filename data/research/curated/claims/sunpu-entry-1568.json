@@ -1,0 +1,39 @@
+{
+  "id": "sunpu-entry-1568",
+  "entity": "place:sunpu",
+  "predicate": "military-event",
+  "value": "武田信玄が駿府に入り、今川氏真は遠江懸川へ逃れた。",
+  "validYears": [
+    1568,
+    1568
+  ],
+  "datePrecision": "day",
+  "source": "hiDainihonshiryoKobun",
+  "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+  "locator": "綱文：和暦 永禄11年12月13日 第2条（区分 大日本史料、第10編之1（データベースの表示値）、356頁）",
+  "gameBindings": [
+    "TK.HIST:駿河侵攻"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-09",
+  "uncertainty": "綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。",
+  "linkedEntities": [
+    "place:sunpu",
+    "person:武田信玄",
+    "person:今川氏真"
+  ],
+  "eventTime": {
+    "kind": "dated-event",
+    "date": [
+      1568,
+      12,
+      13
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": false,
+    "precision": "day"
+  },
+  "eventRelation": "military-event",
+  "eventScope": "綱文が掲げる日付。永禄11年12月13日はゲーム共通の暦表で1568年12月31日。最終年表の駿河侵攻（旧暦1568年12月13日、1568年12月31日）は一致する。綱文が掲げる駿府への進入と氏真の退去の日。駿河一国の支配の移り変わりには広げない。"
+}

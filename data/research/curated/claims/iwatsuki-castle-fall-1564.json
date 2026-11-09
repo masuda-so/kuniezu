@@ -1,0 +1,41 @@
+{
+  "id": "iwatsuki-castle-fall-1564",
+  "entity": "place:iwatsuki",
+  "predicate": "castle-fall",
+  "value": "太田資正が嫡子の氏資を廃そうとしたため、氏資が北条氏康に通じ、氏康・氏政父子が武蔵岩槻城を攻め落とした。",
+  "validYears": [
+    1564,
+    1564
+  ],
+  "datePrecision": "day",
+  "source": "hiDainihonshiryoKobun",
+  "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+  "locator": "綱文：和暦 永禄7年7月23日 第1条（区分 史料綜覧、編9・冊910（データベースの表示値）、595頁）",
+  "gameBindings": [
+    "TK.HIST:岩付城を得る",
+    "node:iwatsuki"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-09",
+  "uncertainty": "綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。",
+  "linkedEntities": [
+    "place:iwatsuki",
+    "person:hojo-ujiyasu",
+    "person:hojo-ujimasa",
+    "person:太田資正"
+  ],
+  "eventTime": {
+    "kind": "dated-event",
+    "date": [
+      1564,
+      7,
+      23
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": false,
+    "precision": "day"
+  },
+  "eventRelation": "castle-fall",
+  "eventScope": "綱文が掲げる日付。永禄7年7月23日はゲーム共通の暦表で1564年8月29日。最終年表の岩付城を得る（旧暦1564年7月26日、1564年9月1日）は綱文より3日遅い。落城の日。資正の追放後の所在や、岩付領の支配の移り変わりには広げない。綱文は「岩槻」と書く。"
+}
