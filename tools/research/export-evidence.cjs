@@ -1,7 +1,7 @@
 /* RAG候補に実装データを混ぜて史実としない。確定した命題と実装の棚卸しを別保存。 */
 const fs=require('node:fs'),crypto=require('node:crypto');const {G,TK}=require('../checks/history-focus.cjs').model();G.newGame('s1560','oda');const dir='data/research';fs.mkdirSync(dir,{recursive:true});
 const jsonl=(file,rows)=>fs.writeFileSync(dir+'/'+file,rows.map(r=>JSON.stringify(r)).join('\n')+'\n');
-const {facts,sources}=require('./evidence-store.cjs').loadEvidence({claimDir:dir+'/curated/claims',sourceDir:dir+'/curated/sources',baseSources:TK.RESEARCH_SOURCES});
+const {facts,sources}=require('./evidence-store.cjs').loadEvidence({claimDir:dir+'/curated/claims',sourceDir:dir+'/curated/sources',baseSources:TK.RESEARCH_SOURCES,knownWaterKeys:require('./evidence-store.cjs').catalogWaterKeys('docs/work/catalog.jsonl')});
 const locations=require('./location-store.cjs').loadLocations({root:dir+'/curated',sources});
 jsonl('people.jsonl',locations.people);jsonl('places.jsonl',locations.places);jsonl('location-observations.jsonl',locations.locations);
 jsonl('sources.jsonl',Object.entries(sources).map(([id,s])=>({id,...s,sourceType:s.sourceType||(/city\.|pref\.|museum|archives|ac\.jp|go\.jp|go\.kr|ac\.kr|\.gov\//.test(s.url||'')?'institutional':'other'),recordType:'source-metadata',verifiedScope:s.scope||null,retained:'bibliographic-metadata-and-paraphrased-claims'})));

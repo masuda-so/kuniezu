@@ -1,0 +1,40 @@
+{
+  "id": "nihonmatsu-handover-1586",
+  "entity": "place:nihonmatsu",
+  "predicate": "castle-handover",
+  "value": "伊達政宗がたびたび攻めた陸奥二本松城で、相馬義胤の斡旋により和議が成り、守将の新城弾正らは会津へ退き、政宗は伊達成実に城を守らせた。",
+  "validYears": [
+    1586,
+    1586
+  ],
+  "datePrecision": "day",
+  "source": "hiDainihonshiryoKobun",
+  "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+  "locator": "綱文：和暦 天正14年7月16日 第1条（区分 史料綜覧、編11・冊912（データベースの表示値）、131頁）",
+  "gameBindings": [
+    "TK.HIST:1586-8-20",
+    "node:nihonmatsu"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-09",
+  "uncertainty": "綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。",
+  "linkedEntities": [
+    "place:nihonmatsu",
+    "person:date-masamune",
+    "person:伊達成実"
+  ],
+  "eventTime": {
+    "kind": "dated-event",
+    "date": [
+      1586,
+      7,
+      16
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": false,
+    "precision": "day"
+  },
+  "eventRelation": "castle-handover",
+  "eventScope": "綱文が掲げる日付。天正14年7月16日はゲーム共通の暦表で1586年8月30日。最終年表の出来事（題名なし）（旧暦1586年7月6日、1586年8月20日）は綱文より10日早い。和議による退城と城の受け取りの日。落城の日としない。和議の取り決めの日付や攻城の始まりは補わない。"
+}

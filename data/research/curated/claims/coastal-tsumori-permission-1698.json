@@ -1,0 +1,48 @@
+{
+  "id": "coastal-tsumori-permission-1698",
+  "entity": "place:tsumori-shinden",
+  "predicate": "reclamation-permission",
+  "value": {
+    "statement": "大阪市立図書館は、津守新田の開拓許可を元禄11年と記す。",
+    "sourceTime": {
+      "label": "元禄11（1698）年",
+      "calendar": "Japanese-lunisolar",
+      "precision": "year",
+      "year": 1698
+    }
+  },
+  "validYears": [
+    1698,
+    1699
+  ],
+  "datePrecision": "period",
+  "eventTime": {
+    "kind": "described-period",
+    "calendar": "Japanese-era-description",
+    "precision": "period",
+    "label": "元禄11（1698）年（原年次。西暦表示は資料の併記）",
+    "indexYears": [
+      1698,
+      1699
+    ],
+    "boundsAreHistoricalStartEnd": false
+  },
+  "linkedEntities": [
+    "place:tsumori-shinden"
+  ],
+  "eventRelation": "reclamation-permission",
+  "eventScope": "年単位の検索用。原暦・元の精度はvalue.sourceTimeへ保持。開拓の許可は土地完成や入植の年月ではない。 原和暦年の記述を保持する。索引は対応西暦年と翌年を含む保守的な候補範囲で、元年次の開始終了をグレゴリオ暦1月1日～12月31日と同一視しない。",
+  "source": "coastal-osaka-tsumori-library",
+  "sourceUrl": "https://www.oml.city.osaka.lg.jp/torikomi/page/1297_nishinari.html",
+  "locator": "「津守新田の開発について」回答第1段落／開拓許可",
+  "checked": "2026-11-04",
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "gameBindings": [
+    "kuniezu/map/control/provinces.png"
+  ],
+  "bindingScope": "地形の年代比較・監査の参照先。正本・ゲームイベントへの変更は未適用。",
+  "uncertainty": "開拓の許可は土地完成や入植の年月ではない。 精密輪郭・座標は採用していない。",
+  "review": "data/research/source-notes/coastal-period-review/adoption.json",
+  "reviewInputId": "osaka-tsumori-1698-1702"
+}

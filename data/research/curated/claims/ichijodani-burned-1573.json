@@ -1,0 +1,40 @@
+{
+  "id": "ichijodani-burned-1573",
+  "entity": "place:ichijodani",
+  "predicate": "military-event",
+  "value": "朝倉義景が越前一乗谷から賢松寺へ逃れ、織田信長は兵を遣わして一乗谷に火を放った。",
+  "validYears": [
+    1573,
+    1573
+  ],
+  "datePrecision": "day",
+  "source": "hiDainihonshiryoKobun",
+  "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+  "locator": "綱文：和暦 天正元年8月20日 第3条（区分 大日本史料、第10編之17（データベースの表示値）、136頁）",
+  "gameBindings": [
+    "TK.HIST:朝倉氏滅亡",
+    "node:ichijodani"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-09",
+  "uncertainty": "綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。",
+  "linkedEntities": [
+    "place:ichijodani",
+    "person:朝倉義景",
+    "person:oda-nobunaga"
+  ],
+  "eventTime": {
+    "kind": "dated-event",
+    "date": [
+      1573,
+      8,
+      20
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": false,
+    "precision": "day"
+  },
+  "eventRelation": "military-event",
+  "eventScope": "綱文が掲げる日付。天正元年8月20日はゲーム共通の暦表で1573年9月16日。最終年表の朝倉氏滅亡（旧暦1573年8月20日、1573年9月16日）は一致する。綱文が掲げる一乗谷の放火と義景の退去の日。落城の日としない。義景の死去は別の命題。刀根坂の戦いの日付は補わない。"
+}

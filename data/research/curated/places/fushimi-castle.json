@@ -1,0 +1,16 @@
+{
+  "id": "place:fushimi-castle",
+  "name": "伏見城",
+  "aliases": [],
+  "geometry": null,
+  "geometryStatus": "not-asserted",
+  "note": "山城の伏見城。所在地名の place:fushimi（伏見）とは別の、城の参照。城域や西の丸の範囲は主張しない。",
+  "identityBasis": {
+    "scope": "確認済み命題の対象場所。日時と関係は元命題に保持し、座標は未主張。",
+    "claimIds": [
+      "fushimi-castle-fall-1600",
+      "fushimi-siege-1600",
+      "ieyasu-fushimi-move-1599"
+    ]
+  }
+}

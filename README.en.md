@@ -14,6 +14,10 @@ is [docs/README.md](docs/README.md); open requests and ownership are in
 
 ## Features and limitations
 
+- House selection is limited to the Japanese strategic map. Korean history remains
+  available in the chronology and individual battle maps. Pausing preserves the
+  selected speed, which is used when playback resumes.
+
 - The history DB uses Julian dates through 4 October 1582 and Gregorian dates from 15 October. It rejects the reform gap (5–14 October), and distinguishes Japanese and Korean lunisolar dates.
 - The Bunroku, Nagashino and Komaki–Nagakute campaign overviews link to individual battles. The Shitaragahara view includes eleven local units and the Nagakute view five, keeping other fronts outside the local diagram. The Busan diagram covers the old fortress assault, with Korean-calendar dates and conversion sources kept distinct.
 
@@ -61,6 +65,9 @@ is [docs/README.md](docs/README.md); open requests and ownership are in
 - Roads use an [edited GeoJSON source](data/inputs/road-vector-migration/README.md)
   shared by map drawing and displayed marches. Normal builds copy the edited
   geometry without applying corrections again.
+- Four return loops in the Yonezawa and Echigo comparison lines are removed,
+  retaining saved positions and arrival times. See the
+  [scope and checks](docs/reports/AIZU_VECTOR_REFERENCE_LOOPS.md).
 - A return loop in the Tosando modern comparison line has been removed. Old
   saves rebuild routes while retaining their positions and arrival dates. This
   does not establish the precise Sengoku-period alignment. See the

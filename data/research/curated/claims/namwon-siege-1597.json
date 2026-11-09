@@ -1,0 +1,40 @@
+{
+  "id": "namwon-siege-1597",
+  "entity": "place:namwon",
+  "predicate": "documented-siege-phase",
+  "value": "宇喜多秀家が諸軍を率いて、明の副総兵楊元らの守る南原城を攻め、島津義弘・加藤嘉明に城の北に陣を構えさせた。綱文は「尋で、之を陥る」と続ける。",
+  "validYears": [
+    1597,
+    1597
+  ],
+  "datePrecision": "day",
+  "source": "hiDainihonshiryoKobun",
+  "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+  "locator": "綱文：和暦 慶長2年8月13日 第1条（区分 史料綜覧、編11・冊913（データベースの表示値）、142頁）",
+  "gameBindings": [
+    "TK.HIST:南原城の戦い",
+    "node:namwon"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-09",
+  "uncertainty": "綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。",
+  "linkedEntities": [
+    "place:namwon",
+    "person:宇喜多秀家",
+    "person:shimazu-yoshihiro"
+  ],
+  "eventTime": {
+    "kind": "dated-event",
+    "date": [
+      1597,
+      8,
+      13
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": false,
+    "precision": "day"
+  },
+  "eventRelation": "documented-siege-phase",
+  "eventScope": "綱文が掲げる日付。慶長2年8月13日はゲーム共通の暦表で1597年9月24日。最終年表の南原城の戦い（旧暦1597年8月15日、1597年9月26日）は綱文より2日遅い。綱文の日は攻撃の日で、落城は「尋で（その後）」とだけ書くので、落城の日とはしない。最終年表の南原城の戦いは落城の日を表すので、この日との差は攻城の期間の可能性がある。"
+}
