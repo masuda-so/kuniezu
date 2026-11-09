@@ -213,7 +213,7 @@ details{margin-top:12px}summary{cursor:pointer;color:var(--muted);font-size:13px
 .sy{font-family:var(--f-mincho);font-weight:800;font-size:15px;color:var(--gold);letter-spacing:.14em}
 .sn b{font-family:var(--f-mincho);font-size:28px;font-weight:800;color:var(--gold2)}
 .sl{color:#dccfae;font-size:13px;line-height:1.85;margin-top:6px}
-#credit a{color:inherit;pointer-events:auto}#credit{position:absolute;right:max(10px,env(safe-area-inset-right,0px));bottom:4px;z-index:9;font-size:10.5px;color:rgba(243,232,204,.55);pointer-events:none}
+#credit a{color:inherit;pointer-events:auto}#credit{position:absolute;left:max(10px,env(safe-area-inset-left,0px));right:max(10px,env(safe-area-inset-right,0px));bottom:4px;z-index:9;font-size:10.5px;color:rgba(243,232,204,.55);pointer-events:none}
 #app[data-mode="game"] #credit{right:max(16px,env(safe-area-inset-right,0px));bottom:4px}
 #app[data-mode="pick"] #credit{right:10px;left:320px}
 body.narrowSel #chron{display:none}
