@@ -1,0 +1,37 @@
+{
+  "id": "renamed-otomo-sorin",
+  "entity": "person:otomo-sorin",
+  "predicate": "renamed",
+  "value": "大友義鎮が豊後丹生島に城を築いて府内から移り、この日、剃髪して宗麟と号した。",
+  "validYears": [
+    1562,
+    1562
+  ],
+  "datePrecision": "day",
+  "source": "hiDainihonshiryoKobun",
+  "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+  "locator": "綱文：和暦 永禄5年5月1日 第3条（区分 史料綜覧、編9・冊910（データベースの表示値）、547頁）",
+  "gameBindings": [
+    "TK.HIST:rename:大友義鎮から大友宗麟への改名"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-09",
+  "uncertainty": "宗麟は法号で、諱の義鎮を捨てたのではない。 綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。",
+  "linkedEntities": [
+    "person:otomo-sorin"
+  ],
+  "eventTime": {
+    "kind": "dated-event",
+    "date": [
+      1562,
+      5,
+      1
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": false,
+    "precision": "day"
+  },
+  "eventRelation": "renamed",
+  "eventScope": "綱文が掲げる改名・改姓とその日付。ゲームの年表の日付は 1562-6-1、綱文をゲームの暦表で直すと 1562-6-2（不一致（+1 日））。年表は変えていない。 名乗りの使い分けや以後の文書の署名は補わない。"
+}
