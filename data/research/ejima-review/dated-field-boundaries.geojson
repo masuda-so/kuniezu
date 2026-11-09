@@ -1,0 +1,241 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "id": "ejima:old-fields-west-edge",
+      "properties": {
+        "name": "old-fields-west-edge",
+        "source": "https://doi.org/10.60290/laguna.30.0_1",
+        "locator": "p.4 Fig.4; interpretation cross-checked with p.3 Fig.2",
+        "recordType": "source-traced-boundary-evidence",
+        "sourcePixelCoordinates": [
+          [
+            286,
+            528
+          ],
+          [
+            287,
+            541
+          ],
+          [
+            288,
+            553
+          ],
+          [
+            289,
+            566
+          ],
+          [
+            287,
+            581
+          ],
+          [
+            287,
+            594
+          ],
+          [
+            290,
+            603
+          ],
+          [
+            297,
+            609
+          ],
+          [
+            303,
+            612
+          ]
+        ],
+        "registrationFile": "photo-registration.json",
+        "meaning": "western boundary of dated reclaimed fields, not a surveyed 1560 shoreline",
+        "notAClosedHistoricalIsland": true,
+        "changesLandMask": false,
+        "historicalPositionUncertainty": "not quantified; source interpretation differs from photo registration residual",
+        "untracedIntervals": [
+          "northern pre-1754 shore",
+          "unreadable parts under labels"
+        ]
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            133.19361213811783,
+            35.513638367945845
+          ],
+          [
+            133.1936356447186,
+            35.51328268975035
+          ],
+          [
+            133.19365991218473,
+            35.51295432966881
+          ],
+          [
+            133.1936834187855,
+            35.512598648442946
+          ],
+          [
+            133.19360521010043,
+            35.51218989938254
+          ],
+          [
+            133.1935953188496,
+            35.511834739310466
+          ],
+          [
+            133.19368866461537,
+            35.51158728471463
+          ],
+          [
+            133.193917884384,
+            35.51141969184554
+          ],
+          [
+            133.19411598889735,
+            35.51133458392096
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "ejima:1819-new-fields-west-edge",
+      "properties": {
+        "name": "1819-new-fields-west-edge",
+        "source": "https://doi.org/10.60290/laguna.30.0_1",
+        "locator": "p.4 Fig.4; interpretation cross-checked with p.3 Fig.2",
+        "recordType": "source-traced-boundary-evidence",
+        "sourcePixelCoordinates": [
+          [
+            303,
+            612
+          ],
+          [
+            301,
+            621
+          ],
+          [
+            300,
+            631
+          ],
+          [
+            300,
+            642
+          ],
+          [
+            303,
+            652
+          ],
+          [
+            309,
+            660
+          ],
+          [
+            318,
+            665
+          ],
+          [
+            328,
+            669
+          ],
+          [
+            336,
+            672
+          ],
+          [
+            338,
+            679
+          ],
+          [
+            345,
+            682
+          ],
+          [
+            348,
+            689
+          ],
+          [
+            349,
+            699
+          ],
+          [
+            348,
+            708
+          ]
+        ],
+        "registrationFile": "photo-registration.json",
+        "meaning": "western boundary of dated reclaimed fields, not a surveyed 1560 shoreline",
+        "notAClosedHistoricalIsland": true,
+        "changesLandMask": false,
+        "historicalPositionUncertainty": "not quantified; source interpretation differs from photo registration residual",
+        "untracedIntervals": [
+          "northern pre-1754 shore",
+          "unreadable parts under labels"
+        ]
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            133.19411598889735,
+            35.51133458392096
+          ],
+          [
+            133.19404234540508,
+            35.51108975050939
+          ],
+          [
+            133.1940013388989,
+            35.51081707139693
+          ],
+          [
+            133.19399296937894,
+            35.510516546299904
+          ],
+          [
+            133.19408555427924,
+            35.510241767038146
+          ],
+          [
+            133.19427985446538,
+            35.510020054564094
+          ],
+          [
+            133.19457663080277,
+            35.50987873005348
+          ],
+          [
+            133.19490756585714,
+            35.50976420151529
+          ],
+          [
+            133.1951724660738,
+            35.50967804272727
+          ],
+          [
+            133.19523393571882,
+            35.50948574778973
+          ],
+          [
+            133.1954654380839,
+            35.509400113259105
+          ],
+          [
+            133.19556030558056,
+            35.509207293098555
+          ],
+          [
+            133.1955860947777,
+            35.5089335584749
+          ],
+          [
+            133.19554584913698,
+            35.50868819318133
+          ]
+        ]
+      }
+    }
+  ]
+}

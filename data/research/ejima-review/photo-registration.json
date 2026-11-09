@@ -1,0 +1,800 @@
+{
+  "method": "local normalized cross-correlation and affine RANSAC; manual review required",
+  "figureSize": [
+    1272,
+    1800
+  ],
+  "figureSha256": "b4a693c73fe5bce93badc73fe6b2b51147902f1f380c0e0f0e3b2aae41d32daa",
+  "referenceManifest": {
+    "accessed": "2026-11-09",
+    "source": "国土地理院・地理院タイル",
+    "registry": "https://maps.gsi.go.jp/help/use.html",
+    "requestedBounds": [
+      133.184,
+      35.506,
+      133.206,
+      35.526
+    ],
+    "zoom": 15,
+    "tileOrigin": [
+      28506,
+      12920
+    ],
+    "tileEnd": [
+      28508,
+      12922
+    ],
+    "layers": [
+      "ort_old10",
+      "std"
+    ],
+    "layerMetadata": {
+      "ort_old10": {
+        "period": [
+          1961,
+          1969
+        ],
+        "kind": "aerial-photograph-era"
+      },
+      "std": {
+        "period": "current-at-access",
+        "kind": "standard-map"
+      }
+    },
+    "pixelProjection": "Web Mercator tile pixels, 256px per tile",
+    "scope": "各レイヤの撮影・測量年代と透明画素を保持。近現代の地図や写真をゲーム年代の精密復元と同一視しない。",
+    "tiles": [
+      {
+        "layer": "ort_old10",
+        "tile": [
+          15,
+          28506,
+          12920
+        ],
+        "sourceRow": 12920,
+        "url": "https://cyberjapandata.gsi.go.jp/xyz/ort_old10/15/28506/12920.png",
+        "file": "ort_old10-15-28506-12920.png",
+        "transparentPixelCount": 0,
+        "status": "saved",
+        "sha256": "c3b6bd839b85797a05d380e286a0c6613e6d6c03f5ee8eba3450416d3da7b3af"
+      },
+      {
+        "layer": "ort_old10",
+        "tile": [
+          15,
+          28507,
+          12920
+        ],
+        "sourceRow": 12920,
+        "url": "https://cyberjapandata.gsi.go.jp/xyz/ort_old10/15/28507/12920.png",
+        "file": "ort_old10-15-28507-12920.png",
+        "transparentPixelCount": 0,
+        "status": "saved",
+        "sha256": "893ad129ab8c1636bb5305e2452be64d7a6a24c3b66e46f8fe77bf1310b7883a"
+      },
+      {
+        "layer": "ort_old10",
+        "tile": [
+          15,
+          28508,
+          12920
+        ],
+        "sourceRow": 12920,
+        "url": "https://cyberjapandata.gsi.go.jp/xyz/ort_old10/15/28508/12920.png",
+        "file": "ort_old10-15-28508-12920.png",
+        "transparentPixelCount": 0,
+        "status": "saved",
+        "sha256": "3e2de5146f75d98fafe48ca9302277f7ad9590a1e11712d5ba1e8f7eab2d2e72"
+      },
+      {
+        "layer": "ort_old10",
+        "tile": [
+          15,
+          28506,
+          12921
+        ],
+        "sourceRow": 12921,
+        "url": "https://cyberjapandata.gsi.go.jp/xyz/ort_old10/15/28506/12921.png",
+        "file": "ort_old10-15-28506-12921.png",
+        "transparentPixelCount": 0,
+        "status": "saved",
+        "sha256": "1ceb67b2ecce289d58dd84f16ee7e9eb92dabf3a450bde2e528ceab0a6198a66"
+      },
+      {
+        "layer": "ort_old10",
+        "tile": [
+          15,
+          28507,
+          12921
+        ],
+        "sourceRow": 12921,
+        "url": "https://cyberjapandata.gsi.go.jp/xyz/ort_old10/15/28507/12921.png",
+        "file": "ort_old10-15-28507-12921.png",
+        "transparentPixelCount": 0,
+        "status": "saved",
+        "sha256": "461a7d347c087a8dafbf690a43aef3163101f1bb8682e6eb4ef029f0ca101bbf"
+      },
+      {
+        "layer": "ort_old10",
+        "tile": [
+          15,
+          28508,
+          12921
+        ],
+        "sourceRow": 12921,
+        "url": "https://cyberjapandata.gsi.go.jp/xyz/ort_old10/15/28508/12921.png",
+        "file": "ort_old10-15-28508-12921.png",
+        "transparentPixelCount": 0,
+        "status": "saved",
+        "sha256": "450262b8e964c27d18bf03ae055ea93f82fadff8044d1573eebe3d78e5260f9b"
+      },
+      {
+        "layer": "ort_old10",
+        "tile": [
+          15,
+          28506,
+          12922
+        ],
+        "sourceRow": 12922,
+        "url": "https://cyberjapandata.gsi.go.jp/xyz/ort_old10/15/28506/12922.png",
+        "file": "ort_old10-15-28506-12922.png",
+        "transparentPixelCount": 0,
+        "status": "saved",
+        "sha256": "96a2788cb3d5ef026d8a72329c5fce138175d0214d1ebfae612e9943245281e6"
+      },
+      {
+        "layer": "ort_old10",
+        "tile": [
+          15,
+          28507,
+          12922
+        ],
+        "sourceRow": 12922,
+        "url": "https://cyberjapandata.gsi.go.jp/xyz/ort_old10/15/28507/12922.png",
+        "file": "ort_old10-15-28507-12922.png",
+        "transparentPixelCount": 0,
+        "status": "saved",
+        "sha256": "8cd1a766efee6854d39808ff96e8b3a8c063f0e57968e9e42a9668139501b872"
+      },
+      {
+        "layer": "ort_old10",
+        "tile": [
+          15,
+          28508,
+          12922
+        ],
+        "sourceRow": 12922,
+        "url": "https://cyberjapandata.gsi.go.jp/xyz/ort_old10/15/28508/12922.png",
+        "file": "ort_old10-15-28508-12922.png",
+        "transparentPixelCount": 0,
+        "status": "saved",
+        "sha256": "7f9ef31b9c897323e913ba566dbfca76689fe486f502a29befc2e0012e3df3f9"
+      },
+      {
+        "layer": "std",
+        "tile": [
+          15,
+          28506,
+          12920
+        ],
+        "sourceRow": 12920,
+        "url": "https://cyberjapandata.gsi.go.jp/xyz/std/15/28506/12920.png",
+        "file": "std-15-28506-12920.png",
+        "transparentPixelCount": 0,
+        "status": "saved",
+        "sha256": "01f91995cd970824e3475fd47e72684de45cd147dd4d20319a3c8aa1840fddcd"
+      },
+      {
+        "layer": "std",
+        "tile": [
+          15,
+          28507,
+          12920
+        ],
+        "sourceRow": 12920,
+        "url": "https://cyberjapandata.gsi.go.jp/xyz/std/15/28507/12920.png",
+        "file": "std-15-28507-12920.png",
+        "transparentPixelCount": 0,
+        "status": "saved",
+        "sha256": "f6f1324f588fd0b308fde273ef5b1c8ff2e3cedc655dbddcc5d97cd9e86db9e3"
+      },
+      {
+        "layer": "std",
+        "tile": [
+          15,
+          28508,
+          12920
+        ],
+        "sourceRow": 12920,
+        "url": "https://cyberjapandata.gsi.go.jp/xyz/std/15/28508/12920.png",
+        "file": "std-15-28508-12920.png",
+        "transparentPixelCount": 0,
+        "status": "saved",
+        "sha256": "d6e826e82e2f3554254684a260b5368cc29fd753294bdf34e9d41aa184825559"
+      },
+      {
+        "layer": "std",
+        "tile": [
+          15,
+          28506,
+          12921
+        ],
+        "sourceRow": 12921,
+        "url": "https://cyberjapandata.gsi.go.jp/xyz/std/15/28506/12921.png",
+        "file": "std-15-28506-12921.png",
+        "transparentPixelCount": 0,
+        "status": "saved",
+        "sha256": "e98df9dfd9600fcd29654175ff04755146d5a9d65a6c15ee07750ed7b8c92232"
+      },
+      {
+        "layer": "std",
+        "tile": [
+          15,
+          28507,
+          12921
+        ],
+        "sourceRow": 12921,
+        "url": "https://cyberjapandata.gsi.go.jp/xyz/std/15/28507/12921.png",
+        "file": "std-15-28507-12921.png",
+        "transparentPixelCount": 0,
+        "status": "saved",
+        "sha256": "c870f39da1636d2695ba397d93f877eafe129211c868295fde829ebe5853d8c9"
+      },
+      {
+        "layer": "std",
+        "tile": [
+          15,
+          28508,
+          12921
+        ],
+        "sourceRow": 12921,
+        "url": "https://cyberjapandata.gsi.go.jp/xyz/std/15/28508/12921.png",
+        "file": "std-15-28508-12921.png",
+        "transparentPixelCount": 0,
+        "status": "saved",
+        "sha256": "900d29190b55215f2f53d261fbdf303b83a83f39dcdff2aa1a22b01de9d3df8c"
+      },
+      {
+        "layer": "std",
+        "tile": [
+          15,
+          28506,
+          12922
+        ],
+        "sourceRow": 12922,
+        "url": "https://cyberjapandata.gsi.go.jp/xyz/std/15/28506/12922.png",
+        "file": "std-15-28506-12922.png",
+        "transparentPixelCount": 0,
+        "status": "saved",
+        "sha256": "adae7ab1309fb75bdf0acce17b39b2d6937a19f6590da13b92db2eb26e58bcff"
+      },
+      {
+        "layer": "std",
+        "tile": [
+          15,
+          28507,
+          12922
+        ],
+        "sourceRow": 12922,
+        "url": "https://cyberjapandata.gsi.go.jp/xyz/std/15/28507/12922.png",
+        "file": "std-15-28507-12922.png",
+        "transparentPixelCount": 0,
+        "status": "saved",
+        "sha256": "36c60222ff78e53e1b836980cc70fb3b3cc0fb2c2f9a2c7abb89bab16f8e2851"
+      },
+      {
+        "layer": "std",
+        "tile": [
+          15,
+          28508,
+          12922
+        ],
+        "sourceRow": 12922,
+        "url": "https://cyberjapandata.gsi.go.jp/xyz/std/15/28508/12922.png",
+        "file": "std-15-28508-12922.png",
+        "transparentPixelCount": 0,
+        "status": "saved",
+        "sha256": "87643688f818f1235667d1c1197da6bc7eee35b35579dc37c9cbb9510a6f60ec"
+      }
+    ]
+  },
+  "referenceMosaicSha256": "5a8a613b2117e9e423a0edbf5ba2edec495920f41bb75aa13ec36a74f8dad70b",
+  "matrixSourcePixelsToTileMosaic": [
+    [
+      0.7782263480829597,
+      0.015015652213807115
+    ],
+    [
+      -0.017729450066999122,
+      0.7820726718041427
+    ],
+    [
+      190.90044383985784,
+      114.94655503318253
+    ]
+  ],
+  "inliers": 36,
+  "matches": [
+    {
+      "sourcePixel": [
+        320,
+        260
+      ],
+      "targetPixel": [
+        436,
+        323
+      ],
+      "correlation": 0.9909420013427734,
+      "inlier": true,
+      "residualPixels": 0.6828003490857469
+    },
+    {
+      "sourcePixel": [
+        370,
+        260
+      ],
+      "targetPixel": [
+        474,
+        324
+      ],
+      "correlation": 0.8568949103355408,
+      "inlier": true,
+      "residualPixels": 0.2832161138140434
+    },
+    {
+      "sourcePixel": [
+        470,
+        260
+      ],
+      "targetPixel": [
+        552,
+        326
+      ],
+      "correlation": 0.8742190003395081,
+      "inlier": true,
+      "residualPixels": 0.6596757473608059
+    },
+    {
+      "sourcePixel": [
+        520,
+        260
+      ],
+      "targetPixel": [
+        591,
+        326
+      ],
+      "correlation": 0.940169632434845,
+      "inlier": true,
+      "residualPixels": 0.09875166137815428
+    },
+    {
+      "sourcePixel": [
+        570,
+        260
+      ],
+      "targetPixel": [
+        630,
+        327
+      ],
+      "correlation": 0.9055584073066711,
+      "inlier": true,
+      "residualPixels": 0.19663932459852482
+    },
+    {
+      "sourcePixel": [
+        270,
+        310
+      ],
+      "targetPixel": [
+        396,
+        361
+      ],
+      "correlation": 0.9919968843460083,
+      "inlier": true,
+      "residualPixels": 0.6494162859554339
+    },
+    {
+      "sourcePixel": [
+        320,
+        310
+      ],
+      "targetPixel": [
+        434,
+        362
+      ],
+      "correlation": 0.8260645866394043,
+      "inlier": true,
+      "residualPixels": 0.47793149739094126
+    },
+    {
+      "sourcePixel": [
+        570,
+        310
+      ],
+      "targetPixel": [
+        629,
+        366
+      ],
+      "correlation": 0.9444102644920349,
+      "inlier": true,
+      "residualPixels": 0.052420672564421955
+    },
+    {
+      "sourcePixel": [
+        220,
+        360
+      ],
+      "targetPixel": [
+        355,
+        400
+      ],
+      "correlation": 0.9875121712684631,
+      "inlier": true,
+      "residualPixels": 0.7556508633512488
+    },
+    {
+      "sourcePixel": [
+        270,
+        360
+      ],
+      "targetPixel": [
+        395,
+        401
+      ],
+      "correlation": 0.8538169860839844,
+      "inlier": true,
+      "residualPixels": 0.579321653924569
+    },
+    {
+      "sourcePixel": [
+        320,
+        360
+      ],
+      "targetPixel": [
+        434,
+        401
+      ],
+      "correlation": 0.8800904750823975,
+      "inlier": true,
+      "residualPixels": 0.5393465677780448
+    },
+    {
+      "sourcePixel": [
+        370,
+        360
+      ],
+      "targetPixel": [
+        473,
+        402
+      ],
+      "correlation": 0.9117443561553955,
+      "inlier": true,
+      "residualPixels": 0.5405901596599048
+    },
+    {
+      "sourcePixel": [
+        570,
+        360
+      ],
+      "targetPixel": [
+        628,
+        405
+      ],
+      "correlation": 0.984791100025177,
+      "inlier": true,
+      "residualPixels": 0.11868301005336228
+    },
+    {
+      "sourcePixel": [
+        170,
+        410
+      ],
+      "targetPixel": [
+        316,
+        438
+      ],
+      "correlation": 0.9631797671318054,
+      "inlier": true,
+      "residualPixels": 0.16469856419046744
+    },
+    {
+      "sourcePixel": [
+        220,
+        410
+      ],
+      "targetPixel": [
+        355,
+        439
+      ],
+      "correlation": 0.8407198786735535,
+      "inlier": true,
+      "residualPixels": 0.18780182311465926
+    },
+    {
+      "sourcePixel": [
+        420,
+        410
+      ],
+      "targetPixel": [
+        509,
+        440
+      ],
+      "correlation": 0.808005154132843,
+      "inlier": true,
+      "residualPixels": 2.414665980932541
+    },
+    {
+      "sourcePixel": [
+        470,
+        410
+      ],
+      "targetPixel": [
+        550,
+        443
+      ],
+      "correlation": 0.8261983394622803,
+      "inlier": true,
+      "residualPixels": 0.6947088514917557
+    },
+    {
+      "sourcePixel": [
+        170,
+        460
+      ],
+      "targetPixel": [
+        314,
+        477
+      ],
+      "correlation": 0.953807532787323,
+      "inlier": true,
+      "residualPixels": 1.073528251895874
+    },
+    {
+      "sourcePixel": [
+        220,
+        460
+      ],
+      "targetPixel": [
+        354,
+        478
+      ],
+      "correlation": 0.8205527067184448,
+      "inlier": true,
+      "residualPixels": 0.04543607878302825
+    },
+    {
+      "sourcePixel": [
+        270,
+        460
+      ],
+      "targetPixel": [
+        393,
+        479
+      ],
+      "correlation": 0.9666500687599182,
+      "inlier": true,
+      "residualPixels": 0.27993883806517905
+    },
+    {
+      "sourcePixel": [
+        420,
+        460
+      ],
+      "targetPixel": [
+        510,
+        481
+      ],
+      "correlation": 0.8012941479682922,
+      "inlier": true,
+      "residualPixels": 0.4000907466243187
+    },
+    {
+      "sourcePixel": [
+        470,
+        460
+      ],
+      "targetPixel": [
+        549,
+        482
+      ],
+      "correlation": 0.9207715392112732,
+      "inlier": true,
+      "residualPixels": 0.5456467925757023
+    },
+    {
+      "sourcePixel": [
+        570,
+        460
+      ],
+      "targetPixel": [
+        625,
+        484
+      ],
+      "correlation": 0.8074504137039185,
+      "inlier": true,
+      "residualPixels": 1.5259588397545378
+    },
+    {
+      "sourcePixel": [
+        170,
+        510
+      ],
+      "targetPixel": [
+        314,
+        517
+      ],
+      "correlation": 0.9936508536338806,
+      "inlier": true,
+      "residualPixels": 0.6625677575688904
+    },
+    {
+      "sourcePixel": [
+        220,
+        510
+      ],
+      "targetPixel": [
+        353,
+        517
+      ],
+      "correlation": 0.8854266405105591,
+      "inlier": true,
+      "residualPixels": 0.12694950482319411
+    },
+    {
+      "sourcePixel": [
+        370,
+        510
+      ],
+      "targetPixel": [
+        470,
+        519
+      ],
+      "correlation": 0.8230611085891724,
+      "inlier": true,
+      "residualPixels": 0.41025637501329565
+    },
+    {
+      "sourcePixel": [
+        420,
+        510
+      ],
+      "targetPixel": [
+        509,
+        520
+      ],
+      "correlation": 0.9712488651275635,
+      "inlier": true,
+      "residualPixels": 0.30696885553843445
+    },
+    {
+      "sourcePixel": [
+        520,
+        510
+      ],
+      "targetPixel": [
+        587,
+        522
+      ],
+      "correlation": 0.9094253182411194,
+      "inlier": true,
+      "residualPixels": 0.6049070242458806
+    },
+    {
+      "sourcePixel": [
+        570,
+        510
+      ],
+      "targetPixel": [
+        625,
+        522
+      ],
+      "correlation": 0.7748207449913025,
+      "inlier": true,
+      "residualPixels": 0.5758817664618346
+    },
+    {
+      "sourcePixel": [
+        420,
+        560
+      ],
+      "targetPixel": [
+        508,
+        559
+      ],
+      "correlation": 0.8256195187568665,
+      "inlier": true,
+      "residualPixels": 0.27503450335640567
+    },
+    {
+      "sourcePixel": [
+        170,
+        610
+      ],
+      "targetPixel": [
+        312,
+        595
+      ],
+      "correlation": 0.9692453742027283,
+      "inlier": true,
+      "residualPixels": 0.5813058199163202
+    },
+    {
+      "sourcePixel": [
+        370,
+        610
+      ],
+      "targetPixel": [
+        468,
+        598
+      ],
+      "correlation": 0.8923487663269043,
+      "inlier": true,
+      "residualPixels": 0.4343084592348667
+    },
+    {
+      "sourcePixel": [
+        420,
+        610
+      ],
+      "targetPixel": [
+        507,
+        598
+      ],
+      "correlation": 0.8530954718589783,
+      "inlier": true,
+      "residualPixels": 0.3229781801177464
+    },
+    {
+      "sourcePixel": [
+        170,
+        660
+      ],
+      "targetPixel": [
+        311,
+        634
+      ],
+      "correlation": 0.9185023903846741,
+      "inlier": true,
+      "residualPixels": 0.5985498377432172
+    },
+    {
+      "sourcePixel": [
+        220,
+        660
+      ],
+      "targetPixel": [
+        351,
+        634
+      ],
+      "correlation": 0.8834386467933655,
+      "inlier": true,
+      "residualPixels": 0.7240204484218379
+    },
+    {
+      "sourcePixel": [
+        270,
+        660
+      ],
+      "targetPixel": [
+        390,
+        635
+      ],
+      "correlation": 0.8946942687034607,
+      "inlier": true,
+      "residualPixels": 0.7005072947810279
+    },
+    {
+      "sourcePixel": [
+        370,
+        710
+      ],
+      "targetPixel": [
+        476,
+        674
+      ],
+      "correlation": 0.834658682346344,
+      "inlier": false,
+      "residualPixels": 9.903882789516135
+    }
+  ]
+}
