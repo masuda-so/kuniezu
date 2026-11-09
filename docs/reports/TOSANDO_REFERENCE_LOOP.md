@@ -20,3 +20,7 @@
 - `movement-save.cjs`：旧線の更新、日付・領土・兵力・日内時刻、非史実保存の拒否を確認。
 
 親担当による専用Chrome検証も通過。root main d2803781へ候補3配信物だけを差し替え、広狭4画面、座標SHA、点列とreader、合成旧保存の位置・着陣時刻、例外0を確認した。[証拠要約](../../data/verification/codex-tosando-reference-loop/README.md)に方法と担当を記録した。構造検査だけで視認性や史実上の全線照合を完了としない。
+
+## CI読込確認値の同期
+
+初回PRのCIでは、ゲーム基本検査は通過したが `Asset version stamps` が `scenario-openings.js` の古い読込確認値を検出した。手元ではこの独立した確認を実行していなかった。最新mainを公開履歴を書き換えず署名マージし、`stamp-assets.cjs` で専用ツリーのテンプレート確認値1件を生成同期した。`stamp-assets.cjs --check`、採用道路・旧保存位置・和睦日付移行の焦点検査を再確認した。
