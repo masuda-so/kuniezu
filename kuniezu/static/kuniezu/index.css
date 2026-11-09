@@ -411,3 +411,8 @@ body[data-modal] #news{visibility:hidden}body[data-modal=scene] #toast,body[data
 .evidence-scene .battle-dock .bnar p{margin:0;min-height:2lh;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;overflow:hidden;font-size:12px;line-height:1.55}
 .evidence-scene .battle-seek{font-size:11px}.evidence-scene .battle-seek input{accent-color:#6b8062}
 .mbox.scene>header{margin-bottom:8px}.mbox.scene>header h2{font-size:22px;margin:2px 0 3px}
+/* タイトル画面だけ、題字の箱と出典を別の行に置く。狭い画面で遊び方を開いても出典と重ならず、どちらも読める。地図の canvas は absolute のまま */
+#app[data-mode=title]{display:grid;grid-template-rows:minmax(0,1fr) auto}
+#app[data-mode=title] #title{position:relative;inset:auto;grid-row:1;min-height:0}
+#app[data-mode=title] #credit{position:relative;left:auto;right:auto;bottom:auto;grid-row:2;margin:0 max(10px,env(safe-area-inset-right,0px)) 4px max(10px,env(safe-area-inset-left,0px));max-height:28vh;overflow:auto;pointer-events:auto;padding:4px 6px;background:rgba(12,9,6,.82)}
+#app[data-mode=title] #title .tbox.wide{max-height:100%}
