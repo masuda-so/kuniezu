@@ -6,7 +6,7 @@
 
 リポジトリのルートから実行する。Python環境にはNumPyとPillow、変換するタイルがある場合はNode.jsとChromeが必要。CFFIとCコンパイラが利用できる場合はPNGの復号を加速する。利用できない場合も値が同じ参照実装で処理する。
 
-Python 依存は `pyproject.toml` の依存グループ `map`（NumPy・Pillow）で、`uv.lock` に固定している。`uv sync --locked --group map` で入れ、以下の `python3` は `uv run --group map python` へ読み替える（`build-map.cjs --height` の `--python` には `.venv/bin/python` を渡す）。CFFI は PNG の復号を速めるだけの任意の依存で、グループには入れていない。使う場合は同じ環境に別途入れる。古い `tools/map/requirements.txt`（Pillow 11.3.0 ほか）は 2026-11-09 に廃止した。巨大画像ではCFFIの高速復号を有効にする。
+Python 依存は `pyproject.toml` の依存グループ `map`（NumPy・Pillow・CFFI・setuptools）で、`uv.lock` に固定している。`uv sync --locked --group map` で入れ、以下の `python3` は `uv run --group map python` へ読み替える（`build-map.cjs --height` の `--python` には `.venv/bin/python` を渡す）。CFFI は巨大な PNG の復号（Average・Paeth の行）を C で速める。Python 3.12 以降の CFFI は setuptools で C を組み立てるので、setuptools も同じグループに入れた。組み立てられない場合も、値が同じ参照の実装に戻る。古い `tools/map/requirements.txt`（Pillow 11.3.0 ほか）は 2026-11-09 に廃止した。巨大画像ではCFFIの高速復号を有効にする。
 
 ```sh
 python3 tools/map/build-height-cache.py \
