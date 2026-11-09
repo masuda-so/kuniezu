@@ -58,7 +58,7 @@ a{color:#7a1f17}
 .menu-link b{color:#5c1a12}
 /* 題名の札は文字が収まる幅に、戻るボタンは和紙の札に */
 #title .tbox:not(.wide){width:min(720px,100%)}
-#title .tbox h1{font-size:clamp(34px,6.2vw,60px);white-space:nowrap}
+#title .tbox h1{font-size:clamp(24px,7.2vw,60px);white-space:nowrap}
 #title .tbox.wide .tbtns .btn{min-width:120px}
 #compactSpeed{background:#fbf6e8;color:#2a1d10;border:1px solid #9a7d4e}
 
