@@ -1,0 +1,26 @@
+{
+  "id": "person:hachisuka-iemasa",
+  "name": "蜂須賀家政",
+  "gameNames": [
+    "蜂須賀家政"
+  ],
+  "authorityIds": [
+    "wikidata:Q1073557"
+  ],
+  "authorityEvidence": {
+    "scope": "person-identity",
+    "checked": "2026-11-08",
+    "wikidataRevision": 2508576099,
+    "snapshot": "data/research/source-notes/authority-batch-b.json",
+    "sourceNote": "data/research/source-notes/authority-batch-b.json",
+    "note": "data/research/source-notes/authority-batch-b.md",
+    "identityChecks": [
+      "徳島城博物館の本文は正勝の子を家政として至鎮の父と区別する",
+      "Wikidata Q1073557のP22は正勝Q1201825、P40は至鎮Q3125481に対応する"
+    ],
+    "basis": "人物の同定のみ。原本にある生没日・所在・所領・関係の時期は新たな史実命題へ採用しない。",
+    "sourceIds": [
+      "tokushimaHachisukaLineIdentity"
+    ]
+  }
+}

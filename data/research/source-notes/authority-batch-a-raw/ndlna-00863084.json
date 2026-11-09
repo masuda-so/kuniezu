@@ -1,0 +1,78 @@
+{
+    "@context": "https://id.ndl.go.jp/auth/context.json",
+    "uri": "http://id.ndl.go.jp/auth/ndlna/00863084",
+    "primaryTopic": {
+        "uri": "http://id.ndl.go.jp/auth/entity/00863084",
+        "type": {
+            "uri": "http://xmlns.com/foaf/0.1/Person"
+        },
+        "name": "島清興",
+        "dateOfDeath": "1600",
+        "biographicalInformation": [
+            "武将"
+        ]
+    },
+    "type": {
+        "uri": "http://www.w3.org/2004/02/skos/core#Concept"
+    },
+    "modified": "2025-12-16T09:29:02",
+    "created": "2002-01-16",
+    "prefLabel": {
+        "literalForm": "島, 清興, -1600",
+        "transcription": "シマ, キヨオキ, -1600",
+        "transcription-l": [
+            {
+                "@value": "シマ, キヨオキ, -1600",
+                "@language": "ja-Kana"
+            },
+            {
+                "@value": "Shima, Kiyooki, -1600",
+                "@language": "ja-Latn"
+            }
+        ]
+    },
+    "label": "島, 清興, -1600",
+    "altLabel": [
+        {
+            "literalForm": "島, 左近",
+            "transcription": "シマ, サコン",
+            "transcription-l": [
+                {
+                    "@value": "シマ, サコン",
+                    "@language": "ja-Kana"
+                },
+                {
+                    "@value": "Shima, Sakon",
+                    "@language": "ja-Latn"
+                }
+            ]
+        },
+        {
+            "literalForm": "島, 勝猛",
+            "transcription": "シマ, カツタケ",
+            "transcription-l": [
+                {
+                    "@value": "シマ, カツタケ",
+                    "@language": "ja-Kana"
+                },
+                {
+                    "@value": "Shima, Katsutake",
+                    "@language": "ja-Latn"
+                }
+            ]
+        }
+    ],
+    "source": [
+        "島左近のすべて / 花ヶ前盛明 編",
+        "国史大辞典"
+    ],
+    "exactMatch": [
+        {
+            "uri": "http://viaf.org/viaf/sourceID/NDL%7C00863084#skos:Concept"
+        }
+    ],
+    "inScheme": {
+        "uri": "http://id.ndl.go.jp/auth#personalNames"
+    }
+}
+

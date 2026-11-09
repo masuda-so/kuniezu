@@ -1,0 +1,55 @@
+{
+    "@context": "https://id.ndl.go.jp/auth/context.json",
+    "uri": "http://id.ndl.go.jp/auth/ndlna/01226769",
+    "primaryTopic": {
+        "uri": "http://id.ndl.go.jp/auth/entity/01226769",
+        "type": {
+            "uri": "http://xmlns.com/foaf/0.1/Person"
+        },
+        "name": "九鬼嘉隆",
+        "dateOfBirth": "1542",
+        "dateOfDeath": "1600",
+        "biographicalInformation": [
+            "安土桃山時代の武将"
+        ]
+    },
+    "type": {
+        "uri": "http://www.w3.org/2004/02/skos/core#Concept"
+    },
+    "modified": "2026-01-21T08:34:41",
+    "created": "2011-05-13",
+    "prefLabel": {
+        "literalForm": "九鬼, 嘉隆, 1542-1600",
+        "transcription": "クキ, ヨシタカ, 1542-1600",
+        "transcription-l": [
+            {
+                "@value": "クキ, ヨシタカ, 1542-1600",
+                "@language": "ja-Kana"
+            },
+            {
+                "@value": "Kuki, Yoshitaka, 1542-1600",
+                "@language": "ja-Latn"
+            }
+        ]
+    },
+    "label": "九鬼, 嘉隆, 1542-1600",
+    "source": [
+        "九鬼嘉隆 / 鳥羽市教育委員会 編",
+        "国史大辞典"
+    ],
+    "exactMatch": [
+        {
+            "uri": "http://id.loc.gov/authorities/names/nr93010347"
+        },
+        {
+            "uri": "https://isni.org/isni/0000000051485360"
+        },
+        {
+            "uri": "http://viaf.org/viaf/sourceID/NDL%7C01226769#skos:Concept"
+        }
+    ],
+    "inScheme": {
+        "uri": "http://id.ndl.go.jp/auth#personalNames"
+    }
+}
+

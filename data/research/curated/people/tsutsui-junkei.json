@@ -1,0 +1,28 @@
+{
+  "id": "person:tsutsui-junkei",
+  "name": "筒井順慶",
+  "gameNames": [
+    "筒井順慶"
+  ],
+  "authorityIds": [
+    "wikidata:Q8192220",
+    "ndlna:00625865"
+  ],
+  "authorityEvidence": {
+    "scope": "person-identity",
+    "checked": "2026-11-08",
+    "wikidataRevision": 2550978826,
+    "snapshot": "data/research/source-notes/authority-batch-b.json",
+    "sourceNote": "data/research/source-notes/authority-batch-b.json",
+    "note": "data/research/source-notes/authority-batch-b.md",
+    "identityChecks": [
+      "NDL00625865の主名筒井順慶がPerson典拠に属する",
+      "Wikidata Q8192220の日本語主名とP349が同じNDL典拠へ対応する"
+    ],
+    "basis": "人物の同定のみ。原本にある生没日・所在・所領・関係の時期は新たな史実命題へ採用しない。",
+    "ndlSnapshot": "data/research/source-notes/tsutsui-junkei-ndl-authority.json",
+    "sourceIds": [
+      "ndlTsutsuiJunkeiIdentity"
+    ]
+  }
+}

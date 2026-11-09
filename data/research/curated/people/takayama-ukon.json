@@ -1,0 +1,28 @@
+{
+  "id": "person:takayama-ukon",
+  "name": "高山右近",
+  "gameNames": [
+    "高山右近"
+  ],
+  "authorityIds": [
+    "wikidata:Q749873",
+    "ndlna:00623123"
+  ],
+  "authorityEvidence": {
+    "scope": "person-identity",
+    "checked": "2026-11-08",
+    "wikidataRevision": 2553941235,
+    "snapshot": "data/research/source-notes/authority-batch-a.json",
+    "sourceNote": "data/research/source-notes/authority-batch-a.json",
+    "note": "data/research/source-notes/authority-batch-a.md",
+    "sourceIds": [
+      "ndlBatchATakayamaUkon"
+    ],
+    "identityChecks": [
+      "NDL原本の典拠URI・Person区分・主名が対象人物に対応",
+      "Wikidata原本のQ5人物型とP349のNDL 00623123が同じ典拠を参照する"
+    ],
+    "basis": "人物同定のみ。原本の生没年や経歴の値を史実命題へ転記しない。",
+    "ndlSnapshot": "data/research/source-notes/takayama-ukon-ndl-authority.json"
+  }
+}

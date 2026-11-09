@@ -1,0 +1,26 @@
+{
+  "id": "person:hori-hideharu",
+  "name": "堀秀治",
+  "gameNames": [
+    "堀秀治"
+  ],
+  "authorityIds": [
+    "wikidata:Q9755540"
+  ],
+  "authorityEvidence": {
+    "scope": "person-identity",
+    "checked": "2026-11-08",
+    "wikidataRevision": 2556900847,
+    "snapshot": "data/research/source-notes/authority-batch-a.json",
+    "sourceNote": "data/research/source-notes/authority-batch-a.json",
+    "note": "data/research/source-notes/authority-batch-a.md",
+    "sourceIds": [
+      "publicBatchAHoriHideharu"
+    ],
+    "identityChecks": [
+      "公的機関本文が堀秀治を対象の武将として記載",
+      "WikidataのQ5人物型・主名称と公的本文の人物役割を照合。他の同姓人物と区別"
+    ],
+    "basis": "北庄領主の秀治と秀政を区別する人物同定だけ。移封年月日・支配領域を新命題へ採用しない。"
+  }
+}
