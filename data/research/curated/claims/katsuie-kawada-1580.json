@@ -1,0 +1,37 @@
+{
+  "id": "katsuie-kawada-1580",
+  "entity": "person:shibata-katsuie",
+  "predicate": "military-event",
+  "value": "柴田勝家が一向一揆を討つために加賀に入り、諸所を攻め取って金沢城を攻めようとしていたところ、この日、上杉景勝の越中の守将の河田長親を誘った。",
+  "validYears": [
+    1580,
+    1580
+  ],
+  "datePrecision": "day",
+  "source": "hiDainihonshiryoKobun",
+  "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+  "locator": "綱文：和暦 天正8年閏3月24日 第1条（区分 史料綜覧、編10・冊911（データベースの表示値）、249頁）",
+  "gameBindings": [
+    "TK.HIST:1580-12-1"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-09",
+  "uncertainty": "綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。",
+  "linkedEntities": [
+    "person:shibata-katsuie"
+  ],
+  "eventTime": {
+    "kind": "dated-event",
+    "date": [
+      1580,
+      3,
+      24
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": true,
+    "precision": "day"
+  },
+  "eventRelation": "military-event",
+  "eventScope": "綱文が掲げる日付。天正8年閏3月24日はゲーム共通の暦表で1580年5月7日。綱文の「是日」が掛かるのは勝家が河田長親を誘ったことだけで、加賀入りと諸所の攻略はこの日より前だが日付が無い（加賀入りの命題は作らない）。年表の出来事（加賀の一向一揆の平定）とは別の出来事。河田長親は人物の ID が無いので結ばない。"
+}
