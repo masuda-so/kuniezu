@@ -835,10 +835,9 @@ function tlReset(){TL.snaps=[];TL.marks=[];TL.lastMark=-1;TL.head=S?S.t:0;snapMa
 const tlEl=$('#tline');
 // 時の帯は、動画のように最初から最後（元和偃武、1615年）まで全体を見せる
 const TL_END={d:[1615,6,10]};
-const TL_START={d:[1560,5,1]};
-// どのシナリオでも、帯は1560年から1615年までの同じ長さ（始まりより前は、史実をたどって開ける）
+// 登録済みの最初の配置図から終点までを共通の帯にする。未登録の年代を開いたようには表示しない。
 function tlBase(){return TL.snaps.length?TL.snaps[0].t:S.t;}
-function tlRange(){const t0=Math.min(G.evT(TL_START),tlBase());const t1=Math.max(S.t,TL.head||0,G.evT(TL_END),t0+30);return [t0,t1];}
+function tlRange(){const t0=Math.min(G.evT({d:G.historyOrigin().date}),tlBase());const t1=Math.max(S.t,TL.head||0,G.evT(TL_END),t0+30);return [t0,t1];}
 // これから先の史実（章のしおり）
 function tlFuture(){const out=[];const t0=S.t;const seen=new Set();for(const e of TK.HIST){if(e.k==='premarch'||seen.has(e.title))continue;if(e.title)seen.add(e.title);if(!e.title||!(e.big||/戦い|変|落城|征伐|陣|役|統一|幕府|偃武/.test(e.title)))continue;const t=G.evT(e);if(t<=Math.max(t0,TL.head||0))continue;out.push({t,n:e.title,b:!!e.big});}return out;}
 // 先へ進める：分かれ道では史実を選び、領国の出来事は歴史を変えない方を選んで、早送りする
@@ -950,10 +949,10 @@ function layoutHUD(){const era=$('#era'),me=$('#me'),ch=$('#chron'),nw=$('#news'
  if(ts){const rn=nw&&nw.children.length?nw.getBoundingClientRect():null;const base=Math.max(narrow?topBand:re.top,rn&&rn.height?rn.bottom:0);ts.style.top=Math.round(Math.max(narrow?topBand+8:92,base+8))+'px';ts.style.bottom='auto';}}
 addEventListener('resize',()=>requestAnimationFrame(layoutHUD));
 G.onDiverge=()=>{toast('歴史が動いた。ここからは史実どおりには進まない','bad');renderTop();};
-G.onLost=(at,by)=>toast(`${G.cname(at)}が${G.CNK(by)}に落とされた`,'bad');
-G.onAttacked=(u,to)=>toast(`${G.CNK(u.clan)} ${man(u.troops)} が${G.cname(to)}へ迫る`,'bad');
-G.onDestroy=(k,by)=>{if(by===S.player&&S.div[S.player])toast(`${G.CNK(k)}を平定した`,'good');};
-G.onSuccession=(k,old,nx)=>{if(k===S.player&&nx)toast(`${old.n}が没し、${nx.n}が家督を継いだ`);};
+G.onLost=(at,by)=>{if(!U.ffwd)toast(`${G.cname(at)}が${G.CNK(by)}に落とされた`,'bad');};
+G.onAttacked=(u,to)=>{if(!U.ffwd)toast(`${G.CNK(u.clan)} ${man(u.troops)} が${G.cname(to)}へ迫る`,'bad');};
+G.onDestroy=(k,by)=>{if(!U.ffwd&&by===S.player&&S.div[S.player])toast(`${G.CNK(k)}を平定した`,'good');};
+G.onSuccession=(k,old,nx)=>{if(!U.ffwd&&k===S.player&&nx)toast(`${old.n}が没し、${nx.n}が家督を継いだ`);};
 G.onBattle=()=>{};G.onMonth=()=>{};G.onLog=()=>{};G.onEvent=()=>{};
 let toastT;function toast(t,kind){const el=$('#toast');el.textContent=t;el.className='show '+(kind||'');clearTimeout(toastT);toastT=setTimeout(()=>{el.className='';},2800);}
 
@@ -1031,7 +1030,7 @@ const ACT={
  envoy:b=>openModal('envoy',{clan:b.dataset.clan}),
  close:()=>closeModal(),
  pastgo:b=>{const tgt=[+b.dataset.y,+b.dataset.m,+b.dataset.d];const pl=S.player;b.disabled=true;const pr=$('#pastProg');
-  const step=()=>{const done=G.pastStep(tgt,720);const P=G._past;if(pr)pr.textContent=`史実をたどっています… ${P.done[0]}年`;if(!done){setTimeout(step,0);return;}
+  const step=()=>{let done;const forwarding=U.ffwd;U.ffwd=1;try{done=G.pastStep(tgt,720);}catch(e){b.disabled=false;if(pr)pr.textContent=e.message||'史実を開けませんでした。';return;}finally{U.ffwd=forwarding;}const P=G._past;if(pr)pr.textContent=`史実をたどっています… ${P.done[0]}年`;if(!done){setTimeout(step,0);return;}
    const key=y=>y.y*400+y.m*32+y.d;const sn=P.snaps.filter(x=>key(x)<=key({y:tgt[0],m:tgt[1],d:tgt[2]}));let last={y:P.done[0],m:P.done[1],d:P.done[2],s:P.cur};if(key(last)>key({y:tgt[0],m:tgt[1],d:tgt[2]})&&sn.length)last=sn.pop();
    const n=G.adoptPast(last.s,pl);if(!n){b.disabled=false;if(pr)pr.textContent=`${tgt[0]}年には、${G.CNK(pl)}はまだ表舞台にいない。`;return;}
    S=n;G.setS(S);TL.pl=pl;TL.snaps=sn.map(x=>({t:G.evT({d:[x.y,x.m,x.d]}),s:x.s,past:1})).filter(x=>x.t<S.t);TL.snaps.push({t:S.t,s:JSON.stringify(S)});TL.marks=[];TL.lastMark=S.chron.length?S.chron[0].t:-1;TL.head=S.t;TL.sig='';
@@ -1282,9 +1281,9 @@ MODALS.end=()=>{const k=S.player,alive=S.clans[k]&&S.clans[k].alive;const d=G.da
  let title,text;if(S.unified){const u=S.unified;title='天下統一';text=u===k?`${G.CNK(k)}が日の本を一つにまとめた。`:`${G.CNK(u)}が天下を統一した。${alive?`${G.CNK(k)}は${G.clanCastles(k).length}城を保ち、大名として生き残った。`:`${G.CNK(k)}はすでに滅んでいた。`}`;}
  else if(S.over==='win'){title='天下統一';text=`${G.CNK(k)}が日の本を一つにまとめた。`;}else{title='御家滅亡';text=`${G.CNK(k)}は最後の城を失った。`;}
  return `<div class="evt"><small>${G.eraK()} ${G.monK()}（${d.y}年）</small><h2>${title}</h2><p>${esc(text)}</p><p class="hint">${S.div[k]?'あなたの采配で歴史は変わった。':'あなたは歴史に手を加えなかった。'}</p></div><footer><button class="btn" data-act="watch">地図を眺める</button><button class="btn pri" data-act="to-title">タイトルへ</button></footer>`;};
-MODALS.past=d=>{const D=G.date(d.t);const k=S.player;const pv=TK.HIST.filter(e=>e.title&&e.big&&G.evT(e)<=d.t).slice(-5);
+MODALS.past=d=>{const D=G.date(d.t),origin=G.historyOrigin().date;const k=S.player;const seen=new Set(),pv=TK.HIST.filter(e=>{if(!e.title||!e.big||e.k==='premarch'||G.evT(e)>d.t)return false;const key=e.title+'|'+G.evT(e);if(seen.has(key))return false;seen.add(key);return true;}).slice(-5);
  return `<header><div><small class="eyebrow">時の帯 ・ このシナリオより前</small><h2>${D.y}年${D.m}月から始める</h2></div><button class="ic" data-act="close" aria-label="閉じる">×</button></header>
- <p>1560年から史実どおりに歴史をたどり、${D.y}年${D.m}月の天下を開きます。${esc(G.CNK(k))}の立場はそのままです（その頃に${esc(G.CNK(k))}がなければ開けません）。いまの進み具合は、この帯から消えます。</p>
+ <p>${origin[0]}年${origin[1]}月${origin[2]}日から史実どおりに歴史をたどり、${D.y}年${D.m}月の天下を開きます。${esc(G.CNK(k))}の立場はそのままです（その頃に${esc(G.CNK(k))}がなければ開けません）。いまの進み具合は、この帯から消えます。</p>
  ${pv.length?`<h3>それまでの主な出来事</h3><div class="hlist">${pv.map(m=>`<div><b>${esc(m.title)}</b><small>${m.d[0]}年${m.d[1]}月</small></div>`).join('')}</div>`:''}
  <p class="hint" id="pastProg"></p>
  <footer><button class="btn" data-act="close">やめる</button><button class="btn pri" data-act="pastgo" data-y="${D.y}" data-m="${D.m}" data-d="${D.d}">史実をたどって開く</button></footer>`;};
