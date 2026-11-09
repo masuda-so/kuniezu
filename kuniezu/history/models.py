@@ -232,6 +232,36 @@ class Place(models.Model):
         return f"{self.longitude},{self.latitude}"
 
 
+class Representation(models.Model):
+    """A game site standing for a registry place, for all time or for a period.
+
+    This is how the game is built, not a historical claim of control. A period
+    runs from its start (included) to its end (left out). Each end is a span of
+    day numbers where it may lie: one day when the input gives a day, a whole
+    year when it gives only a year. A day is surely in the period between the
+    late start and the early end, and possibly in it between the early start and
+    the late end, so a year given as an end is never read as its first day.
+    An end left empty is open.
+    """
+
+    place = models.ForeignKey(
+        Thing, on_delete=models.CASCADE, related_name="representatives"
+    )
+    site = models.ForeignKey(Thing, on_delete=models.CASCADE, related_name="stands_for")
+    record = models.ForeignKey(
+        Record, on_delete=models.PROTECT, related_name="representations"
+    )
+    start_early = models.IntegerField(null=True, blank=True)
+    start_late = models.IntegerField(null=True, blank=True)
+    end_early = models.IntegerField(null=True, blank=True)
+    end_late = models.IntegerField(null=True, blank=True)
+    label = models.TextField(blank=True)
+    basis = models.TextField(blank=True)
+
+    def __str__(self) -> str:
+        return f"{self.site.key} -> {self.place.key} {self.label}".strip()
+
+
 class Mode(models.TextChoices):
     """The two ways something can be the case (SPAN and SNAP)."""
 
