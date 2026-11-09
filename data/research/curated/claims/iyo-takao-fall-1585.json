@@ -1,0 +1,40 @@
+{
+  "id": "iyo-takao-fall-1585",
+  "entity": "place:iyo-takao-castle",
+  "predicate": "castle-fall",
+  "value": "小早川隆景・吉川元長らが伊予に入り、長宗我部元親方の丸山・高尾両城を囲み、この日に高尾城が落ちて城将の金子元宅が討死した。",
+  "validYears": [
+    1585,
+    1585
+  ],
+  "datePrecision": "day",
+  "source": "hiDainihonshiryoKobun",
+  "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+  "locator": "綱文：和暦 天正13年7月17日 第2条（区分 大日本史料、第11編之17（データベースの表示値）、166頁）",
+  "gameBindings": [
+    "TK.HIST:四国攻め"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-09",
+  "uncertainty": "綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。",
+  "linkedEntities": [
+    "place:iyo-takao-castle",
+    "person:小早川隆景",
+    "person:吉川元長",
+    "person:金子元宅"
+  ],
+  "eventTime": {
+    "kind": "dated-event",
+    "date": [
+      1585,
+      7,
+      17
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": false,
+    "precision": "day"
+  },
+  "eventRelation": "castle-fall",
+  "eventScope": "綱文が掲げる日付。天正13年7月17日はゲーム共通の暦表で1585年8月12日。最終年表の四国攻め（旧暦1585年7月11日、1585年8月6日）は綱文より6日早い。高尾城の落城の日。丸山城や高峠・生子山の塁の日付、元親の降伏の日付には広げない。"
+}
