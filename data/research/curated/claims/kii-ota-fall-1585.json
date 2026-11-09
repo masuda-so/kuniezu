@@ -1,0 +1,38 @@
+{
+  "id": "kii-ota-fall-1585",
+  "entity": "place:kii-ota-castle",
+  "predicate": "castle-fall",
+  "value": "羽柴秀吉が紀伊太田（太田城）を囲み、この日に城が落ちた。",
+  "validYears": [
+    1585,
+    1585
+  ],
+  "datePrecision": "day",
+  "source": "hiDainihonshiryoKobun",
+  "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+  "locator": "綱文：和暦 天正13年4月22日 第2条（区分 大日本史料、第11編之15（データベースの表示値）、41頁）",
+  "gameBindings": [
+    "TK.HIST:紀州征伐"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-09",
+  "uncertainty": "綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。",
+  "linkedEntities": [
+    "place:kii-ota-castle",
+    "person:toyotomi-hideyoshi"
+  ],
+  "eventTime": {
+    "kind": "dated-event",
+    "date": [
+      1585,
+      4,
+      22
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": false,
+    "precision": "day"
+  },
+  "eventRelation": "castle-fall",
+  "eventScope": "綱文が掲げる日付。天正13年4月22日はゲーム共通の暦表で1585年5月21日。最終年表の紀州征伐（旧暦1585年3月21日、1585年4月20日）は綱文より31日早い。太田城の落城の日。根来寺・雑賀の攻撃の日付や紀伊一国の平定には広げない。ゲームの node:ota は常陸の太田城で、この城とは別。"
+}
