@@ -1,4 +1,18 @@
 "use strict";
+/* 自治体資料でも照合した没日。旧暦の月日を西暦の月日へ直接写さない。 */
+(function(){
+ const rows=[
+  {name:'蜂須賀正勝',previousDate:[1586,7,1],lunar:[1586,5,22],id:'deathHachisukaTokushima',author:'徳島県教育委員会',title:'文化財保護審議会諮問資料 蜂須賀正勝画像',url:'https://www.pref.tokushima.lg.jp/file/attachment/179616.pdf',locator:'2頁「蜂須賀正勝画像」冒頭',scope:'天正14年5月22日に大坂で病没。画賛の日付とは区別する。'},
+  {name:'長野業正',previousDate:[1561,8,1],lunar:[1561,6,21],id:'deathNaganoTakasaki',author:'高崎市立図書館',title:'新編高崎市史 資料編4 中世2 公開年表',url:'https://lib.city.takasaki.gunma.jp/viewer/info.html?g=12&id=110',locator:'戦国時代 永禄4.6.21',scope:'箕輪城主長野業政の死去。同名異表記を綱文の業正と照合。'}
+ ];
+ for(const row of rows){
+  TK.RESEARCH_SOURCES[row.id]={author:row.author,title:row.title,url:row.url,locator:row.locator,scope:row.scope,accessed:'2026-11-09'};
+  const events=TK.HIST.filter(e=>e.k==='death'&&e.n===row.name);
+  if(events.length!==1)throw Error('没日の訂正対象が一意でない: '+row.name);
+  Object.assign(events[0],{d:TK.lunarDate(...row.lunar),lunarDate:row.lunar.slice(),source:row.url,datePrecision:'旧暦年月日を自治体資料と照合'});
+ }
+ TK.VERIFIED_DEATH_DATE_CHANGES=rows.map(row=>({name:row.name,previousDate:row.previousDate.slice(),date:TK.lunarDate(...row.lunar)}));
+})();
 /* 城の明渡しと戦役の終結を同日に丸めない。西暦への変換はゲーム共通の暦を使う。 */
 (function(){
  const source=(id,author,title,url,locator,scope)=>TK.RESEARCH_SOURCES[id]={author,title,url,locator,scope,accessed:'2026-10-31'};

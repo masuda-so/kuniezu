@@ -19,7 +19,7 @@
   "recordType": "verified-historical-claim",
   "status": "verified-in-specified-scope",
   "checked": "2026-11-09",
-  "uncertainty": "ゲームの年表の「伏見城の戦い」は 1600-9-8 で、慶長5年8月1日をゲームの暦表で直した日と比べていない（年表は変えていない）。 綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。",
+  "uncertainty": "綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。",
   "linkedEntities": [
     "person:torii-mototada"
   ],
@@ -35,5 +35,5 @@
     "precision": "day"
   },
   "eventRelation": "death-date",
-  "eventScope": "綱文が掲げる落城と戦死の日付。攻囲の始まり（同年7月19日の綱文）や時刻は補わない。"
+  "eventScope": "綱文が掲げる落城と戦死の日付。慶長5年8月1日はゲーム共通の暦表で1600年9月8日となり、最終年表の伏見城の落城・戦死と一致する。攻囲の始まり（同年7月19日の綱文）や時刻は補わない。"
 }

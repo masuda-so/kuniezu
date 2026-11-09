@@ -10,9 +10,35 @@
  TK.CHRON_DUPLICATES=[];
  let submission=null;TK.HIST=TK.HIST.filter(e=>{if(e.k!=='submit'||e.clan!=='hashiba'||e.b!=='nagao'||e.d.join('/')!=='1586/7/1')return true;if(!submission){submission=e;return true;}TK.CHRON_DUPLICATES.push({kept:submission.title,removed:e.title,date:e.d.slice(),reason:'同日の同じ上杉家の帰属を二重登録'});return false;});
  const version=2,known=new Set(['甲越同盟','上杉の羽柴への帰属','長尾の羽柴への帰属','池田輝政の吉田入封']);
+ // 直前版が生成した保存だけを同定し、後日に訂正した没日の間を補正する。
+ const legacyDeathSignature=()=>{
+  const previous=new Map((TK.VERIFIED_DEATH_DATE_CHANGES||[]).map(r=>[r.name,r.previousDate]));
+  const rows=TK.HIST.map(e=>({...e,d:e.k==='death'&&previous.has(e.n)?previous.get(e.n):e.d}));
+  rows.sort((a,b)=>a.d[0]-b.d[0]||a.d[1]-b.d[1]||a.d[2]-b.d[2]);
+  let hash=rows.length;for(const e of rows){const text=(e.title||e.k)+e.d.join('');for(let i=0;i<text.length;i++)hash=(hash*31+text.charCodeAt(i))|0;}return hash;
+ };
+ G.repairVerifiedDeathDates=function(s){
+  if(!s||s.verifiedDeathDateRepair===1||!TK.HISTORY_ONLY||Object.values(s.div||{}).some(Boolean)||(s.arcs||[]).length||(s.altQ||[]).length||Object.keys(s.branches||{}).length)return;
+  if(s.hsig!==legacyDeathSignature())return;
+  for(const row of TK.VERIFIED_DEATH_DATE_CHANGES||[]){
+   const old=G.evT({d:row.previousDate}),now=G.evT({d:row.date}),event=TK.HIST.find(e=>e.k==='death'&&e.n===row.name);
+   if(s.t<old||s.t>=now)continue;
+   const g=s.gens.find(g=>g.n===row.name);
+   // 所在や部隊を創作しない。通常の史実観察で居城にいた人物に限定する。
+   if(!g?.dead||g.unit!=null||g.tr||!s.castles[g.loc])continue;
+   g.dead=false;
+   const clan=s.clans[g.clan],successor=event.to&&s.gens.find(p=>p.n===event.to);
+   if(clan&&successor&&clan.leader===successor.id)clan.leader=g.id;
+   s.chron=(s.chron||[]).filter(e=>!(e.t===old&&e.who===row.name&&e.text===(event.text||'')));
+   const message=(event.title?event.title+'：':'')+(event.text||'');
+   if(message)s.log=(s.log||[]).filter(e=>!(e.t===old&&e.kind==='big'&&e.msg===message));
+  }
+  s.verifiedDeathDateRepair=1;
+ };
  G.repairHistoricalChronology=function(s){
   if(!s||Object.keys(s.div||{}).length)return;
   normalizeLegacyState(s);
+  G.repairVerifiedDeathDates(s);
   if(s.chronologyRepairVersion===version)return;
   const failed=new Set([...(s.hFail||[]).map(e=>e.title),...(s.chron||[]).filter(e=>!e.ok).map(e=>e.title)]);
   const grant=TK.HIST.find(e=>e.title==='池田輝政の吉田入封'),until=TK.HIST.find(e=>e.title==='東海道の城を家康へ');
