@@ -1,0 +1,15 @@
+{
+  "id": "identity:suwahara-site",
+  "relation": "same-site",
+  "things": [
+    "place:suwahara",
+    "site:諏訪原城"
+  ],
+  "basis": "台帳の場所 place:suwahara（諏訪原城）は、命題 suwahara-abandonment-hypothesis・suwahara-capture-date・suwahara-renamed が site:諏訪原城 で指す施設を台帳に載せたもの（台帳の根拠の命題 suwahara-capture-date）。同じ出典の同じ施設を 2 つの識別子で書いている。",
+  "source": "suwaharaChronology",
+  "sourceUrl": "https://www.city.shimada.shizuoka.jp/shimahaku/docs/863749869.html",
+  "locator": "今川氏真の項：今川氏真詠草に基づく旧暦8月24日の説明",
+  "checked": "2026-11-09",
+  "status": "verified-in-specified-scope",
+  "uncertainty": "同一とみる根拠は、台帳の場所を作った命題そのものがこの識別子を使っていること。施設の範囲や座標は主張しない。"
+}

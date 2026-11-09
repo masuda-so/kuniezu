@@ -1,0 +1,15 @@
+{
+  "id": "identity:yokosuka-totomi-site",
+  "relation": "same-site",
+  "things": [
+    "place:yokosuka-totomi",
+    "site:横須賀城"
+  ],
+  "basis": "台帳の場所 place:yokosuka-totomi（横須賀城）は、命題 yokosuka-castle-construction が site:横須賀城 で指す施設を台帳に載せたもの（台帳の根拠の命題 yokosuka-castle-construction）。同じ出典の同じ施設を 2 つの識別子で書いている。",
+  "source": "yokosuka-castle-history",
+  "sourceUrl": "https://www.city.kakegawa.shizuoka.jp/gyosei/docs/7478.html",
+  "locator": "天正6年の築城",
+  "checked": "2026-11-09",
+  "status": "verified-in-specified-scope",
+  "uncertainty": "同一とみる根拠は、台帳の場所を作った命題そのものがこの識別子を使っていること。施設の範囲や座標は主張しない。"
+}

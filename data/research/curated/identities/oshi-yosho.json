@@ -1,0 +1,15 @@
+{
+  "id": "identity:oshi-yosho",
+  "relation": "represented-by",
+  "things": [
+    "place:oshi",
+    "yosho:忍城:139.45:36.14"
+  ],
+  "basis": "ゲームの拠点 yosho:忍城:139.45:36.14（忍城）は、台帳の場所 place:oshi を地図の上で代表する実装上の拠点。台帳の場所の根拠は所在の観測 location:ietada-oshi-1590。同じ場所だという史料上の主張ではない。",
+  "source": "kajiroResidence",
+  "sourceUrl": "https://www.echiba.org/wp-content/uploads/2022/12/kiyo_028_p1.pdf",
+  "locator": "本文14頁（PDF32頁）上代陣屋・家忠の来歴",
+  "checked": "2026-11-09",
+  "status": "verified-in-specified-scope",
+  "uncertainty": "代表の関係は実装上の対応で、拠点の座標は史料で確かめた位置ではない（同名の拠点から借りた座標を含む）。台帳の場所に出典付きの座標があればそれを優先する。"
+}
