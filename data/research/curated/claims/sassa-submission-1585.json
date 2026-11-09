@@ -1,0 +1,38 @@
+{
+  "id": "sassa-submission-1585",
+  "entity": "person:佐々成政",
+  "predicate": "submission",
+  "value": "秀吉が越中に入って富山城に迫り、この日、佐々成政は剃髪して降った。",
+  "validYears": [
+    1585,
+    1585
+  ],
+  "datePrecision": "day",
+  "source": "hiDainihonshiryoKobun",
+  "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+  "locator": "綱文：和暦 天正13年8月26日 第1条（区分 大日本史料、第11編之18（データベースの表示値）、268頁）",
+  "gameBindings": [
+    "TK.HIST:1585-9-15"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-09",
+  "uncertainty": "綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。",
+  "linkedEntities": [
+    "person:佐々成政",
+    "person:toyotomi-hideyoshi"
+  ],
+  "eventTime": {
+    "kind": "dated-event",
+    "date": [
+      1585,
+      8,
+      26
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": false,
+    "precision": "day"
+  },
+  "eventRelation": "submission",
+  "eventScope": "綱文が掲げる日付。天正13年8月26日はゲーム共通の暦表で1585年9月19日。最終年表の題名なしの出来事（旧暦1585年8月22日、1585年9月15日）は綱文より4日早い。成政が降った日。金森長近の飛騨攻め（年表の出来事）は綱文が「尋で」と書くだけで、この日には含めない。年表の出来事は飛騨の平定なので、別の出来事の可能性がある。"
+}

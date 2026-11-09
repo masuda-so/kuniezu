@@ -1,0 +1,37 @@
+{
+  "id": "kaga-entry-1580",
+  "entity": "region:加賀",
+  "predicate": "campaign-action",
+  "value": "柴田勝家が一向一揆を討つために加賀に入り、諸所を攻め取り、金沢城を攻めようとした。",
+  "validYears": [
+    1580,
+    1580
+  ],
+  "datePrecision": "day",
+  "source": "hiDainihonshiryoKobun",
+  "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+  "locator": "綱文：和暦 天正8年閏3月24日 第1条（区分 史料綜覧、編10・冊911（データベースの表示値）、249頁）",
+  "gameBindings": [
+    "TK.HIST:1580-12-1"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-09",
+  "uncertainty": "綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。",
+  "linkedEntities": [
+    "person:shibata-katsuie"
+  ],
+  "eventTime": {
+    "kind": "dated-event",
+    "date": [
+      1580,
+      3,
+      24
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": true,
+    "precision": "day"
+  },
+  "eventRelation": "campaign-action",
+  "eventScope": "綱文が掲げる日付。天正8年閏3月24日はゲーム共通の暦表で1580年5月7日。最終年表の題名なしの出来事（旧暦1580年10月25日、1580年12月1日）は綱文より208日遅い。加賀に入って攻めた日として綱文が掲げる日。年表の出来事は加賀の一向一揆の平定（同年の後の月）を表すので、この日との差は平定までの期間を含む。主体は地域の参照（region:）。"
+}

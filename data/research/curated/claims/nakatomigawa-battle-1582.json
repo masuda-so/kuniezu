@@ -1,0 +1,39 @@
+{
+  "id": "nakatomigawa-battle-1582",
+  "entity": "place:nakatomigawa",
+  "predicate": "military-event",
+  "value": "長宗我部元親が土佐の岡豊を発って阿波に攻め入り、十河存保と中富川で戦って大いに破り、進んで勝瑞城を囲んだ。",
+  "validYears": [
+    1582,
+    1582
+  ],
+  "datePrecision": "day",
+  "source": "hiDainihonshiryoKobun",
+  "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+  "locator": "綱文：和暦 天正10年8月28日 第3条（区分 大日本史料、第11編之2（データベースの表示値）、368頁）",
+  "gameBindings": [
+    "TK.HIST:中富川の戦い"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-09",
+  "uncertainty": "綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。",
+  "linkedEntities": [
+    "place:nakatomigawa",
+    "person:chosokabe-motochika",
+    "person:十河存保"
+  ],
+  "eventTime": {
+    "kind": "dated-event",
+    "date": [
+      1582,
+      8,
+      28
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": false,
+    "precision": "day"
+  },
+  "eventRelation": "military-event",
+  "eventScope": "綱文が掲げる日付。天正10年8月28日はゲーム共通の暦表で1582年9月14日。最終年表の中富川の戦い（旧暦1582年8月28日、1582年9月14日）は一致する。合戦の日。勝瑞城の落城や阿波一国の取得の日付には広げない。"
+}
