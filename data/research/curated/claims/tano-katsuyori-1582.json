@@ -1,0 +1,39 @@
+{
+  "id": "tano-katsuyori-1582",
+  "entity": "place:tano-kai",
+  "predicate": "military-event",
+  "value": "織田信長の将の滝川一益が甲斐田野で武田勝頼を囲み、勝頼は妻の北条氏・子の信勝とともに自害した。",
+  "validYears": [
+    1582,
+    1582
+  ],
+  "datePrecision": "day",
+  "source": "hiDainihonshiryoKobun",
+  "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+  "locator": "綱文：和暦 天正10年3月11日 第2条（区分 史料綜覧、編10・冊911（データベースの表示値）、328頁）",
+  "gameBindings": [
+    "TK.HIST:甲州征伐"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-09",
+  "uncertainty": "綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。",
+  "linkedEntities": [
+    "place:tano-kai",
+    "person:滝川一益",
+    "person:takeda-katsuyori"
+  ],
+  "eventTime": {
+    "kind": "dated-event",
+    "date": [
+      1582,
+      3,
+      11
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": false,
+    "precision": "day"
+  },
+  "eventRelation": "military-event",
+  "eventScope": "綱文が掲げる日付。天正10年3月11日はゲーム共通の暦表で1582年4月3日。最終年表の甲州征伐（旧暦1582年3月9日、1582年4月1日）は綱文より2日早い。田野での包囲と勝頼の自害の日。甲州征伐の全体（2月の木曽・伊奈口からの侵攻など、別の条）には広げない。"
+}

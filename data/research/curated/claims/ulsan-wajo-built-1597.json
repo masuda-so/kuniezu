@@ -1,0 +1,39 @@
+{
+  "id": "ulsan-wajo-built-1597",
+  "entity": "place:ulsan-wajo",
+  "predicate": "castle-construction",
+  "value": "加藤清正が慶尚道の蔚山に城を築いた。",
+  "validYears": [
+    1597,
+    1597
+  ],
+  "datePrecision": "period",
+  "source": "hiDainihonshiryoKobun",
+  "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+  "locator": "綱文：和暦 慶長2年10月是月 第3条（区分 史料綜覧、編11・冊913（データベースの表示値）、149頁）",
+  "gameBindings": [
+    "TK.HIST:倭城の築城",
+    "yosho:蔚山倭城（島山城）:129.335:35.553"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-09",
+  "uncertainty": "綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。綱文は「是月」とだけ書き、日を掲げない。",
+  "linkedEntities": [
+    "place:ulsan-wajo",
+    "person:加藤清正"
+  ],
+  "eventTime": {
+    "kind": "described-period",
+    "label": "慶長2年10月（綱文は「是月」）",
+    "indexYears": [
+      1597,
+      1597
+    ],
+    "calendar": "Japanese-era-description",
+    "precision": "period",
+    "boundsAreHistoricalStartEnd": false
+  },
+  "eventRelation": "castle-construction",
+  "eventScope": "綱文が掲げる月（築城の月）。完成の日は補わない。最終年表の倭城の築城（旧暦慶長2年11月2日）とは月が違う。朝鮮の地名は、日本に関わる出来事として記録する（地図の範囲とは別）。"
+}

@@ -1,0 +1,38 @@
+{
+  "id": "himeji-departure-1577",
+  "entity": "person:toyotomi-hideyoshi",
+  "predicate": "departure",
+  "value": "羽柴秀吉が信長の命を受けて中国の平定に向かい、この日に京都を発った。その後、播磨の小寺孝隆の姫路城に入った。",
+  "validYears": [
+    1577,
+    1577
+  ],
+  "datePrecision": "day",
+  "source": "hiDainihonshiryoKobun",
+  "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+  "locator": "綱文：和暦 天正5年10月23日 第1条（区分 史料綜覧、編10・冊911（データベースの表示値）、158頁）",
+  "gameBindings": [
+    "TK.HIST:中国攻め"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-09",
+  "uncertainty": "綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。",
+  "linkedEntities": [
+    "person:toyotomi-hideyoshi",
+    "place:himeji-castle"
+  ],
+  "eventTime": {
+    "kind": "dated-event",
+    "date": [
+      1577,
+      10,
+      23
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": false,
+    "precision": "day"
+  },
+  "eventRelation": "departure",
+  "eventScope": "綱文が掲げる日付。天正5年10月23日はゲーム共通の暦表で1577年12月2日。最終年表の中国攻め（旧暦1577年10月16日、1577年11月25日）は綱文より7日早い。京都を発った日。姫路城に入った日は綱文が「尋で」と書くだけなので日付にしない。年表は姫路城を拠点にした日を表すので、差は移動の日数を含みうる。"
+}
