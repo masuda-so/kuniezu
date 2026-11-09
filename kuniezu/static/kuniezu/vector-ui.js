@@ -2,7 +2,7 @@
 /* 編集済みGeoJSONを共通描画器へ接続する。実行時の形状補正はしない。 */
 (function(root){
  const knownKorea=new Set(["busan", "ulsan", "jinju", "daegu", "sangju", "jeonju", "namwon", "suncheon", "chungju", "gongju", "hanseong", "gaeseong", "wonju", "haeju", "pyongyang", "uiju", "hamhung", "jeju", "yosho:奉恩寺（修道山）:127.057:37.51517", "yosho:奉先寺:127.1835518:37.7473504", "yosho:海印寺（蔵経施設）:128.0980383:35.8010416", "yosho:東萊邑城:129.091:35.207", "yosho:子城台・釜山鎮支城:129.06:35.135", "yosho:楽安邑城:127.339:34.908", "yosho:幸州山城:126.825:37.597", "yosho:景福宮:126.977:37.579", "yosho:閑山島水軍陣:128.473:34.787", "yosho:頭龍浦統制営:128.422:34.846", "yosho:蔚山倭城（島山城）:129.335:35.553", "yosho:西生浦倭城:129.328:35.386", "yosho:順天倭城:127.58:34.902", "yosho:泗川倭城（船津里城）:128.039:35.004"]);
- const expected=[['physical/land.geojson','land',new Set(['Polygon','MultiPolygon'])],['physical/water.geojson','water',new Set(['Polygon','MultiPolygon'])],['physical/coastline.geojson','shore',new Set(['LineString','MultiLineString'])],['physical/water-evidence.geojson','evidence',new Set(['Point','Polygon'])]];
+ const expected=[['physical/land.geojson','land',new Set(['Polygon','MultiPolygon'])],['physical/water.geojson','water',new Set(['Polygon','MultiPolygon'])],['physical/coastline.geojson','shore',new Set(['LineString','MultiLineString'])],['physical/water-evidence.geojson','evidence',new Set(['Point','Polygon'])],['control/subcell.geojson','control',new Set(['Polygon','MultiPolygon'])]];
  function create({project,date,onReady=()=>{},onChange=()=>{},assets=root.TKVectorAssets}){
   const source=root.TKVectorMap.create({project}),terrain=root.TKVectorMap.create({project}),evidenceModel=root.TKVectorMap.create({project});let evidenceLabels=[],landRows=[];const labelMemo=new WeakMap(),seaLayers=new WeakMap();let ready=false,manifest=null;
   const day=()=>date();
@@ -23,13 +23,13 @@
    }));
    // Compile into temporary instances first. Main renderer never observes partial files.
    const terrainCollection={type:'FeatureCollection',coordinateReferenceSystem:'OGC:CRS84',features:collections[0].features.filter(f=>f.properties.allowTerrainInference!==false)};
-   const evidence=collections[3];evidenceLabels=evidence.features.filter(f=>f.properties.drawRole==='water-label');evidenceModel.replace([{type:'FeatureCollection',coordinateReferenceSystem:'OGC:CRS84',features:evidence.features.filter(f=>f.properties.drawRole==='inferred-water').map(f=>({...f,properties:{...f.properties,drawRole:'water'}}))}]);landRows=collections[0].features.flatMap(f=>(f.geometry.type==='Polygon'?[f.geometry.coordinates]:f.geometry.coordinates).map(raw=>{const b=pointBounds(raw.flat()),a=project(b[0],b[3]),z=project(b[2],b[1]),p=f.properties,from=p.validFrom||[-999999,1,1],until=p.validUntil||[999999,1,1];return {raw,bounds:[a[0],a[1],z[0],z[1]],from:from[0]*10000+from[1]*100+from[2],until:until[0]*10000+until[1]*100+until[2]};}));terrain.replace([terrainCollection]);source.replace(collections.slice(0,3));ready=true;onReady();onChange();return source;
+   const evidence=collections[3];evidenceLabels=evidence.features.filter(f=>f.properties.drawRole==='water-label');evidenceModel.replace([{type:'FeatureCollection',coordinateReferenceSystem:'OGC:CRS84',features:evidence.features.filter(f=>f.properties.drawRole==='inferred-water').map(f=>({...f,properties:{...f.properties,drawRole:'water'}}))}]);landRows=collections[0].features.flatMap(f=>(f.geometry.type==='Polygon'?[f.geometry.coordinates]:f.geometry.coordinates).map(raw=>{const b=pointBounds(raw.flat()),a=project(b[0],b[3]),z=project(b[2],b[1]),p=f.properties,from=p.validFrom||[-999999,1,1],until=p.validUntil||[999999,1,1];return {raw,bounds:[a[0],a[1],z[0],z[1]],from:from[0]*10000+from[1]*100+from[2],until:until[0]*10000+until[1]*100+until[2]};}));terrain.replace([terrainCollection]);source.replace([...collections.slice(0,3),collections[4]]);ready=true;onReady();onChange();return source;
   })();
   // Keep the promise rejected for boot to show its existing reload UI; prevent early unhandled rejection.
   loaded.catch(()=>{});
   return {loaded,labelVisible,ready:()=>ready,revision:source.revision,epoch:()=>source.epoch(day()),
    land:()=>source.path('land',day()),water:()=>source.path('water',day()),
-   contains:(x,y)=>ready&&source.contains(x,y,day()),bounds:()=>source.bounds('land',day()),
+   contains:(x,y)=>ready&&source.contains(x,y,day()),controlAt:(x,y)=>ready&&source.contains(x,y,day())?source.controlAt(x,y,day()):null,bounds:()=>source.bounds('land',day()),
    drawEvidence(c,view,z){c.save();c.fillStyle='rgba(118,166,186,.28)';evidenceModel.draw(c,'water',day(),view);if(z>1)for(const f of evidenceLabels){const prop=f.properties,now=day(),n=now[0]*10000+now[1]*100+now[2],from=prop.validFrom||[1560,1,1],until=prop.validUntil||[1616,1,1];if(n<from[0]*10000+from[1]*100+from[2]||n>=until[0]*10000+until[1]*100+until[2])continue;const [x,y]=project(...f.geometry.coordinates);c.font=`${10/z}px sans-serif`;c.fillStyle='#315766';c.fillText(prop.label||prop.name||'',x,y);}c.restore();},
    drawWater(c,view){source.draw(c,'water',day(),view);},strokeShore(c,view){source.draw(c,'shore',day(),view);},
    onLand(c,draw){c.save();c.clip(source.path('land',day()),'nonzero');try{draw(c);}finally{c.restore();}},
@@ -40,10 +40,11 @@
     x.globalAlpha=1;x.globalCompositeOperation='destination-out';x.fill(source.path('land',day()),'nonzero');x.restore();
     c.save();c.setTransform(1,0,0,1,0,0);c.drawImage(canvas,0,0);c.restore();
    },
-   paintLand(c,{flat,view,z,dpr,relief,owners,tint}){
+   paintLand(c,{flat,view,z,dpr,relief,owners,controlColor,tint}){
     c.save();c.clip(source.path('land',day()),'nonzero');c.fillStyle=flat?'#fbfaf6':'#ece2c6';c.fill(source.path('land',day()),'nonzero');
     if(!flat&&relief){c.save();c.clip(terrain.path('land',day()),'nonzero');relief(c,view,z,dpr);c.restore();}
-    if(owners)owners(c,view,z,dpr);if(!flat&&tint){c.save();c.globalCompositeOperation='multiply';c.fillStyle=tint;c.fillRect(view[0],view[1],view[2]-view[0],view[3]-view[1]);c.restore();}c.restore();
+    if(owners){c.save();const outside=new root.Path2D();outside.rect(view[0],view[1],view[2]-view[0],view[3]-view[1]);outside.addPath(source.path('control',day(),undefined,key=>!!controlColor?.(key)));c.clip(outside,'evenodd');owners(c,view,z,dpr);c.restore();}
+    if(controlColor)source.paintControl(c,day(),view,controlColor);if(!flat&&tint){c.save();c.globalCompositeOperation='multiply';c.fillStyle=tint;c.fillRect(view[0],view[1],view[2]-view[0],view[3]-view[1]);c.restore();}c.restore();
     c.save();c.fillStyle=flat?'#aac4df':'#a7d1df';source.draw(c,'water',day(),view);c.restore();
    },
    strategyCastle(C){return !!C&&!knownKorea.has(C.id)&&!Object.hasOwn(root.TK.KOREA_NODES||{},C.id)&&C.id!=='jeju';},

@@ -21,7 +21,9 @@ is [docs/README.md](docs/README.md); open requests and ownership are in
 - Land, water and shorelines are rendered as vectors from edited GeoJSON.
   [CODH inputs and preparation](data/inputs/codh-edo/README.md) distinguish
   Edo-period comparison shapes from adopted period corrections. Ownership colours
-  and relief remain image layers.
+  and relief retain image layers. Precise game-control boundaries in
+  `control/subcell.geojson` are shared by colouring and picking; they are kept
+  separate from verified historical landholding claims.
 - Edited GeoJSON will be the directly maintained source of truth. Rendering reads
   the files for the selected period. CODH originals remain available for comparison,
   and normal builds will not overwrite the edited source data.
@@ -56,6 +58,10 @@ is [docs/README.md](docs/README.md); open requests and ownership are in
 - Roads use an [edited GeoJSON source](data/inputs/road-vector-migration/README.md)
   shared by map drawing and displayed marches. Normal builds copy the edited
   geometry without applying corrections again.
+- A return loop in the Tosando modern comparison line has been removed. Old
+  saves rebuild routes while retaining their positions and arrival dates. This
+  does not establish the precise Sengoku-period alignment. See the
+  [adoption and checks](docs/reports/TOSANDO_REFERENCE_LOOP.md).
 - Shows former lakeshores, castles, facilities and people checked against sources,
   marches along historical roads, and battle deployments and movements, each with
   its source.

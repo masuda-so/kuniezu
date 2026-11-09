@@ -352,7 +352,7 @@ function paintBase(c,pad=0){LANDV=landFor(cam.z);rasterLand=null;
  const pat=c.createPattern(seaTile,'repeat');const ps=Math.max(.12,.19/z);pat.setTransform(new DOMMatrix([ps,0,0,ps,0,0])); // 地図に貼りつける（ズームしても模様が地図と一緒に動く）
  c.fillStyle=pat;c.fillRect(x0-50,y0-50,x1-x0+100,y1-y0+100);
  const rasterSig=S?territorySignature()+'|'+flat+'|'+S.player:'none|'+flat;
- if(vector.ready()){vector.paintLand(c,{flat,view:[x0,y0,x1,y1],z,dpr:DPR,relief:(c,v,z,d)=>window.TKRelief?.ready()&&TKRelief.paint(c,v,z,d),owners:S?(c,v,z,d)=>window.TKRaster?.ready()&&TKRaster.paint(c,v,z,d,rasterColor(flat),rasterSig):null,tint:'rgba(168,146,110,.55)'});
+ if(vector.ready()){vector.paintLand(c,{flat,view:[x0,y0,x1,y1],z,dpr:DPR,relief:(c,v,z,d)=>window.TKRelief?.ready()&&TKRelief.paint(c,v,z,d),owners:S?(c,v,z,d)=>window.TKRaster?.ready()&&TKRaster.paint(c,v,z,d,rasterColor(flat),rasterSig):null,controlColor:S?key=>rasterColor(flat)({key,kind:'land'}):null,tint:'rgba(168,146,110,.55)'});
  }else if(window.TKRaster?.ready()){
   // 陸と海・湖・領主の色・陰影はすべて領域画像から作る（docs/architecture/raster-map.md）。
   // 陸だけの層 L に下地の色を塗り、陰影と領主の色を「陸の上だけ」に重ね、最後に海の模様の上へ貼る。
@@ -712,6 +712,7 @@ top_.addEventListener('wheel',e=>{e.preventDefault();beginZoom();const [mx,my]=e
  cam.z*=Math.exp(-e.deltaY*.0015);clampCam();const [nx,ny]=s2w(mx,my);cam.x+=wx-nx;cam.y+=wy-ny;clampCam();anim=null;},{passive:false});
 function hit(sx,sy){if(!S)return null;let best=null,bd=16*16;for(const C of strategyCastles()){const [x,y]=w2s(C.x,C.y);const d=(x-sx)**2+(y-sy)**2;if(d<bd){bd=d;best=C.id;}}
  if(best)return best;const [wx,wy]=s2w(sx,sy);if(vector.ready()&&!vector.contains(wx,wy))return null;
+ const precise=vector.controlAt(wx,wy);if(precise?.startsWith('castle:')){const id=precise.slice(7);if(G.C[id]&&S.castles[id])return id;}
  // 領域は画像（kuniezu/map の領域画像）で引く。100m の段で引けた時はそれを正とし、粗い段しか無い時の「海」は確定せず線のデータで確かめる。
  const d=window.TKRaster?.pickAt?.(wx,wy);if(d&&d.kind==='land'&&(d.factor===1||d.kind!=='sea')){if(!d.key.startsWith('castle:'))return null;const id=d.key.slice(7);return G.C[id]&&S.castles[id]?id:null;}
  bctx.setTransform(1,0,0,1,0,0);if(!bctx.isPointInPath(landFor(Math.max(cam.z,4)),wx,wy))return null;for(const C of strategyCastles())if(TERR[C.id]&&bctx.isPointInPath(TERR[C.id],wx,wy))return C.id;return null;}
