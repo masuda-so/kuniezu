@@ -1,0 +1,26 @@
+{
+  "id": "person:kikkawa-hiroie",
+  "name": "吉川広家",
+  "gameNames": [
+    "吉川広家"
+  ],
+  "authorityIds": [
+    "wikidata:Q1049766"
+  ],
+  "authorityEvidence": {
+    "scope": "person-identity",
+    "checked": "2026-11-09",
+    "wikidataRevision": 2556916363,
+    "snapshot": "data/research/source-notes/appear-authority-batch-1.json",
+    "sourceNote": "data/research/source-notes/appear-authority-batch-1.json",
+    "note": "data/research/source-notes/appear-authority-batch-1.md",
+    "identityChecks": [
+      "山口県の本文が吉川広家を吉川元春の三男とし、兄元長の病死により天正19年（1591）に家督を継いだとする",
+      "Wikidata Q1049766の日本語主名が吉川広家で、P569・P570の年が1561・1625"
+    ],
+    "basis": "人物の同定のみ。原本にある生没日・所在・所領・関係の時期は新たな史実命題へ採用しない。",
+    "sourceIds": [
+      "yamaguchiHiroieIdentity"
+    ]
+  }
+}
