@@ -1,0 +1,26 @@
+{
+  "id": "person:niiro-tadamoto",
+  "name": "新納忠元",
+  "gameNames": [
+    "新納忠元"
+  ],
+  "authorityIds": [
+    "wikidata:Q7034472"
+  ],
+  "authorityEvidence": {
+    "scope": "person-identity",
+    "checked": "2026-11-09",
+    "wikidataRevision": 2521642127,
+    "snapshot": "data/research/source-notes/appear-authority-batch-1.json",
+    "sourceNote": "data/research/source-notes/appear-authority-batch-1.json",
+    "note": "data/research/source-notes/appear-authority-batch-1.md",
+    "identityChecks": [
+      "伊佐市の本文が新納忠元を大永6年（1526）生まれ、永禄12年（1569）から慶長15年に没するまで大口地頭とする",
+      "Wikidata Q7034472の日本語主名が新納忠元で、P569の年が1526"
+    ],
+    "basis": "人物の同定のみ。原本にある生没日・所在・所領・関係の時期は新たな史実命題へ採用しない。",
+    "sourceIds": [
+      "isaTadamotoIdentity"
+    ]
+  }
+}
