@@ -1,0 +1,39 @@
+{
+  "id": "osaka-winter-peace-1614",
+  "entity": "place:osaka-castle",
+  "predicate": "military-event",
+  "value": "本多正純と阿茶局が再び常高院と会い、秀頼が家康の提案に同意した。大坂城は本丸だけを残して二の丸・三の丸を壊し、織田有楽・大野治長から人質を出し、家康から城中の将士に異議のない旨の誓紙を出すことになった。",
+  "validYears": [
+    1614,
+    1614
+  ],
+  "datePrecision": "day",
+  "source": "hiDainihonshiryoKobun",
+  "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+  "locator": "綱文：和暦 慶長19年12月19日 第1条（区分 大日本史料、第12編之17（データベースの表示値）、15頁）",
+  "gameBindings": [
+    "TK.HIST:大坂冬の陣の和睦"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-09",
+  "uncertainty": "綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。",
+  "linkedEntities": [
+    "place:osaka-castle",
+    "person:豊臣秀頼",
+    "person:tokugawa-ieyasu"
+  ],
+  "eventTime": {
+    "kind": "dated-event",
+    "date": [
+      1614,
+      12,
+      19
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": false,
+    "precision": "day"
+  },
+  "eventRelation": "military-event",
+  "eventScope": "綱文が掲げる日付。慶長19年12月19日はゲーム共通の暦表で1615年1月18日。最終年表の大坂冬の陣の和睦（1615年1月18日）は一致する。命題は和議の条件に同意した日。二の丸・三の丸の取り壊しの実施には広げない。同じ日付の条（大日本史料 第12編之20、269頁「両軍和議を約する条」）もある。本多正純・阿茶局・常高院は人物の ID が無いので結ばない。"
+}

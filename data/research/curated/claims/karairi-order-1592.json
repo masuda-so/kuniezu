@@ -1,0 +1,37 @@
+{
+  "id": "karairi-order-1592",
+  "entity": "person:toyotomi-hideyoshi",
+  "predicate": "administrative-document",
+  "value": "秀吉が朝鮮の返事を待たずに進撃を命じ、諸将の部署を定め、肥前名護屋に在陣する諸将と水軍のことを定めた。",
+  "validYears": [
+    1592,
+    1592
+  ],
+  "datePrecision": "day",
+  "source": "hiDainihonshiryoKobun",
+  "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+  "locator": "綱文：和暦 文禄元年3月13日 第1条（区分 史料綜覧、編11・冊912（データベースの表示値）、349頁）",
+  "gameBindings": [
+    "TK.HIST:唐入りの号令"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-09",
+  "uncertainty": "綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。",
+  "linkedEntities": [
+    "person:toyotomi-hideyoshi"
+  ],
+  "eventTime": {
+    "kind": "dated-event",
+    "date": [
+      1592,
+      3,
+      13
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": false,
+    "precision": "day"
+  },
+  "eventRelation": "administrative-document",
+  "eventScope": "綱文が掲げる日付。文禄元年3月13日はゲーム共通の暦表で1592年4月24日。最終年表の唐入りの号令（1592年4月10日）は綱文より14日早い。命題は進撃の命令と部署を定めた日。綱文はこの年を改元前も文禄1年と書く。"
+}

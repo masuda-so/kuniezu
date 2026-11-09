@@ -1,0 +1,41 @@
+{
+  "id": "ulsan-relief-1598",
+  "entity": "place:ulsan-wajo",
+  "predicate": "military-event",
+  "value": "明軍が慶尚道の蔚山城の囲みを解いて退いたので、加藤清正・立花親成（宗茂）・吉川広家・黒田長政らが追撃して破った。",
+  "validYears": [
+    1598,
+    1598
+  ],
+  "datePrecision": "day",
+  "source": "hiDainihonshiryoKobun",
+  "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+  "locator": "綱文：和暦 慶長3年1月4日 第1条（区分 史料綜覧、編11・冊913（データベースの表示値）、153頁）",
+  "gameBindings": [
+    "TK.HIST:蔚山城の戦い"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-09",
+  "uncertainty": "綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。",
+  "linkedEntities": [
+    "place:ulsan-wajo",
+    "person:加藤清正",
+    "person:立花宗茂",
+    "person:吉川広家",
+    "person:kuroda-nagamasa"
+  ],
+  "eventTime": {
+    "kind": "dated-event",
+    "date": [
+      1598,
+      1,
+      4
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": false,
+    "precision": "day"
+  },
+  "eventRelation": "military-event",
+  "eventScope": "綱文が掲げる日付。慶長3年1月4日はゲーム共通の暦表で1598年2月9日。最終年表の蔚山城の戦い（1598年1月29日）は綱文より11日早い。命題は囲みが解けて追撃した日。籠城の始まり（慶長2年12月22日の条）と1月1日の猛攻の条には広げない。台帳の蔚山倭城（第 6 便）に結ぶ。"
+}

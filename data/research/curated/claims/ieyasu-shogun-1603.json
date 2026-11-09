@@ -1,0 +1,37 @@
+{
+  "id": "ieyasu-shogun-1603",
+  "entity": "person:tokugawa-ieyasu",
+  "predicate": "central-office",
+  "value": "内大臣の徳川家康が右大臣に任じられ、征夷大将軍に任じられ、源氏長者・淳和奨学両院別当とされ、牛車兵仗を許された。勅使が伏見に遣わされて宣旨が渡された。",
+  "validYears": [
+    1603,
+    1603
+  ],
+  "datePrecision": "day",
+  "source": "hiDainihonshiryoKobun",
+  "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+  "locator": "綱文：和暦 慶長8年2月12日 第1条（区分 大日本史料、第12編之1（データベースの表示値）、1頁）",
+  "gameBindings": [
+    "TK.HIST:江戸幕府"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-09",
+  "uncertainty": "綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。",
+  "linkedEntities": [
+    "person:tokugawa-ieyasu"
+  ],
+  "eventTime": {
+    "kind": "dated-event",
+    "date": [
+      1603,
+      2,
+      12
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": false,
+    "precision": "day"
+  },
+  "eventRelation": "central-office",
+  "eventScope": "綱文が掲げる日付。慶長8年2月12日はゲーム共通の暦表で1603年3月24日。最終年表の江戸幕府（1603年3月24日）は一致する。命題は任官の日で、幕府の成立という評価には広げない。"
+}

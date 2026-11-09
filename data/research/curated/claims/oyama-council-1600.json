@@ -1,0 +1,40 @@
+{
+  "id": "oyama-council-1600",
+  "entity": "place:oyama-shimotsuke",
+  "predicate": "military-event",
+  "value": "徳川家康が下野小山に着き、伏見城の守将の鳥居元忠の急使を受けて諸将を集め、去就を問うた。黒田長政・福島正則らの諸将が誓書を出し、家康は結城秀康を会津口の将とした。",
+  "validYears": [
+    1600,
+    1600
+  ],
+  "datePrecision": "day",
+  "source": "hiDainihonshiryoKobun",
+  "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+  "locator": "綱文：和暦 慶長5年7月24日 第2条（区分 史料綜覧、編11・冊913（データベースの表示値）、236頁）",
+  "gameBindings": [
+    "TK.HIST:小山評定"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-09",
+  "uncertainty": "綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。",
+  "linkedEntities": [
+    "place:oyama-shimotsuke",
+    "person:tokugawa-ieyasu",
+    "person:kuroda-nagamasa",
+    "person:fukushima-masanori"
+  ],
+  "eventTime": {
+    "kind": "dated-event",
+    "date": [
+      1600,
+      7,
+      24
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": false,
+    "precision": "day"
+  },
+  "eventRelation": "military-event",
+  "eventScope": "綱文が掲げる日付。慶長5年7月24日はゲーム共通の暦表で1600年9月1日。最終年表の小山評定（1600年9月2日）は綱文より1日遅い。正則らの西上は「尋で」なので日付にしない。鳥居元忠は急使を出した者として名が出るだけなので結ばない。結城秀康は人物の ID が無いので結ばない。"
+}
