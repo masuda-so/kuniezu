@@ -10,7 +10,8 @@
    if(collection.crs||collection.coordinateReferenceSystem&&collection.coordinateReferenceSystem!=='OGC:CRS84')throw Error('Expected OGC:CRS84');
    const result=[];
    for(const f of collection.features){
-    const p=f.properties||{},role=p.drawRole;if(!['land','water','shore'].includes(role))continue;
+    const p=f.properties||{},role=p.drawRole;if(!['land','water','shore','control'].includes(role))continue;
+    if(role==='control'&&(typeof p.key!=='string'||!p.key))throw Error('Expected control key');
     const g=f.geometry;if(!g)continue;
     if(!['Polygon','MultiPolygon','LineString','MultiLineString'].includes(g.type))throw Error('Unsupported map geometry');
     if(role!=='shore'&&!g.type.includes('Polygon'))throw Error('Expected surface geometry');
@@ -23,7 +24,7 @@
     if(!Number.isFinite(x0+y0+x1+y1))throw Error('Empty map geometry');
     const from=p.validFrom==null?-Infinity:day(p.validFrom),until=p.validUntil==null?Infinity:day(p.validUntil);
     if(!(from<until))throw Error('Invalid map period');
-    result.push({id:f.id??p.id,role,polygons:!!polygons,coordinates:projected,bounds:[x0,y0,x1,y1],from,until,path:null});
+    result.push({id:f.id??p.id,key:p.key,role,polygons:!!polygons,coordinates:projected,bounds:[x0,y0,x1,y1],from,until,path:null});
    }
    return result;
   }
@@ -46,11 +47,14 @@
   const intersects=(a,b)=>a[0]<=b[2]&&a[2]>=b[0]&&a[1]<=b[3]&&a[3]>=b[1];
   function selected(role,date,view){date=day(date);return rows.filter(row=>row.role===role&&active(row,date)&&(!view||intersects(row.bounds,view)));}
   function inRing(x,y,ring){let inside=false;for(let i=0,j=ring.length-1;i<ring.length;j=i++){const a=ring[i],b=ring[j];if((a[1]>y)!==(b[1]>y)&&x<(b[0]-a[0])*(y-a[1])/(b[1]-a[1])+a[0])inside=!inside;}return inside;}
+  const containsRow=(row,x,y)=>row.coordinates.some(poly=>inRing(x,y,poly[0])&&!poly.slice(1).some(ring=>inRing(x,y,ring)));
   return {
    replace(collections){const next=collections.flatMap(compile);rows=next;periods=[...new Set(rows.flatMap(row=>[row.from,row.until]).filter(Number.isFinite))].sort((a,b)=>a-b);wholePaths.clear();revision++;for(const f of listeners)f();return next.length;},
    draw(context,role,date,view){const found=selected(role,date,view);for(const row of found){if(role==='shore')context.stroke(path(row));else context.fill(path(row),'nonzero');}return found.length;},
-   path(role,date,view){date=mapDay(date);const key=role+':'+epoch(date);if(!view&&wholePaths.has(key))return wholePaths.get(key);const all=new Path();for(const row of selected(role,date,view))all.addPath(path(row));if(!view){wholePaths.set(key,all);if(wholePaths.size>6)wholePaths.delete(wholePaths.keys().next().value);}return all;},
-   contains(x,y,date){return selected('land',date,[x,y,x,y]).some(row=>row.coordinates.some(poly=>inRing(x,y,poly[0])&&!poly.slice(1).some(ring=>inRing(x,y,ring))));},
+   path(role,date,view,keyFilter){date=mapDay(date);const key=role+':'+epoch(date);if(!view&&!keyFilter&&wholePaths.has(key))return wholePaths.get(key);const all=new Path();for(const row of selected(role,date,view))if(!keyFilter||keyFilter(row.key))all.addPath(path(row));if(!view&&!keyFilter){wholePaths.set(key,all);if(wholePaths.size>6)wholePaths.delete(wholePaths.keys().next().value);}return all;},
+   contains(x,y,date){return selected('land',date,[x,y,x,y]).some(row=>containsRow(row,x,y));},
+   controlAt(x,y,date){return selected('control',date,[x,y,x,y]).findLast(row=>containsRow(row,x,y))?.key||null;},
+   paintControl(context,date,view,color){let count=0;for(const row of selected('control',date,view)){const rgba=color(row.key);if(!rgba)continue;context.fillStyle=`rgba(${rgba.slice(0,3).join(',')},${rgba[3]/255})`;context.fill(path(row),'nonzero');count++;}return count;},
    bounds(role,date){const found=selected(role,date);return found.length?[Math.min(...found.map(r=>r.bounds[0])),Math.min(...found.map(r=>r.bounds[1])),Math.max(...found.map(r=>r.bounds[2])),Math.max(...found.map(r=>r.bounds[3]))]:null;},
    epoch:date=>epoch(mapDay(date)),revision:()=>revision,onChange(fn){listeners.add(fn);return ()=>listeners.delete(fn);},
    stats:()=>({features:rows.length,paths:rows.filter(row=>row.path).length,revision})
