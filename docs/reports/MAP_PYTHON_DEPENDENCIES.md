@@ -20,5 +20,6 @@
 
 - `uv sync --locked --offline --group map` が通り、`uv run --group map python` で NumPy 2.5.4・Pillow 13.0.0・cffi 2.1.1 を読み込めた。
 - 速い経路が組み立てられ、乱数の行（Average・Paeth、2〜4,097 バイト）で参照の実装と値が全て同じ。4,097 バイトの行で、速い経路は約 0.02 ms、参照の実装は約 2〜2.5 ms。
+- 回帰の試験（レビュー（Codex）の指摘）：今までの「ネイティブと参照の一致」は、ネイティブが組み立てられなくても通るので、この不具合を捕まえられなかった。`tools/checks/copernicus-height.py` に 2 つを足した。CFFI・setuptools・C コンパイラがある環境では `fast_unfilter()` が組み立てに成功すること、組み立てに失敗しても参照の実装に戻り、今いるフォルダが元に戻ること。修正を外すと前者が「CFFI decoder did not build」で落ちることを確かめた。
 - 既存の検査 `tools/checks/copernicus-height.py`（小さな試験。「ネイティブと参照の復号が同じ」「全ての標準の PNG フィルタ」を含む）が通る。
 - 地図の再生成と重い検査は行っていない。合戦・DB のファイルは触っていない。

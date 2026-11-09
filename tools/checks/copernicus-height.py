@@ -4,7 +4,9 @@ from datetime import date
 import importlib.util
 from itertools import zip_longest
 import json
+import os
 from pathlib import Path
+import shutil
 from tempfile import TemporaryDirectory
 
 import numpy as np
@@ -15,6 +17,34 @@ spec = importlib.util.spec_from_file_location(
     "height_builder", Path(__file__).resolve().parents[1] / "map/build-copernicus-height.py")
 builder = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(builder)
+
+
+def native_decoder_case():
+    """The CFFI decoder builds wherever it can, and a failed build leaves no trace.
+
+    The equality check above also passes when the native decoder is missing, so
+    on its own it could not notice the decoder silently falling back.
+    """
+    usable = all(importlib.util.find_spec(name) for name in ("cffi", "setuptools"))
+    if usable and shutil.which("cc"):
+        builder.fast_unfilter.cache_clear()
+        assert builder.fast_unfilter() is not None, "CFFI decoder did not build"
+    if importlib.util.find_spec("cffi"):
+        import cffi  # noqa: PLC0415
+
+        verify, before = cffi.FFI.verify, os.getcwd()
+
+        def broken(*args, **kwargs):
+            raise RuntimeError("simulated build failure")
+
+        try:
+            cffi.FFI.verify = broken
+            builder.fast_unfilter.cache_clear()
+            assert builder.fast_unfilter() is None, "a failed build must fall back"
+            assert os.getcwd() == before, "a failed build must restore the folder"
+        finally:
+            cffi.FFI.verify = verify
+            builder.fast_unfilter.cache_clear()
 
 
 def expect_failure(call, error):
@@ -152,6 +182,7 @@ def fixtures():
                     np.testing.assert_array_equal(np.stack(list(builder.read_master_rows(filtered, 71, 17))), small)
                 finally:
                     builder.fast_unfilter = fast
+        native_decoder_case()
         # The previous directory/manifest.json convention remains readable.
         old_directory = root / "old-directory"
         old_directory.mkdir()
@@ -164,7 +195,9 @@ def fixtures():
             "one-degree boundary", "legacy full pixel equality", "master-derived factors 1/4/8",
             "partial outer tile", "existing output preserved", "projection mismatch",
             "overflow rollback", "PNG CRC rollback", "multiple IDAT chunks", "all standard PNG filters",
-            "native and reference decoder equality", "PNG sidecar and legacy directory inputs"]}
+            "native and reference decoder equality", "native decoder builds when available",
+            "failed native build falls back and restores the folder",
+            "PNG sidecar and legacy directory inputs"]}
 
 
 def verify_real(master, grid_file, inputs):
