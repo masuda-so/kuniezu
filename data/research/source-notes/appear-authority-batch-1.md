@@ -1,6 +1,6 @@
-# 年表の登場人物 9 名の外部典拠照合（第 1 便）
+# 年表の登場人物 12 名の外部典拠照合（第 1 便）
 
-2026-11-09。`appear-person-authority-candidates.json` で候補が 1 人に絞れた 93 人のうち、公的な出典で姓名以外の 2 項目を確かめられた 9 人を同定した。ゲームの生没日・登場日・所在と、確認済み史実命題は変更しない。
+2026-11-09。`appear-person-authority-candidates.json` で候補が 1 人に絞れた 93 人のうち、公的な出典で姓名以外の 2 項目を確かめられた 12 人を同定した。ゲームの生没日・登場日・所在と、確認済み史実命題は変更しない。
 
 | 人物 | 固定改訂 | 姓名以外の照合 | 公的出典・箇所 |
 |---|---|---|---|
@@ -13,6 +13,9 @@
 | 直江兼続 | [Q1348611・2548970624](https://www.wikidata.org/w/index.php?title=Q1348611&oldid=2548970624) | 没年 1619（元和5年）／享年 60（数え。生年 1560 と合う） | [米沢市・直江兼続夫妻の墓](https://www.city.yonezawa.yamagata.jp/soshiki/18/2/5/5/1591.html)：「兼続の墓と戒名の謎」 |
 | 伊達成実 | [Q1038673・2521637397](https://www.wikidata.org/w/index.php?title=Q1038673&oldid=2521637397) | 没年 1646／亘理の霊屋 | [宮城県・伊達成実霊屋](https://www.pref.miyagi.jp/soshiki/bunkazai/21date-sigezane.html)：解説の段落 |
 | 別所長治 | [Q837435・2549583573](https://www.wikidata.org/w/index.php?title=Q837435&oldid=2549583573) | 没年 1580／三木城主・信長の「長」の字 | [三木市・三木合戦とは](https://www.city.miki.lg.jp/soshiki/33/91671.html)：別所長治の段落と年表 |
+| 京極高次 | [Q587980・2566307333](https://www.wikidata.org/w/index.php?title=Q587980&oldid=2566307333) | 生年 1563（伝え）／父 京極高吉 | [米原市・京極高次](https://www.city.maibara.lg.jp/history/ijin/sengoku/7753.html)：高吉の嫡男高次の段落 |
+| 森長可 | [Q1071391・2453491158](https://www.wikidata.org/w/index.php?title=Q1071391&oldid=2453491158) | 没年 1584／27才（数え。生年 1558 と合う） | [可児市・森 武蔵の首](https://www.city.kani.lg.jp/5682.htm)：本文冒頭 |
+| 吉川広家 | [Q1049766・2556916363](https://www.wikidata.org/w/index.php?title=Q1049766&oldid=2556916363) | 父 吉川元春の三男／兄 元長の跡を継ぐ | [山口県・岩国藩主吉川家墓所](https://bunkazai.pref.yamaguchi.lg.jp/bunkazai/summary.asp?mid=110060&pid=gs_ch)：「岩国吉川家の始祖となる広家は」の段落 |
 
 ## 同定の範囲と留保
 
@@ -23,4 +26,5 @@
 - 大久保忠世の公的なページ（小田原市）は、HTML に第三者の地図の埋め込みキーが含まれるため、原本を保存せず、URL と該当箇所だけを記録した。
 - 直江兼続は、元和5年の年末が西暦1620年に入るので、Wikidata の没年 1619・1620 の両方を残し、生年は享年60の数えと矛盾しないことだけを見た。伊達成実・別所長治は、生年が出典に無いので、没年と居所・名乗りで同定した。
 - 大谷吉継は、福井県文書館の人物ページが自動の取得を拒んだ（403）ので、この便では採用しなかった。
+- 京極高次の生年は米原市が伝えとして書くので、父との関係と合わせて同定した。吉川広家は第 1 便の吉川元長の弟にあたる。毛利秀元は出典のページ（山口県のメールマガジン）に接続できなかったので、この便では採用しなかった。
 - 原本は `appear-authority-batch-1-raw/` に、Wikidata の JSON（CC0）と公的なページの HTML（gzip）を保存した。

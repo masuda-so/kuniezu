@@ -1,6 +1,6 @@
 {
   "checked": "2026-11-09",
-  "scope": "年表の登場人物9名の人物同定のみ。生没・所在の命題なし。候補は appear-person-authority-candidates.json。",
+  "scope": "年表の登場人物12名の人物同定のみ。生没・所在の命題なし。候補は appear-person-authority-candidates.json。",
   "rawLicense": {
     "name": "CC0 1.0",
     "url": "https://www.wikidata.org/wiki/Wikidata:Licensing",
@@ -353,6 +353,123 @@
       "identitySourceUrl": "https://www.city.miki.lg.jp/soshiki/33/91671.html",
       "identitySourceLocator": "別所長治の段落と年表の天正8年の行",
       "reservation": "生年は三木市の本文に無い。没年と三木城主・名乗りの由来で同定した。三木合戦の日付は新たな命題にしない。"
+    },
+    {
+      "name": "京極高次",
+      "japaneseLabel": "京極高次",
+      "wikidataId": "Q587980",
+      "wikidataRevision": 2566307333,
+      "wikidataJapaneseLabel": "京極高次",
+      "entityDataUrl": "https://www.wikidata.org/wiki/Special:EntityData/Q587980.json",
+      "revisionUrl": "https://www.wikidata.org/w/index.php?title=Q587980&oldid=2566307333",
+      "rawEntityDataSnapshot": "data/research/source-notes/appear-authority-batch-1-raw/Q587980.json",
+      "rawSha256": "4862b54207a037e54c0598f72b695a22e43703f7a75db899af50948a9d9c2e6f",
+      "identityChecks": [
+        "米原市の本文が京極高次を京極高吉の嫡男とし、永禄6年（1563年）に小谷城京極丸で生まれたとされるとする",
+        "Wikidata Q587980の日本語主名が京極高次で、P569の年が1563"
+      ],
+      "adoptedNames": [
+        "京極高次"
+      ],
+      "scope": "person-identity-only; no historical dates or locations adopted",
+      "nameEvidence": [
+        {
+          "name": "京極高次",
+          "supports": [
+            "wikidata-ja-label-or-alias",
+            "public-source"
+          ]
+        }
+      ],
+      "publicOriginal": {
+        "path": "data/research/source-notes/appear-authority-batch-1-raw/takatsugu-maibara.html.gz",
+        "compression": "gzip",
+        "uncompressedSha256": "130328251e7509de94026e926020b9420a6905af75afcd35196b7db345c337d2"
+      },
+      "identitySourceIds": [
+        "maibaraTakatsuguIdentity"
+      ],
+      "identitySourceUrl": "https://www.city.maibara.lg.jp/history/ijin/sengoku/7753.html",
+      "identitySourceLocator": "高吉の嫡男高次の段落",
+      "reservation": "米原市は生年を「とされています」と伝承として書く。没年は本文に無いので比べていない。"
+    },
+    {
+      "name": "森長可",
+      "japaneseLabel": "森長可",
+      "wikidataId": "Q1071391",
+      "wikidataRevision": 2453491158,
+      "wikidataJapaneseLabel": "森長可",
+      "entityDataUrl": "https://www.wikidata.org/wiki/Special:EntityData/Q1071391.json",
+      "revisionUrl": "https://www.wikidata.org/w/index.php?title=Q1071391&oldid=2453491158",
+      "rawEntityDataSnapshot": "data/research/source-notes/appear-authority-batch-1-raw/Q1071391.json",
+      "rawSha256": "26055d88095906d2e678d20edfecd6c21be6875a25d2253df4a0cc558b8c146f",
+      "identityChecks": [
+        "可児市の本文が兼山城主森武蔵（長可）を、小牧・長久手の戦いで天正十二年（1584年）四月九日に27才で果てたとする",
+        "Wikidata Q1071391の日本語主名が森長可で、P570の年が1584、P569の年が1558（27才の数えと合う）"
+      ],
+      "adoptedNames": [
+        "森長可"
+      ],
+      "scope": "person-identity-only; no historical dates or locations adopted",
+      "nameEvidence": [
+        {
+          "name": "森長可",
+          "supports": [
+            "wikidata-ja-label-or-alias",
+            "public-source"
+          ]
+        }
+      ],
+      "publicOriginal": {
+        "path": "data/research/source-notes/appear-authority-batch-1-raw/nagayoshi-kani.html.gz",
+        "compression": "gzip",
+        "uncompressedSha256": "15317c9ca6ce1f0d0fbf328bbeb8d0f47165a1dfc9e693aa5030ee755c8d95f3"
+      },
+      "identitySourceIds": [
+        "kaniNagayoshiIdentity"
+      ],
+      "identitySourceUrl": "https://www.city.kani.lg.jp/5682.htm",
+      "identitySourceLocator": "本文冒頭の段落",
+      "reservation": "生年は本文に無く、27才の数えから1558年と矛盾しないことだけを見た。首の運搬の伝えは新たな命題にしない。"
+    },
+    {
+      "name": "吉川広家",
+      "japaneseLabel": "吉川広家",
+      "wikidataId": "Q1049766",
+      "wikidataRevision": 2556916363,
+      "wikidataJapaneseLabel": "吉川広家",
+      "entityDataUrl": "https://www.wikidata.org/wiki/Special:EntityData/Q1049766.json",
+      "revisionUrl": "https://www.wikidata.org/w/index.php?title=Q1049766&oldid=2556916363",
+      "rawEntityDataSnapshot": "data/research/source-notes/appear-authority-batch-1-raw/Q1049766.json",
+      "rawSha256": "557d4edbdb3d5a74b8d22285a33f1e2e55daeebfa97e44f06ef611e9139fd33b",
+      "identityChecks": [
+        "山口県の本文が吉川広家を吉川元春の三男とし、兄元長の病死により天正19年（1591）に家督を継いだとする",
+        "Wikidata Q1049766の日本語主名が吉川広家で、P569・P570の年が1561・1625"
+      ],
+      "adoptedNames": [
+        "吉川広家"
+      ],
+      "scope": "person-identity-only; no historical dates or locations adopted",
+      "nameEvidence": [
+        {
+          "name": "吉川広家",
+          "supports": [
+            "wikidata-ja-label-or-alias",
+            "public-source"
+          ]
+        }
+      ],
+      "publicOriginal": {
+        "path": "data/research/source-notes/appear-authority-batch-1-raw/hiroie-yamaguchi.html.gz",
+        "compression": "gzip",
+        "uncompressedSha256": "c238ccb88deeffde819d481597e64e84074f90716f0aae49ee0f9dd53442689f"
+      },
+      "identitySourceIds": [
+        "yamaguchiHiroieIdentity"
+      ],
+      "identitySourceUrl": "https://bunkazai.pref.yamaguchi.lg.jp/bunkazai/summary.asp?mid=110060&pid=gs_ch",
+      "identitySourceLocator": "解説の「岩国吉川家の始祖となる広家は」の段落",
+      "reservation": "生没年は本文に無いので比べていない。父・兄との関係と家督の継承で同定した。第 1 便で同定した吉川元長（Q11412944）の弟にあたる。"
     }
   ]
 }
