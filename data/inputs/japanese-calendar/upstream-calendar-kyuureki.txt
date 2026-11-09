@@ -1,0 +1,189 @@
+calendar/kyuureki-*
+~~~~~~~~~~~~~~~~~~~
+
+These files contain descriptions of Kyuureki (旧暦, Old Style Calendar
+of Japan).
+
+* kyuureki-map
+
+Web page:
+<https://wiki.suikawiki.org/n/%E6%97%A7%E6%9A%A6%E3%83%87%E3%83%BC%E3%82%BF%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB>
+
+The |data/calendar/kyuureki-map.txt| file is a date mapping file
+<https://manakai.github.io/spec-datetime/#date-mapping-file> from the
+Gregorian days
+<https://manakai.github.io/spec-datetime/#gregorian-day> serialized as
+Gregorian date strings to the Kyuureki days
+<https://manakai.github.io/spec-datetime/#kyuureki-day> serialized as
+Kyuureki date strings, in the range Kyuureki -0666-01-01 (the first
+day of the Kyuureki year -666 = 667BC) - Kyuureki 2100-01-01 (the
+first day of the Kyuureki year 2101), inclusive.
+
+Revision history:
+<https://wiki.suikawiki.org/n/%E6%97%A7%E6%9A%A6%E3%83%87%E3%83%BC%E3%82%BF%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB#header-section-%E6%94%B9%E8%A8%82%E5%B1%A5%E6%AD%B4>.
+
+Likewise, the |data/calendar/kyuureki-ryuukyuu-map.txt| file is a date
+mapping file from the Gregorian days to the kyuureki days as used in
+Okinawa (Ryuukyuu) area of Japan, where Chinese calendar was used in
+Ryuukyuu Kingdom days.
+
+The first slots of the file are represented as Gregorian date strings
+and the second slots of the file are represented as kyuureki date
+strings.
+
+The entries are sorted in the ascending order.
+
+Various existing mapping tables and convertion tools use different
+mappings (see kyuureki-diff* files).  These tables adopt mappings from
+following sources:
+
+  日本の暦日データベース provided by 国立天文台 of Japan
+  20世紀暦
+  21世紀暦
+  兩千年中西曆轉換 (for Chinese calendar)
+
+The month numbers of year 2033 and 2034 (c.f. 旧暦2033年問題) are
+chosen as recommended as the 閏11月 method by 一般社団法人日本カレンダー
+暦文化振興協会 (暦文協).
+
+* kyuureki-genten
+
+The |data/calendar/kyuureki-genten.json| file contains some data from
+日本暦日原典 (第4版).
+
+The file contains a JSON object with following name/value pairs:
+
+  mapping [object]
+
+    Some of mapping data between Gregorian and kyuureki days from 日本
+    暦日原典.  Note that Julian dates in 日本暦日原典 are converted to
+    proleptic Gregorian date in this object.  Note also that this
+    object only contains a few interesting mapping data.  Names are
+    Gregorian date strings and values are corresponding kyuureki date
+    strings.
+
+  notes [notes-object]
+
+    List of annotations in the table of 日本暦日原典.
+
+* kyuureki-shoki-genten
+
+The |data/calendar/kyuureki-shoki-genten.json| file contains some data
+from 日本書紀暦日原典 (1978).
+
+The file contains a JSON object with following name/value pairs:
+
+  mapping [object]
+
+    Some of mapping data between Gregorian and kyuureki days from 日本
+    書紀暦日原典.  Note also that this object contains only a few
+    mapping data.  Names are Gregorian date strings and values are
+    corresponding kyuureki date strings.
+
+* kyuureki-sources.json
+
+The |data/calendar/kyuureki-sources.json| file contains some data from
+various kyuureki tables and studies.
+
+The file contains a JSON object with following name/value pairs, where
+names identify sources and values are JSON objects containing
+following name/value pair, describing the corresponding sources:
+
+  map [object]
+
+    Some of mapping data between Gregorian and Kyuureki days from the
+    source.  Note also that this object contains only a few mapping
+    data.  Names are kyuureki date strings and values are
+    corresponding Gregorian date strings.
+
+  notes [notes-object]
+
+    List of annotations for the source.
+
+  partial [boolean]
+
+    A [boolean] true value, which represents that the |map| does not
+    contain all dates in the range.
+
+There are following top-level keys, identifying sources:
+
+  c/n/  <https://wiki.suikawiki.org/n/%E8%BE%B2%E6%9A%A6#anchor-/n/>
+  j/n/  <https://wiki.suikawiki.org/n/%E6%97%A7%E6%9A%A6$20368#anchor-/n/>
+  j245-actual "便覧" from <https://wiki.suikawiki.org/n/%E6%97%A7%E6%9A%A6$20368#anchor-245>
+  j245-computed "推算" from <https://wiki.suikawiki.org/n/%E6%97%A7%E6%9A%A6$20368#anchor-245>
+
+* kyuureki-diff*
+
+The |data/calendar/kyuureki-diff.json| file contains differences of
+various existing Kyuureki mapping tables.
+
+The |data/calendar/kyuureki-diff-all.html| and
+|data/calendar/kyuureki-diff-tables.html| files are its HTML table
+visualizations.
+
+See SuikaWiki:旧暦 for more information on data sources.
+
+* Data types
+
+Gregorian date string
+<https://manakai.github.io/spec-datetime/#gregorian-date-string>
+
+Kyuureki date string
+<https://manakai.github.io/spec-datetime/#kyuureki-date-string>.
+
+Type [notes-object] represents a JSON object containing (existence of)
+notes from the relevant source document.  Names are kyuureki date
+strings and values are objects with following name/value pairs:
+
+  has_note [boolean]
+
+    Whether there is some note for the date or not.
+
+  might_be_advanced [boolean]
+
+    進朔の可能性が強いが日本暦日原典では進朔していない。
+
+  misc_note [boolean]
+
+    Any other annotation.
+
+  use_computed_value [boolean]
+
+    議論の余地があるものの、日本暦日原典では原則通りの計算値を採用して
+    いる。
+
+  use_fixed_value [boolean]
+
+    日本暦日原典で計算値でなく修正値を採用している。
+
+  vary_by_algorithm [boolean]
+
+    採用する計算方法により計算値が異なる。
+
+* Sources
+
+三正綜覧, 内務省地理局,
+<http://www.wul.waseda.ac.jp/kotenseki/html/ni05/ni05_02143/index.html>.
+
+日本書紀暦日原典, 內田正男, 1978.
+
+日本暦日原典, 内田正男, 1992 (第4版).
+
+20世紀暦 -- 曜日・干支・九星・旧暦・六曜, 日外アソシエーツ編集部.
+
+21世紀暦 -- 曜日・干支・九星・旧暦・六曜, 日外アソシエーツ編集部.
+
+SuikaWiki:旧暦
+<https://wiki.suikawiki.org/n/%E6%97%A7%E6%9A%A6$20368>.
+
+中央研究院 兩千年中西曆轉換 <http://sinocal.sinica.edu.tw/>.
+
+* License
+
+You are granted a license to use, reproduce and create derivative
+works of these files.
+
+Per CC0 <https://creativecommons.org/publicdomain/zero/1.0/>, to the
+extent possible under law, the author of the JSON files and this
+document has waived all copyright and related or neighboring rights to
+the JSON files and this document.
