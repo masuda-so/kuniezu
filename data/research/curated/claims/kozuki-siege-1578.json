@@ -1,0 +1,41 @@
+{
+  "id": "kozuki-siege-1578",
+  "entity": "place:kozuki-castle",
+  "predicate": "documented-siege-phase",
+  "value": "吉川元春・小早川隆景が播磨に入り、尼子勝久・山中幸盛を上月城に囲んだ。",
+  "validYears": [
+    1578,
+    1578
+  ],
+  "datePrecision": "day",
+  "source": "hiDainihonshiryoKobun",
+  "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+  "locator": "綱文：和暦 天正6年4月18日 第2条（区分 史料綜覧、編10・冊911（データベースの表示値）、174頁）",
+  "gameBindings": [
+    "TK.HIST:毛利方が上月城を包囲"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-09",
+  "uncertainty": "綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。",
+  "linkedEntities": [
+    "place:kozuki-castle",
+    "person:吉川元春",
+    "person:小早川隆景",
+    "person:尼子勝久",
+    "person:山中幸盛"
+  ],
+  "eventTime": {
+    "kind": "dated-event",
+    "date": [
+      1578,
+      4,
+      18
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": false,
+    "precision": "day"
+  },
+  "eventRelation": "documented-siege-phase",
+  "eventScope": "綱文が掲げる日付。天正6年4月18日はゲーム共通の暦表で1578年5月24日。最終年表の毛利方が上月城を包囲（1578年5月24日）は一致する。命題は包囲の始まりとして掲げられた日で、落城の日（別の条）には広げない。"
+}

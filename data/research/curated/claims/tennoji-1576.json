@@ -1,0 +1,39 @@
+{
+  "id": "tennoji-1576",
+  "entity": "place:shitennoji",
+  "predicate": "military-event",
+  "value": "信長が河内若江城から摂津四天王寺に出て、本願寺光佐（顕如）の兵を破り、追って石山城下に至った。",
+  "validYears": [
+    1576,
+    1576
+  ],
+  "datePrecision": "day",
+  "source": "hiDainihonshiryoKobun",
+  "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+  "locator": "綱文：和暦 天正4年5月7日 第2条（区分 史料綜覧、編10・冊911（データベースの表示値）、111頁）",
+  "gameBindings": [
+    "TK.HIST:天王寺の戦い"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-09",
+  "uncertainty": "綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。",
+  "linkedEntities": [
+    "place:shitennoji",
+    "person:oda-nobunaga",
+    "person:本願寺光佐"
+  ],
+  "eventTime": {
+    "kind": "dated-event",
+    "date": [
+      1576,
+      5,
+      7
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": false,
+    "precision": "day"
+  },
+  "eventRelation": "military-event",
+  "eventScope": "綱文が掲げる日付。天正4年5月7日はゲーム共通の暦表で1576年6月3日。最終年表の天王寺の戦い（1576年6月10日）は綱文より7日遅い。5月3日の条（原田直政の敗死と、門徒による四天王寺の焼失・光秀らの攻撃）は別の条で、この命題に含めない。若江城・石山城下は結ばない。"
+}

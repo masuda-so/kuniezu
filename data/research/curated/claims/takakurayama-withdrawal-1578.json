@@ -1,0 +1,38 @@
+{
+  "id": "takakurayama-withdrawal-1578",
+  "entity": "place:takakurayama",
+  "predicate": "military-event",
+  "value": "羽柴秀吉が陣を播磨高倉山から書写山に移した。",
+  "validYears": [
+    1578,
+    1578
+  ],
+  "datePrecision": "day",
+  "source": "hiDainihonshiryoKobun",
+  "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+  "locator": "綱文：和暦 天正6年6月26日 第2条（区分 史料綜覧、編10・冊911（データベースの表示値）、180頁）",
+  "gameBindings": [
+    "TK.HIST:羽柴秀吉が高倉山から撤退"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-09",
+  "uncertainty": "綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。",
+  "linkedEntities": [
+    "place:takakurayama",
+    "person:toyotomi-hideyoshi"
+  ],
+  "eventTime": {
+    "kind": "dated-event",
+    "date": [
+      1578,
+      6,
+      26
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": false,
+    "precision": "day"
+  },
+  "eventRelation": "military-event",
+  "eventScope": "綱文が掲げる日付。天正6年6月26日はゲーム共通の暦表で1578年7月30日。最終年表の羽柴秀吉が高倉山から撤退（1578年7月30日）は一致する。翌日（「明日」）の神吉城の攻撃は同じ条にあるが、日付が違うので含めない。撤退を命じた6月16日の条（信長が秀吉に高倉山の営を撤させる）とは別。書写山は結ばない。"
+}
