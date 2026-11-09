@@ -24,9 +24,9 @@
 | 人物・開始配置 | `historical-register.cjs`、`scenario-openings.cjs` | `march-clock-browser.cjs` |
 | 自治体資料で照合した没日 | `verified-death-dates.cjs`（日付・旧保存の限定移行・二重読込・継承。Offline checksにも含む） | 該当人物の前後日と保存再開を確認 |
 | 領土・分家・外交 | `families-territory.cjs`、`map-history.cjs` | `borders-family-browser.cjs` |
-| 行軍・保存・速度 | `movement-display.cjs`、`movement-clock.cjs`、`movement-save.cjs`、`export-save-clock.cjs`、`logistics-review.cjs` | `march-clock-browser.cjs`、`export-save-clock-browser.cjs` |
+| 行軍・保存・速度 | `movement-display.cjs`、`movement-clock.cjs`、`movement-save.cjs`、`castle-era-position.cjs`、`export-save-clock.cjs`、`logistics-review.cjs` | `march-clock-browser.cjs`、`export-save-clock-browser.cjs` |
 | 全期間の移動 | `march-audit.cjs`、`warp-audit.cjs` | 発見したケースを再現 |
-| 街道の入力と再生成 | `road-vectors.cjs`（`tosando-reference-loop.cjs`を含む）、`road-vector-loading.cjs`、`sanshu-route.cjs`、`road-regeneration.cjs`（Python標準ライブラリ。Django CIの試験にも含む） | `road-vectors-browser.cjs`（両幅・道上行軍・停止再開・破損拒否と再読込）、`sanshu-route-browser.cjs`（両幅と保存版22・23の移行） |
+| 街道の入力と再生成 | `road-vectors.cjs`（`tosando-reference-loop.cjs`・`aizu-reference-loops.cjs`を含む。全319接続と版25→26の途中位置・期限を検査）、`road-vector-loading.cjs`、`sanshu-route.cjs`、`road-regeneration.cjs`（Python標準ライブラリ。Django CIの試験にも含む） | `road-vectors-browser.cjs`（両幅・道上行軍・停止再開・破損拒否と再読込）、`sanshu-route-browser.cjs`（両幅と保存版22・23の移行） |
 | 児島湾の補正マスクのベクター化 | `mask-vector.cjs`（穴・対角接触・単純リング）、`kojima-mask-vectors.cjs`（旧格子対応と737,100セルの逆変換一致。Offline checksにも含む） | —（移行入力のみ。ゲーム表示は変更しない） |
 | 編集済みGeoJSONの配信 | `vector-assets.cjs`（バイト複写・直接編集保持・上書き保護・統合CLI。Offline checksにも含む）、`uv run pytest tests/test_vector_sources.py`（位相・5湖の欠落防止・W09原本/座標系） | 全体地図の切替時に確認 |
 | 街道・河川・地図 | `road-display.cjs`、`battle-rivers.cjs`、`terrain-transition.cjs`、`terrain-cache.cjs`、`map-layer-notifications.cjs`（遅着層の再描画通知）、`raster-map.cjs`（正本 `kuniezu/map` と配信タイルの一致）、`province-edits.cjs`（年代別の差分の負例） | `zoom-regressions.cjs`、`map-layer-notifications-browser.cjs`（停止画面への遅着） |
