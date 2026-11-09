@@ -1,0 +1,29 @@
+{
+  "id": "person:saito-dosan",
+  "name": "斎藤道三",
+  "gameNames": [
+    "斎藤道三",
+    "斎藤利政"
+  ],
+  "authorityIds": [
+    "wikidata:Q1202670",
+    "ndlna:00623391"
+  ],
+  "authorityEvidence": {
+    "scope": "person-identity",
+    "checked": "2026-11-08",
+    "wikidataRevision": 2554504493,
+    "snapshot": "data/research/source-notes/fujitaka-nagamasu-dosan-authority.json",
+    "sourceNote": "data/research/source-notes/fujitaka-nagamasu-dosan-authority.json",
+    "note": "data/research/source-notes/fujitaka-nagamasu-dosan-authority.md",
+    "sourceIds": [
+      "gifuDosanToshimasaIdentity"
+    ],
+    "identityChecks": [
+      "岐阜市の道三節が本人の名乗りとして斎藤利政を記す",
+      "岐阜市が父長井新左衛門尉と本人を区別し、NDL主名道三とWikidata主名道三を対応させる"
+    ],
+    "basis": "道三・利政の名寄せと、父長井新左衛門尉から本人を区別する文脈のみ。生年不詳の説明とNDL出生年の相違は解決せず、生没日・名乗り開始日を採用しない。",
+    "ndlSnapshot": "data/research/source-notes/saito-dosan-ndl-authority.json"
+  }
+}
