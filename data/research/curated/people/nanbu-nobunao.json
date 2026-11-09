@@ -1,0 +1,26 @@
+{
+  "id": "person:nanbu-nobunao",
+  "name": "南部信直",
+  "gameNames": [
+    "南部信直"
+  ],
+  "authorityIds": [
+    "wikidata:Q3137467"
+  ],
+  "authorityEvidence": {
+    "scope": "person-identity",
+    "checked": "2026-11-09",
+    "wikidataRevision": 2378288044,
+    "snapshot": "data/research/source-notes/appear-authority-batch-1.json",
+    "sourceNote": "data/research/source-notes/appear-authority-batch-1.json",
+    "note": "data/research/source-notes/appear-authority-batch-1.md",
+    "identityChecks": [
+      "青森県の本文が南部信直を南部家第26代当主とし、慶長4年（1599）に行年54歳で死去したとする",
+      "Wikidata Q3137467の日本語主名が南部信直で、P570の年が1599、P569の年が1546（行年54の数えと合う）"
+    ],
+    "basis": "人物の同定のみ。原本にある生没日・所在・所領・関係の時期は新たな史実命題へ採用しない。",
+    "sourceIds": [
+      "aomoriNobunaoIdentity"
+    ]
+  }
+}
