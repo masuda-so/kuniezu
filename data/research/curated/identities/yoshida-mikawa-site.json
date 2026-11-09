@@ -1,0 +1,15 @@
+{
+  "id": "identity:yoshida-mikawa-site",
+  "relation": "represented-by",
+  "things": [
+    "place:yoshida-mikawa",
+    "node:yoshida"
+  ],
+  "basis": "ゲームの拠点 node:yoshida は、台帳の場所 place:yoshida-mikawa（吉田城（三河））を地図の上で代表する実装上の拠点。台帳の場所の根拠は命題 yoshida-handover-1564。同じ場所だという史料上の主張ではない。",
+  "source": "hiDainihonshiryoKobun",
+  "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+  "locator": "綱文：和暦 永禄7年6月20日 第2条（区分 史料綜覧、編9・冊910（データベースの表示値）、593頁）",
+  "checked": "2026-11-09",
+  "status": "verified-in-specified-scope",
+  "uncertainty": "代表の関係は実装上の対応で、拠点の座標は史料で確かめた位置ではない。"
+}
