@@ -73,17 +73,13 @@
           ]
         }
       ],
-      "publicOriginal": {
-        "path": "data/research/source-notes/appear-authority-batch-1-raw/okubo-odawara.html.gz",
-        "compression": "gzip",
-        "uncompressedSha256": "31815db723a3ccf1f50d87e09ea7c1729b8dc6e5d15d9987ae9c9d037b19ac2b"
-      },
       "identitySourceIds": [
         "odawaraTadayoIdentity"
       ],
       "identitySourceUrl": "https://www.city.odawara.kanagawa.jp/kanko/corridor/castle/p10005.html",
       "identitySourceLocator": "本文冒頭の段落",
-      "reservation": "小田原市の本文は没年を書かないので、没年は比べていない。城主となった年は同定の比較で、新たな命題にしない。"
+      "reservation": "小田原市の本文は没年を書かないので、没年は比べていない。城主となった年は同定の比較で、新たな命題にしない。",
+      "publicOriginalNotSaved": "小田原市のページの HTML に第三者の地図の埋め込みキーが含まれるため、原本は保存しない（tools/research/source-privacy.cjs の方針）。URL と該当箇所だけを記録する。"
     },
     {
       "name": "吉川元長",
