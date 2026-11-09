@@ -16,7 +16,12 @@ async function get(params) {
  url.search = new URLSearchParams({...params, format: 'json', maxlag: '5'});
  const response = await fetch(url, {headers: UA, signal: AbortSignal.timeout(30000)});
  if (!response.ok) throw Error(`${response.status} ${url}`);
- return {url: url.toString(), body: await response.json()};
+ const body = await response.json();
+ // HTTP 200 でも error を返すことがある。取得の失敗を「候補なし」として保存しない。
+ if (body.error) throw Error(`Wikidata error ${body.error.code}: ${body.error.info} ${url}`);
+ if (params.action === 'wbsearchentities' && !Array.isArray(body.search)) throw Error(`search missing ${url}`);
+ if (params.action === 'wbgetentities' && (typeof body.entities !== 'object' || !body.entities)) throw Error(`entities missing ${url}`);
+ return {url: url.toString(), body};
 }
 
 async function main() {
