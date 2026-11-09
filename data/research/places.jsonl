@@ -10,7 +10,6 @@
 {"id":"place:hayashima-tsurusaki","name":"鶴崎神社（早島）","geometry":null,"geometryStatus":"not-asserted","note":"史料の地名による場所同定。現所在地を戦国期の社殿座標に置き換えない。"}
 {"id":"place:higamine-fort","name":"火ヶ峰砦","aliases":[],"geometry":null,"geometryStatus":"not-asserted","note":"位置に異説がある。今回座標を登録しない。","identityBasis":{"scope":"確認済み命題の対象場所。日時と関係は元命題に保持し、座標は未主張。","claimIds":["takatenjin-six-forts-preparation-years"]}}
 {"id":"place:hikuma-castle","name":"引馬城","aliases":[],"geometry":null,"geometryStatus":"not-asserted","note":"遠江の引馬城（浜松）。綱文の命題の対象の場所。範囲は主張しない。","identityBasis":{"scope":"確認済み命題の対象場所。日時と関係は元命題に保持し、座標は未主張。","claimIds":["hikuma-entry-1568"]}}
-{"id":"place:himeji-castle","name":"姫路城","aliases":[],"geometry":null,"geometryStatus":"not-asserted","note":"播磨の姫路城。ゲームの node:himeji は静的な名前が置塩城で、イベントの時点の対応は未確認なので結ばない。綱文の命題の対象の場所。範囲は主張しない。","identityBasis":{"scope":"確認済み命題の対象場所。日時と関係は元命題に保持し、座標は未主張。","claimIds":["himeji-departure-1577"]}}
 {"id":"place:hiroshima","name":"広島城","geometry":null,"geometryStatus":"not-asserted","note":"名称による場所同定。精密な座標・城域やゲームの管理拠点との同一性は、この登録だけで確定しない。"}
 {"id":"place:hoeryong-castle","name":"会寧城","aliases":[],"geometry":null,"geometryStatus":"not-asserted","note":"綱文の命題の対象の場所。範囲は主張しない。朝鮮の地名は、日本に関わる出来事として記録する（地図の範囲とは別）。","identityBasis":{"scope":"確認済み命題の対象場所。日時と関係は元命題に保持し、座標は未主張。","claimIds":["hoeryong-princes-1592"]}}
 {"id":"place:iino","name":"飯野城","geometry":null,"geometryStatus":"not-asserted","note":"史料の地名による場所同定。精密な城域・布陣や経路の座標はこの所在記録では確定しない。"}
