@@ -1,0 +1,38 @@
+{
+  "id": "miyoshi-iimori-move-1560",
+  "entity": "person:三好長慶",
+  "predicate": "headquarters-move",
+  "value": "三好長慶が河内を鎮め、松永久秀に大和の諸城を攻めさせたのち、この日、長慶は河内飯盛城に入り、弟の義賢に高屋城を守らせた。",
+  "validYears": [
+    1560,
+    1560
+  ],
+  "datePrecision": "day",
+  "source": "hiDainihonshiryoKobun",
+  "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+  "locator": "綱文：和暦 永禄3年11月13日 第1条（区分 史料綜覧、編9・冊910（データベースの表示値）、511頁）",
+  "gameBindings": [
+    "TK.HIST:松永久秀の大和侵攻"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-09",
+  "uncertainty": "綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。",
+  "linkedEntities": [
+    "person:三好長慶",
+    "person:松永久秀"
+  ],
+  "eventTime": {
+    "kind": "dated-event",
+    "date": [
+      1560,
+      11,
+      13
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": false,
+    "precision": "day"
+  },
+  "eventRelation": "headquarters-move",
+  "eventScope": "綱文が掲げる日付。永禄3年11月13日はゲーム共通の暦表で1560年11月30日。綱文の「是日」が掛かるのは長慶の飯盛城入り（と義賢の高屋城の守り）だけで、河内の鎮定と松永久秀への大和攻めの命令はこの日より前だが日付が無い。年表の松永久秀の大和侵攻の日付とは、同じ出来事として比べられない（差は参考）。"
+}
