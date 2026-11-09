@@ -45,7 +45,7 @@ const timer=setTimeout(()=>{chrome.kill();process.exitCode=1;console.error('road
  if(root&&!BASELINE)await call('Fetch.enable',{patterns:[{urlPattern:new globalThis.URL(URL).origin+'/*',requestStage:'Request'}]});
  await view(1400,950);await load();await start();await ev('TKUI.speed=0');
  const init=await ev(`({version:G.S().movementGeometryVersion,roads:G.ROADS.length,canonical:!!window.TKRoadSource?.ready(),legacy:!!TK.MODERN_ROAD_REFERENCE,cleanup:typeof TK.cleanReferenceExcursions,strategy:G.ROADS.filter(r=>window.TKRoadSource?.isStrategyRoad(r.name)).length,shared:G.ROADS.every(r=>!window.TKRoadSource||TK.roadDisplay(r).pts===TKRoadSource.view(r,G.PJ).pts)})`);
- assert.equal(init.version,24);assert.equal(init.roads,85);assert(init.shared);
+ assert.equal(init.version,BASELINE?24:25);assert.equal(init.roads,85);assert(init.shared);
  if(!BASELINE){assert(init.canonical);assert(!init.legacy);assert.equal(init.cleanup,'undefined');assert.equal(init.strategy,74);}
  const requested=events.filter(e=>e.method==='Network.requestWillBeSent').map(e=>new globalThis.URL(e.params.request.url).pathname);
  const counts={manifests:requested.filter(p=>p.endsWith('/map/build/vector/manifest.json')).length,roads:requested.filter(p=>p.endsWith('/physical/roads-reference.geojson')).length,legacy:requested.filter(p=>p.endsWith('/modern-road-reference.js')).length};

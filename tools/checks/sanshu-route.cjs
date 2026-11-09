@@ -18,5 +18,5 @@ const a=nearest(G.PJ(137.6856,35.37308)),b=nearest(G.PJ(137.6316,35.32143));
 const movement=G.visualBetween(view.pts[a.i],view.pts[b.i]);
 assert.ok(movement.length>100,'mountain movement follows detailed street geometry');
 assert.ok(movement.every(p=>view.pts.some(q=>Math.hypot(p[0]-q[0],p[1]-q[1])<1e-6)),'movement and road use the same line');
-assert.equal(G.S().movementGeometryVersion,24);
+assert.equal(G.S().movementGeometryVersion,25);
 console.log('PASS: reviewed 18-place Sanshu corridor, canonical comparison, rejected legacy remains input-only, Takato detour absent, endpoints and modern classification retained');
