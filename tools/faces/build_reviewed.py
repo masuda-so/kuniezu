@@ -57,6 +57,13 @@ def existing_names(static, current):
     return protected
 
 
+def validate_output_name(row):
+    if not row["name"] or any(c in row["name"] for c in "/\\"):
+        invalid("Person name must be a single filename component")
+    if row["output"] != "portraits/reviewed-" + row["name"] + ".jpg":
+        invalid("Reviewed output must use its dedicated person filename")
+
+
 def build(root, manifest):
     data = json.loads(manifest.read_text())
     rows = data["portraits"]
@@ -73,8 +80,7 @@ def build(root, manifest):
         invalid("Reviewed addition would overwrite an existing portrait")
     outputs, entries, cells = {}, {}, []
     for row in rows:
-        if row["output"] != "portraits/reviewed-" + row["name"] + ".jpg":
-            invalid("Reviewed output must use its dedicated person filename")
+        validate_output_name(row)
         target = (static / row["output"]).resolve()
         if not target.is_relative_to((static / "portraits").resolve()):
             invalid("Output must remain in portraits")

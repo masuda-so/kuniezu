@@ -44,6 +44,7 @@ def test_reviewed_portraits_reproduce() -> None:
         "existing-name",
         "existing-output",
         "fallback-output",
+        "name-path",
     ],
 )
 def test_reviewed_portraits_reject_changed_input(tmp_path: Path, case: str) -> None:
@@ -55,6 +56,9 @@ def test_reviewed_portraits_reject_changed_input(tmp_path: Path, case: str) -> N
         rows[0]["crop"] = [0, 0, 5000, 5000]
     elif case == "duplicate-output":
         rows[1]["output"] = rows[0]["output"]
+    elif case == "name-path":
+        rows[0]["name"] = "x/../斎藤義龍"
+        rows[0]["output"] = "portraits/reviewed-x/../斎藤義龍.jpg"
     elif case == "existing-output":
         rows[0]["output"] = "portraits/斎藤義龍.jpg"
     elif case == "fallback-output":
