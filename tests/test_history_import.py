@@ -345,6 +345,9 @@ def test_an_event_known_only_to_a_season_is_still_an_event(inputs):
     # 時刻の無い役職の在任は状態のまま。
     office = Phenomenon.objects.get(key="claim:toyotomi-office-1")
     assert office.mode == Mode.STATE
+    # 年しか分からない死去も、死去そのものは出来事。
+    death = Phenomenon.objects.get(key="claim:lifetime-朝倉景鏡")
+    assert death.mode == Mode.EVENT
 
 
 def test_the_mode_of_a_claim_comes_from_its_predicate_and_its_time():
@@ -353,7 +356,8 @@ def test_the_mode_of_a_claim_comes_from_its_predicate_and_its_time():
     assert claim_mode("death-date", period) == Mode.EVENT
     assert claim_mode("castle-construction", period) == Mode.STATE
     assert claim_mode("central-office", None) == Mode.STATE
-    assert claim_mode("castle-surrender", None) == Mode.STATE
+    assert claim_mode("castle-surrender", None) == Mode.EVENT
+    assert claim_mode("death-year", None) == Mode.EVENT
     assert claim_mode("central-office", {"kind": "dated-event"}) == Mode.EVENT
     assert set(CLAIM_KIND_OF) >= CLAIM_POINT_PREDICATES
 

@@ -166,7 +166,9 @@ CLAIM_EVENT_TIMES = {"dated-event", "year-window", "dated-components"}
 # 出来事（event）にする。期間で書かれた降伏は「冬のあいだ降伏が続いた」のではなく
 # 「冬のいつかに降った」なので、精度は jd_exact・bounds_asserted に残し、あり方は
 # 述語で決める。工事や攻城の段階のように、出典ごとに過程か完成の時点かが変わる述語は
-# ここに入れず、時刻の形式で決める。時刻の無い命題は、述語にかかわらず状態のまま。
+# ここに入れず、時刻の形式で決める。時刻が無くても、死去や誕生そのものは出来事なので、
+# 時点の出来事の述語は時刻の有無にかかわらず出来事にし、
+# 分からなさは validYears の窓に任せる。
 CLAIM_POINT_PREDICATES = frozenset(
     [
         "castle-fall",
@@ -208,7 +210,7 @@ def claim_mode(predicate: str, time: dict | None) -> str:
     kind = (time or {}).get("kind")
     if kind in CLAIM_EVENT_TIMES:
         return Mode.EVENT
-    if time and predicate in CLAIM_POINT_PREDICATES:
+    if predicate in CLAIM_POINT_PREDICATES:
         return Mode.EVENT
     return Mode.STATE
 
