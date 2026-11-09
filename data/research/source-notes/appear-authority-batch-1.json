@@ -1,0 +1,128 @@
+{
+  "checked": "2026-11-09",
+  "scope": "年表の登場人物3名の人物同定のみ。生没・所在の命題なし。候補は appear-person-authority-candidates.json。",
+  "rawLicense": {
+    "name": "CC0 1.0",
+    "url": "https://www.wikidata.org/wiki/Wikidata:Licensing",
+    "scope": "Wikidata JSON only; public institution originals retain their own terms"
+  },
+  "records": [
+    {
+      "name": "新納忠元",
+      "japaneseLabel": "新納忠元",
+      "wikidataId": "Q7034472",
+      "wikidataRevision": 2521642127,
+      "wikidataJapaneseLabel": "新納忠元",
+      "entityDataUrl": "https://www.wikidata.org/wiki/Special:EntityData/Q7034472.json",
+      "revisionUrl": "https://www.wikidata.org/w/index.php?title=Q7034472&oldid=2521642127",
+      "rawEntityDataSnapshot": "data/research/source-notes/appear-authority-batch-1-raw/Q7034472.json",
+      "rawSha256": "3d69c29c2ba325ff5dfee5aacc1e2038774794b65bab820d4711685b0b0cb108",
+      "identityChecks": [
+        "伊佐市の本文が新納忠元を大永6年（1526）生まれ、永禄12年（1569）から慶長15年に没するまで大口地頭とする",
+        "Wikidata Q7034472の日本語主名が新納忠元で、P569の年が1526"
+      ],
+      "adoptedNames": [
+        "新納忠元"
+      ],
+      "scope": "person-identity-only; no historical dates or locations adopted",
+      "nameEvidence": [
+        {
+          "name": "新納忠元",
+          "supports": [
+            "wikidata-ja-label-or-alias",
+            "public-source"
+          ]
+        }
+      ],
+      "publicOriginal": {
+        "path": "data/research/source-notes/appear-authority-batch-1-raw/niiro-isa.html.gz",
+        "compression": "gzip",
+        "uncompressedSha256": "c0a89246e1cf423f19be729d7733410ae948bc075531798becfa200a0896bc61"
+      },
+      "identitySourceIds": [
+        "isaTadamotoIdentity"
+      ],
+      "identitySourceUrl": "https://www.city.isa.kagoshima.jp/residency/kankou/niro_500/",
+      "identitySourceLocator": "「1.新納忠元公と伊佐市」の段落",
+      "reservation": "没年は伊佐市が慶長15年（1610）、Wikidata が1611年とする。慶長15年の年末は西暦1611年に入りうるので、没年は同定の根拠に数えず、生年と大口地頭の役職で同定した。"
+    },
+    {
+      "name": "大久保忠世",
+      "japaneseLabel": "大久保忠世",
+      "wikidataId": "Q869401",
+      "wikidataRevision": 2417722604,
+      "wikidataJapaneseLabel": "大久保忠世",
+      "entityDataUrl": "https://www.wikidata.org/wiki/Special:EntityData/Q869401.json",
+      "revisionUrl": "https://www.wikidata.org/w/index.php?title=Q869401&oldid=2417722604",
+      "rawEntityDataSnapshot": "data/research/source-notes/appear-authority-batch-1-raw/Q869401.json",
+      "rawSha256": "f077f5e5572ddbb2baea009dfc688c10ca255ca0ec46e37a970b845c840aa155",
+      "identityChecks": [
+        "小田原市の本文が大久保忠世を大久保忠員の長男として天文元年（1532）に生まれ、天正18年（1590）に小田原城主となったとする",
+        "Wikidata Q869401の日本語主名が大久保忠世で、P569の年が1532"
+      ],
+      "adoptedNames": [
+        "大久保忠世"
+      ],
+      "scope": "person-identity-only; no historical dates or locations adopted",
+      "nameEvidence": [
+        {
+          "name": "大久保忠世",
+          "supports": [
+            "wikidata-ja-label-or-alias",
+            "public-source"
+          ]
+        }
+      ],
+      "publicOriginal": {
+        "path": "data/research/source-notes/appear-authority-batch-1-raw/okubo-odawara.html.gz",
+        "compression": "gzip",
+        "uncompressedSha256": "31815db723a3ccf1f50d87e09ea7c1729b8dc6e5d15d9987ae9c9d037b19ac2b"
+      },
+      "identitySourceIds": [
+        "odawaraTadayoIdentity"
+      ],
+      "identitySourceUrl": "https://www.city.odawara.kanagawa.jp/kanko/corridor/castle/p10005.html",
+      "identitySourceLocator": "本文冒頭の段落",
+      "reservation": "小田原市の本文は没年を書かないので、没年は比べていない。城主となった年は同定の比較で、新たな命題にしない。"
+    },
+    {
+      "name": "吉川元長",
+      "japaneseLabel": "吉川元長",
+      "wikidataId": "Q11412944",
+      "wikidataRevision": 2336607318,
+      "wikidataJapaneseLabel": "吉川元長",
+      "entityDataUrl": "https://www.wikidata.org/wiki/Special:EntityData/Q11412944.json",
+      "revisionUrl": "https://www.wikidata.org/w/index.php?title=Q11412944&oldid=2336607318",
+      "rawEntityDataSnapshot": "data/research/source-notes/appear-authority-batch-1-raw/Q11412944.json",
+      "rawSha256": "85dd5c863bddd37278412900e852068e4340bb9db25668eab036120e075a9c76",
+      "identityChecks": [
+        "北広島町の本文が吉川元長を吉川広家の兄とし、吉川元春の子の広家が、九州で亡くなった兄元長の跡を継いだとする",
+        "Wikidata Q11412944の日本語主名が吉川元長で、説明が毛利氏の一族、P569・P570の年が1548・1587"
+      ],
+      "adoptedNames": [
+        "吉川元長"
+      ],
+      "scope": "person-identity-only; no historical dates or locations adopted",
+      "nameEvidence": [
+        {
+          "name": "吉川元長",
+          "supports": [
+            "wikidata-ja-label-or-alias",
+            "public-source"
+          ]
+        }
+      ],
+      "publicOriginal": {
+        "path": "data/research/source-notes/appear-authority-batch-1-raw/motonaga-kitahiroshima.html.gz",
+        "compression": "gzip",
+        "uncompressedSha256": "8aa28b39e276fd47542f3d41e781bec523b966a3b4b0bd1f3de51a991f9a249c"
+      },
+      "identitySourceIds": [
+        "kitahiroshimaMotonagaIdentity"
+      ],
+      "identitySourceUrl": "https://www.town.kitahiroshima.lg.jp/site/kominkan/29673.html",
+      "identitySourceLocator": "吉川広家の段落、万徳院跡の段落",
+      "reservation": "北広島町の本文は生没年を書かないので、年は比べていない。兄弟の関係と九州での死去で同定した。"
+    }
+  ]
+}
