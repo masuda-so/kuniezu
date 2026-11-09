@@ -1,0 +1,38 @@
+{
+  "id": "death-date-shibata-katsuie",
+  "entity": "person:shibata-katsuie",
+  "predicate": "death-date",
+  "value": "柴田勝家が越前北庄城で妻の織田氏を手にかけ、城に火を放って自害した。",
+  "validYears": [
+    1583,
+    1583
+  ],
+  "datePrecision": "day",
+  "source": "hiDainihonshiryoKobun",
+  "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+  "locator": "綱文：和暦 天正11年4月24日 第1条（区分 大日本史料、第11編之4、331頁）",
+  "gameBindings": [
+    "TK.DEATH_Y",
+    "TK.HIST:賤ヶ岳の戦い"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-09",
+  "uncertainty": "綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。",
+  "linkedEntities": [
+    "person:shibata-katsuie"
+  ],
+  "eventTime": {
+    "kind": "dated-event",
+    "date": [
+      1583,
+      4,
+      24
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": false,
+    "precision": "day"
+  },
+  "eventRelation": "death-date",
+  "eventScope": "綱文が掲げる北庄城での自害の日付。天正11年4月24日はゲーム共通の暦表で1583年6月14日。最終年表の賤ヶ岳の戦い（1583年6月11日）は合戦と勝家の自害を一つの出来事にまとめており、自害の日としては綱文より3日早い。合戦の日付（同年4月21日の綱文）は補わない。"
+}
