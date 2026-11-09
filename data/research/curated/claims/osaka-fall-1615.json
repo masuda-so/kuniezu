@@ -1,0 +1,40 @@
+{
+  "id": "osaka-fall-1615",
+  "entity": "place:osaka-castle",
+  "predicate": "military-event",
+  "value": "家康・秀忠が大坂へ軍を進め、茶臼山・岡山の付近で戦った。大坂方は敗れ、真田信繁（幸村）らの多くが討死し、大坂城も焼けた。",
+  "validYears": [
+    1615,
+    1615
+  ],
+  "datePrecision": "day",
+  "source": "hiDainihonshiryoKobun",
+  "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+  "locator": "綱文：和暦 元和元年5月7日 第1条（区分 大日本史料、第12編之19（データベースの表示値）、1頁）",
+  "gameBindings": [
+    "TK.HIST:大坂夏の陣"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-09",
+  "uncertainty": "綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。",
+  "linkedEntities": [
+    "place:osaka-castle",
+    "person:tokugawa-ieyasu",
+    "person:徳川秀忠",
+    "person:sanada-nobushige"
+  ],
+  "eventTime": {
+    "kind": "dated-event",
+    "date": [
+      1615,
+      5,
+      7
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": false,
+    "precision": "day"
+  },
+  "eventRelation": "military-event",
+  "eventScope": "綱文が掲げる日付。元和元年5月7日はゲーム共通の暦表で1615年6月3日。最終年表の大坂夏の陣（旧暦1615年5月8日、1615年6月4日）は綱文より1日遅い。合戦と城の炎上の日。秀頼の自害（翌8日、別の命題）と分ける。綱文はこの年を改元前も元和元年と書く。年表の大坂夏の陣は城に node:ishiyama（石山本願寺）を使っており、大坂城とは別の対象（報告のみ）。"
+}

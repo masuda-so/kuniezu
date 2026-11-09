@@ -1,0 +1,38 @@
+{
+  "id": "mori-reduction-1600",
+  "entity": "person:mori-terumoto",
+  "predicate": "territorial-transfer",
+  "value": "徳川家康が毛利輝元の安芸・備後など七か国を削り、周防・長門の二か国を与えた。",
+  "validYears": [
+    1600,
+    1600
+  ],
+  "datePrecision": "day",
+  "source": "hiDainihonshiryoKobun",
+  "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+  "locator": "綱文：和暦 慶長5年10月10日 第1条（区分 史料綜覧、編11・冊913（データベースの表示値）、277頁）",
+  "gameBindings": [
+    "TK.HIST:毛利の減封"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-09",
+  "uncertainty": "綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。",
+  "linkedEntities": [
+    "person:mori-terumoto",
+    "person:tokugawa-ieyasu"
+  ],
+  "eventTime": {
+    "kind": "dated-event",
+    "date": [
+      1600,
+      10,
+      10
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": false,
+    "precision": "day"
+  },
+  "eventRelation": "territorial-transfer",
+  "eventScope": "綱文が掲げる日付。慶長5年10月10日はゲーム共通の暦表で1600年11月15日。最終年表の毛利の減封（旧暦1600年10月10日、1600年11月15日）は一致する。領地の削減と給与の日。輝元の剃髪と秀就の家督の日付には広げない。国の境の輪郭は主張しない。"
+}
