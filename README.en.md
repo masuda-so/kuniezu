@@ -28,6 +28,7 @@ is [docs/README.md](docs/README.md); open requests and ownership are in
   and relief retain image layers. Precise game-control boundaries in
   `control/subcell.geojson` are shared by colouring and picking; they are kept
   separate from verified historical landholding claims.
+- The Ushu route near Yatate Pass and Ishikawa adopts the stored CODH Edo-period comparison line in the edited source. The [adoption report](docs/reports/USHU_VECTOR_REFERENCE.md) distinguishes approximate joins from unresolved Sengoku-period geometry.
 - Edited GeoJSON will be the directly maintained source of truth. Rendering reads
   the files for the selected period. CODH originals remain available for comparison,
   and normal builds will not overwrite the edited source data.
