@@ -793,6 +793,10 @@ def test_a_claim_links_a_water_the_current_catalog_names(inputs):
     assert subject.key == "region:試験の事業域"
     assert event.place is None
     assert not Place.objects.filter(thing=lake).exists()
+    assert lake.records.filter(key="claim:water-link").exists()
+    import_history(inputs)
+    lake = Thing.objects.get(key="water:中海")
+    assert lake.records.filter(key="claim:water-link").count() == 1
 
 
 @pytest.mark.parametrize("key", ["water:中ノ海", "water:存在しない湖"])

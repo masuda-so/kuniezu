@@ -753,7 +753,7 @@ class Importer:
         self.catalog_water.add(key)
         return self.thing(key, ThingKind.WATER, subject, record)
 
-    def linked_water(self, key: str) -> Thing:
+    def linked_water(self, key: str, record: Record) -> Thing:
         """A water body a claim links, which this import's catalog must name.
 
         A water left in an old database or made first by another input does
@@ -764,6 +764,8 @@ class Importer:
         if thing is None or thing.kind != ThingKind.WATER:
             message = f"claim links a water the catalog does not name: {key}"
             raise ValueError(message)
+        # Like any thing a claim names, the water keeps the claim as a record.
+        thing.records.add(record)
         return thing
 
     def load_catalog(self) -> None:
@@ -858,7 +860,7 @@ class Importer:
             subject = self.resolve(row["entity"], record)
             linked = {
                 key: (
-                    self.linked_water(key)
+                    self.linked_water(key, record)
                     if key.startswith("water:")
                     else self.resolve(key, record)
                 )
