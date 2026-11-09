@@ -2,17 +2,17 @@
 
 全体ゴール **active**。大項目の完了は[受入条件](requests.json)と対象別の証拠で判断し、構造検査・資料追加・描画検査だけで史実照合全体の完了にしない。実際のチャットの状態は`get_goal`で確認する。
 
-## 2026-11-09の通常配信までの確認（main `2862fd02`）
+## 2026-11-09の通常配信までの確認（main `0adc3e11`）
 
 以下はこのSHAでの確認記録。後のmain・実行中サーバー・DBの状態は再確認する。登録数や個別の合格を、全対象の史実照合完了へ広げない。
 
 - **街道と保存**：会津の4閉路はPR124、羽州道の江戸期比較線はPR131で反映。羽州道は全319接続中2変更・317不変、端点保持、形状版27。日本の戦略表示74路線と海外文脈11路線を区別する。[会津の通常配信](../../data/verification/codex-main-aizu-delivery/README.md)、[羽州道の通常配信](../../data/verification/codex-main-ushu-delivery/README.md)。旧PR45・55は置換を確認して閉じた。
 - **選択と表示**：PR126の日本の初期勢力・外交採用・速度表示と説明を、通常配信の広狭15固有ケースで確認。[検証](../../data/verification/codex-main-scenario-delivery/README.md)。全756カードの確認とは別で、旧PR53をこの結果だけで閉じない。
 - **タイトル**：PR128を反映。通常配信の1400/375幅・タイトル/説明/一覧/勢力選択の8画面で重なり0、狭幅の説明と一覧は実ホイールで末尾到達。サーバーの古いテンプレートを再起動で解消し、HTTPと実ファイルの100stamp一致も確認。[通常配信の証拠](../../data/verification/codex-main-title-delivery/README.md)。
-- **史実DB**：PR120〜125・127・129・130を含むmainで、確認済み命題232、人物典拠109、所在記録22。期間付き代表関係の型はPR129で追加したが、期間付き入力は0。隔離コピーと通常DBへmigration/取込を行い、整合性・外部キー・同日参加者の限定をSQLで確認。[DB反映](../../data/verification/codex-main232-db/README.md)。型の実装と、各年代の対応関係の照合完了は区別する。
+- **史実DB**：PR120〜125・127・129・130・132を含むmainで、確認済み命題242、人物典拠109、所在記録22。期間付き代表関係の型はPR129で追加したが、期間付き入力は0。隔離コピーと通常DBへmigration/取込を行い、整合性・外部キー・同日参加者の限定をSQLで確認。[232命題時の移行](../../data/verification/codex-main232-db/README.md)・[242命題と場所検索](../../data/verification/codex-main242-db/README.md)。型の実装と、各年代の対応関係の照合完了は区別する。
 - **性能**：一回の通常配信測定で、パン26描画中キャッシュ再利用20・再構築6。CPU標本は画像転写に偏った。[条件と限界](../../data/verification/codex-main-map-performance/README.md)。GPU無効のheadless・視点APIの測定であり、普段のGPU有効時やホイール操作の改善を証明していない。
 
-次の受入は、Claudeの第6便PR132以降の原文照合・DB反映（第6便には羽州道の集約出典の更新漏れの補完を含む）、瞬間の時刻精度と状態の継続期間の分離、GPU有効時の描画確認、既存の古湖岸・城施設人物・全合戦の対象別確認。新規史実登録はClaude、Codexは表示・移動の仕上げと独立レビュー・実画面という配分を維持する。[今回の短報告](../reports/MAIN_DELIVERY_VERIFICATION.md)、[modeと時刻精度の観察](../../data/verification/codex-history-mode-review/README.md)。
+次の受入は、Claudeの第7便以降の原文照合・DB反映（第6便PR132で羽州道の集約出典の更新漏れは補完済み）、瞬間の時刻精度と状態の継続期間の分離、GPU有効時の描画確認、既存の古湖岸・城施設人物・全合戦の対象別確認。新規史実登録はClaude、Codexは表示・移動の仕上げと独立レビュー・実画面という配分を維持する。[今回の短報告](../reports/MAIN_DELIVERY_VERIFICATION.md)、[modeと時刻精度の観察](../../data/verification/codex-history-mode-review/README.md)。
 
 ## 現在有効な方針
 
