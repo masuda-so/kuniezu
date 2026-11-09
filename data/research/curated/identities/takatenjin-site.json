@@ -1,0 +1,15 @@
+{
+  "id": "identity:takatenjin-site",
+  "relation": "same-site",
+  "things": [
+    "place:takatenjin",
+    "site:高天神城"
+  ],
+  "basis": "台帳の場所 place:takatenjin（高天神城）は、命題 takatenjin-six-forts-preparation-years が site:高天神城 で指す城地を台帳に載せたもの（台帳の根拠の命題 takatenjin-six-forts-preparation-years）。同じ出典の同じ城を 2 つの識別子で書いている。",
+  "source": "kakegawa-history-appendix",
+  "sourceUrl": "https://www.city.kakegawa.shizuoka.jp/fs/1/7/6/4/6/9/_/10appendix.pdf",
+  "locator": "資料編1（PDF3頁）、1579・1580年の行",
+  "checked": "2026-11-09",
+  "status": "verified-in-specified-scope",
+  "uncertainty": "同一とみる根拠は、台帳の場所を作った命題そのものがこの識別子を使っていること。城域の範囲や座標は主張しない。"
+}

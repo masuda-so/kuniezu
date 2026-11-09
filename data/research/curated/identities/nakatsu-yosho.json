@@ -1,0 +1,15 @@
+{
+  "id": "identity:nakatsu-yosho",
+  "relation": "represented-by",
+  "things": [
+    "place:nakatsu",
+    "yosho:中津城:131.19:33.61"
+  ],
+  "basis": "ゲームの拠点 yosho:中津城:131.19:33.61（中津城）は、台帳の場所 place:nakatsu を地図の上で代表する実装上の拠点。台帳の場所の根拠は所在の観測 location:hosokawa-nakatsu-1600。同じ場所だという史料上の主張ではない。",
+  "source": "yukuhashiHosokawaNakatsu",
+  "sourceUrl": "https://adeac.jp/yukuhashi-city/texthtml/d100010/mp000000-000010/ht2042101020",
+  "locator": "慶長5年12月26日",
+  "checked": "2026-11-09",
+  "status": "verified-in-specified-scope",
+  "uncertainty": "代表の関係は実装上の対応で、拠点の座標は史料で確かめた位置ではない（同名の拠点から借りた座標を含む）。台帳の場所に出典付きの座標があればそれを優先する。"
+}

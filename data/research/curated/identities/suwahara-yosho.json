@@ -1,0 +1,15 @@
+{
+  "id": "identity:suwahara-yosho",
+  "relation": "represented-by",
+  "things": [
+    "place:suwahara",
+    "yosho:諏訪原城:138.12:34.82"
+  ],
+  "basis": "ゲームの拠点 yosho:諏訪原城:138.12:34.82（諏訪原城）は、台帳の場所 place:suwahara を地図の上で代表する実装上の拠点。台帳の場所の根拠は命題 suwahara-capture-date。同じ場所だという史料上の主張ではない。",
+  "source": "suwaharaChronology",
+  "sourceUrl": "https://www.city.shimada.shizuoka.jp/shimahaku/docs/863749869.html",
+  "locator": "今川氏真の項：今川氏真詠草に基づく旧暦8月24日の説明",
+  "checked": "2026-11-09",
+  "status": "verified-in-specified-scope",
+  "uncertainty": "代表の関係は実装上の対応で、拠点の座標は史料で確かめた位置ではない（同名の拠点から借りた座標を含む）。台帳の場所に出典付きの座標があればそれを優先する。"
+}
