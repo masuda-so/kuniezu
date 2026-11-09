@@ -1,0 +1,26 @@
+{
+  "id": "person:date-shigezane",
+  "name": "伊達成実",
+  "gameNames": [
+    "伊達成実"
+  ],
+  "authorityIds": [
+    "wikidata:Q1038673"
+  ],
+  "authorityEvidence": {
+    "scope": "person-identity",
+    "checked": "2026-11-09",
+    "wikidataRevision": 2521637397,
+    "snapshot": "data/research/source-notes/appear-authority-batch-1.json",
+    "sourceNote": "data/research/source-notes/appear-authority-batch-1.json",
+    "note": "data/research/source-notes/appear-authority-batch-1.md",
+    "identityChecks": [
+      "宮城県の本文が伊達成実を正保3年（1646）に没したとし、亘理町の霊屋に成実の木像を安置するとする",
+      "Wikidata Q1038673の日本語主名が伊達成実で、P570の年が1646、P569の年が1568"
+    ],
+    "basis": "人物の同定のみ。原本にある生没日・所在・所領・関係の時期は新たな史実命題へ採用しない。",
+    "sourceIds": [
+      "miyagiShigezaneIdentity"
+    ]
+  }
+}

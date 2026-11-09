@@ -1,0 +1,38 @@
+{
+  "id": "ieyasu-kanto-grant-1590",
+  "entity": "person:tokugawa-ieyasu",
+  "predicate": "territorial-transfer",
+  "value": "秀吉が相模小田原城に入り、徳川家康の領国の三河・遠江・駿河・甲斐・信濃を収め、北条氏の旧領の関東八国を与えた。",
+  "validYears": [
+    1590,
+    1590
+  ],
+  "datePrecision": "day",
+  "source": "hiDainihonshiryoKobun",
+  "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+  "locator": "綱文：和暦 天正18年7月13日 第1条（区分 史料綜覧、編11・冊912（データベースの表示値）、299頁）",
+  "gameBindings": [
+    "TK.HIST:小田原開城"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-09",
+  "uncertainty": "綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。",
+  "linkedEntities": [
+    "person:tokugawa-ieyasu",
+    "person:toyotomi-hideyoshi"
+  ],
+  "eventTime": {
+    "kind": "dated-event",
+    "date": [
+      1590,
+      7,
+      13
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": false,
+    "precision": "day"
+  },
+  "eventRelation": "territorial-transfer",
+  "eventScope": "綱文が掲げる日付。天正18年7月13日はゲーム共通の暦表で1590年8月12日。最終年表の小田原開城（旧暦1590年7月5日、1590年8月4日）は綱文より8日早い。移封の日。家康の江戸入りの日付や、関東八国の境には広げない。小田原城の受け取り（7月6日、別の命題）とは分ける。"
+}

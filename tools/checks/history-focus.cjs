@@ -4,9 +4,9 @@ const root=path.resolve(__dirname,'../..');
 function prepareRoads(c,read=f=>fs.readFileSync(path.join(root,f),'utf8')){
  if(c.TKRoadSource)c.TKRoadSource.install(JSON.parse(read('kuniezu/map/physical/roads-reference.geojson')));
 }
-function model({skip=[],sourceOverrides={}}={}){const c=vm.createContext({console});c.window=c;const html=fs.readFileSync(path.join(root,'kuniezu/templates/index.html'),'utf8');
+function model({skip=[],sourceOverrides={},canonicalRoads}={}){const c=vm.createContext({console});c.window=c;const html=fs.readFileSync(path.join(root,'kuniezu/templates/index.html'),'utf8');
  for(const file of [...html.matchAll(/<script src="([^"?]+)(?:\?v=[0-9a-f]+)?"/g)].map(m=>m[1])){const src=Object.hasOwn(sourceOverrides,file)?sourceOverrides[file]:fs.readFileSync(path.join(root,'kuniezu/static/kuniezu',file),'utf8');new vm.Script(src,{filename:file});if(!['ui.js','kb.js','bscene.js','terrain-tiles.js',...skip].includes(file))vm.runInContext(src,c,{filename:file});}
- prepareRoads(c);
+ if(canonicalRoads)c.TKRoadSource.install(canonicalRoads);else prepareRoads(c);
  c.G.build();c.G.buildBattleCatalog();return c;
 }
 module.exports={model,prepareRoads};

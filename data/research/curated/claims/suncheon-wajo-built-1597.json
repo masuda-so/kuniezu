@@ -1,0 +1,39 @@
+{
+  "id": "suncheon-wajo-built-1597",
+  "entity": "place:suncheon-wajo",
+  "predicate": "castle-construction",
+  "value": "小西行長が全羅道の順天・倭橋に城を築き、この日に工事が終わった。",
+  "validYears": [
+    1597,
+    1597
+  ],
+  "datePrecision": "day",
+  "source": "hiDainihonshiryoKobun",
+  "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+  "locator": "綱文：和暦 慶長2年12月2日 第2条（区分 史料綜覧、編11・冊913（データベースの表示値）、150頁）",
+  "gameBindings": [
+    "TK.HIST:倭城の築城",
+    "yosho:順天倭城:127.58:34.902"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-09",
+  "uncertainty": "綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。",
+  "linkedEntities": [
+    "place:suncheon-wajo",
+    "person:小西行長"
+  ],
+  "eventTime": {
+    "kind": "dated-event",
+    "date": [
+      1597,
+      12,
+      2
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": false,
+    "precision": "day"
+  },
+  "eventRelation": "castle-construction",
+  "eventScope": "綱文が掲げる日付。慶長2年12月2日はゲーム共通の暦表で1598年1月9日。最終年表の倭城の築城（旧暦1597年11月2日、1597年12月10日）は綱文より30日早い。築城の完成の日。築き始めの日付は補わない。朝鮮の地名は、日本に関わる出来事として記録する（地図の範囲とは別）。"
+}
