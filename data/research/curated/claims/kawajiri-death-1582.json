@@ -1,0 +1,37 @@
+{
+  "id": "kawajiri-death-1582",
+  "entity": "person:河尻秀隆",
+  "predicate": "death-date",
+  "value": "徳川家康が本多信俊を甲斐に遣わして河尻秀隆を助け、上方に向かわせようとしたが、秀隆は疑って信俊を殺し、秀隆も一揆に殺された。",
+  "validYears": [
+    1582,
+    1582
+  ],
+  "datePrecision": "day",
+  "source": "hiDainihonshiryoKobun",
+  "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+  "locator": "綱文：和暦 天正10年6月18日 第1条（区分 大日本史料、第11編之1（データベースの表示値）、641頁）",
+  "gameBindings": [
+    "TK.HIST:河尻秀隆の死"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-09",
+  "uncertainty": "綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。",
+  "linkedEntities": [
+    "person:河尻秀隆"
+  ],
+  "eventTime": {
+    "kind": "dated-event",
+    "date": [
+      1582,
+      6,
+      18
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": false,
+    "precision": "day"
+  },
+  "eventRelation": "death-date",
+  "eventScope": "綱文が掲げる日付。天正10年6月18日はゲーム共通の暦表で1582年7月7日。最終年表の河尻秀隆の死（1582年7月7日）は一致する。命題は秀隆の死去の日。家康の使者の派遣は同じ条の前段で、日付は示さない。本多信俊・一揆は人物の ID が無いので結ばない。"
+}

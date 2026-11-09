@@ -1,0 +1,38 @@
+{
+  "id": "niwa-echizen-1583",
+  "entity": "person:丹羽長秀",
+  "predicate": "territorial-transfer",
+  "value": "羽柴秀吉が惟住（丹羽）長秀の功を賞し、越前と加賀のうち能美・江沼の二郡を与えて、越前北荘城に置いた。",
+  "validYears": [
+    1583,
+    1583
+  ],
+  "datePrecision": "day",
+  "source": "hiDainihonshiryoKobun",
+  "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+  "locator": "綱文：和暦 天正11年4月27日 第1条（区分 大日本史料、第11編之4（データベースの表示値）、405頁）",
+  "gameBindings": [
+    "TK.HIST:賤ヶ岳後の丹羽領拡大"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-09",
+  "uncertainty": "綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。",
+  "linkedEntities": [
+    "person:丹羽長秀",
+    "person:toyotomi-hideyoshi"
+  ],
+  "eventTime": {
+    "kind": "dated-event",
+    "date": [
+      1583,
+      4,
+      27
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": false,
+    "precision": "day"
+  },
+  "eventRelation": "territorial-transfer",
+  "eventScope": "綱文が掲げる日付。天正11年4月27日はゲーム共通の暦表で1583年6月17日。最終年表の賤ヶ岳後の丹羽領拡大（1583年6月14日）は綱文より3日早い。命題は給与の日で、北荘城に入った日ではない。北荘城の場所は結ばない。"
+}

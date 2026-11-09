@@ -1,0 +1,38 @@
+{
+  "id": "ieyasu-sakai-escape-1582",
+  "entity": "person:tokugawa-ieyasu",
+  "predicate": "departure",
+  "value": "和泉堺に遊んでいた徳川家康が京都の変を聞き、間道を経て三河に帰った。同行の穴山梅雪は途中で殺された。",
+  "validYears": [
+    1582,
+    1582
+  ],
+  "datePrecision": "day",
+  "source": "hiDainihonshiryoKobun",
+  "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+  "locator": "綱文：和暦 天正10年6月4日 第2条（区分 大日本史料、第11編之1（データベースの表示値）、102頁）",
+  "gameBindings": [
+    "TK.HIST:伊賀越え"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-09",
+  "uncertainty": "綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。",
+  "linkedEntities": [
+    "person:tokugawa-ieyasu",
+    "place:sakai"
+  ],
+  "eventTime": {
+    "kind": "dated-event",
+    "date": [
+      1582,
+      6,
+      4
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": false,
+    "precision": "day"
+  },
+  "eventRelation": "departure",
+  "eventScope": "綱文が掲げる日付。天正10年6月4日はゲーム共通の暦表で1582年6月23日。最終年表の伊賀越え（1582年6月21日）は綱文より2日早い。命題は堺で変を聞いて帰途についたこととし、間道の道筋と三河に着いた日は補わない。穴山梅雪の死は「途に」と書くだけで、この日の出来事として結ばない。堺の場所は出発の地として結ぶ。"
+}
