@@ -1,0 +1,15 @@
+{
+  "id": "identity:bongseonsa-yosho",
+  "relation": "represented-by",
+  "things": [
+    "place:bongseonsa",
+    "yosho:奉先寺:127.1835518:37.7473504"
+  ],
+  "basis": "ゲームの拠点 yosho:奉先寺:127.1835518:37.7473504（奉先寺）は、台帳の場所 place:bongseonsa を地図の上で代表する実装上の拠点。台帳の場所の根拠は命題 bongseonsa-burned-1592。同じ場所だという史料上の主張ではない。",
+  "source": "krBongseonsa",
+  "sourceUrl": "https://encykorea.aks.ac.kr/Article/E0023921",
+  "locator": "歴史的変遷・壬辰倭乱と翌1593年の重創",
+  "checked": "2026-11-09",
+  "status": "verified-in-specified-scope",
+  "uncertainty": "代表の関係は実装上の対応で、拠点の座標は史料で確かめた位置ではない（同名の拠点から借りた座標を含む）。台帳の場所に出典付きの座標があればそれを優先する。"
+}

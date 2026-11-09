@@ -26,6 +26,7 @@ assert.equal(donut.reduce((n,c)=>n+c.polygons.reduce((a,p)=>a+area(p[0])-p.slice
 console.log('PASS: clipped territories area, duplicate seeds, lake/hole preservation');
 require('node:child_process').execFileSync(process.execPath,[path.join(__dirname,'history-focus.cjs')],{stdio:'inherit'});
 require('node:child_process').execFileSync(process.execPath,[path.join(__dirname,'verified-death-dates.cjs')],{stdio:'inherit'});
+require('node:child_process').execFileSync(process.execPath,[path.join(__dirname,'tensho-peace-date.cjs')],{stdio:'inherit'});
 
 require('./map-layer-notifications.cjs');
 

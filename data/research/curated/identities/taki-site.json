@@ -1,0 +1,15 @@
+{
+  "id": "identity:taki-site",
+  "relation": "same-site",
+  "things": [
+    "place:taki",
+    "site:滝の城"
+  ],
+  "basis": "台帳の場所 place:taki（滝の城）は、命題 taki-abandon・taki-role が site:滝の城 で指す施設を台帳に載せたもの（台帳の根拠の命題 taki-abandon）。同じ出典の同じ施設を 2 つの識別子で書いている。",
+  "source": "takiCastle",
+  "sourceUrl": "https://www.city.tokorozawa.saitama.jp/iitokoro/enjoy/bunkakyoyo/bunkazai/kenshiteibunkazai/bunzai_20100126153048508.html",
+  "locator": "1590年落城・以後廃城",
+  "checked": "2026-11-09",
+  "status": "verified-in-specified-scope",
+  "uncertainty": "同一とみる根拠は、台帳の場所を作った命題そのものがこの識別子を使っていること。施設の範囲や座標は主張しない。"
+}
