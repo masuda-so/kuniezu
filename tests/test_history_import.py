@@ -25,6 +25,7 @@ from kuniezu.history.models import Place
 from kuniezu.history.models import Record
 from kuniezu.history.models import RecordType
 from kuniezu.history.models import RecordVersion
+from kuniezu.history.models import Role
 from kuniezu.history.models import Status
 from kuniezu.history.models import Thing
 from kuniezu.history.models import ThingKey
@@ -749,6 +750,80 @@ def test_dated_water_works_do_not_invent_locations(inputs):
     chojabori = Thing.objects.get(key="place:chojabori")
     assert not Place.objects.filter(thing=chojabori).exists()
     assert not queries.in_box(139, 140, 37, 39).filter(key__startswith=prefix).exists()
+
+
+def add_linked_water_claim(
+    inputs, key, *, entity="region:試験の事業域", ident="water-link"
+):
+    path = inputs / RESEARCH / "claims.jsonl"
+    template = next(
+        row for row in lines(path) if row["id"] == "shiotsugata-reclamation-drainage"
+    )
+    row = {
+        **template,
+        "id": ident,
+        "entity": entity,
+        "linkedEntities": [key],
+    }
+    with path.open("a", encoding="utf-8") as stream:
+        stream.write(json.dumps(row, ensure_ascii=False) + "\n")
+
+
+def drop_catalog_water(inputs, subject):
+    path = inputs / CATALOG
+    kept = [
+        row
+        for row in lines(path)
+        if not (row["kind"] == "water" and row["subject"] == subject)
+    ]
+    path.write_text(
+        "".join(json.dumps(row, ensure_ascii=False) + "\n" for row in kept),
+        encoding="utf-8",
+    )
+
+
+def test_a_claim_links_a_water_the_current_catalog_names(inputs):
+    add_linked_water_claim(inputs, "water:中海")
+    import_history(inputs)
+    lake = Thing.objects.get(key="water:中海")
+    assert lake.kind == ThingKind.WATER
+    assert Thing.objects.filter(kind=ThingKind.WATER, names__name="中海").count() == 1
+    event = Phenomenon.objects.get(key="claim:water-link")
+    assert event.participations.get(thing=lake).role == Role.PARTICIPANT
+    subject = event.participations.get(role=Role.SUBJECT).thing
+    assert subject.key == "region:試験の事業域"
+    assert event.place is None
+    assert not Place.objects.filter(thing=lake).exists()
+    assert lake.records.filter(key="claim:water-link").exists()
+    import_history(inputs)
+    lake = Thing.objects.get(key="water:中海")
+    assert lake.records.filter(key="claim:water-link").count() == 1
+
+
+@pytest.mark.parametrize("key", ["water:中ノ海", "water:存在しない湖"])
+def test_a_linked_water_the_catalog_does_not_name_is_refused(inputs, key):
+    add_linked_water_claim(inputs, key)
+    with pytest.raises(ValueError, match="catalog does not name"):
+        import_history(inputs)
+    assert not Thing.objects.filter(key=key).exists()
+
+
+def test_a_water_another_claim_made_is_not_enough(inputs):
+    # The subject of one claim makes a water body, but the catalog never names it.
+    add_linked_water_claim(inputs, "water:中海", entity="water:幻の潟", ident="maker")
+    add_linked_water_claim(inputs, "water:幻の潟", ident="user")
+    with pytest.raises(ValueError, match="catalog does not name"):
+        import_history(inputs)
+
+
+def test_a_water_left_from_an_earlier_import_is_not_enough(inputs):
+    import_history(inputs)
+    assert Thing.objects.filter(key="water:中海").exists()
+    drop_catalog_water(inputs, "中海")
+    add_linked_water_claim(inputs, "water:中海")
+    with pytest.raises(ValueError, match="catalog does not name"):
+        import_history(inputs)
+    assert not Phenomenon.objects.filter(key="claim:water-link").exists()
 
 
 ARTICLES_1534 = 478

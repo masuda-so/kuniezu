@@ -9,6 +9,18 @@ try{put('a.json',r);assert.equal(loadEvidence({claimDir,sourceDir,baseSources}).
  put('a.json',alone);assert.equal(loadEvidence({claimDir,sourceDir,baseSources}).facts.length,1,'known year does not require invented related places');
  put('a.json',{...alone,datePrecision:'day',validYears:[1600,1600],eventTime:{kind:'dated-event',calendar:'Japanese-lunisolar',precision:'day',date:[1600,9,15],leapMonth:false}});assert.equal(loadEvidence({claimDir,sourceDir,baseSources}).facts.length,1,'known day can have only its primary subject');
  for(const change of [{linkedEntities:undefined},{linkedEntities:['water:unsupported']},{linkedEntities:['place:x','place:x']},{eventRelation:undefined},{eventScope:undefined},{eventTime:{kind:'dated-components',calendar:'CE-year',precision:'year',components:[{year:1728,entities:['place:x']}]}},{eventTime:{kind:'described-period',calendar:'Japanese-era-description',precision:'period',label:'時期を限定できない',indexYears:[1728,1728],boundsAreHistoricalStartEnd:false}}]){put('a.json',{...alone,...change});assert.throws(()=>loadEvidence({claimDir,sourceDir,baseSources}),/年代・対象/);}
+ // 関連の水域は、今の catalog から作ったキーの完全一致だけを受ける。
+ const {catalogWaterKeys}=require('../research/evidence-store.cjs'),catalog=path.join(dir,'catalog.jsonl');
+ fs.writeFileSync(catalog,[{id:'water-a',kind:'water',subject:'中海',context:{}},{id:'site-a',kind:'site',subject:'中海',context:{}}].map(x=>JSON.stringify(x)).join('\n')+'\n');
+ const waters=catalogWaterKeys(catalog);assert.deepEqual([...waters],['water:中海'],'only kind=water rows become water keys');
+ assert.equal(catalogWaterKeys(path.join(dir,'absent.jsonl')).size,0,'a missing catalog yields no keys');
+ const wet={...alone,linkedEntities:['water:中海']};put('a.json',wet);
+ assert.equal(loadEvidence({claimDir,sourceDir,baseSources,knownWaterKeys:waters}).facts.length,1,'a catalogued water key is accepted');
+ assert.throws(()=>loadEvidence({claimDir,sourceDir,baseSources}),/年代・対象/,'water is refused when no catalog keys are given');
+ for(const key of ['water:中ノ海','water:','water:十三湖','lake:中海']){put('a.json',{...alone,linkedEntities:[key]});assert.throws(()=>loadEvidence({claimDir,sourceDir,baseSources,knownWaterKeys:waters}),/年代・対象/,key);}
+ put('a.json',{...alone,linkedEntities:['water:中海','water:中海']});assert.throws(()=>loadEvidence({claimDir,sourceDir,baseSources,knownWaterKeys:waters}),/年代・対象/,'duplicate water');
+ put('a.json',alone);
+ console.log('PASS: linked water accepted only for exact keys of the current catalog; unknown, misspelt, empty, other-prefix and option-less water refused');
  console.log('PASS: explicit subject-only year/day events accepted; missing, duplicate and invalid links and unsupported empty components rejected');
  console.log('PASS: independent author inputs preserved; duplicates, unreviewed claims, missing sources, reversed years and wrong URLs rejected');
 }finally{fs.rmSync(dir,{recursive:true,force:true});}
@@ -169,7 +181,7 @@ const {validateEventTime}=require('../research/evidence-store.cjs');
 const order=JSON.parse(fs.readFileSync(path.join(research,'curated/claims/agata-receipt-order.json')));
 validateEventTime(order);
 for(const eventTime of [{...order.eventTime,date:[1614,12,15]},{...order.eventTime,date:[1613,13,1]},{...order.eventTime,calendar:'CE-year'},{kind:'unsupported'}])assert.throws(()=>validateEventTime({...order,eventTime}));
-for(const r of claims.values())validateEventTime(r);
+const currentWaters=require('../research/evidence-store.cjs').catalogWaterKeys(path.join(root,'docs/work/catalog.jsonl'));for(const r of claims.values())validateEventTime(r,currentWaters);
 const forts=claims.get('takatenjin-six-forts-preparation-years');
 assert.throws(()=>validateEventTime({...forts,eventTime:{...forts.eventTime,components:[{year:1579,entities:['place:not-linked']}]}}));
 const period=claims.get('tonokori-sadowara-outer-castle');
