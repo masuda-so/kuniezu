@@ -1,0 +1,40 @@
+{
+  "id": "konodai-1564",
+  "entity": "place:konodai",
+  "predicate": "military-event",
+  "value": "安房の里見義弘が、北条氏康・氏政父子と下総の国府台で戦って敗れた。",
+  "validYears": [
+    1564,
+    1564
+  ],
+  "datePrecision": "day",
+  "source": "hiDainihonshiryoKobun",
+  "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+  "locator": "綱文：和暦 永禄7年1月8日 第2条（区分 史料綜覧、編9・冊910（データベースの表示値）、582頁）",
+  "gameBindings": [
+    "TK.HIST:第二次国府台合戦"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-09",
+  "uncertainty": "綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。",
+  "linkedEntities": [
+    "place:konodai",
+    "person:里見義弘",
+    "person:hojo-ujiyasu",
+    "person:hojo-ujimasa"
+  ],
+  "eventTime": {
+    "kind": "dated-event",
+    "date": [
+      1564,
+      1,
+      8
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": false,
+    "precision": "day"
+  },
+  "eventRelation": "military-event",
+  "eventScope": "綱文が掲げる日付。永禄7年1月8日はゲーム共通の暦表で1564年2月20日。最終年表の第二次国府台合戦（1564年2月17日）は綱文より3日早い。"
+}

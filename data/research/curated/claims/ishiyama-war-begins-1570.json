@@ -1,0 +1,39 @@
+{
+  "id": "ishiyama-war-begins-1570",
+  "entity": "place:ishiyama",
+  "predicate": "military-event",
+  "value": "本願寺光佐（顕如）が織田信長の攻撃を恐れて三好三人衆と謀を通じて兵を挙げ、諸国の門徒に檄を飛ばして兵を起こさせた。本願寺の門徒が信長の陣を襲った。",
+  "validYears": [
+    1570,
+    1570
+  ],
+  "datePrecision": "day",
+  "source": "hiDainihonshiryoKobun",
+  "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+  "locator": "綱文：和暦 元亀1年9月12日 第1条（区分 大日本史料、第10編之4（データベースの表示値）、856頁）",
+  "gameBindings": [
+    "TK.HIST:石山合戦はじまる"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-09",
+  "uncertainty": "綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。",
+  "linkedEntities": [
+    "place:ishiyama",
+    "person:本願寺光佐",
+    "person:oda-nobunaga"
+  ],
+  "eventTime": {
+    "kind": "dated-event",
+    "date": [
+      1570,
+      9,
+      12
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": false,
+    "precision": "day"
+  },
+  "eventRelation": "military-event",
+  "eventScope": "綱文が掲げる日付。元亀元年9月12日はゲーム共通の暦表で1570年10月11日。最終年表の石山合戦はじまる（1570年10月12日）は綱文より1日遅い。命題は挙兵の日で、石山合戦の全体の期間には広げない。三好三人衆と各地の門徒は人物の ID が無いので結ばない。"
+}

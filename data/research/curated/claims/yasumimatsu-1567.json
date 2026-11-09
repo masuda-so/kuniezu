@@ -1,0 +1,39 @@
+{
+  "id": "yasumimatsu-1567",
+  "entity": "place:yasumimatsu",
+  "predicate": "military-event",
+  "value": "秋月種実が大友義鎮の部将の臼杵鑑速・吉弘鑑理を攻めて破り、義鎮の部将の戸次鑑連が筑前休松で迎え撃って種実を破った。",
+  "validYears": [
+    1567,
+    1567
+  ],
+  "datePrecision": "day",
+  "source": "hiDainihonshiryoKobun",
+  "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+  "locator": "綱文：和暦 永禄10年9月3日 第3条（区分 史料綜覧、編9・冊910（データベースの表示値）、664頁）",
+  "gameBindings": [
+    "TK.HIST:休松の戦い"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-09",
+  "uncertainty": "綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。",
+  "linkedEntities": [
+    "place:yasumimatsu",
+    "person:秋月種実",
+    "person:tachibana-dosetsu"
+  ],
+  "eventTime": {
+    "kind": "dated-event",
+    "date": [
+      1567,
+      9,
+      3
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": false,
+    "precision": "day"
+  },
+  "eventRelation": "military-event",
+  "eventScope": "綱文が掲げる日付。永禄10年9月3日はゲーム共通の暦表で1567年10月5日。最終年表の休松の戦い（1567年9月3日）は綱文より32日早く、年表の日付は綱文の旧暦の月日と同じ数字。臼杵鑑速・吉弘鑑理は人物の ID が無いので結ばない。大友義鎮は部将を出した主君として名が出るだけなので結ばない。"
+}

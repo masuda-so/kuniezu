@@ -1,0 +1,39 @@
+{
+  "id": "kizakibaru-1572",
+  "entity": "place:kizakibaru",
+  "predicate": "military-event",
+  "value": "日向の伊東義祐が島津義久の属城の加久藤を攻め、飯野城の守将の島津忠平（義弘）が救いに出て、伊東の兵と木崎原で戦って破った。",
+  "validYears": [
+    1572,
+    1572
+  ],
+  "datePrecision": "day",
+  "source": "hiDainihonshiryoKobun",
+  "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+  "locator": "綱文：和暦 元亀3年5月4日 第1条（区分 大日本史料、第10編之9（データベースの表示値）、94頁）",
+  "gameBindings": [
+    "TK.HIST:木崎原の戦い"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-09",
+  "uncertainty": "綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。",
+  "linkedEntities": [
+    "place:kizakibaru",
+    "person:shimazu-yoshihiro",
+    "person:伊東義祐"
+  ],
+  "eventTime": {
+    "kind": "dated-event",
+    "date": [
+      1572,
+      5,
+      4
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": false,
+    "precision": "day"
+  },
+  "eventRelation": "military-event",
+  "eventScope": "綱文が掲げる日付。元亀3年5月4日はゲーム共通の暦表で1572年6月14日。最終年表の木崎原の戦い（1572年6月14日）は一致する。島津義久は攻められた城の主として名が出るだけなので結ばない。加久藤・飯野城は結ばない。"
+}

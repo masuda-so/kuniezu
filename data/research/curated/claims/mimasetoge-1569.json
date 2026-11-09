@@ -1,0 +1,39 @@
+{
+  "id": "mimasetoge-1569",
+  "entity": "place:mimasetoge",
+  "predicate": "military-event",
+  "value": "相模に入って小田原城下に放火して退く武田信玄の軍を、北条氏政の兵が追って三増峠で戦った。",
+  "validYears": [
+    1569,
+    1569
+  ],
+  "datePrecision": "day",
+  "source": "hiDainihonshiryoKobun",
+  "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+  "locator": "綱文：和暦 永禄12年10月6日 第1条（区分 大日本史料、第10編之3（データベースの表示値）、261頁）",
+  "gameBindings": [
+    "TK.HIST:三増峠の戦い"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-09",
+  "uncertainty": "綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。",
+  "linkedEntities": [
+    "place:mimasetoge",
+    "person:武田信玄",
+    "person:hojo-ujimasa"
+  ],
+  "eventTime": {
+    "kind": "dated-event",
+    "date": [
+      1569,
+      10,
+      6
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": false,
+    "precision": "day"
+  },
+  "eventRelation": "military-event",
+  "eventScope": "綱文が掲げる日付。永禄12年10月6日はゲーム共通の暦表で1569年11月14日。最終年表の三増峠の戦い（1569年11月14日）は一致する。掲出日は三増峠での戦いに限り、同じ条にある信玄の上野・武蔵の通過、相模への進入、小田原城下への放火（先行する行程）の日付は示さない。小田原城の場所は結ばない。"
+}

@@ -1,0 +1,41 @@
+{
+  "id": "anegawa-1570",
+  "entity": "place:anegawa",
+  "predicate": "military-event",
+  "value": "浅井長政が属城の横山城を救おうと朝倉景健とともに大寄山に陣し、織田信長・徳川家康が長政・景健と姉川で戦って破った。",
+  "validYears": [
+    1570,
+    1570
+  ],
+  "datePrecision": "day",
+  "source": "hiDainihonshiryoKobun",
+  "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+  "locator": "綱文：和暦 元亀1年6月28日 第2条（区分 大日本史料、第10編之4（データベースの表示値）、554頁）",
+  "gameBindings": [
+    "TK.HIST:姉川の戦い"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-09",
+  "uncertainty": "綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。",
+  "linkedEntities": [
+    "place:anegawa",
+    "person:oda-nobunaga",
+    "person:tokugawa-ieyasu",
+    "person:浅井賢政",
+    "person:朝倉景健"
+  ],
+  "eventTime": {
+    "kind": "dated-event",
+    "date": [
+      1570,
+      6,
+      28
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": false,
+    "precision": "day"
+  },
+  "eventRelation": "military-event",
+  "eventScope": "綱文が掲げる日付。元亀元年6月28日はゲーム共通の暦表で1570年7月30日。最終年表の姉川の戦い（1570年7月30日）は一致する。浅井長政は既存の命題の人物 ID（person:浅井賢政）に結ぶ。横山城・大寄山の陣は結ばない。綱文はこの年を改元前も元亀1年と書く。"
+}
