@@ -10,9 +10,9 @@
 - **選択と表示**：PR126の日本の初期勢力・外交採用・速度表示と説明を、通常配信の広狭15固有ケースで確認。[検証](../../data/verification/codex-main-scenario-delivery/README.md)。全756カードの確認とは別で、旧PR53をこの結果だけで閉じない。
 - **タイトル**：PR128を反映。通常配信の1400/375幅・タイトル/説明/一覧/勢力選択の8画面で重なり0、狭幅の説明と一覧は実ホイールで末尾到達。サーバーの古いテンプレートを再起動で解消し、HTTPと実ファイルの100stamp一致も確認。[通常配信の証拠](../../data/verification/codex-main-title-delivery/README.md)。
 - **史実DB**：PR120〜125・127・129・130・132を含むmainで、確認済み命題242、人物典拠109、所在記録22。期間付き代表関係の型はPR129で追加したが、期間付き入力は0。隔離コピーと通常DBへmigration/取込を行い、整合性・外部キー・同日参加者の限定をSQLで確認。[232命題時の移行](../../data/verification/codex-main232-db/README.md)・[242命題と場所検索](../../data/verification/codex-main242-db/README.md)。型の実装と、各年代の対応関係の照合完了は区別する。
-- **性能**：一回の通常配信測定で、パン26描画中キャッシュ再利用20・再構築6。CPU標本は画像転写に偏った。[条件と限界](../../data/verification/codex-main-map-performance/README.md)。GPU無効のheadless・視点APIの測定であり、普段のGPU有効時やホイール操作の改善を証明していない。
+- **性能**：一回の通常配信測定で、パン26描画中キャッシュ再利用20・再構築6。CPU標本は画像転写に偏った。[条件と限界](../../data/verification/codex-main-map-performance/README.md)。GPU無効のheadless・視点APIの測定であり、普段のGPU有効時やホイール操作の改善を証明していない。 [GPU有効・実入力の追加測定](../../data/verification/codex-main-native-map-performance/README.md)では、実縮尺1.3と5を区別し、実ドラッグとホイール往復を確認した。改善率や全中間フレームの無欠落はこの測定から断定しない。高速ズーム時のキャッシュ欠けは別途確認し、PR137で修正・検証中。
 
-次の受入は、Claudeの第7便以降の原文照合・DB反映（第6便PR132で羽州道の集約出典の更新漏れは補完済み）、瞬間の時刻精度と状態の継続期間の分離、GPU有効時の描画確認、既存の古湖岸・城施設人物・全合戦の対象別確認。新規史実登録はClaude、Codexは表示・移動の仕上げと独立レビュー・実画面という配分を維持する。[今回の短報告](../reports/MAIN_DELIVERY_VERIFICATION.md)、[modeと時刻精度の観察](../../data/verification/codex-history-mode-review/README.md)。
+次の受入は、Claudeの第7便以降の原文照合・DB反映（第6便PR132で羽州道の集約出典の更新漏れは補完済み）、瞬間の時刻精度と状態の継続期間の分離、高速ズーム修正後の通常配信確認、既存の古湖岸・城施設人物・全合戦の対象別確認。新規史実登録はClaude、Codexは表示・移動の仕上げと独立レビュー・実画面という配分を維持する。[今回の短報告](../reports/MAIN_DELIVERY_VERIFICATION.md)、[modeと時刻精度の観察](../../data/verification/codex-history-mode-review/README.md)。
 
 ## 現在有効な方針
 
