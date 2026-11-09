@@ -1,0 +1,39 @@
+{
+  "id": "busan-jin-fall-1592",
+  "entity": "place:busan-jin",
+  "predicate": "castle-fall",
+  "value": "小西行長らが朝鮮の釜山鎮城を攻め落とし、守将の僉節制使の鄭揆（綱文の表記）を討った。",
+  "validYears": [
+    1592,
+    1592
+  ],
+  "datePrecision": "day",
+  "source": "hiDainihonshiryoKobun",
+  "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+  "locator": "綱文：和暦 文禄元年4月13日 第1条（区分 史料綜覧、編11・冊912（データベースの表示値）、351頁）",
+  "gameBindings": [
+    "TK.HIST:文禄の役",
+    "node:busan"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-09",
+  "uncertainty": "綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。",
+  "linkedEntities": [
+    "place:busan-jin",
+    "person:小西行長"
+  ],
+  "eventTime": {
+    "kind": "dated-event",
+    "date": [
+      1592,
+      4,
+      13
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": false,
+    "precision": "day"
+  },
+  "eventRelation": "castle-fall",
+  "eventScope": "綱文が掲げる日付。文禄元年4月13日はゲーム共通の暦表で1592年5月24日。最終年表の文禄の役（旧暦1592年4月13日、1592年5月24日）は一致する。釜山鎮城の落城の日。前日の釜山浦への入港・上陸（別の条）や、朝鮮での戦の始まり全体には広げない。綱文はこの年を改元前も文禄1年と書く。綱文は攻め手を「小西行長等」とだけ書くので、名の出ない宗義智とは結ばない。"
+}
