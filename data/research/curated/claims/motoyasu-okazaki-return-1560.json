@@ -1,0 +1,38 @@
+{
+  "id": "motoyasu-okazaki-return-1560",
+  "entity": "person:松平元康",
+  "predicate": "residence-transfer",
+  "value": "尾張大高城の守将の松平元康が、緒川城の水野信元らの勧めにより、本城の三河岡崎城に帰った。",
+  "validYears": [
+    1560,
+    1560
+  ],
+  "datePrecision": "day",
+  "source": "hiDainihonshiryoKobun",
+  "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+  "locator": "綱文：和暦 永禄3年5月23日 第1条（区分 史料綜覧、編9・冊910（データベースの表示値）、498頁）",
+  "gameBindings": [
+    "TK.HIST:松平元康、岡崎に入る"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-09",
+  "uncertainty": "データベースの表示は「三河岡城」で、「岡崎城」は表示の脱字と読んだ（本文は確かめていない）。 綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。",
+  "linkedEntities": [
+    "person:松平元康",
+    "place:okazaki-castle"
+  ],
+  "eventTime": {
+    "kind": "dated-event",
+    "date": [
+      1560,
+      5,
+      23
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": false,
+    "precision": "day"
+  },
+  "eventRelation": "residence-transfer",
+  "eventScope": "綱文が掲げる日付。永禄3年5月23日はゲーム共通の暦表で1560年6月16日。最終年表の松平元康、岡崎に入る（1560年6月16日）は一致する。綱文は「岡城」と表示するが、「其本城三河岡」の後に崎が落ちたデータベースの表示と読み、岡崎城とした。勧めた水野信元は、この日の移りの当事者として結ばない。大高城（出発地）には結ばない。"
+}
