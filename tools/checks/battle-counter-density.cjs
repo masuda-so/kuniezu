@@ -6,8 +6,8 @@ const bodies=h=>[...new Map(h.cv.context.counters.map(b=>[b.id,b])).values()];
 const geo=h=>simple(h.ctrl.unitStates().map(u=>[u.id,u.point,u.renderedPoint,u.status]));
 const inFrame=(u,h)=>u.visible&&u.screenPoint&&u.screenPoint[0]>=0&&u.screenPoint[0]<=h.ctrl.viewport().W&&u.screenPoint[1]>=0&&u.screenPoint[1]<=h.ctrl.viewport().H;
 function sizes(h,width){
- const narrow=width<560,base=narrow?18:28,floor=narrow?14:18;
- for(const b of bodies(h)){assert.ok(b.w>=floor-1e-8&&b.w<=base+1e-8);assert.ok(Math.abs(b.h/b.w-(narrow?13/18:19/28))<1e-8);}
+ const narrow=width<560,base=narrow?16:22,floor=narrow?14:16;
+ for(const b of bodies(h)){assert.ok(b.w>=floor-1e-8&&b.w<=base+1e-8);assert.ok(Math.abs(b.h/b.w-(narrow?11/16:15/22))<1e-8);}
  for(const f of h.cv.context.faces){assert.ok(f.w>=16&&f.w<=(narrow?16:24));assert.equal(f.w%2,0,'portrait radii stay in a bounded cache key set');assert.equal(f.h,f.w);}
  for(const f of h.cv.context.flags)assert.ok(f.k>=(narrow?.55:.7)&&f.k<=(narrow?.55:1));
 }
@@ -18,7 +18,7 @@ function sizes(h,width){
   try{for(let vi=0;vi<Math.max(1,h.views().length);vi++){
    if(h.views().length)h.views()[vi].onclick();
    for(const t of [0,25,50,75,100]){h.ctrl.seek(t);counters(h,TK.BATTLES[title]);sizes(h,width);frames++;count++;
-    for(const b of bodies(h)){if(b.w<(width<560?18:28)-1e-8)reduced++;else fullSize++;}
+    for(const b of bodies(h)){if(b.w<(width<560?16:22)-1e-8)reduced++;else fullSize++;}
    }
   }}finally{h.ctrl.destroy();}
   rows.push({title,width,frames:count});
@@ -35,7 +35,7 @@ function sizes(h,width){
     assert.equal(body.id,matching,'selected body is last');assert.equal(body.w,beforeSizes.get(matching),'selection preserves density size');
     const face=ctx.faces.findLast(f=>f.id===matching),flag=ctx.flags.findLast(f=>f.id===matching),button=choices(h).find(b=>b.dataset.unitId===u.id);
     assert.ok(face||button.children.some(el=>el.tag==='img'&&el.width===28),'selected commander portrait remains on map, annotation or individual record');
-    if(flag){assert.ok(face);assert.equal(face.w,Math.max(16,Math.round((width<560?16:24)*body.w/(width<560?18:28)/2)*2));assert.equal(flag.k,Math.max(width<560?.55:.7,(width<560?.55:1)*body.w/(width<560?18:28)));}
+    if(flag){if(face)assert.equal(face.w,16,'selected name keeps its readable portrait');assert.equal(flag.k,Math.max(width<560?.55:.7,(width<560?.55:1)*body.w/(width<560?16:22)));}
     else if(face)assert.equal(face.w,16,'annotation portraits keep a readable common size');
     assert.equal(new Set(ctx.flags.map(f=>f.id)).size,ctx.flags.length,'a troop does not repeat its map flag');
     const geometry=JSON.stringify({states:h.ctrl.unitStates(),bodies:bodies(h).map(b=>[b.id,b.w,b.h]),boxes:h.ctrl.testBoxes()});
@@ -66,7 +66,7 @@ function sizes(h,width){
   fixture.ctrl.select('b');assert.equal(ctx.counterStrokes.at(-1).alpha,1);assert.equal(ctx.faces.at(-1).alpha,1);assert.equal(ctx.globalAlpha,1);
  }finally{fixture.ctrl.destroy();}
 
- {const focus=h=>{const header=h.stage.querySelector('.atlas-selection').children[0];header.children.find(b=>b.textContent==='この周辺を見る').onclick();};const clamp=(x,a,b)=>Math.max(a,Math.min(b,x));for(const width of [335,940]){const h=await make('関ヶ原の戦い',width);h.ctrl.seek(50);const original=geo(h),time=h.ctrl.t,units=h.ctrl.unitStates().filter(u=>u.visible&&u.screenPoint);h.ctrl.setViewport(6,0,0);h.ctrl.select(units[0].id);focus(h);const a=h.ctrl.viewport();
+ {const focus=h=>{const header=h.stage.querySelector('.atlas-selection').children[0];header.children.find(b=>b.textContent==='この周辺を見る').onclick();};const clamp=(x,a,b)=>Math.max(a,Math.min(b,x));for(const width of [335,940]){const h=await make('関ヶ原の戦い',width);h.ctrl.setViewport(1,0,0);h.ctrl.seek(50);const original=geo(h),time=h.ctrl.t,units=h.ctrl.unitStates().filter(u=>u.visible&&u.screenPoint);h.ctrl.setViewport(6,0,0);h.ctrl.select(units[0].id);focus(h);const a=h.ctrl.viewport();
 const target=units.reduce((best,u)=>Math.hypot(u.screenPoint[0]-units[0].screenPoint[0],u.screenPoint[1]-units[0].screenPoint[1])>Math.hypot(best.screenPoint[0]-units[0].screenPoint[0],best.screenPoint[1]-units[0].screenPoint[1])?u:best,units[0]);h.ctrl.select(target.id);focus(h);const b=h.ctrl.viewport();assert.equal(b.VS,6);assert.ok(Math.hypot(a.VX-b.VX,a.VY-b.VY)>1,'at maximum zoom another unit recenters');assert.equal(h.ctrl.testSelected(),target.id);assert.equal(h.ctrl.t,time);assert.deepEqual(geo(h),original);
 h.resize(width===335?940:335);const v=h.ctrl.viewport(),at=h.ctrl.unitStates().find(u=>u.id===target.id);assert.equal(v.VS,6);assert.equal(h.ctrl.testSelected(),target.id);assert.equal(h.ctrl.t,time);assert.deepEqual(geo(h),original);const base=[target.screenPoint[0]/width*v.W,target.screenPoint[1]/(a.H)*v.H];assert.ok(Math.abs(v.VX-clamp(base[0]*6-v.W/2,0,v.W*5))<1e-7);assert.ok(Math.abs(v.VY-clamp(base[1]*6-v.H/2,0,v.H*5))<1e-7);assert.ok(h.views().some(v=>v.textContent==='選択部隊の周辺'));h.ctrl.destroy();}}
  let estimatedFocusChecks=0;

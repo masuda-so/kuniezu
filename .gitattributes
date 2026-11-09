@@ -6,6 +6,8 @@ kuniezu/map/physical/heightmap.png filter=lfs diff=lfs merge=lfs -text
 data/research/source-notes/otomo-sorin-authority-raw.json -text
 data/research/source-notes/person-alias-three-raw/*.json -text
 
+# 原本の照合に用いるJSONは改行変換を行わない。
+data/inputs/battle-dem-detail/*/river-reference.json -text
 data/research/source-notes/fujitaka-nagamasu-dosan-raw/*.json -text
 
 data/research/source-notes/authority-batch-a-raw/*.json -text

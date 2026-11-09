@@ -61,9 +61,10 @@ is [docs/README.md](docs/README.md); open requests and ownership are in
   its source.
 - Battle markers retain their geographic positions when the viewport or district changes. Co-located units can be selected individually. Crowded markers become smaller; selection keeps that size and highlights the unit in front.
 - Wide battles offer overview and district views. Commander labels have no leader
-  lines; crowded portraits move into nearby name cards. Units whose labels do not
+  lines or framed name cards; portraits appear for the selected unit. Units whose labels do not
   fit remain individually selectable through their counters. Narrow screens use
   a single-row district selector.
+- Sekigahara starts with the main battlefield, with overview and Nangu-area views available. Okehazama starts with the Narumi–Odaka–Okehazama area. Relief shading and fine contours use modern comparison terrain.
 - File exports, save slots and autosaves preserve sub-day time so marching units
   resume at the saved position.
 - Diplomacy is shown as borders only; marches are shown as pieces on roads.
@@ -228,7 +229,7 @@ are squash-merged). Shared working rules
 are in [AGENTS.md](AGENTS.md). PR descriptions and review comments use Japanese by
 default; an explicit request for another language takes precedence.
 
-Battle-map frames are inputs in `data/inputs/battle-atlas-frames.json`. Use
+Battle-map frames are inputs in `data/inputs/battle-atlas-frames.json`. Detailed battle DEM inputs are pinned and retained separately. Legacy regeneration preserves these managed outputs; see [inputs and reproduction](data/inputs/battle-dem-detail/README.md). Use
 `--titles` to regenerate selected maps. See the
 [Takatenjin regeneration and verification](docs/reports/TAKATENJIN_ATLAS_BOUNDS.md)
 (Japanese).

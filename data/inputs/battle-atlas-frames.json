@@ -3,7 +3,48 @@
     136.977,
     35.07,
     10,
-    "桶狭間古戦場伝説地"
+    "桶狭間古戦場伝説地",
+    {
+      "viewPresentation": {
+        "initialView": "okehazama-front",
+        "views": [
+          {
+            "id": "okehazama-front",
+            "name": "鳴海・大高・桶狭間",
+            "landmarks": [
+              {
+                "name": "鳴海城",
+                "from": "atlasPoints"
+              },
+              {
+                "name": "大高城",
+                "from": "atlasPoints"
+              },
+              {
+                "name": "桶狭間古戦場伝説地",
+                "from": "atlasPoints"
+              },
+              {
+                "name": "善照寺砦",
+                "from": "atlasPoints"
+              },
+              {
+                "name": "丸根砦",
+                "from": "atlasPoints"
+              },
+              {
+                "name": "鷲津砦",
+                "from": "atlasPoints"
+              }
+            ],
+            "paddingFraction": 0.12,
+            "minWidthKm": 6,
+            "maxScale": 2
+          }
+        ]
+      },
+      "elevationManifest": "data/inputs/battle-dem-detail/00/input-manifest.json"
+    }
   ],
   "第四次川中島の戦い": [
     138.192,
@@ -15,13 +56,48 @@
     137.543,
     34.919,
     8,
-    "設楽原古戦場"
+    "設楽原古戦場",
+    {
+      "elevationManifest": "data/inputs/battle-dem-detail/02/input-manifest.json"
+    }
   ],
   "関ヶ原の戦い": [
     136.501,
     35.354,
     12.5,
-    "関ヶ原"
+    "関ヶ原",
+    {
+      "viewPresentation": {
+        "initialView": "sekigahara-main",
+        "views": [
+          {
+            "id": "sekigahara-main",
+            "name": "関ヶ原本戦",
+            "landmarks": [
+              "笹尾山",
+              "北天満山",
+              "南天満山",
+              "松尾山",
+              "桃配山"
+            ],
+            "paddingFraction": 0.12,
+            "minWidthKm": 6,
+            "maxScale": 3.5
+          },
+          {
+            "id": "sekigahara-nangu",
+            "name": "南宮山方面",
+            "landmarks": [
+              "南宮山"
+            ],
+            "paddingFraction": 0.12,
+            "minWidthKm": 8,
+            "maxScale": 3.5
+          }
+        ]
+      },
+      "elevationManifest": "data/inputs/battle-dem-detail/03/input-manifest.json"
+    }
   ],
   "姉川の戦い": [
     136.325,

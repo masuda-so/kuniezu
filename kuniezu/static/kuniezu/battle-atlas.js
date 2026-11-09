@@ -1,13 +1,57 @@
 "use strict";
 /* 地形と部隊の史料は独立。位置の根拠のない人物を、画面上の空き場所へ配置しない。 */
 window.TKBattleAtlas=(function(){
- const cache=new Map(),decoded=new Map(),backgrounds=new Map(),COL={a:'#c83339',b:'#216d9f',unknown:'#665b49'};
+ const cache=new Map(),decoded=new Map(),backgrounds=new Map(),COL={a:'#ad514d',b:'#3c7094',unknown:'#736d61'};
  const placeLabels=new WeakMap();
  const overlaps=(a,b)=>a.x<b.x+b.w&&a.x+a.w>b.x&&a.y<b.y+b.h&&a.y+a.h>b.y;
  const FONT='"Shippori Mincho B1","Hiragino Mincho ProN","Yu Mincho",serif';
- const palettes=['#dce9cd','#cce0b9','#b6d39f','#9dc48a','#82b373','#6c9e62','#5b8855','#4b744b'];
+ const RELIEF_LOW=[226,231,220],RELIEF_HIGH=[145,162,146];
  function load(meta){let p=cache.get(meta.file);if(!p){p=fetch('atlas/'+meta.file).then(r=>{if(!r.ok)throw Error('地形データを読めません');return r.json();}).then(d=>{const raw=atob(d.heights),a=new Int16Array(d.width*d.height);for(let i=0;i<a.length;i++)a[i]=(raw.charCodeAt(i*2)+raw.charCodeAt(i*2+1)*256)-32768;d.values=a;decoded.set(meta.file,d);if(decoded.size>12)decoded.delete(decoded.keys().next().value);return d;});cache.set(meta.file,p);if(cache.size>12)cache.delete(cache.keys().next().value);}return p;}
  const clamp=(v,a,b)=>Math.max(a,Math.min(b,v));
+ const reliefPixels=new WeakMap();
+ const reliefContourCache=new Map();
+ function reliefContours(data,maxLevels=24){
+  const {width:nx,height:ny,values:a}=data;
+  if(!Number.isInteger(nx)||!Number.isInteger(ny)||nx<2||ny<2||a?.length!==nx*ny||!Number.isInteger(maxLevels)||maxLevels<1||maxLevels>64)throw Error('Invalid contour grid');
+  let lo=Infinity,hi=-Infinity;for(const v of a){if(!Number.isFinite(v)||v===(data.noData??-32768))throw Error('NoData contour sample');lo=Math.min(lo,v);hi=Math.max(hi,v);}
+  let step=10;for(const factor of [1,2,5,10,20,50,100,200,500,1000,2000,5000]){step=10*factor;if(Math.floor(hi/step)-Math.floor(lo/step)<=maxLevels)break;}
+  const levels=[];for(let value=(Math.floor(lo/step)+1)*step;value<hi;value+=step)levels.push(value);
+  const segments=[],seen=new Set();
+  const first=levels[0],last=levels.at(-1);
+  for(let y=0;levels.length&&y<ny-1;y++)for(let x=0;x<nx-1;x++){
+   const v0=a[y*nx+x],v1=a[y*nx+x+1],v2=a[(y+1)*nx+x+1],v3=a[(y+1)*nx+x],min=Math.min(v0,v1,v2,v3),max=Math.max(v0,v1,v2,v3);
+   if(min===max)continue;
+   const from=Math.max(first,Math.ceil(min/step)*step),until=Math.min(last,Math.floor(max/step)*step);if(from>until)continue;
+   const p=[[x,y,v0],[x+1,y,v1],[x+1,y+1,v2],[x,y+1,v3]],triangles=[[p[0],p[1],p[2]],[p[0],p[2],p[3]]];
+   for(let value=from;value<=until;value+=step)for(const tri of triangles){
+    if(value<Math.min(tri[0][2],tri[1][2],tri[2][2])||value>Math.max(tri[0][2],tri[1][2],tri[2][2]))continue;
+    const hits=[];for(let i=0;i<3;i++){const v=tri[i],q=tri[(i+1)%3];if((v[2]>=value)===(q[2]>=value))continue;const t=(value-v[2])/(q[2]-v[2]);hits.push([v[0]+t*(q[0]-v[0]),v[1]+t*(q[1]-v[1])]);}
+    if(hits.length!==2||hits[0][0]===hits[1][0]&&hits[0][1]===hits[1][1])continue;
+    // Duplicate segments can only coincide with a full shared triangle edge.
+    if(hits.every(p=>p.every(Number.isInteger))){const ends=hits.map(p=>p.join(',')).sort(),key=value+':'+ends.join('|');if(seen.has(key))continue;seen.add(key);}
+    segments.push({level:value,a:hits[0],b:hits[1]});
+   }
+  }
+  return {step,levels,segments};
+ }
+ function reliefContourPath(data){let path=reliefContourCache.get(data);if(path)return path;const lines=reliefContours(data);path=new Path2D();for(const line of lines.segments){path.moveTo(...line.a);path.lineTo(...line.b);}reliefContourCache.set(data,path);if(reliefContourCache.size>12)reliefContourCache.delete(reliefContourCache.keys().next().value);return path;}
+
+ // 同じ標高格子から表示色と北西光の陰影を作り、標高そのものは更新しない。
+ // 格子点は範囲の境界を含む。画像の画素中心を元の標本位置へ合わせる。
+ function reliefRasterRect(nx,ny,width,height){return [-width/(2*(nx-1)),-height/(2*(ny-1)),width*nx/(nx-1),height*ny/(ny-1)];}
+ function shadeRelief(data){
+  const {width:nx,height:ny,values:a}=data,b=data.bounds;
+  if(nx<2||ny<2||!b||a.length!==nx*ny)throw Error('Invalid relief grid');
+  const lat=(b[1]+b[3])/2*Math.PI/180,dx=(b[2]-b[0])*111320*Math.cos(lat)/(nx-1),dy=(b[1]-b[3])*111320/(ny-1);
+  if(!(dx>0&&dy>0))throw Error('Invalid relief spacing');
+  const sorted=Array.from(a).filter(v=>Number.isFinite(v)&&v>0).sort((x,y)=>x-y),lo=sorted[Math.floor(sorted.length*.05)]||0,hi=Math.max(lo+1,sorted[Math.floor(sorted.length*.96)]||100),pixels=new Uint8ClampedArray(nx*ny*4),L=[-.5,.5,Math.SQRT1_2];
+  for(let y=0;y<ny;y++)for(let x=0;x<nx;x++){
+   const l=Math.max(0,x-1),r=Math.min(nx-1,x+1),t=Math.max(0,y-1),b=Math.min(ny-1,y+1),east=(a[y*nx+r]-a[y*nx+l])/((r-l)*dx),north=-(a[t*nx+x]-a[b*nx+x])/((t-b)*dy),len=Math.hypot(east,north,1),lit=(-east*L[0]-north*L[1]+L[2])/len;
+   const f=clamp((a[y*nx+x]-lo)/(hi-lo),0,1),shade=1+.22*(lit-Math.SQRT1_2),i=(y*nx+x)*4;
+   for(let k=0;k<3;k++)pixels[i+k]=Math.round((RELIEF_LOW[k]+(RELIEF_HIGH[k]-RELIEF_LOW[k])*f)*shade);pixels[i+3]=255;
+  }
+  return {pixels,width:nx,height:ny,dx,dy,lo,hi};
+ }
  // 全国の陸地・河川・湖・街道の外接矩形を一度だけ求め、合戦図の範囲外の線は投影せずに飛ばす（背景作成が重かった）。
  const BB=new WeakMap();
  const bbFlat=a=>{let b=BB.get(a);if(!b){let x0=Infinity,y0=Infinity,x1=-Infinity,y1=-Infinity;for(let i=0;i+1<a.length;i+=2){const x=a[i],y=a[i+1];if(x<x0)x0=x;if(x>x1)x1=x;if(y<y0)y0=y;if(y>y1)y1=y;}b=[x0,y0,x1,y1];BB.set(a,b);}return b;};
@@ -21,6 +65,23 @@ window.TKBattleAtlas=(function(){
   const cands=[{x:x+gap,y:y-h/2},{x:x-w/2,y:y+24},{x:x-w-gap,y:y-h/2},{x:x-w/2,y:y-h-top},{x:x+gap,y:y+20},{x:x-w-gap,y:y+20},{x:x+gap,y:y-h-20},{x:x-w-gap,y:y-h-20}],order=[...new Set([previous,0,1,2,3,4,5,6,7].filter(i=>Number.isInteger(i)&&i>=0&&i<cands.length))];
   for(const slot of order){const p=cands[slot],box={x:clamp(p.x,2,W-w-2),y:clamp(p.y,2,H-h-2),w,h};if(named.some(b=>overlaps(b,box))||anchors.some(b=>overlaps(b,box)))continue;const distance=Math.hypot(clamp(x,box.x,box.x+w)-x,clamp(y,box.y,box.y+h)-y);if(distance>(small?32:44))continue;return {box,slot};}
   return null;
+ }
+
+ function landmarkView(spec,scene,meta,W,H){
+  if(!spec)return null;
+  if(!(W>0&&H>0)||!meta.bounds?.every(Number.isFinite)||meta.bounds[2]<=meta.bounds[0]||meta.bounds[1]<=meta.bounds[3])throw Error('Invalid declared viewport');
+  if(spec.maxScale!=null&&!(Number.isFinite(spec.maxScale)&&spec.maxScale>=1))throw Error('Invalid maximum scale');
+  if(!spec.id||!spec.name||!Array.isArray(spec.landmarks)||spec.landmarks.length<1)throw Error('Invalid declared view');
+  if(spec.landmarks.length===1&&!(spec.minWidthKm>0))throw Error('Single landmark needs explicit display width');
+  const available=[...(scene.atlasLandmarks||[]).map(m=>({name:m.name,point:m.point,from:'atlasLandmarks'})),...(meta.points||[]).map(m=>({name:m.name,point:[m.lon,m.lat],from:'atlasPoints'}))],b=meta.bounds;
+  const points=spec.landmarks.map(ref=>{const r=typeof ref==='string'?{name:ref}:ref,found=available.filter(m=>m.name===r.name&&(!r.from||m.from===r.from));if(!found.length)throw Error('Missing landmark '+r.name);const unique=[...new Map(found.map(m=>[JSON.stringify(m.point),m.point])).values()];if(unique.length!==1)throw Error('Ambiguous landmark '+r.name);const p=unique[0];if(!p?.every(Number.isFinite))throw Error('Invalid landmark '+r.name);return [(p[0]-b[0])/(b[2]-b[0]),(b[1]-p[1])/(b[1]-b[3])];});
+  const pad=spec.paddingFraction??.12;if(!(pad>=0&&pad<.45))throw Error('Invalid view padding');
+  const xs=points.map(p=>p[0]),ys=points.map(p=>p[1]),x0=Math.min(...xs),x1=Math.max(...xs),y0=Math.min(...ys),y1=Math.max(...ys);if(x0<0||x1>1||y0<0||y1>1)throw Error('Landmark outside source extent');
+  let s=Math.min((1-2*pad)/Math.max(1e-9,x1-x0),(1-2*pad)/Math.max(1e-9,y1-y0));
+  const sourceWidthKm=(b[2]-b[0])*111.32*Math.cos((b[1]+b[3])/2*Math.PI/180);
+  if(spec.minWidthKm!=null){if(!(spec.minWidthKm>0))throw Error('Invalid minimum width');s=Math.min(s,sourceWidthKm/spec.minWidthKm);}
+  s=Math.max(1,Math.min(spec.maxScale??3.5,s));
+  const clamp=(v,a,b)=>Math.max(a,Math.min(b,v));return {id:spec.id,name:spec.name,s,x:clamp((x0+x1)/2*s*W-W/2,0,W*s-W),y:clamp((y0+y1)/2*s*H-H/2,0,H*s-H),declared:true,resolvedLandmarks:spec.landmarks,visibleWidthKm:sourceWidthKm/s};
  }
 
  function make(cv,sc,opt){
@@ -37,7 +98,7 @@ window.TKBattleAtlas=(function(){
   function motionPlan(){if(motion)return motion;const base=new Map();for(const g of groups)if(g.point)base.set(g.members[0],motionProject(...g.point));const sourced=new Set(sc.units.filter(u=>moveByName.has(u.g||u.n)).map(u=>u.id));motion=window.TKBattleMotion&&!sc.atlasPlan?TKBattleMotion.plan(sc,base,motionW,motionH,side=>{const p=opponentHomePoint(side);return p&&motionProject(...p);},sourced):{pos:()=>null,estimated:new Set(),placed:new Set(),basis:'none'};return motion;}
   const estAt=(g,tt)=>{const p=motionPlan().pos(g.members[0],tt);return p?[p[0]/motionW*W*VS-VX,p[1]/motionH*H*VS-VY]:null;};
   // 表示範囲（全体か、選んだ地区の拡大）。VS は倍率、VX・VY は拡大後の左上のずれ（画面の画素）。
-  let VS=1,VX=0,VY=0,viewIndex=0,views=[];
+  let VS=1,VX=0,VY=0,viewIndex=0,views=[],viewInitialized=false;
   const pj=(lo,la)=>[(lo-meta.bounds[0])/(meta.bounds[2]-meta.bounds[0])*W*VS-VX,(meta.bounds[1]-la)/(meta.bounds[1]-meta.bounds[3])*H*VS-VY];
   const unproject=p=>[meta.bounds[0]+(p[0]+VX)/(W*VS)*(meta.bounds[2]-meta.bounds[0]),meta.bounds[1]-(p[1]+VY)/(H*VS)*(meta.bounds[1]-meta.bounds[3])];
   const wp=(x,y)=>pj(TKGEO.LON0+x/TKGEO.K/TKGEO.CX,TKGEO.LAT0-y/TKGEO.K);
@@ -56,43 +117,35 @@ window.TKBattleAtlas=(function(){
   function path(c,pts,world=false,close=false){c.beginPath();for(let i=0;i<pts.length;i++){const p=world?wp(...pts[i]):[pts[i][0]*W,pts[i][1]*H];i?c.lineTo(...p):c.moveTo(...p);}if(close)c.closePath();}
   const riverPath=(c,pts)=>TK.riverPath(c,pts);
   function flatPath(c,pts,close){path(c,Array.from({length:pts.length/2},(_,i)=>[pts[i*2],pts[i*2+1]]),true,close);}
-  // 等高帯は実標高格子の三角形を閾値で切って描く。山の丸印を散らす方式は使わない。
+  // 陰影は元格子の大きさで一度だけ作り、表示範囲の合成結果は背景キャッシュへ保持する。
   function relief(c){
-   c.fillStyle=palettes[0];c.fillRect(0,0,W,H);if(!data)return;
-   const transform=reliefTransform(data.bounds||meta.bounds,meta.bounds,W,H);c.save();c.translate(...transform.translate);c.scale(...transform.scale);
-   const nx=data.width,ny=data.height,a=data.values,sorted=Array.from(a).filter(v=>v>0).sort((a,b)=>a-b),lo=sorted[Math.floor(sorted.length*.05)]||0,hi=sorted[Math.floor(sorted.length*.96)]||100;
-   const step=Math.max(10,Math.ceil((hi-lo)/6/10)*10),base=Math.floor(lo/step)*step;sc.atlasReliefStep=step;
-   for(let level=1;level<8;level++){const threshold=base+level*step;c.beginPath();
-    for(let y=0;y<ny-1;y++)for(let x=0;x<nx-1;x++){
-     const v0=a[y*nx+x],v1=a[y*nx+x+1],v2=a[(y+1)*nx+x+1],v3=a[(y+1)*nx+x];
-     if(Math.max(v0,v1,v2,v3)<threshold)continue;
-     // 閾値の内部は横一列を一つの矩形にまとめる。境界だけを補間するため描画呼出が大幅に減る。
-     if(Math.min(v0,v1,v2,v3)>=threshold){const start=x;while(x+1<nx-1&&Math.min(a[y*nx+x+2],a[(y+1)*nx+x+2])>=threshold)x++;c.rect(start*W/(nx-1),y*H/(ny-1),(x-start+1)*W/(nx-1),H/(ny-1));continue;}
-     const p=[[x,y,v0],[x+1,y,v1],[x+1,y+1,v2],[x,y+1,v3]];
-     for(const tri of [[p[0],p[1],p[2]],[p[0],p[2],p[3]]]){const poly=[];for(let j=0;j<3;j++){const v=tri[j],q=tri[(j+1)%3],vIn=v[2]>=threshold,qIn=q[2]>=threshold;if(vIn)poly.push(v);if(vIn!==qIn){const f=(threshold-v[2])/(q[2]-v[2]);poly.push([v[0]+f*(q[0]-v[0]),v[1]+f*(q[1]-v[1])]);}}if(poly.length<3)continue;poly.forEach((v,i)=>i?c.lineTo(v[0]*W/(nx-1),v[1]*H/(ny-1)):c.moveTo(v[0]*W/(nx-1),v[1]*H/(ny-1)));c.closePath();}
-    }c.fillStyle=palettes[level];c.fill();
+   c.fillStyle='rgb('+RELIEF_LOW.join(',')+')';c.fillRect(0,0,W,H);if(!data)return;
+   let image=reliefPixels.get(data);if(!image){
+    const shaded=shadeRelief({...data,bounds:data.bounds||meta.bounds}),cv=document.createElement('canvas');cv.width=shaded.width;cv.height=shaded.height;const x=cv.getContext('2d'),pixels=x.createImageData(shaded.width,shaded.height);pixels.data.set(shaded.pixels);x.putImageData(pixels,0,0);image=cv;reliefPixels.set(data,image);
    }
-   c.restore();
+   const transform=reliefTransform(data.bounds||meta.bounds,meta.bounds,W,H);c.save();c.translate(...transform.translate);c.scale(...transform.scale);c.beginPath();c.rect(0,0,W,H);c.clip();c.imageSmoothingEnabled=true;c.imageSmoothingQuality='high';c.drawImage(image,...reliefRasterRect(data.width,data.height,W,H));
+   // 等高線は同じ格子の等値線。地区を拡大しても線幅を約0.5画素に保つ。
+   const sx=W/(data.width-1),sy=H/(data.height-1);c.scale(sx,sy);c.strokeStyle='rgba(73,87,69,.22)';c.lineWidth=.5/(VS*Math.max(sx*transform.scale[0],sy*transform.scale[1]));c.stroke(reliefContourPath(data));c.restore();
   }
   function backdrop(){if(!W||!data&&!sc.atlasPlan&&!error)return;const cacheKey=meta.file+'|'+title+'|'+meta.bounds.join(',')+'|'+W+'|'+H+'|'+D+'|'+G.date().y+'|'+!!data+'|'+VS.toFixed(3)+'|'+Math.round(VX)+'|'+Math.round(VY);if(!error&&backgrounds.has(cacheKey)){bg=backgrounds.get(cacheKey);return;}bg=document.createElement('canvas');bg.width=W*D;bg.height=H*D;const c=bg.getContext('2d');c.scale(D,D);if(sc.atlasSchematic){const reserved=[];placeLabels.set(bg,reserved);c.fillStyle='#f3eedb';c.fillRect(0,0,W,H);text(c,sc.atlasSchematic.title,W/2,22,W<560?13:16,'#493c28','center',reserved,true);text(c,'攻撃を命じられた部隊',W*.22,H*.16,W<560?10:12,'#9a3435','center',reserved,true);text(c,'豊臣方の河口砦',W*.77,H*.16,W<560?10:12,'#216d9f','center',reserved,true);text(c,sc.atlasSchematic.caption,W/2,H-17,W<560?8:11,'#665b49','center',reserved,true);backgrounds.set(cacheKey,bg);if(backgrounds.size>4)backgrounds.delete(backgrounds.keys().next().value);return;}c.save();c.translate(-VX,-VY);c.scale(VS,VS);relief(c);c.restore();
    // 現代の水域は比較用。旧河道・埋立前の海岸の復元として扱わない。
    c.save();c.beginPath();c.rect(0,0,W,H);c.clip();
    const land=new Path2D();for(const poly of TKGEO.land)for(const ring of poly){if(!onView(bbFlat(ring),wp))continue;for(let i=0;i<ring.length;i+=2){const p=wp(ring[i],ring[i+1]);i?land.lineTo(...p):land.moveTo(...p);}land.closePath();}
-   const mask=new Path2D();mask.rect(-2,-2,W+4,H+4);mask.addPath(land);c.fillStyle='#bbdbe1';c.fill(mask,'evenodd');
+   const mask=new Path2D();mask.rect(-2,-2,W+4,H+4);mask.addPath(land);c.fillStyle='#c5d9dc';c.fill(mask,'evenodd');
    // 河川は陸域の内側だけに描く。比較河川の線が粗い海岸線の外（海上）へはみ出して見えないようにする。
    c.save();c.clip(land);
-   if(data?.comparisonRivers){for(const r of data.comparisonRivers){const pts=r.points.map(p=>pj(...p));if(!TK.waterLineVisible(pts,(x,y)=>[x,y]))continue;riverPath(c,pts);c.strokeStyle=r.kind==='stream'?'#6fa4b6':'#4b94b2';c.lineWidth=r.kind==='stream'?.85:1.3;c.stroke();}}
+   if(data?.comparisonRivers){for(const r of data.comparisonRivers){const pts=r.points.map(p=>pj(...p));if(!TK.waterLineVisible(pts,(x,y)=>[x,y]))continue;riverPath(c,pts);c.strokeStyle=r.kind==='stream'?'#8da1a5':'#718d97';c.lineWidth=r.kind==='stream'?.85:1.3;c.stroke();}}
    else{
-   for(const r of TKGEO.rivers){if(!onView(bbFlat(r),wp))continue;if(TK.KOREAN_RIVERS_DETAIL?.length&&r.every((v,i)=>i%2?TKGEO.LAT0-v/TKGEO.K>34.8:v/TKGEO.K/TKGEO.CX+TKGEO.LON0>124&&v/TKGEO.K/TKGEO.CX+TKGEO.LON0<131))continue;const pts=Array.from({length:r.length/2},(_,i)=>wp(r[i*2],r[i*2+1]));if(!TK.waterLineVisible(pts,(x,y)=>[x,y]))continue;riverPath(c,pts);c.strokeStyle='#4b94b2';c.lineWidth=1.3;c.stroke();}
-   for(const river of (TK.REGIONAL_RIVERS||[]).filter(r=>!TK.KOREAN_RIVERS_DETAIL?.length||!['漢江','南漢江','洛東江'].includes(r.name)))for(const line of river.lines){if(!onView(bbPairs(line),pj))continue;const pts=line.map(p=>pj(...p));if(!TK.waterLineVisible(pts,(x,y)=>[x,y]))continue;riverPath(c,pts);c.strokeStyle='#4b94b2';c.lineWidth=1.3;c.stroke();}
-   for(const river of TK.KOREAN_RIVERS_DETAIL||[]){if(river.bounds&&(river.bounds[0]>meta.bounds[2]||river.bounds[2]<meta.bounds[0]||river.bounds[1]>meta.bounds[1]||river.bounds[3]<meta.bounds[3]))continue;const pts=river.points.map(p=>pj(...p));if(!TK.waterLineVisible(pts,(x,y)=>[x,y]))continue;riverPath(c,pts);c.strokeStyle='#4b94b2';c.lineWidth=1.3;c.stroke();}
+   for(const r of TKGEO.rivers){if(!onView(bbFlat(r),wp))continue;if(TK.KOREAN_RIVERS_DETAIL?.length&&r.every((v,i)=>i%2?TKGEO.LAT0-v/TKGEO.K>34.8:v/TKGEO.K/TKGEO.CX+TKGEO.LON0>124&&v/TKGEO.K/TKGEO.CX+TKGEO.LON0<131))continue;const pts=Array.from({length:r.length/2},(_,i)=>wp(r[i*2],r[i*2+1]));if(!TK.waterLineVisible(pts,(x,y)=>[x,y]))continue;riverPath(c,pts);c.strokeStyle='#718d97';c.lineWidth=1.3;c.stroke();}
+   for(const river of (TK.REGIONAL_RIVERS||[]).filter(r=>!TK.KOREAN_RIVERS_DETAIL?.length||!['漢江','南漢江','洛東江'].includes(r.name)))for(const line of river.lines){if(!onView(bbPairs(line),pj))continue;const pts=line.map(p=>pj(...p));if(!TK.waterLineVisible(pts,(x,y)=>[x,y]))continue;riverPath(c,pts);c.strokeStyle='#718d97';c.lineWidth=1.3;c.stroke();}
+   for(const river of TK.KOREAN_RIVERS_DETAIL||[]){if(river.bounds&&(river.bounds[0]>meta.bounds[2]||river.bounds[2]<meta.bounds[0]||river.bounds[1]>meta.bounds[1]||river.bounds[3]<meta.bounds[3]))continue;const pts=river.points.map(p=>pj(...p));if(!TK.waterLineVisible(pts,(x,y)=>[x,y]))continue;riverPath(c,pts);c.strokeStyle='#718d97';c.lineWidth=1.3;c.stroke();}
    }
    c.restore();
    for(const poly of TKGEO.lakes){if(!poly.some(ring=>ring.map&&onView(bbFlat(ring),wp)))continue;c.beginPath();for(const ring of poly){const pts=ring.map?ring:[];for(let i=0;i<pts.length;i+=2){const p=wp(pts[i],pts[i+1]);i?c.lineTo(...p):c.moveTo(...p);}c.closePath();}c.fillStyle='#a7d1df';c.fill('evenodd');}
    for(const w of TK.periodWaters?.((sc.eventDate||[1560])[0])||[]){c.beginPath();for(const ring of w.rings){ring.forEach((v,i)=>{const p=pj(...v);i?c.lineTo(...p):c.moveTo(...p);});c.closePath();}c.fillStyle='rgba(105,160,173,.62)';c.fill('evenodd');c.setLineDash([2,3]);c.strokeStyle='#66999d';c.lineWidth=.7;c.stroke();c.setLineDash([]);}
    for(const h of TK.HISTORIC_WATERS||[]){if(!h.poly)continue;flatPath(c,h.poly[0],true);c.fillStyle=h.kind==='marsh'?'rgba(112,151,138,.28)':'rgba(118,166,186,.4)';c.fill();c.setLineDash([1,3]);c.strokeStyle='#668a83';c.lineWidth=1;c.stroke();c.setLineDash([]);const p=pj(...h.at);if(inside(...p))text(c,h.label,...p,10,'#315766');}
    for(const l of TK.waterComparisonOverlay?TK.MODERN_LAKES||[]:[]){c.beginPath();for(const ring of l.rings){ring.forEach((v,i)=>{const p=pj(...v);i?c.lineTo(...p):c.moveTo(...p);});c.closePath();}c.fillStyle='rgba(118,166,186,.6)';c.fill('evenodd');c.setLineDash([3,3]);c.strokeStyle='#426f80';c.lineWidth=.8;c.stroke();c.setLineDash([]);const p=pj(...l.rings[0][0]);if(inside(...p))text(c,l.name+'（比較湖岸）',...p,9,'#315766');}
-   for(const r of G.ROADS){const raw=TK.roadDisplay(r).pts;if(!onView(bbPairs(raw),wp))continue;const pts=raw.map(p=>wp(...p));if(!pts.some(p=>inside(...p)))continue;c.beginPath();pts.forEach((p,i)=>i?c.lineTo(...p):c.moveTo(...p));c.strokeStyle='#81735a';c.lineWidth=1.25;c.setLineDash([5,4]);c.stroke();}c.setLineDash([]);
+   for(const r of G.ROADS){const raw=TK.roadDisplay(r).pts;if(!onView(bbPairs(raw),wp))continue;const pts=raw.map(p=>wp(...p));if(!pts.some(p=>inside(...p)))continue;c.beginPath();pts.forEach((p,i)=>i?c.lineTo(...p):c.moveTo(...p));c.setLineDash([]);c.strokeStyle='#ada998';c.lineWidth=1.9;c.stroke();c.strokeStyle='#f6f3e9';c.lineWidth=1.1;c.stroke();}c.setLineDash([]);
    c.restore();
    // 史料を読図した城郭平面図は独立した概略図として、現代標高と混ぜない。
    if(sc.atlasPlan){const reserved=[];placeLabels.set(bg,reserved);c.fillStyle='#e9ebcf';c.fillRect(0,0,W,H);for(const f of sc.feats||[]){
@@ -160,9 +213,10 @@ window.TKBattleAtlas=(function(){
    const nearby=pins.map((p,i)=>Math.min(Infinity,...pins.filter((q,j)=>i!==j&&inside(...q)).map(q=>Math.hypot(q[0]-p[0],q[1]-p[1]))));
    // 交戦の組（beats の第3要素）。開城・撤退へ進んだら以前の交戦を止める。
    const stage=(sc.beats||[]).filter(b=>b[0]<=t).at(-1),beat=stage?.[2]?.length?stage:null,active=new Set(beat?beat[2]:[]),clashK=beat?Math.max(.35,1-(t-beat[0])/16):0;
-   const overview=views.length>1&&viewIndex===0&&VS===1;
+   // 局地図の全体はそのまま名前を読む。広域の全体だけ選択時に名前を絞る。
+   const frameWidthKm=(meta.bounds[2]-meta.bounds[0])*111.32*Math.cos((meta.bounds[1]+meta.bounds[3])*Math.PI/360),overview=views.length>1&&viewIndex===0&&VS===1&&frameWidthKm>6;
    const labelItems=located.map((g,index)=>({g,index,point:g.point,pin:pins[index],selected:selected===g.id||selected===g.parentId||g.members.includes(selected)})).filter(q=>inside(...q.pin)),buckets=labelBuckets(labelItems);
-   const decorationById=new Map(labelItems.map(q=>[q.g.id,nearby[q.index]>=(small?38:58)]));
+   const decorationById=new Map(labelItems.map(q=>[q.g.id,q.selected&&nearby[q.index]>=(small?38:58)]));
    const rows=[],anchorRects=labelItems.map(q=>{const full=decorationById.get(q.g.id);return {id:q.g.id,x:q.pin[0]-(full?(small?23:34):(small?12:17)),y:q.pin[1]-(full?(small?27:45):(small?12:17)),w:full?(small?48:75):(small?24:34),h:full?(small?42:64):(small?24:34)};});
    const livePin=id=>{const r=groupOf.get(id);if(!r)return null;const u=unitById.get(id);return u&&!isDead(u)?r.pin:null;};
    if(beat)for(let i=0;i+1<beat[2].length;i+=2){const a=livePin(beat[2][i]),b=livePin(beat[2][i+1]);if(!a||!b)continue;const d=Math.hypot(a[0]-b[0],a[1]-b[1]);
@@ -183,31 +237,31 @@ window.TKBattleAtlas=(function(){
     const target=aim?Math.atan2(aim[1],aim[0])+Math.PI/2:undefined,ang=fx.heading(g.id,target,dt,!playing||lastSnap);
     const estMoving=est&&!isDead(u)&&(()=>{const a=estAt(g,Math.max(0,t-.5)),b=estAt(g,Math.min(100,t+.5));return a&&b&&Math.hypot(b[0]-a[0],b[1]-a[1])>.8;})();
     if((moving||estMoving)&&playing&&fx.rnd()<dt*10)fx.spawn(x,y,'dust');
-    const counterScale=Math.max(small?14/18:18/28,Math.min(1,nearby[index]/((small?18:28)*1.25+2)));
+    const counterScale=Math.max(small?14/16:16/22,Math.min(1,nearby[index]/((small?16:22)*1.25+2)));
     const decorate=decorationById.get(g.id);
     const paintCounter=()=>{ctx.save();ctx.globalAlpha=alpha;
-    ctx.save();ctx.translate(x,y);if(Number.isFinite(ang))ctx.rotate(ang);const cw=(small?18:28)*counterScale,ch=(small?13:19)*counterScale;TKCounter.path(ctx,cw,ch);ctx.fillStyle=col;ctx.fill();ctx.save();TKCounter.path(ctx,cw,ch);ctx.clip();const tint=ctx.createLinearGradient(0,-ch*.55,0,ch*.55);tint.addColorStop(0,'rgba(255,255,240,.20)');tint.addColorStop(.5,'rgba(255,255,240,0)');tint.addColorStop(1,'rgba(30,15,0,.14)');ctx.fillStyle=tint;ctx.fillRect(-cw,-ch,cw*2,ch*2);ctx.restore();TKCounter.path(ctx,cw,ch);ctx.strokeStyle=sel?'#e5ad3f':'#2a1d10';ctx.lineWidth=sel?2.6:active.has(u.id)?2.4:1.7;ctx.lineJoin='round';ctx.setLineDash(g.estimated?[3,2]:[]);ctx.stroke();ctx.restore();
+    ctx.save();ctx.translate(x,y);if(Number.isFinite(ang))ctx.rotate(ang);const cw=(small?16:22)*counterScale,ch=(small?11:15)*counterScale;TKCounter.path(ctx,cw,ch);ctx.fillStyle=col;ctx.fill();TKCounter.path(ctx,cw,ch);ctx.strokeStyle=sel?'#e5ad3f':'#2a1d10';ctx.lineWidth=sel?2:active.has(u.id)?1.5:1.1;ctx.lineJoin='round';ctx.setLineDash(g.estimated?[3,2]:[]);ctx.stroke();ctx.restore();
     if(decorate){
     const crestKey=G.armyCrestKey({clan:u.clan,gens:[],commanders:[u.g||u.n],until:sc.title}),crest=G.kamonImage(crestKey,11),family=crestKey&&TK.CLANS[crestKey]?G.CN(crestKey):u.clan&&TK.CLANS[u.clan]?G.CN(u.clan):'';const flagK=Math.max(small?.55:.7,(small?.55:1)*counterScale),flagX=clamp(x+(small?11:19),4,W-19*flagK-3),flagY=clamp(y,42*flagK+3,H-10*flagK-3);fx.flag(ctx,flagX,flagY,flagK,col,crest,now,playing&&!dead,family?family.replace(/家$/,'').slice(0,1):'');
     }if(dead)fx.cross(ctx,x,y);if(decorate){
-    const faceSize=Math.max(16,Math.round((small?16:24)*counterScale/2)*2),face=opt.face?.(u.g,faceSize/2,col);if(face)ctx.drawImage(face,clamp(x-(small?23:34),2,W-faceSize-2),clamp(y-faceSize/2,2,H-faceSize-2),faceSize,faceSize);
-    }ctx.restore();};
+}ctx.restore();};
     if(sel)foreground.push(paintCounter);else paintCounter();
     // 鉄砲：記録の射撃区間（fire）か、鉄砲隊が交戦中の間、相手へ向けて発砲の閃光と煙を出す。射線は引かない。
     const firing=!dead&&!routed&&(u.fire?t>=u.fire[0]&&t<=u.fire[1]:u.arm==='teppo'&&active.has(u.id));
     if(firing){let tp=u.fireTarget?livePin(u.fireTarget):null;if(!tp){let best=Infinity;for(const [j,q] of located.entries()){const v=unitById.get(q.members[0]);if(sideOf(v)===side||isDead(v))continue;const d=Math.hypot(pins[j][0]-x,pins[j][1]-y);if(d>1&&d<best){best=d;tp=pins[j];}}}
      if(tp){const dir=Math.atan2(tp[1]-y,tp[0]-x),fxp=[x+Math.cos(dir)*16*kb,y+Math.sin(dir)*16*kb];if(playing&&fx.rnd()<dt*16){fx.spawn(fxp[0]+(fx.rnd()-.5)*12,fxp[1]+(fx.rnd()-.5)*12,'flash',dir);fx.spawn(fxp[0],fxp[1],'smoke',dir);}}}
     const status=dead?'討死':routed?'退却':'';rows.push({g,u,pin:[x,y],sel,col,alpha,status,decorate});
-    boxes.push(small?{x:x-24,y:y-25,w:48,h:50,id:g.id}:{x:x-36,y:y-40,w:72,h:76,id:g.id});ctx.restore();
+    boxes.push(small?{x:x-20,y:y-20,w:40,h:40,id:g.id}:{x:x-22,y:y-22,w:44,h:44,id:g.id});ctx.restore();
    }
    for(const paint of foreground)paint();
    // 選択した名札を先に予約。地理点ではなく、顔・名前を収める表示カードだけを配置する。
    const rowById=new Map(rows.map(r=>[r.g.id,r])),labelPlans=buckets.map(b=>{const rs=b.items.map(q=>rowById.get(q.g.id)).filter(Boolean),chosen=rs.find(r=>r.sel);return {items:overview?(chosen?[chosen]:[]):rs,chosen,anchorIds:b.items.map(q=>q.g.id),key:b.items.map(q=>q.g.id).join('|')};}).filter(b=>b.items.length).sort((a,b)=>Number(!!b.chosen)-Number(!!a.chosen));
    const liveKeys=new Set(labelPlans.map(b=>b.key));for(const key of labelSlots.keys())if(!liveKeys.has(key))labelSlots.delete(key);
-   for(const plan of labelPlans){let rs=plan.items;if(rs.length>5){if(!plan.chosen)continue;rs=[plan.chosen];}const many=rs.length>1;const portrait=many||rs.some(r=>!r.decorate);ctx.font=`600 12px ${FONT}`;const w=Math.ceil(Math.max(...rs.map(r=>ctx.measureText((r.u.g||r.u.n)+(r.status?'・'+r.status:'')).width))+(portrait?34:12)),h=portrait?rs.length*24+(many?4:0):20,pin=(plan.chosen||rs[0]).pin;
-    const placed=labelPlacement({pin,w,h,ornaments:rs.some(r=>r.decorate),ids:plan.anchorIds},{W,H,small,named,anchors:anchorRects,previous:labelSlots.get(plan.key)});if(!placed)continue;labelSlots.set(plan.key,placed.slot);const b=placed.box;
-    ctx.fillStyle='rgba(253,247,230,.96)';ctx.fillRect(b.x,b.y,b.w,b.h);ctx.strokeStyle=plan.chosen?'#c28d30':'#827563';ctx.lineWidth=plan.chosen?1.3:.7;ctx.strokeRect(b.x+.5,b.y+.5,b.w-1,b.h-1);
-    for(const [i,r] of rs.entries()){const row={x:b.x,y:b.y+(many?2+i*24:0),w:b.w,h:portrait?24:20,id:r.g.id,label:true};ctx.save();ctx.globalAlpha=r.alpha;if(r.sel){ctx.fillStyle='rgba(217,184,102,.18)';ctx.fillRect(row.x+1,row.y+1,row.w-2,row.h-2);}ctx.fillStyle=r.col;ctx.fillRect(row.x,row.y,3,row.h);if(portrait){const face=opt.face?.(r.u.g||r.u.n,8,r.col);if(face)ctx.drawImage(face,row.x+6,row.y+4,16,16);}ctx.font=`600 12px ${FONT}`;ctx.textAlign='left';ctx.textBaseline='middle';ctx.fillStyle=r.status?'#7a2218':'#302719';ctx.fillText((r.u.g||r.u.n)+(r.status?'・'+r.status:''),row.x+(portrait?27:7),row.y+row.h/2+.5);ctx.restore();boxes.push(row);}
+   for(const plan of labelPlans){let rs=plan.items;if(rs.length>5){if(!plan.chosen)continue;rs=[plan.chosen];}const size=small?11:12,rowHeight=small?18:20;ctx.font=`500 ${size}px ${FONT}`;const w=Math.ceil(Math.max(...rs.map(r=>ctx.measureText((r.u.g||r.u.n)+(r.status?'・'+r.status:'')).width+(r.sel?24:8)))),h=rs.length*rowHeight,pin=(plan.chosen||rs[0]).pin;
+    const placed=labelPlacement({pin,w,h,ornaments:false,ids:plan.anchorIds},{W,H,small,named,anchors:anchorRects,previous:labelSlots.get(plan.key)});if(!placed)continue;labelSlots.set(plan.key,placed.slot);const b=placed.box;
+    for(const [i,r] of rs.entries()){const row={x:b.x,y:b.y+i*rowHeight,w:b.w,h:rowHeight,id:r.g.id,label:true};ctx.save();ctx.globalAlpha=r.alpha;
+     if(r.sel){ctx.fillStyle='rgba(253,250,239,.84)';ctx.fillRect(row.x,row.y,row.w,row.h);const face=opt.face?.(r.u.g||r.u.n,8,r.col);if(face)ctx.drawImage(face,row.x+2,row.y+(rowHeight-16)/2,16,16);}
+     const label=(r.u.g||r.u.n)+(r.status?'・'+r.status:''),tx=row.x+(r.sel?22:4),ty=row.y+row.h/2+.5;ctx.font=`${r.sel?650:500} ${size}px ${FONT}`;ctx.textAlign='left';ctx.textBaseline='middle';ctx.strokeStyle='rgba(250,248,237,.94)';ctx.lineWidth=2.5;ctx.lineJoin='round';ctx.strokeText(label,tx,ty);ctx.fillStyle=r.status?'#71362d':'#30372f';ctx.fillText(label,tx,ty);ctx.restore();boxes.push(row);}
     named.push(b);
    }
    const estCount=located.filter(isEst).length;
@@ -226,7 +280,7 @@ window.TKBattleAtlas=(function(){
     candidates.sort((a,b)=>a.d-b.d);
     const free=p=>!boxes.some(b=>p.bx<b.x+b.w+2&&p.bx+tw+2>b.x&&p.by<b.y+b.h+2&&p.by+bh+2>b.y)&&!pins.some(q=>p.bx<q[0]+10&&p.bx+tw>q[0]-10&&p.by<q[1]+10&&p.by+bh>q[1]-10);
     const place=candidates.find(free)||candidates[0];const {bx,by}=place;
-    boxes.push({x:bx,y:by,w:tw,h:bh,id:u.id});ctx.fillStyle='rgba(252,250,233,.86)';ctx.fillRect(bx,by,tw,bh);text(ctx,txt,bx+tw/2,by+bh/2,size,col);
+    boxes.push({x:bx,y:by,w:tw,h:bh,id:u.id});text(ctx,txt,bx+tw/2,by+bh/2,size,col);
     if(sel){const im=opt.face?.(u.g||u.name,19,col);if(im)ctx.drawImage(im,clamp(x-20,0,W-40),clamp(y-56,0,H-40),40,40);}
    }
    cv.dataset.mapReady=data||sc.atlasPlan?'true':'false';cv.dataset.mapUnits=String(units.length);
@@ -243,7 +297,20 @@ window.TKBattleAtlas=(function(){
      const person=unitById.get(c[0].g.members[0]),personName=person?.g||person?.n||c[0].g.label,name=named&&named.d<Math.min(W,H)*.3?named.n+'付近':(personName?personName+'の周辺':null);if(!name||views.some(v=>v.name===name))continue;
      const bw=Math.max(...c.map(q=>q.p[0]))-Math.min(...c.map(q=>q.p[0]))+Math.min(W,H)*.3,bh=Math.max(...c.map(q=>q.p[1]))-Math.min(...c.map(q=>q.p[1]))+Math.min(W,H)*.3,z=clamp(Math.min(W/bw,H/bh),1.4,3.5);
      views.push({name,s:z,x:clamp(cx*z-W/2,0,W*z-W),y:clamp(cy*z-H/2,0,H*z-H)});}}
-   if(views.length<3)views=[];viewIndex=Math.max(0,views.findIndex(v=>v.name===previousName));const v=views[viewIndex];[VS,VX,VY]=v?[v.s,v.x,v.y]:[1,0,0];if(previous?.selectionFocus){focusSelection(previous.selectionId,previous.s,false);return;}renderViews();}
+   if(views.length<3)views=[];
+   views=views.map((v,i)=>({...v,id:i?'automatic:'+v.name:'overview'}));
+   const presentation=!sc.atlasPlan&&!sc.atlasSchematic?meta.viewPresentation:null;
+   if(presentation){
+    if(!Array.isArray(presentation.views))throw Error('Invalid declared views');
+    const declared=presentation.views.map(spec=>landmarkView(spec,sc,meta,W,H)),ids=declared.map(v=>v.id);
+    if(new Set(ids).size!==ids.length||ids.some(id=>id==='overview'||id.startsWith('automatic:')))throw Error('Duplicate/reserved declared view ID');
+    if(presentation.initialView&&!ids.includes(presentation.initialView)&&presentation.initialView!=='overview')throw Error('Missing initial declared view');
+    if(declared.length)views=[{id:'overview',name:'全体',s:1,x:0,y:0},...declared];
+   }
+   const key=previous?.id,initial=!viewInitialized?presentation?.initialView:null;
+   viewIndex=Math.max(0,views.findIndex(v=>initial?v.id===initial:key?v.id===key:v.name===previousName));viewInitialized=true;
+   const v=views[viewIndex];[VS,VX,VY]=v?[v.s,v.x,v.y]:[1,0,0];motion=null;
+   if(previous?.selectionFocus){focusSelection(previous.selectionId,previous.s,false);return;}renderViews();}
   function renderViews(){const stage=cv.closest('.battle-stage');if(!stage)return;let bar=stage.querySelector('.atlas-views');if(!views.length){bar?.remove();return;}
    if(!bar){bar=document.createElement('div');bar.className='atlas-views';bar.setAttribute('role','group');bar.setAttribute('aria-label','全体と地区を切り替える');bar.title='全体では駒を選んで名前を確認できます。地区では近くの部隊名を表示します。';stage.insertBefore(bar,stage.firstChild);}
    bar.style.display='flex';bar.style.flexWrap=W<560?'nowrap':'';
@@ -270,7 +337,7 @@ window.TKBattleAtlas=(function(){
     let height=probe.getBoundingClientRect().height;for(const beat of sc.beats||[]){if(now)now.textContent=beat[1]||'　';height=Math.max(height,probe.getBoundingClientRect().height);}dock.style.minHeight=Math.ceil(height)+'px';
    }finally{probe.remove();}
   }
-  function size(){const dockEl=cv.closest('.battle-stage')?.querySelector('.battle-dock');reserveDock(dockEl);const r=cv.parentElement.getBoundingClientRect(),dock=cv.closest('.battle-stage')?.querySelector('.battle-dock')?.getBoundingClientRect().height||110,top=r.top+(cv.closest('.mbox')?.scrollTop||0),room=Math.max(240,(innerHeight-Math.max(0,top)-dock-28)/aspect),next=Math.max(240,Math.round(Math.min(r.width,room))),d=Math.min(2,devicePixelRatio||1);if(next===W&&d===D&&bg)return;W=next;H=Math.round(W*aspect);D=d;cv.style.width=W+'px';cv.style.height=H+'px';cv.style.margin='0 auto';cv.width=W*D;cv.height=H*D;refreshViews();backdrop();frameDraw();}
+  function size(){const dockEl=cv.closest('.battle-stage')?.querySelector('.battle-dock');reserveDock(dockEl);const r=cv.parentElement.getBoundingClientRect(),dock=cv.closest('.battle-stage')?.querySelector('.battle-dock')?.getBoundingClientRect().height||110,top=r.top+(cv.closest('.mbox')?.scrollTop||0),selectionRoom=cv.closest('.battle-stage')?.querySelector('.atlas-selection')?(r.width<560?144:104):0,room=Math.max(240,(innerHeight-Math.max(0,top)-dock-selectionRoom-28)/aspect),next=Math.max(240,Math.round(Math.min(r.width,room))),d=Math.min(2,devicePixelRatio||1);if(next===W&&d===D&&bg)return;W=next;H=Math.round(W*aspect);D=d;cv.style.width=W+'px';cv.style.height=H+'px';cv.style.margin='0 auto';cv.width=W*D;cv.height=H*D;refreshViews();backdrop();frameDraw();}
   // 再生中・粉が残る間・停止直後の静止描画を、一つの描画ループで行う。停止後は粉が消えると止まる（雨・霧は静止画で描く）。
   function loop(now){if(dead){fxRaf=0;return;}const dt=fxLast?Math.min(.1,(now-fxLast)/1000):0;fxLast=now;const live=controller.playing||fx.count>0;frameDraw(live?dt:0,now);if(!live){fxRaf=0;fxLast=0;return;}fxRaf=requestAnimationFrame(loop);}
   function wake(){if(!fxRaf){fxLast=0;fxRaf=requestAnimationFrame(loop);}}
@@ -287,5 +354,5 @@ window.TKBattleAtlas=(function(){
   if(!sc.atlasSchematic)load(meta).then(d=>{if(dead)return;data=d;backdrop();frameDraw();if(pendingPlay){pendingPlay=false;controller.play();}}).catch(()=>{if(dead)return;error='地形を読み込めません。ページを再読み込みしてください。';backdrop();frameDraw();});
   return {...controller,play(){if(!data&&!sc.atlasPlan){pendingPlay=true;return;}controller.play();wake();},pause(){pendingPlay=false;controller.pause();},seek(v){controller.seek(v);fx.clear();lastSnap=true;frameDraw();},get playing(){return pendingPlay||controller.playing;},get t(){return controller.t;},get ended(){return controller.ended;},get speed(){return controller.speed;},select(id){const u=unitById.get(id);if(u){const {from,until}=G.battleUnitWindow(sc,u);if(!visible(u)){controller.seek(t<from?Math.min(from+2,(from+until)/2,100):Math.max(from,until-1));fx.clear();lastSnap=true;}}selected=id;selectionPanel([id]);frameDraw();},unitStates(){return groups.map(g=>{const u=unitById.get(g.members[0]),move=moveByName.get(u.g||u.n),side=sideOf(u),status=t>=G.battleUnitWindow(sc,u).until?(sc.mapExitLabels?.[u.id]||'退去'):t<(sc.mapVisibleFrom?.[u.id]||0)?'参陣前':t<(u.from||0)?'着陣前':u.die!=null&&t>=u.die?'討死':u.rout!=null&&t>u.rout?'退却':move&&t>move.from&&t<move.to?'移動中':G.battleActiveUnits(sc,t).includes(u.id)?'交戦':t>=100?'戦闘終了':sc.atlasSchematic?(u.side==='b'?'守備':u.id===sc.atlasSchematic.lead&&t>=sc.atlasSchematic.capturedAt?'攻略':'攻撃命令'):'布陣';const schematic=!!(sc.atlasSchematic||sc.atlasPlan),drawGroup=g.point||schematic?g:estGroups.find(e=>e.members[0]===u.id)||g,screenPoint=pinFor(drawGroup);return {id:u.id,side,status,visible:visible(u),point:g.point?G.battlePhasePoint(sc,u.g||u.n,t,g.point):null,screenPoint,renderedPoint:!schematic&&screenPoint?unproject(screenPoint):null,positionBasis:schematic?'schematic':!screenPoint?'unplaced':!g.point?'estimated-placement':isEst(g)?'estimated-motion':'recorded'};});},destroy(){dead=true;cv.closest('.battle-stage')?.querySelector('.atlas-views')?.remove();if(fxRaf)cancelAnimationFrame(fxRaf);fxRaf=0;controller.destroy();ro.disconnect();cv.removeEventListener('click',onClick);}};
  }
- return {make,reliefTransform,labelBuckets,labelPlacement,preload(title){const m=TK.BATTLE_ATLAS[title];return m&&!TK.BATTLES[title]?.atlasSchematic?load(m):Promise.resolve(null);}};
+ return {make,landmarkView,reliefContours,reliefTransform,shadeRelief,reliefRasterRect,labelBuckets,labelPlacement,preload(title){const m=TK.BATTLE_ATLAS[title];return m&&!TK.BATTLES[title]?.atlasSchematic?load(m):Promise.resolve(null);}};
 })();

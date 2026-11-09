@@ -56,7 +56,9 @@
   const m=TK.BATTLE_ATLAS[title];if(!m)continue;
   sc.participantClans=participants[title]||TK.EXTRA_BATTLES?.[title]?.clans;
   sc.displayPolicy='atlas';sc.title=title;sc.atlasPlan=title==='伏見城の戦い';sc.atlasUnits=[];
-  sc.sources=[...new Set([...(sc.sources||[]),...(additional[title]||[]),'atlasRelief',...(m.points.length?['codhSites']:[])])];
+  const reliefId=m.terrainSource?'atlasReliefGsi_'+m.file.replace(/\W/g,'_'):'atlasRelief';
+  if(m.terrainSource)TK.RESEARCH_SOURCES[reliefId]=m.terrainSource;
+  sc.sources=[...new Set([...(sc.sources||[]).filter(id=>!m.terrainSource||id!=='atlasRelief'&&!id.startsWith('atlasReliefGsi_')),...(additional[title]||[]),reliefId,...(m.points.length?['codhSites']:[])])];
   sc.presentationNote='山地の等高帯・水系・街道・史跡を同じ形式で表示。部隊の位置と史料の確認範囲は、下の一覧に示します。';
   sc.atlasBasis='地勢図・配置未確定';
   if(title==='関ヶ原の戦い'){
