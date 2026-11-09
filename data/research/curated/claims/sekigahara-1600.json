@@ -1,0 +1,42 @@
+{
+  "id": "sekigahara-1600",
+  "entity": "place:sekigahara",
+  "predicate": "military-event",
+  "value": "徳川家康が石田三成らの関ヶ原への出陣を聞いて諸将の部署を定め、桃配野に陣した。東軍の先鋒の福島正則が宇喜多秀家と戦いを始め、両軍は関ヶ原で戦った。小早川秀秋が東軍に応じて大谷吉継の背後を攻めたので、西軍は大敗した。",
+  "validYears": [
+    1600,
+    1600
+  ],
+  "datePrecision": "day",
+  "source": "hiDainihonshiryoKobun",
+  "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+  "locator": "綱文：和暦 慶長5年9月15日 第2条（区分 史料綜覧、編11・冊913（データベースの表示値）、264頁）",
+  "gameBindings": [
+    "TK.HIST:関ヶ原の戦い"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-09",
+  "uncertainty": "綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。",
+  "linkedEntities": [
+    "place:sekigahara",
+    "person:tokugawa-ieyasu",
+    "person:fukushima-masanori",
+    "person:宇喜多秀家",
+    "person:小早川秀秋",
+    "person:大谷吉継"
+  ],
+  "eventTime": {
+    "kind": "dated-event",
+    "date": [
+      1600,
+      9,
+      15
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": false,
+    "precision": "day"
+  },
+  "eventRelation": "military-event",
+  "eventScope": "綱文が掲げる日付。慶長5年9月15日はゲーム共通の暦表で1600年10月21日。最終年表の関ヶ原の戦い（1600年10月21日）は一致する。三成らの関ヶ原への出陣は家康が聞いたこととして書かれ、その日付は示さない。南宮山の諸将の敗走（同じ日の第3条）は別の条。石田三成はこの条で戦いの主体としては書かれないので結ばない。"
+}

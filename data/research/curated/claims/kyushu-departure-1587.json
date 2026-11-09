@@ -1,0 +1,38 @@
+{
+  "id": "kyushu-departure-1587",
+  "entity": "person:toyotomi-hideyoshi",
+  "predicate": "departure",
+  "value": "秀吉が薩摩の島津氏を討つため、自ら将兵を率いて大坂を発し、羽柴秀次・前田利家に京都を守らせた。",
+  "validYears": [
+    1587,
+    1587
+  ],
+  "datePrecision": "day",
+  "source": "hiDainihonshiryoKobun",
+  "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+  "locator": "綱文：和暦 天正15年3月1日 第2条（区分 史料綜覧、編11・冊912（データベースの表示値）、155頁）",
+  "gameBindings": [
+    "TK.HIST:九州平定"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-09",
+  "uncertainty": "綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。",
+  "linkedEntities": [
+    "person:toyotomi-hideyoshi",
+    "place:osaka-castle"
+  ],
+  "eventTime": {
+    "kind": "dated-event",
+    "date": [
+      1587,
+      3,
+      1
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": false,
+    "precision": "day"
+  },
+  "eventRelation": "departure",
+  "eventScope": "綱文が掲げる日付。天正15年3月1日はゲーム共通の暦表で1587年4月8日。最終年表の九州平定（1587年5月1日）は綱文より23日遅い。命題は大坂の出発の日。年表の出来事は平定（領有の変化）を表し、出発とは別の行為なので、この差を一致・不一致の判定には使わない。綱文は出発地を大坂と書くので、大坂城の台帳の場所に結ぶ。"
+}
