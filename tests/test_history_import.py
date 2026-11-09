@@ -403,6 +403,7 @@ def test_every_word_for_a_claim_has_one_class():
     assert CLAIM_KIND_OF["diplomatic-audience"] == PhenomenonKind.RELATION
     assert CLAIM_KIND_OF["peace-agreement"] == PhenomenonKind.RELATION
     assert CLAIM_KIND_OF["castle-surrender"] == PhenomenonKind.CONFLICT
+    assert CLAIM_KIND_OF["castle-handover"] == PhenomenonKind.CONFLICT
     assert set(CLAIM_KIND_OF.values()) <= set(PhenomenonKind) - {PhenomenonKind.OTHER}
 
 

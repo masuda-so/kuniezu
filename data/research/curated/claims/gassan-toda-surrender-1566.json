@@ -1,0 +1,42 @@
+{
+  "id": "gassan-toda-surrender-1566",
+  "entity": "place:gassan-toda",
+  "predicate": "castle-surrender",
+  "value": "毛利元就が小早川隆景・吉川元春とともに出雲富田城の尼子義久らを攻め、降伏させた。",
+  "validYears": [
+    1566,
+    1566
+  ],
+  "datePrecision": "day",
+  "source": "hiDainihonshiryoKobun",
+  "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+  "locator": "綱文：和暦 永禄9年11月19日 第2条（区分 史料綜覧、編9・冊910（データベースの表示値）、646頁）",
+  "gameBindings": [
+    "TK.HIST:月山富田城開城",
+    "node:gassan"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-09",
+  "uncertainty": "綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。",
+  "linkedEntities": [
+    "place:gassan-toda",
+    "person:毛利元就",
+    "person:小早川隆景",
+    "person:吉川元春",
+    "person:尼子義久"
+  ],
+  "eventTime": {
+    "kind": "dated-event",
+    "date": [
+      1566,
+      11,
+      19
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": false,
+    "precision": "day"
+  },
+  "eventRelation": "castle-surrender",
+  "eventScope": "綱文が掲げる日付。永禄9年11月19日はゲーム共通の暦表で1566年12月30日。最終年表の月山富田城開城（旧暦1566年11月25日、1567年1月5日）は綱文より6日遅い。尼子義久らの降伏の日。開城後の義久らの幽閉や、出雲一国の支配の移り変わりには広げない。"
+}

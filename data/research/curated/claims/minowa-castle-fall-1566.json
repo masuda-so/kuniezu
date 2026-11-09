@@ -1,0 +1,40 @@
+{
+  "id": "minowa-castle-fall-1566",
+  "entity": "place:minowa",
+  "predicate": "castle-fall",
+  "value": "武田信玄（晴信）が上野箕輪城の長野業盛を攻め、城を落とした。",
+  "validYears": [
+    1566,
+    1566
+  ],
+  "datePrecision": "day",
+  "source": "hiDainihonshiryoKobun",
+  "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+  "locator": "綱文：和暦 永禄9年9月29日 第1条（区分 史料綜覧、編9・冊910（データベースの表示値）、644頁）",
+  "gameBindings": [
+    "TK.HIST:箕輪城落城",
+    "node:minowa"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-09",
+  "uncertainty": "綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。",
+  "linkedEntities": [
+    "place:minowa",
+    "person:武田信玄",
+    "person:長野業盛"
+  ],
+  "eventTime": {
+    "kind": "dated-event",
+    "date": [
+      1566,
+      9,
+      29
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": false,
+    "precision": "day"
+  },
+  "eventRelation": "castle-fall",
+  "eventScope": "綱文が掲げる日付。永禄9年9月29日はゲーム共通の暦表で1566年11月10日。最終年表の箕輪城落城（旧暦1566年9月29日、1566年11月10日）は一致する。落城の日。業盛の自害の日付や、西上野の支配の範囲には広げない。"
+}

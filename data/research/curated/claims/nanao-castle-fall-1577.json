@@ -1,0 +1,39 @@
+{
+  "id": "nanao-castle-fall-1577",
+  "entity": "place:nanao-noto",
+  "predicate": "castle-fall",
+  "value": "上杉謙信が能登七尾城を攻め落とした。",
+  "validYears": [
+    1577,
+    1577
+  ],
+  "datePrecision": "day",
+  "source": "hiDainihonshiryoKobun",
+  "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+  "locator": "綱文：和暦 天正5年9月15日 第1条（区分 史料綜覧、編10・冊911（データベースの表示値）、155頁）",
+  "gameBindings": [
+    "TK.HIST:七尾城の戦い",
+    "node:nanao"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-09",
+  "uncertainty": "綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。",
+  "linkedEntities": [
+    "place:nanao-noto",
+    "person:上杉謙信"
+  ],
+  "eventTime": {
+    "kind": "dated-event",
+    "date": [
+      1577,
+      9,
+      15
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": false,
+    "precision": "day"
+  },
+  "eventRelation": "castle-fall",
+  "eventScope": "綱文が掲げる日付。天正5年9月15日はゲーム共通の暦表で1577年10月26日。最終年表の七尾城の戦い（旧暦1577年8月20日、1577年10月1日）は綱文より25日早い。落城の日。続く末森城の攻略や手取川の戦いの日付には広げない。"
+}
