@@ -8,6 +8,7 @@ require('./mask-vector.cjs');
 require('./kojima-mask-vectors.cjs');
 require('./vector-assets.cjs');
 require('./vector-map.cjs');
+require('./siege-replay-opening.cjs');
 const storage=require(path.join(game,'storage.js'));
 const map=new Map(),mem={setItem:(k,v)=>map.set(k,v)},state={x:'日本語',t:42};
 assert.equal(storage.write(mem,'test',state,'meta').ok,true);assert.deepEqual(JSON.parse(map.get('test')),state);
