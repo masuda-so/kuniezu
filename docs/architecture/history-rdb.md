@@ -36,6 +36,7 @@ uv run python manage.py history_query --phenomenon campaign:文禄の役   # 事
 | `water` 水域 | 湖・潟・湾 |
 | `object` 物 | 文書・器物（まだ入力が無い） |
 
+ゲームの拠点が台帳の場所を代表する関係（同一性の記録の `represented-by`）は、事象ではなく `Representation` に持つ。実装の対応で、史実の支配ではないため。全期間か、期間（始まりを含み、終わりを含まない。端は旧暦の日か西暦の年）を持つ。年だけの端は年のどこかにあるとして扱い、切り替えの年の照会は両方の候補を「確かでない」と返す。
 命題の関係する対象（`linkedEntities`、事象への関わり方は `participant`）は人物（`person:`）・場所（`place:`）と、水域（`water:`）を取る。水域は、今回取り込む `docs/work/catalog.jsonl` の `kind=water` の行と完全に一致するキーだけを受ける。前の取り込みで DB に残った水域や、別の入力が先に作った水域では足りず、名前による推定や新しい水域の自動作成もしない（`tools/research/evidence-store.cjs` の `catalogWaterKeys`、`kuniezu/history/importer.py` の `linked_water`）。
 
 事象は、あり方（`mode`）と内容（`kind`）をそれぞれちょうど 1 つ持つ。

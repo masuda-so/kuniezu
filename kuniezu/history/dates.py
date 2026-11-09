@@ -84,3 +84,15 @@ def lunisolar_to_jd(
     """The Julian Day Number of a lunisolar date, or None outside the table."""
     start = month_starts(table).get((year, month, leap))
     return None if start is None else start + day - 1
+
+
+def lunisolar_month_length(
+    table: Path, year: int, month: int, *, leap: bool
+) -> int | None:
+    """How many days a lunisolar month has, or None outside the table."""
+    starts = month_starts(table)
+    start = starts.get((year, month, leap))
+    if start is None:
+        return None
+    later = [day for day in starts.values() if day > start]
+    return min(later) - start if later else None
