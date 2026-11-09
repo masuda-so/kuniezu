@@ -1,0 +1,15 @@
+{
+  "id": "identity:sogo-castle-site",
+  "relation": "represented-by",
+  "things": [
+    "place:sogo-castle",
+    "node:sogo"
+  ],
+  "basis": "ゲームの拠点 node:sogo は、台帳の場所 place:sogo-castle（十河城（讃岐））を地図の上で代表する実装上の拠点。台帳の場所の根拠は命題 sogo-fall-1584。同じ場所だという史料上の主張ではない。",
+  "source": "hiDainihonshiryoKobun",
+  "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+  "locator": "綱文：和暦 天正12年6月11日 第2条（区分 大日本史料、第11編之7（データベースの表示値）、410頁）",
+  "checked": "2026-11-09",
+  "status": "verified-in-specified-scope",
+  "uncertainty": "代表の関係は実装上の対応で、拠点の座標は史料で確かめた位置ではない。"
+}

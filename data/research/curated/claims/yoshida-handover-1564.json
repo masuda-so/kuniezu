@@ -1,0 +1,41 @@
+{
+  "id": "yoshida-handover-1564",
+  "entity": "place:yoshida-mikawa",
+  "predicate": "castle-handover",
+  "value": "松平家康が今川氏真の部将の小原鎮実を三河吉田城に攻め、この日、鎮実が和を請うたので、家康は酒井忠次に城を守らせた。",
+  "validYears": [
+    1564,
+    1564
+  ],
+  "datePrecision": "day",
+  "source": "hiDainihonshiryoKobun",
+  "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+  "locator": "綱文：和暦 永禄7年6月20日 第2条（区分 史料綜覧、編9・冊910（データベースの表示値）、593頁）",
+  "gameBindings": [
+    "TK.HIST:三河平定",
+    "node:yoshida"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-09",
+  "uncertainty": "綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。",
+  "linkedEntities": [
+    "place:yoshida-mikawa",
+    "person:tokugawa-ieyasu",
+    "person:小原鎮実",
+    "person:sakai-tadatsugu"
+  ],
+  "eventTime": {
+    "kind": "dated-event",
+    "date": [
+      1564,
+      6,
+      20
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": false,
+    "precision": "day"
+  },
+  "eventRelation": "castle-handover",
+  "eventScope": "綱文が掲げる日付。永禄7年6月20日はゲーム共通の暦表で1564年7月28日。最終年表の三河平定（旧暦1565年3月10日、1565年4月10日）は綱文より256日遅い。和睦による城の明け渡しと受け取りの日。年表の三河平定は翌年（永禄8年）の日付で、年が違う。三河一国の平定には広げない。"
+}

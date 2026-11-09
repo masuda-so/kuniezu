@@ -1,0 +1,40 @@
+{
+  "id": "sogo-fall-1584",
+  "entity": "place:sogo-castle",
+  "predicate": "castle-fall",
+  "value": "長宗我部元親の兵が讃岐に入り、十河城の十河存保を攻めて落とした。",
+  "validYears": [
+    1584,
+    1584
+  ],
+  "datePrecision": "day",
+  "source": "hiDainihonshiryoKobun",
+  "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+  "locator": "綱文：和暦 天正12年6月11日 第2条（区分 大日本史料、第11編之7（データベースの表示値）、410頁）",
+  "gameBindings": [
+    "TK.HIST:1584-8-1",
+    "node:sogo"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-09",
+  "uncertainty": "綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。",
+  "linkedEntities": [
+    "place:sogo-castle",
+    "person:chosokabe-motochika",
+    "person:十河存保"
+  ],
+  "eventTime": {
+    "kind": "dated-event",
+    "date": [
+      1584,
+      6,
+      11
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": false,
+    "precision": "day"
+  },
+  "eventRelation": "castle-fall",
+  "eventScope": "綱文が掲げる日付。天正12年6月11日はゲーム共通の暦表で1584年7月18日。最終年表の題名なしの出来事（旧暦1584年6月25日、1584年8月1日）は綱文より14日遅い。落城の日。讃岐・伊予への勢力の広がり（年表の出来事）の全域には広げない。"
+}

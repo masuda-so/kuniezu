@@ -1,0 +1,38 @@
+{
+  "id": "jeolla-entry-1597",
+  "entity": "region:全羅道",
+  "predicate": "campaign-action",
+  "value": "宇喜多秀家・毛利秀元が諸将とともに全羅道に入った。",
+  "validYears": [
+    1597,
+    1597
+  ],
+  "datePrecision": "day",
+  "source": "hiDainihonshiryoKobun",
+  "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+  "locator": "綱文：和暦 慶長2年7月28日 第1条（区分 史料綜覧、編11・冊913（データベースの表示値）、141頁）",
+  "gameBindings": [
+    "TK.HIST:1597-10-1"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-09",
+  "uncertainty": "綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。",
+  "linkedEntities": [
+    "person:宇喜多秀家",
+    "person:毛利秀元"
+  ],
+  "eventTime": {
+    "kind": "dated-event",
+    "date": [
+      1597,
+      7,
+      28
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": false,
+    "precision": "day"
+  },
+  "eventRelation": "campaign-action",
+  "eventScope": "綱文が掲げる日付。慶長2年7月28日はゲーム共通の暦表で1597年9月9日。最終年表の題名なしの出来事（旧暦1597年8月20日、1597年10月1日）は綱文より22日遅い。全羅道に入った日。全羅道・忠清道への進出（年表の出来事）の全体には広げない。主体は地域の参照（region:）。朝鮮の地名は、日本に関わる出来事として記録する（地図の範囲とは別）。"
+}

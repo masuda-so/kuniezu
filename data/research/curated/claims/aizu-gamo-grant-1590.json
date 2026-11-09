@@ -1,0 +1,39 @@
+{
+  "id": "aizu-gamo-grant-1590",
+  "entity": "person:gamo-ujisato",
+  "predicate": "territorial-transfer",
+  "value": "秀吉が陸奥会津の黒川城に入り、小田原に参陣しなかった大崎・葛西らの邑を没収し、伊勢松坂の蒲生氏郷を会津に封じた。",
+  "validYears": [
+    1590,
+    1590
+  ],
+  "datePrecision": "day",
+  "source": "hiDainihonshiryoKobun",
+  "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+  "locator": "綱文：和暦 天正18年8月9日 第2条（区分 史料綜覧、編11・冊912（データベースの表示値）、304頁）",
+  "gameBindings": [
+    "TK.HIST:奥州仕置"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-09",
+  "uncertainty": "綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。",
+  "linkedEntities": [
+    "person:gamo-ujisato",
+    "person:toyotomi-hideyoshi",
+    "place:kurokawa-castle"
+  ],
+  "eventTime": {
+    "kind": "dated-event",
+    "date": [
+      1590,
+      8,
+      9
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": false,
+    "precision": "day"
+  },
+  "eventRelation": "territorial-transfer",
+  "eventScope": "綱文が掲げる日付。天正18年8月9日はゲーム共通の暦表で1590年9月7日。最終年表の奥州仕置（旧暦1590年8月3日、1590年9月1日）は綱文より6日早い。秀吉の黒川城入りと氏郷の会津への封を綱文が一つの条に掲げる日。没収された各家の邑の境は持たない。"
+}
