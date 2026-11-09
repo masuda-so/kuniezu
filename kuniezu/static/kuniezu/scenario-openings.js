@@ -46,7 +46,8 @@
   }
   for(const row of TK.BATTLE_AUDIT||[])row.sourceIds=TK.BATTLES[row.title]?.sources||row.sourceIds;
  };
- const geometryVersion=25,placementVersion=2,set=G.setS;
+ const geometryVersion=27,placementVersion=2,set=G.setS;
+ const travelFraction=(time,start,end)=>end>start?(time-start)/(end-start):time>=end?1:0;
  const siegeVersions=new Map([['長谷堂城の戦い',1],['大津城の戦い',2]]);
  G.setS=function(s){const result=set(s);if(!s)return result;
   const migrateAll=s.movementGeometryVersion!==geometryVersion;
@@ -63,7 +64,7 @@
     const sampleTime=s.t+(Number.isFinite(s.visualFraction)?Math.max(0,Math.min(1,s.visualFraction)):0);
     if(!returning)G.scheduleHistorical(u);
     const end=returning?old?.end:u.schedule?.end??old?.end;
-    const currentPoint=old&&sampleTime>=old.start&&sampleTime<end?G.visualPathPoint(old.line,(sampleTime-old.start)/Math.max(1,old.end-old.start)).slice(0,2):null;
+    const currentPoint=old&&sampleTime>=old.start&&sampleTime<end?G.visualPathPoint(old.line,travelFraction(sampleTime,old.start,old.end)).slice(0,2):null;
     const A=currentPoint||old?.line?.[0]||G.C[u.path[0]]&&[G.C[u.path[0]].x,G.C[u.path[0]].y],C=G.C[u.path.at(-1)];
     if(!A||!C)continue;
     const B=returning?[C.x,C.y]:G.battleArrivalPoint(u)||[C.x,C.y];
@@ -71,7 +72,7 @@
     if(old||u.schedule&&!returning)u.visualTravel={line:G.historyTravelLine(u,A,B),start:currentPoint?sampleTime:old?.start??u.schedule.start,end};
    }
    if(migrateAll)for(const g of s.gens){
-    if(g.tr){const sampleTime=s.t+(Number.isFinite(s.visualFraction)?Math.max(0,Math.min(1,s.visualFraction)):0),moving=g.tr.line&&sampleTime>=g.tr.t0&&sampleTime<g.tr.t1,a=moving?G.visualPathPoint(g.tr.line,(sampleTime-g.tr.t0)/Math.max(1,g.tr.t1-g.tr.t0)).slice(0,2):g.tr.line?.[0]||G.C[g.tr.p?.[0]]&&[G.C[g.tr.p[0]].x,G.C[g.tr.p[0]].y],b=g.tr.line?.at(-1)||G.C[g.tr.p?.at(-1)]&&[G.C[g.tr.p.at(-1)].x,G.C[g.tr.p.at(-1)].y];if(a&&b){g.tr.line=G.visualBetween(a,b);if(moving)g.tr.t0=sampleTime;}else g.tr=null;}
+    if(g.tr){const sampleTime=s.t+(Number.isFinite(s.visualFraction)?Math.max(0,Math.min(1,s.visualFraction)):0),moving=g.tr.line&&sampleTime>=g.tr.t0&&sampleTime<g.tr.t1,a=moving?G.visualPathPoint(g.tr.line,travelFraction(sampleTime,g.tr.t0,g.tr.t1)).slice(0,2):g.tr.line?.[0]||G.C[g.tr.p?.[0]]&&[G.C[g.tr.p[0]].x,G.C[g.tr.p[0]].y],b=g.tr.line?.at(-1)||G.C[g.tr.p?.at(-1)]&&[G.C[g.tr.p.at(-1)].x,G.C[g.tr.p.at(-1)].y];if(a&&b){g.tr.line=G.visualBetween(a,b);if(moving)g.tr.t0=sampleTime;}else g.tr=null;}
     const p=G.personPoint(g);if(p)g._visualPoint=p.slice(0,2);
    }
    s.movementGeometryVersion=geometryVersion;

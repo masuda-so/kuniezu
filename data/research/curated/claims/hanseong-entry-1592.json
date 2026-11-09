@@ -1,0 +1,40 @@
+{
+  "id": "hanseong-entry-1592",
+  "entity": "place:hanseong",
+  "predicate": "military-event",
+  "value": "小西行長・宗義智らが京畿道の楊根から龍津を渡り、この日、漢城（京城）の興仁門から入城した。",
+  "validYears": [
+    1592,
+    1592
+  ],
+  "datePrecision": "day",
+  "source": "hiDainihonshiryoKobun",
+  "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+  "locator": "綱文：和暦 文禄元年5月3日 第1条（区分 史料綜覧、編11・冊912（データベースの表示値）、355頁）",
+  "gameBindings": [
+    "TK.HIST:漢城陥落",
+    "node:hanseong"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-09",
+  "uncertainty": "綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。",
+  "linkedEntities": [
+    "place:hanseong",
+    "person:小西行長",
+    "person:宗義智"
+  ],
+  "eventTime": {
+    "kind": "dated-event",
+    "date": [
+      1592,
+      5,
+      3
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": false,
+    "precision": "day"
+  },
+  "eventRelation": "military-event",
+  "eventScope": "綱文が掲げる日付。文禄元年5月3日はゲーム共通の暦表で1592年6月12日。最終年表の漢城陥落（旧暦1592年5月3日、1592年6月12日）は一致する。入城の日。朝鮮国王が漢城を捨てた日（5月1日、別の条）とは分ける。綱文は「京城」と書く。"
+}

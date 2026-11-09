@@ -1,0 +1,39 @@
+{
+  "id": "hikuma-entry-1568",
+  "entity": "place:hikuma-castle",
+  "predicate": "military-event",
+  "value": "徳川家康が遠江引馬（浜松）に入った。",
+  "validYears": [
+    1568,
+    1568
+  ],
+  "datePrecision": "day",
+  "source": "hiDainihonshiryoKobun",
+  "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+  "locator": "綱文：和暦 永禄11年12月18日 第3条（区分 大日本史料、第10編之1（データベースの表示値）、469頁）",
+  "gameBindings": [
+    "TK.HIST:1568-12-20",
+    "node:hikuma"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-09",
+  "uncertainty": "綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。",
+  "linkedEntities": [
+    "place:hikuma-castle",
+    "person:tokugawa-ieyasu"
+  ],
+  "eventTime": {
+    "kind": "dated-event",
+    "date": [
+      1568,
+      12,
+      18
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": false,
+    "precision": "day"
+  },
+  "eventRelation": "military-event",
+  "eventScope": "綱文が掲げる日付。永禄11年12月18日はゲーム共通の暦表で1569年1月5日。最終年表の題名なしの出来事（旧暦1568年12月2日、1568年12月20日）は綱文より16日早い。入城の日。綱文は「引馬（浜松）」と書く。浜松城の築城や改名の日付には広げない。"
+}

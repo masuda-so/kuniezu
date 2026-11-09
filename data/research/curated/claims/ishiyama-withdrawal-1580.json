@@ -1,0 +1,39 @@
+{
+  "id": "ishiyama-withdrawal-1580",
+  "entity": "place:ishiyama",
+  "predicate": "military-event",
+  "value": "本願寺の教如は再び石山に籠城しようとしたが果たせず、城を退いて紀伊雑賀に移った。石山城は焼けた。",
+  "validYears": [
+    1580,
+    1580
+  ],
+  "datePrecision": "day",
+  "source": "hiDainihonshiryoKobun",
+  "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+  "locator": "綱文：和暦 天正8年8月2日 第2条（区分 史料綜覧、編10・冊911（データベースの表示値）、262頁）",
+  "gameBindings": [
+    "TK.HIST:石山本願寺の退去",
+    "node:ishiyama"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-09",
+  "uncertainty": "綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。",
+  "linkedEntities": [
+    "place:ishiyama",
+    "person:oda-nobunaga"
+  ],
+  "eventTime": {
+    "kind": "dated-event",
+    "date": [
+      1580,
+      8,
+      2
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": false,
+    "precision": "day"
+  },
+  "eventRelation": "military-event",
+  "eventScope": "綱文が掲げる日付。天正8年8月2日はゲーム共通の暦表で1580年9月10日。最終年表の石山本願寺の退去（旧暦1580年8月2日、1580年9月10日）は一致する。教如の退去と城の焼失の日。顕如の退去の日付（別の条）や講和の日付には広げない。"
+}

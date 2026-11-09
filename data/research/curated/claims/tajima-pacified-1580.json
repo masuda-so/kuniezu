@@ -1,0 +1,38 @@
+{
+  "id": "tajima-pacified-1580",
+  "entity": "region:但馬",
+  "predicate": "campaign-action",
+  "value": "羽柴秀吉が弟の長秀（秀長）に但馬を平定させた。",
+  "validYears": [
+    1580,
+    1580
+  ],
+  "datePrecision": "day",
+  "source": "hiDainihonshiryoKobun",
+  "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+  "locator": "綱文：和暦 天正8年4月24日 第3条（区分 史料綜覧、編10・冊911（データベースの表示値）、252頁）",
+  "gameBindings": [
+    "TK.HIST:1580-6-1"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-09",
+  "uncertainty": "綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。",
+  "linkedEntities": [
+    "person:羽柴秀長",
+    "person:toyotomi-hideyoshi"
+  ],
+  "eventTime": {
+    "kind": "dated-event",
+    "date": [
+      1580,
+      4,
+      24
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": false,
+    "precision": "day"
+  },
+  "eventRelation": "campaign-action",
+  "eventScope": "綱文が掲げる日付。天正8年4月24日はゲーム共通の暦表で1580年6月6日。最終年表の題名なしの出来事（旧暦1580年4月19日、1580年6月1日）は綱文より5日早い。綱文が掲げる平定の日。国の境の輪郭や、但馬の全域の支配の確定には広げない。主体は地域の参照（region:）。"
+}

@@ -1,0 +1,41 @@
+{
+  "id": "kannonji-abandoned-1568",
+  "entity": "place:kannonji",
+  "predicate": "military-event",
+  "value": "箕作城が落ちると、六角承禎（義賢）父子が観音寺城を捨てて伊賀へ逃れた。",
+  "validYears": [
+    1568,
+    1568
+  ],
+  "datePrecision": "day",
+  "source": "hiDainihonshiryoKobun",
+  "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+  "locator": "綱文：和暦 永禄11年9月12日 第1条（区分 大日本史料、第10編之1（データベースの表示値）、78頁）",
+  "gameBindings": [
+    "TK.HIST:信長上洛",
+    "node:kannonji"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-09",
+  "uncertainty": "綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。",
+  "linkedEntities": [
+    "place:kannonji",
+    "person:六角義賢",
+    "person:六角義治",
+    "person:oda-nobunaga"
+  ],
+  "eventTime": {
+    "kind": "dated-event",
+    "date": [
+      1568,
+      9,
+      12
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": false,
+    "precision": "day"
+  },
+  "eventRelation": "military-event",
+  "eventScope": "綱文が掲げる日付。永禄11年9月12日はゲーム共通の暦表で1568年10月2日。最終年表の信長上洛（旧暦1568年9月28日、1568年10月18日）は綱文より16日遅い。綱文が掲げる城の放棄の日。落城や明け渡しの日としない。城の廃絶（廃城）にも広げない。"
+}

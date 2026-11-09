@@ -1,0 +1,38 @@
+{
+  "id": "sacheon-withdrawal-1598",
+  "entity": "place:sacheon",
+  "predicate": "military-event",
+  "value": "島津義弘が慶尚道の泗川から撤退し、興善島に泊まった。",
+  "validYears": [
+    1598,
+    1598
+  ],
+  "datePrecision": "day",
+  "source": "hiDainihonshiryoKobun",
+  "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+  "locator": "綱文：和暦 慶長3年11月15日 第1条（区分 史料綜覧、編11・冊913（データベースの表示値）、178頁）",
+  "gameBindings": [
+    "TK.HIST:朝鮮からの撤兵"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-09",
+  "uncertainty": "綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。",
+  "linkedEntities": [
+    "place:sacheon",
+    "person:shimazu-yoshihiro"
+  ],
+  "eventTime": {
+    "kind": "dated-event",
+    "date": [
+      1598,
+      11,
+      15
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": false,
+    "precision": "day"
+  },
+  "eventRelation": "military-event",
+  "eventScope": "綱文が掲げる日付。慶長3年11月15日はゲーム共通の暦表で1598年12月13日。最終年表の朝鮮からの撤兵（旧暦1598年11月26日、1598年12月24日）は綱文より11日遅い。泗川の撤退の日。全軍の撤退の命令（10月8日、別の条）や、朝鮮からの撤兵の全体には広げない。朝鮮の地名は、日本に関わる出来事として記録する（地図の範囲とは別）。"
+}
