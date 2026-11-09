@@ -180,9 +180,12 @@ def test_people_are_one_thing_under_all_their_names(inputs, identity):
     assert person.records.filter(record_type=RecordType.CATALOG).exists()
     assert set(person.authorities.values_list("scheme", "identifier")) == authorities
     for scheme, identifier in authorities:
-        assert Thing.objects.filter(
-            authorities__scheme=scheme, authorities__identifier=identifier
-        ).get() == person
+        assert (
+            Thing.objects.filter(
+                authorities__scheme=scheme, authorities__identifier=identifier
+            ).get()
+            == person
+        )
     for name in names:
         assert Thing.objects.filter(names__name=name).distinct().get() == person
 
@@ -925,3 +928,91 @@ def test_contact_peace_and_surrender_keep_their_narrow_meaning(inputs):
     assert not Participation.objects.filter(
         phenomenon=surrender, thing__name="樺山久高"
     ).exists()
+
+
+@pytest.mark.parametrize(
+    ("person_key", "names", "authorities"),
+    [
+        (
+            "person:hori-hidemasa",
+            ["堀秀政"],
+            [("ndlna", "01071990"), ("wikidata", "Q8190166")],
+        ),
+        ("person:hori-hideharu", ["堀秀治"], [("wikidata", "Q9755540")]),
+        (
+            "person:shima-kiyooki",
+            ["島左近", "島清興"],
+            [("ndlna", "00863084"), ("wikidata", "Q1926883")],
+        ),
+        (
+            "person:tanaka-yoshimasa",
+            ["田中吉政"],
+            [("ndlna", "01013675"), ("wikidata", "Q11575390")],
+        ),
+        (
+            "person:torii-mototada",
+            ["鳥居元忠"],
+            [("ndlna", "00800190"), ("wikidata", "Q665518")],
+        ),
+        ("person:maeno-nagayasu", ["前野長康"], [("wikidata", "Q1059898")]),
+        (
+            "person:nakamura-kazuuji",
+            ["中村一氏"],
+            [("ndlna", "00625369"), ("wikidata", "Q10875670")],
+        ),
+        (
+            "person:takayama-ukon",
+            ["高山右近"],
+            [("ndlna", "00623123"), ("wikidata", "Q749873")],
+        ),
+        ("person:ishikawa-kazumasa", ["石川数正"], [("wikidata", "Q873166")]),
+        (
+            "person:shibata-katsuie",
+            ["柴田勝家"],
+            [("ndlna", "01052712"), ("wikidata", "Q707587")],
+        ),
+        (
+            "person:tsutsui-junkei",
+            ["筒井順慶"],
+            [("ndlna", "00625865"), ("wikidata", "Q8192220")],
+        ),
+        ("person:tsutsui-sadatsugu", ["筒井定次"], [("wikidata", "Q2748477")]),
+        (
+            "person:hachisuka-masakatsu",
+            ["蜂須賀正勝"],
+            [("ndlna", "00626437"), ("wikidata", "Q1201825")],
+        ),
+        ("person:hachisuka-iemasa", ["蜂須賀家政"], [("wikidata", "Q1073557")]),
+        ("person:hachisuka-yoshishige", ["蜂須賀至鎮"], [("wikidata", "Q3125481")]),
+        (
+            "person:kuki-yoshitaka",
+            ["九鬼嘉隆"],
+            [("ndlna", "01226769"), ("wikidata", "Q921113")],
+        ),
+        (
+            "person:chosokabe-morichika",
+            ["長宗我部盛親"],
+            [("ndlna", "00625511"), ("wikidata", "Q589151")],
+        ),
+        ("person:kosokabe-chikayasu", ["香宗我部親泰"], [("wikidata", "Q11365662")]),
+    ],
+)
+def test_eighteen_authorities_share_stable_identity(
+    inputs, person_key, names, authorities
+):
+    import_history(inputs)
+    person = Thing.objects.get(key=person_key)
+    assert person.records.filter(record_type=RecordType.PERSON).count() == 1
+    assert set(person.authorities.values_list("scheme", "identifier")) == {
+        tuple(authority) for authority in authorities
+    }
+    for name in names:
+        assert Thing.objects.filter(names__name=name).distinct().get() == person
+        assert not Thing.objects.filter(key="person:" + name).exists()
+    for scheme, identifier in authorities:
+        assert (
+            Thing.objects.filter(
+                authorities__scheme=scheme, authorities__identifier=identifier
+            ).get()
+            == person
+        )

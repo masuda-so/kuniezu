@@ -1,0 +1,341 @@
+{
+  "checked": "2026-11-08",
+  "scope": "8名の人物同定のみ。名乗りの開始日・生没・所在命題なし。",
+  "rawLicense": {
+    "name": "CC0 1.0",
+    "url": "https://www.wikidata.org/wiki/Wikidata:Licensing",
+    "scope": "Wikidata JSON only; NDL and public institution originals retain their own terms"
+  },
+  "records": [
+    {
+      "name": "筒井順慶",
+      "japaneseLabel": "筒井順慶",
+      "wikidataId": "Q8192220",
+      "wikidataRevision": 2550978826,
+      "wikidataJapaneseLabel": "筒井順慶",
+      "entityDataUrl": "https://www.wikidata.org/wiki/Special:EntityData/Q8192220.json",
+      "revisionUrl": "https://www.wikidata.org/w/index.php?title=Q8192220&oldid=2550978826",
+      "rawEntityDataSnapshot": "data/research/source-notes/authority-batch-b-raw/Q8192220.json",
+      "rawSha256": "5fd0de4f3bbd09b8b5a7d0f86b63f19186c7250b462178fdc593299ceee5f279",
+      "identityChecks": [
+        "NDL00625865の主名筒井順慶がPerson典拠に属する",
+        "Wikidata Q8192220の日本語主名とP349が同じNDL典拠へ対応する"
+      ],
+      "adoptedNames": [
+        "筒井順慶"
+      ],
+      "scope": "person-identity-only; no historical dates or locations adopted",
+      "nameEvidence": [
+        {
+          "name": "筒井順慶",
+          "supports": [
+            "wikidata-ja-label-or-alias",
+            "ndl-primary"
+          ]
+        }
+      ],
+      "ndlId": "00625865",
+      "ndlIdentity": {
+        "uri": "http://id.ndl.go.jp/auth/entity/00625865",
+        "type": {
+          "uri": "http://xmlns.com/foaf/0.1/Person"
+        },
+        "name": "筒井順慶",
+        "dateOfBirth": "1549",
+        "dateOfDeath": "1584",
+        "biographicalInformation": [
+          "戦国時代の武将"
+        ]
+      },
+      "identitySourceIds": [
+        "ndlTsutsuiJunkeiIdentity"
+      ],
+      "identitySourceUrl": "https://id.ndl.go.jp/auth/ndlna/00625865.json",
+      "identitySourceLocator": "個人典拠の主名・人物型・典拠ID"
+    },
+    {
+      "name": "筒井定次",
+      "japaneseLabel": "筒井定次",
+      "wikidataId": "Q2748477",
+      "wikidataRevision": 2556908778,
+      "wikidataJapaneseLabel": "筒井定次",
+      "entityDataUrl": "https://www.wikidata.org/wiki/Special:EntityData/Q2748477.json",
+      "revisionUrl": "https://www.wikidata.org/w/index.php?title=Q2748477&oldid=2556908778",
+      "rawEntityDataSnapshot": "data/research/source-notes/authority-batch-b-raw/Q2748477.json",
+      "rawSha256": "ce167321a6cd5763e9ba8ad6b61ac07038623f6fd3cb37f6d14926a390422123",
+      "identityChecks": [
+        "大和郡山市の本文が筒井定次を順慶の養子とする",
+        "Wikidata Q2748477の日本語主名が筒井定次でP1038が順慶Q8192220へ対応する"
+      ],
+      "adoptedNames": [
+        "筒井定次"
+      ],
+      "scope": "person-identity-only; no historical dates or locations adopted",
+      "nameEvidence": [
+        {
+          "name": "筒井定次",
+          "supports": [
+            "wikidata-ja-label-or-alias",
+            "public-source"
+          ]
+        }
+      ],
+      "publicOriginal": {
+        "path": "data/research/source-notes/authority-batch-b-raw/tsutsui-city.html.gz",
+        "compression": "gzip",
+        "uncompressedSha256": "6d1ae26e2e3558a0ccc9059e95dcd1f6841b2d0a4a9eae9afbc9a270ee54c54e"
+      },
+      "identitySourceIds": [
+        "yamatokoriyamaSadatsuguIdentity"
+      ],
+      "identitySourceUrl": "https://www.city.yamatokoriyama.lg.jp/soshiki/hisyoka/shichoshitsu/1/reiwa7/16986.html",
+      "identitySourceLocator": "順慶の養子・筒井定次の段落"
+    },
+    {
+      "name": "蜂須賀正勝",
+      "japaneseLabel": "蜂須賀正勝",
+      "wikidataId": "Q1201825",
+      "wikidataRevision": 2503996779,
+      "wikidataJapaneseLabel": "蜂須賀正勝",
+      "entityDataUrl": "https://www.wikidata.org/wiki/Special:EntityData/Q1201825.json",
+      "revisionUrl": "https://www.wikidata.org/w/index.php?title=Q1201825&oldid=2503996779",
+      "rawEntityDataSnapshot": "data/research/source-notes/authority-batch-b-raw/Q1201825.json",
+      "rawSha256": "67e6f8438dda5209b8eaeef6758617e651e08101df32adb69a136a08d0bd065d",
+      "identityChecks": [
+        "NDL00626437の主名蜂須賀正勝がPerson典拠に属する",
+        "Wikidata Q1201825の日本語主名とP349が同じNDL典拠へ対応する"
+      ],
+      "adoptedNames": [
+        "蜂須賀正勝"
+      ],
+      "scope": "person-identity-only; no historical dates or locations adopted",
+      "nameEvidence": [
+        {
+          "name": "蜂須賀正勝",
+          "supports": [
+            "wikidata-ja-label-or-alias",
+            "ndl-primary"
+          ]
+        }
+      ],
+      "ndlId": "00626437",
+      "ndlIdentity": {
+        "uri": "http://id.ndl.go.jp/auth/entity/00626437",
+        "type": {
+          "uri": "http://xmlns.com/foaf/0.1/Person"
+        },
+        "name": "蜂須賀正勝",
+        "dateOfBirth": "1526",
+        "dateOfDeath": "1586"
+      },
+      "identitySourceIds": [
+        "ndlHachisukaMasakatsuIdentity"
+      ],
+      "identitySourceUrl": "https://id.ndl.go.jp/auth/ndlna/00626437.json",
+      "identitySourceLocator": "個人典拠の主名・人物型・典拠ID"
+    },
+    {
+      "name": "蜂須賀家政",
+      "japaneseLabel": "蜂須賀家政",
+      "wikidataId": "Q1073557",
+      "wikidataRevision": 2508576099,
+      "wikidataJapaneseLabel": "蜂須賀家政",
+      "entityDataUrl": "https://www.wikidata.org/wiki/Special:EntityData/Q1073557.json",
+      "revisionUrl": "https://www.wikidata.org/w/index.php?title=Q1073557&oldid=2508576099",
+      "rawEntityDataSnapshot": "data/research/source-notes/authority-batch-b-raw/Q1073557.json",
+      "rawSha256": "6f4bec9fd5972cd1d5d6fe3a4c63af587696fdca7986596ba9d12ec9246cc4e0",
+      "identityChecks": [
+        "徳島城博物館の本文は正勝の子を家政として至鎮の父と区別する",
+        "Wikidata Q1073557のP22は正勝Q1201825、P40は至鎮Q3125481に対応する"
+      ],
+      "adoptedNames": [
+        "蜂須賀家政"
+      ],
+      "scope": "person-identity-only; no historical dates or locations adopted",
+      "nameEvidence": [
+        {
+          "name": "蜂須賀家政",
+          "supports": [
+            "wikidata-ja-label-or-alias",
+            "public-source"
+          ]
+        }
+      ],
+      "publicOriginal": {
+        "path": "data/research/source-notes/authority-batch-b-raw/hachisuka-museum.html.gz",
+        "compression": "gzip",
+        "uncompressedSha256": "5e779092ccc691e07be2de5f3e8c7cd745ae1890845937890cdde934f04a64ae"
+      },
+      "identitySourceIds": [
+        "tokushimaHachisukaLineIdentity"
+      ],
+      "identitySourceUrl": "https://www.city.tokushima.tokushima.jp/smph/johaku/kankoubutsu_zuroku/kankobutsu_zuroku.html",
+      "identitySourceLocator": "蜂須賀十五代－武の伝統と心の継承－の紹介段落"
+    },
+    {
+      "name": "蜂須賀至鎮",
+      "japaneseLabel": "蜂須賀至鎮",
+      "wikidataId": "Q3125481",
+      "wikidataRevision": 2556853148,
+      "wikidataJapaneseLabel": "蜂須賀至鎮",
+      "entityDataUrl": "https://www.wikidata.org/wiki/Special:EntityData/Q3125481.json",
+      "revisionUrl": "https://www.wikidata.org/w/index.php?title=Q3125481&oldid=2556853148",
+      "rawEntityDataSnapshot": "data/research/source-notes/authority-batch-b-raw/Q3125481.json",
+      "rawSha256": "208f138af68b58aee184c9b21eedd8a54803e837917b5ed8cd067c4d6cfc95a4",
+      "identityChecks": [
+        "徳島城博物館の本文が家政の嫡子を至鎮とする",
+        "Wikidata Q3125481の主名が蜂須賀至鎮、P22は家政Q1073557に対応する"
+      ],
+      "adoptedNames": [
+        "蜂須賀至鎮"
+      ],
+      "scope": "person-identity-only; no historical dates or locations adopted",
+      "nameEvidence": [
+        {
+          "name": "蜂須賀至鎮",
+          "supports": [
+            "wikidata-ja-label-or-alias",
+            "public-source"
+          ]
+        }
+      ],
+      "publicOriginal": {
+        "path": "data/research/source-notes/authority-batch-b-raw/hachisuka-museum.html.gz",
+        "compression": "gzip",
+        "uncompressedSha256": "5e779092ccc691e07be2de5f3e8c7cd745ae1890845937890cdde934f04a64ae"
+      },
+      "identitySourceIds": [
+        "tokushimaHachisukaLineIdentity"
+      ],
+      "identitySourceUrl": "https://www.city.tokushima.tokushima.jp/smph/johaku/kankoubutsu_zuroku/kankobutsu_zuroku.html",
+      "identitySourceLocator": "蜂須賀十五代－武の伝統と心の継承－の紹介段落"
+    },
+    {
+      "name": "九鬼嘉隆",
+      "japaneseLabel": "九鬼嘉隆",
+      "wikidataId": "Q921113",
+      "wikidataRevision": 2552573614,
+      "wikidataJapaneseLabel": "九鬼嘉隆",
+      "entityDataUrl": "https://www.wikidata.org/wiki/Special:EntityData/Q921113.json",
+      "revisionUrl": "https://www.wikidata.org/w/index.php?title=Q921113&oldid=2552573614",
+      "rawEntityDataSnapshot": "data/research/source-notes/authority-batch-b-raw/Q921113.json",
+      "rawSha256": "c496b6100dce822d5b89af380c467db56feb5b40cbccca15771be908b9b82f07",
+      "identityChecks": [
+        "NDL01226769の主名九鬼嘉隆がPerson典拠に属する",
+        "Wikidata Q921113の日本語主名とP349が同じNDL典拠へ対応する"
+      ],
+      "adoptedNames": [
+        "九鬼嘉隆"
+      ],
+      "scope": "person-identity-only; no historical dates or locations adopted",
+      "nameEvidence": [
+        {
+          "name": "九鬼嘉隆",
+          "supports": [
+            "wikidata-ja-label-or-alias",
+            "ndl-primary"
+          ]
+        }
+      ],
+      "ndlId": "01226769",
+      "ndlIdentity": {
+        "uri": "http://id.ndl.go.jp/auth/entity/01226769",
+        "type": {
+          "uri": "http://xmlns.com/foaf/0.1/Person"
+        },
+        "name": "九鬼嘉隆",
+        "dateOfBirth": "1542",
+        "dateOfDeath": "1600",
+        "biographicalInformation": [
+          "安土桃山時代の武将"
+        ]
+      },
+      "identitySourceIds": [
+        "ndlKukiYoshitakaIdentity"
+      ],
+      "identitySourceUrl": "https://id.ndl.go.jp/auth/ndlna/01226769.json",
+      "identitySourceLocator": "個人典拠の主名・人物型・典拠ID"
+    },
+    {
+      "name": "長宗我部盛親",
+      "japaneseLabel": "長宗我部盛親",
+      "wikidataId": "Q589151",
+      "wikidataRevision": 2549138423,
+      "wikidataJapaneseLabel": "長宗我部盛親",
+      "entityDataUrl": "https://www.wikidata.org/wiki/Special:EntityData/Q589151.json",
+      "revisionUrl": "https://www.wikidata.org/w/index.php?title=Q589151&oldid=2549138423",
+      "rawEntityDataSnapshot": "data/research/source-notes/authority-batch-b-raw/Q589151.json",
+      "rawSha256": "2de67e8c43ea3c33c04e70769d608c637754e226b49559ac40149e0d1a7deee3",
+      "identityChecks": [
+        "NDL00625511の主名長宗我部盛親がPerson典拠に属する",
+        "Wikidata Q589151の日本語主名とP349が同じNDL典拠へ対応する"
+      ],
+      "adoptedNames": [
+        "長宗我部盛親"
+      ],
+      "scope": "person-identity-only; no historical dates or locations adopted",
+      "nameEvidence": [
+        {
+          "name": "長宗我部盛親",
+          "supports": [
+            "wikidata-ja-label-or-alias",
+            "ndl-primary"
+          ]
+        }
+      ],
+      "ndlId": "00625511",
+      "ndlIdentity": {
+        "uri": "http://id.ndl.go.jp/auth/entity/00625511",
+        "type": {
+          "uri": "http://xmlns.com/foaf/0.1/Person"
+        },
+        "name": "長宗我部盛親",
+        "dateOfBirth": "1575",
+        "dateOfDeath": "1615"
+      },
+      "identitySourceIds": [
+        "ndlChosokabeMorichikaIdentity"
+      ],
+      "identitySourceUrl": "https://id.ndl.go.jp/auth/ndlna/00625511.json",
+      "identitySourceLocator": "個人典拠の主名・人物型・典拠ID"
+    },
+    {
+      "name": "香宗我部親泰",
+      "japaneseLabel": "香宗我部親泰",
+      "wikidataId": "Q11365662",
+      "wikidataRevision": 2526196050,
+      "wikidataJapaneseLabel": "香宗我部親泰",
+      "entityDataUrl": "https://www.wikidata.org/wiki/Special:EntityData/Q11365662.json",
+      "revisionUrl": "https://www.wikidata.org/w/index.php?title=Q11365662&oldid=2526196050",
+      "rawEntityDataSnapshot": "data/research/source-notes/authority-batch-b-raw/Q11365662.json",
+      "rawSha256": "65d6493047a859610d034311a52838a2bd0a59b45251b7cb8e5f3adca6cbef01",
+      "identityChecks": [
+        "高知県の展覧会紹介が香宗我部親泰と元親の実弟という人物文脈を明記する",
+        "Wikidata Q11365662の日本語主名が香宗我部親泰、説明も長宗我部国親の三男とする"
+      ],
+      "adoptedNames": [
+        "香宗我部親泰"
+      ],
+      "scope": "person-identity-only; no historical dates or locations adopted",
+      "nameEvidence": [
+        {
+          "name": "香宗我部親泰",
+          "supports": [
+            "wikidata-ja-label-or-alias",
+            "public-source"
+          ]
+        }
+      ],
+      "publicOriginal": {
+        "path": "data/research/source-notes/authority-batch-b-raw/chikayasu-pref.html.gz",
+        "compression": "gzip",
+        "uncompressedSha256": "0a0f3bac3bbdc16ef950225d4b313f82d63e3a721800a60835a5593961a45b0c"
+      },
+      "identitySourceIds": [
+        "kochiChikayasuIdentity"
+      ],
+      "identitySourceUrl": "https://www.pref.kochi.lg.jp/mailmaga/sunsun/2019050700028/",
+      "identitySourceLocator": "歴史民俗資料館・香宗我部親泰展の紹介"
+    }
+  ]
+}

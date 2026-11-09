@@ -1,0 +1,44 @@
+{
+    "@context": "https://id.ndl.go.jp/auth/context.json",
+    "uri": "http://id.ndl.go.jp/auth/ndlna/00625369",
+    "primaryTopic": {
+        "uri": "http://id.ndl.go.jp/auth/entity/00625369",
+        "type": {
+            "uri": "http://xmlns.com/foaf/0.1/Person"
+        },
+        "name": "中村一氏",
+        "dateOfDeath": "1600"
+    },
+    "type": {
+        "uri": "http://www.w3.org/2004/02/skos/core#Concept"
+    },
+    "modified": "2019-01-07T18:13:54",
+    "created": "1998-01-30",
+    "prefLabel": {
+        "literalForm": "中村, 一氏, -1600",
+        "transcription": "ナカムラ, カズウジ, -1600",
+        "transcription-l": [
+            {
+                "@value": "ナカムラ, カズウジ, -1600",
+                "@language": "ja-Kana"
+            },
+            {
+                "@value": "Nakamura, Kazuji, -1600",
+                "@language": "ja-Latn"
+            }
+        ]
+    },
+    "label": "中村, 一氏, -1600",
+    "source": [
+        "米子城主松平伯耆守と式部少輔 (伝) / 中村忠文 著"
+    ],
+    "exactMatch": [
+        {
+            "uri": "http://viaf.org/viaf/sourceID/NDL%7C00625369#skos:Concept"
+        }
+    ],
+    "inScheme": {
+        "uri": "http://id.ndl.go.jp/auth#personalNames"
+    }
+}
+

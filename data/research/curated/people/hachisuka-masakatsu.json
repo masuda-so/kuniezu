@@ -1,0 +1,28 @@
+{
+  "id": "person:hachisuka-masakatsu",
+  "name": "蜂須賀正勝",
+  "gameNames": [
+    "蜂須賀正勝"
+  ],
+  "authorityIds": [
+    "wikidata:Q1201825",
+    "ndlna:00626437"
+  ],
+  "authorityEvidence": {
+    "scope": "person-identity",
+    "checked": "2026-11-08",
+    "wikidataRevision": 2503996779,
+    "snapshot": "data/research/source-notes/authority-batch-b.json",
+    "sourceNote": "data/research/source-notes/authority-batch-b.json",
+    "note": "data/research/source-notes/authority-batch-b.md",
+    "identityChecks": [
+      "NDL00626437の主名蜂須賀正勝がPerson典拠に属する",
+      "Wikidata Q1201825の日本語主名とP349が同じNDL典拠へ対応する"
+    ],
+    "basis": "人物の同定のみ。原本にある生没日・所在・所領・関係の時期は新たな史実命題へ採用しない。",
+    "ndlSnapshot": "data/research/source-notes/hachisuka-masakatsu-ndl-authority.json",
+    "sourceIds": [
+      "ndlHachisukaMasakatsuIdentity"
+    ]
+  }
+}

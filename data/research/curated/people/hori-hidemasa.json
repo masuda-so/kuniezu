@@ -1,0 +1,28 @@
+{
+  "id": "person:hori-hidemasa",
+  "name": "堀秀政",
+  "gameNames": [
+    "堀秀政"
+  ],
+  "authorityIds": [
+    "wikidata:Q8190166",
+    "ndlna:01071990"
+  ],
+  "authorityEvidence": {
+    "scope": "person-identity",
+    "checked": "2026-11-08",
+    "wikidataRevision": 2550972369,
+    "snapshot": "data/research/source-notes/authority-batch-a.json",
+    "sourceNote": "data/research/source-notes/authority-batch-a.json",
+    "note": "data/research/source-notes/authority-batch-a.md",
+    "sourceIds": [
+      "ndlBatchAHoriHidemasa"
+    ],
+    "identityChecks": [
+      "NDL原本の典拠URI・Person区分・主名が対象人物に対応",
+      "Wikidata原本のQ5人物型とP349のNDL 01071990が同じ典拠を参照する"
+    ],
+    "basis": "人物同定のみ。原本の生没年や経歴の値を史実命題へ転記しない。",
+    "ndlSnapshot": "data/research/source-notes/hori-hidemasa-ndl-authority.json"
+  }
+}

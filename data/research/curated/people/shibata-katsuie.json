@@ -1,0 +1,28 @@
+{
+  "id": "person:shibata-katsuie",
+  "name": "柴田勝家",
+  "gameNames": [
+    "柴田勝家"
+  ],
+  "authorityIds": [
+    "wikidata:Q707587",
+    "ndlna:01052712"
+  ],
+  "authorityEvidence": {
+    "scope": "person-identity",
+    "checked": "2026-11-08",
+    "wikidataRevision": 2556833086,
+    "snapshot": "data/research/source-notes/authority-batch-a.json",
+    "sourceNote": "data/research/source-notes/authority-batch-a.json",
+    "note": "data/research/source-notes/authority-batch-a.md",
+    "sourceIds": [
+      "ndlBatchAShibataKatsuie"
+    ],
+    "identityChecks": [
+      "NDL原本の典拠URI・Person区分・主名が対象人物に対応",
+      "Wikidata原本のQ5人物型とP349のNDL 01052712が同じ典拠を参照する"
+    ],
+    "basis": "人物同定のみ。原本の生没年や経歴の値を史実命題へ転記しない。",
+    "ndlSnapshot": "data/research/source-notes/shibata-katsuie-ndl-authority.json"
+  }
+}

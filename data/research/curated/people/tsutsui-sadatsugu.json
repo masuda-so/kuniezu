@@ -1,0 +1,26 @@
+{
+  "id": "person:tsutsui-sadatsugu",
+  "name": "筒井定次",
+  "gameNames": [
+    "筒井定次"
+  ],
+  "authorityIds": [
+    "wikidata:Q2748477"
+  ],
+  "authorityEvidence": {
+    "scope": "person-identity",
+    "checked": "2026-11-08",
+    "wikidataRevision": 2556908778,
+    "snapshot": "data/research/source-notes/authority-batch-b.json",
+    "sourceNote": "data/research/source-notes/authority-batch-b.json",
+    "note": "data/research/source-notes/authority-batch-b.md",
+    "identityChecks": [
+      "大和郡山市の本文が筒井定次を順慶の養子とする",
+      "Wikidata Q2748477の日本語主名が筒井定次でP1038が順慶Q8192220へ対応する"
+    ],
+    "basis": "人物の同定のみ。原本にある生没日・所在・所領・関係の時期は新たな史実命題へ採用しない。",
+    "sourceIds": [
+      "yamatokoriyamaSadatsuguIdentity"
+    ]
+  }
+}

@@ -1,0 +1,55 @@
+{
+    "@context": "https://id.ndl.go.jp/auth/context.json",
+    "uri": "http://id.ndl.go.jp/auth/ndlna/00625865",
+    "primaryTopic": {
+        "uri": "http://id.ndl.go.jp/auth/entity/00625865",
+        "type": {
+            "uri": "http://xmlns.com/foaf/0.1/Person"
+        },
+        "name": "筒井順慶",
+        "dateOfBirth": "1549",
+        "dateOfDeath": "1584",
+        "biographicalInformation": [
+            "戦国時代の武将"
+        ]
+    },
+    "type": {
+        "uri": "http://www.w3.org/2004/02/skos/core#Concept"
+    },
+    "modified": "2026-01-21T08:34:47",
+    "created": "1998-01-30",
+    "prefLabel": {
+        "literalForm": "筒井, 順慶, 1549-1584",
+        "transcription": "ツツイ, ジュンケイ, 1549-1584",
+        "transcription-l": [
+            {
+                "@value": "ツツイ, ジュンケイ, 1549-1584",
+                "@language": "ja-Kana"
+            },
+            {
+                "@value": "Tsutsui, Junkei, 1549-1584",
+                "@language": "ja-Latn"
+            }
+        ]
+    },
+    "label": "筒井, 順慶, 1549-1584",
+    "source": [
+        "筒井順慶とその一族 / 籔景三 著",
+        "大人名事典"
+    ],
+    "exactMatch": [
+        {
+            "uri": "http://id.loc.gov/authorities/names/n85291961"
+        },
+        {
+            "uri": "https://isni.org/isni/0000000025167959"
+        },
+        {
+            "uri": "http://viaf.org/viaf/sourceID/NDL%7C00625865#skos:Concept"
+        }
+    ],
+    "inScheme": {
+        "uri": "http://id.ndl.go.jp/auth#personalNames"
+    }
+}
+
