@@ -1,16 +1,19 @@
-# 年表の登場人物 3 名の外部典拠照合（第 1 便）
+# 年表の登場人物 5 名の外部典拠照合（第 1 便）
 
-2026-11-09。`appear-person-authority-candidates.json` で候補が 1 人に絞れた 93 人のうち、公的な出典で姓名以外の 2 項目を確かめられた 3 人を同定した。ゲームの生没日・登場日・所在と、確認済み史実命題は変更しない。
+2026-11-09。`appear-person-authority-candidates.json` で候補が 1 人に絞れた 93 人のうち、公的な出典で姓名以外の 2 項目を確かめられた 5 人を同定した。ゲームの生没日・登場日・所在と、確認済み史実命題は変更しない。
 
 | 人物 | 固定改訂 | 姓名以外の照合 | 公的出典・箇所 |
 |---|---|---|---|
 | 新納忠元 | [Q7034472・2521642127](https://www.wikidata.org/w/index.php?title=Q7034472&oldid=2521642127) | 生年 1526／大口地頭 | [伊佐市・新納忠元公生誕500年 記念事業特設ページ](https://www.city.isa.kagoshima.jp/residency/kankou/niro_500/)：「1.新納忠元公と伊佐市」 |
 | 大久保忠世 | [Q869401・2417722604](https://www.wikidata.org/w/index.php?title=Q869401&oldid=2417722604) | 生年 1532／父 大久保忠員・小田原城主 | [小田原市・大久保一族と大久保神社](https://www.city.odawara.kanagawa.jp/kanko/corridor/castle/p10005.html)：本文冒頭 |
 | 吉川元長 | [Q11412944・2336607318](https://www.wikidata.org/w/index.php?title=Q11412944&oldid=2336607318) | 弟 吉川広家・父 吉川元春／九州で死去 | [北広島町・きたひろエコ・ミュージアム 令和3年3月](https://www.town.kitahiroshima.lg.jp/site/kominkan/29673.html)：吉川広家・万徳院跡の段落 |
+| 山内一豊 | [Q1315878・2566928498](https://www.wikidata.org/w/index.php?title=Q1315878&oldid=2566928498) | 生年 1545／没年 1605 | [高知県立高知城歴史博物館・土佐藩歴代藩主紹介](https://www.kochi-johaku.jp/column/3819/)：「初代 一豊」の生没年の行 |
+| 南部信直 | [Q3137467・2378288044](https://www.wikidata.org/w/index.php?title=Q3137467&oldid=2378288044) | 没年 1599／行年 54（数え。Wikidata の生年 1546 と合う） | [青森県・南部信直夫妻の墓石](https://www.pref.aomori.lg.jp/soshiki/kyoiku/e-bunka/juho_kenzoubutu_42.html)：解説の段落 |
 
 ## 同定の範囲と留保
 
 - 相馬義胤（16 代）は、南相馬市の本文で生没年 1548〜1635 を確かめたが、Wikidata の日本語主名が「相馬義胤 (十六代当主)」で、ゲームの名前を外部典拠の名前で裏付けられないため、この便では採用しなかった（NDL 典拠などで名前を確かめてから採用する）。
 - 新納忠元の没年は、伊佐市が慶長 15 年（1610）、Wikidata が 1611 年とする。慶長 15 年の年末は西暦 1611 年に入りうるので、没年は根拠に数えず、生年と大口地頭の役職で同定した。
 - 大久保忠世・吉川元長は、出典が年を一部しか書かないので、親子・兄弟の関係と役職・死去の地で同定した。関係や役職の時期は新しい命題にしない。
+- 南部信直の生年は青森県の本文に無く、行年 54 の数えから 1546 年と矛盾しないことだけを見た。
 - 原本は `appear-authority-batch-1-raw/` に、Wikidata の JSON（CC0）と公的なページの HTML（gzip）を保存した。

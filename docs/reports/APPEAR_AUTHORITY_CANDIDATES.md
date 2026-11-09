@@ -13,6 +13,6 @@
 - `secret-scan.cjs`・`source-note-privacy.cjs`・`offline.cjs`・`organization.cjs`・`work-policy.cjs`・`evidence-store.cjs`：通過。
 - 命題・人物・場所の入力と、集約の書き出しは変えていない。
 
-## 第 1 便の採用（3 名）
+## 第 1 便の採用（5 名）
 
-候補が 1 人に絞れた 93 人のうち、公的な出典で姓名以外の 2 項目を確かめられた 3 人を、これまでの典拠の便と同じ形式で `curated/people` に採用した（`data/research/source-notes/appear-authority-batch-1.md`）。新納忠元（伊佐市）、大久保忠世（小田原市）、吉川元長（北広島町）。原本は Wikidata の固定版の JSON と、公的なページの HTML（gzip）を保存した。相馬義胤（16 代）は南相馬市の本文で生没年を確かめたが、Wikidata の主名が「相馬義胤 (十六代当主)」で名前を外部典拠で裏付けられないので、採用しなかった。人物典拠は 109 件から 112 件になる。
+候補が 1 人に絞れた 93 人のうち、公的な出典で姓名以外の 2 項目を確かめられた 3 人を、これまでの典拠の便と同じ形式で `curated/people` に採用した（`data/research/source-notes/appear-authority-batch-1.md`）。新納忠元（伊佐市）、大久保忠世（小田原市）、吉川元長（北広島町）、山内一豊（高知城歴史博物館）、南部信直（青森県）。原本は Wikidata の固定版の JSON と、公的なページの HTML（gzip）を保存した。相馬義胤（16 代）は南相馬市の本文で生没年を確かめたが、Wikidata の主名が「相馬義胤 (十六代当主)」で名前を外部典拠で裏付けられないので、採用しなかった。人物典拠は 109 件から 114 件になる。

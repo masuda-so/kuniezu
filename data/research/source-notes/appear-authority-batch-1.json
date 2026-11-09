@@ -1,6 +1,6 @@
 {
   "checked": "2026-11-09",
-  "scope": "年表の登場人物3名の人物同定のみ。生没・所在の命題なし。候補は appear-person-authority-candidates.json。",
+  "scope": "年表の登場人物5名の人物同定のみ。生没・所在の命題なし。候補は appear-person-authority-candidates.json。",
   "rawLicense": {
     "name": "CC0 1.0",
     "url": "https://www.wikidata.org/wiki/Wikidata:Licensing",
@@ -123,6 +123,84 @@
       "identitySourceUrl": "https://www.town.kitahiroshima.lg.jp/site/kominkan/29673.html",
       "identitySourceLocator": "吉川広家の段落、万徳院跡の段落",
       "reservation": "北広島町の本文は生没年を書かないので、年は比べていない。兄弟の関係と九州での死去で同定した。"
+    },
+    {
+      "name": "山内一豊",
+      "japaneseLabel": "山内一豊",
+      "wikidataId": "Q1315878",
+      "wikidataRevision": 2566928498,
+      "wikidataJapaneseLabel": "山内一豊",
+      "entityDataUrl": "https://www.wikidata.org/wiki/Special:EntityData/Q1315878.json",
+      "revisionUrl": "https://www.wikidata.org/w/index.php?title=Q1315878&oldid=2566928498",
+      "rawEntityDataSnapshot": "data/research/source-notes/appear-authority-batch-1-raw/Q1315878.json",
+      "rawSha256": "118df83af6de628c94795284d48b448d2354c4407468f6dfaf8487879cf9cab1",
+      "identityChecks": [
+        "高知城歴史博物館の本文が初代一豊の生没年を天文14（1545）年〜慶長10（1605）年とする",
+        "Wikidata Q1315878の日本語主名が山内一豊で、P569・P570の年が1545・1605"
+      ],
+      "adoptedNames": [
+        "山内一豊"
+      ],
+      "scope": "person-identity-only; no historical dates or locations adopted",
+      "nameEvidence": [
+        {
+          "name": "山内一豊",
+          "supports": [
+            "wikidata-ja-label-or-alias",
+            "public-source"
+          ]
+        }
+      ],
+      "publicOriginal": {
+        "path": "data/research/source-notes/appear-authority-batch-1-raw/kazutoyo-kochi-johaku.html.gz",
+        "compression": "gzip",
+        "uncompressedSha256": "6df8d6fb3379d071776c852c7b1f709cf69269d0ce9cd883a0517f3ac5a95f15"
+      },
+      "identitySourceIds": [
+        "kochiJohakuKazutoyoIdentity"
+      ],
+      "identitySourceUrl": "https://www.kochi-johaku.jp/column/3819/",
+      "identitySourceLocator": "「初代 一豊」の生没年の行",
+      "reservation": "家督・官位・入国の時期は同定の比較で、新たな命題にしない。"
+    },
+    {
+      "name": "南部信直",
+      "japaneseLabel": "南部信直",
+      "wikidataId": "Q3137467",
+      "wikidataRevision": 2378288044,
+      "wikidataJapaneseLabel": "南部信直",
+      "entityDataUrl": "https://www.wikidata.org/wiki/Special:EntityData/Q3137467.json",
+      "revisionUrl": "https://www.wikidata.org/w/index.php?title=Q3137467&oldid=2378288044",
+      "rawEntityDataSnapshot": "data/research/source-notes/appear-authority-batch-1-raw/Q3137467.json",
+      "rawSha256": "0314eaa782fbc6de8c5fb04080871320b9f8f3c3d634255ac49bfef588a7c0ff",
+      "identityChecks": [
+        "青森県の本文が南部信直を南部家第26代当主とし、慶長4年（1599）に行年54歳で死去したとする",
+        "Wikidata Q3137467の日本語主名が南部信直で、P570の年が1599、P569の年が1546（行年54の数えと合う）"
+      ],
+      "adoptedNames": [
+        "南部信直"
+      ],
+      "scope": "person-identity-only; no historical dates or locations adopted",
+      "nameEvidence": [
+        {
+          "name": "南部信直",
+          "supports": [
+            "wikidata-ja-label-or-alias",
+            "public-source"
+          ]
+        }
+      ],
+      "publicOriginal": {
+        "path": "data/research/source-notes/appear-authority-batch-1-raw/nobunao-aomori.html.gz",
+        "compression": "gzip",
+        "uncompressedSha256": "af6c6758ee8c5f39bdbbecf2fe6f0dfd8bda71eb46a92f24f68a7ff48b181120"
+      },
+      "identitySourceIds": [
+        "aomoriNobunaoIdentity"
+      ],
+      "identitySourceUrl": "https://www.pref.aomori.lg.jp/soshiki/kyoiku/e-bunka/juho_kenzoubutu_42.html",
+      "identitySourceLocator": "解説の段落",
+      "reservation": "生年は青森県の本文に無く、行年54の数えから1546年と矛盾しないことだけを見た。居城の変遷は新たな命題にしない。"
     }
   ]
 }
