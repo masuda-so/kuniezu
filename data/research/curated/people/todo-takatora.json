@@ -1,0 +1,26 @@
+{
+  "id": "person:todo-takatora",
+  "name": "藤堂高虎",
+  "gameNames": [
+    "藤堂高虎"
+  ],
+  "authorityIds": [
+    "wikidata:Q1377984"
+  ],
+  "authorityEvidence": {
+    "scope": "person-identity",
+    "checked": "2026-11-09",
+    "wikidataRevision": 2556894513,
+    "snapshot": "data/research/source-notes/appear-authority-batch-1.json",
+    "sourceNote": "data/research/source-notes/appear-authority-batch-1.json",
+    "note": "data/research/source-notes/appear-authority-batch-1.md",
+    "identityChecks": [
+      "津市の略年譜が藤堂高虎を弘治2年（1556）に藤堂虎高の次男として生まれ、寛永7年（1630）10月5日に死去したとする",
+      "Wikidata Q1377984の日本語主名が藤堂高虎で、P569・P570の年が1556・1630"
+    ],
+    "basis": "人物の同定のみ。原本にある生没日・所在・所領・関係の時期は新たな史実命題へ採用しない。",
+    "sourceIds": [
+      "tsuTakatoraIdentity"
+    ]
+  }
+}

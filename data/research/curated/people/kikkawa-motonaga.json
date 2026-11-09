@@ -1,0 +1,26 @@
+{
+  "id": "person:kikkawa-motonaga",
+  "name": "吉川元長",
+  "gameNames": [
+    "吉川元長"
+  ],
+  "authorityIds": [
+    "wikidata:Q11412944"
+  ],
+  "authorityEvidence": {
+    "scope": "person-identity",
+    "checked": "2026-11-09",
+    "wikidataRevision": 2336607318,
+    "snapshot": "data/research/source-notes/appear-authority-batch-1.json",
+    "sourceNote": "data/research/source-notes/appear-authority-batch-1.json",
+    "note": "data/research/source-notes/appear-authority-batch-1.md",
+    "identityChecks": [
+      "北広島町の本文が吉川元長を吉川広家の兄とし、吉川元春の子の広家が、九州で亡くなった兄元長の跡を継いだとする",
+      "Wikidata Q11412944の日本語主名が吉川元長で、説明が毛利氏の一族、P569・P570の年が1548・1587"
+    ],
+    "basis": "人物の同定のみ。原本にある生没日・所在・所領・関係の時期は新たな史実命題へ採用しない。",
+    "sourceIds": [
+      "kitahiroshimaMotonagaIdentity"
+    ]
+  }
+}

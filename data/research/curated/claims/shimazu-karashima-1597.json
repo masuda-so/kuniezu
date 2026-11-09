@@ -1,0 +1,37 @@
+{
+  "id": "shimazu-karashima-1597",
+  "entity": "person:shimazu-yoshihiro",
+  "predicate": "departure",
+  "value": "宇喜多秀家・毛利秀元が諸将とともに全羅道に入るなか、この日、島津義弘らが唐島（巨済島）を発った。",
+  "validYears": [
+    1597,
+    1597
+  ],
+  "datePrecision": "day",
+  "source": "hiDainihonshiryoKobun",
+  "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+  "locator": "綱文：和暦 慶長2年7月28日 第1条（区分 史料綜覧、編11・冊913（データベースの表示値）、141頁）",
+  "gameBindings": [
+    "TK.HIST:1597-10-1"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-09",
+  "uncertainty": "綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。",
+  "linkedEntities": [
+    "person:shimazu-yoshihiro"
+  ],
+  "eventTime": {
+    "kind": "dated-event",
+    "date": [
+      1597,
+      7,
+      28
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": false,
+    "precision": "day"
+  },
+  "eventRelation": "departure",
+  "eventScope": "綱文が掲げる日付。慶長2年7月28日はゲーム共通の暦表で1597年9月9日。綱文の「是日」が掛かるのは島津義弘らの唐島の出発だけで、秀家・秀元の全羅道入りはこの日より前か同じ頃だが日付が無い（全羅道入りの命題は作らない）。朝鮮の地名は、日本に関わる出来事として記録する（地図の範囲とは別）。秀家・秀元の全羅道入りはこの日の行為ではないので、二人はこの日の出発に結ばない。"
+}
