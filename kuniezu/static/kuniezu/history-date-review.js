@@ -53,7 +53,7 @@
    const sc=TK.BATTLES[title],e=TK.HIST.find(e=>e.title===title&&e.k!=='premarch');
    sc.sources=[...new Set([...sc.sources,id])];sc.eventDate=title==='韮山城の戦い'?end.slice():e.d.slice();
    sc.date=title==='韮山城の戦い'?'天正18年3月29日～6月24日（1590年5月3日～7月25日）':`${e.lunarDate[0]}年・旧暦${e.lunarDate[1]}月${e.lunarDate[2]}日（西暦${e.d.join('/')}）`;
-   if(title==='韮山城の戦い'){sc.calendar=[[0,'旧暦3月29日・攻囲開始'],[50,'籠城・交渉'],[100,'旧暦6月24日・明渡し']];sc.beats=[[0,n.text],[100,'韮山城が開城。小田原城はまだ開城していない。']];}
+   if(title==='韮山城の戦い'){sc.calendar=[[0,'旧暦3月29日・攻囲開始'],[50,'籠城・交渉'],[100,'旧暦6月24日・明渡し']];sc.beats=[[0,sc.calendar[0][1]],[50,sc.calendar[1][1]],[100,'韮山城が開城。小田原城はまだ開城していない。']];}
    const row=TK.BATTLE_AUDIT.find(r=>r.title===title);if(row){row.eventDate=sc.eventDate;row.sourceIds=sc.sources;}
   }
  };

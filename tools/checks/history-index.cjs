@@ -30,6 +30,16 @@ assert.equal(byCastle[0].scope,'claim-applicability');
 assert.strictEqual(queryHistory(orderIndex,{entity:'node:agata'})[0],byCastle[0]);
 assert.equal(orderIndex.records.size,1);
 assert.throws(()=>createHistoryIndex({claims:[{...order,linkedEntities:['invalid']}]}));
+// 水域：主語の水域と、関係する対象の水域が、年・水域・交差の各引き方で同じ記録を指す。
+{const wetSubject={...reference,id:'wet-subject',entity:'water:試験湖',validYears:[1700,1700],linkedEntities:[]},wetLinked={...reference,id:'wet-linked',entity:'region:試験の事業域',validYears:[1700,1701],linkedEntities:['water:試験湖']},dry={...reference,id:'dry',entity:'place:乾',validYears:[1700,1700]};
+ const w=createHistoryIndex({claims:[wetSubject,wetLinked,dry]});
+ const byYear=queryHistory(w,{year:1700}),byWater=queryHistory(w,{entity:'water:試験湖'}),both=queryHistory(w,{year:1700,entity:'water:試験湖'});
+ assert.deepEqual(byWater.map(r=>r.id).sort(),['claim:wet-linked','claim:wet-subject']);
+ assert.deepEqual(both.map(r=>r.id),byYear.filter(r=>byWater.includes(r)).map(r=>r.id));assert.equal(both.length,2);
+ assert.strictEqual(both.find(r=>r.id==='claim:wet-linked').record,wetLinked);assert.strictEqual(byWater.find(r=>r.id==='claim:wet-subject').record,wetSubject);
+ assert.deepEqual(queryHistory(w,{entity:'試験湖'}).map(r=>r.id).sort(),['claim:wet-linked','claim:wet-subject']);
+ assert.deepEqual(queryHistory(w,{year:1701,entity:'water:試験湖'}).map(r=>r.id),['claim:wet-linked']);
+ console.log('PASS: water as subject and as linked entity is found by year, by water and by both, as the same record');}
 console.log('PASS: time/entity views share records; inclusive/exclusive boundaries, aliases, intersections, unknown entities; no annual snapshots for 10,000-year span');
 
 const periodClaim={...reference,id:'uncertain-period',entity:'place:tonokori',validYears:[1603,1615],eventTime:{kind:'described-period',label:'江戸時代初頭',indexYears:[1603,1615],boundsAreHistoricalStartEnd:false}};
