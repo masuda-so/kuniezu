@@ -1,0 +1,40 @@
+{
+  "id": "bitchu-matsuyama-fall-1575",
+  "entity": "place:bitchu-matsuyama",
+  "predicate": "castle-fall",
+  "value": "小早川隆景が三村元親を備中松山城に攻めて落とし、元親はのちに自害した。",
+  "validYears": [
+    1575,
+    1575
+  ],
+  "datePrecision": "day",
+  "source": "hiDainihonshiryoKobun",
+  "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+  "locator": "綱文：和暦 天正3年5月22日 第1条（区分 史料綜覧、編10・冊911（データベースの表示値）、79頁）",
+  "gameBindings": [
+    "TK.HIST:備中兵乱",
+    "node:bmatsuyama"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-09",
+  "uncertainty": "綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。",
+  "linkedEntities": [
+    "place:bitchu-matsuyama",
+    "person:小早川隆景",
+    "person:三村元親"
+  ],
+  "eventTime": {
+    "kind": "dated-event",
+    "date": [
+      1575,
+      5,
+      22
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": false,
+    "precision": "day"
+  },
+  "eventRelation": "castle-fall",
+  "eventScope": "綱文が掲げる日付。天正3年5月22日はゲーム共通の暦表で1575年6月30日。最終年表の備中兵乱（旧暦1575年6月8日、1575年7月15日）は綱文より15日遅い。落城の日。元親の自害の日付や備中一国の平定には広げない。"
+}

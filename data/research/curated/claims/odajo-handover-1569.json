@@ -1,0 +1,40 @@
+{
+  "id": "odajo-handover-1569",
+  "entity": "place:odajo",
+  "predicate": "castle-handover",
+  "value": "佐竹義重が常陸小田城の小田氏治を攻め、氏治は城を開いて明け渡し、義重が城に入った。",
+  "validYears": [
+    1569,
+    1569
+  ],
+  "datePrecision": "day",
+  "source": "hiDainihonshiryoKobun",
+  "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+  "locator": "綱文：和暦 永禄12年10月25日 第2条（区分 大日本史料、第10編之3（データベースの表示値）、485頁）",
+  "gameBindings": [
+    "TK.HIST:手這坂の戦い",
+    "node:odajo"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-09",
+  "uncertainty": "綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。",
+  "linkedEntities": [
+    "place:odajo",
+    "person:佐竹義重",
+    "person:小田氏治"
+  ],
+  "eventTime": {
+    "kind": "dated-event",
+    "date": [
+      1569,
+      10,
+      25
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": false,
+    "precision": "day"
+  },
+  "eventRelation": "castle-handover",
+  "eventScope": "綱文が掲げる日付。永禄12年10月25日はゲーム共通の暦表で1569年12月3日。最終年表の手這坂の戦い（旧暦1569年11月23日、1569年12月30日）は綱文より27日遅い。開城と入城の日。年表は太田資正が小田城を奪ったとするが、綱文の攻め手は佐竹義重。手這坂の合戦の日付は補わない。"
+}
