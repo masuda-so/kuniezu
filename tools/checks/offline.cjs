@@ -5,6 +5,7 @@ for(const f of fs.readdirSync(game).filter(f=>f.endsWith('.js')))new vm.Script(f
 for(const match of fs.readFileSync(path.join(root,'kuniezu/templates/index.html'),'utf8').matchAll(/<script\b(?![^>]*\bsrc=)[^>]*>([\s\S]*?)<\/script>/g))new vm.Script(match[1],{filename:'index.html inline script'});
 console.log('PASS: JavaScript syntax');
 require('./mask-vector.cjs');
+require('./iya-vector.cjs');
 require('./kojima-mask-vectors.cjs');
 require('./vector-assets.cjs');
 require('./vector-map.cjs');

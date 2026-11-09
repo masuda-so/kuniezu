@@ -15,7 +15,7 @@ const cases=[];
 for(const date of [[1560,1,1],[1585,1,1],[1615,6,10]]){
   let wet=0,dry=0;for(const [x,y] of points){wet+=Number(water.contains(x,y,date));dry+=Number(land.contains(x,y,date));}
   assert.equal(wet,319);assert.equal(dry,0);
-  const controls=recipe.unchangedControls.map(({xy,key})=>{const [x,y]=coordinate(...xy),expectedLand=!key.startsWith('lake:');assert.equal(land.contains(x,y,date),expectedLand);if(!expectedLand)assert.ok(water.contains(x,y,date));return {xy,key,land:expectedLand};});
+  const controls=recipe.unchangedControls.map(({xy,key})=>{const [x,y]=coordinate(...xy),expectedLand=!key.startsWith('lake:');assert.equal(land.contains(x,y,date),expectedLand);assert.equal(water.contains(x,y,date),!expectedLand);return {xy,key,land:expectedLand};});
   cases.push({date,water:wet,land:dry,controls});
 }
 const result={basisCommit:'3885980568459d733987fc372388f27eaa7483e4',scope:'319 historical proposal cell centers and four controls; not complete cell area or exact Sengoku shoreline',sources:Object.fromEntries(['land','water'].map(name=>[name,crypto.createHash('sha256').update(fs.readFileSync(path.join(root,'kuniezu/map/physical',name+'.geojson'))).digest('hex')])),cases};
