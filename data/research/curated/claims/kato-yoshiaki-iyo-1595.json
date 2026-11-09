@@ -1,0 +1,38 @@
+{
+  "id": "kato-yoshiaki-iyo-1595",
+  "entity": "person:kato-yoshiaki",
+  "predicate": "territorial-transfer",
+  "value": "秀吉が伊予松前の加藤茂勝（嘉明）に伊予の地を与え、同国の蔵入地の代官とした。",
+  "validYears": [
+    1595,
+    1595
+  ],
+  "datePrecision": "day",
+  "source": "hiDainihonshiryoKobun",
+  "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+  "locator": "綱文：和暦 文禄4年7月21日 第1条（区分 史料綜覧、編11・冊913（データベースの表示値）、94頁）",
+  "gameBindings": [
+    "TK.HIST:1595-8-20"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-09",
+  "uncertainty": "綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。",
+  "linkedEntities": [
+    "person:kato-yoshiaki",
+    "person:toyotomi-hideyoshi"
+  ],
+  "eventTime": {
+    "kind": "dated-event",
+    "date": [
+      1595,
+      7,
+      21
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": false,
+    "precision": "day"
+  },
+  "eventRelation": "territorial-transfer",
+  "eventScope": "綱文が掲げる日付。文禄4年7月21日はゲーム共通の暦表で1595年8月26日。最終年表の加藤嘉明の移り（1595年8月20日、題名なし、node:yuzuki）は綱文より6日早い。綱文は嘉明をすでに「伊予松前の」と書くので、命題は加増と代官の任命で、松前への移りの日ではない。年表の行き先 node:yuzuki（静的な名前は湯築城）と松前の対応は確かめていないので、ノードとは結ばない。"
+}
