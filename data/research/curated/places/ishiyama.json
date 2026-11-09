@@ -1,0 +1,14 @@
+{
+  "id": "place:ishiyama",
+  "name": "石山本願寺",
+  "aliases": [],
+  "geometry": null,
+  "geometryStatus": "not-asserted",
+  "note": "石山本願寺（大坂）。ゲームの側には yosho:本願寺（石山）もあるが、1 つの場所の代表は 1 つに限るので node:ishiyama だけに結ぶ。",
+  "identityBasis": {
+    "scope": "確認済み命題の対象場所。日時と関係は元命題に保持し、座標は未主張。",
+    "claimIds": [
+      "ishiyama-withdrawal-1580"
+    ]
+  }
+}

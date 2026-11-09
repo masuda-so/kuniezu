@@ -1,0 +1,49 @@
+{
+  "id": "coastal-jusan-project-fiscal-1948-1969",
+  "entity": "region:国営十三湖開拓建設事業の対象地域",
+  "predicate": "land-improvement-project-period",
+  "value": {
+    "statement": "東北農政局は国営十三湖開拓建設事業の実施年度を昭和23～44年度と記す。対象には葦原の湿原や腰切田の改良が含まれる。",
+    "sourceTime": {
+      "label": "昭和23～44年度",
+      "calendar": "Japanese-fiscal-year",
+      "precision": "fiscal-year-range",
+      "fromFiscalYear": 1948,
+      "throughFiscalYear": 1969
+    }
+  },
+  "validYears": [
+    1948,
+    1970
+  ],
+  "datePrecision": "fiscal-year-range",
+  "eventTime": {
+    "kind": "described-period",
+    "calendar": "Japanese-era-description",
+    "precision": "period",
+    "label": "昭和23～44年度（年度の記述）",
+    "indexYears": [
+      1948,
+      1970
+    ],
+    "boundsAreHistoricalStartEnd": false
+  },
+  "linkedEntities": [
+    "water:十三湖"
+  ],
+  "eventRelation": "land-improvement-project-period",
+  "eventScope": "元の年度範囲はvalue.sourceTimeのまま保持する。1948～1970は終年度の翌年部分を落とさない年検索の候補範囲で、1948年1月1日から1970年12月31日までの連続工事・存続・湖面を表さない。",
+  "source": "coastal-jusan-maff-history",
+  "sourceUrl": "https://www.maff.go.jp/tohoku/nouson/kokuei/tugaruhokubu/chiikinorekishi.html",
+  "locator": "「国営十三湖開拓建設事業（昭和23～44年度）」見出しと目的・効果の段落",
+  "checked": "2026-11-04",
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "gameBindings": [
+    "kuniezu/map/control/provinces.png"
+  ],
+  "bindingScope": "地形の年代比較・監査の参照先。正本・ゲームイベントへの変更は未適用。",
+  "uncertainty": "事業の開始日・完成日、対象水域と湿地の精密区分はこの資料から補わない。事業面積を過去の湖面へ機械加算しない。 主体は事業の対象地域（region:）で、十三湖（water:）は関係する対象。湖面の全域を受益地としない。",
+  "review": "data/research/source-notes/coastal-period-review/adoption.json",
+  "reviewInputId": "jusan-modern-reclamation"
+}

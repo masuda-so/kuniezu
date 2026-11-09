@@ -1,0 +1,38 @@
+{
+  "id": "mitsukuri-castle-fall-1568",
+  "entity": "place:mitsukuri",
+  "predicate": "castle-fall",
+  "value": "織田信長が近江箕作城を攻め落とした。",
+  "validYears": [
+    1568,
+    1568
+  ],
+  "datePrecision": "day",
+  "source": "hiDainihonshiryoKobun",
+  "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+  "locator": "綱文：和暦 永禄11年9月12日 第1条（区分 大日本史料、第10編之1（データベースの表示値）、78頁）",
+  "gameBindings": [
+    "TK.HIST:信長上洛"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-09",
+  "uncertainty": "綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。",
+  "linkedEntities": [
+    "place:mitsukuri",
+    "person:oda-nobunaga"
+  ],
+  "eventTime": {
+    "kind": "dated-event",
+    "date": [
+      1568,
+      9,
+      12
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": false,
+    "precision": "day"
+  },
+  "eventRelation": "castle-fall",
+  "eventScope": "綱文が掲げる日付。永禄11年9月12日はゲーム共通の暦表で1568年10月2日。最終年表の信長上洛（旧暦1568年9月28日、1568年10月18日）は綱文より16日遅い。箕作城の落城の日。同じ条の観音寺城の放棄は別の命題にする。信長の上洛の日や将軍の就任には広げない。"
+}
