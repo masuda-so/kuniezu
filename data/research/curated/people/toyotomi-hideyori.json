@@ -1,0 +1,28 @@
+{
+  "id": "person:toyotomi-hideyori",
+  "name": "豊臣秀頼",
+  "gameNames": [
+    "豊臣秀頼"
+  ],
+  "authorityIds": [
+    "wikidata:Q313641",
+    "ndlna:00626440"
+  ],
+  "authorityEvidence": {
+    "scope": "person-identity",
+    "checked": "2026-11-09",
+    "wikidataRevision": 2562777279,
+    "snapshot": "data/research/source-notes/appear-authority-batch-2.json",
+    "sourceNote": "data/research/source-notes/appear-authority-batch-2.json",
+    "note": "data/research/source-notes/appear-authority-batch-2.md",
+    "identityChecks": [
+      "NDL00626440の主名豊臣秀頼がPerson典拠に属する",
+      "Wikidata Q313641の日本語主名とP349が同じNDL典拠へ対応する"
+    ],
+    "basis": "人物の同定のみ。原本にある生没日・所在・所領・関係の時期は新たな史実命題へ採用しない。",
+    "ndlSnapshot": "data/research/source-notes/appear-authority-batch-2-ndl/toyotomi-hideyori.json",
+    "sourceIds": [
+      "ndlToyotomiHideyoriIdentity"
+    ]
+  }
+}

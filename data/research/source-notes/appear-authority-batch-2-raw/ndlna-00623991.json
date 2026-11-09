@@ -1,0 +1,50 @@
+{
+    "@context": "https://id.ndl.go.jp/auth/context.json",
+    "uri": "http://id.ndl.go.jp/auth/ndlna/00623991",
+    "primaryTopic": {
+        "uri": "http://id.ndl.go.jp/auth/entity/00623991",
+        "type": {
+            "uri": "http://xmlns.com/foaf/0.1/Person"
+        },
+        "name": "小西行長",
+        "dateOfDeath": "1600"
+    },
+    "type": {
+        "uri": "http://www.w3.org/2004/02/skos/core#Concept"
+    },
+    "modified": "2026-01-21T08:34:52",
+    "created": "1998-01-30",
+    "prefLabel": {
+        "literalForm": "小西, 行長, -1600",
+        "transcription": "コニシ, ユキナガ, -1600",
+        "transcription-l": [
+            {
+                "@value": "コニシ, ユキナガ, -1600",
+                "@language": "ja-Kana"
+            },
+            {
+                "@value": "Konishi, Yukinaga, -1600",
+                "@language": "ja-Latn"
+            }
+        ]
+    },
+    "label": "小西, 行長, -1600",
+    "source": [
+        "鉄の首枷 / 遠藤周作 著"
+    ],
+    "exactMatch": [
+        {
+            "uri": "http://id.loc.gov/authorities/names/n81061581"
+        },
+        {
+            "uri": "https://isni.org/isni/0000000023784857"
+        },
+        {
+            "uri": "http://viaf.org/viaf/sourceID/NDL%7C00623991#skos:Concept"
+        }
+    ],
+    "inScheme": {
+        "uri": "http://id.ndl.go.jp/auth#personalNames"
+    }
+}
+

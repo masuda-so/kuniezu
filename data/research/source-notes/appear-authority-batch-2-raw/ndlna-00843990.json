@@ -1,0 +1,55 @@
+{
+    "@context": "https://id.ndl.go.jp/auth/context.json",
+    "uri": "http://id.ndl.go.jp/auth/ndlna/00843990",
+    "primaryTopic": {
+        "uri": "http://id.ndl.go.jp/auth/entity/00843990",
+        "type": {
+            "uri": "http://xmlns.com/foaf/0.1/Person"
+        },
+        "name": "片桐且元",
+        "dateOfBirth": "1556",
+        "dateOfDeath": "1615",
+        "biographicalInformation": [
+            "大名"
+        ]
+    },
+    "type": {
+        "uri": "http://www.w3.org/2004/02/skos/core#Concept"
+    },
+    "modified": "2026-01-21T08:34:49",
+    "created": "2001-06-22",
+    "prefLabel": {
+        "literalForm": "片桐, 且元, 1556-1615",
+        "transcription": "カタギリ, カツモト, 1556-1615",
+        "transcription-l": [
+            {
+                "@value": "カタギリ, カツモト, 1556-1615",
+                "@language": "ja-Kana"
+            },
+            {
+                "@value": "Katagiri, Katsumoto, 1556-1615",
+                "@language": "ja-Latn"
+            }
+        ]
+    },
+    "label": "片桐, 且元, 1556-1615",
+    "source": [
+        "片桐且元 / 曽根勇二 著",
+        "国書人名辞典"
+    ],
+    "exactMatch": [
+        {
+            "uri": "http://id.loc.gov/authorities/names/no2001037313"
+        },
+        {
+            "uri": "https://isni.org/isni/0000000052167938"
+        },
+        {
+            "uri": "http://viaf.org/viaf/sourceID/NDL%7C00843990#skos:Concept"
+        }
+    ],
+    "inScheme": {
+        "uri": "http://id.ndl.go.jp/auth#personalNames"
+    }
+}
+

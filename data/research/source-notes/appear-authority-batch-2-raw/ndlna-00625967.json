@@ -1,0 +1,51 @@
+{
+    "@context": "https://id.ndl.go.jp/auth/context.json",
+    "uri": "http://id.ndl.go.jp/auth/ndlna/00625967",
+    "primaryTopic": {
+        "uri": "http://id.ndl.go.jp/auth/entity/00625967",
+        "type": {
+            "uri": "http://xmlns.com/foaf/0.1/Person"
+        },
+        "name": "徳川秀忠",
+        "dateOfBirth": "1579",
+        "dateOfDeath": "1632"
+    },
+    "type": {
+        "uri": "http://www.w3.org/2004/02/skos/core#Concept"
+    },
+    "modified": "2026-01-21T08:35:01",
+    "created": "1998-01-30",
+    "prefLabel": {
+        "literalForm": "徳川, 秀忠, 1579-1632",
+        "transcription": "トクガワ, ヒデタダ, 1579-1632",
+        "transcription-l": [
+            {
+                "@value": "トクガワ, ヒデタダ, 1579-1632",
+                "@language": "ja-Kana"
+            },
+            {
+                "@value": "Tokugawa, Hidetada, 1579-1632",
+                "@language": "ja-Latn"
+            }
+        ]
+    },
+    "label": "徳川, 秀忠, 1579-1632",
+    "source": [
+        "徳川秀忠 / 百瀬明治 著"
+    ],
+    "exactMatch": [
+        {
+            "uri": "http://id.loc.gov/authorities/names/n82007061"
+        },
+        {
+            "uri": "https://isni.org/isni/000000037971258X"
+        },
+        {
+            "uri": "http://viaf.org/viaf/sourceID/NDL%7C00625967#skos:Concept"
+        }
+    ],
+    "inScheme": {
+        "uri": "http://id.ndl.go.jp/auth#personalNames"
+    }
+}
+

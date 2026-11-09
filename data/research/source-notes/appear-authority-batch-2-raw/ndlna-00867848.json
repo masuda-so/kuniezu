@@ -1,0 +1,55 @@
+{
+    "@context": "https://id.ndl.go.jp/auth/context.json",
+    "uri": "http://id.ndl.go.jp/auth/ndlna/00867848",
+    "primaryTopic": {
+        "uri": "http://id.ndl.go.jp/auth/entity/00867848",
+        "type": {
+            "uri": "http://xmlns.com/foaf/0.1/Person"
+        },
+        "name": "有馬晴信",
+        "dateOfBirth": "1567",
+        "dateOfDeath": "1612",
+        "biographicalInformation": [
+            "肥前国有馬領主"
+        ]
+    },
+    "type": {
+        "uri": "http://www.w3.org/2004/02/skos/core#Concept"
+    },
+    "modified": "2026-01-21T08:34:57",
+    "created": "2002-03-05",
+    "prefLabel": {
+        "literalForm": "有馬, 晴信, 1567-1612",
+        "transcription": "アリマ, ハルノブ, 1567-1612",
+        "transcription-l": [
+            {
+                "@value": "アリマ, ハルノブ, 1567-1612",
+                "@language": "ja-Kana"
+            },
+            {
+                "@value": "Arima, Harunobu, 1567-1612",
+                "@language": "ja-Latn"
+            }
+        ]
+    },
+    "label": "有馬, 晴信, 1567-1612",
+    "source": [
+        "有馬晴信キリシタン領国の証 (請求記号: GK37-G16)",
+        "国史大辞典"
+    ],
+    "exactMatch": [
+        {
+            "uri": "http://id.loc.gov/authorities/names/n78007970"
+        },
+        {
+            "uri": "https://isni.org/isni/000000002480846X"
+        },
+        {
+            "uri": "http://viaf.org/viaf/sourceID/NDL%7C00867848#skos:Concept"
+        }
+    ],
+    "inScheme": {
+        "uri": "http://id.ndl.go.jp/auth#personalNames"
+    }
+}
+

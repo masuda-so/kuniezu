@@ -1,0 +1,28 @@
+{
+  "id": "person:katagiri-katsumoto",
+  "name": "片桐且元",
+  "gameNames": [
+    "片桐且元"
+  ],
+  "authorityIds": [
+    "wikidata:Q1882775",
+    "ndlna:00843990"
+  ],
+  "authorityEvidence": {
+    "scope": "person-identity",
+    "checked": "2026-11-09",
+    "wikidataRevision": 2558100867,
+    "snapshot": "data/research/source-notes/appear-authority-batch-2.json",
+    "sourceNote": "data/research/source-notes/appear-authority-batch-2.json",
+    "note": "data/research/source-notes/appear-authority-batch-2.md",
+    "identityChecks": [
+      "NDL00843990の主名片桐且元がPerson典拠に属する",
+      "Wikidata Q1882775の日本語主名とP349が同じNDL典拠へ対応する"
+    ],
+    "basis": "人物の同定のみ。原本にある生没日・所在・所領・関係の時期は新たな史実命題へ採用しない。",
+    "ndlSnapshot": "data/research/source-notes/appear-authority-batch-2-ndl/katagiri-katsumoto.json",
+    "sourceIds": [
+      "ndlKatagiriKatsumotoIdentity"
+    ]
+  }
+}

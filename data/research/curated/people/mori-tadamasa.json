@@ -1,0 +1,28 @@
+{
+  "id": "person:mori-tadamasa",
+  "name": "森忠政",
+  "gameNames": [
+    "森忠政"
+  ],
+  "authorityIds": [
+    "wikidata:Q11117105",
+    "ndlna:00794720"
+  ],
+  "authorityEvidence": {
+    "scope": "person-identity",
+    "checked": "2026-11-09",
+    "wikidataRevision": 2559128830,
+    "snapshot": "data/research/source-notes/appear-authority-batch-2.json",
+    "sourceNote": "data/research/source-notes/appear-authority-batch-2.json",
+    "note": "data/research/source-notes/appear-authority-batch-2.md",
+    "identityChecks": [
+      "NDL00794720の主名森忠政がPerson典拠に属する",
+      "Wikidata Q11117105の日本語主名とP349が同じNDL典拠へ対応する"
+    ],
+    "basis": "人物の同定のみ。原本にある生没日・所在・所領・関係の時期は新たな史実命題へ採用しない。",
+    "ndlSnapshot": "data/research/source-notes/appear-authority-batch-2-ndl/mori-tadamasa.json",
+    "sourceIds": [
+      "ndlMoriTadamasaIdentity"
+    ]
+  }
+}

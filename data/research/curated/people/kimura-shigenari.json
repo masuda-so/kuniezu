@@ -1,0 +1,28 @@
+{
+  "id": "person:kimura-shigenari",
+  "name": "木村重成",
+  "gameNames": [
+    "木村重成"
+  ],
+  "authorityIds": [
+    "wikidata:Q840196",
+    "ndlna:00796153"
+  ],
+  "authorityEvidence": {
+    "scope": "person-identity",
+    "checked": "2026-11-09",
+    "wikidataRevision": 2521639364,
+    "snapshot": "data/research/source-notes/appear-authority-batch-2.json",
+    "sourceNote": "data/research/source-notes/appear-authority-batch-2.json",
+    "note": "data/research/source-notes/appear-authority-batch-2.md",
+    "identityChecks": [
+      "NDL00796153の主名木村重成がPerson典拠に属する",
+      "Wikidata Q840196の日本語主名とP349が同じNDL典拠へ対応する"
+    ],
+    "basis": "人物の同定のみ。原本にある生没日・所在・所領・関係の時期は新たな史実命題へ採用しない。",
+    "ndlSnapshot": "data/research/source-notes/appear-authority-batch-2-ndl/kimura-shigenari.json",
+    "sourceIds": [
+      "ndlKimuraShigenariIdentity"
+    ]
+  }
+}

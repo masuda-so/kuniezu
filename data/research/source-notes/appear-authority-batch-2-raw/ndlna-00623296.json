@@ -1,0 +1,52 @@
+{
+    "@context": "https://id.ndl.go.jp/auth/context.json",
+    "uri": "http://id.ndl.go.jp/auth/ndlna/00623296",
+    "primaryTopic": {
+        "uri": "http://id.ndl.go.jp/auth/entity/00623296",
+        "type": {
+            "uri": "http://xmlns.com/foaf/0.1/Person"
+        },
+        "name": "佐竹義宣",
+        "dateOfBirth": "1570",
+        "dateOfDeath": "1633"
+    },
+    "type": {
+        "uri": "http://www.w3.org/2004/02/skos/core#Concept"
+    },
+    "modified": "2026-01-21T08:34:58",
+    "created": "1998-01-30",
+    "prefLabel": {
+        "literalForm": "佐竹, 義宣, 1570-1633",
+        "transcription": "サタケ, ヨシノブ, 1570-1633",
+        "transcription-l": [
+            {
+                "@value": "サタケ, ヨシノブ, 1570-1633",
+                "@language": "ja-Kana"
+            },
+            {
+                "@value": "Satake, Yoshinobu, 1570-1633",
+                "@language": "ja-Latn"
+            }
+        ]
+    },
+    "label": "佐竹, 義宣, 1570-1633",
+    "source": [
+        "佐竹義宣と正洞院 / 伊藤武美 著",
+        "大人名事典"
+    ],
+    "exactMatch": [
+        {
+            "uri": "http://id.loc.gov/authorities/names/n88213701"
+        },
+        {
+            "uri": "https://isni.org/isni/0000000030807068"
+        },
+        {
+            "uri": "http://viaf.org/viaf/sourceID/NDL%7C00623296#skos:Concept"
+        }
+    ],
+    "inScheme": {
+        "uri": "http://id.ndl.go.jp/auth#personalNames"
+    }
+}
+

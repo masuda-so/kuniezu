@@ -1,0 +1,65 @@
+{
+    "@context": "https://id.ndl.go.jp/auth/context.json",
+    "uri": "http://id.ndl.go.jp/auth/ndlna/00315950",
+    "primaryTopic": {
+        "uri": "http://id.ndl.go.jp/auth/entity/00315950",
+        "type": {
+            "uri": "http://xmlns.com/foaf/0.1/Person"
+        },
+        "name": "李舜臣",
+        "dateOfBirth": "1545",
+        "dateOfDeath": "1598"
+    },
+    "type": {
+        "uri": "http://www.w3.org/2004/02/skos/core#Concept"
+    },
+    "modified": "2020-09-30T14:20:13",
+    "created": "1993-09-29",
+    "prefLabel": {
+        "literalForm": "李, 舜臣, 1545-1598",
+        "transcription": "リ, シュンシン, 1545-1598",
+        "transcription-l": [
+            {
+                "@value": "リ, シュンシン, 1545-1598",
+                "@language": "ja-Kana"
+            },
+            {
+                "@value": "Ri, Shunshin, 1545-1598",
+                "@language": "ja-Latn"
+            }
+        ]
+    },
+    "label": "李, 舜臣, 1545-1598",
+    "altLabel": [
+        {
+            "literalForm": "李, 舜臣"
+        },
+        {
+            "literalForm": "汝諧",
+            "description": "字"
+        },
+        {
+            "literalForm": "忠武",
+            "description": "諱"
+        },
+        {
+            "literalForm": "이, 순신"
+        },
+        {
+            "literalForm": "Yi, Sun-sin"
+        }
+    ],
+    "source": [
+        "乱中日記 / 李舜臣 著 ; 若松実 訳注",
+        "アジア資料課典拠"
+    ],
+    "exactMatch": [
+        {
+            "uri": "http://viaf.org/viaf/sourceID/NDL%7C00315950#skos:Concept"
+        }
+    ],
+    "inScheme": {
+        "uri": "http://id.ndl.go.jp/auth#personalNames"
+    }
+}
+

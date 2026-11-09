@@ -1,0 +1,28 @@
+{
+  "id": "person:uwai-satokane",
+  "name": "上井覚兼",
+  "gameNames": [
+    "上井覚兼"
+  ],
+  "authorityIds": [
+    "wikidata:Q7903777",
+    "ndlna:031601127"
+  ],
+  "authorityEvidence": {
+    "scope": "person-identity",
+    "checked": "2026-11-09",
+    "wikidataRevision": 2548237500,
+    "snapshot": "data/research/source-notes/appear-authority-batch-2.json",
+    "sourceNote": "data/research/source-notes/appear-authority-batch-2.json",
+    "note": "data/research/source-notes/appear-authority-batch-2.md",
+    "identityChecks": [
+      "NDL031601127の主名上井覚兼がPerson典拠に属する",
+      "Wikidata Q7903777の日本語主名とP349が同じNDL典拠へ対応する"
+    ],
+    "basis": "人物の同定のみ。原本にある生没日・所在・所領・関係の時期は新たな史実命題へ採用しない。",
+    "ndlSnapshot": "data/research/source-notes/appear-authority-batch-2-ndl/uwai-satokane.json",
+    "sourceIds": [
+      "ndlUwaiSatokaneIdentity"
+    ]
+  }
+}
