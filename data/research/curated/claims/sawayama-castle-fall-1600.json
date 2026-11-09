@@ -1,0 +1,38 @@
+{
+  "id": "sawayama-castle-fall-1600",
+  "entity": "place:sawayama",
+  "predicate": "castle-fall",
+  "value": "東軍が石田三成の近江佐和山城を攻め、この日、三成の父の正継・兄の正澄らが自害して城が落ちた。",
+  "validYears": [
+    1600,
+    1600
+  ],
+  "datePrecision": "day",
+  "source": "hiDainihonshiryoKobun",
+  "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+  "locator": "綱文：和暦 慶長5年9月17日 第1条（区分 史料綜覧、編11・冊913（データベースの表示値）、266頁）",
+  "gameBindings": [
+    "TK.HIST:佐和山城落城",
+    "node:sawayama"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-09",
+  "uncertainty": "綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。",
+  "linkedEntities": [
+    "place:sawayama"
+  ],
+  "eventTime": {
+    "kind": "dated-event",
+    "date": [
+      1600,
+      9,
+      17
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": false,
+    "precision": "day"
+  },
+  "eventRelation": "castle-fall",
+  "eventScope": "綱文が掲げる日付。慶長5年9月17日はゲーム共通の暦表で1600年10月23日。最終年表の佐和山城落城（訂正モジュールの適用後。旧暦1600年9月17日、1600年10月23日）は一致する。落城の日。攻撃は「是より先」で日付が無く、家康の攻撃の始まりの日付には広げない。城の守り手の配置（「尋で」）も含めない。石田正継・正澄は人物の ID が無いので結ばない。"
+}
