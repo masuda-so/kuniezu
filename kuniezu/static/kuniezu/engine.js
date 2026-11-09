@@ -999,12 +999,12 @@ G.repairCastleEraPositions=function(s){
   changed.set(id,{old,dest});placeCastle(id,e);s.jdone=s.jdone||{};s.jdone[e._i]=1;
  }
  for(const u of s.units){const row=changed.get(u.path?.at(-1)),q=u.visualTravel;if(!row||!u.hist||u.record||!q||!valid(q.line,q.start,q.end)||!near(q.line.at(-1),row.old))continue;
-  const A=G.visualPathPoint(q.line,(sample-q.start)/Math.max(1,q.end-q.start)).slice(0,2),B=G.battleArrivalPoint(u)||row.dest;
+  const A=G.visualPathPoint(q.line,(sample-q.start)/(q.end-q.start)).slice(0,2),B=G.battleArrivalPoint(u)||row.dest;
   u.visualTravel={...q,line:G.visualBetween(A,B),start:sample};if(u.visualRouteLine)u.visualRouteLine=u.visualTravel.line;
  }
  for(const g of s.gens)if(changed.has(g.loc)&&g.unit==null&&!g.tr)delete g._visualPoint;
  for(const g of s.gens){const row=changed.get(g.tr?.p?.at(-1)),q=g.tr;if(!row||!q||!valid(q.line,q.t0,q.t1)||!near(q.line.at(-1),row.old))continue;
-  const A=G.visualPathPoint(q.line,(sample-q.t0)/Math.max(1,q.t1-q.t0)).slice(0,2);g.tr={...q,line:G.visualBetween(A,row.dest),t0:sample};
+  const A=G.visualPathPoint(q.line,(sample-q.t0)/(q.t1-q.t0)).slice(0,2);g.tr={...q,line:G.visualBetween(A,row.dest),t0:sample};
  }
  if(!deferred)s.castleEraPositionVersion=1;
 };
