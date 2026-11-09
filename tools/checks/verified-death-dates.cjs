@@ -19,6 +19,9 @@ for(const row of cases){
  dates(true);G._ff={};G.newGame(row.scenario,'oda');G.S().player='__none';G.fixHist();
  advance(G.evT({d:row.previous}));const legacy=clone(G.S());
  assert.equal(legacy.gens.find(g=>g.n===row.name).dead,true);
+ const oldTime=legacy.t,message=event(row.name).text||'';
+ if(message)assert.equal(legacy.log.filter(e=>e.t===oldTime&&e.msg===message).length,1);
+ const unrelatedLog={t:oldTime,msg:'保存移行で保持する別の記録',kind:'big',pl:false};legacy.log.push(unrelatedLog);
  dates(false);G._ff={};G.newGame(row.scenario,'oda');G.S().player='__none';G.fixHist();
  advance(G.evT({d:row.previous}));assert.equal(G.S().gens.find(g=>g.n===row.name).dead,false);
  const unrelated=clone(legacy);unrelated.hsig=42;G.repairVerifiedDeathDates(unrelated);
@@ -27,11 +30,14 @@ for(const row of cases){
  assert.equal(alreadyDue.gens.find(g=>g.n===row.name).dead,true,'due death is not undone');
  const before=resources(legacy);G.setS(legacy);G.fixHist();
  const person=legacy.gens.find(g=>g.n===row.name);assert.equal(person.dead,false);
+ if(message)assert.equal(legacy.log.filter(e=>e.t===oldTime&&e.msg===message).length,0);
+ assert.ok(legacy.log.some(e=>e.msg===unrelatedLog.msg),'unrelated same-day log preserved');
  if(row.name==='長野業正')assert.equal(legacy.clans[person.clan].leader,person.id);
  assert.equal(resources(legacy),before,'date, treasury, castles and armies preserved');
  const repaired=JSON.stringify(legacy);G.setS(legacy);G.fixHist();
  assert.equal(JSON.stringify(legacy),repaired,'loading twice is idempotent');
  advance(G.evT(event(row.name)));assert.equal(person.dead,true,'death occurs on adopted day');
+ if(message)assert.equal(legacy.log.filter(e=>e.msg===message).length,1,'one corrected death log');
  if(row.name==='長野業正')assert.equal(G.gen(legacy.clans[person.clan].leader).n,'長野業盛');
  console.log('PASS: '+row.name+' adopted date, legacy save and succession');
 }

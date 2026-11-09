@@ -30,6 +30,8 @@
    const clan=s.clans[g.clan],successor=event.to&&s.gens.find(p=>p.n===event.to);
    if(clan&&successor&&clan.leader===successor.id)clan.leader=g.id;
    s.chron=(s.chron||[]).filter(e=>!(e.t===old&&e.who===row.name&&e.text===(event.text||'')));
+   const message=(event.title?event.title+'：':'')+(event.text||'');
+   if(message)s.log=(s.log||[]).filter(e=>!(e.t===old&&e.kind==='big'&&e.msg===message));
   }
   s.verifiedDeathDateRepair=1;
  };
