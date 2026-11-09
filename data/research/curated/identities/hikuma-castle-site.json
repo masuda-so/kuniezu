@@ -1,0 +1,15 @@
+{
+  "id": "identity:hikuma-castle-site",
+  "relation": "represented-by",
+  "things": [
+    "place:hikuma-castle",
+    "node:hikuma"
+  ],
+  "basis": "ゲームの拠点 node:hikuma は、台帳の場所 place:hikuma-castle（引馬城）を地図の上で代表する実装上の拠点。台帳の場所の根拠は命題 hikuma-entry-1568。同じ場所だという史料上の主張ではない。",
+  "source": "hiDainihonshiryoKobun",
+  "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+  "locator": "綱文：和暦 永禄11年12月18日 第3条（区分 大日本史料、第10編之1（データベースの表示値）、469頁）",
+  "checked": "2026-11-09",
+  "status": "verified-in-specified-scope",
+  "uncertainty": "代表の関係は実装上の対応で、拠点の座標は史料で確かめた位置ではない。"
+}

@@ -1,0 +1,38 @@
+{
+  "id": "hoeryong-princes-1592",
+  "entity": "place:hoeryong-castle",
+  "predicate": "military-event",
+  "value": "加藤清正が咸鏡道の会寧城に至り、朝鮮の王子らが降った。",
+  "validYears": [
+    1592,
+    1592
+  ],
+  "datePrecision": "day",
+  "source": "hiDainihonshiryoKobun",
+  "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+  "locator": "綱文：和暦 文禄元年7月23日 第3条（区分 史料綜覧、編11・冊912（データベースの表示値）、365頁）",
+  "gameBindings": [
+    "TK.HIST:咸鏡道の制圧"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-09",
+  "uncertainty": "綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。",
+  "linkedEntities": [
+    "place:hoeryong-castle",
+    "person:加藤清正"
+  ],
+  "eventTime": {
+    "kind": "dated-event",
+    "date": [
+      1592,
+      7,
+      23
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": false,
+    "precision": "day"
+  },
+  "eventRelation": "military-event",
+  "eventScope": "綱文が掲げる日付。文禄元年7月23日はゲーム共通の暦表で1592年8月30日。最終年表の咸鏡道の制圧（旧暦1592年7月23日、1592年8月30日）は一致する。王子らが降った日。咸鏡道の制圧の全体には広げない。朝鮮の地名は、日本に関わる出来事として記録する（地図の範囲とは別）。"
+}
