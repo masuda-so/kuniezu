@@ -28,7 +28,8 @@
    1615
   ],
   "wikidataLifeVsCollectionPeriod": "収集の対象期間（1534〜1615 年）と Wikidata の生没年を比べた目安。overlaps は生年・没年とも有り重なる、partial-years-overlap-possible は片方だけで外れとは言えない、unknown は年が無い。どれもその期間に実在・活動したことの確認ではない",
-  "peopleDir": "data/research/curated/people"
+  "peopleDir": "data/research/curated/people",
+  "gameNames": "年表の appear と、開始シナリオ s1560・s1585・s1570・s1575・s1592・s1600・s1582 の初期の人物の名前（395 件）"
  },
  "records": "wikipedia-sengoku-person-candidates.jsonl.gz",
  "recordFormat": "1 行 1 候補の JSON を gzip（mtime 0）。空の配列・null・false の欄は省く",
@@ -39,15 +40,15 @@
   "list+category": 3109
  },
  "counts": {
-  "not-a-human-item/unknown": 3567,
+  "not-a-human-item/unknown": 3568,
   "not-in-game/unknown": 3157,
-  "not-in-game/overlaps": 3058,
+  "not-in-game/overlaps": 3044,
   "not-in-game/partial-years-overlap-possible": 1759,
   "not-in-game/outside": 3626,
   "not-a-human-item/outside": 2,
   "has-person-record/overlaps": 103,
-  "in-game-without-record/overlaps": 232,
-  "no-wikidata-item/unknown": 151,
+  "in-game-without-record/overlaps": 246,
+  "no-wikidata-item/unknown": 150,
   "in-game-without-record/outside": 13,
   "in-game-without-record/unknown": 12,
   "in-game-without-record/partial-years-overlap-possible": 22,
@@ -6619,21 +6620,9 @@
    "reason": "深さの上限（3）"
   },
   {
-   "category": "近江木下家",
-   "depth": 4,
-   "via": "足守木下家",
-   "reason": "深さの上限（3）"
-  },
-  {
    "category": "日出木下家",
    "depth": 4,
    "via": "足守木下家",
-   "reason": "深さの上限（3）"
-  },
-  {
-   "category": "常高院",
-   "depth": 4,
-   "via": "丸亀京極家",
    "reason": "深さの上限（3）"
   },
   {
@@ -6716,12 +6705,6 @@
   },
   {
    "category": "今宮摂津守家",
-   "depth": 4,
-   "via": "佐竹右京大夫家",
-   "reason": "深さの上限（3）"
-  },
-  {
-   "category": "亀田岩城家",
    "depth": 4,
    "via": "佐竹右京大夫家",
    "reason": "深さの上限（3）"
@@ -6812,12 +6795,6 @@
   },
   {
    "category": "仙台藩主の正室",
-   "depth": 4,
-   "via": "仙台伊達家",
-   "reason": "深さの上限（3）"
-  },
-  {
-   "category": "一関田村家",
    "depth": 4,
    "via": "仙台伊達家",
    "reason": "深さの上限（3）"
@@ -7249,12 +7226,6 @@
    "reason": "深さの上限（3）"
   },
   {
-   "category": "細川ガラシャ",
-   "depth": 4,
-   "via": "明智氏",
-   "reason": "深さの上限（3）"
-  },
-  {
    "category": "妻木氏",
    "depth": 4,
    "via": "明智氏",
@@ -7282,12 +7253,6 @@
    "category": "萱野氏",
    "depth": 4,
    "via": "浅野氏",
-   "reason": "深さの上限（3）"
-  },
-  {
-   "category": "穴山武田家",
-   "depth": 4,
-   "via": "穴山氏",
    "reason": "深さの上限（3）"
   },
   {
@@ -7375,12 +7340,6 @@
    "reason": "深さの上限（3）"
   },
   {
-   "category": "萱野氏",
-   "depth": 4,
-   "via": "大島氏",
-   "reason": "深さの上限（3）"
-  },
-  {
    "category": "黒羽藩主",
    "depth": 4,
    "via": "大関氏",
@@ -7390,18 +7349,6 @@
    "category": "櫛橋氏",
    "depth": 4,
    "via": "糟屋氏",
-   "reason": "深さの上限（3）"
-  },
-  {
-   "category": "片桐池田家",
-   "depth": 4,
-   "via": "片桐氏",
-   "reason": "深さの上限（3）"
-  },
-  {
-   "category": "三河加藤氏",
-   "depth": 4,
-   "via": "加藤氏",
    "reason": "深さの上限（3）"
   },
   {
@@ -7585,12 +7532,6 @@
    "reason": "深さの上限（3）"
   },
   {
-   "category": "立花主膳正家",
-   "depth": 4,
-   "via": "立花氏",
-   "reason": "深さの上限（3）"
-  },
-  {
    "category": "立花大学家",
    "depth": 4,
    "via": "立花氏",
@@ -7693,18 +7634,6 @@
    "reason": "深さの上限（3）"
   },
   {
-   "category": "名張藤堂家",
-   "depth": 4,
-   "via": "丹羽氏",
-   "reason": "深さの上限（3）"
-  },
-  {
-   "category": "原氏 (土岐氏族)",
-   "depth": 4,
-   "via": "蜂屋氏",
-   "reason": "深さの上限（3）"
-  },
-  {
    "category": "土井氏",
    "depth": 4,
    "via": "原氏 (土岐氏族)",
@@ -7747,12 +7676,6 @@
    "reason": "深さの上限（3）"
   },
   {
-   "category": "東城浅野家",
-   "depth": 4,
-   "via": "堀田氏",
-   "reason": "深さの上限（3）"
-  },
-  {
    "category": "鶴屋堀田家",
    "depth": 4,
    "via": "堀田氏",
@@ -7789,12 +7712,6 @@
    "reason": "深さの上限（3）"
   },
   {
-   "category": "藤姓毛利氏",
-   "depth": 4,
-   "via": "尾張毛利氏",
-   "reason": "深さの上限（3）"
-  },
-  {
    "category": "佐伯藩主",
    "depth": 4,
    "via": "藤姓毛利氏",
@@ -7820,12 +7737,6 @@
   },
   {
    "category": "山内下総家",
-   "depth": 4,
-   "via": "土佐山内氏",
-   "reason": "深さの上限（3）"
-  },
-  {
-   "category": "宿毛山内家",
    "depth": 4,
    "via": "土佐山内氏",
    "reason": "深さの上限（3）"
@@ -7861,12 +7772,6 @@
    "reason": "深さの上限（3）"
   },
   {
-   "category": "奥平松平家",
-   "depth": 4,
-   "via": "奥平氏",
-   "reason": "深さの上限（3）"
-  },
-  {
    "category": "中津奥平家",
    "depth": 4,
    "via": "奥平氏",
@@ -7876,12 +7781,6 @@
    "category": "日近奥平家",
    "depth": 4,
    "via": "奥平氏",
-   "reason": "深さの上限（3）"
-  },
-  {
-   "category": "常高院",
-   "depth": 4,
-   "via": "浅井三姉妹",
    "reason": "深さの上限（3）"
   },
   {
@@ -8155,24 +8054,6 @@
    "reason": "深さの上限（3）"
   },
   {
-   "category": "上杉憲実",
-   "depth": 4,
-   "via": "越後上杉氏",
-   "reason": "深さの上限（3）"
-  },
-  {
-   "category": "上杉憲実の子女",
-   "depth": 4,
-   "via": "越後上杉氏",
-   "reason": "深さの上限（3）"
-  },
-  {
-   "category": "上杉憲実の子女",
-   "depth": 4,
-   "via": "上杉憲実",
-   "reason": "深さの上限（3）"
-  },
-  {
    "category": "大木氏",
    "depth": 4,
    "via": "筑後宇都宮氏",
@@ -8203,12 +8084,6 @@
    "reason": "深さの上限（3）"
   },
   {
-   "category": "宇都宮頼綱の子女",
-   "depth": 4,
-   "via": "宇都宮頼綱",
-   "reason": "深さの上限（3）"
-  },
-  {
    "category": "杉文左衛門家",
    "depth": 4,
    "via": "杉氏",
@@ -8221,21 +8096,9 @@
    "reason": "深さの上限（3）"
   },
   {
-   "category": "右田毛利家",
-   "depth": 4,
-   "via": "右田氏",
-   "reason": "深さの上限（3）"
-  },
-  {
    "category": "牛久藩主",
    "depth": 4,
    "via": "牛久山口氏",
-   "reason": "深さの上限（3）"
-  },
-  {
-   "category": "戸次氏",
-   "depth": 4,
-   "via": "臼杵氏",
    "reason": "深さの上限（3）"
   },
   {
@@ -8252,12 +8115,6 @@
   },
   {
    "category": "賀来氏",
-   "depth": 4,
-   "via": "戸次氏",
-   "reason": "深さの上限（3）"
-  },
-  {
-   "category": "立花織衛家",
    "depth": 4,
    "via": "戸次氏",
    "reason": "深さの上限（3）"
@@ -8314,12 +8171,6 @@
    "category": "大石内蔵助の子女",
    "depth": 4,
    "via": "大石氏",
-   "reason": "深さの上限（3）"
-  },
-  {
-   "category": "秋田伊達家",
-   "depth": 4,
-   "via": "国分氏 (陸奥国)",
    "reason": "深さの上限（3）"
   },
   {
@@ -8419,54 +8270,6 @@
    "reason": "深さの上限（3）"
   },
   {
-   "category": "裳懸氏",
-   "depth": 4,
-   "via": "竹原小早川氏",
-   "reason": "深さの上限（3）"
-  },
-  {
-   "category": "生口氏",
-   "depth": 4,
-   "via": "沼田小早川氏",
-   "reason": "深さの上限（3）"
-  },
-  {
-   "category": "浦氏",
-   "depth": 4,
-   "via": "沼田小早川氏",
-   "reason": "深さの上限（3）"
-  },
-  {
-   "category": "草井氏",
-   "depth": 4,
-   "via": "沼田小早川氏",
-   "reason": "深さの上限（3）"
-  },
-  {
-   "category": "小泉氏 (安芸国)",
-   "depth": 4,
-   "via": "沼田小早川氏",
-   "reason": "深さの上限（3）"
-  },
-  {
-   "category": "梨羽氏",
-   "depth": 4,
-   "via": "沼田小早川氏",
-   "reason": "深さの上限（3）"
-  },
-  {
-   "category": "乃美氏",
-   "depth": 4,
-   "via": "沼田小早川氏",
-   "reason": "深さの上限（3）"
-  },
-  {
-   "category": "椋梨氏",
-   "depth": 4,
-   "via": "沼田小早川氏",
-   "reason": "深さの上限（3）"
-  },
-  {
    "category": "武雄鍋島氏",
    "depth": 4,
    "via": "後藤氏",
@@ -8494,12 +8297,6 @@
    "category": "紀州田沼家",
    "depth": 4,
    "via": "田沼氏",
-   "reason": "深さの上限（3）"
-  },
-  {
-   "category": "斯波武衛家",
-   "depth": 4,
-   "via": "足利尾張家",
    "reason": "深さの上限（3）"
   },
   {
@@ -8563,18 +8360,6 @@
    "reason": "深さの上限（3）"
   },
   {
-   "category": "知覧島津家",
-   "depth": 4,
-   "via": "島津流佐多氏",
-   "reason": "深さの上限（3）"
-  },
-  {
-   "category": "都城島津家",
-   "depth": 4,
-   "via": "北郷氏",
-   "reason": "深さの上限（3）"
-  },
-  {
    "category": "薩摩藩主",
    "depth": 4,
    "via": "薩摩島津家",
@@ -8611,19 +8396,7 @@
    "reason": "深さの上限（3）"
   },
   {
-   "category": "今和泉島津家",
-   "depth": 4,
-   "via": "薩摩島津家",
-   "reason": "深さの上限（3）"
-  },
-  {
    "category": "加治木島津家",
-   "depth": 4,
-   "via": "薩摩島津家",
-   "reason": "深さの上限（3）"
-  },
-  {
-   "category": "重富島津家",
    "depth": 4,
    "via": "薩摩島津家",
    "reason": "深さの上限（3）"
@@ -8653,12 +8426,6 @@
    "reason": "深さの上限（3）"
   },
   {
-   "category": "武雄鍋島氏",
-   "depth": 4,
-   "via": "鍋島氏",
-   "reason": "深さの上限（3）"
-  },
-  {
    "category": "神代鍋島家",
    "depth": 4,
    "via": "鍋島氏",
@@ -8683,12 +8450,6 @@
    "reason": "深さの上限（3）"
   },
   {
-   "category": "八柳氏",
-   "depth": 4,
-   "via": "安島氏",
-   "reason": "深さの上限（3）"
-  },
-  {
    "category": "福澤諭吉",
    "depth": 4,
    "via": "福澤家",
@@ -8710,12 +8471,6 @@
    "category": "諏訪藩主",
    "depth": 4,
    "via": "諏訪因幡守家",
-   "reason": "深さの上限（3）"
-  },
-  {
-   "category": "三河小栗氏",
-   "depth": 4,
-   "via": "常陸小栗氏",
    "reason": "深さの上限（3）"
   },
   {
@@ -8755,12 +8510,6 @@
    "reason": "深さの上限（3）"
   },
   {
-   "category": "宮床伊達家",
-   "depth": 4,
-   "via": "田手氏",
-   "reason": "深さの上限（3）"
-  },
-  {
    "category": "水沢留守家",
    "depth": 4,
    "via": "水沢伊達家",
@@ -8791,24 +8540,6 @@
    "reason": "深さの上限（3）"
   },
   {
-   "category": "千葉常胤",
-   "depth": 4,
-   "via": "千葉介",
-   "reason": "深さの上限（3）"
-  },
-  {
-   "category": "千葉常胤の子女",
-   "depth": 4,
-   "via": "千葉常胤",
-   "reason": "深さの上限（3）"
-  },
-  {
-   "category": "肥前石井氏",
-   "depth": 4,
-   "via": "九州千葉氏",
-   "reason": "深さの上限（3）"
-  },
-  {
    "category": "江藤家",
    "depth": 4,
    "via": "九州千葉氏",
@@ -8824,12 +8555,6 @@
    "category": "千葉周作",
    "depth": 4,
    "via": "剣術家千葉家",
-   "reason": "深さの上限（3）"
-  },
-  {
-   "category": "郡上遠藤家",
-   "depth": 4,
-   "via": "東氏 (千葉氏)",
    "reason": "深さの上限（3）"
   },
   {
@@ -8917,12 +8642,6 @@
    "reason": "深さの上限（3）"
   },
   {
-   "category": "鵜殿松平氏",
-   "depth": 4,
-   "via": "十八松平",
-   "reason": "深さの上限（3）"
-  },
-  {
    "category": "大草松平氏",
    "depth": 4,
    "via": "十八松平",
@@ -8947,12 +8666,6 @@
    "reason": "深さの上限（3）"
   },
   {
-   "category": "桜井松平氏",
-   "depth": 4,
-   "via": "十八松平",
-   "reason": "深さの上限（3）"
-  },
-  {
    "category": "滝脇松平氏",
    "depth": 4,
    "via": "十八松平",
@@ -8960,12 +8673,6 @@
   },
   {
    "category": "竹谷松平氏",
-   "depth": 4,
-   "via": "十八松平",
-   "reason": "深さの上限（3）"
-  },
-  {
-   "category": "東条松平氏",
    "depth": 4,
    "via": "十八松平",
    "reason": "深さの上限（3）"
@@ -8995,25 +8702,7 @@
    "reason": "深さの上限（3）"
   },
   {
-   "category": "福釜松平氏",
-   "depth": 4,
-   "via": "十八松平",
-   "reason": "深さの上限（3）"
-  },
-  {
    "category": "深溝松平氏",
-   "depth": 4,
-   "via": "十八松平",
-   "reason": "深さの上限（3）"
-  },
-  {
-   "category": "藤井松平氏",
-   "depth": 4,
-   "via": "十八松平",
-   "reason": "深さの上限（3）"
-  },
-  {
-   "category": "三木松平氏",
    "depth": 4,
    "via": "十八松平",
    "reason": "深さの上限（3）"
@@ -9044,12 +8733,6 @@
   },
   {
    "category": "酒井左衛門尉家",
-   "depth": 4,
-   "via": "酒井氏",
-   "reason": "深さの上限（3）"
-  },
-  {
-   "category": "酒井山城守家",
    "depth": 4,
    "via": "酒井氏",
    "reason": "深さの上限（3）"
@@ -9097,18 +8780,6 @@
    "reason": "深さの上限（3）"
   },
   {
-   "category": "御連枝松平家",
-   "depth": 4,
-   "via": "親藩大名家",
-   "reason": "深さの上限（3）"
-  },
-  {
-   "category": "会津松平家",
-   "depth": 4,
-   "via": "親藩大名家",
-   "reason": "深さの上限（3）"
-  },
-  {
    "category": "明石松平家",
    "depth": 4,
    "via": "親藩大名家",
@@ -9121,12 +8792,6 @@
    "reason": "深さの上限（3）"
   },
   {
-   "category": "越前松平家",
-   "depth": 4,
-   "via": "親藩大名家",
-   "reason": "深さの上限（3）"
-  },
-  {
    "category": "松平越中守家",
    "depth": 4,
    "via": "親藩大名家",
@@ -9134,12 +8799,6 @@
   },
   {
    "category": "松平隠岐守家",
-   "depth": 4,
-   "via": "親藩大名家",
-   "reason": "深さの上限（3）"
-  },
-  {
-   "category": "越智松平家",
    "depth": 4,
    "via": "親藩大名家",
    "reason": "深さの上限（3）"
@@ -9199,12 +8858,6 @@
    "reason": "深さの上限（3）"
   },
   {
-   "category": "前橋松平家",
-   "depth": 4,
-   "via": "親藩大名家",
-   "reason": "深さの上限（3）"
-  },
-  {
    "category": "松江松平家",
    "depth": 4,
    "via": "親藩大名家",
@@ -9259,12 +8912,6 @@
    "reason": "深さの上限（3）"
   },
   {
-   "category": "保科正之",
-   "depth": 4,
-   "via": "会津松平家",
-   "reason": "深さの上限（3）"
-  },
-  {
    "category": "保科正之の子女",
    "depth": 4,
    "via": "会津松平家",
@@ -9290,36 +8937,6 @@
   },
   {
    "category": "越前永見家",
-   "depth": 4,
-   "via": "越前松平家",
-   "reason": "深さの上限（3）"
-  },
-  {
-   "category": "明石松平家",
-   "depth": 4,
-   "via": "越前松平家",
-   "reason": "深さの上限（3）"
-  },
-  {
-   "category": "津山松平家",
-   "depth": 4,
-   "via": "越前松平家",
-   "reason": "深さの上限（3）"
-  },
-  {
-   "category": "福井松平家",
-   "depth": 4,
-   "via": "越前松平家",
-   "reason": "深さの上限（3）"
-  },
-  {
-   "category": "前橋松平家",
-   "depth": 4,
-   "via": "越前松平家",
-   "reason": "深さの上限（3）"
-  },
-  {
-   "category": "松江松平家",
    "depth": 4,
    "via": "越前松平家",
    "reason": "深さの上限（3）"
@@ -9391,12 +9008,6 @@
    "reason": "深さの上限（3）"
   },
   {
-   "category": "三浦義村の子女",
-   "depth": 4,
-   "via": "三浦義村",
-   "reason": "深さの上限（3）"
-  },
-  {
    "category": "朝比奈氏",
    "depth": 4,
    "via": "和田氏",
@@ -9440,12 +9051,6 @@
   },
   {
    "category": "岩国吉川家",
-   "depth": 4,
-   "via": "吉川氏 (元春流)",
-   "reason": "深さの上限（3）"
-  },
-  {
-   "category": "阿川毛利家",
    "depth": 4,
    "via": "吉川氏 (元春流)",
    "reason": "深さの上限（3）"
@@ -9523,19 +9128,7 @@
    "reason": "深さの上限（3）"
   },
   {
-   "category": "須古鍋島氏",
-   "depth": 4,
-   "via": "水ケ江龍造寺氏",
-   "reason": "深さの上限（3）"
-  },
-  {
    "category": "後多久氏",
-   "depth": 4,
-   "via": "水ケ江龍造寺氏",
-   "reason": "深さの上限（3）"
-  },
-  {
-   "category": "武雄鍋島氏",
    "depth": 4,
    "via": "水ケ江龍造寺氏",
    "reason": "深さの上限（3）"
@@ -9589,12 +9182,6 @@
    "reason": "深さの上限（3）"
   },
   {
-   "category": "淀殿",
-   "depth": 4,
-   "via": "豊臣秀吉の正室と側室",
-   "reason": "深さの上限（3）"
-  },
-  {
    "category": "大坂城代",
    "depth": 4,
    "via": "大阪城",
@@ -9620,6 +9207,6 @@
   }
  ],
  "requests": 2189,
- "firstRequestAt": "2026-11-09T15:24:20.338Z",
- "lastRequestAt": "2026-11-09T15:44:29.215Z"
+ "firstRequestAt": "2026-11-09T16:03:58.529Z",
+ "lastRequestAt": "2026-11-09T16:24:24.253Z"
 }

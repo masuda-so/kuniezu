@@ -95,7 +95,11 @@ async function crawlCategories() {
   if (depth < MAX_DEPTH) for (const c of subcats) queue.push({category: c, depth: depth + 1, via: category});
   else for (const c of subcats) if (!seen.has(c)) notCrawled.push({category: c, depth: depth + 1, via: category, reason: `深さの上限（${MAX_DEPTH}）`});
  }
- return {visited, excluded, notCrawled, pages};
+ // 別の親から深さの上限内でたどったカテゴリは、未走査に残さない（探索の後の訪問済みの集合で判定する）。
+ const crawled = new Set([...visited, ...excluded].map(v => v.category));
+ const pending = new Map();
+ for (const n of notCrawled) if (!crawled.has(n.category) && !pending.has(n.category)) pending.set(n.category, n);
+ return {visited, excluded, notCrawled: [...pending.values()], pages};
 }
 
 async function main() {
@@ -170,9 +174,16 @@ async function main() {
   for (const n of [p.name, ...(p.gameNames || []), ...(p.aliases || [])]) if (n) byName.set(n, p.id);
  }
  const {G, TK} = require('../checks/history-focus.cjs').model();
- G.newGame('s1560', 'oda');
+ // ゲームの名前：年表の appear と、全ての開始シナリオの初期の人物
  const gameNames = new Set(TK.HIST.filter(e => e.k === 'appear').map(e => e.g.split('|')[0]));
- for (const g of G.S().gens || []) if (g.n) gameNames.add(g.n);
+ const scenariosRead = [];
+ for (const [id, sc] of Object.entries(TK.SCEN)) {
+  const owners = Object.keys(sc.owners || TK.SCEN[sc.base]?.owners || {});
+  const owner = owners.find(k => { try { G.newGame(id, k); return true; } catch { return false; } });
+  if (owner === undefined) throw Error(`開始シナリオ ${id} を開けません`);
+  for (const g of G.S().gens || []) if (g.n) gameNames.add(g.n);
+  scenariosRead.push(id);
+ }
 
  const nameUse = new Map();
  for (const e of records) {
@@ -227,6 +238,7 @@ async function main() {
    collectionPeriod: PERIOD,
    wikidataLifeVsCollectionPeriod: '収集の対象期間（1534〜1615 年）と Wikidata の生没年を比べた目安。overlaps は生年・没年とも有り重なる、partial-years-overlap-possible は片方だけで外れとは言えない、unknown は年が無い。どれもその期間に実在・活動したことの確認ではない',
    peopleDir: path.relative(root, peopleDir),
+   gameNames: `年表の appear と、開始シナリオ ${scenariosRead.join('・')} の初期の人物の名前（${gameNames.size} 件）`,
   },
   records: path.basename(`${base}.jsonl.gz`), recordFormat: "1 行 1 候補の JSON を gzip（mtime 0）。空の配列・null・false の欄は省く",
   total: records.length, byEntry, counts,
