@@ -27,7 +27,7 @@ const cover=()=>ev('(()=>{const {corners}=TKUI.mapBounds();return corners[0][0]<
  const target=await call('Target.createTarget',{url:'about:blank'},null);session=(await call('Target.attachToTarget',{targetId:target.targetId,flatten:true},null)).sessionId;await call('Runtime.enable');await call('Page.enable');await view(1400,1000);await load();await start();await ev('TKUI.speed=0');
 const rows=[];
 for(const [name,lon,lat,z]of [['本道寺方面',140.08,38.432,8],['白岩方面',140.16,38.41,8],['寒河江',140.27,38.38,8]]){
- const r=await evArgs(function(name,lon,lat,z){TKUI.cam(...G.PJ(lon,lat),z);const road=TK.roadDisplay(G.ROADS.find(r=>r.name==='六十里越街道'));return {name:name,version:G.S().movementGeometryVersion,sources:road.evidence.sources};},name,lon,lat,z);assert.equal(r.version,25);assert.ok(r.sources.includes('rokujurigoInlandMap'));rows.push(r);await sleep(1800);await shot('rokujurigo-'+rows.length);
+ const r=await evArgs(function(name,lon,lat,z){TKUI.cam(...G.PJ(lon,lat),z);const road=TK.roadDisplay(G.ROADS.find(r=>r.name==='六十里越街道'));return {name:name,version:G.S().movementGeometryVersion,sources:road.evidence.sources};},name,lon,lat,z);assert.equal(r.version,26);assert.ok(r.sources.includes('rokujurigoInlandMap'));rows.push(r);await sleep(1800);await shot('rokujurigo-'+rows.length);
 }
 assert.deepEqual(errors,[]);fs.writeFileSync(path.join(OUT,'result.json'),JSON.stringify({rows,errors},null,2));console.log('PASS Rokujurigo inland map corridor renders in three views; no exceptions');
 
