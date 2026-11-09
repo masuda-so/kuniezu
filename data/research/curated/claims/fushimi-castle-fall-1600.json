@@ -1,0 +1,38 @@
+{
+  "id": "fushimi-castle-fall-1600",
+  "entity": "place:fushimi-castle",
+  "predicate": "castle-fall",
+  "value": "西軍が山城伏見城を攻め落とし、鳥居元忠らが討死した。",
+  "validYears": [
+    1600,
+    1600
+  ],
+  "datePrecision": "day",
+  "source": "hiDainihonshiryoKobun",
+  "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+  "locator": "綱文：和暦 慶長5年8月1日 第1条（区分 史料綜覧、編11・冊913（データベースの表示値）、241頁）",
+  "gameBindings": [
+    "TK.HIST:伏見城の戦い"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-09",
+  "uncertainty": "綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。",
+  "linkedEntities": [
+    "place:fushimi-castle",
+    "person:torii-mototada"
+  ],
+  "eventTime": {
+    "kind": "dated-event",
+    "date": [
+      1600,
+      8,
+      1
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": false,
+    "precision": "day"
+  },
+  "eventRelation": "castle-fall",
+  "eventScope": "綱文が掲げる日付。慶長5年8月1日はゲーム共通の暦表で1600年9月8日。最終年表の伏見城の戦い（旧暦1600年8月1日、1600年9月8日）は一致する。落城の日。元忠の死去は同じ条からの別の命題（death-date-torii-mototada）。"
+}
