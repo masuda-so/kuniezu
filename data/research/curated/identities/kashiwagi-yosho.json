@@ -1,0 +1,15 @@
+{
+  "id": "identity:kashiwagi-yosho",
+  "relation": "represented-by",
+  "things": [
+    "place:kashiwagi",
+    "yosho:柏木城:139.98:37.67"
+  ],
+  "basis": "ゲームの拠点 yosho:柏木城:139.98:37.67（柏木城）は、台帳の場所 place:kashiwagi を地図の上で代表する実装上の拠点。台帳の場所の根拠は命題 kashiwagi-1585-defence。同じ場所だという史料上の主張ではない。",
+  "source": "kashiwagiBunka",
+  "sourceUrl": "https://online.bunka.go.jp/heritages/detail/520604",
+  "locator": "解説第1段落",
+  "checked": "2026-11-09",
+  "status": "verified-in-specified-scope",
+  "uncertainty": "代表の関係は実装上の対応で、拠点の座標は史料で確かめた位置ではない（同名の拠点から借りた座標を含む）。台帳の場所に出典付きの座標があればそれを優先する。"
+}

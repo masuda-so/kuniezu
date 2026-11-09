@@ -1,0 +1,15 @@
+{
+  "id": "identity:higamine-fort-yosho",
+  "relation": "represented-by",
+  "things": [
+    "place:higamine-fort",
+    "yosho:火ヶ峰砦:138.0578468:34.7028421"
+  ],
+  "basis": "ゲームの拠点 yosho:火ヶ峰砦:138.0578468:34.7028421（火ヶ峰砦）は、台帳の場所 place:higamine-fort を地図の上で代表する実装上の拠点。台帳の場所の根拠は命題 takatenjin-six-forts-preparation-years。同じ場所だという史料上の主張ではない。",
+  "source": "kakegawa-history-appendix",
+  "sourceUrl": "https://www.city.kakegawa.shizuoka.jp/fs/1/7/6/4/6/9/_/10appendix.pdf",
+  "locator": "資料編1（PDF3頁）、1579・1580年の行",
+  "checked": "2026-11-09",
+  "status": "verified-in-specified-scope",
+  "uncertainty": "代表の関係は実装上の対応で、拠点の座標は史料で確かめた位置ではない（同名の拠点から借りた座標を含む）。台帳の場所に出典付きの座標があればそれを優先する。"
+}

@@ -1,0 +1,15 @@
+{
+  "id": "identity:安芸城-yosho",
+  "relation": "represented-by",
+  "things": [
+    "place:安芸城",
+    "yosho:安芸城:133.54:33.31"
+  ],
+  "basis": "ゲームの拠点 yosho:安芸城:133.54:33.31（安芸城）は、台帳の場所 place:安芸城 を地図の上で代表する実装上の拠点。台帳の場所の根拠は命題 aki-1569-defeat。同じ場所だという史料上の主張ではない。",
+  "source": "akiHistoryChronology",
+  "sourceUrl": "https://www.city.aki.kochi.jp/rekimin/info/dtl.php?hdnKey=7968",
+  "locator": "1569年の項",
+  "checked": "2026-11-09",
+  "status": "verified-in-specified-scope",
+  "uncertainty": "代表の関係は実装上の対応で、拠点の座標は史料で確かめた位置ではない（同名の拠点から借りた座標を含む）。台帳の場所に出典付きの座標があればそれを優先する。"
+}
