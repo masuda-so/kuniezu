@@ -1,0 +1,45 @@
+{
+  "id": "kiyosu-conference-1582",
+  "entity": "place:kiyosu-castle",
+  "predicate": "territorial-transfer",
+  "value": "柴田勝家・羽柴秀吉・惟住（丹羽）長秀・池田恒興らが尾張清洲城に会し、故織田信長の継嗣を定め、遺領を処分した。",
+  "validYears": [
+    1582,
+    1582
+  ],
+  "datePrecision": "day",
+  "source": "hiDainihonshiryoKobun",
+  "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+  "locator": "綱文：和暦 天正10年6月27日 第1条（区分 大日本史料、第11編之1（データベースの表示値）、775頁）",
+  "gameBindings": [
+    "TK.HIST:信雄と信孝の争い",
+    "TK.HIST:信雄の尾張相続・尾張織田家の分離",
+    "TK.HIST:柴田勝家と信孝",
+    "TK.HIST:丹羽長秀の若狭領・近江加増",
+    "TK.HIST:池田恒興の摂津領"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-09",
+  "uncertainty": "年表の 5 件は、会議で決まった領国の分け方をそれぞれ表す。綱文の条はその全体の処分を掲げるだけで、各件の内訳を確かめたものではない。 綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。",
+  "linkedEntities": [
+    "place:kiyosu-castle",
+    "person:shibata-katsuie",
+    "person:toyotomi-hideyoshi",
+    "person:丹羽長秀",
+    "person:池田恒興"
+  ],
+  "eventTime": {
+    "kind": "dated-event",
+    "date": [
+      1582,
+      6,
+      27
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": false,
+    "precision": "day"
+  },
+  "eventRelation": "territorial-transfer",
+  "eventScope": "綱文が掲げる日付。天正10年6月27日はゲーム共通の暦表で1582年7月16日。最終年表の清洲会議ののちの領国の出来事（1582年7月17日・18日の 5 件）は綱文より1〜2日遅い。綱文は継嗣と遺領の処分を掲げるが、誰がどの地を得たかの内訳は書かないので、各家の領地の内訳（若狭・近江・摂津など）は命題にしない。織田信雄・信孝は綱文のこの条に名が無いので結ばない。"
+}
