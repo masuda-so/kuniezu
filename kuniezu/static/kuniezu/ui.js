@@ -894,7 +894,7 @@ function syncHUD(){const era=$('#era'),me=$('#me');if(innerWidth<=820){if(me.par
 function renderTop(){
  if(!S||U.mode!=='game')return;const d=G.date(),k=S.player;
  setHTML($('#eraTxt'),`<span class="e1">${G.eraK()}</span><span class="e2">${G.monK()}${G.dayK()}</span><span class="e3" title="1582年10月15日より前はユリウス暦、それ以後はグレゴリオ暦">西暦${G.dstrW()}</span>`);
- document.querySelectorAll('[data-act="speed"]').forEach(b=>{setAttr(b,'aria-pressed',String(+b.dataset.v===U.speed));const cur=!U.speed&&+b.dataset.v===(U.lastSp||1);if(b.classList.contains('cur')!==cur)b.classList.toggle('cur',cur);});
+ document.querySelectorAll('[data-act="speed"]').forEach(b=>{setAttr(b,'aria-pressed',String(+b.dataset.v===(U.speed||U.lastSp||1)));const cur=!U.speed&&+b.dataset.v===(U.lastSp||1);if(b.classList.contains('cur')!==cur)b.classList.toggle('cur',cur);});
  {const pp=$('#ppBtn');if(pp){setText(pp,U.speed?'❚❚':'▶');if(pp.classList.contains('on')!==!!U.speed)pp.classList.toggle('on',!!U.speed);setAttr(pp,'aria-label',U.speed?'止める':'時を進める');}}
  syncHUD();const alive=S.clans[k]&&S.clans[k].alive,L=alive?G.gen(S.clans[k].leader):null;
  const meHTML=alive?`${L?faceHTML(L.n,'sm',k):''}${kamonHTML(k,24)}<div><b>${G.CNK(k)}</b>${L?officeBadge(L.n):''}<small>城 ${G.clanCastles(k).length} ・ 兵 ${man(G.clanTroops(k))}</small></div>
@@ -1048,7 +1048,7 @@ const ACT={
  'to-title':()=>{autosave();closeModal();showTitle();},
  'watch':()=>{closeModal();U.ended=true;},
  // 自家が史実どおり表舞台を去ったとき、別の家を継いで続ける
- adopt:b=>{const j=b.dataset.clan;if(!S.clans[j]||!S.clans[j].alive)return;S.player=j;S.extinct=0;U.sel=null;closeModal();terrSig='';U.baseDirty=true;renderAll();renderLegend&&renderLegend();const cap=S.clans[j].cap;if(cap)focus(cap,Math.max(cam.z,1));toast(`${G.CNK(j)}として続けます`,'good');},
+ adopt:b=>{const j=b.dataset.clan;if(!pickableClan(j))return;S.player=j;S.extinct=0;U.sel=null;closeModal();terrSig='';U.baseDirty=true;renderAll();renderLegend&&renderLegend();const cap=S.clans[j].cap;if(cap)focus(cap,Math.max(cam.z,1));toast(`${G.CNK(j)}として続けます`,'good');},
  new:()=>showScen(),continue:()=>{if(doLoad('auto'))toast('続きから再開','good');},
  scen:b=>showPick(b.dataset.id),
  pick:b=>chooseInitialClan(b.dataset.clan),
@@ -1100,7 +1100,7 @@ MODALS['alliance-records']=()=>`<header><h2>盟約・和睦と軍事協力</h2><
 MODALS['observer-branch']=()=>`<header><h2>${esc(G.CNK(S.observerQ?.[0]?.parent||S.player))}から新たな領国が成立しました</h2><button class="ic" data-act="observer-stay" aria-label="宗家の観察を続ける">×</button></header><p>各領国の成立は史実に沿って進みます。ここでは、これから動きを追う家を選びます。</p><div class="dlist">${G.observerOptions().map(k=>`<button class="act" data-act="observer-select" data-id="${k}"><b>${esc(G.CNK(k))}</b><small>${esc(G.gen(S.clans[k].leader)?.n||'')} ・ ${esc(G.cname(S.clans[k].cap))}</small></button>`).join('')}</div><p class="hint">領地・同盟・合戦の結果は選択では変わりません。「尾張織田」「美濃織田」は信雄系・信孝系の識別用表示名です。</p>`;
 ACT['observer-select']=el=>{if(G.chooseObserver(el.dataset.id)){closeModal();U.baseDirty=true;renderLegend();renderTop();autosave();}};
 ACT['observer-stay']=()=>{S.observerQ=[];closeModal();};
-MODALS.dip=()=>{const me=S.player;return `<header><div><small class="eyebrow">${G.CNK(me)}から見た直接の関係</small><h2>諸家の関係</h2><button class="mini" data-act="open" data-m="central-offices">政権の役職</button></div><button class="ic" data-act="close" aria-label="閉じる">×</button></header><p class="hint">主従、交戦記録、敵対、同盟・和睦を区別します。同盟相手の同盟国を自動的に味方とはしません。関係未記録は中立の保証ではありません。</p>${['lord','vassal','ally','war','hostile','none'].map(key=>{const ks=G.alive().filter(k=>k!==me&&relation(k).key===key);return `<h3 style="color:${G.relationKinds[key][1]}">${G.relationKinds[key][0]}（${ks.length}家）</h3><div class="dlist">${ks.map(k=>{const L=G.gen(S.clans[k].leader);return `<div class="drow">${L?faceHTML(L.n,'sm',k):''}<div class="dtx"><b>${esc(G.CNK(k))}</b>${L?officeBadge(L.n):''}<small>${G.clanCastles(k).length}拠点 ・ 兵${man(G.clanTroops(k))}</small>${key==='ally'||key==='vassal'||key==='lord'?`<small>${esc(G.allianceLabel(me,k))}</small>`:''}</div></div>`;}).join('')||'<p class="hint">該当なし</p>'}</div>`;}).join('')}`;};
+MODALS.dip=()=>{const me=S.player;return `<header><div><small class="eyebrow">${G.CNK(me)}から見た直接の関係</small><h2>諸家の関係</h2><button class="mini" data-act="open" data-m="central-offices">政権の役職</button></div><button class="ic" data-act="close" aria-label="閉じる">×</button></header><p class="hint">主従、交戦記録、敵対、同盟・和睦を区別します。同盟相手の同盟国を自動的に味方とはしません。関係未記録は中立の保証ではありません。</p>${['lord','vassal','ally','war','hostile','none'].map(key=>{const ks=G.alive().filter(k=>pickableClan(k)&&k!==me&&relation(k).key===key);return `<h3 style="color:${G.relationKinds[key][1]}">${G.relationKinds[key][0]}（${ks.length}家）</h3><div class="dlist">${ks.map(k=>{const L=G.gen(S.clans[k].leader);return `<div class="drow">${L?faceHTML(L.n,'sm',k):''}<div class="dtx"><b>${esc(G.CNK(k))}</b>${L?officeBadge(L.n):''}<small>${G.clanCastles(k).length}拠点 ・ 兵${man(G.clanTroops(k))}</small>${key==='ally'||key==='vassal'||key==='lord'?`<small>${esc(G.allianceLabel(me,k))}</small>`:''}</div></div>`;}).join('')||'<p class="hint">該当なし</p>'}</div>`;}).join('')}`;};
 /* ===== 合戦（野戦の采配と、史実の合戦図） ===== */
 let SCN=null,sceneCloseTimer=null;
 function cancelSceneClose(){clearTimeout(sceneCloseTimer);sceneCloseTimer=null;}
@@ -1274,7 +1274,7 @@ ACT.dipl=b=>{const j=U.mdata.clan,k=S.player,t=b.dataset.t;let r;
  if(r.ok){G.diverge(k,'diplo');G.diverge(j);}U.mdata.msg=r.msg;if(!S.clans[j].alive){closeModal();toast(r.msg,'good');return;}renderModal();renderTop();U.baseDirty=true;};
 MODALS.prop=()=>{const p=S.propQ[0];if(!p){setTimeout(closeModal,0);return '';}const L=G.gen(S.clans[p.from].leader);
  return `<header>${L?faceHTML(L.n,'lg',p.from):''}<div><small class="eyebrow">${G.CNK(p.from)}より</small><h2>同盟の申し入れ</h2></div></header><p>${G.CNK(p.from)}から、2年間の同盟を結びたいとの使者が来ました。</p><footer><button class="btn" data-act="prop" data-t="no">断る</button><button class="btn pri" data-act="prop" data-t="yes">同盟を結ぶ</button></footer>`;};
-MODALS.extinct=()=>{const k=S.player,d=G.date();const L=Object.keys(S.clans).filter(j=>S.clans[j].alive&&j!==k).sort((a,b)=>G.power(b)-G.power(a)).slice(0,6);
+MODALS.extinct=()=>{const k=S.player,d=G.date();const L=Object.keys(S.clans).filter(j=>pickableClan(j)&&j!==k).sort((a,b)=>G.power(b)-G.power(a)).slice(0,6);
  return `<div class="evt"><small>${G.eraK()} ${G.monK()}（${d.y}年）</small><h2>表舞台を去る</h2><p>${esc(G.CNK(k))}は、史実どおり大名としての力を失った。このまま天下の行く末を見守るか、いま残っている家を継いで続けることができます。</p></div>
  <h3>家を継いで続ける</h3><div class="acts" style="flex-wrap:wrap">${L.map(j=>{const g=G.gen(S.clans[j].leader);return `<button class="act" style="flex:1 1 30%" data-act="adopt" data-clan="${j}"><b>${esc(G.CNK(j))}</b><small>${g?esc(g.n)+' ・ ':''}${G.clanCastles(j).length}城</small></button>`;}).join('')}</div>
  <footer><button class="btn pri" data-act="close">このまま見守る</button></footer>`;};
@@ -1323,7 +1323,7 @@ const ABOUT=`<h3>この作品について</h3><div class="help">
  <p><b>書体</b>　しっぽり明朝 B1、Zen 角ゴシック New（SIL Open Font License 1.1）。</p>
  <p><b>制作</b>　開発にAIを使用しています。プレイ中のAI生成機能はありません。</p>
  <p><b>保存</b>　保存はこのブラウザの中だけに残ります。</p></div>`;
-const HELP=`<div class="help"><p><b>年代を進める</b>　左上の ▶ で進み、もう一度押すと止まります。下の年表で過去の配置も確認できます。</p><p><b>地図を読む</b>　ドラッグで移動、ホイール・ピンチで拡大縮小。凸駒は軍勢の実位置です。同じ道を進む隊は、拡大すると前後の駒を見分けられます。カーソルを合わせると各隊の情報が表示されます。</p><p><b>城と武将</b>　城を押すと在城者、周辺施設にカーソルを合わせるとその時点の施設情報を表示します。大名の本拠・各城・連絡や守備の拠点を確認できます。</p><p><b>史実の観察専用</b>　非史実の分岐・任意の攻撃・外交・創作イベント・AI生成は停止しています。従来の分岐した保存は書き換えません。</p><p><b>地形と史料</b>　現代標高の陰影と歴史地図は別の資料です。湖岸・街道の未確定部分は、メニューの出典と照合状況で確認できます。</p></div>`;
+const HELP=`<div class="help"><p><b>年代を進める</b>　画面下部の ▶ で進み、もう一度押すと止まります。画面下部の時間軸を動かすと、過去の配置を確認できます。</p><p><b>地図を読む</b>　ドラッグで移動、ホイール・ピンチで拡大縮小。凸駒は軍勢の実位置です。同じ道を進む隊は、拡大すると前後の駒を見分けられます。カーソルを合わせると各隊の情報が表示されます。</p><p><b>城と武将</b>　城を押すと在城者、周辺施設にカーソルを合わせるとその時点の施設情報を表示します。大名の本拠・各城・連絡や守備の拠点を確認できます。</p><p><b>史実の観察専用</b>　非史実の分岐・任意の攻撃・外交・創作イベント・AI生成は停止しています。従来の分岐した保存は書き換えません。</p><p><b>地形と史料</b>　現代標高の陰影と歴史地図は別の資料です。湖岸・街道の未確定部分は、「操作」→「合戦と史料」で確認できます。</p></div>`;
 
 /* ===== 保存 ===== */
 const SAVE_KEY2='kuniezu-history-v1-',LEGACY_SAVE_KEY='tenka-haichizu-v7-';
@@ -1378,13 +1378,14 @@ function showScen(){anim=null;U.speed=0;U.acc=0;U.mode='title';$('#app').dataset
 function showPick(sid){U.pickScen=sid;U.pickRegion='all';U.mode='pick';$('#app').dataset.mode='pick';title.hidden=true;
  const sc=TK.SCEN[sid];G.newGame(sid,sc.owners?Object.keys(sc.owners)[0]:'oda');S=G.S();S.player='__none';resize();fitTitle();
  // 配置図を変えたら、その時代の主役の家を初めに選んでおく
- const DEF={s1585:'hashiba',s1592:'hashiba',s1600:'tokugawa'};const al=k=>k&&S.clans[k]&&S.clans[k].alive;
+ const DEF={s1585:'hashiba',s1592:'hashiba',s1600:'tokugawa'};const al=pickableClan;
  U.pickClan=[DEF[sid],'oda','hashiba'].find(al)||Object.keys(S.clans).filter(al).sort((a,b)=>G.power(b)-G.power(a))[0];renderPick();}
-const PICK_REGIONS={'東北':['陸奥','出羽','蝦夷'],'関東':['常陸','下野','上野','下総','上総','安房','武蔵','相模'],'甲信越':['甲斐','信濃','越後','佐渡'],'東海':['尾張','美濃','三河','遠江','駿河','伊豆','伊勢','伊賀','志摩','飛騨'],'北陸':['越中','越前','加賀','能登','若狭'],'近畿':['近江','山城','大和','摂津','河内','和泉','紀伊','丹波','丹後','但馬'],'中国・四国':['因幡','伯耆','出雲','石見','隠岐','播磨','美作','備前','備中','備後','安芸','周防','長門','讃岐','阿波','伊予','土佐'],'九州':['筑前','筑後','豊前','豊後','肥前','肥後','日向','大隅','薩摩','壱岐'],'朝鮮・対馬':['対馬']};
-function pickRegion(k){const p=G.C[S.clans[k]?.cap]?.prov;return k==='joseon'?'朝鮮・対馬':Object.keys(PICK_REGIONS).find(n=>PICK_REGIONS[n].includes(p))||'その他';}
+const PICK_REGIONS={'東北':['陸奥','出羽','蝦夷'],'関東':['常陸','下野','上野','下総','上総','安房','武蔵','相模'],'甲信越':['甲斐','信濃','越後','佐渡'],'東海':['尾張','美濃','三河','遠江','駿河','伊豆','伊勢','伊賀','志摩','飛騨'],'北陸':['越中','越前','加賀','能登','若狭'],'近畿':['近江','山城','大和','摂津','河内','和泉','紀伊','丹波','丹後','但馬'],'中国・四国':['因幡','伯耆','出雲','石見','隠岐','播磨','美作','備前','備中','備後','安芸','周防','長門','讃岐','阿波','伊予','土佐'],'九州':['筑前','筑後','豊前','豊後','肥前','肥後','日向','大隅','薩摩','壱岐','対馬']};
+function pickableClan(k){return !!S.clans[k]?.alive&&G.clanCastles(k).some(id=>vector.strategyCastle(G.C[id]));}
+function pickRegion(k){const p=G.C[S.clans[k]?.cap]?.prov;return Object.keys(PICK_REGIONS).find(n=>PICK_REGIONS[n].includes(p))||'その他';}
 document.addEventListener('change',e=>{if(U.mode==='pick'&&e.target.id==='pickRegion'){U.pickRegion=e.target.value;renderPick();}});
 function renderPick(){
- const sc=TK.SCEN[U.pickScen],all=Object.keys(S.clans).filter(j=>S.clans[j].alive),list=all.filter(j=>!U.pickRegion||U.pickRegion==='all'||pickRegion(j)===U.pickRegion).sort((a,b)=>G.power(b)-G.power(a));if(list.length&&!list.includes(U.pickClan))U.pickClan=list[0];
+ const sc=TK.SCEN[U.pickScen],all=Object.keys(S.clans).filter(pickableClan),list=all.filter(j=>!U.pickRegion||U.pickRegion==='all'||pickRegion(j)===U.pickRegion).sort((a,b)=>G.power(b)-G.power(a));if(list.length&&!list.includes(U.pickClan))U.pickClan=list[0];
  const PRE=G.preList();const pre=PRE.find(x=>x.k===U.pickClan);if(!pre&&!(S.clans[U.pickClan]&&S.clans[U.pickClan].alive))U.pickClan=list[0];
  const k=U.pickClan;
  const preCard=x=>{return `<button class="pc${x.k===k?' on':''}" data-act="pick" data-clan="${x.k}">${familyMarkHTML(x.k)}${faceHTML(x.leader,'sm',x.k)}<span>${G.CN(x.k)}<small>${esc(x.leader)}・${esc(G.CNK(x.parent))}に従う（${x.d[0]}年に自立）</small></span></button>`;};
@@ -1397,7 +1398,7 @@ function renderPick(){
  <div class="tbtns"><button class="btn" data-act="back-scen">戻る</button></div>`;}
 function chooseInitialClan(k){
  if(U.mode!=='pick'||!TK.SCEN[U.pickScen])return;
- if(!S.clans[k]?.alive&&!G.preList().some(x=>x.k===k))return;
+ if(!pickableClan(k)&&!G.preList().some(x=>x.k===k))return;
  U.pickClan=k;startGame();
 }
 function startGame(){if(U.mode!=='pick')return;G.newGame(U.pickScen,U.pickClan);S=G.S();S.hsig=G.histSig();S.chats={};U.sel=null;U.ended=false;enterGame();
