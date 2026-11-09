@@ -27,7 +27,7 @@ const cover=()=>ev('(()=>{const {corners}=TKUI.mapBounds();return corners[0][0]<
  const target=await call('Target.createTarget',{url:'about:blank'},null);session=(await call('Target.attachToTarget',{targetId:target.targetId,flatten:true},null)).sessionId;await call('Runtime.enable');await call('Page.enable');await view(1400,1000);await load();await start();await ev('TKUI.speed=0');
 const rows=[];
 for(const [name,lon,lat,z]of [['市場・内山',131.5885,32.970,22],['三国峠越',131.609,32.925,22],['上津小野・小野市',131.628,32.875,22]]){
- const r=await evArgs(function(name,lon,lat,z){TKUI.cam(...G.PJ(lon,lat),z);const road=TK.roadDisplay(G.ROADS.find(r=>r.name==='日向街道'));return {name:name,version:G.S().movementGeometryVersion,sources:road.evidence.sources};},name,lon,lat,z);assert.equal(r.version,24);assert.ok(r.sources.includes('hyugaMikuniMap'));rows.push(r);await sleep(1800);await shot('hyuga-mapped-'+rows.length);
+ const r=await evArgs(function(name,lon,lat,z){TKUI.cam(...G.PJ(lon,lat),z);const road=TK.roadDisplay(G.ROADS.find(r=>r.name==='日向街道'));return {name:name,version:G.S().movementGeometryVersion,sources:road.evidence.sources};},name,lon,lat,z);assert.equal(r.version,25);assert.ok(r.sources.includes('hyugaMikuniMap'));rows.push(r);await sleep(1800);await shot('hyuga-mapped-'+rows.length);
 }
 assert.deepEqual(errors,[]);fs.writeFileSync(path.join(OUT,'result.json'),JSON.stringify({rows,errors},null,2));console.log('PASS Mikuni historical-map segment renders with its source in three views; no exceptions');
 
