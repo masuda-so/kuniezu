@@ -1,6 +1,6 @@
 {
   "checked": "2026-11-09",
-  "scope": "年表の登場人物5名の人物同定のみ。生没・所在の命題なし。候補は appear-person-authority-candidates.json。",
+  "scope": "年表の登場人物9名の人物同定のみ。生没・所在の命題なし。候補は appear-person-authority-candidates.json。",
   "rawLicense": {
     "name": "CC0 1.0",
     "url": "https://www.wikidata.org/wiki/Wikidata:Licensing",
@@ -197,6 +197,162 @@
       "identitySourceUrl": "https://www.pref.aomori.lg.jp/soshiki/kyoiku/e-bunka/juho_kenzoubutu_42.html",
       "identitySourceLocator": "解説の段落",
       "reservation": "生年は青森県の本文に無く、行年54の数えから1546年と矛盾しないことだけを見た。居城の変遷は新たな命題にしない。"
+    },
+    {
+      "name": "藤堂高虎",
+      "japaneseLabel": "藤堂高虎",
+      "wikidataId": "Q1377984",
+      "wikidataRevision": 2556894513,
+      "wikidataJapaneseLabel": "藤堂高虎",
+      "entityDataUrl": "https://www.wikidata.org/wiki/Special:EntityData/Q1377984.json",
+      "revisionUrl": "https://www.wikidata.org/w/index.php?title=Q1377984&oldid=2556894513",
+      "rawEntityDataSnapshot": "data/research/source-notes/appear-authority-batch-1-raw/Q1377984.json",
+      "rawSha256": "1dea74a3ea433e94eb26d3eaa828a87625cf6ece73cf15a806a36b96515ec597",
+      "identityChecks": [
+        "津市の略年譜が藤堂高虎を弘治2年（1556）に藤堂虎高の次男として生まれ、寛永7年（1630）10月5日に死去したとする",
+        "Wikidata Q1377984の日本語主名が藤堂高虎で、P569・P570の年が1556・1630"
+      ],
+      "adoptedNames": [
+        "藤堂高虎"
+      ],
+      "scope": "person-identity-only; no historical dates or locations adopted",
+      "nameEvidence": [
+        {
+          "name": "藤堂高虎",
+          "supports": [
+            "wikidata-ja-label-or-alias",
+            "public-source"
+          ]
+        }
+      ],
+      "publicOriginal": {
+        "path": "data/research/source-notes/appear-authority-batch-1-raw/takatora-tsu.html.gz",
+        "compression": "gzip",
+        "uncompressedSha256": "c64905684202c0e5049c0b846261e3f9e820d886361af318ab9d7dd871374fab"
+      },
+      "identitySourceIds": [
+        "tsuTakatoraIdentity"
+      ],
+      "identitySourceUrl": "https://www.info.city.tsu.mie.jp/kosodate_kyouiku/kyouikuiinkai/1004357/1004663/1004713/1004738.html",
+      "identitySourceLocator": "弘治2年（1556）と寛永7年（1630）の行",
+      "reservation": "仕官・大名となった年・移封は同定の比較で、新たな命題にしない。"
+    },
+    {
+      "name": "直江兼続",
+      "japaneseLabel": "直江兼続",
+      "wikidataId": "Q1348611",
+      "wikidataRevision": 2548970624,
+      "wikidataJapaneseLabel": "直江兼続",
+      "entityDataUrl": "https://www.wikidata.org/wiki/Special:EntityData/Q1348611.json",
+      "revisionUrl": "https://www.wikidata.org/w/index.php?title=Q1348611&oldid=2548970624",
+      "rawEntityDataSnapshot": "data/research/source-notes/appear-authority-batch-1-raw/Q1348611.json",
+      "rawSha256": "b61d2363cdd33095178706e4bf6b59427c525bcf3b6f1045ad29261e304ca6c4",
+      "identityChecks": [
+        "米沢市の本文が直江兼続を元和5年（1619）に江戸の鱗屋敷で死去、享年60とする",
+        "Wikidata Q1348611の日本語主名が直江兼続で、P570に1619年と1620年、P569の年が1560（享年60の数えと合う）"
+      ],
+      "adoptedNames": [
+        "直江兼続"
+      ],
+      "scope": "person-identity-only; no historical dates or locations adopted",
+      "nameEvidence": [
+        {
+          "name": "直江兼続",
+          "supports": [
+            "wikidata-ja-label-or-alias",
+            "public-source"
+          ]
+        }
+      ],
+      "publicOriginal": {
+        "path": "data/research/source-notes/appear-authority-batch-1-raw/kanetsugu-yonezawa.html.gz",
+        "compression": "gzip",
+        "uncompressedSha256": "46fe947c92c0e71d611be859d16688323a7ac511a4ae8380e7017ef4a8cadd0e"
+      },
+      "identitySourceIds": [
+        "yonezawaKanetsuguIdentity"
+      ],
+      "identitySourceUrl": "https://www.city.yonezawa.yamagata.jp/soshiki/18/2/5/5/1591.html",
+      "identitySourceLocator": "「兼続の墓と戒名の謎」の段落",
+      "reservation": "元和5年の年末は西暦1620年に入るので、Wikidata の没年 1619・1620 の両方を残す。生年は米沢市の本文に無く、享年60の数えから1560年と矛盾しないことだけを見た。"
+    },
+    {
+      "name": "伊達成実",
+      "japaneseLabel": "伊達成実",
+      "wikidataId": "Q1038673",
+      "wikidataRevision": 2521637397,
+      "wikidataJapaneseLabel": "伊達成実",
+      "entityDataUrl": "https://www.wikidata.org/wiki/Special:EntityData/Q1038673.json",
+      "revisionUrl": "https://www.wikidata.org/w/index.php?title=Q1038673&oldid=2521637397",
+      "rawEntityDataSnapshot": "data/research/source-notes/appear-authority-batch-1-raw/Q1038673.json",
+      "rawSha256": "d8e26b9575f6efd31ae0343c6bae9c10c483d6508bb82f8048bc42f3b8dc7da7",
+      "identityChecks": [
+        "宮城県の本文が伊達成実を正保3年（1646）に没したとし、亘理町の霊屋に成実の木像を安置するとする",
+        "Wikidata Q1038673の日本語主名が伊達成実で、P570の年が1646、P569の年が1568"
+      ],
+      "adoptedNames": [
+        "伊達成実"
+      ],
+      "scope": "person-identity-only; no historical dates or locations adopted",
+      "nameEvidence": [
+        {
+          "name": "伊達成実",
+          "supports": [
+            "wikidata-ja-label-or-alias",
+            "public-source"
+          ]
+        }
+      ],
+      "publicOriginal": {
+        "path": "data/research/source-notes/appear-authority-batch-1-raw/shigezane-miyagi.html.gz",
+        "compression": "gzip",
+        "uncompressedSha256": "76f4237f2f4aaef01db86c5d1f26d6c810770cbd4d4d5486446578cef5cc28da"
+      },
+      "identitySourceIds": [
+        "miyagiShigezaneIdentity"
+      ],
+      "identitySourceUrl": "https://www.pref.miyagi.jp/soshiki/bunkazai/21date-sigezane.html",
+      "identitySourceLocator": "解説の段落",
+      "reservation": "生年は宮城県の本文に無い。没年と亘理の霊屋で同定した。"
+    },
+    {
+      "name": "別所長治",
+      "japaneseLabel": "別所長治",
+      "wikidataId": "Q837435",
+      "wikidataRevision": 2549583573,
+      "wikidataJapaneseLabel": "別所長治",
+      "entityDataUrl": "https://www.wikidata.org/wiki/Special:EntityData/Q837435.json",
+      "revisionUrl": "https://www.wikidata.org/w/index.php?title=Q837435&oldid=2549583573",
+      "rawEntityDataSnapshot": "data/research/source-notes/appear-authority-batch-1-raw/Q837435.json",
+      "rawSha256": "dfb0c3c3ea51e0aa5337cba0ddd434ff2d468c2f9f1fcb80b0c3aca1072d0512",
+      "identityChecks": [
+        "三木市の本文が三木城主の別所長治を、信長の「長」の字を受けて長治と名乗り、天正8年（1580）1月17日に切腹したとする",
+        "Wikidata Q837435の日本語主名が別所長治で、P570の年が1580、P569の年が1558"
+      ],
+      "adoptedNames": [
+        "別所長治"
+      ],
+      "scope": "person-identity-only; no historical dates or locations adopted",
+      "nameEvidence": [
+        {
+          "name": "別所長治",
+          "supports": [
+            "wikidata-ja-label-or-alias",
+            "public-source"
+          ]
+        }
+      ],
+      "publicOriginal": {
+        "path": "data/research/source-notes/appear-authority-batch-1-raw/nagaharu-miki.html.gz",
+        "compression": "gzip",
+        "uncompressedSha256": "83b3edac6a39e7a176ab20b859b205e9260463f394f9741293b135b02158835d"
+      },
+      "identitySourceIds": [
+        "mikiNagaharuIdentity"
+      ],
+      "identitySourceUrl": "https://www.city.miki.lg.jp/soshiki/33/91671.html",
+      "identitySourceLocator": "別所長治の段落と年表の天正8年の行",
+      "reservation": "生年は三木市の本文に無い。没年と三木城主・名乗りの由来で同定した。三木合戦の日付は新たな命題にしない。"
     }
   ]
 }

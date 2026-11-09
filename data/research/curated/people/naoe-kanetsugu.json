@@ -1,0 +1,26 @@
+{
+  "id": "person:naoe-kanetsugu",
+  "name": "直江兼続",
+  "gameNames": [
+    "直江兼続"
+  ],
+  "authorityIds": [
+    "wikidata:Q1348611"
+  ],
+  "authorityEvidence": {
+    "scope": "person-identity",
+    "checked": "2026-11-09",
+    "wikidataRevision": 2548970624,
+    "snapshot": "data/research/source-notes/appear-authority-batch-1.json",
+    "sourceNote": "data/research/source-notes/appear-authority-batch-1.json",
+    "note": "data/research/source-notes/appear-authority-batch-1.md",
+    "identityChecks": [
+      "米沢市の本文が直江兼続を元和5年（1619）に江戸の鱗屋敷で死去、享年60とする",
+      "Wikidata Q1348611の日本語主名が直江兼続で、P570に1619年と1620年、P569の年が1560（享年60の数えと合う）"
+    ],
+    "basis": "人物の同定のみ。原本にある生没日・所在・所領・関係の時期は新たな史実命題へ採用しない。",
+    "sourceIds": [
+      "yonezawaKanetsuguIdentity"
+    ]
+  }
+}
