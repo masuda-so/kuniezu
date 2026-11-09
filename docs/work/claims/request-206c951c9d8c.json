@@ -13,7 +13,24 @@
     "tools/checks/fixtures/battle-atlas.cjs",
     ".github/workflows/ci.yml",
     "docs/reports/BATTLE_MAP_PRESENTATION.md",
-    "data/verification/codex-battle-map-presentation"
+    "data/verification/codex-battle-map-presentation",
+    "data/inputs/battle-dem-detail",
+    "data/inputs/battle-atlas-frames.json",
+    "kuniezu/static/kuniezu/atlas/00.json",
+    "kuniezu/static/kuniezu/atlas/02.json",
+    "kuniezu/static/kuniezu/atlas/03.json",
+    "kuniezu/static/kuniezu/battle-atlas-data.js",
+    "tools/geo/battle-atlas.py",
+    "tools/checks/battle-atlas-detail.cjs",
+    "README.md",
+    "README.en.md",
+    "tools/checks/battle-initial-views.cjs",
+    "tools/checks/README.md",
+    "data/audits/battle-atlas-audit.json",
+    "tools/geo/battle-rivers.py",
+    "docs/work/CURRENT.md",
+    "data/verification/codex-battle-map-detail/README.md",
+    ".gitattributes"
   ],
   "claimedAt": "2026-11-08T14:43:19.472Z"
 }
