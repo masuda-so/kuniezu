@@ -1,0 +1,176 @@
+{
+  "type": "FeatureCollection",
+  "coordinateReferenceSystem": "OGC:CRS84",
+  "status": "adopted-source-restoration",
+  "periodSemantics": "game-management-display-only-not-historical-landholding",
+  "sourcePolicy": "Exact retained upland delta; game management only; no runtime correction.",
+  "provenance": {
+    "sourceCorrection": "hayashima-upland",
+    "sourceDefinition": "kuniezu/map/edits/applied/hayashima-upland.json",
+    "sourceDefinitionSha256": "88f25d2cf1a53ddaf447125ab825bd8daa43f4dc2954a087da45a98fb583123b",
+    "sourceGeometry": "data/inputs/kojima-coast-review/hayashima-upland-comparison.geojson#features/0",
+    "scope": "既採用の8m丘陵へのゲーム管理割当toKeyを精細化する。史実の知行・領主・実効支配の確認済み命題ではない。"
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "id": "control:hayashima-upland-subcell:0",
+      "properties": {
+        "drawRole": "control",
+        "key": "castle:bmatsuyama",
+        "validFrom": [
+          1560,
+          1,
+          1
+        ],
+        "validUntil": [
+          1616,
+          1,
+          1
+        ],
+        "sourceCorrection": "hayashima-upland",
+        "shapeRole": "prior-adopted-game-management-refinement",
+        "historicalControlConfirmed": false,
+        "exactHistoricalBoundary": false,
+        "basis": "旧採用hayashima-uplandのtoKey=castle:bmatsuyamaを、元8m丘陵のうち100m格子で海だった復元Dに限定して継承。個別領主の史実認定ではない。"
+      },
+      "geometry": {
+        "type": "MultiPolygon",
+        "coordinates": [
+          [
+            [
+              [
+                133.8172102,
+                34.6000442
+              ],
+              [
+                133.816781,
+                34.6002562
+              ],
+              [
+                133.8164377,
+                34.6002562
+              ],
+              [
+                133.8164947167714,
+                34.60042040962989
+              ],
+              [
+                133.81752224799874,
+                34.60042040962989
+              ],
+              [
+                133.81752224799874,
+                34.6000442
+              ],
+              [
+                133.8172102,
+                34.6000442
+              ]
+            ]
+          ],
+          [
+            [
+              [
+                133.8186103942031,
+                34.599522098454905
+              ],
+              [
+                133.81863262167596,
+                34.599522098454905
+              ],
+              [
+                133.81863262167596,
+                34.5995058357136
+              ],
+              [
+                133.8186103942031,
+                34.599522098454905
+              ]
+            ]
+          ],
+          [
+            [
+              [
+                133.8181543,
+                34.5986312
+              ],
+              [
+                133.8180685,
+                34.5988431
+              ],
+              [
+                133.81863262167596,
+                34.59924121516412
+              ],
+              [
+                133.81863262167596,
+                34.598715544148405
+              ],
+              [
+                133.8181543,
+                34.5986312
+              ]
+            ]
+          ],
+          [
+            [
+              [
+                133.8205576,
+                34.5991964
+              ],
+              [
+                133.8198709,
+                34.5991964
+              ],
+              [
+                133.8197429953532,
+                34.59910863788752
+              ],
+              [
+                133.8197429953532,
+                34.599522098454905
+              ],
+              [
+                133.8207949828252,
+                34.599522098454905
+              ],
+              [
+                133.8205576,
+                34.5991964
+              ]
+            ]
+          ],
+          [
+            [
+              [
+                133.8175535,
+                34.6017398
+              ],
+              [
+                133.8177252,
+                34.6017398
+              ],
+              [
+                133.81813441864878,
+                34.60131872080488
+              ],
+              [
+                133.81752224799874,
+                34.60131872080488
+              ],
+              [
+                133.81752224799874,
+                34.60177067327741
+              ],
+              [
+                133.8175535,
+                34.6017398
+              ]
+            ]
+          ]
+        ]
+      }
+    }
+  ]
+}

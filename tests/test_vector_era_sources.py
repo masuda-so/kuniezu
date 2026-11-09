@@ -6,7 +6,6 @@ import numpy as np
 import shapely
 from PIL import Image
 from pyproj import Transformer
-from shapely.geometry import MultiLineString
 from shapely.geometry import shape
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -96,7 +95,10 @@ def test_edited_shore_matches_land_and_preserves_non_shore_openings():
     for year in (1560, 1584):
         rows = [f for f in surfaces()[2] if active(f, year)]
         assert all(f["properties"]["drawRole"] == "shore" for f in rows)
-        actual = MultiLineString([f["geometry"]["coordinates"] for f in rows])
+        assert all(
+            f["geometry"]["type"] in {"LineString", "MultiLineString"} for f in rows
+        )
+        actual = shapely.union_all([shape(f["geometry"]) for f in rows])
         expected = land_at(year).boundary.difference(suppress)
         assert actual.equals(expected), (
             year,

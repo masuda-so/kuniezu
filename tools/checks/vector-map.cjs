@@ -15,3 +15,20 @@ const allBefore=map.path('land',[1560,1,1]);assert.equal(map.path('land',[1561,2
 assert.throws(()=>map.path('land',undefined),/map date/);assert.equal(map.path('land',[1562,1,1]),allBefore);
 assert.equal(map.epoch([1560,1,1]),map.epoch([1561,1,1]));assert.notEqual(map.epoch([1560,1,1]),map.epoch([1584,1,1]));
 console.log('PASS: holes, projection, dates, culling, unchanged source and atomic failure; combined clip reused across days');
+const controls=create({project,Path});
+const owned=feature('precise',[outer,hole],{drawRole:'control',key:'castle:bmatsuyama',validFrom:[1560,1,1],validUntil:[1584,1,1]});
+controls.replace([{type:'FeatureCollection',features:[owned]}]);
+assert.equal(controls.controlAt(...project(130.5,30.5),[1560,1,1]),'castle:bmatsuyama');
+assert.equal(controls.controlAt(...project(132,32),[1560,1,1]),null,'control hole remains unassigned');
+assert.equal(controls.controlAt(...project(130.5,30.5),[1584,1,1]),null,'control end is exclusive');
+const painted=[],controlContext={fillStyle:'',fill(p,rule){painted.push({style:this.fillStyle,rule,ops:p.ops});}};
+assert.equal(controls.paintControl(controlContext,[1560,1,1],[259,-69,269,-59],key=>{assert.equal(key,'castle:bmatsuyama');return [100,150,200,128];}),1);
+assert.equal(painted[0].style,'rgba(100,150,200,0.5019607843137255)');
+assert.equal(painted[0].ops.filter(o=>o[0]==='Z').length,2);
+assert.equal(controls.paintControl(controlContext,[1584,1,1],[259,-69,269,-59],()=>[0,0,0,255]),0);
+assert.throws(()=>controls.replace([{type:'FeatureCollection',features:[feature('invalid',[outer],{drawRole:'control'})]}]),/control key/);
+assert.equal(controls.controlAt(...project(130.5,30.5),[1560,1,1]),'castle:bmatsuyama','invalid control is not partially promoted');
+console.log('PASS: shared control geometry paints/picks the same keyed surface, holes and period; missing key rejected atomically');
+
+assert.equal(controls.path('control',[1560,1,1],undefined,()=>false).ops.length,0,'unknown color key does not remove original ownership');
+assert.ok(controls.path('control',[1560,1,1],undefined,key=>key==='castle:bmatsuyama').ops.length>0);
