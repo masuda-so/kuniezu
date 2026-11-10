@@ -1,3 +1,4 @@
+import json
 from datetime import date
 from pathlib import Path
 
@@ -53,6 +54,26 @@ def test_lunisolar_dates_follow_the_month_table():
 
 def test_a_lunisolar_date_outside_the_table_has_no_day_number():
     assert dates.lunisolar_to_jd(TABLE, 1400, 1, 1, leap=False) is None
+
+
+def test_1534_table_uses_absolute_days_before_the_western_reform():
+    # The upstream first column is proleptic Gregorian, not Julian.
+    first = dates.lunisolar_to_jd(TABLE, 1534, 5, 1, leap=False)
+    assert first == (date(1534, 6, 22) - date(1970, 1, 1)).days + UNIX_EPOCH_JD
+    assert first is not None
+    assert dates.jd_to_western(first + 11) == (1534, 6, 23)
+    assert dates.lunisolar_month_length(TABLE, 1534, 5, leap=False) in (29, 30)
+
+
+def test_database_reads_all_legacy_months_without_changing_day_numbers():
+    legacy_path = (
+        Path(settings.BASE_DIR)
+        / "data/inputs/japanese-calendar/legacy-month-starts.json"
+    )
+    legacy = json.loads(legacy_path.read_text(encoding="utf-8"))
+    starts = dates.month_starts(TABLE)
+    for year, month, leap, offset in legacy["m"]:
+        assert starts[(year, month, bool(leap))] == legacy["j0"] + offset
 
 
 def test_year_bounds_cover_whole_years():
