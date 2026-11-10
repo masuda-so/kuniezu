@@ -14,7 +14,7 @@ function validateTime(t){if(!t)throw Error('年代が必要');
  else if(t.kind==='year-interval'){if(t.calendar!=='CE-year'||t.precision!=='year'||!Number.isInteger(t.from)||!Number.isInteger(t.untilExclusive)||t.from>=t.untilExclusive)throw Error('年代区間が不正');}
  else if(t.kind==='dated-event'){const d=t.date;if(t.calendar!=='Japanese-lunisolar'||t.precision!=='day'||typeof t.leapMonth!=='boolean'||!Array.isArray(d)||d.length!==3||!d.every(Number.isInteger)||d[1]<1||d[1]>12||d[2]<1||d[2]>30)throw Error('旧暦日付・閏月区分が不正');}
  // 資料が期間の呼び名しか書かないとき。年は探すための目安で、滞在の始まり・終わりではない。
- else if(t.kind==='described-period'){const y=t.indexYears;if(!t.label||t.calendar!=='Japanese-era-description'||t.precision!=='period'||t.boundsAreHistoricalStartEnd!==false||!Array.isArray(y)||y.length!==2||!y.every(Number.isInteger)||y[0]>y[1])throw Error('期間の呼び名の時点が不正');}
+ else if(t.kind==='described-period'){const y=t.indexYears;if(typeof t.label!=='string'||!t.label.trim()||t.calendar!=='Japanese-era-description'||t.precision!=='period'||t.boundsAreHistoricalStartEnd!==false||!Array.isArray(y)||y.length!==2||!y.every(Number.isInteger)||y[0]>y[1])throw Error('期間の呼び名の時点が不正');}
  else throw Error('未対応の年代形式');
 }
 function validateLocations({people,places,locations,sources}){
@@ -71,7 +71,7 @@ function queryLocations(data,{person='',place='',year,fromYear,toYear,lunarDate,
   const end=t.kind==='year-interval'?t.untilExclusive-1:t.kind==='described-period'?t.indexYears[1]:start;
   if(end<(year??lower)||start>(year??upper))return false;
   if(lunarDate&&t.kind==='dated-event'&&(t.date.some((v,i)=>v!==lunarDate[i])||t.leapMonth!==leapMonth))return false;return true;
- }).map(r=>({...r,personName:people.get(r.person).name,placeName:places.get(r.place).name,interpretation:r.relation==='principal-base'?'本拠の情報。現地滞在を保証しない':r.relation==='held-castle-lordship'?'城主就任・役職の情報。現地滞在を保証しない':r.time.kind==='year-window'?'この年の記録。指定日の滞在は確定しない':'日付のある出来事。前後の連続滞在は確定しない'}));
+ }).map(r=>({...r,personName:people.get(r.person).name,placeName:places.get(r.place).name,interpretation:r.relation==='principal-base'?'本拠の情報。現地滞在を保証しない':r.relation==='held-castle-lordship'?'城主就任・役職の情報。現地滞在を保証しない':r.time.kind==='year-window'?'この年の記録。指定日の滞在は確定しない':r.time.kind==='described-period'?'資料が示す期間（'+r.time.label+'）の記録。年は検索のための目安で、期間の始まり・終わりと指定日の滞在は確定しない':r.time.kind==='year-interval'?'年代区間の記録。指定日の滞在は確定しない':'日付のある出来事。前後の連続滞在は確定しない'}));
  return {matchedPeople:person?selectedPeople.map(p=>({id:p.id,name:p.name})):[],matches,answerable:!!matches.length,exactPresenceConfirmed:!!lunarDate&&matches.some(r=>r.relation==='attested-presence'&&r.time.kind==='dated-event'),continuousPresenceAssumed:false};
 }
 module.exports={loadLocations,validateLocations,queryLocations,validateTemporalFields};

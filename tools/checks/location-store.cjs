@@ -12,6 +12,11 @@ for(const person of ['wikidata:Q950496','ndlna:01150199']){
 }
 assert.equal(queryLocations(data,{place:'place:fushimi',fromYear:1601}).matches.length,0);
 assert.throws(()=>queryLocations(data,{fromYear:1601,toYear:1600}));
+// 期間の呼び名：空白・数値の呼び名と、境界を主張する指定は受け付けない。検索の説明は日付のある出来事にしない。
+{const dp=d=>d.locations.find(r=>r.time.kind==='described-period');assert.ok(dp(data),'described-period location exists');
+ for(const bad of [' ','',123,null])reject(d=>{dp(d).time.label=bad;});reject(d=>{dp(d).time.boundsAreHistoricalStartEnd=true;});reject(d=>{dp(d).time.indexYears=[1576,1575];});reject(d=>{dp(d).time.year=1575;});
+ const hit=queryLocations(data,{place:'才ノ神',year:1575}).matches;assert.equal(hit.length,1);assert.match(hit[0].interpretation,/^資料が示す期間（長篠・設楽原の戦いの頃（天正3年））の記録。/);assert.doesNotMatch(hit[0].interpretation,/日付のある出来事/);
+ assert.equal(queryLocations(data,{place:'才ノ神',year:1576}).matches.length,0);}
 reject(d=>{d.people[0].authorityIds=['wikidata:Q0'];});
 reject(d=>{const [owner,other]=d.people.filter(p=>p.authorityIds?.length);other.authorityIds=[...owner.authorityIds];});
 const registeredUnknown=queryLocations(data,{person:'織田信長',year:1561});
