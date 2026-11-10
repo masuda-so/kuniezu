@@ -1,0 +1,28 @@
+{
+  "id": "person:hiraiwa-chikayoshi",
+  "name": "平岩親吉",
+  "gameNames": [
+    "平岩親吉"
+  ],
+  "authorityIds": [
+    "wikidata:Q849070",
+    "ndlna:001098716"
+  ],
+  "authorityEvidence": {
+    "scope": "person-identity",
+    "checked": "2026-11-09",
+    "wikidataRevision": 2556902168,
+    "snapshot": "data/research/source-notes/appear-authority-batch-2.json",
+    "sourceNote": "data/research/source-notes/appear-authority-batch-2.json",
+    "note": "data/research/source-notes/appear-authority-batch-2.md",
+    "identityChecks": [
+      "NDL001098716の主名平岩親吉がPerson典拠に属する",
+      "Wikidata Q849070の日本語主名とP349が同じNDL典拠へ対応する"
+    ],
+    "basis": "人物の同定のみ。原本にある生没日・所在・所領・関係の時期は新たな史実命題へ採用しない。",
+    "ndlSnapshot": "data/research/source-notes/appear-authority-batch-2-ndl/hiraiwa-chikayoshi.json",
+    "sourceIds": [
+      "ndlHiraiwaChikayoshiIdentity"
+    ]
+  }
+}

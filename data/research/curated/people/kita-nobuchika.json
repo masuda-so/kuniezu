@@ -1,0 +1,28 @@
+{
+  "id": "person:kita-nobuchika",
+  "name": "北信愛",
+  "gameNames": [
+    "北信愛"
+  ],
+  "authorityIds": [
+    "wikidata:Q10902500",
+    "ndlna:00651988"
+  ],
+  "authorityEvidence": {
+    "scope": "person-identity",
+    "checked": "2026-11-09",
+    "wikidataRevision": 2240492496,
+    "snapshot": "data/research/source-notes/appear-authority-batch-2.json",
+    "sourceNote": "data/research/source-notes/appear-authority-batch-2.json",
+    "note": "data/research/source-notes/appear-authority-batch-2.md",
+    "identityChecks": [
+      "NDL00651988の主名北信愛がPerson典拠に属する",
+      "Wikidata Q10902500の日本語主名とP349が同じNDL典拠へ対応する"
+    ],
+    "basis": "人物の同定のみ。原本にある生没日・所在・所領・関係の時期は新たな史実命題へ採用しない。",
+    "ndlSnapshot": "data/research/source-notes/appear-authority-batch-2-ndl/kita-nobuchika.json",
+    "sourceIds": [
+      "ndlKitaNobuchikaIdentity"
+    ]
+  }
+}
