@@ -11,7 +11,25 @@ function syncRequests(catalog,requests){
 }
 function policyMetadata(bytes,updatedAt=new Date().toISOString()){return {requestPolicyUpdatedAt:updatedAt,requestPolicySha256:crypto.createHash('sha256').update(bytes).digest('hex')};}
 if(require.main!==module)module.exports={syncRequests};
-else if(process.argv.includes('--requests-only')){
+else if(process.argv.includes('--sync-runtime-targets')){
+ const {runtimeTargets,appendTargets,writeCatalogPair}=require('./runtime-targets.cjs');
+ const {G,TK}=require('../checks/history-focus.cjs').model();G.newGame('s1560','oda');
+ const file=path.join(work,'catalog.jsonl'),old=fs.readFileSync(file,'utf8');
+ const targets=runtimeTargets(G,TK,read('docs/work/requests.json').period,read('data/research/conflicts.json').conflicts);
+ const result=appendTargets(old.trim().split('\n').map(JSON.parse),targets);
+ const next=result.rows.map(r=>JSON.stringify(r)).join('\n')+'\n';
+ const manifestPath=path.join(work,'catalog-manifest.json'),manifestBytes=fs.readFileSync(manifestPath,'utf8'),manifest=JSON.parse(manifestBytes);
+ const kinds={site:'sites',person:'people',road:'roads',link:'links',battle:'battles',transfer:'transfers',water:'waters',request:'requests'};
+ const counts={...Object.fromEntries(Object.entries(kinds).map(([kind,name])=>[name,result.counts[kind]||0])),total:result.rows.length};
+ const synchronized=old===next&&JSON.stringify(manifest.runtimeTargets)===JSON.stringify(result.inventory)&&JSON.stringify(manifest.counts)===JSON.stringify(counts);
+ if(process.argv.includes('--check')){
+  if(!synchronized)throw Error('runtime target inventory is not synchronized');
+ }else if(!synchronized){
+  manifest.runtimeTargets=result.inventory;manifest.counts=counts;manifest.runtimeTargetsUpdatedAt=new Date().toISOString();
+  writeCatalogPair({catalogPath:file,manifestPath,catalogText:next,manifestText:JSON.stringify(manifest,null,2)+'\n',expectedCatalog:old,expectedManifest:manifestBytes});
+ }
+ console.log('PASS: runtime sites/scenes inventoried; '+result.added.length+' added; '+result.inventory.retainedSnapshotTargetsAbsentFromRuntime.length+' historical snapshot rows retained; no state/claim writes');
+}else if(process.argv.includes('--requests-only')){
  const file=path.join(work,'catalog.jsonl'),old=fs.readFileSync(file,'utf8'),requests=read('docs/work/requests.json').requests;
  const next=syncRequests(old.trim().split('\n').map(JSON.parse),requests).map(r=>JSON.stringify(r)).join('\n')+'\n';
  const manifest=read('docs/work/catalog-manifest.json'),policy=policyMetadata(fs.readFileSync(path.join(work,'requests.json')));
@@ -19,6 +37,7 @@ else if(process.argv.includes('--requests-only')){
  else{Object.assign(manifest,policy);fs.writeFileSync(file,next);fs.writeFileSync(path.join(work,'catalog-manifest.json'),JSON.stringify(manifest,null,2)+'\n');}
  console.log('PASS: request policies synchronized; subject IDs, non-request rows and task state preserved');
 }else{
+if(fs.existsSync(path.join(work,'catalog.jsonl')))throw Error('existing catalog: use --sync-runtime-targets or --requests-only; full regeneration would overwrite historical targets');
 const coverage=read('data/audits/coverage-review.json'),atlas=read('data/audits/deployment-audit.json'),rows=[];
 const period=read('docs/work/requests.json').period||[1560,1615];
 function add(kind,key,subject,area,requestIds,checks,context={}){rows.push({id:kind+'-'+crypto.createHash('sha256').update(String(key)).digest('hex').slice(0,12),kind,subject,area,requestIds,acceptance:checks,context});}
@@ -26,7 +45,7 @@ for(const s of coverage.sites)add('site',s.id,s.name,'history',['H01','H02'],['�
 for(const p of coverage.people)add('person',p.name,p.name,'history',['H03'],['同名異人・別名の同定','生没・仕官・所在の適用年代','表示・年表・合戦参加の対応','出典と実装先の記録'],{portrait:p.portrait??null});
 for(const r of coverage.roads)add('road',r.name,r.name,'geography',['G03','M01'],['史料上の回廊・成立年代の確認','現代比較線と史実経路の区別','直線・海上混入・接続・重複の検査','経路上の行軍・向き・速度を実画面確認'],{points:r.points,reference:r.reference});
 for(const e of coverage.links)add('link',e.a+'|'+e.b,e.a+' → '+e.b,'movement',['M01','M02'],['陸路・海路・渡河・峠の区別','直線代替と寄城の妥当性','同じ道路線で描画と移動','停止・日跨ぎ・帰還・保存復元で連続'],e);
-// 台帳の構造差に依存せず、111図の正規一覧は atlas-audit から取る。
+// 初回棚卸しは監査入力の図一覧を使い、図数を固定しない。
 const battleData=read('data/audits/battle-atlas-audit.json');const battles=atlas.battles.map(b=>({...b,terrainFile:battleData[b.title]?.file}));
 for(const b of battles){const title=b.title||b.battle||b.name;if(!title)continue;add('battle',title,title,'battles',['B01','B02'],['同時期の参加者と別戦線を区別','地形・城郭・河川・布陣の出典','経過・内応・移陣と再生の対応','読込・顔・駒・全幅・自然終了を実画面確認'],{sourceInventory:b.sources||b.sourceIds||null});}
 const transfers=read('data/audits/territory-transfer-review.json');for(const e of transfers.events||[])add('transfer',JSON.stringify([e.date,e.kind,e.title,e.clan,e.castles]),e.date.join('/')+' '+e.title,'history',['H02','H04','H06'],['移転の各拠点と領主を資料の指定箇所で照合','明渡し・行政再配分・戦闘と日付精度を区別','既存イベントの重複・先取り・一括移転を修正','全期間の所有者と旧保存を検査'],e);
@@ -34,7 +53,7 @@ const waterText=fs.readFileSync(path.join(root,'kuniezu/static/kuniezu/lake-base
 for(const name of new Set([...lakes.map(l=>l.name),'香取海','椿海','飯沼','見沼','日本の海岸','朝鮮半島の海岸','遼東の海陸']))add('water',name,name,'geography',['G01','G02'],['史料の年代と対象地物を確認','同縮尺比較・基準点・誤差・採否を保存','単純な輪郭・現代の干拓埋立先取り・重複を修正','対象年代・拡縮で実画面確認']);
 for(const r of read('docs/work/requests.json').requests)add('request',r.id,r.title,r.area,[r.id],r.acceptance,{priority:r.priority});
 const manifest={generatedAt:new Date().toISOString(),...policyMetadata(fs.readFileSync(path.join(work,'requests.json'))),scope:'登録スナップショットと要望の対象別作業。歴史上の全件の網羅を証明しない。',inputs:['data/audits/coverage-review.json','data/audits/battle-atlas-audit.json','docs/work/requests.json'],counts:{sites:coverage.sites.length,people:coverage.people.length,roads:coverage.roads.length,links:coverage.links.length,battles:rows.filter(r=>r.kind==='battle').length,transfers:rows.filter(r=>r.kind==='transfer').length,waters:rows.filter(r=>r.kind==='water').length,requests:rows.filter(r=>r.kind==='request').length,total:rows.length}};
-if(manifest.counts.battles!==111)throw Error('合戦台帳の読取形式を点検: '+manifest.counts.battles);
+if(manifest.counts.battles!==battles.length||new Set(rows.map(r=>r.id)).size!==rows.length)throw Error('catalog input is missing titles or has duplicate task IDs');
 fs.writeFileSync(path.join(work,'catalog.jsonl'),rows.map(r=>JSON.stringify(r)).join('\n')+'\n');fs.writeFileSync(path.join(work,'catalog-manifest.json'),JSON.stringify(manifest,null,2)+'\n');console.log(manifest.counts);
 
 }

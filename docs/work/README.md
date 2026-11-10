@@ -16,7 +16,8 @@
 要望のまとまりと完了条件は [requests.json](requests.json)。対象別の作業は `catalog.jsonl`。再生成：
 
 ```
-node tools/work/build-catalog.cjs
+node tools/work/build-catalog.cjs --sync-runtime-targets
+node tools/work/build-catalog.cjs --sync-runtime-targets --check
 node tools/work/tasks.cjs list --area geography --limit 12
 ```
 
@@ -48,3 +49,21 @@ node tools/work/tasks.cjs complete 対象ID --owner 担当名 --evidence docs/re
 受入方針だけを更新した場合は `node tools/work/build-catalog.cjs --requests-only` で要望行のみ同期し、`--requests-only --check` で確認する。対象別の行・ID・担当state・完了証拠は作り直さず、元の棚卸し生成日と方針更新日を分けて保持する。
 
 既存の対象別行は棚卸し時点の記録として維持し、受入の年代はrequests.jsonのperiodと各要望の最新条件を適用する。年表や人物を日別に複製せず、変化・観測と有効期間を保持する。
+
+
+## 現行拠点・合戦図の差分同期
+
+`--sync-runtime-targets`は読み込み済みモデルの拠点と合戦図を照合し、
+未登録IDだけを追加する。既存行のID・根拠・受入条件・担当・完了証拠は
+上書きしない。現在のモデルにない旧座標IDも削除せず、manifestに残す。
+名前や近さだけで同一の城として自動統合しない。
+
+manifestの全行数には古い記録も含む。`runtimeTargets`の現行件数と区別し、
+分類が明示された戦役・個別合戦の参照と、未分類の図の件数を保持する。
+海外の拠点の登録は史実DB・個別合戦の文脈も含み、戦略地図への採用を意味しない。
+追加対象は調査未完了のままで、カタログの存在を史実照合完了に格上げしない。
+
+この差分同期は拠点と合戦図だけを対象とする。街道・人物・領土移転などの
+入力や期間の照合は別途継続する。旧来の引数なし生成は過去の監査入力からの
+初回棚卸し・隔離検証用で、既存カタログがあれば上書きを拒否する。
+`--check`は不足・不一致をエラーにするだけで、台帳や担当記録を書き換えない。

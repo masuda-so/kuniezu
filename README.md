@@ -120,3 +120,9 @@ GitHub Actionsの通常CIは、サーバー不要の検査（構文・保存・�
 追加肖像の原本・出典・切出しは `tools/faces/reviewed-portraits.json` で管理します。`uv run python tools/faces/build_reviewed.py --check` で配信画像との一致を確認し、入力を更新した場合は `--write` と `node tools/build/stamp-assets.cjs` で再生成します。ネットワーク取得や全肖像の再生成は行いません。
 
 ライセンスは [LICENSE](LICENSE)（MIT）です。同梱・派生する地図データ等は各出典の条件に従います。
+
+
+現行の拠点・合戦図を作業台帳へ追加する場合は
+`node tools/work/build-catalog.cjs --sync-runtime-targets`を使います。
+既存ID・担当・完了証拠と古い座標の記録を保持し、`--check`で無変更の
+整合確認ができます。追加は史実照合の完了や戦略地図への採用ではありません。

@@ -19,7 +19,7 @@
 | 秘密情報（APIキー・秘密鍵など。gzipも展開） | `secret-scan.cjs`（CIでも実行。第三者ページの保存前は `tools/research/source-privacy.cjs`） | — |
 | 読み込みの確認値（更新後に古い版を使わせない） | `node tools/build/stamp-assets.cjs --check`（CIでも実行。kuniezu/static/kuniezu/ のファイルを変えたら `node tools/build/stamp-assets.cjs` を実行） | — |
 | 天正壬午の和睦と旧保存 | `node tools/checks/tensho-peace-date.cjs`。実画面は同検査に`TENSHO_SAVE_OUTPUT=/tmp/kuniezu-tensho-saves`を付けて保存を生成後、`TENSHO_SAVE_INPUT=/tmp/kuniezu-tensho-saves GAME_TEST_OUTPUT=data/verification/codex-tensho-peace-date node tools/checks/tensho-peace-browser.cjs` | 許可済みの起動中サーバー |
-| フォルダ・担当管理 | `organization.cjs` | `march-clock-browser.cjs` の起動・行軍・合戦確認 |
+| フォルダ・担当管理 | `organization.cjs`（`work-targets.cjs`で拠点・合戦図の追加同期、旧記録保持、重複拒否を含む） | `march-clock-browser.cjs` の起動・行軍・合戦確認 |
 | 史料入力・出力 | `evidence-store.cjs`、`history-index.cjs`、`tools/research/export-evidence.cjs` | 該当する史料・説明の表示 |
 | 史実SQL・時空間キューブ | `python3 tools/checks/history-sqlite.py`、`python3 tools/checks/history-sqlite-inputs.py`、`python3 tools/checks/history-cube.py` | —（研究用の読取DB・ゲーム描画は変更しない） |
 | 人物・開始配置 | `historical-register.cjs`、`scenario-openings.cjs` | `march-clock-browser.cjs` |

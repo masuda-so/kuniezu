@@ -1,0 +1,48 @@
+/* 対象の追加で既存記録・採用根拠・完了条件を壊さない。 */
+const assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path');
+const {runtimeTargets,appendTargets,idFor,writeCatalogPair}=require('../work/runtime-targets.cjs');
+const old={id:idFor('site','retained'),kind:'site',subject:'old name',area:'history',requestIds:['H01'],acceptance:['old evidence boundary'],context:{siteId:'retained',positionReference:'verified source'}};
+const removed={id:idFor('site','old-coordinate'),kind:'site',subject:'historic coordinate',context:{siteId:'old-coordinate'}};
+const snapshot=[old,removed],before=structuredClone(snapshot);
+const targets=runtimeTargets({CL:[{id:'retained',n1:'updated name'},{id:'new',n1:'new site'}],YOSHO:[]},{BATTLES:{campaign:{},local:{}}},[1534,1615],[{id:'campaign:test',title:'campaign',kind:'campaign'},{id:'battle:test',title:'local',kind:'battle'}]);
+const first=appendTargets(snapshot,targets);
+assert.deepEqual(snapshot,before);assert.deepEqual(first.rows.slice(0,2),before,'existing source/acceptance/name retained');
+assert.equal(first.added.length,3);assert.deepEqual(first.inventory.retainedSnapshotTargetsAbsentFromRuntime.map(r=>r.id),[removed.id]);
+assert.equal(first.inventory.sceneClassifications[0].classification,'campaign');
+assert.equal(first.inventory.sceneClassifications[1].classification,'battle');
+assert.equal(first.added.find(r=>r.kind==='site').context.periodStatus,'not-fully-verified');
+assert.ok(first.added.find(r=>r.kind==='site').acceptance[1].includes('1534'));
+assert.equal(first.added.find(r=>r.kind==='site').context.strategyScope,'not-asserted-by-inventory');
+const again=appendTargets(first.rows,targets);assert.equal(again.added.length,0);assert.deepEqual(again.rows,first.rows);assert.deepEqual(again.inventory,first.inventory);
+assert.throws(()=>appendTargets([...snapshot,old],targets),/duplicate/);
+assert.throws(()=>appendTargets(snapshot,{...targets,rows:[...targets.rows,targets.rows[0]]}),/duplicate/);
+assert.throws(()=>appendTargets(snapshot,{...targets,rows:[{...old,context:{siteId:'different'}}]}),/collision/);
+assert.throws(()=>appendTargets(snapshot,{...targets,rows:[{...old,kind:'battle'}]}),/collision/);
+assert.throws(()=>runtimeTargets({CL:[],YOSHO:[]},{BATTLES:{}},[1615,1534]),/period/);
+assert.throws(()=>runtimeTargets({CL:[{id:'x',n1:'a'},{id:'x',n1:'b'}],YOSHO:[]},{BATTLES:{}},[1534,1615]),/duplicate/);
+assert.throws(()=>runtimeTargets({CL:[],YOSHO:[]},{BATTLES:{local:{}}},[1534,1615],[{title:'local'},{title:'local'}]),/ambiguous/);
+const temp=fs.mkdtempSync(path.join(require('node:os').tmpdir(),'kuniezu-catalog-write-'));
+try{
+ const a=path.join(temp,'catalog'),b=path.join(temp,'manifest');fs.writeFileSync(a,'old catalog');fs.writeFileSync(b,'old manifest');
+ const args={catalogPath:a,manifestPath:b,catalogText:'new catalog',manifestText:'new manifest',expectedCatalog:'old catalog',expectedManifest:'old manifest'};
+ assert.throws(()=>writeCatalogPair({...args,catalogText:{}}),/string|Buffer|TypedArray|DataView/);
+ assert.equal(fs.readFileSync(a,'utf8'),'old catalog');assert.equal(fs.readFileSync(b,'utf8'),'old manifest');
+ assert.throws(()=>writeCatalogPair({...args,expectedCatalog:'changed elsewhere'}),/changed/);
+ assert.equal(fs.readFileSync(a,'utf8'),'old catalog');assert.equal(fs.readFileSync(b,'utf8'),'old manifest');
+ writeCatalogPair(args);assert.equal(fs.readFileSync(a,'utf8'),'new catalog');assert.equal(fs.readFileSync(b,'utf8'),'new manifest');
+ assert.deepEqual(fs.readdirSync(temp).sort(),['catalog','manifest']);
+}finally{fs.rmSync(temp,{recursive:true,force:true});}
+const root=path.resolve(__dirname,'../..'),work=path.join(root,'docs/work');
+const catalog=fs.readFileSync(path.join(work,'catalog.jsonl'),'utf8').trim().split('\n').map(JSON.parse);
+const inputs=['catalog.jsonl','catalog-manifest.json',...['claims','state'].flatMap(d=>fs.readdirSync(path.join(work,d)).map(n=>d+'/'+n))];
+const hashes=new Map(inputs.map(p=>[p,fs.readFileSync(path.join(work,p),'utf8')]));
+const full=require('node:child_process').spawnSync(process.execPath,[path.join(root,'tools/work/build-catalog.cjs')],{cwd:root,encoding:'utf8'});
+assert.notEqual(full.status,0,'full regeneration must not overwrite an existing catalog');
+const result=require('node:child_process').spawnSync(process.execPath,[path.join(root,'tools/work/build-catalog.cjs'),'--sync-runtime-targets','--check'],{cwd:root,encoding:'utf8'});
+assert.equal(result.status,0,result.stderr);
+const repeat=require('node:child_process').spawnSync(process.execPath,[path.join(root,'tools/work/build-catalog.cjs'),'--sync-runtime-targets'],{cwd:root,encoding:'utf8'});
+assert.equal(repeat.status,0,repeat.stderr);
+for(const [p,text]of hashes)assert.equal(fs.readFileSync(path.join(work,p),'utf8'),text,'readonly runtime check: '+p);
+const meta=JSON.parse(fs.readFileSync(path.join(work,'catalog-manifest.json'),'utf8'));
+assert.equal(meta.counts.total,catalog.length);
+console.log('PASS: additive runtime sites/scenes, retained historical targets and evidence, idempotence, scope separation, ID collisions and readonly CLI');

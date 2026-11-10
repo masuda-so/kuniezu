@@ -7,16 +7,90 @@
     "docs/work/requests.json"
   ],
   "counts": {
-    "sites": 448,
+    "sites": 463,
     "people": 378,
     "roads": 85,
     "links": 315,
-    "battles": 111,
+    "battles": 114,
     "transfers": 143,
     "waters": 26,
     "requests": 20,
-    "total": 1526
+    "total": 1544
   },
   "requestPolicyUpdatedAt": "2026-11-09T15:10:16.678Z",
-  "requestPolicySha256": "d470d9eca36eb95b3511d8e3df2ae643e55faca5e87730bc95978fd6b49e1da4"
+  "requestPolicySha256": "d470d9eca36eb95b3511d8e3df2ae643e55faca5e87730bc95978fd6b49e1da4",
+  "runtimeTargets": {
+    "scope": "registered sites and scenes only; not a historical completion check or strategic-map selection",
+    "sha256": "24f25837e5ea38ec4c93752000f2ee329e0b95e6714b48b294b0c8bc05635932",
+    "registeredSites": 461,
+    "registeredScenes": 114,
+    "sceneClassifications": [
+      {
+        "title": "長篠の戦い",
+        "classification": "campaign",
+        "conflictId": "campaign:長篠の戦い"
+      },
+      {
+        "title": "小牧・長久手の戦い",
+        "classification": "campaign",
+        "conflictId": "campaign:小牧・長久手の戦い"
+      },
+      {
+        "title": "文禄の役",
+        "classification": "campaign",
+        "conflictId": "campaign:文禄の役"
+      },
+      {
+        "title": "玉浦海戦",
+        "classification": "battle",
+        "conflictId": "battle:玉浦海戦"
+      },
+      {
+        "title": "閑山島海戦",
+        "classification": "battle",
+        "conflictId": "battle:閑山島海戦"
+      },
+      {
+        "title": "第一次晋州城の戦い",
+        "classification": "battle",
+        "conflictId": "battle:第一次晋州城の戦い"
+      },
+      {
+        "title": "第二次晋州城の戦い",
+        "classification": "battle",
+        "conflictId": "battle:第二次晋州城の戦い"
+      },
+      {
+        "title": "釜山鎮の戦い",
+        "classification": "battle",
+        "conflictId": "battle:釜山鎮の戦い"
+      },
+      {
+        "title": "設楽原の戦い",
+        "classification": "battle",
+        "conflictId": "battle:設楽原の戦い"
+      },
+      {
+        "title": "長久手の戦い",
+        "classification": "battle",
+        "conflictId": "battle:長久手の戦い"
+      }
+    ],
+    "unclassifiedSceneCount": 104,
+    "retainedSnapshotTargetsAbsentFromRuntime": [
+      {
+        "id": "site-82199fe290b7",
+        "kind": "site",
+        "subject": "府内城",
+        "siteId": "yosho:府内城:131.61:33.24"
+      },
+      {
+        "id": "site-a570691d364a",
+        "kind": "site",
+        "subject": "横須賀城",
+        "siteId": "yosho:横須賀城:137.97:34.69"
+      }
+    ]
+  },
+  "runtimeTargetsUpdatedAt": "2026-11-10T07:34:21.545Z"
 }

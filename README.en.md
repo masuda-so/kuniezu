@@ -264,3 +264,10 @@ not fetch images or rebuild the entire portrait collection.
 
 The repository is licensed under [LICENSE](LICENSE) (MIT). Bundled or derived map
 data follows the terms of each source.
+
+
+To append registered sites and scenes to the work catalog, run
+`node tools/work/build-catalog.cjs --sync-runtime-targets`.
+Existing IDs, ownership, completion evidence and historical coordinate records
+are preserved. Add `--check` for a read-only consistency check. Registration
+does not establish historical verification or inclusion on the strategic map.

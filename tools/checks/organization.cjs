@@ -15,3 +15,5 @@ try{
  run(['claim',a,'--owner','b','--files','kuniezu/static/kuniezu/ui.js'],false);run(['claim',b,'--owner','b','--files','../outside'],false);run(['claim',b,'--owner','b','--files','kuniezu/static/kuniezu/ui.js']);run(['release',b,'--owner','b']);
 }finally{fs.rmSync(temp,{recursive:true,force:true});}
 console.log('PASS: '+migration.moves.length+' relocated files, '+scripts.length+' script dependencies, '+catalog.length+' unique tasks; file collision, owner protection, evidence and release');
+
+require('./work-targets.cjs');
