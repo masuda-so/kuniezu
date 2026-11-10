@@ -20,3 +20,17 @@ const html=c.MODALS.scene({title:'広域作戦'});assert.ok(!html.includes('canv
 vm.runInContext(s.slice(s.indexOf('function mountScene(sc,onEnd)'),s.indexOf('Object.assign(ACT,{',s.indexOf('function mountScene(sc,onEnd)'))),c);vm.runInContext('mountScene(TK.BATTLES["広域作戦"])',c);assert.equal(stopped,1);assert.equal(lookups,0,'campaign exits before any canvas lookup');
 vm.runInContext(s.slice(s.indexOf('function renderModal(){'),s.indexOf('\n',s.indexOf('function renderModal(){'))),c);c.mountScene=()=>mounted++;vm.runInContext('renderModal()',c);assert.equal(mounted,0,'manual campaign does not create playback');
 console.log('PASS: campaign auto exclusion, text-only manual view, existing child links, escaping, individual battle and Sekigahara campaign button, no mount');
+
+const summer=TK.CONFLICT_CATALOG['大坂夏の陣'];
+assert.equal(summer.kind,'campaign');
+assert.deepEqual(Array.from(summer.children,c=>c.title),['樫井の戦い','道明寺の戦い','八尾・若江の戦い','天王寺口・岡山口の戦い']);
+assert.equal(summer.children[0].sceneTitle,undefined,'unmapped Kashii remains text only');
+for(const child of summer.children.slice(1))assert.ok(TK.BATTLES[child.sceneTitle]);
+const tenno=TK.BATTLES['天王寺口・岡山口の戦い'];
+assert.equal(tenno.date,'慶長二十年五月七日（1615年6月3日）');
+assert.deepEqual(Array.from(tenno.eventDate),[1615,6,3]);
+assert.deepEqual(Array.from(tenno.units,u=>u.id),Array.from(TK.BATTLES['大坂夏の陣'].units,u=>u.id),'retain existing final-day participants');
+assert.equal(tenno.units.find(u=>u.id==='hideyori').die,undefined,'next-day death is outside the local scene');
+assert.ok(!JSON.stringify(tenno.beats).includes('翌八日'),'next-day ending is outside May seventh');
+assert.equal(G.sceneTitleForEvent('大坂夏の陣',0),null,'broad campaign does not autoplay final-day battle');
+console.log('PASS: Osaka summer campaign, three existing local maps, text-only Kashii and final-day date');

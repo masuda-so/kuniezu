@@ -23,7 +23,7 @@ is [docs/README.md](docs/README.md); open requests and ownership are in
   selected speed, which is used when playback resumes.
 
 - The history DB uses Julian dates through 4 October 1582 and Gregorian dates from 15 October. It rejects the reform gap (5–14 October), and distinguishes Japanese and Korean lunisolar dates.
-- The Bunroku, Nagashino and Komaki–Nagakute campaign overviews link to individual battles. The Shitaragahara view includes eleven local units and the Nagakute view five, keeping other fronts outside the local diagram. The Busan diagram covers the old fortress assault, with Korean-calendar dates and conversion sources kept distinct.
+- The Bunroku, Nagashino, Komaki–Nagakute and Osaka summer campaign overviews link to individual battles. The Shitaragahara view includes eleven local units and the Nagakute view five, keeping other fronts outside the local diagram. The Busan diagram covers the old fortress assault, with Korean-calendar dates and conversion sources kept distinct.
 
 - Choosing a house from the left panel or a castle on the map starts observation and replaces the selection panel with the chronology. The map keeps its washi, wave pattern, and relief shading without a terrain/plain-map toggle.
 - Land, water and shorelines are rendered as vectors from edited GeoJSON.

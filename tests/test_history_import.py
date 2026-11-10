@@ -1132,3 +1132,25 @@ def test_eighteen_authorities_share_stable_identity(
             ).get()
             == person
         )
+
+
+def test_osaka_summer_separates_campaign_and_final_day(inputs):
+    import_history(inputs)
+    campaign = Phenomenon.objects.get(key="campaign:大坂夏の陣")
+    expected_battles = 4
+    assert campaign.parts.count() == expected_battles
+    for title in ["道明寺の戦い", "八尾・若江の戦い"]:
+        battle = campaign.parts.get(title=title)
+        assert battle.records.filter(record_type=RecordType.IMPLEMENTED_EVENT).exists()
+    final_day = campaign.parts.get(key="battle:天王寺口・岡山口の戦い1615")
+    assert final_day.status == Status.REGISTERED
+    assert not final_day.jd_exact
+    assert not final_day.records.filter(
+        record_type=RecordType.IMPLEMENTED_EVENT
+    ).exists()
+    # A diagram's date is not promoted to a verified DB date by its parent link.
+    ending = Phenomenon.objects.get(
+        title="大坂夏の陣", records__record_type=RecordType.IMPLEMENTED_EVENT
+    )
+    assert ending != campaign
+    assert ending.parent is None

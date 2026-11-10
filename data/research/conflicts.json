@@ -417,6 +417,145 @@
           }
         ]
       }
+    },
+    {
+      "id": "campaign:大坂夏の陣",
+      "title": "大坂夏の陣",
+      "kind": "campaign",
+      "dateLabel": "1615年",
+      "summary": "樫井、道明寺、八尾・若江を経て、天王寺口・岡山口の決戦と大坂城の落城に至った戦役。各地の戦闘を分けて見る。",
+      "children": [
+        "battle:樫井の戦い1615",
+        "battle:道明寺の戦い1615",
+        "battle:八尾・若江の戦い1615",
+        "battle:天王寺口・岡山口の戦い1615"
+      ],
+      "sources": [
+        {
+          "author": "大阪城天守閣",
+          "title": "大阪城ゆかりの地マップ 大坂の陣（2025年5月発行）",
+          "url": "https://www.osakacastle.net/pdf/leaflet/yukari-osakanojin_202506.pdf",
+          "locator": "PDF第1頁「大坂の陣年表」、慶長20年4月29日・5月6日・7日・8日",
+          "scope": "樫井、道明寺、八尾・若江、天王寺口・岡山口と終結を区別する。精密な隊別配置、兵数、移動時刻の根拠にはしない。",
+          "accessed": "2026-11-10"
+        }
+      ]
+    },
+    {
+      "id": "battle:樫井の戦い1615",
+      "title": "樫井の戦い",
+      "kind": "battle",
+      "parent": "campaign:大坂夏の陣",
+      "sources": [
+        {
+          "author": "大阪城天守閣",
+          "title": "大阪城ゆかりの地マップ 大坂の陣（2025年5月発行）",
+          "url": "https://www.osakacastle.net/pdf/leaflet/yukari-osakanojin_202506.pdf",
+          "locator": "PDF第1頁「大坂の陣年表」、慶長20年4月29日・5月6日・7日・8日",
+          "scope": "樫井、道明寺、八尾・若江、天王寺口・岡山口と終結を区別する。精密な隊別配置、兵数、移動時刻の根拠にはしない。",
+          "accessed": "2026-11-10"
+        }
+      ],
+      "summary": "和泉国樫井での戦闘。"
+    },
+    {
+      "id": "battle:道明寺の戦い1615",
+      "title": "道明寺の戦い",
+      "kind": "battle",
+      "parent": "campaign:大坂夏の陣",
+      "sources": [
+        {
+          "author": "大阪城天守閣",
+          "title": "大阪城ゆかりの地マップ 大坂の陣（2025年5月発行）",
+          "url": "https://www.osakacastle.net/pdf/leaflet/yukari-osakanojin_202506.pdf",
+          "locator": "PDF第1頁「大坂の陣年表」、慶長20年4月29日・5月6日・7日・8日",
+          "scope": "樫井、道明寺、八尾・若江、天王寺口・岡山口と終結を区別する。精密な隊別配置、兵数、移動時刻の根拠にはしない。",
+          "accessed": "2026-11-10"
+        }
+      ],
+      "existingSceneTitle": "道明寺の戦い"
+    },
+    {
+      "id": "battle:八尾・若江の戦い1615",
+      "title": "八尾・若江の戦い",
+      "kind": "battle",
+      "parent": "campaign:大坂夏の陣",
+      "sources": [
+        {
+          "author": "大阪城天守閣",
+          "title": "大阪城ゆかりの地マップ 大坂の陣（2025年5月発行）",
+          "url": "https://www.osakacastle.net/pdf/leaflet/yukari-osakanojin_202506.pdf",
+          "locator": "PDF第1頁「大坂の陣年表」、慶長20年4月29日・5月6日・7日・8日",
+          "scope": "樫井、道明寺、八尾・若江、天王寺口・岡山口と終結を区別する。精密な隊別配置、兵数、移動時刻の根拠にはしない。",
+          "accessed": "2026-11-10"
+        }
+      ],
+      "existingSceneTitle": "八尾・若江の戦い"
+    },
+    {
+      "id": "battle:天王寺口・岡山口の戦い1615",
+      "title": "天王寺口・岡山口の戦い",
+      "kind": "battle",
+      "parent": "campaign:大坂夏の陣",
+      "sources": [
+        {
+          "author": "大阪城天守閣",
+          "title": "大阪城ゆかりの地マップ 大坂の陣（2025年5月発行）",
+          "url": "https://www.osakacastle.net/pdf/leaflet/yukari-osakanojin_202506.pdf",
+          "locator": "PDF第1頁「大坂の陣年表」、慶長20年4月29日・5月6日・7日・8日",
+          "scope": "樫井、道明寺、八尾・若江、天王寺口・岡山口と終結を区別する。精密な隊別配置、兵数、移動時刻の根拠にはしない。",
+          "accessed": "2026-11-10"
+        }
+      ],
+      "scene": {
+        "sourceTitle": "大坂夏の陣",
+        "date": "慶長二十年五月七日（1615年6月3日）",
+        "eventDate": [
+          1615,
+          6,
+          3
+        ],
+        "scope": "天王寺口・岡山口の決戦",
+        "selection": {
+          "allowGroupIds": [
+            "group-0",
+            "group-1",
+            "group-2",
+            "group-3",
+            "group-4",
+            "group-5"
+          ],
+          "allowUnitIds": [
+            "sanada",
+            "katsunaga",
+            "ono",
+            "hideyori",
+            "tadanao",
+            "honda",
+            "ieyasu",
+            "hidetada",
+            "maeda",
+            "ii"
+          ],
+          "sourceClockWindow": [
+            0,
+            95
+          ],
+          "keepBeatSourcePercentages": [
+            0,
+            30,
+            40,
+            44,
+            52,
+            66,
+            74,
+            88
+          ],
+          "keepCalendarSourcePercentages": [],
+          "allowLandmarkNames": [],
+          "excludeFeatureNames": []
+        }
+      }
     }
   ]
 }
