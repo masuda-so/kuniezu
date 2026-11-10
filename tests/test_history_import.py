@@ -877,8 +877,8 @@ def test_every_kobun_article_of_a_year_is_listed_once_and_unclassified(inputs):
     assert articles.count() == ARTICLES_1534
     assert set(articles.values_list("kind", flat=True)) == {PhenomenonKind.OTHER}
     assert summary.unclassified["kobun-unclassified"] == ARTICLES_1534
-    # 1534 lies outside the month table: the day is kept, its bounds are not
-    # asserted, and they reach into the next western year.
+    # The extended month table converts an indexed day; that does not classify
+    # the article or turn its contents into a verified historical claim.
     first = articles.get(key="kobun:020100200909")
     assert (first.calendar, first.year, first.month, first.day) == (
         Calendar.LUNISOLAR,
@@ -886,14 +886,18 @@ def test_every_kobun_article_of_a_year_is_listed_once_and_unclassified(inputs):
         1,
         1,
     )
-    assert not first.jd_exact
-    assert not first.bounds_asserted
-    assert first.jd_end == dates.year_bounds(1535)[1]
+    assert first.jd_exact
+    assert first.bounds_asserted
+    expected = dates.lunisolar_to_jd(inputs / MONTH_TABLE, 1534, 1, 1, leap=False)
+    assert expected is not None
+    assert first.jd_start == first.jd_end == expected
     leap = articles.get(key="kobun:020100200950")
     assert leap.leap_month
     year_only = articles.get(key="kobun:020100201384")
     assert year_only.precision == "period"
     assert year_only.time_label == "天文3年是歳"
+    assert not year_only.jd_exact
+    assert not year_only.bounds_asserted
 
 
 def test_a_campaign_holds_its_battles_and_has_no_map_of_its_own(inputs):
