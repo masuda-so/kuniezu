@@ -6,12 +6,12 @@
   "public-matches-kobun": "公的資料が綱文と同じ月日を書く",
   "public-matches-kobun-unverified": "同じ月日だが原本に接続できず未照合",
   "public-differs": "公的資料が綱文と違う年・月日を書く",
-  "existing-corpus-differs": "既存の登録資料が綱文と違う日を示す",
   "year-only": "公的資料は年だけ",
   "year-or-month-only": "公的資料は年か月まで",
   "not-found": "公的資料が見つからない（今回の条件で）",
   "no-claim-public-found": "綱文の命題が未登録で、公的資料はある",
-  "month-only-with-inscription-date": "公的資料の死去日は月までで、日は肖像の賛など死去日と明示されない記述にある"
+  "month-only-with-inscription-date": "公的資料の死去日は月までで、日は肖像の賛など死去日と明示されない記述にある",
+  "sources-disagree": "資料どうしで日が違い、どれが死去の日か決めていない"
  },
  "counts": {
   "public-differs": 2,
@@ -22,7 +22,7 @@
   "year-or-month-only": 1,
   "month-only-with-inscription-date": 1,
   "no-claim-public-found": 1,
-  "existing-corpus-differs": 1
+  "sources-disagree": 1
  },
  "rows": [
   {
@@ -164,16 +164,18 @@
    "category": "public-matches-kobun",
    "sources": [
     {
-     "publisher": "鹿児島県歴史資料センター黎明館（鹿児島県史料 旧記雑録拾遺 家わけ・肝付家文書）",
+     "publisher": "鹿児島県歴史資料センター黎明館（鹿児島県史料 旧記雑録拾遺 家わけ）",
      "url": "https://www.pref.kagoshima.jp/ab23/reimeikan/siroyu/documents/6756_20230112080240-1.pdf",
+     "locator": "PDF 32/170 頁、「肝属氏系図文書写」の部、第五号「岩切信充書状」に続く系図の記載（文書番号は OCR からは特定できない）",
      "phrase": "永禄九年…十一月十五日、於日州志布志病死、年五十六",
-     "basis": "肝属氏系図文書（翻刻）",
+     "basis": "家に伝わった系図文書の写しの翻刻",
      "kind": "翻刻史料",
-     "checkedBy": "subagent-report-not-refetched",
-     "note": "サブエージェントが PDF の本文を抽出して確認。こちらは未照合"
+     "checkedBy": "claude-pdfkit-text（macOS PDFKit で本文を取り出して確認）",
+     "originalSha256": "94fa2cfc55bf557da4f3bcf03590489b66f2fa9c31c9c9055eb4f96a2555f9d4",
+     "privateOriginal": ".cache/research-originals/death-date-sources/kagoshima-reimeikan-kimotsuki-ke.pdf"
     }
    ],
-   "note": "年表は綱文より25日早い（月初の1日に丸めた形）。"
+   "note": "系図の記載で、死去そのもの（病死）を書く。干支の部分は OCR で崩れている。"
   },
   {
    "name": "三村家親",
@@ -365,25 +367,30 @@
    "category": "public-matches-kobun",
    "sources": [
     {
-     "publisher": "南さつま市（いにしへだより No.14）",
+     "publisher": "南さつま市（いにしへだより No.14、市報 南さつま 2021年12月号）",
      "url": "https://www.city.minamisatsuma.lg.jp/living/docs/inishiedayoriR0312_No14.pdf",
-     "phrase": "元亀二年（一五七一）六月二十三日に加世田の御屋形で亡くなった",
-     "basis": "記載なし（士踊の伝え・灰塚）",
-     "kind": "二次",
-     "checkedBy": "subagent-report-not-refetched",
-     "note": "サブエージェントが PDF の本文を抽出して確認。こちらは未照合"
+     "locator": "1/1 頁、士踊の由来の段落",
+     "phrase": "元亀二年（一五七一）六月二十三日に加世田の御屋形で亡くなったことに因み",
+     "basis": "記載なし。士踊の由来を「伝えられています」とする文の中で、没日を書く",
+     "kind": "二次（自治体の広報の解説）",
+     "checkedBy": "claude-pdfkit-text",
+     "originalSha256": "4c34f4c1324fdfb3c818594b370830b98e6fc69c6a09dac2fd2d1771969a7b12",
+     "privateOriginal": ".cache/research-originals/death-date-sources/minamisatsuma-inishiedayori-14.pdf"
     },
     {
-     "publisher": "黎明館（肝付良兼祭文）",
+     "publisher": "鹿児島県歴史資料センター黎明館（同上の史料集）",
      "url": "https://www.pref.kagoshima.jp/ab23/reimeikan/siroyu/documents/6756_20230112080240-1.pdf",
-     "phrase": "維元亀二年歳舎辛未林鐘二十又三日",
-     "basis": "同時代の祭文（翻刻）",
+     "locator": "PDF 142/170 頁、第一三一号「肝付良兼祭文」（正文は清水郷有岡寺）",
+     "phrase": "維元亀二年歳舎辛未林鐘二十又三日甲寅、…南林寺殿大中良等庵主…捐館（OCR では「掲館」）",
+     "basis": "同時代の祭文の翻刻",
      "kind": "翻刻史料",
-     "checkedBy": "subagent-report-not-refetched",
-     "note": "同上"
+     "checkedBy": "claude-pdfkit-text",
+     "originalSha256": "94fa2cfc55bf557da4f3bcf03590489b66f2fa9c31c9c9055eb4f96a2555f9d4",
+     "privateOriginal": ".cache/research-originals/death-date-sources/kagoshima-reimeikan-kimotsuki-ke.pdf",
+     "note": "祭文の冒頭の日付の句の後に貴久の捐館（死去）を書く。祭文そのものを供えたのは七月廿四日と本文にある。祭文の日付の句を、死去日の独立の記録と同一視しない"
     }
    ],
-   "note": ""
+   "note": "没日を明記するのは南さつま市の解説（伝承の文の中）。祭文の冒頭の日付の句は、死去の日を指すと読めるが、祭文の作成・奉献の日（7月24日）とは別。"
   },
   {
    "name": "十河一存",
@@ -439,7 +446,7 @@
    "kobun": "天正14年7月26日",
    "timeline": "1586-09-10",
    "timelineMinusKobunDays": 1,
-   "category": "existing-corpus-differs",
+   "category": "sources-disagree",
    "sources": [
     {
      "publisher": "鹿児島県（鹿児島県史料 旧記雑録後編二 所収「上井覚兼日記」）",
@@ -459,7 +466,7 @@
      "note": "法要の日で、死去の日の記述ではない"
     }
    ],
-   "note": "既存の資料（iwayaDiary）では落城は27日午後。年表の1586-09-10は7月27日（グレゴリオ暦）に当たる。綱文の26日は包囲・下柵突破の日に掛けた掲出と見られる。紹運の戦死の時刻は日記でも特定できない。"
+   "note": "既存の資料（iwayaDiary、上井覚兼日記）では26日に下柵突破と包囲、27日朝の攻撃、同日午後に落城。年表の1586-09-10（グレゴリオ暦）は7月27日に当たり、綱文は26日。綱文がなぜ26日に掛けたかは確かめていない（下柵突破の日に掛けたという読みは、現段階では未確定）。資料間の不一致として残す。紹運の戦死の時刻は日記でも特定できない。"
   },
   {
    "name": "武田信繁",
