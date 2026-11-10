@@ -435,7 +435,8 @@
         "battle:足柄城の落城1590",
         "battle:松井田城の攻防1590",
         "battle:岩付城の攻防1590",
-        "battle:津久井城の落城1590"
+        "battle:津久井城の落城1590",
+        "battle:玉縄城の開城1590"
       ],
       "sources": [
         {
@@ -516,6 +517,14 @@
           "url": "https://www.city.sagamihara.kanagawa.jp/kankou/bunka/1022295/bunkazai/1010097.html",
           "locator": "中世の津久井・1590年の落城",
           "scope": "小田原攻めに伴う津久井城の落城。今回は年精度で扱い、月日・精密配置・経路を確定しない。",
+          "accessed": "2026-11-10"
+        },
+        {
+          "author": "鎌倉市教育委員会",
+          "title": "鎌倉の埋蔵文化財16（2013年3月）",
+          "url": "https://www.city.kamakura.kanagawa.jp/treasury/documents/maibun16.pdf",
+          "locator": "印刷1頁「地理・歴史的環境」、印刷3頁第1表「玉縄城略関連年表」1590年条（PDF3・5頁）",
+          "scope": "小田原攻めに際して氏勝が説得を受け降伏・開城したこと。直接の攻城戦や精密配置、日単位の開城日を確定しない。",
           "accessed": "2026-11-10"
         }
       ]
@@ -703,6 +712,23 @@
           "url": "https://www.city.sagamihara.kanagawa.jp/kankou/bunka/1022295/bunkazai/1010097.html",
           "locator": "中世の津久井・1590年の落城",
           "scope": "小田原攻めに伴う津久井城の落城。今回は年精度で扱い、月日・精密配置・経路を確定しない。",
+          "accessed": "2026-11-10"
+        }
+      ]
+    },
+    {
+      "id": "battle:玉縄城の開城1590",
+      "title": "玉縄城の開城",
+      "kind": "battle",
+      "parent": "campaign:小田原征伐",
+      "summary": "小田原攻めの際、玉縄城は直接の落城を免れ、城主氏勝が説得を受けて開城した。",
+      "sources": [
+        {
+          "author": "鎌倉市教育委員会",
+          "title": "鎌倉の埋蔵文化財16（2013年3月）",
+          "url": "https://www.city.kamakura.kanagawa.jp/treasury/documents/maibun16.pdf",
+          "locator": "印刷1頁「地理・歴史的環境」、印刷3頁第1表「玉縄城略関連年表」1590年条（PDF3・5頁）",
+          "scope": "小田原攻めに際して氏勝が説得を受け降伏・開城したこと。直接の攻城戦や精密配置、日単位の開城日を確定しない。",
           "accessed": "2026-11-10"
         }
       ]

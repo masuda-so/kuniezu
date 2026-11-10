@@ -23,8 +23,8 @@ console.log('PASS: campaign auto exclusion, text-only manual view, existing chil
 
 const odawara=TK.CONFLICT_CATALOG['小田原征伐'];
 assert.equal(odawara.kind,'campaign');
-assert.deepEqual(Array.from(odawara.children,c=>c.title),['山中城の戦い','韮山城の戦い','鉢形城の開城','小田原城の包囲（1590年）','小田原開城','八王子城の戦い','忍城の戦い','足柄城の落城','松井田城の攻防','岩付城の攻防','津久井城の落城']);
-for(const i of [0,3,5,6,7,8,9,10])assert.equal(odawara.children[i].sceneTitle,undefined,'unmapped castle remains text only');
+assert.deepEqual(Array.from(odawara.children,c=>c.title),['山中城の戦い','韮山城の戦い','鉢形城の開城','小田原城の包囲（1590年）','小田原開城','八王子城の戦い','忍城の戦い','足柄城の落城','松井田城の攻防','岩付城の攻防','津久井城の落城','玉縄城の開城']);
+for(const i of [0,3,5,6,7,8,9,10,11])assert.equal(odawara.children[i].sceneTitle,undefined,'unmapped castle remains text only');
 for(const i of [1,2,4])assert.ok(TK.BATTLES[odawara.children[i].sceneTitle]);
 assert.equal(G.sceneTitleForEvent('小田原征伐',0),null,'campaign does not autoplay a single castle siege');
 console.log('PASS: Odawara campaign distinguishes castle actions and surrender');
