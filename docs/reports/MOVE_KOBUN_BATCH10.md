@@ -71,4 +71,4 @@
 
 - `evidence-store.cjs`・`location-store.cjs`・`history-index.cjs`：通過。
 - `history-sqlite-inputs.py`・`history-sqlite.py`：通過（246 件の記録、追加前）。追加後は `evidence-store.cjs`・`history-index.cjs` を通した。
-- 書き出し（`export-evidence.cjs`）と ci.yml の手順は、第 6〜9 便の取り込み後に main に合わせて行う。
+- 書き出し（`export-evidence.cjs`）は、最新の main（#150 まで）を取り込んだ後に済ませ、JSONL は更新済み。通常の DB への反映は、取り込み後に Codex が行う。
