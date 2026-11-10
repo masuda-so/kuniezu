@@ -1,0 +1,52 @@
+{
+    "@context": "https://id.ndl.go.jp/auth/context.json",
+    "uri": "http://id.ndl.go.jp/auth/ndlna/00625122",
+    "primaryTopic": {
+        "uri": "http://id.ndl.go.jp/auth/entity/00625122",
+        "type": {
+            "uri": "http://xmlns.com/foaf/0.1/Person"
+        },
+        "name": "大谷吉継",
+        "dateOfBirth": "1559",
+        "dateOfDeath": "1600"
+    },
+    "type": {
+        "uri": "http://www.w3.org/2004/02/skos/core#Concept"
+    },
+    "modified": "2026-01-21T08:34:52",
+    "created": "1998-01-30",
+    "prefLabel": {
+        "literalForm": "大谷, 吉継, 1559-1600",
+        "transcription": "オオタニ, ヨシツグ, 1559-1600",
+        "transcription-l": [
+            {
+                "@value": "オオタニ, ヨシツグ, 1559-1600",
+                "@language": "ja-Kana"
+            },
+            {
+                "@value": "Ootani, Yoshitsugu, 1559-1600",
+                "@language": "ja-Latn"
+            }
+        ]
+    },
+    "label": "大谷, 吉継, 1559-1600",
+    "source": [
+        "大谷刑部少輔吉隆とその一族 / 森脇宏之 著",
+        "大人名事典"
+    ],
+    "exactMatch": [
+        {
+            "uri": "http://id.loc.gov/authorities/names/nr90015041"
+        },
+        {
+            "uri": "https://isni.org/isni/0000000377430503"
+        },
+        {
+            "uri": "http://viaf.org/viaf/sourceID/NDL%7C00625122#skos:Concept"
+        }
+    ],
+    "inScheme": {
+        "uri": "http://id.ndl.go.jp/auth#personalNames"
+    }
+}
+

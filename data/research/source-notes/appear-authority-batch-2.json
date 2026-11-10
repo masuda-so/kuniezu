@@ -1,0 +1,1005 @@
+{
+  "checked": "2026-11-09",
+  "scope": "年表の登場人物18名の人物同定のみ。NDL個人典拠の主名・人物型と、Wikidata の P349 の対応で同定。生没・所在の命題なし。",
+  "rawLicense": {
+    "name": "CC0 1.0",
+    "url": "https://www.wikidata.org/wiki/Wikidata:Licensing",
+    "scope": "Wikidata JSON only; NDL authority data retains its own terms"
+  },
+  "records": [
+    {
+      "name": "北信愛",
+      "japaneseLabel": "北信愛",
+      "wikidataId": "Q10902500",
+      "wikidataRevision": 2240492496,
+      "wikidataJapaneseLabel": "北信愛",
+      "entityDataUrl": "https://www.wikidata.org/wiki/Special:EntityData/Q10902500.json",
+      "revisionUrl": "https://www.wikidata.org/w/index.php?title=Q10902500&oldid=2240492496",
+      "rawEntityDataSnapshot": "data/research/source-notes/appear-authority-batch-2-raw/Q10902500.json",
+      "rawSha256": "0774a85cd9f97d9a34e4d3b9e63d2adb8b1525c65c9f3ab52a45e9bd2336c704",
+      "identityChecks": [
+        "NDL00651988の主名北信愛がPerson典拠に属する",
+        "Wikidata Q10902500の日本語主名とP349が同じNDL典拠へ対応する"
+      ],
+      "adoptedNames": [
+        "北信愛"
+      ],
+      "scope": "person-identity-only; no historical dates or locations adopted",
+      "nameEvidence": [
+        {
+          "name": "北信愛",
+          "supports": [
+            "wikidata-ja-label-or-alias",
+            "ndl-primary"
+          ]
+        }
+      ],
+      "ndlId": "00651988",
+      "ndlIdentity": {
+        "uri": "http://id.ndl.go.jp/auth/entity/00651988",
+        "type": {
+          "uri": "http://xmlns.com/foaf/0.1/Person"
+        },
+        "name": "北信愛",
+        "dateOfBirth": "1523",
+        "dateOfDeath": "1613",
+        "biographicalInformation": [
+          "戦国-江戸時代前期の武将"
+        ]
+      },
+      "identitySourceIds": [
+        "ndlKitaNobuchikaIdentity"
+      ],
+      "identitySourceUrl": "https://id.ndl.go.jp/auth/ndlna/00651988.json",
+      "identitySourceLocator": "個人典拠の主名・人物型・典拠ID",
+      "yearComparison": {
+        "wikidataBirth": [
+          1523
+        ],
+        "wikidataDeath": [
+          1613
+        ],
+        "ndlBirth": "1523",
+        "ndlDeath": "1613"
+      }
+    },
+    {
+      "name": "平岩親吉",
+      "japaneseLabel": "平岩親吉",
+      "wikidataId": "Q849070",
+      "wikidataRevision": 2556902168,
+      "wikidataJapaneseLabel": "平岩親吉",
+      "entityDataUrl": "https://www.wikidata.org/wiki/Special:EntityData/Q849070.json",
+      "revisionUrl": "https://www.wikidata.org/w/index.php?title=Q849070&oldid=2556902168",
+      "rawEntityDataSnapshot": "data/research/source-notes/appear-authority-batch-2-raw/Q849070.json",
+      "rawSha256": "a9ed48143a5832cafe9920d056ef28c40d48955f33254b51c50f8dce07553a8d",
+      "identityChecks": [
+        "NDL001098716の主名平岩親吉がPerson典拠に属する",
+        "Wikidata Q849070の日本語主名とP349が同じNDL典拠へ対応する"
+      ],
+      "adoptedNames": [
+        "平岩親吉"
+      ],
+      "scope": "person-identity-only; no historical dates or locations adopted",
+      "nameEvidence": [
+        {
+          "name": "平岩親吉",
+          "supports": [
+            "wikidata-ja-label-or-alias",
+            "ndl-primary"
+          ]
+        }
+      ],
+      "ndlId": "001098716",
+      "ndlIdentity": {
+        "uri": "http://id.ndl.go.jp/auth/entity/001098716",
+        "type": {
+          "uri": "http://xmlns.com/foaf/0.1/Person"
+        },
+        "name": "平岩親吉",
+        "dateOfBirth": "1542",
+        "dateOfDeath": "1611",
+        "biographicalInformation": [
+          "大名"
+        ]
+      },
+      "identitySourceIds": [
+        "ndlHiraiwaChikayoshiIdentity"
+      ],
+      "identitySourceUrl": "https://id.ndl.go.jp/auth/ndlna/001098716.json",
+      "identitySourceLocator": "個人典拠の主名・人物型・典拠ID",
+      "yearComparison": {
+        "wikidataBirth": [
+          1542
+        ],
+        "wikidataDeath": [
+          1612
+        ],
+        "ndlBirth": "1542",
+        "ndlDeath": "1611"
+      }
+    },
+    {
+      "name": "上井覚兼",
+      "japaneseLabel": "上井覚兼",
+      "wikidataId": "Q7903777",
+      "wikidataRevision": 2548237500,
+      "wikidataJapaneseLabel": "上井覚兼",
+      "entityDataUrl": "https://www.wikidata.org/wiki/Special:EntityData/Q7903777.json",
+      "revisionUrl": "https://www.wikidata.org/w/index.php?title=Q7903777&oldid=2548237500",
+      "rawEntityDataSnapshot": "data/research/source-notes/appear-authority-batch-2-raw/Q7903777.json",
+      "rawSha256": "931f4eae871bc42fef2d1aba49f317b8530653ca805709bd44b6b8c1b6080879",
+      "identityChecks": [
+        "NDL031601127の主名上井覚兼がPerson典拠に属する",
+        "Wikidata Q7903777の日本語主名とP349が同じNDL典拠へ対応する"
+      ],
+      "adoptedNames": [
+        "上井覚兼"
+      ],
+      "scope": "person-identity-only; no historical dates or locations adopted",
+      "nameEvidence": [
+        {
+          "name": "上井覚兼",
+          "supports": [
+            "wikidata-ja-label-or-alias",
+            "ndl-primary"
+          ]
+        }
+      ],
+      "ndlId": "031601127",
+      "ndlIdentity": {
+        "uri": "http://id.ndl.go.jp/auth/entity/031601127",
+        "type": {
+          "uri": "http://xmlns.com/foaf/0.1/Person"
+        },
+        "name": "上井覚兼",
+        "dateOfBirth": "1545",
+        "dateOfDeath": "1589",
+        "biographicalInformation": [
+          "戦国-織豊時代の武将"
+        ]
+      },
+      "identitySourceIds": [
+        "ndlUwaiSatokaneIdentity"
+      ],
+      "identitySourceUrl": "https://id.ndl.go.jp/auth/ndlna/031601127.json",
+      "identitySourceLocator": "個人典拠の主名・人物型・典拠ID",
+      "yearComparison": {
+        "wikidataBirth": [
+          1545
+        ],
+        "wikidataDeath": [
+          1589
+        ],
+        "ndlBirth": "1545",
+        "ndlDeath": "1589"
+      }
+    },
+    {
+      "name": "片倉景綱",
+      "japaneseLabel": "片倉景綱",
+      "wikidataId": "Q843226",
+      "wikidataRevision": 2447523787,
+      "wikidataJapaneseLabel": "片倉景綱",
+      "entityDataUrl": "https://www.wikidata.org/wiki/Special:EntityData/Q843226.json",
+      "revisionUrl": "https://www.wikidata.org/w/index.php?title=Q843226&oldid=2447523787",
+      "rawEntityDataSnapshot": "data/research/source-notes/appear-authority-batch-2-raw/Q843226.json",
+      "rawSha256": "50009a59a9b4e04f396d071e096d15a22aabc28791c86b5e2f4f0736e6eb9604",
+      "identityChecks": [
+        "NDL00626413の主名片倉景綱がPerson典拠に属する",
+        "Wikidata Q843226の日本語主名とP349が同じNDL典拠へ対応する"
+      ],
+      "adoptedNames": [
+        "片倉景綱"
+      ],
+      "scope": "person-identity-only; no historical dates or locations adopted",
+      "nameEvidence": [
+        {
+          "name": "片倉景綱",
+          "supports": [
+            "wikidata-ja-label-or-alias",
+            "ndl-primary"
+          ]
+        }
+      ],
+      "ndlId": "00626413",
+      "ndlIdentity": {
+        "uri": "http://id.ndl.go.jp/auth/entity/00626413",
+        "type": {
+          "uri": "http://xmlns.com/foaf/0.1/Person"
+        },
+        "name": "片倉景綱",
+        "dateOfBirth": "1557",
+        "dateOfDeath": "1615",
+        "biographicalInformation": [
+          "軍師"
+        ]
+      },
+      "identitySourceIds": [
+        "ndlKatakuraKagetsunaIdentity"
+      ],
+      "identitySourceUrl": "https://id.ndl.go.jp/auth/ndlna/00626413.json",
+      "identitySourceLocator": "個人典拠の主名・人物型・典拠ID",
+      "yearComparison": {
+        "wikidataBirth": [
+          1557
+        ],
+        "wikidataDeath": [
+          1615
+        ],
+        "ndlBirth": "1557",
+        "ndlDeath": "1615"
+      }
+    },
+    {
+      "name": "大谷吉継",
+      "japaneseLabel": "大谷吉継",
+      "wikidataId": "Q386265",
+      "wikidataRevision": 2513851732,
+      "wikidataJapaneseLabel": "大谷吉継",
+      "entityDataUrl": "https://www.wikidata.org/wiki/Special:EntityData/Q386265.json",
+      "revisionUrl": "https://www.wikidata.org/w/index.php?title=Q386265&oldid=2513851732",
+      "rawEntityDataSnapshot": "data/research/source-notes/appear-authority-batch-2-raw/Q386265.json",
+      "rawSha256": "4814c297a88065df679bb5c6fe42c2cac11426ad6776f4d707d39714f6abc28f",
+      "identityChecks": [
+        "NDL00625122の主名大谷吉継がPerson典拠に属する",
+        "Wikidata Q386265の日本語主名とP349が同じNDL典拠へ対応する"
+      ],
+      "adoptedNames": [
+        "大谷吉継"
+      ],
+      "scope": "person-identity-only; no historical dates or locations adopted",
+      "nameEvidence": [
+        {
+          "name": "大谷吉継",
+          "supports": [
+            "wikidata-ja-label-or-alias",
+            "ndl-primary"
+          ]
+        }
+      ],
+      "ndlId": "00625122",
+      "ndlIdentity": {
+        "uri": "http://id.ndl.go.jp/auth/entity/00625122",
+        "type": {
+          "uri": "http://xmlns.com/foaf/0.1/Person"
+        },
+        "name": "大谷吉継",
+        "dateOfBirth": "1559",
+        "dateOfDeath": "1600",
+        "biographicalInformation": []
+      },
+      "identitySourceIds": [
+        "ndlOtaniYoshitsuguIdentity"
+      ],
+      "identitySourceUrl": "https://id.ndl.go.jp/auth/ndlna/00625122.json",
+      "identitySourceLocator": "個人典拠の主名・人物型・典拠ID",
+      "yearComparison": {
+        "wikidataBirth": [
+          1559
+        ],
+        "wikidataDeath": [
+          1600
+        ],
+        "ndlBirth": "1559",
+        "ndlDeath": "1600"
+      }
+    },
+    {
+      "name": "有馬晴信",
+      "japaneseLabel": "有馬晴信",
+      "wikidataId": "Q1197394",
+      "wikidataRevision": 2555352915,
+      "wikidataJapaneseLabel": "有馬晴信",
+      "entityDataUrl": "https://www.wikidata.org/wiki/Special:EntityData/Q1197394.json",
+      "revisionUrl": "https://www.wikidata.org/w/index.php?title=Q1197394&oldid=2555352915",
+      "rawEntityDataSnapshot": "data/research/source-notes/appear-authority-batch-2-raw/Q1197394.json",
+      "rawSha256": "fc0d82e10b15e27712a9257dcb9262a854c69b4a5710ebbe0066c892cb78fab9",
+      "identityChecks": [
+        "NDL00867848の主名有馬晴信がPerson典拠に属する",
+        "Wikidata Q1197394の日本語主名とP349が同じNDL典拠へ対応する"
+      ],
+      "adoptedNames": [
+        "有馬晴信"
+      ],
+      "scope": "person-identity-only; no historical dates or locations adopted",
+      "nameEvidence": [
+        {
+          "name": "有馬晴信",
+          "supports": [
+            "wikidata-ja-label-or-alias",
+            "ndl-primary"
+          ]
+        }
+      ],
+      "ndlId": "00867848",
+      "ndlIdentity": {
+        "uri": "http://id.ndl.go.jp/auth/entity/00867848",
+        "type": {
+          "uri": "http://xmlns.com/foaf/0.1/Person"
+        },
+        "name": "有馬晴信",
+        "dateOfBirth": "1567",
+        "dateOfDeath": "1612",
+        "biographicalInformation": [
+          "肥前国有馬領主"
+        ]
+      },
+      "identitySourceIds": [
+        "ndlArimaHarunobuIdentity"
+      ],
+      "identitySourceUrl": "https://id.ndl.go.jp/auth/ndlna/00867848.json",
+      "identitySourceLocator": "個人典拠の主名・人物型・典拠ID",
+      "yearComparison": {
+        "wikidataBirth": [
+          1567
+        ],
+        "wikidataDeath": [
+          1612,
+          1612
+        ],
+        "ndlBirth": "1567",
+        "ndlDeath": "1612"
+      }
+    },
+    {
+      "name": "片桐且元",
+      "japaneseLabel": "片桐且元",
+      "wikidataId": "Q1882775",
+      "wikidataRevision": 2558100867,
+      "wikidataJapaneseLabel": "片桐且元",
+      "entityDataUrl": "https://www.wikidata.org/wiki/Special:EntityData/Q1882775.json",
+      "revisionUrl": "https://www.wikidata.org/w/index.php?title=Q1882775&oldid=2558100867",
+      "rawEntityDataSnapshot": "data/research/source-notes/appear-authority-batch-2-raw/Q1882775.json",
+      "rawSha256": "73cf4c0df847912a94d13107c6865ee60d36aa1a6c997e07f2722dc22d930333",
+      "identityChecks": [
+        "NDL00843990の主名片桐且元がPerson典拠に属する",
+        "Wikidata Q1882775の日本語主名とP349が同じNDL典拠へ対応する"
+      ],
+      "adoptedNames": [
+        "片桐且元"
+      ],
+      "scope": "person-identity-only; no historical dates or locations adopted",
+      "nameEvidence": [
+        {
+          "name": "片桐且元",
+          "supports": [
+            "wikidata-ja-label-or-alias",
+            "ndl-primary"
+          ]
+        }
+      ],
+      "ndlId": "00843990",
+      "ndlIdentity": {
+        "uri": "http://id.ndl.go.jp/auth/entity/00843990",
+        "type": {
+          "uri": "http://xmlns.com/foaf/0.1/Person"
+        },
+        "name": "片桐且元",
+        "dateOfBirth": "1556",
+        "dateOfDeath": "1615",
+        "biographicalInformation": [
+          "大名"
+        ]
+      },
+      "identitySourceIds": [
+        "ndlKatagiriKatsumotoIdentity"
+      ],
+      "identitySourceUrl": "https://id.ndl.go.jp/auth/ndlna/00843990.json",
+      "identitySourceLocator": "個人典拠の主名・人物型・典拠ID",
+      "yearComparison": {
+        "wikidataBirth": [
+          1556
+        ],
+        "wikidataDeath": [
+          1615
+        ],
+        "ndlBirth": "1556",
+        "ndlDeath": "1615"
+      }
+    },
+    {
+      "name": "本多正信",
+      "japaneseLabel": "本多正信",
+      "wikidataId": "Q845447",
+      "wikidataRevision": 2556828336,
+      "wikidataJapaneseLabel": "本多正信",
+      "entityDataUrl": "https://www.wikidata.org/wiki/Special:EntityData/Q845447.json",
+      "revisionUrl": "https://www.wikidata.org/w/index.php?title=Q845447&oldid=2556828336",
+      "rawEntityDataSnapshot": "data/research/source-notes/appear-authority-batch-2-raw/Q845447.json",
+      "rawSha256": "14395d977efa156bf767d58b601c78f77a469f720c7aff4c2fd4e14e1619869d",
+      "identityChecks": [
+        "NDL00269708の主名本多正信がPerson典拠に属する",
+        "Wikidata Q845447の日本語主名とP349が同じNDL典拠へ対応する"
+      ],
+      "adoptedNames": [
+        "本多正信"
+      ],
+      "scope": "person-identity-only; no historical dates or locations adopted",
+      "nameEvidence": [
+        {
+          "name": "本多正信",
+          "supports": [
+            "wikidata-ja-label-or-alias",
+            "ndl-primary"
+          ]
+        }
+      ],
+      "ndlId": "00269708",
+      "ndlIdentity": {
+        "uri": "http://id.ndl.go.jp/auth/entity/00269708",
+        "type": {
+          "uri": "http://xmlns.com/foaf/0.1/Person"
+        },
+        "name": "本多正信",
+        "dateOfBirth": "1538",
+        "dateOfDeath": "1616",
+        "biographicalInformation": [
+          "徳川幕府執政"
+        ]
+      },
+      "identitySourceIds": [
+        "ndlHondaMasanobuIdentity"
+      ],
+      "identitySourceUrl": "https://id.ndl.go.jp/auth/ndlna/00269708.json",
+      "identitySourceLocator": "個人典拠の主名・人物型・典拠ID",
+      "yearComparison": {
+        "wikidataBirth": [
+          1538
+        ],
+        "wikidataDeath": [
+          1616
+        ],
+        "ndlBirth": "1538",
+        "ndlDeath": "1616"
+      }
+    },
+    {
+      "name": "小笠原貞慶",
+      "japaneseLabel": "小笠原貞慶",
+      "wikidataId": "Q10856562",
+      "wikidataRevision": 2350383042,
+      "wikidataJapaneseLabel": "小笠原貞慶",
+      "entityDataUrl": "https://www.wikidata.org/wiki/Special:EntityData/Q10856562.json",
+      "revisionUrl": "https://www.wikidata.org/w/index.php?title=Q10856562&oldid=2350383042",
+      "rawEntityDataSnapshot": "data/research/source-notes/appear-authority-batch-2-raw/Q10856562.json",
+      "rawSha256": "b11cda555a30e127a530da5c8f104415fe22319fcc44b40b54efec3d0c7fb1db",
+      "identityChecks": [
+        "NDL01200488の主名小笠原貞慶がPerson典拠に属する",
+        "Wikidata Q10856562の日本語主名とP349が同じNDL典拠へ対応する"
+      ],
+      "adoptedNames": [
+        "小笠原貞慶"
+      ],
+      "scope": "person-identity-only; no historical dates or locations adopted",
+      "nameEvidence": [
+        {
+          "name": "小笠原貞慶",
+          "supports": [
+            "wikidata-ja-label-or-alias",
+            "ndl-primary"
+          ]
+        }
+      ],
+      "ndlId": "01200488",
+      "ndlIdentity": {
+        "uri": "http://id.ndl.go.jp/auth/entity/01200488",
+        "type": {
+          "uri": "http://xmlns.com/foaf/0.1/Person"
+        },
+        "name": "小笠原貞慶",
+        "dateOfBirth": "1546",
+        "dateOfDeath": "1595",
+        "biographicalInformation": [
+          "武将・故実家"
+        ]
+      },
+      "identitySourceIds": [
+        "ndlOgasawaraSadayoshiIdentity"
+      ],
+      "identitySourceUrl": "https://id.ndl.go.jp/auth/ndlna/01200488.json",
+      "identitySourceLocator": "個人典拠の主名・人物型・典拠ID",
+      "yearComparison": {
+        "wikidataBirth": [
+          1546
+        ],
+        "wikidataDeath": [
+          1595
+        ],
+        "ndlBirth": "1546",
+        "ndlDeath": "1595"
+      }
+    },
+    {
+      "name": "佐竹義宣",
+      "japaneseLabel": "佐竹義宣",
+      "wikidataId": "Q1071525",
+      "wikidataRevision": 2561075334,
+      "wikidataJapaneseLabel": "佐竹義宣",
+      "entityDataUrl": "https://www.wikidata.org/wiki/Special:EntityData/Q1071525.json",
+      "revisionUrl": "https://www.wikidata.org/w/index.php?title=Q1071525&oldid=2561075334",
+      "rawEntityDataSnapshot": "data/research/source-notes/appear-authority-batch-2-raw/Q1071525.json",
+      "rawSha256": "4625edabb28aee9bd453d23b6e6b70b80c18f3ca4f979b1672f284aa59f54871",
+      "identityChecks": [
+        "NDL00623296の主名佐竹義宣がPerson典拠に属する",
+        "Wikidata Q1071525の日本語主名とP349が同じNDL典拠へ対応する"
+      ],
+      "adoptedNames": [
+        "佐竹義宣"
+      ],
+      "scope": "person-identity-only; no historical dates or locations adopted",
+      "nameEvidence": [
+        {
+          "name": "佐竹義宣",
+          "supports": [
+            "wikidata-ja-label-or-alias",
+            "ndl-primary"
+          ]
+        }
+      ],
+      "ndlId": "00623296",
+      "ndlIdentity": {
+        "uri": "http://id.ndl.go.jp/auth/entity/00623296",
+        "type": {
+          "uri": "http://xmlns.com/foaf/0.1/Person"
+        },
+        "name": "佐竹義宣",
+        "dateOfBirth": "1570",
+        "dateOfDeath": "1633",
+        "biographicalInformation": []
+      },
+      "identitySourceIds": [
+        "ndlSatakeYoshinobuIdentity"
+      ],
+      "identitySourceUrl": "https://id.ndl.go.jp/auth/ndlna/00623296.json",
+      "identitySourceLocator": "個人典拠の主名・人物型・典拠ID",
+      "yearComparison": {
+        "wikidataBirth": [
+          1570
+        ],
+        "wikidataDeath": [
+          1633
+        ],
+        "ndlBirth": "1570",
+        "ndlDeath": "1633"
+      }
+    },
+    {
+      "name": "森忠政",
+      "japaneseLabel": "森忠政",
+      "wikidataId": "Q11117105",
+      "wikidataRevision": 2559128830,
+      "wikidataJapaneseLabel": "森忠政",
+      "entityDataUrl": "https://www.wikidata.org/wiki/Special:EntityData/Q11117105.json",
+      "revisionUrl": "https://www.wikidata.org/w/index.php?title=Q11117105&oldid=2559128830",
+      "rawEntityDataSnapshot": "data/research/source-notes/appear-authority-batch-2-raw/Q11117105.json",
+      "rawSha256": "59c1bbfee6c35992e83cf6fd7f155bd23cb10ba568c4ca38e0a165a8f0447441",
+      "identityChecks": [
+        "NDL00794720の主名森忠政がPerson典拠に属する",
+        "Wikidata Q11117105の日本語主名とP349が同じNDL典拠へ対応する"
+      ],
+      "adoptedNames": [
+        "森忠政"
+      ],
+      "scope": "person-identity-only; no historical dates or locations adopted",
+      "nameEvidence": [
+        {
+          "name": "森忠政",
+          "supports": [
+            "wikidata-ja-label-or-alias",
+            "ndl-primary"
+          ]
+        }
+      ],
+      "ndlId": "00794720",
+      "ndlIdentity": {
+        "uri": "http://id.ndl.go.jp/auth/entity/00794720",
+        "type": {
+          "uri": "http://xmlns.com/foaf/0.1/Person"
+        },
+        "name": "森忠政",
+        "dateOfBirth": "1570",
+        "dateOfDeath": "1634",
+        "biographicalInformation": [
+          "津山藩主"
+        ]
+      },
+      "identitySourceIds": [
+        "ndlMoriTadamasaIdentity"
+      ],
+      "identitySourceUrl": "https://id.ndl.go.jp/auth/ndlna/00794720.json",
+      "identitySourceLocator": "個人典拠の主名・人物型・典拠ID",
+      "yearComparison": {
+        "wikidataBirth": [
+          1570
+        ],
+        "wikidataDeath": [
+          1634
+        ],
+        "ndlBirth": "1570",
+        "ndlDeath": "1634"
+      }
+    },
+    {
+      "name": "小西行長",
+      "japaneseLabel": "小西行長",
+      "wikidataId": "Q942553",
+      "wikidataRevision": 2552584454,
+      "wikidataJapaneseLabel": "小西行長",
+      "entityDataUrl": "https://www.wikidata.org/wiki/Special:EntityData/Q942553.json",
+      "revisionUrl": "https://www.wikidata.org/w/index.php?title=Q942553&oldid=2552584454",
+      "rawEntityDataSnapshot": "data/research/source-notes/appear-authority-batch-2-raw/Q942553.json",
+      "rawSha256": "aab840fac792f0d6976b94183d3ed5db715095413bda863ea0bc6e3a5a268730",
+      "identityChecks": [
+        "NDL00623991の主名小西行長がPerson典拠に属する",
+        "Wikidata Q942553の日本語主名とP349が同じNDL典拠へ対応する"
+      ],
+      "adoptedNames": [
+        "小西行長"
+      ],
+      "scope": "person-identity-only; no historical dates or locations adopted",
+      "nameEvidence": [
+        {
+          "name": "小西行長",
+          "supports": [
+            "wikidata-ja-label-or-alias",
+            "ndl-primary"
+          ]
+        }
+      ],
+      "ndlId": "00623991",
+      "ndlIdentity": {
+        "uri": "http://id.ndl.go.jp/auth/entity/00623991",
+        "type": {
+          "uri": "http://xmlns.com/foaf/0.1/Person"
+        },
+        "name": "小西行長",
+        "dateOfBirth": null,
+        "dateOfDeath": "1600",
+        "biographicalInformation": []
+      },
+      "identitySourceIds": [
+        "ndlKonishiYukinagaIdentity"
+      ],
+      "identitySourceUrl": "https://id.ndl.go.jp/auth/ndlna/00623991.json",
+      "identitySourceLocator": "個人典拠の主名・人物型・典拠ID",
+      "yearComparison": {
+        "wikidataBirth": [
+          1555,
+          1558
+        ],
+        "wikidataDeath": [
+          1600
+        ],
+        "ndlBirth": null,
+        "ndlDeath": "1600"
+      }
+    },
+    {
+      "name": "戸沢政盛",
+      "japaneseLabel": "戸沢政盛",
+      "wikidataId": "Q5368867",
+      "wikidataRevision": 2556823205,
+      "wikidataJapaneseLabel": "戸沢政盛",
+      "entityDataUrl": "https://www.wikidata.org/wiki/Special:EntityData/Q5368867.json",
+      "revisionUrl": "https://www.wikidata.org/w/index.php?title=Q5368867&oldid=2556823205",
+      "rawEntityDataSnapshot": "data/research/source-notes/appear-authority-batch-2-raw/Q5368867.json",
+      "rawSha256": "5be65f90d336d5fcadea34ad8c41cc481203b36c4048e4e31dc05bb5b652e8a7",
+      "identityChecks": [
+        "NDL001131488の主名戸沢政盛がPerson典拠に属する",
+        "Wikidata Q5368867の日本語主名とP349が同じNDL典拠へ対応する"
+      ],
+      "adoptedNames": [
+        "戸沢政盛"
+      ],
+      "scope": "person-identity-only; no historical dates or locations adopted",
+      "nameEvidence": [
+        {
+          "name": "戸沢政盛",
+          "supports": [
+            "wikidata-ja-label-or-alias",
+            "ndl-primary"
+          ]
+        }
+      ],
+      "ndlId": "001131488",
+      "ndlIdentity": {
+        "uri": "http://id.ndl.go.jp/auth/entity/001131488",
+        "type": {
+          "uri": "http://xmlns.com/foaf/0.1/Person"
+        },
+        "name": "戸沢政盛",
+        "dateOfBirth": "1585",
+        "dateOfDeath": "1648",
+        "biographicalInformation": [
+          "安土桃山・江戸時代前期の武将, 出羽国新庄藩主"
+        ]
+      },
+      "identitySourceIds": [
+        "ndlTozawaMasamoriIdentity"
+      ],
+      "identitySourceUrl": "https://id.ndl.go.jp/auth/ndlna/001131488.json",
+      "identitySourceLocator": "個人典拠の主名・人物型・典拠ID",
+      "yearComparison": {
+        "wikidataBirth": [
+          1585
+        ],
+        "wikidataDeath": [
+          1648
+        ],
+        "ndlBirth": "1585",
+        "ndlDeath": "1648"
+      }
+    },
+    {
+      "name": "徳川秀忠",
+      "japaneseLabel": "徳川秀忠",
+      "wikidataId": "Q314464",
+      "wikidataRevision": 2565480631,
+      "wikidataJapaneseLabel": "徳川秀忠",
+      "entityDataUrl": "https://www.wikidata.org/wiki/Special:EntityData/Q314464.json",
+      "revisionUrl": "https://www.wikidata.org/w/index.php?title=Q314464&oldid=2565480631",
+      "rawEntityDataSnapshot": "data/research/source-notes/appear-authority-batch-2-raw/Q314464.json",
+      "rawSha256": "e846f353d70eda53381c98b600acc0077e3e96b78c5894bdad7e92440be8f14a",
+      "identityChecks": [
+        "NDL00625967の主名徳川秀忠がPerson典拠に属する",
+        "Wikidata Q314464の日本語主名とP349が同じNDL典拠へ対応する"
+      ],
+      "adoptedNames": [
+        "徳川秀忠"
+      ],
+      "scope": "person-identity-only; no historical dates or locations adopted",
+      "nameEvidence": [
+        {
+          "name": "徳川秀忠",
+          "supports": [
+            "wikidata-ja-label-or-alias",
+            "ndl-primary"
+          ]
+        }
+      ],
+      "ndlId": "00625967",
+      "ndlIdentity": {
+        "uri": "http://id.ndl.go.jp/auth/entity/00625967",
+        "type": {
+          "uri": "http://xmlns.com/foaf/0.1/Person"
+        },
+        "name": "徳川秀忠",
+        "dateOfBirth": "1579",
+        "dateOfDeath": "1632",
+        "biographicalInformation": []
+      },
+      "identitySourceIds": [
+        "ndlTokugawaHidetadaIdentity"
+      ],
+      "identitySourceUrl": "https://id.ndl.go.jp/auth/ndlna/00625967.json",
+      "identitySourceLocator": "個人典拠の主名・人物型・典拠ID",
+      "yearComparison": {
+        "wikidataBirth": [
+          1579
+        ],
+        "wikidataDeath": [
+          1632
+        ],
+        "ndlBirth": "1579",
+        "ndlDeath": "1632"
+      }
+    },
+    {
+      "name": "毛利秀元",
+      "japaneseLabel": "毛利秀元",
+      "wikidataId": "Q1133105",
+      "wikidataRevision": 2556909412,
+      "wikidataJapaneseLabel": "毛利秀元",
+      "entityDataUrl": "https://www.wikidata.org/wiki/Special:EntityData/Q1133105.json",
+      "revisionUrl": "https://www.wikidata.org/w/index.php?title=Q1133105&oldid=2556909412",
+      "rawEntityDataSnapshot": "data/research/source-notes/appear-authority-batch-2-raw/Q1133105.json",
+      "rawSha256": "b2f7d83f6c3155d5808ae69d2622cf4a5d586d61512f780c6f9abf7413b09538",
+      "identityChecks": [
+        "NDL00626584の主名毛利秀元がPerson典拠に属する",
+        "Wikidata Q1133105の日本語主名とP349が同じNDL典拠へ対応する"
+      ],
+      "adoptedNames": [
+        "毛利秀元"
+      ],
+      "scope": "person-identity-only; no historical dates or locations adopted",
+      "nameEvidence": [
+        {
+          "name": "毛利秀元",
+          "supports": [
+            "wikidata-ja-label-or-alias",
+            "ndl-primary"
+          ]
+        }
+      ],
+      "ndlId": "00626584",
+      "ndlIdentity": {
+        "uri": "http://id.ndl.go.jp/auth/entity/00626584",
+        "type": {
+          "uri": "http://xmlns.com/foaf/0.1/Person"
+        },
+        "name": "毛利秀元",
+        "dateOfBirth": "1579",
+        "dateOfDeath": "1650",
+        "biographicalInformation": []
+      },
+      "identitySourceIds": [
+        "ndlMoriHidemotoIdentity"
+      ],
+      "identitySourceUrl": "https://id.ndl.go.jp/auth/ndlna/00626584.json",
+      "identitySourceLocator": "個人典拠の主名・人物型・典拠ID",
+      "yearComparison": {
+        "wikidataBirth": [
+          1579
+        ],
+        "wikidataDeath": [
+          1650
+        ],
+        "ndlBirth": "1579",
+        "ndlDeath": "1650"
+      }
+    },
+    {
+      "name": "李舜臣",
+      "japaneseLabel": "李舜臣",
+      "wikidataId": "Q50184",
+      "wikidataRevision": 2566172188,
+      "wikidataJapaneseLabel": "李舜臣",
+      "entityDataUrl": "https://www.wikidata.org/wiki/Special:EntityData/Q50184.json",
+      "revisionUrl": "https://www.wikidata.org/w/index.php?title=Q50184&oldid=2566172188",
+      "rawEntityDataSnapshot": "data/research/source-notes/appear-authority-batch-2-raw/Q50184.json",
+      "rawSha256": "936371b3504dc79679a212710c68dc40507acd5839744c2c70e27cee2f2f8eb2",
+      "identityChecks": [
+        "NDL00315950の主名李舜臣がPerson典拠に属する",
+        "Wikidata Q50184の日本語主名とP349が同じNDL典拠へ対応する"
+      ],
+      "adoptedNames": [
+        "李舜臣"
+      ],
+      "scope": "person-identity-only; no historical dates or locations adopted",
+      "nameEvidence": [
+        {
+          "name": "李舜臣",
+          "supports": [
+            "wikidata-ja-label-or-alias",
+            "ndl-primary"
+          ]
+        }
+      ],
+      "ndlId": "00315950",
+      "ndlIdentity": {
+        "uri": "http://id.ndl.go.jp/auth/entity/00315950",
+        "type": {
+          "uri": "http://xmlns.com/foaf/0.1/Person"
+        },
+        "name": "李舜臣",
+        "dateOfBirth": "1545",
+        "dateOfDeath": "1598",
+        "biographicalInformation": []
+      },
+      "identitySourceIds": [
+        "ndlYiSunSinIdentity"
+      ],
+      "identitySourceUrl": "https://id.ndl.go.jp/auth/ndlna/00315950.json",
+      "identitySourceLocator": "個人典拠の主名・人物型・典拠ID",
+      "yearComparison": {
+        "wikidataBirth": [
+          1545
+        ],
+        "wikidataDeath": [
+          1598
+        ],
+        "ndlBirth": "1545",
+        "ndlDeath": "1598"
+      }
+    },
+    {
+      "name": "豊臣秀頼",
+      "japaneseLabel": "豊臣秀頼",
+      "wikidataId": "Q313641",
+      "wikidataRevision": 2562777279,
+      "wikidataJapaneseLabel": "豊臣秀頼",
+      "entityDataUrl": "https://www.wikidata.org/wiki/Special:EntityData/Q313641.json",
+      "revisionUrl": "https://www.wikidata.org/w/index.php?title=Q313641&oldid=2562777279",
+      "rawEntityDataSnapshot": "data/research/source-notes/appear-authority-batch-2-raw/Q313641.json",
+      "rawSha256": "cbc6683a9b356bd08a7187e150703c7b0badbbe4cc63c0ede88d547f45fa340c",
+      "identityChecks": [
+        "NDL00626440の主名豊臣秀頼がPerson典拠に属する",
+        "Wikidata Q313641の日本語主名とP349が同じNDL典拠へ対応する"
+      ],
+      "adoptedNames": [
+        "豊臣秀頼"
+      ],
+      "scope": "person-identity-only; no historical dates or locations adopted",
+      "nameEvidence": [
+        {
+          "name": "豊臣秀頼",
+          "supports": [
+            "wikidata-ja-label-or-alias",
+            "ndl-primary"
+          ]
+        }
+      ],
+      "ndlId": "00626440",
+      "ndlIdentity": {
+        "uri": "http://id.ndl.go.jp/auth/entity/00626440",
+        "type": {
+          "uri": "http://xmlns.com/foaf/0.1/Person"
+        },
+        "name": "豊臣秀頼",
+        "dateOfBirth": "1593",
+        "dateOfDeath": "1615",
+        "biographicalInformation": []
+      },
+      "identitySourceIds": [
+        "ndlToyotomiHideyoriIdentity"
+      ],
+      "identitySourceUrl": "https://id.ndl.go.jp/auth/ndlna/00626440.json",
+      "identitySourceLocator": "個人典拠の主名・人物型・典拠ID",
+      "yearComparison": {
+        "wikidataBirth": [
+          1593
+        ],
+        "wikidataDeath": [
+          1615
+        ],
+        "ndlBirth": "1593",
+        "ndlDeath": "1615"
+      }
+    },
+    {
+      "name": "木村重成",
+      "japaneseLabel": "木村重成",
+      "wikidataId": "Q840196",
+      "wikidataRevision": 2521639364,
+      "wikidataJapaneseLabel": "木村重成",
+      "entityDataUrl": "https://www.wikidata.org/wiki/Special:EntityData/Q840196.json",
+      "revisionUrl": "https://www.wikidata.org/w/index.php?title=Q840196&oldid=2521639364",
+      "rawEntityDataSnapshot": "data/research/source-notes/appear-authority-batch-2-raw/Q840196.json",
+      "rawSha256": "c9ff33153c2004256320f6fb317ac7d87ec7dd8f52c996a2b7d1031d8a479e4f",
+      "identityChecks": [
+        "NDL00796153の主名木村重成がPerson典拠に属する",
+        "Wikidata Q840196の日本語主名とP349が同じNDL典拠へ対応する"
+      ],
+      "adoptedNames": [
+        "木村重成"
+      ],
+      "scope": "person-identity-only; no historical dates or locations adopted",
+      "nameEvidence": [
+        {
+          "name": "木村重成",
+          "supports": [
+            "wikidata-ja-label-or-alias",
+            "ndl-primary"
+          ]
+        }
+      ],
+      "ndlId": "00796153",
+      "ndlIdentity": {
+        "uri": "http://id.ndl.go.jp/auth/entity/00796153",
+        "type": {
+          "uri": "http://xmlns.com/foaf/0.1/Person"
+        },
+        "name": "木村重成",
+        "dateOfBirth": null,
+        "dateOfDeath": "1615",
+        "biographicalInformation": []
+      },
+      "identitySourceIds": [
+        "ndlKimuraShigenariIdentity"
+      ],
+      "identitySourceUrl": "https://id.ndl.go.jp/auth/ndlna/00796153.json",
+      "identitySourceLocator": "個人典拠の主名・人物型・典拠ID",
+      "yearComparison": {
+        "wikidataBirth": [
+          1593
+        ],
+        "wikidataDeath": [
+          1615
+        ],
+        "ndlBirth": null,
+        "ndlDeath": "1615"
+      }
+    }
+  ]
+}

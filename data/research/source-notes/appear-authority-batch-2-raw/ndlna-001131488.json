@@ -1,0 +1,52 @@
+{
+    "@context": "https://id.ndl.go.jp/auth/context.json",
+    "uri": "http://id.ndl.go.jp/auth/ndlna/001131488",
+    "primaryTopic": {
+        "uri": "http://id.ndl.go.jp/auth/entity/001131488",
+        "type": {
+            "uri": "http://xmlns.com/foaf/0.1/Person"
+        },
+        "name": "戸沢政盛",
+        "dateOfBirth": "1585",
+        "dateOfDeath": "1648",
+        "biographicalInformation": [
+            "安土桃山・江戸時代前期の武将, 出羽国新庄藩主"
+        ]
+    },
+    "type": {
+        "uri": "http://www.w3.org/2004/02/skos/core#Concept"
+    },
+    "modified": "2026-01-21T08:36:21",
+    "created": "2013-03-18",
+    "prefLabel": {
+        "literalForm": "戸沢, 政盛, 1585-1648",
+        "transcription": "トザワ, マサモリ, 1585-1648",
+        "transcription-l": [
+            {
+                "@value": "トザワ, マサモリ, 1585-1648",
+                "@language": "ja-Kana"
+            },
+            {
+                "@value": "Tozawa, Masamori, 1585-1648",
+                "@language": "ja-Latn"
+            }
+        ]
+    },
+    "label": "戸沢, 政盛, 1585-1648",
+    "source": [
+        "マンガで見る近世大名初代松岡城主戸沢政盛公物語, 2013.2",
+        "国史大辞典"
+    ],
+    "exactMatch": [
+        {
+            "uri": "https://isni.org/isni/0000000403088511"
+        },
+        {
+            "uri": "http://viaf.org/viaf/sourceID/NDL%7C001131488#skos:Concept"
+        }
+    ],
+    "inScheme": {
+        "uri": "http://id.ndl.go.jp/auth#personalNames"
+    }
+}
+

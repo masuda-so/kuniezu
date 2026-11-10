@@ -1,0 +1,28 @@
+{
+  "id": "person:honda-masanobu",
+  "name": "本多正信",
+  "gameNames": [
+    "本多正信"
+  ],
+  "authorityIds": [
+    "wikidata:Q845447",
+    "ndlna:00269708"
+  ],
+  "authorityEvidence": {
+    "scope": "person-identity",
+    "checked": "2026-11-09",
+    "wikidataRevision": 2556828336,
+    "snapshot": "data/research/source-notes/appear-authority-batch-2.json",
+    "sourceNote": "data/research/source-notes/appear-authority-batch-2.json",
+    "note": "data/research/source-notes/appear-authority-batch-2.md",
+    "identityChecks": [
+      "NDL00269708の主名本多正信がPerson典拠に属する",
+      "Wikidata Q845447の日本語主名とP349が同じNDL典拠へ対応する"
+    ],
+    "basis": "人物の同定のみ。原本にある生没日・所在・所領・関係の時期は新たな史実命題へ採用しない。",
+    "ndlSnapshot": "data/research/source-notes/appear-authority-batch-2-ndl/honda-masanobu.json",
+    "sourceIds": [
+      "ndlHondaMasanobuIdentity"
+    ]
+  }
+}

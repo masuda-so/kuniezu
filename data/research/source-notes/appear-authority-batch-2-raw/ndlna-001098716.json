@@ -1,0 +1,61 @@
+{
+    "@context": "https://id.ndl.go.jp/auth/context.json",
+    "uri": "http://id.ndl.go.jp/auth/ndlna/001098716",
+    "primaryTopic": {
+        "uri": "http://id.ndl.go.jp/auth/entity/001098716",
+        "type": {
+            "uri": "http://xmlns.com/foaf/0.1/Person"
+        },
+        "name": "平岩親吉",
+        "dateOfBirth": "1542",
+        "dateOfDeath": "1611",
+        "biographicalInformation": [
+            "大名"
+        ]
+    },
+    "type": {
+        "uri": "http://www.w3.org/2004/02/skos/core#Concept"
+    },
+    "modified": "2026-01-21T08:34:41",
+    "created": "2012-03-22",
+    "prefLabel": {
+        "literalForm": "平岩, 親吉, 1542-1611",
+        "transcription": "ヒライワ, チカヨシ, 1542-1611",
+        "transcription-l": [
+            {
+                "@value": "ヒライワ, チカヨシ, 1542-1611",
+                "@language": "ja-Kana"
+            },
+            {
+                "@value": "Hiraiwa, Chikayoshi, 1542-1611",
+                "@language": "ja-Latn"
+            }
+        ]
+    },
+    "label": "平岩, 親吉, 1542-1611",
+    "altLabel": [
+        {
+            "literalForm": "七之助",
+            "description": "通称"
+        }
+    ],
+    "source": [
+        "参河後風土記, [1---] [写]",
+        "国書人名辞典"
+    ],
+    "exactMatch": [
+        {
+            "uri": "http://id.loc.gov/authorities/names/n85382698"
+        },
+        {
+            "uri": "https://isni.org/isni/000000002866204X"
+        },
+        {
+            "uri": "http://viaf.org/viaf/sourceID/NDL%7C001098716#skos:Concept"
+        }
+    ],
+    "inScheme": {
+        "uri": "http://id.ndl.go.jp/auth#personalNames"
+    }
+}
+
