@@ -1,0 +1,553 @@
+{
+ "checked": "2026-11-10",
+ "scope": "Codex が既存の死去日の命題と最終年表の日付差から抽出した 21 名について、公的機関の原本の死去日の記述を集めた。採否と年表・命題の修正は書かない（Codex の実装判断に渡す）。綱文の日付は編纂上の掲出日で、実際の死去の日と違いうる。日付差は実際の JDN（koyomi.js・dates.py）で比べ、ゲームの evT は使っていない。",
+ "method": "既存の入力の横断検索 → 地域別（東・西・九州）の公的機関のページの検索（サブエージェント 3）→ HTML のページはこちらで取り直して文言を確かめ、原本を主の作業ディレクトリの .cache に SHA つきで保全。PDF は macOS の PDFKit で本文を取り出して確かめた（claude-pdfkit-text）。接続できなかった 1 頁（山口県の広報誌）だけがサブエージェントの報告のまま、地図の埋め込みキーを含む 1 頁（高梁市）は原本を保存していない（checkedBy で区別）。",
+ "categories": {
+  "public-matches-kobun": "公的資料が綱文と同じ月日を書く",
+  "public-matches-kobun-unverified": "同じ月日だが原本に接続できず未照合",
+  "public-differs": "公的資料が綱文と違う年・月日を書く",
+  "year-only": "公的資料は年だけ",
+  "year-or-month-only": "公的資料は年か月まで",
+  "not-found": "公的資料が見つからない（今回の条件で）",
+  "no-claim-public-found": "綱文の命題が未登録で、公的資料はある",
+  "month-only-with-inscription-date": "公的資料の死去日は月までで、日は肖像の賛など死去日と明示されない記述にある",
+  "sources-disagree": "資料どうしで日が違い、どれが死去の日か決めていない"
+ },
+ "counts": {
+  "public-differs": 2,
+  "not-found": 4,
+  "year-only": 3,
+  "public-matches-kobun": 7,
+  "public-matches-kobun-unverified": 1,
+  "year-or-month-only": 1,
+  "month-only-with-inscription-date": 1,
+  "no-claim-public-found": 1,
+  "sources-disagree": 1
+ },
+ "rows": [
+  {
+   "name": "秋山信友（虎繁）",
+   "claim": "death-date-akiyama-nobutomo",
+   "kobun": "天正3年11月21日",
+   "timeline": "1575-12-01",
+   "timelineMinusKobunDays": -22,
+   "category": "public-differs",
+   "sources": [
+    {
+     "publisher": "甲府市（武田二十四将）",
+     "url": "https://www.city.kofu.lg.jp/k068/p003089.html",
+     "phrase": "大永7年(1527)？~天正3年(1575)11月26日",
+     "basis": "記載なし",
+     "kind": "二次（自治体の人物解説）",
+     "checkedBy": "claude-fetched-html",
+     "originalSha256": "479d2abe5b4fef33e15e3fd59fb0c8bbdbb9f6da4171cee05ee03231ab07bafa",
+     "privateOriginal": ".cache/research-originals/death-date-sources/akiyama-kofu.html.gz"
+    },
+    {
+     "publisher": "飯田市",
+     "url": "https://www.city.iida.lg.jp/site/bunkazai/minamihonjou.html",
+     "phrase": "11月、岩村城は織田軍に降伏…長良川で磔",
+     "basis": "記載なし",
+     "kind": "二次",
+     "checkedBy": "claude-fetched-html",
+     "note": "日は書かない",
+     "originalSha256": "e6997468d63808f3aa828cc4a7c54bfe66a07897c764e47259f4c8483bab94f4",
+     "privateOriginal": ".cache/research-originals/death-date-sources/akiyama-iida.html.gz"
+    }
+   ],
+   "note": "甲府市は11月26日（ユリウス暦1575-12-28、年表より27日遅い）。綱文21日・甲府市26日・年表のどれが死去の日か、この照合では決められない。"
+  },
+  {
+   "name": "蘆名盛氏",
+   "claim": "death-date-ashina-moriuji",
+   "kobun": "天正8年6月17日",
+   "timeline": "1580-07-20",
+   "timelineMinusKobunDays": -8,
+   "category": "not-found",
+   "sources": [],
+   "note": "会津若松市・会津美里町のページに没年月日なし（サブエージェント）。"
+  },
+  {
+   "name": "安宅冬康",
+   "claim": "death-date-ataka-fuyuyasu",
+   "kobun": "永禄7年5月9日",
+   "timeline": "1564-06-22",
+   "timelineMinusKobunDays": 5,
+   "category": "year-only",
+   "sources": [
+    {
+     "publisher": "四條畷市（年表 PDF）",
+     "url": "https://www.city.shijonawate.lg.jp/uploaded/attachment/9773.pdf",
+     "phrase": "二好（三好）長慶、飯盛城で弟の安宅冬康を殺害。",
+     "basis": "記載なし",
+     "kind": "二次",
+     "checkedBy": "claude-pdfkit-text",
+     "note": "年（永禄7）だけ。OCR で三好が二好になっている",
+     "locator": "PDF 19/22 頁、年表の 1564（永禄7）の行",
+     "originalSha256": "e02e0921775f272a2bd6e60f0eeadae4ccf52fd2b9c9f1bd4aa936ca6da74892",
+     "privateOriginal": ".cache/research-originals/death-date-sources/shijonawate-chronology-9773.pdf"
+    }
+   ],
+   "note": "月日を書いた公的ページは見つからない。"
+  },
+  {
+   "name": "伊達晴宗",
+   "claim": "death-date-date-harumune",
+   "kobun": "天正5年12月5日",
+   "timeline": "1578-01-01",
+   "timelineMinusKobunDays": -11,
+   "category": "year-only",
+   "sources": [
+    {
+     "publisher": "福島市",
+     "url": "https://www.city.fukushima.fukushima.jp/soshiki/7/1032/3/1/3/1401.html",
+     "phrase": "(1519～1577年)",
+     "basis": "記載なし",
+     "kind": "二次",
+     "checkedBy": "claude-fetched-html",
+     "note": "年だけ。天正5年12月は西暦では1578年1月",
+     "originalSha256": "17b41b8da0484564421345c31fa444fdbccae240fac4b48ae86fefcadf893fab",
+     "privateOriginal": ".cache/research-originals/death-date-sources/harumune-fukushima.html.gz"
+    }
+   ],
+   "note": ""
+  },
+  {
+   "name": "伊達輝宗",
+   "claim": "death-date-date-terumune",
+   "kobun": "天正13年10月8日",
+   "timeline": "1585-11-28",
+   "timelineMinusKobunDays": -1,
+   "category": "public-matches-kobun",
+   "sources": [
+    {
+     "publisher": "米沢市（遠山覚範寺跡）",
+     "url": "https://www.city.yonezawa.yamagata.jp/soshiki/18/2/5/5/458.html",
+     "phrase": "10月8日に二本松城主畠山義継に謀られ殺されました",
+     "basis": "「伝えられています」（伝承の言い方）",
+     "kind": "二次",
+     "checkedBy": "claude-fetched-html",
+     "originalSha256": "934ada6bf04dbcc2276697af721ab22aee7b97d376b960fea0153d61f3e50f32",
+     "privateOriginal": ".cache/research-originals/death-date-sources/terumune-yonezawa.html.gz"
+    }
+   ],
+   "note": "年は前の文の天正12年を受けて天正13年。"
+  },
+  {
+   "name": "吉川元春",
+   "claim": "death-date-kikkawa-motoharu",
+   "kobun": "天正14年11月15日",
+   "timeline": "1587-01-01（ほかに 1571-07-06 の行が名前に当たるが、別人の死去の行と見られる）",
+   "timelineMinusKobunDays": 7,
+   "category": "public-matches-kobun-unverified",
+   "sources": [
+    {
+     "publisher": "山口県（広報誌 山口きらめーる vol274）",
+     "url": "http://kirara.pref.yamaguchi.lg.jp/vol274/yamaguchigaku/index.php",
+     "phrase": "元春は持病が悪化し、11月15日に亡くなります",
+     "basis": "記載なし",
+     "kind": "二次",
+     "checkedBy": "subagent-report-not-refetched",
+     "note": "検索の抜粋だけ。2026-11-10 に 2 回取得を試みたが接続できず（fetch failed）、未照合"
+    },
+    {
+     "publisher": "北広島町",
+     "url": "https://www.town.kitahiroshima.lg.jp/site/kominkan/27967.html",
+     "phrase": "天正14年（1586）に亡くなっています",
+     "basis": "陰徳太平記",
+     "kind": "二次",
+     "checkedBy": "claude-fetched-html",
+     "note": "年だけ",
+     "originalSha256": "78b1f3667b72017d60246b977a9fd7aa8e11e8c863940e697f030eecc2e295ee",
+     "privateOriginal": ".cache/research-originals/death-date-sources/motoharu-kitahiroshima.html.gz"
+    }
+   ],
+   "note": ""
+  },
+  {
+   "name": "肝付兼続",
+   "claim": "death-date-kimotsuki-kanetsugu",
+   "kobun": "永禄9年11月15日",
+   "timeline": "1566-12-01",
+   "timelineMinusKobunDays": -25,
+   "category": "public-matches-kobun",
+   "sources": [
+    {
+     "publisher": "鹿児島県歴史資料センター黎明館（鹿児島県史料 旧記雑録拾遺 家わけ）",
+     "url": "https://www.pref.kagoshima.jp/ab23/reimeikan/siroyu/documents/6756_20230112080240-1.pdf",
+     "locator": "PDF 32/170 頁、「肝属氏系図文書写」の部、第五号「岩切信充書状」に続く系図の記載（文書番号は OCR からは特定できない）",
+     "phrase": "永禄九年…十一月十五日、於日州志布志病死、年五十六",
+     "basis": "家に伝わった系図文書の写しの翻刻",
+     "kind": "翻刻史料",
+     "checkedBy": "claude-pdfkit-text",
+     "originalSha256": "94fa2cfc55bf557da4f3bcf03590489b66f2fa9c31c9c9055eb4f96a2555f9d4",
+     "privateOriginal": ".cache/research-originals/death-date-sources/kagoshima-reimeikan-kimotsuki-ke.pdf"
+    }
+   ],
+   "note": "系図の記載で、死去そのもの（病死）を書く。干支の部分は OCR で崩れている。"
+  },
+  {
+   "name": "三村家親",
+   "claim": "death-date-mimura-iechika",
+   "kobun": "永禄9年2月5日",
+   "timeline": "1566-03-01",
+   "timelineMinusKobunDays": 5,
+   "category": "year-or-month-only",
+   "sources": [
+    {
+     "publisher": "高梁市",
+     "url": "https://www.city.takahashi.lg.jp/site/bichu-matsuyama/enkaku.html",
+     "phrase": "同9年に…銃によって暗殺され",
+     "basis": "記載なし",
+     "kind": "二次",
+     "checkedBy": "claude-refetch-not-saved",
+     "note": "年だけ",
+     "publicOriginalNotSaved": "頁の HTML に地図の埋め込みキーが含まれるため、原本は保存しない（source-privacy.cjs の方針）。URL と該当箇所だけを記録する。文言はサブエージェントの報告のまま"
+    },
+    {
+     "publisher": "岡山県",
+     "url": "https://www.pref.okayama.jp/site/kodai/622719.html",
+     "phrase": "永禄９（１５６６）年",
+     "basis": "記載なし",
+     "kind": "二次",
+     "checkedBy": "claude-fetched-html",
+     "note": "年だけ",
+     "originalSha256": "3e8e12f03b1c1cfa46392121bccd965ad0e83d3c753508e1122fd1d55dc1ba69",
+     "privateOriginal": ".cache/research-originals/death-date-sources/iechika-okayama.html.gz"
+    }
+   ],
+   "note": "月（2月）までの公的な記述は、検索の抜粋だけで頁を特定できない。"
+  },
+  {
+   "name": "三好義興",
+   "claim": "death-date-miyoshi-yoshioki",
+   "kobun": "永禄6年8月25日",
+   "timeline": "1563-09-20",
+   "timelineMinusKobunDays": 8,
+   "category": "month-only-with-inscription-date",
+   "sources": [
+    {
+     "publisher": "京都大学貴重資料デジタルアーカイブ（三好義興像 模本）",
+     "url": "https://rmda.kulib.kyoto-u.ac.jp/item/rb00033862",
+     "phrase": "解説：永禄6年(1563)8月、22歳の若さで没した／賛：于時永禄六年八月廿五日",
+     "basis": "像の賛（出典『日本肖像画図録』）",
+     "kind": "解説（没時は月まで）と肖像模本の賛（日付）",
+     "checkedBy": "claude-fetched-html",
+     "originalSha256": "1ea020c5078a9de59865e927a104c9ccc407a744d7d70ecbf32eef04b7f1047d",
+     "privateOriginal": ".cache/research-originals/death-date-sources/yoshioki-kyotou.html.gz"
+    },
+    {
+     "publisher": "高槻市",
+     "url": "https://www.city.takatsuki.osaka.jp/site/history/4622.html",
+     "phrase": "永禄6年(1563)に義興は、この城で亡くなり",
+     "basis": "記載なし",
+     "kind": "二次",
+     "checkedBy": "claude-fetched-html",
+     "note": "年だけ",
+     "originalSha256": "296fae12e554142c63b629d4652db7a1283244c07f51a1fdfb2814af6fe3fa28",
+     "privateOriginal": ".cache/research-originals/death-date-sources/yoshioki-takatsuki.html.gz"
+    }
+   ],
+   "note": "京大の解説は没時を永禄6年8月までとする。25日は肖像模本の賛の日付（于時…）で、死去日と明示されていない。死去日は月まで、賛の日付は補助資料として扱う。毒殺説は京大の解説が「説もある」とする。"
+  },
+  {
+   "name": "毛利隆元",
+   "claim": "death-date-mori-takamoto",
+   "kobun": "永禄6年8月4日",
+   "timeline": "1563-09-01",
+   "timelineMinusKobunDays": 10,
+   "category": "public-matches-kobun",
+   "sources": [
+    {
+     "publisher": "安芸高田市（教育委員会・史跡 毛利隆元逝去の地）",
+     "url": "https://www.akitakata.jp/ja/shisei/section/kyouiku/shisekibunkazai/cultural_asset/shiseki_shi/mouritakamotoseikyo/",
+     "phrase": "8月3日…饗応を受けましたが、帰営の後、翌4日未明急逝",
+     "basis": "記載なし（石碑・伝承に触れる）",
+     "kind": "二次",
+     "checkedBy": "claude-fetched-html",
+     "originalSha256": "7ee2c448ab812150033af3bdaf0b3b5910a016dcc78f28502d330079dd29a5da",
+     "privateOriginal": ".cache/research-originals/death-date-sources/takamoto-akitakata.html.gz"
+    },
+    {
+     "publisher": "山口県文書館",
+     "url": "https://archives.pref.yamaguchi.lg.jp/cms/wp-content/uploads/2025/06/AW20_kinen_001.pdf",
+     "phrase": "永禄6年8月4日、安芸国(現広島県)にて急死します",
+     "basis": "記載なし",
+     "kind": "二次",
+     "checkedBy": "claude-pdfkit-text",
+     "note": "第20回中国四国地区アーカイブズウィークの展示資料",
+     "locator": "PDF 1/2 頁",
+     "originalSha256": "3ce5d63a3830fdfff4f9761110db9f8199f37a114e266ab0714c38fa4926f27e",
+     "privateOriginal": ".cache/research-originals/death-date-sources/yamaguchi-archives-aw20.pdf"
+    }
+   ],
+   "note": "死因は食傷とも毒殺とも（安芸高田市）。"
+  },
+  {
+   "name": "長尾政景",
+   "claim": "death-date-nagao-masakage",
+   "kobun": "永禄7年7月5日",
+   "timeline": "1564-08-29",
+   "timelineMinusKobunDays": 18,
+   "category": "year-only",
+   "sources": [
+    {
+     "publisher": "長岡市",
+     "url": "https://www.city.nagaoka.niigata.jp/kankou/rekishi/ijin/kanetsugu/syougai.html",
+     "phrase": "永禄7年（1564）長尾政景、舟遊びの最中、溺死",
+     "basis": "記載なし",
+     "kind": "二次",
+     "checkedBy": "claude-fetched-html",
+     "note": "年だけ",
+     "originalSha256": "8ee92a25672a3f701df973f02313402b51833ff76269d21ecf78a177a73007f9",
+     "privateOriginal": ".cache/research-originals/death-date-sources/masakage-nagaoka.html.gz"
+    }
+   ],
+   "note": "溺死の場所に異説（新潟県 銭淵公園）。"
+  },
+  {
+   "name": "相良義陽",
+   "claim": "death-date-sagara-yoshihi",
+   "kobun": "天正9年12月2日",
+   "timeline": "1581-12-02",
+   "timelineMinusKobunDays": -25,
+   "category": "public-matches-kobun",
+   "sources": [
+    {
+     "publisher": "宇城市（相良堂）",
+     "url": "https://www.city.uki.kumamoto.jp/kankobunka/bunka/bunkazai/shitei/2267272",
+     "phrase": "翌日の12月2日に…響ケ原に進めて…（奇襲で義陽も戦死）",
+     "basis": "記載なし",
+     "kind": "二次",
+     "checkedBy": "claude-fetched-html",
+     "originalSha256": "d00ef5cbe86f88f863e5a43d6a2bfb1238ac14a9d51ac12b0639428ec807ef1e",
+     "privateOriginal": ".cache/research-originals/death-date-sources/sagara-uki.html.gz"
+    }
+   ],
+   "note": "年表は和暦の月日をそのまま西暦の月日に置いた形（ユリウス暦では1581-12-27）。"
+  },
+  {
+   "name": "佐久間信盛",
+   "claim": "death-date-sakuma-nobumori",
+   "kobun": "天正9年7月24日",
+   "timeline": "1582-02-01",
+   "timelineMinusKobunDays": 162,
+   "category": "public-differs",
+   "sources": [
+    {
+     "publisher": "十津川村（教育委員会）",
+     "url": "https://www.vill.totsukawa.lg.jp/bridge/culture/totsukawa/hakadokoro/",
+     "phrase": "天正10年（1582）湯泉地温泉で湯治中に歿し",
+     "basis": "記載なし",
+     "kind": "二次",
+     "checkedBy": "claude-fetched-html",
+     "originalSha256": "78bf15cddd206f0c9217bb2da70b9a94ac911c2fa3a762c84d58934cb6c8d627",
+     "privateOriginal": ".cache/research-originals/death-date-sources/sakuma-totsukawa.html.gz"
+    },
+    {
+     "publisher": "岐阜市",
+     "url": "https://www.city.gifu.lg.jp/kankoubunka/kankou/1013050/1005149/1017450/1017465/1020525.html",
+     "phrase": "天正10年（1582）紀伊・熊野で亡くなりました",
+     "basis": "記載なし",
+     "kind": "二次",
+     "checkedBy": "claude-fetched-html",
+     "originalSha256": "df79731befd49ae91df1acbbb6d53d1c216270379dc59f6076fe6ff28d52a396",
+     "privateOriginal": ".cache/research-originals/death-date-sources/sakuma-gifu.html.gz"
+    }
+   ],
+   "note": "公的ページ2件は年を天正10年とし、綱文の天正9年と合わない。年表の1582-02-01は天正10年に入る。"
+  },
+  {
+   "name": "佐竹義昭",
+   "claim": "death-date-satake-yoshiaki",
+   "kobun": "永禄8年11月3日",
+   "timeline": "1565-12-01",
+   "timelineMinusKobunDays": 6,
+   "category": "not-found",
+   "sources": [],
+   "note": "茨城県教育委員会・秋田県公文書館の目録に月日なし（サブエージェント）。"
+  },
+  {
+   "name": "里見義堯",
+   "claim": "death-date-satomi-yoshitaka",
+   "kobun": "天正2年6月1日",
+   "timeline": "1574-07-01",
+   "timelineMinusKobunDays": 12,
+   "category": "not-found",
+   "sources": [],
+   "note": "君津市立久留里城址資料館の「没後450年」展（2024）は年だけと合う（サブエージェント）。"
+  },
+  {
+   "name": "島津貴久",
+   "claim": "death-date-shimazu-takahisa",
+   "kobun": "元亀2年6月23日",
+   "timeline": "1571-07-20",
+   "timelineMinusKobunDays": 5,
+   "category": "public-matches-kobun",
+   "sources": [
+    {
+     "publisher": "南さつま市（いにしへだより No.14、市報 南さつま 2021年12月号）",
+     "url": "https://www.city.minamisatsuma.lg.jp/living/docs/inishiedayoriR0312_No14.pdf",
+     "locator": "1/1 頁、士踊の由来の段落",
+     "phrase": "元亀二年（一五七一）六月二十三日に加世田の御屋形で亡くなったことに因み",
+     "basis": "記載なし。士踊の由来を「伝えられています」とする文の中で、没日を書く",
+     "kind": "二次（自治体の広報の解説）",
+     "checkedBy": "claude-pdfkit-text",
+     "originalSha256": "4c34f4c1324fdfb3c818594b370830b98e6fc69c6a09dac2fd2d1771969a7b12",
+     "privateOriginal": ".cache/research-originals/death-date-sources/minamisatsuma-inishiedayori-14.pdf"
+    },
+    {
+     "publisher": "鹿児島県歴史資料センター黎明館（同上の史料集）",
+     "url": "https://www.pref.kagoshima.jp/ab23/reimeikan/siroyu/documents/6756_20230112080240-1.pdf",
+     "locator": "PDF 142/170 頁、第一三一号「肝付良兼祭文」（正文は清水郷有岡寺）",
+     "phrase": "維元亀二年歳舎辛未林鐘二十又三日甲寅、…南林寺殿大中良等庵主…捐館（OCR では「掲館」）",
+     "basis": "同時代の祭文の翻刻",
+     "kind": "翻刻史料",
+     "checkedBy": "claude-pdfkit-text",
+     "originalSha256": "94fa2cfc55bf557da4f3bcf03590489b66f2fa9c31c9c9055eb4f96a2555f9d4",
+     "privateOriginal": ".cache/research-originals/death-date-sources/kagoshima-reimeikan-kimotsuki-ke.pdf",
+     "note": "祭文の冒頭の日付の句の後に貴久の捐館（死去）を書く。祭文そのものを供えたのは七月廿四日と本文にある。祭文の日付の句を、死去日の独立の記録と同一視しない"
+    }
+   ],
+   "note": "没日を明記するのは南さつま市の解説（伝承の文の中）。祭文の冒頭の日付の句は、死去の日を指すと読めるが、祭文の作成・奉献の日（7月24日）とは別。"
+  },
+  {
+   "name": "十河一存",
+   "claim": "death-date-sogo-kazumasa",
+   "kobun": "永禄4年5月1日",
+   "timeline": "1561-05-01",
+   "timelineMinusKobunDays": -43,
+   "category": "not-found",
+   "sources": [],
+   "note": "高松市の十河城跡のページに没日なし。4月説・落馬説も公的ページでは確かめられない（サブエージェント）。年表は和暦の月日をそのまま西暦に置いた形。"
+  },
+  {
+   "name": "立花道雪（戸次鑑連）",
+   "claim": null,
+   "kobun": null,
+   "timeline": "1585-11-01",
+   "timelineMinusKobunDays": null,
+   "category": "no-claim-public-found",
+   "sources": [
+    {
+     "publisher": "宗像市（むなかた電子博物館紀要 第5号、桑田和明「宗像氏貞妹の婚儀とその生涯」）",
+     "url": "https://munahaku.jp/wp-content/themes/munahaku/img/kiyou/vol05/pdf/2013_kiyo_025-036.pdf",
+     "locator": "紀要 25 頁（PDF 1/12 頁）の本文と註（6）（紀要 34 頁、PDF 10/12 頁）。別に紀要 33 頁（PDF 9/12 頁）",
+     "phrase": "25 頁：「天正十三年（一五八五）九月十一日に七十三歳で死去」。33 頁：「天正十三年九月十三日に陣没する」",
+     "basis": "25 頁の記述の註（6）に『大日本史料』第十一編之二十、天正十三年九月十一日条。33 頁の記述の直後の典拠（大坪文書・柳川市史）は、10月28日付の義統の書状についてのもの",
+     "kind": "研究論文（公的紀要）",
+     "checkedBy": "claude-pdfkit-text",
+     "originalSha256": "70023df67ddc11e50e4f70596239d0df48eb0e6aff37ee4a92bb7b3f242b348c",
+     "privateOriginal": ".cache/research-originals/death-date-sources/munakata-kiyou-05-kuwata.pdf",
+     "note": "同じ論文の中で 9月11日と9月13日が食い違う。典拠を明記するのは9月11日の方。前の版の記録（9月13日、典拠を書かない）はサブエージェントの報告で、33 頁だけを見ていた"
+    },
+    {
+     "publisher": "新宮町",
+     "url": "https://www.town.shingu.fukuoka.jp/soshiki/sangyo_shinko/3/4/1086.html",
+     "phrase": "1585年（天正13年）、出陣中の筑後北野…で亡くなりました",
+     "basis": "記載なし",
+     "kind": "二次",
+     "checkedBy": "claude-fetched-html",
+     "note": "年だけ。場所は北野",
+     "originalSha256": "5088e72cb3ec39f5528247d6e50c72424c4cbac28761c582cef30d760528dafa",
+     "privateOriginal": ".cache/research-originals/death-date-sources/dosetsu-shingu.html.gz"
+    },
+    {
+     "publisher": "大分市",
+     "url": "https://www.city.oita.oita.jp/o157/bunkasports/citypromotion/1434706295486.html",
+     "phrase": "1585年…高良山…の陣中で病没",
+     "basis": "記載なし",
+     "kind": "二次",
+     "checkedBy": "claude-fetched-html",
+     "note": "年だけ。場所は高良山",
+     "originalSha256": "1cb8fc9a8c7e559e34bda6bf1b020471ff7877f6e1ce899c244460001ec4c304",
+     "privateOriginal": ".cache/research-originals/death-date-sources/dosetsu-oita.html.gz"
+    }
+   ],
+   "note": "綱文の命題は未登録。宗像市の紀要は、典拠（『大日本史料』第十一編之二十、天正十三年九月十一日条）とともに9月11日と書き、別の箇所で9月13日とも書く。9月11日はグレゴリオ暦1585-11-02（年表より1日遅い）、9月13日なら11-04（3日遅い）。綱文の9月11日条を引いて命題に登録できる見込み（未照会）。"
+  },
+  {
+   "name": "高橋紹運",
+   "claim": "death-date-takahashi-joun",
+   "kobun": "天正14年7月26日",
+   "timeline": "1586-09-10",
+   "timelineMinusKobunDays": 1,
+   "category": "sources-disagree",
+   "sources": [
+    {
+     "publisher": "鹿児島県（鹿児島県史料 旧記雑録後編二 所収「上井覚兼日記」）",
+     "url": "https://www.pref.kagoshima.jp/ab25/documents/6756_20221201091952-1_1.pdf#page=92",
+     "phrase": "26日の下柵突破と包囲、27日朝の攻撃、同日午後の落城",
+     "basis": "同時代の日記（翻刻）",
+     "kind": "一次（翻刻）",
+     "checkedBy": "existing-curated-source iwayaDiary（2026-11-05 登録）"
+    },
+    {
+     "publisher": "太宰府市（岩屋城合戦犠牲者追悼法要）",
+     "url": "https://www.city.dazaifu.lg.jp/site/bunkazai/12096.html",
+     "phrase": "毎年7月27日に行われる法要",
+     "basis": "記載なし",
+     "kind": "二次",
+     "checkedBy": "claude-fetched-html",
+     "note": "法要の日で、死去の日の記述ではない",
+     "originalSha256": "cf804ea7f6f945d22afcd97920f25de382fc10a0e2ed1301ccd3a528dc2dbbff",
+     "privateOriginal": ".cache/research-originals/death-date-sources/joun-dazaifu.html.gz"
+    }
+   ],
+   "note": "既存の資料（iwayaDiary、上井覚兼日記）では26日に下柵突破と包囲、27日朝の攻撃、同日午後に落城。年表の1586-09-10（グレゴリオ暦）は7月27日に当たり、綱文は26日。綱文がなぜ26日に掛けたかは確かめていない（下柵突破の日に掛けたという読みは、現段階では未確定）。資料間の不一致として残す。紹運の戦死の時刻は日記でも特定できない。"
+  },
+  {
+   "name": "武田信繁",
+   "claim": "death-date-takeda-nobushige",
+   "kobun": "永禄4年9月10日",
+   "timeline": "1561-10-19",
+   "timelineMinusKobunDays": 1,
+   "category": "public-matches-kobun",
+   "sources": [
+    {
+     "publisher": "甲府市（武田二十四将）",
+     "url": "https://www.city.kofu.lg.jp/k068/p003090.html",
+     "phrase": "大永5年(1525)~永禄4年(1561)9月10日",
+     "basis": "記載なし",
+     "kind": "二次",
+     "checkedBy": "claude-fetched-html",
+     "originalSha256": "c1802870c7e99d9e6a4cf47b8fdf48907b8795a57d31fa40f3e3e693fc248082",
+     "privateOriginal": ".cache/research-originals/death-date-sources/nobushige-kofu.html.gz"
+    },
+    {
+     "publisher": "長野県立歴史館（信濃史料、ADEAC）",
+     "url": "https://adeac.jp/npmh/texthtml/d100010/mp000000/ht122400",
+     "phrase": "永禄四年九月一〇日…信玄の弟信繁等討死す",
+     "basis": "妙法寺記・歴代古案ほか",
+     "kind": "史料集の綱文",
+     "checkedBy": "claude-fetched-html",
+     "note": "合戦の日に掛けた記事",
+     "originalSha256": "4ba3efbbfaf756f3457bff5d0febf910208445d59106f425f91226025725e08c",
+     "privateOriginal": ".cache/research-originals/death-date-sources/nobushige-shinano.html.gz"
+    }
+   ],
+   "note": "合戦の日の戦死。"
+  },
+  {
+   "name": "竹中重治（半兵衛）",
+   "claim": "death-date-takenaka-shigeharu",
+   "kobun": "天正7年6月13日",
+   "timeline": "1579-07-09",
+   "timelineMinusKobunDays": 3,
+   "category": "public-matches-kobun",
+   "sources": [
+    {
+     "publisher": "三木市（竹中半兵衛の墓）",
+     "url": "https://www.city.miki.lg.jp/soshiki/33/3051.html",
+     "phrase": "天正7年（1579年）6月13日、…陣中で病気のため亡くなったといわれています",
+     "basis": "「いわれています」（伝承の言い方）",
+     "kind": "二次",
+     "checkedBy": "claude-fetched-html",
+     "originalSha256": "59e14cebb0798921c4e6c8c86f8dc5748dda32024f6464a22cc84c31fd4b02da",
+     "privateOriginal": ".cache/research-originals/death-date-sources/takenaka-miki.html.gz"
+    }
+   ],
+   "note": ""
+  }
+ ]
+}
