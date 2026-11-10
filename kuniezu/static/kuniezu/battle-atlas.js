@@ -359,11 +359,16 @@ window.TKBattleAtlas=(function(){
   function loop(now){if(dead){fxRaf=0;return;}const dt=fxLast?Math.min(.1,(now-fxLast)/1000):0;fxLast=now;const live=controller.playing||fx.count>0||!!glide;frameDraw(live?dt:0,now);if(!live){fxRaf=0;fxLast=0;return;}fxRaf=requestAnimationFrame(loop);}
   function wake(){if(!fxRaf){fxLast=0;fxRaf=requestAnimationFrame(loop);}}
   let controller=null;controller=TKBattlePresentation.record(cv,sc,{...opt,onProgress(v){t=v;opt.onProgress?.(v);wake();if(!controller?.playing){const key=Math.floor(t*20)+'|'+selected+'|'+sc.units.filter(u=>u.turn&&t>=u.turn[0]).map(u=>u.id).join(',');if(key!==lastKey){lastKey=key;frameDraw();}}}});
+  // 視点の補間中は、当たり判定の枠（boxes）が描いている途中の視点で作られている。駒の位置も同じ視点で求めてから、行き先の値へ戻す。
   const onClick=e=>{const r=cv.getBoundingClientRect(),x=e.clientX-r.left,y=e.clientY-r.top,hit=boxes.filter(b=>x>=b.x&&x<=b.x+b.w&&y>=b.y&&y<=b.y+b.h);if(hit.length){
-   const centerHit=locatedGroups().find(q=>{const p=pinFor(q);return p&&inside(...p)&&Math.hypot(p[0]-x,p[1]-y)<6;}),label=centerHit?null:hit.findLast(b=>b.label);selected=centerHit?.id||(label||hit[0]).id;
-   const g=selectionGroup(selected);
-   if(label)selectionPanel([selected]);
-   else if(g){const p=pinFor(g),ids=locatedGroups().filter(q=>{const pin=pinFor(q);return p&&pin&&inside(...pin)&&Math.hypot(pin[0]-p[0],pin[1]-p[1])<20;}).map(q=>q.id);selectionPanel(ids);}
+   const to=glide?.now?[VS,VX,VY]:null;let ids=null;if(to)[VS,VX,VY]=glide.now;
+   try{
+    const centerHit=locatedGroups().find(q=>{const p=pinFor(q);return p&&inside(...p)&&Math.hypot(p[0]-x,p[1]-y)<6;}),label=centerHit?null:hit.findLast(b=>b.label);selected=centerHit?.id||(label||hit[0]).id;
+    const g=selectionGroup(selected);
+    if(label)ids=[selected];
+    else if(g){const p=pinFor(g);ids=locatedGroups().filter(q=>{const pin=pinFor(q);return p&&pin&&inside(...pin)&&Math.hypot(pin[0]-p[0],pin[1]-p[1])<20;}).map(q=>q.id);}
+   }finally{if(to)[VS,VX,VY]=to;}
+   if(ids)selectionPanel(ids);
    frameDraw();
   }};
 
