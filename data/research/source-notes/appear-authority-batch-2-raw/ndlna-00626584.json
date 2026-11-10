@@ -1,0 +1,45 @@
+{
+    "@context": "https://id.ndl.go.jp/auth/context.json",
+    "uri": "http://id.ndl.go.jp/auth/ndlna/00626584",
+    "primaryTopic": {
+        "uri": "http://id.ndl.go.jp/auth/entity/00626584",
+        "type": {
+            "uri": "http://xmlns.com/foaf/0.1/Person"
+        },
+        "name": "毛利秀元",
+        "dateOfBirth": "1579",
+        "dateOfDeath": "1650"
+    },
+    "type": {
+        "uri": "http://www.w3.org/2004/02/skos/core#Concept"
+    },
+    "modified": "1998-05-12T11:40:00",
+    "created": "1998-01-30",
+    "prefLabel": {
+        "literalForm": "毛利, 秀元, 1579-1650",
+        "transcription": "モウリ, ヒデモト, 1579-1650",
+        "transcription-l": [
+            {
+                "@value": "モウリ, ヒデモト, 1579-1650",
+                "@language": "ja-Kana"
+            },
+            {
+                "@value": "Mori, Hidemoto, 1579-1650",
+                "@language": "ja-Latn"
+            }
+        ]
+    },
+    "label": "毛利, 秀元, 1579-1650",
+    "source": [
+        "毛利秀元記 / 黒川真道 編"
+    ],
+    "exactMatch": [
+        {
+            "uri": "http://viaf.org/viaf/sourceID/NDL%7C00626584#skos:Concept"
+        }
+    ],
+    "inScheme": {
+        "uri": "http://id.ndl.go.jp/auth#personalNames"
+    }
+}
+

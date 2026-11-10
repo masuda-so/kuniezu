@@ -1,0 +1,58 @@
+{
+    "@context": "https://id.ndl.go.jp/auth/context.json",
+    "uri": "http://id.ndl.go.jp/auth/ndlna/00269708",
+    "primaryTopic": {
+        "uri": "http://id.ndl.go.jp/auth/entity/00269708",
+        "type": {
+            "uri": "http://xmlns.com/foaf/0.1/Person"
+        },
+        "name": "本多正信",
+        "dateOfBirth": "1538",
+        "dateOfDeath": "1616",
+        "biographicalInformation": [
+            "徳川幕府執政"
+        ]
+    },
+    "type": {
+        "uri": "http://www.w3.org/2004/02/skos/core#Concept"
+    },
+    "modified": "2026-01-21T08:32:03",
+    "created": "1993-06-25",
+    "prefLabel": {
+        "literalForm": "本多, 正信, 1538-1616",
+        "transcription": "ホンダ, マサノブ, 1538-1616",
+        "transcription-l": [
+            {
+                "@value": "ホンダ, マサノブ, 1538-1616",
+                "@language": "ja-Kana"
+            },
+            {
+                "@value": "Honda, Masanobu, 1538-1616",
+                "@language": "ja-Latn"
+            }
+        ]
+    },
+    "label": "本多, 正信, 1538-1616",
+    "source": [
+        "本佐録",
+        "大人名辞典"
+    ],
+    "exactMatch": [
+        {
+            "uri": "http://id.loc.gov/authorities/names/nr99040136"
+        },
+        {
+            "uri": "https://isni.org/isni/0000000082507462"
+        },
+        {
+            "uri": "https://ci.nii.ac.jp/author/DA1314857X"
+        },
+        {
+            "uri": "http://viaf.org/viaf/sourceID/NDL%7C00269708#skos:Concept"
+        }
+    ],
+    "inScheme": {
+        "uri": "http://id.ndl.go.jp/auth#personalNames"
+    }
+}
+

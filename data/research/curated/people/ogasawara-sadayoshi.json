@@ -1,0 +1,28 @@
+{
+  "id": "person:ogasawara-sadayoshi",
+  "name": "小笠原貞慶",
+  "gameNames": [
+    "小笠原貞慶"
+  ],
+  "authorityIds": [
+    "wikidata:Q10856562",
+    "ndlna:01200488"
+  ],
+  "authorityEvidence": {
+    "scope": "person-identity",
+    "checked": "2026-11-09",
+    "wikidataRevision": 2350383042,
+    "snapshot": "data/research/source-notes/appear-authority-batch-2.json",
+    "sourceNote": "data/research/source-notes/appear-authority-batch-2.json",
+    "note": "data/research/source-notes/appear-authority-batch-2.md",
+    "identityChecks": [
+      "NDL01200488の主名小笠原貞慶がPerson典拠に属する",
+      "Wikidata Q10856562の日本語主名とP349が同じNDL典拠へ対応する"
+    ],
+    "basis": "人物の同定のみ。原本にある生没日・所在・所領・関係の時期は新たな史実命題へ採用しない。",
+    "ndlSnapshot": "data/research/source-notes/appear-authority-batch-2-ndl/ogasawara-sadayoshi.json",
+    "sourceIds": [
+      "ndlOgasawaraSadayoshiIdentity"
+    ]
+  }
+}

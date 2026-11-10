@@ -1,0 +1,28 @@
+{
+  "id": "person:arima-harunobu",
+  "name": "有馬晴信",
+  "gameNames": [
+    "有馬晴信"
+  ],
+  "authorityIds": [
+    "wikidata:Q1197394",
+    "ndlna:00867848"
+  ],
+  "authorityEvidence": {
+    "scope": "person-identity",
+    "checked": "2026-11-09",
+    "wikidataRevision": 2555352915,
+    "snapshot": "data/research/source-notes/appear-authority-batch-2.json",
+    "sourceNote": "data/research/source-notes/appear-authority-batch-2.json",
+    "note": "data/research/source-notes/appear-authority-batch-2.md",
+    "identityChecks": [
+      "NDL00867848の主名有馬晴信がPerson典拠に属する",
+      "Wikidata Q1197394の日本語主名とP349が同じNDL典拠へ対応する"
+    ],
+    "basis": "人物の同定のみ。原本にある生没日・所在・所領・関係の時期は新たな史実命題へ採用しない。",
+    "ndlSnapshot": "data/research/source-notes/appear-authority-batch-2-ndl/arima-harunobu.json",
+    "sourceIds": [
+      "ndlArimaHarunobuIdentity"
+    ]
+  }
+}

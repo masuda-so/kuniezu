@@ -1,0 +1,48 @@
+{
+    "@context": "https://id.ndl.go.jp/auth/context.json",
+    "uri": "http://id.ndl.go.jp/auth/ndlna/00796153",
+    "primaryTopic": {
+        "uri": "http://id.ndl.go.jp/auth/entity/00796153",
+        "type": {
+            "uri": "http://xmlns.com/foaf/0.1/Person"
+        },
+        "name": "木村重成",
+        "dateOfDeath": "1615"
+    },
+    "type": {
+        "uri": "http://www.w3.org/2004/02/skos/core#Concept"
+    },
+    "modified": "2000-02-14T10:57:00",
+    "created": "2000-02-14",
+    "prefLabel": {
+        "literalForm": "木村, 重成, -1615",
+        "transcription": "キムラ, シゲナリ, -1615",
+        "transcription-l": [
+            {
+                "@value": "キムラ, シゲナリ, -1615",
+                "@language": "ja-Kana"
+            },
+            {
+                "@value": "Kimura, Shigenari, -1615",
+                "@language": "ja-Latn"
+            }
+        ]
+    },
+    "label": "木村, 重成, -1615",
+    "source": [
+        "木村長門守 (請求記号: 78-100)",
+        "大人名事典"
+    ],
+    "exactMatch": [
+        {
+            "uri": "http://viaf.org/viaf/sourceID/NDL%7C00796153#skos:Concept"
+        }
+    ],
+    "inScheme": {
+        "uri": "http://id.ndl.go.jp/auth#personalNames"
+    },
+    "note": [
+        "遡及入力典拠"
+    ]
+}
+

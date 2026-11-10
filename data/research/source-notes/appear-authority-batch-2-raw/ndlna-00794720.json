@@ -1,0 +1,49 @@
+{
+    "@context": "https://id.ndl.go.jp/auth/context.json",
+    "uri": "http://id.ndl.go.jp/auth/ndlna/00794720",
+    "primaryTopic": {
+        "uri": "http://id.ndl.go.jp/auth/entity/00794720",
+        "type": {
+            "uri": "http://xmlns.com/foaf/0.1/Person"
+        },
+        "name": "森忠政",
+        "dateOfBirth": "1570",
+        "dateOfDeath": "1634",
+        "biographicalInformation": [
+            "津山藩主"
+        ]
+    },
+    "type": {
+        "uri": "http://www.w3.org/2004/02/skos/core#Concept"
+    },
+    "modified": "2019-01-07T18:13:59",
+    "created": "2000-01-31",
+    "prefLabel": {
+        "literalForm": "森, 忠政, 1570-1634",
+        "transcription": "モリ, タダマサ, 1570-1634",
+        "transcription-l": [
+            {
+                "@value": "モリ, タダマサ, 1570-1634",
+                "@language": "ja-Kana"
+            },
+            {
+                "@value": "Mori, Tadamasa, 1570-1634",
+                "@language": "ja-Latn"
+            }
+        ]
+    },
+    "label": "森, 忠政, 1570-1634",
+    "source": [
+        "森公入封満三百年紀念祭前記 (請求記号: 187-341)",
+        "大人名事典"
+    ],
+    "exactMatch": [
+        {
+            "uri": "http://viaf.org/viaf/sourceID/NDL%7C00794720#skos:Concept"
+        }
+    ],
+    "inScheme": {
+        "uri": "http://id.ndl.go.jp/auth#personalNames"
+    }
+}
+

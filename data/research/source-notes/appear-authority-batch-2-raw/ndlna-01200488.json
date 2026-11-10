@@ -1,0 +1,58 @@
+{
+    "@context": "https://id.ndl.go.jp/auth/context.json",
+    "uri": "http://id.ndl.go.jp/auth/ndlna/01200488",
+    "primaryTopic": {
+        "uri": "http://id.ndl.go.jp/auth/entity/01200488",
+        "type": {
+            "uri": "http://xmlns.com/foaf/0.1/Person"
+        },
+        "name": "小笠原貞慶",
+        "dateOfBirth": "1546",
+        "dateOfDeath": "1595",
+        "biographicalInformation": [
+            "武将・故実家"
+        ]
+    },
+    "type": {
+        "uri": "http://www.w3.org/2004/02/skos/core#Concept"
+    },
+    "modified": "2019-01-07T18:14:11",
+    "created": "2010-07-08",
+    "prefLabel": {
+        "literalForm": "小笠原, 貞慶, 1546-1595",
+        "transcription": "オガサワラ, サダヨシ, 1546-1595",
+        "transcription-l": [
+            {
+                "@value": "オガサワラ, サダヨシ, 1546-1595",
+                "@language": "ja-Kana"
+            },
+            {
+                "@value": "Ogasawara, Sadayoshi, 1546-1595",
+                "@language": "ja-Latn"
+            }
+        ]
+    },
+    "label": "小笠原, 貞慶, 1546-1595",
+    "altLabel": [
+        {
+            "literalForm": "大隆寺以清宗得",
+            "description": "法号"
+        }
+    ],
+    "source": [
+        "作庭口訣 / 小笠原貞慶 [著]",
+        "国書人名辞典"
+    ],
+    "exactMatch": [
+        {
+            "uri": "http://viaf.org/viaf/sourceID/NDL%7C01200488#skos:Concept"
+        }
+    ],
+    "inScheme": {
+        "uri": "http://id.ndl.go.jp/auth#personalNames"
+    },
+    "historyNote": [
+        "1564→1546 (20160808)"
+    ]
+}
+

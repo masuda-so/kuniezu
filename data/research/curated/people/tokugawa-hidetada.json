@@ -1,0 +1,28 @@
+{
+  "id": "person:tokugawa-hidetada",
+  "name": "徳川秀忠",
+  "gameNames": [
+    "徳川秀忠"
+  ],
+  "authorityIds": [
+    "wikidata:Q314464",
+    "ndlna:00625967"
+  ],
+  "authorityEvidence": {
+    "scope": "person-identity",
+    "checked": "2026-11-09",
+    "wikidataRevision": 2565480631,
+    "snapshot": "data/research/source-notes/appear-authority-batch-2.json",
+    "sourceNote": "data/research/source-notes/appear-authority-batch-2.json",
+    "note": "data/research/source-notes/appear-authority-batch-2.md",
+    "identityChecks": [
+      "NDL00625967の主名徳川秀忠がPerson典拠に属する",
+      "Wikidata Q314464の日本語主名とP349が同じNDL典拠へ対応する"
+    ],
+    "basis": "人物の同定のみ。原本にある生没日・所在・所領・関係の時期は新たな史実命題へ採用しない。",
+    "ndlSnapshot": "data/research/source-notes/appear-authority-batch-2-ndl/tokugawa-hidetada.json",
+    "sourceIds": [
+      "ndlTokugawaHidetadaIdentity"
+    ]
+  }
+}

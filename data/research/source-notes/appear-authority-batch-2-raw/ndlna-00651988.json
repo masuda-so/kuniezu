@@ -1,0 +1,66 @@
+{
+    "@context": "https://id.ndl.go.jp/auth/context.json",
+    "uri": "http://id.ndl.go.jp/auth/ndlna/00651988",
+    "primaryTopic": {
+        "uri": "http://id.ndl.go.jp/auth/entity/00651988",
+        "type": {
+            "uri": "http://xmlns.com/foaf/0.1/Person"
+        },
+        "name": "北信愛",
+        "dateOfBirth": "1523",
+        "dateOfDeath": "1613",
+        "biographicalInformation": [
+            "戦国-江戸時代前期の武将"
+        ]
+    },
+    "type": {
+        "uri": "http://www.w3.org/2004/02/skos/core#Concept"
+    },
+    "modified": "2019-01-07T18:13:55",
+    "created": "1998-02-26",
+    "prefLabel": {
+        "literalForm": "北, 信愛, 1523-1613",
+        "transcription": "キタ, ノブチカ, 1523-1613",
+        "transcription-l": [
+            {
+                "@value": "キタ, ノブチカ, 1523-1613",
+                "@language": "ja-Kana"
+            },
+            {
+                "@value": "Kita, Nobuchika, 1523-1613",
+                "@language": "ja-Latn"
+            }
+        ]
+    },
+    "label": "北, 信愛, 1523-1613",
+    "altLabel": [
+        {
+            "literalForm": "松斎",
+            "transcription": "ショウサイ",
+            "transcription-l": [
+                {
+                    "@value": "ショウサイ",
+                    "@language": "ja-Kana"
+                },
+                {
+                    "@value": "Shosai",
+                    "@language": "ja-Latn"
+                }
+            ],
+            "description": "号"
+        }
+    ],
+    "source": [
+        "剣吉城主北信愛 / 金沢啓三郎 著",
+        "日本人名大辞典"
+    ],
+    "exactMatch": [
+        {
+            "uri": "http://viaf.org/viaf/sourceID/NDL%7C00651988#skos:Concept"
+        }
+    ],
+    "inScheme": {
+        "uri": "http://id.ndl.go.jp/auth#personalNames"
+    }
+}
+

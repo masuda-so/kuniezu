@@ -1,0 +1,28 @@
+{
+  "id": "person:katakura-kagetsuna",
+  "name": "片倉景綱",
+  "gameNames": [
+    "片倉景綱"
+  ],
+  "authorityIds": [
+    "wikidata:Q843226",
+    "ndlna:00626413"
+  ],
+  "authorityEvidence": {
+    "scope": "person-identity",
+    "checked": "2026-11-09",
+    "wikidataRevision": 2447523787,
+    "snapshot": "data/research/source-notes/appear-authority-batch-2.json",
+    "sourceNote": "data/research/source-notes/appear-authority-batch-2.json",
+    "note": "data/research/source-notes/appear-authority-batch-2.md",
+    "identityChecks": [
+      "NDL00626413の主名片倉景綱がPerson典拠に属する",
+      "Wikidata Q843226の日本語主名とP349が同じNDL典拠へ対応する"
+    ],
+    "basis": "人物の同定のみ。原本にある生没日・所在・所領・関係の時期は新たな史実命題へ採用しない。",
+    "ndlSnapshot": "data/research/source-notes/appear-authority-batch-2-ndl/katakura-kagetsuna.json",
+    "sourceIds": [
+      "ndlKatakuraKagetsunaIdentity"
+    ]
+  }
+}

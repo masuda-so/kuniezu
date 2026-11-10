@@ -1,0 +1,28 @@
+{
+  "id": "person:yi-sun-sin",
+  "name": "李舜臣",
+  "gameNames": [
+    "李舜臣"
+  ],
+  "authorityIds": [
+    "wikidata:Q50184",
+    "ndlna:00315950"
+  ],
+  "authorityEvidence": {
+    "scope": "person-identity",
+    "checked": "2026-11-09",
+    "wikidataRevision": 2566172188,
+    "snapshot": "data/research/source-notes/appear-authority-batch-2.json",
+    "sourceNote": "data/research/source-notes/appear-authority-batch-2.json",
+    "note": "data/research/source-notes/appear-authority-batch-2.md",
+    "identityChecks": [
+      "NDL00315950の主名李舜臣がPerson典拠に属する",
+      "Wikidata Q50184の日本語主名とP349が同じNDL典拠へ対応する"
+    ],
+    "basis": "人物の同定のみ。原本にある生没日・所在・所領・関係の時期は新たな史実命題へ採用しない。",
+    "ndlSnapshot": "data/research/source-notes/appear-authority-batch-2-ndl/yi-sun-sin.json",
+    "sourceIds": [
+      "ndlYiSunSinIdentity"
+    ]
+  }
+}
