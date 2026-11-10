@@ -1137,12 +1137,15 @@ def test_eighteen_authorities_share_stable_identity(
 def test_odawara_campaign_keeps_castle_events_separate(inputs):
     import_history(inputs)
     campaign = Phenomenon.objects.get(key="campaign:小田原征伐")
-    expected_battles = 7
+    expected_battles = 11
     assert campaign.parts.count() == expected_battles
     for title in ["韮山城の戦い", "鉢形城の開城", "小田原開城"]:
         battle = campaign.parts.get(title=title)
         assert battle.records.filter(record_type=RecordType.IMPLEMENTED_EVENT).exists()
-    for title in ["山中城の戦い", "八王子城の戦い", "忍城の戦い"]:
+    for title in [
+        "山中城の戦い", "八王子城の戦い", "忍城の戦い",
+        "足柄城の落城", "松井田城の攻防", "岩付城の攻防", "津久井城の落城",
+    ]:
         battle = campaign.parts.get(title=title)
         assert battle.status == Status.REGISTERED
         assert not battle.jd_exact
