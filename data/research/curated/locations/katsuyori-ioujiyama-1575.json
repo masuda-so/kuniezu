@@ -1,0 +1,28 @@
+{
+  "id": "location:katsuyori-ioujiyama-1575",
+  "person": "person:takeda-katsuyori",
+  "place": "place:nagashino-ioujiyama",
+  "relation": "attested-presence",
+  "role": "本陣",
+  "time": {
+    "kind": "year-window",
+    "year": 1575,
+    "calendar": "CE-year",
+    "precision": "year"
+  },
+  "sequence": {
+    "group": "shitaragahara-1575-katsuyori",
+    "order": 1,
+    "label": "「勝頼の本陣」：長篠城を攻めていたときは医王寺山に本陣を置いた"
+  },
+  "source": "shinshiroFujinzuHonjin",
+  "sourceUrl": "https://www.city.shinshiro.lg.jp/mokuteki/shisetu/shiryokan/shitaragahara/fujinzu.html",
+  "locator": "「勝頼の本陣」：長篠城を攻めていたときは医王寺山に本陣を置いた",
+  "uncertainty": "年は資料に書かれていない。長篠・設楽原の戦いの年（既存の命題 nagashino-phases、天正3年）による。日付・時刻・滞在の長さは補わない。 既存の命題 nagashino-headquarters（site:医王寺山、長篠城の約600m北方）と同じ山を指すが、場所の ID は統合していない。",
+  "recordType": "sourced-location-observation",
+  "status": "verified-in-specified-scope",
+  "recordedAt": "2026-11-10",
+  "gameBindings": [
+    "TK.BATTLE_MOVEMENTS:長篠の戦い"
+  ]
+}

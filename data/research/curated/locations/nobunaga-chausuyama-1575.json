@@ -1,0 +1,28 @@
+{
+  "id": "location:nobunaga-chausuyama-1575",
+  "person": "person:oda-nobunaga",
+  "place": "place:shitaragahara-chausuyama",
+  "relation": "attested-presence",
+  "role": "本陣",
+  "time": {
+    "kind": "year-window",
+    "year": 1575,
+    "calendar": "CE-year",
+    "precision": "year"
+  },
+  "sequence": {
+    "group": "shitaragahara-1575-nobunaga",
+    "order": 2,
+    "label": "「家康と信長の本陣」：信長は後に茶臼山に陣地を移した"
+  },
+  "source": "shinshiroFujinzuHonjin",
+  "sourceUrl": "https://www.city.shinshiro.lg.jp/mokuteki/shisetu/shiryokan/shitaragahara/fujinzu.html",
+  "locator": "「家康と信長の本陣」：信長は後に茶臼山に陣地を移した",
+  "uncertainty": "年は資料に書かれていない。長篠・設楽原の戦いの年（既存の命題 nagashino-phases、天正3年）による。日付・時刻・滞在の長さは補わない。 移した日・時刻は書かれていない。",
+  "recordType": "sourced-location-observation",
+  "status": "verified-in-specified-scope",
+  "recordedAt": "2026-11-10",
+  "gameBindings": [
+    "TK.DEPLOYMENT_PLANS:長篠の戦い"
+  ]
+}

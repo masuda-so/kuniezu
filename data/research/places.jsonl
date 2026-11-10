@@ -56,6 +56,7 @@
 {"id":"place:mitsukuri","name":"箕作城","aliases":[],"geometry":null,"geometryStatus":"not-asserted","note":"綱文の攻城・落城・開城の命題の対象の城。城域の範囲は主張しない。","identityBasis":{"scope":"確認済み命題の対象場所。日時と関係は元命題に保持し、座標は未主張。","claimIds":["mitsukuri-castle-fall-1568"]}}
 {"id":"place:nagahama-omi","name":"長浜城","aliases":[],"geometry":null,"geometryStatus":"not-asserted","note":"近江の長浜城。ゲームの yosho:伊豆長浜城（伊豆）とは別の城。","identityBasis":{"scope":"確認済み命題の対象場所。日時と関係は元命題に保持し、座標は未主張。","claimIds":["nagahama-surrender-1582"]}}
 {"id":"place:nagashima","name":"長島","aliases":[],"geometry":null,"geometryStatus":"not-asserted","note":"長島の一向一揆の拠点群を指す地域名。特定の城とせず、ゲームの node:nagashima（長島願証寺）とは結ばない。","identityBasis":{"scope":"確認済み命題の対象場所。日時と関係は元命題に保持し、座標は未主張。","claimIds":["nagashima-withdrawal-1574"]}}
+{"id":"place:nagashino-ioujiyama","name":"医王寺山","aliases":[],"geometry":null,"geometryStatus":"not-asserted","note":"長篠城を攻めていたときの勝頼の本陣の場所。位置は主張しない。"}
 {"id":"place:nakamura-fort","name":"中村砦","aliases":[],"geometry":null,"geometryStatus":"not-asserted","note":"包囲砦。1579年整備の確認範囲。","identityBasis":{"scope":"確認済み命題の対象場所。日時と関係は元命題に保持し、座標は未主張。","claimIds":["takatenjin-six-forts-preparation-years"]}}
 {"id":"place:nakatomigawa","name":"中富川","aliases":[],"geometry":null,"geometryStatus":"not-asserted","note":"阿波の中富川の合戦の地。綱文の命題の対象の場所。範囲は主張しない。","identityBasis":{"scope":"確認済み命題の対象場所。日時と関係は元命題に保持し、座標は未主張。","claimIds":["nakatomigawa-battle-1582"]}}
 {"id":"place:nakatsu","name":"中津城","geometry":null,"geometryStatus":"not-asserted","note":"入城を記録する。城域の座標は別に扱う。"}
@@ -79,6 +80,11 @@
 {"id":"place:sawayama","name":"佐和山城","aliases":[],"geometry":null,"geometryStatus":"not-asserted","note":"綱文の攻城・落城・開城の命題の対象の城。城域の範囲は主張しない。","identityBasis":{"scope":"確認済み命題の対象場所。日時と関係は元命題に保持し、座標は未主張。","claimIds":["sawayama-castle-fall-1600","sawayama-surrender-1571"]}}
 {"id":"place:shinkai-ike","name":"新開池","aliases":[],"geometry":null,"geometryStatus":"not-asserted","note":"1705年以後の新田開発資料に現れる旧池。池岸・水深・干拓筆の範囲は未登録。","identityBasis":{"scope":"確認済み命題の対象場所。日時と関係は元命題に保持し、座標は未主張。","claimIds":["coastal-yamato-old-channel-fields-1705"]}}
 {"id":"place:shishigahana-fort","name":"獅子ヶ鼻砦","aliases":[],"geometry":null,"geometryStatus":"not-asserted","note":"開始年は1580年。個別の初築月日を補わない。","identityBasis":{"scope":"確認済み命題の対象場所。日時と関係は元命題に保持し、座標は未主張。","claimIds":["takatenjin-six-forts-preparation-years"]}}
+{"id":"place:shitaragahara-chausuyama","name":"茶臼山（設楽原）","aliases":[],"geometry":null,"geometryStatus":"not-asserted","note":"信長が後に本陣を移した場所。決戦場からかなり離れる。位置は主張しない。"}
+{"id":"place:shitaragahara-danjoyama","name":"弾正山","aliases":[],"geometry":null,"geometryStatus":"not-asserted","note":"連吾川を正面に見る、家康の本陣の場所。位置は主張しない。"}
+{"id":"place:shitaragahara-gokurakujiyama","name":"極楽寺山","aliases":[],"geometry":null,"geometryStatus":"not-asserted","note":"平井の極楽寺山。信長の最初の本陣の場所。位置は主張しない。"}
+{"id":"place:shitaragahara-sainokami","name":"才ノ神","aliases":[],"geometry":null,"geometryStatus":"not-asserted","note":"清井田の次に勝頼が本陣を移した場所。連吾川を間近に見る。位置は主張しない。"}
+{"id":"place:shitaragahara-seida","name":"清井田","aliases":[],"geometry":null,"geometryStatus":"not-asserted","note":"勝頼が設楽原へ陣地を動かすときに本陣を移した場所。位置は主張しない。"}
 {"id":"place:shizugatake","name":"賤ヶ岳","aliases":[],"geometry":null,"geometryStatus":"not-asserted","note":"近江の賤ヶ岳の合戦の地。合戦の範囲は主張しない。","identityBasis":{"scope":"確認済み命題の対象場所。日時と関係は元命題に保持し、座標は未主張。","claimIds":["shizugatake-battle-1583"]}}
 {"id":"place:sogo-castle","name":"十河城（讃岐）","aliases":[],"geometry":null,"geometryStatus":"not-asserted","note":"讃岐の十河城。綱文の命題の対象の場所。範囲は主張しない。","identityBasis":{"scope":"確認済み命題の対象場所。日時と関係は元命題に保持し、座標は未主張。","claimIds":["sogo-fall-1584"]}}
 {"id":"place:suncheon-wajo","name":"順天倭城","aliases":[],"geometry":null,"geometryStatus":"not-asserted","note":"小西行長が築いた順天の倭城。綱文の命題の対象の場所。範囲は主張しない。朝鮮の地名は、日本に関わる出来事として記録する（地図の範囲とは別）。ゲームの node:suncheon（順天）ではなく、より具体的な yosho:順天倭城 が代表する。","identityBasis":{"scope":"確認済み命題の対象場所。日時と関係は元命題に保持し、座標は未主張。","claimIds":["suncheon-wajo-built-1597"]}}
