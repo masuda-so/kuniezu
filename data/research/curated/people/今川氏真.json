@@ -1,0 +1,27 @@
+{
+  "id": "person:今川氏真",
+  "name": "今川氏真",
+  "gameNames": [
+    "今川氏真"
+  ],
+  "authorityIds": [
+    "wikidata:Q3100078",
+    "ndlna:032804624"
+  ],
+  "authorityEvidence": {
+    "scope": "person-identity",
+    "checked": "2026-11-10",
+    "wikidataRevision": 2562125046,
+    "snapshot": "data/research/source-notes/pilot-person-authority.json",
+    "sourceNote": "data/research/source-notes/pilot-person-authority.json",
+    "identityChecks": [
+      "NDL032804624の主名今川氏真がPerson典拠に属する",
+      "Wikidata Q3100078の日本語主名とP349が同じNDL典拠へ対応する"
+    ],
+    "basis": "人物の同定のみ。原本にある生没日・所在・所領・関係の時期は新たな史実命題へ採用しない。",
+    "ndlSnapshot": "data/research/source-notes/pilot-person-ndl-authority.json",
+    "sourceIds": [
+      "ndlImagawaUjizaneIdentity"
+    ]
+  }
+}
