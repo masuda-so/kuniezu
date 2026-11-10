@@ -103,16 +103,33 @@ async function crawlCategories() {
 }
 
 async function main() {
- const {values} = parseArgs({options: {output: {type: 'string'}, people: {type: 'string'}}});
- if (!values.output) throw Error('使い方: node tools/research/wikipedia-person-list-candidates.cjs --output 出力先の名前（.json と .jsonl.gz を作る） [--people curated/people のディレクトリ]');
+ const {values} = parseArgs({options: {output: {type: 'string'}, people: {type: 'string'}, reclassify: {type: 'string'}}});
+ if (!values.output) throw Error('使い方: node tools/research/wikipedia-person-list-candidates.cjs --output 出力先の名前（.json と .jsonl.gz を作る） [--people curated/people のディレクトリ] [--reclassify 既存の出力の名前（通信せず、保存済みの記録から分類だけをやり直す）]');
  const base = path.resolve(values.output).replace(/\.jsonl?$/, '');
  for (const f of [`${base}.json`, `${base}.jsonl.gz`]) if (fs.existsSync(f)) throw Error(`出力先が存在します: ${f}`);
  const root = path.resolve(__dirname, '../..');
  const peopleDir = path.resolve(values.people || path.join(root, 'data/research/curated/people'));
 
+ let revid, crawl, records, items = new Map(), previous = null;
+ if (values.reclassify) {
+  // 保存済みの記録から、取得した値をそのまま使い、分類だけをやり直す。ネットワークには出ない。
+  const prev = path.resolve(values.reclassify).replace(/\.jsonl?(\.gz)?$|\.json$/, '');
+  previous = JSON.parse(fs.readFileSync(`${prev}.json`, 'utf8'));
+  revid = previous.sources.find(x => x.kind === 'list').revision;
+  crawl = {visited: previous.visitedCategories, excluded: previous.categoriesHandedToNonPerson, notCrawled: previous.categoriesNotCrawled};
+  const arrays = ['labels', 'listSections', 'categories', 'categoryHints', 'sourceTitles', 'instanceOf', 'wikidataAliases', 'birthYears', 'deathYears'];
+  records = require('node:zlib').gunzipSync(fs.readFileSync(`${prev}.jsonl.gz`)).toString('utf8').trim().split('\n').map(line => {
+   const r = JSON.parse(line);
+   for (const k of arrays) r[k] ||= [];
+   r.listOccurrences ||= 0; r.human = !!r.human; r.missing = !!r.missing;
+   r.wikidataId ||= null; r.wikidataRevision ??= null; r.wikidataLabel ??= null;
+   for (const k of ['names', 'namesSharedWithOtherRecords', 'personRecord', 'personRecordByNameOnly', 'personRecordsByNameOnly', 'inGameByName', 'status', 'handOff', 'entry', 'wikidataLifeVsCollectionPeriod']) delete r[k];
+   return r;
+  });
+ } else {
  // 入口 1：一覧（固定版）
  const page = await wp({action: 'parse', page: LIST_PAGE, prop: 'wikitext|revid', redirects: '1'});
- const revid = page.parse.revid;
+ revid = page.parse.revid;
  const entries = new Map();
  const entry = title => {
   if (!entries.has(title)) entries.set(title, {title, labels: [], listSections: [], listOccurrences: 0, categories: []});
@@ -125,7 +142,7 @@ async function main() {
   e.listOccurrences++;
  }
  // 入口 2：カテゴリ（取得時点。カテゴリには版番号が無いので取得時刻で示す）
- const crawl = await crawlCategories();
+ crawl = await crawlCategories();
  for (const [t, cats] of crawl.pages) {
   const e = entry(t);
   for (const c of [...cats].sort()) { const [category, hint] = c.split('|'); e.categories.push(category); if (!e.categoryHints) e.categoryHints = []; if (!e.categoryHints.includes(hint)) e.categoryHints.push(hint); }
@@ -157,21 +174,32 @@ async function main() {
   for (const k of ['labels', 'listSections', 'categories', 'categoryHints']) if (e[k]) for (const v of e[k]) if (!(m[k] ||= []).includes(v)) m[k].push(v);
   m.listOccurrences += e.listOccurrences;
  }
- const records = [...merged.values()];
+ records = [...merged.values()];
 
  // Wikidata の人間かどうか・生没年・日本語の名前と別名
  const qids = records.map(e => e.wikidataId).filter(Boolean);
- const items = new Map();
  for (let i = 0; i < qids.length; i += 50) {
   const w = await getJson('https://www.wikidata.org/w/api.php?' + new URLSearchParams({action: 'wbgetentities', ids: qids.slice(i, i + 50).join('|'), props: 'info|labels|aliases|claims', languages: 'ja', format: 'json', maxlag: '5'}));
   for (const [id, x] of Object.entries(w.entities)) items.set(id, x);
+ }
+ for (const e of records) {
+  const x = e.wikidataId ? items.get(e.wikidataId) : null;
+  e.instanceOf = [...new Set((x?.claims?.P31 || []).map(c => c.mainsnak?.datavalue?.value?.id).filter(Boolean))];
+  e.human = e.instanceOf.includes('Q5');
+  e.wikidataRevision = x?.lastrevid ?? null;
+  e.wikidataLabel = x?.labels?.ja?.value ?? null;
+  e.wikidataAliases = (x?.aliases?.ja || []).map(a => a.value);
+  e.birthYears = x ? years(x.claims?.P569) : [];
+  e.deathYears = x ? years(x.claims?.P570) : [];
+ }
  }
  // 人物典拠とゲームの名前
  const people = fs.readdirSync(peopleDir).filter(f => f.endsWith('.json')).map(f => JSON.parse(fs.readFileSync(path.join(peopleDir, f), 'utf8')));
  const byQid = new Map(), byName = new Map();
  for (const p of people) {
   for (const id of p.authorityIds || []) if (id.startsWith('wikidata:')) byQid.set(id.slice(9), p.id);
-  for (const n of [p.name, ...(p.gameNames || []), ...(p.aliases || [])]) if (n) byName.set(n, p.id);
+  // 同じ名前の別の記録を上書きしないよう、名前ごとに全ての ID を残す
+  for (const n of new Set([p.name, ...(p.gameNames || []), ...(p.aliases || [])])) if (n) (byName.get(n) || byName.set(n, new Set()).get(n)).add(p.id);
  }
  const {G, TK} = require('../checks/history-focus.cjs').model();
  // ゲームの名前：年表の appear と、全ての開始シナリオの初期の人物
@@ -187,26 +215,19 @@ async function main() {
 
  const nameUse = new Map();
  for (const e of records) {
-  const x = e.wikidataId ? items.get(e.wikidataId) : null;
-  e.instanceOf = [...new Set((x?.claims?.P31 || []).map(c => c.mainsnak?.datavalue?.value?.id).filter(Boolean))];
-  e.human = !!x && (x.claims?.P31 || []).some(c => c.mainsnak?.datavalue?.value?.id === 'Q5');
-  e.wikidataRevision = x?.lastrevid ?? null;
-  e.wikidataLabel = x?.labels?.ja?.value ?? null;
-  e.wikidataAliases = (x?.aliases?.ja || []).map(a => a.value);
-  e.birthYears = x ? years(x.claims?.P569) : [];
-  e.deathYears = x ? years(x.claims?.P570) : [];
   e.names = [...new Set([e.title.replace(/ \(.*\)$/, ''), ...e.labels, ...(e.wikidataLabel ? [e.wikidataLabel] : []), ...e.wikidataAliases])];
   for (const n of e.names) nameUse.set(n, (nameUse.get(n) || 0) + 1);
  }
  for (const e of records) {
   e.namesSharedWithOtherRecords = e.names.filter(n => nameUse.get(n) > 1);
-  const nameMatches = [...new Set(e.names.map(n => byName.get(n)).filter(Boolean))];
+  const nameMatches = [...new Set(e.names.flatMap(n => [...(byName.get(n) || [])]))].sort();
   e.personRecord = (e.wikidataId && byQid.get(e.wikidataId)) || null;
   e.personRecordByNameOnly = e.personRecord ? null : nameMatches.length ? nameMatches : null;
   e.inGameByName = e.names.some(n => gameNames.has(n));
   const b = e.birthYears.length ? Math.min(...e.birthYears) : null, d = e.deathYears.length ? Math.max(...e.deathYears) : null;
   e.wikidataLifeVsCollectionPeriod = b === null && d === null ? 'unknown' : (d !== null && d < PERIOD[0]) || (b !== null && b > PERIOD[1]) ? 'outside' : b !== null && d !== null ? 'overlaps' : 'partial-years-overlap-possible';
-  e.status = !e.wikidataId || e.missing ? 'no-wikidata-item' : !e.human ? 'not-a-human-item'
+  // P31 が空（未設定・未取得）のものは人でないと断定せず、種別未判定として人物候補の再確認に残す
+  e.status = !e.wikidataId || e.missing ? 'no-wikidata-item' : !e.instanceOf.length ? 'instance-of-unassessed' : !e.human ? 'not-a-human-item'
    : e.personRecord ? 'has-person-record' : e.inGameByName ? 'in-game-without-record' : 'not-in-game';
   e.gameRelevance = 'unassessed';
   e.adoption = 'candidate';
@@ -245,7 +266,9 @@ async function main() {
   collectionComplete: false,
   gameRelevance: '全件 unassessed。名前の一致（inGameByName）はヒントで、関わりの評価ではない',
   visitedCategories: crawl.visited, categoriesHandedToNonPerson: crawl.excluded, categoriesNotCrawled: crawl.notCrawled,
-  requests: requests.length, firstRequestAt: requests[0]?.retrievedAt, lastRequestAt: requests.at(-1)?.retrievedAt,
+  ...(previous ? {requests: previous.requests, firstRequestAt: previous.firstRequestAt, lastRequestAt: previous.lastRequestAt, reclassifiedFrom: `取得は ${previous.firstRequestAt}〜${previous.lastRequestAt}。${new Date().toISOString().slice(0, 10)} に保存済みの記録から分類だけをやり直した（通信なし）`}
+   : {requests: requests.length, firstRequestAt: requests[0]?.retrievedAt, lastRequestAt: requests.at(-1)?.retrievedAt}),
+  statusNotes: {'instance-of-unassessed': 'Wikidata の項目はあるが P31 が空。人でないとは断定せず、人物候補として再確認する。handOff しない', 'not-a-human-item': 'P31 があり、Q5（人間）を含まない。handOff: non-person-candidates'},
  }, null, 1) + '\n');
  console.log(JSON.stringify({revid, total: records.length, byEntry, counts, visited: crawl.visited.length, handedOff: crawl.excluded.length, notCrawled: crawl.notCrawled.length}));
 }

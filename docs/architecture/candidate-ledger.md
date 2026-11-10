@@ -34,12 +34,12 @@
 |---|---|
 | `entry` | 入口：`list`・`category`・`list+category` |
 | `wikidataId`・`wikidataRevision`・`instanceOf` | Wikidata の項目、その版、P31 |
-| `status` | `no-wikidata-item`・`not-a-human-item`・`has-person-record`・`in-game-without-record`・`not-in-game` |
+| `status` | `no-wikidata-item`・`instance-of-unassessed`（P31 が空。人でないとは断定しない）・`not-a-human-item`（P31 があり Q5 を含まない）・`has-person-record`・`in-game-without-record`・`not-in-game` |
 | `handOff` | 人でない項目は `non-person-candidates`（非人物の候補の型へ送る） |
 | `wikidataLifeVsCollectionPeriod` | Wikidata の生没年と 1534〜1615 年の比較の目安：`overlaps`・`partial-years-overlap-possible`・`outside`・`unknown`。実在・活動の確認ではない |
 | `names`・`namesSharedWithOtherRecords` | 照合に使った名前と、他の候補と重なる名前 |
 | `personRecord` | QID が一致した curated の人物 |
-| `personRecordByNameOnly`・`inGameByName` | 名前だけの一致。同一人物の判定ではない |
+| `personRecordByNameOnly`・`inGameByName` | 名前だけの一致（`personRecordByNameOnly` は一致した全ての ID の配列）。同一人物の判定ではない |
 | `gameRelevance` | 既定は `unassessed`。評価した後は `direct`・`indirect`・`none` |
 | `adoption` | 既定は `candidate` |
 
@@ -49,7 +49,11 @@
 node tools/research/wikipedia-person-list-candidates.cjs --output data/research/source-notes/wikipedia-sengoku-person-candidates
 ```
 
-出力先が既にあれば止まる。
+出力先が既にあれば止まる。分類の規則を変えたときは、通信せずに保存済みの記録から分類だけをやり直せる：
+
+```bash
+node tools/research/wikipedia-person-list-candidates.cjs --reclassify data/research/source-notes/wikipedia-sengoku-person-candidates --output 新しい出力先
+```
 
 ## 関係 DB で扱う範囲（次の段）
 

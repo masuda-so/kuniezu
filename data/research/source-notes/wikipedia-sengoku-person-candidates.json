@@ -31,7 +31,7 @@
   "peopleDir": "data/research/curated/people",
   "gameNames": "年表の appear と、開始シナリオ s1560・s1585・s1570・s1575・s1592・s1600・s1582 の初期の人物の名前（395 件）"
  },
- "records": "wikipedia-sengoku-person-candidates.jsonl.gz",
+ "records": "re.jsonl.gz",
  "recordFormat": "1 行 1 候補の JSON を gzip（mtime 0）。空の配列・null・false の欄は省く",
  "total": 15706,
  "byEntry": {
@@ -40,7 +40,8 @@
   "list+category": 3109
  },
  "counts": {
-  "not-a-human-item/unknown": 3568,
+  "not-a-human-item/unknown": 3174,
+  "instance-of-unassessed/unknown": 394,
   "not-in-game/unknown": 3157,
   "not-in-game/overlaps": 3044,
   "not-in-game/partial-years-overlap-possible": 1759,
@@ -9208,5 +9209,10 @@
  ],
  "requests": 2189,
  "firstRequestAt": "2026-11-09T16:03:58.529Z",
- "lastRequestAt": "2026-11-09T16:24:24.253Z"
+ "lastRequestAt": "2026-11-09T16:24:24.253Z",
+ "reclassifiedFrom": "取得は 2026-11-09T16:03:58.529Z〜2026-11-09T16:24:24.253Z。2026-11-10 に保存済みの記録から分類だけをやり直した（通信なし）",
+ "statusNotes": {
+  "instance-of-unassessed": "Wikidata の項目はあるが P31 が空。人でないとは断定せず、人物候補として再確認する。handOff しない",
+  "not-a-human-item": "P31 があり、Q5（人間）を含まない。handOff: non-person-candidates"
+ }
 }
