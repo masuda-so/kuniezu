@@ -1,0 +1,15 @@
+{
+  "source": "https://github.com/manakai/data-locale",
+  "revision": "052d97b256648fa42f060bca855c0c3f5bd66913",
+  "upstreamPath": "data/calendar/kyuureki-map.txt",
+  "upstreamSha256": "cfd10efe073a8a8a7ba0de7c53402a7c67a0c8a91c5c95fd14e98d1fc5eb1dfb",
+  "subsetSha256": "28a1bf05bd02acdb732490b1e101e15b5034741e554ba9726117c494866fd26b",
+  "selection": "Japanese lunisolar month starts, years 1532 through 1623 inclusive; original lines unchanged",
+  "acquired": "2026-11-10",
+  "westernCalendar": "proleptic Gregorian in upstream first column; convert through absolute JDN",
+  "license": "Use, reproduce and create derivative works permitted by upstream doc/calendar-kyuureki.txt; CC0 statement for JSON files and document",
+  "legacy": {
+    "months": 853,
+    "sourceSha256": "b6a2e5999abfad5dea8cd4512cd3d5e8b3c04cc018a7242b73f198e77290e1ef"
+  }
+}

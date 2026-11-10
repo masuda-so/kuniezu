@@ -1,0 +1,52 @@
+{
+    "@context": "https://id.ndl.go.jp/auth/context.json",
+    "uri": "http://id.ndl.go.jp/auth/ndlna/032804624",
+    "primaryTopic": {
+        "uri": "http://id.ndl.go.jp/auth/entity/032804624",
+        "type": {
+            "uri": "http://xmlns.com/foaf/0.1/Person"
+        },
+        "name": "今川氏真",
+        "dateOfBirth": "1538",
+        "dateOfDeath": "1614",
+        "biographicalInformation": [
+            "武将, 歌人"
+        ]
+    },
+    "type": {
+        "uri": "http://www.w3.org/2004/02/skos/core#Concept"
+    },
+    "modified": "2026-01-21T09:18:31",
+    "created": "2023-05-15",
+    "prefLabel": {
+        "literalForm": "今川, 氏真, 1538-1614",
+        "transcription": "イマガワ, ウジザネ, 1538-1614",
+        "transcription-l": [
+            {
+                "@value": "イマガワ, ウジザネ, 1538-1614",
+                "@language": "ja-Kana"
+            },
+            {
+                "@value": "Imagawa, Ujizane, 1538-1614",
+                "@language": "ja-Latn"
+            }
+        ]
+    },
+    "label": "今川, 氏真, 1538-1614",
+    "source": [
+        "徳川家康と今川氏真, 2023.4",
+        "国史大辞典"
+    ],
+    "exactMatch": [
+        {
+            "uri": "https://kokusho.nijl.ac.jp/author/42319"
+        },
+        {
+            "uri": "http://viaf.org/viaf/sourceID/NDL%7C032804624#skos:Concept"
+        }
+    ],
+    "inScheme": {
+        "uri": "http://id.ndl.go.jp/auth#personalNames"
+    }
+}
+

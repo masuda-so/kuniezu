@@ -4,7 +4,7 @@
 
 ## 概要
 
-1560～1615年の日本・朝鮮を舞台にした地図ゲームです。素のHTML/JavaScriptで動き（地図の配信物だけは正本から生成します）、現在は史実観察を優先し、自由攻城・非史実ルートは保留しています。
+日本の史実を描く地図ゲームです。次の大型アップデートに向けて、対象を信長誕生の1534年から元和偃武の1615年までに広げます。現在の開始シナリオは1560年で、1534年開始はまだ利用できません。朝鮮関連は年表・個別合戦図で扱います。素のHTML/JavaScriptで動き（地図の配信物だけは正本から生成します）、現在は史実観察を優先し、自由攻城・非史実ルートは保留しています。
 
 最初に [HANDOFF.md](HANDOFF.md) を読んでください。開発・調査の入口は [docs/README.md](docs/README.md)、残要望と分担は [docs/work/README.md](docs/work/README.md) です。
 
@@ -91,7 +91,7 @@ node tools/map/build-map.cjs --height --python /path/to/python3
 
 史実の関係データベースは、`uv run python manage.py migrate` の後 `uv run python manage.py import_history` で、`data/research/` と `docs/work/` の入力から根の `db.sqlite3` に作ります（Git には入れません）。`uv run python manage.py history_query --about 織田信長 --year 1582` のように、対象・年・経緯度の範囲で引けます。全件の背骨として、史料編纂所の綱文を 1 本条＝1 件で並べた所在の目録（`data/research/kobun-index/`、文面は置かない）を取り込みます。今は 1534 年分（478 条）で、どの条も未分類です。戦役と、それを作る合戦の親子（`data/research/conflicts.json`）も取り込みます。対象は名前でも識別子（`place:ganjaku` など）でも指せ、名前が複数の対象に当たると候補を並べて止まります。2 つの識別子が同じ対象であること、ゲームの拠点が台帳の場所を代表することは、出典付きの記録として `data/research/curated/identities/*.json` に置きます（形は同フォルダの `README.md`。記録が無い限り、同じ名前の対象を自動ではまとめません）。入っているのは今ある入力の全件で、出典で確認済みのものと、実装の棚卸し（未照合）を区別して持ちます（`docs/architecture/history-rdb.md`）。
 
-サーバーは、利用者が一度起動したポート（8000番・8001番）に限り、エージェントも起動・停止します。それ以外のポートは起動しません。検証は起動済みの `http://localhost:8000/index.html` に接続します。検査結果の保存先は `GAME_TEST_OUTPUT` で指定できます。
+エージェントが起動・停止してよいサーバーは `127.0.0.1:8000` だけです。8001番や他ポートは起動・利用しません。検証は起動済みの `http://127.0.0.1:8000/index.html` に接続します。検査結果の保存先は `GAME_TEST_OUTPUT` で指定できます。
 
 基本の確認は次のコマンドです。詳しくは [検証手順](tools/checks/README.md) を参照してください。
 

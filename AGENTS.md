@@ -2,7 +2,7 @@
 
 ## プロジェクト構成とモジュールの配置
 
-1560〜1615 年の日本・朝鮮を舞台にした地図ゲーム。`kuniezu/static/kuniezu/` は素の HTML/JavaScript で（地図の配信物だけ正本から生成する）、ページは Django のテンプレート `kuniezu/templates/index.html` で、その `game-scripts` が実際の依存順（データ定義 → 史実訂正 → 地理と移動 → 表示）。順序を変えると API の上書き関係が変わるので、ファイル名順に並べ替えない。
+1534〜1615年の日本を対象に拡張する地図ゲーム。現行の開始シナリオは1560年で、1534年開始は調査・実装を進める対象。朝鮮関連は史実DB・年表・個別合戦図で扱う。`kuniezu/static/kuniezu/` は素の HTML/JavaScript で（地図の配信物だけ正本から生成する）、ページは Django のテンプレート `kuniezu/templates/index.html` で、その `game-scripts` が実際の依存順（データ定義 → 史実訂正 → 地理と移動 → 表示）。順序を変えると API の上書き関係が変わるので、ファイル名順に並べ替えない。
 
 - `kuniezu/static/kuniezu/`（84 の JS、`map/` 地図の正本と配信物、`atlas/` 合戦地形、`terrain/` 標高・陰影、`portraits/` 肖像、`kamon/` 家紋、`licenses/` 素材の出典）。配信 URL は変えない（地図は 2026-11-04 に利用者の判断で `map/build/` と `map/control/` へ移した）。
 - `docs/`（`architecture/` 構成と依存順、`work/` 残要望と担当、`reports/` 報告書、`history/` 過去の原文）。作業前に `HANDOFF.md` を読む。
@@ -14,10 +14,10 @@
 
 ## ビルド・テスト・開発コマンド
 
-- 地図は `kuniezu/map/` に層ごとに置く。行政区分 `admin/`（郡）、支配 `control/`（城の支配域 `provinces.png` ほか）、自然 `physical/`（標高・川）、共有の `projection.json`、年代別の差分の入力 `edits/` が正本で、Git で管理する。配信物（`kuniezu/static/kuniezu/map/build/`）は追跡せず、`node tools/map/build-map.cjs`（陰影は `--height --python <NumPy・Pillow の Python>`）で生成する。生成物はコミットしない。ほかにビルドは無い。ページは Django が描くので、Django の開発サーバー（`uv run python manage.py runserver 8000`）か、静的書き出し `dist/client/` の配信で開く。`kuniezu/static/kuniezu/` だけを配信しても開けない。利用者が一度起動したポート（8000番・8001番）は、エージェントも起動・停止してよい（2026-11-05 の利用者の許可、2026-11-07再確認）。それ以外のポートは起動しない。127.0.0.1限定で運用し、待受プロセスと配信する作業ツリー・担当を確認してから操作する。別ポートや外部公開へ勝手に広げず、検証は専用の一時ブラウザで行う。
+- 地図は `kuniezu/map/` に層ごとに置く。行政区分 `admin/`（郡）、支配 `control/`（城の支配域 `provinces.png` ほか）、自然 `physical/`（標高・川）、共有の `projection.json`、年代別の差分の入力 `edits/` が正本で、Git で管理する。配信物（`kuniezu/static/kuniezu/map/build/`）は追跡せず、`node tools/map/build-map.cjs`（陰影は `--height --python <NumPy・Pillow の Python>`）で生成する。生成物はコミットしない。ほかにビルドは無い。ページは Django が描くので、Django の開発サーバー（`uv run python manage.py runserver 127.0.0.1:8000`）か、静的書き出し `dist/client/` の配信で開く。`kuniezu/static/kuniezu/` だけを配信しても開けない。エージェントが起動・停止してよいのは127.0.0.1:8000だけとする。8001番の許可は利用者が2026-11-09に撤回した。8001番や他ポートは起動・利用しない。127.0.0.1限定で運用し、待受プロセスと配信する作業ツリー・担当を確認してから操作する。別ポートや外部公開へ勝手に広げず、検証は専用の一時ブラウザで行う。
 - CODH参照入力は `data/inputs/codh-edo/`。`uv run python tools/geo/codh_reference.py` で原本SHA・座標・重複と形状の欠落を検査し、`--output <新規ディレクトリ>` で派生GeoJSONを作る。原本の座標・属性・地物境界を保持し、点だけの水域や線がない街道を補間しない。この入力処理は現行ゲーム地図へ自動適用しない。
 - 編集済みGeoJSONは `kuniezu/map/physical`・`admin`・`control` から、`build-map.cjs --vectors-only` で `map/build/vector/` へバイト複写する。`--vectors-only --check` で一致を確認する。通常ビルドにも同じ複写を含め、配信時に座標や線を直さない。深い位相検査は `uv run pytest tests/test_vector_sources.py`。5比較湖の正本は `physical/lakes-reference.geojson`、公式原本と出典は `data/inputs/mlit-w09-2005/`。
-- `uv sync --locked` の後 `uv run pytest` — Django 側の試験（CI の `Django CI`）。`uv run ruff check`・`uv run mypy kuniezu config scripts tests`・`uv run python scripts/build_static.py`（`dist/client/` への静的書き出し）は手元で実行する。許可済みの8000番・8001番の起動・停止はエージェントも行える。低負荷の検証では `uv run --locked python manage.py runserver 127.0.0.1:8000 --noreload` を使え、Pythonやテンプレートを変更した際は必要に応じて再起動する。
+- `uv sync --locked` の後 `uv run pytest` — Django 側の試験（CI の `Django CI`）。`uv run ruff check`・`uv run mypy kuniezu config scripts tests`・`uv run python scripts/build_static.py`（`dist/client/` への静的書き出し）は手元で実行する。127.0.0.1:8000の起動・停止はエージェントも行える。低負荷の検証では `uv run --locked python manage.py runserver 127.0.0.1:8000 --noreload` を使え、Pythonやテンプレートを変更した際は必要に応じて再起動する。
 - `uv run python manage.py migrate` の後 `uv run python manage.py import_history` — 史実の関係データベース（`db.sqlite3`、Git に入れない）を入力から作る。`uv run python manage.py history_query --about <名前>` で引く。設計は `docs/architecture/history-rdb.md`。
 - `node tools/checks/offline.cjs` — 構文・保存・史実進行の基本検査（CI の必須チェック `Offline checks`）。`node tools/checks/organization.cjs`、`node tools/checks/infrastructure.cjs` も CI で実行する。
 - `GAME_TEST_OUTPUT=data/verification/<担当名-対象名> node tools/checks/march-clock-browser.cjs` — 実画面の検査（起動済みサーバーが必要）。分野別の検査は `tools/checks/README.md` の表から選ぶ。

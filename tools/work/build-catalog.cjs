@@ -20,8 +20,9 @@ else if(process.argv.includes('--requests-only')){
  console.log('PASS: request policies synchronized; subject IDs, non-request rows and task state preserved');
 }else{
 const coverage=read('data/audits/coverage-review.json'),atlas=read('data/audits/deployment-audit.json'),rows=[];
+const period=read('docs/work/requests.json').period||[1560,1615];
 function add(kind,key,subject,area,requestIds,checks,context={}){rows.push({id:kind+'-'+crypto.createHash('sha256').update(String(key)).digest('hex').slice(0,12),kind,subject,area,requestIds,acceptance:checks,context});}
-for(const s of coverage.sites)add('site',s.id,s.name,'history',['H01','H02'],['位置の同定と出典','1560～1615年内の存在・名称・領主と主支城の役割','実装との差異の修正','該当年代の表示確認'],{siteId:s.id,positionReference:s.reference,periodStatus:s.period});
+for(const s of coverage.sites)add('site',s.id,s.name,'history',['H01','H02'],['位置の同定と出典',`${period[0]}～${period[1]}年内の存在・名称・領主と主支城の役割`,'実装との差異の修正','該当年代の表示確認'],{siteId:s.id,positionReference:s.reference,periodStatus:s.period});
 for(const p of coverage.people)add('person',p.name,p.name,'history',['H03'],['同名異人・別名の同定','生没・仕官・所在の適用年代','表示・年表・合戦参加の対応','出典と実装先の記録'],{portrait:p.portrait??null});
 for(const r of coverage.roads)add('road',r.name,r.name,'geography',['G03','M01'],['史料上の回廊・成立年代の確認','現代比較線と史実経路の区別','直線・海上混入・接続・重複の検査','経路上の行軍・向き・速度を実画面確認'],{points:r.points,reference:r.reference});
 for(const e of coverage.links)add('link',e.a+'|'+e.b,e.a+' → '+e.b,'movement',['M01','M02'],['陸路・海路・渡河・峠の区別','直線代替と寄城の妥当性','同じ道路線で描画と移動','停止・日跨ぎ・帰還・保存復元で連続'],e);

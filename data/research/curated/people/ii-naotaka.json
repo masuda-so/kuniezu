@@ -1,0 +1,26 @@
+{
+  "id": "person:ii-naotaka",
+  "name": "井伊直孝",
+  "gameNames": [
+    "井伊直孝"
+  ],
+  "authorityIds": [
+    "wikidata:Q877175"
+  ],
+  "authorityEvidence": {
+    "scope": "person-identity",
+    "checked": "2026-11-09",
+    "wikidataRevision": 2562123349,
+    "snapshot": "data/research/source-notes/appear-authority-batch-1.json",
+    "sourceNote": "data/research/source-notes/appear-authority-batch-1.json",
+    "note": "data/research/source-notes/appear-authority-batch-1.md",
+    "identityChecks": [
+      "彦根城博物館の本文が井伊直孝（井伊家2代）を天正18年（1590）〜万治2年（1659）とし、直政の次男とする",
+      "Wikidata Q877175の日本語主名が井伊直孝で、P569・P570の年が1590・1659"
+    ],
+    "basis": "人物の同定のみ。原本にある生没日・所在・所領・関係の時期は新たな史実命題へ採用しない。",
+    "sourceIds": [
+      "hikoneNaotakaIdentity"
+    ]
+  }
+}

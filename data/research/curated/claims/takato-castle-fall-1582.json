@@ -1,0 +1,39 @@
+{
+  "id": "takato-castle-fall-1582",
+  "entity": "place:takato",
+  "predicate": "castle-fall",
+  "value": "織田信忠が信濃高遠城を攻め、この日、城を落とし、守将の仁科盛信を斬った。",
+  "validYears": [
+    1582,
+    1582
+  ],
+  "source": "hiDainihonshiryoKobun",
+  "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+  "locator": "綱文：和暦 天正10年3月2日 第1条（区分 史料綜覧、編10・冊911（データベースの表示値）、326頁）",
+  "gameBindings": [
+    "TK.HIST:高遠城の戦い",
+    "node:takato"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-09",
+  "uncertainty": "綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。",
+  "linkedEntities": [
+    "place:takato",
+    "person:織田信忠"
+  ],
+  "eventRelation": "castle-fall",
+  "datePrecision": "day",
+  "eventTime": {
+    "kind": "dated-event",
+    "date": [
+      1582,
+      3,
+      2
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": false,
+    "precision": "day"
+  },
+  "eventScope": "綱文が掲げる日付。天正10年3月2日はゲーム共通の暦表で1582年3月25日。最終年表の高遠城の戦い（訂正モジュールの適用後。旧暦1582年3月2日、1582年3月25日）は一致する。落城と盛信の死の日。甲州征伐の全体には広げない。仁科盛信は人物の ID が無いので結ばない。"
+}

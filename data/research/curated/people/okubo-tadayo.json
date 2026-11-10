@@ -1,0 +1,26 @@
+{
+  "id": "person:okubo-tadayo",
+  "name": "大久保忠世",
+  "gameNames": [
+    "大久保忠世"
+  ],
+  "authorityIds": [
+    "wikidata:Q869401"
+  ],
+  "authorityEvidence": {
+    "scope": "person-identity",
+    "checked": "2026-11-09",
+    "wikidataRevision": 2417722604,
+    "snapshot": "data/research/source-notes/appear-authority-batch-1.json",
+    "sourceNote": "data/research/source-notes/appear-authority-batch-1.json",
+    "note": "data/research/source-notes/appear-authority-batch-1.md",
+    "identityChecks": [
+      "小田原市の本文が大久保忠世を大久保忠員の長男として天文元年（1532）に生まれ、天正18年（1590）に小田原城主となったとする",
+      "Wikidata Q869401の日本語主名が大久保忠世で、P569の年が1532"
+    ],
+    "basis": "人物の同定のみ。原本にある生没日・所在・所領・関係の時期は新たな史実命題へ採用しない。",
+    "sourceIds": [
+      "odawaraTadayoIdentity"
+    ]
+  }
+}

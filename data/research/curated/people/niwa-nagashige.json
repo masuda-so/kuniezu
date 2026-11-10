@@ -1,0 +1,26 @@
+{
+  "id": "person:niwa-nagashige",
+  "name": "丹羽長重",
+  "gameNames": [
+    "丹羽長重"
+  ],
+  "authorityIds": [
+    "wikidata:Q909763"
+  ],
+  "authorityEvidence": {
+    "scope": "person-identity",
+    "checked": "2026-11-09",
+    "wikidataRevision": 2556827356,
+    "snapshot": "data/research/source-notes/appear-authority-batch-1.json",
+    "sourceNote": "data/research/source-notes/appear-authority-batch-1.json",
+    "note": "data/research/source-notes/appear-authority-batch-1.md",
+    "identityChecks": [
+      "白河市の本文が丹羽長重を丹羽長秀の嫡子とし、寛永14年（1637）閏3月4日に江戸で没、享年67とする",
+      "Wikidata Q909763の日本語主名が丹羽長重で、P570の年が1637、P569の年が1571（享年67の数えと合う）"
+    ],
+    "basis": "人物の同定のみ。原本にある生没日・所在・所領・関係の時期は新たな史実命題へ採用しない。",
+    "sourceIds": [
+      "shirakawaNagashigeIdentity"
+    ]
+  }
+}

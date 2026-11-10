@@ -1,0 +1,15 @@
+{
+  "id": "identity:chungju-site",
+  "relation": "represented-by",
+  "things": [
+    "place:chungju",
+    "node:chungju"
+  ],
+  "basis": "ゲームの拠点 node:chungju は、台帳の場所 place:chungju（忠州）を地図の上で代表する実装上の拠点。台帳の場所の根拠は命題 chungju-battle-1592。同じ場所だという史料上の主張ではない。",
+  "source": "hiDainihonshiryoKobun",
+  "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+  "locator": "綱文：和暦 文禄元年4月27日 第1条（区分 史料綜覧、編11・冊912（データベースの表示値）、354頁）",
+  "checked": "2026-11-09",
+  "status": "verified-in-specified-scope",
+  "uncertainty": "代表の関係は実装上の対応で、拠点の座標は史料で確かめた位置ではない。"
+}

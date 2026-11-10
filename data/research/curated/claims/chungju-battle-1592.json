@@ -1,0 +1,39 @@
+{
+  "id": "chungju-battle-1592",
+  "entity": "place:chungju",
+  "predicate": "military-event",
+  "value": "小西行長が忠清道の忠州に至り、都巡辺使の申砬と戦って破った。",
+  "validYears": [
+    1592,
+    1592
+  ],
+  "datePrecision": "day",
+  "source": "hiDainihonshiryoKobun",
+  "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+  "locator": "綱文：和暦 文禄元年4月27日 第1条（区分 史料綜覧、編11・冊912（データベースの表示値）、354頁）",
+  "gameBindings": [
+    "TK.HIST:忠州の戦い",
+    "node:chungju"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-09",
+  "uncertainty": "綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。",
+  "linkedEntities": [
+    "place:chungju",
+    "person:小西行長"
+  ],
+  "eventTime": {
+    "kind": "dated-event",
+    "date": [
+      1592,
+      4,
+      27
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": false,
+    "precision": "day"
+  },
+  "eventRelation": "military-event",
+  "eventScope": "綱文が掲げる日付。文禄元年4月27日はゲーム共通の暦表で1592年6月7日。最終年表の忠州の戦い（旧暦1592年4月27日、1592年6月7日）は一致する。合戦の日。朝鮮の地名は、日本に関わる出来事として記録する（地図の範囲とは別）。"
+}

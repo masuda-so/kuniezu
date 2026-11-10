@@ -1,0 +1,39 @@
+{
+  "id": "hachigata-handover-1590",
+  "entity": "place:hachigata-castle",
+  "predicate": "castle-handover",
+  "value": "前田利家・上杉景勝らに武蔵鉢形城を囲まれていた北条氏邦が、この日、城を明け渡して降った。",
+  "validYears": [
+    1590,
+    1590
+  ],
+  "source": "hiDainihonshiryoKobun",
+  "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+  "locator": "綱文：和暦 天正18年6月14日 第3条（区分 史料綜覧、編11・冊912（データベースの表示値）、293頁）",
+  "gameBindings": [
+    "TK.HIST:鉢形城の開城",
+    "node:hachigata"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-09",
+  "uncertainty": "綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。",
+  "linkedEntities": [
+    "place:hachigata-castle",
+    "person:北条氏邦"
+  ],
+  "eventRelation": "castle-handover",
+  "datePrecision": "day",
+  "eventTime": {
+    "kind": "dated-event",
+    "date": [
+      1590,
+      6,
+      14
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": false,
+    "precision": "day"
+  },
+  "eventScope": "綱文が掲げる日付。天正18年6月14日はゲーム共通の暦表で1590年7月15日。最終年表の鉢形城の開城（訂正モジュールの適用後。旧暦1590年6月14日、1590年7月15日）は一致する。明け渡しと降伏の日。包囲は「是より先」で、前田利家・上杉景勝はこの日の当事者として結ばない。"
+}

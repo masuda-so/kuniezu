@@ -4,7 +4,11 @@
 
 ## Overview
 
-A map game set in Japan and Korea between 1560 and 1615. It runs as plain HTML and
+A map game depicting Japanese history. The next major update will extend its
+period from Nobunaga’s birth in 1534 to the settlement after the Osaka campaign
+in 1615. The earliest implemented scenario currently starts in 1560; a 1534
+start is not yet available. Korean events remain in the chronology and individual
+battle maps. It runs as plain HTML and
 JavaScript (only the map's served files are generated from the source map). Development currently prioritizes observation of
 recorded history; free sieges and non-historical routes are on hold.
 
@@ -209,9 +213,9 @@ It holds every
 current input record and keeps source-verified records apart from the unverified
 inventory of what the game implements (`docs/architecture/history-rdb.md`).
 
-Agents may start and stop the server only on ports the user has started before
-(8000 and 8001), and never start it on any other port. Verification connects to an
-already running `http://localhost:8000/index.html`. The output folder for check
+Agents may start and stop the server only at `127.0.0.1:8000`. Port 8001 and all
+other ports must not be started or used. Verification connects to an
+already running `http://127.0.0.1:8000/index.html`. The output folder for check
 results can be set with `GAME_TEST_OUTPUT`.
 
 The basic check is the command below. See

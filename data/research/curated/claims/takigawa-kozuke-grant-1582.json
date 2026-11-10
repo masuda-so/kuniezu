@@ -1,0 +1,38 @@
+{
+  "id": "takigawa-kozuke-grant-1582",
+  "entity": "person:滝川一益",
+  "predicate": "territorial-transfer",
+  "value": "信長が上野と信濃の二郡を滝川一益に与え、関東を鎮めさせた。",
+  "validYears": [
+    1582,
+    1582
+  ],
+  "datePrecision": "day",
+  "source": "hiDainihonshiryoKobun",
+  "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+  "locator": "綱文：和暦 天正10年3月23日 第1条（区分 史料綜覧、編10・冊911（データベースの表示値）、331頁）",
+  "gameBindings": [
+    "TK.HIST:1582-4-5"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-09",
+  "uncertainty": "綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。",
+  "linkedEntities": [
+    "person:滝川一益",
+    "person:oda-nobunaga"
+  ],
+  "eventTime": {
+    "kind": "dated-event",
+    "date": [
+      1582,
+      3,
+      23
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": false,
+    "precision": "day"
+  },
+  "eventRelation": "territorial-transfer",
+  "eventScope": "綱文が掲げる日付。天正10年3月23日はゲーム共通の暦表で1582年4月15日。最終年表の題名なしの出来事（旧暦1582年3月13日、1582年4月5日）は綱文より10日早い。給与の日。続く一益の箕輪城から厩橋城への移りは綱文が「尋で」と書くだけなので日付にしない。"
+}

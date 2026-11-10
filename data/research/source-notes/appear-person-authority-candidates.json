@@ -1,0 +1,4228 @@
+{
+ "status": "identity-candidates-not-adopted",
+ "scope": "年表の登場（appear）の人物のうち、curated/people に典拠の無い人。名前の検索とゲームの生年の一致だけで、同定ではない。",
+ "people": 118,
+ "counts": {
+  "one-candidate-with-matching-birth-year": 93,
+  "no-candidate-with-matching-birth-year": 25
+ },
+ "requests": [
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbsearchentities&search=%E6%B2%B3%E5%B0%BB%E7%A7%80%E9%9A%86&language=ja&uselang=ja&type=item&limit=7&format=json&maxlag=5",
+   "retrievedAt": "2026-11-09T11:33:45.821Z"
+  },
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q6379555&props=info%7Clabels%7Cdescriptions%7Cclaims&languages=ja&format=json&maxlag=5",
+   "retrievedAt": "2026-11-09T11:33:46.168Z"
+  },
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbsearchentities&search=%E6%B0%8F%E5%AE%B6%E5%AE%88%E6%A3%9F&language=ja&uselang=ja&type=item&limit=7&format=json&maxlag=5",
+   "retrievedAt": "2026-11-09T11:33:46.565Z"
+  },
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q11128769&props=info%7Clabels%7Cdescriptions%7Cclaims&languages=ja&format=json&maxlag=5",
+   "retrievedAt": "2026-11-09T11:33:46.924Z"
+  },
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbsearchentities&search=%E9%AC%BC%E5%BA%AD%E8%89%AF%E7%9B%B4&language=ja&uselang=ja&type=item&limit=7&format=json&maxlag=5",
+   "retrievedAt": "2026-11-09T11:33:47.368Z"
+  },
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q5363387&props=info%7Clabels%7Cdescriptions%7Cclaims&languages=ja&format=json&maxlag=5",
+   "retrievedAt": "2026-11-09T11:33:47.736Z"
+  },
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbsearchentities&search=%E4%BD%90%E7%80%AC%E7%A8%AE%E5%B8%B8&language=ja&uselang=ja&type=item&limit=7&format=json&maxlag=5",
+   "retrievedAt": "2026-11-09T11:33:48.135Z"
+  },
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q11383327&props=info%7Clabels%7Cdescriptions%7Cclaims&languages=ja&format=json&maxlag=5",
+   "retrievedAt": "2026-11-09T11:33:48.495Z"
+  },
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbsearchentities&search=%E9%A0%88%E7%94%B0%E7%9B%9B%E7%A7%80&language=ja&uselang=ja&type=item&limit=7&format=json&maxlag=5",
+   "retrievedAt": "2026-11-09T11:33:48.929Z"
+  },
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q11664645&props=info%7Clabels%7Cdescriptions%7Cclaims&languages=ja&format=json&maxlag=5",
+   "retrievedAt": "2026-11-09T11:33:49.310Z"
+  },
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbsearchentities&search=%E7%99%BD%E6%B2%B3%E7%BE%A9%E8%A6%AA&language=ja&uselang=ja&type=item&limit=7&format=json&maxlag=5",
+   "retrievedAt": "2026-11-09T11:33:49.745Z"
+  },
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q11460059&props=info%7Clabels%7Cdescriptions%7Cclaims&languages=ja&format=json&maxlag=5",
+   "retrievedAt": "2026-11-09T11:33:50.132Z"
+  },
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbsearchentities&search=%E6%96%AF%E6%B3%A2%E8%A9%AE%E7%9B%B4&language=ja&uselang=ja&type=item&limit=7&format=json&maxlag=5",
+   "retrievedAt": "2026-11-09T11:33:50.539Z"
+  },
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q11500879&props=info%7Clabels%7Cdescriptions%7Cclaims&languages=ja&format=json&maxlag=5",
+   "retrievedAt": "2026-11-09T11:33:50.913Z"
+  },
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbsearchentities&search=%E5%8D%97%E9%83%A8%E4%BF%A1%E7%9B%B4&language=ja&uselang=ja&type=item&limit=7&format=json&maxlag=5",
+   "retrievedAt": "2026-11-09T11:33:51.379Z"
+  },
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q3137467&props=info%7Clabels%7Cdescriptions%7Cclaims&languages=ja&format=json&maxlag=5",
+   "retrievedAt": "2026-11-09T11:33:51.982Z"
+  },
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbsearchentities&search=%E5%8C%97%E4%BF%A1%E6%84%9B&language=ja&uselang=ja&type=item&limit=7&format=json&maxlag=5",
+   "retrievedAt": "2026-11-09T11:33:52.442Z"
+  },
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q10902500&props=info%7Clabels%7Cdescriptions%7Cclaims&languages=ja&format=json&maxlag=5",
+   "retrievedAt": "2026-11-09T11:33:52.809Z"
+  },
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbsearchentities&search=%E6%9D%BE%E7%94%B0%E6%86%B2%E7%A7%80&language=ja&uselang=ja&type=item&limit=7&format=json&maxlag=5",
+   "retrievedAt": "2026-11-09T11:33:53.204Z"
+  },
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q10345501&props=info%7Clabels%7Cdescriptions%7Cclaims&languages=ja&format=json&maxlag=5",
+   "retrievedAt": "2026-11-09T11:33:53.562Z"
+  },
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbsearchentities&search=%E6%9D%BF%E9%83%A8%E5%B2%A1%E6%B1%9F%E9%9B%AA%E6%96%8E&language=ja&uselang=ja&type=item&limit=7&format=json&maxlag=5",
+   "retrievedAt": "2026-11-09T11:33:53.961Z"
+  },
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q11532725&props=info%7Clabels%7Cdescriptions%7Cclaims&languages=ja&format=json&maxlag=5",
+   "retrievedAt": "2026-11-09T11:33:54.451Z"
+  },
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbsearchentities&search=%E7%9F%A2%E6%B2%A2%E9%A0%BC%E7%B6%B1&language=ja&uselang=ja&type=item&limit=7&format=json&maxlag=5",
+   "retrievedAt": "2026-11-09T11:33:54.854Z"
+  },
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q10950293&props=info%7Clabels%7Cdescriptions%7Cclaims&languages=ja&format=json&maxlag=5",
+   "retrievedAt": "2026-11-09T11:33:55.270Z"
+  },
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbsearchentities&search=%E8%8A%B3%E8%B3%80%E9%AB%98%E7%B6%99&language=ja&uselang=ja&type=item&limit=7&format=json&maxlag=5",
+   "retrievedAt": "2026-11-09T11:33:55.641Z"
+  },
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q11615854&props=info%7Clabels%7Cdescriptions%7Cclaims&languages=ja&format=json&maxlag=5",
+   "retrievedAt": "2026-11-09T11:33:55.986Z"
+  },
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbsearchentities&search=%E5%92%8C%E7%94%B0%E6%98%AD%E7%82%BA&language=ja&uselang=ja&type=item&limit=7&format=json&maxlag=5",
+   "retrievedAt": "2026-11-09T11:33:56.416Z"
+  },
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q11418027&props=info%7Clabels%7Cdescriptions%7Cclaims&languages=ja&format=json&maxlag=5",
+   "retrievedAt": "2026-11-09T11:33:56.782Z"
+  },
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbsearchentities&search=%E9%87%8C%E8%A6%8B%E7%BE%A9%E9%A0%BC&language=ja&uselang=ja&type=item&limit=7&format=json&maxlag=5",
+   "retrievedAt": "2026-11-09T11:33:57.188Z"
+  },
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q11644669&props=info%7Clabels%7Cdescriptions%7Cclaims&languages=ja&format=json&maxlag=5",
+   "retrievedAt": "2026-11-09T11:33:57.631Z"
+  },
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbsearchentities&search=%E4%B8%8A%E6%9D%A1%E6%94%BF%E7%B9%81&language=ja&uselang=ja&type=item&limit=7&format=json&maxlag=5",
+   "retrievedAt": "2026-11-09T11:33:58.076Z"
+  },
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q6127646&props=info%7Clabels%7Cdescriptions%7Cclaims&languages=ja&format=json&maxlag=5",
+   "retrievedAt": "2026-11-09T11:33:58.459Z"
+  },
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbsearchentities&search=%E9%A0%88%E7%94%B0%E6%BA%80%E8%A6%AA&language=ja&uselang=ja&type=item&limit=7&format=json&maxlag=5",
+   "retrievedAt": "2026-11-09T11:33:58.870Z"
+  },
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q11664642&props=info%7Clabels%7Cdescriptions%7Cclaims&languages=ja&format=json&maxlag=5",
+   "retrievedAt": "2026-11-09T11:33:59.241Z"
+  },
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbsearchentities&search=%E5%B9%B3%E5%B2%A9%E8%A6%AA%E5%90%89&language=ja&uselang=ja&type=item&limit=7&format=json&maxlag=5",
+   "retrievedAt": "2026-11-09T11:33:59.610Z"
+  },
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q849070&props=info%7Clabels%7Cdescriptions%7Cclaims&languages=ja&format=json&maxlag=5",
+   "retrievedAt": "2026-11-09T11:34:00.191Z"
+  },
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbsearchentities&search=%E8%8F%85%E6%B2%BC%E5%AE%9A%E5%88%A9&language=ja&uselang=ja&type=item&limit=7&format=json&maxlag=5",
+   "retrievedAt": "2026-11-09T11:34:00.673Z"
+  },
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q11619292&props=info%7Clabels%7Cdescriptions%7Cclaims&languages=ja&format=json&maxlag=5",
+   "retrievedAt": "2026-11-09T11:34:01.052Z"
+  },
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbsearchentities&search=%E5%A4%A7%E4%B9%85%E4%BF%9D%E5%BF%A0%E4%B8%96&language=ja&uselang=ja&type=item&limit=7&format=json&maxlag=5",
+   "retrievedAt": "2026-11-09T11:34:01.436Z"
+  },
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q869401&props=info%7Clabels%7Cdescriptions%7Cclaims&languages=ja&format=json&maxlag=5",
+   "retrievedAt": "2026-11-09T11:34:02.020Z"
+  },
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbsearchentities&search=%E7%9F%B3%E5%B7%9D%E5%AE%B6%E6%88%90&language=ja&uselang=ja&type=item&limit=7&format=json&maxlag=5",
+   "retrievedAt": "2026-11-09T11:34:02.443Z"
+  },
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q11585771&props=info%7Clabels%7Cdescriptions%7Cclaims&languages=ja&format=json&maxlag=5",
+   "retrievedAt": "2026-11-09T11:34:02.818Z"
+  },
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbsearchentities&search=%E5%A7%89%E5%B0%8F%E8%B7%AF%E8%87%AA%E7%B6%B1&language=ja&uselang=ja&type=item&limit=7&format=json&maxlag=5",
+   "retrievedAt": "2026-11-09T11:34:03.250Z"
+  },
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q10943128&props=info%7Clabels%7Cdescriptions%7Cclaims&languages=ja&format=json&maxlag=5",
+   "retrievedAt": "2026-11-09T11:34:03.639Z"
+  },
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbsearchentities&search=%E5%89%8D%E7%94%B0%E5%AE%89%E5%8B%9D&language=ja&uselang=ja&type=item&limit=7&format=json&maxlag=5",
+   "retrievedAt": "2026-11-09T11:34:04.037Z"
+  },
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q11397525&props=info%7Clabels%7Cdescriptions%7Cclaims&languages=ja&format=json&maxlag=5",
+   "retrievedAt": "2026-11-09T11:34:04.454Z"
+  },
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbsearchentities&search=%E5%A5%A5%E6%9D%91%E6%B0%B8%E7%A6%8F&language=ja&uselang=ja&type=item&limit=7&format=json&maxlag=5",
+   "retrievedAt": "2026-11-09T11:34:04.891Z"
+  },
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q10942615&props=info%7Clabels%7Cdescriptions%7Cclaims&languages=ja&format=json&maxlag=5",
+   "retrievedAt": "2026-11-09T11:34:05.241Z"
+  },
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbsearchentities&search=%E8%9C%82%E5%B1%8B%E9%A0%BC%E9%9A%86&language=ja&uselang=ja&type=item&limit=7&format=json&maxlag=5",
+   "retrievedAt": "2026-11-09T11:34:05.667Z"
+  },
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q5637100&props=info%7Clabels%7Cdescriptions%7Cclaims&languages=ja&format=json&maxlag=5",
+   "retrievedAt": "2026-11-09T11:34:06.077Z"
+  },
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbsearchentities&search=%E5%B1%B1%E5%86%85%E4%B8%80%E8%B1%8A&language=ja&uselang=ja&type=item&limit=7&format=json&maxlag=5",
+   "retrievedAt": "2026-11-09T11:34:06.534Z"
+  },
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q1315878&props=info%7Clabels%7Cdescriptions%7Cclaims&languages=ja&format=json&maxlag=5",
+   "retrievedAt": "2026-11-09T11:34:07.173Z"
+  },
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbsearchentities&search=%E5%AE%89%E5%9B%BD%E5%AF%BA%E6%81%B5%E7%93%8A&language=ja&uselang=ja&type=item&limit=7&format=json&maxlag=5",
+   "retrievedAt": "2026-11-09T11:34:07.543Z"
+  },
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q1151711&props=info%7Clabels%7Cdescriptions%7Cclaims&languages=ja&format=json&maxlag=5",
+   "retrievedAt": "2026-11-09T11:34:07.910Z"
+  },
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbsearchentities&search=%E7%A6%8F%E5%8E%9F%E8%B2%9E%E4%BF%8A&language=ja&uselang=ja&type=item&limit=7&format=json&maxlag=5",
+   "retrievedAt": "2026-11-09T11:34:08.307Z"
+  },
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q10446576&props=info%7Clabels%7Cdescriptions%7Cclaims&languages=ja&format=json&maxlag=5",
+   "retrievedAt": "2026-11-09T11:34:08.787Z"
+  },
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbsearchentities&search=%E5%AE%87%E5%96%9C%E5%A4%9A%E5%BF%A0%E5%AE%B6&language=ja&uselang=ja&type=item&limit=7&format=json&maxlag=5",
+   "retrievedAt": "2026-11-09T11:34:09.219Z"
+  },
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q11449180&props=info%7Clabels%7Cdescriptions%7Cclaims&languages=ja&format=json&maxlag=5",
+   "retrievedAt": "2026-11-09T11:34:09.622Z"
+  },
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbsearchentities&search=%E6%88%B8%E5%B7%9D%E7%A7%80%E5%AE%89&language=ja&uselang=ja&type=item&limit=7&format=json&maxlag=5",
+   "retrievedAt": "2026-11-09T11:34:10.052Z"
+  },
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q11496372&props=info%7Clabels%7Cdescriptions%7Cclaims&languages=ja&format=json&maxlag=5",
+   "retrievedAt": "2026-11-09T11:34:10.424Z"
+  },
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbsearchentities&search=%E4%B9%85%E6%AD%A6%E8%A6%AA%E7%9B%B4&language=ja&uselang=ja&type=item&limit=7&format=json&maxlag=5",
+   "retrievedAt": "2026-11-09T11:34:10.833Z"
+  },
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q11369456&props=info%7Clabels%7Cdescriptions%7Cclaims&languages=ja&format=json&maxlag=5",
+   "retrievedAt": "2026-11-09T11:34:11.205Z"
+  },
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbsearchentities&search=%E8%B0%B7%E5%BF%A0%E6%BE%84&language=ja&uselang=ja&type=item&limit=7&format=json&maxlag=5",
+   "retrievedAt": "2026-11-09T11:34:11.610Z"
+  },
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q11632918&props=info%7Clabels%7Cdescriptions%7Cclaims&languages=ja&format=json&maxlag=5",
+   "retrievedAt": "2026-11-09T11:34:12.019Z"
+  },
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbsearchentities&search=%E9%BE%8D%E9%80%A0%E5%AF%BA%E5%AE%B6%E6%99%B4&language=ja&uselang=ja&type=item&limit=7&format=json&maxlag=5",
+   "retrievedAt": "2026-11-09T11:34:12.424Z"
+  },
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q11679391&props=info%7Clabels%7Cdescriptions%7Cclaims&languages=ja&format=json&maxlag=5",
+   "retrievedAt": "2026-11-09T11:34:12.777Z"
+  },
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbsearchentities&search=%E6%B7%B1%E6%B0%B4%E9%95%B7%E6%99%BA&language=ja&uselang=ja&type=item&limit=7&format=json&maxlag=5",
+   "retrievedAt": "2026-11-09T11:34:13.190Z"
+  },
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q11153283&props=info%7Clabels%7Cdescriptions%7Cclaims&languages=ja&format=json&maxlag=5",
+   "retrievedAt": "2026-11-09T11:34:13.610Z"
+  },
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbsearchentities&search=%E6%96%B0%E7%B4%8D%E5%BF%A0%E5%85%83&language=ja&uselang=ja&type=item&limit=7&format=json&maxlag=5",
+   "retrievedAt": "2026-11-09T11:34:14.005Z"
+  },
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q7034472&props=info%7Clabels%7Cdescriptions%7Cclaims&languages=ja&format=json&maxlag=5",
+   "retrievedAt": "2026-11-09T11:34:14.394Z"
+  },
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbsearchentities&search=%E4%B8%8A%E4%BA%95%E8%A6%9A%E5%85%BC&language=ja&uselang=ja&type=item&limit=7&format=json&maxlag=5",
+   "retrievedAt": "2026-11-09T11:34:14.836Z"
+  },
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q7903777%7CQ11358444&props=info%7Clabels%7Cdescriptions%7Cclaims&languages=ja&format=json&maxlag=5",
+   "retrievedAt": "2026-11-09T11:34:15.231Z"
+  },
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbsearchentities&search=%E7%9B%B8%E9%A6%AC%E7%BE%A9%E8%83%A4&language=ja&uselang=ja&type=item&limit=7&format=json&maxlag=5",
+   "retrievedAt": "2026-11-09T11:34:15.648Z"
+  },
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q8514636%7CQ7559115%7CQ11582533%7CQ11582531&props=info%7Clabels%7Cdescriptions%7Cclaims&languages=ja&format=json&maxlag=5",
+   "retrievedAt": "2026-11-09T11:34:16.254Z"
+  },
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbsearchentities&search=%E5%A4%A7%E5%B4%8E%E7%BE%A9%E9%9A%86&language=ja&uselang=ja&type=item&limit=7&format=json&maxlag=5",
+   "retrievedAt": "2026-11-09T11:34:16.679Z"
+  },
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q10935206&props=info%7Clabels%7Cdescriptions%7Cclaims&languages=ja&format=json&maxlag=5",
+   "retrievedAt": "2026-11-09T11:34:17.045Z"
+  },
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbsearchentities&search=%E6%A2%B6%E5%8E%9F%E6%94%BF%E6%99%AF&language=ja&uselang=ja&type=item&limit=7&format=json&maxlag=5",
+   "retrievedAt": "2026-11-09T11:34:17.422Z"
+  },
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q11070343&props=info%7Clabels%7Cdescriptions%7Cclaims&languages=ja&format=json&maxlag=5",
+   "retrievedAt": "2026-11-09T11:34:17.780Z"
+  },
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbsearchentities&search=%E5%90%89%E5%B7%9D%E5%85%83%E9%95%B7&language=ja&uselang=ja&type=item&limit=7&format=json&maxlag=5",
+   "retrievedAt": "2026-11-09T11:34:18.166Z"
+  },
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q11412944&props=info%7Clabels%7Cdescriptions%7Cclaims&languages=ja&format=json&maxlag=5",
+   "retrievedAt": "2026-11-09T11:34:18.539Z"
+  },
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbsearchentities&search=%E5%A0%80%E5%86%85%E6%B0%8F%E5%96%84&language=ja&uselang=ja&type=item&limit=7&format=json&maxlag=5",
+   "retrievedAt": "2026-11-09T11:34:18.972Z"
+  },
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q11427294&props=info%7Clabels%7Cdescriptions%7Cclaims&languages=ja&format=json&maxlag=5",
+   "retrievedAt": "2026-11-09T11:34:19.328Z"
+  },
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbsearchentities&search=%E5%8D%97%E6%9D%A1%E5%85%83%E7%B6%9A&language=ja&uselang=ja&type=item&limit=7&format=json&maxlag=5",
+   "retrievedAt": "2026-11-09T11:34:19.746Z"
+  },
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q11407947&props=info%7Clabels%7Cdescriptions%7Cclaims&languages=ja&format=json&maxlag=5",
+   "retrievedAt": "2026-11-09T11:34:20.111Z"
+  },
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbsearchentities&search=%E6%9D%BE%E6%B5%A6%E9%8E%AE%E4%BF%A1&language=ja&uselang=ja&type=item&limit=7&format=json&maxlag=5",
+   "retrievedAt": "2026-11-09T11:34:20.502Z"
+  },
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q3825090%7CQ11531889%7CQ11531888&props=info%7Clabels%7Cdescriptions%7Cclaims&languages=ja&format=json&maxlag=5",
+   "retrievedAt": "2026-11-09T11:34:20.909Z"
+  },
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbsearchentities&search=%E9%81%A0%E5%B1%B1%E7%9B%B4%E6%99%AF&language=ja&uselang=ja&type=item&limit=7&format=json&maxlag=5",
+   "retrievedAt": "2026-11-09T11:34:21.317Z"
+  },
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q11642053%7CQ11642054&props=info%7Clabels%7Cdescriptions%7Cclaims&languages=ja&format=json&maxlag=5",
+   "retrievedAt": "2026-11-09T11:34:21.726Z"
+  },
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbsearchentities&search=%E7%8C%AA%E4%BF%A3%E9%82%A6%E6%86%B2&language=ja&uselang=ja&type=item&limit=7&format=json&maxlag=5",
+   "retrievedAt": "2026-11-09T11:34:22.113Z"
+  },
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q10409875&props=info%7Clabels%7Cdescriptions%7Cclaims&languages=ja&format=json&maxlag=5",
+   "retrievedAt": "2026-11-09T11:34:22.450Z"
+  },
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbsearchentities&search=%E7%94%98%E7%B2%95%E6%99%AF%E7%B6%99&language=ja&uselang=ja&type=item&limit=7&format=json&maxlag=5",
+   "retrievedAt": "2026-11-09T11:34:22.862Z"
+  },
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q4739173&props=info%7Clabels%7Cdescriptions%7Cclaims&languages=ja&format=json&maxlag=5",
+   "retrievedAt": "2026-11-09T11:34:23.253Z"
+  },
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbsearchentities&search=%E8%A5%BF%E5%9C%92%E5%AF%BA%E5%85%AC%E5%BA%83&language=ja&uselang=ja&type=item&limit=7&format=json&maxlag=5",
+   "retrievedAt": "2026-11-09T11:34:23.664Z"
+  },
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q7223176&props=info%7Clabels%7Cdescriptions%7Cclaims&languages=ja&format=json&maxlag=5",
+   "retrievedAt": "2026-11-09T11:34:24.045Z"
+  },
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbsearchentities&search=%E4%B8%89%E6%9D%91%E5%85%83%E8%A6%AA&language=ja&uselang=ja&type=item&limit=7&format=json&maxlag=5",
+   "retrievedAt": "2026-11-09T11:34:24.448Z"
+  },
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q10866150&props=info%7Clabels%7Cdescriptions%7Cclaims&languages=ja&format=json&maxlag=5",
+   "retrievedAt": "2026-11-09T11:34:24.847Z"
+  },
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbsearchentities&search=%E8%82%9D%E4%BB%98%E8%89%AF%E5%85%BC&language=ja&uselang=ja&type=item&limit=7&format=json&maxlag=5",
+   "retrievedAt": "2026-11-09T11:34:25.281Z"
+  },
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q11611491&props=info%7Clabels%7Cdescriptions%7Cclaims&languages=ja&format=json&maxlag=5",
+   "retrievedAt": "2026-11-09T11:34:25.675Z"
+  },
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbsearchentities&search=%E7%95%A0%E5%B1%B1%E7%BE%A9%E7%B6%99&language=ja&uselang=ja&type=item&limit=7&format=json&maxlag=5",
+   "retrievedAt": "2026-11-09T11:34:26.075Z"
+  },
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q847762%7CQ11578688&props=info%7Clabels%7Cdescriptions%7Cclaims&languages=ja&format=json&maxlag=5",
+   "retrievedAt": "2026-11-09T11:34:26.476Z"
+  },
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbsearchentities&search=%E4%BB%99%E7%9F%B3%E7%A7%80%E4%B9%85&language=ja&uselang=ja&type=item&limit=7&format=json&maxlag=5",
+   "retrievedAt": "2026-11-09T11:34:26.901Z"
+  },
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q7450595%7CQ135238789&props=info%7Clabels%7Cdescriptions%7Cclaims&languages=ja&format=json&maxlag=5",
+   "retrievedAt": "2026-11-09T11:34:27.504Z"
+  },
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbsearchentities&search=%E9%87%91%E5%AD%90%E5%85%83%E5%AE%85&language=ja&uselang=ja&type=item&limit=7&format=json&maxlag=5",
+   "retrievedAt": "2026-11-09T11:34:27.920Z"
+  },
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q60985157&props=info%7Clabels%7Cdescriptions%7Cclaims&languages=ja&format=json&maxlag=5",
+   "retrievedAt": "2026-11-09T11:34:28.314Z"
+  },
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbsearchentities&search=%E5%A4%A7%E5%AE%9D%E5%AF%BA%E7%BE%A9%E8%88%88&language=ja&uselang=ja&type=item&limit=7&format=json&maxlag=5",
+   "retrievedAt": "2026-11-09T11:34:28.760Z"
+  },
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q11434356&props=info%7Clabels%7Cdescriptions%7Cclaims&languages=ja&format=json&maxlag=5",
+   "retrievedAt": "2026-11-09T11:34:29.110Z"
+  },
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbsearchentities&search=%E5%B2%A9%E5%9F%8E%E8%A6%AA%E9%9A%86&language=ja&uselang=ja&type=item&limit=7&format=json&maxlag=5",
+   "retrievedAt": "2026-11-09T11:34:29.562Z"
+  },
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q11474329%7CQ11474330&props=info%7Clabels%7Cdescriptions%7Cclaims&languages=ja&format=json&maxlag=5",
+   "retrievedAt": "2026-11-09T11:34:30.225Z"
+  },
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbsearchentities&search=%E4%BB%8A%E5%B7%9D%E6%B0%8F%E7%9C%9F&language=ja&uselang=ja&type=item&limit=7&format=json&maxlag=5",
+   "retrievedAt": "2026-11-09T11:34:30.657Z"
+  },
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q3100078&props=info%7Clabels%7Cdescriptions%7Cclaims&languages=ja&format=json&maxlag=5",
+   "retrievedAt": "2026-11-09T11:34:31.302Z"
+  },
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbsearchentities&search=%E6%9C%9D%E6%AF%94%E5%A5%88%E6%B3%B0%E6%9C%9D&language=ja&uselang=ja&type=item&limit=7&format=json&maxlag=5",
+   "retrievedAt": "2026-11-09T11:34:31.739Z"
+  },
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q11092559&props=info%7Clabels%7Cdescriptions%7Cclaims&languages=ja&format=json&maxlag=5",
+   "retrievedAt": "2026-11-09T11:34:32.130Z"
+  },
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbsearchentities&search=%E5%B2%A1%E9%83%A8%E5%85%83%E4%BF%A1&language=ja&uselang=ja&type=item&limit=7&format=json&maxlag=5",
+   "retrievedAt": "2026-11-09T11:34:32.558Z"
+  },
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q1073455%7CQ106056828&props=info%7Clabels%7Cdescriptions%7Cclaims&languages=ja&format=json&maxlag=5",
+   "retrievedAt": "2026-11-09T11:34:33.163Z"
+  },
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbsearchentities&search=%E5%88%A5%E6%89%80%E9%95%B7%E6%B2%BB&language=ja&uselang=ja&type=item&limit=7&format=json&maxlag=5",
+   "retrievedAt": "2026-11-09T11:34:33.599Z"
+  },
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q837435%7CQ136779923&props=info%7Clabels%7Cdescriptions%7Cclaims&languages=ja&format=json&maxlag=5",
+   "retrievedAt": "2026-11-09T11:34:34.207Z"
+  },
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbsearchentities&search=%E6%96%8E%E8%97%A4%E9%BE%8D%E8%88%88&language=ja&uselang=ja&type=item&limit=7&format=json&maxlag=5",
+   "retrievedAt": "2026-11-09T11:34:34.567Z"
+  },
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q2880879&props=info%7Clabels%7Cdescriptions%7Cclaims&languages=ja&format=json&maxlag=5",
+   "retrievedAt": "2026-11-09T11:34:34.934Z"
+  },
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbsearchentities&search=%E8%97%A4%E5%A0%82%E9%AB%98%E8%99%8E&language=ja&uselang=ja&type=item&limit=7&format=json&maxlag=5",
+   "retrievedAt": "2026-11-09T11:34:35.360Z"
+  },
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q1377984&props=info%7Clabels%7Cdescriptions%7Cclaims&languages=ja&format=json&maxlag=5",
+   "retrievedAt": "2026-11-09T11:34:35.971Z"
+  },
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbsearchentities&search=%E8%82%9D%E4%BB%98%E5%85%BC%E4%BA%AE&language=ja&uselang=ja&type=item&limit=7&format=json&maxlag=5",
+   "retrievedAt": "2026-11-09T11:34:36.453Z"
+  },
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q11611470&props=info%7Clabels%7Cdescriptions%7Cclaims&languages=ja&format=json&maxlag=5",
+   "retrievedAt": "2026-11-09T11:34:36.827Z"
+  },
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbsearchentities&search=%E5%B0%BC%E5%AD%90%E5%8B%9D%E4%B9%85&language=ja&uselang=ja&type=item&limit=7&format=json&maxlag=5",
+   "retrievedAt": "2026-11-09T11:34:37.260Z"
+  },
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q837431&props=info%7Clabels%7Cdescriptions%7Cclaims&languages=ja&format=json&maxlag=5",
+   "retrievedAt": "2026-11-09T11:34:37.650Z"
+  },
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbsearchentities&search=%E5%B1%B1%E4%B8%AD%E5%B9%B8%E7%9B%9B&language=ja&uselang=ja&type=item&limit=7&format=json&maxlag=5",
+   "retrievedAt": "2026-11-09T11:34:38.066Z"
+  },
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q8047875%7CQ11466159&props=info%7Clabels%7Cdescriptions%7Cclaims&languages=ja&format=json&maxlag=5",
+   "retrievedAt": "2026-11-09T11:34:38.672Z"
+  },
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbsearchentities&search=%E7%89%87%E5%80%89%E6%99%AF%E7%B6%B1&language=ja&uselang=ja&type=item&limit=7&format=json&maxlag=5",
+   "retrievedAt": "2026-11-09T11:34:39.102Z"
+  },
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q843226&props=info%7Clabels%7Cdescriptions%7Cclaims&languages=ja&format=json&maxlag=5",
+   "retrievedAt": "2026-11-09T11:34:39.737Z"
+  },
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbsearchentities&search=%E5%8D%83%E8%91%89%E9%82%A6%E8%83%A4&language=ja&uselang=ja&type=item&limit=7&format=json&maxlag=5",
+   "retrievedAt": "2026-11-09T11:34:40.179Z"
+  },
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q11406776&props=info%7Clabels%7Cdescriptions%7Cclaims&languages=ja&format=json&maxlag=5",
+   "retrievedAt": "2026-11-09T11:34:40.589Z"
+  },
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbsearchentities&search=%E6%A3%AE%E9%95%B7%E5%8F%AF&language=ja&uselang=ja&type=item&limit=7&format=json&maxlag=5",
+   "retrievedAt": "2026-11-09T11:34:40.982Z"
+  },
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q1071391&props=info%7Clabels%7Cdescriptions%7Cclaims&languages=ja&format=json&maxlag=5",
+   "retrievedAt": "2026-11-09T11:34:41.421Z"
+  },
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbsearchentities&search=%E4%BD%90%E9%87%8E%E6%88%BF%E7%B6%B1&language=ja&uselang=ja&type=item&limit=7&format=json&maxlag=5",
+   "retrievedAt": "2026-11-09T11:34:41.827Z"
+  },
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q11385028&props=info%7Clabels%7Cdescriptions%7Cclaims&languages=ja&format=json&maxlag=5",
+   "retrievedAt": "2026-11-09T11:34:42.211Z"
+  },
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbsearchentities&search=%E5%8C%97%E6%9D%A1%E6%B0%8F%E5%8B%9D&language=ja&uselang=ja&type=item&limit=7&format=json&maxlag=5",
+   "retrievedAt": "2026-11-09T11:34:42.607Z"
+  },
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q11070019&props=info%7Clabels%7Cdescriptions%7Cclaims&languages=ja&format=json&maxlag=5",
+   "retrievedAt": "2026-11-09T11:34:42.960Z"
+  },
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbsearchentities&search=%E5%A4%A7%E8%B0%B7%E5%90%89%E7%B6%99&language=ja&uselang=ja&type=item&limit=7&format=json&maxlag=5",
+   "retrievedAt": "2026-11-09T11:34:43.344Z"
+  },
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q386265&props=info%7Clabels%7Cdescriptions%7Cclaims&languages=ja&format=json&maxlag=5",
+   "retrievedAt": "2026-11-09T11:34:43.721Z"
+  },
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbsearchentities&search=%E4%BC%8A%E6%9D%B1%E7%A5%90%E5%85%B5&language=ja&uselang=ja&type=item&limit=7&format=json&maxlag=5",
+   "retrievedAt": "2026-11-09T11:34:44.153Z"
+  },
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q8014919&props=info%7Clabels%7Cdescriptions%7Cclaims&languages=ja&format=json&maxlag=5",
+   "retrievedAt": "2026-11-09T11:34:44.506Z"
+  },
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbsearchentities&search=%E4%BD%90%E9%87%8E%E5%AE%97%E7%B6%B1&language=ja&uselang=ja&type=item&limit=7&format=json&maxlag=5",
+   "retrievedAt": "2026-11-09T11:34:44.882Z"
+  },
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q11384993%7CQ135236738&props=info%7Clabels%7Cdescriptions%7Cclaims&languages=ja&format=json&maxlag=5",
+   "retrievedAt": "2026-11-09T11:34:45.294Z"
+  },
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbsearchentities&search=%E7%9B%B4%E6%B1%9F%E5%85%BC%E7%B6%9A&language=ja&uselang=ja&type=item&limit=7&format=json&maxlag=5",
+   "retrievedAt": "2026-11-09T11:34:45.754Z"
+  },
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q1348611&props=info%7Clabels%7Cdescriptions%7Cclaims&languages=ja&format=json&maxlag=5",
+   "retrievedAt": "2026-11-09T11:34:46.383Z"
+  },
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbsearchentities&search=%E8%98%86%E5%90%8D%E7%9B%9B%E9%9A%86&language=ja&uselang=ja&type=item&limit=7&format=json&maxlag=5",
+   "retrievedAt": "2026-11-09T11:34:46.809Z"
+  },
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q4805099&props=info%7Clabels%7Cdescriptions%7Cclaims&languages=ja&format=json&maxlag=5",
+   "retrievedAt": "2026-11-09T11:34:47.467Z"
+  },
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbsearchentities&search=%E6%88%B8%E6%B2%A2%E7%9B%9B%E5%AE%89&language=ja&uselang=ja&type=item&limit=7&format=json&maxlag=5",
+   "retrievedAt": "2026-11-09T11:34:47.846Z"
+  },
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q10297028&props=info%7Clabels%7Cdescriptions%7Cclaims&languages=ja&format=json&maxlag=5",
+   "retrievedAt": "2026-11-09T11:34:48.186Z"
+  },
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbsearchentities&search=%E5%AE%87%E9%83%BD%E5%AE%AE%E5%9B%BD%E7%B6%B1&language=ja&uselang=ja&type=item&limit=7&format=json&maxlag=5",
+   "retrievedAt": "2026-11-09T11:34:48.615Z"
+  },
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q11449719&props=info%7Clabels%7Cdescriptions%7Cclaims&languages=ja&format=json&maxlag=5",
+   "retrievedAt": "2026-11-09T11:34:48.963Z"
+  },
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbsearchentities&search=%E6%9C%89%E9%A6%AC%E6%99%B4%E4%BF%A1&language=ja&uselang=ja&type=item&limit=7&format=json&maxlag=5",
+   "retrievedAt": "2026-11-09T11:34:49.411Z"
+  },
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q1197394&props=info%7Clabels%7Cdescriptions%7Cclaims&languages=ja&format=json&maxlag=5",
+   "retrievedAt": "2026-11-09T11:34:50.001Z"
+  },
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbsearchentities&search=%E5%8D%81%E6%B2%B3%E5%AD%98%E4%BF%9D&language=ja&uselang=ja&type=item&limit=7&format=json&maxlag=5",
+   "retrievedAt": "2026-11-09T11:34:50.426Z"
+  },
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q10904662&props=info%7Clabels%7Cdescriptions%7Cclaims&languages=ja&format=json&maxlag=5",
+   "retrievedAt": "2026-11-09T11:34:50.826Z"
+  },
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbsearchentities&search=%E5%B2%A9%E5%9F%8E%E5%B8%B8%E9%9A%86&language=ja&uselang=ja&type=item&limit=7&format=json&maxlag=5",
+   "retrievedAt": "2026-11-09T11:34:51.278Z"
+  },
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q11474308%7CQ11474309%7CQ106774403%7CQ106774364&props=info%7Clabels%7Cdescriptions%7Cclaims&languages=ja&format=json&maxlag=5",
+   "retrievedAt": "2026-11-09T11:34:51.933Z"
+  },
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbsearchentities&search=%E7%89%87%E6%A1%90%E4%B8%94%E5%85%83&language=ja&uselang=ja&type=item&limit=7&format=json&maxlag=5",
+   "retrievedAt": "2026-11-09T11:34:52.343Z"
+  },
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q1882775&props=info%7Clabels%7Cdescriptions%7Cclaims&languages=ja&format=json&maxlag=5",
+   "retrievedAt": "2026-11-09T11:34:52.938Z"
+  },
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbsearchentities&search=%E5%90%89%E8%89%AF%E8%A6%AA%E5%AE%9F&language=ja&uselang=ja&type=item&limit=7&format=json&maxlag=5",
+   "retrievedAt": "2026-11-09T11:34:53.375Z"
+  },
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q11365410&props=info%7Clabels%7Cdescriptions%7Cclaims&languages=ja&format=json&maxlag=5",
+   "retrievedAt": "2026-11-09T11:34:53.799Z"
+  },
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbsearchentities&search=%E5%90%89%E5%B7%9D%E5%BA%83%E5%AE%B6&language=ja&uselang=ja&type=item&limit=7&format=json&maxlag=5",
+   "retrievedAt": "2026-11-09T11:34:54.253Z"
+  },
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q1049766&props=info%7Clabels%7Cdescriptions%7Cclaims&languages=ja&format=json&maxlag=5",
+   "retrievedAt": "2026-11-09T11:34:54.873Z"
+  },
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbsearchentities&search=%E7%94%B1%E8%89%AF%E5%9B%BD%E7%B9%81&language=ja&uselang=ja&type=item&limit=7&format=json&maxlag=5",
+   "retrievedAt": "2026-11-09T11:34:55.268Z"
+  },
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q11577615&props=info%7Clabels%7Cdescriptions%7Cclaims&languages=ja&format=json&maxlag=5",
+   "retrievedAt": "2026-11-09T11:34:55.636Z"
+  },
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbsearchentities&search=%E6%B2%B3%E9%87%8E%E9%80%9A%E7%9B%B4&language=ja&uselang=ja&type=item&limit=7&format=json&maxlag=5",
+   "retrievedAt": "2026-11-09T11:34:56.042Z"
+  },
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q11554271%7CQ17228446%7CQ17219022%7CQ11554209%7CQ11554277&props=info%7Clabels%7Cdescriptions%7Cclaims&languages=ja&format=json&maxlag=5",
+   "retrievedAt": "2026-11-09T11:34:56.701Z"
+  },
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbsearchentities&search=%E8%82%9D%E4%BB%98%E5%85%BC%E8%AD%B7&language=ja&uselang=ja&type=item&limit=7&format=json&maxlag=5",
+   "retrievedAt": "2026-11-09T11:34:57.129Z"
+  },
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q11611483&props=info%7Clabels%7Cdescriptions%7Cclaims&languages=ja&format=json&maxlag=5",
+   "retrievedAt": "2026-11-09T11:34:57.514Z"
+  },
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbsearchentities&search=%E5%B0%8F%E9%87%8E%E5%AF%BA%E7%BE%A9%E9%81%93&language=ja&uselang=ja&type=item&limit=7&format=json&maxlag=5",
+   "retrievedAt": "2026-11-09T11:34:57.929Z"
+  },
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q7094442&props=info%7Clabels%7Cdescriptions%7Cclaims&languages=ja&format=json&maxlag=5",
+   "retrievedAt": "2026-11-09T11:34:58.284Z"
+  },
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbsearchentities&search=%E5%BF%97%E8%B3%80%E8%A6%AA%E6%AC%A1&language=ja&uselang=ja&type=item&limit=7&format=json&maxlag=5",
+   "retrievedAt": "2026-11-09T11:34:58.694Z"
+  },
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q11491190&props=info%7Clabels%7Cdescriptions%7Cclaims&languages=ja&format=json&maxlag=5",
+   "retrievedAt": "2026-11-09T11:34:59.097Z"
+  },
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbsearchentities&search=%E5%A4%A9%E8%8D%89%E7%A8%AE%E5%85%83&language=ja&uselang=ja&type=item&limit=7&format=json&maxlag=5",
+   "retrievedAt": "2026-11-09T11:34:59.644Z"
+  },
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q11443552&props=info%7Clabels%7Cdescriptions%7Cclaims&languages=ja&format=json&maxlag=5",
+   "retrievedAt": "2026-11-09T11:35:00.038Z"
+  },
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbsearchentities&search=%E6%9C%AC%E5%A4%9A%E6%AD%A3%E4%BF%A1&language=ja&uselang=ja&type=item&limit=7&format=json&maxlag=5",
+   "retrievedAt": "2026-11-09T11:35:00.463Z"
+  },
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q845447&props=info%7Clabels%7Cdescriptions%7Cclaims&languages=ja&format=json&maxlag=5",
+   "retrievedAt": "2026-11-09T11:35:00.877Z"
+  },
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbsearchentities&search=%E7%B9%94%E7%94%B0%E7%A7%80%E4%BF%A1&language=ja&uselang=ja&type=item&limit=7&format=json&maxlag=5",
+   "retrievedAt": "2026-11-09T11:35:01.283Z"
+  },
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q1187442&props=info%7Clabels%7Cdescriptions%7Cclaims&languages=ja&format=json&maxlag=5",
+   "retrievedAt": "2026-11-09T11:35:01.919Z"
+  },
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbsearchentities&search=%E5%B0%8F%E7%AC%A0%E5%8E%9F%E8%B2%9E%E6%85%B6&language=ja&uselang=ja&type=item&limit=7&format=json&maxlag=5",
+   "retrievedAt": "2026-11-09T11:35:02.321Z"
+  },
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q10856562&props=info%7Clabels%7Cdescriptions%7Cclaims&languages=ja&format=json&maxlag=5",
+   "retrievedAt": "2026-11-09T11:35:02.670Z"
+  },
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbsearchentities&search=%E4%BF%9D%E7%A7%91%E6%AD%A3%E7%9B%B4&language=ja&uselang=ja&type=item&limit=7&format=json&maxlag=5",
+   "retrievedAt": "2026-11-09T11:35:03.097Z"
+  },
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q2405649%7CQ108807752%7CQ108807657&props=info%7Clabels%7Cdescriptions%7Cclaims&languages=ja&format=json&maxlag=5",
+   "retrievedAt": "2026-11-09T11:35:03.730Z"
+  },
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbsearchentities&search=%E4%BA%AC%E6%A5%B5%E9%AB%98%E6%AC%A1&language=ja&uselang=ja&type=item&limit=7&format=json&maxlag=5",
+   "retrievedAt": "2026-11-09T11:35:04.197Z"
+  },
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q587980&props=info%7Clabels%7Cdescriptions%7Cclaims&languages=ja&format=json&maxlag=5",
+   "retrievedAt": "2026-11-09T11:35:04.830Z"
+  },
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbsearchentities&search=%E9%82%A3%E9%A0%88%E8%B3%87%E6%99%B4&language=ja&uselang=ja&type=item&limit=7&format=json&maxlag=5",
+   "retrievedAt": "2026-11-09T11:35:05.254Z"
+  },
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q6967760&props=info%7Clabels%7Cdescriptions%7Cclaims&languages=ja&format=json&maxlag=5",
+   "retrievedAt": "2026-11-09T11:35:05.611Z"
+  },
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbsearchentities&search=%E4%BC%8A%E9%81%94%E6%88%90%E5%AE%9F&language=ja&uselang=ja&type=item&limit=7&format=json&maxlag=5",
+   "retrievedAt": "2026-11-09T11:35:06.049Z"
+  },
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q1038673&props=info%7Clabels%7Cdescriptions%7Cclaims&languages=ja&format=json&maxlag=5",
+   "retrievedAt": "2026-11-09T11:35:06.466Z"
+  },
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbsearchentities&search=%E6%BB%9D%E5%B7%9D%E9%9B%84%E5%88%A9&language=ja&uselang=ja&type=item&limit=7&format=json&maxlag=5",
+   "retrievedAt": "2026-11-09T11:35:06.847Z"
+  },
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q11565172%7CQ135648461&props=info%7Clabels%7Cdescriptions%7Cclaims&languages=ja&format=json&maxlag=5",
+   "retrievedAt": "2026-11-09T11:35:07.476Z"
+  },
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbsearchentities&search=%E6%98%8E%E7%9F%B3%E5%85%A8%E7%99%BB&language=ja&uselang=ja&type=item&limit=7&format=json&maxlag=5",
+   "retrievedAt": "2026-11-09T11:35:07.866Z"
+  },
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q840581&props=info%7Clabels%7Cdescriptions%7Cclaims&languages=ja&format=json&maxlag=5",
+   "retrievedAt": "2026-11-09T11:35:08.249Z"
+  },
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbsearchentities&search=%E8%98%86%E5%90%8D%E4%BA%80%E7%8E%8B%E4%B8%B8&language=ja&uselang=ja&type=item&limit=7&format=json&maxlag=5",
+   "retrievedAt": "2026-11-09T11:35:08.636Z"
+  },
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q11625140&props=info%7Clabels%7Cdescriptions%7Cclaims&languages=ja&format=json&maxlag=5",
+   "retrievedAt": "2026-11-09T11:35:08.990Z"
+  },
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbsearchentities&search=%E4%BD%90%E7%AB%B9%E7%BE%A9%E5%AE%A3&language=ja&uselang=ja&type=item&limit=7&format=json&maxlag=5",
+   "retrievedAt": "2026-11-09T11:35:09.510Z"
+  },
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q1071525%7CQ11383430%7CQ11383431&props=info%7Clabels%7Cdescriptions%7Cclaims&languages=ja&format=json&maxlag=5",
+   "retrievedAt": "2026-11-09T11:35:10.138Z"
+  },
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbsearchentities&search=%E6%A3%AE%E5%BF%A0%E6%94%BF&language=ja&uselang=ja&type=item&limit=7&format=json&maxlag=5",
+   "retrievedAt": "2026-11-09T11:35:10.615Z"
+  },
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q11117105&props=info%7Clabels%7Cdescriptions%7Cclaims&languages=ja&format=json&maxlag=5",
+   "retrievedAt": "2026-11-09T11:35:11.253Z"
+  },
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbsearchentities&search=%E4%B8%B9%E7%BE%BD%E9%95%B7%E9%87%8D&language=ja&uselang=ja&type=item&limit=7&format=json&maxlag=5",
+   "retrievedAt": "2026-11-09T11:35:11.648Z"
+  },
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q909763&props=info%7Clabels%7Cdescriptions%7Cclaims&languages=ja&format=json&maxlag=5",
+   "retrievedAt": "2026-11-09T11:35:12.208Z"
+  },
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbsearchentities&search=%E7%A7%8B%E7%94%B0%E5%AE%9F%E5%AD%A3&language=ja&uselang=ja&type=item&limit=7&format=json&maxlag=5",
+   "retrievedAt": "2026-11-09T11:35:12.685Z"
+  },
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q4701233&props=info%7Clabels%7Cdescriptions%7Cclaims&languages=ja&format=json&maxlag=5",
+   "retrievedAt": "2026-11-09T11:35:13.253Z"
+  },
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbsearchentities&search=%E5%B0%8F%E8%A5%BF%E8%A1%8C%E9%95%B7&language=ja&uselang=ja&type=item&limit=7&format=json&maxlag=5",
+   "retrievedAt": "2026-11-09T11:35:13.627Z"
+  },
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q942553&props=info%7Clabels%7Cdescriptions%7Cclaims&languages=ja&format=json&maxlag=5",
+   "retrievedAt": "2026-11-09T11:35:14.193Z"
+  },
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbsearchentities&search=%E6%88%B8%E6%B2%A2%E6%94%BF%E7%9B%9B&language=ja&uselang=ja&type=item&limit=7&format=json&maxlag=5",
+   "retrievedAt": "2026-11-09T11:35:14.601Z"
+  },
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q5368867&props=info%7Clabels%7Cdescriptions%7Cclaims&languages=ja&format=json&maxlag=5",
+   "retrievedAt": "2026-11-09T11:35:15.244Z"
+  },
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbsearchentities&search=%E5%B2%A9%E5%9F%8E%E8%B2%9E%E9%9A%86&language=ja&uselang=ja&type=item&limit=7&format=json&maxlag=5",
+   "retrievedAt": "2026-11-09T11:35:15.653Z"
+  },
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q11474331&props=info%7Clabels%7Cdescriptions%7Cclaims&languages=ja&format=json&maxlag=5",
+   "retrievedAt": "2026-11-09T11:35:16.046Z"
+  },
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbsearchentities&search=%E5%BE%B3%E5%B7%9D%E7%A7%80%E5%BF%A0&language=ja&uselang=ja&type=item&limit=7&format=json&maxlag=5",
+   "retrievedAt": "2026-11-09T11:35:16.576Z"
+  },
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q314464%7CQ11490294&props=info%7Clabels%7Cdescriptions%7Cclaims&languages=ja&format=json&maxlag=5",
+   "retrievedAt": "2026-11-09T11:35:17.488Z"
+  },
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbsearchentities&search=%E4%BA%95%E4%BC%8A%E7%9B%B4%E5%AD%9D&language=ja&uselang=ja&type=item&limit=7&format=json&maxlag=5",
+   "retrievedAt": "2026-11-09T11:35:17.895Z"
+  },
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q877175&props=info%7Clabels%7Cdescriptions%7Cclaims&languages=ja&format=json&maxlag=5",
+   "retrievedAt": "2026-11-09T11:35:18.534Z"
+  },
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbsearchentities&search=%E6%AF%9B%E5%88%A9%E7%A7%80%E5%85%83&language=ja&uselang=ja&type=item&limit=7&format=json&maxlag=5",
+   "retrievedAt": "2026-11-09T11:35:18.942Z"
+  },
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q1133105&props=info%7Clabels%7Cdescriptions%7Cclaims&languages=ja&format=json&maxlag=5",
+   "retrievedAt": "2026-11-09T11:35:19.313Z"
+  },
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbsearchentities&search=%E6%9D%8E%E8%88%9C%E8%87%A3&language=ja&uselang=ja&type=item&limit=7&format=json&maxlag=5",
+   "retrievedAt": "2026-11-09T11:35:19.713Z"
+  },
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q50184%7CQ11097869%7CQ498235%7CQ179955%7CQ1875496%7CQ11097871%7CQ122946584&props=info%7Clabels%7Cdescriptions%7Cclaims&languages=ja&format=json&maxlag=5",
+   "retrievedAt": "2026-11-09T11:35:20.940Z"
+  },
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbsearchentities&search=%E9%87%91%E6%99%82%E6%95%8F&language=ja&uselang=ja&type=item&limit=7&format=json&maxlag=5",
+   "retrievedAt": "2026-11-09T11:35:21.387Z"
+  },
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q490362%7CQ18730916%7CQ18550317&props=info%7Clabels%7Cdescriptions%7Cclaims&languages=ja&format=json&maxlag=5",
+   "retrievedAt": "2026-11-09T11:35:22.023Z"
+  },
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbsearchentities&search=%E6%A8%A9%E6%85%84&language=ja&uselang=ja&type=item&limit=7&format=json&maxlag=5",
+   "retrievedAt": "2026-11-09T11:35:22.461Z"
+  },
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q485290&props=info%7Clabels%7Cdescriptions%7Cclaims&languages=ja&format=json&maxlag=5",
+   "retrievedAt": "2026-11-09T11:35:23.083Z"
+  },
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbsearchentities&search=%E6%9D%8E%E5%A6%82%E6%9D%BE&language=ja&uselang=ja&type=item&limit=7&format=json&maxlag=5",
+   "retrievedAt": "2026-11-09T11:35:23.469Z"
+  },
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q712027%7CQ48914463%7CQ45508755%7CQ132829137&props=info%7Clabels%7Cdescriptions%7Cclaims&languages=ja&format=json&maxlag=5",
+   "retrievedAt": "2026-11-09T11:35:24.147Z"
+  },
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbsearchentities&search=%E8%B1%8A%E8%87%A3%E7%A7%80%E9%A0%BC&language=ja&uselang=ja&type=item&limit=7&format=json&maxlag=5",
+   "retrievedAt": "2026-11-09T11:35:24.559Z"
+  },
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q313641%7CQ119379828&props=info%7Clabels%7Cdescriptions%7Cclaims&languages=ja&format=json&maxlag=5",
+   "retrievedAt": "2026-11-09T11:35:25.128Z"
+  },
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbsearchentities&search=%E6%9C%AC%E5%A4%9A%E5%BF%A0%E6%9C%9D&language=ja&uselang=ja&type=item&limit=7&format=json&maxlag=5",
+   "retrievedAt": "2026-11-09T11:35:25.540Z"
+  },
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q837870&props=info%7Clabels%7Cdescriptions%7Cclaims&languages=ja&format=json&maxlag=5",
+   "retrievedAt": "2026-11-09T11:35:26.130Z"
+  },
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbsearchentities&search=%E5%89%8D%E7%94%B0%E5%88%A9%E5%B8%B8&language=ja&uselang=ja&type=item&limit=7&format=json&maxlag=5",
+   "retrievedAt": "2026-11-09T11:35:26.525Z"
+  },
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q587204&props=info%7Clabels%7Cdescriptions%7Cclaims&languages=ja&format=json&maxlag=5",
+   "retrievedAt": "2026-11-09T11:35:27.112Z"
+  },
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbsearchentities&search=%E6%9C%89%E9%A6%AC%E7%9B%B4%E7%B4%94&language=ja&uselang=ja&type=item&limit=7&format=json&maxlag=5",
+   "retrievedAt": "2026-11-09T11:35:27.520Z"
+  },
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q4790672&props=info%7Clabels%7Cdescriptions%7Cclaims&languages=ja&format=json&maxlag=5",
+   "retrievedAt": "2026-11-09T11:35:28.164Z"
+  },
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbsearchentities&search=%E5%BE%8C%E8%97%A4%E5%9F%BA%E6%AC%A1&language=ja&uselang=ja&type=item&limit=7&format=json&maxlag=5",
+   "retrievedAt": "2026-11-09T11:35:28.619Z"
+  },
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q2714642&props=info%7Clabels%7Cdescriptions%7Cclaims&languages=ja&format=json&maxlag=5",
+   "retrievedAt": "2026-11-09T11:35:29.811Z"
+  },
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbsearchentities&search=%E6%AF%9B%E5%88%A9%E5%8B%9D%E6%B0%B8&language=ja&uselang=ja&type=item&limit=7&format=json&maxlag=5",
+   "retrievedAt": "2026-11-09T11:35:30.247Z"
+  },
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q6951118&props=info%7Clabels%7Cdescriptions%7Cclaims&languages=ja&format=json&maxlag=5",
+   "retrievedAt": "2026-11-09T11:35:30.683Z"
+  },
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbsearchentities&search=%E6%9C%A8%E6%9D%91%E9%87%8D%E6%88%90&language=ja&uselang=ja&type=item&limit=7&format=json&maxlag=5",
+   "retrievedAt": "2026-11-09T11:35:31.054Z"
+  },
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q840196&props=info%7Clabels%7Cdescriptions%7Cclaims&languages=ja&format=json&maxlag=5",
+   "retrievedAt": "2026-11-09T11:35:31.416Z"
+  }
+ ],
+ "records": [
+  {
+   "name": "河尻秀隆",
+   "gameBirthYear": 1527,
+   "appear": [
+    1561,
+    1,
+    1
+   ],
+   "clan": "oda",
+   "candidates": [
+    {
+     "id": "Q6379555",
+     "revision": 2521636335,
+     "label": "河尻秀隆",
+     "description": "日本の戦国時代の武将、織田氏の家臣",
+     "birthYears": [
+      1527
+     ],
+     "deathYears": [
+      1582
+     ],
+     "birthYearMatchesGame": true
+    }
+   ],
+   "status": "one-candidate-with-matching-birth-year"
+  },
+  {
+   "name": "氏家守棟",
+   "gameBirthYear": 1530,
+   "appear": [
+    1561,
+    4,
+    1
+   ],
+   "clan": "mogami",
+   "candidates": [
+    {
+     "id": "Q11128769",
+     "revision": 1381862324,
+     "label": "氏家守棟",
+     "description": null,
+     "birthYears": [
+      1534
+     ],
+     "deathYears": [],
+     "birthYearMatchesGame": false
+    }
+   ],
+   "status": "no-candidate-with-matching-birth-year"
+  },
+  {
+   "name": "鬼庭良直",
+   "gameBirthYear": 1513,
+   "appear": [
+    1561,
+    4,
+    1
+   ],
+   "clan": "date",
+   "candidates": [
+    {
+     "id": "Q5363387",
+     "revision": 2521638980,
+     "label": "鬼庭良直",
+     "description": null,
+     "birthYears": [
+      1513
+     ],
+     "deathYears": [
+      1586
+     ],
+     "birthYearMatchesGame": true
+    }
+   ],
+   "status": "one-candidate-with-matching-birth-year"
+  },
+  {
+   "name": "佐瀬種常",
+   "gameBirthYear": 1522,
+   "appear": [
+    1561,
+    4,
+    1
+   ],
+   "clan": "ashina",
+   "candidates": [
+    {
+     "id": "Q11383327",
+     "revision": 2323622885,
+     "label": "佐瀬種常",
+     "description": null,
+     "birthYears": [
+      1545
+     ],
+     "deathYears": [
+      1589
+     ],
+     "birthYearMatchesGame": false
+    }
+   ],
+   "status": "no-candidate-with-matching-birth-year"
+  },
+  {
+   "name": "須田盛秀",
+   "gameBirthYear": 1530,
+   "appear": [
+    1561,
+    4,
+    1
+   ],
+   "clan": "nikaido",
+   "candidates": [
+    {
+     "id": "Q11664645",
+     "revision": 2354833031,
+     "label": "須田盛秀",
+     "description": "戦国時代から江戸時代前期の武将。二階堂氏、佐竹氏の家臣。美濃守。子に須田秀世、須田盛方、須田盛久の妻",
+     "birthYears": [
+      1530
+     ],
+     "deathYears": [
+      1625
+     ],
+     "birthYearMatchesGame": true
+    }
+   ],
+   "status": "one-candidate-with-matching-birth-year"
+  },
+  {
+   "name": "白河義親",
+   "gameBirthYear": 1541,
+   "appear": [
+    1561,
+    4,
+    1
+   ],
+   "clan": "shirakawa",
+   "candidates": [
+    {
+     "id": "Q11460059",
+     "revision": 2351698036,
+     "label": "小峰義親",
+     "description": null,
+     "birthYears": [
+      1541
+     ],
+     "deathYears": [
+      1626
+     ],
+     "birthYearMatchesGame": true
+    }
+   ],
+   "status": "one-candidate-with-matching-birth-year"
+  },
+  {
+   "name": "斯波詮直",
+   "gameBirthYear": 1546,
+   "appear": [
+    1561,
+    4,
+    1
+   ],
+   "clan": "shiba",
+   "candidates": [
+    {
+     "id": "Q11500879",
+     "revision": 2511694229,
+     "label": "斯波詮直",
+     "description": "戦国時代から安土桃山時代の大名・武将。高水寺斯波氏当主（最後）。斯波詮真の嫡男。治部大輔",
+     "birthYears": [
+      1548
+     ],
+     "deathYears": [],
+     "birthYearMatchesGame": false
+    }
+   ],
+   "status": "no-candidate-with-matching-birth-year"
+  },
+  {
+   "name": "南部信直",
+   "gameBirthYear": 1546,
+   "appear": [
+    1561,
+    4,
+    1
+   ],
+   "clan": "nanbu",
+   "candidates": [
+    {
+     "id": "Q3137467",
+     "revision": 2378288044,
+     "label": "南部信直",
+     "description": "戦国大名",
+     "birthYears": [
+      1546
+     ],
+     "deathYears": [
+      1599
+     ],
+     "birthYearMatchesGame": true
+    }
+   ],
+   "status": "one-candidate-with-matching-birth-year"
+  },
+  {
+   "name": "北信愛",
+   "gameBirthYear": 1523,
+   "appear": [
+    1561,
+    4,
+    1
+   ],
+   "clan": "nanbu",
+   "candidates": [
+    {
+     "id": "Q10902500",
+     "revision": 2240492496,
+     "label": "北信愛",
+     "description": "戦国時代から江戸時代初期にかけての武将",
+     "birthYears": [
+      1523
+     ],
+     "deathYears": [
+      1613
+     ],
+     "birthYearMatchesGame": true
+    }
+   ],
+   "status": "one-candidate-with-matching-birth-year"
+  },
+  {
+   "name": "松田憲秀",
+   "gameBirthYear": 1530,
+   "appear": [
+    1561,
+    4,
+    1
+   ],
+   "clan": "hojo",
+   "candidates": [
+    {
+     "id": "Q10345501",
+     "revision": 2521641975,
+     "label": "松田憲秀",
+     "description": "戦国時代から安土桃山時代にかけての武将",
+     "birthYears": [],
+     "deathYears": [
+      1590
+     ],
+     "birthYearMatchesGame": false
+    }
+   ],
+   "status": "no-candidate-with-matching-birth-year"
+  },
+  {
+   "name": "板部岡江雪斎",
+   "gameBirthYear": 1537,
+   "appear": [
+    1561,
+    4,
+    1
+   ],
+   "clan": "hojo",
+   "candidates": [
+    {
+     "id": "Q11532725",
+     "revision": 2293568008,
+     "label": "板部岡江雪斎",
+     "description": null,
+     "birthYears": [
+      1537
+     ],
+     "deathYears": [
+      1609
+     ],
+     "birthYearMatchesGame": true
+    }
+   ],
+   "status": "one-candidate-with-matching-birth-year"
+  },
+  {
+   "name": "矢沢頼綱",
+   "gameBirthYear": 1518,
+   "appear": [
+    1561,
+    4,
+    1
+   ],
+   "clan": "sanada",
+   "candidates": [
+    {
+     "id": "Q10950293",
+     "revision": 2515691986,
+     "label": "矢沢頼綱",
+     "description": null,
+     "birthYears": [
+      1518
+     ],
+     "deathYears": [
+      1597
+     ],
+     "birthYearMatchesGame": true
+    }
+   ],
+   "status": "one-candidate-with-matching-birth-year"
+  },
+  {
+   "name": "芳賀高継",
+   "gameBirthYear": 1540,
+   "appear": [
+    1561,
+    4,
+    1
+   ],
+   "clan": "utsunomiya",
+   "candidates": [
+    {
+     "id": "Q11615854",
+     "revision": 2352241917,
+     "label": "芳賀高継",
+     "description": null,
+     "birthYears": [
+      1526
+     ],
+     "deathYears": [
+      1592
+     ],
+     "birthYearMatchesGame": false
+    }
+   ],
+   "status": "no-candidate-with-matching-birth-year"
+  },
+  {
+   "name": "和田昭為",
+   "gameBirthYear": 1532,
+   "appear": [
+    1561,
+    4,
+    1
+   ],
+   "clan": "satake",
+   "candidates": [
+    {
+     "id": "Q11418027",
+     "revision": 1379590448,
+     "label": "和田昭為",
+     "description": null,
+     "birthYears": [
+      1532
+     ],
+     "deathYears": [
+      1618
+     ],
+     "birthYearMatchesGame": true
+    }
+   ],
+   "status": "one-candidate-with-matching-birth-year"
+  },
+  {
+   "name": "里見義頼",
+   "gameBirthYear": 1543,
+   "appear": [
+    1561,
+    4,
+    1
+   ],
+   "clan": "satomi",
+   "candidates": [
+    {
+     "id": "Q11644669",
+     "revision": 2338160198,
+     "label": "里見義頼",
+     "description": "戦国時代から安土桃山時代の安房国の武将、大名。安房里見氏7代。左馬頭、安房守、刑部大輔。",
+     "birthYears": [
+      1543
+     ],
+     "deathYears": [
+      1587
+     ],
+     "birthYearMatchesGame": true
+    }
+   ],
+   "status": "one-candidate-with-matching-birth-year"
+  },
+  {
+   "name": "上条政繁",
+   "gameBirthYear": 1545,
+   "appear": [
+    1561,
+    4,
+    1
+   ],
+   "clan": "nagao",
+   "candidates": [
+    {
+     "id": "Q6127646",
+     "revision": 2521637412,
+     "label": "上条政繁",
+     "description": "日本の侍 (1545-1643)",
+     "birthYears": [
+      1545
+     ],
+     "deathYears": [
+      1643
+     ],
+     "birthYearMatchesGame": true
+    }
+   ],
+   "status": "one-candidate-with-matching-birth-year"
+  },
+  {
+   "name": "須田満親",
+   "gameBirthYear": 1526,
+   "appear": [
+    1561,
+    4,
+    1
+   ],
+   "clan": "nagao",
+   "candidates": [
+    {
+     "id": "Q11664642",
+     "revision": 2354833008,
+     "label": "須田満親",
+     "description": null,
+     "birthYears": [
+      1526
+     ],
+     "deathYears": [
+      1598
+     ],
+     "birthYearMatchesGame": true
+    }
+   ],
+   "status": "one-candidate-with-matching-birth-year"
+  },
+  {
+   "name": "平岩親吉",
+   "gameBirthYear": 1542,
+   "appear": [
+    1561,
+    4,
+    1
+   ],
+   "clan": "tokugawa",
+   "candidates": [
+    {
+     "id": "Q849070",
+     "revision": 2556902168,
+     "label": "平岩親吉",
+     "description": "徳川家の家臣、徳川十六神将の一人",
+     "birthYears": [
+      1542
+     ],
+     "deathYears": [
+      1612
+     ],
+     "birthYearMatchesGame": true
+    }
+   ],
+   "status": "one-candidate-with-matching-birth-year"
+  },
+  {
+   "name": "菅沼定利",
+   "gameBirthYear": 1540,
+   "appear": [
+    1561,
+    4,
+    1
+   ],
+   "clan": "tokugawa",
+   "candidates": [
+    {
+     "id": "Q11619292",
+     "revision": 2555280099,
+     "label": "菅沼定利",
+     "description": null,
+     "birthYears": [
+      1550
+     ],
+     "deathYears": [
+      1602
+     ],
+     "birthYearMatchesGame": false
+    }
+   ],
+   "status": "no-candidate-with-matching-birth-year"
+  },
+  {
+   "name": "大久保忠世",
+   "gameBirthYear": 1532,
+   "appear": [
+    1561,
+    4,
+    1
+   ],
+   "clan": "tokugawa",
+   "candidates": [
+    {
+     "id": "Q869401",
+     "revision": 2417722604,
+     "label": "大久保忠世",
+     "description": "日本の戦国～安土桃山時代の武将、徳川十六神将の一人",
+     "birthYears": [
+      1532
+     ],
+     "deathYears": [
+      1594
+     ],
+     "birthYearMatchesGame": true
+    }
+   ],
+   "status": "one-candidate-with-matching-birth-year"
+  },
+  {
+   "name": "石川家成",
+   "gameBirthYear": 1534,
+   "appear": [
+    1561,
+    4,
+    1
+   ],
+   "clan": "tokugawa",
+   "candidates": [
+    {
+     "id": "Q11585771",
+     "revision": 2556902266,
+     "label": "石川家成",
+     "description": "戦国時代から江戸時代初期の武将。徳川氏の家臣。美濃大垣藩2代藩主。伊勢亀山藩石川家2代。従五位下、日向守",
+     "birthYears": [
+      1534
+     ],
+     "deathYears": [
+      1609
+     ],
+     "birthYearMatchesGame": true
+    }
+   ],
+   "status": "one-candidate-with-matching-birth-year"
+  },
+  {
+   "name": "姉小路自綱",
+   "gameBirthYear": 1540,
+   "appear": [
+    1561,
+    4,
+    1
+   ],
+   "clan": "anegakoji",
+   "candidates": [
+    {
+     "id": "Q10943128",
+     "revision": 2355425881,
+     "label": "姉小路頼綱",
+     "description": "戦国時代・安土桃山時代の武将、大名、公卿、公家。飛騨姉小路氏（三木姉小路氏）の当主。父は姉小路良頼（嗣頼）。",
+     "birthYears": [
+      1540
+     ],
+     "deathYears": [
+      1587
+     ],
+     "birthYearMatchesGame": true
+    }
+   ],
+   "status": "one-candidate-with-matching-birth-year"
+  },
+  {
+   "name": "前田安勝",
+   "gameBirthYear": 1530,
+   "appear": [
+    1561,
+    4,
+    1
+   ],
+   "clan": "hashiba",
+   "candidates": [
+    {
+     "id": "Q11397525",
+     "revision": 1815880853,
+     "label": "前田安勝",
+     "description": "日本の戦国時代～安土桃山時代の武将。尾張荒子城主前田利春三男で、能登小丸山城主。織田家・前田家の家臣",
+     "birthYears": [
+      1550
+     ],
+     "deathYears": [
+      1594
+     ],
+     "birthYearMatchesGame": false
+    }
+   ],
+   "status": "no-candidate-with-matching-birth-year"
+  },
+  {
+   "name": "奥村永福",
+   "gameBirthYear": 1541,
+   "appear": [
+    1561,
+    4,
+    1
+   ],
+   "clan": "hashiba",
+   "candidates": [
+    {
+     "id": "Q10942615",
+     "revision": 2477598650,
+     "label": "奥村永福",
+     "description": "日本の戦国時代～江戸時代前期の武将。前田家の家臣で、加賀八家奥村宗家初代当主。尾張荒子城代・能登末森城主・筆頭年寄を歴任。従五位下伊予守",
+     "birthYears": [
+      1541
+     ],
+     "deathYears": [
+      1624
+     ],
+     "birthYearMatchesGame": true
+    }
+   ],
+   "status": "one-candidate-with-matching-birth-year"
+  },
+  {
+   "name": "蜂屋頼隆",
+   "gameBirthYear": 1534,
+   "appear": [
+    1561,
+    4,
+    1
+   ],
+   "clan": "hashiba",
+   "candidates": [
+    {
+     "id": "Q5637100",
+     "revision": 2506581093,
+     "label": "蜂屋頼隆",
+     "description": "日本の侍 (1534-1589)",
+     "birthYears": [
+      1534
+     ],
+     "deathYears": [
+      1589
+     ],
+     "birthYearMatchesGame": true
+    }
+   ],
+   "status": "one-candidate-with-matching-birth-year"
+  },
+  {
+   "name": "山内一豊",
+   "gameBirthYear": 1545,
+   "appear": [
+    1561,
+    4,
+    1
+   ],
+   "clan": "hashiba",
+   "candidates": [
+    {
+     "id": "Q1315878",
+     "revision": 2566928498,
+     "label": "山内一豊",
+     "description": "戦国時代から江戸時代初期の武将、大名。土佐山内氏、土佐藩初代藩主。",
+     "birthYears": [
+      1545
+     ],
+     "deathYears": [
+      1605
+     ],
+     "birthYearMatchesGame": true
+    }
+   ],
+   "status": "one-candidate-with-matching-birth-year"
+  },
+  {
+   "name": "安国寺恵瓊",
+   "gameBirthYear": 1539,
+   "appear": [
+    1561,
+    4,
+    1
+   ],
+   "clan": "mori",
+   "candidates": [
+    {
+     "id": "Q1151711",
+     "revision": 2492910547,
+     "label": "安国寺恵瓊",
+     "description": "日本の戦国時代から安土桃山時代にかけての僧、武将",
+     "birthYears": [
+      1539
+     ],
+     "deathYears": [
+      1600
+     ],
+     "birthYearMatchesGame": true
+    }
+   ],
+   "status": "one-candidate-with-matching-birth-year"
+  },
+  {
+   "name": "福原貞俊",
+   "gameBirthYear": 1512,
+   "appear": [
+    1561,
+    4,
+    1
+   ],
+   "clan": "mori",
+   "candidates": [
+    {
+     "id": "Q10446576",
+     "revision": 2544603305,
+     "label": "福原貞俊",
+     "description": null,
+     "birthYears": [
+      1512
+     ],
+     "deathYears": [
+      1593
+     ],
+     "birthYearMatchesGame": true
+    }
+   ],
+   "status": "one-candidate-with-matching-birth-year"
+  },
+  {
+   "name": "宇喜多忠家",
+   "gameBirthYear": 1533,
+   "appear": [
+    1561,
+    4,
+    1
+   ],
+   "clan": "ukita",
+   "candidates": [
+    {
+     "id": "Q11449180",
+     "revision": 2186677684,
+     "label": "宇喜多忠家",
+     "description": "戦国時代の武将",
+     "birthYears": [
+      1533
+     ],
+     "deathYears": [],
+     "birthYearMatchesGame": true
+    }
+   ],
+   "status": "one-candidate-with-matching-birth-year"
+  },
+  {
+   "name": "戸川秀安",
+   "gameBirthYear": 1538,
+   "appear": [
+    1561,
+    4,
+    1
+   ],
+   "clan": "ukita",
+   "candidates": [
+    {
+     "id": "Q11496372",
+     "revision": 2539385495,
+     "label": "戸川秀安",
+     "description": "日本の戦国時代～安土桃山時代の武将",
+     "birthYears": [
+      1538
+     ],
+     "deathYears": [
+      1597
+     ],
+     "birthYearMatchesGame": true
+    }
+   ],
+   "status": "one-candidate-with-matching-birth-year"
+  },
+  {
+   "name": "久武親直",
+   "gameBirthYear": 1540,
+   "appear": [
+    1561,
+    4,
+    1
+   ],
+   "clan": "chosokabe",
+   "candidates": [
+    {
+     "id": "Q11369456",
+     "revision": 2465537157,
+     "label": "久武親直",
+     "description": null,
+     "birthYears": [],
+     "deathYears": [],
+     "birthYearMatchesGame": false
+    }
+   ],
+   "status": "no-candidate-with-matching-birth-year"
+  },
+  {
+   "name": "谷忠澄",
+   "gameBirthYear": 1534,
+   "appear": [
+    1561,
+    4,
+    1
+   ],
+   "clan": "chosokabe",
+   "candidates": [
+    {
+     "id": "Q11632918",
+     "revision": 2550639012,
+     "label": "谷忠澄",
+     "description": "戦国時代から安土時代にかけての武将 (1534-1600)",
+     "birthYears": [
+      1534
+     ],
+     "deathYears": [
+      1600
+     ],
+     "birthYearMatchesGame": true
+    }
+   ],
+   "status": "one-candidate-with-matching-birth-year"
+  },
+  {
+   "name": "龍造寺家晴",
+   "gameBirthYear": 1530,
+   "appear": [
+    1561,
+    4,
+    1
+   ],
+   "clan": "ryuzoji",
+   "candidates": [
+    {
+     "id": "Q11679391",
+     "revision": 1882736709,
+     "label": "龍造寺家晴",
+     "description": null,
+     "birthYears": [],
+     "deathYears": [
+      1613
+     ],
+     "birthYearMatchesGame": false
+    }
+   ],
+   "status": "no-candidate-with-matching-birth-year"
+  },
+  {
+   "name": "深水長智",
+   "gameBirthYear": 1531,
+   "appear": [
+    1561,
+    4,
+    1
+   ],
+   "clan": "sagara",
+   "candidates": [
+    {
+     "id": "Q11153283",
+     "revision": 2075475044,
+     "label": "深水長智",
+     "description": "1532-1590, 戦国時代～安土桃山時代の武将、歌人",
+     "birthYears": [
+      1532
+     ],
+     "deathYears": [
+      1590
+     ],
+     "birthYearMatchesGame": false
+    }
+   ],
+   "status": "no-candidate-with-matching-birth-year"
+  },
+  {
+   "name": "新納忠元",
+   "gameBirthYear": 1526,
+   "appear": [
+    1561,
+    4,
+    1
+   ],
+   "clan": "shimazu",
+   "candidates": [
+    {
+     "id": "Q7034472",
+     "revision": 2521642127,
+     "label": "新納忠元",
+     "description": "1526-1611, 戦国時代～江戸時代初期の武将",
+     "birthYears": [
+      1526
+     ],
+     "deathYears": [
+      1611
+     ],
+     "birthYearMatchesGame": true
+    }
+   ],
+   "status": "one-candidate-with-matching-birth-year"
+  },
+  {
+   "name": "上井覚兼",
+   "gameBirthYear": 1545,
+   "appear": [
+    1561,
+    4,
+    1
+   ],
+   "clan": "shimazu",
+   "candidates": [
+    {
+     "id": "Q7903777",
+     "revision": 2548237500,
+     "label": "上井覚兼",
+     "description": "戦国時代から安土桃山時代にかけての島津氏の家臣 (1545-1589)",
+     "birthYears": [
+      1545
+     ],
+     "deathYears": [
+      1589
+     ],
+     "birthYearMatchesGame": true
+    }
+   ],
+   "status": "one-candidate-with-matching-birth-year"
+  },
+  {
+   "name": "相馬義胤",
+   "gameBirthYear": 1548,
+   "appear": [
+    1563,
+    4,
+    1
+   ],
+   "clan": "soma",
+   "candidates": [
+    {
+     "id": "Q8514636",
+     "revision": 2554263659,
+     "label": "相馬義胤",
+     "description": "江戸時代の大名",
+     "birthYears": [
+      1619
+     ],
+     "deathYears": [
+      1651
+     ],
+     "birthYearMatchesGame": false
+    },
+    {
+     "id": "Q7559115",
+     "revision": 2244767744,
+     "label": "相馬義胤 (十六代当主)",
+     "description": "日本の戦国時代から江戸時代の武将。戦国大名。陸奥相馬氏16代。従五位下、長門守。",
+     "birthYears": [
+      1548
+     ],
+     "deathYears": [
+      1635
+     ],
+     "birthYearMatchesGame": true
+    },
+    {
+     "id": "Q11582533",
+     "revision": 1513007698,
+     "label": "相馬義胤 (二代当主)",
+     "description": "鎌倉時代の武将。相馬氏2代。鎌倉幕府御家人",
+     "birthYears": [],
+     "deathYears": [],
+     "birthYearMatchesGame": false
+    }
+   ],
+   "status": "one-candidate-with-matching-birth-year"
+  },
+  {
+   "name": "大崎義隆",
+   "gameBirthYear": 1548,
+   "appear": [
+    1563,
+    4,
+    1
+   ],
+   "clan": "osaki",
+   "candidates": [
+    {
+     "id": "Q10935206",
+     "revision": 2427496554,
+     "label": "大崎義隆",
+     "description": null,
+     "birthYears": [
+      1548
+     ],
+     "deathYears": [
+      1603
+     ],
+     "birthYearMatchesGame": true
+    }
+   ],
+   "status": "one-candidate-with-matching-birth-year"
+  },
+  {
+   "name": "梶原政景",
+   "gameBirthYear": 1548,
+   "appear": [
+    1563,
+    4,
+    1
+   ],
+   "clan": "satake",
+   "candidates": [
+    {
+     "id": "Q11070343",
+     "revision": 2424810851,
+     "label": "梶原政景",
+     "description": null,
+     "birthYears": [
+      1548
+     ],
+     "deathYears": [],
+     "birthYearMatchesGame": true
+    }
+   ],
+   "status": "one-candidate-with-matching-birth-year"
+  },
+  {
+   "name": "吉川元長",
+   "gameBirthYear": 1548,
+   "appear": [
+    1563,
+    4,
+    1
+   ],
+   "clan": "mori",
+   "candidates": [
+    {
+     "id": "Q11412944",
+     "revision": 2336607318,
+     "label": "吉川元長",
+     "description": "戦国時代～安土桃山時代の安芸国の戦国大名毛利氏の一族",
+     "birthYears": [
+      1548
+     ],
+     "deathYears": [
+      1587
+     ],
+     "birthYearMatchesGame": true
+    }
+   ],
+   "status": "one-candidate-with-matching-birth-year"
+  },
+  {
+   "name": "堀内氏善",
+   "gameBirthYear": 1549,
+   "appear": [
+    1564,
+    4,
+    1
+   ],
+   "clan": "horiuchi",
+   "candidates": [
+    {
+     "id": "Q11427294",
+     "revision": 1383297986,
+     "label": "堀内氏善",
+     "description": null,
+     "birthYears": [
+      1549
+     ],
+     "deathYears": [
+      1609
+     ],
+     "birthYearMatchesGame": true
+    }
+   ],
+   "status": "one-candidate-with-matching-birth-year"
+  },
+  {
+   "name": "南条元続",
+   "gameBirthYear": 1549,
+   "appear": [
+    1564,
+    4,
+    1
+   ],
+   "clan": "mori",
+   "candidates": [
+    {
+     "id": "Q11407947",
+     "revision": 2411032469,
+     "label": "南条元続",
+     "description": "日本の戦国時代～安土桃山時代の武将・大名",
+     "birthYears": [
+      1549
+     ],
+     "deathYears": [
+      1591
+     ],
+     "birthYearMatchesGame": true
+    }
+   ],
+   "status": "one-candidate-with-matching-birth-year"
+  },
+  {
+   "name": "松浦鎮信",
+   "gameBirthYear": 1549,
+   "appear": [
+    1564,
+    4,
+    1
+   ],
+   "clan": "matsura",
+   "candidates": [
+    {
+     "id": "Q3825090",
+     "revision": 2555333659,
+     "label": "松浦鎮信",
+     "description": "戦国大名、平戸藩初代藩主。法印。",
+     "birthYears": [
+      1549
+     ],
+     "deathYears": [
+      1614
+     ],
+     "birthYearMatchesGame": true
+    },
+    {
+     "id": "Q11531889",
+     "revision": 2555333732,
+     "label": "松浦重信",
+     "description": "江戸時代初期の大名、平戸藩第4代藩主。茶人としても著名。天祥と号する",
+     "birthYears": [
+      1622
+     ],
+     "deathYears": [
+      1703
+     ],
+     "birthYearMatchesGame": false
+    }
+   ],
+   "status": "one-candidate-with-matching-birth-year"
+  },
+  {
+   "name": "遠山直景",
+   "gameBirthYear": 1550,
+   "appear": [
+    1565,
+    4,
+    1
+   ],
+   "clan": "hojo",
+   "candidates": [
+    {
+     "id": "Q11642053",
+     "revision": 1507813546,
+     "label": "遠山直景 (丹波守)",
+     "description": "戦国時代の武将。後北条氏の家臣。遠山景保の長男。隼人佐、加賀守、丹波守。",
+     "birthYears": [],
+     "deathYears": [
+      1533
+     ],
+     "birthYearMatchesGame": false
+    },
+    {
+     "id": "Q11642054",
+     "revision": 1438273224,
+     "label": "遠山直景 (左衛門大夫)",
+     "description": "安土桃山時代の武将。後北条氏の重臣。",
+     "birthYears": [],
+     "deathYears": [
+      1587
+     ],
+     "birthYearMatchesGame": false
+    }
+   ],
+   "status": "no-candidate-with-matching-birth-year"
+  },
+  {
+   "name": "猪俣邦憲",
+   "gameBirthYear": 1550,
+   "appear": [
+    1565,
+    4,
+    1
+   ],
+   "clan": "hojo",
+   "candidates": [
+    {
+     "id": "Q10409875",
+     "revision": 2375538796,
+     "label": "猪俣邦憲",
+     "description": "戦国時代から安土桃山時代にかけての武将",
+     "birthYears": [],
+     "deathYears": [
+      1590
+     ],
+     "birthYearMatchesGame": false
+    }
+   ],
+   "status": "no-candidate-with-matching-birth-year"
+  },
+  {
+   "name": "甘粕景継",
+   "gameBirthYear": 1550,
+   "appear": [
+    1565,
+    4,
+    1
+   ],
+   "clan": "nagao",
+   "candidates": [
+    {
+     "id": "Q4739173",
+     "revision": 2521637407,
+     "label": "甘糟景継",
+     "description": "日本の侍 (1550-1611)",
+     "birthYears": [
+      1550
+     ],
+     "deathYears": [
+      1611
+     ],
+     "birthYearMatchesGame": true
+    }
+   ],
+   "status": "one-candidate-with-matching-birth-year"
+  },
+  {
+   "name": "西園寺公広",
+   "gameBirthYear": 1537,
+   "appear": [
+    1565,
+    8,
+    1
+   ],
+   "clan": "saionji",
+   "candidates": [
+    {
+     "id": "Q7223176",
+     "revision": 1763583433,
+     "label": "西園寺公広",
+     "description": null,
+     "birthYears": [
+      1537
+     ],
+     "deathYears": [
+      1588
+     ],
+     "birthYearMatchesGame": true
+    }
+   ],
+   "status": "one-candidate-with-matching-birth-year"
+  },
+  {
+   "name": "三村元親",
+   "gameBirthYear": 1545,
+   "appear": [
+    1566,
+    3,
+    1
+   ],
+   "clan": "mimura",
+   "candidates": [
+    {
+     "id": "Q10866150",
+     "revision": 2554819913,
+     "label": "三村元親",
+     "description": "?-1575, 安土桃山時代の大名",
+     "birthYears": [
+      1550
+     ],
+     "deathYears": [
+      1575
+     ],
+     "birthYearMatchesGame": false
+    }
+   ],
+   "status": "no-candidate-with-matching-birth-year"
+  },
+  {
+   "name": "肝付良兼",
+   "gameBirthYear": 1535,
+   "appear": [
+    1566,
+    12,
+    1
+   ],
+   "clan": "kimotsuki",
+   "candidates": [
+    {
+     "id": "Q11611491",
+     "revision": 1382980152,
+     "label": "肝付良兼",
+     "description": null,
+     "birthYears": [
+      1535
+     ],
+     "deathYears": [
+      1571
+     ],
+     "birthYearMatchesGame": true
+    }
+   ],
+   "status": "one-candidate-with-matching-birth-year"
+  },
+  {
+   "name": "畠山義継",
+   "gameBirthYear": 1552,
+   "appear": [
+    1567,
+    4,
+    1
+   ],
+   "clan": "nihonmatsu",
+   "candidates": [
+    {
+     "id": "Q847762",
+     "revision": 2210122439,
+     "label": "二本松義継",
+     "description": "戦国時代から安土桃山時代の武将。二本松氏9代。陸奥安達郡二本松城主。二本松義国の嫡男。",
+     "birthYears": [
+      1552
+     ],
+     "deathYears": [
+      1585
+     ],
+     "birthYearMatchesGame": true
+    }
+   ],
+   "status": "one-candidate-with-matching-birth-year"
+  },
+  {
+   "name": "仙石秀久",
+   "gameBirthYear": 1552,
+   "appear": [
+    1567,
+    4,
+    1
+   ],
+   "clan": "hashiba",
+   "candidates": [
+    {
+     "id": "Q7450595",
+     "revision": 2559080701,
+     "label": "仙石秀久",
+     "description": "日本の戦国時代～江戸時代初期の武将・大名",
+     "birthYears": [
+      1552
+     ],
+     "deathYears": [
+      1614
+     ],
+     "birthYearMatchesGame": true
+    },
+    {
+     "id": "Q135238789",
+     "revision": 2375799105,
+     "label": "仙石秀久の娘 (藤堂高清の妻)",
+     "description": null,
+     "birthYears": [],
+     "deathYears": [],
+     "birthYearMatchesGame": false
+    }
+   ],
+   "status": "one-candidate-with-matching-birth-year"
+  },
+  {
+   "name": "金子元宅",
+   "gameBirthYear": 1552,
+   "appear": [
+    1567,
+    4,
+    1
+   ],
+   "clan": "kono",
+   "candidates": [
+    {
+     "id": "Q60985157",
+     "revision": 1383109585,
+     "label": "金子元宅",
+     "description": null,
+     "birthYears": [],
+     "deathYears": [],
+     "birthYearMatchesGame": false
+    }
+   ],
+   "status": "no-candidate-with-matching-birth-year"
+  },
+  {
+   "name": "大宝寺義興",
+   "gameBirthYear": 1554,
+   "appear": [
+    1569,
+    4,
+    1
+   ],
+   "clan": "daihoji",
+   "candidates": [
+    {
+     "id": "Q11434356",
+     "revision": 2504094649,
+     "label": "大宝寺義興",
+     "description": null,
+     "birthYears": [
+      1554
+     ],
+     "deathYears": [
+      1587
+     ],
+     "birthYearMatchesGame": true
+    }
+   ],
+   "status": "one-candidate-with-matching-birth-year"
+  },
+  {
+   "name": "岩城親隆",
+   "gameBirthYear": 1534,
+   "appear": [
+    1569,
+    4,
+    1
+   ],
+   "clan": "iwaki",
+   "candidates": [
+    {
+     "id": "Q11474329",
+     "revision": 2290594643,
+     "label": "岩城親隆 (16代)",
+     "description": "戦国時代から安土桃山時代の武将・戦国大名",
+     "birthYears": [
+      1537
+     ],
+     "deathYears": [
+      1594
+     ],
+     "birthYearMatchesGame": false
+    },
+    {
+     "id": "Q11474330",
+     "revision": 1512622905,
+     "label": "岩城親隆 (下総守)",
+     "description": "室町時代後期の武将。岩城氏10代。陸奥大館城主。岩城隆忠の次男。従五位下・下総守、左京大夫",
+     "birthYears": [],
+     "deathYears": [],
+     "birthYearMatchesGame": false
+    }
+   ],
+   "status": "no-candidate-with-matching-birth-year"
+  },
+  {
+   "name": "今川氏真",
+   "gameBirthYear": null,
+   "appear": [
+    1569,
+    6,
+    15
+   ],
+   "clan": "hojo",
+   "candidates": [
+    {
+     "id": "Q3100078",
+     "revision": 2562125046,
+     "label": "今川氏真",
+     "description": "日本の武将 (1538-1614)",
+     "birthYears": [
+      1538
+     ],
+     "deathYears": [
+      1615
+     ],
+     "birthYearMatchesGame": false
+    }
+   ],
+   "status": "no-candidate-with-matching-birth-year"
+  },
+  {
+   "name": "朝比奈泰朝",
+   "gameBirthYear": null,
+   "appear": [
+    1569,
+    6,
+    15
+   ],
+   "clan": "hojo",
+   "candidates": [
+    {
+     "id": "Q11092559",
+     "revision": 2336897546,
+     "label": "朝比奈泰朝",
+     "description": "日本の戦国時代の武将、今川氏の家臣",
+     "birthYears": [
+      1538
+     ],
+     "deathYears": [],
+     "birthYearMatchesGame": false
+    }
+   ],
+   "status": "no-candidate-with-matching-birth-year"
+  },
+  {
+   "name": "岡部元信",
+   "gameBirthYear": null,
+   "appear": [
+    1569,
+    7,
+    1
+   ],
+   "clan": "takeda",
+   "candidates": [
+    {
+     "id": "Q1073455",
+     "revision": 2521637336,
+     "label": "岡部元信",
+     "description": "日本の戦国時代の武将",
+     "birthYears": [
+      1505
+     ],
+     "deathYears": [
+      1581
+     ],
+     "birthYearMatchesGame": false
+    },
+    {
+     "id": "Q106056828",
+     "revision": 1385706461,
+     "label": "岡部元信の娘",
+     "description": "土屋昌恒室",
+     "birthYears": [],
+     "deathYears": [],
+     "birthYearMatchesGame": false
+    }
+   ],
+   "status": "no-candidate-with-matching-birth-year"
+  },
+  {
+   "name": "別所長治",
+   "gameBirthYear": 1558,
+   "appear": [
+    1570,
+    2,
+    1
+   ],
+   "clan": "bessho",
+   "candidates": [
+    {
+     "id": "Q837435",
+     "revision": 2549583573,
+     "label": "別所長治",
+     "description": "戦国時代～安土桃山時代の武将・大名",
+     "birthYears": [
+      1558
+     ],
+     "deathYears": [
+      1580
+     ],
+     "birthYearMatchesGame": true
+    },
+    {
+     "id": "Q136779923",
+     "revision": 2503274701,
+     "label": "別所長治の正室",
+     "description": null,
+     "birthYears": [],
+     "deathYears": [],
+     "birthYearMatchesGame": false
+    }
+   ],
+   "status": "one-candidate-with-matching-birth-year"
+  },
+  {
+   "name": "斎藤龍興",
+   "gameBirthYear": null,
+   "appear": [
+    1571,
+    1,
+    1
+   ],
+   "clan": "asakura",
+   "candidates": [
+    {
+     "id": "Q2880879",
+     "revision": 2438019862,
+     "label": "斎藤龍興",
+     "description": "戦国時代の美濃国の戦国大名、道三流斎藤家3代、美濃一色家2代。刑部大輔",
+     "birthYears": [
+      1548
+     ],
+     "deathYears": [
+      1573
+     ],
+     "birthYearMatchesGame": false
+    }
+   ],
+   "status": "no-candidate-with-matching-birth-year"
+  },
+  {
+   "name": "藤堂高虎",
+   "gameBirthYear": 1556,
+   "appear": [
+    1571,
+    4,
+    1
+   ],
+   "clan": "hashiba",
+   "candidates": [
+    {
+     "id": "Q1377984",
+     "revision": 2556894513,
+     "label": "藤堂高虎",
+     "description": "戦国時代～江戸時代初期の武将、大名 (1556-1630)",
+     "birthYears": [
+      1556
+     ],
+     "deathYears": [
+      1630
+     ],
+     "birthYearMatchesGame": true
+    }
+   ],
+   "status": "one-candidate-with-matching-birth-year"
+  },
+  {
+   "name": "肝付兼亮",
+   "gameBirthYear": 1558,
+   "appear": [
+    1571,
+    8,
+    1
+   ],
+   "clan": "kimotsuki",
+   "candidates": [
+    {
+     "id": "Q11611470",
+     "revision": 1383395141,
+     "label": "肝付兼亮",
+     "description": null,
+     "birthYears": [
+      1558
+     ],
+     "deathYears": [
+      1634
+     ],
+     "birthYearMatchesGame": true
+    }
+   ],
+   "status": "one-candidate-with-matching-birth-year"
+  },
+  {
+   "name": "尼子勝久",
+   "gameBirthYear": 1553,
+   "appear": [
+    1572,
+    1,
+    1
+   ],
+   "clan": "oda",
+   "candidates": [
+    {
+     "id": "Q837431",
+     "revision": 2502905775,
+     "label": "尼子勝久",
+     "description": "日本の侍 (1553-1578)",
+     "birthYears": [
+      1553
+     ],
+     "deathYears": [
+      1578
+     ],
+     "birthYearMatchesGame": true
+    }
+   ],
+   "status": "one-candidate-with-matching-birth-year"
+  },
+  {
+   "name": "山中幸盛",
+   "gameBirthYear": null,
+   "appear": [
+    1572,
+    1,
+    1
+   ],
+   "clan": "oda",
+   "candidates": [
+    {
+     "id": "Q8047875",
+     "revision": 2554559104,
+     "label": "山中幸盛",
+     "description": "山中鹿介の通称で知られる武将",
+     "birthYears": [
+      1545
+     ],
+     "deathYears": [
+      1578
+     ],
+     "birthYearMatchesGame": false
+    }
+   ],
+   "status": "no-candidate-with-matching-birth-year"
+  },
+  {
+   "name": "片倉景綱",
+   "gameBirthYear": 1557,
+   "appear": [
+    1572,
+    4,
+    1
+   ],
+   "clan": "date",
+   "candidates": [
+    {
+     "id": "Q843226",
+     "revision": 2447523787,
+     "label": "片倉景綱",
+     "description": "日本の武将・伊達政宗の近習",
+     "birthYears": [
+      1557
+     ],
+     "deathYears": [
+      1615
+     ],
+     "birthYearMatchesGame": true
+    }
+   ],
+   "status": "one-candidate-with-matching-birth-year"
+  },
+  {
+   "name": "千葉邦胤",
+   "gameBirthYear": 1557,
+   "appear": [
+    1572,
+    4,
+    1
+   ],
+   "clan": "hojo",
+   "candidates": [
+    {
+     "id": "Q11406776",
+     "revision": 2229741440,
+     "label": "千葉邦胤",
+     "description": "戦国時代の武将",
+     "birthYears": [
+      1557
+     ],
+     "deathYears": [
+      1585
+     ],
+     "birthYearMatchesGame": true
+    }
+   ],
+   "status": "one-candidate-with-matching-birth-year"
+  },
+  {
+   "name": "森長可",
+   "gameBirthYear": 1558,
+   "appear": [
+    1572,
+    6,
+    1
+   ],
+   "clan": "oda",
+   "candidates": [
+    {
+     "id": "Q1071391",
+     "revision": 2453491158,
+     "label": "森長可",
+     "description": "日本の戦国～安土桃山時代の武将、大名",
+     "birthYears": [
+      1558
+     ],
+     "deathYears": [
+      1584
+     ],
+     "birthYearMatchesGame": true
+    }
+   ],
+   "status": "one-candidate-with-matching-birth-year"
+  },
+  {
+   "name": "佐野房綱",
+   "gameBirthYear": 1558,
+   "appear": [
+    1573,
+    4,
+    1
+   ],
+   "clan": "sano",
+   "candidates": [
+    {
+     "id": "Q11385028",
+     "revision": 2480586946,
+     "label": "佐野房綱",
+     "description": "日本の武将 (1558-1601)",
+     "birthYears": [
+      1558
+     ],
+     "deathYears": [
+      1601
+     ],
+     "birthYearMatchesGame": true
+    }
+   ],
+   "status": "one-candidate-with-matching-birth-year"
+  },
+  {
+   "name": "北条氏勝",
+   "gameBirthYear": 1559,
+   "appear": [
+    1574,
+    4,
+    1
+   ],
+   "clan": "hojo",
+   "candidates": [
+    {
+     "id": "Q11070019",
+     "revision": 2556821740,
+     "label": "北条氏勝",
+     "description": "日本の戦国時代～江戸時代初期の武将・大名",
+     "birthYears": [
+      1559
+     ],
+     "deathYears": [
+      1611
+     ],
+     "birthYearMatchesGame": true
+    }
+   ],
+   "status": "one-candidate-with-matching-birth-year"
+  },
+  {
+   "name": "大谷吉継",
+   "gameBirthYear": 1559,
+   "appear": [
+    1574,
+    4,
+    1
+   ],
+   "clan": "hashiba",
+   "candidates": [
+    {
+     "id": "Q386265",
+     "revision": 2513851732,
+     "label": "大谷吉継",
+     "description": "日本の戦国～安土桃山時代の武将、大名",
+     "birthYears": [
+      1559
+     ],
+     "deathYears": [
+      1600
+     ],
+     "birthYearMatchesGame": true
+    }
+   ],
+   "status": "one-candidate-with-matching-birth-year"
+  },
+  {
+   "name": "伊東祐兵",
+   "gameBirthYear": 1559,
+   "appear": [
+    1574,
+    4,
+    1
+   ],
+   "clan": "hashiba",
+   "candidates": [
+    {
+     "id": "Q8014919",
+     "revision": 2555358915,
+     "label": "伊東祐兵",
+     "description": null,
+     "birthYears": [
+      1559
+     ],
+     "deathYears": [
+      1600
+     ],
+     "birthYearMatchesGame": true
+    }
+   ],
+   "status": "one-candidate-with-matching-birth-year"
+  },
+  {
+   "name": "佐野宗綱",
+   "gameBirthYear": 1562,
+   "appear": [
+    1574,
+    4,
+    1
+   ],
+   "clan": "sano",
+   "candidates": [
+    {
+     "id": "Q11384993",
+     "revision": 2480586936,
+     "label": "佐野宗綱",
+     "description": null,
+     "birthYears": [
+      1560
+     ],
+     "deathYears": [
+      1585
+     ],
+     "birthYearMatchesGame": false
+    },
+    {
+     "id": "Q135236738",
+     "revision": 2375698930,
+     "label": "佐野宗綱の娘 (岩崎久長の妻)",
+     "description": null,
+     "birthYears": [],
+     "deathYears": [],
+     "birthYearMatchesGame": false
+    }
+   ],
+   "status": "no-candidate-with-matching-birth-year"
+  },
+  {
+   "name": "直江兼続",
+   "gameBirthYear": 1560,
+   "appear": [
+    1575,
+    4,
+    1
+   ],
+   "clan": "nagao",
+   "candidates": [
+    {
+     "id": "Q1348611",
+     "revision": 2548970624,
+     "label": "直江兼続",
+     "description": "戦国時代～江戸時代前期の武将",
+     "birthYears": [
+      1560
+     ],
+     "deathYears": [
+      1620,
+      1619
+     ],
+     "birthYearMatchesGame": true
+    }
+   ],
+   "status": "one-candidate-with-matching-birth-year"
+  },
+  {
+   "name": "蘆名盛隆",
+   "gameBirthYear": 1561,
+   "appear": [
+    1575,
+    7,
+    1
+   ],
+   "clan": "ashina",
+   "candidates": [
+    {
+     "id": "Q4805099",
+     "revision": 2480578803,
+     "label": "蘆名盛隆",
+     "description": "安土桃山時代の武将。陸奥国の戦国大名。蘆名氏18代。二階堂盛義の長男嫡男",
+     "birthYears": [
+      1561
+     ],
+     "deathYears": [
+      1584
+     ],
+     "birthYearMatchesGame": true
+    }
+   ],
+   "status": "one-candidate-with-matching-birth-year"
+  },
+  {
+   "name": "戸沢盛安",
+   "gameBirthYear": 1566,
+   "appear": [
+    1576,
+    1,
+    1
+   ],
+   "clan": "tozawa",
+   "candidates": [
+    {
+     "id": "Q10297028",
+     "revision": 2554016571,
+     "label": "戸沢盛安",
+     "description": "安土桃山時代の大名 (1566-1590)",
+     "birthYears": [
+      1566
+     ],
+     "deathYears": [
+      1590
+     ],
+     "birthYearMatchesGame": true
+    }
+   ],
+   "status": "one-candidate-with-matching-birth-year"
+  },
+  {
+   "name": "宇都宮国綱",
+   "gameBirthYear": 1568,
+   "appear": [
+    1576,
+    9,
+    1
+   ],
+   "clan": "utsunomiya",
+   "candidates": [
+    {
+     "id": "Q11449719",
+     "revision": 1705137164,
+     "label": "宇都宮国綱",
+     "description": "下野国の戦国大名",
+     "birthYears": [
+      1568
+     ],
+     "deathYears": [
+      1608
+     ],
+     "birthYearMatchesGame": true
+    }
+   ],
+   "status": "one-candidate-with-matching-birth-year"
+  },
+  {
+   "name": "有馬晴信",
+   "gameBirthYear": 1567,
+   "appear": [
+    1577,
+    1,
+    1
+   ],
+   "clan": "arima",
+   "candidates": [
+    {
+     "id": "Q1197394",
+     "revision": 2555352915,
+     "label": "有馬晴信",
+     "description": "戦国時代から江戸時代初期の大名。肥前日野江藩初代藩主。有馬義貞の次男。キリシタン大名。従五位下修理大夫。",
+     "birthYears": [
+      1567
+     ],
+     "deathYears": [
+      1612,
+      1612
+     ],
+     "birthYearMatchesGame": true
+    }
+   ],
+   "status": "one-candidate-with-matching-birth-year"
+  },
+  {
+   "name": "十河存保",
+   "gameBirthYear": 1554,
+   "appear": [
+    1577,
+    4,
+    1
+   ],
+   "clan": "miyoshi",
+   "candidates": [
+    {
+     "id": "Q10904662",
+     "revision": 2527895062,
+     "label": "十河存保",
+     "description": "戦国時代から安土桃山時代の武将、大名。三好実休の次男。隼人正、隼人佐、阿波守、河内守、民部大輔。",
+     "birthYears": [
+      1554
+     ],
+     "deathYears": [
+      1587
+     ],
+     "birthYearMatchesGame": true
+    }
+   ],
+   "status": "one-candidate-with-matching-birth-year"
+  },
+  {
+   "name": "岩城常隆",
+   "gameBirthYear": 1567,
+   "appear": [
+    1578,
+    1,
+    1
+   ],
+   "clan": "iwaki",
+   "candidates": [
+    {
+     "id": "Q11474308",
+     "revision": 2480588190,
+     "label": "岩城常隆 (17代)",
+     "description": "安土桃山時代の武将・大名。岩城氏17代。従四位下・左京大夫。",
+     "birthYears": [
+      1567
+     ],
+     "deathYears": [
+      1590
+     ],
+     "birthYearMatchesGame": true
+    },
+    {
+     "id": "Q11474309",
+     "revision": 2388184222,
+     "label": "岩城常隆 (下総守)",
+     "description": "室町時代から戦国時代にかけての武将、岩城氏11代当主",
+     "birthYears": [],
+     "deathYears": [
+      1542
+     ],
+     "birthYearMatchesGame": false
+    },
+    {
+     "id": "Q106774403",
+     "revision": 1417974526,
+     "label": "岩城常隆の娘 (那須政資の正室)",
+     "description": null,
+     "birthYears": [],
+     "deathYears": [],
+     "birthYearMatchesGame": false
+    },
+    {
+     "id": "Q106774364",
+     "revision": 2226046800,
+     "label": "岩城常隆の娘 (田村義顕の室)",
+     "description": null,
+     "birthYears": [],
+     "deathYears": [],
+     "birthYearMatchesGame": false
+    }
+   ],
+   "status": "one-candidate-with-matching-birth-year"
+  },
+  {
+   "name": "片桐且元",
+   "gameBirthYear": 1556,
+   "appear": [
+    1578,
+    3,
+    1
+   ],
+   "clan": "oda",
+   "candidates": [
+    {
+     "id": "Q1882775",
+     "revision": 2558100867,
+     "label": "片桐且元",
+     "description": "日本の安土桃山～江戸時代の武将、大名、初代大和竜田藩藩主",
+     "birthYears": [
+      1556
+     ],
+     "deathYears": [
+      1615
+     ],
+     "birthYearMatchesGame": true
+    }
+   ],
+   "status": "one-candidate-with-matching-birth-year"
+  },
+  {
+   "name": "吉良親実",
+   "gameBirthYear": 1563,
+   "appear": [
+    1578,
+    4,
+    1
+   ],
+   "clan": "chosokabe",
+   "candidates": [
+    {
+     "id": "Q11365410",
+     "revision": 2527895028,
+     "label": "吉良親実",
+     "description": "戦国時代から安土桃山時代の武将。長宗我部氏の家臣",
+     "birthYears": [
+      1563
+     ],
+     "deathYears": [
+      1589
+     ],
+     "birthYearMatchesGame": true
+    }
+   ],
+   "status": "one-candidate-with-matching-birth-year"
+  },
+  {
+   "name": "吉川広家",
+   "gameBirthYear": 1561,
+   "appear": [
+    1578,
+    6,
+    1
+   ],
+   "clan": "mori",
+   "candidates": [
+    {
+     "id": "Q1049766",
+     "revision": 2556916363,
+     "label": "吉川広家",
+     "description": "日本の戦国〜江戸時代の武将",
+     "birthYears": [
+      1561
+     ],
+     "deathYears": [
+      1625
+     ],
+     "birthYearMatchesGame": true
+    }
+   ],
+   "status": "one-candidate-with-matching-birth-year"
+  },
+  {
+   "name": "由良国繁",
+   "gameBirthYear": 1550,
+   "appear": [
+    1578,
+    7,
+    1
+   ],
+   "clan": "yura",
+   "candidates": [
+    {
+     "id": "Q11577615",
+     "revision": 2417737773,
+     "label": "由良国繁",
+     "description": null,
+     "birthYears": [
+      1550
+     ],
+     "deathYears": [
+      1611
+     ],
+     "birthYearMatchesGame": true
+    }
+   ],
+   "status": "one-candidate-with-matching-birth-year"
+  },
+  {
+   "name": "河野通直",
+   "gameBirthYear": 1564,
+   "appear": [
+    1579,
+    4,
+    1
+   ],
+   "clan": "kono",
+   "candidates": [
+    {
+     "id": "Q11554271",
+     "revision": 2463597120,
+     "label": "河野通堯",
+     "description": "南北朝時代後期の武将、守護大名。室町幕府 伊予守護。讃岐守、刑部大輔。伊予河野氏29代",
+     "birthYears": [
+      1350
+     ],
+     "deathYears": [
+      1379
+     ],
+     "birthYearMatchesGame": false
+    },
+    {
+     "id": "Q17228446",
+     "revision": 2560239210,
+     "label": "河野通直",
+     "description": "戦国大名、河野氏第36代当主。弾正少弼を称す",
+     "birthYears": [
+      1500
+     ],
+     "deathYears": [
+      1572
+     ],
+     "birthYearMatchesGame": false
+    },
+    {
+     "id": "Q17219022",
+     "revision": 2560206420,
+     "label": "河野通直",
+     "description": "戦国大名、河野氏第39代（実質的に最後の）当主。伊予守を称する",
+     "birthYears": [
+      1564
+     ],
+     "deathYears": [
+      1587
+     ],
+     "birthYearMatchesGame": true
+    },
+    {
+     "id": "Q11554209",
+     "revision": 2523197798,
+     "label": "河野教通",
+     "description": "室町時代から戦国時代の武将、守護大名。室町幕府 伊予守護",
+     "birthYears": [],
+     "deathYears": [
+      1500
+     ],
+     "birthYearMatchesGame": false
+    }
+   ],
+   "status": "one-candidate-with-matching-birth-year"
+  },
+  {
+   "name": "肝付兼護",
+   "gameBirthYear": 1566,
+   "appear": [
+    1580,
+    1,
+    1
+   ],
+   "clan": "kimotsuki",
+   "candidates": [
+    {
+     "id": "Q11611483",
+     "revision": 1383821583,
+     "label": "肝付兼護",
+     "description": null,
+     "birthYears": [
+      1561
+     ],
+     "deathYears": [
+      1600
+     ],
+     "birthYearMatchesGame": false
+    }
+   ],
+   "status": "no-candidate-with-matching-birth-year"
+  },
+  {
+   "name": "小野寺義道",
+   "gameBirthYear": 1566,
+   "appear": [
+    1581,
+    4,
+    1
+   ],
+   "clan": "onodera",
+   "candidates": [
+    {
+     "id": "Q7094442",
+     "revision": 2370012694,
+     "label": "小野寺義道",
+     "description": "日本の安土桃山時代～江戸時代前期の大名",
+     "birthYears": [
+      1566
+     ],
+     "deathYears": [
+      1646
+     ],
+     "birthYearMatchesGame": true
+    }
+   ],
+   "status": "one-candidate-with-matching-birth-year"
+  },
+  {
+   "name": "志賀親次",
+   "gameBirthYear": 1566,
+   "appear": [
+    1581,
+    4,
+    1
+   ],
+   "clan": "otomo",
+   "candidates": [
+    {
+     "id": "Q11491190",
+     "revision": 2526196606,
+     "label": "志賀親次",
+     "description": "日本の武将 (1566-1660)",
+     "birthYears": [
+      1566
+     ],
+     "deathYears": [
+      1660
+     ],
+     "birthYearMatchesGame": true
+    }
+   ],
+   "status": "one-candidate-with-matching-birth-year"
+  },
+  {
+   "name": "天草種元",
+   "gameBirthYear": 1550,
+   "appear": [
+    1582,
+    1,
+    1
+   ],
+   "clan": "amakusa",
+   "candidates": [
+    {
+     "id": "Q11443552",
+     "revision": 2417736823,
+     "label": "天草種元",
+     "description": null,
+     "birthYears": [],
+     "deathYears": [],
+     "birthYearMatchesGame": false
+    }
+   ],
+   "status": "no-candidate-with-matching-birth-year"
+  },
+  {
+   "name": "本多正信",
+   "gameBirthYear": 1538,
+   "appear": [
+    1582,
+    7,
+    1
+   ],
+   "clan": "tokugawa",
+   "candidates": [
+    {
+     "id": "Q845447",
+     "revision": 2556828336,
+     "label": "本多正信",
+     "description": "日本の戦国～江戸時代の武将、大名、初代正信系本多家宗家当主",
+     "birthYears": [
+      1538
+     ],
+     "deathYears": [
+      1616
+     ],
+     "birthYearMatchesGame": true
+    }
+   ],
+   "status": "one-candidate-with-matching-birth-year"
+  },
+  {
+   "name": "織田秀信",
+   "gameBirthYear": 1580,
+   "appear": [
+    1582,
+    7,
+    18
+   ],
+   "clan": "oda",
+   "candidates": [
+    {
+     "id": "Q1187442",
+     "revision": 2537036295,
+     "label": "織田秀信",
+     "description": "日本の安土桃山～江戸時代の日本の武将、大名、第7代織田弾正忠家当主",
+     "birthYears": [
+      1580
+     ],
+     "deathYears": [
+      1605,
+      1605
+     ],
+     "birthYearMatchesGame": true
+    }
+   ],
+   "status": "one-candidate-with-matching-birth-year"
+  },
+  {
+   "name": "小笠原貞慶",
+   "gameBirthYear": 1546,
+   "appear": [
+    1582,
+    8,
+    1
+   ],
+   "clan": "tokugawa",
+   "candidates": [
+    {
+     "id": "Q10856562",
+     "revision": 2350383042,
+     "label": "小笠原貞慶",
+     "description": "戦国時代から安土桃山時代の武将、大名、故実家。小笠原長時の三男。信濃深志城城主。小笠原流弓馬術礼法宗家。従五位下。府中小笠原氏18代。",
+     "birthYears": [
+      1546
+     ],
+     "deathYears": [
+      1595
+     ],
+     "birthYearMatchesGame": true
+    }
+   ],
+   "status": "one-candidate-with-matching-birth-year"
+  },
+  {
+   "name": "保科正直",
+   "gameBirthYear": 1542,
+   "appear": [
+    1582,
+    8,
+    1
+   ],
+   "clan": "tokugawa",
+   "candidates": [
+    {
+     "id": "Q2405649",
+     "revision": 2050183355,
+     "label": "保科正直",
+     "description": "戦国時代の武将。信濃国衆。甲斐武田氏の家臣で先方衆。後に徳川家康の家臣。越前守、弾正忠。信濃高遠城主。",
+     "birthYears": [
+      1542
+     ],
+     "deathYears": [
+      1601
+     ],
+     "birthYearMatchesGame": true
+    },
+    {
+     "id": "Q108807752",
+     "revision": 1508386994,
+     "label": "保科正直の娘 (小日向源太左衛門の妻)",
+     "description": null,
+     "birthYears": [],
+     "deathYears": [],
+     "birthYearMatchesGame": false
+    },
+    {
+     "id": "Q108807657",
+     "revision": 1508368802,
+     "label": "保科正直の娘 (加藤明成の正室)",
+     "description": null,
+     "birthYears": [],
+     "deathYears": [],
+     "birthYearMatchesGame": false
+    }
+   ],
+   "status": "one-candidate-with-matching-birth-year"
+  },
+  {
+   "name": "京極高次",
+   "gameBirthYear": 1563,
+   "appear": [
+    1582,
+    9,
+    1
+   ],
+   "clan": "hashiba",
+   "candidates": [
+    {
+     "id": "Q587980",
+     "revision": 2566307333,
+     "label": "京極高次",
+     "description": "戦国時代から江戸時代初期の武将、大名。若狭小浜藩初代藩主。従三位・参議。京極宗家17代。京極高吉の長男。若狭守。近江大津城主。のち若狭小浜城主 (1563-1609)",
+     "birthYears": [
+      1563
+     ],
+     "deathYears": [
+      1609
+     ],
+     "birthYearMatchesGame": true
+    }
+   ],
+   "status": "one-candidate-with-matching-birth-year"
+  },
+  {
+   "name": "那須資晴",
+   "gameBirthYear": 1557,
+   "appear": [
+    1583,
+    3,
+    1
+   ],
+   "clan": "nasu",
+   "candidates": [
+    {
+     "id": "Q6967760",
+     "revision": 2556835175,
+     "label": "那須資晴",
+     "description": "下野国の戦国大名。那須氏21代。",
+     "birthYears": [
+      1557
+     ],
+     "deathYears": [
+      1610
+     ],
+     "birthYearMatchesGame": true
+    }
+   ],
+   "status": "one-candidate-with-matching-birth-year"
+  },
+  {
+   "name": "伊達成実",
+   "gameBirthYear": 1568,
+   "appear": [
+    1583,
+    4,
+    1
+   ],
+   "clan": "date",
+   "candidates": [
+    {
+     "id": "Q1038673",
+     "revision": 2521637397,
+     "label": "伊達成実",
+     "description": "戦国時代後期から江戸時代前期の武将。仙台藩一門第二席・亘理伊達家の初代。子に女子・小僧丸。",
+     "birthYears": [
+      1568
+     ],
+     "deathYears": [
+      1646
+     ],
+     "birthYearMatchesGame": true
+    }
+   ],
+   "status": "one-candidate-with-matching-birth-year"
+  },
+  {
+   "name": "滝川雄利",
+   "gameBirthYear": 1543,
+   "appear": [
+    1584,
+    1,
+    1
+   ],
+   "clan": "nobukatsu",
+   "candidates": [
+    {
+     "id": "Q11565172",
+     "revision": 2556834660,
+     "label": "滝川雄利",
+     "description": "日本の戦国時代～江戸時代前期の武将・大名・僧。滝川家・織田信雄家・豊臣家・徳川家の家臣。滝川氏一門で、常陸片野藩初代藩主。従五位下下総守。伊賀守護・織田信雄家宿老等を歴任",
+     "birthYears": [
+      1543
+     ],
+     "deathYears": [
+      1610
+     ],
+     "birthYearMatchesGame": true
+    },
+    {
+     "id": "Q135648461",
+     "revision": 2480610004,
+     "label": "滝川雄利の娘 (津田秀政の妻)",
+     "description": "滝川雄利の娘、滝川一益の養女、津田秀政の妻",
+     "birthYears": [],
+     "deathYears": [],
+     "birthYearMatchesGame": false
+    }
+   ],
+   "status": "one-candidate-with-matching-birth-year"
+  },
+  {
+   "name": "明石全登",
+   "gameBirthYear": 1569,
+   "appear": [
+    1584,
+    4,
+    1
+   ],
+   "clan": "ukita",
+   "candidates": [
+    {
+     "id": "Q840581",
+     "revision": 2521637572,
+     "label": "明石全登",
+     "description": "日本の武将",
+     "birthYears": [
+      1566
+     ],
+     "deathYears": [
+      1618
+     ],
+     "birthYearMatchesGame": false
+    }
+   ],
+   "status": "no-candidate-with-matching-birth-year"
+  },
+  {
+   "name": "蘆名亀王丸",
+   "gameBirthYear": 1584,
+   "appear": [
+    1585,
+    3,
+    1
+   ],
+   "clan": "ashina",
+   "candidates": [
+    {
+     "id": "Q11625140",
+     "revision": 2355029510,
+     "label": "蘆名亀王丸",
+     "description": "日本の安土桃山時代の大名",
+     "birthYears": [
+      1584
+     ],
+     "deathYears": [
+      1586
+     ],
+     "birthYearMatchesGame": true
+    }
+   ],
+   "status": "one-candidate-with-matching-birth-year"
+  },
+  {
+   "name": "佐竹義宣",
+   "gameBirthYear": 1570,
+   "appear": [
+    1585,
+    3,
+    1
+   ],
+   "clan": "satake",
+   "candidates": [
+    {
+     "id": "Q1071525",
+     "revision": 2561075334,
+     "label": "佐竹義宣",
+     "description": "戦国時代から江戸時代前期の武将・大名。出羽久保田藩初代藩主。佐竹義重の長男。従四位上・左近衛中将、右京大夫。佐竹氏19代。",
+     "birthYears": [
+      1570
+     ],
+     "deathYears": [
+      1633
+     ],
+     "birthYearMatchesGame": true
+    },
+    {
+     "id": "Q11383430",
+     "revision": 2191958560,
+     "label": "佐竹義宣",
+     "description": "南北朝時代の武将。常陸国佐竹氏10代。左近将監。左馬助。伊予守。",
+     "birthYears": [
+      1346
+     ],
+     "deathYears": [
+      1389
+     ],
+     "birthYearMatchesGame": false
+    }
+   ],
+   "status": "one-candidate-with-matching-birth-year"
+  },
+  {
+   "name": "森忠政",
+   "gameBirthYear": 1570,
+   "appear": [
+    1585,
+    3,
+    1
+   ],
+   "clan": "hashiba",
+   "candidates": [
+    {
+     "id": "Q11117105",
+     "revision": 2559128830,
+     "label": "森忠政",
+     "description": "安土桃山時代から江戸時代前期の武将、大名。信濃川中島藩主、美作津山藩初代藩主。従五位下・右近丞、従四位下・侍従、従四位上・左近衛権中将",
+     "birthYears": [
+      1570
+     ],
+     "deathYears": [
+      1634
+     ],
+     "birthYearMatchesGame": true
+    }
+   ],
+   "status": "one-candidate-with-matching-birth-year"
+  },
+  {
+   "name": "丹羽長重",
+   "gameBirthYear": 1571,
+   "appear": [
+    1585,
+    3,
+    1
+   ],
+   "clan": "niwa",
+   "candidates": [
+    {
+     "id": "Q909763",
+     "revision": 2556827356,
+     "label": "丹羽長重",
+     "description": "安土桃山時代から江戸時代前期の武将・大名。丹羽長秀の長男・嫡男。侍従、従三位、参議、加賀守。常陸古渡藩主、常陸江戸崎藩主、陸奥棚倉藩主、陸奥白河藩主。児玉丹羽氏2代 (1571-1637)",
+     "birthYears": [
+      1571
+     ],
+     "deathYears": [
+      1637
+     ],
+     "birthYearMatchesGame": true
+    }
+   ],
+   "status": "one-candidate-with-matching-birth-year"
+  },
+  {
+   "name": "秋田実季",
+   "gameBirthYear": 1576,
+   "appear": [
+    1587,
+    10,
+    1
+   ],
+   "clan": "ando",
+   "candidates": [
+    {
+     "id": "Q4701233",
+     "revision": 2555268301,
+     "label": "秋田実季",
+     "description": "安土桃山時代～江戸時代前期の大名",
+     "birthYears": [
+      1576
+     ],
+     "deathYears": [
+      1660
+     ],
+     "birthYearMatchesGame": true
+    }
+   ],
+   "status": "one-candidate-with-matching-birth-year"
+  },
+  {
+   "name": "小西行長",
+   "gameBirthYear": 1558,
+   "appear": [
+    1588,
+    7,
+    1
+   ],
+   "clan": "hashiba",
+   "candidates": [
+    {
+     "id": "Q942553",
+     "revision": 2552584454,
+     "label": "小西行長",
+     "description": "日本の戦国～安土桃山時代の武将、キリシタン大名 (1558-1600)",
+     "birthYears": [
+      1555,
+      1558
+     ],
+     "deathYears": [
+      1600
+     ],
+     "birthYearMatchesGame": true
+    }
+   ],
+   "status": "one-candidate-with-matching-birth-year"
+  },
+  {
+   "name": "戸沢政盛",
+   "gameBirthYear": 1585,
+   "appear": [
+    1590,
+    7,
+    1
+   ],
+   "clan": "tozawa",
+   "candidates": [
+    {
+     "id": "Q5368867",
+     "revision": 2556823205,
+     "label": "戸沢政盛",
+     "description": "日本の安土桃山時代～江戸時代前期の大名",
+     "birthYears": [
+      1585
+     ],
+     "deathYears": [
+      1648
+     ],
+     "birthYearMatchesGame": true
+    }
+   ],
+   "status": "one-candidate-with-matching-birth-year"
+  },
+  {
+   "name": "岩城貞隆",
+   "gameBirthYear": 1583,
+   "appear": [
+    1590,
+    8,
+    1
+   ],
+   "clan": "iwaki",
+   "candidates": [
+    {
+     "id": "Q11474331",
+     "revision": 2556901617,
+     "label": "岩城貞隆",
+     "description": "安土桃山時代から江戸時代前期の大名。佐竹義重の三男。但馬守。信濃中村藩主",
+     "birthYears": [
+      1583
+     ],
+     "deathYears": [
+      1620
+     ],
+     "birthYearMatchesGame": true
+    }
+   ],
+   "status": "one-candidate-with-matching-birth-year"
+  },
+  {
+   "name": "徳川秀忠",
+   "gameBirthYear": 1579,
+   "appear": [
+    1590,
+    9,
+    29
+   ],
+   "clan": "tokugawa",
+   "candidates": [
+    {
+     "id": "Q314464",
+     "revision": 2565480631,
+     "label": "徳川秀忠",
+     "description": "日本の安土桃山時代から江戸時代にかけての武将・公卿、江戸幕府第2代将軍",
+     "birthYears": [
+      1579
+     ],
+     "deathYears": [
+      1632
+     ],
+     "birthYearMatchesGame": true
+    }
+   ],
+   "status": "one-candidate-with-matching-birth-year"
+  },
+  {
+   "name": "井伊直孝",
+   "gameBirthYear": 1590,
+   "appear": [
+    1590,
+    9,
+    29
+   ],
+   "clan": "tokugawa",
+   "candidates": [
+    {
+     "id": "Q877175",
+     "revision": 2562123349,
+     "label": "井伊直孝",
+     "description": "日本の武将・大名 (1590-1659)",
+     "birthYears": [
+      1590
+     ],
+     "deathYears": [
+      1659
+     ],
+     "birthYearMatchesGame": true
+    }
+   ],
+   "status": "one-candidate-with-matching-birth-year"
+  },
+  {
+   "name": "毛利秀元",
+   "gameBirthYear": 1579,
+   "appear": [
+    1592,
+    1,
+    1
+   ],
+   "clan": "mori",
+   "candidates": [
+    {
+     "id": "Q1133105",
+     "revision": 2556909412,
+     "label": "毛利秀元",
+     "description": "安土桃山時代から江戸時代前期の武将・大名・茶人。長門長府藩初代藩主",
+     "birthYears": [
+      1579
+     ],
+     "deathYears": [
+      1650
+     ],
+     "birthYearMatchesGame": true
+    }
+   ],
+   "status": "one-candidate-with-matching-birth-year"
+  },
+  {
+   "name": "李舜臣",
+   "gameBirthYear": 1545,
+   "appear": [
+    1592,
+    4,
+    20
+   ],
+   "clan": "joseon",
+   "candidates": [
+    {
+     "id": "Q50184",
+     "revision": 2566172188,
+     "label": "李舜臣",
+     "description": "李氏朝鮮の軍人",
+     "birthYears": [
+      1545
+     ],
+     "deathYears": [
+      1598
+     ],
+     "birthYearMatchesGame": true
+    },
+    {
+     "id": "Q11097871",
+     "revision": 2196083782,
+     "label": "李舜臣 (明)",
+     "description": null,
+     "birthYears": [
+      1499
+     ],
+     "deathYears": [],
+     "birthYearMatchesGame": false
+    }
+   ],
+   "status": "one-candidate-with-matching-birth-year"
+  },
+  {
+   "name": "金時敏",
+   "gameBirthYear": 1554,
+   "appear": [
+    1592,
+    4,
+    20
+   ],
+   "clan": "joseon",
+   "candidates": [
+    {
+     "id": "Q490362",
+     "revision": 2547257122,
+     "label": "金時敏",
+     "description": null,
+     "birthYears": [
+      1554
+     ],
+     "deathYears": [
+      1592,
+      1592
+     ],
+     "birthYearMatchesGame": true
+    }
+   ],
+   "status": "one-candidate-with-matching-birth-year"
+  },
+  {
+   "name": "権慄",
+   "gameBirthYear": 1537,
+   "appear": [
+    1592,
+    8,
+    20
+   ],
+   "clan": "joseon",
+   "candidates": [
+    {
+     "id": "Q485290",
+     "revision": 2465836259,
+     "label": "権慄",
+     "description": "李氏朝鮮の将軍",
+     "birthYears": [
+      1537
+     ],
+     "deathYears": [
+      1599,
+      1599
+     ],
+     "birthYearMatchesGame": true
+    }
+   ],
+   "status": "one-candidate-with-matching-birth-year"
+  },
+  {
+   "name": "李如松",
+   "gameBirthYear": 1549,
+   "appear": [
+    1593,
+    1,
+    25
+   ],
+   "clan": "joseon",
+   "candidates": [
+    {
+     "id": "Q712027",
+     "revision": 2516512728,
+     "label": "李如松",
+     "description": "明の軍人",
+     "birthYears": [
+      1549
+     ],
+     "deathYears": [
+      1598
+     ],
+     "birthYearMatchesGame": true
+    },
+    {
+     "id": "Q48914463",
+     "revision": 2459723678,
+     "label": null,
+     "description": null,
+     "birthYears": [],
+     "deathYears": [],
+     "birthYearMatchesGame": false
+    },
+    {
+     "id": "Q45508755",
+     "revision": 1864644803,
+     "label": null,
+     "description": null,
+     "birthYears": [],
+     "deathYears": [],
+     "birthYearMatchesGame": false
+    }
+   ],
+   "status": "one-candidate-with-matching-birth-year"
+  },
+  {
+   "name": "豊臣秀頼",
+   "gameBirthYear": 1593,
+   "appear": [
+    1593,
+    8,
+    29
+   ],
+   "clan": "hashiba",
+   "candidates": [
+    {
+     "id": "Q313641",
+     "revision": 2562777279,
+     "label": "豊臣秀頼",
+     "description": "日本の武将",
+     "birthYears": [
+      1593
+     ],
+     "deathYears": [
+      1615
+     ],
+     "birthYearMatchesGame": true
+    }
+   ],
+   "status": "one-candidate-with-matching-birth-year"
+  },
+  {
+   "name": "本多忠朝",
+   "gameBirthYear": 1582,
+   "appear": [
+    1600,
+    12,
+    1
+   ],
+   "clan": "tokugawa",
+   "candidates": [
+    {
+     "id": "Q837870",
+     "revision": 2556897969,
+     "label": "本多忠朝",
+     "description": "安土桃山時代～江戸時代初期の大名、大多喜藩主。本多忠勝の次男",
+     "birthYears": [
+      1582
+     ],
+     "deathYears": [
+      1615
+     ],
+     "birthYearMatchesGame": true
+    }
+   ],
+   "status": "one-candidate-with-matching-birth-year"
+  },
+  {
+   "name": "前田利常",
+   "gameBirthYear": 1594,
+   "appear": [
+    1605,
+    1,
+    1
+   ],
+   "clan": "tokugawa",
+   "candidates": [
+    {
+     "id": "Q587204",
+     "revision": 2556900878,
+     "label": "前田利常",
+     "description": "日本の江戸時代の大名、加賀藩の第2代藩主",
+     "birthYears": [
+      1594
+     ],
+     "deathYears": [
+      1658
+     ],
+     "birthYearMatchesGame": true
+    }
+   ],
+   "status": "one-candidate-with-matching-birth-year"
+  },
+  {
+   "name": "有馬直純",
+   "gameBirthYear": 1586,
+   "appear": [
+    1612,
+    4,
+    18
+   ],
+   "clan": "arima",
+   "candidates": [
+    {
+     "id": "Q4790672",
+     "revision": 2555356252,
+     "label": "有馬直純",
+     "description": "安土桃山時代から江戸時代前期の大名。肥前日野江藩主、日向延岡藩主。晴信系肥前有馬氏2代。有馬晴信の長男。",
+     "birthYears": [
+      1586
+     ],
+     "deathYears": [
+      1641
+     ],
+     "birthYearMatchesGame": true
+    }
+   ],
+   "status": "one-candidate-with-matching-birth-year"
+  },
+  {
+   "name": "後藤基次",
+   "gameBirthYear": 1560,
+   "appear": [
+    1614,
+    11,
+    25
+   ],
+   "clan": "hashiba",
+   "candidates": [
+    {
+     "id": "Q2714642",
+     "revision": 2543528729,
+     "label": "後藤基次",
+     "description": "日本の安土桃山時代～江戸時代初期の武将",
+     "birthYears": [
+      1565,
+      1560
+     ],
+     "deathYears": [
+      1615
+     ],
+     "birthYearMatchesGame": true
+    }
+   ],
+   "status": "one-candidate-with-matching-birth-year"
+  },
+  {
+   "name": "毛利勝永",
+   "gameBirthYear": 1578,
+   "appear": [
+    1614,
+    11,
+    25
+   ],
+   "clan": "hashiba",
+   "candidates": [
+    {
+     "id": "Q6951118",
+     "revision": 2521636322,
+     "label": "毛利勝永",
+     "description": "安土桃山時代から江戸時代初期にかけての武将、大名",
+     "birthYears": [
+      1577
+     ],
+     "deathYears": [
+      1615
+     ],
+     "birthYearMatchesGame": false
+    }
+   ],
+   "status": "no-candidate-with-matching-birth-year"
+  },
+  {
+   "name": "木村重成",
+   "gameBirthYear": 1593,
+   "appear": [
+    1614,
+    11,
+    25
+   ],
+   "clan": "hashiba",
+   "candidates": [
+    {
+     "id": "Q840196",
+     "revision": 2521639364,
+     "label": "木村重成",
+     "description": "安土桃山時代から江戸時代初期の武将。豊臣氏の家臣 3千石。正四位上長門守。",
+     "birthYears": [
+      1593
+     ],
+     "deathYears": [
+      1615
+     ],
+     "birthYearMatchesGame": true
+    }
+   ],
+   "status": "one-candidate-with-matching-birth-year"
+  }
+ ]
+}

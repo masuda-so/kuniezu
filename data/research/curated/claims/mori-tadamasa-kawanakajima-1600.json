@@ -1,0 +1,39 @@
+{
+  "id": "mori-tadamasa-kawanakajima-1600",
+  "entity": "person:森忠政",
+  "predicate": "territorial-transfer",
+  "value": "徳川家康が、信濃川中島の田丸直息を美濃兼山に移して恵那・土岐・可児の三郡を与え、兼山の森忠政を信濃川中島に移して更級・水内など四郡を与えた。",
+  "validYears": [
+    1600,
+    1600
+  ],
+  "datePrecision": "day",
+  "source": "hiDainihonshiryoKobun",
+  "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+  "locator": "綱文：和暦 慶長5年2月1日 第1条（区分 史料綜覧、編11・冊913（データベースの表示値）、214頁）",
+  "gameBindings": [
+    "TK.HIST:1600-3-1"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-09",
+  "uncertainty": "綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。",
+  "linkedEntities": [
+    "person:森忠政",
+    "person:tokugawa-ieyasu",
+    "person:田丸直息"
+  ],
+  "eventTime": {
+    "kind": "dated-event",
+    "date": [
+      1600,
+      2,
+      1
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": false,
+    "precision": "day"
+  },
+  "eventRelation": "territorial-transfer",
+  "eventScope": "綱文が掲げる日付。慶長5年2月1日はゲーム共通の暦表で1600年3月15日。最終年表の森忠政の移り（1600年3月1日、題名なし、node:kaizu）は綱文より14日早い。命題は国替えの命令の日で、忠政が川中島に入った日ではない。年表の行き先 node:kaizu（海津城）と綱文の「川中島」の対応は確かめていないので、ノードとは結ばない。"
+}
