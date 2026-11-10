@@ -1,0 +1,25 @@
+{
+  "id": "person:飯富虎昌",
+  "name": "飯富虎昌",
+  "gameNames": [
+    "飯富虎昌"
+  ],
+  "authorityIds": [
+    "wikidata:Q2105694"
+  ],
+  "authorityEvidence": {
+    "scope": "person-identity",
+    "checked": "2026-11-10",
+    "wikidataRevision": 2532134726,
+    "snapshot": "data/research/source-notes/person-identity-corpus-1.json",
+    "sourceNote": "data/research/source-notes/person-identity-corpus-1.json",
+    "identityChecks": [
+      "甲府市の本文が、飯富兵部少輔虎昌を信虎・信玄の二代の宿老で、天文22年（1553）に塩田城代となり、信玄の嫡男義信の補佐役で、永禄8年（1565）10月15日に没したとする",
+      "Wikidata Q2105694の日本語主名が飯富虎昌で、P570の年が1565"
+    ],
+    "basis": "人物の同定のみ。原本にある生没日・所在・所領・関係の時期は新たな史実命題へ採用しない。",
+    "sourceIds": [
+      "kofuToramasaIdentity"
+    ]
+  }
+}
