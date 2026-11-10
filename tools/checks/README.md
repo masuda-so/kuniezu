@@ -15,6 +15,7 @@
 | 肖像の代替crop | `portrait-loading.cjs`、`build_fallback.py --root . --check` | `portrait-fallback-browser.cjs`（`PORTRAIT_MODE=normal/primary-fail/all-fail`） |
 | 登録漏れの追加肖像 | `uv run pytest tests/test_reviewed_portraits.py`、`build_reviewed.py --check` | 同じブラウザ検査へ `PORTRAIT_MANIFEST=tools/faces/reviewed-portraits.json PORTRAIT_FALLBACK_FILE=portraits/reviewed-fallback.webp` を渡す |
 | 基本・保存・史実進行 | `offline.cjs` | `completion-browser.cjs` |
+| 実日時計と旧保存移行 | `calendar.cjs`（暦・DB対応）、`clock-migration.cjs`（原文保全・変換計画）、`clock-load.cjs`（表示キャッシュなし・日内移動・選択日の出来事）。Offline checksにも含む | `data/verification/codex-real-calendar-clock/README.md` に検証条件と証拠 |
 | 検証ブラウザの起動失敗・早期終了 | `node tools/checks/browser-process-exit.cjs`（実Chromeを起動せず失敗時終了とprofile削除を確認） | — |
 | 秘密情報（APIキー・秘密鍵など。gzipも展開） | `secret-scan.cjs`（CIでも実行。第三者ページの保存前は `tools/research/source-privacy.cjs`） | — |
 | 読み込みの確認値（更新後に古い版を使わせない） | `node tools/build/stamp-assets.cjs --check`（CIでも実行。kuniezu/static/kuniezu/ のファイルを変えたら `node tools/build/stamp-assets.cjs` を実行） | — |

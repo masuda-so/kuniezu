@@ -1249,7 +1249,7 @@ function battleTerrain(I){if(!LAND3)LAND3=P2(GEO.land,3);const LAND=LAND3;const 
 /* ===== モーダル ===== */
 const modal=$('#modal');
 function openModal(name,data,keepTrail=false){U.wakeLoop?.();if(!keepTrail)U.modalTrail=[];if(TK.HISTORY_ONLY&&['event','attack','envoy','chat','jiritsu','prison','prop','relief','battle'].includes(name))return;stopScene();U.modal=name;document.body.dataset.modal=name;U.mdata=data||{};if(U.mode==='game'&&S){uiT=performance.now();renderTop();renderSide();}renderModal();modal.hidden=false;}
-function closeModal(){U.modalTrail=[];if(U.modal==='import-confirm')U.pendingImport=null;stopScene();if(U.chatCtl){U.chatCtl.abort();U.chatCtl=null;}U.modal=null;delete document.body.dataset.modal;modal.hidden=true;modal.innerHTML='';renderAll();}
+function closeModal(){U.modalTrail=[];if(U.modal==='import-confirm'){U.pendingImport=null;U.pendingImportText=null;}if(U.modal==='clock-date'){U.pendingClock=null;U.pendingImport=null;U.pendingImportText=null;}stopScene();if(U.chatCtl){U.chatCtl.abort();U.chatCtl=null;}U.modal=null;delete document.body.dataset.modal;modal.hidden=true;modal.innerHTML='';renderAll();}
 function renderModal(){const f=MODALS[U.modal];if(!f)return;modal.innerHTML=`<div class="mbox ${U.modal}" role="dialog" aria-modal="true">${U.modalTrail?.length?'<button class="mini modal-back" data-act="modal-back">戻る</button>':''}${f(U.mdata)}</div>`;const log=$('#chatLog');if(log)log.scrollTop=log.scrollHeight;const ci=$('#chatIn');if(ci&&!U.mdata.busy)ci.focus();if(U.modal==='attack')updAtk();if(U.modal==='scene'&&!SCN){const B=TK.BATTLES[U.mdata.title];const md=U.mdata;if(B&&!campaignRecord(B,U.mdata.title))mountScene(B,()=>{const active=SCN;sceneCloseTimer=setTimeout(()=>{if(SCN===active&&SCN.ended&&U.modal==='scene'&&U.mdata===md)closeModal();},1400);});}else if(U.modal==='battle'&&U.mdata.res&&!SCN){const d=U.mdata;mountScene(d.sc,()=>{d.done=true;d.reveal&&d.reveal();autoBack(d,3800);});}}
 // 合戦図が終わったら、少し余韻をおいて地図へ戻る（その間に操作したら戻らない）
 function autoBack(md,ms){const t0=performance.now();let touched=false;const mark=()=>{touched=true;};modal.addEventListener('pointerdown',mark,{once:true});
@@ -1307,7 +1307,7 @@ MODALS.infrastructure=d=>{const kind=d.kind||'road',s=G.S(),ids=kind==='road'?Ob
 ACT['infra-tab']=b=>openModal('infrastructure',{kind:b.dataset.kind});
 ACT['infra-upgrade']=b=>{const r=G.startImprovement(b.dataset.kind,b.dataset.id);toast(r.msg,r.ok?'good':'bad');if(r.ok){autosave();U.baseDirty=true;renderModal();}};
 MODALS.menu=()=>`${menuHeader('操作と保存')}<p class="save-status">${U.saveError?'自動保存に失敗しました。保存・読込からファイルに書き出せます。':'自動保存：'+esc(readMeta('auto')||'まだありません')}</p><nav class="menu-links" aria-label="ゲームの操作">${menuLink('army-list','軍勢一覧','出陣・行軍・在陣する各隊')}${menuLink('dip','諸家の関係','同盟・主従・交戦')}${menuLink('infrastructure','街道・施設の整備','道普請・補給・守備を充実')}${menuLink('menu-save','保存・読込','自動保存・手動の保存枠・ファイル')}${menuLink('menu-settings','表示設定','向き・外交境界・合戦の表示')}${menuLink('menu-library','合戦と史料','合戦一覧・出典・考証の範囲')}${menuLink('menu-help','操作案内','地図・時間・軍勢の見方')}</nav><footer><button class="btn" data-act="to-title">タイトルへ</button><button class="btn pri" data-act="close">地図へ戻る</button></footer>`;
-MODALS['menu-save']=()=>{const slots=[1,2,3].map(n=>{const m=readMeta(n);return `<div class="slot"><span><b>保存枠 ${n}</b><small>${m?esc(m):'空き'}</small></span><button class="mini" data-act="save" data-v="${n}" aria-label="保存枠${n}に保存">保存</button><button class="mini" data-act="load" data-v="${n}" aria-label="保存枠${n}から読込" ${m?'':'disabled'}>読込</button></div>`;}).join('');return `${menuHeader('保存・読込')}<p class="hint">ゲーム内30日ごと・停止時・画面を離れる時に、このブラウザへ自動保存します。</p><div class="slot"><span><b>自動保存</b><small>${esc(readMeta('auto')||'まだありません')}${U.saveError?' ／ 直近の保存に失敗':''}</small></span><button class="mini" data-act="load" data-v="auto" ${readMeta('auto')?'':'disabled'}>読込</button></div>${slots}<h3>ファイルに残す</h3><p class="hint">別のブラウザや端末に移す場合は、ファイルへ書き出してください。</p><div class="mtop"><button class="btn" data-act="export">書き出す</button><button class="btn" data-act="import">取り込む</button></div>`;};
+MODALS['menu-save']=()=>{const slots=[1,2,3].map(n=>{const m=readMeta(n);return `<div class="slot"><span><b>保存枠 ${n}</b><small>${m?esc(m):'空き'}</small></span><button class="mini" data-act="save" data-v="${n}" aria-label="保存枠${n}に保存">保存</button><button class="mini" data-act="load" data-v="${n}" aria-label="保存枠${n}から読込" ${m?'':'disabled'}>読込</button></div>`;}).join('');return `${menuHeader('保存・読込')}<p class="hint">ゲーム内30日ごと・停止時・画面を離れる時に、このブラウザへ自動保存します。</p><div class="slot"><span><b>自動保存</b><small>${esc(readMeta('auto')||'まだありません')}${U.saveError?' ／ 直近の保存に失敗':''}</small></span><button class="mini" data-act="load" data-v="auto" ${readMeta('auto')?'':'disabled'}>読込</button></div>${slots}<h3>ファイルに残す</h3><p class="hint">別のブラウザや端末に移す場合は、ファイルへ書き出してください。</p><div class="mtop"><button class="btn" data-act="export">書き出す</button><button class="btn" data-act="import">取り込む</button><button class="btn" data-act="open" data-m="clock-backups">日付補正前の保存</button></div>`;};
 MODALS['menu-settings']=()=>`${menuHeader('表示設定')}<div class="setting-row"><label for="mapRotationSetting">地図の向き</label><select id="mapRotationSetting">${U.MAP_ROTATIONS.map(o=>`<option value="${o.deg}" ${U.mapRotation===o.deg?'selected':''}>${o.name}</option>`).join('')}</select></div><div class="setting-row"><label for="relationSetting">外交境界の線</label><select id="relationSetting"><option value="clan" ${!U.dipView?'selected':''}>標準</option><option value="relation" ${U.dipView?'selected':''}>境界を強調</option></select></div><div class="setting-row"><label for="sceneSetting">合戦を自動で開く</label><select id="sceneSetting"><option value="mine" ${sceneMode()==='mine'?'selected':''}>自軍が参加する合戦</option><option value="all" ${sceneMode()==='all'?'selected':''}>すべて</option><option value="off" ${sceneMode()==='off'?'selected':''}>開かない</option></select></div><p class="hint">布陣を確かめられない合戦は、経過・参加者・史料を表示します。合戦一覧からいつでも開けます。</p>`;
 MODALS['menu-library']=()=>`${menuHeader('合戦と史料')}<nav class="menu-links">${menuLink('battle-list','合戦一覧','布陣図・参加者・経過')}${menuLink('domain-records','領地再分配の記録','清須会議・宗家と各領国')}${menuLink('alliance-records','盟約と軍事協力','呼称・期間・主従の区別')}${menuLink('research','地図と行軍の出典','街道・湖岸・城の座標')}${menuLink('histv','史実データの確認状況','日付・支配・人物の照合範囲')}${menuLink('menu-about','この作品について','史料・画像・地図の権利表示')}</nav>`;
 MODALS['menu-help']=()=>`${menuHeader('操作案内')}${HELP}`;
@@ -1332,10 +1332,37 @@ function doSave(n){S.visualFraction=saveFraction();const d=G.date();let r;try{r=
  if(!r.ok)toast('保存できませんでした。ブラウザの保存容量や設定を確認し、ファイルに書き出してください。','bad');return r.ok;}
 function exportSave(){try{const blob=new Blob([TKStorage.encode({...S,visualFraction:saveFraction()})],{type:'application/json'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download=`天下分け目の国絵図-${G.date().y}-${G.date().m}-${G.date().d}.json`;a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);toast('保存データを書き出しました','good');}catch(_){toast('書き出せませんでした','bad');}}
 function importSave(){const input=document.createElement('input');input.type='file';input.accept='.json,application/json';input.hidden=true;document.body.append(input);input.addEventListener('cancel',()=>input.remove(),{once:true});
- input.onchange=async()=>{const file=input.files[0];input.remove();if(!file)return;try{if(file.size>20000000)throw new Error('size');const next=cleanSave(TKStorage.decode(await file.text()));if(!next)throw new Error('shape');U.pendingImport=next;openModal('import-confirm');}catch(_){toast('取り込めませんでした。国絵図の保存ファイルを選んでください。','bad');}};input.click();}
+ input.onchange=async()=>{const file=input.files[0];input.remove();if(!file)return;try{if(file.size>20000000)throw new Error('size');const text=await file.text(),next=cleanSave(TKStorage.decode(text));if(!next)throw new Error('shape');U.pendingImport=next;U.pendingImportText=text;openModal('import-confirm');}catch(_){toast('取り込めませんでした。国絵図の保存ファイルを選んでください。','bad');}};input.click();}
 MODALS['import-confirm']=()=>`<header><h2>保存ファイルを取り込む</h2></header><p>現在のプレイを、選んだファイルの続きに切り替えます。現在のプレイを残す場合は、先に保存または書き出しをしてください。</p><footer><button class="btn" data-act="import-cancel">やめる</button><button class="btn pri" data-act="import-go">取り込む</button></footer>`;
-ACT['import-cancel']=()=>{U.pendingImport=null;openModal('menu');};
-ACT['import-go']=()=>{if(!U.pendingImport)return;const previous=S;try{S=U.pendingImport;G.setS(S);G.fixHist();U.sel=null;U.ended=false;enterGame();closeModal();U.pendingImport=null;toast('ファイルから再開しました','good');}catch(_){S=previous;G.setS(S);U.pendingImport=null;enterGame();openModal('menu');toast('取り込めませんでした。元のプレイに戻しました。','bad');}};
+ACT['import-cancel']=()=>{U.pendingImport=null;U.pendingImportText=null;openModal('menu');};
+ACT['import-go']=()=>{if(U.pendingImport&&resumeSavedState(U.pendingImport,U.pendingImportText))toast('ファイルから再開しました','good');};
+function resumeSavedState(next,rawText,chosen){
+ const previous=S,acc=U.acc,mode=U.mode;
+ let migrated=false;
+ try{
+  if(next.clockVersion!==TKCalendar.version){
+   if(next.clockVersion!=null)throw Error('clock-version');
+   const backup=TKStorage.backupClock(localStorage,rawText);
+   if(!backup.ok){const error=new Error('backup');error.code='clock-backup';throw error;}
+   const p=TKClockMigration.prepare(G,TK,next,chosen);
+   if(p.overdueMotion.length){const error=new Error('arrival');error.code='clock-arrival-conflict';throw error;}
+   next=p.state;next.clockMigration={version:1,previousDate:p.dates.date,date:chosen||p.dates.date,previousTime:p.oldNow,backupKey:backup.key,invalidTimestamps:p.invalidTimestamps};migrated=true;
+  }
+  S=next;G._lr=null;G.setS(S);G.fixHist();if(migrated)S.clockMigration.caughtUp=TKClockMigration.catchUp(G,TK);G._past=null;G._ff={};U.sel=null;U.ended=false;enterGame();
+  U.pendingClock=null;U.pendingImport=null;U.pendingImportText=null;closeModal();return true;
+ }catch(error){
+  if(S!==previous){S=previous;G.setS(previous);U.acc=acc;U.mode=mode;$('#app').dataset.mode=mode;title.hidden=mode!=='title';$('#pick').hidden=mode!=='pick';renderAll();}
+  if(error.code==='clock-date-selection'){setSpeed(0);U.pendingClock={next,rawText,dates:error.dates};openModal('clock-date');}
+  else toast(error.code==='clock-backup'?'元の保存を保管できませんでした。ブラウザの空き容量を確保してから、もう一度読み込んでください。':error.code==='clock-arrival-conflict'?'選んだ日では移動中の軍勢が着陣期限を過ぎます。前の日付を選んでください。':'読み込めませんでした。元のプレイは変更していません。','bad');
+  return false;
+ }
+}
+MODALS['clock-date']=()=>{const p=U.pendingClock,d=p?.dates.date;return `<header><h2>保存の日付を確認</h2></header><p>旧版の保存に、実在しない日付${d?'（'+d.y+'年'+d.m+'月'+d.d+'日）':''}が含まれています。元の保存を保管し、再開する日付を選びます。</p><p class="hint">武将・領地・兵数と、移動中の位置を引き継ぎます。</p><div class="mtop">${(p?.dates.choices||[]).map((date,i)=>`<button class="btn" data-act="clock-date" data-i="${i}"><span>${date.y}年<br>${date.m}月${date.d}日</span></button>`).join('')}</div><footer><button class="btn" data-act="clock-cancel">やめる</button></footer>`;};
+ACT['clock-date']=b=>{const p=U.pendingClock,date=p?.dates.choices[+b.dataset.i];if(date&&resumeSavedState(p.next,p.rawText,date))toast('日付を補正して再開しました','good');};
+ACT['clock-cancel']=()=>closeModal();
+function clockBackups(){const out=[];try{for(let i=0;i<localStorage.length;i++){const key=localStorage.key(i);if(!key?.startsWith('kuniezu-history-clock-backup-'))continue;const state=TKStorage.decode(localStorage.getItem(key)),d=TKCalendar.legacyDate(state);out.push({key,label:d.y+'年'+d.m+'月'+d.d+'日（補正前）'});}}catch(_){}return out;}
+MODALS['clock-backups']=()=>`${menuHeader('日付補正前の保存')}<p>日付を補正する前の保存を、元の内容のまま書き出せます。</p>${clockBackups().map(row=>`<div class="slot"><span>${esc(row.label)}</span><button class="mini" data-act="clock-backup-export" data-key="${esc(row.key)}">書き出す</button></div>`).join('')||'<p>保管された保存はありません。</p>'}`;
+ACT['clock-backup-export']=b=>{try{const key=b.dataset.key;if(!key?.startsWith('kuniezu-history-clock-backup-'))return;const text=localStorage.getItem(key);if(text==null)throw Error('missing');const blob=new Blob([text],{type:'application/json'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='天下分け目の国絵図-日付補正前.json';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);toast('補正前の保存を書き出しました','good');}catch(_){toast('補正前の保存を読み出せませんでした','bad');}};
 function autosave(){if(!S||U.mode!=='game')return false;S.visualFraction=saveFraction();const now=Date.now();if(U.saveRetry&&now<U.saveRetry)return false;
  const ok=doSave('auto');if(ok){U.lastSave=S.t;U.savedAt=now;U.saveRetry=0;U.saveError=false;}else{U.saveRetry=now+10000;U.saveError=true;}return ok;}
 setInterval(()=>{if(U.mode==='game'&&S&&S.t!==U.lastSave)autosave();},45000);
@@ -1361,7 +1388,7 @@ function cleanSave(o){if(!o||typeof o!=='object'||typeof o.t!=='number'||!o.cast
  for(const u of o.units){if(u.branch&&!G.YOSHO.some(y=>y.id===u.branch&&y.kind==='城'))return null;if(u.state?.startsWith('branch-')&&(!u.branch||!Number.isFinite(u.branchLeg)||u.branchLeg<=0))return null;}
  for(const [id,d] of Object.entries(o.branchGarrisons||{})){if(!G.YOSHO.some(y=>y.id===id)||!d||!o.clans[d.owner]||!o.clans[d.base]||!Number.isFinite(d.troops)||d.troops<0||!Number.isFinite(d.dur)||!Number.isFinite(d.morale))return null;}
  o.settings=o.settings||{};return o;}
-function doLoad(n){const previous=S;try{const s=(localStorage.getItem(SAVE_KEY2+n)||localStorage.getItem(LEGACY_SAVE_KEY+n));if(!s)return false;if(s.length>2e7)throw new Error('size');const o=cleanSave(JSON.parse(s));if(!o)throw new Error('shape');S=o;G.setS(S);G.fixHist();U.sel=null;U.ended=false;enterGame();return true;}catch(e){if(S!==previous){S=previous;G.setS(S);}toast(e.message.includes('非史実')?e.message:'読み込めませんでした（保存データが壊れているか、古い形式です）','bad');return false;}}
+function doLoad(n){const previous=S;try{const s=(localStorage.getItem(SAVE_KEY2+n)||localStorage.getItem(LEGACY_SAVE_KEY+n));if(!s)return false;if(s.length>2e7)throw new Error('size');const o=cleanSave(JSON.parse(s));if(!o)throw new Error('shape');return resumeSavedState(o,s);}catch(e){if(S!==previous){S=previous;G.setS(S);}toast(e.message.includes('非史実')?e.message:'読み込めませんでした（保存データが壊れているか、古い形式です）','bad');return false;}}
 
 /* ===== タイトルと大名選び ===== */
 const title=$('#title');
@@ -1409,7 +1436,7 @@ function enterGame(){U.mode='game';U.acc=Math.max(0,Math.min(1,S.visualFraction|
 /* ===== 起動 ===== */
 resize();
 const hot=window.claude&&window.claude.hot;
-function start(data){if(data&&data.S){S=data.S;G.setS(S);enterGame();}else showTitle();}
+function start(data){showTitle();if(data&&data.S){const raw=JSON.stringify(data.S),next=cleanSave(JSON.parse(raw));if(next)resumeSavedState(next,raw);}}
 if(hot&&hot.snapshot)hot.snapshot(()=>({S:U.mode==='game'?S:null}));
 // ほかの部品（史料集・AIの分かれ道）から使う入口
 U.motionSnapshot=()=>U.mapUnits?.map(u=>({id:u.id,point:unitPos(u),crest:G.armyCrestKey(u),troops:u.troops}));

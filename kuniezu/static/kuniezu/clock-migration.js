@@ -64,7 +64,7 @@
   for(const [id,b] of Object.entries(s.personLocationDisplay?.bridges||{}))rebase(b,['start','end'],stamp,undefined,'bridge:'+id);
   const documentedBridges={};
   for(const row of documentedSamples){
-   const end=dateTime(row.nextDate);
+   const end=row.nextDate?dateTime(row.nextDate)+(row.endFraction||0):relative(row.oldEnd);
    if(end<=newSample){overdueMotion.push(row.id);continue;}
    documentedBridges[row.id]={line:JSON.parse(JSON.stringify(row.line)),start:newSample,end,historicalObservation:false};
   }
@@ -80,21 +80,35 @@
     const a=line[i],b=line[i+1],dx=b[0]-a[0],dy=b[1]-a[1],f=Math.max(0,Math.min(1,((p[0]-a[0])*dx+(p[1]-a[1])*dy)/(dx*dx+dy*dy||1))),dist=Math.hypot(p[0]-a[0]-f*dx,p[1]-a[1]-f*dy);
     if(!best||dist<best.dist)best={i,f,dist};
    }return best;}
-   if(!line||line.length<2)return [start,target];
+   if(!line||line.length<2){if(Math.hypot(start[0]-target[0],start[1]-target[1])<1e-8)return [start,target];throw Error('移行前の経路を確認できません');}
    const a=foot(start),b=foot(target,a.i);
    return [start,...line.slice(a.i+1,b.i+1).map(p=>p.slice(0,2)),target];
   }
-  for(const u of G.documentedArmies()){
-   const r=u.record;if(r.point)continue;
-   let stops;
-   if(u.id==='documented:ieyasu1600')stops=TK.IEYASU_1600_ITINERARY.rows;
-   else if(r.itinerary)stops=r.itinerary.rows;
-   else if(r.stops)stops=r.stops.map(row=>({date:row[0],point:row.slice(1)}));
-   else if(r.end&&r.track)stops=[{date:r.end,point:r.track.at(-1)}];
-   const next=stops?.find(row=>G.evT({d:row.date})>time),p=G.historyPoint(u);
-   if(!next||!p)continue;
-   const target=G.PJ(...next.point),line=remaining(G.historyGeometry(u),p.slice(0,2),target);
-   out.push({id:u.id,nextDate:next.date.slice(),line});
+  for(const u of [...G.documentedArmies(),...G.S().units]){
+   const r=u.record;if(r?.point||u.battlePoint)continue;
+   let stops,line=G.historyGeometry(u),p=G.historyPoint(u);
+   if(!p)continue;
+   const interval=G.displayTravelInterval?.(u);
+   if(interval){
+    if(time>=interval.start&&time<interval.end)out.push({id:u.id,nextDate:interval.date.slice(),endFraction:interval.end-interval.start,line:remaining(line,p.slice(0,2),line.at(-1).slice(0,2))});
+    continue;
+   }
+   const ieyasu=u.id==='documented:ieyasu1600'||!r&&u.hist&&!G.isHistoryReturning(u)&&['小山評定','関ヶ原の戦い'].includes(u.until||u.historyTitle)&&(u.commanders||u.gens.map(id=>G.gen(id)?.n)).includes('徳川家康');
+   if(ieyasu)stops=TK.IEYASU_1600_ITINERARY.rows;
+   else if(r?.itinerary)stops=r.itinerary.rows;
+   else if(r?.stops)stops=r.stops.map(row=>({date:row[0],point:row.slice(1)}));
+   else if(r?.end&&r.track)stops=[{date:r.end,point:r.track.at(-1)}];
+   else if(!r&&u.hist&&u.schedule&&u.until!=='#hold'&&!G.isHistoryReturning(u)){
+    if(time<u.schedule.start||time>=u.schedule.end)continue;
+    const e=TK.HIST.find(e=>e.title===u.until&&e.k!=='premarch'),date=u.arrive||e?.d;
+    if(!date)continue;
+    if(!line)line=u.path.slice(1).flatMap((b,i)=>G.visualEdgeGeo(u.path[i],b).slice(i?1:0));
+    out.push({id:u.id,nextDate:date.slice(),line:remaining(line,p.slice(0,2),line.at(-1).slice(0,2))});continue;
+   }
+   const next=stops?.find(row=>G.evT({d:row.date})>time);
+   if(!next)continue;
+   const target=G.PJ(...next.point);
+   out.push({id:u.id,nextDate:next.date.slice(),line:remaining(line,p.slice(0,2),target)});
   }
   return out;
  }
@@ -104,5 +118,27 @@
   G.historyPoint=u=>{const b=bridge(u);return b?G.visualPathPoint(b.line,(G.visualTime()-b.start)/(b.end-b.start)):point(u);};
   G.historyGeometry=u=>bridge(u)?.line||geometry(u);
  }
- window.TKClockMigration=Object.freeze({plan,sampleDocumented,installDisplay});
+ function prepare(G,TK,original,chosen){
+  if(original.clockVersion===C.version)return plan(original,chosen);
+  if(original.clockVersion!=null)throw Error('この保存の暦には対応していません');
+  // 選択待ちでは現在のプレイにも旧保存にも触らない。
+  const dates=C.legacyDateChoices(original);
+  if(dates.requiresSelection&&!chosen){const error=new Error('移行先の日付を選んでください');error.code='clock-date-selection';error.dates=dates;throw error;}
+  const previous=G.S(),visual=G._visualSampleTime,simulating=G._inSimulation,lastRef=G._lr;
+  try{
+   const old=JSON.parse(JSON.stringify(original));G._inSimulation=true;G._lr=null;G.setS(old);G.fixHist();
+   G._visualSampleTime=old.t+(Number.isFinite(old.visualFraction)?Math.max(0,Math.min(1,old.visualFraction)):0);
+   const samples=sampleDocumented(G,TK);
+   return plan(old,chosen,{events:TK.HIST,documentedSamples:samples});
+  }finally{G._visualSampleTime=visual;G._inSimulation=simulating;G.setS(previous);G._lr=lastRef;}
+ }
+ function catchUp(G,TK){
+  const s=G.S(),fromHi=s.hi,time=s.t;
+  if(s.clockVersion!==C.version)throw Error('実日への補正後に実行してください');
+  if(TK.HIST[s.hi]&&G.evT(TK.HIST[s.hi])<=s.t){const simulating=G._inSimulation;try{G._inSimulation=true;G.hist();}finally{G._inSimulation=simulating;}}
+  if(s.t!==time)throw Error('日付が変化しました');
+  return {fromHi,toHi:s.hi,time};
+ }
+ window.TKClockMigration=Object.freeze({plan,prepare,catchUp,sampleDocumented,installDisplay});
+ if(window.G)installDisplay(G);
 })();
