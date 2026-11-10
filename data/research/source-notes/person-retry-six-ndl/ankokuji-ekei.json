@@ -1,0 +1,52 @@
+{
+    "@context": "https://id.ndl.go.jp/auth/context.json",
+    "uri": "http://id.ndl.go.jp/auth/ndlna/00622777",
+    "primaryTopic": {
+        "uri": "http://id.ndl.go.jp/auth/entity/00622777",
+        "type": {
+            "uri": "http://xmlns.com/foaf/0.1/Person"
+        },
+        "name": "恵瓊",
+        "dateOfDeath": "1600",
+        "biographicalInformation": [
+            "僧"
+        ]
+    },
+    "type": {
+        "uri": "http://www.w3.org/2004/02/skos/core#Concept"
+    },
+    "modified": "2017-03-28T18:55:41",
+    "created": "1998-01-30",
+    "prefLabel": {
+        "literalForm": "恵瓊, -1600",
+        "transcription": "エケイ, -1600",
+        "transcription-l": [
+            {
+                "@value": "エケイ, -1600",
+                "@language": "ja-Kana"
+            },
+            {
+                "@value": "Ekei, -1600",
+                "@language": "ja-Latn"
+            }
+        ]
+    },
+    "label": "恵瓊, -1600",
+    "altLabel": [
+        {
+            "literalForm": "安国寺, 恵瓊"
+        }
+    ],
+    "source": [
+        "安国寺恵瓊 / 河合正治 著"
+    ],
+    "exactMatch": [
+        {
+            "uri": "http://viaf.org/viaf/sourceID/NDL%7C00622777#skos:Concept"
+        }
+    ],
+    "inScheme": {
+        "uri": "http://id.ndl.go.jp/auth#personalNames"
+    }
+}
+

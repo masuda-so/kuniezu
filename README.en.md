@@ -81,6 +81,7 @@ is [docs/README.md](docs/README.md); open requests and ownership are in
   marches along historical roads, and battle deployments and movements, each with
   its source.
 - Battle markers retain their geographic positions when the viewport or district changes. Co-located units can be selected individually. Crowded markers become smaller; selection keeps that size and highlights the unit in front.
+- During playback the battle map eases its view toward the units engaged in the current phase (toggle with "動きを追う"; choosing a view stops it). Documented phase movements and estimated movements of engaged units get arrow-headed trails, with estimates drawn dotted. With the reduced-motion setting, the view does not move and the automatic trails are not drawn.
 - Wide battles offer overview and district views. Commander labels have no leader
   lines or framed name cards; portraits appear for the selected unit. Units whose labels do not
   fit remain individually selectable through their counters. Narrow screens use
