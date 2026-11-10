@@ -1,0 +1,25 @@
+{
+  "id": "person:斎藤義龍",
+  "name": "斎藤義龍",
+  "gameNames": [
+    "斎藤義龍"
+  ],
+  "authorityIds": [
+    "wikidata:Q2994679"
+  ],
+  "authorityEvidence": {
+    "scope": "person-identity",
+    "checked": "2026-11-10",
+    "wikidataRevision": 2466311957,
+    "snapshot": "data/research/source-notes/pilot-person-authority.json",
+    "sourceNote": "data/research/source-notes/pilot-person-authority.json",
+    "identityChecks": [
+      "岐阜県文化伝承課の本文が、斎藤義竜を道三の子で、弘治2年（1556）に父と長良川で戦い、美濃守護として稲葉山に在り、永禄4年（1561）5月11日に没したとする",
+      "Wikidata Q2994679の日本語主名が斎藤義龍で、P569の年が1527、P570の年が1561"
+    ],
+    "basis": "人物の同定のみ。原本にある生没日・所在・所領・関係の時期は新たな史実命題へ採用しない。",
+    "sourceIds": [
+      "gifuYoshitatsuIdentity"
+    ]
+  }
+}

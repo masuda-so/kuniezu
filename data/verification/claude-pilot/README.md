@@ -81,3 +81,22 @@ utc	layer	stage	event	count	note
 2026-11-10T02:30:59Z	all	check	start	0	pytest + CI checks
 2026-11-10T02:37:16Z	all	check	end	0	
 ```
+
+## 追補：既存の入力の横断検索（23 分の計測とは別の工程）
+
+Codex の提案で、未解決の 8 人の名前を、Web の取得の前に既存の入力（`data/inputs`・`source-notes`・`curated/sources`）で横断検索した。
+
+- 横断検索（grep）：1 秒未満。8 人のうち 2 人（斎藤義龍・三好長逸）に、公的機関の資料が既にあった。
+- 原本の確認：67 秒。岐阜県のページは、肖像の帰属の観察として登録済みだったが本文の要旨が無かったので、取り直して義竜の段落を読んだ。大阪歴史博物館の研究報告は、本文が既に入力にあった。この 67 秒には、次の登録のスクリプトを書く時間も入っている。
+- 登録：3 秒（機械の処理だけ。中身を決めたのは前の段階）。
+- 結果：斎藤義龍・三好長逸を新しく登録した。curated の人物は、登録の総数が 127、外部 ID と同定の根拠を持つものが 113（パイロットの前は 124・109）。岐阜県のページの HTML は Git に入れず、抜粋 `pilot-person-gifu-excerpt.md` だけを残す。
+- 分かったこと：Web の検索で見つからなかった人物の一部は、既存の入力の中にあった。照合の前に、まず既存の入力を横断検索するのが効く。
+
+```
+2026-11-10T02:53:52Z	supplement	corpus-search	start	6	grep existing inputs/source-notes for the 6+2 unresolved names (separate from the 23-min pilot)
+2026-11-10T02:53:52Z	supplement	corpus-search	end	10	
+2026-11-10T02:54:02Z	supplement	source-check	start	2	斎藤義龍 (Gifu pref), 三好長逸 (Osaka museum PDF text)
+2026-11-10T02:55:09Z	supplement	source-check	end	2	both sufficient: 斎藤義竜 (道三の子・永禄4年5月11日没, Gifu pref page re-fetched to read body); 三好長逸 (野田・福島城の大将 1570, museum study text already in repo)
+2026-11-10T02:55:09Z	supplement	register	start	2	
+2026-11-10T02:55:12Z	supplement	register	end	2	斎藤義龍 (new registration), 三好長逸 (new registration)
+```

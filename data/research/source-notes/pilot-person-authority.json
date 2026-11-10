@@ -104,6 +104,86 @@
     "uncompressedSha256": "7fefd0aa020f602bcfe59ce3b8b5eff778441a668bb179d0a06056d352c3037b",
     "excerpt": "data/research/source-notes/pilot-person-sendai-excerpt.md"
    }
+  },
+  {
+   "name": "斎藤義龍",
+   "japaneseLabel": "斎藤義龍",
+   "wikidataId": "Q2994679",
+   "wikidataRevision": 2466311957,
+   "wikidataJapaneseLabel": "斎藤義龍",
+   "entityDataUrl": "https://www.wikidata.org/wiki/Special:EntityData/Q2994679.json",
+   "revisionUrl": "https://www.wikidata.org/w/index.php?title=Q2994679&oldid=2466311957",
+   "rawEntityDataSnapshot": "data/research/source-notes/pilot-person-raw/Q2994679.json",
+   "rawSha256": "37c944c96810cf90a9a94744e4ff0a81b613e21e54048a6415cc2689fec14daa",
+   "identityChecks": [
+    "岐阜県文化伝承課の本文が、斎藤義竜を道三の子で、弘治2年（1556）に父と長良川で戦い、美濃守護として稲葉山に在り、永禄4年（1561）5月11日に没したとする",
+    "Wikidata Q2994679の日本語主名が斎藤義龍で、P569の年が1527、P570の年が1561"
+   ],
+   "adoptedNames": [
+    "斎藤義龍"
+   ],
+   "scope": "person-identity-only; no historical dates or locations adopted",
+   "nameEvidence": [
+    {
+     "name": "斎藤義龍",
+     "supports": [
+      "wikidata-ja-label-or-alias",
+      "public-source"
+     ]
+    }
+   ],
+   "publicOriginalNotRedistributed": {
+    "reason": "県のページの転載条件を確かめていないため、HTML の原本は Git で配らない。手元の .cache/research-originals/pilot/yoshitatsu-gifu.html.gz（Git に入れない）に保全する。",
+    "uncompressedSha256": "f27e4d14f988a400d7ced4e346518d9fef7863c0123e0e2a56c5719788004107",
+    "excerpt": "data/research/source-notes/pilot-person-gifu-excerpt.md"
+   },
+   "identitySourceIds": [
+    "gifuYoshitatsuIdentity"
+   ],
+   "identitySourceUrl": "https://www.pref.gifu.lg.jp/page/354743.html",
+   "identitySourceLocator": "「絹本著色斎藤道三像 斎藤義竜像」の解説の義竜の段落",
+   "reservation": "県の本文の表記は「斎藤義竜」。Wikidata の主名「斎藤義龍」とは竜・龍の字体の違いで、同定には来歴（道三の子・稲葉山・没年月日）を使った。既存の入力 data/inputs/yoshitatsu-review/portrait-attribution.json は肖像の帰属の観察で、人物の同定の根拠には今回はじめて使う。",
+   "foundBy": "existing-corpus-search (supplement; not part of the 23-minute pilot)"
+  },
+  {
+   "name": "三好長逸",
+   "japaneseLabel": "三好長逸",
+   "wikidataId": "Q11354967",
+   "wikidataRevision": 2480647753,
+   "wikidataJapaneseLabel": "三好長逸",
+   "entityDataUrl": "https://www.wikidata.org/wiki/Special:EntityData/Q11354967.json",
+   "revisionUrl": "https://www.wikidata.org/w/index.php?title=Q11354967&oldid=2480647753",
+   "rawEntityDataSnapshot": "data/research/source-notes/pilot-person-raw/Q11354967.json",
+   "rawSha256": "742e98209fa8fc893a891aea6725e51509cb710644405817878925d97b789795",
+   "identityChecks": [
+    "大阪歴史博物館の研究報告の本文が、元亀元年（1570）の野田・福島合戦で、細川昭元・三好長逸・康長・正勝らを大将とする三好三人衆方が野田・福島に籠ったとする（『信長公記』による）",
+    "Wikidata Q11354967の日本語主名が三好長逸"
+   ],
+   "adoptedNames": [
+    "三好長逸"
+   ],
+   "scope": "person-identity-only; no historical dates or locations adopted",
+   "nameEvidence": [
+    {
+     "name": "三好長逸",
+     "supports": [
+      "wikidata-ja-label-or-alias",
+      "public-source"
+     ]
+    }
+   ],
+   "existingOriginal": {
+    "path": "data/inputs/osaka-kizugawa-review/museum-castles-study.txt",
+    "sha256": "0011d91422d3464f82da52dfe3b2bb8f557ca46e6c9cd7988844f17d3398593b",
+    "pdfManifest": "data/inputs/osaka-kizugawa-review/source-manifest.json（museum-castles-study.pdf）"
+   },
+   "identitySourceIds": [
+    "osakaMuseumNagayasuIdentity"
+   ],
+   "identitySourceUrl": "https://www.osakamushis.jp/education/publication/kyodokenkyu/pdf/kyodo-17/kyodo-17_3.pdf",
+   "identitySourceLocator": "「⑧ 野田城」の【城主】と【歴史】の段落",
+   "reservation": "Wikidata に生没年が無いので、年の比較はしていない。同定は、三好三人衆方の大将としての来歴と、Wikidata の主名による。本文の年代（1570）は同定の補助で、新しい命題には採用しない。",
+   "foundBy": "existing-corpus-search (supplement; not part of the 23-minute pilot)"
   }
  ],
  "notAdopted": [
@@ -120,15 +200,7 @@
    "reason": "NDL の主名は「恵瓊」で、別名「安国寺, 恵瓊」・没年 1600 は Wikidata と合う。Wikidata に P349 が無く、相互の対応で確かめられない。要確認"
   },
   {
-   "name": "斎藤義龍",
-   "reason": "今回の検索条件（NDL 典拠の rdfs:label・foaf:name・別名の完全一致）では未確認。NDL に無いとは断定しない。公的機関の原本も未確認。要確認"
-  },
-  {
    "name": "一色義幸",
-   "reason": "今回の検索条件（NDL 典拠の rdfs:label・foaf:name・別名の完全一致）では未確認。NDL に無いとは断定しない。公的機関の原本も未確認。要確認"
-  },
-  {
-   "name": "三好長逸",
    "reason": "今回の検索条件（NDL 典拠の rdfs:label・foaf:name・別名の完全一致）では未確認。NDL に無いとは断定しない。公的機関の原本も未確認。要確認"
   },
   {
