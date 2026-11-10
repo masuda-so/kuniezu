@@ -1,0 +1,40 @@
+{
+  "id": "yamazaki-battle-1582",
+  "entity": "place:yamazaki-yamashiro",
+  "predicate": "military-event",
+  "value": "神戸信孝・羽柴秀吉らが山城山崎で惟任（明智）光秀と戦って大いに破り、光秀は勝龍寺城に入ったが、逃れ出て途中で土民に殺された。",
+  "validYears": [
+    1582,
+    1582
+  ],
+  "datePrecision": "day",
+  "source": "hiDainihonshiryoKobun",
+  "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+  "locator": "綱文：和暦 天正10年6月13日 第2条（区分 大日本史料、第11編之1（データベースの表示値）、427頁）",
+  "gameBindings": [
+    "TK.HIST:山崎の戦い"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-09",
+  "uncertainty": "綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。",
+  "linkedEntities": [
+    "place:yamazaki-yamashiro",
+    "person:織田信孝",
+    "person:toyotomi-hideyoshi",
+    "person:akechi-mitsuhide"
+  ],
+  "eventTime": {
+    "kind": "dated-event",
+    "date": [
+      1582,
+      6,
+      13
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": false,
+    "precision": "day"
+  },
+  "eventRelation": "military-event",
+  "eventScope": "綱文が掲げる日付。天正10年6月13日はゲーム共通の暦表で1582年7月2日。最終年表の山崎の戦い（1582年7月2日）は一致する。命題は山崎での戦いの日。光秀が勝龍寺城を逃れ出て殺されたことは同じ条に続けて書くが、日付語が無く、死去の日の命題にはしない。勝龍寺城には結ばない。"
+}

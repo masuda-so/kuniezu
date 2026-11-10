@@ -1,0 +1,26 @@
+{
+  "id": "person:ashikaga-yoshiuji",
+  "name": "足利義氏",
+  "gameNames": [
+    "足利義氏"
+  ],
+  "authorityIds": [
+    "ndlna:033515855"
+  ],
+  "authorityEvidence": {
+    "scope": "person-identity",
+    "checked": "2026-11-10",
+    "sourceNote": "data/research/source-notes/person-retry-six.json",
+    "identityChecks": [
+      "NDL033515855の主名足利義氏がPerson典拠に属する",
+      "NDL033515855の人物注記「武将, 第5代古河公方」と没年1583が、ゲームの足利義氏（古河公方、1541年生）と合う"
+    ],
+    "identityBasis": "ndl-record-description; Wikidata に P349 が無く、相互の対応では確かめていない",
+    "basis": "人物の同定のみ。原本にある没年・職の記述は同定の照合に使い、新たな史実命題へは採用しない。",
+    "ndlSnapshot": "data/research/source-notes/person-retry-six-ashikaga-yoshiuji-ndl.json",
+    "sourceIds": [
+      "ndlAshikagaYoshiujiIdentity"
+    ],
+    "checkedBy": "claude-self"
+  }
+}

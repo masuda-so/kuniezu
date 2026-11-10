@@ -1,0 +1,41 @@
+{
+  "id": "ishida-sawayama-council-1600",
+  "entity": "person:石田三成",
+  "predicate": "military-event",
+  "value": "大谷吉継・増田長盛・安国寺恵瓊らが近江佐和山で石田三成と会い、安芸広島の毛利輝元を主将に迎えることを議した。長盛はこの変を徳川家康に知らせた。",
+  "validYears": [
+    1600,
+    1600
+  ],
+  "datePrecision": "day",
+  "source": "hiDainihonshiryoKobun",
+  "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+  "locator": "綱文：和暦 慶長5年7月12日 第1条（区分 史料綜覧、編11・冊913（データベースの表示値）、229頁）",
+  "gameBindings": [
+    "TK.HIST:石田三成の挙兵"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-09",
+  "uncertainty": "綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。",
+  "linkedEntities": [
+    "person:石田三成",
+    "person:大谷吉継",
+    "person:増田長盛",
+    "person:安国寺恵瓊",
+    "place:sawayama"
+  ],
+  "eventTime": {
+    "kind": "dated-event",
+    "date": [
+      1600,
+      7,
+      12
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": false,
+    "precision": "day"
+  },
+  "eventRelation": "military-event",
+  "eventScope": "綱文が掲げる日付。慶長5年7月12日はゲーム共通の暦表で1600年8月20日。最終年表の石田三成の挙兵（1600年8月20日）は一致する。命題は佐和山での会議の日で、挙兵の全体（7月11日の三成の誘い、7月17日の「内府ちかひの条々」など別の条）には広げない。毛利輝元は迎える相手として名が出るが、この日の会議の当事者ではないので結ばない。"
+}

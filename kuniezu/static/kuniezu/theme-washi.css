@@ -162,3 +162,4 @@ a,.evidence-person a,.atlas-person-link{color:#f0a283!important}
 .atlas-selection-choices{max-height:64px}
 @media(max-width:560px){.atlas-selection-choices{max-height:84px}}
 .atlas-stage .bspd .on{background:#dce6d5!important;border-color:#667c61!important;color:#263b2a!important}
+.bctl .atlas-follow[aria-pressed=true]{background:#dce6d5!important;border-color:#667c61!important;color:#263b2a!important}
