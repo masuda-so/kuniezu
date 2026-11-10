@@ -25,3 +25,13 @@ NDL取得画像のSHA256と書誌内の値が一致。
 再取込2.435秒、新規版0・退役0、全Recordの内容ハッシュ不変。
 生出力は`source-metadata-result.json`。直前の必須検査の対象版と、
 その後の書誌だけの追加検査を区別する。
+
+伊達輝宗・武田信繁の追加照合後は294命題・556書誌。
+`export-evidence.cjs`、`evidence-store.cjs`、`history-index.cjs`が通過。
+隔離Django DBでは追加2版だけを生成し、既存全Recordの内容ハッシュは不変。
+再取込は新規版0・退役0。元の289命題もJSON全項目で一致した。
+原日付は1585/10/8（JDN2300302）と1561/9/10（2291504）。
+旧暦・日精度のまま、人物・年の両検索で同じ記録を取得できる。
+取込2.838秒・再取込2.428秒、integrity/FK合格。
+生出力は`two-additional-result.json`。通常配信DBは変更していない。
+追加後の`history-sqlite.py`も316記録・863条件でJavaScript検索と一致。

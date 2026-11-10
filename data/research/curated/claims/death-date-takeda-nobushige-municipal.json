@@ -1,0 +1,26 @@
+{
+  "id": "death-date-takeda-nobushige-municipal",
+  "entity": "person:武田信繁",
+  "predicate": "death-date",
+  "value": "長野市の史跡解説は、武田信繁が永禄4年9月10日の川中島合戦で討死したと記す。",
+  "validYears": [1561, 1561],
+  "datePrecision": "day",
+  "source": "naganoNobushigeDeath",
+  "sourceUrl": "https://kawanakajima.nagano.jp/tour/tour-333/",
+  "locator": "史跡解説冒頭、永禄4年（1561）9月10日の討死を記す段落",
+  "gameBindings": ["TK.HIST:death:武田信繁"],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-10",
+  "uncertainty": "自治体の解説を確認した範囲。後半の甲越信戦録による兵数・布陣・会話・遺言はこの命題から採用しない。千葉市立郷土博物館の妙法寺記の紹介には10月を9月の誤りとする注記があるが、原本の校合を完了したとはしない。",
+  "linkedEntities": ["person:武田信繁"],
+  "eventTime": {
+    "kind": "dated-event",
+    "date": [1561, 9, 10],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": false,
+    "precision": "day"
+  },
+  "eventRelation": "death",
+  "eventScope": "自治体が採る戦死日の確認に限定。戦死時刻・精密位置・部隊数は確定せず、ゲームの年表日付は変更しない。"
+}

@@ -1,0 +1,26 @@
+{
+  "id": "death-date-date-terumune-publication",
+  "entity": "person:伊達輝宗",
+  "predicate": "death-date",
+  "value": "東京大学史料編纂所の刊行紹介は、天正13年10月8日に伊達輝宗が義継とともに殺されたと説明する。",
+  "validYears": [1585, 1585],
+  "datePrecision": "day",
+  "source": "hiSyoho31DateTerumune",
+  "sourceUrl": "https://www.hi.u-tokyo.ac.jp/publication/syoho/31/pub_shiryo-11-21.html",
+  "locator": "冒頭で対象を天正13年とし、末尾2段落に10月8日の輝宗横死と異説を記す",
+  "gameBindings": ["TK.HIST:粟之巣の変"],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-10",
+  "uncertainty": "編纂者の解説を読んだ範囲。既存綱文と同じ編纂物に基づくため独立した原史料の裏付けと数えない。義継の動機と政宗の現場在否について、解説自体が史料による各説を認める。誰が射撃や殺害を命じたか、精密位置は補わない。",
+  "linkedEntities": ["person:伊達輝宗"],
+  "eventTime": {
+    "kind": "dated-event",
+    "date": [1585, 10, 8],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": false,
+    "precision": "day"
+  },
+  "eventRelation": "death",
+  "eventScope": "刊行紹介が採る原日付の確認。ゲーム内年表の西暦日付と所属・領有は変更しない。関連史料の本文の読了や異説の排除を意味しない。"
+}
