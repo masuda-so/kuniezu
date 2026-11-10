@@ -1,0 +1,37 @@
+{
+  "id": "death-date-sagara-yoshihi-municipal",
+  "entity": "person:相良義陽",
+  "predicate": "death-date",
+  "value": "天正9年12月2日、相良義陽が響野原で戦死したと市の解説が記す。",
+  "validYears": [
+    1581,
+    1581
+  ],
+  "datePrecision": "day",
+  "source": "yatsushiroSagaraDeath",
+  "sourceUrl": "https://www.city.yatsushiro.lg.jp/kiji003600/",
+  "locator": "本文、響野原の戦死を記す段落（天正9年12月2日）",
+  "gameBindings": [
+    "TK.HIST:death:相良義陽"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-10",
+  "uncertainty": "現存首塚は鉄道工事により移転したと同ページに記す。現在の墓の座標を戦死地点に流用しない。ページ更新日・文化財指定日を死去日へ混入しない。",
+  "linkedEntities": [
+    "person:相良義陽"
+  ],
+  "eventTime": {
+    "kind": "dated-event",
+    "date": [
+      1581,
+      12,
+      2
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": false,
+    "precision": "day"
+  },
+  "eventRelation": "death",
+  "eventScope": "自治体の解説が採用する没日の確認。西暦換算は別処理で、ゲーム内年表の日付・所属・領有は本変更では変えない。死去時刻・位置・死因を追加確定しない。"
+}

@@ -1,0 +1,37 @@
+{
+  "id": "death-date-mori-takamoto-municipal",
+  "entity": "person:毛利隆元",
+  "predicate": "death-date",
+  "value": "永禄6年8月3日に饗応を受け、帰営後、翌4日未明に死去したと市の解説が記す。",
+  "validYears": [
+    1563,
+    1563
+  ],
+  "datePrecision": "day",
+  "source": "akitakataTakamotoDeath",
+  "sourceUrl": "https://www.akitakata.jp/ja/shisei/section/kyouiku/shisekibunkazai/cultural_asset/shiseki_shi/mouritakamotoseikyo/",
+  "locator": "本文第1〜2段落（永禄6年の帰営、8月3日の饗応と翌4日の死去）",
+  "gameBindings": [
+    "TK.HIST:death:毛利隆元"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-10",
+  "uncertainty": "死因は同ページでも不明とされる。指定年月日の昭和61年2月7日を死去日としない。精密な位置と死因はこの命題では採用しない。",
+  "linkedEntities": [
+    "person:毛利隆元"
+  ],
+  "eventTime": {
+    "kind": "dated-event",
+    "date": [
+      1563,
+      8,
+      4
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": false,
+    "precision": "day"
+  },
+  "eventRelation": "death",
+  "eventScope": "自治体の解説が採用する没日の確認。西暦換算は別処理で、ゲーム内年表の日付・所属・領有は本変更では変えない。死去時刻・位置・死因を追加確定しない。"
+}

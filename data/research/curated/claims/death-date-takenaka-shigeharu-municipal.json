@@ -1,0 +1,37 @@
+{
+  "id": "death-date-takenaka-shigeharu-municipal",
+  "entity": "person:竹中重治",
+  "predicate": "death-date",
+  "value": "天正7年6月13日、竹中半兵衛が羽柴秀吉の陣中で病没したと伝えられる旨を市の解説が記す。",
+  "validYears": [
+    1579,
+    1579
+  ],
+  "datePrecision": "day",
+  "source": "mikiTakenakaDeath",
+  "sourceUrl": "https://www.city.miki.lg.jp/soshiki/33/3051.html",
+  "locator": "本文第2段落（天正7年6月13日の陣中病没）",
+  "gameBindings": [
+    "TK.HIST:death:竹中重治"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-10",
+  "uncertainty": "市の説明には伝承を含む表現がある。信長公記の明治14年刊本巻之下9コマは6月22日の条に病死と名代派遣を併記する。豊鑑の公開翻刻は六月中頃とする。この命題は市が採る6月13日を記録し、異説を否定しない。法要の7月13日を死去日としない。",
+  "linkedEntities": [
+    "person:竹中重治"
+  ],
+  "eventTime": {
+    "kind": "dated-event",
+    "date": [
+      1579,
+      6,
+      13
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": false,
+    "precision": "day"
+  },
+  "eventRelation": "death",
+  "eventScope": "自治体の解説が採用する没日の確認。西暦換算は別処理で、ゲーム内年表の日付・所属・領有は本変更では変えない。死去時刻・位置・死因を追加確定しない。"
+}
