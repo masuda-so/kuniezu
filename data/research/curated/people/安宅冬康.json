@@ -1,0 +1,31 @@
+{
+  "id": "person:安宅冬康",
+  "name": "安宅冬康",
+  "gameNames": [
+    "安宅冬康"
+  ],
+  "identityBasis": {
+    "scope": "出典付きの死去日の命題（death-date-ataka-fuyuyasu）の対象。命題は既にあったが人物台帳には無かったので、2026-11-10 に典拠付きで新しく登録した。",
+    "claimIds": [
+      "death-date-ataka-fuyuyasu"
+    ]
+  },
+  "authorityIds": [
+    "wikidata:Q1059165"
+  ],
+  "authorityEvidence": {
+    "scope": "person-identity",
+    "checked": "2026-11-10",
+    "wikidataRevision": 2520324888,
+    "snapshot": "data/research/source-notes/person-identity-corpus-1.json",
+    "sourceNote": "data/research/source-notes/person-identity-corpus-1.json",
+    "identityChecks": [
+      "大阪歴史博物館の研究報告の本文が、天文21年（1552）に榎並が安宅冬康の知行で、榎並三人代官が置かれていたとする",
+      "Wikidata Q1059165の日本語主名が安宅冬康で、P569の年が1528、P570の年が1564"
+    ],
+    "basis": "人物の同定のみ。原本にある生没日・所在・所領・関係の時期は新たな史実命題へ採用しない。",
+    "sourceIds": [
+      "osakaMuseumFuyuyasuIdentity"
+    ]
+  }
+}
