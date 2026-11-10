@@ -15,14 +15,15 @@ Codex の依頼で、合戦図の既存の資料を使う代表例として、�
 | 武田勝頼 | 1 → 2 → 3 | 医王寺山 → 清井田 → 才ノ神 | 長篠城を攻めていたときは医王寺山、設楽原へ動くときに清井田、そこから才ノ神 |
 
 - 場所 6 件を新しく登録した（座標は主張しない）。所在の観察 6 件は、関係 `attested-presence`、役割 `本陣`、順序 `sequence {group, order}` を持つ。
-- 年は資料に書かれていないので、既存の命題 `nagashino-phases`（天正3年の長篠・設楽原の戦い）の年 1575 を年の精度で置いた。日付・時刻・滞在の長さ・移動の経路・個々の部隊の配置は補っていない。
+- 資料は年も期間も書かないので、時点は期間の呼び名（`described-period`、「長篠・設楽原の戦いの頃（天正3年）」、探すための年 1575、`boundsAreHistoricalStartEnd: false`）にした。呼び名と年は既存の命題 `nagashino-phases` による。滞在の始まり・終わりの境界、日付・時刻・移動の経路・個々の部隊の配置は補っていない。所在の観察で `described-period` を受け付けるよう、`location-store.cjs` と `history-index.cjs` の検査を足した（命題では既に使っている形）。
 - 医王寺山は、既存の命題 `nagashino-headquarters`（`site:医王寺山`、長篠城の約600m北方）と同じ山を指すが、名前空間が違うので場所の ID は統合していない。
 
 ## SQL での確認
 
 隔離した手元の DB（`db.sqlite3`、Git に入れない）で `migrate` と `import_history` を行い、次を確かめた。
 
-- 6 件とも取り込まれ、現象は `mode=state`・`kind=movement`・`subtype=attested-presence`。
+- 6 件とも取り込まれ、現象は `mode=state`・`kind=movement`・`subtype=attested-presence`、`precision=period`・`jd_exact=false`・`bounds_asserted=false`、時刻の呼び名は「長篠・設楽原の戦いの頃（天正3年）」。
+- `queries.in_year(1575)` では 6 件とも返り、`asserted_only=True` では 0 件（境界を主張する検索から外れる）。
 - `history_record.payload` の `sequence` で、人物ごとの順序（家康 1、信長 1→2、勝頼 1→2→3）を並べ替えられる。
 - `manage.py history_query --about 才ノ神` で引ける。
 

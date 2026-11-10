@@ -72,10 +72,16 @@ const temp=fs.mkdtempSync(path.join(os.tmpdir(),'kuniezu-sql-input-'));try{for(c
                         record_id = 'claim:' + r['id']
                         relation = r.get('eventRelation', r['predicate'])
                     else:
-                        event = r['time']; first = event.get('from', event.get('year', event.get('date', [None])[0]))
-                        until = event.get('untilExclusive', first + 1)
+                        event = r['time']
+                        if event['kind'] == 'described-period':
+                            # The years only help to find a named period; they are not its bounds.
+                            first, last = event['indexYears']; until = last + 1
+                            scope = 'described-period-candidate'
+                        else:
+                            first = event.get('from', event.get('year', event.get('date', [None])[0]))
+                            until = event.get('untilExclusive', first + 1)
+                            scope = 'attested-interval' if event['kind'] == 'year-interval' else 'recorded-change'
                         entities = [r['person'], r['place']]
-                        scope = 'attested-interval' if event['kind'] == 'year-interval' else 'recorded-change'
                         record_id = r['id']; relation = r['relation']
                     if not isinstance(first, int) or not isinstance(until, int):
                         raise ValueError('invalid interval')

@@ -5,4 +5,4 @@
 - 最小の抜粋：「家康は弾正山に本陣を置きました」
 - 要旨：信長は最初に平井の極楽寺山、後に茶臼山。勝頼は長篠城を攻めていたときは医王寺山、設楽原へ動くときに清井田へ、そこから才ノ神へ。
 - 書かれていないこと：日付・時刻・座標・個々の部隊の配置・年（年は既存の命題 nagashino-phases による）。
-- 原本：HTML は Git で配らず、手元の `.cache/research-originals/shitaragahara/fujinzu.html.gz`（Git に入れない）に保全した。展開した HTML の SHA-256 は ``。
+- 原本：HTML は Git で配らず、利用者の主の作業ディレクトリ（作業ツリーではない）の `.cache/research-originals/shitaragahara/fujinzu.html.gz`（Git に入れない）に保全した。展開した HTML の SHA-256 は `0909ab664708926c0e1bb38439715e17e163ca664dabc0414f8c12c31f89430d`。
