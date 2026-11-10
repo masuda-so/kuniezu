@@ -408,7 +408,7 @@ body[data-modal] #news{visibility:hidden}body[data-modal=scene] #toast,body[data
 .evidence-scene .battle-dock{background:#f4f1e6;color:#384536;border-top:1px solid #bdc7b5;padding:6px 10px;gap:4px}
 .evidence-scene .battle-dock .mini,.evidence-scene .battle-dock .ic{color:#3f523a;border-color:#bdc7b5;background:#faf8ef}
 .evidence-scene .battle-dock .bnar{padding:5px 8px;min-height:48px}
-.evidence-scene .battle-dock .bnar p{margin:0;min-height:2lh;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;overflow:hidden;font-size:12px;line-height:1.55}
+.evidence-scene .battle-dock .bnar p{margin:0;min-height:2lh;font-size:12px;line-height:1.55;overflow-wrap:anywhere}
 .evidence-scene .battle-seek{font-size:11px}.evidence-scene .battle-seek input{accent-color:#6b8062}
 .mbox.scene>header{margin-bottom:8px}.mbox.scene>header h2{font-size:22px;margin:2px 0 3px}
 /* タイトル画面だけ、題字の箱と出典を別の行に置く。狭い画面で遊び方を開いても出典と重ならず、どちらも読める。地図の canvas は absolute のまま */

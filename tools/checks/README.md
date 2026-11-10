@@ -15,6 +15,7 @@
 | 肖像の代替crop | `portrait-loading.cjs`、`build_fallback.py --root . --check` | `portrait-fallback-browser.cjs`（`PORTRAIT_MODE=normal/primary-fail/all-fail`） |
 | 登録漏れの追加肖像 | `uv run pytest tests/test_reviewed_portraits.py`、`build_reviewed.py --check` | 同じブラウザ検査へ `PORTRAIT_MANIFEST=tools/faces/reviewed-portraits.json PORTRAIT_FALLBACK_FILE=portraits/reviewed-fallback.webp` を渡す |
 | 基本・保存・史実進行 | `offline.cjs` | `completion-browser.cjs` |
+| 検証ブラウザの起動失敗・早期終了 | `node tools/checks/browser-process-exit.cjs`（実Chromeを起動せず失敗時終了とprofile削除を確認） | — |
 | 秘密情報（APIキー・秘密鍵など。gzipも展開） | `secret-scan.cjs`（CIでも実行。第三者ページの保存前は `tools/research/source-privacy.cjs`） | — |
 | 読み込みの確認値（更新後に古い版を使わせない） | `node tools/build/stamp-assets.cjs --check`（CIでも実行。kuniezu/static/kuniezu/ のファイルを変えたら `node tools/build/stamp-assets.cjs` を実行） | — |
 | 天正壬午の和睦と旧保存 | `node tools/checks/tensho-peace-date.cjs`。実画面は同検査に`TENSHO_SAVE_OUTPUT=/tmp/kuniezu-tensho-saves`を付けて保存を生成後、`TENSHO_SAVE_INPUT=/tmp/kuniezu-tensho-saves GAME_TEST_OUTPUT=data/verification/codex-tensho-peace-date node tools/checks/tensho-peace-browser.cjs` | 許可済みの起動中サーバー |

@@ -4,7 +4,11 @@
 
 ## Overview
 
-A map game set in Japan and Korea between 1560 and 1615. It runs as plain HTML and
+A map game depicting Japanese history. The next major update will extend its
+period from Nobunaga’s birth in 1534 to the settlement after the Osaka campaign
+in 1615. The earliest implemented scenario currently starts in 1560; a 1534
+start is not yet available. Korean events remain in the chronology and individual
+battle maps. It runs as plain HTML and
 JavaScript (only the map's served files are generated from the source map). Development currently prioritizes observation of
 recorded history; free sieges and non-historical routes are on hold.
 
