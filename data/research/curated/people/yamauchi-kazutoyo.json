@@ -1,0 +1,26 @@
+{
+  "id": "person:yamauchi-kazutoyo",
+  "name": "山内一豊",
+  "gameNames": [
+    "山内一豊"
+  ],
+  "authorityIds": [
+    "wikidata:Q1315878"
+  ],
+  "authorityEvidence": {
+    "scope": "person-identity",
+    "checked": "2026-11-09",
+    "wikidataRevision": 2566928498,
+    "snapshot": "data/research/source-notes/appear-authority-batch-1.json",
+    "sourceNote": "data/research/source-notes/appear-authority-batch-1.json",
+    "note": "data/research/source-notes/appear-authority-batch-1.md",
+    "identityChecks": [
+      "高知城歴史博物館の本文が初代一豊の生没年を天文14（1545）年〜慶長10（1605）年とする",
+      "Wikidata Q1315878の日本語主名が山内一豊で、P569・P570の年が1545・1605"
+    ],
+    "basis": "人物の同定のみ。原本にある生没日・所在・所領・関係の時期は新たな史実命題へ採用しない。",
+    "sourceIds": [
+      "kochiJohakuKazutoyoIdentity"
+    ]
+  }
+}

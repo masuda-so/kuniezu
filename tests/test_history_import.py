@@ -9,11 +9,13 @@ from kuniezu.history import dates
 from kuniezu.history import queries
 from kuniezu.history.importer import CATALOG
 from kuniezu.history.importer import CLAIM_KIND_OF
+from kuniezu.history.importer import CLAIM_POINT_PREDICATES
 from kuniezu.history.importer import CONFLICTS
 from kuniezu.history.importer import IDENTITIES
 from kuniezu.history.importer import KOBUN_INDEX
 from kuniezu.history.importer import MONTH_TABLE
 from kuniezu.history.importer import RESEARCH
+from kuniezu.history.importer import claim_mode
 from kuniezu.history.importer import import_history
 from kuniezu.history.models import Calendar
 from kuniezu.history.models import ImportRun
@@ -324,6 +326,40 @@ def test_a_named_period_is_found_by_its_window_but_not_asserted(inputs):
     death = Phenomenon.objects.get(key="claim:death-date-maeda-toshiie")
     assert death.bounds_asserted
     assert death in queries.in_year(1599, asserted_only=True)
+
+
+def test_an_event_known_only_to_a_season_is_still_an_event(inputs):
+    import_history(inputs)
+
+    # 永禄11年の冬のいつかに降った。冬のあいだ降伏が続いたのではない。
+    surrender = Phenomenon.objects.get(key="claim:urio-surrender-1568")
+    assert surrender.mode == Mode.EVENT
+    assert surrender.calendar == Calendar.DESCRIBED
+    assert not surrender.jd_exact
+    assert not surrender.bounds_asserted
+    assert surrender in queries.in_year(1568)
+    assert surrender not in queries.in_year(1568, asserted_only=True)
+    # 時期の呼び名で書かれた発掘の観察は、出来事にしない。
+    building = Phenomenon.objects.get(key="claim:tomori-area6-momoyama-building1")
+    assert building.mode == Mode.STATE
+    # 時刻の無い役職の在任は状態のまま。
+    office = Phenomenon.objects.get(key="claim:toyotomi-office-1")
+    assert office.mode == Mode.STATE
+    # 年しか分からない死去も、死去そのものは出来事。
+    death = Phenomenon.objects.get(key="claim:lifetime-朝倉景鏡")
+    assert death.mode == Mode.EVENT
+
+
+def test_the_mode_of_a_claim_comes_from_its_predicate_and_its_time():
+    period = {"kind": "described-period", "label": "是冬"}
+    assert claim_mode("castle-surrender", period) == Mode.EVENT
+    assert claim_mode("death-date", period) == Mode.EVENT
+    assert claim_mode("castle-construction", period) == Mode.STATE
+    assert claim_mode("central-office", None) == Mode.STATE
+    assert claim_mode("castle-surrender", None) == Mode.EVENT
+    assert claim_mode("death-year", None) == Mode.EVENT
+    assert claim_mode("central-office", {"kind": "dated-event"}) == Mode.EVENT
+    assert set(CLAIM_KIND_OF) >= CLAIM_POINT_PREDICATES
 
 
 def test_a_period_with_one_known_end_stays_open(inputs):
@@ -841,8 +877,8 @@ def test_every_kobun_article_of_a_year_is_listed_once_and_unclassified(inputs):
     assert articles.count() == ARTICLES_1534
     assert set(articles.values_list("kind", flat=True)) == {PhenomenonKind.OTHER}
     assert summary.unclassified["kobun-unclassified"] == ARTICLES_1534
-    # 1534 lies outside the month table: the day is kept, its bounds are not
-    # asserted, and they reach into the next western year.
+    # The extended month table converts an indexed day; that does not classify
+    # the article or turn its contents into a verified historical claim.
     first = articles.get(key="kobun:020100200909")
     assert (first.calendar, first.year, first.month, first.day) == (
         Calendar.LUNISOLAR,
@@ -850,14 +886,18 @@ def test_every_kobun_article_of_a_year_is_listed_once_and_unclassified(inputs):
         1,
         1,
     )
-    assert not first.jd_exact
-    assert not first.bounds_asserted
-    assert first.jd_end == dates.year_bounds(1535)[1]
+    assert first.jd_exact
+    assert first.bounds_asserted
+    expected = dates.lunisolar_to_jd(inputs / MONTH_TABLE, 1534, 1, 1, leap=False)
+    assert expected is not None
+    assert first.jd_start == first.jd_end == expected
     leap = articles.get(key="kobun:020100200950")
     assert leap.leap_month
     year_only = articles.get(key="kobun:020100201384")
     assert year_only.precision == "period"
     assert year_only.time_label == "天文3年是歳"
+    assert not year_only.jd_exact
+    assert not year_only.bounds_asserted
 
 
 def test_a_campaign_holds_its_battles_and_has_no_map_of_its_own(inputs):

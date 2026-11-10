@@ -1,0 +1,38 @@
+{
+  "id": "kannagawa-battle-1582",
+  "entity": "place:kannagawa",
+  "predicate": "military-event",
+  "value": "滝川一益が神流川で北条氏の軍と戦い、大敗した。",
+  "validYears": [
+    1582,
+    1582
+  ],
+  "datePrecision": "day",
+  "source": "hiDainihonshiryoKobun",
+  "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+  "locator": "綱文：和暦 天正10年6月19日 第4条（区分 大日本史料、第11編之1（データベースの表示値）、659頁）",
+  "gameBindings": [
+    "TK.HIST:1582-7-20"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-09",
+  "uncertainty": "綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。",
+  "linkedEntities": [
+    "place:kannagawa",
+    "person:滝川一益"
+  ],
+  "eventTime": {
+    "kind": "dated-event",
+    "date": [
+      1582,
+      6,
+      19
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": false,
+    "precision": "day"
+  },
+  "eventRelation": "military-event",
+  "eventScope": "綱文が掲げる日付。天正10年6月19日はゲーム共通の暦表で1582年7月8日。最終年表の題名なしの出来事（旧暦1582年7月1日、1582年7月20日）は綱文より12日遅い。年表の出来事はその後の北条氏の上野の領有で、神流川の戦闘とは別の行為なので、この差を同じ出来事の一致・不一致の判定には使わない。合戦の日。北条氏の上野の支配の移り変わりには広げない。 掲出日は神流川での一益の戦闘と大敗に限り、同じ条にある北条氏直の上野への侵攻（先行する行程）、武蔵金窪での戦い、伊勢長島への帰還の日付は示さない。氏直は先行する侵攻の主体としてこの条に出るので、この日の参加者としては結ばない（Codex のレビュー）。"
+}

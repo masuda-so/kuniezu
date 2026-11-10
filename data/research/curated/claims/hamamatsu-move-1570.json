@@ -1,0 +1,38 @@
+{
+  "id": "hamamatsu-move-1570",
+  "entity": "person:tokugawa-ieyasu",
+  "predicate": "residence-transfer",
+  "value": "徳川家康が遠江見付に城を築きかけて途中でやめ、引間（浜松）に城を築き直して、岡崎から引間に移った。",
+  "validYears": [
+    1570,
+    1570
+  ],
+  "datePrecision": "period",
+  "source": "hiDainihonshiryoKobun",
+  "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+  "locator": "綱文：和暦 元亀1年6月是月 第1条（区分 大日本史料、第10編之4（データベースの表示値）、617頁）",
+  "gameBindings": [
+    "TK.HIST:1570-6-10"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-09",
+  "uncertainty": "綱文は「是月」とだけ書き、日を掲げない。 綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。",
+  "linkedEntities": [
+    "person:tokugawa-ieyasu",
+    "place:hikuma-castle"
+  ],
+  "eventTime": {
+    "kind": "described-period",
+    "label": "元亀元年6月（綱文は「是月」）",
+    "indexYears": [
+      1570,
+      1570
+    ],
+    "calendar": "Japanese-era-description",
+    "precision": "period",
+    "boundsAreHistoricalStartEnd": false
+  },
+  "eventRelation": "residence-transfer",
+  "eventScope": "綱文が掲げる月。元亀元年6月はゲーム共通の暦表で1570年7月3日〜8月1日。最終年表の徳川家康の引馬への移り（1570年6月10日、題名なし）はこの月より前で、月の精度で一致しない。築城と移りを一つの条に掲げ、日付語が無いので、移りの日は補わない。綱文は「引間」と書き、括弧で浜松と注する。見付の城には結ばない。"
+}

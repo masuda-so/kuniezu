@@ -1,0 +1,39 @@
+{
+  "id": "nobutada-gifu-succession-1575",
+  "entity": "person:織田信忠",
+  "predicate": "residence-transfer",
+  "value": "信長が家督を子の信忠に譲って岐阜城に置き、自らは佐久間信盛の屋敷に移った。",
+  "validYears": [
+    1575,
+    1575
+  ],
+  "datePrecision": "day",
+  "source": "hiDainihonshiryoKobun",
+  "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+  "locator": "綱文：和暦 天正3年11月28日 第2条（区分 史料綜覧、編10・冊911（データベースの表示値）、95頁）",
+  "gameBindings": [
+    "TK.HIST:1575-12-1"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-09",
+  "uncertainty": "綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。",
+  "linkedEntities": [
+    "person:織田信忠",
+    "person:oda-nobunaga",
+    "place:inabayama"
+  ],
+  "eventTime": {
+    "kind": "dated-event",
+    "date": [
+      1575,
+      11,
+      28
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": false,
+    "precision": "day"
+  },
+  "eventRelation": "residence-transfer",
+  "eventScope": "綱文が掲げる日付。天正3年11月28日はゲーム共通の暦表で1575年12月30日。最終年表の織田信忠の岐阜（node:gifu）への移り（1575年12月1日、題名なし）は綱文より29日早い。命題は家督を譲って信忠を岐阜城に置いた日。信長の佐久間信盛の屋敷への移りは同じ条にあるが、屋敷の場所は結ばない。"
+}

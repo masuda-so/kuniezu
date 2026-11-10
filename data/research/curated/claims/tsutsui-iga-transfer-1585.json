@@ -1,0 +1,39 @@
+{
+  "id": "tsutsui-iga-transfer-1585",
+  "entity": "person:tsutsui-sadatsugu",
+  "predicate": "territorial-transfer",
+  "value": "秀吉が筒井定次を大和から伊賀へ移し、大和を羽柴秀長に与えた。",
+  "validYears": [
+    1585,
+    1585
+  ],
+  "datePrecision": "day",
+  "source": "hiDainihonshiryoKobun",
+  "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+  "locator": "綱文：和暦 天正13年閏8月18日 第1条（区分 大日本史料、第11編之19（データベースの表示値）、282頁）",
+  "gameBindings": [
+    "TK.HIST:1585-9-1"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-09",
+  "uncertainty": "綱文の閏8月は閏月。 綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。",
+  "linkedEntities": [
+    "person:tsutsui-sadatsugu",
+    "person:toyotomi-hideyoshi",
+    "person:羽柴秀長"
+  ],
+  "eventTime": {
+    "kind": "dated-event",
+    "date": [
+      1585,
+      8,
+      18
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": true,
+    "precision": "day"
+  },
+  "eventRelation": "territorial-transfer",
+  "eventScope": "綱文が掲げる日付。天正13年閏8月18日はゲーム共通の暦表で1585年10月11日。最終年表の筒井定次の伊賀への移り（1585年9月1日、題名なし）は綱文より40日早い。命題は国替えの命令の日。定次が伊賀に入ったのは「尋で（その後）」とだけ書くので、入国の日とはしない。伊賀の土豪の抵抗（同じ日の別の記事）には広げない。"
+}

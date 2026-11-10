@@ -1,0 +1,37 @@
+{
+  "id": "etchu-report-1576",
+  "entity": "region:越中",
+  "predicate": "administrative-document",
+  "value": "上杉謙信が越中に入って栂尾・増山の両城を攻め取り、湯山城を囲み、飛騨口に二つの塁を築いたことを、この日、栗林政頼に知らせ、関東口の警備を厳しくさせた。",
+  "validYears": [
+    1576,
+    1576
+  ],
+  "datePrecision": "day",
+  "source": "hiDainihonshiryoKobun",
+  "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+  "locator": "綱文：和暦 天正4年9月8日 第1条（区分 史料綜覧、編10・冊911（データベースの表示値）、124頁）",
+  "gameBindings": [
+    "TK.HIST:1576-10-1"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-09",
+  "uncertainty": "綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。",
+  "linkedEntities": [
+    "person:上杉謙信"
+  ],
+  "eventTime": {
+    "kind": "dated-event",
+    "date": [
+      1576,
+      9,
+      8
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": false,
+    "precision": "day"
+  },
+  "eventRelation": "administrative-document",
+  "eventScope": "綱文が掲げる日付。天正4年9月8日はゲーム共通の暦表で1576年9月30日。最終年表の題名なしの出来事（旧暦1576年9月9日、1576年10月1日）は綱文より1日遅い。綱文の「是日」は謙信が栗林政頼に知らせた日で、越中入りや攻略の個々の日付ではない。攻略はこの日より前だが日付が無いので、攻略の命題は作らない。越中の平定（年表の出来事）の全域には広げない。主体は地域の参照（region:）。"
+}

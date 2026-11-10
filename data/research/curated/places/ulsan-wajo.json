@@ -1,0 +1,14 @@
+{
+  "id": "place:ulsan-wajo",
+  "name": "蔚山倭城",
+  "aliases": [],
+  "geometry": null,
+  "geometryStatus": "not-asserted",
+  "note": "加藤清正が築いた蔚山の倭城（島山城）。綱文の命題の対象の場所。範囲は主張しない。朝鮮の地名は、日本に関わる出来事として記録する（地図の範囲とは別）。ゲームの node:ulsan（蔚山）ではなく、より具体的な yosho:蔚山倭城（島山城）が代表する。",
+  "identityBasis": {
+    "scope": "確認済み命題の対象場所。日時と関係は元命題に保持し、座標は未主張。",
+    "claimIds": [
+      "ulsan-wajo-built-1597"
+    ]
+  }
+}

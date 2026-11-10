@@ -1,0 +1,26 @@
+{
+  "id": "person:bessho-nagaharu",
+  "name": "別所長治",
+  "gameNames": [
+    "別所長治"
+  ],
+  "authorityIds": [
+    "wikidata:Q837435"
+  ],
+  "authorityEvidence": {
+    "scope": "person-identity",
+    "checked": "2026-11-09",
+    "wikidataRevision": 2549583573,
+    "snapshot": "data/research/source-notes/appear-authority-batch-1.json",
+    "sourceNote": "data/research/source-notes/appear-authority-batch-1.json",
+    "note": "data/research/source-notes/appear-authority-batch-1.md",
+    "identityChecks": [
+      "三木市の本文が三木城主の別所長治を、信長の「長」の字を受けて長治と名乗り、天正8年（1580）1月17日に切腹したとする",
+      "Wikidata Q837435の日本語主名が別所長治で、P570の年が1580、P569の年が1558"
+    ],
+    "basis": "人物の同定のみ。原本にある生没日・所在・所領・関係の時期は新たな史実命題へ採用しない。",
+    "sourceIds": [
+      "mikiNagaharuIdentity"
+    ]
+  }
+}

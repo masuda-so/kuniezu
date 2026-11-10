@@ -1,0 +1,208 @@
+{
+ "checked": "2026-11-10",
+ "scope": "計測パイロットの施設の位置の照合。候補の照合で、存在年代・城域・所在の史実命題には採用しない。",
+ "selection": {
+  "rule": "implemented-sites の castle 系で日本（朝鮮の範囲 lon<130 かつ lat>34.6 を除く）。CODH 候補（japan-castle-candidates）の名前が「名」「名+跡」「名から城を除き+城跡」に一致するものとしないものに分け、id の順で等間隔に各 5",
+  "pools": {
+   "japan": 123,
+   "codhNameMatch": 81,
+   "noCodhMatch": 42
+  }
+ },
+ "reuse": [
+  {
+   "id": "node:agata",
+   "name": "松尾城",
+   "codh": "codh:460000041400",
+   "codhName": "松尾城跡",
+   "km": 0,
+   "sameNameCandidates": 11,
+   "result": "single-match-within-5km",
+   "note": "ゲームの点は CODH の点と 0km で一致する。ゲームの位置が CODH 由来であることの確認で、独立の照合ではない。CODH の目録には年代の列が無い"
+  },
+  {
+   "id": "node:kanegasaki",
+   "name": "金ヶ崎城",
+   "codh": "codh:180000237500",
+   "codhName": "金ヶ崎城跡",
+   "km": 0,
+   "sameNameCandidates": 2,
+   "result": "single-match-within-5km",
+   "note": "ゲームの点は CODH の点と 0km で一致する。ゲームの位置が CODH 由来であることの確認で、独立の照合ではない。CODH の目録には年代の列が無い"
+  },
+  {
+   "id": "node:kururi",
+   "name": "久留里城",
+   "codh": "codh:120000386300",
+   "codhName": "久留里城跡",
+   "km": 0,
+   "sameNameCandidates": 1,
+   "result": "single-match-within-5km",
+   "note": "ゲームの点は CODH の点と 0km で一致する。ゲームの位置が CODH 由来であることの確認で、独立の照合ではない。CODH の目録には年代の列が無い"
+  },
+  {
+   "id": "node:oko",
+   "name": "岡豊城",
+   "codh": "codh:400000083700",
+   "codhName": "岡豊城跡",
+   "km": 0,
+   "sameNameCandidates": 1,
+   "result": "single-match-within-5km",
+   "note": "ゲームの点は CODH の点と 0km で一致する。ゲームの位置が CODH 由来であることの確認で、独立の照合ではない。CODH の目録には年代の列が無い"
+  },
+  {
+   "id": "node:tenjin",
+   "name": "天神山城",
+   "codh": "codh:340000136500",
+   "codhName": "天神山城跡",
+   "km": 0,
+   "sameNameCandidates": 8,
+   "result": "single-match-within-5km",
+   "note": "ゲームの点は CODH の点と 0km で一致する。ゲームの位置が CODH 由来であることの確認で、独立の照合ではない。CODH の目録には年代の列が無い"
+  }
+ ],
+ "new": [
+  {
+   "id": "node:akutagawa",
+   "name": "芥川山城",
+   "keywords": [
+    "芥川",
+    "芥川山城"
+   ],
+   "hitsWithCoordinates": 5,
+   "nearest": [
+    {
+     "id": "bunka-527607",
+     "title": "芥川城跡",
+     "km": 1.6,
+     "kind": "史跡名勝天然記念物",
+     "linkUrl": "https://online.bunka.go.jp/db/heritages/detail/527607"
+    },
+    {
+     "id": "bunka-205853",
+     "title": "嶋上郡衙跡\n　附　寺跡",
+     "km": 2.01,
+     "kind": "史跡名勝天然記念物",
+     "linkUrl": "https://online.bunka.go.jp/db/heritages/detail/205853"
+    },
+    {
+     "id": "bunka-210690",
+     "title": "普門寺庭園",
+     "km": 4.46,
+     "kind": "史跡名勝天然記念物",
+     "linkUrl": "https://online.bunka.go.jp/db/heritages/detail/210690"
+    }
+   ],
+   "result": "candidate-match",
+   "match": "芥川城跡（国指定史跡）",
+   "note": "名前の語幹と史跡の種別が一致し、ゲームの点から 1.6km。城域の範囲内かは未確認。位置の根拠の候補で、存在年代は別に史料で確かめる"
+  },
+  {
+   "id": "node:ishiyama",
+   "name": "石山本願寺",
+   "keywords": [
+    "石山本願寺"
+   ],
+   "hitsWithCoordinates": 16,
+   "nearest": [
+    {
+     "id": "bunka-194780",
+     "title": "大阪城 六番櫓",
+     "km": 0.6,
+     "kind": "重要文化財",
+     "linkUrl": "https://online.bunka.go.jp/db/heritages/detail/194780"
+    },
+    {
+     "id": "bunka-178275",
+     "title": "大阪城 塀（大手門南方塀）",
+     "km": 0.62,
+     "kind": "重要文化財",
+     "linkUrl": "https://online.bunka.go.jp/db/heritages/detail/178275"
+    },
+    {
+     "id": "bunka-175352",
+     "title": "大阪城 大手門",
+     "km": 0.63,
+     "kind": "重要文化財",
+     "linkUrl": "https://online.bunka.go.jp/db/heritages/detail/175352"
+    }
+   ],
+   "result": "related-site-not-identity",
+   "match": "大坂城跡（国指定史跡）0.89km",
+   "note": "同じ上町台地の場所だが、大坂城は本願寺の退去の後の城で、別の対象・別の年代。同定に使わない"
+  },
+  {
+   "id": "node:koga",
+   "name": "古河御所",
+   "keywords": [
+    "古河御所",
+    "古河"
+   ],
+   "hitsWithCoordinates": 26,
+   "nearest": [
+    {
+     "id": "bunka-158618",
+     "title": "鷹見泉石関係資料",
+     "km": 0.8,
+     "kind": "国宝・重要文化財(美術品)",
+     "linkUrl": "https://online.bunka.go.jp/db/heritages/detail/158618"
+    },
+    {
+     "id": "bunka-186580",
+     "title": "坂長本店文庫蔵（旧質蔵）",
+     "km": 1.08,
+     "kind": "登録有形文化財(建造物)",
+     "linkUrl": "https://online.bunka.go.jp/db/heritages/detail/186580"
+    },
+    {
+     "id": "bunka-137618",
+     "title": "坂長本店袖蔵（旧古河城乾蔵）",
+     "km": 1.09,
+     "kind": "登録有形文化財(建造物)",
+     "linkUrl": "https://online.bunka.go.jp/db/heritages/detail/137618"
+    }
+   ],
+   "result": "none",
+   "note": "古河城の関係の登録文化財（蔵など）だけが近い。古河公方の御所の跡の史跡は、この検索では見つからない"
+  },
+  {
+   "id": "node:nakamura",
+   "name": "中村御所",
+   "keywords": [
+    "中村御所",
+    "中村"
+   ],
+   "hitsWithCoordinates": 3,
+   "nearest": [],
+   "result": "none",
+   "note": "座標のある該当なし"
+  },
+  {
+   "id": "node:tachibana",
+   "name": "立花山城",
+   "keywords": [
+    "立花",
+    "立花山城"
+   ],
+   "hitsWithCoordinates": 33,
+   "nearest": [
+    {
+     "id": "bunka-163881",
+     "title": "立花山クスノキ原始林",
+     "km": 2.15,
+     "kind": "史跡名勝天然記念物",
+     "linkUrl": "https://online.bunka.go.jp/db/heritages/detail/163881"
+    }
+   ],
+   "result": "none",
+   "note": "近くの史跡は立花山クスノキ原始林（天然記念物）だけで、城跡ではない"
+  }
+ ],
+ "source": {
+  "japanSearch": "https://jpsearch.go.jp/api/item/search/jps-cross（f-db=bunka）。保存するのは ID・名称・座標・種別・URL だけで、解説文は保存しない",
+  "codh": "data/research/japan-castle-candidates.jsonl（既存の入力）"
+ },
+ "apiCalls": {
+  "japanSearch": 9
+ }
+}

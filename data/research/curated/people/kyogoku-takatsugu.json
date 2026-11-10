@@ -1,0 +1,26 @@
+{
+  "id": "person:kyogoku-takatsugu",
+  "name": "京極高次",
+  "gameNames": [
+    "京極高次"
+  ],
+  "authorityIds": [
+    "wikidata:Q587980"
+  ],
+  "authorityEvidence": {
+    "scope": "person-identity",
+    "checked": "2026-11-09",
+    "wikidataRevision": 2566307333,
+    "snapshot": "data/research/source-notes/appear-authority-batch-1.json",
+    "sourceNote": "data/research/source-notes/appear-authority-batch-1.json",
+    "note": "data/research/source-notes/appear-authority-batch-1.md",
+    "identityChecks": [
+      "米原市の本文が京極高次を京極高吉の嫡男とし、永禄6年（1563年）に小谷城京極丸で生まれたとされるとする",
+      "Wikidata Q587980の日本語主名が京極高次で、P569の年が1563"
+    ],
+    "basis": "人物の同定のみ。原本にある生没日・所在・所領・関係の時期は新たな史実命題へ採用しない。",
+    "sourceIds": [
+      "maibaraTakatsuguIdentity"
+    ]
+  }
+}

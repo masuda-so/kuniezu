@@ -10,11 +10,12 @@
 
 | 分野 | サーバー不要の検査 | 実画面の検査 |
 |---|---|---|
-| 初期の勢力選択・年表・表示設定 | `offline.cjs` | `selection-ui-browser.cjs`（全シナリオ・広狭幅・地域・二重入力・保存復元・城から選択） |
+| 初期の勢力選択・年表・表示設定 | `offline.cjs`、`history-origin.cjs`（最早の開始配置・snapshot日付・過去選択の失敗時保持） | `history-origin-browser.cjs`（実際の時の帯・過去案内・同日章の重複・未成立の家・有効な家への復帰。`GAME_TEST_WIDTH=390`で狭幅）、 `selection-ui-browser.cjs`（全シナリオ・広狭幅・地域・二重入力・保存復元・城から選択） |
 | 本体ベクター描画 | `vector-map.cjs`・`vector-assets.cjs` | `vector-game-browser.cjs`（広幅・狭幅・回転・全図）、`VECTOR_FAIL_SOURCE=1`（取得失敗と再読込） |
 | 肖像の代替crop | `portrait-loading.cjs`、`build_fallback.py --root . --check` | `portrait-fallback-browser.cjs`（`PORTRAIT_MODE=normal/primary-fail/all-fail`） |
 | 登録漏れの追加肖像 | `uv run pytest tests/test_reviewed_portraits.py`、`build_reviewed.py --check` | 同じブラウザ検査へ `PORTRAIT_MANIFEST=tools/faces/reviewed-portraits.json PORTRAIT_FALLBACK_FILE=portraits/reviewed-fallback.webp` を渡す |
 | 基本・保存・史実進行 | `offline.cjs` | `completion-browser.cjs` |
+| 検証ブラウザの起動失敗・早期終了 | `node tools/checks/browser-process-exit.cjs`（実Chromeを起動せず失敗時終了とprofile削除を確認） | — |
 | 秘密情報（APIキー・秘密鍵など。gzipも展開） | `secret-scan.cjs`（CIでも実行。第三者ページの保存前は `tools/research/source-privacy.cjs`） | — |
 | 読み込みの確認値（更新後に古い版を使わせない） | `node tools/build/stamp-assets.cjs --check`（CIでも実行。kuniezu/static/kuniezu/ のファイルを変えたら `node tools/build/stamp-assets.cjs` を実行） | — |
 | 天正壬午の和睦と旧保存 | `node tools/checks/tensho-peace-date.cjs`。実画面は同検査に`TENSHO_SAVE_OUTPUT=/tmp/kuniezu-tensho-saves`を付けて保存を生成後、`TENSHO_SAVE_INPUT=/tmp/kuniezu-tensho-saves GAME_TEST_OUTPUT=data/verification/codex-tensho-peace-date node tools/checks/tensho-peace-browser.cjs` | 許可済みの起動中サーバー |
@@ -29,7 +30,7 @@
 | 街道の入力と再生成 | `road-vectors.cjs`（`tosando-reference-loop.cjs`・`aizu-reference-loops.cjs`・`ushu-edo-comparison.cjs`を含む。全319接続と版25・26→27の途中位置・期限を検査）、`road-vector-loading.cjs`、`sanshu-route.cjs`、`road-regeneration.cjs`（Python標準ライブラリ。Django CIの試験にも含む） | `road-vectors-browser.cjs`（両幅・道上行軍・停止再開・破損拒否と再読込）、`sanshu-route-browser.cjs`（両幅と保存版22・23の移行） |
 | 児島湾の補正マスクのベクター化 | `mask-vector.cjs`（穴・対角接触・単純リング）、`kojima-mask-vectors.cjs`（旧格子対応と737,100セルの逆変換一致。Offline checksにも含む） | —（移行入力のみ。ゲーム表示は変更しない） |
 | 編集済みGeoJSONの配信 | `vector-assets.cjs`（バイト複写・直接編集保持・上書き保護・統合CLI。Offline checksにも含む）、`uv run pytest tests/test_vector_sources.py`（位相・5湖の欠落防止・W09原本/座標系） | 全体地図の切替時に確認 |
-| 街道・河川・地図 | `road-display.cjs`、`battle-rivers.cjs`、`terrain-transition.cjs`、`terrain-cache.cjs`、`map-layer-notifications.cjs`（遅着層の再描画通知）、`raster-map.cjs`（正本 `kuniezu/map` と配信タイルの一致）、`province-edits.cjs`（年代別の差分の負例） | `zoom-regressions.cjs`、`map-layer-notifications-browser.cjs`（停止画面への遅着） |
+| 街道・河川・地図 | `road-display.cjs`、`battle-rivers.cjs`、`terrain-transition.cjs`、`terrain-cache.cjs`、`map-layer-notifications.cjs`（遅着層の再描画通知）、`raster-map.cjs`（正本 `kuniezu/map` と配信タイルの一致）、`province-edits.cjs`（年代別の差分の負例） | `zoom-regressions.cjs`（日本3地域・広狭/高DPI・中間キャッシュの全被覆・実際の再描画）、`map-layer-notifications-browser.cjs`（停止画面への遅着） |
 | 合戦 | `battle-conflicts.cjs`、`local-battle-scene.cjs`、`nagakute-local-scene.cjs`、`local-dem.cjs`（公式PNGとの全点照合・再生成一致）、`deployments.cjs`、`atlas-regressions.cjs`、`battle-review.cjs`、`battle-viewport.cjs`、`battle-counter-density.cjs`、`battle-label-cards.cjs`、`battle-mode-labels.cjs`、`battle-relief.cjs`（陰影・標本位置・等高線）、`battle-initial-views.cjs`（初期範囲・手動選択維持）、`battle-atlas-detail.cjs`（細密DEM再現・旧生成器の保護） | `all-battles-browser.cjs`、`battle-loading-browser.cjs`、`battle-viewport-browser.cjs`、`battle-counter-density-browser.cjs`、`battle-label-cards-browser.cjs` |
 | UI・肖像・性能 | `infrastructure.cjs` | `usability-browser.cjs`、`portrait-browser.cjs`、`render-performance.cjs`、`load-performance.cjs`（起動・再生中の負荷。`GAME_OVERRIDE_ROOT` で作業ツリーの変更分だけ差し替え） |
 | 棚卸し | `coverage-review.cjs`、`history-audit.cjs`、`road-shape-review.cjs` | 棚卸しだけで表示検査済みにしない |
