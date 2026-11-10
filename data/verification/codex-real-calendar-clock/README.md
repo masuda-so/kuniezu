@@ -68,3 +68,15 @@
 キャッシュ欠落軍は期間・指揮官を人工的に設定した検査であり、その動きを
 史実の行軍と同一視しない。木崎原は旧版の実進行から生成し、
 入力SHAと位置は `old-saves/special-manifest.json` に保管した。
+
+## 総合検査
+
+- `offline.cjs`：最後まで合格。原出力は `offline.json`。
+- `pytest -q --durations=10`：218件・5 subtests合格、272.77秒。
+  原出力は `pytest.json`。CIや最適化前後の比較の時間ではない。
+- `ruff check`、`mypy kuniezu config scripts tests`（46ファイル）、
+  `scripts/build_static.py`、依存順のorganization検査に合格。
+- 過去配置の検査に残っていた30日換算は、保存の暦版と実日から
+  開始日を確認する形へ更新した。
+- 黒田長政の旧予約修復は版のない保存だけへ適用し、新時計の同じ
+  数値の予約は維持する。旧修復と新時計の両方を検査して合格。

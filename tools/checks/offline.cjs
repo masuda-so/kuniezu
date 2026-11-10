@@ -30,6 +30,7 @@ const donut=geo.split([[[0,0,10,0,10,10,0,10],[4,4,4,6,6,6,6,4]]],[{x:2,y:5},{x:
 assert.equal(donut.reduce((n,c)=>n+c.polygons.reduce((a,p)=>a+area(p[0])-p.slice(1).reduce((b,r)=>b+area(r),0),0),0),96);
 console.log('PASS: clipped territories area, duplicate seeds, lake/hole preservation');
 require('node:child_process').execFileSync(process.execPath,[path.join(__dirname,'history-origin.cjs')],{stdio:'inherit'});
+require('node:child_process').execFileSync(process.execPath,[path.join(__dirname,'kuroda-residence.cjs')],{stdio:'inherit'});
 require('node:child_process').execFileSync(process.execPath,[path.join(__dirname,'history-focus.cjs')],{stdio:'inherit'});
 require('node:child_process').execFileSync(process.execPath,[path.join(__dirname,'verified-death-dates.cjs')],{stdio:'inherit'});
 require('node:child_process').execFileSync(process.execPath,[path.join(__dirname,'tensho-peace-date.cjs')],{stdio:'inherit'});
