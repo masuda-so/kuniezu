@@ -1,0 +1,37 @@
+{
+  "id": "renamed-toyotomi-surname",
+  "entity": "person:toyotomi-hideyoshi",
+  "predicate": "renamed",
+  "value": "関白羽柴秀吉が太政大臣に任じられ、豊臣の姓を賜った。",
+  "validYears": [
+    1586,
+    1586
+  ],
+  "datePrecision": "day",
+  "source": "hiDainihonshiryoKobun",
+  "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+  "locator": "綱文：和暦 天正14年12月19日 第1条（区分 史料綜覧、編11・冊912（データベースの表示値）、147頁）",
+  "gameBindings": [
+    "TK.HIST:1586-10-20"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-09",
+  "uncertainty": "大日本史料 第11編之27、138頁に、天正13年9月9日の「秀吉ノ改姓ヲ敕許セラル」の条があり、この条と食い違う（改姓の勅許と賜姓の関係は綱文だけでは決められない）。第 11 便より前の改名の照合（RENAME_KOBUN_REVIEW）は、任官と賜姓を一つの条に掲げることを理由に「綱文に日付なし」としていた。#132 の Codex のレビューの基準（掲出日を主たる出来事の日とし、別の時制を混ぜない）で見直した。 綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。",
+  "linkedEntities": [
+    "person:toyotomi-hideyoshi"
+  ],
+  "eventTime": {
+    "kind": "dated-event",
+    "date": [
+      1586,
+      12,
+      19
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": false,
+    "precision": "day"
+  },
+  "eventRelation": "renamed",
+  "eventScope": "綱文が掲げる日付。天正14年12月19日はゲーム共通の暦表で1587年1月27日。最終年表の羽柴家の家名の豊臣への変更（1586年10月20日、題名なし）は綱文より99日早い。任官と賜姓は同じ日の朝廷の一つの行為として一つの条に掲げるので、掲出日を賜姓の日とする。名乗りを改めた日とは限らない。"
+}

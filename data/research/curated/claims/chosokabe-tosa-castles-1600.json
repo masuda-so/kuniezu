@@ -1,0 +1,38 @@
+{
+  "id": "chosokabe-tosa-castles-1600",
+  "entity": "person:chosokabe-morichika",
+  "predicate": "castle-handover",
+  "value": "井伊直政が徳川家康の命を受け、鈴木重好らに土佐浦戸の長宗我部盛親の諸城を収めさせた。",
+  "validYears": [
+    1600,
+    1600
+  ],
+  "datePrecision": "day",
+  "source": "hiDainihonshiryoKobun",
+  "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+  "locator": "綱文：和暦 慶長5年10月17日 第3条（区分 史料綜覧、編11・冊913（データベースの表示値）、279頁）",
+  "gameBindings": [
+    "TK.HIST:長宗我部の改易"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-09",
+  "uncertainty": "綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。",
+  "linkedEntities": [
+    "person:chosokabe-morichika",
+    "person:ii-naomasa"
+  ],
+  "eventTime": {
+    "kind": "dated-event",
+    "date": [
+      1600,
+      10,
+      17
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": false,
+    "precision": "day"
+  },
+  "eventRelation": "castle-handover",
+  "eventScope": "綱文が掲げる日付。慶長5年10月17日はゲーム共通の暦表で1600年11月22日。最終年表の長宗我部の改易（1600年11月12日）は綱文より10日早い。命題は土佐の諸城を収めさせた日。家康が盛親の封を収めたのは10月12日の条で「尋で」とだけ書くので、改易の日とはしない。土佐を与えられた山内一豊の弟の入国は「尋で」で、日付にしない。家康はこの条で命じた者として名が出るが、命令の日は書かれないので結ばない。"
+}

@@ -1,0 +1,38 @@
+{
+  "id": "otomo-confiscation-1593",
+  "entity": "person:otomo-yoshimune",
+  "predicate": "territorial-transfer",
+  "value": "秀吉が、大友吉統（義統）が黄海道鳳山から逃げた罪を問い、封地の豊後を収めて蔵入地とし、吉統を毛利輝元に預け、子の義乗に五百人扶持を与えて加藤清正に属させた。同時に、島津忠辰と波多信時の封も収めた。",
+  "validYears": [
+    1593,
+    1593
+  ],
+  "datePrecision": "day",
+  "source": "hiDainihonshiryoKobun",
+  "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+  "locator": "綱文：和暦 文禄2年5月1日 第3条（区分 史料綜覧、編11・冊913（データベースの表示値）、18頁）",
+  "gameBindings": [
+    "TK.HIST:大友義統の改易"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-09",
+  "uncertainty": "綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。",
+  "linkedEntities": [
+    "person:otomo-yoshimune",
+    "person:toyotomi-hideyoshi"
+  ],
+  "eventTime": {
+    "kind": "dated-event",
+    "date": [
+      1593,
+      5,
+      1
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": false,
+    "precision": "day"
+  },
+  "eventRelation": "territorial-transfer",
+  "eventScope": "綱文が掲げる日付。文禄2年5月1日はゲーム共通の暦表で1593年5月31日。最終年表の大友義統の改易（1593年6月1日）は綱文より1日遅い。島津忠辰・波多信時の改易は同じ条にあるが、年表のこの出来事の対象ではないので結ばない。預け先の毛利輝元・加藤清正は処分の相手として名が出るが、この日の行為の当事者として結ばない。"
+}
