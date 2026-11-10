@@ -1,0 +1,40 @@
+{
+  "id": "kiyosu-council-1582",
+  "entity": "person:丹羽長秀",
+  "predicate": "territorial-transfer",
+  "value": "柴田勝家・羽柴秀吉・惟住（丹羽）長秀・池田恒興らが尾張清洲城に会し、織田信長の継嗣を定め、遺領を処分した。",
+  "validYears": [
+    1582,
+    1582
+  ],
+  "datePrecision": "day",
+  "source": "hiDainihonshiryoKobun",
+  "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-10",
+  "uncertainty": "綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。",
+  "locator": "綱文：和暦 天正10年6月27日 第1条（区分 大日本史料、第11編之1、775頁）",
+  "gameBindings": [
+    "TK.HIST:丹羽長秀の若狭領・近江加増"
+  ],
+  "linkedEntities": [
+    "place:kiyosu-castle",
+    "person:丹羽長秀",
+    "person:shibata-katsuie",
+    "person:toyotomi-hideyoshi"
+  ],
+  "eventTime": {
+    "kind": "dated-event",
+    "date": [
+      1582,
+      6,
+      27
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": false,
+    "precision": "day"
+  },
+  "eventRelation": "territorial-transfer",
+  "eventScope": "綱文が記す清洲での会合・継嗣の決定・遺領の処分とその掲出日だけ。綱文は誰にどの国を与えたかを書かないので、年表の「若狭領・近江加増」の国名は、この命題では確かめていない（場所は会合の場の清洲城だけを結ぶ）。池田恒興は人物台帳に無いので結ばない。年表の 1582-7-18 は、綱文の日（ゲームの暦表でユリウス暦 1582-07-16）より 2 日遅い。同じ日の柴田・池田の年表の行は、配分が綱文に無いので結ばない。年表は変えていない。"
+}

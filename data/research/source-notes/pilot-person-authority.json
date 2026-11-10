@@ -1,0 +1,147 @@
+{
+ "checked": "2026-11-10",
+ "scope": "計測パイロット（data/verification/claude-pilot）の人物の同定のみ。生没・所在の命題なし。候補は #148 の wikipedia-sengoku-person-candidates。",
+ "rawLicense": {
+  "name": "CC0 1.0",
+  "url": "https://www.wikidata.org/wiki/Wikidata:Licensing",
+  "scope": "Wikidata JSON only; NDL 典拠データは国立国会図書館の利用条件に従う"
+ },
+ "records": [
+  {
+   "name": "今川氏真",
+   "japaneseLabel": "今川氏真",
+   "wikidataId": "Q3100078",
+   "wikidataRevision": 2562125046,
+   "wikidataJapaneseLabel": "今川氏真",
+   "entityDataUrl": "https://www.wikidata.org/wiki/Special:EntityData/Q3100078.json",
+   "revisionUrl": "https://www.wikidata.org/w/index.php?title=Q3100078&oldid=2562125046",
+   "rawEntityDataSnapshot": "data/research/source-notes/pilot-person-raw/Q3100078.json",
+   "rawSha256": "248f0819f274d1fb942e9c1072006c43fe79694b6ca773ec0b97fb33ce1d2942",
+   "identityChecks": [
+    "NDL032804624の主名今川氏真がPerson典拠に属する",
+    "Wikidata Q3100078の日本語主名とP349が同じNDL典拠へ対応する"
+   ],
+   "adoptedNames": [
+    "今川氏真"
+   ],
+   "scope": "person-identity-only; no historical dates or locations adopted",
+   "nameEvidence": [
+    {
+     "name": "今川氏真",
+     "supports": [
+      "wikidata-ja-label-or-alias",
+      "ndl-primary"
+     ]
+    }
+   ],
+   "ndlId": "032804624",
+   "ndlSnapshot": "data/research/source-notes/pilot-person-ndl-authority.json",
+   "ndlSha256": "4a85d17d30c478028f2dff358f9ea71995ab0cd32abd132342444f7ddc19bfeb",
+   "ndlIdentity": {
+    "uri": "http://id.ndl.go.jp/auth/entity/032804624",
+    "type": {
+     "uri": "http://xmlns.com/foaf/0.1/Person"
+    },
+    "name": "今川氏真",
+    "dateOfBirth": "1538",
+    "dateOfDeath": "1614",
+    "biographicalInformation": [
+     "武将, 歌人"
+    ]
+   },
+   "identitySourceIds": [
+    "ndlImagawaUjizaneIdentity"
+   ],
+   "identitySourceUrl": "https://id.ndl.go.jp/auth/ndlna/032804624.json",
+   "identitySourceLocator": "個人典拠の主名・人物型・典拠ID",
+   "yearComparison": {
+    "wikidataBirth": [
+     1538
+    ],
+    "wikidataDeath": [
+     1615
+    ],
+    "ndlBirth": "1538",
+    "ndlDeath": "1614",
+    "note": "没年が Wikidata 1615・NDL 1614 と分かれる。慶長19年12月の没なら西暦では1615年初めに入りうるため、没年は同定の根拠に数えず、主名と P349 の相互の対応で同定した。"
+   }
+  },
+  {
+   "name": "伊達輝宗",
+   "japaneseLabel": "伊達輝宗",
+   "wikidataId": "Q2625556",
+   "wikidataRevision": 2480577091,
+   "wikidataJapaneseLabel": "伊達輝宗",
+   "entityDataUrl": "https://www.wikidata.org/wiki/Special:EntityData/Q2625556.json",
+   "revisionUrl": "https://www.wikidata.org/w/index.php?title=Q2625556&oldid=2480577091",
+   "rawEntityDataSnapshot": "data/research/source-notes/pilot-person-raw/Q2625556.json",
+   "rawSha256": "d936d68576223ecfd35aa8b6682f0bea11f9c08022e5af1d94fbb5004d24d69b",
+   "identityChecks": [
+    "仙台市博物館の本文が、永禄10年（1567）8月3日に米沢城主の伊達輝宗に跡継ぎ（政宗）が生まれたとする",
+    "Wikidata Q2625556の日本語主名が伊達輝宗で、P569の年が1544、P570の年が1585"
+   ],
+   "adoptedNames": [
+    "伊達輝宗"
+   ],
+   "scope": "person-identity-only; no historical dates or locations adopted",
+   "nameEvidence": [
+    {
+     "name": "伊達輝宗",
+     "supports": [
+      "wikidata-ja-label-or-alias",
+      "public-source"
+     ]
+    }
+   ],
+   "publicOriginal": {
+    "path": "data/research/source-notes/pilot-person-raw/terumune-sendai.html.gz",
+    "compression": "gzip",
+    "uncompressedSha256": "7fefd0aa020f602bcfe59ce3b8b5eff778441a668bb179d0a06056d352c3037b"
+   },
+   "identitySourceIds": [
+    "sendaiMuseumTerumuneIdentity"
+   ],
+   "identitySourceUrl": "https://www.city.sendai.jp/museum/shuzohin/shuzohin/shuzohin-18.html",
+   "identitySourceLocator": "「1 政宗誕生」の「伊達政宗の誕生」の段落",
+   "reservation": "仙台市博物館の本文は輝宗の生没年を書かない。同定は、米沢城主で政宗の父という来歴と、Wikidata の主名で行った。生年の 1543 年説もあるが、同定の根拠には数えない。"
+  }
+ ],
+ "notAdopted": [
+  {
+   "name": "足利義氏 (古河公方)",
+   "wikidataId": "Q11636812",
+   "ndlCandidate": "033515855",
+   "reason": "NDL の主名「足利, 義氏, -1583」と Wikidata の没年 1583 は合うが、Wikidata に P349 が無く、相互の対応で確かめられない。名前と年の一致だけなので要確認"
+  },
+  {
+   "name": "安国寺恵瓊",
+   "wikidataId": "Q1151711",
+   "ndlCandidate": "00622777",
+   "reason": "NDL の主名は「恵瓊」で、別名「安国寺, 恵瓊」・没年 1600 は Wikidata と合う。Wikidata に P349 が無く、相互の対応で確かめられない。要確認"
+  },
+  {
+   "name": "斎藤義龍",
+   "reason": "今回の検索条件（NDL 典拠の rdfs:label・foaf:name・別名の完全一致）では未確認。NDL に無いとは断定しない。公的機関の原本も未確認。要確認"
+  },
+  {
+   "name": "一色義幸",
+   "reason": "今回の検索条件（NDL 典拠の rdfs:label・foaf:name・別名の完全一致）では未確認。NDL に無いとは断定しない。公的機関の原本も未確認。要確認"
+  },
+  {
+   "name": "三好長逸",
+   "reason": "今回の検索条件（NDL 典拠の rdfs:label・foaf:name・別名の完全一致）では未確認。NDL に無いとは断定しない。公的機関の原本も未確認。要確認"
+  },
+  {
+   "name": "朝比奈泰朝",
+   "reason": "今回の検索条件（NDL 典拠の rdfs:label・foaf:name・別名の完全一致）では未確認。NDL に無いとは断定しない。公的機関の原本も未確認。要確認"
+  },
+  {
+   "name": "菅谷政貞",
+   "reason": "今回の検索条件（NDL 典拠の rdfs:label・foaf:name・別名の完全一致）では未確認。NDL に無いとは断定しない。公的機関の原本も未確認。要確認"
+  },
+  {
+   "name": "波多野秀治",
+   "reason": "今回の検索条件（NDL 典拠の rdfs:label・foaf:name・別名の完全一致）では未確認。NDL に無いとは断定しない。公的機関の原本も未確認。要確認。追加の照合（Web 検索 1 回）で、公的機関の原本は見つからなかった（報道・一般の記事だけ）"
+  }
+ ]
+}
