@@ -93,17 +93,17 @@
      ]
     }
    ],
-   "publicOriginal": {
-    "path": "data/research/source-notes/pilot-person-raw/terumune-sendai.html.gz",
-    "compression": "gzip",
-    "uncompressedSha256": "7fefd0aa020f602bcfe59ce3b8b5eff778441a668bb179d0a06056d352c3037b"
-   },
    "identitySourceIds": [
     "sendaiMuseumTerumuneIdentity"
    ],
    "identitySourceUrl": "https://www.city.sendai.jp/museum/shuzohin/shuzohin/shuzohin-18.html",
    "identitySourceLocator": "「1 政宗誕生」の「伊達政宗の誕生」の段落",
-   "reservation": "仙台市博物館の本文は輝宗の生没年を書かない。同定は、米沢城主で政宗の父という来歴と、Wikidata の主名で行った。生年の 1543 年説もあるが、同定の根拠には数えない。"
+   "reservation": "仙台市博物館の本文は輝宗の生没年を書かない。同定は、米沢城主で政宗の父という来歴と、Wikidata の主名で行った。生年の 1543 年説もあるが、同定の根拠には数えない。",
+   "publicOriginalNotRedistributed": {
+    "reason": "仙台市博物館のページに無断転用を控えるよう求める案内があるため、HTML の原本は Git で配らない。手元の .cache/research-originals/pilot/terumune-sendai.html.gz（Git に入れない）に保全する。",
+    "uncompressedSha256": "7fefd0aa020f602bcfe59ce3b8b5eff778441a668bb179d0a06056d352c3037b",
+    "excerpt": "data/research/source-notes/pilot-person-sendai-excerpt.md"
+   }
   }
  ],
  "notAdopted": [
