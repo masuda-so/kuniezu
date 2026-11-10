@@ -10,15 +10,17 @@
   "year-only": "公的資料は年だけ",
   "year-or-month-only": "公的資料は年か月まで",
   "not-found": "公的資料が見つからない（今回の条件で）",
-  "no-claim-public-found": "綱文の命題が未登録で、公的資料はある"
+  "no-claim-public-found": "綱文の命題が未登録で、公的資料はある",
+  "month-only-with-inscription-date": "公的資料の死去日は月までで、日は肖像の賛など死去日と明示されない記述にある"
  },
  "counts": {
   "public-differs": 2,
   "not-found": 4,
   "year-only": 3,
-  "public-matches-kobun": 8,
+  "public-matches-kobun": 7,
   "public-matches-kobun-unverified": 1,
   "year-or-month-only": 1,
+  "month-only-with-inscription-date": 1,
   "no-claim-public-found": 1,
   "existing-corpus-differs": 1
  },
@@ -208,14 +210,14 @@
    "kobun": "永禄6年8月25日",
    "timeline": "1563-09-20",
    "timelineMinusKobunDays": 8,
-   "category": "public-matches-kobun",
+   "category": "month-only-with-inscription-date",
    "sources": [
     {
      "publisher": "京都大学貴重資料デジタルアーカイブ（三好義興像 模本）",
      "url": "https://rmda.kulib.kyoto-u.ac.jp/item/rb00033862",
-     "phrase": "賛「…于時永禄六年八月廿五日」",
+     "phrase": "解説：永禄6年(1563)8月、22歳の若さで没した／賛：于時永禄六年八月廿五日",
      "basis": "像の賛（出典『日本肖像画図録』）",
-     "kind": "肖像の賛（模本）",
+     "kind": "解説（没時は月まで）と肖像模本の賛（日付）",
      "checkedBy": "claude-fetched-html",
      "originalSha256": "1ea020c5078a9de59865e927a104c9ccc407a744d7d70ecbf32eef04b7f1047d",
      "privateOriginal": ".cache/research-originals/death-date-sources/yoshioki-kyotou.html.gz"
@@ -230,7 +232,7 @@
      "note": "年だけ"
     }
    ],
-   "note": "毒殺説は京大の解説が「説もある」とする。"
+   "note": "京大の解説は没時を永禄6年8月までとする。25日は肖像模本の賛の日付（于時…）で、死去日と明示されていない。死去日は月まで、賛の日付は補助資料として扱う。毒殺説は京大の解説が「説もある」とする。"
   },
   {
    "name": "毛利隆元",
@@ -457,7 +459,7 @@
      "note": "法要の日で、死去の日の記述ではない"
     }
    ],
-   "note": "既存の資料（iwayaDiary）では落城は27日午後。年表の1586-09-10は7月27日（ユリウス暦）に当たる。綱文の26日は包囲・下柵突破の日に掛けた掲出と見られる。紹運の戦死の時刻は日記でも特定できない。"
+   "note": "既存の資料（iwayaDiary）では落城は27日午後。年表の1586-09-10は7月27日（グレゴリオ暦）に当たる。綱文の26日は包囲・下柵突破の日に掛けた掲出と見られる。紹運の戦死の時刻は日記でも特定できない。"
   },
   {
    "name": "武田信繁",
