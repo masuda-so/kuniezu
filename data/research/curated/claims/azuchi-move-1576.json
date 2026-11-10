@@ -1,0 +1,38 @@
+{
+  "id": "azuchi-move-1576",
+  "entity": "person:oda-nobunaga",
+  "predicate": "residence-transfer",
+  "value": "信長が近江の安土山に城を築き、この日、そこに移った。",
+  "validYears": [
+    1576,
+    1576
+  ],
+  "datePrecision": "day",
+  "source": "hiDainihonshiryoKobun",
+  "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+  "locator": "綱文：和暦 天正4年2月23日 第1条（区分 史料綜覧、編10・冊911（データベースの表示値）、103頁）",
+  "gameBindings": [
+    "TK.HIST:1576-3-1"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-09",
+  "uncertainty": "綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。",
+  "linkedEntities": [
+    "person:oda-nobunaga",
+    "place:azuchi-castle"
+  ],
+  "eventTime": {
+    "kind": "dated-event",
+    "date": [
+      1576,
+      2,
+      23
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": false,
+    "precision": "day"
+  },
+  "eventRelation": "residence-transfer",
+  "eventScope": "綱文が掲げる日付。天正4年2月23日はゲーム共通の暦表で1576年3月23日。最終年表の織田信長の移り（1576年3月1日、題名なし、node:kannonji）は綱文より22日早い。綱文の「是日」が掛かるのは移りだけで、築城の始まりと、そのあと（「尋で」）の天守の造営には日付を広げない。年表の行き先 node:kannonji（静的な名前は観音寺城）がこの時点で安土を表すかは確かめていないので、ノードとは結ばない（報告のみ）。"
+}

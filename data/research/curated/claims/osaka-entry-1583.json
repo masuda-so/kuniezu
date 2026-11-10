@@ -1,0 +1,38 @@
+{
+  "id": "osaka-entry-1583",
+  "entity": "person:toyotomi-hideyoshi",
+  "predicate": "residence-transfer",
+  "value": "山城大徳寺で織田信長の一周忌の法会があり、羽柴秀吉はこれに参り、大坂城に入った。",
+  "validYears": [
+    1583,
+    1583
+  ],
+  "datePrecision": "period",
+  "source": "hiDainihonshiryoKobun",
+  "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+  "locator": "綱文：和暦 天正11年6月2日 第2条（区分 大日本史料、第11編之4（データベースの表示値）、589頁）",
+  "gameBindings": [
+    "TK.HIST:1583-10-17"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-09",
+  "uncertainty": "入城の日は綱文の条からは確定しない。 綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。",
+  "linkedEntities": [
+    "person:toyotomi-hideyoshi",
+    "place:osaka-castle"
+  ],
+  "eventTime": {
+    "kind": "described-period",
+    "label": "天正11年6月2日の条（大徳寺の法会への参詣と大坂城への入城を一つの条に掲げる）",
+    "indexYears": [
+      1583,
+      1583
+    ],
+    "calendar": "Japanese-era-description",
+    "precision": "period",
+    "boundsAreHistoricalStartEnd": false
+  },
+  "eventRelation": "residence-transfer",
+  "eventScope": "綱文が一つの条に掲げる法会への参詣と入城。日付語が無いので、入城の日を6月2日と断定しない（掲出日は天正11年6月2日、ゲーム共通の暦表で1583年7月20日）。最終年表の羽柴秀吉の石山（node:ishiyama）への移り（1583年10月17日、題名なし）は、この掲出日より89日遅い。大坂城の築城の始まり（8月28日の条）とは別。池田恒興が大坂城を秀吉に渡したこと（5月25日の条）は命題 osaka-handover-1583 にある。"
+}

@@ -1,0 +1,77 @@
+{
+  "checked": "2026-11-10",
+  "scope": "#150 の pilot-person-authority.json で採用しなかった 6 名の再試行。人物の同定のみ。生没・所在の命題なし。",
+  "method": {
+    "wikidata": "wbgetentities（labels・aliases・claims）、2026-11-10T08:14Z",
+    "ndlRecord": "https://id.ndl.go.jp/auth/ndlna/<ID>.json、2026-11-10T08:15Z",
+    "ndlSparql": "https://id.ndl.go.jp/auth/ndla/sparql、VALUES に姓名の 3 通り（姓名続け・「姓, 名」・生没年つき）、2026-11-10T08:15Z",
+    "notDone": [
+      "VIAF の束（viaf.org は 403・404 で取得できず）",
+      "公的機関の原本の探索（残り 4 名）",
+      "綱文・既存の入力の本文での来歴の照合"
+    ]
+  },
+  "adopted": [
+    {
+      "name": "足利義氏",
+      "personId": "person:ashikaga-yoshiuji",
+      "ndlId": "033515855",
+      "layer": "根拠の読み落とし：NDL の記録の人物注記・別名を同定に使える",
+      "identityChecks": [
+        "NDL033515855の主名足利義氏がPerson典拠に属する",
+        "NDL033515855の人物注記「武将, 第5代古河公方」と没年1583が、ゲームの足利義氏（古河公方、1541年生）と合う"
+      ],
+      "wikidataCandidate": "Q11636812",
+      "wikidataRevisionSeen": 2094394831,
+      "wikidataStatus": "P349 が無いので Wikidata の ID は採用していない（authorityIds に入れない）",
+      "decision": "利用者の判断（2026-11-10）で、NDL の記録の名前・没年・職の記述を同定の根拠として採用",
+      "checkedBy": "claude-self"
+    },
+    {
+      "name": "安国寺恵瓊",
+      "personId": "person:ankokuji-ekei",
+      "ndlId": "00622777",
+      "layer": "根拠の読み落とし：NDL の記録の人物注記・別名を同定に使える",
+      "identityChecks": [
+        "NDL00622777の主名恵瓊がPerson典拠に属し、別名に「安国寺, 恵瓊」がある",
+        "NDL00622777の人物注記「僧」と没年1600、出典「安国寺恵瓊 / 河合正治 著」が、ゲームの安国寺恵瓊と合う"
+      ],
+      "wikidataCandidate": "Q1151711",
+      "wikidataRevisionSeen": 2492910547,
+      "wikidataStatus": "P349 が無いので Wikidata の ID は採用していない（authorityIds に入れない）",
+      "decision": "利用者の判断（2026-11-10）で、NDL の記録の名前・没年・職の記述を同定の根拠として採用",
+      "checkedBy": "claude-self"
+    }
+  ],
+  "unresolved": [
+    {
+      "name": "一色義幸",
+      "wikidataCandidate": "Q11353151",
+      "wikidataNotes": "別名なし・生没年なし",
+      "layer": "根拠不足",
+      "reason": "NDL 典拠の SPARQL で、主名（foaf:name）・表示名（rdfs:label、skos-xl の prefLabel）・別名（altLabel）の完全一致で 0 件。同じ照会で足利義氏は 1 件返るので、照会の形は働いている。部分一致では引けないため、NDL に無いとは断定しない。Wikidata に外部の典拠 ID（P349・P214・P244 など）が無い。"
+    },
+    {
+      "name": "菅谷政貞",
+      "wikidataCandidate": "Q11619386",
+      "wikidataNotes": "別名なし・1518〜1592 年（Wikidata の値、未照合）",
+      "layer": "根拠不足",
+      "reason": "NDL 典拠の SPARQL で、主名（foaf:name）・表示名（rdfs:label、skos-xl の prefLabel）・別名（altLabel）の完全一致で 0 件。同じ照会で足利義氏は 1 件返るので、照会の形は働いている。部分一致では引けないため、NDL に無いとは断定しない。Wikidata に外部の典拠 ID（P349・P214・P244 など）が無い。"
+    },
+    {
+      "name": "朝比奈泰朝",
+      "wikidataCandidate": "Q11092559",
+      "wikidataNotes": "別名なし・1538 年生（Wikidata の値、未照合）",
+      "layer": "根拠不足",
+      "reason": "NDL 典拠の SPARQL で、主名（foaf:name）・表示名（rdfs:label、skos-xl の prefLabel）・別名（altLabel）の完全一致で 0 件。同じ照会で足利義氏は 1 件返るので、照会の形は働いている。部分一致では引けないため、NDL に無いとは断定しない。Wikidata に外部の典拠 ID（P349・P214・P244 など）が無い。"
+    },
+    {
+      "name": "波多野秀治",
+      "wikidataCandidate": "Q837394",
+      "wikidataNotes": "別名なし・1541〜1579 年（Wikidata の値、未照合）",
+      "layer": "根拠不足",
+      "reason": "NDL 典拠の SPARQL で、主名（foaf:name）・表示名（rdfs:label、skos-xl の prefLabel）・別名（altLabel）の完全一致で 0 件。同じ照会で足利義氏は 1 件返るので、照会の形は働いている。部分一致では引けないため、NDL に無いとは断定しない。Wikidata に外部の典拠 ID（P349・P214・P244 など）が無い。"
+    }
+  ],
+  "layers": "「別名の層」（別名で引けば典拠が見つかる）に当たる者は今回いなかった。Wikidata の別名は足利義氏（梅千代王丸・長山善公香雲院）と安国寺恵瓊（恵瓊）だけで、残り 4 名は別名が無い。"
+}
