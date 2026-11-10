@@ -12,7 +12,7 @@
  Object.assign(TK.CLANS,{nobukatsu:['尾張織田','#caa23f'],niwa:['丹羽','#829263'],ikeda:['池田','#668b97']});
  TK.CLANS.nobutaka[0]='美濃織田';
  TK.FAMILY_NAMES={oda:'織田宗家（三法師・秀信）',nobukatsu:'尾張織田家（信雄系）',nobutaka:'美濃織田家（信孝系）'};
- const stamp=d=>d[0]*360+d[1]*30+d[2],cut=[1582,7,16],precision='清須会議後の領国分離を表示。相続・入城の実施月日は未確定';
+ const stamp=d=>d[0]*10000+d[1]*100+d[2],cut=[1582,7,16],precision='清須会議後の領国分離を表示。相続・入城の実施月日は未確定';
  const add=e=>TK.HIST.push(e);
  const meeting=TK.HIST.find(e=>e.title==='清洲会議');
  meeting.source=src.kiyosuDistribution.url;meeting.sourceIds=['kiyosuDistribution','owariSuccession','kiyosuNagahama'];

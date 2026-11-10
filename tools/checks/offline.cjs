@@ -5,6 +5,7 @@ for(const f of fs.readdirSync(game).filter(f=>f.endsWith('.js')))new vm.Script(f
 for(const match of fs.readFileSync(path.join(root,'kuniezu/templates/index.html'),'utf8').matchAll(/<script\b(?![^>]*\bsrc=)[^>]*>([\s\S]*?)<\/script>/g))new vm.Script(match[1],{filename:'index.html inline script'});
 console.log('PASS: JavaScript syntax');
 require('node:child_process').execFileSync(process.execPath,[path.join(root,'tools/build/build-calendar.cjs'),'--check'],{stdio:'inherit'});
+require('node:child_process').execFileSync(process.execPath,[path.join(__dirname,'calendar.cjs')],{stdio:'inherit'});
 require('./mask-vector.cjs');
 require('./kojima-mask-vectors.cjs');
 require('./vector-assets.cjs');

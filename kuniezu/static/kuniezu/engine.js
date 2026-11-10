@@ -101,8 +101,8 @@ G.CN=k=>(S&&S.cnm&&S.cnm[k])||(TK.CLANS[k]?TK.CLANS[k][0]:k);
 // 「〇〇家」の呼び方。家でない国（朝鮮・明）は王朝の呼び名で
 G.CNK=k=>({joseon:'李氏朝鮮',ming:'明'})[k]||(/家$/.test(G.CN(k))?G.CN(k):G.CN(k)+'家');
 G.CC=k=>TK.CLANS[k]?TK.CLANS[k][1]:'#888';
-G.date=function(t){t=t===undefined?S.t:t;t=Math.floor(t);const mm=S.m0-1+Math.floor(t/30);return {y:S.y0+Math.floor(mm/12),m:((mm%12)+12)%12+1,d:((t%30)+30)%30+1};};
-// 旧暦（和暦）での年月日。内部の暦（1か月30日）を実際の暦日に直し、旧暦の表で引く
+G.date=function(t){t=t===undefined?S.t:t;return S.clockVersion===TKCalendar.version?TKCalendar.fromJD(TKCalendar.toJD(S.y0,S.m0,1)+Math.floor(t)):TKCalendar.legacyDate(S,t);};
+// 旧暦（和暦）は実日の番号から月表で引く。旧時計の保存は移行前のみ月末を丸める。
 const KAN='〇一二三四五六七八九';const kanN=n=>n<=10?(n===10?'十':KAN[n]):n<20?'十'+KAN[n-10]:KAN[Math.floor(n/10)]+'十'+(n%10?KAN[n%10]:'');G.kanN=kanN;
 function jdJul(y,m,d){const a=Math.floor((14-m)/12),Y=y+4800-a,M=m+12*a-3;return d+Math.floor((153*M+2)/5)+365*Y+Math.floor(Y/4)-32083;}
 function jdGre(y,m,d){const a=Math.floor((14-m)/12),Y=y+4800-a,M=m+12*a-3;return d+Math.floor((153*M+2)/5)+365*Y+Math.floor(Y/4)-Math.floor(Y/100)+Math.floor(Y/400)-32045;}
@@ -117,7 +117,7 @@ G.eraK=function(t){const k=G.kyu(t);for(const [y,m,dd,n] of KAIGEN){if(k.y>y||(k
 G.monK=function(t){const k=G.kyu(t);return (k.leap?'閏':'')+(k.m===1?'正':kanN(k.m))+'月';};
 G.dayK=function(t){return kanN(G.kyu(t).d)+'日';};
 G.dstr=function(t){const k=G.kyu(t);const w=G.wdate(t);return `${G.eraK(t)}${G.monK(t)}${G.dayK(t)}（${w.y}年${w.m}月${w.d}日）`;};
-G.wdate=function(t){const d=G.date(t);const greg=d.y>1582||(d.y===1582&&d.m>10);const leap=greg?(d.y%4===0&&(d.y%100!==0||d.y%400===0)):d.y%4===0;const dm=[31,leap?29:28,31,30,31,30,31,31,30,31,30,31][d.m-1];return {y:d.y,m:d.m,d:Math.min(d.d,dm)};};
+G.wdate=function(t){const d=G.date(t);if(S.clockVersion===TKCalendar.version)return d;const greg=d.y>1582||(d.y===1582&&(d.m>10||d.m===10&&d.d>=15));const leap=greg?(d.y%4===0&&(d.y%100!==0||d.y%400===0)):d.y%4===0;const dm=[31,leap?29:28,31,30,31,30,31,31,30,31,30,31][d.m-1];return {y:d.y,m:d.m,d:Math.min(d.d,dm)};};
 G.dstrW=function(t){const d=G.wdate(t);return `${d.y}年${d.m}月${d.d}日`;};
 G.era=function(y,m,dd){m=m||12;dd=dd||31;const v=y*10000+m*100+dd;const E=[[[1596,12,16],'慶長'],[[1593,1,10],'文禄'],[[1573,8,25],'天正'],[[1570,5,27],'元亀'],[[1558,3,18],'永禄'],[[1555,11,7],'弘治']];for(const [b,n] of E)if(v>=b[0]*10000+b[1]*100+b[2]){const k=y-b[0]+1;return n+(k===1?'元':k)+'年';}return '';};
 function log(t,kind,clans){const d=G.date();S.log.unshift({t:S.t,s:`${d.y}.${d.m}.${d.d}`,msg:t,kind:kind||'',pl:clans?clans.includes(S.player):false});if(S.log.length>300)S.log.length=300;G.onLog&&G.onLog(S.log[0]);}
@@ -213,7 +213,7 @@ function newGame0(scId,player){G._lr=null;
   if(S.clans[player]&&S.clans[player].alive){const L=gen(S.clans[player].leader);log(`${G.CNK(player)}当主・${L?L.n:''}として、天下に名乗りを上げた。`,'big',[player]);}
   return S;}
  const sc=sc0;
- S={v:4,castleEraPositionVersion:1,div:{},cnm:{},chron:[],hi:0,auto:false,sc:scId,t:0,y0:sc.year,m0:sc.month,player,castles:{},clans:{},gens:[],units:[],rel:{},ally:{},log:[],uid:1,over:null,flags:{},prisonQ:[],propQ:[],settings:{pauseOnAttack:true}};
+ S={v:4,clockVersion:TKCalendar.version,castleEraPositionVersion:1,div:{},cnm:{},chron:[],hi:0,auto:false,sc:scId,t:0,y0:sc.year,m0:sc.month,player,castles:{},clans:{},gens:[],units:[],rel:{},ally:{},log:[],uid:1,over:null,flags:{},prisonQ:[],propQ:[],settings:{pauseOnAttack:true}};
  const owner={};for(const k in sc.owners)sc.owners[k].split(' ').forEach(id=>owner[id]=k);
  for(const c of G.CL){
   const k=owner[c.id];
@@ -772,7 +772,7 @@ function succession(k,old){
 }
 
 /* ===== 史実の進行 ===== */
-function evT(ev){return (ev.d[0]-S.y0)*360+(ev.d[1]-S.m0)*30+(ev.d[2]-1);}
+function evT(ev){return S.clockVersion===TKCalendar.version?TKCalendar.toJD(...ev.d)-TKCalendar.toJD(S.y0,S.m0,1):(ev.d[0]-S.y0)*360+(ev.d[1]-S.m0)*30+(ev.d[2]-1);}
 G.evT=evT;
 G.diverge=function(k,why){if(!k||S.div[k]||!S.clans[k])return;S.div[k]=1;G.chron({alt:true,title:G.CNK(k)+'、史実の筋書きを離れる',text:({diplo:'外交',build:'築城',branch:'支城の攻略',battle:'合戦',neg:'寝返りの働きかけ'})[why]||'歴史への介入',d:G.date()},true);if(k===S.player){log('ここから先は、あなたの采配で歴史が変わっていく。','big',[k]);G.onDiverge&&G.onDiverge(why);}};
 const okC=k=>S.clans[k]&&S.clans[k].alive&&!S.div[k];
@@ -860,7 +860,7 @@ function applyEv(ev){
   // 城を取る史実なら、前もって出陣していた軍勢がそのまま攻めかかる
   if(ev.k==='take'){for(const u of S.units)if(u.until===evKey&&(ev.castles||[]).includes(u.path[u.path.length-1])&&S.castles[u.path[u.path.length-1]].owner!==u.clan){u.until=null;u.mission='attack';u.stopAt=null;if(u.state==='camp')u.state='march';}}
   // 長く続く戦（籠城・攻囲）は、hold 日のあいだ陣を張ったまま
-  if(ev.hold){for(const u of S.units)if(u.until===evKey){u.historyTitle=evKey;u.until='#hold';u.releaseAt=S.t+ev.hold;}}
+  if(ev.hold){for(const u of S.units)if(u.until===evKey){u.historyTitle=evKey;u.until='#hold';u.releaseAt=S.clockVersion===TKCalendar.version&&ev.holdUntil?evT({d:ev.holdUntil}):S.t+ev.hold;}}
   else{relayUnits(evKey);for(const u of S.units.slice())if(u.until===evKey&&u.gens.length&&S.clans[u.clan]&&S.clans[u.clan].alive){u.until=null;u.histRet=1;u.stopAt=null;retreat(u);}dropUnits(u=>u.until===evKey);}}
  switch(ev.k){
   case 'take':{if(!okC(k)&&!(ev.force&&S.clans[k]&&S.clans[k].alive)){chron(ev,false);return;}const changed=(ev.castles||[]).some(id=>S.div[S.castles[id]?.owner]);const ok=histTake(ev,k,ev.castles)||(ev.castles||[]).every(id=>S.castles[id]&&(S.castles[id].owner===k||S.units.some(u=>u.hist&&u.clan===k&&u.path[u.path.length-1]===id)));applyExtras(ev,ok&&!changed);chron(ev,ok&&!changed);return;}

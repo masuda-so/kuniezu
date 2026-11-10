@@ -18,3 +18,21 @@ const old=legacyDate({y0:1561,m0:2,t:29.75});
 assert.deepEqual([old.y,old.m,old.d],[1561,2,30]);
 assert.throws(()=>toJD(old.y,old.m,old.d),/実在/,'invalid legacy day must not be silently clamped');
 console.log('PASS: '+(last-first+1)+' consecutive days, reform gap, leap days and invalid legacy dates');
+
+const {G,TK}=require('./history-focus.cjs').model();
+G.newGame('s1560','oda');
+assert.equal(G.S().clockVersion,c.TKCalendar.version);
+for(const [before,after] of [
+ [[1561,1,31],[1561,2,1]],[[1561,2,28],[1561,3,1]],
+ [[1560,2,28],[1560,2,29]],[[1582,10,4],[1582,10,15]]
+]){
+ const t=G.evT({d:before});
+ assert.equal(G.evT({d:after}),t+1);
+ const d=G.date(t+1);assert.deepEqual([d.y,d.m,d.d],after);
+}
+for(const e of TK.HIST)assert.doesNotThrow(()=>toJD(...e.d),e.title||e.k);
+// 暦の版のない保存を、新時計の数値として誤読しない。
+const s=G.S();delete s.clockVersion;s.y0=1561;s.m0=2;s.t=29;
+const legacy=G.date();assert.deepEqual([legacy.y,legacy.m,legacy.d],[1561,2,30]);
+assert.equal(G.evT({d:[1561,3,1]}),30);
+console.log('PASS: new-game real clock, '+TK.HIST.length+' event dates, legacy clock discrimination');

@@ -859,7 +859,7 @@ function renderTL(){if(!tlEl)return;if(!S||U.mode!=='game'){tlEl.hidden=true;ret
  {const b=$('#tlNow');b.hidden=false;const back=TL.head>S.t+20,title=back?'いちばん新しい時へ戻る':'次の大きな出来事まで進める';if(b.title!==title)b.title=title;setAttr(b,'aria-label',title);}
  // 先の印は TL.head を過ぎた時だけ変わるので、日ごとに作り直さず、残りの印の数と次の印で判定する。
  const fut=tlFuture(),sig=t0+'|'+t1+'|'+tlBase()+'|'+TL.marks.length+'|'+V+'|'+fut.length+'|'+(fut[0]?.t??'');if(TL.sig!==sig){TL.sig=sig;
-  const ya=G.date(t0).y,yb=G.date(t1).y;const step=yb-ya>20?5:yb-ya>8?2:1;let h='';for(let y=Math.ceil(ya/step)*step;y<=yb;y+=step){const tt=(y-S.y0)*360+(1-S.m0)*30;if(tt<t0||tt>t1)continue;h+=`<i class="ty" style="${P}:${f(tt)}">${y}</i>`;}
+  const ya=G.date(t0).y,yb=G.date(t1).y;const step=yb-ya>20?5:yb-ya>8?2:1;let h='';for(let y=Math.ceil(ya/step)*step;y<=yb;y+=step){const tt=G.evT({d:[y,1,1]});if(tt<t0||tt>t1)continue;h+=`<i class="ty" style="${P}:${f(tt)}">${y}</i>`;}
   {const b=tlBase();if(b>t0+20){h+=`<i class="tpre" style="left:0;width:${f(b)}" title="このシナリオより前（押すと史実をたどってその時から始められる）"></i>`;
    {const sn=new Set();for(const e of TK.HIST){if(e.k==='premarch'||!e.title||sn.has(e.title)||!(e.big||/戦い|変|落城|征伐|陣|役|統一/.test(e.title)))continue;sn.add(e.title);const t=G.evT(e);if(t<t0||t>=b)continue;h+=`<i class="tm past" style="left:${f(t)}" title="${esc(G.dstr(t)+' '+e.title)}"></i>`;}}}}
   for(const m of fut){if(m.t<t0||m.t>t1)continue;h+=`<i class="tm fut" style="${P}:${f(m.t)}" title="${esc(G.dstr(m.t)+' '+m.n+'（これから）')}"></i>`;}
