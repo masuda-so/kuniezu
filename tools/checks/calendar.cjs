@@ -1,0 +1,20 @@
+/* 連続する実日と旧時計の非実在日を区別する。ゲーム進行や保存を変更しない。 */
+const assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path'),vm=require('node:vm');
+const c=vm.createContext({});c.window=c;
+vm.runInContext(fs.readFileSync(path.join(__dirname,'../../kuniezu/static/kuniezu/calendar.js'),'utf8'),c);
+const {toJD,fromJD,legacyDate}=c.TKCalendar;
+const tuple=jd=>{const d=fromJD(jd);return [d.y,d.m,d.d];};
+assert.equal(toJD(1582,10,15),2299161);
+assert.equal(toJD(1582,10,4),2299160);
+assert.deepEqual(tuple(toJD(1582,10,4)+1),[1582,10,15]);
+assert.deepEqual(tuple(toJD(1561,1,31)+1),[1561,2,1]);
+assert.deepEqual(tuple(toJD(1561,2,28)+1),[1561,3,1]);
+assert.deepEqual(tuple(toJD(1560,2,28)+1),[1560,2,29]);
+assert.equal(toJD(1561,6,23),2291387);
+for(const d of [[1561,2,29],[1560,2,30],[1582,10,5],[1582,10,14],[1600,4,31],[1600,0,1],[1600,1,0]])assert.throws(()=>toJD(...d),/実在/);
+const first=toJD(1532,1,1),last=toJD(1623,12,31);
+for(let jd=first;jd<=last;jd++)assert.equal(toJD(...tuple(jd)),jd,'roundtrip '+jd);
+const old=legacyDate({y0:1561,m0:2,t:29.75});
+assert.deepEqual([old.y,old.m,old.d],[1561,2,30]);
+assert.throws(()=>toJD(old.y,old.m,old.d),/実在/,'invalid legacy day must not be silently clamped');
+console.log('PASS: '+(last-first+1)+' consecutive days, reform gap, leap days and invalid legacy dates');
