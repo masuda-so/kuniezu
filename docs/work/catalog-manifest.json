@@ -10,20 +10,21 @@
     "sites": 463,
     "people": 378,
     "roads": 85,
-    "links": 315,
+    "links": 319,
     "battles": 114,
     "transfers": 143,
     "waters": 26,
     "requests": 20,
-    "total": 1544
+    "total": 1548
   },
   "requestPolicyUpdatedAt": "2026-11-09T15:10:16.678Z",
   "requestPolicySha256": "d470d9eca36eb95b3511d8e3df2ae643e55faca5e87730bc95978fd6b49e1da4",
   "runtimeTargets": {
-    "scope": "registered sites and scenes only; not a historical completion check or strategic-map selection",
-    "sha256": "24f25837e5ea38ec4c93752000f2ee329e0b95e6714b48b294b0c8bc05635932",
+    "scope": "registered sites, scenes and connections only; not a historical completion check or strategic-map selection",
+    "sha256": "0a63235dfaf5f2da328c8582b49074f614b8c3c634f0c88efe1a51dfa1f3e9d8",
     "registeredSites": 461,
     "registeredScenes": 114,
+    "registeredConnections": 319,
     "sceneClassifications": [
       {
         "title": "長篠の戦い",
@@ -92,5 +93,5 @@
       }
     ]
   },
-  "runtimeTargetsUpdatedAt": "2026-11-10T07:34:21.545Z"
+  "runtimeTargetsUpdatedAt": "2026-11-10T07:47:23.065Z"
 }

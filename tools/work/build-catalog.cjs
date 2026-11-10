@@ -28,7 +28,7 @@ else if(process.argv.includes('--sync-runtime-targets')){
   manifest.runtimeTargets=result.inventory;manifest.counts=counts;manifest.runtimeTargetsUpdatedAt=new Date().toISOString();
   writeCatalogPair({catalogPath:file,manifestPath,catalogText:next,manifestText:JSON.stringify(manifest,null,2)+'\n',expectedCatalog:old,expectedManifest:manifestBytes});
  }
- console.log('PASS: runtime sites/scenes inventoried; '+result.added.length+' added; '+result.inventory.retainedSnapshotTargetsAbsentFromRuntime.length+' historical snapshot rows retained; no state/claim writes');
+ console.log('PASS: runtime sites/scenes/connections inventoried; '+result.added.length+' added; '+result.inventory.retainedSnapshotTargetsAbsentFromRuntime.length+' historical snapshot rows retained; no state/claim writes');
 }else if(process.argv.includes('--requests-only')){
  const file=path.join(work,'catalog.jsonl'),old=fs.readFileSync(file,'utf8'),requests=read('docs/work/requests.json').requests;
  const next=syncRequests(old.trim().split('\n').map(JSON.parse),requests).map(r=>JSON.stringify(r)).join('\n')+'\n';

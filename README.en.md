@@ -266,7 +266,7 @@ The repository is licensed under [LICENSE](LICENSE) (MIT). Bundled or derived ma
 data follows the terms of each source.
 
 
-To append registered sites and scenes to the work catalog, run
+To append registered sites, scenes and movement connections to the work catalog, run
 `node tools/work/build-catalog.cjs --sync-runtime-targets`.
 Existing IDs, ownership, completion evidence and historical coordinate records
 are preserved. Add `--check` for a read-only consistency check. Registration

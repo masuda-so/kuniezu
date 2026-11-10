@@ -21,6 +21,17 @@ assert.throws(()=>appendTargets(snapshot,{...targets,rows:[{...old,kind:'battle'
 assert.throws(()=>runtimeTargets({CL:[],YOSHO:[]},{BATTLES:{}},[1615,1534]),/period/);
 assert.throws(()=>runtimeTargets({CL:[{id:'x',n1:'a'},{id:'x',n1:'b'}],YOSHO:[]},{BATTLES:{}},[1534,1615]),/duplicate/);
 assert.throws(()=>runtimeTargets({CL:[],YOSHO:[]},{BATTLES:{local:{}}},[1534,1615],[{title:'local'},{title:'local'}]),/ambiguous/);
+const connected={CL:[{id:'a',n1:'A'},{id:'b',n1:'B'}],YOSHO:[],EDGES:{one:{a:'b',b:'a',sea:true}}};
+const link={id:idFor('link','a|b'),kind:'link',subject:'A to B',context:{a:'a',b:'b',sea:true},acceptance:['original evidence']};
+const connectionTargets=runtimeTargets(connected,{BATTLES:{}},[1534,1615]);
+const connectionResult=appendTargets([link],connectionTargets);
+assert.equal(connectionResult.added.filter(r=>r.kind==='link').length,0,'reversed endpoints reuse the original task');
+assert.deepEqual(connectionResult.rows[0],link);assert.equal(connectionResult.inventory.retainedSnapshotTargetsAbsentFromRuntime.length,0);
+assert.equal(connectionResult.inventory.registeredConnections,1);
+assert.throws(()=>appendTargets([link,{...link,id:'different-id'}],connectionTargets),/duplicate existing connection/);
+assert.throws(()=>runtimeTargets({...connected,EDGES:{one:{a:'a',b:'missing'}}},{BATTLES:{}},[1534,1615]),/invalid runtime connection/);
+assert.throws(()=>runtimeTargets({...connected,EDGES:{one:{a:'a',b:'a'}}},{BATTLES:{}},[1534,1615]),/invalid runtime connection/);
+assert.throws(()=>runtimeTargets({...connected,EDGES:{one:{a:'a',b:'b'},two:{a:'b',b:'a'}}},{BATTLES:{}},[1534,1615]),/duplicate runtime connection/);
 const temp=fs.mkdtempSync(path.join(require('node:os').tmpdir(),'kuniezu-catalog-write-'));
 try{
  const a=path.join(temp,'catalog'),b=path.join(temp,'manifest');fs.writeFileSync(a,'old catalog');fs.writeFileSync(b,'old manifest');
@@ -45,4 +56,4 @@ assert.equal(repeat.status,0,repeat.stderr);
 for(const [p,text]of hashes)assert.equal(fs.readFileSync(path.join(work,p),'utf8'),text,'readonly runtime check: '+p);
 const meta=JSON.parse(fs.readFileSync(path.join(work,'catalog-manifest.json'),'utf8'));
 assert.equal(meta.counts.total,catalog.length);
-console.log('PASS: additive runtime sites/scenes, retained historical targets and evidence, idempotence, scope separation, ID collisions and readonly CLI');
+console.log('PASS: additive runtime sites/scenes/connections, retained historical targets and evidence, idempotence, scope separation, ID collisions and readonly CLI');
