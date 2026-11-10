@@ -20,3 +20,25 @@ const html=c.MODALS.scene({title:'広域作戦'});assert.ok(!html.includes('canv
 vm.runInContext(s.slice(s.indexOf('function mountScene(sc,onEnd)'),s.indexOf('Object.assign(ACT,{',s.indexOf('function mountScene(sc,onEnd)'))),c);vm.runInContext('mountScene(TK.BATTLES["広域作戦"])',c);assert.equal(stopped,1);assert.equal(lookups,0,'campaign exits before any canvas lookup');
 vm.runInContext(s.slice(s.indexOf('function renderModal(){'),s.indexOf('\n',s.indexOf('function renderModal(){'))),c);c.mountScene=()=>mounted++;vm.runInContext('renderModal()',c);assert.equal(mounted,0,'manual campaign does not create playback');
 console.log('PASS: campaign auto exclusion, text-only manual view, existing child links, escaping, individual battle and Sekigahara campaign button, no mount');
+
+// 甲州の戦役全体と、異なる日の高遠・田野を同時布陣にしない。
+const kai=TK.CONFLICT_CATALOG['甲州征伐'];
+assert.equal(kai.kind,'campaign');
+assert.deepEqual(Array.from(kai.children,r=>r.title),['高遠城の戦い','天目山の戦い']);
+assert.equal(kai.children[0].sceneTitle,'高遠城の戦い');
+assert.equal(kai.children[1].sceneTitle,undefined);
+assert.equal(TK.BATTLES['天目山の戦い'],undefined,'no invented deployment for the final engagement');
+assert.equal(G.sceneTitleForEvent('甲州征伐',0),null);
+assert.equal(G.sceneTitleForEvent('高遠城の戦い',0),'高遠城の戦い');
+const baseSource={...source,conflicts:source.conflicts.filter(r=>r.id!=='campaign:甲州征伐'&&r.parent!=='campaign:甲州征伐')};
+const baseline=require('./history-focus.cjs').model({sourceOverrides:{'battle-conflicts.js':compiler.render(baseSource)}});
+baseline.G.buildBattleCatalog(); // Compare equal build counts: existing relief sources reorder on rebuild.
+assert.equal(JSON.stringify(TK.HIST),JSON.stringify(baseline.TK.HIST),'event dates, order and territorial actions unchanged');
+assert.equal(JSON.stringify(TK.BATTLES),JSON.stringify(baseline.TK.BATTLES),'all existing scene material retained');
+c.TK.BATTLES['甲州征伐']=TK.BATTLES['甲州征伐'];c.TK.BATTLES['高遠城の戦い']=TK.BATTLES['高遠城の戦い'];c.TK.CONFLICT_CATALOG['甲州征伐']=kai;
+assert.equal(vm.runInContext('sceneWanted(TK.BATTLES["甲州征伐"])',c),false);
+const kaiHtml=c.MODALS.scene({title:'甲州征伐'});
+assert.ok(kaiHtml.includes('data-title="高遠城の戦い"'));
+assert.ok(kaiHtml.includes('<h3>天目山の戦い</h3>')&&!kaiHtml.includes('data-title="天目山の戦い"'));
+assert.ok(!kaiHtml.includes('canvas')&&!kaiHtml.includes('bSeek'));
+console.log('PASS: Kai campaign overview, existing Takato link, text-only Tenmokuzan, unchanged chronology and deployments');

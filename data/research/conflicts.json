@@ -417,6 +417,92 @@
           }
         ]
       }
+    },
+    {
+      "id": "campaign:甲州征伐",
+      "title": "甲州征伐",
+      "kind": "campaign",
+      "dateLabel": "1582年",
+      "summary": "織田・徳川方による武田領への侵攻。信濃の高遠城攻略と、甲斐田野での勝頼の最期を分けて見る。",
+      "children": [
+        "battle:高遠城の戦い1582",
+        "battle:天目山の戦い1582"
+      ],
+      "sources": [
+        {
+          "author": "伊那市",
+          "title": "史跡高遠城跡保存活用計画 第3章",
+          "url": "https://www.inacity.jp/shisei/kakushuplanshiryo/rekishibunka/takatojo_keikaku.files/takatojyoseki_hozonkatuyoukeikaku_03.pdf",
+          "year": "刊行年不明",
+          "locator": "本文38頁、PDF1頁、戦国時代・安土桃山時代の高遠城",
+          "scope": "天正10年3月2日の高遠城落城と、その後の甲斐本国での武田氏滅亡を区別する。戦役全体の同時布陣の根拠にはしない。",
+          "accessed": "2026-11-10"
+        },
+        {
+          "author": "富士宮市文化課",
+          "title": "織田信長の富士遊覧",
+          "url": "https://www.city.fujinomiya.lg.jp/3010400000/p003592.html",
+          "year": "2025年6月2日更新",
+          "locator": "冒頭、天正10年3月の甲州征伐と戦後処理・帰還の説明",
+          "scope": "武田氏への出兵と戦後の帰路の区別。後世の観光地・伝承を部隊の精密位置へ流用しない。",
+          "accessed": "2026-11-10"
+        },
+        {
+          "author": "東京大学史料編纂所",
+          "title": "大日本史料総合データベース（史料綜覧の綱文）",
+          "url": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+          "year": "刊行年不明",
+          "locator": "綱文：和暦 天正10年3月11日 第2条（区分 史料綜覧、編10・冊911（データベースの表示値）、328頁）",
+          "scope": "天正10年3月11日の甲斐田野の包囲と勝頼の妻子との自害を記す綱文。戦役全体の期間・個別部隊の持場・兵数は確定しない。",
+          "accessed": "2026-11-09"
+        }
+      ]
+    },
+    {
+      "id": "battle:高遠城の戦い1582",
+      "title": "高遠城の戦い",
+      "kind": "battle",
+      "parent": "campaign:甲州征伐",
+      "existingSceneTitle": "高遠城の戦い",
+      "summary": "天正10年3月2日、織田信忠が仁科盛信の守る高遠城を攻略した。",
+      "sources": [
+        {
+          "author": "伊那市",
+          "title": "史跡高遠城跡保存活用計画 第3章",
+          "url": "https://www.inacity.jp/shisei/kakushuplanshiryo/rekishibunka/takatojo_keikaku.files/takatojyoseki_hozonkatuyoukeikaku_03.pdf",
+          "year": "刊行年不明",
+          "locator": "本文38頁、PDF1頁、戦国時代・安土桃山時代の高遠城",
+          "scope": "天正10年3月2日の高遠城落城と、その後の甲斐本国での武田氏滅亡を区別する。戦役全体の同時布陣の根拠にはしない。",
+          "accessed": "2026-11-10"
+        }
+      ]
+    },
+    {
+      "id": "battle:天目山の戦い1582",
+      "title": "天目山の戦い",
+      "kind": "battle",
+      "parent": "campaign:甲州征伐",
+      "summary": "高遠城の落城後、甲斐田野で織田方に囲まれた武田勝頼が、妻子とともに最期を迎えた。",
+      "sources": [
+        {
+          "author": "東京大学史料編纂所",
+          "title": "大日本史料総合データベース（史料綜覧の綱文）",
+          "url": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+          "year": "刊行年不明",
+          "locator": "綱文：和暦 天正10年3月11日 第2条（区分 史料綜覧、編10・冊911（データベースの表示値）、328頁）",
+          "scope": "天正10年3月11日の甲斐田野の包囲と勝頼の妻子との自害を記す綱文。戦役全体の期間・個別部隊の持場・兵数は確定しない。",
+          "accessed": "2026-11-09"
+        },
+        {
+          "author": "山梨県",
+          "title": "深城ダム周辺の観光スポット紹介（裏面）",
+          "url": "https://www.pref.yamanashi.jp/documents/49236/fukashirokankouchiura.pdf",
+          "year": "刊行年不明",
+          "locator": "PDF1頁、13番・景徳院",
+          "scope": "1582年の武田勝頼の自害を天目山の戦いと呼ぶこと。個別の日付・兵数・部隊配置の根拠にはしない。",
+          "accessed": "2026-11-10"
+        }
+      ]
     }
   ]
 }

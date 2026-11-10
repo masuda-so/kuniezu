@@ -51,3 +51,5 @@ GAME_TEST_OUTPUT=data/verification/自分の担当名 node tools/checks/march-cl
 `node tools/checks/vector-map.cjs` は共通ベクター描画器の穴・年代境界・表示範囲・入力保持を検査します。比較ページの実画面は `VECTOR_PREVIEW_URL=file:///absolute/path/index.html GAME_TEST_OUTPUT=data/verification/<担当名-対象名> node tools/checks/vector-map-browser.cjs` で専用Chromeから確認します。ゲーム本体の受入検査とは別です。
 
 `uv run pytest tests/test_vector_sources.py tests/test_vector_era_sources.py` は編集済み面の有効性・bbox・5湖と元の宇喜多マスク366セルの年代・香取保護・両年代の岸線一致を検査する。局所PNG読取のPillowは開発用依存のみ。比較画面の `--at YYYY-MM-DD` は表示適用区間を選び、史料の確定日を追加しない。
+
+戦役の甲州ケースは`GAME_CONFLICT_FIXTURE=kai`を付けて`battle-conflicts-browser.cjs`を実行する。既定の`bunroku`と同じ広幅・狭幅で、概説・既存局地図・記述のみの項目・戻る導線を確認する。候補版は`GAME_OVERRIDE_ROOT`と`GAME_OVERRIDE_BASE`を指定し、通常配信との違いを記録する。

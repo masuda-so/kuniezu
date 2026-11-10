@@ -1132,3 +1132,33 @@ def test_eighteen_authorities_share_stable_identity(
             ).get()
             == person
         )
+
+
+def test_kai_campaign_keeps_the_two_local_engagements_and_dates_separate(inputs):
+    import_history(inputs)
+
+    campaign = Phenomenon.objects.get(key="campaign:甲州征伐")
+    assert campaign.subtype == "campaign"
+    expected_titles = {"高遠城の戦い", "天目山の戦い"}
+    assert set(campaign.parts.values_list("title", flat=True)) == expected_titles
+    assert campaign.parts.count() == len(expected_titles)
+    takato = campaign.parts.get(title="高遠城の戦い")
+    assert takato.records.filter(record_type=RecordType.IMPLEMENTED_EVENT).exists()
+    assert [takato.year, takato.month, takato.day] == [1582, 3, 25]
+    tenmoku = campaign.parts.get(key="battle:天目山の戦い1582")
+    assert tenmoku.status == Status.REGISTERED
+    assert not tenmoku.records.filter(record_type=RecordType.IMPLEMENTED_EVENT).exists()
+    assert tenmoku.jd_start is None
+    assert tenmoku.jd_end is None
+    # A named engagement and a dated, checked claim have different scopes.
+    tano = Phenomenon.objects.get(key="claim:tano-katsuyori-1582")
+    assert [tano.year, tano.month, tano.day] == [1582, 3, 11]
+    assert tano.calendar == Calendar.LUNISOLAR
+    assert tano.parent is None
+    assert tano != tenmoku
+    final_event = Phenomenon.objects.get(
+        title="甲州征伐", records__record_type=RecordType.IMPLEMENTED_EVENT
+    )
+    assert [final_event.year, final_event.month, final_event.day] == [1582, 4, 3]
+    assert final_event != campaign
+    assert final_event.parent is None
