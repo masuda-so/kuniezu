@@ -32,7 +32,7 @@ main `ce109c5e` から。段階の開始・終了は、その場で `date -u` �
 
 ## 再現と保存
 
-- 人物：`data/research/source-notes/pilot-person-authority.json`（採用 2 と、採用しない 8 の理由）、原本は `pilot-person-raw/`・`pilot-person-ndl/`。
+- 人物：`data/research/source-notes/pilot-person-authority.json`（同定の採用 2＝新規の登録 1・既存の登録への典拠の追加 1、と採用しない 8 の理由）。原本は `pilot-person-raw/`・`pilot-person-ndl/`。仙台市博物館の HTML は Git に入れず、抜粋 `pilot-person-sendai-excerpt.md` だけを残す。
 - 施設：`data/research/source-notes/pilot-facility-match.json`（候補の照合だけ。存在年代・城域・所在の命題には採用しない）。
 - 年表：`data/research/curated/claims/oda-takeda-marriage-1565.json`・`kiyosu-council-1582.json`。
 - 選定の規則と母数は、報告 `docs/reports/PILOT_MEASURE.md` に書いた。
