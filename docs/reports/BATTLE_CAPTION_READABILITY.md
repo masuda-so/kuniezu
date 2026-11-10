@@ -8,3 +8,8 @@
 設楽原・伏見城・大坂冬の陣を940/335pxの6条件で候補検証し、
 既存の選択・焦点・復帰・位置保持検査も通過。伏見城335pxの説明は3行で全文を読める。
 [条件と証拠](../../data/verification/codex-battle-caption/README.md)。
+
+レビューの長文懸念を受け、現行最長の甲州征伐68文字も追加した。
+各経過文への実際のseekで、全文の高さが欠けないことと操作欄の画面内収容を検査する。
+4合戦×2幅の8条件を追加確認した。
+[最長文の追加検証](../../data/verification/codex-battle-caption-longest/README.md)。
