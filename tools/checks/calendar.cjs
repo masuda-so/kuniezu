@@ -17,6 +17,18 @@ for(let jd=first;jd<=last;jd++)assert.equal(toJD(...tuple(jd)),jd,'roundtrip '+j
 const old=legacyDate({y0:1561,m0:2,t:29.75});
 assert.deepEqual([old.y,old.m,old.d],[1561,2,30]);
 assert.throws(()=>toJD(old.y,old.m,old.d),/実在/,'invalid legacy day must not be silently clamped');
+for(const [date,choices] of [
+ [[1561,2,30],[[1561,2,28],[1561,3,1]]],
+ [[1560,2,30],[[1560,2,29],[1560,3,1]]],
+ [[1582,10,10],[[1582,10,4],[1582,10,15]]]
+]){
+ const s={y0:date[0],m0:date[1],t:date[2]-1+.375},before=JSON.stringify(s);
+ const plan=c.TKCalendar.legacyDateChoices(s);
+ assert.equal(plan.requiresSelection,true);
+ assert.deepEqual(Array.from(plan.choices,d=>[d.y,d.m,d.d]),choices);
+ assert.equal(JSON.stringify(s),before,'choosing a date does not mutate a save');
+}
+assert.equal(c.TKCalendar.legacyDateChoices({y0:1561,m0:3,t:0}).requiresSelection,false);
 console.log('PASS: '+(last-first+1)+' consecutive days, reform gap, leap days and invalid legacy dates');
 
 const {G,TK}=require('./history-focus.cjs').model();

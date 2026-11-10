@@ -22,5 +22,22 @@
   t=Math.floor(t);const mm=state.m0-1+Math.floor(t/30);
   return {y:state.y0+Math.floor(mm/12),m:((mm%12)+12)%12+1,d:((t%30)+30)%30+1};
  }
- window.TKCalendar=Object.freeze({toJD,fromJD,legacyDate,version:1});
+ function valid(d){try{toJD(d.y,d.m,d.d);return true;}catch(error){if(error instanceof RangeError)return false;throw error;}}
+ // 選択前に状態を変えない。不正日を丸めてから旧保存の日付とみなさない。
+ function legacyDateChoices(state){
+  const date=legacyDate(state);
+  if(valid(date))return {date,requiresSelection:false,choices:[{...date}]};
+  function nearest(step){
+   const d={...date};
+   for(let i=0;i<62;i++){
+    d.d+=step;
+    if(d.d>31){d.d=1;if(++d.m>12){d.m=1;d.y++;}}
+    if(d.d<1){d.d=31;if(--d.m<1){d.m=12;d.y--;}}
+    if(valid(d))return d;
+   }
+   throw RangeError('移行先の日付を確認できません');
+  }
+  return {date,requiresSelection:true,choices:[nearest(-1),nearest(1)]};
+ }
+ window.TKCalendar=Object.freeze({toJD,fromJD,legacyDate,legacyDateChoices,version:1});
 })();
