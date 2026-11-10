@@ -1,0 +1,39 @@
+{
+  "id": "iida-retreat-1582",
+  "entity": "place:iida-castle",
+  "predicate": "military-event",
+  "value": "信濃松尾城の小笠原信嶺が織田信忠に降ったので、織田軍が木曽峠を越えて伊奈郡に入り、飯田城の坂西織部・保科正直は敗走した。",
+  "validYears": [
+    1582,
+    1582
+  ],
+  "source": "hiDainihonshiryoKobun",
+  "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+  "locator": "綱文：和暦 天正10年2月14日 第2条（区分 史料綜覧、編10・冊911（データベースの表示値）、323頁）",
+  "gameBindings": [
+    "TK.HIST:飯田城の守将撤退",
+    "node:iida"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-09",
+  "uncertainty": "綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。",
+  "linkedEntities": [
+    "place:iida-castle",
+    "person:保科正直"
+  ],
+  "eventRelation": "military-event",
+  "datePrecision": "period",
+  "eventTime": {
+    "kind": "described-period",
+    "label": "天正10年2月14日（綱文の条の掲出日。信嶺の降伏・織田軍の伊奈郡入り・飯田城の守将の敗走を一つの条にまとめる）",
+    "indexYears": [
+      1582,
+      1582
+    ],
+    "calendar": "Japanese-era-description",
+    "precision": "period",
+    "boundsAreHistoricalStartEnd": false
+  },
+  "eventScope": "綱文には「是日」の語が無く、信嶺の降伏、織田軍の伊奈郡入り、飯田城の守将の敗走を一つの条にまとめて掲げる。どの行為がこの日かは分けられないので、条の掲出日を名前に残した期間（境界は主張しない）として持つ。最終年表の飯田城の守将撤退（訂正モジュールの適用後。旧暦1582年2月14日、1582年3月8日）。期間の精度なので日の比較はしない。"
+}

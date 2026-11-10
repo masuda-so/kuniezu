@@ -370,6 +370,14 @@ class Importer:
         self.phenomena: dict[str, Phenomenon] = {}
         self.by_title: dict[str, list[Phenomenon]] = {}
         self.timeline: dict[tuple[str, str, str], list[Phenomenon]] = {}
+        # What this import has already written. Things and phenomena are built
+        # afresh in every import, so their names, keys, participations and record
+        # links exist only from this run; remembering them saves asking the
+        # database again. Nothing here outlives the importer.
+        self.named: set[tuple[int, str]] = set()
+        self.keys_written: set[str] = set()
+        self.parts: set[tuple[int, int]] = set()
+        self.linked: set[tuple[str, int, int]] = set()
 
     # ---- records (what the inputs say, and what they said before) ----
 
@@ -422,6 +430,13 @@ class Importer:
         self.summary.retired = len(gone)
         Record.objects.filter(retired_run__isnull=True).update(last_run=self.run)
 
+    def attach(self, item: Thing | Phenomenon, record: Record) -> None:
+        """Give a thing or a phenomenon a record, once per import."""
+        link = (type(item).__name__, item.pk, record.pk)
+        if link not in self.linked:
+            item.records.add(record)
+            self.linked.add(link)
+
     # ---- things (what persists) ----
 
     def find(self, identifier: str) -> Thing | None:
@@ -455,7 +470,7 @@ class Importer:
             thing.registered = True
             thing.name = name
             thing.save(update_fields=["registered", "name"])
-        thing.records.add(record)
+        self.attach(thing, record)
         self.known_as(thing, given)
         self.label(thing, name, *names)
         return thing
@@ -463,7 +478,10 @@ class Importer:
     def label(self, thing: Thing, *names: str) -> None:
         """Let a thing be found by each of these names."""
         for name in dict.fromkeys(names):
+            if (thing.pk, name) in self.named:
+                continue
             _, created = ThingName.objects.get_or_create(thing=thing, name=name)
+            self.named.add((thing.pk, name))
             if created:
                 self.by_name.setdefault((thing.kind, name), []).append(thing)
 
@@ -475,13 +493,16 @@ class Importer:
             if self.keyed.setdefault(key, thing) != thing:
                 message = f"{key} names two things: {self.keyed[key].key}, {thing.key}"
                 raise ValueError(message)
+            if key in self.keys_written:
+                continue
             _, added = ThingKey.objects.get_or_create(
                 key=key, defaults={"thing": thing}
             )
+            self.keys_written.add(key)
             if added and key in self.same:
                 self.summary.merged_things += 1
         for identity in self.identity_records.get(identifier, []):
-            thing.records.add(identity)
+            self.attach(thing, identity)
 
     def resolve(self, identifier: str, record: Record) -> Thing | None:
         """The thing an identifier such as ``person:羽柴秀吉`` stands for."""
@@ -504,7 +525,7 @@ class Importer:
         self.known_as(known, identifier)
         if identifier not in self.titled:
             self.label(known, identifier.partition(":")[2])
-        known.records.add(record)
+        self.attach(known, record)
         return known
 
     def place(self, thing: Thing, point: list[float] | None, basis: str) -> None:
@@ -556,7 +577,7 @@ class Importer:
             time_label=when.label,
             bounds_asserted=when.asserted,
         )
-        item.records.add(record)
+        self.attach(item, record)
         self.phenomena[key] = item
         if title:
             self.by_title.setdefault(title, []).append(item)
@@ -565,10 +586,12 @@ class Importer:
         return item
 
     def take_part(self, item: Phenomenon, thing: Thing | None, role: str) -> None:
-        if thing is not None:
+        # The first role a thing takes in a phenomenon is kept, as before.
+        if thing is not None and (item.pk, thing.pk) not in self.parts:
             Participation.objects.get_or_create(
                 phenomenon=item, thing=thing, defaults={"role": role}
             )
+            self.parts.add((item.pk, thing.pk))
 
     # ---- time ----
 
@@ -940,7 +963,7 @@ class Importer:
             message = f"claim links a water the catalog does not name: {key}"
             raise ValueError(message)
         # Like any thing a claim names, the water keeps the claim as a record.
-        thing.records.add(record)
+        self.attach(thing, record)
         return thing
 
     def load_catalog(self) -> None:
@@ -978,14 +1001,14 @@ class Importer:
         if found is None:
             self.resolve("site:" + subject, record)
         else:
-            found.records.add(record)
+            self.attach(found, record)
 
     def attach_battle(self, subject: str, record: Record) -> None:
         """A battle is the timeline event of the same title, seen as a conflict."""
         same = self.by_title.get(subject, [])
         if len(same) == 1:
             item = same[0]
-            item.records.add(record)
+            self.attach(item, record)
             if item.kind != PhenomenonKind.CONFLICT:
                 self.recount(item, PhenomenonKind.CONFLICT)
             return
@@ -1018,7 +1041,7 @@ class Importer:
             context.get("title") or "",
         )
         for item in self.timeline.get(signature, []):
-            item.records.add(record)
+            self.attach(item, record)
 
     def load_claims(self) -> None:
         for row in read_jsonl(self.root / RESEARCH / "claims.jsonl"):
@@ -1122,7 +1145,7 @@ class Importer:
                 when=When(),
                 status=Status.VERIFIED,
             )
-        known.records.add(record)
+        self.attach(known, record)
         return known
 
     def load_conflicts(self) -> None:
@@ -1173,7 +1196,7 @@ class Importer:
                     status=Status.REGISTERED,
                 )
             else:
-                known.records.add(record)
+                self.attach(known, record)
                 if known.kind != PhenomenonKind.CONFLICT:
                     self.recount(known, PhenomenonKind.CONFLICT)
             self.phenomena[row["id"]] = known

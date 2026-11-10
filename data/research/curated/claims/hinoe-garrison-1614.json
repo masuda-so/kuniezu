@@ -1,0 +1,37 @@
+{
+  "id": "hinoe-garrison-1614",
+  "entity": "place:arima-hizen",
+  "predicate": "castle-assignment",
+  "value": "有馬直純が県に移ったこの月、幕府は鍋島勝茂・松浦隆信・大村純頼に有馬を守らせた。",
+  "validYears": [
+    1614,
+    1614
+  ],
+  "source": "hiDainihonshiryoKobun",
+  "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+  "locator": "綱文：和暦 慶長19年7月是月 第2条（区分 大日本史料、第12編之14（データベースの表示値）、414頁）",
+  "gameBindings": [
+    "TK.HIST:日野江の有馬旧領を幕府が管理"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-09",
+  "uncertainty": "綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。",
+  "linkedEntities": [
+    "place:arima-hizen"
+  ],
+  "eventRelation": "castle-assignment",
+  "datePrecision": "period",
+  "eventTime": {
+    "kind": "described-period",
+    "label": "慶長19年7月（綱文は「是月」）",
+    "indexYears": [
+      1614,
+      1614
+    ],
+    "calendar": "Japanese-era-description",
+    "precision": "period",
+    "boundsAreHistoricalStartEnd": false
+  },
+  "eventScope": "綱文は「是月」とだけ書き、日を掲げない。守りを命じられた三家は人物の ID が無いので結ばない。旧領の統治の全体には広げない。最終年表の日野江の有馬旧領を幕府が管理（訂正モジュールの適用後。旧暦1614年7月13日、1614年8月18日）。期間の精度なので日の比較はしない。 綱文は守衛の対象を「有馬」と書く。前段の「日野江城主」は直純の肩書なので、守備の対象を日野江城に読み替えず、地域の有馬（座標は主張しない）に結ぶ。日野江城とノードの代表の関係は外した（#134 の Codex のレビュー）。"
+}

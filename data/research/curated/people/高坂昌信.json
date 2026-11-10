@@ -1,0 +1,30 @@
+{
+  "id": "person:高坂昌信",
+  "name": "高坂昌信",
+  "gameNames": [
+    "高坂昌信"
+  ],
+  "aliases": [
+    "春日虎綱"
+  ],
+  "authorityIds": [
+    "wikidata:Q2477835",
+    "ndlna:00380807"
+  ],
+  "authorityEvidence": {
+    "scope": "person-identity",
+    "checked": "2026-11-10",
+    "wikidataRevision": 2464073769,
+    "snapshot": "data/research/source-notes/person-identity-corpus-1.json",
+    "sourceNote": "data/research/source-notes/person-identity-corpus-1.json",
+    "identityChecks": [
+      "NDL00380807の主名高坂昌信がPerson典拠に属する",
+      "Wikidata Q2477835の日本語主名春日虎綱・別名高坂昌信とP349が同じNDL典拠へ対応する"
+    ],
+    "basis": "人物の同定のみ。原本にある生没日・所在・所領・関係の時期は新たな史実命題へ採用しない。",
+    "ndlSnapshot": "data/research/source-notes/person-identity-corpus-1-ndl-kosaka.json",
+    "sourceIds": [
+      "ndlKosakaMasanobuIdentity"
+    ]
+  }
+}

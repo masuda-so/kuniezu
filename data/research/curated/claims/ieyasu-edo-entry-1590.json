@@ -1,0 +1,38 @@
+{
+  "id": "ieyasu-edo-entry-1590",
+  "entity": "person:tokugawa-ieyasu",
+  "predicate": "residence-transfer",
+  "value": "徳川家康が江戸城に入った。",
+  "validYears": [
+    1590,
+    1590
+  ],
+  "datePrecision": "day",
+  "source": "hiDainihonshiryoKobun",
+  "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+  "locator": "綱文：和暦 天正18年8月1日 第2条（区分 史料綜覧、編11・冊912（データベースの表示値）、303頁）",
+  "gameBindings": [
+    "TK.HIST:1590-9-29"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-09",
+  "uncertainty": "綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。",
+  "linkedEntities": [
+    "person:tokugawa-ieyasu",
+    "place:edo"
+  ],
+  "eventTime": {
+    "kind": "dated-event",
+    "date": [
+      1590,
+      8,
+      1
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": false,
+    "precision": "day"
+  },
+  "eventRelation": "residence-transfer",
+  "eventScope": "綱文が掲げる日付。天正18年8月1日はゲーム共通の暦表で1590年8月30日。最終年表の徳川家康の江戸への移り（1590年9月29日、題名なし）は綱文より30日遅い。関東への国替え（7月13日の条、命題 ieyasu-kanto-grant-1590 の扱い）とは分ける。"
+}

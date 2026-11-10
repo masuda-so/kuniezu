@@ -1,0 +1,48 @@
+{
+    "@context": "https://id.ndl.go.jp/auth/context.json",
+    "uri": "http://id.ndl.go.jp/auth/ndlna/033515855",
+    "primaryTopic": {
+        "uri": "http://id.ndl.go.jp/auth/entity/033515855",
+        "type": {
+            "uri": "http://xmlns.com/foaf/0.1/Person"
+        },
+        "name": "足利義氏",
+        "dateOfDeath": "1583",
+        "biographicalInformation": [
+            "武将, 第5代古河公方"
+        ]
+    },
+    "type": {
+        "uri": "http://www.w3.org/2004/02/skos/core#Concept"
+    },
+    "modified": "2024-06-07T14:47:48",
+    "created": "2024-06-06",
+    "prefLabel": {
+        "literalForm": "足利, 義氏, -1583",
+        "transcription": "アシカガ, ヨシウジ, -1583",
+        "transcription-l": [
+            {
+                "@value": "アシカガ, ヨシウジ, -1583",
+                "@language": "ja-Kana"
+            },
+            {
+                "@value": "Ashikaga, Yoshiuji, -1583",
+                "@language": "ja-Latn"
+            }
+        ]
+    },
+    "label": "足利, 義氏, -1583",
+    "source": [
+        "足利義氏文書集, 1974",
+        "国史大辞典"
+    ],
+    "exactMatch": [
+        {
+            "uri": "http://viaf.org/viaf/sourceID/NDL%7C033515855#skos:Concept"
+        }
+    ],
+    "inScheme": {
+        "uri": "http://id.ndl.go.jp/auth#personalNames"
+    }
+}
+

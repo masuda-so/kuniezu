@@ -1,0 +1,38 @@
+{
+  "id": "nobukatsu-banishment-1590",
+  "entity": "person:oda-nobukatsu",
+  "predicate": "territorial-transfer",
+  "value": "秀吉が徳川家康の旧領（三河・遠江・駿河・甲斐・信濃）を織田信雄に与えたが、信雄は旧来どおり尾張・伊勢の領有を請うたので、秀吉は信雄を下野那須に放ち、佐竹義宣に預けた。",
+  "validYears": [
+    1590,
+    1590
+  ],
+  "datePrecision": "period",
+  "source": "hiDainihonshiryoKobun",
+  "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+  "locator": "綱文：和暦 天正18年7月13日 第2条（区分 史料綜覧、編11・冊912（データベースの表示値）、299頁）",
+  "gameBindings": [
+    "TK.HIST:1590-8-10"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-09",
+  "uncertainty": "綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。",
+  "linkedEntities": [
+    "person:oda-nobukatsu",
+    "person:toyotomi-hideyoshi"
+  ],
+  "eventTime": {
+    "kind": "described-period",
+    "label": "天正18年7月13日（綱文の条の掲出日。旧徳川領の給与・信雄の請願・那須への配流を一つの条にまとめる）",
+    "indexYears": [
+      1590,
+      1590
+    ],
+    "calendar": "Japanese-era-description",
+    "precision": "period",
+    "boundsAreHistoricalStartEnd": false
+  },
+  "eventRelation": "territorial-transfer",
+  "eventScope": "綱文には「是日」の語が無く、旧徳川領の給与、信雄の請願、那須への配流を一つの条にまとめて掲げる（尾張・北伊勢の配分は「尋で」の後）。どの行為がこの日かは分けられないので、出来事の時間は日の精度の確かな日にせず、条の掲出日を名前に残した期間（境界は主張しない）として持つ。佐竹義宣は配流の預け先で、その日の当事者として結ばない。最終年表の題名なしの出来事（1590年8月10日、徳川の旧領と信雄の領地の分配）は、この条の「尋で」の後の配分に当たる。"
+}
