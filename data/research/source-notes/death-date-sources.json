@@ -1,7 +1,7 @@
 {
  "checked": "2026-11-10",
  "scope": "Codex が既存の死去日の命題と最終年表の日付差から抽出した 21 名について、公的機関の原本の死去日の記述を集めた。採否と年表・命題の修正は書かない（Codex の実装判断に渡す）。綱文の日付は編纂上の掲出日で、実際の死去の日と違いうる。日付差は実際の JDN（koyomi.js・dates.py）で比べ、ゲームの evT は使っていない。",
- "method": "既存の入力の横断検索 → 地域別（東・西・九州）の公的機関のページの検索（サブエージェント 3）→ HTML のページはこちらで取り直して文言を確かめ、原本を主の作業ディレクトリの .cache に SHA つきで保全。PDF はこの環境で本文を取り出せず、サブエージェントの報告のまま（checkedBy で区別）。",
+ "method": "既存の入力の横断検索 → 地域別（東・西・九州）の公的機関のページの検索（サブエージェント 3）→ HTML のページはこちらで取り直して文言を確かめ、原本を主の作業ディレクトリの .cache に SHA つきで保全。PDF は macOS の PDFKit で本文を取り出して確かめた（claude-pdfkit-text）。接続できなかった 1 頁（山口県の広報誌）だけがサブエージェントの報告のまま、地図の埋め込みキーを含む 1 頁（高梁市）は原本を保存していない（checkedBy で区別）。",
  "categories": {
   "public-matches-kobun": "公的資料が綱文と同じ月日を書く",
   "public-matches-kobun-unverified": "同じ月日だが原本に接続できず未照合",
@@ -49,8 +49,10 @@
      "phrase": "11月、岩村城は織田軍に降伏…長良川で磔",
      "basis": "記載なし",
      "kind": "二次",
-     "checkedBy": "subagent-report-not-refetched",
-     "note": "日は書かない"
+     "checkedBy": "claude-fetched-html",
+     "note": "日は書かない",
+     "originalSha256": "e6997468d63808f3aa828cc4a7c54bfe66a07897c764e47259f4c8483bab94f4",
+     "privateOriginal": ".cache/research-originals/death-date-sources/akiyama-iida.html.gz"
     }
    ],
    "note": "甲府市は11月26日（ユリウス暦1575-12-28、年表より27日遅い）。綱文21日・甲府市26日・年表のどれが死去の日か、この照合では決められない。"
@@ -76,11 +78,14 @@
     {
      "publisher": "四條畷市（年表 PDF）",
      "url": "https://www.city.shijonawate.lg.jp/uploaded/attachment/9773.pdf",
-     "phrase": "長慶、飯盛城で弟の安宅冬康を殺害",
+     "phrase": "二好（三好）長慶、飯盛城で弟の安宅冬康を殺害。",
      "basis": "記載なし",
      "kind": "二次",
-     "checkedBy": "subagent-report-not-refetched",
-     "note": "PDF 未照合。年（永禄7年）だけ"
+     "checkedBy": "claude-pdfkit-text",
+     "note": "年（永禄7）だけ。OCR で三好が二好になっている",
+     "locator": "PDF 19/22 頁、年表の 1564（永禄7）の行",
+     "originalSha256": "e02e0921775f272a2bd6e60f0eeadae4ccf52fd2b9c9f1bd4aa936ca6da74892",
+     "privateOriginal": ".cache/research-originals/death-date-sources/shijonawate-chronology-9773.pdf"
     }
    ],
    "note": "月日を書いた公的ページは見つからない。"
@@ -99,8 +104,10 @@
      "phrase": "(1519～1577年)",
      "basis": "記載なし",
      "kind": "二次",
-     "checkedBy": "subagent-report-not-refetched",
-     "note": "年だけ。天正5年12月は西暦では1578年1月"
+     "checkedBy": "claude-fetched-html",
+     "note": "年だけ。天正5年12月は西暦では1578年1月",
+     "originalSha256": "17b41b8da0484564421345c31fa444fdbccae240fac4b48ae86fefcadf893fab",
+     "privateOriginal": ".cache/research-originals/death-date-sources/harumune-fukushima.html.gz"
     }
    ],
    "note": ""
@@ -141,7 +148,7 @@
      "basis": "記載なし",
      "kind": "二次",
      "checkedBy": "subagent-report-not-refetched",
-     "note": "検索の抜粋だけ。サイトに接続できず未照合"
+     "note": "検索の抜粋だけ。2026-11-10 に 2 回取得を試みたが接続できず（fetch failed）、未照合"
     },
     {
      "publisher": "北広島町",
@@ -149,8 +156,10 @@
      "phrase": "天正14年（1586）に亡くなっています",
      "basis": "陰徳太平記",
      "kind": "二次",
-     "checkedBy": "subagent-report-not-refetched",
-     "note": "年だけ"
+     "checkedBy": "claude-fetched-html",
+     "note": "年だけ",
+     "originalSha256": "78b1f3667b72017d60246b977a9fd7aa8e11e8c863940e697f030eecc2e295ee",
+     "privateOriginal": ".cache/research-originals/death-date-sources/motoharu-kitahiroshima.html.gz"
     }
    ],
    "note": ""
@@ -170,7 +179,7 @@
      "phrase": "永禄九年…十一月十五日、於日州志布志病死、年五十六",
      "basis": "家に伝わった系図文書の写しの翻刻",
      "kind": "翻刻史料",
-     "checkedBy": "claude-pdfkit-text（macOS PDFKit で本文を取り出して確認）",
+     "checkedBy": "claude-pdfkit-text",
      "originalSha256": "94fa2cfc55bf557da4f3bcf03590489b66f2fa9c31c9c9055eb4f96a2555f9d4",
      "privateOriginal": ".cache/research-originals/death-date-sources/kagoshima-reimeikan-kimotsuki-ke.pdf"
     }
@@ -191,8 +200,9 @@
      "phrase": "同9年に…銃によって暗殺され",
      "basis": "記載なし",
      "kind": "二次",
-     "checkedBy": "subagent-report-not-refetched",
-     "note": "年だけ"
+     "checkedBy": "claude-refetch-not-saved",
+     "note": "年だけ",
+     "publicOriginalNotSaved": "頁の HTML に地図の埋め込みキーが含まれるため、原本は保存しない（source-privacy.cjs の方針）。URL と該当箇所だけを記録する。文言はサブエージェントの報告のまま"
     },
     {
      "publisher": "岡山県",
@@ -200,8 +210,10 @@
      "phrase": "永禄９（１５６６）年",
      "basis": "記載なし",
      "kind": "二次",
-     "checkedBy": "subagent-report-not-refetched",
-     "note": "年だけ"
+     "checkedBy": "claude-fetched-html",
+     "note": "年だけ",
+     "originalSha256": "3e8e12f03b1c1cfa46392121bccd965ad0e83d3c753508e1122fd1d55dc1ba69",
+     "privateOriginal": ".cache/research-originals/death-date-sources/iechika-okayama.html.gz"
     }
    ],
    "note": "月（2月）までの公的な記述は、検索の抜粋だけで頁を特定できない。"
@@ -230,8 +242,10 @@
      "phrase": "永禄6年(1563)に義興は、この城で亡くなり",
      "basis": "記載なし",
      "kind": "二次",
-     "checkedBy": "subagent-report-not-refetched",
-     "note": "年だけ"
+     "checkedBy": "claude-fetched-html",
+     "note": "年だけ",
+     "originalSha256": "296fae12e554142c63b629d4652db7a1283244c07f51a1fdfb2814af6fe3fa28",
+     "privateOriginal": ".cache/research-originals/death-date-sources/yoshioki-takatsuki.html.gz"
     }
    ],
    "note": "京大の解説は没時を永禄6年8月までとする。25日は肖像模本の賛の日付（于時…）で、死去日と明示されていない。死去日は月まで、賛の日付は補助資料として扱う。毒殺説は京大の解説が「説もある」とする。"
@@ -257,11 +271,14 @@
     {
      "publisher": "山口県文書館",
      "url": "https://archives.pref.yamaguchi.lg.jp/cms/wp-content/uploads/2025/06/AW20_kinen_001.pdf",
-     "phrase": "永禄6年8月4日、安芸国…にて急死",
+     "phrase": "永禄6年8月4日、安芸国(現広島県)にて急死します",
      "basis": "記載なし",
      "kind": "二次",
-     "checkedBy": "subagent-report-not-refetched",
-     "note": "PDF 未照合"
+     "checkedBy": "claude-pdfkit-text",
+     "note": "第20回中国四国地区アーカイブズウィークの展示資料",
+     "locator": "PDF 1/2 頁",
+     "originalSha256": "3ce5d63a3830fdfff4f9761110db9f8199f37a114e266ab0714c38fa4926f27e",
+     "privateOriginal": ".cache/research-originals/death-date-sources/yamaguchi-archives-aw20.pdf"
     }
    ],
    "note": "死因は食傷とも毒殺とも（安芸高田市）。"
@@ -280,8 +297,10 @@
      "phrase": "永禄7年（1564）長尾政景、舟遊びの最中、溺死",
      "basis": "記載なし",
      "kind": "二次",
-     "checkedBy": "subagent-report-not-refetched",
-     "note": "年だけ"
+     "checkedBy": "claude-fetched-html",
+     "note": "年だけ",
+     "originalSha256": "8ee92a25672a3f701df973f02313402b51833ff76269d21ecf78a177a73007f9",
+     "privateOriginal": ".cache/research-originals/death-date-sources/masakage-nagaoka.html.gz"
     }
    ],
    "note": "溺死の場所に異説（新潟県 銭淵公園）。"
@@ -428,8 +447,10 @@
      "phrase": "1585年（天正13年）、出陣中の筑後北野…で亡くなりました",
      "basis": "記載なし",
      "kind": "二次",
-     "checkedBy": "subagent-report-not-refetched",
-     "note": "年だけ。場所は北野"
+     "checkedBy": "claude-fetched-html",
+     "note": "年だけ。場所は北野",
+     "originalSha256": "5088e72cb3ec39f5528247d6e50c72424c4cbac28761c582cef30d760528dafa",
+     "privateOriginal": ".cache/research-originals/death-date-sources/dosetsu-shingu.html.gz"
     },
     {
      "publisher": "大分市",
@@ -437,8 +458,10 @@
      "phrase": "1585年…高良山…の陣中で病没",
      "basis": "記載なし",
      "kind": "二次",
-     "checkedBy": "subagent-report-not-refetched",
-     "note": "年だけ。場所は高良山"
+     "checkedBy": "claude-fetched-html",
+     "note": "年だけ。場所は高良山",
+     "originalSha256": "1cb8fc9a8c7e559e34bda6bf1b020471ff7877f6e1ce899c244460001ec4c304",
+     "privateOriginal": ".cache/research-originals/death-date-sources/dosetsu-oita.html.gz"
     }
    ],
    "note": "綱文の命題は未登録。宗像市の紀要は、典拠（『大日本史料』第十一編之二十、天正十三年九月十一日条）とともに9月11日と書き、別の箇所で9月13日とも書く。9月11日はグレゴリオ暦1585-11-02（年表より1日遅い）、9月13日なら11-04（3日遅い）。綱文の9月11日条を引いて命題に登録できる見込み（未照会）。"
@@ -465,8 +488,10 @@
      "phrase": "毎年7月27日に行われる法要",
      "basis": "記載なし",
      "kind": "二次",
-     "checkedBy": "subagent-report-not-refetched",
-     "note": "法要の日で、死去の日の記述ではない"
+     "checkedBy": "claude-fetched-html",
+     "note": "法要の日で、死去の日の記述ではない",
+     "originalSha256": "cf804ea7f6f945d22afcd97920f25de382fc10a0e2ed1301ccd3a528dc2dbbff",
+     "privateOriginal": ".cache/research-originals/death-date-sources/joun-dazaifu.html.gz"
     }
    ],
    "note": "既存の資料（iwayaDiary、上井覚兼日記）では26日に下柵突破と包囲、27日朝の攻撃、同日午後に落城。年表の1586-09-10（グレゴリオ暦）は7月27日に当たり、綱文は26日。綱文がなぜ26日に掛けたかは確かめていない（下柵突破の日に掛けたという読みは、現段階では未確定）。資料間の不一致として残す。紹運の戦死の時刻は日記でも特定できない。"
@@ -495,8 +520,10 @@
      "phrase": "永禄四年九月一〇日…信玄の弟信繁等討死す",
      "basis": "妙法寺記・歴代古案ほか",
      "kind": "史料集の綱文",
-     "checkedBy": "subagent-report-not-refetched",
-     "note": "合戦の日に掛けた記事"
+     "checkedBy": "claude-fetched-html",
+     "note": "合戦の日に掛けた記事",
+     "originalSha256": "4ba3efbbfaf756f3457bff5d0febf910208445d59106f425f91226025725e08c",
+     "privateOriginal": ".cache/research-originals/death-date-sources/nobushige-shinano.html.gz"
     }
    ],
    "note": "合戦の日の戦死。"
