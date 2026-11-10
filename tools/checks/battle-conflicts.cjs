@@ -20,3 +20,11 @@ const html=c.MODALS.scene({title:'広域作戦'});assert.ok(!html.includes('canv
 vm.runInContext(s.slice(s.indexOf('function mountScene(sc,onEnd)'),s.indexOf('Object.assign(ACT,{',s.indexOf('function mountScene(sc,onEnd)'))),c);vm.runInContext('mountScene(TK.BATTLES["広域作戦"])',c);assert.equal(stopped,1);assert.equal(lookups,0,'campaign exits before any canvas lookup');
 vm.runInContext(s.slice(s.indexOf('function renderModal(){'),s.indexOf('\n',s.indexOf('function renderModal(){'))),c);c.mountScene=()=>mounted++;vm.runInContext('renderModal()',c);assert.equal(mounted,0,'manual campaign does not create playback');
 console.log('PASS: campaign auto exclusion, text-only manual view, existing child links, escaping, individual battle and Sekigahara campaign button, no mount');
+
+const winter=TK.CONFLICT_CATALOG['大坂冬の陣'];
+assert.equal(winter.kind,'campaign');
+assert.deepEqual(Array.from(winter.children,c=>c.title),['木津川口の戦い','今福・鴫野の戦い','博労淵・野田・福島の戦い','真田丸の戦い']);
+for(const i of [0,2])assert.equal(winter.children[i].sceneTitle,undefined,'unmapped winter front stays text only');
+for(const i of [1,3])assert.ok(TK.BATTLES[winter.children[i].sceneTitle]);
+assert.equal(G.sceneTitleForEvent('大坂冬の陣',0),null,'broad winter campaign does not autoplay a simultaneous siege');
+console.log('PASS: Osaka winter campaign distinguishes four fronts without inventing local scenes');

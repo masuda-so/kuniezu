@@ -1132,3 +1132,22 @@ def test_eighteen_authorities_share_stable_identity(
             ).get()
             == person
         )
+
+
+def test_osaka_winter_keeps_campaign_and_local_events_separate(inputs):
+    import_history(inputs)
+    campaign = Phenomenon.objects.get(key="campaign:大坂冬の陣")
+    expected_battles = 4
+    assert campaign.parts.count() == expected_battles
+    for title in ["今福・鴫野の戦い", "真田丸の戦い"]:
+        battle = campaign.parts.get(title=title)
+        assert battle.records.filter(record_type=RecordType.IMPLEMENTED_EVENT).exists()
+    for title in ["木津川口の戦い", "博労淵・野田・福島の戦い"]:
+        battle = campaign.parts.get(title=title)
+        assert battle.status == Status.REGISTERED
+        assert not battle.jd_exact
+    ending = Phenomenon.objects.get(
+        title="大坂冬の陣", records__record_type=RecordType.IMPLEMENTED_EVENT
+    )
+    assert ending != campaign
+    assert ending.parent is None

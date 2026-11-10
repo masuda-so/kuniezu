@@ -417,6 +417,97 @@
           }
         ]
       }
+    },
+    {
+      "id": "campaign:大坂冬の陣",
+      "title": "大坂冬の陣",
+      "kind": "campaign",
+      "dateLabel": "1614年末～1615年初",
+      "summary": "大坂城の周囲で各地の戦闘が続き、包囲と交渉を経て和睦に至った戦役。各地の戦闘を分けて見る。",
+      "children": [
+        "battle:木津川口の戦い1614",
+        "battle:今福・鴫野の戦い1614",
+        "battle:博労淵・野田・福島の戦い1614",
+        "battle:真田丸の戦い1614"
+      ],
+      "sources": [
+        {
+          "author": "大阪府文化財センター",
+          "title": "大坂城跡",
+          "url": "https://sitereports.nabunken.go.jp/files/attach/23/23800/17493_1_%E5%A4%A7%E5%9D%82%E5%9F%8E%E5%9D%80.pdf",
+          "locator": "第2章 位置と環境、印刷9頁、冬の陣の経過",
+          "scope": "木津川口、今福・鴫野、博労ケ淵・野田・福島、真田丸と和睦・誓書交換の区別。隊別の位置、兵数、時刻の根拠にはしない。",
+          "accessed": "2026-11-10"
+        }
+      ]
+    },
+    {
+      "id": "battle:木津川口の戦い1614",
+      "title": "木津川口の戦い",
+      "kind": "battle",
+      "parent": "campaign:大坂冬の陣",
+      "sources": [
+        {
+          "author": "大阪府文化財センター",
+          "title": "大坂城跡",
+          "url": "https://sitereports.nabunken.go.jp/files/attach/23/23800/17493_1_%E5%A4%A7%E5%9D%82%E5%9F%8E%E5%9D%80.pdf",
+          "locator": "第2章 位置と環境、印刷9頁、冬の陣の経過",
+          "scope": "木津川口、今福・鴫野、博労ケ淵・野田・福島、真田丸と和睦・誓書交換の区別。隊別の位置、兵数、時刻の根拠にはしない。",
+          "accessed": "2026-11-10"
+        }
+      ],
+      "summary": "大坂城の西方で行われた戦闘。"
+    },
+    {
+      "id": "battle:今福・鴫野の戦い1614",
+      "title": "今福・鴫野の戦い",
+      "kind": "battle",
+      "parent": "campaign:大坂冬の陣",
+      "sources": [
+        {
+          "author": "大阪府文化財センター",
+          "title": "大坂城跡",
+          "url": "https://sitereports.nabunken.go.jp/files/attach/23/23800/17493_1_%E5%A4%A7%E5%9D%82%E5%9F%8E%E5%9D%80.pdf",
+          "locator": "第2章 位置と環境、印刷9頁、冬の陣の経過",
+          "scope": "木津川口、今福・鴫野、博労ケ淵・野田・福島、真田丸と和睦・誓書交換の区別。隊別の位置、兵数、時刻の根拠にはしない。",
+          "accessed": "2026-11-10"
+        }
+      ],
+      "existingSceneTitle": "今福・鴫野の戦い"
+    },
+    {
+      "id": "battle:博労淵・野田・福島の戦い1614",
+      "title": "博労淵・野田・福島の戦い",
+      "kind": "battle",
+      "parent": "campaign:大坂冬の陣",
+      "sources": [
+        {
+          "author": "大阪府文化財センター",
+          "title": "大坂城跡",
+          "url": "https://sitereports.nabunken.go.jp/files/attach/23/23800/17493_1_%E5%A4%A7%E5%9D%82%E5%9F%8E%E5%9D%80.pdf",
+          "locator": "第2章 位置と環境、印刷9頁、冬の陣の経過",
+          "scope": "木津川口、今福・鴫野、博労ケ淵・野田・福島、真田丸と和睦・誓書交換の区別。隊別の位置、兵数、時刻の根拠にはしない。",
+          "accessed": "2026-11-10"
+        }
+      ],
+      "summary": "大坂城の西方で行われた戦闘。"
+    },
+    {
+      "id": "battle:真田丸の戦い1614",
+      "title": "真田丸の戦い",
+      "kind": "battle",
+      "parent": "campaign:大坂冬の陣",
+      "sources": [
+        {
+          "author": "大阪府文化財センター",
+          "title": "大坂城跡",
+          "url": "https://sitereports.nabunken.go.jp/files/attach/23/23800/17493_1_%E5%A4%A7%E5%9D%82%E5%9F%8E%E5%9D%80.pdf",
+          "locator": "第2章 位置と環境、印刷9頁、冬の陣の経過",
+          "scope": "木津川口、今福・鴫野、博労ケ淵・野田・福島、真田丸と和睦・誓書交換の区別。隊別の位置、兵数、時刻の根拠にはしない。",
+          "accessed": "2026-11-10"
+        }
+      ],
+      "existingSceneTitle": "真田丸の戦い"
     }
   ]
 }
