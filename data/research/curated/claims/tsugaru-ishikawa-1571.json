@@ -1,0 +1,39 @@
+{
+  "id": "tsugaru-ishikawa-1571",
+  "entity": "place:ishikawa-castle-mutsu",
+  "predicate": "castle-fall",
+  "value": "陸奥大浦の津軽為信が、南部高信を石川城に、小山内讃岐守を和徳城に攻めて、これを落とした。",
+  "validYears": [
+    1571,
+    1571
+  ],
+  "datePrecision": "day",
+  "source": "hiDainihonshiryoKobun",
+  "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+  "locator": "綱文：和暦 元亀2年5月5日 第3条（区分 大日本史料、第10編之6（データベースの表示値）、204頁）",
+  "gameBindings": [
+    "TK.HIST:津軽為信の自立"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-09",
+  "uncertainty": "綱文はこの時の為信を「津軽為信」と書く。年表の文は「大浦為信」と書く。 綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。",
+  "linkedEntities": [
+    "place:ishikawa-castle-mutsu",
+    "person:津軽為信",
+    "person:南部高信"
+  ],
+  "eventTime": {
+    "kind": "dated-event",
+    "date": [
+      1571,
+      5,
+      5
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": false,
+    "precision": "day"
+  },
+  "eventRelation": "castle-fall",
+  "eventScope": "綱文が掲げる日付。元亀2年5月5日はゲーム共通の暦表で1571年5月28日。最終年表の津軽為信の自立（1571年6月1日）は綱文より4日遅い。命題は石川城と和徳城の攻略の日で、津軽の独立の全体には広げない。和徳城と小山内讃岐守（人物の ID が無い）には結ばない。"
+}
