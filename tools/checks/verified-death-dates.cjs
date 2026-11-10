@@ -3,7 +3,8 @@ const assert=require('node:assert/strict');
 const {G,TK}=require('./history-focus.cjs').model();
 const cases=[
  {name:'長野業正',scenario:'s1560',previous:[1561,8,1],date:[1561,8,2],lunar:[1561,6,21]},
- {name:'蜂須賀正勝',scenario:'s1585',previous:[1586,7,1],date:[1586,7,8],lunar:[1586,5,22]}
+ {name:'蜂須賀正勝',scenario:'s1585',previous:[1586,7,1],date:[1586,7,8],lunar:[1586,5,22]},
+ {name:'斎藤義龍',scenario:'s1560',previous:[1561,6,20],date:[1561,6,23],lunar:[1561,5,11]}
 ];
 const event=name=>TK.HIST.find(e=>e.k==='death'&&e.n===name);
 const sort=()=>TK.HIST.sort((a,b)=>a.d[0]-b.d[0]||a.d[1]-b.d[1]||a.d[2]-b.d[2]);
@@ -41,3 +42,36 @@ for(const row of cases){
  if(row.name==='長野業正')assert.equal(G.gen(legacy.clans[person.clan].leader).n,'長野業盛');
  console.log('PASS: '+row.name+' adopted date, legacy save and succession');
 }
+
+// 前便の二人は訂正済み、今回の義龍だけ旧日付という実際の直前版を再現する。
+const yoshitatsu=cases.find(r=>r.name==='斎藤義龍');
+dates(false);event(yoshitatsu.name).d=yoshitatsu.previous.slice();sort();
+G._ff={};G.newGame('s1560','oda');G.S().player='__none';G.fixHist();
+const snapshots=[];
+for(const day of [20,21,22]){
+ advance(G.evT({d:[1561,6,day]}));const saved=clone(G.S());
+ assert.equal(saved.gens.find(g=>g.n===yoshitatsu.name).dead,true);
+ // 既存の移行済み印だけを直前版の値に戻す。死亡状態は旧日付の実進行で生成する。
+ saved.verifiedDeathDateRepair=1;snapshots.push(saved);
+}
+const saveDir=process.env.VERIFIED_DEATH_SAVE_OUTPUT;
+const writeSave=(name,s)=>{if(!saveDir)return;const fs=require('node:fs'),path=require('node:path');fs.mkdirSync(saveDir,{recursive:true});fs.writeFileSync(path.join(saveDir,name+'.json'),JSON.stringify(s)+'\n');};
+for(const saved of snapshots)writeSave(G.date(saved.t).d+'-legacy',saved);
+advance(G.evT({d:[1561,6,23]}));const due=clone(G.S());due.verifiedDeathDateRepair=1;writeSave('23-legacy',due);
+dates(false);G._ff={};G.newGame('s1560','oda');G.S().player='__none';G.fixHist();
+advance(G.evT({d:[1561,6,22]}));writeSave('22-current',G.S());
+for(const saved of snapshots){
+ const before=resources(saved),count=saved.hOk;
+ G.setS(saved);G.fixHist();
+ const person=saved.gens.find(g=>g.n===yoshitatsu.name);
+ assert.equal(person.dead,false,'revision 1 state revives only before adopted death');
+ assert.equal(saved.clans[person.clan].leader,person.id,'義龍の家督を復元');
+ assert.equal(saved.verifiedDeathDateRepair,2);
+ assert.equal(saved.hOk,count,'untitled death never changes the titled-event success count');
+ assert.equal(resources(saved),before,'date, castles, armies and treasury preserved');
+ const once=JSON.stringify(saved);G.fixHist();assert.equal(JSON.stringify(saved),once);
+ advance(G.evT(event(yoshitatsu.name)));
+ assert.equal(person.dead,true);assert.equal(saved.clans[person.clan].leader,G.S().gens.find(g=>g.n==='斎藤龍興').id);
+ assert.equal(saved.log.filter(e=>e.msg===(event(yoshitatsu.name).text||'')).length,1);
+}
+console.log('PASS: revision 1 saves on all three days, chronology counts and succession');
