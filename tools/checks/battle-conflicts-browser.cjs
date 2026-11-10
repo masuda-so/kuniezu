@@ -4,6 +4,8 @@ const {spawn,execFileSync}=require('node:child_process');
 const crypto=require('node:crypto');
 const fs=require('node:fs'),os=require('node:os'),path=require('node:path'),assert=require('node:assert/strict');
 const URL=process.env.GAME_URL||'http://localhost:8000/index.html';
+const DPR=Number(process.env.GAME_TEST_DPR||1);
+assert.ok([1,2].includes(DPR),'GAME_TEST_DPR must be 1 or 2');
 const OUT=path.resolve(process.env.GAME_TEST_OUTPUT||path.join(os.tmpdir(),'kuniezu-browser-results'));
 // 差し替えの鍵は URL のパス（Django は kuniezu/static/kuniezu/x を /static/kuniezu/x で配る）。ページはテンプレートを描いて返す。
 const PAGE=require(path.join(process.env.GAME_REPO_ROOT||process.cwd(),'tools/build/game-page.cjs')),root=process.env.GAME_OVERRIDE_ROOT,overrides={};
@@ -28,7 +30,7 @@ async function run(functionDeclaration,...values){
 }
 async function click(selector){const p=await run('function(selector){const el=document.querySelector(selector);if(!el||el.disabled)throw Error("missing/disabled "+selector);el.scrollIntoView({block:"center"});const r=el.getBoundingClientRect();return {x:r.x+r.width/2,y:r.y+r.height/2};}',selector);await call('Input.dispatchMouseEvent',{type:'mousePressed',button:'left',clickCount:1,...p});await call('Input.dispatchMouseEvent',{type:'mouseReleased',button:'left',clickCount:1,...p});await sleep(120);}
 async function shot(name){await ev("(()=>{const e=document.querySelector('.mbox');if(e)e.scrollTop=0;})()");const r=await call('Page.captureScreenshot',{format:'png'});fs.writeFileSync(path.join(OUT,name+'.png'),Buffer.from(r.data,'base64'));}
-async function view(width,height){await call('Emulation.setDeviceMetricsOverride',{width,height,deviceScaleFactor:1,mobile:width<820});await sleep(300);}
+async function view(width,height){await call('Emulation.setDeviceMetricsOverride',{width,height,deviceScaleFactor:DPR,mobile:width<820});await sleep(300);}
 async function load(){await call('Page.navigate',{url:URL});await until("!!document.querySelector('[data-act=new]')&&!document.getElementById('boot')");}
 async function start(){await click('[data-act=new]');await click('[data-act=scen][data-id=s1560]');await click('#pick [data-act=pick].on');await until("TKUI.mode==='game'&&!TKUI.modal");}
 
@@ -50,5 +52,5 @@ const timer=setTimeout(()=>{chrome.kill();process.exitCode=1;console.error('camp
   await click('[data-act=modal-back]');assert.deepEqual(await ev('({title:document.querySelector(".mbox.scene h2").textContent,canvas:document.querySelectorAll(".mbox.scene canvas").length,play:document.querySelectorAll("#bPlay,#bSeek").length})'),{title:'文禄の役',canvas:0,play:0});await click('[data-act=b-close]');assert.equal(await ev('TKUI.modal'),null,'return to map closes modal');assert.deepEqual(await compass(),mapCompass,'map compass returns with its rotation');await run('function(){TKUI.open("menu-settings");}');assert.equal((await compass()).visible,false,'settings hides strategic compass');await run('function(){TKUI.api.closeModal();}');assert.deepEqual(await compass(),mapCompass,'closing settings preserves compass');
   await run('function(){TKUI.open("scene",{title:"関ヶ原の戦い"});}');await until('document.querySelector("#bCv")?.dataset.mapReady==="true"');assert.equal(await ev('document.querySelector(".mbox.scene h2").textContent'),'関ヶ原の戦い');assert.equal(await ev('document.querySelectorAll("[data-act=campaign]").length'),1,'existing Sekigahara separate-fronts UI remains');await click('[data-act=b-close]');rows.push({width,parent,child});
  }
- assert.deepEqual(errors,[]);fs.writeFileSync(path.join(OUT,'campaign-result.json'),JSON.stringify({rows,errors},null,2)+'\n');console.log('PASS: campaign text-only view, Busan child/date/citations, parent and map return, existing battle preserved at 940/335px');
+ assert.deepEqual(errors,[]);fs.writeFileSync(path.join(OUT,'campaign-result.json'),JSON.stringify({deviceScaleFactor:DPR,rows,errors},null,2)+'\n');console.log('PASS: campaign text-only view, Busan child/date/citations, parent and map return, existing battle preserved at 940/335px');
 }catch(e){console.error(e.stack);console.error(errors);try{await shot('failure');}catch{}process.exitCode=1;}finally{clearTimeout(timer);const stopped=chrome.exitCode!==null||chrome.signalCode!==null?Promise.resolve():new Promise(r=>chrome.once('close',r));try{await call('Browser.close',{},null)}catch{}const force=setTimeout(()=>chrome.kill(),1500);await stopped;clearTimeout(force);fs.rmSync(profile,{recursive:true,force:true,maxRetries:10,retryDelay:100});}})();
