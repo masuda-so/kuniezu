@@ -1,0 +1,39 @@
+{
+  "id": "masuda-koriyama-1595",
+  "entity": "person:増田長盛",
+  "predicate": "territorial-transfer",
+  "value": "秀吉が近江水口の増田長盛を大和に移して郡山城を与え、長束正家に近江水口を与えた。",
+  "validYears": [
+    1595,
+    1595
+  ],
+  "datePrecision": "day",
+  "source": "hiDainihonshiryoKobun",
+  "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+  "locator": "綱文：和暦 文禄4年6月8日 第1条（区分 史料綜覧、編11・冊913（データベースの表示値）、89頁）",
+  "gameBindings": [
+    "TK.HIST:1595-8-20"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-09",
+  "uncertainty": "年表の文は、この配置を秀次事件ののちとしている。綱文の日付はそれより前で、年表の文の前後関係は綱文と合わない（報告のみ）。 綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。",
+  "linkedEntities": [
+    "person:増田長盛",
+    "person:toyotomi-hideyoshi",
+    "person:長束正家"
+  ],
+  "eventTime": {
+    "kind": "dated-event",
+    "date": [
+      1595,
+      6,
+      8
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": false,
+    "precision": "day"
+  },
+  "eventRelation": "territorial-transfer",
+  "eventScope": "綱文が掲げる日付。文禄4年6月8日はゲーム共通の暦表で1595年7月14日。最終年表の増田長盛の大和（node:yamato）への移り（1595年8月20日、題名なし。秀次事件ののちの配置として掲げる）は綱文より37日遅く、綱文の日は秀次事件（7月）より前。命題は国替えの日で、入城の日ではない。郡山城には結ばない。"
+}

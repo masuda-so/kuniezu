@@ -1,0 +1,39 @@
+{
+  "id": "asano-kai-1593",
+  "entity": "person:浅野長政",
+  "predicate": "territorial-transfer",
+  "value": "秀吉が浅野長吉（長政）の封地の若狭を収めて甲斐を与え、子の長継（幸長）に16万石、長吉に5万5千石を領させ、うち1万石を蔵入地とした。",
+  "validYears": [
+    1593,
+    1593
+  ],
+  "datePrecision": "day",
+  "source": "hiDainihonshiryoKobun",
+  "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+  "locator": "綱文：和暦 文禄2年11月20日 第1条（区分 史料綜覧、編11・冊913（データベースの表示値）、41頁）",
+  "gameBindings": [
+    "TK.HIST:1593-9-1"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-09",
+  "uncertainty": "綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。",
+  "linkedEntities": [
+    "person:浅野長政",
+    "person:toyotomi-hideyoshi",
+    "person:浅野幸長"
+  ],
+  "eventTime": {
+    "kind": "dated-event",
+    "date": [
+      1593,
+      11,
+      20
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": false,
+    "precision": "day"
+  },
+  "eventRelation": "territorial-transfer",
+  "eventScope": "綱文が掲げる日付。文禄2年11月20日はゲーム共通の暦表で1594年1月11日。最終年表の浅野長政・幸長の甲斐（node:tsutsuji）への移り（1593年9月1日、題名なし）は綱文より132日早い。命題は国替えの日で、甲斐に入った日ではない。石高の内訳は綱文の数字のまま。"
+}
