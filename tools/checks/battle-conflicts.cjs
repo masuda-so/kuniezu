@@ -20,3 +20,11 @@ const html=c.MODALS.scene({title:'広域作戦'});assert.ok(!html.includes('canv
 vm.runInContext(s.slice(s.indexOf('function mountScene(sc,onEnd)'),s.indexOf('Object.assign(ACT,{',s.indexOf('function mountScene(sc,onEnd)'))),c);vm.runInContext('mountScene(TK.BATTLES["広域作戦"])',c);assert.equal(stopped,1);assert.equal(lookups,0,'campaign exits before any canvas lookup');
 vm.runInContext(s.slice(s.indexOf('function renderModal(){'),s.indexOf('\n',s.indexOf('function renderModal(){'))),c);c.mountScene=()=>mounted++;vm.runInContext('renderModal()',c);assert.equal(mounted,0,'manual campaign does not create playback');
 console.log('PASS: campaign auto exclusion, text-only manual view, existing child links, escaping, individual battle and Sekigahara campaign button, no mount');
+
+const odawara=TK.CONFLICT_CATALOG['小田原征伐'];
+assert.equal(odawara.kind,'campaign');
+assert.deepEqual(Array.from(odawara.children,c=>c.title),['山中城の戦い','韮山城の戦い','鉢形城の開城','小田原城の包囲（1590年）','小田原開城','八王子城の戦い','忍城の戦い']);
+for(const i of [0,3,5,6])assert.equal(odawara.children[i].sceneTitle,undefined,'unmapped castle remains text only');
+for(const i of [1,2,4])assert.ok(TK.BATTLES[odawara.children[i].sceneTitle]);
+assert.equal(G.sceneTitleForEvent('小田原征伐',0),null,'campaign does not autoplay a single castle siege');
+console.log('PASS: Odawara campaign distinguishes castle actions and surrender');

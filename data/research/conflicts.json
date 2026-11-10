@@ -417,6 +417,191 @@
           }
         ]
       }
+    },
+    {
+      "id": "campaign:小田原征伐",
+      "title": "小田原征伐",
+      "kind": "campaign",
+      "dateLabel": "1590年",
+      "summary": "北条領の各城で行われた攻防と、小田原城の包囲・開城を含む戦役。城ごとの経過を分けて見る。",
+      "children": [
+        "battle:山中城の戦い1590",
+        "battle:韮山城の戦い1590",
+        "battle:鉢形城の開城1590",
+        "battle:小田原城の包囲（1590年）1590",
+        "battle:小田原開城1590",
+        "battle:八王子城の戦い1590",
+        "battle:忍城の戦い1590"
+      ],
+      "sources": [
+        {
+          "author": "小田原城公式サイト（小田原市観光協会）",
+          "title": "小田原城の歴史・歴史年表",
+          "url": "https://odawaracastle.com/history/nenpyo/index.html",
+          "locator": "後北条時代・天正18年（1590）",
+          "scope": "小田原城の包囲、石垣山築城、開城の区別。精密な隊位置や全城の同時開城の根拠にはしない。",
+          "accessed": "2026-11-10"
+        },
+        {
+          "author": "三島市文化財課",
+          "title": "史跡 山中城跡のご案内",
+          "url": "https://www.city.mishima.shizuoka.jp/page/29769.html",
+          "locator": "史跡山中城跡・1590年の攻防",
+          "scope": "小田原へ向かう豊臣勢と山中城の攻防。本文の兵数や日別精度を新たな配置へ転用しない。",
+          "accessed": "2026-11-10"
+        },
+        {
+          "author": "伊豆の国市",
+          "title": "韮山城跡「百年の計」序章・第1章",
+          "url": "https://www.city.izunokuni.shizuoka.jp/bunka_bunkazai/manabi/bunkazai/documents/zyosyo1syo.pdf",
+          "locator": "序章1頁・歴史的価値の②",
+          "scope": "山中・足柄・韮山を後北条領国西部の別の城郭として扱う。各隊位置の根拠にはしない。",
+          "accessed": "2026-11-10"
+        },
+        {
+          "author": "寄居町 鉢形城歴史館",
+          "title": "鉢形城公園案内",
+          "url": "https://www.town.yorii.saitama.jp/site/rekishikan/kouenannai.html",
+          "locator": "鉢形城跡の概要・小田原攻めの段落",
+          "scope": "小田原攻めにおける鉢形城の独立した攻防と開城。小田原と同日の開城にはしない。",
+          "accessed": "2026-11-10"
+        },
+        {
+          "author": "八王子市",
+          "title": "八王子城跡",
+          "url": "https://www.city.hachioji.tokyo.jp/kurashi/kyoiku/005/bunkazaikanrenshisetsu/p005201.html",
+          "locator": "概要・1590年の攻防と氏照の所在",
+          "scope": "小田原戦役の中の別の城の攻防と開城経緯。精密配置、兵数、日別時刻の根拠にはしない。",
+          "accessed": "2026-11-10"
+        },
+        {
+          "author": "行田市文化財保護課",
+          "title": "忍城跡",
+          "url": "https://www.city.gyoda.lg.jp/soshiki/shougaigakusyubu/bunkazaihogo/gyomu/rekishi_bunkazai/1/2261.html",
+          "locator": "文化財の説明・1590年の包囲と開城",
+          "scope": "小田原戦役の中の別の城の攻防と開城経緯。精密配置、兵数、日別時刻の根拠にはしない。",
+          "accessed": "2026-11-10"
+        }
+      ]
+    },
+    {
+      "id": "battle:山中城の戦い1590",
+      "title": "山中城の戦い",
+      "kind": "battle",
+      "parent": "campaign:小田原征伐",
+      "sources": [
+        {
+          "author": "三島市文化財課",
+          "title": "史跡 山中城跡のご案内",
+          "url": "https://www.city.mishima.shizuoka.jp/page/29769.html",
+          "locator": "史跡山中城跡・1590年の攻防",
+          "scope": "小田原へ向かう豊臣勢と山中城の攻防。本文の兵数や日別精度を新たな配置へ転用しない。",
+          "accessed": "2026-11-10"
+        }
+      ],
+      "summary": "山中城での攻防。"
+    },
+    {
+      "id": "battle:韮山城の戦い1590",
+      "title": "韮山城の戦い",
+      "kind": "battle",
+      "parent": "campaign:小田原征伐",
+      "sources": [
+        {
+          "author": "伊豆の国市",
+          "title": "韮山城跡「百年の計」序章・第1章",
+          "url": "https://www.city.izunokuni.shizuoka.jp/bunka_bunkazai/manabi/bunkazai/documents/zyosyo1syo.pdf",
+          "locator": "序章1頁・歴史的価値の②",
+          "scope": "山中・足柄・韮山を後北条領国西部の別の城郭として扱う。各隊位置の根拠にはしない。",
+          "accessed": "2026-11-10"
+        }
+      ],
+      "existingSceneTitle": "韮山城の戦い"
+    },
+    {
+      "id": "battle:鉢形城の開城1590",
+      "title": "鉢形城の開城",
+      "kind": "battle",
+      "parent": "campaign:小田原征伐",
+      "sources": [
+        {
+          "author": "寄居町 鉢形城歴史館",
+          "title": "鉢形城公園案内",
+          "url": "https://www.town.yorii.saitama.jp/site/rekishikan/kouenannai.html",
+          "locator": "鉢形城跡の概要・小田原攻めの段落",
+          "scope": "小田原攻めにおける鉢形城の独立した攻防と開城。小田原と同日の開城にはしない。",
+          "accessed": "2026-11-10"
+        }
+      ],
+      "existingSceneTitle": "鉢形城の開城"
+    },
+    {
+      "id": "battle:小田原城の包囲（1590年）1590",
+      "title": "小田原城の包囲（1590年）",
+      "kind": "battle",
+      "parent": "campaign:小田原征伐",
+      "sources": [
+        {
+          "author": "小田原城公式サイト（小田原市観光協会）",
+          "title": "小田原城の歴史・歴史年表",
+          "url": "https://odawaracastle.com/history/nenpyo/index.html",
+          "locator": "後北条時代・天正18年（1590）",
+          "scope": "小田原城の包囲、石垣山築城、開城の区別。精密な隊位置や全城の同時開城の根拠にはしない。",
+          "accessed": "2026-11-10"
+        }
+      ],
+      "summary": "総構を備えた小田原城を豊臣方が包囲し、石垣山に城を築いた。"
+    },
+    {
+      "id": "battle:小田原開城1590",
+      "title": "小田原開城",
+      "kind": "battle",
+      "parent": "campaign:小田原征伐",
+      "sources": [
+        {
+          "author": "小田原城公式サイト（小田原市観光協会）",
+          "title": "小田原城の歴史・歴史年表",
+          "url": "https://odawaracastle.com/history/nenpyo/index.html",
+          "locator": "後北条時代・天正18年（1590）",
+          "scope": "小田原城の包囲、石垣山築城、開城の区別。精密な隊位置や全城の同時開城の根拠にはしない。",
+          "accessed": "2026-11-10"
+        }
+      ],
+      "existingSceneTitle": "小田原開城"
+    },
+    {
+      "id": "battle:八王子城の戦い1590",
+      "title": "八王子城の戦い",
+      "kind": "battle",
+      "parent": "campaign:小田原征伐",
+      "summary": "城主氏照は小田原に籠城している間に、八王子城が豊臣方に攻められた。",
+      "sources": [
+        {
+          "author": "八王子市",
+          "title": "八王子城跡",
+          "url": "https://www.city.hachioji.tokyo.jp/kurashi/kyoiku/005/bunkazaikanrenshisetsu/p005201.html",
+          "locator": "概要・1590年の攻防と氏照の所在",
+          "scope": "小田原戦役の中の別の城の攻防と開城経緯。精密配置、兵数、日別時刻の根拠にはしない。",
+          "accessed": "2026-11-10"
+        }
+      ]
+    },
+    {
+      "id": "battle:忍城の戦い1590",
+      "title": "忍城の戦い",
+      "kind": "battle",
+      "parent": "campaign:小田原征伐",
+      "summary": "水攻めに耐えた忍城は、小田原城の降伏後、城主氏長の命を受けて開城した。",
+      "sources": [
+        {
+          "author": "行田市文化財保護課",
+          "title": "忍城跡",
+          "url": "https://www.city.gyoda.lg.jp/soshiki/shougaigakusyubu/bunkazaihogo/gyomu/rekishi_bunkazai/1/2261.html",
+          "locator": "文化財の説明・1590年の包囲と開城",
+          "scope": "小田原戦役の中の別の城の攻防と開城経緯。精密配置、兵数、日別時刻の根拠にはしない。",
+          "accessed": "2026-11-10"
+        }
+      ]
     }
   ]
 }
