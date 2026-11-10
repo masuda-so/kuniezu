@@ -6,6 +6,7 @@ for(const match of fs.readFileSync(path.join(root,'kuniezu/templates/index.html'
 console.log('PASS: JavaScript syntax');
 require('node:child_process').execFileSync(process.execPath,[path.join(root,'tools/build/build-calendar.cjs'),'--check'],{stdio:'inherit'});
 require('./mask-vector.cjs');
+require('./iya-vector.cjs');
 require('./kojima-mask-vectors.cjs');
 require('./vector-assets.cjs');
 require('./vector-map.cjs');
