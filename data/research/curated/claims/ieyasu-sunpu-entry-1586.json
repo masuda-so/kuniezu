@@ -1,0 +1,38 @@
+{
+  "id": "ieyasu-sunpu-entry-1586",
+  "entity": "person:tokugawa-ieyasu",
+  "predicate": "residence-transfer",
+  "value": "徳川家康が遠江浜松城から駿府城に入った。",
+  "validYears": [
+    1586,
+    1586
+  ],
+  "datePrecision": "day",
+  "source": "hiDainihonshiryoKobun",
+  "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+  "locator": "綱文：和暦 天正14年12月4日 第2条（区分 史料綜覧、編11・冊912（データベースの表示値）、145頁）",
+  "gameBindings": [
+    "TK.HIST:1587-1-12"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-09",
+  "uncertainty": "同じ年の9月11日の条（史料綜覧、編11・冊912、137頁）は「是より先、家康、駿府に城く、是日、之に徙る」と書き、この条と食い違う。どちらが居城の移りかは綱文だけでは決められない。 綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。",
+  "linkedEntities": [
+    "person:tokugawa-ieyasu",
+    "place:sunpu"
+  ],
+  "eventTime": {
+    "kind": "dated-event",
+    "date": [
+      1586,
+      12,
+      4
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": false,
+    "precision": "day"
+  },
+  "eventRelation": "residence-transfer",
+  "eventScope": "綱文が掲げる日付。天正14年12月4日はゲーム共通の暦表で1587年1月12日。最終年表の徳川家康の駿府への移り（1587年1月12日、題名なし）は一致する。浜松城（出発地）には結ばない。"
+}

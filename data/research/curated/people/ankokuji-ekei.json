@@ -1,0 +1,29 @@
+{
+  "id": "person:ankokuji-ekei",
+  "name": "安国寺恵瓊",
+  "gameNames": [
+    "安国寺恵瓊"
+  ],
+  "aliases": [
+    "恵瓊"
+  ],
+  "authorityIds": [
+    "ndlna:00622777"
+  ],
+  "authorityEvidence": {
+    "scope": "person-identity",
+    "checked": "2026-11-10",
+    "sourceNote": "data/research/source-notes/person-retry-six.json",
+    "identityChecks": [
+      "NDL00622777の主名恵瓊がPerson典拠に属し、別名に「安国寺, 恵瓊」がある",
+      "NDL00622777の人物注記「僧」と没年1600、出典「安国寺恵瓊 / 河合正治 著」が、ゲームの安国寺恵瓊と合う"
+    ],
+    "identityBasis": "ndl-record-description; Wikidata に P349 が無く、相互の対応では確かめていない",
+    "basis": "人物の同定のみ。原本にある没年・職の記述は同定の照合に使い、新たな史実命題へは採用しない。",
+    "ndlSnapshot": "data/research/source-notes/person-retry-six-ankokuji-ekei-ndl.json",
+    "sourceIds": [
+      "ndlAnkokujiEkeiIdentity"
+    ],
+    "checkedBy": "claude-self"
+  }
+}
