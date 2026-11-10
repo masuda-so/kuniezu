@@ -1,0 +1,39 @@
+{
+  "id": "higo-division-1588",
+  "entity": "person:加藤清正",
+  "predicate": "territorial-transfer",
+  "value": "秀吉が肥後を二つに分けて加藤清正と小西行長に与え、清正を隈本（熊本）に、行長を宇土に置いた。",
+  "validYears": [
+    1588,
+    1588
+  ],
+  "datePrecision": "day",
+  "source": "hiDainihonshiryoKobun",
+  "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+  "locator": "綱文：和暦 天正16年閏5月15日 第1条（区分 史料綜覧、編11・冊912（データベースの表示値）、206頁）",
+  "gameBindings": [
+    "TK.HIST:1588-6-1"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-09",
+  "uncertainty": "綱文の閏5月は閏月。 綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。",
+  "linkedEntities": [
+    "person:加藤清正",
+    "person:小西行長",
+    "person:toyotomi-hideyoshi"
+  ],
+  "eventTime": {
+    "kind": "dated-event",
+    "date": [
+      1588,
+      5,
+      15
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": true,
+    "precision": "day"
+  },
+  "eventRelation": "territorial-transfer",
+  "eventScope": "綱文が掲げる日付。天正16年閏5月15日はゲーム共通の暦表で1588年7月8日。最終年表の加藤清正・小西行長の熊本（node:kumamoto）への移り（1588年6月1日、題名なし）は綱文より37日早い。綱文は行長の拠点を宇土と書き、年表は行長の行き先も node:kumamoto にしている（報告のみ。年表は変えていない）。命題は分封の日で、入城の日ではない。隈本・宇土の城には結ばない。"
+}
