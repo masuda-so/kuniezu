@@ -1,0 +1,83 @@
+{
+    "@context": "https://id.ndl.go.jp/auth/context.json",
+    "uri": "http://id.ndl.go.jp/auth/ndlna/00380807",
+    "primaryTopic": {
+        "uri": "http://id.ndl.go.jp/auth/entity/00380807",
+        "type": {
+            "uri": "http://xmlns.com/foaf/0.1/Person"
+        },
+        "name": "高坂昌信",
+        "dateOfBirth": "1527",
+        "dateOfDeath": "1578",
+        "biographicalInformation": [
+            "武田家家臣"
+        ]
+    },
+    "type": {
+        "uri": "http://www.w3.org/2004/02/skos/core#Concept"
+    },
+    "modified": "2026-01-21T08:31:59",
+    "created": "1995-07-31",
+    "prefLabel": {
+        "literalForm": "高坂, 昌信, 1527-1578",
+        "transcription": "コウサカ, マサノブ, 1527-1578",
+        "transcription-l": [
+            {
+                "@value": "コウサカ, マサノブ, 1527-1578",
+                "@language": "ja-Kana"
+            },
+            {
+                "@value": "Kosaka, Masanobu, 1527-1578",
+                "@language": "ja-Latn"
+            }
+        ]
+    },
+    "label": "高坂, 昌信, 1527-1578",
+    "altLabel": [
+        {
+            "literalForm": "春日弾正忠"
+        },
+        {
+            "literalForm": "虎綱"
+        },
+        {
+            "literalForm": "香坂弾正忠"
+        },
+        {
+            "literalForm": "高坂, 弾正",
+            "transcription": "コウサカ, ダンジョウ",
+            "transcription-l": [
+                {
+                    "@value": "コウサカ, ダンジョウ",
+                    "@language": "ja-Kana"
+                },
+                {
+                    "@value": "Kosaka, Danjo",
+                    "@language": "ja-Latn"
+                }
+            ]
+        }
+    ],
+    "source": [
+        "甲斐叢書 第5巻 甲陽軍鑑 坤 (請求記号: 652-7)",
+        "山梨百科事典"
+    ],
+    "exactMatch": [
+        {
+            "uri": "http://id.loc.gov/authorities/names/nr99023425"
+        },
+        {
+            "uri": "https://isni.org/isni/0000000082582614"
+        },
+        {
+            "uri": "https://ci.nii.ac.jp/author/DA08636949"
+        },
+        {
+            "uri": "http://viaf.org/viaf/sourceID/NDL%7C00380807#skos:Concept"
+        }
+    ],
+    "inScheme": {
+        "uri": "http://id.ndl.go.jp/auth#personalNames"
+    }
+}
+

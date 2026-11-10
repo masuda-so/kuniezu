@@ -1,0 +1,219 @@
+{
+ "checked": "2026-11-10",
+ "scope": "既存の入力の横断検索を先にした人物の同定の便（第 1 便）。生没・所在の命題なし。候補は #148 の wikipedia-sengoku-person-candidates。",
+ "rawLicense": {
+  "name": "CC0 1.0",
+  "url": "https://www.wikidata.org/wiki/Wikidata:Licensing",
+  "scope": "Wikidata JSON only; NDL 典拠データは国立国会図書館の利用条件に従う"
+ },
+ "records": [
+  {
+   "name": "安宅冬康",
+   "japaneseLabel": "安宅冬康",
+   "wikidataId": "Q1059165",
+   "wikidataRevision": 2520324888,
+   "wikidataJapaneseLabel": "安宅冬康",
+   "entityDataUrl": "https://www.wikidata.org/wiki/Special:EntityData/Q1059165.json",
+   "revisionUrl": "https://www.wikidata.org/w/index.php?title=Q1059165&oldid=2520324888",
+   "rawEntityDataSnapshot": "data/research/source-notes/person-identity-corpus-1-raw/Q1059165.json",
+   "rawSha256": "8a9caa92c9134b75d44197a0f322bc0350267c13e88a8206bda25dd7f3d4d6c8",
+   "identityChecks": [
+    "大阪歴史博物館の研究報告の本文が、天文21年（1552）に榎並が安宅冬康の知行で、榎並三人代官が置かれていたとする",
+    "Wikidata Q1059165の日本語主名が安宅冬康で、P569の年が1528、P570の年が1564"
+   ],
+   "adoptedNames": [
+    "安宅冬康"
+   ],
+   "scope": "person-identity-only; no historical dates or locations adopted",
+   "nameEvidence": [
+    {
+     "name": "安宅冬康",
+     "supports": [
+      "wikidata-ja-label-or-alias",
+      "public-source"
+     ]
+    }
+   ],
+   "identitySourceIds": [
+    "osakaMuseumFuyuyasuIdentity"
+   ],
+   "identitySourceUrl": "https://www.osakamushis.jp/education/publication/kyodokenkyu/pdf/kyodo-17/kyodo-17_3.pdf",
+   "identitySourceLocator": "榎並（城）の項の【歴史】の天文21年の段落",
+   "yearComparison": {
+    "wikidataBirth": [
+     1528
+    ],
+    "wikidataDeath": [
+     1564
+    ]
+   },
+   "existingOriginal": {
+    "path": "data/inputs/osaka-kizugawa-review/museum-castles-study.txt",
+    "sha256": "0011d91422d3464f82da52dfe3b2bb8f557ca46e6c9cd7988844f17d3398593b",
+    "pdfManifest": "data/inputs/osaka-kizugawa-review/source-manifest.json（museum-castles-study.pdf）"
+   },
+   "foundBy": "existing-corpus-search",
+   "reservation": "本文は知行の事実だけを書き、続柄や生没を書かない。同定は、天文21年に榎並を知行する安宅冬康という来歴と Wikidata の主名による。名前が一意で、同名の別人は候補の中に無い。"
+  },
+  {
+   "name": "高坂昌信",
+   "japaneseLabel": "高坂昌信",
+   "wikidataId": "Q2477835",
+   "wikidataRevision": 2464073769,
+   "wikidataJapaneseLabel": "春日虎綱",
+   "entityDataUrl": "https://www.wikidata.org/wiki/Special:EntityData/Q2477835.json",
+   "revisionUrl": "https://www.wikidata.org/w/index.php?title=Q2477835&oldid=2464073769",
+   "rawEntityDataSnapshot": "data/research/source-notes/person-identity-corpus-1-raw/Q2477835.json",
+   "rawSha256": "ab9b4d7d6193c6d622309517f845dfa966338ef78531618032a1448e6880a2fc",
+   "identityChecks": [
+    "NDL00380807の主名高坂昌信がPerson典拠に属する",
+    "Wikidata Q2477835の日本語主名春日虎綱・別名高坂昌信とP349が同じNDL典拠へ対応する"
+   ],
+   "adoptedNames": [
+    "高坂昌信",
+    "春日虎綱"
+   ],
+   "scope": "person-identity-only; no historical dates or locations adopted",
+   "nameEvidence": [
+    {
+     "name": "高坂昌信",
+     "supports": [
+      "wikidata-ja-alias",
+      "ndl-primary"
+     ]
+    },
+    {
+     "name": "春日虎綱",
+     "supports": [
+      "wikidata-ja-label-or-alias"
+     ]
+    }
+   ],
+   "identitySourceIds": [
+    "ndlKosakaMasanobuIdentity"
+   ],
+   "identitySourceUrl": "https://id.ndl.go.jp/auth/ndlna/00380807.json",
+   "identitySourceLocator": "個人典拠の主名・人物型・典拠ID",
+   "yearComparison": {
+    "wikidataBirth": [
+     1527
+    ],
+    "wikidataDeath": [
+     1578,
+     1578
+    ],
+    "ndlBirth": "1527",
+    "ndlDeath": "1578"
+   },
+   "ndlId": "00380807",
+   "ndlSnapshot": "data/research/source-notes/person-identity-corpus-1-ndl-kosaka.json",
+   "ndlIdentity": {
+    "uri": "http://id.ndl.go.jp/auth/entity/00380807",
+    "type": {
+     "uri": "http://xmlns.com/foaf/0.1/Person"
+    },
+    "name": "高坂昌信",
+    "dateOfBirth": "1527",
+    "dateOfDeath": "1578",
+    "biographicalInformation": [
+     "武田家家臣"
+    ]
+   },
+   "foundBy": "wikidata-P349",
+   "reservation": "ゲームの名前は高坂昌信、Wikidata の主名は春日虎綱。NDL の主名が高坂昌信で、P349 の相互の対応で同じ人物とした。"
+  },
+  {
+   "name": "飯富虎昌",
+   "japaneseLabel": "飯富虎昌",
+   "wikidataId": "Q2105694",
+   "wikidataRevision": 2532134726,
+   "wikidataJapaneseLabel": "飯富虎昌",
+   "entityDataUrl": "https://www.wikidata.org/wiki/Special:EntityData/Q2105694.json",
+   "revisionUrl": "https://www.wikidata.org/w/index.php?title=Q2105694&oldid=2532134726",
+   "rawEntityDataSnapshot": "data/research/source-notes/person-identity-corpus-1-raw/Q2105694.json",
+   "rawSha256": "5e494c8c7d9ff14361efaa13843cf757e59cd1cef17c61f97742e04cd3def8ff",
+   "identityChecks": [
+    "甲府市の本文が、飯富兵部少輔虎昌を信虎・信玄の二代の宿老で、天文22年（1553）に塩田城代となり、信玄の嫡男義信の補佐役で、永禄8年（1565）10月15日に没したとする",
+    "Wikidata Q2105694の日本語主名が飯富虎昌で、P570の年が1565"
+   ],
+   "adoptedNames": [
+    "飯富虎昌"
+   ],
+   "scope": "person-identity-only; no historical dates or locations adopted",
+   "nameEvidence": [
+    {
+     "name": "飯富虎昌",
+     "supports": [
+      "wikidata-ja-label-or-alias",
+      "public-source"
+     ]
+    }
+   ],
+   "identitySourceIds": [
+    "kofuToramasaIdentity"
+   ],
+   "identitySourceUrl": "https://www.city.kofu.lg.jp/k068/p003088.html",
+   "identitySourceLocator": "「武田二十四将」の飯富兵部少輔虎昌の本文",
+   "yearComparison": {
+    "wikidataBirth": [
+     1504
+    ],
+    "wikidataDeath": [
+     1565
+    ]
+   },
+   "publicOriginalNotRedistributed": {
+    "reason": "市のページの転載の条件を確かめていないため、HTML は Git で配らない。手元の .cache/research-originals/person-identity-corpus-1/toramasa-kofu.html.gz（Git に入れない）に保全する。",
+    "uncompressedSha256": "5bce43d32cd849b882524d299c63af715493e68f200a9ad042a67c6196978bc9",
+    "excerpt": "data/research/source-notes/person-identity-corpus-1-kofu-excerpt.md"
+   },
+   "foundBy": "web-search",
+   "reservation": "旧 URL（city.kofu.yamanashi.jp）は city.kofu.lg.jp へ転送された。生年は本文に無い（「？」）。"
+  }
+ ],
+ "notAdopted": [
+  {
+   "name": "須田満親",
+   "wikidataId": "Q11664642",
+   "ndlCandidate": "01195358",
+   "layer": "evidence-conflict",
+   "reason": "P349 で NDL と対応するが、生年が Wikidata 1526・NDL 1537 と分かれる。第 1 便でも同じ理由で見送った。要確認"
+  },
+  {
+   "name": "本多忠朝",
+   "wikidataId": "Q837870",
+   "layer": "source-type",
+   "reason": "千葉県の「語り継ごう千葉の民話」に大多喜城主本多忠朝が出るが、民話の資料なので同定の根拠にしなかった。要確認"
+  },
+  {
+   "name": "河尻秀隆",
+   "wikidataId": "Q6379555",
+   "layer": "source-not-found",
+   "reason": "今回の条件（既存の入力・NDL の完全一致・Web 検索 1 回）では、公的機関の原本が見つからない。要確認"
+  },
+  {
+   "name": "三好義興",
+   "wikidataId": "Q10865734",
+   "layer": "source-not-found",
+   "reason": "高槻市の資料に家督の記述らしい文があるが、訳文の質が低く文意が取れない。今回の条件では未確認。要確認"
+  },
+  {
+   "name": "大崎義直",
+   "wikidataId": "Q11435067",
+   "layer": "source-not-found",
+   "reason": "今回の条件では公的機関の原本が見つからない（宮城県のページは名生城と大崎氏だけ）。要確認"
+  },
+  {
+   "name": "土居宗珊",
+   "wikidataId": "Q11423174",
+   "layer": "source-not-found",
+   "reason": "今回の条件では公的機関の原本が見つからない。要確認"
+  },
+  {
+   "name": "久武親直",
+   "wikidataId": "Q11369456",
+   "layer": "source-not-found",
+   "reason": "今回の条件では公的機関の原本が見つからない。要確認"
+  }
+ ]
+}
