@@ -12,6 +12,8 @@ STATIC = ROOT / "kuniezu" / "static" / "kuniezu"
 WITHHELD = json.loads((ROOT / "tools" / "faces" / "withheld.json").read_text("utf-8"))
 TILE = 128
 COLUMNS = 10
+# A flat tile after lossy encoding: almost no difference in brightness.
+FLAT_RANGE = 6
 
 
 def test_withheld_names_have_no_portrait_entry() -> None:
@@ -35,4 +37,4 @@ def test_withheld_tiles_are_blank() -> None:
         left, top = (tile % COLUMNS) * TILE, (tile // COLUMNS) * TILE
         inner = sheet.crop((left + 8, top + 8, left + TILE - 8, top + TILE - 8))
         low, high = inner.getextrema()
-        assert high - low <= 6
+        assert high - low <= FLAT_RANGE
