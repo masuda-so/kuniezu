@@ -1,0 +1,33 @@
+{
+  "id": "location:katsuyori-seida-1575",
+  "person": "person:takeda-katsuyori",
+  "place": "place:shitaragahara-seida",
+  "relation": "attested-presence",
+  "role": "本陣",
+  "time": {
+    "kind": "described-period",
+    "label": "長篠・設楽原の戦いの頃（天正3年）",
+    "indexYears": [
+      1575,
+      1575
+    ],
+    "calendar": "Japanese-era-description",
+    "precision": "period",
+    "boundsAreHistoricalStartEnd": false
+  },
+  "sequence": {
+    "group": "shitaragahara-1575-katsuyori",
+    "order": 2,
+    "label": "「勝頼の本陣」：設楽原へ陣地を動かすときに清井田へ本陣を移した"
+  },
+  "source": "shinshiroFujinzuHonjin",
+  "sourceUrl": "https://www.city.shinshiro.lg.jp/mokuteki/shisetu/shiryokan/shitaragahara/fujinzu.html",
+  "locator": "「勝頼の本陣」：設楽原へ陣地を動かすときに清井田へ本陣を移した",
+  "uncertainty": "資料は年も期間も書かない。期間の呼び名と探すための年（1575）は、長篠・設楽原の戦い（既存の命題 nagashino-phases、天正3年）による。滞在の始まり・終わりの境界は主張しない。日付・時刻・滞在の長さは補わない。 移した日・時刻は書かれていない。",
+  "recordType": "sourced-location-observation",
+  "status": "verified-in-specified-scope",
+  "recordedAt": "2026-11-10",
+  "gameBindings": [
+    "TK.BATTLE_MOVEMENTS:長篠の戦い"
+  ]
+}
