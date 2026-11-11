@@ -37,7 +37,9 @@ const timer=setTimeout(()=>{console.error('timeout');chrome.kill();process.exitC
  await call('Runtime.enable');await call('Page.enable');if(root)await call('Fetch.enable',{patterns:[{urlPattern:new globalThis.URL(URL).origin+'/*',requestStage:'Request'}]});await view(1400,1000);await load();await start();await ev('TKUI.speed=0');
  await ev(`(()=>{const make=TKBattleAtlas.make;TKBattleAtlas.make=(...args)=>(window.__viewportController=make(...args));})()`);
  const rows=[];
- for(const title of ['関ヶ原の戦い','長篠の戦い','大坂冬の陣','高天神城の戦い','本能寺の変','耳川の戦い','木津川口の戦い']){
+ /* 「長篠の戦い」は戦役の入口になり合戦図を持たない（#92）。本戦の図は「設楽原の戦い」。 */
+ assert.equal(await ev("TK.CONFLICT_CATALOG['長篠の戦い']?.kind"),'campaign','長篠の戦いは戦役の入口');
+ for(const title of ['関ヶ原の戦い','設楽原の戦い','大坂冬の陣','高天神城の戦い','本能寺の変','耳川の戦い','木津川口の戦い']){
   const exists=await ev(`!!TK.BATTLES[${JSON.stringify(title)}]`);assert.ok(exists,title);
   await ev(`TKUI.open('scene',{title:${JSON.stringify(title)}})`);await until("document.querySelector('#bCv')?.dataset.mapReady==='true'");
   await ev('window.__viewportController.pause();window.__viewportController.seek(50)');
