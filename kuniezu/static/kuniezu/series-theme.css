@@ -1,0 +1,248 @@
+/*
+ * Web series theme for Bootstrap 5.3.
+ *
+ * Shared by the Web / Django repositories. This file is identical in each
+ * repository: it reads the product's --series-* tokens and maps them onto
+ * Bootstrap's own CSS variables, so every page is built from stock Bootstrap
+ * components and only the tokens differ between products.
+ *
+ * A product stylesheet must define, on :root:
+ *   --series-ink / --series-ink-rgb            text and dark surfaces
+ *   --series-surface / --series-surface-rgb    page background
+ *   --series-surface-alt                       cards and raised panels
+ *   --series-accent / --series-accent-rgb      primary action colour
+ *   --series-on-accent                         text on the accent colour
+ *   --series-emphasis / --series-emphasis-rgb  accented text and links
+ *   --series-font-body / --series-font-display font stacks
+ */
+
+:root,
+[data-bs-theme="light"] {
+  --bs-body-font-family: var(--series-font-body);
+  --bs-body-color: var(--series-ink);
+  --bs-body-color-rgb: var(--series-ink-rgb);
+  --bs-body-bg: var(--series-surface);
+  --bs-body-bg-rgb: var(--series-surface-rgb);
+  --bs-emphasis-color: var(--series-ink);
+  --bs-emphasis-color-rgb: var(--series-ink-rgb);
+  --bs-heading-color: var(--series-ink);
+  --bs-secondary-color: rgba(var(--series-ink-rgb), 0.72);
+  --bs-secondary-color-rgb: var(--series-ink-rgb);
+  --bs-tertiary-bg: var(--series-surface-alt);
+  --bs-border-color: rgba(var(--series-ink-rgb), 0.18);
+  --bs-border-color-translucent: rgba(var(--series-ink-rgb), 0.12);
+  --bs-primary: var(--series-accent);
+  --bs-primary-rgb: var(--series-accent-rgb);
+  --bs-dark: var(--series-ink);
+  --bs-dark-rgb: var(--series-ink-rgb);
+  --bs-light: var(--series-surface);
+  --bs-light-rgb: var(--series-surface-rgb);
+  --bs-link-color: var(--series-emphasis);
+  --bs-link-color-rgb: var(--series-emphasis-rgb);
+  --bs-link-hover-color: var(--series-ink);
+  --bs-link-hover-color-rgb: var(--series-ink-rgb);
+  --bs-border-radius: 0.5rem;
+  --bs-border-radius-lg: 0.75rem;
+  --bs-border-radius-xl: 1.5rem;
+  --bs-focus-ring-color: rgba(var(--series-emphasis-rgb), 0.45);
+  --bs-focus-ring-width: 0.2rem;
+}
+
+/* Headings use the display stack; body copy keeps the body stack. */
+h1,
+h2,
+h3,
+.h1,
+.h2,
+.h3,
+.display-1,
+.display-2,
+.display-3,
+.display-4,
+.display-5,
+.display-6 {
+  font-family: var(--series-font-display);
+}
+
+/* Keyboard focus is always visible, on every component. */
+:where(a, button, input, select, textarea, [tabindex]):focus-visible {
+  outline: 3px solid var(--series-emphasis);
+  outline-offset: 3px;
+}
+
+/* Buttons: primary is the product accent, dark is the product ink. */
+.btn {
+  --bs-btn-font-weight: 600;
+  --bs-btn-padding-x: 1.25rem;
+  --bs-btn-padding-y: 0.625rem;
+}
+
+.btn-primary {
+  --bs-btn-color: var(--series-on-accent);
+  --bs-btn-bg: var(--series-accent);
+  --bs-btn-border-color: var(--series-accent);
+  --bs-btn-hover-color: var(--series-on-accent);
+  --bs-btn-hover-bg: color-mix(in srgb, var(--series-accent) 86%, var(--series-ink));
+  --bs-btn-hover-border-color: color-mix(in srgb, var(--series-accent) 86%, var(--series-ink));
+  --bs-btn-active-color: var(--series-on-accent);
+  --bs-btn-active-bg: color-mix(in srgb, var(--series-accent) 76%, var(--series-ink));
+  --bs-btn-active-border-color: color-mix(in srgb, var(--series-accent) 76%, var(--series-ink));
+  --bs-btn-disabled-color: var(--series-on-accent);
+  --bs-btn-disabled-bg: var(--series-accent);
+  --bs-btn-disabled-border-color: var(--series-accent);
+  --bs-btn-focus-shadow-rgb: var(--series-accent-rgb);
+}
+
+.btn-dark {
+  --bs-btn-color: var(--series-surface);
+  --bs-btn-bg: var(--series-ink);
+  --bs-btn-border-color: var(--series-ink);
+  --bs-btn-hover-color: var(--series-surface);
+  --bs-btn-hover-bg: color-mix(in srgb, var(--series-ink) 84%, var(--series-surface));
+  --bs-btn-hover-border-color: color-mix(in srgb, var(--series-ink) 84%, var(--series-surface));
+  --bs-btn-active-color: var(--series-surface);
+  --bs-btn-active-bg: color-mix(in srgb, var(--series-ink) 74%, var(--series-surface));
+  --bs-btn-active-border-color: var(--series-ink);
+  --bs-btn-disabled-bg: var(--series-ink);
+  --bs-btn-disabled-border-color: var(--series-ink);
+  --bs-btn-focus-shadow-rgb: var(--series-ink-rgb);
+}
+
+.btn-outline-dark {
+  --bs-btn-color: var(--series-ink);
+  --bs-btn-border-color: rgba(var(--series-ink-rgb), 0.45);
+  --bs-btn-hover-color: var(--series-surface);
+  --bs-btn-hover-bg: var(--series-ink);
+  --bs-btn-hover-border-color: var(--series-ink);
+  --bs-btn-active-color: var(--series-surface);
+  --bs-btn-active-bg: var(--series-ink);
+  --bs-btn-active-border-color: var(--series-ink);
+  --bs-btn-focus-shadow-rgb: var(--series-ink-rgb);
+}
+
+/* Cards and raised panels share one surface, radius and border. */
+.card {
+  --bs-card-bg: var(--series-surface-alt);
+  --bs-card-border-color: rgba(var(--series-ink-rgb), 0.12);
+  --bs-card-border-radius: var(--bs-border-radius-xl);
+  --bs-card-inner-border-radius: calc(var(--bs-border-radius-xl) - 1px);
+  --bs-card-spacer-x: 1.5rem;
+  --bs-card-spacer-y: 1.5rem;
+  --bs-card-cap-bg: transparent;
+}
+
+.modal {
+  --bs-modal-bg: var(--series-surface-alt);
+  --bs-modal-border-radius: var(--bs-border-radius-xl);
+}
+
+.offcanvas {
+  --bs-offcanvas-bg: var(--series-surface-alt);
+}
+
+.dropdown-menu {
+  --bs-dropdown-bg: var(--series-surface-alt);
+  --bs-dropdown-link-active-bg: var(--series-ink);
+  --bs-dropdown-link-active-color: var(--series-surface);
+}
+
+/* Navigation: the selected item is the product ink, never Bootstrap blue. */
+.nav-pills {
+  --bs-nav-pills-border-radius: 50rem;
+  --bs-nav-pills-link-active-color: var(--series-surface);
+  --bs-nav-pills-link-active-bg: var(--series-ink);
+}
+
+.nav {
+  --bs-nav-link-color: var(--series-ink);
+  --bs-nav-link-hover-color: var(--series-emphasis);
+}
+
+.navbar {
+  --bs-navbar-color: var(--series-ink);
+  --bs-navbar-hover-color: var(--series-emphasis);
+  --bs-navbar-active-color: var(--series-ink);
+  --bs-navbar-brand-color: var(--series-ink);
+  --bs-navbar-brand-hover-color: var(--series-ink);
+  --bs-navbar-toggler-border-color: rgba(var(--series-ink-rgb), 0.3);
+}
+
+.list-group {
+  --bs-list-group-bg: transparent;
+  --bs-list-group-color: inherit;
+  --bs-list-group-border-color: rgba(var(--series-ink-rgb), 0.18);
+  --bs-list-group-action-color: inherit;
+  --bs-list-group-action-hover-color: var(--series-ink);
+  --bs-list-group-action-hover-bg: rgba(var(--series-ink-rgb), 0.06);
+  --bs-list-group-action-active-color: var(--series-ink);
+  --bs-list-group-action-active-bg: rgba(var(--series-ink-rgb), 0.1);
+  --bs-list-group-active-color: var(--series-surface);
+  --bs-list-group-active-bg: var(--series-ink);
+  --bs-list-group-active-border-color: var(--series-ink);
+}
+
+.form-control,
+.form-select {
+  --bs-body-bg: var(--series-surface-alt);
+}
+
+.form-control:focus,
+.form-select:focus,
+.form-check-input:focus {
+  border-color: var(--series-emphasis);
+  box-shadow: 0 0 0 0.2rem rgba(var(--series-emphasis-rgb), 0.25);
+}
+
+.form-check-input:checked {
+  background-color: var(--series-ink);
+  border-color: var(--series-ink);
+}
+
+/* Dark sections (text-bg-dark) keep readable links and focus rings. */
+.text-bg-dark {
+  --bs-link-color-rgb: var(--series-surface-rgb);
+  --bs-link-hover-color-rgb: var(--series-accent-rgb);
+  --bs-border-color: rgba(var(--series-surface-rgb), 0.25);
+  --bs-secondary-color: rgba(var(--series-surface-rgb), 0.72);
+}
+
+.text-bg-dark :where(a, button):focus-visible {
+  outline-color: var(--series-accent);
+}
+
+/* Shared helpers that Bootstrap does not ship. */
+.text-emphasis-series {
+  color: var(--series-emphasis);
+}
+
+.eyebrow {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.section-pad {
+  padding-block: 6rem;
+}
+
+@media (max-width: 767.98px) {
+  .section-pad {
+    padding-block: 4rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

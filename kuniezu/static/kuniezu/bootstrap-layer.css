@@ -1,0 +1,50 @@
+/* Bootstrap 5.3 と系列共通の主題を、カスケードレイヤーに入れて読み込む。
+   レイヤーの中の指定は、レイヤーの外にある index.css・theme-washi.css より必ず弱い。
+   series-theme.css は masuda-so/website と同一のファイル。違いは下のトークンだけ。
+
+   移行の仕組み：Bootstrap の部品で組み直した領域は、その根の要素に class="bs" を付ける。
+   .bs の外（まだ組み直していない領域）では、legacy レイヤーが Bootstrap の初期化
+   （Reboot）と主題の要素指定を revert で打ち消すので、見た目は導入前と変わらない。
+   .bs の中では Reboot・部品・主題がそのまま効く。全領域が .bs になったら legacy を消す。 */
+@layer bootstrap, series, legacy;
+@import url("vendor/bootstrap-5.3.8/bootstrap.min.css?v=d85327d99c") layer(bootstrap);
+@import url("series-theme.css?v=789806d9fc") layer(series);
+
+/* 国絵図のトークン：和紙の地、墨の文字、朱の印（theme-washi.css の配色と同じ値）。 */
+:root {
+  --series-ink: #2a1d10;
+  --series-ink-rgb: 42, 29, 16;
+  --series-surface: #f6efdb;
+  --series-surface-rgb: 246, 239, 219;
+  --series-surface-alt: #fbf6e8;
+  --series-accent: #9a2b1f;
+  --series-accent-rgb: 154, 43, 31;
+  --series-on-accent: #fff6e4;
+  --series-emphasis: #9a2b1f;
+  --series-emphasis-rgb: 154, 43, 31;
+  --series-font-body: "Zen Kaku Gothic New", "Hiragino Sans", "Yu Gothic", system-ui, sans-serif;
+  --series-font-display: "Yuji Syuku", "Shippori Mincho B1", "Hiragino Mincho ProN", serif;
+}
+
+/* まだ組み直していない領域（.bs の外）を、導入前の見た目に保つ。
+   Bootstrap と主題は要素だけでなく .btn・.card・.eyebrow のようなクラスにも効くが、
+   既存の画面も同じ名前のクラスを使っている。そこで .bs の外では、レイヤー内の
+   指定をすべて revert（ブラウザの既定）に戻す。既存の指定はレイヤーの外に
+   あるので、これより強く、影響を受けない。--bs-* と --series-* の変数は残る。 */
+@layer legacy {
+  :where(:not(.bs, .bs *)):where(:not([width], [height])),
+  :where(:not(.bs, .bs *))::before,
+  :where(:not(.bs, .bs *))::after,
+  :where(:not(.bs, .bs *))::marker,
+  :where(:not(.bs, .bs *))::placeholder,
+  :where(:not(.bs, .bs *))::file-selector-button {
+    all: revert;
+  }
+
+  /* width・height 属性を持つ要素（肖像の img、地図や合戦図の canvas）は除く。
+     属性による寸法は revert で失われるため。これらに Reboot が当てるのは
+     vertical-align だけなので、それだけを戻す。 */
+  :where(:not(.bs, .bs *)):where([width], [height]) {
+    vertical-align: revert;
+  }
+}
