@@ -8,6 +8,7 @@
     "command": "node tools/map/build-map.cjs --no-previews && uv sync --locked --no-dev && .venv/bin/python scripts/build_static.py"
   },
   "assets": {
-    "directory": "./dist/client"
+    "directory": "./dist/client",
+    "not_found_handling": "404-page"
   }
 }
