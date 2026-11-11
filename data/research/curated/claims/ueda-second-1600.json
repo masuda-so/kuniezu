@@ -1,0 +1,38 @@
+{
+  "id": "ueda-second-1600",
+  "entity": "place:ueda-castle",
+  "predicate": "military-event",
+  "value": "徳川秀忠が信濃の染屋村に陣し、馬廻に上田城の近くの刈田をさせ、城兵がこれを防いで戦った。",
+  "validYears": [
+    1600,
+    1600
+  ],
+  "datePrecision": "day",
+  "source": "hiDainihonshiryoKobun",
+  "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+  "locator": "綱文：和暦 慶長5年9月6日 第2条（区分 史料綜覧、編11・冊913（データベースの表示値）、258頁）",
+  "gameBindings": [
+    "TK.HIST:第二次上田合戦"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-09",
+  "uncertainty": "綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。",
+  "linkedEntities": [
+    "place:ueda-castle",
+    "person:徳川秀忠"
+  ],
+  "eventTime": {
+    "kind": "dated-event",
+    "date": [
+      1600,
+      9,
+      6
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": false,
+    "precision": "day"
+  },
+  "eventRelation": "military-event",
+  "eventScope": "綱文が掲げる日付。慶長5年9月6日はゲーム共通の暦表で1600年10月12日。最終年表の第二次上田合戦（1600年10月12日）は一致する。秀忠が美濃に軍を進めたことは「尋で」なので日付にしない。9月2日の条（小諸への着陣と昌幸の誘降）は別。"
+}

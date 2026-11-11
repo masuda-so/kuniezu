@@ -1,0 +1,39 @@
+{
+  "id": "mikatagahara-1572",
+  "entity": "place:mikatagahara",
+  "predicate": "military-event",
+  "value": "武田信玄が徳川家康と遠江三方原で戦って破り、家康の居城の浜松に迫った。転じて刑部に陣した。",
+  "validYears": [
+    1572,
+    1572
+  ],
+  "datePrecision": "day",
+  "source": "hiDainihonshiryoKobun",
+  "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+  "locator": "綱文：和暦 元亀3年12月22日 第3条（区分 大日本史料、第10編之11（データベースの表示値）、8頁）",
+  "gameBindings": [
+    "TK.HIST:三方ヶ原の戦い"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-09",
+  "uncertainty": "綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。",
+  "linkedEntities": [
+    "place:mikatagahara",
+    "person:武田信玄",
+    "person:tokugawa-ieyasu"
+  ],
+  "eventTime": {
+    "kind": "dated-event",
+    "date": [
+      1572,
+      12,
+      22
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": false,
+    "precision": "day"
+  },
+  "eventRelation": "military-event",
+  "eventScope": "綱文が掲げる日付。元亀3年12月22日はゲーム共通の暦表で1573年1月25日。最終年表の三方ヶ原の戦い（1573年1月25日）は一致する。浜松に迫ったことと刑部への転陣は同じ条に続けて書くが、浜松城と刑部の場所は結ばない。"
+}

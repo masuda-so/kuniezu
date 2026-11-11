@@ -1,0 +1,38 @@
+{
+  "id": "ming-envoys-audience-1596",
+  "entity": "person:toyotomi-hideyoshi",
+  "predicate": "diplomatic-audience",
+  "value": "秀吉が明の冊封日本正使の楊方亨・副使の沈惟敬を大坂城に引見し、誥命・勅諭・金印・冠服を受けた。",
+  "validYears": [
+    1596,
+    1596
+  ],
+  "datePrecision": "day",
+  "source": "hiDainihonshiryoKobun",
+  "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+  "locator": "綱文：和暦 慶長元年9月1日 第1条（区分 史料綜覧、編11・冊913（データベースの表示値）、122頁）",
+  "gameBindings": [
+    "TK.HIST:和議の破れ"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-09",
+  "uncertainty": "綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。",
+  "linkedEntities": [
+    "person:toyotomi-hideyoshi",
+    "place:osaka-castle"
+  ],
+  "eventTime": {
+    "kind": "dated-event",
+    "date": [
+      1596,
+      9,
+      1
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": false,
+    "precision": "day"
+  },
+  "eventRelation": "diplomatic-audience",
+  "eventScope": "綱文が掲げる日付。慶長元年9月1日はゲーム共通の暦表で1596年10月22日。最終年表の和議の破れ（1596年10月22日）は同じ日。命題は引見と受領の日。翌日（「明日」）の饗応、誥勅の読み上げ、秀吉が明の違約に怒って冊封使を追い返したことは同じ条の後段で、この日の出来事にしない。年表の出来事は和議が破れたことを表し、引見とは別の行為なので、同じ日であることを一致の判定には使わない。綱文はこの年を改元前も慶長1年と書く。"
+}

@@ -1,0 +1,37 @@
+{
+  "id": "osaka-winter-decision-1614",
+  "entity": "person:tokugawa-ieyasu",
+  "predicate": "administrative-document",
+  "value": "板倉勝重の大坂の騒ぎを知らせる書状が駿府に届き、家康は大坂を討つことを決めて秀忠に告げ、近江・伊勢・美濃・尾張など沿道の諸大名に出陣を命じた。",
+  "validYears": [
+    1614,
+    1614
+  ],
+  "datePrecision": "day",
+  "source": "hiDainihonshiryoKobun",
+  "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+  "locator": "綱文：和暦 慶長19年10月1日 第3条（区分 大日本史料、第12編之15（データベースの表示値）、33頁）",
+  "gameBindings": [
+    "TK.HIST:大坂冬の陣"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-09",
+  "uncertainty": "綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。",
+  "linkedEntities": [
+    "person:tokugawa-ieyasu"
+  ],
+  "eventTime": {
+    "kind": "dated-event",
+    "date": [
+      1614,
+      10,
+      1
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": false,
+    "precision": "day"
+  },
+  "eventRelation": "administrative-document",
+  "eventScope": "綱文が掲げる日付。慶長19年10月1日はゲーム共通の暦表で1614年11月2日。最終年表の大坂冬の陣（1614年12月20日）は綱文より48日遅い。命題は討伐の決定と出陣の命令の日。年表の出来事は合戦の始まりを表し、命令とは別の行為なので、この差を一致・不一致の判定には使わない。"
+}

@@ -1,0 +1,40 @@
+{
+  "id": "hetsugigawa-1586",
+  "entity": "place:hetsugigawa",
+  "predicate": "military-event",
+  "value": "島津家久が大友氏の鶴ヶ城を攻めていたところ、この日、千石秀久・長宗我部信親らが救おうと戸次川を渡って家久と戦い、秀久は敗走し、信親は十河存保とともに戦死した。",
+  "validYears": [
+    1586,
+    1586
+  ],
+  "datePrecision": "day",
+  "source": "hiDainihonshiryoKobun",
+  "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+  "locator": "綱文：和暦 天正14年12月13日 第3条（区分 史料綜覧、編11・冊912（データベースの表示値）、146頁）",
+  "gameBindings": [
+    "TK.HIST:戸次川の戦い"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-09",
+  "uncertainty": "綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。",
+  "linkedEntities": [
+    "place:hetsugigawa",
+    "person:chosokabe-nobuchika",
+    "person:千石秀久",
+    "person:十河存保"
+  ],
+  "eventTime": {
+    "kind": "dated-event",
+    "date": [
+      1586,
+      12,
+      13
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": false,
+    "precision": "day"
+  },
+  "eventRelation": "military-event",
+  "eventScope": "綱文が掲げる日付。天正14年12月13日はゲーム共通の暦表で1587年1月21日。最終年表の戸次川の戦い（1587年1月20日）は綱文より1日早い。綱文の「是日」が掛かるのは戸次川での戦いで、家久の利尾山への移陣と鶴ヶ城の攻撃は「是より先」、鶴ヶ城の落城は「尋で」なので日付にしない。家久は是より先の主体として名が出るので、この日の参加者としては結ばない。"
+}

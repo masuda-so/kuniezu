@@ -3,5 +3,14 @@
   "name": "小山",
   "geometry": null,
   "geometryStatus": "not-asserted",
-  "note": "所在地名の記録。本文は城内の持場や宿泊地点を特定しない。"
+  "note": "所在地名の記録。本文は城内の持場や宿泊地点を特定しない。 下野の小山（1600 年の家康の着陣と小山の評定）を指す。",
+  "aliases": [
+    "小山（下野）"
+  ],
+  "identityBasis": {
+    "scope": "確認済み命題の対象場所。日時と関係は元命題に保持し、座標は未主張。",
+    "claimIds": [
+      "oyama-council-1600"
+    ]
+  }
 }

@@ -1,0 +1,38 @@
+{
+  "id": "sanada-to-hojo-1582",
+  "entity": "person:sanada-masayuki",
+  "predicate": "submission",
+  "value": "北条氏直が信濃に入り、真田昌幸ら諸将の多くが来て属した。",
+  "validYears": [
+    1582,
+    1582
+  ],
+  "datePrecision": "day",
+  "source": "hiDainihonshiryoKobun",
+  "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+  "locator": "綱文：和暦 天正10年7月18日 第5条（区分 大日本史料、第11編之2（データベースの表示値）、103頁）",
+  "gameBindings": [
+    "TK.HIST:真田の主替え"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-09",
+  "uncertainty": "綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。",
+  "linkedEntities": [
+    "person:sanada-masayuki",
+    "person:北条氏直"
+  ],
+  "eventTime": {
+    "kind": "dated-event",
+    "date": [
+      1582,
+      7,
+      18
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": false,
+    "precision": "day"
+  },
+  "eventRelation": "submission",
+  "eventScope": "綱文が掲げる日付。天正10年7月18日はゲーム共通の暦表で1582年8月6日。最終年表の真田の主替え（1582年9月20日）は綱文より45日遅い。命題は昌幸らが北条氏に属したこととし、北条氏の臣の黒澤繁信の甲斐金山衆への書状（同じ条の後段）は含めない。"
+}

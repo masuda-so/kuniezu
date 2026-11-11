@@ -12,7 +12,8 @@
   "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
   "locator": "綱文：和暦 永禄6年7月6日 第2条（区分 史料綜覧、編9・冊910（データベースの表示値）、571頁）",
   "gameBindings": [
-    "TK.HIST:rename:松平元康から松平家康への改名"
+    "TK.HIST:rename:松平元康から松平家康への改名",
+    "TK.HIST:元康から家康へ"
   ],
   "recordType": "verified-historical-claim",
   "status": "verified-in-specified-scope",
@@ -33,5 +34,5 @@
     "precision": "day"
   },
   "eventRelation": "renamed",
-  "eventScope": "綱文が掲げる改名・改姓とその日付。ゲームの年表の日付は 1563-8-1、綱文をゲームの暦表で直すと 1563-7-25（不一致（-7 日））。年表は変えていない。 名乗りの使い分けや以後の文書の署名は補わない。"
+  "eventScope": "綱文が掲げる改名・改姓とその日付。ゲームの年表の日付は 1563-8-1、綱文をゲームの暦表で直すと 1563-7-25（不一致（-7 日））。年表は変えていない。 名乗りの使い分けや以後の文書の署名は補わない。 最終年表の元康から家康へ（1563年8月1日）も、この条に結ぶ。綱文の永禄6年7月6日はゲーム共通の暦表で1563年7月25日で、年表は7日遅い。"
 }

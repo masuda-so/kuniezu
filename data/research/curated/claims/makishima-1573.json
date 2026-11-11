@@ -1,0 +1,39 @@
+{
+  "id": "makishima-1573",
+  "entity": "place:makishima-castle",
+  "predicate": "military-event",
+  "value": "織田信長が足利義昭を山城の槙島城に攻め、義昭は子を人質に出して城を出て、枇杷荘を経て三好義継の居城の河内若江に移った。",
+  "validYears": [
+    1573,
+    1573
+  ],
+  "datePrecision": "day",
+  "source": "hiDainihonshiryoKobun",
+  "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+  "locator": "綱文：和暦 天正1年7月18日 第1条（区分 大日本史料、第10編之16（データベースの表示値）、319頁）",
+  "gameBindings": [
+    "TK.HIST:室町幕府の滅亡"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-09",
+  "uncertainty": "綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。",
+  "linkedEntities": [
+    "place:makishima-castle",
+    "person:oda-nobunaga",
+    "person:足利義昭"
+  ],
+  "eventTime": {
+    "kind": "dated-event",
+    "date": [
+      1573,
+      7,
+      18
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": false,
+    "precision": "day"
+  },
+  "eventRelation": "military-event",
+  "eventScope": "綱文が掲げる日付。天正元年7月18日はゲーム共通の暦表で1573年8月15日。最終年表の室町幕府の滅亡（1573年8月15日）は一致する。命題は槙島城の攻撃と義昭の退城の日。幕府の滅亡という評価や、若江での再起の動き（8月1日の条）には広げない。綱文はこの年を改元前も天正1年と書く。"
+}

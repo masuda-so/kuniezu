@@ -1,0 +1,40 @@
+{
+  "id": "ishida-execution-1600",
+  "entity": "person:石田三成",
+  "predicate": "death-date",
+  "value": "徳川家康が石田三成・小西行長・安国寺恵瓊を京都の六条河原で斬り、長束正家の首を合わせて三条橋にさらした。",
+  "validYears": [
+    1600,
+    1600
+  ],
+  "datePrecision": "day",
+  "source": "hiDainihonshiryoKobun",
+  "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+  "locator": "綱文：和暦 慶長5年10月1日 第1条（区分 史料綜覧、編11・冊913（データベースの表示値）、275頁）",
+  "gameBindings": [
+    "TK.HIST:石田三成の処刑"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-09",
+  "uncertainty": "綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。",
+  "linkedEntities": [
+    "person:石田三成",
+    "person:小西行長",
+    "person:安国寺恵瓊",
+    "person:tokugawa-ieyasu"
+  ],
+  "eventTime": {
+    "kind": "dated-event",
+    "date": [
+      1600,
+      10,
+      1
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": false,
+    "precision": "day"
+  },
+  "eventRelation": "death-date",
+  "eventScope": "綱文が掲げる日付。慶長5年10月1日はゲーム共通の暦表で1600年11月6日。最終年表の石田三成の処刑（1600年11月6日）は一致する。長束正家の死はこの日ではない（首をさらしただけ）ので結ばない。"
+}

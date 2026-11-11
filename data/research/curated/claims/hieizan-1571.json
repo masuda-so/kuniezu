@@ -1,0 +1,38 @@
+{
+  "id": "hieizan-1571",
+  "entity": "place:enryakuji",
+  "predicate": "military-event",
+  "value": "織田信長が近江常楽寺を発して瀬田の山岡景猶の城に入り、延暦寺の衆徒が朝倉義景に味方したので、これを攻めて堂塔を焼き、京都に入った。",
+  "validYears": [
+    1571,
+    1571
+  ],
+  "datePrecision": "day",
+  "source": "hiDainihonshiryoKobun",
+  "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+  "locator": "綱文：和暦 元亀2年9月12日 第1条（区分 大日本史料、第10編之6（データベースの表示値）、854頁）",
+  "gameBindings": [
+    "TK.HIST:比叡山焼き討ち"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-09",
+  "uncertainty": "綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。",
+  "linkedEntities": [
+    "place:enryakuji",
+    "person:oda-nobunaga"
+  ],
+  "eventTime": {
+    "kind": "dated-event",
+    "date": [
+      1571,
+      9,
+      12
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": false,
+    "precision": "day"
+  },
+  "eventRelation": "military-event",
+  "eventScope": "綱文が掲げる日付。元亀2年9月12日はゲーム共通の暦表で1571年9月30日。最終年表の比叡山焼き討ち（1571年9月30日）は一致する。掲出日は延暦寺の攻撃と焼き討ちに限り、常楽寺の出発・瀬田への入城（先行する行程）と京都への入京の日付は示さない。朝倉義景は衆徒が味方した相手として名が出るだけなので結ばない。"
+}

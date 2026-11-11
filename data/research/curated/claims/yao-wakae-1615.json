@@ -1,0 +1,41 @@
+{
+  "id": "yao-wakae-1615",
+  "entity": "place:yao-wakae",
+  "predicate": "military-event",
+  "value": "大坂方の木村重成・長宗我部盛親らが若江・八尾の付近に陣し、藤堂高虎は盛親と八尾で、井伊直孝は重成と若江で戦った。重成は敗れて死に、盛親も退いた。",
+  "validYears": [
+    1615,
+    1615
+  ],
+  "datePrecision": "day",
+  "source": "hiDainihonshiryoKobun",
+  "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+  "locator": "綱文：和暦 元和元年5月6日 第2条（区分 大日本史料、第12編之18（データベースの表示値）、798頁）",
+  "gameBindings": [
+    "TK.HIST:八尾・若江の戦い"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-09",
+  "uncertainty": "綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。",
+  "linkedEntities": [
+    "place:yao-wakae",
+    "person:木村重成",
+    "person:chosokabe-morichika",
+    "person:藤堂高虎",
+    "person:井伊直孝"
+  ],
+  "eventTime": {
+    "kind": "dated-event",
+    "date": [
+      1615,
+      5,
+      6
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": false,
+    "precision": "day"
+  },
+  "eventRelation": "military-event",
+  "eventScope": "綱文が掲げる日付。元和元年5月6日はゲーム共通の暦表で1615年6月2日。最終年表の八尾・若江の戦い（1615年6月2日）は一致する。"
+}

@@ -1,0 +1,38 @@
+{
+  "id": "hasedo-1600",
+  "entity": "place:hasedo-castle",
+  "predicate": "documented-siege-phase",
+  "value": "上杉景勝の老臣の直江兼続が最上義光の山形城に向けて進み、この日、畑谷城を攻め落として守将の江口五兵衛父子を斬り、長谷堂城を囲んだ。",
+  "validYears": [
+    1600,
+    1600
+  ],
+  "datePrecision": "day",
+  "source": "hiDainihonshiryoKobun",
+  "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+  "locator": "綱文：和暦 慶長5年9月13日 第6条（区分 史料綜覧、編11・冊913（データベースの表示値）、261頁）",
+  "gameBindings": [
+    "TK.HIST:長谷堂城の戦い"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-09",
+  "uncertainty": "綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。",
+  "linkedEntities": [
+    "place:hasedo-castle",
+    "person:直江兼続"
+  ],
+  "eventTime": {
+    "kind": "dated-event",
+    "date": [
+      1600,
+      9,
+      13
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": false,
+    "precision": "day"
+  },
+  "eventRelation": "documented-siege-phase",
+  "eventScope": "綱文が掲げる日付。慶長5年9月13日はゲーム共通の暦表で1600年10月19日。最終年表の長谷堂城の戦い（1600年10月21日）は綱文より2日遅い。綱文の「是日」が掛かるのは畑谷城の攻略と長谷堂城の包囲で、米沢からの進撃は「是より先」。包囲の終わりには広げない。景勝・義光は、この日の行為の当事者として結ばない。"
+}

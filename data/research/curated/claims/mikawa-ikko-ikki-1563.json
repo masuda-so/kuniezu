@@ -1,0 +1,37 @@
+{
+  "id": "mikawa-ikko-ikki-1563",
+  "entity": "person:tokugawa-ieyasu",
+  "predicate": "military-event",
+  "value": "三河佐々木城将の菅沼定顕が一向宗の上宮寺に違乱したので、上宮寺は本証寺・勝鬘寺と謀って一揆を起こした。酒井忠尚・吉良義昭らがこれに加わり、主君の松平家康に背いた。",
+  "validYears": [
+    1563,
+    1563
+  ],
+  "datePrecision": "period",
+  "source": "hiDainihonshiryoKobun",
+  "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+  "locator": "綱文：和暦 永禄6年是秋 第1条（区分 史料綜覧、編9・冊910（データベースの表示値）、575頁）",
+  "gameBindings": [
+    "TK.HIST:三河一向一揆"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-09",
+  "uncertainty": "綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。",
+  "linkedEntities": [
+    "person:tokugawa-ieyasu"
+  ],
+  "eventTime": {
+    "kind": "described-period",
+    "label": "永禄6年秋（綱文は「是秋」）",
+    "indexYears": [
+      1563,
+      1563
+    ],
+    "calendar": "Japanese-era-description",
+    "precision": "period",
+    "boundsAreHistoricalStartEnd": false
+  },
+  "eventRelation": "military-event",
+  "eventScope": "綱文が掲げる季節。永禄6年の秋（7〜9月）はゲーム共通の暦表で1563年7月20日〜10月16日。最終年表の三河一向一揆（1563年10月1日）はこの間にあり、季節の精度で一致する。一揆の起こりの日は綱文に無いので補わない。11月25日の原木坂の戦い（別の条）には広げない。家康は背かれた主君として結ぶ。寺と加わった者は人物・場所の ID が無いので結ばない。"
+}

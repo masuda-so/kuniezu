@@ -1,0 +1,38 @@
+{
+  "id": "chasen-kitabatake-heir-1569",
+  "entity": "person:oda-nobukatsu",
+  "predicate": "castle-assignment",
+  "value": "織田茶筅（のちの信雄）が北畠氏を継ぎ、大河内城に入った。",
+  "validYears": [
+    1569,
+    1569
+  ],
+  "datePrecision": "day",
+  "source": "hiDainihonshiryoKobun",
+  "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+  "locator": "綱文：和暦 永禄12年10月11日 第2条（区分 大日本史料、第10編之3（データベースの表示値）、315頁）",
+  "gameBindings": [
+    "TK.HIST:北畠氏への養子受入"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-09",
+  "uncertainty": "綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。",
+  "linkedEntities": [
+    "person:oda-nobukatsu",
+    "place:okawachi-castle"
+  ],
+  "eventTime": {
+    "kind": "dated-event",
+    "date": [
+      1569,
+      10,
+      11
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": false,
+    "precision": "day"
+  },
+  "eventRelation": "castle-assignment",
+  "eventScope": "綱文が掲げる日付。永禄12年10月11日はゲーム共通の暦表で1569年11月19日。最終年表の北畠氏への養子受入（1569年12月5日）は綱文より16日遅い。同じ日付の別の条（大日本史料 第10編之3、303頁）は、大河内城の攻囲と具教の和睦と、茶筅を北畠氏の後とする約束を掲げる。"
+}

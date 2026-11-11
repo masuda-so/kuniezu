@@ -1,0 +1,38 @@
+{
+  "id": "otomo-surrender-1600",
+  "entity": "person:otomo-yoshimune",
+  "predicate": "submission",
+  "value": "黒田如水（孝高）が老臣の母里友信に大友吉統を説かせ、この日、吉統が降った。如水は吉統を居城の豊前中津に送った。",
+  "validYears": [
+    1600,
+    1600
+  ],
+  "datePrecision": "day",
+  "source": "hiDainihonshiryoKobun",
+  "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+  "locator": "綱文：和暦 慶長5年9月15日 第5条（区分 史料綜覧、編11・冊913（データベースの表示値）、264頁）",
+  "gameBindings": [
+    "TK.HIST:石垣原の戦いの後、大友義統が降伏"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-09",
+  "uncertainty": "綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。",
+  "linkedEntities": [
+    "person:otomo-yoshimune",
+    "person:kuroda-yoshitaka"
+  ],
+  "eventTime": {
+    "kind": "dated-event",
+    "date": [
+      1600,
+      9,
+      15
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": false,
+    "precision": "day"
+  },
+  "eventRelation": "submission",
+  "eventScope": "綱文が掲げる日付。慶長5年9月15日はゲーム共通の暦表で1600年10月21日。最終年表の石垣原の戦いの後、大友義統が降伏（1600年10月21日）は一致する。立石の険に拠ったことは「是より先」なので日付にしない。"
+}
