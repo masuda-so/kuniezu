@@ -156,6 +156,8 @@ is [docs/README.md](docs/README.md); open requests and ownership are in
 
 ## Getting started and usage
 
+The public build is served as static files on Cloudflare Workers (`wrangler.jsonc`). `npx wrangler deploy` builds the map, writes the static export and deploys it. This is a work in progress and may change without notice.
+
 Run `node tools/map/build-map.cjs --vectors-only` to republish edited GeoJSON,
 or add `--check` to verify byte-for-byte agreement with the canonical files.
 It does not regenerate or correct the edited source. The five comparison lakes

@@ -43,6 +43,13 @@ map = [
   "setuptools>=75.0.0",
 ]
 
+# ==== uv ====
+[tool.uv]
+# Always use a uv-managed CPython build. The interpreter that Cloudflare's
+# Workers Builds image compiles for .python-version has no sqlite3 module
+# (seen 2026-11-11 in masuda-so/website), and the static export needs SQLite.
+python-preference = "only-managed"
+
 # ==== djLint ====
 [tool.djlint]
 profile = "django"
