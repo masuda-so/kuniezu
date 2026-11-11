@@ -1,0 +1,27 @@
+{
+  "id": "person:須田満親",
+  "name": "須田満親",
+  "gameNames": [
+    "須田満親"
+  ],
+  "authorityIds": [
+    "wikidata:Q11664642",
+    "ndlna:01195358"
+  ],
+  "authorityEvidence": {
+    "scope": "person-identity",
+    "checked": "2026-11-11",
+    "wikidataRevision": 2354833008,
+    "snapshot": "data/research/source-notes/person-identity-corpus-2.json",
+    "sourceNote": "data/research/source-notes/person-identity-corpus-2.json",
+    "identityChecks": [
+      "NDL01195358の主名須田満親がPerson典拠に属する",
+      "Wikidata Q11664642の日本語主名須田満親とP349が同じNDL典拠へ対応する"
+    ],
+    "basis": "人物の同定のみ。原本にある生没日・所在・所領・関係の時期は新たな史実命題へ採用しない。",
+    "ndlSnapshot": "data/research/source-notes/person-identity-corpus-2-ndl-suda.json",
+    "sourceIds": [
+      "ndlSudaMitsuchikaIdentity"
+    ]
+  }
+}

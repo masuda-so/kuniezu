@@ -1,0 +1,46 @@
+{
+    "@context": "https://id.ndl.go.jp/auth/context.json",
+    "uri": "http://id.ndl.go.jp/auth/ndlna/01195358",
+    "primaryTopic": {
+        "uri": "http://id.ndl.go.jp/auth/entity/01195358",
+        "type": {
+            "uri": "http://xmlns.com/foaf/0.1/Person"
+        },
+        "name": "須田満親",
+        "dateOfBirth": "1537",
+        "dateOfDeath": "1598"
+    },
+    "type": {
+        "uri": "http://www.w3.org/2004/02/skos/core#Concept"
+    },
+    "modified": "2019-01-07T18:15:01",
+    "created": "2010-05-21",
+    "prefLabel": {
+        "literalForm": "須田, 満親, 1537-1598",
+        "transcription": "スダ, ミツチカ, 1537-1598",
+        "transcription-l": [
+            {
+                "@value": "スダ, ミツチカ, 1537-1598",
+                "@language": "ja-Kana"
+            },
+            {
+                "@value": "Suda, Mitsuchika, 1537-1598",
+                "@language": "ja-Latn"
+            }
+        ]
+    },
+    "label": "須田, 満親, 1537-1598",
+    "source": [
+        "信濃須田一族 / 志村平治 著",
+        "戦国人名辞典"
+    ],
+    "exactMatch": [
+        {
+            "uri": "http://viaf.org/viaf/sourceID/NDL%7C01195358#skos:Concept"
+        }
+    ],
+    "inScheme": {
+        "uri": "http://id.ndl.go.jp/auth#personalNames"
+    }
+}
+

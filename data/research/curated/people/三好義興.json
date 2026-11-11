@@ -1,0 +1,25 @@
+{
+  "id": "person:三好義興",
+  "name": "三好義興",
+  "gameNames": [
+    "三好義興"
+  ],
+  "authorityIds": [
+    "wikidata:Q10865734"
+  ],
+  "authorityEvidence": {
+    "scope": "person-identity",
+    "checked": "2026-11-11",
+    "wikidataRevision": 2283259896,
+    "snapshot": "data/research/source-notes/person-identity-corpus-2.json",
+    "sourceNote": "data/research/source-notes/person-identity-corpus-2.json",
+    "identityChecks": [
+      "高槻市の年表が、1560年（永禄3年）に長慶が河内飯盛城へ移り三好義興が芥川城主となり、1563年（永禄6年）に三好義興が芥川城で没したとする",
+      "Wikidata Q10865734の日本語主名が三好義興で、P570の年が1563"
+    ],
+    "basis": "人物の同定のみ。原本にある生没日・所在・所領・関係の時期は新たな史実命題へ採用しない。",
+    "sourceIds": [
+      "takatsukiYoshiokiIdentity"
+    ]
+  }
+}
