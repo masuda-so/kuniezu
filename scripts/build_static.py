@@ -41,6 +41,13 @@ INLINE_SCRIPT = re.compile(rb"<script>(.*?)</script\s*>", re.DOTALL | re.IGNOREC
 INLINE_HANDLER = re.compile(rb'\son[a-z]+="([^"]*)"', re.IGNORECASE)
 
 
+# The game uses none of these browser features, so no script may ask for them.
+# Same value as masuda-so/website.
+PERMISSIONS_POLICY = (
+    "camera=(), geolocation=(), microphone=(), focus-without-user-activation=()"
+)
+
+
 def csp_hash(source: bytes) -> str:
     digest = base64.b64encode(hashlib.sha256(source).digest()).decode()
     return f"'sha256-{digest}'"
@@ -83,6 +90,8 @@ def write_headers(client_dir: Path, page: bytes) -> None:
         "  X-Content-Type-Options: nosniff\n"
         "  X-Frame-Options: DENY\n"
         "  Referrer-Policy: strict-origin-when-cross-origin\n"
+        f"  Permissions-Policy: {PERMISSIONS_POLICY}\n"
+        "  Cross-Origin-Opener-Policy: same-origin-allow-popups\n"
         # Unfinished: shared by URL, kept out of search results. Crawlers
         # must be allowed to fetch the pages to see this, so robots.txt
         # does not block them.
