@@ -11,12 +11,11 @@
   "配信不可の疑い": "権利の表示が怪しい、または争いがある"
  },
  "counts": {
-  "出典が辿れない": 28,
-  "そのまま配信可": 142,
-  "所蔵機関の規約の確認が要る": 44,
+  "所蔵機関の規約の確認が要る": 51,
+  "そのまま配信可": 162,
   "配信不可の疑い": 6,
   "継承の条件あり": 3,
-  "出典表示を足せば可": 2
+  "出典表示を足せば可": 3
  },
  "rows": [
   {
@@ -25,11 +24,30 @@
    "file": "faces.webp",
    "position": "faces.webp の 0 番目のコマ（0 始まり、128px 角）",
    "buildTag": "q",
-   "verdict": "出典が辿れない",
-   "basis": "高精細の元画像（tools/faces/hr/）を手で取得して切り出しており、その取得元の記録が無い。meta.json にある同じ人物のファイル（Oda_Nobunaga_Kaou_3.jpg）は花押などで、肖像ではない",
+   "verdict": "所蔵機関の規約の確認が要る",
+   "basis": "Commons の表示は Public domain（古い絵の忠実な複製）。出典が機関のデータベース・サイト（Historiographical）で、機関の利用規約は未確認。取得元は 2026-11-11 に特定した（確定（同じ絵））",
    "sources": [
     {
-     "record": "meta.json",
+     "record": "取得元の特定（2026-11-11、Commons のカテゴリの候補との比較）",
+     "commonsFile": "Odanobunaga.jpg",
+     "url": "https://commons.wikimedia.org/wiki/File:Odanobunaga.jpg",
+     "license": "Public domain",
+     "licenseUrl": null,
+     "artist": "狩野宗秀 (Kanō Sōshū, 1551 - 1601)",
+     "credit": "en:Image:Odanobunaga.jpg",
+     "date": "The original was made in 1583",
+     "description": "未記載",
+     "uploader": "Artanisen",
+     "uploaded": "2019-11-03",
+     "licenseCategories": [
+      "CC-PD-Mark",
+      "PD-Art (PD-old-100)",
+      "PD-Japan",
+      "Portrait paintings in the Historiographical Institute, the University of Tokyo"
+     ]
+    },
+    {
+     "record": "meta.json（肖像ではない。取得元ではない）",
      "commonsFile": "Oda_Nobunaga_Kaou_3.jpg",
      "url": "https://commons.wikimedia.org/wiki/File:Oda_Nobunaga_Kaou_3.jpg",
      "license": "Public domain",
@@ -48,7 +66,25 @@
       "PD-old missing SDC copyright status"
      ]
     }
-   ]
+   ],
+   "usedSource": "Odanobunaga.jpg",
+   "tracing": {
+    "checked": "2026-11-11",
+    "checkedBy": "claude-self（配信中の画像と候補を並べて目で見た）",
+    "status": "確定（同じ絵）",
+    "visual": "緑の肩衣・白い小袖の坐像（長興寺の信長像の図様）で、顔の向き・髷・衣の紋が一致",
+    "machine": {
+     "method": "コマの中心部（16×16 の濃淡）を候補の縮小版の中で探した正規化相関の最大値",
+     "cellInCandidate": {
+      "Odanobunaga.jpg": 0.626
+     },
+     "candidatesCompared": 9,
+     "commonsCategory": [
+      "Oda Nobunaga"
+     ]
+    },
+    "note": "記録上のファイル（Oda_Nobunaga_Kaou_3.jpg）は花押・屋敷跡の写真で、tools/faces/raw/ の画像はその縮小版と一致した（肖像ではない）。配信中のコマは別の画像から切られている。コマが切られた元のファイルそのもの（高精細版や古い版の合成画像）の取得記録は無く、同じ絵であることまでを確かめた"
+   }
   },
   {
    "kind": "faces.webp",
@@ -209,11 +245,28 @@
    "file": "faces.webp",
    "position": "faces.webp の 6 番目のコマ（0 始まり、128px 角）",
    "buildTag": "cell 0.87",
-   "verdict": "出典が辿れない",
-   "basis": "合成画像の古い版（faces_v25.webp）のコマをそのまま使っていて、どの画像から切ったかの記録が無い。meta.json にある同じ人物のファイルが元かどうかは未確認（記録上のファイルは花押・屋敷跡の写真などで、肖像ではない）",
+   "verdict": "そのまま配信可",
+   "basis": "Commons の表示は Public domain（古い絵の忠実な複製）。出典の表示は条件ではないが、所蔵と出典を添えるのが望ましい。取得元は 2026-11-11 に特定した（確定（同じ絵））",
    "sources": [
     {
-     "record": "meta.json",
+     "record": "取得元の特定（2026-11-11、Commons のカテゴリの候補との比較）",
+     "commonsFile": "Date_Masamune02.jpg",
+     "url": "https://commons.wikimedia.org/wiki/File:Date_Masamune02.jpg",
+     "license": "Public domain",
+     "licenseUrl": null,
+     "artist": "Tosa Mitsusada",
+     "credit": "東福寺塔中霊源院",
+     "date": "2011-06-23",
+     "description": "Portrait of Date Masamune (1567-1636). Made by Tosa Mitsusada (1738 - 1806).",
+     "uploader": "M-sho-gun",
+     "uploaded": "2020-06-07",
+     "licenseCategories": [
+      "CC-PD-Mark",
+      "PD-old missing SDC copyright status"
+     ]
+    },
+    {
+     "record": "meta.json（肖像ではない。取得元ではない）",
      "commonsFile": "MASAMUNE777.PNG",
      "url": "https://commons.wikimedia.org/wiki/File:MASAMUNE777.PNG",
      "license": "Public domain",
@@ -231,7 +284,25 @@
       "PD-old missing SDC copyright status"
      ]
     }
-   ]
+   ],
+   "usedSource": "Date_Masamune02.jpg",
+   "tracing": {
+    "checked": "2026-11-11",
+    "checkedBy": "claude-self（配信中の画像と候補を並べて目で見た）",
+    "status": "確定（同じ絵）",
+    "visual": "黒い装束・烏帽子の坐像で、顔の向きと襟元の赤が一致。コマは小さく引き伸ばされていて細部は読めない",
+    "machine": {
+     "method": "コマの中心部（16×16 の濃淡）を候補の縮小版の中で探した正規化相関の最大値",
+     "cellInCandidate": {
+      "Date_Masamune02.jpg": 0.939
+     },
+     "candidatesCompared": 14,
+     "commonsCategory": [
+      "Date Masamune"
+     ]
+    },
+    "note": "記録上のファイル（MASAMUNE777.PNG）は花押・屋敷跡の写真で、tools/faces/raw/ の画像はその縮小版と一致した（肖像ではない）。配信中のコマは別の画像から切られている。コマが切られた元のファイルそのもの（高精細版や古い版の合成画像）の取得記録は無く、同じ絵であることまでを確かめた"
+   }
   },
   {
    "kind": "faces.webp",
@@ -316,8 +387,8 @@
    "file": "faces.webp",
    "position": "faces.webp の 9 番目のコマ（0 始まり、128px 角）",
    "buildTag": "cell 0.60",
-   "verdict": "出典が辿れない",
-   "basis": "合成画像の古い版（faces_v25.webp）のコマをそのまま使っていて、どの画像から切ったかの記録が無い。meta.json にある同じ人物のファイルが元かどうかは未確認",
+   "verdict": "そのまま配信可",
+   "basis": "Commons の表示は Public domain（古い絵の忠実な複製）。出典の表示は条件ではないが、所蔵と出典を添えるのが望ましい。取得元は 2026-11-11 に特定した（確定（同じ絵））",
    "sources": [
     {
      "record": "meta.json",
@@ -337,7 +408,26 @@
       "Template Unknown (author)"
      ]
     }
-   ]
+   ],
+   "usedSource": "Mori_Motonari.jpg",
+   "tracing": {
+    "checked": "2026-11-11",
+    "checkedBy": "claude-self（配信中の画像と候補を並べて目で見た）",
+    "status": "確定（同じ絵）",
+    "visual": "コマ・tools/faces の元画像・Commons のファイルの縮小版を並べて、同じ絵と確かめた",
+    "machine": {
+     "method": "(1) tools/faces/raw/ の画像と Commons のファイルの縮小版の全体比較（dHash のハミング距離、48×48 の正規化相関）。(2) コマの中心部（20×20）を tools/faces の各画像の中で探した正規化相関の最大値",
+     "rawVsCommons": {
+      "dhash": 1,
+      "ncc": 0.999,
+      "aspectDiff": 0.004
+     },
+     "cellInRepoImage": {
+      "raw/毛利元就.jpg": 0.853
+     }
+    },
+    "note": "tools/faces/raw/ の画像は Commons のファイルの縮小版と一致した。コマは合成画像の古い版から引き継いだもので、同じ絵から切られていることを確かめた。"
+   }
   },
   {
    "kind": "faces.webp",
@@ -543,8 +633,8 @@
    "file": "faces.webp",
    "position": "faces.webp の 16 番目のコマ（0 始まり、128px 角）",
    "buildTag": "m",
-   "verdict": "出典が辿れない",
-   "basis": "高精細の元画像（tools/faces/hr/）を手で取得して切り出しており、その取得元の記録が無い。meta.json にある同じ人物のファイル（Hosokawa_Yusai.jpg）の高精細版と推定されるが、同じ画像かは未確認。そのファイルの判定は「そのまま配信可」",
+   "verdict": "そのまま配信可",
+   "basis": "Commons の表示は Public domain（古い絵の忠実な複製）。出典の表示は条件ではないが、所蔵と出典を添えるのが望ましい。取得元は 2026-11-11 に特定した（確定（同じ絵））",
    "sources": [
     {
      "record": "meta.json",
@@ -563,7 +653,27 @@
       "PD-old missing SDC copyright status"
      ]
     }
-   ]
+   ],
+   "usedSource": "Hosokawa_Yusai.jpg",
+   "tracing": {
+    "checked": "2026-11-11",
+    "checkedBy": "claude-self（配信中の画像と候補を並べて目で見た）",
+    "status": "確定（同じ絵）",
+    "visual": "コマ・tools/faces の元画像・Commons のファイルの縮小版を並べて、同じ絵と確かめた",
+    "machine": {
+     "method": "(1) tools/faces/raw/ の画像と Commons のファイルの縮小版の全体比較（dHash のハミング距離、48×48 の正規化相関）。(2) コマの中心部（20×20）を tools/faces の各画像の中で探した正規化相関の最大値",
+     "rawVsCommons": {
+      "dhash": 3,
+      "ncc": 0.996,
+      "aspectDiff": 0.0
+     },
+     "cellInRepoImage": {
+      "hr/m_細川藤孝.jpg": 0.965,
+      "raw/細川藤孝.jpg": 0.925
+     }
+    },
+    "note": "tools/faces/raw/ の画像は Commons のファイルの縮小版と一致した。コマは高精細の画像（tools/faces/hr/）から切られていて、その画像が同じ Commons のファイルから取られたかは確かめられない（同じ絵の別の版の可能性が残る）。"
+   }
   },
   {
    "kind": "faces.webp",
@@ -720,8 +830,8 @@
    "file": "faces.webp",
    "position": "faces.webp の 22 番目のコマ（0 始まり、128px 角）",
    "buildTag": "asis",
-   "verdict": "出典が辿れない",
-   "basis": "合成画像の古い版（faces_v25.webp）のコマをそのまま使っていて、どの画像から切ったかの記録が無い。meta.json にある同じ人物のファイルが元かどうかは未確認",
+   "verdict": "そのまま配信可",
+   "basis": "Commons の表示は Public domain（古い絵の忠実な複製）。出典の表示は条件ではないが、所蔵と出典を添えるのが望ましい。取得元は 2026-11-11 に特定した（確定（同じ絵））",
    "sources": [
     {
      "record": "meta.json",
@@ -744,7 +854,27 @@
       "Template Unknown (author)"
      ]
     }
-   ]
+   ],
+   "usedSource": "Nannbu_Harumasa.jpg",
+   "tracing": {
+    "checked": "2026-11-11",
+    "checkedBy": "claude-self（配信中の画像と候補を並べて目で見た）",
+    "status": "確定（同じ絵）",
+    "visual": "コマ・tools/faces の元画像・Commons のファイルの縮小版を並べて、同じ絵と確かめた",
+    "machine": {
+     "method": "(1) tools/faces/raw/ の画像と Commons のファイルの縮小版の全体比較（dHash のハミング距離、48×48 の正規化相関）。(2) コマの中心部（20×20）を tools/faces の各画像の中で探した正規化相関の最大値",
+     "rawVsCommons": {
+      "dhash": 1,
+      "ncc": 0.998,
+      "aspectDiff": 0.001
+     },
+     "cellInRepoImage": {
+      "hr/南部晴政.jpg": 0.883,
+      "raw/南部晴政.jpg": 0.578
+     }
+    },
+    "note": "tools/faces/raw/ の画像は Commons のファイルの縮小版と一致した。コマは合成画像の古い版から引き継いだもので、同じ絵から切られていることを確かめた。"
+   }
   },
   {
    "kind": "faces.webp",
@@ -848,8 +978,8 @@
    "file": "faces.webp",
    "position": "faces.webp の 26 番目のコマ（0 始まり、128px 角）",
    "buildTag": "q",
-   "verdict": "出典が辿れない",
-   "basis": "高精細の元画像（tools/faces/hr/）を手で取得して切り出しており、その取得元の記録が無い。meta.json にある同じ人物のファイル（三好長慶.jpg）の高精細版と推定されるが、同じ画像かは未確認。そのファイルの判定は「そのまま配信可」",
+   "verdict": "そのまま配信可",
+   "basis": "Commons の表示は Public domain（古い絵の忠実な複製）。出典の表示は条件ではないが、所蔵と出典を添えるのが望ましい。取得元は 2026-11-11 に特定した（確定（同じ絵））",
    "sources": [
     {
      "record": "meta.json",
@@ -868,7 +998,30 @@
       "PD-old missing SDC copyright status"
      ]
     }
-   ]
+   ],
+   "usedSource": "三好長慶.jpg",
+   "tracing": {
+    "checked": "2026-11-11",
+    "checkedBy": "claude-self（配信中の画像と候補を並べて目で見た）",
+    "status": "確定（同じ絵）",
+    "visual": "コマ・tools/faces の元画像・Commons のファイルの縮小版を並べて、同じ絵と確かめた",
+    "machine": {
+     "method": "(1) tools/faces/raw/ の画像と Commons のファイルの縮小版の全体比較（dHash のハミング距離、48×48 の正規化相関）。(2) コマの中心部（20×20）を tools/faces の各画像の中で探した正規化相関の最大値",
+     "rawVsCommons": {
+      "dhash": 24,
+      "ncc": 0.0,
+      "aspectDiff": 0.542
+     },
+     "cellInRepoImage": {
+      "hr/q_三好長慶.jpg": 0.912,
+      "raw/三好長慶.jpg": 0.0
+     },
+     "cellInCommonsThumb": {
+      "三好長慶.jpg": 0.874
+     }
+    },
+    "note": "tools/faces/raw/ の画像は読めない（黒い画像）ので全体比較はできない。コマの中心部を Commons のファイルの縮小版の中で探して一致を確かめた。正規化相関 0.0）。コマは高精細の画像（tools/faces/hr/）から切られていて、その画像が同じ Commons のファイルから取られたかは確かめられない（同じ絵の別の版の可能性が残る）。"
+   }
   },
   {
    "kind": "faces.webp",
@@ -876,8 +1029,8 @@
    "file": "faces.webp",
    "position": "faces.webp の 27 番目のコマ（0 始まり、128px 角）",
    "buildTag": "cell 0.59",
-   "verdict": "出典が辿れない",
-   "basis": "合成画像の古い版（faces_v25.webp）のコマをそのまま使っていて、どの画像から切ったかの記録が無い。meta.json にある同じ人物のファイルが元かどうかは未確認",
+   "verdict": "そのまま配信可",
+   "basis": "Commons の表示は Public domain（古い絵の忠実な複製）。出典の表示は条件ではないが、所蔵と出典を添えるのが望ましい。取得元は 2026-11-11 に特定した（確定（同じ絵））",
    "sources": [
     {
      "record": "meta.json",
@@ -897,7 +1050,26 @@
       "PD-Art (PD-old default)"
      ]
     }
-   ]
+   ],
+   "usedSource": "Saitō_Yoshitatsu.jpg",
+   "tracing": {
+    "checked": "2026-11-11",
+    "checkedBy": "claude-self（配信中の画像と候補を並べて目で見た）",
+    "status": "確定（同じ絵）",
+    "visual": "コマ・tools/faces の元画像・Commons のファイルの縮小版を並べて、同じ絵と確かめた",
+    "machine": {
+     "method": "(1) tools/faces/raw/ の画像と Commons のファイルの縮小版の全体比較（dHash のハミング距離、48×48 の正規化相関）。(2) コマの中心部（20×20）を tools/faces の各画像の中で探した正規化相関の最大値",
+     "rawVsCommons": {
+      "dhash": 2,
+      "ncc": 0.999,
+      "aspectDiff": 0.002
+     },
+     "cellInRepoImage": {
+      "raw/斎藤義龍.jpg": 0.979
+     }
+    },
+    "note": "tools/faces/raw/ の画像は Commons のファイルの縮小版と一致した。コマは合成画像の古い版から引き継いだもので、同じ絵から切られていることを確かめた。"
+   }
   },
   {
    "kind": "faces.webp",
@@ -995,8 +1167,8 @@
    "file": "faces.webp",
    "position": "faces.webp の 31 番目のコマ（0 始まり、128px 角）",
    "buildTag": "hr",
-   "verdict": "出典が辿れない",
-   "basis": "高精細の元画像（tools/faces/hr/）を手で取得して切り出しており、その取得元の記録が無い。meta.json にある同じ人物のファイル（Yamagata_Masakage2.jpg）の高精細版と推定されるが、同じ画像かは未確認。そのファイルの判定は「そのまま配信可」",
+   "verdict": "そのまま配信可",
+   "basis": "Commons の表示は Public domain（古い絵の忠実な複製）。出典の表示は条件ではないが、所蔵と出典を添えるのが望ましい。取得元は 2026-11-11 に特定した（確定（同じ絵））",
    "sources": [
     {
      "record": "meta.json",
@@ -1018,7 +1190,27 @@
       "PD-old missing SDC copyright status"
      ]
     }
-   ]
+   ],
+   "usedSource": "Yamagata_Masakage2.jpg",
+   "tracing": {
+    "checked": "2026-11-11",
+    "checkedBy": "claude-self（配信中の画像と候補を並べて目で見た）",
+    "status": "確定（同じ絵）",
+    "visual": "コマ・tools/faces の元画像・Commons のファイルの縮小版を並べて、同じ絵と確かめた",
+    "machine": {
+     "method": "(1) tools/faces/raw/ の画像と Commons のファイルの縮小版の全体比較（dHash のハミング距離、48×48 の正規化相関）。(2) コマの中心部（20×20）を tools/faces の各画像の中で探した正規化相関の最大値",
+     "rawVsCommons": {
+      "dhash": 1,
+      "ncc": 0.999,
+      "aspectDiff": 0.003
+     },
+     "cellInRepoImage": {
+      "hr/山県昌景.jpg": 0.933,
+      "raw/山県昌景.jpg": 0.777
+     }
+    },
+    "note": "tools/faces/raw/ の画像は Commons のファイルの縮小版と一致した。コマは高精細の画像（tools/faces/hr/）から切られていて、その画像が同じ Commons のファイルから取られたかは確かめられない（同じ絵の別の版の可能性が残る）。"
+   }
   },
   {
    "kind": "faces.webp",
@@ -1733,8 +1925,8 @@
    "file": "faces.webp",
    "position": "faces.webp の 56 番目のコマ（0 始まり、128px 角）",
    "buildTag": "cell 0.86",
-   "verdict": "出典が辿れない",
-   "basis": "合成画像の古い版（faces_v25.webp）のコマをそのまま使っていて、どの画像から切ったかの記録が無い。meta.json にある同じ人物のファイルが元かどうかは未確認",
+   "verdict": "そのまま配信可",
+   "basis": "Commons の表示は Public domain（古い絵の忠実な複製）。出典の表示は条件ではないが、所蔵と出典を添えるのが望ましい。取得元は 2026-11-11 に特定した（確定（同じ絵））",
    "sources": [
     {
      "record": "meta.json",
@@ -1756,7 +1948,26 @@
       "PD-old missing SDC copyright status"
      ]
     }
-   ]
+   ],
+   "usedSource": "Hosokawa_Tadaoki.jpg",
+   "tracing": {
+    "checked": "2026-11-11",
+    "checkedBy": "claude-self（配信中の画像と候補を並べて目で見た）",
+    "status": "確定（同じ絵）",
+    "visual": "コマ・tools/faces の元画像・Commons のファイルの縮小版を並べて、同じ絵と確かめた",
+    "machine": {
+     "method": "(1) tools/faces/raw/ の画像と Commons のファイルの縮小版の全体比較（dHash のハミング距離、48×48 の正規化相関）。(2) コマの中心部（20×20）を tools/faces の各画像の中で探した正規化相関の最大値",
+     "rawVsCommons": {
+      "dhash": 0,
+      "ncc": 1.0,
+      "aspectDiff": 0.0
+     },
+     "cellInRepoImage": {
+      "raw/細川忠興.jpg": 0.937
+     }
+    },
+    "note": "tools/faces/raw/ の画像は Commons のファイルの縮小版と一致した。コマは合成画像の古い版から引き継いだもので、同じ絵から切られていることを確かめた。"
+   }
   },
   {
    "kind": "faces.webp",
@@ -2115,11 +2326,48 @@
    "file": "faces.webp",
    "position": "faces.webp の 68 番目のコマ（0 始まり、128px 角）",
    "buildTag": "cell 0.89",
-   "verdict": "出典が辿れない",
-   "basis": "合成画像の古い版（faces_v25.webp）のコマをそのまま使っていて、どの画像から切ったかの記録が無い。meta.json にある同じ人物のファイルが元かどうかは未確認（記録上のファイルは花押・屋敷跡の写真などで、肖像ではない）",
+   "verdict": "そのまま配信可",
+   "basis": "Commons の表示は Public domain（古い絵の忠実な複製）。出典の表示は条件ではないが、所蔵と出典を添えるのが望ましい。取得元は 2026-11-11 に特定した（確定（同じ絵））",
    "sources": [
     {
-     "record": "meta.json",
+     "record": "取得元の特定（2026-11-11、Commons のカテゴリの候補との比較）",
+     "commonsFile": "Toyotomi_hideyoshi_face.png",
+     "url": "https://commons.wikimedia.org/wiki/File:Toyotomi_hideyoshi_face.png",
+     "license": "Public domain",
+     "licenseUrl": null,
+     "artist": "Kanō Mitsunobu",
+     "credit": "Kōdai-ji temple warehouse, Kyoto, Japan",
+     "date": "circa 1602 date QS:P,+1602-00-00T00:00:00Z/9,P1480,Q5727902",
+     "description": "Hideyoshi Toyotomi's face.",
+     "uploader": "Artanisen",
+     "uploaded": "2020-02-19",
+     "licenseCategories": [
+      "CC-PD-Mark",
+      "PD-Art (PD-old-100)",
+      "PD-Art missing SDC copyright status",
+      "PD-Japan",
+      "PD-old missing SDC copyright status"
+     ]
+    },
+    {
+     "record": "取得元の特定（2026-11-11、Commons のカテゴリの候補との比較）",
+     "commonsFile": "Toyotomi_Hideyoshi_(Kodaiji).jpg",
+     "url": "https://commons.wikimedia.org/wiki/File:Toyotomi_Hideyoshi_%28Kodaiji%29.jpg",
+     "license": "Public domain",
+     "licenseUrl": null,
+     "artist": "Kanō Mitsunobu",
+     "credit": "1. Shouzou.com [1] , Kōdai-ji temple warehouse, Kyoto, Japan",
+     "date": "circa 1601 date QS:P,+1601-00-00T00:00:00Z/9,P1480,Q5727902",
+     "description": "Portrait of Toyotomi Hideyoshi at Kodaiji temple warehouse, Kyoto, Japan",
+     "uploader": "Ikhtiyaar",
+     "uploaded": "2026-09-04",
+     "licenseCategories": [
+      "CC-PD-Mark",
+      "PD-Art (PD-old-100)"
+     ]
+    },
+    {
+     "record": "meta.json（肖像ではない。取得元ではない）",
      "commonsFile": "Toyotomi_Hideyoshi_Kaou.svg",
      "url": "https://commons.wikimedia.org/wiki/File:Toyotomi_Hideyoshi_Kaou.svg",
      "license": "Public domain",
@@ -2136,7 +2384,26 @@
       "PD-old missing SDC copyright status"
      ]
     }
-   ]
+   ],
+   "usedSource": "Toyotomi_hideyoshi_face.png",
+   "tracing": {
+    "checked": "2026-11-11",
+    "checkedBy": "claude-self（配信中の画像と候補を並べて目で見た）",
+    "status": "確定（同じ絵）",
+    "visual": "青い冠・白い装束の像で、顔の輪郭と髭、襟の赤が一致",
+    "machine": {
+     "method": "コマの中心部（16×16 の濃淡）を候補の縮小版の中で探した正規化相関の最大値",
+     "cellInCandidate": {
+      "Toyotomi_hideyoshi_face.png": 0.963,
+      "Toyotomi_Hideyoshi_(Kodaiji).jpg": 0.846
+     },
+     "candidatesCompared": 13,
+     "commonsCategory": [
+      "Toyotomi Hideyoshi"
+     ]
+    },
+    "note": "記録上のファイル（Toyotomi_Hideyoshi_Kaou.svg）は花押・屋敷跡の写真で、tools/faces/raw/ の画像はその縮小版と一致した（肖像ではない）。配信中のコマは別の画像から切られている。同じ絵のファイルが Commons に 2 つあり、どちらから取ったかは決められない。コマが切られた元のファイルそのもの（高精細版や古い版の合成画像）の取得記録は無く、同じ絵であることまでを確かめた"
+   }
   },
   {
    "kind": "faces.webp",
@@ -2144,8 +2411,8 @@
    "file": "faces.webp",
    "position": "faces.webp の 69 番目のコマ（0 始まり、128px 角）",
    "buildTag": "m",
-   "verdict": "出典が辿れない",
-   "basis": "高精細の元画像（tools/faces/hr/）を手で取得して切り出しており、その取得元の記録が無い。meta.json にある同じ人物のファイル（Tokugawa_Ieyasu2_full.JPG）の高精細版と推定されるが、同じ画像かは未確認。そのファイルの判定は「そのまま配信可」",
+   "verdict": "そのまま配信可",
+   "basis": "Commons の表示は Public domain（古い絵の忠実な複製）。出典の表示は条件ではないが、所蔵と出典を添えるのが望ましい。取得元は 2026-11-11 に特定した（確定（同じ絵））",
    "sources": [
     {
      "record": "meta.json",
@@ -2164,7 +2431,27 @@
       "PD-old missing SDC copyright status"
      ]
     }
-   ]
+   ],
+   "usedSource": "Tokugawa_Ieyasu2_full.JPG",
+   "tracing": {
+    "checked": "2026-11-11",
+    "checkedBy": "claude-self（配信中の画像と候補を並べて目で見た）",
+    "status": "確定（同じ絵）",
+    "visual": "コマ・tools/faces の元画像・Commons のファイルの縮小版を並べて、同じ絵と確かめた",
+    "machine": {
+     "method": "(1) tools/faces/raw/ の画像と Commons のファイルの縮小版の全体比較（dHash のハミング距離、48×48 の正規化相関）。(2) コマの中心部（20×20）を tools/faces の各画像の中で探した正規化相関の最大値",
+     "rawVsCommons": {
+      "dhash": 1,
+      "ncc": 0.999,
+      "aspectDiff": 0.002
+     },
+     "cellInRepoImage": {
+      "hr/m_徳川家康.jpg": 0.803,
+      "raw/徳川家康.jpg": 0.827
+     }
+    },
+    "note": "tools/faces/raw/ の画像は Commons のファイルの縮小版と一致した。コマは高精細の画像（tools/faces/hr/）から切られていて、その画像が同じ Commons のファイルから取られたかは確かめられない（同じ絵の別の版の可能性が残る）。"
+   }
   },
   {
    "kind": "faces.webp",
@@ -2576,8 +2863,8 @@
    "file": "faces.webp",
    "position": "faces.webp の 83 番目のコマ（0 始まり、128px 角）",
    "buildTag": "m",
-   "verdict": "出典が辿れない",
-   "basis": "高精細の元画像（tools/faces/hr/）を手で取得して切り出しており、その取得元の記録が無い。meta.json にある同じ人物のファイル（Kuroda_Nagamasa.jpg）の高精細版と推定されるが、同じ画像かは未確認。そのファイルの判定は「そのまま配信可」",
+   "verdict": "そのまま配信可",
+   "basis": "Commons の表示は Public domain（古い絵の忠実な複製）。出典の表示は条件ではないが、所蔵と出典を添えるのが望ましい。取得元は 2026-11-11 に特定した（確定（同じ絵））",
    "sources": [
     {
      "record": "meta.json",
@@ -2599,7 +2886,28 @@
       "PD-old missing SDC copyright status"
      ]
     }
-   ]
+   ],
+   "usedSource": "Kuroda_Nagamasa.jpg",
+   "tracing": {
+    "checked": "2026-11-11",
+    "checkedBy": "claude-self（配信中の画像と候補を並べて目で見た）",
+    "status": "確定（同じ絵）",
+    "visual": "コマ・tools/faces の元画像・Commons のファイルの縮小版を並べて、同じ絵と確かめた",
+    "machine": {
+     "method": "(1) tools/faces/raw/ の画像と Commons のファイルの縮小版の全体比較（dHash のハミング距離、48×48 の正規化相関）。(2) コマの中心部（20×20）を tools/faces の各画像の中で探した正規化相関の最大値",
+     "rawVsCommons": {
+      "dhash": 1,
+      "ncc": 0.998,
+      "aspectDiff": 0.002
+     },
+     "cellInRepoImage": {
+      "hr/m_黒田長政.jpg": 0.883,
+      "hr/黒田長政.jpg": 0.428,
+      "raw/黒田長政.jpg": 0.843
+     }
+    },
+    "note": "tools/faces/raw/ の画像は Commons のファイルの縮小版と一致した。コマは高精細の画像（tools/faces/hr/）から切られていて、その画像が同じ Commons のファイルから取られたかは確かめられない（同じ絵の別の版の可能性が残る）。"
+   }
   },
   {
    "kind": "faces.webp",
@@ -3154,8 +3462,8 @@
    "file": "faces.webp",
    "position": "faces.webp の 101 番目のコマ（0 始まり、128px 角）",
    "buildTag": "asis",
-   "verdict": "出典が辿れない",
-   "basis": "合成画像の古い版（faces_v25.webp）のコマをそのまま使っていて、どの画像から切ったかの記録が無い。meta.json にある同じ人物のファイルが元かどうかは未確認",
+   "verdict": "そのまま配信可",
+   "basis": "Commons の表示は Public domain（古い絵の忠実な複製）。出典の表示は条件ではないが、所蔵と出典を添えるのが望ましい。取得元は 2026-11-11 に特定した（確定（同じ絵））",
    "sources": [
     {
      "record": "meta.json",
@@ -3174,7 +3482,26 @@
       "PD-Japan-oldphoto"
      ]
     }
-   ]
+   ],
+   "usedSource": "Kukiyoshitaka2.jpg",
+   "tracing": {
+    "checked": "2026-11-11",
+    "checkedBy": "claude-self（配信中の画像と候補を並べて目で見た）",
+    "status": "確定（同じ絵）",
+    "visual": "コマ・tools/faces の元画像・Commons のファイルの縮小版を並べて、同じ絵と確かめた",
+    "machine": {
+     "method": "(1) tools/faces/raw/ の画像と Commons のファイルの縮小版の全体比較（dHash のハミング距離、48×48 の正規化相関）。(2) コマの中心部（20×20）を tools/faces の各画像の中で探した正規化相関の最大値",
+     "rawVsCommons": {
+      "dhash": 2,
+      "ncc": 0.999,
+      "aspectDiff": 0.004
+     },
+     "cellInRepoImage": {
+      "raw/九鬼嘉隆.jpg": 0.905
+     }
+    },
+    "note": "tools/faces/raw/ の画像は Commons のファイルの縮小版と一致した。コマは合成画像の古い版から引き継いだもので、同じ絵から切られていることを確かめた。"
+   }
   },
   {
    "kind": "faces.webp",
@@ -3212,8 +3539,8 @@
    "file": "faces.webp",
    "position": "faces.webp の 103 番目のコマ（0 始まり、128px 角）",
    "buildTag": "m",
-   "verdict": "出典が辿れない",
-   "basis": "高精細の元画像（tools/faces/hr/）を手で取得して切り出しており、その取得元の記録が無い。meta.json にある同じ人物のファイル（Niwa_Nagashige.jpg）の高精細版と推定されるが、同じ画像かは未確認。そのファイルの判定は「所蔵機関の規約の確認が要る」",
+   "verdict": "所蔵機関の規約の確認が要る",
+   "basis": "Commons の表示は Public domain（古い絵の忠実な複製）。出典が機関のデータベース・サイト（city.nihonmatsu.lg.jp）で、機関の利用規約は未確認。取得元は 2026-11-11 に特定した（確定（同じ絵））",
    "sources": [
     {
      "record": "meta.json",
@@ -3236,7 +3563,27 @@
       "Template Unknown (author)"
      ]
     }
-   ]
+   ],
+   "usedSource": "Niwa_Nagashige.jpg",
+   "tracing": {
+    "checked": "2026-11-11",
+    "checkedBy": "claude-self（配信中の画像と候補を並べて目で見た）",
+    "status": "確定（同じ絵）",
+    "visual": "コマ・tools/faces の元画像・Commons のファイルの縮小版を並べて、同じ絵と確かめた",
+    "machine": {
+     "method": "(1) tools/faces/raw/ の画像と Commons のファイルの縮小版の全体比較（dHash のハミング距離、48×48 の正規化相関）。(2) コマの中心部（20×20）を tools/faces の各画像の中で探した正規化相関の最大値",
+     "rawVsCommons": {
+      "dhash": 2,
+      "ncc": 0.999,
+      "aspectDiff": 0.002
+     },
+     "cellInRepoImage": {
+      "hr/m_丹羽長重.jpg": 0.964,
+      "raw/丹羽長重.jpg": 0.867
+     }
+    },
+    "note": "tools/faces/raw/ の画像は Commons のファイルの縮小版と一致した。コマは高精細の画像（tools/faces/hr/）から切られていて、その画像が同じ Commons のファイルから取られたかは確かめられない（同じ絵の別の版の可能性が残る）。"
+   }
   },
   {
    "kind": "faces.webp",
@@ -3434,11 +3781,53 @@
    "file": "faces.webp",
    "position": "faces.webp の 110 番目のコマ（0 始まり、128px 角）",
    "buildTag": "cell 0.85",
-   "verdict": "出典が辿れない",
-   "basis": "合成画像の古い版（faces_v25.webp）のコマをそのまま使っていて、どの画像から切ったかの記録が無い。meta.json にある同じ人物のファイルが元かどうかは未確認（記録上のファイルは花押・屋敷跡の写真などで、肖像ではない）",
+   "verdict": "そのまま配信可",
+   "basis": "Commons の表示は Public domain（古い絵の忠実な複製）。出典の表示は条件ではないが、所蔵と出典を添えるのが望ましい。取得元は 2026-11-11 に特定した（確定（同じ絵））",
    "sources": [
     {
-     "record": "meta.json",
+     "record": "取得元の特定（2026-11-11、Commons のカテゴリの候補との比較）",
+     "commonsFile": "Wakisaka_Yasuharu02.jpg",
+     "url": "https://commons.wikimedia.org/wiki/File:Wakisaka_Yasuharu02.jpg",
+     "license": "Public domain",
+     "licenseUrl": null,
+     "artist": "Unknown author Unknown author",
+     "credit": "龍野神社蔵の肖像画",
+     "date": "1627",
+     "description": "Wakisaka Yasuharu",
+     "uploader": "震天動地",
+     "uploaded": "2009-07-22",
+     "licenseCategories": [
+      "CC-PD-Mark",
+      "PD-Art (PD-old-100-expired)",
+      "PD-Art missing SDC copyright status",
+      "PD-old-100-expired",
+      "PD-old missing SDC copyright status",
+      "Template Unknown (author)"
+     ]
+    },
+    {
+     "record": "取得元の特定（2026-11-11、Commons のカテゴリの候補との比較）",
+     "commonsFile": "Wakisaka_Yasuharu.jpg",
+     "url": "https://commons.wikimedia.org/wiki/File:Wakisaka_Yasuharu.jpg",
+     "license": "Public domain",
+     "licenseUrl": null,
+     "artist": "Unknown author Unknown author",
+     "credit": "龍野神社蔵の肖像画",
+     "date": "1627",
+     "description": "Wakisaka Yasuharu",
+     "uploader": "震天動地",
+     "uploaded": "2009-07-22",
+     "licenseCategories": [
+      "CC-PD-Mark",
+      "PD-Art (PD-old-100-expired)",
+      "PD-Art missing SDC copyright status",
+      "PD-old-100-expired",
+      "PD-old missing SDC copyright status",
+      "Template Unknown (author)"
+     ]
+    },
+    {
+     "record": "meta.json（肖像ではない。取得元ではない）",
      "commonsFile": "Wakizaka_Yasuharu's_Residence_Site.jpg",
      "url": "https://commons.wikimedia.org/wiki/File:Wakizaka_Yasuharu%27s_Residence_Site.jpg",
      "license": "CC BY-SA 3.0",
@@ -3454,7 +3843,26 @@
       "Self-published work"
      ]
     }
-   ]
+   ],
+   "usedSource": "Wakisaka_Yasuharu02.jpg",
+   "tracing": {
+    "checked": "2026-11-11",
+    "checkedBy": "claude-self（配信中の画像と候補を並べて目で見た）",
+    "status": "確定（同じ絵）",
+    "visual": "赤い装束・烏帽子の像で、顔の向きと冠の緒が一致。コマは小さく引き伸ばされている",
+    "machine": {
+     "method": "コマの中心部（16×16 の濃淡）を候補の縮小版の中で探した正規化相関の最大値",
+     "cellInCandidate": {
+      "Wakisaka_Yasuharu02.jpg": 0.899,
+      "Wakisaka_Yasuharu.jpg": 0.877
+     },
+     "candidatesCompared": 8,
+     "commonsCategory": [
+      "Wakisaka Yasuharu"
+     ]
+    },
+    "note": "記録上のファイル（Wakizaka_Yasuharu's_Residence_Site.jpg）は花押・屋敷跡の写真で、tools/faces/raw/ の画像はその縮小版と一致した（肖像ではない）。配信中のコマは別の画像から切られている。同じ絵のファイルが Commons に 2 つあり、どちらから取ったかは決められない。コマが切られた元のファイルそのもの（高精細版や古い版の合成画像）の取得記録は無く、同じ絵であることまでを確かめた"
+   }
   },
   {
    "kind": "faces.webp",
@@ -3615,11 +4023,31 @@
    "file": "faces.webp",
    "position": "faces.webp の 116 番目のコマ（0 始まり、128px 角）",
    "buildTag": "m",
-   "verdict": "出典が辿れない",
-   "basis": "高精細の元画像（tools/faces/hr/）を手で取得して切り出しており、その取得元の記録が無い。meta.json にある同じ人物のファイル（Takenakakao.jpg）は花押などで、肖像ではない",
+   "verdict": "そのまま配信可",
+   "basis": "Commons の表示は Public domain（古い絵の忠実な複製）。出典の表示は条件ではないが、所蔵と出典を添えるのが望ましい。取得元は 2026-11-11 に特定した（確定（同じ絵））",
    "sources": [
     {
-     "record": "meta.json",
+     "record": "取得元の特定（2026-11-11、Commons のカテゴリの候補との比較）",
+     "commonsFile": "Takenaka_Shigeharu.jpg",
+     "url": "https://commons.wikimedia.org/wiki/File:Takenaka_Shigeharu.jpg",
+     "license": "Public domain",
+     "licenseUrl": null,
+     "artist": "不明。",
+     "credit": "禅幢寺所蔵の肖像画。",
+     "date": "安土桃山時代？",
+     "description": "竹中重治 （竹中半兵衛）。 Takenaka Shigeharu.",
+     "uploader": "GooGooDoll2",
+     "uploaded": "2008-01-17",
+     "licenseCategories": [
+      "CC-PD-Mark",
+      "PD-Art (PD-old-70)",
+      "PD-Art (PD-old default)",
+      "PD-Art missing SDC copyright status",
+      "PD-old missing SDC copyright status"
+     ]
+    },
+    {
+     "record": "meta.json（肖像ではない。取得元ではない）",
      "commonsFile": "Takenakakao.jpg",
      "url": "https://commons.wikimedia.org/wiki/File:Takenakakao.jpg",
      "license": "Public domain",
@@ -3636,7 +4064,25 @@
       "PD-old-100-expired"
      ]
     }
-   ]
+   ],
+   "usedSource": "Takenaka_Shigeharu.jpg",
+   "tracing": {
+    "checked": "2026-11-11",
+    "checkedBy": "claude-self（配信中の画像と候補を並べて目で見た）",
+    "status": "確定（同じ絵）",
+    "visual": "一の谷形の兜をかぶり采配を持つ像で、兜の形と顔の向きが一致",
+    "machine": {
+     "method": "コマの中心部（16×16 の濃淡）を候補の縮小版の中で探した正規化相関の最大値",
+     "cellInCandidate": {
+      "Takenaka_Shigeharu.jpg": 0.884
+     },
+     "candidatesCompared": 8,
+     "commonsCategory": [
+      "Takenaka Shigeharu"
+     ]
+    },
+    "note": "記録上のファイル（Takenakakao.jpg）は花押・屋敷跡の写真で、tools/faces/raw/ の画像はその縮小版と一致した（肖像ではない）。配信中のコマは別の画像から切られている。コマが切られた元のファイルそのもの（高精細版や古い版の合成画像）の取得記録は無く、同じ絵であることまでを確かめた"
+   }
   },
   {
    "kind": "faces.webp",
@@ -3800,8 +4246,8 @@
    "file": "faces.webp",
    "position": "faces.webp の 122 番目のコマ（0 始まり、128px 角）",
    "buildTag": "hr",
-   "verdict": "出典が辿れない",
-   "basis": "高精細の元画像（tools/faces/hr/）を手で取得して切り出しており、その取得元の記録が無い。meta.json にある同じ人物のファイル（Ōtani_Yoshitsugu.jpg）の高精細版と推定されるが、同じ画像かは未確認。そのファイルの判定は「所蔵機関の規約の確認が要る」",
+   "verdict": "所蔵機関の規約の確認が要る",
+   "basis": "Commons の表示は Public domain（古い絵の忠実な複製）。出典が機関のデータベース・サイト（東京都立図書館）で、機関の利用規約は未確認。取得元は 2026-11-11 に特定した（確定（同じ絵））",
    "sources": [
     {
      "record": "meta.json",
@@ -3821,7 +4267,27 @@
       "PD-old-100-expired"
      ]
     }
-   ]
+   ],
+   "usedSource": "Ōtani_Yoshitsugu.jpg",
+   "tracing": {
+    "checked": "2026-11-11",
+    "checkedBy": "claude-self（配信中の画像と候補を並べて目で見た）",
+    "status": "確定（同じ絵）",
+    "visual": "コマ・tools/faces の元画像・Commons のファイルの縮小版を並べて、同じ絵と確かめた",
+    "machine": {
+     "method": "(1) tools/faces/raw/ の画像と Commons のファイルの縮小版の全体比較（dHash のハミング距離、48×48 の正規化相関）。(2) コマの中心部（20×20）を tools/faces の各画像の中で探した正規化相関の最大値",
+     "rawVsCommons": {
+      "dhash": 0,
+      "ncc": 1.0,
+      "aspectDiff": 0.001
+     },
+     "cellInRepoImage": {
+      "hr/大谷吉継.jpg": 0.962,
+      "raw/大谷吉継.jpg": 0.862
+     }
+    },
+    "note": "tools/faces/raw/ の画像は Commons のファイルの縮小版と一致した。コマは高精細の画像（tools/faces/hr/）から切られていて、その画像が同じ Commons のファイルから取られたかは確かめられない（同じ絵の別の版の可能性が残る）。"
+   }
   },
   {
    "kind": "faces.webp",
@@ -3953,8 +4419,8 @@
    "file": "faces.webp",
    "position": "faces.webp の 127 番目のコマ（0 始まり、128px 角）",
    "buildTag": "m",
-   "verdict": "出典が辿れない",
-   "basis": "高精細の元画像（tools/faces/hr/）を手で取得して切り出しており、その取得元の記録が無い。meta.json にある同じ人物のファイル（Oda_Ujiharu.jpg）の高精細版と推定されるが、同じ画像かは未確認。そのファイルの判定は「そのまま配信可」",
+   "verdict": "そのまま配信可",
+   "basis": "Commons の表示は Public domain（古い絵の忠実な複製）。出典の表示は条件ではないが、所蔵と出典を添えるのが望ましい。取得元は 2026-11-11 に特定した（確定（同じ絵））",
    "sources": [
     {
      "record": "meta.json",
@@ -3977,7 +4443,28 @@
       "Template Unknown (author)"
      ]
     }
-   ]
+   ],
+   "usedSource": "Oda_Ujiharu.jpg",
+   "tracing": {
+    "checked": "2026-11-11",
+    "checkedBy": "claude-self（配信中の画像と候補を並べて目で見た）",
+    "status": "確定（同じ絵）",
+    "visual": "コマ・tools/faces の元画像・Commons のファイルの縮小版を並べて、同じ絵と確かめた",
+    "machine": {
+     "method": "(1) tools/faces/raw/ の画像と Commons のファイルの縮小版の全体比較（dHash のハミング距離、48×48 の正規化相関）。(2) コマの中心部（20×20）を tools/faces の各画像の中で探した正規化相関の最大値",
+     "rawVsCommons": {
+      "dhash": 0,
+      "ncc": 1.0,
+      "aspectDiff": 0.0
+     },
+     "cellInRepoImage": {
+      "hr/m_小田氏治.jpg": 0.869,
+      "hr/小田氏治.jpg": 0.864,
+      "raw/小田氏治.jpg": 0.985
+     }
+    },
+    "note": "tools/faces/raw/ の画像は Commons のファイルの縮小版と一致した。コマは高精細の画像（tools/faces/hr/）から切られていて、その画像が同じ Commons のファイルから取られたかは確かめられない（同じ絵の別の版の可能性が残る）。"
+   }
   },
   {
    "kind": "faces.webp",
@@ -3985,8 +4472,8 @@
    "file": "faces.webp",
    "position": "faces.webp の 128 番目のコマ（0 始まり、128px 角）",
    "buildTag": "m",
-   "verdict": "出典が辿れない",
-   "basis": "高精細の元画像（tools/faces/hr/）を手で取得して切り出しており、その取得元の記録が無い。meta.json にある同じ人物のファイル（Daimyo_Konishi_Yukinaga_Ukiyo-e.jpg）の高精細版と推定されるが、同じ画像かは未確認。そのファイルの判定は「そのまま配信可」",
+   "verdict": "そのまま配信可",
+   "basis": "Commons の表示は Public domain（古い絵の忠実な複製）。出典の表示は条件ではないが、所蔵と出典を添えるのが望ましい。取得元は 2026-11-11 に特定した（確定（同じ絵））",
    "sources": [
     {
      "record": "meta.json",
@@ -4005,7 +4492,27 @@
       "PD-Art (PD-old-100)"
      ]
     }
-   ]
+   ],
+   "usedSource": "Daimyo_Konishi_Yukinaga_Ukiyo-e.jpg",
+   "tracing": {
+    "checked": "2026-11-11",
+    "checkedBy": "claude-self（配信中の画像と候補を並べて目で見た）",
+    "status": "確定（同じ絵）",
+    "visual": "コマ・tools/faces の元画像・Commons のファイルの縮小版を並べて、同じ絵と確かめた",
+    "machine": {
+     "method": "(1) tools/faces/raw/ の画像と Commons のファイルの縮小版の全体比較（dHash のハミング距離、48×48 の正規化相関）。(2) コマの中心部（20×20）を tools/faces の各画像の中で探した正規化相関の最大値",
+     "rawVsCommons": {
+      "dhash": 1,
+      "ncc": 1.0,
+      "aspectDiff": 0.002
+     },
+     "cellInRepoImage": {
+      "hr/m_小西行長.jpg": 0.948,
+      "raw/小西行長.jpg": 0.677
+     }
+    },
+    "note": "tools/faces/raw/ の画像は Commons のファイルの縮小版と一致した。コマは高精細の画像（tools/faces/hr/）から切られていて、その画像が同じ Commons のファイルから取られたかは確かめられない（同じ絵の別の版の可能性が残る）。"
+   }
   },
   {
    "kind": "faces.webp",
@@ -4013,8 +4520,8 @@
    "file": "faces.webp",
    "position": "faces.webp の 129 番目のコマ（0 始まり、128px 角）",
    "buildTag": "asis",
-   "verdict": "出典が辿れない",
-   "basis": "合成画像の古い版（faces_v25.webp）のコマをそのまま使っていて、どの画像から切ったかの記録が無い。meta.json にある同じ人物のファイルが元かどうかは未確認",
+   "verdict": "所蔵機関の規約の確認が要る",
+   "basis": "Commons の表示は Public domain（古い絵の忠実な複製）。出典が機関のデータベース・サイト（東京都立図書館）で、機関の利用規約は未確認。取得元は 2026-11-11 に特定した（確定（同じ絵））",
    "sources": [
     {
      "record": "meta.json",
@@ -4036,7 +4543,28 @@
       "PD-old missing SDC copyright status"
      ]
     }
-   ]
+   ],
+   "usedSource": "Taiheikieiyuden_36_YamanakaYukimori.jpg",
+   "tracing": {
+    "checked": "2026-11-11",
+    "checkedBy": "claude-self（配信中の画像と候補を並べて目で見た）",
+    "status": "確定（同じ絵）",
+    "visual": "コマ・tools/faces の元画像・Commons のファイルの縮小版を並べて、同じ絵と確かめた",
+    "machine": {
+     "method": "(1) tools/faces/raw/ の画像と Commons のファイルの縮小版の全体比較（dHash のハミング距離、48×48 の正規化相関）。(2) コマの中心部（20×20）を tools/faces の各画像の中で探した正規化相関の最大値",
+     "rawVsCommons": {
+      "dhash": 1,
+      "ncc": 1.0,
+      "aspectDiff": 0.0
+     },
+     "cellInRepoImage": {
+      "hr/m_山中幸盛.jpg": 0.777,
+      "hr/山中幸盛.jpg": 0.982,
+      "raw/山中幸盛.jpg": 0.877
+     }
+    },
+    "note": "tools/faces/raw/ の画像は Commons のファイルの縮小版と一致した。コマは合成画像の古い版から引き継いだもので、同じ絵から切られていることを確かめた。"
+   }
   },
   {
    "kind": "faces.webp",
@@ -4133,8 +4661,8 @@
    "file": "faces.webp",
    "position": "faces.webp の 133 番目のコマ（0 始まり、128px 角）",
    "buildTag": "asis",
-   "verdict": "出典が辿れない",
-   "basis": "合成画像の古い版（faces_v25.webp）のコマをそのまま使っていて、どの画像から切ったかの記録が無い。meta.json にある同じ人物のファイルが元かどうかは未確認",
+   "verdict": "そのまま配信可",
+   "basis": "Commons の表示は Public domain（古い絵の忠実な複製）。出典の表示は条件ではないが、所蔵と出典を添えるのが望ましい。取得元は 2026-11-11 に特定した（確定（同じ絵））",
    "sources": [
     {
      "record": "meta.json",
@@ -4157,7 +4685,27 @@
       "Template Unknown (author)"
      ]
     }
-   ]
+   ],
+   "usedSource": "Tozawa_Moriyasu.jpg",
+   "tracing": {
+    "checked": "2026-11-11",
+    "checkedBy": "claude-self（配信中の画像と候補を並べて目で見た）",
+    "status": "確定（同じ絵）",
+    "visual": "コマ・tools/faces の元画像・Commons のファイルの縮小版を並べて、同じ絵と確かめた",
+    "machine": {
+     "method": "(1) tools/faces/raw/ の画像と Commons のファイルの縮小版の全体比較（dHash のハミング距離、48×48 の正規化相関）。(2) コマの中心部（20×20）を tools/faces の各画像の中で探した正規化相関の最大値",
+     "rawVsCommons": {
+      "dhash": 1,
+      "ncc": 1.0,
+      "aspectDiff": 0.0
+     },
+     "cellInRepoImage": {
+      "hr/m_戸沢盛安.jpg": 0.903,
+      "raw/戸沢盛安.jpg": 0.908
+     }
+    },
+    "note": "tools/faces/raw/ の画像は Commons のファイルの縮小版と一致した。コマは合成画像の古い版から引き継いだもので、同じ絵から切られていることを確かめた。"
+   }
   },
   {
    "kind": "faces.webp",
@@ -4193,8 +4741,8 @@
    "file": "faces.webp",
    "position": "faces.webp の 135 番目のコマ（0 始まり、128px 角）",
    "buildTag": "hr",
-   "verdict": "出典が辿れない",
-   "basis": "高精細の元画像（tools/faces/hr/）を手で取得して切り出しており、その取得元の記録が無い。meta.json にある同じ人物のファイル（Niiro_Tadamoto.jpg）の高精細版と推定されるが、同じ画像かは未確認。そのファイルの判定は「所蔵機関の規約の確認が要る」",
+   "verdict": "所蔵機関の規約の確認が要る",
+   "basis": "Commons の表示は Public domain（古い絵の忠実な複製）。出典が機関のデータベース・サイト（東京都立図書館）で、機関の利用規約は未確認。取得元は 2026-11-11 に特定した（確定（同じ絵））",
    "sources": [
     {
      "record": "meta.json",
@@ -4214,7 +4762,27 @@
       "PD-Japan"
      ]
     }
-   ]
+   ],
+   "usedSource": "Niiro_Tadamoto.jpg",
+   "tracing": {
+    "checked": "2026-11-11",
+    "checkedBy": "claude-self（配信中の画像と候補を並べて目で見た）",
+    "status": "確定（同じ絵）",
+    "visual": "コマ・tools/faces の元画像・Commons のファイルの縮小版を並べて、同じ絵と確かめた",
+    "machine": {
+     "method": "(1) tools/faces/raw/ の画像と Commons のファイルの縮小版の全体比較（dHash のハミング距離、48×48 の正規化相関）。(2) コマの中心部（20×20）を tools/faces の各画像の中で探した正規化相関の最大値",
+     "rawVsCommons": {
+      "dhash": 2,
+      "ncc": 1.0,
+      "aspectDiff": 0.002
+     },
+     "cellInRepoImage": {
+      "hr/新納忠元.jpg": 0.962,
+      "raw/新納忠元.jpg": 0.934
+     }
+    },
+    "note": "tools/faces/raw/ の画像は Commons のファイルの縮小版と一致した。コマは高精細の画像（tools/faces/hr/）から切られていて、その画像が同じ Commons のファイルから取られたかは確かめられない（同じ絵の別の版の可能性が残る）。"
+   }
   },
   {
    "kind": "faces.webp",
@@ -4251,8 +4819,8 @@
    "file": "faces.webp",
    "position": "faces.webp の 137 番目のコマ（0 始まり、128px 角）",
    "buildTag": "hr",
-   "verdict": "出典が辿れない",
-   "basis": "高精細の元画像（tools/faces/hr/）を手で取得して切り出しており、その取得元の記録が無い。meta.json にある同じ人物のファイル（Portrait-Honda-Tadakatsu.jpg）の高精細版と推定されるが、同じ画像かは未確認。そのファイルの判定は「そのまま配信可」",
+   "verdict": "そのまま配信可",
+   "basis": "Commons の表示は Public domain（古い絵の忠実な複製）。出典の表示は条件ではないが、所蔵と出典を添えるのが望ましい。取得元は 2026-11-11 に特定した（確定（同じ絵））",
    "sources": [
     {
      "record": "meta.json",
@@ -4273,7 +4841,27 @@
       "PD-old missing SDC copyright status"
      ]
     }
-   ]
+   ],
+   "usedSource": "Portrait-Honda-Tadakatsu.jpg",
+   "tracing": {
+    "checked": "2026-11-11",
+    "checkedBy": "claude-self（配信中の画像と候補を並べて目で見た）",
+    "status": "確定（同じ絵）",
+    "visual": "コマ・tools/faces の元画像・Commons のファイルの縮小版を並べて、同じ絵と確かめた",
+    "machine": {
+     "method": "(1) tools/faces/raw/ の画像と Commons のファイルの縮小版の全体比較（dHash のハミング距離、48×48 の正規化相関）。(2) コマの中心部（20×20）を tools/faces の各画像の中で探した正規化相関の最大値",
+     "rawVsCommons": {
+      "dhash": 5,
+      "ncc": 0.828,
+      "aspectDiff": 0.001
+     },
+     "cellInRepoImage": {
+      "hr/本多忠勝.jpg": 0.946,
+      "raw/本多忠勝.jpg": 0.889
+     }
+    },
+    "note": "tools/faces/raw/ の画像は Commons のファイルの縮小版と縦横比が一致し、同じ絵だが色味が違う（Commons 側が差し替えられた可能性。正規化相関 0.828）。コマは高精細の画像（tools/faces/hr/）から切られていて、その画像が同じ Commons のファイルから取られたかは確かめられない（同じ絵の別の版の可能性が残る）。"
+   }
   },
   {
    "kind": "faces.webp",
@@ -4314,8 +4902,8 @@
    "file": "faces.webp",
    "position": "faces.webp の 139 番目のコマ（0 始まり、128px 角）",
    "buildTag": "hr",
-   "verdict": "出典が辿れない",
-   "basis": "高精細の元画像（tools/faces/hr/）を手で取得して切り出しており、その取得元の記録が無い。meta.json にある同じ人物のファイル（Matsura_Shigenobu(16th).jpg）の高精細版と推定されるが、同じ画像かは未確認。そのファイルの判定は「そのまま配信可」",
+   "verdict": "そのまま配信可",
+   "basis": "Commons の表示は Public domain（古い絵の忠実な複製）。出典の表示は条件ではないが、所蔵と出典を添えるのが望ましい。取得元は 2026-11-11 に特定した（確定（同じ絵））",
    "sources": [
     {
      "record": "meta.json",
@@ -4336,7 +4924,27 @@
       "Template Unknown (author)"
      ]
     }
-   ]
+   ],
+   "usedSource": "Matsura_Shigenobu(16th).jpg",
+   "tracing": {
+    "checked": "2026-11-11",
+    "checkedBy": "claude-self（配信中の画像と候補を並べて目で見た）",
+    "status": "確定（同じ絵）",
+    "visual": "コマ・tools/faces の元画像・Commons のファイルの縮小版を並べて、同じ絵と確かめた",
+    "machine": {
+     "method": "(1) tools/faces/raw/ の画像と Commons のファイルの縮小版の全体比較（dHash のハミング距離、48×48 の正規化相関）。(2) コマの中心部（20×20）を tools/faces の各画像の中で探した正規化相関の最大値",
+     "rawVsCommons": {
+      "dhash": 2,
+      "ncc": 1.0,
+      "aspectDiff": 0.0
+     },
+     "cellInRepoImage": {
+      "hr/松浦鎮信.jpg": 0.949,
+      "raw/松浦鎮信.jpg": 0.742
+     }
+    },
+    "note": "tools/faces/raw/ の画像は Commons のファイルの縮小版と一致した。コマは高精細の画像（tools/faces/hr/）から切られていて、その画像が同じ Commons のファイルから取られたかは確かめられない（同じ絵の別の版の可能性が残る）。"
+   }
   },
   {
    "kind": "faces.webp",
@@ -4440,8 +5048,8 @@
    "file": "faces.webp",
    "position": "faces.webp の 143 番目のコマ（0 始まり、128px 角）",
    "buildTag": "hr",
-   "verdict": "出典が辿れない",
-   "basis": "高精細の元画像（tools/faces/hr/）を手で取得して切り出しており、その取得元の記録が無い。meta.json にある同じ人物のファイル（Akita_Sanesue.jpg）の高精細版と推定されるが、同じ画像かは未確認。そのファイルの判定は「出典表示を足せば可」",
+   "verdict": "出典表示を足せば可",
+   "basis": "Commons の表示が CC BY 4.0。作者（提供元）とライセンスの表示が要る。取得元は 2026-11-11 に特定した（確定（同じ絵））",
    "sources": [
     {
      "record": "meta.json",
@@ -4459,7 +5067,27 @@
       "CC-BY-4.0"
      ]
     }
-   ]
+   ],
+   "usedSource": "Akita_Sanesue.jpg",
+   "tracing": {
+    "checked": "2026-11-11",
+    "checkedBy": "claude-self（配信中の画像と候補を並べて目で見た）",
+    "status": "確定（同じ絵）",
+    "visual": "コマ・tools/faces の元画像・Commons のファイルの縮小版を並べて、同じ絵と確かめた",
+    "machine": {
+     "method": "(1) tools/faces/raw/ の画像と Commons のファイルの縮小版の全体比較（dHash のハミング距離、48×48 の正規化相関）。(2) コマの中心部（20×20）を tools/faces の各画像の中で探した正規化相関の最大値",
+     "rawVsCommons": {
+      "dhash": 0,
+      "ncc": 0.999,
+      "aspectDiff": 0.002
+     },
+     "cellInRepoImage": {
+      "hr/秋田実季.jpg": 0.975,
+      "raw/秋田実季.jpg": 0.75
+     }
+    },
+    "note": "tools/faces/raw/ の画像は Commons のファイルの縮小版と一致した。コマは高精細の画像（tools/faces/hr/）から切られていて、その画像が同じ Commons のファイルから取られたかは確かめられない（同じ絵の別の版の可能性が残る）。"
+   }
   },
   {
    "kind": "faces.webp",
@@ -4621,8 +5249,8 @@
    "file": "faces.webp",
    "position": "faces.webp の 149 番目のコマ（0 始まり、128px 角）",
    "buildTag": "hr",
-   "verdict": "出典が辿れない",
-   "basis": "高精細の元画像（tools/faces/hr/）を手で取得して切り出しており、その取得元の記録が無い。meta.json にある同じ人物のファイル（Takayama-Ukon.jpg）の高精細版と推定されるが、同じ画像かは未確認。そのファイルの判定は「所蔵機関の規約の確認が要る」",
+   "verdict": "所蔵機関の規約の確認が要る",
+   "basis": "Commons の表示は Public domain（古い絵の忠実な複製）。出典が機関のデータベース・サイト（Tokyo Metropolitan Library）で、機関の利用規約は未確認。取得元は 2026-11-11 に特定した（確定（同じ絵））",
    "sources": [
     {
      "record": "meta.json",
@@ -4643,7 +5271,27 @@
       "PD-old missing SDC copyright status"
      ]
     }
-   ]
+   ],
+   "usedSource": "Takayama-Ukon.jpg",
+   "tracing": {
+    "checked": "2026-11-11",
+    "checkedBy": "claude-self（配信中の画像と候補を並べて目で見た）",
+    "status": "確定（同じ絵）",
+    "visual": "コマ・tools/faces の元画像・Commons のファイルの縮小版を並べて、同じ絵と確かめた",
+    "machine": {
+     "method": "(1) tools/faces/raw/ の画像と Commons のファイルの縮小版の全体比較（dHash のハミング距離、48×48 の正規化相関）。(2) コマの中心部（20×20）を tools/faces の各画像の中で探した正規化相関の最大値",
+     "rawVsCommons": {
+      "dhash": 0,
+      "ncc": 1.0,
+      "aspectDiff": 0.001
+     },
+     "cellInRepoImage": {
+      "hr/高山右近.jpg": 0.708,
+      "raw/高山右近.jpg": 0.723
+     }
+    },
+    "note": "tools/faces/raw/ の画像は Commons のファイルの縮小版と一致した。コマは高精細の画像（tools/faces/hr/）から切られていて、その画像が同じ Commons のファイルから取られたかは確かめられない（同じ絵の別の版の可能性が残る）。"
+   }
   },
   {
    "kind": "faces.webp",
@@ -6593,11 +7241,11 @@
    "kind": "portraits/",
    "name": "三好義継",
    "file": "portraits/三好義継.jpg",
-   "verdict": "出典が辿れない",
-   "basis": "この配信ファイルの取得元の記録が無い。meta.json の同じ人物のファイル（Miyoshi_Yoshitugu.jpg）が元と推定されるが未確認。そのファイルの判定は「そのまま配信可」",
+   "verdict": "そのまま配信可",
+   "basis": "Commons の表示は Public domain（古い絵の忠実な複製）。出典の表示は条件ではないが、所蔵と出典を添えるのが望ましい。取得元は 2026-11-11 に特定した（確定（同じファイルの縮小版））",
    "sources": [
     {
-     "record": "meta.json（名前から推定）",
+     "record": "meta.json（同じ人物のファイル。2026-11-11 に配信ファイルとの一致を確かめた）",
      "commonsFile": "Miyoshi_Yoshitugu.jpg",
      "url": "https://commons.wikimedia.org/wiki/File:Miyoshi_Yoshitugu.jpg",
      "license": "Public domain",
@@ -6614,7 +7262,22 @@
      ]
     }
    ],
-   "usedSource": "Miyoshi_Yoshitugu.jpg"
+   "usedSource": "Miyoshi_Yoshitugu.jpg",
+   "tracing": {
+    "checked": "2026-11-11",
+    "checkedBy": "claude-self（配信中の画像と候補を並べて目で見た）",
+    "status": "確定（同じファイルの縮小版）",
+    "visual": "配信ファイルと Commons のファイルの縮小版を並べて、同じ絵と確かめた",
+    "machine": {
+     "method": "配信ファイルと Commons のファイルの縮小版の全体比較（dHash のハミング距離、48×48 の正規化相関）",
+     "fileVsCommons": {
+      "dhash": 1,
+      "ncc": 0.998,
+      "aspectDiff": 0.0
+     }
+    },
+    "note": "配信ファイルは Commons のファイルの縮小版と一致した"
+   }
   },
   {
    "kind": "portraits/",
@@ -6651,11 +7314,11 @@
    "kind": "portraits/",
    "name": "宗義調",
    "file": "portraits/宗義調.jpg",
-   "verdict": "出典が辿れない",
-   "basis": "この配信ファイルの取得元の記録が無い。meta.json の同じ人物のファイル（Sou_Yoshishige.jpg）が元と推定されるが未確認。そのファイルの判定は「所蔵機関の規約の確認が要る」",
+   "verdict": "所蔵機関の規約の確認が要る",
+   "basis": "Commons の表示は Public domain（古い絵の忠実な複製）。出典が機関のデータベース・サイト（ColBase）で、機関の利用規約は未確認。取得元は 2026-11-11 に特定した（確定（同じファイルの縮小版））",
    "sources": [
     {
-     "record": "meta.json（名前から推定）",
+     "record": "meta.json（同じ人物のファイル。2026-11-11 に配信ファイルとの一致を確かめた）",
      "commonsFile": "Sou_Yoshishige.jpg",
      "url": "https://commons.wikimedia.org/wiki/File:Sou_Yoshishige.jpg",
      "license": "Public domain",
@@ -6673,7 +7336,22 @@
      ]
     }
    ],
-   "usedSource": "Sou_Yoshishige.jpg"
+   "usedSource": "Sou_Yoshishige.jpg",
+   "tracing": {
+    "checked": "2026-11-11",
+    "checkedBy": "claude-self（配信中の画像と候補を並べて目で見た）",
+    "status": "確定（同じファイルの縮小版）",
+    "visual": "配信ファイルと Commons のファイルの縮小版を並べて、同じ絵と確かめた",
+    "machine": {
+     "method": "配信ファイルと Commons のファイルの縮小版の全体比較（dHash のハミング距離、48×48 の正規化相関）",
+     "fileVsCommons": {
+      "dhash": 1,
+      "ncc": 1.0,
+      "aspectDiff": 0.002
+     }
+    },
+    "note": "配信ファイルは Commons のファイルの縮小版と一致した"
+   }
   },
   {
    "kind": "portraits/",
@@ -7055,5 +7733,11 @@
     }
    ]
   }
- ]
+ ],
+ "tracing": {
+  "checked": "2026-11-11",
+  "scope": "「出典が辿れない」とした 28 行の取得元の特定。配信中の画像（faces.webp のコマ、portraits/ のファイル）、リポジトリ内の元画像（tools/faces/raw・hr）、Commons のファイルの縮小版を、機械的な比較と目視で突き合わせた。",
+  "limits": "確かめたのは「同じ絵であること」まで。高精細の元画像や古い版の合成画像が、どの Commons のファイルのどの版から取られたかの記録は無い。Commons のライセンス表示が正しいこと、原画の制作年代、所蔵機関の規約は確かめていない。",
+  "rows": 28
+ }
 }

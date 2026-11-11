@@ -6,6 +6,8 @@
 - 表（機械可読）：[portrait-sources.json](../../data/research/source-notes/portrait-sources.json)
 - 表（読む用）：[portrait-sources.md](../../data/research/source-notes/portrait-sources.md)
 
+> 2026-11-11 追記：「出典が辿れない」28 行は、[取得元の特定](PORTRAIT_SOURCE_TRACING.md)で 28 行とも同じ絵の Commons のファイルを特定し、判定を付け直した。下の件数と一覧は特定の前のもの。最新の件数は表と特定の報告書を見ること。
+
 ## 結果
 
 対象は 225 行：合成画像 `faces.webp` の 153 コマ、`portraits/` の 70 ファイル、合成の `faces-fallback.webp` と
