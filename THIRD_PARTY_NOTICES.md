@@ -82,6 +82,23 @@ Nothing in this file states or implies that they sponsor, endorse or approve thi
 game.
 
 
+## Bootstrap
+
+Source: https://github.com/twbs/bootstrap
+
+`kuniezu/static/kuniezu/vendor/bootstrap-5.3.8/` contains Bootstrap 5.3.8
+(`bootstrap.min.css` and `bootstrap.bundle.min.js`) unmodified, as published at
+`https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/`, with its `LICENSE` (MIT,
+Copyright (c) 2011-2025 The Bootstrap Authors). The bundle includes Popper 2
+(MIT, Copyright (c) 2019 Federico Zivolo), whose notice is kept in the file
+header. `series-theme.css` and `bootstrap-layer.css` set Bootstrap's documented
+CSS variables and contain no Bootstrap source.
+
+SHA-384 of the copied files:
+
+- `bootstrap.min.css`: `sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB`
+- `bootstrap.bundle.min.js`: `FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI`
+
 ## AGENTS.md
 
 The title and section outline of `AGENTS.md` follow the outline that OpenAI

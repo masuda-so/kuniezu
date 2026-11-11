@@ -25,8 +25,9 @@
 
 ## コーディングスタイルと命名規則
 
-- 素の JavaScript。各ファイルは読込順に同じグローバルを拡張する。`.editorconfig`（2 スペース、LF、UTF-8）に従い、触ったファイルの慣習に合わせる。実行時の依存を増やさない。
+- 素の JavaScript。各ファイルは読込順に同じグローバルを拡張する。`.editorconfig`（2 スペース、LF、UTF-8）に従い、触ったファイルの慣習に合わせる。実行時の依存を増やさない。例外は Bootstrap（`kuniezu/static/kuniezu/vendor/bootstrap-<版>/`、無改変の同梱、利用者の決定 2026-11-11）。
 - `data.js` / `hist.js` / `geo.js` / `jokaku.js` の修正は出典付きの訂正モジュールを確認し、同じ事項への二重適用を避ける。`engine.js` / `ui.js` / `index.html` は全分野の共通箇所なので同時編集を避け、担当を調整する。
+- 画面は Bootstrap 5.3 の部品と、website と同一の `series-theme.css` で組む（Web 系列共通、利用者の決定 2026-11-11）。形が決まっている枠と繰り返し部品の雛形はテンプレートに置き、状態で変わる中身は JS が Bootstrap のクラスで組み立てる。組み直した領域は根の要素に `class="bs"` を付ける。`.bs` の外では `bootstrap-layer.css` の legacy レイヤーが Bootstrap の指定を打ち消すので、未移行の画面は変わらない。置き換えの間、`ui.js`・`index.html`・`index.css`・`theme-washi.css` は担当（ターミナル代行）が一人で編集する。段取りは `docs/architecture/replatform-plan.md` の段 6。
 - 改変済みベクターGeoJSONは正本を直接編集する。それ以外の配信用データは生成元（`tools/geo/`、`tools/faces/`）を直して再生成する。生成物だけを直さない。`data/audits/` の JSON を手で変えない。
 
 ## テストの指針

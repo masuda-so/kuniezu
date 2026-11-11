@@ -237,6 +237,8 @@ node tools/checks/offline.cjs
 
 ## Development and contributions
 
+The interface is being rebuilt, region by region, from stock Bootstrap 5.3 components, in the same way as `masuda-so/website`. Bootstrap 5.3.8 is vendored unmodified in `kuniezu/static/kuniezu/vendor/`, and `bootstrap-layer.css` loads it together with the shared theme `series-theme.css`. Only the foundation is in place so far: the existing screens are still drawn by the game's own CSS and look the same as before. The steps are in stage 6 of `docs/architecture/replatform-plan.md`.
+
 After updating acceptance policy, run `node tools/work/build-catalog.cjs --requests-only` to synchronize request rows while preserving subject IDs, ownership, and completion evidence. Validate with `--requests-only --check`.
 
 The normal CI on GitHub Actions runs the server-free checks (syntax, storage and
