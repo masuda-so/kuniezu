@@ -30,3 +30,6 @@ data/verification/**/*.html
 
 # Local battle DEM build workspace; served relief and source provenance are tracked.
 /data/inputs/nagakute-dem/build/
+
+# Wrangler のローカルの状態
+/.wrangler/
