@@ -1,0 +1,239 @@
+{
+  "checked": "2026-11-11",
+  "scope": "#153（第 1 便）で要確認にした 7 人の再照合（第 2 便）。人物の同定のみ。生没・所在の命題なし。",
+  "rawLicense": {
+    "name": "CC0 1.0",
+    "url": "https://www.wikidata.org/wiki/Wikidata:Licensing",
+    "scope": "Wikidata JSON only; NDL 典拠データは国立国会図書館の利用条件に従う"
+  },
+  "method": "Wikidata の別名を取り直す → NDL 典拠の SPARQL で主名・表示名・別名の完全一致（別表記の 川尻秀隆・三好義長 なども入れ、足利義氏を対照にした）→ 公的機関のサイトに絞った Web 検索を 1 人 1 回 → 見つかったページと PDF を自分で取り直して文言を確かめ、原本を主の作業ディレクトリの .cache に SHA つきで保全（PDF は macOS の PDFKit）。サブエージェントは使っていない。",
+  "records": [
+    {
+      "name": "須田満親",
+      "japaneseLabel": "須田満親",
+      "wikidataId": "Q11664642",
+      "wikidataRevision": 2354833008,
+      "wikidataJapaneseLabel": "須田満親",
+      "entityDataUrl": "https://www.wikidata.org/wiki/Special:EntityData/Q11664642.json",
+      "revisionUrl": "https://www.wikidata.org/w/index.php?title=Q11664642&oldid=2354833008",
+      "rawEntityDataSnapshot": "data/research/source-notes/person-identity-corpus-2-raw/Q11664642.json",
+      "rawSha256": "6ecfcde9cc0f7709383608d650be282c8ec1b6a0befa8b8e80a5c9bd7f146b4f",
+      "identityChecks": [
+        "NDL01195358の主名須田満親がPerson典拠に属する",
+        "Wikidata Q11664642の日本語主名須田満親とP349が同じNDL典拠へ対応する"
+      ],
+      "adoptedNames": [
+        "須田満親"
+      ],
+      "scope": "person-identity-only; no historical dates or locations adopted",
+      "nameEvidence": [
+        {
+          "name": "須田満親",
+          "supports": [
+            "wikidata-ja-label-or-alias",
+            "ndl-primary"
+          ]
+        }
+      ],
+      "identitySourceIds": [
+        "ndlSudaMitsuchikaIdentity"
+      ],
+      "identitySourceUrl": "https://id.ndl.go.jp/auth/ndlna/01195358.json",
+      "identitySourceLocator": "個人典拠の主名・人物型・典拠ID",
+      "yearComparison": {
+        "wikidataBirth": [
+          1526
+        ],
+        "wikidataDeath": [
+          1598
+        ],
+        "ndlBirth": "1537",
+        "ndlDeath": "1598"
+      },
+      "ndlId": "01195358",
+      "ndlSnapshot": "data/research/source-notes/person-identity-corpus-2-ndl-suda.json",
+      "ndlIdentity": {
+        "uri": "http://id.ndl.go.jp/auth/entity/01195358",
+        "type": {
+          "uri": "http://xmlns.com/foaf/0.1/Person"
+        },
+        "name": "須田満親",
+        "dateOfBirth": "1537",
+        "dateOfDeath": "1598"
+      },
+      "foundBy": "wikidata-P349",
+      "reservation": "生年が Wikidata 1526・NDL 1537 と食い違う（没年 1598 は一致）。同じ人物を指すことは P349 の相互の対応で確かめ、生年はどちらも採用しない。利用者の判断（2026-11-11）で、生年の食い違いを留保として同定を採用した。NDL の出典は『信濃須田一族』（志村平治）と『戦国人名辞典』。",
+      "checkedBy": "claude-self"
+    },
+    {
+      "name": "本多忠朝",
+      "japaneseLabel": "本多忠朝",
+      "wikidataId": "Q837870",
+      "wikidataRevision": 2556897969,
+      "wikidataJapaneseLabel": "本多忠朝",
+      "entityDataUrl": "https://www.wikidata.org/wiki/Special:EntityData/Q837870.json",
+      "revisionUrl": "https://www.wikidata.org/w/index.php?title=Q837870&oldid=2556897969",
+      "rawEntityDataSnapshot": "data/research/source-notes/person-identity-corpus-2-raw/Q837870.json",
+      "rawSha256": "5bf55063b1b67da228f3acc6b2114b33f54ecd4a55d61ebd82525d5be34b2d4b",
+      "identityChecks": [
+        "千葉県立中央博物館大多喜城分館の歴代城主の表が、本多忠朝を五万石・1601〜1615年（慶長6〜元和元）の大多喜城主、本多忠勝の次男で大坂夏の陣で戦死とする",
+        "Wikidata Q837870の日本語主名が本多忠朝で、P570の年が1615"
+      ],
+      "adoptedNames": [
+        "本多忠朝"
+      ],
+      "scope": "person-identity-only; no historical dates or locations adopted",
+      "nameEvidence": [
+        {
+          "name": "本多忠朝",
+          "supports": [
+            "wikidata-ja-label-or-alias",
+            "public-source"
+          ]
+        }
+      ],
+      "identitySourceIds": [
+        "chibaMuseumTadatomoIdentity"
+      ],
+      "identitySourceUrl": "https://www.chiba-muse.or.jp/NATURAL/sonan/page-1517929898059/",
+      "identitySourceLocator": "「当館について」の大多喜城の歴代城主の表、本多忠朝の行",
+      "yearComparison": {
+        "wikidataBirth": [
+          1582
+        ],
+        "wikidataDeath": [
+          1615
+        ]
+      },
+      "publicOriginalNotRedistributed": {
+        "reason": "転載の条件を確かめていないため、原本は Git で配らない。手元の .cache/research-originals/person-identity-corpus-2/tadatomo-chibamuse.html.gz（Git に入れない）に保全する。",
+        "uncompressedSha256": "4698884459925af3e3badce776b888b4413a0cecf412c9d193f53c9794cd6924",
+        "excerpt": "data/research/source-notes/person-identity-corpus-2-tadatomo-chibamuse-excerpt.md"
+      },
+      "foundBy": "web-search",
+      "reservation": "#153 では千葉県の民話のページしか無く見送った。今回は博物館の城主の表を根拠にした。生年は表に無い。",
+      "checkedBy": "claude-self"
+    },
+    {
+      "name": "三好義興",
+      "japaneseLabel": "三好義興",
+      "wikidataId": "Q10865734",
+      "wikidataRevision": 2283259896,
+      "wikidataJapaneseLabel": "三好義興",
+      "entityDataUrl": "https://www.wikidata.org/wiki/Special:EntityData/Q10865734.json",
+      "revisionUrl": "https://www.wikidata.org/w/index.php?title=Q10865734&oldid=2283259896",
+      "rawEntityDataSnapshot": "data/research/source-notes/person-identity-corpus-2-raw/Q10865734.json",
+      "rawSha256": "6d4114808aae72f8d31af597a0c81a783f32173db3e33da3391a359effc4805d",
+      "identityChecks": [
+        "高槻市の年表が、1560年（永禄3年）に長慶が河内飯盛城へ移り三好義興が芥川城主となり、1563年（永禄6年）に三好義興が芥川城で没したとする",
+        "Wikidata Q10865734の日本語主名が三好義興で、P570の年が1563"
+      ],
+      "adoptedNames": [
+        "三好義興"
+      ],
+      "scope": "person-identity-only; no historical dates or locations adopted",
+      "nameEvidence": [
+        {
+          "name": "三好義興",
+          "supports": [
+            "wikidata-ja-label-or-alias",
+            "public-source"
+          ]
+        }
+      ],
+      "identitySourceIds": [
+        "takatsukiYoshiokiIdentity"
+      ],
+      "identitySourceUrl": "https://www.city.takatsuki.osaka.jp/site/history/34269.html",
+      "identitySourceLocator": "「年表」の1560年（永禄3年）と1563年（永禄6年）の行",
+      "yearComparison": {
+        "wikidataBirth": [
+          1542
+        ],
+        "wikidataDeath": [
+          1563
+        ]
+      },
+      "publicOriginalNotRedistributed": {
+        "reason": "転載の条件を確かめていないため、原本は Git で配らない。手元の .cache/research-originals/person-identity-corpus-2/yoshioki-takatsuki.html.gz（Git に入れない）に保全する。",
+        "uncompressedSha256": "ed1c7445e210b18bd4834ddcdbe4e6d1a72cbc2c30f2c9df1fcd18f8236610b2",
+        "excerpt": "data/research/source-notes/person-identity-corpus-2-yoshioki-takatsuki-excerpt.md"
+      },
+      "foundBy": "web-search",
+      "reservation": "年表は月日を書かない。既存の命題（person:三好義興 を主語にするもの）の日付とは照合していない。",
+      "checkedBy": "claude-self"
+    },
+    {
+      "name": "河尻秀隆",
+      "japaneseLabel": "河尻秀隆",
+      "wikidataId": "Q6379555",
+      "wikidataRevision": 2521636335,
+      "wikidataJapaneseLabel": "河尻秀隆",
+      "entityDataUrl": "https://www.wikidata.org/wiki/Special:EntityData/Q6379555.json",
+      "revisionUrl": "https://www.wikidata.org/w/index.php?title=Q6379555&oldid=2521636335",
+      "rawEntityDataSnapshot": "data/research/source-notes/person-identity-corpus-2-raw/Q6379555.json",
+      "rawSha256": "10f444f858a30914c11e7683c286eab7fd63aa4345c59f42504e6038a5ca50e7",
+      "identityChecks": [
+        "恵那市教育委員会の岩村城跡の現地説明会資料が、天正3年（1575）の落城の後に河尻秀隆が岩村城主となったとし、山梨県の資料が、河尻塚を織田信長の家臣河尻秀隆の塚で、本能寺の変の直後に民衆の襲撃にあったとする",
+        "Wikidata Q6379555の日本語主名が河尻秀隆で、P570の年が1582"
+      ],
+      "adoptedNames": [
+        "河尻秀隆"
+      ],
+      "scope": "person-identity-only; no historical dates or locations adopted",
+      "nameEvidence": [
+        {
+          "name": "河尻秀隆",
+          "supports": [
+            "wikidata-ja-label-or-alias",
+            "public-source"
+          ]
+        }
+      ],
+      "identitySourceIds": [
+        "enaKawajiriIdentity",
+        "yamanashiKawajiriIdentity"
+      ],
+      "identitySourceUrl": "https://www.city.ena.lg.jp/material/files/group/33/H231203iwagensetu.pdf",
+      "identitySourceLocator": "1 頁「岩村城の歴史」",
+      "yearComparison": {
+        "wikidataBirth": [
+          1527
+        ],
+        "wikidataDeath": [
+          1582
+        ]
+      },
+      "publicOriginalNotRedistributed": {
+        "reason": "転載の条件を確かめていないため、原本は Git で配らない。手元の .cache/research-originals/person-identity-corpus-2/hidetaka-ena.pdf（Git に入れない）に保全する。",
+        "uncompressedSha256": "910b18ac53d09add63a597636c66c2676cb52325a205e96b244054b64c3504eb",
+        "excerpt": "data/research/source-notes/person-identity-corpus-2-hidetaka-ena-excerpt.md"
+      },
+      "foundBy": "web-search",
+      "reservation": "没年を明記する公的資料は見つけていない。山梨県の資料は「本能寺の変で信長が討たれてすぐに民衆の襲撃にあいました」と書き、年と死去を明記しない。Wikidata の没年 1582 とは、本能寺の変（1582）の直後という記述で合わせた。",
+      "checkedBy": "claude-self"
+    }
+  ],
+  "notAdopted": [
+    {
+      "name": "大崎義直",
+      "wikidataId": "Q11435067",
+      "layer": "source-not-found",
+      "reason": "宮城県・大崎市のサイトに絞った検索 1 回では、名生城と大崎氏の説明と、宮城県図書館の目録の題名「大崎義直書状の解説と中目氏」しか見つからない。題名だけでは来歴を確かめられない。NDL 典拠は完全一致で 0 件。Wikidata の生没年（1550・1577）は未照合。要確認"
+    },
+    {
+      "name": "土居宗珊",
+      "wikidataId": "Q11423174",
+      "layer": "source-not-found",
+      "reason": "四万十市・高知県のサイトに絞った検索 1 回では、名前の出るページが見つからない。NDL 典拠は完全一致で 0 件（別表記の 土居宗三 も 0 件）。Wikidata に生没年が無い。要確認"
+    },
+    {
+      "name": "久武親直",
+      "wikidataId": "Q11369456",
+      "layer": "source-type",
+      "reason": "高知市春野郷土資料館の「七人みさき」の解説に「家老久武親直」が出るが、伝承の解説で、同じ資料館の別の版は「久武親信（元親の家老で佐川城主）」と書き、表記が揺れる。同定の根拠にしなかった。NDL 典拠は完全一致で 0 件。要確認",
+      "candidateUrl": "https://www.city.kochi.kochi.jp/deeps/20/2019/muse/hanashi/hanashi10.html",
+      "checkedBy": "search-result-summary-only"
+    }
+  ]
+}
