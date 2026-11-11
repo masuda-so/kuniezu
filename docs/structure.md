@@ -46,7 +46,7 @@ uv run python scripts/build_static.py
 
 CI の `Django CI` は website と同じく試験（`uv run pytest`）だけを実行する。Ruff・mypy・djLint・pre-commit は手元の検査。`kuniezu/static/`・`data/`・`tools/`・`docs/`・`archive/` は Ruff と pre-commit の対象から外してある（各自の決まりに従う。段 4 で Python の道具を対象に入れる）。
 
-ゲームの検査（`node tools/checks/offline.cjs` ほか、CI の `Offline checks`）は従来どおり。ゲームの JS を実行するので Node が要る。
+ゲームの検査（`node tools/checks/offline.cjs` ほか、CI の `Node.js CI`）は従来どおり。ゲームの JS を実行するので Node が要る。
 
 開発サーバー：`uv run python manage.py runserver 127.0.0.1:8000`。エージェントが起動・停止してよいのはこのアドレスだけ。8001番の許可は2026-11-09に撤回されており、8001番や他ポートは起動・利用しない。
 
