@@ -14,6 +14,7 @@
 
 - `sources.jsonl` は書誌・URL・確認箇所・確認範囲。本文を丸ごと保持したアーカイブではない。
 - `claims.jsonl` は出典の指定箇所で確認した一命題。年代、日付の精度、実装先を分ける。複数の出典が対立する場合は各説を別命題にし、採用方針を別に記録する。
+- `control.jsonl` は拠点（ノード）の支配の記録。支配者の変化と、ある時点の観察を、出典の箇所つきで 1 件ずつ持つ。ある日の配置は保存せず、`tools/research/control-derive.cjs` が記録から導き出す。入力は `curated/control/`、形と決まりは `docs/designs/territory-control.md`。いまは 0 件。
 - `implemented-events.jsonl` と `implemented-sites.jsonl` は実装の棚卸し。史実確認済みという意味ではなく、検索結果の史実の根拠にはしない。
 - `japan-castle-candidates.jsonl` はCODH全国遺跡報告総覧地名データの城・軍事施設候補。江戸期・近代の施設も含み、1560〜1615年に存在した施設の一覧ではない。`inGame:null` は未対応付けであり未実装の証明ではない。名前と近接位置で対応したものにも個別の同定確認が必要。
 - `source-notes/heritage-site-candidates.json` は、ゲームの城系の拠点（日本）に対する国指定の史跡の候補の目録。`node tools/research/heritage-site-candidates.cjs --output <出力先> --checked <日付>` でジャパンサーチの API から作り直す。位置の根拠の候補で、存在年代・城域の命題には採用しない。解説文は保存しない。

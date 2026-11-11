@@ -11,3 +11,16 @@
 `identities/` は、2 つの識別子が同じ対象か（`same-site`）、ゲームの拠点が台帳の場所を代表しているか（`represented-by`）の記録。名前が同じというだけでは登録しない。形は [identities/README.md](identities/README.md)。
 
 `people/` と `places/` は固定IDの登録、`locations/` は出典付きの居所・所在・役職の記録。名称・改称と物理的場所を分ける。精密座標は別途照合する。年だけ分かる記録を日単位の滞在へ変換せず、資料の空白年を埋めない。既定の史実命題検索とは別に `query-locations.cjs` を使う。
+
+## 支配の記録（`control/`）
+
+拠点（ノード）を「いつ、どの家が支配していたか」の記録。1 件 1 ファイルで、ファイル名は `id` から `control:` を除いたもの（例：`okazaki-1560-1.json`）。設計と決まりの全体は [docs/designs/territory-control.md](../../../docs/designs/territory-control.md)。入力の検査は `tools/research/evidence-store.cjs` の `loadControl`、固定の入力による確認は `node tools/checks/control-ledger.cjs`。
+
+- **支配者**：その日にその城を実際に押さえている勢力を、ゲームの家の鍵で書く（`clan:<鍵>`）。城主がゲームで独立の鍵を持たない国衆や家臣なら、その城主が従っている家を書く。
+- **記録は 2 種類**：`change`（支配者が変わった）と `observation`（ある時点・期間の状態）。項目と要否は設計書の「記録の単位」の表。
+- **値の語彙**：`value` は `held`（保持）・`contested`（係争）・`undetermined`（不明）・`not-applicable`（対象外）。`cause`・`dateKind`・`evidenceDepth` も閉じた語彙。
+- **「不明」と「未調査」**：調べて決められなかった期間は `undetermined` で登録し、探した範囲 `searched`（出典・条件・日付・覆う年代）を必ず書く。まだ調べていない期間には何も置かない。記録が無いことが未調査である。
+- **異説と係争**：史料どうしが食い違うときは、別々の記録を置いて互いの `variantOf` に相手の `id` を書く。現地で実際に争っていたことは `contested` で書く。
+- **窓と確かな観察**：年だけ分かる観察や、出典が両端を述べていない期間（`boundsAsserted: false`）は「その幅のどこかで成り立った」という窓で、その幅の全日を確かめたことにはならない。日が決まる観察と、両端を述べた期間（`boundsAsserted: true`）が確かな観察である。
+- **日付**：`dated-event`（旧暦の年月日）、`year-window`（`calendar` は `Japanese-year`。旧暦の年の正月朔日から最後の日まで）、`described-period`、期間（`{"from": …, "to": …}`）。年精度の記録を 1 月 1 日の出来事に直さない。
+- **写さない**：綱文の文面は写さず、`summary` に要旨を自分の言葉で書く。`locator` には所在だけを書く。
