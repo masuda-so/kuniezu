@@ -28,6 +28,8 @@ TEST_CLIENT_HOST = "testserver"
 EXCLUDED = (
     "map/build/previews",
     "map/build/grid",
+    # A note for people editing the game folder, not for players.
+    "README.md",
 )
 
 
@@ -65,9 +67,9 @@ def content_security_policy(page: bytes) -> str:
         "default-src 'self'; "
         f"script-src 'self' {scripts}; "
         f"script-src-attr 'unsafe-hashes' {handlers}; "
-        "style-src 'self' https://fonts.googleapis.com; "
+        "style-src 'self'; "
         "style-src-attr 'unsafe-inline'; "
-        "font-src https://fonts.gstatic.com; "
+        "font-src 'self'; "
         "img-src 'self' data: blob:; "
         "worker-src 'self' blob:; "
         "connect-src 'self'; "
@@ -89,13 +91,49 @@ def write_headers(client_dir: Path, page: bytes) -> None:
         "  X-Frame-Options: DENY\n"
         "  Referrer-Policy: strict-origin-when-cross-origin\n"
         f"  Permissions-Policy: {PERMISSIONS_POLICY}\n"
-        "  Cross-Origin-Opener-Policy: same-origin-allow-popups\n",
+        "  Cross-Origin-Opener-Policy: same-origin-allow-popups\n"
+        # Unfinished: shared by URL, kept out of search results. Crawlers
+        # must be allowed to fetch the pages to see this, so robots.txt
+        # does not block them.
+        "  X-Robots-Tag: noindex\n",
         encoding="utf-8",
     )
     (client_dir / "robots.txt").write_text(
         "User-agent: *\nAllow: /\n",
         encoding="utf-8",
     )
+
+
+NOT_FOUND_PAGE = """<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>ページが見つかりません - 天下分け目の国絵図</title>
+<link rel="stylesheet" href="/404.css">
+</head>
+<body>
+<main>
+<h1>ページが見つかりません</h1>
+<p>お探しのページは、移動したか、はじめから無いようです。</p>
+<p><a href="/">天下分け目の国絵図へ戻る</a></p>
+</main>
+</body>
+</html>
+"""
+NOT_FOUND_STYLE = """body{margin:0;min-height:100vh;display:grid;place-content:center}
+body{padding:24px;text-align:center;background:#1c3157;color:#f3e8cc}
+body{font-family:serif;line-height:1.8}
+h1{font-size:1.5rem;margin:0 0 .5em}
+a{color:#d9b866}
+"""
+
+
+def write_not_found(client_dir: Path) -> None:
+    """Write the page the host serves for any path that has no file."""
+    (client_dir / "404.html").write_text(NOT_FOUND_PAGE, encoding="utf-8")
+    (client_dir / "404.css").write_text(NOT_FOUND_STYLE, encoding="utf-8")
 
 
 def gzip_oversized_vectors(client_dir: Path) -> list[Path]:
@@ -168,6 +206,7 @@ def build(dist: Path = DIST) -> Path:
     for path in gzip_oversized_vectors(client_dir):
         LOGGER.info("Compressed %s", path.relative_to(client_dir))
     write_headers(client_dir, response.content)
+    write_not_found(client_dir)
     return client_dir
 
 

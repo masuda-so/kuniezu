@@ -23,6 +23,7 @@ def test_export_writes_the_page_and_only_run_time_files(tmp_path, settings):
         "map/build/provinces/0-0.png",
         "map/build/previews/control.png",
         ".DS_Store",
+        "README.md",
     ):
         path = game / name
         path.parent.mkdir(parents=True, exist_ok=True)
@@ -37,6 +38,8 @@ def test_export_writes_the_page_and_only_run_time_files(tmp_path, settings):
         if path.is_file()
     )
     assert exported == [
+        "404.css",
+        "404.html",
         "_headers",
         "index.html",
         "robots.txt",
@@ -68,6 +71,11 @@ def test_export_headers_allow_only_the_inline_code_the_page_contains(
     assert "'unsafe-inline'" not in policy.split("script-src-attr")[0]
     for body in INLINE_SCRIPT.findall(page):
         assert csp_hash(body) in policy
+    # Fonts are bundled, so no other host is allowed or contacted.
+    assert "https://" not in policy
+    assert b"fonts.googleapis.com" not in page
+    assert "X-Robots-Tag: noindex" in headers
+    assert b'<meta name="robots" content="noindex">' in page
     assert "Strict-Transport-Security" in headers
     assert "X-Frame-Options: DENY" in headers
     assert "Permissions-Policy: camera=()" in headers

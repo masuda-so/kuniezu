@@ -23,7 +23,9 @@ def test_page_points_relative_urls_at_the_static_files():
     assert response.status_code == HTTPStatus.OK
     html = response.content.decode()
     # Relative URLs in the game resolve under the static prefix.
-    assert html.startswith('<!doctype html><html><head><base href="/static/kuniezu/">')
+    assert html.startswith(
+        '<!doctype html><html lang="ja"><head><base href="/static/kuniezu/">'
+    )
     assert html.count("<head>") == 1
     assert html.count("<base ") == 1
 
