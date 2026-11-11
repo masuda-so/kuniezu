@@ -111,6 +111,8 @@ node tools/checks/offline.cjs
 
 ## 開発と貢献
 
+画面は、`masuda-so/website` と共通の方式で Bootstrap 5.3 の部品へ順に組み直しています。Bootstrap 5.3.8 は `kuniezu/static/kuniezu/vendor/` に無改変で同梱し、`bootstrap-layer.css` が系列共通の主題 `series-theme.css` と合わせて読み込みます。現時点で入っているのは土台だけで、既存の画面はまだ独自の CSS で描いており、見た目は導入前と同じです。段取りは `docs/architecture/replatform-plan.md` の段 6 にあります。
+
 受入条件だけを更新した場合は `node tools/work/build-catalog.cjs --requests-only` で要望行のみ同期します。対象ID・担当・完了証拠を保持し、`--requests-only --check` で整合を確認できます。
 
 GitHub Actionsの通常CIは、サーバー不要の検査（構文・保存・領土、フォルダと担当、基盤）を Node.js で実行します。実画面の検証は利用者の環境で行い、結果の要約を `data/verification/` に記録します（画像は PR に添付し、リポジトリには入れません）。
