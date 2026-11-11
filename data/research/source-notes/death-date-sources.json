@@ -17,11 +17,11 @@
   "public-differs": 2,
   "not-found": 4,
   "year-only": 3,
-  "public-matches-kobun": 7,
+  "public-matches-kobun": 8,
   "public-matches-kobun-unverified": 1,
   "year-or-month-only": 1,
   "month-only-with-inscription-date": 1,
-  "no-claim-public-found": 1,
+  "no-claim-public-found": 0,
   "sources-disagree": 1
  },
  "rows": [
@@ -423,11 +423,11 @@
   },
   {
    "name": "立花道雪（戸次鑑連）",
-   "claim": null,
-   "kobun": null,
+   "claim": "death-date-tachibana-dosetsu",
+   "kobun": "天正13年9月11日",
    "timeline": "1585-11-01",
-   "timelineMinusKobunDays": null,
-   "category": "no-claim-public-found",
+   "timelineMinusKobunDays": -1,
+   "category": "public-matches-kobun",
    "sources": [
     {
      "publisher": "宗像市（むなかた電子博物館紀要 第5号、桑田和明「宗像氏貞妹の婚儀とその生涯」）",
@@ -464,7 +464,7 @@
      "privateOriginal": ".cache/research-originals/death-date-sources/dosetsu-oita.html.gz"
     }
    ],
-   "note": "綱文の命題は未登録。宗像市の紀要は、典拠（『大日本史料』第十一編之二十、天正十三年九月十一日条）とともに9月11日と書き、別の箇所で9月13日とも書く。9月11日はグレゴリオ暦1585-11-02（年表より1日遅い）、9月13日なら11-04（3日遅い）。綱文の9月11日条を引いて命題に登録できる見込み（未照会）。"
+   "note": "綱文の命題 death-date-tachibana-dosetsu（天正13年9月11日 第2条、2026-11-08 確認）は登録済み。前の版の「綱文の命題は未登録・未照会」は誤りで、2026-11-11 に直した（綱文は今回引き直していない）。宗像市の紀要は、典拠（『大日本史料』第十一編之二十、天正十三年九月十一日条）とともに9月11日と書き、綱文と同じ月日。同じ論文の別の箇所（33 頁）は9月13日と書き、論文の中で食い違う。9月11日はグレゴリオ暦1585-11-02（年表より1日遅い）、9月13日なら11-04（3日遅い）。"
   },
   {
    "name": "高橋紹運",
