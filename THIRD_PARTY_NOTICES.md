@@ -70,6 +70,13 @@ under their own terms, which are recorded below and in
   국사편찬위원회 역사지리정보(https://hgis.history.go.kr)에서 무료로 다운받으실 수 있습니다.
   The 1910 boundaries are used as an estimate for 1592.
 
+## Fonts
+
+- **Shippori Mincho B1**, **Zen Kaku Gothic New** and **Yuji Syuku** — bundled unmodified in
+  `kuniezu/static/kuniezu/vendor/fonts/` as distributed by Google Fonts (downloaded 2026-11-11), so the
+  game contacts no other host. Each is licensed under the SIL Open Font License 1.1; the license texts
+  are kept next to the files (`OFL-*.txt`).
+
 ## Historical maps, elevation, roads and portraits
 
 The sources consulted for historical maps, elevation, road comparison shapes,
