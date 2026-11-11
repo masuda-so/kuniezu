@@ -1,0 +1,25 @@
+{
+  "id": "person:波多野秀治",
+  "name": "波多野秀治",
+  "gameNames": [
+    "波多野秀治"
+  ],
+  "authorityIds": [
+    "wikidata:Q837394"
+  ],
+  "authorityEvidence": {
+    "scope": "person-identity",
+    "checked": "2026-11-11",
+    "wikidataRevision": 2528552562,
+    "snapshot": "data/research/source-notes/person-identity-corpus-3.json",
+    "sourceNote": "data/research/source-notes/person-identity-corpus-3.json",
+    "identityChecks": [
+      "丹波篠山市の本文が、波多野秀治を波多野氏の4代で八上城の城主とし、明智光秀に包囲された籠城戦の末に捕らえられ、天正7年（1579）6月に安土へ送られて城下の慈恩寺で磔にされたとも斬殺されたともいう、とする",
+      "Wikidata Q837394の日本語主名が波多野秀治で、P570の年が1579"
+    ],
+    "basis": "人物の同定のみ。原本にある生没日・所在・所領・関係の時期は新たな史実命題へ採用しない。",
+    "sourceIds": [
+      "tambasasayamaHideharuIdentity"
+    ]
+  }
+}
