@@ -33,8 +33,10 @@ EXCLUDED = (
 
 # Cloudflare Workers Static Assets rejects any single file above 25 MiB.
 MAX_ASSET_BYTES = 25 * 1024 * 1024
-INLINE_SCRIPT = re.compile(rb"<script>(.*?)</script>", re.DOTALL)
-INLINE_HANDLER = re.compile(rb'\son[a-z]+="([^"]*)"')
+# Inline scripts are hashed, not filtered: one this pattern misses gets no hash
+# and the policy blocks it. Tag names match in any letter case, as in HTML.
+INLINE_SCRIPT = re.compile(rb"<script>(.*?)</script\s*>", re.DOTALL | re.IGNORECASE)
+INLINE_HANDLER = re.compile(rb'\son[a-z]+="([^"]*)"', re.IGNORECASE)
 
 
 def csp_hash(source: bytes) -> str:
