@@ -36,4 +36,4 @@ jobs:
         uv sync --locked
     - name: Run Tests
       run: |
-        uv run pytest
+        uv run pytest --durations=20
