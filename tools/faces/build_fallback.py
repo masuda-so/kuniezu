@@ -1,4 +1,4 @@
-"""Build only the five reviewed fallback cells. No face detection or new image sources.
+"""Build only the reviewed fallback cells. No face detection or new image sources.
 
 Requires Pillow (build-time only). Supply --root and --validate-only, --check or --write.
 The runtime definitions are preserved, and only the generated fallback block is appended.
@@ -26,8 +26,10 @@ root = args.root.resolve()
 static = root / "kuniezu/static/kuniezu"
 data = json.loads(args.manifest.read_text())
 rows = data["portraits"]
-if len(rows) != 5 or len({r["name"] for r in rows}) != 5:
-    raise ValueError("Expected five distinct reviewed portraits")
+# Four rows since 丹羽長重 was withheld from delivery (tools/faces/withheld.json).
+REVIEWED_ROWS = 4
+if len(rows) != REVIEWED_ROWS or len({r["name"] for r in rows}) != REVIEWED_ROWS:
+    raise ValueError("Expected four distinct reviewed portraits")
 # Read the current authoritative runtime crop, including the later Shima override.
 read = r"""const fs=require('fs'),vm=require('vm'),p=process.argv[1],c={TK:{}};
 vm.runInNewContext(fs.readFileSync(p+'/portrait-layout.js','utf8'),c);
