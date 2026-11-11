@@ -1,7 +1,34 @@
 {
-  "note": "出典と許諾を確かめられず、配信から外した肖像。根拠は data/research/source-notes/portrait-sources.json の「配信不可の疑い」。戻すときは、権利の確認の記録を足してからこの一覧から消す。",
+  "note": "出典と許諾を確かめられないか、所蔵機関の規約が転用の禁止や申請を定めていて、配信から外した肖像。根拠は data/research/source-notes/portrait-sources.json の「配信不可の疑い」「申請が要る」。戻すときは、権利の確認や許可の記録を足してからこの一覧から消す。",
   "decided": "2026-11-11",
-  "names": ["蘆名盛氏", "島津義久", "内藤昌豊", "新発田重家"],
-  "tiles": [20, 54, 59, 134],
-  "files": ["portraits/quality-島津義久.jpg", "portraits/quality-新発田重家.jpg"]
+  "names": [
+    "蘆名盛氏",
+    "島津義久",
+    "内藤昌豊",
+    "新発田重家",
+    "北条氏康",
+    "鍋島直茂",
+    "上杉景勝",
+    "丹羽長重",
+    "片桐且元"
+  ],
+  "tiles": [
+    20,
+    54,
+    59,
+    134,
+    11,
+    24,
+    49,
+    103,
+    111
+  ],
+  "files": [
+    "portraits/quality-島津義久.jpg",
+    "portraits/quality-新発田重家.jpg",
+    "portraits/quality-鍋島直茂.jpg",
+    "portraits/quality-上杉景勝.jpg",
+    "portraits/丹羽長重.jpg",
+    "portraits/quality-片桐且元.jpg"
+  ]
 }
