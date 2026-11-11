@@ -1,0 +1,13 @@
+{
+  "name": "kuniezu",
+  "compatibility_date": "2026-10-28",
+  // 独自ドメインを付けるまでは workers.dev の URL で配る（利用者の決定 2026-11-11）。
+  "workers_dev": true,
+  "preview_urls": false,
+  "build": {
+    "command": "node tools/map/build-map.cjs --no-previews && uv sync --locked --no-dev && .venv/bin/python scripts/build_static.py"
+  },
+  "assets": {
+    "directory": "./dist/client"
+  }
+}

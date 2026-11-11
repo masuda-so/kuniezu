@@ -8,8 +8,12 @@ grid are left out because the browser never requests them.
 
 from __future__ import annotations
 
+import base64
+import gzip
+import hashlib
 import logging
 import os
+import re
 import shutil
 import sys
 from http import HTTPStatus
@@ -25,6 +29,91 @@ EXCLUDED = (
     "map/build/previews",
     "map/build/grid",
 )
+
+
+# Cloudflare Workers Static Assets rejects any single file above 25 MiB.
+MAX_ASSET_BYTES = 25 * 1024 * 1024
+INLINE_SCRIPT = re.compile(rb"<script>(.*?)</script>", re.DOTALL)
+INLINE_HANDLER = re.compile(rb'\son[a-z]+="([^"]*)"')
+
+
+def csp_hash(source: bytes) -> str:
+    digest = base64.b64encode(hashlib.sha256(source).digest()).decode()
+    return f"'sha256-{digest}'"
+
+
+def content_security_policy(page: bytes) -> str:
+    """Allow exactly what the page uses.
+
+    The one inline loader script and the one inline event handler are allowed
+    by their hashes, so a changed or injected script does not run. The game
+    builds markup with ``style`` attributes and runs a terrain worker from a
+    blob, and it draws images from data and blob URLs.
+    """
+    scripts = " ".join(csp_hash(body) for body in INLINE_SCRIPT.findall(page))
+    handlers = " ".join(csp_hash(body) for body in INLINE_HANDLER.findall(page))
+    return (
+        "default-src 'self'; "
+        f"script-src 'self' {scripts}; "
+        f"script-src-attr 'unsafe-hashes' {handlers}; "
+        "style-src 'self' https://fonts.googleapis.com; "
+        "style-src-attr 'unsafe-inline'; "
+        "font-src https://fonts.gstatic.com; "
+        "img-src 'self' data: blob:; "
+        "worker-src 'self' blob:; "
+        "connect-src 'self'; "
+        "object-src 'none'; "
+        "base-uri 'self'; "
+        "form-action 'self'; "
+        "frame-ancestors 'none'"
+    )
+
+
+def write_headers(client_dir: Path, page: bytes) -> None:
+    # Cloudflare Workers Static Assets reads this file and applies the headers;
+    # it is not served as an asset.
+    (client_dir / "_headers").write_text(
+        "/*\n"
+        f"  Content-Security-Policy: {content_security_policy(page)}\n"
+        "  Strict-Transport-Security: max-age=63072000\n"
+        "  X-Content-Type-Options: nosniff\n"
+        "  X-Frame-Options: DENY\n"
+        "  Referrer-Policy: strict-origin-when-cross-origin\n",
+        encoding="utf-8",
+    )
+    (client_dir / "robots.txt").write_text(
+        "User-agent: *\nAllow: /\n",
+        encoding="utf-8",
+    )
+
+
+def gzip_oversized_vectors(client_dir: Path) -> list[Path]:
+    """Replace vector files above the asset limit with a gzip copy.
+
+    The game checks every vector file against the byte length and SHA-256 in
+    the vector manifest, so the exported bytes must stay those of the edited
+    source. ``vector-assets.js`` asks for ``<name>.gz`` when ``<name>`` is
+    absent and checks the decompressed bytes in the same way.
+    """
+    compressed = []
+    for path in sorted(client_dir.rglob("*.geojson")):
+        if path.stat().st_size <= MAX_ASSET_BYTES:
+            continue
+        target = path.with_name(path.name + ".gz")
+        # mtime=0 keeps the output identical between builds.
+        target.write_bytes(gzip.compress(path.read_bytes(), mtime=0))
+        path.unlink()
+        compressed.append(target)
+    too_large = [
+        path
+        for path in sorted(client_dir.rglob("*"))
+        if path.is_file() and path.stat().st_size > MAX_ASSET_BYTES
+    ]
+    if too_large:
+        names = ", ".join(str(path.relative_to(client_dir)) for path in too_large)
+        message = f"Files above the 25 MiB static asset limit: {names}"
+        raise RuntimeError(message)
+    return compressed
 
 
 def copy_game(game_dir: Path, target: Path) -> None:
@@ -65,6 +154,9 @@ def build(dist: Path = DIST) -> Path:
 
     static_url = settings.STATIC_URL.strip("/")
     copy_game(Path(settings.GAME_DIR), client_dir / static_url / "kuniezu")
+    for path in gzip_oversized_vectors(client_dir):
+        LOGGER.info("Compressed %s", path.relative_to(client_dir))
+    write_headers(client_dir, response.content)
     return client_dir
 
 
