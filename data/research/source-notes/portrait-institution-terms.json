@@ -1,0 +1,521 @@
+{
+ "checked": "2026-11-11",
+ "scope": "配信物の肖像のうち「所蔵機関の規約の確認が要る」とした 51 行について、出典の機関ごとに画像の利用規約のページを読んだ記録。法的な判断ではない。Commons が Public domain（古い絵の忠実な複製）として扱っていることと、機関が自分のサイトの画像に付けている規約は別のもので、ここでは後者だけを記録する。",
+ "method": "機関の公式サイトで規約のページを探して取得し（curl。ColBase と大英博物館はブラウザ）、本文を読んで該当箇所・要旨・最小の抜粋を記録した。取得した HTML は主の作業ディレクトリの .cache に SHA つきで保全し、Git には入れていない。個々の画像のページ（各機関のデータベースの史料種別・公開範囲・使用条件の表示）は見ていない。",
+ "termsVerdicts": {
+  "そのまま配信可": "規約が自由な利用を認めている（条件つきの場合は括弧に書く）",
+  "出典表示を足せば可": "出典・所蔵の明示が条件",
+  "継承の条件あり": "非営利・表示・継承などの条件つきのライセンス",
+  "申請が要る": "規約が許可のない転用を禁じる、または事前の申請を求めている",
+  "未確認": "規約のページが読めない・見つからない、または画像の出どころが決まらない"
+ },
+ "counts": {
+  "institutions": 15,
+  "rows": 53,
+  "verdictChanged": {
+   "申請が要る": 10,
+   "出典表示を足せば可": 2
+  }
+ },
+ "institutions": [
+  {
+   "id": "hi-held",
+   "name": "東京大学史料編纂所（出典に同所・同所データベースと書かれた画像）",
+   "termsUrl": "https://www.hi.u-tokyo.ac.jp/faq/reuse/",
+   "pageTitle": "利用条件：史料画像データの利用 - 東京大学史料編纂所",
+   "checked": "2026-11-11",
+   "locator": "【１】本所が所蔵する原本等の史料画像データ／【３】上記以外の史料等画像データ",
+   "summary": "同所が所蔵する原本等（史料種別が貴重書・写本など）の画像データは、同所の所蔵史料であることの明示と、改変した場合のその明示を条件に、手続きなしで利用できる（CC BY 相当）。それ以外の区分の画像と、同所以外の機関が所蔵する史料の画像は、事前の問い合わせが要る。掲載・放映の手続きは別のページ（史料等利用案内）にある。",
+   "excerpt": "手続きなく自由に利用できます",
+   "termsVerdict": "出典表示を足せば可（画像が【１】の区分に当たる場合）。当たらない場合は事前の問い合わせ",
+   "readStatus": "読めた",
+   "privateOriginal": ".cache/research-originals/portrait-institution-terms/hi-reuse.html.gz",
+   "originalSha256": "8e8f7477e5f16589a07153531c89a0edae598651de0de6d9e0dee0905d835553",
+   "note": "各画像が【１】の区分（同所所蔵の原本・写本・模本）に当たるかは、所蔵史料目録データベースの史料種別を見ないと決まらない。今回は 1 件も見ていない。山内一豊は Commons のカテゴリでは像の写真とされる。",
+   "rows": [
+    {
+     "name": "真田昌幸",
+     "file": "faces.webp",
+     "position": "faces.webp の 61 番目のコマ（0 始まり、128px 角）"
+    },
+    {
+     "name": "立花宗茂",
+     "file": "faces.webp",
+     "position": "faces.webp の 67 番目のコマ（0 始まり、128px 角）"
+    },
+    {
+     "name": "吉川広家",
+     "file": "faces.webp",
+     "position": "faces.webp の 91 番目のコマ（0 始まり、128px 角）"
+    },
+    {
+     "name": "山内一豊",
+     "file": "faces.webp",
+     "position": "faces.webp の 96 番目のコマ（0 始まり、128px 角）"
+    },
+    {
+     "name": "浅野長政",
+     "file": "faces.webp",
+     "position": "faces.webp の 106 番目のコマ（0 始まり、128px 角）"
+    },
+    {
+     "name": "波多野秀治",
+     "file": "faces.webp",
+     "position": "faces.webp の 114 番目のコマ（0 始まり、128px 角）"
+    },
+    {
+     "name": "小早川秀秋",
+     "file": "faces.webp",
+     "position": "faces.webp の 126 番目のコマ（0 始まり、128px 角）"
+    },
+    {
+     "name": "織田秀信",
+     "file": "faces.webp",
+     "position": "faces.webp の 153 番目のコマ（0 始まり、128px 角）"
+    },
+    {
+     "name": "小早川秀秋",
+     "file": "portraits/quality-小早川秀秋.jpg"
+    },
+    {
+     "name": "山内一豊",
+     "file": "portraits/quality-山内一豊.jpg"
+    },
+    {
+     "name": "波多野秀治",
+     "file": "portraits/quality-波多野秀治.jpg"
+    },
+    {
+     "name": "真田昌幸",
+     "file": "portraits/quality-真田昌幸.jpg"
+    },
+    {
+     "name": "立花宗茂",
+     "file": "portraits/quality-立花宗茂.jpg"
+    }
+   ],
+   "rowCount": 13
+  },
+  {
+   "id": "hi-category",
+   "name": "東京大学史料編纂所（Commons のカテゴリだけが同所で、出典は本や別の所蔵者）",
+   "termsUrl": "https://www.hi.u-tokyo.ac.jp/faq/reuse/",
+   "pageTitle": "利用条件：史料画像データの利用 - 東京大学史料編纂所",
+   "checked": "2026-11-11",
+   "locator": "【１】【３】（上の記録と同じページ）",
+   "summary": "規約の内容は上の記録と同じ。これらの行は、Commons の出典が展覧会の図録や本、または別の所蔵者（長興寺・高野山持明院など）で、同所の模本の画像なのか、原本の図版なのかが Commons の記載で決まらない。",
+   "excerpt": "手続きなく自由に利用できます",
+   "termsVerdict": "未確認（画像の出どころが同所の画像データか、本の図版かが決まらない）",
+   "readStatus": "読めた",
+   "privateOriginal": ".cache/research-originals/portrait-institution-terms/hi-reuse.html.gz",
+   "originalSha256": "8e8f7477e5f16589a07153531c89a0edae598651de0de6d9e0dee0905d835553",
+   "rows": [
+    {
+     "name": "織田信長",
+     "file": "faces.webp",
+     "position": "faces.webp の 0 番目のコマ（0 始まり、128px 角）"
+    },
+    {
+     "name": "丹羽長秀",
+     "file": "faces.webp",
+     "position": "faces.webp の 12 番目のコマ（0 始まり、128px 角）"
+    },
+    {
+     "name": "足利義輝",
+     "file": "faces.webp",
+     "position": "faces.webp の 38 番目のコマ（0 始まり、128px 角）"
+    },
+    {
+     "name": "武田勝頼",
+     "file": "faces.webp",
+     "position": "faces.webp の 39 番目のコマ（0 始まり、128px 角）"
+    },
+    {
+     "name": "丹羽長秀",
+     "file": "portraits/quality-丹羽長秀.jpg"
+    },
+    {
+     "name": "足利義輝",
+     "file": "portraits/quality-足利義輝.jpg"
+    },
+    {
+     "name": "顕如・丹羽長重・島清興・斎藤義龍・足利義輝",
+     "file": "faces-fallback.webp"
+    }
+   ],
+   "rowCount": 7
+  },
+  {
+   "id": "ndl",
+   "name": "国立国会図書館（国立国会図書館デジタルコレクション）",
+   "termsUrl": "https://www.ndl.go.jp/use/reproduction",
+   "pageTitle": "ウェブサイトからのコンテンツの転載｜国立国会図書館",
+   "checked": "2026-11-11",
+   "locator": "2.1. 国立国会図書館デジタルコレクションに掲載されているコンテンツについて",
+   "summary": "個々の画像の公開範囲が「インターネット公開（保護期間満了）」なら自由に利用でき、申請は要らない。公開範囲が裁定・許諾・館内限定などの場合は、原則として著作権者の許諾が要る。公開範囲は画像ごとに確かめるよう求めている。",
+   "excerpt": "自由にご利用いただけます",
+   "termsVerdict": "そのまま配信可（個々の画像の公開範囲が「保護期間満了」の場合）",
+   "readStatus": "読めた",
+   "privateOriginal": ".cache/research-originals/portrait-institution-terms/ndl.html.gz",
+   "originalSha256": "1179652632b7667244835e01bc7f542cd524bfdb8b965a050ba684d78daae786",
+   "note": "2 つの画像の公開範囲は、デジタルコレクションの画面で確かめていない。",
+   "rows": [
+    {
+     "name": "滝川一益",
+     "file": "faces.webp",
+     "position": "faces.webp の 88 番目のコマ（0 始まり、128px 角）"
+    },
+    {
+     "name": "増田長盛",
+     "file": "faces.webp",
+     "position": "faces.webp の 108 番目のコマ（0 始まり、128px 角）"
+    },
+    {
+     "name": "増田長盛",
+     "file": "portraits/quality-増田長盛.jpg"
+    },
+    {
+     "name": "滝川一益",
+     "file": "portraits/quality-滝川一益.jpg"
+    }
+   ],
+   "rowCount": 4
+  },
+  {
+   "id": "tokyo-metro-library",
+   "name": "東京都立図書館（TOKYOアーカイブ）",
+   "termsUrl": "https://archive.library.metro.tokyo.lg.jp/da/top",
+   "pageTitle": "TOKYOアーカイブ（東京都立図書館デジタルアーカイブ）「画像の使用について」",
+   "checked": "2026-11-11",
+   "locator": "■画像の使用について",
+   "summary": "各資料の「画像の使用条件」が「パブリックドメイン」と表示されているものは、オープンデータとして自由に利用できる。資料名と所蔵館名（東京都立中央図書館）の明示、部分使用・加工の明示は「お願い」で、義務ではないと書かれている。図書館の本体サイトのサイトポリシーは、別に無断の複製・転用を禁じている。",
+   "excerpt": "オープンデータとして自由に",
+   "termsVerdict": "そのまま配信可（各資料の「画像の使用条件」がパブリックドメインの場合）。所蔵館名の明示が望ましい",
+   "readStatus": "読めた",
+   "privateOriginal": ".cache/research-originals/portrait-institution-terms/tokyoarchive.html.gz",
+   "originalSha256": "b93938b5a9fdbac4b8dca1c4ff090753b38d4d6d26bb8248a8bf8bd07e995671",
+   "note": "6 つの画像の「画像の使用条件」の表示は、各資料のページで確かめていない。Commons の出典が TOKYOアーカイブの画像か、図書館の別のページの画像かも確かめていない。",
+   "rows": [
+    {
+     "name": "太田資正",
+     "file": "faces.webp",
+     "position": "faces.webp の 64 番目のコマ（0 始まり、128px 角）"
+    },
+    {
+     "name": "大友義統",
+     "file": "faces.webp",
+     "position": "faces.webp の 117 番目のコマ（0 始まり、128px 角）"
+    },
+    {
+     "name": "大谷吉継",
+     "file": "faces.webp",
+     "position": "faces.webp の 122 番目のコマ（0 始まり、128px 角）"
+    },
+    {
+     "name": "山中幸盛",
+     "file": "faces.webp",
+     "position": "faces.webp の 129 番目のコマ（0 始まり、128px 角）"
+    },
+    {
+     "name": "新納忠元",
+     "file": "faces.webp",
+     "position": "faces.webp の 135 番目のコマ（0 始まり、128px 角）"
+    },
+    {
+     "name": "高山右近",
+     "file": "faces.webp",
+     "position": "faces.webp の 149 番目のコマ（0 始まり、128px 角）"
+    }
+   ],
+   "rowCount": 6
+  },
+  {
+   "id": "british-museum",
+   "name": "大英博物館（The British Museum）",
+   "termsUrl": "https://www.britishmuseum.org/terms-use/copyright-and-permissions",
+   "pageTitle": "Copyright and permissions | British Museum",
+   "checked": "2026-11-11",
+   "locator": "How can I use the content published under a Creative Commons licence? ／ Re-use of images",
+   "summary": "サイトの画像の多くは同館が著作権を持つとし、印の付いたコンテンツを CC BY-NC-SA 4.0 で提供している。条件は、指定のクレジット（© The Trustees of the British Museum）の表示、非営利の利用に限ること、派生物を同じライセンスで配ること。商用の利用は別の許諾が要る。情報提供・学術・研究のためで商業活動に結び付かないウェブサイトでの利用は、非営利の例に挙げられている。",
+   "excerpt": "non-commercial purposes only",
+   "termsVerdict": "継承の条件あり（非営利・クレジットの表示・同じライセンスでの継承）",
+   "readStatus": "読めた（ブラウザで表示した本文。HTML の原本は取得できず保全していない）",
+   "note": "個々の画像に CC の印があるかは、所蔵品のページで確かめていない。Commons は同じ画像を Public domain（古い絵の忠実な複製）として扱っていて、同館の立場と違う。",
+   "rows": [
+    {
+     "name": "島清興",
+     "file": "faces.webp",
+     "position": "faces.webp の 130 番目のコマ（0 始まり、128px 角）"
+    },
+    {
+     "name": "高坂昌信",
+     "file": "faces.webp",
+     "position": "faces.webp の 148 番目のコマ（0 始まり、128px 角）"
+    },
+    {
+     "name": "高坂昌信",
+     "file": "portraits/quality-高坂昌信.jpg"
+    },
+    {
+     "name": "島清興",
+     "file": "portraits/島清興.jpg"
+    },
+    {
+     "name": "顕如・丹羽長重・島清興・斎藤義龍・足利義輝",
+     "file": "faces-fallback.webp"
+    }
+   ],
+   "rowCount": 5
+  },
+  {
+   "id": "colbase",
+   "name": "ColBase（国立文化財機構所蔵品統合検索システム）",
+   "termsUrl": "https://colbase.nich.go.jp/pages/term?locale=ja",
+   "pageTitle": "利用規約 - ColBase",
+   "checked": "2026-11-11",
+   "locator": "１. 出典の記載について",
+   "summary": "公開しているコンテンツは、出典を記載すれば、複製・公衆送信・翻案など自由に利用でき、商用の利用もできる。編集・加工した場合はその旨を記載する。政府標準利用規約（第 2.0 版）に準拠し、CC BY 4.0 と互換と書かれている。第三者が権利を持つコンテンツは対象外。",
+   "excerpt": "出典を記載してください",
+   "termsVerdict": "出典表示を足せば可",
+   "readStatus": "読めた（ブラウザで表示した本文。HTML の原本は取得できず保全していない）",
+   "note": "規約の最終更新日は令和6年8月1日と表示されている。",
+   "rows": [
+    {
+     "name": "宗義調",
+     "file": "faces.webp",
+     "position": "faces.webp の 124 番目のコマ（0 始まり、128px 角）"
+    },
+    {
+     "name": "宗義調",
+     "file": "portraits/宗義調.jpg"
+    }
+   ],
+   "rowCount": 2
+  },
+  {
+   "id": "bunka-online",
+   "name": "文化遺産オンライン（文化庁）",
+   "termsUrl": "https://online.bunka.go.jp/about",
+   "pageTitle": "このサイトについて - 文化遺産オンライン",
+   "checked": "2026-11-11",
+   "locator": "著作権について",
+   "summary": "掲載されている個々の情報（文字・写真など）は著作権の対象で、法律で認められたものを除き、無断で転用・引用・改変することを禁じると書かれている。画像の利用の申請先は書かれていない。作品の所蔵者は別（Commons の題名では徴古館）。",
+   "excerpt": "無断で転用・引用・改変",
+   "termsVerdict": "申請が要る（サイトの規約は無断の転用を禁じている。申請先は所蔵者に確かめる必要がある）",
+   "readStatus": "読めた",
+   "privateOriginal": ".cache/research-originals/portrait-institution-terms/bunka.html.gz",
+   "originalSha256": "a84bc4bb9fe974a3dc7baea65e159b40f93633d46567f4eecbebcbe5df550a14",
+   "note": "所蔵者（鍋島報效会 徴古館）の規約は読んでいない。",
+   "rows": [
+    {
+     "name": "鍋島直茂",
+     "file": "faces.webp",
+     "position": "faces.webp の 24 番目のコマ（0 始まり、128px 角）"
+    },
+    {
+     "name": "鍋島直茂",
+     "file": "portraits/quality-鍋島直茂.jpg"
+    }
+   ],
+   "rowCount": 2
+  },
+  {
+   "id": "nagahama",
+   "name": "長浜城歴史博物館",
+   "termsUrl": "https://nagahama-rekihaku.jp/terms",
+   "pageTitle": "利用規約 - 長浜城歴史博物館",
+   "checked": "2026-11-11",
+   "locator": "著作権",
+   "summary": "サイトに掲載されている情報（文章・写真・画像など）は、著作権法で認められた場合を除き、運営者の許可なく複製・転用できない。写真などのデータの複製・引用を希望する場合は、所定の申請書を出して事前の許可を得る必要がある、と書かれている。",
+   "excerpt": "事前の許可を得る必要",
+   "termsVerdict": "申請が要る",
+   "readStatus": "読めた",
+   "privateOriginal": ".cache/research-originals/portrait-institution-terms/nagahama-terms.html.gz",
+   "originalSha256": "d6cb456f86c78bc447a1e7b8e39aca4831a94017223f10a7380bc13c54907157",
+   "rows": [
+    {
+     "name": "片桐且元",
+     "file": "faces.webp",
+     "position": "faces.webp の 111 番目のコマ（0 始まり、128px 角）"
+    },
+    {
+     "name": "片桐且元",
+     "file": "portraits/quality-片桐且元.jpg"
+    }
+   ],
+   "rowCount": 2
+  },
+  {
+   "id": "denkoku",
+   "name": "伝国の杜 米沢市上杉博物館",
+   "termsUrl": "https://www.denkoku-no-mori.yonezawa.yamagata.jp/keisai.htm",
+   "pageTitle": "［伝国の杜］米沢市上杉博物館／画像の貸出利用",
+   "checked": "2026-11-11",
+   "locator": "資料画像の掲載・放映等について／許可条件／留意事項",
+   "summary": "同館が収蔵する資料を書籍や映像などの媒体で一般に公開する場合は、申請して許可を受ける必要がある。許可の条件は、所蔵者名「米沢市（上杉博物館）」の明記、許可された目的以外に使わないこと、掲載物の寄贈など。写真原版の著作権は米沢市に帰属すると書かれている。",
+   "excerpt": "掲載は許可制になっています",
+   "termsVerdict": "申請が要る",
+   "readStatus": "読めた",
+   "privateOriginal": ".cache/research-originals/portrait-institution-terms/denkoku-keisai.html.gz",
+   "originalSha256": "ced824ccab0f9ed5879408315f623f90996cad283ab2a45fa7f27d40afeea013",
+   "note": "ウェブサイトでの公開が「媒体」に含まれるかは明記されていない。",
+   "rows": [
+    {
+     "name": "上杉景勝",
+     "file": "faces.webp",
+     "position": "faces.webp の 49 番目のコマ（0 始まり、128px 角）"
+    },
+    {
+     "name": "上杉景勝",
+     "file": "portraits/quality-上杉景勝.jpg"
+    }
+   ],
+   "rowCount": 2
+  },
+  {
+   "id": "nihonmatsu",
+   "name": "二本松市",
+   "termsUrl": "https://www.city.nihonmatsu.lg.jp/riyou_guide/page000033.html",
+   "pageTitle": "リンク・著作権・免責事項などについて - 二本松市公式ウェブサイト",
+   "checked": "2026-11-11",
+   "locator": "著作権について",
+   "summary": "サイトに掲載されている個々の情報（文章・写真・イラストなど）は著作権の対象で、著作権法で認められた場合を除き、無断で転用・引用できず、改変もできない、と書かれている。利用の申請先は書かれていない。",
+   "excerpt": "無断で転用・引用",
+   "termsVerdict": "申請が要る（サイトの規約は無断の転用を禁じている）",
+   "readStatus": "読めた",
+   "privateOriginal": ".cache/research-originals/portrait-institution-terms/nihonmatsu-copy.html.gz",
+   "originalSha256": "7102aefd218f963150d878fc0b9866641d34f9e43159477236bbe99fbdb56273",
+   "rows": [
+    {
+     "name": "丹羽長重",
+     "file": "faces.webp",
+     "position": "faces.webp の 103 番目のコマ（0 始まり、128px 角）"
+    },
+    {
+     "name": "丹羽長重",
+     "file": "portraits/丹羽長重.jpg"
+    },
+    {
+     "name": "顕如・丹羽長重・島清興・斎藤義龍・足利義輝",
+     "file": "faces-fallback.webp"
+    }
+   ],
+   "rowCount": 3
+  },
+  {
+   "id": "odawara",
+   "name": "小田原市",
+   "termsUrl": "https://www.city.odawara.kanagawa.jp/tyosaku/tyosakuetc.html",
+   "pageTitle": "小田原市 | 著作権・免責事項・プライバシーポリシー・リンクポリシーについて",
+   "checked": "2026-11-11",
+   "locator": "著作権",
+   "summary": "サイトで提供するコンテンツ（情報・文章・画像など）を、権利者の許可なく複製・転用・販売といった二次利用をすることを禁じると書かれている。著作権は特別の断りがない限り小田原市が保有するとしている。",
+   "excerpt": "二次利用をすることを固く禁じ",
+   "termsVerdict": "申請が要る（サイトの規約は許可のない二次利用を禁じている）",
+   "readStatus": "読めた",
+   "privateOriginal": ".cache/research-originals/portrait-institution-terms/odawara-terms.html.gz",
+   "originalSha256": "f6e8684cafc351343d0173216dd73d06b576bd2d893b9cc770a053c94cea71af",
+   "note": "Commons の出典の URL は観光のページで、画像がいまも市のサイトにあるかは確かめていない。作品は小田原城天守閣の所蔵品。",
+   "rows": [
+    {
+     "name": "北条氏康",
+     "file": "faces.webp",
+     "position": "faces.webp の 11 番目のコマ（0 始まり、128px 角）"
+    }
+   ],
+   "rowCount": 1
+  },
+  {
+   "id": "uesugi-jinja",
+   "name": "上杉神社",
+   "termsUrl": "https://uesugi-jinja.or.jp/policy/",
+   "pageTitle": "プライバシーポリシー - 羽前米沢 上杉神社",
+   "checked": "2026-11-11",
+   "locator": "該当する記載なし",
+   "summary": "見つかったのは個人情報の取り扱いのページだけで、画像の転載・著作権についての記載は見つからなかった。Commons の出典の URL（/about/）はいまは 404 を返す。",
+   "excerpt": "（該当なし）",
+   "termsVerdict": "未確認（規約のページが見つからない）",
+   "readStatus": "未確認",
+   "privateOriginal": ".cache/research-originals/portrait-institution-terms/uesugi-policy.html.gz",
+   "originalSha256": "9ac58ddcd395d40d31526235f8350146f9ae0d8e8c7401e08a56e35f039a3715",
+   "rows": [
+    {
+     "name": "長尾景虎",
+     "file": "faces.webp",
+     "position": "faces.webp の 36 番目のコマ（0 始まり、128px 角）"
+    },
+    {
+     "name": "長尾景虎",
+     "file": "portraits/quality-長尾景虎.jpg"
+    }
+   ],
+   "rowCount": 2
+  },
+  {
+   "id": "mihara",
+   "name": "三原市",
+   "termsUrl": "https://www.city.mihara.hiroshima.jp/site/userguide/menseki.html",
+   "pageTitle": "免責事項 - 三原市ホームページ",
+   "checked": "2026-11-11",
+   "locator": "該当する記載なし",
+   "summary": "「はじめての方へ」にあるのは免責事項と個人情報の取り扱いで、画像の転載・著作権についての記載は見つからなかった。作品は米山寺の所蔵（Commons の題名による）。",
+   "excerpt": "（該当なし）",
+   "termsVerdict": "未確認（著作権についての記載のページが見つからない）",
+   "readStatus": "未確認",
+   "privateOriginal": ".cache/research-originals/portrait-institution-terms/mihara-terms.html.gz",
+   "originalSha256": "143bad5a5b59f5fe9124c080ae0c01d502db28ffb251a075f2f1172b12dbc542",
+   "rows": [
+    {
+     "name": "小早川隆景",
+     "file": "faces.webp",
+     "position": "faces.webp の 74 番目のコマ（0 始まり、128px 角）"
+    }
+   ],
+   "rowCount": 1
+  },
+  {
+   "id": "fukushima-u",
+   "name": "福島大学（ふくしまデータベースとみられるサイト）",
+   "termsUrl": "http://is2.sss.fukushima-u.ac.jp/fks-db/",
+   "pageTitle": "（取得できず）",
+   "checked": "2026-11-11",
+   "locator": "取得できず",
+   "summary": "Commons の出典の URL のサイトに接続できなかった（http・https とも応答なし）。規約は読めていない。作品は西会津町の西光寺の所蔵（Commons の題名による）。",
+   "excerpt": "（取得できず）",
+   "termsVerdict": "未確認（サイトに接続できない）",
+   "readStatus": "未確認",
+   "rows": [
+    {
+     "name": "蒲生氏郷",
+     "file": "faces.webp",
+     "position": "faces.webp の 57 番目のコマ（0 始まり、128px 角）"
+    },
+    {
+     "name": "蒲生氏郷",
+     "file": "portraits/quality-蒲生氏郷.jpg"
+    }
+   ],
+   "rowCount": 2
+  },
+  {
+   "id": "statue-photo",
+   "name": "立体物（像）の写真で、機関のサイトが出典でないもの",
+   "termsUrl": "",
+   "pageTitle": "（機関の規約なし）",
+   "checked": "2026-11-11",
+   "locator": "該当なし",
+   "summary": "徳川秀忠の像（Commons の説明では松平西福寺の所蔵）を、投稿者が自分でファイルにしたとして Public domain で投稿している。機関のサイトが出典ではなく、読むべき規約のページが無い。像の写真は「古い絵の忠実な複製」に当たらず、撮影者の権利の扱いが Commons の記載では確かめられない。",
+   "excerpt": "（該当なし）",
+   "termsVerdict": "未確認（撮影者と所蔵者の許諾の表示が確かめられない）",
+   "readStatus": "未確認",
+   "rows": [
+    {
+     "name": "徳川秀忠",
+     "file": "faces.webp",
+     "position": "faces.webp の 132 番目のコマ（0 始まり、128px 角）"
+    }
+   ],
+   "rowCount": 1
+  }
+ ]
+}

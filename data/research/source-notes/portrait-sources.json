@@ -8,14 +8,16 @@
   "継承の条件あり": "CC BY-SA。表示と継承が条件",
   "所蔵機関の規約の確認が要る": "出典が機関のデータベース・サイト、または立体物の写真",
   "出典が辿れない": "配信物のコマやファイルの取得元の記録が無い",
-  "配信不可の疑い": "権利の表示が怪しい、または争いがある"
+  "配信不可の疑い": "権利の表示が怪しい、または争いがある",
+  "申請が要る": "出典の機関のサイトの規約が、許可のない転用を禁じる、または事前の申請を求めている（規約を読んで判定）"
  },
  "counts": {
-  "所蔵機関の規約の確認が要る": 51,
+  "所蔵機関の規約の確認が要る": 39,
   "そのまま配信可": 162,
+  "申請が要る": 10,
   "配信不可の疑い": 6,
   "継承の条件あり": 3,
-  "出典表示を足せば可": 3
+  "出典表示を足せば可": 5
  },
  "rows": [
   {
@@ -25,7 +27,7 @@
    "position": "faces.webp の 0 番目のコマ（0 始まり、128px 角）",
    "buildTag": "q",
    "verdict": "所蔵機関の規約の確認が要る",
-   "basis": "Commons の表示は Public domain（古い絵の忠実な複製）。出典が機関のデータベース・サイト（Historiographical）で、機関の利用規約は未確認。取得元は 2026-11-11 に特定した（確定（同じ絵））",
+   "basis": "Commons の表示は Public domain（古い絵の忠実な複製）。出典が機関のデータベース・サイト（Historiographical）。取得元は 2026-11-11 に特定した（確定（同じ絵））。機関の規約からの見直し案：未確認（画像の出どころが同所の画像データか、本の図版かが決まらない）（読めた、2026-11-11）",
    "sources": [
     {
      "record": "取得元の特定（2026-11-11、Commons のカテゴリの候補との比較）",
@@ -84,6 +86,12 @@
      ]
     },
     "note": "記録上のファイル（Oda_Nobunaga_Kaou_3.jpg）は花押・屋敷跡の写真で、tools/faces/raw/ の画像はその縮小版と一致した（肖像ではない）。配信中のコマは別の画像から切られている。コマが切られた元のファイルそのもの（高精細版や古い版の合成画像）の取得記録は無く、同じ絵であることまでを確かめた"
+   },
+   "institutionTerms": {
+    "institution": "hi-category",
+    "termsVerdict": "未確認（画像の出どころが同所の画像データか、本の図版かが決まらない）",
+    "readStatus": "読めた",
+    "checked": "2026-11-11"
    }
   },
   {
@@ -468,8 +476,8 @@
    "file": "faces.webp",
    "position": "faces.webp の 11 番目のコマ（0 始まり、128px 角）",
    "buildTag": "raw 0.90",
-   "verdict": "所蔵機関の規約の確認が要る",
-   "basis": "Commons の表示は Public domain（古い絵の忠実な複製）。出典が機関のデータベース・サイト（city.odawara.kanagawa.jp）で、機関の利用規約は未確認",
+   "verdict": "申請が要る",
+   "basis": "出典が小田原市のサイト。同サイトの規約は、許可のない転用を禁じる、または事前の申請を求めている（著作権）。規約は 2026-11-11 に読んだ。Commons は同じ画像を Public domain（古い絵の忠実な複製）として扱っていて、機関の規約とは別の立場である",
    "usedSource": "Ujiyasu_Hojo.jpg",
    "sources": [
     {
@@ -494,7 +502,13 @@
       "Unknown date"
      ]
     }
-   ]
+   ],
+   "institutionTerms": {
+    "institution": "odawara",
+    "termsVerdict": "申請が要る（サイトの規約は許可のない二次利用を禁じている）",
+    "readStatus": "読めた",
+    "checked": "2026-11-11"
+   }
   },
   {
    "kind": "faces.webp",
@@ -503,7 +517,7 @@
    "position": "faces.webp の 12 番目のコマ（0 始まり、128px 角）",
    "buildTag": "hires 0.91",
    "verdict": "所蔵機関の規約の確認が要る",
-   "basis": "Commons の表示は Public domain（古い絵の忠実な複製）。出典が機関のデータベース・サイト（Historiographical）で、機関の利用規約は未確認",
+   "basis": "Commons の表示は Public domain（古い絵の忠実な複製）。出典が機関のデータベース・サイト（Historiographical）。機関の規約からの見直し案：未確認（画像の出どころが同所の画像データか、本の図版かが決まらない）（読めた、2026-11-11）",
    "usedSource": "Niwa_Nagahide2.jpg",
    "sources": [
     {
@@ -526,7 +540,13 @@
       "Portrait paintings in the Historiographical Institute, the University of Tokyo"
      ]
     }
-   ]
+   ],
+   "institutionTerms": {
+    "institution": "hi-category",
+    "termsVerdict": "未確認（画像の出どころが同所の画像データか、本の図版かが決まらない）",
+    "readStatus": "読めた",
+    "checked": "2026-11-11"
+   }
   },
   {
    "kind": "faces.webp",
@@ -913,8 +933,8 @@
    "file": "faces.webp",
    "position": "faces.webp の 24 番目のコマ（0 始まり、128px 角）",
    "buildTag": "hires 0.89",
-   "verdict": "所蔵機関の規約の確認が要る",
-   "basis": "Commons の表示は Public domain（古い絵の忠実な複製）。出典が機関のデータベース・サイト（bunka.nii.ac.jp）で、機関の利用規約は未確認",
+   "verdict": "申請が要る",
+   "basis": "出典が文化遺産オンライン（文化庁）のサイト。同サイトの規約は、許可のない転用を禁じる、または事前の申請を求めている（著作権について）。規約は 2026-11-11 に読んだ。Commons は同じ画像を Public domain（古い絵の忠実な複製）として扱っていて、機関の規約とは別の立場である",
    "usedSource": "Nabeshima_Naoshige_by_Miura_Shisan_(Chokokan)_(detail).jpg",
    "sources": [
     {
@@ -937,7 +957,13 @@
       "PD-old missing SDC copyright status"
      ]
     }
-   ]
+   ],
+   "institutionTerms": {
+    "institution": "bunka-online",
+    "termsVerdict": "申請が要る（サイトの規約は無断の転用を禁じている。申請先は所蔵者に確かめる必要がある）",
+    "readStatus": "読めた",
+    "checked": "2026-11-11"
+   }
   },
   {
    "kind": "faces.webp",
@@ -1129,7 +1155,18 @@
       "CC-BY-SA-3.0-migrated-with-disclaimers"
      ]
     }
-   ]
+   ],
+   "attribution": {
+    "text": "武田信繁（歌川国芳「甲陽二十四将」の一図、1853 年）／Wikimedia Commons（投稿者 Grika）／CC BY-SA 3.0／顔の部分を切り抜き・縮小",
+    "author": "歌川国芳（Commons の出典の記載による。作者欄は未記載）",
+    "providerOrHolder": "Wikimedia Commons（投稿者 Grika）",
+    "licenseName": "CC BY-SA 3.0",
+    "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:KaiGeneral.jpg",
+    "changes": "顔の部分を切り抜き、128px 角に縮小（合成画像の 1 コマ）。高精細版は切り抜きのみ",
+    "basis": "作者・出典は Commons の記載。表示の項目（作者・ライセンス・出典・改変の有無）は各ライセンスが求める項目に合わせた。文言は案で、表示の実装側で整えてよい",
+    "checked": "2026-11-11"
+   }
   },
   {
    "kind": "faces.webp",
@@ -1346,7 +1383,7 @@
    "position": "faces.webp の 36 番目のコマ（0 始まり、128px 角）",
    "buildTag": "hires 0.90",
    "verdict": "所蔵機関の規約の確認が要る",
-   "basis": "Commons の表示は Public domain（古い絵の忠実な複製）。出典が機関のデータベース・サイト（uesugi-jinja）で、機関の利用規約は未確認",
+   "basis": "Commons の表示は Public domain（古い絵の忠実な複製）。出典が機関のデータベース・サイト（uesugi-jinja）。機関の規約からの見直し案：未確認（規約のページが見つからない）（未確認、2026-11-11）",
    "usedSource": "Uesugi_Kenshin_Portrait_from_Uesugi_Shrine.png",
    "sources": [
     {
@@ -1368,7 +1405,13 @@
       "Template Unknown (author)"
      ]
     }
-   ]
+   ],
+   "institutionTerms": {
+    "institution": "uesugi-jinja",
+    "termsVerdict": "未確認（規約のページが見つからない）",
+    "readStatus": "未確認",
+    "checked": "2026-11-11"
+   }
   },
   {
    "kind": "faces.webp",
@@ -1407,7 +1450,7 @@
    "position": "faces.webp の 38 番目のコマ（0 始まり、128px 角）",
    "buildTag": "hires 0.84",
    "verdict": "所蔵機関の規約の確認が要る",
-   "basis": "Commons の表示は Public domain（古い絵の忠実な複製）。出典が機関のデータベース・サイト（Historiographical）で、機関の利用規約は未確認",
+   "basis": "Commons の表示は Public domain（古い絵の忠実な複製）。出典が機関のデータベース・サイト（Historiographical）。機関の規約からの見直し案：未確認（画像の出どころが同所の画像データか、本の図版かが決まらない）（読めた、2026-11-11）",
    "usedSource": "Ashikaga_Yoshiteru.jpg",
    "sources": [
     {
@@ -1427,7 +1470,13 @@
       "PD-Art (PD-old-100)"
      ]
     }
-   ]
+   ],
+   "institutionTerms": {
+    "institution": "hi-category",
+    "termsVerdict": "未確認（画像の出どころが同所の画像データか、本の図版かが決まらない）",
+    "readStatus": "読めた",
+    "checked": "2026-11-11"
+   }
   },
   {
    "kind": "faces.webp",
@@ -1436,7 +1485,7 @@
    "position": "faces.webp の 39 番目のコマ（0 始まり、128px 角）",
    "buildTag": "raw 0.90",
    "verdict": "所蔵機関の規約の確認が要る",
-   "basis": "Commons の表示は Public domain（古い絵の忠実な複製）。出典が機関のデータベース・サイト（Historiographical）で、機関の利用規約は未確認",
+   "basis": "Commons の表示は Public domain（古い絵の忠実な複製）。出典が機関のデータベース・サイト（Historiographical）。機関の規約からの見直し案：未確認（画像の出どころが同所の画像データか、本の図版かが決まらない）（読めた、2026-11-11）",
    "usedSource": "Takeda_Katsuyori.jpg",
    "sources": [
     {
@@ -1458,7 +1507,13 @@
       "Template Unknown (author)"
      ]
     }
-   ]
+   ],
+   "institutionTerms": {
+    "institution": "hi-category",
+    "termsVerdict": "未確認（画像の出どころが同所の画像データか、本の図版かが決まらない）",
+    "readStatus": "読めた",
+    "checked": "2026-11-11"
+   }
   },
   {
    "kind": "faces.webp",
@@ -1738,8 +1793,8 @@
    "file": "faces.webp",
    "position": "faces.webp の 49 番目のコマ（0 始まり、128px 角）",
    "buildTag": "hires 0.91",
-   "verdict": "所蔵機関の規約の確認が要る",
-   "basis": "Commons の表示は Public domain（古い絵の忠実な複製）。出典が機関のデータベース・サイト（Denkoku-no-Mori）で、機関の利用規約は未確認",
+   "verdict": "申請が要る",
+   "basis": "出典が伝国の杜 米沢市上杉博物館のサイト。同サイトの規約は、許可のない転用を禁じる、または事前の申請を求めている（資料画像の掲載・放映等について／許可条件／留意事項）。規約は 2026-11-11 に読んだ。Commons は同じ画像を Public domain（古い絵の忠実な複製）として扱っていて、機関の規約とは別の立場である",
    "usedSource": "Uesugi_Kagekatsu_Portrait_Yonezawa_City_Uesugi_Museum.png",
    "sources": [
     {
@@ -1763,7 +1818,13 @@
       "Template Unknown (author)"
      ]
     }
-   ]
+   ],
+   "institutionTerms": {
+    "institution": "denkoku",
+    "termsVerdict": "申請が要る",
+    "readStatus": "読めた",
+    "checked": "2026-11-11"
+   }
   },
   {
    "kind": "faces.webp",
@@ -1824,7 +1885,18 @@
       "CC-BY-4.0"
      ]
     }
-   ]
+   ],
+   "attribution": {
+    "text": "北条氏照（『義烈百人一首』、緑亭川柳 編・北斎卍老人ほか 画、1850 年）／提供：NPO長野県図書館等協働機構・信州地域史料アーカイブ／CC BY 4.0／顔の部分を切り抜き・縮小",
+    "author": "緑亭川柳（編）、北斎卍老人ほか（画）",
+    "providerOrHolder": "NPO長野県図書館等協働機構／信州地域史料アーカイブ",
+    "licenseName": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Hojo_Ujiteru.jpg",
+    "changes": "顔の部分を切り抜き、128px 角に縮小（合成画像の 1 コマ）。高精細版は切り抜きのみ",
+    "basis": "作者・出典は Commons の記載。表示の項目（作者・ライセンス・出典・改変の有無）は各ライセンスが求める項目に合わせた。文言は案で、表示の実装側で整えてよい",
+    "checked": "2026-11-11"
+   }
   },
   {
    "kind": "faces.webp",
@@ -1976,7 +2048,7 @@
    "position": "faces.webp の 57 番目のコマ（0 始まり、128px 角）",
    "buildTag": "hires 0.88",
    "verdict": "所蔵機関の規約の確認が要る",
-   "basis": "Commons の表示は Public domain（古い絵の忠実な複製）。出典が機関のデータベース・サイト（is2.sss.fukushima-u）で、機関の利用規約は未確認",
+   "basis": "Commons の表示は Public domain（古い絵の忠実な複製）。出典が機関のデータベース・サイト（is2.sss.fukushima-u）。機関の規約からの見直し案：未確認（サイトに接続できない）（未確認、2026-11-11）",
    "usedSource": "Gamō_Ujisato_(Saikōji_Nishiazu).jpg",
    "sources": [
     {
@@ -1998,7 +2070,13 @@
       "PD-old missing SDC copyright status"
      ]
     }
-   ]
+   ],
+   "institutionTerms": {
+    "institution": "fukushima-u",
+    "termsVerdict": "未確認（サイトに接続できない）",
+    "readStatus": "未確認",
+    "checked": "2026-11-11"
+   }
   },
   {
    "kind": "faces.webp",
@@ -2098,7 +2176,7 @@
    "position": "faces.webp の 61 番目のコマ（0 始まり、128px 角）",
    "buildTag": "hires 0.82",
    "verdict": "所蔵機関の規約の確認が要る",
-   "basis": "Commons の表示は Public domain（古い絵の忠実な複製）。出典が機関のデータベース・サイト（史料編纂所）で、機関の利用規約は未確認",
+   "basis": "Commons の表示は Public domain（古い絵の忠実な複製）。出典が機関のデータベース・サイト（史料編纂所）。機関の規約からの見直し案：出典表示を足せば可（画像が【１】の区分に当たる場合）。当たらない場合は事前の問い合わせ（読めた、2026-11-11）",
    "usedSource": "Sanada-Masayuki.jpg",
    "sources": [
     {
@@ -2123,7 +2201,13 @@
       "Template Unknown (author)"
      ]
     }
-   ]
+   ],
+   "institutionTerms": {
+    "institution": "hi-held",
+    "termsVerdict": "出典表示を足せば可（画像が【１】の区分に当たる場合）。当たらない場合は事前の問い合わせ",
+    "readStatus": "読めた",
+    "checked": "2026-11-11"
+   }
   },
   {
    "kind": "faces.webp",
@@ -2197,7 +2281,7 @@
    "position": "faces.webp の 64 番目のコマ（0 始まり、128px 角）",
    "buildTag": "hires 0.58",
    "verdict": "所蔵機関の規約の確認が要る",
-   "basis": "Commons の表示は Public domain（古い絵の忠実な複製）。出典が機関のデータベース・サイト（東京都立図書館）で、機関の利用規約は未確認",
+   "basis": "Commons の表示は Public domain（古い絵の忠実な複製）。出典が機関のデータベース・サイト（東京都立図書館）。機関の規約からの見直し案：そのまま配信可（各資料の「画像の使用条件」がパブリックドメインの場合）。所蔵館名の明示が望ましい（読めた、2026-11-11）",
    "usedSource": "Ota_Sukemasa.jpg",
    "sources": [
     {
@@ -2220,7 +2304,13 @@
       "PD-old missing SDC copyright status"
      ]
     }
-   ]
+   ],
+   "institutionTerms": {
+    "institution": "tokyo-metro-library",
+    "termsVerdict": "そのまま配信可（各資料の「画像の使用条件」がパブリックドメインの場合）。所蔵館名の明示が望ましい",
+    "readStatus": "読めた",
+    "checked": "2026-11-11"
+   }
   },
   {
    "kind": "faces.webp",
@@ -2293,7 +2383,7 @@
    "position": "faces.webp の 67 番目のコマ（0 始まり、128px 角）",
    "buildTag": "hires 0.91",
    "verdict": "所蔵機関の規約の確認が要る",
-   "basis": "Commons の表示は Public domain（古い絵の忠実な複製）。出典が機関のデータベース・サイト（Historiographical）で、機関の利用規約は未確認",
+   "basis": "Commons の表示は Public domain（古い絵の忠実な複製）。出典が機関のデータベース・サイト（Historiographical）。機関の規約からの見直し案：出典表示を足せば可（画像が【１】の区分に当たる場合）。当たらない場合は事前の問い合わせ（読めた、2026-11-11）",
    "usedSource": "Tachibana_Muneshige.jpg",
    "sources": [
     {
@@ -2318,7 +2408,13 @@
       "Template Unknown (author)"
      ]
     }
-   ]
+   ],
+   "institutionTerms": {
+    "institution": "hi-held",
+    "termsVerdict": "出典表示を足せば可（画像が【１】の区分に当たる場合）。当たらない場合は事前の問い合わせ",
+    "readStatus": "読めた",
+    "checked": "2026-11-11"
+   }
   },
   {
    "kind": "faces.webp",
@@ -2588,7 +2684,7 @@
    "position": "faces.webp の 74 番目のコマ（0 始まり、128px 角）",
    "buildTag": "raw 0.69",
    "verdict": "所蔵機関の規約の確認が要る",
-   "basis": "Commons の表示は Public domain（古い絵の忠実な複製）。出典が機関のデータベース・サイト（city.mihara.hiroshima.jp）で、機関の利用規約は未確認",
+   "basis": "Commons の表示は Public domain（古い絵の忠実な複製）。出典が機関のデータベース・サイト（city.mihara.hiroshima.jp）。機関の規約からの見直し案：未確認（著作権についての記載のページが見つからない）（未確認、2026-11-11）",
    "usedSource": "Kobayakawa_Takakage_(Beisanji_Mihara).jpg",
    "sources": [
     {
@@ -2610,7 +2706,13 @@
       "PD-old missing SDC copyright status"
      ]
     }
-   ]
+   ],
+   "institutionTerms": {
+    "institution": "mihara",
+    "termsVerdict": "未確認（著作権についての記載のページが見つからない）",
+    "readStatus": "未確認",
+    "checked": "2026-11-11"
+   }
   },
   {
    "kind": "faces.webp",
@@ -3048,7 +3150,7 @@
    "position": "faces.webp の 88 番目のコマ（0 始まり、128px 角）",
    "buildTag": "hires 0.86",
    "verdict": "所蔵機関の規約の確認が要る",
-   "basis": "Commons の表示は Public domain（古い絵の忠実な複製）。出典が機関のデータベース・サイト（国立国会図書館）で、機関の利用規約は未確認",
+   "basis": "Commons の表示は Public domain（古い絵の忠実な複製）。出典が機関のデータベース・サイト（国立国会図書館）。機関の規約からの見直し案：そのまま配信可（個々の画像の公開範囲が「保護期間満了」の場合）（読めた、2026-11-11）",
    "usedSource": "Takigawa_Sakon.jpg",
    "sources": [
     {
@@ -3071,7 +3173,13 @@
       "PD-old missing SDC copyright status"
      ]
     }
-   ]
+   ],
+   "institutionTerms": {
+    "institution": "ndl",
+    "termsVerdict": "そのまま配信可（個々の画像の公開範囲が「保護期間満了」の場合）",
+    "readStatus": "読めた",
+    "checked": "2026-11-11"
+   }
   },
   {
    "kind": "faces.webp",
@@ -3145,7 +3253,7 @@
    "position": "faces.webp の 91 番目のコマ（0 始まり、128px 角）",
    "buildTag": "raw 0.72",
    "verdict": "所蔵機関の規約の確認が要る",
-   "basis": "Commons の表示は Public domain（古い絵の忠実な複製）。出典が機関のデータベース・サイト（史料編纂所）で、機関の利用規約は未確認",
+   "basis": "Commons の表示は Public domain（古い絵の忠実な複製）。出典が機関のデータベース・サイト（史料編纂所）。機関の規約からの見直し案：出典表示を足せば可（画像が【１】の区分に当たる場合）。当たらない場合は事前の問い合わせ（読めた、2026-11-11）",
    "usedSource": "Kikkawa_Hiroie.jpg",
    "sources": [
     {
@@ -3170,7 +3278,13 @@
       "Template Unknown (author)"
      ]
     }
-   ]
+   ],
+   "institutionTerms": {
+    "institution": "hi-held",
+    "termsVerdict": "出典表示を足せば可（画像が【１】の区分に当たる場合）。当たらない場合は事前の問い合わせ",
+    "readStatus": "読めた",
+    "checked": "2026-11-11"
+   }
   },
   {
    "kind": "faces.webp",
@@ -3299,7 +3413,7 @@
    "position": "faces.webp の 96 番目のコマ（0 始まり、128px 角）",
    "buildTag": "hires 0.91",
    "verdict": "所蔵機関の規約の確認が要る",
-   "basis": "立体物（像）の写真。古い絵の忠実な複製（PD-Art）には当たらず、写真そのものの権利の扱いが Commons の記載では確かめられない",
+   "basis": "立体物（像）の写真。古い絵の忠実な複製（PD-Art）には当たらず、写真そのものの権利の扱いが Commons の記載では確かめられない。機関の規約からの見直し案：出典表示を足せば可（画像が【１】の区分に当たる場合）。当たらない場合は事前の問い合わせ（読めた、2026-11-11）",
    "usedSource": "Yamauchi-Kazutoyo.jpg",
    "sources": [
     {
@@ -3324,7 +3438,13 @@
       "Template Unknown (author)"
      ]
     }
-   ]
+   ],
+   "institutionTerms": {
+    "institution": "hi-held",
+    "termsVerdict": "出典表示を足せば可（画像が【１】の区分に当たる場合）。当たらない場合は事前の問い合わせ",
+    "readStatus": "読めた",
+    "checked": "2026-11-11"
+   }
   },
   {
    "kind": "faces.webp",
@@ -3539,8 +3659,8 @@
    "file": "faces.webp",
    "position": "faces.webp の 103 番目のコマ（0 始まり、128px 角）",
    "buildTag": "m",
-   "verdict": "所蔵機関の規約の確認が要る",
-   "basis": "Commons の表示は Public domain（古い絵の忠実な複製）。出典が機関のデータベース・サイト（city.nihonmatsu.lg.jp）で、機関の利用規約は未確認。取得元は 2026-11-11 に特定した（確定（同じ絵））",
+   "verdict": "申請が要る",
+   "basis": "出典が二本松市のサイト。同サイトの規約は、許可のない転用を禁じる、または事前の申請を求めている（著作権について）。規約は 2026-11-11 に読んだ。Commons は同じ画像を Public domain（古い絵の忠実な複製）として扱っていて、機関の規約とは別の立場である",
    "sources": [
     {
      "record": "meta.json",
@@ -3583,6 +3703,12 @@
      }
     },
     "note": "tools/faces/raw/ の画像は Commons のファイルの縮小版と一致した。コマは高精細の画像（tools/faces/hr/）から切られていて、その画像が同じ Commons のファイルから取られたかは確かめられない（同じ絵の別の版の可能性が残る）。"
+   },
+   "institutionTerms": {
+    "institution": "nihonmatsu",
+    "termsVerdict": "申請が要る（サイトの規約は無断の転用を禁じている）",
+    "readStatus": "読めた",
+    "checked": "2026-11-11"
    }
   },
   {
@@ -3646,7 +3772,19 @@
       "Statues of sitting men in Japan"
      ]
     }
-   ]
+   ],
+   "attribution": {
+    "text": "足利義栄坐像（徳島県阿南市、Awa-Kubo Minzoku Shiryōkan Museum 所在）／撮影：宇治主水（Wikimedia Commons）／CC BY 3.0／顔の部分を切り抜き・縮小",
+    "author": "宇治主水（撮影。Commons の投稿者名）",
+    "providerOrHolder": "Wikimedia Commons（像の所在は Commons の説明による）",
+    "licenseName": "CC BY 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ashikaga_Yoshihide.jpg",
+    "changes": "顔の部分を切り抜き、128px 角に縮小（合成画像の 1 コマ）。高精細版は切り抜きのみ",
+    "basis": "作者・出典は Commons の記載。表示の項目（作者・ライセンス・出典・改変の有無）は各ライセンスが求める項目に合わせた。文言は案で、表示の実装側で整えてよい",
+    "checked": "2026-11-11",
+    "note": "像の所在の館名は Commons の説明の英語表記をそのまま写した。日本語の正式な館名は確かめていない"
+   }
   },
   {
    "kind": "faces.webp",
@@ -3655,7 +3793,7 @@
    "position": "faces.webp の 106 番目のコマ（0 始まり、128px 角）",
    "buildTag": "raw 0.81",
    "verdict": "所蔵機関の規約の確認が要る",
-   "basis": "Commons の表示は Public domain（古い絵の忠実な複製）。出典が機関のデータベース・サイト（Historiographical）で、機関の利用規約は未確認",
+   "basis": "Commons の表示は Public domain（古い絵の忠実な複製）。出典が機関のデータベース・サイト（Historiographical）。機関の規約からの見直し案：出典表示を足せば可（画像が【１】の区分に当たる場合）。当たらない場合は事前の問い合わせ（読めた、2026-11-11）",
    "usedSource": "Asano_Nagamasa_Portrait.png",
    "sources": [
     {
@@ -3678,7 +3816,13 @@
       "Template Unknown (author)"
      ]
     }
-   ]
+   ],
+   "institutionTerms": {
+    "institution": "hi-held",
+    "termsVerdict": "出典表示を足せば可（画像が【１】の区分に当たる場合）。当たらない場合は事前の問い合わせ",
+    "readStatus": "読めた",
+    "checked": "2026-11-11"
+   }
   },
   {
    "kind": "faces.webp",
@@ -3717,7 +3861,7 @@
    "position": "faces.webp の 108 番目のコマ（0 始まり、128px 角）",
    "buildTag": "hires 0.89",
    "verdict": "所蔵機関の規約の確認が要る",
-   "basis": "Commons の表示は Public domain（古い絵の忠実な複製）。出典が機関のデータベース・サイト（国立国会図書館）で、機関の利用規約は未確認",
+   "basis": "Commons の表示は Public domain（古い絵の忠実な複製）。出典が機関のデータベース・サイト（国立国会図書館）。機関の規約からの見直し案：そのまま配信可（個々の画像の公開範囲が「保護期間満了」の場合）（読めた、2026-11-11）",
    "usedSource": "Mashita_Nagamori.jpg",
    "sources": [
     {
@@ -3740,7 +3884,13 @@
       "PD-old missing SDC copyright status"
      ]
     }
-   ]
+   ],
+   "institutionTerms": {
+    "institution": "ndl",
+    "termsVerdict": "そのまま配信可（個々の画像の公開範囲が「保護期間満了」の場合）",
+    "readStatus": "読めた",
+    "checked": "2026-11-11"
+   }
   },
   {
    "kind": "faces.webp",
@@ -3870,8 +4020,8 @@
    "file": "faces.webp",
    "position": "faces.webp の 111 番目のコマ（0 始まり、128px 角）",
    "buildTag": "hires 0.91",
-   "verdict": "所蔵機関の規約の確認が要る",
-   "basis": "Commons の表示は Public domain（古い絵の忠実な複製）。出典が機関のデータベース・サイト（nagahama-rekihaku）で、機関の利用規約は未確認",
+   "verdict": "申請が要る",
+   "basis": "出典が長浜城歴史博物館のサイト。同サイトの規約は、許可のない転用を禁じる、または事前の申請を求めている（著作権）。規約は 2026-11-11 に読んだ。Commons は同じ画像を Public domain（古い絵の忠実な複製）として扱っていて、機関の規約とは別の立場である",
    "usedSource": "片桐且元像.jpg",
    "sources": [
     {
@@ -3892,7 +4042,13 @@
       "Template Unknown (author)"
      ]
     }
-   ]
+   ],
+   "institutionTerms": {
+    "institution": "nagahama",
+    "termsVerdict": "申請が要る",
+    "readStatus": "読めた",
+    "checked": "2026-11-11"
+   }
   },
   {
    "kind": "faces.webp",
@@ -3963,7 +4119,7 @@
    "position": "faces.webp の 114 番目のコマ（0 始まり、128px 角）",
    "buildTag": "hires 0.89",
    "verdict": "所蔵機関の規約の確認が要る",
-   "basis": "Commons の表示は Public domain（古い絵の忠実な複製）。出典が機関のデータベース・サイト（史料編纂所）で、機関の利用規約は未確認",
+   "basis": "Commons の表示は Public domain（古い絵の忠実な複製）。出典が機関のデータベース・サイト（史料編纂所）。機関の規約からの見直し案：出典表示を足せば可（画像が【１】の区分に当たる場合）。当たらない場合は事前の問い合わせ（読めた、2026-11-11）",
    "usedSource": "Hatano_Hideharu.jpg",
    "sources": [
     {
@@ -3986,7 +4142,13 @@
       "Template Unknown (author)"
      ]
     }
-   ]
+   ],
+   "institutionTerms": {
+    "institution": "hi-held",
+    "termsVerdict": "出典表示を足せば可（画像が【１】の区分に当たる場合）。当たらない場合は事前の問い合わせ",
+    "readStatus": "読めた",
+    "checked": "2026-11-11"
+   }
   },
   {
    "kind": "faces.webp",
@@ -4091,7 +4253,7 @@
    "position": "faces.webp の 117 番目のコマ（0 始まり、128px 角）",
    "buildTag": "hires 0.83",
    "verdict": "所蔵機関の規約の確認が要る",
-   "basis": "Commons の表示は Public domain（古い絵の忠実な複製）。出典が機関のデータベース・サイト（東京都立図書館）で、機関の利用規約は未確認",
+   "basis": "Commons の表示は Public domain（古い絵の忠実な複製）。出典が機関のデータベース・サイト（東京都立図書館）。機関の規約からの見直し案：そのまま配信可（各資料の「画像の使用条件」がパブリックドメインの場合）。所蔵館名の明示が望ましい（読めた、2026-11-11）",
    "usedSource": "Otomo_Yoshimune.jpg",
    "sources": [
     {
@@ -4114,7 +4276,13 @@
       "PD-old missing SDC copyright status"
      ]
     }
-   ]
+   ],
+   "institutionTerms": {
+    "institution": "tokyo-metro-library",
+    "termsVerdict": "そのまま配信可（各資料の「画像の使用条件」がパブリックドメインの場合）。所蔵館名の明示が望ましい",
+    "readStatus": "読めた",
+    "checked": "2026-11-11"
+   }
   },
   {
    "kind": "faces.webp",
@@ -4247,7 +4415,7 @@
    "position": "faces.webp の 122 番目のコマ（0 始まり、128px 角）",
    "buildTag": "hr",
    "verdict": "所蔵機関の規約の確認が要る",
-   "basis": "Commons の表示は Public domain（古い絵の忠実な複製）。出典が機関のデータベース・サイト（東京都立図書館）で、機関の利用規約は未確認。取得元は 2026-11-11 に特定した（確定（同じ絵））",
+   "basis": "Commons の表示は Public domain（古い絵の忠実な複製）。出典が機関のデータベース・サイト（東京都立図書館）。取得元は 2026-11-11 に特定した（確定（同じ絵））。機関の規約からの見直し案：そのまま配信可（各資料の「画像の使用条件」がパブリックドメインの場合）。所蔵館名の明示が望ましい（読めた、2026-11-11）",
    "sources": [
     {
      "record": "meta.json",
@@ -4287,6 +4455,12 @@
      }
     },
     "note": "tools/faces/raw/ の画像は Commons のファイルの縮小版と一致した。コマは高精細の画像（tools/faces/hr/）から切られていて、その画像が同じ Commons のファイルから取られたかは確かめられない（同じ絵の別の版の可能性が残る）。"
+   },
+   "institutionTerms": {
+    "institution": "tokyo-metro-library",
+    "termsVerdict": "そのまま配信可（各資料の「画像の使用条件」がパブリックドメインの場合）。所蔵館名の明示が望ましい",
+    "readStatus": "読めた",
+    "checked": "2026-11-11"
    }
   },
   {
@@ -4326,8 +4500,8 @@
    "file": "faces.webp",
    "position": "faces.webp の 124 番目のコマ（0 始まり、128px 角）",
    "buildTag": "hires 0.64",
-   "verdict": "所蔵機関の規約の確認が要る",
-   "basis": "Commons の表示は Public domain（古い絵の忠実な複製）。出典が機関のデータベース・サイト（ColBase）で、機関の利用規約は未確認",
+   "verdict": "出典表示を足せば可",
+   "basis": "出典が ColBase。ColBase の利用規約は、出典を記載すれば複製・公衆送信・加工を認めている（CC BY 4.0 と互換）。規約は 2026-11-11 に読んだ。Commons の表示は Public domain",
    "usedSource": "Sou_Yoshishige.jpg",
    "sources": [
     {
@@ -4348,7 +4522,25 @@
       "PD-Art (PD-old-100)"
      ]
     }
-   ]
+   ],
+   "institutionTerms": {
+    "institution": "colbase",
+    "termsVerdict": "出典表示を足せば可",
+    "readStatus": "読めた（ブラウザで表示した本文。HTML の原本は取得できず保全していない）",
+    "checked": "2026-11-11"
+   },
+   "attribution": {
+    "text": "宗義調像（Commons の記載：画 如雲老人、賛 三玄宗三）／出典：ColBase（https://colbase.nich.go.jp/）／顔の部分を切り抜き・縮小",
+    "author": "画：如雲老人 賛：三玄宗三",
+    "providerOrHolder": "国立文化財機構所蔵品統合検索システム（ColBase）",
+    "licenseName": "ColBase 利用規約（政府標準利用規約 第2.0版に準拠、CC BY 4.0 と互換）",
+    "licenseUrl": "https://colbase.nich.go.jp/pages/term?locale=ja",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Sou_Yoshishige.jpg",
+    "changes": "顔の部分を切り抜き、128px 角に縮小（合成画像の 1 コマ）。高精細版は切り抜きのみ",
+    "basis": "作者・出典は Commons の記載。表示の項目（作者・ライセンス・出典・改変の有無）は各ライセンスが求める項目に合わせた。文言は案で、表示の実装側で整えてよい",
+    "checked": "2026-11-11",
+    "note": "ColBase の該当の作品ページの URL は特定していない。規約の出典記載例は「出典：ColBase（https://colbase.nich.go.jp/）」"
+   }
   },
   {
    "kind": "faces.webp",
@@ -4388,7 +4580,7 @@
    "position": "faces.webp の 126 番目のコマ（0 始まり、128px 角）",
    "buildTag": "hires 0.91",
    "verdict": "所蔵機関の規約の確認が要る",
-   "basis": "Commons の表示は Public domain（古い絵の忠実な複製）。出典が機関のデータベース・サイト（Historical Materials Section）で、機関の利用規約は未確認",
+   "basis": "Commons の表示は Public domain（古い絵の忠実な複製）。出典が機関のデータベース・サイト（Historical Materials Section）。機関の規約からの見直し案：出典表示を足せば可（画像が【１】の区分に当たる場合）。当たらない場合は事前の問い合わせ（読めた、2026-11-11）",
    "usedSource": "Kobayakawa_Hideaki_2.jpg",
    "sources": [
     {
@@ -4411,7 +4603,13 @@
       "Template Unknown (author)"
      ]
     }
-   ]
+   ],
+   "institutionTerms": {
+    "institution": "hi-held",
+    "termsVerdict": "出典表示を足せば可（画像が【１】の区分に当たる場合）。当たらない場合は事前の問い合わせ",
+    "readStatus": "読めた",
+    "checked": "2026-11-11"
+   }
   },
   {
    "kind": "faces.webp",
@@ -4521,7 +4719,7 @@
    "position": "faces.webp の 129 番目のコマ（0 始まり、128px 角）",
    "buildTag": "asis",
    "verdict": "所蔵機関の規約の確認が要る",
-   "basis": "Commons の表示は Public domain（古い絵の忠実な複製）。出典が機関のデータベース・サイト（東京都立図書館）で、機関の利用規約は未確認。取得元は 2026-11-11 に特定した（確定（同じ絵））",
+   "basis": "Commons の表示は Public domain（古い絵の忠実な複製）。出典が機関のデータベース・サイト（東京都立図書館）。取得元は 2026-11-11 に特定した（確定（同じ絵））。機関の規約からの見直し案：そのまま配信可（各資料の「画像の使用条件」がパブリックドメインの場合）。所蔵館名の明示が望ましい（読めた、2026-11-11）",
    "sources": [
     {
      "record": "meta.json",
@@ -4564,6 +4762,12 @@
      }
     },
     "note": "tools/faces/raw/ の画像は Commons のファイルの縮小版と一致した。コマは合成画像の古い版から引き継いだもので、同じ絵から切られていることを確かめた。"
+   },
+   "institutionTerms": {
+    "institution": "tokyo-metro-library",
+    "termsVerdict": "そのまま配信可（各資料の「画像の使用条件」がパブリックドメインの場合）。所蔵館名の明示が望ましい",
+    "readStatus": "読めた",
+    "checked": "2026-11-11"
    }
   },
   {
@@ -4573,7 +4777,7 @@
    "position": "faces.webp の 130 番目のコマ（0 始まり、128px 角）",
    "buildTag": "raw 0.53",
    "verdict": "所蔵機関の規約の確認が要る",
-   "basis": "Commons の表示は Public domain（古い絵の忠実な複製）。出典が機関のデータベース・サイト（大英博物館）で、機関の利用規約は未確認",
+   "basis": "Commons の表示は Public domain（古い絵の忠実な複製）。出典が機関のデータベース・サイト（大英博物館）。機関の規約からの見直し案：継承の条件あり（非営利・クレジットの表示・同じライセンスでの継承）（読めた、2026-11-11）",
    "usedSource": "Shima_Sakon.jpg",
    "sources": [
     {
@@ -4594,7 +4798,13 @@
       "PD-Japan"
      ]
     }
-   ]
+   ],
+   "institutionTerms": {
+    "institution": "british-museum",
+    "termsVerdict": "継承の条件あり（非営利・クレジットの表示・同じライセンスでの継承）",
+    "readStatus": "読めた（ブラウザで表示した本文。HTML の原本は取得できず保全していない）",
+    "checked": "2026-11-11"
+   }
   },
   {
    "kind": "faces.webp",
@@ -4633,7 +4843,7 @@
    "position": "faces.webp の 132 番目のコマ（0 始まり、128px 角）",
    "buildTag": "hires 0.41",
    "verdict": "所蔵機関の規約の確認が要る",
-   "basis": "立体物（像）の写真。古い絵の忠実な複製（PD-Art）には当たらず、写真そのものの権利の扱いが Commons の記載では確かめられない",
+   "basis": "立体物（像）の写真。古い絵の忠実な複製（PD-Art）には当たらず、写真そのものの権利の扱いが Commons の記載では確かめられない。機関の規約からの見直し案：未確認（撮影者と所蔵者の許諾の表示が確かめられない）（未確認、2026-11-11）",
    "usedSource": "Hidetada2.jpg",
    "sources": [
     {
@@ -4653,7 +4863,13 @@
       "PD-old missing SDC copyright status"
      ]
     }
-   ]
+   ],
+   "institutionTerms": {
+    "institution": "statue-photo",
+    "termsVerdict": "未確認（撮影者と所蔵者の許諾の表示が確かめられない）",
+    "readStatus": "未確認",
+    "checked": "2026-11-11"
+   }
   },
   {
    "kind": "faces.webp",
@@ -4742,7 +4958,7 @@
    "position": "faces.webp の 135 番目のコマ（0 始まり、128px 角）",
    "buildTag": "hr",
    "verdict": "所蔵機関の規約の確認が要る",
-   "basis": "Commons の表示は Public domain（古い絵の忠実な複製）。出典が機関のデータベース・サイト（東京都立図書館）で、機関の利用規約は未確認。取得元は 2026-11-11 に特定した（確定（同じ絵））",
+   "basis": "Commons の表示は Public domain（古い絵の忠実な複製）。出典が機関のデータベース・サイト（東京都立図書館）。取得元は 2026-11-11 に特定した（確定（同じ絵））。機関の規約からの見直し案：そのまま配信可（各資料の「画像の使用条件」がパブリックドメインの場合）。所蔵館名の明示が望ましい（読めた、2026-11-11）",
    "sources": [
     {
      "record": "meta.json",
@@ -4782,6 +4998,12 @@
      }
     },
     "note": "tools/faces/raw/ の画像は Commons のファイルの縮小版と一致した。コマは高精細の画像（tools/faces/hr/）から切られていて、その画像が同じ Commons のファイルから取られたかは確かめられない（同じ絵の別の版の可能性が残る）。"
+   },
+   "institutionTerms": {
+    "institution": "tokyo-metro-library",
+    "termsVerdict": "そのまま配信可（各資料の「画像の使用条件」がパブリックドメインの場合）。所蔵館名の明示が望ましい",
+    "readStatus": "読めた",
+    "checked": "2026-11-11"
    }
   },
   {
@@ -4811,7 +5033,18 @@
       "Self-published work"
      ]
     }
-   ]
+   ],
+   "attribution": {
+    "text": "最上義光肖像画／作者：Odaodaoda1128（Wikimedia Commons）／CC BY-SA 4.0／顔の部分を切り抜き・縮小",
+    "author": "Odaodaoda1128（Commons の投稿者名）",
+    "providerOrHolder": "Wikimedia Commons",
+    "licenseName": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Mogami7.jpg",
+    "changes": "顔の部分を切り抜き、128px 角に縮小（合成画像の 1 コマ）。高精細版は切り抜きのみ",
+    "basis": "作者・出典は Commons の記載。表示の項目（作者・ライセンス・出典・改変の有無）は各ライセンスが求める項目に合わせた。文言は案で、表示の実装側で整えてよい",
+    "checked": "2026-11-11"
+   }
   },
   {
    "kind": "faces.webp",
@@ -5087,6 +5320,17 @@
      }
     },
     "note": "tools/faces/raw/ の画像は Commons のファイルの縮小版と一致した。コマは高精細の画像（tools/faces/hr/）から切られていて、その画像が同じ Commons のファイルから取られたかは確かめられない（同じ絵の別の版の可能性が残る）。"
+   },
+   "attribution": {
+    "text": "秋田実季（『義烈百人一首』、緑亭川柳 編・北斎卍老人ほか 画、1850 年）／提供：NPO長野県図書館等協働機構・信州地域史料アーカイブ／CC BY 4.0／顔の部分を切り抜き・縮小",
+    "author": "緑亭川柳（編）、北斎卍老人ほか（画）",
+    "providerOrHolder": "NPO長野県図書館等協働機構／信州地域史料アーカイブ",
+    "licenseName": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Akita_Sanesue.jpg",
+    "changes": "顔の部分を切り抜き、128px 角に縮小（合成画像の 1 コマ）。高精細版は切り抜きのみ",
+    "basis": "作者・出典は Commons の記載。表示の項目（作者・ライセンス・出典・改変の有無）は各ライセンスが求める項目に合わせた。文言は案で、表示の実装側で整えてよい",
+    "checked": "2026-11-11"
    }
   },
   {
@@ -5220,7 +5464,7 @@
    "position": "faces.webp の 148 番目のコマ（0 始まり、128px 角）",
    "buildTag": "hires 0.87",
    "verdict": "所蔵機関の規約の確認が要る",
-   "basis": "Commons の表示は Public domain（古い絵の忠実な複製）。出典が機関のデータベース・サイト（britishmuseum）で、機関の利用規約は未確認",
+   "basis": "Commons の表示は Public domain（古い絵の忠実な複製）。出典が機関のデータベース・サイト（britishmuseum）。機関の規約からの見直し案：継承の条件あり（非営利・クレジットの表示・同じライセンスでの継承）（読めた、2026-11-11）",
    "usedSource": "Print_(BM_2008,3037.21411).jpg",
    "sources": [
     {
@@ -5241,7 +5485,13 @@
       "PD Old"
      ]
     }
-   ]
+   ],
+   "institutionTerms": {
+    "institution": "british-museum",
+    "termsVerdict": "継承の条件あり（非営利・クレジットの表示・同じライセンスでの継承）",
+    "readStatus": "読めた（ブラウザで表示した本文。HTML の原本は取得できず保全していない）",
+    "checked": "2026-11-11"
+   }
   },
   {
    "kind": "faces.webp",
@@ -5250,7 +5500,7 @@
    "position": "faces.webp の 149 番目のコマ（0 始まり、128px 角）",
    "buildTag": "hr",
    "verdict": "所蔵機関の規約の確認が要る",
-   "basis": "Commons の表示は Public domain（古い絵の忠実な複製）。出典が機関のデータベース・サイト（Tokyo Metropolitan Library）で、機関の利用規約は未確認。取得元は 2026-11-11 に特定した（確定（同じ絵））",
+   "basis": "Commons の表示は Public domain（古い絵の忠実な複製）。出典が機関のデータベース・サイト（Tokyo Metropolitan Library）。取得元は 2026-11-11 に特定した（確定（同じ絵））。機関の規約からの見直し案：そのまま配信可（各資料の「画像の使用条件」がパブリックドメインの場合）。所蔵館名の明示が望ましい（読めた、2026-11-11）",
    "sources": [
     {
      "record": "meta.json",
@@ -5291,6 +5541,12 @@
      }
     },
     "note": "tools/faces/raw/ の画像は Commons のファイルの縮小版と一致した。コマは高精細の画像（tools/faces/hr/）から切られていて、その画像が同じ Commons のファイルから取られたかは確かめられない（同じ絵の別の版の可能性が残る）。"
+   },
+   "institutionTerms": {
+    "institution": "tokyo-metro-library",
+    "termsVerdict": "そのまま配信可（各資料の「画像の使用条件」がパブリックドメインの場合）。所蔵館名の明示が望ましい",
+    "readStatus": "読めた",
+    "checked": "2026-11-11"
    }
   },
   {
@@ -5423,7 +5679,7 @@
    "position": "faces.webp の 153 番目のコマ（0 始まり、128px 角）",
    "buildTag": "new",
    "verdict": "所蔵機関の規約の確認が要る",
-   "basis": "Commons の表示は Public domain（古い絵の忠実な複製）。出典が機関のデータベース・サイト（史料編纂所）で、機関の利用規約は未確認",
+   "basis": "Commons の表示は Public domain（古い絵の忠実な複製）。出典が機関のデータベース・サイト（史料編纂所）。機関の規約からの見直し案：出典表示を足せば可（画像が【１】の区分に当たる場合）。当たらない場合は事前の問い合わせ（読めた、2026-11-11）",
    "usedSource": "Oda_Hidenobu-2.jpg",
    "sources": [
     {
@@ -5448,7 +5704,13 @@
       "Template Unknown (author)"
      ]
     }
-   ]
+   ],
+   "institutionTerms": {
+    "institution": "hi-held",
+    "termsVerdict": "出典表示を足せば可（画像が【１】の区分に当たる場合）。当たらない場合は事前の問い合わせ",
+    "readStatus": "読めた",
+    "checked": "2026-11-11"
+   }
   },
   {
    "kind": "portraits/",
@@ -5481,8 +5743,8 @@
    "kind": "portraits/",
    "name": "上杉景勝",
    "file": "portraits/quality-上杉景勝.jpg",
-   "verdict": "所蔵機関の規約の確認が要る",
-   "basis": "Commons の表示は Public domain（古い絵の忠実な複製）。出典が機関のデータベース・サイト（Denkoku-no-Mori）で、機関の利用規約は未確認",
+   "verdict": "申請が要る",
+   "basis": "出典が伝国の杜 米沢市上杉博物館のサイト。同サイトの規約は、許可のない転用を禁じる、または事前の申請を求めている（資料画像の掲載・放映等について／許可条件／留意事項）。規約は 2026-11-11 に読んだ。Commons は同じ画像を Public domain（古い絵の忠実な複製）として扱っていて、機関の規約とは別の立場である",
    "usedSource": "Uesugi_Kagekatsu_Portrait_Yonezawa_City_Uesugi_Museum.png",
    "sources": [
     {
@@ -5506,14 +5768,20 @@
       "Template Unknown (author)"
      ]
     }
-   ]
+   ],
+   "institutionTerms": {
+    "institution": "denkoku",
+    "termsVerdict": "申請が要る",
+    "readStatus": "読めた",
+    "checked": "2026-11-11"
+   }
   },
   {
    "kind": "portraits/",
    "name": "丹羽長秀",
    "file": "portraits/quality-丹羽長秀.jpg",
    "verdict": "所蔵機関の規約の確認が要る",
-   "basis": "Commons の表示は Public domain（古い絵の忠実な複製）。出典が機関のデータベース・サイト（Historiographical）で、機関の利用規約は未確認",
+   "basis": "Commons の表示は Public domain（古い絵の忠実な複製）。出典が機関のデータベース・サイト（Historiographical）。機関の規約からの見直し案：未確認（画像の出どころが同所の画像データか、本の図版かが決まらない）（読めた、2026-11-11）",
    "usedSource": "Niwa_Nagahide2.jpg",
    "sources": [
     {
@@ -5536,7 +5804,13 @@
       "Portrait paintings in the Historiographical Institute, the University of Tokyo"
      ]
     }
-   ]
+   ],
+   "institutionTerms": {
+    "institution": "hi-category",
+    "termsVerdict": "未確認（画像の出どころが同所の画像データか、本の図版かが決まらない）",
+    "readStatus": "読めた",
+    "checked": "2026-11-11"
+   }
   },
   {
    "kind": "portraits/",
@@ -5862,7 +6136,7 @@
    "name": "増田長盛",
    "file": "portraits/quality-増田長盛.jpg",
    "verdict": "所蔵機関の規約の確認が要る",
-   "basis": "Commons の表示は Public domain（古い絵の忠実な複製）。出典が機関のデータベース・サイト（国立国会図書館）で、機関の利用規約は未確認",
+   "basis": "Commons の表示は Public domain（古い絵の忠実な複製）。出典が機関のデータベース・サイト（国立国会図書館）。機関の規約からの見直し案：そのまま配信可（個々の画像の公開範囲が「保護期間満了」の場合）（読めた、2026-11-11）",
    "usedSource": "Mashita_Nagamori.jpg",
    "sources": [
     {
@@ -5885,7 +6159,13 @@
       "PD-old missing SDC copyright status"
      ]
     }
-   ]
+   ],
+   "institutionTerms": {
+    "institution": "ndl",
+    "termsVerdict": "そのまま配信可（個々の画像の公開範囲が「保護期間満了」の場合）",
+    "readStatus": "読めた",
+    "checked": "2026-11-11"
+   }
   },
   {
    "kind": "portraits/",
@@ -6038,7 +6318,7 @@
    "name": "小早川秀秋",
    "file": "portraits/quality-小早川秀秋.jpg",
    "verdict": "所蔵機関の規約の確認が要る",
-   "basis": "Commons の表示は Public domain（古い絵の忠実な複製）。出典が機関のデータベース・サイト（Historical Materials Section）で、機関の利用規約は未確認",
+   "basis": "Commons の表示は Public domain（古い絵の忠実な複製）。出典が機関のデータベース・サイト（Historical Materials Section）。機関の規約からの見直し案：出典表示を足せば可（画像が【１】の区分に当たる場合）。当たらない場合は事前の問い合わせ（読めた、2026-11-11）",
    "usedSource": "Kobayakawa_Hideaki_2.jpg",
    "sources": [
     {
@@ -6061,7 +6341,13 @@
       "Template Unknown (author)"
      ]
     }
-   ]
+   ],
+   "institutionTerms": {
+    "institution": "hi-held",
+    "termsVerdict": "出典表示を足せば可（画像が【１】の区分に当たる場合）。当たらない場合は事前の問い合わせ",
+    "readStatus": "読めた",
+    "checked": "2026-11-11"
+   }
   },
   {
    "kind": "portraits/",
@@ -6097,7 +6383,7 @@
    "name": "山内一豊",
    "file": "portraits/quality-山内一豊.jpg",
    "verdict": "所蔵機関の規約の確認が要る",
-   "basis": "立体物（像）の写真。古い絵の忠実な複製（PD-Art）には当たらず、写真そのものの権利の扱いが Commons の記載では確かめられない",
+   "basis": "立体物（像）の写真。古い絵の忠実な複製（PD-Art）には当たらず、写真そのものの権利の扱いが Commons の記載では確かめられない。機関の規約からの見直し案：出典表示を足せば可（画像が【１】の区分に当たる場合）。当たらない場合は事前の問い合わせ（読めた、2026-11-11）",
    "usedSource": "Yamauchi-Kazutoyo.jpg",
    "sources": [
     {
@@ -6122,7 +6408,13 @@
       "Template Unknown (author)"
      ]
     }
-   ]
+   ],
+   "institutionTerms": {
+    "institution": "hi-held",
+    "termsVerdict": "出典表示を足せば可（画像が【１】の区分に当たる場合）。当たらない場合は事前の問い合わせ",
+    "readStatus": "読めた",
+    "checked": "2026-11-11"
+   }
   },
   {
    "kind": "portraits/",
@@ -6235,7 +6527,18 @@
       "Self-published work"
      ]
     }
-   ]
+   ],
+   "attribution": {
+    "text": "最上義光肖像画／作者：Odaodaoda1128（Wikimedia Commons）／CC BY-SA 4.0／顔の部分を切り抜き・縮小",
+    "author": "Odaodaoda1128（Commons の投稿者名）",
+    "providerOrHolder": "Wikimedia Commons",
+    "licenseName": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Mogami7.jpg",
+    "changes": "顔の部分を切り抜き、128px 角に縮小（合成画像の 1 コマ）。高精細版は切り抜きのみ",
+    "basis": "作者・出典は Commons の記載。表示の項目（作者・ライセンス・出典・改変の有無）は各ライセンスが求める項目に合わせた。文言は案で、表示の実装側で整えてよい",
+    "checked": "2026-11-11"
+   }
   },
   {
    "kind": "portraits/",
@@ -6447,7 +6750,7 @@
    "name": "波多野秀治",
    "file": "portraits/quality-波多野秀治.jpg",
    "verdict": "所蔵機関の規約の確認が要る",
-   "basis": "Commons の表示は Public domain（古い絵の忠実な複製）。出典が機関のデータベース・サイト（史料編纂所）で、機関の利用規約は未確認",
+   "basis": "Commons の表示は Public domain（古い絵の忠実な複製）。出典が機関のデータベース・サイト（史料編纂所）。機関の規約からの見直し案：出典表示を足せば可（画像が【１】の区分に当たる場合）。当たらない場合は事前の問い合わせ（読めた、2026-11-11）",
    "usedSource": "Hatano_Hideharu.jpg",
    "sources": [
     {
@@ -6470,14 +6773,20 @@
       "Template Unknown (author)"
      ]
     }
-   ]
+   ],
+   "institutionTerms": {
+    "institution": "hi-held",
+    "termsVerdict": "出典表示を足せば可（画像が【１】の区分に当たる場合）。当たらない場合は事前の問い合わせ",
+    "readStatus": "読めた",
+    "checked": "2026-11-11"
+   }
   },
   {
    "kind": "portraits/",
    "name": "滝川一益",
    "file": "portraits/quality-滝川一益.jpg",
    "verdict": "所蔵機関の規約の確認が要る",
-   "basis": "Commons の表示は Public domain（古い絵の忠実な複製）。出典が機関のデータベース・サイト（国立国会図書館）で、機関の利用規約は未確認",
+   "basis": "Commons の表示は Public domain（古い絵の忠実な複製）。出典が機関のデータベース・サイト（国立国会図書館）。機関の規約からの見直し案：そのまま配信可（個々の画像の公開範囲が「保護期間満了」の場合）（読めた、2026-11-11）",
    "usedSource": "Takigawa_Sakon.jpg",
    "sources": [
     {
@@ -6500,7 +6809,13 @@
       "PD-old missing SDC copyright status"
      ]
     }
-   ]
+   ],
+   "institutionTerms": {
+    "institution": "ndl",
+    "termsVerdict": "そのまま配信可（個々の画像の公開範囲が「保護期間満了」の場合）",
+    "readStatus": "読めた",
+    "checked": "2026-11-11"
+   }
   },
   {
    "kind": "portraits/",
@@ -6536,8 +6851,8 @@
    "kind": "portraits/",
    "name": "片桐且元",
    "file": "portraits/quality-片桐且元.jpg",
-   "verdict": "所蔵機関の規約の確認が要る",
-   "basis": "Commons の表示は Public domain（古い絵の忠実な複製）。出典が機関のデータベース・サイト（nagahama-rekihaku）で、機関の利用規約は未確認",
+   "verdict": "申請が要る",
+   "basis": "出典が長浜城歴史博物館のサイト。同サイトの規約は、許可のない転用を禁じる、または事前の申請を求めている（著作権）。規約は 2026-11-11 に読んだ。Commons は同じ画像を Public domain（古い絵の忠実な複製）として扱っていて、機関の規約とは別の立場である",
    "usedSource": "片桐且元像.jpg",
    "sources": [
     {
@@ -6558,7 +6873,13 @@
       "Template Unknown (author)"
      ]
     }
-   ]
+   ],
+   "institutionTerms": {
+    "institution": "nagahama",
+    "termsVerdict": "申請が要る",
+    "readStatus": "読めた",
+    "checked": "2026-11-11"
+   }
   },
   {
    "kind": "portraits/",
@@ -6626,7 +6947,7 @@
    "name": "真田昌幸",
    "file": "portraits/quality-真田昌幸.jpg",
    "verdict": "所蔵機関の規約の確認が要る",
-   "basis": "Commons の表示は Public domain（古い絵の忠実な複製）。出典が機関のデータベース・サイト（史料編纂所）で、機関の利用規約は未確認",
+   "basis": "Commons の表示は Public domain（古い絵の忠実な複製）。出典が機関のデータベース・サイト（史料編纂所）。機関の規約からの見直し案：出典表示を足せば可（画像が【１】の区分に当たる場合）。当たらない場合は事前の問い合わせ（読めた、2026-11-11）",
    "usedSource": "Sanada-Masayuki.jpg",
    "sources": [
     {
@@ -6651,7 +6972,13 @@
       "Template Unknown (author)"
      ]
     }
-   ]
+   ],
+   "institutionTerms": {
+    "institution": "hi-held",
+    "termsVerdict": "出典表示を足せば可（画像が【１】の区分に当たる場合）。当たらない場合は事前の問い合わせ",
+    "readStatus": "読めた",
+    "checked": "2026-11-11"
+   }
   },
   {
    "kind": "portraits/",
@@ -6691,7 +7018,7 @@
    "name": "立花宗茂",
    "file": "portraits/quality-立花宗茂.jpg",
    "verdict": "所蔵機関の規約の確認が要る",
-   "basis": "Commons の表示は Public domain（古い絵の忠実な複製）。出典が機関のデータベース・サイト（Historiographical）で、機関の利用規約は未確認",
+   "basis": "Commons の表示は Public domain（古い絵の忠実な複製）。出典が機関のデータベース・サイト（Historiographical）。機関の規約からの見直し案：出典表示を足せば可（画像が【１】の区分に当たる場合）。当たらない場合は事前の問い合わせ（読めた、2026-11-11）",
    "usedSource": "Tachibana_Muneshige.jpg",
    "sources": [
     {
@@ -6716,7 +7043,13 @@
       "Template Unknown (author)"
      ]
     }
-   ]
+   ],
+   "institutionTerms": {
+    "institution": "hi-held",
+    "termsVerdict": "出典表示を足せば可（画像が【１】の区分に当たる場合）。当たらない場合は事前の問い合わせ",
+    "readStatus": "読めた",
+    "checked": "2026-11-11"
+   }
   },
   {
    "kind": "portraits/",
@@ -6781,7 +7114,7 @@
    "name": "蒲生氏郷",
    "file": "portraits/quality-蒲生氏郷.jpg",
    "verdict": "所蔵機関の規約の確認が要る",
-   "basis": "Commons の表示は Public domain（古い絵の忠実な複製）。出典が機関のデータベース・サイト（is2.sss.fukushima-u）で、機関の利用規約は未確認",
+   "basis": "Commons の表示は Public domain（古い絵の忠実な複製）。出典が機関のデータベース・サイト（is2.sss.fukushima-u）。機関の規約からの見直し案：未確認（サイトに接続できない）（未確認、2026-11-11）",
    "usedSource": "Gamō_Ujisato_(Saikōji_Nishiazu).jpg",
    "sources": [
     {
@@ -6803,7 +7136,13 @@
       "PD-old missing SDC copyright status"
      ]
     }
-   ]
+   ],
+   "institutionTerms": {
+    "institution": "fukushima-u",
+    "termsVerdict": "未確認（サイトに接続できない）",
+    "readStatus": "未確認",
+    "checked": "2026-11-11"
+   }
   },
   {
    "kind": "portraits/",
@@ -6899,7 +7238,7 @@
    "name": "足利義輝",
    "file": "portraits/quality-足利義輝.jpg",
    "verdict": "所蔵機関の規約の確認が要る",
-   "basis": "Commons の表示は Public domain（古い絵の忠実な複製）。出典が機関のデータベース・サイト（Historiographical）で、機関の利用規約は未確認",
+   "basis": "Commons の表示は Public domain（古い絵の忠実な複製）。出典が機関のデータベース・サイト（Historiographical）。機関の規約からの見直し案：未確認（画像の出どころが同所の画像データか、本の図版かが決まらない）（読めた、2026-11-11）",
    "usedSource": "Ashikaga_Yoshiteru.jpg",
    "sources": [
     {
@@ -6936,14 +7275,20 @@
       "PD-Art (PD-old-100)"
      ]
     }
-   ]
+   ],
+   "institutionTerms": {
+    "institution": "hi-category",
+    "termsVerdict": "未確認（画像の出どころが同所の画像データか、本の図版かが決まらない）",
+    "readStatus": "読めた",
+    "checked": "2026-11-11"
+   }
   },
   {
    "kind": "portraits/",
    "name": "鍋島直茂",
    "file": "portraits/quality-鍋島直茂.jpg",
-   "verdict": "所蔵機関の規約の確認が要る",
-   "basis": "Commons の表示は Public domain（古い絵の忠実な複製）。出典が機関のデータベース・サイト（bunka.nii.ac.jp）で、機関の利用規約は未確認",
+   "verdict": "申請が要る",
+   "basis": "出典が文化遺産オンライン（文化庁）のサイト。同サイトの規約は、許可のない転用を禁じる、または事前の申請を求めている（著作権について）。規約は 2026-11-11 に読んだ。Commons は同じ画像を Public domain（古い絵の忠実な複製）として扱っていて、機関の規約とは別の立場である",
    "usedSource": "Nabeshima_Naoshige_by_Miura_Shisan_(Chokokan)_(detail).jpg",
    "sources": [
     {
@@ -6966,7 +7311,13 @@
       "PD-old missing SDC copyright status"
      ]
     }
-   ]
+   ],
+   "institutionTerms": {
+    "institution": "bunka-online",
+    "termsVerdict": "申請が要る（サイトの規約は無断の転用を禁じている。申請先は所蔵者に確かめる必要がある）",
+    "readStatus": "読めた",
+    "checked": "2026-11-11"
+   }
   },
   {
    "kind": "portraits/",
@@ -7032,7 +7383,7 @@
    "name": "長尾景虎",
    "file": "portraits/quality-長尾景虎.jpg",
    "verdict": "所蔵機関の規約の確認が要る",
-   "basis": "Commons の表示は Public domain（古い絵の忠実な複製）。出典が機関のデータベース・サイト（uesugi-jinja）で、機関の利用規約は未確認",
+   "basis": "Commons の表示は Public domain（古い絵の忠実な複製）。出典が機関のデータベース・サイト（uesugi-jinja）。機関の規約からの見直し案：未確認（規約のページが見つからない）（未確認、2026-11-11）",
    "usedSource": "Uesugi_Kenshin_Portrait_from_Uesugi_Shrine.png",
    "sources": [
     {
@@ -7054,14 +7405,20 @@
       "Template Unknown (author)"
      ]
     }
-   ]
+   ],
+   "institutionTerms": {
+    "institution": "uesugi-jinja",
+    "termsVerdict": "未確認（規約のページが見つからない）",
+    "readStatus": "未確認",
+    "checked": "2026-11-11"
+   }
   },
   {
    "kind": "portraits/",
    "name": "高坂昌信",
    "file": "portraits/quality-高坂昌信.jpg",
    "verdict": "所蔵機関の規約の確認が要る",
-   "basis": "Commons の表示は Public domain（古い絵の忠実な複製）。出典が機関のデータベース・サイト（britishmuseum）で、機関の利用規約は未確認",
+   "basis": "Commons の表示は Public domain（古い絵の忠実な複製）。出典が機関のデータベース・サイト（britishmuseum）。機関の規約からの見直し案：継承の条件あり（非営利・クレジットの表示・同じライセンスでの継承）（読めた、2026-11-11）",
    "usedSource": "Print_(BM_2008,3037.21411).jpg",
    "sources": [
     {
@@ -7082,7 +7439,13 @@
       "PD Old"
      ]
     }
-   ]
+   ],
+   "institutionTerms": {
+    "institution": "british-museum",
+    "termsVerdict": "継承の条件あり（非営利・クレジットの表示・同じライセンスでの継承）",
+    "readStatus": "読めた（ブラウザで表示した本文。HTML の原本は取得できず保全していない）",
+    "checked": "2026-11-11"
+   }
   },
   {
    "kind": "portraits/",
@@ -7283,8 +7646,8 @@
    "kind": "portraits/",
    "name": "丹羽長重",
    "file": "portraits/丹羽長重.jpg",
-   "verdict": "所蔵機関の規約の確認が要る",
-   "basis": "Commons の表示は Public domain（古い絵の忠実な複製）。出典が機関のデータベース・サイト（city.nihonmatsu.lg.jp）で、機関の利用規約は未確認",
+   "verdict": "申請が要る",
+   "basis": "出典が二本松市のサイト。同サイトの規約は、許可のない転用を禁じる、または事前の申請を求めている（著作権について）。規約は 2026-11-11 に読んだ。Commons は同じ画像を Public domain（古い絵の忠実な複製）として扱っていて、機関の規約とは別の立場である",
    "usedSource": "Niwa_Nagashige.jpg",
    "sources": [
     {
@@ -7308,14 +7671,20 @@
       "Template Unknown (author)"
      ]
     }
-   ]
+   ],
+   "institutionTerms": {
+    "institution": "nihonmatsu",
+    "termsVerdict": "申請が要る（サイトの規約は無断の転用を禁じている）",
+    "readStatus": "読めた",
+    "checked": "2026-11-11"
+   }
   },
   {
    "kind": "portraits/",
    "name": "宗義調",
    "file": "portraits/宗義調.jpg",
-   "verdict": "所蔵機関の規約の確認が要る",
-   "basis": "Commons の表示は Public domain（古い絵の忠実な複製）。出典が機関のデータベース・サイト（ColBase）で、機関の利用規約は未確認。取得元は 2026-11-11 に特定した（確定（同じファイルの縮小版））",
+   "verdict": "出典表示を足せば可",
+   "basis": "出典が ColBase。ColBase の利用規約は、出典を記載すれば複製・公衆送信・加工を認めている（CC BY 4.0 と互換）。規約は 2026-11-11 に読んだ。Commons の表示は Public domain",
    "sources": [
     {
      "record": "meta.json（同じ人物のファイル。2026-11-11 に配信ファイルとの一致を確かめた）",
@@ -7351,6 +7720,24 @@
      }
     },
     "note": "配信ファイルは Commons のファイルの縮小版と一致した"
+   },
+   "institutionTerms": {
+    "institution": "colbase",
+    "termsVerdict": "出典表示を足せば可",
+    "readStatus": "読めた（ブラウザで表示した本文。HTML の原本は取得できず保全していない）",
+    "checked": "2026-11-11"
+   },
+   "attribution": {
+    "text": "宗義調像（Commons の記載：画 如雲老人、賛 三玄宗三）／出典：ColBase（https://colbase.nich.go.jp/）／顔の部分を切り抜き・縮小",
+    "author": "画：如雲老人 賛：三玄宗三",
+    "providerOrHolder": "国立文化財機構所蔵品統合検索システム（ColBase）",
+    "licenseName": "ColBase 利用規約（政府標準利用規約 第2.0版に準拠、CC BY 4.0 と互換）",
+    "licenseUrl": "https://colbase.nich.go.jp/pages/term?locale=ja",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Sou_Yoshishige.jpg",
+    "changes": "顔の部分を切り抜き、128px 角に縮小（合成画像の 1 コマ）。高精細版は切り抜きのみ",
+    "basis": "作者・出典は Commons の記載。表示の項目（作者・ライセンス・出典・改変の有無）は各ライセンスが求める項目に合わせた。文言は案で、表示の実装側で整えてよい",
+    "checked": "2026-11-11",
+    "note": "ColBase の該当の作品ページの URL は特定していない。規約の出典記載例は「出典：ColBase（https://colbase.nich.go.jp/）」"
    }
   },
   {
@@ -7358,7 +7745,7 @@
    "name": "島清興",
    "file": "portraits/島清興.jpg",
    "verdict": "所蔵機関の規約の確認が要る",
-   "basis": "Commons の表示は Public domain（古い絵の忠実な複製）。出典が機関のデータベース・サイト（大英博物館）で、機関の利用規約は未確認",
+   "basis": "Commons の表示は Public domain（古い絵の忠実な複製）。出典が機関のデータベース・サイト（大英博物館）。機関の規約からの見直し案：継承の条件あり（非営利・クレジットの表示・同じライセンスでの継承）（読めた、2026-11-11）",
    "usedSource": "Shima_Sakon.jpg",
    "sources": [
     {
@@ -7379,7 +7766,13 @@
       "PD-Japan"
      ]
     }
-   ]
+   ],
+   "institutionTerms": {
+    "institution": "british-museum",
+    "termsVerdict": "継承の条件あり（非営利・クレジットの表示・同じライセンスでの継承）",
+    "readStatus": "読めた（ブラウザで表示した本文。HTML の原本は取得できず保全していない）",
+    "checked": "2026-11-11"
+   }
   },
   {
    "kind": "portraits/",
@@ -7567,8 +7960,8 @@
    "kind": "faces-fallback.webp",
    "name": "顕如・丹羽長重・島清興・斎藤義龍・足利義輝",
    "file": "faces-fallback.webp",
-   "verdict": "所蔵機関の規約の確認が要る",
-   "basis": "合成画像。含まれる各画像の判定のうち最も重いもの：Kennyo02.JPG＝そのまま配信可／Niwa_Nagashige.jpg＝所蔵機関の規約の確認が要る／Shima_Sakon.jpg＝所蔵機関の規約の確認が要る／Saitō_Yoshitatsu.jpg＝そのまま配信可／Ashikaga_Yoshiteru.jpg＝所蔵機関の規約の確認が要る",
+   "verdict": "申請が要る",
+   "basis": "合成画像。含まれる画像のうち、丹羽長重（Niwa_Nagashige.jpg）の出典の二本松市のサイトが、無断の転用を禁じている。島清興（大英博物館）は非営利・表示・継承が条件、足利義輝は画像の出どころが未確認。機関の規約は 2026-11-11 に読んだ",
    "sources": [
     {
      "record": "fallback-crops.json",
@@ -7660,7 +8053,16 @@
       "PD-Art (PD-old-100)"
      ]
     }
-   ]
+   ],
+   "institutionTerms": {
+    "institutions": [
+     "nihonmatsu",
+     "british-museum",
+     "hi-category"
+    ],
+    "termsVerdict": "申請が要る",
+    "checked": "2026-11-11"
+   }
   },
   {
    "kind": "portraits/",
@@ -7739,5 +8141,10 @@
   "scope": "「出典が辿れない」とした 28 行の取得元の特定。配信中の画像（faces.webp のコマ、portraits/ のファイル）、リポジトリ内の元画像（tools/faces/raw・hr）、Commons のファイルの縮小版を、機械的な比較と目視で突き合わせた。",
   "limits": "確かめたのは「同じ絵であること」まで。高精細の元画像や古い版の合成画像が、どの Commons のファイルのどの版から取られたかの記録は無い。Commons のライセンス表示が正しいこと、原画の制作年代、所蔵機関の規約は確かめていない。",
   "rows": 28
+ },
+ "institutionTerms": {
+  "checked": "2026-11-11",
+  "record": "data/research/source-notes/portrait-institution-terms.json",
+  "note": "「所蔵機関の規約の確認が要る」51 行について、機関ごとに規約のページを読んだ結果。各行の institutionTerms に機関と見直し案を入れた。規約から判定が決まった行だけ verdict を付け直した。"
  }
 }
