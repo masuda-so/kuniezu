@@ -1,0 +1,39 @@
+{
+  "id": "sanada-to-tokugawa-1582",
+  "entity": "person:sanada-masayuki",
+  "predicate": "submission",
+  "value": "徳川家康が依田信蕃に真田昌幸を説かせて自分に属させ、昌幸に誓書を与えた。",
+  "validYears": [
+    1582,
+    1582
+  ],
+  "datePrecision": "day",
+  "source": "hiDainihonshiryoKobun",
+  "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+  "locator": "綱文：和暦 天正10年9月28日 第1条（区分 大日本史料、第11編之2（データベースの表示値）、609頁）",
+  "gameBindings": [
+    "TK.HIST:真田昌幸、徳川へ"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-09",
+  "uncertainty": "綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。",
+  "linkedEntities": [
+    "person:sanada-masayuki",
+    "person:tokugawa-ieyasu",
+    "person:依田信蕃"
+  ],
+  "eventTime": {
+    "kind": "dated-event",
+    "date": [
+      1582,
+      9,
+      28
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": false,
+    "precision": "day"
+  },
+  "eventRelation": "submission",
+  "eventScope": "綱文が掲げる日付。天正10年9月28日はゲーム共通の暦表で1582年10月24日。最終年表の真田昌幸、徳川へ（1582年10月20日）は綱文より4日早い。命題は誓書を与えて属させた日。昌幸が信蕃とともに北条の兵と戦って糧道を断ったこと（同じ条の後段）は日付にしない。"
+}

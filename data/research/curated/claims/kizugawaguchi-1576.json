@@ -1,0 +1,38 @@
+{
+  "id": "kizugawaguchi-1576",
+  "entity": "place:kizugawaguchi",
+  "predicate": "military-event",
+  "value": "毛利輝元の将の児玉就英らが、信長の水軍を摂津木津川口で破り、兵粮を石山城に入れた。",
+  "validYears": [
+    1576,
+    1576
+  ],
+  "datePrecision": "day",
+  "source": "hiDainihonshiryoKobun",
+  "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+  "locator": "綱文：和暦 天正4年7月13日 第2条（区分 史料綜覧、編10・冊911（データベースの表示値）、119頁）",
+  "gameBindings": [
+    "TK.HIST:第一次木津川口の戦い"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-09",
+  "uncertainty": "綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。",
+  "linkedEntities": [
+    "place:kizugawaguchi",
+    "person:児玉就英"
+  ],
+  "eventTime": {
+    "kind": "dated-event",
+    "date": [
+      1576,
+      7,
+      13
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": false,
+    "precision": "day"
+  },
+  "eventRelation": "military-event",
+  "eventScope": "綱文が掲げる日付。天正4年7月13日はゲーム共通の暦表で1576年8月7日。最終年表の第一次木津川口の戦い（1576年8月7日）は一致する。毛利輝元は将を出した主君として名が出るだけなので結ばない。石山城は結ばない。"
+}

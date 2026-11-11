@@ -1,0 +1,40 @@
+{
+  "id": "nagashino-1575",
+  "entity": "place:nagashino",
+  "predicate": "military-event",
+  "value": "信長が徳川家康とともに、武田勝頼と三河長篠で戦って大いに破り、勝頼は身ひとつで逃れた。",
+  "validYears": [
+    1575,
+    1575
+  ],
+  "datePrecision": "day",
+  "source": "hiDainihonshiryoKobun",
+  "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+  "locator": "綱文：和暦 天正3年5月21日 第1条（区分 史料綜覧、編10・冊911（データベースの表示値）、78頁）",
+  "gameBindings": [
+    "TK.HIST:長篠の戦い"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-09",
+  "uncertainty": "綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。",
+  "linkedEntities": [
+    "place:nagashino",
+    "person:oda-nobunaga",
+    "person:tokugawa-ieyasu",
+    "person:takeda-katsuyori"
+  ],
+  "eventTime": {
+    "kind": "dated-event",
+    "date": [
+      1575,
+      5,
+      21
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": false,
+    "precision": "day"
+  },
+  "eventRelation": "military-event",
+  "eventScope": "綱文が掲げる日付。天正3年5月21日はゲーム共通の暦表で1575年6月29日。最終年表の長篠の戦い（1575年6月29日）は一致する。長篠城の籠城（5月8日〜14日の攻撃）は既存の別の命題が扱う。"
+}

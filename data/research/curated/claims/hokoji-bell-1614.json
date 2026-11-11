@@ -1,0 +1,37 @@
+{
+  "id": "hokoji-bell-1614",
+  "entity": "person:tokugawa-ieyasu",
+  "predicate": "administrative-document",
+  "value": "家康が、大仏（方広寺）の鐘銘に不吉の語があり、上棟の期日も吉日でないことを怒った。",
+  "validYears": [
+    1614,
+    1614
+  ],
+  "datePrecision": "day",
+  "source": "hiDainihonshiryoKobun",
+  "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+  "locator": "綱文：和暦 慶長19年7月21日 第1条（区分 大日本史料、第12編之14（データベースの表示値）、379頁）",
+  "gameBindings": [
+    "TK.HIST:方広寺鐘銘事件"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-09",
+  "uncertainty": "綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。",
+  "linkedEntities": [
+    "person:tokugawa-ieyasu"
+  ],
+  "eventTime": {
+    "kind": "dated-event",
+    "date": [
+      1614,
+      7,
+      21
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": false,
+    "precision": "day"
+  },
+  "eventRelation": "administrative-document",
+  "eventScope": "綱文が掲げる日付。慶長19年7月21日はゲーム共通の暦表で1614年8月26日。最終年表の方広寺鐘銘事件（1614年11月15日）は綱文より81日遅い。命題は家康が鐘銘を咎めた日で、その後の片桐且元の弁明や延期の命令（7月26日などの条）には広げない。"
+}

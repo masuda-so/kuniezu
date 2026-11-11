@@ -1,0 +1,39 @@
+{
+  "id": "takakurayama-camp-1578",
+  "entity": "place:takakurayama",
+  "predicate": "military-event",
+  "value": "信長の将の羽柴秀吉が、荒木村重とともに陣を播磨高倉山に移し、上月城を囲む毛利氏の軍と対峙した。",
+  "validYears": [
+    1578,
+    1578
+  ],
+  "datePrecision": "day",
+  "source": "hiDainihonshiryoKobun",
+  "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+  "locator": "綱文：和暦 天正6年5月4日 第1条（区分 史料綜覧、編10・冊911（データベースの表示値）、175頁）",
+  "gameBindings": [
+    "TK.HIST:上月城の救援軍が高倉山に着陣"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-09",
+  "uncertainty": "綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。",
+  "linkedEntities": [
+    "place:takakurayama",
+    "person:toyotomi-hideyoshi",
+    "person:荒木村重"
+  ],
+  "eventTime": {
+    "kind": "dated-event",
+    "date": [
+      1578,
+      5,
+      4
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": false,
+    "precision": "day"
+  },
+  "eventRelation": "military-event",
+  "eventScope": "綱文が掲げる日付。天正6年5月4日はゲーム共通の暦表で1578年6月9日。最終年表の上月城の救援軍が高倉山に着陣（1578年6月9日）は一致する。"
+}

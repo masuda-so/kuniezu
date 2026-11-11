@@ -1,0 +1,39 @@
+{
+  "id": "myeongnyang-1597",
+  "entity": "place:myeongnyang",
+  "predicate": "military-event",
+  "value": "伊予来島城の来島通総が、朝鮮水軍の将の李舜臣と全羅道の鳴梁で戦い、戦死した。",
+  "validYears": [
+    1597,
+    1597
+  ],
+  "datePrecision": "day",
+  "source": "hiDainihonshiryoKobun",
+  "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+  "locator": "綱文：和暦 慶長2年9月16日 第2条（区分 史料綜覧、編11・冊913（データベースの表示値）、145頁）",
+  "gameBindings": [
+    "TK.HIST:鳴梁海戦"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-09",
+  "uncertainty": "綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。",
+  "linkedEntities": [
+    "place:myeongnyang",
+    "person:来島通総",
+    "person:李舜臣"
+  ],
+  "eventTime": {
+    "kind": "dated-event",
+    "date": [
+      1597,
+      9,
+      16
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": false,
+    "precision": "day"
+  },
+  "eventRelation": "military-event",
+  "eventScope": "綱文が掲げる日付。慶長2年9月16日はゲーム共通の暦表で1597年10月26日。最終年表の鳴梁海戦（1597年10月26日）は一致する。"
+}

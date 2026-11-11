@@ -1,0 +1,39 @@
+{
+  "id": "hitotoribashi-1585",
+  "entity": "place:hitotoribashi",
+  "predicate": "military-event",
+  "value": "伊達政宗が、佐竹義重・岩城常隆らが蘆名氏の諸将とともに安積郡に出兵したのを聞いて本宮に陣し、この日、両軍が高倉・本宮の間で戦った。",
+  "validYears": [
+    1585,
+    1585
+  ],
+  "datePrecision": "day",
+  "source": "hiDainihonshiryoKobun",
+  "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+  "locator": "綱文：和暦 天正13年11月17日 第3条（区分 大日本史料、第11編之22（データベースの表示値）、173頁）",
+  "gameBindings": [
+    "TK.HIST:人取橋の戦い"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-09",
+  "uncertainty": "綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。",
+  "linkedEntities": [
+    "place:hitotoribashi",
+    "person:date-masamune",
+    "person:佐竹義重"
+  ],
+  "eventTime": {
+    "kind": "dated-event",
+    "date": [
+      1585,
+      11,
+      17
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": false,
+    "precision": "day"
+  },
+  "eventRelation": "military-event",
+  "eventScope": "綱文が掲げる日付。天正13年11月17日はゲーム共通の暦表で1586年1月6日。最終年表の人取橋の戦い（1586年1月6日）は一致する。綱文の「是日」が掛かるのは高倉・本宮の間の戦いで、政宗の本宮への着陣と佐竹らの出兵は「是より先」。綱文は人取橋の名を書かない。岩城常隆らは人物の ID が無いので結ばない。同じ日付の条は大日本史料 第11編之27、245頁にもある。"
+}

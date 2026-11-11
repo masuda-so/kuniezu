@@ -1,0 +1,41 @@
+{
+  "id": "imafuku-shigino-1614",
+  "entity": "place:imafuku",
+  "predicate": "military-event",
+  "value": "佐竹義宣が今福に、上杉景勝が鴫野に陣して城柵に迫り、城将の木村重成・後藤基次らが今福に出て義宣と戦った。景勝は義宣を助けて側面から城兵を攻め、重成らは敗れて退いた。",
+  "validYears": [
+    1614,
+    1614
+  ],
+  "datePrecision": "day",
+  "source": "hiDainihonshiryoKobun",
+  "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+  "locator": "綱文：和暦 慶長19年11月26日 第1条（区分 大日本史料、第12編之16（データベースの表示値）、266頁）",
+  "gameBindings": [
+    "TK.HIST:今福・鴫野の戦い"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-09",
+  "uncertainty": "綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。",
+  "linkedEntities": [
+    "place:imafuku",
+    "person:佐竹義宣",
+    "person:上杉景勝",
+    "person:木村重成",
+    "person:後藤基次"
+  ],
+  "eventTime": {
+    "kind": "dated-event",
+    "date": [
+      1614,
+      11,
+      26
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": false,
+    "precision": "day"
+  },
+  "eventRelation": "military-event",
+  "eventScope": "綱文が掲げる日付。慶長19年11月26日はゲーム共通の暦表で1614年12月26日。最終年表の今福・鴫野の戦い（1614年12月26日）は一致する。出来事の場所は戦いのあった今福とし、鴫野の場所は結ばない。"
+}

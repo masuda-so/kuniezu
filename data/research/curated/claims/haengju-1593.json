@@ -1,0 +1,40 @@
+{
+  "id": "haengju-1593",
+  "entity": "place:haengju",
+  "predicate": "military-event",
+  "value": "宇喜多秀家・吉川広家・石田三成らが、全羅道巡察使の権慄を京畿道の幸州山城に囲んだが勝てず、広家が負傷した。",
+  "validYears": [
+    1593,
+    1593
+  ],
+  "datePrecision": "day",
+  "source": "hiDainihonshiryoKobun",
+  "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+  "locator": "綱文：和暦 文禄2年2月12日 第3条（区分 史料綜覧、編11・冊913（データベースの表示値）、8頁）",
+  "gameBindings": [
+    "TK.HIST:幸州山城の戦い"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-09",
+  "uncertainty": "綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。",
+  "linkedEntities": [
+    "place:haengju",
+    "person:宇喜多秀家",
+    "person:吉川広家",
+    "person:石田三成"
+  ],
+  "eventTime": {
+    "kind": "dated-event",
+    "date": [
+      1593,
+      2,
+      12
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": false,
+    "precision": "day"
+  },
+  "eventRelation": "military-event",
+  "eventScope": "綱文が掲げる日付。文禄2年2月12日はゲーム共通の暦表で1593年3月14日。最終年表の幸州山城の戦い（1593年3月14日）は一致する。権慄は人物の ID が無いので結ばない。"
+}

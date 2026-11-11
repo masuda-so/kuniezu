@@ -1,0 +1,38 @@
+{
+  "id": "arioka-outer-1579",
+  "entity": "place:arioka-castle",
+  "predicate": "military-event",
+  "value": "信長の将の滝川一益が、荒木村重の兵の内応によって、摂津在岡（有岡）城の外城を攻め取った。",
+  "validYears": [
+    1579,
+    1579
+  ],
+  "datePrecision": "day",
+  "source": "hiDainihonshiryoKobun",
+  "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+  "locator": "綱文：和暦 天正7年10月15日 第2条（区分 史料綜覧、編10・冊911（データベースの表示値）、228頁）",
+  "gameBindings": [
+    "TK.HIST:滝川一益が有岡城の外郭を破る"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-09",
+  "uncertainty": "綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。",
+  "linkedEntities": [
+    "place:arioka-castle",
+    "person:滝川一益"
+  ],
+  "eventTime": {
+    "kind": "dated-event",
+    "date": [
+      1579,
+      10,
+      15
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": false,
+    "precision": "day"
+  },
+  "eventRelation": "military-event",
+  "eventScope": "綱文が掲げる日付。天正7年10月15日はゲーム共通の暦表で1579年11月3日。最終年表の滝川一益が有岡城の外郭を破る（1579年11月3日）は一致する。村重は9月2日にすでに尼崎城に移っており（別の条）、この日の当事者として結ばない。綱文は「在岡」と書く。"
+}

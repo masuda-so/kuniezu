@@ -1,0 +1,38 @@
+{
+  "id": "odawara-departure-1590",
+  "entity": "person:toyotomi-hideyoshi",
+  "predicate": "departure",
+  "value": "秀吉が兵を率いて京都を発し、天皇が四足門前の仮楼でその行装を見た。",
+  "validYears": [
+    1590,
+    1590
+  ],
+  "datePrecision": "day",
+  "source": "hiDainihonshiryoKobun",
+  "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+  "locator": "綱文：和暦 天正18年3月1日 第2条（区分 史料綜覧、編11・冊912（データベースの表示値）、271頁）",
+  "gameBindings": [
+    "TK.HIST:小田原征伐"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-09",
+  "uncertainty": "綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。",
+  "linkedEntities": [
+    "person:toyotomi-hideyoshi",
+    "place:kyoto"
+  ],
+  "eventTime": {
+    "kind": "dated-event",
+    "date": [
+      1590,
+      3,
+      1
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": false,
+    "precision": "day"
+  },
+  "eventRelation": "departure",
+  "eventScope": "綱文が掲げる日付。天正18年3月1日はゲーム共通の暦表で1590年4月5日。最終年表の小田原征伐（1590年4月1日）は綱文より4日早い。命題は京都の出発の日で、征伐の全体には広げない。"
+}

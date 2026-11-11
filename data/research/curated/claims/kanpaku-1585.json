@@ -1,0 +1,37 @@
+{
+  "id": "kanpaku-1585",
+  "entity": "person:toyotomi-hideyoshi",
+  "predicate": "central-office",
+  "value": "内大臣の羽柴秀吉が関白に任じられ、秀吉らが従一位に叙された。",
+  "validYears": [
+    1585,
+    1585
+  ],
+  "datePrecision": "day",
+  "source": "hiDainihonshiryoKobun",
+  "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+  "locator": "綱文：和暦 天正13年7月11日 （条番号の表示なし）（区分 大日本史料、第11編之26（データベースの表示値）、507頁）",
+  "gameBindings": [
+    "TK.HIST:関白宣下"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-09",
+  "uncertainty": "綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。",
+  "linkedEntities": [
+    "person:toyotomi-hideyoshi"
+  ],
+  "eventTime": {
+    "kind": "dated-event",
+    "date": [
+      1585,
+      7,
+      11
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": false,
+    "precision": "day"
+  },
+  "eventRelation": "central-office",
+  "eventScope": "綱文が掲げる日付。天正13年7月11日はゲーム共通の暦表で1585年8月6日。最終年表の関白宣下（1585年8月6日）は一致する。命題は任官の日で、在職の期間には広げない。同じ日付の条は大日本史料 第11編之27、495頁にもある。"
+}

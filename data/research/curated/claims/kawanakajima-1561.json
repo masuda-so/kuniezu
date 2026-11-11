@@ -1,0 +1,39 @@
+{
+  "id": "kawanakajima-1561",
+  "entity": "place:kawanakajima",
+  "predicate": "military-event",
+  "value": "上杉政虎（謙信）が武田晴信（信玄）と信濃川中島で戦った。晴信は傷つき、弟の信繁が戦死した。",
+  "validYears": [
+    1561,
+    1561
+  ],
+  "datePrecision": "day",
+  "source": "hiDainihonshiryoKobun",
+  "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+  "locator": "綱文：和暦 永禄4年9月10日 第2条（区分 史料綜覧、編9・冊910（データベースの表示値）、533頁）",
+  "gameBindings": [
+    "TK.HIST:第四次川中島の戦い"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-09",
+  "uncertainty": "綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。",
+  "linkedEntities": [
+    "place:kawanakajima",
+    "person:上杉謙信",
+    "person:武田信玄"
+  ],
+  "eventTime": {
+    "kind": "dated-event",
+    "date": [
+      1561,
+      9,
+      10
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": false,
+    "precision": "day"
+  },
+  "eventRelation": "military-event",
+  "eventScope": "綱文が掲げる日付。永禄4年9月10日はゲーム共通の暦表で1561年10月18日。最終年表の第四次川中島の戦い（1561年10月18日）は一致する。武田信繁の死去は命題 death-date-takeda-nobushige が扱う。"
+}

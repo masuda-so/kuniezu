@@ -1,0 +1,39 @@
+{
+  "id": "kurokoma-1582",
+  "entity": "place:kurokoma",
+  "predicate": "military-event",
+  "value": "北条氏政の弟の氏忠が御坂峠から甲斐東八代郡に入り、徳川家康の部将の鳥居元忠・水野勝成らが府中から出て、黒駒で戦って破った。",
+  "validYears": [
+    1582,
+    1582
+  ],
+  "datePrecision": "day",
+  "source": "hiDainihonshiryoKobun",
+  "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+  "locator": "綱文：和暦 天正10年8月12日 第1条（区分 大日本史料、第11編之2（データベースの表示値）、266頁）",
+  "gameBindings": [
+    "TK.HIST:黒駒合戦"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-09",
+  "uncertainty": "綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。",
+  "linkedEntities": [
+    "place:kurokoma",
+    "person:torii-mototada",
+    "person:北条氏忠"
+  ],
+  "eventTime": {
+    "kind": "dated-event",
+    "date": [
+      1582,
+      8,
+      12
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": false,
+    "precision": "day"
+  },
+  "eventRelation": "military-event",
+  "eventScope": "綱文が掲げる日付。天正10年8月12日はゲーム共通の暦表で1582年8月29日。最終年表の黒駒合戦（1582年9月28日）は綱文より30日遅い。掲出日は黒駒での戦いに限り、氏忠の都留郡の通過と御坂峠越え（先行する行程）の日付は示さない。8月20日の条（戦功の賞）は別。水野勝成は人物の ID が無いので結ばない。氏政・家康は出した主君として名が出るだけなので結ばない。"
+}
