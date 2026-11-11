@@ -26,8 +26,8 @@
  source('sumotoChronology','洲本市','史跡洲本城跡整備基本計画・第3章','https://www.city.sumoto.lg.jp/uploaded/attachment/8457.pdf','年表、天正9〜10年','1581年の国人衆の降伏と1582年の仙石氏入城を区別。開城の月日はこの資料では確定できない。');
  const change=(title,lunar,id,extra={})=>{const e=TK.HIST.find(e=>e.title===title&&e.k!=='premarch');if(!e)throw Error(title);Object.assign(e,{d:TK.lunarDate(...lunar),lunarDate:lunar,source:TK.RESEARCH_SOURCES[id].url,datePrecision:'旧暦年月日を資料と照合'},extra);return e;};
  const n=change('韮山城の戦い',[1590,3,29],'nirayamaChronology',{text:'織田信雄ら豊臣方が北条氏規の韮山城を攻め始める。旧暦6月24日に開城し、小田原城の7月5日の開城に先行する。'});
- const stamp=d=>d[0]*360+d[1]*30+d[2];
- const end=TK.lunarDate(1590,6,24);n.hold=stamp(end)-stamp(n.d);
+ const stamp=d=>d[0]*10000+d[1]*100+d[2];
+ const end=TK.lunarDate(1590,6,24);n.hold=(end[0]-n.d[0])*360+(end[1]-n.d[1])*30+end[2]-n.d[2];n.holdUntil=end.slice();
  TK.HIST.push({d:end,k:'take',clan:'hashiba',castles:['nirayama'],admin:1,at:'nirayama',title:'韮山城の明渡し',who:'北条氏規',source:n.source,lunarDate:[1590,6,24],text:'北条氏規が韮山城を開く。豊臣方への明渡しであり、内藤信成の入城（旧暦8月）とは区別する。'});
  change('鉢形城の開城',[1590,6,14],'hachigataChronology',{k:'take',clan:'hashiba',castles:['hachigata'],admin:1,text:'北条氏邦が兵の助命を条件に鉢形城を明け渡す。小田原城の開城とは別の日に豊臣方へ移す。'});
  change('新発田城落城',[1587,10,25],'shibataChronology');

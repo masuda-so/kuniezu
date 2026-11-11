@@ -1,8 +1,8 @@
 /* 登録済みの起点と実状態の日付を一致させ、失敗した過去選択で現状を失わない。 */
 'use strict';
 const assert=require('node:assert/strict');
-const {G,TK}=require('./history-focus.cjs').model();
-const dateOf=s=>{const t=Math.floor(s.t),m=s.m0-1+Math.floor(t/30);return [s.y0+Math.floor(m/12),(m%12+12)%12+1,(t%30+30)%30+1];};
+const {G,TK,TKCalendar}=require('./history-focus.cjs').model();
+const dateOf=s=>{assert.equal(s.clockVersion,TKCalendar.version);const d=TKCalendar.fromJD(TKCalendar.toJD(s.y0,s.m0,1)+Math.floor(s.t));return [d.y,d.m,d.d];};
 G.newGame('s1600','tokugawa');
 const current=G.S(),before=JSON.stringify(current),expected=Array.from(TK.SCEN.s1560.openingDate);
 assert.equal(G.historyOrigin().id,'s1560');assert.deepEqual(Array.from(G.historyOrigin().date),expected);
