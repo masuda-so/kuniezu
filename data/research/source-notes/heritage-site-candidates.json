@@ -1,0 +1,10406 @@
+{
+ "checked": "2026-11-11",
+ "scope": "ゲームの城系の拠点（日本）について、国指定の史跡の候補を集めた目録。位置の根拠の候補で、存在年代・城域・所在の史実命題には採用しない。国指定でない史跡（都道府県・市町村の指定）はこのデータベースに無い。",
+ "source": {
+  "api": "https://jpsearch.go.jp/api/item/search/jps-cross",
+  "database": "bunka（文化庁 国指定文化財等データベース）",
+  "stored": "ID・名称・種別・都道府県・所在地・指定年月日・座標・URL。解説文は保存しない"
+ },
+ "selection": {
+  "sites": "implemented-sites.jsonl の kind が「城」または castle-node で、朝鮮の範囲（lon<130 かつ lat>34.6）を除く",
+  "titles": "題名の欄（q-bunka-1-s）を、拠点の名前から末尾の 城・館・砦・御所・要害 を除いた語幹で探す（2 文字未満になる名前はそのまま）。名前が「山城」で終わるときは「山城」を除いた語幹でも探す",
+  "filter": "種別が史跡名勝天然記念物、題名に語幹と城・館などの語があり、題名の終わりが 跡・城・館・遺跡・台場・チャシ・グスク・群 のいずれか、座標がある、拠点から 30km 以内",
+  "near": "5km 以内を title-and-near、それより遠いものを title-only とする",
+  "size": 500
+ },
+ "counts": {
+  "sites": 359,
+  "title-and-near": 124,
+  "title-only": 5,
+  "none": 230,
+  "truncated": 0
+ },
+ "rows": [
+  {
+   "id": "node:agata",
+   "name": "松尾城",
+   "kind": "castle-node",
+   "point": [
+    131.63182500112705,
+    32.583849
+   ],
+   "titles": [
+    "松尾"
+   ],
+   "hits": 26,
+   "fetched": 26,
+   "truncated": false,
+   "result": "none",
+   "candidates": [],
+   "dropped": {
+    "otherKind": 24,
+    "noCoordinates": 0,
+    "titleMismatch": 2,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "node:akutagawa",
+   "name": "芥川山城",
+   "kind": "castle-node",
+   "point": [
+    135.59974195647118,
+    34.87
+   ],
+   "titles": [
+    "芥川山",
+    "芥川"
+   ],
+   "hits": 3,
+   "fetched": 3,
+   "truncated": false,
+   "result": "title-and-near",
+   "candidates": [
+    {
+     "id": "bunka-527607",
+     "title": "芥川城跡",
+     "kind": "史跡名勝天然記念物",
+     "prefecture": "大阪府",
+     "address": "大阪府高槻市",
+     "designated": "20221110",
+     "point": [
+      135.58833056,
+      34.88092222
+     ],
+     "linkUrl": "https://online.bunka.go.jp/db/heritages/detail/527607",
+     "km": 1.6,
+     "match": "title-and-near"
+    }
+   ],
+   "dropped": {
+    "otherKind": 2,
+    "noCoordinates": 0,
+    "titleMismatch": 0,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "node:bmatsuyama",
+   "name": "備中松山城",
+   "kind": "castle-node",
+   "point": [
+    133.62073400204883,
+    34.812001
+   ],
+   "titles": [
+    "備中松山",
+    "備中松"
+   ],
+   "hits": 8,
+   "fetched": 8,
+   "truncated": false,
+   "result": "title-and-near",
+   "candidates": [
+    {
+     "id": "bunka-191652",
+     "title": "備中松山城跡",
+     "kind": "史跡名勝天然記念物",
+     "prefecture": "岡山県",
+     "address": "高梁市内山下",
+     "designated": "19561107",
+     "point": [
+      133.6222081,
+      34.8088433
+     ],
+     "linkUrl": "https://online.bunka.go.jp/db/heritages/detail/191652",
+     "km": 0.38,
+     "match": "title-and-near"
+    }
+   ],
+   "dropped": {
+    "otherKind": 3,
+    "noCoordinates": 0,
+    "titleMismatch": 0,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "node:edo",
+   "name": "江戸城",
+   "kind": "castle-node",
+   "point": [
+    139.75441800489153,
+    35.688371
+   ],
+   "titles": [
+    "江戸"
+   ],
+   "hits": 107,
+   "fetched": 107,
+   "truncated": false,
+   "result": "title-and-near",
+   "candidates": [
+    {
+     "id": "bunka-205073",
+     "title": "江戸城跡",
+     "kind": "史跡名勝天然記念物",
+     "prefecture": "東京都",
+     "address": "千代田区",
+     "designated": "19600520",
+     "point": [
+      139.7544497,
+      35.68825153
+     ],
+     "linkUrl": "https://online.bunka.go.jp/db/heritages/detail/205073",
+     "km": 0.01,
+     "match": "title-and-near"
+    },
+    {
+     "id": "bunka-190472",
+     "title": "江戸城外堀跡",
+     "kind": "史跡名勝天然記念物",
+     "prefecture": "東京都",
+     "address": "千代田区・新宿区・港区",
+     "designated": "19560326",
+     "point": [
+      139.73752511,
+      35.69319148
+     ],
+     "linkUrl": "https://online.bunka.go.jp/db/heritages/detail/190472",
+     "km": 1.62,
+     "match": "title-and-near"
+    }
+   ],
+   "dropped": {
+    "otherKind": 103,
+    "noCoordinates": 0,
+    "titleMismatch": 1,
+    "tooFar": 1
+   }
+  },
+  {
+   "id": "node:fukashi",
+   "name": "深志城",
+   "kind": "castle-node",
+   "point": [
+    137.968867004064,
+    36.238653
+   ],
+   "titles": [
+    "深志"
+   ],
+   "hits": 2,
+   "fetched": 2,
+   "truncated": false,
+   "result": "none",
+   "candidates": [],
+   "dropped": {
+    "otherKind": 2,
+    "noCoordinates": 0,
+    "titleMismatch": 0,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "node:funai",
+   "name": "大友館",
+   "kind": "castle-node",
+   "point": [
+    131.60971452325265,
+    33.22
+   ],
+   "titles": [
+    "大友"
+   ],
+   "hits": 5,
+   "fetched": 5,
+   "truncated": false,
+   "result": "none",
+   "candidates": [],
+   "dropped": {
+    "otherKind": 3,
+    "noCoordinates": 0,
+    "titleMismatch": 2,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "node:gassan",
+   "name": "月山富田城",
+   "kind": "castle-node",
+   "point": [
+    133.185265001847,
+    35.360805
+   ],
+   "titles": [
+    "月山富田"
+   ],
+   "hits": 0,
+   "fetched": 0,
+   "truncated": false,
+   "result": "none",
+   "candidates": [],
+   "dropped": {
+    "otherKind": 0,
+    "noCoordinates": 0,
+    "titleMismatch": 0,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "node:gifu",
+   "name": "稲葉山城",
+   "kind": "castle-node",
+   "point": [
+    136.78203400351398,
+    35.433927
+   ],
+   "titles": [
+    "稲葉山",
+    "稲葉"
+   ],
+   "hits": 29,
+   "fetched": 29,
+   "truncated": false,
+   "result": "none",
+   "candidates": [],
+   "dropped": {
+    "otherKind": 29,
+    "noCoordinates": 0,
+    "titleMismatch": 0,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "node:hachigata",
+   "name": "鉢形城",
+   "kind": "castle-node",
+   "point": [
+    139.19336100463153,
+    36.107315
+   ],
+   "titles": [
+    "鉢形"
+   ],
+   "hits": 12,
+   "fetched": 12,
+   "truncated": false,
+   "result": "title-and-near",
+   "candidates": [
+    {
+     "id": "bunka-204983",
+     "title": "鉢形城跡",
+     "kind": "史跡名勝天然記念物",
+     "prefecture": "埼玉県",
+     "address": "大里郡寄居町",
+     "designated": "19320419",
+     "point": [
+      139.19591722,
+      36.10777619
+     ],
+     "linkUrl": "https://online.bunka.go.jp/db/heritages/detail/204983",
+     "km": 0.24,
+     "match": "title-and-near"
+    }
+   ],
+   "dropped": {
+    "otherKind": 11,
+    "noCoordinates": 0,
+    "titleMismatch": 0,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "node:hikuma",
+   "name": "曳馬城",
+   "kind": "castle-node",
+   "point": [
+    137.72500000395098,
+    34.712
+   ],
+   "titles": [
+    "曳馬"
+   ],
+   "hits": 4,
+   "fetched": 4,
+   "truncated": false,
+   "result": "none",
+   "candidates": [],
+   "dropped": {
+    "otherKind": 4,
+    "noCoordinates": 0,
+    "titleMismatch": 0,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "node:himeji",
+   "name": "置塩城",
+   "kind": "castle-node",
+   "point": [
+    134.68304600254118,
+    34.92331
+   ],
+   "titles": [
+    "置塩"
+   ],
+   "hits": 1,
+   "fetched": 1,
+   "truncated": false,
+   "result": "none",
+   "candidates": [],
+   "dropped": {
+    "otherKind": 0,
+    "noCoordinates": 0,
+    "titleMismatch": 1,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "node:hinoe",
+   "name": "日野江城",
+   "kind": "castle-node",
+   "point": [
+    130.25286000048797,
+    32.659933
+   ],
+   "titles": [
+    "日野江"
+   ],
+   "hits": 1,
+   "fetched": 1,
+   "truncated": false,
+   "result": "title-and-near",
+   "candidates": [
+    {
+     "id": "bunka-139644",
+     "title": "日野江城跡",
+     "kind": "史跡名勝天然記念物",
+     "prefecture": "長崎県",
+     "address": "南島原市",
+     "designated": "19820703",
+     "point": [
+      130.25299628,
+      32.65958476
+     ],
+     "linkUrl": "https://online.bunka.go.jp/db/heritages/detail/139644",
+     "km": 0.04,
+     "match": "title-and-near"
+    }
+   ],
+   "dropped": {
+    "otherKind": 0,
+    "noCoordinates": 0,
+    "titleMismatch": 0,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "node:hirado",
+   "name": "勝尾嶽城",
+   "kind": "castle-node",
+   "point": [
+    129.5500000001622,
+    33.37
+   ],
+   "titles": [
+    "勝尾嶽"
+   ],
+   "hits": 0,
+   "fetched": 0,
+   "truncated": false,
+   "result": "none",
+   "candidates": [],
+   "dropped": {
+    "otherKind": 0,
+    "noCoordinates": 0,
+    "titleMismatch": 0,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "node:hitoyoshi",
+   "name": "人吉城",
+   "kind": "castle-node",
+   "point": [
+    130.76657100072603,
+    32.211167
+   ],
+   "titles": [
+    "人吉"
+   ],
+   "hits": 9,
+   "fetched": 9,
+   "truncated": false,
+   "result": "title-and-near",
+   "candidates": [
+    {
+     "id": "bunka-139887",
+     "title": "人吉城跡",
+     "kind": "史跡名勝天然記念物",
+     "prefecture": "熊本県",
+     "address": "人吉市麓町・上原町・冨尾町",
+     "designated": "19610902",
+     "point": [
+      130.76428021,
+      32.21108147
+     ],
+     "linkUrl": "https://online.bunka.go.jp/db/heritages/detail/139887",
+     "km": 0.22,
+     "match": "title-and-near"
+    }
+   ],
+   "dropped": {
+    "otherKind": 8,
+    "noCoordinates": 0,
+    "titleMismatch": 0,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "node:hiyama",
+   "name": "檜山城",
+   "kind": "castle-node",
+   "point": [
+    140.12169700506178,
+    40.163088
+   ],
+   "titles": [
+    "檜山"
+   ],
+   "hits": 7,
+   "fetched": 7,
+   "truncated": false,
+   "result": "title-and-near",
+   "candidates": [
+    {
+     "id": "bunka-215839",
+     "title": "檜山安東氏城館跡",
+     "kind": "史跡名勝天然記念物",
+     "prefecture": "秋田県",
+     "address": "能代市檜山・扇田・田床内・冷清水",
+     "designated": "19800321",
+     "point": [
+      140.1233817,
+      40.16610151
+     ],
+     "linkUrl": "https://online.bunka.go.jp/db/heritages/detail/215839",
+     "km": 0.36,
+     "match": "title-and-near"
+    }
+   ],
+   "dropped": {
+    "otherKind": 6,
+    "noCoordinates": 0,
+    "titleMismatch": 0,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "node:hondo",
+   "name": "本渡城",
+   "kind": "castle-node",
+   "point": [
+    130.17793600045323,
+    32.463691
+   ],
+   "titles": [
+    "本渡"
+   ],
+   "hits": 0,
+   "fetched": 0,
+   "truncated": false,
+   "result": "none",
+   "candidates": [],
+   "dropped": {
+    "otherKind": 0,
+    "noCoordinates": 0,
+    "titleMismatch": 0,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "node:honjo",
+   "name": "本庄城",
+   "kind": "castle-node",
+   "point": [
+    139.47975933964125,
+    38.22
+   ],
+   "titles": [
+    "本庄"
+   ],
+   "hits": 8,
+   "fetched": 8,
+   "truncated": false,
+   "result": "none",
+   "candidates": [],
+   "dropped": {
+    "otherKind": 6,
+    "noCoordinates": 0,
+    "titleMismatch": 2,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "node:ichijodani",
+   "name": "一乗谷城",
+   "kind": "castle-node",
+   "point": [
+    136.2703088345756,
+    36.019999999999996
+   ],
+   "titles": [
+    "一乗谷"
+   ],
+   "hits": 3,
+   "fetched": 3,
+   "truncated": false,
+   "result": "none",
+   "candidates": [],
+   "dropped": {
+    "otherKind": 1,
+    "noCoordinates": 0,
+    "titleMismatch": 2,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "node:iida",
+   "name": "飯田城",
+   "kind": "castle-node",
+   "point": [
+    137.83251300400084,
+    35.511835
+   ],
+   "titles": [
+    "飯田"
+   ],
+   "hits": 34,
+   "fetched": 34,
+   "truncated": false,
+   "result": "none",
+   "candidates": [],
+   "dropped": {
+    "otherKind": 33,
+    "noCoordinates": 0,
+    "titleMismatch": 1,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "node:ishikawa",
+   "name": "石川城",
+   "kind": "castle-node",
+   "point": [
+    140.54408700525752,
+    40.548768
+   ],
+   "titles": [
+    "石川"
+   ],
+   "hits": 99,
+   "fetched": 99,
+   "truncated": false,
+   "result": "none",
+   "candidates": [],
+   "dropped": {
+    "otherKind": 96,
+    "noCoordinates": 0,
+    "titleMismatch": 3,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "node:ishiyama",
+   "name": "石山本願寺",
+   "kind": "castle-node",
+   "point": [
+    135.5200155718855,
+    34.68
+   ],
+   "titles": [
+    "石山本願寺"
+   ],
+   "hits": 0,
+   "fetched": 0,
+   "truncated": false,
+   "result": "none",
+   "candidates": [],
+   "dropped": {
+    "otherKind": 0,
+    "noCoordinates": 0,
+    "titleMismatch": 0,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "node:iwaki",
+   "name": "大館城",
+   "kind": "castle-node",
+   "point": [
+    140.85982923715937,
+    37.05
+   ],
+   "titles": [
+    "大館"
+   ],
+   "hits": 3,
+   "fetched": 3,
+   "truncated": false,
+   "result": "none",
+   "candidates": [],
+   "dropped": {
+    "otherKind": 1,
+    "noCoordinates": 0,
+    "titleMismatch": 1,
+    "tooFar": 1
+   }
+  },
+  {
+   "id": "node:iwamura",
+   "name": "岩村城",
+   "kind": "castle-node",
+   "point": [
+    137.45132200382417,
+    35.359958
+   ],
+   "titles": [
+    "岩村"
+   ],
+   "hits": 6,
+   "fetched": 6,
+   "truncated": false,
+   "result": "none",
+   "candidates": [],
+   "dropped": {
+    "otherKind": 5,
+    "noCoordinates": 0,
+    "titleMismatch": 1,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "node:iwatsuki",
+   "name": "岩付城",
+   "kind": "castle-node",
+   "point": [
+    139.70142800486698,
+    35.95593
+   ],
+   "titles": [
+    "岩付"
+   ],
+   "hits": 0,
+   "fetched": 0,
+   "truncated": false,
+   "result": "none",
+   "candidates": [],
+   "dropped": {
+    "otherKind": 0,
+    "noCoordinates": 0,
+    "titleMismatch": 0,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "node:izumi",
+   "name": "出水亀ヶ城",
+   "kind": "castle-node",
+   "point": [
+    130.36004979742117,
+    32.08
+   ],
+   "titles": [
+    "出水亀ヶ"
+   ],
+   "hits": 0,
+   "fetched": 0,
+   "truncated": false,
+   "result": "none",
+   "candidates": [],
+   "dropped": {
+    "otherKind": 0,
+    "noCoordinates": 0,
+    "titleMismatch": 0,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "node:jeju",
+   "name": "済州牧",
+   "kind": "castle-node",
+   "point": [
+    126.53009316736305,
+    33.51
+   ],
+   "titles": [
+    "済州牧"
+   ],
+   "hits": 0,
+   "fetched": 0,
+   "truncated": false,
+   "result": "none",
+   "candidates": [],
+   "dropped": {
+    "otherKind": 0,
+    "noCoordinates": 0,
+    "titleMismatch": 0,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "node:kaizu",
+   "name": "海津城",
+   "kind": "castle-node",
+   "point": [
+    138.19617000416937,
+    36.566361
+   ],
+   "titles": [
+    "海津"
+   ],
+   "hits": 1,
+   "fetched": 1,
+   "truncated": false,
+   "result": "none",
+   "candidates": [],
+   "dropped": {
+    "otherKind": 1,
+    "noCoordinates": 0,
+    "titleMismatch": 0,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "node:kakegawa",
+   "name": "掛川城",
+   "kind": "castle-node",
+   "point": [
+    138.01514500408547,
+    34.776906
+   ],
+   "titles": [
+    "掛川"
+   ],
+   "hits": 1,
+   "fetched": 1,
+   "truncated": false,
+   "result": "none",
+   "candidates": [],
+   "dropped": {
+    "otherKind": 1,
+    "noCoordinates": 0,
+    "titleMismatch": 0,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "node:kakunodate",
+   "name": "角館城",
+   "kind": "castle-node",
+   "point": [
+    140.56008275247675,
+    39.6
+   ],
+   "titles": [
+    "角館"
+   ],
+   "hits": 5,
+   "fetched": 5,
+   "truncated": false,
+   "result": "none",
+   "candidates": [],
+   "dropped": {
+    "otherKind": 4,
+    "noCoordinates": 0,
+    "titleMismatch": 1,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "node:kanayama",
+   "name": "金山城",
+   "kind": "castle-node",
+   "point": [
+    139.377830004717,
+    36.316947
+   ],
+   "titles": [
+    "金山"
+   ],
+   "hits": 76,
+   "fetched": 76,
+   "truncated": false,
+   "result": "title-and-near",
+   "candidates": [
+    {
+     "id": "bunka-201246",
+     "title": "金山城跡",
+     "kind": "史跡名勝天然記念物",
+     "prefecture": "群馬県",
+     "address": "太田市金山町・長手町・東金井町",
+     "designated": "19341228",
+     "point": [
+      139.37528754,
+      36.3163574
+     ],
+     "linkUrl": "https://online.bunka.go.jp/db/heritages/detail/201246",
+     "km": 0.24,
+     "match": "title-and-near"
+    }
+   ],
+   "dropped": {
+    "otherKind": 68,
+    "noCoordinates": 0,
+    "titleMismatch": 6,
+    "tooFar": 1
+   }
+  },
+  {
+   "id": "node:kanegasaki",
+   "name": "金ヶ崎城",
+   "kind": "castle-node",
+   "point": [
+    136.0741120031859,
+    35.666393
+   ],
+   "titles": [
+    "金ヶ崎"
+   ],
+   "hits": 2,
+   "fetched": 2,
+   "truncated": false,
+   "result": "title-and-near",
+   "candidates": [
+    {
+     "id": "bunka-138437",
+     "title": "金ヶ崎城跡",
+     "kind": "史跡名勝天然記念物",
+     "prefecture": "福井県",
+     "address": "敦賀市泉",
+     "designated": "19340313",
+     "point": [
+      136.0746489,
+      35.6649305
+     ],
+     "linkUrl": "https://online.bunka.go.jp/db/heritages/detail/138437",
+     "km": 0.17,
+     "match": "title-and-near"
+    }
+   ],
+   "dropped": {
+    "otherKind": 1,
+    "noCoordinates": 0,
+    "titleMismatch": 0,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "node:kaneko",
+   "name": "金子城",
+   "kind": "castle-node",
+   "point": [
+    133.27744500188973,
+    33.947962
+   ],
+   "titles": [
+    "金子"
+   ],
+   "hits": 12,
+   "fetched": 12,
+   "truncated": false,
+   "result": "none",
+   "candidates": [],
+   "dropped": {
+    "otherKind": 12,
+    "noCoordinates": 0,
+    "titleMismatch": 0,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "node:kannabe",
+   "name": "神辺城",
+   "kind": "castle-node",
+   "point": [
+    133.38503700193962,
+    34.538159
+   ],
+   "titles": [
+    "神辺"
+   ],
+   "hits": 0,
+   "fetched": 0,
+   "truncated": false,
+   "result": "none",
+   "candidates": [],
+   "dropped": {
+    "otherKind": 0,
+    "noCoordinates": 0,
+    "titleMismatch": 0,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "node:kannonji",
+   "name": "観音寺城",
+   "kind": "castle-node",
+   "point": [
+    136.15772900322463,
+    35.145639
+   ],
+   "titles": [
+    "観音寺"
+   ],
+   "hits": 24,
+   "fetched": 24,
+   "truncated": false,
+   "result": "title-and-near",
+   "candidates": [
+    {
+     "id": "bunka-205683",
+     "title": "観音寺城跡",
+     "kind": "史跡名勝天然記念物",
+     "prefecture": "滋賀県",
+     "address": "蒲生郡安土町、東近江市",
+     "designated": "19820130",
+     "point": [
+      136.15757121,
+      35.14582748
+     ],
+     "linkUrl": "https://online.bunka.go.jp/db/heritages/detail/205683",
+     "km": 0.03,
+     "match": "title-and-near"
+    }
+   ],
+   "dropped": {
+    "otherKind": 22,
+    "noCoordinates": 0,
+    "titleMismatch": 1,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "node:karasawa",
+   "name": "唐沢山城",
+   "kind": "castle-node",
+   "point": [
+    139.60076700482034,
+    36.35383
+   ],
+   "titles": [
+    "唐沢山",
+    "唐沢"
+   ],
+   "hits": 16,
+   "fetched": 16,
+   "truncated": false,
+   "result": "title-and-near",
+   "candidates": [
+    {
+     "id": "bunka-232631",
+     "title": "唐沢山城跡",
+     "kind": "史跡名勝天然記念物",
+     "prefecture": "栃木県",
+     "address": "栃木県佐野市",
+     "designated": "20140318",
+     "point": [
+      139.57844417,
+      36.31448861
+     ],
+     "linkUrl": "https://online.bunka.go.jp/db/heritages/detail/232631",
+     "km": 4.81,
+     "match": "title-and-near"
+    }
+   ],
+   "dropped": {
+    "otherKind": 8,
+    "noCoordinates": 0,
+    "titleMismatch": 0,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "node:karasuyama",
+   "name": "烏山城",
+   "kind": "castle-node",
+   "point": [
+    140.1475930050738,
+    36.664258
+   ],
+   "titles": [
+    "烏山"
+   ],
+   "hits": 2,
+   "fetched": 2,
+   "truncated": false,
+   "result": "title-and-near",
+   "candidates": [
+    {
+     "id": "bunka-590756",
+     "title": "烏山城跡",
+     "kind": "史跡名勝天然記念物",
+     "prefecture": "栃木県",
+     "address": "栃木県那須烏山市",
+     "designated": "20230320",
+     "point": [
+      140.14758056,
+      36.66428056
+     ],
+     "linkUrl": "https://online.bunka.go.jp/db/heritages/detail/590756",
+     "km": 0,
+     "match": "title-and-near"
+    }
+   ],
+   "dropped": {
+    "otherKind": 1,
+    "noCoordinates": 0,
+    "titleMismatch": 0,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "node:kasugayama",
+   "name": "春日山城",
+   "kind": "castle-node",
+   "point": [
+    138.20554900417372,
+    37.146655
+   ],
+   "titles": [
+    "春日山",
+    "春日"
+   ],
+   "hits": 126,
+   "fetched": 126,
+   "truncated": false,
+   "result": "title-and-near",
+   "candidates": [
+    {
+     "id": "bunka-205153",
+     "title": "春日山城跡",
+     "kind": "史跡名勝天然記念物",
+     "prefecture": "新潟県",
+     "address": "上越市中屋敷・大豆・春日・春日山町",
+     "designated": "19350827",
+     "point": [
+      138.20928032,
+      37.14727961
+     ],
+     "linkUrl": "https://online.bunka.go.jp/db/heritages/detail/205153",
+     "km": 0.34,
+     "match": "title-and-near"
+    }
+   ],
+   "dropped": {
+    "otherKind": 111,
+    "noCoordinates": 0,
+    "titleMismatch": 6,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "node:katsuyama",
+   "name": "勝山城",
+   "kind": "castle-node",
+   "point": [
+    130.9701420008204,
+    34.032588
+   ],
+   "titles": [
+    "勝山"
+   ],
+   "hits": 12,
+   "fetched": 12,
+   "truncated": false,
+   "result": "none",
+   "candidates": [],
+   "dropped": {
+    "otherKind": 8,
+    "noCoordinates": 0,
+    "titleMismatch": 4,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "node:kawagoe",
+   "name": "河越城",
+   "kind": "castle-node",
+   "point": [
+    139.49168300476978,
+    35.924396
+   ],
+   "titles": [
+    "河越"
+   ],
+   "hits": 1,
+   "fetched": 1,
+   "truncated": false,
+   "result": "title-and-near",
+   "candidates": [
+    {
+     "id": "bunka-216089",
+     "title": "河越館跡",
+     "kind": "史跡名勝天然記念物",
+     "prefecture": "埼玉県",
+     "address": "川越市上戸",
+     "designated": "19841206",
+     "point": [
+      139.45117785,
+      35.93042183
+     ],
+     "linkUrl": "https://online.bunka.go.jp/db/heritages/detail/216089",
+     "km": 3.71,
+     "match": "title-and-near"
+    }
+   ],
+   "dropped": {
+    "otherKind": 0,
+    "noCoordinates": 0,
+    "titleMismatch": 0,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "node:kawara",
+   "name": "香春岳城",
+   "kind": "castle-node",
+   "point": [
+    130.84257300076126,
+    33.683266
+   ],
+   "titles": [
+    "香春岳"
+   ],
+   "hits": 0,
+   "fetched": 0,
+   "truncated": false,
+   "result": "none",
+   "candidates": [],
+   "dropped": {
+    "otherKind": 0,
+    "noCoordinates": 0,
+    "titleMismatch": 0,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "node:kiriyama",
+   "name": "霧山城",
+   "kind": "castle-node",
+   "point": [
+    136.28926000328562,
+    34.523241
+   ],
+   "titles": [
+    "霧山"
+   ],
+   "hits": 1,
+   "fetched": 1,
+   "truncated": false,
+   "result": "none",
+   "candidates": [],
+   "dropped": {
+    "otherKind": 0,
+    "noCoordinates": 0,
+    "titleMismatch": 1,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "node:kishiwada",
+   "name": "岸和田城",
+   "kind": "castle-node",
+   "point": [
+    135.37078600285992,
+    34.45876
+   ],
+   "titles": [
+    "岸和田"
+   ],
+   "hits": 3,
+   "fetched": 3,
+   "truncated": false,
+   "result": "none",
+   "candidates": [],
+   "dropped": {
+    "otherKind": 2,
+    "noCoordinates": 0,
+    "titleMismatch": 1,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "node:kiyosu",
+   "name": "清洲城",
+   "kind": "castle-node",
+   "point": [
+    136.8410270035413,
+    35.213304
+   ],
+   "titles": [
+    "清洲"
+   ],
+   "hits": 1,
+   "fetched": 1,
+   "truncated": false,
+   "result": "none",
+   "candidates": [],
+   "dropped": {
+    "otherKind": 1,
+    "noCoordinates": 0,
+    "titleMismatch": 0,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "node:koga",
+   "name": "古河御所",
+   "kind": "castle-node",
+   "point": [
+    139.69415000486362,
+    36.187043
+   ],
+   "titles": [
+    "古河"
+   ],
+   "hits": 8,
+   "fetched": 8,
+   "truncated": false,
+   "result": "none",
+   "candidates": [],
+   "dropped": {
+    "otherKind": 7,
+    "noCoordinates": 0,
+    "titleMismatch": 1,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "node:konomine",
+   "name": "高嶺城",
+   "kind": "castle-node",
+   "point": [
+    131.47003884173043,
+    34.18
+   ],
+   "titles": [
+    "高嶺"
+   ],
+   "hits": 0,
+   "fetched": 0,
+   "truncated": false,
+   "result": "none",
+   "candidates": [],
+   "dropped": {
+    "otherKind": 0,
+    "noCoordinates": 0,
+    "titleMismatch": 0,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "node:konosumi",
+   "name": "此隅山城",
+   "kind": "castle-node",
+   "point": [
+    134.872578002629,
+    35.486995
+   ],
+   "titles": [
+    "此隅山",
+    "此隅"
+   ],
+   "hits": 2,
+   "fetched": 2,
+   "truncated": false,
+   "result": "none",
+   "candidates": [],
+   "dropped": {
+    "otherKind": 0,
+    "noCoordinates": 0,
+    "titleMismatch": 1,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "node:koriyama",
+   "name": "吉田郡山城",
+   "kind": "castle-node",
+   "point": [
+    132.710575001627,
+    34.670078
+   ],
+   "titles": [
+    "吉田郡山",
+    "吉田郡"
+   ],
+   "hits": 0,
+   "fetched": 0,
+   "truncated": false,
+   "result": "none",
+   "candidates": [],
+   "dropped": {
+    "otherKind": 0,
+    "noCoordinates": 0,
+    "titleMismatch": 0,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "node:kosho",
+   "name": "古処山城",
+   "kind": "castle-node",
+   "point": [
+    130.72536300070692,
+    33.483803
+   ],
+   "titles": [
+    "古処山",
+    "古処"
+   ],
+   "hits": 3,
+   "fetched": 3,
+   "truncated": false,
+   "result": "none",
+   "candidates": [],
+   "dropped": {
+    "otherKind": 1,
+    "noCoordinates": 0,
+    "titleMismatch": 1,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "node:kousuiji",
+   "name": "高水寺城",
+   "kind": "castle-node",
+   "point": [
+    141.170851005548,
+    39.568213
+   ],
+   "titles": [
+    "高水寺"
+   ],
+   "hits": 0,
+   "fetched": 0,
+   "truncated": false,
+   "result": "none",
+   "candidates": [],
+   "dropped": {
+    "otherKind": 0,
+    "noCoordinates": 0,
+    "titleMismatch": 0,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "node:kouyama",
+   "name": "高山城",
+   "kind": "castle-node",
+   "point": [
+    130.9738310008221,
+    31.320967000000003
+   ],
+   "titles": [
+    "高山"
+   ],
+   "hits": 70,
+   "fetched": 70,
+   "truncated": false,
+   "result": "title-and-near",
+   "candidates": [
+    {
+     "id": "bunka-192262",
+     "title": "高山城跡",
+     "kind": "史跡名勝天然記念物",
+     "prefecture": "鹿児島県",
+     "address": "肝属郡肝付町",
+     "designated": "19450222",
+     "point": [
+      130.9656799,
+      31.31744603
+     ],
+     "linkUrl": "https://online.bunka.go.jp/db/heritages/detail/192262",
+     "km": 0.87,
+     "match": "title-and-near"
+    }
+   ],
+   "dropped": {
+    "otherKind": 51,
+    "noCoordinates": 0,
+    "titleMismatch": 17,
+    "tooFar": 1
+   }
+  },
+  {
+   "id": "node:kumamoto",
+   "name": "隈本城",
+   "kind": "castle-node",
+   "point": [
+    130.69996849139116,
+    32.8
+   ],
+   "titles": [
+    "隈本"
+   ],
+   "hits": 0,
+   "fetched": 0,
+   "truncated": false,
+   "result": "none",
+   "candidates": [],
+   "dropped": {
+    "otherKind": 0,
+    "noCoordinates": 0,
+    "titleMismatch": 0,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "node:kurokawa",
+   "name": "黒川城",
+   "kind": "castle-node",
+   "point": [
+    139.93030611764874,
+    37.49
+   ],
+   "titles": [
+    "黒川"
+   ],
+   "hits": 23,
+   "fetched": 23,
+   "truncated": false,
+   "result": "none",
+   "candidates": [],
+   "dropped": {
+    "otherKind": 19,
+    "noCoordinates": 0,
+    "titleMismatch": 4,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "node:kurose",
+   "name": "黒瀬城",
+   "kind": "castle-node",
+   "point": [
+    132.50645700153243,
+    33.359485
+   ],
+   "titles": [
+    "黒瀬"
+   ],
+   "hits": 0,
+   "fetched": 0,
+   "truncated": false,
+   "result": "none",
+   "candidates": [],
+   "dropped": {
+    "otherKind": 0,
+    "noCoordinates": 0,
+    "titleMismatch": 0,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "node:kururi",
+   "name": "久留里城",
+   "kind": "castle-node",
+   "point": [
+    140.08991300504704,
+    35.287636
+   ],
+   "titles": [
+    "久留里"
+   ],
+   "hits": 0,
+   "fetched": 0,
+   "truncated": false,
+   "result": "none",
+   "candidates": [],
+   "dropped": {
+    "otherKind": 0,
+    "noCoordinates": 0,
+    "titleMismatch": 0,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "node:kuwagawa",
+   "name": "久川城",
+   "kind": "castle-node",
+   "point": [
+    139.5234700047845,
+    37.187211
+   ],
+   "titles": [
+    "久川"
+   ],
+   "hits": 0,
+   "fetched": 0,
+   "truncated": false,
+   "result": "none",
+   "candidates": [],
+   "dropped": {
+    "otherKind": 0,
+    "noCoordinates": 0,
+    "titleMismatch": 0,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "node:kyo",
+   "name": "二条御所",
+   "kind": "castle-node",
+   "point": [
+    135.7598127596316,
+    35.01
+   ],
+   "titles": [
+    "二条"
+   ],
+   "hits": 39,
+   "fetched": 39,
+   "truncated": false,
+   "result": "none",
+   "candidates": [],
+   "dropped": {
+    "otherKind": 37,
+    "noCoordinates": 0,
+    "titleMismatch": 2,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "node:matsukura",
+   "name": "松倉城",
+   "kind": "castle-node",
+   "point": [
+    137.24989270719817,
+    36.15
+   ],
+   "titles": [
+    "松倉"
+   ],
+   "hits": 4,
+   "fetched": 4,
+   "truncated": false,
+   "result": "title-and-near",
+   "candidates": [
+    {
+     "id": "bunka-567908",
+     "title": "松倉城跡",
+     "kind": "史跡名勝天然記念物",
+     "prefecture": "岐阜県",
+     "address": "岐阜県高山市",
+     "designated": "20250310",
+     "point": [
+      137.23338333,
+      36.12655833
+     ],
+     "linkUrl": "https://online.bunka.go.jp/db/heritages/detail/567908",
+     "km": 3,
+     "match": "title-and-near"
+    }
+   ],
+   "dropped": {
+    "otherKind": 3,
+    "noCoordinates": 0,
+    "titleMismatch": 0,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "node:matsumae",
+   "name": "大館",
+   "kind": "castle-node",
+   "point": [
+    140.1101540084583,
+    41.43
+   ],
+   "titles": [
+    "大館"
+   ],
+   "hits": 3,
+   "fetched": 3,
+   "truncated": false,
+   "result": "title-and-near",
+   "candidates": [
+    {
+     "id": "bunka-137544",
+     "title": "大館跡",
+     "kind": "史跡名勝天然記念物",
+     "prefecture": "北海道",
+     "address": "松前郡松前町",
+     "designated": "19770405",
+     "point": [
+      140.10886886,
+      41.43601967
+     ],
+     "linkUrl": "https://online.bunka.go.jp/db/heritages/detail/137544",
+     "km": 0.68,
+     "match": "title-and-near"
+    }
+   ],
+   "dropped": {
+    "otherKind": 1,
+    "noCoordinates": 0,
+    "titleMismatch": 1,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "node:miki",
+   "name": "三木城",
+   "kind": "castle-node",
+   "point": [
+    134.98786400268244,
+    34.799872
+   ],
+   "titles": [
+    "三木"
+   ],
+   "hits": 7,
+   "fetched": 7,
+   "truncated": false,
+   "result": "none",
+   "candidates": [],
+   "dropped": {
+    "otherKind": 6,
+    "noCoordinates": 0,
+    "titleMismatch": 1,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "node:minowa",
+   "name": "箕輪城",
+   "kind": "castle-node",
+   "point": [
+    138.95193200451965,
+    36.404195
+   ],
+   "titles": [
+    "箕輪"
+   ],
+   "hits": 1,
+   "fetched": 1,
+   "truncated": false,
+   "result": "title-and-near",
+   "candidates": [
+    {
+     "id": "bunka-201276",
+     "title": "箕輪城跡",
+     "kind": "史跡名勝天然記念物",
+     "prefecture": "群馬県",
+     "address": "高崎市",
+     "designated": "19871217",
+     "point": [
+      138.95219133,
+      36.40375483
+     ],
+     "linkUrl": "https://online.bunka.go.jp/db/heritages/detail/201276",
+     "km": 0.05,
+     "match": "title-and-near"
+    }
+   ],
+   "dropped": {
+    "otherKind": 0,
+    "noCoordinates": 0,
+    "titleMismatch": 0,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "node:motoyama",
+   "name": "本山城",
+   "kind": "castle-node",
+   "point": [
+    133.58670800203305,
+    33.754089
+   ],
+   "titles": [
+    "本山"
+   ],
+   "hits": 19,
+   "fetched": 19,
+   "truncated": false,
+   "result": "none",
+   "candidates": [],
+   "dropped": {
+    "otherKind": 18,
+    "noCoordinates": 0,
+    "titleMismatch": 1,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "node:myou",
+   "name": "名生城",
+   "kind": "castle-node",
+   "point": [
+    140.9500621995587,
+    38.58
+   ],
+   "titles": [
+    "名生"
+   ],
+   "hits": 1,
+   "fetched": 1,
+   "truncated": false,
+   "result": "title-only",
+   "candidates": [
+    {
+     "id": "bunka-171425",
+     "title": "名生館官衙遺跡",
+     "kind": "史跡名勝天然記念物",
+     "prefecture": "宮城県",
+     "address": "大崎市古川大崎",
+     "designated": "19870817",
+     "point": [
+      140.8958922,
+      38.61046219
+     ],
+     "linkUrl": "https://online.bunka.go.jp/db/heritages/detail/171425",
+     "km": 5.8,
+     "match": "title-only"
+    }
+   ],
+   "dropped": {
+    "otherKind": 0,
+    "noCoordinates": 0,
+    "titleMismatch": 0,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "node:nagashima",
+   "name": "長島願証寺",
+   "kind": "castle-node",
+   "point": [
+    136.69984245695585,
+    35.07
+   ],
+   "titles": [
+    "長島願証寺"
+   ],
+   "hits": 0,
+   "fetched": 0,
+   "truncated": false,
+   "result": "none",
+   "candidates": [],
+   "dropped": {
+    "otherKind": 0,
+    "noCoordinates": 0,
+    "titleMismatch": 0,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "node:nakamura",
+   "name": "中村御所",
+   "kind": "castle-node",
+   "point": [
+    132.92983512383424,
+    33
+   ],
+   "titles": [
+    "中村"
+   ],
+   "hits": 152,
+   "fetched": 152,
+   "truncated": false,
+   "result": "none",
+   "candidates": [],
+   "dropped": {
+    "otherKind": 150,
+    "noCoordinates": 0,
+    "titleMismatch": 2,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "node:nanao",
+   "name": "七尾城",
+   "kind": "castle-node",
+   "point": [
+    136.98520900360813,
+    37.009038
+   ],
+   "titles": [
+    "七尾"
+   ],
+   "hits": 5,
+   "fetched": 5,
+   "truncated": false,
+   "result": "title-and-near",
+   "candidates": [
+    {
+     "id": "bunka-138397",
+     "title": "七尾城跡",
+     "kind": "史跡名勝天然記念物",
+     "prefecture": "石川県",
+     "address": "七尾市古府町・古屋敷町・竹町",
+     "designated": "19341228",
+     "point": [
+      136.98149391,
+      37.01133574
+     ],
+     "linkUrl": "https://online.bunka.go.jp/db/heritages/detail/138397",
+     "km": 0.42,
+     "match": "title-and-near"
+    }
+   ],
+   "dropped": {
+    "otherKind": 3,
+    "noCoordinates": 0,
+    "titleMismatch": 1,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "node:nihonmatsu",
+   "name": "二本松城",
+   "kind": "castle-node",
+   "point": [
+    140.42824000520383,
+    37.59989
+   ],
+   "titles": [
+    "二本松"
+   ],
+   "hits": 3,
+   "fetched": 3,
+   "truncated": false,
+   "result": "title-and-near",
+   "candidates": [
+    {
+     "id": "bunka-192752",
+     "title": "二本松城跡",
+     "kind": "史跡名勝天然記念物",
+     "prefecture": "福島県",
+     "address": "二本松市",
+     "designated": "20070726",
+     "point": [
+      140.43603213,
+      37.59194391
+     ],
+     "linkUrl": "https://online.bunka.go.jp/db/heritages/detail/192752",
+     "km": 1.12,
+     "match": "title-and-near"
+    }
+   ],
+   "dropped": {
+    "otherKind": 0,
+    "noCoordinates": 0,
+    "titleMismatch": 2,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "node:nirayama",
+   "name": "韮山城",
+   "kind": "castle-node",
+   "point": [
+    138.95557800452133,
+    35.053648
+   ],
+   "titles": [
+    "韮山"
+   ],
+   "hits": 12,
+   "fetched": 12,
+   "truncated": false,
+   "result": "title-and-near",
+   "candidates": [
+    {
+     "id": "bunka-598362",
+     "title": "韮山城跡",
+     "kind": "史跡名勝天然記念物",
+     "prefecture": "静岡県",
+     "address": "静岡県伊豆の国市",
+     "designated": "20250918",
+     "point": [
+      138.95513889,
+      35.05376667
+     ],
+     "linkUrl": "https://online.bunka.go.jp/db/heritages/detail/598362",
+     "km": 0.04,
+     "match": "title-and-near"
+    }
+   ],
+   "dropped": {
+    "otherKind": 9,
+    "noCoordinates": 0,
+    "titleMismatch": 2,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "node:nochiseyama",
+   "name": "後瀬山城",
+   "kind": "castle-node",
+   "point": [
+    135.7390850030306,
+    35.488231
+   ],
+   "titles": [
+    "後瀬山",
+    "後瀬"
+   ],
+   "hits": 2,
+   "fetched": 2,
+   "truncated": false,
+   "result": "title-and-near",
+   "candidates": [
+    {
+     "id": "bunka-171995",
+     "title": "後瀬山城跡",
+     "kind": "史跡名勝天然記念物",
+     "prefecture": "福井県",
+     "address": "小浜市伏原",
+     "designated": "19970523",
+     "point": [
+      135.73888295,
+      35.4879307
+     ],
+     "linkUrl": "https://online.bunka.go.jp/db/heritages/detail/171995",
+     "km": 0.04,
+     "match": "title-and-near"
+    }
+   ],
+   "dropped": {
+    "otherKind": 0,
+    "noCoordinates": 0,
+    "titleMismatch": 0,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "node:numata",
+   "name": "沼田城",
+   "kind": "castle-node",
+   "point": [
+    139.04004600456045,
+    36.648477
+   ],
+   "titles": [
+    "沼田"
+   ],
+   "hits": 9,
+   "fetched": 9,
+   "truncated": false,
+   "result": "none",
+   "candidates": [],
+   "dropped": {
+    "otherKind": 7,
+    "noCoordinates": 0,
+    "titleMismatch": 2,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "node:obi",
+   "name": "飫肥城",
+   "kind": "castle-node",
+   "point": [
+    131.35048100099667,
+    31.628622
+   ],
+   "titles": [
+    "飫肥"
+   ],
+   "hits": 1,
+   "fetched": 1,
+   "truncated": false,
+   "result": "none",
+   "candidates": [],
+   "dropped": {
+    "otherKind": 1,
+    "noCoordinates": 0,
+    "titleMismatch": 0,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "node:odajo",
+   "name": "小田城",
+   "kind": "castle-node",
+   "point": [
+    140.11082000505672,
+    36.151053
+   ],
+   "titles": [
+    "小田"
+   ],
+   "hits": 60,
+   "fetched": 60,
+   "truncated": false,
+   "result": "title-and-near",
+   "candidates": [
+    {
+     "id": "bunka-137834",
+     "title": "小田城跡",
+     "kind": "史跡名勝天然記念物",
+     "prefecture": "茨城県",
+     "address": "つくば市大字小田",
+     "designated": "19350607",
+     "point": [
+      140.11078155,
+      36.15126511
+     ],
+     "linkUrl": "https://online.bunka.go.jp/db/heritages/detail/137834",
+     "km": 0.02,
+     "match": "title-and-near"
+    }
+   ],
+   "dropped": {
+    "otherKind": 55,
+    "noCoordinates": 0,
+    "titleMismatch": 3,
+    "tooFar": 1
+   }
+  },
+  {
+   "id": "node:odaka",
+   "name": "小高城",
+   "kind": "castle-node",
+   "point": [
+    140.99055700546444,
+    37.568151
+   ],
+   "titles": [
+    "小高"
+   ],
+   "hits": 1,
+   "fetched": 1,
+   "truncated": false,
+   "result": "none",
+   "candidates": [],
+   "dropped": {
+    "otherKind": 1,
+    "noCoordinates": 0,
+    "titleMismatch": 0,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "node:odani",
+   "name": "小谷城",
+   "kind": "castle-node",
+   "point": [
+    136.27230300327773,
+    35.449437
+   ],
+   "titles": [
+    "小谷"
+   ],
+   "hits": 10,
+   "fetched": 10,
+   "truncated": false,
+   "result": "title-and-near",
+   "candidates": [
+    {
+     "id": "bunka-205653",
+     "title": "小谷城跡",
+     "kind": "史跡名勝天然記念物",
+     "prefecture": "滋賀県",
+     "address": "東浅井郡湖北町、長浜市",
+     "designated": "19370417",
+     "point": [
+      136.27675105,
+      35.45921485
+     ],
+     "linkUrl": "https://online.bunka.go.jp/db/heritages/detail/205653",
+     "km": 1.16,
+     "match": "title-and-near"
+    }
+   ],
+   "dropped": {
+    "otherKind": 9,
+    "noCoordinates": 0,
+    "titleMismatch": 0,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "node:odawara",
+   "name": "小田原城",
+   "kind": "castle-node",
+   "point": [
+    139.14972918949584,
+    35.269999999999996
+   ],
+   "titles": [
+    "小田原"
+   ],
+   "hits": 5,
+   "fetched": 5,
+   "truncated": false,
+   "result": "title-and-near",
+   "candidates": [
+    {
+     "id": "bunka-171805",
+     "title": "小田原城跡",
+     "kind": "史跡名勝天然記念物",
+     "prefecture": "神奈川県",
+     "address": "小田原市城内・本町・栄町・浜町・城山・十字・谷津・南町・幸・緑",
+     "designated": "19380808",
+     "point": [
+      139.14829864,
+      35.26023465
+     ],
+     "linkUrl": "https://online.bunka.go.jp/db/heritages/detail/171805",
+     "km": 1.09,
+     "match": "title-and-near"
+    }
+   ],
+   "dropped": {
+    "otherKind": 4,
+    "noCoordinates": 0,
+    "titleMismatch": 0,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "node:okazaki",
+   "name": "岡崎城",
+   "kind": "castle-node",
+   "point": [
+    137.1587940036886,
+    34.956343
+   ],
+   "titles": [
+    "岡崎"
+   ],
+   "hits": 15,
+   "fetched": 15,
+   "truncated": false,
+   "result": "none",
+   "candidates": [],
+   "dropped": {
+    "otherKind": 14,
+    "noCoordinates": 0,
+    "titleMismatch": 1,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "node:oko",
+   "name": "岡豊城",
+   "kind": "castle-node",
+   "point": [
+    133.6225520020497,
+    33.594974
+   ],
+   "titles": [
+    "岡豊"
+   ],
+   "hits": 1,
+   "fetched": 1,
+   "truncated": false,
+   "result": "title-and-near",
+   "candidates": [
+    {
+     "id": "bunka-207413",
+     "title": "岡豊城跡",
+     "kind": "史跡名勝天然記念物",
+     "prefecture": "高知県",
+     "address": "南国市",
+     "designated": "20080728",
+     "point": [
+      133.62237598,
+      33.5952898
+     ],
+     "linkUrl": "https://online.bunka.go.jp/db/heritages/detail/207413",
+     "km": 0.04,
+     "match": "title-and-near"
+    }
+   ],
+   "dropped": {
+    "otherKind": 0,
+    "noCoordinates": 0,
+    "titleMismatch": 0,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "node:ota",
+   "name": "太田城",
+   "kind": "castle-node",
+   "point": [
+    140.52000200524637,
+    36.546452
+   ],
+   "titles": [
+    "太田"
+   ],
+   "hits": 77,
+   "fetched": 77,
+   "truncated": false,
+   "result": "none",
+   "candidates": [],
+   "dropped": {
+    "otherKind": 75,
+    "noCoordinates": 0,
+    "titleMismatch": 2,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "node:oura",
+   "name": "尾浦城",
+   "kind": "castle-node",
+   "point": [
+    139.83018461142484,
+    38.73
+   ],
+   "titles": [
+    "尾浦"
+   ],
+   "hits": 0,
+   "fetched": 0,
+   "truncated": false,
+   "result": "none",
+   "candidates": [],
+   "dropped": {
+    "otherKind": 0,
+    "noCoordinates": 0,
+    "titleMismatch": 0,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "node:oyama",
+   "name": "尾山御坊",
+   "kind": "castle-node",
+   "point": [
+    136.66028828165753,
+    36.55
+   ],
+   "titles": [
+    "尾山御坊"
+   ],
+   "hits": 0,
+   "fetched": 0,
+   "truncated": false,
+   "result": "none",
+   "candidates": [],
+   "dropped": {
+    "otherKind": 0,
+    "noCoordinates": 0,
+    "titleMismatch": 0,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "node:saga",
+   "name": "村中城",
+   "kind": "castle-node",
+   "point": [
+    130.26981683502189,
+    33.28
+   ],
+   "titles": [
+    "村中"
+   ],
+   "hits": 0,
+   "fetched": 0,
+   "truncated": false,
+   "result": "none",
+   "candidates": [],
+   "dropped": {
+    "otherKind": 0,
+    "noCoordinates": 0,
+    "titleMismatch": 0,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "node:saika",
+   "name": "雑賀城",
+   "kind": "castle-node",
+   "point": [
+    135.1899854217401,
+    34.230000000000004
+   ],
+   "titles": [
+    "雑賀"
+   ],
+   "hits": 1,
+   "fetched": 1,
+   "truncated": false,
+   "result": "none",
+   "candidates": [],
+   "dropped": {
+    "otherKind": 1,
+    "noCoordinates": 0,
+    "titleMismatch": 0,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "node:sakado",
+   "name": "坂戸城",
+   "kind": "castle-node",
+   "point": [
+    138.89842800449483,
+    37.059197
+   ],
+   "titles": [
+    "坂戸"
+   ],
+   "hits": 3,
+   "fetched": 3,
+   "truncated": false,
+   "result": "title-and-near",
+   "candidates": [
+    {
+     "id": "bunka-162541",
+     "title": "坂戸城跡",
+     "kind": "史跡名勝天然記念物",
+     "prefecture": "新潟県",
+     "address": "南魚沼市坂戸",
+     "designated": "19790312",
+     "point": [
+      138.89480594,
+      37.06146149
+     ],
+     "linkUrl": "https://online.bunka.go.jp/db/heritages/detail/162541",
+     "km": 0.41,
+     "match": "title-and-near"
+    }
+   ],
+   "dropped": {
+    "otherKind": 2,
+    "noCoordinates": 0,
+    "titleMismatch": 0,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "node:sakura",
+   "name": "本佐倉城",
+   "kind": "castle-node",
+   "point": [
+    140.25911100512545,
+    35.728249
+   ],
+   "titles": [
+    "本佐倉"
+   ],
+   "hits": 1,
+   "fetched": 1,
+   "truncated": false,
+   "result": "title-and-near",
+   "candidates": [
+    {
+     "id": "bunka-164441",
+     "title": "本佐倉城跡",
+     "kind": "史跡名勝天然記念物",
+     "prefecture": "千葉県",
+     "address": "佐倉市大佐倉\n印旛郡酒々井町",
+     "designated": "19980911",
+     "point": [
+      140.25890343,
+      35.72868992
+     ],
+     "linkUrl": "https://online.bunka.go.jp/db/heritages/detail/164441",
+     "km": 0.05,
+     "match": "title-and-near"
+    }
+   ],
+   "dropped": {
+    "otherKind": 0,
+    "noCoordinates": 0,
+    "titleMismatch": 0,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "node:sannohe",
+   "name": "三戸城",
+   "kind": "castle-node",
+   "point": [
+    141.26397100559117,
+    40.381085
+   ],
+   "titles": [
+    "三戸"
+   ],
+   "hits": 5,
+   "fetched": 5,
+   "truncated": false,
+   "result": "title-and-near",
+   "candidates": [
+    {
+     "id": "bunka-587633",
+     "title": "三戸城跡",
+     "kind": "史跡名勝天然記念物",
+     "prefecture": "青森県",
+     "address": "青森県三戸郡三戸町",
+     "designated": "20220315",
+     "point": [
+      141.26455556,
+      40.38177778
+     ],
+     "linkUrl": "https://online.bunka.go.jp/db/heritages/detail/587633",
+     "km": 0.09,
+     "match": "title-and-near"
+    }
+   ],
+   "dropped": {
+    "otherKind": 4,
+    "noCoordinates": 0,
+    "titleMismatch": 0,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "node:sawayama",
+   "name": "佐和山城",
+   "kind": "castle-node",
+   "point": [
+    136.26938300327637,
+    35.27964
+   ],
+   "titles": [
+    "佐和山",
+    "佐和"
+   ],
+   "hits": 3,
+   "fetched": 3,
+   "truncated": false,
+   "result": "none",
+   "candidates": [],
+   "dropped": {
+    "otherKind": 2,
+    "noCoordinates": 0,
+    "titleMismatch": 1,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "node:shibata",
+   "name": "新発田城",
+   "kind": "castle-node",
+   "point": [
+    139.32601500469303,
+    37.954781
+   ],
+   "titles": [
+    "新発田"
+   ],
+   "hits": 4,
+   "fetched": 4,
+   "truncated": false,
+   "result": "none",
+   "candidates": [],
+   "dropped": {
+    "otherKind": 3,
+    "noCoordinates": 0,
+    "titleMismatch": 1,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "node:shingu",
+   "name": "新宮城",
+   "kind": "castle-node",
+   "point": [
+    135.95016722825477,
+    33.75
+   ],
+   "titles": [
+    "新宮"
+   ],
+   "hits": 15,
+   "fetched": 15,
+   "truncated": false,
+   "result": "title-and-near",
+   "candidates": [
+    {
+     "id": "bunka-192602",
+     "title": "新宮城跡",
+     "kind": "史跡名勝天然記念物",
+     "prefecture": "和歌山県",
+     "address": "新宮市新宮",
+     "designated": "20030827",
+     "point": [
+      135.99231341,
+      33.72996412
+     ],
+     "linkUrl": "https://online.bunka.go.jp/db/heritages/detail/192602",
+     "km": 4.49,
+     "match": "title-and-near"
+    }
+   ],
+   "dropped": {
+    "otherKind": 10,
+    "noCoordinates": 0,
+    "titleMismatch": 3,
+    "tooFar": 1
+   }
+  },
+  {
+   "id": "node:shirakawa",
+   "name": "白川城",
+   "kind": "castle-node",
+   "point": [
+    140.2400000051166,
+    37.11
+   ],
+   "titles": [
+    "白川"
+   ],
+   "hits": 20,
+   "fetched": 20,
+   "truncated": false,
+   "result": "title-and-near",
+   "candidates": [
+    {
+     "id": "bunka-273872",
+     "title": "白川城跡",
+     "kind": "史跡名勝天然記念物",
+     "prefecture": "福島県",
+     "address": "福島県白河市",
+     "designated": "20161003",
+     "point": [
+      140.23402817,
+      37.11495766
+     ],
+     "linkUrl": "https://online.bunka.go.jp/db/heritages/detail/273872",
+     "km": 0.76,
+     "match": "title-and-near"
+    }
+   ],
+   "dropped": {
+    "otherKind": 19,
+    "noCoordinates": 0,
+    "titleMismatch": 0,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "node:shozui",
+   "name": "勝瑞城",
+   "kind": "castle-node",
+   "point": [
+    134.522999002467,
+    34.132026
+   ],
+   "titles": [
+    "勝瑞"
+   ],
+   "hits": 1,
+   "fetched": 1,
+   "truncated": false,
+   "result": "title-and-near",
+   "candidates": [
+    {
+     "id": "bunka-140094",
+     "title": "勝瑞城館跡",
+     "kind": "史跡名勝天然記念物",
+     "prefecture": "徳島県",
+     "address": "板野郡藍住町",
+     "designated": "20010129",
+     "point": [
+      134.52069332,
+      34.13055871
+     ],
+     "linkUrl": "https://online.bunka.go.jp/db/heritages/detail/140094",
+     "km": 0.27,
+     "match": "title-and-near"
+    }
+   ],
+   "dropped": {
+    "otherKind": 0,
+    "noCoordinates": 0,
+    "titleMismatch": 0,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "node:shuri",
+   "name": "首里城",
+   "kind": "castle-node",
+   "point": [
+    127.71919056226895,
+    26.217
+   ],
+   "titles": [
+    "首里"
+   ],
+   "hits": 9,
+   "fetched": 9,
+   "truncated": false,
+   "result": "title-and-near",
+   "candidates": [
+    {
+     "id": "bunka-164241",
+     "title": "首里城跡",
+     "kind": "史跡名勝天然記念物",
+     "prefecture": "沖縄県",
+     "address": "那覇市首里",
+     "designated": "19720515",
+     "point": [
+      127.7190315,
+      26.21699426
+     ],
+     "linkUrl": "https://online.bunka.go.jp/db/heritages/detail/164241",
+     "km": 0.02,
+     "match": "title-and-near"
+    }
+   ],
+   "dropped": {
+    "otherKind": 6,
+    "noCoordinates": 0,
+    "titleMismatch": 2,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "node:sogo",
+   "name": "十河城",
+   "kind": "castle-node",
+   "point": [
+    134.10554900227353,
+    34.260771
+   ],
+   "titles": [
+    "十河"
+   ],
+   "hits": 0,
+   "fetched": 0,
+   "truncated": false,
+   "result": "none",
+   "candidates": [],
+   "dropped": {
+    "otherKind": 0,
+    "noCoordinates": 0,
+    "titleMismatch": 0,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "node:sukagawa",
+   "name": "須賀川城",
+   "kind": "castle-node",
+   "point": [
+    140.37496200517916,
+    37.28649
+   ],
+   "titles": [
+    "須賀川"
+   ],
+   "hits": 2,
+   "fetched": 2,
+   "truncated": false,
+   "result": "none",
+   "candidates": [],
+   "dropped": {
+    "otherKind": 0,
+    "noCoordinates": 0,
+    "titleMismatch": 2,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "node:sumoto",
+   "name": "洲本城",
+   "kind": "castle-node",
+   "point": [
+    134.90289300264308,
+    34.337702
+   ],
+   "titles": [
+    "洲本"
+   ],
+   "hits": 16,
+   "fetched": 16,
+   "truncated": false,
+   "result": "title-and-near",
+   "candidates": [
+    {
+     "id": "bunka-203376",
+     "title": "洲本城跡",
+     "kind": "史跡名勝天然記念物",
+     "prefecture": "兵庫県",
+     "address": "洲本市小路谷",
+     "designated": "19990114",
+     "point": [
+      134.9029834,
+      34.33740029
+     ],
+     "linkUrl": "https://online.bunka.go.jp/db/heritages/detail/203376",
+     "km": 0.03,
+     "match": "title-and-near"
+    }
+   ],
+   "dropped": {
+    "otherKind": 15,
+    "noCoordinates": 0,
+    "titleMismatch": 0,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "node:sunpu",
+   "name": "今川館",
+   "kind": "castle-node",
+   "point": [
+    138.38316300425603,
+    34.979285
+   ],
+   "titles": [
+    "今川"
+   ],
+   "hits": 4,
+   "fetched": 4,
+   "truncated": false,
+   "result": "none",
+   "candidates": [],
+   "dropped": {
+    "otherKind": 4,
+    "noCoordinates": 0,
+    "titleMismatch": 0,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "node:tachibana",
+   "name": "立花山城",
+   "kind": "castle-node",
+   "point": [
+    130.47994839129422,
+    33.66
+   ],
+   "titles": [
+    "立花山",
+    "立花"
+   ],
+   "hits": 12,
+   "fetched": 12,
+   "truncated": false,
+   "result": "none",
+   "candidates": [],
+   "dropped": {
+    "otherKind": 9,
+    "noCoordinates": 0,
+    "titleMismatch": 2,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "node:takada",
+   "name": "高田城",
+   "kind": "castle-node",
+   "point": [
+    133.6931380020824,
+    35.089715
+   ],
+   "titles": [
+    "高田"
+   ],
+   "hits": 30,
+   "fetched": 30,
+   "truncated": false,
+   "result": "none",
+   "candidates": [],
+   "dropped": {
+    "otherKind": 28,
+    "noCoordinates": 0,
+    "titleMismatch": 2,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "node:takato",
+   "name": "高遠城",
+   "kind": "castle-node",
+   "point": [
+    138.06236300410737,
+    35.83316
+   ],
+   "titles": [
+    "高遠"
+   ],
+   "hits": 2,
+   "fetched": 2,
+   "truncated": false,
+   "result": "title-and-near",
+   "candidates": [
+    {
+     "id": "bunka-201686",
+     "title": "高遠城跡",
+     "kind": "史跡名勝天然記念物",
+     "prefecture": "長野県",
+     "address": "伊那市",
+     "designated": "19730526",
+     "point": [
+      138.06296295,
+      35.83390198
+     ],
+     "linkUrl": "https://online.bunka.go.jp/db/heritages/detail/201686",
+     "km": 0.1,
+     "match": "title-and-near"
+    }
+   ],
+   "dropped": {
+    "otherKind": 1,
+    "noCoordinates": 0,
+    "titleMismatch": 0,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "node:tamanawa",
+   "name": "玉縄城",
+   "kind": "castle-node",
+   "point": [
+    139.5199315489286,
+    35.37
+   ],
+   "titles": [
+    "玉縄"
+   ],
+   "hits": 0,
+   "fetched": 0,
+   "truncated": false,
+   "result": "none",
+   "candidates": [],
+   "dropped": {
+    "otherKind": 0,
+    "noCoordinates": 0,
+    "titleMismatch": 0,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "node:tanabu",
+   "name": "田名部館",
+   "kind": "castle-node",
+   "point": [
+    141.21002600556616,
+    41.296069
+   ],
+   "titles": [
+    "田名部"
+   ],
+   "hits": 0,
+   "fetched": 0,
+   "truncated": false,
+   "result": "none",
+   "candidates": [],
+   "dropped": {
+    "otherKind": 0,
+    "noCoordinates": 0,
+    "titleMismatch": 0,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "node:tango",
+   "name": "建部山城",
+   "kind": "castle-node",
+   "point": [
+    135.1800968779155,
+    35.53
+   ],
+   "titles": [
+    "建部山",
+    "建部"
+   ],
+   "hits": 2,
+   "fetched": 2,
+   "truncated": false,
+   "result": "none",
+   "candidates": [],
+   "dropped": {
+    "otherKind": 2,
+    "noCoordinates": 0,
+    "titleMismatch": 0,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "node:tenjin",
+   "name": "天神山城",
+   "kind": "castle-node",
+   "point": [
+    134.1264310022832,
+    34.849084
+   ],
+   "titles": [
+    "天神山",
+    "天神"
+   ],
+   "hits": 75,
+   "fetched": 75,
+   "truncated": false,
+   "result": "none",
+   "candidates": [],
+   "dropped": {
+    "otherKind": 62,
+    "noCoordinates": 0,
+    "titleMismatch": 8,
+    "tooFar": 1
+   }
+  },
+  {
+   "id": "node:teraike",
+   "name": "寺池城",
+   "kind": "castle-node",
+   "point": [
+    141.27760300559748,
+    38.648787
+   ],
+   "titles": [
+    "寺池"
+   ],
+   "hits": 1,
+   "fetched": 1,
+   "truncated": false,
+   "result": "none",
+   "candidates": [],
+   "dropped": {
+    "otherKind": 0,
+    "noCoordinates": 0,
+    "titleMismatch": 1,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "node:tochio",
+   "name": "栃尾城",
+   "kind": "castle-node",
+   "point": [
+    138.98779900453624,
+    37.472351
+   ],
+   "titles": [
+    "栃尾"
+   ],
+   "hits": 1,
+   "fetched": 1,
+   "truncated": false,
+   "result": "none",
+   "candidates": [],
+   "dropped": {
+    "otherKind": 1,
+    "noCoordinates": 0,
+    "titleMismatch": 0,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "node:toishi",
+   "name": "砥石城",
+   "kind": "castle-node",
+   "point": [
+    138.29174900421367,
+    36.424196
+   ],
+   "titles": [
+    "砥石"
+   ],
+   "hits": 4,
+   "fetched": 4,
+   "truncated": false,
+   "result": "none",
+   "candidates": [],
+   "dropped": {
+    "otherKind": 4,
+    "noCoordinates": 0,
+    "titleMismatch": 0,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "node:tonokori",
+   "name": "都於郡城",
+   "kind": "castle-node",
+   "point": [
+    131.37478200100793,
+    32.060642
+   ],
+   "titles": [
+    "都於郡"
+   ],
+   "hits": 1,
+   "fetched": 1,
+   "truncated": false,
+   "result": "title-and-near",
+   "candidates": [
+    {
+     "id": "bunka-173805",
+     "title": "都於郡城跡",
+     "kind": "史跡名勝天然記念物",
+     "prefecture": "宮崎県",
+     "address": "西都市大字荒武・大字鹿野田",
+     "designated": "20000906",
+     "point": [
+      131.37360098,
+      32.0610355
+     ],
+     "linkUrl": "https://online.bunka.go.jp/db/heritages/detail/173805",
+     "km": 0.12,
+     "match": "title-and-near"
+    }
+   ],
+   "dropped": {
+    "otherKind": 0,
+    "noCoordinates": 0,
+    "titleMismatch": 0,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "node:tottori",
+   "name": "布勢天神山城",
+   "kind": "castle-node",
+   "point": [
+    134.17646100230638,
+    35.509373
+   ],
+   "titles": [
+    "布勢天神山",
+    "布勢天神"
+   ],
+   "hits": 0,
+   "fetched": 0,
+   "truncated": false,
+   "result": "none",
+   "candidates": [],
+   "dropped": {
+    "otherKind": 0,
+    "noCoordinates": 0,
+    "titleMismatch": 0,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "node:toyama",
+   "name": "富山城",
+   "kind": "castle-node",
+   "point": [
+    137.21090200371273,
+    36.693304
+   ],
+   "titles": [
+    "富山"
+   ],
+   "hits": 110,
+   "fetched": 110,
+   "truncated": false,
+   "result": "none",
+   "candidates": [],
+   "dropped": {
+    "otherKind": 110,
+    "noCoordinates": 0,
+    "titleMismatch": 0,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "node:tsushima",
+   "name": "金石城",
+   "kind": "castle-node",
+   "point": [
+    129.28557500003964,
+    34.204207
+   ],
+   "titles": [
+    "金石"
+   ],
+   "hits": 11,
+   "fetched": 11,
+   "truncated": false,
+   "result": "title-and-near",
+   "candidates": [
+    {
+     "id": "bunka-164041",
+     "title": "金石城跡",
+     "kind": "史跡名勝天然記念物",
+     "prefecture": "長崎県",
+     "address": "対馬市厳原町",
+     "designated": "19950328",
+     "point": [
+      129.28534979,
+      34.2078197
+     ],
+     "linkUrl": "https://online.bunka.go.jp/db/heritages/detail/164041",
+     "km": 0.4,
+     "match": "title-and-near"
+    }
+   ],
+   "dropped": {
+    "otherKind": 9,
+    "noCoordinates": 0,
+    "titleMismatch": 1,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "node:tsutsuji",
+   "name": "躑躅ヶ崎館",
+   "kind": "castle-node",
+   "point": [
+    138.5700133077798,
+    35.68
+   ],
+   "titles": [
+    "躑躅ヶ崎"
+   ],
+   "hits": 0,
+   "fetched": 0,
+   "truncated": false,
+   "result": "none",
+   "candidates": [],
+   "dropped": {
+    "otherKind": 0,
+    "noCoordinates": 0,
+    "titleMismatch": 0,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "node:uchi",
+   "name": "内城",
+   "kind": "castle-node",
+   "point": [
+    130.5625520006315,
+    31.605583
+   ],
+   "titles": [
+    "内城"
+   ],
+   "hits": 1,
+   "fetched": 1,
+   "truncated": false,
+   "result": "none",
+   "candidates": [],
+   "dropped": {
+    "otherKind": 0,
+    "noCoordinates": 0,
+    "titleMismatch": 0,
+    "tooFar": 1
+   }
+  },
+  {
+   "id": "node:ueno",
+   "name": "伊賀平楽寺",
+   "kind": "castle-node",
+   "point": [
+    136.13001511906435,
+    34.769999999999996
+   ],
+   "titles": [
+    "伊賀平楽寺"
+   ],
+   "hits": 0,
+   "fetched": 0,
+   "truncated": false,
+   "result": "none",
+   "candidates": [],
+   "dropped": {
+    "otherKind": 0,
+    "noCoordinates": 0,
+    "titleMismatch": 0,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "node:umayabashi",
+   "name": "厩橋城",
+   "kind": "castle-node",
+   "point": [
+    139.06144600457037,
+    36.392364
+   ],
+   "titles": [
+    "厩橋"
+   ],
+   "hits": 0,
+   "fetched": 0,
+   "truncated": false,
+   "result": "none",
+   "candidates": [],
+   "dropped": {
+    "otherKind": 0,
+    "noCoordinates": 0,
+    "titleMismatch": 0,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "node:utsubuki",
+   "name": "打吹城",
+   "kind": "castle-node",
+   "point": [
+    133.82172100214197,
+    35.426377
+   ],
+   "titles": [
+    "打吹"
+   ],
+   "hits": 1,
+   "fetched": 1,
+   "truncated": false,
+   "result": "none",
+   "candidates": [],
+   "dropped": {
+    "otherKind": 1,
+    "noCoordinates": 0,
+    "titleMismatch": 0,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "node:utsunomiya",
+   "name": "宇都宮城",
+   "kind": "castle-node",
+   "point": [
+    139.88576200495243,
+    36.554456
+   ],
+   "titles": [
+    "宇都宮"
+   ],
+   "hits": 10,
+   "fetched": 10,
+   "truncated": false,
+   "result": "none",
+   "candidates": [],
+   "dropped": {
+    "otherKind": 10,
+    "noCoordinates": 0,
+    "titleMismatch": 0,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "node:yakami",
+   "name": "八上城",
+   "kind": "castle-node",
+   "point": [
+    135.25608300280675,
+    35.061883
+   ],
+   "titles": [
+    "八上"
+   ],
+   "hits": 2,
+   "fetched": 2,
+   "truncated": false,
+   "result": "title-and-near",
+   "candidates": [
+    {
+     "id": "bunka-212060",
+     "title": "八上城跡",
+     "kind": "史跡名勝天然記念物",
+     "prefecture": "兵庫県",
+     "address": "篠山市",
+     "designated": "20050302",
+     "point": [
+      135.25585245,
+      35.06176415
+     ],
+     "linkUrl": "https://online.bunka.go.jp/db/heritages/detail/212060",
+     "km": 0.02,
+     "match": "title-and-near"
+    }
+   ],
+   "dropped": {
+    "otherKind": 0,
+    "noCoordinates": 0,
+    "titleMismatch": 1,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "node:yamabuki",
+   "name": "山吹城",
+   "kind": "castle-node",
+   "point": [
+    132.43086300149736,
+    35.104145
+   ],
+   "titles": [
+    "山吹"
+   ],
+   "hits": 3,
+   "fetched": 3,
+   "truncated": false,
+   "result": "none",
+   "candidates": [],
+   "dropped": {
+    "otherKind": 3,
+    "noCoordinates": 0,
+    "titleMismatch": 0,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "node:yamagata",
+   "name": "山形城",
+   "kind": "castle-node",
+   "point": [
+    140.32777000515728,
+    38.255527
+   ],
+   "titles": [
+    "山形"
+   ],
+   "hits": 21,
+   "fetched": 21,
+   "truncated": false,
+   "result": "title-and-near",
+   "candidates": [
+    {
+     "id": "bunka-204783",
+     "title": "山形城跡",
+     "kind": "史跡名勝天然記念物",
+     "prefecture": "山形県",
+     "address": "山形市霞城町・城北町",
+     "designated": "19860528",
+     "point": [
+      140.32801972,
+      38.25562768
+     ],
+     "linkUrl": "https://online.bunka.go.jp/db/heritages/detail/204783",
+     "km": 0.02,
+     "match": "title-and-near"
+    }
+   ],
+   "dropped": {
+    "otherKind": 20,
+    "noCoordinates": 0,
+    "titleMismatch": 0,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "node:yamato",
+   "name": "筒井城",
+   "kind": "castle-node",
+   "point": [
+    135.78355600305122,
+    34.621591
+   ],
+   "titles": [
+    "筒井"
+   ],
+   "hits": 10,
+   "fetched": 10,
+   "truncated": false,
+   "result": "none",
+   "candidates": [],
+   "dropped": {
+    "otherKind": 10,
+    "noCoordinates": 0,
+    "titleMismatch": 0,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "node:yanagawa",
+   "name": "柳川城",
+   "kind": "castle-node",
+   "point": [
+    130.4199990943577,
+    33.16
+   ],
+   "titles": [
+    "柳川"
+   ],
+   "hits": 7,
+   "fetched": 7,
+   "truncated": false,
+   "result": "none",
+   "candidates": [],
+   "dropped": {
+    "otherKind": 7,
+    "noCoordinates": 0,
+    "titleMismatch": 0,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "node:yokote",
+   "name": "横手城",
+   "kind": "castle-node",
+   "point": [
+    140.5692420052692,
+    39.321113
+   ],
+   "titles": [
+    "横手"
+   ],
+   "hits": 3,
+   "fetched": 3,
+   "truncated": false,
+   "result": "none",
+   "candidates": [],
+   "dropped": {
+    "otherKind": 3,
+    "noCoordinates": 0,
+    "titleMismatch": 0,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "node:yonezawa",
+   "name": "米沢城",
+   "kind": "castle-node",
+   "point": [
+    140.10505600505405,
+    37.909274
+   ],
+   "titles": [
+    "米沢"
+   ],
+   "hits": 12,
+   "fetched": 12,
+   "truncated": false,
+   "result": "none",
+   "candidates": [],
+   "dropped": {
+    "otherKind": 11,
+    "noCoordinates": 0,
+    "titleMismatch": 1,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "node:yoshida",
+   "name": "吉田城",
+   "kind": "castle-node",
+   "point": [
+    137.39604300379852,
+    34.769562
+   ],
+   "titles": [
+    "吉田"
+   ],
+   "hits": 111,
+   "fetched": 111,
+   "truncated": false,
+   "result": "none",
+   "candidates": [],
+   "dropped": {
+    "otherKind": 107,
+    "noCoordinates": 0,
+    "titleMismatch": 4,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "node:yuzuki",
+   "name": "湯築城",
+   "kind": "castle-node",
+   "point": [
+    132.78662000166224,
+    33.84872
+   ],
+   "titles": [
+    "湯築"
+   ],
+   "hits": 1,
+   "fetched": 1,
+   "truncated": false,
+   "result": "title-and-near",
+   "candidates": [
+    {
+     "id": "bunka-207173",
+     "title": "湯築城跡",
+     "kind": "史跡名勝天然記念物",
+     "prefecture": "愛媛県",
+     "address": "松山市道後公園",
+     "designated": "20020920",
+     "point": [
+      132.78688098,
+      33.84814777
+     ],
+     "linkUrl": "https://online.bunka.go.jp/db/heritages/detail/207173",
+     "km": 0.07,
+     "match": "title-and-near"
+    }
+   ],
+   "dropped": {
+    "otherKind": 0,
+    "noCoordinates": 0,
+    "titleMismatch": 0,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "yosho:一宇治城:130.36:31.51",
+   "name": "一宇治城",
+   "kind": "城",
+   "point": [
+    130.36000000053764,
+    31.51
+   ],
+   "titles": [
+    "一宇治"
+   ],
+   "hits": 0,
+   "fetched": 0,
+   "truncated": false,
+   "result": "none",
+   "candidates": [],
+   "dropped": {
+    "otherKind": 0,
+    "noCoordinates": 0,
+    "titleMismatch": 0,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "yosho:七戸城:141.15:40.7",
+   "name": "七戸城",
+   "kind": "城",
+   "point": [
+    141.15003100553838,
+    40.697699
+   ],
+   "titles": [
+    "七戸"
+   ],
+   "hits": 4,
+   "fetched": 4,
+   "truncated": false,
+   "result": "title-and-near",
+   "candidates": [
+    {
+     "id": "bunka-137574",
+     "title": "七戸城跡",
+     "kind": "史跡名勝天然記念物",
+     "prefecture": "青森県",
+     "address": "上北郡七戸町",
+     "designated": "19411213",
+     "point": [
+      141.14905201,
+      40.69766597
+     ],
+     "linkUrl": "https://online.bunka.go.jp/db/heritages/detail/137574",
+     "km": 0.08,
+     "match": "title-and-near"
+    }
+   ],
+   "dropped": {
+    "otherKind": 3,
+    "noCoordinates": 0,
+    "titleMismatch": 0,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "yosho:三井山砦:138.0350583:34.6754752",
+   "name": "三井山砦",
+   "kind": "城",
+   "point": [
+    138.0350583040947,
+    34.6754752
+   ],
+   "titles": [
+    "三井山"
+   ],
+   "hits": 0,
+   "fetched": 0,
+   "truncated": false,
+   "result": "none",
+   "candidates": [],
+   "dropped": {
+    "otherKind": 0,
+    "noCoordinates": 0,
+    "titleMismatch": 0,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "yosho:三刀屋城:132.87:35.29",
+   "name": "三刀屋城",
+   "kind": "城",
+   "point": [
+    132.87162700170165,
+    35.293446
+   ],
+   "titles": [
+    "三刀屋"
+   ],
+   "hits": 0,
+   "fetched": 0,
+   "truncated": false,
+   "result": "none",
+   "candidates": [],
+   "dropped": {
+    "otherKind": 0,
+    "noCoordinates": 0,
+    "titleMismatch": 0,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "yosho:三原城:133.08:34.4",
+   "name": "三原城",
+   "kind": "城",
+   "point": [
+    133.08000000179823,
+    34.4
+   ],
+   "titles": [
+    "三原"
+   ],
+   "hits": 12,
+   "fetched": 12,
+   "truncated": false,
+   "result": "none",
+   "candidates": [],
+   "dropped": {
+    "otherKind": 11,
+    "noCoordinates": 0,
+    "titleMismatch": 1,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "yosho:三春城:140.5:37.44",
+   "name": "三春城",
+   "kind": "城",
+   "point": [
+    140.49640200523544,
+    37.442553
+   ],
+   "titles": [
+    "三春"
+   ],
+   "hits": 2,
+   "fetched": 2,
+   "truncated": false,
+   "result": "none",
+   "candidates": [],
+   "dropped": {
+    "otherKind": 1,
+    "noCoordinates": 0,
+    "titleMismatch": 1,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "yosho:三沢城:132.96:35.2",
+   "name": "三沢城",
+   "kind": "城",
+   "point": [
+    132.9625940017438,
+    35.203856
+   ],
+   "titles": [
+    "三沢"
+   ],
+   "hits": 2,
+   "fetched": 2,
+   "truncated": false,
+   "result": "none",
+   "candidates": [],
+   "dropped": {
+    "otherKind": 2,
+    "noCoordinates": 0,
+    "titleMismatch": 0,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "yosho:三石城:134.27:34.81",
+   "name": "三石城",
+   "kind": "城",
+   "point": [
+    134.27045500234996,
+    34.807506
+   ],
+   "titles": [
+    "三石"
+   ],
+   "hits": 3,
+   "fetched": 3,
+   "truncated": false,
+   "result": "none",
+   "candidates": [],
+   "dropped": {
+    "otherKind": 3,
+    "noCoordinates": 0,
+    "titleMismatch": 0,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "yosho:三雲城:136.09:34.98",
+   "name": "三雲城",
+   "kind": "城",
+   "point": [
+    136.09000000319324,
+    34.98
+   ],
+   "titles": [
+    "三雲"
+   ],
+   "hits": 1,
+   "fetched": 1,
+   "truncated": false,
+   "result": "none",
+   "candidates": [],
+   "dropped": {
+    "otherKind": 0,
+    "noCoordinates": 0,
+    "titleMismatch": 1,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "yosho:上山城:140.28:38.16",
+   "name": "上山城",
+   "kind": "城",
+   "point": [
+    140.27459700513265,
+    38.163411
+   ],
+   "titles": [
+    "上山"
+   ],
+   "hits": 15,
+   "fetched": 15,
+   "truncated": false,
+   "result": "none",
+   "candidates": [],
+   "dropped": {
+    "otherKind": 12,
+    "noCoordinates": 0,
+    "titleMismatch": 3,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "yosho:上平寺城:136.41:35.39",
+   "name": "上平寺城",
+   "kind": "城",
+   "point": [
+    136.41213900334253,
+    35.396183
+   ],
+   "titles": [
+    "上平寺"
+   ],
+   "hits": 0,
+   "fetched": 0,
+   "truncated": false,
+   "result": "none",
+   "candidates": [],
+   "dropped": {
+    "otherKind": 0,
+    "noCoordinates": 0,
+    "titleMismatch": 0,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "yosho:上桜城:134.32:34.05",
+   "name": "上桜城",
+   "kind": "城",
+   "point": [
+    134.3199610023729,
+    34.05359
+   ],
+   "titles": [
+    "上桜"
+   ],
+   "hits": 0,
+   "fetched": 0,
+   "truncated": false,
+   "result": "none",
+   "candidates": [],
+   "dropped": {
+    "otherKind": 0,
+    "noCoordinates": 0,
+    "titleMismatch": 0,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "yosho:与板城:138.8:37.53",
+   "name": "与板城",
+   "kind": "城",
+   "point": [
+    138.80096300444967,
+    37.534025
+   ],
+   "titles": [
+    "与板"
+   ],
+   "hits": 0,
+   "fetched": 0,
+   "truncated": false,
+   "result": "none",
+   "candidates": [],
+   "dropped": {
+    "otherKind": 0,
+    "noCoordinates": 0,
+    "titleMismatch": 0,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "yosho:中村砦:138.0632234:34.6787393",
+   "name": "中村砦",
+   "kind": "城",
+   "point": [
+    138.06322340410776,
+    34.6787393
+   ],
+   "titles": [
+    "中村"
+   ],
+   "hits": 152,
+   "fetched": 152,
+   "truncated": false,
+   "result": "none",
+   "candidates": [],
+   "dropped": {
+    "otherKind": 150,
+    "noCoordinates": 0,
+    "titleMismatch": 2,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "yosho:中津城:131.19:33.61",
+   "name": "中津城",
+   "kind": "城",
+   "point": [
+    131.19000000092228,
+    33.61
+   ],
+   "titles": [
+    "中津"
+   ],
+   "hits": 3,
+   "fetched": 3,
+   "truncated": false,
+   "result": "none",
+   "candidates": [],
+   "dropped": {
+    "otherKind": 3,
+    "noCoordinates": 0,
+    "titleMismatch": 0,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "yosho:丸亀城:133.8:34.29",
+   "name": "丸亀城",
+   "kind": "城",
+   "point": [
+    133.8010090021324,
+    34.286362
+   ],
+   "titles": [
+    "丸亀"
+   ],
+   "hits": 10,
+   "fetched": 10,
+   "truncated": false,
+   "result": "title-and-near",
+   "candidates": [
+    {
+     "id": "bunka-217529",
+     "title": "丸亀城跡",
+     "kind": "史跡名勝天然記念物",
+     "prefecture": "香川県",
+     "address": "丸亀市一番丁",
+     "designated": "19530331",
+     "point": [
+      133.80036744,
+      34.28613896
+     ],
+     "linkUrl": "https://online.bunka.go.jp/db/heritages/detail/217529",
+     "km": 0.06,
+     "match": "title-and-near"
+    }
+   ],
+   "dropped": {
+    "otherKind": 8,
+    "noCoordinates": 0,
+    "titleMismatch": 1,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "yosho:丸岡城:136.27:36.15",
+   "name": "丸岡城",
+   "kind": "城",
+   "point": [
+    136.27000000327666,
+    36.15
+   ],
+   "titles": [
+    "丸岡"
+   ],
+   "hits": 14,
+   "fetched": 14,
+   "truncated": false,
+   "result": "none",
+   "candidates": [],
+   "dropped": {
+    "otherKind": 13,
+    "noCoordinates": 0,
+    "titleMismatch": 1,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "yosho:久保田城:140.12:39.72",
+   "name": "久保田城",
+   "kind": "城",
+   "point": [
+    140.1236930050627,
+    39.721814
+   ],
+   "titles": [
+    "久保田"
+   ],
+   "hits": 13,
+   "fetched": 13,
+   "truncated": false,
+   "result": "none",
+   "candidates": [],
+   "dropped": {
+    "otherKind": 13,
+    "noCoordinates": 0,
+    "titleMismatch": 0,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "yosho:九戸城:141.3:40.27",
+   "name": "九戸城",
+   "kind": "城",
+   "point": [
+    141.30340000560946,
+    40.267583
+   ],
+   "titles": [
+    "九戸"
+   ],
+   "hits": 2,
+   "fetched": 2,
+   "truncated": false,
+   "result": "title-and-near",
+   "candidates": [
+    {
+     "id": "bunka-171335",
+     "title": "九戸城跡",
+     "kind": "史跡名勝天然記念物",
+     "prefecture": "岩手県",
+     "address": "二戸市福岡町",
+     "designated": "19350607",
+     "point": [
+      141.30316197,
+      40.26790019
+     ],
+     "linkUrl": "https://online.bunka.go.jp/db/heritages/detail/171335",
+     "km": 0.04,
+     "match": "title-and-near"
+    }
+   ],
+   "dropped": {
+    "otherKind": 1,
+    "noCoordinates": 0,
+    "titleMismatch": 0,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "yosho:二俣城:137.81:34.86",
+   "name": "二俣城",
+   "kind": "城",
+   "point": [
+    137.80897300398993,
+    34.862034
+   ],
+   "titles": [
+    "二俣"
+   ],
+   "hits": 7,
+   "fetched": 7,
+   "truncated": false,
+   "result": "title-only",
+   "candidates": [
+    {
+     "id": "bunka-439816",
+     "title": "二俣城跡及び鳥羽山城跡",
+     "kind": "史跡名勝天然記念物",
+     "prefecture": "静岡県",
+     "address": "静岡県浜松市",
+     "designated": "20180213",
+     "point": [
+      137.72678306,
+      34.71082222
+     ],
+     "linkUrl": "https://online.bunka.go.jp/db/heritages/detail/439816",
+     "km": 18.41,
+     "match": "title-only"
+    }
+   ],
+   "dropped": {
+    "otherKind": 6,
+    "noCoordinates": 0,
+    "titleMismatch": 0,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "yosho:五ヶ所城:136.7:34.36",
+   "name": "五ヶ所城",
+   "kind": "城",
+   "point": [
+    136.7030900034774,
+    34.355203
+   ],
+   "titles": [
+    "五ヶ所"
+   ],
+   "hits": 0,
+   "fetched": 0,
+   "truncated": false,
+   "result": "none",
+   "candidates": [],
+   "dropped": {
+    "otherKind": 0,
+    "noCoordinates": 0,
+    "titleMismatch": 0,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "yosho:今治城:133.01:34.06",
+   "name": "今治城",
+   "kind": "城",
+   "point": [
+    133.00673500176427,
+    34.063448
+   ],
+   "titles": [
+    "今治"
+   ],
+   "hits": 1,
+   "fetched": 1,
+   "truncated": false,
+   "result": "none",
+   "candidates": [],
+   "dropped": {
+    "otherKind": 1,
+    "noCoordinates": 0,
+    "titleMismatch": 0,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "yosho:伊予松山城:132.77:33.85",
+   "name": "伊予松山城",
+   "kind": "城",
+   "point": [
+    132.7655350016525,
+    33.845577
+   ],
+   "titles": [
+    "伊予松山",
+    "伊予松"
+   ],
+   "hits": 0,
+   "fetched": 0,
+   "truncated": false,
+   "result": "none",
+   "candidates": [],
+   "dropped": {
+    "otherKind": 0,
+    "noCoordinates": 0,
+    "titleMismatch": 0,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "yosho:伊勢亀山城:136.45:34.86",
+   "name": "伊勢亀山城",
+   "kind": "城",
+   "point": [
+    136.4500000033601,
+    34.86
+   ],
+   "titles": [
+    "伊勢亀山",
+    "伊勢亀"
+   ],
+   "hits": 0,
+   "fetched": 0,
+   "truncated": false,
+   "result": "none",
+   "candidates": [],
+   "dropped": {
+    "otherKind": 0,
+    "noCoordinates": 0,
+    "titleMismatch": 0,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "yosho:伊豆長浜城:138.89:35.02",
+   "name": "伊豆長浜城",
+   "kind": "城",
+   "point": [
+    138.88791400448997,
+    35.018167
+   ],
+   "titles": [
+    "伊豆長浜"
+   ],
+   "hits": 0,
+   "fetched": 0,
+   "truncated": false,
+   "result": "none",
+   "candidates": [],
+   "dropped": {
+    "otherKind": 0,
+    "noCoordinates": 0,
+    "titleMismatch": 0,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "yosho:但馬八木城:134.71:35.39",
+   "name": "但馬八木城",
+   "kind": "城",
+   "point": [
+    134.71000000255367,
+    35.39
+   ],
+   "titles": [
+    "但馬八木"
+   ],
+   "hits": 0,
+   "fetched": 0,
+   "truncated": false,
+   "result": "none",
+   "candidates": [],
+   "dropped": {
+    "otherKind": 0,
+    "noCoordinates": 0,
+    "titleMismatch": 0,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "yosho:佐伯城:131.89:32.96",
+   "name": "佐伯城",
+   "kind": "城",
+   "point": [
+    131.88707800124536,
+    32.956597
+   ],
+   "titles": [
+    "佐伯"
+   ],
+   "hits": 14,
+   "fetched": 14,
+   "truncated": false,
+   "result": "title-and-near",
+   "candidates": [
+    {
+     "id": "bunka-605539",
+     "title": "佐伯城跡",
+     "kind": "史跡名勝天然記念物",
+     "prefecture": "大分県",
+     "address": "大分県佐伯市",
+     "designated": "20230320",
+     "point": [
+      131.88978889,
+      32.96013889
+     ],
+     "linkUrl": "https://online.bunka.go.jp/db/heritages/detail/605539",
+     "km": 0.47,
+     "match": "title-and-near"
+    }
+   ],
+   "dropped": {
+    "otherKind": 13,
+    "noCoordinates": 0,
+    "titleMismatch": 0,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "yosho:佐倉城:140.22:35.72",
+   "name": "佐倉城",
+   "kind": "城",
+   "point": [
+    140.21596300510546,
+    35.722325
+   ],
+   "titles": [
+    "佐倉"
+   ],
+   "hits": 4,
+   "fetched": 4,
+   "truncated": false,
+   "result": "title-and-near",
+   "candidates": [
+    {
+     "id": "bunka-164441",
+     "title": "本佐倉城跡",
+     "kind": "史跡名勝天然記念物",
+     "prefecture": "千葉県",
+     "address": "佐倉市大佐倉\n印旛郡酒々井町",
+     "designated": "19980911",
+     "point": [
+      140.25890343,
+      35.72868992
+     ],
+     "linkUrl": "https://online.bunka.go.jp/db/heritages/detail/164441",
+     "km": 3.94,
+     "match": "title-and-near"
+    }
+   ],
+   "dropped": {
+    "otherKind": 2,
+    "noCoordinates": 0,
+    "titleMismatch": 1,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "yosho:佐敷城:130.5:32.3",
+   "name": "佐敷城",
+   "kind": "城",
+   "point": [
+    130.50263900060372,
+    32.303089
+   ],
+   "titles": [
+    "佐敷"
+   ],
+   "hits": 3,
+   "fetched": 3,
+   "truncated": false,
+   "result": "title-and-near",
+   "candidates": [
+    {
+     "id": "bunka-164751",
+     "title": "佐敷城跡",
+     "kind": "史跡名勝天然記念物",
+     "prefecture": "熊本県",
+     "address": "葦北郡芦北町",
+     "designated": "20080328",
+     "point": [
+      130.50287905,
+      32.30316122
+     ],
+     "linkUrl": "https://online.bunka.go.jp/db/heritages/detail/164751",
+     "km": 0.02,
+     "match": "title-and-near"
+    }
+   ],
+   "dropped": {
+    "otherKind": 1,
+    "noCoordinates": 0,
+    "titleMismatch": 0,
+    "tooFar": 1
+   }
+  },
+  {
+   "id": "yosho:信濃松尾城:137.83:35.49",
+   "name": "信濃松尾城",
+   "kind": "城",
+   "point": [
+    137.8281470039988,
+    35.487006
+   ],
+   "titles": [
+    "信濃松尾"
+   ],
+   "hits": 0,
+   "fetched": 0,
+   "truncated": false,
+   "result": "none",
+   "candidates": [],
+   "dropped": {
+    "otherKind": 0,
+    "noCoordinates": 0,
+    "titleMismatch": 0,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "yosho:備中高松城:133.83:34.69",
+   "name": "備中高松城",
+   "kind": "城",
+   "point": [
+    133.82226300214222,
+    34.692673
+   ],
+   "titles": [
+    "備中高松"
+   ],
+   "hits": 0,
+   "fetched": 0,
+   "truncated": false,
+   "result": "none",
+   "candidates": [],
+   "dropped": {
+    "otherKind": 0,
+    "noCoordinates": 0,
+    "titleMismatch": 0,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "yosho:光岡城:131.28:33.52",
+   "name": "光岡城",
+   "kind": "城",
+   "point": [
+    131.275665000962,
+    33.522471
+   ],
+   "titles": [
+    "光岡"
+   ],
+   "hits": 0,
+   "fetched": 0,
+   "truncated": false,
+   "result": "none",
+   "candidates": [],
+   "dropped": {
+    "otherKind": 0,
+    "noCoordinates": 0,
+    "titleMismatch": 0,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "yosho:利神城:134.36:35",
+   "name": "利神城",
+   "kind": "城",
+   "point": [
+    134.37748400239957,
+    35.0462
+   ],
+   "titles": [
+    "利神"
+   ],
+   "hits": 1,
+   "fetched": 1,
+   "truncated": false,
+   "result": "title-only",
+   "candidates": [
+    {
+     "id": "bunka-454579",
+     "title": "利神城跡",
+     "kind": "史跡名勝天然記念物",
+     "prefecture": "兵庫県",
+     "address": "兵庫県佐用郡佐用町",
+     "designated": "20171013",
+     "point": [
+      134.35588306,
+      35.00428861
+     ],
+     "linkUrl": "https://online.bunka.go.jp/db/heritages/detail/454579",
+     "km": 5.06,
+     "match": "title-only"
+    }
+   ],
+   "dropped": {
+    "otherKind": 0,
+    "noCoordinates": 0,
+    "titleMismatch": 0,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "yosho:加納城:136.76:35.4",
+   "name": "加納城",
+   "kind": "城",
+   "point": [
+    136.76034400350392,
+    35.399601
+   ],
+   "titles": [
+    "加納"
+   ],
+   "hits": 16,
+   "fetched": 16,
+   "truncated": false,
+   "result": "title-and-near",
+   "candidates": [
+    {
+     "id": "bunka-201756",
+     "title": "加納城跡",
+     "kind": "史跡名勝天然記念物",
+     "prefecture": "岐阜県",
+     "address": "岐阜市加納丸の内",
+     "designated": "19831028",
+     "point": [
+      136.76044567,
+      35.39957074
+     ],
+     "linkUrl": "https://online.bunka.go.jp/db/heritages/detail/201756",
+     "km": 0.01,
+     "match": "title-and-near"
+    }
+   ],
+   "dropped": {
+    "otherKind": 15,
+    "noCoordinates": 0,
+    "titleMismatch": 0,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "yosho:勝山館:140.1:41.8",
+   "name": "勝山館",
+   "kind": "城",
+   "point": [
+    140.1008190050521,
+    41.801518
+   ],
+   "titles": [
+    "勝山"
+   ],
+   "hits": 12,
+   "fetched": 12,
+   "truncated": false,
+   "result": "none",
+   "candidates": [],
+   "dropped": {
+    "otherKind": 8,
+    "noCoordinates": 0,
+    "titleMismatch": 4,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "yosho:勝本城:129.69:33.85",
+   "name": "勝本城",
+   "kind": "城",
+   "point": [
+    129.69113300022764,
+    33.84938
+   ],
+   "titles": [
+    "勝本"
+   ],
+   "hits": 2,
+   "fetched": 2,
+   "truncated": false,
+   "result": "title-and-near",
+   "candidates": [
+    {
+     "id": "bunka-163028",
+     "title": "勝本城跡",
+     "kind": "史跡名勝天然記念物",
+     "prefecture": "長崎県",
+     "address": "壱岐市勝本町",
+     "designated": "20020319",
+     "point": [
+      129.69100998,
+      33.84918218
+     ],
+     "linkUrl": "https://online.bunka.go.jp/db/heritages/detail/163028",
+     "km": 0.02,
+     "match": "title-and-near"
+    }
+   ],
+   "dropped": {
+    "otherKind": 1,
+    "noCoordinates": 0,
+    "titleMismatch": 0,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "yosho:勝賀城:133.98:34.34",
+   "name": "勝賀城",
+   "kind": "城",
+   "point": [
+    133.98776800221893,
+    34.334679
+   ],
+   "titles": [
+    "勝賀"
+   ],
+   "hits": 2,
+   "fetched": 2,
+   "truncated": false,
+   "result": "title-and-near",
+   "candidates": [
+    {
+     "id": "bunka-611099",
+     "title": "勝賀城跡",
+     "kind": "史跡名勝天然記念物",
+     "prefecture": "香川県",
+     "address": "香川県高松市",
+     "designated": "20240221",
+     "point": [
+      133.98099722,
+      34.34102222
+     ],
+     "linkUrl": "https://online.bunka.go.jp/db/heritages/detail/611099",
+     "km": 0.94,
+     "match": "title-and-near"
+    }
+   ],
+   "dropped": {
+    "otherKind": 1,
+    "noCoordinates": 0,
+    "titleMismatch": 0,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "yosho:勝龍寺城:135.7:34.92",
+   "name": "勝龍寺城",
+   "kind": "城",
+   "point": [
+    135.7000000030125,
+    34.92
+   ],
+   "titles": [
+    "勝龍寺"
+   ],
+   "hits": 0,
+   "fetched": 0,
+   "truncated": false,
+   "result": "none",
+   "candidates": [],
+   "dropped": {
+    "otherKind": 0,
+    "noCoordinates": 0,
+    "titleMismatch": 0,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "yosho:北方城:136.69:35.44",
+   "name": "北方城",
+   "kind": "城",
+   "point": [
+    136.6900000034713,
+    35.44
+   ],
+   "titles": [
+    "北方"
+   ],
+   "hits": 46,
+   "fetched": 46,
+   "truncated": false,
+   "result": "none",
+   "candidates": [],
+   "dropped": {
+    "otherKind": 46,
+    "noCoordinates": 0,
+    "titleMismatch": 0,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "yosho:千本城:140.15:36.58",
+   "name": "千本城",
+   "kind": "城",
+   "point": [
+    140.1491370050745,
+    36.574586
+   ],
+   "titles": [
+    "千本"
+   ],
+   "hits": 8,
+   "fetched": 8,
+   "truncated": false,
+   "result": "none",
+   "candidates": [],
+   "dropped": {
+    "otherKind": 6,
+    "noCoordinates": 0,
+    "titleMismatch": 2,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "yosho:原城:130.26:32.63",
+   "name": "原城",
+   "kind": "城",
+   "point": [
+    130.25419600048858,
+    32.629223
+   ],
+   "titles": [
+    "原城"
+   ],
+   "hits": 13,
+   "fetched": 13,
+   "truncated": false,
+   "result": "title-and-near",
+   "candidates": [
+    {
+     "id": "bunka-173345",
+     "title": "原城跡",
+     "kind": "史跡名勝天然記念物",
+     "prefecture": "長崎県",
+     "address": "南島原市",
+     "designated": "19380530",
+     "point": [
+      130.2537267,
+      32.62971008
+     ],
+     "linkUrl": "https://online.bunka.go.jp/db/heritages/detail/173345",
+     "km": 0.07,
+     "match": "title-and-near"
+    },
+    {
+     "id": "bunka-616870",
+     "title": "島原城跡",
+     "kind": "史跡名勝天然記念物",
+     "prefecture": "長崎県",
+     "address": "長崎県島原市",
+     "designated": "20250310",
+     "point": [
+      130.36740833,
+      32.78938889
+     ],
+     "linkUrl": "https://online.bunka.go.jp/db/heritages/detail/616870",
+     "km": 20.72,
+     "match": "title-only"
+    }
+   ],
+   "dropped": {
+    "otherKind": 6,
+    "noCoordinates": 0,
+    "titleMismatch": 1,
+    "tooFar": 4
+   }
+  },
+  {
+   "id": "yosho:古宮城:137.43:34.97",
+   "name": "古宮城",
+   "kind": "城",
+   "point": [
+    137.43000000381429,
+    34.97
+   ],
+   "titles": [
+    "古宮"
+   ],
+   "hits": 2,
+   "fetched": 2,
+   "truncated": false,
+   "result": "none",
+   "candidates": [],
+   "dropped": {
+    "otherKind": 1,
+    "noCoordinates": 0,
+    "titleMismatch": 1,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "yosho:古川城:137.18:36.22",
+   "name": "古川城",
+   "kind": "城",
+   "point": [
+    137.1800000036984,
+    36.22
+   ],
+   "titles": [
+    "古川"
+   ],
+   "hits": 12,
+   "fetched": 12,
+   "truncated": false,
+   "result": "none",
+   "candidates": [],
+   "dropped": {
+    "otherKind": 11,
+    "noCoordinates": 0,
+    "titleMismatch": 1,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "yosho:名古屋城:136.9:35.19",
+   "name": "名古屋城",
+   "kind": "城",
+   "point": [
+    136.89968800356849,
+    35.18475
+   ],
+   "titles": [
+    "名古屋"
+   ],
+   "hits": 34,
+   "fetched": 34,
+   "truncated": false,
+   "result": "title-and-near",
+   "candidates": [
+    {
+     "id": "bunka-161398",
+     "title": "名古屋城跡",
+     "kind": "史跡名勝天然記念物",
+     "prefecture": "愛知県",
+     "address": "名古屋市中区本丸・二の丸・三の丸",
+     "designated": "19321212",
+     "point": [
+      136.8994001,
+      35.1847141
+     ],
+     "linkUrl": "https://online.bunka.go.jp/db/heritages/detail/161398",
+     "km": 0.03,
+     "match": "title-and-near"
+    }
+   ],
+   "dropped": {
+    "otherKind": 31,
+    "noCoordinates": 0,
+    "titleMismatch": 2,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "yosho:名胡桃城:138.99:36.67",
+   "name": "名胡桃城",
+   "kind": "城",
+   "point": [
+    138.9887380045367,
+    36.6833
+   ],
+   "titles": [
+    "名胡桃"
+   ],
+   "hits": 0,
+   "fetched": 0,
+   "truncated": false,
+   "result": "none",
+   "candidates": [],
+   "dropped": {
+    "otherKind": 0,
+    "noCoordinates": 0,
+    "titleMismatch": 0,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "yosho:名護屋城:129.87:33.53",
+   "name": "名護屋城",
+   "kind": "城",
+   "point": [
+    129.86896600031005,
+    33.530396
+   ],
+   "titles": [
+    "名護屋"
+   ],
+   "hits": 1,
+   "fetched": 1,
+   "truncated": false,
+   "result": "title-and-near",
+   "candidates": [
+    {
+     "id": "bunka-173305",
+     "title": "名護屋城跡並陣跡",
+     "kind": "史跡名勝天然記念物",
+     "prefecture": "佐賀県",
+     "address": "唐津市鎮西町・呼子町、東松浦郡玄海町",
+     "designated": "19261104",
+     "point": [
+      129.87596326,
+      33.5270661
+     ],
+     "linkUrl": "https://online.bunka.go.jp/db/heritages/detail/173305",
+     "km": 0.75,
+     "match": "title-and-near"
+    }
+   ],
+   "dropped": {
+    "otherKind": 0,
+    "noCoordinates": 0,
+    "titleMismatch": 0,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "yosho:向羽黒山城:139.9:37.45",
+   "name": "向羽黒山城",
+   "kind": "城",
+   "point": [
+    139.90174600495985,
+    37.442931
+   ],
+   "titles": [
+    "向羽黒山",
+    "向羽黒"
+   ],
+   "hits": 2,
+   "fetched": 2,
+   "truncated": false,
+   "result": "title-and-near",
+   "candidates": [
+    {
+     "id": "bunka-140104",
+     "title": "向羽黒山城跡",
+     "kind": "史跡名勝天然記念物",
+     "prefecture": "福島県",
+     "address": "大沼郡会津美里町",
+     "designated": "20010807",
+     "point": [
+      139.90052005,
+      37.44432151
+     ],
+     "linkUrl": "https://online.bunka.go.jp/db/heritages/detail/140104",
+     "km": 0.19,
+     "match": "title-and-near"
+    }
+   ],
+   "dropped": {
+    "otherKind": 0,
+    "noCoordinates": 0,
+    "titleMismatch": 0,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "yosho:唐津城:129.98:33.45",
+   "name": "唐津城",
+   "kind": "城",
+   "point": [
+    129.97738500036027,
+    33.452722
+   ],
+   "titles": [
+    "唐津"
+   ],
+   "hits": 38,
+   "fetched": 38,
+   "truncated": false,
+   "result": "none",
+   "candidates": [],
+   "dropped": {
+    "otherKind": 37,
+    "noCoordinates": 0,
+    "titleMismatch": 1,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "yosho:土浦城:140.2:36.09",
+   "name": "土浦城",
+   "kind": "城",
+   "point": [
+    140.19829300509727,
+    36.084682
+   ],
+   "titles": [
+    "土浦"
+   ],
+   "hits": 7,
+   "fetched": 7,
+   "truncated": false,
+   "result": "none",
+   "candidates": [],
+   "dropped": {
+    "otherKind": 7,
+    "noCoordinates": 0,
+    "titleMismatch": 0,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "yosho:堅志田城:130.79:32.63",
+   "name": "堅志田城",
+   "kind": "城",
+   "point": [
+    130.79266500073814,
+    32.627439
+   ],
+   "titles": [
+    "堅志田"
+   ],
+   "hits": 1,
+   "fetched": 1,
+   "truncated": false,
+   "result": "title-and-near",
+   "candidates": [
+    {
+     "id": "bunka-163158",
+     "title": "堅志田城跡",
+     "kind": "史跡名勝天然記念物",
+     "prefecture": "熊本県",
+     "address": "下益城郡美里町",
+     "designated": "20060126",
+     "point": [
+      130.79215272,
+      32.62750389
+     ],
+     "linkUrl": "https://online.bunka.go.jp/db/heritages/detail/163158",
+     "km": 0.05,
+     "match": "title-and-near"
+    }
+   ],
+   "dropped": {
+    "otherKind": 0,
+    "noCoordinates": 0,
+    "titleMismatch": 0,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "yosho:塩田城:138.2:36.34",
+   "name": "塩田城",
+   "kind": "城",
+   "point": [
+    138.19609000416932,
+    36.339715
+   ],
+   "titles": [
+    "塩田"
+   ],
+   "hits": 15,
+   "fetched": 15,
+   "truncated": false,
+   "result": "none",
+   "candidates": [],
+   "dropped": {
+    "otherKind": 15,
+    "noCoordinates": 0,
+    "titleMismatch": 0,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "yosho:増山城:137.04:36.65",
+   "name": "増山城",
+   "kind": "城",
+   "point": [
+    137.0408350036339,
+    36.651316
+   ],
+   "titles": [
+    "増山"
+   ],
+   "hits": 2,
+   "fetched": 2,
+   "truncated": false,
+   "result": "title-and-near",
+   "candidates": [
+    {
+     "id": "bunka-164811",
+     "title": "増山城跡",
+     "kind": "史跡名勝天然記念物",
+     "prefecture": "富山県",
+     "address": "砺波市増山",
+     "designated": "20090723",
+     "point": [
+      137.04323643,
+      36.65227718
+     ],
+     "linkUrl": "https://online.bunka.go.jp/db/heritages/detail/164811",
+     "km": 0.24,
+     "match": "title-and-near"
+    }
+   ],
+   "dropped": {
+    "otherKind": 1,
+    "noCoordinates": 0,
+    "titleMismatch": 0,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "yosho:増島城:137.19:36.23",
+   "name": "増島城",
+   "kind": "城",
+   "point": [
+    137.19223100370408,
+    36.234161
+   ],
+   "titles": [
+    "増島"
+   ],
+   "hits": 0,
+   "fetched": 0,
+   "truncated": false,
+   "result": "none",
+   "candidates": [],
+   "dropped": {
+    "otherKind": 0,
+    "noCoordinates": 0,
+    "titleMismatch": 0,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "yosho:壬生城:139.8:36.43",
+   "name": "壬生城",
+   "kind": "城",
+   "point": [
+    139.79775300491164,
+    36.427608
+   ],
+   "titles": [
+    "壬生"
+   ],
+   "hits": 7,
+   "fetched": 7,
+   "truncated": false,
+   "result": "none",
+   "candidates": [],
+   "dropped": {
+    "otherKind": 6,
+    "noCoordinates": 0,
+    "titleMismatch": 1,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "yosho:大井城:138.48:36.27",
+   "name": "大井城",
+   "kind": "城",
+   "point": [
+    138.482359004302,
+    36.274615
+   ],
+   "titles": [
+    "大井"
+   ],
+   "hits": 10,
+   "fetched": 10,
+   "truncated": false,
+   "result": "none",
+   "candidates": [],
+   "dropped": {
+    "otherKind": 9,
+    "noCoordinates": 0,
+    "titleMismatch": 1,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "yosho:大和郡山城:135.78:34.65",
+   "name": "大和郡山城",
+   "kind": "城",
+   "point": [
+    135.78000000304957,
+    34.65
+   ],
+   "titles": [
+    "大和郡山",
+    "大和郡"
+   ],
+   "hits": 0,
+   "fetched": 0,
+   "truncated": false,
+   "result": "none",
+   "candidates": [],
+   "dropped": {
+    "otherKind": 0,
+    "noCoordinates": 0,
+    "titleMismatch": 0,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "yosho:大垣城:136.62:35.36",
+   "name": "大垣城",
+   "kind": "城",
+   "point": [
+    136.61605500343703,
+    35.361974
+   ],
+   "titles": [
+    "大垣"
+   ],
+   "hits": 9,
+   "fetched": 9,
+   "truncated": false,
+   "result": "none",
+   "candidates": [],
+   "dropped": {
+    "otherKind": 8,
+    "noCoordinates": 0,
+    "titleMismatch": 1,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "yosho:大多喜城:140.24:35.29",
+   "name": "大多喜城",
+   "kind": "城",
+   "point": [
+    140.23940800511633,
+    35.285885
+   ],
+   "titles": [
+    "大多喜"
+   ],
+   "hits": 2,
+   "fetched": 2,
+   "truncated": false,
+   "result": "none",
+   "candidates": [],
+   "dropped": {
+    "otherKind": 2,
+    "noCoordinates": 0,
+    "titleMismatch": 0,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "yosho:大河内城:136.47:34.53",
+   "name": "大河内城",
+   "kind": "城",
+   "point": [
+    136.4729260033707,
+    34.527127
+   ],
+   "titles": [
+    "大河内"
+   ],
+   "hits": 5,
+   "fetched": 5,
+   "truncated": false,
+   "result": "none",
+   "candidates": [],
+   "dropped": {
+    "otherKind": 5,
+    "noCoordinates": 0,
+    "titleMismatch": 0,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "yosho:大田原城:140.03:36.87",
+   "name": "大田原城",
+   "kind": "城",
+   "point": [
+    140.03453500502138,
+    36.868589
+   ],
+   "titles": [
+    "大田原"
+   ],
+   "hits": 0,
+   "fetched": 0,
+   "truncated": false,
+   "result": "none",
+   "candidates": [],
+   "dropped": {
+    "otherKind": 0,
+    "noCoordinates": 0,
+    "titleMismatch": 0,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "yosho:大聖寺城:136.31:36.31",
+   "name": "大聖寺城",
+   "kind": "城",
+   "point": [
+    136.307461003294,
+    36.307957
+   ],
+   "titles": [
+    "大聖寺"
+   ],
+   "hits": 12,
+   "fetched": 12,
+   "truncated": false,
+   "result": "title-and-near",
+   "candidates": [
+    {
+     "id": "bunka-617780",
+     "title": "大聖寺城跡",
+     "kind": "史跡名勝天然記念物",
+     "prefecture": "石川県",
+     "address": "石川県加賀市",
+     "designated": "20250918",
+     "point": [
+      136.30499722,
+      36.30889167
+     ],
+     "linkUrl": "https://online.bunka.go.jp/db/heritages/detail/617780",
+     "km": 0.24,
+     "match": "title-and-near"
+    }
+   ],
+   "dropped": {
+    "otherKind": 11,
+    "noCoordinates": 0,
+    "titleMismatch": 0,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "yosho:大胡城:139.16:36.42",
+   "name": "大胡城",
+   "kind": "城",
+   "point": [
+    139.1592610046157,
+    36.419622
+   ],
+   "titles": [
+    "大胡"
+   ],
+   "hits": 8,
+   "fetched": 8,
+   "truncated": false,
+   "result": "none",
+   "candidates": [],
+   "dropped": {
+    "otherKind": 8,
+    "noCoordinates": 0,
+    "titleMismatch": 0,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "yosho:大高城:136.94:35.07",
+   "name": "大高城",
+   "kind": "城",
+   "point": [
+    136.9363020035855,
+    35.064525
+   ],
+   "titles": [
+    "大高"
+   ],
+   "hits": 4,
+   "fetched": 4,
+   "truncated": false,
+   "result": "title-and-near",
+   "candidates": [
+    {
+     "id": "bunka-190952",
+     "title": "大高城跡",
+     "kind": "史跡名勝天然記念物",
+     "prefecture": "愛知県",
+     "address": "名古屋市緑区大高町",
+     "designated": "19381214",
+     "point": [
+      136.94237997,
+      35.06957157
+     ],
+     "linkUrl": "https://online.bunka.go.jp/db/heritages/detail/190952",
+     "km": 0.79,
+     "match": "title-and-near"
+    }
+   ],
+   "dropped": {
+    "otherKind": 2,
+    "noCoordinates": 0,
+    "titleMismatch": 1,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "yosho:天霧城:133.74:34.24",
+   "name": "天霧城",
+   "kind": "城",
+   "point": [
+    133.73561500210207,
+    34.236252
+   ],
+   "titles": [
+    "天霧"
+   ],
+   "hits": 1,
+   "fetched": 1,
+   "truncated": false,
+   "result": "none",
+   "candidates": [],
+   "dropped": {
+    "otherKind": 0,
+    "noCoordinates": 0,
+    "titleMismatch": 0,
+    "tooFar": 1
+   }
+  },
+  {
+   "id": "yosho:妻木城:137.19:35.29",
+   "name": "妻木城",
+   "kind": "城",
+   "point": [
+    137.1948870037053,
+    35.292494
+   ],
+   "titles": [
+    "妻木"
+   ],
+   "hits": 1,
+   "fetched": 1,
+   "truncated": false,
+   "result": "none",
+   "candidates": [],
+   "dropped": {
+    "otherKind": 0,
+    "noCoordinates": 0,
+    "titleMismatch": 1,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "yosho:妻籠城:137.6:35.58",
+   "name": "妻籠城",
+   "kind": "城",
+   "point": [
+    137.59546300389096,
+    35.584758
+   ],
+   "titles": [
+    "妻籠"
+   ],
+   "hits": 1,
+   "fetched": 1,
+   "truncated": false,
+   "result": "none",
+   "candidates": [],
+   "dropped": {
+    "otherKind": 1,
+    "noCoordinates": 0,
+    "titleMismatch": 0,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "yosho:宇和島城:132.57:33.22",
+   "name": "宇和島城",
+   "kind": "城",
+   "point": [
+    132.56505400155956,
+    33.219327
+   ],
+   "titles": [
+    "宇和島"
+   ],
+   "hits": 3,
+   "fetched": 3,
+   "truncated": false,
+   "result": "title-and-near",
+   "candidates": [
+    {
+     "id": "bunka-202766",
+     "title": "宇和島城",
+     "kind": "史跡名勝天然記念物",
+     "prefecture": "愛媛県",
+     "address": "宇和島市丸之内",
+     "designated": "19371221",
+     "point": [
+      132.5649587,
+      33.21958899
+     ],
+     "linkUrl": "https://online.bunka.go.jp/db/heritages/detail/202766",
+     "km": 0.03,
+     "match": "title-and-near"
+    }
+   ],
+   "dropped": {
+    "otherKind": 2,
+    "noCoordinates": 0,
+    "titleMismatch": 0,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "yosho:宇土城:130.65:32.68",
+   "name": "宇土城",
+   "kind": "城",
+   "point": [
+    130.65311400067344,
+    32.679409
+   ],
+   "titles": [
+    "宇土"
+   ],
+   "hits": 5,
+   "fetched": 5,
+   "truncated": false,
+   "result": "title-and-near",
+   "candidates": [
+    {
+     "id": "bunka-206723",
+     "title": "宇土城跡",
+     "kind": "史跡名勝天然記念物",
+     "prefecture": "熊本県",
+     "address": "宇土市神馬町",
+     "designated": "19790312",
+     "point": [
+      130.64601998,
+      32.67930355
+     ],
+     "linkUrl": "https://online.bunka.go.jp/db/heritages/detail/206723",
+     "km": 0.66,
+     "match": "title-and-near"
+    }
+   ],
+   "dropped": {
+    "otherKind": 4,
+    "noCoordinates": 0,
+    "titleMismatch": 0,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "yosho:宇陀松山城:135.94:34.48",
+   "name": "宇陀松山城",
+   "kind": "城",
+   "point": [
+    135.9400000031237,
+    34.48
+   ],
+   "titles": [
+    "宇陀松山",
+    "宇陀松"
+   ],
+   "hits": 2,
+   "fetched": 2,
+   "truncated": false,
+   "result": "title-and-near",
+   "candidates": [
+    {
+     "id": "bunka-212140",
+     "title": "宇陀松山城跡",
+     "kind": "史跡名勝天然記念物",
+     "prefecture": "奈良県",
+     "address": "宇陀市",
+     "designated": "20060728",
+     "point": [
+      135.93755504,
+      34.48134526
+     ],
+     "linkUrl": "https://online.bunka.go.jp/db/heritages/detail/212140",
+     "km": 0.27,
+     "match": "title-and-near"
+    }
+   ],
+   "dropped": {
+    "otherKind": 0,
+    "noCoordinates": 0,
+    "titleMismatch": 0,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "yosho:安芸城:133.54:33.31",
+   "name": "安芸城",
+   "kind": "城",
+   "point": [
+    133.9125900021841,
+    33.519865
+   ],
+   "titles": [
+    "安芸"
+   ],
+   "hits": 20,
+   "fetched": 20,
+   "truncated": false,
+   "result": "none",
+   "candidates": [],
+   "dropped": {
+    "otherKind": 19,
+    "noCoordinates": 0,
+    "titleMismatch": 1,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "yosho:小倉城:130.87:33.88",
+   "name": "小倉城",
+   "kind": "城",
+   "point": [
+    130.87425400077595,
+    33.884436
+   ],
+   "titles": [
+    "小倉"
+   ],
+   "hits": 24,
+   "fetched": 24,
+   "truncated": false,
+   "result": "none",
+   "candidates": [],
+   "dropped": {
+    "otherKind": 22,
+    "noCoordinates": 0,
+    "titleMismatch": 2,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "yosho:小峰城:140.21:37.13",
+   "name": "小峰城",
+   "kind": "城",
+   "point": [
+    140.2136920051044,
+    37.132407
+   ],
+   "titles": [
+    "小峰"
+   ],
+   "hits": 1,
+   "fetched": 1,
+   "truncated": false,
+   "result": "title-and-near",
+   "candidates": [
+    {
+     "id": "bunka-171511",
+     "title": "小峰城跡",
+     "kind": "史跡名勝天然記念物",
+     "prefecture": "福島県",
+     "address": "福島県白河市郭内",
+     "designated": "20100805",
+     "point": [
+      140.21361189,
+      37.13253619
+     ],
+     "linkUrl": "https://online.bunka.go.jp/db/heritages/detail/171511",
+     "km": 0.02,
+     "match": "title-and-near"
+    }
+   ],
+   "dropped": {
+    "otherKind": 0,
+    "noCoordinates": 0,
+    "titleMismatch": 0,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "yosho:小机城:139.59:35.51",
+   "name": "小机城",
+   "kind": "城",
+   "point": [
+    139.59412400481727,
+    35.51236
+   ],
+   "titles": [
+    "小机"
+   ],
+   "hits": 0,
+   "fetched": 0,
+   "truncated": false,
+   "result": "none",
+   "candidates": [],
+   "dropped": {
+    "otherKind": 0,
+    "noCoordinates": 0,
+    "titleMismatch": 0,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "yosho:小浜城:135.75:35.5",
+   "name": "小浜城",
+   "kind": "城",
+   "point": [
+    135.74625800303394,
+    35.504242
+   ],
+   "titles": [
+    "小浜"
+   ],
+   "hits": 8,
+   "fetched": 8,
+   "truncated": false,
+   "result": "title-only",
+   "candidates": [
+    {
+     "id": "bunka-162978",
+     "title": "小浜藩台場跡",
+     "kind": "史跡名勝天然記念物",
+     "prefecture": "福井県",
+     "address": "大飯郡おおい町大島",
+     "designated": "20010129",
+     "point": [
+      135.66547002,
+      35.53178963
+     ],
+     "linkUrl": "https://online.bunka.go.jp/db/heritages/detail/162978",
+     "km": 7.93,
+     "match": "title-only"
+    }
+   ],
+   "dropped": {
+    "otherKind": 7,
+    "noCoordinates": 0,
+    "titleMismatch": 0,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "yosho:小笠山砦:138.0112848:34.7368629",
+   "name": "小笠山砦",
+   "kind": "城",
+   "point": [
+    138.0112848040837,
+    34.7368629
+   ],
+   "titles": [
+    "小笠山"
+   ],
+   "hits": 0,
+   "fetched": 0,
+   "truncated": false,
+   "result": "none",
+   "candidates": [],
+   "dropped": {
+    "otherKind": 0,
+    "noCoordinates": 0,
+    "titleMismatch": 0,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "yosho:小諸城:138.42:36.33",
+   "name": "小諸城",
+   "kind": "城",
+   "point": [
+    138.41746200427193,
+    36.327162
+   ],
+   "titles": [
+    "小諸"
+   ],
+   "hits": 10,
+   "fetched": 10,
+   "truncated": false,
+   "result": "none",
+   "candidates": [],
+   "dropped": {
+    "otherKind": 10,
+    "noCoordinates": 0,
+    "titleMismatch": 0,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "yosho:小里城:137.28:35.33",
+   "name": "小里城",
+   "kind": "城",
+   "point": [
+    137.2835690037464,
+    35.334492
+   ],
+   "titles": [
+    "小里"
+   ],
+   "hits": 4,
+   "fetched": 4,
+   "truncated": false,
+   "result": "none",
+   "candidates": [],
+   "dropped": {
+    "otherKind": 4,
+    "noCoordinates": 0,
+    "titleMismatch": 0,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "yosho:尾高城:133.41:35.42",
+   "name": "尾高城",
+   "kind": "城",
+   "point": [
+    133.41212300195215,
+    35.420994
+   ],
+   "titles": [
+    "尾高"
+   ],
+   "hits": 2,
+   "fetched": 2,
+   "truncated": false,
+   "result": "title-and-near",
+   "candidates": [
+    {
+     "id": "bunka-596316",
+     "title": "尾高城跡",
+     "kind": "史跡名勝天然記念物",
+     "prefecture": "鳥取県",
+     "address": "鳥取県米子市",
+     "designated": "20240221",
+     "point": [
+      133.41214444,
+      35.42115
+     ],
+     "linkUrl": "https://online.bunka.go.jp/db/heritages/detail/596316",
+     "km": 0.02,
+     "match": "title-and-near"
+    }
+   ],
+   "dropped": {
+    "otherKind": 1,
+    "noCoordinates": 0,
+    "titleMismatch": 0,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "yosho:山中城:138.99:35.16",
+   "name": "山中城",
+   "kind": "城",
+   "point": [
+    138.99428400453925,
+    35.156622
+   ],
+   "titles": [
+    "山中"
+   ],
+   "hits": 56,
+   "fetched": 56,
+   "truncated": false,
+   "result": "title-and-near",
+   "candidates": [
+    {
+     "id": "bunka-205463",
+     "title": "山中城跡",
+     "kind": "史跡名勝天然記念物",
+     "prefecture": "静岡県",
+     "address": "三島市山中新田、田方郡函南町",
+     "designated": "19340122",
+     "point": [
+      138.9942631,
+      35.15682602
+     ],
+     "linkUrl": "https://online.bunka.go.jp/db/heritages/detail/205463",
+     "km": 0.02,
+     "match": "title-and-near"
+    }
+   ],
+   "dropped": {
+    "otherKind": 52,
+    "noCoordinates": 0,
+    "titleMismatch": 3,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "yosho:岡城:131.41:32.97",
+   "name": "岡城",
+   "kind": "城",
+   "point": [
+    131.40634500102254,
+    32.968264
+   ],
+   "titles": [
+    "岡城"
+   ],
+   "hits": 10,
+   "fetched": 10,
+   "truncated": false,
+   "result": "title-and-near",
+   "candidates": [
+    {
+     "id": "bunka-211570",
+     "title": "岡城跡",
+     "kind": "史跡名勝天然記念物",
+     "prefecture": "大分県",
+     "address": "竹田市大字竹田・会々",
+     "designated": "19361216",
+     "point": [
+      131.40766146,
+      32.96917985
+     ],
+     "linkUrl": "https://online.bunka.go.jp/db/heritages/detail/211570",
+     "km": 0.16,
+     "match": "title-and-near"
+    }
+   ],
+   "dropped": {
+    "otherKind": 3,
+    "noCoordinates": 0,
+    "titleMismatch": 0,
+    "tooFar": 6
+   }
+  },
+  {
+   "id": "yosho:岡崎の城山:137.945563:34.704416",
+   "name": "岡崎の城山",
+   "kind": "城",
+   "point": [
+    137.9455630040532,
+    34.704416
+   ],
+   "titles": [
+    "岡崎の城山"
+   ],
+   "hits": 0,
+   "fetched": 0,
+   "truncated": false,
+   "result": "none",
+   "candidates": [],
+   "dropped": {
+    "otherKind": 0,
+    "noCoordinates": 0,
+    "titleMismatch": 0,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "yosho:岩出山城:140.86:38.66",
+   "name": "岩出山城",
+   "kind": "城",
+   "point": [
+    140.86000000540395,
+    38.66
+   ],
+   "titles": [
+    "岩出山",
+    "岩出"
+   ],
+   "hits": 2,
+   "fetched": 2,
+   "truncated": false,
+   "result": "none",
+   "candidates": [],
+   "dropped": {
+    "otherKind": 2,
+    "noCoordinates": 0,
+    "titleMismatch": 0,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "yosho:岩剣城:130.6:31.71",
+   "name": "岩剣城",
+   "kind": "城",
+   "point": [
+    130.59854800064818,
+    31.705866
+   ],
+   "titles": [
+    "岩剣"
+   ],
+   "hits": 0,
+   "fetched": 0,
+   "truncated": false,
+   "result": "none",
+   "candidates": [],
+   "dropped": {
+    "otherKind": 0,
+    "noCoordinates": 0,
+    "titleMismatch": 0,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "yosho:岩尾城:134.97:35.1",
+   "name": "岩尾城",
+   "kind": "城",
+   "point": [
+    134.97470400267636,
+    35.099637
+   ],
+   "titles": [
+    "岩尾"
+   ],
+   "hits": 3,
+   "fetched": 3,
+   "truncated": false,
+   "result": "none",
+   "candidates": [],
+   "dropped": {
+    "otherKind": 3,
+    "noCoordinates": 0,
+    "titleMismatch": 0,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "yosho:岩櫃城:138.8:36.56",
+   "name": "岩櫃城",
+   "kind": "城",
+   "point": [
+    138.80482300445146,
+    36.559169
+   ],
+   "titles": [
+    "岩櫃"
+   ],
+   "hits": 1,
+   "fetched": 1,
+   "truncated": false,
+   "result": "title-and-near",
+   "candidates": [
+    {
+     "id": "bunka-449840",
+     "title": "岩櫃城跡",
+     "kind": "史跡名勝天然記念物",
+     "prefecture": "群馬県",
+     "address": "群馬県吾妻郡東吾妻町",
+     "designated": "20191016",
+     "point": [
+      138.80386667,
+      36.55903611
+     ],
+     "linkUrl": "https://online.bunka.go.jp/db/heritages/detail/449840",
+     "km": 0.09,
+     "match": "title-and-near"
+    }
+   ],
+   "dropped": {
+    "otherKind": 0,
+    "noCoordinates": 0,
+    "titleMismatch": 0,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "yosho:岩殿城:138.95:35.62",
+   "name": "岩殿城",
+   "kind": "城",
+   "point": [
+    138.94960300451856,
+    35.621656
+   ],
+   "titles": [
+    "岩殿"
+   ],
+   "hits": 0,
+   "fetched": 0,
+   "truncated": false,
+   "result": "none",
+   "candidates": [],
+   "dropped": {
+    "otherKind": 0,
+    "noCoordinates": 0,
+    "titleMismatch": 0,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "yosho:岸岳城:129.98:33.36",
+   "name": "岸岳城",
+   "kind": "城",
+   "point": [
+    129.98000000036149,
+    33.36
+   ],
+   "titles": [
+    "岸岳"
+   ],
+   "hits": 0,
+   "fetched": 0,
+   "truncated": false,
+   "result": "none",
+   "candidates": [],
+   "dropped": {
+    "otherKind": 0,
+    "noCoordinates": 0,
+    "titleMismatch": 0,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "yosho:峯城:136.46:34.9",
+   "name": "峯城",
+   "kind": "城",
+   "point": [
+    136.4682030033685,
+    34.897816
+   ],
+   "titles": [
+    "峯城"
+   ],
+   "hits": 2,
+   "fetched": 2,
+   "truncated": false,
+   "result": "none",
+   "candidates": [],
+   "dropped": {
+    "otherKind": 0,
+    "noCoordinates": 0,
+    "titleMismatch": 1,
+    "tooFar": 1
+   }
+  },
+  {
+   "id": "yosho:左沢楯山城:140.22:38.39",
+   "name": "左沢楯山城",
+   "kind": "城",
+   "point": [
+    140.22000000510732,
+    38.39
+   ],
+   "titles": [
+    "左沢楯山",
+    "左沢楯"
+   ],
+   "hits": 2,
+   "fetched": 2,
+   "truncated": false,
+   "result": "title-and-near",
+   "candidates": [
+    {
+     "id": "bunka-163288",
+     "title": "左沢楯山城跡",
+     "kind": "史跡名勝天然記念物",
+     "prefecture": "山形県",
+     "address": "山形県西村山郡大江町",
+     "designated": "20090212",
+     "point": [
+      140.2171917,
+      38.3871482
+     ],
+     "linkUrl": "https://online.bunka.go.jp/db/heritages/detail/163288",
+     "km": 0.4,
+     "match": "title-and-near"
+    }
+   ],
+   "dropped": {
+    "otherKind": 0,
+    "noCoordinates": 0,
+    "titleMismatch": 0,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "yosho:平林城:139.48:38.14",
+   "name": "平林城",
+   "kind": "城",
+   "point": [
+    139.46768400475867,
+    38.138919
+   ],
+   "titles": [
+    "平林"
+   ],
+   "hits": 12,
+   "fetched": 12,
+   "truncated": false,
+   "result": "title-and-near",
+   "candidates": [
+    {
+     "id": "bunka-161038",
+     "title": "平林城跡",
+     "kind": "史跡名勝天然記念物",
+     "prefecture": "新潟県",
+     "address": "村上市",
+     "designated": "19780918",
+     "point": [
+      139.47963423,
+      38.13605295
+     ],
+     "linkUrl": "https://online.bunka.go.jp/db/heritages/detail/161038",
+     "km": 1.09,
+     "match": "title-and-near"
+    }
+   ],
+   "dropped": {
+    "otherKind": 10,
+    "noCoordinates": 0,
+    "titleMismatch": 1,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "yosho:広瀬城:137.22:36.2",
+   "name": "広瀬城",
+   "kind": "城",
+   "point": [
+    137.21996500371694,
+    36.200248
+   ],
+   "titles": [
+    "広瀬"
+   ],
+   "hits": 24,
+   "fetched": 24,
+   "truncated": false,
+   "result": "none",
+   "candidates": [],
+   "dropped": {
+    "otherKind": 22,
+    "noCoordinates": 0,
+    "titleMismatch": 2,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "yosho:建昌城:130.61:31.73",
+   "name": "建昌城",
+   "kind": "城",
+   "point": [
+    130.6137030006552,
+    31.730114
+   ],
+   "titles": [
+    "建昌"
+   ],
+   "hits": 0,
+   "fetched": 0,
+   "truncated": false,
+   "result": "none",
+   "candidates": [],
+   "dropped": {
+    "otherKind": 0,
+    "noCoordinates": 0,
+    "titleMismatch": 0,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "yosho:引田城:134.41:34.23",
+   "name": "引田城",
+   "kind": "城",
+   "point": [
+    134.40841700241387,
+    34.233768
+   ],
+   "titles": [
+    "引田"
+   ],
+   "hits": 2,
+   "fetched": 2,
+   "truncated": false,
+   "result": "title-and-near",
+   "candidates": [
+    {
+     "id": "bunka-400918",
+     "title": "引田城跡",
+     "kind": "史跡名勝天然記念物",
+     "prefecture": "香川県",
+     "address": "香川県東かがわ市",
+     "designated": "20200310",
+     "point": [
+      134.40841667,
+      34.23380278
+     ],
+     "linkUrl": "https://online.bunka.go.jp/db/heritages/detail/400918",
+     "km": 0,
+     "match": "title-and-near"
+    }
+   ],
+   "dropped": {
+    "otherKind": 1,
+    "noCoordinates": 0,
+    "titleMismatch": 0,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "yosho:弘前城:140.46:40.61",
+   "name": "弘前城",
+   "kind": "城",
+   "point": [
+    140.46506500522094,
+    40.605953
+   ],
+   "titles": [
+    "弘前"
+   ],
+   "hits": 23,
+   "fetched": 23,
+   "truncated": false,
+   "result": "none",
+   "candidates": [],
+   "dropped": {
+    "otherKind": 22,
+    "noCoordinates": 0,
+    "titleMismatch": 1,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "yosho:彦根城:136.25:35.28",
+   "name": "彦根城",
+   "kind": "城",
+   "point": [
+    136.2500000032674,
+    35.28
+   ],
+   "titles": [
+    "彦根"
+   ],
+   "hits": 19,
+   "fetched": 19,
+   "truncated": false,
+   "result": "title-and-near",
+   "candidates": [
+    {
+     "id": "bunka-138837",
+     "title": "彦根城跡",
+     "kind": "史跡名勝天然記念物",
+     "prefecture": "滋賀県",
+     "address": "彦根市金亀町・尾末町・城町",
+     "designated": "19510609",
+     "point": [
+      136.25205662,
+      35.27613422
+     ],
+     "linkUrl": "https://online.bunka.go.jp/db/heritages/detail/138837",
+     "km": 0.47,
+     "match": "title-and-near"
+    }
+   ],
+   "dropped": {
+    "otherKind": 16,
+    "noCoordinates": 0,
+    "titleMismatch": 2,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "yosho:徳倉城:133.9:34.78",
+   "name": "徳倉城",
+   "kind": "城",
+   "point": [
+    133.90000000217827,
+    34.78
+   ],
+   "titles": [
+    "徳倉"
+   ],
+   "hits": 0,
+   "fetched": 0,
+   "truncated": false,
+   "result": "none",
+   "candidates": [],
+   "dropped": {
+    "otherKind": 0,
+    "noCoordinates": 0,
+    "titleMismatch": 0,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "yosho:徳島城:134.56:34.08",
+   "name": "徳島城",
+   "kind": "城",
+   "point": [
+    134.5548770024818,
+    34.075454
+   ],
+   "titles": [
+    "徳島"
+   ],
+   "hits": 55,
+   "fetched": 55,
+   "truncated": false,
+   "result": "title-and-near",
+   "candidates": [
+    {
+     "id": "bunka-203606",
+     "title": "徳島城跡",
+     "kind": "史跡名勝天然記念物",
+     "prefecture": "徳島県",
+     "address": "徳島市徳島町",
+     "designated": "20060126",
+     "point": [
+      134.55463809,
+      34.07487094
+     ],
+     "linkUrl": "https://online.bunka.go.jp/db/heritages/detail/203606",
+     "km": 0.07,
+     "match": "title-and-near"
+    }
+   ],
+   "dropped": {
+    "otherKind": 51,
+    "noCoordinates": 0,
+    "titleMismatch": 2,
+    "tooFar": 1
+   }
+  },
+  {
+   "id": "yosho:忍城:139.45:36.14",
+   "name": "忍城",
+   "kind": "城",
+   "point": [
+    139.45486200475273,
+    36.136906
+   ],
+   "titles": [
+    "忍城"
+   ],
+   "hits": 0,
+   "fetched": 0,
+   "truncated": false,
+   "result": "none",
+   "candidates": [],
+   "dropped": {
+    "otherKind": 0,
+    "noCoordinates": 0,
+    "titleMismatch": 0,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "yosho:志布志城:131.11:31.48",
+   "name": "志布志城",
+   "kind": "城",
+   "point": [
+    131.13510200089684,
+    31.495635
+   ],
+   "titles": [
+    "志布志"
+   ],
+   "hits": 6,
+   "fetched": 6,
+   "truncated": false,
+   "result": "title-and-near",
+   "candidates": [
+    {
+     "id": "bunka-212100",
+     "title": "志布志城跡",
+     "kind": "史跡名勝天然記念物",
+     "prefecture": "鹿児島県",
+     "address": "志布志市",
+     "designated": "20050714",
+     "point": [
+      131.10874687,
+      31.48473649
+     ],
+     "linkUrl": "https://online.bunka.go.jp/db/heritages/detail/212100",
+     "km": 2.78,
+     "match": "title-and-near"
+    }
+   ],
+   "dropped": {
+    "otherKind": 1,
+    "noCoordinates": 0,
+    "titleMismatch": 4,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "yosho:恵良城:132.8:33.99",
+   "name": "恵良城",
+   "kind": "城",
+   "point": [
+    132.79868300166785,
+    33.992301
+   ],
+   "titles": [
+    "恵良"
+   ],
+   "hits": 0,
+   "fetched": 0,
+   "truncated": false,
+   "result": "none",
+   "candidates": [],
+   "dropped": {
+    "otherKind": 0,
+    "noCoordinates": 0,
+    "titleMismatch": 0,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "yosho:新高山城:132.98:34.42",
+   "name": "新高山城",
+   "kind": "城",
+   "point": [
+    132.97632800175018,
+    34.419327
+   ],
+   "titles": [
+    "新高山",
+    "新高"
+   ],
+   "hits": 3,
+   "fetched": 3,
+   "truncated": false,
+   "result": "none",
+   "candidates": [],
+   "dropped": {
+    "otherKind": 1,
+    "noCoordinates": 0,
+    "titleMismatch": 1,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "yosho:日野山城:132.5:34.77",
+   "name": "日野山城",
+   "kind": "城",
+   "point": [
+    132.4626370015121,
+    34.770798
+   ],
+   "titles": [
+    "日野山",
+    "日野"
+   ],
+   "hits": 29,
+   "fetched": 29,
+   "truncated": false,
+   "result": "none",
+   "candidates": [],
+   "dropped": {
+    "otherKind": 27,
+    "noCoordinates": 0,
+    "titleMismatch": 1,
+    "tooFar": 1
+   }
+  },
+  {
+   "id": "yosho:明知城:137.39:35.3",
+   "name": "明知城",
+   "kind": "城",
+   "point": [
+    137.3944140037978,
+    35.303722
+   ],
+   "titles": [
+    "明知"
+   ],
+   "hits": 1,
+   "fetched": 1,
+   "truncated": false,
+   "result": "none",
+   "candidates": [],
+   "dropped": {
+    "otherKind": 1,
+    "noCoordinates": 0,
+    "titleMismatch": 0,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "yosho:有岡城:135.42:34.78",
+   "name": "有岡城",
+   "kind": "城",
+   "point": [
+    135.4209920028832,
+    34.781112
+   ],
+   "titles": [
+    "有岡"
+   ],
+   "hits": 2,
+   "fetched": 2,
+   "truncated": false,
+   "result": "title-and-near",
+   "candidates": [
+    {
+     "id": "bunka-217009",
+     "title": "有岡城跡",
+     "kind": "史跡名勝天然記念物",
+     "prefecture": "兵庫県",
+     "address": "伊丹市宮ノ前・伊丹",
+     "designated": "19791228",
+     "point": [
+      135.42086739,
+      34.78061208
+     ],
+     "linkUrl": "https://online.bunka.go.jp/db/heritages/detail/217009",
+     "km": 0.06,
+     "match": "title-and-near"
+    }
+   ],
+   "dropped": {
+    "otherKind": 0,
+    "noCoordinates": 0,
+    "titleMismatch": 1,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "yosho:木舟城:136.91:36.69",
+   "name": "木舟城",
+   "kind": "城",
+   "point": [
+    136.913704003575,
+    36.68868
+   ],
+   "titles": [
+    "木舟"
+   ],
+   "hits": 1,
+   "fetched": 1,
+   "truncated": false,
+   "result": "none",
+   "candidates": [],
+   "dropped": {
+    "otherKind": 1,
+    "noCoordinates": 0,
+    "titleMismatch": 0,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "yosho:本堂城:140.56:39.48",
+   "name": "本堂城",
+   "kind": "城",
+   "point": [
+    140.56090000526532,
+    39.478072
+   ],
+   "titles": [
+    "本堂"
+   ],
+   "hits": 597,
+   "fetched": 597,
+   "truncated": false,
+   "result": "none",
+   "candidates": [],
+   "dropped": {
+    "otherKind": 594,
+    "noCoordinates": 0,
+    "titleMismatch": 0,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "yosho:杵築城:131.63:33.41",
+   "name": "杵築城",
+   "kind": "城",
+   "point": [
+    131.62363400112326,
+    33.417388
+   ],
+   "titles": [
+    "杵築"
+   ],
+   "hits": 2,
+   "fetched": 2,
+   "truncated": false,
+   "result": "title-and-near",
+   "candidates": [
+    {
+     "id": "bunka-378227",
+     "title": "杵築城跡",
+     "kind": "史跡名勝天然記念物",
+     "prefecture": "大分県",
+     "address": "大分県杵築市",
+     "designated": "20200310",
+     "point": [
+      131.62668056,
+      33.41575
+     ],
+     "linkUrl": "https://online.bunka.go.jp/db/heritages/detail/378227",
+     "km": 0.34,
+     "match": "title-and-near"
+    }
+   ],
+   "dropped": {
+    "otherKind": 1,
+    "noCoordinates": 0,
+    "titleMismatch": 0,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "yosho:松前城:140.11:41.43",
+   "name": "松前城",
+   "kind": "城",
+   "point": [
+    140.11000000505638,
+    41.43
+   ],
+   "titles": [
+    "松前"
+   ],
+   "hits": 13,
+   "fetched": 13,
+   "truncated": false,
+   "result": "title-and-near",
+   "candidates": [
+    {
+     "id": "bunka-160398",
+     "title": "松前氏城跡",
+     "kind": "史跡名勝天然記念物",
+     "prefecture": "北海道",
+     "address": "松前郡松前町、檜山郡厚沢部町",
+     "designated": "19350607",
+     "point": [
+      140.10791811,
+      41.43008756
+     ],
+     "linkUrl": "https://online.bunka.go.jp/db/heritages/detail/160398",
+     "km": 0.17,
+     "match": "title-and-near"
+    }
+   ],
+   "dropped": {
+    "otherKind": 9,
+    "noCoordinates": 0,
+    "titleMismatch": 2,
+    "tooFar": 1
+   }
+  },
+  {
+   "id": "yosho:松坂城:136.53:34.58",
+   "name": "松坂城",
+   "kind": "城",
+   "point": [
+    136.52581000339524,
+    34.575932
+   ],
+   "titles": [
+    "松坂"
+   ],
+   "hits": 19,
+   "fetched": 19,
+   "truncated": false,
+   "result": "title-and-near",
+   "candidates": [
+    {
+     "id": "bunka-225259",
+     "title": "松坂城跡",
+     "kind": "史跡名勝天然記念物",
+     "prefecture": "三重県",
+     "address": "三重県松阪市",
+     "designated": "20110207",
+     "point": [
+      136.52586667,
+      34.57586136
+     ],
+     "linkUrl": "https://online.bunka.go.jp/db/heritages/detail/225259",
+     "km": 0.01,
+     "match": "title-and-near"
+    }
+   ],
+   "dropped": {
+    "otherKind": 18,
+    "noCoordinates": 0,
+    "titleMismatch": 0,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "yosho:松江城:133.05:35.47",
+   "name": "松江城",
+   "kind": "城",
+   "point": [
+    133.05227200178535,
+    35.473284
+   ],
+   "titles": [
+    "松江"
+   ],
+   "hits": 18,
+   "fetched": 18,
+   "truncated": false,
+   "result": "title-and-near",
+   "candidates": [
+    {
+     "id": "bunka-139337",
+     "title": "松江城",
+     "kind": "史跡名勝天然記念物",
+     "prefecture": "島根県",
+     "address": "松江市殿町",
+     "designated": "19340501",
+     "point": [
+      133.05060355,
+      35.47467579
+     ],
+     "linkUrl": "https://online.bunka.go.jp/db/heritages/detail/139337",
+     "km": 0.22,
+     "match": "title-and-near"
+    }
+   ],
+   "dropped": {
+    "otherKind": 16,
+    "noCoordinates": 0,
+    "titleMismatch": 1,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "yosho:林城:137.96:36.22",
+   "name": "林城",
+   "kind": "城",
+   "point": [
+    138.00954100408288,
+    36.22516
+   ],
+   "titles": [
+    "林城"
+   ],
+   "hits": 3,
+   "fetched": 3,
+   "truncated": false,
+   "result": "none",
+   "candidates": [],
+   "dropped": {
+    "otherKind": 0,
+    "noCoordinates": 0,
+    "titleMismatch": 2,
+    "tooFar": 1
+   }
+  },
+  {
+   "id": "yosho:柏木城:139.98:37.67",
+   "name": "柏木城",
+   "kind": "城",
+   "point": [
+    139.97655556499453,
+    37.66630556
+   ],
+   "titles": [
+    "柏木"
+   ],
+   "hits": 8,
+   "fetched": 8,
+   "truncated": false,
+   "result": "title-and-near",
+   "candidates": [
+    {
+     "id": "bunka-520604",
+     "title": "柏木城跡",
+     "kind": "史跡名勝天然記念物",
+     "prefecture": "福島県",
+     "address": "福島県耶麻郡北塩原村",
+     "designated": "20220315",
+     "point": [
+      139.97655556,
+      37.66630556
+     ],
+     "linkUrl": "https://online.bunka.go.jp/db/heritages/detail/520604",
+     "km": 0,
+     "match": "title-and-near"
+    }
+   ],
+   "dropped": {
+    "otherKind": 7,
+    "noCoordinates": 0,
+    "titleMismatch": 0,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "yosho:栖吉城:138.9:37.43",
+   "name": "栖吉城",
+   "kind": "城",
+   "point": [
+    138.90921400449983,
+    37.424474
+   ],
+   "titles": [
+    "栖吉"
+   ],
+   "hits": 0,
+   "fetched": 0,
+   "truncated": false,
+   "result": "none",
+   "candidates": [],
+   "dropped": {
+    "otherKind": 0,
+    "noCoordinates": 0,
+    "titleMismatch": 0,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "yosho:根城:141.46:40.51",
+   "name": "根城",
+   "kind": "城",
+   "point": [
+    141.46045500568223,
+    40.506192
+   ],
+   "titles": [
+    "根城"
+   ],
+   "hits": 10,
+   "fetched": 10,
+   "truncated": false,
+   "result": "title-and-near",
+   "candidates": [
+    {
+     "id": "bunka-204603",
+     "title": "根城跡",
+     "kind": "史跡名勝天然記念物",
+     "prefecture": "青森県",
+     "address": "八戸市根城",
+     "designated": "19411213",
+     "point": [
+      141.46092654,
+      40.50619217
+     ],
+     "linkUrl": "https://online.bunka.go.jp/db/heritages/detail/204603",
+     "km": 0.04,
+     "match": "title-and-near"
+    }
+   ],
+   "dropped": {
+    "otherKind": 7,
+    "noCoordinates": 0,
+    "titleMismatch": 1,
+    "tooFar": 1
+   }
+  },
+  {
+   "id": "yosho:根知城:137.87:36.96",
+   "name": "根知城",
+   "kind": "城",
+   "point": [
+    137.86963400401802,
+    36.959569
+   ],
+   "titles": [
+    "根知"
+   ],
+   "hits": 3,
+   "fetched": 3,
+   "truncated": false,
+   "result": "none",
+   "candidates": [],
+   "dropped": {
+    "otherKind": 2,
+    "noCoordinates": 0,
+    "titleMismatch": 1,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "yosho:桑名城:136.7:35.06",
+   "name": "桑名城",
+   "kind": "城",
+   "point": [
+    136.70072100347627,
+    35.066003
+   ],
+   "titles": [
+    "桑名"
+   ],
+   "hits": 4,
+   "fetched": 4,
+   "truncated": false,
+   "result": "none",
+   "candidates": [],
+   "dropped": {
+    "otherKind": 4,
+    "noCoordinates": 0,
+    "titleMismatch": 0,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "yosho:梁川城:140.61:37.86",
+   "name": "梁川城",
+   "kind": "城",
+   "point": [
+    140.61099300528855,
+    37.855061
+   ],
+   "titles": [
+    "梁川"
+   ],
+   "hits": 6,
+   "fetched": 6,
+   "truncated": false,
+   "result": "none",
+   "candidates": [],
+   "dropped": {
+    "otherKind": 5,
+    "noCoordinates": 0,
+    "titleMismatch": 1,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "yosho:梶谷城:129.79:33.35",
+   "name": "梶谷城",
+   "kind": "城",
+   "point": [
+    129.78825100027262,
+    33.352273
+   ],
+   "titles": [
+    "梶谷"
+   ],
+   "hits": 0,
+   "fetched": 0,
+   "truncated": false,
+   "result": "none",
+   "candidates": [],
+   "dropped": {
+    "otherKind": 0,
+    "noCoordinates": 0,
+    "titleMismatch": 0,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "yosho:横須賀城:137.971296:34.685708",
+   "name": "横須賀城",
+   "kind": "城",
+   "point": [
+    137.97129600406515,
+    34.685708
+   ],
+   "titles": [
+    "横須賀"
+   ],
+   "hits": 14,
+   "fetched": 14,
+   "truncated": false,
+   "result": "title-and-near",
+   "candidates": [
+    {
+     "id": "bunka-190912",
+     "title": "横須賀城跡",
+     "kind": "史跡名勝天然記念物",
+     "prefecture": "静岡県",
+     "address": "掛川市",
+     "designated": "19810508",
+     "point": [
+      137.97084498,
+      34.68575788
+     ],
+     "linkUrl": "https://online.bunka.go.jp/db/heritages/detail/190912",
+     "km": 0.04,
+     "match": "title-and-near"
+    }
+   ],
+   "dropped": {
+    "otherKind": 13,
+    "noCoordinates": 0,
+    "titleMismatch": 0,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "yosho:樺沢城:138.83:37.03",
+   "name": "樺沢城",
+   "kind": "城",
+   "point": [
+    138.82186500445937,
+    37.027496
+   ],
+   "titles": [
+    "樺沢"
+   ],
+   "hits": 0,
+   "fetched": 0,
+   "truncated": false,
+   "result": "none",
+   "candidates": [],
+   "dropped": {
+    "otherKind": 0,
+    "noCoordinates": 0,
+    "titleMismatch": 0,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "yosho:水口岡山城:136.18:34.97",
+   "name": "水口岡山城",
+   "kind": "城",
+   "point": [
+    136.18014600323502,
+    34.970726
+   ],
+   "titles": [
+    "水口岡山",
+    "水口岡"
+   ],
+   "hits": 2,
+   "fetched": 2,
+   "truncated": false,
+   "result": "title-and-near",
+   "candidates": [
+    {
+     "id": "bunka-455389",
+     "title": "水口岡山城跡",
+     "kind": "史跡名勝天然記念物",
+     "prefecture": "滋賀県",
+     "address": "滋賀県甲賀市",
+     "designated": "20170209",
+     "point": [
+      136.18155484,
+      34.9700679
+     ],
+     "linkUrl": "https://online.bunka.go.jp/db/heritages/detail/455389",
+     "km": 0.15,
+     "match": "title-and-near"
+    }
+   ],
+   "dropped": {
+    "otherKind": 0,
+    "noCoordinates": 0,
+    "titleMismatch": 0,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "yosho:水戸城:140.48:36.37",
+   "name": "水戸城",
+   "kind": "城",
+   "point": [
+    140.48000000522782,
+    36.37
+   ],
+   "titles": [
+    "水戸"
+   ],
+   "hits": 11,
+   "fetched": 11,
+   "truncated": false,
+   "result": "none",
+   "candidates": [],
+   "dropped": {
+    "otherKind": 10,
+    "noCoordinates": 0,
+    "titleMismatch": 1,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "yosho:沓掛城:137.021826:35.068987",
+   "name": "沓掛城",
+   "kind": "城",
+   "point": [
+    137.0218260036251,
+    35.068987
+   ],
+   "titles": [
+    "沓掛"
+   ],
+   "hits": 0,
+   "fetched": 0,
+   "truncated": false,
+   "result": "none",
+   "candidates": [],
+   "dropped": {
+    "otherKind": 0,
+    "noCoordinates": 0,
+    "titleMismatch": 0,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "yosho:河後森城:132.71:33.22",
+   "name": "河後森城",
+   "kind": "城",
+   "point": [
+    132.71000000162675,
+    33.22
+   ],
+   "titles": [
+    "河後森"
+   ],
+   "hits": 1,
+   "fetched": 1,
+   "truncated": false,
+   "result": "title-and-near",
+   "candidates": [
+    {
+     "id": "bunka-139647",
+     "title": "河後森城跡",
+     "kind": "史跡名勝天然記念物",
+     "prefecture": "愛媛県",
+     "address": "北宇和郡松野町",
+     "designated": "19970911",
+     "point": [
+      132.70952554,
+      33.22372767
+     ],
+     "linkUrl": "https://online.bunka.go.jp/db/heritages/detail/139647",
+     "km": 0.42,
+     "match": "title-and-near"
+    }
+   ],
+   "dropped": {
+    "otherKind": 0,
+    "noCoordinates": 0,
+    "titleMismatch": 0,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "yosho:河村城:139.08:35.36",
+   "name": "河村城",
+   "kind": "城",
+   "point": [
+    139.0774090045778,
+    35.355366
+   ],
+   "titles": [
+    "河村"
+   ],
+   "hits": 4,
+   "fetched": 4,
+   "truncated": false,
+   "result": "none",
+   "candidates": [],
+   "dropped": {
+    "otherKind": 4,
+    "noCoordinates": 0,
+    "titleMismatch": 0,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "yosho:津和野城:131.76:34.46",
+   "name": "津和野城",
+   "kind": "城",
+   "point": [
+    131.7641530011884,
+    34.459973
+   ],
+   "titles": [
+    "津和野"
+   ],
+   "hits": 8,
+   "fetched": 8,
+   "truncated": false,
+   "result": "title-and-near",
+   "candidates": [
+    {
+     "id": "bunka-163551",
+     "title": "津和野城跡",
+     "kind": "史跡名勝天然記念物",
+     "prefecture": "島根県",
+     "address": "鹿足郡津和野町",
+     "designated": "19421014",
+     "point": [
+      131.76233296,
+      34.45903036
+     ],
+     "linkUrl": "https://online.bunka.go.jp/db/heritages/detail/163551",
+     "km": 0.2,
+     "match": "title-and-near"
+    }
+   ],
+   "dropped": {
+    "otherKind": 6,
+    "noCoordinates": 0,
+    "titleMismatch": 1,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "yosho:津城:136.51:34.72",
+   "name": "津城",
+   "kind": "城",
+   "point": [
+    136.50749000338672,
+    34.71778
+   ],
+   "titles": [
+    "津城"
+   ],
+   "hits": 0,
+   "fetched": 0,
+   "truncated": false,
+   "result": "none",
+   "candidates": [],
+   "dropped": {
+    "otherKind": 0,
+    "noCoordinates": 0,
+    "titleMismatch": 0,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "yosho:津川城:139.46:37.68",
+   "name": "津川城",
+   "kind": "城",
+   "point": [
+    139.45384900475224,
+    37.683712
+   ],
+   "titles": [
+    "津川"
+   ],
+   "hits": 14,
+   "fetched": 14,
+   "truncated": false,
+   "result": "none",
+   "candidates": [],
+   "dropped": {
+    "otherKind": 11,
+    "noCoordinates": 0,
+    "titleMismatch": 3,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "yosho:浪岡城:140.6:40.72",
+   "name": "浪岡城",
+   "kind": "城",
+   "point": [
+    140.6044060052855,
+    40.718131
+   ],
+   "titles": [
+    "浪岡"
+   ],
+   "hits": 1,
+   "fetched": 1,
+   "truncated": false,
+   "result": "title-and-near",
+   "candidates": [
+    {
+     "id": "bunka-161961",
+     "title": "浪岡城跡",
+     "kind": "史跡名勝天然記念物",
+     "prefecture": "青森県",
+     "address": "青森市",
+     "designated": "19400210",
+     "point": [
+      140.60476719,
+      40.71790162
+     ],
+     "linkUrl": "https://online.bunka.go.jp/db/heritages/detail/161961",
+     "km": 0.04,
+     "match": "title-and-near"
+    }
+   ],
+   "dropped": {
+    "otherKind": 0,
+    "noCoordinates": 0,
+    "titleMismatch": 0,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "yosho:深沢城:138.96:35.32",
+   "name": "深沢城",
+   "kind": "城",
+   "point": [
+    138.95470900452094,
+    35.323086
+   ],
+   "titles": [
+    "深沢"
+   ],
+   "hits": 5,
+   "fetched": 5,
+   "truncated": false,
+   "result": "none",
+   "candidates": [],
+   "dropped": {
+    "otherKind": 5,
+    "noCoordinates": 0,
+    "titleMismatch": 0,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "yosho:清水城:140.23:38.7",
+   "name": "清水城",
+   "kind": "城",
+   "point": [
+    140.22570200510998,
+    38.699518
+   ],
+   "titles": [
+    "清水"
+   ],
+   "hits": 121,
+   "fetched": 121,
+   "truncated": false,
+   "result": "none",
+   "candidates": [],
+   "dropped": {
+    "otherKind": 111,
+    "noCoordinates": 0,
+    "titleMismatch": 8,
+    "tooFar": 2
+   }
+  },
+  {
+   "id": "yosho:清水山城:136.02:35.36",
+   "name": "清水山城",
+   "kind": "城",
+   "point": [
+    136.02000000316082,
+    35.36
+   ],
+   "titles": [
+    "清水山",
+    "清水"
+   ],
+   "hits": 123,
+   "fetched": 123,
+   "truncated": false,
+   "result": "title-and-near",
+   "candidates": [
+    {
+     "id": "bunka-207253",
+     "title": "清水山城館跡",
+     "kind": "史跡名勝天然記念物",
+     "prefecture": "滋賀県",
+     "address": "高島郡新旭町",
+     "designated": "20040227",
+     "point": [
+      136.01957715,
+      35.36014646
+     ],
+     "linkUrl": "https://online.bunka.go.jp/db/heritages/detail/207253",
+     "km": 0.04,
+     "match": "title-and-near"
+    }
+   ],
+   "dropped": {
+    "otherKind": 111,
+    "noCoordinates": 0,
+    "titleMismatch": 8,
+    "tooFar": 1
+   }
+  },
+  {
+   "id": "yosho:清色城:130.43:31.81",
+   "name": "清色城",
+   "kind": "城",
+   "point": [
+    130.4618180005848,
+    31.769382
+   ],
+   "titles": [
+    "清色"
+   ],
+   "hits": 1,
+   "fetched": 1,
+   "truncated": false,
+   "result": "title-only",
+   "candidates": [
+    {
+     "id": "bunka-192632",
+     "title": "清色城跡",
+     "kind": "史跡名勝天然記念物",
+     "prefecture": "鹿児島県",
+     "address": "薩摩川内市入来町",
+     "designated": "20040930",
+     "point": [
+      130.42579692,
+      31.80624372
+     ],
+     "linkUrl": "https://online.bunka.go.jp/db/heritages/detail/192632",
+     "km": 5.33,
+     "match": "title-only"
+    }
+   ],
+   "dropped": {
+    "otherKind": 0,
+    "noCoordinates": 0,
+    "titleMismatch": 0,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "yosho:湊城:140.07:39.76",
+   "name": "湊城",
+   "kind": "城",
+   "point": [
+    140.0700000050378,
+    39.76
+   ],
+   "titles": [
+    "湊城"
+   ],
+   "hits": 0,
+   "fetched": 0,
+   "truncated": false,
+   "result": "none",
+   "candidates": [],
+   "dropped": {
+    "otherKind": 0,
+    "noCoordinates": 0,
+    "titleMismatch": 0,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "yosho:滝の城:139.53:35.8",
+   "name": "滝の城",
+   "kind": "城",
+   "point": [
+    139.53198300478846,
+    35.800275
+   ],
+   "titles": [
+    "滝の"
+   ],
+   "hits": 6,
+   "fetched": 6,
+   "truncated": false,
+   "result": "none",
+   "candidates": [],
+   "dropped": {
+    "otherKind": 6,
+    "noCoordinates": 0,
+    "titleMismatch": 0,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "yosho:火ヶ峰砦:138.0578468:34.7028421",
+   "name": "火ヶ峰砦",
+   "kind": "城",
+   "point": [
+    138.05784680410525,
+    34.7028421
+   ],
+   "titles": [
+    "火ヶ峰"
+   ],
+   "hits": 0,
+   "fetched": 0,
+   "truncated": false,
+   "result": "none",
+   "candidates": [],
+   "dropped": {
+    "otherKind": 0,
+    "noCoordinates": 0,
+    "titleMismatch": 0,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "yosho:炬口城:134.89:34.35",
+   "name": "炬口城",
+   "kind": "城",
+   "point": [
+    134.88991700263705,
+    34.352694
+   ],
+   "titles": [
+    "炬口"
+   ],
+   "hits": 0,
+   "fetched": 0,
+   "truncated": false,
+   "result": "none",
+   "candidates": [],
+   "dropped": {
+    "otherKind": 0,
+    "noCoordinates": 0,
+    "titleMismatch": 0,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "yosho:烏帽子形城:135.56:34.44",
+   "name": "烏帽子形城",
+   "kind": "城",
+   "point": [
+    135.56465400294977,
+    34.444641
+   ],
+   "titles": [
+    "烏帽子形"
+   ],
+   "hits": 2,
+   "fetched": 2,
+   "truncated": false,
+   "result": "title-and-near",
+   "candidates": [
+    {
+     "id": "bunka-226862",
+     "title": "烏帽子形城跡",
+     "kind": "史跡名勝天然記念物",
+     "prefecture": "大阪府",
+     "address": "大阪府河内長野市",
+     "designated": "20120124",
+     "point": [
+      135.56584018,
+      34.44520161
+     ],
+     "linkUrl": "https://online.bunka.go.jp/db/heritages/detail/226862",
+     "km": 0.13,
+     "match": "title-and-near"
+    }
+   ],
+   "dropped": {
+    "otherKind": 1,
+    "noCoordinates": 0,
+    "titleMismatch": 0,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "yosho:牧ノ島城:138:36.56",
+   "name": "牧ノ島城",
+   "kind": "城",
+   "point": [
+    137.9987920040779,
+    36.561868
+   ],
+   "titles": [
+    "牧ノ島"
+   ],
+   "hits": 0,
+   "fetched": 0,
+   "truncated": false,
+   "result": "none",
+   "candidates": [],
+   "dropped": {
+    "otherKind": 0,
+    "noCoordinates": 0,
+    "titleMismatch": 0,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "yosho:犬居城:137.89:34.96",
+   "name": "犬居城",
+   "kind": "城",
+   "point": [
+    137.89038100402763,
+    34.962279
+   ],
+   "titles": [
+    "犬居"
+   ],
+   "hits": 0,
+   "fetched": 0,
+   "truncated": false,
+   "result": "none",
+   "candidates": [],
+   "dropped": {
+    "otherKind": 0,
+    "noCoordinates": 0,
+    "titleMismatch": 0,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "yosho:犬山城:136.94:35.39",
+   "name": "犬山城",
+   "kind": "城",
+   "point": [
+    136.9391770035868,
+    35.38836
+   ],
+   "titles": [
+    "犬山"
+   ],
+   "hits": 4,
+   "fetched": 4,
+   "truncated": false,
+   "result": "title-and-near",
+   "candidates": [
+    {
+     "id": "bunka-376677",
+     "title": "犬山城跡",
+     "kind": "史跡名勝天然記念物",
+     "prefecture": "愛知県",
+     "address": "愛知県犬山市",
+     "designated": "20180213",
+     "point": [
+      136.94414972,
+      35.37862778
+     ],
+     "linkUrl": "https://online.bunka.go.jp/db/heritages/detail/376677",
+     "km": 1.17,
+     "match": "title-and-near"
+    }
+   ],
+   "dropped": {
+    "otherKind": 3,
+    "noCoordinates": 0,
+    "titleMismatch": 0,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "yosho:猪苗代城:140.1:37.56",
+   "name": "猪苗代城",
+   "kind": "城",
+   "point": [
+    140.10570600505437,
+    37.561557
+   ],
+   "titles": [
+    "猪苗代"
+   ],
+   "hits": 2,
+   "fetched": 2,
+   "truncated": false,
+   "result": "none",
+   "candidates": [],
+   "dropped": {
+    "otherKind": 0,
+    "noCoordinates": 0,
+    "titleMismatch": 2,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "yosho:獅子ヶ鼻砦:138.0711477:34.6954949",
+   "name": "獅子ヶ鼻砦",
+   "kind": "城",
+   "point": [
+    138.07114770411144,
+    34.6954949
+   ],
+   "titles": [
+    "獅子ヶ鼻"
+   ],
+   "hits": 1,
+   "fetched": 1,
+   "truncated": false,
+   "result": "none",
+   "candidates": [],
+   "dropped": {
+    "otherKind": 0,
+    "noCoordinates": 0,
+    "titleMismatch": 1,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "yosho:獅子城:130.04:33.31",
+   "name": "獅子城",
+   "kind": "城",
+   "point": [
+    130.0400000003893,
+    33.31
+   ],
+   "titles": [
+    "獅子"
+   ],
+   "hits": 126,
+   "fetched": 126,
+   "truncated": false,
+   "result": "none",
+   "candidates": [],
+   "dropped": {
+    "otherKind": 124,
+    "noCoordinates": 0,
+    "titleMismatch": 2,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "yosho:玄蕃尾城:136.18:35.6",
+   "name": "玄蕃尾城",
+   "kind": "城",
+   "point": [
+    136.18000000323497,
+    35.6
+   ],
+   "titles": [
+    "玄蕃尾"
+   ],
+   "hits": 1,
+   "fetched": 1,
+   "truncated": false,
+   "result": "title-and-near",
+   "candidates": [
+    {
+     "id": "bunka-140247",
+     "title": "玄蕃尾城跡",
+     "kind": "史跡名勝天然記念物",
+     "prefecture": "２県以上",
+     "address": "敦賀市刀根、伊香郡余呉町",
+     "designated": "19990713",
+     "point": [
+      136.17318165,
+      35.59753912
+     ],
+     "linkUrl": "https://online.bunka.go.jp/db/heritages/detail/140247",
+     "km": 0.67,
+     "match": "title-and-near"
+    }
+   ],
+   "dropped": {
+    "otherKind": 0,
+    "noCoordinates": 0,
+    "titleMismatch": 0,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "yosho:田中城:138.27:34.87",
+   "name": "田中城",
+   "kind": "城",
+   "point": [
+    138.27434300420558,
+    34.872365
+   ],
+   "titles": [
+    "田中"
+   ],
+   "hits": 224,
+   "fetched": 224,
+   "truncated": false,
+   "result": "none",
+   "candidates": [],
+   "dropped": {
+    "otherKind": 220,
+    "noCoordinates": 0,
+    "titleMismatch": 3,
+    "tooFar": 1
+   }
+  },
+  {
+   "id": "yosho:田丸城:136.63:34.49",
+   "name": "田丸城",
+   "kind": "城",
+   "point": [
+    136.62808400344264,
+    34.49055
+   ],
+   "titles": [
+    "田丸"
+   ],
+   "hits": 2,
+   "fetched": 2,
+   "truncated": false,
+   "result": "none",
+   "candidates": [],
+   "dropped": {
+    "otherKind": 2,
+    "noCoordinates": 0,
+    "titleMismatch": 0,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "yosho:田原城:137.27:34.67",
+   "name": "田原城",
+   "kind": "城",
+   "point": [
+    137.26969800374,
+    34.673834
+   ],
+   "titles": [
+    "田原"
+   ],
+   "hits": 12,
+   "fetched": 12,
+   "truncated": false,
+   "result": "none",
+   "candidates": [],
+   "dropped": {
+    "otherKind": 8,
+    "noCoordinates": 0,
+    "titleMismatch": 2,
+    "tooFar": 2
+   }
+  },
+  {
+   "id": "yosho:甲山城:132.96:34.85",
+   "name": "甲山城",
+   "kind": "城",
+   "point": [
+    132.95598300174075,
+    34.853635
+   ],
+   "titles": [
+    "甲山"
+   ],
+   "hits": 692,
+   "fetched": 692,
+   "truncated": false,
+   "result": "none",
+   "candidates": [],
+   "dropped": {
+    "otherKind": 689,
+    "noCoordinates": 0,
+    "titleMismatch": 3,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "yosho:甲府城:138.57:35.67",
+   "name": "甲府城",
+   "kind": "城",
+   "point": [
+    138.57139100434327,
+    35.665369
+   ],
+   "titles": [
+    "甲府"
+   ],
+   "hits": 11,
+   "fetched": 11,
+   "truncated": false,
+   "result": "none",
+   "candidates": [],
+   "dropped": {
+    "otherKind": 10,
+    "noCoordinates": 1,
+    "titleMismatch": 0,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "yosho:疋壇城:136.1:35.6",
+   "name": "疋壇城",
+   "kind": "城",
+   "point": [
+    136.09971700319775,
+    35.599752
+   ],
+   "titles": [
+    "疋壇"
+   ],
+   "hits": 0,
+   "fetched": 0,
+   "truncated": false,
+   "result": "none",
+   "candidates": [],
+   "dropped": {
+    "otherKind": 0,
+    "noCoordinates": 0,
+    "titleMismatch": 0,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "yosho:白石城:140.62:38",
+   "name": "白石城",
+   "kind": "城",
+   "point": [
+    140.61710000529138,
+    38.002576
+   ],
+   "titles": [
+    "白石"
+   ],
+   "hits": 18,
+   "fetched": 18,
+   "truncated": false,
+   "result": "none",
+   "candidates": [],
+   "dropped": {
+    "otherKind": 15,
+    "noCoordinates": 0,
+    "titleMismatch": 3,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "yosho:盛岡城:141.15:39.7",
+   "name": "盛岡城",
+   "kind": "城",
+   "point": [
+    141.15082100553875,
+    39.699997
+   ],
+   "titles": [
+    "盛岡"
+   ],
+   "hits": 11,
+   "fetched": 11,
+   "truncated": false,
+   "result": "title-and-near",
+   "candidates": [
+    {
+     "id": "bunka-190042",
+     "title": "盛岡城跡",
+     "kind": "史跡名勝天然記念物",
+     "prefecture": "岩手県",
+     "address": "盛岡市内丸",
+     "designated": "19370417",
+     "point": [
+      141.15108067,
+      39.70066354
+     ],
+     "linkUrl": "https://online.bunka.go.jp/db/heritages/detail/190042",
+     "km": 0.08,
+     "match": "title-and-near"
+    }
+   ],
+   "dropped": {
+    "otherKind": 9,
+    "noCoordinates": 0,
+    "titleMismatch": 1,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "yosho:直峰城:138.45:37.14",
+   "name": "直峰城",
+   "kind": "城",
+   "point": [
+    138.4512410042876,
+    37.140646
+   ],
+   "titles": [
+    "直峰"
+   ],
+   "hits": 0,
+   "fetched": 0,
+   "truncated": false,
+   "result": "none",
+   "candidates": [],
+   "dropped": {
+    "otherKind": 0,
+    "noCoordinates": 0,
+    "titleMismatch": 0,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "yosho:相馬中村城:140.91:37.8",
+   "name": "相馬中村城",
+   "kind": "城",
+   "point": [
+    140.91000000542712,
+    37.8
+   ],
+   "titles": [
+    "相馬中村"
+   ],
+   "hits": 1,
+   "fetched": 1,
+   "truncated": false,
+   "result": "none",
+   "candidates": [],
+   "dropped": {
+    "otherKind": 1,
+    "noCoordinates": 0,
+    "titleMismatch": 0,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "yosho:真壁城:140.11:36.27",
+   "name": "真壁城",
+   "kind": "城",
+   "point": [
+    140.10769200505527,
+    36.27537
+   ],
+   "titles": [
+    "真壁"
+   ],
+   "hits": 3,
+   "fetched": 3,
+   "truncated": false,
+   "result": "title-and-near",
+   "candidates": [
+    {
+     "id": "bunka-138047",
+     "title": "真壁城跡",
+     "kind": "史跡名勝天然記念物",
+     "prefecture": "茨城県",
+     "address": "桜川市真壁町",
+     "designated": "19941028",
+     "point": [
+      140.10953517,
+      36.27467142
+     ],
+     "linkUrl": "https://online.bunka.go.jp/db/heritages/detail/138047",
+     "km": 0.18,
+     "match": "title-and-near"
+    }
+   ],
+   "dropped": {
+    "otherKind": 2,
+    "noCoordinates": 0,
+    "titleMismatch": 0,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "yosho:矢筈城:134.1:35.2",
+   "name": "矢筈城",
+   "kind": "城",
+   "point": [
+    134.10000000227095,
+    35.2
+   ],
+   "titles": [
+    "矢筈"
+   ],
+   "hits": 5,
+   "fetched": 5,
+   "truncated": false,
+   "result": "none",
+   "candidates": [],
+   "dropped": {
+    "otherKind": 4,
+    "noCoordinates": 0,
+    "titleMismatch": 1,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "yosho:知覧城:130.44:31.37",
+   "name": "知覧城",
+   "kind": "城",
+   "point": [
+    130.44355300057634,
+    31.367538
+   ],
+   "titles": [
+    "知覧"
+   ],
+   "hits": 6,
+   "fetched": 6,
+   "truncated": false,
+   "result": "title-and-near",
+   "candidates": [
+    {
+     "id": "bunka-211690",
+     "title": "知覧城跡",
+     "kind": "史跡名勝天然記念物",
+     "prefecture": "鹿児島県",
+     "address": "南九州市",
+     "designated": "19930507",
+     "point": [
+      130.44312911,
+      31.36674517
+     ],
+     "linkUrl": "https://online.bunka.go.jp/db/heritages/detail/211690",
+     "km": 0.1,
+     "match": "title-and-near"
+    }
+   ],
+   "dropped": {
+    "otherKind": 4,
+    "noCoordinates": 0,
+    "titleMismatch": 1,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "yosho:石神城:140.58:36.48",
+   "name": "石神城",
+   "kind": "城",
+   "point": [
+    140.57773400527313,
+    36.481832
+   ],
+   "titles": [
+    "石神"
+   ],
+   "hits": 5,
+   "fetched": 5,
+   "truncated": false,
+   "result": "none",
+   "candidates": [],
+   "dropped": {
+    "otherKind": 3,
+    "noCoordinates": 0,
+    "titleMismatch": 2,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "yosho:石見七尾城:131.86:34.67",
+   "name": "石見七尾城",
+   "kind": "城",
+   "point": [
+    131.86387300123462,
+    34.672342
+   ],
+   "titles": [
+    "石見七尾"
+   ],
+   "hits": 0,
+   "fetched": 0,
+   "truncated": false,
+   "result": "none",
+   "candidates": [],
+   "dropped": {
+    "otherKind": 0,
+    "noCoordinates": 0,
+    "titleMismatch": 0,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "yosho:石見丸山城:132.41:34.98",
+   "name": "石見丸山城",
+   "kind": "城",
+   "point": [
+    132.4100000014877,
+    34.98
+   ],
+   "titles": [
+    "石見丸山",
+    "石見丸"
+   ],
+   "hits": 0,
+   "fetched": 0,
+   "truncated": false,
+   "result": "none",
+   "candidates": [],
+   "dropped": {
+    "otherKind": 0,
+    "noCoordinates": 0,
+    "titleMismatch": 0,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "yosho:磐城平城:140.89:37.06",
+   "name": "磐城平城",
+   "kind": "城",
+   "point": [
+    140.8905190054181,
+    37.060989
+   ],
+   "titles": [
+    "磐城平"
+   ],
+   "hits": 0,
+   "fetched": 0,
+   "truncated": false,
+   "result": "none",
+   "candidates": [],
+   "dropped": {
+    "otherKind": 0,
+    "noCoordinates": 0,
+    "titleMismatch": 0,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "yosho:祇園城:139.8:36.32",
+   "name": "祇園城",
+   "kind": "城",
+   "point": [
+    139.8000000049127,
+    36.32
+   ],
+   "titles": [
+    "祇園"
+   ],
+   "hits": 89,
+   "fetched": 89,
+   "truncated": false,
+   "result": "none",
+   "candidates": [],
+   "dropped": {
+    "otherKind": 88,
+    "noCoordinates": 0,
+    "titleMismatch": 1,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "yosho:神戸城:136.58:34.88",
+   "name": "神戸城",
+   "kind": "城",
+   "point": [
+    136.58019400342044,
+    34.876315
+   ],
+   "titles": [
+    "神戸"
+   ],
+   "hits": 381,
+   "fetched": 381,
+   "truncated": false,
+   "result": "none",
+   "candidates": [],
+   "dropped": {
+    "otherKind": 379,
+    "noCoordinates": 0,
+    "titleMismatch": 2,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "yosho:福岡城:130.38:33.59",
+   "name": "福岡城",
+   "kind": "城",
+   "point": [
+    130.38321600054837,
+    33.585245
+   ],
+   "titles": [
+    "福岡"
+   ],
+   "hits": 58,
+   "fetched": 58,
+   "truncated": false,
+   "result": "title-and-near",
+   "candidates": [
+    {
+     "id": "bunka-139524",
+     "title": "福岡城跡",
+     "kind": "史跡名勝天然記念物",
+     "prefecture": "福岡県",
+     "address": "福岡市中央区城内",
+     "designated": "19570829",
+     "point": [
+      130.38288081,
+      33.58428797
+     ],
+     "linkUrl": "https://online.bunka.go.jp/db/heritages/detail/139524",
+     "km": 0.11,
+     "match": "title-and-near"
+    }
+   ],
+   "dropped": {
+    "otherKind": 57,
+    "noCoordinates": 0,
+    "titleMismatch": 0,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "yosho:穆佐城:131.32:31.93",
+   "name": "穆佐城",
+   "kind": "城",
+   "point": [
+    131.32345500098413,
+    31.933262
+   ],
+   "titles": [
+    "穆佐"
+   ],
+   "hits": 1,
+   "fetched": 1,
+   "truncated": false,
+   "result": "title-and-near",
+   "candidates": [
+    {
+     "id": "bunka-207163",
+     "title": "穆佐城跡",
+     "kind": "史跡名勝天然記念物",
+     "prefecture": "宮崎県",
+     "address": "宮崎市",
+     "designated": "20020319",
+     "point": [
+      131.32270659,
+      31.93333958
+     ],
+     "linkUrl": "https://online.bunka.go.jp/db/heritages/detail/207163",
+     "km": 0.07,
+     "match": "title-and-near"
+    }
+   ],
+   "dropped": {
+    "otherKind": 0,
+    "noCoordinates": 0,
+    "titleMismatch": 0,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "yosho:竹田城:134.83:35.3",
+   "name": "竹田城",
+   "kind": "城",
+   "point": [
+    134.8291680026089,
+    35.300604
+   ],
+   "titles": [
+    "竹田"
+   ],
+   "hits": 15,
+   "fetched": 15,
+   "truncated": false,
+   "result": "title-and-near",
+   "candidates": [
+    {
+     "id": "bunka-161758",
+     "title": "竹田城跡",
+     "kind": "史跡名勝天然記念物",
+     "prefecture": "兵庫県",
+     "address": "朝来市和田山町竹田",
+     "designated": "19430908",
+     "point": [
+      134.82856149,
+      35.29939735
+     ],
+     "linkUrl": "https://online.bunka.go.jp/db/heritages/detail/161758",
+     "km": 0.15,
+     "match": "title-and-near"
+    }
+   ],
+   "dropped": {
+    "otherKind": 11,
+    "noCoordinates": 0,
+    "titleMismatch": 3,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "yosho:笠間城:140.27:36.38",
+   "name": "笠間城",
+   "kind": "城",
+   "point": [
+    140.26637300512883,
+    36.382686
+   ],
+   "titles": [
+    "笠間"
+   ],
+   "hits": 4,
+   "fetched": 4,
+   "truncated": false,
+   "result": "none",
+   "candidates": [],
+   "dropped": {
+    "otherKind": 4,
+    "noCoordinates": 0,
+    "titleMismatch": 0,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "yosho:篠山城:135.22:35.07",
+   "name": "篠山城",
+   "kind": "城",
+   "point": [
+    135.21749100278888,
+    35.073417
+   ],
+   "titles": [
+    "篠山"
+   ],
+   "hits": 15,
+   "fetched": 15,
+   "truncated": false,
+   "result": "title-and-near",
+   "candidates": [
+    {
+     "id": "bunka-161768",
+     "title": "篠山城跡",
+     "kind": "史跡名勝天然記念物",
+     "prefecture": "兵庫県",
+     "address": "篠山市北新町",
+     "designated": "19561228",
+     "point": [
+      135.21753743,
+      35.07307595
+     ],
+     "linkUrl": "https://online.bunka.go.jp/db/heritages/detail/161768",
+     "km": 0.04,
+     "match": "title-and-near"
+    }
+   ],
+   "dropped": {
+    "otherKind": 14,
+    "noCoordinates": 0,
+    "titleMismatch": 0,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "yosho:米子城:133.32:35.43",
+   "name": "米子城",
+   "kind": "城",
+   "point": [
+    133.3243970019115,
+    35.42503
+   ],
+   "titles": [
+    "米子"
+   ],
+   "hits": 11,
+   "fetched": 11,
+   "truncated": false,
+   "result": "title-and-near",
+   "candidates": [
+    {
+     "id": "bunka-140264",
+     "title": "米子城跡",
+     "kind": "史跡名勝天然記念物",
+     "prefecture": "鳥取県",
+     "address": "米子市",
+     "designated": "20060126",
+     "point": [
+      133.3240774,
+      35.42481794
+     ],
+     "linkUrl": "https://online.bunka.go.jp/db/heritages/detail/140264",
+     "km": 0.04,
+     "match": "title-and-near"
+    }
+   ],
+   "dropped": {
+    "otherKind": 9,
+    "noCoordinates": 0,
+    "titleMismatch": 1,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "yosho:紀伊亀山城:135.15:33.91",
+   "name": "紀伊亀山城",
+   "kind": "城",
+   "point": [
+    135.15466100275975,
+    33.910972
+   ],
+   "titles": [
+    "紀伊亀山",
+    "紀伊亀"
+   ],
+   "hits": 0,
+   "fetched": 0,
+   "truncated": false,
+   "result": "none",
+   "candidates": [],
+   "dropped": {
+    "otherKind": 0,
+    "noCoordinates": 0,
+    "titleMismatch": 0,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "yosho:美作岩屋城:133.83:35.08",
+   "name": "美作岩屋城",
+   "kind": "城",
+   "point": [
+    133.8344700021479,
+    35.076306
+   ],
+   "titles": [
+    "美作岩屋"
+   ],
+   "hits": 0,
+   "fetched": 0,
+   "truncated": false,
+   "result": "none",
+   "candidates": [],
+   "dropped": {
+    "otherKind": 0,
+    "noCoordinates": 0,
+    "titleMismatch": 0,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "yosho:羽茂城:138.32:37.84",
+   "name": "羽茂城",
+   "kind": "城",
+   "point": [
+    138.318331004226,
+    37.844662
+   ],
+   "titles": [
+    "羽茂"
+   ],
+   "hits": 0,
+   "fetched": 0,
+   "truncated": false,
+   "result": "none",
+   "candidates": [],
+   "dropped": {
+    "otherKind": 0,
+    "noCoordinates": 0,
+    "titleMismatch": 0,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "yosho:羽衣石城:133.9:35.44",
+   "name": "羽衣石城",
+   "kind": "城",
+   "point": [
+    133.89867500217764,
+    35.437209
+   ],
+   "titles": [
+    "羽衣石"
+   ],
+   "hits": 1,
+   "fetched": 1,
+   "truncated": false,
+   "result": "title-and-near",
+   "candidates": [
+    {
+     "id": "bunka-653176",
+     "title": "羽衣石城跡",
+     "kind": "史跡名勝天然記念物",
+     "prefecture": "鳥取県",
+     "address": "鳥取県東伯郡湯梨浜町",
+     "designated": "20260217",
+     "point": [
+      133.89893611,
+      35.43767222
+     ],
+     "linkUrl": "https://online.bunka.go.jp/db/heritages/detail/653176",
+     "km": 0.06,
+     "match": "title-and-near"
+    }
+   ],
+   "dropped": {
+    "otherKind": 0,
+    "noCoordinates": 0,
+    "titleMismatch": 0,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "yosho:肥後田中城:130.6:33.08",
+   "name": "肥後田中城",
+   "kind": "城",
+   "point": [
+    130.59552500064677,
+    33.078357
+   ],
+   "titles": [
+    "肥後田中"
+   ],
+   "hits": 0,
+   "fetched": 0,
+   "truncated": false,
+   "result": "none",
+   "candidates": [],
+   "dropped": {
+    "otherKind": 0,
+    "noCoordinates": 0,
+    "titleMismatch": 0,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "yosho:能ヶ坂砦:138.0467885:34.7140548",
+   "name": "能ヶ坂砦",
+   "kind": "城",
+   "point": [
+    138.04678850410014,
+    34.7140548
+   ],
+   "titles": [
+    "能ヶ坂"
+   ],
+   "hits": 0,
+   "fetched": 0,
+   "truncated": false,
+   "result": "none",
+   "candidates": [],
+   "dropped": {
+    "otherKind": 0,
+    "noCoordinates": 0,
+    "titleMismatch": 0,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "yosho:能島城:133.08:34.18",
+   "name": "能島城",
+   "kind": "城",
+   "point": [
+    133.08087200179864,
+    34.183058
+   ],
+   "titles": [
+    "能島"
+   ],
+   "hits": 2,
+   "fetched": 2,
+   "truncated": false,
+   "result": "title-and-near",
+   "candidates": [
+    {
+     "id": "bunka-191872",
+     "title": "能島城跡",
+     "kind": "史跡名勝天然記念物",
+     "prefecture": "愛媛県",
+     "address": "今治市宮窪町",
+     "designated": "19530331",
+     "point": [
+      133.08079052,
+      34.1826631
+     ],
+     "linkUrl": "https://online.bunka.go.jp/db/heritages/detail/191872",
+     "km": 0.04,
+     "match": "title-and-near"
+    }
+   ],
+   "dropped": {
+    "otherKind": 1,
+    "noCoordinates": 0,
+    "titleMismatch": 0,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "yosho:能登末森城:136.78:36.83",
+   "name": "能登末森城",
+   "kind": "城",
+   "point": [
+    136.7784120035123,
+    36.833927
+   ],
+   "titles": [
+    "能登末森"
+   ],
+   "hits": 0,
+   "fetched": 0,
+   "truncated": false,
+   "result": "none",
+   "candidates": [],
+   "dropped": {
+    "otherKind": 0,
+    "noCoordinates": 0,
+    "titleMismatch": 0,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "yosho:脇本城:139.89:39.9",
+   "name": "脇本城",
+   "kind": "城",
+   "point": [
+    139.88873200495382,
+    39.901836
+   ],
+   "titles": [
+    "脇本"
+   ],
+   "hits": 18,
+   "fetched": 18,
+   "truncated": false,
+   "result": "title-and-near",
+   "candidates": [
+    {
+     "id": "bunka-212040",
+     "title": "脇本城跡",
+     "kind": "史跡名勝天然記念物",
+     "prefecture": "秋田県",
+     "address": "男鹿市脇本",
+     "designated": "20040930",
+     "point": [
+      139.889099,
+      39.902576
+     ],
+     "linkUrl": "https://online.bunka.go.jp/db/heritages/detail/212040",
+     "km": 0.09,
+     "match": "title-and-near"
+    }
+   ],
+   "dropped": {
+    "otherKind": 17,
+    "noCoordinates": 0,
+    "titleMismatch": 0,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "yosho:膳城:139.22:36.42",
+   "name": "膳城",
+   "kind": "城",
+   "point": [
+    139.22340800464545,
+    36.42149
+   ],
+   "titles": [
+    "膳城"
+   ],
+   "hits": 0,
+   "fetched": 0,
+   "truncated": false,
+   "result": "none",
+   "candidates": [],
+   "dropped": {
+    "otherKind": 0,
+    "noCoordinates": 0,
+    "titleMismatch": 0,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "yosho:膳所城:135.9:35",
+   "name": "膳所城",
+   "kind": "城",
+   "point": [
+    135.89495900310285,
+    34.995331
+   ],
+   "titles": [
+    "膳所"
+   ],
+   "hits": 1,
+   "fetched": 1,
+   "truncated": false,
+   "result": "none",
+   "candidates": [],
+   "dropped": {
+    "otherKind": 1,
+    "noCoordinates": 0,
+    "titleMismatch": 0,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "yosho:臼杵城:131.8:33.12",
+   "name": "臼杵城",
+   "kind": "城",
+   "point": [
+    131.80312400120644,
+    33.121615
+   ],
+   "titles": [
+    "臼杵"
+   ],
+   "hits": 10,
+   "fetched": 10,
+   "truncated": false,
+   "result": "title-and-near",
+   "candidates": [
+    {
+     "id": "bunka-597452",
+     "title": "臼杵城跡",
+     "kind": "史跡名勝天然記念物",
+     "prefecture": "大分県",
+     "address": "大分県臼杵市",
+     "designated": "20250310",
+     "point": [
+      131.80331389,
+      33.12163333
+     ],
+     "linkUrl": "https://online.bunka.go.jp/db/heritages/detail/597452",
+     "km": 0.02,
+     "match": "title-and-near"
+    }
+   ],
+   "dropped": {
+    "otherKind": 8,
+    "noCoordinates": 0,
+    "titleMismatch": 1,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "yosho:興国寺城:138.81:35.14",
+   "name": "興国寺城",
+   "kind": "城",
+   "point": [
+    138.80713100445251,
+    35.141468
+   ],
+   "titles": [
+    "興国寺"
+   ],
+   "hits": 8,
+   "fetched": 8,
+   "truncated": false,
+   "result": "title-and-near",
+   "candidates": [
+    {
+     "id": "bunka-201826",
+     "title": "興国寺城跡",
+     "kind": "史跡名勝天然記念物",
+     "prefecture": "静岡県",
+     "address": "沼津市根古屋・青野",
+     "designated": "19950317",
+     "point": [
+      138.80660207,
+      35.14162532
+     ],
+     "linkUrl": "https://online.bunka.go.jp/db/heritages/detail/201826",
+     "km": 0.05,
+     "match": "title-and-near"
+    }
+   ],
+   "dropped": {
+    "otherKind": 7,
+    "noCoordinates": 0,
+    "titleMismatch": 0,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "yosho:舘山城:140.06:37.91",
+   "name": "舘山城",
+   "kind": "城",
+   "point": [
+    140.06000000503317,
+    37.91
+   ],
+   "titles": [
+    "舘山"
+   ],
+   "hits": 6,
+   "fetched": 6,
+   "truncated": false,
+   "result": "title-and-near",
+   "candidates": [
+    {
+     "id": "bunka-244318",
+     "title": "舘山城跡",
+     "kind": "史跡名勝天然記念物",
+     "prefecture": "山形県",
+     "address": "山形県米沢市",
+     "designated": "20160301",
+     "point": [
+      140.06384541,
+      37.9121874
+     ],
+     "linkUrl": "https://online.bunka.go.jp/db/heritages/detail/244318",
+     "km": 0.42,
+     "match": "title-and-near"
+    }
+   ],
+   "dropped": {
+    "otherKind": 5,
+    "noCoordinates": 0,
+    "titleMismatch": 0,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "yosho:苗木城:137.49:35.51",
+   "name": "苗木城",
+   "kind": "城",
+   "point": [
+    137.48514200383983,
+    35.51308
+   ],
+   "titles": [
+    "苗木"
+   ],
+   "hits": 1,
+   "fetched": 1,
+   "truncated": false,
+   "result": "title-and-near",
+   "candidates": [
+    {
+     "id": "bunka-172145",
+     "title": "苗木城跡",
+     "kind": "史跡名勝天然記念物",
+     "prefecture": "岐阜県",
+     "address": "中津川市苗木",
+     "designated": "19810422",
+     "point": [
+      137.48537435,
+      35.51317173
+     ],
+     "linkUrl": "https://online.bunka.go.jp/db/heritages/detail/172145",
+     "km": 0.02,
+     "match": "title-and-near"
+    }
+   ],
+   "dropped": {
+    "otherKind": 0,
+    "noCoordinates": 0,
+    "titleMismatch": 0,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "yosho:若桜鬼ヶ城:134.4:35.34",
+   "name": "若桜鬼ヶ城",
+   "kind": "城",
+   "point": [
+    134.40000000241,
+    35.34
+   ],
+   "titles": [
+    "若桜鬼ヶ"
+   ],
+   "hits": 1,
+   "fetched": 1,
+   "truncated": false,
+   "result": "title-and-near",
+   "candidates": [
+    {
+     "id": "bunka-203696",
+     "title": "若桜鬼ヶ城跡",
+     "kind": "史跡名勝天然記念物",
+     "prefecture": "鳥取県",
+     "address": "八頭郡若桜町",
+     "designated": "20080328",
+     "point": [
+      134.39697725,
+      35.33798238
+     ],
+     "linkUrl": "https://online.bunka.go.jp/db/heritages/detail/203696",
+     "km": 0.35,
+     "match": "title-and-near"
+    }
+   ],
+   "dropped": {
+    "otherKind": 0,
+    "noCoordinates": 0,
+    "titleMismatch": 0,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "yosho:荒滝山城:131.3:34.15",
+   "name": "荒滝山城",
+   "kind": "城",
+   "point": [
+    131.29683400097178,
+    34.152859
+   ],
+   "titles": [
+    "荒滝山",
+    "荒滝"
+   ],
+   "hits": 0,
+   "fetched": 0,
+   "truncated": false,
+   "result": "none",
+   "candidates": [],
+   "dropped": {
+    "otherKind": 0,
+    "noCoordinates": 0,
+    "titleMismatch": 0,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "yosho:荷揚城:131.61159:33.240535",
+   "name": "荷揚城",
+   "kind": "城",
+   "point": [
+    131.6115900011177,
+    33.240535
+   ],
+   "titles": [
+    "荷揚"
+   ],
+   "hits": 2,
+   "fetched": 2,
+   "truncated": false,
+   "result": "none",
+   "candidates": [],
+   "dropped": {
+    "otherKind": 2,
+    "noCoordinates": 0,
+    "titleMismatch": 0,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "yosho:萩城:131.38:34.42",
+   "name": "萩城",
+   "kind": "城",
+   "point": [
+    131.3833630010119,
+    34.418685
+   ],
+   "titles": [
+    "萩城"
+   ],
+   "hits": 3,
+   "fetched": 3,
+   "truncated": false,
+   "result": "title-and-near",
+   "candidates": [
+    {
+     "id": "bunka-162238",
+     "title": "萩城跡",
+     "kind": "史跡名勝天然記念物",
+     "prefecture": "山口県",
+     "address": "萩市堀内・北方河町・南方河町・平安古",
+     "designated": "19510609",
+     "point": [
+      131.39152941,
+      34.41238816
+     ],
+     "linkUrl": "https://online.bunka.go.jp/db/heritages/detail/162238",
+     "km": 1.03,
+     "match": "title-and-near"
+    }
+   ],
+   "dropped": {
+    "otherKind": 1,
+    "noCoordinates": 0,
+    "titleMismatch": 1,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "yosho:西尾城:137.05:34.86",
+   "name": "西尾城",
+   "kind": "城",
+   "point": [
+    137.04779000363715,
+    34.865257
+   ],
+   "titles": [
+    "西尾"
+   ],
+   "hits": 30,
+   "fetched": 30,
+   "truncated": false,
+   "result": "none",
+   "candidates": [],
+   "dropped": {
+    "otherKind": 30,
+    "noCoordinates": 0,
+    "titleMismatch": 0,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "yosho:西方城:139.72:36.47",
+   "name": "西方城",
+   "kind": "城",
+   "point": [
+    139.7199760048756,
+    36.473563
+   ],
+   "titles": [
+    "西方"
+   ],
+   "hits": 19,
+   "fetched": 19,
+   "truncated": false,
+   "result": "title-and-near",
+   "candidates": [
+    {
+     "id": "bunka-588664",
+     "title": "西方城跡",
+     "kind": "史跡名勝天然記念物",
+     "prefecture": "栃木県",
+     "address": "栃木県栃木市",
+     "designated": "20241011",
+     "point": [
+      139.72087222,
+      36.47381667
+     ],
+     "linkUrl": "https://online.bunka.go.jp/db/heritages/detail/588664",
+     "km": 0.08,
+     "match": "title-and-near"
+    }
+   ],
+   "dropped": {
+    "otherKind": 17,
+    "noCoordinates": 0,
+    "titleMismatch": 1,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "yosho:西馬音内城:140.38:39.19",
+   "name": "西馬音内城",
+   "kind": "城",
+   "point": [
+    140.37405600517872,
+    39.186348
+   ],
+   "titles": [
+    "西馬音内"
+   ],
+   "hits": 16,
+   "fetched": 16,
+   "truncated": false,
+   "result": "none",
+   "candidates": [],
+   "dropped": {
+    "otherKind": 16,
+    "noCoordinates": 0,
+    "titleMismatch": 0,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "yosho:要害山城:138.6:35.7",
+   "name": "要害山城",
+   "kind": "城",
+   "point": [
+    138.60000000435653,
+    35.7
+   ],
+   "titles": [
+    "要害山",
+    "要害"
+   ],
+   "hits": 2,
+   "fetched": 2,
+   "truncated": false,
+   "result": "none",
+   "candidates": [],
+   "dropped": {
+    "otherKind": 0,
+    "noCoordinates": 0,
+    "titleMismatch": 1,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "yosho:角牟礼城:131.15:33.31",
+   "name": "角牟礼城",
+   "kind": "城",
+   "point": [
+    131.15411200090566,
+    33.309637
+   ],
+   "titles": [
+    "角牟礼"
+   ],
+   "hits": 1,
+   "fetched": 1,
+   "truncated": false,
+   "result": "title-and-near",
+   "candidates": [
+    {
+     "id": "bunka-203556",
+     "title": "角牟礼城跡",
+     "kind": "史跡名勝天然記念物",
+     "prefecture": "大分県",
+     "address": "玖珠郡玖珠町",
+     "designated": "20050302",
+     "point": [
+      131.1546441,
+      33.30875846
+     ],
+     "linkUrl": "https://online.bunka.go.jp/db/heritages/detail/203556",
+     "km": 0.11,
+     "match": "title-and-near"
+    }
+   ],
+   "dropped": {
+    "otherKind": 0,
+    "noCoordinates": 0,
+    "titleMismatch": 0,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "yosho:諏訪原城:138.12:34.82",
+   "name": "諏訪原城",
+   "kind": "城",
+   "point": [
+    138.11989900413403,
+    34.81833
+   ],
+   "titles": [
+    "諏訪原"
+   ],
+   "hits": 1,
+   "fetched": 1,
+   "truncated": false,
+   "result": "title-and-near",
+   "candidates": [
+    {
+     "id": "bunka-172205",
+     "title": "諏訪原城跡",
+     "kind": "史跡名勝天然記念物",
+     "prefecture": "静岡県",
+     "address": "島田市",
+     "designated": "19751125",
+     "point": [
+      138.11877881,
+      34.81780776
+     ],
+     "linkUrl": "https://online.bunka.go.jp/db/heritages/detail/172205",
+     "km": 0.12,
+     "match": "title-and-near"
+    }
+   ],
+   "dropped": {
+    "otherKind": 0,
+    "noCoordinates": 0,
+    "titleMismatch": 0,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "yosho:讃岐高松城:134.05:34.35",
+   "name": "讃岐高松城",
+   "kind": "城",
+   "point": [
+    134.05161900224851,
+    34.350316
+   ],
+   "titles": [
+    "讃岐高松"
+   ],
+   "hits": 0,
+   "fetched": 0,
+   "truncated": false,
+   "result": "none",
+   "candidates": [],
+   "dropped": {
+    "otherKind": 0,
+    "noCoordinates": 0,
+    "titleMismatch": 0,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "yosho:赤木城:135.95:33.9",
+   "name": "赤木城",
+   "kind": "城",
+   "point": [
+    135.95000000312834,
+    33.9
+   ],
+   "titles": [
+    "赤木"
+   ],
+   "hits": 22,
+   "fetched": 22,
+   "truncated": false,
+   "result": "title-and-near",
+   "candidates": [
+    {
+     "id": "bunka-138594",
+     "title": "赤木城跡及び田平子峠刑場跡",
+     "kind": "史跡名勝天然記念物",
+     "prefecture": "三重県",
+     "address": "熊野市",
+     "designated": "19891009",
+     "point": [
+      135.95164706,
+      33.89608408
+     ],
+     "linkUrl": "https://online.bunka.go.jp/db/heritages/detail/138594",
+     "km": 0.46,
+     "match": "title-and-near"
+    }
+   ],
+   "dropped": {
+    "otherKind": 20,
+    "noCoordinates": 0,
+    "titleMismatch": 0,
+    "tooFar": 1
+   }
+  },
+  {
+   "id": "yosho:越中宮崎城:137.59:36.96",
+   "name": "越中宮崎城",
+   "kind": "城",
+   "point": [
+    137.58573000388645,
+    36.96285
+   ],
+   "titles": [
+    "越中宮崎"
+   ],
+   "hits": 0,
+   "fetched": 0,
+   "truncated": false,
+   "result": "none",
+   "candidates": [],
+   "dropped": {
+    "otherKind": 0,
+    "noCoordinates": 0,
+    "titleMismatch": 0,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "yosho:越前大野城:136.48:35.99",
+   "name": "越前大野城",
+   "kind": "城",
+   "point": [
+    136.48384800337578,
+    35.985469
+   ],
+   "titles": [
+    "越前大野"
+   ],
+   "hits": 0,
+   "fetched": 0,
+   "truncated": false,
+   "result": "none",
+   "candidates": [],
+   "dropped": {
+    "otherKind": 0,
+    "noCoordinates": 0,
+    "titleMismatch": 0,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "yosho:越後高田城:138.26:37.11",
+   "name": "越後高田城",
+   "kind": "城",
+   "point": [
+    138.2570660041976,
+    37.110001
+   ],
+   "titles": [
+    "越後高田"
+   ],
+   "hits": 1,
+   "fetched": 1,
+   "truncated": false,
+   "result": "none",
+   "candidates": [],
+   "dropped": {
+    "otherKind": 1,
+    "noCoordinates": 0,
+    "titleMismatch": 0,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "yosho:逆井城:139.85:36.14",
+   "name": "逆井城",
+   "kind": "城",
+   "point": [
+    139.85234400493692,
+    36.142524
+   ],
+   "titles": [
+    "逆井"
+   ],
+   "hits": 0,
+   "fetched": 0,
+   "truncated": false,
+   "result": "none",
+   "candidates": [],
+   "dropped": {
+    "otherKind": 0,
+    "noCoordinates": 0,
+    "titleMismatch": 0,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "yosho:郡上八幡城:136.96:35.75",
+   "name": "郡上八幡城",
+   "kind": "城",
+   "point": [
+    136.96000000359646,
+    35.75
+   ],
+   "titles": [
+    "郡上八幡"
+   ],
+   "hits": 5,
+   "fetched": 5,
+   "truncated": false,
+   "result": "none",
+   "candidates": [],
+   "dropped": {
+    "otherKind": 5,
+    "noCoordinates": 0,
+    "titleMismatch": 0,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "yosho:野田城:137.47:34.88",
+   "name": "野田城",
+   "kind": "城",
+   "point": [
+    137.46838900383207,
+    34.882196
+   ],
+   "titles": [
+    "野田"
+   ],
+   "hits": 21,
+   "fetched": 21,
+   "truncated": false,
+   "result": "none",
+   "candidates": [],
+   "dropped": {
+    "otherKind": 21,
+    "noCoordinates": 0,
+    "titleMismatch": 0,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "yosho:鍋山城:137.29:36.15",
+   "name": "鍋山城",
+   "kind": "城",
+   "point": [
+    137.29081800374976,
+    36.151388
+   ],
+   "titles": [
+    "鍋山"
+   ],
+   "hits": 3,
+   "fetched": 3,
+   "truncated": false,
+   "result": "none",
+   "candidates": [],
+   "dropped": {
+    "otherKind": 2,
+    "noCoordinates": 0,
+    "titleMismatch": 1,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "yosho:鎌刃城:136.32:35.3",
+   "name": "鎌刃城",
+   "kind": "城",
+   "point": [
+    136.3153860032977,
+    35.29703
+   ],
+   "titles": [
+    "鎌刃"
+   ],
+   "hits": 1,
+   "fetched": 1,
+   "truncated": false,
+   "result": "title-and-near",
+   "candidates": [
+    {
+     "id": "bunka-163098",
+     "title": "鎌刃城跡",
+     "kind": "史跡名勝天然記念物",
+     "prefecture": "滋賀県",
+     "address": "米原市",
+     "designated": "20050302",
+     "point": [
+      136.31376999,
+      35.29687246
+     ],
+     "linkUrl": "https://online.bunka.go.jp/db/heritages/detail/163098",
+     "km": 0.15,
+     "match": "title-and-near"
+    }
+   ],
+   "dropped": {
+    "otherKind": 0,
+    "noCoordinates": 0,
+    "titleMismatch": 0,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "yosho:鏡山城:132.73:34.4",
+   "name": "鏡山城",
+   "kind": "城",
+   "point": [
+    132.74968900164512,
+    34.405415
+   ],
+   "titles": [
+    "鏡山"
+   ],
+   "hits": 4,
+   "fetched": 4,
+   "truncated": false,
+   "result": "title-and-near",
+   "candidates": [
+    {
+     "id": "bunka-192472",
+     "title": "鏡山城跡",
+     "kind": "史跡名勝天然記念物",
+     "prefecture": "広島県",
+     "address": "東広島市鏡山",
+     "designated": "19980114",
+     "point": [
+      132.72761887,
+      34.40401769
+     ],
+     "linkUrl": "https://online.bunka.go.jp/db/heritages/detail/192472",
+     "km": 2.03,
+     "match": "title-and-near"
+    }
+   ],
+   "dropped": {
+    "otherKind": 3,
+    "noCoordinates": 0,
+    "titleMismatch": 0,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "yosho:長岩城:131.05:33.49",
+   "name": "長岩城",
+   "kind": "城",
+   "point": [
+    131.04582500085547,
+    33.494999
+   ],
+   "titles": [
+    "長岩"
+   ],
+   "hits": 1,
+   "fetched": 1,
+   "truncated": false,
+   "result": "none",
+   "candidates": [],
+   "dropped": {
+    "otherKind": 1,
+    "noCoordinates": 0,
+    "titleMismatch": 0,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "yosho:長篠城:137.56:34.92",
+   "name": "長篠城",
+   "kind": "城",
+   "point": [
+    137.5597910038744,
+    34.922635
+   ],
+   "titles": [
+    "長篠"
+   ],
+   "hits": 1,
+   "fetched": 1,
+   "truncated": false,
+   "result": "title-and-near",
+   "candidates": [
+    {
+     "id": "bunka-210350",
+     "title": "長篠城跡",
+     "kind": "史跡名勝天然記念物",
+     "prefecture": "愛知県",
+     "address": "新城市長篠",
+     "designated": "19291217",
+     "point": [
+      137.55939116,
+      34.9226054
+     ],
+     "linkUrl": "https://online.bunka.go.jp/db/heritages/detail/210350",
+     "km": 0.04,
+     "match": "title-and-near"
+    }
+   ],
+   "dropped": {
+    "otherKind": 0,
+    "noCoordinates": 0,
+    "titleMismatch": 0,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "yosho:長野城:136.34:34.75",
+   "name": "長野城",
+   "kind": "城",
+   "point": [
+    136.34000000330911,
+    34.75
+   ],
+   "titles": [
+    "長野"
+   ],
+   "hits": 76,
+   "fetched": 76,
+   "truncated": false,
+   "result": "title-and-near",
+   "candidates": [
+    {
+     "id": "bunka-191022",
+     "title": "長野氏城跡",
+     "kind": "史跡名勝天然記念物",
+     "prefecture": "三重県",
+     "address": "津市",
+     "designated": "19820116",
+     "point": [
+      136.3662704,
+      34.74168484
+     ],
+     "linkUrl": "https://online.bunka.go.jp/db/heritages/detail/191022",
+     "km": 2.57,
+     "match": "title-and-near"
+    }
+   ],
+   "dropped": {
+    "otherKind": 75,
+    "noCoordinates": 0,
+    "titleMismatch": 0,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "yosho:関宿城:139.78:36.1",
+   "name": "関宿城",
+   "kind": "城",
+   "point": [
+    139.78006700490346,
+    36.096661
+   ],
+   "titles": [
+    "関宿"
+   ],
+   "hits": 1,
+   "fetched": 1,
+   "truncated": false,
+   "result": "none",
+   "candidates": [],
+   "dropped": {
+    "otherKind": 1,
+    "noCoordinates": 0,
+    "titleMismatch": 0,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "yosho:阿坂城:136.45:34.6",
+   "name": "阿坂城",
+   "kind": "城",
+   "point": [
+    136.46323000336622,
+    34.601578
+   ],
+   "titles": [
+    "阿坂"
+   ],
+   "hits": 1,
+   "fetched": 1,
+   "truncated": false,
+   "result": "title-and-near",
+   "candidates": [
+    {
+     "id": "bunka-205623",
+     "title": "阿坂城跡",
+     "kind": "史跡名勝天然記念物",
+     "prefecture": "三重県",
+     "address": "松阪市大字大阿坂・小阿坂",
+     "designated": "19820407",
+     "point": [
+      136.45456013,
+      34.59522005
+     ],
+     "linkUrl": "https://online.bunka.go.jp/db/heritages/detail/205623",
+     "km": 1.06,
+     "match": "title-and-near"
+    }
+   ],
+   "dropped": {
+    "otherKind": 0,
+    "noCoordinates": 0,
+    "titleMismatch": 0,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "yosho:阿尾城:136.99:36.88",
+   "name": "阿尾城",
+   "kind": "城",
+   "point": [
+    136.99245200361148,
+    36.879269
+   ],
+   "titles": [
+    "阿尾"
+   ],
+   "hits": 1,
+   "fetched": 1,
+   "truncated": false,
+   "result": "none",
+   "candidates": [],
+   "dropped": {
+    "otherKind": 1,
+    "noCoordinates": 0,
+    "titleMismatch": 0,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "yosho:阿波一宮城:134.46:34.03",
+   "name": "阿波一宮城",
+   "kind": "城",
+   "point": [
+    134.4632330024393,
+    34.03405
+   ],
+   "titles": [
+    "阿波一宮"
+   ],
+   "hits": 0,
+   "fetched": 0,
+   "truncated": false,
+   "result": "none",
+   "candidates": [],
+   "dropped": {
+    "otherKind": 0,
+    "noCoordinates": 0,
+    "titleMismatch": 0,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "yosho:隈部館:130.8:33.06",
+   "name": "隈部館",
+   "kind": "城",
+   "point": [
+    130.79657100073996,
+    33.055546
+   ],
+   "titles": [
+    "隈部"
+   ],
+   "hits": 1,
+   "fetched": 1,
+   "truncated": false,
+   "result": "title-and-near",
+   "candidates": [
+    {
+     "id": "bunka-174155",
+     "title": "隈部氏館跡",
+     "kind": "史跡名勝天然記念物",
+     "prefecture": "熊本県",
+     "address": "山鹿市菊鹿町",
+     "designated": "20090723",
+     "point": [
+      130.79707478,
+      33.05596846
+     ],
+     "linkUrl": "https://online.bunka.go.jp/db/heritages/detail/174155",
+     "km": 0.07,
+     "match": "title-and-near"
+    }
+   ],
+   "dropped": {
+    "otherKind": 0,
+    "noCoordinates": 0,
+    "titleMismatch": 0,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "yosho:雉岡城:139.13:36.19",
+   "name": "雉岡城",
+   "kind": "城",
+   "point": [
+    139.12784900460116,
+    36.193071
+   ],
+   "titles": [
+    "雉岡"
+   ],
+   "hits": 0,
+   "fetched": 0,
+   "truncated": false,
+   "result": "none",
+   "candidates": [],
+   "dropped": {
+    "otherKind": 0,
+    "noCoordinates": 0,
+    "titleMismatch": 0,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "yosho:頴娃城:130.52:31.23",
+   "name": "頴娃城",
+   "kind": "城",
+   "point": [
+    130.5246460006139,
+    31.225987
+   ],
+   "titles": [
+    "頴娃"
+   ],
+   "hits": 0,
+   "fetched": 0,
+   "truncated": false,
+   "result": "none",
+   "candidates": [],
+   "dropped": {
+    "otherKind": 0,
+    "noCoordinates": 0,
+    "titleMismatch": 0,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "yosho:飯山城:138.37:36.86",
+   "name": "飯山城",
+   "kind": "城",
+   "point": [
+    138.365847004248,
+    36.856271
+   ],
+   "titles": [
+    "飯山"
+   ],
+   "hits": 1,
+   "fetched": 1,
+   "truncated": false,
+   "result": "none",
+   "candidates": [],
+   "dropped": {
+    "otherKind": 1,
+    "noCoordinates": 0,
+    "titleMismatch": 0,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "yosho:飯盛山城:135.65:34.73",
+   "name": "飯盛山城",
+   "kind": "城",
+   "point": [
+    135.65000000298932,
+    34.73
+   ],
+   "titles": [
+    "飯盛山",
+    "飯盛"
+   ],
+   "hits": 9,
+   "fetched": 9,
+   "truncated": false,
+   "result": "title-and-near",
+   "candidates": [
+    {
+     "id": "bunka-592440",
+     "title": "飯盛城跡",
+     "kind": "史跡名勝天然記念物",
+     "prefecture": "大阪府",
+     "address": "大阪府大東市・四條畷市",
+     "designated": "20211011",
+     "point": [
+      135.65375,
+      34.72699722
+     ],
+     "linkUrl": "https://online.bunka.go.jp/db/heritages/detail/592440",
+     "km": 0.48,
+     "match": "title-and-near"
+    }
+   ],
+   "dropped": {
+    "otherKind": 7,
+    "noCoordinates": 0,
+    "titleMismatch": 0,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "yosho:館山城:139.86:34.98",
+   "name": "館山城",
+   "kind": "城",
+   "point": [
+    139.85728600493923,
+    34.986852
+   ],
+   "titles": [
+    "館山"
+   ],
+   "hits": 6,
+   "fetched": 6,
+   "truncated": false,
+   "result": "none",
+   "candidates": [],
+   "dropped": {
+    "otherKind": 5,
+    "noCoordinates": 0,
+    "titleMismatch": 1,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "yosho:館林城:139.54:36.24",
+   "name": "館林城",
+   "kind": "城",
+   "point": [
+    139.54060600479247,
+    36.245665
+   ],
+   "titles": [
+    "館林"
+   ],
+   "hits": 1,
+   "fetched": 1,
+   "truncated": false,
+   "result": "none",
+   "candidates": [],
+   "dropped": {
+    "otherKind": 1,
+    "noCoordinates": 0,
+    "titleMismatch": 0,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "yosho:馬ヶ岳城:130.946061:33.679026",
+   "name": "馬ヶ岳城",
+   "kind": "城",
+   "point": [
+    130.9460610008092,
+    33.679026
+   ],
+   "titles": [
+    "馬ヶ岳"
+   ],
+   "hits": 0,
+   "fetched": 0,
+   "truncated": false,
+   "result": "none",
+   "candidates": [],
+   "dropped": {
+    "otherKind": 0,
+    "noCoordinates": 0,
+    "titleMismatch": 0,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "yosho:馬伏塚城:137.933518:34.710795",
+   "name": "馬伏塚城",
+   "kind": "城",
+   "point": [
+    137.93351800404764,
+    34.710795
+   ],
+   "titles": [
+    "馬伏塚"
+   ],
+   "hits": 0,
+   "fetched": 0,
+   "truncated": false,
+   "result": "none",
+   "candidates": [],
+   "dropped": {
+    "otherKind": 0,
+    "noCoordinates": 0,
+    "titleMismatch": 0,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "yosho:高原諏訪城:137.3:36.41",
+   "name": "高原諏訪城",
+   "kind": "城",
+   "point": [
+    137.3146440037608,
+    36.323186
+   ],
+   "titles": [
+    "高原諏訪"
+   ],
+   "hits": 1,
+   "fetched": 1,
+   "truncated": false,
+   "result": "none",
+   "candidates": [],
+   "dropped": {
+    "otherKind": 0,
+    "noCoordinates": 0,
+    "titleMismatch": 1,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "yosho:高取城:135.83:34.43",
+   "name": "高取城",
+   "kind": "城",
+   "point": [
+    135.82684300307128,
+    34.429496
+   ],
+   "titles": [
+    "高取"
+   ],
+   "hits": 5,
+   "fetched": 5,
+   "truncated": false,
+   "result": "title-and-near",
+   "candidates": [
+    {
+     "id": "bunka-138964",
+     "title": "高取城跡",
+     "kind": "史跡名勝天然記念物",
+     "prefecture": "奈良県",
+     "address": "高市郡高取町",
+     "designated": "19530331",
+     "point": [
+      135.82621595,
+      34.43151658
+     ],
+     "linkUrl": "https://online.bunka.go.jp/db/heritages/detail/138964",
+     "km": 0.23,
+     "match": "title-and-near"
+    }
+   ],
+   "dropped": {
+    "otherKind": 4,
+    "noCoordinates": 0,
+    "titleMismatch": 0,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "yosho:高天神城:138.04:34.7",
+   "name": "高天神城",
+   "kind": "城",
+   "point": [
+    138.03557100409495,
+    34.698262
+   ],
+   "titles": [
+    "高天神"
+   ],
+   "hits": 1,
+   "fetched": 1,
+   "truncated": false,
+   "result": "title-and-near",
+   "candidates": [
+    {
+     "id": "bunka-138474",
+     "title": "高天神城跡",
+     "kind": "史跡名勝天然記念物",
+     "prefecture": "静岡県",
+     "address": "掛川市",
+     "designated": "19751016",
+     "point": [
+      138.03546793,
+      34.69848515
+     ],
+     "linkUrl": "https://online.bunka.go.jp/db/heritages/detail/138474",
+     "km": 0.03,
+     "match": "title-and-near"
+    }
+   ],
+   "dropped": {
+    "otherKind": 0,
+    "noCoordinates": 0,
+    "titleMismatch": 0,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "yosho:高岡城:137.02:36.75",
+   "name": "高岡城",
+   "kind": "城",
+   "point": [
+    137.0207840036246,
+    36.749327
+   ],
+   "titles": [
+    "高岡"
+   ],
+   "hits": 326,
+   "fetched": 326,
+   "truncated": false,
+   "result": "title-and-near",
+   "candidates": [
+    {
+     "id": "bunka-215024",
+     "title": "高岡城跡",
+     "kind": "史跡名勝天然記念物",
+     "prefecture": "富山県",
+     "address": "富山県高岡市",
+     "designated": "20150310",
+     "point": [
+      137.021835,
+      36.74889
+     ],
+     "linkUrl": "https://online.bunka.go.jp/db/heritages/detail/215024",
+     "km": 0.11,
+     "match": "title-and-near"
+    }
+   ],
+   "dropped": {
+    "otherKind": 324,
+    "noCoordinates": 0,
+    "titleMismatch": 1,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "yosho:高島城:138.11:36.04",
+   "name": "高島城",
+   "kind": "城",
+   "point": [
+    138.11203200413038,
+    36.039798
+   ],
+   "titles": [
+    "高島"
+   ],
+   "hits": 23,
+   "fetched": 23,
+   "truncated": false,
+   "result": "none",
+   "candidates": [],
+   "dropped": {
+    "otherKind": 15,
+    "noCoordinates": 0,
+    "titleMismatch": 8,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "yosho:高梨氏館:138.38:36.74",
+   "name": "高梨氏館",
+   "kind": "城",
+   "point": [
+    138.38000000425455,
+    36.74
+   ],
+   "titles": [
+    "高梨氏"
+   ],
+   "hits": 2,
+   "fetched": 2,
+   "truncated": false,
+   "result": "title-and-near",
+   "candidates": [
+    {
+     "id": "bunka-218419",
+     "title": "高梨氏館跡",
+     "kind": "史跡名勝天然記念物",
+     "prefecture": "長野県",
+     "address": "中野市小舘",
+     "designated": "20070206",
+     "point": [
+      138.37653808,
+      36.74462425
+     ],
+     "linkUrl": "https://online.bunka.go.jp/db/heritages/detail/218419",
+     "km": 0.6,
+     "match": "title-and-near"
+    }
+   ],
+   "dropped": {
+    "otherKind": 0,
+    "noCoordinates": 0,
+    "titleMismatch": 1,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "yosho:高知城:133.53:33.56",
+   "name": "高知城",
+   "kind": "城",
+   "point": [
+    133.5314840020075,
+    33.560812
+   ],
+   "titles": [
+    "高知"
+   ],
+   "hits": 32,
+   "fetched": 32,
+   "truncated": false,
+   "result": "title-and-near",
+   "candidates": [
+    {
+     "id": "bunka-217589",
+     "title": "高知城跡",
+     "kind": "史跡名勝天然記念物",
+     "prefecture": "高知県",
+     "address": "高知市丸ノ内",
+     "designated": "19590618",
+     "point": [
+      133.53120936,
+      33.56082164
+     ],
+     "linkUrl": "https://online.bunka.go.jp/db/heritages/detail/217589",
+     "km": 0.03,
+     "match": "title-and-near"
+    }
+   ],
+   "dropped": {
+    "otherKind": 30,
+    "noCoordinates": 0,
+    "titleMismatch": 1,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "yosho:鮫ヶ尾城:138.23:37.05",
+   "name": "鮫ヶ尾城",
+   "kind": "城",
+   "point": [
+    138.22885500418454,
+    37.051259
+   ],
+   "titles": [
+    "鮫ヶ尾"
+   ],
+   "hits": 1,
+   "fetched": 1,
+   "truncated": false,
+   "result": "title-and-near",
+   "candidates": [
+    {
+     "id": "bunka-218499",
+     "title": "鮫ヶ尾城跡",
+     "kind": "史跡名勝天然記念物",
+     "prefecture": "新潟県",
+     "address": "妙高市",
+     "designated": "20080728",
+     "point": [
+      138.23001346,
+      37.05104305
+     ],
+     "linkUrl": "https://online.bunka.go.jp/db/heritages/detail/218499",
+     "km": 0.11,
+     "match": "title-and-near"
+    }
+   ],
+   "dropped": {
+    "otherKind": 0,
+    "noCoordinates": 0,
+    "titleMismatch": 0,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "yosho:鳥羽城:136.84:34.48",
+   "name": "鳥羽城",
+   "kind": "城",
+   "point": [
+    136.844645003543,
+    34.480856
+   ],
+   "titles": [
+    "鳥羽"
+   ],
+   "hits": 22,
+   "fetched": 22,
+   "truncated": false,
+   "result": "none",
+   "candidates": [],
+   "dropped": {
+    "otherKind": 19,
+    "noCoordinates": 0,
+    "titleMismatch": 2,
+    "tooFar": 1
+   }
+  },
+  {
+   "id": "yosho:鳥越城:136.6:36.37",
+   "name": "鳥越城",
+   "kind": "城",
+   "point": [
+    136.60136800343025,
+    36.366501
+   ],
+   "titles": [
+    "鳥越"
+   ],
+   "hits": 5,
+   "fetched": 5,
+   "truncated": false,
+   "result": "title-and-near",
+   "candidates": [
+    {
+     "id": "bunka-162611",
+     "title": "鳥越城跡",
+     "kind": "史跡名勝天然記念物",
+     "prefecture": "石川県",
+     "address": "白山市三坂町・別宮町・釜清水町・上野町・出合町",
+     "designated": "19850903",
+     "point": [
+      136.6011903,
+      36.36623182
+     ],
+     "linkUrl": "https://online.bunka.go.jp/db/heritages/detail/162611",
+     "km": 0.03,
+     "match": "title-and-near"
+    }
+   ],
+   "dropped": {
+    "otherKind": 2,
+    "noCoordinates": 0,
+    "titleMismatch": 2,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "yosho:鴫山城:139.77:37.2",
+   "name": "鴫山城",
+   "kind": "城",
+   "point": [
+    139.770454004899,
+    37.198192
+   ],
+   "titles": [
+    "鴫山"
+   ],
+   "hits": 0,
+   "fetched": 0,
+   "truncated": false,
+   "result": "none",
+   "candidates": [],
+   "dropped": {
+    "otherKind": 0,
+    "noCoordinates": 0,
+    "titleMismatch": 0,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "yosho:鹿児島城:130.55:31.6",
+   "name": "鹿児島城",
+   "kind": "城",
+   "point": [
+    130.55212900062668,
+    31.5981
+   ],
+   "titles": [
+    "鹿児島"
+   ],
+   "hits": 47,
+   "fetched": 47,
+   "truncated": false,
+   "result": "title-and-near",
+   "candidates": [
+    {
+     "id": "bunka-551811",
+     "title": "鹿児島城跡",
+     "kind": "史跡名勝天然記念物",
+     "prefecture": "鹿児島県",
+     "address": "鹿児島県鹿児島市",
+     "designated": "19310603",
+     "point": [
+      130.55516944,
+      31.59855
+     ],
+     "linkUrl": "https://online.bunka.go.jp/db/heritages/detail/551811",
+     "km": 0.29,
+     "match": "title-and-near"
+    }
+   ],
+   "dropped": {
+    "otherKind": 42,
+    "noCoordinates": 0,
+    "titleMismatch": 4,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "yosho:麻績城:138.05:36.47",
+   "name": "麻績城",
+   "kind": "城",
+   "point": [
+    138.04509700409935,
+    36.467921
+   ],
+   "titles": [
+    "麻績"
+   ],
+   "hits": 1,
+   "fetched": 1,
+   "truncated": false,
+   "result": "none",
+   "candidates": [],
+   "dropped": {
+    "otherKind": 1,
+    "noCoordinates": 0,
+    "titleMismatch": 0,
+    "tooFar": 0
+   }
+  },
+  {
+   "id": "yosho:黒井城:135.1:35.18",
+   "name": "黒井城",
+   "kind": "城",
+   "point": [
+    135.1009030027348,
+    35.175411
+   ],
+   "titles": [
+    "黒井"
+   ],
+   "hits": 2,
+   "fetched": 2,
+   "truncated": false,
+   "result": "title-and-near",
+   "candidates": [
+    {
+     "id": "bunka-138894",
+     "title": "黒井城跡",
+     "kind": "史跡名勝天然記念物",
+     "prefecture": "兵庫県",
+     "address": "丹波市春日町",
+     "designated": "19890811",
+     "point": [
+      135.10423266,
+      35.17888898
+     ],
+     "linkUrl": "https://online.bunka.go.jp/db/heritages/detail/138894",
+     "km": 0.49,
+     "match": "title-and-near"
+    }
+   ],
+   "dropped": {
+    "otherKind": 0,
+    "noCoordinates": 0,
+    "titleMismatch": 1,
+    "tooFar": 0
+   }
+  }
+ ]
+}
