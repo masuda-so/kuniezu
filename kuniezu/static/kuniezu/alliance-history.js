@@ -44,13 +44,14 @@
   pact('ishida','chosokabe','西軍への参加',[1600,8,21],[1600,11,10],'sekigaharaGuide','cooperation'),
   pact('ishida','oda','秀信の西軍参加',[1600,8,22],[1600,10,16],'gifuSuccession','cooperation')
  ];
- const st=d=>d[0]*360+d[1]*30+d[2];
+ const st=d=>d[0]*10000+d[1]*100+d[2];
+ const clockDay=d=>G.S().clockVersion===TKCalendar.version?TKCalendar.toJD(...d):d[0]*360+d[1]*30+d[2];
  G.allianceRecord=(a,b,d)=>{const date=d||[G.date().y,G.date().m,G.date().d];return TK.ALLIANCE_HISTORY.findLast(r=>(r.a===a&&r.b===b||r.a===b&&r.b===a)&&st(date)>=st(r.from)&&st(date)<=st(r.to));};
  G.allianceLabel=(a,b,d)=>{const r=G.allianceRecord(a,b,d);if(r)return r.name;const s=G.S();if(s?.vassal?.[a]===b)return G.CNK(a)+'の'+G.CNK(b)+'への帰属';if(s?.vassal?.[b]===a)return G.CNK(b)+'の'+G.CNK(a)+'への帰属';return G.CNK(a)+'と'+G.CNK(b)+'の協力関係（呼称未確認）';};
  for(const e of TK.HIST){if(e.k!=='ally'&&e.k!=='submit')continue;const a=e.a||e.clan,b=e.b;const r=G.allianceRecord(a,b,e.d);if(r){e.title=r.name;e.relationType=r.kind;const source=R[r.source];if(source)e.source=source.url;e.relationNote=r.note;}else if(!e.title){e.title=e.k==='submit'?`${TK.CLANS[b]?.[0]||b}の${TK.CLANS[a]?.[0]||a}への帰属`:`${TK.CLANS[a]?.[0]||a}と${TK.CLANS[b]?.[0]||b}の軍事協力`;}}
  // 記録が抜けていた代表的な東国の盟約を追加。正確な日が不明なものには精度を明記。
  for(const name of ['甲尾同盟','越相同盟','房相一和','甲越同盟','相遠同盟']){const r=TK.ALLIANCE_HISTORY.find(x=>x.name===name);TK.HIST.push({d:r.from.slice(),k:'ally',a:r.a,b:r.b,title:r.name,source:R[r.source].url,datePrecision:r.note||'成立年・月の概略。日付は表示上の基準で、締結日の確定値ではない。',text:r.name+'の成立・協力関係を反映する。'+r.note});}
  // 関係の期限は個別の盟約ごとに判定。終了後も無期限の緑境界にしない。
- const day=G.day;G.day=function(){day();const s=G.S(),d=G.date(),n=st([d.y,d.m,d.d]);for(const r of TK.ALLIANCE_HISTORY){if(n===st(r.to)+1)delete s.ally[G.ekey(r.a,r.b)];}};
+ const day=G.day;G.day=function(){day();const s=G.S(),d=G.date(),n=clockDay([d.y,d.m,d.d]);for(const r of TK.ALLIANCE_HISTORY){if(n===clockDay(r.to)+1)delete s.ally[G.ekey(r.a,r.b)];}};
  TK.HIST.sort((a,b)=>st(a.d)-st(b.d));
 })();

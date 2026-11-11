@@ -27,6 +27,8 @@ TK.KIZAKIBARU_REFERENCE_ROUTE=[[130.867591,32.054126],[130.869148,32.053334],[13
  const native=G.visibleNativeArmies;G.visibleNativeArmies=()=>native().filter(u=>!obsolete(u));
  const armies=G.documentedArmies;G.documentedArmies=function(){return armies().filter(u=>u.record?.id!==id||active()).map(u=>u.record?.id===id?{...u,state:G.visualTime()<start()+duration()?'march':'camp'}:u);};
  const point=G.historyPoint,geometry=G.historyGeometry,phase=G.marchPhase;
+ const interval=G.displayTravelInterval;
+ G.displayTravelInterval=u=>u.record?.id===id?{date:date.slice(),start:start(),end:start()+duration()}:interval?.(u);
  G.marchPhase=u=>u.record?.id===id?(G.visualTime()<start()+duration()?{key:'march',name:'行軍中'}:{key:'camp',name:'着陣・滞陣'}):phase(u);
  G.historyPoint=u=>u.record?.id===id?G.visualPathPoint(line,(G.visualTime()-start())/duration(),true):point(u);
  G.historyGeometry=u=>u.record?.id===id?line:geometry(u);

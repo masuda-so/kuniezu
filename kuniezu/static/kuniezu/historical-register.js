@@ -84,7 +84,7 @@
  // 本拠が中津の期間、旧管理ノードの在城欄を実在の居所として表示しない。軍の選択用castleGensは維持する。
  G.displayCastleGens=function(id){const rows=G.castleGens(id),year=G.date().y;if(!TK.HISTORY_ONLY||year<1589||year>1600||!['himeji','kawara'].includes(id))return rows;return rows.filter(g=>g.n!=='黒田長政');};
  // 旧1599年イベントが積んだ待機命令のみ除去。現在位置・軍・帰路・索引は変更しない。
- G.repairKurodaResidenceOrders=function(s){if(!s||!TK.HISTORY_ONLY||Object.values(s.div||{}).some(Boolean)||!s.pendMoves)return 0;const t=(1599-s.y0)*360+(1-s.m0)*30+19,before=s.pendMoves.length;
+ G.repairKurodaResidenceOrders=function(s){if(!s||s.clockVersion!=null||!TK.HISTORY_ONLY||Object.values(s.div||{}).some(Boolean)||!s.pendMoves)return 0;const t=(1599-s.y0)*360+(1-s.m0)*30+19,before=s.pendMoves.length;
   s.pendMoves=s.pendMoves.filter(m=>!(m.n==='黒田長政'&&m.at==='kawara'&&!m.cap&&!m.home&&m.after===t&&m.until===t+360));return before-s.pendMoves.length;
  };
  const set=G.setS;G.setS=function(s){const result=set(s);G.repairKurodaResidenceOrders(G.S());return result;};
