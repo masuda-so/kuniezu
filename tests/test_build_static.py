@@ -70,6 +70,8 @@ def test_export_headers_allow_only_the_inline_code_the_page_contains(
         assert csp_hash(body) in policy
     assert "Strict-Transport-Security" in headers
     assert "X-Frame-Options: DENY" in headers
+    assert "Permissions-Policy: camera=()" in headers
+    assert "Cross-Origin-Opener-Policy: same-origin-allow-popups" in headers
 
 
 def test_export_gzips_vectors_above_the_asset_limit_and_keeps_their_bytes(
