@@ -15,7 +15,7 @@
 | 肖像の代替crop | `portrait-loading.cjs`、`build_fallback.py --root . --check` | `portrait-fallback-browser.cjs`（`PORTRAIT_MODE=normal/primary-fail/all-fail`） |
 | 登録漏れの追加肖像 | `uv run pytest tests/test_reviewed_portraits.py`、`build_reviewed.py --check` | 同じブラウザ検査へ `PORTRAIT_MANIFEST=tools/faces/reviewed-portraits.json PORTRAIT_FALLBACK_FILE=portraits/reviewed-fallback.webp` を渡す |
 | 基本・保存・史実進行 | `offline.cjs` | `completion-browser.cjs` |
-| 実日時計と旧保存移行 | `calendar.cjs`（暦・DB対応）、`clock-migration.cjs`（原文保全・変換計画）、`clock-load.cjs`（表示キャッシュなし・日内移動・選択日の出来事）。Offline checksにも含む | `data/verification/codex-real-calendar-clock/README.md` に検証条件と証拠 |
+| 実日時計と旧保存移行 | `calendar.cjs`（暦・DB対応）、`clock-migration.cjs`（原文保全・変換計画）、`clock-load.cjs`（表示キャッシュなし・日内移動・選択日の出来事）。Node.js CIにも含む | `data/verification/codex-real-calendar-clock/README.md` に検証条件と証拠 |
 | 検証ブラウザの起動失敗・早期終了 | `node tools/checks/browser-process-exit.cjs`（実Chromeを起動せず失敗時終了とprofile削除を確認） | — |
 | 秘密情報（APIキー・秘密鍵など。gzipも展開） | `secret-scan.cjs`（CIでも実行。第三者ページの保存前は `tools/research/source-privacy.cjs`） | — |
 | 読み込みの確認値（更新後に古い版を使わせない） | `node tools/build/stamp-assets.cjs --check`（CIでも実行。kuniezu/static/kuniezu/ のファイルを変えたら `node tools/build/stamp-assets.cjs` を実行） | — |
@@ -24,13 +24,13 @@
 | 史料入力・出力 | `evidence-store.cjs`、`history-index.cjs`、`heritage-site-candidates.cjs`（史跡の候補の目録。通信なし）、`tools/research/export-evidence.cjs` | 該当する史料・説明の表示 |
 | 史実SQL・時空間キューブ | `python3 tools/checks/history-sqlite.py`、`python3 tools/checks/history-sqlite-inputs.py`、`python3 tools/checks/history-cube.py` | —（研究用の読取DB・ゲーム描画は変更しない） |
 | 人物・開始配置 | `historical-register.cjs`、`scenario-openings.cjs` | `march-clock-browser.cjs` |
-| 自治体資料で照合した没日 | `verified-death-dates.cjs`（日付・旧保存の限定移行・二重読込・継承。Offline checksにも含む） | 該当人物の前後日と保存再開を確認 |
+| 自治体資料で照合した没日 | `verified-death-dates.cjs`（日付・旧保存の限定移行・二重読込・継承。Node.js CIにも含む） | 該当人物の前後日と保存再開を確認 |
 | 領土・分家・外交 | `families-territory.cjs`、`map-history.cjs` | `borders-family-browser.cjs` |
 | 行軍・保存・速度 | `movement-display.cjs`、`movement-clock.cjs`、`movement-save.cjs`、`castle-era-position.cjs`、`export-save-clock.cjs`、`logistics-review.cjs` | `march-clock-browser.cjs`、`export-save-clock-browser.cjs` |
 | 全期間の移動 | `march-audit.cjs`、`warp-audit.cjs` | 発見したケースを再現 |
 | 街道の入力と再生成 | `road-vectors.cjs`（`tosando-reference-loop.cjs`・`aizu-reference-loops.cjs`・`ushu-edo-comparison.cjs`を含む。全319接続と版25・26→27の途中位置・期限を検査）、`road-vector-loading.cjs`、`sanshu-route.cjs`、`road-regeneration.cjs`（Python標準ライブラリ。Django CIの試験にも含む） | `road-vectors-browser.cjs`（両幅・道上行軍・停止再開・破損拒否と再読込）、`sanshu-route-browser.cjs`（両幅と保存版22・23の移行） |
-| 児島湾の補正マスクのベクター化 | `mask-vector.cjs`（穴・対角接触・単純リング）、`kojima-mask-vectors.cjs`（旧格子対応と737,100セルの逆変換一致。Offline checksにも含む） | —（移行入力のみ。ゲーム表示は変更しない） |
-| 編集済みGeoJSONの配信 | `vector-assets.cjs`（バイト複写・直接編集保持・上書き保護・統合CLI。Offline checksにも含む）、`uv run pytest tests/test_vector_sources.py`（位相・5湖の欠落防止・W09原本/座標系） | 全体地図の切替時に確認 |
+| 児島湾の補正マスクのベクター化 | `mask-vector.cjs`（穴・対角接触・単純リング）、`kojima-mask-vectors.cjs`（旧格子対応と737,100セルの逆変換一致。Node.js CIにも含む） | —（移行入力のみ。ゲーム表示は変更しない） |
+| 編集済みGeoJSONの配信 | `vector-assets.cjs`（バイト複写・直接編集保持・上書き保護・統合CLI。Node.js CIにも含む）、`uv run pytest tests/test_vector_sources.py`（位相・5湖の欠落防止・W09原本/座標系） | 全体地図の切替時に確認 |
 | 街道・河川・地図 | `road-display.cjs`、`battle-rivers.cjs`、`terrain-transition.cjs`、`terrain-cache.cjs`、`map-layer-notifications.cjs`（遅着層の再描画通知）、`raster-map.cjs`（正本 `kuniezu/map` と配信タイルの一致）、`province-edits.cjs`（年代別の差分の負例） | `zoom-regressions.cjs`（日本3地域・広狭/高DPI・中間キャッシュの全被覆・実際の再描画）、`map-layer-notifications-browser.cjs`（停止画面への遅着） |
 | 合戦 | `battle-conflicts.cjs`、`local-battle-scene.cjs`、`nagakute-local-scene.cjs`、`local-dem.cjs`（公式PNGとの全点照合・再生成一致）、`deployments.cjs`、`atlas-regressions.cjs`、`battle-review.cjs`、`battle-viewport.cjs`、`battle-counter-density.cjs`、`battle-label-cards.cjs`、`battle-mode-labels.cjs`、`battle-relief.cjs`（陰影・標本位置・等高線）、`battle-initial-views.cjs`（初期範囲・手動選択維持）、`battle-atlas-detail.cjs`（細密DEM再現・旧生成器の保護） | `all-battles-browser.cjs`、`battle-loading-browser.cjs`、`battle-viewport-browser.cjs`、`battle-counter-density-browser.cjs`、`battle-label-cards-browser.cjs` |
 | UI・肖像・性能 | `infrastructure.cjs` | `usability-browser.cjs`、`portrait-browser.cjs`、`render-performance.cjs`、`load-performance.cjs`（起動・再生中の負荷。`GAME_OVERRIDE_ROOT` で作業ツリーの変更分だけ差し替え） |

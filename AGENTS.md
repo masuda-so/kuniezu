@@ -17,9 +17,9 @@
 - 地図は `kuniezu/map/` に層ごとに置く。行政区分 `admin/`（郡）、支配 `control/`（城の支配域 `provinces.png` ほか）、自然 `physical/`（標高・川）、共有の `projection.json`、年代別の差分の入力 `edits/` が正本で、Git で管理する。配信物（`kuniezu/static/kuniezu/map/build/`）は追跡せず、`node tools/map/build-map.cjs`（陰影は `--height --python <NumPy・Pillow の Python>`）で生成する。生成物はコミットしない。ほかにビルドは無い。ページは Django が描くので、Django の開発サーバー（`uv run python manage.py runserver 127.0.0.1:8000`）か、静的書き出し `dist/client/` の配信で開く。`kuniezu/static/kuniezu/` だけを配信しても開けない。エージェントが起動・停止してよいのは127.0.0.1:8000だけとする。8001番の許可は利用者が2026-11-09に撤回した。8001番や他ポートは起動・利用しない。127.0.0.1限定で運用し、待受プロセスと配信する作業ツリー・担当を確認してから操作する。別ポートや外部公開へ勝手に広げず、検証は専用の一時ブラウザで行う。
 - CODH参照入力は `data/inputs/codh-edo/`。`uv run python tools/geo/codh_reference.py` で原本SHA・座標・重複と形状の欠落を検査し、`--output <新規ディレクトリ>` で派生GeoJSONを作る。原本の座標・属性・地物境界を保持し、点だけの水域や線がない街道を補間しない。この入力処理は現行ゲーム地図へ自動適用しない。
 - 編集済みGeoJSONは `kuniezu/map/physical`・`admin`・`control` から、`build-map.cjs --vectors-only` で `map/build/vector/` へバイト複写する。`--vectors-only --check` で一致を確認する。通常ビルドにも同じ複写を含め、配信時に座標や線を直さない。深い位相検査は `uv run pytest tests/test_vector_sources.py`。5比較湖の正本は `physical/lakes-reference.geojson`、公式原本と出典は `data/inputs/mlit-w09-2005/`。
-- `uv sync --locked` の後 `uv run pytest` — Django 側の試験（CI の `Django CI`）。`uv run ruff check`・`uv run mypy kuniezu config scripts tests`・`uv run python scripts/build_static.py`（`dist/client/` への静的書き出し）は手元で実行する。127.0.0.1:8000の起動・停止はエージェントも行える。低負荷の検証では `uv run --locked python manage.py runserver 127.0.0.1:8000 --noreload` を使え、Pythonやテンプレートを変更した際は必要に応じて再起動する。
+- `uv sync --locked` の後 `uv run pytest` — Django 側の試験（CI の `Django CI`、必須チェック `build (3.14)`）。`uv run ruff check`・`uv run mypy kuniezu config scripts tests`・`uv run python scripts/build_static.py`（`dist/client/` への静的書き出し）は手元で実行する。127.0.0.1:8000の起動・停止はエージェントも行える。低負荷の検証では `uv run --locked python manage.py runserver 127.0.0.1:8000 --noreload` を使え、Pythonやテンプレートを変更した際は必要に応じて再起動する。
 - `uv run python manage.py migrate` の後 `uv run python manage.py import_history` — 史実の関係データベース（`db.sqlite3`、Git に入れない）を入力から作る。`uv run python manage.py history_query --about <名前>` で引く。設計は `docs/architecture/history-rdb.md`。
-- `node tools/checks/offline.cjs` — 構文・保存・史実進行の基本検査（CI の必須チェック `Offline checks`）。`node tools/checks/organization.cjs`、`node tools/checks/infrastructure.cjs` も CI で実行する。
+- `node tools/checks/offline.cjs` — 構文・保存・史実進行の基本検査（CI の `Node.js CI`、必須チェック `build (24.x)`）。`node tools/checks/organization.cjs`、`node tools/checks/infrastructure.cjs` も CI で実行する。
 - `GAME_TEST_OUTPUT=data/verification/<担当名-対象名> node tools/checks/march-clock-browser.cjs` — 実画面の検査（起動済みサーバーが必要）。分野別の検査は `tools/checks/README.md` の表から選ぶ。
 - `node tools/work/tasks.cjs claim <対象ID> --owner <担当名> --files <ファイル>` — 担当の記録。完了条件を全て満たす場合だけ `complete`、引き継ぎだけなら `release`。
 
@@ -41,10 +41,10 @@
 - コミットは git 公式ガイドの形: 1 行目は 50 文字以内を目安にした要約、空行、本文（何を・なぜ、72 桁前後で折り返す）、空行、トレーラー。作者は `masudaso <258961222+masuda-so@users.noreply.github.com>`、SSH 署名付き（ルールセットで署名必須）。
 - 初回コミットだけ author と committer の日時をその日の `00:00:00 +0900` に揃える。2 回目以降は実際の日時。
 - AI が内容を書いたコミットには、関わったエージェントごとに GitHub 公式書式のトレーラーを 1 行ずつ付ける: `Co-authored-by: Codex <noreply@openai.com>`、`Co-authored-by: Claude Fable 5.1 <noreply@anthropic.com>`（モデル名は作業したもの）。大文字小文字は公式どおり `Co-authored-by:`。
-- 作業は GitHub flow に従う。1 作業ごとに main から短く分かりやすい名前のブランチ（`claude/…`・`codex/…` など）を切り、git worktree で作業ツリーを分ける。複数のエージェントで同じ作業ツリーや同じブランチを共有せず、統合用の共有ブランチは作らない。ほかの作業に依存する作業は、先の PR が main に入ってから main を起点に切る。
-- PR は一つの目的に絞って小さく保ち、提出前に自己レビューと検査を済ませる。取り込みは squash（main には 1 PR＝1 コミット）。署名必須の main では rebase による取り込みは使わない。マージ後はブランチと worktree を消す。
 - 公開済みの履歴は書き換えない。やむを得ない場合は本人が判断し `--force-with-lease` を使う。
-- main への変更は PR 経由（直接 push 不可）。PR の題名・説明・レビューコメントは日本語を基本とし、利用者が別の言語を指定した場合はそれを優先する。説明には変更内容と検証結果を書く。`Offline checks` が必須チェック。
+- 作業は GitHub flow に従う。1 作業ごとに main から、内容が分かる短い名前のブランチを切る（担当や種類を表す接頭辞は付けない）。 git worktree で作業ツリーを分け、複数のエージェントで同じ作業ツリーや同じブランチを共有しない。統合用の共有ブランチは作らない。
+- PR は一つの目的に絞って小さく保ち、提出前に自己レビューと検査を済ませる。取り込みは squash だけ（main には 1 PR＝1 コミット。設定とルールセットで merge と rebase を不許可にしている）。マージ後はブランチを消す。
+- main への変更は PR 経由（直接 push 不可）。PR の題名・説明・レビューコメントは日本語を基本とし、利用者が別の言語を指定した場合はそれを優先する。説明には変更内容と検証結果を書く。`build (24.x)`（Node.js CI）と `build (3.14)`（Django CI）が必須チェック。
 - `README.md`（日本語）と `README.en.md`（英語）は冒頭で相互リンクし、5 見出し（概要・主な機能と制約・導入と使い方・サポートと関連資料・開発と貢献）を揃え、仕様・手順・制約の変更は同じ PR で両方を更新する。未実装・未検証の内容を利用可能と書かない。
 
 ## エージェント向けの指示
