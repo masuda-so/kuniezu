@@ -1,0 +1,25 @@
+{
+  "id": "person:朝比奈泰朝",
+  "name": "朝比奈泰朝",
+  "gameNames": [
+    "朝比奈泰朝"
+  ],
+  "authorityIds": [
+    "wikidata:Q11092559"
+  ],
+  "authorityEvidence": {
+    "scope": "person-identity",
+    "checked": "2026-11-11",
+    "wikidataRevision": 2336897546,
+    "snapshot": "data/research/source-notes/person-identity-corpus-3.json",
+    "sourceNote": "data/research/source-notes/person-identity-corpus-3.json",
+    "identityChecks": [
+      "掛川市の講演会資料（加藤理文）が、永禄11年（1568）12月に今川氏真が「重臣筆頭で一族の朝比奈泰朝の居城掛川城」へ逃れたとする",
+      "Wikidata Q11092559の日本語主名が朝比奈泰朝で、説明が今川氏の家臣"
+    ],
+    "basis": "人物の同定のみ。原本にある生没日・所在・所領・関係の時期は新たな史実命題へ採用しない。",
+    "sourceIds": [
+      "kakegawaYasutomoIdentity"
+    ]
+  }
+}

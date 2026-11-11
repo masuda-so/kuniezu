@@ -1,0 +1,127 @@
+{
+  "checked": "2026-11-11",
+  "scope": "#150 のパイロットで採用しなかった 6 人のうち、#161 の後に残った 4 人の再照合（第 3 便）。人物の同定のみ。生没・所在の命題なし。",
+  "rawLicense": {
+    "name": "CC0 1.0",
+    "url": "https://www.wikidata.org/wiki/Wikidata:Licensing",
+    "scope": "Wikidata JSON only"
+  },
+  "method": "既存の入力の横断検索 → 公的機関のサイトに絞った Web 検索を 1 人 1 回 → 見つかったページと PDF を自分で取り直して文言を確かめ、原本を主の作業ディレクトリの .cache に SHA つきで保全（PDF は macOS の PDFKit）。NDL 典拠の完全一致は #161 で 4 人とも 0 件と確かめてある。サブエージェントは使っていない。",
+  "records": [
+    {
+      "name": "波多野秀治",
+      "japaneseLabel": "波多野秀治",
+      "wikidataId": "Q837394",
+      "wikidataRevision": 2528552562,
+      "wikidataJapaneseLabel": "波多野秀治",
+      "entityDataUrl": "https://www.wikidata.org/wiki/Special:EntityData/Q837394.json",
+      "revisionUrl": "https://www.wikidata.org/w/index.php?title=Q837394&oldid=2528552562",
+      "rawEntityDataSnapshot": "data/research/source-notes/person-identity-corpus-3-raw/Q837394.json",
+      "rawSha256": "5aaaecbccf6c2d3956ca76c5db2fd2b5885fe063a1402ea8a8e6b723ecd95ff8",
+      "identityChecks": [
+        "丹波篠山市の本文が、波多野秀治を波多野氏の4代で八上城の城主とし、明智光秀に包囲された籠城戦の末に捕らえられ、天正7年（1579）6月に安土へ送られて城下の慈恩寺で磔にされたとも斬殺されたともいう、とする",
+        "Wikidata Q837394の日本語主名が波多野秀治で、P570の年が1579"
+      ],
+      "adoptedNames": [
+        "波多野秀治"
+      ],
+      "scope": "person-identity-only; no historical dates or locations adopted",
+      "nameEvidence": [
+        {
+          "name": "波多野秀治",
+          "supports": [
+            "wikidata-ja-label-or-alias",
+            "public-source"
+          ]
+        }
+      ],
+      "identitySourceIds": [
+        "tambasasayamaHideharuIdentity"
+      ],
+      "identitySourceUrl": "https://www.city.tambasasayama.lg.jp/photo_history/2/jinbutu/tambasasayamanoyumeijin/18757.html",
+      "identitySourceLocator": "「波多野秀治(悲運の武将)」の本文",
+      "yearComparison": {
+        "wikidataBirth": [
+          1541
+        ],
+        "wikidataDeath": [
+          1579
+        ]
+      },
+      "publicOriginalNotRedistributed": {
+        "reason": "転載の条件を確かめていないため、原本は Git で配らない。手元の .cache/research-originals/person-identity-corpus-3/hideharu-tambasasayama.html.gz（Git に入れない）に保全する。",
+        "uncompressedSha256": "6884c450fb66017ddd47fab927bc788c0ab2c6eb2d0c5e360950a5155e1fb278",
+        "excerpt": "data/research/source-notes/person-identity-corpus-3-hideharu-tambasasayama-excerpt.md"
+      },
+      "foundBy": "web-search",
+      "reservation": "本文は最期を「磔にされたとも、斬殺されたともいわれています」と伝聞で書く。既存の命題 death-date-hatano-hideharu の日付とは照合していない。",
+      "checkedBy": "claude-self"
+    },
+    {
+      "name": "朝比奈泰朝",
+      "japaneseLabel": "朝比奈泰朝",
+      "wikidataId": "Q11092559",
+      "wikidataRevision": 2336897546,
+      "wikidataJapaneseLabel": "朝比奈泰朝",
+      "entityDataUrl": "https://www.wikidata.org/wiki/Special:EntityData/Q11092559.json",
+      "revisionUrl": "https://www.wikidata.org/w/index.php?title=Q11092559&oldid=2336897546",
+      "rawEntityDataSnapshot": "data/research/source-notes/person-identity-corpus-3-raw/Q11092559.json",
+      "rawSha256": "7dadb11c51dede42f6cdae515f4fec244500247a4247f4f67d2d9654fb98588a",
+      "identityChecks": [
+        "掛川市の講演会資料（加藤理文）が、永禄11年（1568）12月に今川氏真が「重臣筆頭で一族の朝比奈泰朝の居城掛川城」へ逃れたとする",
+        "Wikidata Q11092559の日本語主名が朝比奈泰朝で、説明が今川氏の家臣"
+      ],
+      "adoptedNames": [
+        "朝比奈泰朝"
+      ],
+      "scope": "person-identity-only; no historical dates or locations adopted",
+      "nameEvidence": [
+        {
+          "name": "朝比奈泰朝",
+          "supports": [
+            "wikidata-ja-label-or-alias",
+            "public-source"
+          ]
+        }
+      ],
+      "identitySourceIds": [
+        "kakegawaYasutomoIdentity"
+      ],
+      "identitySourceUrl": "https://www.city.kakegawa.shizuoka.jp/fs/4/7/5/5/2/7/_/__________.pdf",
+      "identitySourceLocator": "1 頁「今川氏の凋落と家康・信玄の侵攻戦」",
+      "yearComparison": {
+        "wikidataBirth": [
+          1538
+        ],
+        "wikidataDeath": []
+      },
+      "publicOriginalNotRedistributed": {
+        "reason": "転載の条件を確かめていないため、原本は Git で配らない。手元の .cache/research-originals/person-identity-corpus-3/yasutomo-kakegawa-kato.pdf（Git に入れない）に保全する。",
+        "uncompressedSha256": "07861c8eebd5a482c62d43eda7f21eaa89e81cf1e001d1e4e9294e26ffa19dbf",
+        "excerpt": "data/research/source-notes/person-identity-corpus-3-yasutomo-kakegawa-kato-excerpt.md"
+      },
+      "foundBy": "web-search",
+      "reservation": "生没年を書く公的資料は見つけていない（Wikidata は生年 1538 だけで没年が無い）。年の照合はできず、名前・今川氏の重臣という立場・掛川城・永禄11年の出来事で合わせた。同じ講演会の別の資料（大石泰史）にも朝比奈泰朝の記述があるが、転載とインターネットでの公表を断る注意書きがあるので、根拠にも抜粋にも使っていない。掛川市の HTML のページ（掛川城の歴史など）は「朝比奈氏」と書くだけで、泰朝の名は出ない。",
+      "checkedBy": "claude-self"
+    }
+  ],
+  "notAdopted": [
+    {
+      "name": "菅谷政貞",
+      "wikidataId": "Q11619386",
+      "layer": "source-type",
+      "reason": "土浦市立博物館の展示室だより「霞」通巻第46号（令和元年5月11日発行）6 頁に「小田氏治の部将菅谷政貞」が出るが、これは『菅谷伝記』の「常州無垂合戦の事」の大要の引用で、博物館自身が「この項目については史実でないことが分かりましたので、参考資料にも収録しませんでした」と書く。史実でないとされた話の中の記述なので、同定の根拠にしなかった。検索結果の要約は、この注記を「根本資料を欠く部分が多い」と弱く伝えていた。土浦市の HTML のページは「小田氏家臣の菅谷氏」と書くだけで、政貞の名は出ない。要確認",
+      "candidateUrl": "https://www.city.tsuchiura.lg.jp/data/doc/1559095865_doc_44_0.pdf",
+      "candidateOriginalSha256": "6e68b20588c10e005498bcad882cb156ab90b25590c52973a8b14c11e9d9c5d9",
+      "privateOriginal": ".cache/research-originals/person-identity-corpus-3/masasada-tsuchiura-kasumi46.pdf",
+      "checkedBy": "claude-pdfkit-text"
+    },
+    {
+      "name": "一色義幸",
+      "wikidataId": "Q11353151",
+      "layer": "source-not-found",
+      "reason": "舞鶴市・宮津市・京丹後市・京都府のサイトに絞った検索 1 回では、一色義道（建部山城から中山城へ逃れた丹後守護）と一色氏の歴代の説明しか見つからず、義幸の名の出るページが無い。Wikidata に別名も生没年も無い。要確認",
+      "checkedBy": "search-result-summary-only"
+    }
+  ]
+}
