@@ -1,0 +1,26 @@
+{
+  "id": "person:河尻秀隆",
+  "name": "河尻秀隆",
+  "gameNames": [
+    "河尻秀隆"
+  ],
+  "authorityIds": [
+    "wikidata:Q6379555"
+  ],
+  "authorityEvidence": {
+    "scope": "person-identity",
+    "checked": "2026-11-11",
+    "wikidataRevision": 2521636335,
+    "snapshot": "data/research/source-notes/person-identity-corpus-2.json",
+    "sourceNote": "data/research/source-notes/person-identity-corpus-2.json",
+    "identityChecks": [
+      "恵那市教育委員会の岩村城跡の現地説明会資料が、天正3年（1575）の落城の後に河尻秀隆が岩村城主となったとし、山梨県の資料が、河尻塚を織田信長の家臣河尻秀隆の塚で、本能寺の変の直後に民衆の襲撃にあったとする",
+      "Wikidata Q6379555の日本語主名が河尻秀隆で、P570の年が1582"
+    ],
+    "basis": "人物の同定のみ。原本にある生没日・所在・所領・関係の時期は新たな史実命題へ採用しない。",
+    "sourceIds": [
+      "enaKawajiriIdentity",
+      "yamanashiKawajiriIdentity"
+    ]
+  }
+}

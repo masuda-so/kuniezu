@@ -1,0 +1,25 @@
+{
+  "id": "person:本多忠朝",
+  "name": "本多忠朝",
+  "gameNames": [
+    "本多忠朝"
+  ],
+  "authorityIds": [
+    "wikidata:Q837870"
+  ],
+  "authorityEvidence": {
+    "scope": "person-identity",
+    "checked": "2026-11-11",
+    "wikidataRevision": 2556897969,
+    "snapshot": "data/research/source-notes/person-identity-corpus-2.json",
+    "sourceNote": "data/research/source-notes/person-identity-corpus-2.json",
+    "identityChecks": [
+      "千葉県立中央博物館大多喜城分館の歴代城主の表が、本多忠朝を五万石・1601〜1615年（慶長6〜元和元）の大多喜城主、本多忠勝の次男で大坂夏の陣で戦死とする",
+      "Wikidata Q837870の日本語主名が本多忠朝で、P570の年が1615"
+    ],
+    "basis": "人物の同定のみ。原本にある生没日・所在・所領・関係の時期は新たな史実命題へ採用しない。",
+    "sourceIds": [
+      "chibaMuseumTadatomoIdentity"
+    ]
+  }
+}
