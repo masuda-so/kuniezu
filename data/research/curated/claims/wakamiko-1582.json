@@ -1,0 +1,39 @@
+{
+  "id": "wakamiko-1582",
+  "entity": "place:wakamiko",
+  "predicate": "military-event",
+  "value": "甲斐府中にいた徳川家康が陣を新府に移し、北条氏直の若神子の陣と対した。",
+  "validYears": [
+    1582,
+    1582
+  ],
+  "datePrecision": "day",
+  "source": "hiDainihonshiryoKobun",
+  "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+  "locator": "綱文：和暦 天正10年8月10日 第1条（区分 大日本史料、第11編之2（データベースの表示値）、258頁）",
+  "gameBindings": [
+    "TK.HIST:若神子の対陣"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-09",
+  "uncertainty": "綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。",
+  "linkedEntities": [
+    "place:wakamiko",
+    "person:tokugawa-ieyasu",
+    "person:北条氏直"
+  ],
+  "eventTime": {
+    "kind": "dated-event",
+    "date": [
+      1582,
+      8,
+      10
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": false,
+    "precision": "day"
+  },
+  "eventRelation": "military-event",
+  "eventScope": "綱文が掲げる日付。天正10年8月10日はゲーム共通の暦表で1582年8月27日。最終年表の若神子の対陣（1582年9月10日）は綱文より14日遅い。命題は家康が新府に陣を移して対陣した日。8月29日の条（豆生田の砦の攻撃）は別の条。新府は結ばない。"
+}

@@ -1,0 +1,39 @@
+{
+  "id": "ishigakibaru-1600",
+  "entity": "place:ishigakibaru",
+  "predicate": "military-event",
+  "value": "豊後杵築の守将の松井康之・有吉立行が、黒田如水（孝高）の先鋒の井上之房らとともに、大友吉統と豊後石垣原で戦って破った。",
+  "validYears": [
+    1600,
+    1600
+  ],
+  "datePrecision": "day",
+  "source": "hiDainihonshiryoKobun",
+  "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+  "locator": "綱文：和暦 慶長5年9月13日 第5条（区分 史料綜覧、編11・冊913（データベースの表示値）、261頁）",
+  "gameBindings": [
+    "TK.HIST:石垣原の戦い"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-09",
+  "uncertainty": "綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。",
+  "linkedEntities": [
+    "place:ishigakibaru",
+    "person:otomo-yoshimune",
+    "person:松井康之"
+  ],
+  "eventTime": {
+    "kind": "dated-event",
+    "date": [
+      1600,
+      9,
+      13
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": false,
+    "precision": "day"
+  },
+  "eventRelation": "military-event",
+  "eventScope": "綱文が掲げる日付。慶長5年9月13日はゲーム共通の暦表で1600年10月19日。最終年表の石垣原の戦い（1600年10月19日）は一致する。如水は先鋒を出した者として名が出るだけなので結ばない。有吉立行・井上之房は人物の ID が無いので結ばない。"
+}

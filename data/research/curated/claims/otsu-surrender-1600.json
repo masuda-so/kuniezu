@@ -1,0 +1,38 @@
+{
+  "id": "otsu-surrender-1600",
+  "entity": "place:otsu-castle",
+  "predicate": "castle-handover",
+  "value": "西軍に囲まれていた京極高次が、高台院・淀殿・木食応其らの勧めにより、この日、近江大津城を明け渡して山城宇治に退いた。",
+  "validYears": [
+    1600,
+    1600
+  ],
+  "datePrecision": "day",
+  "source": "hiDainihonshiryoKobun",
+  "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+  "locator": "綱文：和暦 慶長5年9月14日 第8条（区分 史料綜覧、編11・冊913（データベースの表示値）、262頁）",
+  "gameBindings": [
+    "TK.HIST:大津城の戦い"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-09",
+  "uncertainty": "綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。",
+  "linkedEntities": [
+    "place:otsu-castle",
+    "person:京極高次"
+  ],
+  "eventTime": {
+    "kind": "dated-event",
+    "date": [
+      1600,
+      9,
+      14
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": false,
+    "precision": "day"
+  },
+  "eventRelation": "castle-handover",
+  "eventScope": "綱文が掲げる日付。慶長5年9月14日はゲーム共通の暦表で1600年10月20日。最終年表の大津城の戦い（1600年10月10日）は綱文より10日早い。綱文の「是日」が掛かるのは開城で、西軍の包囲は「是より先」、関ヶ原の戦勝を聞いたことは「尋で」なので日付にしない。年表の出来事は攻城を表し、開城とは別の行為なので、この差を一致・不一致の判定には使わない。勧めた人々は、この日の行為の当事者として結ばない。"
+}

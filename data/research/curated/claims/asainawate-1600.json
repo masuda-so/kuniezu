@@ -1,0 +1,39 @@
+{
+  "id": "asainawate-1600",
+  "entity": "place:asainawate",
+  "predicate": "military-event",
+  "value": "前田利長が加賀大聖寺から兵を返して三堂山に至り、小松の丹羽長重が後ろから追って浅井畷で戦った。",
+  "validYears": [
+    1600,
+    1600
+  ],
+  "datePrecision": "day",
+  "source": "hiDainihonshiryoKobun",
+  "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+  "locator": "綱文：和暦 慶長5年8月8日 第1条（区分 史料綜覧、編11・冊913（データベースの表示値）、245頁）",
+  "gameBindings": [
+    "TK.HIST:浅井畷の戦い"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-09",
+  "uncertainty": "綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。",
+  "linkedEntities": [
+    "place:asainawate",
+    "person:前田利長",
+    "person:丹羽長重"
+  ],
+  "eventTime": {
+    "kind": "dated-event",
+    "date": [
+      1600,
+      8,
+      8
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": false,
+    "precision": "day"
+  },
+  "eventRelation": "military-event",
+  "eventScope": "綱文が掲げる日付。慶長5年8月8日はゲーム共通の暦表で1600年9月15日。最終年表の浅井畷の戦い（1600年9月16日）は綱文より1日遅い。"
+}

@@ -1,0 +1,37 @@
+{
+  "id": "kozuki-fall-1578",
+  "entity": "place:kozuki-castle",
+  "predicate": "castle-fall",
+  "value": "播磨上月城の尼子勝久が毛利氏の攻囲を防ぎきれずに自害し、この日、城が落ちた。",
+  "validYears": [
+    1578,
+    1578
+  ],
+  "datePrecision": "day",
+  "source": "hiDainihonshiryoKobun",
+  "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+  "locator": "綱文：和暦 天正6年7月5日 第1条（区分 史料綜覧、編10・冊911（データベースの表示値）、181頁）",
+  "gameBindings": [
+    "TK.HIST:上月城の戦い"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-09",
+  "uncertainty": "綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。",
+  "linkedEntities": [
+    "place:kozuki-castle"
+  ],
+  "eventTime": {
+    "kind": "dated-event",
+    "date": [
+      1578,
+      7,
+      5
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": false,
+    "precision": "day"
+  },
+  "eventRelation": "castle-fall",
+  "eventScope": "綱文が掲げる日付。天正6年7月5日はゲーム共通の暦表で1578年8月8日。最終年表の上月城の戦い（1578年8月8日）は一致する。綱文の「是日」が掛かるのは落城で、勝久の自害は是日の前に書かれる。山中幸盛が偽って降り、のちに殺されたことは「尋で」なので日付にしない。勝久・幸盛はこの日の落城の当事者として結ばない（勝久の自害の日は綱文から確定しない）。"
+}

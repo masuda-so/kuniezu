@@ -1,0 +1,37 @@
+{
+  "id": "yoshihide-shogun-1568",
+  "entity": "person:足利義栄",
+  "predicate": "central-office",
+  "value": "左馬頭の足利義栄が征夷大将軍に任じられ、禁色と昇殿を許された。",
+  "validYears": [
+    1568,
+    1568
+  ],
+  "datePrecision": "day",
+  "source": "hiDainihonshiryoKobun",
+  "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+  "locator": "綱文：和暦 永禄11年2月8日 第1条（区分 史料綜覧、編9・冊910（データベースの表示値）、675頁）",
+  "gameBindings": [
+    "TK.HIST:足利義栄の将軍宣下"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-09",
+  "uncertainty": "綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。",
+  "linkedEntities": [
+    "person:足利義栄"
+  ],
+  "eventTime": {
+    "kind": "dated-event",
+    "date": [
+      1568,
+      2,
+      8
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": false,
+    "precision": "day"
+  },
+  "eventRelation": "central-office",
+  "eventScope": "綱文が掲げる日付。永禄11年2月8日はゲーム共通の暦表で1568年3月6日。最終年表の足利義栄の将軍宣下（1568年3月1日）は綱文より5日早い。命題は任官の日で、在職の期間には広げない。"
+}

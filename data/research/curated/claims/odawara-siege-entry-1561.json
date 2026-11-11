@@ -1,0 +1,37 @@
+{
+  "id": "odawara-siege-entry-1561",
+  "entity": "person:上杉謙信",
+  "predicate": "campaign-action",
+  "value": "長尾景虎（のちの上杉謙信）が上杉憲政を奉じて、上野沼田城から相模に入った。",
+  "validYears": [
+    1561,
+    1561
+  ],
+  "datePrecision": "day",
+  "source": "hiDainihonshiryoKobun",
+  "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+  "locator": "綱文：和暦 永禄4年3月7日 第2条（区分 史料綜覧、編9・冊910（データベースの表示値）、520頁）",
+  "gameBindings": [
+    "TK.HIST:小田原城の戦い"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-09",
+  "uncertainty": "綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。",
+  "linkedEntities": [
+    "person:上杉謙信"
+  ],
+  "eventTime": {
+    "kind": "dated-event",
+    "date": [
+      1561,
+      3,
+      7
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": false,
+    "precision": "day"
+  },
+  "eventRelation": "campaign-action",
+  "eventScope": "綱文が掲げる日付。永禄4年3月7日はゲーム共通の暦表で1561年3月22日。最終年表の小田原城の戦い（1561年4月10日）は綱文より19日遅い。命題は景虎の相模への進入の日。小田原城の攻囲（北条氏康・氏政、今川・武田の援兵の防戦）と鎌倉への転進は綱文が「尋で」と書くので、日付にしない。年表の出来事は攻囲を表し、相模への進入とは別の行為なので、この差を一致・不一致の判定には使わない。小田原城の場所と北条氏康は、この日の行為の当事者として結ばない。"
+}

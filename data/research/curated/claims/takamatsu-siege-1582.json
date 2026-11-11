@@ -1,0 +1,39 @@
+{
+  "id": "takamatsu-siege-1582",
+  "entity": "place:bitchu-takamatsu-castle",
+  "predicate": "documented-siege-phase",
+  "value": "羽柴秀吉が毛利輝元の将の清水宗治を備中高松城に囲んだ。",
+  "validYears": [
+    1582,
+    1582
+  ],
+  "datePrecision": "day",
+  "source": "hiDainihonshiryoKobun",
+  "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+  "locator": "綱文：和暦 天正10年5月7日 第2条（区分 史料綜覧、編10・冊911（データベースの表示値）、337頁）",
+  "gameBindings": [
+    "TK.HIST:備中高松城の水攻め"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-09",
+  "uncertainty": "綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。",
+  "linkedEntities": [
+    "place:bitchu-takamatsu-castle",
+    "person:toyotomi-hideyoshi",
+    "person:shimizu-muneharu"
+  ],
+  "eventTime": {
+    "kind": "dated-event",
+    "date": [
+      1582,
+      5,
+      7
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": false,
+    "precision": "day"
+  },
+  "eventRelation": "documented-siege-phase",
+  "eventScope": "綱文が掲げる日付。天正10年5月7日はゲーム共通の暦表で1582年5月28日。最終年表の備中高松城の水攻め（1582年6月10日）は綱文より13日遅い。命題は包囲の日。水攻めにしたことと毛利の援軍は綱文が「尋で」と書くので日付にしない。年表の出来事は水攻めを表し、包囲とは別の行為なので、この差を一致・不一致の判定には使わない。毛利輝元は宗治の主君として名が出るだけなので結ばない。"
+}

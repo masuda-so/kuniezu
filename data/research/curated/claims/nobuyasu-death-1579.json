@@ -1,0 +1,38 @@
+{
+  "id": "nobuyasu-death-1579",
+  "entity": "person:徳川信康",
+  "predicate": "death-date",
+  "value": "徳川家康が子の信康を自害させた。",
+  "validYears": [
+    1579,
+    1579
+  ],
+  "datePrecision": "day",
+  "source": "hiDainihonshiryoKobun",
+  "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+  "locator": "綱文：和暦 天正7年9月15日 第1条（区分 史料綜覧、編10・冊911（データベースの表示値）、225頁）",
+  "gameBindings": [
+    "TK.HIST:築山殿事件"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-09",
+  "uncertainty": "綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。",
+  "linkedEntities": [
+    "person:徳川信康",
+    "person:tokugawa-ieyasu"
+  ],
+  "eventTime": {
+    "kind": "dated-event",
+    "date": [
+      1579,
+      9,
+      15
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": false,
+    "precision": "day"
+  },
+  "eventRelation": "death-date",
+  "eventScope": "綱文が掲げる日付。天正7年9月15日はゲーム共通の暦表で1579年10月5日。最終年表の築山殿事件（1579年10月5日）は一致する。命題は信康の自害の日。築山殿の死は綱文のこの条に無いので、事件の全体には広げない。8月3日の条（信康を大浜に移す）は別の条。"
+}

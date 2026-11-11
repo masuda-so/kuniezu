@@ -1,0 +1,39 @@
+{
+  "id": "mimikawa-1578",
+  "entity": "place:takajo-hyuga",
+  "predicate": "military-event",
+  "value": "大友宗麟が伊東義祐を助けて日向の高城を取り戻そうと迫ったが、この日、島津義久が高城の兵とともに大友氏の軍を挟み撃ちにして大いに破り、耳川まで追撃した。",
+  "validYears": [
+    1578,
+    1578
+  ],
+  "datePrecision": "day",
+  "source": "hiDainihonshiryoKobun",
+  "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+  "locator": "綱文：和暦 天正6年11月12日 第1条（区分 史料綜覧、編10・冊911（データベースの表示値）、194頁）",
+  "gameBindings": [
+    "TK.HIST:耳川の戦い"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-09",
+  "uncertainty": "綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。",
+  "linkedEntities": [
+    "place:takajo-hyuga",
+    "person:島津義久",
+    "person:otomo-sorin"
+  ],
+  "eventTime": {
+    "kind": "dated-event",
+    "date": [
+      1578,
+      11,
+      12
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": false,
+    "precision": "day"
+  },
+  "eventRelation": "military-event",
+  "eventScope": "綱文が掲げる日付。天正6年11月12日はゲーム共通の暦表で1578年12月10日。最終年表の耳川の戦い（1578年12月10日）は一致する。綱文の「是日」が掛かるのは島津の挟撃と耳川までの追撃で、大友の高城への接近は是日より前に書かれ、その後の日向の攻略は「尋で」なので日付にしない。出来事の場所は是日の戦いの起きた高城とし、耳川の場所は結ばない。伊東義祐は助けられた相手として名が出るだけなので結ばない。"
+}

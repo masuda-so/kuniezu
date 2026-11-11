@@ -1,0 +1,38 @@
+{
+  "id": "tanabe-defense-1600",
+  "entity": "place:tanabe-castle",
+  "predicate": "campaign-action",
+  "value": "丹後田辺の長岡玄旨（細川幽斎）が大坂の変の知らせを聞き、領内の峰山・宮津の諸城を焼いて、田辺城を死守しようとした。",
+  "validYears": [
+    1600,
+    1600
+  ],
+  "datePrecision": "day",
+  "source": "hiDainihonshiryoKobun",
+  "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+  "locator": "綱文：和暦 慶長5年7月18日 第1条（区分 史料綜覧、編11・冊913（データベースの表示値）、233頁）",
+  "gameBindings": [
+    "TK.HIST:田辺城の戦い"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-09",
+  "uncertainty": "綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。",
+  "linkedEntities": [
+    "place:tanabe-castle",
+    "person:hosokawa-fujitaka"
+  ],
+  "eventTime": {
+    "kind": "dated-event",
+    "date": [
+      1600,
+      7,
+      18
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": false,
+    "precision": "day"
+  },
+  "eventRelation": "campaign-action",
+  "eventScope": "綱文が掲げる日付。慶長5年7月18日はゲーム共通の暦表で1600年8月26日。最終年表の田辺城の戦い（1600年8月29日）は綱文より3日遅い。命題は籠城の決意と諸城の焼却の日。石田三成の兵が囲んだことは「尋で」なので日付にしない。年表の出来事は攻囲を表し、籠城の準備とは別の行為なので、この差を一致・不一致の判定には使わない。"
+}

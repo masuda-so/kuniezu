@@ -1,0 +1,38 @@
+{
+  "id": "ueda-1585",
+  "entity": "place:ueda-castle",
+  "predicate": "military-event",
+  "value": "上田城主の真田昌幸が徳川家康と不和になり、家康は大久保忠世・鳥居元忠・平岩親吉らに上田を攻めさせた。この日、昌幸は忠世らの兵を信濃国分寺で迎え撃って破った。",
+  "validYears": [
+    1585,
+    1585
+  ],
+  "datePrecision": "day",
+  "source": "hiDainihonshiryoKobun",
+  "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+  "locator": "綱文：和暦 天正13年閏8月2日 第1条（区分 大日本史料、第11編之19（データベースの表示値）、9頁）",
+  "gameBindings": [
+    "TK.HIST:第一次上田合戦"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-09",
+  "uncertainty": "綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。",
+  "linkedEntities": [
+    "place:ueda-castle",
+    "person:sanada-masayuki"
+  ],
+  "eventTime": {
+    "kind": "dated-event",
+    "date": [
+      1585,
+      8,
+      2
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": true,
+    "precision": "day"
+  },
+  "eventRelation": "military-event",
+  "eventScope": "綱文が掲げる日付。天正13年閏8月2日はゲーム共通の暦表で1585年9月25日。最終年表の第一次上田合戦（1585年9月25日）は一致する。綱文の「是日」が掛かるのは昌幸の迎撃で、家康の出兵の命令は是日の前に書かれる。家康と攻め手の諸将は、この日の行為の当事者として結ばない（迎撃された側として名は出る）。綱文の閏8月は閏月。"
+}

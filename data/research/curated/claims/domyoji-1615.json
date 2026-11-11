@@ -1,0 +1,40 @@
+{
+  "id": "domyoji-1615",
+  "entity": "place:domyoji",
+  "predicate": "military-event",
+  "value": "明け方、水野勝成・本多忠政・松平忠明・伊達政宗らが、大坂方の真田幸村・後藤基次・薄田兼相らと片山・道明寺の付近で戦い、大坂方が敗れて基次・兼相らが戦死した。",
+  "validYears": [
+    1615,
+    1615
+  ],
+  "datePrecision": "day",
+  "source": "hiDainihonshiryoKobun",
+  "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+  "locator": "綱文：和暦 元和元年5月6日 第1条（区分 大日本史料、第12編之18（データベースの表示値）、619頁）",
+  "gameBindings": [
+    "TK.HIST:道明寺の戦い"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-09",
+  "uncertainty": "綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。",
+  "linkedEntities": [
+    "place:domyoji",
+    "person:date-masamune",
+    "person:sanada-nobushige",
+    "person:後藤基次"
+  ],
+  "eventTime": {
+    "kind": "dated-event",
+    "date": [
+      1615,
+      5,
+      6
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": false,
+    "precision": "day"
+  },
+  "eventRelation": "military-event",
+  "eventScope": "綱文が掲げる日付。元和元年5月6日はゲーム共通の暦表で1615年6月2日。最終年表の道明寺の戦い（1615年6月2日）は一致する。綱文は慶長20年を元和1年と書く。水野勝成・本多忠政・松平忠明・薄田兼相は人物の ID が無いので結ばない。"
+}

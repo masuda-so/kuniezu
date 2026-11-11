@@ -1,0 +1,38 @@
+{
+  "id": "tedorigawa-1577",
+  "entity": "place:minatogawa-kaga",
+  "predicate": "military-event",
+  "value": "上杉謙信が加賀の湊川に出陣したので、信長の将の柴田勝家らは兵を返した。この日、謙信はこれを追撃した。",
+  "validYears": [
+    1577,
+    1577
+  ],
+  "datePrecision": "day",
+  "source": "hiDainihonshiryoKobun",
+  "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+  "locator": "綱文：和暦 天正5年9月23日 第1条（区分 史料綜覧、編10・冊911（データベースの表示値）、156頁）",
+  "gameBindings": [
+    "TK.HIST:手取川の戦い"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-09",
+  "uncertainty": "綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。",
+  "linkedEntities": [
+    "place:minatogawa-kaga",
+    "person:上杉謙信"
+  ],
+  "eventTime": {
+    "kind": "dated-event",
+    "date": [
+      1577,
+      9,
+      23
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": false,
+    "precision": "day"
+  },
+  "eventRelation": "military-event",
+  "eventScope": "綱文が掲げる日付。天正5年9月23日はゲーム共通の暦表で1577年11月3日。最終年表の手取川の戦い（1577年11月3日）は一致する。綱文の「是日」が掛かるのは謙信の追撃で、出陣と勝家の撤兵は是日の前に書かれる。綱文は手取川ではなく湊川と書く。勝家は追撃された側として名が出るが、この日の行為の当事者としては結ばない。"
+}

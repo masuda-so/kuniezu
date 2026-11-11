@@ -1,0 +1,38 @@
+{
+  "id": "jinju-first-1592",
+  "entity": "place:jinju",
+  "predicate": "military-event",
+  "value": "長岡（細川）忠興・長谷川秀一・木村定光らが慶尚道の晋州を攻めたが、牧使の金時敏が固く守ったので、忠興らは退いて昌原に屯した。",
+  "validYears": [
+    1592,
+    1592
+  ],
+  "datePrecision": "day",
+  "source": "hiDainihonshiryoKobun",
+  "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+  "locator": "綱文：和暦 文禄元年10月10日 第2条（区分 史料綜覧、編11・冊912（データベースの表示値）、370頁）",
+  "gameBindings": [
+    "TK.HIST:第一次晋州城の戦い"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-09",
+  "uncertainty": "綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。",
+  "linkedEntities": [
+    "place:jinju",
+    "person:hosokawa-tadaoki"
+  ],
+  "eventTime": {
+    "kind": "dated-event",
+    "date": [
+      1592,
+      10,
+      10
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": false,
+    "precision": "day"
+  },
+  "eventRelation": "military-event",
+  "eventScope": "綱文が掲げる日付。文禄元年10月10日はゲーム共通の暦表で1592年11月13日。最終年表の第一次晋州城の戦い（1592年11月10日）は綱文より3日早い。退いて昌原に屯したことは同じ条にあるが、その日付は示さない。長谷川秀一・木村定光・金時敏は人物の ID が無いので結ばない。"
+}

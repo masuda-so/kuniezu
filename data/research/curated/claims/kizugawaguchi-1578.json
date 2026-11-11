@@ -1,0 +1,38 @@
+{
+  "id": "kizugawaguchi-1578",
+  "entity": "place:kizugawaguchi",
+  "predicate": "military-event",
+  "value": "信長の水軍の九鬼嘉隆が、毛利氏の水軍と摂津木津川口で戦って破った。",
+  "validYears": [
+    1578,
+    1578
+  ],
+  "datePrecision": "day",
+  "source": "hiDainihonshiryoKobun",
+  "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+  "locator": "綱文：和暦 天正6年11月6日 第1条（区分 史料綜覧、編10・冊911（データベースの表示値）、193頁）",
+  "gameBindings": [
+    "TK.HIST:第二次木津川口の戦い"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-09",
+  "uncertainty": "綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。",
+  "linkedEntities": [
+    "place:kizugawaguchi",
+    "person:kuki-yoshitaka"
+  ],
+  "eventTime": {
+    "kind": "dated-event",
+    "date": [
+      1578,
+      11,
+      6
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": false,
+    "precision": "day"
+  },
+  "eventRelation": "military-event",
+  "eventScope": "綱文が掲げる日付。天正6年11月6日はゲーム共通の暦表で1578年12月4日。最終年表の第二次木津川口の戦い（1578年12月5日）は綱文より1日遅い。"
+}
