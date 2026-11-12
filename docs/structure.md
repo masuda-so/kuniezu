@@ -60,7 +60,7 @@ DJANGO_SETTINGS_MODULE=config.settings.geo uv run python manage.py migrate
 
 ほかの設定と静的書き出しは地理を読まない。`DATABASE_URL` が SpatiaLite を指すとほかの設定は起動を拒み、書き出しは地理ありの設定で始まると止まる。
 
-CI の `Django CI` は website と同じく試験（`uv run pytest`）だけを実行する。地理ありの試験と `migrate` は、地理のライブラリを入れた別のジョブ `geo` で実行する（必須チェックではない）。Ruff・mypy・djLint・pre-commit は手元の検査。`kuniezu/static/`・`data/`・`tools/`・`docs/`・`archive/` は Ruff と pre-commit の対象から外してある（各自の決まりに従う。段 4 で Python の道具を対象に入れる）。
+CI の `Django CI` は website と同じく試験（`uv run pytest`）だけを実行する。同じジョブ `build` が、既定の試験の後に地理のライブラリを入れ、地理ありの試験と `migrate` を実行する（必須チェック `build (3.14)` に含まれる）。既定の試験はライブラリを入れる前に走るので、地理なしで通ることも確かめられる。Ruff・mypy・djLint・pre-commit は手元の検査。`kuniezu/static/`・`data/`・`tools/`・`docs/`・`archive/` は Ruff と pre-commit の対象から外してある（各自の決まりに従う。段 4 で Python の道具を対象に入れる）。
 
 ゲームの検査（`node tools/checks/offline.cjs` ほか、CI の `Node.js CI`）は従来どおり。ゲームの JS を実行するので Node が要る。
 
