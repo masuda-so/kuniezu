@@ -1,18 +1,20 @@
 # リポジトリの構成（再編の途中）
 
-`masuda-so/website` と同じ Django の構成へ揃える途中（`docs/architecture/replatform-plan.md`）。今は段 1 まで：Django・uv の骨組みを足し（1a）、ゲームの原本を `game/` から Django アプリの静的ファイル `kuniezu/static/kuniezu/` へ移し（1b-1）、`index.html` を Django のテンプレートにし（1b-2）、地図の正本を配信物から分けて `kuniezu/map/` へ移した（1b-3）。ゲームの JS と相対 URL は変えていない。
+`masuda-so/website` と同じ Django の構成へ揃える途中（`docs/architecture/replatform-plan.md`）。今は段 1 までと段 7b（地理の土台）：Django・uv の骨組みを足し（1a）、ゲームの原本を `game/` から Django アプリの静的ファイル `kuniezu/static/kuniezu/` へ移し（1b-1）、`index.html` を Django のテンプレートにし（1b-2）、地図の正本を配信物から分けて `kuniezu/map/` へ移した（1b-3）。ゲームの JS と相対 URL は変えていない。
 
 | 場所 | 役割 |
 | --- | --- |
 | `manage.py` | Django の管理コマンドの入口 |
-| `config/` | 設定（`settings/base.py`・`local.py`・`test.py`）、URL、WSGI |
+| `config/` | 設定（`settings/base.py`・`local.py`・`test.py`、地理ありの `geo.py`）、URL、WSGI |
 | `kuniezu/` | Django のアプリ。ゲームのページを返す `views.py`、テンプレート `templates/`、静的ファイル `static/kuniezu/` |
 | `kuniezu/templates/index.html` | ゲームのページ。`game-scripts` がスクリプトの読込順 |
 | `kuniezu/static/kuniezu/` | ゲームの原本（素の JavaScript・CSS・素材）と、地図の配信物 `map/build/`（生成物。Git に入れない） |
 | `kuniezu/history/` | 史実の関係データベース（Django のアプリ）。表・取り込み・検索。設計は `docs/architecture/history-rdb.md` |
+| `kuniezu/geo/` | 地理のアプリ（GeoDjango、段 7）。地理ありの設定 `config.settings.geo` だけが読み込む。郡・国・場所の点は段 7c・7d で足す |
 | `kuniezu/map/` | 地図の正本（行政区分 `admin/`・支配 `control/`・自然 `physical/`・`projection.json`・年代別の差分の入力 `edits/`）。配信しない |
 | `scripts/` | 静的書き出し `build_static.py` |
 | `tests/` | Django 側の試験（pytest） |
+| `tests_geo/` | 地理ありの試験。既定の `uv run pytest` は集めない |
 | `tools/` | 検査と生成の道具（Node と Python）。段 4 で、JS を実行しない道具を Python に移す |
 | `data/`・`docs/`・`archive/` | 従来どおり |
 | `dist/client/` | 静的書き出しの出力。Git に入れない |
@@ -38,13 +40,27 @@ uv sync --locked
 uv run pytest
 uv run ruff check
 uv run ruff format --check
-uv run mypy kuniezu config scripts tests
+uv run mypy kuniezu config scripts tests tests_geo
 uv run python manage.py check --settings=config.settings.test
 uv run python manage.py migrate && uv run python manage.py import_history   # 史実データベースを作る
 uv run python scripts/build_static.py
 ```
 
-CI の `Django CI` は website と同じく試験（`uv run pytest`）だけを実行する。Ruff・mypy・djLint・pre-commit は手元の検査。`kuniezu/static/`・`data/`・`tools/`・`docs/`・`archive/` は Ruff と pre-commit の対象から外してある（各自の決まりに従う。段 4 で Python の道具を対象に入れる）。
+### 地理（GeoDjango、段 7）
+
+地理の機能は `config.settings.geo` だけが入れる。この設定は SpatiaLite の別のファイル（`GEO_DATABASE_URL`、既定は根の `geo.sqlite3`、Git に入れない）を開き、`db.sqlite3` とは共有しない。C のライブラリ GDAL・GEOS・PROJ・SpatiaLite が要る（uv では入らない。macOS は `brew install gdal spatialite-tools`、Ubuntu は `gdal-bin libsqlite3-mod-spatialite`）。macOS の Homebrew は Django が自動で見つけないので、場所を環境変数で渡す。
+
+```sh
+export GDAL_LIBRARY_PATH=/opt/homebrew/lib/libgdal.dylib
+export GEOS_LIBRARY_PATH=/opt/homebrew/lib/libgeos_c.dylib
+export SPATIALITE_LIBRARY_PATH=/opt/homebrew/lib/mod_spatialite.dylib
+uv run pytest --ds=config.settings.geo tests_geo
+DJANGO_SETTINGS_MODULE=config.settings.geo uv run python manage.py migrate
+```
+
+ほかの設定と静的書き出しは地理を読まない。`DATABASE_URL` が SpatiaLite を指すとほかの設定は起動を拒み、書き出しは地理ありの設定で始まると止まる。
+
+CI の `Django CI` は website と同じく試験（`uv run pytest`）だけを実行する。地理ありの試験と `migrate` は、地理のライブラリを入れた別のジョブ `geo` で実行する（必須チェックではない）。Ruff・mypy・djLint・pre-commit は手元の検査。`kuniezu/static/`・`data/`・`tools/`・`docs/`・`archive/` は Ruff と pre-commit の対象から外してある（各自の決まりに従う。段 4 で Python の道具を対象に入れる）。
 
 ゲームの検査（`node tools/checks/offline.cjs` ほか、CI の `Node.js CI`）は従来どおり。ゲームの JS を実行するので Node が要る。
 

@@ -141,6 +141,7 @@ is [docs/README.md](docs/README.md); open requests and ownership are in
 | `kuniezu/static/kuniezu/` | The game served to the browser and its bundled assets |
 | `kuniezu/templates/` | The game page `index.html` (a Django template); it sets the script load order |
 | `kuniezu/history/` | The relational history database (a Django app): things, phenomena, sources, import and queries |
+| `kuniezu/geo/` | The geography app (GeoDjango), loaded only by the GIS settings. Only the foundation so far |
 | `docs/architecture/` | Structure, file move records and dependency order |
 | `docs/work/` | Open requests, completion criteria, per-subject task lists, ownership and results |
 | `docs/reports/` | Research, fix and on-screen verification reports |
@@ -216,6 +217,14 @@ battles each campaign is made of (`data/research/conflicts.json`).
 It holds every
 current input record and keeps source-verified records apart from the unverified
 inventory of what the game implements (`docs/architecture/history-rdb.md`).
+
+The geography features (GeoDjango with the SQLite extension SpatiaLite) are used
+only by the GIS settings `config.settings.geo`, which keep their own database file
+`geo.sqlite3`. They need GDAL, GEOS, PROJ and SpatiaLite installed with the
+operating system's tools (uv cannot install them); publishing the game and the
+static export do not need them. Only the foundation is in so far: there are no
+county or province shapes or place points yet. See `docs/structure.md` for the
+commands and stage 7 of `docs/architecture/replatform-plan.md` for the plan.
 
 Agents may start and stop the server only at `127.0.0.1:8000`. Port 8001 and all
 other ports must not be started or used. Verification connects to an

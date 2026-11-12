@@ -1,5 +1,11 @@
+import copy
 import gzip
 import json
+import os
+import subprocess
+import sys
+from pathlib import Path
+from types import SimpleNamespace
 
 import pytest
 from django.test import Client
@@ -115,3 +121,60 @@ def test_export_fails_when_a_file_stays_above_the_asset_limit(tmp_path, monkeypa
 
     with pytest.raises(RuntimeError, match=r"big\.png"):
         build_static.gzip_oversized_vectors(client_dir)
+
+
+def test_export_refuses_settings_with_geodjango():
+    gis_app = SimpleNamespace(
+        INSTALLED_APPS=["kuniezu", "django.contrib.gis"],
+        DATABASES={"default": {"ENGINE": "django.db.backends.sqlite3"}},
+    )
+    gis_engine = SimpleNamespace(
+        INSTALLED_APPS=["kuniezu"],
+        DATABASES={"default": {"ENGINE": "django.contrib.gis.db.backends.spatialite"}},
+    )
+    for settings in (gis_app, gis_engine):
+        with pytest.raises(RuntimeError, match="without GeoDjango"):
+            build_static.check_no_gis(settings)
+
+
+def test_export_stops_before_writing_with_a_gis_database(tmp_path, settings):
+    # Swapping INSTALLED_APPS would reload the apps and load GDAL, which the
+    # default test job does not have; the database engine shows the same check.
+    databases = copy.deepcopy(settings.DATABASES)
+    databases["default"]["ENGINE"] = "django.contrib.gis.db.backends.spatialite"
+    settings.DATABASES = databases
+    dist = tmp_path / "dist"
+
+    with pytest.raises(RuntimeError, match="without GeoDjango"):
+        build(dist)
+
+    assert not dist.exists()
+
+
+def test_export_loads_no_gis_library(tmp_path, settings):
+    settings.GAME_DIR = tmp_path / "game"
+    (tmp_path / "game").mkdir()
+
+    build(tmp_path / "dist")
+
+    assert "django.contrib.gis" not in settings.INSTALLED_APPS
+    assert "django.contrib.gis.gdal" not in sys.modules
+
+
+def test_plain_settings_refuse_a_gis_database_url(tmp_path):
+    env = {
+        **os.environ,
+        "DATABASE_URL": f"spatialite:///{tmp_path / 'geo.sqlite3'}",
+        "DJANGO_SETTINGS_MODULE": "config.settings.test",
+    }
+    result = subprocess.run(
+        [sys.executable, "-c", "import django; django.setup()"],
+        cwd=Path(__file__).resolve().parents[1],
+        env=env,
+        capture_output=True,
+        text=True,
+        check=False,
+    )
+
+    assert result.returncode != 0
+    assert "GEO_DATABASE_URL" in result.stderr

@@ -18,6 +18,7 @@ import shutil
 import sys
 from http import HTTPStatus
 from pathlib import Path
+from typing import Any
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
@@ -177,14 +178,35 @@ def copy_game(game_dir: Path, target: Path) -> None:
     shutil.copytree(game_dir, target, ignore=ignore)
 
 
+def check_no_gis(settings: Any) -> None:
+    """Refuse to export with GeoDjango loaded.
+
+    The export host has no GIS libraries, and the page needs none. The
+    environment can still name config.settings.geo, since build() only sets
+    DJANGO_SETTINGS_MODULE when it is unset.
+    """
+    engine = settings.DATABASES["default"]["ENGINE"]
+    if "django.contrib.gis" in settings.INSTALLED_APPS or engine.startswith(
+        "django.contrib.gis"
+    ):
+        message = (
+            "The static export must run without GeoDjango; unset "
+            "DJANGO_SETTINGS_MODULE or use config.settings.test."
+        )
+        raise RuntimeError(message)
+
+
 def build(dist: Path = DIST) -> Path:
     os.environ.setdefault("DJANGO_SETTINGS_MODULE", "config.settings.test")
 
     import django  # noqa: PLC0415
+    from django.conf import settings  # noqa: PLC0415
 
+    # Reading the settings loads only the settings module; check it before
+    # django.setup() imports the apps, which with GeoDjango load GDAL.
+    check_no_gis(settings)
     django.setup()
 
-    from django.conf import settings  # noqa: PLC0415
     from django.test import Client  # noqa: PLC0415
 
     client_dir = dist / "client"

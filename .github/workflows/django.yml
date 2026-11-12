@@ -37,3 +37,32 @@ jobs:
     - name: Run Tests
       run: |
         uv run pytest
+
+  # GeoDjango (docs/architecture/replatform-plan.md, stage 7). The build job
+  # above keeps running without the GIS libraries, so it also shows that the
+  # default tests and the static export need none.
+  geo:
+
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+
+    steps:
+    - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+    - name: Install the GIS libraries
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y --no-install-recommends gdal-bin libsqlite3-mod-spatialite
+    - name: Set up uv
+      uses: astral-sh/setup-uv@68559e99cc807c1eb7e9238fd43a15bba460eec2 # v10.3.3
+    - name: Install Dependencies
+      run: |
+        uv sync --locked
+    - name: Run GIS Tests
+      run: |
+        uv run pytest --ds=config.settings.geo tests_geo -s
+    - name: Migrate a SpatiaLite database
+      env:
+        DJANGO_SETTINGS_MODULE: config.settings.geo
+        GEO_DATABASE_URL: spatialite:///${{ runner.temp }}/geo.sqlite3
+      run: |
+        uv run python manage.py migrate --verbosity 1
