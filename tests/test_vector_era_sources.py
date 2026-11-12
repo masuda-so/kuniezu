@@ -1,4 +1,5 @@
 import json
+import math
 from functools import cache
 from pathlib import Path
 
@@ -100,10 +101,28 @@ def test_edited_shore_matches_land_and_preserves_non_shore_openings():
         )
         actual = shapely.union_all([shape(f["geometry"]) for f in rows])
         expected = land_at(year).boundary.difference(suppress)
-        assert actual.equals(expected), (
-            year,
-            actual.symmetric_difference(expected).length,
-        )
+        assert_same_lines(actual, expected, year)
+
+
+# The suppression areas above are recomputed here with sin/cos from the C
+# library. glibc 2.43 (Ubuntu 26.04) rounds the last digits differently from
+# 2.39, which moved the ends of one 0.00026-degree piece of shore by far less
+# than a millimetre and made an exact comparison fail. Pieces that differ must
+# lie within SHORE_TOLERANCE_DEGREES (about 1 cm) of the other side.
+SHORE_TOLERANCE_DEGREES = 1e-7
+
+
+def assert_same_lines(actual, expected, year):
+    if actual.equals(expected):
+        return
+    only_actual = actual.difference(expected)
+    only_expected = expected.difference(actual)
+    for extra, other in ((only_actual, only_expected), (only_expected, only_actual)):
+        for piece in getattr(extra, "geoms", [extra]):
+            if piece.is_empty:
+                continue
+            gap = piece.hausdorff_distance(other) if not other.is_empty else math.inf
+            assert gap <= SHORE_TOLERANCE_DEGREES, (year, piece.length, gap)
 
 
 def test_deferred_ponds_do_not_become_historical_terrain_facts():
