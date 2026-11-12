@@ -14,7 +14,7 @@ jobs:
       matrix:
         os: [ubuntu-24.04, ubuntu-26.04]
     runs-on: ${{ matrix.os }}
-    timeout-minutes: 20
+    timeout-minutes: 15
     steps:
     - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
     - name: Set up uv
@@ -61,6 +61,6 @@ jobs:
             d = actual.symmetric_difference(expected)
             parts = list(getattr(d, "geoms", [d]))
             print(year, "equals", actual.equals(expected), "symdiff len", d.length, "parts", len(parts),
-                  "max part", max((p.length for p in parts), default=0), "hausdorff", actual.hausdorff_distance(expected),
+                  "max part", max((p.length for p in parts), default=0), "max part extent", max((max(p.bounds[2]-p.bounds[0], p.bounds[3]-p.bounds[1]) for p in parts), default=0),
                   "len actual", actual.length, "len expected", expected.length)
         PY
