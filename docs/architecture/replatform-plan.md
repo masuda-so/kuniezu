@@ -115,6 +115,54 @@ Bootstrap の JS（モーダル・引き出し・通知の開閉）も使い、�
 
 Bootstrap の版を上げるときは、新しい版のフォルダを足し、`bootstrap-layer.css` の `@import` を切り替え、`node tools/build/stamp-assets.cjs` を実行し、`THIRD_PARTY_NOTICES.md` を直してから古いフォルダを消す。website と同じ版にそろえる。
 
+## 段 7：GeoDjango で場所と郡を地理のデータとして持つ（2026-11-12 決定）
+
+利用者の決定（2026-11-12）：Django に付属する地理の機能 **GeoDjango**（`django.contrib.gis`）を入れる。データベースは今の SQLite に地理の拡張 **SpatiaLite** を足す形にし、PostgreSQL＋PostGIS には替えない（1 ファイルのデータベースという今の運用を保つ）。
+
+### 目的
+
+- 史実 DB の場所（今は `Place` の経度・緯度の 2 つの数値）を「点」として持ち、「ある郡・国の中の城」「ある地点から何 km 以内」をデータベースで引けるようにする。
+- 郡の範囲を「面」として持ち、城の支配域（郡を城の管轄に割り当てたもの、`kuniezu/map/control/gun-assignment.csv`）を郡の面の合併として導けるようにする。[領土の史実照合](../designs/territory-control.md) で、ある日の支配をゲームの持ち主と比べる土台にする。
+- 地理の計算（合併・内外の判定・距離）を、自前の処理ではなく GeoDjango の部品（GEOS・GDAL）に任せる。
+
+公開中のサイトでは地理の計算をしない。公開は静的書き出しのままで、GeoDjango を使うのは手元と CI だけ。
+
+### 郡の面の出どころ
+
+CODH『旧国・旧郡境界データセット』（江戸末期、郡 806・国 85、CC BY-NC 4.0、doi:10.20676/00000454）の郡ごと・国ごとの GeoJSON（`https://geoshape.ex.nii.ac.jp/kg/geojson/<ID>.geojson`）。今の郡の画像 `kuniezu/map/admin/gun.png` も、このデータから作った（`gun.json` の `inputSha256` が一致する）。
+
+- 原本は今までどおり Git に入れず、手元の `.cache/codh-kg/geojson/` に置く（以前の取得時の決め事で、再配布しない）。取得の手順と全ファイルの SHA-256 を記録し、取り直した版が同じかを確かめられるようにする。
+- 2026-11-12 に GeoDjango（GDAL 3.13）で全ファイルを読み、多角形 1,077 個（島を持つ郡は複数の多角形になる）、形の壊れたもの 0 を確認した。取り込みは GeoDjango 公式の `LayerMapping` で行い、同じ郡の多角形は一つの MultiPolygon にまとめる。
+- 江戸末期の郡境と海岸線であり、1560〜1615 年の郡境・水際ではない。郡の面を戦国期の境として扱わない。郡の途中で分けている所（`gun-overrides.json`・`control/subcell.geojson`）と年代別の差分（`edits/`）は、面の切り分けとして別に適用する。1560 年の水際に直した所（児島湾など）は、陸・水域の編集正本（`physical/land.geojson` ほか）との差で扱う。
+
+### 地理の機能を公開の書き出しから切り離す
+
+GeoDjango は、Django の起動時に地理ライブラリ（GDAL・GEOS・PROJ・SpatiaLite、いずれも C のライブラリ）を読み込む。静的書き出し（`scripts/build_static.py`、設定は `config.settings.test`）と Cloudflare の書き出し環境（`wrangler.jsonc` の `build`）には、このライブラリが無い。書き出しを壊さないため、次のように分ける。
+
+| 部分 | 方針 |
+|---|---|
+| アプリ | 地理の列を持つモデルは新しいアプリ（仮に `kuniezu.geo`）に置く。`kuniezu.history` には地理の列を入れず、経度・緯度の数値を残す（取り込みの正本は JSON のまま） |
+| 設定 | 地理ありの設定（手元・CI 用）だけが `django.contrib.gis` と新しいアプリを入れ、DB のエンジンを SpatiaLite にする。`base`・`test`（書き出しが使う）は地理なしのまま |
+| ライブラリの場所 | `GDAL_LIBRARY_PATH`・`GEOS_LIBRARY_PATH`・`SPATIALITE_LIBRARY_PATH` を環境変数から読む。macOS の Homebrew（`/opt/homebrew/lib`）は Django が自動では見つけない（2026-11-12 に確認）。Linux の CI は既定の場所で見つかる見込み |
+| 入れ方 | Python の部品（Django など）は uv。C のライブラリは OS の道具で入れる（macOS は `brew install gdal spatialite-tools`、Ubuntu は `gdal-bin` と `libsqlite3-mod-spatialite`）。Python の `gdal` パッケージは GeoDjango に不要なので入れない |
+
+### 段取り
+
+| 段 | 内容 | 終わりの条件 |
+|---|---|---|
+| 7a | この計画 | 利用者の確認 |
+| 7b | **土台**：地理ありの設定、新しいアプリ、CI に地理ライブラリを入れる手順と地理ありの試験 | 地理ありの設定で SpatiaLite の DB を作れ、`pytest` が手元と CI で通る。地理なしの静的書き出しが今と同じ物を作る |
+| 7c | **郡と国の面**：`LayerMapping` で CODH の郡・国を取り込む管理コマンドと、取得の記録 | 806 郡・85 国が入り、形の検査が通る。取り込みを繰り返しても結果が変わらない |
+| 7d | **場所の点**：史実 DB の場所から点を作り、郡・国と結ぶ | 全ての場所に点があり、どの郡に入るかを引ける。経度・緯度の数値と点が一致する |
+| 7e | **支配域の面**：`gun-assignment.csv` と郡の分割・年代差分から、城の支配域を郡の面の合併として導く | 導いた面と `provinces.png` の支配域の差を一覧にし、差の理由（海岸線の違い・郡の分割など）を説明できる |
+
+7b〜7e は、それぞれ main に入ってから次を切る。地図の描画（ゲーム本体の JavaScript）は変えない。描画への接続は [CODH のベクター地図への移行](codh-vector-map.md) の段取りで別に決める。
+
+### 確かめること（7b で）
+
+- CI の Python（`actions/setup-python` か uv が用意するもの）が SQLite の拡張の読み込みに対応しているか。手元の uv の Python 3.14 は対応している（2026-11-12 確認）。
+- 書き出しの設定が地理のアプリを読まないことを、地理ライブラリの無い状態で試験する。
+
 ## 未決の点（該当の段で利用者に確認する）
 
 1. 正本の置き場：**決定（2026-11-05、利用者）** アプリのデータに分ける。正本は `kuniezu/map/`、生成物だけを `kuniezu/static/kuniezu/map/build/` に置く。実行時に読む `definition.csv`・`default.map` は生成のときに `build/` へ写す（段 1b-3）。
