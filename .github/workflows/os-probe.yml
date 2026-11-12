@@ -41,3 +41,26 @@ jobs:
         uv pip list 2>/dev/null | grep -i -E "numpy|shapely|pyproj|pillow"
     - name: Failing test
       run: uv run pytest tests/test_vector_era_sources.py -q -p no:cacheprovider
+    - name: Size of the difference
+      if: always()
+      run: |
+        uv run python - <<'PY'
+        import shapely
+        from shapely.geometry import shape
+        from tests import test_vector_era_sources as t
+        from pyproj import Transformer
+        fwd = Transformer.from_crs("OGC:CRS84", "EPSG:6677", always_xy=True)
+        back = Transformer.from_crs("EPSG:6677", "OGC:CRS84", always_xy=True)
+        masks = t.read("kuniezu/map/physical/shoreline_masks.geojson")
+        suppress = shapely.union_all([shapely.transform(shapely.transform(shape(f["geometry"]), fwd.transform, interleaved=False).buffer(f["properties"]["bufferMetres"]), back.transform, interleaved=False) for f in masks["features"]])
+        print("suppress wkb sha", __import__("hashlib").sha256(shapely.to_wkb(suppress)).hexdigest()[:16])
+        for year in (1560, 1584):
+            rows = [f for f in t.surfaces()[2] if t.active(f, year)]
+            actual = shapely.union_all([shape(f["geometry"]) for f in rows])
+            expected = t.land_at(year).boundary.difference(suppress)
+            d = actual.symmetric_difference(expected)
+            parts = list(getattr(d, "geoms", [d]))
+            print(year, "equals", actual.equals(expected), "symdiff len", d.length, "parts", len(parts),
+                  "max part", max((p.length for p in parts), default=0), "hausdorff", actual.hausdorff_distance(expected),
+                  "len actual", actual.length, "len expected", expected.length)
+        PY
