@@ -37,3 +37,20 @@ jobs:
     - name: Run Tests
       run: |
         uv run pytest
+    # GeoDjango (docs/architecture/replatform-plan.md, stage 7). The tests
+    # above ran before the GIS libraries are installed, so they also show that
+    # the default settings and the static export need none.
+    - name: Install the GIS libraries
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y --no-install-recommends gdal-bin libsqlite3-mod-spatialite
+    - name: Run GIS Tests
+      run: |
+        uv run pytest --ds=config.settings.geo tests_geo -s
+    - name: Migrate a SpatiaLite database
+      env:
+        DJANGO_SETTINGS_MODULE: config.settings.geo
+        GEO_DATABASE_URL: spatialite:///${{ runner.temp }}/geo.sqlite3
+      run: |
+        uv run python manage.py migrate --verbosity 1
+

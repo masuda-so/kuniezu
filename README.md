@@ -58,6 +58,7 @@
 | `kuniezu/static/kuniezu/` | ブラウザへ配信するゲームと同梱素材 |
 | `kuniezu/templates/` | ゲームのページ `index.html`（Django のテンプレート）。スクリプトの読込順はここで決まる |
 | `kuniezu/history/` | 史実の関係データベース（Django のアプリ）。対象・事象・出典と、取り込み・検索 |
+| `kuniezu/geo/` | 地理のアプリ（GeoDjango）。地理ありの設定だけが読み込む。今は土台だけ |
 | `docs/architecture/` | 構成、ファイルの移動記録、依存順 |
 | `docs/work/` | 残要望、完了条件、対象別作業一覧、担当と成果の記録 |
 | `docs/reports/` | 調査・修正・実画面確認の報告書 |
@@ -94,6 +95,8 @@ node tools/map/build-map.cjs --height --python /path/to/python3
 生成後は Django の開発サーバーを起動し、ブラウザで `http://localhost:8000/index.html` を開きます（`uv sync --locked` の後 `uv run python manage.py runserver 8000`。Python 3.14 と uv が必要）。ページは Django のテンプレートなので、`kuniezu/static/kuniezu/` だけを静的ファイルとして配信しても開けません。`uv run python scripts/build_static.py` は公開用の静的ファイルを `dist/client/` に書き出し、こちらは静的ファイルとして配信すれば開けます。構成は website と同じ Django の並びへ揃える途中です（`docs/structure.md`、`docs/architecture/replatform-plan.md`）。画面の地図は北が上です。表示設定の「地図の向き」で、明治「大日本全図」に合わせた向き（北を左へ 16 度）などに回せます（`docs/reports/MAP_ORIENTATION.md`）。
 
 史実の関係データベースは、`uv run python manage.py migrate` の後 `uv run python manage.py import_history` で、`data/research/` と `docs/work/` の入力から根の `db.sqlite3` に作ります（Git には入れません）。`uv run python manage.py history_query --about 織田信長 --year 1582` のように、対象・年・経緯度の範囲で引けます。全件の背骨として、史料編纂所の綱文を 1 本条＝1 件で並べた所在の目録（`data/research/kobun-index/`、文面は置かない）を取り込みます。今は 1534 年分（478 条）で、どの条も未分類です。戦役と、それを作る合戦の親子（`data/research/conflicts.json`）も取り込みます。対象は名前でも識別子（`place:ganjaku` など）でも指せ、名前が複数の対象に当たると候補を並べて止まります。2 つの識別子が同じ対象であること、ゲームの拠点が台帳の場所を代表することは、出典付きの記録として `data/research/curated/identities/*.json` に置きます（形は同フォルダの `README.md`。記録が無い限り、同じ名前の対象を自動ではまとめません）。入っているのは今ある入力の全件で、出典で確認済みのものと、実装の棚卸し（未照合）を区別して持ちます（`docs/architecture/history-rdb.md`）。
+
+地理の機能（GeoDjango と SQLite の拡張 SpatiaLite）は、地理ありの設定 `config.settings.geo` だけで使い、データベースも別のファイル `geo.sqlite3` にします。GDAL・GEOS・PROJ・SpatiaLite を OS の道具で入れる必要があり（uv では入りません）、ゲームの公開と静的書き出しには要りません。今入っているのは土台だけで、郡・国の面と場所の点はまだありません。手順は `docs/structure.md`、計画は `docs/architecture/replatform-plan.md` の段 7 です。
 
 エージェントが起動・停止してよいサーバーは `127.0.0.1:8000` だけです。8001番や他ポートは起動・利用しません。検証は起動済みの `http://127.0.0.1:8000/index.html` に接続します。検査結果の保存先は `GAME_TEST_OUTPUT` で指定できます。
 

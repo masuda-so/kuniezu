@@ -3,6 +3,7 @@
 from pathlib import Path
 
 import environ
+from django.core.exceptions import ImproperlyConfigured
 
 BASE_DIR = Path(__file__).resolve(strict=True).parent.parent.parent
 # kuniezu/
@@ -41,6 +42,15 @@ DATABASES = {
         default=f"sqlite:///{BASE_DIR / 'db.sqlite3'}",
     ),
 }
+# SpatiaLite belongs to config.settings.geo, which reads GEO_DATABASE_URL and
+# its own file. Pointing DATABASE_URL at it would open the GIS database with
+# settings that do not load GeoDjango.
+if DATABASES["default"]["ENGINE"].startswith("django.contrib.gis"):
+    message = (
+        "DATABASE_URL points at a GIS database. Use GEO_DATABASE_URL with "
+        "DJANGO_SETTINGS_MODULE=config.settings.geo instead."
+    )
+    raise ImproperlyConfigured(message)
 # https://docs.djangoproject.com/en/stable/ref/settings/#std:setting-DEFAULT_AUTO_FIELD
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 

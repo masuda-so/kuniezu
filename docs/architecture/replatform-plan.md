@@ -157,10 +157,10 @@ GeoDjango は、Django の起動時に地理ライブラリ（GDAL・GEOS・PROJ
 | 部分 | 決め事 |
 |---|---|
 | 設定 | 新しい `config/settings/geo.py`（`test` を継承）だけが `django.contrib.gis` と `kuniezu.geo` を入れ、DB を `geo.sqlite3` にする。`base`・`local`・`test` は地理なしのまま |
-| 書き出しの保護 | `build_static.py` は `setdefault` で設定を選ぶので、環境変数が地理ありを指していると地理ありで書き出してしまう。`django.setup()` の後で、`INSTALLED_APPS` に `django.contrib.gis` があるか、DB のエンジンが `django.contrib.gis` で始まれば `RuntimeError` で止める。試験では設定を差し替えてこの例外が出ることと、通常の書き出しの後の `sys.modules` に `django.contrib.gis.gdal` が無いことを確かめる |
+| 書き出しの保護 | `build_static.py` は `setdefault` で設定を選ぶので、環境変数が地理ありを指していると地理ありで書き出してしまう。設定を読んだ直後、`django.setup()` の前（アプリを読み込んで GDAL を読む前）に、`INSTALLED_APPS` に `django.contrib.gis` があるか、DB のエンジンが `django.contrib.gis` で始まれば `RuntimeError` で止める。試験では設定を差し替えてこの例外が出ることと、通常の書き出しの後の `sys.modules` に `django.contrib.gis.gdal` が無いことを確かめる |
 | 試験 | 地理の試験は `testpaths`（`kuniezu`・`tests`）の外の `tests_geo/` に置き、`kuniezu/geo/` には試験を置かない。既定の `uv run pytest` は今のまま地理なしで動き、地理の試験は `uv run pytest --ds=config.settings.geo tests_geo` で別に動かす |
-| 型検査 | mypy は今までどおり CI では動かさず、手元の既定のコマンド（`uv run mypy kuniezu config scripts tests`）だけ。7b で `kuniezu/geo` と `config/settings/geo.py` を含めて通ることを確かめ、通らなければ `[tool.mypy]` に `exclude` を足して地理の部分を型検査の外に置く（その場合は地理の型検査をしない） |
-| CI | `.github/workflows/django.yml` の今のジョブは変えず、地理ライブラリを入れないまま既定の試験と書き出しを確かめる。地理ありのジョブを別に足し、`sudo apt-get install -y --no-install-recommends gdal-bin libsqlite3-mod-spatialite` の後に地理の試験を動かす |
+| 型検査 | mypy は今までどおり CI では動かさず、手元の既定のコマンドだけ。7b でこのコマンドに `tests_geo` を足し（`uv run mypy kuniezu config scripts tests tests_geo`）、`kuniezu/geo` と `config/settings/geo.py` を含めて通ることを確かめ、通らなければ `[tool.mypy]` に `exclude` を足して地理の部分を型検査の外に置く（その場合は地理の型検査をしない） |
+| CI | GitHub 公式のスターターと同じ 1 ジョブ（`build`）の形を保つ（利用者の決定、2026-11-12）。`.github/workflows/django.yml` の `build` で、既定の試験を地理のライブラリを入れる前に動かし（地理なしで通ることの確認）、その後に `sudo apt-get install -y --no-install-recommends gdal-bin libsqlite3-mod-spatialite` で入れて、地理の試験と `migrate` を動かす。地理の試験も必須チェック `build (3.14)` に含まれる |
 | ライブラリの場所 | `GDAL_LIBRARY_PATH`・`GEOS_LIBRARY_PATH`・`SPATIALITE_LIBRARY_PATH` を `geo.py` で同じ名前の環境変数から読む（無ければ Django の既定の探し方）。macOS の Homebrew（`/opt/homebrew/lib`）は Django が自動では見つけない（2026-11-12 確認） |
 | 入れ方 | Python の部品は uv。C のライブラリは OS の道具（macOS は `brew install gdal spatialite-tools`、Ubuntu は上の apt）。Python の `gdal` パッケージは GeoDjango に不要なので入れない |
 | Python | `pyproject.toml` の `python-preference = "only-managed"` により、手元も CI も uv が用意する CPython を使う（`actions/setup-python` の Python は使われない）。手元の uv の Python 3.14（macOS）は SQLite の拡張を読み込める（2026-11-12 確認） |
@@ -170,7 +170,7 @@ GeoDjango は、Django の起動時に地理ライブラリ（GDAL・GEOS・PROJ
 | 段 | 内容 | 終わりの条件（CI で確かめるもの／手元で確かめるもの） |
 |---|---|---|
 | 7a | この計画 | 利用者の確認 |
-| 7b | **土台**：`geo.py`、空の `kuniezu.geo`、地理ありの CI ジョブ、書き出しと `DATABASE_URL` の保護 | CI：地理ありのジョブで GDAL・GEOS・SpatiaLite・PROJ の版を出力し、`enable_load_extension` と SpatiaLite の DB の作成（`migrate`）が通る。今のジョブは地理ライブラリ無しで通る。書き出しの保護の試験が通る。手元：同じ試験が macOS で通り、mypy の既定のコマンドが通る |
+| 7b | **土台**：`geo.py`、空の `kuniezu.geo`、地理ありの CI ジョブ、書き出しと `DATABASE_URL` の保護 | CI：`build` の中の地理の手順で GDAL・GEOS・SpatiaLite・PROJ の版を出力し、`enable_load_extension` と SpatiaLite の DB の作成（`migrate`）が通る。その前の既定の試験は地理ライブラリ無しで通る。書き出しの保護の試験が通る。手元：同じ試験が macOS で通り、mypy の既定のコマンドが通る |
 | 7c | **郡と国の面**：取得の道具 `tools/geo/fetch_codh_kg.py`（`.cache/codh-kg/geojson/` へ取得し、manifest `data/inputs/codh-kg/manifest.json` を書く・照合する）と、管理コマンド `load_codh_kg --source <ディレクトリ>`（`LayerMapping` で国→郡の順に全件を作り直す。同じ ID の多角形は一つの MultiPolygon にまとめる）、対応表 `codh-region-keys.csv`（空で始める） | CI：自作の小さな GeoJSON（島を持つ郡、同じ郡の複数の多角形、壊れた形を含む）で取り込みとまとめ方を試す。手元：原本の全ファイルが manifest の SHA-256 と一致し、806 郡・85 国が入り、取り込みを 2 回した後の各面の WKB の SHA-256 が同じ |
 | 7d | **場所の点**：管理コマンド `link_places`（`import_history` の後に流す。`PlacePoint` を全件作り直し、上の決め方で郡・国を結ぶ） | CI：小さな入力で、取り込みを繰り返しても点と郡の結び付けが同じ。点の経度・緯度が `Place` の数値と 1e-9 度以内で一致する。手元：全ての `Place` に点があり、どの郡にも入らない点（江戸末期の海岸線の外の城・島など）は `basis` ごとに一覧にする。最寄りの郡へ自動では割り当てない |
 
