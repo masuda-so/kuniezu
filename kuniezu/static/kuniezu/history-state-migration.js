@@ -15,7 +15,7 @@
  const legacyDeathSignature=(peaceLegacy=false,deathLegacy=true,appliedRevision=deathLegacy?0:deathRevision)=>{
   const previous=new Map((TK.VERIFIED_DEATH_DATE_CHANGES||[]).filter(r=>(r.revision||1)>appliedRevision).map(r=>[r.name,r.previousDate]));
   const peace=TK.TENSHO_PEACE_DATE_CHANGE;
-  const rows=TK.HIST.map(e=>({...e,d:peaceLegacy&&peace&&(e.title==='徳川と北条の和睦'||e.title==='天正壬午の和睦')?(e.k==='ally'?peace.previousAlly:peace.previousNote):deathLegacy&&e.k==='death'&&previous.has(e.n)?previous.get(e.n):e.d}));
+  const rows=(TK.HIST_BEFORE_OWNER_TIMELINE||TK.HIST).map(e=>({...e,d:peaceLegacy&&peace&&(e.title==='徳川と北条の和睦'||e.title==='天正壬午の和睦')?(e.k==='ally'?peace.previousAlly:peace.previousNote):deathLegacy&&e.k==='death'&&previous.has(e.n)?previous.get(e.n):e.d}));
   rows.sort((a,b)=>a.d[0]-b.d[0]||a.d[1]-b.d[1]||a.d[2]-b.d[2]);
   let hash=rows.length;for(const e of rows){const text=(e.title||e.k)+e.d.join('');for(let i=0;i<text.length;i++)hash=(hash*31+text.charCodeAt(i))|0;}return hash;
  };

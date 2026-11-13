@@ -1,5 +1,6 @@
 import copy
 import gzip
+import hashlib
 import json
 import os
 import subprocess
@@ -193,3 +194,15 @@ def test_the_export_writes_the_owner_timeline_from_a_fresh_database(tmp_path):
     assert "TK.OWNER_TIMELINE={" in text
     assert not (tmp_path / "manifest.json").exists()
     assert (local.stat().st_mtime_ns if local.exists() else None) == before
+
+
+def test_the_page_names_the_exported_owner_timeline_by_its_hash(tmp_path):
+    def export(target: Path) -> None:
+        target.mkdir(parents=True, exist_ok=True)
+        (target / "owners.js").write_text("TK.OWNER_TIMELINE={};\n", encoding="utf-8")
+
+    client_dir = build(tmp_path / "dist", export=export)
+    exported = client_dir / "static/kuniezu/history/owners.js"
+    digest = hashlib.sha256(exported.read_bytes()).hexdigest()[:10]
+    page = (client_dir / "index.html").read_text(encoding="utf-8")
+    assert f'src="history/owners.js?v={digest}"' in page

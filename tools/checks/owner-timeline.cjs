@@ -1,0 +1,51 @@
+/* 城の持ち主の区間（history/owners.js）がゲームを変えることを確かめる。
+   既定（TK.OWNER_TIMELINE=null）では年表を変えず、固定の書き出し（fixtures/owners-trial.js、東海の試行の 10 記録から
+   manage.py export_game_data で作ったもの）では、記録の城だけが記録の日に持ち主を替えることを見る。
+   引数 --years=N で並べて流す年数（既定 5。吉田城の記録の日 1564-7-28 を含む）。手元で長く流すときは --years=40 など。 */
+const assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path');
+const {model}=require('./history-focus.cjs');
+const years=Number((process.argv.find(a=>a.startsWith('--years='))||'--years=5').split('=')[1]);
+const trial=fs.readFileSync(path.join(__dirname,'fixtures/owners-trial.js'),'utf8');
+const clear=G=>{const s=G.S();s.evQ=[];s.sceneQ=[];s.battleQ=[];s.propQ=[];};
+const until=(G,d)=>{const end=G.evT({d});while(G.S().t<end){G.day();clear(G);}};
+
+// 1. 既定では何もしない。
+{const {G,TK}=model();assert.equal(TK.OWNER_TIMELINE,null);const before=G.histSig();G.newGame('s1560','oda');
+ assert.equal(TK.HIST_BEFORE_OWNER_TIMELINE,undefined);assert.equal(G.histSig(),before);assert.equal(G.ownerInterval,undefined);}
+
+// 2. 年表より遅い記録：年表の早い受け渡しから城を抜き、記録の日に渡す（架空の区間。年表では 1560-9-20 に浅井が佐和山を取る）。
+{const late='window.TK=window.TK||{};TK.OWNER_TIMELINE={version:1,inputsSha256:"test",castles:{sawayama:[{from:[1560,10,20],fromJD:0,to:null,toJD:null,clan:"azai",status:"confirmed",sources:["control:test"]}]}};';
+ const {G,TK}=model({sourceOverrides:{'history/owners.js':late}});G.newGame('s1560','oda');G.S().player='__none';
+ const e=TK.HIST.find(e=>e.k==='take'&&e.clan==='azai'&&e.d.join('-')==='1560-9-20');assert.ok(!e.castles.includes('sawayama'),'the earlier transfer no longer takes sawayama');assert.equal(e.ownerTimelineMoved,'sawayama');
+ until(G,[1560,10,1]);assert.notEqual(G.S().castles.sawayama.owner,'azai');
+ until(G,[1560,10,21]);assert.equal(G.S().castles.sawayama.owner,'azai');}
+
+// 3. 固定の書き出し（東海の試行）と既定を、同じ乱数の種で並べて流す。
+//    最初の記録の日までは差が無い。吉田城は記録の日（1564-7-28）に徳川へ渡る（年表では 1565-4-10）。
+//    区間の中の行軍拠点の城は、家が生きていればその家のもの。
+const seeded='(()=>{let x=20260613;Math.random=()=>{x^=x<<13;x^=x>>>17;x^=x<<5;return (x>>>0)/4294967296;};})();\n';
+const data=fs.readFileSync(path.join(__dirname,'../../kuniezu/static/kuniezu/data.js'),'utf8');
+const base=model({sourceOverrides:{'data.js':seeded+data}}),withTimeline=model({sourceOverrides:{'data.js':seeded+data,'history/owners.js':trial}});
+for(const m of [base,withTimeline]){m.G.newGame('s1560','oda');m.G.S().player='__none';}
+const {G,TK}=withTimeline,recorded=TK.OWNER_TIMELINE.castles;
+assert.ok(TK.HIST.find(e=>e.title==='三河平定'&&e.k==='take').castles.includes('yoshida'),'the later transfer stays and does nothing');
+assert.deepEqual(Array.from(TK.HIST.filter(e=>e.ownerTimeline),e=>e.castles[0]),['yoshida'],'only yoshida needs a new transfer');
+const absolute=m=>{const S=m.G.S();return S.t+m.TKCalendar.toJD(S.y0,S.m0,1);};
+const first=Math.min(...Object.values(recorded).flat().map(r=>withTimeline.TKCalendar.toJD(...r.from)));
+const stops=[[1564,7,27],[1564,7,29],...Array.from({length:years},(_,i)=>[1561+i,1,1])].sort((a,b)=>a[0]-b[0]||a[1]-b[1]||a[2]-b[2]);
+const diffs=[];
+for(const d of stops){
+ for(const m of [base,withTimeline])until(m.G,d);
+ const a=base.G.S().castles,b=G.S().castles,day=d.join('-');
+ if(day==='1564-7-27')assert.notEqual(b.yoshida.owner,'tokugawa');
+ if(day==='1564-7-29'){assert.equal(b.yoshida.owner,'tokugawa');assert.notEqual(a.yoshida.owner,'tokugawa');}
+ for(const id of Object.keys(a))if(a[id].owner!==b[id].owner){diffs.push({day,castle:id,without:a[id].owner,with:b[id].owner});assert.ok(absolute(withTimeline)>=first,'difference before the first record: '+JSON.stringify(diffs.at(-1)));}
+ for(const id of Object.keys(recorded)){if(!b[id])continue;const s=G.ownerInterval(id);if(s&&G.S().clans[s.clan]?.alive)assert.equal(b[id].owner,s.clan,day+' '+id);}
+}
+
+// 4. 区間の中で始まる新しいゲームは、初期の持ち主がその家（死んだ家なら替えない）。
+{const {G,TK}=model({sourceOverrides:{'history/owners.js':trial}});
+ for(const sc of ['s1570','s1575','s1582','s1600']){G.newGame(sc,'oda');const S=G.S();
+  for(const id of Object.keys(TK.OWNER_TIMELINE.castles)){if(!S.castles[id])continue;const s=G.ownerInterval(id);if(s&&S.clans[s.clan]?.alive)assert.equal(S.castles[id].owner,s.clan,sc+' '+id);}}}
+
+console.log(`PASS: owner timeline: none by default; the trial export changes owners from the record dates and holds recorded castles inside their intervals (${years} years; castles that differ from the run without it: ${[...new Set(diffs.map(d=>d.castle))].join(',')||'none'})`);
