@@ -53,10 +53,31 @@
   return result;
  }
 
+ // 金雲（すやり霞）の模様。横に長い雲の帯を、縁を丸い瘤で波打たせて描く。
+ // 先に全部の雲を濃い金の太い線でなぞり、その上から金で塗ると、重なった雲の外周だけに輪郭が残る。
  function cloudTile(){
-  const size=256,canvas=root.document.createElement('canvas');canvas.width=canvas.height=size;const x=canvas.getContext('2d');
-  let seed=17;const rnd=()=>((seed=(seed*16807)%2147483647)/2147483647);
-  for(let i=0;i<46;i++){const cx=rnd()*size,cy=rnd()*size,r=18+rnd()*42;for(const dx of [-size,0,size])for(const dy of [-size,0,size]){const g=x.createRadialGradient(cx+dx,cy+dy,0,cx+dx,cy+dy,r);g.addColorStop(0,'rgba(255,255,255,.55)');g.addColorStop(1,'rgba(255,255,255,0)');x.fillStyle=g;x.fillRect(cx+dx-r,cy+dy-r,r*2,r*2);}}
+  const size=512,canvas=root.document.createElement('canvas');canvas.width=canvas.height=size;const x=canvas.getContext('2d');
+  let seed=23;const rnd=()=>((seed=(seed*16807)%2147483647)/2147483647);
+  const bands=[];
+  for(let row=0;row<6;row++){const cy=row*size/6+rnd()*20;let cx=rnd()*size*.4;
+   while(cx<size*1.4){const w=170+rnd()*190,h=34+rnd()*20;bands.push({cx:cx+w/2,cy:cy+(rnd()-.5)*18,w,h,k:[rnd(),rnd(),rnd(),rnd()]});cx+=w+60+rnd()*120;}}
+  const oval=(p,cx,cy,rx,ry)=>{p.moveTo(cx+rx,cy);p.ellipse(cx,cy,rx,ry,0,0,Math.PI*2);};
+  const band=(b,dx,dy)=>{const p=new root.Path2D(),l=b.cx-b.w/2+dx,y=b.cy+dy,h=b.h,r=h/2;
+   // 胴は角の丸い横長の帯。上の縁に大きな瘤を並べ、下の縁はほぼ平らにする（すやり霞）。
+   p.roundRect(l,y-r,b.w,h,r);
+   const lobes=Math.max(2,Math.round(b.w/(h*1.5)));
+   for(let i=0;i<lobes;i++){const t=(i+.5)/lobes,lx=l+r+(b.w-h)*t,s=.75+b.k[i%b.k.length]*.45;oval(p,lx,y-r*.55,r*1.05*s,r*.8*s);}
+   oval(p,l+r*.9,y+r*.15,r*1.05,r*.85);oval(p,l+b.w-r*.9,y+r*.15,r*1.05,r*.85);
+   return p;};
+  const paths=[];for(const b of bands)for(const dx of [-size,0,size])for(const dy of [-size,0,size])paths.push(band(b,dx,dy));
+  x.lineJoin='round';x.strokeStyle='rgba(150,104,28,.9)';x.lineWidth=5;for(const p of paths)x.stroke(p);
+  const g=x.createLinearGradient(0,0,0,size);g.addColorStop(0,'#e6c56a');g.addColorStop(.5,'#d8b04f');g.addColorStop(1,'#e9cb73');
+  x.fillStyle=g;for(const p of paths)x.fill(p);
+  // 金箔の細かな粒。
+  for(let i=0;i<2600;i++){const px=rnd()*size,py=rnd()*size;x.fillStyle=rnd()<.5?'rgba(255,240,190,.35)':'rgba(160,112,30,.18)';x.fillRect(px,py,1.4,1.4);}
+  // 粒は雲の上だけに残す。
+  const mask=root.document.createElement('canvas');mask.width=mask.height=size;const m=mask.getContext('2d');m.fillStyle='#000';for(const p of paths){m.lineWidth=5;m.stroke(p);m.fill(p);}
+  x.globalCompositeOperation='destination-in';x.drawImage(mask,0,0);x.globalCompositeOperation='source-over';
   return canvas;
  }
 
