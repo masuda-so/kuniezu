@@ -12,16 +12,19 @@
  const version=2,known=new Set(['甲越同盟','上杉の羽柴への帰属','長尾の羽柴への帰属','池田輝政の吉田入封']);
  // 直前版が生成した保存だけを同定し、後日に訂正した没日の間を補正する。
  const deathRevision=Math.max(1,...(TK.VERIFIED_DEATH_DATE_CHANGES||[]).map(r=>r.revision||1));
- const legacyDeathSignature=(peaceLegacy=false,deathLegacy=true,appliedRevision=deathLegacy?0:deathRevision)=>{
+ // 城の持ち主の区間（owner-timeline.js）は年表に受け渡しを足す。区間を読む前の保存も、読んだ後の保存も見分けるため、
+ // 置き換え前と今の年表の両方で署名を作る。
+ const histories=()=>[...new Set([TK.HIST_BEFORE_OWNER_TIMELINE||TK.HIST,TK.HIST])];
+ const legacyDeathSignature=(peaceLegacy=false,deathLegacy=true,appliedRevision=deathLegacy?0:deathRevision,history=TK.HIST_BEFORE_OWNER_TIMELINE||TK.HIST)=>{
   const previous=new Map((TK.VERIFIED_DEATH_DATE_CHANGES||[]).filter(r=>(r.revision||1)>appliedRevision).map(r=>[r.name,r.previousDate]));
   const peace=TK.TENSHO_PEACE_DATE_CHANGE;
-  const rows=TK.HIST.map(e=>({...e,d:peaceLegacy&&peace&&(e.title==='徳川と北条の和睦'||e.title==='天正壬午の和睦')?(e.k==='ally'?peace.previousAlly:peace.previousNote):deathLegacy&&e.k==='death'&&previous.has(e.n)?previous.get(e.n):e.d}));
+  const rows=history.map(e=>({...e,d:peaceLegacy&&peace&&(e.title==='徳川と北条の和睦'||e.title==='天正壬午の和睦')?(e.k==='ally'?peace.previousAlly:peace.previousNote):deathLegacy&&e.k==='death'&&previous.has(e.n)?previous.get(e.n):e.d}));
   rows.sort((a,b)=>a.d[0]-b.d[0]||a.d[1]-b.d[1]||a.d[2]-b.d[2]);
   let hash=rows.length;for(const e of rows){const text=(e.title||e.k)+e.d.join('');for(let i=0;i<text.length;i++)hash=(hash*31+text.charCodeAt(i))|0;}return hash;
  };
  G.repairVerifiedDeathDates=function(s){
   if(!s||s.verifiedDeathDateRepair>=deathRevision||!TK.HISTORY_ONLY||Object.values(s.div||{}).some(Boolean)||(s.arcs||[]).length||(s.altQ||[]).length||Object.keys(s.branches||{}).length)return;
-  if(!Array.from({length:deathRevision},(_,revision)=>[legacyDeathSignature(false,true,revision),legacyDeathSignature(true,true,revision)]).flat().includes(s.hsig))return;
+  if(!histories().flatMap(h=>Array.from({length:deathRevision},(_,revision)=>[legacyDeathSignature(false,true,revision,h),legacyDeathSignature(true,true,revision,h)]).flat()).includes(s.hsig))return;
   for(const row of TK.VERIFIED_DEATH_DATE_CHANGES||[]){
    const old=G.evT({d:row.previousDate}),now=G.evT({d:row.date}),event=TK.HIST.find(e=>e.k==='death'&&e.n===row.name);
    if(s.t<old||s.t>=now)continue;
@@ -41,7 +44,7 @@
  G.repairTenshoPeaceDate=function(s){
   const row=TK.TENSHO_PEACE_DATE_CHANGE;
   if(!row||!s||s.tenshoPeaceDateRepair===1||!TK.HISTORY_ONLY||Object.values(s.div||{}).some(Boolean)||(s.arcs||[]).length||(s.altQ||[]).length||Object.keys(s.branches||{}).length)return;
-  if(!Array.from({length:deathRevision+1},(_,revision)=>legacyDeathSignature(true,true,revision)).includes(s.hsig))return;
+  if(!histories().flatMap(h=>Array.from({length:deathRevision+1},(_,revision)=>legacyDeathSignature(true,true,revision,h))).includes(s.hsig))return;
   const until=G.evT({d:row.date}),noteTime=G.evT({d:row.previousNote}),allyTime=G.evT({d:row.previousAlly});
   if(s.t<noteTime||s.t>=until)return;
   const rules=[{title:'徳川と北条の和睦',t:noteTime,text:row.previousText,who:'徳川家康'},{title:'天正壬午の和睦',t:allyTime,text:'',who:''}];

@@ -202,6 +202,22 @@ def check_no_gis(settings: Any) -> None:
         raise RuntimeError(message)
 
 
+def restamp(page: bytes, game_dir: Path, name: str) -> bytes:
+    """Point the page's script tag for ``name`` at the file's current hash.
+
+    Same hash as tools/build/stamp-assets.cjs: the first ten hex digits of
+    the file's SHA-256.
+    """
+    path = game_dir / name
+    if not path.exists():
+        return page
+    digest = hashlib.sha256(path.read_bytes()).hexdigest()[:10].encode()
+    pattern = re.compile(
+        rb'(<script src="' + re.escape(name.encode()) + rb")\?v=[0-9a-f]+"
+    )
+    return pattern.sub(rb"\1?v=" + digest, page)
+
+
 def export_game_data(target: Path) -> None:
     """Write the castle owners from a fresh history database into ``target``.
 
@@ -261,11 +277,14 @@ def build(dist: Path = DIST, export: Callable[[Path], None] = export_game_data) 
     static_url = settings.STATIC_URL.strip("/")
     game_dir = client_dir / static_url / "kuniezu"
     copy_game(Path(settings.GAME_DIR), game_dir)
-    # Replaces the empty default history/owners.js with the database's.
+    # Replaces the empty default history/owners.js with the database's, and
+    # stamps the page with the new file's hash so browsers fetch it again.
     export(game_dir / "history")
+    page = restamp(response.content, game_dir, "history/owners.js")
+    (client_dir / "index.html").write_bytes(page)
     for path in gzip_oversized_vectors(client_dir):
         LOGGER.info("Compressed %s", path.relative_to(client_dir))
-    write_headers(client_dir, response.content)
+    write_headers(client_dir, page)
     write_not_found(client_dir)
     return client_dir
 
