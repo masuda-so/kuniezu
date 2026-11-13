@@ -30,6 +30,14 @@ const until=(G,d)=>{const end=G.evT({d});while(G.S().t<end){G.day();clear(G);}};
  const back=TK.HIST.find(e=>e.ownerTimeline&&e.castles[0]==='kiyosu'&&e.d[0]===1600);
  assert.equal(!!back,before,'a later same-clan record restores kiyosu only when the timeline moved it away in between');}
 
+// 2d. 範囲の中の同じ受け渡しは全部抜く（箕輪城を北条へ：年表は 7-20 と 8-3）。後から読む補正より区間が先（諏訪原城）。
+{const minowa=model().TK.HIST.filter(e=>e.d[0]===1582&&e.k==='take'&&e.clan==='hojo'&&(e.castles||[]).includes('minowa')).map(e=>e.d.join('-'));
+ const src='window.TK=window.TK||{};TK.OWNER_TIMELINE={version:1,inputsSha256:"test",castles:{minowa:[{from:[1582,8,10],fromJD:0,to:null,toJD:null,clan:"hojo",status:"confirmed",sources:["control:test-d"]}],"yosho:諏訪原城:138.12:34.82":[{from:[1576,6,1],fromJD:0,to:null,toJD:null,clan:"takeda",status:"confirmed",sources:["control:test-e"]}]}};';
+ const {G,TK}=model({sourceOverrides:{'history/owners.js':src}});G.newGame('s1575','oda');
+ assert.ok(!TK.HIST.some(e=>e.d[0]===1582&&e.d[1]<8&&e.k==='take'&&e.clan==='hojo'&&(e.castles||[]).includes('minowa'))&&!TK.HIST.some(e=>e.d.join('-')==='1582-8-3'&&e.k==='take'&&e.clan==='hojo'&&(e.castles||[]).includes('minowa')),'every earlier hojo transfer of minowa is removed ('+minowa.join(',')+')');
+ const y=G.YOSHO.find(y=>y.n==='諏訪原城');
+ if(y){{const S=G.S();S.t=G.evT({d:[1576,6,2]});if(S.clans.takeda?.alive)assert.equal(G.yOwner(y),'takeda','the interval wins over later per-castle corrections');}}}
+
 // 3. 固定の書き出し（東海の試行）と既定を、同じ乱数の種で並べて流す。
 //    最初の記録の日までは差が無い。吉田城は記録の日（1564-7-28）に徳川へ渡る（年表では 1565-4-10）。
 //    区間の中の行軍拠点の城は、家が生きていればその家のもの。

@@ -26,6 +26,10 @@
  function install(){
   if(installed)return;installed=true;
   TK.HIST_BEFORE_OWNER_TIMELINE=TK.HIST.slice();
+  // 行軍拠点でない城：区間の中ならその家。後から読むモジュールの城ごとの補正（historical-register.js など）より
+  // 先に効くよう、読み込みの時でなく、ここ（ゲームの状態を作る直前）で包む。区間が無ければ今までの値。
+  const yOwner=G.yOwner;
+  G.yOwner=y=>{const S=G.S(),t=spans.size?now(S):null,s=t==null?null:at(y.id,t);return s&&S.clans[s.clan]?.alive?s.clan:yOwner(y);};
   const added=[];
   for(const [id,rows] of Object.entries(data.castles||{})){
    const node=!!G.C[id],yosho=!node&&G.YOSHO.find(y=>y.id===id);if(!node&&!yosho)continue;
@@ -38,11 +42,15 @@
      if(!same){
       // 記録より早く同じ家に渡す年表の出来事から、この城を抜く。
       //（出来事そのものの take と、入れ子の take の両方を見る。）
-      let hit=-1;for(let i=0;i<TK.HIST.length;i++){const e=TK.HIST[i],t=jd(e.d);if(t>=day||t<=prevDay||t<day-SEARCH_DAYS)continue;if(transfers(e,id).includes(row.clan))hit=i;}
-      if(hit>=0){const e=TK.HIST[hit],out=c=>c!==id,next={...e,ownerTimelineMoved:id};
+      // 範囲は、前の記録の後、3 年以内、かつ年表がこの城を別の家へ渡した最後の日の後。その中の受け渡しは全部抜く。
+      //（同じ日の出来事もあるので、日付でなく年表の並び順で切る。）
+      const from=Math.max(prevDay,day-SEARCH_DAYS),inWindow=e=>{const t=jd(e.d);return t>from&&t<day;};
+      let last=-1;TK.HIST.forEach((e,i)=>{if(inWindow(e)&&transfers(e,id).some(k=>k&&k!==row.clan))last=i;});
+      for(let i=last+1;i<TK.HIST.length;i++){const e=TK.HIST[i];if(!inWindow(e)||!transfers(e,id).includes(row.clan))continue;
+       const out=c=>c!==id,next={...e,ownerTimelineMoved:id};
        if(e.k==='take'&&e.clan===row.clan&&(e.castles||[]).includes(id))next.castles=e.castles.filter(out);
        if(e.take&&e.take.clan===row.clan&&(e.take.castles||[]).includes(id))next.take={...e.take,castles:e.take.castles.filter(out)};
-       TK.HIST[hit]=next;}
+       TK.HIST[i]=next;}
       added.push({d:row.from.slice(),k:'take',clan:row.clan,castles:[id],admin:true,ownerTimeline:row.sources.slice(),text:`${G.C[id].n1}が${G.CNK(row.clan)}の城になる。`});
      }
     }
@@ -60,8 +68,6 @@
  }
  const at=(id,t)=>(spans.get(id)||[]).find(s=>s.start<=t&&t<s.end)||null;
  G.ownerInterval=(id,t=now(G.S()))=>{install();return t==null?null:at(id,t);};
- const yOwner=G.yOwner;
- G.yOwner=y=>{const S=G.S(),t=spans.size?now(S):null,s=t==null?null:at(y.id,t);return s&&S.clans[s.clan]?.alive?s.clan:yOwner(y);};
  const newGame=G.newGame;
  G.newGame=function(...args){install();const r=newGame.apply(this,args);const S=G.S();if(!S)return r;
   let changed=false;
