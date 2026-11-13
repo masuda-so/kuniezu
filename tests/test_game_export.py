@@ -11,7 +11,6 @@ from django.core.management.base import CommandError
 from kuniezu.history import dates
 from kuniezu.history import export
 from kuniezu.history.export import Evidence
-from kuniezu.history.export import Timeline
 from kuniezu.history.importer import MONTH_TABLE
 from kuniezu.history.importer import import_history
 from kuniezu.history.models import Phenomenon
@@ -74,11 +73,10 @@ def observe(rid, value, time, **extra):
 
 
 def run(*items):
-    timeline = Timeline()
-    for item in export.order(list(items)):
-        if item.certain and not item.row.get("variantOf"):
-            timeline.read(item)
-    return [(i.start, i.end, i.clan, i.status, i.claimants) for i in timeline.intervals]
+    return [
+        (i.start, i.end, i.clan, i.status, i.claimants)
+        for i in export.build(list(items))
+    ]
 
 
 def test_lunisolar_years_run_from_new_year_to_the_day_before_the_next():
@@ -150,6 +148,25 @@ def test_undetermined_carries_the_last_clan_and_needs_one():
     assert run(b) == []
 
 
+def test_overlapping_observations_give_one_interval_in_time_order():
+    period = {"from": year(1570), "to": year(1572)}
+    a = observe("a", "held", period, holder="clan:aaa", boundsAsserted=True)
+    inside = observe("b", "held", day(1571, 3, 1), holder="clan:aaa")
+    later = {"from": year(1571), "to": year(1573)}
+    c = observe("c", "held", later, holder="clan:aaa", boundsAsserted=True)
+    result = run(a, inside, c)
+    assert result == [
+        (a.start, c.end + 1, "aaa", "confirmed", []),
+        (c.end + 1, None, "aaa", "carried", []),
+    ]
+
+
+def test_same_day_changes_follow_the_handover_chain():
+    first = change("control:x-1560-2", "clan:aaa", "clan:bbb", day(1560, 5, 19))
+    second = change("control:x-1560-1", "clan:bbb", "clan:ccc", day(1560, 5, 19))
+    assert run(first, second) == [(first.start, None, "ccc", "confirmed", [])]
+
+
 def test_windows_and_variants_give_no_interval():
     window = observe("w", "held", year(1574), holder="clan:aaa")
     v1 = change("v1", "clan:aaa", "clan:bbb", day(1580, 6, 1), variantOf=["v2"])
@@ -209,6 +226,9 @@ def test_the_export_follows_the_database_and_is_stable(repository, tmp_path, set
         if line.strip()
     ]
     assert Record.objects.filter(record_type=RecordType.CONTROL).count() == len(rows)
+    # A year is a window: its bounds are not what the source states.
+    window = Phenomenon.objects.get(key__startswith="control:yosho:馬伏塚城")
+    assert window.bounds_asserted is False
     first, second = tmp_path / "a", tmp_path / "b"
     call_command("export_game_data", "--output", str(first))
     call_command("export_game_data", "--output", str(second))

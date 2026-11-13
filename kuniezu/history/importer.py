@@ -1375,6 +1375,8 @@ class Importer:
                 year=time["year"],
                 jd_start=start,
                 jd_end=end,
+                # A year is a window to search by, not bounds the source states.
+                asserted=False,
             )
         start, end = dates.lunisolar_year_bounds(self.table, *time["indexYears"])
         return When(

@@ -27,6 +27,10 @@ An interval no later record ends has ``to`` empty. The game ends it at its
 own timeline's next change of that castle (owner-timeline.js), so a record
 never overrides later history that no record covers.
 
+The owner is decided day by day (state_on) at every day a record starts or
+stops deciding, so overlapping observations give one interval, never two.
+Changes on the same day apply in the order their clans hand over.
+
 Intervals include ``from`` and exclude ``to``. Dates are western dates as the
 game reads them (Julian before 15 October 1582, Gregorian after), with the
 Julian Day Numbers alongside for checking.
@@ -119,87 +123,113 @@ def evidence() -> dict[str, list[Evidence]]:
     return found
 
 
+def effect(item: Evidence) -> int:
+    """The first day a record decides the owner from: a change on its last
+    possible day, an observation on the day after it ends."""
+    return item.end if item.change else item.end + 1
+
+
 def order(items: list[Evidence]) -> list[Evidence]:
-    """By last possible day, then first, then id (territory-control.md)."""
-    return sorted(items, key=lambda e: (e.end, e.start, e.id))
+    """By the day each record takes effect, then first day, then id.
+
+    Changes on the same day are put in the order their clans hand over
+    (A→B before B→C, territory-control.md); id decides only what that leaves.
+    """
+    ranked = sorted(items, key=lambda e: (effect(e), e.start, e.id))
+    result: list[Evidence] = []
+    while ranked:
+        day = effect(ranked[0])
+        group = [e for e in ranked if effect(e) == day]
+        ranked = [e for e in ranked if effect(e) != day]
+        while group:
+            gained = {e.row.get("to") for e in group if e.change}
+            # A change whose giving clan no other remaining change receives goes first.
+            first = next(
+                (e for e in group if not e.change or e.row.get("from") not in gained),
+                group[0],
+            )
+            result.append(first)
+            group.remove(first)
+    return result
 
 
-class Timeline:
-    """Intervals for one castle, built by reading its records in order."""
+State = tuple[str, str, tuple[str, ...], tuple[str, ...]] | None
 
-    def __init__(self) -> None:
-        self.intervals: list[Interval] = []
-        self.held: str | None = None  # the last confirmed or carried clan
 
-    def close(self, day: int) -> None:
-        if self.intervals and self.intervals[-1].end is None:
-            last = self.intervals[-1]
-            if day <= last.start:
-                # A record that starts on or before the open interval replaces it.
-                self.intervals.pop()
-            else:
-                last.end = day
+def covered(covering: list[Evidence], held: str | None) -> State:
+    """The state on a day that certain observations cover.
 
-    def open(self, interval: Interval) -> None:
-        self.close(interval.start)
-        last = self.intervals[-1] if self.intervals else None
+    The input check refuses certain observations that disagree, so the
+    covering ones say the same thing.
+    """
+    row, ids = covering[0].row, tuple(sorted(e.id for e in covering))
+    value = row["value"]
+    if value == "held":
+        return clan_key(row["holder"]) or "", CONFIRMED, (), ids
+    if value == "contested":
+        claimants = tuple(clan_key(c) or "" for c in row["claimants"])
+        return held or claimants[0], CONTESTED, claimants, ids
+    if value == "undetermined" and held:
+        return held, CARRIED, (), ids
+    return None
+
+
+def state_on(day: int, ordered: list[Evidence]) -> State:
+    """Who holds the castle on ``day``: (clan, status, claimants, sources)."""
+    held: str | None = None
+    last: Evidence | None = None
+    for item in ordered:
+        if effect(item) > day:
+            break
+        last = item
+        if item.change:
+            held = clan_key(item.row["to"])
+        elif item.row["value"] == "held":
+            held = clan_key(item.row["holder"])
+        elif item.row["value"] == "not-applicable":
+            held = None
+    covering = [e for e in ordered if not e.change and e.start <= day <= e.end]
+    if covering:
+        return covered(covering, held)
+    if last is None or not held:
+        return None
+    status = CONFIRMED if last.change else CARRIED
+    return held, status, (), (last.id,)
+
+
+def build(items: list[Evidence]) -> list[Interval]:
+    """Non-overlapping intervals in time order, from the records of one castle."""
+    used = [e for e in items if e.certain and not e.row.get("variantOf")]
+    ordered = order(used)
+    points = sorted({effect(e) for e in used} | {e.start for e in used if not e.change})
+    intervals: list[Interval] = []
+    for number, day in enumerate(points):
+        end = points[number + 1] if number + 1 < len(points) else None
+        found = state_on(day, ordered)
+        if found is None:
+            continue
+        clan, status, claimants, sources = found
+        last = intervals[-1] if intervals else None
         if (
             last is not None
-            and last.end == interval.start
+            and last.end == day
             and (last.clan, last.status, last.claimants)
-            == (interval.clan, interval.status, interval.claimants)
+            == (clan, status, list(claimants))
         ):
-            last.end = interval.end
-            last.sources = sorted({*last.sources, *interval.sources})
-            return
-        self.intervals.append(interval)
-
-    def carry(self, day: int, source: str) -> None:
-        if self.held:
-            self.open(Interval(day, self.held, CARRIED, [source]))
-
-    def read(self, item: Evidence) -> None:
-        row = item.row
-        if item.change:
-            gained = clan_key(row["to"])
-            self.close(item.end)
-            self.held = gained
-            if gained:
-                self.open(Interval(item.end, gained, CONFIRMED, [item.id]))
-            return
-        value = row["value"]
-        after = item.end + 1
-        if value == "held":
-            self.held = clan_key(row["holder"])
-            self.open(
-                Interval(item.start, self.held or "", CONFIRMED, [item.id], end=after)
-            )
-            self.carry(after, item.id)
-        elif value == "contested":
-            claimants = [clan_key(c) or "" for c in row["claimants"]]
-            colour = self.held or claimants[0]
-            self.open(
-                Interval(item.start, colour, CONTESTED, [item.id], claimants, end=after)
-            )
-            self.carry(after, item.id)
-        elif value == "undetermined":
-            self.carry(item.start, item.id)
-        else:  # not-applicable
-            self.close(item.start)
-            self.held = None
+            last.end = end
+            last.sources = sorted({*last.sources, *sources})
+            continue
+        intervals.append(
+            Interval(day, clan, status, list(sources), list(claimants), end)
+        )
+    return intervals
 
 
 def owner_timeline() -> dict[str, list[Json]]:
     """Intervals by castle id, sorted by castle id and start."""
     result: dict[str, list[Json]] = {}
     for castle, items in sorted(evidence().items()):
-        variants = {e.id for e in items if e.row.get("variantOf")}
-        timeline = Timeline()
-        for item in order(items):
-            if item.id in variants or not item.certain:
-                continue
-            timeline.read(item)
-        rows = [interval_json(i) for i in timeline.intervals if i.clan]
+        rows = [interval_json(i) for i in build(items) if i.clan]
         if rows:
             result[castle] = rows
     return result
