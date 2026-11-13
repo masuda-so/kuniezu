@@ -41,6 +41,19 @@ def castle_points():
     return points
 
 
+@pytest.mark.parametrize(
+    "name", ["gun-shapes.geojson", "gun-cells.geojson", "gun-exceptions.geojson"]
+)
+def test_collections_pass_the_game_vector_loader_rules(name):
+    collection = read(name)
+
+    # kuniezu/static/kuniezu/vector-assets.js refuses anything else.
+    assert collection["type"] == "FeatureCollection"
+    assert isinstance(collection["features"], list)
+    assert "crs" not in collection
+    assert collection["coordinateReferenceSystem"] == "OGC:CRS84"
+
+
 def test_every_japanese_county_has_a_shape_in_id_order():
     features = read("gun-shapes.geojson")["features"]
     ids = [f["properties"]["id"] for f in features]

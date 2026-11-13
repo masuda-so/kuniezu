@@ -1,4 +1,4 @@
-{"type":"FeatureCollection","name":"gun-exceptions","license":"CC-BY-NC-4.0","credit":"『旧国・旧郡境界データセット』（CODH作成） 「幕末明治地勢地図境界データ」（人間文化研究機構作成）を加工 doi:10.20676/00000454","features":[
+{"type":"FeatureCollection","coordinateReferenceSystem":"OGC:CRS84","name":"gun-exceptions","license":"CC-BY-NC-4.0","credit":"『旧国・旧郡境界データセット』（CODH作成） 「幕末明治地勢地図境界データ」（人間文化研究機構作成）を加工 doi:10.20676/00000454","features":[
 {"type":"Feature","properties":{"gun":"G40001","from":null,"to":null,"rule":"neutral-without-castle","key":"neutral:佐渡","source":"今の地図の definition.csv の neutral:佐渡。その日にこの郡に存在する城が無いときだけ当てる"},"geometry":null},
 {"type":"Feature","properties":{"gun":"G40002","from":null,"to":null,"rule":"neutral-without-castle","key":"neutral:佐渡","source":"今の地図の definition.csv の neutral:佐渡。その日にこの郡に存在する城が無いときだけ当てる"},"geometry":null},
 {"type":"Feature","properties":{"gun":"G40003","from":null,"to":null,"rule":"neutral-without-castle","key":"neutral:佐渡","source":"今の地図の definition.csv の neutral:佐渡。その日にこの郡に存在する城が無いときだけ当てる"},"geometry":null},

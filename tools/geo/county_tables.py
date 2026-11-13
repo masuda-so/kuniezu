@@ -65,6 +65,8 @@ def _geometry(geom: Any) -> dict:
 def _collection(name: str, features: list[dict]) -> dict:
     return {
         "type": "FeatureCollection",
+        # vector-assets.js accepts only collections in this CRS (and no "crs").
+        "coordinateReferenceSystem": "OGC:CRS84",
         "name": name,
         "license": "CC-BY-NC-4.0",
         "credit": CREDIT,
