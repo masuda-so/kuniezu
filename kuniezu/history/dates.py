@@ -96,3 +96,20 @@ def lunisolar_month_length(
         return None
     later = [day for day in starts.values() if day > start]
     return min(later) - start if later else None
+
+
+def lunisolar_year_bounds(
+    table: Path, first: int, last: int | None = None
+) -> tuple[int, int]:
+    """The first and last day of a span of whole lunisolar years.
+
+    A lunisolar year runs from New Year's Day (month 1, day 1) to the day
+    before the next New Year's Day, so the table must hold the year after.
+    """
+    starts = month_starts(table)
+    end_year = (first if last is None else last) + 1
+    start, after = starts.get((first, 1, False)), starts.get((end_year, 1, False))
+    if start is None or after is None:
+        message = f"lunisolar years {first}-{end_year - 1} are outside {table}"
+        raise ValueError(message)
+    return start, after - 1

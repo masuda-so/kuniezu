@@ -15,10 +15,16 @@ import logging
 import os
 import re
 import shutil
+import subprocess
 import sys
+import tempfile
 from http import HTTPStatus
 from pathlib import Path
+from typing import TYPE_CHECKING
 from typing import Any
+
+if TYPE_CHECKING:
+    from collections.abc import Callable
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
@@ -196,7 +202,36 @@ def check_no_gis(settings: Any) -> None:
         raise RuntimeError(message)
 
 
-def build(dist: Path = DIST) -> Path:
+def export_game_data(target: Path) -> None:
+    """Write the castle owners from a fresh history database into ``target``.
+
+    The database is a temporary SQLite file, filled from the inputs in the
+    repository, so the local db.sqlite3 is never touched. Each step runs in a
+    child process with the default (non-GIS) settings.
+    """
+    with tempfile.TemporaryDirectory() as folder:
+        env = {
+            **os.environ,
+            "DJANGO_SETTINGS_MODULE": "config.settings.test",
+            "DATABASE_URL": f"sqlite:///{Path(folder) / 'history.sqlite3'}",
+        }
+        for command in (
+            ["migrate", "--verbosity", "0"],
+            ["import_history"],
+            ["export_game_data", "--output", str(target)],
+        ):
+            subprocess.run(  # noqa: S603
+                [sys.executable, str(ROOT / "manage.py"), *command],
+                check=True,
+                cwd=ROOT,
+                env=env,
+                stdout=subprocess.DEVNULL,
+            )
+    # The manifest is for the build log, not for the browser.
+    (target / "manifest.json").unlink()
+
+
+def build(dist: Path = DIST, export: Callable[[Path], None] = export_game_data) -> Path:
     os.environ.setdefault("DJANGO_SETTINGS_MODULE", "config.settings.test")
 
     import django  # noqa: PLC0415
@@ -224,7 +259,10 @@ def build(dist: Path = DIST) -> Path:
     (client_dir / "index.html").write_bytes(response.content)
 
     static_url = settings.STATIC_URL.strip("/")
-    copy_game(Path(settings.GAME_DIR), client_dir / static_url / "kuniezu")
+    game_dir = client_dir / static_url / "kuniezu"
+    copy_game(Path(settings.GAME_DIR), game_dir)
+    # Replaces the empty default history/owners.js with the database's.
+    export(game_dir / "history")
     for path in gzip_oversized_vectors(client_dir):
         LOGGER.info("Compressed %s", path.relative_to(client_dir))
     write_headers(client_dir, response.content)

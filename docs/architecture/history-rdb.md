@@ -8,6 +8,7 @@ Django のアプリ `kuniezu.history` に実装した。既定のデータベー
 uv run python manage.py migrate
 uv run python manage.py import_history          # 入力を全て取り込む（何度実行しても同じ結果）
 uv run python manage.py history_query --about 織田信長 --year 1582
+uv run python manage.py export_game_data --output <ディレクトリ>   # 支配の記録から城の持ち主の区間（owners.js）を書く（kuniezu/history/export.py）
 uv run python manage.py history_query --box 135 136 34 36 --year 1600
 uv run python manage.py history_query --path 徳川家康     # 軌跡
 uv run python manage.py history_query --legs 徳川家康     # 隣り合う 2 点を結ぶのに要る速さ

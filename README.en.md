@@ -211,7 +211,12 @@ The relational history database is built from the inputs in `data/research/` and
 `docs/work/` into `db.sqlite3` at the repository root (not tracked in Git):
 `uv run python manage.py migrate`, then `uv run python manage.py import_history`.
 Query it by thing, year or a longitude/latitude box, for example
-`uv run python manage.py history_query --about 織田信長 --year 1582`. A thing can be
+`uv run python manage.py history_query --about 織田信長 --year 1582`. Castle control
+records (`data/research/curated/control/`) are imported too, and
+`uv run python manage.py export_game_data --output <dir>` writes castle owner
+intervals (`owners.js`) from them; the static export (`scripts/build_static.py`) does
+this with a temporary database. The game does not read these intervals yet; its own
+timeline still decides owners. A thing can be
 named by a name or by an identifier such as `place:ganjaku`; a name that matches
 several things lists the candidates and stops. That two identifiers are one thing,
 or that a game site stands for a registry place, is stated by sourced records in

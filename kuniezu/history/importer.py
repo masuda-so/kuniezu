@@ -1363,6 +1363,110 @@ class Importer:
             when.asserted = False
         return when
 
+    def control_point(self, time: Json) -> When:
+        """One date of a control record, with lunisolar years for year windows."""
+        if time["kind"] == "dated-event":
+            return self.lunisolar_day(time["date"], leap=bool(time["leapMonth"]))
+        if time["kind"] == "year-window":
+            start, end = dates.lunisolar_year_bounds(self.table, time["year"])
+            return When(
+                precision=Precision.YEAR,
+                calendar=Calendar.JAPANESE_YEAR,
+                year=time["year"],
+                jd_start=start,
+                jd_end=end,
+            )
+        start, end = dates.lunisolar_year_bounds(self.table, *time["indexYears"])
+        return When(
+            precision=Precision.PERIOD,
+            calendar=time["calendar"],
+            jd_start=start,
+            jd_end=end,
+            label=time["label"],
+            asserted=False,
+        )
+
+    def control_time(self, row: Json) -> When:
+        time = row["time"]
+        if "from" not in time:
+            when = self.control_point(time)
+        else:
+            first, last = (
+                self.control_point(time["from"]),
+                self.control_point(time["to"]),
+            )
+            when = When(
+                precision=Precision.PERIOD,
+                calendar=first.calendar,
+                year=first.year,
+                month=first.month,
+                day=first.day,
+                leap=first.leap,
+                jd_start=first.jd_start,
+                jd_end=last.jd_end,
+                asserted=bool(row.get("boundsAsserted")),
+            )
+        # The Node check computed the same span from the same table; a
+        # difference means one of the two calendars is wrong.
+        span = row["span"]
+        if (when.jd_start, when.jd_end) != (span["earliest"], span["latest"]):
+            message = f"{row['id']}: day numbers differ from the checked span {span}"
+            raise ValueError(message)
+        return when
+
+    def control_site(self, key: str, record: Record) -> Thing | None:
+        """The game site a castle key names: castle:<id> is node:<id> or yosho:..."""
+        rest = key.removeprefix("castle:")
+        return self.resolve(
+            rest if rest.startswith("yosho:") else "node:" + rest, record
+        )
+
+    def load_control(self) -> None:
+        """Castle control records (data/research/curated/control/).
+
+        A change is an event and an observation a state. The site and the
+        clan the castle went to or was held by are subjects; the clan it came
+        from and the claimants of a contest take part. The record keeps the
+        whole input, which the game export reads (kuniezu/history/export.py).
+        """
+        path = self.root / RESEARCH / "control.jsonl"
+        if not path.exists():
+            return
+        for row in read_jsonl(path):
+            undetermined = row.get("value") == "undetermined"
+            record = self.record(
+                row["id"],
+                RecordType.CONTROL,
+                Status.REGISTERED if undetermined else Status.VERIFIED,
+                row,
+            )
+            change = row["type"] == "change"
+            site = self.control_site(row["site"], record)
+            item = self.phenomenon(
+                row["id"],
+                record,
+                mode=Mode.EVENT if change else Mode.STATE,
+                kind=PhenomenonKind.CONTROL,
+                subtype="change:" + row["cause"] if change else row["value"],
+                title=row["summary"][:TITLE_LENGTH],
+                summary=row["summary"],
+                when=self.control_time(row),
+                status=record.status,
+                place=site,
+            )
+            self.take_part(item, site, Role.SUBJECT)
+            gained = row.get("to") if change else row.get("holder")
+            for clan, role in (
+                (gained, Role.SUBJECT),
+                (row.get("from"), Role.PARTICIPANT),
+                *(
+                    (claimant, Role.PARTICIPANT)
+                    for claimant in row.get("claimants", [])
+                ),
+            ):
+                if clan and clan.startswith("clan:"):
+                    self.take_part(item, self.resolve(clan, record), role)
+
     def load_kobun_index(self) -> None:
         folder = self.root / KOBUN_INDEX
         if not folder.exists():
@@ -1401,6 +1505,7 @@ class Importer:
         self.load_conflicts()
         self.load_claims()
         self.load_locations()
+        self.load_control()
         self.load_kobun_index()
         self.check_identities()
         self.represent_points()
