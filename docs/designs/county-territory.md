@@ -162,7 +162,7 @@
 
 `docs/architecture/replatform-plan.md` 段 7c・7d の GeoDjango の取り込みを使う。手順は、地理ありの設定（`DJANGO_SETTINGS_MODULE=config.settings.geo`）で `migrate` → `load_codh_kg`（CODH の郡 806・国 85）→ `link_places`（城と史実 DB の場所を郡に結ぶ）→ `write_county_tables`。
 
-*   `gun-shapes.geojson`：郡の多角形を、隣の郡と境を共有したまま簡略化したもの。属性は `id`（CODH の ID）・`name`・`yomi`・`kuni`（国の ID）・`kuniName`。
+*   `gun-shapes.geojson`：郡の多角形を、隣の郡と境を共有したまま簡略化したもの。属性は `id`（CODH の ID）・`name`・`yomi`・`kuni`（国の ID）・`kuniName`・`castles`（その郡にある城の鍵の一覧、城が無ければ空。`link_places` の結果を書き出す）。ブラウザは、郡の中の城と国の城の一覧を、この属性だけから引く。
 *   `gun-cells.geojson`：城が 2 つ以上ある郡を、城の点のボロノイ分割で区画に分け、郡の形で切ったもの。属性は `gun`・`castle`（城の鍵 `castle:<id>`。今の支城の id もこの形に揃える）。
 *   `gun-exceptions.geojson`：例外の郡（下の 3 の例外の一覧）の多角形。属性は `gun`・`from`・`to`・`rule`（`context` か `neutral`）・`key`・`source`。
 *   簡略化と区画の分割は、Django を起動しない道具 `tools/geo/county_tables.py`（Shapely）で行う（`replatform-plan.md` の「Shapely は Django を起動しない道具に使う」に従う）。管理コマンドは GeoDjango の結果を GeoJSON で渡す。
