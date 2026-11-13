@@ -17,6 +17,10 @@ from scripts.build_static import content_security_policy
 from scripts.build_static import csp_hash
 
 
+def no_export(target: Path) -> None:
+    """Leave the game's default (empty) owner timeline in place."""
+
+
 def test_export_writes_the_page_and_only_run_time_files(tmp_path, settings):
     game = tmp_path / "game"
     for name in (
@@ -36,7 +40,7 @@ def test_export_writes_the_page_and_only_run_time_files(tmp_path, settings):
         path.write_text("x", encoding="utf-8")
     settings.GAME_DIR = game
 
-    client_dir = build(tmp_path / "dist")
+    client_dir = build(tmp_path / "dist", export=no_export)
 
     exported = sorted(
         str(path.relative_to(client_dir))
@@ -68,7 +72,7 @@ def test_export_headers_allow_only_the_inline_code_the_page_contains(
     game.mkdir()
     settings.GAME_DIR = game
 
-    client_dir = build(tmp_path / "dist")
+    client_dir = build(tmp_path / "dist", export=no_export)
 
     page = (client_dir / "index.html").read_bytes()
     headers = (client_dir / "_headers").read_text(encoding="utf-8")
@@ -146,7 +150,7 @@ def test_export_stops_before_writing_with_a_gis_database(tmp_path, settings):
     dist = tmp_path / "dist"
 
     with pytest.raises(RuntimeError, match="without GeoDjango"):
-        build(dist)
+        build(dist, export=no_export)
 
     assert not dist.exists()
 
@@ -155,7 +159,7 @@ def test_export_loads_no_gis_library(tmp_path, settings):
     settings.GAME_DIR = tmp_path / "game"
     (tmp_path / "game").mkdir()
 
-    build(tmp_path / "dist")
+    build(tmp_path / "dist", export=no_export)
 
     assert "django.contrib.gis" not in settings.INSTALLED_APPS
     assert "django.contrib.gis.gdal" not in sys.modules
@@ -178,3 +182,14 @@ def test_plain_settings_refuse_a_gis_database_url(tmp_path):
 
     assert result.returncode != 0
     assert "GEO_DATABASE_URL" in result.stderr
+
+
+def test_the_export_writes_the_owner_timeline_from_a_fresh_database(tmp_path):
+    local = Path(build_static.ROOT / "db.sqlite3")
+    before = local.stat().st_mtime_ns if local.exists() else None
+    build_static.export_game_data(tmp_path)
+    text = (tmp_path / "owners.js").read_text(encoding="utf-8")
+    assert text.startswith("/*")
+    assert "TK.OWNER_TIMELINE={" in text
+    assert not (tmp_path / "manifest.json").exists()
+    assert (local.stat().st_mtime_ns if local.exists() else None) == before

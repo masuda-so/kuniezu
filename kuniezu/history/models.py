@@ -59,6 +59,7 @@ class RecordType(models.TextChoices):
     CATALOG = "catalog", "作業台帳の対象"
     KOBUN = "kobun", "綱文の所在（目録）"
     CONFLICT = "conflict", "戦役と合戦の親子"
+    CONTROL = "control", "城の支配の記録"
 
 
 class Status(models.TextChoices):
@@ -289,6 +290,7 @@ class Calendar(models.TextChoices):
     LUNISOLAR = "Japanese-lunisolar", "和暦（旧暦）"
     WESTERN = "western", "西暦（1582年10月15日からグレゴリオ暦、前はユリウス暦）"
     CE_YEAR = "CE-year", "西暦の年"
+    JAPANESE_YEAR = "Japanese-year", "和暦の年（旧暦の正月朔日から大晦日まで）"
     DESCRIBED = "Japanese-era-description", "時期の呼び名"
 
 
