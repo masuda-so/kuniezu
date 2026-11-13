@@ -32,6 +32,12 @@ module.exports={
    change('control:example-1590-1','unknown','none',year(1590),{cause:'abandonment',dateKind:'listing-only'}),
    change('control:yosho:架空城:135.1:35.1-1565-1','none','clan:aaa',year(1565),{site:'castle:yosho:架空城:135.1:35.1',cause:'construction'}),
   ]},
+  {name:'A–B・B–C の異説の束は A と C も矛盾にしない',records:[
+   held('control:example-1560-1','clan:aaa',day(1560,5,19),{variantOf:['control:example-1560-2']}),
+   held('control:example-1560-2','clan:bbb',day(1560,5,19),{variantOf:['control:example-1560-1','control:example-1560-3']}),
+   held('control:example-1560-3','clan:ccc',day(1560,5,19),{variantOf:['control:example-1560-2']}),
+  ]},
+  {name:'隙間なくつながる探した年代',records:[undetermined('control:example-1575-1',range(year(1575),year(1579)),{searched:[{source:'srcA',query:'a',date:'2026-11-13',years:[1575,1576]},{source:'srcB',query:'b',date:'2026-11-13',years:[1577,1579]}]})]},
   {name:'同じ日の A→B と B→C は警告しない',records:[change('control:example-1560-1','clan:aaa','clan:bbb',day(1560,5,19)),change('control:example-1560-2','clan:bbb','clan:ccc',day(1560,5,19))],warnings:0},
  ],
  warns:[
@@ -51,6 +57,9 @@ module.exports={
   {name:'id の重複',records:[change('control:example-1560-1','clan:aaa','clan:bbb',day(1560,5,19)),change('control:example-1560-1','clan:bbb','clan:ccc',day(1560,6,1))],rejects:'重複'},
   {name:'searched の無い不明',records:[{...undetermined('control:example-1575-1',range(year(1575),year(1579))),searched:undefined}],rejects:'searched'},
   {name:'探した範囲からはみ出す不明',records:[undetermined('control:example-1574-1',range(year(1574),year(1579)))],rejects:'はみ出す'},
+  {name:'探した年代に隙間がある不明',records:[undetermined('control:example-1575-1',range(year(1575),year(1579)),{searched:[{source:'srcA',query:'a',date:'2026-11-13',years:[1575,1575]},{source:'srcA',query:'b',date:'2026-11-13',years:[1579,1579]}]})],rejects:'はみ出す'},
+  {name:'推定の旗の付いた日付',records:[held('control:example-1560-1','clan:aaa',{...day(1560,5,19),estimated:true})],rejects:'合わない項目'},
+  {name:'形に無い untilExclusive',records:[held('control:example-1560-1','clan:aaa',{...year(1560),untilExclusive:1561})],rejects:'合わない項目'},
   {name:'時点の不明',records:[{...undetermined('control:example-1575-1',year(1575)),boundsAsserted:undefined}],rejects:'undetermined は期間'},
   {name:'claimants が 1 つの係争',records:[{id:'control:example-1563-1',type:'observation',site:'castle:example',value:'contested',claimants:['clan:bbb'],time:day(1563,1,5),...src,...base}],rejects:'claimants'},
   {name:'held に holder が無い',records:[{...held('control:example-1560-1','clan:aaa',day(1560,5,19)),holder:undefined}],rejects:'holder'},

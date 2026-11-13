@@ -22,7 +22,7 @@
 |---|---|---|
 | `held` | その家が保持していた | `holder` |
 | `contested` | 現地で争っていた | `claimants`（2 家以上） |
-| `undetermined` | 調べたが決められなかった | 期間、`boundsAsserted: true`、`searched`（探した出典・条件・日・覆う年） |
+| `undetermined` | 調べたが決められなかった | 期間、`boundsAsserted: true`、`searched`（探した出典・条件・日・覆う年。覆う年の和集合が期間を隙間なく覆うこと） |
 | `not-applicable` | 支配者がいない（未築・廃城など） | なし |
 
 両方に必須：`id`・`type`・`site`・`time`・`summary`（出典の要旨を自分の言葉で 1〜2 文）・`checked`（`YYYY-MM-DD`）・`checkedBy`。`undetermined` 以外は `evidenceDepth`・`source`（登録済みの出典の ID）・`locator`（該当箇所）も必須。任意：`alsoSources`・`claim`・`place`・`variantOf`・`uncertainty`。知らない項目は拒む。
@@ -44,7 +44,7 @@
 | `described-period` | `label`、`indexYears`、`calendar: "Japanese-era-description"`、`precision: "period"`、`boundsAreHistoricalStartEnd: false` | 最初の年の正月朔日〜最後の年の大晦日 |
 | 期間 | `{"from": 日付, "to": 日付}`（両端は `dated-event` か `year-window`） | `from` の最早日〜`to` の最遅日 |
 
-変化の日付は時点だけ。観察の期間には `boundsAsserted`（出典が始まりと終わりを述べているか）が要る。年は旧暦の年で、`year-window` の年を 1 月 1 日の出来事に直さない。
+日付の形に無い項目（`estimated`・`untilExclusive`・`components` など）は拒む。推定の日付は、この記録には入れない。変化の日付は時点だけ。観察の期間には `boundsAsserted`（出典が始まりと終わりを述べているか）が要る。年は旧暦の年で、`year-window` の年を 1 月 1 日の出来事に直さない。
 
 ## 区別すること
 
@@ -54,7 +54,7 @@
 
 ## 検査が拒む組み合わせ
 
-同じ城の、`variantOf` で結ばれていない 2 件について：
+同じ城の、同じ異説の束に入っていない 2 件について（束は `variantOf` でつながる記録の全体。A–B、B–C なら A・B・C が 1 つの束）：
 
 1. 確かな観察 2 件の幅が重なり、結果（`value` と `holder`・`claimants`）が違う。どちらかを直すか、異説として結ぶ。
 2. `undetermined` の期間に、変化か、不明でない確かな観察が重なる。不明の期間をその日で切る。

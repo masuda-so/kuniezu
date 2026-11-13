@@ -29,12 +29,12 @@ const POINT_KINDS={
  'year-window':{fields:['year'],calendar:'Japanese-year',precision:'year'},
  'described-period':{fields:['label','indexYears','boundsAreHistoricalStartEnd'],calendar:'Japanese-era-description',precision:'period'},
 };
-const TIME_KEYS=new Set(['kind','calendar','precision','date','leapMonth','year','label','indexYears','boundsAreHistoricalStartEnd','from','to']);
 function pointSpan(t,{endsOnly=false}={}){
  const spec=POINT_KINDS[t?.kind];
  if(!spec||endsOnly&&t.kind==='described-period')throw Error('未対応の日付の形: '+JSON.stringify(t?.kind));
  const allowed=new Set(['kind','calendar','precision',...spec.fields]);
- for(const k of Object.keys(t))if(TIME_KEYS.has(k)&&!allowed.has(k))throw Error(`日付の形 ${t.kind} に合わない項目: ${k}`);
+ // 形に無い項目（estimated・untilExclusive・components など）は全て拒む。推定の日付を確かな日付と混ぜない。
+ for(const k of Object.keys(t))if(!allowed.has(k))throw Error(`日付の形 ${t.kind} に合わない項目: ${k}`);
  if(t.calendar!==spec.calendar||t.precision!==spec.precision)throw Error(`日付の暦・精度が形 ${t.kind} と合わない`);
  if(t.kind==='dated-event'){
   const d=t.date;if(!Array.isArray(d)||d.length!==3||!d.every(Number.isInteger)||typeof t.leapMonth!=='boolean')throw Error('旧暦の年月日・閏月の旗が不正');
@@ -117,9 +117,10 @@ function validateRecord(r,ctx){
    for(const q of r.searched){
     if(!ctx.sources.has(q?.source)||!text(q.query)||!/^\d{4}-\d{2}-\d{2}$/.test(q.date||'')||!Array.isArray(q.years)||q.years.length!==2||!q.years.every(Number.isInteger)||q.years[0]>q.years[1]||Object.keys(q).some(k=>!['source','query','date','years'].includes(k)))fail('searched の要素は source・query・date・years');
    }
-   const lo=Math.min(...r.searched.map(q=>q.years[0])),hi=Math.max(...r.searched.map(q=>q.years[1]));
-   let cover;try{cover=[yearStart(lo),yearEnd(hi)];}catch(e){fail('searched の年: '+e.message);}
-   if(s.earliest<cover[0]||s.latest>cover[1])fail('undetermined の期間が searched の覆う年代からはみ出す');
+   // 探した年代の和集合が、期間の全体を隙間なく覆うこと（離れた 2 つの年代の間は未調査）。
+   let ranges;try{ranges=r.searched.map(q=>[yearStart(q.years[0]),yearEnd(q.years[1])]).sort((a,b)=>a[0]-b[0]);}catch(e){fail('searched の年: '+e.message);}
+   const merged=[];for(const [a,b] of ranges){const last=merged[merged.length-1];if(last&&a<=last[1]+1)last[1]=Math.max(last[1],b);else merged.push([a,b]);}
+   if(!merged.some(([a,b])=>a<=s.earliest&&s.latest<=b))fail('undetermined の期間が searched の覆う年代からはみ出す');
   }else if(r.searched!==undefined)fail('searched は undetermined のときだけ');
  }
  return {...r,span:{earliest:s.earliest,latest:s.latest,period:s.period}};
@@ -140,7 +141,11 @@ function validateSet(rows){
   if(o.site!==r.site)throw Error('variantOf の相手が別の城: '+r.id+' → '+v);
   if(!(o.variantOf||[]).includes(r.id))throw Error('variantOf が片側だけ: '+r.id+' → '+v);
  }
- const variants=(a,b)=>(a.variantOf||[]).includes(b.id);
+ // 異説の束：variantOf でつながる記録の全体（A–B、B–C なら A・B・C）。束の中どうしは矛盾として扱わない。
+ const bundle=new Map(rows.map(r=>[r.id,r.id]));
+ const root=id=>{while(bundle.get(id)!==id)id=bundle.get(id);return id;};
+ for(const r of rows)for(const v of r.variantOf||[])bundle.set(root(r.id),root(v));
+ const variants=(a,b)=>root(a.id)===root(b.id);
  const bySite=new Map();for(const r of rows){if(!bySite.has(r.site))bySite.set(r.site,[]);bySite.get(r.site).push(r);}
  for(const list of bySite.values())for(let i=0;i<list.length;i++)for(let j=i+1;j<list.length;j++){
   const a=list[i],b=list[j];if(variants(a,b)||!overlap(a,b))continue;
