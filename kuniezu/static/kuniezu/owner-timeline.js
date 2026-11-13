@@ -49,6 +49,8 @@
       for(let i=last+1;i<TK.HIST.length;i++){const e=TK.HIST[i];if(!inWindow(e)||!transfers(e,id).includes(row.clan))continue;
        const out=c=>c!==id,next={...e,ownerTimelineMoved:id};
        if(e.k==='take'&&e.clan===row.clan&&(e.castles||[]).includes(id))next.castles=e.castles.filter(out);
+       // 家の誕生（newclan）は、ほかの城が残るときだけ抜く。城が 0 になると家が生まれないので、その出来事は年表のまま。
+       if(e.k==='newclan'&&e.clan===row.clan&&(e.castles||[]).includes(id)&&e.castles.length>1)next.castles=e.castles.filter(out);
        if(e.take&&e.take.clan===row.clan&&(e.take.castles||[]).includes(id))next.take={...e.take,castles:e.take.castles.filter(out)};
        TK.HIST[i]=next;}
       // 同じ日に同じ家へ渡す年表の出来事があれば、受け渡しは足さない（早い受け渡しを抜くだけ）。
@@ -71,10 +73,16 @@
  G.ownerInterval=(id,t=now(G.S()))=>{install();return t==null?null:at(id,t);};
  const newGame=G.newGame;
  G.newGame=function(...args){install();const r=newGame.apply(this,args);const S=G.S();if(!S)return r;
-  // 元の家の本拠・在城の武将も、通常の受け渡しと同じ手順（G.adminTransfer）で動かす。
-  let changed=false;
-  for(const id of Object.keys(data.castles||{})){if(!S.castles[id])continue;const t=now(S),s=t==null?null:at(id,t);if(s&&S.clans[s.clan]?.alive&&S.castles[id].owner!==s.clan){G.adminTransfer(id,s.clan);changed=true;}}
-  if(changed){G.syncCastles?.();S.hsig=G.histSig();}
+  // 先に全部の城の持ち主を決め（城を交換する区間で、途中で家が滅びないように）、その後に元の家の本拠・在城の武将を
+  // 残った城へ移す。城が 1 つも残らない家は滅ぼす。
+  const t=now(S),lost=new Map();
+  for(const id of Object.keys(data.castles||{})){if(!S.castles[id])continue;const s=t==null?null:at(id,t);if(s&&S.clans[s.clan]?.alive&&S.castles[id].owner!==s.clan){const old=S.castles[id].owner;S.castles[id].owner=s.clan;if(!lost.has(old))lost.set(old,s.clan);}}
+  for(const [old,by] of lost){const clan=S.clans[old];if(!clan)continue;
+   const own=Object.keys(S.castles).filter(id=>S.castles[id].owner===old);
+   if(!own.length){G.destroyClan(old,by);continue;}
+   if(S.castles[clan.cap]?.owner!==old)clan.cap=own[0];
+   for(const g of S.gens)if(g.clan===old&&!g.dead&&g.unit==null&&S.castles[g.loc]&&S.castles[g.loc].owner!==old)g.loc=clan.cap;}
+  if(lost.size){G.syncCastles?.();S.hsig=G.histSig();}
   return r;};
  // 置き換え前の年表の署名を持つ保存（この書き出しを読む前に作った保存）は、読み込む前に、年表の位置
  // （S.hi・S.pm）を置き換え後の年表で引き直し、署名を付け替える（engine.js の G.fixHist と同じ手順）。

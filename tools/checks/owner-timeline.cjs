@@ -48,6 +48,12 @@ const until=(G,d)=>{const end=G.evT({d});while(G.S().t<end){G.day();clear(G);}};
  const m=model({sourceOverrides:{'history/owners.js':cap}});m.G.newGame('s1560','oda');const S=m.G.S();
  if(S.castles.kiyosu.owner==='imagawa'&&S.clans.oda?.alive){assert.notEqual(S.clans.oda.cap,'kiyosu','the old owner moves its seat');assert.ok(!S.gens.some(g=>g.clan==='oda'&&!g.dead&&g.loc==='kiyosu'&&g.unit==null),'its generals leave the castle');}}
 
+// 2f. 開始より前からの区間で城を交換しても、途中で家が滅びない（清洲を斎藤、岐阜を織田）。
+{const swap='window.TK=window.TK||{};TK.OWNER_TIMELINE={version:1,inputsSha256:"test",castles:{kiyosu:[{from:[1560,1,1],fromJD:0,to:null,toJD:null,clan:"saito",status:"confirmed",sources:["control:test-i"]}],gifu:[{from:[1560,1,1],fromJD:0,to:null,toJD:null,clan:"oda",status:"confirmed",sources:["control:test-j"]}]}};';
+ const {G}=model({sourceOverrides:{'history/owners.js':swap}});G.newGame('s1560','oda');const S=G.S();
+ assert.equal(S.clans.oda.alive,true,'oda survives the swap');assert.equal(S.castles.kiyosu.owner,'saito');assert.equal(S.castles.gifu.owner,'oda');
+ assert.equal(S.castles[S.clans.oda.cap].owner,'oda');assert.equal(S.castles[S.clans.saito.cap].owner,'saito');}
+
 // 3. 固定の書き出し（東海の試行）と既定を、同じ乱数の種で並べて流す。
 //    最初の記録の日までは差が無い。吉田城は記録の日（1564-7-28）に徳川へ渡る（年表では 1565-4-10）。
 //    区間の中の行軍拠点の城は、家が生きていればその家のもの。
