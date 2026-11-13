@@ -8,6 +8,9 @@ GeoJSON-like dicts and writes the result to kuniezu/map/admin/:
   their borders, with the keys of the castles inside it.
 * gun-cells.geojson: counties with two or more castles, cut into the part
   nearest to each castle.
+* gun-edges.geojson: the shared border between two neighbouring units (a
+  county, or a cell of a county that is cut into cells), so the game can draw
+  a line only where the owners on the two sides differ.
 * gun-exceptions.geojson: counties whose colour comes from the exception list
   (properties only; the game joins them to gun-shapes on ``gun``).
 
@@ -103,6 +106,44 @@ def cells(gun_geom: Any, castles: list[dict]) -> list[tuple[str, Any]]:
     return out
 
 
+def _lines(geom: Any) -> list[Any]:
+    parts = getattr(geom, "geoms", [geom])
+    out = []
+    for part in parts:
+        if part.geom_type in ("LineString", "LinearRing") and part.length > 0:
+            out.append(part)
+        elif part.geom_type in ("MultiLineString", "GeometryCollection"):
+            out.extend(_lines(part))
+    return out
+
+
+def edges(units: list[tuple[str, Any]]) -> list[dict]:
+    """Shared borders between neighbouring units, keyed by the two unit keys."""
+    tree = shapely.STRtree([geom for _, geom in units])
+    out = []
+    for i, (key, geom) in enumerate(units):
+        for j in sorted(int(k) for k in tree.query(geom, predicate="intersects")):
+            if j <= i:
+                continue
+            other_key, other = units[j]
+            shared = _lines(shapely.line_merge(geom.boundary.intersection(other.boundary)))
+            if not shared:
+                continue
+            merged = shapely.MultiLineString(shared)
+            rounded = shapely.set_precision(merged, 10**-DIGITS)
+            if rounded.is_empty:  # a shared border shorter than the rounding
+                continue
+            a, b = sorted((key, other_key))
+            out.append(
+                {
+                    "type": "Feature",
+                    "properties": {"a": a, "b": b},
+                    "geometry": json.loads(json.dumps(mapping(rounded))),
+                }
+            )
+    return sorted(out, key=lambda f: (f["properties"]["a"], f["properties"]["b"]))
+
+
 def build(
     guns: list[dict], castles: list[dict], exceptions: Iterable[dict]
 ) -> dict[str, dict]:
@@ -119,7 +160,7 @@ def build(
         if castle.get("gun"):
             by_gun.setdefault(castle["gun"], []).append(castle)
 
-    shapes, cell_features = [], []
+    shapes, cell_features, units = [], [], []
     for gun, geom in zip(guns, simplified, strict=True):
         inside = by_gun.get(gun["id"], [])
         props = {
@@ -133,8 +174,11 @@ def build(
         shapes.append(
             {"type": "Feature", "properties": props, "geometry": _geometry(geom)}
         )
-        if len(inside) >= 2:  # noqa: PLR2004
+        if len(inside) < 2:  # noqa: PLR2004
+            units.append(("gun:" + gun["id"], geom))
+        else:
             for key, piece in cells(geom, inside):
+                units.append(("cell:" + gun["id"] + "|" + key, piece))
                 cell_features.append(
                     {
                         "type": "Feature",
@@ -160,6 +204,7 @@ def build(
         "gun-shapes.geojson": _collection("gun-shapes", shapes),
         "gun-cells.geojson": _collection("gun-cells", cell_features),
         "gun-exceptions.geojson": _collection("gun-exceptions", exception_features),
+        "gun-edges.geojson": _collection("gun-edges", edges(units)),
     }
 
 

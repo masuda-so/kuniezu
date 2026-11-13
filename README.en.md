@@ -198,7 +198,14 @@ longer works. `uv run python scripts/build_static.py` writes the public static
 files to `dist/client/`, which can be served as plain static files. The layout is being aligned with the Django structure of the
 website project (`docs/structure.md`, `docs/architecture/replatform-plan.md`). The map on screen is north-up by default. "Map orientation" in the display
 settings can turn it, for example 16° counter-clockwise after the Meiji-era
-"Dai Nippon Zenzu" (`docs/reports/MAP_ORIENTATION.md`).
+"Dai Nippon Zenzu" (`docs/reports/MAP_ORIENTATION.md`). Territory is painted by
+county by default: each county (CODH, Edo-period borders) takes the colour of the
+house holding the castles in it on that day, and a county without a castle takes
+the house that holds every castle of its province. A county neither rule decides
+is covered with clouds. The colours are estimates from the game's current castle
+owners, not ownership checked against sources. "Territory paint" in the display
+settings switches back to the former castle domains
+(`docs/designs/county-territory.md`).
 
 The relational history database is built from the inputs in `data/research/` and
 `docs/work/` into `db.sqlite3` at the repository root (not tracked in Git):

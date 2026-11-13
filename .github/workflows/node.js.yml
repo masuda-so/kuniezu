@@ -34,6 +34,8 @@ jobs:
           node tools/work/build-catalog.cjs --requests-only --check
       - name: Infrastructure checks
         run: node tools/checks/infrastructure.cjs
+      - name: County paint rules and counts
+        run: node tools/checks/county-map.cjs
       - name: Canonical road source and readiness
         run: |
           node tools/checks/road-vector-loading.cjs

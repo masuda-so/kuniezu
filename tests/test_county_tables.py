@@ -42,7 +42,13 @@ def castle_points():
 
 
 @pytest.mark.parametrize(
-    "name", ["gun-shapes.geojson", "gun-cells.geojson", "gun-exceptions.geojson"]
+    "name",
+    [
+        "gun-shapes.geojson",
+        "gun-cells.geojson",
+        "gun-exceptions.geojson",
+        "gun-edges.geojson",
+    ],
 )
 def test_collections_pass_the_game_vector_loader_rules(name):
     collection = read(name)
@@ -154,6 +160,29 @@ def test_castle_keys_match_the_game():
     game = set(json.loads(result.stdout))
 
     assert set(castle_points()) == game
+
+
+def test_edges_join_existing_units_with_non_empty_lines():
+    shapes = read("gun-shapes.geojson")["features"]
+    units = {
+        "gun:" + f["properties"]["id"]
+        for f in shapes
+        if len(f["properties"]["castles"]) < MIN_CASTLES_FOR_CELLS
+    }
+    units |= {
+        "cell:" + f["properties"]["gun"] + "|" + f["properties"]["castle"]
+        for f in read("gun-cells.geojson")["features"]
+    }
+    pairs = []
+    for feature in read("gun-edges.geojson")["features"]:
+        a, b = feature["properties"]["a"], feature["properties"]["b"]
+        assert a < b
+        assert a in units, a
+        assert b in units, b
+        assert feature["geometry"]["type"] == "MultiLineString"
+        assert all(len(line) >= 2 for line in feature["geometry"]["coordinates"])  # noqa: PLR2004
+        pairs.append((a, b))
+    assert pairs == sorted(set(pairs))
 
 
 def test_exceptions_name_known_counties_and_carry_no_shape():
