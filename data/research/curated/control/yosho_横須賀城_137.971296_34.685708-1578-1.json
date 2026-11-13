@@ -1,0 +1,24 @@
+{
+  "id": "control:yosho:横須賀城:137.971296:34.685708-1578-1",
+  "type": "change",
+  "site": "castle:yosho:横須賀城:137.971296:34.685708",
+  "from": "none",
+  "to": "clan:tokugawa",
+  "time": {
+    "kind": "year-window",
+    "year": 1578,
+    "calendar": "Japanese-year",
+    "precision": "year"
+  },
+  "cause": "construction",
+  "dateKind": "event",
+  "evidenceDepth": "public-secondary-read",
+  "summary": "天正6年、徳川家康の命で大須賀康高が横須賀城の築城を始めた。",
+  "source": "yokosuka-castle-history",
+  "locator": "天正6年の築城",
+  "checked": "2026-11-03",
+  "checkedBy": "claude-opus-5.5：既存の確認済み命題 yokosuka-castle-construction の出典・箇所・要旨から写した。新たに史料は読んでいない",
+  "claim": "yokosuka-castle-construction",
+  "place": "place:yokosuka-totomi",
+  "uncertainty": "施設の稼働表示は年単位。工事の完了日や着手月日はこの記録の確認範囲外。"
+}

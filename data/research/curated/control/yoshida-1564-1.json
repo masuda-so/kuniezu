@@ -1,0 +1,29 @@
+{
+  "id": "control:yoshida-1564-1",
+  "type": "change",
+  "site": "castle:yoshida",
+  "from": "clan:imagawa",
+  "to": "clan:tokugawa",
+  "time": {
+    "kind": "dated-event",
+    "date": [
+      1564,
+      6,
+      20
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": false,
+    "precision": "day"
+  },
+  "cause": "surrender",
+  "dateKind": "listing-only",
+  "evidenceDepth": "kobun-heading",
+  "summary": "今川方の部将が守る三河吉田城を松平家康が攻め、部将が和を請うたので家康は酒井忠次に城を守らせた。",
+  "source": "hiDainihonshiryoKobun",
+  "locator": "綱文：和暦 永禄7年6月20日 第2条（区分 史料綜覧、編9・冊910（データベースの表示値）、593頁）",
+  "checked": "2026-11-09",
+  "checkedBy": "claude-opus-5.5：既存の確認済み命題 yoshida-handover-1564 の出典・箇所・要旨から写した。新たに史料は読んでいない",
+  "claim": "yoshida-handover-1564",
+  "place": "place:yoshida-mikawa",
+  "uncertainty": "綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。"
+}
