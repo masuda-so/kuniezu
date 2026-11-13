@@ -122,16 +122,23 @@
     return true;
    },
    // 指した所の郡の説明（画面の文言は設計書の「画面の文言」）。
-   infoAt(x,y,clanName){
+   infoAt(x,y,clanName,contextName=contextLabel){
     const decided=state();if(!decided)return null;const key=map.controlAt(x,y,date());if(!key)return null;
     const gun=key.startsWith('gun:')?key.slice(4):key.slice(5).split('|')[0],county=byId.get(gun),v=decided.get(gun);if(!county||!v)return null;
-    let owner='領地不明';if(v.basis==='exception')owner='例外：'+(v.context||'');else if(v.clan)owner=clanName(v.clan);else if(v.cells){const castle=key.startsWith('cell:')?key.slice(5).split('|')[1]:null,o=castle&&v.cells.get(castle);owner=o?clanName(o):v.clans.map(clanName).join('・');}
+    let owner='領地不明';if(v.basis==='exception')owner=contextName(v.context||'');else if(v.clan)owner=clanName(v.clan);else if(v.cells){const castle=key.startsWith('cell:')?key.slice(5).split('|')[1]:null,o=castle&&v.cells.get(castle);owner=o?clanName(o):v.clans.map(clanName).join('・');}
     const basis=BASIS_TEXT[v.basis]+(v.single?'（国の城が 1 つ）':'');
     return {gun,title:`${county.name}郡（${county.kuniName}国）`,role:owner,description:basis};
    },
    decide:value=>decide(value)
   };
  }
- root.TKCounty={create,decide,installCastleOwner};
- if(typeof module!=='undefined'&&module.exports)module.exports={create,decide,installCastleOwner};
+ // 例外の地域の画面用の名前（内部のキーを画面に出さない）。
+ function contextLabel(key){
+  const style=root.TK?.CONTEXT_REGION_STYLES?.[key];if(style?.title)return style.title;
+  if(key==='context:ryukyu')return '琉球王国';
+  if(key.startsWith('neutral:'))return key.slice(8)+'（領主の城の記録が無い島）';
+  return '大名の領地の外';
+ }
+ root.TKCounty={create,decide,installCastleOwner,contextLabel};
+ if(typeof module!=='undefined'&&module.exports)module.exports={create,decide,installCastleOwner,contextLabel};
 })(typeof window==='undefined'?globalThis:window);

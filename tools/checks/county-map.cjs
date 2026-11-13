@@ -3,7 +3,7 @@
    --write <ファイル> で数を JSON に書く（CI の成果物。コミットしない）。 */
 const fs=require('node:fs'),path=require('node:path'),assert=require('node:assert/strict');
 const root=path.resolve(__dirname,'../..');
-const {decide}=require('../../kuniezu/static/kuniezu/county-map.js');
+const {decide,contextLabel}=require('../../kuniezu/static/kuniezu/county-map.js');
 
 // 1. 規則の各場合
 {
@@ -29,6 +29,8 @@ const {decide}=require('../../kuniezu/static/kuniezu/county-map.js');
  assert.equal(r.get('G4').basis,'underived');assert.equal(r.get('G5').basis,'underived');
  assert.deepEqual(r.get('G6'),{basis:'exception',context:'context:ainu'});
  assert.deepEqual(r.get('G7'),{basis:'exception',context:'neutral:佐渡'});
+ // 例外の内部キーは画面の名前に替える（制作者向けの文字列を出さない）。
+ for(const key of ['context:ainu','context:ryukyu','neutral:佐渡'])assert.ok(!/[a-z]:/.test(contextLabel(key)),key+' → '+contextLabel(key));
  assert.deepEqual(r.get('G8'),{basis:'castle-point',clan:'mori'});
  assert.equal(r.get('G9').basis,'underived');
  // 例外の期間：to は含まない
