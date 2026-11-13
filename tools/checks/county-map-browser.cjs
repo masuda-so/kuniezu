@@ -52,8 +52,8 @@ const VIEWS=[['kinki',135.75,34.9,1.6],['kanto',139.6,35.9,1.4]];
    return {kofu:probe(138.57,35.66)};})()`);
  assert.deepEqual(paint.kofu.rgba.slice(0,3),[255,0,0],'Kofu painted with the clan colour');assert.ok(paint.kofu.info.role==='織田',JSON.stringify(paint.kofu.info));
  // 雲：規則で決められない郡を地図から探し、試しのキャンバスで白が乗ること
- const cloud=await ev(`(()=>{for(let lon=130;lon<=142;lon+=0.25)for(let lat=31;lat<=40;lat+=0.25){const [x,y]=G.PJ(lon,lat),info=TKUI.county.infoAt(x,y,G.CN);if(info?.description==='持ち主を決められない'){const c=document.createElement('canvas');c.width=c.height=60;const g=c.getContext('2d');g.setTransform(1,0,0,1,30-x,30-y);TKUI.county.paint(g,[x-30,y-30,x+30,y+30],{clanColor:()=>[255,0,0,255],contextColor:()=>null,cloudScale:1});const d=g.getImageData(0,0,60,60).data;let white=0;for(let i=0;i<d.length;i+=4)if(d[i+3]>0&&d[i]>200&&d[i+1]>200&&d[i+2]>200)white++;return {lon,lat,title:info.title,white};}}return null;})()`);
- assert.ok(cloud&&cloud.white>0,'clouds over an underived county '+JSON.stringify(cloud));
+ const cloud=await ev(`(()=>{for(let lon=130;lon<=142;lon+=0.25)for(let lat=31;lat<=40;lat+=0.25){const [x,y]=G.PJ(lon,lat),info=TKUI.county.infoAt(x,y,G.CN);if(info?.description==='持ち主を決められない'){const c=document.createElement('canvas');c.width=c.height=60;const g=c.getContext('2d');g.setTransform(1,0,0,1,30-x,30-y);TKUI.county.paint(g,[x-30,y-30,x+30,y+30],{clanColor:()=>[255,0,0,255],contextColor:()=>null,cloudScale:1});const d=g.getImageData(0,0,60,60).data;let gold=0;for(let i=0;i<d.length;i+=4)if(d[i+3]>0&&d[i]>190&&d[i+1]>140&&d[i+1]<215&&d[i+2]<140)gold++;return {lon,lat,title:info.title,gold};}}return null;})()`);
+ assert.ok(cloud&&cloud.gold>0,'gold clouds over an underived county '+JSON.stringify(cloud));
  // 表示設定の選択を実際に変える
  await ev("TKUI.open('menu-settings')");await until("!!document.getElementById('landPaintSetting')");
  await ev("(()=>{const s=document.getElementById('landPaintSetting');s.value='castle';s.dispatchEvent(new Event('change',{bubbles:true}));})()");

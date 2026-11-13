@@ -202,7 +202,7 @@ settings can turn it, for example 16° counter-clockwise after the Meiji-era
 county by default: each county (CODH, Edo-period borders) takes the colour of the
 house holding the castles in it on that day, and a county without a castle takes
 the house that holds every castle of its province. A county neither rule decides
-is covered with clouds. The colours are estimates from the game's current castle
+is covered with gold clouds in the style of painted scrolls (suyari-gasumi). The colours are estimates from the game's current castle
 owners, not ownership checked against sources. "Territory paint" in the display
 settings switches back to the former castle domains
 (`docs/designs/county-territory.md`).
