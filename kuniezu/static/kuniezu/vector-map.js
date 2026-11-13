@@ -52,6 +52,7 @@
    replace(collections){const next=collections.flatMap(compile);rows=next;periods=[...new Set(rows.flatMap(row=>[row.from,row.until]).filter(Number.isFinite))].sort((a,b)=>a-b);wholePaths.clear();revision++;for(const f of listeners)f();return next.length;},
    draw(context,role,date,view){const found=selected(role,date,view);for(const row of found){if(role==='shore')context.stroke(path(row));else context.fill(path(row),'nonzero');}return found.length;},
    path(role,date,view,keyFilter){date=mapDay(date);const key=role+':'+epoch(date);if(!view&&!keyFilter&&wholePaths.has(key))return wholePaths.get(key);const all=new Path();for(const row of selected(role,date,view))if(!keyFilter||keyFilter(row.key))all.addPath(path(row));if(!view&&!keyFilter){wholePaths.set(key,all);if(wholePaths.size>6)wholePaths.delete(wholePaths.keys().next().value);}return all;},
+   keys(role,date,view){return selected(role,mapDay(date),view).map(row=>row.key);},
    contains(x,y,date){return selected('land',date,[x,y,x,y]).some(row=>containsRow(row,x,y));},
    controlAt(x,y,date){return selected('control',date,[x,y,x,y]).findLast(row=>containsRow(row,x,y))?.key||null;},
    paintControl(context,date,view,color){let count=0;for(const row of selected('control',date,view)){const rgba=color(row.key);if(!rgba)continue;context.fillStyle=`rgba(${rgba.slice(0,3).join(',')},${rgba[3]/255})`;context.fill(path(row),'nonzero');count++;}return count;},

@@ -122,6 +122,7 @@
      kuniezu/map/admin/gun-shapes.geojson      … 簡略化した郡 806 の多角形（属性：郡・国）
      kuniezu/map/admin/gun-cells.geojson       … 城が 2 つ以上ある郡を、城の点で分けた区画（属性：郡・城）
      kuniezu/map/admin/gun-exceptions.geojson  … 例外の郡（属性だけ：郡・期間・決め方・出典。形は gun-shapes と郡の ID で結ぶ）
+     kuniezu/map/admin/gun-edges.geojson       … 郡（区画に分けた郡は区画）どうしの共有の境（属性：両側の単位 a・b）。国境の線を引く所
 
  [静的書き出し（Cloudflare・CI・手元）：地理なし]
    data/research/（出典付きの JSON、正本）
@@ -210,6 +211,10 @@
 指したときに必ず根拠を表示し、これを忠実さの基準の「確かめていないものに付ける印」とする。持ち越し（`carried`）の城と、記録の無い期間の城（今の年表のまま）は、根拠の説明に「持ち越し」「記録の無い期間」と添える。
 
 描画は `vector-map.js` の面の塗り（`paintControl`、鍵から色を返す関数を受ける）に郡と区画の面を渡して行う。
+
+### 3a. 国境の線（PR 3 で足した）
+
+郡の塗りでは、勢力どうしの国境の線（外交を国境で表す線）も郡の境に沿わせる。`gun-edges.geojson` の境ごとに、両側の単位（`gun:<郡>` か `cell:<郡>|<城>`）の持ち主を規則で決め、違えば今の描き方（`ui.js` の `borderStyle`）で引く。同じなら、郡の境だけを細く引く（同じ郡の区画どうしの間には引かない）。持ち主の分からない側（未導出・例外）には国境を引かない。郡の塗りのときは、地図の面を押しても城を選ばず、郡の説明を出す（城は城の点を押して選ぶ）。
 
 ### 4. 係争の斜線と雲
 
@@ -436,17 +441,16 @@ CI の成果物として `territory-coverage.json` を出す（コミットし�
 
 ##### 18. `kuniezu/static/kuniezu/county-map.js` (Create)
 *   **Type / Scope**: ゲームのモジュール
-*   **Proposed Changes**:
-    *   `TKCounty.load()`：地図の配信物の manifest から 3 つの GeoJSON を読み、SHA と大きさを確かめる（`vector-assets.js` と同じ仕組み）。
-    *   `G.castleOwner(key)`：城の鍵からその日の持ち主を返す（行軍拠点の城は `S.castles`、それ以外は `G.yOwner`。PR 7 で区間を足す）。郡の塗りは城の種類を見ず、この関数だけを使う。
-    *   `TKCounty.colorsAt(state, date)`：技術計画 3 の規則で、郡と区画ごとに `{clan|null, basis, claimants|null, carried:boolean}` を返す。日付か城の持ち主が変わったら全部を計算し直す。
-    *   描画：郡と区画を家の色で塗る（`vector-map.js` の `paintControl` に鍵から色を返す関数を渡す）。同じ家の区画どうしの間には線を引かず、郡の境の線は残す。
-    *   止まった雲：未導出の郡の上に、色の無い白い半透明の雲の模様を重ねる（PR 8 で流す）。
-    *   当たり判定：郡・区画を指すと、「画面の文言」の説明を返す。
+*   **Proposed Changes**（PR 3 で実装した形）:
+    *   `TKCounty.create({G, project, date})`：郡の形・区画・例外・境の線（`gun-edges.geojson`）を、ゲームの起動を待たせずに読む（`vector-assets.js` で SHA と大きさを確かめる）。`ready()`・`paint()`・`strokeBorders()`・`infoAt()`・`clanAt()`・`signature()` を返す。
+    *   `TKCounty.decide({counties, cellsByGun, exceptionsByGun, ownerOf, positionOf, date})`：技術計画 3 の規則で、郡ごとに `{basis, clan|null, context?, cells?, single?}` を返す純粋な関数。区画の城がその日に数えられない（存在する期間の外）ときは、同じ郡で最も近い数えられる城の持ち主で塗る。係争の `claimants` と持ち越しの `carried` は PR 7 で足す。
+    *   `G.castleOwner(key)`・`G.castlePosition(key)`：城の鍵から持ち主と位置を返す（行軍拠点の城は `S.castles`、それ以外は `G.yOwner`、存在する期間の外は null）。郡の塗りは城の種類を見ず、この関数だけを使う。
+    *   描画：郡と区画を家の色で塗り、未導出の郡に止まった雲を重ねる（`vector-map.js` の `paintControl` と `path`）。国境の線は技術計画 3a。
+    *   `signature()`：塗りが変わったときだけ変わる要約。描き直しの合図に入れ、日付だけが変わったとき（行軍拠点でない城の持ち主・城の存在期間・家の滅亡）にも描き直す。
 
 ##### 19. `kuniezu/static/kuniezu/ui.js` (Modify)
 *   **Type / Scope**: ゲームの画面
-*   **Proposed Changes**: 表示設定に「領地の塗り：郡／城の領域」を足し、既定を郡にする。郡のときは `paintBase` で `TKCounty` の塗りを使い、`hit()` が返す説明に郡の説明を足す（戻り値の形は変えず、説明の文字列を足す）。郡の塗りの再描画の合図は、日付と城の持ち主（`S.castles` と `S.branches`）だけで作る。
+*   **Proposed Changes**（PR 3 で実装した形）: 表示設定に「領地の塗り：郡／城の領域」を足し、既定を郡にする（保存しない）。郡のときは `paintBase` の持ち主の層に `TKCounty` の塗りを使い、国境は `gun-edges.geojson` で引く。地図の面を押したときは、ゲームの画面では `hit()` が城の点だけを返し、郡の説明は `hitContext()` が出す（小窓 `context-region`）。家を選ぶ画面では、押した郡（区画）の家を選ぶ。描き直しの合図（`territorySignature`）に `TKCounty.signature()` を入れる。直線距離で支城を塗り分ける古い描画（`drawBranchLands`）は郡のときは止める。検査のため `U.county` と `U.api.w2s`・`s2w` を出す。
 
 ##### 20. `kuniezu/templates/index.html` (Modify)
 *   **Type / Scope**: テンプレート
@@ -454,7 +458,7 @@ CI の成果物として `territory-coverage.json` を出す（コミットし�
 
 ##### 21. `tools/checks/county-map.cjs`・`tools/checks/fixtures/county-cases.cjs` (Create)
 *   **Type / Scope**: 検査（Node、CI）
-*   **Proposed Changes**: 固定の状態で、規則の各場合（例外 3 種、城のある郡、区画、国の一様さ、国に城が 1 つ、未導出、持ち越し、係争）を確かめる。基準の日付で根拠の種類ごとの郡の数を数え、`territory-coverage.json` を CI の成果物として出す。
+*   **Proposed Changes**: 固定の状態で、規則の各場合（例外と期間、城のある郡、区画、数えられない区画の城、国の一様さ、国に城が 1 つ、未導出、存在しない城）と、`G.castleOwner` の 3 つの場合を確かめる。各シナリオの開始日と 1615 年末（1600 年の開始から日送り）で根拠の種類ごとの郡の数を数え、CI のログに出す（`--write <ファイル>` で JSON にも書ける。コミットしない）。持ち越しと係争は PR 7 で足す。
 
 ##### 22. `tools/checks/county-map-browser.cjs` (Create)
 *   **Type / Scope**: 実画面の検査（手元、CI では流さない）
@@ -462,7 +466,7 @@ CI の成果物として `territory-coverage.json` を出す（コミットし�
 
 ##### 23. `.github/workflows/node.js.yml` (Modify)
 *   **Type / Scope**: CI
-*   **Proposed Changes**: `node tools/checks/county-map.cjs` の手順と、`territory-coverage.json` を成果物として上げる手順を足す。
+*   **Proposed Changes**: `node tools/checks/county-map.cjs` の手順を足す（数は CI のログに出る）。
 
 #### PR 4：支配の記録の器
 
