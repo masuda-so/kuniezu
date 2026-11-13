@@ -32,12 +32,17 @@
    let prev=null,prevDay=-Infinity;
    for(const row of rows){
     const day=jd(row.from);
-    if(node&&row.clan!==prev&&TK.CLANS[row.clan]){
+    // 前の記録と同じ家でも、その間に年表が城を別の家へ渡していれば、この記録で戻す。
+    if(node&&TK.CLANS[row.clan]&&(row.clan!==prev||nextOther(id,prevDay,prev)<day)){
      const same=TK.HIST.some(e=>jd(e.d)===day&&transfers(e,id).includes(row.clan));
      if(!same){
       // 記録より早く同じ家に渡す年表の出来事から、この城を抜く。
-      let hit=-1;for(let i=0;i<TK.HIST.length;i++){const e=TK.HIST[i],t=jd(e.d);if(t>=day||t<=prevDay||t<day-SEARCH_DAYS)continue;if(e.k==='take'&&e.clan===row.clan&&(e.castles||[]).includes(id))hit=i;}
-      if(hit>=0){const e=TK.HIST[hit];TK.HIST[hit]={...e,castles:e.castles.filter(c=>c!==id),ownerTimelineMoved:id};}
+      //（出来事そのものの take と、入れ子の take の両方を見る。）
+      let hit=-1;for(let i=0;i<TK.HIST.length;i++){const e=TK.HIST[i],t=jd(e.d);if(t>=day||t<=prevDay||t<day-SEARCH_DAYS)continue;if(transfers(e,id).includes(row.clan))hit=i;}
+      if(hit>=0){const e=TK.HIST[hit],out=c=>c!==id,next={...e,ownerTimelineMoved:id};
+       if(e.k==='take'&&e.clan===row.clan&&(e.castles||[]).includes(id))next.castles=e.castles.filter(out);
+       if(e.take&&e.take.clan===row.clan&&(e.take.castles||[]).includes(id))next.take={...e.take,castles:e.take.castles.filter(out)};
+       TK.HIST[hit]=next;}
       added.push({d:row.from.slice(),k:'take',clan:row.clan,castles:[id],admin:true,ownerTimeline:row.sources.slice(),text:`${G.C[id].n1}が${G.CNK(row.clan)}の城になる。`});
      }
     }
@@ -63,6 +68,17 @@
   for(const id of Object.keys(data.castles||{})){if(!S.castles[id])continue;const t=now(S),s=t==null?null:at(id,t);if(s&&S.clans[s.clan]?.alive&&S.castles[id].owner!==s.clan){S.castles[id].owner=s.clan;changed=true;}}
   if(changed){G.syncCastles?.();S.hsig=G.histSig();}
   return r;};
+ // 置き換え前の年表の署名を持つ保存（この書き出しを読む前に作った保存）は、読み込む前に、年表の位置
+ // （S.hi・S.pm）を置き換え後の年表で引き直し、署名を付け替える（engine.js の G.fixHist と同じ手順）。
+ // こうすると、保存の署名が今の年表と一致することを求める古い保存の移行（城の位置など）がそのまま動く。
+ const sigOf=list=>{let h=list.length;for(const e of list){const t=(e.title||e.k)+e.d.join('');for(let i=0;i<t.length;i++)h=(h*31+t.charCodeAt(i))|0;}return h;};
+ const evTOf=(s,e)=>s.clockVersion===TKCalendar.version?jd(e.d)-TKCalendar.toJD(s.y0,s.m0,1):(e.d[0]-s.y0)*360+(e.d[1]-s.m0)*30+(e.d[2]-1);
+ function adopt(s){
+  if(!s||typeof s!=='object'||s.hsig===G.histSig()||s.hsig!==sigOf(TK.HIST_BEFORE_OWNER_TIMELINE))return;
+  let i=0;while(i<TK.HIST.length&&evTOf(s,TK.HIST[i])<=s.t)i++;s.hi=i;
+  const keep={};for(const u of s.units||[])if(u.until)keep[u.until]=1;s.pm={};for(let j=i;j<TK.HIST.length;j++){const e=TK.HIST[j],k=e.title||e._pk;if(k&&keep[k])s.pm[j]=1;}
+  s.hsig=G.histSig();
+ }
  const setS=G.setS;
- G.setS=function(...args){install();return setS.apply(this,args);};
+ G.setS=function(s,...rest){install();adopt(s);return setS.call(this,s,...rest);};
 })();

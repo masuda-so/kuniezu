@@ -20,6 +20,16 @@ const until=(G,d)=>{const end=G.evT({d});while(G.S().t<end){G.day();clear(G);}};
  until(G,[1560,10,1]);assert.notEqual(G.S().castles.sawayama.owner,'azai');
  until(G,[1560,10,21]);assert.equal(G.S().castles.sawayama.owner,'azai');}
 
+// 2c. 入れ子の take（例：「岐阜の池田領への再配分」1583-5-28）より遅い記録も、その take から城を抜く（架空の区間）。
+//     同じ家の区間が続いても、その間に年表が城を別の家に渡していれば、後の区間で戻す（架空の区間）。
+{const rows='{gifu:[{from:[1583,6,1],fromJD:0,to:null,toJD:null,clan:"ikeda",status:"confirmed",sources:["control:test-a"]}],kiyosu:[{from:[1560,7,1],fromJD:0,to:[1561,1,1],toJD:0,clan:"oda",status:"confirmed",sources:["control:test-b"]},{from:[1600,1,1],fromJD:0,to:null,toJD:null,clan:"oda",status:"carried",sources:["control:test-c"]}]}';
+ const src='window.TK=window.TK||{};TK.OWNER_TIMELINE={version:1,inputsSha256:"test",castles:'+rows+'};';
+ const {G,TK}=model({sourceOverrides:{'history/owners.js':src}});G.newGame('s1560','oda');
+ const nested=TK.HIST.find(e=>e.take&&e.d.join('-')==='1583-5-28'&&e.take.clan==='ikeda');assert.ok(nested,'nested take exists');assert.ok(!nested.take.castles.includes('gifu'),'nested take no longer moves gifu');
+ const before=TK.HIST_BEFORE_OWNER_TIMELINE.some(e=>e.k==='take'&&(e.castles||[]).includes('kiyosu')&&e.clan!=='oda'&&e.d[0]<1600);
+ const back=TK.HIST.find(e=>e.ownerTimeline&&e.castles[0]==='kiyosu'&&e.d[0]===1600);
+ assert.equal(!!back,before,'a later same-clan record restores kiyosu only when the timeline moved it away in between');}
+
 // 3. 固定の書き出し（東海の試行）と既定を、同じ乱数の種で並べて流す。
 //    最初の記録の日までは差が無い。吉田城は記録の日（1564-7-28）に徳川へ渡る（年表では 1565-4-10）。
 //    区間の中の行軍拠点の城は、家が生きていればその家のもの。

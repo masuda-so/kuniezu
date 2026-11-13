@@ -50,6 +50,7 @@ jobs:
           node tools/checks/location-store.cjs
           node tools/checks/control-ledger.cjs
           node tools/checks/owner-timeline.cjs
+          for check in castle-era-position chronology-migration verified-death-dates clock-migration; do node tools/checks/with-owner-timeline.cjs tools/checks/$check.cjs; done
           node tools/checks/history-index.cjs
           python3 tools/checks/history-sqlite.py
           python3 tools/checks/history-sqlite-inputs.py
