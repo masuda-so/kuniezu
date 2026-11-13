@@ -38,7 +38,8 @@
     const day=jd(row.from);
     // 前の記録と同じ家でも、その間（記録の当日を含む）に年表が城を別の家へ渡していれば、この記録で戻す。
     if(node&&TK.CLANS[row.clan]&&(row.clan!==prev||nextOther(id,prevDay,prev)<=day)){
-     const same=TK.HIST.some(e=>jd(e.d)===day&&transfers(e,id).includes(row.clan));
+     // その日の年表の最後の受け渡しが記録の家なら、受け渡しは足さない（途中だけ同じ家でも、後で別の家へ渡れば足す）。
+     const sameDay=TK.HIST.filter(e=>jd(e.d)===day).flatMap(e=>transfers(e,id)),same=sameDay.length>0&&sameDay[sameDay.length-1]===row.clan;
      {
       // 記録より早く同じ家に渡す年表の出来事から、この城を抜く。
       //（出来事そのものの take と、入れ子の take の両方を見る。）

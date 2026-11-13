@@ -63,6 +63,13 @@ const until=(G,d)=>{const end=G.evT({d});while(G.S().t<end){G.day();clear(G);}};
  assert.ok(i>=0,'the record moves gifu back on the same day');
  assert.ok(TK.HIST.slice(0,i).some(e=>e.d.join('-')==='1582-7-17'&&e.clan!=='oda'&&(e.castles||[]).includes('gifu')),'after the timeline\'s transfer');}
 
+// 2h. 同じ日に記録の家への受け渡しの後で別の家へ渡るなら、記録の受け渡しを足す（岐阜城 1583-5-28：信雄へ開城、池田へ再配分）。
+{const src='window.TK=window.TK||{};TK.OWNER_TIMELINE={version:1,inputsSha256:"test",castles:{gifu:[{from:[1583,5,28],fromJD:0,to:null,toJD:null,clan:"nobukatsu",status:"confirmed",sources:["control:test-m"]}]}};';
+ const {G,TK}=model({sourceOverrides:{'history/owners.js':src}});G.newGame('s1582','oda');
+ const day=TK.HIST.filter(e=>e.d.join('-')==='1583-5-28');
+ const last=day.flatMap(e=>[...((e.k==='take'||e.k==='newclan')&&(e.castles||[]).includes('gifu')?[e.clan]:[]),...(e.take&&(e.take.castles||[]).includes('gifu')?[e.take.clan]:[])]).pop();
+ assert.equal(last,'nobukatsu','the record\'s transfer is the last one on the day');}
+
 // 3. 固定の書き出し（東海の試行）と既定を、同じ乱数の種で並べて流す。
 //    最初の記録の日までは差が無い。吉田城は記録の日（1564-7-28）に徳川へ渡る（年表では 1565-4-10）。
 //    区間の中の行軍拠点の城は、家が生きていればその家のもの。
