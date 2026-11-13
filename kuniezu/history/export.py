@@ -132,8 +132,9 @@ def effect(item: Evidence) -> int:
 def order(items: list[Evidence]) -> list[Evidence]:
     """By the day each record takes effect, then first day, then id.
 
-    Changes on the same day are put in the order their clans hand over
-    (A→B before B→C, territory-control.md); id decides only what that leaves.
+    On the same day, observations that end the day before come first, then
+    changes in the order their clans hand over (A→B before B→C,
+    territory-control.md); id decides only what that leaves.
     """
     ranked = sorted(items, key=lambda e: (effect(e), e.start, e.id))
     result: list[Evidence] = []
@@ -141,12 +142,15 @@ def order(items: list[Evidence]) -> list[Evidence]:
         day = effect(ranked[0])
         group = [e for e in ranked if effect(e) == day]
         ranked = [e for e in ranked if effect(e) != day]
+        # An observation that ends the day before carries its clan up to the
+        # day; a change on that day then hands the castle on, so it goes last.
+        result.extend(e for e in group if not e.change)
+        group = [e for e in group if e.change]
         while group:
-            gained = {e.row.get("to") for e in group if e.change}
+            gained = {e.row.get("to") for e in group}
             # A change whose giving clan no other remaining change receives goes first.
             first = next(
-                (e for e in group if not e.change or e.row.get("from") not in gained),
-                group[0],
+                (e for e in group if e.row.get("from") not in gained), group[0]
             )
             result.append(first)
             group.remove(first)

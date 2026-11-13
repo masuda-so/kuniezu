@@ -167,6 +167,27 @@ def test_same_day_changes_follow_the_handover_chain():
     assert run(first, second) == [(first.start, None, "ccc", "confirmed", [])]
 
 
+def test_a_change_on_the_day_an_observation_stops_wins():
+    whole_year = change("a", "clan:aaa", "clan:bbb", year(1560))
+    end = jd(year(1560))[1]
+    last_day = dates.jd_to_western(end)  # only for the message
+    held = Evidence(
+        "b",
+        "x",
+        end - 1,
+        end - 1,
+        {
+            "id": "b",
+            "type": "observation",
+            "value": "held",
+            "holder": "clan:aaa",
+            "time": day(1560, 12, 29),
+        },
+    )
+    result = run(whole_year, held)
+    assert result[-1][2:4] == ("bbb", "confirmed"), (last_day, result)
+
+
 def test_windows_and_variants_give_no_interval():
     window = observe("w", "held", year(1574), holder="clan:aaa")
     v1 = change("v1", "clan:aaa", "clan:bbb", day(1580, 6, 1), variantOf=["v2"])
