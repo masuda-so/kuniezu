@@ -14,7 +14,7 @@
         "okehazama",
         "okeMain",
         "kutsukake",
-        "atlasRelief",
+        "atlasReliefGsi_00_json",
         "codhSites",
         "deployment-record-00",
         "okeMovement",
@@ -66,7 +66,7 @@
       "units": 14,
       "sourceIds": [
         "nagashinoMuseum",
-        "atlasRelief",
+        "atlasReliefGsi_02_json",
         "codhSites",
         "nagashinoDeployment",
         "deployment-record-02",
@@ -100,7 +100,7 @@
         "sekigaharaGuide",
         "todaAlias",
         "atlasReference",
-        "atlasRelief",
+        "atlasReliefGsi_03_json",
         "deploymentWiki",
         "gifuDeployment",
         "deployment-record-03",
@@ -1500,8 +1500,8 @@
       "displayPolicy": "atlas",
       "atlasBasis": "城郭・攻囲配置図",
       "positionedUnits": 0,
-      "positionedGroups": 2,
-      "unlocatedGroups": 3,
+      "positionedGroups": 4,
+      "unlocatedGroups": 1,
       "displayedParticipants": 6
     },
     {
@@ -1893,6 +1893,7 @@
       ],
       "units": 2,
       "sourceIds": [
+        "iwayaDiary",
         "iwaya",
         "iwayaVariant",
         "atlasRelief",
@@ -3100,7 +3101,15 @@
       "status": "経路・利用年代未照合"
     },
     "三州街道": {
-      "status": "経路・利用年代未照合"
+      "geometry": "modern-reference",
+      "level": "unverified",
+      "sources": [
+        "sanshuShiojiri",
+        "sanshuCodhPosts",
+        "sanshuModernMountain",
+        "sanshuModernFoot"
+      ],
+      "status": "塩尻から伊那谷・駒場・根羽・足助を経て岡崎へ至る道。表示線は現代道路の比較で、山間部には近代の隧道も含む。"
     },
     "秋葉街道": {
       "status": "経路・利用年代未照合"
@@ -5433,6 +5442,14 @@
       "accessed": "2026-10-31",
       "scope": "攻め手4万・守備700余の伝承値。別の市解説には5万・763人とあり確定値にしない。"
     },
+    "iwayaDiary": {
+      "author": "上井覚兼（鹿児島県編）",
+      "title": "鹿児島県史料 旧記雑録後編二 所収「上井覚兼日記」",
+      "url": "https://www.pref.kagoshima.jp/ab25/documents/6756_20221201091952-1_1.pdf#page=92",
+      "locator": "第166号、205–208頁（PDF 92–95頁）、天正14年7月26・27日条",
+      "accessed": "2026-11-05",
+      "scope": "26日の下柵突破と包囲、27日朝の攻撃、同日午後の落城。個々の攻め口・高橋紹運の戦死時刻は特定できない。"
+    },
     "iwayaVariant": {
       "author": "太宰府市",
       "title": "中世の太宰府",
@@ -5637,6 +5654,41 @@
       "locator": "琵琶湖東岸・柳ヶ瀬・栃ノ木峠の経由説明",
       "scope": "街道の地域的経由関係。全時代で同じ道筋・路幅とは断定しない。",
       "accessed": "2026-11-01"
+    },
+    "sanshuShiojiri": {
+      "author": "塩尻市",
+      "title": "街道を学ぶ 三州街道",
+      "url": "https://www.city.shiojiri.lg.jp/soshiki/35/3943.html",
+      "locator": "三州街道（伊那街道）の本文",
+      "scope": "塩尻・善知鳥峠・小野・辰野・伊那谷・駒場・根羽・岡崎の経由関係。16世紀の全線中心線は確定しない。",
+      "accessed": "2026-11-07"
+    },
+    "sanshuCodhPosts": {
+      "author": "ROIS-DS人文学オープンデータ共同利用センター",
+      "title": "江戸宿場データセット v1.1・伊那街道 R505",
+      "url": "https://geoshape.ex.nii.ac.jp/edo/post/R505/",
+      "locator": "R505-006〜025のうち採用した18地点",
+      "scope": "江戸期の歴史地名の代表座標。街道の北側経由地・足助・岡崎方面の比較点として用い、戦国期の宿駅成立や関所位置を確定しない。",
+      "license": "CC BY 4.0",
+      "doi": "10.20676/00000477",
+      "accessed": "2026-11-07"
+    },
+    "sanshuModernMountain": {
+      "author": "国土地理院",
+      "title": "道路中心線ベクトルタイル提供実験・浪合から稲武",
+      "url": "https://github.com/gsi-cyberjapan/experimental_rdcl",
+      "locator": "2026-11-07取得の225タイルのうち道路を含む193タイル",
+      "scope": "現代の道路の物理的形状。現代トンネルを含めて連結を調べる比較線で、戦国期の存在や当日の通行を確定しない。",
+      "accessed": "2026-11-07"
+    },
+    "sanshuModernFoot": {
+      "author": "OpenStreetMap contributors / FOSSGIS OSRM",
+      "title": "三州街道の地名代表点間の現代歩行参考線",
+      "url": "https://www.openstreetmap.org/copyright",
+      "locator": "2026-11-07取得・routed-foot。山間部の約110kmの過大迂回は採用せず、北側と稲武以南のみ使用。",
+      "scope": "現代の歩行向け経路。史実の街道線や軍の経路とは区別する。",
+      "license": "ODbL 1.0",
+      "accessed": "2026-11-07"
     },
     "osakaReference": {
       "author": "Jmho",
@@ -7046,6 +7098,30 @@
       "scope": "龍王山から石井山への本陣移転。各兵の持場や移転日の精密な復元ではない。",
       "accessed": "2026-11-02"
     },
+    "deathHachisukaTokushima": {
+      "author": "徳島県教育委員会",
+      "title": "文化財保護審議会諮問資料 蜂須賀正勝画像",
+      "url": "https://www.pref.tokushima.lg.jp/file/attachment/179616.pdf",
+      "locator": "2頁「蜂須賀正勝画像」冒頭",
+      "scope": "天正14年5月22日に大坂で病没。画賛の日付とは区別する。",
+      "accessed": "2026-11-09"
+    },
+    "deathNaganoTakasaki": {
+      "author": "高崎市立図書館",
+      "title": "新編高崎市史 資料編4 中世2 公開年表",
+      "url": "https://lib.city.takasaki.gunma.jp/viewer/info.html?g=12&id=110",
+      "locator": "戦国時代 永禄4.6.21",
+      "scope": "箕輪城主長野業政の死去。同名異表記を綱文の業正と照合。",
+      "accessed": "2026-11-09"
+    },
+    "deathYoshitatsuGifu": {
+      "author": "岐阜県文化伝承課",
+      "title": "絹本著色斎藤道三像 斎藤義竜像",
+      "url": "https://www.pref.gifu.lg.jp/page/354743.html",
+      "locator": "義竜の人物解説と肖像の墨書「永禄四年酉五月十一日」",
+      "scope": "永禄4年5月11日の没日。肖像の制作時期とは区別する。",
+      "accessed": "2026-11-10"
+    },
     "nirayamaChronology": {
       "author": "伊豆の国市文化振興課",
       "title": "韮山城跡パンフレット・年表（2014年3月）",
@@ -7124,8 +7200,52 @@
       "title": "安芸城跡",
       "locator": "城跡解説（位置・歴史）",
       "url": "https://www.city.aki.kochi.jp/life/dtl.php?hdnKey=44",
-      "accessed": "2026-11-02",
-      "scope": "安芸平野中央の城跡、1569年の攻防と五藤氏の土居。城域全体の測量値ではない。"
+      "accessed": "2026-11-04",
+      "scope": "安芸平野中央の城跡と1569年の安芸氏・長宗我部元親の攻防。現本文には五藤為重・1601年の入居はなく、城域全体の測量値でもない。"
+    },
+    "akiHistoryChronology": {
+      "author": "安芸市立歴史民俗資料館",
+      "title": "安芸の歴史 年表",
+      "locator": "1569年・1601年の項",
+      "url": "https://www.city.aki.kochi.jp/rekimin/info/dtl.php?hdnKey=7968",
+      "published": "2025-02-12",
+      "accessed": "2026-11-04",
+      "scope": "1569年の安芸国虎と長宗我部元親、1601年の五藤氏の安芸城跡土居への入居。五藤為重個人の同定は高知城歴史博物館の人物解説と照合する。年表の家老就任説明は今回採用しない。"
+    },
+    "gotoTameshigeKochiMuseum": {
+      "author": "高知県立高知城歴史博物館",
+      "title": "土佐史の人々－初期－",
+      "locator": "五藤為重の項",
+      "url": "https://www.kochi-johaku.jp/column/4516/",
+      "published": "2019-11-27",
+      "accessed": "2026-11-04",
+      "scope": "五藤為重本人が山内一豊に仕え、兄為浄の跡を継ぎ、土佐入国時に安芸城を預けられたという同定根拠。家老就任の厳密な年や全安芸領有・通年所在へ拡張しない。"
+    },
+    "hinoGamoUjisatoIdentity": {
+      "author": "日野町",
+      "title": "蒲生氏郷",
+      "locator": "人物解説・鶴千代、賦秀から氏郷への改名",
+      "url": "https://www.town.shiga-hino.lg.jp/0000003695.html",
+      "published": "2017-03-01",
+      "updated": "2025-06-20",
+      "accessed": "2026-11-04",
+      "scope": "蒲生氏郷本人の別名・時代・活動を照合する人物同定資料。生没日、出生順、所領変遷、行軍日程を自動採用しない。"
+    },
+    "kochiAkiKunitoraGrave": {
+      "author": "高知県教育委員会文化財課",
+      "title": "安芸国虎墓",
+      "locator": "安芸国虎の敗北と自刃の説明",
+      "url": "https://www.kochinet.ed.jp/bunkazai/details/410-2/410-2-12.htm",
+      "accessed": "2026-11-04",
+      "scope": "1569年に長宗我部元親との戦いに敗れた安芸国虎の同定。墓塔の所在地を生前の居所に転用しない。"
+    },
+    "peaceTenshoChino": {
+      "author": "茅野市神長官守矢史料館",
+      "title": "八ヶ岳通信42号",
+      "url": "https://www.city.chino.lg.jp/uploaded/attachment/37201.pdf",
+      "locator": "1頁、徳川家康と諏訪",
+      "scope": "天正10年10月29日の和睦。個別条項の実際の履行日はこの日へまとめない。",
+      "accessed": "2026-11-09"
     },
     "fukasakaCourse": {
       "author": "長浜市北部振興局農林課",
@@ -7272,15 +7392,23 @@
       "url": "https://www.openstreetmap.org/copyright",
       "locator": "2026-11-02取得、経由地の区間ごとに照会。軍事境界線などでつながらない区間は経由地の直線",
       "accessed": "2026-11-02",
-      "scope": "近現代の比較道路。表示だけに使い、行軍計算は経由地の線を保持する。"
+      "scope": "近現代の比較道路。海外の歴史文脈・合戦図と表示用経路に保持する。日本の戦略地図へ描かず、史実の着陣日や戦闘計算の確定根拠とはしない。"
     },
     "modernRoadReference": {
       "author": "OpenStreetMap contributors / FOSSGIS OSRM",
       "title": "日朝の一般道路・小道の比較線",
       "url": "https://www.openstreetmap.org/copyright",
       "locator": "2026-11-01、82街道の通過点で照会、78本取得。過大迂回・5km超の吸着は不採用",
-      "scope": "現代の自転車向け経路。高速道路優先を避けるが、近代の橋・トンネルを含みうる。史実の街道・行軍経路を確定する資料ではない。表示だけに使用し、行軍計算は既存経路を保持。",
+      "scope": "現代の自転車向け経路。高速道路優先を避けるが、近代の橋・トンネルを含みうる。史実の街道・行軍経路を確定する資料ではない。地図と行軍の表示に共通使用し、史実の着陣日や戦闘計算の確定根拠とはしない。",
       "accessed": "2026-11-01"
+    },
+    "ushuEdoComparison": {
+      "author": "ROIS-DS人文学オープンデータ共同利用センター",
+      "title": "江戸主要街道データセット",
+      "url": "https://codh.rois.ac.jp/historical-gis/edo-road/",
+      "locator": "公開地図GeoJSON R201 羽州街道、頂点1778〜1973（0始まり、両端含む）、doi:10.20676/00000452、CC BY 4.0",
+      "accessed": "2026-11-09",
+      "scope": "矢立峠から石川付近までの江戸期比較線。戦国期の精密な経路は未確定。両端は約12m・239mの概略接続。"
     },
     "kiyosuDistribution": {
       "author": "滋賀県",
@@ -7784,6 +7912,33 @@
       "scope": "勝成・重政を別の参加将として二重計上しない。",
       "year": "刊年未詳",
       "accessed": "2026-10-31"
+    },
+    "atlasReliefGsi_00_json": {
+      "author": "国土地理院",
+      "title": "国土地理院 標高タイル DEM10B",
+      "year": "2013年公開開始・随時更新",
+      "accessed": "2026-11-08（UTC）",
+      "url": "https://maps.gsi.go.jp/development/demtile.html",
+      "locator": "DEM10B z14・24タイル。地理院タイル（標高タイル DEM10B）を加工して作成。原本・SHAは data/inputs/battle-dem-detail/00/input-manifest.json",
+      "scope": "現代比較標高。戦国期の地形・造成前の地表・城郭平面を復元したものではない。"
+    },
+    "atlasReliefGsi_02_json": {
+      "author": "国土地理院",
+      "title": "国土地理院 標高タイル DEM10B",
+      "year": "2013年公開開始・随時更新",
+      "accessed": "2026-11-08（UTC）",
+      "url": "https://maps.gsi.go.jp/development/demtile.html",
+      "locator": "DEM10B z14・20タイル。地理院タイル（標高タイル DEM10B）を加工して作成。原本・SHAは data/inputs/battle-dem-detail/02/input-manifest.json",
+      "scope": "現代比較標高。戦国期の地形・造成前の地表・城郭平面を復元したものではない。"
+    },
+    "atlasReliefGsi_03_json": {
+      "author": "国土地理院",
+      "title": "国土地理院 標高タイル DEM10B",
+      "year": "2013年公開開始・随時更新",
+      "accessed": "2026-11-08（UTC）",
+      "url": "https://maps.gsi.go.jp/development/demtile.html",
+      "locator": "DEM10B z14・42タイル。地理院タイル（標高タイル DEM10B）を加工して作成。原本・SHAは data/inputs/battle-dem-detail/03/input-manifest.json",
+      "scope": "現代比較標高。戦国期の地形・造成前の地表・城郭平面を復元したものではない。"
     },
     "deployment-record-00": {
       "author": "Wikipedia執筆者（既存データの典拠）",
@@ -8504,6 +8659,70 @@
       "locator": "経過・参加者。既存記録からの継承",
       "scope": "旧データの由来。未照合の個別陣地・兵数を確定する根拠として使わない。",
       "verification": "既存典拠の登録のみ・本文再照合前"
+    },
+    "conflict:battle:釜山鎮の戦い:0": {
+      "author": "韓国学中央研究院",
+      "title": "韓国民族文化大百科事典「壬辰倭乱」",
+      "url": "https://encykorea.aks.ac.kr/Article/E0047674",
+      "locator": "戦争の勃発・1592～1593年の戦闘経過",
+      "scope": "釜山・東萊・玉浦・閑山・晋州を別の戦闘として記述。戦役と個別合戦の区別に用い、部隊位置や日別時刻の根拠とはしない。",
+      "accessed": "2026-11-08"
+    },
+    "conflict:battle:釜山鎮の戦い:1": {
+      "author": "韓国学中央研究院",
+      "title": "韓国民族文化大百科事典「釜山鎮城」",
+      "url": "https://encykorea.aks.ac.kr/Article/E0024279",
+      "locator": "内容・1592年旧城と1593年子城台",
+      "scope": "鄭公壇周辺の旧城が1592年に破壊され、子城台は翌年築造されたこと。既存図を旧城の攻防に限定する。",
+      "accessed": "2026-11-08"
+    },
+    "conflict:battle:釜山鎮の戦い:2": {
+      "author": "韓国天文研究院",
+      "title": "陰陽暦変換表",
+      "url": "https://astro.kasi.re.kr/almanac/pageView/24?cPage=874&oar_cont=&oar_dcmt_info=&oar_dynt=&oar_natn=&oar_smal_clsf=",
+      "locator": "No.16621、1592年4月14日・癸卯",
+      "scope": "朝鮮陰暦4月14日と陽暦5月24日の対応。日本暦の同名月日を代用しない。",
+      "accessed": "2026-11-08"
+    },
+    "conflict:battle:釜山鎮の戦い:3": {
+      "author": "国史編纂委員会",
+      "title": "宣祖修正実録 巻二十六、宣祖二十五年四月十四日",
+      "url": "https://sillok.history.go.kr/id/knb_12504014_001",
+      "locator": "釜山陥落の記事",
+      "scope": "十三日の渡海、翌朝の攻囲、十四日の陥落。",
+      "accessed": "2026-11-08"
+    },
+    "conflict:battle:設楽原の戦い:0": {
+      "author": "新城市",
+      "title": "長篠・設楽原の戦い",
+      "url": "https://www.city.shinshiro.lg.jp/kanko/meisyo/nagashino-shitaragah.html",
+      "locator": "両軍の布陣・激闘10時間",
+      "scope": "長篠城攻防・設楽原本戦・鳶ヶ巣山攻撃の区別。個々の部隊の時刻・兵数・模式経路を確定する根拠にはしない。",
+      "accessed": "2026-11-08"
+    },
+    "conflict:battle:長久手の戦い:0": {
+      "author": "長久手市",
+      "title": "史跡長久手古戦場保存活用計画資料",
+      "url": "https://www.city.nagakute.lg.jp/material/files/group/14/2shiryou5.pdf",
+      "locator": "保存活用計画策定の目的・長久手合戦の呼称",
+      "scope": "小牧長久手全体と長久手周辺の戦闘の区別。個別隊の精密配置・演出上の死亡時刻の確定根拠ではない。",
+      "accessed": "2026-11-08"
+    },
+    "conflict:battle:長久手の戦い:1": {
+      "author": "長久手市 文化財係",
+      "title": "長久手古戦場物語",
+      "url": "https://www.city.nagakute.lg.jp/kanko_bunka_sports/5/6/9039.html",
+      "locator": "6 池田元助／仏ケ根の決戦",
+      "scope": "長久手本戦の関係者。各人物の独立隊の位置・兵数・移動時刻は示さない。",
+      "accessed": "2026-11-08"
+    },
+    "conflict:battle:長久手の戦い:2": {
+      "author": "国土地理院",
+      "title": "標高タイル（DEM10B）・標高タイルの詳細仕様",
+      "url": "https://maps.gsi.go.jp/development/demtile.html",
+      "locator": "DEM10B、ズーム14・4タイル。取得URLとSHAは data/inputs/nagakute-dem/input-manifest.json。",
+      "scope": "現代比較標高。戦国期の造成前の地表や河川を復元したものではない。",
+      "accessed": "2026-11-08"
     }
   }
 }

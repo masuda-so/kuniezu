@@ -1,0 +1,39 @@
+{
+ "version": 1,
+ "note": "郡の外にある城の扱い（docs/designs/county-territory.md 技術計画 1）。assign は郡を手で決める城（出典付き）、outsideJapan は日本の郡を持たない城（朝鮮。戦略地図の範囲外で削除を予定）。link_places は、どちらにも無い城が郡の外にあると止まる。",
+ "assign": {
+  "castle:yosho:能島城:133.08:34.18": {
+   "gun": "G61005",
+   "name": "能島城",
+   "source": "国指定史跡「能島城跡」の所在地は愛媛県今治市宮窪町（平成の合併の前は越智郡宮窪町）。CODH の郡の形に能島（小島）が含まれないため手で結ぶ（利用者の決定 2026-11-13）"
+  }
+ },
+ "outsideJapan": [
+  "castle:busan",
+  "castle:chungju",
+  "castle:daegu",
+  "castle:gaeseong",
+  "castle:gongju",
+  "castle:haeju",
+  "castle:hamhung",
+  "castle:hanseong",
+  "castle:jeju",
+  "castle:jeonju",
+  "castle:jinju",
+  "castle:namwon",
+  "castle:pyongyang",
+  "castle:sangju",
+  "castle:suncheon",
+  "castle:uiju",
+  "castle:ulsan",
+  "castle:wonju",
+  "castle:yosho:子城台・釜山鎮支城:129.06:35.135",
+  "castle:yosho:幸州山城:126.825:37.597",
+  "castle:yosho:東萊邑城:129.091:35.207",
+  "castle:yosho:楽安邑城:127.339:34.908",
+  "castle:yosho:泗川倭城（船津里城）:128.039:35.004",
+  "castle:yosho:蔚山倭城（島山城）:129.335:35.553",
+  "castle:yosho:西生浦倭城:129.328:35.386",
+  "castle:yosho:順天倭城:127.58:34.902"
+ ]
+}
