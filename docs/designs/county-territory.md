@@ -42,7 +42,7 @@
 | 層 | 値 | 意味 |
 |---|---|---|
 | 支配の記録（作業者が登録する観察） | `held`（保持）・`contested`（係争）・`undetermined`（不明）・`not-applicable`（対象外） | `territory-control.md` の観察の値と同じ |
-| 城の持ち主の区間（ゲーム用の書き出し） | `confirmed`（確認済み）・`contested`（係争、相手の家 `rival` を持つ）・`carried`（持ち越し） | 支配の記録から導く。区間の無い期間は、今のゲームの年表 `TK.HIST` が持ち主を決める（「記録の無い期間」） |
+| 城の持ち主の区間（ゲーム用の書き出し） | `confirmed`（確認済み）・`contested`（係争、加わる家の一覧 `claimants` を持つ）・`carried`（持ち越し） | 支配の記録から導く。区間の無い期間は、今のゲームの年表 `TK.HIST` が持ち主を決める（「記録の無い期間」） |
 | 郡の根拠の種類（ゲームの中で計算） | `exception`（例外の表）・`castle-point`（郡の中の城から）・`province-uniform`（同じ国の城がすべて同じ家だから）・`underived`（未導出） | 郡の色をどう決めたか |
 
 ## The Problem
@@ -172,9 +172,9 @@
 ### 2. 城の持ち主の区間と年表の置き換え
 
 *   **支配の記録**：`docs/designs/territory-control.md` の記録の形（城ごとの観察 `held`・`contested`・`undetermined`・`not-applicable`、期間・出典・箇所・読んだ深さ・`variantOf`）と入力の検査をそのまま使う。その設計の段 1（器）と段 3（試行）は、この設計の PR として行う。記録は史実 DB に取り込む（その設計の「DB の外に置く」をこの設計で置き換える。6 の表）。記録の対象は、その設計の「日本のノード 123 件」から、この設計の城の一覧に広げる（6 の表）。
-*   **区間の導出**（Python、`export_game_data`）：城ごとに、記録から区間 `{from, to, clan, status, rival?, sources}` を作る。
+*   **区間の導出**（Python、`export_game_data`）：城ごとに、記録から区間 `{from, to, clan, status, claimants?, sources}` を作る。
     *   記録は `territory-control.md` の 2 種類（持ち主が替わった変化 `change`、ある時点の観察 `observation`）。変化の日から次の変化までと、`held` の観察の期間 → `confirmed`。
-    *   `contested` → `contested`（`rival` に相手の家）。
+    *   `contested` → `contested`。係争に加わる家は、記録の `claimants`（2 家以上）をそのまま `claimants` に持つ。郡の 2 色の斜線は、直前の持ち主と、`claimants` のうち記録の順で最初の別の家の 2 色にし、指したときには全員の家を出す。
     *   `undetermined` → 直前の `confirmed` の家で `carried`。直前に確認済みの家が無ければ区間を作らない。
     *   `not-applicable` → 区間を作らない。
     *   `territory-control.md` の導出の区分（10 種類）との対応は、その設計の区分を上の 3 つに写す表として `export.py` の試験に書く。その設計の「係争・不明の後は家を引き延ばさない」は、この設計では「直前の確認済みの家を持ち越す」に置き換える（8 の表）。
@@ -182,7 +182,7 @@
 *   **年表への当て方**（`owner-timeline.js`）：
     *   `TK.OWNER_TIMELINE` が `null`（既定の空の `owners.js`）なら何もしない。
     *   行軍拠点でない城の区間は、年表を書き換えず、`G.yOwner` を包んで、区間があればその家、無ければ今の値を返す形で当てる（ゲームの状態は増やさない）。城そのものの表示（`ui.js` の `drawYosho`）と周辺施設の一覧は `G.yOwner` を使っているので、郡の色と城の表示は食い違わない。`G.castleOwner(key)` は行軍拠点の城なら `S.castles`、それ以外なら `G.yOwner` を返す。以下は行軍拠点の城の区間の当て方。
-    *   区間に重なる `TK.HIST` の出来事は**消さない**。出来事の城の一覧（`castles`、入れ子の `take`）から、その区間に当たる城だけを抜く。`absorb`・`takeall` のように家ごとに城を移す出来事には、区間に当たる城を移さない一覧（`keep`）を足す。`newclan` で城が全部抜けたときは、家の誕生だけを残す。今の `engine.js` の `newclan` は城が 0 だと家を作らずに終わるので、城の受け渡しと家の誕生を分け、`castles` が空でも誕生の処理（家・当主の登場）を行うよう直す（例：「津軽為信の自立」の `castles:['ishikawa']` を抜いても津軽家は生まれる）。こうして、出来事に付く軍勢の出陣（`histMarch`）・部隊の解放（`relayUnits`）・死去や臣従（`applyExtras`）は変えない。
+    *   区間に重なる `TK.HIST` の出来事は**消さない**。出来事の城の一覧（`castles`、入れ子の `take`）から、その区間に当たる城だけを抜く。`absorb`・`takeall` のように家ごとに城を移す出来事には、区間に当たる城を移さない一覧（`keep`）を足す。`absorb` で、吸収される家が `keep` の城を持ち続けるときは、その家を滅ぼさず（`alive` を保つ）、吸収先に従う家（`S.vassal`）として残す。武将と部隊の扱いは今のまま吸収先へ移す（例：「富山の役」の日をまたいで佐々家の区間があるとき、佐々家は区間の城を持つ従属の家として残り、区間の境の受け渡しも生存の条件を満たす）。`newclan` で城が全部抜けたときは、家の誕生だけを残す。今の `engine.js` の `newclan` は城が 0 だと家を作らずに終わるので、城の受け渡しと家の誕生を分け、`castles` が空でも誕生の処理（家・当主の登場）を行うよう直す（例：「津軽為信の自立」の `castles:['ishikawa']` を抜いても津軽家は生まれる）。こうして、出来事に付く軍勢の出陣（`histMarch`）・部隊の解放（`relayUnits`）・死去や臣従（`applyExtras`）は変えない。
     *   **行軍の目的地を残す**：城を抜く前に、元の出来事の行軍の目的地（`castles` の先頭）を `marchTo` に写す。出陣の準備（`engine.js` の `preMarch`、`(ev.castles||[])[0]` を目的地にする）と `histTake` の行軍（`histMarch`）は、`ev.marchTo` があればそれを使う。こうして、例えば「長尾景虎の関東出兵」（`castles:['numata']`）は、沼田に区間があっても出兵の軍勢を出す。
     *   区間の境では、軍勢を出さない受け渡しの出来事（`k:'take'`、`admin:true`）を足す。
     *   **新しいゲームの初期配置**：`G.newGame` の包みで、シナリオの開始日を含む区間がある城は、`TK.SCEN.owners` から作った初期の持ち主をその区間の家で上書きする（開始前の `TK.HIST` は当てられないため、境の受け渡しだけでは反映されない）。古い保存の読み込み（`G.setS`）では上書きしない。
@@ -199,7 +199,7 @@
 1.  **例外**：`gun-exceptions.geojson` の期間に当たる郡は、その決め方に従う。一覧は閉じている：
     *   蝦夷地（渡島を除く北海道の郡）：`context:ainu`（今の地図と同じアイヌの区画の色）。
     *   奄美の大島（`G70011`）：1609 年までは `context:ryukyu`、以後は規則どおり。
-    *   佐渡・壱岐・隠岐の郡：ゲームに城の無い島で、今の地図の中立の区画（`definition.csv` の `neutral:*`）と同じ色。
+    *   佐渡・壱岐・隠岐の郡：その日にその郡に存在する城（`G.yActive` が真）が無いときだけ、今の地図の中立の区画（`definition.csv` の `neutral:*`）と同じ色。城がある期間（壱岐の勝本城、佐渡の羽茂城など）は例外にせず、規則 2・3 で決める。
     *   渡島は例外にしない（和人地で、大館の城の持ち主から規則どおりに決まる）。
     *   今の `kuniezu/map/control/gun-overrides.json` の日本の行（`G70011`）はこの一覧に移し、元のファイルからは消す（朝鮮の行は朝鮮の削除の段で扱う）。
 2.  **城のある郡**（`castle-point`）：郡の中の城の持ち主がすべて同じならその家で郡ごと 1 色。違えば `gun-cells.geojson` の区画ごとに、その区画の城の持ち主で塗る。同じ家の区画どうしの間には線を引かない（郡の境の線は残す）。
@@ -212,7 +212,7 @@
 
 ### 4. 係争の斜線と雲
 
-*   **係争**：区間が `contested` の城がある郡（区画があればその区画）に、持ち主と `rival` の 2 色の斜線を重ねる。斜線は地図に貼りつく模様（`ui.js` の海の模様と同じ作り）にする。
+*   **係争**：区間が `contested` の城がある郡（区画があればその区画）に、持ち主と、`claimants` のうち最初の別の家の 2 色の斜線を重ねる。斜線は地図に貼りつく模様（`ui.js` の海の模様と同じ作り）にする。
 *   **雲**：未導出の郡の上に、色の無い白い半透明の雲を重ねる。雲は地図の canvas とは別の層（`county-clouds.js`）にする。層は 2 つの要素で作る。外側は、未導出の郡の形の型（マスク）で、日付か表示範囲が変わったときだけ作り直し、動かさない。内側は、繰り返しの雲の模様で、CSS のアニメーション（模様の位置か `transform`）でゆっくり流す。型は郡に固定されているので、雲は流れても既知の郡にはみ出さない。こうすると、雲がいつも流れていても、本体の描き直しのループ（`ui.js` の止めている間に眠る仕組み）は眠ったままでよい。画面が隠れている間（`document.hidden`）と、OS の「動きを減らす」設定（`prefers-reduced-motion`）のときは流れを止める。流れの速さは 1 か所の定数で調整する。
 
 ### 5. 不足の報告
@@ -438,7 +438,7 @@ CI の成果物として `territory-coverage.json` を出す（コミットし�
 *   **Proposed Changes**:
     *   `TKCounty.load()`：地図の配信物の manifest から 3 つの GeoJSON を読み、SHA と大きさを確かめる（`vector-assets.js` と同じ仕組み）。
     *   `G.castleOwner(key)`：城の鍵からその日の持ち主を返す（行軍拠点の城は `S.castles`、それ以外は `G.yOwner`。PR 7 で区間を足す）。郡の塗りは城の種類を見ず、この関数だけを使う。
-    *   `TKCounty.colorsAt(state, date)`：技術計画 3 の規則で、郡と区画ごとに `{clan|null, basis, rival|null, carried:boolean}` を返す。日付か城の持ち主が変わったら全部を計算し直す。
+    *   `TKCounty.colorsAt(state, date)`：技術計画 3 の規則で、郡と区画ごとに `{clan|null, basis, claimants|null, carried:boolean}` を返す。日付か城の持ち主が変わったら全部を計算し直す。
     *   描画：郡と区画を家の色で塗る（`vector-map.js` の `paintControl` に鍵から色を返す関数を渡す）。同じ家の区画どうしの間には線を引かず、郡の境の線は残す。
     *   止まった雲：未導出の郡の上に、色の無い白い半透明の雲の模様を重ねる（PR 8 で流す）。
     *   当たり判定：郡・区画を指すと、「画面の文言」の説明を返す。
@@ -502,7 +502,7 @@ CI の成果物として `territory-coverage.json` を出す（コミットし�
       inputsSha256: "<data/research/control.jsonl の SHA-256>",
       castles: {
         "<城の id>": [
-          {from: [西暦年, 月, 日], fromJD: <通日>, to: [西暦年, 月, 日] | null, toJD: <通日> | null, clan: "<家>", status: "confirmed" | "contested" | "carried", rival: "<家>"（contested のとき）, sources: ["<支配の記録の id>"]}
+          {from: [西暦年, 月, 日], fromJD: <通日>, to: [西暦年, 月, 日] | null, toJD: <通日> | null, clan: "<家>", status: "confirmed" | "contested" | "carried", claimants: ["<家>", …]（contested のとき）, sources: ["<支配の記録の id>"]}
         ]
       }
     };
@@ -541,7 +541,7 @@ CI の成果物として `territory-coverage.json` を出す（コミットし�
 
 ##### 38. `kuniezu/static/kuniezu/engine.js` (Modify)
 *   **Type / Scope**: エンジン
-*   **Proposed Changes**: `absorb`・`takeall` の当て方で、出来事の `keep` にある城を移さない。`preMarch` と `histTake` の行軍の目的地を `ev.marchTo || (ev.castles||[])[0]` にする。`newclan` で城の受け渡しと家の誕生を分け、`castles` が空でも家と当主を作る。ほかは変えない。
+*   **Proposed Changes**: `absorb`・`takeall` の当て方で、出来事の `keep` にある城を移さない。`preMarch` と `histTake` の行軍の目的地を `ev.marchTo || (ev.castles||[])[0]` にする。`newclan` で城の受け渡しと家の誕生を分け、`castles` が空でも家と当主を作る。`absorb` で `keep` の城が残る家は滅ぼさず、従う家として残す。ほかは変えない。
 
 ##### 39. `kuniezu/static/kuniezu/battle-timing.js` (Modify)
 *   **Type / Scope**: ゲームのモジュール
@@ -553,11 +553,11 @@ CI の成果物として `territory-coverage.json` を出す（コミットし�
 
 ##### 41. `kuniezu/static/kuniezu/county-map.js` (Modify)
 *   **Type / Scope**: ゲームのモジュール
-*   **Proposed Changes**: 区間が `contested` の城の郡（区画）に、持ち主と `rival` の 2 色の斜線を重ねる。`carried` と「記録の無い期間」を説明に添える。
+*   **Proposed Changes**: 区間が `contested` の城の郡（区画）に、持ち主と、`claimants` のうち最初の別の家の 2 色の斜線を重ねる。`carried` と「記録の無い期間」を説明に添える。
 
 ##### 42. `tools/checks/owner-timeline.cjs`・`data/verification/owner-timeline-accepted-diffs.json` (Create)
 *   **Type / Scope**: 検査（手元。CI では固定の短い期間だけ）
-*   **Proposed Changes**: 全シナリオを全期間日送りし、`TK.OWNER_TIMELINE` を固定の `owners.js`（`sourceOverrides` で差し替え）と `null` で比べ、城の持ち主・着陣日・行軍日数・兵の配分・家の誕生・合戦の結果・史実の軍勢の出陣の差を一覧にする。開始日を含む区間がある城では、新しいゲームの初期の持ち主がその区間の家になることを確かめる。城を全部抜いた `newclan` で家と当主が生まれること、区間の外の合戦に結びついた明け渡しが今のまま起こることを確かめる。認めた差の一覧に無い差があれば失敗にする。CI（`node.js.yml`）では 1 シナリオの 2 年分だけを流す（55 年分は CI の時間に収まらない）。城を抜くだけの変更で `G.histSig` が変わらない場合も、保存の時点より後の出来事だけに効くことを確かめる。
+*   **Proposed Changes**: 全シナリオを全期間日送りし、`TK.OWNER_TIMELINE` を固定の `owners.js`（`sourceOverrides` で差し替え）と `null` で比べ、城の持ち主・着陣日・行軍日数・兵の配分・家の誕生・合戦の結果・史実の軍勢の出陣の差を一覧にする。開始日を含む区間がある城では、新しいゲームの初期の持ち主がその区間の家になることを確かめる。城を全部抜いた `newclan` で家と当主が生まれること、区間の外の合戦に結びついた明け渡しが今のまま起こること、`keep` の城が残る `absorb` で家が滅びないこと、3 家の係争の記録で `claimants` が失われないことを確かめる。認めた差の一覧に無い差があれば失敗にする。CI（`node.js.yml`）では 1 シナリオの 2 年分だけを流す（55 年分は CI の時間に収まらない）。城を抜くだけの変更で `G.histSig` が変わらない場合も、保存の時点より後の出来事だけに効くことを確かめる。
 
 ##### 43. 既存の保存の検査 (Modify なし)
 *   **Type / Scope**: 合格条件
