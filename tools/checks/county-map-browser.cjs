@@ -14,7 +14,8 @@ const call=(method,params={},sid=session)=>new Promise((resolve,reject)=>{const 
 const sleep=ms=>new Promise(r=>setTimeout(r,ms));
 const ev=async expression=>{const r=await call('Runtime.evaluate',{expression,returnByValue:true,awaitPromise:true});if(r.exceptionDetails)throw Error(r.exceptionDetails.exception?.description||r.exceptionDetails.text);return r.result.value;};
 async function until(expr){for(let i=0;i<100;i++){if(await ev(expr))return;await sleep(100);}throw Error('Timed out: '+expr);}
-async function click(selector){const p=await ev(`(()=>{const el=document.querySelector(${JSON.stringify(selector)});if(!el||el.disabled)throw Error('missing/disabled '+${JSON.stringify(selector)});el.scrollIntoView({block:'center'});const r=el.getBoundingClientRect();return {x:r.x+r.width/2,y:r.y+r.height/2};})()`);await call('Input.dispatchMouseEvent',{type:'mousePressed',button:'left',clickCount:1,...p});await call('Input.dispatchMouseEvent',{type:'mouseReleased',button:'left',clickCount:1,...p});await sleep(120);}
+const evArgs=require('./browser-runtime.cjs')(call);
+async function click(selector){const p=await evArgs(selector=>{const el=document.querySelector(selector);if(!el||el.disabled)throw Error('missing/disabled '+selector);el.scrollIntoView({block:'center'});const r=el.getBoundingClientRect();return {x:r.x+r.width/2,y:r.y+r.height/2};},selector);await call('Input.dispatchMouseEvent',{type:'mousePressed',button:'left',clickCount:1,...p});await call('Input.dispatchMouseEvent',{type:'mouseReleased',button:'left',clickCount:1,...p});await sleep(120);}
 async function shot(name){await ev("(()=>{const e=document.querySelector('.mbox');if(e)e.scrollTop=0;})()");const r=await call('Page.captureScreenshot',{format:'png'});fs.writeFileSync(path.join(OUT,name+'.png'),Buffer.from(r.data,'base64'));}
 async function view(width,height){await call('Emulation.setDeviceMetricsOverride',{width,height,deviceScaleFactor:1,mobile:width<820});await sleep(300);}
 async function load(){await call('Page.navigate',{url:URL});await until("!!document.querySelector('[data-act=new]')&&!document.getElementById('boot')");}
@@ -22,7 +23,7 @@ async function start(){await click('[data-act=new]');await click('[data-act=scen
 async function menu(){await click('#me [data-m=menu]');}
 const timer=setTimeout(()=>{console.error('timeout');chrome.kill();process.exitCode=1},480000);
 async function scenario(sid){
- if(sid!=='s1560'){await ev(`(()=>{G.newGame('${sid}','oda');localStorage.setItem('kuniezu-history-v1-county',JSON.stringify(G.S()));TKUI.api.ACT.load({dataset:{v:'county'}});})()`);await until("TKUI.mode==='game'&&!TKUI.modal");}
+ if(sid!=='s1560'){await evArgs(sid=>{G.newGame(sid,'oda');localStorage.setItem('kuniezu-history-v1-county',JSON.stringify(G.S()));TKUI.api.ACT.load({dataset:{v:'county'}});},sid);await until("TKUI.mode==='game'&&!TKUI.modal");}
  await ev('TKUI.speed=0');await until('TKUI.county?.ready()');await sleep(300);
  // 読み込みの後に出る出来事の大きな札と通知は、地図を確かめるために閉じる（ゲームの状態は変えない）。
  await ev("(()=>{const b=document.getElementById('big');if(b)b.hidden=true;document.querySelectorAll('.toast').forEach(t=>t.remove());})()");
@@ -36,6 +37,8 @@ const VIEWS=[['kinki',135.75,34.9,1.6],['kanto',139.6,35.9,1.4]];
   for(const sid of ['s1560','s1582','s1600']){
    await scenario(sid);assert.equal(await ev("TKUI.landPaint"),'county');
    for(const [name,lon,lat,z] of VIEWS){await ev(`TKUI.cam(...G.PJ(${lon},${lat}),${z})`);await sleep(700);await shot(`${sid}-${name}-${w}`);}
+   // 城がいくつかあっても全部が同じ家の郡（区画の鍵）で家を引ける：桑名
+   if(sid==='s1560'){const k=await ev("(()=>{const p=G.PJ(136.68,35.07);return {clan:TKUI.county.clanAt(p[0],p[1]),info:TKUI.county.infoAt(p[0],p[1],G.CN)};})()");assert.ok(k.clan,'Kuwana clan '+JSON.stringify(k));report.push({kuwana:k});}
    // 指した所の説明：京（山城国の葛野郡あたり）
    const info=await ev("(()=>{const p=G.PJ(135.70,35.02);return TKUI.county.infoAt(p[0],p[1],G.CN);})()");
    assert.ok(info&&info.title.includes('郡（')&&info.description,sid+' info');
@@ -67,4 +70,4 @@ const VIEWS=[['kinki',135.75,34.9,1.6],['kanto',139.6,35.9,1.4]];
  report.push({paint,cloud,clicked:spot,modal:(await ev("document.querySelector('#modal').innerText")).slice(0,120)});await shot('county-click-1582-1400');await ev('TKUI.api.closeModal()');
  fs.writeFileSync(path.join(OUT,'county-map-browser.json'),JSON.stringify({errors,report},null,1));
  assert.deepEqual(errors,[]);console.log('PASS: county paint at 1560/1582/1600, Kinki and Kanto, 1400 and 390 px; clan colour and clouds read from pixels; settings select switches paint; clicking a county opens its description; no JS errors');
-}catch(e){console.error(e.stack);console.error(errors);try{await shot('failure')}catch{}process.exitCode=1;}finally{clearTimeout(timer);try{await call('Browser.close',{},null)}catch{}chrome.kill();setTimeout(()=>fs.rmSync(profile,{recursive:true,force:true}),500);}})();
+}catch(e){console.error(e.stack);console.error(errors);try{await shot('failure')}catch{}process.exitCode=1;}finally{clearTimeout(timer);try{await call('Browser.close',{},null)}catch{}chrome.kill();setTimeout(()=>{try{fs.rmSync(profile,{recursive:true,force:true,maxRetries:20,retryDelay:250});}catch{}},500);}})();

@@ -91,7 +91,7 @@
    loaded,ready:()=>ready,
    signature:()=>{state();return memo.sig||'';},
    // 指した所の家（家を選ぶ画面で使う）。郡なら郡の家、区画ならその区画の家。決められなければ null。
-   clanAt(x,y){const decided=state();if(!decided)return null;const key=map.controlAt(x,y,date());if(!key)return null;if(key.startsWith('gun:')){const v=decided.get(key.slice(4));return v?.clan||null;}const [gun,castle]=key.slice(5).split('|');return decided.get(gun)?.cells?.get(castle)||null;},
+   clanAt(x,y){const decided=state();if(!decided)return null;const key=map.controlAt(x,y,date());if(!key)return null;if(key.startsWith('gun:')){const v=decided.get(key.slice(4));return v?.clan||null;}const [gun,castle]=key.slice(5).split('|'),v=decided.get(gun);return v?.cells?.get(castle)||v?.clan||null;},
    // owners の色の層として、陸で切り抜かれた中に塗る。clanColor(k) と contextColor(key) は [r,g,b,a]。
    paint(c,view,{clanColor,contextColor,cloudScale=1}){
     const decided=state();if(!decided)return false;const d=date();
@@ -109,7 +109,7 @@
    strokeBorders(c,view,{thin,style}){
     const decided=state();if(!decided)return false;const d=date(),ownerOf=unit=>{
      if(unit.startsWith('gun:')){const v=decided.get(unit.slice(4));return v?.basis==='exception'?null:v?.clan||null;}
-     const [gun,castle]=unit.slice(5).split('|');return decided.get(gun)?.cells?.get(castle)||null;};
+     const [gun,castle]=unit.slice(5).split('|'),v=decided.get(gun);return v?.cells?.get(castle)||v?.clan||null;};
     const groups=new Map(),sameCounty=[];
     for(const key of lines.keys('shore',d,view)){
      const [a,b]=key.split('||'),oa=ownerOf(a),ob=ownerOf(b);
