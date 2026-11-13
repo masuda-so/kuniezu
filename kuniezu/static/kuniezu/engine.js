@@ -576,7 +576,7 @@ function absorb(k,j){
  G.onDestroy&&G.onDestroy(j,k);
  checkOver();
 }
-G.absorb=absorb;
+G.absorb=absorb;G.adminTransfer=(id,k)=>adminTransfer(id,k); // 軍勢を出さない城の受け渡し（owner-timeline.js の開始時の持ち主）
 G.hasUnifiedJapan=()=>!G.FOREIGN.includes(S.player)&&G.alive().filter(k=>!G.FOREIGN.includes(k)).length===1&&G.alive().filter(k=>!G.FOREIGN.includes(k))[0]===S.player;
 function checkOver(){
  if(S.over)return;if(G.retainer())return;

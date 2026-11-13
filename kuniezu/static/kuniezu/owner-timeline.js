@@ -17,8 +17,8 @@
  // 通日（ユリウス通日、絶対）。ゲームの S.t は開始月からの日数なので、比べるときに直す。
  const jd=d=>TKCalendar.toJD(...d);
  const now=S=>S&&S.clockVersion===TKCalendar.version?S.t+TKCalendar.toJD(S.y0,S.m0,1):null;
- // 出来事がこの城を、どの家に渡すか（入れ子の take も見る）。
- const transfers=(e,id)=>{const out=[];if(e.k==='take'&&(e.castles||[]).includes(id))out.push(e.clan);if(e.take&&(e.take.castles||[]).includes(id))out.push(e.take.clan);return out;};
+ // 出来事がこの城を、どの家に渡すか（take・newclan と、入れ子の take を見る）。
+ const transfers=(e,id)=>{const out=[];if((e.k==='take'||e.k==='newclan')&&(e.castles||[]).includes(id))out.push(e.clan);if(e.take&&(e.take.castles||[]).includes(id))out.push(e.take.clan);return out;};
  // 年表で、day より後にこの城が clan の手を離れる最初の日（別の家への受け渡し、clan の吸収・全城の明け渡し）。無ければ Infinity。
  const nextOther=(id,day,clan)=>{for(const e of TK.HIST){const t=jd(e.d);if(t<=day)continue;if(transfers(e,id).some(k=>k&&k!==clan))return t;if((e.k==='absorb'||e.k==='takeall')&&e.b===clan&&e.clan!==clan)return t;}return Infinity;};
  const spans=new Map();
@@ -39,7 +39,7 @@
     // 前の記録と同じ家でも、その間に年表が城を別の家へ渡していれば、この記録で戻す。
     if(node&&TK.CLANS[row.clan]&&(row.clan!==prev||nextOther(id,prevDay,prev)<day)){
      const same=TK.HIST.some(e=>jd(e.d)===day&&transfers(e,id).includes(row.clan));
-     if(!same){
+     {
       // 記録より早く同じ家に渡す年表の出来事から、この城を抜く。
       //（出来事そのものの take と、入れ子の take の両方を見る。）
       // 範囲は、前の記録の後、3 年以内、かつ年表がこの城を別の家へ渡した最後の日の後。その中の受け渡しは全部抜く。
@@ -51,7 +51,8 @@
        if(e.k==='take'&&e.clan===row.clan&&(e.castles||[]).includes(id))next.castles=e.castles.filter(out);
        if(e.take&&e.take.clan===row.clan&&(e.take.castles||[]).includes(id))next.take={...e.take,castles:e.take.castles.filter(out)};
        TK.HIST[i]=next;}
-      added.push({d:row.from.slice(),k:'take',clan:row.clan,castles:[id],admin:true,ownerTimeline:row.sources.slice(),text:`${G.C[id].n1}が${G.CNK(row.clan)}の城になる。`});
+      // 同じ日に同じ家へ渡す年表の出来事があれば、受け渡しは足さない（早い受け渡しを抜くだけ）。
+      if(!same)added.push({d:row.from.slice(),k:'take',clan:row.clan,castles:[id],admin:true,ownerTimeline:row.sources.slice(),text:`${G.C[id].n1}が${G.CNK(row.clan)}の城になる。`});
      }
     }
     prev=row.clan;prevDay=day;
@@ -70,8 +71,9 @@
  G.ownerInterval=(id,t=now(G.S()))=>{install();return t==null?null:at(id,t);};
  const newGame=G.newGame;
  G.newGame=function(...args){install();const r=newGame.apply(this,args);const S=G.S();if(!S)return r;
+  // 元の家の本拠・在城の武将も、通常の受け渡しと同じ手順（G.adminTransfer）で動かす。
   let changed=false;
-  for(const id of Object.keys(data.castles||{})){if(!S.castles[id])continue;const t=now(S),s=t==null?null:at(id,t);if(s&&S.clans[s.clan]?.alive&&S.castles[id].owner!==s.clan){S.castles[id].owner=s.clan;changed=true;}}
+  for(const id of Object.keys(data.castles||{})){if(!S.castles[id])continue;const t=now(S),s=t==null?null:at(id,t);if(s&&S.clans[s.clan]?.alive&&S.castles[id].owner!==s.clan){G.adminTransfer(id,s.clan);changed=true;}}
   if(changed){G.syncCastles?.();S.hsig=G.histSig();}
   return r;};
  // 置き換え前の年表の署名を持つ保存（この書き出しを読む前に作った保存）は、読み込む前に、年表の位置

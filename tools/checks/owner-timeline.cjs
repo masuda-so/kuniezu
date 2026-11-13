@@ -38,6 +38,16 @@ const until=(G,d)=>{const end=G.evT({d});while(G.S().t<end){G.day();clear(G);}};
  const y=G.YOSHO.find(y=>y.n==='諏訪原城');
  if(y){{const S=G.S();S.t=G.evT({d:[1576,6,2]});if(S.clans.takeda?.alive)assert.equal(G.yOwner(y),'takeda','the interval wins over later per-castle corrections');}}}
 
+// 2e. newclan の受け渡しで区間が終わる（姫路城：1582-7-2「山崎の戦い」で羽柴へ）。同じ日の受け渡しがあっても早い受け渡しは抜く。
+//     開始時に持ち主を替えると、元の家の本拠と在城の武将も動く（清洲城を今川へ）。
+{const src='window.TK=window.TK||{};TK.OWNER_TIMELINE={version:1,inputsSha256:"test",castles:{himeji:[{from:[1580,1,1],fromJD:0,to:null,toJD:null,clan:"oda",status:"confirmed",sources:["control:test-f"]}],minowa:[{from:[1582,8,3],fromJD:0,to:null,toJD:null,clan:"hojo",status:"confirmed",sources:["control:test-g"]}]}};';
+ const {G,TK}=model({sourceOverrides:{'history/owners.js':src}});G.newGame('s1585','oda');
+ assert.equal(G.ownerInterval('himeji'),null,'the newclan transfer ends the interval');
+ assert.ok(!TK.HIST.some(e=>e.d.join('-')==='1582-7-20'&&e.k==='take'&&e.clan==='hojo'&&(e.castles||[]).includes('minowa')),'the earlier transfer is removed even with a same-day one');
+ const cap='window.TK=window.TK||{};TK.OWNER_TIMELINE={version:1,inputsSha256:"test",castles:{kiyosu:[{from:[1560,1,1],fromJD:0,to:null,toJD:null,clan:"imagawa",status:"confirmed",sources:["control:test-h"]}]}};';
+ const m=model({sourceOverrides:{'history/owners.js':cap}});m.G.newGame('s1560','oda');const S=m.G.S();
+ if(S.castles.kiyosu.owner==='imagawa'&&S.clans.oda?.alive){assert.notEqual(S.clans.oda.cap,'kiyosu','the old owner moves its seat');assert.ok(!S.gens.some(g=>g.clan==='oda'&&!g.dead&&g.loc==='kiyosu'&&g.unit==null),'its generals leave the castle');}}
+
 // 3. 固定の書き出し（東海の試行）と既定を、同じ乱数の種で並べて流す。
 //    最初の記録の日までは差が無い。吉田城は記録の日（1564-7-28）に徳川へ渡る（年表では 1565-4-10）。
 //    区間の中の行軍拠点の城は、家が生きていればその家のもの。
