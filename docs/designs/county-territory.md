@@ -470,9 +470,9 @@ CI の成果物として `territory-coverage.json` を出す（コミットし�
 *   **Type / Scope**: 入力の説明
 *   **Proposed Changes**: `territory-control.md` の記録の形（観察の値 `held`・`contested`・`undetermined`・`not-applicable`、期間・出典・箇所・読んだ深さ・`variantOf`）。対象は日本の城（行軍拠点かどうかに関わらず、鍵は `castle:<id>`）。
 
-##### 25. `tools/research/evidence-store.cjs`・`tools/research/export-evidence.cjs` (Modify)
+##### 25. `tools/research/control-store.cjs`・`tools/research/export-evidence.cjs` (Create・Modify)
 *   **Type / Scope**: 入力の検査と書き出し
-*   **Proposed Changes**: 支配の記録の形を確かめ、壊れた記録を拒む（期間の計算 `span` を含む）。`data/research/control.jsonl` を書く。
+*   **Proposed Changes**: 支配の記録の形を確かめ、壊れた記録を拒む（期間の計算 `span` を含む）。`data/research/control.jsonl` を書く。実装では、命題の検査 `evidence-store.cjs` に混ぜず、支配の記録だけの `control-store.cjs` に分けた（2026-11-13）。城の鍵の一覧は `gun-shapes.geojson` の `castles` から取る。
 
 ##### 26. `tools/checks/control-ledger.cjs`・`tools/checks/fixtures/control-cases.cjs` (Create)
 *   **Type / Scope**: 台帳の検査（CI）

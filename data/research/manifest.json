@@ -1,7 +1,7 @@
 {
-  "date": "2026-11-11",
+  "date": "2026-11-13",
   "version": 4,
-  "curatedInputs": "curated/{claims,sources,people,places,locations}/*.json",
+  "curatedInputs": "curated/{claims,sources,people,places,locations,control}/*.json",
   "scope": "日本・朝鮮・明の全施設・人物の網羅を証明するものではない。既存登録と確認済み史実命題を分離。",
   "schema": {
     "entity": "安定ID",
@@ -17,6 +17,10 @@
     {
       "file": "claims.jsonl",
       "sha256": "f914bd0435e07d41927866eac9e7b1c0eb34940fe80567e8e595884b444d8a67"
+    },
+    {
+      "file": "control.jsonl",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
     },
     {
       "file": "implemented-events.jsonl",
