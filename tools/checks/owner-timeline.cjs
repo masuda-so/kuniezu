@@ -54,6 +54,15 @@ const until=(G,d)=>{const end=G.evT({d});while(G.S().t<end){G.day();clear(G);}};
  assert.equal(S.clans.oda.alive,true,'oda survives the swap');assert.equal(S.castles.kiyosu.owner,'saito');assert.equal(S.castles.gifu.owner,'oda');
  assert.equal(S.castles[S.clans.oda.cap].owner,'oda');assert.equal(S.castles[S.clans.saito.cap].owner,'saito');}
 
+// 2g. 同じ家の後の区間が、年表が城を別の家へ渡す当日に始まっても戻す（岐阜城：1582-7-17「信雄と信孝の争い」）。
+{const src='window.TK=window.TK||{};TK.OWNER_TIMELINE={version:1,inputsSha256:"test",castles:{gifu:[{from:[1567,9,17],fromJD:0,to:[1582,7,17],toJD:0,clan:"oda",status:"confirmed",sources:["control:test-k"]},{from:[1582,7,17],fromJD:0,to:null,toJD:null,clan:"oda",status:"carried",sources:["control:test-l"]}]}};';
+ const {G,TK}=model({sourceOverrides:{'history/owners.js':src}});G.newGame('s1582','oda');
+ const away=TK.HIST_BEFORE_OWNER_TIMELINE.some(e=>e.d.join('-')==='1582-7-17'&&e.clan!=='oda'&&(e.castles||[]).includes('gifu'));
+ assert.ok(away,'the timeline moves gifu away on 1582-7-17');
+ const i=TK.HIST.findIndex(e=>e.ownerTimeline&&e.castles[0]==='gifu'&&e.d.join('-')==='1582-7-17');
+ assert.ok(i>=0,'the record moves gifu back on the same day');
+ assert.ok(TK.HIST.slice(0,i).some(e=>e.d.join('-')==='1582-7-17'&&e.clan!=='oda'&&(e.castles||[]).includes('gifu')),'after the timeline\'s transfer');}
+
 // 3. 固定の書き出し（東海の試行）と既定を、同じ乱数の種で並べて流す。
 //    最初の記録の日までは差が無い。吉田城は記録の日（1564-7-28）に徳川へ渡る（年表では 1565-4-10）。
 //    区間の中の行軍拠点の城は、家が生きていればその家のもの。
