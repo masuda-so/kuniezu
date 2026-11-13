@@ -48,6 +48,7 @@ jobs:
           node tools/checks/battle-event-classification.cjs
           node tools/checks/evidence-store.cjs
           node tools/checks/location-store.cjs
+          node tools/checks/control-ledger.cjs
           node tools/checks/history-index.cjs
           python3 tools/checks/history-sqlite.py
           python3 tools/checks/history-sqlite-inputs.py

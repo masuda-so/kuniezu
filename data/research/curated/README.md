@@ -11,3 +11,5 @@
 `identities/` は、2 つの識別子が同じ対象か（`same-site`）、ゲームの拠点が台帳の場所を代表しているか（`represented-by`）の記録。名前が同じというだけでは登録しない。形は [identities/README.md](identities/README.md)。
 
 `people/` と `places/` は固定IDの登録、`locations/` は出典付きの居所・所在・役職の記録。名称・改称と物理的場所を分ける。精密座標は別途照合する。年だけ分かる記録を日単位の滞在へ変換せず、資料の空白年を埋めない。既定の史実命題検索とは別に `query-locations.cjs` を使う。
+
+`control/` は城の支配の記録（変化と観察）。形と検査の決まりは [control/README.md](control/README.md)。
