@@ -361,7 +361,7 @@ function paintBase(c,pad=0){LANDV=landFor(cam.z);rasterLand=null;
  const pat=c.createPattern(seaTile,'repeat');const ps=Math.max(.12,.19/z);pat.setTransform(new DOMMatrix([ps,0,0,ps,0,0])); // 地図に貼りつける（ズームしても模様が地図と一緒に動く）
  c.fillStyle=pat;c.fillRect(x0-50,y0-50,x1-x0+100,y1-y0+100);
  const rasterSig=S?territorySignature()+'|'+flat+'|'+S.player:'none|'+flat;
- if(vector.ready()){vector.paintLand(c,{flat,view:[x0,y0,x1,y1],z,dpr:DPR,relief:(c,v,z,d)=>window.TKRelief?.ready()&&TKRelief.paint(c,v,z,d),owners:S?(countyMode()?(c,v,z)=>county.paint(c,v,{clanColor:k=>clanFill(k,flat),contextColor:key=>contextFill(key,flat),cloudScale:Math.max(.08,.16/z)}):(c,v,z,d)=>window.TKRaster?.ready()&&TKRaster.paint(c,v,z,d,rasterColor(flat),rasterSig)):null,controlColor:S&&!countyMode()?key=>rasterColor(flat)({key,kind:'land'}):null,tint:'rgba(168,146,110,.55)'});
+ if(vector.ready()){vector.paintLand(c,{flat,view:[x0,y0,x1,y1],z,dpr:DPR,relief:(c,v,z,d)=>window.TKRelief?.ready()&&TKRelief.paint(c,v,z,d),owners:S?(countyMode()?(c,v,z)=>county.paint(c,v,{clanColor:k=>clanFill(k,flat),contextColor:key=>contextFill(key,flat),cloudScale:Math.max(.24,.5/z)}):(c,v,z,d)=>window.TKRaster?.ready()&&TKRaster.paint(c,v,z,d,rasterColor(flat),rasterSig)):null,controlColor:S&&!countyMode()?key=>rasterColor(flat)({key,kind:'land'}):null,tint:'rgba(168,146,110,.55)'});
  }else if(window.TKRaster?.ready()){
   // 陸と海・湖・領主の色・陰影はすべて領域画像から作る（docs/architecture/raster-map.md）。
   // 陸だけの層 L に下地の色を塗り、陰影と領主の色を「陸の上だけ」に重ね、最後に海の模様の上へ貼る。
