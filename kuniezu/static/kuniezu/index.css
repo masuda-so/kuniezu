@@ -414,5 +414,10 @@ body[data-modal] #news{visibility:hidden}body[data-modal=scene] #toast,body[data
 /* タイトル画面だけ、題字の箱と出典を別の行に置く。狭い画面で遊び方を開いても出典と重ならず、どちらも読める。地図の canvas は absolute のまま */
 #app[data-mode=title]{display:grid;grid-template-rows:minmax(0,1fr) auto}
 #app[data-mode=title] #title{position:relative;inset:auto;grid-row:1;min-height:0}
-#app[data-mode=title] #credit{position:relative;left:auto;right:auto;bottom:auto;grid-row:2;margin:0 max(10px,env(safe-area-inset-right,0px)) 4px max(10px,env(safe-area-inset-left,0px));max-height:28vh;overflow:auto;pointer-events:auto;padding:4px 6px;background:rgba(12,9,6,.82)}
+#app[data-mode=title] #credit{position:relative;left:auto;right:auto;bottom:auto;grid-row:2;margin:0 max(10px,env(safe-area-inset-right,0px)) 6px max(10px,env(safe-area-inset-left,0px));pointer-events:auto;padding:4px 8px;text-align:center;line-height:1.6;color:rgba(243,232,204,.62)}
 #app[data-mode=title] #title .tbox.wide{max-height:100%}
+
+/* 出典は 1 行にまとめ、全文は「出典と利用条件」の画面で見せる。 */
+#credit .credit-more{pointer-events:auto;margin-left:.6em;padding:0 .6em;border:1px solid rgba(217,184,102,.45);border-radius:3px;background:transparent;color:#d9b866;font:inherit;cursor:pointer}
+#credit .credit-more:hover,#credit .credit-more:focus-visible{background:rgba(217,184,102,.14);color:#f3e8cc}
+.credit-list{margin:0 0 1em;padding-left:1.2em;line-height:1.7}.credit-list li{margin:.2em 0}
