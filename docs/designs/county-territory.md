@@ -41,7 +41,7 @@
 
 | 層 | 値 | 意味 |
 |---|---|---|
-| 支配の記録（作業者が登録する観察） | `held`（保持）・`contested`（係争）・`unknown`（不明）・`not-applicable`（対象外） | `territory-control.md` の観察の値と同じ |
+| 支配の記録（作業者が登録する観察） | `held`（保持）・`contested`（係争）・`undetermined`（不明）・`not-applicable`（対象外） | `territory-control.md` の観察の値と同じ |
 | 城の持ち主の区間（ゲーム用の書き出し） | `confirmed`（確認済み）・`contested`（係争、相手の家 `rival` を持つ）・`carried`（持ち越し） | 支配の記録から導く。区間の無い期間は、今のゲームの年表 `TK.HIST` が持ち主を決める（「記録の無い期間」） |
 | 郡の根拠の種類（ゲームの中で計算） | `exception`（例外の表）・`castle-point`（郡の中の城から）・`province-uniform`（同じ国の城がすべて同じ家だから）・`underived`（未導出） | 郡の色をどう決めたか |
 
@@ -152,7 +152,7 @@
 | 利用条件 | 郡の形は CC BY-NC 4.0 の派生物として、出典を表示して非営利で配る。国絵図は非営利で公開する | 自由な利用条件の境界を先に探す |
 | 城の持ち主の元 | 支配の記録から作った区間で、ゲームの年表のその城の持ち主の変更を置き換える | ゲームの今の状態だけで塗る（Alternative I）、地域ごとに段階的に移す（Alternative J） |
 | 推定の塗り | 推定（`castle-point`・`province-uniform`）も出典ありと同じ見た目で塗り、根拠は指したときに出す | 推定に細かい印を付ける、推定も雲にする |
-| 持ち主の決まらない日 | 記録で `unknown` の城は直前の確認済みの持ち主を持ち越す。`contested` の城は直前の持ち主の色に 2 色の斜線を重ねる | 雲にする、無地にする |
+| 持ち主の決まらない日 | 記録で `undetermined` の城は直前の確認済みの持ち主を持ち越す。`contested` の城は直前の持ち主の色に 2 色の斜線を重ねる | 雲にする、無地にする |
 | 郡の中の分け方 | 持ち主の違う城がありうる郡は、城の点で区画に分け、区画ごとに塗る。施設・村は後の設計 | 分けずに直前の色を引き継ぐ、村まで今入れる |
 | 城の区分 | 主城・支城の区分をやめ、すべて城とする。行軍の道の点かどうかは「行軍拠点」の属性で持ち、今の 122 城のまま | 366 城すべてを行軍拠点にする（行軍日数と史実の着陣日が変わる） |
 | 合戦と城の日付 | 支配の記録の日を採り、その城については合戦に結びついた明け渡しを外す | 合戦の日を採る、ずれたら置き換えない |
@@ -171,22 +171,22 @@
 
 ### 2. 城の持ち主の区間と年表の置き換え
 
-*   **支配の記録**：`docs/designs/territory-control.md` の記録の形（城ごとの観察 `held`・`contested`・`unknown`・`not-applicable`、期間・出典・箇所・読んだ深さ・`variantOf`）と入力の検査をそのまま使う。その設計の段 1（器）と段 3（試行）は、この設計の PR として行う。記録は史実 DB に取り込む（その設計の「DB の外に置く」をこの設計で置き換える。6 の表）。記録の対象は、その設計の「日本のノード 123 件」から、この設計の城の一覧に広げる（6 の表）。
+*   **支配の記録**：`docs/designs/territory-control.md` の記録の形（城ごとの観察 `held`・`contested`・`undetermined`・`not-applicable`、期間・出典・箇所・読んだ深さ・`variantOf`）と入力の検査をそのまま使う。その設計の段 1（器）と段 3（試行）は、この設計の PR として行う。記録は史実 DB に取り込む（その設計の「DB の外に置く」をこの設計で置き換える。6 の表）。記録の対象は、その設計の「日本のノード 123 件」から、この設計の城の一覧に広げる（6 の表）。
 *   **区間の導出**（Python、`export_game_data`）：城ごとに、記録から区間 `{from, to, clan, status, rival?, sources}` を作る。
-    *   `held` の観察の期間 → `confirmed`。
+    *   記録は `territory-control.md` の 2 種類（持ち主が替わった変化 `change`、ある時点の観察 `observation`）。変化の日から次の変化までと、`held` の観察の期間 → `confirmed`。
     *   `contested` → `contested`（`rival` に相手の家）。
-    *   `unknown` → 直前の `confirmed` の家で `carried`。直前に確認済みの家が無ければ区間を作らない。
+    *   `undetermined` → 直前の `confirmed` の家で `carried`。直前に確認済みの家が無ければ区間を作らない。
     *   `not-applicable` → 区間を作らない。
     *   `territory-control.md` の導出の区分（10 種類）との対応は、その設計の区分を上の 3 つに写す表として `export.py` の試験に書く。その設計の「係争・不明の後は家を引き延ばさない」は、この設計では「直前の確認済みの家を持ち越す」に置き換える（8 の表）。
     *   区間の無い期間は書き出さない。その期間は、今のゲームの年表 `TK.HIST` が持ち主を決める。
 *   **年表への当て方**（`owner-timeline.js`）：
     *   `TK.OWNER_TIMELINE` が `null`（既定の空の `owners.js`）なら何もしない。
     *   行軍拠点でない城の区間は、年表を書き換えず、`G.yOwner` を包んで、区間があればその家、無ければ今の値を返す形で当てる（ゲームの状態は増やさない）。城そのものの表示（`ui.js` の `drawYosho`）と周辺施設の一覧は `G.yOwner` を使っているので、郡の色と城の表示は食い違わない。`G.castleOwner(key)` は行軍拠点の城なら `S.castles`、それ以外なら `G.yOwner` を返す。以下は行軍拠点の城の区間の当て方。
-    *   区間に重なる `TK.HIST` の出来事は**消さない**。出来事の城の一覧（`castles`、入れ子の `take`）から、その区間に当たる城だけを抜く。`absorb`・`takeall` のように家ごとに城を移す出来事には、区間に当たる城を移さない一覧（`keep`）を足す。`newclan` で城が全部抜けたときは、家の誕生だけを残す。こうして、出来事に付く軍勢の出陣（`histMarch`）・部隊の解放（`relayUnits`）・死去や臣従（`applyExtras`）は変えない。
+    *   区間に重なる `TK.HIST` の出来事は**消さない**。出来事の城の一覧（`castles`、入れ子の `take`）から、その区間に当たる城だけを抜く。`absorb`・`takeall` のように家ごとに城を移す出来事には、区間に当たる城を移さない一覧（`keep`）を足す。`newclan` で城が全部抜けたときは、家の誕生だけを残す。今の `engine.js` の `newclan` は城が 0 だと家を作らずに終わるので、城の受け渡しと家の誕生を分け、`castles` が空でも誕生の処理（家・当主の登場）を行うよう直す（例：「津軽為信の自立」の `castles:['ishikawa']` を抜いても津軽家は生まれる）。こうして、出来事に付く軍勢の出陣（`histMarch`）・部隊の解放（`relayUnits`）・死去や臣従（`applyExtras`）は変えない。
     *   **行軍の目的地を残す**：城を抜く前に、元の出来事の行軍の目的地（`castles` の先頭）を `marchTo` に写す。出陣の準備（`engine.js` の `preMarch`、`(ev.castles||[])[0]` を目的地にする）と `histTake` の行軍（`histMarch`）は、`ev.marchTo` があればそれを使う。こうして、例えば「長尾景虎の関東出兵」（`castles:['numata']`）は、沼田に区間があっても出兵の軍勢を出す。
     *   区間の境では、軍勢を出さない受け渡しの出来事（`k:'take'`、`admin:true`）を足す。
     *   **新しいゲームの初期配置**：`G.newGame` の包みで、シナリオの開始日を含む区間がある城は、`TK.SCEN.owners` から作った初期の持ち主をその区間の家で上書きする（開始前の `TK.HIST` は当てられないため、境の受け渡しだけでは反映されない）。古い保存の読み込み（`G.setS`）では上書きしない。
-    *   その城については、合戦に結びついた明け渡し（`battle-timing.js` の `resolveHistoricalTake`）を外す。合戦の日付は変えない。
+    *   合戦に結びついた明け渡し（`battle-timing.js` の `resolveHistoricalTake`）は、出来事の日付がその城の区間の中にある場合だけ外す。区間の外の明け渡しは今のまま行う。合戦の日付は変えない。
     *   当てる時点は、`G.newGame` と `G.setS` を包んで状態を作る直前にする。古い保存の補正（`history-state-migration.js` の `legacyDeathSignature`）が置き換え前の `TK.HIST` で署名を作れるよう、置き換え前の写しを残す。
 *   **保存**：古い保存の扱いは、既にある `G.histSig`／`G.fixHist`（`engine.js:149-151`、年表の題名と日付の署名が変わったら、保存の時点より前の出来事を当て直さずに引き直す）に任せる。受け渡しの出来事を足すと署名が変わる。城を抜くだけの変更では署名が変わらないので、その場合も保存の時点より後の出来事だけに効くことを検査で確かめる。
 *   **認めた差**：記録を足すと着陣日・行軍日数が変わりうる。全期間の比べる検査は、`data/verification/owner-timeline-accepted-diffs.json`（城・日付・差の中身・支配の記録の ID・理由・承認者）に無い差があれば失敗にする。記録を足す PR は、その差をこの一覧に足す。
@@ -467,7 +467,7 @@ CI の成果物として `territory-coverage.json` を出す（コミットし�
 
 ##### 24. `data/research/curated/control/README.md` (Create)
 *   **Type / Scope**: 入力の説明
-*   **Proposed Changes**: `territory-control.md` の記録の形（観察の値 `held`・`contested`・`unknown`・`not-applicable`、期間・出典・箇所・読んだ深さ・`variantOf`）。対象は日本の城（行軍拠点かどうかに関わらず、鍵は `castle:<id>`）。
+*   **Proposed Changes**: `territory-control.md` の記録の形（観察の値 `held`・`contested`・`undetermined`・`not-applicable`、期間・出典・箇所・読んだ深さ・`variantOf`）。対象は日本の城（行軍拠点かどうかに関わらず、鍵は `castle:<id>`）。
 
 ##### 25. `tools/research/evidence-store.cjs`・`tools/research/export-evidence.cjs` (Modify)
 *   **Type / Scope**: 入力の検査と書き出し
@@ -523,7 +523,7 @@ CI の成果物として `territory-coverage.json` を出す（コミットし�
 
 ##### 34. `tests/test_game_export.py`・`tests/test_build_static.py` (Create・Modify)
 *   **Type / Scope**: 試験
-*   **Proposed Changes**: 固定の小さな入力で、日付の変換（通日と西暦の配列、閏月を含む旧暦の日付）、区間の規則（`held`・`contested`・`unknown`・`not-applicable`、直前の確認済みの家が無い場合）、`territory-control.md` の 10 の区分からの対応、2 回の書き出しのバイト単位の一致、件数ゼロでの失敗を試す。`test_build_static.py` の `build()` に書き出しを差し替える引数（`export=`）を足し、既存の試験は空の書き出しを渡す。書き出しのファイルの一覧の期待値に `static/kuniezu/history/owners.js` を足す。
+*   **Proposed Changes**: 固定の小さな入力で、日付の変換（通日と西暦の配列、閏月を含む旧暦の日付）、区間の規則（`held`・`contested`・`undetermined`・`not-applicable`、直前の確認済みの家が無い場合）、`territory-control.md` の 10 の区分からの対応、2 回の書き出しのバイト単位の一致、件数ゼロでの失敗を試す。`test_build_static.py` の `build()` に書き出しを差し替える引数（`export=`）を足し、既存の試験は空の書き出しを渡す。書き出しのファイルの一覧の期待値に `static/kuniezu/history/owners.js` を足す。
 
 ##### 35. `.github/workflows/django.yml` (Modify)
 *   **Type / Scope**: CI
@@ -541,11 +541,11 @@ CI の成果物として `territory-coverage.json` を出す（コミットし�
 
 ##### 38. `kuniezu/static/kuniezu/engine.js` (Modify)
 *   **Type / Scope**: エンジン
-*   **Proposed Changes**: `absorb`・`takeall` の当て方で、出来事の `keep` にある城を移さない。`preMarch` と `histTake` の行軍の目的地を `ev.marchTo || (ev.castles||[])[0]` にする。ほかは変えない。
+*   **Proposed Changes**: `absorb`・`takeall` の当て方で、出来事の `keep` にある城を移さない。`preMarch` と `histTake` の行軍の目的地を `ev.marchTo || (ev.castles||[])[0]` にする。`newclan` で城の受け渡しと家の誕生を分け、`castles` が空でも家と当主を作る。ほかは変えない。
 
 ##### 39. `kuniezu/static/kuniezu/battle-timing.js` (Modify)
 *   **Type / Scope**: ゲームのモジュール
-*   **Proposed Changes**: `resolveHistoricalTake` で、`TK.OWNER_TIMELINE` に区間がある城は、合戦に結びついた明け渡しをしない。合戦の日付は変えない。
+*   **Proposed Changes**: `resolveHistoricalTake` で、出来事の日付が `TK.OWNER_TIMELINE` のその城の区間の中にあるときだけ、合戦に結びついた明け渡しをしない（城は記録の日に渡る）。区間の外は今のまま。合戦の日付は変えない。
 
 ##### 40. `kuniezu/static/kuniezu/history-state-migration.js` (Modify)
 *   **Type / Scope**: 保存の移行
@@ -557,7 +557,7 @@ CI の成果物として `territory-coverage.json` を出す（コミットし�
 
 ##### 42. `tools/checks/owner-timeline.cjs`・`data/verification/owner-timeline-accepted-diffs.json` (Create)
 *   **Type / Scope**: 検査（手元。CI では固定の短い期間だけ）
-*   **Proposed Changes**: 全シナリオを全期間日送りし、`TK.OWNER_TIMELINE` を固定の `owners.js`（`sourceOverrides` で差し替え）と `null` で比べ、城の持ち主・着陣日・行軍日数・兵の配分・家の誕生・合戦の結果・史実の軍勢の出陣の差を一覧にする。開始日を含む区間がある城では、新しいゲームの初期の持ち主がその区間の家になることを確かめる。認めた差の一覧に無い差があれば失敗にする。CI（`node.js.yml`）では 1 シナリオの 2 年分だけを流す（55 年分は CI の時間に収まらない）。城を抜くだけの変更で `G.histSig` が変わらない場合も、保存の時点より後の出来事だけに効くことを確かめる。
+*   **Proposed Changes**: 全シナリオを全期間日送りし、`TK.OWNER_TIMELINE` を固定の `owners.js`（`sourceOverrides` で差し替え）と `null` で比べ、城の持ち主・着陣日・行軍日数・兵の配分・家の誕生・合戦の結果・史実の軍勢の出陣の差を一覧にする。開始日を含む区間がある城では、新しいゲームの初期の持ち主がその区間の家になることを確かめる。城を全部抜いた `newclan` で家と当主が生まれること、区間の外の合戦に結びついた明け渡しが今のまま起こることを確かめる。認めた差の一覧に無い差があれば失敗にする。CI（`node.js.yml`）では 1 シナリオの 2 年分だけを流す（55 年分は CI の時間に収まらない）。城を抜くだけの変更で `G.histSig` が変わらない場合も、保存の時点より後の出来事だけに効くことを確かめる。
 
 ##### 43. 既存の保存の検査 (Modify なし)
 *   **Type / Scope**: 合格条件
