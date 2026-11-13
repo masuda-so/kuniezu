@@ -71,7 +71,8 @@
   }
  }
  const at=(id,t)=>(spans.get(id)||[]).find(s=>s.start<=t&&t<s.end)||null;
- G.ownerInterval=(id,t=now(G.S()))=>{install();return t==null?null:at(id,t);};
+ // 区間の家がその時点で滅んでいれば（記録と年表の滅亡が食い違う）、区間は効かず、持ち主は年表のまま。
+ G.ownerInterval=(id,t=now(G.S()))=>{install();const s=t==null?null:at(id,t),S=G.S();return s&&(!S||S.clans[s.clan]?.alive)?s:null;};
  const newGame=G.newGame;
  G.newGame=function(...args){install();const r=newGame.apply(this,args);const S=G.S();if(!S)return r;
   // 先に全部の城の持ち主を決め（城を交換する区間で、途中で家が滅びないように）、その後に元の家の本拠・在城の武将を
