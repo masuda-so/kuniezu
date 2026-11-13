@@ -1,6 +1,6 @@
 # リポジトリの構成（再編の途中）
 
-`masuda-so/website` と同じ Django の構成へ揃える途中（`docs/architecture/replatform-plan.md`）。今は段 1 までと段 7b（地理の土台）：Django・uv の骨組みを足し（1a）、ゲームの原本を `game/` から Django アプリの静的ファイル `kuniezu/static/kuniezu/` へ移し（1b-1）、`index.html` を Django のテンプレートにし（1b-2）、地図の正本を配信物から分けて `kuniezu/map/` へ移した（1b-3）。ゲームの JS と相対 URL は変えていない。
+`masuda-so/website` と同じ Django の構成へ揃える途中（`docs/architecture/replatform-plan.md`）。今は段 1 までと段 7b（地理の土台）・段 7c（郡と国の形）：Django・uv の骨組みを足し（1a）、ゲームの原本を `game/` から Django アプリの静的ファイル `kuniezu/static/kuniezu/` へ移し（1b-1）、`index.html` を Django のテンプレートにし（1b-2）、地図の正本を配信物から分けて `kuniezu/map/` へ移した（1b-3）。ゲームの JS と相対 URL は変えていない。
 
 | 場所 | 役割 |
 | --- | --- |
@@ -10,7 +10,7 @@
 | `kuniezu/templates/index.html` | ゲームのページ。`game-scripts` がスクリプトの読込順 |
 | `kuniezu/static/kuniezu/` | ゲームの原本（素の JavaScript・CSS・素材）と、地図の配信物 `map/build/`（生成物。Git に入れない） |
 | `kuniezu/history/` | 史実の関係データベース（Django のアプリ）。表・取り込み・検索。設計は `docs/architecture/history-rdb.md` |
-| `kuniezu/geo/` | 地理のアプリ（GeoDjango、段 7）。地理ありの設定 `config.settings.geo` だけが読み込む。郡・国・場所の点は段 7c・7d で足す |
+| `kuniezu/geo/` | 地理のアプリ（GeoDjango、段 7）。地理ありの設定 `config.settings.geo` だけが読み込む。郡・国・城の点のモデル（`Kuni`・`Gun`・`CastlePoint`・`GunCell`）と、郡の形を作る管理コマンド |
 | `kuniezu/map/` | 地図の正本（行政区分 `admin/`・支配 `control/`・自然 `physical/`・`projection.json`・年代別の差分の入力 `edits/`）。配信しない |
 | `scripts/` | 静的書き出し `build_static.py` |
 | `tests/` | Django 側の試験（pytest） |
@@ -40,7 +40,7 @@ uv sync --locked
 uv run pytest
 uv run ruff check
 uv run ruff format --check
-uv run mypy kuniezu config scripts tests tests_geo
+uv run mypy kuniezu config scripts tests
 uv run python manage.py check --settings=config.settings.test
 uv run python manage.py migrate && uv run python manage.py import_history   # 史実データベースを作る
 uv run python scripts/build_static.py
@@ -56,6 +56,16 @@ export GEOS_LIBRARY_PATH=/opt/homebrew/lib/libgeos_c.dylib
 export SPATIALITE_LIBRARY_PATH=/opt/homebrew/lib/mod_spatialite.dylib
 uv run pytest --ds=config.settings.geo tests_geo
 DJANGO_SETTINGS_MODULE=config.settings.geo uv run python manage.py migrate
+```
+
+郡と国の形（段 7c、[郡の区分と城の保有で領土を描く](designs/county-territory.md)）は、CODH の原本（`.cache/codh-kg/geojson/`、Git に入れない）を持つ手元だけで作る。城の座標か郡の原本が変わったら作り直してコミットする。
+
+```sh
+uv run python tools/geo/fetch_codh_kg.py --check   # 原本を取得の記録 data/inputs/codh-kg/manifest.json と照合（無ければ引数なしで取得）
+DJANGO_SETTINGS_MODULE=config.settings.geo uv run python manage.py migrate
+DJANGO_SETTINGS_MODULE=config.settings.geo uv run python manage.py load_codh_kg
+DJANGO_SETTINGS_MODULE=config.settings.geo uv run python manage.py link_places
+DJANGO_SETTINGS_MODULE=config.settings.geo uv run python manage.py write_county_tables   # kuniezu/map/admin/gun-*.geojson を書く
 ```
 
 ほかの設定と静的書き出しは地理を読まない。`DATABASE_URL` が SpatiaLite を指すとほかの設定は起動を拒み、書き出しは地理ありの設定で始まると止まる。

@@ -149,6 +149,10 @@ keep_full_version = true
 
 # ==== mypy ====
 [tool.mypy]
+# The GIS app is installed only by config.settings.geo, while django-stubs
+# checks with config.settings.test; its models would have no managers here.
+# docs/architecture/replatform-plan.md stage 7 (type checking).
+exclude = ["^kuniezu/geo/", "^tests_geo/"]
 ignore_missing_imports = true
 python_version = "3.14"
 check_untyped_defs = true

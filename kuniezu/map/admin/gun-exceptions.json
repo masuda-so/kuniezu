@@ -1,0 +1,839 @@
+{
+ "version": 1,
+ "note": "郡の塗りの例外（docs/designs/county-territory.md の技術計画 3）。rule が context の郡は key の区画の色、neutral-without-castle の郡はその日に郡の中に存在する城が無いときだけ key の中立の色。from は含み to は含まない西暦の [年,月,日]、null は期間の端なし。",
+ "exceptions": [
+  {
+   "gun": "G40001",
+   "name": "雑太",
+   "from": null,
+   "to": null,
+   "rule": "neutral-without-castle",
+   "key": "neutral:佐渡",
+   "source": "今の地図の definition.csv の neutral:佐渡。その日にこの郡に存在する城が無いときだけ当てる"
+  },
+  {
+   "gun": "G40002",
+   "name": "羽茂",
+   "from": null,
+   "to": null,
+   "rule": "neutral-without-castle",
+   "key": "neutral:佐渡",
+   "source": "今の地図の definition.csv の neutral:佐渡。その日にこの郡に存在する城が無いときだけ当てる"
+  },
+  {
+   "gun": "G40003",
+   "name": "加茂",
+   "from": null,
+   "to": null,
+   "rule": "neutral-without-castle",
+   "key": "neutral:佐渡",
+   "source": "今の地図の definition.csv の neutral:佐渡。その日にこの郡に存在する城が無いときだけ当てる"
+  },
+  {
+   "gun": "G48001",
+   "name": "知夫",
+   "from": null,
+   "to": null,
+   "rule": "neutral-without-castle",
+   "key": "neutral:隠岐",
+   "source": "今の地図の definition.csv の neutral:隠岐。その日にこの郡に存在する城が無いときだけ当てる"
+  },
+  {
+   "gun": "G48002",
+   "name": "海士",
+   "from": null,
+   "to": null,
+   "rule": "neutral-without-castle",
+   "key": "neutral:隠岐",
+   "source": "今の地図の definition.csv の neutral:隠岐。その日にこの郡に存在する城が無いときだけ当てる"
+  },
+  {
+   "gun": "G48003",
+   "name": "周吉",
+   "from": null,
+   "to": null,
+   "rule": "neutral-without-castle",
+   "key": "neutral:隠岐",
+   "source": "今の地図の definition.csv の neutral:隠岐。その日にこの郡に存在する城が無いときだけ当てる"
+  },
+  {
+   "gun": "G48004",
+   "name": "穏地",
+   "from": null,
+   "to": null,
+   "rule": "neutral-without-castle",
+   "key": "neutral:隠岐",
+   "source": "今の地図の definition.csv の neutral:隠岐。その日にこの郡に存在する城が無いときだけ当てる"
+  },
+  {
+   "gun": "G70011",
+   "name": "大島",
+   "from": null,
+   "to": [
+    1609,
+    1,
+    1
+   ],
+   "rule": "context",
+   "key": "context:ryukyu",
+   "source": "https://www.mlit.go.jp/tagengo-db/R2-00848.html",
+   "note": "奄美群島は1609年の島津の琉球侵攻まで琉球王国の地。以後は薩摩が実際に治めたが名目上は琉球に属した。江戸末期の大隅国大島郡としての所属を戦国期に当てはめない。"
+  },
+  {
+   "gun": "G72001",
+   "name": "壱岐",
+   "from": null,
+   "to": null,
+   "rule": "neutral-without-castle",
+   "key": "neutral:壱岐",
+   "source": "今の地図の definition.csv の neutral:壱岐。その日にこの郡に存在する城が無いときだけ当てる"
+  },
+  {
+   "gun": "G72002",
+   "name": "石田",
+   "from": null,
+   "to": null,
+   "rule": "neutral-without-castle",
+   "key": "neutral:壱岐",
+   "source": "今の地図の definition.csv の neutral:壱岐。その日にこの郡に存在する城が無いときだけ当てる"
+  },
+  {
+   "gun": "G75001",
+   "name": "札幌",
+   "from": null,
+   "to": null,
+   "rule": "context",
+   "key": "context:ainu",
+   "source": "kuniezu/map/edits/baseline-ledger.json の 2026-11-04 の記録（蝦夷地はアイヌの区画）。今の地図の definition.csv の context:ainu と同じ"
+  },
+  {
+   "gun": "G75002",
+   "name": "石狩",
+   "from": null,
+   "to": null,
+   "rule": "context",
+   "key": "context:ainu",
+   "source": "kuniezu/map/edits/baseline-ledger.json の 2026-11-04 の記録（蝦夷地はアイヌの区画）。今の地図の definition.csv の context:ainu と同じ"
+  },
+  {
+   "gun": "G75003",
+   "name": "厚田",
+   "from": null,
+   "to": null,
+   "rule": "context",
+   "key": "context:ainu",
+   "source": "kuniezu/map/edits/baseline-ledger.json の 2026-11-04 の記録（蝦夷地はアイヌの区画）。今の地図の definition.csv の context:ainu と同じ"
+  },
+  {
+   "gun": "G75004",
+   "name": "浜益",
+   "from": null,
+   "to": null,
+   "rule": "context",
+   "key": "context:ainu",
+   "source": "kuniezu/map/edits/baseline-ledger.json の 2026-11-04 の記録（蝦夷地はアイヌの区画）。今の地図の definition.csv の context:ainu と同じ"
+  },
+  {
+   "gun": "G75005",
+   "name": "夕張",
+   "from": null,
+   "to": null,
+   "rule": "context",
+   "key": "context:ainu",
+   "source": "kuniezu/map/edits/baseline-ledger.json の 2026-11-04 の記録（蝦夷地はアイヌの区画）。今の地図の definition.csv の context:ainu と同じ"
+  },
+  {
+   "gun": "G75006",
+   "name": "樺戸",
+   "from": null,
+   "to": null,
+   "rule": "context",
+   "key": "context:ainu",
+   "source": "kuniezu/map/edits/baseline-ledger.json の 2026-11-04 の記録（蝦夷地はアイヌの区画）。今の地図の definition.csv の context:ainu と同じ"
+  },
+  {
+   "gun": "G75007",
+   "name": "雨龍",
+   "from": null,
+   "to": null,
+   "rule": "context",
+   "key": "context:ainu",
+   "source": "kuniezu/map/edits/baseline-ledger.json の 2026-11-04 の記録（蝦夷地はアイヌの区画）。今の地図の definition.csv の context:ainu と同じ"
+  },
+  {
+   "gun": "G75008",
+   "name": "空知",
+   "from": null,
+   "to": null,
+   "rule": "context",
+   "key": "context:ainu",
+   "source": "kuniezu/map/edits/baseline-ledger.json の 2026-11-04 の記録（蝦夷地はアイヌの区画）。今の地図の definition.csv の context:ainu と同じ"
+  },
+  {
+   "gun": "G75009",
+   "name": "上川",
+   "from": null,
+   "to": null,
+   "rule": "context",
+   "key": "context:ainu",
+   "source": "kuniezu/map/edits/baseline-ledger.json の 2026-11-04 の記録（蝦夷地はアイヌの区画）。今の地図の definition.csv の context:ainu と同じ"
+  },
+  {
+   "gun": "G76001",
+   "name": "千歳",
+   "from": null,
+   "to": null,
+   "rule": "context",
+   "key": "context:ainu",
+   "source": "kuniezu/map/edits/baseline-ledger.json の 2026-11-04 の記録（蝦夷地はアイヌの区画）。今の地図の definition.csv の context:ainu と同じ"
+  },
+  {
+   "gun": "G76002",
+   "name": "勇拂",
+   "from": null,
+   "to": null,
+   "rule": "context",
+   "key": "context:ainu",
+   "source": "kuniezu/map/edits/baseline-ledger.json の 2026-11-04 の記録（蝦夷地はアイヌの区画）。今の地図の definition.csv の context:ainu と同じ"
+  },
+  {
+   "gun": "G76003",
+   "name": "白老",
+   "from": null,
+   "to": null,
+   "rule": "context",
+   "key": "context:ainu",
+   "source": "kuniezu/map/edits/baseline-ledger.json の 2026-11-04 の記録（蝦夷地はアイヌの区画）。今の地図の definition.csv の context:ainu と同じ"
+  },
+  {
+   "gun": "G76004",
+   "name": "幌別",
+   "from": null,
+   "to": null,
+   "rule": "context",
+   "key": "context:ainu",
+   "source": "kuniezu/map/edits/baseline-ledger.json の 2026-11-04 の記録（蝦夷地はアイヌの区画）。今の地図の definition.csv の context:ainu と同じ"
+  },
+  {
+   "gun": "G76005",
+   "name": "室蘭",
+   "from": null,
+   "to": null,
+   "rule": "context",
+   "key": "context:ainu",
+   "source": "kuniezu/map/edits/baseline-ledger.json の 2026-11-04 の記録（蝦夷地はアイヌの区画）。今の地図の definition.csv の context:ainu と同じ"
+  },
+  {
+   "gun": "G76006",
+   "name": "有珠",
+   "from": null,
+   "to": null,
+   "rule": "context",
+   "key": "context:ainu",
+   "source": "kuniezu/map/edits/baseline-ledger.json の 2026-11-04 の記録（蝦夷地はアイヌの区画）。今の地図の definition.csv の context:ainu と同じ"
+  },
+  {
+   "gun": "G76007",
+   "name": "虻田",
+   "from": null,
+   "to": null,
+   "rule": "context",
+   "key": "context:ainu",
+   "source": "kuniezu/map/edits/baseline-ledger.json の 2026-11-04 の記録（蝦夷地はアイヌの区画）。今の地図の definition.csv の context:ainu と同じ"
+  },
+  {
+   "gun": "G76008",
+   "name": "山越",
+   "from": null,
+   "to": null,
+   "rule": "context",
+   "key": "context:ainu",
+   "source": "kuniezu/map/edits/baseline-ledger.json の 2026-11-04 の記録（蝦夷地はアイヌの区画）。今の地図の definition.csv の context:ainu と同じ"
+  },
+  {
+   "gun": "G77001",
+   "name": "岩内",
+   "from": null,
+   "to": null,
+   "rule": "context",
+   "key": "context:ainu",
+   "source": "kuniezu/map/edits/baseline-ledger.json の 2026-11-04 の記録（蝦夷地はアイヌの区画）。今の地図の definition.csv の context:ainu と同じ"
+  },
+  {
+   "gun": "G77002",
+   "name": "古宇",
+   "from": null,
+   "to": null,
+   "rule": "context",
+   "key": "context:ainu",
+   "source": "kuniezu/map/edits/baseline-ledger.json の 2026-11-04 の記録（蝦夷地はアイヌの区画）。今の地図の definition.csv の context:ainu と同じ"
+  },
+  {
+   "gun": "G77003",
+   "name": "島牧",
+   "from": null,
+   "to": null,
+   "rule": "context",
+   "key": "context:ainu",
+   "source": "kuniezu/map/edits/baseline-ledger.json の 2026-11-04 の記録（蝦夷地はアイヌの区画）。今の地図の definition.csv の context:ainu と同じ"
+  },
+  {
+   "gun": "G77004",
+   "name": "壽都",
+   "from": null,
+   "to": null,
+   "rule": "context",
+   "key": "context:ainu",
+   "source": "kuniezu/map/edits/baseline-ledger.json の 2026-11-04 の記録（蝦夷地はアイヌの区画）。今の地図の definition.csv の context:ainu と同じ"
+  },
+  {
+   "gun": "G77005",
+   "name": "歌棄",
+   "from": null,
+   "to": null,
+   "rule": "context",
+   "key": "context:ainu",
+   "source": "kuniezu/map/edits/baseline-ledger.json の 2026-11-04 の記録（蝦夷地はアイヌの区画）。今の地図の definition.csv の context:ainu と同じ"
+  },
+  {
+   "gun": "G77006",
+   "name": "磯谷",
+   "from": null,
+   "to": null,
+   "rule": "context",
+   "key": "context:ainu",
+   "source": "kuniezu/map/edits/baseline-ledger.json の 2026-11-04 の記録（蝦夷地はアイヌの区画）。今の地図の definition.csv の context:ainu と同じ"
+  },
+  {
+   "gun": "G77007",
+   "name": "美國",
+   "from": null,
+   "to": null,
+   "rule": "context",
+   "key": "context:ainu",
+   "source": "kuniezu/map/edits/baseline-ledger.json の 2026-11-04 の記録（蝦夷地はアイヌの区画）。今の地図の definition.csv の context:ainu と同じ"
+  },
+  {
+   "gun": "G77008",
+   "name": "積丹",
+   "from": null,
+   "to": null,
+   "rule": "context",
+   "key": "context:ainu",
+   "source": "kuniezu/map/edits/baseline-ledger.json の 2026-11-04 の記録（蝦夷地はアイヌの区画）。今の地図の definition.csv の context:ainu と同じ"
+  },
+  {
+   "gun": "G77009",
+   "name": "古平",
+   "from": null,
+   "to": null,
+   "rule": "context",
+   "key": "context:ainu",
+   "source": "kuniezu/map/edits/baseline-ledger.json の 2026-11-04 の記録（蝦夷地はアイヌの区画）。今の地図の definition.csv の context:ainu と同じ"
+  },
+  {
+   "gun": "G77010",
+   "name": "余市",
+   "from": null,
+   "to": null,
+   "rule": "context",
+   "key": "context:ainu",
+   "source": "kuniezu/map/edits/baseline-ledger.json の 2026-11-04 の記録（蝦夷地はアイヌの区画）。今の地図の definition.csv の context:ainu と同じ"
+  },
+  {
+   "gun": "G77011",
+   "name": "忍路",
+   "from": null,
+   "to": null,
+   "rule": "context",
+   "key": "context:ainu",
+   "source": "kuniezu/map/edits/baseline-ledger.json の 2026-11-04 の記録（蝦夷地はアイヌの区画）。今の地図の definition.csv の context:ainu と同じ"
+  },
+  {
+   "gun": "G77012",
+   "name": "高島",
+   "from": null,
+   "to": null,
+   "rule": "context",
+   "key": "context:ainu",
+   "source": "kuniezu/map/edits/baseline-ledger.json の 2026-11-04 の記録（蝦夷地はアイヌの区画）。今の地図の definition.csv の context:ainu と同じ"
+  },
+  {
+   "gun": "G77013",
+   "name": "小樽",
+   "from": null,
+   "to": null,
+   "rule": "context",
+   "key": "context:ainu",
+   "source": "kuniezu/map/edits/baseline-ledger.json の 2026-11-04 の記録（蝦夷地はアイヌの区画）。今の地図の definition.csv の context:ainu と同じ"
+  },
+  {
+   "gun": "G77014",
+   "name": "瀬棚",
+   "from": null,
+   "to": null,
+   "rule": "context",
+   "key": "context:ainu",
+   "source": "kuniezu/map/edits/baseline-ledger.json の 2026-11-04 の記録（蝦夷地はアイヌの区画）。今の地図の definition.csv の context:ainu と同じ"
+  },
+  {
+   "gun": "G77015",
+   "name": "太櫓",
+   "from": null,
+   "to": null,
+   "rule": "context",
+   "key": "context:ainu",
+   "source": "kuniezu/map/edits/baseline-ledger.json の 2026-11-04 の記録（蝦夷地はアイヌの区画）。今の地図の definition.csv の context:ainu と同じ"
+  },
+  {
+   "gun": "G77016",
+   "name": "久遠",
+   "from": null,
+   "to": null,
+   "rule": "context",
+   "key": "context:ainu",
+   "source": "kuniezu/map/edits/baseline-ledger.json の 2026-11-04 の記録（蝦夷地はアイヌの区画）。今の地図の definition.csv の context:ainu と同じ"
+  },
+  {
+   "gun": "G77017",
+   "name": "奥尻",
+   "from": null,
+   "to": null,
+   "rule": "context",
+   "key": "context:ainu",
+   "source": "kuniezu/map/edits/baseline-ledger.json の 2026-11-04 の記録（蝦夷地はアイヌの区画）。今の地図の definition.csv の context:ainu と同じ"
+  },
+  {
+   "gun": "G78001",
+   "name": "爾志",
+   "from": null,
+   "to": null,
+   "rule": "context",
+   "key": "context:ainu",
+   "source": "kuniezu/map/edits/baseline-ledger.json の 2026-11-04 の記録（蠣崎家の区画を和人地＝上ノ国天ノ川〜知内に縮めた）。渡島のうち和人地を含まない郡"
+  },
+  {
+   "gun": "G78005",
+   "name": "茅部",
+   "from": null,
+   "to": null,
+   "rule": "context",
+   "key": "context:ainu",
+   "source": "kuniezu/map/edits/baseline-ledger.json の 2026-11-04 の記録（蠣崎家の区画を和人地＝上ノ国天ノ川〜知内に縮めた）。渡島のうち和人地を含まない郡"
+  },
+  {
+   "gun": "G78006",
+   "name": "亀田",
+   "from": null,
+   "to": null,
+   "rule": "context",
+   "key": "context:ainu",
+   "source": "kuniezu/map/edits/baseline-ledger.json の 2026-11-04 の記録（蠣崎家の区画を和人地＝上ノ国天ノ川〜知内に縮めた）。渡島のうち和人地を含まない郡"
+  },
+  {
+   "gun": "G79001",
+   "name": "上川",
+   "from": null,
+   "to": null,
+   "rule": "context",
+   "key": "context:ainu",
+   "source": "kuniezu/map/edits/baseline-ledger.json の 2026-11-04 の記録（蝦夷地はアイヌの区画）。今の地図の definition.csv の context:ainu と同じ"
+  },
+  {
+   "gun": "G79002",
+   "name": "中川",
+   "from": null,
+   "to": null,
+   "rule": "context",
+   "key": "context:ainu",
+   "source": "kuniezu/map/edits/baseline-ledger.json の 2026-11-04 の記録（蝦夷地はアイヌの区画）。今の地図の definition.csv の context:ainu と同じ"
+  },
+  {
+   "gun": "G79003",
+   "name": "増毛",
+   "from": null,
+   "to": null,
+   "rule": "context",
+   "key": "context:ainu",
+   "source": "kuniezu/map/edits/baseline-ledger.json の 2026-11-04 の記録（蝦夷地はアイヌの区画）。今の地図の definition.csv の context:ainu と同じ"
+  },
+  {
+   "gun": "G79004",
+   "name": "留萌",
+   "from": null,
+   "to": null,
+   "rule": "context",
+   "key": "context:ainu",
+   "source": "kuniezu/map/edits/baseline-ledger.json の 2026-11-04 の記録（蝦夷地はアイヌの区画）。今の地図の definition.csv の context:ainu と同じ"
+  },
+  {
+   "gun": "G79005",
+   "name": "苫前",
+   "from": null,
+   "to": null,
+   "rule": "context",
+   "key": "context:ainu",
+   "source": "kuniezu/map/edits/baseline-ledger.json の 2026-11-04 の記録（蝦夷地はアイヌの区画）。今の地図の definition.csv の context:ainu と同じ"
+  },
+  {
+   "gun": "G79006",
+   "name": "天塩",
+   "from": null,
+   "to": null,
+   "rule": "context",
+   "key": "context:ainu",
+   "source": "kuniezu/map/edits/baseline-ledger.json の 2026-11-04 の記録（蝦夷地はアイヌの区画）。今の地図の definition.csv の context:ainu と同じ"
+  },
+  {
+   "gun": "G80001",
+   "name": "宗谷",
+   "from": null,
+   "to": null,
+   "rule": "context",
+   "key": "context:ainu",
+   "source": "kuniezu/map/edits/baseline-ledger.json の 2026-11-04 の記録（蝦夷地はアイヌの区画）。今の地図の definition.csv の context:ainu と同じ"
+  },
+  {
+   "gun": "G80002",
+   "name": "枝幸",
+   "from": null,
+   "to": null,
+   "rule": "context",
+   "key": "context:ainu",
+   "source": "kuniezu/map/edits/baseline-ledger.json の 2026-11-04 の記録（蝦夷地はアイヌの区画）。今の地図の definition.csv の context:ainu と同じ"
+  },
+  {
+   "gun": "G80003",
+   "name": "礼文",
+   "from": null,
+   "to": null,
+   "rule": "context",
+   "key": "context:ainu",
+   "source": "kuniezu/map/edits/baseline-ledger.json の 2026-11-04 の記録（蝦夷地はアイヌの区画）。今の地図の definition.csv の context:ainu と同じ"
+  },
+  {
+   "gun": "G80004",
+   "name": "利尻",
+   "from": null,
+   "to": null,
+   "rule": "context",
+   "key": "context:ainu",
+   "source": "kuniezu/map/edits/baseline-ledger.json の 2026-11-04 の記録（蝦夷地はアイヌの区画）。今の地図の definition.csv の context:ainu と同じ"
+  },
+  {
+   "gun": "G80005",
+   "name": "網走",
+   "from": null,
+   "to": null,
+   "rule": "context",
+   "key": "context:ainu",
+   "source": "kuniezu/map/edits/baseline-ledger.json の 2026-11-04 の記録（蝦夷地はアイヌの区画）。今の地図の definition.csv の context:ainu と同じ"
+  },
+  {
+   "gun": "G80006",
+   "name": "斜里",
+   "from": null,
+   "to": null,
+   "rule": "context",
+   "key": "context:ainu",
+   "source": "kuniezu/map/edits/baseline-ledger.json の 2026-11-04 の記録（蝦夷地はアイヌの区画）。今の地図の definition.csv の context:ainu と同じ"
+  },
+  {
+   "gun": "G80007",
+   "name": "常呂",
+   "from": null,
+   "to": null,
+   "rule": "context",
+   "key": "context:ainu",
+   "source": "kuniezu/map/edits/baseline-ledger.json の 2026-11-04 の記録（蝦夷地はアイヌの区画）。今の地図の definition.csv の context:ainu と同じ"
+  },
+  {
+   "gun": "G80008",
+   "name": "紋別",
+   "from": null,
+   "to": null,
+   "rule": "context",
+   "key": "context:ainu",
+   "source": "kuniezu/map/edits/baseline-ledger.json の 2026-11-04 の記録（蝦夷地はアイヌの区画）。今の地図の definition.csv の context:ainu と同じ"
+  },
+  {
+   "gun": "G81001",
+   "name": "沙流",
+   "from": null,
+   "to": null,
+   "rule": "context",
+   "key": "context:ainu",
+   "source": "kuniezu/map/edits/baseline-ledger.json の 2026-11-04 の記録（蝦夷地はアイヌの区画）。今の地図の definition.csv の context:ainu と同じ"
+  },
+  {
+   "gun": "G81002",
+   "name": "新冠",
+   "from": null,
+   "to": null,
+   "rule": "context",
+   "key": "context:ainu",
+   "source": "kuniezu/map/edits/baseline-ledger.json の 2026-11-04 の記録（蝦夷地はアイヌの区画）。今の地図の definition.csv の context:ainu と同じ"
+  },
+  {
+   "gun": "G81003",
+   "name": "靜内",
+   "from": null,
+   "to": null,
+   "rule": "context",
+   "key": "context:ainu",
+   "source": "kuniezu/map/edits/baseline-ledger.json の 2026-11-04 の記録（蝦夷地はアイヌの区画）。今の地図の definition.csv の context:ainu と同じ"
+  },
+  {
+   "gun": "G81004",
+   "name": "三石",
+   "from": null,
+   "to": null,
+   "rule": "context",
+   "key": "context:ainu",
+   "source": "kuniezu/map/edits/baseline-ledger.json の 2026-11-04 の記録（蝦夷地はアイヌの区画）。今の地図の definition.csv の context:ainu と同じ"
+  },
+  {
+   "gun": "G81005",
+   "name": "浦河",
+   "from": null,
+   "to": null,
+   "rule": "context",
+   "key": "context:ainu",
+   "source": "kuniezu/map/edits/baseline-ledger.json の 2026-11-04 の記録（蝦夷地はアイヌの区画）。今の地図の definition.csv の context:ainu と同じ"
+  },
+  {
+   "gun": "G81006",
+   "name": "様似",
+   "from": null,
+   "to": null,
+   "rule": "context",
+   "key": "context:ainu",
+   "source": "kuniezu/map/edits/baseline-ledger.json の 2026-11-04 の記録（蝦夷地はアイヌの区画）。今の地図の definition.csv の context:ainu と同じ"
+  },
+  {
+   "gun": "G81007",
+   "name": "幌泉",
+   "from": null,
+   "to": null,
+   "rule": "context",
+   "key": "context:ainu",
+   "source": "kuniezu/map/edits/baseline-ledger.json の 2026-11-04 の記録（蝦夷地はアイヌの区画）。今の地図の definition.csv の context:ainu と同じ"
+  },
+  {
+   "gun": "G82001",
+   "name": "河東",
+   "from": null,
+   "to": null,
+   "rule": "context",
+   "key": "context:ainu",
+   "source": "kuniezu/map/edits/baseline-ledger.json の 2026-11-04 の記録（蝦夷地はアイヌの区画）。今の地図の definition.csv の context:ainu と同じ"
+  },
+  {
+   "gun": "G82002",
+   "name": "上川",
+   "from": null,
+   "to": null,
+   "rule": "context",
+   "key": "context:ainu",
+   "source": "kuniezu/map/edits/baseline-ledger.json の 2026-11-04 の記録（蝦夷地はアイヌの区画）。今の地図の definition.csv の context:ainu と同じ"
+  },
+  {
+   "gun": "G82003",
+   "name": "河西",
+   "from": null,
+   "to": null,
+   "rule": "context",
+   "key": "context:ainu",
+   "source": "kuniezu/map/edits/baseline-ledger.json の 2026-11-04 の記録（蝦夷地はアイヌの区画）。今の地図の definition.csv の context:ainu と同じ"
+  },
+  {
+   "gun": "G82004",
+   "name": "廣尾",
+   "from": null,
+   "to": null,
+   "rule": "context",
+   "key": "context:ainu",
+   "source": "kuniezu/map/edits/baseline-ledger.json の 2026-11-04 の記録（蝦夷地はアイヌの区画）。今の地図の definition.csv の context:ainu と同じ"
+  },
+  {
+   "gun": "G82005",
+   "name": "富縁",
+   "from": null,
+   "to": null,
+   "rule": "context",
+   "key": "context:ainu",
+   "source": "kuniezu/map/edits/baseline-ledger.json の 2026-11-04 の記録（蝦夷地はアイヌの区画）。今の地図の definition.csv の context:ainu と同じ"
+  },
+  {
+   "gun": "G82006",
+   "name": "十勝",
+   "from": null,
+   "to": null,
+   "rule": "context",
+   "key": "context:ainu",
+   "source": "kuniezu/map/edits/baseline-ledger.json の 2026-11-04 の記録（蝦夷地はアイヌの区画）。今の地図の definition.csv の context:ainu と同じ"
+  },
+  {
+   "gun": "G82007",
+   "name": "中川",
+   "from": null,
+   "to": null,
+   "rule": "context",
+   "key": "context:ainu",
+   "source": "kuniezu/map/edits/baseline-ledger.json の 2026-11-04 の記録（蝦夷地はアイヌの区画）。今の地図の definition.csv の context:ainu と同じ"
+  },
+  {
+   "gun": "G83001",
+   "name": "足寄",
+   "from": null,
+   "to": null,
+   "rule": "context",
+   "key": "context:ainu",
+   "source": "kuniezu/map/edits/baseline-ledger.json の 2026-11-04 の記録（蝦夷地はアイヌの区画）。今の地図の definition.csv の context:ainu と同じ"
+  },
+  {
+   "gun": "G83002",
+   "name": "釧路",
+   "from": null,
+   "to": null,
+   "rule": "context",
+   "key": "context:ainu",
+   "source": "kuniezu/map/edits/baseline-ledger.json の 2026-11-04 の記録（蝦夷地はアイヌの区画）。今の地図の definition.csv の context:ainu と同じ"
+  },
+  {
+   "gun": "G83003",
+   "name": "厚岸",
+   "from": null,
+   "to": null,
+   "rule": "context",
+   "key": "context:ainu",
+   "source": "kuniezu/map/edits/baseline-ledger.json の 2026-11-04 の記録（蝦夷地はアイヌの区画）。今の地図の definition.csv の context:ainu と同じ"
+  },
+  {
+   "gun": "G83004",
+   "name": "川上",
+   "from": null,
+   "to": null,
+   "rule": "context",
+   "key": "context:ainu",
+   "source": "kuniezu/map/edits/baseline-ledger.json の 2026-11-04 の記録（蝦夷地はアイヌの区画）。今の地図の definition.csv の context:ainu と同じ"
+  },
+  {
+   "gun": "G83005",
+   "name": "阿寒",
+   "from": null,
+   "to": null,
+   "rule": "context",
+   "key": "context:ainu",
+   "source": "kuniezu/map/edits/baseline-ledger.json の 2026-11-04 の記録（蝦夷地はアイヌの区画）。今の地図の definition.csv の context:ainu と同じ"
+  },
+  {
+   "gun": "G83006",
+   "name": "白糠",
+   "from": null,
+   "to": null,
+   "rule": "context",
+   "key": "context:ainu",
+   "source": "kuniezu/map/edits/baseline-ledger.json の 2026-11-04 の記録（蝦夷地はアイヌの区画）。今の地図の definition.csv の context:ainu と同じ"
+  },
+  {
+   "gun": "G84001",
+   "name": "根室",
+   "from": null,
+   "to": null,
+   "rule": "context",
+   "key": "context:ainu",
+   "source": "kuniezu/map/edits/baseline-ledger.json の 2026-11-04 の記録（蝦夷地はアイヌの区画）。今の地図の definition.csv の context:ainu と同じ"
+  },
+  {
+   "gun": "G84002",
+   "name": "花咲",
+   "from": null,
+   "to": null,
+   "rule": "context",
+   "key": "context:ainu",
+   "source": "kuniezu/map/edits/baseline-ledger.json の 2026-11-04 の記録（蝦夷地はアイヌの区画）。今の地図の definition.csv の context:ainu と同じ"
+  },
+  {
+   "gun": "G84003",
+   "name": "野付",
+   "from": null,
+   "to": null,
+   "rule": "context",
+   "key": "context:ainu",
+   "source": "kuniezu/map/edits/baseline-ledger.json の 2026-11-04 の記録（蝦夷地はアイヌの区画）。今の地図の definition.csv の context:ainu と同じ"
+  },
+  {
+   "gun": "G84004",
+   "name": "標津",
+   "from": null,
+   "to": null,
+   "rule": "context",
+   "key": "context:ainu",
+   "source": "kuniezu/map/edits/baseline-ledger.json の 2026-11-04 の記録（蝦夷地はアイヌの区画）。今の地図の definition.csv の context:ainu と同じ"
+  },
+  {
+   "gun": "G84005",
+   "name": "目梨",
+   "from": null,
+   "to": null,
+   "rule": "context",
+   "key": "context:ainu",
+   "source": "kuniezu/map/edits/baseline-ledger.json の 2026-11-04 の記録（蝦夷地はアイヌの区画）。今の地図の definition.csv の context:ainu と同じ"
+  },
+  {
+   "gun": "G84006",
+   "name": "色丹",
+   "from": null,
+   "to": null,
+   "rule": "context",
+   "key": "context:ainu",
+   "source": "kuniezu/map/edits/baseline-ledger.json の 2026-11-04 の記録（蝦夷地はアイヌの区画）。今の地図の definition.csv の context:ainu と同じ"
+  },
+  {
+   "gun": "G85001",
+   "name": "蘂取",
+   "from": null,
+   "to": null,
+   "rule": "context",
+   "key": "context:ainu",
+   "source": "kuniezu/map/edits/baseline-ledger.json の 2026-11-04 の記録（蝦夷地はアイヌの区画）。今の地図の definition.csv の context:ainu と同じ"
+  },
+  {
+   "gun": "G85002",
+   "name": "紗那",
+   "from": null,
+   "to": null,
+   "rule": "context",
+   "key": "context:ainu",
+   "source": "kuniezu/map/edits/baseline-ledger.json の 2026-11-04 の記録（蝦夷地はアイヌの区画）。今の地図の definition.csv の context:ainu と同じ"
+  },
+  {
+   "gun": "G85003",
+   "name": "振別",
+   "from": null,
+   "to": null,
+   "rule": "context",
+   "key": "context:ainu",
+   "source": "kuniezu/map/edits/baseline-ledger.json の 2026-11-04 の記録（蝦夷地はアイヌの区画）。今の地図の definition.csv の context:ainu と同じ"
+  },
+  {
+   "gun": "G85004",
+   "name": "擇捉",
+   "from": null,
+   "to": null,
+   "rule": "context",
+   "key": "context:ainu",
+   "source": "kuniezu/map/edits/baseline-ledger.json の 2026-11-04 の記録（蝦夷地はアイヌの区画）。今の地図の definition.csv の context:ainu と同じ"
+  },
+  {
+   "gun": "G85005",
+   "name": "國後",
+   "from": null,
+   "to": null,
+   "rule": "context",
+   "key": "context:ainu",
+   "source": "kuniezu/map/edits/baseline-ledger.json の 2026-11-04 の記録（蝦夷地はアイヌの区画）。今の地図の definition.csv の context:ainu と同じ"
+  }
+ ]
+}

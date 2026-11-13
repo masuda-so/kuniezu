@@ -139,6 +139,8 @@ CODH『旧国・旧郡境界データセット』（江戸末期、郡 806・国
 
 | 点 | 決め事 |
 |---|---|
+> **2026-11-13 の更新**：段 7c は [郡の区分と城の保有で領土を描く](../designs/county-territory.md) の PR 2 として実装した。モデルは `Kuni`・`Gun`・`CastlePoint`・`GunCell`（`PlacePoint` と `codh-region-keys.csv` は人物の足跡の設計に移した）。同じ ID の部品が接している形は溶かし合わせ、1 つの形で壊れているものは直さずに止まる。郡どうしの隙間と重なりは書き出しで確かめる。下の表は当時の計画として残す。
+
 | アプリ | 新しいアプリ `kuniezu.geo`。モデルは `Kuni`（国）・`Gun`（郡）・`PlacePoint`（場所の点） |
 | `Kuni`・`Gun` の列 | `codh_id`（一意。GeoJSON の `properties.id`、例 `K01`・`G01001`）、`name`・`yomi`（同じく properties）、形 `MultiPolygonField(srid=4326)`、`thing_key`（史実 DB の対象の鍵、空でもよい）。`Gun` は `kuni`（`Kuni` への外部キー、properties の `kuni_id`）も持つ。国の面は `K*.geojson`（85 件、手元にある）から取り込み、郡の合併では作らない |
 | `PlacePoint` の列 | `thing_key`（一意、`Thing.key`）、`point`（`PointField(srid=4326)`）、`basis`（`Place.basis` の写し）、`gun`・`kuni`（空でもよい外部キー） |
@@ -159,7 +161,7 @@ GeoDjango は、Django の起動時に地理ライブラリ（GDAL・GEOS・PROJ
 | 設定 | 新しい `config/settings/geo.py`（`test` を継承）だけが `django.contrib.gis` と `kuniezu.geo` を入れ、DB を `geo.sqlite3` にする。`base`・`local`・`test` は地理なしのまま |
 | 書き出しの保護 | `build_static.py` は `setdefault` で設定を選ぶので、環境変数が地理ありを指していると地理ありで書き出してしまう。設定を読んだ直後、`django.setup()` の前（アプリを読み込んで GDAL を読む前）に、`INSTALLED_APPS` に `django.contrib.gis` があるか、DB のエンジンが `django.contrib.gis` で始まれば `RuntimeError` で止める。試験では設定を差し替えてこの例外が出ることと、通常の書き出しの後の `sys.modules` に `django.contrib.gis.gdal` が無いことを確かめる |
 | 試験 | 地理の試験は `testpaths`（`kuniezu`・`tests`）の外の `tests_geo/` に置き、`kuniezu/geo/` には試験を置かない。既定の `uv run pytest` は今のまま地理なしで動き、地理の試験は `uv run pytest --ds=config.settings.geo tests_geo` で別に動かす |
-| 型検査 | mypy は今までどおり CI では動かさず、手元の既定のコマンドだけ。7b でこのコマンドに `tests_geo` を足し（`uv run mypy kuniezu config scripts tests tests_geo`）、`kuniezu/geo` と `config/settings/geo.py` を含めて通ることを確かめ、通らなければ `[tool.mypy]` に `exclude` を足して地理の部分を型検査の外に置く（その場合は地理の型検査をしない） |
+| 型検査 | mypy は今までどおり CI では動かさず、手元の既定のコマンド（`uv run mypy kuniezu config scripts tests`）だけ。django-stubs は試験用の設定で検査し、地理のアプリはその設定に入らないので、`[tool.mypy]` の `exclude` で `kuniezu/geo/` と `tests_geo/` を型検査の外に置く（2026-11-13、段 7c で確かめた） |
 | CI | GitHub 公式のスターターと同じ 1 ジョブ（`build`）の形を保つ（利用者の決定、2026-11-12）。`.github/workflows/django.yml` の `build` で、既定の試験を地理のライブラリを入れる前に動かし（地理なしで通ることの確認）、その後に `sudo apt-get install -y --no-install-recommends gdal-bin libsqlite3-mod-spatialite` で入れて、地理の試験と `migrate` を動かす。地理の試験も必須チェック `build (3.14)` に含まれる |
 | ライブラリの場所 | `GDAL_LIBRARY_PATH`・`GEOS_LIBRARY_PATH`・`SPATIALITE_LIBRARY_PATH` を `geo.py` で同じ名前の環境変数から読む（無ければ Django の既定の探し方）。macOS の Homebrew（`/opt/homebrew/lib`）は Django が自動では見つけない（2026-11-12 確認） |
 | 入れ方 | Python の部品は uv。C のライブラリは OS の道具（macOS は `brew install gdal spatialite-tools`、Ubuntu は上の apt）。Python の `gdal` パッケージは GeoDjango に不要なので入れない |

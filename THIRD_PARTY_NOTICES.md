@@ -57,7 +57,9 @@ under their own terms, which are recorded below and in
 ## Historical district boundaries
 
 - **CODH 旧国・旧郡境界データセット** (CC BY-NC 4.0) — rasterised into `kuniezu/map/admin/gun.png` (one full-map image) and used as
-  the smallest unit of the map partition in Japan (`kuniezu/map/control/gun-assignment.csv`). Credit: 『旧国・旧郡境界データセット』（CODH作成） 「幕末明治地勢地図境界データ」
+  the smallest unit of the map partition in Japan (`kuniezu/map/control/gun-assignment.csv`), and simplified into the county
+  shapes `kuniezu/map/admin/gun-shapes.geojson` and `gun-cells.geojson` that the game draws (docs/designs/county-territory.md;
+  the source GeoJSON itself is not redistributed, see `data/inputs/codh-kg/manifest.json`). Credit: 『旧国・旧郡境界データセット』（CODH作成） 「幕末明治地勢地図境界データ」
   （人間文化研究機構作成）を加工 doi:10.20676/00000454. Because of the NC term, any build that
   includes data derived from it must be distributed non-commercially (the maintainer has confirmed
   the game is non-commercial).
