@@ -1,0 +1,29 @@
+{
+  "id": "control:kakegawa-1569-1",
+  "type": "change",
+  "site": "castle:kakegawa",
+  "from": "clan:imagawa",
+  "to": "clan:tokugawa",
+  "time": {
+    "kind": "dated-event",
+    "date": [
+      1569,
+      5,
+      17
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": false,
+    "precision": "day"
+  },
+  "cause": "handover",
+  "dateKind": "listing-only",
+  "evidenceDepth": "kobun-heading",
+  "summary": "今川氏真が遠江懸川城を徳川家康に明け渡し、家康は石川家成に城を守らせた。",
+  "source": "hiDainihonshiryoKobun",
+  "locator": "綱文：和暦 永禄12年5月17日 第2条（区分 大日本史料、第10編之2（データベースの表示値）、525頁）",
+  "checked": "2026-11-09",
+  "checkedBy": "claude-opus-5.5：既存の確認済み命題 kakegawa-handover-1569 の出典・箇所・要旨から写した。新たに史料は読んでいない",
+  "claim": "kakegawa-handover-1569",
+  "place": "place:kakegawa",
+  "uncertainty": "綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。"
+}

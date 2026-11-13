@@ -1,0 +1,29 @@
+{
+  "id": "control:takato-1582-1",
+  "type": "change",
+  "site": "castle:takato",
+  "from": "unknown",
+  "to": "clan:oda",
+  "time": {
+    "kind": "dated-event",
+    "date": [
+      1582,
+      3,
+      2
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": false,
+    "precision": "day"
+  },
+  "cause": "fall",
+  "dateKind": "listing-only",
+  "evidenceDepth": "kobun-heading",
+  "summary": "織田信忠が信濃高遠城を攻め落とし、守将の仁科盛信を斬った。守将の従う家は出典の要旨に無い。",
+  "source": "hiDainihonshiryoKobun",
+  "locator": "綱文：和暦 天正10年3月2日 第1条（区分 史料綜覧、編10・冊911（データベースの表示値）、326頁）",
+  "checked": "2026-11-09",
+  "checkedBy": "claude-opus-5.5：既存の確認済み命題 takato-castle-fall-1582 の出典・箇所・要旨から写した。新たに史料は読んでいない",
+  "claim": "takato-castle-fall-1582",
+  "place": "place:takato",
+  "uncertainty": "綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。"
+}
