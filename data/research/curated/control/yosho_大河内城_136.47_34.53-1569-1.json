@@ -1,0 +1,27 @@
+{
+  "id": "control:yosho:大河内城:136.47:34.53-1569-1",
+  "type": "observation",
+  "site": "castle:yosho:大河内城:136.47:34.53",
+  "value": "held",
+  "holder": "clan:kitabatake",
+  "time": {
+    "kind": "dated-event",
+    "date": [
+      1569,
+      10,
+      11
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": false,
+    "precision": "day"
+  },
+  "evidenceDepth": "kobun-heading",
+  "summary": "織田茶筅（のちの信雄）が北畠氏を継いで大河内城に入った。城は北畠家の城のままとみる。",
+  "source": "hiDainihonshiryoKobun",
+  "locator": "綱文：和暦 永禄12年10月11日 第2条（区分 大日本史料、第10編之3（データベースの表示値）、315頁）",
+  "checked": "2026-11-09",
+  "checkedBy": "claude-opus-5.5：既存の確認済み命題 chasen-kitabatake-heir-1569 の出典・箇所・要旨から写した。新たに史料は読んでいない",
+  "claim": "chasen-kitabatake-heir-1569",
+  "place": "place:okawachi-castle",
+  "uncertainty": "綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。"
+}

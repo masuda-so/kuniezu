@@ -1,0 +1,29 @@
+{
+  "id": "control:yosho:高天神城:138.04:34.7-1581-1",
+  "type": "change",
+  "site": "castle:yosho:高天神城:138.04:34.7",
+  "from": "clan:takeda",
+  "to": "clan:tokugawa",
+  "time": {
+    "kind": "dated-event",
+    "date": [
+      1581,
+      3,
+      22
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": false,
+    "precision": "day"
+  },
+  "cause": "fall",
+  "dateKind": "listing-only",
+  "evidenceDepth": "kobun-heading",
+  "summary": "徳川家康が武田勝頼の属城の遠江高天神城を囲み、城将らが戦死して城が落ちた。",
+  "source": "hiDainihonshiryoKobun",
+  "locator": "綱文：和暦 天正9年3月22日 第1条（区分 史料綜覧、編10・冊911（データベースの表示値）、287頁）",
+  "checked": "2026-11-09",
+  "checkedBy": "claude-opus-5.5：既存の確認済み命題 takatenjin-fall-1581 の出典・箇所・要旨から写した。新たに史料は読んでいない",
+  "claim": "takatenjin-fall-1581",
+  "place": "place:takatenjin",
+  "uncertainty": "綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。"
+}

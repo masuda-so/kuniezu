@@ -1,0 +1,22 @@
+{
+  "id": "control:yosho:馬伏塚城:137.933518:34.710795-1574-1",
+  "type": "observation",
+  "site": "castle:yosho:馬伏塚城:137.933518:34.710795",
+  "value": "held",
+  "holder": "clan:tokugawa",
+  "time": {
+    "kind": "year-window",
+    "year": 1574,
+    "calendar": "Japanese-year",
+    "precision": "year"
+  },
+  "evidenceDepth": "public-secondary-read",
+  "summary": "天正2年、徳川家康が馬伏塚城を改修し、大須賀康高を守将とした。",
+  "source": "mamushizuka-exhibition",
+  "locator": "本文11頁、天正2年",
+  "checked": "2026-11-03",
+  "checkedBy": "claude-opus-5.5：既存の確認済み命題 mamushizuka-1574-refortification の出典・箇所・要旨から写した。新たに史料は読んでいない",
+  "claim": "mamushizuka-1574-refortification",
+  "place": "place:mamushizuka",
+  "uncertainty": "築城そのものは以前。廃城年は確定しない。"
+}

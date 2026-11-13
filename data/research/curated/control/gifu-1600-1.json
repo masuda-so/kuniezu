@@ -1,0 +1,29 @@
+{
+  "id": "control:gifu-1600-1",
+  "type": "change",
+  "site": "castle:gifu",
+  "from": "clan:oda",
+  "to": "clan:tokugawa",
+  "time": {
+    "kind": "dated-event",
+    "date": [
+      1600,
+      8,
+      23
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": false,
+    "precision": "day"
+  },
+  "cause": "fall",
+  "dateKind": "listing-only",
+  "evidenceDepth": "kobun-heading",
+  "summary": "福島正則・池田照政（輝政）らの東軍が織田秀信の美濃岐阜城を攻め落とし、秀信は降った。",
+  "source": "hiDainihonshiryoKobun",
+  "locator": "綱文：和暦 慶長5年8月23日 第2条（区分 史料綜覧、編11・冊913（データベースの表示値）、251頁）",
+  "checked": "2026-11-09",
+  "checkedBy": "claude-opus-5.5：既存の確認済み命題 gifu-castle-fall-1600 の出典・箇所・要旨から写した。新たに史料は読んでいない",
+  "claim": "gifu-castle-fall-1600",
+  "place": "place:inabayama",
+  "uncertainty": "綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。 落とした東軍は徳川家に従う諸将の連合で、ゲームの家の単位では徳川家に当てた。"
+}

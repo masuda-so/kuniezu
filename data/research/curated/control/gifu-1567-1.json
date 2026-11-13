@@ -1,0 +1,29 @@
+{
+  "id": "control:gifu-1567-1",
+  "type": "change",
+  "site": "castle:gifu",
+  "from": "clan:saito",
+  "to": "clan:oda",
+  "time": {
+    "kind": "dated-event",
+    "date": [
+      1567,
+      8,
+      15
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": false,
+    "precision": "day"
+  },
+  "cause": "fall",
+  "dateKind": "listing-only",
+  "evidenceDepth": "kobun-heading",
+  "summary": "美濃三人衆の内応で、織田信長が斎藤龍興の稲葉山城を攻め落とした。",
+  "source": "hiDainihonshiryoKobun",
+  "locator": "綱文：和暦 永禄10年8月15日 第2条（区分 史料綜覧、編9・冊910（データベースの表示値）、663頁）",
+  "checked": "2026-11-09",
+  "checkedBy": "claude-opus-5.5：既存の確認済み命題 inabayama-castle-fall-1567 の出典・箇所・要旨から写した。新たに史料は読んでいない",
+  "claim": "inabayama-castle-fall-1567",
+  "place": "place:inabayama",
+  "uncertainty": "綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。"
+}
