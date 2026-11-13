@@ -181,9 +181,11 @@
     *   区間の無い期間は書き出さない。その期間は、今のゲームの年表 `TK.HIST` が持ち主を決める。
 *   **年表への当て方**（`owner-timeline.js`）：
     *   `TK.OWNER_TIMELINE` が `null`（既定の空の `owners.js`）なら何もしない。
-    *   行軍拠点でない城の区間は、年表を書き換えず、`G.castleOwner(key)` が区間があればその家、無ければ `G.yOwner` を返す形で当てる（ゲームの状態は増やさない）。以下は行軍拠点の城の区間の当て方。
+    *   行軍拠点でない城の区間は、年表を書き換えず、`G.yOwner` を包んで、区間があればその家、無ければ今の値を返す形で当てる（ゲームの状態は増やさない）。城そのものの表示（`ui.js` の `drawYosho`）と周辺施設の一覧は `G.yOwner` を使っているので、郡の色と城の表示は食い違わない。`G.castleOwner(key)` は行軍拠点の城なら `S.castles`、それ以外なら `G.yOwner` を返す。以下は行軍拠点の城の区間の当て方。
     *   区間に重なる `TK.HIST` の出来事は**消さない**。出来事の城の一覧（`castles`、入れ子の `take`）から、その区間に当たる城だけを抜く。`absorb`・`takeall` のように家ごとに城を移す出来事には、区間に当たる城を移さない一覧（`keep`）を足す。`newclan` で城が全部抜けたときは、家の誕生だけを残す。こうして、出来事に付く軍勢の出陣（`histMarch`）・部隊の解放（`relayUnits`）・死去や臣従（`applyExtras`）は変えない。
+    *   **行軍の目的地を残す**：城を抜く前に、元の出来事の行軍の目的地（`castles` の先頭）を `marchTo` に写す。出陣の準備（`engine.js` の `preMarch`、`(ev.castles||[])[0]` を目的地にする）と `histTake` の行軍（`histMarch`）は、`ev.marchTo` があればそれを使う。こうして、例えば「長尾景虎の関東出兵」（`castles:['numata']`）は、沼田に区間があっても出兵の軍勢を出す。
     *   区間の境では、軍勢を出さない受け渡しの出来事（`k:'take'`、`admin:true`）を足す。
+    *   **新しいゲームの初期配置**：`G.newGame` の包みで、シナリオの開始日を含む区間がある城は、`TK.SCEN.owners` から作った初期の持ち主をその区間の家で上書きする（開始前の `TK.HIST` は当てられないため、境の受け渡しだけでは反映されない）。古い保存の読み込み（`G.setS`）では上書きしない。
     *   その城については、合戦に結びついた明け渡し（`battle-timing.js` の `resolveHistoricalTake`）を外す。合戦の日付は変えない。
     *   当てる時点は、`G.newGame` と `G.setS` を包んで状態を作る直前にする。古い保存の補正（`history-state-migration.js` の `legacyDeathSignature`）が置き換え前の `TK.HIST` で署名を作れるよう、置き換え前の写しを残す。
 *   **保存**：古い保存の扱いは、既にある `G.histSig`／`G.fixHist`（`engine.js:149-151`、年表の題名と日付の署名が変わったら、保存の時点より前の出来事を当て直さずに引き直す）に任せる。受け渡しの出来事を足すと署名が変わる。城を抜くだけの変更では署名が変わらないので、その場合も保存の時点より後の出来事だけに効くことを検査で確かめる。
@@ -211,7 +213,7 @@
 ### 4. 係争の斜線と雲
 
 *   **係争**：区間が `contested` の城がある郡（区画があればその区画）に、持ち主と `rival` の 2 色の斜線を重ねる。斜線は地図に貼りつく模様（`ui.js` の海の模様と同じ作り）にする。
-*   **雲**：未導出の郡の上に、色の無い白い半透明の雲を重ねる。雲は地図の canvas とは別の層（`county-clouds.js`）にする。雲の絵は、日付か表示範囲が変わったときだけ未導出の郡の形で切り抜いて作り、流れは CSS の `transform` で出す。こうすると、雲がいつも流れていても、本体の描き直しのループ（`ui.js` の止めている間に眠る仕組み）は眠ったままでよい。画面が隠れている間（`document.hidden`）と、OS の「動きを減らす」設定（`prefers-reduced-motion`）のときは流れを止める。流れの速さは 1 か所の定数で調整する。
+*   **雲**：未導出の郡の上に、色の無い白い半透明の雲を重ねる。雲は地図の canvas とは別の層（`county-clouds.js`）にする。層は 2 つの要素で作る。外側は、未導出の郡の形の型（マスク）で、日付か表示範囲が変わったときだけ作り直し、動かさない。内側は、繰り返しの雲の模様で、CSS のアニメーション（模様の位置か `transform`）でゆっくり流す。型は郡に固定されているので、雲は流れても既知の郡にはみ出さない。こうすると、雲がいつも流れていても、本体の描き直しのループ（`ui.js` の止めている間に眠る仕組み）は眠ったままでよい。画面が隠れている間（`document.hidden`）と、OS の「動きを減らす」設定（`prefers-reduced-motion`）のときは流れを止める。流れの速さは 1 か所の定数で調整する。
 
 ### 5. 不足の報告
 
@@ -500,12 +502,12 @@ CI の成果物として `territory-coverage.json` を出す（コミットし�
       inputsSha256: "<data/research/control.jsonl の SHA-256>",
       castles: {
         "<城の id>": [
-          {from: [年, 月, 日], to: [年, 月, 日] | null, clan: "<家>", status: "confirmed" | "contested" | "carried", rival: "<家>"（contested のとき）, sources: ["<支配の記録の id>"]}
+          {from: [西暦年, 月, 日], fromJD: <通日>, to: [西暦年, 月, 日] | null, toJD: <通日> | null, clan: "<家>", status: "confirmed" | "contested" | "carried", rival: "<家>"（contested のとき）, sources: ["<支配の記録の id>"]}
         ]
       }
     };
     ```
-    日付はゲームの暦（旧暦）の `[年, 月, 日]`。区間は `from` を含み `to` を含まない。並び順は城の id の順、区間は `from` の順。時刻を含めない。
+    `from`・`to` は、エンジンが読む西暦の配列（`engine.js` の `evT` は `TKCalendar.toJD(...ev.d)` で読み、`calendar.js` は配列をユリウス暦・グレゴリオ暦として解釈する）。書き出しは、支配の記録の日付を史実 DB のユリウス通日にしてから、`kuniezu/history/dates.py` の `jd_to_western` で西暦の配列に変える。旧暦の月・閏月はこの段で解消され、配列には残らない。照合のため、区間に通日 `fromJD`・`toJD` も持たせ、試験で `TKCalendar.toJD(...from) === fromJD` を確かめる。区間は `from` を含み `to` を含まない。並び順は城の id の順、区間は `from` の順。時刻を含めない。
 
 ##### 31. `kuniezu/history/management/commands/export_game_data.py` (Create)
 *   **Type / Scope**: 管理コマンド
@@ -521,7 +523,7 @@ CI の成果物として `territory-coverage.json` を出す（コミットし�
 
 ##### 34. `tests/test_game_export.py`・`tests/test_build_static.py` (Create・Modify)
 *   **Type / Scope**: 試験
-*   **Proposed Changes**: 固定の小さな入力で、区間の規則（`held`・`contested`・`unknown`・`not-applicable`、直前の確認済みの家が無い場合）、`territory-control.md` の 10 の区分からの対応、2 回の書き出しのバイト単位の一致、件数ゼロでの失敗を試す。`test_build_static.py` の `build()` に書き出しを差し替える引数（`export=`）を足し、既存の試験は空の書き出しを渡す。書き出しのファイルの一覧の期待値に `static/kuniezu/history/owners.js` を足す。
+*   **Proposed Changes**: 固定の小さな入力で、日付の変換（通日と西暦の配列、閏月を含む旧暦の日付）、区間の規則（`held`・`contested`・`unknown`・`not-applicable`、直前の確認済みの家が無い場合）、`territory-control.md` の 10 の区分からの対応、2 回の書き出しのバイト単位の一致、件数ゼロでの失敗を試す。`test_build_static.py` の `build()` に書き出しを差し替える引数（`export=`）を足し、既存の試験は空の書き出しを渡す。書き出しのファイルの一覧の期待値に `static/kuniezu/history/owners.js` を足す。
 
 ##### 35. `.github/workflows/django.yml` (Modify)
 *   **Type / Scope**: CI
@@ -531,7 +533,7 @@ CI の成果物として `territory-coverage.json` を出す（コミットし�
 
 ##### 36. `kuniezu/static/kuniezu/owner-timeline.js` (Create)
 *   **Type / Scope**: ゲームのモジュール
-*   **Proposed Changes**: 技術計画 2 の「年表への当て方」。`TK.OWNER_TIMELINE` が `null` なら何もしない。`G.castleOwner` が行軍拠点でない城の区間を返すようにする。`G.newGame` と `G.setS` を包み、状態を作る直前に、置き換え前の `TK.HIST` の写しを残してから、区間に当たる城を出来事の `castles` から抜き、`absorb`・`takeall` に `keep` を足し、区間の境に `admin:true` の受け渡しを足す。
+*   **Proposed Changes**: 技術計画 2 の「年表への当て方」。`TK.OWNER_TIMELINE` が `null` なら何もしない。`G.yOwner` を包んで行軍拠点でない城の区間を返す。城を抜く前に `marchTo` を写す。`G.newGame` の包みで、開始日を含む区間で初期の持ち主を上書きする。`G.newGame` と `G.setS` を包み、状態を作る直前に、置き換え前の `TK.HIST` の写しを残してから、区間に当たる城を出来事の `castles` から抜き、`absorb`・`takeall` に `keep` を足し、区間の境に `admin:true` の受け渡しを足す。
 
 ##### 37. `kuniezu/templates/index.html` (Modify)
 *   **Type / Scope**: テンプレート
@@ -539,7 +541,7 @@ CI の成果物として `territory-coverage.json` を出す（コミットし�
 
 ##### 38. `kuniezu/static/kuniezu/engine.js` (Modify)
 *   **Type / Scope**: エンジン
-*   **Proposed Changes**: `absorb`・`takeall` の当て方（`engine.js` の該当箇所）で、出来事の `keep` にある城を移さない。ほかは変えない。
+*   **Proposed Changes**: `absorb`・`takeall` の当て方で、出来事の `keep` にある城を移さない。`preMarch` と `histTake` の行軍の目的地を `ev.marchTo || (ev.castles||[])[0]` にする。ほかは変えない。
 
 ##### 39. `kuniezu/static/kuniezu/battle-timing.js` (Modify)
 *   **Type / Scope**: ゲームのモジュール
@@ -555,7 +557,7 @@ CI の成果物として `territory-coverage.json` を出す（コミットし�
 
 ##### 42. `tools/checks/owner-timeline.cjs`・`data/verification/owner-timeline-accepted-diffs.json` (Create)
 *   **Type / Scope**: 検査（手元。CI では固定の短い期間だけ）
-*   **Proposed Changes**: 全シナリオを全期間日送りし、`TK.OWNER_TIMELINE` を固定の `owners.js`（`sourceOverrides` で差し替え）と `null` で比べ、城の持ち主・着陣日・行軍日数・兵の配分・家の誕生・合戦の結果の差を一覧にする。認めた差の一覧に無い差があれば失敗にする。CI（`node.js.yml`）では 1 シナリオの 2 年分だけを流す（55 年分は CI の時間に収まらない）。城を抜くだけの変更で `G.histSig` が変わらない場合も、保存の時点より後の出来事だけに効くことを確かめる。
+*   **Proposed Changes**: 全シナリオを全期間日送りし、`TK.OWNER_TIMELINE` を固定の `owners.js`（`sourceOverrides` で差し替え）と `null` で比べ、城の持ち主・着陣日・行軍日数・兵の配分・家の誕生・合戦の結果・史実の軍勢の出陣の差を一覧にする。開始日を含む区間がある城では、新しいゲームの初期の持ち主がその区間の家になることを確かめる。認めた差の一覧に無い差があれば失敗にする。CI（`node.js.yml`）では 1 シナリオの 2 年分だけを流す（55 年分は CI の時間に収まらない）。城を抜くだけの変更で `G.histSig` が変わらない場合も、保存の時点より後の出来事だけに効くことを確かめる。
 
 ##### 43. 既存の保存の検査 (Modify なし)
 *   **Type / Scope**: 合格条件
@@ -565,7 +567,7 @@ CI の成果物として `territory-coverage.json` を出す（コミットし�
 
 ##### 44. `kuniezu/static/kuniezu/county-clouds.js` (Create)
 *   **Type / Scope**: ゲームのモジュール
-*   **Proposed Changes**: 地図の canvas の上に別の層（canvas 1 枚）を置き、未導出の郡の形で切り抜いた雲の絵を、日付か表示範囲が変わったときだけ作る。流れは CSS の `transform` のアニメーションで出し、本体の描き直しのループは起こさない。`document.hidden` と `prefers-reduced-motion` のときは止める。速さは定数 `CLOUD_SPEED` で調整する。地図をパン・拡大したときは、層の位置を本体の視点に合わせ直す。
+*   **Proposed Changes**: 地図の canvas の上に別の層を置く。外側の要素に、未導出の郡の形の型（CSS の `mask-image`、日付か表示範囲が変わったときだけ作り直す）を付けて動かさず、内側の要素の繰り返しの雲の模様だけを CSS のアニメーションで流す。本体の描き直しのループは起こさない。`document.hidden` と `prefers-reduced-motion` のときは止める。速さは定数 `CLOUD_SPEED` で調整する。地図をパン・拡大したときは、層の位置を本体の視点に合わせ直す。
 
 ##### 45. `kuniezu/static/kuniezu/county-map.js`・`kuniezu/templates/index.html` (Modify)
 *   **Type / Scope**: ゲームのモジュールとテンプレート
