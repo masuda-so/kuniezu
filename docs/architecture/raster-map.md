@@ -68,6 +68,7 @@ Claude と Codex の独立調査（`docs/reports/MAP_ARCHITECTURE_INDEPENDENT_RE
 - 日本の陸は CODH 旧国・旧郡境界（江戸末期、806郡）を 100m の郡画像 `kuniezu/map/gun/` にし（`tools/map/build-gun.cjs`）、`tools/map/build-provinces.cjs` が郡ごとに城の領域へ割り当てる。結果は `kuniezu/map/gun-assignment.csv`（郡・国・根拠・領域・票の割合）。
 - 根拠：castle-point（郡に城が一つ）／split（郡に城が複数。郡の中は従来の線の割り当てを保つ）／same-province（城のない郡。同じ国の城の中で従来の票が多い城、票が無ければ最も近い城）／majority-other-province（国に城が一つも無い河内・志摩・安房）／unassigned（蝦夷・琉球など）／excluded（`kuniezu/map/gun-overrides.json` の例外。奄美は1609年まで琉球）。陸奥・出羽の明治の分割は戻して国を比べる。
 - 結果：城の位置と領域の食い違い0、国をまたぐ領域は城のない国を受け持つ6件のみ。郡境そのものは江戸末期のもので、戦国期は推定。
+- 2026-11-13 の追記：上の合意のうち「城の領域は日付つきで城の管轄に属する郡の和」を正とする。郡の色は、その日の城の持ち主から規則で導く（[郡の区分と城の保有で領土を描く](../designs/county-territory.md)）。日付の無い多数決の表 `gun-assignment.csv`（今は `kuniezu/map/control/`）は移行時の記録として残し、使わない。この節の経路（`kuniezu/map/gun/`・`data/map/`）は当時のもので、今の郡の画像と表は `kuniezu/map/admin/` にある。
 - 朝鮮・大陸は郡データが無いので従来どおり（今後、府牧郡県の土台を探す）。
 - 土台が変わると年代別の差分は作り直しが要る。`build-edges.cjs` は差分の `baseProvincesSha256` が今の土台（正本4入力の sourceSha256）と一致する版だけを使う。
 - 朝鮮は国史編纂委員会「행정구역 GIS 데이터 (1910~1945년)」の1910年5月時点（1914年の統合前）の府・郡333を郡画像に加える（`tools/map/extract-hgis-1910.py`、標準ライブラリで GeoPackage を読む）。1896年の13道は八道へ戻して「国」として比べる。済州の三邑は城の登録まで excluded（`gun-overrides.json`）。
