@@ -11,6 +11,7 @@ uv run python manage.py history_query --about 織田信長 --year 1582
 uv run python manage.py export_game_data --output <ディレクトリ>   # 支配の記録から城の持ち主の区間（owners.js）を書く（kuniezu/history/export.py）
 uv run python manage.py history_query --box 135 136 34 36 --year 1600
 uv run python manage.py history_query --path 徳川家康     # 軌跡
+uv run python manage.py history_inventory --markdown     # 棚卸し：人物と城ごとの記録の状態（確定・比較値だけ・決まらない・未着手）
 # 日付は、史料の旧暦（date・leapMonth）、通日（days）、ゲームの西暦（western。1582-10-04 まではユリウス暦）、
 # ISO 8601（iso8601。先発グレゴリオ暦。年・期間は「始まり/終わり」の期間、分からない側は ..）の 4 つの形で出る。
 uv run python manage.py history_query --legs 徳川家康     # 隣り合う 2 点を結ぶのに要る速さ

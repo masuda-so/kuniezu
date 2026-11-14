@@ -937,6 +937,11 @@ class Importer:
             if row.get("clan"):
                 clan = self.resolve("clan:" + row["clan"], record)
                 self.take_part(item, clan, Role.SUBJECT)
+            # The people the event is about (a death, an appearance, a move).
+            for name in row.get("people", []):
+                self.take_part(
+                    item, self.resolve("person:" + name, record), Role.SUBJECT
+                )
             for site in sites:
                 self.take_part(item, site, Role.PARTICIPANT)
             signature = (
@@ -945,6 +950,30 @@ class Importer:
                 row.get("title") or "",
             )
             self.timeline.setdefault(signature, []).append(item)
+
+    def load_game_people(self) -> None:
+        """The game's generals. Their birth years are the game's values, kept as
+        comparison values (not verified), so the inventory can tell them apart."""
+        path = self.root / RESEARCH / "implemented-people.jsonl"
+        if not path.exists():
+            return
+        for row in read_jsonl(path):
+            record = self.record(
+                row["id"], RecordType.IMPLEMENTED_PERSON, Status.IMPLEMENTATION, row
+            )
+            person = self.resolve("person:" + row["name"], record)
+            if row.get("born"):
+                item = self.phenomenon(
+                    "implemented-birth:" + row["name"],
+                    record,
+                    mode=Mode.EVENT,
+                    kind=PhenomenonKind.EXISTENCE,
+                    subtype="birth-year",
+                    title=row["name"],
+                    when=self.years(row["born"], row["born"]),
+                    status=Status.IMPLEMENTATION,
+                )
+                self.take_part(item, person, Role.SUBJECT)
 
     def catalog_water_thing(self, subject: str, record: Record) -> Thing:
         key = "water:" + subject
@@ -1503,6 +1532,7 @@ class Importer:
         self.load_registry()
         self.load_sites()
         self.load_timeline()
+        self.load_game_people()
         self.load_catalog()
         self.load_conflicts()
         self.load_claims()

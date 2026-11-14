@@ -60,6 +60,7 @@ class RecordType(models.TextChoices):
     KOBUN = "kobun", "綱文の所在（目録）"
     CONFLICT = "conflict", "戦役と合戦の親子"
     CONTROL = "control", "城の支配の記録"
+    IMPLEMENTED_PERSON = "implemented-person", "武将の実装（生年は比較値）"
 
 
 class Status(models.TextChoices):
