@@ -216,7 +216,11 @@ those castles on the record dates (castles without an interval, and the developm
 server, follow the timeline). The same export writes the death years the database
 holds as confirmed from a read source to `deaths.js`; the public build prefers them
 to the years written by hand in `hist.js` for when people die of age (the timeline's
-death events are unchanged; `docs/reports/DB_DEATH_YEARS.md`). A thing can be
+death events are unchanged; `docs/reports/DB_DEATH_YEARS.md`). On the development server, create an account with
+`uv run python manage.py createsuperuser` and browse the database in the admin site
+at `http://127.0.0.1:8000/admin/`. Because the database is rebuilt from the inputs,
+the admin site is read-only (nothing can be added, changed or deleted) and the static
+export does not include it. A thing can be
 named by a name or by an identifier such as `place:ganjaku`; a name that matches
 several things lists the candidates and stops. That two identifiers are one thing,
 or that a game site stands for a registry place, is stated by sourced records in
