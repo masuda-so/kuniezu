@@ -181,10 +181,17 @@ def test_the_query_command_prints_json(world, capsys):
     answer = json.loads(capsys.readouterr().out)
     assert [row["key"] for row in answer] == ["a-osaka"]
     assert answer[0]["western"] == [[1600, 7, 26], [1600, 7, 26]]
+    # After the 1582 reform, ISO 8601 and the game's western date agree.
+    assert answer[0]["iso8601"] == "1600-07-26"
     assert answer[0]["place"] == "大坂"
     # The point is the place's representative point, with how it was obtained.
     assert answer[0]["placePoint"] == list(OSAKA)
     assert answer[0]["placeBasis"] == "test"
+
+    call_command("history_query", path="旅人")
+
+    stops = json.loads(capsys.readouterr().out)
+    assert all(stop["iso8601"] and stop["western"][0] for stop in stops)
 
     call_command("history_query", legs="旅人")
 

@@ -32,14 +32,25 @@ def describe(item: Phenomenon) -> dict[str, Any]:
         "boundsAsserted": item.bounds_asserted,
         "exact": item.jd_exact,
         "days": [item.jd_start, item.jd_end],
-        "western": [
-            None if number is None else dates.jd_to_western(number)
-            for number in (item.jd_start, item.jd_end)
-        ],
+        # The western dates the game shows (Julian before 15 October 1582) and
+        # ISO 8601 (proleptic Gregorian). A year or a period is an interval,
+        # never a single day it does not know.
+        **day_forms(item.jd_start, item.jd_end),
         "place": item.place.name if item.place else None,
         "placePoint": [point.longitude, point.latitude] if point else None,
         "placeBasis": point.basis if point else None,
         "records": sorted(record.key for record in item.records.all()),
+    }
+
+
+def day_forms(start: int | None, end: int | None) -> dict[str, Any]:
+    """The western dates the game shows and ISO 8601 for a span of days."""
+    return {
+        "western": [
+            None if number is None else dates.jd_to_western(number)
+            for number in (start, end)
+        ],
+        "iso8601": dates.iso_extent(start, end),
     }
 
 
@@ -104,7 +115,8 @@ class Command(BaseCommand):
             }
         elif options["path"]:
             answer = [
-                stop.__dict__ for stop in queries.path(self.thing(options["path"]))
+                {**stop.__dict__, **day_forms(stop.jd_start, stop.jd_end)}
+                for stop in queries.path(self.thing(options["path"]))
             ]
         elif options["legs"]:
             answer = [

@@ -108,3 +108,18 @@ def test_nagashino_and_japanese_calendar_busanjin_are_distinct_cases():
     assert japan == JAPANESE_FOURTEENTH_JD
     assert korea == BUSAN_KOREAN_JD
     assert japan - korea == 1
+
+
+def test_iso_8601_is_proleptic_gregorian_and_never_invents_a_day():
+    # Okehazama, Eiroku 3.5.19: Julian 1560-06-12, ISO 8601 1560-06-22.
+    okehazama = 2291011
+    assert dates.jd_to_western(okehazama) == (1560, 6, 12)
+    assert dates.jd_to_iso(okehazama) == "1560-06-22"
+    # After the reform both calendars agree.
+    reform = dates.western_to_jd(1582, 10, 15)
+    assert dates.jd_to_iso(reform) == "1582-10-15"
+    assert dates.iso_extent(okehazama, okehazama) == "1560-06-22"
+    assert dates.iso_extent(reform, reform + 9) == "1582-10-15/1582-10-24"
+    assert dates.iso_extent(None, reform) == "../1582-10-15"
+    assert dates.iso_extent(reform, None) == "1582-10-15/.."
+    assert dates.iso_extent(None, None) is None
