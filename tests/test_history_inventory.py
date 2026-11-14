@@ -35,13 +35,21 @@ def test_every_person_and_castle_has_exactly_one_state_per_record(repository):
         assert total > 0
         for counts in result[group]["states"].values():
             assert sum(counts[state] for state in STATES) == total
+        # Every item of the catalog is either counted or listed as having no input.
+        assert not set(result[group]["states"]) & set(result[group]["noContainer"])
     rows = {row["key"]: row for row in result["rows"]["castles"]}
     # The Tokai trial's control record makes Yoshida's owner confirmed.
     assert rows["node:yoshida"]["owner"] == "confirmed"
+    # The surrender in the control record is one of the castle's events.
+    assert rows["node:yoshida"]["events"] == "confirmed"
     # A game birth year alone is only a comparison value.
     people = {row["name"]: row for row in result["rows"]["people"]}
     # Nobuyasu's death claim links Ieyasu as a relative; it is not his death.
     assert people["徳川家康"]["death"] != "confirmed"
+    # Hidetada is a related person of the verified Ueda battle claim.
+    assert people["徳川秀忠"]["events"] == "confirmed"
+    # Ujinao is the other party of the verified Tensho-Jingo peace.
+    assert people["北条氏直"]["relations"] == "confirmed"
     assert people["佐々成政"]["birth"] in {"comparison", "confirmed"}
 
 
@@ -52,7 +60,10 @@ def test_the_command_prints_the_tables(repository, capsys):
     answer = json.loads(capsys.readouterr().out)
     assert set(answer) == {"people", "castles"}
     call_command("history_inventory", "--markdown")
-    assert "| 生年 |" in capsys.readouterr().out
+    table = capsys.readouterr().out
+    assert "| 生年 |" in table
+    assert "| 名前の変遷 |" in table
+    assert "家族（器なし）" in table
 
 
 @pytest.mark.django_db

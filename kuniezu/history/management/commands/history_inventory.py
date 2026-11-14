@@ -20,7 +20,20 @@ LABELS = {
     "built": "築城",
     "ended": "消滅",
     "owner": "持ち主",
-    "lord": "城主",
+    "lord": "城主・城代・在番",
+    "names": "名前の変遷",
+    "office": "官位・役職",
+    "relations": "同盟・服属など（家どうし）",
+    "events": "出来事（合戦など）",
+    "position": "位置（座標）",
+    "status-and-religion": "身分・宗派",
+    "burial": "墓所",
+    "family": "家族",
+    "affiliation": "所属の家",
+    "service": "主従",
+    "fief": "知行・所領",
+    "type-and-structure": "種類・構え・規模",
+    "castle-town": "城下町・付属の城",
 }
 
 
@@ -61,5 +74,9 @@ def markdown(result: dict[str, Any]) -> str:
         for field, counts in part["states"].items():
             cells = " | ".join(str(counts[s]) for s in STATES)
             lines.append(f"| {LABELS[field]} | {cells} |")
+        blank = " | ".join("—" for _ in STATES)
+        lines += [
+            f"| {LABELS[field]}（器なし） | {blank} |" for field in part["noContainer"]
+        ]
         lines.append("")
     return "\n".join(lines)

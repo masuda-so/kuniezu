@@ -9,6 +9,10 @@ castle, and for each kind of record, exactly one state:
 * ``undetermined``: searched, and the sources do not settle it.
 * ``untouched``: nothing yet.
 
+The items follow the catalog in docs/designs/space-time-records.md. An item
+the database has no input for yet is listed under ``noContainer`` instead of
+being counted, so a zero is never mistaken for "searched and found nothing".
+
 The counts are derived from the database, so the same import gives the same
 table.
 """
@@ -19,6 +23,7 @@ from collections import Counter
 from typing import TYPE_CHECKING
 from typing import Any
 
+from kuniezu.history.models import Mode
 from kuniezu.history.models import Participation
 from kuniezu.history.models import Phenomenon
 from kuniezu.history.models import PhenomenonKind
@@ -40,6 +45,30 @@ CONFIRMED, COMPARISON, UNDETERMINED, UNTOUCHED = (
     "untouched",
 )
 STATES = (CONFIRMED, COMPARISON, UNDETERMINED, UNTOUCHED)
+PERSON_ITEMS = (
+    "birth",
+    "death",
+    "names",
+    "office",
+    "whereabouts",
+    "relations",
+    "events",
+)
+CASTLE_ITEMS = ("built", "ended", "names", "position", "owner", "lord", "events")
+# Items of the catalog with no input yet (docs/designs/space-time-records.md).
+NO_CONTAINER = {
+    "people": (
+        "status-and-religion",
+        "burial",
+        "family",
+        "affiliation",
+        "service",
+        "fief",
+    ),
+    "castles": ("type-and-structure", "castle-town"),
+}
+# A point whose position a source checked, as opposed to the game's own point.
+CHECKED_POINTS = {"site-representative"}
 BIRTH = {"birth", "birth-date", "birth-year"}
 DEATH = {"death", "death-date", "death-year"}
 CONSTRUCTION = {"change:construction", "castle-construction", "construction-year"}
@@ -76,6 +105,7 @@ def person_row(thing: Thing) -> Json:
     # Only what the records say about the person: a death claim that names a
     # relative as a related person is not the relative's death.
     found = phenomena_of(thing, subject_only=True)
+    linked = phenomena_of(thing)
 
     def pick(test: Callable[[Phenomenon], bool]) -> str:
         return state_of(item for item in found if test(item))
@@ -90,6 +120,15 @@ def person_row(thing: Thing) -> Json:
             lambda p: p.kind == PhenomenonKind.EXISTENCE and p.subtype in DEATH
         ),
         "whereabouts": pick(lambda p: p.kind == PhenomenonKind.MOVEMENT),
+        "names": pick(lambda p: p.kind == PhenomenonKind.NAMING),
+        "office": pick(lambda p: p.kind == PhenomenonKind.OFFICE),
+        # Alliances, submissions and hostility the person is the subject of.
+        # Relations and events count whatever the role: a peace claim names
+        # the other party, and a battle claim its commanders, as related
+        # people. What is about the person alone (above) counts only records
+        # with the person as subject (docs/designs/space-time-records.md).
+        "relations": state_of(p for p in linked if p.kind == PhenomenonKind.RELATION),
+        "events": state_of(p for p in linked if p.kind == PhenomenonKind.CONFLICT),
     }
 
 
@@ -121,7 +160,24 @@ def castle_row(thing: Thing) -> Json:
         "ended": ended,
         "owner": owner,
         "lord": pick(lambda p: p.subtype == "held-castle-lordship"),
+        "names": pick(lambda p: p.kind == PhenomenonKind.NAMING),
+        "position": position_state(thing),
+        # Sieges and battles, and the handovers and surrenders the control
+        # records hold as events (changes), not their observed states.
+        "events": pick(
+            lambda p: (
+                p.kind == PhenomenonKind.CONFLICT
+                or (p.kind == PhenomenonKind.CONTROL and p.mode == Mode.EVENT)
+            )
+        ),
     }
+
+
+def position_state(thing: Thing) -> str:
+    point = getattr(thing, "place", None)
+    if point is None:
+        return UNTOUCHED
+    return CONFIRMED if point.basis in CHECKED_POINTS else COMPARISON
 
 
 def castles() -> list[Thing]:
@@ -155,11 +211,13 @@ def inventory() -> Json:
     return {
         "people": {
             "total": len(person_rows),
-            "states": table(person_rows, ("birth", "death", "whereabouts")),
+            "states": table(person_rows, PERSON_ITEMS),
+            "noContainer": list(NO_CONTAINER["people"]),
         },
         "castles": {
             "total": len(castle_rows),
-            "states": table(castle_rows, ("built", "ended", "owner", "lord")),
+            "states": table(castle_rows, CASTLE_ITEMS),
+            "noContainer": list(NO_CONTAINER["castles"]),
         },
         "rows": {"people": person_rows, "castles": castle_rows},
     }
