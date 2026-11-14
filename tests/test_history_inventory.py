@@ -40,6 +40,8 @@ def test_every_person_and_castle_has_exactly_one_state_per_record(repository):
     rows = {row["key"]: row for row in result["rows"]["castles"]}
     # The Tokai trial's control record makes Yoshida's owner confirmed.
     assert rows["node:yoshida"]["owner"] == "confirmed"
+    # The surrender in the control record is one of the castle's events.
+    assert rows["node:yoshida"]["events"] == "confirmed"
     # A game birth year alone is only a comparison value.
     people = {row["name"]: row for row in result["rows"]["people"]}
     # Nobuyasu's death claim links Ieyasu as a relative; it is not his death.

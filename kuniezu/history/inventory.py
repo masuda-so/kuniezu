@@ -23,6 +23,7 @@ from collections import Counter
 from typing import TYPE_CHECKING
 from typing import Any
 
+from kuniezu.history.models import Mode
 from kuniezu.history.models import Participation
 from kuniezu.history.models import Phenomenon
 from kuniezu.history.models import PhenomenonKind
@@ -160,7 +161,14 @@ def castle_row(thing: Thing) -> Json:
         "lord": pick(lambda p: p.subtype == "held-castle-lordship"),
         "names": pick(lambda p: p.kind == PhenomenonKind.NAMING),
         "position": position_state(thing),
-        "events": pick(lambda p: p.kind == PhenomenonKind.CONFLICT),
+        # Sieges and battles, and the handovers and surrenders the control
+        # records hold as events (changes), not their observed states.
+        "events": pick(
+            lambda p: (
+                p.kind == PhenomenonKind.CONFLICT
+                or (p.kind == PhenomenonKind.CONTROL and p.mode == Mode.EVENT)
+            )
+        ),
     }
 
 
