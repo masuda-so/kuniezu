@@ -1,0 +1,37 @@
+{
+  "id": "death-date-nanbu-nobunao",
+  "entity": "person:nanbu-nobunao",
+  "predicate": "death-date",
+  "value": "陸奥三戸の南部信直が没し、子の利直が継いだ。",
+  "validYears": [
+    1599,
+    1599
+  ],
+  "datePrecision": "day",
+  "source": "hiDainihonshiryoKobun",
+  "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+  "locator": "綱文：和暦 慶長4年10月5日 第1条（区分 史料綜覧、編11・冊913（データベースの表示値）、207頁）",
+  "gameBindings": [
+    "TK.SCEN:南部信直"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-14",
+  "uncertainty": "綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。",
+  "linkedEntities": [
+    "person:nanbu-nobunao"
+  ],
+  "eventTime": {
+    "kind": "dated-event",
+    "date": [
+      1599,
+      10,
+      5
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": false,
+    "precision": "day"
+  },
+  "eventRelation": "death",
+  "eventScope": "綱文が掲げる死去とその日付。綱文の一括検索（当主の没年の棚卸し、2026-11-14）で見つけ、見出しを読んで本人の死去と確かめた。死因・享年・場所の精密な位置は補わない。"
+}

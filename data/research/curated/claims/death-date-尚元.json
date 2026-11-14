@@ -1,0 +1,37 @@
+{
+  "id": "death-date-尚元",
+  "entity": "person:尚元",
+  "predicate": "death-date",
+  "value": "琉球王の尚元が没した（綱文は年のみ、是歳）。",
+  "validYears": [
+    1572,
+    1573
+  ],
+  "datePrecision": "period",
+  "source": "hiDainihonshiryoKobun",
+  "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+  "locator": "綱文：和暦 元亀3年是歳 第4条（区分 大日本史料、第10編之11（データベースの表示値）、440頁）",
+  "gameBindings": [
+    "TK.SCEN:尚元"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-14",
+  "uncertainty": "綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。綱文は「是歳」（その年のうち）で月日を示さない。元亀3年はゲームの暦で西暦1572年1月15日〜1573年2月2日にあたるので、検索の年は1572〜1573年とした。",
+  "linkedEntities": [
+    "person:尚元"
+  ],
+  "eventTime": {
+    "kind": "described-period",
+    "label": "元亀3年是歳",
+    "indexYears": [
+      1572,
+      1573
+    ],
+    "calendar": "Japanese-era-description",
+    "precision": "period",
+    "boundsAreHistoricalStartEnd": false
+  },
+  "eventRelation": "death",
+  "eventScope": "綱文が掲げる死去とその日付。綱文の一括検索（当主の没年の棚卸し、2026-11-14）で見つけ、見出しを読んで本人の死去と確かめた。死因・享年・場所の精密な位置は補わない。"
+}
