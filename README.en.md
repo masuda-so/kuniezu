@@ -212,7 +212,11 @@ records (`data/research/curated/control/`) are imported too, and
 `uv run python manage.py export_game_data --output <dir>` writes castle owner
 intervals (`owners.js`) from them; the static export (`scripts/build_static.py`) does
 this with a temporary database. The game does not read these intervals yet; its own
-timeline still decides owners. A thing can be
+timeline still decides owners. On the development server, create an account with
+`uv run python manage.py createsuperuser` and browse the database in the admin site
+at `http://127.0.0.1:8000/admin/`. Because the database is rebuilt from the inputs,
+the admin site is read-only (nothing can be added, changed or deleted) and the static
+export does not include it. A thing can be
 named by a name or by an identifier such as `place:ganjaku`; a name that matches
 several things lists the candidates and stops. That two identifiers are one thing,
 or that a game site stands for a registry place, is stated by sourced records in
