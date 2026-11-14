@@ -1,2 +1,0 @@
-/* node tools/research/query.cjs '真田' 1600。未検証の実装記録は史実回答へ混ぜない。 */
-const fs=require('node:fs');const query=process.argv[2]||'',year=Number(process.argv[3]),rows=fs.readFileSync('data/research/claims.jsonl','utf8').trim().split('\n').map(JSON.parse);const result=rows.filter(r=>r.status==='verified-in-specified-scope'&&(!Number.isFinite(year)||year>=r.validYears[0]&&year<=r.validYears[1])&&JSON.stringify(r).includes(query));console.log(JSON.stringify({query,year:Number.isFinite(year)?year:null,matches:result,answerable:!!result.length},null,2));

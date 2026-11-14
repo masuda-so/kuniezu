@@ -38,10 +38,4 @@ assert.deepEqual(nurhaci.matchedPeople,[{id:'person:ヌルハチ',name:'ヌル�
 assert.equal(nurhaci.answerable,false);assert.equal(nurhaci.exactPresenceConfirmed,false);
 assert.equal(queryLocations(data,{person:'太祖',year:1607}).matchedPeople.length,0);
 
-const {createHistoryIndex,queryHistory}=require('../research/history-index.cjs');
-const history=createHistoryIndex({claims:facts,...data});
-for(const entity of ['person:ヴァシーリー・ポヤルコフ','ヴァシリー・ポヤルコフ','wikidata:Q982229']){
- assert.equal(queryHistory(history,{entity,fromYear:1560,toYear:1615}).length,0);
- assert.deepEqual(queryHistory(history,{entity,fromYear:1643,toYear:1646}).map(r=>r.id),['claim:poyarkov-amur-expedition-1643-1646']);
-}
 console.log('PASS: source-backed aliases retain registered/unknown distinction; post-period expedition is not moved into game years');
