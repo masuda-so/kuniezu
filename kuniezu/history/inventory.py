@@ -9,6 +9,10 @@ castle, and for each kind of record, exactly one state:
 * ``undetermined``: searched, and the sources do not settle it.
 * ``untouched``: nothing yet.
 
+The items follow the catalog in docs/designs/space-time-records.md. An item
+the database has no input for yet is listed under ``noContainer`` instead of
+being counted, so a zero is never mistaken for "searched and found nothing".
+
 The counts are derived from the database, so the same import gives the same
 table.
 """
@@ -40,6 +44,30 @@ CONFIRMED, COMPARISON, UNDETERMINED, UNTOUCHED = (
     "untouched",
 )
 STATES = (CONFIRMED, COMPARISON, UNDETERMINED, UNTOUCHED)
+PERSON_ITEMS = (
+    "birth",
+    "death",
+    "names",
+    "office",
+    "whereabouts",
+    "relations",
+    "events",
+)
+CASTLE_ITEMS = ("built", "ended", "names", "position", "owner", "lord", "events")
+# Items of the catalog with no input yet (docs/designs/space-time-records.md).
+NO_CONTAINER = {
+    "people": (
+        "status-and-religion",
+        "burial",
+        "family",
+        "affiliation",
+        "service",
+        "fief",
+    ),
+    "castles": ("type-and-structure", "castle-town"),
+}
+# A point whose position a source checked, as opposed to the game's own point.
+CHECKED_POINTS = {"site-representative"}
 BIRTH = {"birth", "birth-date", "birth-year"}
 DEATH = {"death", "death-date", "death-year"}
 CONSTRUCTION = {"change:construction", "castle-construction", "construction-year"}
@@ -90,6 +118,11 @@ def person_row(thing: Thing) -> Json:
             lambda p: p.kind == PhenomenonKind.EXISTENCE and p.subtype in DEATH
         ),
         "whereabouts": pick(lambda p: p.kind == PhenomenonKind.MOVEMENT),
+        "names": pick(lambda p: p.kind == PhenomenonKind.NAMING),
+        "office": pick(lambda p: p.kind == PhenomenonKind.OFFICE),
+        # Alliances, submissions and hostility the person is the subject of.
+        "relations": pick(lambda p: p.kind == PhenomenonKind.RELATION),
+        "events": pick(lambda p: p.kind == PhenomenonKind.CONFLICT),
     }
 
 
@@ -121,7 +154,17 @@ def castle_row(thing: Thing) -> Json:
         "ended": ended,
         "owner": owner,
         "lord": pick(lambda p: p.subtype == "held-castle-lordship"),
+        "names": pick(lambda p: p.kind == PhenomenonKind.NAMING),
+        "position": position_state(thing),
+        "events": pick(lambda p: p.kind == PhenomenonKind.CONFLICT),
     }
+
+
+def position_state(thing: Thing) -> str:
+    point = getattr(thing, "place", None)
+    if point is None:
+        return UNTOUCHED
+    return CONFIRMED if point.basis in CHECKED_POINTS else COMPARISON
 
 
 def castles() -> list[Thing]:
@@ -155,11 +198,13 @@ def inventory() -> Json:
     return {
         "people": {
             "total": len(person_rows),
-            "states": table(person_rows, ("birth", "death", "whereabouts")),
+            "states": table(person_rows, PERSON_ITEMS),
+            "noContainer": list(NO_CONTAINER["people"]),
         },
         "castles": {
             "total": len(castle_rows),
-            "states": table(castle_rows, ("built", "ended", "owner", "lord")),
+            "states": table(castle_rows, CASTLE_ITEMS),
+            "noContainer": list(NO_CONTAINER["castles"]),
         },
         "rows": {"people": person_rows, "castles": castle_rows},
     }
