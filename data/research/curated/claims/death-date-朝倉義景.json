@@ -1,0 +1,37 @@
+{
+  "id": "death-date-朝倉義景",
+  "entity": "person:朝倉義景",
+  "predicate": "death-date",
+  "value": "織田信長に追われた朝倉義景が、越前の賢松寺で自殺した。",
+  "validYears": [
+    1573,
+    1573
+  ],
+  "datePrecision": "day",
+  "source": "hiDainihonshiryoKobun",
+  "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+  "locator": "綱文：和暦 天正1年8月20日 第3条（区分 大日本史料、第10編之17（データベースの表示値）、136頁）",
+  "gameBindings": [
+    "TK.SCEN:朝倉義景"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-14",
+  "uncertainty": "綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。",
+  "linkedEntities": [
+    "person:朝倉義景"
+  ],
+  "eventTime": {
+    "kind": "dated-event",
+    "date": [
+      1573,
+      8,
+      20
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": false,
+    "precision": "day"
+  },
+  "eventRelation": "death",
+  "eventScope": "綱文が掲げる死去とその日付。綱文の一括検索（当主の没年の棚卸し、2026-11-14）で見つけ、見出しを読んで本人の死去と確かめた。死因・享年・場所の精密な位置は補わない。"
+}

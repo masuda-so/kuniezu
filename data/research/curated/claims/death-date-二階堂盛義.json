@@ -1,0 +1,37 @@
+{
+  "id": "death-date-二階堂盛義",
+  "entity": "person:二階堂盛義",
+  "predicate": "death-date",
+  "value": "陸奥須賀川城の二階堂盛義が没した。",
+  "validYears": [
+    1581,
+    1581
+  ],
+  "datePrecision": "day",
+  "source": "hiDainihonshiryoKobun",
+  "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+  "locator": "綱文：和暦 天正9年7月23日 第3条（区分 史料綜覧、編10・冊911（データベースの表示値）、300頁）",
+  "gameBindings": [
+    "TK.SCEN:二階堂盛義"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-14",
+  "uncertainty": "綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。",
+  "linkedEntities": [
+    "person:二階堂盛義"
+  ],
+  "eventTime": {
+    "kind": "dated-event",
+    "date": [
+      1581,
+      7,
+      23
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": false,
+    "precision": "day"
+  },
+  "eventRelation": "death",
+  "eventScope": "綱文が掲げる死去とその日付。綱文の一括検索（当主の没年の棚卸し、2026-11-14）で見つけ、見出しを読んで本人の死去と確かめた。死因・享年・場所の精密な位置は補わない。"
+}

@@ -1,0 +1,37 @@
+{
+  "id": "death-date-武田義統",
+  "entity": "person:武田義統",
+  "predicate": "death-date",
+  "value": "若狭守護の武田義統が没した。",
+  "validYears": [
+    1567,
+    1567
+  ],
+  "datePrecision": "day",
+  "source": "hiDainihonshiryoKobun",
+  "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+  "locator": "綱文：和暦 永祿10年4月8日 第1条（区分 史料綜覧、編9・冊910（データベースの表示値）、655頁）",
+  "gameBindings": [
+    "TK.SCEN:武田義統"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-14",
+  "uncertainty": "綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。",
+  "linkedEntities": [
+    "person:武田義統"
+  ],
+  "eventTime": {
+    "kind": "dated-event",
+    "date": [
+      1567,
+      4,
+      8
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": false,
+    "precision": "day"
+  },
+  "eventRelation": "death",
+  "eventScope": "綱文が掲げる死去とその日付。綱文の一括検索（当主の没年の棚卸し、2026-11-14）で見つけ、見出しを読んで本人の死去と確かめた。死因・享年・場所の精密な位置は補わない。"
+}

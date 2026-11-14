@@ -1,0 +1,37 @@
+{
+  "id": "death-date-宗義智",
+  "entity": "person:宗義智",
+  "predicate": "death-date",
+  "value": "対馬府中城主の宗義智が没し、子の義成が継いだ。",
+  "validYears": [
+    1615,
+    1615
+  ],
+  "datePrecision": "day",
+  "source": "hiDainihonshiryoKobun",
+  "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+  "locator": "綱文：和暦 元和1年1月3日 第3条（区分 大日本史料、第12編之17（データベースの表示値）、574頁）",
+  "gameBindings": [
+    "TK.SCEN:宗義智"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-14",
+  "uncertainty": "綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。",
+  "linkedEntities": [
+    "person:宗義智"
+  ],
+  "eventTime": {
+    "kind": "dated-event",
+    "date": [
+      1615,
+      1,
+      3
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": false,
+    "precision": "day"
+  },
+  "eventRelation": "death",
+  "eventScope": "綱文が掲げる死去とその日付。綱文の一括検索（当主の没年の棚卸し、2026-11-14）で見つけ、見出しを読んで本人の死去と確かめた。死因・享年・場所の精密な位置は補わない。"
+}

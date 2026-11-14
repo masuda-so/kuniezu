@@ -1,0 +1,37 @@
+{
+  "id": "death-date-相馬義胤",
+  "entity": "person:相馬義胤",
+  "predicate": "death-date",
+  "value": "陸奥中村城主相馬義胤の祖父の義胤が没した。",
+  "validYears": [
+    1635,
+    1635
+  ],
+  "datePrecision": "day",
+  "source": "hiDainihonshiryoKobun",
+  "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+  "locator": "綱文：和暦 寛永12年11月16日 第1条（区分 史料綜覧、編12・冊917（データベースの表示値）、107頁）",
+  "gameBindings": [
+    "TK.SCEN:相馬義胤"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-14",
+  "uncertainty": "綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。",
+  "linkedEntities": [
+    "person:相馬義胤"
+  ],
+  "eventTime": {
+    "kind": "dated-event",
+    "date": [
+      1635,
+      11,
+      16
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": false,
+    "precision": "day"
+  },
+  "eventRelation": "death",
+  "eventScope": "綱文が掲げる死去とその日付。綱文の一括検索（当主の没年の棚卸し、2026-11-14）で見つけ、見出しを読んで本人の死去と確かめた。死因・享年・場所の精密な位置は補わない。"
+}
