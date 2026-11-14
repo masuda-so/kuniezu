@@ -211,8 +211,12 @@ Query it by thing, year or a longitude/latitude box, for example
 records (`data/research/curated/control/`) are imported too, and
 `uv run python manage.py export_game_data --output <dir>` writes castle owner
 intervals (`owners.js`) from them; the static export (`scripts/build_static.py`) does
-this with a temporary database. The game does not read these intervals yet; its own
-timeline still decides owners. A thing can be
+this with a temporary database. In the public build the game changes the owners of
+those castles on the record dates (castles without an interval, and the development
+server, follow the timeline). The same export writes the death years the database
+holds as confirmed from a read source to `deaths.js`; the public build prefers them
+to the years written by hand in `hist.js` for when people die of age (the timeline's
+death events are unchanged; `docs/reports/DB_DEATH_YEARS.md`). A thing can be
 named by a name or by an identifier such as `place:ganjaku`; a name that matches
 several things lists the candidates and stops. That two identifiers are one thing,
 or that a game site stands for a registry place, is stated by sourced records in
