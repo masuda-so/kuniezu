@@ -48,6 +48,8 @@ def test_every_person_and_castle_has_exactly_one_state_per_record(repository):
     assert people["徳川家康"]["death"] != "confirmed"
     # Hidetada is a related person of the verified Ueda battle claim.
     assert people["徳川秀忠"]["events"] == "confirmed"
+    # Ujinao is the other party of the verified Tensho-Jingo peace.
+    assert people["北条氏直"]["relations"] == "confirmed"
     assert people["佐々成政"]["birth"] in {"comparison", "confirmed"}
 
 

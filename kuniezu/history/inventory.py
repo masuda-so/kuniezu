@@ -105,6 +105,7 @@ def person_row(thing: Thing) -> Json:
     # Only what the records say about the person: a death claim that names a
     # relative as a related person is not the relative's death.
     found = phenomena_of(thing, subject_only=True)
+    linked = phenomena_of(thing)
 
     def pick(test: Callable[[Phenomenon], bool]) -> str:
         return state_of(item for item in found if test(item))
@@ -122,12 +123,12 @@ def person_row(thing: Thing) -> Json:
         "names": pick(lambda p: p.kind == PhenomenonKind.NAMING),
         "office": pick(lambda p: p.kind == PhenomenonKind.OFFICE),
         # Alliances, submissions and hostility the person is the subject of.
-        "relations": pick(lambda p: p.kind == PhenomenonKind.RELATION),
-        # Taking part in an event counts whatever the role: a battle claim names
-        # its commanders as related people, not as its subject.
-        "events": state_of(
-            p for p in phenomena_of(thing) if p.kind == PhenomenonKind.CONFLICT
-        ),
+        # Relations and events count whatever the role: a peace claim names
+        # the other party, and a battle claim its commanders, as related
+        # people. What is about the person alone (above) counts only records
+        # with the person as subject (docs/designs/space-time-records.md).
+        "relations": state_of(p for p in linked if p.kind == PhenomenonKind.RELATION),
+        "events": state_of(p for p in linked if p.kind == PhenomenonKind.CONFLICT),
     }
 
 
