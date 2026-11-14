@@ -211,8 +211,12 @@ Query it by thing, year or a longitude/latitude box, for example
 records (`data/research/curated/control/`) are imported too, and
 `uv run python manage.py export_game_data --output <dir>` writes castle owner
 intervals (`owners.js`) from them; the static export (`scripts/build_static.py`) does
-this with a temporary database. The game does not read these intervals yet; its own
-timeline still decides owners. On the development server, create an account with
+this with a temporary database. In the public build the game changes the owners of
+those castles on the record dates (castles without an interval, and the development
+server, follow the timeline). The same export writes the death years the database
+holds as confirmed from a read source to `deaths.js`; the public build prefers them
+to the years written by hand in `hist.js` for when people die of age (the timeline's
+death events are unchanged; `docs/reports/DB_DEATH_YEARS.md`). On the development server, create an account with
 `uv run python manage.py createsuperuser` and browse the database in the admin site
 at `http://127.0.0.1:8000/admin/`. Because the database is rebuilt from the inputs,
 the admin site is read-only (nothing can be added, changed or deleted) and the static
