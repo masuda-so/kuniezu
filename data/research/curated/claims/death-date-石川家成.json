@@ -1,0 +1,37 @@
+{
+  "id": "death-date-石川家成",
+  "entity": "person:石川家成",
+  "predicate": "death-date",
+  "value": "美濃大垣城主の石川家成が没し、外孫の忠総が継いだ。",
+  "validYears": [
+    1609,
+    1609
+  ],
+  "datePrecision": "day",
+  "source": "hiDainihonshiryoKobun",
+  "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+  "locator": "綱文：和暦 慶長14年10月29日 第2条（区分 大日本史料、第12編之6（データベースの表示値）、762頁）",
+  "gameBindings": [
+    "TK.SCEN:石川家成"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-14",
+  "uncertainty": "綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。",
+  "linkedEntities": [
+    "person:石川家成"
+  ],
+  "eventTime": {
+    "kind": "dated-event",
+    "date": [
+      1609,
+      10,
+      29
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": false,
+    "precision": "day"
+  },
+  "eventRelation": "death",
+  "eventScope": "綱文が掲げる死去とその日付。綱文の一括検索（人物の没年の棚卸し、2026-11-14）で見つけ、見出しを読んで本人の死去と確かめた。死因・享年・場所の精密な位置は補わない。"
+}

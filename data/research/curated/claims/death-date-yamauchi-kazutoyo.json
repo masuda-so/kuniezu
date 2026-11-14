@@ -1,0 +1,37 @@
+{
+  "id": "death-date-yamauchi-kazutoyo",
+  "entity": "person:yamauchi-kazutoyo",
+  "predicate": "death-date",
+  "value": "高知城主の山内一豊が没し、養子の康豊（忠義）が継いだ。",
+  "validYears": [
+    1605,
+    1605
+  ],
+  "datePrecision": "day",
+  "source": "hiDainihonshiryoKobun",
+  "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+  "locator": "綱文：和暦 慶長10年9月20日 第1条（区分 大日本史料、第12編之3（データベースの表示値）、489頁）",
+  "gameBindings": [
+    "TK.SCEN:山内一豊"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-14",
+  "uncertainty": "綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。",
+  "linkedEntities": [
+    "person:yamauchi-kazutoyo"
+  ],
+  "eventTime": {
+    "kind": "dated-event",
+    "date": [
+      1605,
+      9,
+      20
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": false,
+    "precision": "day"
+  },
+  "eventRelation": "death",
+  "eventScope": "綱文が掲げる死去とその日付。綱文の一括検索（人物の没年の棚卸し、2026-11-14）で見つけ、見出しを読んで本人の死去と確かめた。死因・享年・場所の精密な位置は補わない。"
+}

@@ -1,0 +1,37 @@
+{
+  "id": "death-date-ichijo-tadamasa",
+  "entity": "person:ichijo-tadamasa",
+  "predicate": "death-date",
+  "value": "前の土佐国司の一条内政が伊予で没した。",
+  "validYears": [
+    1585,
+    1585
+  ],
+  "datePrecision": "day",
+  "source": "hiDainihonshiryoKobun",
+  "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+  "locator": "綱文：和暦 天正13年6月5日 第2条（区分 大日本史料、第11編之16（データベースの表示値）、79頁）",
+  "gameBindings": [
+    "TK.SCEN:一条内政"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-14",
+  "uncertainty": "綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。",
+  "linkedEntities": [
+    "person:ichijo-tadamasa"
+  ],
+  "eventTime": {
+    "kind": "dated-event",
+    "date": [
+      1585,
+      6,
+      5
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": false,
+    "precision": "day"
+  },
+  "eventRelation": "death",
+  "eventScope": "綱文が掲げる死去とその日付。綱文の一括検索（人物の没年の棚卸し、2026-11-14）で見つけ、見出しを読んで本人の死去と確かめた。死因・享年・場所の精密な位置は補わない。"
+}

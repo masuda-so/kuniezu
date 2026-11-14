@@ -1,0 +1,37 @@
+{
+  "id": "death-date-ii-naomasa",
+  "entity": "person:ii-naomasa",
+  "predicate": "death-date",
+  "value": "近江佐和山城の井伊直政が没し、子の直勝が継いだ。",
+  "validYears": [
+    1602,
+    1602
+  ],
+  "datePrecision": "day",
+  "source": "hiDainihonshiryoKobun",
+  "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+  "locator": "綱文：和暦 慶長7年2月1日 第3条（区分 史料綜覧、編11・冊913（データベースの表示値）、320頁）",
+  "gameBindings": [
+    "TK.SCEN:井伊直政"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-14",
+  "uncertainty": "綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。",
+  "linkedEntities": [
+    "person:ii-naomasa"
+  ],
+  "eventTime": {
+    "kind": "dated-event",
+    "date": [
+      1602,
+      2,
+      1
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": false,
+    "precision": "day"
+  },
+  "eventRelation": "death",
+  "eventScope": "綱文が掲げる死去とその日付。綱文の一括検索（人物の没年の棚卸し、2026-11-14）で見つけ、見出しを読んで本人の死去と確かめた。死因・享年・場所の精密な位置は補わない。"
+}

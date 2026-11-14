@@ -1,0 +1,37 @@
+{
+  "id": "death-date-堀尾吉晴",
+  "entity": "person:堀尾吉晴",
+  "predicate": "death-date",
+  "value": "堀尾吉晴が没した（大日本史料の補遺の条）。",
+  "validYears": [
+    1611,
+    1611
+  ],
+  "datePrecision": "day",
+  "source": "hiDainihonshiryoKobun",
+  "sourceUrl": "https://wwwap.hi.u-tokyo.ac.jp/ships/w61/search",
+  "locator": "綱文：和暦 慶長16年6月17日 第1条（区分 大日本史料、第12編之11（データベースの表示値）、261頁）",
+  "gameBindings": [
+    "TK.SCEN:堀尾吉晴"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-14",
+  "uncertainty": "綱文の日付は編纂上の掲出日で、関連史料の本文は読んでいない。",
+  "linkedEntities": [
+    "person:堀尾吉晴"
+  ],
+  "eventTime": {
+    "kind": "dated-event",
+    "date": [
+      1611,
+      6,
+      17
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": false,
+    "precision": "day"
+  },
+  "eventRelation": "death",
+  "eventScope": "綱文が掲げる死去とその日付。綱文の一括検索（人物の没年の棚卸し、2026-11-14）で見つけ、見出しを読んで本人の死去と確かめた。死因・享年・場所の精密な位置は補わない。"
+}
