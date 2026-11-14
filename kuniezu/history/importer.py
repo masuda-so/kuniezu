@@ -111,7 +111,7 @@ LOCATION_KIND = {
 LOCATION_EVENTS = {"residence-transfer"}
 CLAIM_KIND = {
     PhenomenonKind.EXISTENCE: (
-        "death-date death-year birth-year abandoned burned survived-invasion "
+        "death-date death-year birth-date birth-year abandoned burned survived-invasion "
         "foundation-year foundation-tradition opening-tradition "
         "adopted-abandonment-hypothesis"
     ),
@@ -190,6 +190,7 @@ CLAIM_POINT_PREDICATES = frozenset(
         "death-date",
         "death-year",
         "birth-year",
+        "birth-date",
         "renamed",
         "family-head-succession",
         "levee-construction-commencement",
