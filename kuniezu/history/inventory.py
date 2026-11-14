@@ -122,7 +122,11 @@ def person_row(thing: Thing) -> Json:
         "office": pick(lambda p: p.kind == PhenomenonKind.OFFICE),
         # Alliances, submissions and hostility the person is the subject of.
         "relations": pick(lambda p: p.kind == PhenomenonKind.RELATION),
-        "events": pick(lambda p: p.kind == PhenomenonKind.CONFLICT),
+        # Taking part in an event counts whatever the role: a battle claim names
+        # its commanders as related people, not as its subject.
+        "events": state_of(
+            p for p in phenomena_of(thing) if p.kind == PhenomenonKind.CONFLICT
+        ),
     }
 
 

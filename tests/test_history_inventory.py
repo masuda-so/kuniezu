@@ -44,6 +44,8 @@ def test_every_person_and_castle_has_exactly_one_state_per_record(repository):
     people = {row["name"]: row for row in result["rows"]["people"]}
     # Nobuyasu's death claim links Ieyasu as a relative; it is not his death.
     assert people["徳川家康"]["death"] != "confirmed"
+    # Hidetada is a related person of the verified Ueda battle claim.
+    assert people["徳川秀忠"]["events"] == "confirmed"
     assert people["佐々成政"]["birth"] in {"comparison", "confirmed"}
 
 
