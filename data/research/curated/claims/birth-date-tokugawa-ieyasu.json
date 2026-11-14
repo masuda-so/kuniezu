@@ -1,0 +1,37 @@
+{
+  "id": "birth-date-tokugawa-ieyasu",
+  "entity": "person:tokugawa-ieyasu",
+  "predicate": "birth-date",
+  "value": "天文11年壬寅12月26日の寅の日・寅の刻に生まれ、竹千代と名付けられた。",
+  "validYears": [
+    1542,
+    1542
+  ],
+  "datePrecision": "day",
+  "source": "mikawaGofudokiMeiji",
+  "sourceUrl": "https://dl.ndl.go.jp/pid/882034",
+  "locator": "巻之2「竹千代誕生の事」、14 コマ（左頁）",
+  "gameBindings": [
+    "TK.SCEN:徳川家康"
+  ],
+  "recordType": "verified-historical-claim",
+  "status": "verified-in-specified-scope",
+  "checked": "2026-11-14",
+  "uncertainty": "江戸時代の軍記の明治の活字本で、一次史料ではない。家康自身の慶長8年の願文から天文12年生まれとする説があり（Wikipedia の注に挙がる遠藤珠紀 2023 は天文11年12月26日説、未読）、異説として扱う。",
+  "linkedEntities": [
+    "person:tokugawa-ieyasu"
+  ],
+  "eventTime": {
+    "kind": "dated-event",
+    "date": [
+      1542,
+      12,
+      26
+    ],
+    "calendar": "Japanese-lunisolar",
+    "leapMonth": false,
+    "precision": "day"
+  },
+  "eventRelation": "birth",
+  "eventScope": "誕生の日付と幼名。出生地（岡崎城）は同じ頁の記述を読んでいないので補わない。手掛かりは Wikipedia 日本語版の徳川家康の項の注（2026-11-14）。"
+}
