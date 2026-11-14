@@ -18,10 +18,12 @@ from django.db.models import Count
 from django.db.models import Q
 
 from kuniezu.history import dates
+from kuniezu.history.models import Participation
 from kuniezu.history.models import Phenomenon
 from kuniezu.history.models import PhenomenonKind
 from kuniezu.history.models import RecordVersion
 from kuniezu.history.models import Representation
+from kuniezu.history.models import Role
 from kuniezu.history.models import Thing
 
 if TYPE_CHECKING:
@@ -108,47 +110,78 @@ def in_box(  # noqa: PLR0913
 
 @dataclass(frozen=True)
 class Stop:
-    """One dated place on a path."""
+    """One dated point of a life: a place (with its point) or an end of the life.
+
+    Birth and death are stops without a place when the record names none.
+    """
 
     phenomenon: str
     title: str
-    place: str
-    longitude: float
-    latitude: float
+    place: str | None
+    longitude: float | None
+    latitude: float | None
     jd_start: int
     jd_end: int
     exact: bool
+    kind: str
+    subtype: str
+
+
+# What a path holds (docs/designs/space-time-records.md, technical plan 3):
+# movements and stays, appointments as castle lord, and the two ends of a life.
+LIFE_ENDS = {"birth", "birth-date", "birth-year", "death", "death-date", "death-year"}
+
+
+def on_path(item: Phenomenon) -> bool:
+    if item.kind == PhenomenonKind.MOVEMENT:
+        return item.place is not None and hasattr(item.place, "place")
+    if item.subtype == "held-castle-lordship":
+        return True
+    return item.kind == PhenomenonKind.EXISTENCE and item.subtype in LIFE_ENDS
 
 
 def path(thing: Thing) -> list[Stop]:
-    """The thing's path: its dated, located movements and stays, in order."""
+    """The thing's dated points in order: where it was, the castles it held as
+    lord, and when it was born and died (only what records say about it)."""
+    subject = Participation.objects.filter(thing=thing, role=Role.SUBJECT).values(
+        "phenomenon_id"
+    )
     found = (
         about(thing)
-        .filter(kind=PhenomenonKind.MOVEMENT)
+        .filter(id__in=subject)
         .filter(jd_start__isnull=False, jd_end__isnull=False)
-        .filter(place__place__isnull=False)
         .select_related("place__place")
     )
-    return [
-        Stop(
-            item.key,
-            item.title,
-            item.place.name,
-            item.place.place.longitude,
-            item.place.place.latitude,
-            item.jd_start,
-            item.jd_end,
-            item.jd_exact,
+    stops = []
+    for item in found:
+        if item.jd_start is None or item.jd_end is None or not on_path(item):
+            continue
+        point = getattr(item.place, "place", None) if item.place else None
+        stops.append(
+            Stop(
+                item.key,
+                item.title,
+                item.place.name if item.place else None,
+                point.longitude if point else None,
+                point.latitude if point else None,
+                item.jd_start,
+                item.jd_end,
+                item.jd_exact,
+                item.kind,
+                item.subtype,
+            )
         )
-        for item in found
-        if item.place is not None
-        and item.jd_start is not None
-        and item.jd_end is not None
-    ]
+    return stops
 
 
 def distance_km(a: Stop, b: Stop) -> float:
     """Great-circle distance between two stops."""
+    if a.latitude is None or a.longitude is None:
+        message = "a stop without a point has no distance"
+        raise ValueError(message)
+    if b.latitude is None or b.longitude is None:
+        message = "a stop without a point has no distance"
+        raise ValueError(message)
     lat_a, lat_b = math.radians(a.latitude), math.radians(b.latitude)
     half_lat = (lat_b - lat_a) / 2
     half_lon = math.radians(b.longitude - a.longitude) / 2
@@ -178,7 +211,16 @@ def legs(thing: Thing, max_km_per_day: float = 60.0) -> list[Leg]:
     impossible on any road. Stops on the same day need a speed of the whole
     distance in one day.
     """
-    stops = [stop for stop in path(thing) if stop.exact]
+    stops = [
+        stop
+        for stop in path(thing)
+        # Only where the person was: a lordship or a birth does not put them
+        # at a place on that day.
+        if stop.kind == PhenomenonKind.MOVEMENT
+        and stop.exact
+        and stop.longitude is not None
+        and stop.latitude is not None
+    ]
     found = []
     for start, end in pairwise(stops):
         km = distance_km(start, end)

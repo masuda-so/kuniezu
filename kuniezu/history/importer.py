@@ -951,6 +951,50 @@ class Importer:
             )
             self.timeline.setdefault(signature, []).append(item)
 
+    def read_renames(self) -> None:
+        """A renamed general is one person under all its names (松平元康 → 徳川家康).
+
+        Read after the registry and before any other input names people. If
+        one of the names is a registered person, every name joins that person;
+        otherwise they join the first name. An identity record that already
+        settles a name wins.
+        """
+        path = self.root / RESEARCH / "implemented-people.jsonl"
+        if not path.exists():
+            return
+        groups: dict[str, set[str]] = {}
+        for row in read_jsonl(path):
+            before = row.get("renamedFrom")
+            if not before:
+                continue
+            group = groups.get(row["name"], {row["name"]}) | groups.get(
+                before, {before}
+            )
+            for name in group:
+                groups[name] = group
+        firsts = {row["name"]: row.get("renamedFrom") for row in read_jsonl(path)}
+        done: set[frozenset[str]] = set()
+        for group in groups.values():
+            key = frozenset(group)
+            if key in done:
+                continue
+            done.add(key)
+            registered = [
+                thing
+                for name in sorted(group)
+                for thing in self.by_name.get((ThingKind.PERSON, name), [])
+            ]
+            if registered:
+                kept = registered[0].key
+            else:
+                # The first name: the one no other name was renamed from.
+                kept = "person:" + min(
+                    (name for name in group if not firsts.get(name)), default=min(group)
+                )
+            for name in group:
+                if "person:" + name != kept:
+                    self.same.setdefault("person:" + name, kept)
+
     def load_game_people(self) -> None:
         """The game's generals. Their birth years are the game's values, kept as
         comparison values (not verified), so the inventory can tell them apart."""
@@ -1242,7 +1286,13 @@ class Importer:
         for row in read_jsonl(self.root / RESEARCH / "location-observations.jsonl"):
             record = self.record(row["id"], RecordType.LOCATION, Status.VERIFIED, row)
             person = self.resolve(row["person"], record)
-            place = self.resolve(row["place"], record)
+            # A game castle (castle:<id>) is the same thing the control records
+            # name, so a castle's lords and owners end on one thing.
+            place = (
+                self.control_site(row["place"], record)
+                if row["place"].startswith("castle:")
+                else self.resolve(row["place"], record)
+            )
             relation = row["relation"]
             item = self.phenomenon(
                 row["id"],
@@ -1530,6 +1580,7 @@ class Importer:
         self.load_sources()
         self.load_identities()
         self.load_registry()
+        self.read_renames()
         self.load_sites()
         self.load_timeline()
         self.load_game_people()

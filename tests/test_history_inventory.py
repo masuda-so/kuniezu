@@ -53,3 +53,31 @@ def test_the_command_prints_the_tables(repository, capsys):
     assert set(answer) == {"people", "castles"}
     call_command("history_inventory", "--markdown")
     assert "| 生年 |" in capsys.readouterr().out
+
+
+@pytest.mark.django_db
+def test_renamed_generals_and_castle_keys_end_on_one_thing(repository):
+    from kuniezu.history.models import Phenomenon  # noqa: PLC0415
+    from kuniezu.history.models import ThingKey  # noqa: PLC0415
+
+    observations = repository / "data/research/location-observations.jsonl"
+    row = json.loads(observations.read_text(encoding="utf-8").splitlines()[0])
+    row.update(id="location:test-castle-key", person="person:織田信長")
+    row["place"] = "castle:kiyosu"
+    with observations.open("a", encoding="utf-8") as stream:
+        stream.write(json.dumps(row, ensure_ascii=False) + "\n")
+    import_history(repository)
+
+    def thing(key):
+        return ThingKey.objects.get(key=key).thing
+
+    # A chain of renames ends on one person.
+    assert thing("person:上杉謙信") == thing("person:上杉政虎")
+    # A renamed general joins the registered person, not a new one.
+    from kuniezu.history import queries  # noqa: PLC0415
+
+    assert list(queries.find_things("徳川家康")) == [thing("person:tokugawa-ieyasu")]
+    assert thing("person:松平家康") == thing("person:tokugawa-ieyasu")
+    # A location record that names a game castle lands on the castle node.
+    item = Phenomenon.objects.get(key="location:test-castle-key")
+    assert item.place == thing("node:kiyosu")

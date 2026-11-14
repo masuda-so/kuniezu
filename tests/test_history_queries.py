@@ -252,3 +252,61 @@ def test_the_query_command_prints_a_campaign_with_its_battles(capsys):
 def test_a_phenomenon_is_not_combined_with_other_questions(other):
     with pytest.raises(CommandError, match="一緒には使えない"):
         call_command("history_query", phenomenon="campaign:試験の役", **other)
+
+
+def test_a_path_holds_the_ends_of_a_life_and_castle_lordships(world):
+    traveller, _ = world
+    record = Record.objects.get(key="test")
+    edo = Thing.objects.get(key="place:edo")
+
+    def event(key, kind, subtype, day, **extra):
+        place, role = extra.get("place"), extra.get("role", Role.SUBJECT)
+        number = dates.western_to_jd(*day)
+        made = Phenomenon.objects.create(
+            key=key,
+            mode=Mode.EVENT,
+            kind=kind,
+            subtype=subtype,
+            title=key,
+            status=Status.VERIFIED,
+            place=place,
+            calendar=Calendar.WESTERN,
+            precision=Precision.DAY,
+            year=day[0],
+            month=day[1],
+            day=day[2],
+            jd_start=number,
+            jd_end=number,
+            jd_exact=True,
+        )
+        made.records.add(record)
+        Participation.objects.create(phenomenon=made, thing=traveller, role=role)
+
+    event("0-birth", PhenomenonKind.EXISTENCE, "birth-year", (1560, 1, 1))
+    event(
+        "x-lord",
+        PhenomenonKind.CONTROL,
+        "held-castle-lordship",
+        (1600, 9, 1),
+        place=edo,
+    )
+    event("y-death", PhenomenonKind.EXISTENCE, "death-date", (1610, 1, 1))
+    # Someone else's death the traveller is only linked to is not on the path.
+    event(
+        "z-other-death",
+        PhenomenonKind.EXISTENCE,
+        "death-date",
+        (1611, 1, 1),
+        role=Role.PARTICIPANT,
+    )
+
+    stops = queries.path(traveller)
+    keys = [stop.phenomenon for stop in stops]
+    assert keys[0] == "0-birth"
+    assert "x-lord" in keys
+    assert keys[-1] == "y-death"
+    assert "z-other-death" not in keys
+    assert stops[0].place is None
+    # Legs use only where the person was: not a lordship, not a birth.
+    for leg in queries.legs(traveller):
+        assert leg.start.kind == leg.end.kind == PhenomenonKind.MOVEMENT

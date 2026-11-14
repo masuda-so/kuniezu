@@ -38,4 +38,10 @@ assert.deepEqual(nurhaci.matchedPeople,[{id:'person:ヌルハチ',name:'ヌル�
 assert.equal(nurhaci.answerable,false);assert.equal(nurhaci.exactPresenceConfirmed,false);
 assert.equal(queryLocations(data,{person:'太祖',year:1607}).matchedPeople.length,0);
 
+// 登録の無いゲームの武将（person:<名前>）とゲームの城（castle:<id>）も受ける。知らない名前・城は拒む。
+{const base=data.locations[0],row={...base,id:'location:test-game-keys',person:'person:試験の武将',place:'castle:kiyosu'};
+ const args={people:data.people,places:data.places,locations:[row],sources};
+ assert.throws(()=>validateLocations(args),/未登録/);
+ const ok=validateLocations({...args,gamePeople:new Set(['試験の武将']),castleKeys:new Set(['castle:kiyosu'])});
+ const q=queryLocations(ok,{person:'試験の武将'});assert.equal(q.matches.length,1);assert.equal(q.matches[0].personName,'試験の武将');assert.equal(q.matches[0].placeName,'castle:kiyosu');}
 console.log('PASS: source-backed aliases retain registered/unknown distinction; post-period expedition is not moved into game years');
