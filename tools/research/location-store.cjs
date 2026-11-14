@@ -55,7 +55,9 @@ function validateLocations({people,places,locations,sources,gamePeople=new Set()
  }
  return {people,places,locations};
 }
-function loadLocations({root,sources,gamePeople,castleKeys}){return validateLocations({people:readRecords(path.join(root,'people')),places:readRecords(path.join(root,'places')),locations:readRecords(path.join(root,'locations')),sources,gamePeople,castleKeys});}
+// 既定は、書き出し済みのゲームの武将の一覧と、郡の形の城の鍵（呼び出し元が集合を渡せばそれを使う）。
+function defaultGamePeople(root){const file=path.join(root,'..','implemented-people.jsonl');return new Set(fs.existsSync(file)?fs.readFileSync(file,'utf8').split('\n').filter(Boolean).map(l=>JSON.parse(l).name):[]);}
+function loadLocations({root,sources,gamePeople=defaultGamePeople(root),castleKeys=require('./control-store.cjs').japanCastleKeys()}){return validateLocations({people:readRecords(path.join(root,'people')),places:readRecords(path.join(root,'places')),locations:readRecords(path.join(root,'locations')),sources,gamePeople,castleKeys});}
 function queryLocations(data,{person='',place='',year,fromYear,toYear,lunarDate,leapMonth=false}={}){
  if(lunarDate){if(year!==undefined&&year!==lunarDate[0])throw Error('年と旧暦日の指定が不一致');validateTime({kind:'dated-event',calendar:'Japanese-lunisolar',precision:'day',date:lunarDate,leapMonth});year=lunarDate[0];}
  if([year,fromYear,toYear].some(value=>value!==undefined&&!Number.isInteger(value)))throw Error('検索年が不正');

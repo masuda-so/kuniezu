@@ -73,6 +73,11 @@ def test_renamed_generals_and_castle_keys_end_on_one_thing(repository):
 
     # A chain of renames ends on one person.
     assert thing("person:上杉謙信") == thing("person:上杉政虎")
+    # A renamed general joins the registered person, not a new one.
+    from kuniezu.history import queries  # noqa: PLC0415
+
+    assert list(queries.find_things("徳川家康")) == [thing("person:tokugawa-ieyasu")]
+    assert thing("person:松平家康") == thing("person:tokugawa-ieyasu")
     # A location record that names a game castle lands on the castle node.
     item = Phenomenon.objects.get(key="location:test-castle-key")
     assert item.place == thing("node:kiyosu")

@@ -307,5 +307,6 @@ def test_a_path_holds_the_ends_of_a_life_and_castle_lordships(world):
     assert keys[-1] == "y-death"
     assert "z-other-death" not in keys
     assert stops[0].place is None
-    # Legs skip the stops without a point.
-    assert all(leg.start.longitude is not None for leg in queries.legs(traveller))
+    # Legs use only where the person was: not a lordship, not a birth.
+    for leg in queries.legs(traveller):
+        assert leg.start.kind == leg.end.kind == PhenomenonKind.MOVEMENT

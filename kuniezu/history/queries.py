@@ -214,7 +214,12 @@ def legs(thing: Thing, max_km_per_day: float = 60.0) -> list[Leg]:
     stops = [
         stop
         for stop in path(thing)
-        if stop.exact and stop.longitude is not None and stop.latitude is not None
+        # Only where the person was: a lordship or a birth does not put them
+        # at a place on that day.
+        if stop.kind == PhenomenonKind.MOVEMENT
+        and stop.exact
+        and stop.longitude is not None
+        and stop.latitude is not None
     ]
     found = []
     for start, end in pairwise(stops):
