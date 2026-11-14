@@ -22,6 +22,7 @@ from typing import Any
 from kuniezu.history.models import Participation
 from kuniezu.history.models import Phenomenon
 from kuniezu.history.models import PhenomenonKind
+from kuniezu.history.models import Role
 from kuniezu.history.models import Status
 from kuniezu.history.models import Thing
 from kuniezu.history.models import ThingKey
@@ -60,16 +61,21 @@ def state_of(items: Iterable[Phenomenon]) -> str:
     return UNTOUCHED
 
 
-def phenomena_of(thing: Thing) -> list[Phenomenon]:
-    ids = Participation.objects.filter(thing=thing).values_list(
-        "phenomenon_id", flat=True
-    )
+def phenomena_of(thing: Thing, *, subject_only: bool = False) -> list[Phenomenon]:
+    parts = Participation.objects.filter(thing=thing)
+    if subject_only:
+        parts = parts.filter(role=Role.SUBJECT)
+    ids = parts.values_list("phenomenon_id", flat=True)
+    if subject_only:
+        return list(Phenomenon.objects.filter(id__in=ids))
     placed = Phenomenon.objects.filter(place=thing).values_list("id", flat=True)
     return list(Phenomenon.objects.filter(id__in=[*ids, *placed]))
 
 
 def person_row(thing: Thing) -> Json:
-    found = phenomena_of(thing)
+    # Only what the records say about the person: a death claim that names a
+    # relative as a related person is not the relative's death.
+    found = phenomena_of(thing, subject_only=True)
 
     def pick(test: Callable[[Phenomenon], bool]) -> str:
         return state_of(item for item in found if test(item))

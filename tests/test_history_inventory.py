@@ -40,6 +40,8 @@ def test_every_person_and_castle_has_exactly_one_state_per_record(repository):
     assert rows["node:yoshida"]["owner"] == "confirmed"
     # A game birth year alone is only a comparison value.
     people = {row["name"]: row for row in result["rows"]["people"]}
+    # Nobuyasu's death claim links Ieyasu as a relative; it is not his death.
+    assert people["徳川家康"]["death"] != "confirmed"
     assert people["佐々成政"]["birth"] in {"comparison", "confirmed"}
 
 

@@ -15,7 +15,8 @@ jsonl('implemented-sites.jsonl',[...G.CL.map(c=>({id:'node:'+c.id,name:c.n1,kind
 // ゲームの武将（全シナリオの開始時と、年表で登場する人）。生年は比較値（ゲームの値、出典で確かめていない）。
 {const people=new Map(),add=(name,born,first)=>{if(!name)return;const p=people.get(name)||{name,born:null,firstSeen:first};if(p.born==null&&Number.isFinite(born)&&born>0)p.born=born;people.set(name,p);};
  for(const sc of Object.keys(TK.SCEN).sort()){G.newGame(sc,'oda');for(const g of G.S().gens)add(g.n,g.born,sc);}
- for(const e of TK.HIST)if(e.k==='appear'&&e.g){const [n,,,,,born]=String(e.g).split('|');add(n,+born,'appear:'+e.d.join('-'));}
+ // 年表で武将を生む所：appear の g と、newclan・death などの appear（ゲームの mkGen と同じく @ の配置を除く）。
+ for(const e of TK.HIST)for(const str of [].concat(e.k==='appear'&&e.g?e.g:[],e.appear||[])){const [n,,,,,born]=String(str).split('@')[0].split('|');add(n,+born,e.k+':'+e.d.join('-'));}
  const renamed=new Map();for(const e of TK.HIST)if(e.k==='rename'&&e.n&&e.to)renamed.set(e.to,e.n);
  jsonl('implemented-people.jsonl',[...people.values()].sort((a,b)=>a.name<b.name?-1:1).map(p=>({id:'game-person:'+p.name,name:p.name,born:p.born,firstSeen:p.firstSeen,renamedFrom:renamed.get(p.name)||null,recordType:'implementation-record',status:'not-a-verified-historical-claim'})));
  G.newGame('s1560','oda');}
