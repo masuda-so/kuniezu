@@ -17,8 +17,12 @@ function validateTime(t){if(!t)throw Error('年代が必要');
  else if(t.kind==='described-period'){const y=t.indexYears;if(typeof t.label!=='string'||!t.label.trim()||t.calendar!=='Japanese-era-description'||t.precision!=='period'||t.boundsAreHistoricalStartEnd!==false||!Array.isArray(y)||y.length!==2||!y.every(Number.isInteger)||y[0]>y[1])throw Error('期間の呼び名の時点が不正');}
  else throw Error('未対応の年代形式');
 }
-function validateLocations({people,places,locations,sources}){
+// gamePeople：ゲームの武将の名前（登録の無い人物も person:<名前> で受ける。名前だけで結び、典拠で同定していない）。
+// castleKeys：ゲームの城の鍵（castle:<id>。支配の記録と同じ鍵で、城の記録を 1 本の柱にまとめる）。
+function validateLocations({people,places,locations,sources,gamePeople=new Set(),castleKeys=new Set()}){
  const persons=unique(people,'person:'),sites=unique(places,'place:');unique(locations,'location:');
+ const knownPerson=id=>persons.has(id)||typeof id==='string'&&id.startsWith('person:')&&gamePeople.has(id.slice(7));
+ const knownPlace=id=>sites.has(id)||castleKeys.has(id);
  for(const p of [...people,...places])if(p.aliases!==undefined&&(!Array.isArray(p.aliases)||p.aliases.some(name=>typeof name!=='string'||!name.trim())||new Set(p.aliases).size!==p.aliases.length))throw Error('別名は重複のない名称配列で指定: '+p.id);
  const authorityOwners=new Set();
  for(const p of people){
@@ -44,14 +48,14 @@ function validateLocations({people,places,locations,sources}){
   if(!evidence?.sourceUrl?.startsWith('https://')||!evidence.locator||!evidence.scope||!/^\d{4}-\d{2}-\d{2}$/.test(evidence.checked||''))throw Error('代表点の照合根拠が不足');
  }
  const relations=new Set(['held-castle-lordship','principal-base','residence-transfer','attested-presence']);
- for(const r of locations){if(r.estimated===true||r.runId)throw Error('推定・プレイ履歴を史実参照へ混ぜない');validateTime(r.time);if(!persons.has(r.person)||!sites.has(r.place))throw Error('人物・場所IDが未登録');
+ for(const r of locations){if(r.estimated===true||r.runId)throw Error('推定・プレイ履歴を史実参照へ混ぜない');validateTime(r.time);if(!knownPerson(r.person)||!knownPlace(r.place))throw Error('人物・場所IDが未登録');
   if(!relations.has(r.relation)||r.recordType!=='sourced-location-observation'||r.status!=='verified-in-specified-scope')throw Error('関係・審査状態が不正');
   if(r.corroboratingSources!==undefined&&(!Array.isArray(r.corroboratingSources)||r.corroboratingSources.some(id=>typeof id!=='string'||!sources[id])))throw Error('補助出典IDが不正');
   if(!sources[r.source]||r.sourceUrl!==sources[r.source].url||!r.locator||!r.uncertainty||!/^\d{4}-\d{2}-\d{2}$/.test(r.recordedAt||'')||!r.gameBindings?.length)throw Error('出典・範囲・記録日・実装対応が不足');
  }
  return {people,places,locations};
 }
-function loadLocations({root,sources}){return validateLocations({people:readRecords(path.join(root,'people')),places:readRecords(path.join(root,'places')),locations:readRecords(path.join(root,'locations')),sources});}
+function loadLocations({root,sources,gamePeople,castleKeys}){return validateLocations({people:readRecords(path.join(root,'people')),places:readRecords(path.join(root,'places')),locations:readRecords(path.join(root,'locations')),sources,gamePeople,castleKeys});}
 function queryLocations(data,{person='',place='',year,fromYear,toYear,lunarDate,leapMonth=false}={}){
  if(lunarDate){if(year!==undefined&&year!==lunarDate[0])throw Error('年と旧暦日の指定が不一致');validateTime({kind:'dated-event',calendar:'Japanese-lunisolar',precision:'day',date:lunarDate,leapMonth});year=lunarDate[0];}
  if([year,fromYear,toYear].some(value=>value!==undefined&&!Number.isInteger(value)))throw Error('検索年が不正');
@@ -63,15 +67,17 @@ function queryLocations(data,{person='',place='',year,fromYear,toYear,lunarDate,
   return [p.name,...p.gameNames,...(p.aliases??[])].some(name=>name.includes(person));
  }):data.people;
  const selectedIds=new Set(selectedPeople.map(p=>p.id));
+ // 登録の無いゲームの武将は person:<名前> の名前で引く。
+ for(const r of data.locations)if(!people.has(r.person)&&(!person||r.person===person||r.person.slice(7).includes(person)))selectedIds.add(r.person);
  const matches=data.locations.filter(r=>{
   const site=places.get(r.place),t=r.time;
   if(!selectedIds.has(r.person))return false;
-  if(place&&!(place.startsWith('place:')?site.id===place:site.name.includes(place)))return false;
+  if(place&&!(site?(place.startsWith('place:')?site.id===place:site.name.includes(place)):r.place===place||r.place.includes(place)))return false;
   const start=t.kind==='year-interval'?t.from:t.kind==='described-period'?t.indexYears[0]:t.year??t.date[0];
   const end=t.kind==='year-interval'?t.untilExclusive-1:t.kind==='described-period'?t.indexYears[1]:start;
   if(end<(year??lower)||start>(year??upper))return false;
   if(lunarDate&&t.kind==='dated-event'&&(t.date.some((v,i)=>v!==lunarDate[i])||t.leapMonth!==leapMonth))return false;return true;
- }).map(r=>({...r,personName:people.get(r.person).name,placeName:places.get(r.place).name,interpretation:r.relation==='principal-base'?'本拠の情報。現地滞在を保証しない':r.relation==='held-castle-lordship'?'城主就任・役職の情報。現地滞在を保証しない':r.time.kind==='year-window'?'この年の記録。指定日の滞在は確定しない':r.time.kind==='described-period'?'資料が示す期間（'+r.time.label+'）の記録。年は検索のための目安で、期間の始まり・終わりと指定日の滞在は確定しない':r.time.kind==='year-interval'?'年代区間の記録。指定日の滞在は確定しない':'日付のある出来事。前後の連続滞在は確定しない'}));
+ }).map(r=>({...r,personName:people.get(r.person)?.name??r.person.slice(7),placeName:places.get(r.place)?.name??r.place,interpretation:r.relation==='principal-base'?'本拠の情報。現地滞在を保証しない':r.relation==='held-castle-lordship'?'城主就任・役職の情報。現地滞在を保証しない':r.time.kind==='year-window'?'この年の記録。指定日の滞在は確定しない':r.time.kind==='described-period'?'資料が示す期間（'+r.time.label+'）の記録。年は検索のための目安で、期間の始まり・終わりと指定日の滞在は確定しない':r.time.kind==='year-interval'?'年代区間の記録。指定日の滞在は確定しない':'日付のある出来事。前後の連続滞在は確定しない'}));
  return {matchedPeople:person?selectedPeople.map(p=>({id:p.id,name:p.name})):[],matches,answerable:!!matches.length,exactPresenceConfirmed:!!lunarDate&&matches.some(r=>r.relation==='attested-presence'&&r.time.kind==='dated-event'),continuousPresenceAssumed:false};
 }
 module.exports={loadLocations,validateLocations,queryLocations,validateTemporalFields};
