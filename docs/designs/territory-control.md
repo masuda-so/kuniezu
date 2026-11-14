@@ -619,7 +619,7 @@ PR は 1 本ずつ、3 段に分ける。段 1 と段 2 は `tools/` を変え�
 *   **Compilation/Build**: `node tools/research/export-evidence.cjs` を 2 回続けて実行し、差分が出ないこと。
 *   **Unit Tests**: `.cache/venv-main/bin/python -m pytest -q`（全件。Python は変えないが、必須チェックなので回す）。
 *   **この変更の検査**: `node tools/checks/control-ledger.cjs`。
-*   **既存の入力を壊していないことの確認**（`node.js.yml` の史実の検査の手順）: `node tools/checks/evidence-store.cjs`、`kuroda-residence.cjs`、`history-index.cjs`、`location-store.cjs`、`organization.cjs`、`work-policy.cjs`、`secret-scan.cjs`、`offline.cjs`、`node tools/work/build-catalog.cjs --requests-only --check`、`python tools/checks/history-sqlite.py`・`history-sqlite-inputs.py`・`history-cube.py`。
+*   **既存の入力を壊していないことの確認**（`node.js.yml` の史実の検査の手順）: `node tools/checks/evidence-store.cjs`、`kuroda-residence.cjs`、`location-store.cjs`、`organization.cjs`、`work-policy.cjs`、`secret-scan.cjs`、`offline.cjs`、`node tools/work/build-catalog.cjs --requests-only --check`。
 *   **ゲームに触れていないこと**: `git diff --stat` で、`kuniezu/static/`・`kuniezu/templates/` の差分が 0 であること。
 *   **必須チェック**: GitHub の `build (24.x)` と `build (3.14)`。
 

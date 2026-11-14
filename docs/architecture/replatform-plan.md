@@ -200,4 +200,4 @@ CI の Ubuntu の GDAL は手元（3.13）より古い版になりうる。版�
 - website の構成：`masuda-so/website` の `docs/structure.md`
 - 地理院地図Vector：<https://github.com/gsi-cyberjapan/gsimaps-vector-experiment>、<https://github.com/gsi-cyberjapan/optimal_bvmap>、<https://maps.gsi.go.jp/development/vt.html>
 - 国土地理院コンテンツ利用規約：<https://www.gsi.go.jp/kikakuchousei/kikakuchousei40182.html>
-- 地図の向き：`docs/reports/MAP_ORIENTATION.md`。ラスター地図：`docs/architecture/raster-map.md`。史実 DB：`docs/architecture/history-database.md`
+- 地図の向き：`docs/reports/MAP_ORIENTATION.md`。ラスター地図：`docs/architecture/raster-map.md`。史実 DB：`docs/architecture/history-rdb.md`

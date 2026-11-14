@@ -8,9 +8,8 @@
 
 人物・場所・年代の所在記録は `curated/people/`、`curated/places/`、`curated/locations/`。`query-locations.cjs` で検索する。[設計と検索例](../../docs/architecture/spatiotemporal-history.md)。本拠・城主と現地滞在、年精度と日精度、史実参照と将来の分岐履歴を分ける。
 
-年代横断と対象別の来歴は `node tools/research/query-history.cjs --year 1592 --entity 松平家忠` で同じ記録を参照する。年ごとの全対象の複製は作らない。対象には城・施設・街道・水域も含む。日付の精度・暦・有効期間は元記録へ残す。
+年代横断と対象別の来歴は、史実 DB の `uv run python manage.py history_query --about 松平家忠 --year 1592` で同じ記録を参照する。年ごとの全対象の複製は作らない。対象には城・施設・街道・水域も含む。日付の精度・暦・有効期間は元記録へ残す。
 
-`query.cjs` は既定で `claims.jsonl` の確認済み命題だけを検索する。例：`node tools/research/query.cjs 真田 1600`。
 
 - `sources.jsonl` は書誌・URL・確認箇所・確認範囲。本文を丸ごと保持したアーカイブではない。
 - `claims.jsonl` は出典の指定箇所で確認した一命題。年代、日付の精度、実装先を分ける。複数の出典が対立する場合は各説を別命題にし、採用方針を別に記録する。
@@ -46,8 +45,8 @@
 node tools/research/export-evidence.cjs
 node tools/checks/evidence-store.cjs
 node tools/checks/location-store.cjs
-node tools/checks/history-index.cjs
-node tools/research/query-history.cjs --entity 県城
+uv run python manage.py import_history
+uv run python manage.py history_query --about 県城
 ```
 
 Wikidata の候補取得は `node tools/research/fetch-authorities.cjs --output /tmp/kuniezu-authorities.json`。登録済み人物の典拠 ID をまとめて取得する。既存出力を上書きせず、結果を自動採用しない。氏名・同名人物・出典を確認してから curated 入力へ反映する。
@@ -56,6 +55,6 @@ Wikidata の候補取得は `node tools/research/fetch-authorities.cjs --output 
 
 年代の正規化は `eventTime.calendar` を参照する。既存の `value.calendar` は原文表現・互換用に保持する。`boundsAreHistoricalStartEnd: false` の命題は索引の `scope: described-period-candidate` として返し、検索結果は確定した存続期間と区別する。文書標題の「県城」は原表記を残し、場所の別名から「縣城」と同一地点として検索する。
 
-### SQL・時空間検索
+### 関係データベース
 
-SQLiteの関係DB、経緯度×年のR-tree索引、原暦の日付表、疎な時空間キューブVIEWを実装。編集正本はcurated JSON、DBは生成物。構成・生成・SQL例は [史実データベース](../../docs/architecture/history-database.md)。`python3 tools/research/history_sqlite.py build --output /tmp/kuniezu-history.sqlite3` で生成する。
+史実 DB は Django の関係データベース（`docs/architecture/history-rdb.md`）。編集正本は curated JSON、DB は生成物。以前の一時的な SQLite と時空間キューブは 2026-11-14 に片付けた。

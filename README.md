@@ -43,9 +43,8 @@
 - 顕如・丹羽長重・島清興・斎藤義龍・足利義輝の肖像は、原画の取得待ちや失敗時も同じ確認済み切り抜きを使います。肖像は後世の図像を含みます。[素材の再生成と確認](docs/reports/PORTRAIT_FALLBACK_CROPS.md)を参照してください。
 - 現代の比較地形、史料からの推定、確認済みの史実は区別して扱います。根拠のない文章をプレイ画面へ出しません。
 - 三州街道は伊那谷・駒場・根羽経由の比較線を表示します。山間部には現代の道路・隧道を含み、戦国期の精密中心線とは区別します。[入力と再生成](data/inputs/sanshu-road-review/README.md)を参照してください。
-- 史実DBは原暦と日付精度を維持し、時間形式と矛盾する追加日付欄を拒否します。[DB構成と操作](docs/architecture/history-database.md)を参照してください。
+- 史実DBは原暦と日付精度を維持し、時間形式と矛盾する追加日付欄を拒否します。[DB の設計と操作](docs/architecture/history-rdb.md)を参照してください。
 - 富ノ森の発掘観測を出典付きで史実DBに登録しています。考古学的な時期区分と確定年月日を分け、原本はSHA付きで参照し、読書用Markdownと数値を保持します。
-- 史実DBの集計は `python3 tools/research/history_sqlite.py cube --db <生成済みDB> --from-year 1600 --to-year 1615 --calendar Japanese-lunisolar` で読取専用検索できます。出典記録数を原暦・精度別に集計し、不明な年を展開しません。
 - 史実DBでは、日・年が判明し関連地点が不明な出来事も、主対象から検索できます。場所を推定して補わず、江戸期の干拓記録は戦国期の湖岸と区別します。
 - 史実DBは本人の典拠IDと出典付き別名を保持します。[人物典拠10人の照合記録](data/research/source-notes/person-authority-expansion.md)を追加し、取得版と同名人物の判別根拠を保存しています。別名で検索でき、ゲーム期間外の比較史料を期間内の出来事へ置き換えません。
 - 三好実休／義賢、真田幸綱／幸隆、立花道雪／戸次鑑連の[同定記録](data/research/source-notes/person-alias-three-authority.md)も保持します。別名の対応と、生没日・所在の確認を分けて扱います。
