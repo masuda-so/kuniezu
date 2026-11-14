@@ -113,3 +113,45 @@ def lunisolar_year_bounds(
         message = f"lunisolar years {first}-{end_year - 1} are outside {table}"
         raise ValueError(message)
     return start, after - 1
+
+
+def jd_to_gregorian(jd: int) -> tuple[int, int, int]:
+    """A Julian Day Number in the proleptic Gregorian calendar (ISO 8601).
+
+    ISO 8601 counts days before 15 October 1582 in the Gregorian calendar
+    too, so these dates differ from the western dates the game shows
+    (``jd_to_western``, Julian before the reform) by ten days around 1560.
+    """
+    a = jd + 32044
+    b = (4 * a + 3) // 146097
+    c = a - 146097 * b // 4
+    d = (4 * c + 3) // 1461
+    e = c - 1461 * d // 4
+    m = (5 * e + 2) // 153
+    return (
+        100 * b + d - 4800 + m // 10,
+        m + 3 - 12 * (m // 10),
+        e - (153 * m + 2) // 5 + 1,
+    )
+
+
+def jd_to_iso(jd: int) -> str:
+    """One day as an ISO 8601 calendar date (proleptic Gregorian)."""
+    year, month, day = jd_to_gregorian(jd)
+    return f"{year:04d}-{month:02d}-{day:02d}"
+
+
+def iso_extent(start: int | None, end: int | None) -> str | None:
+    """The days a phenomenon may cover, in ISO 8601 without inventing precision.
+
+    One day is a date. More than one day is an interval ``start/end`` (both
+    days included, ISO 8601). An unknown end is ``..`` (an open interval,
+    ISO 8601-2). Nothing known is None.
+    """
+    if start is None and end is None:
+        return None
+    if start is not None and start == end:
+        return jd_to_iso(start)
+    first = jd_to_iso(start) if start is not None else ".."
+    last = jd_to_iso(end) if end is not None else ".."
+    return f"{first}/{last}"
