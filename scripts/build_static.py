@@ -219,7 +219,7 @@ def restamp(page: bytes, game_dir: Path, name: str) -> bytes:
 
 
 def export_game_data(target: Path) -> None:
-    """Write the castle owners from a fresh history database into ``target``.
+    """Write the castle owners and death years into ``target``.
 
     The database is a temporary SQLite file, filled from the inputs in the
     repository, so the local db.sqlite3 is never touched. Each step runs in a
@@ -277,10 +277,12 @@ def build(dist: Path = DIST, export: Callable[[Path], None] = export_game_data) 
     static_url = settings.STATIC_URL.strip("/")
     game_dir = client_dir / static_url / "kuniezu"
     copy_game(Path(settings.GAME_DIR), game_dir)
-    # Replaces the empty default history/owners.js with the database's, and
-    # stamps the page with the new file's hash so browsers fetch it again.
+    # Replaces the empty defaults history/owners.js and history/deaths.js
+    # with the database's, and stamps the page with the new files' hashes so
+    # browsers fetch them again.
     export(game_dir / "history")
     page = restamp(response.content, game_dir, "history/owners.js")
+    page = restamp(page, game_dir, "history/deaths.js")
     (client_dir / "index.html").write_bytes(page)
     for path in gzip_oversized_vectors(client_dir):
         LOGGER.info("Compressed %s", path.relative_to(client_dir))

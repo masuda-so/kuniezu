@@ -192,6 +192,8 @@ def test_the_export_writes_the_owner_timeline_from_a_fresh_database(tmp_path):
     text = (tmp_path / "owners.js").read_text(encoding="utf-8")
     assert text.startswith("/*")
     assert "TK.OWNER_TIMELINE={" in text
+    deaths = (tmp_path / "deaths.js").read_text(encoding="utf-8")
+    assert "TK.DEATH_YEARS={" in deaths
     assert not (tmp_path / "manifest.json").exists()
     assert (local.stat().st_mtime_ns if local.exists() else None) == before
 
@@ -206,3 +208,6 @@ def test_the_page_names_the_exported_owner_timeline_by_its_hash(tmp_path):
     digest = hashlib.sha256(exported.read_bytes()).hexdigest()[:10]
     page = (client_dir / "index.html").read_text(encoding="utf-8")
     assert f'src="history/owners.js?v={digest}"' in page
+    deaths = client_dir / "static/kuniezu/history/deaths.js"
+    digest = hashlib.sha256(deaths.read_bytes()).hexdigest()[:10]
+    assert f'src="history/deaths.js?v={digest}"' in page

@@ -8,13 +8,17 @@ from django.conf import settings
 from django.core.management.base import BaseCommand
 from django.core.management.base import CommandError
 
+from kuniezu.history import death_export
 from kuniezu.history import export
 from kuniezu.history.models import Record
 from kuniezu.history.models import RecordType
 
 
 class Command(BaseCommand):
-    help = "史実 DB の支配の記録から、ゲーム用の城の持ち主の区間（owners.js）を書き出す"
+    help = (
+        "史実 DB から、ゲーム用の城の持ち主の区間（owners.js）と"
+        "武将の没年（deaths.js）を書き出す"
+    )
 
     def add_arguments(self, parser: Any) -> None:
         parser.add_argument("--output", required=True, type=Path)
@@ -34,6 +38,7 @@ class Command(BaseCommand):
         (output / "owners.js").write_text(
             export.owners_script(timeline, digest), encoding="utf-8"
         )
+        deaths = death_export.write(output)
         manifest = {
             "version": export.VERSION,
             "inputsSha256": digest,
@@ -41,6 +46,7 @@ class Command(BaseCommand):
                 "records": records,
                 "castles": len(timeline),
                 "intervals": intervals,
+                "deathNames": deaths,
             },
         }
         (output / "manifest.json").write_text(

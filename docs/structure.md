@@ -43,7 +43,7 @@ uv run ruff format --check
 uv run mypy kuniezu config scripts tests
 uv run python manage.py check --settings=config.settings.test
 uv run python manage.py migrate && uv run python manage.py import_history   # 史実データベースを作る
-uv run python manage.py export_game_data --output <ディレクトリ>   # 城の持ち主の区間（owners.js）を書き出す。公開の書き出しが一時の DB で自動で行う
+uv run python manage.py export_game_data --output <ディレクトリ>   # 城の持ち主の区間（owners.js）と確認済みの没年（deaths.js）を書き出す。公開の書き出しが一時の DB で自動で行う
 uv run python manage.py createsuperuser   # 管理サイト（閲覧専用）の利用者を作る。パスワードは本人が入れる
 uv run python scripts/build_static.py
 ```
